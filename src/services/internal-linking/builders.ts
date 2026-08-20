@@ -1051,7 +1051,6 @@ export function buildCategoryLinkPlan(categorySlug: string): PageLinkPlan | null
   );
   const plan = EMPTY_LINK_PLAN(sourcePath, "category");
   const exclude = [sourcePath];
-  const short = categoryShortName(categorySlug);
   const phrase = categorySoftwarePhrase(categorySlug);
   const finder = categoryDecisionFinderHref(categorySlug);
 
