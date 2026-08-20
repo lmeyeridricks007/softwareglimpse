@@ -55,11 +55,16 @@ const nextConfig: NextConfig = {
   },
   /**
    * Site media packs live in Vercel Blob (not in the Git deploy).
-   * Paths stay /guides/… etc.; production proxies to the public Blob host.
+   * Paths stay /guides/… etc.; only Vercel production/preview proxies to Blob.
+   * Local `next dev` always serves from public/ — keep BLOB_* in .env.local for
+   * upload scripts without enabling rewrites. Override with BLOB_MEDIA_REWRITES=1.
    */
   async rewrites() {
     const blob = (process.env.BLOB_PUBLIC_HOST ?? "").replace(/\/$/, "");
-    if (!blob) return [];
+    const useBlobRewrites =
+      Boolean(blob) &&
+      (process.env.VERCEL === "1" || process.env.BLOB_MEDIA_REWRITES === "1");
+    if (!useBlobRewrites) return [];
     const folders = [
       "guides",
       "software",
