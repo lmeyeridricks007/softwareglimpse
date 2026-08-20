@@ -99,13 +99,12 @@ export function productGuidePanelSrc(
   panel: 1 | 2 | 3 | 4,
 ): string {
   const base = productGuideSlug(productSlug, kind);
-  const v4 = `/guides/${base}-step-v4-${panel}.png`;
-  if (existsSync(publicGuideAsset(v4))) return v4;
-  const diagramV4 = `/guides/${base}-diagram-v4.png`;
-  if (existsSync(publicGuideAsset(diagramV4))) return diagramV4;
-  const coverV4 = `/guides/${base}-cover-v4.png`;
-  if (existsSync(publicGuideAsset(coverV4))) return coverV4;
-  return `/guides/${base}-step-v4-${panel}.png`;
+  const step = `/guides/${base}-step-v4-${panel}.png`;
+  // Local (and CI with assets checked out): prefer unique step art when present.
+  if (existsSync(publicGuideAsset(step))) return step;
+  // Vercel builds do not ship public/guides (Blob-hosted). Do not emit step URLs
+  // that were never uploaded — fall back to the diagram path Blob does serve.
+  return `/guides/${base}-diagram-v4.png`;
 }
 
 export const CRM_PRODUCT_GUIDE_KIND_CONFIG: Record<
