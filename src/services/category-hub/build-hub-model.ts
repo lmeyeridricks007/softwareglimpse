@@ -406,15 +406,17 @@ function defaultExplorePaths(input: {
   }
 
   const finderHref = categoryDecisionFinderHref(input.categorySlug);
-  paths.push({
-    id: "finder",
-    title: `Find My ${input.shortLabel}`,
-    description: "Answer a few questions for fit-based recommendations.",
-    href: finderHref,
-    ctaLabel: "Start Finder",
-    tone: "green",
-    icon: "target",
-  });
+  if (finderHref) {
+    paths.push({
+      id: "finder",
+      title: `Find My ${input.shortLabel}`,
+      description: "Answer a few questions for fit-based recommendations.",
+      href: finderHref,
+      ctaLabel: "Start Finder",
+      tone: "green",
+      icon: "target",
+    });
+  }
 
   paths.push({
     id: "compare",
@@ -462,11 +464,14 @@ function sanitizeExplorePaths(
   input: {
     bestIndexable: boolean;
     indexableGuideHref: string | null;
-    finderHref: string;
+    finderHref: string | null;
   },
 ): CategoryHubExplorePath[] {
-  const hasFinder = paths.some(
-    (p) => p.id === "finder" || p.href === input.finderHref,
+  const hasFinder = Boolean(
+    input.finderHref &&
+      paths.some(
+        (p) => p.id === "finder" || p.href === input.finderHref,
+      ),
   );
 
   return paths.flatMap((path) => {
@@ -476,6 +481,7 @@ function sanitizeExplorePaths(
     if (path.id === "best" && !input.bestIndexable) {
       // Drop noindex Best CTA when Finder (or equivalent) is already present.
       if (hasFinder) return [];
+      if (!input.finderHref) return [];
       return [
         {
           ...path,

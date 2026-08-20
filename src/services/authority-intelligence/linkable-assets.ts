@@ -13,36 +13,91 @@ const GUIDE_LINKABLES: Array<{
   name: string;
   why: string;
   angles: string[];
+  cluster?: string;
 }> = [
   {
     slug: "what-is-crm",
     name: "What is CRM?",
     why: "Foundational educational guide — natural citation target for glossaries and beginner resource lists.",
     angles: ["Definition clarity", "Buyer-education resource lists"],
+    cluster: "crm",
   },
   {
     slug: "types-of-crm",
     name: "Types of CRM",
     why: "Taxonomy content that resource pages and educators often cite.",
     angles: ["CRM type taxonomy", "Educational roundups"],
+    cluster: "crm",
   },
   {
     slug: "crm-glossary",
     name: "CRM Glossary",
     why: "Reference asset suited to reference / glossary link building.",
     angles: ["Reference link", "Academic / training citations"],
+    cluster: "crm",
   },
   {
     slug: "how-to-choose-crm",
     name: "How to Choose a CRM",
     why: "Decision guide that pairs with tools and checklists for earned editorial mentions.",
     angles: ["Buyer journey resource pages", "Newsletter educational links"],
+    cluster: "crm",
   },
   {
     slug: "crm-vs-spreadsheet",
     name: "CRM vs Spreadsheet",
     why: "Comparison framing that journalists and operators share when discussing tooling upgrades.",
     angles: ["Opinion / analysis citations", "Community discussions"],
+    cluster: "crm",
+  },
+  {
+    slug: "what-is-sales-intelligence",
+    name: "What is Sales Intelligence?",
+    why: "Category definition page for SI buyer education and glossary-style citations.",
+    angles: ["Educational roundups", "SI resource lists"],
+    cluster: "sales-intelligence",
+  },
+  {
+    slug: "how-to-choose-sales-intelligence",
+    name: "How to Choose Sales Intelligence",
+    why: "Decision guide that pairs with SI Finder, scorecard, and readiness tools.",
+    angles: ["Buyer journey resource pages", "Vendor-neutral how-to lists"],
+    cluster: "sales-intelligence",
+  },
+  {
+    slug: "sales-intelligence-glossary",
+    name: "Sales Intelligence Glossary",
+    why: "Reference glossary for enrichment, credits, and CRM sync terminology.",
+    angles: ["Reference link", "Training / enablement citations"],
+    cluster: "sales-intelligence",
+  },
+  {
+    slug: "what-is-marketing-software",
+    name: "What is Marketing Software?",
+    why: "Category teaching page for MarTech beginner and resource lists.",
+    angles: ["Educational roundups", "Marketing tool hubs"],
+    cluster: "marketing",
+  },
+  {
+    slug: "how-to-choose-marketing-software",
+    name: "How to Choose Marketing Software",
+    why: "Decision guide that pairs with Marketing Finder and vendor scorecard.",
+    angles: ["Buyer journey resource pages", "MarTech evaluation lists"],
+    cluster: "marketing",
+  },
+  {
+    slug: "what-is-project-management-software",
+    name: "What is Project Management Software?",
+    why: "Category teaching page for PM software education lists.",
+    angles: ["Educational roundups", "Ops resource hubs"],
+    cluster: "project-management",
+  },
+  {
+    slug: "how-to-choose-project-management-software",
+    name: "How to Choose Project Management Software",
+    why: "Decision guide that pairs with PM Finder and vendor scorecard.",
+    angles: ["Buyer journey resource pages", "Ops evaluation lists"],
+    cluster: "project-management",
   },
 ];
 
@@ -142,7 +197,7 @@ export function inventoryLinkableAssets(): LinkableAsset[] {
       kind: guide.slug.includes("glossary") ? "glossary" : "guide",
       name: guide.name,
       path: `/guides/${guide.slug}/`,
-      cluster: "crm",
+      cluster: guide.cluster ?? "crm",
       linkability: "strong",
       whyLinkable: guide.why,
       promotionAngles: guide.angles,

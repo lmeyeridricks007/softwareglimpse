@@ -80,7 +80,8 @@ export function runEarnedBacklinkOpportunityAgent(
   opts: EarnedBacklinkAgentOptions = {},
 ): EarnedBacklinkAgentResult {
   const generatedAt = opts.generatedAt ?? new Date().toISOString();
-  const topic = opts.topic ?? "CRM / business software";
+  const topic =
+    opts.topic ?? "CRM, sales intelligence & business software";
   const topN = opts.topN ?? 50;
   const write = opts.write !== false;
   const hits = opts.hits ?? EARNED_LIVE_HITS;

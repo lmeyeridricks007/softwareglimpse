@@ -61,10 +61,12 @@ export const siteFoundationConfig: SiteFoundationConfig =
       },
       {
         id: "analytics",
-        name: "Analytics provider (not configured)",
+        name: "Vercel Web Analytics",
         purpose:
-          "Optional usage analytics via the consent-gated event bus — no live vendor SDK is registered yet",
-        configured: false,
+          "Optional aggregated page-view and visitor analytics, loaded only after analytics consent",
+        privacyPolicyUrl: "https://vercel.com/legal/privacy-policy",
+        dataLocation: "United States / EU (region-dependent)",
+        configured: true,
       },
       {
         id: "newsletter",
@@ -159,17 +161,19 @@ export const siteFoundationConfig: SiteFoundationConfig =
       {
         id: "pa-analytics",
         purpose:
-          "Understand aggregated site usage to improve content (only if a provider is wired and consent is granted)",
+          "Understand aggregated site usage (page views and visitor metrics) via Vercel Web Analytics after analytics consent",
         dataCategories: [
           "pseudonymous usage events",
           "page path",
-          "event name",
+          "referrer / traffic source (where available)",
+          "coarse geography derived from IP (aggregated)",
         ],
         legalBasis: "consent",
         recipients: ["analytics"],
-        retention: "Not active — analytics provider not configured",
-        source: "Consent-gated analytics event bus",
-        active: false,
+        retention:
+          "Aggregated Web Analytics metrics per Vercel retention practices; SoftwareGlimpse does not store a separate analytics profile",
+        source: "Consent-gated Vercel Web Analytics component",
+        active: true,
       },
       {
         id: "pa-affiliate-redirect",
@@ -410,6 +414,17 @@ export const siteFoundationConfig: SiteFoundationConfig =
         storageType: "localStorage",
       },
       {
+        name: "Vercel Web Analytics (pageview beacons)",
+        provider: "Vercel Inc.",
+        purpose:
+          "Sends aggregated page-view and visitor metrics after analytics consent. Designed to avoid persistent analytics cookies; script loads only when the analytics category is allowed",
+        category: "analytics",
+        duration:
+          "Request/session beacons — see Vercel Web Analytics privacy documentation",
+        firstParty: true,
+        storageType: "cookie",
+      },
+      {
         name: "YouTube embed cookies (when player loads)",
         provider: "Google / YouTube",
         purpose:
@@ -431,8 +446,8 @@ export const siteFoundationConfig: SiteFoundationConfig =
       },
     ],
     consent: {
-      version: "1.1.0",
-      effectiveAt: "2026-08-14",
+      version: "1.2.0",
+      effectiveAt: "2026-08-20",
       renewAfterDays: 365,
       categoriesInUse: [
         "strictly-necessary",
@@ -444,14 +459,14 @@ export const siteFoundationConfig: SiteFoundationConfig =
       marketingRequiresConsent: true,
       bannerTitle: "Cookies & privacy choices",
       bannerBody:
-        "We use necessary storage to run the site and tools (for example consent choices and finder progress). Optional analytics and official product video embeds (YouTube/Vimeo) are not loaded unless you allow them. You can change your mind anytime via Cookie settings.",
+        "We use necessary storage to run the site and tools (for example consent choices and finder progress). Optional analytics (Vercel Web Analytics) and official product video embeds (YouTube/Vimeo) are not loaded unless you allow them. You can change your mind anytime via Cookie settings.",
       categoryDescriptions: {
         strictlyNecessary:
           "Required for consent storage and core site/tool function (including CRM Finder and calculator drafts on this device).",
         preferences:
           "Optional UI preferences such as newsletter popup dismissal when that feature is enabled.",
         analytics:
-          "Optional usage analytics. No analytics vendor SDK is configured yet; when one is added, it will only run after you allow this category.",
+          "Optional usage analytics via Vercel Web Analytics. Loads only after you allow this category.",
         marketing:
           "Optional third-party embeds used for official vendor product videos (YouTube / Vimeo). Players load only after you allow this category and choose to play.",
       },
@@ -512,7 +527,8 @@ export const siteFoundationConfig: SiteFoundationConfig =
         "Up to 24 months after the request is closed, unless a longer period is required by law",
       newsletterMetadata:
         "Not active until a newsletter provider is configured and signup is enabled",
-      analytics: "Not active — analytics provider not configured",
+      analytics:
+        "Aggregated Vercel Web Analytics metrics per Vercel retention practices; no separate SoftwareGlimpse analytics profile",
       serverLogs:
         "Operational hosting/access logs; typically up to 90 days (Vercel)",
     },
@@ -525,10 +541,10 @@ export const siteFoundationConfig: SiteFoundationConfig =
         summary:
           "How SoftwareGlimpse processes personal data — generated from configured processing activities.",
         status: "approved",
-        version: "0.2.1",
-        effectiveAt: "2026-08-19",
-        lastUpdatedAt: "2026-08-19",
-        approvedAt: "2026-08-19",
+        version: "0.2.2",
+        effectiveAt: "2026-08-20",
+        lastUpdatedAt: "2026-08-20",
+        approvedAt: "2026-08-20",
         indexable: true,
         dependsOn: [
           "processors",
@@ -546,10 +562,10 @@ export const siteFoundationConfig: SiteFoundationConfig =
         summary:
           "Cookies and similar browser storage used by SoftwareGlimpse — generated from the live consent and storage inventory.",
         status: "approved",
-        version: "0.2.1",
-        effectiveAt: "2026-08-19",
-        lastUpdatedAt: "2026-08-19",
-        approvedAt: "2026-08-19",
+        version: "0.2.2",
+        effectiveAt: "2026-08-20",
+        lastUpdatedAt: "2026-08-20",
+        approvedAt: "2026-08-20",
         indexable: true,
         dependsOn: ["cookies", "consent", "processors"],
         sections: [],

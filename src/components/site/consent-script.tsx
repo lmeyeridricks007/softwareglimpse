@@ -1,13 +1,14 @@
 "use client";
 
 import { useEffect, useRef } from "react";
+import { Analytics } from "@vercel/analytics/next";
 import { registerAnalyticsSink, type AnalyticsEvent } from "@/analytics/events";
 import { useConsentOptional } from "@/components/site/consent-provider";
 import { siteFoundationConfig } from "@/data/config/site/foundation-client";
 
 /**
- * Registers a consent-gated analytics sink.
- * No provider SDK is loaded until analytics consent is granted.
+ * Registers a consent-gated analytics sink and mounts Vercel Web Analytics
+ * only when the analytics category is allowed.
  * Affiliate redirects must NOT depend on this sink.
  */
 export function ConsentAwareAnalytics() {
@@ -16,6 +17,7 @@ export function ConsentAwareAnalytics() {
   const allowed = consent?.allows("analytics") ?? false;
   const requiresConsent =
     siteFoundationConfig.consent.analyticsRequiresConsent;
+  const loadAnalytics = !requiresConsent || allowed;
 
   useEffect(() => {
     const sink = (event: AnalyticsEvent) => {
@@ -33,7 +35,6 @@ export function ConsentAwareAnalytics() {
         }
         return;
       }
-      // Provider unconfigured — keep events in memory for debugging only.
       if (process.env.NODE_ENV === "development") {
         console.debug("[analytics]", event.name, event.properties);
       }
@@ -43,11 +44,11 @@ export function ConsentAwareAnalytics() {
 
   useEffect(() => {
     if (!allowed) return;
-    // Flush buffered consent events after accept (still no third-party SDK until configured).
     buffer.current = [];
   }, [allowed]);
 
-  return null;
+  if (!loadAnalytics) return null;
+  return <Analytics />;
 }
 
 type ConsentScriptProps = {

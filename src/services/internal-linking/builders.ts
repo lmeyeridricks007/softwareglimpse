@@ -17,7 +17,13 @@ import { getSoftwareLinkGroups } from "@/services/relationships/software-links";
 import { pathForContent } from "@/services/publishing/ids";
 import { factoryProductGuideKind } from "@/services/product-guides/kinds";
 import { normalizePath } from "@/seo/canonical";
-import { resolveCrmJourneyModules } from "./journey";
+import { resolveCategoryJourneyModules } from "./journey";
+import {
+  categoryDecisionFinderHref,
+  categoryFinderCtaLabel,
+  categoryShortName,
+  categorySoftwarePhrase,
+} from "@/data/config/tools/category-tool-meta";
 import { dedupePlanByHref, makeLink, selectLinks } from "./select";
 import {
   EMPTY_LINK_PLAN,
@@ -343,18 +349,17 @@ export function buildGuideLinkPlan(guide: GuidePage): PageLinkPlan {
     { module: "relatedResources", excludeHrefs: exclude, limit: 3 },
   );
 
-  const isCrm = guide.categorySlugs.includes("crm");
-  if (isCrm) {
-    const journey = resolveCrmJourneyModules({
-      sourceType: "guide",
-      sourcePath,
-      journeyStage: guide.journeyStage,
-      topicType: guide.topicType,
-      preferredProductSlug: guide.productSlugs[0],
-    });
-    plan.tryDecisionTool = journey.tryDecisionTool;
-    plan.recommendedNextStep = packKind ? [] : journey.recommendedNextStep;
-  }
+  const primaryCategory = guide.categorySlugs[0] ?? "crm";
+  const journey = resolveCategoryJourneyModules({
+    sourceType: "guide",
+    sourcePath,
+    categorySlug: primaryCategory,
+    journeyStage: guide.journeyStage,
+    topicType: guide.topicType,
+    preferredProductSlug: guide.productSlugs[0],
+  });
+  plan.tryDecisionTool = journey.tryDecisionTool;
+  plan.recommendedNextStep = packKind ? [] : journey.recommendedNextStep;
 
   // Honour explicit nextAction when eligible
   if (guide.nextAction) {
@@ -394,6 +399,14 @@ export function buildSoftwareLinkPlan(slug: string): PageLinkPlan | null {
   const plan = EMPTY_LINK_PLAN(sourcePath, "software");
   const groups = getSoftwareLinkGroups(soft);
 
+  const category = getCategoryBySlug(soft.primaryCategorySlug);
+  const categoryHubHref = category
+    ? category.seo.canonicalPath || `/categories/${soft.primaryCategorySlug}/`
+    : `/categories/${soft.primaryCategorySlug}/`;
+  const categoryHubLabel = category
+    ? `${category.name} hub`
+    : `${categoryShortName(soft.primaryCategorySlug)} Software hub`;
+
   plan.parentHub = selectLinks(
     [
       makeLink({
@@ -404,10 +417,10 @@ export function buildSoftwareLinkPlan(slug: string): PageLinkPlan | null {
         entityType: "hub",
         score: 92,
       }),
-      soft.primaryCategorySlug === "crm"
+      category && isEntityIndexable({ kind: "category", entity: category })
         ? makeLink({
-            href: CRM_HUB,
-            label: "CRM Software hub",
+            href: categoryHubHref,
+            label: categoryHubLabel,
             relationship: "parent",
             module: "parentHub",
             entityType: "category",
@@ -471,9 +484,10 @@ export function buildSoftwareLinkPlan(slug: string): PageLinkPlan | null {
     { module: "relatedGuides", excludeHrefs: [sourcePath] },
   );
 
-  const journey = resolveCrmJourneyModules({
+  const journey = resolveCategoryJourneyModules({
     sourceType: "software",
     sourcePath,
+    categorySlug: soft.primaryCategorySlug,
     preferredProductSlug: slug,
   });
   plan.recommendedNextStep = journey.recommendedNextStep;
@@ -618,7 +632,7 @@ export function buildFeatureLinkPlan(input: {
     { module: "relatedProducts", excludeHrefs: exclude },
   );
 
-  const journey = resolveCrmJourneyModules({
+  const journey = resolveCategoryJourneyModules({
     sourceType: "feature",
     sourcePath,
   });
@@ -732,7 +746,7 @@ export function buildRequirementLinkPlan(input: {
     { module: "relatedProducts", excludeHrefs: exclude },
   );
 
-  const journey = resolveCrmJourneyModules({
+  const journey = resolveCategoryJourneyModules({
     sourceType: "requirement",
     sourcePath,
   });
@@ -849,7 +863,7 @@ export function buildUseCaseLinkPlan(input: {
     { module: "relatedIndustries", excludeHrefs: exclude },
   );
 
-  const journey = resolveCrmJourneyModules({
+  const journey = resolveCategoryJourneyModules({
     sourceType: "use-case",
     sourcePath,
   });
@@ -951,7 +965,7 @@ export function buildCapabilityLinkPlan(input: {
     { module: "relatedProducts", excludeHrefs: exclude },
   );
 
-  const journey = resolveCrmJourneyModules({
+  const journey = resolveCategoryJourneyModules({
     sourceType: "capability",
     sourcePath,
   });
@@ -1007,7 +1021,7 @@ export function buildResourceLinkPlan(input: {
     { module: "relatedGuides", excludeHrefs: exclude },
   );
 
-  const journey = resolveCrmJourneyModules({
+  const journey = resolveCategoryJourneyModules({
     sourceType: "resource",
     sourcePath,
   });
@@ -1027,4 +1041,305 @@ export function listIndexableComparisonsForProduct(slug: string, limit = 4) {
       href: `/compare/${c.slug}/`,
       title: c.title,
     }));
+}
+
+export function buildCategoryLinkPlan(categorySlug: string): PageLinkPlan | null {
+  const cat = getCategoryBySlug(categorySlug);
+  if (!cat) return null;
+  const sourcePath = normalizePath(
+    cat.seo.canonicalPath || `/categories/${categorySlug}/`,
+  );
+  const plan = EMPTY_LINK_PLAN(sourcePath, "category");
+  const exclude = [sourcePath];
+  const short = categoryShortName(categorySlug);
+  const phrase = categorySoftwarePhrase(categorySlug);
+  const finder = categoryDecisionFinderHref(categorySlug);
+
+  plan.parentHub = selectLinks(
+    [
+      makeLink({
+        href: "/categories/",
+        label: "Software categories",
+        relationship: "parent",
+        module: "parentHub",
+        entityType: "hub",
+        score: 100,
+      }),
+    ],
+    { module: "parentHub", excludeHrefs: exclude },
+  );
+
+  const products = getSoftware()
+    .filter((s) => s.primaryCategorySlug === categorySlug)
+    .filter((s) => isEntityIndexable({ kind: "software", entity: s }))
+    .slice(0, 8);
+  plan.relatedProducts = selectLinks(
+    products.map((s) =>
+      makeLink({
+        href: `/software/${s.slug}/`,
+        label: `${s.name} review`,
+        relationship: "child",
+        module: "relatedProducts",
+        entityType: "software",
+        score: 80,
+      }),
+    ),
+    { module: "relatedProducts", excludeHrefs: exclude },
+  );
+
+  plan.relatedGuides = selectLinks(
+    getGuides()
+      .filter((g) => g.categorySlugs.includes(categorySlug))
+      .filter((g) => !factoryProductGuideKind(g))
+      .filter((g) => isEntityIndexable({ kind: "guide", entity: g }))
+      .slice(0, 8)
+      .map((g) =>
+        makeLink({
+          href: guidePath(g.slug),
+          label: g.title,
+          relationship: "supportedBy",
+          module: "relatedGuides",
+          entityType: "guide",
+          score: 78,
+        }),
+      ),
+    { module: "relatedGuides", excludeHrefs: exclude },
+  );
+
+  plan.relatedComparisons = selectLinks(
+    getAllComparisonsUnfiltered()
+      .filter((c) =>
+        c.productSlugs.some((ps) =>
+          products.some((p) => p.slug === ps),
+        ),
+      )
+      .filter((c) => isEntityIndexable({ kind: "comparison", entity: c }))
+      .slice(0, 6)
+      .map((c) =>
+        makeLink({
+          href: `/compare/${c.slug}/`,
+          label: c.title,
+          relationship: "compares",
+          module: "relatedComparisons",
+          entityType: "comparison",
+          score: 72,
+        }),
+      ),
+    { module: "relatedComparisons", excludeHrefs: exclude },
+  );
+
+  const journey = resolveCategoryJourneyModules({
+    sourceType: "category",
+    sourcePath,
+    categorySlug,
+  });
+  plan.recommendedNextStep = journey.recommendedNextStep;
+  plan.tryDecisionTool = journey.tryDecisionTool;
+
+  // Prefer finder as first next-step when present
+  if (finder && plan.recommendedNextStep.every((l) => l.href !== finder)) {
+    const finderLink = makeLink({
+      href: finder,
+      label: categoryFinderCtaLabel(categorySlug),
+      relationship: "nextStep",
+      module: "recommendedNextStep",
+      entityType: "tool",
+      score: 99,
+      description: `Get a fit-based ${phrase} shortlist.`,
+    });
+    if (finderLink) {
+      plan.recommendedNextStep = selectLinks(
+        [finderLink, ...plan.recommendedNextStep],
+        { module: "recommendedNextStep", excludeHrefs: exclude },
+      );
+    }
+  }
+
+  return dedupePlanByHref(plan);
+}
+
+export function buildBestLinkPlan(input: {
+  bestSlug: string;
+  categorySlug: string;
+  title: string;
+  productSlugs?: string[];
+  relatedGuideSlugs?: string[];
+  relatedComparisonSlugs?: string[];
+}): PageLinkPlan {
+  const sourcePath = `/best/${input.bestSlug}/`;
+  const plan = EMPTY_LINK_PLAN(sourcePath, "best");
+  const exclude = [sourcePath];
+  const cat = getCategoryBySlug(input.categorySlug);
+  const hubHref = cat
+    ? cat.seo.canonicalPath || `/categories/${input.categorySlug}/`
+    : `/categories/${input.categorySlug}/`;
+
+  plan.parentHub = selectLinks(
+    [
+      makeLink({
+        href: "/best/",
+        label: "Best software guides",
+        relationship: "parent",
+        module: "parentHub",
+        entityType: "hub",
+        score: 92,
+      }),
+      makeLink({
+        href: hubHref,
+        label: `${categoryShortName(input.categorySlug)} Software hub`,
+        relationship: "parent",
+        module: "parentHub",
+        entityType: "category",
+        score: 100,
+      }),
+    ],
+    { module: "parentHub", excludeHrefs: exclude },
+  );
+
+  plan.relatedProducts = selectLinks(
+    (input.productSlugs ?? []).slice(0, 8).map((slug) => {
+      const soft = getSoftware().find((s) => s.slug === slug);
+      return makeLink({
+        href: `/software/${slug}/`,
+        label: soft ? `${soft.name} review` : slug,
+        relationship: "related",
+        module: "relatedProducts",
+        entityType: "software",
+        score: 85,
+      });
+    }),
+    { module: "relatedProducts", excludeHrefs: exclude },
+  );
+
+  plan.relatedComparisons = selectLinks(
+    (input.relatedComparisonSlugs ?? []).slice(0, 6).map((slug) => {
+      const c = getAllComparisonsUnfiltered().find((x) => x.slug === slug);
+      return makeLink({
+        href: `/compare/${slug}/`,
+        label: c?.title ?? slug.replace(/-/g, " "),
+        relationship: "compares",
+        module: "relatedComparisons",
+        entityType: "comparison",
+        score: 80,
+      });
+    }),
+    { module: "relatedComparisons", excludeHrefs: exclude },
+  );
+
+  plan.relatedGuides = selectLinks(
+    (input.relatedGuideSlugs ?? []).slice(0, 6).map((slug) => {
+      const g = getGuides().find((x) => x.slug === slug);
+      return makeLink({
+        href: guidePath(slug),
+        label: g?.title ?? slug,
+        relationship: "supportedBy",
+        module: "relatedGuides",
+        entityType: "guide",
+        score: 78,
+      });
+    }),
+    { module: "relatedGuides", excludeHrefs: exclude },
+  );
+
+  const journey = resolveCategoryJourneyModules({
+    sourceType: "best",
+    sourcePath,
+    categorySlug: input.categorySlug,
+    preferredProductSlug: input.productSlugs?.[0],
+  });
+  plan.recommendedNextStep = journey.recommendedNextStep;
+  plan.tryDecisionTool = journey.tryDecisionTool;
+
+  return dedupePlanByHref(plan);
+}
+
+export function buildComparisonLinkPlan(input: {
+  comparisonSlug: string;
+  title: string;
+  productSlugs: string[];
+  categorySlug?: string;
+}): PageLinkPlan {
+  const sourcePath = `/compare/${input.comparisonSlug}/`;
+  const plan = EMPTY_LINK_PLAN(sourcePath, "comparison");
+  const exclude = [sourcePath];
+  const softs = input.productSlugs
+    .map((slug) => getSoftware().find((s) => s.slug === slug))
+    .filter(Boolean);
+  const categorySlug =
+    input.categorySlug ??
+    softs[0]?.primaryCategorySlug ??
+    "crm";
+  const cat = getCategoryBySlug(categorySlug);
+  const hubHref = cat
+    ? cat.seo.canonicalPath || `/categories/${categorySlug}/`
+    : `/categories/${categorySlug}/`;
+
+  plan.parentHub = selectLinks(
+    [
+      makeLink({
+        href: "/compare/",
+        label: "Software comparisons",
+        relationship: "parent",
+        module: "parentHub",
+        entityType: "hub",
+        score: 95,
+      }),
+      makeLink({
+        href: hubHref,
+        label: `${categoryShortName(categorySlug)} Software hub`,
+        relationship: "parent",
+        module: "parentHub",
+        entityType: "category",
+        score: 90,
+      }),
+    ],
+    { module: "parentHub", excludeHrefs: exclude },
+  );
+
+  plan.relatedProducts = selectLinks(
+    input.productSlugs.map((slug) => {
+      const soft = getSoftware().find((s) => s.slug === slug);
+      return makeLink({
+        href: `/software/${slug}/`,
+        label: soft ? `${soft.name} review` : slug,
+        relationship: "compares",
+        module: "relatedProducts",
+        entityType: "software",
+        score: 90,
+      });
+    }),
+    { module: "relatedProducts", excludeHrefs: exclude },
+  );
+
+  const peerComparisons = getAllComparisonsUnfiltered()
+    .filter((c) => c.slug !== input.comparisonSlug)
+    .filter((c) =>
+      c.productSlugs.some((ps) => input.productSlugs.includes(ps)),
+    )
+    .filter((c) => isEntityIndexable({ kind: "comparison", entity: c }))
+    .slice(0, 6);
+  plan.relatedComparisons = selectLinks(
+    peerComparisons.map((c) =>
+      makeLink({
+        href: `/compare/${c.slug}/`,
+        label: c.title,
+        relationship: "related",
+        module: "relatedComparisons",
+        entityType: "comparison",
+        score: 75,
+      }),
+    ),
+    { module: "relatedComparisons", excludeHrefs: exclude },
+  );
+
+  const journey = resolveCategoryJourneyModules({
+    sourceType: "comparison",
+    sourcePath,
+    categorySlug,
+    preferredProductSlug: input.productSlugs[0],
+  });
+  plan.recommendedNextStep = journey.recommendedNextStep;
+  plan.tryDecisionTool = journey.tryDecisionTool;
+
+  return dedupePlanByHref(plan);
 }

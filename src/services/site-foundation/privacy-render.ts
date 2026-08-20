@@ -204,7 +204,7 @@ export function buildCookiePolicySections(
       body:
         (description ? `${description}\n\n` : "") +
         (items.length === 0
-          ? `No ${category} storage entries are currently inventoried${category === "analytics" ? " (analytics provider not configured; category reserved for consent gating)." : "."}`
+          ? `No ${category} storage entries are currently inventoried${category === "analytics" ? " (analytics category reserved for consent gating)." : "."}`
           : items
               .map(
                 (c) =>
@@ -236,13 +236,28 @@ export function buildCookiePolicySections(
   });
 
   const hosting = config.processors.find((p) => p.id === "hosting");
-  const thirdPartyCookieProcessors = config.processors.filter(
-    (p) => p.configured && p.id !== "consent-storage" && p.id !== "contact",
+  const analyticsProcessor = config.processors.find((p) => p.id === "analytics");
+  const newsletterProcessor = config.processors.find(
+    (p) => p.id === "newsletter",
   );
+  const thirdPartyCookieProcessors = config.processors.filter(
+    (p) =>
+      p.configured &&
+      p.id !== "consent-storage" &&
+      p.id !== "contact" &&
+      p.id !== "analytics" &&
+      p.id !== "newsletter",
+  );
+  const analyticsCopy = analyticsProcessor?.configured
+    ? `Analytics (${analyticsProcessor.name}) loads only after analytics consent and is designed to avoid persistent analytics cookies.`
+    : "Analytics provider is not configured — no analytics vendor script is loaded today.";
+  const newsletterCopy = newsletterProcessor?.configured
+    ? `Newsletter (${newsletterProcessor.name}) may set cookies only when that feature is enabled.`
+    : "Newsletter provider is not configured — no newsletter cookies are loaded today.";
   sections.push({
     id: "processors",
     heading: "Third-party services that may set cookies",
-    body: `Hosting (${hosting?.name ?? "configured provider"}) delivers the site; it may process technical connection data in server logs. Optional embed providers (YouTube, Vimeo) set cookies only after marketing consent and play. Other configured services: ${thirdPartyCookieProcessors.map((p) => p.name).join("; ") || "none beyond hosting"}. Analytics and newsletter providers are not configured — no cookies from those vendors are loaded today.`,
+    body: `Hosting (${hosting?.name ?? "configured provider"}) delivers the site; it may process technical connection data in server logs. Optional embed providers (YouTube, Vimeo) set cookies only after marketing consent and play. Other configured services: ${thirdPartyCookieProcessors.map((p) => p.name).join("; ") || "none beyond hosting"}. ${analyticsCopy} ${newsletterCopy}`,
   });
 
   sections.push({

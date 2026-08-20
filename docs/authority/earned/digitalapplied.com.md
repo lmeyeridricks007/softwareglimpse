@@ -1,6 +1,6 @@
 # Earned backlink opportunities — digitalapplied.com
 
-> From EarnedBacklinkOpportunityAgent · 2026-08-15T11:59:45.303Z
+> From EarnedBacklinkOpportunityAgent · 2026-08-20T10:46:27.246Z
 > Topic: CRM / business software
 
 ## P26 — CRM Data Migration Checklist 2026 — Zero-Downtime Playbook

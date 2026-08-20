@@ -203,25 +203,73 @@ export function isNewToolCategorySlug(
   return (NEW_TOOL_CATEGORY_SLUGS as readonly string[]).includes(slug);
 }
 
-/** Dedicated finder for a published category, falling back to the software-finder hub. */
-export function categoryDecisionFinderHref(slug: string): string {
-  if (slug === "crm") return "/tools/crm-finder/";
-  if (slug === "sales-intelligence") {
-    return "/tools/sales-intelligence-finder/";
-  }
-  if (isNewToolCategorySlug(slug)) return categoryToolHref(slug, "finder");
-  return "/tools/software-finder/";
+/** Categories with dedicated (indexable) decision-tool packs. */
+export function hasDedicatedCategoryTools(slug: string): boolean {
+  return (
+    slug === "crm" ||
+    slug === "sales-intelligence" ||
+    isNewToolCategorySlug(slug)
+  );
 }
 
-export function categoryDecisionCostHref(slug: string): string {
-  if (slug === "crm") return "/tools/crm-cost-calculator/";
+/**
+ * Dedicated tool path for a published category.
+ * Returns null when no dedicated pack exists (never soft software-finder).
+ */
+export function categorySharedToolHref(
+  slug: string,
+  kind: CategoryToolKind,
+): string | null {
+  if (slug === "crm") return `/tools/crm-${kind}/`;
   if (slug === "sales-intelligence") {
-    return "/tools/sales-intelligence-cost-calculator/";
+    return `/tools/sales-intelligence-${kind}/`;
   }
-  if (isNewToolCategorySlug(slug)) {
-    return categoryToolHref(slug, "cost-calculator");
-  }
-  return "/tools/software-cost-calculator/";
+  if (isNewToolCategorySlug(slug)) return categoryToolHref(slug, kind);
+  return null;
+}
+
+/** Dedicated finder for a published category; null when none exists. */
+export function categoryDecisionFinderHref(slug: string): string | null {
+  return categorySharedToolHref(slug, "finder");
+}
+
+export function categoryDecisionCostHref(slug: string): string | null {
+  return categorySharedToolHref(slug, "cost-calculator");
+}
+
+export function categoryShortName(slug: string): string {
+  if (slug === "crm") return "CRM";
+  if (slug === "sales-intelligence") return "Sales Intelligence";
+  if (isNewToolCategorySlug(slug)) return CATEGORY_TOOL_META[slug].shortName;
+  return slug
+    .split("-")
+    .map((w) => w.charAt(0).toUpperCase() + w.slice(1))
+    .join(" ");
+}
+
+export function categorySoftwarePhrase(slug: string): string {
+  if (slug === "crm") return "CRM software";
+  if (slug === "sales-intelligence") return "sales intelligence software";
+  if (isNewToolCategorySlug(slug)) return CATEGORY_TOOL_META[slug].softwarePhrase;
+  return `${categoryShortName(slug)} software`;
+}
+
+export function categoryFinderCtaLabel(slug: string): string {
+  if (slug === "crm") return "Find My CRM";
+  return `Find ${categoryShortName(slug)}`;
+}
+
+/** Best-page / related-tool seed paths for a category (indexable tools only). */
+export function categoryRelatedToolPaths(slug: string): string[] {
+  const kinds: CategoryToolKind[] = [
+    "finder",
+    "cost-calculator",
+    "requirements-builder",
+    "readiness-assessment",
+  ];
+  return kinds
+    .map((kind) => categorySharedToolHref(slug, kind))
+    .filter((href): href is string => Boolean(href));
 }
 
 export function categoryBestHref(slug: NewToolCategorySlug): string {

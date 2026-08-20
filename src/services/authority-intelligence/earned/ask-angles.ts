@@ -1,35 +1,27 @@
 /**
  * Build actionable request/submit guidance for earned opportunities.
  * Does not send outreach — drafts human-ready ask copy only.
+ *
+ * Page titles come from the live linkable inventory (tools registry +
+ * resources seed + curated guides) so asks stay aligned with published pages.
  */
+
+import { inventoryLinkableAssets } from "../linkable-assets";
 
 const SITE_ORIGIN = "https://www.softwareglimpse.com";
 
-const PAGE_NAMES: Record<string, string> = {
-  "/tools/crm-finder/": "CRM Finder",
-  "/tools/crm-cost-calculator/": "CRM Cost Calculator",
-  "/tools/crm-tco-calculator/": "CRM TCO Calculator",
-  "/tools/crm-vendor-scorecard/": "CRM Vendor Scorecard",
-  "/tools/crm-requirements-builder/": "CRM Requirements Builder",
-  "/tools/crm-implementation-planner/": "CRM Implementation Planner",
-  "/tools/crm-migration-planner/": "CRM Migration Planner",
-  "/resources/crm-evaluation-checklist/": "CRM Evaluation Checklist",
-  "/resources/crm-vendor-scorecard/": "CRM Vendor Scorecard (download)",
-  "/resources/crm-requirements-template/": "CRM Requirements Template",
-  "/resources/crm-implementation-checklist/": "CRM Implementation Checklist",
-  "/resources/crm-migration-checklist/": "CRM Migration Checklist",
-  "/resources/crm-data-migration-template/": "CRM Data Migration Template",
-  "/resources/crm-field-mapping-template/": "CRM Field Mapping Template",
-  "/resources/crm-rfp-template/": "CRM RFP Template",
-  "/resources/crm-demo-checklist/": "CRM Demo Checklist",
-  "/resources/crm-training-plan/": "CRM Training Plan",
-  "/guides/how-to-choose-crm/": "How to Choose a CRM",
-  "/guides/what-is-crm/": "What is CRM?",
-  "/guides/crm-glossary/": "CRM Glossary",
-  "/guides/crm-vs-spreadsheet/": "CRM vs Spreadsheet",
-  "/methodology/": "SoftwareGlimpse methodology",
-  "/compare/": "CRM comparison research",
-};
+function buildPageNames(): Record<string, string> {
+  const names: Record<string, string> = {
+    "/methodology/": "SoftwareGlimpse methodology",
+    "/compare/": "CRM comparison research",
+  };
+  for (const asset of inventoryLinkableAssets()) {
+    if (asset.path && asset.name) names[asset.path] = asset.name;
+  }
+  return names;
+}
+
+const PAGE_NAMES = buildPageNames();
 
 export function absoluteSgUrl(path?: string): string | undefined {
   if (!path) return undefined;
@@ -39,7 +31,7 @@ export function absoluteSgUrl(path?: string): string | undefined {
 }
 
 export function sgPageName(path?: string): string {
-  if (!path) return "a relevant SoftwareGlimpse CRM resource";
+  if (!path) return "a relevant SoftwareGlimpse buyer resource";
   return PAGE_NAMES[path] ?? path;
 }
 

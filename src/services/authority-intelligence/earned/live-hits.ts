@@ -1,13 +1,19 @@
 /**
- * Live-verified earned-backlink search hits (2026-08-15).
- * Every URL below was observed in live web search on that date — do not invent hits.
+ * Live-verified earned-backlink search hits.
+ * Base catalog verified 2026-08-15; refreshed 2026-08-20 for multi-category
+ * inventory (CRM + SI + marketing + PM + HR + cross-category tools/resources).
+ * Every URL was observed in live web search — do not invent hits.
  */
 
 import type { LiveSearchHit } from "./types";
 
-export const EARNED_LIVE_HITS_VERIFIED_AT = "2026-08-15T08:30:00.000Z";
+/** Latest full live-search refresh timestamp */
+export const EARNED_LIVE_HITS_VERIFIED_AT = "2026-08-20T10:00:00.000Z";
 
-const V = EARNED_LIVE_HITS_VERIFIED_AT;
+/** Original CRM catalog verification (kept for historical evidence notes) */
+const V0 = "2026-08-15T08:30:00.000Z";
+/** Alias used by the 2026-08-15 catalog entries below */
+const V = V0;
 
 export const EARNED_LIVE_QUERIES_RUN: string[] = [
   "awesome CRM systems resources templates",
@@ -30,6 +36,15 @@ export const EARNED_LIVE_QUERIES_RUN: string[] = [
   "softwareglimpse.com CRM mention",
   "CRM evaluation checklist complementary resources",
   "CRM deployment checklist HubSpot Pipedrive",
+  // 2026-08-20 multi-category refresh
+  "sales intelligence tools resources roundup checklist evaluation 2026",
+  "how to choose a sales intelligence platform 2026",
+  "project management software evaluation criteria scorecard",
+  "marketing software evaluation checklist vendor scorecard",
+  "SaaS vendor evaluation scorecard template",
+  "HR software evaluation checklist OR RFP scorecard",
+  "CRM business case template OR CRM ROI calculator resources",
+  "CRM readiness assessment complementary resources",
 ];
 
 export const EARNED_LIVE_HITS: LiveSearchHit[] = [
@@ -202,8 +217,8 @@ export const EARNED_LIVE_HITS: LiveSearchHit[] = [
     pageSummary:
       "SMB-focused CRM implementation checklist guide covering rollout steps and readiness.",
     whyTheyMightLink:
-      "Guide teaches implementation sequencing; SoftwareGlimpse’s downloadable implementation checklist and planner are ready-to-use artifacts that match the article’s SMB audience and checklist framing.",
-    relevantSgPage: "/resources/crm-implementation-checklist/",
+      "Guide teaches implementation sequencing and readiness; SoftwareGlimpse’s free CRM Readiness Assessment plus implementation checklist give SMB readers a scored prep step before rollout.",
+    relevantSgPage: "/tools/crm-readiness-assessment/",
     seoValue: "good",
     referralValue: "strong",
     difficulty: "moderate",
@@ -1261,8 +1276,8 @@ export const EARNED_LIVE_HITS: LiveSearchHit[] = [
     pageSummary:
       "Pipedrive CRM checklist resource for buyers and implementers within Pipedrive’s resource hub.",
     whyTheyMightLink:
-      "Vendor resource hubs sometimes link vendor-neutral planning tools; SoftwareGlimpse’s evaluation checklist and cost calculator help readers prepare before committing to any CRM—including Pipedrive.",
-    relevantSgPage: "/resources/crm-evaluation-checklist/",
+      "Vendor resource hubs sometimes link vendor-neutral planning tools; SoftwareGlimpse’s CRM Readiness Assessment and evaluation checklist help readers prepare before committing to any CRM—including Pipedrive.",
+    relevantSgPage: "/tools/crm-readiness-assessment/",
     seoValue: "excellent",
     referralValue: "strong",
     difficulty: "hard",
