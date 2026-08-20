@@ -91,6 +91,8 @@ export function defaultOgImagePath(): string {
   return "/og/default.png";
 }
 
+/** Absolute OG image URL — must NOT use trailing-slash page canonicalization. */
 export function defaultOgImageUrl(): string {
-  return canonicalUrl(defaultOgImagePath());
+  const base = getSiteUrl().replace(/\/$/, "");
+  return `${base}${defaultOgImagePath()}`;
 }

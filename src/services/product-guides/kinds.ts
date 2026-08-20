@@ -75,6 +75,11 @@ function preferGuideVisual(baseSlug: string, suffix: string): string {
   if (existsSync(publicGuideAsset(v4))) return v4;
   const coverV4 = `/guides/${baseSlug}-cover-v4.png`;
   if (existsSync(publicGuideAsset(coverV4))) return coverV4;
+  // Vercel builds do not include public/guides (served from Blob). Prefer cover —
+  // it was generated more completely than diagrams; missing diagram URLs 404.
+  if (process.env.VERCEL === "1" || process.env.BLOB_MEDIA_REWRITES === "1") {
+    return coverV4;
+  }
   return v4;
 }
 
@@ -100,11 +105,16 @@ export function productGuidePanelSrc(
 ): string {
   const base = productGuideSlug(productSlug, kind);
   const step = `/guides/${base}-step-v4-${panel}.png`;
-  // Local (and CI with assets checked out): prefer unique step art when present.
   if (existsSync(publicGuideAsset(step))) return step;
-  // Vercel builds do not ship public/guides (Blob-hosted). Do not emit step URLs
-  // that were never uploaded — fall back to the diagram path Blob does serve.
-  return `/guides/${base}-diagram-v4.png`;
+  const diagram = `/guides/${base}-diagram-v4.png`;
+  if (existsSync(publicGuideAsset(diagram))) return diagram;
+  const cover = `/guides/${base}-cover-v4.png`;
+  if (existsSync(publicGuideAsset(cover))) return cover;
+  // Blob-hosted deploys: cover is the safest public URL when steps/diagrams absent.
+  if (process.env.VERCEL === "1" || process.env.BLOB_MEDIA_REWRITES === "1") {
+    return cover;
+  }
+  return diagram;
 }
 
 export const CRM_PRODUCT_GUIDE_KIND_CONFIG: Record<
