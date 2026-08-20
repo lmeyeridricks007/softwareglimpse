@@ -1,0 +1,822 @@
+{
+  "id": "wf-software-onboarding-content-activecampaign-1786686379848",
+  "workflowId": "software-onboarding-content",
+  "workflowVersion": "1.0.0",
+  "name": "Software Onboarding Content: activecampaign",
+  "targetType": "software",
+  "targetId": "activecampaign",
+  "status": "completed-with-warnings",
+  "steps": [
+    {
+      "id": "software-onboarding",
+      "definitionStepId": "software-onboarding",
+      "handler": "software-onboarding",
+      "label": "Software onboarding",
+      "status": "completed",
+      "required": true,
+      "failurePolicy": "block-workflow",
+      "attempt": 1,
+      "maxAttempts": 2,
+      "dependsOn": [],
+      "priority": "critical",
+      "config": {
+        "maxAutomaticRevisions": 1,
+        "expandFromContentPlan": false,
+        "expandKind": "none",
+        "stopAfterApproval": true,
+        "allowNormalizedFacts": false,
+        "optionalWhenBlocked": false,
+        "forceTransientFailOnce": false
+      },
+      "inputRefs": {},
+      "outputRefs": {
+        "softwareOnboardingRunId": "onboard-activecampaign-1786686345974"
+      },
+      "blockers": [],
+      "warnings": [],
+      "startedAt": "2026-08-14T05:46:20.138Z",
+      "completedAt": "2026-08-14T05:46:20.171Z",
+      "revisionAttempts": 0
+    },
+    {
+      "id": "content-plan",
+      "definitionStepId": "content-plan",
+      "handler": "content-plan",
+      "label": "Content plan",
+      "status": "completed",
+      "required": true,
+      "failurePolicy": "block-workflow",
+      "attempt": 1,
+      "maxAttempts": 2,
+      "dependsOn": [
+        "software-onboarding"
+      ],
+      "priority": "high",
+      "config": {
+        "maxAutomaticRevisions": 1,
+        "expandFromContentPlan": false,
+        "expandKind": "none",
+        "stopAfterApproval": true,
+        "allowNormalizedFacts": false,
+        "optionalWhenBlocked": false,
+        "forceTransientFailOnce": false
+      },
+      "inputRefs": {},
+      "outputRefs": {
+        "softwareOnboardingRunId": "onboard-activecampaign-1786686345974",
+        "comparisonTargets": "activecampaign-vs-hubspot,activecampaign-vs-keap,activecampaign-vs-pipedrive",
+        "pageCandidateCount": "9"
+      },
+      "blockers": [],
+      "warnings": [],
+      "startedAt": "2026-08-14T05:46:20.172Z",
+      "completedAt": "2026-08-14T05:46:20.198Z",
+      "revisionAttempts": 0
+    },
+    {
+      "id": "software-review",
+      "definitionStepId": "software-review",
+      "handler": "agent-run",
+      "label": "Software Review",
+      "status": "completed",
+      "required": true,
+      "failurePolicy": "block-workflow",
+      "attempt": 1,
+      "maxAttempts": 2,
+      "dependsOn": [
+        "content-plan"
+      ],
+      "priority": "high",
+      "config": {
+        "agentId": "software-review-agent",
+        "targetSlug": "activecampaign",
+        "maxAutomaticRevisions": 1,
+        "expandFromContentPlan": false,
+        "expandKind": "none",
+        "stopAfterApproval": true,
+        "allowNormalizedFacts": false,
+        "optionalWhenBlocked": false,
+        "forceTransientFailOnce": false
+      },
+      "inputRefs": {},
+      "outputRefs": {
+        "draftId": "draft-deterministic-v1-software-review-agent-activecampaign-2026-08-14T05-46-20-230Z",
+        "qaStatus": "pass",
+        "agentId": "software-review-agent",
+        "target": "activecampaign"
+      },
+      "inputSnapshot": {
+        "researchFactIds": [
+          "fact-activecampaign-pricing.hasFreePlan",
+          "fact-activecampaign-pricing.hasFreeTrial",
+          "fact-activecampaign-pricing.startingPriceMonthly",
+          "fact-activecampaign-pricing.currency",
+          "fact-activecampaign-pricing.model",
+          "fact-activecampaign-pricing.plans.starter",
+          "fact-activecampaign-pricing.plans.plus",
+          "fact-activecampaign-pricing.plans.professional",
+          "fact-activecampaign-pricing.plans.enterprise",
+          "fact-activecampaign-features.contact-management",
+          "fact-activecampaign-features.lead-management",
+          "fact-activecampaign-features.pipeline-management",
+          "fact-activecampaign-features.deal-management",
+          "fact-activecampaign-features.email-sync",
+          "fact-activecampaign-features.workflow-automation",
+          "fact-activecampaign-features.sales-automation",
+          "fact-activecampaign-features.reporting",
+          "fact-activecampaign-features.forecasting",
+          "fact-activecampaign-features.custom-fields",
+          "fact-activecampaign-features.custom-pipelines",
+          "fact-activecampaign-features.mobile-app",
+          "fact-activecampaign-features.ai-assistance",
+          "fact-activecampaign-features.integrations",
+          "fact-activecampaign-positioning.summary",
+          "fact-activecampaign-ai.email-generation",
+          "fact-activecampaign-ai.automation",
+          "fact-activecampaign-ai.recommendations"
+        ],
+        "methodologySlug": "crm-editorial",
+        "methodologyVersion": "1.0.0",
+        "agentVersion": "1.0.0",
+        "contextBuiltAt": "2026-08-14T05:46:20.225Z"
+      },
+      "blockers": [],
+      "warnings": [],
+      "agentTaskId": "exec-software-review-agent-activecampaign-1786686380200",
+      "draftId": "draft-deterministic-v1-software-review-agent-activecampaign-2026-08-14T05-46-20-230Z",
+      "startedAt": "2026-08-14T05:46:20.199Z",
+      "completedAt": "2026-08-14T05:46:20.238Z",
+      "revisionAttempts": 0
+    },
+    {
+      "id": "pricing-page",
+      "definitionStepId": "pricing-page",
+      "handler": "agent-run",
+      "label": "Pricing Page",
+      "status": "completed-with-warning",
+      "required": false,
+      "failurePolicy": "continue-with-warning",
+      "attempt": 1,
+      "maxAttempts": 2,
+      "dependsOn": [
+        "content-plan"
+      ],
+      "priority": "normal",
+      "config": {
+        "agentId": "pricing-page-agent",
+        "targetSlug": "activecampaign",
+        "maxAutomaticRevisions": 1,
+        "expandFromContentPlan": false,
+        "expandKind": "none",
+        "stopAfterApproval": true,
+        "allowNormalizedFacts": false,
+        "optionalWhenBlocked": true,
+        "forceTransientFailOnce": false
+      },
+      "inputRefs": {},
+      "outputRefs": {
+        "draftId": "draft-deterministic-v1-pricing-page-agent-activecampaign-2026-08-14T05-46-20-289Z-rev-1786686380301",
+        "qaStatus": "fail"
+      },
+      "blockers": [],
+      "warnings": [
+        "QA still failing after revision: UNVERIFIED_NUMBER",
+        "Manually advanced: optional pricing-page QA (UNVERIFIED_NUMBER / unverified) during CRM batch onboard"
+      ],
+      "agentTaskId": "exec-pricing-page-agent-activecampaign-1786686380283",
+      "draftId": "draft-deterministic-v1-pricing-page-agent-activecampaign-2026-08-14T05-46-20-289Z-rev-1786686380301",
+      "startedAt": "2026-08-14T05:46:20.282Z",
+      "completedAt": "2026-08-14T05:46:20.304Z",
+      "revisionAttempts": 1
+    },
+    {
+      "id": "alternatives",
+      "definitionStepId": "alternatives",
+      "handler": "agent-run",
+      "label": "Alternatives",
+      "status": "completed",
+      "required": false,
+      "failurePolicy": "continue-with-warning",
+      "attempt": 1,
+      "maxAttempts": 2,
+      "dependsOn": [
+        "content-plan"
+      ],
+      "priority": "normal",
+      "config": {
+        "agentId": "alternatives-agent",
+        "targetSlug": "activecampaign",
+        "maxAutomaticRevisions": 1,
+        "expandFromContentPlan": false,
+        "expandKind": "none",
+        "stopAfterApproval": true,
+        "allowNormalizedFacts": false,
+        "optionalWhenBlocked": true,
+        "forceTransientFailOnce": false
+      },
+      "inputRefs": {},
+      "outputRefs": {
+        "draftId": "draft-deterministic-v1-alternatives-agent-activecampaign-2026-08-14T05-46-20-246Z",
+        "qaStatus": "pass",
+        "agentId": "alternatives-agent",
+        "target": "activecampaign"
+      },
+      "inputSnapshot": {
+        "researchFactIds": [
+          "fact-activecampaign-pricing.hasFreePlan",
+          "fact-activecampaign-pricing.hasFreeTrial",
+          "fact-activecampaign-pricing.startingPriceMonthly",
+          "fact-activecampaign-pricing.currency",
+          "fact-activecampaign-pricing.model",
+          "fact-activecampaign-pricing.plans.starter",
+          "fact-activecampaign-pricing.plans.plus",
+          "fact-activecampaign-pricing.plans.professional",
+          "fact-activecampaign-pricing.plans.enterprise",
+          "fact-activecampaign-features.contact-management",
+          "fact-activecampaign-features.lead-management",
+          "fact-activecampaign-features.pipeline-management",
+          "fact-activecampaign-features.deal-management",
+          "fact-activecampaign-features.email-sync",
+          "fact-activecampaign-features.workflow-automation",
+          "fact-activecampaign-features.sales-automation",
+          "fact-activecampaign-features.reporting",
+          "fact-activecampaign-features.forecasting",
+          "fact-activecampaign-features.custom-fields",
+          "fact-activecampaign-features.custom-pipelines",
+          "fact-activecampaign-features.mobile-app",
+          "fact-activecampaign-features.ai-assistance",
+          "fact-activecampaign-features.integrations",
+          "fact-activecampaign-positioning.summary",
+          "fact-activecampaign-ai.email-generation",
+          "fact-activecampaign-ai.automation",
+          "fact-activecampaign-ai.recommendations"
+        ],
+        "methodologySlug": "crm-editorial",
+        "methodologyVersion": "1.0.0",
+        "agentVersion": "1.0.0",
+        "contextBuiltAt": "2026-08-14T05:46:20.245Z"
+      },
+      "blockers": [],
+      "warnings": [],
+      "agentTaskId": "exec-alternatives-agent-activecampaign-1786686380240",
+      "draftId": "draft-deterministic-v1-alternatives-agent-activecampaign-2026-08-14T05-46-20-246Z",
+      "startedAt": "2026-08-14T05:46:20.240Z",
+      "completedAt": "2026-08-14T05:46:20.248Z",
+      "revisionAttempts": 0
+    },
+    {
+      "id": "comparison:activecampaign-vs-hubspot",
+      "definitionStepId": "comparisons",
+      "handler": "agent-run",
+      "label": "Comparison activecampaign-vs-hubspot",
+      "status": "completed",
+      "required": false,
+      "failurePolicy": "continue-with-warning",
+      "attempt": 1,
+      "maxAttempts": 2,
+      "dependsOn": [
+        "content-plan"
+      ],
+      "priority": "normal",
+      "config": {
+        "agentId": "comparison-agent",
+        "targetSlug": "activecampaign-vs-hubspot",
+        "maxAutomaticRevisions": 1,
+        "expandFromContentPlan": true,
+        "expandKind": "comparisons",
+        "stopAfterApproval": true,
+        "allowNormalizedFacts": false,
+        "optionalWhenBlocked": true,
+        "forceTransientFailOnce": false
+      },
+      "expansionKey": "activecampaign-vs-hubspot",
+      "inputRefs": {},
+      "outputRefs": {
+        "draftId": "draft-deterministic-v1-comparison-agent-activecampaign-vs-hubspot-2026-08-14T05-46-20-257Z",
+        "qaStatus": "pass",
+        "agentId": "comparison-agent",
+        "target": "activecampaign-vs-hubspot"
+      },
+      "inputSnapshot": {
+        "researchFactIds": [],
+        "methodologySlug": "crm-editorial",
+        "methodologyVersion": "1.0.0",
+        "agentVersion": "1.0.0",
+        "contextBuiltAt": "2026-08-14T05:46:20.255Z"
+      },
+      "blockers": [],
+      "warnings": [],
+      "agentTaskId": "exec-comparison-agent-activecampaign-vs-hubspot-1786686380250",
+      "draftId": "draft-deterministic-v1-comparison-agent-activecampaign-vs-hubspot-2026-08-14T05-46-20-257Z",
+      "startedAt": "2026-08-14T05:46:20.249Z",
+      "completedAt": "2026-08-14T05:46:20.260Z",
+      "revisionAttempts": 0
+    },
+    {
+      "id": "comparison:activecampaign-vs-keap",
+      "definitionStepId": "comparisons",
+      "handler": "agent-run",
+      "label": "Comparison activecampaign-vs-keap",
+      "status": "completed",
+      "required": false,
+      "failurePolicy": "continue-with-warning",
+      "attempt": 1,
+      "maxAttempts": 2,
+      "dependsOn": [
+        "content-plan"
+      ],
+      "priority": "normal",
+      "config": {
+        "agentId": "comparison-agent",
+        "targetSlug": "activecampaign-vs-keap",
+        "maxAutomaticRevisions": 1,
+        "expandFromContentPlan": true,
+        "expandKind": "comparisons",
+        "stopAfterApproval": true,
+        "allowNormalizedFacts": false,
+        "optionalWhenBlocked": true,
+        "forceTransientFailOnce": false
+      },
+      "expansionKey": "activecampaign-vs-keap",
+      "inputRefs": {},
+      "outputRefs": {
+        "draftId": "draft-deterministic-v1-comparison-agent-activecampaign-vs-keap-2026-08-14T05-46-20-268Z",
+        "qaStatus": "pass",
+        "agentId": "comparison-agent",
+        "target": "activecampaign-vs-keap"
+      },
+      "inputSnapshot": {
+        "researchFactIds": [],
+        "methodologySlug": "crm-editorial",
+        "methodologyVersion": "1.0.0",
+        "agentVersion": "1.0.0",
+        "contextBuiltAt": "2026-08-14T05:46:20.267Z"
+      },
+      "blockers": [],
+      "warnings": [],
+      "agentTaskId": "exec-comparison-agent-activecampaign-vs-keap-1786686380261",
+      "draftId": "draft-deterministic-v1-comparison-agent-activecampaign-vs-keap-2026-08-14T05-46-20-268Z",
+      "startedAt": "2026-08-14T05:46:20.261Z",
+      "completedAt": "2026-08-14T05:46:20.271Z",
+      "revisionAttempts": 0
+    },
+    {
+      "id": "comparison:activecampaign-vs-pipedrive",
+      "definitionStepId": "comparisons",
+      "handler": "agent-run",
+      "label": "Comparison activecampaign-vs-pipedrive",
+      "status": "completed",
+      "required": false,
+      "failurePolicy": "continue-with-warning",
+      "attempt": 1,
+      "maxAttempts": 2,
+      "dependsOn": [
+        "content-plan"
+      ],
+      "priority": "normal",
+      "config": {
+        "agentId": "comparison-agent",
+        "targetSlug": "activecampaign-vs-pipedrive",
+        "maxAutomaticRevisions": 1,
+        "expandFromContentPlan": true,
+        "expandKind": "comparisons",
+        "stopAfterApproval": true,
+        "allowNormalizedFacts": false,
+        "optionalWhenBlocked": true,
+        "forceTransientFailOnce": false
+      },
+      "expansionKey": "activecampaign-vs-pipedrive",
+      "inputRefs": {},
+      "outputRefs": {
+        "draftId": "draft-deterministic-v1-comparison-agent-activecampaign-vs-pipedrive-2026-08-14T05-46-20-278Z",
+        "qaStatus": "pass",
+        "agentId": "comparison-agent",
+        "target": "activecampaign-vs-pipedrive"
+      },
+      "inputSnapshot": {
+        "researchFactIds": [],
+        "methodologySlug": "crm-editorial",
+        "methodologyVersion": "1.0.0",
+        "agentVersion": "1.0.0",
+        "contextBuiltAt": "2026-08-14T05:46:20.277Z"
+      },
+      "blockers": [],
+      "warnings": [],
+      "agentTaskId": "exec-comparison-agent-activecampaign-vs-pipedrive-1786686380273",
+      "draftId": "draft-deterministic-v1-comparison-agent-activecampaign-vs-pipedrive-2026-08-14T05-46-20-278Z",
+      "startedAt": "2026-08-14T05:46:20.272Z",
+      "completedAt": "2026-08-14T05:46:20.281Z",
+      "revisionAttempts": 0
+    },
+    {
+      "id": "internal-links",
+      "definitionStepId": "internal-links",
+      "handler": "internal-link",
+      "label": "Internal Link Plan",
+      "status": "completed",
+      "required": false,
+      "failurePolicy": "continue-with-warning",
+      "attempt": 1,
+      "maxAttempts": 2,
+      "dependsOn": [
+        "software-review"
+      ],
+      "priority": "low",
+      "config": {
+        "agentId": "internal-link-agent",
+        "maxAutomaticRevisions": 1,
+        "expandFromContentPlan": false,
+        "expandKind": "none",
+        "stopAfterApproval": true,
+        "allowNormalizedFacts": false,
+        "optionalWhenBlocked": false,
+        "forceTransientFailOnce": false
+      },
+      "inputRefs": {},
+      "outputRefs": {
+        "draftId": "draft-deterministic-v1-internal-link-agent-activecampaign-2026-08-14T05-47-44-429Z",
+        "qaStatus": "pass",
+        "agentId": "internal-link-agent",
+        "target": "activecampaign"
+      },
+      "inputSnapshot": {
+        "researchFactIds": [
+          "fact-activecampaign-pricing.hasFreePlan",
+          "fact-activecampaign-pricing.hasFreeTrial",
+          "fact-activecampaign-pricing.startingPriceMonthly",
+          "fact-activecampaign-pricing.currency",
+          "fact-activecampaign-pricing.model",
+          "fact-activecampaign-pricing.plans.starter",
+          "fact-activecampaign-pricing.plans.plus",
+          "fact-activecampaign-pricing.plans.professional",
+          "fact-activecampaign-pricing.plans.enterprise",
+          "fact-activecampaign-features.contact-management",
+          "fact-activecampaign-features.lead-management",
+          "fact-activecampaign-features.pipeline-management",
+          "fact-activecampaign-features.deal-management",
+          "fact-activecampaign-features.email-sync",
+          "fact-activecampaign-features.workflow-automation",
+          "fact-activecampaign-features.sales-automation",
+          "fact-activecampaign-features.reporting",
+          "fact-activecampaign-features.forecasting",
+          "fact-activecampaign-features.custom-fields",
+          "fact-activecampaign-features.custom-pipelines",
+          "fact-activecampaign-features.mobile-app",
+          "fact-activecampaign-features.ai-assistance",
+          "fact-activecampaign-features.integrations",
+          "fact-activecampaign-positioning.summary",
+          "fact-activecampaign-ai.email-generation",
+          "fact-activecampaign-ai.automation",
+          "fact-activecampaign-ai.recommendations"
+        ],
+        "methodologySlug": "crm-editorial",
+        "methodologyVersion": "1.0.0",
+        "agentVersion": "1.0.0",
+        "contextBuiltAt": "2026-08-14T05:47:44.425Z"
+      },
+      "blockers": [],
+      "warnings": [],
+      "agentTaskId": "exec-internal-link-agent-activecampaign-1786686464389",
+      "draftId": "draft-deterministic-v1-internal-link-agent-activecampaign-2026-08-14T05-47-44-429Z",
+      "startedAt": "2026-08-14T05:47:44.387Z",
+      "completedAt": "2026-08-14T05:47:44.436Z",
+      "revisionAttempts": 0
+    },
+    {
+      "id": "finder-readiness",
+      "definitionStepId": "finder-readiness",
+      "handler": "update-recommendation-readiness",
+      "label": "Finder readiness",
+      "status": "completed",
+      "required": false,
+      "failurePolicy": "continue",
+      "attempt": 1,
+      "maxAttempts": 2,
+      "dependsOn": [
+        "content-plan"
+      ],
+      "priority": "low",
+      "config": {
+        "maxAutomaticRevisions": 1,
+        "expandFromContentPlan": false,
+        "expandKind": "none",
+        "stopAfterApproval": true,
+        "allowNormalizedFacts": false,
+        "optionalWhenBlocked": false,
+        "forceTransientFailOnce": false
+      },
+      "inputRefs": {},
+      "outputRefs": {
+        "finderReadiness": "checked"
+      },
+      "blockers": [],
+      "warnings": [],
+      "startedAt": "2026-08-14T05:47:29.632Z",
+      "completedAt": "2026-08-14T05:47:29.633Z",
+      "revisionAttempts": 0
+    },
+    {
+      "id": "editorial-approval",
+      "definitionStepId": "editorial-approval",
+      "handler": "approval-check",
+      "label": "Editorial approval",
+      "status": "completed",
+      "required": true,
+      "failurePolicy": "manual-review",
+      "attempt": 2,
+      "maxAttempts": 2,
+      "dependsOn": [
+        "software-review"
+      ],
+      "priority": "critical",
+      "config": {
+        "approvalType": "editorial",
+        "maxAutomaticRevisions": 1,
+        "expandFromContentPlan": false,
+        "expandKind": "none",
+        "stopAfterApproval": true,
+        "allowNormalizedFacts": false,
+        "optionalWhenBlocked": false,
+        "forceTransientFailOnce": false
+      },
+      "inputRefs": {},
+      "outputRefs": {
+        "approvalId": "appr-wf-software-onboarding-content-activecampaign-1786686379848-software-review",
+        "draftId": "draft-deterministic-v1-software-review-agent-activecampaign-2026-08-14T05-46-20-230Z",
+        "approvalIds": "appr-wf-software-onboarding-content-activecampaign-1786686379848-software-review"
+      },
+      "blockers": [],
+      "warnings": [
+        "Approval received — resuming",
+        "6 optional draft(s) may still need separate editorial review"
+      ],
+      "approvalId": "appr-wf-software-onboarding-content-activecampaign-1786686379848-software-review",
+      "startedAt": "2026-08-14T05:50:07.766Z",
+      "completedAt": "2026-08-14T05:50:07.839Z",
+      "revisionAttempts": 0
+    },
+    {
+      "id": "pre-publish-validation",
+      "definitionStepId": "pre-publish-validation",
+      "handler": "pre-publish-validation",
+      "label": "Pre-publish validation",
+      "status": "completed",
+      "required": true,
+      "failurePolicy": "block-workflow",
+      "attempt": 1,
+      "maxAttempts": 2,
+      "dependsOn": [
+        "editorial-approval"
+      ],
+      "priority": "critical",
+      "config": {
+        "maxAutomaticRevisions": 1,
+        "expandFromContentPlan": false,
+        "expandKind": "none",
+        "stopAfterApproval": true,
+        "allowNormalizedFacts": false,
+        "optionalWhenBlocked": false,
+        "forceTransientFailOnce": false
+      },
+      "inputRefs": {},
+      "outputRefs": {
+        "publishState": "READY_TO_PUBLISH"
+      },
+      "blockers": [],
+      "warnings": [
+        "stopAfterApproval: workflow will not publish automatically"
+      ],
+      "startedAt": "2026-08-14T05:50:07.842Z",
+      "completedAt": "2026-08-14T05:50:08.175Z",
+      "revisionAttempts": 0
+    }
+  ],
+  "history": [
+    {
+      "at": "2026-08-14T05:46:20.135Z",
+      "event": "workflow_created",
+      "message": "Created software-onboarding-content:v1.0.0"
+    },
+    {
+      "at": "2026-08-14T05:46:20.137Z",
+      "event": "workflow_started",
+      "message": "Workflow execution started"
+    },
+    {
+      "at": "2026-08-14T05:46:20.138Z",
+      "event": "workflow_step_started",
+      "stepId": "software-onboarding",
+      "message": "Started Software onboarding"
+    },
+    {
+      "at": "2026-08-14T05:46:20.171Z",
+      "event": "workflow_step_completed",
+      "stepId": "software-onboarding",
+      "message": "Reused onboarding run onboard-activecampaign-1786686345974 (review-required)"
+    },
+    {
+      "at": "2026-08-14T05:46:20.172Z",
+      "event": "workflow_step_started",
+      "stepId": "content-plan",
+      "message": "Started Content plan"
+    },
+    {
+      "at": "2026-08-14T05:46:20.198Z",
+      "event": "workflow_step_completed",
+      "stepId": "content-plan",
+      "message": "Content plan from onboarding onboard-activecampaign-1786686345974 (9 candidates)"
+    },
+    {
+      "at": "2026-08-14T05:46:20.199Z",
+      "event": "workflow_step_started",
+      "stepId": "software-review",
+      "message": "Started Software Review"
+    },
+    {
+      "at": "2026-08-14T05:46:20.238Z",
+      "event": "workflow_step_completed",
+      "stepId": "software-review",
+      "message": "Agent software-review-agent → draft draft-deterministic-v1-software-review-agent-activecampaign-2026-08-14T05-46-20-230Z (qa=pass)"
+    },
+    {
+      "at": "2026-08-14T05:46:20.239Z",
+      "event": "workflow_step_started",
+      "stepId": "alternatives",
+      "message": "Started Alternatives"
+    },
+    {
+      "at": "2026-08-14T05:46:20.248Z",
+      "event": "workflow_step_completed",
+      "stepId": "alternatives",
+      "message": "Agent alternatives-agent → draft draft-deterministic-v1-alternatives-agent-activecampaign-2026-08-14T05-46-20-246Z (qa=pass)"
+    },
+    {
+      "at": "2026-08-14T05:46:20.249Z",
+      "event": "workflow_step_started",
+      "stepId": "comparison:activecampaign-vs-hubspot",
+      "message": "Started Comparison activecampaign-vs-hubspot"
+    },
+    {
+      "at": "2026-08-14T05:46:20.260Z",
+      "event": "workflow_step_completed",
+      "stepId": "comparison:activecampaign-vs-hubspot",
+      "message": "Agent comparison-agent → draft draft-deterministic-v1-comparison-agent-activecampaign-vs-hubspot-2026-08-14T05-46-20-257Z (qa=pass)"
+    },
+    {
+      "at": "2026-08-14T05:46:20.261Z",
+      "event": "workflow_step_started",
+      "stepId": "comparison:activecampaign-vs-keap",
+      "message": "Started Comparison activecampaign-vs-keap"
+    },
+    {
+      "at": "2026-08-14T05:46:20.271Z",
+      "event": "workflow_step_completed",
+      "stepId": "comparison:activecampaign-vs-keap",
+      "message": "Agent comparison-agent → draft draft-deterministic-v1-comparison-agent-activecampaign-vs-keap-2026-08-14T05-46-20-268Z (qa=pass)"
+    },
+    {
+      "at": "2026-08-14T05:46:20.272Z",
+      "event": "workflow_step_started",
+      "stepId": "comparison:activecampaign-vs-pipedrive",
+      "message": "Started Comparison activecampaign-vs-pipedrive"
+    },
+    {
+      "at": "2026-08-14T05:46:20.281Z",
+      "event": "workflow_step_completed",
+      "stepId": "comparison:activecampaign-vs-pipedrive",
+      "message": "Agent comparison-agent → draft draft-deterministic-v1-comparison-agent-activecampaign-vs-pipedrive-2026-08-14T05-46-20-278Z (qa=pass)"
+    },
+    {
+      "at": "2026-08-14T05:46:20.282Z",
+      "event": "workflow_step_started",
+      "stepId": "pricing-page",
+      "message": "Started Pricing Page"
+    },
+    {
+      "at": "2026-08-14T05:46:20.304Z",
+      "event": "workflow_step_completed",
+      "stepId": "pricing-page",
+      "message": "QA fail after one automatic revision → review-required"
+    },
+    {
+      "at": "2026-08-14T05:47:29.617Z",
+      "event": "workflow_resumed",
+      "message": "Workflow resumed"
+    },
+    {
+      "at": "2026-08-14T05:47:29.619Z",
+      "event": "workflow_started",
+      "message": "Workflow execution started"
+    },
+    {
+      "at": "2026-08-14T05:47:29.631Z",
+      "event": "workflow_step_started",
+      "stepId": "finder-readiness",
+      "message": "Started Finder readiness"
+    },
+    {
+      "at": "2026-08-14T05:47:29.633Z",
+      "event": "workflow_step_completed",
+      "stepId": "finder-readiness",
+      "message": "Finder readiness noted for activecampaign"
+    },
+    {
+      "at": "2026-08-14T05:47:44.384Z",
+      "event": "workflow_resumed",
+      "message": "Workflow resumed"
+    },
+    {
+      "at": "2026-08-14T05:47:44.386Z",
+      "event": "workflow_started",
+      "message": "Workflow execution started"
+    },
+    {
+      "at": "2026-08-14T05:47:44.387Z",
+      "event": "workflow_step_started",
+      "stepId": "internal-links",
+      "message": "Started Internal Link Plan"
+    },
+    {
+      "at": "2026-08-14T05:47:44.436Z",
+      "event": "workflow_step_completed",
+      "stepId": "internal-links",
+      "message": "Agent internal-link-agent → draft draft-deterministic-v1-internal-link-agent-activecampaign-2026-08-14T05-47-44-429Z (qa=pass)"
+    },
+    {
+      "at": "2026-08-14T05:49:46.936Z",
+      "event": "workflow_resumed",
+      "message": "Workflow resumed"
+    },
+    {
+      "at": "2026-08-14T05:49:46.942Z",
+      "event": "workflow_started",
+      "message": "Workflow execution started"
+    },
+    {
+      "at": "2026-08-14T05:49:46.943Z",
+      "event": "workflow_step_started",
+      "stepId": "editorial-approval",
+      "message": "Started Editorial approval"
+    },
+    {
+      "at": "2026-08-14T05:49:47.012Z",
+      "event": "workflow_step_completed",
+      "stepId": "editorial-approval",
+      "message": "WAITING FOR EDITORIAL APPROVAL (appr-wf-software-onboarding-content-activecampaign-1786686379848-software-review)"
+    },
+    {
+      "at": "2026-08-14T05:50:07.761Z",
+      "event": "workflow_resumed",
+      "message": "Workflow resumed"
+    },
+    {
+      "at": "2026-08-14T05:50:07.763Z",
+      "event": "workflow_started",
+      "message": "Workflow execution started"
+    },
+    {
+      "at": "2026-08-14T05:50:07.765Z",
+      "event": "workflow_step_started",
+      "stepId": "editorial-approval",
+      "message": "Started Editorial approval"
+    },
+    {
+      "at": "2026-08-14T05:50:07.839Z",
+      "event": "workflow_step_completed",
+      "stepId": "editorial-approval",
+      "message": "Required editorial approvals satisfied"
+    },
+    {
+      "at": "2026-08-14T05:50:07.842Z",
+      "event": "workflow_step_started",
+      "stepId": "pre-publish-validation",
+      "message": "Started Pre-publish validation"
+    },
+    {
+      "at": "2026-08-14T05:50:08.175Z",
+      "event": "workflow_step_completed",
+      "stepId": "pre-publish-validation",
+      "message": "Pre-publish validation passed — READY TO PUBLISH (manual)"
+    },
+    {
+      "at": "2026-08-14T05:50:08.177Z",
+      "event": "workflow_completed",
+      "message": "Workflow completed-with-warnings"
+    }
+  ],
+  "options": {
+    "generateReview": true,
+    "generatePricing": true,
+    "generateAlternatives": true,
+    "generateComparisons": true,
+    "runInternalLinks": true,
+    "stopAfterApproval": true,
+    "allowNormalizedFacts": false,
+    "dryRun": false,
+    "maxComparisons": 3,
+    "skipOnboarding": false
+  },
+  "warnings": [],
+  "createdAt": "2026-08-14T05:46:20.135Z",
+  "updatedAt": "2026-08-14T05:50:08.177Z"
+}

@@ -1,0 +1,165 @@
+{
+  "id": "assessment-appdynamics-it-v1",
+  "productSlug": "appdynamics",
+  "methodologySlug": "it-development-editorial",
+  "methodologyVersion": "1.0.0",
+  "status": "approved",
+  "verdict": "AppDynamics: Choose AppDynamics when Cisco vCPU-priced APM (Premium $33, not $6 infra) is the job — not Datadog host modules by default. Scores use the IT & Development editorial methodology from first-party research as of 2026-08-18 — not hands-on product testing.",
+  "strengths": [
+    "Cisco APM / observability identity",
+    "Published Premium $33/vCPU APM-relevant floor",
+    "Infrastructure $6/vCPU and Enterprise $50 ladder",
+    "Enterprise admin-security posture",
+    "Clear cluster fit vs ITSM/git"
+  ],
+  "weaknesses": [
+    "Does not outrank Datadog",
+    "Easy to confuse $6 infra with $33 Premium",
+    "Cisco EA opacity",
+    "Medium pricing confidence",
+    "Not ITSM/git/hosting"
+  ],
+  "bestFor": [
+    "Cisco-aligned estates that will model vCPU Premium $33 (not $6 infra-only) as APM TCO",
+    "APM buyers comparing AppDynamics to Dynatrace DPS and Datadog modules",
+    "Teams already in a Cisco EA who will not self-serve Datadog tiles"
+  ],
+  "notIdealFor": [
+    "SMBs that need Datadog’s published $15/host Infrastructure Pro tile",
+    "High-cardinality event specialists (Honeycomb)",
+    "ITSM or on-call-only purchases"
+  ],
+  "tradeoffs": [
+    "Per-agent vs per-host vs per-seat vs per-GB pricing models",
+    "Module stacking and consumption overages vs single-SKU floors",
+    "Free tiers vs enterprise SSO/audit gates",
+    "Landscape-adjacent tools vs primary job-cluster peers on best pages"
+  ],
+  "recommendation": "Choose AppDynamics when Cisco vCPU-priced APM (Premium $33, not $6 infra) is the job — not Datadog host modules by default. Compare Datadog for the observability award path; Dynatrace for DPS full-stack; Honeycomb for high-cardinality traces.",
+  "editorialNotes": "IT Tier-B + ITSM SMB batch. Approved on it-development-editorial v1.0.0. membershipRole=primary. jobCluster=observability-monitoring. handsOnTesting=false. Affiliate economics excluded.",
+  "handsOnTesting": false,
+  "confidence": "medium",
+  "criterionAssessments": [
+    {
+      "criterionSlug": "ease-of-use",
+      "score": 7,
+      "rationale": "Enterprise APM plus Cisco SKU/EA confusion is heavier than Datadog host tiles. Not a lab test.",
+      "supportingFactIds": [
+        "fact-appdynamics-features.infrastructure-monitoring",
+        "fact-appdynamics-pricing.model"
+      ],
+      "confidence": "medium",
+      "status": "approved",
+      "reviewedAt": "2026-08-18T22:00:00.000Z",
+      "reviewer": "editorial"
+    },
+    {
+      "criterionSlug": "it-job-fit",
+      "score": 9,
+      "rationale": "Full-stack APM/observability — ranked with Datadog and Dynatrace, not PagerDuty or ServiceNow.",
+      "supportingFactIds": [
+        "fact-appdynamics-features.infrastructure-monitoring",
+        "fact-appdynamics-pricing.model"
+      ],
+      "confidence": "medium",
+      "status": "approved",
+      "reviewedAt": "2026-08-18T22:00:00.000Z",
+      "reviewer": "editorial"
+    },
+    {
+      "criterionSlug": "workflow-depth",
+      "score": 8,
+      "rationale": "APM plus infra packs are deep; held at 8 versus Datadog’s modular breadth and Dynatrace DPS.",
+      "supportingFactIds": [
+        "fact-appdynamics-features.apm-tracing",
+        "fact-appdynamics-pricing.model"
+      ],
+      "confidence": "medium",
+      "status": "approved",
+      "reviewedAt": "2026-08-18T22:00:00.000Z",
+      "reviewer": "editorial"
+    },
+    {
+      "criterionSlug": "integrations",
+      "score": 8,
+      "rationale": "Cloud, Cisco, and chat hooks are a published AppDynamics story.",
+      "supportingFactIds": [
+        "fact-appdynamics-features.analytics-reporting",
+        "fact-appdynamics-pricing.model",
+        "fact-appdynamics-positioning.vendorClaim"
+      ],
+      "confidence": "medium",
+      "status": "approved",
+      "reviewedAt": "2026-08-18T22:00:00.000Z",
+      "reviewer": "editorial"
+    },
+    {
+      "criterionSlug": "admin-security",
+      "score": 9,
+      "rationale": "Cisco enterprise security posture is a buying reason versus SMB observability tiles.",
+      "supportingFactIds": [
+        "fact-appdynamics-features.enterprise-security",
+        "fact-appdynamics-pricing.model"
+      ],
+      "confidence": "medium",
+      "status": "approved",
+      "reviewedAt": "2026-08-18T22:00:00.000Z",
+      "reviewer": "editorial"
+    },
+    {
+      "criterionSlug": "scalability",
+      "score": 9,
+      "rationale": "vCPU packs and Cisco EA estates scale; TCO follows vCPU and Premium vs Enterprise.",
+      "supportingFactIds": [
+        "fact-appdynamics-pricing.plans.infrastructure",
+        "fact-appdynamics-pricing.model",
+        "fact-appdynamics-pricing.plans.cisco-ea"
+      ],
+      "confidence": "medium",
+      "status": "approved",
+      "reviewedAt": "2026-08-18T22:00:00.000Z",
+      "reviewer": "editorial"
+    },
+    {
+      "criterionSlug": "value-for-money",
+      "score": 6,
+      "rationale": "$33/vCPU Premium is well above Datadog’s $15/host infra tile; EA opacity cuts value. Affiliate economics excluded.",
+      "supportingFactIds": [
+        "fact-appdynamics-pricing.hasFreePlan",
+        "fact-appdynamics-pricing.model",
+        "fact-appdynamics-pricing.startingPriceMonthly"
+      ],
+      "confidence": "medium",
+      "status": "approved",
+      "reviewedAt": "2026-08-18T22:00:00.000Z",
+      "reviewer": "editorial"
+    },
+    {
+      "criterionSlug": "ai-capabilities",
+      "score": 7,
+      "rationale": "Observability AI assist exists — scored as supporting, not a reason to skip Datadog.",
+      "supportingFactIds": [
+        "fact-appdynamics-features.itsm-ai",
+        "fact-appdynamics-pricing.model"
+      ],
+      "confidence": "medium",
+      "status": "approved",
+      "reviewedAt": "2026-08-18T22:00:00.000Z",
+      "reviewer": "editorial"
+    }
+  ],
+  "overallScore": 7.9,
+  "overallScoreRationale": "Weighted average of the eight IT editorial criteria using category weights (IT job fit 16, workflow depth 14, ease of use 12, integrations 12, admin/security 12, value 12, AI 12, scalability 10), rounded to 1 decimal. Products are scored inside their job cluster — ITSM, observability, source control, hosting panels, and web-data platforms are not forced into one undifferentiated ranking. Not a hands-on lab score, and affiliate economics are excluded.",
+  "scoreAudit": [
+    {
+      "at": "2026-08-18T22:00:00.000Z",
+      "actor": "editorial",
+      "change": "IT Tier-B + ITSM SMB onboarding; approved IT criteria with category weights; handsOnTesting=false",
+      "nextOverall": 7.9
+    }
+  ],
+  "reviewedAt": "2026-08-18T22:00:00.000Z",
+  "reviewer": "editorial",
+  "createdAt": "2026-08-18T22:00:00.000Z",
+  "updatedAt": "2026-08-18T22:00:00.000Z"
+}

@@ -1,0 +1,822 @@
+{
+  "id": "wf-software-onboarding-content-nutshell-1786686368600",
+  "workflowId": "software-onboarding-content",
+  "workflowVersion": "1.0.0",
+  "name": "Software Onboarding Content: nutshell",
+  "targetType": "software",
+  "targetId": "nutshell",
+  "status": "completed-with-warnings",
+  "steps": [
+    {
+      "id": "software-onboarding",
+      "definitionStepId": "software-onboarding",
+      "handler": "software-onboarding",
+      "label": "Software onboarding",
+      "status": "completed",
+      "required": true,
+      "failurePolicy": "block-workflow",
+      "attempt": 1,
+      "maxAttempts": 2,
+      "dependsOn": [],
+      "priority": "critical",
+      "config": {
+        "maxAutomaticRevisions": 1,
+        "expandFromContentPlan": false,
+        "expandKind": "none",
+        "stopAfterApproval": true,
+        "allowNormalizedFacts": false,
+        "optionalWhenBlocked": false,
+        "forceTransientFailOnce": false
+      },
+      "inputRefs": {},
+      "outputRefs": {
+        "softwareOnboardingRunId": "onboard-nutshell-1786686338029"
+      },
+      "blockers": [],
+      "warnings": [],
+      "startedAt": "2026-08-14T05:46:09.028Z",
+      "completedAt": "2026-08-14T05:46:09.072Z",
+      "revisionAttempts": 0
+    },
+    {
+      "id": "content-plan",
+      "definitionStepId": "content-plan",
+      "handler": "content-plan",
+      "label": "Content plan",
+      "status": "completed",
+      "required": true,
+      "failurePolicy": "block-workflow",
+      "attempt": 1,
+      "maxAttempts": 2,
+      "dependsOn": [
+        "software-onboarding"
+      ],
+      "priority": "high",
+      "config": {
+        "maxAutomaticRevisions": 1,
+        "expandFromContentPlan": false,
+        "expandKind": "none",
+        "stopAfterApproval": true,
+        "allowNormalizedFacts": false,
+        "optionalWhenBlocked": false,
+        "forceTransientFailOnce": false
+      },
+      "inputRefs": {},
+      "outputRefs": {
+        "softwareOnboardingRunId": "onboard-nutshell-1786686338029",
+        "comparisonTargets": "nutshell-vs-pipedrive,hubspot-vs-nutshell,keap-vs-nutshell",
+        "pageCandidateCount": "9"
+      },
+      "blockers": [],
+      "warnings": [],
+      "startedAt": "2026-08-14T05:46:09.074Z",
+      "completedAt": "2026-08-14T05:46:09.103Z",
+      "revisionAttempts": 0
+    },
+    {
+      "id": "software-review",
+      "definitionStepId": "software-review",
+      "handler": "agent-run",
+      "label": "Software Review",
+      "status": "completed",
+      "required": true,
+      "failurePolicy": "block-workflow",
+      "attempt": 1,
+      "maxAttempts": 2,
+      "dependsOn": [
+        "content-plan"
+      ],
+      "priority": "high",
+      "config": {
+        "agentId": "software-review-agent",
+        "targetSlug": "nutshell",
+        "maxAutomaticRevisions": 1,
+        "expandFromContentPlan": false,
+        "expandKind": "none",
+        "stopAfterApproval": true,
+        "allowNormalizedFacts": false,
+        "optionalWhenBlocked": false,
+        "forceTransientFailOnce": false
+      },
+      "inputRefs": {},
+      "outputRefs": {
+        "draftId": "draft-deterministic-v1-software-review-agent-nutshell-2026-08-14T05-46-09-151Z",
+        "qaStatus": "pass",
+        "agentId": "software-review-agent",
+        "target": "nutshell"
+      },
+      "inputSnapshot": {
+        "researchFactIds": [
+          "fact-nutshell-pricing.hasFreePlan",
+          "fact-nutshell-pricing.hasFreeTrial",
+          "fact-nutshell-pricing.startingPriceMonthly",
+          "fact-nutshell-pricing.currency",
+          "fact-nutshell-pricing.model",
+          "fact-nutshell-pricing.plans.foundation",
+          "fact-nutshell-pricing.plans.growth",
+          "fact-nutshell-pricing.plans.pro",
+          "fact-nutshell-pricing.plans.business",
+          "fact-nutshell-pricing.plans.enterprise",
+          "fact-nutshell-features.contact-management",
+          "fact-nutshell-features.lead-management",
+          "fact-nutshell-features.pipeline-management",
+          "fact-nutshell-features.deal-management",
+          "fact-nutshell-features.email-sync",
+          "fact-nutshell-features.workflow-automation",
+          "fact-nutshell-features.sales-automation",
+          "fact-nutshell-features.reporting",
+          "fact-nutshell-features.forecasting",
+          "fact-nutshell-features.custom-fields",
+          "fact-nutshell-features.custom-pipelines",
+          "fact-nutshell-features.mobile-app",
+          "fact-nutshell-features.ai-assistance",
+          "fact-nutshell-features.integrations",
+          "fact-nutshell-positioning.summary",
+          "fact-nutshell-ai.assistant",
+          "fact-nutshell-ai.email-generation"
+        ],
+        "methodologySlug": "crm-editorial",
+        "methodologyVersion": "1.0.0",
+        "agentVersion": "1.0.0",
+        "contextBuiltAt": "2026-08-14T05:46:09.146Z"
+      },
+      "blockers": [],
+      "warnings": [],
+      "agentTaskId": "exec-software-review-agent-nutshell-1786686369106",
+      "draftId": "draft-deterministic-v1-software-review-agent-nutshell-2026-08-14T05-46-09-151Z",
+      "startedAt": "2026-08-14T05:46:09.105Z",
+      "completedAt": "2026-08-14T05:46:09.159Z",
+      "revisionAttempts": 0
+    },
+    {
+      "id": "pricing-page",
+      "definitionStepId": "pricing-page",
+      "handler": "agent-run",
+      "label": "Pricing Page",
+      "status": "completed-with-warning",
+      "required": false,
+      "failurePolicy": "continue-with-warning",
+      "attempt": 1,
+      "maxAttempts": 2,
+      "dependsOn": [
+        "content-plan"
+      ],
+      "priority": "normal",
+      "config": {
+        "agentId": "pricing-page-agent",
+        "targetSlug": "nutshell",
+        "maxAutomaticRevisions": 1,
+        "expandFromContentPlan": false,
+        "expandKind": "none",
+        "stopAfterApproval": true,
+        "allowNormalizedFacts": false,
+        "optionalWhenBlocked": true,
+        "forceTransientFailOnce": false
+      },
+      "inputRefs": {},
+      "outputRefs": {
+        "draftId": "draft-deterministic-v1-pricing-page-agent-nutshell-2026-08-14T05-46-09-272Z-rev-1786686369281",
+        "qaStatus": "fail"
+      },
+      "blockers": [],
+      "warnings": [
+        "QA still failing after revision: UNVERIFIED_NUMBER",
+        "Manually advanced: optional pricing-page QA (UNVERIFIED_NUMBER / unverified) during CRM batch onboard"
+      ],
+      "agentTaskId": "exec-pricing-page-agent-nutshell-1786686369266",
+      "draftId": "draft-deterministic-v1-pricing-page-agent-nutshell-2026-08-14T05-46-09-272Z-rev-1786686369281",
+      "startedAt": "2026-08-14T05:46:09.265Z",
+      "completedAt": "2026-08-14T05:46:09.285Z",
+      "revisionAttempts": 1
+    },
+    {
+      "id": "alternatives",
+      "definitionStepId": "alternatives",
+      "handler": "agent-run",
+      "label": "Alternatives",
+      "status": "completed",
+      "required": false,
+      "failurePolicy": "continue-with-warning",
+      "attempt": 1,
+      "maxAttempts": 2,
+      "dependsOn": [
+        "content-plan"
+      ],
+      "priority": "normal",
+      "config": {
+        "agentId": "alternatives-agent",
+        "targetSlug": "nutshell",
+        "maxAutomaticRevisions": 1,
+        "expandFromContentPlan": false,
+        "expandKind": "none",
+        "stopAfterApproval": true,
+        "allowNormalizedFacts": false,
+        "optionalWhenBlocked": true,
+        "forceTransientFailOnce": false
+      },
+      "inputRefs": {},
+      "outputRefs": {
+        "draftId": "draft-deterministic-v1-alternatives-agent-nutshell-2026-08-14T05-46-09-167Z",
+        "qaStatus": "pass",
+        "agentId": "alternatives-agent",
+        "target": "nutshell"
+      },
+      "inputSnapshot": {
+        "researchFactIds": [
+          "fact-nutshell-pricing.hasFreePlan",
+          "fact-nutshell-pricing.hasFreeTrial",
+          "fact-nutshell-pricing.startingPriceMonthly",
+          "fact-nutshell-pricing.currency",
+          "fact-nutshell-pricing.model",
+          "fact-nutshell-pricing.plans.foundation",
+          "fact-nutshell-pricing.plans.growth",
+          "fact-nutshell-pricing.plans.pro",
+          "fact-nutshell-pricing.plans.business",
+          "fact-nutshell-pricing.plans.enterprise",
+          "fact-nutshell-features.contact-management",
+          "fact-nutshell-features.lead-management",
+          "fact-nutshell-features.pipeline-management",
+          "fact-nutshell-features.deal-management",
+          "fact-nutshell-features.email-sync",
+          "fact-nutshell-features.workflow-automation",
+          "fact-nutshell-features.sales-automation",
+          "fact-nutshell-features.reporting",
+          "fact-nutshell-features.forecasting",
+          "fact-nutshell-features.custom-fields",
+          "fact-nutshell-features.custom-pipelines",
+          "fact-nutshell-features.mobile-app",
+          "fact-nutshell-features.ai-assistance",
+          "fact-nutshell-features.integrations",
+          "fact-nutshell-positioning.summary",
+          "fact-nutshell-ai.assistant",
+          "fact-nutshell-ai.email-generation"
+        ],
+        "methodologySlug": "crm-editorial",
+        "methodologyVersion": "1.0.0",
+        "agentVersion": "1.0.0",
+        "contextBuiltAt": "2026-08-14T05:46:09.166Z"
+      },
+      "blockers": [],
+      "warnings": [],
+      "agentTaskId": "exec-alternatives-agent-nutshell-1786686369160",
+      "draftId": "draft-deterministic-v1-alternatives-agent-nutshell-2026-08-14T05-46-09-167Z",
+      "startedAt": "2026-08-14T05:46:09.160Z",
+      "completedAt": "2026-08-14T05:46:09.170Z",
+      "revisionAttempts": 0
+    },
+    {
+      "id": "comparison:nutshell-vs-pipedrive",
+      "definitionStepId": "comparisons",
+      "handler": "agent-run",
+      "label": "Comparison nutshell-vs-pipedrive",
+      "status": "completed",
+      "required": false,
+      "failurePolicy": "continue-with-warning",
+      "attempt": 1,
+      "maxAttempts": 2,
+      "dependsOn": [
+        "content-plan"
+      ],
+      "priority": "normal",
+      "config": {
+        "agentId": "comparison-agent",
+        "targetSlug": "nutshell-vs-pipedrive",
+        "maxAutomaticRevisions": 1,
+        "expandFromContentPlan": true,
+        "expandKind": "comparisons",
+        "stopAfterApproval": true,
+        "allowNormalizedFacts": false,
+        "optionalWhenBlocked": true,
+        "forceTransientFailOnce": false
+      },
+      "expansionKey": "nutshell-vs-pipedrive",
+      "inputRefs": {},
+      "outputRefs": {
+        "draftId": "draft-deterministic-v1-comparison-agent-nutshell-vs-pipedrive-2026-08-14T05-46-09-243Z",
+        "qaStatus": "pass",
+        "agentId": "comparison-agent",
+        "target": "nutshell-vs-pipedrive"
+      },
+      "inputSnapshot": {
+        "researchFactIds": [],
+        "methodologySlug": "crm-editorial",
+        "methodologyVersion": "1.0.0",
+        "agentVersion": "1.0.0",
+        "contextBuiltAt": "2026-08-14T05:46:09.242Z"
+      },
+      "blockers": [],
+      "warnings": [],
+      "agentTaskId": "exec-comparison-agent-nutshell-vs-pipedrive-1786686369235",
+      "draftId": "draft-deterministic-v1-comparison-agent-nutshell-vs-pipedrive-2026-08-14T05-46-09-243Z",
+      "startedAt": "2026-08-14T05:46:09.235Z",
+      "completedAt": "2026-08-14T05:46:09.262Z",
+      "revisionAttempts": 0
+    },
+    {
+      "id": "comparison:hubspot-vs-nutshell",
+      "definitionStepId": "comparisons",
+      "handler": "agent-run",
+      "label": "Comparison hubspot-vs-nutshell",
+      "status": "completed",
+      "required": false,
+      "failurePolicy": "continue-with-warning",
+      "attempt": 1,
+      "maxAttempts": 2,
+      "dependsOn": [
+        "content-plan"
+      ],
+      "priority": "normal",
+      "config": {
+        "agentId": "comparison-agent",
+        "targetSlug": "hubspot-vs-nutshell",
+        "maxAutomaticRevisions": 1,
+        "expandFromContentPlan": true,
+        "expandKind": "comparisons",
+        "stopAfterApproval": true,
+        "allowNormalizedFacts": false,
+        "optionalWhenBlocked": true,
+        "forceTransientFailOnce": false
+      },
+      "expansionKey": "hubspot-vs-nutshell",
+      "inputRefs": {},
+      "outputRefs": {
+        "draftId": "draft-deterministic-v1-comparison-agent-hubspot-vs-nutshell-2026-08-14T05-46-09-192Z",
+        "qaStatus": "pass",
+        "agentId": "comparison-agent",
+        "target": "hubspot-vs-nutshell"
+      },
+      "inputSnapshot": {
+        "researchFactIds": [],
+        "methodologySlug": "crm-editorial",
+        "methodologyVersion": "1.0.0",
+        "agentVersion": "1.0.0",
+        "contextBuiltAt": "2026-08-14T05:46:09.191Z"
+      },
+      "blockers": [],
+      "warnings": [],
+      "agentTaskId": "exec-comparison-agent-hubspot-vs-nutshell-1786686369173",
+      "draftId": "draft-deterministic-v1-comparison-agent-hubspot-vs-nutshell-2026-08-14T05-46-09-192Z",
+      "startedAt": "2026-08-14T05:46:09.171Z",
+      "completedAt": "2026-08-14T05:46:09.200Z",
+      "revisionAttempts": 0
+    },
+    {
+      "id": "comparison:keap-vs-nutshell",
+      "definitionStepId": "comparisons",
+      "handler": "agent-run",
+      "label": "Comparison keap-vs-nutshell",
+      "status": "completed",
+      "required": false,
+      "failurePolicy": "continue-with-warning",
+      "attempt": 1,
+      "maxAttempts": 2,
+      "dependsOn": [
+        "content-plan"
+      ],
+      "priority": "normal",
+      "config": {
+        "agentId": "comparison-agent",
+        "targetSlug": "keap-vs-nutshell",
+        "maxAutomaticRevisions": 1,
+        "expandFromContentPlan": true,
+        "expandKind": "comparisons",
+        "stopAfterApproval": true,
+        "allowNormalizedFacts": false,
+        "optionalWhenBlocked": true,
+        "forceTransientFailOnce": false
+      },
+      "expansionKey": "keap-vs-nutshell",
+      "inputRefs": {},
+      "outputRefs": {
+        "draftId": "draft-deterministic-v1-comparison-agent-keap-vs-nutshell-2026-08-14T05-46-09-226Z",
+        "qaStatus": "pass",
+        "agentId": "comparison-agent",
+        "target": "keap-vs-nutshell"
+      },
+      "inputSnapshot": {
+        "researchFactIds": [],
+        "methodologySlug": "crm-editorial",
+        "methodologyVersion": "1.0.0",
+        "agentVersion": "1.0.0",
+        "contextBuiltAt": "2026-08-14T05:46:09.224Z"
+      },
+      "blockers": [],
+      "warnings": [],
+      "agentTaskId": "exec-comparison-agent-keap-vs-nutshell-1786686369209",
+      "draftId": "draft-deterministic-v1-comparison-agent-keap-vs-nutshell-2026-08-14T05-46-09-226Z",
+      "startedAt": "2026-08-14T05:46:09.208Z",
+      "completedAt": "2026-08-14T05:46:09.232Z",
+      "revisionAttempts": 0
+    },
+    {
+      "id": "internal-links",
+      "definitionStepId": "internal-links",
+      "handler": "internal-link",
+      "label": "Internal Link Plan",
+      "status": "completed",
+      "required": false,
+      "failurePolicy": "continue-with-warning",
+      "attempt": 1,
+      "maxAttempts": 2,
+      "dependsOn": [
+        "software-review"
+      ],
+      "priority": "low",
+      "config": {
+        "agentId": "internal-link-agent",
+        "maxAutomaticRevisions": 1,
+        "expandFromContentPlan": false,
+        "expandKind": "none",
+        "stopAfterApproval": true,
+        "allowNormalizedFacts": false,
+        "optionalWhenBlocked": false,
+        "forceTransientFailOnce": false
+      },
+      "inputRefs": {},
+      "outputRefs": {
+        "draftId": "draft-deterministic-v1-internal-link-agent-nutshell-2026-08-14T05-47-37-701Z",
+        "qaStatus": "pass",
+        "agentId": "internal-link-agent",
+        "target": "nutshell"
+      },
+      "inputSnapshot": {
+        "researchFactIds": [
+          "fact-nutshell-pricing.hasFreePlan",
+          "fact-nutshell-pricing.hasFreeTrial",
+          "fact-nutshell-pricing.startingPriceMonthly",
+          "fact-nutshell-pricing.currency",
+          "fact-nutshell-pricing.model",
+          "fact-nutshell-pricing.plans.foundation",
+          "fact-nutshell-pricing.plans.growth",
+          "fact-nutshell-pricing.plans.pro",
+          "fact-nutshell-pricing.plans.business",
+          "fact-nutshell-pricing.plans.enterprise",
+          "fact-nutshell-features.contact-management",
+          "fact-nutshell-features.lead-management",
+          "fact-nutshell-features.pipeline-management",
+          "fact-nutshell-features.deal-management",
+          "fact-nutshell-features.email-sync",
+          "fact-nutshell-features.workflow-automation",
+          "fact-nutshell-features.sales-automation",
+          "fact-nutshell-features.reporting",
+          "fact-nutshell-features.forecasting",
+          "fact-nutshell-features.custom-fields",
+          "fact-nutshell-features.custom-pipelines",
+          "fact-nutshell-features.mobile-app",
+          "fact-nutshell-features.ai-assistance",
+          "fact-nutshell-features.integrations",
+          "fact-nutshell-positioning.summary",
+          "fact-nutshell-ai.assistant",
+          "fact-nutshell-ai.email-generation"
+        ],
+        "methodologySlug": "crm-editorial",
+        "methodologyVersion": "1.0.0",
+        "agentVersion": "1.0.0",
+        "contextBuiltAt": "2026-08-14T05:47:37.695Z"
+      },
+      "blockers": [],
+      "warnings": [],
+      "agentTaskId": "exec-internal-link-agent-nutshell-1786686457666",
+      "draftId": "draft-deterministic-v1-internal-link-agent-nutshell-2026-08-14T05-47-37-701Z",
+      "startedAt": "2026-08-14T05:47:37.664Z",
+      "completedAt": "2026-08-14T05:47:37.708Z",
+      "revisionAttempts": 0
+    },
+    {
+      "id": "finder-readiness",
+      "definitionStepId": "finder-readiness",
+      "handler": "update-recommendation-readiness",
+      "label": "Finder readiness",
+      "status": "completed",
+      "required": false,
+      "failurePolicy": "continue",
+      "attempt": 1,
+      "maxAttempts": 2,
+      "dependsOn": [
+        "content-plan"
+      ],
+      "priority": "low",
+      "config": {
+        "maxAutomaticRevisions": 1,
+        "expandFromContentPlan": false,
+        "expandKind": "none",
+        "stopAfterApproval": true,
+        "allowNormalizedFacts": false,
+        "optionalWhenBlocked": false,
+        "forceTransientFailOnce": false
+      },
+      "inputRefs": {},
+      "outputRefs": {
+        "finderReadiness": "checked"
+      },
+      "blockers": [],
+      "warnings": [],
+      "startedAt": "2026-08-14T05:47:21.712Z",
+      "completedAt": "2026-08-14T05:47:21.714Z",
+      "revisionAttempts": 0
+    },
+    {
+      "id": "editorial-approval",
+      "definitionStepId": "editorial-approval",
+      "handler": "approval-check",
+      "label": "Editorial approval",
+      "status": "completed",
+      "required": true,
+      "failurePolicy": "manual-review",
+      "attempt": 2,
+      "maxAttempts": 2,
+      "dependsOn": [
+        "software-review"
+      ],
+      "priority": "critical",
+      "config": {
+        "approvalType": "editorial",
+        "maxAutomaticRevisions": 1,
+        "expandFromContentPlan": false,
+        "expandKind": "none",
+        "stopAfterApproval": true,
+        "allowNormalizedFacts": false,
+        "optionalWhenBlocked": false,
+        "forceTransientFailOnce": false
+      },
+      "inputRefs": {},
+      "outputRefs": {
+        "approvalId": "appr-wf-software-onboarding-content-nutshell-1786686368600-software-review",
+        "draftId": "draft-deterministic-v1-software-review-agent-nutshell-2026-08-14T05-46-09-151Z",
+        "approvalIds": "appr-wf-software-onboarding-content-nutshell-1786686368600-software-review"
+      },
+      "blockers": [],
+      "warnings": [
+        "Approval received — resuming",
+        "6 optional draft(s) may still need separate editorial review"
+      ],
+      "approvalId": "appr-wf-software-onboarding-content-nutshell-1786686368600-software-review",
+      "startedAt": "2026-08-14T05:50:00.832Z",
+      "completedAt": "2026-08-14T05:50:00.903Z",
+      "revisionAttempts": 0
+    },
+    {
+      "id": "pre-publish-validation",
+      "definitionStepId": "pre-publish-validation",
+      "handler": "pre-publish-validation",
+      "label": "Pre-publish validation",
+      "status": "completed",
+      "required": true,
+      "failurePolicy": "block-workflow",
+      "attempt": 1,
+      "maxAttempts": 2,
+      "dependsOn": [
+        "editorial-approval"
+      ],
+      "priority": "critical",
+      "config": {
+        "maxAutomaticRevisions": 1,
+        "expandFromContentPlan": false,
+        "expandKind": "none",
+        "stopAfterApproval": true,
+        "allowNormalizedFacts": false,
+        "optionalWhenBlocked": false,
+        "forceTransientFailOnce": false
+      },
+      "inputRefs": {},
+      "outputRefs": {
+        "publishState": "READY_TO_PUBLISH"
+      },
+      "blockers": [],
+      "warnings": [
+        "stopAfterApproval: workflow will not publish automatically"
+      ],
+      "startedAt": "2026-08-14T05:50:00.905Z",
+      "completedAt": "2026-08-14T05:50:01.185Z",
+      "revisionAttempts": 0
+    }
+  ],
+  "history": [
+    {
+      "at": "2026-08-14T05:46:09.024Z",
+      "event": "workflow_created",
+      "message": "Created software-onboarding-content:v1.0.0"
+    },
+    {
+      "at": "2026-08-14T05:46:09.026Z",
+      "event": "workflow_started",
+      "message": "Workflow execution started"
+    },
+    {
+      "at": "2026-08-14T05:46:09.027Z",
+      "event": "workflow_step_started",
+      "stepId": "software-onboarding",
+      "message": "Started Software onboarding"
+    },
+    {
+      "at": "2026-08-14T05:46:09.072Z",
+      "event": "workflow_step_completed",
+      "stepId": "software-onboarding",
+      "message": "Reused onboarding run onboard-nutshell-1786686338029 (review-required)"
+    },
+    {
+      "at": "2026-08-14T05:46:09.074Z",
+      "event": "workflow_step_started",
+      "stepId": "content-plan",
+      "message": "Started Content plan"
+    },
+    {
+      "at": "2026-08-14T05:46:09.103Z",
+      "event": "workflow_step_completed",
+      "stepId": "content-plan",
+      "message": "Content plan from onboarding onboard-nutshell-1786686338029 (9 candidates)"
+    },
+    {
+      "at": "2026-08-14T05:46:09.104Z",
+      "event": "workflow_step_started",
+      "stepId": "software-review",
+      "message": "Started Software Review"
+    },
+    {
+      "at": "2026-08-14T05:46:09.159Z",
+      "event": "workflow_step_completed",
+      "stepId": "software-review",
+      "message": "Agent software-review-agent → draft draft-deterministic-v1-software-review-agent-nutshell-2026-08-14T05-46-09-151Z (qa=pass)"
+    },
+    {
+      "at": "2026-08-14T05:46:09.160Z",
+      "event": "workflow_step_started",
+      "stepId": "alternatives",
+      "message": "Started Alternatives"
+    },
+    {
+      "at": "2026-08-14T05:46:09.170Z",
+      "event": "workflow_step_completed",
+      "stepId": "alternatives",
+      "message": "Agent alternatives-agent → draft draft-deterministic-v1-alternatives-agent-nutshell-2026-08-14T05-46-09-167Z (qa=pass)"
+    },
+    {
+      "at": "2026-08-14T05:46:09.171Z",
+      "event": "workflow_step_started",
+      "stepId": "comparison:hubspot-vs-nutshell",
+      "message": "Started Comparison hubspot-vs-nutshell"
+    },
+    {
+      "at": "2026-08-14T05:46:09.200Z",
+      "event": "workflow_step_completed",
+      "stepId": "comparison:hubspot-vs-nutshell",
+      "message": "Agent comparison-agent → draft draft-deterministic-v1-comparison-agent-hubspot-vs-nutshell-2026-08-14T05-46-09-192Z (qa=pass)"
+    },
+    {
+      "at": "2026-08-14T05:46:09.207Z",
+      "event": "workflow_step_started",
+      "stepId": "comparison:keap-vs-nutshell",
+      "message": "Started Comparison keap-vs-nutshell"
+    },
+    {
+      "at": "2026-08-14T05:46:09.232Z",
+      "event": "workflow_step_completed",
+      "stepId": "comparison:keap-vs-nutshell",
+      "message": "Agent comparison-agent → draft draft-deterministic-v1-comparison-agent-keap-vs-nutshell-2026-08-14T05-46-09-226Z (qa=pass)"
+    },
+    {
+      "at": "2026-08-14T05:46:09.234Z",
+      "event": "workflow_step_started",
+      "stepId": "comparison:nutshell-vs-pipedrive",
+      "message": "Started Comparison nutshell-vs-pipedrive"
+    },
+    {
+      "at": "2026-08-14T05:46:09.262Z",
+      "event": "workflow_step_completed",
+      "stepId": "comparison:nutshell-vs-pipedrive",
+      "message": "Agent comparison-agent → draft draft-deterministic-v1-comparison-agent-nutshell-vs-pipedrive-2026-08-14T05-46-09-243Z (qa=pass)"
+    },
+    {
+      "at": "2026-08-14T05:46:09.265Z",
+      "event": "workflow_step_started",
+      "stepId": "pricing-page",
+      "message": "Started Pricing Page"
+    },
+    {
+      "at": "2026-08-14T05:46:09.285Z",
+      "event": "workflow_step_completed",
+      "stepId": "pricing-page",
+      "message": "QA fail after one automatic revision → review-required"
+    },
+    {
+      "at": "2026-08-14T05:47:21.696Z",
+      "event": "workflow_resumed",
+      "message": "Workflow resumed"
+    },
+    {
+      "at": "2026-08-14T05:47:21.699Z",
+      "event": "workflow_started",
+      "message": "Workflow execution started"
+    },
+    {
+      "at": "2026-08-14T05:47:21.712Z",
+      "event": "workflow_step_started",
+      "stepId": "finder-readiness",
+      "message": "Started Finder readiness"
+    },
+    {
+      "at": "2026-08-14T05:47:21.714Z",
+      "event": "workflow_step_completed",
+      "stepId": "finder-readiness",
+      "message": "Finder readiness noted for nutshell"
+    },
+    {
+      "at": "2026-08-14T05:47:37.660Z",
+      "event": "workflow_resumed",
+      "message": "Workflow resumed"
+    },
+    {
+      "at": "2026-08-14T05:47:37.663Z",
+      "event": "workflow_started",
+      "message": "Workflow execution started"
+    },
+    {
+      "at": "2026-08-14T05:47:37.664Z",
+      "event": "workflow_step_started",
+      "stepId": "internal-links",
+      "message": "Started Internal Link Plan"
+    },
+    {
+      "at": "2026-08-14T05:47:37.708Z",
+      "event": "workflow_step_completed",
+      "stepId": "internal-links",
+      "message": "Agent internal-link-agent → draft draft-deterministic-v1-internal-link-agent-nutshell-2026-08-14T05-47-37-701Z (qa=pass)"
+    },
+    {
+      "at": "2026-08-14T05:49:37.712Z",
+      "event": "workflow_resumed",
+      "message": "Workflow resumed"
+    },
+    {
+      "at": "2026-08-14T05:49:37.715Z",
+      "event": "workflow_started",
+      "message": "Workflow execution started"
+    },
+    {
+      "at": "2026-08-14T05:49:37.717Z",
+      "event": "workflow_step_started",
+      "stepId": "editorial-approval",
+      "message": "Started Editorial approval"
+    },
+    {
+      "at": "2026-08-14T05:49:37.779Z",
+      "event": "workflow_step_completed",
+      "stepId": "editorial-approval",
+      "message": "WAITING FOR EDITORIAL APPROVAL (appr-wf-software-onboarding-content-nutshell-1786686368600-software-review)"
+    },
+    {
+      "at": "2026-08-14T05:50:00.827Z",
+      "event": "workflow_resumed",
+      "message": "Workflow resumed"
+    },
+    {
+      "at": "2026-08-14T05:50:00.829Z",
+      "event": "workflow_started",
+      "message": "Workflow execution started"
+    },
+    {
+      "at": "2026-08-14T05:50:00.831Z",
+      "event": "workflow_step_started",
+      "stepId": "editorial-approval",
+      "message": "Started Editorial approval"
+    },
+    {
+      "at": "2026-08-14T05:50:00.903Z",
+      "event": "workflow_step_completed",
+      "stepId": "editorial-approval",
+      "message": "Required editorial approvals satisfied"
+    },
+    {
+      "at": "2026-08-14T05:50:00.905Z",
+      "event": "workflow_step_started",
+      "stepId": "pre-publish-validation",
+      "message": "Started Pre-publish validation"
+    },
+    {
+      "at": "2026-08-14T05:50:01.185Z",
+      "event": "workflow_step_completed",
+      "stepId": "pre-publish-validation",
+      "message": "Pre-publish validation passed — READY TO PUBLISH (manual)"
+    },
+    {
+      "at": "2026-08-14T05:50:01.187Z",
+      "event": "workflow_completed",
+      "message": "Workflow completed-with-warnings"
+    }
+  ],
+  "options": {
+    "generateReview": true,
+    "generatePricing": true,
+    "generateAlternatives": true,
+    "generateComparisons": true,
+    "runInternalLinks": true,
+    "stopAfterApproval": true,
+    "allowNormalizedFacts": false,
+    "dryRun": false,
+    "maxComparisons": 3,
+    "skipOnboarding": false
+  },
+  "warnings": [],
+  "createdAt": "2026-08-14T05:46:09.024Z",
+  "updatedAt": "2026-08-14T05:50:01.187Z"
+}

@@ -1,0 +1,956 @@
+{
+  "id": "wf-software-onboarding-content-streak-1786647437297",
+  "workflowId": "software-onboarding-content",
+  "workflowVersion": "1.0.0",
+  "name": "Software Onboarding Content: streak",
+  "targetType": "software",
+  "targetId": "streak",
+  "status": "completed",
+  "steps": [
+    {
+      "id": "software-onboarding",
+      "definitionStepId": "software-onboarding",
+      "handler": "software-onboarding",
+      "label": "Software onboarding",
+      "status": "completed",
+      "required": true,
+      "failurePolicy": "block-workflow",
+      "attempt": 1,
+      "maxAttempts": 2,
+      "dependsOn": [],
+      "priority": "critical",
+      "config": {
+        "maxAutomaticRevisions": 1,
+        "expandFromContentPlan": false,
+        "expandKind": "none",
+        "stopAfterApproval": true,
+        "allowNormalizedFacts": false,
+        "optionalWhenBlocked": false,
+        "forceTransientFailOnce": false
+      },
+      "inputRefs": {},
+      "outputRefs": {
+        "softwareOnboardingRunId": "onboard-streak-1786623693293"
+      },
+      "blockers": [],
+      "warnings": [],
+      "startedAt": "2026-08-13T18:57:17.697Z",
+      "completedAt": "2026-08-13T18:57:17.743Z",
+      "revisionAttempts": 0
+    },
+    {
+      "id": "content-plan",
+      "definitionStepId": "content-plan",
+      "handler": "content-plan",
+      "label": "Content plan",
+      "status": "completed",
+      "required": true,
+      "failurePolicy": "block-workflow",
+      "attempt": 1,
+      "maxAttempts": 2,
+      "dependsOn": [
+        "software-onboarding"
+      ],
+      "priority": "high",
+      "config": {
+        "maxAutomaticRevisions": 1,
+        "expandFromContentPlan": false,
+        "expandKind": "none",
+        "stopAfterApproval": true,
+        "allowNormalizedFacts": false,
+        "optionalWhenBlocked": false,
+        "forceTransientFailOnce": false
+      },
+      "inputRefs": {},
+      "outputRefs": {
+        "softwareOnboardingRunId": "onboard-streak-1786623693293",
+        "comparisonTargets": "folk-vs-streak,capsule-vs-streak,pipedrive-vs-streak",
+        "pageCandidateCount": "9"
+      },
+      "blockers": [],
+      "warnings": [],
+      "startedAt": "2026-08-13T18:57:17.746Z",
+      "completedAt": "2026-08-13T18:57:17.804Z",
+      "revisionAttempts": 0
+    },
+    {
+      "id": "software-review",
+      "definitionStepId": "software-review",
+      "handler": "agent-run",
+      "label": "Software Review",
+      "status": "completed",
+      "required": true,
+      "failurePolicy": "block-workflow",
+      "attempt": 1,
+      "maxAttempts": 2,
+      "dependsOn": [
+        "content-plan"
+      ],
+      "priority": "high",
+      "config": {
+        "agentId": "software-review-agent",
+        "targetSlug": "streak",
+        "maxAutomaticRevisions": 1,
+        "expandFromContentPlan": false,
+        "expandKind": "none",
+        "stopAfterApproval": true,
+        "allowNormalizedFacts": false,
+        "optionalWhenBlocked": false,
+        "forceTransientFailOnce": false
+      },
+      "inputRefs": {},
+      "outputRefs": {
+        "draftId": "draft-deterministic-v1-software-review-agent-streak-2026-08-13T18-57-17-841Z",
+        "qaStatus": "pass",
+        "agentId": "software-review-agent",
+        "target": "streak"
+      },
+      "inputSnapshot": {
+        "researchFactIds": [
+          "fact-streak-pricing.hasFreePlan",
+          "fact-streak-pricing.hasFreeTrial",
+          "fact-streak-pricing.startingPriceMonthly",
+          "fact-streak-pricing.currency",
+          "fact-streak-pricing.model",
+          "fact-streak-pricing.plans.pro",
+          "fact-streak-pricing.plans.pro-plus",
+          "fact-streak-pricing.plans.enterprise",
+          "fact-streak-features.pipeline-management",
+          "fact-streak-features.email-tracking",
+          "fact-streak-features.workflow-automation",
+          "fact-streak-features.mobile-app",
+          "fact-streak-ai.assistant",
+          "fact-streak-positioning.gmail-native",
+          "fact-streak-integrations.gmail"
+        ],
+        "methodologySlug": "crm-editorial",
+        "methodologyVersion": "1.0.0",
+        "agentVersion": "1.0.0",
+        "contextBuiltAt": "2026-08-13T18:57:17.836Z"
+      },
+      "blockers": [],
+      "warnings": [],
+      "agentTaskId": "exec-software-review-agent-streak-1786647437811",
+      "draftId": "draft-deterministic-v1-software-review-agent-streak-2026-08-13T18-57-17-841Z",
+      "startedAt": "2026-08-13T18:57:17.807Z",
+      "completedAt": "2026-08-13T18:57:17.848Z",
+      "revisionAttempts": 0
+    },
+    {
+      "id": "pricing-page",
+      "definitionStepId": "pricing-page",
+      "handler": "agent-run",
+      "label": "Pricing Page",
+      "status": "completed",
+      "required": false,
+      "failurePolicy": "continue-with-warning",
+      "attempt": 1,
+      "maxAttempts": 2,
+      "dependsOn": [
+        "content-plan"
+      ],
+      "priority": "normal",
+      "config": {
+        "agentId": "pricing-page-agent",
+        "targetSlug": "streak",
+        "maxAutomaticRevisions": 1,
+        "expandFromContentPlan": false,
+        "expandKind": "none",
+        "stopAfterApproval": true,
+        "allowNormalizedFacts": false,
+        "optionalWhenBlocked": true,
+        "forceTransientFailOnce": false
+      },
+      "inputRefs": {},
+      "outputRefs": {
+        "draftId": "draft-deterministic-v1-pricing-page-agent-streak-2026-08-13T18-57-17-928Z",
+        "qaStatus": "pass",
+        "agentId": "pricing-page-agent",
+        "target": "streak"
+      },
+      "inputSnapshot": {
+        "researchFactIds": [
+          "fact-streak-pricing.hasFreePlan",
+          "fact-streak-pricing.hasFreeTrial",
+          "fact-streak-pricing.startingPriceMonthly",
+          "fact-streak-pricing.currency",
+          "fact-streak-pricing.model",
+          "fact-streak-pricing.plans.pro",
+          "fact-streak-pricing.plans.pro-plus",
+          "fact-streak-pricing.plans.enterprise",
+          "fact-streak-features.pipeline-management",
+          "fact-streak-features.email-tracking",
+          "fact-streak-features.workflow-automation",
+          "fact-streak-features.mobile-app",
+          "fact-streak-ai.assistant",
+          "fact-streak-positioning.gmail-native",
+          "fact-streak-integrations.gmail"
+        ],
+        "methodologySlug": "crm-editorial",
+        "methodologyVersion": "1.0.0",
+        "agentVersion": "1.0.0",
+        "contextBuiltAt": "2026-08-13T18:57:17.927Z"
+      },
+      "blockers": [],
+      "warnings": [],
+      "agentTaskId": "exec-pricing-page-agent-streak-1786647437918",
+      "draftId": "draft-deterministic-v1-pricing-page-agent-streak-2026-08-13T18-57-17-928Z",
+      "startedAt": "2026-08-13T18:57:17.917Z",
+      "completedAt": "2026-08-13T18:57:17.930Z",
+      "revisionAttempts": 0
+    },
+    {
+      "id": "alternatives",
+      "definitionStepId": "alternatives",
+      "handler": "agent-run",
+      "label": "Alternatives",
+      "status": "completed",
+      "required": false,
+      "failurePolicy": "continue-with-warning",
+      "attempt": 1,
+      "maxAttempts": 2,
+      "dependsOn": [
+        "content-plan"
+      ],
+      "priority": "normal",
+      "config": {
+        "agentId": "alternatives-agent",
+        "targetSlug": "streak",
+        "maxAutomaticRevisions": 1,
+        "expandFromContentPlan": false,
+        "expandKind": "none",
+        "stopAfterApproval": true,
+        "allowNormalizedFacts": false,
+        "optionalWhenBlocked": true,
+        "forceTransientFailOnce": false
+      },
+      "inputRefs": {},
+      "outputRefs": {
+        "draftId": "draft-deterministic-v1-alternatives-agent-streak-2026-08-13T18-57-17-858Z",
+        "qaStatus": "pass",
+        "agentId": "alternatives-agent",
+        "target": "streak"
+      },
+      "inputSnapshot": {
+        "researchFactIds": [
+          "fact-streak-pricing.hasFreePlan",
+          "fact-streak-pricing.hasFreeTrial",
+          "fact-streak-pricing.startingPriceMonthly",
+          "fact-streak-pricing.currency",
+          "fact-streak-pricing.model",
+          "fact-streak-pricing.plans.pro",
+          "fact-streak-pricing.plans.pro-plus",
+          "fact-streak-pricing.plans.enterprise",
+          "fact-streak-features.pipeline-management",
+          "fact-streak-features.email-tracking",
+          "fact-streak-features.workflow-automation",
+          "fact-streak-features.mobile-app",
+          "fact-streak-ai.assistant",
+          "fact-streak-positioning.gmail-native",
+          "fact-streak-integrations.gmail"
+        ],
+        "methodologySlug": "crm-editorial",
+        "methodologyVersion": "1.0.0",
+        "agentVersion": "1.0.0",
+        "contextBuiltAt": "2026-08-13T18:57:17.857Z"
+      },
+      "blockers": [],
+      "warnings": [],
+      "agentTaskId": "exec-alternatives-agent-streak-1786647437853",
+      "draftId": "draft-deterministic-v1-alternatives-agent-streak-2026-08-13T18-57-17-858Z",
+      "startedAt": "2026-08-13T18:57:17.851Z",
+      "completedAt": "2026-08-13T18:57:17.862Z",
+      "revisionAttempts": 0
+    },
+    {
+      "id": "comparison:folk-vs-streak",
+      "definitionStepId": "comparisons",
+      "handler": "agent-run",
+      "label": "Comparison folk-vs-streak",
+      "status": "completed",
+      "required": false,
+      "failurePolicy": "continue-with-warning",
+      "attempt": 1,
+      "maxAttempts": 2,
+      "dependsOn": [
+        "content-plan"
+      ],
+      "priority": "normal",
+      "config": {
+        "agentId": "comparison-agent",
+        "targetSlug": "folk-vs-streak",
+        "maxAutomaticRevisions": 1,
+        "expandFromContentPlan": true,
+        "expandKind": "comparisons",
+        "stopAfterApproval": true,
+        "allowNormalizedFacts": false,
+        "optionalWhenBlocked": true,
+        "forceTransientFailOnce": false
+      },
+      "expansionKey": "folk-vs-streak",
+      "inputRefs": {},
+      "outputRefs": {
+        "draftId": "draft-deterministic-v1-comparison-agent-folk-vs-streak-2026-08-13T18-57-17-893Z",
+        "qaStatus": "pass",
+        "agentId": "comparison-agent",
+        "target": "folk-vs-streak"
+      },
+      "inputSnapshot": {
+        "researchFactIds": [
+          "fact-folk-pricing.hasFreePlan",
+          "fact-folk-pricing.hasFreeTrial",
+          "fact-folk-pricing.startingPriceMonthly",
+          "fact-folk-pricing.currency",
+          "fact-folk-pricing.model",
+          "fact-folk-pricing.plans.free",
+          "fact-folk-pricing.plans.standard",
+          "fact-folk-pricing.plans.premium",
+          "fact-folk-pricing.plans.enterprise",
+          "fact-folk-features.contact-management",
+          "fact-folk-features.lead-management",
+          "fact-folk-features.pipeline-management",
+          "fact-folk-features.deal-management",
+          "fact-folk-features.email-sync",
+          "fact-folk-features.email-campaigns",
+          "fact-folk-features.email-sequences",
+          "fact-folk-features.workflow-automation",
+          "fact-folk-features.sales-automation",
+          "fact-folk-features.reporting",
+          "fact-folk-features.data-enrichment",
+          "fact-folk-features.ai-assistance",
+          "fact-folk-features.mobile-app",
+          "fact-folk-features.integrations",
+          "fact-folk-features.custom-fields",
+          "fact-folk-features.custom-pipelines",
+          "fact-folk-ai.assistant",
+          "fact-folk-ai.email-generation",
+          "fact-folk-ai.summaries",
+          "fact-folk-ai.automation",
+          "fact-folk-ai.other",
+          "fact-folk-positioning.primary",
+          "fact-streak-pricing.hasFreePlan",
+          "fact-streak-pricing.hasFreeTrial",
+          "fact-streak-pricing.startingPriceMonthly",
+          "fact-streak-pricing.currency",
+          "fact-streak-pricing.model",
+          "fact-streak-pricing.plans.pro",
+          "fact-streak-pricing.plans.pro-plus",
+          "fact-streak-pricing.plans.enterprise",
+          "fact-streak-features.pipeline-management",
+          "fact-streak-features.email-tracking",
+          "fact-streak-features.workflow-automation",
+          "fact-streak-features.mobile-app",
+          "fact-streak-ai.assistant",
+          "fact-streak-positioning.gmail-native",
+          "fact-streak-integrations.gmail"
+        ],
+        "methodologySlug": "crm-editorial",
+        "methodologyVersion": "1.0.0",
+        "agentVersion": "1.0.0",
+        "contextBuiltAt": "2026-08-13T18:57:17.892Z"
+      },
+      "blockers": [],
+      "warnings": [],
+      "agentTaskId": "exec-comparison-agent-folk-vs-streak-1786647437886",
+      "draftId": "draft-deterministic-v1-comparison-agent-folk-vs-streak-2026-08-13T18-57-17-893Z",
+      "startedAt": "2026-08-13T18:57:17.885Z",
+      "completedAt": "2026-08-13T18:57:17.897Z",
+      "revisionAttempts": 0
+    },
+    {
+      "id": "comparison:capsule-vs-streak",
+      "definitionStepId": "comparisons",
+      "handler": "agent-run",
+      "label": "Comparison capsule-vs-streak",
+      "status": "completed",
+      "required": false,
+      "failurePolicy": "continue-with-warning",
+      "attempt": 1,
+      "maxAttempts": 2,
+      "dependsOn": [
+        "content-plan"
+      ],
+      "priority": "normal",
+      "config": {
+        "agentId": "comparison-agent",
+        "targetSlug": "capsule-vs-streak",
+        "maxAutomaticRevisions": 1,
+        "expandFromContentPlan": true,
+        "expandKind": "comparisons",
+        "stopAfterApproval": true,
+        "allowNormalizedFacts": false,
+        "optionalWhenBlocked": true,
+        "forceTransientFailOnce": false
+      },
+      "expansionKey": "capsule-vs-streak",
+      "inputRefs": {},
+      "outputRefs": {
+        "draftId": "draft-deterministic-v1-comparison-agent-capsule-vs-streak-2026-08-13T18-57-17-880Z",
+        "qaStatus": "pass",
+        "agentId": "comparison-agent",
+        "target": "capsule-vs-streak"
+      },
+      "inputSnapshot": {
+        "researchFactIds": [
+          "fact-capsule-pricing.hasFreePlan",
+          "fact-capsule-pricing.hasFreeTrial",
+          "fact-capsule-pricing.startingPriceMonthly",
+          "fact-capsule-pricing.currency",
+          "fact-capsule-pricing.model",
+          "fact-capsule-pricing.plans.free",
+          "fact-capsule-pricing.plans.starter",
+          "fact-capsule-pricing.plans.growth",
+          "fact-capsule-pricing.plans.advanced",
+          "fact-capsule-pricing.plans.ultimate",
+          "fact-capsule-features.pipeline-management",
+          "fact-capsule-features.workflow-automation",
+          "fact-capsule-features.contact-management",
+          "fact-capsule-features.mobile-app",
+          "fact-capsule-ai.assistant",
+          "fact-capsule-positioning.simple-smb",
+          "fact-streak-pricing.hasFreePlan",
+          "fact-streak-pricing.hasFreeTrial",
+          "fact-streak-pricing.startingPriceMonthly",
+          "fact-streak-pricing.currency",
+          "fact-streak-pricing.model",
+          "fact-streak-pricing.plans.pro",
+          "fact-streak-pricing.plans.pro-plus",
+          "fact-streak-pricing.plans.enterprise",
+          "fact-streak-features.pipeline-management",
+          "fact-streak-features.email-tracking",
+          "fact-streak-features.workflow-automation",
+          "fact-streak-features.mobile-app",
+          "fact-streak-ai.assistant",
+          "fact-streak-positioning.gmail-native",
+          "fact-streak-integrations.gmail"
+        ],
+        "methodologySlug": "crm-editorial",
+        "methodologyVersion": "1.0.0",
+        "agentVersion": "1.0.0",
+        "contextBuiltAt": "2026-08-13T18:57:17.879Z"
+      },
+      "blockers": [],
+      "warnings": [],
+      "agentTaskId": "exec-comparison-agent-capsule-vs-streak-1786647437865",
+      "draftId": "draft-deterministic-v1-comparison-agent-capsule-vs-streak-2026-08-13T18-57-17-880Z",
+      "startedAt": "2026-08-13T18:57:17.864Z",
+      "completedAt": "2026-08-13T18:57:17.884Z",
+      "revisionAttempts": 0
+    },
+    {
+      "id": "comparison:pipedrive-vs-streak",
+      "definitionStepId": "comparisons",
+      "handler": "agent-run",
+      "label": "Comparison pipedrive-vs-streak",
+      "status": "completed",
+      "required": false,
+      "failurePolicy": "continue-with-warning",
+      "attempt": 1,
+      "maxAttempts": 2,
+      "dependsOn": [
+        "content-plan"
+      ],
+      "priority": "normal",
+      "config": {
+        "agentId": "comparison-agent",
+        "targetSlug": "pipedrive-vs-streak",
+        "maxAutomaticRevisions": 1,
+        "expandFromContentPlan": true,
+        "expandKind": "comparisons",
+        "stopAfterApproval": true,
+        "allowNormalizedFacts": false,
+        "optionalWhenBlocked": true,
+        "forceTransientFailOnce": false
+      },
+      "expansionKey": "pipedrive-vs-streak",
+      "inputRefs": {},
+      "outputRefs": {
+        "draftId": "draft-deterministic-v1-comparison-agent-pipedrive-vs-streak-2026-08-13T18-57-17-912Z",
+        "qaStatus": "pass",
+        "agentId": "comparison-agent",
+        "target": "pipedrive-vs-streak"
+      },
+      "inputSnapshot": {
+        "researchFactIds": [
+          "fact-pipedrive-pricing.hasFreePlan",
+          "fact-pipedrive-pricing.hasFreeTrial",
+          "fact-pipedrive-pricing.startingPriceMonthly",
+          "fact-pipedrive-pricing.currency",
+          "fact-pipedrive-pricing.model",
+          "fact-pipedrive-pricing.plans.lite",
+          "fact-pipedrive-pricing.plans.growth",
+          "fact-pipedrive-pricing.plans.premium",
+          "fact-pipedrive-pricing.plans.ultimate",
+          "fact-pipedrive-plans.mapping",
+          "fact-pipedrive-addons.inclusion",
+          "fact-pipedrive-features.contact-management",
+          "fact-pipedrive-features.lead-management",
+          "fact-pipedrive-features.pipeline-management",
+          "fact-pipedrive-features.deal-management",
+          "fact-pipedrive-features.custom-pipelines",
+          "fact-pipedrive-features.custom-fields",
+          "fact-pipedrive-features.mobile-app",
+          "fact-pipedrive-features.email-sync",
+          "fact-pipedrive-features.email-tracking",
+          "fact-pipedrive-features.email-sequences",
+          "fact-pipedrive-features.workflow-automation",
+          "fact-pipedrive-features.sales-automation",
+          "fact-pipedrive-features.reporting",
+          "fact-pipedrive-features.forecasting",
+          "fact-pipedrive-features.lead-scoring",
+          "fact-pipedrive-features.ai-assistance",
+          "fact-pipedrive-features.data-enrichment",
+          "fact-pipedrive-features.prospecting",
+          "fact-pipedrive-features.meeting-scheduling",
+          "fact-pipedrive-features.call-functionality",
+          "fact-pipedrive-features.integrations",
+          "fact-pipedrive-features.email-campaigns",
+          "fact-pipedrive-integrations.gmail",
+          "fact-pipedrive-integrations.slack",
+          "fact-pipedrive-integrations.microsoft-teams",
+          "fact-pipedrive-integrations.zapier",
+          "fact-pipedrive-integrations.quickbooks",
+          "fact-pipedrive-integrations.whatsapp-business",
+          "fact-pipedrive-integrations.google-meet",
+          "fact-pipedrive-integrations.pandadoc",
+          "fact-pipedrive-ai.assistant",
+          "fact-pipedrive-ai.email-generation",
+          "fact-pipedrive-ai.summaries",
+          "fact-pipedrive-ai.forecasting",
+          "fact-pipedrive-ai.recommendations",
+          "fact-pipedrive-ai.automation",
+          "fact-pipedrive-ai.lead-scoring",
+          "fact-pipedrive-positioning.pipeline-first",
+          "fact-pipedrive-integrations.count",
+          "fact-streak-pricing.hasFreePlan",
+          "fact-streak-pricing.hasFreeTrial",
+          "fact-streak-pricing.startingPriceMonthly",
+          "fact-streak-pricing.currency",
+          "fact-streak-pricing.model",
+          "fact-streak-pricing.plans.pro",
+          "fact-streak-pricing.plans.pro-plus",
+          "fact-streak-pricing.plans.enterprise",
+          "fact-streak-features.pipeline-management",
+          "fact-streak-features.email-tracking",
+          "fact-streak-features.workflow-automation",
+          "fact-streak-features.mobile-app",
+          "fact-streak-ai.assistant",
+          "fact-streak-positioning.gmail-native",
+          "fact-streak-integrations.gmail"
+        ],
+        "methodologySlug": "crm-editorial",
+        "methodologyVersion": "1.0.0",
+        "agentVersion": "1.0.0",
+        "contextBuiltAt": "2026-08-13T18:57:17.911Z"
+      },
+      "blockers": [],
+      "warnings": [],
+      "agentTaskId": "exec-comparison-agent-pipedrive-vs-streak-1786647437899",
+      "draftId": "draft-deterministic-v1-comparison-agent-pipedrive-vs-streak-2026-08-13T18-57-17-912Z",
+      "startedAt": "2026-08-13T18:57:17.899Z",
+      "completedAt": "2026-08-13T18:57:17.916Z",
+      "revisionAttempts": 0
+    },
+    {
+      "id": "internal-links",
+      "definitionStepId": "internal-links",
+      "handler": "internal-link",
+      "label": "Internal Link Plan",
+      "status": "completed",
+      "required": false,
+      "failurePolicy": "continue-with-warning",
+      "attempt": 1,
+      "maxAttempts": 2,
+      "dependsOn": [
+        "software-review"
+      ],
+      "priority": "low",
+      "config": {
+        "agentId": "internal-link-agent",
+        "maxAutomaticRevisions": 1,
+        "expandFromContentPlan": false,
+        "expandKind": "none",
+        "stopAfterApproval": true,
+        "allowNormalizedFacts": false,
+        "optionalWhenBlocked": false,
+        "forceTransientFailOnce": false
+      },
+      "inputRefs": {},
+      "outputRefs": {
+        "draftId": "draft-deterministic-v1-internal-link-agent-streak-2026-08-13T18-57-17-948Z",
+        "qaStatus": "pass",
+        "agentId": "internal-link-agent",
+        "target": "streak"
+      },
+      "inputSnapshot": {
+        "researchFactIds": [
+          "fact-streak-pricing.hasFreePlan",
+          "fact-streak-pricing.hasFreeTrial",
+          "fact-streak-pricing.startingPriceMonthly",
+          "fact-streak-pricing.currency",
+          "fact-streak-pricing.model",
+          "fact-streak-pricing.plans.pro",
+          "fact-streak-pricing.plans.pro-plus",
+          "fact-streak-pricing.plans.enterprise",
+          "fact-streak-features.pipeline-management",
+          "fact-streak-features.email-tracking",
+          "fact-streak-features.workflow-automation",
+          "fact-streak-features.mobile-app",
+          "fact-streak-ai.assistant",
+          "fact-streak-positioning.gmail-native",
+          "fact-streak-integrations.gmail"
+        ],
+        "methodologySlug": "crm-editorial",
+        "methodologyVersion": "1.0.0",
+        "agentVersion": "1.0.0",
+        "contextBuiltAt": "2026-08-13T18:57:17.948Z"
+      },
+      "blockers": [],
+      "warnings": [],
+      "agentTaskId": "exec-internal-link-agent-streak-1786647437936",
+      "draftId": "draft-deterministic-v1-internal-link-agent-streak-2026-08-13T18-57-17-948Z",
+      "startedAt": "2026-08-13T18:57:17.935Z",
+      "completedAt": "2026-08-13T18:57:17.951Z",
+      "revisionAttempts": 0
+    },
+    {
+      "id": "finder-readiness",
+      "definitionStepId": "finder-readiness",
+      "handler": "update-recommendation-readiness",
+      "label": "Finder readiness",
+      "status": "completed",
+      "required": false,
+      "failurePolicy": "continue",
+      "attempt": 1,
+      "maxAttempts": 2,
+      "dependsOn": [
+        "content-plan"
+      ],
+      "priority": "low",
+      "config": {
+        "maxAutomaticRevisions": 1,
+        "expandFromContentPlan": false,
+        "expandKind": "none",
+        "stopAfterApproval": true,
+        "allowNormalizedFacts": false,
+        "optionalWhenBlocked": false,
+        "forceTransientFailOnce": false
+      },
+      "inputRefs": {},
+      "outputRefs": {
+        "finderReadiness": "checked"
+      },
+      "blockers": [],
+      "warnings": [],
+      "startedAt": "2026-08-13T18:57:17.931Z",
+      "completedAt": "2026-08-13T18:57:17.933Z",
+      "revisionAttempts": 0
+    },
+    {
+      "id": "editorial-approval",
+      "definitionStepId": "editorial-approval",
+      "handler": "approval-check",
+      "label": "Editorial approval",
+      "status": "completed",
+      "required": true,
+      "failurePolicy": "manual-review",
+      "attempt": 2,
+      "maxAttempts": 2,
+      "dependsOn": [
+        "software-review"
+      ],
+      "priority": "critical",
+      "config": {
+        "approvalType": "editorial",
+        "maxAutomaticRevisions": 1,
+        "expandFromContentPlan": false,
+        "expandKind": "none",
+        "stopAfterApproval": true,
+        "allowNormalizedFacts": false,
+        "optionalWhenBlocked": false,
+        "forceTransientFailOnce": false
+      },
+      "inputRefs": {},
+      "outputRefs": {
+        "approvalId": "appr-wf-software-onboarding-content-streak-1786647437297-software-review",
+        "draftId": "draft-deterministic-v1-software-review-agent-streak-2026-08-13T18-57-17-841Z",
+        "approvalIds": "appr-wf-software-onboarding-content-streak-1786647437297-software-review"
+      },
+      "blockers": [],
+      "warnings": [
+        "Approval received — resuming",
+        "6 optional draft(s) may still need separate editorial review"
+      ],
+      "approvalId": "appr-wf-software-onboarding-content-streak-1786647437297-software-review",
+      "startedAt": "2026-08-13T19:01:09.898Z",
+      "completedAt": "2026-08-13T19:01:09.974Z",
+      "revisionAttempts": 0
+    },
+    {
+      "id": "pre-publish-validation",
+      "definitionStepId": "pre-publish-validation",
+      "handler": "pre-publish-validation",
+      "label": "Pre-publish validation",
+      "status": "completed",
+      "required": true,
+      "failurePolicy": "block-workflow",
+      "attempt": 2,
+      "maxAttempts": 2,
+      "dependsOn": [
+        "editorial-approval"
+      ],
+      "priority": "critical",
+      "config": {
+        "maxAutomaticRevisions": 1,
+        "expandFromContentPlan": false,
+        "expandKind": "none",
+        "stopAfterApproval": true,
+        "allowNormalizedFacts": false,
+        "optionalWhenBlocked": false,
+        "forceTransientFailOnce": false
+      },
+      "inputRefs": {},
+      "outputRefs": {
+        "publishState": "READY_TO_PUBLISH"
+      },
+      "blockers": [],
+      "warnings": [
+        "Re-running blocked pre-publish validation on resume",
+        "stopAfterApproval: workflow will not publish automatically"
+      ],
+      "startedAt": "2026-08-18T08:49:54.376Z",
+      "completedAt": "2026-08-18T08:49:54.989Z",
+      "revisionAttempts": 0
+    }
+  ],
+  "history": [
+    {
+      "at": "2026-08-13T18:57:17.686Z",
+      "event": "workflow_created",
+      "message": "Created software-onboarding-content:v1.0.0"
+    },
+    {
+      "at": "2026-08-13T18:57:17.690Z",
+      "event": "workflow_started",
+      "message": "Workflow execution started"
+    },
+    {
+      "at": "2026-08-13T18:57:17.696Z",
+      "event": "workflow_step_started",
+      "stepId": "software-onboarding",
+      "message": "Started Software onboarding"
+    },
+    {
+      "at": "2026-08-13T18:57:17.743Z",
+      "event": "workflow_step_completed",
+      "stepId": "software-onboarding",
+      "message": "Reused onboarding run onboard-streak-1786623693293 (review-required)"
+    },
+    {
+      "at": "2026-08-13T18:57:17.746Z",
+      "event": "workflow_step_started",
+      "stepId": "content-plan",
+      "message": "Started Content plan"
+    },
+    {
+      "at": "2026-08-13T18:57:17.804Z",
+      "event": "workflow_step_completed",
+      "stepId": "content-plan",
+      "message": "Content plan from onboarding onboard-streak-1786623693293 (9 candidates)"
+    },
+    {
+      "at": "2026-08-13T18:57:17.807Z",
+      "event": "workflow_step_started",
+      "stepId": "software-review",
+      "message": "Started Software Review"
+    },
+    {
+      "at": "2026-08-13T18:57:17.848Z",
+      "event": "workflow_step_completed",
+      "stepId": "software-review",
+      "message": "Agent software-review-agent → draft draft-deterministic-v1-software-review-agent-streak-2026-08-13T18-57-17-841Z (qa=pass)"
+    },
+    {
+      "at": "2026-08-13T18:57:17.851Z",
+      "event": "workflow_step_started",
+      "stepId": "alternatives",
+      "message": "Started Alternatives"
+    },
+    {
+      "at": "2026-08-13T18:57:17.862Z",
+      "event": "workflow_step_completed",
+      "stepId": "alternatives",
+      "message": "Agent alternatives-agent → draft draft-deterministic-v1-alternatives-agent-streak-2026-08-13T18-57-17-858Z (qa=pass)"
+    },
+    {
+      "at": "2026-08-13T18:57:17.864Z",
+      "event": "workflow_step_started",
+      "stepId": "comparison:capsule-vs-streak",
+      "message": "Started Comparison capsule-vs-streak"
+    },
+    {
+      "at": "2026-08-13T18:57:17.884Z",
+      "event": "workflow_step_completed",
+      "stepId": "comparison:capsule-vs-streak",
+      "message": "Agent comparison-agent → draft draft-deterministic-v1-comparison-agent-capsule-vs-streak-2026-08-13T18-57-17-880Z (qa=pass)"
+    },
+    {
+      "at": "2026-08-13T18:57:17.885Z",
+      "event": "workflow_step_started",
+      "stepId": "comparison:folk-vs-streak",
+      "message": "Started Comparison folk-vs-streak"
+    },
+    {
+      "at": "2026-08-13T18:57:17.897Z",
+      "event": "workflow_step_completed",
+      "stepId": "comparison:folk-vs-streak",
+      "message": "Agent comparison-agent → draft draft-deterministic-v1-comparison-agent-folk-vs-streak-2026-08-13T18-57-17-893Z (qa=pass)"
+    },
+    {
+      "at": "2026-08-13T18:57:17.898Z",
+      "event": "workflow_step_started",
+      "stepId": "comparison:pipedrive-vs-streak",
+      "message": "Started Comparison pipedrive-vs-streak"
+    },
+    {
+      "at": "2026-08-13T18:57:17.916Z",
+      "event": "workflow_step_completed",
+      "stepId": "comparison:pipedrive-vs-streak",
+      "message": "Agent comparison-agent → draft draft-deterministic-v1-comparison-agent-pipedrive-vs-streak-2026-08-13T18-57-17-912Z (qa=pass)"
+    },
+    {
+      "at": "2026-08-13T18:57:17.917Z",
+      "event": "workflow_step_started",
+      "stepId": "pricing-page",
+      "message": "Started Pricing Page"
+    },
+    {
+      "at": "2026-08-13T18:57:17.930Z",
+      "event": "workflow_step_completed",
+      "stepId": "pricing-page",
+      "message": "Agent pricing-page-agent → draft draft-deterministic-v1-pricing-page-agent-streak-2026-08-13T18-57-17-928Z (qa=pass)"
+    },
+    {
+      "at": "2026-08-13T18:57:17.931Z",
+      "event": "workflow_step_started",
+      "stepId": "finder-readiness",
+      "message": "Started Finder readiness"
+    },
+    {
+      "at": "2026-08-13T18:57:17.933Z",
+      "event": "workflow_step_completed",
+      "stepId": "finder-readiness",
+      "message": "Finder readiness noted for streak"
+    },
+    {
+      "at": "2026-08-13T18:57:17.935Z",
+      "event": "workflow_step_started",
+      "stepId": "internal-links",
+      "message": "Started Internal Link Plan"
+    },
+    {
+      "at": "2026-08-13T18:57:17.951Z",
+      "event": "workflow_step_completed",
+      "stepId": "internal-links",
+      "message": "Agent internal-link-agent → draft draft-deterministic-v1-internal-link-agent-streak-2026-08-13T18-57-17-948Z (qa=pass)"
+    },
+    {
+      "at": "2026-08-13T18:57:17.954Z",
+      "event": "workflow_step_started",
+      "stepId": "editorial-approval",
+      "message": "Started Editorial approval"
+    },
+    {
+      "at": "2026-08-13T18:57:18.016Z",
+      "event": "workflow_step_completed",
+      "stepId": "editorial-approval",
+      "message": "WAITING FOR EDITORIAL APPROVAL (appr-wf-software-onboarding-content-streak-1786647437297-software-review)"
+    },
+    {
+      "at": "2026-08-13T19:01:09.892Z",
+      "event": "workflow_resumed",
+      "message": "Workflow resumed"
+    },
+    {
+      "at": "2026-08-13T19:01:09.895Z",
+      "event": "workflow_started",
+      "message": "Workflow execution started"
+    },
+    {
+      "at": "2026-08-13T19:01:09.898Z",
+      "event": "workflow_step_started",
+      "stepId": "editorial-approval",
+      "message": "Started Editorial approval"
+    },
+    {
+      "at": "2026-08-13T19:01:09.974Z",
+      "event": "workflow_step_completed",
+      "stepId": "editorial-approval",
+      "message": "Required editorial approvals satisfied"
+    },
+    {
+      "at": "2026-08-13T19:01:09.977Z",
+      "event": "workflow_step_started",
+      "stepId": "pre-publish-validation",
+      "message": "Started Pre-publish validation"
+    },
+    {
+      "at": "2026-08-13T19:01:10.230Z",
+      "event": "workflow_step_completed",
+      "stepId": "pre-publish-validation",
+      "message": "Pre-publish validation blocked: Stale context for comparison:folk-vs-streak: removed-critical-fact:fact-folk-pricing.hasFreePlan; removed-critical-fact:fact-folk-pricing.hasFreeTrial; removed-critical-fact:fact-folk-pricing.startingPriceMonthly; removed-critical-fact:fact-folk-pricing.currency; removed-critical-fact:fact-folk-pricing.model; removed-critical-fact:fact-folk-pricing.plans.free; removed-critical-fact:fact-folk-pricing.plans.standard; removed-critical-fact:fact-folk-pricing.plans.premium; removed-critical-fact:fact-folk-pricing.plans.enterprise; Stale context for comparison:capsule-vs-streak: removed-critical-fact:fact-capsule-pricing.hasFreePlan; removed-critical-fact:fact-capsule-pricing.hasFreeTrial; removed-critical-fact:fact-capsule-pricing.startingPriceMonthly; removed-critical-fact:fact-capsule-pricing.currency; removed-critical-fact:fact-capsule-pricing.model; removed-critical-fact:fact-capsule-pricing.plans.free; removed-critical-fact:fact-capsule-pricing.plans.starter; removed-critical-fact:fact-capsule-pricing.plans.growth; removed-critical-fact:fact-capsule-pricing.plans.advanced; removed-critical-fact:fact-capsule-pricing.plans.ultimate; Stale context for comparison:pipedrive-vs-streak: removed-critical-fact:fact-pipedrive-pricing.hasFreePlan; removed-critical-fact:fact-pipedrive-pricing.hasFreeTrial; removed-critical-fact:fact-pipedrive-pricing.startingPriceMonthly; removed-critical-fact:fact-pipedrive-pricing.currency; removed-critical-fact:fact-pipedrive-pricing.model; removed-critical-fact:fact-pipedrive-pricing.plans.lite; removed-critical-fact:fact-pipedrive-pricing.plans.growth; removed-critical-fact:fact-pipedrive-pricing.plans.premium; removed-critical-fact:fact-pipedrive-pricing.plans.ultimate; removed-critical-fact:fact-pipedrive-plans.mapping"
+    },
+    {
+      "at": "2026-08-16T06:13:33.895Z",
+      "event": "workflow_resumed",
+      "message": "Workflow resumed"
+    },
+    {
+      "at": "2026-08-16T06:13:33.896Z",
+      "event": "workflow_started",
+      "message": "Workflow execution started"
+    },
+    {
+      "at": "2026-08-18T08:49:54.374Z",
+      "event": "workflow_resumed",
+      "message": "Workflow resumed"
+    },
+    {
+      "at": "2026-08-18T08:49:54.375Z",
+      "event": "workflow_started",
+      "message": "Workflow execution started"
+    },
+    {
+      "at": "2026-08-18T08:49:54.376Z",
+      "event": "workflow_step_started",
+      "stepId": "pre-publish-validation",
+      "message": "Started Pre-publish validation"
+    },
+    {
+      "at": "2026-08-18T08:49:54.989Z",
+      "event": "workflow_step_completed",
+      "stepId": "pre-publish-validation",
+      "message": "Pre-publish validation passed — READY TO PUBLISH (manual)"
+    },
+    {
+      "at": "2026-08-18T08:49:54.990Z",
+      "event": "workflow_completed",
+      "message": "Workflow completed"
+    }
+  ],
+  "options": {
+    "generateReview": true,
+    "generatePricing": true,
+    "generateAlternatives": true,
+    "generateComparisons": true,
+    "runInternalLinks": true,
+    "stopAfterApproval": true,
+    "allowNormalizedFacts": false,
+    "dryRun": false,
+    "maxComparisons": 3,
+    "skipOnboarding": false
+  },
+  "warnings": [],
+  "createdAt": "2026-08-13T18:57:17.686Z",
+  "updatedAt": "2026-08-18T08:49:54.990Z"
+}

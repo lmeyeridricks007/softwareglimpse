@@ -1,0 +1,13 @@
+# FIXTURE SNAPSHOT — structured extract for FixtureFactExtractor
+# NOT a live HTML scrape. Numbers below mirror researched first-party figures where asserted (verifiedAt 2026-08-16).
+# Lite $15/$20, Premium $25/$30, Ultimate $40/$50 annual/monthly per user. Enterprise custom (first-party Aug 2026).
+
+CURRENCY: USD
+PRICING_MODEL: subscription
+FREE_PLAN: false
+FREE_TRIAL: true
+
+PLAN lite: name=Lite; amountPerSeat=15; currency=USD; interval=month; billingInterval=annual; unit=seat
+PLAN premium: name=Premium; amountPerSeat=25; currency=USD; interval=month; billingInterval=annual; unit=seat
+PLAN ultimate: name=Ultimate; amountPerSeat=40; currency=USD; interval=month; billingInterval=annual; unit=seat
+PLAN enterprise: name=Enterprise; contactSales=true; currency=USD; interval=month; billingInterval=month

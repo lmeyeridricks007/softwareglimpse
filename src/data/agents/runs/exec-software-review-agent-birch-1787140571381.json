@@ -1,0 +1,90 @@
+{
+  "id": "exec-software-review-agent-birch-1787140571381",
+  "agentId": "software-review-agent",
+  "agentVersion": "1.0.0",
+  "status": "qa-failed",
+  "mode": "CREATE",
+  "targetSlug": "birch",
+  "draftId": "draft-deterministic-v1-software-review-agent-birch-2026-08-19T11-56-11-599Z",
+  "briefId": "agent-brief-software-review-agent-birch-1787140571598",
+  "validation": {
+    "ok": false,
+    "errors": [
+      "unknown-fact-ref:fact-birch-features.content-calendar",
+      "unknown-fact-ref:fact-birch-features.social-scheduling",
+      "unknown-fact-ref:fact-birch-features.marketing-automation"
+    ]
+  },
+  "qa": {
+    "status": "fail",
+    "blockers": [
+      {
+        "type": "UNSUPPORTED_FACT",
+        "severity": "blocker",
+        "message": "Fact ref not in approved context: fact-birch-features.content-calendar",
+        "section": "verdict"
+      },
+      {
+        "type": "UNSUPPORTED_FACT",
+        "severity": "blocker",
+        "message": "Fact ref not in approved context: fact-birch-features.social-scheduling",
+        "section": "verdict"
+      },
+      {
+        "type": "UNSUPPORTED_FACT",
+        "severity": "blocker",
+        "message": "Fact ref not in approved context: fact-birch-features.marketing-automation",
+        "section": "verdict"
+      },
+      {
+        "type": "UNSUPPORTED_FACT",
+        "severity": "blocker",
+        "message": "unknown-fact-ref:fact-birch-features.content-calendar"
+      },
+      {
+        "type": "UNSUPPORTED_FACT",
+        "severity": "blocker",
+        "message": "unknown-fact-ref:fact-birch-features.social-scheduling"
+      },
+      {
+        "type": "UNSUPPORTED_FACT",
+        "severity": "blocker",
+        "message": "unknown-fact-ref:fact-birch-features.marketing-automation"
+      }
+    ],
+    "warnings": [],
+    "suggestions": [],
+    "checkedAt": "2026-08-19T11:56:11.604Z"
+  },
+  "errors": [
+    "unknown-fact-ref:fact-birch-features.content-calendar",
+    "unknown-fact-ref:fact-birch-features.social-scheduling",
+    "unknown-fact-ref:fact-birch-features.marketing-automation"
+  ],
+  "cost": {
+    "provider": "deterministic-v1",
+    "model": "deterministic-template-v1",
+    "inputTokens": 0,
+    "outputTokens": 0,
+    "estimatedCostUsd": 0
+  },
+  "contextSnapshot": {
+    "researchSnapshotIds": [],
+    "factIds": [
+      "fact-birch-identity.shortDescription",
+      "fact-birch-positioning.vendorClaim",
+      "fact-birch-pricing.model",
+      "fact-birch-pricing.hasFreePlan",
+      "fact-birch-pricing.hasFreeTrial",
+      "fact-birch-pricing.startingPriceMonthly",
+      "fact-birch-pricing.plans.starter"
+    ],
+    "methodologySlug": "marketing-editorial",
+    "methodologyVersion": "1.0.0",
+    "pricingFreshnessAt": "2026-08-17T17:00:00.000Z",
+    "builtAt": "2026-08-19T11:56:11.595Z"
+  },
+  "dryRun": false,
+  "startedAt": "2026-08-19T11:56:11.381Z",
+  "completedAt": "2026-08-19T11:56:11.606Z"
+}

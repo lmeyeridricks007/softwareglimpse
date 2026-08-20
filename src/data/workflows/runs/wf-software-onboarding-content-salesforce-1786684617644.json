@@ -1,0 +1,499 @@
+{
+  "id": "wf-software-onboarding-content-salesforce-1786684617644",
+  "workflowId": "software-onboarding-content",
+  "workflowVersion": "1.0.0",
+  "name": "Software Onboarding Content: salesforce",
+  "targetType": "software",
+  "targetId": "salesforce",
+  "status": "superseded",
+  "steps": [
+    {
+      "id": "software-onboarding",
+      "definitionStepId": "software-onboarding",
+      "handler": "software-onboarding",
+      "label": "Software onboarding",
+      "status": "completed",
+      "required": true,
+      "failurePolicy": "block-workflow",
+      "attempt": 1,
+      "maxAttempts": 2,
+      "dependsOn": [],
+      "priority": "critical",
+      "config": {
+        "maxAutomaticRevisions": 1,
+        "expandFromContentPlan": false,
+        "expandKind": "none",
+        "stopAfterApproval": true,
+        "allowNormalizedFacts": false,
+        "optionalWhenBlocked": false,
+        "forceTransientFailOnce": false
+      },
+      "inputRefs": {},
+      "outputRefs": {
+        "softwareOnboardingRunId": "onboard-salesforce-1786684110343"
+      },
+      "blockers": [],
+      "warnings": [
+        "Onboarding run exists but status=blocked"
+      ],
+      "startedAt": "2026-08-14T05:16:58.153Z",
+      "completedAt": "2026-08-14T05:16:58.210Z",
+      "revisionAttempts": 0
+    },
+    {
+      "id": "content-plan",
+      "definitionStepId": "content-plan",
+      "handler": "content-plan",
+      "label": "Content plan",
+      "status": "completed",
+      "required": true,
+      "failurePolicy": "block-workflow",
+      "attempt": 1,
+      "maxAttempts": 2,
+      "dependsOn": [
+        "software-onboarding"
+      ],
+      "priority": "high",
+      "config": {
+        "maxAutomaticRevisions": 1,
+        "expandFromContentPlan": false,
+        "expandKind": "none",
+        "stopAfterApproval": true,
+        "allowNormalizedFacts": false,
+        "optionalWhenBlocked": false,
+        "forceTransientFailOnce": false
+      },
+      "inputRefs": {},
+      "outputRefs": {
+        "softwareOnboardingRunId": "onboard-salesforce-1786684110343",
+        "comparisonTargets": "",
+        "pageCandidateCount": "0"
+      },
+      "blockers": [],
+      "warnings": [],
+      "startedAt": "2026-08-14T05:16:58.212Z",
+      "completedAt": "2026-08-14T05:16:58.250Z",
+      "revisionAttempts": 0
+    },
+    {
+      "id": "software-review",
+      "definitionStepId": "software-review",
+      "handler": "agent-run",
+      "label": "Software Review",
+      "status": "completed",
+      "required": true,
+      "failurePolicy": "block-workflow",
+      "attempt": 1,
+      "maxAttempts": 2,
+      "dependsOn": [
+        "content-plan"
+      ],
+      "priority": "high",
+      "config": {
+        "agentId": "software-review-agent",
+        "targetSlug": "salesforce",
+        "maxAutomaticRevisions": 1,
+        "expandFromContentPlan": false,
+        "expandKind": "none",
+        "stopAfterApproval": true,
+        "allowNormalizedFacts": false,
+        "optionalWhenBlocked": false,
+        "forceTransientFailOnce": false
+      },
+      "inputRefs": {},
+      "outputRefs": {
+        "draftId": "draft-deterministic-v1-software-review-agent-salesforce-2026-08-14T05-16-58-290Z",
+        "qaStatus": "pass",
+        "agentId": "software-review-agent",
+        "target": "salesforce"
+      },
+      "inputSnapshot": {
+        "researchFactIds": [
+          "fact-salesforce-pricing.hasFreePlan",
+          "fact-salesforce-pricing.hasFreeTrial",
+          "fact-salesforce-pricing.startingPriceMonthly",
+          "fact-salesforce-pricing.currency",
+          "fact-salesforce-pricing.model",
+          "fact-salesforce-pricing.plans.starter-suite",
+          "fact-salesforce-pricing.plans.pro-suite",
+          "fact-salesforce-pricing.plans.enterprise",
+          "fact-salesforce-pricing.plans.unlimited",
+          "fact-salesforce-pricing.addons",
+          "fact-salesforce-pricing.agentforce1",
+          "fact-salesforce-features.contact-management",
+          "fact-salesforce-features.lead-management",
+          "fact-salesforce-features.pipeline-management",
+          "fact-salesforce-features.deal-management",
+          "fact-salesforce-features.custom-pipelines",
+          "fact-salesforce-features.custom-fields",
+          "fact-salesforce-features.mobile-app",
+          "fact-salesforce-features.email-sync",
+          "fact-salesforce-features.email-tracking",
+          "fact-salesforce-features.email-sequences",
+          "fact-salesforce-features.workflow-automation",
+          "fact-salesforce-features.sales-automation",
+          "fact-salesforce-features.reporting",
+          "fact-salesforce-features.forecasting",
+          "fact-salesforce-features.lead-scoring",
+          "fact-salesforce-features.ai-assistance",
+          "fact-salesforce-features.integrations",
+          "fact-salesforce-features.email-campaigns",
+          "fact-salesforce-integrations.gmail",
+          "fact-salesforce-integrations.outlook",
+          "fact-salesforce-integrations.slack",
+          "fact-salesforce-integrations.appexchange",
+          "fact-salesforce-ai.assistant",
+          "fact-salesforce-ai.forecasting",
+          "fact-salesforce-ai.automation",
+          "fact-salesforce-ai.lead-scoring",
+          "fact-salesforce-positioning.summary"
+        ],
+        "methodologySlug": "crm-editorial",
+        "methodologyVersion": "1.0.0",
+        "agentVersion": "1.0.0",
+        "contextBuiltAt": "2026-08-14T05:16:58.284Z"
+      },
+      "blockers": [],
+      "warnings": [],
+      "agentTaskId": "exec-software-review-agent-salesforce-1786684618253",
+      "draftId": "draft-deterministic-v1-software-review-agent-salesforce-2026-08-14T05-16-58-290Z",
+      "startedAt": "2026-08-14T05:16:58.252Z",
+      "completedAt": "2026-08-14T05:16:58.297Z",
+      "revisionAttempts": 0
+    },
+    {
+      "id": "pricing-page",
+      "definitionStepId": "pricing-page",
+      "handler": "agent-run",
+      "label": "Pricing Page",
+      "status": "review-required",
+      "required": false,
+      "failurePolicy": "continue-with-warning",
+      "attempt": 1,
+      "maxAttempts": 2,
+      "dependsOn": [
+        "content-plan"
+      ],
+      "priority": "normal",
+      "config": {
+        "agentId": "pricing-page-agent",
+        "targetSlug": "salesforce",
+        "maxAutomaticRevisions": 1,
+        "expandFromContentPlan": false,
+        "expandKind": "none",
+        "stopAfterApproval": true,
+        "allowNormalizedFacts": false,
+        "optionalWhenBlocked": true,
+        "forceTransientFailOnce": false
+      },
+      "inputRefs": {},
+      "outputRefs": {
+        "draftId": "draft-deterministic-v1-pricing-page-agent-salesforce-2026-08-14T05-16-58-331Z-rev-1786684618344",
+        "qaStatus": "fail"
+      },
+      "blockers": [],
+      "warnings": [
+        "QA still failing after revision: UNVERIFIED_NUMBER,UNVERIFIED_NUMBER,UNVERIFIED_NUMBER,UNVERIFIED_NUMBER,UNVERIFIED_NUMBER"
+      ],
+      "agentTaskId": "exec-pricing-page-agent-salesforce-1786684618323",
+      "draftId": "draft-deterministic-v1-pricing-page-agent-salesforce-2026-08-14T05-16-58-331Z-rev-1786684618344",
+      "startedAt": "2026-08-14T05:16:58.322Z",
+      "completedAt": "2026-08-14T05:16:58.347Z",
+      "revisionAttempts": 1
+    },
+    {
+      "id": "alternatives",
+      "definitionStepId": "alternatives",
+      "handler": "agent-run",
+      "label": "Alternatives",
+      "status": "blocked",
+      "required": false,
+      "failurePolicy": "continue-with-warning",
+      "attempt": 1,
+      "maxAttempts": 2,
+      "dependsOn": [
+        "content-plan"
+      ],
+      "priority": "normal",
+      "config": {
+        "agentId": "alternatives-agent",
+        "targetSlug": "salesforce",
+        "maxAutomaticRevisions": 1,
+        "expandFromContentPlan": false,
+        "expandKind": "none",
+        "stopAfterApproval": true,
+        "allowNormalizedFacts": false,
+        "optionalWhenBlocked": true,
+        "forceTransientFailOnce": false
+      },
+      "inputRefs": {},
+      "outputRefs": {},
+      "blockers": [
+        "NO_APPROVED_ALTERNATIVES: Approved alternative relationships required — same-category alone is insufficient"
+      ],
+      "warnings": [
+        "NO_APPROVED_ALTERNATIVES: Approved alternative relationships required — same-category alone is insufficient"
+      ],
+      "startedAt": "2026-08-14T05:16:58.298Z",
+      "completedAt": "2026-08-14T05:16:58.306Z",
+      "revisionAttempts": 0
+    },
+    {
+      "id": "comparisons",
+      "definitionStepId": "comparisons",
+      "handler": "agent-run",
+      "label": "Comparisons",
+      "status": "blocked",
+      "required": false,
+      "failurePolicy": "continue-with-warning",
+      "attempt": 1,
+      "maxAttempts": 2,
+      "dependsOn": [
+        "content-plan"
+      ],
+      "priority": "normal",
+      "config": {
+        "agentId": "comparison-agent",
+        "maxAutomaticRevisions": 1,
+        "expandFromContentPlan": true,
+        "expandKind": "comparisons",
+        "stopAfterApproval": true,
+        "allowNormalizedFacts": false,
+        "optionalWhenBlocked": true,
+        "forceTransientFailOnce": false
+      },
+      "inputRefs": {},
+      "outputRefs": {},
+      "blockers": [
+        "MISSING_PRODUCTS: Comparison requires two product slugs"
+      ],
+      "warnings": [
+        "MISSING_PRODUCTS: Comparison requires two product slugs"
+      ],
+      "startedAt": "2026-08-14T05:16:58.307Z",
+      "completedAt": "2026-08-14T05:16:58.320Z",
+      "revisionAttempts": 0
+    },
+    {
+      "id": "internal-links",
+      "definitionStepId": "internal-links",
+      "handler": "internal-link",
+      "label": "Internal Link Plan",
+      "status": "ready",
+      "required": false,
+      "failurePolicy": "continue-with-warning",
+      "attempt": 0,
+      "maxAttempts": 2,
+      "dependsOn": [
+        "software-review"
+      ],
+      "priority": "low",
+      "config": {
+        "agentId": "internal-link-agent",
+        "maxAutomaticRevisions": 1,
+        "expandFromContentPlan": false,
+        "expandKind": "none",
+        "stopAfterApproval": true,
+        "allowNormalizedFacts": false,
+        "optionalWhenBlocked": false,
+        "forceTransientFailOnce": false
+      },
+      "inputRefs": {},
+      "outputRefs": {},
+      "blockers": [],
+      "warnings": [],
+      "revisionAttempts": 0
+    },
+    {
+      "id": "finder-readiness",
+      "definitionStepId": "finder-readiness",
+      "handler": "update-recommendation-readiness",
+      "label": "Finder readiness",
+      "status": "ready",
+      "required": false,
+      "failurePolicy": "continue",
+      "attempt": 0,
+      "maxAttempts": 2,
+      "dependsOn": [
+        "content-plan"
+      ],
+      "priority": "low",
+      "config": {
+        "maxAutomaticRevisions": 1,
+        "expandFromContentPlan": false,
+        "expandKind": "none",
+        "stopAfterApproval": true,
+        "allowNormalizedFacts": false,
+        "optionalWhenBlocked": false,
+        "forceTransientFailOnce": false
+      },
+      "inputRefs": {},
+      "outputRefs": {},
+      "blockers": [],
+      "warnings": [],
+      "revisionAttempts": 0
+    },
+    {
+      "id": "editorial-approval",
+      "definitionStepId": "editorial-approval",
+      "handler": "approval-check",
+      "label": "Editorial approval",
+      "status": "ready",
+      "required": true,
+      "failurePolicy": "manual-review",
+      "attempt": 0,
+      "maxAttempts": 2,
+      "dependsOn": [
+        "software-review"
+      ],
+      "priority": "critical",
+      "config": {
+        "approvalType": "editorial",
+        "maxAutomaticRevisions": 1,
+        "expandFromContentPlan": false,
+        "expandKind": "none",
+        "stopAfterApproval": true,
+        "allowNormalizedFacts": false,
+        "optionalWhenBlocked": false,
+        "forceTransientFailOnce": false
+      },
+      "inputRefs": {},
+      "outputRefs": {},
+      "blockers": [],
+      "warnings": [],
+      "revisionAttempts": 0
+    },
+    {
+      "id": "pre-publish-validation",
+      "definitionStepId": "pre-publish-validation",
+      "handler": "pre-publish-validation",
+      "label": "Pre-publish validation",
+      "status": "pending",
+      "required": true,
+      "failurePolicy": "block-workflow",
+      "attempt": 0,
+      "maxAttempts": 2,
+      "dependsOn": [
+        "editorial-approval"
+      ],
+      "priority": "critical",
+      "config": {
+        "maxAutomaticRevisions": 1,
+        "expandFromContentPlan": false,
+        "expandKind": "none",
+        "stopAfterApproval": true,
+        "allowNormalizedFacts": false,
+        "optionalWhenBlocked": false,
+        "forceTransientFailOnce": false
+      },
+      "inputRefs": {},
+      "outputRefs": {},
+      "blockers": [],
+      "warnings": [],
+      "revisionAttempts": 0
+    }
+  ],
+  "history": [
+    {
+      "at": "2026-08-14T05:16:58.148Z",
+      "event": "workflow_created",
+      "message": "Created software-onboarding-content:v1.0.0"
+    },
+    {
+      "at": "2026-08-14T05:16:58.151Z",
+      "event": "workflow_started",
+      "message": "Workflow execution started"
+    },
+    {
+      "at": "2026-08-14T05:16:58.153Z",
+      "event": "workflow_step_started",
+      "stepId": "software-onboarding",
+      "message": "Started Software onboarding"
+    },
+    {
+      "at": "2026-08-14T05:16:58.210Z",
+      "event": "workflow_step_completed",
+      "stepId": "software-onboarding",
+      "message": "Reused onboarding run onboard-salesforce-1786684110343 (blocked)"
+    },
+    {
+      "at": "2026-08-14T05:16:58.212Z",
+      "event": "workflow_step_started",
+      "stepId": "content-plan",
+      "message": "Started Content plan"
+    },
+    {
+      "at": "2026-08-14T05:16:58.250Z",
+      "event": "workflow_step_completed",
+      "stepId": "content-plan",
+      "message": "Content plan from onboarding onboard-salesforce-1786684110343 (0 candidates)"
+    },
+    {
+      "at": "2026-08-14T05:16:58.252Z",
+      "event": "workflow_step_started",
+      "stepId": "software-review",
+      "message": "Started Software Review"
+    },
+    {
+      "at": "2026-08-14T05:16:58.297Z",
+      "event": "workflow_step_completed",
+      "stepId": "software-review",
+      "message": "Agent software-review-agent → draft draft-deterministic-v1-software-review-agent-salesforce-2026-08-14T05-16-58-290Z (qa=pass)"
+    },
+    {
+      "at": "2026-08-14T05:16:58.298Z",
+      "event": "workflow_step_started",
+      "stepId": "alternatives",
+      "message": "Started Alternatives"
+    },
+    {
+      "at": "2026-08-14T05:16:58.306Z",
+      "event": "workflow_step_completed",
+      "stepId": "alternatives",
+      "message": "Agent blocked (optional): NO_APPROVED_ALTERNATIVES: Approved alternative relationships required — same-category alone is insufficient"
+    },
+    {
+      "at": "2026-08-14T05:16:58.307Z",
+      "event": "workflow_step_started",
+      "stepId": "comparisons",
+      "message": "Started Comparisons"
+    },
+    {
+      "at": "2026-08-14T05:16:58.320Z",
+      "event": "workflow_step_completed",
+      "stepId": "comparisons",
+      "message": "Agent blocked (optional): MISSING_PRODUCTS: Comparison requires two product slugs"
+    },
+    {
+      "at": "2026-08-14T05:16:58.322Z",
+      "event": "workflow_step_started",
+      "stepId": "pricing-page",
+      "message": "Started Pricing Page"
+    },
+    {
+      "at": "2026-08-14T05:16:58.347Z",
+      "event": "workflow_step_completed",
+      "stepId": "pricing-page",
+      "message": "QA fail after one automatic revision → review-required"
+    }
+  ],
+  "options": {
+    "generateReview": true,
+    "generatePricing": true,
+    "generateAlternatives": true,
+    "generateComparisons": true,
+    "runInternalLinks": true,
+    "stopAfterApproval": true,
+    "allowNormalizedFacts": false,
+    "dryRun": false,
+    "maxComparisons": 3,
+    "skipOnboarding": false
+  },
+  "supersededBy": "wf-software-onboarding-content-salesforce-1786684660476",
+  "warnings": [
+    "alternatives blocked: NO_APPROVED_ALTERNATIVES: Approved alternative relationships required — same-category alone is insufficient",
+    "comparisons blocked: MISSING_PRODUCTS: Comparison requires two product slugs"
+  ],
+  "createdAt": "2026-08-14T05:16:58.147Z",
+  "updatedAt": "2026-08-14T05:17:40.740Z"
+}

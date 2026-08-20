@@ -1,0 +1,295 @@
+{
+  "id": "review-sentry-v1",
+  "productSlug": "sentry",
+  "assessmentId": "assessment-sentry-it-v1",
+  "editorialStatus": "approved",
+  "title": "Sentry Review (2026)",
+  "h1": "Sentry Review",
+  "intro": "Sentry is evaluated here as an observability and infrastructure monitoring suite — Sentry is an application error-monitoring, tracing, and session-replay specialist. It sits in the observability-monitoring cluster as a developer-facing peer — not a Datadog infrastructure-monitoring replacement. Developer Free is $0 (1 user, 5k errors). Team is $26/month billed annually with default prepaid event volume; Business $80/month; Enterprise custom. Same cluster as Datadog/Splunk Observability Cloud; different primary shape (errors/replays vs host/infra suites). Does not outrank Datadog 8.6. This review uses SoftwareGlimpse’s IT & Development methodology (ease of use, IT job fit, workflow depth, integrations, admin/security, scalability, value, AI), scoring products inside their job cluster rather than against unrelated peers. It is based on first-party research, not hands-on lab testing.",
+  "summary": "Choose Sentry when application error monitoring, tracing, and replays are the job — not Datadog infrastructure monitoring by default.",
+  "verdict": "Choose Sentry when application error monitoring, tracing, and replays are the job — not Datadog infrastructure monitoring by default. Compare Datadog or Splunk Observability Cloud for full-stack infra; PagerDuty only on landscape pages for paging. Scores reflect first-party documentation as of 2026-08-18 — not hands-on product testing. Confirm current packaging, host/GB rates and minimums on the vendor site before purchase.",
+  "overallScore": 8,
+  "criterionAssessments": [
+    {
+      "criterionSlug": "ease-of-use",
+      "score": 9,
+      "rationale": "SDK-first error UI is the easiest observability entry for application developers. Not a lab test.",
+      "supportingFactIds": [
+        "fact-sentry-features.infrastructure-monitoring",
+        "fact-sentry-pricing.model"
+      ],
+      "confidence": "medium",
+      "status": "approved",
+      "reviewedAt": "2026-08-18T20:00:00.000Z",
+      "reviewer": "editorial"
+    },
+    {
+      "criterionSlug": "it-job-fit",
+      "score": 8,
+      "rationale": "Specialist observability peer — application errors/tracing/replays, not Datadog infra replacement.",
+      "supportingFactIds": [
+        "fact-sentry-features.infrastructure-monitoring",
+        "fact-sentry-pricing.model"
+      ],
+      "confidence": "medium",
+      "status": "approved",
+      "reviewedAt": "2026-08-18T20:00:00.000Z",
+      "reviewer": "editorial"
+    },
+    {
+      "criterionSlug": "workflow-depth",
+      "score": 8,
+      "rationale": "Issues, traces, replays, and release tracking are deep for that job; not full-stack infra.",
+      "supportingFactIds": [
+        "fact-sentry-features.apm-tracing",
+        "fact-sentry-pricing.model"
+      ],
+      "confidence": "medium",
+      "status": "approved",
+      "reviewedAt": "2026-08-18T20:00:00.000Z",
+      "reviewer": "editorial"
+    },
+    {
+      "criterionSlug": "integrations",
+      "score": 8,
+      "rationale": "GitHub, Slack, and language SDKs cover the application workflow.",
+      "supportingFactIds": [
+        "fact-sentry-features.analytics-reporting",
+        "fact-sentry-pricing.model",
+        "fact-sentry-positioning.vendorClaim"
+      ],
+      "confidence": "medium",
+      "status": "approved",
+      "reviewedAt": "2026-08-18T20:00:00.000Z",
+      "reviewer": "editorial"
+    },
+    {
+      "criterionSlug": "admin-security",
+      "score": 7,
+      "rationale": "Business/Enterprise add governance; Team is developer-grade.",
+      "supportingFactIds": [
+        "fact-sentry-features.enterprise-security",
+        "fact-sentry-pricing.model"
+      ],
+      "confidence": "medium",
+      "status": "approved",
+      "reviewedAt": "2026-08-18T20:00:00.000Z",
+      "reviewer": "editorial"
+    },
+    {
+      "criterionSlug": "scalability",
+      "score": 8,
+      "rationale": "Event prepaid plus Enterprise custom scale; not unlimited free errors.",
+      "supportingFactIds": [
+        "fact-sentry-pricing.plans.developer",
+        "fact-sentry-pricing.model",
+        "fact-sentry-pricing.plans.enterprise"
+      ],
+      "confidence": "medium",
+      "status": "approved",
+      "reviewedAt": "2026-08-18T20:00:00.000Z",
+      "reviewer": "editorial"
+    },
+    {
+      "criterionSlug": "value-for-money",
+      "score": 9,
+      "rationale": "Free Developer plus published $26 Team floor is sharp for error monitoring. Affiliate economics excluded.",
+      "supportingFactIds": [
+        "fact-sentry-pricing.hasFreePlan",
+        "fact-sentry-pricing.model",
+        "fact-sentry-pricing.startingPriceMonthly"
+      ],
+      "confidence": "medium",
+      "status": "approved",
+      "reviewedAt": "2026-08-18T20:00:00.000Z",
+      "reviewer": "editorial"
+    },
+    {
+      "criterionSlug": "ai-capabilities",
+      "score": 7,
+      "rationale": "Issue grouping/assist exists — scored as supporting, not an LLM suite.",
+      "supportingFactIds": [
+        "fact-sentry-features.itsm-ai",
+        "fact-sentry-pricing.model"
+      ],
+      "confidence": "medium",
+      "status": "approved",
+      "reviewedAt": "2026-08-18T20:00:00.000Z",
+      "reviewer": "editorial"
+    }
+  ],
+  "bestFor": [
+    "Application teams whose primary observability job is errors, traces, and replays",
+    "Developers who want a free 5k-error path before Team $26",
+    "Buyers comparing a specialist to Datadog/Splunk host suites"
+  ],
+  "notIdealFor": [
+    "SRE teams buying infrastructure monitoring as the core SKU (Datadog)",
+    "On-call-only paging (PagerDuty) — landscape, not a peer rank",
+    "ITSM or hosting purchases"
+  ],
+  "pros": [
+    "Free Developer plan",
+    "Published Team $26 annual floor",
+    "Error/trace/replay specialist depth",
+    "Strong developer UX",
+    "Clear identity vs infra suites"
+  ],
+  "cons": [
+    "Not infra monitoring",
+    "Event prepaid/overage math",
+    "Does not outrank Datadog",
+    "Not on-call-primary",
+    "Admin-security thinner than Cisco/Splunk"
+  ],
+  "keyFeatures": [
+    "Error monitoring",
+    "Distributed tracing",
+    "Session replays",
+    "Release / commit linking",
+    "Language SDKs"
+  ],
+  "limitations": [
+    "Not a Datadog-style infrastructure monitoring suite — errors/traces/replays are the job",
+    "Prepaid event volume on Team/Business is the TCO lever beyond $26/$80 stickers",
+    "Does not outrank Datadog (8.6)",
+    "Not on-call paging as a primary product (landscape vs PagerDuty)",
+    "Not ITSM, git host, hosting panel, or managed hosting"
+  ],
+  "pricingSummary": "Developer Free $0 (1 user, 5k errors). Team from $26/mo annual. Business $80/mo. Enterprise quote. Confirm prepaid event volumes on sentry.io/pricing.",
+  "whoShouldChoose": "Choose Sentry when application error monitoring, tracing, and replays are the job — not Datadog infrastructure monitoring by default.",
+  "whoShouldConsiderAlternatives": "Compare Datadog or Splunk Observability Cloud for full-stack infra; PagerDuty only on landscape pages for paging.",
+  "alternativeSlugs": [
+    "datadog",
+    "splunk"
+  ],
+  "comparisonSlugs": [
+    "datadog-vs-sentry",
+    "sentry-vs-splunk"
+  ],
+  "relatedGuidePaths": [
+    "/categories/it-development/",
+    "/best/it-development-software/",
+    "/use-cases/observability-monitoring/",
+    "/use-cases/incident-oncall/",
+    "/use-cases/source-control-devops/",
+    "/use-cases/hosting-operations/",
+    "/use-cases/hosting-providers/",
+    "/use-cases/web-data-collection/"
+  ],
+  "methodologySlug": "it-development-editorial",
+  "methodologyVersion": "1.0.0",
+  "researchSourceIds": [
+    "sentry-product-official",
+    "sentry-pricing-official",
+    "sentry-pricing"
+  ],
+  "factRefs": [
+    {
+      "section": "pricing",
+      "factIds": [
+        "fact-sentry-pricing.model",
+        "fact-sentry-pricing.hasFreePlan",
+        "fact-sentry-pricing.hasFreeTrial",
+        "fact-sentry-pricing.startingPriceMonthly",
+        "fact-sentry-pricing.plans.developer",
+        "fact-sentry-pricing.plans.team",
+        "fact-sentry-pricing.plans.business",
+        "fact-sentry-pricing.plans.enterprise"
+      ]
+    },
+    {
+      "section": "overview",
+      "factIds": [
+        "fact-sentry-identity.shortDescription",
+        "fact-sentry-positioning.vendorClaim",
+        "fact-sentry-positioning.jobCluster"
+      ]
+    },
+    {
+      "section": "features",
+      "factIds": [
+        "fact-sentry-features.incident-management",
+        "fact-sentry-features.change-problem",
+        "fact-sentry-features.service-catalog",
+        "fact-sentry-features.infrastructure-monitoring",
+        "fact-sentry-features.apm-tracing",
+        "fact-sentry-features.log-management",
+        "fact-sentry-features.source-control",
+        "fact-sentry-features.cicd-actions",
+        "fact-sentry-features.hosting-panel",
+        "fact-sentry-features.managed-hosting",
+        "fact-sentry-features.proxy-network",
+        "fact-sentry-features.itsm-ai",
+        "fact-sentry-features.dev-ai",
+        "fact-sentry-features.oncall-paging",
+        "fact-sentry-features.enterprise-security",
+        "fact-sentry-features.analytics-reporting"
+      ]
+    }
+  ],
+  "faq": [
+    {
+      "question": "Is Sentry IT / development software?",
+      "answer": "Yes. Sentry is evaluated as an observability and infrastructure monitoring suite."
+    },
+    {
+      "question": "How is Sentry priced?",
+      "answer": "Developer Free $0 (1 user, 5k errors). Team from $26/mo annual. Business $80/mo. Enterprise quote. Confirm prepaid event volumes on sentry.io/pricing."
+    },
+    {
+      "question": "Does Sentry have a free plan or free trial?",
+      "answer": "Yes — a free plan is published. No free trial is documented on the pricing page. Confirm current terms with the vendor."
+    },
+    {
+      "question": "Did SoftwareGlimpse personally test Sentry?",
+      "answer": "No. This review is based on first-party product and pricing research evidence, not hands-on product usage. Affiliate relationships never influence scores."
+    }
+  ],
+  "sections": [
+    {
+      "id": "overview",
+      "heading": "Overview",
+      "body": "Sentry is an application error-monitoring, tracing, and session-replay specialist. It sits in the observability-monitoring cluster as a developer-facing peer — not a Datadog infrastructure-monitoring replacement. Developer Free is $0 (1 user, 5k errors). Team is $26/month billed annually with default prepaid event volume; Business $80/month; Enterprise custom. Same cluster as Datadog/Splunk Observability Cloud; different primary shape (errors/replays vs host/infra suites). Does not outrank Datadog 8.6."
+    },
+    {
+      "id": "best-for",
+      "heading": "Who it’s for",
+      "body": "• Application teams whose primary observability job is errors, traces, and replays\n• Developers who want a free 5k-error path before Team $26\n• Buyers comparing a specialist to Datadog/Splunk host suites"
+    },
+    {
+      "id": "features",
+      "heading": "Feature coverage",
+      "body": "• incident-management: limited\n• change-problem: not-supported\n• service-catalog: not-supported\n• infrastructure-monitoring: limited\n• apm-tracing: supported\n• log-management: limited\n• source-control: not-supported\n• cicd-actions: limited\n• hosting-panel: not-supported\n• managed-hosting: not-supported\n• proxy-network: not-supported\n• itsm-ai: limited\n• dev-ai: limited\n• oncall-paging: not-supported\n• enterprise-security: limited\n• analytics-reporting: supported"
+    },
+    {
+      "id": "pricing",
+      "heading": "Pricing",
+      "body": "Developer Free $0 (1 user, 5k errors). Team from $26/mo annual. Business $80/mo. Enterprise quote. Confirm prepaid event volumes on sentry.io/pricing."
+    },
+    {
+      "id": "limitations",
+      "heading": "Limitations",
+      "body": "• Not a Datadog-style infrastructure monitoring suite — errors/traces/replays are the job\n• Prepaid event volume on Team/Business is the TCO lever beyond $26/$80 stickers\n• Does not outrank Datadog (8.6)\n• Not on-call paging as a primary product (landscape vs PagerDuty)\n• Not ITSM, git host, hosting panel, or managed hosting"
+    }
+  ],
+  "confidence": "medium",
+  "handsOnTesting": false,
+  "contentVersion": 1,
+  "refreshNeeded": false,
+  "lastUpdatedAt": "2026-08-18T20:00:00.000Z",
+  "metadata": {
+    "status": "published",
+    "publishedAt": "2026-08-18T00:00:00.000Z",
+    "updatedAt": "2026-08-18T20:00:00.000Z",
+    "reviewedAt": "2026-08-18T20:00:00.000Z",
+    "author": "author-lee-meyeridricks",
+    "researchStatus": "complete"
+  },
+  "seo": {
+    "title": "Sentry Review (2026) — IT & Development",
+    "description": "Sentry IT & development review on SoftwareGlimpse: strengths, trade-offs, pricing posture, and who should buy.",
+    "canonicalPath": "/software/sentry/",
+    "indexable": true
+  }
+}

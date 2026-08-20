@@ -1,0 +1,165 @@
+{
+  "id": "assessment-fly-io-it-v1",
+  "productSlug": "fly-io",
+  "methodologySlug": "it-development-editorial",
+  "methodologyVersion": "1.0.0",
+  "status": "approved",
+  "verdict": "Fly.io: Choose Fly.io when PAYG microVM/app hosting is the job — not Render by default, and not Cloudways managed VMs. Scores use the IT & Development editorial methodology from first-party research as of 2026-08-18 — not hands-on product testing.",
+  "strengths": [
+    "PAYG shared-cpu-1x from ~$1.94/mo",
+    "Global microVM placement / scale",
+    "Free trial",
+    "Clear PaaS identity vs managed WP",
+    "Support SKU documented separately from hosting"
+  ],
+  "weaknesses": [
+    "Does not outrank Render",
+    "Harder onboarding than Render",
+    "No free plan for new accounts",
+    "Easy to confuse $29 Support with hosting",
+    "AI is not the product"
+  ],
+  "bestFor": [
+    "Teams that want PAYG microVM/app hosting close to users",
+    "Buyers comparing Fly.io $1.94 shared-cpu-1x to Render Pro $25 + compute",
+    "Orgs that will not treat $29 Support as the hosting SKU"
+  ],
+  "notIdealFor": [
+    "Teams that want Render’s simpler git-push dashboard as the default award path",
+    "Managed WordPress or Cloudways VM buyers (landscape)",
+    "ITSM or observability purchases"
+  ],
+  "tradeoffs": [
+    "Per-agent vs per-host vs per-seat vs per-GB pricing models",
+    "Module stacking and consumption overages vs single-SKU floors",
+    "Free tiers vs enterprise SSO/audit gates",
+    "Landscape-adjacent tools vs primary job-cluster peers on best pages"
+  ],
+  "recommendation": "Choose Fly.io when PAYG microVM/app hosting is the job — not Render by default, and not Cloudways managed VMs. Compare Render for the cloud-paas award path; Cloudways only on landscape pages for managed VMs; WP Engine for managed WordPress.",
+  "editorialNotes": "IT optional-next batch. Approved on it-development-editorial v1.0.0. membershipRole=primary. jobCluster=cloud-paas. handsOnTesting=false. Affiliate economics excluded.",
+  "handsOnTesting": false,
+  "confidence": "medium",
+  "criterionAssessments": [
+    {
+      "criterionSlug": "ease-of-use",
+      "score": 7,
+      "rationale": "flyctl + region/machine model is more DIY than Render’s git-push dashboard. Not a lab test.",
+      "supportingFactIds": [
+        "fact-fly-io-features.cloud-paas",
+        "fact-fly-io-pricing.model"
+      ],
+      "confidence": "medium",
+      "status": "approved",
+      "reviewedAt": "2026-08-18T22:00:00.000Z",
+      "reviewer": "editorial"
+    },
+    {
+      "criterionSlug": "it-job-fit",
+      "score": 9,
+      "rationale": "Cloud PaaS / app platform — ranked with Render, not Cloudways managed VMs or WP Engine.",
+      "supportingFactIds": [
+        "fact-fly-io-features.cloud-paas",
+        "fact-fly-io-pricing.model"
+      ],
+      "confidence": "medium",
+      "status": "approved",
+      "reviewedAt": "2026-08-18T22:00:00.000Z",
+      "reviewer": "editorial"
+    },
+    {
+      "criterionSlug": "workflow-depth",
+      "score": 8,
+      "rationale": "Machines, volumes, and anycast-style deploy are deep for the PaaS job; CI is limited versus Render’s native Git deploys.",
+      "supportingFactIds": [
+        "fact-fly-io-features.cicd-actions",
+        "fact-fly-io-pricing.model"
+      ],
+      "confidence": "medium",
+      "status": "approved",
+      "reviewedAt": "2026-08-18T22:00:00.000Z",
+      "reviewer": "editorial"
+    },
+    {
+      "criterionSlug": "integrations",
+      "score": 8,
+      "rationale": "GitHub/API cover deploy; thinner dashboard marketplace than Render.",
+      "supportingFactIds": [
+        "fact-fly-io-features.analytics-reporting",
+        "fact-fly-io-pricing.model",
+        "fact-fly-io-positioning.vendorClaim"
+      ],
+      "confidence": "medium",
+      "status": "approved",
+      "reviewedAt": "2026-08-18T22:00:00.000Z",
+      "reviewer": "editorial"
+    },
+    {
+      "criterionSlug": "admin-security",
+      "score": 7,
+      "rationale": "Org/network controls exist; product-led vs enterprise-cloud governance. Held at 7.",
+      "supportingFactIds": [
+        "fact-fly-io-features.enterprise-security",
+        "fact-fly-io-pricing.model"
+      ],
+      "confidence": "medium",
+      "status": "approved",
+      "reviewedAt": "2026-08-18T22:00:00.000Z",
+      "reviewer": "editorial"
+    },
+    {
+      "criterionSlug": "scalability",
+      "score": 9,
+      "rationale": "Global microVM placement is the scale story versus Render Pro $25 — scored 9.",
+      "supportingFactIds": [
+        "fact-fly-io-pricing.plans.shared-cpu-1x",
+        "fact-fly-io-pricing.model",
+        "fact-fly-io-pricing.plans.payg"
+      ],
+      "confidence": "medium",
+      "status": "approved",
+      "reviewedAt": "2026-08-18T22:00:00.000Z",
+      "reviewer": "editorial"
+    },
+    {
+      "criterionSlug": "value-for-money",
+      "score": 8,
+      "rationale": "Published ~$1.94 shared-cpu-1x floor is sharp PAYG; Support $29 is extra and must not be the floor. Affiliate economics excluded.",
+      "supportingFactIds": [
+        "fact-fly-io-pricing.hasFreePlan",
+        "fact-fly-io-pricing.model",
+        "fact-fly-io-pricing.startingPriceMonthly"
+      ],
+      "confidence": "medium",
+      "status": "approved",
+      "reviewedAt": "2026-08-18T22:00:00.000Z",
+      "reviewer": "editorial"
+    },
+    {
+      "criterionSlug": "ai-capabilities",
+      "score": 5,
+      "rationale": "No meaningful ITSM/dev AI copilot — scored low on purpose.",
+      "supportingFactIds": [
+        "fact-fly-io-features.dev-ai",
+        "fact-fly-io-pricing.model"
+      ],
+      "confidence": "medium",
+      "status": "approved",
+      "reviewedAt": "2026-08-18T22:00:00.000Z",
+      "reviewer": "editorial"
+    }
+  ],
+  "overallScore": 7.7,
+  "overallScoreRationale": "Weighted average of the eight IT editorial criteria using category weights (IT job fit 16, workflow depth 14, ease of use 12, integrations 12, admin/security 12, value 12, AI 12, scalability 10), rounded to 1 decimal. Products are scored inside their job cluster — ITSM, observability, source control, hosting panels, and web-data platforms are not forced into one undifferentiated ranking. Not a hands-on lab score, and affiliate economics are excluded.",
+  "scoreAudit": [
+    {
+      "at": "2026-08-18T22:00:00.000Z",
+      "actor": "editorial",
+      "change": "IT optional-next onboarding; approved IT criteria with category weights; handsOnTesting=false",
+      "nextOverall": 7.7
+    }
+  ],
+  "reviewedAt": "2026-08-18T22:00:00.000Z",
+  "reviewer": "editorial",
+  "createdAt": "2026-08-18T22:00:00.000Z",
+  "updatedAt": "2026-08-18T22:00:00.000Z"
+}

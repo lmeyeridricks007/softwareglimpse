@@ -1,0 +1,960 @@
+{
+  "id": "wf-software-onboarding-content-pega-1786861081802",
+  "workflowId": "software-onboarding-content",
+  "workflowVersion": "1.0.0",
+  "name": "Software Onboarding Content: pega",
+  "targetType": "software",
+  "targetId": "pega",
+  "status": "completed-with-warnings",
+  "steps": [
+    {
+      "id": "software-onboarding",
+      "definitionStepId": "software-onboarding",
+      "handler": "software-onboarding",
+      "label": "Software onboarding",
+      "status": "completed",
+      "required": true,
+      "failurePolicy": "block-workflow",
+      "attempt": 1,
+      "maxAttempts": 2,
+      "dependsOn": [],
+      "priority": "critical",
+      "config": {
+        "maxAutomaticRevisions": 1,
+        "expandFromContentPlan": false,
+        "expandKind": "none",
+        "stopAfterApproval": true,
+        "allowNormalizedFacts": false,
+        "optionalWhenBlocked": false,
+        "forceTransientFailOnce": false
+      },
+      "inputRefs": {},
+      "outputRefs": {
+        "softwareOnboardingRunId": "onboard-pega-1786859717756"
+      },
+      "blockers": [],
+      "warnings": [],
+      "startedAt": "2026-08-16T06:18:02.501Z",
+      "completedAt": "2026-08-16T06:18:02.551Z",
+      "revisionAttempts": 0
+    },
+    {
+      "id": "content-plan",
+      "definitionStepId": "content-plan",
+      "handler": "content-plan",
+      "label": "Content plan",
+      "status": "completed",
+      "required": true,
+      "failurePolicy": "block-workflow",
+      "attempt": 1,
+      "maxAttempts": 2,
+      "dependsOn": [
+        "software-onboarding"
+      ],
+      "priority": "high",
+      "config": {
+        "maxAutomaticRevisions": 1,
+        "expandFromContentPlan": false,
+        "expandKind": "none",
+        "stopAfterApproval": true,
+        "allowNormalizedFacts": false,
+        "optionalWhenBlocked": false,
+        "forceTransientFailOnce": false
+      },
+      "inputRefs": {},
+      "outputRefs": {
+        "softwareOnboardingRunId": "onboard-pega-1786859717756",
+        "comparisonTargets": "pega-vs-salesforce,dynamics-365-vs-pega,oracle-cx-vs-pega",
+        "pageCandidateCount": "9"
+      },
+      "blockers": [],
+      "warnings": [],
+      "startedAt": "2026-08-16T06:18:02.553Z",
+      "completedAt": "2026-08-16T06:18:02.600Z",
+      "revisionAttempts": 0
+    },
+    {
+      "id": "software-review",
+      "definitionStepId": "software-review",
+      "handler": "agent-run",
+      "label": "Software Review",
+      "status": "completed",
+      "required": true,
+      "failurePolicy": "block-workflow",
+      "attempt": 1,
+      "maxAttempts": 2,
+      "dependsOn": [
+        "content-plan"
+      ],
+      "priority": "high",
+      "config": {
+        "agentId": "software-review-agent",
+        "targetSlug": "pega",
+        "maxAutomaticRevisions": 1,
+        "expandFromContentPlan": false,
+        "expandKind": "none",
+        "stopAfterApproval": true,
+        "allowNormalizedFacts": false,
+        "optionalWhenBlocked": false,
+        "forceTransientFailOnce": false
+      },
+      "inputRefs": {},
+      "outputRefs": {
+        "draftId": "draft-deterministic-v1-software-review-agent-pega-2026-08-16T06-18-02-681Z",
+        "qaStatus": "pass",
+        "agentId": "software-review-agent",
+        "target": "pega"
+      },
+      "inputSnapshot": {
+        "researchFactIds": [
+          "fact-pega-pricing.hasFreePlan",
+          "fact-pega-pricing.hasFreeTrial",
+          "fact-pega-pricing.currency",
+          "fact-pega-pricing.model",
+          "fact-pega-identity.shortDescription",
+          "fact-pega-positioning.vendorClaim",
+          "fact-pega-pricing.plans.enterprise",
+          "fact-pega-features.contact-management",
+          "fact-pega-features.lead-management",
+          "fact-pega-features.pipeline-management",
+          "fact-pega-features.deal-management",
+          "fact-pega-features.custom-pipelines",
+          "fact-pega-features.custom-fields",
+          "fact-pega-features.email-sync",
+          "fact-pega-features.email-tracking",
+          "fact-pega-features.workflow-automation",
+          "fact-pega-features.reporting",
+          "fact-pega-features.mobile-app",
+          "fact-pega-features.sales-automation",
+          "fact-pega-features.integrations",
+          "fact-pega-features.ai-assistance"
+        ],
+        "methodologySlug": "crm-editorial",
+        "methodologyVersion": "1.0.0",
+        "agentVersion": "1.0.0",
+        "contextBuiltAt": "2026-08-16T06:18:02.668Z"
+      },
+      "blockers": [],
+      "warnings": [],
+      "agentTaskId": "exec-software-review-agent-pega-1786861082603",
+      "draftId": "draft-deterministic-v1-software-review-agent-pega-2026-08-16T06-18-02-681Z",
+      "startedAt": "2026-08-16T06:18:02.601Z",
+      "completedAt": "2026-08-16T06:18:02.692Z",
+      "revisionAttempts": 0
+    },
+    {
+      "id": "pricing-page",
+      "definitionStepId": "pricing-page",
+      "handler": "agent-run",
+      "label": "Pricing Page",
+      "status": "blocked",
+      "required": false,
+      "failurePolicy": "continue-with-warning",
+      "attempt": 1,
+      "maxAttempts": 2,
+      "dependsOn": [
+        "content-plan"
+      ],
+      "priority": "normal",
+      "config": {
+        "agentId": "pricing-page-agent",
+        "targetSlug": "pega",
+        "maxAutomaticRevisions": 1,
+        "expandFromContentPlan": false,
+        "expandKind": "none",
+        "stopAfterApproval": true,
+        "allowNormalizedFacts": false,
+        "optionalWhenBlocked": true,
+        "forceTransientFailOnce": false
+      },
+      "inputRefs": {},
+      "outputRefs": {},
+      "blockers": [
+        "PRICING_UNVERIFIED: Product pricing data is unverified"
+      ],
+      "warnings": [
+        "PRICING_UNVERIFIED: Product pricing data is unverified"
+      ],
+      "startedAt": "2026-08-16T06:18:02.790Z",
+      "completedAt": "2026-08-16T06:18:02.801Z",
+      "revisionAttempts": 0
+    },
+    {
+      "id": "alternatives",
+      "definitionStepId": "alternatives",
+      "handler": "agent-run",
+      "label": "Alternatives",
+      "status": "completed",
+      "required": false,
+      "failurePolicy": "continue-with-warning",
+      "attempt": 1,
+      "maxAttempts": 2,
+      "dependsOn": [
+        "content-plan"
+      ],
+      "priority": "normal",
+      "config": {
+        "agentId": "alternatives-agent",
+        "targetSlug": "pega",
+        "maxAutomaticRevisions": 1,
+        "expandFromContentPlan": false,
+        "expandKind": "none",
+        "stopAfterApproval": true,
+        "allowNormalizedFacts": false,
+        "optionalWhenBlocked": true,
+        "forceTransientFailOnce": false
+      },
+      "inputRefs": {},
+      "outputRefs": {
+        "draftId": "draft-deterministic-v1-alternatives-agent-pega-2026-08-16T06-18-02-706Z",
+        "qaStatus": "pass",
+        "agentId": "alternatives-agent",
+        "target": "pega"
+      },
+      "inputSnapshot": {
+        "researchFactIds": [
+          "fact-pega-pricing.hasFreePlan",
+          "fact-pega-pricing.hasFreeTrial",
+          "fact-pega-pricing.currency",
+          "fact-pega-pricing.model",
+          "fact-pega-identity.shortDescription",
+          "fact-pega-positioning.vendorClaim",
+          "fact-pega-pricing.plans.enterprise",
+          "fact-pega-features.contact-management",
+          "fact-pega-features.lead-management",
+          "fact-pega-features.pipeline-management",
+          "fact-pega-features.deal-management",
+          "fact-pega-features.custom-pipelines",
+          "fact-pega-features.custom-fields",
+          "fact-pega-features.email-sync",
+          "fact-pega-features.email-tracking",
+          "fact-pega-features.workflow-automation",
+          "fact-pega-features.reporting",
+          "fact-pega-features.mobile-app",
+          "fact-pega-features.sales-automation",
+          "fact-pega-features.integrations",
+          "fact-pega-features.ai-assistance"
+        ],
+        "methodologySlug": "crm-editorial",
+        "methodologyVersion": "1.0.0",
+        "agentVersion": "1.0.0",
+        "contextBuiltAt": "2026-08-16T06:18:02.705Z"
+      },
+      "blockers": [],
+      "warnings": [],
+      "agentTaskId": "exec-alternatives-agent-pega-1786861082694",
+      "draftId": "draft-deterministic-v1-alternatives-agent-pega-2026-08-16T06-18-02-706Z",
+      "startedAt": "2026-08-16T06:18:02.694Z",
+      "completedAt": "2026-08-16T06:18:02.711Z",
+      "revisionAttempts": 0
+    },
+    {
+      "id": "comparison:pega-vs-salesforce",
+      "definitionStepId": "comparisons",
+      "handler": "agent-run",
+      "label": "Comparison pega-vs-salesforce",
+      "status": "completed",
+      "required": false,
+      "failurePolicy": "continue-with-warning",
+      "attempt": 1,
+      "maxAttempts": 2,
+      "dependsOn": [
+        "content-plan"
+      ],
+      "priority": "normal",
+      "config": {
+        "agentId": "comparison-agent",
+        "targetSlug": "pega-vs-salesforce",
+        "maxAutomaticRevisions": 1,
+        "expandFromContentPlan": true,
+        "expandKind": "comparisons",
+        "stopAfterApproval": true,
+        "allowNormalizedFacts": false,
+        "optionalWhenBlocked": true,
+        "forceTransientFailOnce": false
+      },
+      "expansionKey": "pega-vs-salesforce",
+      "inputRefs": {},
+      "outputRefs": {
+        "draftId": "draft-deterministic-v1-comparison-agent-pega-vs-salesforce-2026-08-16T06-18-02-781Z",
+        "qaStatus": "pass",
+        "agentId": "comparison-agent",
+        "target": "pega-vs-salesforce"
+      },
+      "inputSnapshot": {
+        "researchFactIds": [
+          "fact-pega-pricing.hasFreePlan",
+          "fact-pega-pricing.hasFreeTrial",
+          "fact-pega-pricing.currency",
+          "fact-pega-pricing.model",
+          "fact-pega-identity.shortDescription",
+          "fact-pega-positioning.vendorClaim",
+          "fact-pega-pricing.plans.enterprise",
+          "fact-pega-features.contact-management",
+          "fact-pega-features.lead-management",
+          "fact-pega-features.pipeline-management",
+          "fact-pega-features.deal-management",
+          "fact-pega-features.custom-pipelines",
+          "fact-pega-features.custom-fields",
+          "fact-pega-features.email-sync",
+          "fact-pega-features.email-tracking",
+          "fact-pega-features.workflow-automation",
+          "fact-pega-features.reporting",
+          "fact-pega-features.mobile-app",
+          "fact-pega-features.sales-automation",
+          "fact-pega-features.integrations",
+          "fact-pega-features.ai-assistance",
+          "fact-salesforce-pricing.hasFreePlan",
+          "fact-salesforce-pricing.hasFreeTrial",
+          "fact-salesforce-pricing.startingPriceMonthly",
+          "fact-salesforce-pricing.currency",
+          "fact-salesforce-pricing.model",
+          "fact-salesforce-pricing.plans.starter-suite",
+          "fact-salesforce-pricing.plans.pro-suite",
+          "fact-salesforce-pricing.plans.enterprise",
+          "fact-salesforce-pricing.plans.unlimited",
+          "fact-salesforce-pricing.addons",
+          "fact-salesforce-pricing.agentforce1",
+          "fact-salesforce-features.contact-management",
+          "fact-salesforce-features.lead-management",
+          "fact-salesforce-features.pipeline-management",
+          "fact-salesforce-features.deal-management",
+          "fact-salesforce-features.custom-pipelines",
+          "fact-salesforce-features.custom-fields",
+          "fact-salesforce-features.mobile-app",
+          "fact-salesforce-features.email-sync",
+          "fact-salesforce-features.email-tracking",
+          "fact-salesforce-features.email-sequences",
+          "fact-salesforce-features.workflow-automation",
+          "fact-salesforce-features.sales-automation",
+          "fact-salesforce-features.reporting",
+          "fact-salesforce-features.forecasting",
+          "fact-salesforce-features.lead-scoring",
+          "fact-salesforce-features.ai-assistance",
+          "fact-salesforce-features.integrations",
+          "fact-salesforce-features.email-campaigns",
+          "fact-salesforce-integrations.gmail",
+          "fact-salesforce-integrations.outlook",
+          "fact-salesforce-integrations.slack",
+          "fact-salesforce-integrations.appexchange",
+          "fact-salesforce-ai.assistant",
+          "fact-salesforce-ai.forecasting",
+          "fact-salesforce-ai.automation",
+          "fact-salesforce-ai.lead-scoring",
+          "fact-salesforce-positioning.summary"
+        ],
+        "methodologySlug": "crm-editorial",
+        "methodologyVersion": "1.0.0",
+        "agentVersion": "1.0.0",
+        "contextBuiltAt": "2026-08-16T06:18:02.778Z"
+      },
+      "blockers": [],
+      "warnings": [],
+      "agentTaskId": "exec-comparison-agent-pega-vs-salesforce-1786861082765",
+      "draftId": "draft-deterministic-v1-comparison-agent-pega-vs-salesforce-2026-08-16T06-18-02-781Z",
+      "startedAt": "2026-08-16T06:18:02.764Z",
+      "completedAt": "2026-08-16T06:18:02.785Z",
+      "revisionAttempts": 0
+    },
+    {
+      "id": "comparison:dynamics-365-vs-pega",
+      "definitionStepId": "comparisons",
+      "handler": "agent-run",
+      "label": "Comparison dynamics-365-vs-pega",
+      "status": "completed",
+      "required": false,
+      "failurePolicy": "continue-with-warning",
+      "attempt": 1,
+      "maxAttempts": 2,
+      "dependsOn": [
+        "content-plan"
+      ],
+      "priority": "normal",
+      "config": {
+        "agentId": "comparison-agent",
+        "targetSlug": "dynamics-365-vs-pega",
+        "maxAutomaticRevisions": 1,
+        "expandFromContentPlan": true,
+        "expandKind": "comparisons",
+        "stopAfterApproval": true,
+        "allowNormalizedFacts": false,
+        "optionalWhenBlocked": true,
+        "forceTransientFailOnce": false
+      },
+      "expansionKey": "dynamics-365-vs-pega",
+      "inputRefs": {},
+      "outputRefs": {
+        "draftId": "draft-deterministic-v1-comparison-agent-dynamics-365-vs-pega-2026-08-16T06-18-02-727Z",
+        "qaStatus": "pass",
+        "agentId": "comparison-agent",
+        "target": "dynamics-365-vs-pega"
+      },
+      "inputSnapshot": {
+        "researchFactIds": [
+          "fact-dynamics-365-pricing.hasFreePlan",
+          "fact-dynamics-365-pricing.hasFreeTrial",
+          "fact-dynamics-365-pricing.trialDays",
+          "fact-dynamics-365-pricing.startingPriceMonthly",
+          "fact-dynamics-365-pricing.currency",
+          "fact-dynamics-365-pricing.model",
+          "fact-dynamics-365-pricing.plans.sales-professional",
+          "fact-dynamics-365-pricing.plans.sales-enterprise",
+          "fact-dynamics-365-pricing.plans.sales-premium",
+          "fact-dynamics-365-pricing.plans.relationship-sales",
+          "fact-dynamics-365-features.contact-management",
+          "fact-dynamics-365-features.lead-management",
+          "fact-dynamics-365-features.pipeline-management",
+          "fact-dynamics-365-features.deal-management",
+          "fact-dynamics-365-features.custom-fields",
+          "fact-dynamics-365-features.mobile-app",
+          "fact-dynamics-365-features.email-sync",
+          "fact-dynamics-365-features.email-tracking",
+          "fact-dynamics-365-features.workflow-automation",
+          "fact-dynamics-365-features.sales-automation",
+          "fact-dynamics-365-features.reporting",
+          "fact-dynamics-365-features.forecasting",
+          "fact-dynamics-365-features.ai-assistance",
+          "fact-dynamics-365-features.integrations",
+          "fact-dynamics-365-features.data-enrichment",
+          "fact-dynamics-365-ai.assistant",
+          "fact-dynamics-365-ai.summaries",
+          "fact-dynamics-365-ai.email-generation",
+          "fact-dynamics-365-ai.recommendations",
+          "fact-dynamics-365-ai.automation",
+          "fact-dynamics-365-ai.forecasting",
+          "fact-dynamics-365-integrations.microsoft-365",
+          "fact-dynamics-365-integrations.power-platform",
+          "fact-dynamics-365-integrations.linkedin",
+          "fact-dynamics-365-positioning.agentic-crm",
+          "fact-dynamics-365-positioning.microsoft-365-copilot",
+          "fact-pega-pricing.hasFreePlan",
+          "fact-pega-pricing.hasFreeTrial",
+          "fact-pega-pricing.currency",
+          "fact-pega-pricing.model",
+          "fact-pega-identity.shortDescription",
+          "fact-pega-positioning.vendorClaim",
+          "fact-pega-pricing.plans.enterprise",
+          "fact-pega-features.contact-management",
+          "fact-pega-features.lead-management",
+          "fact-pega-features.pipeline-management",
+          "fact-pega-features.deal-management",
+          "fact-pega-features.custom-pipelines",
+          "fact-pega-features.custom-fields",
+          "fact-pega-features.email-sync",
+          "fact-pega-features.email-tracking",
+          "fact-pega-features.workflow-automation",
+          "fact-pega-features.reporting",
+          "fact-pega-features.mobile-app",
+          "fact-pega-features.sales-automation",
+          "fact-pega-features.integrations",
+          "fact-pega-features.ai-assistance"
+        ],
+        "methodologySlug": "crm-editorial",
+        "methodologyVersion": "1.0.0",
+        "agentVersion": "1.0.0",
+        "contextBuiltAt": "2026-08-16T06:18:02.725Z"
+      },
+      "blockers": [],
+      "warnings": [],
+      "agentTaskId": "exec-comparison-agent-dynamics-365-vs-pega-1786861082715",
+      "draftId": "draft-deterministic-v1-comparison-agent-dynamics-365-vs-pega-2026-08-16T06-18-02-727Z",
+      "startedAt": "2026-08-16T06:18:02.714Z",
+      "completedAt": "2026-08-16T06:18:02.731Z",
+      "revisionAttempts": 0
+    },
+    {
+      "id": "comparison:oracle-cx-vs-pega",
+      "definitionStepId": "comparisons",
+      "handler": "agent-run",
+      "label": "Comparison oracle-cx-vs-pega",
+      "status": "completed",
+      "required": false,
+      "failurePolicy": "continue-with-warning",
+      "attempt": 1,
+      "maxAttempts": 2,
+      "dependsOn": [
+        "content-plan"
+      ],
+      "priority": "normal",
+      "config": {
+        "agentId": "comparison-agent",
+        "targetSlug": "oracle-cx-vs-pega",
+        "maxAutomaticRevisions": 1,
+        "expandFromContentPlan": true,
+        "expandKind": "comparisons",
+        "stopAfterApproval": true,
+        "allowNormalizedFacts": false,
+        "optionalWhenBlocked": true,
+        "forceTransientFailOnce": false
+      },
+      "expansionKey": "oracle-cx-vs-pega",
+      "inputRefs": {},
+      "outputRefs": {
+        "draftId": "draft-deterministic-v1-comparison-agent-oracle-cx-vs-pega-2026-08-16T06-18-02-759Z",
+        "qaStatus": "pass",
+        "agentId": "comparison-agent",
+        "target": "oracle-cx-vs-pega"
+      },
+      "inputSnapshot": {
+        "researchFactIds": [
+          "fact-oracle-cx-pricing.hasFreePlan",
+          "fact-oracle-cx-pricing.hasFreeTrial",
+          "fact-oracle-cx-pricing.startingPriceMonthly",
+          "fact-oracle-cx-pricing.currency",
+          "fact-oracle-cx-pricing.model",
+          "fact-oracle-cx-pricing.plans.professional",
+          "fact-oracle-cx-pricing.plans.enterprise",
+          "fact-oracle-cx-features.contact-management",
+          "fact-oracle-cx-features.lead-management",
+          "fact-oracle-cx-features.pipeline-management",
+          "fact-oracle-cx-features.deal-management",
+          "fact-oracle-cx-features.email-sync",
+          "fact-oracle-cx-features.workflow-automation",
+          "fact-oracle-cx-features.sales-automation",
+          "fact-oracle-cx-features.reporting",
+          "fact-oracle-cx-features.forecasting",
+          "fact-oracle-cx-features.custom-fields",
+          "fact-oracle-cx-features.custom-pipelines",
+          "fact-oracle-cx-features.mobile-app",
+          "fact-oracle-cx-features.ai-assistance",
+          "fact-oracle-cx-features.integrations",
+          "fact-oracle-cx-positioning.summary",
+          "fact-oracle-cx-ai.assistant",
+          "fact-oracle-cx-ai.forecasting",
+          "fact-oracle-cx-ai.recommendations",
+          "fact-pega-pricing.hasFreePlan",
+          "fact-pega-pricing.hasFreeTrial",
+          "fact-pega-pricing.currency",
+          "fact-pega-pricing.model",
+          "fact-pega-identity.shortDescription",
+          "fact-pega-positioning.vendorClaim",
+          "fact-pega-pricing.plans.enterprise",
+          "fact-pega-features.contact-management",
+          "fact-pega-features.lead-management",
+          "fact-pega-features.pipeline-management",
+          "fact-pega-features.deal-management",
+          "fact-pega-features.custom-pipelines",
+          "fact-pega-features.custom-fields",
+          "fact-pega-features.email-sync",
+          "fact-pega-features.email-tracking",
+          "fact-pega-features.workflow-automation",
+          "fact-pega-features.reporting",
+          "fact-pega-features.mobile-app",
+          "fact-pega-features.sales-automation",
+          "fact-pega-features.integrations",
+          "fact-pega-features.ai-assistance"
+        ],
+        "methodologySlug": "crm-editorial",
+        "methodologyVersion": "1.0.0",
+        "agentVersion": "1.0.0",
+        "contextBuiltAt": "2026-08-16T06:18:02.757Z"
+      },
+      "blockers": [],
+      "warnings": [],
+      "agentTaskId": "exec-comparison-agent-oracle-cx-vs-pega-1786861082740",
+      "draftId": "draft-deterministic-v1-comparison-agent-oracle-cx-vs-pega-2026-08-16T06-18-02-759Z",
+      "startedAt": "2026-08-16T06:18:02.734Z",
+      "completedAt": "2026-08-16T06:18:02.762Z",
+      "revisionAttempts": 0
+    },
+    {
+      "id": "internal-links",
+      "definitionStepId": "internal-links",
+      "handler": "internal-link",
+      "label": "Internal Link Plan",
+      "status": "completed",
+      "required": false,
+      "failurePolicy": "continue-with-warning",
+      "attempt": 1,
+      "maxAttempts": 2,
+      "dependsOn": [
+        "software-review"
+      ],
+      "priority": "low",
+      "config": {
+        "agentId": "internal-link-agent",
+        "maxAutomaticRevisions": 1,
+        "expandFromContentPlan": false,
+        "expandKind": "none",
+        "stopAfterApproval": true,
+        "allowNormalizedFacts": false,
+        "optionalWhenBlocked": false,
+        "forceTransientFailOnce": false
+      },
+      "inputRefs": {},
+      "outputRefs": {
+        "draftId": "draft-deterministic-v1-internal-link-agent-pega-2026-08-16T06-18-02-814Z",
+        "qaStatus": "pass",
+        "agentId": "internal-link-agent",
+        "target": "pega"
+      },
+      "inputSnapshot": {
+        "researchFactIds": [
+          "fact-pega-pricing.hasFreePlan",
+          "fact-pega-pricing.hasFreeTrial",
+          "fact-pega-pricing.currency",
+          "fact-pega-pricing.model",
+          "fact-pega-identity.shortDescription",
+          "fact-pega-positioning.vendorClaim",
+          "fact-pega-pricing.plans.enterprise",
+          "fact-pega-features.contact-management",
+          "fact-pega-features.lead-management",
+          "fact-pega-features.pipeline-management",
+          "fact-pega-features.deal-management",
+          "fact-pega-features.custom-pipelines",
+          "fact-pega-features.custom-fields",
+          "fact-pega-features.email-sync",
+          "fact-pega-features.email-tracking",
+          "fact-pega-features.workflow-automation",
+          "fact-pega-features.reporting",
+          "fact-pega-features.mobile-app",
+          "fact-pega-features.sales-automation",
+          "fact-pega-features.integrations",
+          "fact-pega-features.ai-assistance"
+        ],
+        "methodologySlug": "crm-editorial",
+        "methodologyVersion": "1.0.0",
+        "agentVersion": "1.0.0",
+        "contextBuiltAt": "2026-08-16T06:18:02.813Z"
+      },
+      "blockers": [],
+      "warnings": [],
+      "agentTaskId": "exec-internal-link-agent-pega-1786861082807",
+      "draftId": "draft-deterministic-v1-internal-link-agent-pega-2026-08-16T06-18-02-814Z",
+      "startedAt": "2026-08-16T06:18:02.805Z",
+      "completedAt": "2026-08-16T06:18:02.818Z",
+      "revisionAttempts": 0
+    },
+    {
+      "id": "finder-readiness",
+      "definitionStepId": "finder-readiness",
+      "handler": "update-recommendation-readiness",
+      "label": "Finder readiness",
+      "status": "completed",
+      "required": false,
+      "failurePolicy": "continue",
+      "attempt": 1,
+      "maxAttempts": 2,
+      "dependsOn": [
+        "content-plan"
+      ],
+      "priority": "low",
+      "config": {
+        "maxAutomaticRevisions": 1,
+        "expandFromContentPlan": false,
+        "expandKind": "none",
+        "stopAfterApproval": true,
+        "allowNormalizedFacts": false,
+        "optionalWhenBlocked": false,
+        "forceTransientFailOnce": false
+      },
+      "inputRefs": {},
+      "outputRefs": {
+        "finderReadiness": "checked"
+      },
+      "blockers": [],
+      "warnings": [],
+      "startedAt": "2026-08-16T06:18:02.802Z",
+      "completedAt": "2026-08-16T06:18:02.803Z",
+      "revisionAttempts": 0
+    },
+    {
+      "id": "editorial-approval",
+      "definitionStepId": "editorial-approval",
+      "handler": "approval-check",
+      "label": "Editorial approval",
+      "status": "completed",
+      "required": true,
+      "failurePolicy": "manual-review",
+      "attempt": 2,
+      "maxAttempts": 2,
+      "dependsOn": [
+        "software-review"
+      ],
+      "priority": "critical",
+      "config": {
+        "approvalType": "editorial",
+        "maxAutomaticRevisions": 1,
+        "expandFromContentPlan": false,
+        "expandKind": "none",
+        "stopAfterApproval": true,
+        "allowNormalizedFacts": false,
+        "optionalWhenBlocked": false,
+        "forceTransientFailOnce": false
+      },
+      "inputRefs": {},
+      "outputRefs": {
+        "approvalId": "appr-wf-software-onboarding-content-pega-1786861081802-software-review",
+        "draftId": "draft-deterministic-v1-software-review-agent-pega-2026-08-16T06-18-02-681Z",
+        "approvalIds": "appr-wf-software-onboarding-content-pega-1786861081802-software-review"
+      },
+      "blockers": [],
+      "warnings": [
+        "Approval received — resuming",
+        "5 optional draft(s) may still need separate editorial review"
+      ],
+      "approvalId": "appr-wf-software-onboarding-content-pega-1786861081802-software-review",
+      "startedAt": "2026-08-16T06:19:12.804Z",
+      "completedAt": "2026-08-16T06:19:12.846Z",
+      "revisionAttempts": 0
+    },
+    {
+      "id": "pre-publish-validation",
+      "definitionStepId": "pre-publish-validation",
+      "handler": "pre-publish-validation",
+      "label": "Pre-publish validation",
+      "status": "completed",
+      "required": true,
+      "failurePolicy": "block-workflow",
+      "attempt": 2,
+      "maxAttempts": 2,
+      "dependsOn": [
+        "editorial-approval"
+      ],
+      "priority": "critical",
+      "config": {
+        "maxAutomaticRevisions": 1,
+        "expandFromContentPlan": false,
+        "expandKind": "none",
+        "stopAfterApproval": true,
+        "allowNormalizedFacts": false,
+        "optionalWhenBlocked": false,
+        "forceTransientFailOnce": false
+      },
+      "inputRefs": {},
+      "outputRefs": {
+        "publishState": "READY_TO_PUBLISH"
+      },
+      "blockers": [],
+      "warnings": [
+        "Re-running blocked pre-publish validation on resume",
+        "stopAfterApproval: workflow will not publish automatically"
+      ],
+      "startedAt": "2026-08-16T06:20:29.252Z",
+      "completedAt": "2026-08-16T06:20:29.611Z",
+      "revisionAttempts": 0
+    }
+  ],
+  "history": [
+    {
+      "at": "2026-08-16T06:18:02.496Z",
+      "event": "workflow_created",
+      "message": "Created software-onboarding-content:v1.0.0"
+    },
+    {
+      "at": "2026-08-16T06:18:02.499Z",
+      "event": "workflow_started",
+      "message": "Workflow execution started"
+    },
+    {
+      "at": "2026-08-16T06:18:02.500Z",
+      "event": "workflow_step_started",
+      "stepId": "software-onboarding",
+      "message": "Started Software onboarding"
+    },
+    {
+      "at": "2026-08-16T06:18:02.551Z",
+      "event": "workflow_step_completed",
+      "stepId": "software-onboarding",
+      "message": "Reused onboarding run onboard-pega-1786859717756 (review-required)"
+    },
+    {
+      "at": "2026-08-16T06:18:02.553Z",
+      "event": "workflow_step_started",
+      "stepId": "content-plan",
+      "message": "Started Content plan"
+    },
+    {
+      "at": "2026-08-16T06:18:02.600Z",
+      "event": "workflow_step_completed",
+      "stepId": "content-plan",
+      "message": "Content plan from onboarding onboard-pega-1786859717756 (9 candidates)"
+    },
+    {
+      "at": "2026-08-16T06:18:02.601Z",
+      "event": "workflow_step_started",
+      "stepId": "software-review",
+      "message": "Started Software Review"
+    },
+    {
+      "at": "2026-08-16T06:18:02.692Z",
+      "event": "workflow_step_completed",
+      "stepId": "software-review",
+      "message": "Agent software-review-agent → draft draft-deterministic-v1-software-review-agent-pega-2026-08-16T06-18-02-681Z (qa=pass)"
+    },
+    {
+      "at": "2026-08-16T06:18:02.694Z",
+      "event": "workflow_step_started",
+      "stepId": "alternatives",
+      "message": "Started Alternatives"
+    },
+    {
+      "at": "2026-08-16T06:18:02.711Z",
+      "event": "workflow_step_completed",
+      "stepId": "alternatives",
+      "message": "Agent alternatives-agent → draft draft-deterministic-v1-alternatives-agent-pega-2026-08-16T06-18-02-706Z (qa=pass)"
+    },
+    {
+      "at": "2026-08-16T06:18:02.714Z",
+      "event": "workflow_step_started",
+      "stepId": "comparison:dynamics-365-vs-pega",
+      "message": "Started Comparison dynamics-365-vs-pega"
+    },
+    {
+      "at": "2026-08-16T06:18:02.731Z",
+      "event": "workflow_step_completed",
+      "stepId": "comparison:dynamics-365-vs-pega",
+      "message": "Agent comparison-agent → draft draft-deterministic-v1-comparison-agent-dynamics-365-vs-pega-2026-08-16T06-18-02-727Z (qa=pass)"
+    },
+    {
+      "at": "2026-08-16T06:18:02.734Z",
+      "event": "workflow_step_started",
+      "stepId": "comparison:oracle-cx-vs-pega",
+      "message": "Started Comparison oracle-cx-vs-pega"
+    },
+    {
+      "at": "2026-08-16T06:18:02.762Z",
+      "event": "workflow_step_completed",
+      "stepId": "comparison:oracle-cx-vs-pega",
+      "message": "Agent comparison-agent → draft draft-deterministic-v1-comparison-agent-oracle-cx-vs-pega-2026-08-16T06-18-02-759Z (qa=pass)"
+    },
+    {
+      "at": "2026-08-16T06:18:02.764Z",
+      "event": "workflow_step_started",
+      "stepId": "comparison:pega-vs-salesforce",
+      "message": "Started Comparison pega-vs-salesforce"
+    },
+    {
+      "at": "2026-08-16T06:18:02.785Z",
+      "event": "workflow_step_completed",
+      "stepId": "comparison:pega-vs-salesforce",
+      "message": "Agent comparison-agent → draft draft-deterministic-v1-comparison-agent-pega-vs-salesforce-2026-08-16T06-18-02-781Z (qa=pass)"
+    },
+    {
+      "at": "2026-08-16T06:18:02.790Z",
+      "event": "workflow_step_started",
+      "stepId": "pricing-page",
+      "message": "Started Pricing Page"
+    },
+    {
+      "at": "2026-08-16T06:18:02.801Z",
+      "event": "workflow_step_completed",
+      "stepId": "pricing-page",
+      "message": "Agent blocked (optional): PRICING_UNVERIFIED: Product pricing data is unverified"
+    },
+    {
+      "at": "2026-08-16T06:18:02.802Z",
+      "event": "workflow_step_started",
+      "stepId": "finder-readiness",
+      "message": "Started Finder readiness"
+    },
+    {
+      "at": "2026-08-16T06:18:02.803Z",
+      "event": "workflow_step_completed",
+      "stepId": "finder-readiness",
+      "message": "Finder readiness noted for pega"
+    },
+    {
+      "at": "2026-08-16T06:18:02.805Z",
+      "event": "workflow_step_started",
+      "stepId": "internal-links",
+      "message": "Started Internal Link Plan"
+    },
+    {
+      "at": "2026-08-16T06:18:02.818Z",
+      "event": "workflow_step_completed",
+      "stepId": "internal-links",
+      "message": "Agent internal-link-agent → draft draft-deterministic-v1-internal-link-agent-pega-2026-08-16T06-18-02-814Z (qa=pass)"
+    },
+    {
+      "at": "2026-08-16T06:18:02.819Z",
+      "event": "workflow_step_started",
+      "stepId": "editorial-approval",
+      "message": "Started Editorial approval"
+    },
+    {
+      "at": "2026-08-16T06:18:02.925Z",
+      "event": "workflow_step_completed",
+      "stepId": "editorial-approval",
+      "message": "WAITING FOR EDITORIAL APPROVAL (appr-wf-software-onboarding-content-pega-1786861081802-software-review)"
+    },
+    {
+      "at": "2026-08-16T06:19:12.802Z",
+      "event": "workflow_resumed",
+      "message": "Workflow resumed"
+    },
+    {
+      "at": "2026-08-16T06:19:12.803Z",
+      "event": "workflow_started",
+      "message": "Workflow execution started"
+    },
+    {
+      "at": "2026-08-16T06:19:12.804Z",
+      "event": "workflow_step_started",
+      "stepId": "editorial-approval",
+      "message": "Started Editorial approval"
+    },
+    {
+      "at": "2026-08-16T06:19:12.846Z",
+      "event": "workflow_step_completed",
+      "stepId": "editorial-approval",
+      "message": "Required editorial approvals satisfied"
+    },
+    {
+      "at": "2026-08-16T06:19:12.848Z",
+      "event": "workflow_step_started",
+      "stepId": "pre-publish-validation",
+      "message": "Started Pre-publish validation"
+    },
+    {
+      "at": "2026-08-16T06:19:13.266Z",
+      "event": "workflow_step_completed",
+      "stepId": "pre-publish-validation",
+      "message": "Pre-publish validation blocked: Stale context for comparison:pega-vs-salesforce: removed-critical-fact:fact-salesforce-pricing.hasFreePlan; removed-critical-fact:fact-salesforce-pricing.hasFreeTrial; removed-critical-fact:fact-salesforce-pricing.startingPriceMonthly; removed-critical-fact:fact-salesforce-pricing.currency; removed-critical-fact:fact-salesforce-pricing.model; removed-critical-fact:fact-salesforce-pricing.plans.starter-suite; removed-critical-fact:fact-salesforce-pricing.plans.pro-suite; removed-critical-fact:fact-salesforce-pricing.plans.enterprise; removed-critical-fact:fact-salesforce-pricing.plans.unlimited; removed-critical-fact:fact-salesforce-pricing.addons; removed-critical-fact:fact-salesforce-pricing.agentforce1; Stale context for comparison:dynamics-365-vs-pega: removed-critical-fact:fact-dynamics-365-pricing.hasFreePlan; removed-critical-fact:fact-dynamics-365-pricing.hasFreeTrial; removed-critical-fact:fact-dynamics-365-pricing.trialDays; removed-critical-fact:fact-dynamics-365-pricing.startingPriceMonthly; removed-critical-fact:fact-dynamics-365-pricing.currency; removed-critical-fact:fact-dynamics-365-pricing.model; removed-critical-fact:fact-dynamics-365-pricing.plans.sales-professional; removed-critical-fact:fact-dynamics-365-pricing.plans.sales-enterprise; removed-critical-fact:fact-dynamics-365-pricing.plans.sales-premium; removed-critical-fact:fact-dynamics-365-pricing.plans.relationship-sales; Stale context for comparison:oracle-cx-vs-pega: removed-critical-fact:fact-oracle-cx-pricing.hasFreePlan; removed-critical-fact:fact-oracle-cx-pricing.hasFreeTrial; removed-critical-fact:fact-oracle-cx-pricing.startingPriceMonthly; removed-critical-fact:fact-oracle-cx-pricing.currency; removed-critical-fact:fact-oracle-cx-pricing.model; removed-critical-fact:fact-oracle-cx-pricing.plans.professional; removed-critical-fact:fact-oracle-cx-pricing.plans.enterprise"
+    },
+    {
+      "at": "2026-08-16T06:20:29.251Z",
+      "event": "workflow_resumed",
+      "message": "Workflow resumed"
+    },
+    {
+      "at": "2026-08-16T06:20:29.252Z",
+      "event": "workflow_started",
+      "message": "Workflow execution started"
+    },
+    {
+      "at": "2026-08-16T06:20:29.252Z",
+      "event": "workflow_step_started",
+      "stepId": "pre-publish-validation",
+      "message": "Started Pre-publish validation"
+    },
+    {
+      "at": "2026-08-16T06:20:29.611Z",
+      "event": "workflow_step_completed",
+      "stepId": "pre-publish-validation",
+      "message": "Pre-publish validation passed — READY TO PUBLISH (manual)"
+    },
+    {
+      "at": "2026-08-16T06:20:29.612Z",
+      "event": "workflow_completed",
+      "message": "Workflow completed-with-warnings"
+    }
+  ],
+  "options": {
+    "generateReview": true,
+    "generatePricing": true,
+    "generateAlternatives": true,
+    "generateComparisons": true,
+    "runInternalLinks": true,
+    "stopAfterApproval": true,
+    "allowNormalizedFacts": false,
+    "dryRun": false,
+    "maxComparisons": 3,
+    "skipOnboarding": false
+  },
+  "warnings": [
+    "pricing-page blocked: PRICING_UNVERIFIED: Product pricing data is unverified"
+  ],
+  "createdAt": "2026-08-16T06:18:02.496Z",
+  "updatedAt": "2026-08-16T06:20:29.612Z"
+}

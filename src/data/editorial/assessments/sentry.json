@@ -1,0 +1,165 @@
+{
+  "id": "assessment-sentry-it-v1",
+  "productSlug": "sentry",
+  "methodologySlug": "it-development-editorial",
+  "methodologyVersion": "1.0.0",
+  "status": "approved",
+  "verdict": "Sentry: Choose Sentry when application error monitoring, tracing, and replays are the job — not Datadog infrastructure monitoring by default. Scores use the IT & Development editorial methodology from first-party research as of 2026-08-18 — not hands-on product testing.",
+  "strengths": [
+    "Free Developer plan",
+    "Published Team $26 annual floor",
+    "Error/trace/replay specialist depth",
+    "Strong developer UX",
+    "Clear identity vs infra suites"
+  ],
+  "weaknesses": [
+    "Not infra monitoring",
+    "Event prepaid/overage math",
+    "Does not outrank Datadog",
+    "Not on-call-primary",
+    "Admin-security thinner than Cisco/Splunk"
+  ],
+  "bestFor": [
+    "Application teams whose primary observability job is errors, traces, and replays",
+    "Developers who want a free 5k-error path before Team $26",
+    "Buyers comparing a specialist to Datadog/Splunk host suites"
+  ],
+  "notIdealFor": [
+    "SRE teams buying infrastructure monitoring as the core SKU (Datadog)",
+    "On-call-only paging (PagerDuty) — landscape, not a peer rank",
+    "ITSM or hosting purchases"
+  ],
+  "tradeoffs": [
+    "Per-agent vs per-host vs per-seat vs per-GB pricing models",
+    "Module stacking and consumption overages vs single-SKU floors",
+    "Free tiers vs enterprise SSO/audit gates",
+    "Landscape-adjacent tools vs primary job-cluster peers on best pages"
+  ],
+  "recommendation": "Choose Sentry when application error monitoring, tracing, and replays are the job — not Datadog infrastructure monitoring by default. Compare Datadog or Splunk Observability Cloud for full-stack infra; PagerDuty only on landscape pages for paging.",
+  "editorialNotes": "IT industry Tier-A batch. Approved on it-development-editorial v1.0.0. membershipRole=primary. jobCluster=observability-monitoring. handsOnTesting=false. Affiliate economics excluded.",
+  "handsOnTesting": false,
+  "confidence": "medium",
+  "criterionAssessments": [
+    {
+      "criterionSlug": "ease-of-use",
+      "score": 9,
+      "rationale": "SDK-first error UI is the easiest observability entry for application developers. Not a lab test.",
+      "supportingFactIds": [
+        "fact-sentry-features.infrastructure-monitoring",
+        "fact-sentry-pricing.model"
+      ],
+      "confidence": "medium",
+      "status": "approved",
+      "reviewedAt": "2026-08-18T20:00:00.000Z",
+      "reviewer": "editorial"
+    },
+    {
+      "criterionSlug": "it-job-fit",
+      "score": 8,
+      "rationale": "Specialist observability peer — application errors/tracing/replays, not Datadog infra replacement.",
+      "supportingFactIds": [
+        "fact-sentry-features.infrastructure-monitoring",
+        "fact-sentry-pricing.model"
+      ],
+      "confidence": "medium",
+      "status": "approved",
+      "reviewedAt": "2026-08-18T20:00:00.000Z",
+      "reviewer": "editorial"
+    },
+    {
+      "criterionSlug": "workflow-depth",
+      "score": 8,
+      "rationale": "Issues, traces, replays, and release tracking are deep for that job; not full-stack infra.",
+      "supportingFactIds": [
+        "fact-sentry-features.apm-tracing",
+        "fact-sentry-pricing.model"
+      ],
+      "confidence": "medium",
+      "status": "approved",
+      "reviewedAt": "2026-08-18T20:00:00.000Z",
+      "reviewer": "editorial"
+    },
+    {
+      "criterionSlug": "integrations",
+      "score": 8,
+      "rationale": "GitHub, Slack, and language SDKs cover the application workflow.",
+      "supportingFactIds": [
+        "fact-sentry-features.analytics-reporting",
+        "fact-sentry-pricing.model",
+        "fact-sentry-positioning.vendorClaim"
+      ],
+      "confidence": "medium",
+      "status": "approved",
+      "reviewedAt": "2026-08-18T20:00:00.000Z",
+      "reviewer": "editorial"
+    },
+    {
+      "criterionSlug": "admin-security",
+      "score": 7,
+      "rationale": "Business/Enterprise add governance; Team is developer-grade.",
+      "supportingFactIds": [
+        "fact-sentry-features.enterprise-security",
+        "fact-sentry-pricing.model"
+      ],
+      "confidence": "medium",
+      "status": "approved",
+      "reviewedAt": "2026-08-18T20:00:00.000Z",
+      "reviewer": "editorial"
+    },
+    {
+      "criterionSlug": "scalability",
+      "score": 8,
+      "rationale": "Event prepaid plus Enterprise custom scale; not unlimited free errors.",
+      "supportingFactIds": [
+        "fact-sentry-pricing.plans.developer",
+        "fact-sentry-pricing.model",
+        "fact-sentry-pricing.plans.enterprise"
+      ],
+      "confidence": "medium",
+      "status": "approved",
+      "reviewedAt": "2026-08-18T20:00:00.000Z",
+      "reviewer": "editorial"
+    },
+    {
+      "criterionSlug": "value-for-money",
+      "score": 9,
+      "rationale": "Free Developer plus published $26 Team floor is sharp for error monitoring. Affiliate economics excluded.",
+      "supportingFactIds": [
+        "fact-sentry-pricing.hasFreePlan",
+        "fact-sentry-pricing.model",
+        "fact-sentry-pricing.startingPriceMonthly"
+      ],
+      "confidence": "medium",
+      "status": "approved",
+      "reviewedAt": "2026-08-18T20:00:00.000Z",
+      "reviewer": "editorial"
+    },
+    {
+      "criterionSlug": "ai-capabilities",
+      "score": 7,
+      "rationale": "Issue grouping/assist exists — scored as supporting, not an LLM suite.",
+      "supportingFactIds": [
+        "fact-sentry-features.itsm-ai",
+        "fact-sentry-pricing.model"
+      ],
+      "confidence": "medium",
+      "status": "approved",
+      "reviewedAt": "2026-08-18T20:00:00.000Z",
+      "reviewer": "editorial"
+    }
+  ],
+  "overallScore": 8,
+  "overallScoreRationale": "Weighted average of the eight IT editorial criteria using category weights (IT job fit 16, workflow depth 14, ease of use 12, integrations 12, admin/security 12, value 12, AI 12, scalability 10), rounded to 1 decimal. Products are scored inside their job cluster — ITSM, observability, source control, hosting panels, and web-data platforms are not forced into one undifferentiated ranking. Not a hands-on lab score, and affiliate economics are excluded.",
+  "scoreAudit": [
+    {
+      "at": "2026-08-18T20:00:00.000Z",
+      "actor": "editorial",
+      "change": "IT industry Tier-A onboarding; approved IT criteria with category weights; handsOnTesting=false",
+      "nextOverall": 8
+    }
+  ],
+  "reviewedAt": "2026-08-18T20:00:00.000Z",
+  "reviewer": "editorial",
+  "createdAt": "2026-08-18T20:00:00.000Z",
+  "updatedAt": "2026-08-18T20:00:00.000Z"
+}

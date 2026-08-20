@@ -1,0 +1,79 @@
+{
+  "id": "exec-pricing-page-agent-zoho-crm-1786686360671",
+  "agentId": "pricing-page-agent",
+  "agentVersion": "1.0.0",
+  "status": "qa-failed",
+  "mode": "CREATE",
+  "targetSlug": "zoho-crm",
+  "draftId": "draft-deterministic-v1-pricing-page-agent-zoho-crm-2026-08-14T05-46-00-678Z",
+  "briefId": "agent-brief-pricing-page-agent-zoho-crm-1786686360678",
+  "validation": {
+    "ok": false,
+    "errors": [
+      "unsourced-number:caveats:$52"
+    ]
+  },
+  "qa": {
+    "status": "fail",
+    "blockers": [
+      {
+        "type": "UNVERIFIED_NUMBER",
+        "severity": "blocker",
+        "message": "unsourced-number:caveats:$52"
+      }
+    ],
+    "warnings": [],
+    "suggestions": [],
+    "checkedAt": "2026-08-14T05:46:00.680Z"
+  },
+  "errors": [
+    "unsourced-number:caveats:$52"
+  ],
+  "cost": {
+    "provider": "deterministic-v1",
+    "model": "deterministic-template-v1",
+    "inputTokens": 0,
+    "outputTokens": 0,
+    "estimatedCostUsd": 0
+  },
+  "contextSnapshot": {
+    "researchSnapshotIds": [],
+    "factIds": [
+      "fact-zoho-crm-pricing.hasFreePlan",
+      "fact-zoho-crm-pricing.hasFreeTrial",
+      "fact-zoho-crm-pricing.startingPriceMonthly",
+      "fact-zoho-crm-pricing.currency",
+      "fact-zoho-crm-pricing.model",
+      "fact-zoho-crm-pricing.plans.free",
+      "fact-zoho-crm-pricing.plans.standard",
+      "fact-zoho-crm-pricing.plans.professional",
+      "fact-zoho-crm-pricing.plans.enterprise",
+      "fact-zoho-crm-pricing.plans.ultimate",
+      "fact-zoho-crm-features.contact-management",
+      "fact-zoho-crm-features.lead-management",
+      "fact-zoho-crm-features.pipeline-management",
+      "fact-zoho-crm-features.deal-management",
+      "fact-zoho-crm-features.email-sync",
+      "fact-zoho-crm-features.workflow-automation",
+      "fact-zoho-crm-features.sales-automation",
+      "fact-zoho-crm-features.reporting",
+      "fact-zoho-crm-features.forecasting",
+      "fact-zoho-crm-features.custom-fields",
+      "fact-zoho-crm-features.custom-pipelines",
+      "fact-zoho-crm-features.mobile-app",
+      "fact-zoho-crm-features.ai-assistance",
+      "fact-zoho-crm-features.integrations",
+      "fact-zoho-crm-positioning.summary",
+      "fact-zoho-crm-ai.assistant",
+      "fact-zoho-crm-ai.automation",
+      "fact-zoho-crm-ai.recommendations"
+    ],
+    "methodologySlug": "crm-editorial",
+    "methodologyVersion": "1.0.0",
+    "pricingFreshnessAt": "2026-08-14T08:00:00.000Z",
+    "builtAt": "2026-08-14T05:46:00.677Z"
+  },
+  "dryRun": false,
+  "startedAt": "2026-08-14T05:46:00.671Z",
+  "completedAt": "2026-08-14T05:46:00.682Z"
+}

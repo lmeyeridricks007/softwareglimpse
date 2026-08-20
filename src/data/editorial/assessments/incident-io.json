@@ -1,0 +1,165 @@
+{
+  "id": "assessment-incident-io-it-v1",
+  "productSlug": "incident-io",
+  "methodologySlug": "it-development-editorial",
+  "methodologyVersion": "1.0.0",
+  "status": "approved",
+  "verdict": "incident.io: Choose incident.io when incident command is the job and you want a published $15 Team floor — not PagerDuty by default, and not Datadog/Sentry. Scores use the IT & Development editorial methodology from first-party research as of 2026-08-18 — not hands-on product testing.",
+  "strengths": [
+    "Free Basic plan",
+    "Published Team $15/user annual floor",
+    "Strong Slack-native incident UX",
+    "Optional on-call add-on",
+    "Clear cluster fit vs observability"
+  ],
+  "weaknesses": [
+    "On-call is extra",
+    "Does not outrank PagerDuty",
+    "Thinner enterprise scale story",
+    "Not telemetry",
+    "Not ITSM CMDB"
+  ],
+  "bestFor": [
+    "Teams that want incident command in Slack more than a paging-first ops cloud",
+    "Buyers who will add on-call only if needed",
+    "Product-led incident response versus PagerDuty Professional seats"
+  ],
+  "notIdealFor": [
+    "Orgs whose primary job is PagerDuty-style on-call paging at enterprise scale",
+    "Sentry/Datadog observability purchases",
+    "ITSM ticket desks without incident command"
+  ],
+  "tradeoffs": [
+    "Per-agent vs per-host vs per-seat vs per-GB pricing models",
+    "Module stacking and consumption overages vs single-SKU floors",
+    "Free tiers vs enterprise SSO/audit gates",
+    "Landscape-adjacent tools vs primary job-cluster peers on best pages"
+  ],
+  "recommendation": "Choose incident.io when incident command is the job and you want a published $15 Team floor — not PagerDuty by default, and not Datadog/Sentry. Compare PagerDuty for paging-first on-call; Jira Service Management if Atlassian ITSM alerting is enough.",
+  "editorialNotes": "IT industry Tier-A batch. Approved on it-development-editorial v1.0.0. membershipRole=primary. jobCluster=incident-oncall. handsOnTesting=false. Affiliate economics excluded.",
+  "handsOnTesting": false,
+  "confidence": "medium",
+  "criterionAssessments": [
+    {
+      "criterionSlug": "ease-of-use",
+      "score": 9,
+      "rationale": "Slack-native incident UX is approachable for modern SRE teams. Not a lab test.",
+      "supportingFactIds": [
+        "fact-incident-io-features.incident-management",
+        "fact-incident-io-pricing.model"
+      ],
+      "confidence": "medium",
+      "status": "approved",
+      "reviewedAt": "2026-08-18T20:00:00.000Z",
+      "reviewer": "editorial"
+    },
+    {
+      "criterionSlug": "it-job-fit",
+      "score": 8,
+      "rationale": "Incident-oncall cluster — ranked with PagerDuty, not as an observability peer of Datadog or Sentry.",
+      "supportingFactIds": [
+        "fact-incident-io-features.incident-management",
+        "fact-incident-io-pricing.model"
+      ],
+      "confidence": "medium",
+      "status": "approved",
+      "reviewedAt": "2026-08-18T20:00:00.000Z",
+      "reviewer": "editorial"
+    },
+    {
+      "criterionSlug": "workflow-depth",
+      "score": 8,
+      "rationale": "Declare/coordinate/learn workflows are deep; on-call depth is add-on versus PagerDuty’s paging-first product.",
+      "supportingFactIds": [
+        "fact-incident-io-features.incident-management",
+        "fact-incident-io-pricing.model"
+      ],
+      "confidence": "medium",
+      "status": "approved",
+      "reviewedAt": "2026-08-18T20:00:00.000Z",
+      "reviewer": "editorial"
+    },
+    {
+      "criterionSlug": "integrations",
+      "score": 8,
+      "rationale": "Slack/Teams-native incident workflows are the integration story.",
+      "supportingFactIds": [
+        "fact-incident-io-features.analytics-reporting",
+        "fact-incident-io-pricing.model",
+        "fact-incident-io-positioning.vendorClaim"
+      ],
+      "confidence": "medium",
+      "status": "approved",
+      "reviewedAt": "2026-08-18T20:00:00.000Z",
+      "reviewer": "editorial"
+    },
+    {
+      "criterionSlug": "admin-security",
+      "score": 7,
+      "rationale": "Team/Pro are product-led; Enterprise carries heavier governance.",
+      "supportingFactIds": [
+        "fact-incident-io-features.enterprise-security",
+        "fact-incident-io-pricing.model"
+      ],
+      "confidence": "medium",
+      "status": "approved",
+      "reviewedAt": "2026-08-18T20:00:00.000Z",
+      "reviewer": "editorial"
+    },
+    {
+      "criterionSlug": "scalability",
+      "score": 7,
+      "rationale": "Per-user ladder plus Enterprise quote; held below PagerDuty’s scale story.",
+      "supportingFactIds": [
+        "fact-incident-io-pricing.plans.basic",
+        "fact-incident-io-pricing.model",
+        "fact-incident-io-pricing.plans.enterprise"
+      ],
+      "confidence": "medium",
+      "status": "approved",
+      "reviewedAt": "2026-08-18T20:00:00.000Z",
+      "reviewer": "editorial"
+    },
+    {
+      "criterionSlug": "value-for-money",
+      "score": 8,
+      "rationale": "Free Basic plus $15 Team floor is a clear published entry; on-call add-on is the TCO catch. Affiliate economics excluded.",
+      "supportingFactIds": [
+        "fact-incident-io-pricing.hasFreePlan",
+        "fact-incident-io-pricing.model",
+        "fact-incident-io-pricing.startingPriceMonthly"
+      ],
+      "confidence": "medium",
+      "status": "approved",
+      "reviewedAt": "2026-08-18T20:00:00.000Z",
+      "reviewer": "editorial"
+    },
+    {
+      "criterionSlug": "ai-capabilities",
+      "score": 7,
+      "rationale": "Incident assist exists — scored as supporting, not the buying reason versus PagerDuty paging.",
+      "supportingFactIds": [
+        "fact-incident-io-features.itsm-ai",
+        "fact-incident-io-pricing.model"
+      ],
+      "confidence": "medium",
+      "status": "approved",
+      "reviewedAt": "2026-08-18T20:00:00.000Z",
+      "reviewer": "editorial"
+    }
+  ],
+  "overallScore": 7.8,
+  "overallScoreRationale": "Weighted average of the eight IT editorial criteria using category weights (IT job fit 16, workflow depth 14, ease of use 12, integrations 12, admin/security 12, value 12, AI 12, scalability 10), rounded to 1 decimal. Products are scored inside their job cluster — ITSM, observability, source control, hosting panels, and web-data platforms are not forced into one undifferentiated ranking. Not a hands-on lab score, and affiliate economics are excluded.",
+  "scoreAudit": [
+    {
+      "at": "2026-08-18T20:00:00.000Z",
+      "actor": "editorial",
+      "change": "IT industry Tier-A onboarding; approved IT criteria with category weights; handsOnTesting=false",
+      "nextOverall": 7.8
+    }
+  ],
+  "reviewedAt": "2026-08-18T20:00:00.000Z",
+  "reviewer": "editorial",
+  "createdAt": "2026-08-18T20:00:00.000Z",
+  "updatedAt": "2026-08-18T20:00:00.000Z"
+}

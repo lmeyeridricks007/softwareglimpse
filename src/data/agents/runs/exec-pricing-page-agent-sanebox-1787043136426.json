@@ -1,0 +1,82 @@
+{
+  "id": "exec-pricing-page-agent-sanebox-1787043136426",
+  "agentId": "pricing-page-agent",
+  "agentVersion": "1.0.0",
+  "status": "qa-failed",
+  "mode": "CREATE",
+  "targetSlug": "sanebox",
+  "draftId": "draft-deterministic-v1-pricing-page-agent-sanebox-2026-08-18T08-52-16-438Z",
+  "briefId": "agent-brief-pricing-page-agent-sanebox-1787043136438",
+  "validation": {
+    "ok": false,
+    "errors": [
+      "unsourced-number:caveats:$7",
+      "unsourced-number:caveats:$99"
+    ]
+  },
+  "qa": {
+    "status": "fail",
+    "blockers": [
+      {
+        "type": "UNVERIFIED_NUMBER",
+        "severity": "blocker",
+        "message": "unsourced-number:caveats:$7"
+      },
+      {
+        "type": "UNVERIFIED_NUMBER",
+        "severity": "blocker",
+        "message": "unsourced-number:caveats:$99"
+      }
+    ],
+    "warnings": [],
+    "suggestions": [],
+    "checkedAt": "2026-08-18T08:52:16.439Z"
+  },
+  "errors": [
+    "unsourced-number:caveats:$7",
+    "unsourced-number:caveats:$99"
+  ],
+  "cost": {
+    "provider": "deterministic-v1",
+    "model": "deterministic-template-v1",
+    "inputTokens": 0,
+    "outputTokens": 0,
+    "estimatedCostUsd": 0
+  },
+  "contextSnapshot": {
+    "researchSnapshotIds": [],
+    "factIds": [
+      "fact-sanebox-identity.shortDescription",
+      "fact-sanebox-positioning.vendorClaim",
+      "fact-sanebox-positioning.jobCluster",
+      "fact-sanebox-pricing.model",
+      "fact-sanebox-pricing.hasFreePlan",
+      "fact-sanebox-pricing.hasFreeTrial",
+      "fact-sanebox-positioning.membershipRole",
+      "fact-sanebox-pricing.startingPriceMonthly",
+      "fact-sanebox-pricing.plans.snack",
+      "fact-sanebox-pricing.plans.lunch",
+      "fact-sanebox-pricing.plans.dinner",
+      "fact-sanebox-features.cloud-phone",
+      "fact-sanebox-features.call-routing",
+      "fact-sanebox-features.call-recording",
+      "fact-sanebox-features.power-dialer",
+      "fact-sanebox-features.sms-messaging",
+      "fact-sanebox-features.whatsapp-business",
+      "fact-sanebox-features.shared-inbox",
+      "fact-sanebox-features.team-messaging",
+      "fact-sanebox-features.video-meetings",
+      "fact-sanebox-features.crm-cti",
+      "fact-sanebox-features.analytics-reporting",
+      "fact-sanebox-features.ai-assistance",
+      "fact-sanebox-features.unified-inbox"
+    ],
+    "methodologySlug": "business-communications-editorial",
+    "methodologyVersion": "1.0.0",
+    "pricingFreshnessAt": "2026-08-17T09:00:00.000Z",
+    "builtAt": "2026-08-18T08:52:16.437Z"
+  },
+  "dryRun": false,
+  "startedAt": "2026-08-18T08:52:16.426Z",
+  "completedAt": "2026-08-18T08:52:16.441Z"
+}

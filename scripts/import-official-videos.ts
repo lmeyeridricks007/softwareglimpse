@@ -1,0 +1,216 @@
+/**
+ * Register + activate official vendor YouTube videos via the Approved Asset Workflow.
+ *
+ * Usage:
+ *   npx tsx scripts/import-official-videos.ts scripts/_cs-wave1-official-videos.json
+ */
+import { readFileSync, existsSync } from "node:fs";
+import { join } from "node:path";
+import {
+  addPlacementRecommendation,
+  editorialApproveCandidate,
+  importApprovedAsset,
+  mapCandidateEntities,
+  markCandidateUsageState,
+  registerApprovedAssetCandidate,
+  reviewCandidateRelevance,
+  reviewCandidateUsage,
+  saveApprovedAssetCandidate,
+  verifyCandidateSource,
+} from "@/services/asset-discovery/approval";
+import {
+  listApprovedAssetCandidates,
+  loadApprovedAssetCandidate,
+} from "@/services/asset-discovery/approval/store";
+
+type VideoSpec = {
+  product: string;
+  videoId: string;
+  title: string;
+  channel: string;
+  org: string;
+  assetType?: "official-product-video" | "official-tutorial";
+  shows: string[];
+  features: string[];
+  useCases?: string[];
+  placement?: "overview" | "features";
+};
+
+function loadVideos(relPath: string): VideoSpec[] {
+  const jsonPath = join(process.cwd(), relPath);
+  if (!existsSync(jsonPath)) {
+    console.error(`Missing ${jsonPath}`);
+    return [];
+  }
+  const raw = JSON.parse(readFileSync(jsonPath, "utf8")) as VideoSpec[];
+  return raw.map((v) => ({
+    ...v,
+    placement:
+      v.placement ??
+      (v.assetType === "official-tutorial" ? "features" : "overview"),
+  }));
+}
+
+function findExisting(spec: VideoSpec) {
+  const url = `https://www.youtube.com/watch?v=${spec.videoId}`;
+  return listApprovedAssetCandidates().find(
+    (c) =>
+      c.sourceUrl === url ||
+      c.providerId === spec.videoId ||
+      c.id.includes(spec.videoId.toLowerCase()),
+  );
+}
+
+function runOne(spec: VideoSpec): { ok: boolean; detail: string } {
+  const url = `https://www.youtube.com/watch?v=${spec.videoId}`;
+  let c = findExisting(spec);
+  if (!c) {
+    const registered = registerApprovedAssetCandidate({
+      productSlug: spec.product,
+      sourceUrl: url,
+      title: spec.title,
+      assetType: spec.assetType ?? "official-product-video",
+      featureIds: spec.features,
+      whatThisShows: spec.shows,
+    });
+    if (!registered.ok) {
+      return { ok: false, detail: `register: ${registered.message}` };
+    }
+    c = registered.candidate;
+    saveApprovedAssetCandidate(c);
+  } else {
+    c = loadApprovedAssetCandidate(c.id) ?? c;
+  }
+
+  if (c.stage === "ACTIVE") {
+    const imported = importApprovedAsset(c, {
+      persist: true,
+      activate: true,
+    });
+    if (!imported.result.ok) {
+      return {
+        ok: false,
+        detail: `reimport: ${imported.result.message ?? imported.result.action}`,
+      };
+    }
+    return {
+      ok: true,
+      detail: `already-active ${imported.result.action} persisted=${imported.result.persisted}`,
+    };
+  }
+
+  if (c.stage === "REGISTERED" || c.stage === "DISCOVERED") {
+    const verified = verifyCandidateSource(c, {
+      officialSourceKind: "vendor-channel",
+      channelName: spec.channel,
+      sourceOrganization: spec.org,
+    });
+    if (!verified.ok) {
+      return { ok: false, detail: `verify: ${verified.message}` };
+    }
+    c = verified.candidate;
+    saveApprovedAssetCandidate(c);
+  }
+
+  if (c.stage === "SOURCE_VERIFIED") {
+    const relevance = reviewCandidateRelevance(c, {
+      passed: true,
+      whatThisShows: spec.shows,
+    });
+    if (!relevance.ok) {
+      return { ok: false, detail: `relevance: ${relevance.message}` };
+    }
+    c = relevance.candidate;
+    saveApprovedAssetCandidate(c);
+  }
+
+  if (c.stage === "RELEVANCE_REVIEWED") {
+    const usage = reviewCandidateUsage(c, {
+      recommendation: "embed",
+    });
+    if (!usage.ok) {
+      return { ok: false, detail: `usage: ${usage.message}` };
+    }
+    c = usage.candidate;
+    saveApprovedAssetCandidate(c);
+  }
+
+  if (c.stage === "USAGE_REVIEWED") {
+    const mapped = mapCandidateEntities(c, {
+      mapping: {
+        productIds: [spec.product],
+        featureIds: spec.features,
+        useCaseIds: spec.useCases ?? [],
+      },
+    });
+    if (!mapped.ok) {
+      return { ok: false, detail: `map: ${mapped.message}` };
+    }
+    c = mapped.candidate;
+
+    const placement = spec.placement ?? "overview";
+    const placed = addPlacementRecommendation(c, {
+      pageRoute: `/software/${spec.product}/`,
+      pageType: "software-review",
+      sectionId: placement,
+      sectionTitle: placement === "overview" ? "Overview" : "Features",
+      mediaPlacement: placement,
+      recommendedUse: "embed",
+      reason: `${spec.title} — official vendor video for ${spec.product}`,
+    });
+    c = placed.candidate;
+    saveApprovedAssetCandidate(c);
+  }
+
+  if (c.stage === "MAPPED") {
+    const approved = editorialApproveCandidate(c);
+    if (!approved.ok) {
+      return { ok: false, detail: `editorial: ${approved.message}` };
+    }
+    c = approved.candidate;
+    saveApprovedAssetCandidate(c);
+  }
+
+  const imported = importApprovedAsset(c, {
+    persist: true,
+    activate: true,
+  });
+  if (!imported.result.ok) {
+    return {
+      ok: false,
+      detail: `import: ${imported.result.message ?? imported.result.action}`,
+    };
+  }
+
+  let next = imported.candidate;
+  if (imported.result.activated || imported.result.ok) {
+    next = markCandidateUsageState(next, "embedded");
+    saveApprovedAssetCandidate(next);
+  }
+
+  return {
+    ok: true,
+    detail: `${imported.result.action} activated=${imported.result.activated} stage=${next.stage}`,
+  };
+}
+
+function main() {
+  const rel = process.argv[2] ?? "scripts/_cs-wave1-official-videos.json";
+  const videos = loadVideos(rel);
+  let ok = 0;
+  for (const spec of videos) {
+    try {
+      const r = runOne(spec);
+      console.log(
+        `${r.ok ? "OK" : "FAIL"}\t${spec.product}\t${spec.videoId}\t${r.detail}`,
+      );
+      if (r.ok) ok += 1;
+    } catch (err) {
+      const msg = err instanceof Error ? err.message : String(err);
+      console.log(`FAIL\t${spec.product}\t${spec.videoId}\t${msg}`);
+    }
+  }
+  console.log(`\nDone: ${ok}/${videos.length} videos processed from ${rel}`);
+}
+
+main();

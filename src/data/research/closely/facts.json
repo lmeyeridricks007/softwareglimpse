@@ -1,0 +1,631 @@
+[
+  {
+    "id": "fact-closely-pricing.hasFreePlan",
+    "productSlug": "closely",
+    "domain": "free-plan",
+    "field": "pricing.hasFreePlan",
+    "value": false,
+    "sourceIds": [
+      "closely-pricing-official"
+    ],
+    "evidence": [
+      {
+        "sourceId": "closely-pricing-official",
+        "excerpt": "No free plan; free trial CTAs."
+      }
+    ],
+    "extractedAt": "2026-08-13T18:00:00.000Z",
+    "normalizedAt": "2026-08-13T18:00:00.000Z",
+    "verifiedAt": "2026-08-13T18:00:00.000Z",
+    "approvedAt": "2026-08-13T18:00:00.000Z",
+    "confidence": "high",
+    "status": "approved",
+    "isFixture": false
+  },
+  {
+    "id": "fact-closely-pricing.hasFreeTrial",
+    "productSlug": "closely",
+    "domain": "free-trial",
+    "field": "pricing.hasFreeTrial",
+    "value": true,
+    "sourceIds": [
+      "closely-pricing-official"
+    ],
+    "evidence": [
+      {
+        "sourceId": "closely-pricing-official",
+        "excerpt": "Start free trial on plan cards."
+      }
+    ],
+    "extractedAt": "2026-08-13T18:00:00.000Z",
+    "normalizedAt": "2026-08-13T18:00:00.000Z",
+    "verifiedAt": "2026-08-13T18:00:00.000Z",
+    "approvedAt": "2026-08-13T18:00:00.000Z",
+    "confidence": "high",
+    "status": "approved",
+    "isFixture": false
+  },
+  {
+    "id": "fact-closely-pricing.startingPriceMonthly",
+    "productSlug": "closely",
+    "domain": "pricing",
+    "field": "pricing.startingPriceMonthly",
+    "value": 29,
+    "sourceIds": [
+      "closely-pricing-official"
+    ],
+    "evidence": [
+      {
+        "sourceId": "closely-pricing-official",
+        "excerpt": "Starter $29/mo annual."
+      }
+    ],
+    "extractedAt": "2026-08-13T18:00:00.000Z",
+    "normalizedAt": "2026-08-13T18:00:00.000Z",
+    "verifiedAt": "2026-08-13T18:00:00.000Z",
+    "approvedAt": "2026-08-13T18:00:00.000Z",
+    "confidence": "high",
+    "status": "approved",
+    "isFixture": false
+  },
+  {
+    "id": "fact-closely-pricing.currency",
+    "productSlug": "closely",
+    "domain": "pricing",
+    "field": "pricing.currency",
+    "value": "USD",
+    "sourceIds": [
+      "closely-pricing-official"
+    ],
+    "evidence": [
+      {
+        "sourceId": "closely-pricing-official",
+        "excerpt": "USD pricing."
+      }
+    ],
+    "extractedAt": "2026-08-13T18:00:00.000Z",
+    "normalizedAt": "2026-08-13T18:00:00.000Z",
+    "verifiedAt": "2026-08-13T18:00:00.000Z",
+    "approvedAt": "2026-08-13T18:00:00.000Z",
+    "confidence": "high",
+    "status": "approved",
+    "isFixture": false
+  },
+  {
+    "id": "fact-closely-pricing.model",
+    "productSlug": "closely",
+    "domain": "pricing",
+    "field": "pricing.model",
+    "value": "subscription",
+    "sourceIds": [
+      "closely-pricing-official"
+    ],
+    "evidence": [
+      {
+        "sourceId": "closely-pricing-official",
+        "excerpt": "Monthly/annual subscriptions."
+      }
+    ],
+    "extractedAt": "2026-08-13T18:00:00.000Z",
+    "normalizedAt": "2026-08-13T18:00:00.000Z",
+    "verifiedAt": "2026-08-13T18:00:00.000Z",
+    "approvedAt": "2026-08-13T18:00:00.000Z",
+    "confidence": "high",
+    "status": "approved",
+    "isFixture": false
+  },
+  {
+    "id": "fact-closely-pricing.plans.starter",
+    "productSlug": "closely",
+    "domain": "plans",
+    "field": "pricing.plans.starter",
+    "value": {
+      "id": "plan-starter",
+      "slug": "starter",
+      "name": "Starter",
+      "description": "1 LinkedIn account sender + unlimited email accounts; white-label included.",
+      "isFree": false,
+      "contactSales": false,
+      "hasFreeTrial": true,
+      "highlighted": false,
+      "rules": [
+        {
+          "kind": "flat",
+          "amount": 29,
+          "currency": "USD",
+          "interval": "year",
+          "amountPeriod": "month"
+        },
+        {
+          "kind": "flat",
+          "amount": 49,
+          "currency": "USD",
+          "interval": "month",
+          "amountPeriod": "month"
+        }
+      ],
+      "limits": {
+        "linkedinAccounts": 1
+      }
+    },
+    "sourceIds": [
+      "closely-pricing-official"
+    ],
+    "evidence": [
+      {
+        "sourceId": "closely-pricing-official",
+        "excerpt": "Starter $49 mo / $29 annual."
+      }
+    ],
+    "extractedAt": "2026-08-13T18:00:00.000Z",
+    "normalizedAt": "2026-08-13T18:00:00.000Z",
+    "verifiedAt": "2026-08-13T18:00:00.000Z",
+    "approvedAt": "2026-08-13T18:00:00.000Z",
+    "confidence": "high",
+    "status": "approved",
+    "isFixture": false
+  },
+  {
+    "id": "fact-closely-pricing.plans.growth",
+    "productSlug": "closely",
+    "domain": "plans",
+    "field": "pricing.plans.growth",
+    "value": {
+      "id": "plan-growth",
+      "slug": "growth",
+      "name": "Growth",
+      "description": "3 LinkedIn accounts; bonus credits (3,000/mo).",
+      "isFree": false,
+      "contactSales": false,
+      "hasFreeTrial": true,
+      "highlighted": true,
+      "rules": [
+        {
+          "kind": "flat",
+          "amount": 87,
+          "currency": "USD",
+          "interval": "year",
+          "amountPeriod": "month"
+        },
+        {
+          "kind": "flat",
+          "amount": 127,
+          "currency": "USD",
+          "interval": "month",
+          "amountPeriod": "month"
+        }
+      ],
+      "limits": {
+        "linkedinAccounts": 3,
+        "bonusCreditsMonthly": 3000
+      }
+    },
+    "sourceIds": [
+      "closely-pricing-official"
+    ],
+    "evidence": [
+      {
+        "sourceId": "closely-pricing-official",
+        "excerpt": "Growth $127 mo / $87 annual."
+      }
+    ],
+    "extractedAt": "2026-08-13T18:00:00.000Z",
+    "normalizedAt": "2026-08-13T18:00:00.000Z",
+    "verifiedAt": "2026-08-13T18:00:00.000Z",
+    "approvedAt": "2026-08-13T18:00:00.000Z",
+    "confidence": "high",
+    "status": "approved",
+    "isFixture": false
+  },
+  {
+    "id": "fact-closely-pricing.plans.essential",
+    "productSlug": "closely",
+    "domain": "plans",
+    "field": "pricing.plans.essential",
+    "value": {
+      "id": "plan-essential",
+      "slug": "essential",
+      "name": "Essential",
+      "description": "5 LinkedIn accounts; bonus credits (5,000/mo).",
+      "isFree": false,
+      "contactSales": false,
+      "hasFreeTrial": true,
+      "highlighted": false,
+      "rules": [
+        {
+          "kind": "flat",
+          "amount": 145,
+          "currency": "USD",
+          "interval": "year",
+          "amountPeriod": "month"
+        },
+        {
+          "kind": "flat",
+          "amount": 205,
+          "currency": "USD",
+          "interval": "month",
+          "amountPeriod": "month"
+        }
+      ],
+      "limits": {
+        "linkedinAccounts": 5,
+        "bonusCreditsMonthly": 5000
+      }
+    },
+    "sourceIds": [
+      "closely-pricing-official"
+    ],
+    "evidence": [
+      {
+        "sourceId": "closely-pricing-official",
+        "excerpt": "Essential $205 mo / $145 annual."
+      }
+    ],
+    "extractedAt": "2026-08-13T18:00:00.000Z",
+    "normalizedAt": "2026-08-13T18:00:00.000Z",
+    "verifiedAt": "2026-08-13T18:00:00.000Z",
+    "approvedAt": "2026-08-13T18:00:00.000Z",
+    "confidence": "high",
+    "status": "approved",
+    "isFixture": false
+  },
+  {
+    "id": "fact-closely-pricing.plans.custom",
+    "productSlug": "closely",
+    "domain": "plans",
+    "field": "pricing.plans.custom",
+    "value": {
+      "id": "plan-custom",
+      "slug": "custom",
+      "name": "Custom",
+      "description": "Custom LinkedIn accounts/credits; agency white-label unlimited option referenced at $999/mo in FAQ.",
+      "isFree": false,
+      "contactSales": true,
+      "hasFreeTrial": true,
+      "highlighted": false,
+      "rules": []
+    },
+    "sourceIds": [
+      "closely-pricing-official"
+    ],
+    "evidence": [
+      {
+        "sourceId": "closely-pricing-official",
+        "excerpt": "Custom + $999 white-label FAQ reference."
+      }
+    ],
+    "extractedAt": "2026-08-13T18:00:00.000Z",
+    "normalizedAt": "2026-08-13T18:00:00.000Z",
+    "verifiedAt": "2026-08-13T18:00:00.000Z",
+    "approvedAt": "2026-08-13T18:00:00.000Z",
+    "confidence": "high",
+    "status": "approved",
+    "isFixture": false
+  },
+  {
+    "id": "fact-closely-positioning.core",
+    "productSlug": "closely",
+    "domain": "product-positioning",
+    "field": "positioning.core",
+    "value": "LinkedIn + email outbound automation",
+    "sourceIds": [
+      "closely-product-official"
+    ],
+    "evidence": [
+      {
+        "sourceId": "closely-product-official",
+        "excerpt": "Automate outreach across LinkedIn and email."
+      }
+    ],
+    "extractedAt": "2026-08-13T18:00:00.000Z",
+    "normalizedAt": "2026-08-13T18:00:00.000Z",
+    "verifiedAt": "2026-08-13T18:00:00.000Z",
+    "approvedAt": "2026-08-13T18:00:00.000Z",
+    "confidence": "high",
+    "status": "approved",
+    "isFixture": false
+  },
+  {
+    "id": "fact-closely-features.prospecting",
+    "productSlug": "closely",
+    "domain": "features",
+    "field": "features.prospecting",
+    "value": {
+      "featureSlug": "prospecting",
+      "availability": "supported",
+      "planSlugs": [
+        "starter",
+        "growth",
+        "essential",
+        "custom"
+      ]
+    },
+    "sourceIds": [
+      "closely-enrichment"
+    ],
+    "evidence": [
+      {
+        "sourceId": "closely-enrichment",
+        "excerpt": "Enrichment and LinkedIn export/scraping."
+      }
+    ],
+    "extractedAt": "2026-08-13T18:00:00.000Z",
+    "normalizedAt": "2026-08-13T18:00:00.000Z",
+    "verifiedAt": "2026-08-13T18:00:00.000Z",
+    "approvedAt": "2026-08-13T18:00:00.000Z",
+    "confidence": "high",
+    "status": "approved",
+    "isFixture": false
+  },
+  {
+    "id": "fact-closely-features.email-sequences",
+    "productSlug": "closely",
+    "domain": "features",
+    "field": "features.email-sequences",
+    "value": {
+      "featureSlug": "email-sequences",
+      "availability": "supported",
+      "planSlugs": [
+        "starter",
+        "growth",
+        "essential",
+        "custom"
+      ]
+    },
+    "sourceIds": [
+      "closely-pricing-official"
+    ],
+    "evidence": [
+      {
+        "sourceId": "closely-pricing-official",
+        "excerpt": "Email campaigns and multichannel sequences."
+      }
+    ],
+    "extractedAt": "2026-08-13T18:00:00.000Z",
+    "normalizedAt": "2026-08-13T18:00:00.000Z",
+    "verifiedAt": "2026-08-13T18:00:00.000Z",
+    "approvedAt": "2026-08-13T18:00:00.000Z",
+    "confidence": "high",
+    "status": "approved",
+    "isFixture": false
+  },
+  {
+    "id": "fact-closely-features.sales-automation",
+    "productSlug": "closely",
+    "domain": "features",
+    "field": "features.sales-automation",
+    "value": {
+      "featureSlug": "sales-automation",
+      "availability": "supported",
+      "planSlugs": [
+        "starter",
+        "growth",
+        "essential",
+        "custom"
+      ]
+    },
+    "sourceIds": [
+      "closely-linkedin"
+    ],
+    "evidence": [
+      {
+        "sourceId": "closely-linkedin",
+        "excerpt": "LinkedIn automation + conditional sequences."
+      }
+    ],
+    "extractedAt": "2026-08-13T18:00:00.000Z",
+    "normalizedAt": "2026-08-13T18:00:00.000Z",
+    "verifiedAt": "2026-08-13T18:00:00.000Z",
+    "approvedAt": "2026-08-13T18:00:00.000Z",
+    "confidence": "high",
+    "status": "approved",
+    "isFixture": false
+  },
+  {
+    "id": "fact-closely-features.ai-assistance",
+    "productSlug": "closely",
+    "domain": "features",
+    "field": "features.ai-assistance",
+    "value": {
+      "featureSlug": "ai-assistance",
+      "availability": "supported",
+      "planSlugs": [
+        "starter",
+        "growth",
+        "essential",
+        "custom"
+      ]
+    },
+    "sourceIds": [
+      "closely-ai-agents"
+    ],
+    "evidence": [
+      {
+        "sourceId": "closely-ai-agents",
+        "excerpt": "AI sales agents for research/personalization."
+      }
+    ],
+    "extractedAt": "2026-08-13T18:00:00.000Z",
+    "normalizedAt": "2026-08-13T18:00:00.000Z",
+    "verifiedAt": "2026-08-13T18:00:00.000Z",
+    "approvedAt": "2026-08-13T18:00:00.000Z",
+    "confidence": "high",
+    "status": "approved",
+    "isFixture": false
+  },
+  {
+    "id": "fact-closely-features.integrations",
+    "productSlug": "closely",
+    "domain": "features",
+    "field": "features.integrations",
+    "value": {
+      "featureSlug": "integrations",
+      "availability": "supported",
+      "planSlugs": [
+        "starter",
+        "growth",
+        "essential",
+        "custom"
+      ]
+    },
+    "sourceIds": [
+      "closely-linkedin"
+    ],
+    "evidence": [
+      {
+        "sourceId": "closely-linkedin",
+        "excerpt": "Salesforce, HubSpot, Pipedrive, GHL."
+      }
+    ],
+    "extractedAt": "2026-08-13T18:00:00.000Z",
+    "normalizedAt": "2026-08-13T18:00:00.000Z",
+    "verifiedAt": "2026-08-13T18:00:00.000Z",
+    "approvedAt": "2026-08-13T18:00:00.000Z",
+    "confidence": "high",
+    "status": "approved",
+    "isFixture": false
+  },
+  {
+    "id": "fact-closely-features.pipeline-management",
+    "productSlug": "closely",
+    "domain": "features",
+    "field": "features.pipeline-management",
+    "value": {
+      "featureSlug": "pipeline-management",
+      "availability": "limited",
+      "planSlugs": [
+        "starter",
+        "growth",
+        "essential",
+        "custom"
+      ]
+    },
+    "sourceIds": [
+      "closely-product-official"
+    ],
+    "evidence": [
+      {
+        "sourceId": "closely-product-official",
+        "excerpt": "Not a CRM pipeline product."
+      }
+    ],
+    "extractedAt": "2026-08-13T18:00:00.000Z",
+    "normalizedAt": "2026-08-13T18:00:00.000Z",
+    "verifiedAt": "2026-08-13T18:00:00.000Z",
+    "approvedAt": "2026-08-13T18:00:00.000Z",
+    "confidence": "high",
+    "status": "approved",
+    "isFixture": false
+  },
+  {
+    "id": "fact-closely-features.reporting",
+    "productSlug": "closely",
+    "domain": "features",
+    "field": "features.reporting",
+    "value": {
+      "featureSlug": "reporting",
+      "availability": "supported",
+      "planSlugs": [
+        "starter",
+        "growth",
+        "essential",
+        "custom"
+      ]
+    },
+    "sourceIds": [
+      "closely-pricing-official"
+    ],
+    "evidence": [
+      {
+        "sourceId": "closely-pricing-official",
+        "excerpt": "Advanced analytics & reports."
+      }
+    ],
+    "extractedAt": "2026-08-13T18:00:00.000Z",
+    "normalizedAt": "2026-08-13T18:00:00.000Z",
+    "verifiedAt": "2026-08-13T18:00:00.000Z",
+    "approvedAt": "2026-08-13T18:00:00.000Z",
+    "confidence": "high",
+    "status": "approved",
+    "isFixture": false
+  },
+  {
+    "id": "fact-closely-ai.assistant",
+    "productSlug": "closely",
+    "domain": "ai-capabilities",
+    "field": "ai.assistant",
+    "value": {
+      "capability": "assistant",
+      "availability": "supported"
+    },
+    "sourceIds": [
+      "closely-ai-agents"
+    ],
+    "evidence": [
+      {
+        "sourceId": "closely-ai-agents",
+        "excerpt": "Sales AI agents."
+      }
+    ],
+    "extractedAt": "2026-08-13T18:00:00.000Z",
+    "normalizedAt": "2026-08-13T18:00:00.000Z",
+    "verifiedAt": "2026-08-13T18:00:00.000Z",
+    "approvedAt": "2026-08-13T18:00:00.000Z",
+    "confidence": "high",
+    "status": "approved",
+    "isFixture": false
+  },
+  {
+    "id": "fact-closely-ai.email-generation",
+    "productSlug": "closely",
+    "domain": "ai-capabilities",
+    "field": "ai.email-generation",
+    "value": {
+      "capability": "email-generation",
+      "availability": "supported"
+    },
+    "sourceIds": [
+      "closely-ai-agents"
+    ],
+    "evidence": [
+      {
+        "sourceId": "closely-ai-agents",
+        "excerpt": "AI personalization of outreach."
+      }
+    ],
+    "extractedAt": "2026-08-13T18:00:00.000Z",
+    "normalizedAt": "2026-08-13T18:00:00.000Z",
+    "verifiedAt": "2026-08-13T18:00:00.000Z",
+    "approvedAt": "2026-08-13T18:00:00.000Z",
+    "confidence": "high",
+    "status": "approved",
+    "isFixture": false
+  },
+  {
+    "id": "fact-closely-integrations.crm",
+    "productSlug": "closely",
+    "domain": "integrations",
+    "field": "integrations.crm",
+    "value": [
+      "salesforce",
+      "hubspot",
+      "pipedrive"
+    ],
+    "sourceIds": [
+      "closely-linkedin"
+    ],
+    "evidence": [
+      {
+        "sourceId": "closely-linkedin",
+        "excerpt": "CRM & LinkedIn integration pages."
+      }
+    ],
+    "extractedAt": "2026-08-13T18:00:00.000Z",
+    "normalizedAt": "2026-08-13T18:00:00.000Z",
+    "verifiedAt": "2026-08-13T18:00:00.000Z",
+    "approvedAt": "2026-08-13T18:00:00.000Z",
+    "confidence": "high",
+    "status": "approved",
+    "isFixture": false
+  }
+]

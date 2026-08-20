@@ -1,0 +1,91 @@
+{
+  "id": "exec-software-review-agent-databox-1787140589191",
+  "agentId": "software-review-agent",
+  "agentVersion": "1.0.0",
+  "status": "qa-failed",
+  "mode": "CREATE",
+  "targetSlug": "databox",
+  "draftId": "draft-deterministic-v1-software-review-agent-databox-2026-08-19T11-56-29-395Z",
+  "briefId": "agent-brief-software-review-agent-databox-1787140589394",
+  "validation": {
+    "ok": false,
+    "errors": [
+      "unknown-fact-ref:fact-databox-features.content-calendar",
+      "unknown-fact-ref:fact-databox-features.social-scheduling",
+      "unknown-fact-ref:fact-databox-features.marketing-automation"
+    ]
+  },
+  "qa": {
+    "status": "fail",
+    "blockers": [
+      {
+        "type": "UNSUPPORTED_FACT",
+        "severity": "blocker",
+        "message": "Fact ref not in approved context: fact-databox-features.content-calendar",
+        "section": "verdict"
+      },
+      {
+        "type": "UNSUPPORTED_FACT",
+        "severity": "blocker",
+        "message": "Fact ref not in approved context: fact-databox-features.social-scheduling",
+        "section": "verdict"
+      },
+      {
+        "type": "UNSUPPORTED_FACT",
+        "severity": "blocker",
+        "message": "Fact ref not in approved context: fact-databox-features.marketing-automation",
+        "section": "verdict"
+      },
+      {
+        "type": "UNSUPPORTED_FACT",
+        "severity": "blocker",
+        "message": "unknown-fact-ref:fact-databox-features.content-calendar"
+      },
+      {
+        "type": "UNSUPPORTED_FACT",
+        "severity": "blocker",
+        "message": "unknown-fact-ref:fact-databox-features.social-scheduling"
+      },
+      {
+        "type": "UNSUPPORTED_FACT",
+        "severity": "blocker",
+        "message": "unknown-fact-ref:fact-databox-features.marketing-automation"
+      }
+    ],
+    "warnings": [],
+    "suggestions": [],
+    "checkedAt": "2026-08-19T11:56:29.399Z"
+  },
+  "errors": [
+    "unknown-fact-ref:fact-databox-features.content-calendar",
+    "unknown-fact-ref:fact-databox-features.social-scheduling",
+    "unknown-fact-ref:fact-databox-features.marketing-automation"
+  ],
+  "cost": {
+    "provider": "deterministic-v1",
+    "model": "deterministic-template-v1",
+    "inputTokens": 0,
+    "outputTokens": 0,
+    "estimatedCostUsd": 0
+  },
+  "contextSnapshot": {
+    "researchSnapshotIds": [],
+    "factIds": [
+      "fact-databox-identity.shortDescription",
+      "fact-databox-positioning.vendorClaim",
+      "fact-databox-pricing.model",
+      "fact-databox-pricing.hasFreePlan",
+      "fact-databox-pricing.hasFreeTrial",
+      "fact-databox-pricing.startingPriceMonthly",
+      "fact-databox-pricing.plans.free",
+      "fact-databox-pricing.plans.professional"
+    ],
+    "methodologySlug": "marketing-editorial",
+    "methodologyVersion": "1.0.0",
+    "pricingFreshnessAt": "2026-08-17T17:00:00.000Z",
+    "builtAt": "2026-08-19T11:56:29.389Z"
+  },
+  "dryRun": false,
+  "startedAt": "2026-08-19T11:56:29.191Z",
+  "completedAt": "2026-08-19T11:56:29.401Z"
+}

@@ -1,0 +1,89 @@
+{
+  "id": "exec-software-review-agent-accelerated-growth-studio-1787140550863",
+  "agentId": "software-review-agent",
+  "agentVersion": "1.0.0",
+  "status": "qa-failed",
+  "mode": "CREATE",
+  "targetSlug": "accelerated-growth-studio",
+  "draftId": "draft-deterministic-v1-software-review-agent-accelerated-growth-studio-2026-08-19T11-55-51-105Z",
+  "briefId": "agent-brief-software-review-agent-accelerated-growth-studio-1787140551104",
+  "validation": {
+    "ok": false,
+    "errors": [
+      "unknown-fact-ref:fact-accelerated-growth-studio-features.content-calendar",
+      "unknown-fact-ref:fact-accelerated-growth-studio-features.social-scheduling",
+      "unknown-fact-ref:fact-accelerated-growth-studio-features.marketing-automation"
+    ]
+  },
+  "qa": {
+    "status": "fail",
+    "blockers": [
+      {
+        "type": "UNSUPPORTED_FACT",
+        "severity": "blocker",
+        "message": "Fact ref not in approved context: fact-accelerated-growth-studio-features.content-calendar",
+        "section": "verdict"
+      },
+      {
+        "type": "UNSUPPORTED_FACT",
+        "severity": "blocker",
+        "message": "Fact ref not in approved context: fact-accelerated-growth-studio-features.social-scheduling",
+        "section": "verdict"
+      },
+      {
+        "type": "UNSUPPORTED_FACT",
+        "severity": "blocker",
+        "message": "Fact ref not in approved context: fact-accelerated-growth-studio-features.marketing-automation",
+        "section": "verdict"
+      },
+      {
+        "type": "UNSUPPORTED_FACT",
+        "severity": "blocker",
+        "message": "unknown-fact-ref:fact-accelerated-growth-studio-features.content-calendar"
+      },
+      {
+        "type": "UNSUPPORTED_FACT",
+        "severity": "blocker",
+        "message": "unknown-fact-ref:fact-accelerated-growth-studio-features.social-scheduling"
+      },
+      {
+        "type": "UNSUPPORTED_FACT",
+        "severity": "blocker",
+        "message": "unknown-fact-ref:fact-accelerated-growth-studio-features.marketing-automation"
+      }
+    ],
+    "warnings": [],
+    "suggestions": [],
+    "checkedAt": "2026-08-19T11:55:51.111Z"
+  },
+  "errors": [
+    "unknown-fact-ref:fact-accelerated-growth-studio-features.content-calendar",
+    "unknown-fact-ref:fact-accelerated-growth-studio-features.social-scheduling",
+    "unknown-fact-ref:fact-accelerated-growth-studio-features.marketing-automation"
+  ],
+  "cost": {
+    "provider": "deterministic-v1",
+    "model": "deterministic-template-v1",
+    "inputTokens": 0,
+    "outputTokens": 0,
+    "estimatedCostUsd": 0
+  },
+  "contextSnapshot": {
+    "researchSnapshotIds": [],
+    "factIds": [
+      "fact-accelerated-growth-studio-identity.shortDescription",
+      "fact-accelerated-growth-studio-positioning.vendorClaim",
+      "fact-accelerated-growth-studio-pricing.model",
+      "fact-accelerated-growth-studio-pricing.hasFreePlan",
+      "fact-accelerated-growth-studio-pricing.hasFreeTrial",
+      "fact-accelerated-growth-studio-pricing.plans.enterprise"
+    ],
+    "methodologySlug": "marketing-editorial",
+    "methodologyVersion": "1.0.0",
+    "pricingFreshnessAt": "2026-08-17T17:00:00.000Z",
+    "builtAt": "2026-08-19T11:55:51.100Z"
+  },
+  "dryRun": false,
+  "startedAt": "2026-08-19T11:55:50.863Z",
+  "completedAt": "2026-08-19T11:55:51.114Z"
+}

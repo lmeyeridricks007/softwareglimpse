@@ -1,0 +1,286 @@
+{
+  "id": "review-dynatrace-v1",
+  "productSlug": "dynatrace",
+  "assessmentId": "assessment-dynatrace-it-v1",
+  "editorialStatus": "approved",
+  "title": "Dynatrace Review (2026)",
+  "h1": "Dynatrace Review",
+  "intro": "Dynatrace is evaluated here as an observability and infrastructure monitoring suite — Dynatrace is an enterprise observability platform (full-stack APM, infra, logs, traces, Davis AI) licensed as Dynatrace Platform Subscription: one annual spend commitment, then consumption against a public rate card with no penalty overage. Example list units on dynatrace.com/pricing (2026-08-18): Full-Stack Monitoring about $58/mo per 8 GiB host ($0.01 per memory-GiB-hour); Kubernetes pods and logs ingest are separate line items. Seats are unlimited. 15-day trial. Distinct from Datadog’s published per-host Infrastructure Pro SKU and from PagerDuty on-call. This review uses SoftwareGlimpse’s IT & Development methodology (ease of use, IT job fit, workflow depth, integrations, admin/security, scalability, value, AI), scoring products inside their job cluster rather than against unrelated peers. It is based on first-party research, not hands-on lab testing.",
+  "summary": "Choose Dynatrace when enterprise full-stack observability with a DPS commit is the job — not Datadog host modules by default, and not PagerDuty.",
+  "verdict": "Choose Dynatrace when enterprise full-stack observability with a DPS commit is the job — not Datadog host modules by default, and not PagerDuty. Compare Datadog or New Relic for published self-serve observability; PagerDuty for paging. Scores reflect first-party documentation as of 2026-08-18 — not hands-on product testing. Confirm current packaging, host/GB rates and minimums on the vendor site before purchase.",
+  "overallScore": 8.2,
+  "criterionAssessments": [
+    {
+      "criterionSlug": "ease-of-use",
+      "score": 6,
+      "rationale": "Enterprise platform and OneAgent coverage — productive after architecture work, not in an afternoon. Not a lab test.",
+      "supportingFactIds": [
+        "fact-dynatrace-features.infrastructure-monitoring",
+        "fact-dynatrace-pricing.model"
+      ],
+      "confidence": "medium",
+      "status": "approved",
+      "reviewedAt": "2026-08-18T14:00:00.000Z",
+      "reviewer": "editorial"
+    },
+    {
+      "criterionSlug": "it-job-fit",
+      "score": 10,
+      "rationale": "Full-stack observability — ranked with Datadog and New Relic, not against PagerDuty or GitHub.",
+      "supportingFactIds": [
+        "fact-dynatrace-features.infrastructure-monitoring",
+        "fact-dynatrace-pricing.model"
+      ],
+      "confidence": "medium",
+      "status": "approved",
+      "reviewedAt": "2026-08-18T14:00:00.000Z",
+      "reviewer": "editorial"
+    },
+    {
+      "criterionSlug": "workflow-depth",
+      "score": 9,
+      "rationale": "APM, infra, logs, traces, and Davis AI form a deep SRE loop from vendor packaging.",
+      "supportingFactIds": [
+        "fact-dynatrace-features.apm-tracing",
+        "fact-dynatrace-pricing.model"
+      ],
+      "confidence": "medium",
+      "status": "approved",
+      "reviewedAt": "2026-08-18T14:00:00.000Z",
+      "reviewer": "editorial"
+    },
+    {
+      "criterionSlug": "integrations",
+      "score": 8,
+      "rationale": "Broad cloud/runtime ecosystem and webhooks; not a SaaS seat graph.",
+      "supportingFactIds": [
+        "fact-dynatrace-features.analytics-reporting",
+        "fact-dynatrace-pricing.model",
+        "fact-dynatrace-positioning.vendorClaim"
+      ],
+      "confidence": "medium",
+      "status": "approved",
+      "reviewedAt": "2026-08-18T14:00:00.000Z",
+      "reviewer": "editorial"
+    },
+    {
+      "criterionSlug": "admin-security",
+      "score": 9,
+      "rationale": "Enterprise security/compliance posture is a buying reason versus SMB observability tiles.",
+      "supportingFactIds": [
+        "fact-dynatrace-features.enterprise-security",
+        "fact-dynatrace-pricing.model"
+      ],
+      "confidence": "medium",
+      "status": "approved",
+      "reviewedAt": "2026-08-18T14:00:00.000Z",
+      "reviewer": "editorial"
+    },
+    {
+      "criterionSlug": "scalability",
+      "score": 9,
+      "rationale": "DPS commit + unlimited seats is how large estates buy.",
+      "supportingFactIds": [
+        "fact-dynatrace-pricing.plans.dps",
+        "fact-dynatrace-pricing.model",
+        "fact-dynatrace-pricing.plans.on-demand"
+      ],
+      "confidence": "medium",
+      "status": "approved",
+      "reviewedAt": "2026-08-18T14:00:00.000Z",
+      "reviewer": "editorial"
+    },
+    {
+      "criterionSlug": "value-for-money",
+      "score": 6,
+      "rationale": "Opaque vs Datadog’s published host SKU; rate-card transparency helps but commit size still dominates. Affiliate economics excluded.",
+      "supportingFactIds": [
+        "fact-dynatrace-pricing.hasFreePlan",
+        "fact-dynatrace-pricing.model",
+        "fact-dynatrace-pricing.startingPriceMonthly"
+      ],
+      "confidence": "medium",
+      "status": "approved",
+      "reviewedAt": "2026-08-18T14:00:00.000Z",
+      "reviewer": "editorial"
+    },
+    {
+      "criterionSlug": "ai-capabilities",
+      "score": 8,
+      "rationale": "Davis AI is a real observability assistant — scored as assistance, not as a reason to skip telemetry.",
+      "supportingFactIds": [
+        "fact-dynatrace-features.itsm-ai",
+        "fact-dynatrace-pricing.model"
+      ],
+      "confidence": "medium",
+      "status": "approved",
+      "reviewedAt": "2026-08-18T14:00:00.000Z",
+      "reviewer": "editorial"
+    }
+  ],
+  "bestFor": [
+    "Enterprises that will sign a DPS commit and deploy OneAgent broadly",
+    "SRE teams that want full-stack APM plus Davis AI in one platform",
+    "Buyers who already rejected per-host Datadog module math"
+  ],
+  "notIdealFor": [
+    "SMB teams that need a published $15/host tile (Datadog)",
+    "On-call-only paging (PagerDuty)",
+    "ITSM desks (ServiceNow / Freshservice)"
+  ],
+  "pros": [
+    "Full-stack APM + infra + logs",
+    "Public rate card under DPS",
+    "Unlimited seats",
+    "Davis AI assistance",
+    "15-day trial"
+  ],
+  "cons": [
+    "Annual commit buying motion",
+    "$58/8 GiB is not all-in TCO",
+    "Heavier onboarding than New Relic Free",
+    "Not ITSM/git/on-call",
+    "Implementation effort is real"
+  ],
+  "keyFeatures": [
+    "Full-stack monitoring",
+    "APM traces and service maps",
+    "Logs and Kubernetes observability",
+    "Davis AI",
+    "DPS annual commit"
+  ],
+  "limitations": [
+    "Buying motion is an annual DPS commit — not a $15/host self-serve tile",
+    "Rate-card units (hosts, GiB, sessions) still dominate TCO; $58/8 GiB is not all-in",
+    "Implementation and OneAgent coverage matter more than the trial sandbox",
+    "Not an ITSM service desk or git host",
+    "Not PagerDuty — Davis AI does not replace on-call paging as the primary job"
+  ],
+  "pricingSummary": "Contact sales / DPS annual commit. Full-Stack list unit ~$58/mo per 8 GiB host on the public rate card. 15-day trial. Confirm live on dynatrace.com/pricing.",
+  "whoShouldChoose": "Choose Dynatrace when enterprise full-stack observability with a DPS commit is the job — not Datadog host modules by default, and not PagerDuty.",
+  "whoShouldConsiderAlternatives": "Compare Datadog or New Relic for published self-serve observability; PagerDuty for paging.",
+  "alternativeSlugs": [
+    "datadog",
+    "new-relic"
+  ],
+  "comparisonSlugs": [
+    "datadog-vs-dynatrace",
+    "dynatrace-vs-new-relic"
+  ],
+  "relatedGuidePaths": [
+    "/categories/it-development/",
+    "/best/it-development-software/"
+  ],
+  "methodologySlug": "it-development-editorial",
+  "methodologyVersion": "1.0.0",
+  "researchSourceIds": [
+    "dynatrace-product-official",
+    "dynatrace-pricing-official",
+    "dynatrace-pricing"
+  ],
+  "factRefs": [
+    {
+      "section": "pricing",
+      "factIds": [
+        "fact-dynatrace-pricing.model",
+        "fact-dynatrace-pricing.hasFreePlan",
+        "fact-dynatrace-pricing.hasFreeTrial",
+        "fact-dynatrace-pricing.startingPriceMonthly",
+        "fact-dynatrace-pricing.plans.dps",
+        "fact-dynatrace-pricing.plans.on-demand"
+      ]
+    },
+    {
+      "section": "overview",
+      "factIds": [
+        "fact-dynatrace-identity.shortDescription",
+        "fact-dynatrace-positioning.vendorClaim",
+        "fact-dynatrace-positioning.jobCluster"
+      ]
+    },
+    {
+      "section": "features",
+      "factIds": [
+        "fact-dynatrace-features.incident-management",
+        "fact-dynatrace-features.change-problem",
+        "fact-dynatrace-features.service-catalog",
+        "fact-dynatrace-features.infrastructure-monitoring",
+        "fact-dynatrace-features.apm-tracing",
+        "fact-dynatrace-features.log-management",
+        "fact-dynatrace-features.source-control",
+        "fact-dynatrace-features.cicd-actions",
+        "fact-dynatrace-features.hosting-panel",
+        "fact-dynatrace-features.proxy-network",
+        "fact-dynatrace-features.itsm-ai",
+        "fact-dynatrace-features.dev-ai",
+        "fact-dynatrace-features.oncall-paging",
+        "fact-dynatrace-features.enterprise-security",
+        "fact-dynatrace-features.analytics-reporting"
+      ]
+    }
+  ],
+  "faq": [
+    {
+      "question": "Is Dynatrace IT / development software?",
+      "answer": "Yes. Dynatrace is evaluated as an observability and infrastructure monitoring suite."
+    },
+    {
+      "question": "How is Dynatrace priced?",
+      "answer": "Contact sales / DPS annual commit. Full-Stack list unit ~$58/mo per 8 GiB host on the public rate card. 15-day trial. Confirm live on dynatrace.com/pricing."
+    },
+    {
+      "question": "Does Dynatrace have a free plan or free trial?",
+      "answer": "No free plan is published. A free trial is documented (about 15 days). Confirm current terms with the vendor."
+    },
+    {
+      "question": "Did SoftwareGlimpse personally test Dynatrace?",
+      "answer": "No. This review is based on first-party product and pricing research evidence, not hands-on product usage. Affiliate relationships never influence scores."
+    }
+  ],
+  "sections": [
+    {
+      "id": "overview",
+      "heading": "Overview",
+      "body": "Dynatrace is an enterprise observability platform (full-stack APM, infra, logs, traces, Davis AI) licensed as Dynatrace Platform Subscription: one annual spend commitment, then consumption against a public rate card with no penalty overage. Example list units on dynatrace.com/pricing (2026-08-18): Full-Stack Monitoring about $58/mo per 8 GiB host ($0.01 per memory-GiB-hour); Kubernetes pods and logs ingest are separate line items. Seats are unlimited. 15-day trial. Distinct from Datadog’s published per-host Infrastructure Pro SKU and from PagerDuty on-call."
+    },
+    {
+      "id": "best-for",
+      "heading": "Who it’s for",
+      "body": "• Enterprises that will sign a DPS commit and deploy OneAgent broadly\n• SRE teams that want full-stack APM plus Davis AI in one platform\n• Buyers who already rejected per-host Datadog module math"
+    },
+    {
+      "id": "features",
+      "heading": "Feature coverage",
+      "body": "• incident-management: limited\n• change-problem: not-supported\n• service-catalog: not-supported\n• infrastructure-monitoring: supported\n• apm-tracing: supported\n• log-management: supported\n• source-control: not-supported\n• cicd-actions: limited\n• hosting-panel: not-supported\n• proxy-network: not-supported\n• itsm-ai: limited\n• dev-ai: supported\n• oncall-paging: limited\n• enterprise-security: supported\n• analytics-reporting: supported"
+    },
+    {
+      "id": "pricing",
+      "heading": "Pricing",
+      "body": "Contact sales / DPS annual commit. Full-Stack list unit ~$58/mo per 8 GiB host on the public rate card. 15-day trial. Confirm live on dynatrace.com/pricing."
+    },
+    {
+      "id": "limitations",
+      "heading": "Limitations",
+      "body": "• Buying motion is an annual DPS commit — not a $15/host self-serve tile\n• Rate-card units (hosts, GiB, sessions) still dominate TCO; $58/8 GiB is not all-in\n• Implementation and OneAgent coverage matter more than the trial sandbox\n• Not an ITSM service desk or git host\n• Not PagerDuty — Davis AI does not replace on-call paging as the primary job"
+    }
+  ],
+  "confidence": "medium",
+  "handsOnTesting": false,
+  "contentVersion": 1,
+  "refreshNeeded": false,
+  "lastUpdatedAt": "2026-08-18T14:00:00.000Z",
+  "metadata": {
+    "status": "published",
+    "publishedAt": "2026-08-18T00:00:00.000Z",
+    "updatedAt": "2026-08-18T14:00:00.000Z",
+    "reviewedAt": "2026-08-18T14:00:00.000Z",
+    "author": "author-lee-meyeridricks",
+    "researchStatus": "complete"
+  },
+  "seo": {
+    "title": "Dynatrace Review (2026) — IT & Development",
+    "description": "Dynatrace IT & development review on SoftwareGlimpse: strengths, trade-offs, pricing posture, and who should buy.",
+    "canonicalPath": "/software/dynatrace/",
+    "indexable": true
+  }
+}

@@ -1,0 +1,689 @@
+{
+  "id": "wf-software-onboarding-content-livestorm-1786971068172",
+  "workflowId": "software-onboarding-content",
+  "workflowVersion": "1.0.0",
+  "name": "Software Onboarding Content: livestorm",
+  "targetType": "software",
+  "targetId": "livestorm",
+  "status": "cancelled",
+  "steps": [
+    {
+      "id": "software-onboarding",
+      "definitionStepId": "software-onboarding",
+      "handler": "software-onboarding",
+      "label": "Software onboarding",
+      "status": "completed",
+      "required": true,
+      "failurePolicy": "block-workflow",
+      "attempt": 1,
+      "maxAttempts": 2,
+      "dependsOn": [],
+      "priority": "critical",
+      "config": {
+        "maxAutomaticRevisions": 1,
+        "expandFromContentPlan": false,
+        "expandKind": "none",
+        "stopAfterApproval": true,
+        "allowNormalizedFacts": false,
+        "optionalWhenBlocked": false,
+        "forceTransientFailOnce": false
+      },
+      "inputRefs": {},
+      "outputRefs": {
+        "softwareOnboardingRunId": "onboard-livestorm-1786970649739"
+      },
+      "blockers": [],
+      "warnings": [],
+      "startedAt": "2026-08-17T12:51:08.751Z",
+      "completedAt": "2026-08-17T12:51:08.803Z",
+      "revisionAttempts": 0
+    },
+    {
+      "id": "content-plan",
+      "definitionStepId": "content-plan",
+      "handler": "content-plan",
+      "label": "Content plan",
+      "status": "completed",
+      "required": true,
+      "failurePolicy": "block-workflow",
+      "attempt": 1,
+      "maxAttempts": 2,
+      "dependsOn": [
+        "software-onboarding"
+      ],
+      "priority": "high",
+      "config": {
+        "maxAutomaticRevisions": 1,
+        "expandFromContentPlan": false,
+        "expandKind": "none",
+        "stopAfterApproval": true,
+        "allowNormalizedFacts": false,
+        "optionalWhenBlocked": false,
+        "forceTransientFailOnce": false
+      },
+      "inputRefs": {},
+      "outputRefs": {
+        "softwareOnboardingRunId": "onboard-livestorm-1786970649739",
+        "comparisonTargets": "livestorm-vs-zoom,goto-webinar-vs-livestorm,livestorm-vs-webinarjam",
+        "pageCandidateCount": "9"
+      },
+      "blockers": [],
+      "warnings": [],
+      "startedAt": "2026-08-17T12:51:08.805Z",
+      "completedAt": "2026-08-17T12:51:08.846Z",
+      "revisionAttempts": 0
+    },
+    {
+      "id": "software-review",
+      "definitionStepId": "software-review",
+      "handler": "agent-run",
+      "label": "Software Review",
+      "status": "completed",
+      "required": true,
+      "failurePolicy": "block-workflow",
+      "attempt": 1,
+      "maxAttempts": 2,
+      "dependsOn": [
+        "content-plan"
+      ],
+      "priority": "high",
+      "config": {
+        "agentId": "software-review-agent",
+        "targetSlug": "livestorm",
+        "maxAutomaticRevisions": 1,
+        "expandFromContentPlan": false,
+        "expandKind": "none",
+        "stopAfterApproval": true,
+        "allowNormalizedFacts": false,
+        "optionalWhenBlocked": false,
+        "forceTransientFailOnce": false
+      },
+      "inputRefs": {},
+      "outputRefs": {
+        "draftId": "draft-deterministic-v1-software-review-agent-livestorm-2026-08-17T12-51-08-899Z",
+        "qaStatus": "pass",
+        "agentId": "software-review-agent",
+        "target": "livestorm"
+      },
+      "inputSnapshot": {
+        "researchFactIds": [
+          "fact-livestorm-identity.shortDescription",
+          "fact-livestorm-positioning.vendorClaim",
+          "fact-livestorm-pricing.model",
+          "fact-livestorm-pricing.hasFreePlan",
+          "fact-livestorm-pricing.hasFreeTrial",
+          "fact-livestorm-pricing.plans.pro",
+          "fact-livestorm-pricing.plans.enterprise",
+          "fact-livestorm-features.social-scheduling",
+          "fact-livestorm-features.content-calendar",
+          "fact-livestorm-features.social-listening",
+          "fact-livestorm-features.funnel-builder",
+          "fact-livestorm-features.landing-pages",
+          "fact-livestorm-features.marketing-automation",
+          "fact-livestorm-features.forms-lead-capture",
+          "fact-livestorm-features.analytics",
+          "fact-livestorm-features.ads-management",
+          "fact-livestorm-features.reputation-reviews",
+          "fact-livestorm-features.webinars",
+          "fact-livestorm-features.email-sms-channels",
+          "fact-livestorm-features.team-collaboration",
+          "fact-livestorm-features.ai-content-generation"
+        ],
+        "methodologySlug": "marketing-editorial",
+        "methodologyVersion": "1.0.0",
+        "agentVersion": "1.0.0",
+        "contextBuiltAt": "2026-08-17T12:51:08.894Z"
+      },
+      "blockers": [],
+      "warnings": [],
+      "agentTaskId": "exec-software-review-agent-livestorm-1786971068848",
+      "draftId": "draft-deterministic-v1-software-review-agent-livestorm-2026-08-17T12-51-08-899Z",
+      "startedAt": "2026-08-17T12:51:08.847Z",
+      "completedAt": "2026-08-17T12:51:08.905Z",
+      "revisionAttempts": 0
+    },
+    {
+      "id": "pricing-page",
+      "definitionStepId": "pricing-page",
+      "handler": "agent-run",
+      "label": "Pricing Page",
+      "status": "completed-with-warning",
+      "required": false,
+      "failurePolicy": "continue-with-warning",
+      "attempt": 1,
+      "maxAttempts": 2,
+      "dependsOn": [
+        "content-plan"
+      ],
+      "priority": "normal",
+      "config": {
+        "agentId": "pricing-page-agent",
+        "targetSlug": "livestorm",
+        "maxAutomaticRevisions": 1,
+        "expandFromContentPlan": false,
+        "expandKind": "none",
+        "stopAfterApproval": true,
+        "allowNormalizedFacts": false,
+        "optionalWhenBlocked": true,
+        "forceTransientFailOnce": false
+      },
+      "inputRefs": {},
+      "outputRefs": {
+        "draftId": "draft-deterministic-v1-pricing-page-agent-livestorm-2026-08-17T12-51-08-963Z-rev-1786971068971",
+        "qaStatus": "fail"
+      },
+      "blockers": [],
+      "warnings": [
+        "QA still failing after revision: UNVERIFIED_NUMBER",
+        "Optional review-required demoted on resume — required path continues"
+      ],
+      "agentTaskId": "exec-pricing-page-agent-livestorm-1786971068954",
+      "draftId": "draft-deterministic-v1-pricing-page-agent-livestorm-2026-08-17T12-51-08-963Z-rev-1786971068971",
+      "startedAt": "2026-08-17T12:51:08.953Z",
+      "completedAt": "2026-08-17T12:51:08.973Z",
+      "revisionAttempts": 1
+    },
+    {
+      "id": "alternatives",
+      "definitionStepId": "alternatives",
+      "handler": "agent-run",
+      "label": "Alternatives",
+      "status": "cancelled",
+      "required": false,
+      "failurePolicy": "continue-with-warning",
+      "attempt": 1,
+      "maxAttempts": 2,
+      "dependsOn": [
+        "content-plan"
+      ],
+      "priority": "normal",
+      "config": {
+        "agentId": "alternatives-agent",
+        "targetSlug": "livestorm",
+        "maxAutomaticRevisions": 1,
+        "expandFromContentPlan": false,
+        "expandKind": "none",
+        "stopAfterApproval": true,
+        "allowNormalizedFacts": false,
+        "optionalWhenBlocked": true,
+        "forceTransientFailOnce": false
+      },
+      "inputRefs": {},
+      "outputRefs": {},
+      "blockers": [
+        "NO_APPROVED_ALTERNATIVES: Approved alternative relationships required — same-category alone is insufficient"
+      ],
+      "warnings": [
+        "NO_APPROVED_ALTERNATIVES: Approved alternative relationships required — same-category alone is insufficient"
+      ],
+      "startedAt": "2026-08-17T12:51:08.906Z",
+      "completedAt": "2026-08-17T12:51:08.912Z",
+      "revisionAttempts": 0
+    },
+    {
+      "id": "comparison:livestorm-vs-zoom",
+      "definitionStepId": "comparisons",
+      "handler": "agent-run",
+      "label": "Comparison livestorm-vs-zoom",
+      "status": "cancelled",
+      "required": false,
+      "failurePolicy": "continue-with-warning",
+      "attempt": 1,
+      "maxAttempts": 2,
+      "dependsOn": [
+        "content-plan"
+      ],
+      "priority": "normal",
+      "config": {
+        "agentId": "comparison-agent",
+        "targetSlug": "livestorm-vs-zoom",
+        "maxAutomaticRevisions": 1,
+        "expandFromContentPlan": true,
+        "expandKind": "comparisons",
+        "stopAfterApproval": true,
+        "allowNormalizedFacts": false,
+        "optionalWhenBlocked": true,
+        "forceTransientFailOnce": false
+      },
+      "expansionKey": "livestorm-vs-zoom",
+      "inputRefs": {},
+      "outputRefs": {},
+      "blockers": [
+        "RELATIONSHIP_UNAPPROVED: Approved comparable relationship required"
+      ],
+      "warnings": [
+        "RELATIONSHIP_UNAPPROVED: Approved comparable relationship required"
+      ],
+      "startedAt": "2026-08-17T12:51:08.939Z",
+      "completedAt": "2026-08-17T12:51:08.952Z",
+      "revisionAttempts": 0
+    },
+    {
+      "id": "comparison:goto-webinar-vs-livestorm",
+      "definitionStepId": "comparisons",
+      "handler": "agent-run",
+      "label": "Comparison goto-webinar-vs-livestorm",
+      "status": "cancelled",
+      "required": false,
+      "failurePolicy": "continue-with-warning",
+      "attempt": 1,
+      "maxAttempts": 2,
+      "dependsOn": [
+        "content-plan"
+      ],
+      "priority": "normal",
+      "config": {
+        "agentId": "comparison-agent",
+        "targetSlug": "goto-webinar-vs-livestorm",
+        "maxAutomaticRevisions": 1,
+        "expandFromContentPlan": true,
+        "expandKind": "comparisons",
+        "stopAfterApproval": true,
+        "allowNormalizedFacts": false,
+        "optionalWhenBlocked": true,
+        "forceTransientFailOnce": false
+      },
+      "expansionKey": "goto-webinar-vs-livestorm",
+      "inputRefs": {},
+      "outputRefs": {},
+      "blockers": [
+        "RELATIONSHIP_UNAPPROVED: Approved comparable relationship required"
+      ],
+      "warnings": [
+        "RELATIONSHIP_UNAPPROVED: Approved comparable relationship required"
+      ],
+      "startedAt": "2026-08-17T12:51:08.914Z",
+      "completedAt": "2026-08-17T12:51:08.920Z",
+      "revisionAttempts": 0
+    },
+    {
+      "id": "comparison:livestorm-vs-webinarjam",
+      "definitionStepId": "comparisons",
+      "handler": "agent-run",
+      "label": "Comparison livestorm-vs-webinarjam",
+      "status": "cancelled",
+      "required": false,
+      "failurePolicy": "continue-with-warning",
+      "attempt": 1,
+      "maxAttempts": 2,
+      "dependsOn": [
+        "content-plan"
+      ],
+      "priority": "normal",
+      "config": {
+        "agentId": "comparison-agent",
+        "targetSlug": "livestorm-vs-webinarjam",
+        "maxAutomaticRevisions": 1,
+        "expandFromContentPlan": true,
+        "expandKind": "comparisons",
+        "stopAfterApproval": true,
+        "allowNormalizedFacts": false,
+        "optionalWhenBlocked": true,
+        "forceTransientFailOnce": false
+      },
+      "expansionKey": "livestorm-vs-webinarjam",
+      "inputRefs": {},
+      "outputRefs": {},
+      "blockers": [
+        "RELATIONSHIP_UNAPPROVED: Approved comparable relationship required"
+      ],
+      "warnings": [
+        "RELATIONSHIP_UNAPPROVED: Approved comparable relationship required"
+      ],
+      "startedAt": "2026-08-17T12:51:08.921Z",
+      "completedAt": "2026-08-17T12:51:08.937Z",
+      "revisionAttempts": 0
+    },
+    {
+      "id": "internal-links",
+      "definitionStepId": "internal-links",
+      "handler": "internal-link",
+      "label": "Internal Link Plan",
+      "status": "completed",
+      "required": false,
+      "failurePolicy": "continue-with-warning",
+      "attempt": 1,
+      "maxAttempts": 2,
+      "dependsOn": [
+        "software-review"
+      ],
+      "priority": "low",
+      "config": {
+        "agentId": "internal-link-agent",
+        "maxAutomaticRevisions": 1,
+        "expandFromContentPlan": false,
+        "expandKind": "none",
+        "stopAfterApproval": true,
+        "allowNormalizedFacts": false,
+        "optionalWhenBlocked": false,
+        "forceTransientFailOnce": false
+      },
+      "inputRefs": {},
+      "outputRefs": {
+        "draftId": "draft-deterministic-v1-internal-link-agent-livestorm-2026-08-18T08-49-50-800Z",
+        "qaStatus": "pass",
+        "agentId": "internal-link-agent",
+        "target": "livestorm"
+      },
+      "inputSnapshot": {
+        "researchFactIds": [
+          "fact-livestorm-identity.shortDescription",
+          "fact-livestorm-positioning.vendorClaim",
+          "fact-livestorm-pricing.model",
+          "fact-livestorm-pricing.hasFreePlan",
+          "fact-livestorm-pricing.hasFreeTrial",
+          "fact-livestorm-pricing.plans.pro",
+          "fact-livestorm-pricing.plans.enterprise",
+          "fact-livestorm-features.social-scheduling",
+          "fact-livestorm-features.content-calendar",
+          "fact-livestorm-features.social-listening",
+          "fact-livestorm-features.funnel-builder",
+          "fact-livestorm-features.landing-pages",
+          "fact-livestorm-features.marketing-automation",
+          "fact-livestorm-features.forms-lead-capture",
+          "fact-livestorm-features.analytics",
+          "fact-livestorm-features.ads-management",
+          "fact-livestorm-features.reputation-reviews",
+          "fact-livestorm-features.webinars",
+          "fact-livestorm-features.email-sms-channels",
+          "fact-livestorm-features.team-collaboration",
+          "fact-livestorm-features.ai-content-generation"
+        ],
+        "methodologySlug": "marketing-editorial",
+        "methodologyVersion": "1.0.0",
+        "agentVersion": "1.0.0",
+        "contextBuiltAt": "2026-08-18T08:49:50.800Z"
+      },
+      "blockers": [],
+      "warnings": [],
+      "agentTaskId": "exec-internal-link-agent-livestorm-1787042990791",
+      "draftId": "draft-deterministic-v1-internal-link-agent-livestorm-2026-08-18T08-49-50-800Z",
+      "startedAt": "2026-08-18T08:49:50.791Z",
+      "completedAt": "2026-08-18T08:49:50.802Z",
+      "revisionAttempts": 0
+    },
+    {
+      "id": "finder-readiness",
+      "definitionStepId": "finder-readiness",
+      "handler": "update-recommendation-readiness",
+      "label": "Finder readiness",
+      "status": "completed",
+      "required": false,
+      "failurePolicy": "continue",
+      "attempt": 1,
+      "maxAttempts": 2,
+      "dependsOn": [
+        "content-plan"
+      ],
+      "priority": "low",
+      "config": {
+        "maxAutomaticRevisions": 1,
+        "expandFromContentPlan": false,
+        "expandKind": "none",
+        "stopAfterApproval": true,
+        "allowNormalizedFacts": false,
+        "optionalWhenBlocked": false,
+        "forceTransientFailOnce": false
+      },
+      "inputRefs": {},
+      "outputRefs": {
+        "finderReadiness": "checked"
+      },
+      "blockers": [],
+      "warnings": [],
+      "startedAt": "2026-08-18T08:49:50.788Z",
+      "completedAt": "2026-08-18T08:49:50.789Z",
+      "revisionAttempts": 0
+    },
+    {
+      "id": "editorial-approval",
+      "definitionStepId": "editorial-approval",
+      "handler": "approval-check",
+      "label": "Editorial approval",
+      "status": "cancelled",
+      "required": true,
+      "failurePolicy": "manual-review",
+      "attempt": 1,
+      "maxAttempts": 2,
+      "dependsOn": [
+        "software-review"
+      ],
+      "priority": "critical",
+      "config": {
+        "approvalType": "editorial",
+        "maxAutomaticRevisions": 1,
+        "expandFromContentPlan": false,
+        "expandKind": "none",
+        "stopAfterApproval": true,
+        "allowNormalizedFacts": false,
+        "optionalWhenBlocked": false,
+        "forceTransientFailOnce": false
+      },
+      "inputRefs": {},
+      "outputRefs": {
+        "approvalId": "appr-wf-software-onboarding-content-livestorm-1786971068172-software-review",
+        "draftId": "draft-deterministic-v1-software-review-agent-livestorm-2026-08-17T12-51-08-899Z"
+      },
+      "blockers": [],
+      "warnings": [],
+      "approvalId": "appr-wf-software-onboarding-content-livestorm-1786971068172-software-review",
+      "startedAt": "2026-08-18T08:49:50.803Z",
+      "completedAt": "2026-08-18T08:49:50.845Z",
+      "revisionAttempts": 0
+    },
+    {
+      "id": "pre-publish-validation",
+      "definitionStepId": "pre-publish-validation",
+      "handler": "pre-publish-validation",
+      "label": "Pre-publish validation",
+      "status": "cancelled",
+      "required": true,
+      "failurePolicy": "block-workflow",
+      "attempt": 0,
+      "maxAttempts": 2,
+      "dependsOn": [
+        "editorial-approval"
+      ],
+      "priority": "critical",
+      "config": {
+        "maxAutomaticRevisions": 1,
+        "expandFromContentPlan": false,
+        "expandKind": "none",
+        "stopAfterApproval": true,
+        "allowNormalizedFacts": false,
+        "optionalWhenBlocked": false,
+        "forceTransientFailOnce": false
+      },
+      "inputRefs": {},
+      "outputRefs": {},
+      "blockers": [],
+      "warnings": [],
+      "revisionAttempts": 0
+    }
+  ],
+  "history": [
+    {
+      "at": "2026-08-17T12:51:08.749Z",
+      "event": "workflow_created",
+      "message": "Created software-onboarding-content:v1.0.0"
+    },
+    {
+      "at": "2026-08-17T12:51:08.750Z",
+      "event": "workflow_started",
+      "message": "Workflow execution started"
+    },
+    {
+      "at": "2026-08-17T12:51:08.751Z",
+      "event": "workflow_step_started",
+      "stepId": "software-onboarding",
+      "message": "Started Software onboarding"
+    },
+    {
+      "at": "2026-08-17T12:51:08.803Z",
+      "event": "workflow_step_completed",
+      "stepId": "software-onboarding",
+      "message": "Reused onboarding run onboard-livestorm-1786970649739 (review-required)"
+    },
+    {
+      "at": "2026-08-17T12:51:08.805Z",
+      "event": "workflow_step_started",
+      "stepId": "content-plan",
+      "message": "Started Content plan"
+    },
+    {
+      "at": "2026-08-17T12:51:08.846Z",
+      "event": "workflow_step_completed",
+      "stepId": "content-plan",
+      "message": "Content plan from onboarding onboard-livestorm-1786970649739 (9 candidates)"
+    },
+    {
+      "at": "2026-08-17T12:51:08.847Z",
+      "event": "workflow_step_started",
+      "stepId": "software-review",
+      "message": "Started Software Review"
+    },
+    {
+      "at": "2026-08-17T12:51:08.905Z",
+      "event": "workflow_step_completed",
+      "stepId": "software-review",
+      "message": "Agent software-review-agent → draft draft-deterministic-v1-software-review-agent-livestorm-2026-08-17T12-51-08-899Z (qa=pass)"
+    },
+    {
+      "at": "2026-08-17T12:51:08.906Z",
+      "event": "workflow_step_started",
+      "stepId": "alternatives",
+      "message": "Started Alternatives"
+    },
+    {
+      "at": "2026-08-17T12:51:08.913Z",
+      "event": "workflow_step_completed",
+      "stepId": "alternatives",
+      "message": "Agent blocked (optional): NO_APPROVED_ALTERNATIVES: Approved alternative relationships required — same-category alone is insufficient"
+    },
+    {
+      "at": "2026-08-17T12:51:08.914Z",
+      "event": "workflow_step_started",
+      "stepId": "comparison:goto-webinar-vs-livestorm",
+      "message": "Started Comparison goto-webinar-vs-livestorm"
+    },
+    {
+      "at": "2026-08-17T12:51:08.920Z",
+      "event": "workflow_step_completed",
+      "stepId": "comparison:goto-webinar-vs-livestorm",
+      "message": "Agent blocked (optional): RELATIONSHIP_UNAPPROVED: Approved comparable relationship required"
+    },
+    {
+      "at": "2026-08-17T12:51:08.921Z",
+      "event": "workflow_step_started",
+      "stepId": "comparison:livestorm-vs-webinarjam",
+      "message": "Started Comparison livestorm-vs-webinarjam"
+    },
+    {
+      "at": "2026-08-17T12:51:08.937Z",
+      "event": "workflow_step_completed",
+      "stepId": "comparison:livestorm-vs-webinarjam",
+      "message": "Agent blocked (optional): RELATIONSHIP_UNAPPROVED: Approved comparable relationship required"
+    },
+    {
+      "at": "2026-08-17T12:51:08.938Z",
+      "event": "workflow_step_started",
+      "stepId": "comparison:livestorm-vs-zoom",
+      "message": "Started Comparison livestorm-vs-zoom"
+    },
+    {
+      "at": "2026-08-17T12:51:08.952Z",
+      "event": "workflow_step_completed",
+      "stepId": "comparison:livestorm-vs-zoom",
+      "message": "Agent blocked (optional): RELATIONSHIP_UNAPPROVED: Approved comparable relationship required"
+    },
+    {
+      "at": "2026-08-17T12:51:08.953Z",
+      "event": "workflow_step_started",
+      "stepId": "pricing-page",
+      "message": "Started Pricing Page"
+    },
+    {
+      "at": "2026-08-17T12:51:08.973Z",
+      "event": "workflow_step_completed",
+      "stepId": "pricing-page",
+      "message": "QA fail after one automatic revision → review-required"
+    },
+    {
+      "at": "2026-08-18T08:49:50.786Z",
+      "event": "workflow_resumed",
+      "message": "Workflow resumed"
+    },
+    {
+      "at": "2026-08-18T08:49:50.787Z",
+      "event": "workflow_started",
+      "message": "Workflow execution started"
+    },
+    {
+      "at": "2026-08-18T08:49:50.788Z",
+      "event": "workflow_step_started",
+      "stepId": "finder-readiness",
+      "message": "Started Finder readiness"
+    },
+    {
+      "at": "2026-08-18T08:49:50.789Z",
+      "event": "workflow_step_completed",
+      "stepId": "finder-readiness",
+      "message": "Finder readiness noted for livestorm"
+    },
+    {
+      "at": "2026-08-18T08:49:50.790Z",
+      "event": "workflow_step_started",
+      "stepId": "internal-links",
+      "message": "Started Internal Link Plan"
+    },
+    {
+      "at": "2026-08-18T08:49:50.802Z",
+      "event": "workflow_step_completed",
+      "stepId": "internal-links",
+      "message": "Agent internal-link-agent → draft draft-deterministic-v1-internal-link-agent-livestorm-2026-08-18T08-49-50-800Z (qa=pass)"
+    },
+    {
+      "at": "2026-08-18T08:49:50.803Z",
+      "event": "workflow_step_started",
+      "stepId": "editorial-approval",
+      "message": "Started Editorial approval"
+    },
+    {
+      "at": "2026-08-18T08:49:50.845Z",
+      "event": "workflow_step_completed",
+      "stepId": "editorial-approval",
+      "message": "WAITING FOR EDITORIAL APPROVAL (appr-wf-software-onboarding-content-livestorm-1786971068172-software-review)"
+    },
+    {
+      "at": "2026-08-18T08:49:50.846Z",
+      "event": "workflow_blocked",
+      "message": "WAITING FOR EDITORIAL APPROVAL"
+    },
+    {
+      "at": "2026-08-18T13:34:16.202Z",
+      "event": "workflow_cancelled",
+      "message": "Catalogue software page already published; agent drafts remain unpublished"
+    }
+  ],
+  "options": {
+    "generateReview": true,
+    "generatePricing": true,
+    "generateAlternatives": true,
+    "generateComparisons": true,
+    "runInternalLinks": true,
+    "stopAfterApproval": true,
+    "allowNormalizedFacts": false,
+    "dryRun": false,
+    "maxComparisons": 3,
+    "skipOnboarding": false
+  },
+  "cancelReason": "Catalogue software page already published; agent drafts remain unpublished",
+  "warnings": [
+    "alternatives blocked: NO_APPROVED_ALTERNATIVES: Approved alternative relationships required — same-category alone is insufficient",
+    "comparison:goto-webinar-vs-livestorm blocked: RELATIONSHIP_UNAPPROVED: Approved comparable relationship required",
+    "comparison:livestorm-vs-webinarjam blocked: RELATIONSHIP_UNAPPROVED: Approved comparable relationship required",
+    "comparison:livestorm-vs-zoom blocked: RELATIONSHIP_UNAPPROVED: Approved comparable relationship required"
+  ],
+  "createdAt": "2026-08-17T12:51:08.748Z",
+  "updatedAt": "2026-08-18T13:34:16.202Z"
+}

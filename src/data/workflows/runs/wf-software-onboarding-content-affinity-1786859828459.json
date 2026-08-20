@@ -1,0 +1,957 @@
+{
+  "id": "wf-software-onboarding-content-affinity-1786859828459",
+  "workflowId": "software-onboarding-content",
+  "workflowVersion": "1.0.0",
+  "name": "Software Onboarding Content: affinity",
+  "targetType": "software",
+  "targetId": "affinity",
+  "status": "superseded",
+  "steps": [
+    {
+      "id": "software-onboarding",
+      "definitionStepId": "software-onboarding",
+      "handler": "software-onboarding",
+      "label": "Software onboarding",
+      "status": "completed",
+      "required": true,
+      "failurePolicy": "block-workflow",
+      "attempt": 1,
+      "maxAttempts": 2,
+      "dependsOn": [],
+      "priority": "critical",
+      "config": {
+        "maxAutomaticRevisions": 1,
+        "expandFromContentPlan": false,
+        "expandKind": "none",
+        "stopAfterApproval": true,
+        "allowNormalizedFacts": false,
+        "optionalWhenBlocked": false,
+        "forceTransientFailOnce": false
+      },
+      "inputRefs": {},
+      "outputRefs": {
+        "softwareOnboardingRunId": "onboard-affinity-1786859669675"
+      },
+      "blockers": [],
+      "warnings": [],
+      "startedAt": "2026-08-16T05:57:08.891Z",
+      "completedAt": "2026-08-16T05:57:08.939Z",
+      "revisionAttempts": 0
+    },
+    {
+      "id": "content-plan",
+      "definitionStepId": "content-plan",
+      "handler": "content-plan",
+      "label": "Content plan",
+      "status": "completed",
+      "required": true,
+      "failurePolicy": "block-workflow",
+      "attempt": 1,
+      "maxAttempts": 2,
+      "dependsOn": [
+        "software-onboarding"
+      ],
+      "priority": "high",
+      "config": {
+        "maxAutomaticRevisions": 1,
+        "expandFromContentPlan": false,
+        "expandKind": "none",
+        "stopAfterApproval": true,
+        "allowNormalizedFacts": false,
+        "optionalWhenBlocked": false,
+        "forceTransientFailOnce": false
+      },
+      "inputRefs": {},
+      "outputRefs": {
+        "softwareOnboardingRunId": "onboard-affinity-1786859669675",
+        "comparisonTargets": "affinity-vs-salesforce,affinity-vs-attio,affinity-vs-hubspot",
+        "pageCandidateCount": "9"
+      },
+      "blockers": [],
+      "warnings": [],
+      "startedAt": "2026-08-16T05:57:08.940Z",
+      "completedAt": "2026-08-16T05:57:08.974Z",
+      "revisionAttempts": 0
+    },
+    {
+      "id": "software-review",
+      "definitionStepId": "software-review",
+      "handler": "agent-run",
+      "label": "Software Review",
+      "status": "completed",
+      "required": true,
+      "failurePolicy": "block-workflow",
+      "attempt": 1,
+      "maxAttempts": 2,
+      "dependsOn": [
+        "content-plan"
+      ],
+      "priority": "high",
+      "config": {
+        "agentId": "software-review-agent",
+        "targetSlug": "affinity",
+        "maxAutomaticRevisions": 1,
+        "expandFromContentPlan": false,
+        "expandKind": "none",
+        "stopAfterApproval": true,
+        "allowNormalizedFacts": false,
+        "optionalWhenBlocked": false,
+        "forceTransientFailOnce": false
+      },
+      "inputRefs": {},
+      "outputRefs": {
+        "draftId": "draft-deterministic-v1-software-review-agent-affinity-2026-08-16T05-57-09-029Z",
+        "qaStatus": "pass",
+        "agentId": "software-review-agent",
+        "target": "affinity"
+      },
+      "inputSnapshot": {
+        "researchFactIds": [
+          "fact-affinity-pricing.hasFreePlan",
+          "fact-affinity-pricing.hasFreeTrial",
+          "fact-affinity-pricing.currency",
+          "fact-affinity-pricing.model",
+          "fact-affinity-identity.shortDescription",
+          "fact-affinity-positioning.vendorClaim",
+          "fact-affinity-pricing.startingPriceMonthly",
+          "fact-affinity-pricing.plans.essential",
+          "fact-affinity-pricing.plans.scale",
+          "fact-affinity-pricing.plans.advanced",
+          "fact-affinity-pricing.plans.enterprise",
+          "fact-affinity-features.contact-management",
+          "fact-affinity-features.lead-management",
+          "fact-affinity-features.pipeline-management",
+          "fact-affinity-features.deal-management",
+          "fact-affinity-features.custom-pipelines",
+          "fact-affinity-features.custom-fields",
+          "fact-affinity-features.email-sync",
+          "fact-affinity-features.email-tracking",
+          "fact-affinity-features.workflow-automation",
+          "fact-affinity-features.reporting",
+          "fact-affinity-features.mobile-app",
+          "fact-affinity-features.sales-automation",
+          "fact-affinity-features.integrations",
+          "fact-affinity-features.ai-assistance"
+        ],
+        "methodologySlug": "crm-editorial",
+        "methodologyVersion": "1.0.0",
+        "agentVersion": "1.0.0",
+        "contextBuiltAt": "2026-08-16T05:57:09.023Z"
+      },
+      "blockers": [],
+      "warnings": [],
+      "agentTaskId": "exec-software-review-agent-affinity-1786859828977",
+      "draftId": "draft-deterministic-v1-software-review-agent-affinity-2026-08-16T05-57-09-029Z",
+      "startedAt": "2026-08-16T05:57:08.976Z",
+      "completedAt": "2026-08-16T05:57:09.035Z",
+      "revisionAttempts": 0
+    },
+    {
+      "id": "pricing-page",
+      "definitionStepId": "pricing-page",
+      "handler": "agent-run",
+      "label": "Pricing Page",
+      "status": "completed",
+      "required": false,
+      "failurePolicy": "continue-with-warning",
+      "attempt": 1,
+      "maxAttempts": 2,
+      "dependsOn": [
+        "content-plan"
+      ],
+      "priority": "normal",
+      "config": {
+        "agentId": "pricing-page-agent",
+        "targetSlug": "affinity",
+        "maxAutomaticRevisions": 1,
+        "expandFromContentPlan": false,
+        "expandKind": "none",
+        "stopAfterApproval": true,
+        "allowNormalizedFacts": false,
+        "optionalWhenBlocked": true,
+        "forceTransientFailOnce": false
+      },
+      "inputRefs": {},
+      "outputRefs": {
+        "draftId": "draft-deterministic-v1-pricing-page-agent-affinity-2026-08-16T05-57-09-095Z",
+        "qaStatus": "pass",
+        "agentId": "pricing-page-agent",
+        "target": "affinity"
+      },
+      "inputSnapshot": {
+        "researchFactIds": [
+          "fact-affinity-pricing.hasFreePlan",
+          "fact-affinity-pricing.hasFreeTrial",
+          "fact-affinity-pricing.currency",
+          "fact-affinity-pricing.model",
+          "fact-affinity-identity.shortDescription",
+          "fact-affinity-positioning.vendorClaim",
+          "fact-affinity-pricing.startingPriceMonthly",
+          "fact-affinity-pricing.plans.essential",
+          "fact-affinity-pricing.plans.scale",
+          "fact-affinity-pricing.plans.advanced",
+          "fact-affinity-pricing.plans.enterprise",
+          "fact-affinity-features.contact-management",
+          "fact-affinity-features.lead-management",
+          "fact-affinity-features.pipeline-management",
+          "fact-affinity-features.deal-management",
+          "fact-affinity-features.custom-pipelines",
+          "fact-affinity-features.custom-fields",
+          "fact-affinity-features.email-sync",
+          "fact-affinity-features.email-tracking",
+          "fact-affinity-features.workflow-automation",
+          "fact-affinity-features.reporting",
+          "fact-affinity-features.mobile-app",
+          "fact-affinity-features.sales-automation",
+          "fact-affinity-features.integrations",
+          "fact-affinity-features.ai-assistance"
+        ],
+        "methodologySlug": "crm-editorial",
+        "methodologyVersion": "1.0.0",
+        "agentVersion": "1.0.0",
+        "contextBuiltAt": "2026-08-16T05:57:09.094Z"
+      },
+      "blockers": [],
+      "warnings": [],
+      "agentTaskId": "exec-pricing-page-agent-affinity-1786859829085",
+      "draftId": "draft-deterministic-v1-pricing-page-agent-affinity-2026-08-16T05-57-09-095Z",
+      "startedAt": "2026-08-16T05:57:09.081Z",
+      "completedAt": "2026-08-16T05:57:09.097Z",
+      "revisionAttempts": 0
+    },
+    {
+      "id": "alternatives",
+      "definitionStepId": "alternatives",
+      "handler": "agent-run",
+      "label": "Alternatives",
+      "status": "blocked",
+      "required": false,
+      "failurePolicy": "continue-with-warning",
+      "attempt": 1,
+      "maxAttempts": 2,
+      "dependsOn": [
+        "content-plan"
+      ],
+      "priority": "normal",
+      "config": {
+        "agentId": "alternatives-agent",
+        "targetSlug": "affinity",
+        "maxAutomaticRevisions": 1,
+        "expandFromContentPlan": false,
+        "expandKind": "none",
+        "stopAfterApproval": true,
+        "allowNormalizedFacts": false,
+        "optionalWhenBlocked": true,
+        "forceTransientFailOnce": false
+      },
+      "inputRefs": {},
+      "outputRefs": {},
+      "blockers": [
+        "NO_APPROVED_ALTERNATIVES: Approved alternative relationships required — same-category alone is insufficient"
+      ],
+      "warnings": [
+        "NO_APPROVED_ALTERNATIVES: Approved alternative relationships required — same-category alone is insufficient"
+      ],
+      "startedAt": "2026-08-16T05:57:09.037Z",
+      "completedAt": "2026-08-16T05:57:09.042Z",
+      "revisionAttempts": 0
+    },
+    {
+      "id": "comparison:affinity-vs-salesforce",
+      "definitionStepId": "comparisons",
+      "handler": "agent-run",
+      "label": "Comparison affinity-vs-salesforce",
+      "status": "completed",
+      "required": false,
+      "failurePolicy": "continue-with-warning",
+      "attempt": 1,
+      "maxAttempts": 2,
+      "dependsOn": [
+        "content-plan"
+      ],
+      "priority": "normal",
+      "config": {
+        "agentId": "comparison-agent",
+        "targetSlug": "affinity-vs-salesforce",
+        "maxAutomaticRevisions": 1,
+        "expandFromContentPlan": true,
+        "expandKind": "comparisons",
+        "stopAfterApproval": true,
+        "allowNormalizedFacts": false,
+        "optionalWhenBlocked": true,
+        "forceTransientFailOnce": false
+      },
+      "expansionKey": "affinity-vs-salesforce",
+      "inputRefs": {},
+      "outputRefs": {
+        "draftId": "draft-deterministic-v1-comparison-agent-affinity-vs-salesforce-2026-08-16T05-57-09-074Z",
+        "qaStatus": "pass",
+        "agentId": "comparison-agent",
+        "target": "affinity-vs-salesforce"
+      },
+      "inputSnapshot": {
+        "researchFactIds": [
+          "fact-affinity-pricing.hasFreePlan",
+          "fact-affinity-pricing.hasFreeTrial",
+          "fact-affinity-pricing.currency",
+          "fact-affinity-pricing.model",
+          "fact-affinity-identity.shortDescription",
+          "fact-affinity-positioning.vendorClaim",
+          "fact-affinity-pricing.startingPriceMonthly",
+          "fact-affinity-pricing.plans.essential",
+          "fact-affinity-pricing.plans.scale",
+          "fact-affinity-pricing.plans.advanced",
+          "fact-affinity-pricing.plans.enterprise",
+          "fact-affinity-features.contact-management",
+          "fact-affinity-features.lead-management",
+          "fact-affinity-features.pipeline-management",
+          "fact-affinity-features.deal-management",
+          "fact-affinity-features.custom-pipelines",
+          "fact-affinity-features.custom-fields",
+          "fact-affinity-features.email-sync",
+          "fact-affinity-features.email-tracking",
+          "fact-affinity-features.workflow-automation",
+          "fact-affinity-features.reporting",
+          "fact-affinity-features.mobile-app",
+          "fact-affinity-features.sales-automation",
+          "fact-affinity-features.integrations",
+          "fact-affinity-features.ai-assistance",
+          "fact-salesforce-pricing.hasFreePlan",
+          "fact-salesforce-pricing.hasFreeTrial",
+          "fact-salesforce-pricing.startingPriceMonthly",
+          "fact-salesforce-pricing.currency",
+          "fact-salesforce-pricing.model",
+          "fact-salesforce-pricing.plans.starter-suite",
+          "fact-salesforce-pricing.plans.pro-suite",
+          "fact-salesforce-pricing.plans.enterprise",
+          "fact-salesforce-pricing.plans.unlimited",
+          "fact-salesforce-pricing.addons",
+          "fact-salesforce-pricing.agentforce1",
+          "fact-salesforce-features.contact-management",
+          "fact-salesforce-features.lead-management",
+          "fact-salesforce-features.pipeline-management",
+          "fact-salesforce-features.deal-management",
+          "fact-salesforce-features.custom-pipelines",
+          "fact-salesforce-features.custom-fields",
+          "fact-salesforce-features.mobile-app",
+          "fact-salesforce-features.email-sync",
+          "fact-salesforce-features.email-tracking",
+          "fact-salesforce-features.email-sequences",
+          "fact-salesforce-features.workflow-automation",
+          "fact-salesforce-features.sales-automation",
+          "fact-salesforce-features.reporting",
+          "fact-salesforce-features.forecasting",
+          "fact-salesforce-features.lead-scoring",
+          "fact-salesforce-features.ai-assistance",
+          "fact-salesforce-features.integrations",
+          "fact-salesforce-features.email-campaigns",
+          "fact-salesforce-integrations.gmail",
+          "fact-salesforce-integrations.outlook",
+          "fact-salesforce-integrations.slack",
+          "fact-salesforce-integrations.appexchange",
+          "fact-salesforce-ai.assistant",
+          "fact-salesforce-ai.forecasting",
+          "fact-salesforce-ai.automation",
+          "fact-salesforce-ai.lead-scoring",
+          "fact-salesforce-positioning.summary"
+        ],
+        "methodologySlug": "crm-editorial",
+        "methodologyVersion": "1.0.0",
+        "agentVersion": "1.0.0",
+        "contextBuiltAt": "2026-08-16T05:57:09.073Z"
+      },
+      "blockers": [],
+      "warnings": [],
+      "agentTaskId": "exec-comparison-agent-affinity-vs-salesforce-1786859829067",
+      "draftId": "draft-deterministic-v1-comparison-agent-affinity-vs-salesforce-2026-08-16T05-57-09-074Z",
+      "startedAt": "2026-08-16T05:57:09.066Z",
+      "completedAt": "2026-08-16T05:57:09.078Z",
+      "revisionAttempts": 0
+    },
+    {
+      "id": "comparison:affinity-vs-attio",
+      "definitionStepId": "comparisons",
+      "handler": "agent-run",
+      "label": "Comparison affinity-vs-attio",
+      "status": "completed",
+      "required": false,
+      "failurePolicy": "continue-with-warning",
+      "attempt": 1,
+      "maxAttempts": 2,
+      "dependsOn": [
+        "content-plan"
+      ],
+      "priority": "normal",
+      "config": {
+        "agentId": "comparison-agent",
+        "targetSlug": "affinity-vs-attio",
+        "maxAutomaticRevisions": 1,
+        "expandFromContentPlan": true,
+        "expandKind": "comparisons",
+        "stopAfterApproval": true,
+        "allowNormalizedFacts": false,
+        "optionalWhenBlocked": true,
+        "forceTransientFailOnce": false
+      },
+      "expansionKey": "affinity-vs-attio",
+      "inputRefs": {},
+      "outputRefs": {
+        "draftId": "draft-deterministic-v1-comparison-agent-affinity-vs-attio-2026-08-16T05-57-09-052Z",
+        "qaStatus": "pass",
+        "agentId": "comparison-agent",
+        "target": "affinity-vs-attio"
+      },
+      "inputSnapshot": {
+        "researchFactIds": [
+          "fact-affinity-pricing.hasFreePlan",
+          "fact-affinity-pricing.hasFreeTrial",
+          "fact-affinity-pricing.currency",
+          "fact-affinity-pricing.model",
+          "fact-affinity-identity.shortDescription",
+          "fact-affinity-positioning.vendorClaim",
+          "fact-affinity-pricing.startingPriceMonthly",
+          "fact-affinity-pricing.plans.essential",
+          "fact-affinity-pricing.plans.scale",
+          "fact-affinity-pricing.plans.advanced",
+          "fact-affinity-pricing.plans.enterprise",
+          "fact-affinity-features.contact-management",
+          "fact-affinity-features.lead-management",
+          "fact-affinity-features.pipeline-management",
+          "fact-affinity-features.deal-management",
+          "fact-affinity-features.custom-pipelines",
+          "fact-affinity-features.custom-fields",
+          "fact-affinity-features.email-sync",
+          "fact-affinity-features.email-tracking",
+          "fact-affinity-features.workflow-automation",
+          "fact-affinity-features.reporting",
+          "fact-affinity-features.mobile-app",
+          "fact-affinity-features.sales-automation",
+          "fact-affinity-features.integrations",
+          "fact-affinity-features.ai-assistance",
+          "fact-attio-pricing.hasFreePlan",
+          "fact-attio-pricing.hasFreeTrial",
+          "fact-attio-pricing.startingPriceMonthly",
+          "fact-attio-pricing.currency",
+          "fact-attio-pricing.model",
+          "fact-attio-pricing.plans.free",
+          "fact-attio-pricing.plans.plus",
+          "fact-attio-pricing.plans.pro",
+          "fact-attio-pricing.plans.enterprise",
+          "fact-attio-features.contact-management",
+          "fact-attio-features.lead-management",
+          "fact-attio-features.pipeline-management",
+          "fact-attio-features.deal-management",
+          "fact-attio-features.email-sync",
+          "fact-attio-features.workflow-automation",
+          "fact-attio-features.sales-automation",
+          "fact-attio-features.reporting",
+          "fact-attio-features.forecasting",
+          "fact-attio-features.custom-fields",
+          "fact-attio-features.custom-pipelines",
+          "fact-attio-features.mobile-app",
+          "fact-attio-features.ai-assistance",
+          "fact-attio-features.integrations",
+          "fact-attio-positioning.summary",
+          "fact-attio-ai.assistant",
+          "fact-attio-ai.summaries"
+        ],
+        "methodologySlug": "crm-editorial",
+        "methodologyVersion": "1.0.0",
+        "agentVersion": "1.0.0",
+        "contextBuiltAt": "2026-08-16T05:57:09.050Z"
+      },
+      "blockers": [],
+      "warnings": [],
+      "agentTaskId": "exec-comparison-agent-affinity-vs-attio-1786859829044",
+      "draftId": "draft-deterministic-v1-comparison-agent-affinity-vs-attio-2026-08-16T05-57-09-052Z",
+      "startedAt": "2026-08-16T05:57:09.043Z",
+      "completedAt": "2026-08-16T05:57:09.054Z",
+      "revisionAttempts": 0
+    },
+    {
+      "id": "comparison:affinity-vs-hubspot",
+      "definitionStepId": "comparisons",
+      "handler": "agent-run",
+      "label": "Comparison affinity-vs-hubspot",
+      "status": "completed",
+      "required": false,
+      "failurePolicy": "continue-with-warning",
+      "attempt": 1,
+      "maxAttempts": 2,
+      "dependsOn": [
+        "content-plan"
+      ],
+      "priority": "normal",
+      "config": {
+        "agentId": "comparison-agent",
+        "targetSlug": "affinity-vs-hubspot",
+        "maxAutomaticRevisions": 1,
+        "expandFromContentPlan": true,
+        "expandKind": "comparisons",
+        "stopAfterApproval": true,
+        "allowNormalizedFacts": false,
+        "optionalWhenBlocked": true,
+        "forceTransientFailOnce": false
+      },
+      "expansionKey": "affinity-vs-hubspot",
+      "inputRefs": {},
+      "outputRefs": {
+        "draftId": "draft-deterministic-v1-comparison-agent-affinity-vs-hubspot-2026-08-16T05-57-09-062Z",
+        "qaStatus": "pass",
+        "agentId": "comparison-agent",
+        "target": "affinity-vs-hubspot"
+      },
+      "inputSnapshot": {
+        "researchFactIds": [
+          "fact-affinity-pricing.hasFreePlan",
+          "fact-affinity-pricing.hasFreeTrial",
+          "fact-affinity-pricing.currency",
+          "fact-affinity-pricing.model",
+          "fact-affinity-identity.shortDescription",
+          "fact-affinity-positioning.vendorClaim",
+          "fact-affinity-pricing.startingPriceMonthly",
+          "fact-affinity-pricing.plans.essential",
+          "fact-affinity-pricing.plans.scale",
+          "fact-affinity-pricing.plans.advanced",
+          "fact-affinity-pricing.plans.enterprise",
+          "fact-affinity-features.contact-management",
+          "fact-affinity-features.lead-management",
+          "fact-affinity-features.pipeline-management",
+          "fact-affinity-features.deal-management",
+          "fact-affinity-features.custom-pipelines",
+          "fact-affinity-features.custom-fields",
+          "fact-affinity-features.email-sync",
+          "fact-affinity-features.email-tracking",
+          "fact-affinity-features.workflow-automation",
+          "fact-affinity-features.reporting",
+          "fact-affinity-features.mobile-app",
+          "fact-affinity-features.sales-automation",
+          "fact-affinity-features.integrations",
+          "fact-affinity-features.ai-assistance",
+          "fact-hubspot-pricing.hasFreePlan",
+          "fact-hubspot-pricing.hasFreeTrial",
+          "fact-hubspot-pricing.startingPriceMonthly",
+          "fact-hubspot-pricing.currency",
+          "fact-hubspot-pricing.model",
+          "fact-hubspot-pricing.plans.free",
+          "fact-hubspot-pricing.plans.starter",
+          "fact-hubspot-pricing.plans.professional",
+          "fact-hubspot-pricing.plans.enterprise",
+          "fact-hubspot-pricing.sales-hub.ladder",
+          "fact-hubspot-pricing.billing-notes",
+          "fact-hubspot-features.contact-management",
+          "fact-hubspot-features.pipeline-management",
+          "fact-hubspot-features.deal-management",
+          "fact-hubspot-features.lead-management",
+          "fact-hubspot-features.email-sync",
+          "fact-hubspot-features.email-sequences",
+          "fact-hubspot-features.workflow-automation",
+          "fact-hubspot-features.sales-automation",
+          "fact-hubspot-features.reporting",
+          "fact-hubspot-features.forecasting",
+          "fact-hubspot-features.lead-scoring",
+          "fact-hubspot-features.custom-fields",
+          "fact-hubspot-features.custom-objects",
+          "fact-hubspot-features.ai-assistance",
+          "fact-hubspot-features.integrations",
+          "fact-hubspot-features.sso",
+          "fact-hubspot-ai.assistant",
+          "fact-hubspot-ai.prospecting-agent",
+          "fact-hubspot-ai.forecasting",
+          "fact-hubspot-positioning.primary",
+          "fact-hubspot-positioning.free-crm",
+          "fact-hubspot-pricing.sales-hub.professional.catalog",
+          "fact-hubspot-pricing.sales-hub.professional.marketing",
+          "fact-hubspot-pricing.smart-crm.starter.catalog"
+        ],
+        "methodologySlug": "crm-editorial",
+        "methodologyVersion": "1.0.0",
+        "agentVersion": "1.0.0",
+        "contextBuiltAt": "2026-08-16T05:57:09.061Z"
+      },
+      "blockers": [],
+      "warnings": [],
+      "agentTaskId": "exec-comparison-agent-affinity-vs-hubspot-1786859829056",
+      "draftId": "draft-deterministic-v1-comparison-agent-affinity-vs-hubspot-2026-08-16T05-57-09-062Z",
+      "startedAt": "2026-08-16T05:57:09.056Z",
+      "completedAt": "2026-08-16T05:57:09.065Z",
+      "revisionAttempts": 0
+    },
+    {
+      "id": "internal-links",
+      "definitionStepId": "internal-links",
+      "handler": "internal-link",
+      "label": "Internal Link Plan",
+      "status": "completed",
+      "required": false,
+      "failurePolicy": "continue-with-warning",
+      "attempt": 1,
+      "maxAttempts": 2,
+      "dependsOn": [
+        "software-review"
+      ],
+      "priority": "low",
+      "config": {
+        "agentId": "internal-link-agent",
+        "maxAutomaticRevisions": 1,
+        "expandFromContentPlan": false,
+        "expandKind": "none",
+        "stopAfterApproval": true,
+        "allowNormalizedFacts": false,
+        "optionalWhenBlocked": false,
+        "forceTransientFailOnce": false
+      },
+      "inputRefs": {},
+      "outputRefs": {
+        "draftId": "draft-deterministic-v1-internal-link-agent-affinity-2026-08-16T05-57-09-106Z",
+        "qaStatus": "pass",
+        "agentId": "internal-link-agent",
+        "target": "affinity"
+      },
+      "inputSnapshot": {
+        "researchFactIds": [
+          "fact-affinity-pricing.hasFreePlan",
+          "fact-affinity-pricing.hasFreeTrial",
+          "fact-affinity-pricing.currency",
+          "fact-affinity-pricing.model",
+          "fact-affinity-identity.shortDescription",
+          "fact-affinity-positioning.vendorClaim",
+          "fact-affinity-pricing.startingPriceMonthly",
+          "fact-affinity-pricing.plans.essential",
+          "fact-affinity-pricing.plans.scale",
+          "fact-affinity-pricing.plans.advanced",
+          "fact-affinity-pricing.plans.enterprise",
+          "fact-affinity-features.contact-management",
+          "fact-affinity-features.lead-management",
+          "fact-affinity-features.pipeline-management",
+          "fact-affinity-features.deal-management",
+          "fact-affinity-features.custom-pipelines",
+          "fact-affinity-features.custom-fields",
+          "fact-affinity-features.email-sync",
+          "fact-affinity-features.email-tracking",
+          "fact-affinity-features.workflow-automation",
+          "fact-affinity-features.reporting",
+          "fact-affinity-features.mobile-app",
+          "fact-affinity-features.sales-automation",
+          "fact-affinity-features.integrations",
+          "fact-affinity-features.ai-assistance"
+        ],
+        "methodologySlug": "crm-editorial",
+        "methodologyVersion": "1.0.0",
+        "agentVersion": "1.0.0",
+        "contextBuiltAt": "2026-08-16T05:57:09.105Z"
+      },
+      "blockers": [],
+      "warnings": [],
+      "agentTaskId": "exec-internal-link-agent-affinity-1786859829101",
+      "draftId": "draft-deterministic-v1-internal-link-agent-affinity-2026-08-16T05-57-09-106Z",
+      "startedAt": "2026-08-16T05:57:09.100Z",
+      "completedAt": "2026-08-16T05:57:09.108Z",
+      "revisionAttempts": 0
+    },
+    {
+      "id": "finder-readiness",
+      "definitionStepId": "finder-readiness",
+      "handler": "update-recommendation-readiness",
+      "label": "Finder readiness",
+      "status": "completed",
+      "required": false,
+      "failurePolicy": "continue",
+      "attempt": 1,
+      "maxAttempts": 2,
+      "dependsOn": [
+        "content-plan"
+      ],
+      "priority": "low",
+      "config": {
+        "maxAutomaticRevisions": 1,
+        "expandFromContentPlan": false,
+        "expandKind": "none",
+        "stopAfterApproval": true,
+        "allowNormalizedFacts": false,
+        "optionalWhenBlocked": false,
+        "forceTransientFailOnce": false
+      },
+      "inputRefs": {},
+      "outputRefs": {
+        "finderReadiness": "checked"
+      },
+      "blockers": [],
+      "warnings": [],
+      "startedAt": "2026-08-16T05:57:09.098Z",
+      "completedAt": "2026-08-16T05:57:09.099Z",
+      "revisionAttempts": 0
+    },
+    {
+      "id": "editorial-approval",
+      "definitionStepId": "editorial-approval",
+      "handler": "approval-check",
+      "label": "Editorial approval",
+      "status": "completed",
+      "required": true,
+      "failurePolicy": "manual-review",
+      "attempt": 2,
+      "maxAttempts": 2,
+      "dependsOn": [
+        "software-review"
+      ],
+      "priority": "critical",
+      "config": {
+        "approvalType": "editorial",
+        "maxAutomaticRevisions": 1,
+        "expandFromContentPlan": false,
+        "expandKind": "none",
+        "stopAfterApproval": true,
+        "allowNormalizedFacts": false,
+        "optionalWhenBlocked": false,
+        "forceTransientFailOnce": false
+      },
+      "inputRefs": {},
+      "outputRefs": {
+        "approvalId": "appr-wf-software-onboarding-content-affinity-1786859828459-software-review",
+        "draftId": "draft-deterministic-v1-software-review-agent-affinity-2026-08-16T05-57-09-029Z",
+        "approvalIds": "appr-wf-software-onboarding-content-affinity-1786859828459-software-review"
+      },
+      "blockers": [],
+      "warnings": [
+        "Approval received — resuming",
+        "5 optional draft(s) may still need separate editorial review"
+      ],
+      "approvalId": "appr-wf-software-onboarding-content-affinity-1786859828459-software-review",
+      "startedAt": "2026-08-16T06:13:32.214Z",
+      "completedAt": "2026-08-16T06:13:32.305Z",
+      "revisionAttempts": 0
+    },
+    {
+      "id": "pre-publish-validation",
+      "definitionStepId": "pre-publish-validation",
+      "handler": "pre-publish-validation",
+      "label": "Pre-publish validation",
+      "status": "blocked",
+      "required": true,
+      "failurePolicy": "block-workflow",
+      "attempt": 1,
+      "maxAttempts": 2,
+      "dependsOn": [
+        "editorial-approval"
+      ],
+      "priority": "critical",
+      "config": {
+        "maxAutomaticRevisions": 1,
+        "expandFromContentPlan": false,
+        "expandKind": "none",
+        "stopAfterApproval": true,
+        "allowNormalizedFacts": false,
+        "optionalWhenBlocked": false,
+        "forceTransientFailOnce": false
+      },
+      "inputRefs": {},
+      "outputRefs": {},
+      "blockers": [
+        "Stale context for comparison:affinity-vs-salesforce: removed-critical-fact:fact-salesforce-pricing.hasFreePlan; removed-critical-fact:fact-salesforce-pricing.hasFreeTrial; removed-critical-fact:fact-salesforce-pricing.startingPriceMonthly; removed-critical-fact:fact-salesforce-pricing.currency; removed-critical-fact:fact-salesforce-pricing.model; removed-critical-fact:fact-salesforce-pricing.plans.starter-suite; removed-critical-fact:fact-salesforce-pricing.plans.pro-suite; removed-critical-fact:fact-salesforce-pricing.plans.enterprise; removed-critical-fact:fact-salesforce-pricing.plans.unlimited; removed-critical-fact:fact-salesforce-pricing.addons; removed-critical-fact:fact-salesforce-pricing.agentforce1",
+        "Stale context for comparison:affinity-vs-attio: removed-critical-fact:fact-attio-pricing.hasFreePlan; removed-critical-fact:fact-attio-pricing.hasFreeTrial; removed-critical-fact:fact-attio-pricing.startingPriceMonthly; removed-critical-fact:fact-attio-pricing.currency; removed-critical-fact:fact-attio-pricing.model; removed-critical-fact:fact-attio-pricing.plans.free; removed-critical-fact:fact-attio-pricing.plans.plus; removed-critical-fact:fact-attio-pricing.plans.pro; removed-critical-fact:fact-attio-pricing.plans.enterprise",
+        "Stale context for comparison:affinity-vs-hubspot: removed-critical-fact:fact-hubspot-pricing.hasFreePlan; removed-critical-fact:fact-hubspot-pricing.hasFreeTrial; removed-critical-fact:fact-hubspot-pricing.startingPriceMonthly; removed-critical-fact:fact-hubspot-pricing.currency; removed-critical-fact:fact-hubspot-pricing.model; removed-critical-fact:fact-hubspot-pricing.plans.free; removed-critical-fact:fact-hubspot-pricing.plans.starter; removed-critical-fact:fact-hubspot-pricing.plans.professional; removed-critical-fact:fact-hubspot-pricing.plans.enterprise; removed-critical-fact:fact-hubspot-pricing.sales-hub.ladder; removed-critical-fact:fact-hubspot-pricing.billing-notes; removed-critical-fact:fact-hubspot-pricing.sales-hub.professional.catalog; removed-critical-fact:fact-hubspot-pricing.sales-hub.professional.marketing; removed-critical-fact:fact-hubspot-pricing.smart-crm.starter.catalog"
+      ],
+      "warnings": [],
+      "startedAt": "2026-08-16T06:13:32.307Z",
+      "completedAt": "2026-08-16T06:13:32.930Z",
+      "revisionAttempts": 0
+    }
+  ],
+  "history": [
+    {
+      "at": "2026-08-16T05:57:08.887Z",
+      "event": "workflow_created",
+      "message": "Created software-onboarding-content:v1.0.0"
+    },
+    {
+      "at": "2026-08-16T05:57:08.890Z",
+      "event": "workflow_started",
+      "message": "Workflow execution started"
+    },
+    {
+      "at": "2026-08-16T05:57:08.891Z",
+      "event": "workflow_step_started",
+      "stepId": "software-onboarding",
+      "message": "Started Software onboarding"
+    },
+    {
+      "at": "2026-08-16T05:57:08.939Z",
+      "event": "workflow_step_completed",
+      "stepId": "software-onboarding",
+      "message": "Reused onboarding run onboard-affinity-1786859669675 (review-required)"
+    },
+    {
+      "at": "2026-08-16T05:57:08.940Z",
+      "event": "workflow_step_started",
+      "stepId": "content-plan",
+      "message": "Started Content plan"
+    },
+    {
+      "at": "2026-08-16T05:57:08.974Z",
+      "event": "workflow_step_completed",
+      "stepId": "content-plan",
+      "message": "Content plan from onboarding onboard-affinity-1786859669675 (9 candidates)"
+    },
+    {
+      "at": "2026-08-16T05:57:08.975Z",
+      "event": "workflow_step_started",
+      "stepId": "software-review",
+      "message": "Started Software Review"
+    },
+    {
+      "at": "2026-08-16T05:57:09.035Z",
+      "event": "workflow_step_completed",
+      "stepId": "software-review",
+      "message": "Agent software-review-agent → draft draft-deterministic-v1-software-review-agent-affinity-2026-08-16T05-57-09-029Z (qa=pass)"
+    },
+    {
+      "at": "2026-08-16T05:57:09.037Z",
+      "event": "workflow_step_started",
+      "stepId": "alternatives",
+      "message": "Started Alternatives"
+    },
+    {
+      "at": "2026-08-16T05:57:09.042Z",
+      "event": "workflow_step_completed",
+      "stepId": "alternatives",
+      "message": "Agent blocked (optional): NO_APPROVED_ALTERNATIVES: Approved alternative relationships required — same-category alone is insufficient"
+    },
+    {
+      "at": "2026-08-16T05:57:09.043Z",
+      "event": "workflow_step_started",
+      "stepId": "comparison:affinity-vs-attio",
+      "message": "Started Comparison affinity-vs-attio"
+    },
+    {
+      "at": "2026-08-16T05:57:09.054Z",
+      "event": "workflow_step_completed",
+      "stepId": "comparison:affinity-vs-attio",
+      "message": "Agent comparison-agent → draft draft-deterministic-v1-comparison-agent-affinity-vs-attio-2026-08-16T05-57-09-052Z (qa=pass)"
+    },
+    {
+      "at": "2026-08-16T05:57:09.056Z",
+      "event": "workflow_step_started",
+      "stepId": "comparison:affinity-vs-hubspot",
+      "message": "Started Comparison affinity-vs-hubspot"
+    },
+    {
+      "at": "2026-08-16T05:57:09.065Z",
+      "event": "workflow_step_completed",
+      "stepId": "comparison:affinity-vs-hubspot",
+      "message": "Agent comparison-agent → draft draft-deterministic-v1-comparison-agent-affinity-vs-hubspot-2026-08-16T05-57-09-062Z (qa=pass)"
+    },
+    {
+      "at": "2026-08-16T05:57:09.066Z",
+      "event": "workflow_step_started",
+      "stepId": "comparison:affinity-vs-salesforce",
+      "message": "Started Comparison affinity-vs-salesforce"
+    },
+    {
+      "at": "2026-08-16T05:57:09.078Z",
+      "event": "workflow_step_completed",
+      "stepId": "comparison:affinity-vs-salesforce",
+      "message": "Agent comparison-agent → draft draft-deterministic-v1-comparison-agent-affinity-vs-salesforce-2026-08-16T05-57-09-074Z (qa=pass)"
+    },
+    {
+      "at": "2026-08-16T05:57:09.081Z",
+      "event": "workflow_step_started",
+      "stepId": "pricing-page",
+      "message": "Started Pricing Page"
+    },
+    {
+      "at": "2026-08-16T05:57:09.097Z",
+      "event": "workflow_step_completed",
+      "stepId": "pricing-page",
+      "message": "Agent pricing-page-agent → draft draft-deterministic-v1-pricing-page-agent-affinity-2026-08-16T05-57-09-095Z (qa=pass)"
+    },
+    {
+      "at": "2026-08-16T05:57:09.098Z",
+      "event": "workflow_step_started",
+      "stepId": "finder-readiness",
+      "message": "Started Finder readiness"
+    },
+    {
+      "at": "2026-08-16T05:57:09.099Z",
+      "event": "workflow_step_completed",
+      "stepId": "finder-readiness",
+      "message": "Finder readiness noted for affinity"
+    },
+    {
+      "at": "2026-08-16T05:57:09.100Z",
+      "event": "workflow_step_started",
+      "stepId": "internal-links",
+      "message": "Started Internal Link Plan"
+    },
+    {
+      "at": "2026-08-16T05:57:09.108Z",
+      "event": "workflow_step_completed",
+      "stepId": "internal-links",
+      "message": "Agent internal-link-agent → draft draft-deterministic-v1-internal-link-agent-affinity-2026-08-16T05-57-09-106Z (qa=pass)"
+    },
+    {
+      "at": "2026-08-16T05:57:09.110Z",
+      "event": "workflow_step_started",
+      "stepId": "editorial-approval",
+      "message": "Started Editorial approval"
+    },
+    {
+      "at": "2026-08-16T05:57:09.223Z",
+      "event": "workflow_step_completed",
+      "stepId": "editorial-approval",
+      "message": "WAITING FOR EDITORIAL APPROVAL (appr-wf-software-onboarding-content-affinity-1786859828459-software-review)"
+    },
+    {
+      "at": "2026-08-16T06:13:32.211Z",
+      "event": "workflow_resumed",
+      "message": "Workflow resumed"
+    },
+    {
+      "at": "2026-08-16T06:13:32.212Z",
+      "event": "workflow_started",
+      "message": "Workflow execution started"
+    },
+    {
+      "at": "2026-08-16T06:13:32.214Z",
+      "event": "workflow_step_started",
+      "stepId": "editorial-approval",
+      "message": "Started Editorial approval"
+    },
+    {
+      "at": "2026-08-16T06:13:32.305Z",
+      "event": "workflow_step_completed",
+      "stepId": "editorial-approval",
+      "message": "Required editorial approvals satisfied"
+    },
+    {
+      "at": "2026-08-16T06:13:32.306Z",
+      "event": "workflow_step_started",
+      "stepId": "pre-publish-validation",
+      "message": "Started Pre-publish validation"
+    },
+    {
+      "at": "2026-08-16T06:13:32.930Z",
+      "event": "workflow_step_completed",
+      "stepId": "pre-publish-validation",
+      "message": "Pre-publish validation blocked: Stale context for comparison:affinity-vs-salesforce: removed-critical-fact:fact-salesforce-pricing.hasFreePlan; removed-critical-fact:fact-salesforce-pricing.hasFreeTrial; removed-critical-fact:fact-salesforce-pricing.startingPriceMonthly; removed-critical-fact:fact-salesforce-pricing.currency; removed-critical-fact:fact-salesforce-pricing.model; removed-critical-fact:fact-salesforce-pricing.plans.starter-suite; removed-critical-fact:fact-salesforce-pricing.plans.pro-suite; removed-critical-fact:fact-salesforce-pricing.plans.enterprise; removed-critical-fact:fact-salesforce-pricing.plans.unlimited; removed-critical-fact:fact-salesforce-pricing.addons; removed-critical-fact:fact-salesforce-pricing.agentforce1; Stale context for comparison:affinity-vs-attio: removed-critical-fact:fact-attio-pricing.hasFreePlan; removed-critical-fact:fact-attio-pricing.hasFreeTrial; removed-critical-fact:fact-attio-pricing.startingPriceMonthly; removed-critical-fact:fact-attio-pricing.currency; removed-critical-fact:fact-attio-pricing.model; removed-critical-fact:fact-attio-pricing.plans.free; removed-critical-fact:fact-attio-pricing.plans.plus; removed-critical-fact:fact-attio-pricing.plans.pro; removed-critical-fact:fact-attio-pricing.plans.enterprise; Stale context for comparison:affinity-vs-hubspot: removed-critical-fact:fact-hubspot-pricing.hasFreePlan; removed-critical-fact:fact-hubspot-pricing.hasFreeTrial; removed-critical-fact:fact-hubspot-pricing.startingPriceMonthly; removed-critical-fact:fact-hubspot-pricing.currency; removed-critical-fact:fact-hubspot-pricing.model; removed-critical-fact:fact-hubspot-pricing.plans.free; removed-critical-fact:fact-hubspot-pricing.plans.starter; removed-critical-fact:fact-hubspot-pricing.plans.professional; removed-critical-fact:fact-hubspot-pricing.plans.enterprise; removed-critical-fact:fact-hubspot-pricing.sales-hub.ladder; removed-critical-fact:fact-hubspot-pricing.billing-notes; removed-critical-fact:fact-hubspot-pricing.sales-hub.professional.catalog; removed-critical-fact:fact-hubspot-pricing.sales-hub.professional.marketing; removed-critical-fact:fact-hubspot-pricing.smart-crm.starter.catalog"
+    }
+  ],
+  "options": {
+    "generateReview": true,
+    "generatePricing": true,
+    "generateAlternatives": true,
+    "generateComparisons": true,
+    "runInternalLinks": true,
+    "stopAfterApproval": true,
+    "allowNormalizedFacts": false,
+    "dryRun": false,
+    "maxComparisons": 3,
+    "skipOnboarding": false
+  },
+  "supersededBy": "wf-software-onboarding-content-affinity-1786861022443",
+  "warnings": [
+    "alternatives blocked: NO_APPROVED_ALTERNATIVES: Approved alternative relationships required — same-category alone is insufficient"
+  ],
+  "createdAt": "2026-08-16T05:57:08.887Z",
+  "updatedAt": "2026-08-16T06:17:03.156Z"
+}

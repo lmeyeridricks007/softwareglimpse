@@ -1,0 +1,287 @@
+{
+  "id": "review-grafana-cloud-v1",
+  "productSlug": "grafana-cloud",
+  "assessmentId": "assessment-grafana-cloud-it-v1",
+  "editorialStatus": "approved",
+  "title": "Grafana Cloud Review (2026)",
+  "h1": "Grafana Cloud Review",
+  "intro": "Grafana Cloud is evaluated here as an observability and infrastructure monitoring suite — Grafana Cloud is Grafana Labs’ managed metrics/logs/traces/profiles stack (Mimir, Loki, Tempo, Pyroscope) plus Grafana. Free includes 10,000 active series, 50 GB logs/traces/profiles, 3 users, 14-day retention. Pro adds a published ~$19/month platform fee, longer retention, and usage rates (commonly $6.50 per 1,000 billable series and $8 per active visualisation user). Enterprise/Advanced is a spend-commit (~$25k/year cited) custom contract. Self-hosted Grafana OSS remains free and is a different buying motion. This review uses SoftwareGlimpse’s IT & Development methodology (ease of use, IT job fit, workflow depth, integrations, admin/security, scalability, value, AI), scoring products inside their job cluster rather than against unrelated peers. It is based on first-party research, not hands-on lab testing.",
+  "summary": "Choose Grafana Cloud when managed Grafana/LGTM telemetry is the job — not Datadog host modules and not ITSM.",
+  "verdict": "Choose Grafana Cloud when managed Grafana/LGTM telemetry is the job — not Datadog host modules and not ITSM. Compare Datadog or New Relic for all-in-one APM suites; PagerDuty for paging. Scores reflect first-party documentation as of 2026-08-18 — not hands-on product testing. Confirm current packaging, host/GB rates and minimums on the vendor site before purchase.",
+  "overallScore": 7.5,
+  "criterionAssessments": [
+    {
+      "criterionSlug": "ease-of-use",
+      "score": 7,
+      "rationale": "Grafana UX is familiar to OSS users; Cloud usage meters still need FinOps attention.",
+      "supportingFactIds": [
+        "fact-grafana-cloud-features.infrastructure-monitoring",
+        "fact-grafana-cloud-pricing.model"
+      ],
+      "confidence": "medium",
+      "status": "approved",
+      "reviewedAt": "2026-08-18T12:00:00.000Z",
+      "reviewer": "editorial"
+    },
+    {
+      "criterionSlug": "it-job-fit",
+      "score": 8,
+      "rationale": "Managed observability — cluster peer of Datadog/New Relic, not PagerDuty-only on-call.",
+      "supportingFactIds": [
+        "fact-grafana-cloud-features.infrastructure-monitoring",
+        "fact-grafana-cloud-pricing.model"
+      ],
+      "confidence": "medium",
+      "status": "approved",
+      "reviewedAt": "2026-08-18T12:00:00.000Z",
+      "reviewer": "editorial"
+    },
+    {
+      "criterionSlug": "workflow-depth",
+      "score": 8,
+      "rationale": "Metrics/logs/traces/profiles + dashboards are deep; less ‘single vendor APM suite’ than New Relic.",
+      "supportingFactIds": [
+        "fact-grafana-cloud-features.apm-tracing",
+        "fact-grafana-cloud-pricing.model"
+      ],
+      "confidence": "medium",
+      "status": "approved",
+      "reviewedAt": "2026-08-18T12:00:00.000Z",
+      "reviewer": "editorial"
+    },
+    {
+      "criterionSlug": "integrations",
+      "score": 8,
+      "rationale": "Huge data-source ecosystem; Cloud is the hosted version of that.",
+      "supportingFactIds": [
+        "fact-grafana-cloud-features.analytics-reporting",
+        "fact-grafana-cloud-pricing.model",
+        "fact-grafana-cloud-positioning.vendorClaim"
+      ],
+      "confidence": "medium",
+      "status": "approved",
+      "reviewedAt": "2026-08-18T12:00:00.000Z",
+      "reviewer": "editorial"
+    },
+    {
+      "criterionSlug": "admin-security",
+      "score": 7,
+      "rationale": "Enterprise SKU carries SAML/audit; Pro is usage-grade.",
+      "supportingFactIds": [
+        "fact-grafana-cloud-features.enterprise-security",
+        "fact-grafana-cloud-pricing.model"
+      ],
+      "confidence": "medium",
+      "status": "approved",
+      "reviewedAt": "2026-08-18T12:00:00.000Z",
+      "reviewer": "editorial"
+    },
+    {
+      "criterionSlug": "scalability",
+      "score": 8,
+      "rationale": "Usage pricing scales; Enterprise commit for large estates.",
+      "supportingFactIds": [
+        "fact-grafana-cloud-pricing.plans.free",
+        "fact-grafana-cloud-pricing.model",
+        "fact-grafana-cloud-pricing.plans.enterprise"
+      ],
+      "confidence": "medium",
+      "status": "approved",
+      "reviewedAt": "2026-08-18T12:00:00.000Z",
+      "reviewer": "editorial"
+    },
+    {
+      "criterionSlug": "value-for-money",
+      "score": 8,
+      "rationale": "Best Free telemetry cap in this wave; Pro is honest usage. Affiliate economics excluded.",
+      "supportingFactIds": [
+        "fact-grafana-cloud-pricing.hasFreePlan",
+        "fact-grafana-cloud-pricing.model",
+        "fact-grafana-cloud-pricing.startingPriceMonthly"
+      ],
+      "confidence": "medium",
+      "status": "approved",
+      "reviewedAt": "2026-08-18T12:00:00.000Z",
+      "reviewer": "editorial"
+    },
+    {
+      "criterionSlug": "ai-capabilities",
+      "score": 6,
+      "rationale": "AI is not the Grafana Cloud buying reason vs dashboards and telemetry.",
+      "supportingFactIds": [
+        "fact-grafana-cloud-features.itsm-ai",
+        "fact-grafana-cloud-pricing.model"
+      ],
+      "confidence": "medium",
+      "status": "approved",
+      "reviewedAt": "2026-08-18T12:00:00.000Z",
+      "reviewer": "editorial"
+    }
+  ],
+  "bestFor": [
+    "Teams already fluent in Grafana/Prometheus",
+    "Startups that fit in the Free telemetry caps",
+    "Platform teams that want Mimir/Loki without operating it"
+  ],
+  "notIdealFor": [
+    "Buyers who want Datadog-style host SKUs and a single APM vendor UX",
+    "ITSM desks (Freshservice)",
+    "On-call-only (PagerDuty)"
+  ],
+  "pros": [
+    "Generous Free tier",
+    "OSS-aligned stack",
+    "Pro usage transparency",
+    "Dashboards as the centre of gravity",
+    "Enterprise path"
+  ],
+  "cons": [
+    "Many usage line items",
+    "Shorter Free retention",
+    "AI not a lead feature",
+    "Not ITSM/git",
+    "Enterprise is a spend commit"
+  ],
+  "keyFeatures": [
+    "Managed metrics (Mimir)",
+    "Logs (Loki) and traces (Tempo)",
+    "Grafana dashboards",
+    "k6 / profiling (plan-gated)",
+    "Free + Pro + Enterprise ladder"
+  ],
+  "limitations": [
+    "Pro bills many usage dimensions — the $19 fee is not the bill",
+    "Free retention is 14 days — production teams usually need Pro",
+    "Enterprise security (SAML, audit) is not the Free/Pro default story",
+    "Not ITSM or source control",
+    "Running Grafana OSS yourself is a different TCO (people, not SaaS)"
+  ],
+  "pricingSummary": "Free generous telemetry caps. Pro from $19/mo + usage. Enterprise spend-commit custom. Confirm on grafana.com/pricing.",
+  "whoShouldChoose": "Choose Grafana Cloud when managed Grafana/LGTM telemetry is the job — not Datadog host modules and not ITSM.",
+  "whoShouldConsiderAlternatives": "Compare Datadog or New Relic for all-in-one APM suites; PagerDuty for paging.",
+  "alternativeSlugs": [
+    "datadog",
+    "new-relic"
+  ],
+  "comparisonSlugs": [
+    "datadog-vs-grafana-cloud",
+    "grafana-cloud-vs-new-relic"
+  ],
+  "relatedGuidePaths": [
+    "/categories/it-development/",
+    "/best/it-development-software/"
+  ],
+  "methodologySlug": "it-development-editorial",
+  "methodologyVersion": "1.0.0",
+  "researchSourceIds": [
+    "grafana-cloud-product-official",
+    "grafana-cloud-pricing-official",
+    "grafana-cloud-pricing"
+  ],
+  "factRefs": [
+    {
+      "section": "pricing",
+      "factIds": [
+        "fact-grafana-cloud-pricing.model",
+        "fact-grafana-cloud-pricing.hasFreePlan",
+        "fact-grafana-cloud-pricing.hasFreeTrial",
+        "fact-grafana-cloud-pricing.startingPriceMonthly",
+        "fact-grafana-cloud-pricing.plans.free",
+        "fact-grafana-cloud-pricing.plans.pro",
+        "fact-grafana-cloud-pricing.plans.enterprise"
+      ]
+    },
+    {
+      "section": "overview",
+      "factIds": [
+        "fact-grafana-cloud-identity.shortDescription",
+        "fact-grafana-cloud-positioning.vendorClaim",
+        "fact-grafana-cloud-positioning.jobCluster"
+      ]
+    },
+    {
+      "section": "features",
+      "factIds": [
+        "fact-grafana-cloud-features.incident-management",
+        "fact-grafana-cloud-features.change-problem",
+        "fact-grafana-cloud-features.service-catalog",
+        "fact-grafana-cloud-features.infrastructure-monitoring",
+        "fact-grafana-cloud-features.apm-tracing",
+        "fact-grafana-cloud-features.log-management",
+        "fact-grafana-cloud-features.source-control",
+        "fact-grafana-cloud-features.cicd-actions",
+        "fact-grafana-cloud-features.hosting-panel",
+        "fact-grafana-cloud-features.proxy-network",
+        "fact-grafana-cloud-features.itsm-ai",
+        "fact-grafana-cloud-features.dev-ai",
+        "fact-grafana-cloud-features.oncall-paging",
+        "fact-grafana-cloud-features.enterprise-security",
+        "fact-grafana-cloud-features.analytics-reporting"
+      ]
+    }
+  ],
+  "faq": [
+    {
+      "question": "Is Grafana Cloud IT / development software?",
+      "answer": "Yes. Grafana Cloud is evaluated as an observability and infrastructure monitoring suite."
+    },
+    {
+      "question": "How is Grafana Cloud priced?",
+      "answer": "Free generous telemetry caps. Pro from $19/mo + usage. Enterprise spend-commit custom. Confirm on grafana.com/pricing."
+    },
+    {
+      "question": "Does Grafana Cloud have a free plan or free trial?",
+      "answer": "Yes — a free plan is published. No free trial is documented on the pricing page. Confirm current terms with the vendor."
+    },
+    {
+      "question": "Did SoftwareGlimpse personally test Grafana Cloud?",
+      "answer": "No. This review is based on first-party product and pricing research evidence, not hands-on product usage. Affiliate relationships never influence scores."
+    }
+  ],
+  "sections": [
+    {
+      "id": "overview",
+      "heading": "Overview",
+      "body": "Grafana Cloud is Grafana Labs’ managed metrics/logs/traces/profiles stack (Mimir, Loki, Tempo, Pyroscope) plus Grafana. Free includes 10,000 active series, 50 GB logs/traces/profiles, 3 users, 14-day retention. Pro adds a published ~$19/month platform fee, longer retention, and usage rates (commonly $6.50 per 1,000 billable series and $8 per active visualisation user). Enterprise/Advanced is a spend-commit (~$25k/year cited) custom contract. Self-hosted Grafana OSS remains free and is a different buying motion."
+    },
+    {
+      "id": "best-for",
+      "heading": "Who it’s for",
+      "body": "• Teams already fluent in Grafana/Prometheus\n• Startups that fit in the Free telemetry caps\n• Platform teams that want Mimir/Loki without operating it"
+    },
+    {
+      "id": "features",
+      "heading": "Feature coverage",
+      "body": "• incident-management: limited\n• change-problem: not-supported\n• service-catalog: not-supported\n• infrastructure-monitoring: supported\n• apm-tracing: supported\n• log-management: supported\n• source-control: not-supported\n• cicd-actions: limited\n• hosting-panel: not-supported\n• proxy-network: not-supported\n• itsm-ai: limited\n• dev-ai: limited\n• oncall-paging: limited\n• enterprise-security: higher-plan-only\n• analytics-reporting: supported"
+    },
+    {
+      "id": "pricing",
+      "heading": "Pricing",
+      "body": "Free generous telemetry caps. Pro from $19/mo + usage. Enterprise spend-commit custom. Confirm on grafana.com/pricing."
+    },
+    {
+      "id": "limitations",
+      "heading": "Limitations",
+      "body": "• Pro bills many usage dimensions — the $19 fee is not the bill\n• Free retention is 14 days — production teams usually need Pro\n• Enterprise security (SAML, audit) is not the Free/Pro default story\n• Not ITSM or source control\n• Running Grafana OSS yourself is a different TCO (people, not SaaS)"
+    }
+  ],
+  "confidence": "medium",
+  "handsOnTesting": false,
+  "contentVersion": 1,
+  "refreshNeeded": false,
+  "lastUpdatedAt": "2026-08-18T12:00:00.000Z",
+  "metadata": {
+    "status": "published",
+    "publishedAt": "2026-08-18T00:00:00.000Z",
+    "updatedAt": "2026-08-18T12:00:00.000Z",
+    "reviewedAt": "2026-08-18T12:00:00.000Z",
+    "author": "author-lee-meyeridricks",
+    "researchStatus": "complete"
+  },
+  "seo": {
+    "title": "Grafana Cloud Review (2026) — IT & Development",
+    "description": "Grafana Cloud IT & development review on SoftwareGlimpse: strengths, trade-offs, pricing posture, and who should buy.",
+    "canonicalPath": "/software/grafana-cloud/",
+    "indexable": true
+  }
+}

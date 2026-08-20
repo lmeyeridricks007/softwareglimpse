@@ -1,0 +1,683 @@
+{
+  "id": "wf-software-onboarding-content-accelerated-growth-studio-1787140549550",
+  "workflowId": "software-onboarding-content",
+  "workflowVersion": "1.0.0",
+  "name": "Software Onboarding Content: accelerated-growth-studio",
+  "targetType": "software",
+  "targetId": "accelerated-growth-studio",
+  "status": "blocked",
+  "steps": [
+    {
+      "id": "software-onboarding",
+      "definitionStepId": "software-onboarding",
+      "handler": "software-onboarding",
+      "label": "Software onboarding",
+      "status": "completed",
+      "required": true,
+      "failurePolicy": "block-workflow",
+      "attempt": 1,
+      "maxAttempts": 2,
+      "dependsOn": [],
+      "priority": "critical",
+      "config": {
+        "maxAutomaticRevisions": 1,
+        "expandFromContentPlan": false,
+        "expandKind": "none",
+        "stopAfterApproval": true,
+        "allowNormalizedFacts": false,
+        "optionalWhenBlocked": false,
+        "forceTransientFailOnce": false
+      },
+      "inputRefs": {},
+      "outputRefs": {
+        "softwareOnboardingRunId": "onboard-accelerated-growth-studio-1787140540641"
+      },
+      "blockers": [],
+      "warnings": [],
+      "startedAt": "2026-08-19T11:55:50.725Z",
+      "completedAt": "2026-08-19T11:55:50.793Z",
+      "revisionAttempts": 0
+    },
+    {
+      "id": "content-plan",
+      "definitionStepId": "content-plan",
+      "handler": "content-plan",
+      "label": "Content plan",
+      "status": "completed",
+      "required": true,
+      "failurePolicy": "block-workflow",
+      "attempt": 1,
+      "maxAttempts": 2,
+      "dependsOn": [
+        "software-onboarding"
+      ],
+      "priority": "high",
+      "config": {
+        "maxAutomaticRevisions": 1,
+        "expandFromContentPlan": false,
+        "expandKind": "none",
+        "stopAfterApproval": true,
+        "allowNormalizedFacts": false,
+        "optionalWhenBlocked": false,
+        "forceTransientFailOnce": false
+      },
+      "inputRefs": {},
+      "outputRefs": {
+        "softwareOnboardingRunId": "onboard-accelerated-growth-studio-1787140540641",
+        "comparisonTargets": "accelerated-growth-studio-vs-marketo,accelerated-growth-studio-vs-learnworlds,accelerated-growth-studio-vs-livestorm",
+        "pageCandidateCount": "9"
+      },
+      "blockers": [],
+      "warnings": [],
+      "startedAt": "2026-08-19T11:55:50.794Z",
+      "completedAt": "2026-08-19T11:55:50.861Z",
+      "revisionAttempts": 0
+    },
+    {
+      "id": "software-review",
+      "definitionStepId": "software-review",
+      "handler": "agent-run",
+      "label": "Software Review",
+      "status": "completed",
+      "required": true,
+      "failurePolicy": "block-workflow",
+      "attempt": 1,
+      "maxAttempts": 2,
+      "dependsOn": [
+        "content-plan"
+      ],
+      "priority": "high",
+      "config": {
+        "agentId": "software-review-agent",
+        "targetSlug": "accelerated-growth-studio",
+        "maxAutomaticRevisions": 1,
+        "expandFromContentPlan": false,
+        "expandKind": "none",
+        "stopAfterApproval": true,
+        "allowNormalizedFacts": false,
+        "optionalWhenBlocked": false,
+        "forceTransientFailOnce": false
+      },
+      "inputRefs": {},
+      "outputRefs": {
+        "draftId": "draft-deterministic-v1-software-review-agent-accelerated-growth-studio-2026-08-19T11-55-51-105Z-rev-1787140551126",
+        "qaStatus": "pass",
+        "agentId": "software-review-agent",
+        "target": "accelerated-growth-studio"
+      },
+      "inputSnapshot": {
+        "researchFactIds": [
+          "fact-accelerated-growth-studio-identity.shortDescription",
+          "fact-accelerated-growth-studio-positioning.vendorClaim",
+          "fact-accelerated-growth-studio-pricing.model",
+          "fact-accelerated-growth-studio-pricing.hasFreePlan",
+          "fact-accelerated-growth-studio-pricing.hasFreeTrial",
+          "fact-accelerated-growth-studio-pricing.plans.enterprise"
+        ],
+        "methodologySlug": "marketing-editorial",
+        "methodologyVersion": "1.0.0",
+        "agentVersion": "1.0.0",
+        "contextBuiltAt": "2026-08-19T11:55:51.100Z"
+      },
+      "blockers": [],
+      "warnings": [],
+      "agentTaskId": "exec-software-review-agent-accelerated-growth-studio-1787140550863",
+      "draftId": "draft-deterministic-v1-software-review-agent-accelerated-growth-studio-2026-08-19T11-55-51-105Z-rev-1787140551126",
+      "startedAt": "2026-08-19T11:55:50.862Z",
+      "completedAt": "2026-08-19T11:55:51.129Z",
+      "revisionAttempts": 0
+    },
+    {
+      "id": "pricing-page",
+      "definitionStepId": "pricing-page",
+      "handler": "agent-run",
+      "label": "Pricing Page",
+      "status": "blocked",
+      "required": false,
+      "failurePolicy": "continue-with-warning",
+      "attempt": 1,
+      "maxAttempts": 2,
+      "dependsOn": [
+        "content-plan"
+      ],
+      "priority": "normal",
+      "config": {
+        "agentId": "pricing-page-agent",
+        "targetSlug": "accelerated-growth-studio",
+        "maxAutomaticRevisions": 1,
+        "expandFromContentPlan": false,
+        "expandKind": "none",
+        "stopAfterApproval": true,
+        "allowNormalizedFacts": false,
+        "optionalWhenBlocked": true,
+        "forceTransientFailOnce": false
+      },
+      "inputRefs": {},
+      "outputRefs": {},
+      "blockers": [
+        "PRICING_UNVERIFIED: Product pricing data is unverified"
+      ],
+      "warnings": [
+        "PRICING_UNVERIFIED: Product pricing data is unverified"
+      ],
+      "startedAt": "2026-08-19T11:55:51.191Z",
+      "completedAt": "2026-08-19T11:55:51.199Z",
+      "revisionAttempts": 0
+    },
+    {
+      "id": "alternatives",
+      "definitionStepId": "alternatives",
+      "handler": "agent-run",
+      "label": "Alternatives",
+      "status": "blocked",
+      "required": false,
+      "failurePolicy": "continue-with-warning",
+      "attempt": 1,
+      "maxAttempts": 2,
+      "dependsOn": [
+        "content-plan"
+      ],
+      "priority": "normal",
+      "config": {
+        "agentId": "alternatives-agent",
+        "targetSlug": "accelerated-growth-studio",
+        "maxAutomaticRevisions": 1,
+        "expandFromContentPlan": false,
+        "expandKind": "none",
+        "stopAfterApproval": true,
+        "allowNormalizedFacts": false,
+        "optionalWhenBlocked": true,
+        "forceTransientFailOnce": false
+      },
+      "inputRefs": {},
+      "outputRefs": {},
+      "blockers": [
+        "NO_APPROVED_ALTERNATIVES: Approved alternative relationships required — same-category alone is insufficient"
+      ],
+      "warnings": [
+        "NO_APPROVED_ALTERNATIVES: Approved alternative relationships required — same-category alone is insufficient"
+      ],
+      "startedAt": "2026-08-19T11:55:51.130Z",
+      "completedAt": "2026-08-19T11:55:51.147Z",
+      "revisionAttempts": 0
+    },
+    {
+      "id": "comparison:accelerated-growth-studio-vs-marketo",
+      "definitionStepId": "comparisons",
+      "handler": "agent-run",
+      "label": "Comparison accelerated-growth-studio-vs-marketo",
+      "status": "blocked",
+      "required": false,
+      "failurePolicy": "continue-with-warning",
+      "attempt": 1,
+      "maxAttempts": 2,
+      "dependsOn": [
+        "content-plan"
+      ],
+      "priority": "normal",
+      "config": {
+        "agentId": "comparison-agent",
+        "targetSlug": "accelerated-growth-studio-vs-marketo",
+        "maxAutomaticRevisions": 1,
+        "expandFromContentPlan": true,
+        "expandKind": "comparisons",
+        "stopAfterApproval": true,
+        "allowNormalizedFacts": false,
+        "optionalWhenBlocked": true,
+        "forceTransientFailOnce": false
+      },
+      "expansionKey": "accelerated-growth-studio-vs-marketo",
+      "inputRefs": {},
+      "outputRefs": {},
+      "blockers": [
+        "RELATIONSHIP_UNAPPROVED: Approved comparable relationship required"
+      ],
+      "warnings": [
+        "RELATIONSHIP_UNAPPROVED: Approved comparable relationship required"
+      ],
+      "startedAt": "2026-08-19T11:55:51.177Z",
+      "completedAt": "2026-08-19T11:55:51.190Z",
+      "revisionAttempts": 0
+    },
+    {
+      "id": "comparison:accelerated-growth-studio-vs-learnworlds",
+      "definitionStepId": "comparisons",
+      "handler": "agent-run",
+      "label": "Comparison accelerated-growth-studio-vs-learnworlds",
+      "status": "blocked",
+      "required": false,
+      "failurePolicy": "continue-with-warning",
+      "attempt": 1,
+      "maxAttempts": 2,
+      "dependsOn": [
+        "content-plan"
+      ],
+      "priority": "normal",
+      "config": {
+        "agentId": "comparison-agent",
+        "targetSlug": "accelerated-growth-studio-vs-learnworlds",
+        "maxAutomaticRevisions": 1,
+        "expandFromContentPlan": true,
+        "expandKind": "comparisons",
+        "stopAfterApproval": true,
+        "allowNormalizedFacts": false,
+        "optionalWhenBlocked": true,
+        "forceTransientFailOnce": false
+      },
+      "expansionKey": "accelerated-growth-studio-vs-learnworlds",
+      "inputRefs": {},
+      "outputRefs": {},
+      "blockers": [
+        "RELATIONSHIP_UNAPPROVED: Approved comparable relationship required"
+      ],
+      "warnings": [
+        "RELATIONSHIP_UNAPPROVED: Approved comparable relationship required"
+      ],
+      "startedAt": "2026-08-19T11:55:51.149Z",
+      "completedAt": "2026-08-19T11:55:51.162Z",
+      "revisionAttempts": 0
+    },
+    {
+      "id": "comparison:accelerated-growth-studio-vs-livestorm",
+      "definitionStepId": "comparisons",
+      "handler": "agent-run",
+      "label": "Comparison accelerated-growth-studio-vs-livestorm",
+      "status": "blocked",
+      "required": false,
+      "failurePolicy": "continue-with-warning",
+      "attempt": 1,
+      "maxAttempts": 2,
+      "dependsOn": [
+        "content-plan"
+      ],
+      "priority": "normal",
+      "config": {
+        "agentId": "comparison-agent",
+        "targetSlug": "accelerated-growth-studio-vs-livestorm",
+        "maxAutomaticRevisions": 1,
+        "expandFromContentPlan": true,
+        "expandKind": "comparisons",
+        "stopAfterApproval": true,
+        "allowNormalizedFacts": false,
+        "optionalWhenBlocked": true,
+        "forceTransientFailOnce": false
+      },
+      "expansionKey": "accelerated-growth-studio-vs-livestorm",
+      "inputRefs": {},
+      "outputRefs": {},
+      "blockers": [
+        "RELATIONSHIP_UNAPPROVED: Approved comparable relationship required"
+      ],
+      "warnings": [
+        "RELATIONSHIP_UNAPPROVED: Approved comparable relationship required"
+      ],
+      "startedAt": "2026-08-19T11:55:51.163Z",
+      "completedAt": "2026-08-19T11:55:51.175Z",
+      "revisionAttempts": 0
+    },
+    {
+      "id": "internal-links",
+      "definitionStepId": "internal-links",
+      "handler": "internal-link",
+      "label": "Internal Link Plan",
+      "status": "completed",
+      "required": false,
+      "failurePolicy": "continue-with-warning",
+      "attempt": 1,
+      "maxAttempts": 2,
+      "dependsOn": [
+        "software-review"
+      ],
+      "priority": "low",
+      "config": {
+        "agentId": "internal-link-agent",
+        "maxAutomaticRevisions": 1,
+        "expandFromContentPlan": false,
+        "expandKind": "none",
+        "stopAfterApproval": true,
+        "allowNormalizedFacts": false,
+        "optionalWhenBlocked": false,
+        "forceTransientFailOnce": false
+      },
+      "inputRefs": {},
+      "outputRefs": {
+        "draftId": "draft-deterministic-v1-internal-link-agent-accelerated-growth-studio-2026-08-19T11-55-51-209Z",
+        "qaStatus": "pass",
+        "agentId": "internal-link-agent",
+        "target": "accelerated-growth-studio"
+      },
+      "inputSnapshot": {
+        "researchFactIds": [
+          "fact-accelerated-growth-studio-identity.shortDescription",
+          "fact-accelerated-growth-studio-positioning.vendorClaim",
+          "fact-accelerated-growth-studio-pricing.model",
+          "fact-accelerated-growth-studio-pricing.hasFreePlan",
+          "fact-accelerated-growth-studio-pricing.hasFreeTrial",
+          "fact-accelerated-growth-studio-pricing.plans.enterprise"
+        ],
+        "methodologySlug": "marketing-editorial",
+        "methodologyVersion": "1.0.0",
+        "agentVersion": "1.0.0",
+        "contextBuiltAt": "2026-08-19T11:55:51.209Z"
+      },
+      "blockers": [],
+      "warnings": [],
+      "agentTaskId": "exec-internal-link-agent-accelerated-growth-studio-1787140551201",
+      "draftId": "draft-deterministic-v1-internal-link-agent-accelerated-growth-studio-2026-08-19T11-55-51-209Z",
+      "startedAt": "2026-08-19T11:55:51.200Z",
+      "completedAt": "2026-08-19T11:55:51.212Z",
+      "revisionAttempts": 0
+    },
+    {
+      "id": "finder-readiness",
+      "definitionStepId": "finder-readiness",
+      "handler": "update-recommendation-readiness",
+      "label": "Finder readiness",
+      "status": "completed",
+      "required": false,
+      "failurePolicy": "continue",
+      "attempt": 1,
+      "maxAttempts": 2,
+      "dependsOn": [
+        "content-plan"
+      ],
+      "priority": "low",
+      "config": {
+        "maxAutomaticRevisions": 1,
+        "expandFromContentPlan": false,
+        "expandKind": "none",
+        "stopAfterApproval": true,
+        "allowNormalizedFacts": false,
+        "optionalWhenBlocked": false,
+        "forceTransientFailOnce": false
+      },
+      "inputRefs": {},
+      "outputRefs": {
+        "finderReadiness": "checked"
+      },
+      "blockers": [],
+      "warnings": [],
+      "startedAt": "2026-08-19T11:55:51.199Z",
+      "completedAt": "2026-08-19T11:55:51.200Z",
+      "revisionAttempts": 0
+    },
+    {
+      "id": "editorial-approval",
+      "definitionStepId": "editorial-approval",
+      "handler": "approval-check",
+      "label": "Editorial approval",
+      "status": "completed",
+      "required": true,
+      "failurePolicy": "manual-review",
+      "attempt": 2,
+      "maxAttempts": 2,
+      "dependsOn": [
+        "software-review"
+      ],
+      "priority": "critical",
+      "config": {
+        "approvalType": "editorial",
+        "maxAutomaticRevisions": 1,
+        "expandFromContentPlan": false,
+        "expandKind": "none",
+        "stopAfterApproval": true,
+        "allowNormalizedFacts": false,
+        "optionalWhenBlocked": false,
+        "forceTransientFailOnce": false
+      },
+      "inputRefs": {},
+      "outputRefs": {
+        "approvalId": "appr-wf-software-onboarding-content-accelerated-growth-studio-1787140549550-software-review",
+        "draftId": "draft-deterministic-v1-software-review-agent-accelerated-growth-studio-2026-08-19T11-55-51-105Z-rev-1787140551126",
+        "approvalIds": "appr-wf-software-onboarding-content-accelerated-growth-studio-1787140549550-software-review"
+      },
+      "blockers": [],
+      "warnings": [
+        "Approval received — resuming",
+        "1 optional draft(s) may still need separate editorial review"
+      ],
+      "approvalId": "appr-wf-software-onboarding-content-accelerated-growth-studio-1787140549550-software-review",
+      "startedAt": "2026-08-19T12:05:34.538Z",
+      "completedAt": "2026-08-19T12:05:34.668Z",
+      "revisionAttempts": 0
+    },
+    {
+      "id": "pre-publish-validation",
+      "definitionStepId": "pre-publish-validation",
+      "handler": "pre-publish-validation",
+      "label": "Pre-publish validation",
+      "status": "blocked",
+      "required": true,
+      "failurePolicy": "block-workflow",
+      "attempt": 1,
+      "maxAttempts": 2,
+      "dependsOn": [
+        "editorial-approval"
+      ],
+      "priority": "critical",
+      "config": {
+        "maxAutomaticRevisions": 1,
+        "expandFromContentPlan": false,
+        "expandKind": "none",
+        "stopAfterApproval": true,
+        "allowNormalizedFacts": false,
+        "optionalWhenBlocked": false,
+        "forceTransientFailOnce": false
+      },
+      "inputRefs": {},
+      "outputRefs": {},
+      "blockers": [
+        "Stale context for software-review: new-critical-fact:fact-accelerated-growth-studio-pricing.currency-accelerated-growth-studio-pricing-official; new-critical-fact:fact-accelerated-growth-studio-pricing.hasFreeTrial-accelerated-growth-studio-pricing-official; new-critical-fact:fact-accelerated-growth-studio-pricing.hasFreePlan-accelerated-growth-studio-pricing-official; new-critical-fact:fact-accelerated-growth-studio-pricing.model-accelerated-growth-studio-pricing-official",
+        "Stale context for internal-links: new-critical-fact:fact-accelerated-growth-studio-pricing.currency-accelerated-growth-studio-pricing-official; new-critical-fact:fact-accelerated-growth-studio-pricing.hasFreeTrial-accelerated-growth-studio-pricing-official; new-critical-fact:fact-accelerated-growth-studio-pricing.hasFreePlan-accelerated-growth-studio-pricing-official; new-critical-fact:fact-accelerated-growth-studio-pricing.model-accelerated-growth-studio-pricing-official"
+      ],
+      "warnings": [],
+      "startedAt": "2026-08-19T12:05:34.671Z",
+      "completedAt": "2026-08-19T12:05:35.089Z",
+      "revisionAttempts": 0
+    }
+  ],
+  "history": [
+    {
+      "at": "2026-08-19T11:55:50.721Z",
+      "event": "workflow_created",
+      "message": "Created software-onboarding-content:v1.0.0"
+    },
+    {
+      "at": "2026-08-19T11:55:50.723Z",
+      "event": "workflow_started",
+      "message": "Workflow execution started"
+    },
+    {
+      "at": "2026-08-19T11:55:50.725Z",
+      "event": "workflow_step_started",
+      "stepId": "software-onboarding",
+      "message": "Started Software onboarding"
+    },
+    {
+      "at": "2026-08-19T11:55:50.793Z",
+      "event": "workflow_step_completed",
+      "stepId": "software-onboarding",
+      "message": "Reused onboarding run onboard-accelerated-growth-studio-1787140540641 (review-required)"
+    },
+    {
+      "at": "2026-08-19T11:55:50.794Z",
+      "event": "workflow_step_started",
+      "stepId": "content-plan",
+      "message": "Started Content plan"
+    },
+    {
+      "at": "2026-08-19T11:55:50.861Z",
+      "event": "workflow_step_completed",
+      "stepId": "content-plan",
+      "message": "Content plan from onboarding onboard-accelerated-growth-studio-1787140540641 (9 candidates)"
+    },
+    {
+      "at": "2026-08-19T11:55:50.862Z",
+      "event": "workflow_step_started",
+      "stepId": "software-review",
+      "message": "Started Software Review"
+    },
+    {
+      "at": "2026-08-19T11:55:51.129Z",
+      "event": "workflow_step_completed",
+      "stepId": "software-review",
+      "message": "Agent software-review-agent → draft draft-deterministic-v1-software-review-agent-accelerated-growth-studio-2026-08-19T11-55-51-105Z-rev-1787140551126 (qa=pass)"
+    },
+    {
+      "at": "2026-08-19T11:55:51.130Z",
+      "event": "workflow_step_started",
+      "stepId": "alternatives",
+      "message": "Started Alternatives"
+    },
+    {
+      "at": "2026-08-19T11:55:51.147Z",
+      "event": "workflow_step_completed",
+      "stepId": "alternatives",
+      "message": "Agent blocked (optional): NO_APPROVED_ALTERNATIVES: Approved alternative relationships required — same-category alone is insufficient"
+    },
+    {
+      "at": "2026-08-19T11:55:51.149Z",
+      "event": "workflow_step_started",
+      "stepId": "comparison:accelerated-growth-studio-vs-learnworlds",
+      "message": "Started Comparison accelerated-growth-studio-vs-learnworlds"
+    },
+    {
+      "at": "2026-08-19T11:55:51.162Z",
+      "event": "workflow_step_completed",
+      "stepId": "comparison:accelerated-growth-studio-vs-learnworlds",
+      "message": "Agent blocked (optional): RELATIONSHIP_UNAPPROVED: Approved comparable relationship required"
+    },
+    {
+      "at": "2026-08-19T11:55:51.163Z",
+      "event": "workflow_step_started",
+      "stepId": "comparison:accelerated-growth-studio-vs-livestorm",
+      "message": "Started Comparison accelerated-growth-studio-vs-livestorm"
+    },
+    {
+      "at": "2026-08-19T11:55:51.175Z",
+      "event": "workflow_step_completed",
+      "stepId": "comparison:accelerated-growth-studio-vs-livestorm",
+      "message": "Agent blocked (optional): RELATIONSHIP_UNAPPROVED: Approved comparable relationship required"
+    },
+    {
+      "at": "2026-08-19T11:55:51.177Z",
+      "event": "workflow_step_started",
+      "stepId": "comparison:accelerated-growth-studio-vs-marketo",
+      "message": "Started Comparison accelerated-growth-studio-vs-marketo"
+    },
+    {
+      "at": "2026-08-19T11:55:51.190Z",
+      "event": "workflow_step_completed",
+      "stepId": "comparison:accelerated-growth-studio-vs-marketo",
+      "message": "Agent blocked (optional): RELATIONSHIP_UNAPPROVED: Approved comparable relationship required"
+    },
+    {
+      "at": "2026-08-19T11:55:51.191Z",
+      "event": "workflow_step_started",
+      "stepId": "pricing-page",
+      "message": "Started Pricing Page"
+    },
+    {
+      "at": "2026-08-19T11:55:51.199Z",
+      "event": "workflow_step_completed",
+      "stepId": "pricing-page",
+      "message": "Agent blocked (optional): PRICING_UNVERIFIED: Product pricing data is unverified"
+    },
+    {
+      "at": "2026-08-19T11:55:51.199Z",
+      "event": "workflow_step_started",
+      "stepId": "finder-readiness",
+      "message": "Started Finder readiness"
+    },
+    {
+      "at": "2026-08-19T11:55:51.200Z",
+      "event": "workflow_step_completed",
+      "stepId": "finder-readiness",
+      "message": "Finder readiness noted for accelerated-growth-studio"
+    },
+    {
+      "at": "2026-08-19T11:55:51.200Z",
+      "event": "workflow_step_started",
+      "stepId": "internal-links",
+      "message": "Started Internal Link Plan"
+    },
+    {
+      "at": "2026-08-19T11:55:51.212Z",
+      "event": "workflow_step_completed",
+      "stepId": "internal-links",
+      "message": "Agent internal-link-agent → draft draft-deterministic-v1-internal-link-agent-accelerated-growth-studio-2026-08-19T11-55-51-209Z (qa=pass)"
+    },
+    {
+      "at": "2026-08-19T11:55:51.214Z",
+      "event": "workflow_step_started",
+      "stepId": "editorial-approval",
+      "message": "Started Editorial approval"
+    },
+    {
+      "at": "2026-08-19T11:55:51.499Z",
+      "event": "workflow_step_completed",
+      "stepId": "editorial-approval",
+      "message": "WAITING FOR EDITORIAL APPROVAL (appr-wf-software-onboarding-content-accelerated-growth-studio-1787140549550-software-review)"
+    },
+    {
+      "at": "2026-08-19T11:55:51.500Z",
+      "event": "workflow_blocked",
+      "message": "WAITING FOR EDITORIAL APPROVAL"
+    },
+    {
+      "at": "2026-08-19T12:05:34.534Z",
+      "event": "workflow_resumed",
+      "message": "Workflow resumed"
+    },
+    {
+      "at": "2026-08-19T12:05:34.536Z",
+      "event": "workflow_started",
+      "message": "Workflow execution started"
+    },
+    {
+      "at": "2026-08-19T12:05:34.537Z",
+      "event": "workflow_step_started",
+      "stepId": "editorial-approval",
+      "message": "Started Editorial approval"
+    },
+    {
+      "at": "2026-08-19T12:05:34.668Z",
+      "event": "workflow_step_completed",
+      "stepId": "editorial-approval",
+      "message": "Required editorial approvals satisfied"
+    },
+    {
+      "at": "2026-08-19T12:05:34.670Z",
+      "event": "workflow_step_started",
+      "stepId": "pre-publish-validation",
+      "message": "Started Pre-publish validation"
+    },
+    {
+      "at": "2026-08-19T12:05:35.089Z",
+      "event": "workflow_step_completed",
+      "stepId": "pre-publish-validation",
+      "message": "Pre-publish validation blocked: Stale context for software-review: new-critical-fact:fact-accelerated-growth-studio-pricing.currency-accelerated-growth-studio-pricing-official; new-critical-fact:fact-accelerated-growth-studio-pricing.hasFreeTrial-accelerated-growth-studio-pricing-official; new-critical-fact:fact-accelerated-growth-studio-pricing.hasFreePlan-accelerated-growth-studio-pricing-official; new-critical-fact:fact-accelerated-growth-studio-pricing.model-accelerated-growth-studio-pricing-official; Stale context for internal-links: new-critical-fact:fact-accelerated-growth-studio-pricing.currency-accelerated-growth-studio-pricing-official; new-critical-fact:fact-accelerated-growth-studio-pricing.hasFreeTrial-accelerated-growth-studio-pricing-official; new-critical-fact:fact-accelerated-growth-studio-pricing.hasFreePlan-accelerated-growth-studio-pricing-official; new-critical-fact:fact-accelerated-growth-studio-pricing.model-accelerated-growth-studio-pricing-official"
+    }
+  ],
+  "options": {
+    "generateReview": true,
+    "generatePricing": true,
+    "generateAlternatives": true,
+    "generateComparisons": true,
+    "runInternalLinks": true,
+    "stopAfterApproval": true,
+    "allowNormalizedFacts": false,
+    "dryRun": false,
+    "maxComparisons": 3,
+    "skipOnboarding": false
+  },
+  "warnings": [
+    "alternatives blocked: NO_APPROVED_ALTERNATIVES: Approved alternative relationships required — same-category alone is insufficient",
+    "comparison:accelerated-growth-studio-vs-learnworlds blocked: RELATIONSHIP_UNAPPROVED: Approved comparable relationship required",
+    "comparison:accelerated-growth-studio-vs-livestorm blocked: RELATIONSHIP_UNAPPROVED: Approved comparable relationship required",
+    "comparison:accelerated-growth-studio-vs-marketo blocked: RELATIONSHIP_UNAPPROVED: Approved comparable relationship required",
+    "pricing-page blocked: PRICING_UNVERIFIED: Product pricing data is unverified"
+  ],
+  "createdAt": "2026-08-19T11:55:50.721Z",
+  "updatedAt": "2026-08-19T12:05:35.090Z"
+}

@@ -1,0 +1,294 @@
+{
+  "id": "review-circleci-v1",
+  "productSlug": "circleci",
+  "assessmentId": "assessment-circleci-it-v1",
+  "editorialStatus": "approved",
+  "title": "CircleCI Review (2026)",
+  "h1": "CircleCI Review",
+  "intro": "CircleCI is evaluated here as a source control and DevOps collaboration platform — CircleCI is a CI/CD platform (pipelines, orbs, hosted/self-hosted runners) — not a Git host. It lives in source-control-devops so DevOps buyers can compare it with GitHub Actions and GitLab CI, while remaining landscape-aware that GitHub the SCM is a different primary shape. Free includes published build-minute/credit framing (commonly 6k build minutes / 30k credits on the pricing page). Performance starts from $15/month. Scale is contact. Distinct from GitHub (repos + Actions) and GitLab (DevSecOps platform). This review uses SoftwareGlimpse’s IT & Development methodology (ease of use, IT job fit, workflow depth, integrations, admin/security, scalability, value, AI), scoring products inside their job cluster rather than against unrelated peers. It is based on first-party research, not hands-on lab testing.",
+  "summary": "Choose CircleCI when specialist CI/CD is the job — not GitHub the SCM by default, even though both sit in source-control-devops.",
+  "verdict": "Choose CircleCI when specialist CI/CD is the job — not GitHub the SCM by default, even though both sit in source-control-devops. Compare GitHub or GitLab when you need repos plus CI in one licence; Azure DevOps or Bitbucket for those ecosystems. Scores reflect first-party documentation as of 2026-08-18 — not hands-on product testing. Confirm current packaging, host/GB rates and minimums on the vendor site before purchase.",
+  "overallScore": 7.5,
+  "criterionAssessments": [
+    {
+      "criterionSlug": "ease-of-use",
+      "score": 8,
+      "rationale": "Config.yml pipelines and orbs are familiar to CI specialists; not a git-host onboarding path. Not a lab test.",
+      "supportingFactIds": [
+        "fact-circleci-features.source-control",
+        "fact-circleci-pricing.model"
+      ],
+      "confidence": "medium",
+      "status": "approved",
+      "reviewedAt": "2026-08-18T20:00:00.000Z",
+      "reviewer": "editorial"
+    },
+    {
+      "criterionSlug": "it-job-fit",
+      "score": 8,
+      "rationale": "CI/CD inside source-control-devops — peer path vs Actions/GitLab CI, not a GitHub SCM replacement.",
+      "supportingFactIds": [
+        "fact-circleci-features.source-control",
+        "fact-circleci-pricing.model"
+      ],
+      "confidence": "medium",
+      "status": "approved",
+      "reviewedAt": "2026-08-18T20:00:00.000Z",
+      "reviewer": "editorial"
+    },
+    {
+      "criterionSlug": "workflow-depth",
+      "score": 8,
+      "rationale": "Pipelines, orbs, matrices, and runners are deep for CI; no repo/PR system of record.",
+      "supportingFactIds": [
+        "fact-circleci-features.cicd-actions",
+        "fact-circleci-pricing.model"
+      ],
+      "confidence": "medium",
+      "status": "approved",
+      "reviewedAt": "2026-08-18T20:00:00.000Z",
+      "reviewer": "editorial"
+    },
+    {
+      "criterionSlug": "integrations",
+      "score": 8,
+      "rationale": "Native GitHub (and other VCS) plus Slack/API for pipeline notifications.",
+      "supportingFactIds": [
+        "fact-circleci-features.analytics-reporting",
+        "fact-circleci-pricing.model",
+        "fact-circleci-positioning.vendorClaim"
+      ],
+      "confidence": "medium",
+      "status": "approved",
+      "reviewedAt": "2026-08-18T20:00:00.000Z",
+      "reviewer": "editorial"
+    },
+    {
+      "criterionSlug": "admin-security",
+      "score": 7,
+      "rationale": "Org security exists; thinner than GitHub Enterprise governance of the repo itself.",
+      "supportingFactIds": [
+        "fact-circleci-features.enterprise-security",
+        "fact-circleci-pricing.model"
+      ],
+      "confidence": "medium",
+      "status": "approved",
+      "reviewedAt": "2026-08-18T20:00:00.000Z",
+      "reviewer": "editorial"
+    },
+    {
+      "criterionSlug": "scalability",
+      "score": 8,
+      "rationale": "Performance → Scale plus self-hosted runners; credits still meter cost.",
+      "supportingFactIds": [
+        "fact-circleci-pricing.plans.free",
+        "fact-circleci-pricing.model",
+        "fact-circleci-pricing.plans.scale"
+      ],
+      "confidence": "medium",
+      "status": "approved",
+      "reviewedAt": "2026-08-18T20:00:00.000Z",
+      "reviewer": "editorial"
+    },
+    {
+      "criterionSlug": "value-for-money",
+      "score": 8,
+      "rationale": "Free plus published $15 Performance floor is a clear CI entry. Affiliate economics excluded.",
+      "supportingFactIds": [
+        "fact-circleci-pricing.hasFreePlan",
+        "fact-circleci-pricing.model",
+        "fact-circleci-pricing.startingPriceMonthly"
+      ],
+      "confidence": "medium",
+      "status": "approved",
+      "reviewedAt": "2026-08-18T20:00:00.000Z",
+      "reviewer": "editorial"
+    },
+    {
+      "criterionSlug": "ai-capabilities",
+      "score": 5,
+      "rationale": "No meaningful dev-AI copilot versus GitHub Copilot — scored low on purpose.",
+      "supportingFactIds": [
+        "fact-circleci-features.dev-ai",
+        "fact-circleci-pricing.model"
+      ],
+      "confidence": "medium",
+      "status": "approved",
+      "reviewedAt": "2026-08-18T20:00:00.000Z",
+      "reviewer": "editorial"
+    }
+  ],
+  "bestFor": [
+    "Teams that want specialist CI/CD against an existing GitHub/GitLab/Bitbucket remote",
+    "Buyers comparing CircleCI Performance $15 to GitHub Actions minutes",
+    "Orgs that do not want to move source control in order to buy CI"
+  ],
+  "notIdealFor": [
+    "Teams whose primary purchase is a git host (GitHub / GitLab)",
+    "Observability or on-call purchases",
+    "Hosting panel or managed WordPress hosting"
+  ],
+  "pros": [
+    "Published Performance $15 floor",
+    "Free minute/credit path",
+    "CI specialist depth",
+    "Works with existing git hosts",
+    "Clear identity vs SCM"
+  ],
+  "cons": [
+    "Not a git host",
+    "Credit/minute TCO above $15",
+    "AI not a lead feature",
+    "Weaker repo governance than GitHub Enterprise",
+    "Not observability/hosting"
+  ],
+  "keyFeatures": [
+    "Hosted CI/CD pipelines",
+    "Orbs / reusable config",
+    "VCS integrations (GitHub and peers)",
+    "Performance plan from $15/mo",
+    "Scale contact path"
+  ],
+  "limitations": [
+    "Not a git host — you still need GitHub, GitLab, or Bitbucket for source control",
+    "Same source-control-devops cluster as GitHub, but GitHub the SCM is a different primary shape",
+    "Free minute/credit caps; Performance $15 is not unlimited CI",
+    "Not observability, on-call, hosting panel, or managed hosting",
+    "AI is not the product"
+  ],
+  "pricingSummary": "Free (6k build minutes / 30k credits framing). Performance from $15/mo. Scale contact. Confirm live credits on circleci.com/pricing.",
+  "whoShouldChoose": "Choose CircleCI when specialist CI/CD is the job — not GitHub the SCM by default, even though both sit in source-control-devops.",
+  "whoShouldConsiderAlternatives": "Compare GitHub or GitLab when you need repos plus CI in one licence; Azure DevOps or Bitbucket for those ecosystems.",
+  "alternativeSlugs": [
+    "github",
+    "gitlab"
+  ],
+  "comparisonSlugs": [
+    "circleci-vs-github",
+    "circleci-vs-gitlab"
+  ],
+  "relatedGuidePaths": [
+    "/categories/it-development/",
+    "/best/it-development-software/",
+    "/use-cases/observability-monitoring/",
+    "/use-cases/incident-oncall/",
+    "/use-cases/source-control-devops/",
+    "/use-cases/hosting-operations/",
+    "/use-cases/hosting-providers/",
+    "/use-cases/web-data-collection/"
+  ],
+  "methodologySlug": "it-development-editorial",
+  "methodologyVersion": "1.0.0",
+  "researchSourceIds": [
+    "circleci-product-official",
+    "circleci-pricing-official",
+    "circleci-pricing"
+  ],
+  "factRefs": [
+    {
+      "section": "pricing",
+      "factIds": [
+        "fact-circleci-pricing.model",
+        "fact-circleci-pricing.hasFreePlan",
+        "fact-circleci-pricing.hasFreeTrial",
+        "fact-circleci-pricing.startingPriceMonthly",
+        "fact-circleci-pricing.plans.free",
+        "fact-circleci-pricing.plans.performance",
+        "fact-circleci-pricing.plans.scale"
+      ]
+    },
+    {
+      "section": "overview",
+      "factIds": [
+        "fact-circleci-identity.shortDescription",
+        "fact-circleci-positioning.vendorClaim",
+        "fact-circleci-positioning.jobCluster"
+      ]
+    },
+    {
+      "section": "features",
+      "factIds": [
+        "fact-circleci-features.incident-management",
+        "fact-circleci-features.change-problem",
+        "fact-circleci-features.service-catalog",
+        "fact-circleci-features.infrastructure-monitoring",
+        "fact-circleci-features.apm-tracing",
+        "fact-circleci-features.log-management",
+        "fact-circleci-features.source-control",
+        "fact-circleci-features.cicd-actions",
+        "fact-circleci-features.hosting-panel",
+        "fact-circleci-features.managed-hosting",
+        "fact-circleci-features.proxy-network",
+        "fact-circleci-features.itsm-ai",
+        "fact-circleci-features.dev-ai",
+        "fact-circleci-features.oncall-paging",
+        "fact-circleci-features.enterprise-security",
+        "fact-circleci-features.analytics-reporting"
+      ]
+    }
+  ],
+  "faq": [
+    {
+      "question": "Is CircleCI IT / development software?",
+      "answer": "Yes. CircleCI is evaluated as a source control and DevOps collaboration platform."
+    },
+    {
+      "question": "How is CircleCI priced?",
+      "answer": "Free (6k build minutes / 30k credits framing). Performance from $15/mo. Scale contact. Confirm live credits on circleci.com/pricing."
+    },
+    {
+      "question": "Does CircleCI have a free plan or free trial?",
+      "answer": "Yes — a free plan is published. No free trial is documented on the pricing page. Confirm current terms with the vendor."
+    },
+    {
+      "question": "Did SoftwareGlimpse personally test CircleCI?",
+      "answer": "No. This review is based on first-party product and pricing research evidence, not hands-on product usage. Affiliate relationships never influence scores."
+    }
+  ],
+  "sections": [
+    {
+      "id": "overview",
+      "heading": "Overview",
+      "body": "CircleCI is a CI/CD platform (pipelines, orbs, hosted/self-hosted runners) — not a Git host. It lives in source-control-devops so DevOps buyers can compare it with GitHub Actions and GitLab CI, while remaining landscape-aware that GitHub the SCM is a different primary shape. Free includes published build-minute/credit framing (commonly 6k build minutes / 30k credits on the pricing page). Performance starts from $15/month. Scale is contact. Distinct from GitHub (repos + Actions) and GitLab (DevSecOps platform)."
+    },
+    {
+      "id": "best-for",
+      "heading": "Who it’s for",
+      "body": "• Teams that want specialist CI/CD against an existing GitHub/GitLab/Bitbucket remote\n• Buyers comparing CircleCI Performance $15 to GitHub Actions minutes\n• Orgs that do not want to move source control in order to buy CI"
+    },
+    {
+      "id": "features",
+      "heading": "Feature coverage",
+      "body": "• incident-management: not-supported\n• change-problem: not-supported\n• service-catalog: not-supported\n• infrastructure-monitoring: not-supported\n• apm-tracing: not-supported\n• log-management: limited\n• source-control: not-supported\n• cicd-actions: supported\n• hosting-panel: not-supported\n• managed-hosting: not-supported\n• proxy-network: not-supported\n• itsm-ai: not-supported\n• dev-ai: limited\n• oncall-paging: not-supported\n• enterprise-security: limited\n• analytics-reporting: supported"
+    },
+    {
+      "id": "pricing",
+      "heading": "Pricing",
+      "body": "Free (6k build minutes / 30k credits framing). Performance from $15/mo. Scale contact. Confirm live credits on circleci.com/pricing."
+    },
+    {
+      "id": "limitations",
+      "heading": "Limitations",
+      "body": "• Not a git host — you still need GitHub, GitLab, or Bitbucket for source control\n• Same source-control-devops cluster as GitHub, but GitHub the SCM is a different primary shape\n• Free minute/credit caps; Performance $15 is not unlimited CI\n• Not observability, on-call, hosting panel, or managed hosting\n• AI is not the product"
+    }
+  ],
+  "confidence": "medium",
+  "handsOnTesting": false,
+  "contentVersion": 1,
+  "refreshNeeded": false,
+  "lastUpdatedAt": "2026-08-18T20:00:00.000Z",
+  "metadata": {
+    "status": "published",
+    "publishedAt": "2026-08-18T00:00:00.000Z",
+    "updatedAt": "2026-08-18T20:00:00.000Z",
+    "reviewedAt": "2026-08-18T20:00:00.000Z",
+    "author": "author-lee-meyeridricks",
+    "researchStatus": "complete"
+  },
+  "seo": {
+    "title": "CircleCI Review (2026) — IT & Development",
+    "description": "CircleCI IT & development review on SoftwareGlimpse: strengths, trade-offs, pricing posture, and who should buy.",
+    "canonicalPath": "/software/circleci/",
+    "indexable": true
+  }
+}

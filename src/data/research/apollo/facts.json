@@ -1,0 +1,410 @@
+[
+  {
+    "id": "fact-apollo-pricing.hasFreePlan",
+    "productSlug": "apollo",
+    "domain": "free-plan",
+    "field": "pricing.hasFreePlan",
+    "value": true,
+    "sourceIds": [
+      "apollo-pricing-official"
+    ],
+    "evidence": [
+      {
+        "sourceId": "apollo-pricing-official",
+        "excerpt": "Free Plan offer price 0; free forever messaging."
+      }
+    ],
+    "extractedAt": "2026-08-13T18:00:00.000Z",
+    "normalizedAt": "2026-08-13T18:00:00.000Z",
+    "verifiedAt": "2026-08-13T18:00:00.000Z",
+    "approvedAt": "2026-08-13T18:00:00.000Z",
+    "confidence": "high",
+    "status": "approved",
+    "isFixture": false
+  },
+  {
+    "id": "fact-apollo-pricing.hasFreeTrial",
+    "productSlug": "apollo",
+    "domain": "free-trial",
+    "field": "pricing.hasFreeTrial",
+    "value": true,
+    "sourceIds": [
+      "apollo-pricing-official"
+    ],
+    "evidence": [
+      {
+        "sourceId": "apollo-pricing-official",
+        "excerpt": "Paid plan evaluation/trial messaging on pricing."
+      }
+    ],
+    "extractedAt": "2026-08-13T18:00:00.000Z",
+    "normalizedAt": "2026-08-13T18:00:00.000Z",
+    "verifiedAt": "2026-08-13T18:00:00.000Z",
+    "approvedAt": "2026-08-13T18:00:00.000Z",
+    "confidence": "high",
+    "status": "approved",
+    "isFixture": false
+  },
+  {
+    "id": "fact-apollo-pricing.startingPriceMonthly",
+    "productSlug": "apollo",
+    "domain": "pricing",
+    "field": "pricing.startingPriceMonthly",
+    "value": 49,
+    "sourceIds": [
+      "apollo-pricing-official"
+    ],
+    "evidence": [
+      {
+        "sourceId": "apollo-pricing-official",
+        "excerpt": "Basic Plan $49/month in schema.org Offer."
+      }
+    ],
+    "extractedAt": "2026-08-13T18:00:00.000Z",
+    "normalizedAt": "2026-08-13T18:00:00.000Z",
+    "verifiedAt": "2026-08-13T18:00:00.000Z",
+    "approvedAt": "2026-08-13T18:00:00.000Z",
+    "confidence": "high",
+    "status": "approved",
+    "isFixture": false
+  },
+  {
+    "id": "fact-apollo-pricing.currency",
+    "productSlug": "apollo",
+    "domain": "pricing",
+    "field": "pricing.currency",
+    "value": "USD",
+    "sourceIds": [
+      "apollo-pricing-official"
+    ],
+    "evidence": [
+      {
+        "sourceId": "apollo-pricing-official",
+        "excerpt": "USD priceCurrency in offers."
+      }
+    ],
+    "extractedAt": "2026-08-13T18:00:00.000Z",
+    "normalizedAt": "2026-08-13T18:00:00.000Z",
+    "verifiedAt": "2026-08-13T18:00:00.000Z",
+    "approvedAt": "2026-08-13T18:00:00.000Z",
+    "confidence": "high",
+    "status": "approved",
+    "isFixture": false
+  },
+  {
+    "id": "fact-apollo-pricing.model",
+    "productSlug": "apollo",
+    "domain": "pricing",
+    "field": "pricing.model",
+    "value": "freemium",
+    "sourceIds": [
+      "apollo-pricing-official"
+    ],
+    "evidence": [
+      {
+        "sourceId": "apollo-pricing-official",
+        "excerpt": "Free + paid seat plans."
+      }
+    ],
+    "extractedAt": "2026-08-13T18:00:00.000Z",
+    "normalizedAt": "2026-08-13T18:00:00.000Z",
+    "verifiedAt": "2026-08-13T18:00:00.000Z",
+    "approvedAt": "2026-08-13T18:00:00.000Z",
+    "confidence": "high",
+    "status": "approved",
+    "isFixture": false
+  },
+  {
+    "id": "fact-apollo-pricing.plans.free",
+    "productSlug": "apollo",
+    "domain": "plans",
+    "field": "pricing.plans.free",
+    "value": {
+      "id": "plan-free",
+      "slug": "free",
+      "name": "Free",
+      "isFree": true,
+      "contactSales": false,
+      "hasFreeTrial": false,
+      "highlighted": false,
+      "rules": [
+        {
+          "kind": "flat",
+          "amount": 0,
+          "currency": "USD",
+          "interval": "month",
+          "amountPeriod": "month"
+        }
+      ],
+      "description": "Core free features including limited access to email/phone data per Free plan messaging."
+    },
+    "sourceIds": [
+      "apollo-pricing-official"
+    ],
+    "evidence": [
+      {
+        "sourceId": "apollo-pricing-official",
+        "excerpt": "Free Plan $0."
+      }
+    ],
+    "extractedAt": "2026-08-13T18:00:00.000Z",
+    "normalizedAt": "2026-08-13T18:00:00.000Z",
+    "verifiedAt": "2026-08-13T18:00:00.000Z",
+    "approvedAt": "2026-08-13T18:00:00.000Z",
+    "confidence": "high",
+    "status": "approved",
+    "isFixture": false
+  },
+  {
+    "id": "fact-apollo-pricing.plans.basic",
+    "productSlug": "apollo",
+    "domain": "plans",
+    "field": "pricing.plans.basic",
+    "value": {
+      "id": "plan-basic",
+      "slug": "basic",
+      "name": "Basic",
+      "isFree": false,
+      "contactSales": false,
+      "hasFreeTrial": true,
+      "highlighted": false,
+      "rules": [
+        {
+          "kind": "per-seat",
+          "amountPerSeat": 49,
+          "currency": "USD",
+          "interval": "month",
+          "amountPeriod": "month"
+        }
+      ]
+    },
+    "sourceIds": [
+      "apollo-pricing-official"
+    ],
+    "evidence": [
+      {
+        "sourceId": "apollo-pricing-official",
+        "excerpt": "Basic Plan $49/month."
+      }
+    ],
+    "extractedAt": "2026-08-13T18:00:00.000Z",
+    "normalizedAt": "2026-08-13T18:00:00.000Z",
+    "verifiedAt": "2026-08-13T18:00:00.000Z",
+    "approvedAt": "2026-08-13T18:00:00.000Z",
+    "confidence": "high",
+    "status": "approved",
+    "isFixture": false
+  },
+  {
+    "id": "fact-apollo-pricing.plans.professional",
+    "productSlug": "apollo",
+    "domain": "plans",
+    "field": "pricing.plans.professional",
+    "value": {
+      "id": "plan-professional",
+      "slug": "professional",
+      "name": "Professional",
+      "isFree": false,
+      "contactSales": false,
+      "hasFreeTrial": true,
+      "highlighted": true,
+      "rules": [
+        {
+          "kind": "per-seat",
+          "amountPerSeat": 99,
+          "currency": "USD",
+          "interval": "month",
+          "amountPeriod": "month"
+        }
+      ]
+    },
+    "sourceIds": [
+      "apollo-pricing-official"
+    ],
+    "evidence": [
+      {
+        "sourceId": "apollo-pricing-official",
+        "excerpt": "Professional Plan $99/month."
+      }
+    ],
+    "extractedAt": "2026-08-13T18:00:00.000Z",
+    "normalizedAt": "2026-08-13T18:00:00.000Z",
+    "verifiedAt": "2026-08-13T18:00:00.000Z",
+    "approvedAt": "2026-08-13T18:00:00.000Z",
+    "confidence": "high",
+    "status": "approved",
+    "isFixture": false
+  },
+  {
+    "id": "fact-apollo-pricing.plans.enterprise",
+    "productSlug": "apollo",
+    "domain": "plans",
+    "field": "pricing.plans.enterprise",
+    "value": {
+      "id": "plan-enterprise",
+      "slug": "enterprise",
+      "name": "Enterprise",
+      "isFree": false,
+      "contactSales": true,
+      "hasFreeTrial": true,
+      "highlighted": false,
+      "rules": [],
+      "description": "Custom pricing; advanced security/governance/API access via sales."
+    },
+    "sourceIds": [
+      "apollo-pricing-official"
+    ],
+    "evidence": [
+      {
+        "sourceId": "apollo-pricing-official",
+        "excerpt": "Enterprise contact for pricing."
+      }
+    ],
+    "extractedAt": "2026-08-13T18:00:00.000Z",
+    "normalizedAt": "2026-08-13T18:00:00.000Z",
+    "verifiedAt": "2026-08-13T18:00:00.000Z",
+    "approvedAt": "2026-08-13T18:00:00.000Z",
+    "confidence": "high",
+    "status": "approved",
+    "isFixture": false
+  },
+  {
+    "id": "fact-apollo-features.prospecting",
+    "productSlug": "apollo",
+    "domain": "features",
+    "field": "features.prospecting",
+    "value": true,
+    "sourceIds": [
+      "apollo-product-official"
+    ],
+    "evidence": [
+      {
+        "sourceId": "apollo-product-official",
+        "excerpt": "B2B prospecting and database access are core."
+      }
+    ],
+    "extractedAt": "2026-08-13T18:00:00.000Z",
+    "normalizedAt": "2026-08-13T18:00:00.000Z",
+    "verifiedAt": "2026-08-13T18:00:00.000Z",
+    "approvedAt": "2026-08-13T18:00:00.000Z",
+    "confidence": "high",
+    "status": "approved",
+    "isFixture": false
+  },
+  {
+    "id": "fact-apollo-features.data-enrichment",
+    "productSlug": "apollo",
+    "domain": "features",
+    "field": "features.data-enrichment",
+    "value": true,
+    "sourceIds": [
+      "apollo-product-official"
+    ],
+    "evidence": [
+      {
+        "sourceId": "apollo-product-official",
+        "excerpt": "Enrichment product surfaces documented."
+      }
+    ],
+    "extractedAt": "2026-08-13T18:00:00.000Z",
+    "normalizedAt": "2026-08-13T18:00:00.000Z",
+    "verifiedAt": "2026-08-13T18:00:00.000Z",
+    "approvedAt": "2026-08-13T18:00:00.000Z",
+    "confidence": "high",
+    "status": "approved",
+    "isFixture": false
+  },
+  {
+    "id": "fact-apollo-features.email-sequences",
+    "productSlug": "apollo",
+    "domain": "features",
+    "field": "features.email-sequences",
+    "value": true,
+    "sourceIds": [
+      "apollo-product-official",
+      "apollo-pricing-official"
+    ],
+    "evidence": [
+      {
+        "sourceId": "apollo-product-official",
+        "excerpt": "Multichannel engagement/sequences."
+      }
+    ],
+    "extractedAt": "2026-08-13T18:00:00.000Z",
+    "normalizedAt": "2026-08-13T18:00:00.000Z",
+    "verifiedAt": "2026-08-13T18:00:00.000Z",
+    "approvedAt": "2026-08-13T18:00:00.000Z",
+    "confidence": "high",
+    "status": "approved",
+    "isFixture": false
+  },
+  {
+    "id": "fact-apollo-features.pipeline-management",
+    "productSlug": "apollo",
+    "domain": "features",
+    "field": "features.pipeline-management",
+    "value": true,
+    "sourceIds": [
+      "apollo-product-official"
+    ],
+    "evidence": [
+      {
+        "sourceId": "apollo-product-official",
+        "excerpt": "Deals UI present but secondary to engagement."
+      }
+    ],
+    "extractedAt": "2026-08-13T18:00:00.000Z",
+    "normalizedAt": "2026-08-13T18:00:00.000Z",
+    "verifiedAt": "2026-08-13T18:00:00.000Z",
+    "approvedAt": "2026-08-13T18:00:00.000Z",
+    "confidence": "high",
+    "status": "approved",
+    "isFixture": false
+  },
+  {
+    "id": "fact-apollo-ai.assistant",
+    "productSlug": "apollo",
+    "domain": "ai-capabilities",
+    "field": "ai.assistant",
+    "value": true,
+    "sourceIds": [
+      "apollo-product-official"
+    ],
+    "evidence": [
+      {
+        "sourceId": "apollo-product-official",
+        "excerpt": "AI-driven insights/assistance marketed."
+      }
+    ],
+    "extractedAt": "2026-08-13T18:00:00.000Z",
+    "normalizedAt": "2026-08-13T18:00:00.000Z",
+    "verifiedAt": "2026-08-13T18:00:00.000Z",
+    "approvedAt": "2026-08-13T18:00:00.000Z",
+    "confidence": "high",
+    "status": "approved",
+    "isFixture": false
+  },
+  {
+    "id": "fact-apollo-positioning.sales-intelligence",
+    "productSlug": "apollo",
+    "domain": "product-positioning",
+    "field": "positioning.sales-intelligence",
+    "value": true,
+    "sourceIds": [
+      "apollo-product-official"
+    ],
+    "evidence": [
+      {
+        "sourceId": "apollo-product-official",
+        "excerpt": "Sales intelligence + engagement platform positioning."
+      }
+    ],
+    "extractedAt": "2026-08-13T18:00:00.000Z",
+    "normalizedAt": "2026-08-13T18:00:00.000Z",
+    "verifiedAt": "2026-08-13T18:00:00.000Z",
+    "approvedAt": "2026-08-13T18:00:00.000Z",
+    "confidence": "high",
+    "status": "approved",
+    "isFixture": false
+  }
+]

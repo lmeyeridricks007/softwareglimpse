@@ -1,0 +1,992 @@
+{
+  "id": "wf-software-onboarding-content-cloze-1786861040455",
+  "workflowId": "software-onboarding-content",
+  "workflowVersion": "1.0.0",
+  "name": "Software Onboarding Content: cloze",
+  "targetType": "software",
+  "targetId": "cloze",
+  "status": "completed",
+  "steps": [
+    {
+      "id": "software-onboarding",
+      "definitionStepId": "software-onboarding",
+      "handler": "software-onboarding",
+      "label": "Software onboarding",
+      "status": "completed",
+      "required": true,
+      "failurePolicy": "block-workflow",
+      "attempt": 1,
+      "maxAttempts": 2,
+      "dependsOn": [],
+      "priority": "critical",
+      "config": {
+        "maxAutomaticRevisions": 1,
+        "expandFromContentPlan": false,
+        "expandKind": "none",
+        "stopAfterApproval": true,
+        "allowNormalizedFacts": false,
+        "optionalWhenBlocked": false,
+        "forceTransientFailOnce": false
+      },
+      "inputRefs": {},
+      "outputRefs": {
+        "softwareOnboardingRunId": "onboard-cloze-1786859683951"
+      },
+      "blockers": [],
+      "warnings": [],
+      "startedAt": "2026-08-16T06:17:20.921Z",
+      "completedAt": "2026-08-16T06:17:20.972Z",
+      "revisionAttempts": 0
+    },
+    {
+      "id": "content-plan",
+      "definitionStepId": "content-plan",
+      "handler": "content-plan",
+      "label": "Content plan",
+      "status": "completed",
+      "required": true,
+      "failurePolicy": "block-workflow",
+      "attempt": 1,
+      "maxAttempts": 2,
+      "dependsOn": [
+        "software-onboarding"
+      ],
+      "priority": "high",
+      "config": {
+        "maxAutomaticRevisions": 1,
+        "expandFromContentPlan": false,
+        "expandKind": "none",
+        "stopAfterApproval": true,
+        "allowNormalizedFacts": false,
+        "optionalWhenBlocked": false,
+        "forceTransientFailOnce": false
+      },
+      "inputRefs": {},
+      "outputRefs": {
+        "softwareOnboardingRunId": "onboard-cloze-1786859683951",
+        "comparisonTargets": "cloze-vs-hubspot,capsule-vs-cloze,cloze-vs-nimble",
+        "pageCandidateCount": "9"
+      },
+      "blockers": [],
+      "warnings": [],
+      "startedAt": "2026-08-16T06:17:20.975Z",
+      "completedAt": "2026-08-16T06:17:21.029Z",
+      "revisionAttempts": 0
+    },
+    {
+      "id": "software-review",
+      "definitionStepId": "software-review",
+      "handler": "agent-run",
+      "label": "Software Review",
+      "status": "completed",
+      "required": true,
+      "failurePolicy": "block-workflow",
+      "attempt": 1,
+      "maxAttempts": 2,
+      "dependsOn": [
+        "content-plan"
+      ],
+      "priority": "high",
+      "config": {
+        "agentId": "software-review-agent",
+        "targetSlug": "cloze",
+        "maxAutomaticRevisions": 1,
+        "expandFromContentPlan": false,
+        "expandKind": "none",
+        "stopAfterApproval": true,
+        "allowNormalizedFacts": false,
+        "optionalWhenBlocked": false,
+        "forceTransientFailOnce": false
+      },
+      "inputRefs": {},
+      "outputRefs": {
+        "draftId": "draft-deterministic-v1-software-review-agent-cloze-2026-08-16T06-17-21-114Z",
+        "qaStatus": "pass",
+        "agentId": "software-review-agent",
+        "target": "cloze"
+      },
+      "inputSnapshot": {
+        "researchFactIds": [
+          "fact-cloze-pricing.hasFreePlan",
+          "fact-cloze-pricing.hasFreeTrial",
+          "fact-cloze-pricing.currency",
+          "fact-cloze-pricing.model",
+          "fact-cloze-identity.shortDescription",
+          "fact-cloze-positioning.vendorClaim",
+          "fact-cloze-pricing.startingPriceMonthly",
+          "fact-cloze-pricing.plans.pro",
+          "fact-cloze-pricing.plans.silver",
+          "fact-cloze-pricing.plans.gold",
+          "fact-cloze-pricing.plans.platinum",
+          "fact-cloze-features.contact-management",
+          "fact-cloze-features.lead-management",
+          "fact-cloze-features.pipeline-management",
+          "fact-cloze-features.deal-management",
+          "fact-cloze-features.custom-pipelines",
+          "fact-cloze-features.custom-fields",
+          "fact-cloze-features.email-sync",
+          "fact-cloze-features.email-tracking",
+          "fact-cloze-features.workflow-automation",
+          "fact-cloze-features.reporting",
+          "fact-cloze-features.mobile-app",
+          "fact-cloze-features.sales-automation",
+          "fact-cloze-features.integrations",
+          "fact-cloze-features.ai-assistance"
+        ],
+        "methodologySlug": "crm-editorial",
+        "methodologyVersion": "1.0.0",
+        "agentVersion": "1.0.0",
+        "contextBuiltAt": "2026-08-16T06:17:21.107Z"
+      },
+      "blockers": [],
+      "warnings": [],
+      "agentTaskId": "exec-software-review-agent-cloze-1786861041032",
+      "draftId": "draft-deterministic-v1-software-review-agent-cloze-2026-08-16T06-17-21-114Z",
+      "startedAt": "2026-08-16T06:17:21.030Z",
+      "completedAt": "2026-08-16T06:17:21.137Z",
+      "revisionAttempts": 0
+    },
+    {
+      "id": "pricing-page",
+      "definitionStepId": "pricing-page",
+      "handler": "agent-run",
+      "label": "Pricing Page",
+      "status": "completed",
+      "required": false,
+      "failurePolicy": "continue-with-warning",
+      "attempt": 1,
+      "maxAttempts": 2,
+      "dependsOn": [
+        "content-plan"
+      ],
+      "priority": "normal",
+      "config": {
+        "agentId": "pricing-page-agent",
+        "targetSlug": "cloze",
+        "maxAutomaticRevisions": 1,
+        "expandFromContentPlan": false,
+        "expandKind": "none",
+        "stopAfterApproval": true,
+        "allowNormalizedFacts": false,
+        "optionalWhenBlocked": true,
+        "forceTransientFailOnce": false
+      },
+      "inputRefs": {},
+      "outputRefs": {
+        "draftId": "draft-deterministic-v1-pricing-page-agent-cloze-2026-08-16T06-17-21-255Z",
+        "qaStatus": "pass",
+        "agentId": "pricing-page-agent",
+        "target": "cloze"
+      },
+      "inputSnapshot": {
+        "researchFactIds": [
+          "fact-cloze-pricing.hasFreePlan",
+          "fact-cloze-pricing.hasFreeTrial",
+          "fact-cloze-pricing.currency",
+          "fact-cloze-pricing.model",
+          "fact-cloze-identity.shortDescription",
+          "fact-cloze-positioning.vendorClaim",
+          "fact-cloze-pricing.startingPriceMonthly",
+          "fact-cloze-pricing.plans.pro",
+          "fact-cloze-pricing.plans.silver",
+          "fact-cloze-pricing.plans.gold",
+          "fact-cloze-pricing.plans.platinum",
+          "fact-cloze-features.contact-management",
+          "fact-cloze-features.lead-management",
+          "fact-cloze-features.pipeline-management",
+          "fact-cloze-features.deal-management",
+          "fact-cloze-features.custom-pipelines",
+          "fact-cloze-features.custom-fields",
+          "fact-cloze-features.email-sync",
+          "fact-cloze-features.email-tracking",
+          "fact-cloze-features.workflow-automation",
+          "fact-cloze-features.reporting",
+          "fact-cloze-features.mobile-app",
+          "fact-cloze-features.sales-automation",
+          "fact-cloze-features.integrations",
+          "fact-cloze-features.ai-assistance"
+        ],
+        "methodologySlug": "crm-editorial",
+        "methodologyVersion": "1.0.0",
+        "agentVersion": "1.0.0",
+        "contextBuiltAt": "2026-08-16T06:17:21.254Z"
+      },
+      "blockers": [],
+      "warnings": [],
+      "agentTaskId": "exec-pricing-page-agent-cloze-1786861041247",
+      "draftId": "draft-deterministic-v1-pricing-page-agent-cloze-2026-08-16T06-17-21-255Z",
+      "startedAt": "2026-08-16T06:17:21.247Z",
+      "completedAt": "2026-08-16T06:17:21.262Z",
+      "revisionAttempts": 0
+    },
+    {
+      "id": "alternatives",
+      "definitionStepId": "alternatives",
+      "handler": "agent-run",
+      "label": "Alternatives",
+      "status": "completed",
+      "required": false,
+      "failurePolicy": "continue-with-warning",
+      "attempt": 1,
+      "maxAttempts": 2,
+      "dependsOn": [
+        "content-plan"
+      ],
+      "priority": "normal",
+      "config": {
+        "agentId": "alternatives-agent",
+        "targetSlug": "cloze",
+        "maxAutomaticRevisions": 1,
+        "expandFromContentPlan": false,
+        "expandKind": "none",
+        "stopAfterApproval": true,
+        "allowNormalizedFacts": false,
+        "optionalWhenBlocked": true,
+        "forceTransientFailOnce": false
+      },
+      "inputRefs": {},
+      "outputRefs": {
+        "draftId": "draft-deterministic-v1-alternatives-agent-cloze-2026-08-16T06-17-21-162Z",
+        "qaStatus": "pass",
+        "agentId": "alternatives-agent",
+        "target": "cloze"
+      },
+      "inputSnapshot": {
+        "researchFactIds": [
+          "fact-cloze-pricing.hasFreePlan",
+          "fact-cloze-pricing.hasFreeTrial",
+          "fact-cloze-pricing.currency",
+          "fact-cloze-pricing.model",
+          "fact-cloze-identity.shortDescription",
+          "fact-cloze-positioning.vendorClaim",
+          "fact-cloze-pricing.startingPriceMonthly",
+          "fact-cloze-pricing.plans.pro",
+          "fact-cloze-pricing.plans.silver",
+          "fact-cloze-pricing.plans.gold",
+          "fact-cloze-pricing.plans.platinum",
+          "fact-cloze-features.contact-management",
+          "fact-cloze-features.lead-management",
+          "fact-cloze-features.pipeline-management",
+          "fact-cloze-features.deal-management",
+          "fact-cloze-features.custom-pipelines",
+          "fact-cloze-features.custom-fields",
+          "fact-cloze-features.email-sync",
+          "fact-cloze-features.email-tracking",
+          "fact-cloze-features.workflow-automation",
+          "fact-cloze-features.reporting",
+          "fact-cloze-features.mobile-app",
+          "fact-cloze-features.sales-automation",
+          "fact-cloze-features.integrations",
+          "fact-cloze-features.ai-assistance"
+        ],
+        "methodologySlug": "crm-editorial",
+        "methodologyVersion": "1.0.0",
+        "agentVersion": "1.0.0",
+        "contextBuiltAt": "2026-08-16T06:17:21.159Z"
+      },
+      "blockers": [],
+      "warnings": [],
+      "agentTaskId": "exec-alternatives-agent-cloze-1786861041139",
+      "draftId": "draft-deterministic-v1-alternatives-agent-cloze-2026-08-16T06-17-21-162Z",
+      "startedAt": "2026-08-16T06:17:21.139Z",
+      "completedAt": "2026-08-16T06:17:21.172Z",
+      "revisionAttempts": 0
+    },
+    {
+      "id": "comparison:cloze-vs-hubspot",
+      "definitionStepId": "comparisons",
+      "handler": "agent-run",
+      "label": "Comparison cloze-vs-hubspot",
+      "status": "completed",
+      "required": false,
+      "failurePolicy": "continue-with-warning",
+      "attempt": 1,
+      "maxAttempts": 2,
+      "dependsOn": [
+        "content-plan"
+      ],
+      "priority": "normal",
+      "config": {
+        "agentId": "comparison-agent",
+        "targetSlug": "cloze-vs-hubspot",
+        "maxAutomaticRevisions": 1,
+        "expandFromContentPlan": true,
+        "expandKind": "comparisons",
+        "stopAfterApproval": true,
+        "allowNormalizedFacts": false,
+        "optionalWhenBlocked": true,
+        "forceTransientFailOnce": false
+      },
+      "expansionKey": "cloze-vs-hubspot",
+      "inputRefs": {},
+      "outputRefs": {
+        "draftId": "draft-deterministic-v1-comparison-agent-cloze-vs-hubspot-2026-08-16T06-17-21-215Z",
+        "qaStatus": "pass",
+        "agentId": "comparison-agent",
+        "target": "cloze-vs-hubspot"
+      },
+      "inputSnapshot": {
+        "researchFactIds": [
+          "fact-cloze-pricing.hasFreePlan",
+          "fact-cloze-pricing.hasFreeTrial",
+          "fact-cloze-pricing.currency",
+          "fact-cloze-pricing.model",
+          "fact-cloze-identity.shortDescription",
+          "fact-cloze-positioning.vendorClaim",
+          "fact-cloze-pricing.startingPriceMonthly",
+          "fact-cloze-pricing.plans.pro",
+          "fact-cloze-pricing.plans.silver",
+          "fact-cloze-pricing.plans.gold",
+          "fact-cloze-pricing.plans.platinum",
+          "fact-cloze-features.contact-management",
+          "fact-cloze-features.lead-management",
+          "fact-cloze-features.pipeline-management",
+          "fact-cloze-features.deal-management",
+          "fact-cloze-features.custom-pipelines",
+          "fact-cloze-features.custom-fields",
+          "fact-cloze-features.email-sync",
+          "fact-cloze-features.email-tracking",
+          "fact-cloze-features.workflow-automation",
+          "fact-cloze-features.reporting",
+          "fact-cloze-features.mobile-app",
+          "fact-cloze-features.sales-automation",
+          "fact-cloze-features.integrations",
+          "fact-cloze-features.ai-assistance",
+          "fact-hubspot-pricing.hasFreePlan",
+          "fact-hubspot-pricing.hasFreeTrial",
+          "fact-hubspot-pricing.startingPriceMonthly",
+          "fact-hubspot-pricing.currency",
+          "fact-hubspot-pricing.model",
+          "fact-hubspot-pricing.plans.free",
+          "fact-hubspot-pricing.plans.starter",
+          "fact-hubspot-pricing.plans.professional",
+          "fact-hubspot-pricing.plans.enterprise",
+          "fact-hubspot-pricing.sales-hub.ladder",
+          "fact-hubspot-pricing.billing-notes",
+          "fact-hubspot-features.contact-management",
+          "fact-hubspot-features.pipeline-management",
+          "fact-hubspot-features.deal-management",
+          "fact-hubspot-features.lead-management",
+          "fact-hubspot-features.email-sync",
+          "fact-hubspot-features.email-sequences",
+          "fact-hubspot-features.workflow-automation",
+          "fact-hubspot-features.sales-automation",
+          "fact-hubspot-features.reporting",
+          "fact-hubspot-features.forecasting",
+          "fact-hubspot-features.lead-scoring",
+          "fact-hubspot-features.custom-fields",
+          "fact-hubspot-features.custom-objects",
+          "fact-hubspot-features.ai-assistance",
+          "fact-hubspot-features.integrations",
+          "fact-hubspot-features.sso",
+          "fact-hubspot-ai.assistant",
+          "fact-hubspot-ai.prospecting-agent",
+          "fact-hubspot-ai.forecasting",
+          "fact-hubspot-positioning.primary",
+          "fact-hubspot-positioning.free-crm",
+          "fact-hubspot-pricing.sales-hub.professional.catalog",
+          "fact-hubspot-pricing.sales-hub.professional.marketing",
+          "fact-hubspot-pricing.smart-crm.starter.catalog"
+        ],
+        "methodologySlug": "crm-editorial",
+        "methodologyVersion": "1.0.0",
+        "agentVersion": "1.0.0",
+        "contextBuiltAt": "2026-08-16T06:17:21.213Z"
+      },
+      "blockers": [],
+      "warnings": [],
+      "agentTaskId": "exec-comparison-agent-cloze-vs-hubspot-1786861041206",
+      "draftId": "draft-deterministic-v1-comparison-agent-cloze-vs-hubspot-2026-08-16T06-17-21-215Z",
+      "startedAt": "2026-08-16T06:17:21.205Z",
+      "completedAt": "2026-08-16T06:17:21.228Z",
+      "revisionAttempts": 0
+    },
+    {
+      "id": "comparison:capsule-vs-cloze",
+      "definitionStepId": "comparisons",
+      "handler": "agent-run",
+      "label": "Comparison capsule-vs-cloze",
+      "status": "completed",
+      "required": false,
+      "failurePolicy": "continue-with-warning",
+      "attempt": 1,
+      "maxAttempts": 2,
+      "dependsOn": [
+        "content-plan"
+      ],
+      "priority": "normal",
+      "config": {
+        "agentId": "comparison-agent",
+        "targetSlug": "capsule-vs-cloze",
+        "maxAutomaticRevisions": 1,
+        "expandFromContentPlan": true,
+        "expandKind": "comparisons",
+        "stopAfterApproval": true,
+        "allowNormalizedFacts": false,
+        "optionalWhenBlocked": true,
+        "forceTransientFailOnce": false
+      },
+      "expansionKey": "capsule-vs-cloze",
+      "inputRefs": {},
+      "outputRefs": {
+        "draftId": "draft-deterministic-v1-comparison-agent-capsule-vs-cloze-2026-08-16T06-17-21-201Z",
+        "qaStatus": "pass",
+        "agentId": "comparison-agent",
+        "target": "capsule-vs-cloze"
+      },
+      "inputSnapshot": {
+        "researchFactIds": [
+          "fact-capsule-pricing.hasFreePlan",
+          "fact-capsule-pricing.hasFreeTrial",
+          "fact-capsule-pricing.startingPriceMonthly",
+          "fact-capsule-pricing.currency",
+          "fact-capsule-pricing.model",
+          "fact-capsule-pricing.plans.free",
+          "fact-capsule-pricing.plans.starter",
+          "fact-capsule-pricing.plans.growth",
+          "fact-capsule-pricing.plans.advanced",
+          "fact-capsule-pricing.plans.ultimate",
+          "fact-capsule-features.pipeline-management",
+          "fact-capsule-features.workflow-automation",
+          "fact-capsule-features.contact-management",
+          "fact-capsule-features.mobile-app",
+          "fact-capsule-ai.assistant",
+          "fact-capsule-positioning.simple-smb",
+          "fact-cloze-pricing.hasFreePlan",
+          "fact-cloze-pricing.hasFreeTrial",
+          "fact-cloze-pricing.currency",
+          "fact-cloze-pricing.model",
+          "fact-cloze-identity.shortDescription",
+          "fact-cloze-positioning.vendorClaim",
+          "fact-cloze-pricing.startingPriceMonthly",
+          "fact-cloze-pricing.plans.pro",
+          "fact-cloze-pricing.plans.silver",
+          "fact-cloze-pricing.plans.gold",
+          "fact-cloze-pricing.plans.platinum",
+          "fact-cloze-features.contact-management",
+          "fact-cloze-features.lead-management",
+          "fact-cloze-features.pipeline-management",
+          "fact-cloze-features.deal-management",
+          "fact-cloze-features.custom-pipelines",
+          "fact-cloze-features.custom-fields",
+          "fact-cloze-features.email-sync",
+          "fact-cloze-features.email-tracking",
+          "fact-cloze-features.workflow-automation",
+          "fact-cloze-features.reporting",
+          "fact-cloze-features.mobile-app",
+          "fact-cloze-features.sales-automation",
+          "fact-cloze-features.integrations",
+          "fact-cloze-features.ai-assistance"
+        ],
+        "methodologySlug": "crm-editorial",
+        "methodologyVersion": "1.0.0",
+        "agentVersion": "1.0.0",
+        "contextBuiltAt": "2026-08-16T06:17:21.198Z"
+      },
+      "blockers": [],
+      "warnings": [],
+      "agentTaskId": "exec-comparison-agent-capsule-vs-cloze-1786861041178",
+      "draftId": "draft-deterministic-v1-comparison-agent-capsule-vs-cloze-2026-08-16T06-17-21-201Z",
+      "startedAt": "2026-08-16T06:17:21.173Z",
+      "completedAt": "2026-08-16T06:17:21.204Z",
+      "revisionAttempts": 0
+    },
+    {
+      "id": "comparison:cloze-vs-nimble",
+      "definitionStepId": "comparisons",
+      "handler": "agent-run",
+      "label": "Comparison cloze-vs-nimble",
+      "status": "completed",
+      "required": false,
+      "failurePolicy": "continue-with-warning",
+      "attempt": 1,
+      "maxAttempts": 2,
+      "dependsOn": [
+        "content-plan"
+      ],
+      "priority": "normal",
+      "config": {
+        "agentId": "comparison-agent",
+        "targetSlug": "cloze-vs-nimble",
+        "maxAutomaticRevisions": 1,
+        "expandFromContentPlan": true,
+        "expandKind": "comparisons",
+        "stopAfterApproval": true,
+        "allowNormalizedFacts": false,
+        "optionalWhenBlocked": true,
+        "forceTransientFailOnce": false
+      },
+      "expansionKey": "cloze-vs-nimble",
+      "inputRefs": {},
+      "outputRefs": {
+        "draftId": "draft-deterministic-v1-comparison-agent-cloze-vs-nimble-2026-08-16T06-17-21-242Z",
+        "qaStatus": "pass",
+        "agentId": "comparison-agent",
+        "target": "cloze-vs-nimble"
+      },
+      "inputSnapshot": {
+        "researchFactIds": [
+          "fact-cloze-pricing.hasFreePlan",
+          "fact-cloze-pricing.hasFreeTrial",
+          "fact-cloze-pricing.currency",
+          "fact-cloze-pricing.model",
+          "fact-cloze-identity.shortDescription",
+          "fact-cloze-positioning.vendorClaim",
+          "fact-cloze-pricing.startingPriceMonthly",
+          "fact-cloze-pricing.plans.pro",
+          "fact-cloze-pricing.plans.silver",
+          "fact-cloze-pricing.plans.gold",
+          "fact-cloze-pricing.plans.platinum",
+          "fact-cloze-features.contact-management",
+          "fact-cloze-features.lead-management",
+          "fact-cloze-features.pipeline-management",
+          "fact-cloze-features.deal-management",
+          "fact-cloze-features.custom-pipelines",
+          "fact-cloze-features.custom-fields",
+          "fact-cloze-features.email-sync",
+          "fact-cloze-features.email-tracking",
+          "fact-cloze-features.workflow-automation",
+          "fact-cloze-features.reporting",
+          "fact-cloze-features.mobile-app",
+          "fact-cloze-features.sales-automation",
+          "fact-cloze-features.integrations",
+          "fact-cloze-features.ai-assistance",
+          "fact-nimble-pricing.hasFreePlan",
+          "fact-nimble-pricing.hasFreeTrial",
+          "fact-nimble-pricing.currency",
+          "fact-nimble-pricing.model",
+          "fact-nimble-identity.shortDescription",
+          "fact-nimble-positioning.vendorClaim",
+          "fact-nimble-pricing.startingPriceMonthly",
+          "fact-nimble-pricing.plans.business",
+          "fact-nimble-features.contact-management",
+          "fact-nimble-features.lead-management",
+          "fact-nimble-features.pipeline-management",
+          "fact-nimble-features.deal-management",
+          "fact-nimble-features.custom-pipelines",
+          "fact-nimble-features.custom-fields",
+          "fact-nimble-features.email-sync",
+          "fact-nimble-features.email-tracking",
+          "fact-nimble-features.workflow-automation",
+          "fact-nimble-features.reporting",
+          "fact-nimble-features.mobile-app",
+          "fact-nimble-features.sales-automation",
+          "fact-nimble-features.integrations",
+          "fact-nimble-features.ai-assistance"
+        ],
+        "methodologySlug": "crm-editorial",
+        "methodologyVersion": "1.0.0",
+        "agentVersion": "1.0.0",
+        "contextBuiltAt": "2026-08-16T06:17:21.239Z"
+      },
+      "blockers": [],
+      "warnings": [],
+      "agentTaskId": "exec-comparison-agent-cloze-vs-nimble-1786861041231",
+      "draftId": "draft-deterministic-v1-comparison-agent-cloze-vs-nimble-2026-08-16T06-17-21-242Z",
+      "startedAt": "2026-08-16T06:17:21.230Z",
+      "completedAt": "2026-08-16T06:17:21.246Z",
+      "revisionAttempts": 0
+    },
+    {
+      "id": "internal-links",
+      "definitionStepId": "internal-links",
+      "handler": "internal-link",
+      "label": "Internal Link Plan",
+      "status": "completed",
+      "required": false,
+      "failurePolicy": "continue-with-warning",
+      "attempt": 1,
+      "maxAttempts": 2,
+      "dependsOn": [
+        "software-review"
+      ],
+      "priority": "low",
+      "config": {
+        "agentId": "internal-link-agent",
+        "maxAutomaticRevisions": 1,
+        "expandFromContentPlan": false,
+        "expandKind": "none",
+        "stopAfterApproval": true,
+        "allowNormalizedFacts": false,
+        "optionalWhenBlocked": false,
+        "forceTransientFailOnce": false
+      },
+      "inputRefs": {},
+      "outputRefs": {
+        "draftId": "draft-deterministic-v1-internal-link-agent-cloze-2026-08-16T06-17-21-288Z",
+        "qaStatus": "pass",
+        "agentId": "internal-link-agent",
+        "target": "cloze"
+      },
+      "inputSnapshot": {
+        "researchFactIds": [
+          "fact-cloze-pricing.hasFreePlan",
+          "fact-cloze-pricing.hasFreeTrial",
+          "fact-cloze-pricing.currency",
+          "fact-cloze-pricing.model",
+          "fact-cloze-identity.shortDescription",
+          "fact-cloze-positioning.vendorClaim",
+          "fact-cloze-pricing.startingPriceMonthly",
+          "fact-cloze-pricing.plans.pro",
+          "fact-cloze-pricing.plans.silver",
+          "fact-cloze-pricing.plans.gold",
+          "fact-cloze-pricing.plans.platinum",
+          "fact-cloze-features.contact-management",
+          "fact-cloze-features.lead-management",
+          "fact-cloze-features.pipeline-management",
+          "fact-cloze-features.deal-management",
+          "fact-cloze-features.custom-pipelines",
+          "fact-cloze-features.custom-fields",
+          "fact-cloze-features.email-sync",
+          "fact-cloze-features.email-tracking",
+          "fact-cloze-features.workflow-automation",
+          "fact-cloze-features.reporting",
+          "fact-cloze-features.mobile-app",
+          "fact-cloze-features.sales-automation",
+          "fact-cloze-features.integrations",
+          "fact-cloze-features.ai-assistance"
+        ],
+        "methodologySlug": "crm-editorial",
+        "methodologyVersion": "1.0.0",
+        "agentVersion": "1.0.0",
+        "contextBuiltAt": "2026-08-16T06:17:21.287Z"
+      },
+      "blockers": [],
+      "warnings": [],
+      "agentTaskId": "exec-internal-link-agent-cloze-1786861041273",
+      "draftId": "draft-deterministic-v1-internal-link-agent-cloze-2026-08-16T06-17-21-288Z",
+      "startedAt": "2026-08-16T06:17:21.271Z",
+      "completedAt": "2026-08-16T06:17:21.294Z",
+      "revisionAttempts": 0
+    },
+    {
+      "id": "finder-readiness",
+      "definitionStepId": "finder-readiness",
+      "handler": "update-recommendation-readiness",
+      "label": "Finder readiness",
+      "status": "completed",
+      "required": false,
+      "failurePolicy": "continue",
+      "attempt": 1,
+      "maxAttempts": 2,
+      "dependsOn": [
+        "content-plan"
+      ],
+      "priority": "low",
+      "config": {
+        "maxAutomaticRevisions": 1,
+        "expandFromContentPlan": false,
+        "expandKind": "none",
+        "stopAfterApproval": true,
+        "allowNormalizedFacts": false,
+        "optionalWhenBlocked": false,
+        "forceTransientFailOnce": false
+      },
+      "inputRefs": {},
+      "outputRefs": {
+        "finderReadiness": "checked"
+      },
+      "blockers": [],
+      "warnings": [],
+      "startedAt": "2026-08-16T06:17:21.264Z",
+      "completedAt": "2026-08-16T06:17:21.265Z",
+      "revisionAttempts": 0
+    },
+    {
+      "id": "editorial-approval",
+      "definitionStepId": "editorial-approval",
+      "handler": "approval-check",
+      "label": "Editorial approval",
+      "status": "completed",
+      "required": true,
+      "failurePolicy": "manual-review",
+      "attempt": 2,
+      "maxAttempts": 2,
+      "dependsOn": [
+        "software-review"
+      ],
+      "priority": "critical",
+      "config": {
+        "approvalType": "editorial",
+        "maxAutomaticRevisions": 1,
+        "expandFromContentPlan": false,
+        "expandKind": "none",
+        "stopAfterApproval": true,
+        "allowNormalizedFacts": false,
+        "optionalWhenBlocked": false,
+        "forceTransientFailOnce": false
+      },
+      "inputRefs": {},
+      "outputRefs": {
+        "approvalId": "appr-wf-software-onboarding-content-cloze-1786861040455-software-review",
+        "draftId": "draft-deterministic-v1-software-review-agent-cloze-2026-08-16T06-17-21-114Z",
+        "approvalIds": "appr-wf-software-onboarding-content-cloze-1786861040455-software-review"
+      },
+      "blockers": [],
+      "warnings": [
+        "Approval received — resuming",
+        "6 optional draft(s) may still need separate editorial review"
+      ],
+      "approvalId": "appr-wf-software-onboarding-content-cloze-1786861040455-software-review",
+      "startedAt": "2026-08-16T06:19:15.725Z",
+      "completedAt": "2026-08-16T06:19:15.783Z",
+      "revisionAttempts": 0
+    },
+    {
+      "id": "pre-publish-validation",
+      "definitionStepId": "pre-publish-validation",
+      "handler": "pre-publish-validation",
+      "label": "Pre-publish validation",
+      "status": "completed",
+      "required": true,
+      "failurePolicy": "block-workflow",
+      "attempt": 2,
+      "maxAttempts": 2,
+      "dependsOn": [
+        "editorial-approval"
+      ],
+      "priority": "critical",
+      "config": {
+        "maxAutomaticRevisions": 1,
+        "expandFromContentPlan": false,
+        "expandKind": "none",
+        "stopAfterApproval": true,
+        "allowNormalizedFacts": false,
+        "optionalWhenBlocked": false,
+        "forceTransientFailOnce": false
+      },
+      "inputRefs": {},
+      "outputRefs": {
+        "publishState": "READY_TO_PUBLISH"
+      },
+      "blockers": [],
+      "warnings": [
+        "Re-running blocked pre-publish validation on resume",
+        "stopAfterApproval: workflow will not publish automatically"
+      ],
+      "startedAt": "2026-08-16T06:20:27.232Z",
+      "completedAt": "2026-08-16T06:20:27.649Z",
+      "revisionAttempts": 0
+    }
+  ],
+  "history": [
+    {
+      "at": "2026-08-16T06:17:20.918Z",
+      "event": "workflow_created",
+      "message": "Created software-onboarding-content:v1.0.0"
+    },
+    {
+      "at": "2026-08-16T06:17:20.919Z",
+      "event": "workflow_started",
+      "message": "Workflow execution started"
+    },
+    {
+      "at": "2026-08-16T06:17:20.920Z",
+      "event": "workflow_step_started",
+      "stepId": "software-onboarding",
+      "message": "Started Software onboarding"
+    },
+    {
+      "at": "2026-08-16T06:17:20.972Z",
+      "event": "workflow_step_completed",
+      "stepId": "software-onboarding",
+      "message": "Reused onboarding run onboard-cloze-1786859683951 (review-required)"
+    },
+    {
+      "at": "2026-08-16T06:17:20.973Z",
+      "event": "workflow_step_started",
+      "stepId": "content-plan",
+      "message": "Started Content plan"
+    },
+    {
+      "at": "2026-08-16T06:17:21.029Z",
+      "event": "workflow_step_completed",
+      "stepId": "content-plan",
+      "message": "Content plan from onboarding onboard-cloze-1786859683951 (9 candidates)"
+    },
+    {
+      "at": "2026-08-16T06:17:21.030Z",
+      "event": "workflow_step_started",
+      "stepId": "software-review",
+      "message": "Started Software Review"
+    },
+    {
+      "at": "2026-08-16T06:17:21.137Z",
+      "event": "workflow_step_completed",
+      "stepId": "software-review",
+      "message": "Agent software-review-agent → draft draft-deterministic-v1-software-review-agent-cloze-2026-08-16T06-17-21-114Z (qa=pass)"
+    },
+    {
+      "at": "2026-08-16T06:17:21.138Z",
+      "event": "workflow_step_started",
+      "stepId": "alternatives",
+      "message": "Started Alternatives"
+    },
+    {
+      "at": "2026-08-16T06:17:21.172Z",
+      "event": "workflow_step_completed",
+      "stepId": "alternatives",
+      "message": "Agent alternatives-agent → draft draft-deterministic-v1-alternatives-agent-cloze-2026-08-16T06-17-21-162Z (qa=pass)"
+    },
+    {
+      "at": "2026-08-16T06:17:21.173Z",
+      "event": "workflow_step_started",
+      "stepId": "comparison:capsule-vs-cloze",
+      "message": "Started Comparison capsule-vs-cloze"
+    },
+    {
+      "at": "2026-08-16T06:17:21.204Z",
+      "event": "workflow_step_completed",
+      "stepId": "comparison:capsule-vs-cloze",
+      "message": "Agent comparison-agent → draft draft-deterministic-v1-comparison-agent-capsule-vs-cloze-2026-08-16T06-17-21-201Z (qa=pass)"
+    },
+    {
+      "at": "2026-08-16T06:17:21.205Z",
+      "event": "workflow_step_started",
+      "stepId": "comparison:cloze-vs-hubspot",
+      "message": "Started Comparison cloze-vs-hubspot"
+    },
+    {
+      "at": "2026-08-16T06:17:21.228Z",
+      "event": "workflow_step_completed",
+      "stepId": "comparison:cloze-vs-hubspot",
+      "message": "Agent comparison-agent → draft draft-deterministic-v1-comparison-agent-cloze-vs-hubspot-2026-08-16T06-17-21-215Z (qa=pass)"
+    },
+    {
+      "at": "2026-08-16T06:17:21.230Z",
+      "event": "workflow_step_started",
+      "stepId": "comparison:cloze-vs-nimble",
+      "message": "Started Comparison cloze-vs-nimble"
+    },
+    {
+      "at": "2026-08-16T06:17:21.246Z",
+      "event": "workflow_step_completed",
+      "stepId": "comparison:cloze-vs-nimble",
+      "message": "Agent comparison-agent → draft draft-deterministic-v1-comparison-agent-cloze-vs-nimble-2026-08-16T06-17-21-242Z (qa=pass)"
+    },
+    {
+      "at": "2026-08-16T06:17:21.247Z",
+      "event": "workflow_step_started",
+      "stepId": "pricing-page",
+      "message": "Started Pricing Page"
+    },
+    {
+      "at": "2026-08-16T06:17:21.262Z",
+      "event": "workflow_step_completed",
+      "stepId": "pricing-page",
+      "message": "Agent pricing-page-agent → draft draft-deterministic-v1-pricing-page-agent-cloze-2026-08-16T06-17-21-255Z (qa=pass)"
+    },
+    {
+      "at": "2026-08-16T06:17:21.263Z",
+      "event": "workflow_step_started",
+      "stepId": "finder-readiness",
+      "message": "Started Finder readiness"
+    },
+    {
+      "at": "2026-08-16T06:17:21.265Z",
+      "event": "workflow_step_completed",
+      "stepId": "finder-readiness",
+      "message": "Finder readiness noted for cloze"
+    },
+    {
+      "at": "2026-08-16T06:17:21.270Z",
+      "event": "workflow_step_started",
+      "stepId": "internal-links",
+      "message": "Started Internal Link Plan"
+    },
+    {
+      "at": "2026-08-16T06:17:21.294Z",
+      "event": "workflow_step_completed",
+      "stepId": "internal-links",
+      "message": "Agent internal-link-agent → draft draft-deterministic-v1-internal-link-agent-cloze-2026-08-16T06-17-21-288Z (qa=pass)"
+    },
+    {
+      "at": "2026-08-16T06:17:21.296Z",
+      "event": "workflow_step_started",
+      "stepId": "editorial-approval",
+      "message": "Started Editorial approval"
+    },
+    {
+      "at": "2026-08-16T06:17:21.396Z",
+      "event": "workflow_step_completed",
+      "stepId": "editorial-approval",
+      "message": "WAITING FOR EDITORIAL APPROVAL (appr-wf-software-onboarding-content-cloze-1786861040455-software-review)"
+    },
+    {
+      "at": "2026-08-16T06:19:15.723Z",
+      "event": "workflow_resumed",
+      "message": "Workflow resumed"
+    },
+    {
+      "at": "2026-08-16T06:19:15.724Z",
+      "event": "workflow_started",
+      "message": "Workflow execution started"
+    },
+    {
+      "at": "2026-08-16T06:19:15.725Z",
+      "event": "workflow_step_started",
+      "stepId": "editorial-approval",
+      "message": "Started Editorial approval"
+    },
+    {
+      "at": "2026-08-16T06:19:15.783Z",
+      "event": "workflow_step_completed",
+      "stepId": "editorial-approval",
+      "message": "Required editorial approvals satisfied"
+    },
+    {
+      "at": "2026-08-16T06:19:15.785Z",
+      "event": "workflow_step_started",
+      "stepId": "pre-publish-validation",
+      "message": "Started Pre-publish validation"
+    },
+    {
+      "at": "2026-08-16T06:19:16.240Z",
+      "event": "workflow_step_completed",
+      "stepId": "pre-publish-validation",
+      "message": "Pre-publish validation blocked: Stale context for comparison:cloze-vs-hubspot: removed-critical-fact:fact-hubspot-pricing.hasFreePlan; removed-critical-fact:fact-hubspot-pricing.hasFreeTrial; removed-critical-fact:fact-hubspot-pricing.startingPriceMonthly; removed-critical-fact:fact-hubspot-pricing.currency; removed-critical-fact:fact-hubspot-pricing.model; removed-critical-fact:fact-hubspot-pricing.plans.free; removed-critical-fact:fact-hubspot-pricing.plans.starter; removed-critical-fact:fact-hubspot-pricing.plans.professional; removed-critical-fact:fact-hubspot-pricing.plans.enterprise; removed-critical-fact:fact-hubspot-pricing.sales-hub.ladder; removed-critical-fact:fact-hubspot-pricing.billing-notes; removed-critical-fact:fact-hubspot-pricing.sales-hub.professional.catalog; removed-critical-fact:fact-hubspot-pricing.sales-hub.professional.marketing; removed-critical-fact:fact-hubspot-pricing.smart-crm.starter.catalog; Stale context for comparison:capsule-vs-cloze: removed-critical-fact:fact-capsule-pricing.hasFreePlan; removed-critical-fact:fact-capsule-pricing.hasFreeTrial; removed-critical-fact:fact-capsule-pricing.startingPriceMonthly; removed-critical-fact:fact-capsule-pricing.currency; removed-critical-fact:fact-capsule-pricing.model; removed-critical-fact:fact-capsule-pricing.plans.free; removed-critical-fact:fact-capsule-pricing.plans.starter; removed-critical-fact:fact-capsule-pricing.plans.growth; removed-critical-fact:fact-capsule-pricing.plans.advanced; removed-critical-fact:fact-capsule-pricing.plans.ultimate; Stale context for comparison:cloze-vs-nimble: removed-critical-fact:fact-nimble-pricing.hasFreePlan; removed-critical-fact:fact-nimble-pricing.hasFreeTrial; removed-critical-fact:fact-nimble-pricing.currency; removed-critical-fact:fact-nimble-pricing.model; removed-critical-fact:fact-nimble-pricing.startingPriceMonthly; removed-critical-fact:fact-nimble-pricing.plans.business"
+    },
+    {
+      "at": "2026-08-16T06:20:27.231Z",
+      "event": "workflow_resumed",
+      "message": "Workflow resumed"
+    },
+    {
+      "at": "2026-08-16T06:20:27.231Z",
+      "event": "workflow_started",
+      "message": "Workflow execution started"
+    },
+    {
+      "at": "2026-08-16T06:20:27.232Z",
+      "event": "workflow_step_started",
+      "stepId": "pre-publish-validation",
+      "message": "Started Pre-publish validation"
+    },
+    {
+      "at": "2026-08-16T06:20:27.649Z",
+      "event": "workflow_step_completed",
+      "stepId": "pre-publish-validation",
+      "message": "Pre-publish validation passed — READY TO PUBLISH (manual)"
+    },
+    {
+      "at": "2026-08-16T06:20:27.651Z",
+      "event": "workflow_completed",
+      "message": "Workflow completed"
+    }
+  ],
+  "options": {
+    "generateReview": true,
+    "generatePricing": true,
+    "generateAlternatives": true,
+    "generateComparisons": true,
+    "runInternalLinks": true,
+    "stopAfterApproval": true,
+    "allowNormalizedFacts": false,
+    "dryRun": false,
+    "maxComparisons": 3,
+    "skipOnboarding": false
+  },
+  "warnings": [],
+  "createdAt": "2026-08-16T06:17:20.917Z",
+  "updatedAt": "2026-08-16T06:20:27.651Z"
+}

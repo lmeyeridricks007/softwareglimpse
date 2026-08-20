@@ -1,0 +1,165 @@
+{
+  "id": "assessment-grafana-cloud-it-v1",
+  "productSlug": "grafana-cloud",
+  "methodologySlug": "it-development-editorial",
+  "methodologyVersion": "1.0.0",
+  "status": "approved",
+  "verdict": "Grafana Cloud: Choose Grafana Cloud when managed Grafana/LGTM telemetry is the job — not Datadog host modules and not ITSM. Scores use the IT & Development editorial methodology from first-party research as of 2026-08-18 — not hands-on product testing.",
+  "strengths": [
+    "Generous Free tier",
+    "OSS-aligned stack",
+    "Pro usage transparency",
+    "Dashboards as the centre of gravity",
+    "Enterprise path"
+  ],
+  "weaknesses": [
+    "Many usage line items",
+    "Shorter Free retention",
+    "AI not a lead feature",
+    "Not ITSM/git",
+    "Enterprise is a spend commit"
+  ],
+  "bestFor": [
+    "Teams already fluent in Grafana/Prometheus",
+    "Startups that fit in the Free telemetry caps",
+    "Platform teams that want Mimir/Loki without operating it"
+  ],
+  "notIdealFor": [
+    "Buyers who want Datadog-style host SKUs and a single APM vendor UX",
+    "ITSM desks (Freshservice)",
+    "On-call-only (PagerDuty)"
+  ],
+  "tradeoffs": [
+    "Per-agent vs per-host vs per-seat vs per-GB pricing models",
+    "Module stacking and consumption overages vs single-SKU floors",
+    "Free tiers vs enterprise SSO/audit gates",
+    "Landscape-adjacent tools vs primary job-cluster peers on best pages"
+  ],
+  "recommendation": "Choose Grafana Cloud when managed Grafana/LGTM telemetry is the job — not Datadog host modules and not ITSM. Compare Datadog or New Relic for all-in-one APM suites; PagerDuty for paging.",
+  "editorialNotes": "IT Priority-2 batch. Approved on it-development-editorial v1.0.0. membershipRole=primary. jobCluster=observability-monitoring. handsOnTesting=false. Affiliate economics excluded.",
+  "handsOnTesting": false,
+  "confidence": "medium",
+  "criterionAssessments": [
+    {
+      "criterionSlug": "ease-of-use",
+      "score": 7,
+      "rationale": "Grafana UX is familiar to OSS users; Cloud usage meters still need FinOps attention.",
+      "supportingFactIds": [
+        "fact-grafana-cloud-features.infrastructure-monitoring",
+        "fact-grafana-cloud-pricing.model"
+      ],
+      "confidence": "medium",
+      "status": "approved",
+      "reviewedAt": "2026-08-18T12:00:00.000Z",
+      "reviewer": "editorial"
+    },
+    {
+      "criterionSlug": "it-job-fit",
+      "score": 8,
+      "rationale": "Managed observability — cluster peer of Datadog/New Relic, not PagerDuty-only on-call.",
+      "supportingFactIds": [
+        "fact-grafana-cloud-features.infrastructure-monitoring",
+        "fact-grafana-cloud-pricing.model"
+      ],
+      "confidence": "medium",
+      "status": "approved",
+      "reviewedAt": "2026-08-18T12:00:00.000Z",
+      "reviewer": "editorial"
+    },
+    {
+      "criterionSlug": "workflow-depth",
+      "score": 8,
+      "rationale": "Metrics/logs/traces/profiles + dashboards are deep; less ‘single vendor APM suite’ than New Relic.",
+      "supportingFactIds": [
+        "fact-grafana-cloud-features.apm-tracing",
+        "fact-grafana-cloud-pricing.model"
+      ],
+      "confidence": "medium",
+      "status": "approved",
+      "reviewedAt": "2026-08-18T12:00:00.000Z",
+      "reviewer": "editorial"
+    },
+    {
+      "criterionSlug": "integrations",
+      "score": 8,
+      "rationale": "Huge data-source ecosystem; Cloud is the hosted version of that.",
+      "supportingFactIds": [
+        "fact-grafana-cloud-features.analytics-reporting",
+        "fact-grafana-cloud-pricing.model",
+        "fact-grafana-cloud-positioning.vendorClaim"
+      ],
+      "confidence": "medium",
+      "status": "approved",
+      "reviewedAt": "2026-08-18T12:00:00.000Z",
+      "reviewer": "editorial"
+    },
+    {
+      "criterionSlug": "admin-security",
+      "score": 7,
+      "rationale": "Enterprise SKU carries SAML/audit; Pro is usage-grade.",
+      "supportingFactIds": [
+        "fact-grafana-cloud-features.enterprise-security",
+        "fact-grafana-cloud-pricing.model"
+      ],
+      "confidence": "medium",
+      "status": "approved",
+      "reviewedAt": "2026-08-18T12:00:00.000Z",
+      "reviewer": "editorial"
+    },
+    {
+      "criterionSlug": "scalability",
+      "score": 8,
+      "rationale": "Usage pricing scales; Enterprise commit for large estates.",
+      "supportingFactIds": [
+        "fact-grafana-cloud-pricing.plans.free",
+        "fact-grafana-cloud-pricing.model",
+        "fact-grafana-cloud-pricing.plans.enterprise"
+      ],
+      "confidence": "medium",
+      "status": "approved",
+      "reviewedAt": "2026-08-18T12:00:00.000Z",
+      "reviewer": "editorial"
+    },
+    {
+      "criterionSlug": "value-for-money",
+      "score": 8,
+      "rationale": "Best Free telemetry cap in this wave; Pro is honest usage. Affiliate economics excluded.",
+      "supportingFactIds": [
+        "fact-grafana-cloud-pricing.hasFreePlan",
+        "fact-grafana-cloud-pricing.model",
+        "fact-grafana-cloud-pricing.startingPriceMonthly"
+      ],
+      "confidence": "medium",
+      "status": "approved",
+      "reviewedAt": "2026-08-18T12:00:00.000Z",
+      "reviewer": "editorial"
+    },
+    {
+      "criterionSlug": "ai-capabilities",
+      "score": 6,
+      "rationale": "AI is not the Grafana Cloud buying reason vs dashboards and telemetry.",
+      "supportingFactIds": [
+        "fact-grafana-cloud-features.itsm-ai",
+        "fact-grafana-cloud-pricing.model"
+      ],
+      "confidence": "medium",
+      "status": "approved",
+      "reviewedAt": "2026-08-18T12:00:00.000Z",
+      "reviewer": "editorial"
+    }
+  ],
+  "overallScore": 7.5,
+  "overallScoreRationale": "Weighted average of the eight IT editorial criteria using category weights (IT job fit 16, workflow depth 14, ease of use 12, integrations 12, admin/security 12, value 12, AI 12, scalability 10), rounded to 1 decimal. Products are scored inside their job cluster — ITSM, observability, source control, hosting panels, and web-data platforms are not forced into one undifferentiated ranking. Not a hands-on lab score, and affiliate economics are excluded.",
+  "scoreAudit": [
+    {
+      "at": "2026-08-18T12:00:00.000Z",
+      "actor": "editorial",
+      "change": "IT Priority-2 onboarding; approved IT criteria with category weights; handsOnTesting=false",
+      "nextOverall": 7.5
+    }
+  ],
+  "reviewedAt": "2026-08-18T12:00:00.000Z",
+  "reviewer": "editorial",
+  "createdAt": "2026-08-18T12:00:00.000Z",
+  "updatedAt": "2026-08-18T12:00:00.000Z"
+}

@@ -1,0 +1,735 @@
+{
+  "id": "wf-software-onboarding-content-socialbee-1786971047807",
+  "workflowId": "software-onboarding-content",
+  "workflowVersion": "1.0.0",
+  "name": "Software Onboarding Content: socialbee",
+  "targetType": "software",
+  "targetId": "socialbee",
+  "status": "cancelled",
+  "steps": [
+    {
+      "id": "software-onboarding",
+      "definitionStepId": "software-onboarding",
+      "handler": "software-onboarding",
+      "label": "Software onboarding",
+      "status": "completed",
+      "required": true,
+      "failurePolicy": "block-workflow",
+      "attempt": 1,
+      "maxAttempts": 2,
+      "dependsOn": [],
+      "priority": "critical",
+      "config": {
+        "maxAutomaticRevisions": 1,
+        "expandFromContentPlan": false,
+        "expandKind": "none",
+        "stopAfterApproval": true,
+        "allowNormalizedFacts": false,
+        "optionalWhenBlocked": false,
+        "forceTransientFailOnce": false
+      },
+      "inputRefs": {},
+      "outputRefs": {
+        "softwareOnboardingRunId": "onboard-socialbee-1786970813624"
+      },
+      "blockers": [],
+      "warnings": [],
+      "startedAt": "2026-08-17T12:50:48.262Z",
+      "completedAt": "2026-08-17T12:50:48.302Z",
+      "revisionAttempts": 0
+    },
+    {
+      "id": "content-plan",
+      "definitionStepId": "content-plan",
+      "handler": "content-plan",
+      "label": "Content plan",
+      "status": "completed",
+      "required": true,
+      "failurePolicy": "block-workflow",
+      "attempt": 1,
+      "maxAttempts": 2,
+      "dependsOn": [
+        "software-onboarding"
+      ],
+      "priority": "high",
+      "config": {
+        "maxAutomaticRevisions": 1,
+        "expandFromContentPlan": false,
+        "expandKind": "none",
+        "stopAfterApproval": true,
+        "allowNormalizedFacts": false,
+        "optionalWhenBlocked": false,
+        "forceTransientFailOnce": false
+      },
+      "inputRefs": {},
+      "outputRefs": {
+        "softwareOnboardingRunId": "onboard-socialbee-1786970813624",
+        "comparisonTargets": "buffer-vs-socialbee,hootsuite-vs-socialbee,later-vs-socialbee",
+        "pageCandidateCount": "9"
+      },
+      "blockers": [],
+      "warnings": [],
+      "startedAt": "2026-08-17T12:50:48.304Z",
+      "completedAt": "2026-08-17T12:50:48.345Z",
+      "revisionAttempts": 0
+    },
+    {
+      "id": "software-review",
+      "definitionStepId": "software-review",
+      "handler": "agent-run",
+      "label": "Software Review",
+      "status": "completed",
+      "required": true,
+      "failurePolicy": "block-workflow",
+      "attempt": 1,
+      "maxAttempts": 2,
+      "dependsOn": [
+        "content-plan"
+      ],
+      "priority": "high",
+      "config": {
+        "agentId": "software-review-agent",
+        "targetSlug": "socialbee",
+        "maxAutomaticRevisions": 1,
+        "expandFromContentPlan": false,
+        "expandKind": "none",
+        "stopAfterApproval": true,
+        "allowNormalizedFacts": false,
+        "optionalWhenBlocked": false,
+        "forceTransientFailOnce": false
+      },
+      "inputRefs": {},
+      "outputRefs": {
+        "draftId": "draft-deterministic-v1-software-review-agent-socialbee-2026-08-17T12-50-48-386Z",
+        "qaStatus": "pass",
+        "agentId": "software-review-agent",
+        "target": "socialbee"
+      },
+      "inputSnapshot": {
+        "researchFactIds": [
+          "fact-socialbee-identity.shortDescription",
+          "fact-socialbee-positioning.vendorClaim",
+          "fact-socialbee-pricing.model",
+          "fact-socialbee-pricing.hasFreePlan",
+          "fact-socialbee-pricing.hasFreeTrial",
+          "fact-socialbee-pricing.startingPriceMonthly",
+          "fact-socialbee-pricing.plans.bootstrap",
+          "fact-socialbee-pricing.plans.accelerate",
+          "fact-socialbee-pricing.plans.pro",
+          "fact-socialbee-pricing.plans.pro50",
+          "fact-socialbee-pricing.plans.pro100",
+          "fact-socialbee-pricing.plans.pro150",
+          "fact-socialbee-features.social-scheduling",
+          "fact-socialbee-features.content-calendar",
+          "fact-socialbee-features.social-listening",
+          "fact-socialbee-features.funnel-builder",
+          "fact-socialbee-features.landing-pages",
+          "fact-socialbee-features.marketing-automation",
+          "fact-socialbee-features.forms-lead-capture",
+          "fact-socialbee-features.analytics",
+          "fact-socialbee-features.ads-management",
+          "fact-socialbee-features.reputation-reviews",
+          "fact-socialbee-features.webinars",
+          "fact-socialbee-features.email-sms-channels",
+          "fact-socialbee-features.team-collaboration",
+          "fact-socialbee-features.ai-content-generation"
+        ],
+        "methodologySlug": "marketing-editorial",
+        "methodologyVersion": "1.0.0",
+        "agentVersion": "1.0.0",
+        "contextBuiltAt": "2026-08-17T12:50:48.380Z"
+      },
+      "blockers": [],
+      "warnings": [],
+      "agentTaskId": "exec-software-review-agent-socialbee-1786971048347",
+      "draftId": "draft-deterministic-v1-software-review-agent-socialbee-2026-08-17T12-50-48-386Z",
+      "startedAt": "2026-08-17T12:50:48.346Z",
+      "completedAt": "2026-08-17T12:50:48.395Z",
+      "revisionAttempts": 0
+    },
+    {
+      "id": "pricing-page",
+      "definitionStepId": "pricing-page",
+      "handler": "agent-run",
+      "label": "Pricing Page",
+      "status": "completed-with-warning",
+      "required": false,
+      "failurePolicy": "continue-with-warning",
+      "attempt": 1,
+      "maxAttempts": 2,
+      "dependsOn": [
+        "content-plan"
+      ],
+      "priority": "normal",
+      "config": {
+        "agentId": "pricing-page-agent",
+        "targetSlug": "socialbee",
+        "maxAutomaticRevisions": 1,
+        "expandFromContentPlan": false,
+        "expandKind": "none",
+        "stopAfterApproval": true,
+        "allowNormalizedFacts": false,
+        "optionalWhenBlocked": true,
+        "forceTransientFailOnce": false
+      },
+      "inputRefs": {},
+      "outputRefs": {
+        "draftId": "draft-deterministic-v1-pricing-page-agent-socialbee-2026-08-17T12-50-48-435Z-rev-1786971048442",
+        "qaStatus": "fail"
+      },
+      "blockers": [],
+      "warnings": [
+        "QA still failing after revision: UNVERIFIED_NUMBER,UNVERIFIED_NUMBER,UNVERIFIED_NUMBER",
+        "Optional review-required demoted on resume — required path continues"
+      ],
+      "agentTaskId": "exec-pricing-page-agent-socialbee-1786971048429",
+      "draftId": "draft-deterministic-v1-pricing-page-agent-socialbee-2026-08-17T12-50-48-435Z-rev-1786971048442",
+      "startedAt": "2026-08-17T12:50:48.429Z",
+      "completedAt": "2026-08-17T12:50:48.444Z",
+      "revisionAttempts": 1
+    },
+    {
+      "id": "alternatives",
+      "definitionStepId": "alternatives",
+      "handler": "agent-run",
+      "label": "Alternatives",
+      "status": "completed",
+      "required": false,
+      "failurePolicy": "continue-with-warning",
+      "attempt": 1,
+      "maxAttempts": 2,
+      "dependsOn": [
+        "content-plan"
+      ],
+      "priority": "normal",
+      "config": {
+        "agentId": "alternatives-agent",
+        "targetSlug": "socialbee",
+        "maxAutomaticRevisions": 1,
+        "expandFromContentPlan": false,
+        "expandKind": "none",
+        "stopAfterApproval": true,
+        "allowNormalizedFacts": false,
+        "optionalWhenBlocked": true,
+        "forceTransientFailOnce": false
+      },
+      "inputRefs": {},
+      "outputRefs": {
+        "draftId": "draft-deterministic-v1-alternatives-agent-socialbee-2026-08-17T12-50-48-402Z",
+        "qaStatus": "pass",
+        "agentId": "alternatives-agent",
+        "target": "socialbee"
+      },
+      "inputSnapshot": {
+        "researchFactIds": [
+          "fact-socialbee-identity.shortDescription",
+          "fact-socialbee-positioning.vendorClaim",
+          "fact-socialbee-pricing.model",
+          "fact-socialbee-pricing.hasFreePlan",
+          "fact-socialbee-pricing.hasFreeTrial",
+          "fact-socialbee-pricing.startingPriceMonthly",
+          "fact-socialbee-pricing.plans.bootstrap",
+          "fact-socialbee-pricing.plans.accelerate",
+          "fact-socialbee-pricing.plans.pro",
+          "fact-socialbee-pricing.plans.pro50",
+          "fact-socialbee-pricing.plans.pro100",
+          "fact-socialbee-pricing.plans.pro150",
+          "fact-socialbee-features.social-scheduling",
+          "fact-socialbee-features.content-calendar",
+          "fact-socialbee-features.social-listening",
+          "fact-socialbee-features.funnel-builder",
+          "fact-socialbee-features.landing-pages",
+          "fact-socialbee-features.marketing-automation",
+          "fact-socialbee-features.forms-lead-capture",
+          "fact-socialbee-features.analytics",
+          "fact-socialbee-features.ads-management",
+          "fact-socialbee-features.reputation-reviews",
+          "fact-socialbee-features.webinars",
+          "fact-socialbee-features.email-sms-channels",
+          "fact-socialbee-features.team-collaboration",
+          "fact-socialbee-features.ai-content-generation"
+        ],
+        "methodologySlug": "marketing-editorial",
+        "methodologyVersion": "1.0.0",
+        "agentVersion": "1.0.0",
+        "contextBuiltAt": "2026-08-17T12:50:48.401Z"
+      },
+      "blockers": [],
+      "warnings": [],
+      "agentTaskId": "exec-alternatives-agent-socialbee-1786971048397",
+      "draftId": "draft-deterministic-v1-alternatives-agent-socialbee-2026-08-17T12-50-48-402Z",
+      "startedAt": "2026-08-17T12:50:48.396Z",
+      "completedAt": "2026-08-17T12:50:48.404Z",
+      "revisionAttempts": 0
+    },
+    {
+      "id": "comparison:buffer-vs-socialbee",
+      "definitionStepId": "comparisons",
+      "handler": "agent-run",
+      "label": "Comparison buffer-vs-socialbee",
+      "status": "cancelled",
+      "required": false,
+      "failurePolicy": "continue-with-warning",
+      "attempt": 1,
+      "maxAttempts": 2,
+      "dependsOn": [
+        "content-plan"
+      ],
+      "priority": "normal",
+      "config": {
+        "agentId": "comparison-agent",
+        "targetSlug": "buffer-vs-socialbee",
+        "maxAutomaticRevisions": 1,
+        "expandFromContentPlan": true,
+        "expandKind": "comparisons",
+        "stopAfterApproval": true,
+        "allowNormalizedFacts": false,
+        "optionalWhenBlocked": true,
+        "forceTransientFailOnce": false
+      },
+      "expansionKey": "buffer-vs-socialbee",
+      "inputRefs": {},
+      "outputRefs": {},
+      "blockers": [
+        "RELATIONSHIP_UNAPPROVED: Approved comparable relationship required"
+      ],
+      "warnings": [
+        "RELATIONSHIP_UNAPPROVED: Approved comparable relationship required"
+      ],
+      "startedAt": "2026-08-17T12:50:48.405Z",
+      "completedAt": "2026-08-17T12:50:48.413Z",
+      "revisionAttempts": 0
+    },
+    {
+      "id": "comparison:hootsuite-vs-socialbee",
+      "definitionStepId": "comparisons",
+      "handler": "agent-run",
+      "label": "Comparison hootsuite-vs-socialbee",
+      "status": "cancelled",
+      "required": false,
+      "failurePolicy": "continue-with-warning",
+      "attempt": 1,
+      "maxAttempts": 2,
+      "dependsOn": [
+        "content-plan"
+      ],
+      "priority": "normal",
+      "config": {
+        "agentId": "comparison-agent",
+        "targetSlug": "hootsuite-vs-socialbee",
+        "maxAutomaticRevisions": 1,
+        "expandFromContentPlan": true,
+        "expandKind": "comparisons",
+        "stopAfterApproval": true,
+        "allowNormalizedFacts": false,
+        "optionalWhenBlocked": true,
+        "forceTransientFailOnce": false
+      },
+      "expansionKey": "hootsuite-vs-socialbee",
+      "inputRefs": {},
+      "outputRefs": {},
+      "blockers": [
+        "RELATIONSHIP_UNAPPROVED: Approved comparable relationship required"
+      ],
+      "warnings": [
+        "RELATIONSHIP_UNAPPROVED: Approved comparable relationship required"
+      ],
+      "startedAt": "2026-08-17T12:50:48.414Z",
+      "completedAt": "2026-08-17T12:50:48.420Z",
+      "revisionAttempts": 0
+    },
+    {
+      "id": "comparison:later-vs-socialbee",
+      "definitionStepId": "comparisons",
+      "handler": "agent-run",
+      "label": "Comparison later-vs-socialbee",
+      "status": "cancelled",
+      "required": false,
+      "failurePolicy": "continue-with-warning",
+      "attempt": 1,
+      "maxAttempts": 2,
+      "dependsOn": [
+        "content-plan"
+      ],
+      "priority": "normal",
+      "config": {
+        "agentId": "comparison-agent",
+        "targetSlug": "later-vs-socialbee",
+        "maxAutomaticRevisions": 1,
+        "expandFromContentPlan": true,
+        "expandKind": "comparisons",
+        "stopAfterApproval": true,
+        "allowNormalizedFacts": false,
+        "optionalWhenBlocked": true,
+        "forceTransientFailOnce": false
+      },
+      "expansionKey": "later-vs-socialbee",
+      "inputRefs": {},
+      "outputRefs": {},
+      "blockers": [
+        "RELATIONSHIP_UNAPPROVED: Approved comparable relationship required"
+      ],
+      "warnings": [
+        "RELATIONSHIP_UNAPPROVED: Approved comparable relationship required"
+      ],
+      "startedAt": "2026-08-17T12:50:48.422Z",
+      "completedAt": "2026-08-17T12:50:48.428Z",
+      "revisionAttempts": 0
+    },
+    {
+      "id": "internal-links",
+      "definitionStepId": "internal-links",
+      "handler": "internal-link",
+      "label": "Internal Link Plan",
+      "status": "completed",
+      "required": false,
+      "failurePolicy": "continue-with-warning",
+      "attempt": 1,
+      "maxAttempts": 2,
+      "dependsOn": [
+        "software-review"
+      ],
+      "priority": "low",
+      "config": {
+        "agentId": "internal-link-agent",
+        "maxAutomaticRevisions": 1,
+        "expandFromContentPlan": false,
+        "expandKind": "none",
+        "stopAfterApproval": true,
+        "allowNormalizedFacts": false,
+        "optionalWhenBlocked": false,
+        "forceTransientFailOnce": false
+      },
+      "inputRefs": {},
+      "outputRefs": {
+        "draftId": "draft-deterministic-v1-internal-link-agent-socialbee-2026-08-18T08-49-50-933Z",
+        "qaStatus": "pass",
+        "agentId": "internal-link-agent",
+        "target": "socialbee"
+      },
+      "inputSnapshot": {
+        "researchFactIds": [
+          "fact-socialbee-identity.shortDescription",
+          "fact-socialbee-positioning.vendorClaim",
+          "fact-socialbee-pricing.model",
+          "fact-socialbee-pricing.hasFreePlan",
+          "fact-socialbee-pricing.hasFreeTrial",
+          "fact-socialbee-pricing.startingPriceMonthly",
+          "fact-socialbee-pricing.plans.bootstrap",
+          "fact-socialbee-pricing.plans.accelerate",
+          "fact-socialbee-pricing.plans.pro",
+          "fact-socialbee-pricing.plans.pro50",
+          "fact-socialbee-pricing.plans.pro100",
+          "fact-socialbee-pricing.plans.pro150",
+          "fact-socialbee-features.social-scheduling",
+          "fact-socialbee-features.content-calendar",
+          "fact-socialbee-features.social-listening",
+          "fact-socialbee-features.funnel-builder",
+          "fact-socialbee-features.landing-pages",
+          "fact-socialbee-features.marketing-automation",
+          "fact-socialbee-features.forms-lead-capture",
+          "fact-socialbee-features.analytics",
+          "fact-socialbee-features.ads-management",
+          "fact-socialbee-features.reputation-reviews",
+          "fact-socialbee-features.webinars",
+          "fact-socialbee-features.email-sms-channels",
+          "fact-socialbee-features.team-collaboration",
+          "fact-socialbee-features.ai-content-generation"
+        ],
+        "methodologySlug": "marketing-editorial",
+        "methodologyVersion": "1.0.0",
+        "agentVersion": "1.0.0",
+        "contextBuiltAt": "2026-08-18T08:49:50.932Z"
+      },
+      "blockers": [],
+      "warnings": [],
+      "agentTaskId": "exec-internal-link-agent-socialbee-1787042990924",
+      "draftId": "draft-deterministic-v1-internal-link-agent-socialbee-2026-08-18T08-49-50-933Z",
+      "startedAt": "2026-08-18T08:49:50.924Z",
+      "completedAt": "2026-08-18T08:49:50.935Z",
+      "revisionAttempts": 0
+    },
+    {
+      "id": "finder-readiness",
+      "definitionStepId": "finder-readiness",
+      "handler": "update-recommendation-readiness",
+      "label": "Finder readiness",
+      "status": "completed",
+      "required": false,
+      "failurePolicy": "continue",
+      "attempt": 1,
+      "maxAttempts": 2,
+      "dependsOn": [
+        "content-plan"
+      ],
+      "priority": "low",
+      "config": {
+        "maxAutomaticRevisions": 1,
+        "expandFromContentPlan": false,
+        "expandKind": "none",
+        "stopAfterApproval": true,
+        "allowNormalizedFacts": false,
+        "optionalWhenBlocked": false,
+        "forceTransientFailOnce": false
+      },
+      "inputRefs": {},
+      "outputRefs": {
+        "finderReadiness": "checked"
+      },
+      "blockers": [],
+      "warnings": [],
+      "startedAt": "2026-08-18T08:49:50.922Z",
+      "completedAt": "2026-08-18T08:49:50.923Z",
+      "revisionAttempts": 0
+    },
+    {
+      "id": "editorial-approval",
+      "definitionStepId": "editorial-approval",
+      "handler": "approval-check",
+      "label": "Editorial approval",
+      "status": "cancelled",
+      "required": true,
+      "failurePolicy": "manual-review",
+      "attempt": 1,
+      "maxAttempts": 2,
+      "dependsOn": [
+        "software-review"
+      ],
+      "priority": "critical",
+      "config": {
+        "approvalType": "editorial",
+        "maxAutomaticRevisions": 1,
+        "expandFromContentPlan": false,
+        "expandKind": "none",
+        "stopAfterApproval": true,
+        "allowNormalizedFacts": false,
+        "optionalWhenBlocked": false,
+        "forceTransientFailOnce": false
+      },
+      "inputRefs": {},
+      "outputRefs": {
+        "approvalId": "appr-wf-software-onboarding-content-socialbee-1786971047807-software-review",
+        "draftId": "draft-deterministic-v1-software-review-agent-socialbee-2026-08-17T12-50-48-386Z"
+      },
+      "blockers": [],
+      "warnings": [],
+      "approvalId": "appr-wf-software-onboarding-content-socialbee-1786971047807-software-review",
+      "startedAt": "2026-08-18T08:49:50.936Z",
+      "completedAt": "2026-08-18T08:49:50.970Z",
+      "revisionAttempts": 0
+    },
+    {
+      "id": "pre-publish-validation",
+      "definitionStepId": "pre-publish-validation",
+      "handler": "pre-publish-validation",
+      "label": "Pre-publish validation",
+      "status": "cancelled",
+      "required": true,
+      "failurePolicy": "block-workflow",
+      "attempt": 0,
+      "maxAttempts": 2,
+      "dependsOn": [
+        "editorial-approval"
+      ],
+      "priority": "critical",
+      "config": {
+        "maxAutomaticRevisions": 1,
+        "expandFromContentPlan": false,
+        "expandKind": "none",
+        "stopAfterApproval": true,
+        "allowNormalizedFacts": false,
+        "optionalWhenBlocked": false,
+        "forceTransientFailOnce": false
+      },
+      "inputRefs": {},
+      "outputRefs": {},
+      "blockers": [],
+      "warnings": [],
+      "revisionAttempts": 0
+    }
+  ],
+  "history": [
+    {
+      "at": "2026-08-17T12:50:48.260Z",
+      "event": "workflow_created",
+      "message": "Created software-onboarding-content:v1.0.0"
+    },
+    {
+      "at": "2026-08-17T12:50:48.261Z",
+      "event": "workflow_started",
+      "message": "Workflow execution started"
+    },
+    {
+      "at": "2026-08-17T12:50:48.262Z",
+      "event": "workflow_step_started",
+      "stepId": "software-onboarding",
+      "message": "Started Software onboarding"
+    },
+    {
+      "at": "2026-08-17T12:50:48.302Z",
+      "event": "workflow_step_completed",
+      "stepId": "software-onboarding",
+      "message": "Reused onboarding run onboard-socialbee-1786970813624 (review-required)"
+    },
+    {
+      "at": "2026-08-17T12:50:48.303Z",
+      "event": "workflow_step_started",
+      "stepId": "content-plan",
+      "message": "Started Content plan"
+    },
+    {
+      "at": "2026-08-17T12:50:48.345Z",
+      "event": "workflow_step_completed",
+      "stepId": "content-plan",
+      "message": "Content plan from onboarding onboard-socialbee-1786970813624 (9 candidates)"
+    },
+    {
+      "at": "2026-08-17T12:50:48.346Z",
+      "event": "workflow_step_started",
+      "stepId": "software-review",
+      "message": "Started Software Review"
+    },
+    {
+      "at": "2026-08-17T12:50:48.395Z",
+      "event": "workflow_step_completed",
+      "stepId": "software-review",
+      "message": "Agent software-review-agent → draft draft-deterministic-v1-software-review-agent-socialbee-2026-08-17T12-50-48-386Z (qa=pass)"
+    },
+    {
+      "at": "2026-08-17T12:50:48.396Z",
+      "event": "workflow_step_started",
+      "stepId": "alternatives",
+      "message": "Started Alternatives"
+    },
+    {
+      "at": "2026-08-17T12:50:48.404Z",
+      "event": "workflow_step_completed",
+      "stepId": "alternatives",
+      "message": "Agent alternatives-agent → draft draft-deterministic-v1-alternatives-agent-socialbee-2026-08-17T12-50-48-402Z (qa=pass)"
+    },
+    {
+      "at": "2026-08-17T12:50:48.405Z",
+      "event": "workflow_step_started",
+      "stepId": "comparison:buffer-vs-socialbee",
+      "message": "Started Comparison buffer-vs-socialbee"
+    },
+    {
+      "at": "2026-08-17T12:50:48.413Z",
+      "event": "workflow_step_completed",
+      "stepId": "comparison:buffer-vs-socialbee",
+      "message": "Agent blocked (optional): RELATIONSHIP_UNAPPROVED: Approved comparable relationship required"
+    },
+    {
+      "at": "2026-08-17T12:50:48.414Z",
+      "event": "workflow_step_started",
+      "stepId": "comparison:hootsuite-vs-socialbee",
+      "message": "Started Comparison hootsuite-vs-socialbee"
+    },
+    {
+      "at": "2026-08-17T12:50:48.420Z",
+      "event": "workflow_step_completed",
+      "stepId": "comparison:hootsuite-vs-socialbee",
+      "message": "Agent blocked (optional): RELATIONSHIP_UNAPPROVED: Approved comparable relationship required"
+    },
+    {
+      "at": "2026-08-17T12:50:48.422Z",
+      "event": "workflow_step_started",
+      "stepId": "comparison:later-vs-socialbee",
+      "message": "Started Comparison later-vs-socialbee"
+    },
+    {
+      "at": "2026-08-17T12:50:48.428Z",
+      "event": "workflow_step_completed",
+      "stepId": "comparison:later-vs-socialbee",
+      "message": "Agent blocked (optional): RELATIONSHIP_UNAPPROVED: Approved comparable relationship required"
+    },
+    {
+      "at": "2026-08-17T12:50:48.428Z",
+      "event": "workflow_step_started",
+      "stepId": "pricing-page",
+      "message": "Started Pricing Page"
+    },
+    {
+      "at": "2026-08-17T12:50:48.444Z",
+      "event": "workflow_step_completed",
+      "stepId": "pricing-page",
+      "message": "QA fail after one automatic revision → review-required"
+    },
+    {
+      "at": "2026-08-18T08:49:50.920Z",
+      "event": "workflow_resumed",
+      "message": "Workflow resumed"
+    },
+    {
+      "at": "2026-08-18T08:49:50.921Z",
+      "event": "workflow_started",
+      "message": "Workflow execution started"
+    },
+    {
+      "at": "2026-08-18T08:49:50.922Z",
+      "event": "workflow_step_started",
+      "stepId": "finder-readiness",
+      "message": "Started Finder readiness"
+    },
+    {
+      "at": "2026-08-18T08:49:50.923Z",
+      "event": "workflow_step_completed",
+      "stepId": "finder-readiness",
+      "message": "Finder readiness noted for socialbee"
+    },
+    {
+      "at": "2026-08-18T08:49:50.924Z",
+      "event": "workflow_step_started",
+      "stepId": "internal-links",
+      "message": "Started Internal Link Plan"
+    },
+    {
+      "at": "2026-08-18T08:49:50.935Z",
+      "event": "workflow_step_completed",
+      "stepId": "internal-links",
+      "message": "Agent internal-link-agent → draft draft-deterministic-v1-internal-link-agent-socialbee-2026-08-18T08-49-50-933Z (qa=pass)"
+    },
+    {
+      "at": "2026-08-18T08:49:50.936Z",
+      "event": "workflow_step_started",
+      "stepId": "editorial-approval",
+      "message": "Started Editorial approval"
+    },
+    {
+      "at": "2026-08-18T08:49:50.970Z",
+      "event": "workflow_step_completed",
+      "stepId": "editorial-approval",
+      "message": "WAITING FOR EDITORIAL APPROVAL (appr-wf-software-onboarding-content-socialbee-1786971047807-software-review)"
+    },
+    {
+      "at": "2026-08-18T08:49:50.971Z",
+      "event": "workflow_blocked",
+      "message": "WAITING FOR EDITORIAL APPROVAL"
+    },
+    {
+      "at": "2026-08-18T13:34:16.199Z",
+      "event": "workflow_cancelled",
+      "message": "Catalogue software page already published; agent drafts remain unpublished"
+    }
+  ],
+  "options": {
+    "generateReview": true,
+    "generatePricing": true,
+    "generateAlternatives": true,
+    "generateComparisons": true,
+    "runInternalLinks": true,
+    "stopAfterApproval": true,
+    "allowNormalizedFacts": false,
+    "dryRun": false,
+    "maxComparisons": 3,
+    "skipOnboarding": false
+  },
+  "cancelReason": "Catalogue software page already published; agent drafts remain unpublished",
+  "warnings": [
+    "comparison:buffer-vs-socialbee blocked: RELATIONSHIP_UNAPPROVED: Approved comparable relationship required",
+    "comparison:hootsuite-vs-socialbee blocked: RELATIONSHIP_UNAPPROVED: Approved comparable relationship required",
+    "comparison:later-vs-socialbee blocked: RELATIONSHIP_UNAPPROVED: Approved comparable relationship required"
+  ],
+  "createdAt": "2026-08-17T12:50:48.259Z",
+  "updatedAt": "2026-08-18T13:34:16.199Z"
+}

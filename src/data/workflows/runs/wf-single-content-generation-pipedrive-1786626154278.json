@@ -1,0 +1,288 @@
+{
+  "id": "wf-single-content-generation-pipedrive-1786626154278",
+  "workflowId": "single-content-generation",
+  "workflowVersion": "1.0.0",
+  "name": "Single Content Generation: pipedrive",
+  "targetType": "content",
+  "targetId": "pipedrive",
+  "status": "completed",
+  "steps": [
+    {
+      "id": "content-readiness",
+      "definitionStepId": "content-readiness",
+      "handler": "noop",
+      "label": "Content readiness",
+      "status": "completed",
+      "required": true,
+      "failurePolicy": "block-workflow",
+      "attempt": 1,
+      "maxAttempts": 2,
+      "dependsOn": [],
+      "priority": "high",
+      "config": {
+        "maxAutomaticRevisions": 1,
+        "expandFromContentPlan": false,
+        "expandKind": "none",
+        "stopAfterApproval": true,
+        "allowNormalizedFacts": false,
+        "optionalWhenBlocked": false,
+        "forceTransientFailOnce": false
+      },
+      "inputRefs": {},
+      "outputRefs": {},
+      "blockers": [],
+      "warnings": [],
+      "startedAt": "2026-08-13T13:02:34.354Z",
+      "completedAt": "2026-08-13T13:02:34.354Z",
+      "revisionAttempts": 0
+    },
+    {
+      "id": "generate",
+      "definitionStepId": "generate",
+      "handler": "agent-run",
+      "label": "Generate content",
+      "status": "completed",
+      "required": true,
+      "failurePolicy": "block-workflow",
+      "attempt": 1,
+      "maxAttempts": 2,
+      "dependsOn": [
+        "content-readiness"
+      ],
+      "priority": "high",
+      "config": {
+        "agentId": "software-review-agent",
+        "targetSlug": "pipedrive",
+        "maxAutomaticRevisions": 1,
+        "expandFromContentPlan": false,
+        "expandKind": "none",
+        "stopAfterApproval": true,
+        "allowNormalizedFacts": false,
+        "optionalWhenBlocked": false,
+        "forceTransientFailOnce": false
+      },
+      "inputRefs": {},
+      "outputRefs": {
+        "draftId": "draft-deterministic-v1-software-review-agent-pipedrive-2026-08-13T13-02-34-359Z",
+        "qaStatus": "pass",
+        "agentId": "software-review-agent",
+        "target": "pipedrive"
+      },
+      "inputSnapshot": {
+        "researchFactIds": [
+          "fact-pipedrive-pricing.plans.essential-pipedrive-pricing-fixture",
+          "fact-pipedrive-pricing.plans.advanced-pipedrive-pricing-fixture",
+          "fact-pipedrive-pricing.plans.professional-pipedrive-pricing-fixture",
+          "fact-pipedrive-pricing.plans.power-pipedrive-pricing-fixture",
+          "fact-pipedrive-pricing.plans.enterprise-pipedrive-pricing-fixture",
+          "fact-pipedrive-pricing.currency-pipedrive-pricing-fixture",
+          "fact-pipedrive-pricing.hasFreeTrial-pipedrive-pricing-fixture",
+          "fact-pipedrive-pricing.hasFreePlan-pipedrive-pricing-fixture",
+          "fact-pipedrive-pricing.model-pipedrive-pricing-fixture",
+          "fact-pipedrive-identity.shortDescription-pipedrive-product-fixture",
+          "fact-pipedrive-positioning.claim-pipedrive-product-fixture",
+          "fact-pipedrive-features.contact-management-pipedrive-product-fixture",
+          "fact-pipedrive-features.lead-management-pipedrive-product-fixture",
+          "fact-pipedrive-features.pipeline-management-pipedrive-product-fixture",
+          "fact-pipedrive-features.deal-management-pipedrive-product-fixture",
+          "fact-pipedrive-features.email-sync-pipedrive-product-fixture",
+          "fact-pipedrive-features.workflow-automation-pipedrive-product-fixture",
+          "fact-pipedrive-features.reporting-pipedrive-product-fixture",
+          "fact-pipedrive-features.forecasting-pipedrive-product-fixture",
+          "fact-pipedrive-features.custom-fields-pipedrive-product-fixture",
+          "fact-pipedrive-features.custom-pipelines-pipedrive-product-fixture",
+          "fact-pipedrive-features.mobile-app-pipedrive-product-fixture",
+          "fact-pipedrive-features.ai-assistance-pipedrive-product-fixture",
+          "fact-pipedrive-ai.email-generation-pipedrive-product-fixture",
+          "fact-pipedrive-ai.assistant-pipedrive-product-fixture",
+          "fact-pipedrive-ai.forecasting-pipedrive-product-fixture",
+          "fact-pipedrive-ai.automation-pipedrive-product-fixture"
+        ],
+        "methodologySlug": "crm-editorial",
+        "methodologyVersion": "1.0.0",
+        "agentVersion": "1.0.0",
+        "contextBuiltAt": "2026-08-13T13:02:34.358Z"
+      },
+      "blockers": [],
+      "warnings": [],
+      "agentTaskId": "exec-software-review-agent-pipedrive-1786626154355",
+      "draftId": "draft-deterministic-v1-software-review-agent-pipedrive-2026-08-13T13-02-34-359Z",
+      "startedAt": "2026-08-13T13:02:34.355Z",
+      "completedAt": "2026-08-13T13:02:34.361Z",
+      "revisionAttempts": 0
+    },
+    {
+      "id": "editorial-approval",
+      "definitionStepId": "editorial-approval",
+      "handler": "approval-check",
+      "label": "Editorial approval",
+      "status": "completed",
+      "required": true,
+      "failurePolicy": "manual-review",
+      "attempt": 2,
+      "maxAttempts": 2,
+      "dependsOn": [
+        "generate"
+      ],
+      "priority": "critical",
+      "config": {
+        "approvalType": "editorial",
+        "maxAutomaticRevisions": 1,
+        "expandFromContentPlan": false,
+        "expandKind": "none",
+        "stopAfterApproval": true,
+        "allowNormalizedFacts": false,
+        "optionalWhenBlocked": false,
+        "forceTransientFailOnce": false
+      },
+      "inputRefs": {},
+      "outputRefs": {
+        "approvalId": "appr-wf-single-content-generation-pipedrive-1786626154278-generate",
+        "draftId": "draft-deterministic-v1-software-review-agent-pipedrive-2026-08-13T13-02-34-359Z",
+        "approvalIds": "appr-wf-single-content-generation-pipedrive-1786626154278-generate"
+      },
+      "blockers": [],
+      "warnings": [
+        "Approval received — resuming"
+      ],
+      "approvalId": "appr-wf-single-content-generation-pipedrive-1786626154278-generate",
+      "startedAt": "2026-08-13T13:02:34.379Z",
+      "completedAt": "2026-08-13T13:02:34.385Z",
+      "revisionAttempts": 0
+    },
+    {
+      "id": "pre-publish-validation",
+      "definitionStepId": "pre-publish-validation",
+      "handler": "pre-publish-validation",
+      "label": "Pre-publish validation",
+      "status": "completed",
+      "required": true,
+      "failurePolicy": "block-workflow",
+      "attempt": 1,
+      "maxAttempts": 2,
+      "dependsOn": [
+        "editorial-approval"
+      ],
+      "priority": "critical",
+      "config": {
+        "maxAutomaticRevisions": 1,
+        "expandFromContentPlan": false,
+        "expandKind": "none",
+        "stopAfterApproval": true,
+        "allowNormalizedFacts": false,
+        "optionalWhenBlocked": false,
+        "forceTransientFailOnce": false
+      },
+      "inputRefs": {},
+      "outputRefs": {
+        "publishState": "READY_TO_PUBLISH"
+      },
+      "blockers": [],
+      "warnings": [
+        "stopAfterApproval: workflow will not publish automatically"
+      ],
+      "startedAt": "2026-08-13T13:02:34.386Z",
+      "completedAt": "2026-08-13T13:02:34.398Z",
+      "revisionAttempts": 0
+    }
+  ],
+  "history": [
+    {
+      "at": "2026-08-13T13:02:34.353Z",
+      "event": "workflow_created",
+      "message": "Created single-content-generation:v1.0.0"
+    },
+    {
+      "at": "2026-08-13T13:02:34.354Z",
+      "event": "workflow_started",
+      "message": "Workflow execution started"
+    },
+    {
+      "at": "2026-08-13T13:02:34.354Z",
+      "event": "workflow_step_started",
+      "stepId": "content-readiness",
+      "message": "Started Content readiness"
+    },
+    {
+      "at": "2026-08-13T13:02:34.354Z",
+      "event": "workflow_step_completed",
+      "stepId": "content-readiness",
+      "message": "No-op step completed"
+    },
+    {
+      "at": "2026-08-13T13:02:34.355Z",
+      "event": "workflow_step_started",
+      "stepId": "generate",
+      "message": "Started Generate content"
+    },
+    {
+      "at": "2026-08-13T13:02:34.361Z",
+      "event": "workflow_step_completed",
+      "stepId": "generate",
+      "message": "Agent software-review-agent → draft draft-deterministic-v1-software-review-agent-pipedrive-2026-08-13T13-02-34-359Z (qa=pass)"
+    },
+    {
+      "at": "2026-08-13T13:02:34.362Z",
+      "event": "workflow_step_started",
+      "stepId": "editorial-approval",
+      "message": "Started Editorial approval"
+    },
+    {
+      "at": "2026-08-13T13:02:34.369Z",
+      "event": "workflow_step_completed",
+      "stepId": "editorial-approval",
+      "message": "WAITING FOR EDITORIAL APPROVAL (appr-wf-single-content-generation-pipedrive-1786626154278-generate)"
+    },
+    {
+      "at": "2026-08-13T13:02:34.377Z",
+      "event": "workflow_resumed",
+      "message": "Workflow resumed"
+    },
+    {
+      "at": "2026-08-13T13:02:34.378Z",
+      "event": "workflow_started",
+      "message": "Workflow execution started"
+    },
+    {
+      "at": "2026-08-13T13:02:34.379Z",
+      "event": "workflow_step_started",
+      "stepId": "editorial-approval",
+      "message": "Started Editorial approval"
+    },
+    {
+      "at": "2026-08-13T13:02:34.385Z",
+      "event": "workflow_step_completed",
+      "stepId": "editorial-approval",
+      "message": "Required editorial approvals satisfied"
+    },
+    {
+      "at": "2026-08-13T13:02:34.386Z",
+      "event": "workflow_step_started",
+      "stepId": "pre-publish-validation",
+      "message": "Started Pre-publish validation"
+    },
+    {
+      "at": "2026-08-13T13:02:34.398Z",
+      "event": "workflow_step_completed",
+      "stepId": "pre-publish-validation",
+      "message": "Pre-publish validation passed — READY TO PUBLISH (manual)"
+    },
+    {
+      "at": "2026-08-13T13:02:34.399Z",
+      "event": "workflow_completed",
+      "message": "Workflow completed"
+    }
+  ],
+  "options": {
+    "agentId": "software-review-agent",
+    "targetSlug": "pipedrive",
+    "productIds": [
+      "pipedrive"
+    ],
+    "categoryIds": [],
+    "allowNormalizedFacts": false
+  },
+  "warnings": [],
+  "createdAt": "2026-08-13T13:02:34.353Z",
+  "updatedAt": "2026-08-13T13:02:34.399Z"
+}

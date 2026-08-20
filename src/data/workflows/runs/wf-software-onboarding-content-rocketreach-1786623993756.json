@@ -1,0 +1,791 @@
+{
+  "id": "wf-software-onboarding-content-rocketreach-1786623993756",
+  "workflowId": "software-onboarding-content",
+  "workflowVersion": "1.0.0",
+  "name": "Software Onboarding Content: rocketreach",
+  "targetType": "software",
+  "targetId": "rocketreach",
+  "status": "superseded",
+  "steps": [
+    {
+      "id": "software-onboarding",
+      "definitionStepId": "software-onboarding",
+      "handler": "software-onboarding",
+      "label": "Software onboarding",
+      "status": "completed",
+      "required": true,
+      "failurePolicy": "block-workflow",
+      "attempt": 1,
+      "maxAttempts": 2,
+      "dependsOn": [],
+      "priority": "critical",
+      "config": {
+        "maxAutomaticRevisions": 1,
+        "expandFromContentPlan": false,
+        "expandKind": "none",
+        "stopAfterApproval": true,
+        "allowNormalizedFacts": false,
+        "optionalWhenBlocked": false,
+        "forceTransientFailOnce": false
+      },
+      "inputRefs": {},
+      "outputRefs": {
+        "softwareOnboardingRunId": "onboard-rocketreach-1786623751850"
+      },
+      "blockers": [],
+      "warnings": [],
+      "startedAt": "2026-08-13T12:26:33.958Z",
+      "completedAt": "2026-08-13T12:26:33.975Z",
+      "revisionAttempts": 0
+    },
+    {
+      "id": "content-plan",
+      "definitionStepId": "content-plan",
+      "handler": "content-plan",
+      "label": "Content plan",
+      "status": "completed",
+      "required": true,
+      "failurePolicy": "block-workflow",
+      "attempt": 1,
+      "maxAttempts": 2,
+      "dependsOn": [
+        "software-onboarding"
+      ],
+      "priority": "high",
+      "config": {
+        "maxAutomaticRevisions": 1,
+        "expandFromContentPlan": false,
+        "expandKind": "none",
+        "stopAfterApproval": true,
+        "allowNormalizedFacts": false,
+        "optionalWhenBlocked": false,
+        "forceTransientFailOnce": false
+      },
+      "inputRefs": {},
+      "outputRefs": {
+        "softwareOnboardingRunId": "onboard-rocketreach-1786623751850",
+        "comparisonTargets": "apollo-vs-rocketreach,lusha-vs-rocketreach,amplemarket-vs-rocketreach",
+        "pageCandidateCount": "7"
+      },
+      "blockers": [],
+      "warnings": [],
+      "startedAt": "2026-08-13T12:26:33.976Z",
+      "completedAt": "2026-08-13T12:26:33.993Z",
+      "revisionAttempts": 0
+    },
+    {
+      "id": "software-review",
+      "definitionStepId": "software-review",
+      "handler": "agent-run",
+      "label": "Software Review",
+      "status": "completed",
+      "required": true,
+      "failurePolicy": "block-workflow",
+      "attempt": 1,
+      "maxAttempts": 2,
+      "dependsOn": [
+        "content-plan"
+      ],
+      "priority": "high",
+      "config": {
+        "agentId": "software-review-agent",
+        "targetSlug": "rocketreach",
+        "maxAutomaticRevisions": 1,
+        "expandFromContentPlan": false,
+        "expandKind": "none",
+        "stopAfterApproval": true,
+        "allowNormalizedFacts": false,
+        "optionalWhenBlocked": false,
+        "forceTransientFailOnce": false
+      },
+      "inputRefs": {},
+      "outputRefs": {
+        "draftId": "draft-deterministic-v1-software-review-agent-rocketreach-2026-08-13T12-26-34-015Z",
+        "qaStatus": "pass",
+        "agentId": "software-review-agent",
+        "target": "rocketreach"
+      },
+      "inputSnapshot": {
+        "researchFactIds": [
+          "fact-rocketreach-pricing.plans.essentials-rocketreach-pricing-fixture",
+          "fact-rocketreach-pricing.plans.pro-rocketreach-pricing-fixture",
+          "fact-rocketreach-pricing.plans.ultimate-rocketreach-pricing-fixture",
+          "fact-rocketreach-pricing.plans.enterprise-rocketreach-pricing-fixture",
+          "fact-rocketreach-pricing.currency-rocketreach-pricing-fixture",
+          "fact-rocketreach-pricing.hasFreeTrial-rocketreach-pricing-fixture",
+          "fact-rocketreach-pricing.hasFreePlan-rocketreach-pricing-fixture",
+          "fact-rocketreach-pricing.model-rocketreach-pricing-fixture",
+          "fact-rocketreach-identity.shortDescription-rocketreach-product-fixture",
+          "fact-rocketreach-positioning.claim-rocketreach-product-fixture",
+          "fact-rocketreach-features.lead-management-rocketreach-product-fixture",
+          "fact-rocketreach-features.reporting-rocketreach-product-fixture",
+          "fact-rocketreach-features.ai-assistance-rocketreach-product-fixture",
+          "fact-rocketreach-ai.recommendations-rocketreach-product-fixture",
+          "fact-rocketreach-ai.assistant-rocketreach-product-fixture"
+        ],
+        "methodologySlug": "crm-editorial",
+        "methodologyVersion": "1.0.0",
+        "agentVersion": "1.0.0",
+        "contextBuiltAt": "2026-08-13T12:26:34.012Z"
+      },
+      "blockers": [],
+      "warnings": [],
+      "agentTaskId": "exec-software-review-agent-rocketreach-1786623993997",
+      "draftId": "draft-deterministic-v1-software-review-agent-rocketreach-2026-08-13T12-26-34-015Z",
+      "startedAt": "2026-08-13T12:26:33.995Z",
+      "completedAt": "2026-08-13T12:26:34.021Z",
+      "revisionAttempts": 0
+    },
+    {
+      "id": "pricing-page",
+      "definitionStepId": "pricing-page",
+      "handler": "agent-run",
+      "label": "Pricing Page",
+      "status": "completed",
+      "required": false,
+      "failurePolicy": "continue-with-warning",
+      "attempt": 1,
+      "maxAttempts": 2,
+      "dependsOn": [
+        "content-plan"
+      ],
+      "priority": "normal",
+      "config": {
+        "agentId": "pricing-page-agent",
+        "targetSlug": "rocketreach",
+        "maxAutomaticRevisions": 1,
+        "expandFromContentPlan": false,
+        "expandKind": "none",
+        "stopAfterApproval": true,
+        "allowNormalizedFacts": false,
+        "optionalWhenBlocked": true,
+        "forceTransientFailOnce": false
+      },
+      "inputRefs": {},
+      "outputRefs": {
+        "draftId": "draft-deterministic-v1-pricing-page-agent-rocketreach-2026-08-13T12-26-34-074Z",
+        "qaStatus": "pass",
+        "agentId": "pricing-page-agent",
+        "target": "rocketreach"
+      },
+      "inputSnapshot": {
+        "researchFactIds": [
+          "fact-rocketreach-pricing.plans.essentials-rocketreach-pricing-fixture",
+          "fact-rocketreach-pricing.plans.pro-rocketreach-pricing-fixture",
+          "fact-rocketreach-pricing.plans.ultimate-rocketreach-pricing-fixture",
+          "fact-rocketreach-pricing.plans.enterprise-rocketreach-pricing-fixture",
+          "fact-rocketreach-pricing.currency-rocketreach-pricing-fixture",
+          "fact-rocketreach-pricing.hasFreeTrial-rocketreach-pricing-fixture",
+          "fact-rocketreach-pricing.hasFreePlan-rocketreach-pricing-fixture",
+          "fact-rocketreach-pricing.model-rocketreach-pricing-fixture",
+          "fact-rocketreach-identity.shortDescription-rocketreach-product-fixture",
+          "fact-rocketreach-positioning.claim-rocketreach-product-fixture",
+          "fact-rocketreach-features.lead-management-rocketreach-product-fixture",
+          "fact-rocketreach-features.reporting-rocketreach-product-fixture",
+          "fact-rocketreach-features.ai-assistance-rocketreach-product-fixture",
+          "fact-rocketreach-ai.recommendations-rocketreach-product-fixture",
+          "fact-rocketreach-ai.assistant-rocketreach-product-fixture"
+        ],
+        "methodologySlug": "crm-editorial",
+        "methodologyVersion": "1.0.0",
+        "agentVersion": "1.0.0",
+        "contextBuiltAt": "2026-08-13T12:26:34.074Z"
+      },
+      "blockers": [],
+      "warnings": [],
+      "agentTaskId": "exec-pricing-page-agent-rocketreach-1786623994071",
+      "draftId": "draft-deterministic-v1-pricing-page-agent-rocketreach-2026-08-13T12-26-34-074Z",
+      "startedAt": "2026-08-13T12:26:34.071Z",
+      "completedAt": "2026-08-13T12:26:34.077Z",
+      "revisionAttempts": 0
+    },
+    {
+      "id": "alternatives",
+      "definitionStepId": "alternatives",
+      "handler": "agent-run",
+      "label": "Alternatives",
+      "status": "completed",
+      "required": false,
+      "failurePolicy": "continue-with-warning",
+      "attempt": 1,
+      "maxAttempts": 2,
+      "dependsOn": [
+        "content-plan"
+      ],
+      "priority": "normal",
+      "config": {
+        "agentId": "alternatives-agent",
+        "targetSlug": "rocketreach",
+        "maxAutomaticRevisions": 1,
+        "expandFromContentPlan": false,
+        "expandKind": "none",
+        "stopAfterApproval": true,
+        "allowNormalizedFacts": false,
+        "optionalWhenBlocked": true,
+        "forceTransientFailOnce": false
+      },
+      "inputRefs": {},
+      "outputRefs": {
+        "draftId": "draft-deterministic-v1-alternatives-agent-rocketreach-2026-08-13T12-26-34-029Z",
+        "qaStatus": "pass",
+        "agentId": "alternatives-agent",
+        "target": "rocketreach"
+      },
+      "inputSnapshot": {
+        "researchFactIds": [
+          "fact-rocketreach-pricing.plans.essentials-rocketreach-pricing-fixture",
+          "fact-rocketreach-pricing.plans.pro-rocketreach-pricing-fixture",
+          "fact-rocketreach-pricing.plans.ultimate-rocketreach-pricing-fixture",
+          "fact-rocketreach-pricing.plans.enterprise-rocketreach-pricing-fixture",
+          "fact-rocketreach-pricing.currency-rocketreach-pricing-fixture",
+          "fact-rocketreach-pricing.hasFreeTrial-rocketreach-pricing-fixture",
+          "fact-rocketreach-pricing.hasFreePlan-rocketreach-pricing-fixture",
+          "fact-rocketreach-pricing.model-rocketreach-pricing-fixture",
+          "fact-rocketreach-identity.shortDescription-rocketreach-product-fixture",
+          "fact-rocketreach-positioning.claim-rocketreach-product-fixture",
+          "fact-rocketreach-features.lead-management-rocketreach-product-fixture",
+          "fact-rocketreach-features.reporting-rocketreach-product-fixture",
+          "fact-rocketreach-features.ai-assistance-rocketreach-product-fixture",
+          "fact-rocketreach-ai.recommendations-rocketreach-product-fixture",
+          "fact-rocketreach-ai.assistant-rocketreach-product-fixture"
+        ],
+        "methodologySlug": "crm-editorial",
+        "methodologyVersion": "1.0.0",
+        "agentVersion": "1.0.0",
+        "contextBuiltAt": "2026-08-13T12:26:34.029Z"
+      },
+      "blockers": [],
+      "warnings": [],
+      "agentTaskId": "exec-alternatives-agent-rocketreach-1786623994025",
+      "draftId": "draft-deterministic-v1-alternatives-agent-rocketreach-2026-08-13T12-26-34-029Z",
+      "startedAt": "2026-08-13T12:26:34.023Z",
+      "completedAt": "2026-08-13T12:26:34.032Z",
+      "revisionAttempts": 0
+    },
+    {
+      "id": "comparison:apollo-vs-rocketreach",
+      "definitionStepId": "comparisons",
+      "handler": "agent-run",
+      "label": "Comparison apollo-vs-rocketreach",
+      "status": "completed",
+      "required": false,
+      "failurePolicy": "continue-with-warning",
+      "attempt": 1,
+      "maxAttempts": 2,
+      "dependsOn": [
+        "content-plan"
+      ],
+      "priority": "normal",
+      "config": {
+        "agentId": "comparison-agent",
+        "targetSlug": "apollo-vs-rocketreach",
+        "maxAutomaticRevisions": 1,
+        "expandFromContentPlan": true,
+        "expandKind": "comparisons",
+        "stopAfterApproval": true,
+        "allowNormalizedFacts": false,
+        "optionalWhenBlocked": true,
+        "forceTransientFailOnce": false
+      },
+      "expansionKey": "apollo-vs-rocketreach",
+      "inputRefs": {},
+      "outputRefs": {
+        "draftId": "draft-deterministic-v1-comparison-agent-apollo-vs-rocketreach-2026-08-13T12-26-34-049Z",
+        "qaStatus": "pass",
+        "agentId": "comparison-agent",
+        "target": "apollo-vs-rocketreach"
+      },
+      "inputSnapshot": {
+        "researchFactIds": [
+          "fact-apollo-pricing.plans.free-apollo-pricing-fixture",
+          "fact-apollo-pricing.plans.basic-apollo-pricing-fixture",
+          "fact-apollo-pricing.plans.professional-apollo-pricing-fixture",
+          "fact-apollo-pricing.plans.organization-apollo-pricing-fixture",
+          "fact-apollo-pricing.currency-apollo-pricing-fixture",
+          "fact-apollo-pricing.hasFreeTrial-apollo-pricing-fixture",
+          "fact-apollo-pricing.hasFreePlan-apollo-pricing-fixture",
+          "fact-apollo-pricing.model-apollo-pricing-fixture",
+          "fact-apollo-identity.shortDescription-apollo-product-fixture",
+          "fact-apollo-positioning.claim-apollo-product-fixture",
+          "fact-apollo-features.contact-management-apollo-product-fixture",
+          "fact-apollo-features.lead-management-apollo-product-fixture",
+          "fact-apollo-features.email-sequences-apollo-product-fixture",
+          "fact-apollo-features.lead-scoring-apollo-product-fixture",
+          "fact-apollo-features.reporting-apollo-product-fixture",
+          "fact-apollo-features.ai-assistance-apollo-product-fixture",
+          "fact-apollo-features.meeting-scheduling-apollo-product-fixture",
+          "fact-apollo-ai.email-generation-apollo-product-fixture",
+          "fact-apollo-ai.recommendations-apollo-product-fixture",
+          "fact-apollo-ai.assistant-apollo-product-fixture",
+          "fact-rocketreach-pricing.plans.essentials-rocketreach-pricing-fixture",
+          "fact-rocketreach-pricing.plans.pro-rocketreach-pricing-fixture",
+          "fact-rocketreach-pricing.plans.ultimate-rocketreach-pricing-fixture",
+          "fact-rocketreach-pricing.plans.enterprise-rocketreach-pricing-fixture",
+          "fact-rocketreach-pricing.currency-rocketreach-pricing-fixture",
+          "fact-rocketreach-pricing.hasFreeTrial-rocketreach-pricing-fixture",
+          "fact-rocketreach-pricing.hasFreePlan-rocketreach-pricing-fixture",
+          "fact-rocketreach-pricing.model-rocketreach-pricing-fixture",
+          "fact-rocketreach-identity.shortDescription-rocketreach-product-fixture",
+          "fact-rocketreach-positioning.claim-rocketreach-product-fixture",
+          "fact-rocketreach-features.lead-management-rocketreach-product-fixture",
+          "fact-rocketreach-features.reporting-rocketreach-product-fixture",
+          "fact-rocketreach-features.ai-assistance-rocketreach-product-fixture",
+          "fact-rocketreach-ai.recommendations-rocketreach-product-fixture",
+          "fact-rocketreach-ai.assistant-rocketreach-product-fixture"
+        ],
+        "methodologySlug": "crm-editorial",
+        "methodologyVersion": "1.0.0",
+        "agentVersion": "1.0.0",
+        "contextBuiltAt": "2026-08-13T12:26:34.048Z"
+      },
+      "blockers": [],
+      "warnings": [],
+      "agentTaskId": "exec-comparison-agent-apollo-vs-rocketreach-1786623994042",
+      "draftId": "draft-deterministic-v1-comparison-agent-apollo-vs-rocketreach-2026-08-13T12-26-34-049Z",
+      "startedAt": "2026-08-13T12:26:34.042Z",
+      "completedAt": "2026-08-13T12:26:34.051Z",
+      "revisionAttempts": 0
+    },
+    {
+      "id": "comparison:lusha-vs-rocketreach",
+      "definitionStepId": "comparisons",
+      "handler": "agent-run",
+      "label": "Comparison lusha-vs-rocketreach",
+      "status": "completed",
+      "required": false,
+      "failurePolicy": "continue-with-warning",
+      "attempt": 1,
+      "maxAttempts": 2,
+      "dependsOn": [
+        "content-plan"
+      ],
+      "priority": "normal",
+      "config": {
+        "agentId": "comparison-agent",
+        "targetSlug": "lusha-vs-rocketreach",
+        "maxAutomaticRevisions": 1,
+        "expandFromContentPlan": true,
+        "expandKind": "comparisons",
+        "stopAfterApproval": true,
+        "allowNormalizedFacts": false,
+        "optionalWhenBlocked": true,
+        "forceTransientFailOnce": false
+      },
+      "expansionKey": "lusha-vs-rocketreach",
+      "inputRefs": {},
+      "outputRefs": {
+        "draftId": "draft-deterministic-v1-comparison-agent-lusha-vs-rocketreach-2026-08-13T12-26-34-066Z",
+        "qaStatus": "pass",
+        "agentId": "comparison-agent",
+        "target": "lusha-vs-rocketreach"
+      },
+      "inputSnapshot": {
+        "researchFactIds": [
+          "fact-lusha-pricing.plans.free-lusha-pricing-fixture",
+          "fact-lusha-pricing.plans.pro-lusha-pricing-fixture",
+          "fact-lusha-pricing.plans.premium-lusha-pricing-fixture",
+          "fact-lusha-pricing.plans.scale-lusha-pricing-fixture",
+          "fact-lusha-pricing.currency-lusha-pricing-fixture",
+          "fact-lusha-pricing.hasFreeTrial-lusha-pricing-fixture",
+          "fact-lusha-pricing.hasFreePlan-lusha-pricing-fixture",
+          "fact-lusha-pricing.model-lusha-pricing-fixture",
+          "fact-lusha-identity.shortDescription-lusha-product-fixture",
+          "fact-lusha-positioning.claim-lusha-product-fixture",
+          "fact-lusha-features.lead-management-lusha-product-fixture",
+          "fact-lusha-features.reporting-lusha-product-fixture",
+          "fact-lusha-features.ai-assistance-lusha-product-fixture",
+          "fact-lusha-features.meeting-scheduling-lusha-product-fixture",
+          "fact-lusha-ai.recommendations-lusha-product-fixture",
+          "fact-lusha-ai.assistant-lusha-product-fixture",
+          "fact-lusha-ai.automation-lusha-product-fixture",
+          "fact-rocketreach-pricing.plans.essentials-rocketreach-pricing-fixture",
+          "fact-rocketreach-pricing.plans.pro-rocketreach-pricing-fixture",
+          "fact-rocketreach-pricing.plans.ultimate-rocketreach-pricing-fixture",
+          "fact-rocketreach-pricing.plans.enterprise-rocketreach-pricing-fixture",
+          "fact-rocketreach-pricing.currency-rocketreach-pricing-fixture",
+          "fact-rocketreach-pricing.hasFreeTrial-rocketreach-pricing-fixture",
+          "fact-rocketreach-pricing.hasFreePlan-rocketreach-pricing-fixture",
+          "fact-rocketreach-pricing.model-rocketreach-pricing-fixture",
+          "fact-rocketreach-identity.shortDescription-rocketreach-product-fixture",
+          "fact-rocketreach-positioning.claim-rocketreach-product-fixture",
+          "fact-rocketreach-features.lead-management-rocketreach-product-fixture",
+          "fact-rocketreach-features.reporting-rocketreach-product-fixture",
+          "fact-rocketreach-features.ai-assistance-rocketreach-product-fixture",
+          "fact-rocketreach-ai.recommendations-rocketreach-product-fixture",
+          "fact-rocketreach-ai.assistant-rocketreach-product-fixture"
+        ],
+        "methodologySlug": "crm-editorial",
+        "methodologyVersion": "1.0.0",
+        "agentVersion": "1.0.0",
+        "contextBuiltAt": "2026-08-13T12:26:34.065Z"
+      },
+      "blockers": [],
+      "warnings": [],
+      "agentTaskId": "exec-comparison-agent-lusha-vs-rocketreach-1786623994053",
+      "draftId": "draft-deterministic-v1-comparison-agent-lusha-vs-rocketreach-2026-08-13T12-26-34-066Z",
+      "startedAt": "2026-08-13T12:26:34.053Z",
+      "completedAt": "2026-08-13T12:26:34.068Z",
+      "revisionAttempts": 0
+    },
+    {
+      "id": "comparison:amplemarket-vs-rocketreach",
+      "definitionStepId": "comparisons",
+      "handler": "agent-run",
+      "label": "Comparison amplemarket-vs-rocketreach",
+      "status": "blocked",
+      "required": false,
+      "failurePolicy": "continue-with-warning",
+      "attempt": 1,
+      "maxAttempts": 2,
+      "dependsOn": [
+        "content-plan"
+      ],
+      "priority": "normal",
+      "config": {
+        "agentId": "comparison-agent",
+        "targetSlug": "amplemarket-vs-rocketreach",
+        "maxAutomaticRevisions": 1,
+        "expandFromContentPlan": true,
+        "expandKind": "comparisons",
+        "stopAfterApproval": true,
+        "allowNormalizedFacts": false,
+        "optionalWhenBlocked": true,
+        "forceTransientFailOnce": false
+      },
+      "expansionKey": "amplemarket-vs-rocketreach",
+      "inputRefs": {},
+      "outputRefs": {},
+      "blockers": [
+        "RELATIONSHIP_UNAPPROVED: Approved comparable relationship required"
+      ],
+      "warnings": [
+        "RELATIONSHIP_UNAPPROVED: Approved comparable relationship required"
+      ],
+      "startedAt": "2026-08-13T12:26:34.034Z",
+      "completedAt": "2026-08-13T12:26:34.041Z",
+      "revisionAttempts": 0
+    },
+    {
+      "id": "internal-links",
+      "definitionStepId": "internal-links",
+      "handler": "internal-link",
+      "label": "Internal Link Plan",
+      "status": "completed",
+      "required": false,
+      "failurePolicy": "continue-with-warning",
+      "attempt": 1,
+      "maxAttempts": 2,
+      "dependsOn": [
+        "software-review"
+      ],
+      "priority": "low",
+      "config": {
+        "agentId": "internal-link-agent",
+        "maxAutomaticRevisions": 1,
+        "expandFromContentPlan": false,
+        "expandKind": "none",
+        "stopAfterApproval": true,
+        "allowNormalizedFacts": false,
+        "optionalWhenBlocked": false,
+        "forceTransientFailOnce": false
+      },
+      "inputRefs": {},
+      "outputRefs": {
+        "draftId": "draft-deterministic-v1-internal-link-agent-rocketreach-2026-08-13T12-26-34-084Z",
+        "qaStatus": "pass",
+        "agentId": "internal-link-agent",
+        "target": "rocketreach"
+      },
+      "inputSnapshot": {
+        "researchFactIds": [
+          "fact-rocketreach-pricing.plans.essentials-rocketreach-pricing-fixture",
+          "fact-rocketreach-pricing.plans.pro-rocketreach-pricing-fixture",
+          "fact-rocketreach-pricing.plans.ultimate-rocketreach-pricing-fixture",
+          "fact-rocketreach-pricing.plans.enterprise-rocketreach-pricing-fixture",
+          "fact-rocketreach-pricing.currency-rocketreach-pricing-fixture",
+          "fact-rocketreach-pricing.hasFreeTrial-rocketreach-pricing-fixture",
+          "fact-rocketreach-pricing.hasFreePlan-rocketreach-pricing-fixture",
+          "fact-rocketreach-pricing.model-rocketreach-pricing-fixture",
+          "fact-rocketreach-identity.shortDescription-rocketreach-product-fixture",
+          "fact-rocketreach-positioning.claim-rocketreach-product-fixture",
+          "fact-rocketreach-features.lead-management-rocketreach-product-fixture",
+          "fact-rocketreach-features.reporting-rocketreach-product-fixture",
+          "fact-rocketreach-features.ai-assistance-rocketreach-product-fixture",
+          "fact-rocketreach-ai.recommendations-rocketreach-product-fixture",
+          "fact-rocketreach-ai.assistant-rocketreach-product-fixture"
+        ],
+        "methodologySlug": "crm-editorial",
+        "methodologyVersion": "1.0.0",
+        "agentVersion": "1.0.0",
+        "contextBuiltAt": "2026-08-13T12:26:34.084Z"
+      },
+      "blockers": [],
+      "warnings": [],
+      "agentTaskId": "exec-internal-link-agent-rocketreach-1786623994081",
+      "draftId": "draft-deterministic-v1-internal-link-agent-rocketreach-2026-08-13T12-26-34-084Z",
+      "startedAt": "2026-08-13T12:26:34.080Z",
+      "completedAt": "2026-08-13T12:26:34.087Z",
+      "revisionAttempts": 0
+    },
+    {
+      "id": "finder-readiness",
+      "definitionStepId": "finder-readiness",
+      "handler": "update-recommendation-readiness",
+      "label": "Finder readiness",
+      "status": "completed",
+      "required": false,
+      "failurePolicy": "continue",
+      "attempt": 1,
+      "maxAttempts": 2,
+      "dependsOn": [
+        "content-plan"
+      ],
+      "priority": "low",
+      "config": {
+        "maxAutomaticRevisions": 1,
+        "expandFromContentPlan": false,
+        "expandKind": "none",
+        "stopAfterApproval": true,
+        "allowNormalizedFacts": false,
+        "optionalWhenBlocked": false,
+        "forceTransientFailOnce": false
+      },
+      "inputRefs": {},
+      "outputRefs": {
+        "finderReadiness": "checked"
+      },
+      "blockers": [],
+      "warnings": [],
+      "startedAt": "2026-08-13T12:26:34.078Z",
+      "completedAt": "2026-08-13T12:26:34.079Z",
+      "revisionAttempts": 0
+    },
+    {
+      "id": "editorial-approval",
+      "definitionStepId": "editorial-approval",
+      "handler": "approval-check",
+      "label": "Editorial approval",
+      "status": "waiting",
+      "required": true,
+      "failurePolicy": "manual-review",
+      "attempt": 1,
+      "maxAttempts": 2,
+      "dependsOn": [
+        "software-review"
+      ],
+      "priority": "critical",
+      "config": {
+        "approvalType": "editorial",
+        "maxAutomaticRevisions": 1,
+        "expandFromContentPlan": false,
+        "expandKind": "none",
+        "stopAfterApproval": true,
+        "allowNormalizedFacts": false,
+        "optionalWhenBlocked": false,
+        "forceTransientFailOnce": false
+      },
+      "inputRefs": {},
+      "outputRefs": {
+        "approvalId": "appr-wf-software-onboarding-content-rocketreach-1786623993756-software-review",
+        "draftId": "draft-deterministic-v1-software-review-agent-rocketreach-2026-08-13T12-26-34-015Z"
+      },
+      "blockers": [],
+      "warnings": [],
+      "approvalId": "appr-wf-software-onboarding-content-rocketreach-1786623993756-software-review",
+      "startedAt": "2026-08-13T12:26:34.088Z",
+      "completedAt": "2026-08-13T12:26:34.104Z",
+      "revisionAttempts": 0
+    },
+    {
+      "id": "pre-publish-validation",
+      "definitionStepId": "pre-publish-validation",
+      "handler": "pre-publish-validation",
+      "label": "Pre-publish validation",
+      "status": "pending",
+      "required": true,
+      "failurePolicy": "block-workflow",
+      "attempt": 0,
+      "maxAttempts": 2,
+      "dependsOn": [
+        "editorial-approval"
+      ],
+      "priority": "critical",
+      "config": {
+        "maxAutomaticRevisions": 1,
+        "expandFromContentPlan": false,
+        "expandKind": "none",
+        "stopAfterApproval": true,
+        "allowNormalizedFacts": false,
+        "optionalWhenBlocked": false,
+        "forceTransientFailOnce": false
+      },
+      "inputRefs": {},
+      "outputRefs": {},
+      "blockers": [],
+      "warnings": [],
+      "revisionAttempts": 0
+    }
+  ],
+  "history": [
+    {
+      "at": "2026-08-13T12:26:33.954Z",
+      "event": "workflow_created",
+      "message": "Created software-onboarding-content:v1.0.0"
+    },
+    {
+      "at": "2026-08-13T12:26:33.956Z",
+      "event": "workflow_started",
+      "message": "Workflow execution started"
+    },
+    {
+      "at": "2026-08-13T12:26:33.957Z",
+      "event": "workflow_step_started",
+      "stepId": "software-onboarding",
+      "message": "Started Software onboarding"
+    },
+    {
+      "at": "2026-08-13T12:26:33.975Z",
+      "event": "workflow_step_completed",
+      "stepId": "software-onboarding",
+      "message": "Reused onboarding run onboard-rocketreach-1786623751850 (review-required)"
+    },
+    {
+      "at": "2026-08-13T12:26:33.976Z",
+      "event": "workflow_step_started",
+      "stepId": "content-plan",
+      "message": "Started Content plan"
+    },
+    {
+      "at": "2026-08-13T12:26:33.993Z",
+      "event": "workflow_step_completed",
+      "stepId": "content-plan",
+      "message": "Content plan from onboarding onboard-rocketreach-1786623751850 (7 candidates)"
+    },
+    {
+      "at": "2026-08-13T12:26:33.995Z",
+      "event": "workflow_step_started",
+      "stepId": "software-review",
+      "message": "Started Software Review"
+    },
+    {
+      "at": "2026-08-13T12:26:34.021Z",
+      "event": "workflow_step_completed",
+      "stepId": "software-review",
+      "message": "Agent software-review-agent → draft draft-deterministic-v1-software-review-agent-rocketreach-2026-08-13T12-26-34-015Z (qa=pass)"
+    },
+    {
+      "at": "2026-08-13T12:26:34.022Z",
+      "event": "workflow_step_started",
+      "stepId": "alternatives",
+      "message": "Started Alternatives"
+    },
+    {
+      "at": "2026-08-13T12:26:34.032Z",
+      "event": "workflow_step_completed",
+      "stepId": "alternatives",
+      "message": "Agent alternatives-agent → draft draft-deterministic-v1-alternatives-agent-rocketreach-2026-08-13T12-26-34-029Z (qa=pass)"
+    },
+    {
+      "at": "2026-08-13T12:26:34.034Z",
+      "event": "workflow_step_started",
+      "stepId": "comparison:amplemarket-vs-rocketreach",
+      "message": "Started Comparison amplemarket-vs-rocketreach"
+    },
+    {
+      "at": "2026-08-13T12:26:34.041Z",
+      "event": "workflow_step_completed",
+      "stepId": "comparison:amplemarket-vs-rocketreach",
+      "message": "Agent blocked (optional): RELATIONSHIP_UNAPPROVED: Approved comparable relationship required"
+    },
+    {
+      "at": "2026-08-13T12:26:34.042Z",
+      "event": "workflow_step_started",
+      "stepId": "comparison:apollo-vs-rocketreach",
+      "message": "Started Comparison apollo-vs-rocketreach"
+    },
+    {
+      "at": "2026-08-13T12:26:34.051Z",
+      "event": "workflow_step_completed",
+      "stepId": "comparison:apollo-vs-rocketreach",
+      "message": "Agent comparison-agent → draft draft-deterministic-v1-comparison-agent-apollo-vs-rocketreach-2026-08-13T12-26-34-049Z (qa=pass)"
+    },
+    {
+      "at": "2026-08-13T12:26:34.052Z",
+      "event": "workflow_step_started",
+      "stepId": "comparison:lusha-vs-rocketreach",
+      "message": "Started Comparison lusha-vs-rocketreach"
+    },
+    {
+      "at": "2026-08-13T12:26:34.068Z",
+      "event": "workflow_step_completed",
+      "stepId": "comparison:lusha-vs-rocketreach",
+      "message": "Agent comparison-agent → draft draft-deterministic-v1-comparison-agent-lusha-vs-rocketreach-2026-08-13T12-26-34-066Z (qa=pass)"
+    },
+    {
+      "at": "2026-08-13T12:26:34.070Z",
+      "event": "workflow_step_started",
+      "stepId": "pricing-page",
+      "message": "Started Pricing Page"
+    },
+    {
+      "at": "2026-08-13T12:26:34.077Z",
+      "event": "workflow_step_completed",
+      "stepId": "pricing-page",
+      "message": "Agent pricing-page-agent → draft draft-deterministic-v1-pricing-page-agent-rocketreach-2026-08-13T12-26-34-074Z (qa=pass)"
+    },
+    {
+      "at": "2026-08-13T12:26:34.078Z",
+      "event": "workflow_step_started",
+      "stepId": "finder-readiness",
+      "message": "Started Finder readiness"
+    },
+    {
+      "at": "2026-08-13T12:26:34.079Z",
+      "event": "workflow_step_completed",
+      "stepId": "finder-readiness",
+      "message": "Finder readiness noted for rocketreach"
+    },
+    {
+      "at": "2026-08-13T12:26:34.080Z",
+      "event": "workflow_step_started",
+      "stepId": "internal-links",
+      "message": "Started Internal Link Plan"
+    },
+    {
+      "at": "2026-08-13T12:26:34.087Z",
+      "event": "workflow_step_completed",
+      "stepId": "internal-links",
+      "message": "Agent internal-link-agent → draft draft-deterministic-v1-internal-link-agent-rocketreach-2026-08-13T12-26-34-084Z (qa=pass)"
+    },
+    {
+      "at": "2026-08-13T12:26:34.088Z",
+      "event": "workflow_step_started",
+      "stepId": "editorial-approval",
+      "message": "Started Editorial approval"
+    },
+    {
+      "at": "2026-08-13T12:26:34.104Z",
+      "event": "workflow_step_completed",
+      "stepId": "editorial-approval",
+      "message": "WAITING FOR EDITORIAL APPROVAL (appr-wf-software-onboarding-content-rocketreach-1786623993756-software-review)"
+    }
+  ],
+  "options": {
+    "generateReview": true,
+    "generatePricing": true,
+    "generateAlternatives": true,
+    "generateComparisons": true,
+    "runInternalLinks": true,
+    "stopAfterApproval": true,
+    "allowNormalizedFacts": false,
+    "dryRun": false,
+    "maxComparisons": 3,
+    "skipOnboarding": false
+  },
+  "supersededBy": "wf-software-onboarding-content-rocketreach-1786624025821",
+  "warnings": [
+    "comparison:amplemarket-vs-rocketreach blocked: RELATIONSHIP_UNAPPROVED: Approved comparable relationship required"
+  ],
+  "createdAt": "2026-08-13T12:26:33.954Z",
+  "updatedAt": "2026-08-13T12:27:05.900Z"
+}

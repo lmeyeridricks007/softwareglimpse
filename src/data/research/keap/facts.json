@@ -1,0 +1,476 @@
+[
+  {
+    "id": "fact-keap-pricing.hasFreePlan",
+    "productSlug": "keap",
+    "domain": "free-plan",
+    "field": "pricing.hasFreePlan",
+    "value": false,
+    "sourceIds": [
+      "keap-pricing-official"
+    ],
+    "evidence": [
+      {
+        "sourceId": "keap-pricing-official",
+        "excerpt": "No permanent free plan; free trial offered."
+      }
+    ],
+    "extractedAt": "2026-08-13T18:00:00.000Z",
+    "normalizedAt": "2026-08-13T18:00:00.000Z",
+    "verifiedAt": "2026-08-13T18:00:00.000Z",
+    "approvedAt": "2026-08-13T18:00:00.000Z",
+    "confidence": "high",
+    "status": "approved",
+    "isFixture": false
+  },
+  {
+    "id": "fact-keap-pricing.hasFreeTrial",
+    "productSlug": "keap",
+    "domain": "free-trial",
+    "field": "pricing.hasFreeTrial",
+    "value": true,
+    "sourceIds": [
+      "keap-pricing-official"
+    ],
+    "evidence": [
+      {
+        "sourceId": "keap-pricing-official",
+        "excerpt": "Try free / free trial CTAs on pricing page."
+      }
+    ],
+    "extractedAt": "2026-08-13T18:00:00.000Z",
+    "normalizedAt": "2026-08-13T18:00:00.000Z",
+    "verifiedAt": "2026-08-13T18:00:00.000Z",
+    "approvedAt": "2026-08-13T18:00:00.000Z",
+    "confidence": "high",
+    "status": "approved",
+    "isFixture": false
+  },
+  {
+    "id": "fact-keap-pricing.startingPriceMonthly",
+    "productSlug": "keap",
+    "domain": "pricing",
+    "field": "pricing.startingPriceMonthly",
+    "value": 249,
+    "sourceIds": [
+      "keap-pricing-official"
+    ],
+    "evidence": [
+      {
+        "sourceId": "keap-pricing-official",
+        "excerpt": "Starting at $249 (Max Ignite annual monthly-equivalent)."
+      }
+    ],
+    "extractedAt": "2026-08-13T18:00:00.000Z",
+    "normalizedAt": "2026-08-13T18:00:00.000Z",
+    "verifiedAt": "2026-08-13T18:00:00.000Z",
+    "approvedAt": "2026-08-13T18:00:00.000Z",
+    "confidence": "high",
+    "status": "approved",
+    "isFixture": false
+  },
+  {
+    "id": "fact-keap-pricing.currency",
+    "productSlug": "keap",
+    "domain": "pricing",
+    "field": "pricing.currency",
+    "value": "USD",
+    "sourceIds": [
+      "keap-pricing-official"
+    ],
+    "evidence": [
+      {
+        "sourceId": "keap-pricing-official",
+        "excerpt": "USD list pricing in window.plans."
+      }
+    ],
+    "extractedAt": "2026-08-13T18:00:00.000Z",
+    "normalizedAt": "2026-08-13T18:00:00.000Z",
+    "verifiedAt": "2026-08-13T18:00:00.000Z",
+    "approvedAt": "2026-08-13T18:00:00.000Z",
+    "confidence": "high",
+    "status": "approved",
+    "isFixture": false
+  },
+  {
+    "id": "fact-keap-pricing.model",
+    "productSlug": "keap",
+    "domain": "pricing",
+    "field": "pricing.model",
+    "value": "subscription",
+    "sourceIds": [
+      "keap-pricing-official"
+    ],
+    "evidence": [
+      {
+        "sourceId": "keap-pricing-official",
+        "excerpt": "Subscription flat_fee plans with optional add-ons."
+      }
+    ],
+    "extractedAt": "2026-08-13T18:00:00.000Z",
+    "normalizedAt": "2026-08-13T18:00:00.000Z",
+    "verifiedAt": "2026-08-13T18:00:00.000Z",
+    "approvedAt": "2026-08-13T18:00:00.000Z",
+    "confidence": "high",
+    "status": "approved",
+    "isFixture": false
+  },
+  {
+    "id": "fact-keap-pricing.plans.max-ignite",
+    "productSlug": "keap",
+    "domain": "plans",
+    "field": "pricing.plans.max-ignite",
+    "value": {
+      "id": "plan-max-ignite",
+      "slug": "max-ignite",
+      "name": "Max Ignite",
+      "isFree": false,
+      "contactSales": false,
+      "hasFreeTrial": true,
+      "highlighted": true,
+      "rules": [
+        {
+          "kind": "flat",
+          "amount": 249,
+          "currency": "USD",
+          "interval": "year",
+          "amountPeriod": "month"
+        },
+        {
+          "kind": "flat",
+          "amount": 299,
+          "currency": "USD",
+          "interval": "month",
+          "amountPeriod": "month"
+        }
+      ],
+      "limits": {
+        "includedUsers": 2
+      }
+    },
+    "sourceIds": [
+      "keap-pricing-official"
+    ],
+    "evidence": [
+      {
+        "sourceId": "keap-pricing-official",
+        "excerpt": "Keap Max Ignite $249/mo annual / $299 monthly; 2 users included."
+      }
+    ],
+    "extractedAt": "2026-08-13T18:00:00.000Z",
+    "normalizedAt": "2026-08-13T18:00:00.000Z",
+    "verifiedAt": "2026-08-13T18:00:00.000Z",
+    "approvedAt": "2026-08-13T18:00:00.000Z",
+    "confidence": "high",
+    "status": "approved",
+    "isFixture": false
+  },
+  {
+    "id": "fact-keap-pricing.plans.max-grow",
+    "productSlug": "keap",
+    "domain": "plans",
+    "field": "pricing.plans.max-grow",
+    "value": {
+      "id": "plan-max-grow",
+      "slug": "max-grow",
+      "name": "Max Grow",
+      "isFree": false,
+      "contactSales": false,
+      "hasFreeTrial": true,
+      "highlighted": false,
+      "rules": [
+        {
+          "kind": "flat",
+          "amount": 329,
+          "currency": "USD",
+          "interval": "year",
+          "amountPeriod": "month"
+        },
+        {
+          "kind": "flat",
+          "amount": 399,
+          "currency": "USD",
+          "interval": "month",
+          "amountPeriod": "month"
+        }
+      ],
+      "limits": {
+        "includedUsers": 2
+      }
+    },
+    "sourceIds": [
+      "keap-pricing-official"
+    ],
+    "evidence": [
+      {
+        "sourceId": "keap-pricing-official",
+        "excerpt": "Keap Max Grow $329/mo annual / $399 monthly."
+      }
+    ],
+    "extractedAt": "2026-08-13T18:00:00.000Z",
+    "normalizedAt": "2026-08-13T18:00:00.000Z",
+    "verifiedAt": "2026-08-13T18:00:00.000Z",
+    "approvedAt": "2026-08-13T18:00:00.000Z",
+    "confidence": "high",
+    "status": "approved",
+    "isFixture": false
+  },
+  {
+    "id": "fact-keap-pricing.plans.max-scale",
+    "productSlug": "keap",
+    "domain": "plans",
+    "field": "pricing.plans.max-scale",
+    "value": {
+      "id": "plan-max-scale",
+      "slug": "max-scale",
+      "name": "Max Scale",
+      "isFree": false,
+      "contactSales": false,
+      "hasFreeTrial": true,
+      "highlighted": false,
+      "rules": [
+        {
+          "kind": "flat",
+          "amount": 499,
+          "currency": "USD",
+          "interval": "year",
+          "amountPeriod": "month"
+        },
+        {
+          "kind": "flat",
+          "amount": 599,
+          "currency": "USD",
+          "interval": "month",
+          "amountPeriod": "month"
+        }
+      ],
+      "limits": {
+        "includedUsers": 2
+      }
+    },
+    "sourceIds": [
+      "keap-pricing-official"
+    ],
+    "evidence": [
+      {
+        "sourceId": "keap-pricing-official",
+        "excerpt": "Keap Max Scale $499/mo annual / $599 monthly."
+      }
+    ],
+    "extractedAt": "2026-08-13T18:00:00.000Z",
+    "normalizedAt": "2026-08-13T18:00:00.000Z",
+    "verifiedAt": "2026-08-13T18:00:00.000Z",
+    "approvedAt": "2026-08-13T18:00:00.000Z",
+    "confidence": "high",
+    "status": "approved",
+    "isFixture": false
+  },
+  {
+    "id": "fact-keap-pricing.additionalUser",
+    "productSlug": "keap",
+    "domain": "pricing",
+    "field": "pricing.additionalUser",
+    "value": 39,
+    "sourceIds": [
+      "keap-pricing-official"
+    ],
+    "evidence": [
+      {
+        "sourceId": "keap-pricing-official",
+        "excerpt": "Additional users $39/month per user."
+      }
+    ],
+    "extractedAt": "2026-08-13T18:00:00.000Z",
+    "normalizedAt": "2026-08-13T18:00:00.000Z",
+    "verifiedAt": "2026-08-13T18:00:00.000Z",
+    "approvedAt": "2026-08-13T18:00:00.000Z",
+    "confidence": "high",
+    "status": "approved",
+    "isFixture": false
+  },
+  {
+    "id": "fact-keap-features.pipeline-management",
+    "productSlug": "keap",
+    "domain": "features",
+    "field": "features.pipeline-management",
+    "value": true,
+    "sourceIds": [
+      "keap-product-official",
+      "keap-crm-software"
+    ],
+    "evidence": [
+      {
+        "sourceId": "keap-product-official",
+        "excerpt": "Sales pipeline and opportunity tracking documented."
+      }
+    ],
+    "extractedAt": "2026-08-13T18:00:00.000Z",
+    "normalizedAt": "2026-08-13T18:00:00.000Z",
+    "verifiedAt": "2026-08-13T18:00:00.000Z",
+    "approvedAt": "2026-08-13T18:00:00.000Z",
+    "confidence": "high",
+    "status": "approved",
+    "isFixture": false
+  },
+  {
+    "id": "fact-keap-features.workflow-automation",
+    "productSlug": "keap",
+    "domain": "features",
+    "field": "features.workflow-automation",
+    "value": true,
+    "sourceIds": [
+      "keap-product-official",
+      "keap-crm-software"
+    ],
+    "evidence": [
+      {
+        "sourceId": "keap-product-official",
+        "excerpt": "Proven automations / lifecycle automation library."
+      }
+    ],
+    "extractedAt": "2026-08-13T18:00:00.000Z",
+    "normalizedAt": "2026-08-13T18:00:00.000Z",
+    "verifiedAt": "2026-08-13T18:00:00.000Z",
+    "approvedAt": "2026-08-13T18:00:00.000Z",
+    "confidence": "high",
+    "status": "approved",
+    "isFixture": false
+  },
+  {
+    "id": "fact-keap-features.email-campaigns",
+    "productSlug": "keap",
+    "domain": "features",
+    "field": "features.email-campaigns",
+    "value": true,
+    "sourceIds": [
+      "keap-pricing-official"
+    ],
+    "evidence": [
+      {
+        "sourceId": "keap-pricing-official",
+        "excerpt": "Email marketing templates, broadcasts, and sequences."
+      }
+    ],
+    "extractedAt": "2026-08-13T18:00:00.000Z",
+    "normalizedAt": "2026-08-13T18:00:00.000Z",
+    "verifiedAt": "2026-08-13T18:00:00.000Z",
+    "approvedAt": "2026-08-13T18:00:00.000Z",
+    "confidence": "high",
+    "status": "approved",
+    "isFixture": false
+  },
+  {
+    "id": "fact-keap-features.mobile-app",
+    "productSlug": "keap",
+    "domain": "features",
+    "field": "features.mobile-app",
+    "value": true,
+    "sourceIds": [
+      "keap-pricing-official"
+    ],
+    "evidence": [
+      {
+        "sourceId": "keap-pricing-official",
+        "excerpt": "Keap mobile app availability documented in pricing FAQ."
+      }
+    ],
+    "extractedAt": "2026-08-13T18:00:00.000Z",
+    "normalizedAt": "2026-08-13T18:00:00.000Z",
+    "verifiedAt": "2026-08-13T18:00:00.000Z",
+    "approvedAt": "2026-08-13T18:00:00.000Z",
+    "confidence": "high",
+    "status": "approved",
+    "isFixture": false
+  },
+  {
+    "id": "fact-keap-ai.assistant",
+    "productSlug": "keap",
+    "domain": "ai-capabilities",
+    "field": "ai.assistant",
+    "value": true,
+    "sourceIds": [
+      "keap-pricing-official"
+    ],
+    "evidence": [
+      {
+        "sourceId": "keap-pricing-official",
+        "excerpt": "AI Content Assistant and AI Automation Assistant."
+      }
+    ],
+    "extractedAt": "2026-08-13T18:00:00.000Z",
+    "normalizedAt": "2026-08-13T18:00:00.000Z",
+    "verifiedAt": "2026-08-13T18:00:00.000Z",
+    "approvedAt": "2026-08-13T18:00:00.000Z",
+    "confidence": "high",
+    "status": "approved",
+    "isFixture": false
+  },
+  {
+    "id": "fact-keap-ai.email-generation",
+    "productSlug": "keap",
+    "domain": "ai-capabilities",
+    "field": "ai.email-generation",
+    "value": true,
+    "sourceIds": [
+      "keap-pricing-official"
+    ],
+    "evidence": [
+      {
+        "sourceId": "keap-pricing-official",
+        "excerpt": "AI Content Assistant for composing emails."
+      }
+    ],
+    "extractedAt": "2026-08-13T18:00:00.000Z",
+    "normalizedAt": "2026-08-13T18:00:00.000Z",
+    "verifiedAt": "2026-08-13T18:00:00.000Z",
+    "approvedAt": "2026-08-13T18:00:00.000Z",
+    "confidence": "high",
+    "status": "approved",
+    "isFixture": false
+  },
+  {
+    "id": "fact-keap-positioning.smb-automation",
+    "productSlug": "keap",
+    "domain": "product-positioning",
+    "field": "positioning.smb-automation",
+    "value": true,
+    "sourceIds": [
+      "keap-product-official"
+    ],
+    "evidence": [
+      {
+        "sourceId": "keap-product-official",
+        "excerpt": "SMB business automation and CRM platform positioning."
+      }
+    ],
+    "extractedAt": "2026-08-13T18:00:00.000Z",
+    "normalizedAt": "2026-08-13T18:00:00.000Z",
+    "verifiedAt": "2026-08-13T18:00:00.000Z",
+    "approvedAt": "2026-08-13T18:00:00.000Z",
+    "confidence": "high",
+    "status": "approved",
+    "isFixture": false
+  },
+  {
+    "id": "fact-keap-integrations.payments",
+    "productSlug": "keap",
+    "domain": "integrations",
+    "field": "integrations.payments",
+    "value": true,
+    "sourceIds": [
+      "keap-pricing-official"
+    ],
+    "evidence": [
+      {
+        "sourceId": "keap-pricing-official",
+        "excerpt": "Keap Pay plus Stripe/PayPal/Eway processors documented."
+      }
+    ],
+    "extractedAt": "2026-08-13T18:00:00.000Z",
+    "normalizedAt": "2026-08-13T18:00:00.000Z",
+    "verifiedAt": "2026-08-13T18:00:00.000Z",
+    "approvedAt": "2026-08-13T18:00:00.000Z",
+    "confidence": "high",
+    "status": "approved",
+    "isFixture": false
+  }
+]

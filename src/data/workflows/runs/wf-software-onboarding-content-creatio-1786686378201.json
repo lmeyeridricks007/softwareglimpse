@@ -1,0 +1,816 @@
+{
+  "id": "wf-software-onboarding-content-creatio-1786686378201",
+  "workflowId": "software-onboarding-content",
+  "workflowVersion": "1.0.0",
+  "name": "Software Onboarding Content: creatio",
+  "targetType": "software",
+  "targetId": "creatio",
+  "status": "completed-with-warnings",
+  "steps": [
+    {
+      "id": "software-onboarding",
+      "definitionStepId": "software-onboarding",
+      "handler": "software-onboarding",
+      "label": "Software onboarding",
+      "status": "completed",
+      "required": true,
+      "failurePolicy": "block-workflow",
+      "attempt": 1,
+      "maxAttempts": 2,
+      "dependsOn": [],
+      "priority": "critical",
+      "config": {
+        "maxAutomaticRevisions": 1,
+        "expandFromContentPlan": false,
+        "expandKind": "none",
+        "stopAfterApproval": true,
+        "allowNormalizedFacts": false,
+        "optionalWhenBlocked": false,
+        "forceTransientFailOnce": false
+      },
+      "inputRefs": {},
+      "outputRefs": {
+        "softwareOnboardingRunId": "onboard-creatio-1786686344585"
+      },
+      "blockers": [],
+      "warnings": [],
+      "startedAt": "2026-08-14T05:46:18.563Z",
+      "completedAt": "2026-08-14T05:46:18.591Z",
+      "revisionAttempts": 0
+    },
+    {
+      "id": "content-plan",
+      "definitionStepId": "content-plan",
+      "handler": "content-plan",
+      "label": "Content plan",
+      "status": "completed",
+      "required": true,
+      "failurePolicy": "block-workflow",
+      "attempt": 1,
+      "maxAttempts": 2,
+      "dependsOn": [
+        "software-onboarding"
+      ],
+      "priority": "high",
+      "config": {
+        "maxAutomaticRevisions": 1,
+        "expandFromContentPlan": false,
+        "expandKind": "none",
+        "stopAfterApproval": true,
+        "allowNormalizedFacts": false,
+        "optionalWhenBlocked": false,
+        "forceTransientFailOnce": false
+      },
+      "inputRefs": {},
+      "outputRefs": {
+        "softwareOnboardingRunId": "onboard-creatio-1786686344585",
+        "comparisonTargets": "creatio-vs-salesforce,creatio-vs-hubspot,creatio-vs-dynamics-365",
+        "pageCandidateCount": "9"
+      },
+      "blockers": [],
+      "warnings": [],
+      "startedAt": "2026-08-14T05:46:18.593Z",
+      "completedAt": "2026-08-14T05:46:18.620Z",
+      "revisionAttempts": 0
+    },
+    {
+      "id": "software-review",
+      "definitionStepId": "software-review",
+      "handler": "agent-run",
+      "label": "Software Review",
+      "status": "completed",
+      "required": true,
+      "failurePolicy": "block-workflow",
+      "attempt": 1,
+      "maxAttempts": 2,
+      "dependsOn": [
+        "content-plan"
+      ],
+      "priority": "high",
+      "config": {
+        "agentId": "software-review-agent",
+        "targetSlug": "creatio",
+        "maxAutomaticRevisions": 1,
+        "expandFromContentPlan": false,
+        "expandKind": "none",
+        "stopAfterApproval": true,
+        "allowNormalizedFacts": false,
+        "optionalWhenBlocked": false,
+        "forceTransientFailOnce": false
+      },
+      "inputRefs": {},
+      "outputRefs": {
+        "draftId": "draft-deterministic-v1-software-review-agent-creatio-2026-08-14T05-46-18-654Z",
+        "qaStatus": "pass",
+        "agentId": "software-review-agent",
+        "target": "creatio"
+      },
+      "inputSnapshot": {
+        "researchFactIds": [
+          "fact-creatio-pricing.hasFreePlan",
+          "fact-creatio-pricing.hasFreeTrial",
+          "fact-creatio-pricing.startingPriceMonthly",
+          "fact-creatio-pricing.currency",
+          "fact-creatio-pricing.model",
+          "fact-creatio-pricing.plans.growth",
+          "fact-creatio-pricing.plans.enterprise",
+          "fact-creatio-pricing.plans.unlimited",
+          "fact-creatio-features.contact-management",
+          "fact-creatio-features.lead-management",
+          "fact-creatio-features.pipeline-management",
+          "fact-creatio-features.deal-management",
+          "fact-creatio-features.email-sync",
+          "fact-creatio-features.workflow-automation",
+          "fact-creatio-features.sales-automation",
+          "fact-creatio-features.reporting",
+          "fact-creatio-features.forecasting",
+          "fact-creatio-features.custom-fields",
+          "fact-creatio-features.custom-pipelines",
+          "fact-creatio-features.mobile-app",
+          "fact-creatio-features.ai-assistance",
+          "fact-creatio-features.integrations",
+          "fact-creatio-positioning.summary",
+          "fact-creatio-ai.assistant",
+          "fact-creatio-ai.automation"
+        ],
+        "methodologySlug": "crm-editorial",
+        "methodologyVersion": "1.0.0",
+        "agentVersion": "1.0.0",
+        "contextBuiltAt": "2026-08-14T05:46:18.650Z"
+      },
+      "blockers": [],
+      "warnings": [],
+      "agentTaskId": "exec-software-review-agent-creatio-1786686378622",
+      "draftId": "draft-deterministic-v1-software-review-agent-creatio-2026-08-14T05-46-18-654Z",
+      "startedAt": "2026-08-14T05:46:18.621Z",
+      "completedAt": "2026-08-14T05:46:18.661Z",
+      "revisionAttempts": 0
+    },
+    {
+      "id": "pricing-page",
+      "definitionStepId": "pricing-page",
+      "handler": "agent-run",
+      "label": "Pricing Page",
+      "status": "completed-with-warning",
+      "required": false,
+      "failurePolicy": "continue-with-warning",
+      "attempt": 1,
+      "maxAttempts": 2,
+      "dependsOn": [
+        "content-plan"
+      ],
+      "priority": "normal",
+      "config": {
+        "agentId": "pricing-page-agent",
+        "targetSlug": "creatio",
+        "maxAutomaticRevisions": 1,
+        "expandFromContentPlan": false,
+        "expandKind": "none",
+        "stopAfterApproval": true,
+        "allowNormalizedFacts": false,
+        "optionalWhenBlocked": true,
+        "forceTransientFailOnce": false
+      },
+      "inputRefs": {},
+      "outputRefs": {
+        "draftId": "draft-deterministic-v1-pricing-page-agent-creatio-2026-08-14T05-46-18-737Z-rev-1786686378751",
+        "qaStatus": "fail"
+      },
+      "blockers": [],
+      "warnings": [
+        "QA still failing after revision: UNVERIFIED_NUMBER,UNVERIFIED_NUMBER",
+        "Manually advanced: optional pricing-page QA (UNVERIFIED_NUMBER / unverified) during CRM batch onboard"
+      ],
+      "agentTaskId": "exec-pricing-page-agent-creatio-1786686378732",
+      "draftId": "draft-deterministic-v1-pricing-page-agent-creatio-2026-08-14T05-46-18-737Z-rev-1786686378751",
+      "startedAt": "2026-08-14T05:46:18.731Z",
+      "completedAt": "2026-08-14T05:46:18.754Z",
+      "revisionAttempts": 1
+    },
+    {
+      "id": "alternatives",
+      "definitionStepId": "alternatives",
+      "handler": "agent-run",
+      "label": "Alternatives",
+      "status": "completed",
+      "required": false,
+      "failurePolicy": "continue-with-warning",
+      "attempt": 1,
+      "maxAttempts": 2,
+      "dependsOn": [
+        "content-plan"
+      ],
+      "priority": "normal",
+      "config": {
+        "agentId": "alternatives-agent",
+        "targetSlug": "creatio",
+        "maxAutomaticRevisions": 1,
+        "expandFromContentPlan": false,
+        "expandKind": "none",
+        "stopAfterApproval": true,
+        "allowNormalizedFacts": false,
+        "optionalWhenBlocked": true,
+        "forceTransientFailOnce": false
+      },
+      "inputRefs": {},
+      "outputRefs": {
+        "draftId": "draft-deterministic-v1-alternatives-agent-creatio-2026-08-14T05-46-18-667Z",
+        "qaStatus": "pass",
+        "agentId": "alternatives-agent",
+        "target": "creatio"
+      },
+      "inputSnapshot": {
+        "researchFactIds": [
+          "fact-creatio-pricing.hasFreePlan",
+          "fact-creatio-pricing.hasFreeTrial",
+          "fact-creatio-pricing.startingPriceMonthly",
+          "fact-creatio-pricing.currency",
+          "fact-creatio-pricing.model",
+          "fact-creatio-pricing.plans.growth",
+          "fact-creatio-pricing.plans.enterprise",
+          "fact-creatio-pricing.plans.unlimited",
+          "fact-creatio-features.contact-management",
+          "fact-creatio-features.lead-management",
+          "fact-creatio-features.pipeline-management",
+          "fact-creatio-features.deal-management",
+          "fact-creatio-features.email-sync",
+          "fact-creatio-features.workflow-automation",
+          "fact-creatio-features.sales-automation",
+          "fact-creatio-features.reporting",
+          "fact-creatio-features.forecasting",
+          "fact-creatio-features.custom-fields",
+          "fact-creatio-features.custom-pipelines",
+          "fact-creatio-features.mobile-app",
+          "fact-creatio-features.ai-assistance",
+          "fact-creatio-features.integrations",
+          "fact-creatio-positioning.summary",
+          "fact-creatio-ai.assistant",
+          "fact-creatio-ai.automation"
+        ],
+        "methodologySlug": "crm-editorial",
+        "methodologyVersion": "1.0.0",
+        "agentVersion": "1.0.0",
+        "contextBuiltAt": "2026-08-14T05:46:18.666Z"
+      },
+      "blockers": [],
+      "warnings": [],
+      "agentTaskId": "exec-alternatives-agent-creatio-1786686378662",
+      "draftId": "draft-deterministic-v1-alternatives-agent-creatio-2026-08-14T05-46-18-667Z",
+      "startedAt": "2026-08-14T05:46:18.662Z",
+      "completedAt": "2026-08-14T05:46:18.669Z",
+      "revisionAttempts": 0
+    },
+    {
+      "id": "comparison:creatio-vs-salesforce",
+      "definitionStepId": "comparisons",
+      "handler": "agent-run",
+      "label": "Comparison creatio-vs-salesforce",
+      "status": "completed",
+      "required": false,
+      "failurePolicy": "continue-with-warning",
+      "attempt": 1,
+      "maxAttempts": 2,
+      "dependsOn": [
+        "content-plan"
+      ],
+      "priority": "normal",
+      "config": {
+        "agentId": "comparison-agent",
+        "targetSlug": "creatio-vs-salesforce",
+        "maxAutomaticRevisions": 1,
+        "expandFromContentPlan": true,
+        "expandKind": "comparisons",
+        "stopAfterApproval": true,
+        "allowNormalizedFacts": false,
+        "optionalWhenBlocked": true,
+        "forceTransientFailOnce": false
+      },
+      "expansionKey": "creatio-vs-salesforce",
+      "inputRefs": {},
+      "outputRefs": {
+        "draftId": "draft-deterministic-v1-comparison-agent-creatio-vs-salesforce-2026-08-14T05-46-18-727Z",
+        "qaStatus": "pass",
+        "agentId": "comparison-agent",
+        "target": "creatio-vs-salesforce"
+      },
+      "inputSnapshot": {
+        "researchFactIds": [],
+        "methodologySlug": "crm-editorial",
+        "methodologyVersion": "1.0.0",
+        "agentVersion": "1.0.0",
+        "contextBuiltAt": "2026-08-14T05:46:18.725Z"
+      },
+      "blockers": [],
+      "warnings": [],
+      "agentTaskId": "exec-comparison-agent-creatio-vs-salesforce-1786686378708",
+      "draftId": "draft-deterministic-v1-comparison-agent-creatio-vs-salesforce-2026-08-14T05-46-18-727Z",
+      "startedAt": "2026-08-14T05:46:18.707Z",
+      "completedAt": "2026-08-14T05:46:18.730Z",
+      "revisionAttempts": 0
+    },
+    {
+      "id": "comparison:creatio-vs-hubspot",
+      "definitionStepId": "comparisons",
+      "handler": "agent-run",
+      "label": "Comparison creatio-vs-hubspot",
+      "status": "completed",
+      "required": false,
+      "failurePolicy": "continue-with-warning",
+      "attempt": 1,
+      "maxAttempts": 2,
+      "dependsOn": [
+        "content-plan"
+      ],
+      "priority": "normal",
+      "config": {
+        "agentId": "comparison-agent",
+        "targetSlug": "creatio-vs-hubspot",
+        "maxAutomaticRevisions": 1,
+        "expandFromContentPlan": true,
+        "expandKind": "comparisons",
+        "stopAfterApproval": true,
+        "allowNormalizedFacts": false,
+        "optionalWhenBlocked": true,
+        "forceTransientFailOnce": false
+      },
+      "expansionKey": "creatio-vs-hubspot",
+      "inputRefs": {},
+      "outputRefs": {
+        "draftId": "draft-deterministic-v1-comparison-agent-creatio-vs-hubspot-2026-08-14T05-46-18-697Z",
+        "qaStatus": "pass",
+        "agentId": "comparison-agent",
+        "target": "creatio-vs-hubspot"
+      },
+      "inputSnapshot": {
+        "researchFactIds": [],
+        "methodologySlug": "crm-editorial",
+        "methodologyVersion": "1.0.0",
+        "agentVersion": "1.0.0",
+        "contextBuiltAt": "2026-08-14T05:46:18.696Z"
+      },
+      "blockers": [],
+      "warnings": [],
+      "agentTaskId": "exec-comparison-agent-creatio-vs-hubspot-1786686378691",
+      "draftId": "draft-deterministic-v1-comparison-agent-creatio-vs-hubspot-2026-08-14T05-46-18-697Z",
+      "startedAt": "2026-08-14T05:46:18.690Z",
+      "completedAt": "2026-08-14T05:46:18.704Z",
+      "revisionAttempts": 0
+    },
+    {
+      "id": "comparison:creatio-vs-dynamics-365",
+      "definitionStepId": "comparisons",
+      "handler": "agent-run",
+      "label": "Comparison creatio-vs-dynamics-365",
+      "status": "completed",
+      "required": false,
+      "failurePolicy": "continue-with-warning",
+      "attempt": 1,
+      "maxAttempts": 2,
+      "dependsOn": [
+        "content-plan"
+      ],
+      "priority": "normal",
+      "config": {
+        "agentId": "comparison-agent",
+        "targetSlug": "creatio-vs-dynamics-365",
+        "maxAutomaticRevisions": 1,
+        "expandFromContentPlan": true,
+        "expandKind": "comparisons",
+        "stopAfterApproval": true,
+        "allowNormalizedFacts": false,
+        "optionalWhenBlocked": true,
+        "forceTransientFailOnce": false
+      },
+      "expansionKey": "creatio-vs-dynamics-365",
+      "inputRefs": {},
+      "outputRefs": {
+        "draftId": "draft-deterministic-v1-comparison-agent-creatio-vs-dynamics-365-2026-08-14T05-46-18-685Z",
+        "qaStatus": "pass",
+        "agentId": "comparison-agent",
+        "target": "creatio-vs-dynamics-365"
+      },
+      "inputSnapshot": {
+        "researchFactIds": [],
+        "methodologySlug": "crm-editorial",
+        "methodologyVersion": "1.0.0",
+        "agentVersion": "1.0.0",
+        "contextBuiltAt": "2026-08-14T05:46:18.683Z"
+      },
+      "blockers": [],
+      "warnings": [],
+      "agentTaskId": "exec-comparison-agent-creatio-vs-dynamics-365-1786686378670",
+      "draftId": "draft-deterministic-v1-comparison-agent-creatio-vs-dynamics-365-2026-08-14T05-46-18-685Z",
+      "startedAt": "2026-08-14T05:46:18.670Z",
+      "completedAt": "2026-08-14T05:46:18.689Z",
+      "revisionAttempts": 0
+    },
+    {
+      "id": "internal-links",
+      "definitionStepId": "internal-links",
+      "handler": "internal-link",
+      "label": "Internal Link Plan",
+      "status": "completed",
+      "required": false,
+      "failurePolicy": "continue-with-warning",
+      "attempt": 1,
+      "maxAttempts": 2,
+      "dependsOn": [
+        "software-review"
+      ],
+      "priority": "low",
+      "config": {
+        "agentId": "internal-link-agent",
+        "maxAutomaticRevisions": 1,
+        "expandFromContentPlan": false,
+        "expandKind": "none",
+        "stopAfterApproval": true,
+        "allowNormalizedFacts": false,
+        "optionalWhenBlocked": false,
+        "forceTransientFailOnce": false
+      },
+      "inputRefs": {},
+      "outputRefs": {
+        "draftId": "draft-deterministic-v1-internal-link-agent-creatio-2026-08-14T05-47-43-215Z",
+        "qaStatus": "pass",
+        "agentId": "internal-link-agent",
+        "target": "creatio"
+      },
+      "inputSnapshot": {
+        "researchFactIds": [
+          "fact-creatio-pricing.hasFreePlan",
+          "fact-creatio-pricing.hasFreeTrial",
+          "fact-creatio-pricing.startingPriceMonthly",
+          "fact-creatio-pricing.currency",
+          "fact-creatio-pricing.model",
+          "fact-creatio-pricing.plans.growth",
+          "fact-creatio-pricing.plans.enterprise",
+          "fact-creatio-pricing.plans.unlimited",
+          "fact-creatio-features.contact-management",
+          "fact-creatio-features.lead-management",
+          "fact-creatio-features.pipeline-management",
+          "fact-creatio-features.deal-management",
+          "fact-creatio-features.email-sync",
+          "fact-creatio-features.workflow-automation",
+          "fact-creatio-features.sales-automation",
+          "fact-creatio-features.reporting",
+          "fact-creatio-features.forecasting",
+          "fact-creatio-features.custom-fields",
+          "fact-creatio-features.custom-pipelines",
+          "fact-creatio-features.mobile-app",
+          "fact-creatio-features.ai-assistance",
+          "fact-creatio-features.integrations",
+          "fact-creatio-positioning.summary",
+          "fact-creatio-ai.assistant",
+          "fact-creatio-ai.automation"
+        ],
+        "methodologySlug": "crm-editorial",
+        "methodologyVersion": "1.0.0",
+        "agentVersion": "1.0.0",
+        "contextBuiltAt": "2026-08-14T05:47:43.210Z"
+      },
+      "blockers": [],
+      "warnings": [],
+      "agentTaskId": "exec-internal-link-agent-creatio-1786686463177",
+      "draftId": "draft-deterministic-v1-internal-link-agent-creatio-2026-08-14T05-47-43-215Z",
+      "startedAt": "2026-08-14T05:47:43.176Z",
+      "completedAt": "2026-08-14T05:47:43.223Z",
+      "revisionAttempts": 0
+    },
+    {
+      "id": "finder-readiness",
+      "definitionStepId": "finder-readiness",
+      "handler": "update-recommendation-readiness",
+      "label": "Finder readiness",
+      "status": "completed",
+      "required": false,
+      "failurePolicy": "continue",
+      "attempt": 1,
+      "maxAttempts": 2,
+      "dependsOn": [
+        "content-plan"
+      ],
+      "priority": "low",
+      "config": {
+        "maxAutomaticRevisions": 1,
+        "expandFromContentPlan": false,
+        "expandKind": "none",
+        "stopAfterApproval": true,
+        "allowNormalizedFacts": false,
+        "optionalWhenBlocked": false,
+        "forceTransientFailOnce": false
+      },
+      "inputRefs": {},
+      "outputRefs": {
+        "finderReadiness": "checked"
+      },
+      "blockers": [],
+      "warnings": [],
+      "startedAt": "2026-08-14T05:47:28.592Z",
+      "completedAt": "2026-08-14T05:47:28.593Z",
+      "revisionAttempts": 0
+    },
+    {
+      "id": "editorial-approval",
+      "definitionStepId": "editorial-approval",
+      "handler": "approval-check",
+      "label": "Editorial approval",
+      "status": "completed",
+      "required": true,
+      "failurePolicy": "manual-review",
+      "attempt": 2,
+      "maxAttempts": 2,
+      "dependsOn": [
+        "software-review"
+      ],
+      "priority": "critical",
+      "config": {
+        "approvalType": "editorial",
+        "maxAutomaticRevisions": 1,
+        "expandFromContentPlan": false,
+        "expandKind": "none",
+        "stopAfterApproval": true,
+        "allowNormalizedFacts": false,
+        "optionalWhenBlocked": false,
+        "forceTransientFailOnce": false
+      },
+      "inputRefs": {},
+      "outputRefs": {
+        "approvalId": "appr-wf-software-onboarding-content-creatio-1786686378201-software-review",
+        "draftId": "draft-deterministic-v1-software-review-agent-creatio-2026-08-14T05-46-18-654Z",
+        "approvalIds": "appr-wf-software-onboarding-content-creatio-1786686378201-software-review"
+      },
+      "blockers": [],
+      "warnings": [
+        "Approval received — resuming",
+        "6 optional draft(s) may still need separate editorial review"
+      ],
+      "approvalId": "appr-wf-software-onboarding-content-creatio-1786686378201-software-review",
+      "startedAt": "2026-08-14T05:50:06.335Z",
+      "completedAt": "2026-08-14T05:50:06.402Z",
+      "revisionAttempts": 0
+    },
+    {
+      "id": "pre-publish-validation",
+      "definitionStepId": "pre-publish-validation",
+      "handler": "pre-publish-validation",
+      "label": "Pre-publish validation",
+      "status": "completed",
+      "required": true,
+      "failurePolicy": "block-workflow",
+      "attempt": 1,
+      "maxAttempts": 2,
+      "dependsOn": [
+        "editorial-approval"
+      ],
+      "priority": "critical",
+      "config": {
+        "maxAutomaticRevisions": 1,
+        "expandFromContentPlan": false,
+        "expandKind": "none",
+        "stopAfterApproval": true,
+        "allowNormalizedFacts": false,
+        "optionalWhenBlocked": false,
+        "forceTransientFailOnce": false
+      },
+      "inputRefs": {},
+      "outputRefs": {
+        "publishState": "READY_TO_PUBLISH"
+      },
+      "blockers": [],
+      "warnings": [
+        "stopAfterApproval: workflow will not publish automatically"
+      ],
+      "startedAt": "2026-08-14T05:50:06.403Z",
+      "completedAt": "2026-08-14T05:50:06.705Z",
+      "revisionAttempts": 0
+    }
+  ],
+  "history": [
+    {
+      "at": "2026-08-14T05:46:18.555Z",
+      "event": "workflow_created",
+      "message": "Created software-onboarding-content:v1.0.0"
+    },
+    {
+      "at": "2026-08-14T05:46:18.558Z",
+      "event": "workflow_started",
+      "message": "Workflow execution started"
+    },
+    {
+      "at": "2026-08-14T05:46:18.562Z",
+      "event": "workflow_step_started",
+      "stepId": "software-onboarding",
+      "message": "Started Software onboarding"
+    },
+    {
+      "at": "2026-08-14T05:46:18.591Z",
+      "event": "workflow_step_completed",
+      "stepId": "software-onboarding",
+      "message": "Reused onboarding run onboard-creatio-1786686344585 (review-required)"
+    },
+    {
+      "at": "2026-08-14T05:46:18.593Z",
+      "event": "workflow_step_started",
+      "stepId": "content-plan",
+      "message": "Started Content plan"
+    },
+    {
+      "at": "2026-08-14T05:46:18.620Z",
+      "event": "workflow_step_completed",
+      "stepId": "content-plan",
+      "message": "Content plan from onboarding onboard-creatio-1786686344585 (9 candidates)"
+    },
+    {
+      "at": "2026-08-14T05:46:18.621Z",
+      "event": "workflow_step_started",
+      "stepId": "software-review",
+      "message": "Started Software Review"
+    },
+    {
+      "at": "2026-08-14T05:46:18.661Z",
+      "event": "workflow_step_completed",
+      "stepId": "software-review",
+      "message": "Agent software-review-agent → draft draft-deterministic-v1-software-review-agent-creatio-2026-08-14T05-46-18-654Z (qa=pass)"
+    },
+    {
+      "at": "2026-08-14T05:46:18.661Z",
+      "event": "workflow_step_started",
+      "stepId": "alternatives",
+      "message": "Started Alternatives"
+    },
+    {
+      "at": "2026-08-14T05:46:18.669Z",
+      "event": "workflow_step_completed",
+      "stepId": "alternatives",
+      "message": "Agent alternatives-agent → draft draft-deterministic-v1-alternatives-agent-creatio-2026-08-14T05-46-18-667Z (qa=pass)"
+    },
+    {
+      "at": "2026-08-14T05:46:18.669Z",
+      "event": "workflow_step_started",
+      "stepId": "comparison:creatio-vs-dynamics-365",
+      "message": "Started Comparison creatio-vs-dynamics-365"
+    },
+    {
+      "at": "2026-08-14T05:46:18.689Z",
+      "event": "workflow_step_completed",
+      "stepId": "comparison:creatio-vs-dynamics-365",
+      "message": "Agent comparison-agent → draft draft-deterministic-v1-comparison-agent-creatio-vs-dynamics-365-2026-08-14T05-46-18-685Z (qa=pass)"
+    },
+    {
+      "at": "2026-08-14T05:46:18.690Z",
+      "event": "workflow_step_started",
+      "stepId": "comparison:creatio-vs-hubspot",
+      "message": "Started Comparison creatio-vs-hubspot"
+    },
+    {
+      "at": "2026-08-14T05:46:18.704Z",
+      "event": "workflow_step_completed",
+      "stepId": "comparison:creatio-vs-hubspot",
+      "message": "Agent comparison-agent → draft draft-deterministic-v1-comparison-agent-creatio-vs-hubspot-2026-08-14T05-46-18-697Z (qa=pass)"
+    },
+    {
+      "at": "2026-08-14T05:46:18.707Z",
+      "event": "workflow_step_started",
+      "stepId": "comparison:creatio-vs-salesforce",
+      "message": "Started Comparison creatio-vs-salesforce"
+    },
+    {
+      "at": "2026-08-14T05:46:18.730Z",
+      "event": "workflow_step_completed",
+      "stepId": "comparison:creatio-vs-salesforce",
+      "message": "Agent comparison-agent → draft draft-deterministic-v1-comparison-agent-creatio-vs-salesforce-2026-08-14T05-46-18-727Z (qa=pass)"
+    },
+    {
+      "at": "2026-08-14T05:46:18.731Z",
+      "event": "workflow_step_started",
+      "stepId": "pricing-page",
+      "message": "Started Pricing Page"
+    },
+    {
+      "at": "2026-08-14T05:46:18.754Z",
+      "event": "workflow_step_completed",
+      "stepId": "pricing-page",
+      "message": "QA fail after one automatic revision → review-required"
+    },
+    {
+      "at": "2026-08-14T05:47:28.579Z",
+      "event": "workflow_resumed",
+      "message": "Workflow resumed"
+    },
+    {
+      "at": "2026-08-14T05:47:28.582Z",
+      "event": "workflow_started",
+      "message": "Workflow execution started"
+    },
+    {
+      "at": "2026-08-14T05:47:28.592Z",
+      "event": "workflow_step_started",
+      "stepId": "finder-readiness",
+      "message": "Started Finder readiness"
+    },
+    {
+      "at": "2026-08-14T05:47:28.593Z",
+      "event": "workflow_step_completed",
+      "stepId": "finder-readiness",
+      "message": "Finder readiness noted for creatio"
+    },
+    {
+      "at": "2026-08-14T05:47:43.171Z",
+      "event": "workflow_resumed",
+      "message": "Workflow resumed"
+    },
+    {
+      "at": "2026-08-14T05:47:43.174Z",
+      "event": "workflow_started",
+      "message": "Workflow execution started"
+    },
+    {
+      "at": "2026-08-14T05:47:43.176Z",
+      "event": "workflow_step_started",
+      "stepId": "internal-links",
+      "message": "Started Internal Link Plan"
+    },
+    {
+      "at": "2026-08-14T05:47:43.223Z",
+      "event": "workflow_step_completed",
+      "stepId": "internal-links",
+      "message": "Agent internal-link-agent → draft draft-deterministic-v1-internal-link-agent-creatio-2026-08-14T05-47-43-215Z (qa=pass)"
+    },
+    {
+      "at": "2026-08-14T05:49:45.672Z",
+      "event": "workflow_resumed",
+      "message": "Workflow resumed"
+    },
+    {
+      "at": "2026-08-14T05:49:45.674Z",
+      "event": "workflow_started",
+      "message": "Workflow execution started"
+    },
+    {
+      "at": "2026-08-14T05:49:45.676Z",
+      "event": "workflow_step_started",
+      "stepId": "editorial-approval",
+      "message": "Started Editorial approval"
+    },
+    {
+      "at": "2026-08-14T05:49:45.741Z",
+      "event": "workflow_step_completed",
+      "stepId": "editorial-approval",
+      "message": "WAITING FOR EDITORIAL APPROVAL (appr-wf-software-onboarding-content-creatio-1786686378201-software-review)"
+    },
+    {
+      "at": "2026-08-14T05:50:06.331Z",
+      "event": "workflow_resumed",
+      "message": "Workflow resumed"
+    },
+    {
+      "at": "2026-08-14T05:50:06.333Z",
+      "event": "workflow_started",
+      "message": "Workflow execution started"
+    },
+    {
+      "at": "2026-08-14T05:50:06.334Z",
+      "event": "workflow_step_started",
+      "stepId": "editorial-approval",
+      "message": "Started Editorial approval"
+    },
+    {
+      "at": "2026-08-14T05:50:06.402Z",
+      "event": "workflow_step_completed",
+      "stepId": "editorial-approval",
+      "message": "Required editorial approvals satisfied"
+    },
+    {
+      "at": "2026-08-14T05:50:06.403Z",
+      "event": "workflow_step_started",
+      "stepId": "pre-publish-validation",
+      "message": "Started Pre-publish validation"
+    },
+    {
+      "at": "2026-08-14T05:50:06.705Z",
+      "event": "workflow_step_completed",
+      "stepId": "pre-publish-validation",
+      "message": "Pre-publish validation passed — READY TO PUBLISH (manual)"
+    },
+    {
+      "at": "2026-08-14T05:50:06.707Z",
+      "event": "workflow_completed",
+      "message": "Workflow completed-with-warnings"
+    }
+  ],
+  "options": {
+    "generateReview": true,
+    "generatePricing": true,
+    "generateAlternatives": true,
+    "generateComparisons": true,
+    "runInternalLinks": true,
+    "stopAfterApproval": true,
+    "allowNormalizedFacts": false,
+    "dryRun": false,
+    "maxComparisons": 3,
+    "skipOnboarding": false
+  },
+  "warnings": [],
+  "createdAt": "2026-08-14T05:46:18.555Z",
+  "updatedAt": "2026-08-14T05:50:06.707Z"
+}

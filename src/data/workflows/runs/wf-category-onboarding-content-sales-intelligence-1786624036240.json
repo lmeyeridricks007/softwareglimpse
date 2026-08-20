@@ -1,0 +1,251 @@
+{
+  "id": "wf-category-onboarding-content-sales-intelligence-1786624036240",
+  "workflowId": "category-onboarding-content",
+  "workflowVersion": "1.0.0",
+  "name": "Category Onboarding Content: sales-intelligence",
+  "targetType": "category",
+  "targetId": "sales-intelligence",
+  "status": "superseded",
+  "steps": [
+    {
+      "id": "category-onboarding",
+      "definitionStepId": "category-onboarding",
+      "handler": "category-onboarding",
+      "label": "Category onboarding",
+      "status": "blocked",
+      "required": true,
+      "failurePolicy": "block-workflow",
+      "attempt": 1,
+      "maxAttempts": 2,
+      "dependsOn": [],
+      "priority": "critical",
+      "config": {
+        "maxAutomaticRevisions": 1,
+        "expandFromContentPlan": false,
+        "expandKind": "none",
+        "stopAfterApproval": true,
+        "allowNormalizedFacts": false,
+        "optionalWhenBlocked": false,
+        "forceTransientFailOnce": false
+      },
+      "inputRefs": {},
+      "outputRefs": {},
+      "blockers": [
+        "No category onboarding run for sales-intelligence. Run: npm run onboard:category -- sales-intelligence"
+      ],
+      "warnings": [],
+      "startedAt": "2026-08-13T12:27:16.372Z",
+      "completedAt": "2026-08-13T12:27:16.379Z",
+      "revisionAttempts": 0
+    },
+    {
+      "id": "category-hub",
+      "definitionStepId": "category-hub",
+      "handler": "agent-run",
+      "label": "Category Hub",
+      "status": "pending",
+      "required": true,
+      "failurePolicy": "block-workflow",
+      "attempt": 0,
+      "maxAttempts": 2,
+      "dependsOn": [
+        "category-onboarding"
+      ],
+      "priority": "high",
+      "config": {
+        "agentId": "category-hub-agent",
+        "targetSlug": "sales-intelligence",
+        "maxAutomaticRevisions": 1,
+        "expandFromContentPlan": false,
+        "expandKind": "none",
+        "stopAfterApproval": true,
+        "allowNormalizedFacts": false,
+        "optionalWhenBlocked": false,
+        "forceTransientFailOnce": false
+      },
+      "inputRefs": {},
+      "outputRefs": {},
+      "blockers": [],
+      "warnings": [],
+      "revisionAttempts": 0
+    },
+    {
+      "id": "best-software",
+      "definitionStepId": "best-software",
+      "handler": "agent-run",
+      "label": "Best Software",
+      "status": "pending",
+      "required": false,
+      "failurePolicy": "continue-with-warning",
+      "attempt": 0,
+      "maxAttempts": 2,
+      "dependsOn": [
+        "category-onboarding"
+      ],
+      "priority": "normal",
+      "config": {
+        "agentId": "best-software-agent",
+        "targetSlug": "sales-intelligence",
+        "maxAutomaticRevisions": 1,
+        "expandFromContentPlan": false,
+        "expandKind": "none",
+        "stopAfterApproval": true,
+        "allowNormalizedFacts": false,
+        "optionalWhenBlocked": true,
+        "forceTransientFailOnce": false
+      },
+      "inputRefs": {},
+      "outputRefs": {},
+      "blockers": [],
+      "warnings": [],
+      "revisionAttempts": 0
+    },
+    {
+      "id": "use-cases",
+      "definitionStepId": "use-cases",
+      "handler": "agent-run",
+      "label": "Use-Case Pages",
+      "status": "skipped",
+      "required": false,
+      "failurePolicy": "continue-with-warning",
+      "attempt": 0,
+      "maxAttempts": 2,
+      "dependsOn": [
+        "category-onboarding"
+      ],
+      "priority": "low",
+      "config": {
+        "agentId": "use-case-page-agent",
+        "maxAutomaticRevisions": 1,
+        "expandFromContentPlan": false,
+        "expandKind": "use-cases",
+        "stopAfterApproval": true,
+        "allowNormalizedFacts": false,
+        "optionalWhenBlocked": true,
+        "forceTransientFailOnce": false
+      },
+      "inputRefs": {},
+      "outputRefs": {},
+      "blockers": [],
+      "warnings": [
+        "No use-case targets configured"
+      ],
+      "revisionAttempts": 0
+    },
+    {
+      "id": "internal-links",
+      "definitionStepId": "internal-links",
+      "handler": "internal-link",
+      "label": "Internal Link Plan",
+      "status": "pending",
+      "required": false,
+      "failurePolicy": "continue-with-warning",
+      "attempt": 0,
+      "maxAttempts": 2,
+      "dependsOn": [
+        "category-hub"
+      ],
+      "priority": "low",
+      "config": {
+        "agentId": "internal-link-agent",
+        "maxAutomaticRevisions": 1,
+        "expandFromContentPlan": false,
+        "expandKind": "none",
+        "stopAfterApproval": true,
+        "allowNormalizedFacts": false,
+        "optionalWhenBlocked": false,
+        "forceTransientFailOnce": false
+      },
+      "inputRefs": {},
+      "outputRefs": {},
+      "blockers": [],
+      "warnings": [],
+      "revisionAttempts": 0
+    },
+    {
+      "id": "editorial-approval",
+      "definitionStepId": "editorial-approval",
+      "handler": "approval-check",
+      "label": "Editorial approval",
+      "status": "pending",
+      "required": true,
+      "failurePolicy": "manual-review",
+      "attempt": 0,
+      "maxAttempts": 2,
+      "dependsOn": [
+        "category-hub"
+      ],
+      "priority": "critical",
+      "config": {
+        "approvalType": "editorial",
+        "maxAutomaticRevisions": 1,
+        "expandFromContentPlan": false,
+        "expandKind": "none",
+        "stopAfterApproval": true,
+        "allowNormalizedFacts": false,
+        "optionalWhenBlocked": false,
+        "forceTransientFailOnce": false
+      },
+      "inputRefs": {},
+      "outputRefs": {},
+      "blockers": [],
+      "warnings": [],
+      "revisionAttempts": 0
+    }
+  ],
+  "history": [
+    {
+      "at": "2026-08-13T12:27:16.368Z",
+      "event": "workflow_created",
+      "message": "Created category-onboarding-content:v1.0.0"
+    },
+    {
+      "at": "2026-08-13T12:27:16.371Z",
+      "event": "workflow_started",
+      "message": "Workflow execution started"
+    },
+    {
+      "at": "2026-08-13T12:27:16.372Z",
+      "event": "workflow_step_started",
+      "stepId": "category-onboarding",
+      "message": "Started Category onboarding"
+    },
+    {
+      "at": "2026-08-13T12:27:16.379Z",
+      "event": "workflow_step_completed",
+      "stepId": "category-onboarding",
+      "message": "Step category-onboarding → blocked"
+    },
+    {
+      "at": "2026-08-13T12:27:32.599Z",
+      "event": "workflow_resumed",
+      "message": "Workflow resumed"
+    },
+    {
+      "at": "2026-08-13T12:27:32.602Z",
+      "event": "workflow_started",
+      "message": "Workflow execution started"
+    },
+    {
+      "at": "2026-08-13T12:28:34.173Z",
+      "event": "workflow_resumed",
+      "message": "Workflow resumed"
+    },
+    {
+      "at": "2026-08-13T12:28:34.177Z",
+      "event": "workflow_started",
+      "message": "Workflow execution started"
+    }
+  ],
+  "options": {
+    "generateHub": true,
+    "generateBest": true,
+    "generateUseCases": false,
+    "stopAfterApproval": true,
+    "dryRun": false
+  },
+  "supersededBy": "wf-category-onboarding-content-sales-intelligence-1786624119527",
+  "warnings": [],
+  "createdAt": "2026-08-13T12:27:16.368Z",
+  "updatedAt": "2026-08-13T12:28:39.665Z"
+}

@@ -1,0 +1,683 @@
+{
+  "id": "wf-software-onboarding-content-lucrovox-1787140651997",
+  "workflowId": "software-onboarding-content",
+  "workflowVersion": "1.0.0",
+  "name": "Software Onboarding Content: lucrovox",
+  "targetType": "software",
+  "targetId": "lucrovox",
+  "status": "blocked",
+  "steps": [
+    {
+      "id": "software-onboarding",
+      "definitionStepId": "software-onboarding",
+      "handler": "software-onboarding",
+      "label": "Software onboarding",
+      "status": "completed",
+      "required": true,
+      "failurePolicy": "block-workflow",
+      "attempt": 1,
+      "maxAttempts": 2,
+      "dependsOn": [],
+      "priority": "critical",
+      "config": {
+        "maxAutomaticRevisions": 1,
+        "expandFromContentPlan": false,
+        "expandKind": "none",
+        "stopAfterApproval": true,
+        "allowNormalizedFacts": false,
+        "optionalWhenBlocked": false,
+        "forceTransientFailOnce": false
+      },
+      "inputRefs": {},
+      "outputRefs": {
+        "softwareOnboardingRunId": "onboard-lucrovox-1787140644033"
+      },
+      "blockers": [],
+      "warnings": [],
+      "startedAt": "2026-08-19T11:57:33.460Z",
+      "completedAt": "2026-08-19T11:57:34.002Z",
+      "revisionAttempts": 0
+    },
+    {
+      "id": "content-plan",
+      "definitionStepId": "content-plan",
+      "handler": "content-plan",
+      "label": "Content plan",
+      "status": "completed",
+      "required": true,
+      "failurePolicy": "block-workflow",
+      "attempt": 1,
+      "maxAttempts": 2,
+      "dependsOn": [
+        "software-onboarding"
+      ],
+      "priority": "high",
+      "config": {
+        "maxAutomaticRevisions": 1,
+        "expandFromContentPlan": false,
+        "expandKind": "none",
+        "stopAfterApproval": true,
+        "allowNormalizedFacts": false,
+        "optionalWhenBlocked": false,
+        "forceTransientFailOnce": false
+      },
+      "inputRefs": {},
+      "outputRefs": {
+        "softwareOnboardingRunId": "onboard-lucrovox-1787140644033",
+        "comparisonTargets": "lucrovox-vs-marketo,learnworlds-vs-lucrovox,livestorm-vs-lucrovox",
+        "pageCandidateCount": "9"
+      },
+      "blockers": [],
+      "warnings": [],
+      "startedAt": "2026-08-19T11:57:34.029Z",
+      "completedAt": "2026-08-19T11:57:34.230Z",
+      "revisionAttempts": 0
+    },
+    {
+      "id": "software-review",
+      "definitionStepId": "software-review",
+      "handler": "agent-run",
+      "label": "Software Review",
+      "status": "completed",
+      "required": true,
+      "failurePolicy": "block-workflow",
+      "attempt": 1,
+      "maxAttempts": 2,
+      "dependsOn": [
+        "content-plan"
+      ],
+      "priority": "high",
+      "config": {
+        "agentId": "software-review-agent",
+        "targetSlug": "lucrovox",
+        "maxAutomaticRevisions": 1,
+        "expandFromContentPlan": false,
+        "expandKind": "none",
+        "stopAfterApproval": true,
+        "allowNormalizedFacts": false,
+        "optionalWhenBlocked": false,
+        "forceTransientFailOnce": false
+      },
+      "inputRefs": {},
+      "outputRefs": {
+        "draftId": "draft-deterministic-v1-software-review-agent-lucrovox-2026-08-19T11-57-34-475Z-rev-1787140654504",
+        "qaStatus": "pass",
+        "agentId": "software-review-agent",
+        "target": "lucrovox"
+      },
+      "inputSnapshot": {
+        "researchFactIds": [
+          "fact-lucrovox-identity.shortDescription",
+          "fact-lucrovox-positioning.vendorClaim",
+          "fact-lucrovox-pricing.model",
+          "fact-lucrovox-pricing.hasFreePlan",
+          "fact-lucrovox-pricing.hasFreeTrial",
+          "fact-lucrovox-pricing.plans.enterprise"
+        ],
+        "methodologySlug": "marketing-editorial",
+        "methodologyVersion": "1.0.0",
+        "agentVersion": "1.0.0",
+        "contextBuiltAt": "2026-08-19T11:57:34.469Z"
+      },
+      "blockers": [],
+      "warnings": [],
+      "agentTaskId": "exec-software-review-agent-lucrovox-1787140654234",
+      "draftId": "draft-deterministic-v1-software-review-agent-lucrovox-2026-08-19T11-57-34-475Z-rev-1787140654504",
+      "startedAt": "2026-08-19T11:57:34.232Z",
+      "completedAt": "2026-08-19T11:57:34.509Z",
+      "revisionAttempts": 0
+    },
+    {
+      "id": "pricing-page",
+      "definitionStepId": "pricing-page",
+      "handler": "agent-run",
+      "label": "Pricing Page",
+      "status": "blocked",
+      "required": false,
+      "failurePolicy": "continue-with-warning",
+      "attempt": 1,
+      "maxAttempts": 2,
+      "dependsOn": [
+        "content-plan"
+      ],
+      "priority": "normal",
+      "config": {
+        "agentId": "pricing-page-agent",
+        "targetSlug": "lucrovox",
+        "maxAutomaticRevisions": 1,
+        "expandFromContentPlan": false,
+        "expandKind": "none",
+        "stopAfterApproval": true,
+        "allowNormalizedFacts": false,
+        "optionalWhenBlocked": true,
+        "forceTransientFailOnce": false
+      },
+      "inputRefs": {},
+      "outputRefs": {},
+      "blockers": [
+        "PRICING_UNVERIFIED: Product pricing data is unverified"
+      ],
+      "warnings": [
+        "PRICING_UNVERIFIED: Product pricing data is unverified"
+      ],
+      "startedAt": "2026-08-19T11:57:34.577Z",
+      "completedAt": "2026-08-19T11:57:34.588Z",
+      "revisionAttempts": 0
+    },
+    {
+      "id": "alternatives",
+      "definitionStepId": "alternatives",
+      "handler": "agent-run",
+      "label": "Alternatives",
+      "status": "blocked",
+      "required": false,
+      "failurePolicy": "continue-with-warning",
+      "attempt": 1,
+      "maxAttempts": 2,
+      "dependsOn": [
+        "content-plan"
+      ],
+      "priority": "normal",
+      "config": {
+        "agentId": "alternatives-agent",
+        "targetSlug": "lucrovox",
+        "maxAutomaticRevisions": 1,
+        "expandFromContentPlan": false,
+        "expandKind": "none",
+        "stopAfterApproval": true,
+        "allowNormalizedFacts": false,
+        "optionalWhenBlocked": true,
+        "forceTransientFailOnce": false
+      },
+      "inputRefs": {},
+      "outputRefs": {},
+      "blockers": [
+        "NO_APPROVED_ALTERNATIVES: Approved alternative relationships required — same-category alone is insufficient"
+      ],
+      "warnings": [
+        "NO_APPROVED_ALTERNATIVES: Approved alternative relationships required — same-category alone is insufficient"
+      ],
+      "startedAt": "2026-08-19T11:57:34.512Z",
+      "completedAt": "2026-08-19T11:57:34.525Z",
+      "revisionAttempts": 0
+    },
+    {
+      "id": "comparison:lucrovox-vs-marketo",
+      "definitionStepId": "comparisons",
+      "handler": "agent-run",
+      "label": "Comparison lucrovox-vs-marketo",
+      "status": "blocked",
+      "required": false,
+      "failurePolicy": "continue-with-warning",
+      "attempt": 1,
+      "maxAttempts": 2,
+      "dependsOn": [
+        "content-plan"
+      ],
+      "priority": "normal",
+      "config": {
+        "agentId": "comparison-agent",
+        "targetSlug": "lucrovox-vs-marketo",
+        "maxAutomaticRevisions": 1,
+        "expandFromContentPlan": true,
+        "expandKind": "comparisons",
+        "stopAfterApproval": true,
+        "allowNormalizedFacts": false,
+        "optionalWhenBlocked": true,
+        "forceTransientFailOnce": false
+      },
+      "expansionKey": "lucrovox-vs-marketo",
+      "inputRefs": {},
+      "outputRefs": {},
+      "blockers": [
+        "RELATIONSHIP_UNAPPROVED: Approved comparable relationship required"
+      ],
+      "warnings": [
+        "RELATIONSHIP_UNAPPROVED: Approved comparable relationship required"
+      ],
+      "startedAt": "2026-08-19T11:57:34.559Z",
+      "completedAt": "2026-08-19T11:57:34.574Z",
+      "revisionAttempts": 0
+    },
+    {
+      "id": "comparison:learnworlds-vs-lucrovox",
+      "definitionStepId": "comparisons",
+      "handler": "agent-run",
+      "label": "Comparison learnworlds-vs-lucrovox",
+      "status": "blocked",
+      "required": false,
+      "failurePolicy": "continue-with-warning",
+      "attempt": 1,
+      "maxAttempts": 2,
+      "dependsOn": [
+        "content-plan"
+      ],
+      "priority": "normal",
+      "config": {
+        "agentId": "comparison-agent",
+        "targetSlug": "learnworlds-vs-lucrovox",
+        "maxAutomaticRevisions": 1,
+        "expandFromContentPlan": true,
+        "expandKind": "comparisons",
+        "stopAfterApproval": true,
+        "allowNormalizedFacts": false,
+        "optionalWhenBlocked": true,
+        "forceTransientFailOnce": false
+      },
+      "expansionKey": "learnworlds-vs-lucrovox",
+      "inputRefs": {},
+      "outputRefs": {},
+      "blockers": [
+        "RELATIONSHIP_UNAPPROVED: Approved comparable relationship required"
+      ],
+      "warnings": [
+        "RELATIONSHIP_UNAPPROVED: Approved comparable relationship required"
+      ],
+      "startedAt": "2026-08-19T11:57:34.526Z",
+      "completedAt": "2026-08-19T11:57:34.543Z",
+      "revisionAttempts": 0
+    },
+    {
+      "id": "comparison:livestorm-vs-lucrovox",
+      "definitionStepId": "comparisons",
+      "handler": "agent-run",
+      "label": "Comparison livestorm-vs-lucrovox",
+      "status": "blocked",
+      "required": false,
+      "failurePolicy": "continue-with-warning",
+      "attempt": 1,
+      "maxAttempts": 2,
+      "dependsOn": [
+        "content-plan"
+      ],
+      "priority": "normal",
+      "config": {
+        "agentId": "comparison-agent",
+        "targetSlug": "livestorm-vs-lucrovox",
+        "maxAutomaticRevisions": 1,
+        "expandFromContentPlan": true,
+        "expandKind": "comparisons",
+        "stopAfterApproval": true,
+        "allowNormalizedFacts": false,
+        "optionalWhenBlocked": true,
+        "forceTransientFailOnce": false
+      },
+      "expansionKey": "livestorm-vs-lucrovox",
+      "inputRefs": {},
+      "outputRefs": {},
+      "blockers": [
+        "RELATIONSHIP_UNAPPROVED: Approved comparable relationship required"
+      ],
+      "warnings": [
+        "RELATIONSHIP_UNAPPROVED: Approved comparable relationship required"
+      ],
+      "startedAt": "2026-08-19T11:57:34.545Z",
+      "completedAt": "2026-08-19T11:57:34.557Z",
+      "revisionAttempts": 0
+    },
+    {
+      "id": "internal-links",
+      "definitionStepId": "internal-links",
+      "handler": "internal-link",
+      "label": "Internal Link Plan",
+      "status": "completed",
+      "required": false,
+      "failurePolicy": "continue-with-warning",
+      "attempt": 1,
+      "maxAttempts": 2,
+      "dependsOn": [
+        "software-review"
+      ],
+      "priority": "low",
+      "config": {
+        "agentId": "internal-link-agent",
+        "maxAutomaticRevisions": 1,
+        "expandFromContentPlan": false,
+        "expandKind": "none",
+        "stopAfterApproval": true,
+        "allowNormalizedFacts": false,
+        "optionalWhenBlocked": false,
+        "forceTransientFailOnce": false
+      },
+      "inputRefs": {},
+      "outputRefs": {
+        "draftId": "draft-deterministic-v1-internal-link-agent-lucrovox-2026-08-19T11-57-34-599Z",
+        "qaStatus": "pass",
+        "agentId": "internal-link-agent",
+        "target": "lucrovox"
+      },
+      "inputSnapshot": {
+        "researchFactIds": [
+          "fact-lucrovox-identity.shortDescription",
+          "fact-lucrovox-positioning.vendorClaim",
+          "fact-lucrovox-pricing.model",
+          "fact-lucrovox-pricing.hasFreePlan",
+          "fact-lucrovox-pricing.hasFreeTrial",
+          "fact-lucrovox-pricing.plans.enterprise"
+        ],
+        "methodologySlug": "marketing-editorial",
+        "methodologyVersion": "1.0.0",
+        "agentVersion": "1.0.0",
+        "contextBuiltAt": "2026-08-19T11:57:34.598Z"
+      },
+      "blockers": [],
+      "warnings": [],
+      "agentTaskId": "exec-internal-link-agent-lucrovox-1787140654592",
+      "draftId": "draft-deterministic-v1-internal-link-agent-lucrovox-2026-08-19T11-57-34-599Z",
+      "startedAt": "2026-08-19T11:57:34.591Z",
+      "completedAt": "2026-08-19T11:57:34.601Z",
+      "revisionAttempts": 0
+    },
+    {
+      "id": "finder-readiness",
+      "definitionStepId": "finder-readiness",
+      "handler": "update-recommendation-readiness",
+      "label": "Finder readiness",
+      "status": "completed",
+      "required": false,
+      "failurePolicy": "continue",
+      "attempt": 1,
+      "maxAttempts": 2,
+      "dependsOn": [
+        "content-plan"
+      ],
+      "priority": "low",
+      "config": {
+        "maxAutomaticRevisions": 1,
+        "expandFromContentPlan": false,
+        "expandKind": "none",
+        "stopAfterApproval": true,
+        "allowNormalizedFacts": false,
+        "optionalWhenBlocked": false,
+        "forceTransientFailOnce": false
+      },
+      "inputRefs": {},
+      "outputRefs": {
+        "finderReadiness": "checked"
+      },
+      "blockers": [],
+      "warnings": [],
+      "startedAt": "2026-08-19T11:57:34.589Z",
+      "completedAt": "2026-08-19T11:57:34.590Z",
+      "revisionAttempts": 0
+    },
+    {
+      "id": "editorial-approval",
+      "definitionStepId": "editorial-approval",
+      "handler": "approval-check",
+      "label": "Editorial approval",
+      "status": "completed",
+      "required": true,
+      "failurePolicy": "manual-review",
+      "attempt": 2,
+      "maxAttempts": 2,
+      "dependsOn": [
+        "software-review"
+      ],
+      "priority": "critical",
+      "config": {
+        "approvalType": "editorial",
+        "maxAutomaticRevisions": 1,
+        "expandFromContentPlan": false,
+        "expandKind": "none",
+        "stopAfterApproval": true,
+        "allowNormalizedFacts": false,
+        "optionalWhenBlocked": false,
+        "forceTransientFailOnce": false
+      },
+      "inputRefs": {},
+      "outputRefs": {
+        "approvalId": "appr-wf-software-onboarding-content-lucrovox-1787140651997-software-review",
+        "draftId": "draft-deterministic-v1-software-review-agent-lucrovox-2026-08-19T11-57-34-475Z-rev-1787140654504",
+        "approvalIds": "appr-wf-software-onboarding-content-lucrovox-1787140651997-software-review"
+      },
+      "blockers": [],
+      "warnings": [
+        "Approval received — resuming",
+        "1 optional draft(s) may still need separate editorial review"
+      ],
+      "approvalId": "appr-wf-software-onboarding-content-lucrovox-1787140651997-software-review",
+      "startedAt": "2026-08-19T12:05:03.242Z",
+      "completedAt": "2026-08-19T12:05:03.363Z",
+      "revisionAttempts": 0
+    },
+    {
+      "id": "pre-publish-validation",
+      "definitionStepId": "pre-publish-validation",
+      "handler": "pre-publish-validation",
+      "label": "Pre-publish validation",
+      "status": "blocked",
+      "required": true,
+      "failurePolicy": "block-workflow",
+      "attempt": 1,
+      "maxAttempts": 2,
+      "dependsOn": [
+        "editorial-approval"
+      ],
+      "priority": "critical",
+      "config": {
+        "maxAutomaticRevisions": 1,
+        "expandFromContentPlan": false,
+        "expandKind": "none",
+        "stopAfterApproval": true,
+        "allowNormalizedFacts": false,
+        "optionalWhenBlocked": false,
+        "forceTransientFailOnce": false
+      },
+      "inputRefs": {},
+      "outputRefs": {},
+      "blockers": [
+        "Stale context for software-review: new-critical-fact:fact-lucrovox-pricing.currency-lucrovox-pricing-official; new-critical-fact:fact-lucrovox-pricing.hasFreeTrial-lucrovox-pricing-official; new-critical-fact:fact-lucrovox-pricing.hasFreePlan-lucrovox-pricing-official; new-critical-fact:fact-lucrovox-pricing.model-lucrovox-pricing-official",
+        "Stale context for internal-links: new-critical-fact:fact-lucrovox-pricing.currency-lucrovox-pricing-official; new-critical-fact:fact-lucrovox-pricing.hasFreeTrial-lucrovox-pricing-official; new-critical-fact:fact-lucrovox-pricing.hasFreePlan-lucrovox-pricing-official; new-critical-fact:fact-lucrovox-pricing.model-lucrovox-pricing-official"
+      ],
+      "warnings": [],
+      "startedAt": "2026-08-19T12:05:03.365Z",
+      "completedAt": "2026-08-19T12:05:03.725Z",
+      "revisionAttempts": 0
+    }
+  ],
+  "history": [
+    {
+      "at": "2026-08-19T11:57:33.422Z",
+      "event": "workflow_created",
+      "message": "Created software-onboarding-content:v1.0.0"
+    },
+    {
+      "at": "2026-08-19T11:57:33.440Z",
+      "event": "workflow_started",
+      "message": "Workflow execution started"
+    },
+    {
+      "at": "2026-08-19T11:57:33.460Z",
+      "event": "workflow_step_started",
+      "stepId": "software-onboarding",
+      "message": "Started Software onboarding"
+    },
+    {
+      "at": "2026-08-19T11:57:34.002Z",
+      "event": "workflow_step_completed",
+      "stepId": "software-onboarding",
+      "message": "Reused onboarding run onboard-lucrovox-1787140644033 (review-required)"
+    },
+    {
+      "at": "2026-08-19T11:57:34.029Z",
+      "event": "workflow_step_started",
+      "stepId": "content-plan",
+      "message": "Started Content plan"
+    },
+    {
+      "at": "2026-08-19T11:57:34.230Z",
+      "event": "workflow_step_completed",
+      "stepId": "content-plan",
+      "message": "Content plan from onboarding onboard-lucrovox-1787140644033 (9 candidates)"
+    },
+    {
+      "at": "2026-08-19T11:57:34.232Z",
+      "event": "workflow_step_started",
+      "stepId": "software-review",
+      "message": "Started Software Review"
+    },
+    {
+      "at": "2026-08-19T11:57:34.509Z",
+      "event": "workflow_step_completed",
+      "stepId": "software-review",
+      "message": "Agent software-review-agent → draft draft-deterministic-v1-software-review-agent-lucrovox-2026-08-19T11-57-34-475Z-rev-1787140654504 (qa=pass)"
+    },
+    {
+      "at": "2026-08-19T11:57:34.512Z",
+      "event": "workflow_step_started",
+      "stepId": "alternatives",
+      "message": "Started Alternatives"
+    },
+    {
+      "at": "2026-08-19T11:57:34.525Z",
+      "event": "workflow_step_completed",
+      "stepId": "alternatives",
+      "message": "Agent blocked (optional): NO_APPROVED_ALTERNATIVES: Approved alternative relationships required — same-category alone is insufficient"
+    },
+    {
+      "at": "2026-08-19T11:57:34.526Z",
+      "event": "workflow_step_started",
+      "stepId": "comparison:learnworlds-vs-lucrovox",
+      "message": "Started Comparison learnworlds-vs-lucrovox"
+    },
+    {
+      "at": "2026-08-19T11:57:34.543Z",
+      "event": "workflow_step_completed",
+      "stepId": "comparison:learnworlds-vs-lucrovox",
+      "message": "Agent blocked (optional): RELATIONSHIP_UNAPPROVED: Approved comparable relationship required"
+    },
+    {
+      "at": "2026-08-19T11:57:34.544Z",
+      "event": "workflow_step_started",
+      "stepId": "comparison:livestorm-vs-lucrovox",
+      "message": "Started Comparison livestorm-vs-lucrovox"
+    },
+    {
+      "at": "2026-08-19T11:57:34.557Z",
+      "event": "workflow_step_completed",
+      "stepId": "comparison:livestorm-vs-lucrovox",
+      "message": "Agent blocked (optional): RELATIONSHIP_UNAPPROVED: Approved comparable relationship required"
+    },
+    {
+      "at": "2026-08-19T11:57:34.558Z",
+      "event": "workflow_step_started",
+      "stepId": "comparison:lucrovox-vs-marketo",
+      "message": "Started Comparison lucrovox-vs-marketo"
+    },
+    {
+      "at": "2026-08-19T11:57:34.574Z",
+      "event": "workflow_step_completed",
+      "stepId": "comparison:lucrovox-vs-marketo",
+      "message": "Agent blocked (optional): RELATIONSHIP_UNAPPROVED: Approved comparable relationship required"
+    },
+    {
+      "at": "2026-08-19T11:57:34.576Z",
+      "event": "workflow_step_started",
+      "stepId": "pricing-page",
+      "message": "Started Pricing Page"
+    },
+    {
+      "at": "2026-08-19T11:57:34.588Z",
+      "event": "workflow_step_completed",
+      "stepId": "pricing-page",
+      "message": "Agent blocked (optional): PRICING_UNVERIFIED: Product pricing data is unverified"
+    },
+    {
+      "at": "2026-08-19T11:57:34.589Z",
+      "event": "workflow_step_started",
+      "stepId": "finder-readiness",
+      "message": "Started Finder readiness"
+    },
+    {
+      "at": "2026-08-19T11:57:34.590Z",
+      "event": "workflow_step_completed",
+      "stepId": "finder-readiness",
+      "message": "Finder readiness noted for lucrovox"
+    },
+    {
+      "at": "2026-08-19T11:57:34.591Z",
+      "event": "workflow_step_started",
+      "stepId": "internal-links",
+      "message": "Started Internal Link Plan"
+    },
+    {
+      "at": "2026-08-19T11:57:34.601Z",
+      "event": "workflow_step_completed",
+      "stepId": "internal-links",
+      "message": "Agent internal-link-agent → draft draft-deterministic-v1-internal-link-agent-lucrovox-2026-08-19T11-57-34-599Z (qa=pass)"
+    },
+    {
+      "at": "2026-08-19T11:57:34.602Z",
+      "event": "workflow_step_started",
+      "stepId": "editorial-approval",
+      "message": "Started Editorial approval"
+    },
+    {
+      "at": "2026-08-19T11:57:34.675Z",
+      "event": "workflow_step_completed",
+      "stepId": "editorial-approval",
+      "message": "WAITING FOR EDITORIAL APPROVAL (appr-wf-software-onboarding-content-lucrovox-1787140651997-software-review)"
+    },
+    {
+      "at": "2026-08-19T11:57:34.676Z",
+      "event": "workflow_blocked",
+      "message": "WAITING FOR EDITORIAL APPROVAL"
+    },
+    {
+      "at": "2026-08-19T12:05:03.237Z",
+      "event": "workflow_resumed",
+      "message": "Workflow resumed"
+    },
+    {
+      "at": "2026-08-19T12:05:03.240Z",
+      "event": "workflow_started",
+      "message": "Workflow execution started"
+    },
+    {
+      "at": "2026-08-19T12:05:03.241Z",
+      "event": "workflow_step_started",
+      "stepId": "editorial-approval",
+      "message": "Started Editorial approval"
+    },
+    {
+      "at": "2026-08-19T12:05:03.363Z",
+      "event": "workflow_step_completed",
+      "stepId": "editorial-approval",
+      "message": "Required editorial approvals satisfied"
+    },
+    {
+      "at": "2026-08-19T12:05:03.365Z",
+      "event": "workflow_step_started",
+      "stepId": "pre-publish-validation",
+      "message": "Started Pre-publish validation"
+    },
+    {
+      "at": "2026-08-19T12:05:03.725Z",
+      "event": "workflow_step_completed",
+      "stepId": "pre-publish-validation",
+      "message": "Pre-publish validation blocked: Stale context for software-review: new-critical-fact:fact-lucrovox-pricing.currency-lucrovox-pricing-official; new-critical-fact:fact-lucrovox-pricing.hasFreeTrial-lucrovox-pricing-official; new-critical-fact:fact-lucrovox-pricing.hasFreePlan-lucrovox-pricing-official; new-critical-fact:fact-lucrovox-pricing.model-lucrovox-pricing-official; Stale context for internal-links: new-critical-fact:fact-lucrovox-pricing.currency-lucrovox-pricing-official; new-critical-fact:fact-lucrovox-pricing.hasFreeTrial-lucrovox-pricing-official; new-critical-fact:fact-lucrovox-pricing.hasFreePlan-lucrovox-pricing-official; new-critical-fact:fact-lucrovox-pricing.model-lucrovox-pricing-official"
+    }
+  ],
+  "options": {
+    "generateReview": true,
+    "generatePricing": true,
+    "generateAlternatives": true,
+    "generateComparisons": true,
+    "runInternalLinks": true,
+    "stopAfterApproval": true,
+    "allowNormalizedFacts": false,
+    "dryRun": false,
+    "maxComparisons": 3,
+    "skipOnboarding": false
+  },
+  "warnings": [
+    "alternatives blocked: NO_APPROVED_ALTERNATIVES: Approved alternative relationships required — same-category alone is insufficient",
+    "comparison:learnworlds-vs-lucrovox blocked: RELATIONSHIP_UNAPPROVED: Approved comparable relationship required",
+    "comparison:livestorm-vs-lucrovox blocked: RELATIONSHIP_UNAPPROVED: Approved comparable relationship required",
+    "comparison:lucrovox-vs-marketo blocked: RELATIONSHIP_UNAPPROVED: Approved comparable relationship required",
+    "pricing-page blocked: PRICING_UNVERIFIED: Product pricing data is unverified"
+  ],
+  "createdAt": "2026-08-19T11:57:33.417Z",
+  "updatedAt": "2026-08-19T12:05:03.727Z"
+}

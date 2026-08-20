@@ -1,0 +1,486 @@
+[
+  {
+    "id": "fact-capsule-pricing.hasFreePlan",
+    "productSlug": "capsule",
+    "domain": "free-plan",
+    "field": "pricing.hasFreePlan",
+    "value": true,
+    "sourceIds": [
+      "capsule-pricing-official",
+      "capsule-pricing-blog"
+    ],
+    "evidence": [
+      {
+        "sourceId": "capsule-pricing-official",
+        "excerpt": "Free plan for up to 2 users."
+      }
+    ],
+    "extractedAt": "2026-08-13T18:00:00.000Z",
+    "normalizedAt": "2026-08-13T18:00:00.000Z",
+    "verifiedAt": "2026-08-13T18:00:00.000Z",
+    "approvedAt": "2026-08-13T18:00:00.000Z",
+    "confidence": "high",
+    "status": "approved",
+    "isFixture": false
+  },
+  {
+    "id": "fact-capsule-pricing.hasFreeTrial",
+    "productSlug": "capsule",
+    "domain": "free-trial",
+    "field": "pricing.hasFreeTrial",
+    "value": true,
+    "sourceIds": [
+      "capsule-pricing-official"
+    ],
+    "evidence": [
+      {
+        "sourceId": "capsule-pricing-official",
+        "excerpt": "14-day free trial of paid plans; no card required."
+      }
+    ],
+    "extractedAt": "2026-08-13T18:00:00.000Z",
+    "normalizedAt": "2026-08-13T18:00:00.000Z",
+    "verifiedAt": "2026-08-13T18:00:00.000Z",
+    "approvedAt": "2026-08-13T18:00:00.000Z",
+    "confidence": "high",
+    "status": "approved",
+    "isFixture": false
+  },
+  {
+    "id": "fact-capsule-pricing.startingPriceMonthly",
+    "productSlug": "capsule",
+    "domain": "pricing",
+    "field": "pricing.startingPriceMonthly",
+    "value": 18,
+    "sourceIds": [
+      "capsule-pricing-blog",
+      "capsule-low-cost-blog"
+    ],
+    "evidence": [
+      {
+        "sourceId": "capsule-pricing-blog",
+        "excerpt": "Starter $18/user/mo billed annually."
+      }
+    ],
+    "extractedAt": "2026-08-13T18:00:00.000Z",
+    "normalizedAt": "2026-08-13T18:00:00.000Z",
+    "verifiedAt": "2026-08-13T18:00:00.000Z",
+    "approvedAt": "2026-08-13T18:00:00.000Z",
+    "confidence": "high",
+    "status": "approved",
+    "isFixture": false
+  },
+  {
+    "id": "fact-capsule-pricing.currency",
+    "productSlug": "capsule",
+    "domain": "pricing",
+    "field": "pricing.currency",
+    "value": "USD",
+    "sourceIds": [
+      "capsule-pricing-blog"
+    ],
+    "evidence": [
+      {
+        "sourceId": "capsule-pricing-blog",
+        "excerpt": "USD pricing in Capsule tables."
+      }
+    ],
+    "extractedAt": "2026-08-13T18:00:00.000Z",
+    "normalizedAt": "2026-08-13T18:00:00.000Z",
+    "verifiedAt": "2026-08-13T18:00:00.000Z",
+    "approvedAt": "2026-08-13T18:00:00.000Z",
+    "confidence": "high",
+    "status": "approved",
+    "isFixture": false
+  },
+  {
+    "id": "fact-capsule-pricing.model",
+    "productSlug": "capsule",
+    "domain": "pricing",
+    "field": "pricing.model",
+    "value": "freemium",
+    "sourceIds": [
+      "capsule-pricing-official"
+    ],
+    "evidence": [
+      {
+        "sourceId": "capsule-pricing-official",
+        "excerpt": "Free + paid per-user plans."
+      }
+    ],
+    "extractedAt": "2026-08-13T18:00:00.000Z",
+    "normalizedAt": "2026-08-13T18:00:00.000Z",
+    "verifiedAt": "2026-08-13T18:00:00.000Z",
+    "approvedAt": "2026-08-13T18:00:00.000Z",
+    "confidence": "high",
+    "status": "approved",
+    "isFixture": false
+  },
+  {
+    "id": "fact-capsule-pricing.plans.free",
+    "productSlug": "capsule",
+    "domain": "plans",
+    "field": "pricing.plans.free",
+    "value": {
+      "id": "plan-free",
+      "slug": "free",
+      "name": "Free",
+      "isFree": true,
+      "contactSales": false,
+      "hasFreeTrial": false,
+      "highlighted": false,
+      "rules": [
+        {
+          "kind": "flat",
+          "amount": 0,
+          "currency": "USD",
+          "interval": "month",
+          "amountPeriod": "month"
+        }
+      ],
+      "limits": {
+        "users": 2,
+        "contacts": 250,
+        "pipelines": 1,
+        "customFields": 5
+      }
+    },
+    "sourceIds": [
+      "capsule-pricing-official",
+      "capsule-pricing-blog"
+    ],
+    "evidence": [
+      {
+        "sourceId": "capsule-pricing-official",
+        "excerpt": "Free: 250 contacts, 1 pipeline, max 2 users."
+      }
+    ],
+    "extractedAt": "2026-08-13T18:00:00.000Z",
+    "normalizedAt": "2026-08-13T18:00:00.000Z",
+    "verifiedAt": "2026-08-13T18:00:00.000Z",
+    "approvedAt": "2026-08-13T18:00:00.000Z",
+    "confidence": "high",
+    "status": "approved",
+    "isFixture": false
+  },
+  {
+    "id": "fact-capsule-pricing.plans.starter",
+    "productSlug": "capsule",
+    "domain": "plans",
+    "field": "pricing.plans.starter",
+    "value": {
+      "id": "plan-starter",
+      "slug": "starter",
+      "name": "Starter",
+      "isFree": false,
+      "contactSales": false,
+      "hasFreeTrial": true,
+      "trialDays": 14,
+      "highlighted": false,
+      "rules": [
+        {
+          "kind": "per-seat",
+          "amountPerSeat": 18,
+          "currency": "USD",
+          "interval": "year",
+          "amountPeriod": "month"
+        }
+      ],
+      "limits": {
+        "contacts": 30000
+      }
+    },
+    "sourceIds": [
+      "capsule-pricing-blog"
+    ],
+    "evidence": [
+      {
+        "sourceId": "capsule-pricing-blog",
+        "excerpt": "Starter $18/user/mo annual."
+      }
+    ],
+    "extractedAt": "2026-08-13T18:00:00.000Z",
+    "normalizedAt": "2026-08-13T18:00:00.000Z",
+    "verifiedAt": "2026-08-13T18:00:00.000Z",
+    "approvedAt": "2026-08-13T18:00:00.000Z",
+    "confidence": "high",
+    "status": "approved",
+    "isFixture": false
+  },
+  {
+    "id": "fact-capsule-pricing.plans.growth",
+    "productSlug": "capsule",
+    "domain": "plans",
+    "field": "pricing.plans.growth",
+    "value": {
+      "id": "plan-growth",
+      "slug": "growth",
+      "name": "Growth",
+      "isFree": false,
+      "contactSales": false,
+      "hasFreeTrial": true,
+      "trialDays": 14,
+      "highlighted": true,
+      "rules": [
+        {
+          "kind": "per-seat",
+          "amountPerSeat": 36,
+          "currency": "USD",
+          "interval": "year",
+          "amountPeriod": "month"
+        }
+      ],
+      "limits": {
+        "contacts": 60000
+      }
+    },
+    "sourceIds": [
+      "capsule-pricing-blog",
+      "capsule-low-cost-blog"
+    ],
+    "evidence": [
+      {
+        "sourceId": "capsule-pricing-blog",
+        "excerpt": "Growth $36/user/mo annual."
+      }
+    ],
+    "extractedAt": "2026-08-13T18:00:00.000Z",
+    "normalizedAt": "2026-08-13T18:00:00.000Z",
+    "verifiedAt": "2026-08-13T18:00:00.000Z",
+    "approvedAt": "2026-08-13T18:00:00.000Z",
+    "confidence": "high",
+    "status": "approved",
+    "isFixture": false
+  },
+  {
+    "id": "fact-capsule-pricing.plans.advanced",
+    "productSlug": "capsule",
+    "domain": "plans",
+    "field": "pricing.plans.advanced",
+    "value": {
+      "id": "plan-advanced",
+      "slug": "advanced",
+      "name": "Advanced",
+      "isFree": false,
+      "contactSales": false,
+      "hasFreeTrial": true,
+      "trialDays": 14,
+      "highlighted": false,
+      "rules": [
+        {
+          "kind": "per-seat",
+          "amountPerSeat": 54,
+          "currency": "USD",
+          "interval": "year",
+          "amountPeriod": "month"
+        }
+      ],
+      "limits": {
+        "contacts": 120000
+      }
+    },
+    "sourceIds": [
+      "capsule-pricing-blog",
+      "capsule-low-cost-blog"
+    ],
+    "evidence": [
+      {
+        "sourceId": "capsule-pricing-blog",
+        "excerpt": "Advanced $54/user/mo annual."
+      }
+    ],
+    "extractedAt": "2026-08-13T18:00:00.000Z",
+    "normalizedAt": "2026-08-13T18:00:00.000Z",
+    "verifiedAt": "2026-08-13T18:00:00.000Z",
+    "approvedAt": "2026-08-13T18:00:00.000Z",
+    "confidence": "high",
+    "status": "approved",
+    "isFixture": false
+  },
+  {
+    "id": "fact-capsule-pricing.plans.ultimate",
+    "productSlug": "capsule",
+    "domain": "plans",
+    "field": "pricing.plans.ultimate",
+    "value": {
+      "id": "plan-ultimate",
+      "slug": "ultimate",
+      "name": "Ultimate",
+      "isFree": false,
+      "contactSales": true,
+      "hasFreeTrial": true,
+      "trialDays": 14,
+      "highlighted": false,
+      "rules": [
+        {
+          "kind": "per-seat",
+          "amountPerSeat": 72,
+          "currency": "USD",
+          "interval": "year",
+          "amountPeriod": "month"
+        }
+      ],
+      "limits": {
+        "contacts": 240000
+      },
+      "description": "Sales team contact for 5+ user scaling teams; dedicated AM/custom training."
+    },
+    "sourceIds": [
+      "capsule-pricing-blog",
+      "capsule-low-cost-blog"
+    ],
+    "evidence": [
+      {
+        "sourceId": "capsule-pricing-blog",
+        "excerpt": "Ultimate $72/user/mo annual."
+      }
+    ],
+    "extractedAt": "2026-08-13T18:00:00.000Z",
+    "normalizedAt": "2026-08-13T18:00:00.000Z",
+    "verifiedAt": "2026-08-13T18:00:00.000Z",
+    "approvedAt": "2026-08-13T18:00:00.000Z",
+    "confidence": "high",
+    "status": "approved",
+    "isFixture": false
+  },
+  {
+    "id": "fact-capsule-features.pipeline-management",
+    "productSlug": "capsule",
+    "domain": "features",
+    "field": "features.pipeline-management",
+    "value": true,
+    "sourceIds": [
+      "capsule-product-official",
+      "capsule-pricing-blog"
+    ],
+    "evidence": [
+      {
+        "sourceId": "capsule-product-official",
+        "excerpt": "Sales pipelines across plans; more pipelines on higher tiers."
+      }
+    ],
+    "extractedAt": "2026-08-13T18:00:00.000Z",
+    "normalizedAt": "2026-08-13T18:00:00.000Z",
+    "verifiedAt": "2026-08-13T18:00:00.000Z",
+    "approvedAt": "2026-08-13T18:00:00.000Z",
+    "confidence": "high",
+    "status": "approved",
+    "isFixture": false
+  },
+  {
+    "id": "fact-capsule-features.workflow-automation",
+    "productSlug": "capsule",
+    "domain": "features",
+    "field": "features.workflow-automation",
+    "value": true,
+    "sourceIds": [
+      "capsule-pricing-blog"
+    ],
+    "evidence": [
+      {
+        "sourceId": "capsule-pricing-blog",
+        "excerpt": "Workflow automations from Growth."
+      }
+    ],
+    "extractedAt": "2026-08-13T18:00:00.000Z",
+    "normalizedAt": "2026-08-13T18:00:00.000Z",
+    "verifiedAt": "2026-08-13T18:00:00.000Z",
+    "approvedAt": "2026-08-13T18:00:00.000Z",
+    "confidence": "high",
+    "status": "approved",
+    "isFixture": false
+  },
+  {
+    "id": "fact-capsule-features.contact-management",
+    "productSlug": "capsule",
+    "domain": "features",
+    "field": "features.contact-management",
+    "value": true,
+    "sourceIds": [
+      "capsule-product-official"
+    ],
+    "evidence": [
+      {
+        "sourceId": "capsule-product-official",
+        "excerpt": "Contact management is a core product pillar."
+      }
+    ],
+    "extractedAt": "2026-08-13T18:00:00.000Z",
+    "normalizedAt": "2026-08-13T18:00:00.000Z",
+    "verifiedAt": "2026-08-13T18:00:00.000Z",
+    "approvedAt": "2026-08-13T18:00:00.000Z",
+    "confidence": "high",
+    "status": "approved",
+    "isFixture": false
+  },
+  {
+    "id": "fact-capsule-features.mobile-app",
+    "productSlug": "capsule",
+    "domain": "features",
+    "field": "features.mobile-app",
+    "value": true,
+    "sourceIds": [
+      "capsule-product-official",
+      "capsule-pricing-blog"
+    ],
+    "evidence": [
+      {
+        "sourceId": "capsule-product-official",
+        "excerpt": "Mobile app documented."
+      }
+    ],
+    "extractedAt": "2026-08-13T18:00:00.000Z",
+    "normalizedAt": "2026-08-13T18:00:00.000Z",
+    "verifiedAt": "2026-08-13T18:00:00.000Z",
+    "approvedAt": "2026-08-13T18:00:00.000Z",
+    "confidence": "high",
+    "status": "approved",
+    "isFixture": false
+  },
+  {
+    "id": "fact-capsule-ai.assistant",
+    "productSlug": "capsule",
+    "domain": "ai-capabilities",
+    "field": "ai.assistant",
+    "value": true,
+    "sourceIds": [
+      "capsule-product-official"
+    ],
+    "evidence": [
+      {
+        "sourceId": "capsule-product-official",
+        "excerpt": "AI content assist / enhanced AI tools."
+      }
+    ],
+    "extractedAt": "2026-08-13T18:00:00.000Z",
+    "normalizedAt": "2026-08-13T18:00:00.000Z",
+    "verifiedAt": "2026-08-13T18:00:00.000Z",
+    "approvedAt": "2026-08-13T18:00:00.000Z",
+    "confidence": "high",
+    "status": "approved",
+    "isFixture": false
+  },
+  {
+    "id": "fact-capsule-positioning.simple-smb",
+    "productSlug": "capsule",
+    "domain": "product-positioning",
+    "field": "positioning.simple-smb",
+    "value": true,
+    "sourceIds": [
+      "capsule-product-official"
+    ],
+    "evidence": [
+      {
+        "sourceId": "capsule-product-official",
+        "excerpt": "Simple CRM for small business."
+      }
+    ],
+    "extractedAt": "2026-08-13T18:00:00.000Z",
+    "normalizedAt": "2026-08-13T18:00:00.000Z",
+    "verifiedAt": "2026-08-13T18:00:00.000Z",
+    "approvedAt": "2026-08-13T18:00:00.000Z",
+    "confidence": "high",
+    "status": "approved",
+    "isFixture": false
+  }
+]

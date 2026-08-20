@@ -1,0 +1,864 @@
+{
+  "id": "wf-software-onboarding-content-apollo-1786623816830",
+  "workflowId": "software-onboarding-content",
+  "workflowVersion": "1.0.0",
+  "name": "Software Onboarding Content: apollo",
+  "targetType": "software",
+  "targetId": "apollo",
+  "status": "superseded",
+  "steps": [
+    {
+      "id": "software-onboarding",
+      "definitionStepId": "software-onboarding",
+      "handler": "software-onboarding",
+      "label": "Software onboarding",
+      "status": "completed",
+      "required": true,
+      "failurePolicy": "block-workflow",
+      "attempt": 1,
+      "maxAttempts": 2,
+      "dependsOn": [],
+      "priority": "critical",
+      "config": {
+        "maxAutomaticRevisions": 1,
+        "expandFromContentPlan": false,
+        "expandKind": "none",
+        "stopAfterApproval": true,
+        "allowNormalizedFacts": false,
+        "optionalWhenBlocked": false,
+        "forceTransientFailOnce": false
+      },
+      "inputRefs": {},
+      "outputRefs": {
+        "softwareOnboardingRunId": "onboard-apollo-1786623731662"
+      },
+      "blockers": [],
+      "warnings": [],
+      "startedAt": "2026-08-13T12:23:37.003Z",
+      "completedAt": "2026-08-13T12:23:37.028Z",
+      "revisionAttempts": 0
+    },
+    {
+      "id": "content-plan",
+      "definitionStepId": "content-plan",
+      "handler": "content-plan",
+      "label": "Content plan",
+      "status": "completed",
+      "required": true,
+      "failurePolicy": "block-workflow",
+      "attempt": 1,
+      "maxAttempts": 2,
+      "dependsOn": [
+        "software-onboarding"
+      ],
+      "priority": "high",
+      "config": {
+        "maxAutomaticRevisions": 1,
+        "expandFromContentPlan": false,
+        "expandKind": "none",
+        "stopAfterApproval": true,
+        "allowNormalizedFacts": false,
+        "optionalWhenBlocked": false,
+        "forceTransientFailOnce": false
+      },
+      "inputRefs": {},
+      "outputRefs": {
+        "softwareOnboardingRunId": "onboard-apollo-1786623731662",
+        "comparisonTargets": "apollo-vs-lusha,apollo-vs-rocketreach,amplemarket-vs-apollo",
+        "pageCandidateCount": "8"
+      },
+      "blockers": [],
+      "warnings": [],
+      "startedAt": "2026-08-13T12:23:37.029Z",
+      "completedAt": "2026-08-13T12:23:37.055Z",
+      "revisionAttempts": 0
+    },
+    {
+      "id": "software-review",
+      "definitionStepId": "software-review",
+      "handler": "agent-run",
+      "label": "Software Review",
+      "status": "completed",
+      "required": true,
+      "failurePolicy": "block-workflow",
+      "attempt": 1,
+      "maxAttempts": 2,
+      "dependsOn": [
+        "content-plan"
+      ],
+      "priority": "high",
+      "config": {
+        "agentId": "software-review-agent",
+        "targetSlug": "apollo",
+        "maxAutomaticRevisions": 1,
+        "expandFromContentPlan": false,
+        "expandKind": "none",
+        "stopAfterApproval": true,
+        "allowNormalizedFacts": false,
+        "optionalWhenBlocked": false,
+        "forceTransientFailOnce": false
+      },
+      "inputRefs": {},
+      "outputRefs": {
+        "draftId": "draft-deterministic-v1-software-review-agent-apollo-2026-08-13T12-23-37-083Z",
+        "qaStatus": "pass",
+        "agentId": "software-review-agent",
+        "target": "apollo"
+      },
+      "inputSnapshot": {
+        "researchFactIds": [
+          "fact-apollo-pricing.plans.free-apollo-pricing-fixture",
+          "fact-apollo-pricing.plans.basic-apollo-pricing-fixture",
+          "fact-apollo-pricing.plans.professional-apollo-pricing-fixture",
+          "fact-apollo-pricing.plans.organization-apollo-pricing-fixture",
+          "fact-apollo-pricing.currency-apollo-pricing-fixture",
+          "fact-apollo-pricing.hasFreeTrial-apollo-pricing-fixture",
+          "fact-apollo-pricing.hasFreePlan-apollo-pricing-fixture",
+          "fact-apollo-pricing.model-apollo-pricing-fixture",
+          "fact-apollo-identity.shortDescription-apollo-product-fixture",
+          "fact-apollo-positioning.claim-apollo-product-fixture",
+          "fact-apollo-features.contact-management-apollo-product-fixture",
+          "fact-apollo-features.lead-management-apollo-product-fixture",
+          "fact-apollo-features.email-sequences-apollo-product-fixture",
+          "fact-apollo-features.lead-scoring-apollo-product-fixture",
+          "fact-apollo-features.reporting-apollo-product-fixture",
+          "fact-apollo-features.ai-assistance-apollo-product-fixture",
+          "fact-apollo-features.meeting-scheduling-apollo-product-fixture",
+          "fact-apollo-ai.email-generation-apollo-product-fixture",
+          "fact-apollo-ai.recommendations-apollo-product-fixture",
+          "fact-apollo-ai.assistant-apollo-product-fixture"
+        ],
+        "methodologySlug": "crm-editorial",
+        "methodologyVersion": "1.0.0",
+        "agentVersion": "1.0.0",
+        "contextBuiltAt": "2026-08-13T12:23:37.080Z"
+      },
+      "blockers": [],
+      "warnings": [],
+      "agentTaskId": "exec-software-review-agent-apollo-1786623817060",
+      "draftId": "draft-deterministic-v1-software-review-agent-apollo-2026-08-13T12-23-37-083Z",
+      "startedAt": "2026-08-13T12:23:37.059Z",
+      "completedAt": "2026-08-13T12:23:37.089Z",
+      "revisionAttempts": 0
+    },
+    {
+      "id": "pricing-page",
+      "definitionStepId": "pricing-page",
+      "handler": "agent-run",
+      "label": "Pricing Page",
+      "status": "completed",
+      "required": false,
+      "failurePolicy": "continue-with-warning",
+      "attempt": 1,
+      "maxAttempts": 2,
+      "dependsOn": [
+        "content-plan"
+      ],
+      "priority": "normal",
+      "config": {
+        "agentId": "pricing-page-agent",
+        "targetSlug": "apollo",
+        "maxAutomaticRevisions": 1,
+        "expandFromContentPlan": false,
+        "expandKind": "none",
+        "stopAfterApproval": true,
+        "allowNormalizedFacts": false,
+        "optionalWhenBlocked": true,
+        "forceTransientFailOnce": false
+      },
+      "inputRefs": {},
+      "outputRefs": {
+        "draftId": "draft-deterministic-v1-pricing-page-agent-apollo-2026-08-13T12-23-37-181Z",
+        "qaStatus": "pass",
+        "agentId": "pricing-page-agent",
+        "target": "apollo"
+      },
+      "inputSnapshot": {
+        "researchFactIds": [
+          "fact-apollo-pricing.plans.free-apollo-pricing-fixture",
+          "fact-apollo-pricing.plans.basic-apollo-pricing-fixture",
+          "fact-apollo-pricing.plans.professional-apollo-pricing-fixture",
+          "fact-apollo-pricing.plans.organization-apollo-pricing-fixture",
+          "fact-apollo-pricing.currency-apollo-pricing-fixture",
+          "fact-apollo-pricing.hasFreeTrial-apollo-pricing-fixture",
+          "fact-apollo-pricing.hasFreePlan-apollo-pricing-fixture",
+          "fact-apollo-pricing.model-apollo-pricing-fixture",
+          "fact-apollo-identity.shortDescription-apollo-product-fixture",
+          "fact-apollo-positioning.claim-apollo-product-fixture",
+          "fact-apollo-features.contact-management-apollo-product-fixture",
+          "fact-apollo-features.lead-management-apollo-product-fixture",
+          "fact-apollo-features.email-sequences-apollo-product-fixture",
+          "fact-apollo-features.lead-scoring-apollo-product-fixture",
+          "fact-apollo-features.reporting-apollo-product-fixture",
+          "fact-apollo-features.ai-assistance-apollo-product-fixture",
+          "fact-apollo-features.meeting-scheduling-apollo-product-fixture",
+          "fact-apollo-ai.email-generation-apollo-product-fixture",
+          "fact-apollo-ai.recommendations-apollo-product-fixture",
+          "fact-apollo-ai.assistant-apollo-product-fixture"
+        ],
+        "methodologySlug": "crm-editorial",
+        "methodologyVersion": "1.0.0",
+        "agentVersion": "1.0.0",
+        "contextBuiltAt": "2026-08-13T12:23:37.180Z"
+      },
+      "blockers": [],
+      "warnings": [],
+      "agentTaskId": "exec-pricing-page-agent-apollo-1786623817176",
+      "draftId": "draft-deterministic-v1-pricing-page-agent-apollo-2026-08-13T12-23-37-181Z",
+      "startedAt": "2026-08-13T12:23:37.176Z",
+      "completedAt": "2026-08-13T12:23:37.183Z",
+      "revisionAttempts": 0
+    },
+    {
+      "id": "alternatives",
+      "definitionStepId": "alternatives",
+      "handler": "agent-run",
+      "label": "Alternatives",
+      "status": "completed",
+      "required": false,
+      "failurePolicy": "continue-with-warning",
+      "attempt": 1,
+      "maxAttempts": 2,
+      "dependsOn": [
+        "content-plan"
+      ],
+      "priority": "normal",
+      "config": {
+        "agentId": "alternatives-agent",
+        "targetSlug": "apollo",
+        "maxAutomaticRevisions": 1,
+        "expandFromContentPlan": false,
+        "expandKind": "none",
+        "stopAfterApproval": true,
+        "allowNormalizedFacts": false,
+        "optionalWhenBlocked": true,
+        "forceTransientFailOnce": false
+      },
+      "inputRefs": {},
+      "outputRefs": {
+        "draftId": "draft-deterministic-v1-alternatives-agent-apollo-2026-08-13T12-23-37-099Z",
+        "qaStatus": "pass",
+        "agentId": "alternatives-agent",
+        "target": "apollo"
+      },
+      "inputSnapshot": {
+        "researchFactIds": [
+          "fact-apollo-pricing.plans.free-apollo-pricing-fixture",
+          "fact-apollo-pricing.plans.basic-apollo-pricing-fixture",
+          "fact-apollo-pricing.plans.professional-apollo-pricing-fixture",
+          "fact-apollo-pricing.plans.organization-apollo-pricing-fixture",
+          "fact-apollo-pricing.currency-apollo-pricing-fixture",
+          "fact-apollo-pricing.hasFreeTrial-apollo-pricing-fixture",
+          "fact-apollo-pricing.hasFreePlan-apollo-pricing-fixture",
+          "fact-apollo-pricing.model-apollo-pricing-fixture",
+          "fact-apollo-identity.shortDescription-apollo-product-fixture",
+          "fact-apollo-positioning.claim-apollo-product-fixture",
+          "fact-apollo-features.contact-management-apollo-product-fixture",
+          "fact-apollo-features.lead-management-apollo-product-fixture",
+          "fact-apollo-features.email-sequences-apollo-product-fixture",
+          "fact-apollo-features.lead-scoring-apollo-product-fixture",
+          "fact-apollo-features.reporting-apollo-product-fixture",
+          "fact-apollo-features.ai-assistance-apollo-product-fixture",
+          "fact-apollo-features.meeting-scheduling-apollo-product-fixture",
+          "fact-apollo-ai.email-generation-apollo-product-fixture",
+          "fact-apollo-ai.recommendations-apollo-product-fixture",
+          "fact-apollo-ai.assistant-apollo-product-fixture"
+        ],
+        "methodologySlug": "crm-editorial",
+        "methodologyVersion": "1.0.0",
+        "agentVersion": "1.0.0",
+        "contextBuiltAt": "2026-08-13T12:23:37.098Z"
+      },
+      "blockers": [],
+      "warnings": [],
+      "agentTaskId": "exec-alternatives-agent-apollo-1786623817091",
+      "draftId": "draft-deterministic-v1-alternatives-agent-apollo-2026-08-13T12-23-37-099Z",
+      "startedAt": "2026-08-13T12:23:37.091Z",
+      "completedAt": "2026-08-13T12:23:37.103Z",
+      "revisionAttempts": 0
+    },
+    {
+      "id": "comparison:apollo-vs-lusha",
+      "definitionStepId": "comparisons",
+      "handler": "agent-run",
+      "label": "Comparison apollo-vs-lusha",
+      "status": "completed",
+      "required": false,
+      "failurePolicy": "continue-with-warning",
+      "attempt": 1,
+      "maxAttempts": 2,
+      "dependsOn": [
+        "content-plan"
+      ],
+      "priority": "normal",
+      "config": {
+        "agentId": "comparison-agent",
+        "targetSlug": "apollo-vs-lusha",
+        "maxAutomaticRevisions": 1,
+        "expandFromContentPlan": true,
+        "expandKind": "comparisons",
+        "stopAfterApproval": true,
+        "allowNormalizedFacts": false,
+        "optionalWhenBlocked": true,
+        "forceTransientFailOnce": false
+      },
+      "expansionKey": "apollo-vs-lusha",
+      "inputRefs": {},
+      "outputRefs": {
+        "draftId": "draft-deterministic-v1-comparison-agent-apollo-vs-lusha-2026-08-13T12-23-37-143Z",
+        "qaStatus": "pass",
+        "agentId": "comparison-agent",
+        "target": "apollo-vs-lusha"
+      },
+      "inputSnapshot": {
+        "researchFactIds": [
+          "fact-apollo-pricing.plans.free-apollo-pricing-fixture",
+          "fact-apollo-pricing.plans.basic-apollo-pricing-fixture",
+          "fact-apollo-pricing.plans.professional-apollo-pricing-fixture",
+          "fact-apollo-pricing.plans.organization-apollo-pricing-fixture",
+          "fact-apollo-pricing.currency-apollo-pricing-fixture",
+          "fact-apollo-pricing.hasFreeTrial-apollo-pricing-fixture",
+          "fact-apollo-pricing.hasFreePlan-apollo-pricing-fixture",
+          "fact-apollo-pricing.model-apollo-pricing-fixture",
+          "fact-apollo-identity.shortDescription-apollo-product-fixture",
+          "fact-apollo-positioning.claim-apollo-product-fixture",
+          "fact-apollo-features.contact-management-apollo-product-fixture",
+          "fact-apollo-features.lead-management-apollo-product-fixture",
+          "fact-apollo-features.email-sequences-apollo-product-fixture",
+          "fact-apollo-features.lead-scoring-apollo-product-fixture",
+          "fact-apollo-features.reporting-apollo-product-fixture",
+          "fact-apollo-features.ai-assistance-apollo-product-fixture",
+          "fact-apollo-features.meeting-scheduling-apollo-product-fixture",
+          "fact-apollo-ai.email-generation-apollo-product-fixture",
+          "fact-apollo-ai.recommendations-apollo-product-fixture",
+          "fact-apollo-ai.assistant-apollo-product-fixture",
+          "fact-lusha-pricing.plans.free-lusha-pricing-fixture",
+          "fact-lusha-pricing.plans.pro-lusha-pricing-fixture",
+          "fact-lusha-pricing.plans.premium-lusha-pricing-fixture",
+          "fact-lusha-pricing.plans.scale-lusha-pricing-fixture",
+          "fact-lusha-pricing.currency-lusha-pricing-fixture",
+          "fact-lusha-pricing.hasFreeTrial-lusha-pricing-fixture",
+          "fact-lusha-pricing.hasFreePlan-lusha-pricing-fixture",
+          "fact-lusha-pricing.model-lusha-pricing-fixture",
+          "fact-lusha-identity.shortDescription-lusha-product-fixture",
+          "fact-lusha-positioning.claim-lusha-product-fixture",
+          "fact-lusha-features.lead-management-lusha-product-fixture",
+          "fact-lusha-features.reporting-lusha-product-fixture",
+          "fact-lusha-features.ai-assistance-lusha-product-fixture",
+          "fact-lusha-features.meeting-scheduling-lusha-product-fixture",
+          "fact-lusha-ai.recommendations-lusha-product-fixture",
+          "fact-lusha-ai.assistant-lusha-product-fixture",
+          "fact-lusha-ai.automation-lusha-product-fixture"
+        ],
+        "methodologySlug": "crm-editorial",
+        "methodologyVersion": "1.0.0",
+        "agentVersion": "1.0.0",
+        "contextBuiltAt": "2026-08-13T12:23:37.142Z"
+      },
+      "blockers": [],
+      "warnings": [],
+      "agentTaskId": "exec-comparison-agent-apollo-vs-lusha-1786623817135",
+      "draftId": "draft-deterministic-v1-comparison-agent-apollo-vs-lusha-2026-08-13T12-23-37-143Z",
+      "startedAt": "2026-08-13T12:23:37.133Z",
+      "completedAt": "2026-08-13T12:23:37.149Z",
+      "revisionAttempts": 0
+    },
+    {
+      "id": "comparison:apollo-vs-rocketreach",
+      "definitionStepId": "comparisons",
+      "handler": "agent-run",
+      "label": "Comparison apollo-vs-rocketreach",
+      "status": "completed",
+      "required": false,
+      "failurePolicy": "continue-with-warning",
+      "attempt": 1,
+      "maxAttempts": 2,
+      "dependsOn": [
+        "content-plan"
+      ],
+      "priority": "normal",
+      "config": {
+        "agentId": "comparison-agent",
+        "targetSlug": "apollo-vs-rocketreach",
+        "maxAutomaticRevisions": 1,
+        "expandFromContentPlan": true,
+        "expandKind": "comparisons",
+        "stopAfterApproval": true,
+        "allowNormalizedFacts": false,
+        "optionalWhenBlocked": true,
+        "forceTransientFailOnce": false
+      },
+      "expansionKey": "apollo-vs-rocketreach",
+      "inputRefs": {},
+      "outputRefs": {
+        "draftId": "draft-deterministic-v1-comparison-agent-apollo-vs-rocketreach-2026-08-13T12-23-37-168Z",
+        "qaStatus": "pass",
+        "agentId": "comparison-agent",
+        "target": "apollo-vs-rocketreach"
+      },
+      "inputSnapshot": {
+        "researchFactIds": [
+          "fact-apollo-pricing.plans.free-apollo-pricing-fixture",
+          "fact-apollo-pricing.plans.basic-apollo-pricing-fixture",
+          "fact-apollo-pricing.plans.professional-apollo-pricing-fixture",
+          "fact-apollo-pricing.plans.organization-apollo-pricing-fixture",
+          "fact-apollo-pricing.currency-apollo-pricing-fixture",
+          "fact-apollo-pricing.hasFreeTrial-apollo-pricing-fixture",
+          "fact-apollo-pricing.hasFreePlan-apollo-pricing-fixture",
+          "fact-apollo-pricing.model-apollo-pricing-fixture",
+          "fact-apollo-identity.shortDescription-apollo-product-fixture",
+          "fact-apollo-positioning.claim-apollo-product-fixture",
+          "fact-apollo-features.contact-management-apollo-product-fixture",
+          "fact-apollo-features.lead-management-apollo-product-fixture",
+          "fact-apollo-features.email-sequences-apollo-product-fixture",
+          "fact-apollo-features.lead-scoring-apollo-product-fixture",
+          "fact-apollo-features.reporting-apollo-product-fixture",
+          "fact-apollo-features.ai-assistance-apollo-product-fixture",
+          "fact-apollo-features.meeting-scheduling-apollo-product-fixture",
+          "fact-apollo-ai.email-generation-apollo-product-fixture",
+          "fact-apollo-ai.recommendations-apollo-product-fixture",
+          "fact-apollo-ai.assistant-apollo-product-fixture",
+          "fact-rocketreach-pricing.plans.essentials-rocketreach-pricing-fixture",
+          "fact-rocketreach-pricing.plans.pro-rocketreach-pricing-fixture",
+          "fact-rocketreach-pricing.plans.ultimate-rocketreach-pricing-fixture",
+          "fact-rocketreach-pricing.plans.enterprise-rocketreach-pricing-fixture",
+          "fact-rocketreach-pricing.currency-rocketreach-pricing-fixture",
+          "fact-rocketreach-pricing.hasFreeTrial-rocketreach-pricing-fixture",
+          "fact-rocketreach-pricing.hasFreePlan-rocketreach-pricing-fixture",
+          "fact-rocketreach-pricing.model-rocketreach-pricing-fixture",
+          "fact-rocketreach-identity.shortDescription-rocketreach-product-fixture",
+          "fact-rocketreach-positioning.claim-rocketreach-product-fixture",
+          "fact-rocketreach-features.lead-management-rocketreach-product-fixture",
+          "fact-rocketreach-features.reporting-rocketreach-product-fixture",
+          "fact-rocketreach-features.ai-assistance-rocketreach-product-fixture",
+          "fact-rocketreach-ai.recommendations-rocketreach-product-fixture",
+          "fact-rocketreach-ai.assistant-rocketreach-product-fixture"
+        ],
+        "methodologySlug": "crm-editorial",
+        "methodologyVersion": "1.0.0",
+        "agentVersion": "1.0.0",
+        "contextBuiltAt": "2026-08-13T12:23:37.167Z"
+      },
+      "blockers": [],
+      "warnings": [],
+      "agentTaskId": "exec-comparison-agent-apollo-vs-rocketreach-1786623817159",
+      "draftId": "draft-deterministic-v1-comparison-agent-apollo-vs-rocketreach-2026-08-13T12-23-37-168Z",
+      "startedAt": "2026-08-13T12:23:37.158Z",
+      "completedAt": "2026-08-13T12:23:37.175Z",
+      "revisionAttempts": 0
+    },
+    {
+      "id": "comparison:amplemarket-vs-apollo",
+      "definitionStepId": "comparisons",
+      "handler": "agent-run",
+      "label": "Comparison amplemarket-vs-apollo",
+      "status": "completed",
+      "required": false,
+      "failurePolicy": "continue-with-warning",
+      "attempt": 1,
+      "maxAttempts": 2,
+      "dependsOn": [
+        "content-plan"
+      ],
+      "priority": "normal",
+      "config": {
+        "agentId": "comparison-agent",
+        "targetSlug": "amplemarket-vs-apollo",
+        "maxAutomaticRevisions": 1,
+        "expandFromContentPlan": true,
+        "expandKind": "comparisons",
+        "stopAfterApproval": true,
+        "allowNormalizedFacts": false,
+        "optionalWhenBlocked": true,
+        "forceTransientFailOnce": false
+      },
+      "expansionKey": "amplemarket-vs-apollo",
+      "inputRefs": {},
+      "outputRefs": {
+        "draftId": "draft-deterministic-v1-comparison-agent-amplemarket-vs-apollo-2026-08-13T12-23-37-113Z",
+        "qaStatus": "pass",
+        "agentId": "comparison-agent",
+        "target": "amplemarket-vs-apollo"
+      },
+      "inputSnapshot": {
+        "researchFactIds": [
+          "fact-amplemarket-pricing.plans.growth-amplemarket-pricing-fixture",
+          "fact-amplemarket-pricing.plans.elite-amplemarket-pricing-fixture",
+          "fact-amplemarket-pricing.plans.enterprise-amplemarket-pricing-fixture",
+          "fact-amplemarket-pricing.currency-amplemarket-pricing-fixture",
+          "fact-amplemarket-pricing.hasFreeTrial-amplemarket-pricing-fixture",
+          "fact-amplemarket-pricing.hasFreePlan-amplemarket-pricing-fixture",
+          "fact-amplemarket-pricing.model-amplemarket-pricing-fixture",
+          "fact-amplemarket-identity.shortDescription-amplemarket-product-fixture",
+          "fact-amplemarket-positioning.claim-amplemarket-product-fixture",
+          "fact-amplemarket-features.lead-management-amplemarket-product-fixture",
+          "fact-amplemarket-features.email-sequences-amplemarket-product-fixture",
+          "fact-amplemarket-features.lead-scoring-amplemarket-product-fixture",
+          "fact-amplemarket-features.reporting-amplemarket-product-fixture",
+          "fact-amplemarket-features.ai-assistance-amplemarket-product-fixture",
+          "fact-amplemarket-features.meeting-scheduling-amplemarket-product-fixture",
+          "fact-amplemarket-ai.email-generation-amplemarket-product-fixture",
+          "fact-amplemarket-ai.recommendations-amplemarket-product-fixture",
+          "fact-amplemarket-ai.assistant-amplemarket-product-fixture",
+          "fact-amplemarket-ai.automation-amplemarket-product-fixture",
+          "fact-apollo-pricing.plans.free-apollo-pricing-fixture",
+          "fact-apollo-pricing.plans.basic-apollo-pricing-fixture",
+          "fact-apollo-pricing.plans.professional-apollo-pricing-fixture",
+          "fact-apollo-pricing.plans.organization-apollo-pricing-fixture",
+          "fact-apollo-pricing.currency-apollo-pricing-fixture",
+          "fact-apollo-pricing.hasFreeTrial-apollo-pricing-fixture",
+          "fact-apollo-pricing.hasFreePlan-apollo-pricing-fixture",
+          "fact-apollo-pricing.model-apollo-pricing-fixture",
+          "fact-apollo-identity.shortDescription-apollo-product-fixture",
+          "fact-apollo-positioning.claim-apollo-product-fixture",
+          "fact-apollo-features.contact-management-apollo-product-fixture",
+          "fact-apollo-features.lead-management-apollo-product-fixture",
+          "fact-apollo-features.email-sequences-apollo-product-fixture",
+          "fact-apollo-features.lead-scoring-apollo-product-fixture",
+          "fact-apollo-features.reporting-apollo-product-fixture",
+          "fact-apollo-features.ai-assistance-apollo-product-fixture",
+          "fact-apollo-features.meeting-scheduling-apollo-product-fixture",
+          "fact-apollo-ai.email-generation-apollo-product-fixture",
+          "fact-apollo-ai.recommendations-apollo-product-fixture",
+          "fact-apollo-ai.assistant-apollo-product-fixture"
+        ],
+        "methodologySlug": "crm-editorial",
+        "methodologyVersion": "1.0.0",
+        "agentVersion": "1.0.0",
+        "contextBuiltAt": "2026-08-13T12:23:37.111Z"
+      },
+      "blockers": [],
+      "warnings": [],
+      "agentTaskId": "exec-comparison-agent-amplemarket-vs-apollo-1786623817104",
+      "draftId": "draft-deterministic-v1-comparison-agent-amplemarket-vs-apollo-2026-08-13T12-23-37-113Z",
+      "startedAt": "2026-08-13T12:23:37.104Z",
+      "completedAt": "2026-08-13T12:23:37.122Z",
+      "revisionAttempts": 0
+    },
+    {
+      "id": "internal-links",
+      "definitionStepId": "internal-links",
+      "handler": "internal-link",
+      "label": "Internal Link Plan",
+      "status": "completed",
+      "required": false,
+      "failurePolicy": "continue-with-warning",
+      "attempt": 1,
+      "maxAttempts": 2,
+      "dependsOn": [
+        "software-review"
+      ],
+      "priority": "low",
+      "config": {
+        "agentId": "internal-link-agent",
+        "maxAutomaticRevisions": 1,
+        "expandFromContentPlan": false,
+        "expandKind": "none",
+        "stopAfterApproval": true,
+        "allowNormalizedFacts": false,
+        "optionalWhenBlocked": false,
+        "forceTransientFailOnce": false
+      },
+      "inputRefs": {},
+      "outputRefs": {
+        "draftId": "draft-deterministic-v1-internal-link-agent-apollo-2026-08-13T12-23-37-197Z",
+        "qaStatus": "pass",
+        "agentId": "internal-link-agent",
+        "target": "apollo"
+      },
+      "inputSnapshot": {
+        "researchFactIds": [
+          "fact-apollo-pricing.plans.free-apollo-pricing-fixture",
+          "fact-apollo-pricing.plans.basic-apollo-pricing-fixture",
+          "fact-apollo-pricing.plans.professional-apollo-pricing-fixture",
+          "fact-apollo-pricing.plans.organization-apollo-pricing-fixture",
+          "fact-apollo-pricing.currency-apollo-pricing-fixture",
+          "fact-apollo-pricing.hasFreeTrial-apollo-pricing-fixture",
+          "fact-apollo-pricing.hasFreePlan-apollo-pricing-fixture",
+          "fact-apollo-pricing.model-apollo-pricing-fixture",
+          "fact-apollo-identity.shortDescription-apollo-product-fixture",
+          "fact-apollo-positioning.claim-apollo-product-fixture",
+          "fact-apollo-features.contact-management-apollo-product-fixture",
+          "fact-apollo-features.lead-management-apollo-product-fixture",
+          "fact-apollo-features.email-sequences-apollo-product-fixture",
+          "fact-apollo-features.lead-scoring-apollo-product-fixture",
+          "fact-apollo-features.reporting-apollo-product-fixture",
+          "fact-apollo-features.ai-assistance-apollo-product-fixture",
+          "fact-apollo-features.meeting-scheduling-apollo-product-fixture",
+          "fact-apollo-ai.email-generation-apollo-product-fixture",
+          "fact-apollo-ai.recommendations-apollo-product-fixture",
+          "fact-apollo-ai.assistant-apollo-product-fixture"
+        ],
+        "methodologySlug": "crm-editorial",
+        "methodologyVersion": "1.0.0",
+        "agentVersion": "1.0.0",
+        "contextBuiltAt": "2026-08-13T12:23:37.196Z"
+      },
+      "blockers": [],
+      "warnings": [],
+      "agentTaskId": "exec-internal-link-agent-apollo-1786623817190",
+      "draftId": "draft-deterministic-v1-internal-link-agent-apollo-2026-08-13T12-23-37-197Z",
+      "startedAt": "2026-08-13T12:23:37.190Z",
+      "completedAt": "2026-08-13T12:23:37.199Z",
+      "revisionAttempts": 0
+    },
+    {
+      "id": "finder-readiness",
+      "definitionStepId": "finder-readiness",
+      "handler": "update-recommendation-readiness",
+      "label": "Finder readiness",
+      "status": "completed",
+      "required": false,
+      "failurePolicy": "continue",
+      "attempt": 1,
+      "maxAttempts": 2,
+      "dependsOn": [
+        "content-plan"
+      ],
+      "priority": "low",
+      "config": {
+        "maxAutomaticRevisions": 1,
+        "expandFromContentPlan": false,
+        "expandKind": "none",
+        "stopAfterApproval": true,
+        "allowNormalizedFacts": false,
+        "optionalWhenBlocked": false,
+        "forceTransientFailOnce": false
+      },
+      "inputRefs": {},
+      "outputRefs": {
+        "finderReadiness": "checked"
+      },
+      "blockers": [],
+      "warnings": [],
+      "startedAt": "2026-08-13T12:23:37.184Z",
+      "completedAt": "2026-08-13T12:23:37.188Z",
+      "revisionAttempts": 0
+    },
+    {
+      "id": "editorial-approval",
+      "definitionStepId": "editorial-approval",
+      "handler": "approval-check",
+      "label": "Editorial approval",
+      "status": "waiting",
+      "required": true,
+      "failurePolicy": "manual-review",
+      "attempt": 1,
+      "maxAttempts": 2,
+      "dependsOn": [
+        "software-review"
+      ],
+      "priority": "critical",
+      "config": {
+        "approvalType": "editorial",
+        "maxAutomaticRevisions": 1,
+        "expandFromContentPlan": false,
+        "expandKind": "none",
+        "stopAfterApproval": true,
+        "allowNormalizedFacts": false,
+        "optionalWhenBlocked": false,
+        "forceTransientFailOnce": false
+      },
+      "inputRefs": {},
+      "outputRefs": {
+        "approvalId": "appr-wf-software-onboarding-content-apollo-1786623816830-software-review",
+        "draftId": "draft-deterministic-v1-software-review-agent-apollo-2026-08-13T12-23-37-083Z"
+      },
+      "blockers": [],
+      "warnings": [],
+      "approvalId": "appr-wf-software-onboarding-content-apollo-1786623816830-software-review",
+      "startedAt": "2026-08-13T12:23:37.200Z",
+      "completedAt": "2026-08-13T12:23:37.211Z",
+      "revisionAttempts": 0
+    },
+    {
+      "id": "pre-publish-validation",
+      "definitionStepId": "pre-publish-validation",
+      "handler": "pre-publish-validation",
+      "label": "Pre-publish validation",
+      "status": "pending",
+      "required": true,
+      "failurePolicy": "block-workflow",
+      "attempt": 0,
+      "maxAttempts": 2,
+      "dependsOn": [
+        "editorial-approval"
+      ],
+      "priority": "critical",
+      "config": {
+        "maxAutomaticRevisions": 1,
+        "expandFromContentPlan": false,
+        "expandKind": "none",
+        "stopAfterApproval": true,
+        "allowNormalizedFacts": false,
+        "optionalWhenBlocked": false,
+        "forceTransientFailOnce": false
+      },
+      "inputRefs": {},
+      "outputRefs": {},
+      "blockers": [],
+      "warnings": [],
+      "revisionAttempts": 0
+    }
+  ],
+  "history": [
+    {
+      "at": "2026-08-13T12:23:36.990Z",
+      "event": "workflow_created",
+      "message": "Created software-onboarding-content:v1.0.0"
+    },
+    {
+      "at": "2026-08-13T12:23:36.999Z",
+      "event": "workflow_started",
+      "message": "Workflow execution started"
+    },
+    {
+      "at": "2026-08-13T12:23:37.002Z",
+      "event": "workflow_step_started",
+      "stepId": "software-onboarding",
+      "message": "Started Software onboarding"
+    },
+    {
+      "at": "2026-08-13T12:23:37.028Z",
+      "event": "workflow_step_completed",
+      "stepId": "software-onboarding",
+      "message": "Reused onboarding run onboard-apollo-1786623731662 (review-required)"
+    },
+    {
+      "at": "2026-08-13T12:23:37.029Z",
+      "event": "workflow_step_started",
+      "stepId": "content-plan",
+      "message": "Started Content plan"
+    },
+    {
+      "at": "2026-08-13T12:23:37.055Z",
+      "event": "workflow_step_completed",
+      "stepId": "content-plan",
+      "message": "Content plan from onboarding onboard-apollo-1786623731662 (8 candidates)"
+    },
+    {
+      "at": "2026-08-13T12:23:37.058Z",
+      "event": "workflow_step_started",
+      "stepId": "software-review",
+      "message": "Started Software Review"
+    },
+    {
+      "at": "2026-08-13T12:23:37.089Z",
+      "event": "workflow_step_completed",
+      "stepId": "software-review",
+      "message": "Agent software-review-agent → draft draft-deterministic-v1-software-review-agent-apollo-2026-08-13T12-23-37-083Z (qa=pass)"
+    },
+    {
+      "at": "2026-08-13T12:23:37.091Z",
+      "event": "workflow_step_started",
+      "stepId": "alternatives",
+      "message": "Started Alternatives"
+    },
+    {
+      "at": "2026-08-13T12:23:37.103Z",
+      "event": "workflow_step_completed",
+      "stepId": "alternatives",
+      "message": "Agent alternatives-agent → draft draft-deterministic-v1-alternatives-agent-apollo-2026-08-13T12-23-37-099Z (qa=pass)"
+    },
+    {
+      "at": "2026-08-13T12:23:37.104Z",
+      "event": "workflow_step_started",
+      "stepId": "comparison:amplemarket-vs-apollo",
+      "message": "Started Comparison amplemarket-vs-apollo"
+    },
+    {
+      "at": "2026-08-13T12:23:37.122Z",
+      "event": "workflow_step_completed",
+      "stepId": "comparison:amplemarket-vs-apollo",
+      "message": "Agent comparison-agent → draft draft-deterministic-v1-comparison-agent-amplemarket-vs-apollo-2026-08-13T12-23-37-113Z (qa=pass)"
+    },
+    {
+      "at": "2026-08-13T12:23:37.133Z",
+      "event": "workflow_step_started",
+      "stepId": "comparison:apollo-vs-lusha",
+      "message": "Started Comparison apollo-vs-lusha"
+    },
+    {
+      "at": "2026-08-13T12:23:37.149Z",
+      "event": "workflow_step_completed",
+      "stepId": "comparison:apollo-vs-lusha",
+      "message": "Agent comparison-agent → draft draft-deterministic-v1-comparison-agent-apollo-vs-lusha-2026-08-13T12-23-37-143Z (qa=pass)"
+    },
+    {
+      "at": "2026-08-13T12:23:37.157Z",
+      "event": "workflow_step_started",
+      "stepId": "comparison:apollo-vs-rocketreach",
+      "message": "Started Comparison apollo-vs-rocketreach"
+    },
+    {
+      "at": "2026-08-13T12:23:37.175Z",
+      "event": "workflow_step_completed",
+      "stepId": "comparison:apollo-vs-rocketreach",
+      "message": "Agent comparison-agent → draft draft-deterministic-v1-comparison-agent-apollo-vs-rocketreach-2026-08-13T12-23-37-168Z (qa=pass)"
+    },
+    {
+      "at": "2026-08-13T12:23:37.176Z",
+      "event": "workflow_step_started",
+      "stepId": "pricing-page",
+      "message": "Started Pricing Page"
+    },
+    {
+      "at": "2026-08-13T12:23:37.183Z",
+      "event": "workflow_step_completed",
+      "stepId": "pricing-page",
+      "message": "Agent pricing-page-agent → draft draft-deterministic-v1-pricing-page-agent-apollo-2026-08-13T12-23-37-181Z (qa=pass)"
+    },
+    {
+      "at": "2026-08-13T12:23:37.184Z",
+      "event": "workflow_step_started",
+      "stepId": "finder-readiness",
+      "message": "Started Finder readiness"
+    },
+    {
+      "at": "2026-08-13T12:23:37.188Z",
+      "event": "workflow_step_completed",
+      "stepId": "finder-readiness",
+      "message": "Finder readiness noted for apollo"
+    },
+    {
+      "at": "2026-08-13T12:23:37.189Z",
+      "event": "workflow_step_started",
+      "stepId": "internal-links",
+      "message": "Started Internal Link Plan"
+    },
+    {
+      "at": "2026-08-13T12:23:37.199Z",
+      "event": "workflow_step_completed",
+      "stepId": "internal-links",
+      "message": "Agent internal-link-agent → draft draft-deterministic-v1-internal-link-agent-apollo-2026-08-13T12-23-37-197Z (qa=pass)"
+    },
+    {
+      "at": "2026-08-13T12:23:37.199Z",
+      "event": "workflow_step_started",
+      "stepId": "editorial-approval",
+      "message": "Started Editorial approval"
+    },
+    {
+      "at": "2026-08-13T12:23:37.211Z",
+      "event": "workflow_step_completed",
+      "stepId": "editorial-approval",
+      "message": "WAITING FOR EDITORIAL APPROVAL (appr-wf-software-onboarding-content-apollo-1786623816830-software-review)"
+    }
+  ],
+  "options": {
+    "generateReview": true,
+    "generatePricing": true,
+    "generateAlternatives": true,
+    "generateComparisons": true,
+    "runInternalLinks": true,
+    "stopAfterApproval": true,
+    "allowNormalizedFacts": false,
+    "dryRun": false,
+    "maxComparisons": 3,
+    "skipOnboarding": false
+  },
+  "supersededBy": "wf-software-onboarding-content-apollo-1786647440638",
+  "warnings": [],
+  "createdAt": "2026-08-13T12:23:36.990Z",
+  "updatedAt": "2026-08-13T18:57:20.798Z"
+}

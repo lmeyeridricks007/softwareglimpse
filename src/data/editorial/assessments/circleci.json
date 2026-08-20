@@ -1,0 +1,165 @@
+{
+  "id": "assessment-circleci-it-v1",
+  "productSlug": "circleci",
+  "methodologySlug": "it-development-editorial",
+  "methodologyVersion": "1.0.0",
+  "status": "approved",
+  "verdict": "CircleCI: Choose CircleCI when specialist CI/CD is the job — not GitHub the SCM by default, even though both sit in source-control-devops. Scores use the IT & Development editorial methodology from first-party research as of 2026-08-18 — not hands-on product testing.",
+  "strengths": [
+    "Published Performance $15 floor",
+    "Free minute/credit path",
+    "CI specialist depth",
+    "Works with existing git hosts",
+    "Clear identity vs SCM"
+  ],
+  "weaknesses": [
+    "Not a git host",
+    "Credit/minute TCO above $15",
+    "AI not a lead feature",
+    "Weaker repo governance than GitHub Enterprise",
+    "Not observability/hosting"
+  ],
+  "bestFor": [
+    "Teams that want specialist CI/CD against an existing GitHub/GitLab/Bitbucket remote",
+    "Buyers comparing CircleCI Performance $15 to GitHub Actions minutes",
+    "Orgs that do not want to move source control in order to buy CI"
+  ],
+  "notIdealFor": [
+    "Teams whose primary purchase is a git host (GitHub / GitLab)",
+    "Observability or on-call purchases",
+    "Hosting panel or managed WordPress hosting"
+  ],
+  "tradeoffs": [
+    "Per-agent vs per-host vs per-seat vs per-GB pricing models",
+    "Module stacking and consumption overages vs single-SKU floors",
+    "Free tiers vs enterprise SSO/audit gates",
+    "Landscape-adjacent tools vs primary job-cluster peers on best pages"
+  ],
+  "recommendation": "Choose CircleCI when specialist CI/CD is the job — not GitHub the SCM by default, even though both sit in source-control-devops. Compare GitHub or GitLab when you need repos plus CI in one licence; Azure DevOps or Bitbucket for those ecosystems.",
+  "editorialNotes": "IT industry Tier-A batch. Approved on it-development-editorial v1.0.0. membershipRole=primary. jobCluster=source-control-devops. handsOnTesting=false. Affiliate economics excluded.",
+  "handsOnTesting": false,
+  "confidence": "medium",
+  "criterionAssessments": [
+    {
+      "criterionSlug": "ease-of-use",
+      "score": 8,
+      "rationale": "Config.yml pipelines and orbs are familiar to CI specialists; not a git-host onboarding path. Not a lab test.",
+      "supportingFactIds": [
+        "fact-circleci-features.source-control",
+        "fact-circleci-pricing.model"
+      ],
+      "confidence": "medium",
+      "status": "approved",
+      "reviewedAt": "2026-08-18T20:00:00.000Z",
+      "reviewer": "editorial"
+    },
+    {
+      "criterionSlug": "it-job-fit",
+      "score": 8,
+      "rationale": "CI/CD inside source-control-devops — peer path vs Actions/GitLab CI, not a GitHub SCM replacement.",
+      "supportingFactIds": [
+        "fact-circleci-features.source-control",
+        "fact-circleci-pricing.model"
+      ],
+      "confidence": "medium",
+      "status": "approved",
+      "reviewedAt": "2026-08-18T20:00:00.000Z",
+      "reviewer": "editorial"
+    },
+    {
+      "criterionSlug": "workflow-depth",
+      "score": 8,
+      "rationale": "Pipelines, orbs, matrices, and runners are deep for CI; no repo/PR system of record.",
+      "supportingFactIds": [
+        "fact-circleci-features.cicd-actions",
+        "fact-circleci-pricing.model"
+      ],
+      "confidence": "medium",
+      "status": "approved",
+      "reviewedAt": "2026-08-18T20:00:00.000Z",
+      "reviewer": "editorial"
+    },
+    {
+      "criterionSlug": "integrations",
+      "score": 8,
+      "rationale": "Native GitHub (and other VCS) plus Slack/API for pipeline notifications.",
+      "supportingFactIds": [
+        "fact-circleci-features.analytics-reporting",
+        "fact-circleci-pricing.model",
+        "fact-circleci-positioning.vendorClaim"
+      ],
+      "confidence": "medium",
+      "status": "approved",
+      "reviewedAt": "2026-08-18T20:00:00.000Z",
+      "reviewer": "editorial"
+    },
+    {
+      "criterionSlug": "admin-security",
+      "score": 7,
+      "rationale": "Org security exists; thinner than GitHub Enterprise governance of the repo itself.",
+      "supportingFactIds": [
+        "fact-circleci-features.enterprise-security",
+        "fact-circleci-pricing.model"
+      ],
+      "confidence": "medium",
+      "status": "approved",
+      "reviewedAt": "2026-08-18T20:00:00.000Z",
+      "reviewer": "editorial"
+    },
+    {
+      "criterionSlug": "scalability",
+      "score": 8,
+      "rationale": "Performance → Scale plus self-hosted runners; credits still meter cost.",
+      "supportingFactIds": [
+        "fact-circleci-pricing.plans.free",
+        "fact-circleci-pricing.model",
+        "fact-circleci-pricing.plans.scale"
+      ],
+      "confidence": "medium",
+      "status": "approved",
+      "reviewedAt": "2026-08-18T20:00:00.000Z",
+      "reviewer": "editorial"
+    },
+    {
+      "criterionSlug": "value-for-money",
+      "score": 8,
+      "rationale": "Free plus published $15 Performance floor is a clear CI entry. Affiliate economics excluded.",
+      "supportingFactIds": [
+        "fact-circleci-pricing.hasFreePlan",
+        "fact-circleci-pricing.model",
+        "fact-circleci-pricing.startingPriceMonthly"
+      ],
+      "confidence": "medium",
+      "status": "approved",
+      "reviewedAt": "2026-08-18T20:00:00.000Z",
+      "reviewer": "editorial"
+    },
+    {
+      "criterionSlug": "ai-capabilities",
+      "score": 5,
+      "rationale": "No meaningful dev-AI copilot versus GitHub Copilot — scored low on purpose.",
+      "supportingFactIds": [
+        "fact-circleci-features.dev-ai",
+        "fact-circleci-pricing.model"
+      ],
+      "confidence": "medium",
+      "status": "approved",
+      "reviewedAt": "2026-08-18T20:00:00.000Z",
+      "reviewer": "editorial"
+    }
+  ],
+  "overallScore": 7.5,
+  "overallScoreRationale": "Weighted average of the eight IT editorial criteria using category weights (IT job fit 16, workflow depth 14, ease of use 12, integrations 12, admin/security 12, value 12, AI 12, scalability 10), rounded to 1 decimal. Products are scored inside their job cluster — ITSM, observability, source control, hosting panels, and web-data platforms are not forced into one undifferentiated ranking. Not a hands-on lab score, and affiliate economics are excluded.",
+  "scoreAudit": [
+    {
+      "at": "2026-08-18T20:00:00.000Z",
+      "actor": "editorial",
+      "change": "IT industry Tier-A onboarding; approved IT criteria with category weights; handsOnTesting=false",
+      "nextOverall": 7.5
+    }
+  ],
+  "reviewedAt": "2026-08-18T20:00:00.000Z",
+  "reviewer": "editorial",
+  "createdAt": "2026-08-18T20:00:00.000Z",
+  "updatedAt": "2026-08-18T20:00:00.000Z"
+}

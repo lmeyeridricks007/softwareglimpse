@@ -1,0 +1,657 @@
+{
+  "id": "wf-software-onboarding-content-bolt-for-business-1787140470800",
+  "workflowId": "software-onboarding-content",
+  "workflowVersion": "1.0.0",
+  "name": "Software Onboarding Content: bolt-for-business",
+  "targetType": "software",
+  "targetId": "bolt-for-business",
+  "status": "completed-with-warnings",
+  "steps": [
+    {
+      "id": "software-onboarding",
+      "definitionStepId": "software-onboarding",
+      "handler": "software-onboarding",
+      "label": "Software onboarding",
+      "status": "completed",
+      "required": true,
+      "failurePolicy": "block-workflow",
+      "attempt": 1,
+      "maxAttempts": 2,
+      "dependsOn": [],
+      "priority": "critical",
+      "config": {
+        "maxAutomaticRevisions": 1,
+        "expandFromContentPlan": false,
+        "expandKind": "none",
+        "stopAfterApproval": true,
+        "allowNormalizedFacts": false,
+        "optionalWhenBlocked": false,
+        "forceTransientFailOnce": false
+      },
+      "inputRefs": {},
+      "outputRefs": {
+        "softwareOnboardingRunId": "onboard-bolt-for-business-1787140465738"
+      },
+      "blockers": [],
+      "warnings": [
+        "Onboarding run exists but status=blocked"
+      ],
+      "startedAt": "2026-08-19T11:54:32.086Z",
+      "completedAt": "2026-08-19T11:54:32.244Z",
+      "revisionAttempts": 0
+    },
+    {
+      "id": "content-plan",
+      "definitionStepId": "content-plan",
+      "handler": "content-plan",
+      "label": "Content plan",
+      "status": "completed",
+      "required": true,
+      "failurePolicy": "block-workflow",
+      "attempt": 1,
+      "maxAttempts": 2,
+      "dependsOn": [
+        "software-onboarding"
+      ],
+      "priority": "high",
+      "config": {
+        "maxAutomaticRevisions": 1,
+        "expandFromContentPlan": false,
+        "expandKind": "none",
+        "stopAfterApproval": true,
+        "allowNormalizedFacts": false,
+        "optionalWhenBlocked": false,
+        "forceTransientFailOnce": false
+      },
+      "inputRefs": {},
+      "outputRefs": {
+        "softwareOnboardingRunId": "onboard-bolt-for-business-1787140465738",
+        "comparisonTargets": "",
+        "pageCandidateCount": "0"
+      },
+      "blockers": [],
+      "warnings": [],
+      "startedAt": "2026-08-19T11:54:32.245Z",
+      "completedAt": "2026-08-19T11:54:32.305Z",
+      "revisionAttempts": 0
+    },
+    {
+      "id": "software-review",
+      "definitionStepId": "software-review",
+      "handler": "agent-run",
+      "label": "Software Review",
+      "status": "completed",
+      "required": true,
+      "failurePolicy": "block-workflow",
+      "attempt": 1,
+      "maxAttempts": 2,
+      "dependsOn": [
+        "content-plan"
+      ],
+      "priority": "high",
+      "config": {
+        "agentId": "software-review-agent",
+        "targetSlug": "bolt-for-business",
+        "maxAutomaticRevisions": 1,
+        "expandFromContentPlan": false,
+        "expandKind": "none",
+        "stopAfterApproval": true,
+        "allowNormalizedFacts": false,
+        "optionalWhenBlocked": false,
+        "forceTransientFailOnce": false
+      },
+      "inputRefs": {},
+      "outputRefs": {
+        "draftId": "draft-deterministic-v1-software-review-agent-bolt-for-business-2026-08-19T11-54-32-517Z",
+        "qaStatus": "pass",
+        "agentId": "software-review-agent",
+        "target": "bolt-for-business"
+      },
+      "inputSnapshot": {
+        "researchFactIds": [
+          "fact-bolt-for-business-identity.shortDescription",
+          "fact-bolt-for-business-positioning.vendorClaim",
+          "fact-bolt-for-business-positioning.jobCluster",
+          "fact-bolt-for-business-pricing.model",
+          "fact-bolt-for-business-pricing.hasFreePlan",
+          "fact-bolt-for-business-pricing.hasFreeTrial",
+          "fact-bolt-for-business-positioning.membershipRole",
+          "fact-bolt-for-business-pricing.plans.business",
+          "fact-bolt-for-business-features.applicant-tracking",
+          "fact-bolt-for-business-features.career-site-job-boards",
+          "fact-bolt-for-business-features.interview-scheduling",
+          "fact-bolt-for-business-features.core-hris",
+          "fact-bolt-for-business-features.payroll-processing",
+          "fact-bolt-for-business-features.benefits-admin",
+          "fact-bolt-for-business-features.workforce-scheduling",
+          "fact-bolt-for-business-features.frontline-comms",
+          "fact-bolt-for-business-features.time-attendance",
+          "fact-bolt-for-business-features.gps-geofence-clockin",
+          "fact-bolt-for-business-features.sop-knowledge-base",
+          "fact-bolt-for-business-features.employee-training-paths",
+          "fact-bolt-for-business-features.lms-course-commerce",
+          "fact-bolt-for-business-features.hris-integrations",
+          "fact-bolt-for-business-features.analytics-reporting",
+          "fact-bolt-for-business-features.ai-assistance"
+        ],
+        "methodologySlug": "hr-editorial",
+        "methodologyVersion": "1.0.0",
+        "agentVersion": "1.0.0",
+        "contextBuiltAt": "2026-08-19T11:54:32.511Z"
+      },
+      "blockers": [],
+      "warnings": [],
+      "agentTaskId": "exec-software-review-agent-bolt-for-business-1787140472308",
+      "draftId": "draft-deterministic-v1-software-review-agent-bolt-for-business-2026-08-19T11-54-32-517Z",
+      "startedAt": "2026-08-19T11:54:32.307Z",
+      "completedAt": "2026-08-19T11:54:32.526Z",
+      "revisionAttempts": 0
+    },
+    {
+      "id": "pricing-page",
+      "definitionStepId": "pricing-page",
+      "handler": "agent-run",
+      "label": "Pricing Page",
+      "status": "completed",
+      "required": false,
+      "failurePolicy": "continue-with-warning",
+      "attempt": 1,
+      "maxAttempts": 2,
+      "dependsOn": [
+        "content-plan"
+      ],
+      "priority": "normal",
+      "config": {
+        "agentId": "pricing-page-agent",
+        "targetSlug": "bolt-for-business",
+        "maxAutomaticRevisions": 1,
+        "expandFromContentPlan": false,
+        "expandKind": "none",
+        "stopAfterApproval": true,
+        "allowNormalizedFacts": false,
+        "optionalWhenBlocked": true,
+        "forceTransientFailOnce": false
+      },
+      "inputRefs": {},
+      "outputRefs": {
+        "draftId": "draft-deterministic-v1-pricing-page-agent-bolt-for-business-2026-08-19T11-54-32-568Z",
+        "qaStatus": "pass",
+        "agentId": "pricing-page-agent",
+        "target": "bolt-for-business"
+      },
+      "inputSnapshot": {
+        "researchFactIds": [
+          "fact-bolt-for-business-identity.shortDescription",
+          "fact-bolt-for-business-positioning.vendorClaim",
+          "fact-bolt-for-business-positioning.jobCluster",
+          "fact-bolt-for-business-pricing.model",
+          "fact-bolt-for-business-pricing.hasFreePlan",
+          "fact-bolt-for-business-pricing.hasFreeTrial",
+          "fact-bolt-for-business-positioning.membershipRole",
+          "fact-bolt-for-business-pricing.plans.business",
+          "fact-bolt-for-business-features.applicant-tracking",
+          "fact-bolt-for-business-features.career-site-job-boards",
+          "fact-bolt-for-business-features.interview-scheduling",
+          "fact-bolt-for-business-features.core-hris",
+          "fact-bolt-for-business-features.payroll-processing",
+          "fact-bolt-for-business-features.benefits-admin",
+          "fact-bolt-for-business-features.workforce-scheduling",
+          "fact-bolt-for-business-features.frontline-comms",
+          "fact-bolt-for-business-features.time-attendance",
+          "fact-bolt-for-business-features.gps-geofence-clockin",
+          "fact-bolt-for-business-features.sop-knowledge-base",
+          "fact-bolt-for-business-features.employee-training-paths",
+          "fact-bolt-for-business-features.lms-course-commerce",
+          "fact-bolt-for-business-features.hris-integrations",
+          "fact-bolt-for-business-features.analytics-reporting",
+          "fact-bolt-for-business-features.ai-assistance"
+        ],
+        "methodologySlug": "hr-editorial",
+        "methodologyVersion": "1.0.0",
+        "agentVersion": "1.0.0",
+        "contextBuiltAt": "2026-08-19T11:54:32.567Z"
+      },
+      "blockers": [],
+      "warnings": [],
+      "agentTaskId": "exec-pricing-page-agent-bolt-for-business-1787140472560",
+      "draftId": "draft-deterministic-v1-pricing-page-agent-bolt-for-business-2026-08-19T11-54-32-568Z",
+      "startedAt": "2026-08-19T11:54:32.559Z",
+      "completedAt": "2026-08-19T11:54:32.570Z",
+      "revisionAttempts": 0
+    },
+    {
+      "id": "alternatives",
+      "definitionStepId": "alternatives",
+      "handler": "agent-run",
+      "label": "Alternatives",
+      "status": "blocked",
+      "required": false,
+      "failurePolicy": "continue-with-warning",
+      "attempt": 1,
+      "maxAttempts": 2,
+      "dependsOn": [
+        "content-plan"
+      ],
+      "priority": "normal",
+      "config": {
+        "agentId": "alternatives-agent",
+        "targetSlug": "bolt-for-business",
+        "maxAutomaticRevisions": 1,
+        "expandFromContentPlan": false,
+        "expandKind": "none",
+        "stopAfterApproval": true,
+        "allowNormalizedFacts": false,
+        "optionalWhenBlocked": true,
+        "forceTransientFailOnce": false
+      },
+      "inputRefs": {},
+      "outputRefs": {},
+      "blockers": [
+        "NO_APPROVED_ALTERNATIVES: Approved alternative relationships required — same-category alone is insufficient"
+      ],
+      "warnings": [
+        "NO_APPROVED_ALTERNATIVES: Approved alternative relationships required — same-category alone is insufficient"
+      ],
+      "startedAt": "2026-08-19T11:54:32.527Z",
+      "completedAt": "2026-08-19T11:54:32.537Z",
+      "revisionAttempts": 0
+    },
+    {
+      "id": "comparisons",
+      "definitionStepId": "comparisons",
+      "handler": "agent-run",
+      "label": "Comparisons",
+      "status": "blocked",
+      "required": false,
+      "failurePolicy": "continue-with-warning",
+      "attempt": 1,
+      "maxAttempts": 2,
+      "dependsOn": [
+        "content-plan"
+      ],
+      "priority": "normal",
+      "config": {
+        "agentId": "comparison-agent",
+        "maxAutomaticRevisions": 1,
+        "expandFromContentPlan": true,
+        "expandKind": "comparisons",
+        "stopAfterApproval": true,
+        "allowNormalizedFacts": false,
+        "optionalWhenBlocked": true,
+        "forceTransientFailOnce": false
+      },
+      "inputRefs": {},
+      "outputRefs": {},
+      "blockers": [
+        "MISSING_PRODUCTS: Comparison requires two product slugs"
+      ],
+      "warnings": [
+        "MISSING_PRODUCTS: Comparison requires two product slugs"
+      ],
+      "startedAt": "2026-08-19T11:54:32.541Z",
+      "completedAt": "2026-08-19T11:54:32.558Z",
+      "revisionAttempts": 0
+    },
+    {
+      "id": "internal-links",
+      "definitionStepId": "internal-links",
+      "handler": "internal-link",
+      "label": "Internal Link Plan",
+      "status": "completed",
+      "required": false,
+      "failurePolicy": "continue-with-warning",
+      "attempt": 1,
+      "maxAttempts": 2,
+      "dependsOn": [
+        "software-review"
+      ],
+      "priority": "low",
+      "config": {
+        "agentId": "internal-link-agent",
+        "maxAutomaticRevisions": 1,
+        "expandFromContentPlan": false,
+        "expandKind": "none",
+        "stopAfterApproval": true,
+        "allowNormalizedFacts": false,
+        "optionalWhenBlocked": false,
+        "forceTransientFailOnce": false
+      },
+      "inputRefs": {},
+      "outputRefs": {
+        "draftId": "draft-deterministic-v1-internal-link-agent-bolt-for-business-2026-08-19T11-54-32-609Z",
+        "qaStatus": "pass",
+        "agentId": "internal-link-agent",
+        "target": "bolt-for-business"
+      },
+      "inputSnapshot": {
+        "researchFactIds": [
+          "fact-bolt-for-business-identity.shortDescription",
+          "fact-bolt-for-business-positioning.vendorClaim",
+          "fact-bolt-for-business-positioning.jobCluster",
+          "fact-bolt-for-business-pricing.model",
+          "fact-bolt-for-business-pricing.hasFreePlan",
+          "fact-bolt-for-business-pricing.hasFreeTrial",
+          "fact-bolt-for-business-positioning.membershipRole",
+          "fact-bolt-for-business-pricing.plans.business",
+          "fact-bolt-for-business-features.applicant-tracking",
+          "fact-bolt-for-business-features.career-site-job-boards",
+          "fact-bolt-for-business-features.interview-scheduling",
+          "fact-bolt-for-business-features.core-hris",
+          "fact-bolt-for-business-features.payroll-processing",
+          "fact-bolt-for-business-features.benefits-admin",
+          "fact-bolt-for-business-features.workforce-scheduling",
+          "fact-bolt-for-business-features.frontline-comms",
+          "fact-bolt-for-business-features.time-attendance",
+          "fact-bolt-for-business-features.gps-geofence-clockin",
+          "fact-bolt-for-business-features.sop-knowledge-base",
+          "fact-bolt-for-business-features.employee-training-paths",
+          "fact-bolt-for-business-features.lms-course-commerce",
+          "fact-bolt-for-business-features.hris-integrations",
+          "fact-bolt-for-business-features.analytics-reporting",
+          "fact-bolt-for-business-features.ai-assistance"
+        ],
+        "methodologySlug": "hr-editorial",
+        "methodologyVersion": "1.0.0",
+        "agentVersion": "1.0.0",
+        "contextBuiltAt": "2026-08-19T11:54:32.608Z"
+      },
+      "blockers": [],
+      "warnings": [],
+      "agentTaskId": "exec-internal-link-agent-bolt-for-business-1787140472579",
+      "draftId": "draft-deterministic-v1-internal-link-agent-bolt-for-business-2026-08-19T11-54-32-609Z",
+      "startedAt": "2026-08-19T11:54:32.578Z",
+      "completedAt": "2026-08-19T11:54:32.612Z",
+      "revisionAttempts": 0
+    },
+    {
+      "id": "finder-readiness",
+      "definitionStepId": "finder-readiness",
+      "handler": "update-recommendation-readiness",
+      "label": "Finder readiness",
+      "status": "completed",
+      "required": false,
+      "failurePolicy": "continue",
+      "attempt": 1,
+      "maxAttempts": 2,
+      "dependsOn": [
+        "content-plan"
+      ],
+      "priority": "low",
+      "config": {
+        "maxAutomaticRevisions": 1,
+        "expandFromContentPlan": false,
+        "expandKind": "none",
+        "stopAfterApproval": true,
+        "allowNormalizedFacts": false,
+        "optionalWhenBlocked": false,
+        "forceTransientFailOnce": false
+      },
+      "inputRefs": {},
+      "outputRefs": {
+        "finderReadiness": "checked"
+      },
+      "blockers": [],
+      "warnings": [],
+      "startedAt": "2026-08-19T11:54:32.576Z",
+      "completedAt": "2026-08-19T11:54:32.577Z",
+      "revisionAttempts": 0
+    },
+    {
+      "id": "editorial-approval",
+      "definitionStepId": "editorial-approval",
+      "handler": "approval-check",
+      "label": "Editorial approval",
+      "status": "completed",
+      "required": true,
+      "failurePolicy": "manual-review",
+      "attempt": 2,
+      "maxAttempts": 2,
+      "dependsOn": [
+        "software-review"
+      ],
+      "priority": "critical",
+      "config": {
+        "approvalType": "editorial",
+        "maxAutomaticRevisions": 1,
+        "expandFromContentPlan": false,
+        "expandKind": "none",
+        "stopAfterApproval": true,
+        "allowNormalizedFacts": false,
+        "optionalWhenBlocked": false,
+        "forceTransientFailOnce": false
+      },
+      "inputRefs": {},
+      "outputRefs": {
+        "approvalId": "appr-wf-software-onboarding-content-bolt-for-business-1787140470800-software-review",
+        "draftId": "draft-deterministic-v1-software-review-agent-bolt-for-business-2026-08-19T11-54-32-517Z",
+        "approvalIds": "appr-wf-software-onboarding-content-bolt-for-business-1787140470800-software-review"
+      },
+      "blockers": [],
+      "warnings": [
+        "Approval received — resuming",
+        "2 optional draft(s) may still need separate editorial review"
+      ],
+      "approvalId": "appr-wf-software-onboarding-content-bolt-for-business-1787140470800-software-review",
+      "startedAt": "2026-08-19T12:06:07.785Z",
+      "completedAt": "2026-08-19T12:06:07.898Z",
+      "revisionAttempts": 0
+    },
+    {
+      "id": "pre-publish-validation",
+      "definitionStepId": "pre-publish-validation",
+      "handler": "pre-publish-validation",
+      "label": "Pre-publish validation",
+      "status": "completed",
+      "required": true,
+      "failurePolicy": "block-workflow",
+      "attempt": 1,
+      "maxAttempts": 2,
+      "dependsOn": [
+        "editorial-approval"
+      ],
+      "priority": "critical",
+      "config": {
+        "maxAutomaticRevisions": 1,
+        "expandFromContentPlan": false,
+        "expandKind": "none",
+        "stopAfterApproval": true,
+        "allowNormalizedFacts": false,
+        "optionalWhenBlocked": false,
+        "forceTransientFailOnce": false
+      },
+      "inputRefs": {},
+      "outputRefs": {
+        "publishState": "READY_TO_PUBLISH"
+      },
+      "blockers": [],
+      "warnings": [
+        "stopAfterApproval: workflow will not publish automatically"
+      ],
+      "startedAt": "2026-08-19T12:06:07.901Z",
+      "completedAt": "2026-08-19T12:06:08.321Z",
+      "revisionAttempts": 0
+    }
+  ],
+  "history": [
+    {
+      "at": "2026-08-19T11:54:32.081Z",
+      "event": "workflow_created",
+      "message": "Created software-onboarding-content:v1.0.0"
+    },
+    {
+      "at": "2026-08-19T11:54:32.084Z",
+      "event": "workflow_started",
+      "message": "Workflow execution started"
+    },
+    {
+      "at": "2026-08-19T11:54:32.086Z",
+      "event": "workflow_step_started",
+      "stepId": "software-onboarding",
+      "message": "Started Software onboarding"
+    },
+    {
+      "at": "2026-08-19T11:54:32.244Z",
+      "event": "workflow_step_completed",
+      "stepId": "software-onboarding",
+      "message": "Reused onboarding run onboard-bolt-for-business-1787140465738 (blocked)"
+    },
+    {
+      "at": "2026-08-19T11:54:32.245Z",
+      "event": "workflow_step_started",
+      "stepId": "content-plan",
+      "message": "Started Content plan"
+    },
+    {
+      "at": "2026-08-19T11:54:32.305Z",
+      "event": "workflow_step_completed",
+      "stepId": "content-plan",
+      "message": "Content plan from onboarding onboard-bolt-for-business-1787140465738 (0 candidates)"
+    },
+    {
+      "at": "2026-08-19T11:54:32.306Z",
+      "event": "workflow_step_started",
+      "stepId": "software-review",
+      "message": "Started Software Review"
+    },
+    {
+      "at": "2026-08-19T11:54:32.526Z",
+      "event": "workflow_step_completed",
+      "stepId": "software-review",
+      "message": "Agent software-review-agent → draft draft-deterministic-v1-software-review-agent-bolt-for-business-2026-08-19T11-54-32-517Z (qa=pass)"
+    },
+    {
+      "at": "2026-08-19T11:54:32.527Z",
+      "event": "workflow_step_started",
+      "stepId": "alternatives",
+      "message": "Started Alternatives"
+    },
+    {
+      "at": "2026-08-19T11:54:32.537Z",
+      "event": "workflow_step_completed",
+      "stepId": "alternatives",
+      "message": "Agent blocked (optional): NO_APPROVED_ALTERNATIVES: Approved alternative relationships required — same-category alone is insufficient"
+    },
+    {
+      "at": "2026-08-19T11:54:32.540Z",
+      "event": "workflow_step_started",
+      "stepId": "comparisons",
+      "message": "Started Comparisons"
+    },
+    {
+      "at": "2026-08-19T11:54:32.558Z",
+      "event": "workflow_step_completed",
+      "stepId": "comparisons",
+      "message": "Agent blocked (optional): MISSING_PRODUCTS: Comparison requires two product slugs"
+    },
+    {
+      "at": "2026-08-19T11:54:32.559Z",
+      "event": "workflow_step_started",
+      "stepId": "pricing-page",
+      "message": "Started Pricing Page"
+    },
+    {
+      "at": "2026-08-19T11:54:32.570Z",
+      "event": "workflow_step_completed",
+      "stepId": "pricing-page",
+      "message": "Agent pricing-page-agent → draft draft-deterministic-v1-pricing-page-agent-bolt-for-business-2026-08-19T11-54-32-568Z (qa=pass)"
+    },
+    {
+      "at": "2026-08-19T11:54:32.572Z",
+      "event": "workflow_step_started",
+      "stepId": "finder-readiness",
+      "message": "Started Finder readiness"
+    },
+    {
+      "at": "2026-08-19T11:54:32.577Z",
+      "event": "workflow_step_completed",
+      "stepId": "finder-readiness",
+      "message": "Finder readiness noted for bolt-for-business"
+    },
+    {
+      "at": "2026-08-19T11:54:32.578Z",
+      "event": "workflow_step_started",
+      "stepId": "internal-links",
+      "message": "Started Internal Link Plan"
+    },
+    {
+      "at": "2026-08-19T11:54:32.612Z",
+      "event": "workflow_step_completed",
+      "stepId": "internal-links",
+      "message": "Agent internal-link-agent → draft draft-deterministic-v1-internal-link-agent-bolt-for-business-2026-08-19T11-54-32-609Z (qa=pass)"
+    },
+    {
+      "at": "2026-08-19T11:54:32.614Z",
+      "event": "workflow_step_started",
+      "stepId": "editorial-approval",
+      "message": "Started Editorial approval"
+    },
+    {
+      "at": "2026-08-19T11:54:32.770Z",
+      "event": "workflow_step_completed",
+      "stepId": "editorial-approval",
+      "message": "WAITING FOR EDITORIAL APPROVAL (appr-wf-software-onboarding-content-bolt-for-business-1787140470800-software-review)"
+    },
+    {
+      "at": "2026-08-19T11:54:32.772Z",
+      "event": "workflow_blocked",
+      "message": "WAITING FOR EDITORIAL APPROVAL"
+    },
+    {
+      "at": "2026-08-19T12:06:07.781Z",
+      "event": "workflow_resumed",
+      "message": "Workflow resumed"
+    },
+    {
+      "at": "2026-08-19T12:06:07.783Z",
+      "event": "workflow_started",
+      "message": "Workflow execution started"
+    },
+    {
+      "at": "2026-08-19T12:06:07.785Z",
+      "event": "workflow_step_started",
+      "stepId": "editorial-approval",
+      "message": "Started Editorial approval"
+    },
+    {
+      "at": "2026-08-19T12:06:07.899Z",
+      "event": "workflow_step_completed",
+      "stepId": "editorial-approval",
+      "message": "Required editorial approvals satisfied"
+    },
+    {
+      "at": "2026-08-19T12:06:07.901Z",
+      "event": "workflow_step_started",
+      "stepId": "pre-publish-validation",
+      "message": "Started Pre-publish validation"
+    },
+    {
+      "at": "2026-08-19T12:06:08.321Z",
+      "event": "workflow_step_completed",
+      "stepId": "pre-publish-validation",
+      "message": "Pre-publish validation passed — READY TO PUBLISH (manual)"
+    },
+    {
+      "at": "2026-08-19T12:06:08.323Z",
+      "event": "workflow_completed",
+      "message": "Workflow completed-with-warnings"
+    }
+  ],
+  "options": {
+    "generateReview": true,
+    "generatePricing": true,
+    "generateAlternatives": true,
+    "generateComparisons": true,
+    "runInternalLinks": true,
+    "stopAfterApproval": true,
+    "allowNormalizedFacts": false,
+    "dryRun": false,
+    "maxComparisons": 3,
+    "skipOnboarding": false
+  },
+  "warnings": [
+    "alternatives blocked: NO_APPROVED_ALTERNATIVES: Approved alternative relationships required — same-category alone is insufficient",
+    "comparisons blocked: MISSING_PRODUCTS: Comparison requires two product slugs"
+  ],
+  "createdAt": "2026-08-19T11:54:32.081Z",
+  "updatedAt": "2026-08-19T12:06:08.323Z"
+}

@@ -1,0 +1,165 @@
+{
+  "id": "assessment-servicenow-it-v1",
+  "productSlug": "servicenow",
+  "methodologySlug": "it-development-editorial",
+  "methodologyVersion": "1.0.0",
+  "status": "approved",
+  "verdict": "ServiceNow: Choose ServiceNow when enterprise ITSM (and likely adjacent Now modules) is the job and you can run an RFP — not when you need Freshservice’s published Starter SKU. Scores use the IT & Development editorial methodology from first-party research as of 2026-08-18 — not hands-on product testing.",
+  "strengths": [
+    "Enterprise ITSM depth and CMDB",
+    "Cross-module Now Platform",
+    "Now Assist on 2026 ITSM tiers",
+    "Governance and scale",
+    "Integration breadth"
+  ],
+  "weaknesses": [
+    "Opaque pricing",
+    "Heavy implementation",
+    "Module sprawl risk",
+    "Weak SMB self-serve motion",
+    "Not observability or git"
+  ],
+  "bestFor": [
+    "Enterprises standardising ITSM (and often HRSD/CSM) on one platform",
+    "ITIL-mature shops that need CMDB + change at scale",
+    "Buyers with budget for implementation partners"
+  ],
+  "notIdealFor": [
+    "SMBs that need a published $19/agent ITSM SKU (Freshservice)",
+    "Atlassian-first teams that only need JSM on an existing Jira Cloud",
+    "SRE teams buying observability (Datadog / New Relic)"
+  ],
+  "tradeoffs": [
+    "Per-agent vs per-host vs per-seat vs per-GB pricing models",
+    "Module stacking and consumption overages vs single-SKU floors",
+    "Free tiers vs enterprise SSO/audit gates",
+    "Landscape-adjacent tools vs primary job-cluster peers on best pages"
+  ],
+  "recommendation": "Choose ServiceNow when enterprise ITSM (and likely adjacent Now modules) is the job and you can run an RFP — not when you need Freshservice’s published Starter SKU. Compare Freshservice for published mid-market ITSM; Jira Service Management if you already live in Jira Cloud.",
+  "editorialNotes": "IT Priority-2 batch. Approved on it-development-editorial v1.0.0. membershipRole=primary. jobCluster=itsm-service-desk. handsOnTesting=false. Affiliate economics excluded.",
+  "handsOnTesting": false,
+  "confidence": "medium",
+  "criterionAssessments": [
+    {
+      "criterionSlug": "ease-of-use",
+      "score": 6,
+      "rationale": "Enterprise platform UX and implementation burden — productive after SI/config, not in an afternoon. Not hands-on lab tested.",
+      "supportingFactIds": [
+        "fact-servicenow-features.incident-management",
+        "fact-servicenow-pricing.model"
+      ],
+      "confidence": "medium",
+      "status": "approved",
+      "reviewedAt": "2026-08-18T12:00:00.000Z",
+      "reviewer": "editorial"
+    },
+    {
+      "criterionSlug": "it-job-fit",
+      "score": 10,
+      "rationale": "Canonical enterprise ITSM — ranked with Freshservice and JSM, not against Datadog or GitHub.",
+      "supportingFactIds": [
+        "fact-servicenow-features.incident-management",
+        "fact-servicenow-pricing.model"
+      ],
+      "confidence": "medium",
+      "status": "approved",
+      "reviewedAt": "2026-08-18T12:00:00.000Z",
+      "reviewer": "editorial"
+    },
+    {
+      "criterionSlug": "workflow-depth",
+      "score": 10,
+      "rationale": "ITIL-depth CMDB, change, and cross-module workflows are the category ceiling.",
+      "supportingFactIds": [
+        "fact-servicenow-features.change-problem",
+        "fact-servicenow-pricing.model"
+      ],
+      "confidence": "medium",
+      "status": "approved",
+      "reviewedAt": "2026-08-18T12:00:00.000Z",
+      "reviewer": "editorial"
+    },
+    {
+      "criterionSlug": "integrations",
+      "score": 10,
+      "rationale": "Broadest enterprise integration surface in the ITSM cluster.",
+      "supportingFactIds": [
+        "fact-servicenow-features.analytics-reporting",
+        "fact-servicenow-pricing.model",
+        "fact-servicenow-positioning.vendorClaim"
+      ],
+      "confidence": "medium",
+      "status": "approved",
+      "reviewedAt": "2026-08-18T12:00:00.000Z",
+      "reviewer": "editorial"
+    },
+    {
+      "criterionSlug": "admin-security",
+      "score": 10,
+      "rationale": "Enterprise controls, domain separation, and compliance are core.",
+      "supportingFactIds": [
+        "fact-servicenow-features.enterprise-security",
+        "fact-servicenow-pricing.model"
+      ],
+      "confidence": "medium",
+      "status": "approved",
+      "reviewedAt": "2026-08-18T12:00:00.000Z",
+      "reviewer": "editorial"
+    },
+    {
+      "criterionSlug": "scalability",
+      "score": 10,
+      "rationale": "Built for global fulfiller counts and multi-module estates.",
+      "supportingFactIds": [
+        "fact-servicenow-pricing.plans.itsm-foundation",
+        "fact-servicenow-pricing.model",
+        "fact-servicenow-pricing.plans.itsm-prime"
+      ],
+      "confidence": "medium",
+      "status": "approved",
+      "reviewedAt": "2026-08-18T12:00:00.000Z",
+      "reviewer": "editorial"
+    },
+    {
+      "criterionSlug": "value-for-money",
+      "score": 5,
+      "rationale": "Quote-only + implementation is the TCO story; not comparable to $19 Freshservice Starter. Affiliate economics excluded.",
+      "supportingFactIds": [
+        "fact-servicenow-pricing.hasFreePlan",
+        "fact-servicenow-pricing.model",
+        "fact-servicenow-pricing.startingPriceMonthly"
+      ],
+      "confidence": "medium",
+      "status": "approved",
+      "reviewedAt": "2026-08-18T12:00:00.000Z",
+      "reviewer": "editorial"
+    },
+    {
+      "criterionSlug": "ai-capabilities",
+      "score": 8,
+      "rationale": "Now Assist bundled by 2026 tier; Prime gates custom agents. Scored as assistance, not a ChatGPT substitute.",
+      "supportingFactIds": [
+        "fact-servicenow-features.itsm-ai",
+        "fact-servicenow-pricing.model"
+      ],
+      "confidence": "medium",
+      "status": "approved",
+      "reviewedAt": "2026-08-18T12:00:00.000Z",
+      "reviewer": "editorial"
+    }
+  ],
+  "overallScore": 8.7,
+  "overallScoreRationale": "Weighted average of the eight IT editorial criteria using category weights (IT job fit 16, workflow depth 14, ease of use 12, integrations 12, admin/security 12, value 12, AI 12, scalability 10), rounded to 1 decimal. Products are scored inside their job cluster — ITSM, observability, source control, hosting panels, and web-data platforms are not forced into one undifferentiated ranking. Not a hands-on lab score, and affiliate economics are excluded.",
+  "scoreAudit": [
+    {
+      "at": "2026-08-18T12:00:00.000Z",
+      "actor": "editorial",
+      "change": "IT Priority-2 onboarding; approved IT criteria with category weights; handsOnTesting=false",
+      "nextOverall": 8.7
+    }
+  ],
+  "reviewedAt": "2026-08-18T12:00:00.000Z",
+  "reviewer": "editorial",
+  "createdAt": "2026-08-18T12:00:00.000Z",
+  "updatedAt": "2026-08-18T12:00:00.000Z"
+}

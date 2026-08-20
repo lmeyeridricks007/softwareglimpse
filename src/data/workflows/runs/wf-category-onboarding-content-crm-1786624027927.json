@@ -1,0 +1,361 @@
+{
+  "id": "wf-category-onboarding-content-crm-1786624027927",
+  "workflowId": "category-onboarding-content",
+  "workflowVersion": "1.0.0",
+  "name": "Category Onboarding Content: crm",
+  "targetType": "category",
+  "targetId": "crm",
+  "status": "completed",
+  "steps": [
+    {
+      "id": "category-onboarding",
+      "definitionStepId": "category-onboarding",
+      "handler": "category-onboarding",
+      "label": "Category onboarding",
+      "status": "completed",
+      "required": true,
+      "failurePolicy": "block-workflow",
+      "attempt": 1,
+      "maxAttempts": 2,
+      "dependsOn": [],
+      "priority": "critical",
+      "config": {
+        "maxAutomaticRevisions": 1,
+        "expandFromContentPlan": false,
+        "expandKind": "none",
+        "stopAfterApproval": true,
+        "allowNormalizedFacts": false,
+        "optionalWhenBlocked": false,
+        "forceTransientFailOnce": false
+      },
+      "inputRefs": {},
+      "outputRefs": {
+        "categoryOnboardingRunId": "cat-onboard-crm-1786620916107"
+      },
+      "blockers": [],
+      "warnings": [],
+      "startedAt": "2026-08-13T12:27:08.050Z",
+      "completedAt": "2026-08-13T12:27:08.058Z",
+      "revisionAttempts": 0
+    },
+    {
+      "id": "category-hub",
+      "definitionStepId": "category-hub",
+      "handler": "agent-run",
+      "label": "Category Hub",
+      "status": "completed",
+      "required": true,
+      "failurePolicy": "block-workflow",
+      "attempt": 1,
+      "maxAttempts": 2,
+      "dependsOn": [
+        "category-onboarding"
+      ],
+      "priority": "high",
+      "config": {
+        "agentId": "category-hub-agent",
+        "targetSlug": "crm",
+        "maxAutomaticRevisions": 1,
+        "expandFromContentPlan": false,
+        "expandKind": "none",
+        "stopAfterApproval": true,
+        "allowNormalizedFacts": false,
+        "optionalWhenBlocked": false,
+        "forceTransientFailOnce": false
+      },
+      "inputRefs": {},
+      "outputRefs": {
+        "draftId": "draft-deterministic-v1-category-hub-agent-crm-2026-08-13T12-27-08-067Z",
+        "qaStatus": "pass",
+        "agentId": "category-hub-agent",
+        "target": "crm"
+      },
+      "inputSnapshot": {
+        "researchFactIds": [],
+        "methodologySlug": "crm-editorial",
+        "methodologyVersion": "1.0.0",
+        "agentVersion": "1.0.0",
+        "contextBuiltAt": "2026-08-13T12:27:08.064Z"
+      },
+      "blockers": [],
+      "warnings": [],
+      "agentTaskId": "exec-category-hub-agent-crm-1786624028060",
+      "draftId": "draft-deterministic-v1-category-hub-agent-crm-2026-08-13T12-27-08-067Z",
+      "startedAt": "2026-08-13T12:27:08.059Z",
+      "completedAt": "2026-08-13T12:27:08.075Z",
+      "revisionAttempts": 0
+    },
+    {
+      "id": "best-software",
+      "definitionStepId": "best-software",
+      "handler": "agent-run",
+      "label": "Best Software",
+      "status": "completed",
+      "required": false,
+      "failurePolicy": "continue-with-warning",
+      "attempt": 1,
+      "maxAttempts": 2,
+      "dependsOn": [
+        "category-onboarding"
+      ],
+      "priority": "normal",
+      "config": {
+        "agentId": "best-software-agent",
+        "targetSlug": "crm",
+        "maxAutomaticRevisions": 1,
+        "expandFromContentPlan": false,
+        "expandKind": "none",
+        "stopAfterApproval": true,
+        "allowNormalizedFacts": false,
+        "optionalWhenBlocked": true,
+        "forceTransientFailOnce": false
+      },
+      "inputRefs": {},
+      "outputRefs": {
+        "draftId": "draft-deterministic-v1-best-software-agent-crm-2026-08-13T12-27-08-079Z",
+        "qaStatus": "pass",
+        "agentId": "best-software-agent",
+        "target": "crm"
+      },
+      "inputSnapshot": {
+        "researchFactIds": [],
+        "methodologySlug": "crm-editorial",
+        "methodologyVersion": "1.0.0",
+        "agentVersion": "1.0.0",
+        "contextBuiltAt": "2026-08-13T12:27:08.078Z"
+      },
+      "blockers": [],
+      "warnings": [],
+      "agentTaskId": "exec-best-software-agent-crm-1786624028076",
+      "draftId": "draft-deterministic-v1-best-software-agent-crm-2026-08-13T12-27-08-079Z",
+      "startedAt": "2026-08-13T12:27:08.076Z",
+      "completedAt": "2026-08-13T12:27:08.090Z",
+      "revisionAttempts": 0
+    },
+    {
+      "id": "use-cases",
+      "definitionStepId": "use-cases",
+      "handler": "agent-run",
+      "label": "Use-Case Pages",
+      "status": "skipped",
+      "required": false,
+      "failurePolicy": "continue-with-warning",
+      "attempt": 0,
+      "maxAttempts": 2,
+      "dependsOn": [
+        "category-onboarding"
+      ],
+      "priority": "low",
+      "config": {
+        "agentId": "use-case-page-agent",
+        "maxAutomaticRevisions": 1,
+        "expandFromContentPlan": false,
+        "expandKind": "use-cases",
+        "stopAfterApproval": true,
+        "allowNormalizedFacts": false,
+        "optionalWhenBlocked": true,
+        "forceTransientFailOnce": false
+      },
+      "inputRefs": {},
+      "outputRefs": {},
+      "blockers": [],
+      "warnings": [
+        "No use-case targets configured"
+      ],
+      "revisionAttempts": 0
+    },
+    {
+      "id": "internal-links",
+      "definitionStepId": "internal-links",
+      "handler": "internal-link",
+      "label": "Internal Link Plan",
+      "status": "completed",
+      "required": false,
+      "failurePolicy": "continue-with-warning",
+      "attempt": 1,
+      "maxAttempts": 2,
+      "dependsOn": [
+        "category-hub"
+      ],
+      "priority": "low",
+      "config": {
+        "agentId": "internal-link-agent",
+        "maxAutomaticRevisions": 1,
+        "expandFromContentPlan": false,
+        "expandKind": "none",
+        "stopAfterApproval": true,
+        "allowNormalizedFacts": false,
+        "optionalWhenBlocked": false,
+        "forceTransientFailOnce": false
+      },
+      "inputRefs": {},
+      "outputRefs": {
+        "draftId": "draft-deterministic-v1-internal-link-agent-crm-2026-08-13T12-27-08-097Z",
+        "qaStatus": "pass",
+        "agentId": "internal-link-agent",
+        "target": "crm"
+      },
+      "inputSnapshot": {
+        "researchFactIds": [],
+        "agentVersion": "1.0.0",
+        "contextBuiltAt": "2026-08-13T12:27:08.096Z"
+      },
+      "blockers": [],
+      "warnings": [],
+      "agentTaskId": "exec-internal-link-agent-crm-1786624028092",
+      "draftId": "draft-deterministic-v1-internal-link-agent-crm-2026-08-13T12-27-08-097Z",
+      "startedAt": "2026-08-13T12:27:08.091Z",
+      "completedAt": "2026-08-13T12:27:08.102Z",
+      "revisionAttempts": 0
+    },
+    {
+      "id": "editorial-approval",
+      "definitionStepId": "editorial-approval",
+      "handler": "approval-check",
+      "label": "Editorial approval",
+      "status": "completed",
+      "required": true,
+      "failurePolicy": "manual-review",
+      "attempt": 2,
+      "maxAttempts": 2,
+      "dependsOn": [
+        "category-hub"
+      ],
+      "priority": "critical",
+      "config": {
+        "approvalType": "editorial",
+        "maxAutomaticRevisions": 1,
+        "expandFromContentPlan": false,
+        "expandKind": "none",
+        "stopAfterApproval": true,
+        "allowNormalizedFacts": false,
+        "optionalWhenBlocked": false,
+        "forceTransientFailOnce": false
+      },
+      "inputRefs": {},
+      "outputRefs": {
+        "approvalId": "appr-wf-category-onboarding-content-crm-1786624027927-category-hub",
+        "draftId": "draft-deterministic-v1-category-hub-agent-crm-2026-08-13T12-27-08-067Z",
+        "approvalIds": "appr-wf-category-onboarding-content-crm-1786624027927-category-hub"
+      },
+      "blockers": [],
+      "warnings": [
+        "Approval received — resuming",
+        "2 optional draft(s) may still need separate editorial review"
+      ],
+      "approvalId": "appr-wf-category-onboarding-content-crm-1786624027927-category-hub",
+      "startedAt": "2026-08-13T19:03:00.251Z",
+      "completedAt": "2026-08-13T19:03:00.315Z",
+      "revisionAttempts": 0
+    }
+  ],
+  "history": [
+    {
+      "at": "2026-08-13T12:27:08.047Z",
+      "event": "workflow_created",
+      "message": "Created category-onboarding-content:v1.0.0"
+    },
+    {
+      "at": "2026-08-13T12:27:08.049Z",
+      "event": "workflow_started",
+      "message": "Workflow execution started"
+    },
+    {
+      "at": "2026-08-13T12:27:08.050Z",
+      "event": "workflow_step_started",
+      "stepId": "category-onboarding",
+      "message": "Started Category onboarding"
+    },
+    {
+      "at": "2026-08-13T12:27:08.058Z",
+      "event": "workflow_step_completed",
+      "stepId": "category-onboarding",
+      "message": "Reused category onboarding cat-onboard-crm-1786620916107"
+    },
+    {
+      "at": "2026-08-13T12:27:08.059Z",
+      "event": "workflow_step_started",
+      "stepId": "category-hub",
+      "message": "Started Category Hub"
+    },
+    {
+      "at": "2026-08-13T12:27:08.075Z",
+      "event": "workflow_step_completed",
+      "stepId": "category-hub",
+      "message": "Agent category-hub-agent → draft draft-deterministic-v1-category-hub-agent-crm-2026-08-13T12-27-08-067Z (qa=pass)"
+    },
+    {
+      "at": "2026-08-13T12:27:08.076Z",
+      "event": "workflow_step_started",
+      "stepId": "best-software",
+      "message": "Started Best Software"
+    },
+    {
+      "at": "2026-08-13T12:27:08.090Z",
+      "event": "workflow_step_completed",
+      "stepId": "best-software",
+      "message": "Agent best-software-agent → draft draft-deterministic-v1-best-software-agent-crm-2026-08-13T12-27-08-079Z (qa=pass)"
+    },
+    {
+      "at": "2026-08-13T12:27:08.091Z",
+      "event": "workflow_step_started",
+      "stepId": "internal-links",
+      "message": "Started Internal Link Plan"
+    },
+    {
+      "at": "2026-08-13T12:27:08.102Z",
+      "event": "workflow_step_completed",
+      "stepId": "internal-links",
+      "message": "Agent internal-link-agent → draft draft-deterministic-v1-internal-link-agent-crm-2026-08-13T12-27-08-097Z (qa=pass)"
+    },
+    {
+      "at": "2026-08-13T12:27:08.104Z",
+      "event": "workflow_step_started",
+      "stepId": "editorial-approval",
+      "message": "Started Editorial approval"
+    },
+    {
+      "at": "2026-08-13T12:27:08.119Z",
+      "event": "workflow_step_completed",
+      "stepId": "editorial-approval",
+      "message": "WAITING FOR EDITORIAL APPROVAL (appr-wf-category-onboarding-content-crm-1786624027927-category-hub)"
+    },
+    {
+      "at": "2026-08-13T19:03:00.246Z",
+      "event": "workflow_resumed",
+      "message": "Workflow resumed"
+    },
+    {
+      "at": "2026-08-13T19:03:00.250Z",
+      "event": "workflow_started",
+      "message": "Workflow execution started"
+    },
+    {
+      "at": "2026-08-13T19:03:00.251Z",
+      "event": "workflow_step_started",
+      "stepId": "editorial-approval",
+      "message": "Started Editorial approval"
+    },
+    {
+      "at": "2026-08-13T19:03:00.315Z",
+      "event": "workflow_step_completed",
+      "stepId": "editorial-approval",
+      "message": "Required editorial approvals satisfied"
+    },
+    {
+      "at": "2026-08-13T19:03:00.317Z",
+      "event": "workflow_completed",
+      "message": "Workflow completed"
+    }
+  ],
+  "options": {
+    "generateHub": true,
+    "generateBest": true,
+    "generateUseCases": false,
+    "stopAfterApproval": true,
+    "dryRun": false
+  },
+  "warnings": [],
+  "createdAt": "2026-08-13T12:27:08.047Z",
+  "updatedAt": "2026-08-13T19:03:00.317Z"
+}

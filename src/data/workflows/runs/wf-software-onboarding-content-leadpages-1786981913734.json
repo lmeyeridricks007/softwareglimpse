@@ -1,0 +1,1031 @@
+{
+  "id": "wf-software-onboarding-content-leadpages-1786981913734",
+  "workflowId": "software-onboarding-content",
+  "workflowVersion": "1.0.0",
+  "name": "Software Onboarding Content: leadpages",
+  "targetType": "software",
+  "targetId": "leadpages",
+  "status": "completed",
+  "steps": [
+    {
+      "id": "software-onboarding",
+      "definitionStepId": "software-onboarding",
+      "handler": "software-onboarding",
+      "label": "Software onboarding",
+      "status": "completed",
+      "required": true,
+      "failurePolicy": "block-workflow",
+      "attempt": 1,
+      "maxAttempts": 2,
+      "dependsOn": [],
+      "priority": "critical",
+      "config": {
+        "maxAutomaticRevisions": 1,
+        "expandFromContentPlan": false,
+        "expandKind": "none",
+        "stopAfterApproval": true,
+        "allowNormalizedFacts": false,
+        "optionalWhenBlocked": false,
+        "forceTransientFailOnce": false
+      },
+      "inputRefs": {},
+      "outputRefs": {
+        "softwareOnboardingRunId": "onboard-leadpages-1786981375914"
+      },
+      "blockers": [],
+      "warnings": [],
+      "startedAt": "2026-08-17T15:51:54.318Z",
+      "completedAt": "2026-08-17T15:51:54.388Z",
+      "revisionAttempts": 0
+    },
+    {
+      "id": "content-plan",
+      "definitionStepId": "content-plan",
+      "handler": "content-plan",
+      "label": "Content plan",
+      "status": "completed",
+      "required": true,
+      "failurePolicy": "block-workflow",
+      "attempt": 1,
+      "maxAttempts": 2,
+      "dependsOn": [
+        "software-onboarding"
+      ],
+      "priority": "high",
+      "config": {
+        "maxAutomaticRevisions": 1,
+        "expandFromContentPlan": false,
+        "expandKind": "none",
+        "stopAfterApproval": true,
+        "allowNormalizedFacts": false,
+        "optionalWhenBlocked": false,
+        "forceTransientFailOnce": false
+      },
+      "inputRefs": {},
+      "outputRefs": {
+        "softwareOnboardingRunId": "onboard-leadpages-1786981375914",
+        "comparisonTargets": "leadpages-vs-marketo,leadpages-vs-learnworlds,leadpages-vs-livestorm",
+        "pageCandidateCount": "9"
+      },
+      "blockers": [],
+      "warnings": [],
+      "startedAt": "2026-08-17T15:51:54.390Z",
+      "completedAt": "2026-08-17T15:51:54.449Z",
+      "revisionAttempts": 0
+    },
+    {
+      "id": "software-review",
+      "definitionStepId": "software-review",
+      "handler": "agent-run",
+      "label": "Software Review",
+      "status": "completed",
+      "required": true,
+      "failurePolicy": "block-workflow",
+      "attempt": 1,
+      "maxAttempts": 2,
+      "dependsOn": [
+        "content-plan"
+      ],
+      "priority": "high",
+      "config": {
+        "agentId": "software-review-agent",
+        "targetSlug": "leadpages",
+        "maxAutomaticRevisions": 1,
+        "expandFromContentPlan": false,
+        "expandKind": "none",
+        "stopAfterApproval": true,
+        "allowNormalizedFacts": false,
+        "optionalWhenBlocked": false,
+        "forceTransientFailOnce": false
+      },
+      "inputRefs": {},
+      "outputRefs": {
+        "draftId": "draft-deterministic-v1-software-review-agent-leadpages-2026-08-17T15-51-54-498Z",
+        "qaStatus": "pass",
+        "agentId": "software-review-agent",
+        "target": "leadpages"
+      },
+      "inputSnapshot": {
+        "researchFactIds": [
+          "fact-leadpages-identity.shortDescription",
+          "fact-leadpages-positioning.vendorClaim",
+          "fact-leadpages-pricing.model",
+          "fact-leadpages-pricing.hasFreePlan",
+          "fact-leadpages-pricing.hasFreeTrial",
+          "fact-leadpages-pricing.startingPriceMonthly",
+          "fact-leadpages-pricing.plans.htmlpub-starter",
+          "fact-leadpages-pricing.plans.htmlpub-pro",
+          "fact-leadpages-pricing.plans.htmlpub-business",
+          "fact-leadpages-pricing.plans.grow",
+          "fact-leadpages-pricing.plans.optimize",
+          "fact-leadpages-pricing.plans.scale",
+          "fact-leadpages-features.social-scheduling",
+          "fact-leadpages-features.content-calendar",
+          "fact-leadpages-features.social-listening",
+          "fact-leadpages-features.funnel-builder",
+          "fact-leadpages-features.landing-pages",
+          "fact-leadpages-features.marketing-automation",
+          "fact-leadpages-features.forms-lead-capture",
+          "fact-leadpages-features.analytics",
+          "fact-leadpages-features.ads-management",
+          "fact-leadpages-features.reputation-reviews",
+          "fact-leadpages-features.webinars",
+          "fact-leadpages-features.email-sms-channels",
+          "fact-leadpages-features.team-collaboration",
+          "fact-leadpages-features.ai-content-generation"
+        ],
+        "methodologySlug": "marketing-editorial",
+        "methodologyVersion": "1.0.0",
+        "agentVersion": "1.0.0",
+        "contextBuiltAt": "2026-08-17T15:51:54.493Z"
+      },
+      "blockers": [],
+      "warnings": [],
+      "agentTaskId": "exec-software-review-agent-leadpages-1786981914452",
+      "draftId": "draft-deterministic-v1-software-review-agent-leadpages-2026-08-17T15-51-54-498Z",
+      "startedAt": "2026-08-17T15:51:54.450Z",
+      "completedAt": "2026-08-17T15:51:54.506Z",
+      "revisionAttempts": 0
+    },
+    {
+      "id": "pricing-page",
+      "definitionStepId": "pricing-page",
+      "handler": "agent-run",
+      "label": "Pricing Page",
+      "status": "completed",
+      "required": false,
+      "failurePolicy": "continue-with-warning",
+      "attempt": 1,
+      "maxAttempts": 2,
+      "dependsOn": [
+        "content-plan"
+      ],
+      "priority": "normal",
+      "config": {
+        "agentId": "pricing-page-agent",
+        "targetSlug": "leadpages",
+        "maxAutomaticRevisions": 1,
+        "expandFromContentPlan": false,
+        "expandKind": "none",
+        "stopAfterApproval": true,
+        "allowNormalizedFacts": false,
+        "optionalWhenBlocked": true,
+        "forceTransientFailOnce": false
+      },
+      "inputRefs": {},
+      "outputRefs": {
+        "draftId": "draft-deterministic-v1-pricing-page-agent-leadpages-2026-08-17T15-51-54-640Z",
+        "qaStatus": "pass",
+        "agentId": "pricing-page-agent",
+        "target": "leadpages"
+      },
+      "inputSnapshot": {
+        "researchFactIds": [
+          "fact-leadpages-identity.shortDescription",
+          "fact-leadpages-positioning.vendorClaim",
+          "fact-leadpages-pricing.model",
+          "fact-leadpages-pricing.hasFreePlan",
+          "fact-leadpages-pricing.hasFreeTrial",
+          "fact-leadpages-pricing.startingPriceMonthly",
+          "fact-leadpages-pricing.plans.htmlpub-starter",
+          "fact-leadpages-pricing.plans.htmlpub-pro",
+          "fact-leadpages-pricing.plans.htmlpub-business",
+          "fact-leadpages-pricing.plans.grow",
+          "fact-leadpages-pricing.plans.optimize",
+          "fact-leadpages-pricing.plans.scale",
+          "fact-leadpages-features.social-scheduling",
+          "fact-leadpages-features.content-calendar",
+          "fact-leadpages-features.social-listening",
+          "fact-leadpages-features.funnel-builder",
+          "fact-leadpages-features.landing-pages",
+          "fact-leadpages-features.marketing-automation",
+          "fact-leadpages-features.forms-lead-capture",
+          "fact-leadpages-features.analytics",
+          "fact-leadpages-features.ads-management",
+          "fact-leadpages-features.reputation-reviews",
+          "fact-leadpages-features.webinars",
+          "fact-leadpages-features.email-sms-channels",
+          "fact-leadpages-features.team-collaboration",
+          "fact-leadpages-features.ai-content-generation"
+        ],
+        "methodologySlug": "marketing-editorial",
+        "methodologyVersion": "1.0.0",
+        "agentVersion": "1.0.0",
+        "contextBuiltAt": "2026-08-17T15:51:54.638Z"
+      },
+      "blockers": [],
+      "warnings": [],
+      "agentTaskId": "exec-pricing-page-agent-leadpages-1786981914625",
+      "draftId": "draft-deterministic-v1-pricing-page-agent-leadpages-2026-08-17T15-51-54-640Z",
+      "startedAt": "2026-08-17T15:51:54.624Z",
+      "completedAt": "2026-08-17T15:51:54.647Z",
+      "revisionAttempts": 0
+    },
+    {
+      "id": "alternatives",
+      "definitionStepId": "alternatives",
+      "handler": "agent-run",
+      "label": "Alternatives",
+      "status": "completed",
+      "required": false,
+      "failurePolicy": "continue-with-warning",
+      "attempt": 1,
+      "maxAttempts": 2,
+      "dependsOn": [
+        "content-plan"
+      ],
+      "priority": "normal",
+      "config": {
+        "agentId": "alternatives-agent",
+        "targetSlug": "leadpages",
+        "maxAutomaticRevisions": 1,
+        "expandFromContentPlan": false,
+        "expandKind": "none",
+        "stopAfterApproval": true,
+        "allowNormalizedFacts": false,
+        "optionalWhenBlocked": true,
+        "forceTransientFailOnce": false
+      },
+      "inputRefs": {},
+      "outputRefs": {
+        "draftId": "draft-deterministic-v1-alternatives-agent-leadpages-2026-08-17T15-51-54-526Z",
+        "qaStatus": "pass",
+        "agentId": "alternatives-agent",
+        "target": "leadpages"
+      },
+      "inputSnapshot": {
+        "researchFactIds": [
+          "fact-leadpages-identity.shortDescription",
+          "fact-leadpages-positioning.vendorClaim",
+          "fact-leadpages-pricing.model",
+          "fact-leadpages-pricing.hasFreePlan",
+          "fact-leadpages-pricing.hasFreeTrial",
+          "fact-leadpages-pricing.startingPriceMonthly",
+          "fact-leadpages-pricing.plans.htmlpub-starter",
+          "fact-leadpages-pricing.plans.htmlpub-pro",
+          "fact-leadpages-pricing.plans.htmlpub-business",
+          "fact-leadpages-pricing.plans.grow",
+          "fact-leadpages-pricing.plans.optimize",
+          "fact-leadpages-pricing.plans.scale",
+          "fact-leadpages-features.social-scheduling",
+          "fact-leadpages-features.content-calendar",
+          "fact-leadpages-features.social-listening",
+          "fact-leadpages-features.funnel-builder",
+          "fact-leadpages-features.landing-pages",
+          "fact-leadpages-features.marketing-automation",
+          "fact-leadpages-features.forms-lead-capture",
+          "fact-leadpages-features.analytics",
+          "fact-leadpages-features.ads-management",
+          "fact-leadpages-features.reputation-reviews",
+          "fact-leadpages-features.webinars",
+          "fact-leadpages-features.email-sms-channels",
+          "fact-leadpages-features.team-collaboration",
+          "fact-leadpages-features.ai-content-generation"
+        ],
+        "methodologySlug": "marketing-editorial",
+        "methodologyVersion": "1.0.0",
+        "agentVersion": "1.0.0",
+        "contextBuiltAt": "2026-08-17T15:51:54.524Z"
+      },
+      "blockers": [],
+      "warnings": [],
+      "agentTaskId": "exec-alternatives-agent-leadpages-1786981914511",
+      "draftId": "draft-deterministic-v1-alternatives-agent-leadpages-2026-08-17T15-51-54-526Z",
+      "startedAt": "2026-08-17T15:51:54.510Z",
+      "completedAt": "2026-08-17T15:51:54.529Z",
+      "revisionAttempts": 0
+    },
+    {
+      "id": "comparison:clickfunnels-vs-leadpages",
+      "definitionStepId": "comparisons",
+      "handler": "agent-run",
+      "label": "Comparison clickfunnels-vs-leadpages",
+      "status": "completed",
+      "required": false,
+      "failurePolicy": "continue-with-warning",
+      "attempt": 2,
+      "maxAttempts": 2,
+      "dependsOn": [
+        "content-plan"
+      ],
+      "priority": "normal",
+      "config": {
+        "agentId": "comparison-agent",
+        "targetSlug": "clickfunnels-vs-leadpages",
+        "maxAutomaticRevisions": 1,
+        "expandFromContentPlan": true,
+        "expandKind": "comparisons",
+        "stopAfterApproval": true,
+        "allowNormalizedFacts": false,
+        "optionalWhenBlocked": true,
+        "forceTransientFailOnce": false
+      },
+      "expansionKey": "clickfunnels-vs-leadpages",
+      "inputRefs": {},
+      "outputRefs": {
+        "draftId": "draft-deterministic-v1-comparison-agent-clickfunnels-vs-leadpages-2026-08-17T16-14-15-907Z",
+        "qaStatus": "pass",
+        "agentId": "comparison-agent",
+        "target": "clickfunnels-vs-leadpages"
+      },
+      "inputSnapshot": {
+        "researchFactIds": [
+          "fact-clickfunnels-identity.shortDescription",
+          "fact-clickfunnels-positioning.vendorClaim",
+          "fact-clickfunnels-pricing.model",
+          "fact-clickfunnels-pricing.hasFreePlan",
+          "fact-clickfunnels-pricing.hasFreeTrial",
+          "fact-clickfunnels-pricing.startingPriceMonthly",
+          "fact-clickfunnels-pricing.plans.launch",
+          "fact-clickfunnels-pricing.plans.scale",
+          "fact-clickfunnels-pricing.plans.optimize",
+          "fact-clickfunnels-pricing.plans.dominate",
+          "fact-clickfunnels-features.social-scheduling",
+          "fact-clickfunnels-features.content-calendar",
+          "fact-clickfunnels-features.social-listening",
+          "fact-clickfunnels-features.funnel-builder",
+          "fact-clickfunnels-features.landing-pages",
+          "fact-clickfunnels-features.marketing-automation",
+          "fact-clickfunnels-features.forms-lead-capture",
+          "fact-clickfunnels-features.analytics",
+          "fact-clickfunnels-features.ads-management",
+          "fact-clickfunnels-features.reputation-reviews",
+          "fact-clickfunnels-features.webinars",
+          "fact-clickfunnels-features.email-sms-channels",
+          "fact-clickfunnels-features.team-collaboration",
+          "fact-clickfunnels-features.ai-content-generation",
+          "fact-leadpages-identity.shortDescription",
+          "fact-leadpages-positioning.vendorClaim",
+          "fact-leadpages-pricing.model",
+          "fact-leadpages-pricing.hasFreePlan",
+          "fact-leadpages-pricing.hasFreeTrial",
+          "fact-leadpages-pricing.startingPriceMonthly",
+          "fact-leadpages-pricing.plans.htmlpub-starter",
+          "fact-leadpages-pricing.plans.htmlpub-pro",
+          "fact-leadpages-pricing.plans.htmlpub-business",
+          "fact-leadpages-pricing.plans.grow",
+          "fact-leadpages-pricing.plans.optimize",
+          "fact-leadpages-pricing.plans.scale",
+          "fact-leadpages-features.social-scheduling",
+          "fact-leadpages-features.content-calendar",
+          "fact-leadpages-features.social-listening",
+          "fact-leadpages-features.funnel-builder",
+          "fact-leadpages-features.landing-pages",
+          "fact-leadpages-features.marketing-automation",
+          "fact-leadpages-features.forms-lead-capture",
+          "fact-leadpages-features.analytics",
+          "fact-leadpages-features.ads-management",
+          "fact-leadpages-features.reputation-reviews",
+          "fact-leadpages-features.webinars",
+          "fact-leadpages-features.email-sms-channels",
+          "fact-leadpages-features.team-collaboration",
+          "fact-leadpages-features.ai-content-generation"
+        ],
+        "methodologySlug": "marketing-editorial",
+        "methodologyVersion": "1.0.0",
+        "agentVersion": "1.0.0",
+        "contextBuiltAt": "2026-08-17T16:14:15.894Z"
+      },
+      "blockers": [],
+      "warnings": [],
+      "agentTaskId": "exec-comparison-agent-clickfunnels-vs-leadpages-1786983255868",
+      "draftId": "draft-deterministic-v1-comparison-agent-clickfunnels-vs-leadpages-2026-08-17T16-14-15-907Z",
+      "startedAt": "2026-08-17T16:14:15.815Z",
+      "completedAt": "2026-08-17T16:14:15.929Z",
+      "revisionAttempts": 0
+    },
+    {
+      "id": "comparison:freshmarketer-vs-leadpages",
+      "definitionStepId": "comparisons",
+      "handler": "agent-run",
+      "label": "Comparison freshmarketer-vs-leadpages",
+      "status": "completed",
+      "required": false,
+      "failurePolicy": "continue-with-warning",
+      "attempt": 2,
+      "maxAttempts": 2,
+      "dependsOn": [
+        "content-plan"
+      ],
+      "priority": "normal",
+      "config": {
+        "agentId": "comparison-agent",
+        "targetSlug": "freshmarketer-vs-leadpages",
+        "maxAutomaticRevisions": 1,
+        "expandFromContentPlan": true,
+        "expandKind": "comparisons",
+        "stopAfterApproval": true,
+        "allowNormalizedFacts": false,
+        "optionalWhenBlocked": true,
+        "forceTransientFailOnce": false
+      },
+      "expansionKey": "freshmarketer-vs-leadpages",
+      "inputRefs": {},
+      "outputRefs": {
+        "draftId": "draft-deterministic-v1-comparison-agent-freshmarketer-vs-leadpages-2026-08-17T16-14-15-980Z",
+        "qaStatus": "pass",
+        "agentId": "comparison-agent",
+        "target": "freshmarketer-vs-leadpages"
+      },
+      "inputSnapshot": {
+        "researchFactIds": [
+          "fact-freshmarketer-identity.shortDescription",
+          "fact-freshmarketer-positioning.vendorClaim",
+          "fact-freshmarketer-pricing.model",
+          "fact-freshmarketer-pricing.hasFreePlan",
+          "fact-freshmarketer-pricing.hasFreeTrial",
+          "fact-freshmarketer-pricing.startingPriceMonthly",
+          "fact-freshmarketer-pricing.plans.free",
+          "fact-freshmarketer-pricing.plans.enterprise",
+          "fact-freshmarketer-pricing.plans.addon-contacts",
+          "fact-freshmarketer-pricing.plans.addon-cro",
+          "fact-freshmarketer-features.social-scheduling",
+          "fact-freshmarketer-features.content-calendar",
+          "fact-freshmarketer-features.social-listening",
+          "fact-freshmarketer-features.funnel-builder",
+          "fact-freshmarketer-features.landing-pages",
+          "fact-freshmarketer-features.marketing-automation",
+          "fact-freshmarketer-features.forms-lead-capture",
+          "fact-freshmarketer-features.analytics",
+          "fact-freshmarketer-features.ads-management",
+          "fact-freshmarketer-features.reputation-reviews",
+          "fact-freshmarketer-features.webinars",
+          "fact-freshmarketer-features.email-sms-channels",
+          "fact-freshmarketer-features.team-collaboration",
+          "fact-freshmarketer-features.ai-content-generation",
+          "fact-leadpages-identity.shortDescription",
+          "fact-leadpages-positioning.vendorClaim",
+          "fact-leadpages-pricing.model",
+          "fact-leadpages-pricing.hasFreePlan",
+          "fact-leadpages-pricing.hasFreeTrial",
+          "fact-leadpages-pricing.startingPriceMonthly",
+          "fact-leadpages-pricing.plans.htmlpub-starter",
+          "fact-leadpages-pricing.plans.htmlpub-pro",
+          "fact-leadpages-pricing.plans.htmlpub-business",
+          "fact-leadpages-pricing.plans.grow",
+          "fact-leadpages-pricing.plans.optimize",
+          "fact-leadpages-pricing.plans.scale",
+          "fact-leadpages-features.social-scheduling",
+          "fact-leadpages-features.content-calendar",
+          "fact-leadpages-features.social-listening",
+          "fact-leadpages-features.funnel-builder",
+          "fact-leadpages-features.landing-pages",
+          "fact-leadpages-features.marketing-automation",
+          "fact-leadpages-features.forms-lead-capture",
+          "fact-leadpages-features.analytics",
+          "fact-leadpages-features.ads-management",
+          "fact-leadpages-features.reputation-reviews",
+          "fact-leadpages-features.webinars",
+          "fact-leadpages-features.email-sms-channels",
+          "fact-leadpages-features.team-collaboration",
+          "fact-leadpages-features.ai-content-generation"
+        ],
+        "methodologySlug": "marketing-editorial",
+        "methodologyVersion": "1.0.0",
+        "agentVersion": "1.0.0",
+        "contextBuiltAt": "2026-08-17T16:14:15.978Z"
+      },
+      "blockers": [],
+      "warnings": [],
+      "agentTaskId": "exec-comparison-agent-freshmarketer-vs-leadpages-1786983255933",
+      "draftId": "draft-deterministic-v1-comparison-agent-freshmarketer-vs-leadpages-2026-08-17T16-14-15-980Z",
+      "startedAt": "2026-08-17T16:14:15.932Z",
+      "completedAt": "2026-08-17T16:14:15.993Z",
+      "revisionAttempts": 0
+    },
+    {
+      "id": "comparison:kartra-vs-leadpages",
+      "definitionStepId": "comparisons",
+      "handler": "agent-run",
+      "label": "Comparison kartra-vs-leadpages",
+      "status": "completed",
+      "required": false,
+      "failurePolicy": "continue-with-warning",
+      "attempt": 2,
+      "maxAttempts": 2,
+      "dependsOn": [
+        "content-plan"
+      ],
+      "priority": "normal",
+      "config": {
+        "agentId": "comparison-agent",
+        "targetSlug": "kartra-vs-leadpages",
+        "maxAutomaticRevisions": 1,
+        "expandFromContentPlan": true,
+        "expandKind": "comparisons",
+        "stopAfterApproval": true,
+        "allowNormalizedFacts": false,
+        "optionalWhenBlocked": true,
+        "forceTransientFailOnce": false
+      },
+      "expansionKey": "kartra-vs-leadpages",
+      "inputRefs": {},
+      "outputRefs": {
+        "draftId": "draft-deterministic-v1-comparison-agent-kartra-vs-leadpages-2026-08-17T16-14-16-031Z",
+        "qaStatus": "pass",
+        "agentId": "comparison-agent",
+        "target": "kartra-vs-leadpages"
+      },
+      "inputSnapshot": {
+        "researchFactIds": [
+          "fact-kartra-identity.shortDescription",
+          "fact-kartra-positioning.vendorClaim",
+          "fact-kartra-pricing.model",
+          "fact-kartra-pricing.hasFreePlan",
+          "fact-kartra-pricing.hasFreeTrial",
+          "fact-kartra-pricing.startingPriceMonthly",
+          "fact-kartra-pricing.plans.essentials",
+          "fact-kartra-pricing.plans.starter",
+          "fact-kartra-pricing.plans.growth",
+          "fact-kartra-pricing.plans.professional",
+          "fact-kartra-features.social-scheduling",
+          "fact-kartra-features.content-calendar",
+          "fact-kartra-features.social-listening",
+          "fact-kartra-features.funnel-builder",
+          "fact-kartra-features.landing-pages",
+          "fact-kartra-features.marketing-automation",
+          "fact-kartra-features.forms-lead-capture",
+          "fact-kartra-features.analytics",
+          "fact-kartra-features.ads-management",
+          "fact-kartra-features.reputation-reviews",
+          "fact-kartra-features.webinars",
+          "fact-kartra-features.email-sms-channels",
+          "fact-kartra-features.team-collaboration",
+          "fact-kartra-features.ai-content-generation",
+          "fact-leadpages-identity.shortDescription",
+          "fact-leadpages-positioning.vendorClaim",
+          "fact-leadpages-pricing.model",
+          "fact-leadpages-pricing.hasFreePlan",
+          "fact-leadpages-pricing.hasFreeTrial",
+          "fact-leadpages-pricing.startingPriceMonthly",
+          "fact-leadpages-pricing.plans.htmlpub-starter",
+          "fact-leadpages-pricing.plans.htmlpub-pro",
+          "fact-leadpages-pricing.plans.htmlpub-business",
+          "fact-leadpages-pricing.plans.grow",
+          "fact-leadpages-pricing.plans.optimize",
+          "fact-leadpages-pricing.plans.scale",
+          "fact-leadpages-features.social-scheduling",
+          "fact-leadpages-features.content-calendar",
+          "fact-leadpages-features.social-listening",
+          "fact-leadpages-features.funnel-builder",
+          "fact-leadpages-features.landing-pages",
+          "fact-leadpages-features.marketing-automation",
+          "fact-leadpages-features.forms-lead-capture",
+          "fact-leadpages-features.analytics",
+          "fact-leadpages-features.ads-management",
+          "fact-leadpages-features.reputation-reviews",
+          "fact-leadpages-features.webinars",
+          "fact-leadpages-features.email-sms-channels",
+          "fact-leadpages-features.team-collaboration",
+          "fact-leadpages-features.ai-content-generation"
+        ],
+        "methodologySlug": "marketing-editorial",
+        "methodologyVersion": "1.0.0",
+        "agentVersion": "1.0.0",
+        "contextBuiltAt": "2026-08-17T16:14:16.029Z"
+      },
+      "blockers": [],
+      "warnings": [],
+      "agentTaskId": "exec-comparison-agent-kartra-vs-leadpages-1786983256007",
+      "draftId": "draft-deterministic-v1-comparison-agent-kartra-vs-leadpages-2026-08-17T16-14-16-031Z",
+      "startedAt": "2026-08-17T16:14:16.003Z",
+      "completedAt": "2026-08-17T16:14:16.033Z",
+      "revisionAttempts": 0
+    },
+    {
+      "id": "internal-links",
+      "definitionStepId": "internal-links",
+      "handler": "internal-link",
+      "label": "Internal Link Plan",
+      "status": "completed",
+      "required": false,
+      "failurePolicy": "continue-with-warning",
+      "attempt": 1,
+      "maxAttempts": 2,
+      "dependsOn": [
+        "software-review"
+      ],
+      "priority": "low",
+      "config": {
+        "agentId": "internal-link-agent",
+        "maxAutomaticRevisions": 1,
+        "expandFromContentPlan": false,
+        "expandKind": "none",
+        "stopAfterApproval": true,
+        "allowNormalizedFacts": false,
+        "optionalWhenBlocked": false,
+        "forceTransientFailOnce": false
+      },
+      "inputRefs": {},
+      "outputRefs": {
+        "draftId": "draft-deterministic-v1-internal-link-agent-leadpages-2026-08-17T15-51-54-669Z",
+        "qaStatus": "pass",
+        "agentId": "internal-link-agent",
+        "target": "leadpages"
+      },
+      "inputSnapshot": {
+        "researchFactIds": [
+          "fact-leadpages-identity.shortDescription",
+          "fact-leadpages-positioning.vendorClaim",
+          "fact-leadpages-pricing.model",
+          "fact-leadpages-pricing.hasFreePlan",
+          "fact-leadpages-pricing.hasFreeTrial",
+          "fact-leadpages-pricing.startingPriceMonthly",
+          "fact-leadpages-pricing.plans.htmlpub-starter",
+          "fact-leadpages-pricing.plans.htmlpub-pro",
+          "fact-leadpages-pricing.plans.htmlpub-business",
+          "fact-leadpages-pricing.plans.grow",
+          "fact-leadpages-pricing.plans.optimize",
+          "fact-leadpages-pricing.plans.scale",
+          "fact-leadpages-features.social-scheduling",
+          "fact-leadpages-features.content-calendar",
+          "fact-leadpages-features.social-listening",
+          "fact-leadpages-features.funnel-builder",
+          "fact-leadpages-features.landing-pages",
+          "fact-leadpages-features.marketing-automation",
+          "fact-leadpages-features.forms-lead-capture",
+          "fact-leadpages-features.analytics",
+          "fact-leadpages-features.ads-management",
+          "fact-leadpages-features.reputation-reviews",
+          "fact-leadpages-features.webinars",
+          "fact-leadpages-features.email-sms-channels",
+          "fact-leadpages-features.team-collaboration",
+          "fact-leadpages-features.ai-content-generation"
+        ],
+        "methodologySlug": "marketing-editorial",
+        "methodologyVersion": "1.0.0",
+        "agentVersion": "1.0.0",
+        "contextBuiltAt": "2026-08-17T15:51:54.667Z"
+      },
+      "blockers": [],
+      "warnings": [],
+      "agentTaskId": "exec-internal-link-agent-leadpages-1786981914654",
+      "draftId": "draft-deterministic-v1-internal-link-agent-leadpages-2026-08-17T15-51-54-669Z",
+      "startedAt": "2026-08-17T15:51:54.653Z",
+      "completedAt": "2026-08-17T15:51:54.674Z",
+      "revisionAttempts": 0
+    },
+    {
+      "id": "finder-readiness",
+      "definitionStepId": "finder-readiness",
+      "handler": "update-recommendation-readiness",
+      "label": "Finder readiness",
+      "status": "completed",
+      "required": false,
+      "failurePolicy": "continue",
+      "attempt": 1,
+      "maxAttempts": 2,
+      "dependsOn": [
+        "content-plan"
+      ],
+      "priority": "low",
+      "config": {
+        "maxAutomaticRevisions": 1,
+        "expandFromContentPlan": false,
+        "expandKind": "none",
+        "stopAfterApproval": true,
+        "allowNormalizedFacts": false,
+        "optionalWhenBlocked": false,
+        "forceTransientFailOnce": false
+      },
+      "inputRefs": {},
+      "outputRefs": {
+        "finderReadiness": "checked"
+      },
+      "blockers": [],
+      "warnings": [],
+      "startedAt": "2026-08-17T15:51:54.649Z",
+      "completedAt": "2026-08-17T15:51:54.650Z",
+      "revisionAttempts": 0
+    },
+    {
+      "id": "editorial-approval",
+      "definitionStepId": "editorial-approval",
+      "handler": "approval-check",
+      "label": "Editorial approval",
+      "status": "completed",
+      "required": true,
+      "failurePolicy": "manual-review",
+      "attempt": 2,
+      "maxAttempts": 2,
+      "dependsOn": [
+        "software-review"
+      ],
+      "priority": "critical",
+      "config": {
+        "approvalType": "editorial",
+        "maxAutomaticRevisions": 1,
+        "expandFromContentPlan": false,
+        "expandKind": "none",
+        "stopAfterApproval": true,
+        "allowNormalizedFacts": false,
+        "optionalWhenBlocked": false,
+        "forceTransientFailOnce": false
+      },
+      "inputRefs": {},
+      "outputRefs": {
+        "approvalId": "appr-wf-software-onboarding-content-leadpages-1786981913734-software-review",
+        "draftId": "draft-deterministic-v1-software-review-agent-leadpages-2026-08-17T15-51-54-498Z",
+        "approvalIds": "appr-wf-software-onboarding-content-leadpages-1786981913734-software-review"
+      },
+      "blockers": [],
+      "warnings": [
+        "Approval received — resuming",
+        "3 optional draft(s) may still need separate editorial review"
+      ],
+      "approvalId": "appr-wf-software-onboarding-content-leadpages-1786981913734-software-review",
+      "startedAt": "2026-08-17T16:00:33.697Z",
+      "completedAt": "2026-08-17T16:00:33.737Z",
+      "revisionAttempts": 0
+    },
+    {
+      "id": "pre-publish-validation",
+      "definitionStepId": "pre-publish-validation",
+      "handler": "pre-publish-validation",
+      "label": "Pre-publish validation",
+      "status": "completed",
+      "required": true,
+      "failurePolicy": "block-workflow",
+      "attempt": 1,
+      "maxAttempts": 2,
+      "dependsOn": [
+        "editorial-approval"
+      ],
+      "priority": "critical",
+      "config": {
+        "maxAutomaticRevisions": 1,
+        "expandFromContentPlan": false,
+        "expandKind": "none",
+        "stopAfterApproval": true,
+        "allowNormalizedFacts": false,
+        "optionalWhenBlocked": false,
+        "forceTransientFailOnce": false
+      },
+      "inputRefs": {},
+      "outputRefs": {
+        "publishState": "READY_TO_PUBLISH"
+      },
+      "blockers": [],
+      "warnings": [
+        "stopAfterApproval: workflow will not publish automatically"
+      ],
+      "startedAt": "2026-08-17T16:00:33.738Z",
+      "completedAt": "2026-08-17T16:00:34.090Z",
+      "revisionAttempts": 0
+    }
+  ],
+  "history": [
+    {
+      "at": "2026-08-17T15:51:54.315Z",
+      "event": "workflow_created",
+      "message": "Created software-onboarding-content:v1.0.0"
+    },
+    {
+      "at": "2026-08-17T15:51:54.317Z",
+      "event": "workflow_started",
+      "message": "Workflow execution started"
+    },
+    {
+      "at": "2026-08-17T15:51:54.318Z",
+      "event": "workflow_step_started",
+      "stepId": "software-onboarding",
+      "message": "Started Software onboarding"
+    },
+    {
+      "at": "2026-08-17T15:51:54.388Z",
+      "event": "workflow_step_completed",
+      "stepId": "software-onboarding",
+      "message": "Reused onboarding run onboard-leadpages-1786981375914 (review-required)"
+    },
+    {
+      "at": "2026-08-17T15:51:54.389Z",
+      "event": "workflow_step_started",
+      "stepId": "content-plan",
+      "message": "Started Content plan"
+    },
+    {
+      "at": "2026-08-17T15:51:54.449Z",
+      "event": "workflow_step_completed",
+      "stepId": "content-plan",
+      "message": "Content plan from onboarding onboard-leadpages-1786981375914 (9 candidates)"
+    },
+    {
+      "at": "2026-08-17T15:51:54.450Z",
+      "event": "workflow_step_started",
+      "stepId": "software-review",
+      "message": "Started Software Review"
+    },
+    {
+      "at": "2026-08-17T15:51:54.506Z",
+      "event": "workflow_step_completed",
+      "stepId": "software-review",
+      "message": "Agent software-review-agent → draft draft-deterministic-v1-software-review-agent-leadpages-2026-08-17T15-51-54-498Z (qa=pass)"
+    },
+    {
+      "at": "2026-08-17T15:51:54.509Z",
+      "event": "workflow_step_started",
+      "stepId": "alternatives",
+      "message": "Started Alternatives"
+    },
+    {
+      "at": "2026-08-17T15:51:54.529Z",
+      "event": "workflow_step_completed",
+      "stepId": "alternatives",
+      "message": "Agent alternatives-agent → draft draft-deterministic-v1-alternatives-agent-leadpages-2026-08-17T15-51-54-526Z (qa=pass)"
+    },
+    {
+      "at": "2026-08-17T15:51:54.531Z",
+      "event": "workflow_step_started",
+      "stepId": "comparison:leadpages-vs-learnworlds",
+      "message": "Started Comparison leadpages-vs-learnworlds"
+    },
+    {
+      "at": "2026-08-17T15:51:54.556Z",
+      "event": "workflow_step_completed",
+      "stepId": "comparison:leadpages-vs-learnworlds",
+      "message": "Agent blocked (optional): RELATIONSHIP_UNAPPROVED: Approved comparable relationship required"
+    },
+    {
+      "at": "2026-08-17T15:51:54.558Z",
+      "event": "workflow_step_started",
+      "stepId": "comparison:leadpages-vs-livestorm",
+      "message": "Started Comparison leadpages-vs-livestorm"
+    },
+    {
+      "at": "2026-08-17T15:51:54.591Z",
+      "event": "workflow_step_completed",
+      "stepId": "comparison:leadpages-vs-livestorm",
+      "message": "Agent blocked (optional): RELATIONSHIP_UNAPPROVED: Approved comparable relationship required"
+    },
+    {
+      "at": "2026-08-17T15:51:54.595Z",
+      "event": "workflow_step_started",
+      "stepId": "comparison:leadpages-vs-marketo",
+      "message": "Started Comparison leadpages-vs-marketo"
+    },
+    {
+      "at": "2026-08-17T15:51:54.620Z",
+      "event": "workflow_step_completed",
+      "stepId": "comparison:leadpages-vs-marketo",
+      "message": "Agent blocked (optional): RELATIONSHIP_UNAPPROVED: Approved comparable relationship required"
+    },
+    {
+      "at": "2026-08-17T15:51:54.623Z",
+      "event": "workflow_step_started",
+      "stepId": "pricing-page",
+      "message": "Started Pricing Page"
+    },
+    {
+      "at": "2026-08-17T15:51:54.647Z",
+      "event": "workflow_step_completed",
+      "stepId": "pricing-page",
+      "message": "Agent pricing-page-agent → draft draft-deterministic-v1-pricing-page-agent-leadpages-2026-08-17T15-51-54-640Z (qa=pass)"
+    },
+    {
+      "at": "2026-08-17T15:51:54.649Z",
+      "event": "workflow_step_started",
+      "stepId": "finder-readiness",
+      "message": "Started Finder readiness"
+    },
+    {
+      "at": "2026-08-17T15:51:54.650Z",
+      "event": "workflow_step_completed",
+      "stepId": "finder-readiness",
+      "message": "Finder readiness noted for leadpages"
+    },
+    {
+      "at": "2026-08-17T15:51:54.653Z",
+      "event": "workflow_step_started",
+      "stepId": "internal-links",
+      "message": "Started Internal Link Plan"
+    },
+    {
+      "at": "2026-08-17T15:51:54.674Z",
+      "event": "workflow_step_completed",
+      "stepId": "internal-links",
+      "message": "Agent internal-link-agent → draft draft-deterministic-v1-internal-link-agent-leadpages-2026-08-17T15-51-54-669Z (qa=pass)"
+    },
+    {
+      "at": "2026-08-17T15:51:54.676Z",
+      "event": "workflow_step_started",
+      "stepId": "editorial-approval",
+      "message": "Started Editorial approval"
+    },
+    {
+      "at": "2026-08-17T15:51:54.777Z",
+      "event": "workflow_step_completed",
+      "stepId": "editorial-approval",
+      "message": "WAITING FOR EDITORIAL APPROVAL (appr-wf-software-onboarding-content-leadpages-1786981913734-software-review)"
+    },
+    {
+      "at": "2026-08-17T16:00:33.692Z",
+      "event": "workflow_resumed",
+      "message": "Workflow resumed"
+    },
+    {
+      "at": "2026-08-17T16:00:33.695Z",
+      "event": "workflow_started",
+      "message": "Workflow execution started"
+    },
+    {
+      "at": "2026-08-17T16:00:33.697Z",
+      "event": "workflow_step_started",
+      "stepId": "editorial-approval",
+      "message": "Started Editorial approval"
+    },
+    {
+      "at": "2026-08-17T16:00:33.737Z",
+      "event": "workflow_step_completed",
+      "stepId": "editorial-approval",
+      "message": "Required editorial approvals satisfied"
+    },
+    {
+      "at": "2026-08-17T16:00:33.738Z",
+      "event": "workflow_step_started",
+      "stepId": "pre-publish-validation",
+      "message": "Started Pre-publish validation"
+    },
+    {
+      "at": "2026-08-17T16:00:34.090Z",
+      "event": "workflow_step_completed",
+      "stepId": "pre-publish-validation",
+      "message": "Pre-publish validation passed — READY TO PUBLISH (manual)"
+    },
+    {
+      "at": "2026-08-17T16:00:34.092Z",
+      "event": "workflow_completed",
+      "message": "Workflow completed-with-warnings"
+    },
+    {
+      "at": "2026-08-17T16:10:44.568Z",
+      "event": "workflow_steps_repaired",
+      "message": "Replaced wrong comparison peers with clickfunnels/kartra/freshmarketer"
+    },
+    {
+      "at": "2026-08-17T16:14:15.810Z",
+      "event": "workflow_resumed",
+      "message": "Workflow resumed"
+    },
+    {
+      "at": "2026-08-17T16:14:15.812Z",
+      "event": "workflow_started",
+      "message": "Workflow execution started"
+    },
+    {
+      "at": "2026-08-17T16:14:15.814Z",
+      "event": "workflow_step_started",
+      "stepId": "comparison:clickfunnels-vs-leadpages",
+      "message": "Started Comparison clickfunnels-vs-leadpages"
+    },
+    {
+      "at": "2026-08-17T16:14:15.929Z",
+      "event": "workflow_step_completed",
+      "stepId": "comparison:clickfunnels-vs-leadpages",
+      "message": "Agent comparison-agent → draft draft-deterministic-v1-comparison-agent-clickfunnels-vs-leadpages-2026-08-17T16-14-15-907Z (qa=pass)"
+    },
+    {
+      "at": "2026-08-17T16:14:15.931Z",
+      "event": "workflow_step_started",
+      "stepId": "comparison:freshmarketer-vs-leadpages",
+      "message": "Started Comparison freshmarketer-vs-leadpages"
+    },
+    {
+      "at": "2026-08-17T16:14:15.993Z",
+      "event": "workflow_step_completed",
+      "stepId": "comparison:freshmarketer-vs-leadpages",
+      "message": "Agent comparison-agent → draft draft-deterministic-v1-comparison-agent-freshmarketer-vs-leadpages-2026-08-17T16-14-15-980Z (qa=pass)"
+    },
+    {
+      "at": "2026-08-17T16:14:16.001Z",
+      "event": "workflow_step_started",
+      "stepId": "comparison:kartra-vs-leadpages",
+      "message": "Started Comparison kartra-vs-leadpages"
+    },
+    {
+      "at": "2026-08-17T16:14:16.033Z",
+      "event": "workflow_step_completed",
+      "stepId": "comparison:kartra-vs-leadpages",
+      "message": "Agent comparison-agent → draft draft-deterministic-v1-comparison-agent-kartra-vs-leadpages-2026-08-17T16-14-16-031Z (qa=pass)"
+    },
+    {
+      "at": "2026-08-17T16:14:16.035Z",
+      "event": "workflow_completed",
+      "message": "Workflow completed"
+    }
+  ],
+  "options": {
+    "generateReview": true,
+    "generatePricing": true,
+    "generateAlternatives": true,
+    "generateComparisons": true,
+    "runInternalLinks": true,
+    "stopAfterApproval": true,
+    "allowNormalizedFacts": false,
+    "dryRun": false,
+    "maxComparisons": 3,
+    "skipOnboarding": false
+  },
+  "warnings": [],
+  "createdAt": "2026-08-17T15:51:54.315Z",
+  "updatedAt": "2026-08-17T16:14:16.035Z"
+}

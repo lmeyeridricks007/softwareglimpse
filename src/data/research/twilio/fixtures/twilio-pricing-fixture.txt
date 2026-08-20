@@ -1,0 +1,16 @@
+# FIXTURE SNAPSHOT — structured from first-party research (2026-08-17)
+# Label: fixture extract for FixtureFactExtractor — not a live HTML scrape dump.
+
+CURRENCY: USD
+PRICING_MODEL: usage
+FREE_PLAN: false
+FREE_TRIAL: true
+MEMBERSHIP_ROLE: adjacent
+JOB_CLUSTER: communications-platform
+
+PLAN trial: name=Free trial; amount=0; currency=USD; interval=month; fromFloor=true; confidence=high; notes=Start for free / trial credit path
+PLAN sms: name=SMS (US long code); amount=0.0083; currency=USD; unit=message; fromFloor=true; confidence=high
+PLAN voice: name=Voice APIs; amount=0.0085; currency=USD; unit=minute-inbound; fromFloor=true; confidence=high; notes=Outbound make from ~$0.014/min
+PLAN flex-named: name=Flex Named User; amountPerSeat=150; currency=USD; interval=month; amountPeriod=month; fromFloor=true; confidence=high
+PLAN flex-hour: name=Flex Active User Hour; amount=1; currency=USD; unit=active-user-hour; fromFloor=true; confidence=high
+PLAN enterprise: name=Enterprise / volume; contactSales=true

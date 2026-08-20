@@ -1,0 +1,78 @@
+{
+  "id": "exec-pricing-page-agent-activecampaign-1786686380283",
+  "agentId": "pricing-page-agent",
+  "agentVersion": "1.0.0",
+  "status": "qa-failed",
+  "mode": "CREATE",
+  "targetSlug": "activecampaign",
+  "draftId": "draft-deterministic-v1-pricing-page-agent-activecampaign-2026-08-14T05-46-20-289Z",
+  "briefId": "agent-brief-pricing-page-agent-activecampaign-1786686380289",
+  "validation": {
+    "ok": false,
+    "errors": [
+      "unsourced-number:caveats:000"
+    ]
+  },
+  "qa": {
+    "status": "fail",
+    "blockers": [
+      {
+        "type": "UNVERIFIED_NUMBER",
+        "severity": "blocker",
+        "message": "unsourced-number:caveats:000"
+      }
+    ],
+    "warnings": [],
+    "suggestions": [],
+    "checkedAt": "2026-08-14T05:46:20.290Z"
+  },
+  "errors": [
+    "unsourced-number:caveats:000"
+  ],
+  "cost": {
+    "provider": "deterministic-v1",
+    "model": "deterministic-template-v1",
+    "inputTokens": 0,
+    "outputTokens": 0,
+    "estimatedCostUsd": 0
+  },
+  "contextSnapshot": {
+    "researchSnapshotIds": [],
+    "factIds": [
+      "fact-activecampaign-pricing.hasFreePlan",
+      "fact-activecampaign-pricing.hasFreeTrial",
+      "fact-activecampaign-pricing.startingPriceMonthly",
+      "fact-activecampaign-pricing.currency",
+      "fact-activecampaign-pricing.model",
+      "fact-activecampaign-pricing.plans.starter",
+      "fact-activecampaign-pricing.plans.plus",
+      "fact-activecampaign-pricing.plans.professional",
+      "fact-activecampaign-pricing.plans.enterprise",
+      "fact-activecampaign-features.contact-management",
+      "fact-activecampaign-features.lead-management",
+      "fact-activecampaign-features.pipeline-management",
+      "fact-activecampaign-features.deal-management",
+      "fact-activecampaign-features.email-sync",
+      "fact-activecampaign-features.workflow-automation",
+      "fact-activecampaign-features.sales-automation",
+      "fact-activecampaign-features.reporting",
+      "fact-activecampaign-features.forecasting",
+      "fact-activecampaign-features.custom-fields",
+      "fact-activecampaign-features.custom-pipelines",
+      "fact-activecampaign-features.mobile-app",
+      "fact-activecampaign-features.ai-assistance",
+      "fact-activecampaign-features.integrations",
+      "fact-activecampaign-positioning.summary",
+      "fact-activecampaign-ai.email-generation",
+      "fact-activecampaign-ai.automation",
+      "fact-activecampaign-ai.recommendations"
+    ],
+    "methodologySlug": "crm-editorial",
+    "methodologyVersion": "1.0.0",
+    "pricingFreshnessAt": "2026-08-14T08:00:00.000Z",
+    "builtAt": "2026-08-14T05:46:20.288Z"
+  },
+  "dryRun": false,
+  "startedAt": "2026-08-14T05:46:20.283Z",
+  "completedAt": "2026-08-14T05:46:20.292Z"
+}

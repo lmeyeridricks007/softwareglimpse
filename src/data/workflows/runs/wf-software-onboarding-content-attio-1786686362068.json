@@ -1,0 +1,869 @@
+{
+  "id": "wf-software-onboarding-content-attio-1786686362068",
+  "workflowId": "software-onboarding-content",
+  "workflowVersion": "1.0.0",
+  "name": "Software Onboarding Content: attio",
+  "targetType": "software",
+  "targetId": "attio",
+  "status": "completed",
+  "steps": [
+    {
+      "id": "software-onboarding",
+      "definitionStepId": "software-onboarding",
+      "handler": "software-onboarding",
+      "label": "Software onboarding",
+      "status": "completed",
+      "required": true,
+      "failurePolicy": "block-workflow",
+      "attempt": 1,
+      "maxAttempts": 2,
+      "dependsOn": [],
+      "priority": "critical",
+      "config": {
+        "maxAutomaticRevisions": 1,
+        "expandFromContentPlan": false,
+        "expandKind": "none",
+        "stopAfterApproval": true,
+        "allowNormalizedFacts": false,
+        "optionalWhenBlocked": false,
+        "forceTransientFailOnce": false
+      },
+      "inputRefs": {},
+      "outputRefs": {
+        "softwareOnboardingRunId": "onboard-attio-1786686334155"
+      },
+      "blockers": [],
+      "warnings": [],
+      "startedAt": "2026-08-14T05:46:02.415Z",
+      "completedAt": "2026-08-14T05:46:02.454Z",
+      "revisionAttempts": 0
+    },
+    {
+      "id": "content-plan",
+      "definitionStepId": "content-plan",
+      "handler": "content-plan",
+      "label": "Content plan",
+      "status": "completed",
+      "required": true,
+      "failurePolicy": "block-workflow",
+      "attempt": 1,
+      "maxAttempts": 2,
+      "dependsOn": [
+        "software-onboarding"
+      ],
+      "priority": "high",
+      "config": {
+        "maxAutomaticRevisions": 1,
+        "expandFromContentPlan": false,
+        "expandKind": "none",
+        "stopAfterApproval": true,
+        "allowNormalizedFacts": false,
+        "optionalWhenBlocked": false,
+        "forceTransientFailOnce": false
+      },
+      "inputRefs": {},
+      "outputRefs": {
+        "softwareOnboardingRunId": "onboard-attio-1786686334155",
+        "comparisonTargets": "attio-vs-hubspot,attio-vs-pipedrive,attio-vs-salesforce",
+        "pageCandidateCount": "9"
+      },
+      "blockers": [],
+      "warnings": [],
+      "startedAt": "2026-08-14T05:46:02.456Z",
+      "completedAt": "2026-08-14T05:46:02.488Z",
+      "revisionAttempts": 0
+    },
+    {
+      "id": "software-review",
+      "definitionStepId": "software-review",
+      "handler": "agent-run",
+      "label": "Software Review",
+      "status": "completed",
+      "required": true,
+      "failurePolicy": "block-workflow",
+      "attempt": 1,
+      "maxAttempts": 2,
+      "dependsOn": [
+        "content-plan"
+      ],
+      "priority": "high",
+      "config": {
+        "agentId": "software-review-agent",
+        "targetSlug": "attio",
+        "maxAutomaticRevisions": 1,
+        "expandFromContentPlan": false,
+        "expandKind": "none",
+        "stopAfterApproval": true,
+        "allowNormalizedFacts": false,
+        "optionalWhenBlocked": false,
+        "forceTransientFailOnce": false
+      },
+      "inputRefs": {},
+      "outputRefs": {
+        "draftId": "draft-deterministic-v1-software-review-agent-attio-2026-08-14T05-46-02-533Z",
+        "qaStatus": "pass",
+        "agentId": "software-review-agent",
+        "target": "attio"
+      },
+      "inputSnapshot": {
+        "researchFactIds": [
+          "fact-attio-pricing.hasFreePlan",
+          "fact-attio-pricing.hasFreeTrial",
+          "fact-attio-pricing.startingPriceMonthly",
+          "fact-attio-pricing.currency",
+          "fact-attio-pricing.model",
+          "fact-attio-pricing.plans.free",
+          "fact-attio-pricing.plans.plus",
+          "fact-attio-pricing.plans.pro",
+          "fact-attio-pricing.plans.enterprise",
+          "fact-attio-features.contact-management",
+          "fact-attio-features.lead-management",
+          "fact-attio-features.pipeline-management",
+          "fact-attio-features.deal-management",
+          "fact-attio-features.email-sync",
+          "fact-attio-features.workflow-automation",
+          "fact-attio-features.sales-automation",
+          "fact-attio-features.reporting",
+          "fact-attio-features.forecasting",
+          "fact-attio-features.custom-fields",
+          "fact-attio-features.custom-pipelines",
+          "fact-attio-features.mobile-app",
+          "fact-attio-features.ai-assistance",
+          "fact-attio-features.integrations",
+          "fact-attio-positioning.summary",
+          "fact-attio-ai.assistant",
+          "fact-attio-ai.summaries"
+        ],
+        "methodologySlug": "crm-editorial",
+        "methodologyVersion": "1.0.0",
+        "agentVersion": "1.0.0",
+        "contextBuiltAt": "2026-08-14T05:46:02.526Z"
+      },
+      "blockers": [],
+      "warnings": [],
+      "agentTaskId": "exec-software-review-agent-attio-1786686362491",
+      "draftId": "draft-deterministic-v1-software-review-agent-attio-2026-08-14T05-46-02-533Z",
+      "startedAt": "2026-08-14T05:46:02.490Z",
+      "completedAt": "2026-08-14T05:46:02.548Z",
+      "revisionAttempts": 0
+    },
+    {
+      "id": "pricing-page",
+      "definitionStepId": "pricing-page",
+      "handler": "agent-run",
+      "label": "Pricing Page",
+      "status": "completed",
+      "required": false,
+      "failurePolicy": "continue-with-warning",
+      "attempt": 1,
+      "maxAttempts": 2,
+      "dependsOn": [
+        "content-plan"
+      ],
+      "priority": "normal",
+      "config": {
+        "agentId": "pricing-page-agent",
+        "targetSlug": "attio",
+        "maxAutomaticRevisions": 1,
+        "expandFromContentPlan": false,
+        "expandKind": "none",
+        "stopAfterApproval": true,
+        "allowNormalizedFacts": false,
+        "optionalWhenBlocked": true,
+        "forceTransientFailOnce": false
+      },
+      "inputRefs": {},
+      "outputRefs": {
+        "draftId": "draft-deterministic-v1-pricing-page-agent-attio-2026-08-14T05-46-02-702Z",
+        "qaStatus": "pass",
+        "agentId": "pricing-page-agent",
+        "target": "attio"
+      },
+      "inputSnapshot": {
+        "researchFactIds": [
+          "fact-attio-pricing.hasFreePlan",
+          "fact-attio-pricing.hasFreeTrial",
+          "fact-attio-pricing.startingPriceMonthly",
+          "fact-attio-pricing.currency",
+          "fact-attio-pricing.model",
+          "fact-attio-pricing.plans.free",
+          "fact-attio-pricing.plans.plus",
+          "fact-attio-pricing.plans.pro",
+          "fact-attio-pricing.plans.enterprise",
+          "fact-attio-features.contact-management",
+          "fact-attio-features.lead-management",
+          "fact-attio-features.pipeline-management",
+          "fact-attio-features.deal-management",
+          "fact-attio-features.email-sync",
+          "fact-attio-features.workflow-automation",
+          "fact-attio-features.sales-automation",
+          "fact-attio-features.reporting",
+          "fact-attio-features.forecasting",
+          "fact-attio-features.custom-fields",
+          "fact-attio-features.custom-pipelines",
+          "fact-attio-features.mobile-app",
+          "fact-attio-features.ai-assistance",
+          "fact-attio-features.integrations",
+          "fact-attio-positioning.summary",
+          "fact-attio-ai.assistant",
+          "fact-attio-ai.summaries"
+        ],
+        "methodologySlug": "crm-editorial",
+        "methodologyVersion": "1.0.0",
+        "agentVersion": "1.0.0",
+        "contextBuiltAt": "2026-08-14T05:46:02.701Z"
+      },
+      "blockers": [],
+      "warnings": [],
+      "agentTaskId": "exec-pricing-page-agent-attio-1786686362690",
+      "draftId": "draft-deterministic-v1-pricing-page-agent-attio-2026-08-14T05-46-02-702Z",
+      "startedAt": "2026-08-14T05:46:02.689Z",
+      "completedAt": "2026-08-14T05:46:02.705Z",
+      "revisionAttempts": 0
+    },
+    {
+      "id": "alternatives",
+      "definitionStepId": "alternatives",
+      "handler": "agent-run",
+      "label": "Alternatives",
+      "status": "completed",
+      "required": false,
+      "failurePolicy": "continue-with-warning",
+      "attempt": 1,
+      "maxAttempts": 2,
+      "dependsOn": [
+        "content-plan"
+      ],
+      "priority": "normal",
+      "config": {
+        "agentId": "alternatives-agent",
+        "targetSlug": "attio",
+        "maxAutomaticRevisions": 1,
+        "expandFromContentPlan": false,
+        "expandKind": "none",
+        "stopAfterApproval": true,
+        "allowNormalizedFacts": false,
+        "optionalWhenBlocked": true,
+        "forceTransientFailOnce": false
+      },
+      "inputRefs": {},
+      "outputRefs": {
+        "draftId": "draft-deterministic-v1-alternatives-agent-attio-2026-08-14T05-46-02-567Z",
+        "qaStatus": "pass",
+        "agentId": "alternatives-agent",
+        "target": "attio"
+      },
+      "inputSnapshot": {
+        "researchFactIds": [
+          "fact-attio-pricing.hasFreePlan",
+          "fact-attio-pricing.hasFreeTrial",
+          "fact-attio-pricing.startingPriceMonthly",
+          "fact-attio-pricing.currency",
+          "fact-attio-pricing.model",
+          "fact-attio-pricing.plans.free",
+          "fact-attio-pricing.plans.plus",
+          "fact-attio-pricing.plans.pro",
+          "fact-attio-pricing.plans.enterprise",
+          "fact-attio-features.contact-management",
+          "fact-attio-features.lead-management",
+          "fact-attio-features.pipeline-management",
+          "fact-attio-features.deal-management",
+          "fact-attio-features.email-sync",
+          "fact-attio-features.workflow-automation",
+          "fact-attio-features.sales-automation",
+          "fact-attio-features.reporting",
+          "fact-attio-features.forecasting",
+          "fact-attio-features.custom-fields",
+          "fact-attio-features.custom-pipelines",
+          "fact-attio-features.mobile-app",
+          "fact-attio-features.ai-assistance",
+          "fact-attio-features.integrations",
+          "fact-attio-positioning.summary",
+          "fact-attio-ai.assistant",
+          "fact-attio-ai.summaries"
+        ],
+        "methodologySlug": "crm-editorial",
+        "methodologyVersion": "1.0.0",
+        "agentVersion": "1.0.0",
+        "contextBuiltAt": "2026-08-14T05:46:02.566Z"
+      },
+      "blockers": [],
+      "warnings": [],
+      "agentTaskId": "exec-alternatives-agent-attio-1786686362558",
+      "draftId": "draft-deterministic-v1-alternatives-agent-attio-2026-08-14T05-46-02-567Z",
+      "startedAt": "2026-08-14T05:46:02.557Z",
+      "completedAt": "2026-08-14T05:46:02.571Z",
+      "revisionAttempts": 0
+    },
+    {
+      "id": "comparison:attio-vs-hubspot",
+      "definitionStepId": "comparisons",
+      "handler": "agent-run",
+      "label": "Comparison attio-vs-hubspot",
+      "status": "completed",
+      "required": false,
+      "failurePolicy": "continue-with-warning",
+      "attempt": 1,
+      "maxAttempts": 2,
+      "dependsOn": [
+        "content-plan"
+      ],
+      "priority": "normal",
+      "config": {
+        "agentId": "comparison-agent",
+        "targetSlug": "attio-vs-hubspot",
+        "maxAutomaticRevisions": 1,
+        "expandFromContentPlan": true,
+        "expandKind": "comparisons",
+        "stopAfterApproval": true,
+        "allowNormalizedFacts": false,
+        "optionalWhenBlocked": true,
+        "forceTransientFailOnce": false
+      },
+      "expansionKey": "attio-vs-hubspot",
+      "inputRefs": {},
+      "outputRefs": {
+        "draftId": "draft-deterministic-v1-comparison-agent-attio-vs-hubspot-2026-08-14T05-46-02-591Z",
+        "qaStatus": "pass",
+        "agentId": "comparison-agent",
+        "target": "attio-vs-hubspot"
+      },
+      "inputSnapshot": {
+        "researchFactIds": [],
+        "methodologySlug": "crm-editorial",
+        "methodologyVersion": "1.0.0",
+        "agentVersion": "1.0.0",
+        "contextBuiltAt": "2026-08-14T05:46:02.590Z"
+      },
+      "blockers": [],
+      "warnings": [],
+      "agentTaskId": "exec-comparison-agent-attio-vs-hubspot-1786686362573",
+      "draftId": "draft-deterministic-v1-comparison-agent-attio-vs-hubspot-2026-08-14T05-46-02-591Z",
+      "startedAt": "2026-08-14T05:46:02.573Z",
+      "completedAt": "2026-08-14T05:46:02.594Z",
+      "revisionAttempts": 0
+    },
+    {
+      "id": "comparison:attio-vs-pipedrive",
+      "definitionStepId": "comparisons",
+      "handler": "agent-run",
+      "label": "Comparison attio-vs-pipedrive",
+      "status": "completed",
+      "required": false,
+      "failurePolicy": "continue-with-warning",
+      "attempt": 1,
+      "maxAttempts": 2,
+      "dependsOn": [
+        "content-plan"
+      ],
+      "priority": "normal",
+      "config": {
+        "agentId": "comparison-agent",
+        "targetSlug": "attio-vs-pipedrive",
+        "maxAutomaticRevisions": 1,
+        "expandFromContentPlan": true,
+        "expandKind": "comparisons",
+        "stopAfterApproval": true,
+        "allowNormalizedFacts": false,
+        "optionalWhenBlocked": true,
+        "forceTransientFailOnce": false
+      },
+      "expansionKey": "attio-vs-pipedrive",
+      "inputRefs": {},
+      "outputRefs": {
+        "draftId": "draft-deterministic-v1-comparison-agent-attio-vs-pipedrive-2026-08-14T05-46-02-630Z",
+        "qaStatus": "pass",
+        "agentId": "comparison-agent",
+        "target": "attio-vs-pipedrive"
+      },
+      "inputSnapshot": {
+        "researchFactIds": [],
+        "methodologySlug": "crm-editorial",
+        "methodologyVersion": "1.0.0",
+        "agentVersion": "1.0.0",
+        "contextBuiltAt": "2026-08-14T05:46:02.622Z"
+      },
+      "blockers": [],
+      "warnings": [],
+      "agentTaskId": "exec-comparison-agent-attio-vs-pipedrive-1786686362599",
+      "draftId": "draft-deterministic-v1-comparison-agent-attio-vs-pipedrive-2026-08-14T05-46-02-630Z",
+      "startedAt": "2026-08-14T05:46:02.598Z",
+      "completedAt": "2026-08-14T05:46:02.636Z",
+      "revisionAttempts": 0
+    },
+    {
+      "id": "comparison:attio-vs-salesforce",
+      "definitionStepId": "comparisons",
+      "handler": "agent-run",
+      "label": "Comparison attio-vs-salesforce",
+      "status": "completed",
+      "required": false,
+      "failurePolicy": "continue-with-warning",
+      "attempt": 1,
+      "maxAttempts": 2,
+      "dependsOn": [
+        "content-plan"
+      ],
+      "priority": "normal",
+      "config": {
+        "agentId": "comparison-agent",
+        "targetSlug": "attio-vs-salesforce",
+        "maxAutomaticRevisions": 1,
+        "expandFromContentPlan": true,
+        "expandKind": "comparisons",
+        "stopAfterApproval": true,
+        "allowNormalizedFacts": false,
+        "optionalWhenBlocked": true,
+        "forceTransientFailOnce": false
+      },
+      "expansionKey": "attio-vs-salesforce",
+      "inputRefs": {},
+      "outputRefs": {
+        "draftId": "draft-deterministic-v1-comparison-agent-attio-vs-salesforce-2026-08-14T05-46-02-667Z",
+        "qaStatus": "pass",
+        "agentId": "comparison-agent",
+        "target": "attio-vs-salesforce"
+      },
+      "inputSnapshot": {
+        "researchFactIds": [],
+        "methodologySlug": "crm-editorial",
+        "methodologyVersion": "1.0.0",
+        "agentVersion": "1.0.0",
+        "contextBuiltAt": "2026-08-14T05:46:02.666Z"
+      },
+      "blockers": [],
+      "warnings": [],
+      "agentTaskId": "exec-comparison-agent-attio-vs-salesforce-1786686362643",
+      "draftId": "draft-deterministic-v1-comparison-agent-attio-vs-salesforce-2026-08-14T05-46-02-667Z",
+      "startedAt": "2026-08-14T05:46:02.641Z",
+      "completedAt": "2026-08-14T05:46:02.670Z",
+      "revisionAttempts": 0
+    },
+    {
+      "id": "internal-links",
+      "definitionStepId": "internal-links",
+      "handler": "internal-link",
+      "label": "Internal Link Plan",
+      "status": "completed",
+      "required": false,
+      "failurePolicy": "continue-with-warning",
+      "attempt": 1,
+      "maxAttempts": 2,
+      "dependsOn": [
+        "software-review"
+      ],
+      "priority": "low",
+      "config": {
+        "agentId": "internal-link-agent",
+        "maxAutomaticRevisions": 1,
+        "expandFromContentPlan": false,
+        "expandKind": "none",
+        "stopAfterApproval": true,
+        "allowNormalizedFacts": false,
+        "optionalWhenBlocked": false,
+        "forceTransientFailOnce": false
+      },
+      "inputRefs": {},
+      "outputRefs": {
+        "draftId": "draft-deterministic-v1-internal-link-agent-attio-2026-08-14T05-46-02-729Z",
+        "qaStatus": "pass",
+        "agentId": "internal-link-agent",
+        "target": "attio"
+      },
+      "inputSnapshot": {
+        "researchFactIds": [
+          "fact-attio-pricing.hasFreePlan",
+          "fact-attio-pricing.hasFreeTrial",
+          "fact-attio-pricing.startingPriceMonthly",
+          "fact-attio-pricing.currency",
+          "fact-attio-pricing.model",
+          "fact-attio-pricing.plans.free",
+          "fact-attio-pricing.plans.plus",
+          "fact-attio-pricing.plans.pro",
+          "fact-attio-pricing.plans.enterprise",
+          "fact-attio-features.contact-management",
+          "fact-attio-features.lead-management",
+          "fact-attio-features.pipeline-management",
+          "fact-attio-features.deal-management",
+          "fact-attio-features.email-sync",
+          "fact-attio-features.workflow-automation",
+          "fact-attio-features.sales-automation",
+          "fact-attio-features.reporting",
+          "fact-attio-features.forecasting",
+          "fact-attio-features.custom-fields",
+          "fact-attio-features.custom-pipelines",
+          "fact-attio-features.mobile-app",
+          "fact-attio-features.ai-assistance",
+          "fact-attio-features.integrations",
+          "fact-attio-positioning.summary",
+          "fact-attio-ai.assistant",
+          "fact-attio-ai.summaries"
+        ],
+        "methodologySlug": "crm-editorial",
+        "methodologyVersion": "1.0.0",
+        "agentVersion": "1.0.0",
+        "contextBuiltAt": "2026-08-14T05:46:02.728Z"
+      },
+      "blockers": [],
+      "warnings": [],
+      "agentTaskId": "exec-internal-link-agent-attio-1786686362713",
+      "draftId": "draft-deterministic-v1-internal-link-agent-attio-2026-08-14T05-46-02-729Z",
+      "startedAt": "2026-08-14T05:46:02.712Z",
+      "completedAt": "2026-08-14T05:46:02.736Z",
+      "revisionAttempts": 0
+    },
+    {
+      "id": "finder-readiness",
+      "definitionStepId": "finder-readiness",
+      "handler": "update-recommendation-readiness",
+      "label": "Finder readiness",
+      "status": "completed",
+      "required": false,
+      "failurePolicy": "continue",
+      "attempt": 1,
+      "maxAttempts": 2,
+      "dependsOn": [
+        "content-plan"
+      ],
+      "priority": "low",
+      "config": {
+        "maxAutomaticRevisions": 1,
+        "expandFromContentPlan": false,
+        "expandKind": "none",
+        "stopAfterApproval": true,
+        "allowNormalizedFacts": false,
+        "optionalWhenBlocked": false,
+        "forceTransientFailOnce": false
+      },
+      "inputRefs": {},
+      "outputRefs": {
+        "finderReadiness": "checked"
+      },
+      "blockers": [],
+      "warnings": [],
+      "startedAt": "2026-08-14T05:46:02.708Z",
+      "completedAt": "2026-08-14T05:46:02.710Z",
+      "revisionAttempts": 0
+    },
+    {
+      "id": "editorial-approval",
+      "definitionStepId": "editorial-approval",
+      "handler": "approval-check",
+      "label": "Editorial approval",
+      "status": "completed",
+      "required": true,
+      "failurePolicy": "manual-review",
+      "attempt": 2,
+      "maxAttempts": 2,
+      "dependsOn": [
+        "software-review"
+      ],
+      "priority": "critical",
+      "config": {
+        "approvalType": "editorial",
+        "maxAutomaticRevisions": 1,
+        "expandFromContentPlan": false,
+        "expandKind": "none",
+        "stopAfterApproval": true,
+        "allowNormalizedFacts": false,
+        "optionalWhenBlocked": false,
+        "forceTransientFailOnce": false
+      },
+      "inputRefs": {},
+      "outputRefs": {
+        "approvalId": "appr-wf-software-onboarding-content-attio-1786686362068-software-review",
+        "draftId": "draft-deterministic-v1-software-review-agent-attio-2026-08-14T05-46-02-533Z",
+        "approvalIds": "appr-wf-software-onboarding-content-attio-1786686362068-software-review"
+      },
+      "blockers": [],
+      "warnings": [
+        "Approval received — resuming",
+        "6 optional draft(s) may still need separate editorial review"
+      ],
+      "approvalId": "appr-wf-software-onboarding-content-attio-1786686362068-software-review",
+      "startedAt": "2026-08-14T05:47:17.698Z",
+      "completedAt": "2026-08-14T05:47:17.770Z",
+      "revisionAttempts": 0
+    },
+    {
+      "id": "pre-publish-validation",
+      "definitionStepId": "pre-publish-validation",
+      "handler": "pre-publish-validation",
+      "label": "Pre-publish validation",
+      "status": "completed",
+      "required": true,
+      "failurePolicy": "block-workflow",
+      "attempt": 2,
+      "maxAttempts": 2,
+      "dependsOn": [
+        "editorial-approval"
+      ],
+      "priority": "critical",
+      "config": {
+        "maxAutomaticRevisions": 1,
+        "expandFromContentPlan": false,
+        "expandKind": "none",
+        "stopAfterApproval": true,
+        "allowNormalizedFacts": false,
+        "optionalWhenBlocked": false,
+        "forceTransientFailOnce": false
+      },
+      "inputRefs": {},
+      "outputRefs": {
+        "publishState": "READY_TO_PUBLISH"
+      },
+      "blockers": [],
+      "warnings": [
+        "stopAfterApproval: workflow will not publish automatically"
+      ],
+      "startedAt": "2026-08-14T05:49:33.798Z",
+      "completedAt": "2026-08-14T05:49:34.126Z",
+      "revisionAttempts": 0
+    }
+  ],
+  "history": [
+    {
+      "at": "2026-08-14T05:46:02.410Z",
+      "event": "workflow_created",
+      "message": "Created software-onboarding-content:v1.0.0"
+    },
+    {
+      "at": "2026-08-14T05:46:02.413Z",
+      "event": "workflow_started",
+      "message": "Workflow execution started"
+    },
+    {
+      "at": "2026-08-14T05:46:02.415Z",
+      "event": "workflow_step_started",
+      "stepId": "software-onboarding",
+      "message": "Started Software onboarding"
+    },
+    {
+      "at": "2026-08-14T05:46:02.454Z",
+      "event": "workflow_step_completed",
+      "stepId": "software-onboarding",
+      "message": "Reused onboarding run onboard-attio-1786686334155 (review-required)"
+    },
+    {
+      "at": "2026-08-14T05:46:02.456Z",
+      "event": "workflow_step_started",
+      "stepId": "content-plan",
+      "message": "Started Content plan"
+    },
+    {
+      "at": "2026-08-14T05:46:02.488Z",
+      "event": "workflow_step_completed",
+      "stepId": "content-plan",
+      "message": "Content plan from onboarding onboard-attio-1786686334155 (9 candidates)"
+    },
+    {
+      "at": "2026-08-14T05:46:02.490Z",
+      "event": "workflow_step_started",
+      "stepId": "software-review",
+      "message": "Started Software Review"
+    },
+    {
+      "at": "2026-08-14T05:46:02.548Z",
+      "event": "workflow_step_completed",
+      "stepId": "software-review",
+      "message": "Agent software-review-agent → draft draft-deterministic-v1-software-review-agent-attio-2026-08-14T05-46-02-533Z (qa=pass)"
+    },
+    {
+      "at": "2026-08-14T05:46:02.556Z",
+      "event": "workflow_step_started",
+      "stepId": "alternatives",
+      "message": "Started Alternatives"
+    },
+    {
+      "at": "2026-08-14T05:46:02.571Z",
+      "event": "workflow_step_completed",
+      "stepId": "alternatives",
+      "message": "Agent alternatives-agent → draft draft-deterministic-v1-alternatives-agent-attio-2026-08-14T05-46-02-567Z (qa=pass)"
+    },
+    {
+      "at": "2026-08-14T05:46:02.572Z",
+      "event": "workflow_step_started",
+      "stepId": "comparison:attio-vs-hubspot",
+      "message": "Started Comparison attio-vs-hubspot"
+    },
+    {
+      "at": "2026-08-14T05:46:02.594Z",
+      "event": "workflow_step_completed",
+      "stepId": "comparison:attio-vs-hubspot",
+      "message": "Agent comparison-agent → draft draft-deterministic-v1-comparison-agent-attio-vs-hubspot-2026-08-14T05-46-02-591Z (qa=pass)"
+    },
+    {
+      "at": "2026-08-14T05:46:02.596Z",
+      "event": "workflow_step_started",
+      "stepId": "comparison:attio-vs-pipedrive",
+      "message": "Started Comparison attio-vs-pipedrive"
+    },
+    {
+      "at": "2026-08-14T05:46:02.636Z",
+      "event": "workflow_step_completed",
+      "stepId": "comparison:attio-vs-pipedrive",
+      "message": "Agent comparison-agent → draft draft-deterministic-v1-comparison-agent-attio-vs-pipedrive-2026-08-14T05-46-02-630Z (qa=pass)"
+    },
+    {
+      "at": "2026-08-14T05:46:02.640Z",
+      "event": "workflow_step_started",
+      "stepId": "comparison:attio-vs-salesforce",
+      "message": "Started Comparison attio-vs-salesforce"
+    },
+    {
+      "at": "2026-08-14T05:46:02.670Z",
+      "event": "workflow_step_completed",
+      "stepId": "comparison:attio-vs-salesforce",
+      "message": "Agent comparison-agent → draft draft-deterministic-v1-comparison-agent-attio-vs-salesforce-2026-08-14T05-46-02-667Z (qa=pass)"
+    },
+    {
+      "at": "2026-08-14T05:46:02.687Z",
+      "event": "workflow_step_started",
+      "stepId": "pricing-page",
+      "message": "Started Pricing Page"
+    },
+    {
+      "at": "2026-08-14T05:46:02.705Z",
+      "event": "workflow_step_completed",
+      "stepId": "pricing-page",
+      "message": "Agent pricing-page-agent → draft draft-deterministic-v1-pricing-page-agent-attio-2026-08-14T05-46-02-702Z (qa=pass)"
+    },
+    {
+      "at": "2026-08-14T05:46:02.707Z",
+      "event": "workflow_step_started",
+      "stepId": "finder-readiness",
+      "message": "Started Finder readiness"
+    },
+    {
+      "at": "2026-08-14T05:46:02.710Z",
+      "event": "workflow_step_completed",
+      "stepId": "finder-readiness",
+      "message": "Finder readiness noted for attio"
+    },
+    {
+      "at": "2026-08-14T05:46:02.712Z",
+      "event": "workflow_step_started",
+      "stepId": "internal-links",
+      "message": "Started Internal Link Plan"
+    },
+    {
+      "at": "2026-08-14T05:46:02.736Z",
+      "event": "workflow_step_completed",
+      "stepId": "internal-links",
+      "message": "Agent internal-link-agent → draft draft-deterministic-v1-internal-link-agent-attio-2026-08-14T05-46-02-729Z (qa=pass)"
+    },
+    {
+      "at": "2026-08-14T05:46:02.739Z",
+      "event": "workflow_step_started",
+      "stepId": "editorial-approval",
+      "message": "Started Editorial approval"
+    },
+    {
+      "at": "2026-08-14T05:46:02.840Z",
+      "event": "workflow_step_completed",
+      "stepId": "editorial-approval",
+      "message": "WAITING FOR EDITORIAL APPROVAL (appr-wf-software-onboarding-content-attio-1786686362068-software-review)"
+    },
+    {
+      "at": "2026-08-14T05:47:17.693Z",
+      "event": "workflow_resumed",
+      "message": "Workflow resumed"
+    },
+    {
+      "at": "2026-08-14T05:47:17.696Z",
+      "event": "workflow_started",
+      "message": "Workflow execution started"
+    },
+    {
+      "at": "2026-08-14T05:47:17.697Z",
+      "event": "workflow_step_started",
+      "stepId": "editorial-approval",
+      "message": "Started Editorial approval"
+    },
+    {
+      "at": "2026-08-14T05:47:17.771Z",
+      "event": "workflow_step_completed",
+      "stepId": "editorial-approval",
+      "message": "Required editorial approvals satisfied"
+    },
+    {
+      "at": "2026-08-14T05:47:17.773Z",
+      "event": "workflow_step_started",
+      "stepId": "pre-publish-validation",
+      "message": "Started Pre-publish validation"
+    },
+    {
+      "at": "2026-08-14T05:47:18.142Z",
+      "event": "workflow_step_completed",
+      "stepId": "pre-publish-validation",
+      "message": "Pre-publish validation blocked: Stale context for comparison:attio-vs-hubspot: removed-critical-fact:fact-hubspot-pricing.hasFreePlan; removed-critical-fact:fact-hubspot-pricing.hasFreeTrial; removed-critical-fact:fact-hubspot-pricing.startingPriceMonthly; removed-critical-fact:fact-hubspot-pricing.currency; removed-critical-fact:fact-hubspot-pricing.model; removed-critical-fact:fact-hubspot-pricing.plans.free; removed-critical-fact:fact-hubspot-pricing.plans.starter; removed-critical-fact:fact-hubspot-pricing.plans.professional; removed-critical-fact:fact-hubspot-pricing.plans.enterprise; removed-critical-fact:fact-hubspot-pricing.sales-hub.ladder; removed-critical-fact:fact-hubspot-pricing.billing-notes; removed-critical-fact:fact-hubspot-pricing.sales-hub.professional.catalog; removed-critical-fact:fact-hubspot-pricing.sales-hub.professional.marketing; removed-critical-fact:fact-hubspot-pricing.smart-crm.starter.catalog; Stale context for comparison:attio-vs-pipedrive: removed-critical-fact:fact-pipedrive-pricing.hasFreePlan; removed-critical-fact:fact-pipedrive-pricing.hasFreeTrial; removed-critical-fact:fact-pipedrive-pricing.startingPriceMonthly; removed-critical-fact:fact-pipedrive-pricing.currency; removed-critical-fact:fact-pipedrive-pricing.model; removed-critical-fact:fact-pipedrive-pricing.plans.lite; removed-critical-fact:fact-pipedrive-pricing.plans.growth; removed-critical-fact:fact-pipedrive-pricing.plans.premium; removed-critical-fact:fact-pipedrive-pricing.plans.ultimate; removed-critical-fact:fact-pipedrive-plans.mapping; Stale context for comparison:attio-vs-salesforce: removed-critical-fact:fact-salesforce-pricing.hasFreePlan; removed-critical-fact:fact-salesforce-pricing.hasFreeTrial; removed-critical-fact:fact-salesforce-pricing.startingPriceMonthly; removed-critical-fact:fact-salesforce-pricing.currency; removed-critical-fact:fact-salesforce-pricing.model; removed-critical-fact:fact-salesforce-pricing.plans.starter-suite; removed-critical-fact:fact-salesforce-pricing.plans.pro-suite; removed-critical-fact:fact-salesforce-pricing.plans.enterprise; removed-critical-fact:fact-salesforce-pricing.plans.unlimited; removed-critical-fact:fact-salesforce-pricing.addons; removed-critical-fact:fact-salesforce-pricing.agentforce1"
+    },
+    {
+      "at": "2026-08-14T05:47:34.033Z",
+      "event": "workflow_resumed",
+      "message": "Workflow resumed"
+    },
+    {
+      "at": "2026-08-14T05:47:34.035Z",
+      "event": "workflow_started",
+      "message": "Workflow execution started"
+    },
+    {
+      "at": "2026-08-14T05:49:33.795Z",
+      "event": "workflow_resumed",
+      "message": "Workflow resumed"
+    },
+    {
+      "at": "2026-08-14T05:49:33.797Z",
+      "event": "workflow_started",
+      "message": "Workflow execution started"
+    },
+    {
+      "at": "2026-08-14T05:49:33.798Z",
+      "event": "workflow_step_started",
+      "stepId": "pre-publish-validation",
+      "message": "Started Pre-publish validation"
+    },
+    {
+      "at": "2026-08-14T05:49:34.126Z",
+      "event": "workflow_step_completed",
+      "stepId": "pre-publish-validation",
+      "message": "Pre-publish validation passed — READY TO PUBLISH (manual)"
+    },
+    {
+      "at": "2026-08-14T05:49:34.128Z",
+      "event": "workflow_completed",
+      "message": "Workflow completed"
+    },
+    {
+      "at": "2026-08-14T05:49:57.212Z",
+      "event": "workflow_resumed",
+      "message": "Workflow resumed"
+    },
+    {
+      "at": "2026-08-14T05:49:57.214Z",
+      "event": "workflow_started",
+      "message": "Workflow execution started"
+    },
+    {
+      "at": "2026-08-14T05:49:57.216Z",
+      "event": "workflow_completed",
+      "message": "Workflow completed"
+    }
+  ],
+  "options": {
+    "generateReview": true,
+    "generatePricing": true,
+    "generateAlternatives": true,
+    "generateComparisons": true,
+    "runInternalLinks": true,
+    "stopAfterApproval": true,
+    "allowNormalizedFacts": false,
+    "dryRun": false,
+    "maxComparisons": 3,
+    "skipOnboarding": false
+  },
+  "warnings": [],
+  "createdAt": "2026-08-14T05:46:02.409Z",
+  "updatedAt": "2026-08-14T05:49:57.216Z"
+}

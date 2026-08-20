@@ -1,0 +1,516 @@
+{
+  "id": "wf-software-onboarding-content-pipedrive-1786622988740",
+  "workflowId": "software-onboarding-content",
+  "workflowVersion": "1.0.0",
+  "name": "Software Onboarding Content: pipedrive",
+  "targetType": "software",
+  "targetId": "pipedrive",
+  "status": "superseded",
+  "steps": [
+    {
+      "id": "software-onboarding",
+      "definitionStepId": "software-onboarding",
+      "handler": "software-onboarding",
+      "label": "Software onboarding",
+      "status": "completed",
+      "required": true,
+      "failurePolicy": "block-workflow",
+      "attempt": 1,
+      "maxAttempts": 2,
+      "dependsOn": [],
+      "priority": "critical",
+      "config": {
+        "maxAutomaticRevisions": 1,
+        "expandFromContentPlan": false,
+        "expandKind": "none",
+        "stopAfterApproval": true,
+        "allowNormalizedFacts": false,
+        "optionalWhenBlocked": false,
+        "forceTransientFailOnce": false
+      },
+      "inputRefs": {},
+      "outputRefs": {
+        "softwareOnboardingRunId": "onboard-pipedrive-1786620335188"
+      },
+      "blockers": [],
+      "warnings": [],
+      "startedAt": "2026-08-13T12:09:48.931Z",
+      "completedAt": "2026-08-13T12:09:48.950Z",
+      "revisionAttempts": 0
+    },
+    {
+      "id": "content-plan",
+      "definitionStepId": "content-plan",
+      "handler": "content-plan",
+      "label": "Content plan",
+      "status": "completed",
+      "required": true,
+      "failurePolicy": "block-workflow",
+      "attempt": 1,
+      "maxAttempts": 2,
+      "dependsOn": [
+        "software-onboarding"
+      ],
+      "priority": "high",
+      "config": {
+        "maxAutomaticRevisions": 1,
+        "expandFromContentPlan": false,
+        "expandKind": "none",
+        "stopAfterApproval": true,
+        "allowNormalizedFacts": false,
+        "optionalWhenBlocked": false,
+        "forceTransientFailOnce": false
+      },
+      "inputRefs": {},
+      "outputRefs": {
+        "softwareOnboardingRunId": "onboard-pipedrive-1786620335188",
+        "comparisonTargets": "freshsales-vs-pipedrive,close-vs-pipedrive",
+        "pageCandidateCount": "9"
+      },
+      "blockers": [],
+      "warnings": [],
+      "startedAt": "2026-08-13T12:09:48.954Z",
+      "completedAt": "2026-08-13T12:09:48.967Z",
+      "revisionAttempts": 0
+    },
+    {
+      "id": "software-review",
+      "definitionStepId": "software-review",
+      "handler": "agent-run",
+      "label": "Software Review",
+      "status": "completed",
+      "required": true,
+      "failurePolicy": "block-workflow",
+      "attempt": 1,
+      "maxAttempts": 2,
+      "dependsOn": [
+        "content-plan"
+      ],
+      "priority": "high",
+      "config": {
+        "agentId": "software-review-agent",
+        "targetSlug": "pipedrive",
+        "maxAutomaticRevisions": 1,
+        "expandFromContentPlan": false,
+        "expandKind": "none",
+        "stopAfterApproval": true,
+        "allowNormalizedFacts": false,
+        "optionalWhenBlocked": false,
+        "forceTransientFailOnce": false
+      },
+      "inputRefs": {},
+      "outputRefs": {
+        "draftId": "draft-deterministic-v1-software-review-agent-pipedrive-2026-08-13T12-09-48-975Z",
+        "qaStatus": "pass",
+        "agentId": "software-review-agent",
+        "target": "pipedrive"
+      },
+      "inputSnapshot": {
+        "researchFactIds": [
+          "fact-pipedrive-pricing.plans.essential-pipedrive-pricing-fixture",
+          "fact-pipedrive-pricing.plans.advanced-pipedrive-pricing-fixture",
+          "fact-pipedrive-pricing.plans.professional-pipedrive-pricing-fixture",
+          "fact-pipedrive-pricing.plans.power-pipedrive-pricing-fixture",
+          "fact-pipedrive-pricing.plans.enterprise-pipedrive-pricing-fixture",
+          "fact-pipedrive-pricing.currency-pipedrive-pricing-fixture",
+          "fact-pipedrive-pricing.hasFreeTrial-pipedrive-pricing-fixture",
+          "fact-pipedrive-pricing.hasFreePlan-pipedrive-pricing-fixture",
+          "fact-pipedrive-pricing.model-pipedrive-pricing-fixture",
+          "fact-pipedrive-identity.shortDescription-pipedrive-product-fixture",
+          "fact-pipedrive-positioning.claim-pipedrive-product-fixture",
+          "fact-pipedrive-features.contact-management-pipedrive-product-fixture",
+          "fact-pipedrive-features.lead-management-pipedrive-product-fixture",
+          "fact-pipedrive-features.pipeline-management-pipedrive-product-fixture",
+          "fact-pipedrive-features.deal-management-pipedrive-product-fixture",
+          "fact-pipedrive-features.email-sync-pipedrive-product-fixture",
+          "fact-pipedrive-features.workflow-automation-pipedrive-product-fixture",
+          "fact-pipedrive-features.reporting-pipedrive-product-fixture",
+          "fact-pipedrive-features.forecasting-pipedrive-product-fixture",
+          "fact-pipedrive-features.custom-fields-pipedrive-product-fixture",
+          "fact-pipedrive-features.custom-pipelines-pipedrive-product-fixture",
+          "fact-pipedrive-features.mobile-app-pipedrive-product-fixture",
+          "fact-pipedrive-features.ai-assistance-pipedrive-product-fixture",
+          "fact-pipedrive-ai.email-generation-pipedrive-product-fixture",
+          "fact-pipedrive-ai.assistant-pipedrive-product-fixture",
+          "fact-pipedrive-ai.forecasting-pipedrive-product-fixture",
+          "fact-pipedrive-ai.automation-pipedrive-product-fixture"
+        ],
+        "methodologySlug": "crm-editorial",
+        "methodologyVersion": "1.0.0",
+        "agentVersion": "1.0.0",
+        "contextBuiltAt": "2026-08-13T12:09:48.975Z"
+      },
+      "blockers": [],
+      "warnings": [],
+      "agentTaskId": "exec-software-review-agent-pipedrive-1786622988971",
+      "draftId": "draft-deterministic-v1-software-review-agent-pipedrive-2026-08-13T12-09-48-975Z",
+      "startedAt": "2026-08-13T12:09:48.970Z",
+      "completedAt": "2026-08-13T12:09:48.979Z",
+      "revisionAttempts": 0
+    },
+    {
+      "id": "pricing-page",
+      "definitionStepId": "pricing-page",
+      "handler": "agent-run",
+      "label": "Pricing Page",
+      "status": "ready",
+      "required": false,
+      "failurePolicy": "continue-with-warning",
+      "attempt": 0,
+      "maxAttempts": 2,
+      "dependsOn": [
+        "content-plan"
+      ],
+      "priority": "normal",
+      "config": {
+        "agentId": "pricing-page-agent",
+        "targetSlug": "pipedrive",
+        "maxAutomaticRevisions": 1,
+        "expandFromContentPlan": false,
+        "expandKind": "none",
+        "stopAfterApproval": true,
+        "allowNormalizedFacts": false,
+        "optionalWhenBlocked": true,
+        "forceTransientFailOnce": false
+      },
+      "inputRefs": {},
+      "outputRefs": {},
+      "blockers": [],
+      "warnings": [],
+      "revisionAttempts": 0
+    },
+    {
+      "id": "alternatives",
+      "definitionStepId": "alternatives",
+      "handler": "agent-run",
+      "label": "Alternatives",
+      "status": "completed",
+      "required": false,
+      "failurePolicy": "continue-with-warning",
+      "attempt": 1,
+      "maxAttempts": 2,
+      "dependsOn": [
+        "content-plan"
+      ],
+      "priority": "normal",
+      "config": {
+        "agentId": "alternatives-agent",
+        "targetSlug": "pipedrive",
+        "maxAutomaticRevisions": 1,
+        "expandFromContentPlan": false,
+        "expandKind": "none",
+        "stopAfterApproval": true,
+        "allowNormalizedFacts": false,
+        "optionalWhenBlocked": true,
+        "forceTransientFailOnce": false
+      },
+      "inputRefs": {},
+      "outputRefs": {
+        "draftId": "draft-deterministic-v1-alternatives-agent-pipedrive-2026-08-13T12-09-48-985Z",
+        "qaStatus": "pass",
+        "agentId": "alternatives-agent",
+        "target": "pipedrive"
+      },
+      "inputSnapshot": {
+        "researchFactIds": [
+          "fact-pipedrive-pricing.plans.essential-pipedrive-pricing-fixture",
+          "fact-pipedrive-pricing.plans.advanced-pipedrive-pricing-fixture",
+          "fact-pipedrive-pricing.plans.professional-pipedrive-pricing-fixture",
+          "fact-pipedrive-pricing.plans.power-pipedrive-pricing-fixture",
+          "fact-pipedrive-pricing.plans.enterprise-pipedrive-pricing-fixture",
+          "fact-pipedrive-pricing.currency-pipedrive-pricing-fixture",
+          "fact-pipedrive-pricing.hasFreeTrial-pipedrive-pricing-fixture",
+          "fact-pipedrive-pricing.hasFreePlan-pipedrive-pricing-fixture",
+          "fact-pipedrive-pricing.model-pipedrive-pricing-fixture",
+          "fact-pipedrive-identity.shortDescription-pipedrive-product-fixture",
+          "fact-pipedrive-positioning.claim-pipedrive-product-fixture",
+          "fact-pipedrive-features.contact-management-pipedrive-product-fixture",
+          "fact-pipedrive-features.lead-management-pipedrive-product-fixture",
+          "fact-pipedrive-features.pipeline-management-pipedrive-product-fixture",
+          "fact-pipedrive-features.deal-management-pipedrive-product-fixture",
+          "fact-pipedrive-features.email-sync-pipedrive-product-fixture",
+          "fact-pipedrive-features.workflow-automation-pipedrive-product-fixture",
+          "fact-pipedrive-features.reporting-pipedrive-product-fixture",
+          "fact-pipedrive-features.forecasting-pipedrive-product-fixture",
+          "fact-pipedrive-features.custom-fields-pipedrive-product-fixture",
+          "fact-pipedrive-features.custom-pipelines-pipedrive-product-fixture",
+          "fact-pipedrive-features.mobile-app-pipedrive-product-fixture",
+          "fact-pipedrive-features.ai-assistance-pipedrive-product-fixture",
+          "fact-pipedrive-ai.email-generation-pipedrive-product-fixture",
+          "fact-pipedrive-ai.assistant-pipedrive-product-fixture",
+          "fact-pipedrive-ai.forecasting-pipedrive-product-fixture",
+          "fact-pipedrive-ai.automation-pipedrive-product-fixture"
+        ],
+        "methodologySlug": "crm-editorial",
+        "methodologyVersion": "1.0.0",
+        "agentVersion": "1.0.0",
+        "contextBuiltAt": "2026-08-13T12:09:48.985Z"
+      },
+      "blockers": [],
+      "warnings": [],
+      "agentTaskId": "exec-alternatives-agent-pipedrive-1786622988982",
+      "draftId": "draft-deterministic-v1-alternatives-agent-pipedrive-2026-08-13T12-09-48-985Z",
+      "startedAt": "2026-08-13T12:09:48.981Z",
+      "completedAt": "2026-08-13T12:09:48.991Z",
+      "revisionAttempts": 0
+    },
+    {
+      "id": "comparison:freshsales-vs-pipedrive",
+      "definitionStepId": "comparisons",
+      "handler": "agent-run",
+      "label": "Comparison freshsales-vs-pipedrive",
+      "status": "ready",
+      "required": false,
+      "failurePolicy": "continue-with-warning",
+      "attempt": 0,
+      "maxAttempts": 2,
+      "dependsOn": [
+        "content-plan"
+      ],
+      "priority": "normal",
+      "config": {
+        "agentId": "comparison-agent",
+        "targetSlug": "freshsales-vs-pipedrive",
+        "maxAutomaticRevisions": 1,
+        "expandFromContentPlan": true,
+        "expandKind": "comparisons",
+        "stopAfterApproval": true,
+        "allowNormalizedFacts": false,
+        "optionalWhenBlocked": true,
+        "forceTransientFailOnce": false
+      },
+      "expansionKey": "freshsales-vs-pipedrive",
+      "inputRefs": {},
+      "outputRefs": {},
+      "blockers": [],
+      "warnings": [],
+      "revisionAttempts": 0
+    },
+    {
+      "id": "comparison:close-vs-pipedrive",
+      "definitionStepId": "comparisons",
+      "handler": "agent-run",
+      "label": "Comparison close-vs-pipedrive",
+      "status": "ready",
+      "required": false,
+      "failurePolicy": "continue-with-warning",
+      "attempt": 0,
+      "maxAttempts": 2,
+      "dependsOn": [
+        "content-plan"
+      ],
+      "priority": "normal",
+      "config": {
+        "agentId": "comparison-agent",
+        "targetSlug": "close-vs-pipedrive",
+        "maxAutomaticRevisions": 1,
+        "expandFromContentPlan": true,
+        "expandKind": "comparisons",
+        "stopAfterApproval": true,
+        "allowNormalizedFacts": false,
+        "optionalWhenBlocked": true,
+        "forceTransientFailOnce": false
+      },
+      "expansionKey": "close-vs-pipedrive",
+      "inputRefs": {},
+      "outputRefs": {},
+      "blockers": [],
+      "warnings": [],
+      "revisionAttempts": 0
+    },
+    {
+      "id": "internal-links",
+      "definitionStepId": "internal-links",
+      "handler": "internal-link",
+      "label": "Internal Link Plan",
+      "status": "ready",
+      "required": false,
+      "failurePolicy": "continue-with-warning",
+      "attempt": 0,
+      "maxAttempts": 2,
+      "dependsOn": [
+        "software-review"
+      ],
+      "priority": "low",
+      "config": {
+        "agentId": "internal-link-agent",
+        "maxAutomaticRevisions": 1,
+        "expandFromContentPlan": false,
+        "expandKind": "none",
+        "stopAfterApproval": true,
+        "allowNormalizedFacts": false,
+        "optionalWhenBlocked": false,
+        "forceTransientFailOnce": false
+      },
+      "inputRefs": {},
+      "outputRefs": {},
+      "blockers": [],
+      "warnings": [],
+      "revisionAttempts": 0
+    },
+    {
+      "id": "finder-readiness",
+      "definitionStepId": "finder-readiness",
+      "handler": "update-recommendation-readiness",
+      "label": "Finder readiness",
+      "status": "ready",
+      "required": false,
+      "failurePolicy": "continue",
+      "attempt": 0,
+      "maxAttempts": 2,
+      "dependsOn": [
+        "content-plan"
+      ],
+      "priority": "low",
+      "config": {
+        "maxAutomaticRevisions": 1,
+        "expandFromContentPlan": false,
+        "expandKind": "none",
+        "stopAfterApproval": true,
+        "allowNormalizedFacts": false,
+        "optionalWhenBlocked": false,
+        "forceTransientFailOnce": false
+      },
+      "inputRefs": {},
+      "outputRefs": {},
+      "blockers": [],
+      "warnings": [],
+      "revisionAttempts": 0
+    },
+    {
+      "id": "editorial-approval",
+      "definitionStepId": "editorial-approval",
+      "handler": "approval-check",
+      "label": "Editorial approval",
+      "status": "ready",
+      "required": true,
+      "failurePolicy": "manual-review",
+      "attempt": 0,
+      "maxAttempts": 2,
+      "dependsOn": [
+        "software-review"
+      ],
+      "priority": "critical",
+      "config": {
+        "approvalType": "editorial",
+        "maxAutomaticRevisions": 1,
+        "expandFromContentPlan": false,
+        "expandKind": "none",
+        "stopAfterApproval": true,
+        "allowNormalizedFacts": false,
+        "optionalWhenBlocked": false,
+        "forceTransientFailOnce": false
+      },
+      "inputRefs": {},
+      "outputRefs": {},
+      "blockers": [],
+      "warnings": [],
+      "revisionAttempts": 0
+    },
+    {
+      "id": "pre-publish-validation",
+      "definitionStepId": "pre-publish-validation",
+      "handler": "pre-publish-validation",
+      "label": "Pre-publish validation",
+      "status": "pending",
+      "required": true,
+      "failurePolicy": "block-workflow",
+      "attempt": 0,
+      "maxAttempts": 2,
+      "dependsOn": [
+        "editorial-approval"
+      ],
+      "priority": "critical",
+      "config": {
+        "maxAutomaticRevisions": 1,
+        "expandFromContentPlan": false,
+        "expandKind": "none",
+        "stopAfterApproval": true,
+        "allowNormalizedFacts": false,
+        "optionalWhenBlocked": false,
+        "forceTransientFailOnce": false
+      },
+      "inputRefs": {},
+      "outputRefs": {},
+      "blockers": [],
+      "warnings": [],
+      "revisionAttempts": 0
+    }
+  ],
+  "history": [
+    {
+      "at": "2026-08-13T12:09:48.866Z",
+      "event": "workflow_created",
+      "message": "Created software-onboarding-content:v1.0.0"
+    },
+    {
+      "at": "2026-08-13T12:09:48.929Z",
+      "event": "workflow_started",
+      "message": "Workflow execution started"
+    },
+    {
+      "at": "2026-08-13T12:09:48.931Z",
+      "event": "workflow_step_started",
+      "stepId": "software-onboarding",
+      "message": "Started Software onboarding"
+    },
+    {
+      "at": "2026-08-13T12:09:48.950Z",
+      "event": "workflow_step_completed",
+      "stepId": "software-onboarding",
+      "message": "Reused onboarding run onboard-pipedrive-1786620335188 (review-required)"
+    },
+    {
+      "at": "2026-08-13T12:09:48.951Z",
+      "event": "workflow_step_started",
+      "stepId": "content-plan",
+      "message": "Started Content plan"
+    },
+    {
+      "at": "2026-08-13T12:09:48.967Z",
+      "event": "workflow_step_completed",
+      "stepId": "content-plan",
+      "message": "Content plan from onboarding onboard-pipedrive-1786620335188 (9 candidates)"
+    },
+    {
+      "at": "2026-08-13T12:09:48.970Z",
+      "event": "workflow_step_started",
+      "stepId": "software-review",
+      "message": "Started Software Review"
+    },
+    {
+      "at": "2026-08-13T12:09:48.979Z",
+      "event": "workflow_step_completed",
+      "stepId": "software-review",
+      "message": "Agent software-review-agent → draft draft-deterministic-v1-software-review-agent-pipedrive-2026-08-13T12-09-48-975Z (qa=pass)"
+    },
+    {
+      "at": "2026-08-13T12:09:48.981Z",
+      "event": "workflow_step_started",
+      "stepId": "alternatives",
+      "message": "Started Alternatives"
+    },
+    {
+      "at": "2026-08-13T12:09:48.991Z",
+      "event": "workflow_step_completed",
+      "stepId": "alternatives",
+      "message": "Agent alternatives-agent → draft draft-deterministic-v1-alternatives-agent-pipedrive-2026-08-13T12-09-48-985Z (qa=pass)"
+    }
+  ],
+  "options": {
+    "generateReview": true,
+    "generatePricing": true,
+    "generateAlternatives": true,
+    "generateComparisons": true,
+    "runInternalLinks": true,
+    "stopAfterApproval": true,
+    "allowNormalizedFacts": false,
+    "dryRun": false,
+    "maxComparisons": 2,
+    "skipOnboarding": false
+  },
+  "supersededBy": "wf-software-onboarding-content-pipedrive-1786622989507",
+  "warnings": [],
+  "createdAt": "2026-08-13T12:09:48.866Z",
+  "updatedAt": "2026-08-13T12:09:49.542Z"
+}

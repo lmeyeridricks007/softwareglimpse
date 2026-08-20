@@ -1,0 +1,203 @@
+/**
+ * ResourceQualityAgent (CLI)
+ * Periodically audits every /resources/ page for purpose, artifact, links, freshness.
+ *
+ * npm run resources:quality
+ *
+ * Writes: docs/content-quality/resources/RESOURCE-QUALITY-LATEST.md
+ * Does not publish or invent content.
+ */
+
+import { writeFileSync, mkdirSync } from "node:fs";
+import { join } from "node:path";
+import { getAllResourcesUnfiltered } from "@/data";
+import { getResourceHubProfile } from "@/data/resource-hub";
+import { buildResourceHubModel } from "@/services/resource-hub";
+
+type ScoreKey =
+  | "purpose"
+  | "artifact"
+  | "accuracy"
+  | "completeness"
+  | "stageFit"
+  | "guideDiff"
+  | "toolIntegration"
+  | "linking"
+  | "visual"
+  | "download"
+  | "seo"
+  | "freshness";
+
+const LABELS: Record<ScoreKey, string> = {
+  purpose: "Purpose clarity",
+  artifact: "Artifact usefulness",
+  accuracy: "Accuracy",
+  completeness: "Completeness",
+  stageFit: "Stage fit",
+  guideDiff: "Guide/resource differentiation",
+  toolIntegration: "Tool integration",
+  linking: "Internal linking",
+  visual: "Visual quality",
+  download: "Download quality",
+  seo: "SEO intent",
+  freshness: "Freshness",
+};
+
+function clamp(n: number): number {
+  return Math.max(0, Math.min(5, Math.round(n * 10) / 10));
+}
+
+function scoreResource(slug: string): Record<ScoreKey, number> & {
+  notes: string[];
+} {
+  const model = buildResourceHubModel(slug);
+  const profile = getResourceHubProfile(slug);
+  const resource = getAllResourcesUnfiltered().find((r) => r.slug === slug);
+  const notes: string[] = [];
+  if (!model || !resource || !profile) {
+    return {
+      purpose: 0,
+      artifact: 0,
+      accuracy: 0,
+      completeness: 0,
+      stageFit: 0,
+      guideDiff: 0,
+      toolIntegration: 0,
+      linking: 0,
+      visual: 0,
+      download: 0,
+      seo: 0,
+      freshness: 0,
+      notes: ["Missing model/profile"],
+    };
+  }
+
+  const items = model.artifactSections.reduce((n, s) => n + s.items.length, 0);
+  const hasEvalShape = model.artifactSections.some((s) =>
+    s.items.some((i) => i.whyItMatters || i.testScenario || i.required != null),
+  );
+  const overviewLen = model.overview.length;
+
+  const scores: Record<ScoreKey, number> = {
+    purpose: clamp(
+      (resource.jobToBeDone ? 2.5 : 1) +
+        (model.tagline.length < 120 ? 1.5 : 0.5) +
+        (model.whatsInside.length ? 1 : 0),
+    ),
+    artifact: clamp(
+      (items >= 10 ? 2 : items >= 5 ? 1.5 : 0.5) +
+        (hasEvalShape ? 2 : 1) +
+        (model.downloadFiles.some((f) => f.format === "xlsx") ? 1 : 0),
+    ),
+    accuracy: clamp(3.5), // heuristic only — editorial review still required
+    completeness: clamp(
+      (model.workflowSteps.length >= 4 ? 1.5 : 0.5) +
+        (model.faq.length >= 4 ? 1.5 : 0.5) +
+        (items >= 15 ? 2 : 1),
+    ),
+    stageFit: clamp(
+      resource.buyingStage
+        ? slug === "crm-evaluation-checklist" &&
+          !model.overview.toLowerCase().includes("decision memo")
+          ? 4.5
+          : 3.5
+        : 2,
+    ),
+    guideDiff: clamp(model.guides.length ? 3.5 : 2),
+    toolIntegration: clamp(Math.min(5, model.tools.length * 1.2)),
+    linking: clamp(
+      (model.journey.length ? 1.5 : 0) +
+        (model.useBefore.length || model.useNext.length ? 1.5 : 0) +
+        (model.relatedResources.length ? 1.5 : 0.5),
+    ),
+    visual: clamp(model.heroVisual ? 3.5 : 2),
+    download: clamp(
+      model.downloadFiles.filter((f) => f.format === "xlsx" || f.format === "pdf")
+        .length >= 2
+        ? 4
+        : 2,
+    ),
+    seo: clamp(
+      (() => {
+        const title = (resource.seo.title ?? resource.name).toLowerCase();
+        const tokens = [
+          "checklist",
+          "template",
+          "scorecard",
+          "matrix",
+          "worksheet",
+          "plan",
+          "rfp",
+        ];
+        return tokens.some((t) => title.includes(t)) ? 4 : 3;
+      })(),
+    ),
+    freshness: clamp(profile.lastReviewedAt ? 4 : 2),
+  };
+
+  if (overviewLen > 900) {
+    notes.push("Overview still long — prefer artifact-first chrome");
+    scores.purpose = clamp(scores.purpose - 0.5);
+  }
+  if (!resource.jobToBeDone) notes.push("Missing jobToBeDone");
+  if (!resource.buyingStage) notes.push("Missing buyingStage");
+  if (!hasEvalShape && resource.kind === "checklist") {
+    notes.push("Checklist rows lack whyItMatters/testScenario — IMPROVE");
+  }
+
+  return { ...scores, notes };
+}
+
+function main() {
+  const outDir = join(process.cwd(), "docs/content-quality/resources");
+  mkdirSync(outDir, { recursive: true });
+  const rows = getAllResourcesUnfiltered().map((r) => {
+    const s = scoreResource(r.slug);
+    const avg =
+      Object.keys(LABELS).reduce(
+        (n, k) => n + s[k as ScoreKey],
+        0,
+      ) / Object.keys(LABELS).length;
+    return { resource: r, scores: s, avg: clamp(avg) };
+  });
+
+  const lines: string[] = [
+    "# Resource Quality — Latest",
+    "",
+    `> Generated by ResourceQualityAgent · ${new Date().toISOString().slice(0, 10)}`,
+    "> Heuristic scores (0–5). Editorial review still required. Does not invent facts.",
+    "",
+    "| Resource | Avg | Purpose | Artifact | Stage fit | Downloads | SEO | Notes |",
+    "| --- | ---: | ---: | ---: | ---: | ---: | ---: | --- |",
+  ];
+
+  for (const row of rows.sort((a, b) => a.resource.sortOrder - b.resource.sortOrder)) {
+    const s = row.scores;
+    lines.push(
+      `| ${row.resource.name} | ${row.avg} | ${s.purpose} | ${s.artifact} | ${s.stageFit} | ${s.download} | ${s.seo} | ${s.notes.join("; ") || "—"} |`,
+    );
+  }
+
+  lines.push("", "## Detail", "");
+  for (const row of rows) {
+    lines.push(`### ${row.resource.name}`, "");
+    for (const key of Object.keys(LABELS) as ScoreKey[]) {
+      lines.push(`- ${LABELS[key]}: **${row.scores[key]}**`);
+    }
+    if (row.scores.notes.length) {
+      lines.push(`- Notes: ${row.scores.notes.join("; ")}`);
+    }
+    lines.push("");
+  }
+
+  const outPath = join(outDir, "RESOURCE-QUALITY-LATEST.md");
+  writeFileSync(outPath, lines.join("\n"));
+  console.log(`Wrote ${outPath}`);
+  console.log(
+    `Avg across library: ${(
+      rows.reduce((n, r) => n + r.avg, 0) / rows.length
+    ).toFixed(2)}`,
+  );
+}
+
+main();

@@ -1,0 +1,89 @@
+{
+  "id": "exec-software-review-agent-diginius-1787140617666",
+  "agentId": "software-review-agent",
+  "agentVersion": "1.0.0",
+  "status": "qa-failed",
+  "mode": "CREATE",
+  "targetSlug": "diginius",
+  "draftId": "draft-deterministic-v1-software-review-agent-diginius-2026-08-19T11-56-58-595Z",
+  "briefId": "agent-brief-software-review-agent-diginius-1787140618590",
+  "validation": {
+    "ok": false,
+    "errors": [
+      "unknown-fact-ref:fact-diginius-features.content-calendar",
+      "unknown-fact-ref:fact-diginius-features.social-scheduling",
+      "unknown-fact-ref:fact-diginius-features.marketing-automation"
+    ]
+  },
+  "qa": {
+    "status": "fail",
+    "blockers": [
+      {
+        "type": "UNSUPPORTED_FACT",
+        "severity": "blocker",
+        "message": "Fact ref not in approved context: fact-diginius-features.content-calendar",
+        "section": "verdict"
+      },
+      {
+        "type": "UNSUPPORTED_FACT",
+        "severity": "blocker",
+        "message": "Fact ref not in approved context: fact-diginius-features.social-scheduling",
+        "section": "verdict"
+      },
+      {
+        "type": "UNSUPPORTED_FACT",
+        "severity": "blocker",
+        "message": "Fact ref not in approved context: fact-diginius-features.marketing-automation",
+        "section": "verdict"
+      },
+      {
+        "type": "UNSUPPORTED_FACT",
+        "severity": "blocker",
+        "message": "unknown-fact-ref:fact-diginius-features.content-calendar"
+      },
+      {
+        "type": "UNSUPPORTED_FACT",
+        "severity": "blocker",
+        "message": "unknown-fact-ref:fact-diginius-features.social-scheduling"
+      },
+      {
+        "type": "UNSUPPORTED_FACT",
+        "severity": "blocker",
+        "message": "unknown-fact-ref:fact-diginius-features.marketing-automation"
+      }
+    ],
+    "warnings": [],
+    "suggestions": [],
+    "checkedAt": "2026-08-19T11:56:58.605Z"
+  },
+  "errors": [
+    "unknown-fact-ref:fact-diginius-features.content-calendar",
+    "unknown-fact-ref:fact-diginius-features.social-scheduling",
+    "unknown-fact-ref:fact-diginius-features.marketing-automation"
+  ],
+  "cost": {
+    "provider": "deterministic-v1",
+    "model": "deterministic-template-v1",
+    "inputTokens": 0,
+    "outputTokens": 0,
+    "estimatedCostUsd": 0
+  },
+  "contextSnapshot": {
+    "researchSnapshotIds": [],
+    "factIds": [
+      "fact-diginius-identity.shortDescription",
+      "fact-diginius-positioning.vendorClaim",
+      "fact-diginius-pricing.model",
+      "fact-diginius-pricing.hasFreePlan",
+      "fact-diginius-pricing.hasFreeTrial",
+      "fact-diginius-pricing.plans.enterprise"
+    ],
+    "methodologySlug": "marketing-editorial",
+    "methodologyVersion": "1.0.0",
+    "pricingFreshnessAt": "2026-08-17T17:00:00.000Z",
+    "builtAt": "2026-08-19T11:56:58.558Z"
+  },
+  "dryRun": false,
+  "startedAt": "2026-08-19T11:56:57.666Z",
+  "completedAt": "2026-08-19T11:56:58.611Z"
+}

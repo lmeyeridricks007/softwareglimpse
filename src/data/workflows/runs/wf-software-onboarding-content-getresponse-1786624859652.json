@@ -1,0 +1,548 @@
+{
+  "id": "wf-software-onboarding-content-getresponse-1786624859652",
+  "workflowId": "software-onboarding-content",
+  "workflowVersion": "1.0.0",
+  "name": "Software Onboarding Content: getresponse",
+  "targetType": "software",
+  "targetId": "getresponse",
+  "status": "superseded",
+  "steps": [
+    {
+      "id": "software-onboarding",
+      "definitionStepId": "software-onboarding",
+      "handler": "software-onboarding",
+      "label": "Software onboarding",
+      "status": "completed",
+      "required": true,
+      "failurePolicy": "block-workflow",
+      "attempt": 1,
+      "maxAttempts": 2,
+      "dependsOn": [],
+      "priority": "critical",
+      "config": {
+        "maxAutomaticRevisions": 1,
+        "expandFromContentPlan": false,
+        "expandKind": "none",
+        "stopAfterApproval": true,
+        "allowNormalizedFacts": true,
+        "optionalWhenBlocked": false,
+        "forceTransientFailOnce": false
+      },
+      "inputRefs": {},
+      "outputRefs": {
+        "softwareOnboardingRunId": "onboard-getresponse-1786624859615"
+      },
+      "blockers": [],
+      "warnings": [],
+      "startedAt": "2026-08-13T12:40:59.882Z",
+      "completedAt": "2026-08-13T12:40:59.910Z",
+      "revisionAttempts": 0
+    },
+    {
+      "id": "content-plan",
+      "definitionStepId": "content-plan",
+      "handler": "content-plan",
+      "label": "Content plan",
+      "status": "completed",
+      "required": true,
+      "failurePolicy": "block-workflow",
+      "attempt": 1,
+      "maxAttempts": 2,
+      "dependsOn": [
+        "software-onboarding"
+      ],
+      "priority": "high",
+      "config": {
+        "maxAutomaticRevisions": 1,
+        "expandFromContentPlan": false,
+        "expandKind": "none",
+        "stopAfterApproval": true,
+        "allowNormalizedFacts": true,
+        "optionalWhenBlocked": false,
+        "forceTransientFailOnce": false
+      },
+      "inputRefs": {},
+      "outputRefs": {
+        "softwareOnboardingRunId": "onboard-getresponse-1786624859615",
+        "comparisonTargets": "",
+        "pageCandidateCount": "3"
+      },
+      "blockers": [],
+      "warnings": [],
+      "startedAt": "2026-08-13T12:40:59.912Z",
+      "completedAt": "2026-08-13T12:40:59.947Z",
+      "revisionAttempts": 0
+    },
+    {
+      "id": "software-review",
+      "definitionStepId": "software-review",
+      "handler": "agent-run",
+      "label": "Software Review",
+      "status": "completed",
+      "required": true,
+      "failurePolicy": "block-workflow",
+      "attempt": 1,
+      "maxAttempts": 2,
+      "dependsOn": [
+        "content-plan"
+      ],
+      "priority": "high",
+      "config": {
+        "agentId": "software-review-agent",
+        "targetSlug": "getresponse",
+        "maxAutomaticRevisions": 1,
+        "expandFromContentPlan": false,
+        "expandKind": "none",
+        "stopAfterApproval": true,
+        "allowNormalizedFacts": true,
+        "optionalWhenBlocked": false,
+        "forceTransientFailOnce": false
+      },
+      "inputRefs": {},
+      "outputRefs": {
+        "draftId": "draft-deterministic-v1-software-review-agent-getresponse-2026-08-13T12-40-59-985Z",
+        "qaStatus": "pass",
+        "agentId": "software-review-agent",
+        "target": "getresponse"
+      },
+      "inputSnapshot": {
+        "researchFactIds": [
+          "fact-getresponse-identity.shortDescription-getresponse-identity-fixture",
+          "fact-getresponse-features.email-campaigns-getresponse-product-fixture",
+          "fact-getresponse-features.automation-workflows-getresponse-product-fixture",
+          "fact-getresponse-pricing.model-getresponse-pricing-fixture",
+          "fact-getresponse-product-positioning.summary-getresponse-identity-fixture"
+        ],
+        "methodologySlug": "email-marketing-editorial",
+        "methodologyVersion": "1.0.0",
+        "productUpdatedAt": "2026-08-13T12:40:59.617Z",
+        "agentVersion": "1.0.0",
+        "contextBuiltAt": "2026-08-13T12:40:59.981Z"
+      },
+      "blockers": [],
+      "warnings": [],
+      "agentTaskId": "exec-software-review-agent-getresponse-1786624859953",
+      "draftId": "draft-deterministic-v1-software-review-agent-getresponse-2026-08-13T12-40-59-985Z",
+      "startedAt": "2026-08-13T12:40:59.951Z",
+      "completedAt": "2026-08-13T12:40:59.992Z",
+      "revisionAttempts": 0
+    },
+    {
+      "id": "pricing-page",
+      "definitionStepId": "pricing-page",
+      "handler": "agent-run",
+      "label": "Pricing Page",
+      "status": "completed",
+      "required": false,
+      "failurePolicy": "continue-with-warning",
+      "attempt": 1,
+      "maxAttempts": 2,
+      "dependsOn": [
+        "content-plan"
+      ],
+      "priority": "normal",
+      "config": {
+        "agentId": "pricing-page-agent",
+        "targetSlug": "getresponse",
+        "maxAutomaticRevisions": 1,
+        "expandFromContentPlan": false,
+        "expandKind": "none",
+        "stopAfterApproval": true,
+        "allowNormalizedFacts": true,
+        "optionalWhenBlocked": true,
+        "forceTransientFailOnce": false
+      },
+      "inputRefs": {},
+      "outputRefs": {
+        "draftId": "draft-deterministic-v1-pricing-page-agent-getresponse-2026-08-13T12-41-00-036Z",
+        "qaStatus": "pass",
+        "agentId": "pricing-page-agent",
+        "target": "getresponse"
+      },
+      "inputSnapshot": {
+        "researchFactIds": [
+          "fact-getresponse-identity.shortDescription-getresponse-identity-fixture",
+          "fact-getresponse-features.email-campaigns-getresponse-product-fixture",
+          "fact-getresponse-features.automation-workflows-getresponse-product-fixture",
+          "fact-getresponse-pricing.model-getresponse-pricing-fixture",
+          "fact-getresponse-product-positioning.summary-getresponse-identity-fixture"
+        ],
+        "methodologySlug": "email-marketing-editorial",
+        "methodologyVersion": "1.0.0",
+        "productUpdatedAt": "2026-08-13T12:40:59.617Z",
+        "agentVersion": "1.0.0",
+        "contextBuiltAt": "2026-08-13T12:41:00.036Z"
+      },
+      "blockers": [],
+      "warnings": [],
+      "agentTaskId": "exec-pricing-page-agent-getresponse-1786624860030",
+      "draftId": "draft-deterministic-v1-pricing-page-agent-getresponse-2026-08-13T12-41-00-036Z",
+      "startedAt": "2026-08-13T12:41:00.029Z",
+      "completedAt": "2026-08-13T12:41:00.040Z",
+      "revisionAttempts": 0
+    },
+    {
+      "id": "alternatives",
+      "definitionStepId": "alternatives",
+      "handler": "agent-run",
+      "label": "Alternatives",
+      "status": "blocked",
+      "required": false,
+      "failurePolicy": "continue-with-warning",
+      "attempt": 1,
+      "maxAttempts": 2,
+      "dependsOn": [
+        "content-plan"
+      ],
+      "priority": "normal",
+      "config": {
+        "agentId": "alternatives-agent",
+        "targetSlug": "getresponse",
+        "maxAutomaticRevisions": 1,
+        "expandFromContentPlan": false,
+        "expandKind": "none",
+        "stopAfterApproval": true,
+        "allowNormalizedFacts": true,
+        "optionalWhenBlocked": true,
+        "forceTransientFailOnce": false
+      },
+      "inputRefs": {},
+      "outputRefs": {},
+      "blockers": [
+        "NO_APPROVED_ALTERNATIVES: Approved alternative relationships required — same-category alone is insufficient"
+      ],
+      "warnings": [
+        "NO_APPROVED_ALTERNATIVES: Approved alternative relationships required — same-category alone is insufficient"
+      ],
+      "startedAt": "2026-08-13T12:40:59.994Z",
+      "completedAt": "2026-08-13T12:41:00.005Z",
+      "revisionAttempts": 0
+    },
+    {
+      "id": "comparisons",
+      "definitionStepId": "comparisons",
+      "handler": "agent-run",
+      "label": "Comparisons",
+      "status": "blocked",
+      "required": false,
+      "failurePolicy": "continue-with-warning",
+      "attempt": 1,
+      "maxAttempts": 2,
+      "dependsOn": [
+        "content-plan"
+      ],
+      "priority": "normal",
+      "config": {
+        "agentId": "comparison-agent",
+        "maxAutomaticRevisions": 1,
+        "expandFromContentPlan": true,
+        "expandKind": "comparisons",
+        "stopAfterApproval": true,
+        "allowNormalizedFacts": false,
+        "optionalWhenBlocked": true,
+        "forceTransientFailOnce": false
+      },
+      "inputRefs": {},
+      "outputRefs": {},
+      "blockers": [
+        "MISSING_PRODUCTS: Comparison requires two product slugs"
+      ],
+      "warnings": [
+        "MISSING_PRODUCTS: Comparison requires two product slugs"
+      ],
+      "startedAt": "2026-08-13T12:41:00.013Z",
+      "completedAt": "2026-08-13T12:41:00.025Z",
+      "revisionAttempts": 0
+    },
+    {
+      "id": "internal-links",
+      "definitionStepId": "internal-links",
+      "handler": "internal-link",
+      "label": "Internal Link Plan",
+      "status": "completed",
+      "required": false,
+      "failurePolicy": "continue-with-warning",
+      "attempt": 1,
+      "maxAttempts": 2,
+      "dependsOn": [
+        "software-review"
+      ],
+      "priority": "low",
+      "config": {
+        "agentId": "internal-link-agent",
+        "maxAutomaticRevisions": 1,
+        "expandFromContentPlan": false,
+        "expandKind": "none",
+        "stopAfterApproval": true,
+        "allowNormalizedFacts": true,
+        "optionalWhenBlocked": false,
+        "forceTransientFailOnce": false
+      },
+      "inputRefs": {},
+      "outputRefs": {
+        "draftId": "draft-deterministic-v1-internal-link-agent-getresponse-2026-08-13T12-41-00-063Z",
+        "qaStatus": "pass",
+        "agentId": "internal-link-agent",
+        "target": "getresponse"
+      },
+      "inputSnapshot": {
+        "researchFactIds": [
+          "fact-getresponse-identity.shortDescription-getresponse-identity-fixture",
+          "fact-getresponse-features.email-campaigns-getresponse-product-fixture",
+          "fact-getresponse-features.automation-workflows-getresponse-product-fixture",
+          "fact-getresponse-pricing.model-getresponse-pricing-fixture",
+          "fact-getresponse-product-positioning.summary-getresponse-identity-fixture"
+        ],
+        "methodologySlug": "email-marketing-editorial",
+        "methodologyVersion": "1.0.0",
+        "productUpdatedAt": "2026-08-13T12:40:59.617Z",
+        "agentVersion": "1.0.0",
+        "contextBuiltAt": "2026-08-13T12:41:00.063Z"
+      },
+      "blockers": [],
+      "warnings": [],
+      "agentTaskId": "exec-internal-link-agent-getresponse-1786624860046",
+      "draftId": "draft-deterministic-v1-internal-link-agent-getresponse-2026-08-13T12-41-00-063Z",
+      "startedAt": "2026-08-13T12:41:00.045Z",
+      "completedAt": "2026-08-13T12:41:00.070Z",
+      "revisionAttempts": 0
+    },
+    {
+      "id": "finder-readiness",
+      "definitionStepId": "finder-readiness",
+      "handler": "update-recommendation-readiness",
+      "label": "Finder readiness",
+      "status": "completed",
+      "required": false,
+      "failurePolicy": "continue",
+      "attempt": 1,
+      "maxAttempts": 2,
+      "dependsOn": [
+        "content-plan"
+      ],
+      "priority": "low",
+      "config": {
+        "maxAutomaticRevisions": 1,
+        "expandFromContentPlan": false,
+        "expandKind": "none",
+        "stopAfterApproval": true,
+        "allowNormalizedFacts": true,
+        "optionalWhenBlocked": false,
+        "forceTransientFailOnce": false
+      },
+      "inputRefs": {},
+      "outputRefs": {
+        "finderReadiness": "checked"
+      },
+      "blockers": [],
+      "warnings": [],
+      "startedAt": "2026-08-13T12:41:00.042Z",
+      "completedAt": "2026-08-13T12:41:00.043Z",
+      "revisionAttempts": 0
+    },
+    {
+      "id": "editorial-approval",
+      "definitionStepId": "editorial-approval",
+      "handler": "approval-check",
+      "label": "Editorial approval",
+      "status": "waiting",
+      "required": true,
+      "failurePolicy": "manual-review",
+      "attempt": 1,
+      "maxAttempts": 2,
+      "dependsOn": [
+        "software-review"
+      ],
+      "priority": "critical",
+      "config": {
+        "approvalType": "editorial",
+        "maxAutomaticRevisions": 1,
+        "expandFromContentPlan": false,
+        "expandKind": "none",
+        "stopAfterApproval": true,
+        "allowNormalizedFacts": true,
+        "optionalWhenBlocked": false,
+        "forceTransientFailOnce": false
+      },
+      "inputRefs": {},
+      "outputRefs": {
+        "approvalId": "appr-wf-software-onboarding-content-getresponse-1786624859652-software-review",
+        "draftId": "draft-deterministic-v1-software-review-agent-getresponse-2026-08-13T12-40-59-985Z"
+      },
+      "blockers": [],
+      "warnings": [],
+      "approvalId": "appr-wf-software-onboarding-content-getresponse-1786624859652-software-review",
+      "startedAt": "2026-08-13T12:41:00.075Z",
+      "completedAt": "2026-08-13T12:41:00.118Z",
+      "revisionAttempts": 0
+    },
+    {
+      "id": "pre-publish-validation",
+      "definitionStepId": "pre-publish-validation",
+      "handler": "pre-publish-validation",
+      "label": "Pre-publish validation",
+      "status": "pending",
+      "required": true,
+      "failurePolicy": "block-workflow",
+      "attempt": 0,
+      "maxAttempts": 2,
+      "dependsOn": [
+        "editorial-approval"
+      ],
+      "priority": "critical",
+      "config": {
+        "maxAutomaticRevisions": 1,
+        "expandFromContentPlan": false,
+        "expandKind": "none",
+        "stopAfterApproval": true,
+        "allowNormalizedFacts": true,
+        "optionalWhenBlocked": false,
+        "forceTransientFailOnce": false
+      },
+      "inputRefs": {},
+      "outputRefs": {},
+      "blockers": [],
+      "warnings": [],
+      "revisionAttempts": 0
+    }
+  ],
+  "history": [
+    {
+      "at": "2026-08-13T12:40:59.874Z",
+      "event": "workflow_created",
+      "message": "Created software-onboarding-content:v1.0.0"
+    },
+    {
+      "at": "2026-08-13T12:40:59.878Z",
+      "event": "workflow_started",
+      "message": "Workflow execution started"
+    },
+    {
+      "at": "2026-08-13T12:40:59.882Z",
+      "event": "workflow_step_started",
+      "stepId": "software-onboarding",
+      "message": "Started Software onboarding"
+    },
+    {
+      "at": "2026-08-13T12:40:59.910Z",
+      "event": "workflow_step_completed",
+      "stepId": "software-onboarding",
+      "message": "Reused onboarding run onboard-getresponse-1786624859615 (review-required)"
+    },
+    {
+      "at": "2026-08-13T12:40:59.911Z",
+      "event": "workflow_step_started",
+      "stepId": "content-plan",
+      "message": "Started Content plan"
+    },
+    {
+      "at": "2026-08-13T12:40:59.947Z",
+      "event": "workflow_step_completed",
+      "stepId": "content-plan",
+      "message": "Content plan from onboarding onboard-getresponse-1786624859615 (3 candidates)"
+    },
+    {
+      "at": "2026-08-13T12:40:59.951Z",
+      "event": "workflow_step_started",
+      "stepId": "software-review",
+      "message": "Started Software Review"
+    },
+    {
+      "at": "2026-08-13T12:40:59.992Z",
+      "event": "workflow_step_completed",
+      "stepId": "software-review",
+      "message": "Agent software-review-agent → draft draft-deterministic-v1-software-review-agent-getresponse-2026-08-13T12-40-59-985Z (qa=pass)"
+    },
+    {
+      "at": "2026-08-13T12:40:59.993Z",
+      "event": "workflow_step_started",
+      "stepId": "alternatives",
+      "message": "Started Alternatives"
+    },
+    {
+      "at": "2026-08-13T12:41:00.005Z",
+      "event": "workflow_step_completed",
+      "stepId": "alternatives",
+      "message": "Agent blocked (optional): NO_APPROVED_ALTERNATIVES: Approved alternative relationships required — same-category alone is insufficient"
+    },
+    {
+      "at": "2026-08-13T12:41:00.012Z",
+      "event": "workflow_step_started",
+      "stepId": "comparisons",
+      "message": "Started Comparisons"
+    },
+    {
+      "at": "2026-08-13T12:41:00.025Z",
+      "event": "workflow_step_completed",
+      "stepId": "comparisons",
+      "message": "Agent blocked (optional): MISSING_PRODUCTS: Comparison requires two product slugs"
+    },
+    {
+      "at": "2026-08-13T12:41:00.028Z",
+      "event": "workflow_step_started",
+      "stepId": "pricing-page",
+      "message": "Started Pricing Page"
+    },
+    {
+      "at": "2026-08-13T12:41:00.040Z",
+      "event": "workflow_step_completed",
+      "stepId": "pricing-page",
+      "message": "Agent pricing-page-agent → draft draft-deterministic-v1-pricing-page-agent-getresponse-2026-08-13T12-41-00-036Z (qa=pass)"
+    },
+    {
+      "at": "2026-08-13T12:41:00.042Z",
+      "event": "workflow_step_started",
+      "stepId": "finder-readiness",
+      "message": "Started Finder readiness"
+    },
+    {
+      "at": "2026-08-13T12:41:00.043Z",
+      "event": "workflow_step_completed",
+      "stepId": "finder-readiness",
+      "message": "Finder readiness noted for getresponse"
+    },
+    {
+      "at": "2026-08-13T12:41:00.044Z",
+      "event": "workflow_step_started",
+      "stepId": "internal-links",
+      "message": "Started Internal Link Plan"
+    },
+    {
+      "at": "2026-08-13T12:41:00.070Z",
+      "event": "workflow_step_completed",
+      "stepId": "internal-links",
+      "message": "Agent internal-link-agent → draft draft-deterministic-v1-internal-link-agent-getresponse-2026-08-13T12-41-00-063Z (qa=pass)"
+    },
+    {
+      "at": "2026-08-13T12:41:00.075Z",
+      "event": "workflow_step_started",
+      "stepId": "editorial-approval",
+      "message": "Started Editorial approval"
+    },
+    {
+      "at": "2026-08-13T12:41:00.118Z",
+      "event": "workflow_step_completed",
+      "stepId": "editorial-approval",
+      "message": "WAITING FOR EDITORIAL APPROVAL (appr-wf-software-onboarding-content-getresponse-1786624859652-software-review)"
+    }
+  ],
+  "options": {
+    "generateReview": true,
+    "generatePricing": true,
+    "generateAlternatives": true,
+    "generateComparisons": true,
+    "runInternalLinks": true,
+    "stopAfterApproval": true,
+    "allowNormalizedFacts": true,
+    "dryRun": false,
+    "maxComparisons": 3,
+    "skipOnboarding": false
+  },
+  "supersededBy": "wf-software-onboarding-content-getresponse-1786624895278",
+  "warnings": [
+    "alternatives blocked: NO_APPROVED_ALTERNATIVES: Approved alternative relationships required — same-category alone is insufficient",
+    "comparisons blocked: MISSING_PRODUCTS: Comparison requires two product slugs"
+  ],
+  "createdAt": "2026-08-13T12:40:59.874Z",
+  "updatedAt": "2026-08-13T12:41:35.379Z"
+}

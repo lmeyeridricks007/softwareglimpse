@@ -1,0 +1,258 @@
+{
+  "id": "wf-single-content-generation-how-sales-intelligence-works-1786952100575",
+  "workflowId": "single-content-generation",
+  "workflowVersion": "1.0.0",
+  "name": "Single Content Generation: how-sales-intelligence-works",
+  "targetType": "content",
+  "targetId": "how-sales-intelligence-works",
+  "status": "completed",
+  "steps": [
+    {
+      "id": "content-readiness",
+      "definitionStepId": "content-readiness",
+      "handler": "noop",
+      "label": "Content readiness",
+      "status": "completed",
+      "required": true,
+      "failurePolicy": "block-workflow",
+      "attempt": 1,
+      "maxAttempts": 2,
+      "dependsOn": [],
+      "priority": "high",
+      "config": {
+        "maxAutomaticRevisions": 1,
+        "expandFromContentPlan": false,
+        "expandKind": "none",
+        "stopAfterApproval": true,
+        "allowNormalizedFacts": false,
+        "optionalWhenBlocked": false,
+        "forceTransientFailOnce": false
+      },
+      "inputRefs": {},
+      "outputRefs": {},
+      "blockers": [],
+      "warnings": [],
+      "startedAt": "2026-08-17T08:05:19.575Z",
+      "completedAt": "2026-08-17T08:05:19.577Z",
+      "revisionAttempts": 0
+    },
+    {
+      "id": "generate",
+      "definitionStepId": "generate",
+      "handler": "agent-run",
+      "label": "Generate content",
+      "status": "completed",
+      "required": true,
+      "failurePolicy": "block-workflow",
+      "attempt": 1,
+      "maxAttempts": 2,
+      "dependsOn": [
+        "content-readiness"
+      ],
+      "priority": "high",
+      "config": {
+        "agentId": "guide-agent",
+        "targetSlug": "how-sales-intelligence-works",
+        "maxAutomaticRevisions": 1,
+        "expandFromContentPlan": false,
+        "expandKind": "none",
+        "stopAfterApproval": true,
+        "allowNormalizedFacts": false,
+        "optionalWhenBlocked": false,
+        "forceTransientFailOnce": false
+      },
+      "inputRefs": {},
+      "outputRefs": {
+        "draftId": "draft-deterministic-v1-guide-agent-how-sales-intelligence-works-2026-08-17T08-05-19-633Z",
+        "qaStatus": "pass",
+        "agentId": "guide-agent",
+        "target": "how-sales-intelligence-works"
+      },
+      "inputSnapshot": {
+        "researchFactIds": [],
+        "methodologySlug": "sales-intelligence-editorial",
+        "methodologyVersion": "1.0.0",
+        "agentVersion": "1.0.0",
+        "contextBuiltAt": "2026-08-17T08:05:19.629Z"
+      },
+      "blockers": [],
+      "warnings": [],
+      "agentTaskId": "exec-guide-agent-how-sales-intelligence-works-1786953919581",
+      "draftId": "draft-deterministic-v1-guide-agent-how-sales-intelligence-works-2026-08-17T08-05-19-633Z",
+      "startedAt": "2026-08-17T08:05:19.580Z",
+      "completedAt": "2026-08-17T08:05:19.639Z",
+      "revisionAttempts": 0
+    },
+    {
+      "id": "editorial-approval",
+      "definitionStepId": "editorial-approval",
+      "handler": "approval-check",
+      "label": "Editorial approval",
+      "status": "completed",
+      "required": true,
+      "failurePolicy": "manual-review",
+      "attempt": 2,
+      "maxAttempts": 2,
+      "dependsOn": [
+        "generate"
+      ],
+      "priority": "critical",
+      "config": {
+        "approvalType": "editorial",
+        "maxAutomaticRevisions": 1,
+        "expandFromContentPlan": false,
+        "expandKind": "none",
+        "stopAfterApproval": true,
+        "allowNormalizedFacts": false,
+        "optionalWhenBlocked": false,
+        "forceTransientFailOnce": false
+      },
+      "inputRefs": {},
+      "outputRefs": {
+        "approvalId": "appr-wf-single-content-generation-how-sales-intelligence-works-1786952100575-generate",
+        "draftId": "draft-deterministic-v1-guide-agent-how-sales-intelligence-works-2026-08-17T08-05-19-633Z",
+        "approvalIds": "appr-wf-single-content-generation-how-sales-intelligence-works-1786952100575-generate"
+      },
+      "blockers": [],
+      "warnings": [
+        "Approval received — resuming"
+      ],
+      "approvalId": "appr-wf-single-content-generation-how-sales-intelligence-works-1786952100575-generate",
+      "startedAt": "2026-08-17T08:07:41.540Z",
+      "completedAt": "2026-08-17T08:07:41.600Z",
+      "revisionAttempts": 0
+    },
+    {
+      "id": "pre-publish-validation",
+      "definitionStepId": "pre-publish-validation",
+      "handler": "pre-publish-validation",
+      "label": "Pre-publish validation",
+      "status": "completed",
+      "required": true,
+      "failurePolicy": "block-workflow",
+      "attempt": 1,
+      "maxAttempts": 2,
+      "dependsOn": [
+        "editorial-approval"
+      ],
+      "priority": "critical",
+      "config": {
+        "maxAutomaticRevisions": 1,
+        "expandFromContentPlan": false,
+        "expandKind": "none",
+        "stopAfterApproval": true,
+        "allowNormalizedFacts": false,
+        "optionalWhenBlocked": false,
+        "forceTransientFailOnce": false
+      },
+      "inputRefs": {},
+      "outputRefs": {
+        "publishState": "READY_TO_PUBLISH"
+      },
+      "blockers": [],
+      "warnings": [
+        "stopAfterApproval: workflow will not publish automatically"
+      ],
+      "startedAt": "2026-08-17T08:07:41.601Z",
+      "completedAt": "2026-08-17T08:07:41.654Z",
+      "revisionAttempts": 0
+    }
+  ],
+  "history": [
+    {
+      "at": "2026-08-17T07:35:02.259Z",
+      "event": "workflow_created",
+      "message": "Created single-content-generation:v1.0.0"
+    },
+    {
+      "at": "2026-08-17T08:05:19.571Z",
+      "event": "workflow_started",
+      "message": "Workflow execution started"
+    },
+    {
+      "at": "2026-08-17T08:05:19.575Z",
+      "event": "workflow_step_started",
+      "stepId": "content-readiness",
+      "message": "Started Content readiness"
+    },
+    {
+      "at": "2026-08-17T08:05:19.577Z",
+      "event": "workflow_step_completed",
+      "stepId": "content-readiness",
+      "message": "No-op step completed"
+    },
+    {
+      "at": "2026-08-17T08:05:19.580Z",
+      "event": "workflow_step_started",
+      "stepId": "generate",
+      "message": "Started Generate content"
+    },
+    {
+      "at": "2026-08-17T08:05:19.639Z",
+      "event": "workflow_step_completed",
+      "stepId": "generate",
+      "message": "Agent guide-agent → draft draft-deterministic-v1-guide-agent-how-sales-intelligence-works-2026-08-17T08-05-19-633Z (qa=pass)"
+    },
+    {
+      "at": "2026-08-17T08:05:19.643Z",
+      "event": "workflow_step_started",
+      "stepId": "editorial-approval",
+      "message": "Started Editorial approval"
+    },
+    {
+      "at": "2026-08-17T08:05:19.761Z",
+      "event": "workflow_step_completed",
+      "stepId": "editorial-approval",
+      "message": "WAITING FOR EDITORIAL APPROVAL (appr-wf-single-content-generation-how-sales-intelligence-works-1786952100575-generate)"
+    },
+    {
+      "at": "2026-08-17T08:07:41.538Z",
+      "event": "workflow_resumed",
+      "message": "Workflow resumed"
+    },
+    {
+      "at": "2026-08-17T08:07:41.539Z",
+      "event": "workflow_started",
+      "message": "Workflow execution started"
+    },
+    {
+      "at": "2026-08-17T08:07:41.540Z",
+      "event": "workflow_step_started",
+      "stepId": "editorial-approval",
+      "message": "Started Editorial approval"
+    },
+    {
+      "at": "2026-08-17T08:07:41.600Z",
+      "event": "workflow_step_completed",
+      "stepId": "editorial-approval",
+      "message": "Required editorial approvals satisfied"
+    },
+    {
+      "at": "2026-08-17T08:07:41.601Z",
+      "event": "workflow_step_started",
+      "stepId": "pre-publish-validation",
+      "message": "Started Pre-publish validation"
+    },
+    {
+      "at": "2026-08-17T08:07:41.654Z",
+      "event": "workflow_step_completed",
+      "stepId": "pre-publish-validation",
+      "message": "Pre-publish validation passed — READY TO PUBLISH (manual)"
+    },
+    {
+      "at": "2026-08-17T08:07:41.655Z",
+      "event": "workflow_completed",
+      "message": "Workflow completed"
+    }
+  ],
+  "options": {
+    "agentId": "guide-agent",
+    "targetSlug": "how-sales-intelligence-works",
+    "productIds": [],
+    "categoryIds": [],
+    "allowNormalizedFacts": false
+  },
+  "warnings": [],
+  "createdAt": "2026-08-17T07:35:02.258Z",
+  "updatedAt": "2026-08-17T08:07:41.655Z"
+}

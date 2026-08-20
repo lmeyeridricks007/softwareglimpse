@@ -1,0 +1,165 @@
+{
+  "id": "assessment-heroku-it-v1",
+  "productSlug": "heroku",
+  "methodologySlug": "it-development-editorial",
+  "methodologyVersion": "1.0.0",
+  "status": "approved",
+  "verdict": "Heroku: Choose Heroku when Salesforce-backed Cedar dynos with a Basic $7 always-on floor are the job — not Render by default, and not Eco sleep as production TCO. Scores use the IT & Development editorial methodology from first-party research as of 2026-08-18 — not hands-on product testing.",
+  "strengths": [
+    "Basic $7 always-on floor documented separately from Eco sleep",
+    "Mature add-on / dyno ladder",
+    "Salesforce-backed PaaS identity",
+    "Same-cluster peer of Render / Railway / Fly.io",
+    "Clear Standard/Performance scale path"
+  ],
+  "weaknesses": [
+    "Does not outrank Render",
+    "Eco sleeps after 30 min — easy TCO trap",
+    "No forever-free dyno",
+    "AI is not the product",
+    "Not managed WordPress"
+  ],
+  "bestFor": [
+    "Teams that want Salesforce-backed Cedar dynos with a published Basic $7 always-on floor",
+    "Buyers comparing Heroku Basic to Railway Hobby/Pro and Render Pro $25",
+    "Orgs that will not treat Eco sleep dynos as production always-on TCO"
+  ],
+  "notIdealFor": [
+    "Teams that need a forever-free dyno or Hobby-credit evaluation path",
+    "Managed WordPress buyers (WP Engine) — landscape only",
+    "ITSM or observability purchases"
+  ],
+  "tradeoffs": [
+    "Per-agent vs per-host vs per-seat vs per-GB pricing models",
+    "Module stacking and consumption overages vs single-SKU floors",
+    "Free tiers vs enterprise SSO/audit gates",
+    "Landscape-adjacent tools vs primary job-cluster peers on best pages"
+  ],
+  "recommendation": "Choose Heroku when Salesforce-backed Cedar dynos with a Basic $7 always-on floor are the job — not Render by default, and not Eco sleep as production TCO. Compare Render for the cloud-paas award path; Railway for credited Hobby/Pro workspaces; Fly.io for PAYG microVMs.",
+  "editorialNotes": "IT gap-fill PaaS + incident batch. Approved on it-development-editorial v1.0.0. membershipRole=primary. jobCluster=cloud-paas. handsOnTesting=false. Affiliate economics excluded.",
+  "handsOnTesting": false,
+  "confidence": "medium",
+  "criterionAssessments": [
+    {
+      "criterionSlug": "ease-of-use",
+      "score": 8,
+      "rationale": "Classic git-push dyno UX remains approachable; Salesforce packaging is familiar to many teams. Not a lab test.",
+      "supportingFactIds": [
+        "fact-heroku-features.cloud-paas",
+        "fact-heroku-pricing.model"
+      ],
+      "confidence": "medium",
+      "status": "approved",
+      "reviewedAt": "2026-08-18T22:00:00.000Z",
+      "reviewer": "editorial"
+    },
+    {
+      "criterionSlug": "it-job-fit",
+      "score": 9,
+      "rationale": "Cloud PaaS / app platform — ranked with Render, Railway, and Fly.io, not WP Engine managed WordPress.",
+      "supportingFactIds": [
+        "fact-heroku-features.cloud-paas",
+        "fact-heroku-pricing.model"
+      ],
+      "confidence": "medium",
+      "status": "approved",
+      "reviewedAt": "2026-08-18T22:00:00.000Z",
+      "reviewer": "editorial"
+    },
+    {
+      "criterionSlug": "workflow-depth",
+      "score": 8,
+      "rationale": "Dynos, add-ons, and pipelines cover the PaaS job; not a Kubernetes control plane.",
+      "supportingFactIds": [
+        "fact-heroku-features.cicd-actions",
+        "fact-heroku-pricing.model"
+      ],
+      "confidence": "medium",
+      "status": "approved",
+      "reviewedAt": "2026-08-18T22:00:00.000Z",
+      "reviewer": "editorial"
+    },
+    {
+      "criterionSlug": "integrations",
+      "score": 8,
+      "rationale": "GitHub/API plus a mature add-on marketplace cover app-platform workflows.",
+      "supportingFactIds": [
+        "fact-heroku-features.analytics-reporting",
+        "fact-heroku-pricing.model",
+        "fact-heroku-positioning.vendorClaim"
+      ],
+      "confidence": "medium",
+      "status": "approved",
+      "reviewedAt": "2026-08-18T22:00:00.000Z",
+      "reviewer": "editorial"
+    },
+    {
+      "criterionSlug": "admin-security",
+      "score": 8,
+      "rationale": "Salesforce-backed org controls are solid for mid-market PaaS; held at 8.",
+      "supportingFactIds": [
+        "fact-heroku-features.enterprise-security",
+        "fact-heroku-pricing.model"
+      ],
+      "confidence": "medium",
+      "status": "approved",
+      "reviewedAt": "2026-08-18T22:00:00.000Z",
+      "reviewer": "editorial"
+    },
+    {
+      "criterionSlug": "scalability",
+      "score": 8,
+      "rationale": "Standard/Performance dynos scale; not an unlimited Kubernetes estate story.",
+      "supportingFactIds": [
+        "fact-heroku-pricing.plans.eco",
+        "fact-heroku-pricing.model",
+        "fact-heroku-pricing.plans.performance-m"
+      ],
+      "confidence": "medium",
+      "status": "approved",
+      "reviewedAt": "2026-08-18T22:00:00.000Z",
+      "reviewer": "editorial"
+    },
+    {
+      "criterionSlug": "value-for-money",
+      "score": 7,
+      "rationale": "Basic $7 always-on is clear, but Eco sleep traps and Standard/Performance steps weaken value versus Railway Hobby $5 / Render Pro. Affiliate economics excluded.",
+      "supportingFactIds": [
+        "fact-heroku-pricing.hasFreePlan",
+        "fact-heroku-pricing.model",
+        "fact-heroku-pricing.startingPriceMonthly"
+      ],
+      "confidence": "medium",
+      "status": "approved",
+      "reviewedAt": "2026-08-18T22:00:00.000Z",
+      "reviewer": "editorial"
+    },
+    {
+      "criterionSlug": "ai-capabilities",
+      "score": 5,
+      "rationale": "No meaningful ITSM/dev AI copilot — scored low on purpose.",
+      "supportingFactIds": [
+        "fact-heroku-features.dev-ai",
+        "fact-heroku-pricing.model"
+      ],
+      "confidence": "medium",
+      "status": "approved",
+      "reviewedAt": "2026-08-18T22:00:00.000Z",
+      "reviewer": "editorial"
+    }
+  ],
+  "overallScore": 7.7,
+  "overallScoreRationale": "Weighted average of the eight IT editorial criteria using category weights (IT job fit 16, workflow depth 14, ease of use 12, integrations 12, admin/security 12, value 12, AI 12, scalability 10), rounded to 1 decimal. Products are scored inside their job cluster — ITSM, observability, source control, hosting panels, and web-data platforms are not forced into one undifferentiated ranking. Not a hands-on lab score, and affiliate economics are excluded.",
+  "scoreAudit": [
+    {
+      "at": "2026-08-18T22:00:00.000Z",
+      "actor": "editorial",
+      "change": "IT gap-fill PaaS + incident onboarding; approved IT criteria with category weights; handsOnTesting=false",
+      "nextOverall": 7.7
+    }
+  ],
+  "reviewedAt": "2026-08-18T22:00:00.000Z",
+  "reviewer": "editorial",
+  "createdAt": "2026-08-18T22:00:00.000Z",
+  "updatedAt": "2026-08-18T22:00:00.000Z"
+}

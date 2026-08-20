@@ -1,0 +1,638 @@
+{
+  "id": "wf-software-onboarding-content-navan-1787140763412",
+  "workflowId": "software-onboarding-content",
+  "workflowVersion": "1.0.0",
+  "name": "Software Onboarding Content: navan",
+  "targetType": "software",
+  "targetId": "navan",
+  "status": "completed-with-warnings",
+  "steps": [
+    {
+      "id": "software-onboarding",
+      "definitionStepId": "software-onboarding",
+      "handler": "software-onboarding",
+      "label": "Software onboarding",
+      "status": "completed",
+      "required": true,
+      "failurePolicy": "block-workflow",
+      "attempt": 1,
+      "maxAttempts": 2,
+      "dependsOn": [],
+      "priority": "critical",
+      "config": {
+        "maxAutomaticRevisions": 1,
+        "expandFromContentPlan": false,
+        "expandKind": "none",
+        "stopAfterApproval": true,
+        "allowNormalizedFacts": false,
+        "optionalWhenBlocked": false,
+        "forceTransientFailOnce": false
+      },
+      "inputRefs": {},
+      "outputRefs": {
+        "softwareOnboardingRunId": "onboard-navan-1787140448043"
+      },
+      "blockers": [],
+      "warnings": [
+        "Onboarding run exists but status=blocked"
+      ],
+      "startedAt": "2026-08-19T11:59:24.555Z",
+      "completedAt": "2026-08-19T11:59:24.625Z",
+      "revisionAttempts": 0
+    },
+    {
+      "id": "content-plan",
+      "definitionStepId": "content-plan",
+      "handler": "content-plan",
+      "label": "Content plan",
+      "status": "completed",
+      "required": true,
+      "failurePolicy": "block-workflow",
+      "attempt": 1,
+      "maxAttempts": 2,
+      "dependsOn": [
+        "software-onboarding"
+      ],
+      "priority": "high",
+      "config": {
+        "maxAutomaticRevisions": 1,
+        "expandFromContentPlan": false,
+        "expandKind": "none",
+        "stopAfterApproval": true,
+        "allowNormalizedFacts": false,
+        "optionalWhenBlocked": false,
+        "forceTransientFailOnce": false
+      },
+      "inputRefs": {},
+      "outputRefs": {
+        "softwareOnboardingRunId": "onboard-navan-1787140448043",
+        "comparisonTargets": "",
+        "pageCandidateCount": "0"
+      },
+      "blockers": [],
+      "warnings": [],
+      "startedAt": "2026-08-19T11:59:24.627Z",
+      "completedAt": "2026-08-19T11:59:24.684Z",
+      "revisionAttempts": 0
+    },
+    {
+      "id": "software-review",
+      "definitionStepId": "software-review",
+      "handler": "agent-run",
+      "label": "Software Review",
+      "status": "completed",
+      "required": true,
+      "failurePolicy": "block-workflow",
+      "attempt": 1,
+      "maxAttempts": 2,
+      "dependsOn": [
+        "content-plan"
+      ],
+      "priority": "high",
+      "config": {
+        "agentId": "software-review-agent",
+        "targetSlug": "navan",
+        "maxAutomaticRevisions": 1,
+        "expandFromContentPlan": false,
+        "expandKind": "none",
+        "stopAfterApproval": true,
+        "allowNormalizedFacts": false,
+        "optionalWhenBlocked": false,
+        "forceTransientFailOnce": false
+      },
+      "inputRefs": {},
+      "outputRefs": {
+        "draftId": "draft-deterministic-v1-software-review-agent-navan-2026-08-19T11-59-25-209Z",
+        "qaStatus": "pass",
+        "agentId": "software-review-agent",
+        "target": "navan"
+      },
+      "inputSnapshot": {
+        "researchFactIds": [
+          "fact-navan-identity.shortDescription",
+          "fact-navan-positioning.vendorClaim",
+          "fact-navan-positioning.jobCluster",
+          "fact-navan-pricing.model",
+          "fact-navan-pricing.hasFreePlan",
+          "fact-navan-pricing.hasFreeTrial",
+          "fact-navan-positioning.membershipRole",
+          "fact-navan-pricing.plans.enterprise",
+          "fact-navan-features.applicant-tracking",
+          "fact-navan-features.career-site-job-boards",
+          "fact-navan-features.interview-scheduling",
+          "fact-navan-features.core-hris",
+          "fact-navan-features.payroll-processing",
+          "fact-navan-features.benefits-admin",
+          "fact-navan-features.workforce-scheduling",
+          "fact-navan-features.frontline-comms",
+          "fact-navan-features.time-attendance",
+          "fact-navan-features.gps-geofence-clockin",
+          "fact-navan-features.sop-knowledge-base",
+          "fact-navan-features.employee-training-paths",
+          "fact-navan-features.lms-course-commerce",
+          "fact-navan-features.hris-integrations",
+          "fact-navan-features.analytics-reporting",
+          "fact-navan-features.ai-assistance"
+        ],
+        "methodologySlug": "hr-editorial",
+        "methodologyVersion": "1.0.0",
+        "agentVersion": "1.0.0",
+        "contextBuiltAt": "2026-08-19T11:59:25.001Z"
+      },
+      "blockers": [],
+      "warnings": [],
+      "agentTaskId": "exec-software-review-agent-navan-1787140764687",
+      "draftId": "draft-deterministic-v1-software-review-agent-navan-2026-08-19T11-59-25-209Z",
+      "startedAt": "2026-08-19T11:59:24.685Z",
+      "completedAt": "2026-08-19T11:59:25.253Z",
+      "revisionAttempts": 0
+    },
+    {
+      "id": "pricing-page",
+      "definitionStepId": "pricing-page",
+      "handler": "agent-run",
+      "label": "Pricing Page",
+      "status": "blocked",
+      "required": false,
+      "failurePolicy": "continue-with-warning",
+      "attempt": 1,
+      "maxAttempts": 2,
+      "dependsOn": [
+        "content-plan"
+      ],
+      "priority": "normal",
+      "config": {
+        "agentId": "pricing-page-agent",
+        "targetSlug": "navan",
+        "maxAutomaticRevisions": 1,
+        "expandFromContentPlan": false,
+        "expandKind": "none",
+        "stopAfterApproval": true,
+        "allowNormalizedFacts": false,
+        "optionalWhenBlocked": true,
+        "forceTransientFailOnce": false
+      },
+      "inputRefs": {},
+      "outputRefs": {},
+      "blockers": [
+        "PRICING_UNVERIFIED: Product pricing data is unverified"
+      ],
+      "warnings": [
+        "PRICING_UNVERIFIED: Product pricing data is unverified"
+      ],
+      "startedAt": "2026-08-19T11:59:25.459Z",
+      "completedAt": "2026-08-19T11:59:25.531Z",
+      "revisionAttempts": 0
+    },
+    {
+      "id": "alternatives",
+      "definitionStepId": "alternatives",
+      "handler": "agent-run",
+      "label": "Alternatives",
+      "status": "blocked",
+      "required": false,
+      "failurePolicy": "continue-with-warning",
+      "attempt": 1,
+      "maxAttempts": 2,
+      "dependsOn": [
+        "content-plan"
+      ],
+      "priority": "normal",
+      "config": {
+        "agentId": "alternatives-agent",
+        "targetSlug": "navan",
+        "maxAutomaticRevisions": 1,
+        "expandFromContentPlan": false,
+        "expandKind": "none",
+        "stopAfterApproval": true,
+        "allowNormalizedFacts": false,
+        "optionalWhenBlocked": true,
+        "forceTransientFailOnce": false
+      },
+      "inputRefs": {},
+      "outputRefs": {},
+      "blockers": [
+        "NO_APPROVED_ALTERNATIVES: Approved alternative relationships required — same-category alone is insufficient"
+      ],
+      "warnings": [
+        "NO_APPROVED_ALTERNATIVES: Approved alternative relationships required — same-category alone is insufficient"
+      ],
+      "startedAt": "2026-08-19T11:59:25.264Z",
+      "completedAt": "2026-08-19T11:59:25.372Z",
+      "revisionAttempts": 0
+    },
+    {
+      "id": "comparisons",
+      "definitionStepId": "comparisons",
+      "handler": "agent-run",
+      "label": "Comparisons",
+      "status": "blocked",
+      "required": false,
+      "failurePolicy": "continue-with-warning",
+      "attempt": 1,
+      "maxAttempts": 2,
+      "dependsOn": [
+        "content-plan"
+      ],
+      "priority": "normal",
+      "config": {
+        "agentId": "comparison-agent",
+        "maxAutomaticRevisions": 1,
+        "expandFromContentPlan": true,
+        "expandKind": "comparisons",
+        "stopAfterApproval": true,
+        "allowNormalizedFacts": false,
+        "optionalWhenBlocked": true,
+        "forceTransientFailOnce": false
+      },
+      "inputRefs": {},
+      "outputRefs": {},
+      "blockers": [
+        "MISSING_PRODUCTS: Comparison requires two product slugs"
+      ],
+      "warnings": [
+        "MISSING_PRODUCTS: Comparison requires two product slugs"
+      ],
+      "startedAt": "2026-08-19T11:59:25.375Z",
+      "completedAt": "2026-08-19T11:59:25.451Z",
+      "revisionAttempts": 0
+    },
+    {
+      "id": "internal-links",
+      "definitionStepId": "internal-links",
+      "handler": "internal-link",
+      "label": "Internal Link Plan",
+      "status": "completed",
+      "required": false,
+      "failurePolicy": "continue-with-warning",
+      "attempt": 1,
+      "maxAttempts": 2,
+      "dependsOn": [
+        "software-review"
+      ],
+      "priority": "low",
+      "config": {
+        "agentId": "internal-link-agent",
+        "maxAutomaticRevisions": 1,
+        "expandFromContentPlan": false,
+        "expandKind": "none",
+        "stopAfterApproval": true,
+        "allowNormalizedFacts": false,
+        "optionalWhenBlocked": false,
+        "forceTransientFailOnce": false
+      },
+      "inputRefs": {},
+      "outputRefs": {
+        "draftId": "draft-deterministic-v1-internal-link-agent-navan-2026-08-19T11-59-25-610Z",
+        "qaStatus": "pass",
+        "agentId": "internal-link-agent",
+        "target": "navan"
+      },
+      "inputSnapshot": {
+        "researchFactIds": [
+          "fact-navan-identity.shortDescription",
+          "fact-navan-positioning.vendorClaim",
+          "fact-navan-positioning.jobCluster",
+          "fact-navan-pricing.model",
+          "fact-navan-pricing.hasFreePlan",
+          "fact-navan-pricing.hasFreeTrial",
+          "fact-navan-positioning.membershipRole",
+          "fact-navan-pricing.plans.enterprise",
+          "fact-navan-features.applicant-tracking",
+          "fact-navan-features.career-site-job-boards",
+          "fact-navan-features.interview-scheduling",
+          "fact-navan-features.core-hris",
+          "fact-navan-features.payroll-processing",
+          "fact-navan-features.benefits-admin",
+          "fact-navan-features.workforce-scheduling",
+          "fact-navan-features.frontline-comms",
+          "fact-navan-features.time-attendance",
+          "fact-navan-features.gps-geofence-clockin",
+          "fact-navan-features.sop-knowledge-base",
+          "fact-navan-features.employee-training-paths",
+          "fact-navan-features.lms-course-commerce",
+          "fact-navan-features.hris-integrations",
+          "fact-navan-features.analytics-reporting",
+          "fact-navan-features.ai-assistance"
+        ],
+        "methodologySlug": "hr-editorial",
+        "methodologyVersion": "1.0.0",
+        "agentVersion": "1.0.0",
+        "contextBuiltAt": "2026-08-19T11:59:25.609Z"
+      },
+      "blockers": [],
+      "warnings": [],
+      "agentTaskId": "exec-internal-link-agent-navan-1787140765548",
+      "draftId": "draft-deterministic-v1-internal-link-agent-navan-2026-08-19T11-59-25-610Z",
+      "startedAt": "2026-08-19T11:59:25.545Z",
+      "completedAt": "2026-08-19T11:59:25.615Z",
+      "revisionAttempts": 0
+    },
+    {
+      "id": "finder-readiness",
+      "definitionStepId": "finder-readiness",
+      "handler": "update-recommendation-readiness",
+      "label": "Finder readiness",
+      "status": "completed",
+      "required": false,
+      "failurePolicy": "continue",
+      "attempt": 1,
+      "maxAttempts": 2,
+      "dependsOn": [
+        "content-plan"
+      ],
+      "priority": "low",
+      "config": {
+        "maxAutomaticRevisions": 1,
+        "expandFromContentPlan": false,
+        "expandKind": "none",
+        "stopAfterApproval": true,
+        "allowNormalizedFacts": false,
+        "optionalWhenBlocked": false,
+        "forceTransientFailOnce": false
+      },
+      "inputRefs": {},
+      "outputRefs": {
+        "finderReadiness": "checked"
+      },
+      "blockers": [],
+      "warnings": [],
+      "startedAt": "2026-08-19T11:59:25.536Z",
+      "completedAt": "2026-08-19T11:59:25.537Z",
+      "revisionAttempts": 0
+    },
+    {
+      "id": "editorial-approval",
+      "definitionStepId": "editorial-approval",
+      "handler": "approval-check",
+      "label": "Editorial approval",
+      "status": "completed",
+      "required": true,
+      "failurePolicy": "manual-review",
+      "attempt": 2,
+      "maxAttempts": 2,
+      "dependsOn": [
+        "software-review"
+      ],
+      "priority": "critical",
+      "config": {
+        "approvalType": "editorial",
+        "maxAutomaticRevisions": 1,
+        "expandFromContentPlan": false,
+        "expandKind": "none",
+        "stopAfterApproval": true,
+        "allowNormalizedFacts": false,
+        "optionalWhenBlocked": false,
+        "forceTransientFailOnce": false
+      },
+      "inputRefs": {},
+      "outputRefs": {
+        "approvalId": "appr-wf-software-onboarding-content-navan-1787140763412-software-review",
+        "draftId": "draft-deterministic-v1-software-review-agent-navan-2026-08-19T11-59-25-209Z",
+        "approvalIds": "appr-wf-software-onboarding-content-navan-1787140763412-software-review"
+      },
+      "blockers": [],
+      "warnings": [
+        "Approval received — resuming",
+        "1 optional draft(s) may still need separate editorial review"
+      ],
+      "approvalId": "appr-wf-software-onboarding-content-navan-1787140763412-software-review",
+      "startedAt": "2026-08-19T12:04:08.357Z",
+      "completedAt": "2026-08-19T12:04:08.503Z",
+      "revisionAttempts": 0
+    },
+    {
+      "id": "pre-publish-validation",
+      "definitionStepId": "pre-publish-validation",
+      "handler": "pre-publish-validation",
+      "label": "Pre-publish validation",
+      "status": "completed",
+      "required": true,
+      "failurePolicy": "block-workflow",
+      "attempt": 1,
+      "maxAttempts": 2,
+      "dependsOn": [
+        "editorial-approval"
+      ],
+      "priority": "critical",
+      "config": {
+        "maxAutomaticRevisions": 1,
+        "expandFromContentPlan": false,
+        "expandKind": "none",
+        "stopAfterApproval": true,
+        "allowNormalizedFacts": false,
+        "optionalWhenBlocked": false,
+        "forceTransientFailOnce": false
+      },
+      "inputRefs": {},
+      "outputRefs": {
+        "publishState": "READY_TO_PUBLISH"
+      },
+      "blockers": [],
+      "warnings": [
+        "stopAfterApproval: workflow will not publish automatically"
+      ],
+      "startedAt": "2026-08-19T12:04:08.505Z",
+      "completedAt": "2026-08-19T12:04:08.911Z",
+      "revisionAttempts": 0
+    }
+  ],
+  "history": [
+    {
+      "at": "2026-08-19T11:59:24.552Z",
+      "event": "workflow_created",
+      "message": "Created software-onboarding-content:v1.0.0"
+    },
+    {
+      "at": "2026-08-19T11:59:24.554Z",
+      "event": "workflow_started",
+      "message": "Workflow execution started"
+    },
+    {
+      "at": "2026-08-19T11:59:24.555Z",
+      "event": "workflow_step_started",
+      "stepId": "software-onboarding",
+      "message": "Started Software onboarding"
+    },
+    {
+      "at": "2026-08-19T11:59:24.625Z",
+      "event": "workflow_step_completed",
+      "stepId": "software-onboarding",
+      "message": "Reused onboarding run onboard-navan-1787140448043 (blocked)"
+    },
+    {
+      "at": "2026-08-19T11:59:24.626Z",
+      "event": "workflow_step_started",
+      "stepId": "content-plan",
+      "message": "Started Content plan"
+    },
+    {
+      "at": "2026-08-19T11:59:24.684Z",
+      "event": "workflow_step_completed",
+      "stepId": "content-plan",
+      "message": "Content plan from onboarding onboard-navan-1787140448043 (0 candidates)"
+    },
+    {
+      "at": "2026-08-19T11:59:24.685Z",
+      "event": "workflow_step_started",
+      "stepId": "software-review",
+      "message": "Started Software Review"
+    },
+    {
+      "at": "2026-08-19T11:59:25.253Z",
+      "event": "workflow_step_completed",
+      "stepId": "software-review",
+      "message": "Agent software-review-agent → draft draft-deterministic-v1-software-review-agent-navan-2026-08-19T11-59-25-209Z (qa=pass)"
+    },
+    {
+      "at": "2026-08-19T11:59:25.259Z",
+      "event": "workflow_step_started",
+      "stepId": "alternatives",
+      "message": "Started Alternatives"
+    },
+    {
+      "at": "2026-08-19T11:59:25.372Z",
+      "event": "workflow_step_completed",
+      "stepId": "alternatives",
+      "message": "Agent blocked (optional): NO_APPROVED_ALTERNATIVES: Approved alternative relationships required — same-category alone is insufficient"
+    },
+    {
+      "at": "2026-08-19T11:59:25.375Z",
+      "event": "workflow_step_started",
+      "stepId": "comparisons",
+      "message": "Started Comparisons"
+    },
+    {
+      "at": "2026-08-19T11:59:25.451Z",
+      "event": "workflow_step_completed",
+      "stepId": "comparisons",
+      "message": "Agent blocked (optional): MISSING_PRODUCTS: Comparison requires two product slugs"
+    },
+    {
+      "at": "2026-08-19T11:59:25.458Z",
+      "event": "workflow_step_started",
+      "stepId": "pricing-page",
+      "message": "Started Pricing Page"
+    },
+    {
+      "at": "2026-08-19T11:59:25.531Z",
+      "event": "workflow_step_completed",
+      "stepId": "pricing-page",
+      "message": "Agent blocked (optional): PRICING_UNVERIFIED: Product pricing data is unverified"
+    },
+    {
+      "at": "2026-08-19T11:59:25.534Z",
+      "event": "workflow_step_started",
+      "stepId": "finder-readiness",
+      "message": "Started Finder readiness"
+    },
+    {
+      "at": "2026-08-19T11:59:25.537Z",
+      "event": "workflow_step_completed",
+      "stepId": "finder-readiness",
+      "message": "Finder readiness noted for navan"
+    },
+    {
+      "at": "2026-08-19T11:59:25.544Z",
+      "event": "workflow_step_started",
+      "stepId": "internal-links",
+      "message": "Started Internal Link Plan"
+    },
+    {
+      "at": "2026-08-19T11:59:25.615Z",
+      "event": "workflow_step_completed",
+      "stepId": "internal-links",
+      "message": "Agent internal-link-agent → draft draft-deterministic-v1-internal-link-agent-navan-2026-08-19T11-59-25-610Z (qa=pass)"
+    },
+    {
+      "at": "2026-08-19T11:59:25.621Z",
+      "event": "workflow_step_started",
+      "stepId": "editorial-approval",
+      "message": "Started Editorial approval"
+    },
+    {
+      "at": "2026-08-19T11:59:26.147Z",
+      "event": "workflow_step_completed",
+      "stepId": "editorial-approval",
+      "message": "WAITING FOR EDITORIAL APPROVAL (appr-wf-software-onboarding-content-navan-1787140763412-software-review)"
+    },
+    {
+      "at": "2026-08-19T11:59:26.149Z",
+      "event": "workflow_blocked",
+      "message": "WAITING FOR EDITORIAL APPROVAL"
+    },
+    {
+      "at": "2026-08-19T12:04:08.353Z",
+      "event": "workflow_resumed",
+      "message": "Workflow resumed"
+    },
+    {
+      "at": "2026-08-19T12:04:08.355Z",
+      "event": "workflow_started",
+      "message": "Workflow execution started"
+    },
+    {
+      "at": "2026-08-19T12:04:08.357Z",
+      "event": "workflow_step_started",
+      "stepId": "editorial-approval",
+      "message": "Started Editorial approval"
+    },
+    {
+      "at": "2026-08-19T12:04:08.503Z",
+      "event": "workflow_step_completed",
+      "stepId": "editorial-approval",
+      "message": "Required editorial approvals satisfied"
+    },
+    {
+      "at": "2026-08-19T12:04:08.505Z",
+      "event": "workflow_step_started",
+      "stepId": "pre-publish-validation",
+      "message": "Started Pre-publish validation"
+    },
+    {
+      "at": "2026-08-19T12:04:08.911Z",
+      "event": "workflow_step_completed",
+      "stepId": "pre-publish-validation",
+      "message": "Pre-publish validation passed — READY TO PUBLISH (manual)"
+    },
+    {
+      "at": "2026-08-19T12:04:08.913Z",
+      "event": "workflow_completed",
+      "message": "Workflow completed-with-warnings"
+    },
+    {
+      "at": "2026-08-19T12:06:43.383Z",
+      "event": "workflow_resumed",
+      "message": "Workflow resumed"
+    },
+    {
+      "at": "2026-08-19T12:06:43.385Z",
+      "event": "workflow_started",
+      "message": "Workflow execution started"
+    },
+    {
+      "at": "2026-08-19T12:06:43.387Z",
+      "event": "workflow_completed",
+      "message": "Workflow completed-with-warnings"
+    }
+  ],
+  "options": {
+    "generateReview": true,
+    "generatePricing": true,
+    "generateAlternatives": true,
+    "generateComparisons": true,
+    "runInternalLinks": true,
+    "stopAfterApproval": true,
+    "allowNormalizedFacts": false,
+    "dryRun": false,
+    "maxComparisons": 3,
+    "skipOnboarding": false
+  },
+  "warnings": [
+    "alternatives blocked: NO_APPROVED_ALTERNATIVES: Approved alternative relationships required — same-category alone is insufficient",
+    "comparisons blocked: MISSING_PRODUCTS: Comparison requires two product slugs",
+    "pricing-page blocked: PRICING_UNVERIFIED: Product pricing data is unverified"
+  ],
+  "createdAt": "2026-08-19T11:59:24.552Z",
+  "updatedAt": "2026-08-19T12:06:43.387Z"
+}

@@ -1,0 +1,17 @@
+# FIXTURE SNAPSHOT — structured from first-party research (2026-08-17)
+# Label: fixture extract for FixtureFactExtractor — not a live HTML scrape dump.
+
+CURRENCY: USD
+PRICING_MODEL: freemium
+FREE_PLAN: true
+FREE_TRIAL: true
+TRIAL_DAYS: 21
+STARTING_PRICE_MONTHLY: 15
+
+NOTES:
+Verified 2026-08-17 from freshworks.com/crm/marketing/pricing/. Legacy /freshmarketer/ URL 404'd. Public page shows Free and Enterprise only; older Growth/Pro tiers not confirmed on live official pricing this pass — do not invent. Free: 100 marketing contacts; 500 monthly email sends. Enterprise: $15/mo with 500 marketing contacts (billed annually shown); add-ons for contacts, CRO, dedicated IP, Freddy AI Agent, Messaging Agent. 21-day free trial, no credit card. Annual toggle (save 20%).
+
+PLANS:
+- PLAN free: name=Free; isFree=true; maxMarketingContacts=100; maxEmailSendsMonthly=500
+- PLAN enterprise: name=Enterprise; amount=15; currency=USD; interval=month; includedContacts=500; billedAnnuallyShown
+- PLAN addon-contacts: name=Marketing Contacts add-on; amount=100; notes=from 5000 contacts/mo

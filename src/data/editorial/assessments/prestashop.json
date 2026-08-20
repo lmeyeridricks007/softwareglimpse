@@ -1,0 +1,175 @@
+{
+  "id": "assessment-prestashop-ecommerce-v1",
+  "productSlug": "prestashop",
+  "methodologySlug": "ecommerce-editorial",
+  "methodologyVersion": "1.0.0",
+  "status": "approved",
+  "verdict": "PrestaShop: Choose PrestaShop when you want a commerce-first open-source cart (or its Hosted twin) and you are not already committed to WordPress. Scores use the Ecommerce editorial methodology from first-party research as of 2026-08-17 — not hands-on product testing.",
+  "strengths": [
+    "Free open-source Classic license",
+    "Published Hosted path with a 14-day trial",
+    "Commerce-first PHP core (not a CMS plugin)",
+    "Large module marketplace"
+  ],
+  "weaknesses": [
+    "Self-hosted TCO and module hygiene",
+    "POS is not native",
+    "Not the WordPress-native default (see WooCommerce)"
+  ],
+  "bestFor": [
+    "EU/global merchants wanting a commerce-first open-source cart",
+    "Teams that will self-host Classic or buy Hosted to skip DevOps",
+    "Catalogs that outgrew website-builder commerce but do not need Magento TCO"
+  ],
+  "notIdealFor": [
+    "WordPress-native content + store teams (see WooCommerce)",
+    "SMB founders wanting a full hosted commerce OS (see Shopify)",
+    "Retailers whose center of gravity is POS hardware"
+  ],
+  "tradeoffs": [
+    "Subscription floors vs payment-processing spreads and GMV/overage fees",
+    "App/extension TCO vs native feature depth",
+    "Open-source/hosting flexibility vs SaaS operational simplicity",
+    "Dropshipping product caps vs catalog automation depth"
+  ],
+  "recommendation": "Choose PrestaShop when you want a commerce-first open-source cart (or its Hosted twin) and you are not already committed to WordPress. Consider WooCommerce for WordPress-native open source; Shopware for a more modern Symfony/enterprise OSS path; Magento for deeper B2B/enterprise; Shopify for hosted SaaS.",
+  "editorialNotes": "Ecommerce Priority-2 batch. Approved on ecommerce-editorial v1.0.0. membershipRole=primary. jobCluster=open-source-platform. handsOnTesting=false. Affiliate economics excluded.",
+  "handsOnTesting": false,
+  "confidence": "medium",
+  "criterionAssessments": [
+    {
+      "criterionSlug": "ease-of-use",
+      "score": 7,
+      "rationale": "More commerce-structured than raw Magento, less CMS-native than WooCommerce — Hosted is the guided path.",
+      "supportingFactIds": [
+        "fact-prestashop-features.product-catalog",
+        "fact-prestashop-pricing.model"
+      ],
+      "confidence": "medium",
+      "status": "approved",
+      "reviewedAt": "2026-08-18T14:00:00.000Z",
+      "reviewer": "editorial"
+    },
+    {
+      "criterionSlug": "storefront-commerce-fit",
+      "score": 8,
+      "rationale": "Core job is open-source storefront + catalog. Landscape peer — WooCommerce keeps the open-source cluster award.",
+      "supportingFactIds": [
+        "fact-prestashop-features.product-catalog",
+        "fact-prestashop-pricing.model"
+      ],
+      "confidence": "medium",
+      "status": "approved",
+      "reviewedAt": "2026-08-18T14:00:00.000Z",
+      "reviewer": "editorial"
+    },
+    {
+      "criterionSlug": "catalog-orders-depth",
+      "score": 8,
+      "rationale": "Solid catalog, multi-store, and module-driven B2B — competitive with Woo for mid-complexity merchants.",
+      "supportingFactIds": [
+        "fact-prestashop-features.order-management",
+        "fact-prestashop-pricing.model"
+      ],
+      "confidence": "medium",
+      "status": "approved",
+      "reviewedAt": "2026-08-18T14:00:00.000Z",
+      "reviewer": "editorial"
+    },
+    {
+      "criterionSlug": "checkout-conversion",
+      "score": 7,
+      "rationale": "Checkout is capable via native + modules; conversion quality depends on theme and payment modules.",
+      "supportingFactIds": [
+        "fact-prestashop-features.checkout-payments",
+        "fact-prestashop-pricing.model"
+      ],
+      "confidence": "medium",
+      "status": "approved",
+      "reviewedAt": "2026-08-18T14:00:00.000Z",
+      "reviewer": "editorial"
+    },
+    {
+      "criterionSlug": "integrations",
+      "score": 7,
+      "rationale": "Large module marketplace; quality and maintenance vary versus hosted app stores.",
+      "supportingFactIds": [
+        "fact-prestashop-features.app-extensions",
+        "fact-prestashop-pricing.model",
+        "fact-prestashop-positioning.vendorClaim"
+      ],
+      "confidence": "medium",
+      "status": "approved",
+      "reviewedAt": "2026-08-18T14:00:00.000Z",
+      "reviewer": "editorial"
+    },
+    {
+      "criterionSlug": "omnichannel-pos",
+      "score": 4,
+      "rationale": "POS is possible via modules — not a Square-class bundle.",
+      "supportingFactIds": [
+        "fact-prestashop-features.pos-omnichannel",
+        "fact-prestashop-pricing.model"
+      ],
+      "confidence": "medium",
+      "status": "approved",
+      "reviewedAt": "2026-08-18T14:00:00.000Z",
+      "reviewer": "editorial"
+    },
+    {
+      "criterionSlug": "scalability",
+      "score": 7,
+      "rationale": "Can scale with hosting/Enterprise; very high-GMV complex programmes often move to Magento or Shopware.",
+      "supportingFactIds": [
+        "fact-prestashop-pricing.plans.classic",
+        "fact-prestashop-pricing.model",
+        "fact-prestashop-pricing.plans.enterprise"
+      ],
+      "confidence": "medium",
+      "status": "approved",
+      "reviewedAt": "2026-08-18T14:00:00.000Z",
+      "reviewer": "editorial"
+    },
+    {
+      "criterionSlug": "value-for-money",
+      "score": 8,
+      "rationale": "Free Classic plus a published Hosted tile is competitive when you accept module/hosting TCO.",
+      "supportingFactIds": [
+        "fact-prestashop-pricing.hasFreePlan",
+        "fact-prestashop-pricing.model",
+        "fact-prestashop-pricing.startingPriceMonthly"
+      ],
+      "confidence": "medium",
+      "status": "approved",
+      "reviewedAt": "2026-08-18T14:00:00.000Z",
+      "reviewer": "editorial"
+    },
+    {
+      "criterionSlug": "ai-capabilities",
+      "score": 4,
+      "rationale": "Limited first-party AI versus larger SaaS platforms.",
+      "supportingFactIds": [
+        "fact-prestashop-features.ai-assistance",
+        "fact-prestashop-pricing.model"
+      ],
+      "confidence": "medium",
+      "status": "approved",
+      "reviewedAt": "2026-08-18T14:00:00.000Z",
+      "reviewer": "editorial"
+    }
+  ],
+  "overallScore": 7.1,
+  "overallScoreRationale": "Weighted average of the nine ecommerce editorial criteria using category weights (storefront/commerce fit 15, catalog/orders 14, ease 12, checkout 12, integrations 12, value 12, omnichannel/POS 10, scalability 9, AI 6), rounded to 1 decimal. Products are scored inside their job cluster — SaaS platforms, open-source carts, omnichannel POS bundles, and dropshipping sourcing apps are not forced into one undifferentiated ranking. Not a hands-on lab score; affiliate economics are excluded.",
+  "scoreAudit": [
+    {
+      "at": "2026-08-18T14:00:00.000Z",
+      "actor": "editorial",
+      "change": "Ecommerce Priority-2 onboarding; approved HR criteria with category weights; handsOnTesting=false",
+      "nextOverall": 7.1
+    }
+  ],
+  "reviewedAt": "2026-08-18T14:00:00.000Z",
+  "reviewer": "editorial",
+  "createdAt": "2026-08-18T14:00:00.000Z",
+  "updatedAt": "2026-08-18T14:00:00.000Z"
+}

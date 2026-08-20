@@ -1,0 +1,1005 @@
+{
+  "id": "wf-software-onboarding-content-tidio-1786861128179",
+  "workflowId": "software-onboarding-content",
+  "workflowVersion": "1.0.0",
+  "name": "Software Onboarding Content: tidio",
+  "targetType": "software",
+  "targetId": "tidio",
+  "status": "completed",
+  "steps": [
+    {
+      "id": "software-onboarding",
+      "definitionStepId": "software-onboarding",
+      "handler": "software-onboarding",
+      "label": "Software onboarding",
+      "status": "completed",
+      "required": true,
+      "failurePolicy": "block-workflow",
+      "attempt": 1,
+      "maxAttempts": 2,
+      "dependsOn": [],
+      "priority": "critical",
+      "config": {
+        "maxAutomaticRevisions": 1,
+        "expandFromContentPlan": false,
+        "expandKind": "none",
+        "stopAfterApproval": true,
+        "allowNormalizedFacts": false,
+        "optionalWhenBlocked": false,
+        "forceTransientFailOnce": false
+      },
+      "inputRefs": {},
+      "outputRefs": {
+        "softwareOnboardingRunId": "onboard-tidio-1786859771097"
+      },
+      "blockers": [],
+      "warnings": [],
+      "startedAt": "2026-08-16T06:18:48.605Z",
+      "completedAt": "2026-08-16T06:18:48.639Z",
+      "revisionAttempts": 0
+    },
+    {
+      "id": "content-plan",
+      "definitionStepId": "content-plan",
+      "handler": "content-plan",
+      "label": "Content plan",
+      "status": "completed",
+      "required": true,
+      "failurePolicy": "block-workflow",
+      "attempt": 1,
+      "maxAttempts": 2,
+      "dependsOn": [
+        "software-onboarding"
+      ],
+      "priority": "high",
+      "config": {
+        "maxAutomaticRevisions": 1,
+        "expandFromContentPlan": false,
+        "expandKind": "none",
+        "stopAfterApproval": true,
+        "allowNormalizedFacts": false,
+        "optionalWhenBlocked": false,
+        "forceTransientFailOnce": false
+      },
+      "inputRefs": {},
+      "outputRefs": {
+        "softwareOnboardingRunId": "onboard-tidio-1786859771097",
+        "comparisonTargets": "hubspot-vs-tidio,tidio-vs-zendesk,freshsales-vs-tidio",
+        "pageCandidateCount": "9"
+      },
+      "blockers": [],
+      "warnings": [],
+      "startedAt": "2026-08-16T06:18:48.641Z",
+      "completedAt": "2026-08-16T06:18:48.679Z",
+      "revisionAttempts": 0
+    },
+    {
+      "id": "software-review",
+      "definitionStepId": "software-review",
+      "handler": "agent-run",
+      "label": "Software Review",
+      "status": "completed",
+      "required": true,
+      "failurePolicy": "block-workflow",
+      "attempt": 1,
+      "maxAttempts": 2,
+      "dependsOn": [
+        "content-plan"
+      ],
+      "priority": "high",
+      "config": {
+        "agentId": "software-review-agent",
+        "targetSlug": "tidio",
+        "maxAutomaticRevisions": 1,
+        "expandFromContentPlan": false,
+        "expandKind": "none",
+        "stopAfterApproval": true,
+        "allowNormalizedFacts": false,
+        "optionalWhenBlocked": false,
+        "forceTransientFailOnce": false
+      },
+      "inputRefs": {},
+      "outputRefs": {
+        "draftId": "draft-deterministic-v1-software-review-agent-tidio-2026-08-16T06-18-48-733Z",
+        "qaStatus": "pass",
+        "agentId": "software-review-agent",
+        "target": "tidio"
+      },
+      "inputSnapshot": {
+        "researchFactIds": [
+          "fact-tidio-pricing.hasFreePlan",
+          "fact-tidio-pricing.hasFreeTrial",
+          "fact-tidio-pricing.currency",
+          "fact-tidio-pricing.model",
+          "fact-tidio-identity.shortDescription",
+          "fact-tidio-positioning.vendorClaim",
+          "fact-tidio-pricing.startingPriceMonthly",
+          "fact-tidio-pricing.plans.free",
+          "fact-tidio-pricing.plans.paid",
+          "fact-tidio-pricing.plans.enterprise",
+          "fact-tidio-features.contact-management",
+          "fact-tidio-features.lead-management",
+          "fact-tidio-features.pipeline-management",
+          "fact-tidio-features.deal-management",
+          "fact-tidio-features.custom-pipelines",
+          "fact-tidio-features.custom-fields",
+          "fact-tidio-features.email-sync",
+          "fact-tidio-features.email-tracking",
+          "fact-tidio-features.workflow-automation",
+          "fact-tidio-features.reporting",
+          "fact-tidio-features.mobile-app",
+          "fact-tidio-features.sales-automation",
+          "fact-tidio-features.integrations",
+          "fact-tidio-features.ai-assistance"
+        ],
+        "methodologySlug": "crm-editorial",
+        "methodologyVersion": "1.0.0",
+        "agentVersion": "1.0.0",
+        "contextBuiltAt": "2026-08-16T06:18:48.728Z"
+      },
+      "blockers": [],
+      "warnings": [],
+      "agentTaskId": "exec-software-review-agent-tidio-1786861128682",
+      "draftId": "draft-deterministic-v1-software-review-agent-tidio-2026-08-16T06-18-48-733Z",
+      "startedAt": "2026-08-16T06:18:48.681Z",
+      "completedAt": "2026-08-16T06:18:48.739Z",
+      "revisionAttempts": 0
+    },
+    {
+      "id": "pricing-page",
+      "definitionStepId": "pricing-page",
+      "handler": "agent-run",
+      "label": "Pricing Page",
+      "status": "completed",
+      "required": false,
+      "failurePolicy": "continue-with-warning",
+      "attempt": 1,
+      "maxAttempts": 2,
+      "dependsOn": [
+        "content-plan"
+      ],
+      "priority": "normal",
+      "config": {
+        "agentId": "pricing-page-agent",
+        "targetSlug": "tidio",
+        "maxAutomaticRevisions": 1,
+        "expandFromContentPlan": false,
+        "expandKind": "none",
+        "stopAfterApproval": true,
+        "allowNormalizedFacts": false,
+        "optionalWhenBlocked": true,
+        "forceTransientFailOnce": false
+      },
+      "inputRefs": {},
+      "outputRefs": {
+        "draftId": "draft-deterministic-v1-pricing-page-agent-tidio-2026-08-16T06-18-48-855Z",
+        "qaStatus": "pass",
+        "agentId": "pricing-page-agent",
+        "target": "tidio"
+      },
+      "inputSnapshot": {
+        "researchFactIds": [
+          "fact-tidio-pricing.hasFreePlan",
+          "fact-tidio-pricing.hasFreeTrial",
+          "fact-tidio-pricing.currency",
+          "fact-tidio-pricing.model",
+          "fact-tidio-identity.shortDescription",
+          "fact-tidio-positioning.vendorClaim",
+          "fact-tidio-pricing.startingPriceMonthly",
+          "fact-tidio-pricing.plans.free",
+          "fact-tidio-pricing.plans.paid",
+          "fact-tidio-pricing.plans.enterprise",
+          "fact-tidio-features.contact-management",
+          "fact-tidio-features.lead-management",
+          "fact-tidio-features.pipeline-management",
+          "fact-tidio-features.deal-management",
+          "fact-tidio-features.custom-pipelines",
+          "fact-tidio-features.custom-fields",
+          "fact-tidio-features.email-sync",
+          "fact-tidio-features.email-tracking",
+          "fact-tidio-features.workflow-automation",
+          "fact-tidio-features.reporting",
+          "fact-tidio-features.mobile-app",
+          "fact-tidio-features.sales-automation",
+          "fact-tidio-features.integrations",
+          "fact-tidio-features.ai-assistance"
+        ],
+        "methodologySlug": "crm-editorial",
+        "methodologyVersion": "1.0.0",
+        "agentVersion": "1.0.0",
+        "contextBuiltAt": "2026-08-16T06:18:48.851Z"
+      },
+      "blockers": [],
+      "warnings": [],
+      "agentTaskId": "exec-pricing-page-agent-tidio-1786861128840",
+      "draftId": "draft-deterministic-v1-pricing-page-agent-tidio-2026-08-16T06-18-48-855Z",
+      "startedAt": "2026-08-16T06:18:48.839Z",
+      "completedAt": "2026-08-16T06:18:48.859Z",
+      "revisionAttempts": 0
+    },
+    {
+      "id": "alternatives",
+      "definitionStepId": "alternatives",
+      "handler": "agent-run",
+      "label": "Alternatives",
+      "status": "completed",
+      "required": false,
+      "failurePolicy": "continue-with-warning",
+      "attempt": 1,
+      "maxAttempts": 2,
+      "dependsOn": [
+        "content-plan"
+      ],
+      "priority": "normal",
+      "config": {
+        "agentId": "alternatives-agent",
+        "targetSlug": "tidio",
+        "maxAutomaticRevisions": 1,
+        "expandFromContentPlan": false,
+        "expandKind": "none",
+        "stopAfterApproval": true,
+        "allowNormalizedFacts": false,
+        "optionalWhenBlocked": true,
+        "forceTransientFailOnce": false
+      },
+      "inputRefs": {},
+      "outputRefs": {
+        "draftId": "draft-deterministic-v1-alternatives-agent-tidio-2026-08-16T06-18-48-764Z",
+        "qaStatus": "pass",
+        "agentId": "alternatives-agent",
+        "target": "tidio"
+      },
+      "inputSnapshot": {
+        "researchFactIds": [
+          "fact-tidio-pricing.hasFreePlan",
+          "fact-tidio-pricing.hasFreeTrial",
+          "fact-tidio-pricing.currency",
+          "fact-tidio-pricing.model",
+          "fact-tidio-identity.shortDescription",
+          "fact-tidio-positioning.vendorClaim",
+          "fact-tidio-pricing.startingPriceMonthly",
+          "fact-tidio-pricing.plans.free",
+          "fact-tidio-pricing.plans.paid",
+          "fact-tidio-pricing.plans.enterprise",
+          "fact-tidio-features.contact-management",
+          "fact-tidio-features.lead-management",
+          "fact-tidio-features.pipeline-management",
+          "fact-tidio-features.deal-management",
+          "fact-tidio-features.custom-pipelines",
+          "fact-tidio-features.custom-fields",
+          "fact-tidio-features.email-sync",
+          "fact-tidio-features.email-tracking",
+          "fact-tidio-features.workflow-automation",
+          "fact-tidio-features.reporting",
+          "fact-tidio-features.mobile-app",
+          "fact-tidio-features.sales-automation",
+          "fact-tidio-features.integrations",
+          "fact-tidio-features.ai-assistance"
+        ],
+        "methodologySlug": "crm-editorial",
+        "methodologyVersion": "1.0.0",
+        "agentVersion": "1.0.0",
+        "contextBuiltAt": "2026-08-16T06:18:48.759Z"
+      },
+      "blockers": [],
+      "warnings": [],
+      "agentTaskId": "exec-alternatives-agent-tidio-1786861128741",
+      "draftId": "draft-deterministic-v1-alternatives-agent-tidio-2026-08-16T06-18-48-764Z",
+      "startedAt": "2026-08-16T06:18:48.740Z",
+      "completedAt": "2026-08-16T06:18:48.772Z",
+      "revisionAttempts": 0
+    },
+    {
+      "id": "comparison:hubspot-vs-tidio",
+      "definitionStepId": "comparisons",
+      "handler": "agent-run",
+      "label": "Comparison hubspot-vs-tidio",
+      "status": "completed",
+      "required": false,
+      "failurePolicy": "continue-with-warning",
+      "attempt": 1,
+      "maxAttempts": 2,
+      "dependsOn": [
+        "content-plan"
+      ],
+      "priority": "normal",
+      "config": {
+        "agentId": "comparison-agent",
+        "targetSlug": "hubspot-vs-tidio",
+        "maxAutomaticRevisions": 1,
+        "expandFromContentPlan": true,
+        "expandKind": "comparisons",
+        "stopAfterApproval": true,
+        "allowNormalizedFacts": false,
+        "optionalWhenBlocked": true,
+        "forceTransientFailOnce": false
+      },
+      "expansionKey": "hubspot-vs-tidio",
+      "inputRefs": {},
+      "outputRefs": {
+        "draftId": "draft-deterministic-v1-comparison-agent-hubspot-vs-tidio-2026-08-16T06-18-48-811Z",
+        "qaStatus": "pass",
+        "agentId": "comparison-agent",
+        "target": "hubspot-vs-tidio"
+      },
+      "inputSnapshot": {
+        "researchFactIds": [
+          "fact-hubspot-pricing.hasFreePlan",
+          "fact-hubspot-pricing.hasFreeTrial",
+          "fact-hubspot-pricing.startingPriceMonthly",
+          "fact-hubspot-pricing.currency",
+          "fact-hubspot-pricing.model",
+          "fact-hubspot-pricing.plans.free",
+          "fact-hubspot-pricing.plans.starter",
+          "fact-hubspot-pricing.plans.professional",
+          "fact-hubspot-pricing.plans.enterprise",
+          "fact-hubspot-pricing.sales-hub.ladder",
+          "fact-hubspot-pricing.billing-notes",
+          "fact-hubspot-features.contact-management",
+          "fact-hubspot-features.pipeline-management",
+          "fact-hubspot-features.deal-management",
+          "fact-hubspot-features.lead-management",
+          "fact-hubspot-features.email-sync",
+          "fact-hubspot-features.email-sequences",
+          "fact-hubspot-features.workflow-automation",
+          "fact-hubspot-features.sales-automation",
+          "fact-hubspot-features.reporting",
+          "fact-hubspot-features.forecasting",
+          "fact-hubspot-features.lead-scoring",
+          "fact-hubspot-features.custom-fields",
+          "fact-hubspot-features.custom-objects",
+          "fact-hubspot-features.ai-assistance",
+          "fact-hubspot-features.integrations",
+          "fact-hubspot-features.sso",
+          "fact-hubspot-ai.assistant",
+          "fact-hubspot-ai.prospecting-agent",
+          "fact-hubspot-ai.forecasting",
+          "fact-hubspot-positioning.primary",
+          "fact-hubspot-positioning.free-crm",
+          "fact-hubspot-pricing.sales-hub.professional.catalog",
+          "fact-hubspot-pricing.sales-hub.professional.marketing",
+          "fact-hubspot-pricing.smart-crm.starter.catalog",
+          "fact-tidio-pricing.hasFreePlan",
+          "fact-tidio-pricing.hasFreeTrial",
+          "fact-tidio-pricing.currency",
+          "fact-tidio-pricing.model",
+          "fact-tidio-identity.shortDescription",
+          "fact-tidio-positioning.vendorClaim",
+          "fact-tidio-pricing.startingPriceMonthly",
+          "fact-tidio-pricing.plans.free",
+          "fact-tidio-pricing.plans.paid",
+          "fact-tidio-pricing.plans.enterprise",
+          "fact-tidio-features.contact-management",
+          "fact-tidio-features.lead-management",
+          "fact-tidio-features.pipeline-management",
+          "fact-tidio-features.deal-management",
+          "fact-tidio-features.custom-pipelines",
+          "fact-tidio-features.custom-fields",
+          "fact-tidio-features.email-sync",
+          "fact-tidio-features.email-tracking",
+          "fact-tidio-features.workflow-automation",
+          "fact-tidio-features.reporting",
+          "fact-tidio-features.mobile-app",
+          "fact-tidio-features.sales-automation",
+          "fact-tidio-features.integrations",
+          "fact-tidio-features.ai-assistance"
+        ],
+        "methodologySlug": "crm-editorial",
+        "methodologyVersion": "1.0.0",
+        "agentVersion": "1.0.0",
+        "contextBuiltAt": "2026-08-16T06:18:48.807Z"
+      },
+      "blockers": [],
+      "warnings": [],
+      "agentTaskId": "exec-comparison-agent-hubspot-vs-tidio-1786861128799",
+      "draftId": "draft-deterministic-v1-comparison-agent-hubspot-vs-tidio-2026-08-16T06-18-48-811Z",
+      "startedAt": "2026-08-16T06:18:48.798Z",
+      "completedAt": "2026-08-16T06:18:48.815Z",
+      "revisionAttempts": 0
+    },
+    {
+      "id": "comparison:tidio-vs-zendesk",
+      "definitionStepId": "comparisons",
+      "handler": "agent-run",
+      "label": "Comparison tidio-vs-zendesk",
+      "status": "completed",
+      "required": false,
+      "failurePolicy": "continue-with-warning",
+      "attempt": 1,
+      "maxAttempts": 2,
+      "dependsOn": [
+        "content-plan"
+      ],
+      "priority": "normal",
+      "config": {
+        "agentId": "comparison-agent",
+        "targetSlug": "tidio-vs-zendesk",
+        "maxAutomaticRevisions": 1,
+        "expandFromContentPlan": true,
+        "expandKind": "comparisons",
+        "stopAfterApproval": true,
+        "allowNormalizedFacts": false,
+        "optionalWhenBlocked": true,
+        "forceTransientFailOnce": false
+      },
+      "expansionKey": "tidio-vs-zendesk",
+      "inputRefs": {},
+      "outputRefs": {
+        "draftId": "draft-deterministic-v1-comparison-agent-tidio-vs-zendesk-2026-08-16T06-18-48-834Z",
+        "qaStatus": "pass",
+        "agentId": "comparison-agent",
+        "target": "tidio-vs-zendesk"
+      },
+      "inputSnapshot": {
+        "researchFactIds": [
+          "fact-tidio-pricing.hasFreePlan",
+          "fact-tidio-pricing.hasFreeTrial",
+          "fact-tidio-pricing.currency",
+          "fact-tidio-pricing.model",
+          "fact-tidio-identity.shortDescription",
+          "fact-tidio-positioning.vendorClaim",
+          "fact-tidio-pricing.startingPriceMonthly",
+          "fact-tidio-pricing.plans.free",
+          "fact-tidio-pricing.plans.paid",
+          "fact-tidio-pricing.plans.enterprise",
+          "fact-tidio-features.contact-management",
+          "fact-tidio-features.lead-management",
+          "fact-tidio-features.pipeline-management",
+          "fact-tidio-features.deal-management",
+          "fact-tidio-features.custom-pipelines",
+          "fact-tidio-features.custom-fields",
+          "fact-tidio-features.email-sync",
+          "fact-tidio-features.email-tracking",
+          "fact-tidio-features.workflow-automation",
+          "fact-tidio-features.reporting",
+          "fact-tidio-features.mobile-app",
+          "fact-tidio-features.sales-automation",
+          "fact-tidio-features.integrations",
+          "fact-tidio-features.ai-assistance",
+          "fact-zendesk-pricing.hasFreePlan",
+          "fact-zendesk-pricing.hasFreeTrial",
+          "fact-zendesk-pricing.currency",
+          "fact-zendesk-pricing.model",
+          "fact-zendesk-identity.shortDescription",
+          "fact-zendesk-positioning.vendorClaim",
+          "fact-zendesk-pricing.startingPriceMonthly",
+          "fact-zendesk-pricing.plans.team",
+          "fact-zendesk-pricing.plans.growth",
+          "fact-zendesk-pricing.plans.professional",
+          "fact-zendesk-pricing.plans.enterprise",
+          "fact-zendesk-features.contact-management",
+          "fact-zendesk-features.lead-management",
+          "fact-zendesk-features.pipeline-management",
+          "fact-zendesk-features.deal-management",
+          "fact-zendesk-features.custom-pipelines",
+          "fact-zendesk-features.custom-fields",
+          "fact-zendesk-features.email-sync",
+          "fact-zendesk-features.email-tracking",
+          "fact-zendesk-features.workflow-automation",
+          "fact-zendesk-features.reporting",
+          "fact-zendesk-features.mobile-app",
+          "fact-zendesk-features.sales-automation",
+          "fact-zendesk-features.integrations",
+          "fact-zendesk-features.ai-assistance"
+        ],
+        "methodologySlug": "crm-editorial",
+        "methodologyVersion": "1.0.0",
+        "agentVersion": "1.0.0",
+        "contextBuiltAt": "2026-08-16T06:18:48.832Z"
+      },
+      "blockers": [],
+      "warnings": [],
+      "agentTaskId": "exec-comparison-agent-tidio-vs-zendesk-1786861128819",
+      "draftId": "draft-deterministic-v1-comparison-agent-tidio-vs-zendesk-2026-08-16T06-18-48-834Z",
+      "startedAt": "2026-08-16T06:18:48.816Z",
+      "completedAt": "2026-08-16T06:18:48.837Z",
+      "revisionAttempts": 0
+    },
+    {
+      "id": "comparison:freshsales-vs-tidio",
+      "definitionStepId": "comparisons",
+      "handler": "agent-run",
+      "label": "Comparison freshsales-vs-tidio",
+      "status": "completed",
+      "required": false,
+      "failurePolicy": "continue-with-warning",
+      "attempt": 1,
+      "maxAttempts": 2,
+      "dependsOn": [
+        "content-plan"
+      ],
+      "priority": "normal",
+      "config": {
+        "agentId": "comparison-agent",
+        "targetSlug": "freshsales-vs-tidio",
+        "maxAutomaticRevisions": 1,
+        "expandFromContentPlan": true,
+        "expandKind": "comparisons",
+        "stopAfterApproval": true,
+        "allowNormalizedFacts": false,
+        "optionalWhenBlocked": true,
+        "forceTransientFailOnce": false
+      },
+      "expansionKey": "freshsales-vs-tidio",
+      "inputRefs": {},
+      "outputRefs": {
+        "draftId": "draft-deterministic-v1-comparison-agent-freshsales-vs-tidio-2026-08-16T06-18-48-794Z",
+        "qaStatus": "pass",
+        "agentId": "comparison-agent",
+        "target": "freshsales-vs-tidio"
+      },
+      "inputSnapshot": {
+        "researchFactIds": [
+          "fact-freshsales-pricing.hasFreePlan",
+          "fact-freshsales-pricing.hasFreeTrial",
+          "fact-freshsales-pricing.startingPriceMonthly",
+          "fact-freshsales-pricing.currency",
+          "fact-freshsales-pricing.model",
+          "fact-freshsales-pricing.plans.growth",
+          "fact-freshsales-pricing.plans.pro",
+          "fact-freshsales-pricing.plans.enterprise",
+          "fact-freshsales-features.contact-management",
+          "fact-freshsales-features.lead-management",
+          "fact-freshsales-features.pipeline-management",
+          "fact-freshsales-features.deal-management",
+          "fact-freshsales-features.custom-fields",
+          "fact-freshsales-features.custom-pipelines",
+          "fact-freshsales-features.mobile-app",
+          "fact-freshsales-features.email-sync",
+          "fact-freshsales-features.email-sequences",
+          "fact-freshsales-features.workflow-automation",
+          "fact-freshsales-features.sales-automation",
+          "fact-freshsales-features.reporting",
+          "fact-freshsales-features.forecasting",
+          "fact-freshsales-features.lead-scoring",
+          "fact-freshsales-features.ai-assistance",
+          "fact-freshsales-features.call-functionality",
+          "fact-freshsales-features.integrations",
+          "fact-freshsales-features.territory-management",
+          "fact-freshsales-ai.assistant",
+          "fact-freshsales-ai.lead-scoring",
+          "fact-freshsales-ai.recommendations",
+          "fact-freshsales-ai.summaries",
+          "fact-freshsales-ai.forecasting",
+          "fact-freshsales-ai.automation",
+          "fact-freshsales-positioning.primary",
+          "fact-tidio-pricing.hasFreePlan",
+          "fact-tidio-pricing.hasFreeTrial",
+          "fact-tidio-pricing.currency",
+          "fact-tidio-pricing.model",
+          "fact-tidio-identity.shortDescription",
+          "fact-tidio-positioning.vendorClaim",
+          "fact-tidio-pricing.startingPriceMonthly",
+          "fact-tidio-pricing.plans.free",
+          "fact-tidio-pricing.plans.paid",
+          "fact-tidio-pricing.plans.enterprise",
+          "fact-tidio-features.contact-management",
+          "fact-tidio-features.lead-management",
+          "fact-tidio-features.pipeline-management",
+          "fact-tidio-features.deal-management",
+          "fact-tidio-features.custom-pipelines",
+          "fact-tidio-features.custom-fields",
+          "fact-tidio-features.email-sync",
+          "fact-tidio-features.email-tracking",
+          "fact-tidio-features.workflow-automation",
+          "fact-tidio-features.reporting",
+          "fact-tidio-features.mobile-app",
+          "fact-tidio-features.sales-automation",
+          "fact-tidio-features.integrations",
+          "fact-tidio-features.ai-assistance"
+        ],
+        "methodologySlug": "crm-editorial",
+        "methodologyVersion": "1.0.0",
+        "agentVersion": "1.0.0",
+        "contextBuiltAt": "2026-08-16T06:18:48.792Z"
+      },
+      "blockers": [],
+      "warnings": [],
+      "agentTaskId": "exec-comparison-agent-freshsales-vs-tidio-1786861128779",
+      "draftId": "draft-deterministic-v1-comparison-agent-freshsales-vs-tidio-2026-08-16T06-18-48-794Z",
+      "startedAt": "2026-08-16T06:18:48.778Z",
+      "completedAt": "2026-08-16T06:18:48.797Z",
+      "revisionAttempts": 0
+    },
+    {
+      "id": "internal-links",
+      "definitionStepId": "internal-links",
+      "handler": "internal-link",
+      "label": "Internal Link Plan",
+      "status": "completed",
+      "required": false,
+      "failurePolicy": "continue-with-warning",
+      "attempt": 1,
+      "maxAttempts": 2,
+      "dependsOn": [
+        "software-review"
+      ],
+      "priority": "low",
+      "config": {
+        "agentId": "internal-link-agent",
+        "maxAutomaticRevisions": 1,
+        "expandFromContentPlan": false,
+        "expandKind": "none",
+        "stopAfterApproval": true,
+        "allowNormalizedFacts": false,
+        "optionalWhenBlocked": false,
+        "forceTransientFailOnce": false
+      },
+      "inputRefs": {},
+      "outputRefs": {
+        "draftId": "draft-deterministic-v1-internal-link-agent-tidio-2026-08-16T06-18-48-876Z",
+        "qaStatus": "pass",
+        "agentId": "internal-link-agent",
+        "target": "tidio"
+      },
+      "inputSnapshot": {
+        "researchFactIds": [
+          "fact-tidio-pricing.hasFreePlan",
+          "fact-tidio-pricing.hasFreeTrial",
+          "fact-tidio-pricing.currency",
+          "fact-tidio-pricing.model",
+          "fact-tidio-identity.shortDescription",
+          "fact-tidio-positioning.vendorClaim",
+          "fact-tidio-pricing.startingPriceMonthly",
+          "fact-tidio-pricing.plans.free",
+          "fact-tidio-pricing.plans.paid",
+          "fact-tidio-pricing.plans.enterprise",
+          "fact-tidio-features.contact-management",
+          "fact-tidio-features.lead-management",
+          "fact-tidio-features.pipeline-management",
+          "fact-tidio-features.deal-management",
+          "fact-tidio-features.custom-pipelines",
+          "fact-tidio-features.custom-fields",
+          "fact-tidio-features.email-sync",
+          "fact-tidio-features.email-tracking",
+          "fact-tidio-features.workflow-automation",
+          "fact-tidio-features.reporting",
+          "fact-tidio-features.mobile-app",
+          "fact-tidio-features.sales-automation",
+          "fact-tidio-features.integrations",
+          "fact-tidio-features.ai-assistance"
+        ],
+        "methodologySlug": "crm-editorial",
+        "methodologyVersion": "1.0.0",
+        "agentVersion": "1.0.0",
+        "contextBuiltAt": "2026-08-16T06:18:48.875Z"
+      },
+      "blockers": [],
+      "warnings": [],
+      "agentTaskId": "exec-internal-link-agent-tidio-1786861128868",
+      "draftId": "draft-deterministic-v1-internal-link-agent-tidio-2026-08-16T06-18-48-876Z",
+      "startedAt": "2026-08-16T06:18:48.867Z",
+      "completedAt": "2026-08-16T06:18:48.879Z",
+      "revisionAttempts": 0
+    },
+    {
+      "id": "finder-readiness",
+      "definitionStepId": "finder-readiness",
+      "handler": "update-recommendation-readiness",
+      "label": "Finder readiness",
+      "status": "completed",
+      "required": false,
+      "failurePolicy": "continue",
+      "attempt": 1,
+      "maxAttempts": 2,
+      "dependsOn": [
+        "content-plan"
+      ],
+      "priority": "low",
+      "config": {
+        "maxAutomaticRevisions": 1,
+        "expandFromContentPlan": false,
+        "expandKind": "none",
+        "stopAfterApproval": true,
+        "allowNormalizedFacts": false,
+        "optionalWhenBlocked": false,
+        "forceTransientFailOnce": false
+      },
+      "inputRefs": {},
+      "outputRefs": {
+        "finderReadiness": "checked"
+      },
+      "blockers": [],
+      "warnings": [],
+      "startedAt": "2026-08-16T06:18:48.863Z",
+      "completedAt": "2026-08-16T06:18:48.864Z",
+      "revisionAttempts": 0
+    },
+    {
+      "id": "editorial-approval",
+      "definitionStepId": "editorial-approval",
+      "handler": "approval-check",
+      "label": "Editorial approval",
+      "status": "completed",
+      "required": true,
+      "failurePolicy": "manual-review",
+      "attempt": 2,
+      "maxAttempts": 2,
+      "dependsOn": [
+        "software-review"
+      ],
+      "priority": "critical",
+      "config": {
+        "approvalType": "editorial",
+        "maxAutomaticRevisions": 1,
+        "expandFromContentPlan": false,
+        "expandKind": "none",
+        "stopAfterApproval": true,
+        "allowNormalizedFacts": false,
+        "optionalWhenBlocked": false,
+        "forceTransientFailOnce": false
+      },
+      "inputRefs": {},
+      "outputRefs": {
+        "approvalId": "appr-wf-software-onboarding-content-tidio-1786861128179-software-review",
+        "draftId": "draft-deterministic-v1-software-review-agent-tidio-2026-08-16T06-18-48-733Z",
+        "approvalIds": "appr-wf-software-onboarding-content-tidio-1786861128179-software-review"
+      },
+      "blockers": [],
+      "warnings": [
+        "Approval received — resuming",
+        "6 optional draft(s) may still need separate editorial review"
+      ],
+      "approvalId": "appr-wf-software-onboarding-content-tidio-1786861128179-software-review",
+      "startedAt": "2026-08-16T06:19:09.107Z",
+      "completedAt": "2026-08-16T06:19:09.193Z",
+      "revisionAttempts": 0
+    },
+    {
+      "id": "pre-publish-validation",
+      "definitionStepId": "pre-publish-validation",
+      "handler": "pre-publish-validation",
+      "label": "Pre-publish validation",
+      "status": "completed",
+      "required": true,
+      "failurePolicy": "block-workflow",
+      "attempt": 2,
+      "maxAttempts": 2,
+      "dependsOn": [
+        "editorial-approval"
+      ],
+      "priority": "critical",
+      "config": {
+        "maxAutomaticRevisions": 1,
+        "expandFromContentPlan": false,
+        "expandKind": "none",
+        "stopAfterApproval": true,
+        "allowNormalizedFacts": false,
+        "optionalWhenBlocked": false,
+        "forceTransientFailOnce": false
+      },
+      "inputRefs": {},
+      "outputRefs": {
+        "publishState": "READY_TO_PUBLISH"
+      },
+      "blockers": [],
+      "warnings": [
+        "Re-running blocked pre-publish validation on resume",
+        "stopAfterApproval: workflow will not publish automatically"
+      ],
+      "startedAt": "2026-08-16T06:20:30.868Z",
+      "completedAt": "2026-08-16T06:20:31.769Z",
+      "revisionAttempts": 0
+    }
+  ],
+  "history": [
+    {
+      "at": "2026-08-16T06:18:48.603Z",
+      "event": "workflow_created",
+      "message": "Created software-onboarding-content:v1.0.0"
+    },
+    {
+      "at": "2026-08-16T06:18:48.605Z",
+      "event": "workflow_started",
+      "message": "Workflow execution started"
+    },
+    {
+      "at": "2026-08-16T06:18:48.605Z",
+      "event": "workflow_step_started",
+      "stepId": "software-onboarding",
+      "message": "Started Software onboarding"
+    },
+    {
+      "at": "2026-08-16T06:18:48.639Z",
+      "event": "workflow_step_completed",
+      "stepId": "software-onboarding",
+      "message": "Reused onboarding run onboard-tidio-1786859771097 (review-required)"
+    },
+    {
+      "at": "2026-08-16T06:18:48.641Z",
+      "event": "workflow_step_started",
+      "stepId": "content-plan",
+      "message": "Started Content plan"
+    },
+    {
+      "at": "2026-08-16T06:18:48.679Z",
+      "event": "workflow_step_completed",
+      "stepId": "content-plan",
+      "message": "Content plan from onboarding onboard-tidio-1786859771097 (9 candidates)"
+    },
+    {
+      "at": "2026-08-16T06:18:48.680Z",
+      "event": "workflow_step_started",
+      "stepId": "software-review",
+      "message": "Started Software Review"
+    },
+    {
+      "at": "2026-08-16T06:18:48.739Z",
+      "event": "workflow_step_completed",
+      "stepId": "software-review",
+      "message": "Agent software-review-agent → draft draft-deterministic-v1-software-review-agent-tidio-2026-08-16T06-18-48-733Z (qa=pass)"
+    },
+    {
+      "at": "2026-08-16T06:18:48.740Z",
+      "event": "workflow_step_started",
+      "stepId": "alternatives",
+      "message": "Started Alternatives"
+    },
+    {
+      "at": "2026-08-16T06:18:48.772Z",
+      "event": "workflow_step_completed",
+      "stepId": "alternatives",
+      "message": "Agent alternatives-agent → draft draft-deterministic-v1-alternatives-agent-tidio-2026-08-16T06-18-48-764Z (qa=pass)"
+    },
+    {
+      "at": "2026-08-16T06:18:48.778Z",
+      "event": "workflow_step_started",
+      "stepId": "comparison:freshsales-vs-tidio",
+      "message": "Started Comparison freshsales-vs-tidio"
+    },
+    {
+      "at": "2026-08-16T06:18:48.797Z",
+      "event": "workflow_step_completed",
+      "stepId": "comparison:freshsales-vs-tidio",
+      "message": "Agent comparison-agent → draft draft-deterministic-v1-comparison-agent-freshsales-vs-tidio-2026-08-16T06-18-48-794Z (qa=pass)"
+    },
+    {
+      "at": "2026-08-16T06:18:48.798Z",
+      "event": "workflow_step_started",
+      "stepId": "comparison:hubspot-vs-tidio",
+      "message": "Started Comparison hubspot-vs-tidio"
+    },
+    {
+      "at": "2026-08-16T06:18:48.815Z",
+      "event": "workflow_step_completed",
+      "stepId": "comparison:hubspot-vs-tidio",
+      "message": "Agent comparison-agent → draft draft-deterministic-v1-comparison-agent-hubspot-vs-tidio-2026-08-16T06-18-48-811Z (qa=pass)"
+    },
+    {
+      "at": "2026-08-16T06:18:48.816Z",
+      "event": "workflow_step_started",
+      "stepId": "comparison:tidio-vs-zendesk",
+      "message": "Started Comparison tidio-vs-zendesk"
+    },
+    {
+      "at": "2026-08-16T06:18:48.837Z",
+      "event": "workflow_step_completed",
+      "stepId": "comparison:tidio-vs-zendesk",
+      "message": "Agent comparison-agent → draft draft-deterministic-v1-comparison-agent-tidio-vs-zendesk-2026-08-16T06-18-48-834Z (qa=pass)"
+    },
+    {
+      "at": "2026-08-16T06:18:48.839Z",
+      "event": "workflow_step_started",
+      "stepId": "pricing-page",
+      "message": "Started Pricing Page"
+    },
+    {
+      "at": "2026-08-16T06:18:48.859Z",
+      "event": "workflow_step_completed",
+      "stepId": "pricing-page",
+      "message": "Agent pricing-page-agent → draft draft-deterministic-v1-pricing-page-agent-tidio-2026-08-16T06-18-48-855Z (qa=pass)"
+    },
+    {
+      "at": "2026-08-16T06:18:48.863Z",
+      "event": "workflow_step_started",
+      "stepId": "finder-readiness",
+      "message": "Started Finder readiness"
+    },
+    {
+      "at": "2026-08-16T06:18:48.864Z",
+      "event": "workflow_step_completed",
+      "stepId": "finder-readiness",
+      "message": "Finder readiness noted for tidio"
+    },
+    {
+      "at": "2026-08-16T06:18:48.867Z",
+      "event": "workflow_step_started",
+      "stepId": "internal-links",
+      "message": "Started Internal Link Plan"
+    },
+    {
+      "at": "2026-08-16T06:18:48.879Z",
+      "event": "workflow_step_completed",
+      "stepId": "internal-links",
+      "message": "Agent internal-link-agent → draft draft-deterministic-v1-internal-link-agent-tidio-2026-08-16T06-18-48-876Z (qa=pass)"
+    },
+    {
+      "at": "2026-08-16T06:18:48.881Z",
+      "event": "workflow_step_started",
+      "stepId": "editorial-approval",
+      "message": "Started Editorial approval"
+    },
+    {
+      "at": "2026-08-16T06:18:48.935Z",
+      "event": "workflow_step_completed",
+      "stepId": "editorial-approval",
+      "message": "WAITING FOR EDITORIAL APPROVAL (appr-wf-software-onboarding-content-tidio-1786861128179-software-review)"
+    },
+    {
+      "at": "2026-08-16T06:19:09.101Z",
+      "event": "workflow_resumed",
+      "message": "Workflow resumed"
+    },
+    {
+      "at": "2026-08-16T06:19:09.104Z",
+      "event": "workflow_started",
+      "message": "Workflow execution started"
+    },
+    {
+      "at": "2026-08-16T06:19:09.107Z",
+      "event": "workflow_step_started",
+      "stepId": "editorial-approval",
+      "message": "Started Editorial approval"
+    },
+    {
+      "at": "2026-08-16T06:19:09.193Z",
+      "event": "workflow_step_completed",
+      "stepId": "editorial-approval",
+      "message": "Required editorial approvals satisfied"
+    },
+    {
+      "at": "2026-08-16T06:19:09.195Z",
+      "event": "workflow_step_started",
+      "stepId": "pre-publish-validation",
+      "message": "Started Pre-publish validation"
+    },
+    {
+      "at": "2026-08-16T06:19:10.305Z",
+      "event": "workflow_step_completed",
+      "stepId": "pre-publish-validation",
+      "message": "Pre-publish validation blocked: Stale context for comparison:hubspot-vs-tidio: removed-critical-fact:fact-hubspot-pricing.hasFreePlan; removed-critical-fact:fact-hubspot-pricing.hasFreeTrial; removed-critical-fact:fact-hubspot-pricing.startingPriceMonthly; removed-critical-fact:fact-hubspot-pricing.currency; removed-critical-fact:fact-hubspot-pricing.model; removed-critical-fact:fact-hubspot-pricing.plans.free; removed-critical-fact:fact-hubspot-pricing.plans.starter; removed-critical-fact:fact-hubspot-pricing.plans.professional; removed-critical-fact:fact-hubspot-pricing.plans.enterprise; removed-critical-fact:fact-hubspot-pricing.sales-hub.ladder; removed-critical-fact:fact-hubspot-pricing.billing-notes; removed-critical-fact:fact-hubspot-pricing.sales-hub.professional.catalog; removed-critical-fact:fact-hubspot-pricing.sales-hub.professional.marketing; removed-critical-fact:fact-hubspot-pricing.smart-crm.starter.catalog; Stale context for comparison:tidio-vs-zendesk: removed-critical-fact:fact-zendesk-pricing.hasFreePlan; removed-critical-fact:fact-zendesk-pricing.hasFreeTrial; removed-critical-fact:fact-zendesk-pricing.currency; removed-critical-fact:fact-zendesk-pricing.model; removed-critical-fact:fact-zendesk-pricing.startingPriceMonthly; removed-critical-fact:fact-zendesk-pricing.plans.team; removed-critical-fact:fact-zendesk-pricing.plans.growth; removed-critical-fact:fact-zendesk-pricing.plans.professional; removed-critical-fact:fact-zendesk-pricing.plans.enterprise; Stale context for comparison:freshsales-vs-tidio: removed-critical-fact:fact-freshsales-pricing.hasFreePlan; removed-critical-fact:fact-freshsales-pricing.hasFreeTrial; removed-critical-fact:fact-freshsales-pricing.startingPriceMonthly; removed-critical-fact:fact-freshsales-pricing.currency; removed-critical-fact:fact-freshsales-pricing.model; removed-critical-fact:fact-freshsales-pricing.plans.growth; removed-critical-fact:fact-freshsales-pricing.plans.pro; removed-critical-fact:fact-freshsales-pricing.plans.enterprise"
+    },
+    {
+      "at": "2026-08-16T06:20:30.866Z",
+      "event": "workflow_resumed",
+      "message": "Workflow resumed"
+    },
+    {
+      "at": "2026-08-16T06:20:30.867Z",
+      "event": "workflow_started",
+      "message": "Workflow execution started"
+    },
+    {
+      "at": "2026-08-16T06:20:30.868Z",
+      "event": "workflow_step_started",
+      "stepId": "pre-publish-validation",
+      "message": "Started Pre-publish validation"
+    },
+    {
+      "at": "2026-08-16T06:20:31.769Z",
+      "event": "workflow_step_completed",
+      "stepId": "pre-publish-validation",
+      "message": "Pre-publish validation passed — READY TO PUBLISH (manual)"
+    },
+    {
+      "at": "2026-08-16T06:20:31.770Z",
+      "event": "workflow_completed",
+      "message": "Workflow completed"
+    }
+  ],
+  "options": {
+    "generateReview": true,
+    "generatePricing": true,
+    "generateAlternatives": true,
+    "generateComparisons": true,
+    "runInternalLinks": true,
+    "stopAfterApproval": true,
+    "allowNormalizedFacts": false,
+    "dryRun": false,
+    "maxComparisons": 3,
+    "skipOnboarding": false
+  },
+  "warnings": [],
+  "createdAt": "2026-08-16T06:18:48.603Z",
+  "updatedAt": "2026-08-16T06:20:31.770Z"
+}

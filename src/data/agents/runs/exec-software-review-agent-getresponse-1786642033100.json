@@ -1,0 +1,84 @@
+{
+  "id": "exec-software-review-agent-getresponse-1786642033100",
+  "agentId": "software-review-agent",
+  "agentVersion": "1.0.0",
+  "status": "qa-failed",
+  "mode": "CREATE",
+  "targetSlug": "getresponse",
+  "draftId": "draft-deterministic-v1-software-review-agent-getresponse-2026-08-13T17-27-13-105Z",
+  "briefId": "agent-brief-software-review-agent-getresponse-1786642033105",
+  "validation": {
+    "ok": true,
+    "errors": []
+  },
+  "qa": {
+    "status": "fail",
+    "blockers": [
+      {
+        "type": "MISSING_REQUIRED_SECTION",
+        "severity": "blocker",
+        "message": "Missing required section: product-experience",
+        "section": "product-experience"
+      },
+      {
+        "type": "MISSING_REQUIRED_SECTION",
+        "severity": "blocker",
+        "message": "Missing required section: detailed-criteria",
+        "section": "detailed-criteria"
+      },
+      {
+        "type": "MISSING_REQUIRED_SECTION",
+        "severity": "blocker",
+        "message": "Missing required section: why-we-like",
+        "section": "why-we-like"
+      },
+      {
+        "type": "MISSING_REQUIRED_SECTION",
+        "severity": "blocker",
+        "message": "Missing required section: plan-recommendations",
+        "section": "plan-recommendations"
+      },
+      {
+        "type": "MISSING_REQUIRED_SECTION",
+        "severity": "blocker",
+        "message": "Missing required section: competitor-context",
+        "section": "competitor-context"
+      },
+      {
+        "type": "MISSING_REQUIRED_SECTION",
+        "severity": "blocker",
+        "message": "Missing required section: final-verdict",
+        "section": "final-verdict"
+      }
+    ],
+    "warnings": [],
+    "suggestions": [],
+    "checkedAt": "2026-08-13T17:27:13.106Z"
+  },
+  "errors": [],
+  "cost": {
+    "provider": "deterministic-v1",
+    "model": "deterministic-template-v1",
+    "inputTokens": 0,
+    "outputTokens": 0,
+    "estimatedCostUsd": 0
+  },
+  "contextSnapshot": {
+    "productUpdatedAt": "2026-08-13T17:09:14.438Z",
+    "researchSnapshotIds": [],
+    "factIds": [
+      "fact-getresponse-identity.shortDescription-getresponse-identity-fixture",
+      "fact-getresponse-features.email-campaigns-getresponse-product-fixture",
+      "fact-getresponse-features.automation-workflows-getresponse-product-fixture",
+      "fact-getresponse-pricing.model-getresponse-pricing-fixture",
+      "fact-getresponse-product-positioning.summary-getresponse-identity-fixture"
+    ],
+    "methodologySlug": "email-marketing-editorial",
+    "methodologyVersion": "1.0.0",
+    "pricingFreshnessAt": "2026-08-13T12:00:00.000Z",
+    "builtAt": "2026-08-13T17:27:13.105Z"
+  },
+  "dryRun": false,
+  "startedAt": "2026-08-13T17:27:13.100Z",
+  "completedAt": "2026-08-13T17:27:13.107Z"
+}

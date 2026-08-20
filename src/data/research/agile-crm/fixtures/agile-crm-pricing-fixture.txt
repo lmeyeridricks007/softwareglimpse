@@ -1,0 +1,13 @@
+# FIXTURE SNAPSHOT — structured extract for FixtureFactExtractor
+# NOT a live HTML scrape. Numbers below mirror researched first-party figures where asserted (verifiedAt 2026-08-16).
+# Free (10 users). 2-year headline: Starter from $8.99, Regular $29.99, Enterprise $47.99 per user/mo. Annual rates higher ($9.99/$39.99/$64.99). First-party Aug 2026.
+
+CURRENCY: USD
+PRICING_MODEL: freemium
+FREE_PLAN: true
+FREE_TRIAL: false
+
+PLAN free: name=Free; isFree=true; currency=USD; interval=month; billingInterval=month; unit=seat; minimumSeats=1
+PLAN starter: name=Starter; amountPerSeat=8.99; currency=USD; interval=month; billingInterval=annual; unit=seat
+PLAN regular: name=Regular; amountPerSeat=29.99; currency=USD; interval=month; billingInterval=annual; unit=seat
+PLAN enterprise: name=Enterprise; amountPerSeat=47.99; currency=USD; interval=month; billingInterval=annual; unit=seat

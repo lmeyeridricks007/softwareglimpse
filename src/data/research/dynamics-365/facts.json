@@ -1,0 +1,926 @@
+[
+  {
+    "id": "fact-dynamics-365-pricing.hasFreePlan",
+    "productSlug": "dynamics-365",
+    "domain": "free-plan",
+    "field": "pricing.hasFreePlan",
+    "value": false,
+    "sourceIds": [
+      "dynamics-365-sales-pricing-official"
+    ],
+    "evidence": [
+      {
+        "sourceId": "dynamics-365-sales-pricing-official",
+        "excerpt": "Paid Sales Professional/Enterprise/Premium plans listed; free trial offered separately \u2014 no permanent free CRM plan."
+      }
+    ],
+    "extractedAt": "2026-08-14T06:00:00.000Z",
+    "normalizedAt": "2026-08-14T06:00:00.000Z",
+    "verifiedAt": "2026-08-14T06:00:00.000Z",
+    "approvedAt": "2026-08-14T06:00:00.000Z",
+    "confidence": "high",
+    "status": "approved",
+    "isFixture": false
+  },
+  {
+    "id": "fact-dynamics-365-pricing.hasFreeTrial",
+    "productSlug": "dynamics-365",
+    "domain": "free-trial",
+    "field": "pricing.hasFreeTrial",
+    "value": true,
+    "sourceIds": [
+      "dynamics-365-sales-pricing-official",
+      "dynamics-365-sales-docs-overview"
+    ],
+    "evidence": [
+      {
+        "sourceId": "dynamics-365-sales-pricing-official",
+        "excerpt": "Dynamics 365 Sales free trial / Try for free on pricing page; Learn docs link a 30-day trial."
+      }
+    ],
+    "extractedAt": "2026-08-14T06:00:00.000Z",
+    "normalizedAt": "2026-08-14T06:00:00.000Z",
+    "verifiedAt": "2026-08-14T06:00:00.000Z",
+    "approvedAt": "2026-08-14T06:00:00.000Z",
+    "confidence": "high",
+    "status": "approved",
+    "isFixture": false
+  },
+  {
+    "id": "fact-dynamics-365-pricing.trialDays",
+    "productSlug": "dynamics-365",
+    "domain": "free-trial",
+    "field": "pricing.trialDays",
+    "value": 30,
+    "sourceIds": [
+      "dynamics-365-sales-docs-overview"
+    ],
+    "evidence": [
+      {
+        "sourceId": "dynamics-365-sales-docs-overview",
+        "excerpt": "Learn overview: sign up for a 30-day trial."
+      }
+    ],
+    "extractedAt": "2026-08-14T06:00:00.000Z",
+    "normalizedAt": "2026-08-14T06:00:00.000Z",
+    "verifiedAt": "2026-08-14T06:00:00.000Z",
+    "approvedAt": "2026-08-14T06:00:00.000Z",
+    "confidence": "high",
+    "status": "approved",
+    "isFixture": false
+  },
+  {
+    "id": "fact-dynamics-365-pricing.startingPriceMonthly",
+    "productSlug": "dynamics-365",
+    "domain": "pricing",
+    "field": "pricing.startingPriceMonthly",
+    "value": 65,
+    "sourceIds": [
+      "dynamics-365-sales-pricing-official",
+      "dynamics-365-sales-product-official"
+    ],
+    "evidence": [
+      {
+        "sourceId": "dynamics-365-sales-pricing-official",
+        "excerpt": "Dynamics 365 Sales Professional $65.00 user/month, paid yearly."
+      }
+    ],
+    "extractedAt": "2026-08-14T06:00:00.000Z",
+    "normalizedAt": "2026-08-14T06:00:00.000Z",
+    "verifiedAt": "2026-08-14T06:00:00.000Z",
+    "approvedAt": "2026-08-14T06:00:00.000Z",
+    "confidence": "high",
+    "status": "approved",
+    "isFixture": false
+  },
+  {
+    "id": "fact-dynamics-365-pricing.currency",
+    "productSlug": "dynamics-365",
+    "domain": "pricing",
+    "field": "pricing.currency",
+    "value": "USD",
+    "sourceIds": [
+      "dynamics-365-sales-pricing-official"
+    ],
+    "evidence": [
+      {
+        "sourceId": "dynamics-365-sales-pricing-official",
+        "excerpt": "USD list prices shown on Microsoft Sales pricing page."
+      }
+    ],
+    "extractedAt": "2026-08-14T06:00:00.000Z",
+    "normalizedAt": "2026-08-14T06:00:00.000Z",
+    "verifiedAt": "2026-08-14T06:00:00.000Z",
+    "approvedAt": "2026-08-14T06:00:00.000Z",
+    "confidence": "high",
+    "status": "approved",
+    "isFixture": false
+  },
+  {
+    "id": "fact-dynamics-365-pricing.model",
+    "productSlug": "dynamics-365",
+    "domain": "pricing",
+    "field": "pricing.model",
+    "value": "subscription",
+    "sourceIds": [
+      "dynamics-365-sales-pricing-official"
+    ],
+    "evidence": [
+      {
+        "sourceId": "dynamics-365-sales-pricing-official",
+        "excerpt": "Per-user subscription plans billed yearly (list prices shown as user/month, paid yearly)."
+      }
+    ],
+    "extractedAt": "2026-08-14T06:00:00.000Z",
+    "normalizedAt": "2026-08-14T06:00:00.000Z",
+    "verifiedAt": "2026-08-14T06:00:00.000Z",
+    "approvedAt": "2026-08-14T06:00:00.000Z",
+    "confidence": "high",
+    "status": "approved",
+    "isFixture": false
+  },
+  {
+    "id": "fact-dynamics-365-pricing.plans.sales-professional",
+    "productSlug": "dynamics-365",
+    "domain": "plans",
+    "field": "pricing.plans.sales-professional",
+    "value": {
+      "id": "plan-sales-professional",
+      "slug": "sales-professional",
+      "name": "Sales Professional",
+      "isFree": false,
+      "contactSales": false,
+      "hasFreeTrial": true,
+      "trialDays": 30,
+      "highlighted": false,
+      "rules": [
+        {
+          "kind": "per-seat",
+          "amountPerSeat": 65,
+          "currency": "USD",
+          "interval": "year",
+          "amountPeriod": "month"
+        }
+      ]
+    },
+    "sourceIds": [
+      "dynamics-365-sales-pricing-official",
+      "dynamics-365-sales-product-official"
+    ],
+    "evidence": [
+      {
+        "sourceId": "dynamics-365-sales-pricing-official",
+        "excerpt": "Sales Professional: Core sales force automation and Microsoft 365 integration \u2014 $65.00 user/month, paid yearly."
+      }
+    ],
+    "extractedAt": "2026-08-14T06:00:00.000Z",
+    "normalizedAt": "2026-08-14T06:00:00.000Z",
+    "verifiedAt": "2026-08-14T06:00:00.000Z",
+    "approvedAt": "2026-08-14T06:00:00.000Z",
+    "confidence": "high",
+    "status": "approved",
+    "isFixture": false
+  },
+  {
+    "id": "fact-dynamics-365-pricing.plans.sales-enterprise",
+    "productSlug": "dynamics-365",
+    "domain": "plans",
+    "field": "pricing.plans.sales-enterprise",
+    "value": {
+      "id": "plan-sales-enterprise",
+      "slug": "sales-enterprise",
+      "name": "Sales Enterprise",
+      "isFree": false,
+      "contactSales": false,
+      "hasFreeTrial": true,
+      "trialDays": 30,
+      "highlighted": true,
+      "rules": [
+        {
+          "kind": "per-seat",
+          "amountPerSeat": 105,
+          "currency": "USD",
+          "interval": "year",
+          "amountPeriod": "month"
+        }
+      ]
+    },
+    "sourceIds": [
+      "dynamics-365-sales-pricing-official",
+      "dynamics-365-sales-product-official"
+    ],
+    "evidence": [
+      {
+        "sourceId": "dynamics-365-sales-pricing-official",
+        "excerpt": "Sales Enterprise Edition: sales force automation with contextual insights, next-generation AI, and advanced customization \u2014 $105.00 user/month, paid yearly."
+      }
+    ],
+    "extractedAt": "2026-08-14T06:00:00.000Z",
+    "normalizedAt": "2026-08-14T06:00:00.000Z",
+    "verifiedAt": "2026-08-14T06:00:00.000Z",
+    "approvedAt": "2026-08-14T06:00:00.000Z",
+    "confidence": "high",
+    "status": "approved",
+    "isFixture": false
+  },
+  {
+    "id": "fact-dynamics-365-pricing.plans.sales-premium",
+    "productSlug": "dynamics-365",
+    "domain": "plans",
+    "field": "pricing.plans.sales-premium",
+    "value": {
+      "id": "plan-sales-premium",
+      "slug": "sales-premium",
+      "name": "Sales Premium",
+      "isFree": false,
+      "contactSales": false,
+      "hasFreeTrial": true,
+      "trialDays": 30,
+      "highlighted": false,
+      "rules": [
+        {
+          "kind": "per-seat",
+          "amountPerSeat": 150,
+          "currency": "USD",
+          "interval": "year",
+          "amountPeriod": "month"
+        }
+      ]
+    },
+    "sourceIds": [
+      "dynamics-365-sales-pricing-official",
+      "dynamics-365-sales-product-official"
+    ],
+    "evidence": [
+      {
+        "sourceId": "dynamics-365-sales-pricing-official",
+        "excerpt": "Sales Premium: Dynamics 365 Sales Enterprise plus prebuilt customizable intelligence \u2014 $150.00 user/month, paid yearly."
+      }
+    ],
+    "extractedAt": "2026-08-14T06:00:00.000Z",
+    "normalizedAt": "2026-08-14T06:00:00.000Z",
+    "verifiedAt": "2026-08-14T06:00:00.000Z",
+    "approvedAt": "2026-08-14T06:00:00.000Z",
+    "confidence": "high",
+    "status": "approved",
+    "isFixture": false
+  },
+  {
+    "id": "fact-dynamics-365-pricing.plans.relationship-sales",
+    "productSlug": "dynamics-365",
+    "domain": "plans",
+    "field": "pricing.plans.relationship-sales",
+    "value": {
+      "id": "plan-relationship-sales",
+      "slug": "relationship-sales",
+      "name": "Microsoft Relationship Sales",
+      "isFree": false,
+      "contactSales": true,
+      "hasFreeTrial": true,
+      "trialDays": 30,
+      "highlighted": false,
+      "rules": [],
+      "notes": "Dynamics 365 Sales Enterprise plus LinkedIn Sales Navigator. Variable pricing; 10-seat minimum per Microsoft pricing page."
+    },
+    "sourceIds": [
+      "dynamics-365-sales-pricing-official",
+      "dynamics-365-sales-docs-overview"
+    ],
+    "evidence": [
+      {
+        "sourceId": "dynamics-365-sales-pricing-official",
+        "excerpt": "Microsoft Relationship Sales: Sales Enterprise plus LinkedIn Sales Navigator; variable pricing; contact sales; 10-seat minimum."
+      }
+    ],
+    "extractedAt": "2026-08-14T06:00:00.000Z",
+    "normalizedAt": "2026-08-14T06:00:00.000Z",
+    "verifiedAt": "2026-08-14T06:00:00.000Z",
+    "approvedAt": "2026-08-14T06:00:00.000Z",
+    "confidence": "high",
+    "status": "approved",
+    "isFixture": false
+  },
+  {
+    "id": "fact-dynamics-365-features.contact-management",
+    "productSlug": "dynamics-365",
+    "domain": "features",
+    "field": "features.contact-management",
+    "value": true,
+    "sourceIds": [
+      "dynamics-365-sales-product-official",
+      "dynamics-365-sales-pricing-official"
+    ],
+    "evidence": [
+      {
+        "sourceId": "dynamics-365-sales-product-official",
+        "excerpt": "Sales force automation includes account and contact management (pricing footnote 1)."
+      }
+    ],
+    "extractedAt": "2026-08-14T06:00:00.000Z",
+    "normalizedAt": "2026-08-14T06:00:00.000Z",
+    "verifiedAt": "2026-08-14T06:00:00.000Z",
+    "approvedAt": "2026-08-14T06:00:00.000Z",
+    "confidence": "high",
+    "status": "approved",
+    "isFixture": false
+  },
+  {
+    "id": "fact-dynamics-365-features.lead-management",
+    "productSlug": "dynamics-365",
+    "domain": "features",
+    "field": "features.lead-management",
+    "value": true,
+    "sourceIds": [
+      "dynamics-365-sales-product-official",
+      "dynamics-365-sales-pricing-official"
+    ],
+    "evidence": [
+      {
+        "sourceId": "dynamics-365-sales-product-official",
+        "excerpt": "Lead management included in sales force automation; Premium/agents add AI lead qualification."
+      }
+    ],
+    "extractedAt": "2026-08-14T06:00:00.000Z",
+    "normalizedAt": "2026-08-14T06:00:00.000Z",
+    "verifiedAt": "2026-08-14T06:00:00.000Z",
+    "approvedAt": "2026-08-14T06:00:00.000Z",
+    "confidence": "high",
+    "status": "approved",
+    "isFixture": false
+  },
+  {
+    "id": "fact-dynamics-365-features.pipeline-management",
+    "productSlug": "dynamics-365",
+    "domain": "features",
+    "field": "features.pipeline-management",
+    "value": true,
+    "sourceIds": [
+      "dynamics-365-sales-product-official",
+      "dynamics-365-sales-pricing-official"
+    ],
+    "evidence": [
+      {
+        "sourceId": "dynamics-365-sales-product-official",
+        "excerpt": "Product page documents pipeline catch-up via Copilot, opportunity progression, and pipeline updates."
+      }
+    ],
+    "extractedAt": "2026-08-14T06:00:00.000Z",
+    "normalizedAt": "2026-08-14T06:00:00.000Z",
+    "verifiedAt": "2026-08-14T06:00:00.000Z",
+    "approvedAt": "2026-08-14T06:00:00.000Z",
+    "confidence": "high",
+    "status": "approved",
+    "isFixture": false
+  },
+  {
+    "id": "fact-dynamics-365-features.deal-management",
+    "productSlug": "dynamics-365",
+    "domain": "features",
+    "field": "features.deal-management",
+    "value": true,
+    "sourceIds": [
+      "dynamics-365-sales-product-official",
+      "dynamics-365-sales-pricing-official"
+    ],
+    "evidence": [
+      {
+        "sourceId": "dynamics-365-sales-product-official",
+        "excerpt": "Opportunity management, quotes/orders/invoices cited in Sales force automation footprint."
+      }
+    ],
+    "extractedAt": "2026-08-14T06:00:00.000Z",
+    "normalizedAt": "2026-08-14T06:00:00.000Z",
+    "verifiedAt": "2026-08-14T06:00:00.000Z",
+    "approvedAt": "2026-08-14T06:00:00.000Z",
+    "confidence": "high",
+    "status": "approved",
+    "isFixture": false
+  },
+  {
+    "id": "fact-dynamics-365-features.custom-fields",
+    "productSlug": "dynamics-365",
+    "domain": "features",
+    "field": "features.custom-fields",
+    "value": true,
+    "sourceIds": [
+      "dynamics-365-sales-product-official",
+      "dynamics-365-sales-pricing-official"
+    ],
+    "evidence": [
+      {
+        "sourceId": "dynamics-365-sales-product-official",
+        "excerpt": "Personalize sales processes: configure fields, dashboards, and views to match sales methodology."
+      }
+    ],
+    "extractedAt": "2026-08-14T06:00:00.000Z",
+    "normalizedAt": "2026-08-14T06:00:00.000Z",
+    "verifiedAt": "2026-08-14T06:00:00.000Z",
+    "approvedAt": "2026-08-14T06:00:00.000Z",
+    "confidence": "high",
+    "status": "approved",
+    "isFixture": false
+  },
+  {
+    "id": "fact-dynamics-365-features.mobile-app",
+    "productSlug": "dynamics-365",
+    "domain": "features",
+    "field": "features.mobile-app",
+    "value": true,
+    "sourceIds": [
+      "dynamics-365-sales-product-official",
+      "dynamics-365-sales-pricing-official"
+    ],
+    "evidence": [
+      {
+        "sourceId": "dynamics-365-sales-product-official",
+        "excerpt": "Compare matrix lists Mobile app; product page: unified mobile experience for opportunities and call logging."
+      }
+    ],
+    "extractedAt": "2026-08-14T06:00:00.000Z",
+    "normalizedAt": "2026-08-14T06:00:00.000Z",
+    "verifiedAt": "2026-08-14T06:00:00.000Z",
+    "approvedAt": "2026-08-14T06:00:00.000Z",
+    "confidence": "high",
+    "status": "approved",
+    "isFixture": false
+  },
+  {
+    "id": "fact-dynamics-365-features.email-sync",
+    "productSlug": "dynamics-365",
+    "domain": "features",
+    "field": "features.email-sync",
+    "value": true,
+    "sourceIds": [
+      "dynamics-365-sales-product-official",
+      "dynamics-365-sales-pricing-official"
+    ],
+    "evidence": [
+      {
+        "sourceId": "dynamics-365-sales-product-official",
+        "excerpt": "Microsoft 365 interoperation and Outlook Copilot capabilities for Dynamics 365 record create/edit and email drafts."
+      }
+    ],
+    "extractedAt": "2026-08-14T06:00:00.000Z",
+    "normalizedAt": "2026-08-14T06:00:00.000Z",
+    "verifiedAt": "2026-08-14T06:00:00.000Z",
+    "approvedAt": "2026-08-14T06:00:00.000Z",
+    "confidence": "high",
+    "status": "approved",
+    "isFixture": false
+  },
+  {
+    "id": "fact-dynamics-365-features.email-tracking",
+    "productSlug": "dynamics-365",
+    "domain": "features",
+    "field": "features.email-tracking",
+    "value": true,
+    "sourceIds": [
+      "dynamics-365-sales-product-official",
+      "dynamics-365-sales-pricing-official"
+    ],
+    "evidence": [
+      {
+        "sourceId": "dynamics-365-sales-product-official",
+        "excerpt": "Copilot email summaries and reply drafts in Dynamics 365 Sales and Outlook (Enterprise+ Copilot capabilities)."
+      }
+    ],
+    "extractedAt": "2026-08-14T06:00:00.000Z",
+    "normalizedAt": "2026-08-14T06:00:00.000Z",
+    "verifiedAt": "2026-08-14T06:00:00.000Z",
+    "approvedAt": "2026-08-14T06:00:00.000Z",
+    "confidence": "high",
+    "status": "approved",
+    "isFixture": false
+  },
+  {
+    "id": "fact-dynamics-365-features.workflow-automation",
+    "productSlug": "dynamics-365",
+    "domain": "features",
+    "field": "features.workflow-automation",
+    "value": true,
+    "sourceIds": [
+      "dynamics-365-sales-product-official",
+      "dynamics-365-sales-pricing-official"
+    ],
+    "evidence": [
+      {
+        "sourceId": "dynamics-365-sales-product-official",
+        "excerpt": "Integrate and extend with Power Platform \u2014 automate business processes; Power Automate noted for customization/automation."
+      }
+    ],
+    "extractedAt": "2026-08-14T06:00:00.000Z",
+    "normalizedAt": "2026-08-14T06:00:00.000Z",
+    "verifiedAt": "2026-08-14T06:00:00.000Z",
+    "approvedAt": "2026-08-14T06:00:00.000Z",
+    "confidence": "high",
+    "status": "approved",
+    "isFixture": false
+  },
+  {
+    "id": "fact-dynamics-365-features.sales-automation",
+    "productSlug": "dynamics-365",
+    "domain": "features",
+    "field": "features.sales-automation",
+    "value": true,
+    "sourceIds": [
+      "dynamics-365-sales-product-official",
+      "dynamics-365-sales-pricing-official"
+    ],
+    "evidence": [
+      {
+        "sourceId": "dynamics-365-sales-product-official",
+        "excerpt": "Sales engagement / sales accelerator and agentic recommended actions documented on pricing/product pages."
+      }
+    ],
+    "extractedAt": "2026-08-14T06:00:00.000Z",
+    "normalizedAt": "2026-08-14T06:00:00.000Z",
+    "verifiedAt": "2026-08-14T06:00:00.000Z",
+    "approvedAt": "2026-08-14T06:00:00.000Z",
+    "confidence": "high",
+    "status": "approved",
+    "isFixture": false
+  },
+  {
+    "id": "fact-dynamics-365-features.reporting",
+    "productSlug": "dynamics-365",
+    "domain": "features",
+    "field": "features.reporting",
+    "value": true,
+    "sourceIds": [
+      "dynamics-365-sales-product-official",
+      "dynamics-365-sales-pricing-official"
+    ],
+    "evidence": [
+      {
+        "sourceId": "dynamics-365-sales-product-official",
+        "excerpt": "Reporting and dashboards with export to Excel and advanced analytics with Microsoft Power BI."
+      }
+    ],
+    "extractedAt": "2026-08-14T06:00:00.000Z",
+    "normalizedAt": "2026-08-14T06:00:00.000Z",
+    "verifiedAt": "2026-08-14T06:00:00.000Z",
+    "approvedAt": "2026-08-14T06:00:00.000Z",
+    "confidence": "high",
+    "status": "approved",
+    "isFixture": false
+  },
+  {
+    "id": "fact-dynamics-365-features.forecasting",
+    "productSlug": "dynamics-365",
+    "domain": "features",
+    "field": "features.forecasting",
+    "value": true,
+    "sourceIds": [
+      "dynamics-365-sales-product-official",
+      "dynamics-365-sales-pricing-official"
+    ],
+    "evidence": [
+      {
+        "sourceId": "dynamics-365-sales-product-official",
+        "excerpt": "Forecast sales: predict revenue and track performance against goals with forecasts and charts; advanced SFA includes forecasting."
+      }
+    ],
+    "extractedAt": "2026-08-14T06:00:00.000Z",
+    "normalizedAt": "2026-08-14T06:00:00.000Z",
+    "verifiedAt": "2026-08-14T06:00:00.000Z",
+    "approvedAt": "2026-08-14T06:00:00.000Z",
+    "confidence": "high",
+    "status": "approved",
+    "isFixture": false
+  },
+  {
+    "id": "fact-dynamics-365-features.ai-assistance",
+    "productSlug": "dynamics-365",
+    "domain": "features",
+    "field": "features.ai-assistance",
+    "value": true,
+    "sourceIds": [
+      "dynamics-365-sales-product-official",
+      "dynamics-365-sales-pricing-official"
+    ],
+    "evidence": [
+      {
+        "sourceId": "dynamics-365-sales-product-official",
+        "excerpt": "Microsoft Copilot natural-language pipeline queries, opportunity summaries, email/call assistance; Sales Premium agents."
+      }
+    ],
+    "extractedAt": "2026-08-14T06:00:00.000Z",
+    "normalizedAt": "2026-08-14T06:00:00.000Z",
+    "verifiedAt": "2026-08-14T06:00:00.000Z",
+    "approvedAt": "2026-08-14T06:00:00.000Z",
+    "confidence": "high",
+    "status": "approved",
+    "isFixture": false
+  },
+  {
+    "id": "fact-dynamics-365-features.integrations",
+    "productSlug": "dynamics-365",
+    "domain": "features",
+    "field": "features.integrations",
+    "value": true,
+    "sourceIds": [
+      "dynamics-365-sales-product-official",
+      "dynamics-365-sales-pricing-official"
+    ],
+    "evidence": [
+      {
+        "sourceId": "dynamics-365-sales-product-official",
+        "excerpt": "Microsoft 365 interoperation, Outlook, Teams Copilot capabilities, and Power Platform extensibility."
+      }
+    ],
+    "extractedAt": "2026-08-14T06:00:00.000Z",
+    "normalizedAt": "2026-08-14T06:00:00.000Z",
+    "verifiedAt": "2026-08-14T06:00:00.000Z",
+    "approvedAt": "2026-08-14T06:00:00.000Z",
+    "confidence": "high",
+    "status": "approved",
+    "isFixture": false
+  },
+  {
+    "id": "fact-dynamics-365-features.data-enrichment",
+    "productSlug": "dynamics-365",
+    "domain": "features",
+    "field": "features.data-enrichment",
+    "value": true,
+    "sourceIds": [
+      "dynamics-365-sales-product-official",
+      "dynamics-365-sales-pricing-official"
+    ],
+    "evidence": [
+      {
+        "sourceId": "dynamics-365-sales-product-official",
+        "excerpt": "Enrich CRM Data with autonomous agents; Premium includes AI-powered data enrichment."
+      }
+    ],
+    "extractedAt": "2026-08-14T06:00:00.000Z",
+    "normalizedAt": "2026-08-14T06:00:00.000Z",
+    "verifiedAt": "2026-08-14T06:00:00.000Z",
+    "approvedAt": "2026-08-14T06:00:00.000Z",
+    "confidence": "high",
+    "status": "approved",
+    "isFixture": false
+  },
+  {
+    "id": "fact-dynamics-365-ai.assistant",
+    "productSlug": "dynamics-365",
+    "domain": "ai-capabilities",
+    "field": "ai.assistant",
+    "value": true,
+    "sourceIds": [
+      "dynamics-365-sales-product-official",
+      "dynamics-365-sales-pricing-official"
+    ],
+    "evidence": [
+      {
+        "sourceId": "dynamics-365-sales-product-official",
+        "excerpt": "Query Microsoft Copilot with natural language or prebuilt prompts for pipeline and performance insights."
+      }
+    ],
+    "extractedAt": "2026-08-14T06:00:00.000Z",
+    "normalizedAt": "2026-08-14T06:00:00.000Z",
+    "verifiedAt": "2026-08-14T06:00:00.000Z",
+    "approvedAt": "2026-08-14T06:00:00.000Z",
+    "confidence": "high",
+    "status": "approved",
+    "isFixture": false
+  },
+  {
+    "id": "fact-dynamics-365-ai.summaries",
+    "productSlug": "dynamics-365",
+    "domain": "ai-capabilities",
+    "field": "ai.summaries",
+    "value": true,
+    "sourceIds": [
+      "dynamics-365-sales-product-official",
+      "dynamics-365-sales-pricing-official"
+    ],
+    "evidence": [
+      {
+        "sourceId": "dynamics-365-sales-product-official",
+        "excerpt": "AI-generated opportunity summaries and meeting preparation notes; email and call summaries."
+      }
+    ],
+    "extractedAt": "2026-08-14T06:00:00.000Z",
+    "normalizedAt": "2026-08-14T06:00:00.000Z",
+    "verifiedAt": "2026-08-14T06:00:00.000Z",
+    "approvedAt": "2026-08-14T06:00:00.000Z",
+    "confidence": "high",
+    "status": "approved",
+    "isFixture": false
+  },
+  {
+    "id": "fact-dynamics-365-ai.email-generation",
+    "productSlug": "dynamics-365",
+    "domain": "ai-capabilities",
+    "field": "ai.email-generation",
+    "value": true,
+    "sourceIds": [
+      "dynamics-365-sales-product-official",
+      "dynamics-365-sales-pricing-official"
+    ],
+    "evidence": [
+      {
+        "sourceId": "dynamics-365-sales-product-official",
+        "excerpt": "Copilot-generated email drafts and reply drafts in Dynamics 365 Sales and Outlook."
+      }
+    ],
+    "extractedAt": "2026-08-14T06:00:00.000Z",
+    "normalizedAt": "2026-08-14T06:00:00.000Z",
+    "verifiedAt": "2026-08-14T06:00:00.000Z",
+    "approvedAt": "2026-08-14T06:00:00.000Z",
+    "confidence": "high",
+    "status": "approved",
+    "isFixture": false
+  },
+  {
+    "id": "fact-dynamics-365-ai.recommendations",
+    "productSlug": "dynamics-365",
+    "domain": "ai-capabilities",
+    "field": "ai.recommendations",
+    "value": true,
+    "sourceIds": [
+      "dynamics-365-sales-product-official",
+      "dynamics-365-sales-pricing-official"
+    ],
+    "evidence": [
+      {
+        "sourceId": "dynamics-365-sales-product-official",
+        "excerpt": "AI-powered alerts and recommended actions; predictive lead/opportunity scoring on higher sales engagement tiers."
+      }
+    ],
+    "extractedAt": "2026-08-14T06:00:00.000Z",
+    "normalizedAt": "2026-08-14T06:00:00.000Z",
+    "verifiedAt": "2026-08-14T06:00:00.000Z",
+    "approvedAt": "2026-08-14T06:00:00.000Z",
+    "confidence": "high",
+    "status": "approved",
+    "isFixture": false
+  },
+  {
+    "id": "fact-dynamics-365-ai.automation",
+    "productSlug": "dynamics-365",
+    "domain": "ai-capabilities",
+    "field": "ai.automation",
+    "value": true,
+    "sourceIds": [
+      "dynamics-365-sales-product-official",
+      "dynamics-365-sales-pricing-official"
+    ],
+    "evidence": [
+      {
+        "sourceId": "dynamics-365-sales-product-official",
+        "excerpt": "Prebuilt sales agents (Qualification, Opportunity, Research, Close) and Copilot Studio custom agents; Copilot Credits on Premium."
+      }
+    ],
+    "extractedAt": "2026-08-14T06:00:00.000Z",
+    "normalizedAt": "2026-08-14T06:00:00.000Z",
+    "verifiedAt": "2026-08-14T06:00:00.000Z",
+    "approvedAt": "2026-08-14T06:00:00.000Z",
+    "confidence": "high",
+    "status": "approved",
+    "isFixture": false
+  },
+  {
+    "id": "fact-dynamics-365-ai.forecasting",
+    "productSlug": "dynamics-365",
+    "domain": "ai-capabilities",
+    "field": "ai.forecasting",
+    "value": true,
+    "sourceIds": [
+      "dynamics-365-sales-product-official",
+      "dynamics-365-sales-pricing-official"
+    ],
+    "evidence": [
+      {
+        "sourceId": "dynamics-365-sales-product-official",
+        "excerpt": "Forecasting charts plus Copilot queries on conversion/win rates; Premium adds predictive forecasting capabilities."
+      }
+    ],
+    "extractedAt": "2026-08-14T06:00:00.000Z",
+    "normalizedAt": "2026-08-14T06:00:00.000Z",
+    "verifiedAt": "2026-08-14T06:00:00.000Z",
+    "approvedAt": "2026-08-14T06:00:00.000Z",
+    "confidence": "high",
+    "status": "approved",
+    "isFixture": false
+  },
+  {
+    "id": "fact-dynamics-365-integrations.microsoft-365",
+    "productSlug": "dynamics-365",
+    "domain": "integrations",
+    "field": "integrations.microsoft-365",
+    "value": true,
+    "sourceIds": [
+      "dynamics-365-sales-pricing-official",
+      "dynamics-365-sales-product-official"
+    ],
+    "evidence": [
+      {
+        "sourceId": "dynamics-365-sales-pricing-official",
+        "excerpt": "Sales Professional positioned as core SFA with Microsoft 365 integration/interoperation; Outlook and Teams Copilot capabilities listed on Enterprise+."
+      }
+    ],
+    "extractedAt": "2026-08-14T06:00:00.000Z",
+    "normalizedAt": "2026-08-14T06:00:00.000Z",
+    "verifiedAt": "2026-08-14T06:00:00.000Z",
+    "approvedAt": "2026-08-14T06:00:00.000Z",
+    "confidence": "high",
+    "status": "approved",
+    "isFixture": false
+  },
+  {
+    "id": "fact-dynamics-365-integrations.power-platform",
+    "productSlug": "dynamics-365",
+    "domain": "integrations",
+    "field": "integrations.power-platform",
+    "value": true,
+    "sourceIds": [
+      "dynamics-365-sales-product-official",
+      "dynamics-365-sales-docs-overview"
+    ],
+    "evidence": [
+      {
+        "sourceId": "dynamics-365-sales-product-official",
+        "excerpt": "Integrate and extend with Power Platform; runs on Dataverse / Power Apps model-driven apps."
+      }
+    ],
+    "extractedAt": "2026-08-14T06:00:00.000Z",
+    "normalizedAt": "2026-08-14T06:00:00.000Z",
+    "verifiedAt": "2026-08-14T06:00:00.000Z",
+    "approvedAt": "2026-08-14T06:00:00.000Z",
+    "confidence": "high",
+    "status": "approved",
+    "isFixture": false
+  },
+  {
+    "id": "fact-dynamics-365-integrations.linkedin",
+    "productSlug": "dynamics-365",
+    "domain": "integrations",
+    "field": "integrations.linkedin-sales-navigator",
+    "value": true,
+    "sourceIds": [
+      "dynamics-365-sales-pricing-official"
+    ],
+    "evidence": [
+      {
+        "sourceId": "dynamics-365-sales-pricing-official",
+        "excerpt": "Microsoft Relationship Sales bundles Dynamics 365 Sales Enterprise plus LinkedIn Sales Navigator."
+      }
+    ],
+    "extractedAt": "2026-08-14T06:00:00.000Z",
+    "normalizedAt": "2026-08-14T06:00:00.000Z",
+    "verifiedAt": "2026-08-14T06:00:00.000Z",
+    "approvedAt": "2026-08-14T06:00:00.000Z",
+    "confidence": "high",
+    "status": "approved",
+    "isFixture": false
+  },
+  {
+    "id": "fact-dynamics-365-positioning.agentic-crm",
+    "productSlug": "dynamics-365",
+    "domain": "product-positioning",
+    "field": "positioning.primary",
+    "value": "Agentic CRM for Microsoft-centric sales teams \u2014 Copilot, sales agents, and Microsoft 365 workflows on Dataverse.",
+    "sourceIds": [
+      "dynamics-365-sales-product-official",
+      "dynamics-365-sales-docs-overview"
+    ],
+    "evidence": [
+      {
+        "sourceId": "dynamics-365-sales-product-official",
+        "excerpt": "Boost business with Dynamics 365 Sales, an agentic CRM that helps teams close deals faster using insights, sales automation, and collaboration tools."
+      }
+    ],
+    "extractedAt": "2026-08-14T06:00:00.000Z",
+    "normalizedAt": "2026-08-14T06:00:00.000Z",
+    "verifiedAt": "2026-08-14T06:00:00.000Z",
+    "approvedAt": "2026-08-14T06:00:00.000Z",
+    "confidence": "high",
+    "status": "approved",
+    "isFixture": false
+  },
+  {
+    "id": "fact-dynamics-365-positioning.microsoft-365-copilot",
+    "productSlug": "dynamics-365",
+    "domain": "product-positioning",
+    "field": "positioning.microsoft-365-copilot",
+    "value": true,
+    "sourceIds": [
+      "dynamics-365-sales-product-official",
+      "dynamics-365-sales-pricing-official"
+    ],
+    "evidence": [
+      {
+        "sourceId": "dynamics-365-sales-product-official",
+        "excerpt": "Product and pricing pages emphasize Microsoft 365 interoperation and Copilot in Dynamics 365 / Outlook / Teams, plus Microsoft 365 Copilot and agents accessibility messaging."
+      }
+    ],
+    "extractedAt": "2026-08-14T06:00:00.000Z",
+    "normalizedAt": "2026-08-14T06:00:00.000Z",
+    "verifiedAt": "2026-08-14T06:00:00.000Z",
+    "approvedAt": "2026-08-14T06:00:00.000Z",
+    "confidence": "high",
+    "status": "approved",
+    "isFixture": false
+  }
+]

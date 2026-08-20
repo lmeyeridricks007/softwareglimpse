@@ -1,0 +1,176 @@
+{
+  "id": "assessment-kixie-si-v1",
+  "productSlug": "kixie",
+  "methodologySlug": "sales-intelligence-editorial",
+  "methodologyVersion": "1.0.0",
+  "status": "approved",
+  "verdict": "Kixie is a CRM-connected sales dialer and business phone platform, and the sales intelligence methodology shows exactly where it does and does not belong on a shortlist. CRM sync and conversation reporting are genuinely strong; contact data and email outreach are near-absent because Kixie is an execution layer for calling, not a data provider. It is a complement to a sales intelligence stack rather than a member of it. Based on first-party kixie.com research; seat prices are not published. Not hands-on tested.",
+  "strengths": [
+    "Bi-directional CRM integration with HubSpot, Salesforce, Zoho, Pipedrive, and Zapier across plans",
+    "PowerDialer ladder from Professional through Single-Line to Multi-Line dialing up to four lines",
+    "Analytics and reporting plus AI Insights and Conversation Intelligence as first-party pillars",
+    "Business phone, SMS, voicemail drop, live call coaching, and inbound contact-center features in one layer",
+    "7-day free trial with no credit card required for hands-on evaluation"
+  ],
+  "weaknesses": [
+    "No B2B contact database — Kixie dials lists sourced from your CRM or a separate data vendor",
+    "Email sequencing is not a documented capability; the product is phone and SMS first",
+    "Seat dollar amounts are not published on the official pricing page, so every plan requires a quote",
+    "Premium add-ons including AI Human Detection, Conversation Intelligence, DNC, and ConnectionBoost stack cost",
+    "Number health, carrier reputation, and DNC compliance need ongoing operational attention"
+  ],
+  "bestFor": [
+    "Outbound SDR and AE teams whose primary motion is high-volume calling rather than email",
+    "Sales managers who need call recording, live coaching, and conversation intelligence for rep development",
+    "Teams already standardized on HubSpot, Salesforce, Zoho, or Pipedrive who want calling activity logged automatically",
+    "Contact-center-style inbound teams needing routing alongside outbound dialing"
+  ],
+  "notIdealFor": [
+    "Buyers looking for a contact database or prospect sourcing tool",
+    "Teams whose outbound motion is email-first or LinkedIn-first",
+    "Shoppers who refuse to engage sales for a quote before comparing options",
+    "Organizations wanting a single vendor for both prospect data and outreach execution"
+  ],
+  "tradeoffs": [
+    "Best-in-class calling execution vs zero contribution to prospect sourcing",
+    "Deep bi-directional CRM sync vs total dependence on the CRM for list quality",
+    "Conversation intelligence depth vs add-on pricing that stacks on an already quote-gated seat",
+    "Unlimited US/Canada minutes positioning vs opaque per-seat economics"
+  ],
+  "recommendation": "Choose Kixie as the calling layer beneath a sales intelligence stack, not as part of it. Pair it with a data provider such as Lusha or BookYourData for sourcing and keep HubSpot, Salesforce, or Pipedrive as the system of record. Compare Apollo or Reply when you want dialing bundled with data and email sequencing in one subscription. Get a written quote covering seats plus the add-ons you actually need before comparing total cost.",
+  "editorialNotes": "Re-scored on the sales intelligence editorial methodology v1.0.0 — replaces the earlier CRM-methodology assessment. The SI framing is more honest about Kixie: it scores low on contact data and email outreach not as a defect but because it is a communications execution layer. Sourced from kixie.com homepage and pricing fixtures. All three plans are contactSales with no published dollar amounts, so no seat pricing is asserted. handsOnTesting=false.",
+  "handsOnTesting": false,
+  "confidence": "medium",
+  "criterionAssessments": [
+    {
+      "criterionSlug": "contact-data",
+      "score": 4,
+      "rationale": "Kixie has no B2B contact database. Contact management is supported in the sense that it holds and dials records synced from a CRM, but every number it calls originates somewhere else — this is an execution layer, not a data source.",
+      "supportingFactIds": [
+        "fact-kixie-features.contact-management-kixie-product-fixture",
+        "fact-kixie-identity.shortDescription-kixie-product-fixture"
+      ],
+      "confidence": "medium",
+      "status": "approved",
+      "reviewedAt": "2026-08-17T06:30:00.000Z",
+      "reviewer": "editorial"
+    },
+    {
+      "criterionSlug": "prospecting",
+      "score": 6,
+      "rationale": "Lead management is documented as limited and there is no prospect search, so Kixie cannot find prospects; what it does exceptionally well is work a list — multi-line PowerDialer throughput is a genuine prospecting-velocity advantage once the list exists.",
+      "supportingFactIds": [
+        "fact-kixie-features.lead-management-kixie-product-fixture",
+        "fact-kixie-pricing.plans.multi-line-powerdialer-kixie-pricing-fixture",
+        "fact-kixie-positioning.claim-kixie-product-fixture"
+      ],
+      "confidence": "medium",
+      "status": "approved",
+      "reviewedAt": "2026-08-17T06:30:00.000Z",
+      "reviewer": "editorial"
+    },
+    {
+      "criterionSlug": "data-enrichment",
+      "score": 5,
+      "rationale": "Kixie enriches records behaviourally rather than firmographically: call outcomes, dispositions, recordings, and transcripts write back to the CRM contact. Useful data, but it adds no third-party firmographic or contact-detail enrichment.",
+      "supportingFactIds": [
+        "fact-kixie-features.contact-management-kixie-product-fixture",
+        "fact-kixie-features.workflow-automation-kixie-product-fixture"
+      ],
+      "confidence": "medium",
+      "status": "approved",
+      "reviewedAt": "2026-08-17T06:30:00.000Z",
+      "reviewer": "editorial"
+    },
+    {
+      "criterionSlug": "email-outreach",
+      "score": 4,
+      "rationale": "Email sequencing is not documented as a capability in this research pass. Kixie's multichannel story is phone plus SMS, so automated SMS follow-up covers part of the sequencing job while email is left entirely to another tool.",
+      "supportingFactIds": [
+        "fact-kixie-features.email-sequences-kixie-product-fixture",
+        "fact-kixie-identity.shortDescription-kixie-product-fixture"
+      ],
+      "confidence": "medium",
+      "status": "approved",
+      "reviewedAt": "2026-08-17T06:30:00.000Z",
+      "reviewer": "editorial"
+    },
+    {
+      "criterionSlug": "crm-sync",
+      "score": 9,
+      "rationale": "Bi-directional CRM integration is the product's defining feature, with HubSpot, Salesforce, Zoho, Pipedrive, and Zapier documented on the homepage and workflow automation supported — calls, SMS, recordings, and dispositions log against the right record without rep effort.",
+      "supportingFactIds": [
+        "fact-kixie-features.contact-management-kixie-product-fixture",
+        "fact-kixie-features.workflow-automation-kixie-product-fixture",
+        "fact-kixie-identity.shortDescription-kixie-product-fixture"
+      ],
+      "confidence": "medium",
+      "status": "approved",
+      "reviewedAt": "2026-08-17T06:30:00.000Z",
+      "reviewer": "editorial"
+    },
+    {
+      "criterionSlug": "ease-of-use",
+      "score": 8,
+      "rationale": "Click-to-call from inside the CRM, three clearly named plans mapped to dialing intensity, and a no-credit-card trial make this easy to adopt; a rep's daily surface is a dialer bar, not a new application to learn.",
+      "supportingFactIds": [
+        "fact-kixie-identity.shortDescription-kixie-product-fixture",
+        "fact-kixie-pricing.hasFreeTrial-kixie-pricing-fixture",
+        "fact-kixie-pricing.plans.professional-kixie-pricing-fixture"
+      ],
+      "confidence": "medium",
+      "status": "approved",
+      "reviewedAt": "2026-08-17T06:30:00.000Z",
+      "reviewer": "editorial"
+    },
+    {
+      "criterionSlug": "reporting",
+      "score": 8,
+      "rationale": "Reporting is documented as supported and AI assistance is supported, covering call analytics, connect rates, and AI Insights or Conversation Intelligence — genuinely strong for a communications layer and better than most data vendors manage.",
+      "supportingFactIds": [
+        "fact-kixie-features.reporting-kixie-product-fixture",
+        "fact-kixie-features.ai-assistance-kixie-product-fixture"
+      ],
+      "confidence": "medium",
+      "status": "approved",
+      "reviewedAt": "2026-08-17T06:30:00.000Z",
+      "reviewer": "editorial"
+    },
+    {
+      "criterionSlug": "value-for-money",
+      "score": 5,
+      "rationale": "All three plans are contact-sales with no published dollar amounts, and premium add-ons stack on top, so value cannot be assessed without a quote. The 7-day no-credit-card trial partly offsets this by allowing evaluation before the pricing conversation.",
+      "supportingFactIds": [
+        "fact-kixie-pricing.plans.professional-kixie-pricing-fixture",
+        "fact-kixie-pricing.plans.single-line-powerdialer-kixie-pricing-fixture",
+        "fact-kixie-pricing.hasFreeTrial-kixie-pricing-fixture",
+        "fact-kixie-pricing.hasFreePlan-kixie-pricing-fixture"
+      ],
+      "confidence": "medium",
+      "status": "approved",
+      "reviewedAt": "2026-08-17T06:30:00.000Z",
+      "reviewer": "editorial"
+    }
+  ],
+  "overallScore": 6.1,
+  "overallScoreRationale": "Equal-weight average of the eight sales intelligence criteria (49/8 = 6.125, rounded to 6.1). CRM sync at 9 and reporting and ease of use at 8 reflect real strength; contact data and email outreach at 4 pull the average down because Kixie does not participate in those jobs at all, and quote-gated pricing caps value at 5. The mid-band score is the correct signal: Kixie is an excellent product that sits adjacent to this category rather than inside it.",
+  "scoreAudit": [
+    {
+      "at": "2026-08-17T06:00:00.000Z",
+      "actor": "editorial",
+      "change": "Initial scoring against CRM editorial methodology (10 criteria)",
+      "nextOverall": 5.8
+    },
+    {
+      "at": "2026-08-17T06:30:00.000Z",
+      "actor": "editorial",
+      "change": "Re-scored on sales-intelligence-editorial v1.0.0 across all 8 SI criteria; CRM criteria retired as category-inappropriate; approved with medium confidence; handsOnTesting=false",
+      "previousOverall": 5.8,
+      "nextOverall": 6.1
+    }
+  ],
+  "reviewedAt": "2026-08-17T06:30:00.000Z",
+  "reviewer": "editorial",
+  "createdAt": "2026-08-17T05:55:10.617Z",
+  "updatedAt": "2026-08-17T06:30:00.000Z"
+}

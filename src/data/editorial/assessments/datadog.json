@@ -1,0 +1,165 @@
+{
+  "id": "assessment-datadog-it-v1",
+  "productSlug": "datadog",
+  "methodologySlug": "it-development-editorial",
+  "methodologyVersion": "1.0.0",
+  "status": "approved",
+  "verdict": "Datadog: Choose Datadog when observability — infrastructure, APM, and logs — is the primary job and you can model module/consumption TCO. Scores use the IT & Development editorial methodology from first-party research as of 2026-08-18 — not hands-on product testing.",
+  "strengths": [
+    "Strong observability primary job across infra, APM, and logs",
+    "Deep cloud and CI/CD integration catalog",
+    "Published Infrastructure Pro host floor",
+    "Free tier for limited evaluation",
+    "Enterprise security and AI-assisted monitoring features"
+  ],
+  "weaknesses": [
+    "Multi-module consumption TCO is complex",
+    "Not ITSM or source control",
+    "Requires calculator discipline before commit",
+    "Ease-of-use tax from platform breadth",
+    "Landscape-only comparisons vs ITSM/hosting peers"
+  ],
+  "bestFor": [
+    "SRE/platform teams needing unified infra + APM + logs",
+    "Cloud-native orgs with AWS/Azure/GCP estates",
+    "Teams that can model multi-module observability TCO upfront"
+  ],
+  "notIdealFor": [
+    "Buyers whose primary job is ITSM ticketing (Freshservice)",
+    "Small teams needing predictable single-line seat pricing only",
+    "Source-control-first purchases (GitHub)"
+  ],
+  "tradeoffs": [
+    "Per-agent vs per-host vs per-seat vs per-GB pricing models",
+    "Module stacking and consumption overages vs single-SKU floors",
+    "Free tiers vs enterprise SSO/audit gates",
+    "Landscape-adjacent tools vs primary job-cluster peers on best pages"
+  ],
+  "recommendation": "Choose Datadog when observability — infrastructure, APM, and logs — is the primary job and you can model module/consumption TCO. Compare Freshservice for ITSM, GitHub for source control (landscape only), and specialist log/APM tools if you need a narrower SKU.",
+  "editorialNotes": "IT Wave-1 batch. Approved on it-development-editorial v1.0.0. membershipRole=primary. jobCluster=observability-monitoring. handsOnTesting=false. Affiliate economics excluded.",
+  "handsOnTesting": false,
+  "confidence": "medium",
+  "criterionAssessments": [
+    {
+      "criterionSlug": "ease-of-use",
+      "score": 7,
+      "rationale": "Datadog’s breadth (infra, APM, logs, security) raises admin learning curve versus single-purpose tools — powerful but not trivial for tiny teams.",
+      "supportingFactIds": [
+        "fact-datadog-features.infrastructure-monitoring",
+        "fact-datadog-pricing.model"
+      ],
+      "confidence": "medium",
+      "status": "approved",
+      "reviewedAt": "2026-08-18T09:30:00.000Z",
+      "reviewer": "editorial"
+    },
+    {
+      "criterionSlug": "it-job-fit",
+      "score": 10,
+      "rationale": "Category-leading fit for observability-monitoring — infrastructure metrics, APM/tracing, and log management are the core published jobs.",
+      "supportingFactIds": [
+        "fact-datadog-features.infrastructure-monitoring",
+        "fact-datadog-pricing.model"
+      ],
+      "confidence": "medium",
+      "status": "approved",
+      "reviewedAt": "2026-08-18T09:30:00.000Z",
+      "reviewer": "editorial"
+    },
+    {
+      "criterionSlug": "workflow-depth",
+      "score": 10,
+      "rationale": "Dashboards, monitors, SLOs, tracing, and log pipelines provide deep SRE/observability workflows when modules are purchased.",
+      "supportingFactIds": [
+        "fact-datadog-features.apm-tracing",
+        "fact-datadog-pricing.model"
+      ],
+      "confidence": "medium",
+      "status": "approved",
+      "reviewedAt": "2026-08-18T09:30:00.000Z",
+      "reviewer": "editorial"
+    },
+    {
+      "criterionSlug": "integrations",
+      "score": 9,
+      "rationale": "Extensive cloud, CI, chat, and on-call integrations are a core Datadog promise — strong ecosystem for modern stacks.",
+      "supportingFactIds": [
+        "fact-datadog-features.analytics-reporting",
+        "fact-datadog-pricing.model",
+        "fact-datadog-positioning.vendorClaim"
+      ],
+      "confidence": "medium",
+      "status": "approved",
+      "reviewedAt": "2026-08-18T09:30:00.000Z",
+      "reviewer": "editorial"
+    },
+    {
+      "criterionSlug": "admin-security",
+      "score": 9,
+      "rationale": "Enterprise RBAC, audit logs, SSO/SCIM, and compliance posture are marketed for regulated buyers.",
+      "supportingFactIds": [
+        "fact-datadog-features.enterprise-security",
+        "fact-datadog-pricing.model"
+      ],
+      "confidence": "medium",
+      "status": "approved",
+      "reviewedAt": "2026-08-18T09:30:00.000Z",
+      "reviewer": "editorial"
+    },
+    {
+      "criterionSlug": "scalability",
+      "score": 9,
+      "rationale": "Built for cloud-scale host/log/span volume with enterprise commits — scales well with budget.",
+      "supportingFactIds": [
+        "fact-datadog-pricing.plans.free",
+        "fact-datadog-pricing.model",
+        "fact-datadog-pricing.plans.enterprise"
+      ],
+      "confidence": "medium",
+      "status": "approved",
+      "reviewedAt": "2026-08-18T09:30:00.000Z",
+      "reviewer": "editorial"
+    },
+    {
+      "criterionSlug": "value-for-money",
+      "score": 6,
+      "rationale": "Published $15/host floor looks approachable, but multi-module consumption TCO escalates quickly — value score reflects calculator complexity, not affiliate economics.",
+      "supportingFactIds": [
+        "fact-datadog-pricing.hasFreePlan",
+        "fact-datadog-pricing.model",
+        "fact-datadog-pricing.startingPriceMonthly"
+      ],
+      "confidence": "medium",
+      "status": "approved",
+      "reviewedAt": "2026-08-18T09:30:00.000Z",
+      "reviewer": "editorial"
+    },
+    {
+      "criterionSlug": "ai-capabilities",
+      "score": 8,
+      "rationale": "Watchdog, Bits AI, and anomaly features are published observability AI — useful SRE assistance with module/usage packaging.",
+      "supportingFactIds": [
+        "fact-datadog-features.itsm-ai",
+        "fact-datadog-pricing.model"
+      ],
+      "confidence": "medium",
+      "status": "approved",
+      "reviewedAt": "2026-08-18T09:30:00.000Z",
+      "reviewer": "editorial"
+    }
+  ],
+  "overallScore": 8.6,
+  "overallScoreRationale": "Weighted average of the eight IT editorial criteria using category weights (IT job fit 16, workflow depth 14, ease of use 12, integrations 12, admin/security 12, value 12, AI 12, scalability 10), rounded to 1 decimal. Products are scored inside their job cluster — ITSM, observability, source control, hosting panels, and web-data platforms are not forced into one undifferentiated ranking. Not a hands-on lab score, and affiliate economics are excluded.",
+  "scoreAudit": [
+    {
+      "at": "2026-08-18T09:30:00.000Z",
+      "actor": "editorial",
+      "change": "IT Wave-1 onboarding; approved IT criteria with category weights; handsOnTesting=false",
+      "nextOverall": 8.6
+    }
+  ],
+  "reviewedAt": "2026-08-18T09:30:00.000Z",
+  "reviewer": "editorial",
+  "createdAt": "2026-08-18T09:30:00.000Z",
+  "updatedAt": "2026-08-18T09:30:00.000Z"
+}

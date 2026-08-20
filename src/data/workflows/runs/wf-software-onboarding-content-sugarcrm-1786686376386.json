@@ -1,0 +1,869 @@
+{
+  "id": "wf-software-onboarding-content-sugarcrm-1786686376386",
+  "workflowId": "software-onboarding-content",
+  "workflowVersion": "1.0.0",
+  "name": "Software Onboarding Content: sugarcrm",
+  "targetType": "software",
+  "targetId": "sugarcrm",
+  "status": "completed",
+  "steps": [
+    {
+      "id": "software-onboarding",
+      "definitionStepId": "software-onboarding",
+      "handler": "software-onboarding",
+      "label": "Software onboarding",
+      "status": "completed",
+      "required": true,
+      "failurePolicy": "block-workflow",
+      "attempt": 1,
+      "maxAttempts": 2,
+      "dependsOn": [],
+      "priority": "critical",
+      "config": {
+        "maxAutomaticRevisions": 1,
+        "expandFromContentPlan": false,
+        "expandKind": "none",
+        "stopAfterApproval": true,
+        "allowNormalizedFacts": false,
+        "optionalWhenBlocked": false,
+        "forceTransientFailOnce": false
+      },
+      "inputRefs": {},
+      "outputRefs": {
+        "softwareOnboardingRunId": "onboard-sugarcrm-1786686343241"
+      },
+      "blockers": [],
+      "warnings": [],
+      "startedAt": "2026-08-14T05:46:16.749Z",
+      "completedAt": "2026-08-14T05:46:16.794Z",
+      "revisionAttempts": 0
+    },
+    {
+      "id": "content-plan",
+      "definitionStepId": "content-plan",
+      "handler": "content-plan",
+      "label": "Content plan",
+      "status": "completed",
+      "required": true,
+      "failurePolicy": "block-workflow",
+      "attempt": 1,
+      "maxAttempts": 2,
+      "dependsOn": [
+        "software-onboarding"
+      ],
+      "priority": "high",
+      "config": {
+        "maxAutomaticRevisions": 1,
+        "expandFromContentPlan": false,
+        "expandKind": "none",
+        "stopAfterApproval": true,
+        "allowNormalizedFacts": false,
+        "optionalWhenBlocked": false,
+        "forceTransientFailOnce": false
+      },
+      "inputRefs": {},
+      "outputRefs": {
+        "softwareOnboardingRunId": "onboard-sugarcrm-1786686343241",
+        "comparisonTargets": "salesforce-vs-sugarcrm,hubspot-vs-sugarcrm,dynamics-365-vs-sugarcrm",
+        "pageCandidateCount": "9"
+      },
+      "blockers": [],
+      "warnings": [],
+      "startedAt": "2026-08-14T05:46:16.795Z",
+      "completedAt": "2026-08-14T05:46:16.819Z",
+      "revisionAttempts": 0
+    },
+    {
+      "id": "software-review",
+      "definitionStepId": "software-review",
+      "handler": "agent-run",
+      "label": "Software Review",
+      "status": "completed",
+      "required": true,
+      "failurePolicy": "block-workflow",
+      "attempt": 1,
+      "maxAttempts": 2,
+      "dependsOn": [
+        "content-plan"
+      ],
+      "priority": "high",
+      "config": {
+        "agentId": "software-review-agent",
+        "targetSlug": "sugarcrm",
+        "maxAutomaticRevisions": 1,
+        "expandFromContentPlan": false,
+        "expandKind": "none",
+        "stopAfterApproval": true,
+        "allowNormalizedFacts": false,
+        "optionalWhenBlocked": false,
+        "forceTransientFailOnce": false
+      },
+      "inputRefs": {},
+      "outputRefs": {
+        "draftId": "draft-deterministic-v1-software-review-agent-sugarcrm-2026-08-14T05-46-16-850Z",
+        "qaStatus": "pass",
+        "agentId": "software-review-agent",
+        "target": "sugarcrm"
+      },
+      "inputSnapshot": {
+        "researchFactIds": [
+          "fact-sugarcrm-pricing.hasFreePlan",
+          "fact-sugarcrm-pricing.hasFreeTrial",
+          "fact-sugarcrm-pricing.startingPriceMonthly",
+          "fact-sugarcrm-pricing.currency",
+          "fact-sugarcrm-pricing.model",
+          "fact-sugarcrm-pricing.plans.standard",
+          "fact-sugarcrm-pricing.plans.advanced",
+          "fact-sugarcrm-pricing.plans.premier",
+          "fact-sugarcrm-features.contact-management",
+          "fact-sugarcrm-features.lead-management",
+          "fact-sugarcrm-features.pipeline-management",
+          "fact-sugarcrm-features.deal-management",
+          "fact-sugarcrm-features.email-sync",
+          "fact-sugarcrm-features.workflow-automation",
+          "fact-sugarcrm-features.sales-automation",
+          "fact-sugarcrm-features.reporting",
+          "fact-sugarcrm-features.forecasting",
+          "fact-sugarcrm-features.custom-fields",
+          "fact-sugarcrm-features.custom-pipelines",
+          "fact-sugarcrm-features.mobile-app",
+          "fact-sugarcrm-features.ai-assistance",
+          "fact-sugarcrm-features.integrations",
+          "fact-sugarcrm-positioning.summary",
+          "fact-sugarcrm-ai.assistant",
+          "fact-sugarcrm-ai.recommendations",
+          "fact-sugarcrm-ai.forecasting"
+        ],
+        "methodologySlug": "crm-editorial",
+        "methodologyVersion": "1.0.0",
+        "agentVersion": "1.0.0",
+        "contextBuiltAt": "2026-08-14T05:46:16.845Z"
+      },
+      "blockers": [],
+      "warnings": [],
+      "agentTaskId": "exec-software-review-agent-sugarcrm-1786686376821",
+      "draftId": "draft-deterministic-v1-software-review-agent-sugarcrm-2026-08-14T05-46-16-850Z",
+      "startedAt": "2026-08-14T05:46:16.820Z",
+      "completedAt": "2026-08-14T05:46:16.856Z",
+      "revisionAttempts": 0
+    },
+    {
+      "id": "pricing-page",
+      "definitionStepId": "pricing-page",
+      "handler": "agent-run",
+      "label": "Pricing Page",
+      "status": "completed",
+      "required": false,
+      "failurePolicy": "continue-with-warning",
+      "attempt": 1,
+      "maxAttempts": 2,
+      "dependsOn": [
+        "content-plan"
+      ],
+      "priority": "normal",
+      "config": {
+        "agentId": "pricing-page-agent",
+        "targetSlug": "sugarcrm",
+        "maxAutomaticRevisions": 1,
+        "expandFromContentPlan": false,
+        "expandKind": "none",
+        "stopAfterApproval": true,
+        "allowNormalizedFacts": false,
+        "optionalWhenBlocked": true,
+        "forceTransientFailOnce": false
+      },
+      "inputRefs": {},
+      "outputRefs": {
+        "draftId": "draft-deterministic-v1-pricing-page-agent-sugarcrm-2026-08-14T05-46-16-916Z",
+        "qaStatus": "pass",
+        "agentId": "pricing-page-agent",
+        "target": "sugarcrm"
+      },
+      "inputSnapshot": {
+        "researchFactIds": [
+          "fact-sugarcrm-pricing.hasFreePlan",
+          "fact-sugarcrm-pricing.hasFreeTrial",
+          "fact-sugarcrm-pricing.startingPriceMonthly",
+          "fact-sugarcrm-pricing.currency",
+          "fact-sugarcrm-pricing.model",
+          "fact-sugarcrm-pricing.plans.standard",
+          "fact-sugarcrm-pricing.plans.advanced",
+          "fact-sugarcrm-pricing.plans.premier",
+          "fact-sugarcrm-features.contact-management",
+          "fact-sugarcrm-features.lead-management",
+          "fact-sugarcrm-features.pipeline-management",
+          "fact-sugarcrm-features.deal-management",
+          "fact-sugarcrm-features.email-sync",
+          "fact-sugarcrm-features.workflow-automation",
+          "fact-sugarcrm-features.sales-automation",
+          "fact-sugarcrm-features.reporting",
+          "fact-sugarcrm-features.forecasting",
+          "fact-sugarcrm-features.custom-fields",
+          "fact-sugarcrm-features.custom-pipelines",
+          "fact-sugarcrm-features.mobile-app",
+          "fact-sugarcrm-features.ai-assistance",
+          "fact-sugarcrm-features.integrations",
+          "fact-sugarcrm-positioning.summary",
+          "fact-sugarcrm-ai.assistant",
+          "fact-sugarcrm-ai.recommendations",
+          "fact-sugarcrm-ai.forecasting"
+        ],
+        "methodologySlug": "crm-editorial",
+        "methodologyVersion": "1.0.0",
+        "agentVersion": "1.0.0",
+        "contextBuiltAt": "2026-08-14T05:46:16.915Z"
+      },
+      "blockers": [],
+      "warnings": [],
+      "agentTaskId": "exec-pricing-page-agent-sugarcrm-1786686376909",
+      "draftId": "draft-deterministic-v1-pricing-page-agent-sugarcrm-2026-08-14T05-46-16-916Z",
+      "startedAt": "2026-08-14T05:46:16.908Z",
+      "completedAt": "2026-08-14T05:46:16.920Z",
+      "revisionAttempts": 0
+    },
+    {
+      "id": "alternatives",
+      "definitionStepId": "alternatives",
+      "handler": "agent-run",
+      "label": "Alternatives",
+      "status": "completed",
+      "required": false,
+      "failurePolicy": "continue-with-warning",
+      "attempt": 1,
+      "maxAttempts": 2,
+      "dependsOn": [
+        "content-plan"
+      ],
+      "priority": "normal",
+      "config": {
+        "agentId": "alternatives-agent",
+        "targetSlug": "sugarcrm",
+        "maxAutomaticRevisions": 1,
+        "expandFromContentPlan": false,
+        "expandKind": "none",
+        "stopAfterApproval": true,
+        "allowNormalizedFacts": false,
+        "optionalWhenBlocked": true,
+        "forceTransientFailOnce": false
+      },
+      "inputRefs": {},
+      "outputRefs": {
+        "draftId": "draft-deterministic-v1-alternatives-agent-sugarcrm-2026-08-14T05-46-16-863Z",
+        "qaStatus": "pass",
+        "agentId": "alternatives-agent",
+        "target": "sugarcrm"
+      },
+      "inputSnapshot": {
+        "researchFactIds": [
+          "fact-sugarcrm-pricing.hasFreePlan",
+          "fact-sugarcrm-pricing.hasFreeTrial",
+          "fact-sugarcrm-pricing.startingPriceMonthly",
+          "fact-sugarcrm-pricing.currency",
+          "fact-sugarcrm-pricing.model",
+          "fact-sugarcrm-pricing.plans.standard",
+          "fact-sugarcrm-pricing.plans.advanced",
+          "fact-sugarcrm-pricing.plans.premier",
+          "fact-sugarcrm-features.contact-management",
+          "fact-sugarcrm-features.lead-management",
+          "fact-sugarcrm-features.pipeline-management",
+          "fact-sugarcrm-features.deal-management",
+          "fact-sugarcrm-features.email-sync",
+          "fact-sugarcrm-features.workflow-automation",
+          "fact-sugarcrm-features.sales-automation",
+          "fact-sugarcrm-features.reporting",
+          "fact-sugarcrm-features.forecasting",
+          "fact-sugarcrm-features.custom-fields",
+          "fact-sugarcrm-features.custom-pipelines",
+          "fact-sugarcrm-features.mobile-app",
+          "fact-sugarcrm-features.ai-assistance",
+          "fact-sugarcrm-features.integrations",
+          "fact-sugarcrm-positioning.summary",
+          "fact-sugarcrm-ai.assistant",
+          "fact-sugarcrm-ai.recommendations",
+          "fact-sugarcrm-ai.forecasting"
+        ],
+        "methodologySlug": "crm-editorial",
+        "methodologyVersion": "1.0.0",
+        "agentVersion": "1.0.0",
+        "contextBuiltAt": "2026-08-14T05:46:16.862Z"
+      },
+      "blockers": [],
+      "warnings": [],
+      "agentTaskId": "exec-alternatives-agent-sugarcrm-1786686376858",
+      "draftId": "draft-deterministic-v1-alternatives-agent-sugarcrm-2026-08-14T05-46-16-863Z",
+      "startedAt": "2026-08-14T05:46:16.858Z",
+      "completedAt": "2026-08-14T05:46:16.866Z",
+      "revisionAttempts": 0
+    },
+    {
+      "id": "comparison:salesforce-vs-sugarcrm",
+      "definitionStepId": "comparisons",
+      "handler": "agent-run",
+      "label": "Comparison salesforce-vs-sugarcrm",
+      "status": "completed",
+      "required": false,
+      "failurePolicy": "continue-with-warning",
+      "attempt": 1,
+      "maxAttempts": 2,
+      "dependsOn": [
+        "content-plan"
+      ],
+      "priority": "normal",
+      "config": {
+        "agentId": "comparison-agent",
+        "targetSlug": "salesforce-vs-sugarcrm",
+        "maxAutomaticRevisions": 1,
+        "expandFromContentPlan": true,
+        "expandKind": "comparisons",
+        "stopAfterApproval": true,
+        "allowNormalizedFacts": false,
+        "optionalWhenBlocked": true,
+        "forceTransientFailOnce": false
+      },
+      "expansionKey": "salesforce-vs-sugarcrm",
+      "inputRefs": {},
+      "outputRefs": {
+        "draftId": "draft-deterministic-v1-comparison-agent-salesforce-vs-sugarcrm-2026-08-14T05-46-16-902Z",
+        "qaStatus": "pass",
+        "agentId": "comparison-agent",
+        "target": "salesforce-vs-sugarcrm"
+      },
+      "inputSnapshot": {
+        "researchFactIds": [],
+        "methodologySlug": "crm-editorial",
+        "methodologyVersion": "1.0.0",
+        "agentVersion": "1.0.0",
+        "contextBuiltAt": "2026-08-14T05:46:16.901Z"
+      },
+      "blockers": [],
+      "warnings": [],
+      "agentTaskId": "exec-comparison-agent-salesforce-vs-sugarcrm-1786686376894",
+      "draftId": "draft-deterministic-v1-comparison-agent-salesforce-vs-sugarcrm-2026-08-14T05-46-16-902Z",
+      "startedAt": "2026-08-14T05:46:16.893Z",
+      "completedAt": "2026-08-14T05:46:16.907Z",
+      "revisionAttempts": 0
+    },
+    {
+      "id": "comparison:hubspot-vs-sugarcrm",
+      "definitionStepId": "comparisons",
+      "handler": "agent-run",
+      "label": "Comparison hubspot-vs-sugarcrm",
+      "status": "completed",
+      "required": false,
+      "failurePolicy": "continue-with-warning",
+      "attempt": 1,
+      "maxAttempts": 2,
+      "dependsOn": [
+        "content-plan"
+      ],
+      "priority": "normal",
+      "config": {
+        "agentId": "comparison-agent",
+        "targetSlug": "hubspot-vs-sugarcrm",
+        "maxAutomaticRevisions": 1,
+        "expandFromContentPlan": true,
+        "expandKind": "comparisons",
+        "stopAfterApproval": true,
+        "allowNormalizedFacts": false,
+        "optionalWhenBlocked": true,
+        "forceTransientFailOnce": false
+      },
+      "expansionKey": "hubspot-vs-sugarcrm",
+      "inputRefs": {},
+      "outputRefs": {
+        "draftId": "draft-deterministic-v1-comparison-agent-hubspot-vs-sugarcrm-2026-08-14T05-46-16-888Z",
+        "qaStatus": "pass",
+        "agentId": "comparison-agent",
+        "target": "hubspot-vs-sugarcrm"
+      },
+      "inputSnapshot": {
+        "researchFactIds": [],
+        "methodologySlug": "crm-editorial",
+        "methodologyVersion": "1.0.0",
+        "agentVersion": "1.0.0",
+        "contextBuiltAt": "2026-08-14T05:46:16.886Z"
+      },
+      "blockers": [],
+      "warnings": [],
+      "agentTaskId": "exec-comparison-agent-hubspot-vs-sugarcrm-1786686376881",
+      "draftId": "draft-deterministic-v1-comparison-agent-hubspot-vs-sugarcrm-2026-08-14T05-46-16-888Z",
+      "startedAt": "2026-08-14T05:46:16.880Z",
+      "completedAt": "2026-08-14T05:46:16.891Z",
+      "revisionAttempts": 0
+    },
+    {
+      "id": "comparison:dynamics-365-vs-sugarcrm",
+      "definitionStepId": "comparisons",
+      "handler": "agent-run",
+      "label": "Comparison dynamics-365-vs-sugarcrm",
+      "status": "completed",
+      "required": false,
+      "failurePolicy": "continue-with-warning",
+      "attempt": 1,
+      "maxAttempts": 2,
+      "dependsOn": [
+        "content-plan"
+      ],
+      "priority": "normal",
+      "config": {
+        "agentId": "comparison-agent",
+        "targetSlug": "dynamics-365-vs-sugarcrm",
+        "maxAutomaticRevisions": 1,
+        "expandFromContentPlan": true,
+        "expandKind": "comparisons",
+        "stopAfterApproval": true,
+        "allowNormalizedFacts": false,
+        "optionalWhenBlocked": true,
+        "forceTransientFailOnce": false
+      },
+      "expansionKey": "dynamics-365-vs-sugarcrm",
+      "inputRefs": {},
+      "outputRefs": {
+        "draftId": "draft-deterministic-v1-comparison-agent-dynamics-365-vs-sugarcrm-2026-08-14T05-46-16-876Z",
+        "qaStatus": "pass",
+        "agentId": "comparison-agent",
+        "target": "dynamics-365-vs-sugarcrm"
+      },
+      "inputSnapshot": {
+        "researchFactIds": [],
+        "methodologySlug": "crm-editorial",
+        "methodologyVersion": "1.0.0",
+        "agentVersion": "1.0.0",
+        "contextBuiltAt": "2026-08-14T05:46:16.875Z"
+      },
+      "blockers": [],
+      "warnings": [],
+      "agentTaskId": "exec-comparison-agent-dynamics-365-vs-sugarcrm-1786686376867",
+      "draftId": "draft-deterministic-v1-comparison-agent-dynamics-365-vs-sugarcrm-2026-08-14T05-46-16-876Z",
+      "startedAt": "2026-08-14T05:46:16.867Z",
+      "completedAt": "2026-08-14T05:46:16.879Z",
+      "revisionAttempts": 0
+    },
+    {
+      "id": "internal-links",
+      "definitionStepId": "internal-links",
+      "handler": "internal-link",
+      "label": "Internal Link Plan",
+      "status": "completed",
+      "required": false,
+      "failurePolicy": "continue-with-warning",
+      "attempt": 1,
+      "maxAttempts": 2,
+      "dependsOn": [
+        "software-review"
+      ],
+      "priority": "low",
+      "config": {
+        "agentId": "internal-link-agent",
+        "maxAutomaticRevisions": 1,
+        "expandFromContentPlan": false,
+        "expandKind": "none",
+        "stopAfterApproval": true,
+        "allowNormalizedFacts": false,
+        "optionalWhenBlocked": false,
+        "forceTransientFailOnce": false
+      },
+      "inputRefs": {},
+      "outputRefs": {
+        "draftId": "draft-deterministic-v1-internal-link-agent-sugarcrm-2026-08-14T05-46-16-934Z",
+        "qaStatus": "pass",
+        "agentId": "internal-link-agent",
+        "target": "sugarcrm"
+      },
+      "inputSnapshot": {
+        "researchFactIds": [
+          "fact-sugarcrm-pricing.hasFreePlan",
+          "fact-sugarcrm-pricing.hasFreeTrial",
+          "fact-sugarcrm-pricing.startingPriceMonthly",
+          "fact-sugarcrm-pricing.currency",
+          "fact-sugarcrm-pricing.model",
+          "fact-sugarcrm-pricing.plans.standard",
+          "fact-sugarcrm-pricing.plans.advanced",
+          "fact-sugarcrm-pricing.plans.premier",
+          "fact-sugarcrm-features.contact-management",
+          "fact-sugarcrm-features.lead-management",
+          "fact-sugarcrm-features.pipeline-management",
+          "fact-sugarcrm-features.deal-management",
+          "fact-sugarcrm-features.email-sync",
+          "fact-sugarcrm-features.workflow-automation",
+          "fact-sugarcrm-features.sales-automation",
+          "fact-sugarcrm-features.reporting",
+          "fact-sugarcrm-features.forecasting",
+          "fact-sugarcrm-features.custom-fields",
+          "fact-sugarcrm-features.custom-pipelines",
+          "fact-sugarcrm-features.mobile-app",
+          "fact-sugarcrm-features.ai-assistance",
+          "fact-sugarcrm-features.integrations",
+          "fact-sugarcrm-positioning.summary",
+          "fact-sugarcrm-ai.assistant",
+          "fact-sugarcrm-ai.recommendations",
+          "fact-sugarcrm-ai.forecasting"
+        ],
+        "methodologySlug": "crm-editorial",
+        "methodologyVersion": "1.0.0",
+        "agentVersion": "1.0.0",
+        "contextBuiltAt": "2026-08-14T05:46:16.933Z"
+      },
+      "blockers": [],
+      "warnings": [],
+      "agentTaskId": "exec-internal-link-agent-sugarcrm-1786686376928",
+      "draftId": "draft-deterministic-v1-internal-link-agent-sugarcrm-2026-08-14T05-46-16-934Z",
+      "startedAt": "2026-08-14T05:46:16.927Z",
+      "completedAt": "2026-08-14T05:46:16.937Z",
+      "revisionAttempts": 0
+    },
+    {
+      "id": "finder-readiness",
+      "definitionStepId": "finder-readiness",
+      "handler": "update-recommendation-readiness",
+      "label": "Finder readiness",
+      "status": "completed",
+      "required": false,
+      "failurePolicy": "continue",
+      "attempt": 1,
+      "maxAttempts": 2,
+      "dependsOn": [
+        "content-plan"
+      ],
+      "priority": "low",
+      "config": {
+        "maxAutomaticRevisions": 1,
+        "expandFromContentPlan": false,
+        "expandKind": "none",
+        "stopAfterApproval": true,
+        "allowNormalizedFacts": false,
+        "optionalWhenBlocked": false,
+        "forceTransientFailOnce": false
+      },
+      "inputRefs": {},
+      "outputRefs": {
+        "finderReadiness": "checked"
+      },
+      "blockers": [],
+      "warnings": [],
+      "startedAt": "2026-08-14T05:46:16.923Z",
+      "completedAt": "2026-08-14T05:46:16.925Z",
+      "revisionAttempts": 0
+    },
+    {
+      "id": "editorial-approval",
+      "definitionStepId": "editorial-approval",
+      "handler": "approval-check",
+      "label": "Editorial approval",
+      "status": "completed",
+      "required": true,
+      "failurePolicy": "manual-review",
+      "attempt": 2,
+      "maxAttempts": 2,
+      "dependsOn": [
+        "software-review"
+      ],
+      "priority": "critical",
+      "config": {
+        "approvalType": "editorial",
+        "maxAutomaticRevisions": 1,
+        "expandFromContentPlan": false,
+        "expandKind": "none",
+        "stopAfterApproval": true,
+        "allowNormalizedFacts": false,
+        "optionalWhenBlocked": false,
+        "forceTransientFailOnce": false
+      },
+      "inputRefs": {},
+      "outputRefs": {
+        "approvalId": "appr-wf-software-onboarding-content-sugarcrm-1786686376386-software-review",
+        "draftId": "draft-deterministic-v1-software-review-agent-sugarcrm-2026-08-14T05-46-16-850Z",
+        "approvalIds": "appr-wf-software-onboarding-content-sugarcrm-1786686376386-software-review"
+      },
+      "blockers": [],
+      "warnings": [
+        "Approval received — resuming",
+        "6 optional draft(s) may still need separate editorial review"
+      ],
+      "approvalId": "appr-wf-software-onboarding-content-sugarcrm-1786686376386-software-review",
+      "startedAt": "2026-08-14T05:47:27.280Z",
+      "completedAt": "2026-08-14T05:47:27.340Z",
+      "revisionAttempts": 0
+    },
+    {
+      "id": "pre-publish-validation",
+      "definitionStepId": "pre-publish-validation",
+      "handler": "pre-publish-validation",
+      "label": "Pre-publish validation",
+      "status": "completed",
+      "required": true,
+      "failurePolicy": "block-workflow",
+      "attempt": 2,
+      "maxAttempts": 2,
+      "dependsOn": [
+        "editorial-approval"
+      ],
+      "priority": "critical",
+      "config": {
+        "maxAutomaticRevisions": 1,
+        "expandFromContentPlan": false,
+        "expandKind": "none",
+        "stopAfterApproval": true,
+        "allowNormalizedFacts": false,
+        "optionalWhenBlocked": false,
+        "forceTransientFailOnce": false
+      },
+      "inputRefs": {},
+      "outputRefs": {
+        "publishState": "READY_TO_PUBLISH"
+      },
+      "blockers": [],
+      "warnings": [
+        "stopAfterApproval: workflow will not publish automatically"
+      ],
+      "startedAt": "2026-08-14T05:49:44.179Z",
+      "completedAt": "2026-08-14T05:49:44.495Z",
+      "revisionAttempts": 0
+    }
+  ],
+  "history": [
+    {
+      "at": "2026-08-14T05:46:16.744Z",
+      "event": "workflow_created",
+      "message": "Created software-onboarding-content:v1.0.0"
+    },
+    {
+      "at": "2026-08-14T05:46:16.746Z",
+      "event": "workflow_started",
+      "message": "Workflow execution started"
+    },
+    {
+      "at": "2026-08-14T05:46:16.748Z",
+      "event": "workflow_step_started",
+      "stepId": "software-onboarding",
+      "message": "Started Software onboarding"
+    },
+    {
+      "at": "2026-08-14T05:46:16.794Z",
+      "event": "workflow_step_completed",
+      "stepId": "software-onboarding",
+      "message": "Reused onboarding run onboard-sugarcrm-1786686343241 (review-required)"
+    },
+    {
+      "at": "2026-08-14T05:46:16.795Z",
+      "event": "workflow_step_started",
+      "stepId": "content-plan",
+      "message": "Started Content plan"
+    },
+    {
+      "at": "2026-08-14T05:46:16.819Z",
+      "event": "workflow_step_completed",
+      "stepId": "content-plan",
+      "message": "Content plan from onboarding onboard-sugarcrm-1786686343241 (9 candidates)"
+    },
+    {
+      "at": "2026-08-14T05:46:16.820Z",
+      "event": "workflow_step_started",
+      "stepId": "software-review",
+      "message": "Started Software Review"
+    },
+    {
+      "at": "2026-08-14T05:46:16.856Z",
+      "event": "workflow_step_completed",
+      "stepId": "software-review",
+      "message": "Agent software-review-agent → draft draft-deterministic-v1-software-review-agent-sugarcrm-2026-08-14T05-46-16-850Z (qa=pass)"
+    },
+    {
+      "at": "2026-08-14T05:46:16.858Z",
+      "event": "workflow_step_started",
+      "stepId": "alternatives",
+      "message": "Started Alternatives"
+    },
+    {
+      "at": "2026-08-14T05:46:16.866Z",
+      "event": "workflow_step_completed",
+      "stepId": "alternatives",
+      "message": "Agent alternatives-agent → draft draft-deterministic-v1-alternatives-agent-sugarcrm-2026-08-14T05-46-16-863Z (qa=pass)"
+    },
+    {
+      "at": "2026-08-14T05:46:16.867Z",
+      "event": "workflow_step_started",
+      "stepId": "comparison:dynamics-365-vs-sugarcrm",
+      "message": "Started Comparison dynamics-365-vs-sugarcrm"
+    },
+    {
+      "at": "2026-08-14T05:46:16.879Z",
+      "event": "workflow_step_completed",
+      "stepId": "comparison:dynamics-365-vs-sugarcrm",
+      "message": "Agent comparison-agent → draft draft-deterministic-v1-comparison-agent-dynamics-365-vs-sugarcrm-2026-08-14T05-46-16-876Z (qa=pass)"
+    },
+    {
+      "at": "2026-08-14T05:46:16.880Z",
+      "event": "workflow_step_started",
+      "stepId": "comparison:hubspot-vs-sugarcrm",
+      "message": "Started Comparison hubspot-vs-sugarcrm"
+    },
+    {
+      "at": "2026-08-14T05:46:16.891Z",
+      "event": "workflow_step_completed",
+      "stepId": "comparison:hubspot-vs-sugarcrm",
+      "message": "Agent comparison-agent → draft draft-deterministic-v1-comparison-agent-hubspot-vs-sugarcrm-2026-08-14T05-46-16-888Z (qa=pass)"
+    },
+    {
+      "at": "2026-08-14T05:46:16.892Z",
+      "event": "workflow_step_started",
+      "stepId": "comparison:salesforce-vs-sugarcrm",
+      "message": "Started Comparison salesforce-vs-sugarcrm"
+    },
+    {
+      "at": "2026-08-14T05:46:16.907Z",
+      "event": "workflow_step_completed",
+      "stepId": "comparison:salesforce-vs-sugarcrm",
+      "message": "Agent comparison-agent → draft draft-deterministic-v1-comparison-agent-salesforce-vs-sugarcrm-2026-08-14T05-46-16-902Z (qa=pass)"
+    },
+    {
+      "at": "2026-08-14T05:46:16.908Z",
+      "event": "workflow_step_started",
+      "stepId": "pricing-page",
+      "message": "Started Pricing Page"
+    },
+    {
+      "at": "2026-08-14T05:46:16.920Z",
+      "event": "workflow_step_completed",
+      "stepId": "pricing-page",
+      "message": "Agent pricing-page-agent → draft draft-deterministic-v1-pricing-page-agent-sugarcrm-2026-08-14T05-46-16-916Z (qa=pass)"
+    },
+    {
+      "at": "2026-08-14T05:46:16.923Z",
+      "event": "workflow_step_started",
+      "stepId": "finder-readiness",
+      "message": "Started Finder readiness"
+    },
+    {
+      "at": "2026-08-14T05:46:16.925Z",
+      "event": "workflow_step_completed",
+      "stepId": "finder-readiness",
+      "message": "Finder readiness noted for sugarcrm"
+    },
+    {
+      "at": "2026-08-14T05:46:16.927Z",
+      "event": "workflow_step_started",
+      "stepId": "internal-links",
+      "message": "Started Internal Link Plan"
+    },
+    {
+      "at": "2026-08-14T05:46:16.937Z",
+      "event": "workflow_step_completed",
+      "stepId": "internal-links",
+      "message": "Agent internal-link-agent → draft draft-deterministic-v1-internal-link-agent-sugarcrm-2026-08-14T05-46-16-934Z (qa=pass)"
+    },
+    {
+      "at": "2026-08-14T05:46:16.943Z",
+      "event": "workflow_step_started",
+      "stepId": "editorial-approval",
+      "message": "Started Editorial approval"
+    },
+    {
+      "at": "2026-08-14T05:46:16.970Z",
+      "event": "workflow_step_completed",
+      "stepId": "editorial-approval",
+      "message": "WAITING FOR EDITORIAL APPROVAL (appr-wf-software-onboarding-content-sugarcrm-1786686376386-software-review)"
+    },
+    {
+      "at": "2026-08-14T05:47:27.276Z",
+      "event": "workflow_resumed",
+      "message": "Workflow resumed"
+    },
+    {
+      "at": "2026-08-14T05:47:27.278Z",
+      "event": "workflow_started",
+      "message": "Workflow execution started"
+    },
+    {
+      "at": "2026-08-14T05:47:27.280Z",
+      "event": "workflow_step_started",
+      "stepId": "editorial-approval",
+      "message": "Started Editorial approval"
+    },
+    {
+      "at": "2026-08-14T05:47:27.340Z",
+      "event": "workflow_step_completed",
+      "stepId": "editorial-approval",
+      "message": "Required editorial approvals satisfied"
+    },
+    {
+      "at": "2026-08-14T05:47:27.342Z",
+      "event": "workflow_step_started",
+      "stepId": "pre-publish-validation",
+      "message": "Started Pre-publish validation"
+    },
+    {
+      "at": "2026-08-14T05:47:27.640Z",
+      "event": "workflow_step_completed",
+      "stepId": "pre-publish-validation",
+      "message": "Pre-publish validation blocked: Stale context for comparison:salesforce-vs-sugarcrm: removed-critical-fact:fact-salesforce-pricing.hasFreePlan; removed-critical-fact:fact-salesforce-pricing.hasFreeTrial; removed-critical-fact:fact-salesforce-pricing.startingPriceMonthly; removed-critical-fact:fact-salesforce-pricing.currency; removed-critical-fact:fact-salesforce-pricing.model; removed-critical-fact:fact-salesforce-pricing.plans.starter-suite; removed-critical-fact:fact-salesforce-pricing.plans.pro-suite; removed-critical-fact:fact-salesforce-pricing.plans.enterprise; removed-critical-fact:fact-salesforce-pricing.plans.unlimited; removed-critical-fact:fact-salesforce-pricing.addons; removed-critical-fact:fact-salesforce-pricing.agentforce1; Stale context for comparison:hubspot-vs-sugarcrm: removed-critical-fact:fact-hubspot-pricing.hasFreePlan; removed-critical-fact:fact-hubspot-pricing.hasFreeTrial; removed-critical-fact:fact-hubspot-pricing.startingPriceMonthly; removed-critical-fact:fact-hubspot-pricing.currency; removed-critical-fact:fact-hubspot-pricing.model; removed-critical-fact:fact-hubspot-pricing.plans.free; removed-critical-fact:fact-hubspot-pricing.plans.starter; removed-critical-fact:fact-hubspot-pricing.plans.professional; removed-critical-fact:fact-hubspot-pricing.plans.enterprise; removed-critical-fact:fact-hubspot-pricing.sales-hub.ladder; removed-critical-fact:fact-hubspot-pricing.billing-notes; removed-critical-fact:fact-hubspot-pricing.sales-hub.professional.catalog; removed-critical-fact:fact-hubspot-pricing.sales-hub.professional.marketing; removed-critical-fact:fact-hubspot-pricing.smart-crm.starter.catalog; Stale context for comparison:dynamics-365-vs-sugarcrm: removed-critical-fact:fact-dynamics-365-pricing.hasFreePlan; removed-critical-fact:fact-dynamics-365-pricing.hasFreeTrial; removed-critical-fact:fact-dynamics-365-pricing.trialDays; removed-critical-fact:fact-dynamics-365-pricing.startingPriceMonthly; removed-critical-fact:fact-dynamics-365-pricing.currency; removed-critical-fact:fact-dynamics-365-pricing.model; removed-critical-fact:fact-dynamics-365-pricing.plans.sales-professional; removed-critical-fact:fact-dynamics-365-pricing.plans.sales-enterprise; removed-critical-fact:fact-dynamics-365-pricing.plans.sales-premium; removed-critical-fact:fact-dynamics-365-pricing.plans.relationship-sales"
+    },
+    {
+      "at": "2026-08-14T05:47:42.138Z",
+      "event": "workflow_resumed",
+      "message": "Workflow resumed"
+    },
+    {
+      "at": "2026-08-14T05:47:42.141Z",
+      "event": "workflow_started",
+      "message": "Workflow execution started"
+    },
+    {
+      "at": "2026-08-14T05:49:44.175Z",
+      "event": "workflow_resumed",
+      "message": "Workflow resumed"
+    },
+    {
+      "at": "2026-08-14T05:49:44.177Z",
+      "event": "workflow_started",
+      "message": "Workflow execution started"
+    },
+    {
+      "at": "2026-08-14T05:49:44.179Z",
+      "event": "workflow_step_started",
+      "stepId": "pre-publish-validation",
+      "message": "Started Pre-publish validation"
+    },
+    {
+      "at": "2026-08-14T05:49:44.495Z",
+      "event": "workflow_step_completed",
+      "stepId": "pre-publish-validation",
+      "message": "Pre-publish validation passed — READY TO PUBLISH (manual)"
+    },
+    {
+      "at": "2026-08-14T05:49:44.497Z",
+      "event": "workflow_completed",
+      "message": "Workflow completed"
+    },
+    {
+      "at": "2026-08-14T05:50:05.337Z",
+      "event": "workflow_resumed",
+      "message": "Workflow resumed"
+    },
+    {
+      "at": "2026-08-14T05:50:05.339Z",
+      "event": "workflow_started",
+      "message": "Workflow execution started"
+    },
+    {
+      "at": "2026-08-14T05:50:05.340Z",
+      "event": "workflow_completed",
+      "message": "Workflow completed"
+    }
+  ],
+  "options": {
+    "generateReview": true,
+    "generatePricing": true,
+    "generateAlternatives": true,
+    "generateComparisons": true,
+    "runInternalLinks": true,
+    "stopAfterApproval": true,
+    "allowNormalizedFacts": false,
+    "dryRun": false,
+    "maxComparisons": 3,
+    "skipOnboarding": false
+  },
+  "warnings": [],
+  "createdAt": "2026-08-14T05:46:16.744Z",
+  "updatedAt": "2026-08-14T05:50:05.340Z"
+}

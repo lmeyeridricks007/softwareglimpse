@@ -1,0 +1,165 @@
+{
+  "id": "assessment-azure-devops-it-v1",
+  "productSlug": "azure-devops",
+  "methodologySlug": "it-development-editorial",
+  "methodologyVersion": "1.0.0",
+  "status": "approved",
+  "verdict": "Azure DevOps: Choose Azure DevOps when Azure-native Boards/Repos/Pipelines are the job — not GitHub by default, and not GitHub Copilot. Scores use the IT & Development editorial methodology from first-party research as of 2026-08-18 — not hands-on product testing.",
+  "strengths": [
+    "Five free Basic users",
+    "Published $6 Basic seat",
+    "Boards + Repos + Pipelines together",
+    "Azure/Entra native",
+    "Test Plans path for QA"
+  ],
+  "weaknesses": [
+    "Not GitHub’s ecosystem",
+    "Test Plans $52 jump",
+    "Pipeline minutes extra",
+    "AI coding lives on Copilot",
+    "Weaker OSS community default"
+  ],
+  "bestFor": [
+    "Microsoft/Azure-native engineering orgs",
+    "Teams that want Boards + Repos + Pipelines without GitHub",
+    "QA groups that will actually buy Test Plans seats"
+  ],
+  "notIdealFor": [
+    "Open-source and GitHub-community-first teams",
+    "Buyers who only need GitHub Copilot in an existing IDE",
+    "ITSM desks (Jira Service Management / ServiceNow)"
+  ],
+  "tradeoffs": [
+    "Per-agent vs per-host vs per-seat vs per-GB pricing models",
+    "Module stacking and consumption overages vs single-SKU floors",
+    "Free tiers vs enterprise SSO/audit gates",
+    "Landscape-adjacent tools vs primary job-cluster peers on best pages"
+  ],
+  "recommendation": "Choose Azure DevOps when Azure-native Boards/Repos/Pipelines are the job — not GitHub by default, and not GitHub Copilot. Compare GitHub for community + Actions; GitLab for DevSecOps-in-one; Jira Software if the job is PM issue tracking only.",
+  "editorialNotes": "IT Priority-3 batch. Approved on it-development-editorial v1.0.0. membershipRole=primary. jobCluster=source-control-devops. handsOnTesting=false. Affiliate economics excluded.",
+  "handsOnTesting": false,
+  "confidence": "medium",
+  "criterionAssessments": [
+    {
+      "criterionSlug": "ease-of-use",
+      "score": 7,
+      "rationale": "Azure Portal + org/project model is familiar for Microsoft shops; new teams still hit Boards vs GitHub Issues friction. Not a lab test.",
+      "supportingFactIds": [
+        "fact-azure-devops-features.source-control",
+        "fact-azure-devops-pricing.model"
+      ],
+      "confidence": "medium",
+      "status": "approved",
+      "reviewedAt": "2026-08-18T14:00:00.000Z",
+      "reviewer": "editorial"
+    },
+    {
+      "criterionSlug": "it-job-fit",
+      "score": 9,
+      "rationale": "Source control + CI + boards as a DevOps suite — ranked with GitHub and GitLab, not Jira Software (PM) and not GitHub Copilot.",
+      "supportingFactIds": [
+        "fact-azure-devops-features.source-control",
+        "fact-azure-devops-pricing.model"
+      ],
+      "confidence": "medium",
+      "status": "approved",
+      "reviewedAt": "2026-08-18T14:00:00.000Z",
+      "reviewer": "editorial"
+    },
+    {
+      "criterionSlug": "workflow-depth",
+      "score": 9,
+      "rationale": "Repos, Boards, Pipelines, Artifacts, and Test Plans cover a full Azure delivery loop.",
+      "supportingFactIds": [
+        "fact-azure-devops-features.cicd-actions",
+        "fact-azure-devops-pricing.model"
+      ],
+      "confidence": "medium",
+      "status": "approved",
+      "reviewedAt": "2026-08-18T14:00:00.000Z",
+      "reviewer": "editorial"
+    },
+    {
+      "criterionSlug": "integrations",
+      "score": 9,
+      "rationale": "Native Azure AD/Entra, Teams, and Azure cloud; weaker GitHub Marketplace ecosystem.",
+      "supportingFactIds": [
+        "fact-azure-devops-features.analytics-reporting",
+        "fact-azure-devops-pricing.model",
+        "fact-azure-devops-positioning.vendorClaim"
+      ],
+      "confidence": "medium",
+      "status": "approved",
+      "reviewedAt": "2026-08-18T14:00:00.000Z",
+      "reviewer": "editorial"
+    },
+    {
+      "criterionSlug": "admin-security",
+      "score": 8,
+      "rationale": "Entra ID, org policies, and enterprise Microsoft procurement are the admin story.",
+      "supportingFactIds": [
+        "fact-azure-devops-features.enterprise-security",
+        "fact-azure-devops-pricing.model"
+      ],
+      "confidence": "medium",
+      "status": "approved",
+      "reviewedAt": "2026-08-18T14:00:00.000Z",
+      "reviewer": "editorial"
+    },
+    {
+      "criterionSlug": "scalability",
+      "score": 8,
+      "rationale": "Seat + pipeline/artifact usage scales; Visual Studio entitlements change TCO.",
+      "supportingFactIds": [
+        "fact-azure-devops-pricing.plans.basic-first-5",
+        "fact-azure-devops-pricing.model",
+        "fact-azure-devops-pricing.plans.basic-test-plans"
+      ],
+      "confidence": "medium",
+      "status": "approved",
+      "reviewedAt": "2026-08-18T14:00:00.000Z",
+      "reviewer": "editorial"
+    },
+    {
+      "criterionSlug": "value-for-money",
+      "score": 9,
+      "rationale": "First five Basic users free then $6 is a sharp published floor vs GitLab Premium. Affiliate economics excluded.",
+      "supportingFactIds": [
+        "fact-azure-devops-pricing.hasFreePlan",
+        "fact-azure-devops-pricing.model",
+        "fact-azure-devops-pricing.startingPriceMonthly"
+      ],
+      "confidence": "medium",
+      "status": "approved",
+      "reviewedAt": "2026-08-18T14:00:00.000Z",
+      "reviewer": "editorial"
+    },
+    {
+      "criterionSlug": "ai-capabilities",
+      "score": 6,
+      "rationale": "AI coding is GitHub Copilot, not this product — scored as limited assistance on Azure DevOps itself.",
+      "supportingFactIds": [
+        "fact-azure-devops-features.dev-ai",
+        "fact-azure-devops-pricing.model"
+      ],
+      "confidence": "medium",
+      "status": "approved",
+      "reviewedAt": "2026-08-18T14:00:00.000Z",
+      "reviewer": "editorial"
+    }
+  ],
+  "overallScore": 8.2,
+  "overallScoreRationale": "Weighted average of the eight IT editorial criteria using category weights (IT job fit 16, workflow depth 14, ease of use 12, integrations 12, admin/security 12, value 12, AI 12, scalability 10), rounded to 1 decimal. Products are scored inside their job cluster — ITSM, observability, source control, hosting panels, and web-data platforms are not forced into one undifferentiated ranking. Not a hands-on lab score, and affiliate economics are excluded.",
+  "scoreAudit": [
+    {
+      "at": "2026-08-18T14:00:00.000Z",
+      "actor": "editorial",
+      "change": "IT Priority-3 onboarding; approved IT criteria with category weights; handsOnTesting=false",
+      "nextOverall": 8.2
+    }
+  ],
+  "reviewedAt": "2026-08-18T14:00:00.000Z",
+  "reviewer": "editorial",
+  "createdAt": "2026-08-18T14:00:00.000Z",
+  "updatedAt": "2026-08-18T14:00:00.000Z"
+}

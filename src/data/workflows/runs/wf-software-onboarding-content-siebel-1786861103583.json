@@ -1,0 +1,658 @@
+{
+  "id": "wf-software-onboarding-content-siebel-1786861103583",
+  "workflowId": "software-onboarding-content",
+  "workflowVersion": "1.0.0",
+  "name": "Software Onboarding Content: siebel",
+  "targetType": "software",
+  "targetId": "siebel",
+  "status": "completed-with-warnings",
+  "steps": [
+    {
+      "id": "software-onboarding",
+      "definitionStepId": "software-onboarding",
+      "handler": "software-onboarding",
+      "label": "Software onboarding",
+      "status": "completed",
+      "required": true,
+      "failurePolicy": "block-workflow",
+      "attempt": 1,
+      "maxAttempts": 2,
+      "dependsOn": [],
+      "priority": "critical",
+      "config": {
+        "maxAutomaticRevisions": 1,
+        "expandFromContentPlan": false,
+        "expandKind": "none",
+        "stopAfterApproval": true,
+        "allowNormalizedFacts": false,
+        "optionalWhenBlocked": false,
+        "forceTransientFailOnce": false
+      },
+      "inputRefs": {},
+      "outputRefs": {
+        "softwareOnboardingRunId": "onboard-siebel-1786859737652"
+      },
+      "blockers": [],
+      "warnings": [
+        "Onboarding run exists but status=blocked"
+      ],
+      "startedAt": "2026-08-16T06:18:23.955Z",
+      "completedAt": "2026-08-16T06:18:23.998Z",
+      "revisionAttempts": 0
+    },
+    {
+      "id": "content-plan",
+      "definitionStepId": "content-plan",
+      "handler": "content-plan",
+      "label": "Content plan",
+      "status": "completed",
+      "required": true,
+      "failurePolicy": "block-workflow",
+      "attempt": 1,
+      "maxAttempts": 2,
+      "dependsOn": [
+        "software-onboarding"
+      ],
+      "priority": "high",
+      "config": {
+        "maxAutomaticRevisions": 1,
+        "expandFromContentPlan": false,
+        "expandKind": "none",
+        "stopAfterApproval": true,
+        "allowNormalizedFacts": false,
+        "optionalWhenBlocked": false,
+        "forceTransientFailOnce": false
+      },
+      "inputRefs": {},
+      "outputRefs": {
+        "softwareOnboardingRunId": "onboard-siebel-1786859737652",
+        "comparisonTargets": "",
+        "pageCandidateCount": "0"
+      },
+      "blockers": [],
+      "warnings": [],
+      "startedAt": "2026-08-16T06:18:24.001Z",
+      "completedAt": "2026-08-16T06:18:24.076Z",
+      "revisionAttempts": 0
+    },
+    {
+      "id": "software-review",
+      "definitionStepId": "software-review",
+      "handler": "agent-run",
+      "label": "Software Review",
+      "status": "completed",
+      "required": true,
+      "failurePolicy": "block-workflow",
+      "attempt": 1,
+      "maxAttempts": 2,
+      "dependsOn": [
+        "content-plan"
+      ],
+      "priority": "high",
+      "config": {
+        "agentId": "software-review-agent",
+        "targetSlug": "siebel",
+        "maxAutomaticRevisions": 1,
+        "expandFromContentPlan": false,
+        "expandKind": "none",
+        "stopAfterApproval": true,
+        "allowNormalizedFacts": false,
+        "optionalWhenBlocked": false,
+        "forceTransientFailOnce": false
+      },
+      "inputRefs": {},
+      "outputRefs": {
+        "draftId": "draft-deterministic-v1-software-review-agent-siebel-2026-08-16T06-18-24-131Z",
+        "qaStatus": "pass",
+        "agentId": "software-review-agent",
+        "target": "siebel"
+      },
+      "inputSnapshot": {
+        "researchFactIds": [
+          "fact-siebel-pricing.hasFreePlan",
+          "fact-siebel-pricing.hasFreeTrial",
+          "fact-siebel-pricing.currency",
+          "fact-siebel-pricing.model",
+          "fact-siebel-identity.shortDescription",
+          "fact-siebel-positioning.vendorClaim",
+          "fact-siebel-pricing.plans.enterprise",
+          "fact-siebel-features.contact-management",
+          "fact-siebel-features.lead-management",
+          "fact-siebel-features.pipeline-management",
+          "fact-siebel-features.deal-management",
+          "fact-siebel-features.custom-pipelines",
+          "fact-siebel-features.custom-fields",
+          "fact-siebel-features.email-sync",
+          "fact-siebel-features.email-tracking",
+          "fact-siebel-features.workflow-automation",
+          "fact-siebel-features.reporting",
+          "fact-siebel-features.mobile-app",
+          "fact-siebel-features.sales-automation",
+          "fact-siebel-features.integrations",
+          "fact-siebel-features.ai-assistance"
+        ],
+        "methodologySlug": "crm-editorial",
+        "methodologyVersion": "1.0.0",
+        "agentVersion": "1.0.0",
+        "contextBuiltAt": "2026-08-16T06:18:24.126Z"
+      },
+      "blockers": [],
+      "warnings": [],
+      "agentTaskId": "exec-software-review-agent-siebel-1786861104079",
+      "draftId": "draft-deterministic-v1-software-review-agent-siebel-2026-08-16T06-18-24-131Z",
+      "startedAt": "2026-08-16T06:18:24.078Z",
+      "completedAt": "2026-08-16T06:18:24.136Z",
+      "revisionAttempts": 0
+    },
+    {
+      "id": "pricing-page",
+      "definitionStepId": "pricing-page",
+      "handler": "agent-run",
+      "label": "Pricing Page",
+      "status": "blocked",
+      "required": false,
+      "failurePolicy": "continue-with-warning",
+      "attempt": 1,
+      "maxAttempts": 2,
+      "dependsOn": [
+        "content-plan"
+      ],
+      "priority": "normal",
+      "config": {
+        "agentId": "pricing-page-agent",
+        "targetSlug": "siebel",
+        "maxAutomaticRevisions": 1,
+        "expandFromContentPlan": false,
+        "expandKind": "none",
+        "stopAfterApproval": true,
+        "allowNormalizedFacts": false,
+        "optionalWhenBlocked": true,
+        "forceTransientFailOnce": false
+      },
+      "inputRefs": {},
+      "outputRefs": {},
+      "blockers": [
+        "PRICING_UNVERIFIED: Product pricing data is unverified"
+      ],
+      "warnings": [
+        "PRICING_UNVERIFIED: Product pricing data is unverified"
+      ],
+      "startedAt": "2026-08-16T06:18:24.158Z",
+      "completedAt": "2026-08-16T06:18:24.167Z",
+      "revisionAttempts": 0
+    },
+    {
+      "id": "alternatives",
+      "definitionStepId": "alternatives",
+      "handler": "agent-run",
+      "label": "Alternatives",
+      "status": "completed",
+      "required": false,
+      "failurePolicy": "continue-with-warning",
+      "attempt": 1,
+      "maxAttempts": 2,
+      "dependsOn": [
+        "content-plan"
+      ],
+      "priority": "normal",
+      "config": {
+        "agentId": "alternatives-agent",
+        "targetSlug": "siebel",
+        "maxAutomaticRevisions": 1,
+        "expandFromContentPlan": false,
+        "expandKind": "none",
+        "stopAfterApproval": true,
+        "allowNormalizedFacts": false,
+        "optionalWhenBlocked": true,
+        "forceTransientFailOnce": false
+      },
+      "inputRefs": {},
+      "outputRefs": {
+        "draftId": "draft-deterministic-v1-alternatives-agent-siebel-2026-08-16T06-18-24-143Z",
+        "qaStatus": "pass",
+        "agentId": "alternatives-agent",
+        "target": "siebel"
+      },
+      "inputSnapshot": {
+        "researchFactIds": [
+          "fact-siebel-pricing.hasFreePlan",
+          "fact-siebel-pricing.hasFreeTrial",
+          "fact-siebel-pricing.currency",
+          "fact-siebel-pricing.model",
+          "fact-siebel-identity.shortDescription",
+          "fact-siebel-positioning.vendorClaim",
+          "fact-siebel-pricing.plans.enterprise",
+          "fact-siebel-features.contact-management",
+          "fact-siebel-features.lead-management",
+          "fact-siebel-features.pipeline-management",
+          "fact-siebel-features.deal-management",
+          "fact-siebel-features.custom-pipelines",
+          "fact-siebel-features.custom-fields",
+          "fact-siebel-features.email-sync",
+          "fact-siebel-features.email-tracking",
+          "fact-siebel-features.workflow-automation",
+          "fact-siebel-features.reporting",
+          "fact-siebel-features.mobile-app",
+          "fact-siebel-features.sales-automation",
+          "fact-siebel-features.integrations",
+          "fact-siebel-features.ai-assistance"
+        ],
+        "methodologySlug": "crm-editorial",
+        "methodologyVersion": "1.0.0",
+        "agentVersion": "1.0.0",
+        "contextBuiltAt": "2026-08-16T06:18:24.142Z"
+      },
+      "blockers": [],
+      "warnings": [],
+      "agentTaskId": "exec-alternatives-agent-siebel-1786861104138",
+      "draftId": "draft-deterministic-v1-alternatives-agent-siebel-2026-08-16T06-18-24-143Z",
+      "startedAt": "2026-08-16T06:18:24.137Z",
+      "completedAt": "2026-08-16T06:18:24.145Z",
+      "revisionAttempts": 0
+    },
+    {
+      "id": "comparisons",
+      "definitionStepId": "comparisons",
+      "handler": "agent-run",
+      "label": "Comparisons",
+      "status": "blocked",
+      "required": false,
+      "failurePolicy": "continue-with-warning",
+      "attempt": 1,
+      "maxAttempts": 2,
+      "dependsOn": [
+        "content-plan"
+      ],
+      "priority": "normal",
+      "config": {
+        "agentId": "comparison-agent",
+        "maxAutomaticRevisions": 1,
+        "expandFromContentPlan": true,
+        "expandKind": "comparisons",
+        "stopAfterApproval": true,
+        "allowNormalizedFacts": false,
+        "optionalWhenBlocked": true,
+        "forceTransientFailOnce": false
+      },
+      "inputRefs": {},
+      "outputRefs": {},
+      "blockers": [
+        "MISSING_PRODUCTS: Comparison requires two product slugs"
+      ],
+      "warnings": [
+        "MISSING_PRODUCTS: Comparison requires two product slugs"
+      ],
+      "startedAt": "2026-08-16T06:18:24.146Z",
+      "completedAt": "2026-08-16T06:18:24.155Z",
+      "revisionAttempts": 0
+    },
+    {
+      "id": "internal-links",
+      "definitionStepId": "internal-links",
+      "handler": "internal-link",
+      "label": "Internal Link Plan",
+      "status": "completed",
+      "required": false,
+      "failurePolicy": "continue-with-warning",
+      "attempt": 1,
+      "maxAttempts": 2,
+      "dependsOn": [
+        "software-review"
+      ],
+      "priority": "low",
+      "config": {
+        "agentId": "internal-link-agent",
+        "maxAutomaticRevisions": 1,
+        "expandFromContentPlan": false,
+        "expandKind": "none",
+        "stopAfterApproval": true,
+        "allowNormalizedFacts": false,
+        "optionalWhenBlocked": false,
+        "forceTransientFailOnce": false
+      },
+      "inputRefs": {},
+      "outputRefs": {
+        "draftId": "draft-deterministic-v1-internal-link-agent-siebel-2026-08-16T06-18-24-177Z",
+        "qaStatus": "pass",
+        "agentId": "internal-link-agent",
+        "target": "siebel"
+      },
+      "inputSnapshot": {
+        "researchFactIds": [
+          "fact-siebel-pricing.hasFreePlan",
+          "fact-siebel-pricing.hasFreeTrial",
+          "fact-siebel-pricing.currency",
+          "fact-siebel-pricing.model",
+          "fact-siebel-identity.shortDescription",
+          "fact-siebel-positioning.vendorClaim",
+          "fact-siebel-pricing.plans.enterprise",
+          "fact-siebel-features.contact-management",
+          "fact-siebel-features.lead-management",
+          "fact-siebel-features.pipeline-management",
+          "fact-siebel-features.deal-management",
+          "fact-siebel-features.custom-pipelines",
+          "fact-siebel-features.custom-fields",
+          "fact-siebel-features.email-sync",
+          "fact-siebel-features.email-tracking",
+          "fact-siebel-features.workflow-automation",
+          "fact-siebel-features.reporting",
+          "fact-siebel-features.mobile-app",
+          "fact-siebel-features.sales-automation",
+          "fact-siebel-features.integrations",
+          "fact-siebel-features.ai-assistance"
+        ],
+        "methodologySlug": "crm-editorial",
+        "methodologyVersion": "1.0.0",
+        "agentVersion": "1.0.0",
+        "contextBuiltAt": "2026-08-16T06:18:24.175Z"
+      },
+      "blockers": [],
+      "warnings": [],
+      "agentTaskId": "exec-internal-link-agent-siebel-1786861104171",
+      "draftId": "draft-deterministic-v1-internal-link-agent-siebel-2026-08-16T06-18-24-177Z",
+      "startedAt": "2026-08-16T06:18:24.170Z",
+      "completedAt": "2026-08-16T06:18:24.181Z",
+      "revisionAttempts": 0
+    },
+    {
+      "id": "finder-readiness",
+      "definitionStepId": "finder-readiness",
+      "handler": "update-recommendation-readiness",
+      "label": "Finder readiness",
+      "status": "completed",
+      "required": false,
+      "failurePolicy": "continue",
+      "attempt": 1,
+      "maxAttempts": 2,
+      "dependsOn": [
+        "content-plan"
+      ],
+      "priority": "low",
+      "config": {
+        "maxAutomaticRevisions": 1,
+        "expandFromContentPlan": false,
+        "expandKind": "none",
+        "stopAfterApproval": true,
+        "allowNormalizedFacts": false,
+        "optionalWhenBlocked": false,
+        "forceTransientFailOnce": false
+      },
+      "inputRefs": {},
+      "outputRefs": {
+        "finderReadiness": "checked"
+      },
+      "blockers": [],
+      "warnings": [],
+      "startedAt": "2026-08-16T06:18:24.168Z",
+      "completedAt": "2026-08-16T06:18:24.169Z",
+      "revisionAttempts": 0
+    },
+    {
+      "id": "editorial-approval",
+      "definitionStepId": "editorial-approval",
+      "handler": "approval-check",
+      "label": "Editorial approval",
+      "status": "completed",
+      "required": true,
+      "failurePolicy": "manual-review",
+      "attempt": 2,
+      "maxAttempts": 2,
+      "dependsOn": [
+        "software-review"
+      ],
+      "priority": "critical",
+      "config": {
+        "approvalType": "editorial",
+        "maxAutomaticRevisions": 1,
+        "expandFromContentPlan": false,
+        "expandKind": "none",
+        "stopAfterApproval": true,
+        "allowNormalizedFacts": false,
+        "optionalWhenBlocked": false,
+        "forceTransientFailOnce": false
+      },
+      "inputRefs": {},
+      "outputRefs": {
+        "approvalId": "appr-wf-software-onboarding-content-siebel-1786861103583-software-review",
+        "draftId": "draft-deterministic-v1-software-review-agent-siebel-2026-08-16T06-18-24-131Z",
+        "approvalIds": "appr-wf-software-onboarding-content-siebel-1786861103583-software-review"
+      },
+      "blockers": [],
+      "warnings": [
+        "Approval received — resuming",
+        "2 optional draft(s) may still need separate editorial review"
+      ],
+      "approvalId": "appr-wf-software-onboarding-content-siebel-1786861103583-software-review",
+      "startedAt": "2026-08-16T06:19:11.551Z",
+      "completedAt": "2026-08-16T06:19:11.591Z",
+      "revisionAttempts": 0
+    },
+    {
+      "id": "pre-publish-validation",
+      "definitionStepId": "pre-publish-validation",
+      "handler": "pre-publish-validation",
+      "label": "Pre-publish validation",
+      "status": "completed",
+      "required": true,
+      "failurePolicy": "block-workflow",
+      "attempt": 1,
+      "maxAttempts": 2,
+      "dependsOn": [
+        "editorial-approval"
+      ],
+      "priority": "critical",
+      "config": {
+        "maxAutomaticRevisions": 1,
+        "expandFromContentPlan": false,
+        "expandKind": "none",
+        "stopAfterApproval": true,
+        "allowNormalizedFacts": false,
+        "optionalWhenBlocked": false,
+        "forceTransientFailOnce": false
+      },
+      "inputRefs": {},
+      "outputRefs": {
+        "publishState": "READY_TO_PUBLISH"
+      },
+      "blockers": [],
+      "warnings": [
+        "stopAfterApproval: workflow will not publish automatically"
+      ],
+      "startedAt": "2026-08-16T06:19:11.594Z",
+      "completedAt": "2026-08-16T06:19:11.823Z",
+      "revisionAttempts": 0
+    }
+  ],
+  "history": [
+    {
+      "at": "2026-08-16T06:18:23.952Z",
+      "event": "workflow_created",
+      "message": "Created software-onboarding-content:v1.0.0"
+    },
+    {
+      "at": "2026-08-16T06:18:23.954Z",
+      "event": "workflow_started",
+      "message": "Workflow execution started"
+    },
+    {
+      "at": "2026-08-16T06:18:23.955Z",
+      "event": "workflow_step_started",
+      "stepId": "software-onboarding",
+      "message": "Started Software onboarding"
+    },
+    {
+      "at": "2026-08-16T06:18:23.998Z",
+      "event": "workflow_step_completed",
+      "stepId": "software-onboarding",
+      "message": "Reused onboarding run onboard-siebel-1786859737652 (blocked)"
+    },
+    {
+      "at": "2026-08-16T06:18:24.001Z",
+      "event": "workflow_step_started",
+      "stepId": "content-plan",
+      "message": "Started Content plan"
+    },
+    {
+      "at": "2026-08-16T06:18:24.076Z",
+      "event": "workflow_step_completed",
+      "stepId": "content-plan",
+      "message": "Content plan from onboarding onboard-siebel-1786859737652 (0 candidates)"
+    },
+    {
+      "at": "2026-08-16T06:18:24.077Z",
+      "event": "workflow_step_started",
+      "stepId": "software-review",
+      "message": "Started Software Review"
+    },
+    {
+      "at": "2026-08-16T06:18:24.136Z",
+      "event": "workflow_step_completed",
+      "stepId": "software-review",
+      "message": "Agent software-review-agent → draft draft-deterministic-v1-software-review-agent-siebel-2026-08-16T06-18-24-131Z (qa=pass)"
+    },
+    {
+      "at": "2026-08-16T06:18:24.137Z",
+      "event": "workflow_step_started",
+      "stepId": "alternatives",
+      "message": "Started Alternatives"
+    },
+    {
+      "at": "2026-08-16T06:18:24.145Z",
+      "event": "workflow_step_completed",
+      "stepId": "alternatives",
+      "message": "Agent alternatives-agent → draft draft-deterministic-v1-alternatives-agent-siebel-2026-08-16T06-18-24-143Z (qa=pass)"
+    },
+    {
+      "at": "2026-08-16T06:18:24.146Z",
+      "event": "workflow_step_started",
+      "stepId": "comparisons",
+      "message": "Started Comparisons"
+    },
+    {
+      "at": "2026-08-16T06:18:24.155Z",
+      "event": "workflow_step_completed",
+      "stepId": "comparisons",
+      "message": "Agent blocked (optional): MISSING_PRODUCTS: Comparison requires two product slugs"
+    },
+    {
+      "at": "2026-08-16T06:18:24.157Z",
+      "event": "workflow_step_started",
+      "stepId": "pricing-page",
+      "message": "Started Pricing Page"
+    },
+    {
+      "at": "2026-08-16T06:18:24.167Z",
+      "event": "workflow_step_completed",
+      "stepId": "pricing-page",
+      "message": "Agent blocked (optional): PRICING_UNVERIFIED: Product pricing data is unverified"
+    },
+    {
+      "at": "2026-08-16T06:18:24.168Z",
+      "event": "workflow_step_started",
+      "stepId": "finder-readiness",
+      "message": "Started Finder readiness"
+    },
+    {
+      "at": "2026-08-16T06:18:24.169Z",
+      "event": "workflow_step_completed",
+      "stepId": "finder-readiness",
+      "message": "Finder readiness noted for siebel"
+    },
+    {
+      "at": "2026-08-16T06:18:24.170Z",
+      "event": "workflow_step_started",
+      "stepId": "internal-links",
+      "message": "Started Internal Link Plan"
+    },
+    {
+      "at": "2026-08-16T06:18:24.181Z",
+      "event": "workflow_step_completed",
+      "stepId": "internal-links",
+      "message": "Agent internal-link-agent → draft draft-deterministic-v1-internal-link-agent-siebel-2026-08-16T06-18-24-177Z (qa=pass)"
+    },
+    {
+      "at": "2026-08-16T06:18:24.182Z",
+      "event": "workflow_step_started",
+      "stepId": "editorial-approval",
+      "message": "Started Editorial approval"
+    },
+    {
+      "at": "2026-08-16T06:18:24.242Z",
+      "event": "workflow_step_completed",
+      "stepId": "editorial-approval",
+      "message": "WAITING FOR EDITORIAL APPROVAL (appr-wf-software-onboarding-content-siebel-1786861103583-software-review)"
+    },
+    {
+      "at": "2026-08-16T06:19:11.550Z",
+      "event": "workflow_resumed",
+      "message": "Workflow resumed"
+    },
+    {
+      "at": "2026-08-16T06:19:11.551Z",
+      "event": "workflow_started",
+      "message": "Workflow execution started"
+    },
+    {
+      "at": "2026-08-16T06:19:11.551Z",
+      "event": "workflow_step_started",
+      "stepId": "editorial-approval",
+      "message": "Started Editorial approval"
+    },
+    {
+      "at": "2026-08-16T06:19:11.591Z",
+      "event": "workflow_step_completed",
+      "stepId": "editorial-approval",
+      "message": "Required editorial approvals satisfied"
+    },
+    {
+      "at": "2026-08-16T06:19:11.593Z",
+      "event": "workflow_step_started",
+      "stepId": "pre-publish-validation",
+      "message": "Started Pre-publish validation"
+    },
+    {
+      "at": "2026-08-16T06:19:11.823Z",
+      "event": "workflow_step_completed",
+      "stepId": "pre-publish-validation",
+      "message": "Pre-publish validation passed — READY TO PUBLISH (manual)"
+    },
+    {
+      "at": "2026-08-16T06:19:11.825Z",
+      "event": "workflow_completed",
+      "message": "Workflow completed-with-warnings"
+    },
+    {
+      "at": "2026-08-16T06:20:30.864Z",
+      "event": "workflow_resumed",
+      "message": "Workflow resumed"
+    },
+    {
+      "at": "2026-08-16T06:20:30.865Z",
+      "event": "workflow_started",
+      "message": "Workflow execution started"
+    },
+    {
+      "at": "2026-08-16T06:20:30.865Z",
+      "event": "workflow_completed",
+      "message": "Workflow completed-with-warnings"
+    }
+  ],
+  "options": {
+    "generateReview": true,
+    "generatePricing": true,
+    "generateAlternatives": true,
+    "generateComparisons": true,
+    "runInternalLinks": true,
+    "stopAfterApproval": true,
+    "allowNormalizedFacts": false,
+    "dryRun": false,
+    "maxComparisons": 3,
+    "skipOnboarding": false
+  },
+  "warnings": [
+    "comparisons blocked: MISSING_PRODUCTS: Comparison requires two product slugs",
+    "pricing-page blocked: PRICING_UNVERIFIED: Product pricing data is unverified"
+  ],
+  "createdAt": "2026-08-16T06:18:23.952Z",
+  "updatedAt": "2026-08-16T06:20:30.865Z"
+}

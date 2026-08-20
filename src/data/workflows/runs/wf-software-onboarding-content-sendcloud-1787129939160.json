@@ -1,0 +1,849 @@
+{
+  "id": "wf-software-onboarding-content-sendcloud-1787129939160",
+  "workflowId": "software-onboarding-content",
+  "workflowVersion": "1.0.0",
+  "name": "Software Onboarding Content: sendcloud",
+  "targetType": "software",
+  "targetId": "sendcloud",
+  "status": "completed",
+  "steps": [
+    {
+      "id": "software-onboarding",
+      "definitionStepId": "software-onboarding",
+      "handler": "software-onboarding",
+      "label": "Software onboarding",
+      "status": "completed",
+      "required": true,
+      "failurePolicy": "block-workflow",
+      "attempt": 2,
+      "maxAttempts": 2,
+      "dependsOn": [],
+      "priority": "critical",
+      "config": {
+        "maxAutomaticRevisions": 1,
+        "expandFromContentPlan": false,
+        "expandKind": "none",
+        "stopAfterApproval": true,
+        "allowNormalizedFacts": false,
+        "optionalWhenBlocked": false,
+        "forceTransientFailOnce": false
+      },
+      "inputRefs": {},
+      "outputRefs": {
+        "softwareOnboardingRunId": "onboard-sendcloud-1787129949872"
+      },
+      "blockers": [],
+      "warnings": [
+        "Re-queued blocked onboarding attach on resume"
+      ],
+      "startedAt": "2026-08-19T08:59:25.090Z",
+      "completedAt": "2026-08-19T08:59:25.490Z",
+      "revisionAttempts": 0
+    },
+    {
+      "id": "content-plan",
+      "definitionStepId": "content-plan",
+      "handler": "content-plan",
+      "label": "Content plan",
+      "status": "completed",
+      "required": true,
+      "failurePolicy": "block-workflow",
+      "attempt": 1,
+      "maxAttempts": 2,
+      "dependsOn": [
+        "software-onboarding"
+      ],
+      "priority": "high",
+      "config": {
+        "maxAutomaticRevisions": 1,
+        "expandFromContentPlan": false,
+        "expandKind": "none",
+        "stopAfterApproval": true,
+        "allowNormalizedFacts": false,
+        "optionalWhenBlocked": false,
+        "forceTransientFailOnce": false
+      },
+      "inputRefs": {},
+      "outputRefs": {
+        "softwareOnboardingRunId": "onboard-sendcloud-1787129949872",
+        "comparisonTargets": "sendcloud-vs-shopify",
+        "pageCandidateCount": "5"
+      },
+      "blockers": [],
+      "warnings": [],
+      "startedAt": "2026-08-19T08:59:25.492Z",
+      "completedAt": "2026-08-19T08:59:25.595Z",
+      "revisionAttempts": 0
+    },
+    {
+      "id": "software-review",
+      "definitionStepId": "software-review",
+      "handler": "agent-run",
+      "label": "Software Review",
+      "status": "completed",
+      "required": true,
+      "failurePolicy": "block-workflow",
+      "attempt": 2,
+      "maxAttempts": 2,
+      "dependsOn": [
+        "content-plan"
+      ],
+      "priority": "high",
+      "config": {
+        "agentId": "software-review-agent",
+        "targetSlug": "sendcloud",
+        "maxAutomaticRevisions": 1,
+        "expandFromContentPlan": false,
+        "expandKind": "none",
+        "stopAfterApproval": true,
+        "allowNormalizedFacts": false,
+        "optionalWhenBlocked": false,
+        "forceTransientFailOnce": false
+      },
+      "inputRefs": {},
+      "outputRefs": {
+        "draftId": "draft-deterministic-v1-software-review-agent-sendcloud-2026-08-19T09-08-45-699Z",
+        "qaStatus": "pass",
+        "agentId": "software-review-agent",
+        "target": "sendcloud"
+      },
+      "inputSnapshot": {
+        "researchFactIds": [
+          "fact-sendcloud-identity.shortDescription-sendcloud-product-official",
+          "fact-sendcloud-positioning.claim-sendcloud-product-official",
+          "fact-sendcloud-features.online-storefront-sendcloud-product-official",
+          "fact-sendcloud-features.product-catalog-sendcloud-product-official",
+          "fact-sendcloud-features.checkout-payments-sendcloud-product-official",
+          "fact-sendcloud-features.order-management-sendcloud-product-official",
+          "fact-sendcloud-features.inventory-management-sendcloud-product-official",
+          "fact-sendcloud-features.shipping-fulfillment-sendcloud-product-official",
+          "fact-sendcloud-features.pos-omnichannel-sendcloud-product-official",
+          "fact-sendcloud-features.marketplace-channels-sendcloud-product-official",
+          "fact-sendcloud-features.b2b-wholesale-sendcloud-product-official",
+          "fact-sendcloud-features.marketing-automation-sendcloud-product-official",
+          "fact-sendcloud-features.analytics-reporting-sendcloud-product-official",
+          "fact-sendcloud-features.ai-assistance-sendcloud-product-official",
+          "fact-sendcloud-features.dropshipping-sourcing-sendcloud-product-official",
+          "fact-sendcloud-features.app-extensions-sendcloud-product-official",
+          "fact-sendcloud-ai.assistant-sendcloud-product-official",
+          "fact-sendcloud-ai.summaries-sendcloud-product-official",
+          "fact-sendcloud-ai.automation-sendcloud-product-official",
+          "fact-sendcloud-ai.recommendations-sendcloud-product-official",
+          "fact-sendcloud-pricing.plans.free-sendcloud-pricing-official",
+          "fact-sendcloud-pricing.plans.lite-sendcloud-pricing-official",
+          "fact-sendcloud-pricing.plans.growth-sendcloud-pricing-official",
+          "fact-sendcloud-pricing.plans.premium-sendcloud-pricing-official",
+          "fact-sendcloud-pricing.plans.pro-sendcloud-pricing-official",
+          "fact-sendcloud-pricing.plans.enterprise-sendcloud-pricing-official",
+          "fact-sendcloud-pricing.currency-sendcloud-pricing-official",
+          "fact-sendcloud-pricing.hasFreeTrial-sendcloud-pricing-official",
+          "fact-sendcloud-pricing.hasFreePlan-sendcloud-pricing-official",
+          "fact-sendcloud-pricing.model-sendcloud-pricing-official"
+        ],
+        "methodologySlug": "ecommerce-editorial",
+        "methodologyVersion": "1.0.0",
+        "agentVersion": "1.0.0",
+        "contextBuiltAt": "2026-08-19T09:08:45.689Z"
+      },
+      "blockers": [],
+      "warnings": [],
+      "agentTaskId": "exec-software-review-agent-sendcloud-1787130525006",
+      "draftId": "draft-deterministic-v1-software-review-agent-sendcloud-2026-08-19T09-08-45-699Z",
+      "startedAt": "2026-08-19T09:08:44.995Z",
+      "completedAt": "2026-08-19T09:08:45.710Z",
+      "revisionAttempts": 0
+    },
+    {
+      "id": "pricing-page",
+      "definitionStepId": "pricing-page",
+      "handler": "agent-run",
+      "label": "Pricing Page",
+      "status": "completed",
+      "required": false,
+      "failurePolicy": "continue-with-warning",
+      "attempt": 1,
+      "maxAttempts": 2,
+      "dependsOn": [
+        "content-plan"
+      ],
+      "priority": "normal",
+      "config": {
+        "agentId": "pricing-page-agent",
+        "targetSlug": "sendcloud",
+        "maxAutomaticRevisions": 1,
+        "expandFromContentPlan": false,
+        "expandKind": "none",
+        "stopAfterApproval": true,
+        "allowNormalizedFacts": false,
+        "optionalWhenBlocked": true,
+        "forceTransientFailOnce": false
+      },
+      "inputRefs": {},
+      "outputRefs": {
+        "draftId": "draft-deterministic-v1-pricing-page-agent-sendcloud-2026-08-19T09-08-46-075Z",
+        "qaStatus": "pass",
+        "agentId": "pricing-page-agent",
+        "target": "sendcloud"
+      },
+      "inputSnapshot": {
+        "researchFactIds": [
+          "fact-sendcloud-identity.shortDescription-sendcloud-product-official",
+          "fact-sendcloud-positioning.claim-sendcloud-product-official",
+          "fact-sendcloud-features.online-storefront-sendcloud-product-official",
+          "fact-sendcloud-features.product-catalog-sendcloud-product-official",
+          "fact-sendcloud-features.checkout-payments-sendcloud-product-official",
+          "fact-sendcloud-features.order-management-sendcloud-product-official",
+          "fact-sendcloud-features.inventory-management-sendcloud-product-official",
+          "fact-sendcloud-features.shipping-fulfillment-sendcloud-product-official",
+          "fact-sendcloud-features.pos-omnichannel-sendcloud-product-official",
+          "fact-sendcloud-features.marketplace-channels-sendcloud-product-official",
+          "fact-sendcloud-features.b2b-wholesale-sendcloud-product-official",
+          "fact-sendcloud-features.marketing-automation-sendcloud-product-official",
+          "fact-sendcloud-features.analytics-reporting-sendcloud-product-official",
+          "fact-sendcloud-features.ai-assistance-sendcloud-product-official",
+          "fact-sendcloud-features.dropshipping-sourcing-sendcloud-product-official",
+          "fact-sendcloud-features.app-extensions-sendcloud-product-official",
+          "fact-sendcloud-ai.assistant-sendcloud-product-official",
+          "fact-sendcloud-ai.summaries-sendcloud-product-official",
+          "fact-sendcloud-ai.automation-sendcloud-product-official",
+          "fact-sendcloud-ai.recommendations-sendcloud-product-official",
+          "fact-sendcloud-pricing.plans.free-sendcloud-pricing-official",
+          "fact-sendcloud-pricing.plans.lite-sendcloud-pricing-official",
+          "fact-sendcloud-pricing.plans.growth-sendcloud-pricing-official",
+          "fact-sendcloud-pricing.plans.premium-sendcloud-pricing-official",
+          "fact-sendcloud-pricing.plans.pro-sendcloud-pricing-official",
+          "fact-sendcloud-pricing.plans.enterprise-sendcloud-pricing-official",
+          "fact-sendcloud-pricing.currency-sendcloud-pricing-official",
+          "fact-sendcloud-pricing.hasFreeTrial-sendcloud-pricing-official",
+          "fact-sendcloud-pricing.hasFreePlan-sendcloud-pricing-official",
+          "fact-sendcloud-pricing.model-sendcloud-pricing-official"
+        ],
+        "methodologySlug": "ecommerce-editorial",
+        "methodologyVersion": "1.0.0",
+        "agentVersion": "1.0.0",
+        "contextBuiltAt": "2026-08-19T09:08:46.062Z"
+      },
+      "blockers": [],
+      "warnings": [],
+      "agentTaskId": "exec-pricing-page-agent-sendcloud-1787130525999",
+      "draftId": "draft-deterministic-v1-pricing-page-agent-sendcloud-2026-08-19T09-08-46-075Z",
+      "startedAt": "2026-08-19T09:08:45.996Z",
+      "completedAt": "2026-08-19T09:08:46.088Z",
+      "revisionAttempts": 0
+    },
+    {
+      "id": "alternatives",
+      "definitionStepId": "alternatives",
+      "handler": "agent-run",
+      "label": "Alternatives",
+      "status": "completed",
+      "required": false,
+      "failurePolicy": "continue-with-warning",
+      "attempt": 2,
+      "maxAttempts": 2,
+      "dependsOn": [
+        "content-plan"
+      ],
+      "priority": "normal",
+      "config": {
+        "agentId": "alternatives-agent",
+        "targetSlug": "sendcloud",
+        "maxAutomaticRevisions": 1,
+        "expandFromContentPlan": false,
+        "expandKind": "none",
+        "stopAfterApproval": true,
+        "allowNormalizedFacts": false,
+        "optionalWhenBlocked": true,
+        "forceTransientFailOnce": false
+      },
+      "inputRefs": {},
+      "outputRefs": {
+        "draftId": "draft-deterministic-v1-alternatives-agent-sendcloud-2026-08-19T09-08-45-805Z",
+        "qaStatus": "pass",
+        "agentId": "alternatives-agent",
+        "target": "sendcloud"
+      },
+      "inputSnapshot": {
+        "researchFactIds": [
+          "fact-sendcloud-identity.shortDescription-sendcloud-product-official",
+          "fact-sendcloud-positioning.claim-sendcloud-product-official",
+          "fact-sendcloud-features.online-storefront-sendcloud-product-official",
+          "fact-sendcloud-features.product-catalog-sendcloud-product-official",
+          "fact-sendcloud-features.checkout-payments-sendcloud-product-official",
+          "fact-sendcloud-features.order-management-sendcloud-product-official",
+          "fact-sendcloud-features.inventory-management-sendcloud-product-official",
+          "fact-sendcloud-features.shipping-fulfillment-sendcloud-product-official",
+          "fact-sendcloud-features.pos-omnichannel-sendcloud-product-official",
+          "fact-sendcloud-features.marketplace-channels-sendcloud-product-official",
+          "fact-sendcloud-features.b2b-wholesale-sendcloud-product-official",
+          "fact-sendcloud-features.marketing-automation-sendcloud-product-official",
+          "fact-sendcloud-features.analytics-reporting-sendcloud-product-official",
+          "fact-sendcloud-features.ai-assistance-sendcloud-product-official",
+          "fact-sendcloud-features.dropshipping-sourcing-sendcloud-product-official",
+          "fact-sendcloud-features.app-extensions-sendcloud-product-official",
+          "fact-sendcloud-ai.assistant-sendcloud-product-official",
+          "fact-sendcloud-ai.summaries-sendcloud-product-official",
+          "fact-sendcloud-ai.automation-sendcloud-product-official",
+          "fact-sendcloud-ai.recommendations-sendcloud-product-official",
+          "fact-sendcloud-pricing.plans.free-sendcloud-pricing-official",
+          "fact-sendcloud-pricing.plans.lite-sendcloud-pricing-official",
+          "fact-sendcloud-pricing.plans.growth-sendcloud-pricing-official",
+          "fact-sendcloud-pricing.plans.premium-sendcloud-pricing-official",
+          "fact-sendcloud-pricing.plans.pro-sendcloud-pricing-official",
+          "fact-sendcloud-pricing.plans.enterprise-sendcloud-pricing-official",
+          "fact-sendcloud-pricing.currency-sendcloud-pricing-official",
+          "fact-sendcloud-pricing.hasFreeTrial-sendcloud-pricing-official",
+          "fact-sendcloud-pricing.hasFreePlan-sendcloud-pricing-official",
+          "fact-sendcloud-pricing.model-sendcloud-pricing-official"
+        ],
+        "methodologySlug": "ecommerce-editorial",
+        "methodologyVersion": "1.0.0",
+        "agentVersion": "1.0.0",
+        "contextBuiltAt": "2026-08-19T09:08:45.796Z"
+      },
+      "blockers": [],
+      "warnings": [],
+      "agentTaskId": "exec-alternatives-agent-sendcloud-1787130525721",
+      "draftId": "draft-deterministic-v1-alternatives-agent-sendcloud-2026-08-19T09-08-45-805Z",
+      "startedAt": "2026-08-19T09:08:45.717Z",
+      "completedAt": "2026-08-19T09:08:45.855Z",
+      "revisionAttempts": 0
+    },
+    {
+      "id": "comparisons",
+      "definitionStepId": "comparisons",
+      "handler": "agent-run",
+      "label": "Comparisons",
+      "status": "completed",
+      "required": false,
+      "failurePolicy": "continue-with-warning",
+      "attempt": 2,
+      "maxAttempts": 2,
+      "dependsOn": [
+        "content-plan"
+      ],
+      "priority": "normal",
+      "config": {
+        "agentId": "comparison-agent",
+        "targetSlug": "sendcloud-vs-shopify",
+        "maxAutomaticRevisions": 1,
+        "expandFromContentPlan": true,
+        "expandKind": "comparisons",
+        "stopAfterApproval": true,
+        "allowNormalizedFacts": false,
+        "optionalWhenBlocked": true,
+        "forceTransientFailOnce": false
+      },
+      "inputRefs": {},
+      "outputRefs": {
+        "draftId": "draft-deterministic-v1-comparison-agent-sendcloud-vs-shopify-2026-08-19T09-08-45-979Z",
+        "qaStatus": "pass",
+        "agentId": "comparison-agent",
+        "target": "sendcloud-vs-shopify"
+      },
+      "blockers": [],
+      "warnings": [],
+      "agentTaskId": "exec-comparison-agent-sendcloud-vs-shopify-1787130525890",
+      "draftId": "draft-deterministic-v1-comparison-agent-sendcloud-vs-shopify-2026-08-19T09-50-22-317Z",
+      "startedAt": "2026-08-19T09:08:45.883Z",
+      "completedAt": "2026-08-19T09:08:45.987Z",
+      "revisionAttempts": 0
+    },
+    {
+      "id": "internal-links",
+      "definitionStepId": "internal-links",
+      "handler": "internal-link",
+      "label": "Internal Link Plan",
+      "status": "completed",
+      "required": false,
+      "failurePolicy": "continue-with-warning",
+      "attempt": 1,
+      "maxAttempts": 2,
+      "dependsOn": [
+        "software-review"
+      ],
+      "priority": "low",
+      "config": {
+        "agentId": "internal-link-agent",
+        "maxAutomaticRevisions": 1,
+        "expandFromContentPlan": false,
+        "expandKind": "none",
+        "stopAfterApproval": true,
+        "allowNormalizedFacts": false,
+        "optionalWhenBlocked": false,
+        "forceTransientFailOnce": false
+      },
+      "inputRefs": {},
+      "outputRefs": {
+        "draftId": "draft-deterministic-v1-internal-link-agent-sendcloud-2026-08-19T09-08-46-224Z",
+        "qaStatus": "pass",
+        "agentId": "internal-link-agent",
+        "target": "sendcloud"
+      },
+      "inputSnapshot": {
+        "researchFactIds": [
+          "fact-sendcloud-identity.shortDescription-sendcloud-product-official",
+          "fact-sendcloud-positioning.claim-sendcloud-product-official",
+          "fact-sendcloud-features.online-storefront-sendcloud-product-official",
+          "fact-sendcloud-features.product-catalog-sendcloud-product-official",
+          "fact-sendcloud-features.checkout-payments-sendcloud-product-official",
+          "fact-sendcloud-features.order-management-sendcloud-product-official",
+          "fact-sendcloud-features.inventory-management-sendcloud-product-official",
+          "fact-sendcloud-features.shipping-fulfillment-sendcloud-product-official",
+          "fact-sendcloud-features.pos-omnichannel-sendcloud-product-official",
+          "fact-sendcloud-features.marketplace-channels-sendcloud-product-official",
+          "fact-sendcloud-features.b2b-wholesale-sendcloud-product-official",
+          "fact-sendcloud-features.marketing-automation-sendcloud-product-official",
+          "fact-sendcloud-features.analytics-reporting-sendcloud-product-official",
+          "fact-sendcloud-features.ai-assistance-sendcloud-product-official",
+          "fact-sendcloud-features.dropshipping-sourcing-sendcloud-product-official",
+          "fact-sendcloud-features.app-extensions-sendcloud-product-official",
+          "fact-sendcloud-ai.assistant-sendcloud-product-official",
+          "fact-sendcloud-ai.summaries-sendcloud-product-official",
+          "fact-sendcloud-ai.automation-sendcloud-product-official",
+          "fact-sendcloud-ai.recommendations-sendcloud-product-official",
+          "fact-sendcloud-pricing.plans.free-sendcloud-pricing-official",
+          "fact-sendcloud-pricing.plans.lite-sendcloud-pricing-official",
+          "fact-sendcloud-pricing.plans.growth-sendcloud-pricing-official",
+          "fact-sendcloud-pricing.plans.premium-sendcloud-pricing-official",
+          "fact-sendcloud-pricing.plans.pro-sendcloud-pricing-official",
+          "fact-sendcloud-pricing.plans.enterprise-sendcloud-pricing-official",
+          "fact-sendcloud-pricing.currency-sendcloud-pricing-official",
+          "fact-sendcloud-pricing.hasFreeTrial-sendcloud-pricing-official",
+          "fact-sendcloud-pricing.hasFreePlan-sendcloud-pricing-official",
+          "fact-sendcloud-pricing.model-sendcloud-pricing-official"
+        ],
+        "methodologySlug": "ecommerce-editorial",
+        "methodologyVersion": "1.0.0",
+        "agentVersion": "1.0.0",
+        "contextBuiltAt": "2026-08-19T09:08:46.213Z"
+      },
+      "blockers": [],
+      "warnings": [],
+      "agentTaskId": "exec-internal-link-agent-sendcloud-1787130526117",
+      "draftId": "draft-deterministic-v1-internal-link-agent-sendcloud-2026-08-19T09-08-46-224Z",
+      "startedAt": "2026-08-19T09:08:46.114Z",
+      "completedAt": "2026-08-19T09:08:46.235Z",
+      "revisionAttempts": 0
+    },
+    {
+      "id": "finder-readiness",
+      "definitionStepId": "finder-readiness",
+      "handler": "update-recommendation-readiness",
+      "label": "Finder readiness",
+      "status": "completed",
+      "required": false,
+      "failurePolicy": "continue",
+      "attempt": 1,
+      "maxAttempts": 2,
+      "dependsOn": [
+        "content-plan"
+      ],
+      "priority": "low",
+      "config": {
+        "maxAutomaticRevisions": 1,
+        "expandFromContentPlan": false,
+        "expandKind": "none",
+        "stopAfterApproval": true,
+        "allowNormalizedFacts": false,
+        "optionalWhenBlocked": false,
+        "forceTransientFailOnce": false
+      },
+      "inputRefs": {},
+      "outputRefs": {
+        "finderReadiness": "checked"
+      },
+      "blockers": [],
+      "warnings": [],
+      "startedAt": "2026-08-19T09:08:46.097Z",
+      "completedAt": "2026-08-19T09:08:46.099Z",
+      "revisionAttempts": 0
+    },
+    {
+      "id": "editorial-approval",
+      "definitionStepId": "editorial-approval",
+      "handler": "approval-check",
+      "label": "Editorial approval",
+      "status": "completed",
+      "required": true,
+      "failurePolicy": "manual-review",
+      "attempt": 2,
+      "maxAttempts": 2,
+      "dependsOn": [
+        "software-review"
+      ],
+      "priority": "critical",
+      "config": {
+        "approvalType": "editorial",
+        "maxAutomaticRevisions": 1,
+        "expandFromContentPlan": false,
+        "expandKind": "none",
+        "stopAfterApproval": true,
+        "allowNormalizedFacts": false,
+        "optionalWhenBlocked": false,
+        "forceTransientFailOnce": false
+      },
+      "inputRefs": {},
+      "outputRefs": {
+        "approvalId": "appr-wf-software-onboarding-content-sendcloud-1787129939160-software-review",
+        "draftId": "draft-deterministic-v1-software-review-agent-sendcloud-2026-08-19T09-08-45-699Z",
+        "approvalIds": "appr-wf-software-onboarding-content-sendcloud-1787129939160-software-review"
+      },
+      "blockers": [],
+      "warnings": [
+        "Approval received — resuming",
+        "4 optional draft(s) may still need separate editorial review"
+      ],
+      "approvalId": "appr-wf-software-onboarding-content-sendcloud-1787129939160-software-review",
+      "startedAt": "2026-08-19T09:44:33.581Z",
+      "completedAt": "2026-08-19T09:44:35.104Z",
+      "revisionAttempts": 0
+    },
+    {
+      "id": "pre-publish-validation",
+      "definitionStepId": "pre-publish-validation",
+      "handler": "pre-publish-validation",
+      "label": "Pre-publish validation",
+      "status": "completed",
+      "required": true,
+      "failurePolicy": "block-workflow",
+      "attempt": 2,
+      "maxAttempts": 2,
+      "dependsOn": [
+        "editorial-approval"
+      ],
+      "priority": "critical",
+      "config": {
+        "maxAutomaticRevisions": 1,
+        "expandFromContentPlan": false,
+        "expandKind": "none",
+        "stopAfterApproval": true,
+        "allowNormalizedFacts": false,
+        "optionalWhenBlocked": false,
+        "forceTransientFailOnce": false
+      },
+      "inputRefs": {},
+      "outputRefs": {
+        "publishState": "READY_TO_PUBLISH"
+      },
+      "blockers": [],
+      "warnings": [
+        "stopAfterApproval: workflow will not publish automatically"
+      ],
+      "startedAt": "2026-08-19T09:51:15.812Z",
+      "completedAt": "2026-08-19T09:51:16.618Z",
+      "revisionAttempts": 0
+    }
+  ],
+  "history": [
+    {
+      "at": "2026-08-19T08:58:59.913Z",
+      "event": "workflow_created",
+      "message": "Created software-onboarding-content:v1.0.0"
+    },
+    {
+      "at": "2026-08-19T08:58:59.915Z",
+      "event": "workflow_started",
+      "message": "Workflow execution started"
+    },
+    {
+      "at": "2026-08-19T08:58:59.917Z",
+      "event": "workflow_step_started",
+      "stepId": "software-onboarding",
+      "message": "Started Software onboarding"
+    },
+    {
+      "at": "2026-08-19T08:59:00.025Z",
+      "event": "workflow_step_completed",
+      "stepId": "software-onboarding",
+      "message": "Blocked: missing onboarding run"
+    },
+    {
+      "at": "2026-08-19T08:59:25.086Z",
+      "event": "workflow_resumed",
+      "message": "Workflow resumed"
+    },
+    {
+      "at": "2026-08-19T08:59:25.088Z",
+      "event": "workflow_started",
+      "message": "Workflow execution started"
+    },
+    {
+      "at": "2026-08-19T08:59:25.089Z",
+      "event": "workflow_step_started",
+      "stepId": "software-onboarding",
+      "message": "Started Software onboarding"
+    },
+    {
+      "at": "2026-08-19T08:59:25.490Z",
+      "event": "workflow_step_completed",
+      "stepId": "software-onboarding",
+      "message": "Reused onboarding run onboard-sendcloud-1787129949872 (ready)"
+    },
+    {
+      "at": "2026-08-19T08:59:25.492Z",
+      "event": "workflow_step_started",
+      "stepId": "content-plan",
+      "message": "Started Content plan"
+    },
+    {
+      "at": "2026-08-19T08:59:25.595Z",
+      "event": "workflow_step_completed",
+      "stepId": "content-plan",
+      "message": "Content plan from onboarding onboard-sendcloud-1787129949872 (5 candidates)"
+    },
+    {
+      "at": "2026-08-19T08:59:25.596Z",
+      "event": "workflow_step_started",
+      "stepId": "software-review",
+      "message": "Started Software Review"
+    },
+    {
+      "at": "2026-08-19T08:59:25.878Z",
+      "event": "workflow_step_completed",
+      "stepId": "software-review",
+      "message": "Agent blocked: RESEARCH_INCOMPLETE: Core research facts missing (need approved/verified facts); ASSESSMENT_MISSING: Editorial assessment required"
+    },
+    {
+      "at": "2026-08-19T09:01:39.733Z",
+      "event": "workflow_resumed",
+      "message": "Workflow resumed"
+    },
+    {
+      "at": "2026-08-19T09:01:45.435Z",
+      "event": "workflow_started",
+      "message": "Workflow execution started"
+    },
+    {
+      "at": "2026-08-19T09:01:45.766Z",
+      "event": "workflow_step_started",
+      "stepId": "alternatives",
+      "message": "Started Alternatives"
+    },
+    {
+      "at": "2026-08-19T09:01:50.586Z",
+      "event": "workflow_step_completed",
+      "stepId": "alternatives",
+      "message": "Agent blocked (optional): NO_APPROVED_ALTERNATIVES: Approved alternative relationships required — same-category alone is insufficient"
+    },
+    {
+      "at": "2026-08-19T09:06:24.902Z",
+      "event": "workflow_resumed",
+      "message": "Workflow resumed"
+    },
+    {
+      "at": "2026-08-19T09:06:24.905Z",
+      "event": "workflow_started",
+      "message": "Workflow execution started"
+    },
+    {
+      "at": "2026-08-19T09:06:24.909Z",
+      "event": "workflow_step_started",
+      "stepId": "comparisons",
+      "message": "Started Comparisons"
+    },
+    {
+      "at": "2026-08-19T09:06:26.178Z",
+      "event": "workflow_step_completed",
+      "stepId": "comparisons",
+      "message": "Agent blocked (optional): MISSING_PRODUCTS: Comparison requires two product slugs"
+    },
+    {
+      "at": "2026-08-19T09:08:44.979Z",
+      "event": "workflow_resumed",
+      "message": "Workflow resumed"
+    },
+    {
+      "at": "2026-08-19T09:08:44.985Z",
+      "event": "workflow_started",
+      "message": "Workflow execution started"
+    },
+    {
+      "at": "2026-08-19T09:08:44.993Z",
+      "event": "workflow_step_started",
+      "stepId": "software-review",
+      "message": "Started Software Review"
+    },
+    {
+      "at": "2026-08-19T09:08:45.710Z",
+      "event": "workflow_step_completed",
+      "stepId": "software-review",
+      "message": "Agent software-review-agent → draft draft-deterministic-v1-software-review-agent-sendcloud-2026-08-19T09-08-45-699Z (qa=pass)"
+    },
+    {
+      "at": "2026-08-19T09:08:45.717Z",
+      "event": "workflow_step_started",
+      "stepId": "alternatives",
+      "message": "Started Alternatives"
+    },
+    {
+      "at": "2026-08-19T09:08:45.857Z",
+      "event": "workflow_step_completed",
+      "stepId": "alternatives",
+      "message": "Agent alternatives-agent → draft draft-deterministic-v1-alternatives-agent-sendcloud-2026-08-19T09-08-45-805Z (qa=pass)"
+    },
+    {
+      "at": "2026-08-19T09:08:45.882Z",
+      "event": "workflow_step_started",
+      "stepId": "comparisons",
+      "message": "Started Comparisons"
+    },
+    {
+      "at": "2026-08-19T09:08:45.987Z",
+      "event": "workflow_step_completed",
+      "stepId": "comparisons",
+      "message": "Agent comparison-agent → draft draft-deterministic-v1-comparison-agent-sendcloud-vs-shopify-2026-08-19T09-08-45-979Z (qa=pass)"
+    },
+    {
+      "at": "2026-08-19T09:08:45.995Z",
+      "event": "workflow_step_started",
+      "stepId": "pricing-page",
+      "message": "Started Pricing Page"
+    },
+    {
+      "at": "2026-08-19T09:08:46.088Z",
+      "event": "workflow_step_completed",
+      "stepId": "pricing-page",
+      "message": "Agent pricing-page-agent → draft draft-deterministic-v1-pricing-page-agent-sendcloud-2026-08-19T09-08-46-075Z (qa=pass)"
+    },
+    {
+      "at": "2026-08-19T09:08:46.096Z",
+      "event": "workflow_step_started",
+      "stepId": "finder-readiness",
+      "message": "Started Finder readiness"
+    },
+    {
+      "at": "2026-08-19T09:08:46.099Z",
+      "event": "workflow_step_completed",
+      "stepId": "finder-readiness",
+      "message": "Finder readiness noted for sendcloud"
+    },
+    {
+      "at": "2026-08-19T09:08:46.108Z",
+      "event": "workflow_step_started",
+      "stepId": "internal-links",
+      "message": "Started Internal Link Plan"
+    },
+    {
+      "at": "2026-08-19T09:08:46.235Z",
+      "event": "workflow_step_completed",
+      "stepId": "internal-links",
+      "message": "Agent internal-link-agent → draft draft-deterministic-v1-internal-link-agent-sendcloud-2026-08-19T09-08-46-224Z (qa=pass)"
+    },
+    {
+      "at": "2026-08-19T09:08:46.245Z",
+      "event": "workflow_step_started",
+      "stepId": "editorial-approval",
+      "message": "Started Editorial approval"
+    },
+    {
+      "at": "2026-08-19T09:08:46.910Z",
+      "event": "workflow_step_completed",
+      "stepId": "editorial-approval",
+      "message": "WAITING FOR EDITORIAL APPROVAL (appr-wf-software-onboarding-content-sendcloud-1787129939160-software-review)"
+    },
+    {
+      "at": "2026-08-19T09:08:46.914Z",
+      "event": "workflow_blocked",
+      "message": "WAITING FOR EDITORIAL APPROVAL"
+    },
+    {
+      "at": "2026-08-19T09:44:33.564Z",
+      "event": "workflow_resumed",
+      "message": "Workflow resumed"
+    },
+    {
+      "at": "2026-08-19T09:44:33.575Z",
+      "event": "workflow_started",
+      "message": "Workflow execution started"
+    },
+    {
+      "at": "2026-08-19T09:44:33.578Z",
+      "event": "workflow_step_started",
+      "stepId": "editorial-approval",
+      "message": "Started Editorial approval"
+    },
+    {
+      "at": "2026-08-19T09:44:35.104Z",
+      "event": "workflow_step_completed",
+      "stepId": "editorial-approval",
+      "message": "Required editorial approvals satisfied"
+    },
+    {
+      "at": "2026-08-19T09:44:35.107Z",
+      "event": "workflow_step_started",
+      "stepId": "pre-publish-validation",
+      "message": "Started Pre-publish validation"
+    },
+    {
+      "at": "2026-08-19T09:44:36.720Z",
+      "event": "workflow_step_completed",
+      "stepId": "pre-publish-validation",
+      "message": "Pre-publish validation blocked: Stale context for comparisons: removed-critical-fact:fact-shopify-pricing.model; removed-critical-fact:fact-shopify-pricing.hasFreePlan; removed-critical-fact:fact-shopify-pricing.hasFreeTrial; removed-critical-fact:fact-shopify-pricing.startingPriceMonthly; removed-critical-fact:fact-shopify-pricing.plans.basic; removed-critical-fact:fact-shopify-pricing.plans.grow; removed-critical-fact:fact-shopify-pricing.plans.advanced; removed-critical-fact:fact-shopify-pricing.plans.plus"
+    },
+    {
+      "at": "2026-08-19T09:50:36.930Z",
+      "event": "workflow_resumed",
+      "message": "Workflow resumed"
+    },
+    {
+      "at": "2026-08-19T09:50:36.933Z",
+      "event": "workflow_started",
+      "message": "Workflow execution started"
+    },
+    {
+      "at": "2026-08-19T09:50:36.935Z",
+      "event": "workflow_step_started",
+      "stepId": "pre-publish-validation",
+      "message": "Started Pre-publish validation"
+    },
+    {
+      "at": "2026-08-19T09:50:37.658Z",
+      "event": "workflow_step_completed",
+      "stepId": "pre-publish-validation",
+      "message": "Pre-publish validation blocked: Stale context for comparisons: removed-critical-fact:fact-shopify-pricing.model; removed-critical-fact:fact-shopify-pricing.hasFreePlan; removed-critical-fact:fact-shopify-pricing.hasFreeTrial; removed-critical-fact:fact-shopify-pricing.startingPriceMonthly; removed-critical-fact:fact-shopify-pricing.plans.basic; removed-critical-fact:fact-shopify-pricing.plans.grow; removed-critical-fact:fact-shopify-pricing.plans.advanced; removed-critical-fact:fact-shopify-pricing.plans.plus"
+    },
+    {
+      "at": "2026-08-19T09:51:15.808Z",
+      "event": "workflow_resumed",
+      "message": "Workflow resumed"
+    },
+    {
+      "at": "2026-08-19T09:51:15.810Z",
+      "event": "workflow_started",
+      "message": "Workflow execution started"
+    },
+    {
+      "at": "2026-08-19T09:51:15.811Z",
+      "event": "workflow_step_started",
+      "stepId": "pre-publish-validation",
+      "message": "Started Pre-publish validation"
+    },
+    {
+      "at": "2026-08-19T09:51:16.618Z",
+      "event": "workflow_step_completed",
+      "stepId": "pre-publish-validation",
+      "message": "Pre-publish validation passed — READY TO PUBLISH (manual)"
+    },
+    {
+      "at": "2026-08-19T09:51:16.620Z",
+      "event": "workflow_completed",
+      "message": "Workflow completed"
+    }
+  ],
+  "options": {
+    "generateReview": true,
+    "generatePricing": true,
+    "generateAlternatives": true,
+    "generateComparisons": true,
+    "runInternalLinks": true,
+    "stopAfterApproval": true,
+    "allowNormalizedFacts": false,
+    "dryRun": false,
+    "maxComparisons": 3,
+    "skipOnboarding": false
+  },
+  "warnings": [],
+  "createdAt": "2026-08-19T08:58:59.913Z",
+  "updatedAt": "2026-08-19T09:51:16.620Z"
+}

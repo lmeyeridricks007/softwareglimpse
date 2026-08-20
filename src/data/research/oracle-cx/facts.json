@@ -1,0 +1,722 @@
+[
+  {
+    "id": "fact-oracle-cx-pricing.hasFreePlan",
+    "productSlug": "oracle-cx",
+    "domain": "free-plan",
+    "field": "pricing.hasFreePlan",
+    "value": false,
+    "sourceIds": [
+      "oracle-cx-sales"
+    ],
+    "evidence": [
+      {
+        "sourceId": "oracle-cx-sales",
+        "excerpt": "No free plan; enterprise contact-sales model."
+      }
+    ],
+    "extractedAt": "2026-08-14T08:00:00.000Z",
+    "normalizedAt": "2026-08-14T08:00:00.000Z",
+    "verifiedAt": "2026-08-14T08:00:00.000Z",
+    "approvedAt": "2026-08-14T08:00:00.000Z",
+    "confidence": "medium",
+    "status": "approved",
+    "isFixture": false
+  },
+  {
+    "id": "fact-oracle-cx-pricing.hasFreeTrial",
+    "productSlug": "oracle-cx",
+    "domain": "free-trial",
+    "field": "pricing.hasFreeTrial",
+    "value": false,
+    "sourceIds": [
+      "oracle-cx-sales"
+    ],
+    "evidence": [
+      {
+        "sourceId": "oracle-cx-sales",
+        "excerpt": "No self-serve free trial documented in this research pack."
+      }
+    ],
+    "extractedAt": "2026-08-14T08:00:00.000Z",
+    "normalizedAt": "2026-08-14T08:00:00.000Z",
+    "verifiedAt": "2026-08-14T08:00:00.000Z",
+    "approvedAt": "2026-08-14T08:00:00.000Z",
+    "confidence": "medium",
+    "status": "approved",
+    "isFixture": false
+  },
+  {
+    "id": "fact-oracle-cx-pricing.startingPriceMonthly",
+    "productSlug": "oracle-cx",
+    "domain": "pricing",
+    "field": "pricing.startingPriceMonthly",
+    "value": 65,
+    "sourceIds": [
+      "oracle-cx-sales"
+    ],
+    "evidence": [
+      {
+        "sourceId": "oracle-cx-sales",
+        "excerpt": "Approximate Professional ~$65/user/mo; confirm quote (medium confidence)."
+      }
+    ],
+    "extractedAt": "2026-08-14T08:00:00.000Z",
+    "normalizedAt": "2026-08-14T08:00:00.000Z",
+    "verifiedAt": "2026-08-14T08:00:00.000Z",
+    "approvedAt": "2026-08-14T08:00:00.000Z",
+    "confidence": "medium",
+    "status": "approved",
+    "isFixture": false,
+    "notes": "Approximate Professional ~$65/user/mo; model is custom-quote — medium confidence."
+  },
+  {
+    "id": "fact-oracle-cx-pricing.currency",
+    "productSlug": "oracle-cx",
+    "domain": "pricing",
+    "field": "pricing.currency",
+    "value": "USD",
+    "sourceIds": [
+      "oracle-cx-sales"
+    ],
+    "evidence": [
+      {
+        "sourceId": "oracle-cx-sales",
+        "excerpt": "USD (quoted/list context)."
+      }
+    ],
+    "extractedAt": "2026-08-14T08:00:00.000Z",
+    "normalizedAt": "2026-08-14T08:00:00.000Z",
+    "verifiedAt": "2026-08-14T08:00:00.000Z",
+    "approvedAt": "2026-08-14T08:00:00.000Z",
+    "confidence": "medium",
+    "status": "approved",
+    "isFixture": false
+  },
+  {
+    "id": "fact-oracle-cx-pricing.model",
+    "productSlug": "oracle-cx",
+    "domain": "pricing",
+    "field": "pricing.model",
+    "value": "custom-quote",
+    "sourceIds": [
+      "oracle-cx-sales"
+    ],
+    "evidence": [
+      {
+        "sourceId": "oracle-cx-sales",
+        "excerpt": "Custom-quote enterprise subscription."
+      }
+    ],
+    "extractedAt": "2026-08-14T08:00:00.000Z",
+    "normalizedAt": "2026-08-14T08:00:00.000Z",
+    "verifiedAt": "2026-08-14T08:00:00.000Z",
+    "approvedAt": "2026-08-14T08:00:00.000Z",
+    "confidence": "medium",
+    "status": "approved",
+    "isFixture": false
+  },
+  {
+    "id": "fact-oracle-cx-pricing.plans.professional",
+    "productSlug": "oracle-cx",
+    "domain": "plans",
+    "field": "pricing.plans.professional",
+    "value": {
+      "id": "plan-professional",
+      "slug": "professional",
+      "name": "Sales Professional",
+      "isFree": false,
+      "contactSales": true,
+      "hasFreeTrial": false,
+      "highlighted": true,
+      "rules": [
+        {
+          "kind": "per-seat",
+          "amountPerSeat": 65,
+          "currency": "USD",
+          "interval": "month",
+          "amountPeriod": "month"
+        }
+      ],
+      "notes": "Approximate published/list SFA ~$65/user/mo Professional — medium/low confidence; contact sales for quote."
+    },
+    "sourceIds": [
+      "oracle-cx-sales"
+    ],
+    "evidence": [
+      {
+        "sourceId": "oracle-cx-sales",
+        "excerpt": "Sales Professional ~$65/user/mo approximate list; contact sales."
+      }
+    ],
+    "extractedAt": "2026-08-14T08:00:00.000Z",
+    "normalizedAt": "2026-08-14T08:00:00.000Z",
+    "verifiedAt": "2026-08-14T08:00:00.000Z",
+    "approvedAt": "2026-08-14T08:00:00.000Z",
+    "confidence": "medium",
+    "status": "approved",
+    "isFixture": false
+  },
+  {
+    "id": "fact-oracle-cx-pricing.plans.enterprise",
+    "productSlug": "oracle-cx",
+    "domain": "plans",
+    "field": "pricing.plans.enterprise",
+    "value": {
+      "id": "plan-enterprise",
+      "slug": "enterprise",
+      "name": "Enterprise / Premium",
+      "isFree": false,
+      "contactSales": true,
+      "hasFreeTrial": false,
+      "highlighted": false,
+      "rules": [],
+      "notes": "Higher Enterprise/Premium — custom quote."
+    },
+    "sourceIds": [
+      "oracle-cx-sales"
+    ],
+    "evidence": [
+      {
+        "sourceId": "oracle-cx-sales",
+        "excerpt": "Enterprise/Premium custom quote."
+      }
+    ],
+    "extractedAt": "2026-08-14T08:00:00.000Z",
+    "normalizedAt": "2026-08-14T08:00:00.000Z",
+    "verifiedAt": "2026-08-14T08:00:00.000Z",
+    "approvedAt": "2026-08-14T08:00:00.000Z",
+    "confidence": "medium",
+    "status": "approved",
+    "isFixture": false
+  },
+  {
+    "id": "fact-oracle-cx-features.contact-management",
+    "productSlug": "oracle-cx",
+    "domain": "features",
+    "field": "features.contact-management",
+    "value": {
+      "featureSlug": "contact-management",
+      "availability": "supported",
+      "planSlugs": [
+        "professional",
+        "enterprise"
+      ]
+    },
+    "sourceIds": [
+      "oracle-cx-pricing"
+    ],
+    "evidence": [
+      {
+        "sourceId": "oracle-cx-pricing",
+        "excerpt": "Oracle CX documents contact management."
+      }
+    ],
+    "extractedAt": "2026-08-14T08:00:00.000Z",
+    "normalizedAt": "2026-08-14T08:00:00.000Z",
+    "verifiedAt": "2026-08-14T08:00:00.000Z",
+    "approvedAt": "2026-08-14T08:00:00.000Z",
+    "confidence": "high",
+    "status": "approved",
+    "isFixture": false
+  },
+  {
+    "id": "fact-oracle-cx-features.lead-management",
+    "productSlug": "oracle-cx",
+    "domain": "features",
+    "field": "features.lead-management",
+    "value": {
+      "featureSlug": "lead-management",
+      "availability": "supported",
+      "planSlugs": [
+        "professional",
+        "enterprise"
+      ]
+    },
+    "sourceIds": [
+      "oracle-cx-pricing"
+    ],
+    "evidence": [
+      {
+        "sourceId": "oracle-cx-pricing",
+        "excerpt": "Oracle CX documents lead management."
+      }
+    ],
+    "extractedAt": "2026-08-14T08:00:00.000Z",
+    "normalizedAt": "2026-08-14T08:00:00.000Z",
+    "verifiedAt": "2026-08-14T08:00:00.000Z",
+    "approvedAt": "2026-08-14T08:00:00.000Z",
+    "confidence": "high",
+    "status": "approved",
+    "isFixture": false
+  },
+  {
+    "id": "fact-oracle-cx-features.pipeline-management",
+    "productSlug": "oracle-cx",
+    "domain": "features",
+    "field": "features.pipeline-management",
+    "value": {
+      "featureSlug": "pipeline-management",
+      "availability": "supported",
+      "planSlugs": [
+        "professional",
+        "enterprise"
+      ]
+    },
+    "sourceIds": [
+      "oracle-cx-pricing"
+    ],
+    "evidence": [
+      {
+        "sourceId": "oracle-cx-pricing",
+        "excerpt": "Oracle CX documents pipeline management."
+      }
+    ],
+    "extractedAt": "2026-08-14T08:00:00.000Z",
+    "normalizedAt": "2026-08-14T08:00:00.000Z",
+    "verifiedAt": "2026-08-14T08:00:00.000Z",
+    "approvedAt": "2026-08-14T08:00:00.000Z",
+    "confidence": "high",
+    "status": "approved",
+    "isFixture": false
+  },
+  {
+    "id": "fact-oracle-cx-features.deal-management",
+    "productSlug": "oracle-cx",
+    "domain": "features",
+    "field": "features.deal-management",
+    "value": {
+      "featureSlug": "deal-management",
+      "availability": "supported",
+      "planSlugs": [
+        "professional",
+        "enterprise"
+      ]
+    },
+    "sourceIds": [
+      "oracle-cx-pricing"
+    ],
+    "evidence": [
+      {
+        "sourceId": "oracle-cx-pricing",
+        "excerpt": "Oracle CX documents deal management."
+      }
+    ],
+    "extractedAt": "2026-08-14T08:00:00.000Z",
+    "normalizedAt": "2026-08-14T08:00:00.000Z",
+    "verifiedAt": "2026-08-14T08:00:00.000Z",
+    "approvedAt": "2026-08-14T08:00:00.000Z",
+    "confidence": "high",
+    "status": "approved",
+    "isFixture": false
+  },
+  {
+    "id": "fact-oracle-cx-features.email-sync",
+    "productSlug": "oracle-cx",
+    "domain": "features",
+    "field": "features.email-sync",
+    "value": {
+      "featureSlug": "email-sync",
+      "availability": "supported",
+      "planSlugs": [
+        "professional",
+        "enterprise"
+      ]
+    },
+    "sourceIds": [
+      "oracle-cx-pricing"
+    ],
+    "evidence": [
+      {
+        "sourceId": "oracle-cx-pricing",
+        "excerpt": "Oracle CX documents email sync."
+      }
+    ],
+    "extractedAt": "2026-08-14T08:00:00.000Z",
+    "normalizedAt": "2026-08-14T08:00:00.000Z",
+    "verifiedAt": "2026-08-14T08:00:00.000Z",
+    "approvedAt": "2026-08-14T08:00:00.000Z",
+    "confidence": "high",
+    "status": "approved",
+    "isFixture": false
+  },
+  {
+    "id": "fact-oracle-cx-features.workflow-automation",
+    "productSlug": "oracle-cx",
+    "domain": "features",
+    "field": "features.workflow-automation",
+    "value": {
+      "featureSlug": "workflow-automation",
+      "availability": "supported",
+      "planSlugs": [
+        "professional",
+        "enterprise"
+      ]
+    },
+    "sourceIds": [
+      "oracle-cx-pricing"
+    ],
+    "evidence": [
+      {
+        "sourceId": "oracle-cx-pricing",
+        "excerpt": "Oracle CX documents workflow automation."
+      }
+    ],
+    "extractedAt": "2026-08-14T08:00:00.000Z",
+    "normalizedAt": "2026-08-14T08:00:00.000Z",
+    "verifiedAt": "2026-08-14T08:00:00.000Z",
+    "approvedAt": "2026-08-14T08:00:00.000Z",
+    "confidence": "high",
+    "status": "approved",
+    "isFixture": false
+  },
+  {
+    "id": "fact-oracle-cx-features.sales-automation",
+    "productSlug": "oracle-cx",
+    "domain": "features",
+    "field": "features.sales-automation",
+    "value": {
+      "featureSlug": "sales-automation",
+      "availability": "supported",
+      "planSlugs": [
+        "professional",
+        "enterprise"
+      ]
+    },
+    "sourceIds": [
+      "oracle-cx-pricing"
+    ],
+    "evidence": [
+      {
+        "sourceId": "oracle-cx-pricing",
+        "excerpt": "Oracle CX documents sales automation."
+      }
+    ],
+    "extractedAt": "2026-08-14T08:00:00.000Z",
+    "normalizedAt": "2026-08-14T08:00:00.000Z",
+    "verifiedAt": "2026-08-14T08:00:00.000Z",
+    "approvedAt": "2026-08-14T08:00:00.000Z",
+    "confidence": "high",
+    "status": "approved",
+    "isFixture": false
+  },
+  {
+    "id": "fact-oracle-cx-features.reporting",
+    "productSlug": "oracle-cx",
+    "domain": "features",
+    "field": "features.reporting",
+    "value": {
+      "featureSlug": "reporting",
+      "availability": "supported",
+      "planSlugs": [
+        "professional",
+        "enterprise"
+      ]
+    },
+    "sourceIds": [
+      "oracle-cx-pricing"
+    ],
+    "evidence": [
+      {
+        "sourceId": "oracle-cx-pricing",
+        "excerpt": "Oracle CX documents reporting."
+      }
+    ],
+    "extractedAt": "2026-08-14T08:00:00.000Z",
+    "normalizedAt": "2026-08-14T08:00:00.000Z",
+    "verifiedAt": "2026-08-14T08:00:00.000Z",
+    "approvedAt": "2026-08-14T08:00:00.000Z",
+    "confidence": "high",
+    "status": "approved",
+    "isFixture": false
+  },
+  {
+    "id": "fact-oracle-cx-features.forecasting",
+    "productSlug": "oracle-cx",
+    "domain": "features",
+    "field": "features.forecasting",
+    "value": {
+      "featureSlug": "forecasting",
+      "availability": "supported",
+      "planSlugs": [
+        "professional",
+        "enterprise"
+      ]
+    },
+    "sourceIds": [
+      "oracle-cx-pricing"
+    ],
+    "evidence": [
+      {
+        "sourceId": "oracle-cx-pricing",
+        "excerpt": "Oracle CX documents forecasting."
+      }
+    ],
+    "extractedAt": "2026-08-14T08:00:00.000Z",
+    "normalizedAt": "2026-08-14T08:00:00.000Z",
+    "verifiedAt": "2026-08-14T08:00:00.000Z",
+    "approvedAt": "2026-08-14T08:00:00.000Z",
+    "confidence": "high",
+    "status": "approved",
+    "isFixture": false
+  },
+  {
+    "id": "fact-oracle-cx-features.custom-fields",
+    "productSlug": "oracle-cx",
+    "domain": "features",
+    "field": "features.custom-fields",
+    "value": {
+      "featureSlug": "custom-fields",
+      "availability": "supported",
+      "planSlugs": [
+        "professional",
+        "enterprise"
+      ]
+    },
+    "sourceIds": [
+      "oracle-cx-pricing"
+    ],
+    "evidence": [
+      {
+        "sourceId": "oracle-cx-pricing",
+        "excerpt": "Oracle CX documents custom fields."
+      }
+    ],
+    "extractedAt": "2026-08-14T08:00:00.000Z",
+    "normalizedAt": "2026-08-14T08:00:00.000Z",
+    "verifiedAt": "2026-08-14T08:00:00.000Z",
+    "approvedAt": "2026-08-14T08:00:00.000Z",
+    "confidence": "high",
+    "status": "approved",
+    "isFixture": false
+  },
+  {
+    "id": "fact-oracle-cx-features.custom-pipelines",
+    "productSlug": "oracle-cx",
+    "domain": "features",
+    "field": "features.custom-pipelines",
+    "value": {
+      "featureSlug": "custom-pipelines",
+      "availability": "supported",
+      "planSlugs": [
+        "professional",
+        "enterprise"
+      ]
+    },
+    "sourceIds": [
+      "oracle-cx-pricing"
+    ],
+    "evidence": [
+      {
+        "sourceId": "oracle-cx-pricing",
+        "excerpt": "Oracle CX documents custom pipelines."
+      }
+    ],
+    "extractedAt": "2026-08-14T08:00:00.000Z",
+    "normalizedAt": "2026-08-14T08:00:00.000Z",
+    "verifiedAt": "2026-08-14T08:00:00.000Z",
+    "approvedAt": "2026-08-14T08:00:00.000Z",
+    "confidence": "high",
+    "status": "approved",
+    "isFixture": false
+  },
+  {
+    "id": "fact-oracle-cx-features.mobile-app",
+    "productSlug": "oracle-cx",
+    "domain": "features",
+    "field": "features.mobile-app",
+    "value": {
+      "featureSlug": "mobile-app",
+      "availability": "supported",
+      "planSlugs": [
+        "professional",
+        "enterprise"
+      ]
+    },
+    "sourceIds": [
+      "oracle-cx-pricing"
+    ],
+    "evidence": [
+      {
+        "sourceId": "oracle-cx-pricing",
+        "excerpt": "Oracle CX documents mobile app."
+      }
+    ],
+    "extractedAt": "2026-08-14T08:00:00.000Z",
+    "normalizedAt": "2026-08-14T08:00:00.000Z",
+    "verifiedAt": "2026-08-14T08:00:00.000Z",
+    "approvedAt": "2026-08-14T08:00:00.000Z",
+    "confidence": "high",
+    "status": "approved",
+    "isFixture": false
+  },
+  {
+    "id": "fact-oracle-cx-features.ai-assistance",
+    "productSlug": "oracle-cx",
+    "domain": "features",
+    "field": "features.ai-assistance",
+    "value": {
+      "featureSlug": "ai-assistance",
+      "availability": "supported",
+      "planSlugs": [
+        "professional",
+        "enterprise"
+      ]
+    },
+    "sourceIds": [
+      "oracle-cx-pricing"
+    ],
+    "evidence": [
+      {
+        "sourceId": "oracle-cx-pricing",
+        "excerpt": "Oracle CX documents ai assistance."
+      }
+    ],
+    "extractedAt": "2026-08-14T08:00:00.000Z",
+    "normalizedAt": "2026-08-14T08:00:00.000Z",
+    "verifiedAt": "2026-08-14T08:00:00.000Z",
+    "approvedAt": "2026-08-14T08:00:00.000Z",
+    "confidence": "high",
+    "status": "approved",
+    "isFixture": false
+  },
+  {
+    "id": "fact-oracle-cx-features.integrations",
+    "productSlug": "oracle-cx",
+    "domain": "features",
+    "field": "features.integrations",
+    "value": {
+      "featureSlug": "integrations",
+      "availability": "supported",
+      "planSlugs": [
+        "professional",
+        "enterprise"
+      ]
+    },
+    "sourceIds": [
+      "oracle-cx-pricing"
+    ],
+    "evidence": [
+      {
+        "sourceId": "oracle-cx-pricing",
+        "excerpt": "Oracle CX documents integrations."
+      }
+    ],
+    "extractedAt": "2026-08-14T08:00:00.000Z",
+    "normalizedAt": "2026-08-14T08:00:00.000Z",
+    "verifiedAt": "2026-08-14T08:00:00.000Z",
+    "approvedAt": "2026-08-14T08:00:00.000Z",
+    "confidence": "high",
+    "status": "approved",
+    "isFixture": false
+  },
+  {
+    "id": "fact-oracle-cx-positioning.summary",
+    "productSlug": "oracle-cx",
+    "domain": "product-positioning",
+    "field": "positioning.summary",
+    "value": "Oracle CX Sales is Oracle’s enterprise Fusion Cloud CRM for pipeline, forecasting, and Oracle-stack sales organizations.",
+    "sourceIds": [
+      "oracle-cx-pricing"
+    ],
+    "evidence": [
+      {
+        "sourceId": "oracle-cx-pricing",
+        "excerpt": "Oracle CX Sales is Oracle’s enterprise Fusion Cloud CRM for pipeline, forecasting, and Oracle-stack sales organizations."
+      }
+    ],
+    "extractedAt": "2026-08-14T08:00:00.000Z",
+    "normalizedAt": "2026-08-14T08:00:00.000Z",
+    "verifiedAt": "2026-08-14T08:00:00.000Z",
+    "approvedAt": "2026-08-14T08:00:00.000Z",
+    "confidence": "high",
+    "status": "approved",
+    "isFixture": false
+  },
+  {
+    "id": "fact-oracle-cx-ai.assistant",
+    "productSlug": "oracle-cx",
+    "domain": "ai-capabilities",
+    "field": "ai.assistant",
+    "value": {
+      "capability": "assistant",
+      "availability": "supported",
+      "sourceIds": [
+        "oracle-cx-sales"
+      ]
+    },
+    "sourceIds": [
+      "oracle-cx-sales"
+    ],
+    "evidence": [
+      {
+        "sourceId": "oracle-cx-sales",
+        "excerpt": "Oracle CX AI: assistant"
+      }
+    ],
+    "extractedAt": "2026-08-14T08:00:00.000Z",
+    "normalizedAt": "2026-08-14T08:00:00.000Z",
+    "verifiedAt": "2026-08-14T08:00:00.000Z",
+    "approvedAt": "2026-08-14T08:00:00.000Z",
+    "confidence": "high",
+    "status": "approved",
+    "isFixture": false
+  },
+  {
+    "id": "fact-oracle-cx-ai.forecasting",
+    "productSlug": "oracle-cx",
+    "domain": "ai-capabilities",
+    "field": "ai.forecasting",
+    "value": {
+      "capability": "forecasting",
+      "availability": "supported",
+      "sourceIds": [
+        "oracle-cx-sales"
+      ]
+    },
+    "sourceIds": [
+      "oracle-cx-sales"
+    ],
+    "evidence": [
+      {
+        "sourceId": "oracle-cx-sales",
+        "excerpt": "Oracle CX AI: forecasting"
+      }
+    ],
+    "extractedAt": "2026-08-14T08:00:00.000Z",
+    "normalizedAt": "2026-08-14T08:00:00.000Z",
+    "verifiedAt": "2026-08-14T08:00:00.000Z",
+    "approvedAt": "2026-08-14T08:00:00.000Z",
+    "confidence": "high",
+    "status": "approved",
+    "isFixture": false
+  },
+  {
+    "id": "fact-oracle-cx-ai.recommendations",
+    "productSlug": "oracle-cx",
+    "domain": "ai-capabilities",
+    "field": "ai.recommendations",
+    "value": {
+      "capability": "recommendations",
+      "availability": "supported",
+      "sourceIds": [
+        "oracle-cx-sales"
+      ]
+    },
+    "sourceIds": [
+      "oracle-cx-sales"
+    ],
+    "evidence": [
+      {
+        "sourceId": "oracle-cx-sales",
+        "excerpt": "Oracle CX AI: recommendations"
+      }
+    ],
+    "extractedAt": "2026-08-14T08:00:00.000Z",
+    "normalizedAt": "2026-08-14T08:00:00.000Z",
+    "verifiedAt": "2026-08-14T08:00:00.000Z",
+    "approvedAt": "2026-08-14T08:00:00.000Z",
+    "confidence": "high",
+    "status": "approved",
+    "isFixture": false
+  }
+]

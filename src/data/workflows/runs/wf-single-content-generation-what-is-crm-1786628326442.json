@@ -1,0 +1,226 @@
+{
+  "id": "wf-single-content-generation-what-is-crm-1786628326442",
+  "workflowId": "single-content-generation",
+  "workflowVersion": "1.0.0",
+  "name": "Single Content Generation: what-is-crm",
+  "targetType": "content",
+  "targetId": "what-is-crm",
+  "status": "failed",
+  "steps": [
+    {
+      "id": "content-readiness",
+      "definitionStepId": "content-readiness",
+      "handler": "noop",
+      "label": "Content readiness",
+      "status": "completed",
+      "required": true,
+      "failurePolicy": "block-workflow",
+      "attempt": 1,
+      "maxAttempts": 2,
+      "dependsOn": [],
+      "priority": "high",
+      "config": {
+        "maxAutomaticRevisions": 1,
+        "expandFromContentPlan": false,
+        "expandKind": "none",
+        "stopAfterApproval": true,
+        "allowNormalizedFacts": false,
+        "optionalWhenBlocked": false,
+        "forceTransientFailOnce": false
+      },
+      "inputRefs": {},
+      "outputRefs": {},
+      "blockers": [],
+      "warnings": [],
+      "startedAt": "2026-08-13T13:38:46.943Z",
+      "completedAt": "2026-08-13T13:38:46.946Z",
+      "revisionAttempts": 0
+    },
+    {
+      "id": "generate",
+      "definitionStepId": "generate",
+      "handler": "agent-run",
+      "label": "Generate content",
+      "status": "completed",
+      "required": true,
+      "failurePolicy": "block-workflow",
+      "attempt": 1,
+      "maxAttempts": 2,
+      "dependsOn": [
+        "content-readiness"
+      ],
+      "priority": "high",
+      "config": {
+        "agentId": "guide-agent",
+        "targetSlug": "what-is-crm",
+        "maxAutomaticRevisions": 1,
+        "expandFromContentPlan": false,
+        "expandKind": "none",
+        "stopAfterApproval": true,
+        "allowNormalizedFacts": false,
+        "optionalWhenBlocked": false,
+        "forceTransientFailOnce": false
+      },
+      "inputRefs": {},
+      "outputRefs": {
+        "draftId": "draft-deterministic-v1-guide-agent-what-is-crm-2026-08-13T13-38-46-950Z",
+        "qaStatus": "pass",
+        "agentId": "guide-agent",
+        "target": "what-is-crm"
+      },
+      "inputSnapshot": {
+        "researchFactIds": [],
+        "methodologySlug": "crm-editorial",
+        "methodologyVersion": "1.0.0",
+        "agentVersion": "1.0.0",
+        "contextBuiltAt": "2026-08-13T13:38:46.949Z"
+      },
+      "blockers": [],
+      "warnings": [],
+      "agentTaskId": "exec-guide-agent-what-is-crm-1786628326948",
+      "draftId": "draft-deterministic-v1-guide-agent-what-is-crm-2026-08-13T13-38-46-950Z",
+      "startedAt": "2026-08-13T13:38:46.947Z",
+      "completedAt": "2026-08-13T13:38:46.955Z",
+      "revisionAttempts": 0
+    },
+    {
+      "id": "editorial-approval",
+      "definitionStepId": "editorial-approval",
+      "handler": "approval-check",
+      "label": "Editorial approval",
+      "status": "failed",
+      "required": true,
+      "failurePolicy": "manual-review",
+      "attempt": 1,
+      "maxAttempts": 2,
+      "dependsOn": [
+        "generate"
+      ],
+      "priority": "critical",
+      "config": {
+        "approvalType": "editorial",
+        "maxAutomaticRevisions": 1,
+        "expandFromContentPlan": false,
+        "expandKind": "none",
+        "stopAfterApproval": true,
+        "allowNormalizedFacts": false,
+        "optionalWhenBlocked": false,
+        "forceTransientFailOnce": false
+      },
+      "inputRefs": {},
+      "outputRefs": {
+        "approvalId": "appr-wf-single-content-generation-what-is-crm-1786628326442-generate",
+        "draftId": "draft-deterministic-v1-guide-agent-what-is-crm-2026-08-13T13-38-46-950Z"
+      },
+      "blockers": [],
+      "warnings": [],
+      "error": "not ready",
+      "approvalId": "appr-wf-single-content-generation-what-is-crm-1786628326442-generate",
+      "startedAt": "2026-08-13T13:38:46.956Z",
+      "completedAt": "2026-08-13T13:38:46.983Z",
+      "revisionAttempts": 0
+    },
+    {
+      "id": "pre-publish-validation",
+      "definitionStepId": "pre-publish-validation",
+      "handler": "pre-publish-validation",
+      "label": "Pre-publish validation",
+      "status": "pending",
+      "required": true,
+      "failurePolicy": "block-workflow",
+      "attempt": 0,
+      "maxAttempts": 2,
+      "dependsOn": [
+        "editorial-approval"
+      ],
+      "priority": "critical",
+      "config": {
+        "maxAutomaticRevisions": 1,
+        "expandFromContentPlan": false,
+        "expandKind": "none",
+        "stopAfterApproval": true,
+        "allowNormalizedFacts": false,
+        "optionalWhenBlocked": false,
+        "forceTransientFailOnce": false
+      },
+      "inputRefs": {},
+      "outputRefs": {},
+      "blockers": [],
+      "warnings": [],
+      "revisionAttempts": 0
+    }
+  ],
+  "history": [
+    {
+      "at": "2026-08-13T13:38:46.925Z",
+      "event": "workflow_created",
+      "message": "Created single-content-generation:v1.0.0"
+    },
+    {
+      "at": "2026-08-13T13:38:46.930Z",
+      "event": "workflow_started",
+      "message": "Workflow execution started"
+    },
+    {
+      "at": "2026-08-13T13:38:46.942Z",
+      "event": "workflow_step_started",
+      "stepId": "content-readiness",
+      "message": "Started Content readiness"
+    },
+    {
+      "at": "2026-08-13T13:38:46.946Z",
+      "event": "workflow_step_completed",
+      "stepId": "content-readiness",
+      "message": "No-op step completed"
+    },
+    {
+      "at": "2026-08-13T13:38:46.947Z",
+      "event": "workflow_step_started",
+      "stepId": "generate",
+      "message": "Started Generate content"
+    },
+    {
+      "at": "2026-08-13T13:38:46.955Z",
+      "event": "workflow_step_completed",
+      "stepId": "generate",
+      "message": "Agent guide-agent → draft draft-deterministic-v1-guide-agent-what-is-crm-2026-08-13T13-38-46-950Z (qa=pass)"
+    },
+    {
+      "at": "2026-08-13T13:38:46.956Z",
+      "event": "workflow_step_started",
+      "stepId": "editorial-approval",
+      "message": "Started Editorial approval"
+    },
+    {
+      "at": "2026-08-13T13:38:46.983Z",
+      "event": "workflow_step_completed",
+      "stepId": "editorial-approval",
+      "message": "WAITING FOR EDITORIAL APPROVAL (appr-wf-single-content-generation-what-is-crm-1786628326442-generate)"
+    },
+    {
+      "at": "2026-08-13T13:38:47.046Z",
+      "event": "workflow_resumed",
+      "message": "Workflow resumed"
+    },
+    {
+      "at": "2026-08-13T13:38:47.047Z",
+      "event": "workflow_started",
+      "message": "Workflow execution started"
+    },
+    {
+      "at": "2026-08-13T13:38:47.048Z",
+      "event": "workflow_failed",
+      "message": "Workflow failed"
+    }
+  ],
+  "options": {
+    "agentId": "guide-agent",
+    "targetSlug": "what-is-crm",
+    "productIds": [],
+    "categoryIds": [],
+    "allowNormalizedFacts": false
+  },
+  "warnings": [],
+  "createdAt": "2026-08-13T13:38:46.925Z",
+  "updatedAt": "2026-08-13T13:38:47.048Z"
+}

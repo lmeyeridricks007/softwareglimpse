@@ -1,0 +1,83 @@
+{
+  "id": "exec-pricing-page-agent-creatio-1786686378732",
+  "agentId": "pricing-page-agent",
+  "agentVersion": "1.0.0",
+  "status": "qa-failed",
+  "mode": "CREATE",
+  "targetSlug": "creatio",
+  "draftId": "draft-deterministic-v1-pricing-page-agent-creatio-2026-08-14T05-46-18-737Z",
+  "briefId": "agent-brief-pricing-page-agent-creatio-1786686378736",
+  "validation": {
+    "ok": false,
+    "errors": [
+      "unsourced-number:caveats:$10,000",
+      "unsourced-number:caveats:000"
+    ]
+  },
+  "qa": {
+    "status": "fail",
+    "blockers": [
+      {
+        "type": "UNVERIFIED_NUMBER",
+        "severity": "blocker",
+        "message": "unsourced-number:caveats:$10,000"
+      },
+      {
+        "type": "UNVERIFIED_NUMBER",
+        "severity": "blocker",
+        "message": "unsourced-number:caveats:000"
+      }
+    ],
+    "warnings": [],
+    "suggestions": [],
+    "checkedAt": "2026-08-14T05:46:18.738Z"
+  },
+  "errors": [
+    "unsourced-number:caveats:$10,000",
+    "unsourced-number:caveats:000"
+  ],
+  "cost": {
+    "provider": "deterministic-v1",
+    "model": "deterministic-template-v1",
+    "inputTokens": 0,
+    "outputTokens": 0,
+    "estimatedCostUsd": 0
+  },
+  "contextSnapshot": {
+    "researchSnapshotIds": [],
+    "factIds": [
+      "fact-creatio-pricing.hasFreePlan",
+      "fact-creatio-pricing.hasFreeTrial",
+      "fact-creatio-pricing.startingPriceMonthly",
+      "fact-creatio-pricing.currency",
+      "fact-creatio-pricing.model",
+      "fact-creatio-pricing.plans.growth",
+      "fact-creatio-pricing.plans.enterprise",
+      "fact-creatio-pricing.plans.unlimited",
+      "fact-creatio-features.contact-management",
+      "fact-creatio-features.lead-management",
+      "fact-creatio-features.pipeline-management",
+      "fact-creatio-features.deal-management",
+      "fact-creatio-features.email-sync",
+      "fact-creatio-features.workflow-automation",
+      "fact-creatio-features.sales-automation",
+      "fact-creatio-features.reporting",
+      "fact-creatio-features.forecasting",
+      "fact-creatio-features.custom-fields",
+      "fact-creatio-features.custom-pipelines",
+      "fact-creatio-features.mobile-app",
+      "fact-creatio-features.ai-assistance",
+      "fact-creatio-features.integrations",
+      "fact-creatio-positioning.summary",
+      "fact-creatio-ai.assistant",
+      "fact-creatio-ai.automation"
+    ],
+    "methodologySlug": "crm-editorial",
+    "methodologyVersion": "1.0.0",
+    "pricingFreshnessAt": "2026-08-14T08:00:00.000Z",
+    "builtAt": "2026-08-14T05:46:18.736Z"
+  },
+  "dryRun": false,
+  "startedAt": "2026-08-14T05:46:18.732Z",
+  "completedAt": "2026-08-14T05:46:18.743Z"
+}

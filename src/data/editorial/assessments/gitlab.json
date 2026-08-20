@@ -1,0 +1,165 @@
+{
+  "id": "assessment-gitlab-it-v1",
+  "productSlug": "gitlab",
+  "methodologySlug": "it-development-editorial",
+  "methodologyVersion": "1.0.0",
+  "status": "approved",
+  "verdict": "GitLab: Choose GitLab when a DevSecOps platform (git + CI + security) is the job — not GitHub Copilot and not Bitbucket-as-cheap-git. Scores use the IT & Development editorial methodology from first-party research as of 2026-08-18 — not hands-on product testing.",
+  "strengths": [
+    "All-in-one DevSecOps",
+    "Published Premium $29 annual",
+    "Self-managed option",
+    "Strong MR/CI depth",
+    "AI on the platform (Duo)"
+  ],
+  "weaknesses": [
+    "Annual-only paid SaaS",
+    "Ultimate quote",
+    "Heavier than git-only",
+    "Network effect vs GitHub",
+    "CI minute gates on Free"
+  ],
+  "bestFor": [
+    "Teams that want git + CI + security in one licence",
+    "Self-managed / data-residency buyers",
+    "Orgs leaving a many-tool DevOps stack"
+  ],
+  "notIdealFor": [
+    "Teams that only need cheap git hosting (GitHub Free / Bitbucket)",
+    "AI-IDE-only buyers (Cursor)",
+    "Observability-only (Datadog)"
+  ],
+  "tradeoffs": [
+    "Per-agent vs per-host vs per-seat vs per-GB pricing models",
+    "Module stacking and consumption overages vs single-SKU floors",
+    "Free tiers vs enterprise SSO/audit gates",
+    "Landscape-adjacent tools vs primary job-cluster peers on best pages"
+  ],
+  "recommendation": "Choose GitLab when a DevSecOps platform (git + CI + security) is the job — not GitHub Copilot and not Bitbucket-as-cheap-git. Compare GitHub for ecosystem + Actions; Bitbucket if you are Atlassian-native and need cheaper git+Pipelines.",
+  "editorialNotes": "IT Priority-2 batch. Approved on it-development-editorial v1.0.0. membershipRole=primary. jobCluster=source-control-devops. handsOnTesting=false. Affiliate economics excluded.",
+  "handsOnTesting": false,
+  "confidence": "medium",
+  "criterionAssessments": [
+    {
+      "criterionSlug": "ease-of-use",
+      "score": 7,
+      "rationale": "One application is conceptually simple; GitLab’s surface area is still large vs GitHub-for-git-only.",
+      "supportingFactIds": [
+        "fact-gitlab-features.source-control",
+        "fact-gitlab-pricing.model"
+      ],
+      "confidence": "medium",
+      "status": "approved",
+      "reviewedAt": "2026-08-18T12:00:00.000Z",
+      "reviewer": "editorial"
+    },
+    {
+      "criterionSlug": "it-job-fit",
+      "score": 9,
+      "rationale": "Source-control + CI/CD DevOps platform — peer of GitHub/Bitbucket, not Datadog.",
+      "supportingFactIds": [
+        "fact-gitlab-features.source-control",
+        "fact-gitlab-pricing.model"
+      ],
+      "confidence": "medium",
+      "status": "approved",
+      "reviewedAt": "2026-08-18T12:00:00.000Z",
+      "reviewer": "editorial"
+    },
+    {
+      "criterionSlug": "workflow-depth",
+      "score": 9,
+      "rationale": "Repo + CI + security in one product is the depth lead vs Bitbucket; GitHub remains the network-effect peer.",
+      "supportingFactIds": [
+        "fact-gitlab-features.cicd-actions",
+        "fact-gitlab-pricing.model"
+      ],
+      "confidence": "medium",
+      "status": "approved",
+      "reviewedAt": "2026-08-18T12:00:00.000Z",
+      "reviewer": "editorial"
+    },
+    {
+      "criterionSlug": "integrations",
+      "score": 8,
+      "rationale": "Jira/Slack native; GitHub-equivalent marketplace is thinner.",
+      "supportingFactIds": [
+        "fact-gitlab-features.analytics-reporting",
+        "fact-gitlab-pricing.model",
+        "fact-gitlab-positioning.vendorClaim"
+      ],
+      "confidence": "medium",
+      "status": "approved",
+      "reviewedAt": "2026-08-18T12:00:00.000Z",
+      "reviewer": "editorial"
+    },
+    {
+      "criterionSlug": "admin-security",
+      "score": 9,
+      "rationale": "Premium/Ultimate are built for SSO, approvals, and compliance.",
+      "supportingFactIds": [
+        "fact-gitlab-features.enterprise-security",
+        "fact-gitlab-pricing.model"
+      ],
+      "confidence": "medium",
+      "status": "approved",
+      "reviewedAt": "2026-08-18T12:00:00.000Z",
+      "reviewer": "editorial"
+    },
+    {
+      "criterionSlug": "scalability",
+      "score": 9,
+      "rationale": "SaaS and self-managed scale paths.",
+      "supportingFactIds": [
+        "fact-gitlab-pricing.plans.free",
+        "fact-gitlab-pricing.model",
+        "fact-gitlab-pricing.plans.ultimate"
+      ],
+      "confidence": "medium",
+      "status": "approved",
+      "reviewedAt": "2026-08-18T12:00:00.000Z",
+      "reviewer": "editorial"
+    },
+    {
+      "criterionSlug": "value-for-money",
+      "score": 7,
+      "rationale": "$29 Premium vs GitHub Team $4 is a different product (CI/DevSecOps). Fair for the scope; not a cheap git host. Affiliate economics excluded.",
+      "supportingFactIds": [
+        "fact-gitlab-pricing.hasFreePlan",
+        "fact-gitlab-pricing.model",
+        "fact-gitlab-pricing.startingPriceMonthly"
+      ],
+      "confidence": "medium",
+      "status": "approved",
+      "reviewedAt": "2026-08-18T12:00:00.000Z",
+      "reviewer": "editorial"
+    },
+    {
+      "criterionSlug": "ai-capabilities",
+      "score": 8,
+      "rationale": "GitLab Duo / AI features on paid platforms — scored as platform AI, not GitHub Copilot.",
+      "supportingFactIds": [
+        "fact-gitlab-features.dev-ai",
+        "fact-gitlab-pricing.model"
+      ],
+      "confidence": "medium",
+      "status": "approved",
+      "reviewedAt": "2026-08-18T12:00:00.000Z",
+      "reviewer": "editorial"
+    }
+  ],
+  "overallScore": 8.3,
+  "overallScoreRationale": "Weighted average of the eight IT editorial criteria using category weights (IT job fit 16, workflow depth 14, ease of use 12, integrations 12, admin/security 12, value 12, AI 12, scalability 10), rounded to 1 decimal. Products are scored inside their job cluster — ITSM, observability, source control, hosting panels, and web-data platforms are not forced into one undifferentiated ranking. Not a hands-on lab score, and affiliate economics are excluded.",
+  "scoreAudit": [
+    {
+      "at": "2026-08-18T12:00:00.000Z",
+      "actor": "editorial",
+      "change": "IT Priority-2 onboarding; approved IT criteria with category weights; handsOnTesting=false",
+      "nextOverall": 8.3
+    }
+  ],
+  "reviewedAt": "2026-08-18T12:00:00.000Z",
+  "reviewer": "editorial",
+  "createdAt": "2026-08-18T12:00:00.000Z",
+  "updatedAt": "2026-08-18T12:00:00.000Z"
+}

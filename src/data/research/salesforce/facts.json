@@ -1,0 +1,1240 @@
+[
+  {
+    "id": "fact-salesforce-pricing.hasFreePlan",
+    "productSlug": "salesforce",
+    "domain": "free-plan",
+    "field": "pricing.hasFreePlan",
+    "value": false,
+    "sourceIds": [
+      "salesforce-sales-cloud-pricing",
+      "salesforce-crm-pricing"
+    ],
+    "evidence": [
+      {
+        "sourceId": "salesforce-sales-cloud-pricing",
+        "excerpt": "No permanent free CRM plan; Starter Suite is a paid edition at $25 USD/user/month."
+      }
+    ],
+    "extractedAt": "2026-08-14T06:00:00.000Z",
+    "normalizedAt": "2026-08-14T06:00:00.000Z",
+    "verifiedAt": "2026-08-14T06:00:00.000Z",
+    "approvedAt": "2026-08-14T06:00:00.000Z",
+    "confidence": "high",
+    "status": "approved",
+    "isFixture": false
+  },
+  {
+    "id": "fact-salesforce-pricing.hasFreeTrial",
+    "productSlug": "salesforce",
+    "domain": "free-trial",
+    "field": "pricing.hasFreeTrial",
+    "value": true,
+    "sourceIds": [
+      "salesforce-free-trial",
+      "salesforce-sales-cloud-pricing",
+      "salesforce-crm-pricing"
+    ],
+    "evidence": [
+      {
+        "sourceId": "salesforce-free-trial",
+        "excerpt": "Try Sales Cloud free for 30 days. No credit card, no installations. Pricing FAQ also notes a free 30-day trial of Starter Suite for up to 10 users and free 30-day trial messaging for Agentforce Sales editions."
+      }
+    ],
+    "extractedAt": "2026-08-14T06:00:00.000Z",
+    "normalizedAt": "2026-08-14T06:00:00.000Z",
+    "verifiedAt": "2026-08-14T06:00:00.000Z",
+    "approvedAt": "2026-08-14T06:00:00.000Z",
+    "confidence": "high",
+    "status": "approved",
+    "isFixture": false
+  },
+  {
+    "id": "fact-salesforce-pricing.startingPriceMonthly",
+    "productSlug": "salesforce",
+    "domain": "pricing",
+    "field": "pricing.startingPriceMonthly",
+    "value": 25,
+    "sourceIds": [
+      "salesforce-sales-cloud-pricing",
+      "salesforce-crm-pricing"
+    ],
+    "evidence": [
+      {
+        "sourceId": "salesforce-sales-cloud-pricing",
+        "excerpt": "Starter Suite costs $25 USD per user, per month."
+      }
+    ],
+    "extractedAt": "2026-08-14T06:00:00.000Z",
+    "normalizedAt": "2026-08-14T06:00:00.000Z",
+    "verifiedAt": "2026-08-14T06:00:00.000Z",
+    "approvedAt": "2026-08-14T06:00:00.000Z",
+    "confidence": "high",
+    "status": "approved",
+    "isFixture": false
+  },
+  {
+    "id": "fact-salesforce-pricing.currency",
+    "productSlug": "salesforce",
+    "domain": "pricing",
+    "field": "pricing.currency",
+    "value": "USD",
+    "sourceIds": [
+      "salesforce-sales-cloud-pricing",
+      "salesforce-crm-pricing"
+    ],
+    "evidence": [
+      {
+        "sourceId": "salesforce-sales-cloud-pricing",
+        "excerpt": "USD list pricing shown on Sales Cloud pricing page."
+      }
+    ],
+    "extractedAt": "2026-08-14T06:00:00.000Z",
+    "normalizedAt": "2026-08-14T06:00:00.000Z",
+    "verifiedAt": "2026-08-14T06:00:00.000Z",
+    "approvedAt": "2026-08-14T06:00:00.000Z",
+    "confidence": "high",
+    "status": "approved",
+    "isFixture": false
+  },
+  {
+    "id": "fact-salesforce-pricing.model",
+    "productSlug": "salesforce",
+    "domain": "pricing",
+    "field": "pricing.model",
+    "value": "subscription",
+    "sourceIds": [
+      "salesforce-sales-cloud-pricing",
+      "salesforce-crm-pricing"
+    ],
+    "evidence": [
+      {
+        "sourceId": "salesforce-sales-cloud-pricing",
+        "excerpt": "Per-user/month subscription editions (Starter Suite, Pro Suite, Enterprise, Unlimited)."
+      }
+    ],
+    "extractedAt": "2026-08-14T06:00:00.000Z",
+    "normalizedAt": "2026-08-14T06:00:00.000Z",
+    "verifiedAt": "2026-08-14T06:00:00.000Z",
+    "approvedAt": "2026-08-14T06:00:00.000Z",
+    "confidence": "high",
+    "status": "approved",
+    "isFixture": false
+  },
+  {
+    "id": "fact-salesforce-pricing.plans.starter-suite",
+    "productSlug": "salesforce",
+    "domain": "plans",
+    "field": "pricing.plans.starter-suite",
+    "value": {
+      "id": "plan-starter-suite",
+      "slug": "starter-suite",
+      "name": "Starter Suite",
+      "isFree": false,
+      "contactSales": false,
+      "hasFreeTrial": true,
+      "trialDays": 30,
+      "highlighted": false,
+      "rules": [
+        {
+          "kind": "per-seat",
+          "amountPerSeat": 25,
+          "currency": "USD",
+          "interval": "year",
+          "amountPeriod": "month"
+        },
+        {
+          "kind": "per-seat",
+          "amountPerSeat": 25,
+          "currency": "USD",
+          "interval": "month",
+          "amountPeriod": "month"
+        }
+      ]
+    },
+    "sourceIds": [
+      "salesforce-sales-cloud-pricing",
+      "salesforce-crm-pricing"
+    ],
+    "evidence": [
+      {
+        "sourceId": "salesforce-sales-cloud-pricing",
+        "excerpt": "Starter Suite: $25 USD/User/Month (Billed monthly or annually)."
+      }
+    ],
+    "extractedAt": "2026-08-14T06:00:00.000Z",
+    "normalizedAt": "2026-08-14T06:00:00.000Z",
+    "verifiedAt": "2026-08-14T06:00:00.000Z",
+    "approvedAt": "2026-08-14T06:00:00.000Z",
+    "confidence": "high",
+    "status": "approved",
+    "isFixture": false,
+    "notes": "USD list prices as published on salesforce.com/editions-pricing/sales-cloud/ (checked Aug 2026)."
+  },
+  {
+    "id": "fact-salesforce-pricing.plans.pro-suite",
+    "productSlug": "salesforce",
+    "domain": "plans",
+    "field": "pricing.plans.pro-suite",
+    "value": {
+      "id": "plan-pro-suite",
+      "slug": "pro-suite",
+      "name": "Pro Suite",
+      "isFree": false,
+      "contactSales": false,
+      "hasFreeTrial": true,
+      "trialDays": 30,
+      "highlighted": true,
+      "rules": [
+        {
+          "kind": "per-seat",
+          "amountPerSeat": 100,
+          "currency": "USD",
+          "interval": "year",
+          "amountPeriod": "month"
+        }
+      ]
+    },
+    "sourceIds": [
+      "salesforce-sales-cloud-pricing",
+      "salesforce-crm-pricing"
+    ],
+    "evidence": [
+      {
+        "sourceId": "salesforce-sales-cloud-pricing",
+        "excerpt": "Pro Suite: $100 USD/User/Month (Billed annually)."
+      }
+    ],
+    "extractedAt": "2026-08-14T06:00:00.000Z",
+    "normalizedAt": "2026-08-14T06:00:00.000Z",
+    "verifiedAt": "2026-08-14T06:00:00.000Z",
+    "approvedAt": "2026-08-14T06:00:00.000Z",
+    "confidence": "high",
+    "status": "approved",
+    "isFixture": false,
+    "notes": "USD list prices as published on salesforce.com/editions-pricing/sales-cloud/ (checked Aug 2026)."
+  },
+  {
+    "id": "fact-salesforce-pricing.plans.enterprise",
+    "productSlug": "salesforce",
+    "domain": "plans",
+    "field": "pricing.plans.enterprise",
+    "value": {
+      "id": "plan-enterprise",
+      "slug": "enterprise",
+      "name": "Enterprise",
+      "isFree": false,
+      "contactSales": false,
+      "hasFreeTrial": true,
+      "trialDays": 30,
+      "highlighted": false,
+      "rules": [
+        {
+          "kind": "per-seat",
+          "amountPerSeat": 175,
+          "currency": "USD",
+          "interval": "year",
+          "amountPeriod": "month"
+        }
+      ]
+    },
+    "sourceIds": [
+      "salesforce-sales-cloud-pricing",
+      "salesforce-crm-pricing"
+    ],
+    "evidence": [
+      {
+        "sourceId": "salesforce-sales-cloud-pricing",
+        "excerpt": "Enterprise: $175 USD/User/Month (Billed annually)."
+      }
+    ],
+    "extractedAt": "2026-08-14T06:00:00.000Z",
+    "normalizedAt": "2026-08-14T06:00:00.000Z",
+    "verifiedAt": "2026-08-14T06:00:00.000Z",
+    "approvedAt": "2026-08-14T06:00:00.000Z",
+    "confidence": "high",
+    "status": "approved",
+    "isFixture": false,
+    "notes": "USD list prices as published on salesforce.com/editions-pricing/sales-cloud/ (checked Aug 2026)."
+  },
+  {
+    "id": "fact-salesforce-pricing.plans.unlimited",
+    "productSlug": "salesforce",
+    "domain": "plans",
+    "field": "pricing.plans.unlimited",
+    "value": {
+      "id": "plan-unlimited",
+      "slug": "unlimited",
+      "name": "Unlimited",
+      "isFree": false,
+      "contactSales": false,
+      "hasFreeTrial": true,
+      "trialDays": 30,
+      "highlighted": false,
+      "rules": [
+        {
+          "kind": "per-seat",
+          "amountPerSeat": 350,
+          "currency": "USD",
+          "interval": "year",
+          "amountPeriod": "month"
+        }
+      ]
+    },
+    "sourceIds": [
+      "salesforce-sales-cloud-pricing",
+      "salesforce-crm-pricing"
+    ],
+    "evidence": [
+      {
+        "sourceId": "salesforce-sales-cloud-pricing",
+        "excerpt": "Unlimited: $350 USD/User/Month (Billed annually)."
+      }
+    ],
+    "extractedAt": "2026-08-14T06:00:00.000Z",
+    "normalizedAt": "2026-08-14T06:00:00.000Z",
+    "verifiedAt": "2026-08-14T06:00:00.000Z",
+    "approvedAt": "2026-08-14T06:00:00.000Z",
+    "confidence": "high",
+    "status": "approved",
+    "isFixture": false,
+    "notes": "USD list prices as published on salesforce.com/editions-pricing/sales-cloud/ (checked Aug 2026)."
+  },
+  {
+    "id": "fact-salesforce-pricing.addons",
+    "productSlug": "salesforce",
+    "domain": "plans",
+    "field": "pricing.addons",
+    "value": {
+      "premierSupport": {
+        "pro-suite": "add-on",
+        "enterprise": "varies",
+        "unlimited": "included-via-premier-success-plan"
+      },
+      "agentforceForSales": {
+        "from": 125,
+        "currency": "USD",
+        "unit": "user/month",
+        "contactSales": true
+      },
+      "salesPrograms": {
+        "from": 100,
+        "currency": "USD",
+        "unit": "user/month"
+      },
+      "revenueIntelligence": {
+        "from": 220,
+        "currency": "USD",
+        "unit": "user/month"
+      },
+      "revenueCloud": {
+        "from": 200,
+        "currency": "USD",
+        "unit": "user/month"
+      },
+      "webServicesApi": {
+        "additional": 25,
+        "currency": "USD",
+        "unit": "user/month",
+        "notes": "Additional $25 USD/user/month listed for Web Services API on pricing comparison context."
+      }
+    },
+    "sourceIds": [
+      "salesforce-sales-cloud-pricing"
+    ],
+    "evidence": [
+      {
+        "sourceId": "salesforce-sales-cloud-pricing",
+        "excerpt": "Extend Sales Cloud with add-ons: Agentforce for Sales From $125 USD/user/month (Contact us); Sales Programs From $100; Revenue Intelligence From $220; Revenue Cloud From $200. Premier Support (add-on) on Pro Suite. Unlimited includes Premier Success Plan and Full Sandbox."
+      }
+    ],
+    "extractedAt": "2026-08-14T06:00:00.000Z",
+    "normalizedAt": "2026-08-14T06:00:00.000Z",
+    "verifiedAt": "2026-08-14T06:00:00.000Z",
+    "approvedAt": "2026-08-14T06:00:00.000Z",
+    "confidence": "high",
+    "status": "approved",
+    "isFixture": false
+  },
+  {
+    "id": "fact-salesforce-pricing.agentforce1",
+    "productSlug": "salesforce",
+    "domain": "plans",
+    "field": "pricing.plans.agentforce-1-sales",
+    "value": {
+      "slug": "agentforce-1-sales",
+      "name": "Agentforce 1 Sales",
+      "amountPerSeat": 550,
+      "currency": "USD",
+      "interval": "year",
+      "amountPeriod": "month"
+    },
+    "sourceIds": [
+      "salesforce-sales-cloud-pricing"
+    ],
+    "evidence": [
+      {
+        "sourceId": "salesforce-sales-cloud-pricing",
+        "excerpt": "Agentforce 1 Sales: $550 USD/User/Month (Billed annually). Complete Sales CRM with built-in AI \u2014 listed above Unlimited; documented for completeness, not the core Starter\u2192Unlimited CRM ladder focus."
+      }
+    ],
+    "extractedAt": "2026-08-14T06:00:00.000Z",
+    "normalizedAt": "2026-08-14T06:00:00.000Z",
+    "verifiedAt": "2026-08-14T06:00:00.000Z",
+    "approvedAt": "2026-08-14T06:00:00.000Z",
+    "confidence": "high",
+    "status": "approved",
+    "isFixture": false
+  },
+  {
+    "id": "fact-salesforce-features.contact-management",
+    "productSlug": "salesforce",
+    "domain": "features",
+    "field": "features.contact-management",
+    "value": {
+      "featureSlug": "contact-management",
+      "availability": "supported",
+      "planSlugs": [
+        "starter-suite",
+        "pro-suite",
+        "enterprise",
+        "unlimited"
+      ]
+    },
+    "sourceIds": [
+      "salesforce-sales-cloud-features",
+      "salesforce-sales-cloud-pricing",
+      "salesforce-sales-cloud-product"
+    ],
+    "evidence": [
+      {
+        "sourceId": "salesforce-sales-cloud-features",
+        "excerpt": "Lead, Account, Contact, and Opportunity Management listed on Starter Suite."
+      }
+    ],
+    "extractedAt": "2026-08-14T06:00:00.000Z",
+    "normalizedAt": "2026-08-14T06:00:00.000Z",
+    "verifiedAt": "2026-08-14T06:00:00.000Z",
+    "approvedAt": "2026-08-14T06:00:00.000Z",
+    "confidence": "high",
+    "status": "approved",
+    "isFixture": false
+  },
+  {
+    "id": "fact-salesforce-features.lead-management",
+    "productSlug": "salesforce",
+    "domain": "features",
+    "field": "features.lead-management",
+    "value": {
+      "featureSlug": "lead-management",
+      "availability": "supported",
+      "planSlugs": [
+        "starter-suite",
+        "pro-suite",
+        "enterprise",
+        "unlimited"
+      ]
+    },
+    "sourceIds": [
+      "salesforce-sales-cloud-features",
+      "salesforce-sales-cloud-pricing",
+      "salesforce-sales-cloud-product"
+    ],
+    "evidence": [
+      {
+        "sourceId": "salesforce-sales-cloud-features",
+        "excerpt": "Lead management and lead routing documented on Sales Cloud pricing/features."
+      }
+    ],
+    "extractedAt": "2026-08-14T06:00:00.000Z",
+    "normalizedAt": "2026-08-14T06:00:00.000Z",
+    "verifiedAt": "2026-08-14T06:00:00.000Z",
+    "approvedAt": "2026-08-14T06:00:00.000Z",
+    "confidence": "high",
+    "status": "approved",
+    "isFixture": false
+  },
+  {
+    "id": "fact-salesforce-features.pipeline-management",
+    "productSlug": "salesforce",
+    "domain": "features",
+    "field": "features.pipeline-management",
+    "value": {
+      "featureSlug": "pipeline-management",
+      "availability": "supported",
+      "planSlugs": [
+        "starter-suite",
+        "pro-suite",
+        "enterprise",
+        "unlimited"
+      ]
+    },
+    "sourceIds": [
+      "salesforce-sales-cloud-features",
+      "salesforce-sales-cloud-pricing",
+      "salesforce-sales-cloud-product"
+    ],
+    "evidence": [
+      {
+        "sourceId": "salesforce-sales-cloud-features",
+        "excerpt": "Pipeline management documented on features page; Advanced Pipeline Management & Deal Insights from Enterprise."
+      }
+    ],
+    "extractedAt": "2026-08-14T06:00:00.000Z",
+    "normalizedAt": "2026-08-14T06:00:00.000Z",
+    "verifiedAt": "2026-08-14T06:00:00.000Z",
+    "approvedAt": "2026-08-14T06:00:00.000Z",
+    "confidence": "high",
+    "status": "approved",
+    "isFixture": false
+  },
+  {
+    "id": "fact-salesforce-features.deal-management",
+    "productSlug": "salesforce",
+    "domain": "features",
+    "field": "features.deal-management",
+    "value": {
+      "featureSlug": "deal-management",
+      "availability": "supported",
+      "planSlugs": [
+        "starter-suite",
+        "pro-suite",
+        "enterprise",
+        "unlimited"
+      ]
+    },
+    "sourceIds": [
+      "salesforce-sales-cloud-features",
+      "salesforce-sales-cloud-pricing",
+      "salesforce-sales-cloud-product"
+    ],
+    "evidence": [
+      {
+        "sourceId": "salesforce-sales-cloud-features",
+        "excerpt": "Opportunity management and deal insights documented on Sales Cloud features/pricing."
+      }
+    ],
+    "extractedAt": "2026-08-14T06:00:00.000Z",
+    "normalizedAt": "2026-08-14T06:00:00.000Z",
+    "verifiedAt": "2026-08-14T06:00:00.000Z",
+    "approvedAt": "2026-08-14T06:00:00.000Z",
+    "confidence": "high",
+    "status": "approved",
+    "isFixture": false
+  },
+  {
+    "id": "fact-salesforce-features.custom-pipelines",
+    "productSlug": "salesforce",
+    "domain": "features",
+    "field": "features.custom-pipelines",
+    "value": {
+      "featureSlug": "custom-pipelines",
+      "availability": "supported",
+      "planSlugs": [
+        "starter-suite",
+        "pro-suite",
+        "enterprise",
+        "unlimited"
+      ]
+    },
+    "sourceIds": [
+      "salesforce-sales-cloud-features",
+      "salesforce-sales-cloud-pricing",
+      "salesforce-sales-cloud-product"
+    ],
+    "evidence": [
+      {
+        "sourceId": "salesforce-sales-cloud-features",
+        "excerpt": "Sales Cloud documents configurable sales processes and pipeline management."
+      }
+    ],
+    "extractedAt": "2026-08-14T06:00:00.000Z",
+    "normalizedAt": "2026-08-14T06:00:00.000Z",
+    "verifiedAt": "2026-08-14T06:00:00.000Z",
+    "approvedAt": "2026-08-14T06:00:00.000Z",
+    "confidence": "high",
+    "status": "approved",
+    "isFixture": false
+  },
+  {
+    "id": "fact-salesforce-features.custom-fields",
+    "productSlug": "salesforce",
+    "domain": "features",
+    "field": "features.custom-fields",
+    "value": {
+      "featureSlug": "custom-fields",
+      "availability": "supported",
+      "planSlugs": [
+        "pro-suite",
+        "enterprise",
+        "unlimited"
+      ]
+    },
+    "sourceIds": [
+      "salesforce-sales-cloud-features",
+      "salesforce-sales-cloud-pricing",
+      "salesforce-sales-cloud-product"
+    ],
+    "evidence": [
+      {
+        "sourceId": "salesforce-sales-cloud-features",
+        "excerpt": "Pro Suite: Everything in Starter Plus Greater Customization and Automation."
+      }
+    ],
+    "extractedAt": "2026-08-14T06:00:00.000Z",
+    "normalizedAt": "2026-08-14T06:00:00.000Z",
+    "verifiedAt": "2026-08-14T06:00:00.000Z",
+    "approvedAt": "2026-08-14T06:00:00.000Z",
+    "confidence": "high",
+    "status": "approved",
+    "isFixture": false
+  },
+  {
+    "id": "fact-salesforce-features.mobile-app",
+    "productSlug": "salesforce",
+    "domain": "features",
+    "field": "features.mobile-app",
+    "value": {
+      "featureSlug": "mobile-app",
+      "availability": "supported",
+      "planSlugs": [
+        "starter-suite",
+        "pro-suite",
+        "enterprise",
+        "unlimited"
+      ]
+    },
+    "sourceIds": [
+      "salesforce-sales-cloud-features",
+      "salesforce-sales-cloud-pricing",
+      "salesforce-sales-cloud-product"
+    ],
+    "evidence": [
+      {
+        "sourceId": "salesforce-sales-cloud-features",
+        "excerpt": "Sales Cloud product pages reference mobile CRM access."
+      }
+    ],
+    "extractedAt": "2026-08-14T06:00:00.000Z",
+    "normalizedAt": "2026-08-14T06:00:00.000Z",
+    "verifiedAt": "2026-08-14T06:00:00.000Z",
+    "approvedAt": "2026-08-14T06:00:00.000Z",
+    "confidence": "high",
+    "status": "approved",
+    "isFixture": false
+  },
+  {
+    "id": "fact-salesforce-features.email-sync",
+    "productSlug": "salesforce",
+    "domain": "features",
+    "field": "features.email-sync",
+    "value": {
+      "featureSlug": "email-sync",
+      "availability": "supported",
+      "planSlugs": [
+        "starter-suite",
+        "pro-suite",
+        "enterprise",
+        "unlimited"
+      ]
+    },
+    "sourceIds": [
+      "salesforce-sales-cloud-features",
+      "salesforce-sales-cloud-pricing",
+      "salesforce-sales-cloud-product"
+    ],
+    "evidence": [
+      {
+        "sourceId": "salesforce-sales-cloud-features",
+        "excerpt": "Starter Suite: AI Automatically Syncs Emails, Events, and Contacts; Email Integration with Gmail or Outlook listed."
+      }
+    ],
+    "extractedAt": "2026-08-14T06:00:00.000Z",
+    "normalizedAt": "2026-08-14T06:00:00.000Z",
+    "verifiedAt": "2026-08-14T06:00:00.000Z",
+    "approvedAt": "2026-08-14T06:00:00.000Z",
+    "confidence": "high",
+    "status": "approved",
+    "isFixture": false
+  },
+  {
+    "id": "fact-salesforce-features.email-tracking",
+    "productSlug": "salesforce",
+    "domain": "features",
+    "field": "features.email-tracking",
+    "value": {
+      "featureSlug": "email-tracking",
+      "availability": "supported",
+      "planSlugs": [
+        "starter-suite",
+        "pro-suite",
+        "enterprise",
+        "unlimited"
+      ]
+    },
+    "sourceIds": [
+      "salesforce-sales-cloud-features",
+      "salesforce-sales-cloud-pricing",
+      "salesforce-sales-cloud-product"
+    ],
+    "evidence": [
+      {
+        "sourceId": "salesforce-sales-cloud-features",
+        "excerpt": "Activity capture and email-related sales features documented on Sales Cloud features."
+      }
+    ],
+    "extractedAt": "2026-08-14T06:00:00.000Z",
+    "normalizedAt": "2026-08-14T06:00:00.000Z",
+    "verifiedAt": "2026-08-14T06:00:00.000Z",
+    "approvedAt": "2026-08-14T06:00:00.000Z",
+    "confidence": "high",
+    "status": "approved",
+    "isFixture": false
+  },
+  {
+    "id": "fact-salesforce-features.email-sequences",
+    "productSlug": "salesforce",
+    "domain": "features",
+    "field": "features.email-sequences",
+    "value": {
+      "featureSlug": "email-sequences",
+      "availability": "higher-plan-only",
+      "planSlugs": [
+        "unlimited"
+      ]
+    },
+    "sourceIds": [
+      "salesforce-sales-cloud-features",
+      "salesforce-sales-cloud-pricing",
+      "salesforce-sales-cloud-product"
+    ],
+    "evidence": [
+      {
+        "sourceId": "salesforce-sales-cloud-features",
+        "excerpt": "Unlimited: Conversation Intelligence and Sales Engagement."
+      }
+    ],
+    "extractedAt": "2026-08-14T06:00:00.000Z",
+    "normalizedAt": "2026-08-14T06:00:00.000Z",
+    "verifiedAt": "2026-08-14T06:00:00.000Z",
+    "approvedAt": "2026-08-14T06:00:00.000Z",
+    "confidence": "high",
+    "status": "approved",
+    "isFixture": false
+  },
+  {
+    "id": "fact-salesforce-features.workflow-automation",
+    "productSlug": "salesforce",
+    "domain": "features",
+    "field": "features.workflow-automation",
+    "value": {
+      "featureSlug": "workflow-automation",
+      "availability": "supported",
+      "planSlugs": [
+        "starter-suite",
+        "pro-suite",
+        "enterprise",
+        "unlimited"
+      ]
+    },
+    "sourceIds": [
+      "salesforce-sales-cloud-features",
+      "salesforce-sales-cloud-pricing",
+      "salesforce-sales-cloud-product"
+    ],
+    "evidence": [
+      {
+        "sourceId": "salesforce-sales-cloud-features",
+        "excerpt": "Built-in Sales Flows on Starter; workflow and process automation documented on features page; greater automation from Pro Suite."
+      }
+    ],
+    "extractedAt": "2026-08-14T06:00:00.000Z",
+    "normalizedAt": "2026-08-14T06:00:00.000Z",
+    "verifiedAt": "2026-08-14T06:00:00.000Z",
+    "approvedAt": "2026-08-14T06:00:00.000Z",
+    "confidence": "high",
+    "status": "approved",
+    "isFixture": false
+  },
+  {
+    "id": "fact-salesforce-features.sales-automation",
+    "productSlug": "salesforce",
+    "domain": "features",
+    "field": "features.sales-automation",
+    "value": {
+      "featureSlug": "sales-automation",
+      "availability": "supported",
+      "planSlugs": [
+        "starter-suite",
+        "pro-suite",
+        "enterprise",
+        "unlimited"
+      ]
+    },
+    "sourceIds": [
+      "salesforce-sales-cloud-features",
+      "salesforce-sales-cloud-pricing",
+      "salesforce-sales-cloud-product"
+    ],
+    "evidence": [
+      {
+        "sourceId": "salesforce-sales-cloud-features",
+        "excerpt": "Sales Flows, automation, and higher-edition Sales Engagement / Agentforce automation documented."
+      }
+    ],
+    "extractedAt": "2026-08-14T06:00:00.000Z",
+    "normalizedAt": "2026-08-14T06:00:00.000Z",
+    "verifiedAt": "2026-08-14T06:00:00.000Z",
+    "approvedAt": "2026-08-14T06:00:00.000Z",
+    "confidence": "high",
+    "status": "approved",
+    "isFixture": false
+  },
+  {
+    "id": "fact-salesforce-features.reporting",
+    "productSlug": "salesforce",
+    "domain": "features",
+    "field": "features.reporting",
+    "value": {
+      "featureSlug": "reporting",
+      "availability": "supported",
+      "planSlugs": [
+        "starter-suite",
+        "pro-suite",
+        "enterprise",
+        "unlimited"
+      ]
+    },
+    "sourceIds": [
+      "salesforce-sales-cloud-features",
+      "salesforce-sales-cloud-pricing",
+      "salesforce-sales-cloud-product"
+    ],
+    "evidence": [
+      {
+        "sourceId": "salesforce-sales-cloud-features",
+        "excerpt": "Reports and Dashboards: use data to drive action with out-of-the-box reporting tools."
+      }
+    ],
+    "extractedAt": "2026-08-14T06:00:00.000Z",
+    "normalizedAt": "2026-08-14T06:00:00.000Z",
+    "verifiedAt": "2026-08-14T06:00:00.000Z",
+    "approvedAt": "2026-08-14T06:00:00.000Z",
+    "confidence": "high",
+    "status": "approved",
+    "isFixture": false
+  },
+  {
+    "id": "fact-salesforce-features.forecasting",
+    "productSlug": "salesforce",
+    "domain": "features",
+    "field": "features.forecasting",
+    "value": {
+      "featureSlug": "forecasting",
+      "availability": "higher-plan-only",
+      "planSlugs": [
+        "pro-suite",
+        "enterprise",
+        "unlimited"
+      ]
+    },
+    "sourceIds": [
+      "salesforce-sales-cloud-features",
+      "salesforce-sales-cloud-pricing",
+      "salesforce-sales-cloud-product"
+    ],
+    "evidence": [
+      {
+        "sourceId": "salesforce-sales-cloud-features",
+        "excerpt": "Pro Suite includes Sales Quoting and Forecasting; forecast management UI on features page."
+      }
+    ],
+    "extractedAt": "2026-08-14T06:00:00.000Z",
+    "normalizedAt": "2026-08-14T06:00:00.000Z",
+    "verifiedAt": "2026-08-14T06:00:00.000Z",
+    "approvedAt": "2026-08-14T06:00:00.000Z",
+    "confidence": "high",
+    "status": "approved",
+    "isFixture": false
+  },
+  {
+    "id": "fact-salesforce-features.lead-scoring",
+    "productSlug": "salesforce",
+    "domain": "features",
+    "field": "features.lead-scoring",
+    "value": {
+      "featureSlug": "lead-scoring",
+      "availability": "supported",
+      "planSlugs": [
+        "starter-suite",
+        "pro-suite",
+        "enterprise",
+        "unlimited"
+      ]
+    },
+    "sourceIds": [
+      "salesforce-sales-cloud-features",
+      "salesforce-sales-cloud-pricing",
+      "salesforce-sales-cloud-product"
+    ],
+    "evidence": [
+      {
+        "sourceId": "salesforce-sales-cloud-features",
+        "excerpt": "Built-in Sales Flows and Lead Routing on Starter Suite."
+      }
+    ],
+    "extractedAt": "2026-08-14T06:00:00.000Z",
+    "normalizedAt": "2026-08-14T06:00:00.000Z",
+    "verifiedAt": "2026-08-14T06:00:00.000Z",
+    "approvedAt": "2026-08-14T06:00:00.000Z",
+    "confidence": "high",
+    "status": "approved",
+    "isFixture": false
+  },
+  {
+    "id": "fact-salesforce-features.ai-assistance",
+    "productSlug": "salesforce",
+    "domain": "features",
+    "field": "features.ai-assistance",
+    "value": {
+      "featureSlug": "ai-assistance",
+      "availability": "supported",
+      "planSlugs": [
+        "starter-suite",
+        "pro-suite",
+        "enterprise",
+        "unlimited"
+      ]
+    },
+    "sourceIds": [
+      "salesforce-sales-cloud-features",
+      "salesforce-sales-cloud-pricing",
+      "salesforce-sales-cloud-product"
+    ],
+    "evidence": [
+      {
+        "sourceId": "salesforce-sales-cloud-features",
+        "excerpt": "Agentforce AI messaging across Sales Cloud product and pricing pages."
+      }
+    ],
+    "extractedAt": "2026-08-14T06:00:00.000Z",
+    "normalizedAt": "2026-08-14T06:00:00.000Z",
+    "verifiedAt": "2026-08-14T06:00:00.000Z",
+    "approvedAt": "2026-08-14T06:00:00.000Z",
+    "confidence": "high",
+    "status": "approved",
+    "isFixture": false
+  },
+  {
+    "id": "fact-salesforce-features.integrations",
+    "productSlug": "salesforce",
+    "domain": "features",
+    "field": "features.integrations",
+    "value": {
+      "featureSlug": "integrations",
+      "availability": "supported",
+      "planSlugs": [
+        "starter-suite",
+        "pro-suite",
+        "enterprise",
+        "unlimited"
+      ]
+    },
+    "sourceIds": [
+      "salesforce-crm-product",
+      "salesforce-sales-cloud-pricing"
+    ],
+    "evidence": [
+      {
+        "sourceId": "salesforce-crm-product",
+        "excerpt": "AgentExchange (formerly AppExchange), Slack, and partner ecosystem on CRM pages."
+      }
+    ],
+    "extractedAt": "2026-08-14T06:00:00.000Z",
+    "normalizedAt": "2026-08-14T06:00:00.000Z",
+    "verifiedAt": "2026-08-14T06:00:00.000Z",
+    "approvedAt": "2026-08-14T06:00:00.000Z",
+    "confidence": "high",
+    "status": "approved",
+    "isFixture": false
+  },
+  {
+    "id": "fact-salesforce-features.email-campaigns",
+    "productSlug": "salesforce",
+    "domain": "features",
+    "field": "features.email-campaigns",
+    "value": {
+      "featureSlug": "email-campaigns",
+      "availability": "supported",
+      "planSlugs": [
+        "starter-suite",
+        "pro-suite",
+        "enterprise",
+        "unlimited"
+      ]
+    },
+    "sourceIds": [
+      "salesforce-sales-cloud-features",
+      "salesforce-sales-cloud-pricing",
+      "salesforce-sales-cloud-product"
+    ],
+    "evidence": [
+      {
+        "sourceId": "salesforce-sales-cloud-features",
+        "excerpt": "Dynamic Email Marketing and Analytics listed on Starter Suite."
+      }
+    ],
+    "extractedAt": "2026-08-14T06:00:00.000Z",
+    "normalizedAt": "2026-08-14T06:00:00.000Z",
+    "verifiedAt": "2026-08-14T06:00:00.000Z",
+    "approvedAt": "2026-08-14T06:00:00.000Z",
+    "confidence": "high",
+    "status": "approved",
+    "isFixture": false
+  },
+  {
+    "id": "fact-salesforce-integrations.gmail",
+    "productSlug": "salesforce",
+    "domain": "integrations",
+    "field": "integrations.gmail",
+    "value": {
+      "integrationSlug": "gmail",
+      "kind": "official-connector"
+    },
+    "sourceIds": [
+      "salesforce-sales-cloud-pricing",
+      "salesforce-crm-product"
+    ],
+    "evidence": [
+      {
+        "sourceId": "salesforce-sales-cloud-pricing",
+        "excerpt": "Email Integration with Gmail or Outlook listed on Sales Cloud pricing."
+      }
+    ],
+    "extractedAt": "2026-08-14T06:00:00.000Z",
+    "normalizedAt": "2026-08-14T06:00:00.000Z",
+    "verifiedAt": "2026-08-14T06:00:00.000Z",
+    "approvedAt": "2026-08-14T06:00:00.000Z",
+    "confidence": "high",
+    "status": "approved",
+    "isFixture": false
+  },
+  {
+    "id": "fact-salesforce-integrations.outlook",
+    "productSlug": "salesforce",
+    "domain": "integrations",
+    "field": "integrations.outlook",
+    "value": {
+      "integrationSlug": "outlook",
+      "kind": "official-connector"
+    },
+    "sourceIds": [
+      "salesforce-sales-cloud-pricing",
+      "salesforce-crm-product"
+    ],
+    "evidence": [
+      {
+        "sourceId": "salesforce-sales-cloud-pricing",
+        "excerpt": "Email Integration with Gmail or Outlook listed on Sales Cloud pricing."
+      }
+    ],
+    "extractedAt": "2026-08-14T06:00:00.000Z",
+    "normalizedAt": "2026-08-14T06:00:00.000Z",
+    "verifiedAt": "2026-08-14T06:00:00.000Z",
+    "approvedAt": "2026-08-14T06:00:00.000Z",
+    "confidence": "high",
+    "status": "approved",
+    "isFixture": false
+  },
+  {
+    "id": "fact-salesforce-integrations.slack",
+    "productSlug": "salesforce",
+    "domain": "integrations",
+    "field": "integrations.slack",
+    "value": {
+      "integrationSlug": "slack",
+      "kind": "official-connector"
+    },
+    "sourceIds": [
+      "salesforce-sales-cloud-pricing",
+      "salesforce-crm-product"
+    ],
+    "evidence": [
+      {
+        "sourceId": "salesforce-sales-cloud-pricing",
+        "excerpt": "Slack included messaging on Starter Suite (Slack Free plan noted; other Slack plans available for purchase)."
+      }
+    ],
+    "extractedAt": "2026-08-14T06:00:00.000Z",
+    "normalizedAt": "2026-08-14T06:00:00.000Z",
+    "verifiedAt": "2026-08-14T06:00:00.000Z",
+    "approvedAt": "2026-08-14T06:00:00.000Z",
+    "confidence": "high",
+    "status": "approved",
+    "isFixture": false
+  },
+  {
+    "id": "fact-salesforce-integrations.appexchange",
+    "productSlug": "salesforce",
+    "domain": "integrations",
+    "field": "integrations.marketplace",
+    "value": {
+      "name": "AgentExchange",
+      "formerly": "AppExchange",
+      "kind": "official-marketplace"
+    },
+    "sourceIds": [
+      "salesforce-crm-product",
+      "salesforce-sales-cloud-pricing"
+    ],
+    "evidence": [
+      {
+        "sourceId": "salesforce-crm-product",
+        "excerpt": "AgentExchange (formerly AppExchange) partner apps and agents; Pro Suite lists Access to AgentExchange."
+      }
+    ],
+    "extractedAt": "2026-08-14T06:00:00.000Z",
+    "normalizedAt": "2026-08-14T06:00:00.000Z",
+    "verifiedAt": "2026-08-14T06:00:00.000Z",
+    "approvedAt": "2026-08-14T06:00:00.000Z",
+    "confidence": "high",
+    "status": "approved",
+    "isFixture": false
+  },
+  {
+    "id": "fact-salesforce-ai.assistant",
+    "productSlug": "salesforce",
+    "domain": "ai-capabilities",
+    "field": "ai.assistant",
+    "value": {
+      "capability": "assistant",
+      "availability": "supported"
+    },
+    "sourceIds": [
+      "salesforce-sales-cloud-product",
+      "salesforce-crm-product",
+      "salesforce-sales-cloud-features"
+    ],
+    "evidence": [
+      {
+        "sourceId": "salesforce-sales-cloud-product",
+        "excerpt": "Agentforce sales AI positioned across Sales Cloud product/pricing pages."
+      }
+    ],
+    "extractedAt": "2026-08-14T06:00:00.000Z",
+    "normalizedAt": "2026-08-14T06:00:00.000Z",
+    "verifiedAt": "2026-08-14T06:00:00.000Z",
+    "approvedAt": "2026-08-14T06:00:00.000Z",
+    "confidence": "high",
+    "status": "approved",
+    "isFixture": false
+  },
+  {
+    "id": "fact-salesforce-ai.forecasting",
+    "productSlug": "salesforce",
+    "domain": "ai-capabilities",
+    "field": "ai.forecasting",
+    "value": {
+      "capability": "forecasting",
+      "availability": "higher-plan-only"
+    },
+    "sourceIds": [
+      "salesforce-sales-cloud-product",
+      "salesforce-crm-product",
+      "salesforce-sales-cloud-features"
+    ],
+    "evidence": [
+      {
+        "sourceId": "salesforce-sales-cloud-product",
+        "excerpt": "Forecasting from Pro Suite; Predictive AI on Unlimited."
+      }
+    ],
+    "extractedAt": "2026-08-14T06:00:00.000Z",
+    "normalizedAt": "2026-08-14T06:00:00.000Z",
+    "verifiedAt": "2026-08-14T06:00:00.000Z",
+    "approvedAt": "2026-08-14T06:00:00.000Z",
+    "confidence": "high",
+    "status": "approved",
+    "isFixture": false
+  },
+  {
+    "id": "fact-salesforce-ai.automation",
+    "productSlug": "salesforce",
+    "domain": "ai-capabilities",
+    "field": "ai.automation",
+    "value": {
+      "capability": "automation",
+      "availability": "supported"
+    },
+    "sourceIds": [
+      "salesforce-sales-cloud-product",
+      "salesforce-crm-product",
+      "salesforce-sales-cloud-features"
+    ],
+    "evidence": [
+      {
+        "sourceId": "salesforce-sales-cloud-product",
+        "excerpt": "Sales Flows and workflow/process automation documented; intelligent automation on Unlimited."
+      }
+    ],
+    "extractedAt": "2026-08-14T06:00:00.000Z",
+    "normalizedAt": "2026-08-14T06:00:00.000Z",
+    "verifiedAt": "2026-08-14T06:00:00.000Z",
+    "approvedAt": "2026-08-14T06:00:00.000Z",
+    "confidence": "high",
+    "status": "approved",
+    "isFixture": false
+  },
+  {
+    "id": "fact-salesforce-ai.lead-scoring",
+    "productSlug": "salesforce",
+    "domain": "ai-capabilities",
+    "field": "ai.lead-scoring",
+    "value": {
+      "capability": "lead-scoring",
+      "availability": "supported"
+    },
+    "sourceIds": [
+      "salesforce-sales-cloud-product",
+      "salesforce-crm-product",
+      "salesforce-sales-cloud-features"
+    ],
+    "evidence": [
+      {
+        "sourceId": "salesforce-sales-cloud-product",
+        "excerpt": "Lead routing / scoring-related Starter capabilities documented."
+      }
+    ],
+    "extractedAt": "2026-08-14T06:00:00.000Z",
+    "normalizedAt": "2026-08-14T06:00:00.000Z",
+    "verifiedAt": "2026-08-14T06:00:00.000Z",
+    "approvedAt": "2026-08-14T06:00:00.000Z",
+    "confidence": "high",
+    "status": "approved",
+    "isFixture": false
+  },
+  {
+    "id": "fact-salesforce-positioning.summary",
+    "productSlug": "salesforce",
+    "domain": "product-positioning",
+    "field": "positioning.summary",
+    "value": "Salesforce Sales Cloud is an enterprise-grade sales CRM spanning Starter Suite through Unlimited, with deep customization, reporting, automation, ecosystem integrations, and Agentforce AI.",
+    "sourceIds": [
+      "salesforce-sales-cloud-product",
+      "salesforce-crm-product",
+      "salesforce-sales-cloud-features"
+    ],
+    "evidence": [
+      {
+        "sourceId": "salesforce-sales-cloud-product",
+        "excerpt": "Sales Cloud / CRM pages position Salesforce as the platform CRM for sales with edition ladder from Starter Suite to Unlimited and Agentforce."
+      }
+    ],
+    "extractedAt": "2026-08-14T06:00:00.000Z",
+    "normalizedAt": "2026-08-14T06:00:00.000Z",
+    "verifiedAt": "2026-08-14T06:00:00.000Z",
+    "approvedAt": "2026-08-14T06:00:00.000Z",
+    "confidence": "high",
+    "status": "approved",
+    "isFixture": false
+  }
+]

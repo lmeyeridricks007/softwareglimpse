@@ -1,0 +1,915 @@
+[
+  {
+    "id": "fact-zoho-crm-pricing.hasFreePlan",
+    "productSlug": "zoho-crm",
+    "domain": "free-plan",
+    "field": "pricing.hasFreePlan",
+    "value": true,
+    "sourceIds": [
+      "zoho-crm-pricing"
+    ],
+    "evidence": [
+      {
+        "sourceId": "zoho-crm-pricing",
+        "excerpt": "Free edition available for up to 3 users."
+      }
+    ],
+    "extractedAt": "2026-08-14T08:00:00.000Z",
+    "normalizedAt": "2026-08-14T08:00:00.000Z",
+    "verifiedAt": "2026-08-14T08:00:00.000Z",
+    "approvedAt": "2026-08-14T08:00:00.000Z",
+    "confidence": "medium",
+    "status": "approved",
+    "isFixture": false
+  },
+  {
+    "id": "fact-zoho-crm-pricing.hasFreeTrial",
+    "productSlug": "zoho-crm",
+    "domain": "free-trial",
+    "field": "pricing.hasFreeTrial",
+    "value": true,
+    "sourceIds": [
+      "zoho-crm-pricing"
+    ],
+    "evidence": [
+      {
+        "sourceId": "zoho-crm-pricing",
+        "excerpt": "Approximately 15-day free trial messaging on Zoho CRM pricing/product pages."
+      }
+    ],
+    "extractedAt": "2026-08-14T08:00:00.000Z",
+    "normalizedAt": "2026-08-14T08:00:00.000Z",
+    "verifiedAt": "2026-08-14T08:00:00.000Z",
+    "approvedAt": "2026-08-14T08:00:00.000Z",
+    "confidence": "medium",
+    "status": "approved",
+    "isFixture": false
+  },
+  {
+    "id": "fact-zoho-crm-pricing.startingPriceMonthly",
+    "productSlug": "zoho-crm",
+    "domain": "pricing",
+    "field": "pricing.startingPriceMonthly",
+    "value": 0,
+    "sourceIds": [
+      "zoho-crm-pricing"
+    ],
+    "evidence": [
+      {
+        "sourceId": "zoho-crm-pricing",
+        "excerpt": "Free plan $0 (3 users); paid Standard from $14/user/mo billed annually."
+      }
+    ],
+    "extractedAt": "2026-08-14T08:00:00.000Z",
+    "normalizedAt": "2026-08-14T08:00:00.000Z",
+    "verifiedAt": "2026-08-14T08:00:00.000Z",
+    "approvedAt": "2026-08-14T08:00:00.000Z",
+    "confidence": "medium",
+    "status": "approved",
+    "isFixture": false,
+    "notes": "Free plan available (3 users); paid starts at Standard $14/user/mo annual."
+  },
+  {
+    "id": "fact-zoho-crm-pricing.currency",
+    "productSlug": "zoho-crm",
+    "domain": "pricing",
+    "field": "pricing.currency",
+    "value": "USD",
+    "sourceIds": [
+      "zoho-crm-pricing"
+    ],
+    "evidence": [
+      {
+        "sourceId": "zoho-crm-pricing",
+        "excerpt": "USD list pricing on Zoho CRM pricing page."
+      }
+    ],
+    "extractedAt": "2026-08-14T08:00:00.000Z",
+    "normalizedAt": "2026-08-14T08:00:00.000Z",
+    "verifiedAt": "2026-08-14T08:00:00.000Z",
+    "approvedAt": "2026-08-14T08:00:00.000Z",
+    "confidence": "medium",
+    "status": "approved",
+    "isFixture": false
+  },
+  {
+    "id": "fact-zoho-crm-pricing.model",
+    "productSlug": "zoho-crm",
+    "domain": "pricing",
+    "field": "pricing.model",
+    "value": "subscription",
+    "sourceIds": [
+      "zoho-crm-pricing"
+    ],
+    "evidence": [
+      {
+        "sourceId": "zoho-crm-pricing",
+        "excerpt": "Per-user subscription with monthly and annual billing."
+      }
+    ],
+    "extractedAt": "2026-08-14T08:00:00.000Z",
+    "normalizedAt": "2026-08-14T08:00:00.000Z",
+    "verifiedAt": "2026-08-14T08:00:00.000Z",
+    "approvedAt": "2026-08-14T08:00:00.000Z",
+    "confidence": "medium",
+    "status": "approved",
+    "isFixture": false
+  },
+  {
+    "id": "fact-zoho-crm-pricing.plans.free",
+    "productSlug": "zoho-crm",
+    "domain": "plans",
+    "field": "pricing.plans.free",
+    "value": {
+      "id": "plan-free",
+      "slug": "free",
+      "name": "Free",
+      "isFree": true,
+      "contactSales": false,
+      "hasFreeTrial": false,
+      "highlighted": false,
+      "rules": [
+        {
+          "kind": "per-seat",
+          "amountPerSeat": 0,
+          "currency": "USD",
+          "interval": "month",
+          "amountPeriod": "month"
+        }
+      ]
+    },
+    "sourceIds": [
+      "zoho-crm-pricing"
+    ],
+    "evidence": [
+      {
+        "sourceId": "zoho-crm-pricing",
+        "excerpt": "Free for up to 3 users."
+      }
+    ],
+    "extractedAt": "2026-08-14T08:00:00.000Z",
+    "normalizedAt": "2026-08-14T08:00:00.000Z",
+    "verifiedAt": "2026-08-14T08:00:00.000Z",
+    "approvedAt": "2026-08-14T08:00:00.000Z",
+    "confidence": "medium",
+    "status": "approved",
+    "isFixture": false
+  },
+  {
+    "id": "fact-zoho-crm-pricing.plans.standard",
+    "productSlug": "zoho-crm",
+    "domain": "plans",
+    "field": "pricing.plans.standard",
+    "value": {
+      "id": "plan-standard",
+      "slug": "standard",
+      "name": "Standard",
+      "isFree": false,
+      "contactSales": false,
+      "hasFreeTrial": false,
+      "highlighted": false,
+      "rules": [
+        {
+          "kind": "per-seat",
+          "currency": "USD",
+          "interval": "year",
+          "amountPeriod": "month",
+          "amountPerSeat": 14
+        },
+        {
+          "kind": "per-seat",
+          "currency": "USD",
+          "interval": "month",
+          "amountPeriod": "month",
+          "amountPerSeat": 20
+        }
+      ]
+    },
+    "sourceIds": [
+      "zoho-crm-pricing"
+    ],
+    "evidence": [
+      {
+        "sourceId": "zoho-crm-pricing",
+        "excerpt": "Standard $14/user/mo annual ($20 monthly)."
+      }
+    ],
+    "extractedAt": "2026-08-14T08:00:00.000Z",
+    "normalizedAt": "2026-08-14T08:00:00.000Z",
+    "verifiedAt": "2026-08-14T08:00:00.000Z",
+    "approvedAt": "2026-08-14T08:00:00.000Z",
+    "confidence": "medium",
+    "status": "approved",
+    "isFixture": false
+  },
+  {
+    "id": "fact-zoho-crm-pricing.plans.professional",
+    "productSlug": "zoho-crm",
+    "domain": "plans",
+    "field": "pricing.plans.professional",
+    "value": {
+      "id": "plan-professional",
+      "slug": "professional",
+      "name": "Professional",
+      "isFree": false,
+      "contactSales": false,
+      "hasFreeTrial": false,
+      "highlighted": true,
+      "rules": [
+        {
+          "kind": "per-seat",
+          "currency": "USD",
+          "interval": "year",
+          "amountPeriod": "month",
+          "amountPerSeat": 23
+        },
+        {
+          "kind": "per-seat",
+          "currency": "USD",
+          "interval": "month",
+          "amountPeriod": "month",
+          "amountPerSeat": 35
+        }
+      ]
+    },
+    "sourceIds": [
+      "zoho-crm-pricing"
+    ],
+    "evidence": [
+      {
+        "sourceId": "zoho-crm-pricing",
+        "excerpt": "Professional $23/user/mo annual ($35 monthly)."
+      }
+    ],
+    "extractedAt": "2026-08-14T08:00:00.000Z",
+    "normalizedAt": "2026-08-14T08:00:00.000Z",
+    "verifiedAt": "2026-08-14T08:00:00.000Z",
+    "approvedAt": "2026-08-14T08:00:00.000Z",
+    "confidence": "medium",
+    "status": "approved",
+    "isFixture": false
+  },
+  {
+    "id": "fact-zoho-crm-pricing.plans.enterprise",
+    "productSlug": "zoho-crm",
+    "domain": "plans",
+    "field": "pricing.plans.enterprise",
+    "value": {
+      "id": "plan-enterprise",
+      "slug": "enterprise",
+      "name": "Enterprise",
+      "isFree": false,
+      "contactSales": false,
+      "hasFreeTrial": false,
+      "highlighted": false,
+      "rules": [
+        {
+          "kind": "per-seat",
+          "currency": "USD",
+          "interval": "year",
+          "amountPeriod": "month",
+          "amountPerSeat": 40
+        },
+        {
+          "kind": "per-seat",
+          "currency": "USD",
+          "interval": "month",
+          "amountPeriod": "month",
+          "amountPerSeat": 50
+        }
+      ]
+    },
+    "sourceIds": [
+      "zoho-crm-pricing"
+    ],
+    "evidence": [
+      {
+        "sourceId": "zoho-crm-pricing",
+        "excerpt": "Enterprise $40/user/mo annual ($50 monthly)."
+      }
+    ],
+    "extractedAt": "2026-08-14T08:00:00.000Z",
+    "normalizedAt": "2026-08-14T08:00:00.000Z",
+    "verifiedAt": "2026-08-14T08:00:00.000Z",
+    "approvedAt": "2026-08-14T08:00:00.000Z",
+    "confidence": "medium",
+    "status": "approved",
+    "isFixture": false
+  },
+  {
+    "id": "fact-zoho-crm-pricing.plans.ultimate",
+    "productSlug": "zoho-crm",
+    "domain": "plans",
+    "field": "pricing.plans.ultimate",
+    "value": {
+      "id": "plan-ultimate",
+      "slug": "ultimate",
+      "name": "Ultimate",
+      "isFree": false,
+      "contactSales": false,
+      "hasFreeTrial": false,
+      "highlighted": false,
+      "rules": [
+        {
+          "kind": "per-seat",
+          "currency": "USD",
+          "interval": "year",
+          "amountPeriod": "month",
+          "amountPerSeat": 52
+        },
+        {
+          "kind": "per-seat",
+          "currency": "USD",
+          "interval": "month",
+          "amountPeriod": "month",
+          "amountPerSeat": 65
+        }
+      ]
+    },
+    "sourceIds": [
+      "zoho-crm-pricing"
+    ],
+    "evidence": [
+      {
+        "sourceId": "zoho-crm-pricing",
+        "excerpt": "Ultimate $52/user/mo annual ($65 monthly)."
+      }
+    ],
+    "extractedAt": "2026-08-14T08:00:00.000Z",
+    "normalizedAt": "2026-08-14T08:00:00.000Z",
+    "verifiedAt": "2026-08-14T08:00:00.000Z",
+    "approvedAt": "2026-08-14T08:00:00.000Z",
+    "confidence": "medium",
+    "status": "approved",
+    "isFixture": false
+  },
+  {
+    "id": "fact-zoho-crm-features.contact-management",
+    "productSlug": "zoho-crm",
+    "domain": "features",
+    "field": "features.contact-management",
+    "value": {
+      "featureSlug": "contact-management",
+      "availability": "supported",
+      "planSlugs": [
+        "free",
+        "standard",
+        "professional",
+        "enterprise",
+        "ultimate"
+      ]
+    },
+    "sourceIds": [
+      "zoho-crm-product"
+    ],
+    "evidence": [
+      {
+        "sourceId": "zoho-crm-product",
+        "excerpt": "Zoho CRM documents contact management."
+      }
+    ],
+    "extractedAt": "2026-08-14T08:00:00.000Z",
+    "normalizedAt": "2026-08-14T08:00:00.000Z",
+    "verifiedAt": "2026-08-14T08:00:00.000Z",
+    "approvedAt": "2026-08-14T08:00:00.000Z",
+    "confidence": "high",
+    "status": "approved",
+    "isFixture": false
+  },
+  {
+    "id": "fact-zoho-crm-features.lead-management",
+    "productSlug": "zoho-crm",
+    "domain": "features",
+    "field": "features.lead-management",
+    "value": {
+      "featureSlug": "lead-management",
+      "availability": "supported",
+      "planSlugs": [
+        "free",
+        "standard",
+        "professional",
+        "enterprise",
+        "ultimate"
+      ]
+    },
+    "sourceIds": [
+      "zoho-crm-product"
+    ],
+    "evidence": [
+      {
+        "sourceId": "zoho-crm-product",
+        "excerpt": "Zoho CRM documents lead management."
+      }
+    ],
+    "extractedAt": "2026-08-14T08:00:00.000Z",
+    "normalizedAt": "2026-08-14T08:00:00.000Z",
+    "verifiedAt": "2026-08-14T08:00:00.000Z",
+    "approvedAt": "2026-08-14T08:00:00.000Z",
+    "confidence": "high",
+    "status": "approved",
+    "isFixture": false
+  },
+  {
+    "id": "fact-zoho-crm-features.pipeline-management",
+    "productSlug": "zoho-crm",
+    "domain": "features",
+    "field": "features.pipeline-management",
+    "value": {
+      "featureSlug": "pipeline-management",
+      "availability": "supported",
+      "planSlugs": [
+        "free",
+        "standard",
+        "professional",
+        "enterprise",
+        "ultimate"
+      ]
+    },
+    "sourceIds": [
+      "zoho-crm-product"
+    ],
+    "evidence": [
+      {
+        "sourceId": "zoho-crm-product",
+        "excerpt": "Zoho CRM documents pipeline management."
+      }
+    ],
+    "extractedAt": "2026-08-14T08:00:00.000Z",
+    "normalizedAt": "2026-08-14T08:00:00.000Z",
+    "verifiedAt": "2026-08-14T08:00:00.000Z",
+    "approvedAt": "2026-08-14T08:00:00.000Z",
+    "confidence": "high",
+    "status": "approved",
+    "isFixture": false
+  },
+  {
+    "id": "fact-zoho-crm-features.deal-management",
+    "productSlug": "zoho-crm",
+    "domain": "features",
+    "field": "features.deal-management",
+    "value": {
+      "featureSlug": "deal-management",
+      "availability": "supported",
+      "planSlugs": [
+        "free",
+        "standard",
+        "professional",
+        "enterprise",
+        "ultimate"
+      ]
+    },
+    "sourceIds": [
+      "zoho-crm-product"
+    ],
+    "evidence": [
+      {
+        "sourceId": "zoho-crm-product",
+        "excerpt": "Zoho CRM documents deal management."
+      }
+    ],
+    "extractedAt": "2026-08-14T08:00:00.000Z",
+    "normalizedAt": "2026-08-14T08:00:00.000Z",
+    "verifiedAt": "2026-08-14T08:00:00.000Z",
+    "approvedAt": "2026-08-14T08:00:00.000Z",
+    "confidence": "high",
+    "status": "approved",
+    "isFixture": false
+  },
+  {
+    "id": "fact-zoho-crm-features.email-sync",
+    "productSlug": "zoho-crm",
+    "domain": "features",
+    "field": "features.email-sync",
+    "value": {
+      "featureSlug": "email-sync",
+      "availability": "supported",
+      "planSlugs": [
+        "free",
+        "standard",
+        "professional",
+        "enterprise",
+        "ultimate"
+      ]
+    },
+    "sourceIds": [
+      "zoho-crm-product"
+    ],
+    "evidence": [
+      {
+        "sourceId": "zoho-crm-product",
+        "excerpt": "Zoho CRM documents email sync."
+      }
+    ],
+    "extractedAt": "2026-08-14T08:00:00.000Z",
+    "normalizedAt": "2026-08-14T08:00:00.000Z",
+    "verifiedAt": "2026-08-14T08:00:00.000Z",
+    "approvedAt": "2026-08-14T08:00:00.000Z",
+    "confidence": "high",
+    "status": "approved",
+    "isFixture": false
+  },
+  {
+    "id": "fact-zoho-crm-features.workflow-automation",
+    "productSlug": "zoho-crm",
+    "domain": "features",
+    "field": "features.workflow-automation",
+    "value": {
+      "featureSlug": "workflow-automation",
+      "availability": "supported",
+      "planSlugs": [
+        "free",
+        "standard",
+        "professional",
+        "enterprise",
+        "ultimate"
+      ]
+    },
+    "sourceIds": [
+      "zoho-crm-product"
+    ],
+    "evidence": [
+      {
+        "sourceId": "zoho-crm-product",
+        "excerpt": "Zoho CRM documents workflow automation."
+      }
+    ],
+    "extractedAt": "2026-08-14T08:00:00.000Z",
+    "normalizedAt": "2026-08-14T08:00:00.000Z",
+    "verifiedAt": "2026-08-14T08:00:00.000Z",
+    "approvedAt": "2026-08-14T08:00:00.000Z",
+    "confidence": "high",
+    "status": "approved",
+    "isFixture": false
+  },
+  {
+    "id": "fact-zoho-crm-features.sales-automation",
+    "productSlug": "zoho-crm",
+    "domain": "features",
+    "field": "features.sales-automation",
+    "value": {
+      "featureSlug": "sales-automation",
+      "availability": "supported",
+      "planSlugs": [
+        "free",
+        "standard",
+        "professional",
+        "enterprise",
+        "ultimate"
+      ]
+    },
+    "sourceIds": [
+      "zoho-crm-product"
+    ],
+    "evidence": [
+      {
+        "sourceId": "zoho-crm-product",
+        "excerpt": "Zoho CRM documents sales automation."
+      }
+    ],
+    "extractedAt": "2026-08-14T08:00:00.000Z",
+    "normalizedAt": "2026-08-14T08:00:00.000Z",
+    "verifiedAt": "2026-08-14T08:00:00.000Z",
+    "approvedAt": "2026-08-14T08:00:00.000Z",
+    "confidence": "high",
+    "status": "approved",
+    "isFixture": false
+  },
+  {
+    "id": "fact-zoho-crm-features.reporting",
+    "productSlug": "zoho-crm",
+    "domain": "features",
+    "field": "features.reporting",
+    "value": {
+      "featureSlug": "reporting",
+      "availability": "supported",
+      "planSlugs": [
+        "free",
+        "standard",
+        "professional",
+        "enterprise",
+        "ultimate"
+      ]
+    },
+    "sourceIds": [
+      "zoho-crm-product"
+    ],
+    "evidence": [
+      {
+        "sourceId": "zoho-crm-product",
+        "excerpt": "Zoho CRM documents reporting."
+      }
+    ],
+    "extractedAt": "2026-08-14T08:00:00.000Z",
+    "normalizedAt": "2026-08-14T08:00:00.000Z",
+    "verifiedAt": "2026-08-14T08:00:00.000Z",
+    "approvedAt": "2026-08-14T08:00:00.000Z",
+    "confidence": "high",
+    "status": "approved",
+    "isFixture": false
+  },
+  {
+    "id": "fact-zoho-crm-features.forecasting",
+    "productSlug": "zoho-crm",
+    "domain": "features",
+    "field": "features.forecasting",
+    "value": {
+      "featureSlug": "forecasting",
+      "availability": "higher-plan-only",
+      "planSlugs": [
+        "professional",
+        "enterprise",
+        "ultimate"
+      ]
+    },
+    "sourceIds": [
+      "zoho-crm-product"
+    ],
+    "evidence": [
+      {
+        "sourceId": "zoho-crm-product",
+        "excerpt": "Zoho CRM documents forecasting."
+      }
+    ],
+    "extractedAt": "2026-08-14T08:00:00.000Z",
+    "normalizedAt": "2026-08-14T08:00:00.000Z",
+    "verifiedAt": "2026-08-14T08:00:00.000Z",
+    "approvedAt": "2026-08-14T08:00:00.000Z",
+    "confidence": "high",
+    "status": "approved",
+    "isFixture": false
+  },
+  {
+    "id": "fact-zoho-crm-features.custom-fields",
+    "productSlug": "zoho-crm",
+    "domain": "features",
+    "field": "features.custom-fields",
+    "value": {
+      "featureSlug": "custom-fields",
+      "availability": "supported",
+      "planSlugs": [
+        "free",
+        "standard",
+        "professional",
+        "enterprise",
+        "ultimate"
+      ]
+    },
+    "sourceIds": [
+      "zoho-crm-product"
+    ],
+    "evidence": [
+      {
+        "sourceId": "zoho-crm-product",
+        "excerpt": "Zoho CRM documents custom fields."
+      }
+    ],
+    "extractedAt": "2026-08-14T08:00:00.000Z",
+    "normalizedAt": "2026-08-14T08:00:00.000Z",
+    "verifiedAt": "2026-08-14T08:00:00.000Z",
+    "approvedAt": "2026-08-14T08:00:00.000Z",
+    "confidence": "high",
+    "status": "approved",
+    "isFixture": false
+  },
+  {
+    "id": "fact-zoho-crm-features.custom-pipelines",
+    "productSlug": "zoho-crm",
+    "domain": "features",
+    "field": "features.custom-pipelines",
+    "value": {
+      "featureSlug": "custom-pipelines",
+      "availability": "supported",
+      "planSlugs": [
+        "free",
+        "standard",
+        "professional",
+        "enterprise",
+        "ultimate"
+      ]
+    },
+    "sourceIds": [
+      "zoho-crm-product"
+    ],
+    "evidence": [
+      {
+        "sourceId": "zoho-crm-product",
+        "excerpt": "Zoho CRM documents custom pipelines."
+      }
+    ],
+    "extractedAt": "2026-08-14T08:00:00.000Z",
+    "normalizedAt": "2026-08-14T08:00:00.000Z",
+    "verifiedAt": "2026-08-14T08:00:00.000Z",
+    "approvedAt": "2026-08-14T08:00:00.000Z",
+    "confidence": "high",
+    "status": "approved",
+    "isFixture": false
+  },
+  {
+    "id": "fact-zoho-crm-features.mobile-app",
+    "productSlug": "zoho-crm",
+    "domain": "features",
+    "field": "features.mobile-app",
+    "value": {
+      "featureSlug": "mobile-app",
+      "availability": "supported",
+      "planSlugs": [
+        "free",
+        "standard",
+        "professional",
+        "enterprise",
+        "ultimate"
+      ]
+    },
+    "sourceIds": [
+      "zoho-crm-product"
+    ],
+    "evidence": [
+      {
+        "sourceId": "zoho-crm-product",
+        "excerpt": "Zoho CRM documents mobile app."
+      }
+    ],
+    "extractedAt": "2026-08-14T08:00:00.000Z",
+    "normalizedAt": "2026-08-14T08:00:00.000Z",
+    "verifiedAt": "2026-08-14T08:00:00.000Z",
+    "approvedAt": "2026-08-14T08:00:00.000Z",
+    "confidence": "high",
+    "status": "approved",
+    "isFixture": false
+  },
+  {
+    "id": "fact-zoho-crm-features.ai-assistance",
+    "productSlug": "zoho-crm",
+    "domain": "features",
+    "field": "features.ai-assistance",
+    "value": {
+      "featureSlug": "ai-assistance",
+      "availability": "higher-plan-only",
+      "planSlugs": [
+        "enterprise",
+        "ultimate"
+      ]
+    },
+    "sourceIds": [
+      "zoho-crm-product"
+    ],
+    "evidence": [
+      {
+        "sourceId": "zoho-crm-product",
+        "excerpt": "Zoho CRM documents ai assistance."
+      }
+    ],
+    "extractedAt": "2026-08-14T08:00:00.000Z",
+    "normalizedAt": "2026-08-14T08:00:00.000Z",
+    "verifiedAt": "2026-08-14T08:00:00.000Z",
+    "approvedAt": "2026-08-14T08:00:00.000Z",
+    "confidence": "high",
+    "status": "approved",
+    "isFixture": false
+  },
+  {
+    "id": "fact-zoho-crm-features.integrations",
+    "productSlug": "zoho-crm",
+    "domain": "features",
+    "field": "features.integrations",
+    "value": {
+      "featureSlug": "integrations",
+      "availability": "supported",
+      "planSlugs": [
+        "free",
+        "standard",
+        "professional",
+        "enterprise",
+        "ultimate"
+      ]
+    },
+    "sourceIds": [
+      "zoho-crm-product"
+    ],
+    "evidence": [
+      {
+        "sourceId": "zoho-crm-product",
+        "excerpt": "Zoho CRM documents integrations."
+      }
+    ],
+    "extractedAt": "2026-08-14T08:00:00.000Z",
+    "normalizedAt": "2026-08-14T08:00:00.000Z",
+    "verifiedAt": "2026-08-14T08:00:00.000Z",
+    "approvedAt": "2026-08-14T08:00:00.000Z",
+    "confidence": "high",
+    "status": "approved",
+    "isFixture": false
+  },
+  {
+    "id": "fact-zoho-crm-positioning.summary",
+    "productSlug": "zoho-crm",
+    "domain": "product-positioning",
+    "field": "positioning.summary",
+    "value": "Zoho CRM is an affordable multi-edition sales CRM spanning Free through Ultimate, with pipelines, Blueprint automation, and Zia AI on higher editions.",
+    "sourceIds": [
+      "zoho-crm-product"
+    ],
+    "evidence": [
+      {
+        "sourceId": "zoho-crm-product",
+        "excerpt": "Affordable CRM with Free through Ultimate editions, Blueprint, and Zia AI."
+      }
+    ],
+    "extractedAt": "2026-08-14T08:00:00.000Z",
+    "normalizedAt": "2026-08-14T08:00:00.000Z",
+    "verifiedAt": "2026-08-14T08:00:00.000Z",
+    "approvedAt": "2026-08-14T08:00:00.000Z",
+    "confidence": "high",
+    "status": "approved",
+    "isFixture": false
+  },
+  {
+    "id": "fact-zoho-crm-ai.assistant",
+    "productSlug": "zoho-crm",
+    "domain": "ai-capabilities",
+    "field": "ai.assistant",
+    "value": {
+      "capability": "assistant",
+      "availability": "higher-plan-only",
+      "sourceIds": [
+        "zoho-crm-product"
+      ],
+      "notes": "Zia AI on Enterprise+."
+    },
+    "sourceIds": [
+      "zoho-crm-product"
+    ],
+    "evidence": [
+      {
+        "sourceId": "zoho-crm-product",
+        "excerpt": "Zia AI on Enterprise+."
+      }
+    ],
+    "extractedAt": "2026-08-14T08:00:00.000Z",
+    "normalizedAt": "2026-08-14T08:00:00.000Z",
+    "verifiedAt": "2026-08-14T08:00:00.000Z",
+    "approvedAt": "2026-08-14T08:00:00.000Z",
+    "confidence": "high",
+    "status": "approved",
+    "isFixture": false
+  },
+  {
+    "id": "fact-zoho-crm-ai.automation",
+    "productSlug": "zoho-crm",
+    "domain": "ai-capabilities",
+    "field": "ai.automation",
+    "value": {
+      "capability": "automation",
+      "availability": "supported",
+      "sourceIds": [
+        "zoho-crm-product"
+      ],
+      "notes": "Blueprint and workflow automation."
+    },
+    "sourceIds": [
+      "zoho-crm-product"
+    ],
+    "evidence": [
+      {
+        "sourceId": "zoho-crm-product",
+        "excerpt": "Blueprint and workflow automation."
+      }
+    ],
+    "extractedAt": "2026-08-14T08:00:00.000Z",
+    "normalizedAt": "2026-08-14T08:00:00.000Z",
+    "verifiedAt": "2026-08-14T08:00:00.000Z",
+    "approvedAt": "2026-08-14T08:00:00.000Z",
+    "confidence": "high",
+    "status": "approved",
+    "isFixture": false
+  },
+  {
+    "id": "fact-zoho-crm-ai.recommendations",
+    "productSlug": "zoho-crm",
+    "domain": "ai-capabilities",
+    "field": "ai.recommendations",
+    "value": {
+      "capability": "recommendations",
+      "availability": "higher-plan-only",
+      "sourceIds": [
+        "zoho-crm-product"
+      ]
+    },
+    "sourceIds": [
+      "zoho-crm-product"
+    ],
+    "evidence": [
+      {
+        "sourceId": "zoho-crm-product",
+        "excerpt": "Zoho CRM AI: recommendations"
+      }
+    ],
+    "extractedAt": "2026-08-14T08:00:00.000Z",
+    "normalizedAt": "2026-08-14T08:00:00.000Z",
+    "verifiedAt": "2026-08-14T08:00:00.000Z",
+    "approvedAt": "2026-08-14T08:00:00.000Z",
+    "confidence": "high",
+    "status": "approved",
+    "isFixture": false
+  }
+]

@@ -1,0 +1,533 @@
+[
+  {
+    "id": "fact-rocketreach-pricing.hasFreePlan",
+    "productSlug": "rocketreach",
+    "domain": "free-plan",
+    "field": "pricing.hasFreePlan",
+    "value": true,
+    "sourceIds": [
+      "rocketreach-product-official"
+    ],
+    "evidence": [
+      {
+        "sourceId": "rocketreach-product-official",
+        "excerpt": "Try for free / free account messaging."
+      }
+    ],
+    "extractedAt": "2026-08-13T18:00:00.000Z",
+    "normalizedAt": "2026-08-13T18:00:00.000Z",
+    "verifiedAt": "2026-08-13T18:00:00.000Z",
+    "approvedAt": "2026-08-13T18:00:00.000Z",
+    "confidence": "high",
+    "status": "approved",
+    "isFixture": false
+  },
+  {
+    "id": "fact-rocketreach-pricing.hasFreeTrial",
+    "productSlug": "rocketreach",
+    "domain": "free-trial",
+    "field": "pricing.hasFreeTrial",
+    "value": true,
+    "sourceIds": [
+      "rocketreach-product-api"
+    ],
+    "evidence": [
+      {
+        "sourceId": "rocketreach-product-api",
+        "excerpt": "can_trial true on paid catalogue products."
+      }
+    ],
+    "extractedAt": "2026-08-13T18:00:00.000Z",
+    "normalizedAt": "2026-08-13T18:00:00.000Z",
+    "verifiedAt": "2026-08-13T18:00:00.000Z",
+    "approvedAt": "2026-08-13T18:00:00.000Z",
+    "confidence": "high",
+    "status": "approved",
+    "isFixture": false
+  },
+  {
+    "id": "fact-rocketreach-pricing.startingPriceMonthly",
+    "productSlug": "rocketreach",
+    "domain": "pricing",
+    "field": "pricing.startingPriceMonthly",
+    "value": 34,
+    "sourceIds": [
+      "rocketreach-product-api"
+    ],
+    "evidence": [
+      {
+        "sourceId": "rocketreach-product-api",
+        "excerpt": "Essentials display_monthly_price $34 annual."
+      }
+    ],
+    "extractedAt": "2026-08-13T18:00:00.000Z",
+    "normalizedAt": "2026-08-13T18:00:00.000Z",
+    "verifiedAt": "2026-08-13T18:00:00.000Z",
+    "approvedAt": "2026-08-13T18:00:00.000Z",
+    "confidence": "high",
+    "status": "approved",
+    "isFixture": false
+  },
+  {
+    "id": "fact-rocketreach-pricing.currency",
+    "productSlug": "rocketreach",
+    "domain": "pricing",
+    "field": "pricing.currency",
+    "value": "USD",
+    "sourceIds": [
+      "rocketreach-product-api"
+    ],
+    "evidence": [
+      {
+        "sourceId": "rocketreach-product-api",
+        "excerpt": "currency_code USD"
+      }
+    ],
+    "extractedAt": "2026-08-13T18:00:00.000Z",
+    "normalizedAt": "2026-08-13T18:00:00.000Z",
+    "verifiedAt": "2026-08-13T18:00:00.000Z",
+    "approvedAt": "2026-08-13T18:00:00.000Z",
+    "confidence": "high",
+    "status": "approved",
+    "isFixture": false
+  },
+  {
+    "id": "fact-rocketreach-pricing.model",
+    "productSlug": "rocketreach",
+    "domain": "pricing",
+    "field": "pricing.model",
+    "value": "subscription",
+    "sourceIds": [
+      "rocketreach-product-api"
+    ],
+    "evidence": [
+      {
+        "sourceId": "rocketreach-product-api",
+        "excerpt": "Monthly/yearly recurring products."
+      }
+    ],
+    "extractedAt": "2026-08-13T18:00:00.000Z",
+    "normalizedAt": "2026-08-13T18:00:00.000Z",
+    "verifiedAt": "2026-08-13T18:00:00.000Z",
+    "approvedAt": "2026-08-13T18:00:00.000Z",
+    "confidence": "high",
+    "status": "approved",
+    "isFixture": false
+  },
+  {
+    "id": "fact-rocketreach-pricing.plans.essentials",
+    "productSlug": "rocketreach",
+    "domain": "plans",
+    "field": "pricing.plans.essentials",
+    "value": {
+      "id": "plan-essentials",
+      "slug": "essentials",
+      "name": "Essentials",
+      "description": "Email lookups; annual unlimited lookups with export caps.",
+      "isFree": false,
+      "contactSales": false,
+      "hasFreeTrial": true,
+      "highlighted": false,
+      "rules": [
+        {
+          "kind": "flat",
+          "amount": 34,
+          "currency": "USD",
+          "interval": "year",
+          "amountPeriod": "month"
+        },
+        {
+          "kind": "flat",
+          "amount": 69,
+          "currency": "USD",
+          "interval": "month",
+          "amountPeriod": "month"
+        }
+      ],
+      "limits": {
+        "exportsAnnual": 1200,
+        "lookupType": "email"
+      }
+    },
+    "sourceIds": [
+      "rocketreach-product-api"
+    ],
+    "evidence": [
+      {
+        "sourceId": "rocketreach-product-api",
+        "excerpt": "Essentials $399/yr ($34/mo display) or $69/mo."
+      }
+    ],
+    "extractedAt": "2026-08-13T18:00:00.000Z",
+    "normalizedAt": "2026-08-13T18:00:00.000Z",
+    "verifiedAt": "2026-08-13T18:00:00.000Z",
+    "approvedAt": "2026-08-13T18:00:00.000Z",
+    "confidence": "high",
+    "status": "approved",
+    "isFixture": false
+  },
+  {
+    "id": "fact-rocketreach-pricing.plans.pro",
+    "productSlug": "rocketreach",
+    "domain": "plans",
+    "field": "pricing.plans.pro",
+    "value": {
+      "id": "plan-pro",
+      "slug": "pro",
+      "name": "Pro",
+      "description": "Email + phone; CRM integrations; Autopilot.",
+      "isFree": false,
+      "contactSales": false,
+      "hasFreeTrial": true,
+      "highlighted": true,
+      "rules": [
+        {
+          "kind": "flat",
+          "amount": 75,
+          "currency": "USD",
+          "interval": "year",
+          "amountPeriod": "month"
+        },
+        {
+          "kind": "flat",
+          "amount": 119,
+          "currency": "USD",
+          "interval": "month",
+          "amountPeriod": "month"
+        }
+      ],
+      "limits": {
+        "exportsAnnual": 3600,
+        "lookupType": "email-and-phone"
+      }
+    },
+    "sourceIds": [
+      "rocketreach-product-api"
+    ],
+    "evidence": [
+      {
+        "sourceId": "rocketreach-product-api",
+        "excerpt": "Pro $899/yr ($75/mo display) or $119/mo."
+      }
+    ],
+    "extractedAt": "2026-08-13T18:00:00.000Z",
+    "normalizedAt": "2026-08-13T18:00:00.000Z",
+    "verifiedAt": "2026-08-13T18:00:00.000Z",
+    "approvedAt": "2026-08-13T18:00:00.000Z",
+    "confidence": "high",
+    "status": "approved",
+    "isFixture": false
+  },
+  {
+    "id": "fact-rocketreach-pricing.plans.ultimate",
+    "productSlug": "rocketreach",
+    "domain": "plans",
+    "field": "pricing.plans.ultimate",
+    "value": {
+      "id": "plan-ultimate",
+      "slug": "ultimate",
+      "name": "Ultimate",
+      "description": "Higher exports, intent/healthcare data, Salesforce custom mapping, SSO.",
+      "isFree": false,
+      "contactSales": false,
+      "hasFreeTrial": true,
+      "highlighted": false,
+      "rules": [
+        {
+          "kind": "flat",
+          "amount": 142,
+          "currency": "USD",
+          "interval": "year",
+          "amountPeriod": "month"
+        },
+        {
+          "kind": "flat",
+          "amount": 209,
+          "currency": "USD",
+          "interval": "month",
+          "amountPeriod": "month"
+        }
+      ],
+      "limits": {
+        "exportsAnnual": 20000,
+        "lookupType": "email-and-phone"
+      }
+    },
+    "sourceIds": [
+      "rocketreach-product-api"
+    ],
+    "evidence": [
+      {
+        "sourceId": "rocketreach-product-api",
+        "excerpt": "Ultimate $1699/yr ($142/mo display) or $209/mo."
+      }
+    ],
+    "extractedAt": "2026-08-13T18:00:00.000Z",
+    "normalizedAt": "2026-08-13T18:00:00.000Z",
+    "verifiedAt": "2026-08-13T18:00:00.000Z",
+    "approvedAt": "2026-08-13T18:00:00.000Z",
+    "confidence": "high",
+    "status": "approved",
+    "isFixture": false
+  },
+  {
+    "id": "fact-rocketreach-positioning.core",
+    "productSlug": "rocketreach",
+    "domain": "product-positioning",
+    "field": "positioning.core",
+    "value": "B2B contact database / sales intelligence",
+    "sourceIds": [
+      "rocketreach-product-official"
+    ],
+    "evidence": [
+      {
+        "sourceId": "rocketreach-product-official",
+        "excerpt": "Find email, phone & social for 700M+ professionals."
+      }
+    ],
+    "extractedAt": "2026-08-13T18:00:00.000Z",
+    "normalizedAt": "2026-08-13T18:00:00.000Z",
+    "verifiedAt": "2026-08-13T18:00:00.000Z",
+    "approvedAt": "2026-08-13T18:00:00.000Z",
+    "confidence": "high",
+    "status": "approved",
+    "isFixture": false
+  },
+  {
+    "id": "fact-rocketreach-features.prospecting",
+    "productSlug": "rocketreach",
+    "domain": "features",
+    "field": "features.prospecting",
+    "value": {
+      "featureSlug": "prospecting",
+      "availability": "supported",
+      "planSlugs": [
+        "essentials",
+        "pro",
+        "ultimate"
+      ]
+    },
+    "sourceIds": [
+      "rocketreach-product-api"
+    ],
+    "evidence": [
+      {
+        "sourceId": "rocketreach-product-api",
+        "excerpt": "Contact and company search."
+      }
+    ],
+    "extractedAt": "2026-08-13T18:00:00.000Z",
+    "normalizedAt": "2026-08-13T18:00:00.000Z",
+    "verifiedAt": "2026-08-13T18:00:00.000Z",
+    "approvedAt": "2026-08-13T18:00:00.000Z",
+    "confidence": "high",
+    "status": "approved",
+    "isFixture": false
+  },
+  {
+    "id": "fact-rocketreach-features.data-enrichment",
+    "productSlug": "rocketreach",
+    "domain": "features",
+    "field": "features.data-enrichment",
+    "value": {
+      "featureSlug": "data-enrichment",
+      "availability": "supported",
+      "planSlugs": [
+        "essentials",
+        "pro",
+        "ultimate"
+      ]
+    },
+    "sourceIds": [
+      "rocketreach-product-api"
+    ],
+    "evidence": [
+      {
+        "sourceId": "rocketreach-product-api",
+        "excerpt": "CSV enrich in feature_set."
+      }
+    ],
+    "extractedAt": "2026-08-13T18:00:00.000Z",
+    "normalizedAt": "2026-08-13T18:00:00.000Z",
+    "verifiedAt": "2026-08-13T18:00:00.000Z",
+    "approvedAt": "2026-08-13T18:00:00.000Z",
+    "confidence": "high",
+    "status": "approved",
+    "isFixture": false
+  },
+  {
+    "id": "fact-rocketreach-features.email-sequences",
+    "productSlug": "rocketreach",
+    "domain": "features",
+    "field": "features.email-sequences",
+    "value": {
+      "featureSlug": "email-sequences",
+      "availability": "supported",
+      "planSlugs": [
+        "essentials",
+        "pro",
+        "ultimate"
+      ]
+    },
+    "sourceIds": [
+      "rocketreach-product-api"
+    ],
+    "evidence": [
+      {
+        "sourceId": "rocketreach-product-api",
+        "excerpt": "Sequences flagged true across plans."
+      }
+    ],
+    "extractedAt": "2026-08-13T18:00:00.000Z",
+    "normalizedAt": "2026-08-13T18:00:00.000Z",
+    "verifiedAt": "2026-08-13T18:00:00.000Z",
+    "approvedAt": "2026-08-13T18:00:00.000Z",
+    "confidence": "high",
+    "status": "approved",
+    "isFixture": false
+  },
+  {
+    "id": "fact-rocketreach-features.sales-automation",
+    "productSlug": "rocketreach",
+    "domain": "features",
+    "field": "features.sales-automation",
+    "value": {
+      "featureSlug": "sales-automation",
+      "availability": "supported",
+      "planSlugs": [
+        "essentials",
+        "pro",
+        "ultimate"
+      ]
+    },
+    "sourceIds": [
+      "rocketreach-product-api"
+    ],
+    "evidence": [
+      {
+        "sourceId": "rocketreach-product-api",
+        "excerpt": "Autopilot jobs."
+      }
+    ],
+    "extractedAt": "2026-08-13T18:00:00.000Z",
+    "normalizedAt": "2026-08-13T18:00:00.000Z",
+    "verifiedAt": "2026-08-13T18:00:00.000Z",
+    "approvedAt": "2026-08-13T18:00:00.000Z",
+    "confidence": "high",
+    "status": "approved",
+    "isFixture": false
+  },
+  {
+    "id": "fact-rocketreach-features.integrations",
+    "productSlug": "rocketreach",
+    "domain": "features",
+    "field": "features.integrations",
+    "value": {
+      "featureSlug": "integrations",
+      "availability": "higher-plan-only",
+      "planSlugs": [
+        "pro",
+        "ultimate"
+      ]
+    },
+    "sourceIds": [
+      "rocketreach-product-api"
+    ],
+    "evidence": [
+      {
+        "sourceId": "rocketreach-product-api",
+        "excerpt": "CRM integrations on Pro+."
+      }
+    ],
+    "extractedAt": "2026-08-13T18:00:00.000Z",
+    "normalizedAt": "2026-08-13T18:00:00.000Z",
+    "verifiedAt": "2026-08-13T18:00:00.000Z",
+    "approvedAt": "2026-08-13T18:00:00.000Z",
+    "confidence": "high",
+    "status": "approved",
+    "isFixture": false
+  },
+  {
+    "id": "fact-rocketreach-features.pipeline-management",
+    "productSlug": "rocketreach",
+    "domain": "features",
+    "field": "features.pipeline-management",
+    "value": {
+      "featureSlug": "pipeline-management",
+      "availability": "not-supported",
+      "planSlugs": []
+    },
+    "sourceIds": [
+      "rocketreach-product-official"
+    ],
+    "evidence": [
+      {
+        "sourceId": "rocketreach-product-official",
+        "excerpt": "Not a pipeline CRM."
+      }
+    ],
+    "extractedAt": "2026-08-13T18:00:00.000Z",
+    "normalizedAt": "2026-08-13T18:00:00.000Z",
+    "verifiedAt": "2026-08-13T18:00:00.000Z",
+    "approvedAt": "2026-08-13T18:00:00.000Z",
+    "confidence": "high",
+    "status": "approved",
+    "isFixture": false
+  },
+  {
+    "id": "fact-rocketreach-ai.email-generation",
+    "productSlug": "rocketreach",
+    "domain": "ai-capabilities",
+    "field": "ai.email-generation",
+    "value": {
+      "capability": "email-generation",
+      "availability": "supported"
+    },
+    "sourceIds": [
+      "rocketreach-product-api"
+    ],
+    "evidence": [
+      {
+        "sourceId": "rocketreach-product-api",
+        "excerpt": "ai_writer true in feature_set."
+      }
+    ],
+    "extractedAt": "2026-08-13T18:00:00.000Z",
+    "normalizedAt": "2026-08-13T18:00:00.000Z",
+    "verifiedAt": "2026-08-13T18:00:00.000Z",
+    "approvedAt": "2026-08-13T18:00:00.000Z",
+    "confidence": "high",
+    "status": "approved",
+    "isFixture": false
+  },
+  {
+    "id": "fact-rocketreach-integrations.crm",
+    "productSlug": "rocketreach",
+    "domain": "integrations",
+    "field": "integrations.crm",
+    "value": [
+      "salesforce",
+      "hubspot",
+      "outreach",
+      "salesloft",
+      "bullhorn",
+      "zapier"
+    ],
+    "sourceIds": [
+      "rocketreach-product-api"
+    ],
+    "evidence": [
+      {
+        "sourceId": "rocketreach-product-api",
+        "excerpt": "Pro+ comparison features."
+      }
+    ],
+    "extractedAt": "2026-08-13T18:00:00.000Z",
+    "normalizedAt": "2026-08-13T18:00:00.000Z",
+    "verifiedAt": "2026-08-13T18:00:00.000Z",
+    "approvedAt": "2026-08-13T18:00:00.000Z",
+    "confidence": "high",
+    "status": "approved",
+    "isFixture": false
+  }
+]

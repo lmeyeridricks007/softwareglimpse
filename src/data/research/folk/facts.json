@@ -1,0 +1,940 @@
+[
+  {
+    "id": "fact-folk-pricing.hasFreePlan",
+    "productSlug": "folk",
+    "domain": "free-plan",
+    "field": "pricing.hasFreePlan",
+    "value": true,
+    "sourceIds": [
+      "folk-pricing-official"
+    ],
+    "evidence": [
+      {
+        "sourceId": "folk-pricing-official",
+        "excerpt": "hasFreePlan=True per official pricing research."
+      }
+    ],
+    "extractedAt": "2026-08-13T18:00:00.000Z",
+    "normalizedAt": "2026-08-13T18:00:00.000Z",
+    "verifiedAt": "2026-08-13T18:00:00.000Z",
+    "approvedAt": "2026-08-13T18:00:00.000Z",
+    "confidence": "high",
+    "status": "approved",
+    "isFixture": false
+  },
+  {
+    "id": "fact-folk-pricing.hasFreeTrial",
+    "productSlug": "folk",
+    "domain": "free-trial",
+    "field": "pricing.hasFreeTrial",
+    "value": true,
+    "sourceIds": [
+      "folk-pricing-official"
+    ],
+    "evidence": [
+      {
+        "sourceId": "folk-pricing-official",
+        "excerpt": "hasFreeTrial=True per official pricing page."
+      }
+    ],
+    "extractedAt": "2026-08-13T18:00:00.000Z",
+    "normalizedAt": "2026-08-13T18:00:00.000Z",
+    "verifiedAt": "2026-08-13T18:00:00.000Z",
+    "approvedAt": "2026-08-13T18:00:00.000Z",
+    "confidence": "high",
+    "status": "approved",
+    "isFixture": false
+  },
+  {
+    "id": "fact-folk-pricing.startingPriceMonthly",
+    "productSlug": "folk",
+    "domain": "pricing",
+    "field": "pricing.startingPriceMonthly",
+    "value": 24,
+    "sourceIds": [
+      "folk-pricing-official"
+    ],
+    "evidence": [
+      {
+        "sourceId": "folk-pricing-official",
+        "excerpt": "Starting list price $24/user/mo (annual where applicable)."
+      }
+    ],
+    "extractedAt": "2026-08-13T18:00:00.000Z",
+    "normalizedAt": "2026-08-13T18:00:00.000Z",
+    "verifiedAt": "2026-08-13T18:00:00.000Z",
+    "approvedAt": "2026-08-13T18:00:00.000Z",
+    "confidence": "high",
+    "status": "approved",
+    "isFixture": false
+  },
+  {
+    "id": "fact-folk-pricing.currency",
+    "productSlug": "folk",
+    "domain": "pricing",
+    "field": "pricing.currency",
+    "value": "USD",
+    "sourceIds": [
+      "folk-pricing-official"
+    ],
+    "evidence": [
+      {
+        "sourceId": "folk-pricing-official",
+        "excerpt": "USD list pricing used for enrichment."
+      }
+    ],
+    "extractedAt": "2026-08-13T18:00:00.000Z",
+    "normalizedAt": "2026-08-13T18:00:00.000Z",
+    "verifiedAt": "2026-08-13T18:00:00.000Z",
+    "approvedAt": "2026-08-13T18:00:00.000Z",
+    "confidence": "high",
+    "status": "approved",
+    "isFixture": false
+  },
+  {
+    "id": "fact-folk-pricing.model",
+    "productSlug": "folk",
+    "domain": "pricing",
+    "field": "pricing.model",
+    "value": "subscription",
+    "sourceIds": [
+      "folk-pricing-official"
+    ],
+    "evidence": [
+      {
+        "sourceId": "folk-pricing-official",
+        "excerpt": "Subscription pricing model."
+      }
+    ],
+    "extractedAt": "2026-08-13T18:00:00.000Z",
+    "normalizedAt": "2026-08-13T18:00:00.000Z",
+    "verifiedAt": "2026-08-13T18:00:00.000Z",
+    "approvedAt": "2026-08-13T18:00:00.000Z",
+    "confidence": "high",
+    "status": "approved",
+    "isFixture": false
+  },
+  {
+    "id": "fact-folk-pricing.plans.free",
+    "productSlug": "folk",
+    "domain": "plans",
+    "field": "pricing.plans.free",
+    "value": {
+      "id": "plan-free",
+      "slug": "free",
+      "name": "Free",
+      "isFree": true,
+      "contactSales": false,
+      "hasFreeTrial": true,
+      "highlighted": false,
+      "rules": [
+        {
+          "kind": "per-seat",
+          "amountPerSeat": 0,
+          "currency": "USD",
+          "interval": "month",
+          "amountPeriod": "month"
+        }
+      ],
+      "trialDays": 14,
+      "notes": "Referenced in pricing FAQ as downgrade target; feature limits not fully listed on plan cards."
+    },
+    "sourceIds": [
+      "folk-pricing-official"
+    ],
+    "evidence": [
+      {
+        "sourceId": "folk-pricing-official",
+        "excerpt": "Plan Free verified on official pricing page."
+      }
+    ],
+    "extractedAt": "2026-08-13T18:00:00.000Z",
+    "normalizedAt": "2026-08-13T18:00:00.000Z",
+    "verifiedAt": "2026-08-13T18:00:00.000Z",
+    "approvedAt": "2026-08-13T18:00:00.000Z",
+    "confidence": "high",
+    "status": "approved",
+    "isFixture": false
+  },
+  {
+    "id": "fact-folk-pricing.plans.standard",
+    "productSlug": "folk",
+    "domain": "plans",
+    "field": "pricing.plans.standard",
+    "value": {
+      "id": "plan-standard",
+      "slug": "standard",
+      "name": "Standard",
+      "isFree": false,
+      "contactSales": false,
+      "hasFreeTrial": true,
+      "highlighted": true,
+      "rules": [
+        {
+          "kind": "per-seat",
+          "amountPerSeat": 24,
+          "currency": "USD",
+          "interval": "year",
+          "amountPeriod": "month"
+        },
+        {
+          "kind": "per-seat",
+          "amountPerSeat": 30,
+          "currency": "USD",
+          "interval": "month",
+          "amountPeriod": "month"
+        }
+      ],
+      "trialDays": 14
+    },
+    "sourceIds": [
+      "folk-pricing-official"
+    ],
+    "evidence": [
+      {
+        "sourceId": "folk-pricing-official",
+        "excerpt": "Plan Standard verified on official pricing page."
+      }
+    ],
+    "extractedAt": "2026-08-13T18:00:00.000Z",
+    "normalizedAt": "2026-08-13T18:00:00.000Z",
+    "verifiedAt": "2026-08-13T18:00:00.000Z",
+    "approvedAt": "2026-08-13T18:00:00.000Z",
+    "confidence": "high",
+    "status": "approved",
+    "isFixture": false
+  },
+  {
+    "id": "fact-folk-pricing.plans.premium",
+    "productSlug": "folk",
+    "domain": "plans",
+    "field": "pricing.plans.premium",
+    "value": {
+      "id": "plan-premium",
+      "slug": "premium",
+      "name": "Premium",
+      "isFree": false,
+      "contactSales": false,
+      "hasFreeTrial": true,
+      "highlighted": false,
+      "rules": [
+        {
+          "kind": "per-seat",
+          "amountPerSeat": 48,
+          "currency": "USD",
+          "interval": "year",
+          "amountPeriod": "month"
+        },
+        {
+          "kind": "per-seat",
+          "amountPerSeat": 60,
+          "currency": "USD",
+          "interval": "month",
+          "amountPeriod": "month"
+        }
+      ],
+      "trialDays": 14
+    },
+    "sourceIds": [
+      "folk-pricing-official"
+    ],
+    "evidence": [
+      {
+        "sourceId": "folk-pricing-official",
+        "excerpt": "Plan Premium verified on official pricing page."
+      }
+    ],
+    "extractedAt": "2026-08-13T18:00:00.000Z",
+    "normalizedAt": "2026-08-13T18:00:00.000Z",
+    "verifiedAt": "2026-08-13T18:00:00.000Z",
+    "approvedAt": "2026-08-13T18:00:00.000Z",
+    "confidence": "high",
+    "status": "approved",
+    "isFixture": false
+  },
+  {
+    "id": "fact-folk-pricing.plans.enterprise",
+    "productSlug": "folk",
+    "domain": "plans",
+    "field": "pricing.plans.enterprise",
+    "value": {
+      "id": "plan-enterprise",
+      "slug": "enterprise",
+      "name": "Enterprise",
+      "isFree": false,
+      "contactSales": false,
+      "hasFreeTrial": true,
+      "highlighted": false,
+      "rules": [
+        {
+          "kind": "per-seat",
+          "amountPerSeat": 80,
+          "currency": "USD",
+          "interval": "year",
+          "amountPeriod": "month"
+        },
+        {
+          "kind": "per-seat",
+          "amountPerSeat": 100,
+          "currency": "USD",
+          "interval": "month",
+          "amountPeriod": "month"
+        }
+      ],
+      "trialDays": 14,
+      "notes": "Listed as “From” $80/$100; may vary — confirm with vendor for larger orgs."
+    },
+    "sourceIds": [
+      "folk-pricing-official"
+    ],
+    "evidence": [
+      {
+        "sourceId": "folk-pricing-official",
+        "excerpt": "Plan Enterprise verified on official pricing page."
+      }
+    ],
+    "extractedAt": "2026-08-13T18:00:00.000Z",
+    "normalizedAt": "2026-08-13T18:00:00.000Z",
+    "verifiedAt": "2026-08-13T18:00:00.000Z",
+    "approvedAt": "2026-08-13T18:00:00.000Z",
+    "confidence": "high",
+    "status": "approved",
+    "isFixture": false
+  },
+  {
+    "id": "fact-folk-features.contact-management",
+    "productSlug": "folk",
+    "domain": "features",
+    "field": "features.contact-management",
+    "value": {
+      "featureSlug": "contact-management",
+      "availability": "supported",
+      "planSlugs": [
+        "standard",
+        "premium",
+        "enterprise"
+      ]
+    },
+    "sourceIds": [
+      "folk-product-official",
+      "folk-pricing-official"
+    ],
+    "evidence": [
+      {
+        "sourceId": "folk-product-official",
+        "excerpt": "contact-management marked supported from official sources."
+      }
+    ],
+    "extractedAt": "2026-08-13T18:00:00.000Z",
+    "normalizedAt": "2026-08-13T18:00:00.000Z",
+    "verifiedAt": "2026-08-13T18:00:00.000Z",
+    "approvedAt": "2026-08-13T18:00:00.000Z",
+    "confidence": "high",
+    "status": "approved",
+    "isFixture": false
+  },
+  {
+    "id": "fact-folk-features.lead-management",
+    "productSlug": "folk",
+    "domain": "features",
+    "field": "features.lead-management",
+    "value": {
+      "featureSlug": "lead-management",
+      "availability": "supported",
+      "planSlugs": [
+        "standard",
+        "premium",
+        "enterprise"
+      ]
+    },
+    "sourceIds": [
+      "folk-product-official"
+    ],
+    "evidence": [
+      {
+        "sourceId": "folk-product-official",
+        "excerpt": "lead-management marked supported from official sources."
+      }
+    ],
+    "extractedAt": "2026-08-13T18:00:00.000Z",
+    "normalizedAt": "2026-08-13T18:00:00.000Z",
+    "verifiedAt": "2026-08-13T18:00:00.000Z",
+    "approvedAt": "2026-08-13T18:00:00.000Z",
+    "confidence": "high",
+    "status": "approved",
+    "isFixture": false
+  },
+  {
+    "id": "fact-folk-features.pipeline-management",
+    "productSlug": "folk",
+    "domain": "features",
+    "field": "features.pipeline-management",
+    "value": {
+      "featureSlug": "pipeline-management",
+      "availability": "supported",
+      "planSlugs": [
+        "standard",
+        "premium",
+        "enterprise"
+      ]
+    },
+    "sourceIds": [
+      "folk-pricing-official"
+    ],
+    "evidence": [
+      {
+        "sourceId": "folk-pricing-official",
+        "excerpt": "pipeline-management marked supported from official sources."
+      }
+    ],
+    "extractedAt": "2026-08-13T18:00:00.000Z",
+    "normalizedAt": "2026-08-13T18:00:00.000Z",
+    "verifiedAt": "2026-08-13T18:00:00.000Z",
+    "approvedAt": "2026-08-13T18:00:00.000Z",
+    "confidence": "high",
+    "status": "approved",
+    "isFixture": false
+  },
+  {
+    "id": "fact-folk-features.deal-management",
+    "productSlug": "folk",
+    "domain": "features",
+    "field": "features.deal-management",
+    "value": {
+      "featureSlug": "deal-management",
+      "availability": "higher-plan-only",
+      "planSlugs": [
+        "premium",
+        "enterprise"
+      ]
+    },
+    "sourceIds": [
+      "folk-pricing-official"
+    ],
+    "evidence": [
+      {
+        "sourceId": "folk-pricing-official",
+        "excerpt": "deal-management marked higher-plan-only from official sources."
+      }
+    ],
+    "extractedAt": "2026-08-13T18:00:00.000Z",
+    "normalizedAt": "2026-08-13T18:00:00.000Z",
+    "verifiedAt": "2026-08-13T18:00:00.000Z",
+    "approvedAt": "2026-08-13T18:00:00.000Z",
+    "confidence": "high",
+    "status": "approved",
+    "isFixture": false
+  },
+  {
+    "id": "fact-folk-features.email-sync",
+    "productSlug": "folk",
+    "domain": "features",
+    "field": "features.email-sync",
+    "value": {
+      "featureSlug": "email-sync",
+      "availability": "supported",
+      "planSlugs": [
+        "standard",
+        "premium",
+        "enterprise"
+      ]
+    },
+    "sourceIds": [
+      "folk-pricing-official"
+    ],
+    "evidence": [
+      {
+        "sourceId": "folk-pricing-official",
+        "excerpt": "email-sync marked supported from official sources."
+      }
+    ],
+    "extractedAt": "2026-08-13T18:00:00.000Z",
+    "normalizedAt": "2026-08-13T18:00:00.000Z",
+    "verifiedAt": "2026-08-13T18:00:00.000Z",
+    "approvedAt": "2026-08-13T18:00:00.000Z",
+    "confidence": "high",
+    "status": "approved",
+    "isFixture": false
+  },
+  {
+    "id": "fact-folk-features.email-campaigns",
+    "productSlug": "folk",
+    "domain": "features",
+    "field": "features.email-campaigns",
+    "value": {
+      "featureSlug": "email-campaigns",
+      "availability": "supported",
+      "planSlugs": [
+        "standard",
+        "premium",
+        "enterprise"
+      ]
+    },
+    "sourceIds": [
+      "folk-pricing-official"
+    ],
+    "evidence": [
+      {
+        "sourceId": "folk-pricing-official",
+        "excerpt": "email-campaigns marked supported from official sources."
+      }
+    ],
+    "extractedAt": "2026-08-13T18:00:00.000Z",
+    "normalizedAt": "2026-08-13T18:00:00.000Z",
+    "verifiedAt": "2026-08-13T18:00:00.000Z",
+    "approvedAt": "2026-08-13T18:00:00.000Z",
+    "confidence": "high",
+    "status": "approved",
+    "isFixture": false
+  },
+  {
+    "id": "fact-folk-features.email-sequences",
+    "productSlug": "folk",
+    "domain": "features",
+    "field": "features.email-sequences",
+    "value": {
+      "featureSlug": "email-sequences",
+      "availability": "higher-plan-only",
+      "planSlugs": [
+        "premium",
+        "enterprise"
+      ]
+    },
+    "sourceIds": [
+      "folk-pricing-official"
+    ],
+    "evidence": [
+      {
+        "sourceId": "folk-pricing-official",
+        "excerpt": "email-sequences marked higher-plan-only from official sources."
+      }
+    ],
+    "extractedAt": "2026-08-13T18:00:00.000Z",
+    "normalizedAt": "2026-08-13T18:00:00.000Z",
+    "verifiedAt": "2026-08-13T18:00:00.000Z",
+    "approvedAt": "2026-08-13T18:00:00.000Z",
+    "confidence": "high",
+    "status": "approved",
+    "isFixture": false
+  },
+  {
+    "id": "fact-folk-features.workflow-automation",
+    "productSlug": "folk",
+    "domain": "features",
+    "field": "features.workflow-automation",
+    "value": {
+      "featureSlug": "workflow-automation",
+      "availability": "supported",
+      "planSlugs": [
+        "standard",
+        "premium",
+        "enterprise"
+      ]
+    },
+    "sourceIds": [
+      "folk-product-official",
+      "folk-pricing-official"
+    ],
+    "evidence": [
+      {
+        "sourceId": "folk-product-official",
+        "excerpt": "workflow-automation marked supported from official sources."
+      }
+    ],
+    "extractedAt": "2026-08-13T18:00:00.000Z",
+    "normalizedAt": "2026-08-13T18:00:00.000Z",
+    "verifiedAt": "2026-08-13T18:00:00.000Z",
+    "approvedAt": "2026-08-13T18:00:00.000Z",
+    "confidence": "high",
+    "status": "approved",
+    "isFixture": false
+  },
+  {
+    "id": "fact-folk-features.sales-automation",
+    "productSlug": "folk",
+    "domain": "features",
+    "field": "features.sales-automation",
+    "value": {
+      "featureSlug": "sales-automation",
+      "availability": "supported",
+      "planSlugs": [
+        "standard",
+        "premium",
+        "enterprise"
+      ]
+    },
+    "sourceIds": [
+      "folk-product-official"
+    ],
+    "evidence": [
+      {
+        "sourceId": "folk-product-official",
+        "excerpt": "sales-automation marked supported from official sources."
+      }
+    ],
+    "extractedAt": "2026-08-13T18:00:00.000Z",
+    "normalizedAt": "2026-08-13T18:00:00.000Z",
+    "verifiedAt": "2026-08-13T18:00:00.000Z",
+    "approvedAt": "2026-08-13T18:00:00.000Z",
+    "confidence": "high",
+    "status": "approved",
+    "isFixture": false
+  },
+  {
+    "id": "fact-folk-features.reporting",
+    "productSlug": "folk",
+    "domain": "features",
+    "field": "features.reporting",
+    "value": {
+      "featureSlug": "reporting",
+      "availability": "higher-plan-only",
+      "planSlugs": [
+        "premium",
+        "enterprise"
+      ]
+    },
+    "sourceIds": [
+      "folk-pricing-official"
+    ],
+    "evidence": [
+      {
+        "sourceId": "folk-pricing-official",
+        "excerpt": "reporting marked higher-plan-only from official sources."
+      }
+    ],
+    "extractedAt": "2026-08-13T18:00:00.000Z",
+    "normalizedAt": "2026-08-13T18:00:00.000Z",
+    "verifiedAt": "2026-08-13T18:00:00.000Z",
+    "approvedAt": "2026-08-13T18:00:00.000Z",
+    "confidence": "high",
+    "status": "approved",
+    "isFixture": false
+  },
+  {
+    "id": "fact-folk-features.data-enrichment",
+    "productSlug": "folk",
+    "domain": "features",
+    "field": "features.data-enrichment",
+    "value": {
+      "featureSlug": "data-enrichment",
+      "availability": "supported",
+      "planSlugs": [
+        "standard",
+        "premium",
+        "enterprise"
+      ]
+    },
+    "sourceIds": [
+      "folk-pricing-official",
+      "folk-product-official"
+    ],
+    "evidence": [
+      {
+        "sourceId": "folk-pricing-official",
+        "excerpt": "data-enrichment marked supported from official sources."
+      }
+    ],
+    "extractedAt": "2026-08-13T18:00:00.000Z",
+    "normalizedAt": "2026-08-13T18:00:00.000Z",
+    "verifiedAt": "2026-08-13T18:00:00.000Z",
+    "approvedAt": "2026-08-13T18:00:00.000Z",
+    "confidence": "high",
+    "status": "approved",
+    "isFixture": false
+  },
+  {
+    "id": "fact-folk-features.ai-assistance",
+    "productSlug": "folk",
+    "domain": "features",
+    "field": "features.ai-assistance",
+    "value": {
+      "featureSlug": "ai-assistance",
+      "availability": "supported",
+      "planSlugs": [
+        "standard",
+        "premium",
+        "enterprise"
+      ]
+    },
+    "sourceIds": [
+      "folk-product-official",
+      "folk-pricing-official"
+    ],
+    "evidence": [
+      {
+        "sourceId": "folk-product-official",
+        "excerpt": "ai-assistance marked supported from official sources."
+      }
+    ],
+    "extractedAt": "2026-08-13T18:00:00.000Z",
+    "normalizedAt": "2026-08-13T18:00:00.000Z",
+    "verifiedAt": "2026-08-13T18:00:00.000Z",
+    "approvedAt": "2026-08-13T18:00:00.000Z",
+    "confidence": "high",
+    "status": "approved",
+    "isFixture": false
+  },
+  {
+    "id": "fact-folk-features.mobile-app",
+    "productSlug": "folk",
+    "domain": "features",
+    "field": "features.mobile-app",
+    "value": {
+      "featureSlug": "mobile-app",
+      "availability": "supported",
+      "planSlugs": [
+        "standard",
+        "premium",
+        "enterprise"
+      ]
+    },
+    "sourceIds": [
+      "folk-pricing-official"
+    ],
+    "evidence": [
+      {
+        "sourceId": "folk-pricing-official",
+        "excerpt": "mobile-app marked supported from official sources."
+      }
+    ],
+    "extractedAt": "2026-08-13T18:00:00.000Z",
+    "normalizedAt": "2026-08-13T18:00:00.000Z",
+    "verifiedAt": "2026-08-13T18:00:00.000Z",
+    "approvedAt": "2026-08-13T18:00:00.000Z",
+    "confidence": "high",
+    "status": "approved",
+    "isFixture": false
+  },
+  {
+    "id": "fact-folk-features.integrations",
+    "productSlug": "folk",
+    "domain": "features",
+    "field": "features.integrations",
+    "value": {
+      "featureSlug": "integrations",
+      "availability": "supported",
+      "planSlugs": [
+        "standard",
+        "premium",
+        "enterprise"
+      ]
+    },
+    "sourceIds": [
+      "folk-pricing-official"
+    ],
+    "evidence": [
+      {
+        "sourceId": "folk-pricing-official",
+        "excerpt": "integrations marked supported from official sources."
+      }
+    ],
+    "extractedAt": "2026-08-13T18:00:00.000Z",
+    "normalizedAt": "2026-08-13T18:00:00.000Z",
+    "verifiedAt": "2026-08-13T18:00:00.000Z",
+    "approvedAt": "2026-08-13T18:00:00.000Z",
+    "confidence": "high",
+    "status": "approved",
+    "isFixture": false
+  },
+  {
+    "id": "fact-folk-features.custom-fields",
+    "productSlug": "folk",
+    "domain": "features",
+    "field": "features.custom-fields",
+    "value": {
+      "featureSlug": "custom-fields",
+      "availability": "supported",
+      "planSlugs": [
+        "standard",
+        "premium",
+        "enterprise"
+      ]
+    },
+    "sourceIds": [
+      "folk-product-official"
+    ],
+    "evidence": [
+      {
+        "sourceId": "folk-product-official",
+        "excerpt": "custom-fields marked supported from official sources."
+      }
+    ],
+    "extractedAt": "2026-08-13T18:00:00.000Z",
+    "normalizedAt": "2026-08-13T18:00:00.000Z",
+    "verifiedAt": "2026-08-13T18:00:00.000Z",
+    "approvedAt": "2026-08-13T18:00:00.000Z",
+    "confidence": "high",
+    "status": "approved",
+    "isFixture": false
+  },
+  {
+    "id": "fact-folk-features.custom-pipelines",
+    "productSlug": "folk",
+    "domain": "features",
+    "field": "features.custom-pipelines",
+    "value": {
+      "featureSlug": "custom-pipelines",
+      "availability": "supported",
+      "planSlugs": [
+        "standard",
+        "premium",
+        "enterprise"
+      ]
+    },
+    "sourceIds": [
+      "folk-product-official"
+    ],
+    "evidence": [
+      {
+        "sourceId": "folk-product-official",
+        "excerpt": "custom-pipelines marked supported from official sources."
+      }
+    ],
+    "extractedAt": "2026-08-13T18:00:00.000Z",
+    "normalizedAt": "2026-08-13T18:00:00.000Z",
+    "verifiedAt": "2026-08-13T18:00:00.000Z",
+    "approvedAt": "2026-08-13T18:00:00.000Z",
+    "confidence": "high",
+    "status": "approved",
+    "isFixture": false
+  },
+  {
+    "id": "fact-folk-ai.assistant",
+    "productSlug": "folk",
+    "domain": "ai-capabilities",
+    "field": "ai.assistant",
+    "value": "supported",
+    "sourceIds": [
+      "folk-product-official"
+    ],
+    "evidence": [
+      {
+        "sourceId": "folk-product-official",
+        "excerpt": "AI capability assistant: supported."
+      }
+    ],
+    "extractedAt": "2026-08-13T18:00:00.000Z",
+    "normalizedAt": "2026-08-13T18:00:00.000Z",
+    "verifiedAt": "2026-08-13T18:00:00.000Z",
+    "approvedAt": "2026-08-13T18:00:00.000Z",
+    "confidence": "high",
+    "status": "approved",
+    "isFixture": false
+  },
+  {
+    "id": "fact-folk-ai.email-generation",
+    "productSlug": "folk",
+    "domain": "ai-capabilities",
+    "field": "ai.email-generation",
+    "value": "supported",
+    "sourceIds": [
+      "folk-product-official"
+    ],
+    "evidence": [
+      {
+        "sourceId": "folk-product-official",
+        "excerpt": "AI capability email-generation: supported."
+      }
+    ],
+    "extractedAt": "2026-08-13T18:00:00.000Z",
+    "normalizedAt": "2026-08-13T18:00:00.000Z",
+    "verifiedAt": "2026-08-13T18:00:00.000Z",
+    "approvedAt": "2026-08-13T18:00:00.000Z",
+    "confidence": "high",
+    "status": "approved",
+    "isFixture": false
+  },
+  {
+    "id": "fact-folk-ai.summaries",
+    "productSlug": "folk",
+    "domain": "ai-capabilities",
+    "field": "ai.summaries",
+    "value": "supported",
+    "sourceIds": [
+      "folk-product-official"
+    ],
+    "evidence": [
+      {
+        "sourceId": "folk-product-official",
+        "excerpt": "AI capability summaries: supported."
+      }
+    ],
+    "extractedAt": "2026-08-13T18:00:00.000Z",
+    "normalizedAt": "2026-08-13T18:00:00.000Z",
+    "verifiedAt": "2026-08-13T18:00:00.000Z",
+    "approvedAt": "2026-08-13T18:00:00.000Z",
+    "confidence": "high",
+    "status": "approved",
+    "isFixture": false
+  },
+  {
+    "id": "fact-folk-ai.automation",
+    "productSlug": "folk",
+    "domain": "ai-capabilities",
+    "field": "ai.automation",
+    "value": "supported",
+    "sourceIds": [
+      "folk-product-official"
+    ],
+    "evidence": [
+      {
+        "sourceId": "folk-product-official",
+        "excerpt": "AI capability automation: supported."
+      }
+    ],
+    "extractedAt": "2026-08-13T18:00:00.000Z",
+    "normalizedAt": "2026-08-13T18:00:00.000Z",
+    "verifiedAt": "2026-08-13T18:00:00.000Z",
+    "approvedAt": "2026-08-13T18:00:00.000Z",
+    "confidence": "high",
+    "status": "approved",
+    "isFixture": false
+  },
+  {
+    "id": "fact-folk-ai.other",
+    "productSlug": "folk",
+    "domain": "ai-capabilities",
+    "field": "ai.other",
+    "value": "supported",
+    "sourceIds": [
+      "folk-product-official",
+      "folk-pricing-official"
+    ],
+    "evidence": [
+      {
+        "sourceId": "folk-product-official",
+        "excerpt": "AI capability data-enrichment: supported."
+      }
+    ],
+    "extractedAt": "2026-08-13T18:00:00.000Z",
+    "normalizedAt": "2026-08-13T18:00:00.000Z",
+    "verifiedAt": "2026-08-13T18:00:00.000Z",
+    "approvedAt": "2026-08-13T18:00:00.000Z",
+    "confidence": "high",
+    "status": "approved",
+    "isFixture": false
+  },
+  {
+    "id": "fact-folk-positioning.primary",
+    "productSlug": "folk",
+    "domain": "product-positioning",
+    "field": "positioning.primary",
+    "value": "folk captures multi-channel relationship context so AI assistants can automate follow-ups, research, recaps, and outreach workflows.",
+    "sourceIds": [
+      "folk-product-official"
+    ],
+    "evidence": [
+      {
+        "sourceId": "folk-product-official",
+        "excerpt": "folk captures multi-channel relationship context so AI assistants can automate follow-ups, research, recaps, and outreach workflows."
+      }
+    ],
+    "extractedAt": "2026-08-13T18:00:00.000Z",
+    "normalizedAt": "2026-08-13T18:00:00.000Z",
+    "verifiedAt": "2026-08-13T18:00:00.000Z",
+    "approvedAt": "2026-08-13T18:00:00.000Z",
+    "confidence": "high",
+    "status": "approved",
+    "isFixture": false
+  }
+]

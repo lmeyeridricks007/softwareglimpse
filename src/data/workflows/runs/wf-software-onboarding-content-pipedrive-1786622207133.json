@@ -1,0 +1,908 @@
+{
+  "id": "wf-software-onboarding-content-pipedrive-1786622207133",
+  "workflowId": "software-onboarding-content",
+  "workflowVersion": "1.0.0",
+  "name": "Software Onboarding Content: pipedrive",
+  "targetType": "software",
+  "targetId": "pipedrive",
+  "status": "superseded",
+  "steps": [
+    {
+      "id": "software-onboarding",
+      "definitionStepId": "software-onboarding",
+      "handler": "software-onboarding",
+      "label": "Software onboarding",
+      "status": "completed",
+      "required": true,
+      "failurePolicy": "block-workflow",
+      "attempt": 1,
+      "maxAttempts": 2,
+      "dependsOn": [],
+      "priority": "critical",
+      "config": {
+        "maxAutomaticRevisions": 1,
+        "expandFromContentPlan": false,
+        "expandKind": "none",
+        "stopAfterApproval": true,
+        "allowNormalizedFacts": false,
+        "optionalWhenBlocked": false,
+        "forceTransientFailOnce": false
+      },
+      "inputRefs": {},
+      "outputRefs": {
+        "softwareOnboardingRunId": "onboard-pipedrive-1786620335188"
+      },
+      "blockers": [],
+      "warnings": [],
+      "startedAt": "2026-08-13T11:56:47.216Z",
+      "completedAt": "2026-08-13T11:56:47.223Z",
+      "revisionAttempts": 0
+    },
+    {
+      "id": "content-plan",
+      "definitionStepId": "content-plan",
+      "handler": "content-plan",
+      "label": "Content plan",
+      "status": "completed",
+      "required": true,
+      "failurePolicy": "block-workflow",
+      "attempt": 1,
+      "maxAttempts": 2,
+      "dependsOn": [
+        "software-onboarding"
+      ],
+      "priority": "high",
+      "config": {
+        "maxAutomaticRevisions": 1,
+        "expandFromContentPlan": false,
+        "expandKind": "none",
+        "stopAfterApproval": true,
+        "allowNormalizedFacts": false,
+        "optionalWhenBlocked": false,
+        "forceTransientFailOnce": false
+      },
+      "inputRefs": {},
+      "outputRefs": {
+        "softwareOnboardingRunId": "onboard-pipedrive-1786620335188",
+        "comparisonTargets": "freshsales-vs-pipedrive,close-vs-pipedrive,pipedrive-vs-salesflare",
+        "pageCandidateCount": "9"
+      },
+      "blockers": [],
+      "warnings": [],
+      "startedAt": "2026-08-13T11:56:47.225Z",
+      "completedAt": "2026-08-13T11:56:47.234Z",
+      "revisionAttempts": 0
+    },
+    {
+      "id": "software-review",
+      "definitionStepId": "software-review",
+      "handler": "agent-run",
+      "label": "Software Review",
+      "status": "completed",
+      "required": true,
+      "failurePolicy": "block-workflow",
+      "attempt": 1,
+      "maxAttempts": 2,
+      "dependsOn": [
+        "content-plan"
+      ],
+      "priority": "high",
+      "config": {
+        "agentId": "software-review-agent",
+        "targetSlug": "pipedrive",
+        "maxAutomaticRevisions": 1,
+        "expandFromContentPlan": false,
+        "expandKind": "none",
+        "stopAfterApproval": true,
+        "allowNormalizedFacts": false,
+        "optionalWhenBlocked": false,
+        "forceTransientFailOnce": false
+      },
+      "inputRefs": {},
+      "outputRefs": {
+        "draftId": "draft-deterministic-v1-software-review-agent-pipedrive-2026-08-13T11-56-47-266Z",
+        "qaStatus": "pass",
+        "agentId": "software-review-agent",
+        "target": "pipedrive"
+      },
+      "inputSnapshot": {
+        "researchFactIds": [
+          "fact-pipedrive-pricing.plans.essential-pipedrive-pricing-fixture",
+          "fact-pipedrive-pricing.plans.advanced-pipedrive-pricing-fixture",
+          "fact-pipedrive-pricing.plans.professional-pipedrive-pricing-fixture",
+          "fact-pipedrive-pricing.plans.power-pipedrive-pricing-fixture",
+          "fact-pipedrive-pricing.plans.enterprise-pipedrive-pricing-fixture",
+          "fact-pipedrive-pricing.currency-pipedrive-pricing-fixture",
+          "fact-pipedrive-pricing.hasFreeTrial-pipedrive-pricing-fixture",
+          "fact-pipedrive-pricing.hasFreePlan-pipedrive-pricing-fixture",
+          "fact-pipedrive-pricing.model-pipedrive-pricing-fixture",
+          "fact-pipedrive-identity.shortDescription-pipedrive-product-fixture",
+          "fact-pipedrive-positioning.claim-pipedrive-product-fixture",
+          "fact-pipedrive-features.contact-management-pipedrive-product-fixture",
+          "fact-pipedrive-features.lead-management-pipedrive-product-fixture",
+          "fact-pipedrive-features.pipeline-management-pipedrive-product-fixture",
+          "fact-pipedrive-features.deal-management-pipedrive-product-fixture",
+          "fact-pipedrive-features.email-sync-pipedrive-product-fixture",
+          "fact-pipedrive-features.workflow-automation-pipedrive-product-fixture",
+          "fact-pipedrive-features.reporting-pipedrive-product-fixture",
+          "fact-pipedrive-features.forecasting-pipedrive-product-fixture",
+          "fact-pipedrive-features.custom-fields-pipedrive-product-fixture",
+          "fact-pipedrive-features.custom-pipelines-pipedrive-product-fixture",
+          "fact-pipedrive-features.mobile-app-pipedrive-product-fixture",
+          "fact-pipedrive-features.ai-assistance-pipedrive-product-fixture",
+          "fact-pipedrive-ai.email-generation-pipedrive-product-fixture",
+          "fact-pipedrive-ai.assistant-pipedrive-product-fixture",
+          "fact-pipedrive-ai.forecasting-pipedrive-product-fixture",
+          "fact-pipedrive-ai.automation-pipedrive-product-fixture"
+        ],
+        "methodologySlug": "crm-editorial",
+        "methodologyVersion": "1.0.0",
+        "agentVersion": "1.0.0",
+        "contextBuiltAt": "2026-08-13T11:56:47.262Z"
+      },
+      "blockers": [],
+      "warnings": [],
+      "agentTaskId": "exec-software-review-agent-pipedrive-1786622207237",
+      "draftId": "draft-deterministic-v1-software-review-agent-pipedrive-2026-08-13T11-56-47-266Z",
+      "startedAt": "2026-08-13T11:56:47.236Z",
+      "completedAt": "2026-08-13T11:56:47.274Z",
+      "revisionAttempts": 0
+    },
+    {
+      "id": "pricing-page",
+      "definitionStepId": "pricing-page",
+      "handler": "agent-run",
+      "label": "Pricing Page",
+      "status": "completed",
+      "required": false,
+      "failurePolicy": "continue-with-warning",
+      "attempt": 1,
+      "maxAttempts": 2,
+      "dependsOn": [
+        "content-plan"
+      ],
+      "priority": "normal",
+      "config": {
+        "agentId": "pricing-page-agent",
+        "targetSlug": "pipedrive",
+        "maxAutomaticRevisions": 1,
+        "expandFromContentPlan": false,
+        "expandKind": "none",
+        "stopAfterApproval": true,
+        "allowNormalizedFacts": false,
+        "optionalWhenBlocked": true,
+        "forceTransientFailOnce": false
+      },
+      "inputRefs": {},
+      "outputRefs": {
+        "draftId": "draft-deterministic-v1-pricing-page-agent-pipedrive-2026-08-13T11-56-47-343Z",
+        "qaStatus": "pass",
+        "agentId": "pricing-page-agent",
+        "target": "pipedrive"
+      },
+      "inputSnapshot": {
+        "researchFactIds": [
+          "fact-pipedrive-pricing.plans.essential-pipedrive-pricing-fixture",
+          "fact-pipedrive-pricing.plans.advanced-pipedrive-pricing-fixture",
+          "fact-pipedrive-pricing.plans.professional-pipedrive-pricing-fixture",
+          "fact-pipedrive-pricing.plans.power-pipedrive-pricing-fixture",
+          "fact-pipedrive-pricing.plans.enterprise-pipedrive-pricing-fixture",
+          "fact-pipedrive-pricing.currency-pipedrive-pricing-fixture",
+          "fact-pipedrive-pricing.hasFreeTrial-pipedrive-pricing-fixture",
+          "fact-pipedrive-pricing.hasFreePlan-pipedrive-pricing-fixture",
+          "fact-pipedrive-pricing.model-pipedrive-pricing-fixture",
+          "fact-pipedrive-identity.shortDescription-pipedrive-product-fixture",
+          "fact-pipedrive-positioning.claim-pipedrive-product-fixture",
+          "fact-pipedrive-features.contact-management-pipedrive-product-fixture",
+          "fact-pipedrive-features.lead-management-pipedrive-product-fixture",
+          "fact-pipedrive-features.pipeline-management-pipedrive-product-fixture",
+          "fact-pipedrive-features.deal-management-pipedrive-product-fixture",
+          "fact-pipedrive-features.email-sync-pipedrive-product-fixture",
+          "fact-pipedrive-features.workflow-automation-pipedrive-product-fixture",
+          "fact-pipedrive-features.reporting-pipedrive-product-fixture",
+          "fact-pipedrive-features.forecasting-pipedrive-product-fixture",
+          "fact-pipedrive-features.custom-fields-pipedrive-product-fixture",
+          "fact-pipedrive-features.custom-pipelines-pipedrive-product-fixture",
+          "fact-pipedrive-features.mobile-app-pipedrive-product-fixture",
+          "fact-pipedrive-features.ai-assistance-pipedrive-product-fixture",
+          "fact-pipedrive-ai.email-generation-pipedrive-product-fixture",
+          "fact-pipedrive-ai.assistant-pipedrive-product-fixture",
+          "fact-pipedrive-ai.forecasting-pipedrive-product-fixture",
+          "fact-pipedrive-ai.automation-pipedrive-product-fixture"
+        ],
+        "methodologySlug": "crm-editorial",
+        "methodologyVersion": "1.0.0",
+        "agentVersion": "1.0.0",
+        "contextBuiltAt": "2026-08-13T11:56:47.342Z"
+      },
+      "blockers": [],
+      "warnings": [],
+      "agentTaskId": "exec-pricing-page-agent-pipedrive-1786622207334",
+      "draftId": "draft-deterministic-v1-pricing-page-agent-pipedrive-2026-08-13T11-56-47-343Z",
+      "startedAt": "2026-08-13T11:56:47.334Z",
+      "completedAt": "2026-08-13T11:56:47.348Z",
+      "revisionAttempts": 0
+    },
+    {
+      "id": "alternatives",
+      "definitionStepId": "alternatives",
+      "handler": "agent-run",
+      "label": "Alternatives",
+      "status": "completed",
+      "required": false,
+      "failurePolicy": "continue-with-warning",
+      "attempt": 1,
+      "maxAttempts": 2,
+      "dependsOn": [
+        "content-plan"
+      ],
+      "priority": "normal",
+      "config": {
+        "agentId": "alternatives-agent",
+        "targetSlug": "pipedrive",
+        "maxAutomaticRevisions": 1,
+        "expandFromContentPlan": false,
+        "expandKind": "none",
+        "stopAfterApproval": true,
+        "allowNormalizedFacts": false,
+        "optionalWhenBlocked": true,
+        "forceTransientFailOnce": false
+      },
+      "inputRefs": {},
+      "outputRefs": {
+        "draftId": "draft-deterministic-v1-alternatives-agent-pipedrive-2026-08-13T11-56-47-285Z",
+        "qaStatus": "pass",
+        "agentId": "alternatives-agent",
+        "target": "pipedrive"
+      },
+      "inputSnapshot": {
+        "researchFactIds": [
+          "fact-pipedrive-pricing.plans.essential-pipedrive-pricing-fixture",
+          "fact-pipedrive-pricing.plans.advanced-pipedrive-pricing-fixture",
+          "fact-pipedrive-pricing.plans.professional-pipedrive-pricing-fixture",
+          "fact-pipedrive-pricing.plans.power-pipedrive-pricing-fixture",
+          "fact-pipedrive-pricing.plans.enterprise-pipedrive-pricing-fixture",
+          "fact-pipedrive-pricing.currency-pipedrive-pricing-fixture",
+          "fact-pipedrive-pricing.hasFreeTrial-pipedrive-pricing-fixture",
+          "fact-pipedrive-pricing.hasFreePlan-pipedrive-pricing-fixture",
+          "fact-pipedrive-pricing.model-pipedrive-pricing-fixture",
+          "fact-pipedrive-identity.shortDescription-pipedrive-product-fixture",
+          "fact-pipedrive-positioning.claim-pipedrive-product-fixture",
+          "fact-pipedrive-features.contact-management-pipedrive-product-fixture",
+          "fact-pipedrive-features.lead-management-pipedrive-product-fixture",
+          "fact-pipedrive-features.pipeline-management-pipedrive-product-fixture",
+          "fact-pipedrive-features.deal-management-pipedrive-product-fixture",
+          "fact-pipedrive-features.email-sync-pipedrive-product-fixture",
+          "fact-pipedrive-features.workflow-automation-pipedrive-product-fixture",
+          "fact-pipedrive-features.reporting-pipedrive-product-fixture",
+          "fact-pipedrive-features.forecasting-pipedrive-product-fixture",
+          "fact-pipedrive-features.custom-fields-pipedrive-product-fixture",
+          "fact-pipedrive-features.custom-pipelines-pipedrive-product-fixture",
+          "fact-pipedrive-features.mobile-app-pipedrive-product-fixture",
+          "fact-pipedrive-features.ai-assistance-pipedrive-product-fixture",
+          "fact-pipedrive-ai.email-generation-pipedrive-product-fixture",
+          "fact-pipedrive-ai.assistant-pipedrive-product-fixture",
+          "fact-pipedrive-ai.forecasting-pipedrive-product-fixture",
+          "fact-pipedrive-ai.automation-pipedrive-product-fixture"
+        ],
+        "methodologySlug": "crm-editorial",
+        "methodologyVersion": "1.0.0",
+        "agentVersion": "1.0.0",
+        "contextBuiltAt": "2026-08-13T11:56:47.284Z"
+      },
+      "blockers": [],
+      "warnings": [],
+      "agentTaskId": "exec-alternatives-agent-pipedrive-1786622207279",
+      "draftId": "draft-deterministic-v1-alternatives-agent-pipedrive-2026-08-13T11-56-47-285Z",
+      "startedAt": "2026-08-13T11:56:47.279Z",
+      "completedAt": "2026-08-13T11:56:47.287Z",
+      "revisionAttempts": 0
+    },
+    {
+      "id": "comparison:freshsales-vs-pipedrive",
+      "definitionStepId": "comparisons",
+      "handler": "agent-run",
+      "label": "Comparison freshsales-vs-pipedrive",
+      "status": "completed",
+      "required": false,
+      "failurePolicy": "continue-with-warning",
+      "attempt": 1,
+      "maxAttempts": 2,
+      "dependsOn": [
+        "content-plan"
+      ],
+      "priority": "normal",
+      "config": {
+        "agentId": "comparison-agent",
+        "targetSlug": "freshsales-vs-pipedrive",
+        "maxAutomaticRevisions": 1,
+        "expandFromContentPlan": true,
+        "expandKind": "comparisons",
+        "stopAfterApproval": true,
+        "allowNormalizedFacts": false,
+        "optionalWhenBlocked": true,
+        "forceTransientFailOnce": false
+      },
+      "expansionKey": "freshsales-vs-pipedrive",
+      "inputRefs": {},
+      "outputRefs": {
+        "draftId": "draft-deterministic-v1-comparison-agent-freshsales-vs-pipedrive-2026-08-13T11-56-47-313Z",
+        "qaStatus": "pass",
+        "agentId": "comparison-agent",
+        "target": "freshsales-vs-pipedrive"
+      },
+      "inputSnapshot": {
+        "researchFactIds": [
+          "fact-freshsales-pricing.plans.free-freshsales-pricing-fixture",
+          "fact-freshsales-pricing.plans.growth-freshsales-pricing-fixture",
+          "fact-freshsales-pricing.plans.pro-freshsales-pricing-fixture",
+          "fact-freshsales-pricing.plans.enterprise-freshsales-pricing-fixture",
+          "fact-freshsales-pricing.currency-freshsales-pricing-fixture",
+          "fact-freshsales-pricing.hasFreeTrial-freshsales-pricing-fixture",
+          "fact-freshsales-pricing.hasFreePlan-freshsales-pricing-fixture",
+          "fact-freshsales-pricing.model-freshsales-pricing-fixture",
+          "fact-freshsales-identity.shortDescription-freshsales-product-fixture",
+          "fact-freshsales-positioning.claim-freshsales-product-fixture",
+          "fact-freshsales-features.contact-management-freshsales-product-fixture",
+          "fact-freshsales-features.lead-management-freshsales-product-fixture",
+          "fact-freshsales-features.pipeline-management-freshsales-product-fixture",
+          "fact-freshsales-features.email-sync-freshsales-product-fixture",
+          "fact-freshsales-features.workflow-automation-freshsales-product-fixture",
+          "fact-freshsales-features.lead-scoring-freshsales-product-fixture",
+          "fact-freshsales-features.reporting-freshsales-product-fixture",
+          "fact-freshsales-features.ai-assistance-freshsales-product-fixture",
+          "fact-freshsales-features.call-functionality-freshsales-product-fixture",
+          "fact-freshsales-ai.lead-scoring-freshsales-product-fixture",
+          "fact-freshsales-ai.assistant-freshsales-product-fixture",
+          "fact-freshsales-ai.email-generation-freshsales-product-fixture",
+          "fact-pipedrive-pricing.plans.essential-pipedrive-pricing-fixture",
+          "fact-pipedrive-pricing.plans.advanced-pipedrive-pricing-fixture",
+          "fact-pipedrive-pricing.plans.professional-pipedrive-pricing-fixture",
+          "fact-pipedrive-pricing.plans.power-pipedrive-pricing-fixture",
+          "fact-pipedrive-pricing.plans.enterprise-pipedrive-pricing-fixture",
+          "fact-pipedrive-pricing.currency-pipedrive-pricing-fixture",
+          "fact-pipedrive-pricing.hasFreeTrial-pipedrive-pricing-fixture",
+          "fact-pipedrive-pricing.hasFreePlan-pipedrive-pricing-fixture",
+          "fact-pipedrive-pricing.model-pipedrive-pricing-fixture",
+          "fact-pipedrive-identity.shortDescription-pipedrive-product-fixture",
+          "fact-pipedrive-positioning.claim-pipedrive-product-fixture",
+          "fact-pipedrive-features.contact-management-pipedrive-product-fixture",
+          "fact-pipedrive-features.lead-management-pipedrive-product-fixture",
+          "fact-pipedrive-features.pipeline-management-pipedrive-product-fixture",
+          "fact-pipedrive-features.deal-management-pipedrive-product-fixture",
+          "fact-pipedrive-features.email-sync-pipedrive-product-fixture",
+          "fact-pipedrive-features.workflow-automation-pipedrive-product-fixture",
+          "fact-pipedrive-features.reporting-pipedrive-product-fixture",
+          "fact-pipedrive-features.forecasting-pipedrive-product-fixture",
+          "fact-pipedrive-features.custom-fields-pipedrive-product-fixture",
+          "fact-pipedrive-features.custom-pipelines-pipedrive-product-fixture",
+          "fact-pipedrive-features.mobile-app-pipedrive-product-fixture",
+          "fact-pipedrive-features.ai-assistance-pipedrive-product-fixture",
+          "fact-pipedrive-ai.email-generation-pipedrive-product-fixture",
+          "fact-pipedrive-ai.assistant-pipedrive-product-fixture",
+          "fact-pipedrive-ai.forecasting-pipedrive-product-fixture",
+          "fact-pipedrive-ai.automation-pipedrive-product-fixture"
+        ],
+        "methodologySlug": "crm-editorial",
+        "methodologyVersion": "1.0.0",
+        "agentVersion": "1.0.0",
+        "contextBuiltAt": "2026-08-13T11:56:47.312Z"
+      },
+      "blockers": [],
+      "warnings": [],
+      "agentTaskId": "exec-comparison-agent-freshsales-vs-pipedrive-1786622207296",
+      "draftId": "draft-deterministic-v1-comparison-agent-freshsales-vs-pipedrive-2026-08-13T11-56-47-313Z",
+      "startedAt": "2026-08-13T11:56:47.296Z",
+      "completedAt": "2026-08-13T11:56:47.315Z",
+      "revisionAttempts": 0
+    },
+    {
+      "id": "comparison:close-vs-pipedrive",
+      "definitionStepId": "comparisons",
+      "handler": "agent-run",
+      "label": "Comparison close-vs-pipedrive",
+      "status": "completed",
+      "required": false,
+      "failurePolicy": "continue-with-warning",
+      "attempt": 1,
+      "maxAttempts": 2,
+      "dependsOn": [
+        "content-plan"
+      ],
+      "priority": "normal",
+      "config": {
+        "agentId": "comparison-agent",
+        "targetSlug": "close-vs-pipedrive",
+        "maxAutomaticRevisions": 1,
+        "expandFromContentPlan": true,
+        "expandKind": "comparisons",
+        "stopAfterApproval": true,
+        "allowNormalizedFacts": false,
+        "optionalWhenBlocked": true,
+        "forceTransientFailOnce": false
+      },
+      "expansionKey": "close-vs-pipedrive",
+      "inputRefs": {},
+      "outputRefs": {
+        "draftId": "draft-deterministic-v1-comparison-agent-close-vs-pipedrive-2026-08-13T11-56-47-292Z",
+        "qaStatus": "pass",
+        "agentId": "comparison-agent",
+        "target": "close-vs-pipedrive"
+      },
+      "inputSnapshot": {
+        "researchFactIds": [
+          "fact-pipedrive-pricing.plans.essential-pipedrive-pricing-fixture",
+          "fact-pipedrive-pricing.plans.advanced-pipedrive-pricing-fixture",
+          "fact-pipedrive-pricing.plans.professional-pipedrive-pricing-fixture",
+          "fact-pipedrive-pricing.plans.power-pipedrive-pricing-fixture",
+          "fact-pipedrive-pricing.plans.enterprise-pipedrive-pricing-fixture",
+          "fact-pipedrive-pricing.currency-pipedrive-pricing-fixture",
+          "fact-pipedrive-pricing.hasFreeTrial-pipedrive-pricing-fixture",
+          "fact-pipedrive-pricing.hasFreePlan-pipedrive-pricing-fixture",
+          "fact-pipedrive-pricing.model-pipedrive-pricing-fixture",
+          "fact-pipedrive-identity.shortDescription-pipedrive-product-fixture",
+          "fact-pipedrive-positioning.claim-pipedrive-product-fixture",
+          "fact-pipedrive-features.contact-management-pipedrive-product-fixture",
+          "fact-pipedrive-features.lead-management-pipedrive-product-fixture",
+          "fact-pipedrive-features.pipeline-management-pipedrive-product-fixture",
+          "fact-pipedrive-features.deal-management-pipedrive-product-fixture",
+          "fact-pipedrive-features.email-sync-pipedrive-product-fixture",
+          "fact-pipedrive-features.workflow-automation-pipedrive-product-fixture",
+          "fact-pipedrive-features.reporting-pipedrive-product-fixture",
+          "fact-pipedrive-features.forecasting-pipedrive-product-fixture",
+          "fact-pipedrive-features.custom-fields-pipedrive-product-fixture",
+          "fact-pipedrive-features.custom-pipelines-pipedrive-product-fixture",
+          "fact-pipedrive-features.mobile-app-pipedrive-product-fixture",
+          "fact-pipedrive-features.ai-assistance-pipedrive-product-fixture",
+          "fact-pipedrive-ai.email-generation-pipedrive-product-fixture",
+          "fact-pipedrive-ai.assistant-pipedrive-product-fixture",
+          "fact-pipedrive-ai.forecasting-pipedrive-product-fixture",
+          "fact-pipedrive-ai.automation-pipedrive-product-fixture"
+        ],
+        "methodologySlug": "crm-editorial",
+        "methodologyVersion": "1.0.0",
+        "agentVersion": "1.0.0",
+        "contextBuiltAt": "2026-08-13T11:56:47.291Z"
+      },
+      "blockers": [],
+      "warnings": [],
+      "agentTaskId": "exec-comparison-agent-close-vs-pipedrive-1786622207288",
+      "draftId": "draft-deterministic-v1-comparison-agent-close-vs-pipedrive-2026-08-13T11-56-47-292Z",
+      "startedAt": "2026-08-13T11:56:47.288Z",
+      "completedAt": "2026-08-13T11:56:47.294Z",
+      "revisionAttempts": 0
+    },
+    {
+      "id": "comparison:pipedrive-vs-salesflare",
+      "definitionStepId": "comparisons",
+      "handler": "agent-run",
+      "label": "Comparison pipedrive-vs-salesflare",
+      "status": "completed",
+      "required": false,
+      "failurePolicy": "continue-with-warning",
+      "attempt": 1,
+      "maxAttempts": 2,
+      "dependsOn": [
+        "content-plan"
+      ],
+      "priority": "normal",
+      "config": {
+        "agentId": "comparison-agent",
+        "targetSlug": "pipedrive-vs-salesflare",
+        "maxAutomaticRevisions": 1,
+        "expandFromContentPlan": true,
+        "expandKind": "comparisons",
+        "stopAfterApproval": true,
+        "allowNormalizedFacts": false,
+        "optionalWhenBlocked": true,
+        "forceTransientFailOnce": false
+      },
+      "expansionKey": "pipedrive-vs-salesflare",
+      "inputRefs": {},
+      "outputRefs": {
+        "draftId": "draft-deterministic-v1-comparison-agent-pipedrive-vs-salesflare-2026-08-13T11-56-47-331Z",
+        "qaStatus": "pass",
+        "agentId": "comparison-agent",
+        "target": "pipedrive-vs-salesflare"
+      },
+      "inputSnapshot": {
+        "researchFactIds": [
+          "fact-pipedrive-pricing.plans.essential-pipedrive-pricing-fixture",
+          "fact-pipedrive-pricing.plans.advanced-pipedrive-pricing-fixture",
+          "fact-pipedrive-pricing.plans.professional-pipedrive-pricing-fixture",
+          "fact-pipedrive-pricing.plans.power-pipedrive-pricing-fixture",
+          "fact-pipedrive-pricing.plans.enterprise-pipedrive-pricing-fixture",
+          "fact-pipedrive-pricing.currency-pipedrive-pricing-fixture",
+          "fact-pipedrive-pricing.hasFreeTrial-pipedrive-pricing-fixture",
+          "fact-pipedrive-pricing.hasFreePlan-pipedrive-pricing-fixture",
+          "fact-pipedrive-pricing.model-pipedrive-pricing-fixture",
+          "fact-pipedrive-identity.shortDescription-pipedrive-product-fixture",
+          "fact-pipedrive-positioning.claim-pipedrive-product-fixture",
+          "fact-pipedrive-features.contact-management-pipedrive-product-fixture",
+          "fact-pipedrive-features.lead-management-pipedrive-product-fixture",
+          "fact-pipedrive-features.pipeline-management-pipedrive-product-fixture",
+          "fact-pipedrive-features.deal-management-pipedrive-product-fixture",
+          "fact-pipedrive-features.email-sync-pipedrive-product-fixture",
+          "fact-pipedrive-features.workflow-automation-pipedrive-product-fixture",
+          "fact-pipedrive-features.reporting-pipedrive-product-fixture",
+          "fact-pipedrive-features.forecasting-pipedrive-product-fixture",
+          "fact-pipedrive-features.custom-fields-pipedrive-product-fixture",
+          "fact-pipedrive-features.custom-pipelines-pipedrive-product-fixture",
+          "fact-pipedrive-features.mobile-app-pipedrive-product-fixture",
+          "fact-pipedrive-features.ai-assistance-pipedrive-product-fixture",
+          "fact-pipedrive-ai.email-generation-pipedrive-product-fixture",
+          "fact-pipedrive-ai.assistant-pipedrive-product-fixture",
+          "fact-pipedrive-ai.forecasting-pipedrive-product-fixture",
+          "fact-pipedrive-ai.automation-pipedrive-product-fixture"
+        ],
+        "methodologySlug": "crm-editorial",
+        "methodologyVersion": "1.0.0",
+        "agentVersion": "1.0.0",
+        "contextBuiltAt": "2026-08-13T11:56:47.330Z"
+      },
+      "blockers": [],
+      "warnings": [],
+      "agentTaskId": "exec-comparison-agent-pipedrive-vs-salesflare-1786622207316",
+      "draftId": "draft-deterministic-v1-comparison-agent-pipedrive-vs-salesflare-2026-08-13T11-56-47-331Z",
+      "startedAt": "2026-08-13T11:56:47.316Z",
+      "completedAt": "2026-08-13T11:56:47.333Z",
+      "revisionAttempts": 0
+    },
+    {
+      "id": "internal-links",
+      "definitionStepId": "internal-links",
+      "handler": "internal-link",
+      "label": "Internal Link Plan",
+      "status": "completed",
+      "required": false,
+      "failurePolicy": "continue-with-warning",
+      "attempt": 1,
+      "maxAttempts": 2,
+      "dependsOn": [
+        "software-review"
+      ],
+      "priority": "low",
+      "config": {
+        "agentId": "internal-link-agent",
+        "maxAutomaticRevisions": 1,
+        "expandFromContentPlan": false,
+        "expandKind": "none",
+        "stopAfterApproval": true,
+        "allowNormalizedFacts": false,
+        "optionalWhenBlocked": false,
+        "forceTransientFailOnce": false
+      },
+      "inputRefs": {},
+      "outputRefs": {
+        "draftId": "draft-deterministic-v1-internal-link-agent-pipedrive-2026-08-13T11-56-47-366Z",
+        "qaStatus": "pass",
+        "agentId": "internal-link-agent",
+        "target": "pipedrive"
+      },
+      "inputSnapshot": {
+        "researchFactIds": [
+          "fact-pipedrive-pricing.plans.essential-pipedrive-pricing-fixture",
+          "fact-pipedrive-pricing.plans.advanced-pipedrive-pricing-fixture",
+          "fact-pipedrive-pricing.plans.professional-pipedrive-pricing-fixture",
+          "fact-pipedrive-pricing.plans.power-pipedrive-pricing-fixture",
+          "fact-pipedrive-pricing.plans.enterprise-pipedrive-pricing-fixture",
+          "fact-pipedrive-pricing.currency-pipedrive-pricing-fixture",
+          "fact-pipedrive-pricing.hasFreeTrial-pipedrive-pricing-fixture",
+          "fact-pipedrive-pricing.hasFreePlan-pipedrive-pricing-fixture",
+          "fact-pipedrive-pricing.model-pipedrive-pricing-fixture",
+          "fact-pipedrive-identity.shortDescription-pipedrive-product-fixture",
+          "fact-pipedrive-positioning.claim-pipedrive-product-fixture",
+          "fact-pipedrive-features.contact-management-pipedrive-product-fixture",
+          "fact-pipedrive-features.lead-management-pipedrive-product-fixture",
+          "fact-pipedrive-features.pipeline-management-pipedrive-product-fixture",
+          "fact-pipedrive-features.deal-management-pipedrive-product-fixture",
+          "fact-pipedrive-features.email-sync-pipedrive-product-fixture",
+          "fact-pipedrive-features.workflow-automation-pipedrive-product-fixture",
+          "fact-pipedrive-features.reporting-pipedrive-product-fixture",
+          "fact-pipedrive-features.forecasting-pipedrive-product-fixture",
+          "fact-pipedrive-features.custom-fields-pipedrive-product-fixture",
+          "fact-pipedrive-features.custom-pipelines-pipedrive-product-fixture",
+          "fact-pipedrive-features.mobile-app-pipedrive-product-fixture",
+          "fact-pipedrive-features.ai-assistance-pipedrive-product-fixture",
+          "fact-pipedrive-ai.email-generation-pipedrive-product-fixture",
+          "fact-pipedrive-ai.assistant-pipedrive-product-fixture",
+          "fact-pipedrive-ai.forecasting-pipedrive-product-fixture",
+          "fact-pipedrive-ai.automation-pipedrive-product-fixture"
+        ],
+        "methodologySlug": "crm-editorial",
+        "methodologyVersion": "1.0.0",
+        "agentVersion": "1.0.0",
+        "contextBuiltAt": "2026-08-13T11:56:47.365Z"
+      },
+      "blockers": [],
+      "warnings": [],
+      "agentTaskId": "exec-internal-link-agent-pipedrive-1786622207356",
+      "draftId": "draft-deterministic-v1-internal-link-agent-pipedrive-2026-08-13T11-56-47-366Z",
+      "startedAt": "2026-08-13T11:56:47.355Z",
+      "completedAt": "2026-08-13T11:56:47.370Z",
+      "revisionAttempts": 0
+    },
+    {
+      "id": "finder-readiness",
+      "definitionStepId": "finder-readiness",
+      "handler": "update-recommendation-readiness",
+      "label": "Finder readiness",
+      "status": "completed",
+      "required": false,
+      "failurePolicy": "continue",
+      "attempt": 1,
+      "maxAttempts": 2,
+      "dependsOn": [
+        "content-plan"
+      ],
+      "priority": "low",
+      "config": {
+        "maxAutomaticRevisions": 1,
+        "expandFromContentPlan": false,
+        "expandKind": "none",
+        "stopAfterApproval": true,
+        "allowNormalizedFacts": false,
+        "optionalWhenBlocked": false,
+        "forceTransientFailOnce": false
+      },
+      "inputRefs": {},
+      "outputRefs": {
+        "finderReadiness": "checked"
+      },
+      "blockers": [],
+      "warnings": [],
+      "startedAt": "2026-08-13T11:56:47.349Z",
+      "completedAt": "2026-08-13T11:56:47.351Z",
+      "revisionAttempts": 0
+    },
+    {
+      "id": "editorial-approval",
+      "definitionStepId": "editorial-approval",
+      "handler": "approval-check",
+      "label": "Editorial approval",
+      "status": "waiting",
+      "required": true,
+      "failurePolicy": "manual-review",
+      "attempt": 2,
+      "maxAttempts": 2,
+      "dependsOn": [
+        "software-review"
+      ],
+      "priority": "critical",
+      "config": {
+        "approvalType": "editorial",
+        "maxAutomaticRevisions": 1,
+        "expandFromContentPlan": false,
+        "expandKind": "none",
+        "stopAfterApproval": true,
+        "allowNormalizedFacts": false,
+        "optionalWhenBlocked": false,
+        "forceTransientFailOnce": false
+      },
+      "inputRefs": {},
+      "outputRefs": {
+        "approvalId": "appr-wf-software-onboarding-content-pipedrive-1786622207133-pricing-page",
+        "draftId": "draft-deterministic-v1-pricing-page-agent-pipedrive-2026-08-13T11-56-47-343Z"
+      },
+      "blockers": [],
+      "warnings": [
+        "Approval received — resuming"
+      ],
+      "approvalId": "appr-wf-software-onboarding-content-pipedrive-1786622207133-pricing-page",
+      "startedAt": "2026-08-13T11:56:58.524Z",
+      "completedAt": "2026-08-13T11:56:58.548Z",
+      "revisionAttempts": 0
+    },
+    {
+      "id": "pre-publish-validation",
+      "definitionStepId": "pre-publish-validation",
+      "handler": "pre-publish-validation",
+      "label": "Pre-publish validation",
+      "status": "pending",
+      "required": true,
+      "failurePolicy": "block-workflow",
+      "attempt": 0,
+      "maxAttempts": 2,
+      "dependsOn": [
+        "editorial-approval"
+      ],
+      "priority": "critical",
+      "config": {
+        "maxAutomaticRevisions": 1,
+        "expandFromContentPlan": false,
+        "expandKind": "none",
+        "stopAfterApproval": true,
+        "allowNormalizedFacts": false,
+        "optionalWhenBlocked": false,
+        "forceTransientFailOnce": false
+      },
+      "inputRefs": {},
+      "outputRefs": {},
+      "blockers": [],
+      "warnings": [],
+      "revisionAttempts": 0
+    }
+  ],
+  "history": [
+    {
+      "at": "2026-08-13T11:56:47.207Z",
+      "event": "workflow_created",
+      "message": "Created software-onboarding-content:v1.0.0"
+    },
+    {
+      "at": "2026-08-13T11:56:47.215Z",
+      "event": "workflow_started",
+      "message": "Workflow execution started"
+    },
+    {
+      "at": "2026-08-13T11:56:47.216Z",
+      "event": "workflow_step_started",
+      "stepId": "software-onboarding",
+      "message": "Started Software onboarding"
+    },
+    {
+      "at": "2026-08-13T11:56:47.223Z",
+      "event": "workflow_step_completed",
+      "stepId": "software-onboarding",
+      "message": "Reused onboarding run onboard-pipedrive-1786620335188 (review-required)"
+    },
+    {
+      "at": "2026-08-13T11:56:47.225Z",
+      "event": "workflow_step_started",
+      "stepId": "content-plan",
+      "message": "Started Content plan"
+    },
+    {
+      "at": "2026-08-13T11:56:47.234Z",
+      "event": "workflow_step_completed",
+      "stepId": "content-plan",
+      "message": "Content plan from onboarding onboard-pipedrive-1786620335188 (9 candidates)"
+    },
+    {
+      "at": "2026-08-13T11:56:47.236Z",
+      "event": "workflow_step_started",
+      "stepId": "software-review",
+      "message": "Started Software Review"
+    },
+    {
+      "at": "2026-08-13T11:56:47.274Z",
+      "event": "workflow_step_completed",
+      "stepId": "software-review",
+      "message": "Agent software-review-agent → draft draft-deterministic-v1-software-review-agent-pipedrive-2026-08-13T11-56-47-266Z (qa=pass)"
+    },
+    {
+      "at": "2026-08-13T11:56:47.279Z",
+      "event": "workflow_step_started",
+      "stepId": "alternatives",
+      "message": "Started Alternatives"
+    },
+    {
+      "at": "2026-08-13T11:56:47.287Z",
+      "event": "workflow_step_completed",
+      "stepId": "alternatives",
+      "message": "Agent alternatives-agent → draft draft-deterministic-v1-alternatives-agent-pipedrive-2026-08-13T11-56-47-285Z (qa=pass)"
+    },
+    {
+      "at": "2026-08-13T11:56:47.288Z",
+      "event": "workflow_step_started",
+      "stepId": "comparison:close-vs-pipedrive",
+      "message": "Started Comparison close-vs-pipedrive"
+    },
+    {
+      "at": "2026-08-13T11:56:47.294Z",
+      "event": "workflow_step_completed",
+      "stepId": "comparison:close-vs-pipedrive",
+      "message": "Agent comparison-agent → draft draft-deterministic-v1-comparison-agent-close-vs-pipedrive-2026-08-13T11-56-47-292Z (qa=pass)"
+    },
+    {
+      "at": "2026-08-13T11:56:47.295Z",
+      "event": "workflow_step_started",
+      "stepId": "comparison:freshsales-vs-pipedrive",
+      "message": "Started Comparison freshsales-vs-pipedrive"
+    },
+    {
+      "at": "2026-08-13T11:56:47.315Z",
+      "event": "workflow_step_completed",
+      "stepId": "comparison:freshsales-vs-pipedrive",
+      "message": "Agent comparison-agent → draft draft-deterministic-v1-comparison-agent-freshsales-vs-pipedrive-2026-08-13T11-56-47-313Z (qa=pass)"
+    },
+    {
+      "at": "2026-08-13T11:56:47.316Z",
+      "event": "workflow_step_started",
+      "stepId": "comparison:pipedrive-vs-salesflare",
+      "message": "Started Comparison pipedrive-vs-salesflare"
+    },
+    {
+      "at": "2026-08-13T11:56:47.333Z",
+      "event": "workflow_step_completed",
+      "stepId": "comparison:pipedrive-vs-salesflare",
+      "message": "Agent comparison-agent → draft draft-deterministic-v1-comparison-agent-pipedrive-vs-salesflare-2026-08-13T11-56-47-331Z (qa=pass)"
+    },
+    {
+      "at": "2026-08-13T11:56:47.334Z",
+      "event": "workflow_step_started",
+      "stepId": "pricing-page",
+      "message": "Started Pricing Page"
+    },
+    {
+      "at": "2026-08-13T11:56:47.348Z",
+      "event": "workflow_step_completed",
+      "stepId": "pricing-page",
+      "message": "Agent pricing-page-agent → draft draft-deterministic-v1-pricing-page-agent-pipedrive-2026-08-13T11-56-47-343Z (qa=pass)"
+    },
+    {
+      "at": "2026-08-13T11:56:47.349Z",
+      "event": "workflow_step_started",
+      "stepId": "finder-readiness",
+      "message": "Started Finder readiness"
+    },
+    {
+      "at": "2026-08-13T11:56:47.351Z",
+      "event": "workflow_step_completed",
+      "stepId": "finder-readiness",
+      "message": "Finder readiness noted for pipedrive"
+    },
+    {
+      "at": "2026-08-13T11:56:47.354Z",
+      "event": "workflow_step_started",
+      "stepId": "internal-links",
+      "message": "Started Internal Link Plan"
+    },
+    {
+      "at": "2026-08-13T11:56:47.370Z",
+      "event": "workflow_step_completed",
+      "stepId": "internal-links",
+      "message": "Agent internal-link-agent → draft draft-deterministic-v1-internal-link-agent-pipedrive-2026-08-13T11-56-47-366Z (qa=pass)"
+    },
+    {
+      "at": "2026-08-13T11:56:47.373Z",
+      "event": "workflow_step_started",
+      "stepId": "editorial-approval",
+      "message": "Started Editorial approval"
+    },
+    {
+      "at": "2026-08-13T11:56:47.383Z",
+      "event": "workflow_step_completed",
+      "stepId": "editorial-approval",
+      "message": "WAITING FOR EDITORIAL APPROVAL (appr-wf-software-onboarding-content-pipedrive-1786622207133-software-review)"
+    },
+    {
+      "at": "2026-08-13T11:56:58.516Z",
+      "event": "workflow_resumed",
+      "message": "Workflow resumed"
+    },
+    {
+      "at": "2026-08-13T11:56:58.522Z",
+      "event": "workflow_started",
+      "message": "Workflow execution started"
+    },
+    {
+      "at": "2026-08-13T11:56:58.524Z",
+      "event": "workflow_step_started",
+      "stepId": "editorial-approval",
+      "message": "Started Editorial approval"
+    },
+    {
+      "at": "2026-08-13T11:56:58.549Z",
+      "event": "workflow_step_completed",
+      "stepId": "editorial-approval",
+      "message": "WAITING FOR EDITORIAL APPROVAL (appr-wf-software-onboarding-content-pipedrive-1786622207133-pricing-page)"
+    }
+  ],
+  "options": {
+    "generateReview": true,
+    "generatePricing": true,
+    "generateAlternatives": true,
+    "generateComparisons": true,
+    "runInternalLinks": true,
+    "stopAfterApproval": true,
+    "allowNormalizedFacts": false,
+    "dryRun": false,
+    "maxComparisons": 3,
+    "skipOnboarding": false
+  },
+  "supersededBy": "wf-software-onboarding-content-pipedrive-1786622222806",
+  "warnings": [],
+  "createdAt": "2026-08-13T11:56:47.206Z",
+  "updatedAt": "2026-08-13T11:57:02.857Z"
+}

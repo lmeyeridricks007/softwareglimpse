@@ -1,0 +1,882 @@
+{
+  "id": "wf-software-onboarding-content-capsule-1786623998982",
+  "workflowId": "software-onboarding-content",
+  "workflowVersion": "1.0.0",
+  "name": "Software Onboarding Content: capsule",
+  "targetType": "software",
+  "targetId": "capsule",
+  "status": "superseded",
+  "steps": [
+    {
+      "id": "software-onboarding",
+      "definitionStepId": "software-onboarding",
+      "handler": "software-onboarding",
+      "label": "Software onboarding",
+      "status": "completed",
+      "required": true,
+      "failurePolicy": "block-workflow",
+      "attempt": 1,
+      "maxAttempts": 2,
+      "dependsOn": [],
+      "priority": "critical",
+      "config": {
+        "maxAutomaticRevisions": 1,
+        "expandFromContentPlan": false,
+        "expandKind": "none",
+        "stopAfterApproval": true,
+        "allowNormalizedFacts": false,
+        "optionalWhenBlocked": false,
+        "forceTransientFailOnce": false
+      },
+      "inputRefs": {},
+      "outputRefs": {
+        "softwareOnboardingRunId": "onboard-capsule-1786623694207"
+      },
+      "blockers": [],
+      "warnings": [],
+      "startedAt": "2026-08-13T12:26:39.214Z",
+      "completedAt": "2026-08-13T12:26:39.234Z",
+      "revisionAttempts": 0
+    },
+    {
+      "id": "content-plan",
+      "definitionStepId": "content-plan",
+      "handler": "content-plan",
+      "label": "Content plan",
+      "status": "completed",
+      "required": true,
+      "failurePolicy": "block-workflow",
+      "attempt": 1,
+      "maxAttempts": 2,
+      "dependsOn": [
+        "software-onboarding"
+      ],
+      "priority": "high",
+      "config": {
+        "maxAutomaticRevisions": 1,
+        "expandFromContentPlan": false,
+        "expandKind": "none",
+        "stopAfterApproval": true,
+        "allowNormalizedFacts": false,
+        "optionalWhenBlocked": false,
+        "forceTransientFailOnce": false
+      },
+      "inputRefs": {},
+      "outputRefs": {
+        "softwareOnboardingRunId": "onboard-capsule-1786623694207",
+        "comparisonTargets": "capsule-vs-pipedrive,capsule-vs-salesflare,capsule-vs-folk",
+        "pageCandidateCount": "9"
+      },
+      "blockers": [],
+      "warnings": [],
+      "startedAt": "2026-08-13T12:26:39.237Z",
+      "completedAt": "2026-08-13T12:26:39.263Z",
+      "revisionAttempts": 0
+    },
+    {
+      "id": "software-review",
+      "definitionStepId": "software-review",
+      "handler": "agent-run",
+      "label": "Software Review",
+      "status": "completed",
+      "required": true,
+      "failurePolicy": "block-workflow",
+      "attempt": 1,
+      "maxAttempts": 2,
+      "dependsOn": [
+        "content-plan"
+      ],
+      "priority": "high",
+      "config": {
+        "agentId": "software-review-agent",
+        "targetSlug": "capsule",
+        "maxAutomaticRevisions": 1,
+        "expandFromContentPlan": false,
+        "expandKind": "none",
+        "stopAfterApproval": true,
+        "allowNormalizedFacts": false,
+        "optionalWhenBlocked": false,
+        "forceTransientFailOnce": false
+      },
+      "inputRefs": {},
+      "outputRefs": {
+        "draftId": "draft-deterministic-v1-software-review-agent-capsule-2026-08-13T12-26-39-283Z",
+        "qaStatus": "pass",
+        "agentId": "software-review-agent",
+        "target": "capsule"
+      },
+      "inputSnapshot": {
+        "researchFactIds": [
+          "fact-capsule-pricing.plans.professional-capsule-pricing-fixture",
+          "fact-capsule-pricing.plans.ultimate-capsule-pricing-fixture",
+          "fact-capsule-pricing.plans.enterprise-capsule-pricing-fixture",
+          "fact-capsule-pricing.currency-capsule-pricing-fixture",
+          "fact-capsule-pricing.hasFreeTrial-capsule-pricing-fixture",
+          "fact-capsule-pricing.hasFreePlan-capsule-pricing-fixture",
+          "fact-capsule-pricing.model-capsule-pricing-fixture",
+          "fact-capsule-identity.shortDescription-capsule-product-fixture",
+          "fact-capsule-positioning.claim-capsule-product-fixture",
+          "fact-capsule-features.contact-management-capsule-product-fixture",
+          "fact-capsule-features.lead-management-capsule-product-fixture",
+          "fact-capsule-features.pipeline-management-capsule-product-fixture",
+          "fact-capsule-features.deal-management-capsule-product-fixture",
+          "fact-capsule-features.email-sync-capsule-product-fixture",
+          "fact-capsule-features.workflow-automation-capsule-product-fixture",
+          "fact-capsule-features.reporting-capsule-product-fixture",
+          "fact-capsule-features.custom-fields-capsule-product-fixture",
+          "fact-capsule-features.mobile-app-capsule-product-fixture",
+          "fact-capsule-features.ai-assistance-capsule-product-fixture",
+          "fact-capsule-ai.assistant-capsule-product-fixture"
+        ],
+        "methodologySlug": "crm-editorial",
+        "methodologyVersion": "1.0.0",
+        "agentVersion": "1.0.0",
+        "contextBuiltAt": "2026-08-13T12:26:39.279Z"
+      },
+      "blockers": [],
+      "warnings": [],
+      "agentTaskId": "exec-software-review-agent-capsule-1786623999266",
+      "draftId": "draft-deterministic-v1-software-review-agent-capsule-2026-08-13T12-26-39-283Z",
+      "startedAt": "2026-08-13T12:26:39.265Z",
+      "completedAt": "2026-08-13T12:26:39.288Z",
+      "revisionAttempts": 0
+    },
+    {
+      "id": "pricing-page",
+      "definitionStepId": "pricing-page",
+      "handler": "agent-run",
+      "label": "Pricing Page",
+      "status": "completed",
+      "required": false,
+      "failurePolicy": "continue-with-warning",
+      "attempt": 1,
+      "maxAttempts": 2,
+      "dependsOn": [
+        "content-plan"
+      ],
+      "priority": "normal",
+      "config": {
+        "agentId": "pricing-page-agent",
+        "targetSlug": "capsule",
+        "maxAutomaticRevisions": 1,
+        "expandFromContentPlan": false,
+        "expandKind": "none",
+        "stopAfterApproval": true,
+        "allowNormalizedFacts": false,
+        "optionalWhenBlocked": true,
+        "forceTransientFailOnce": false
+      },
+      "inputRefs": {},
+      "outputRefs": {
+        "draftId": "draft-deterministic-v1-pricing-page-agent-capsule-2026-08-13T12-26-39-337Z",
+        "qaStatus": "pass",
+        "agentId": "pricing-page-agent",
+        "target": "capsule"
+      },
+      "inputSnapshot": {
+        "researchFactIds": [
+          "fact-capsule-pricing.plans.professional-capsule-pricing-fixture",
+          "fact-capsule-pricing.plans.ultimate-capsule-pricing-fixture",
+          "fact-capsule-pricing.plans.enterprise-capsule-pricing-fixture",
+          "fact-capsule-pricing.currency-capsule-pricing-fixture",
+          "fact-capsule-pricing.hasFreeTrial-capsule-pricing-fixture",
+          "fact-capsule-pricing.hasFreePlan-capsule-pricing-fixture",
+          "fact-capsule-pricing.model-capsule-pricing-fixture",
+          "fact-capsule-identity.shortDescription-capsule-product-fixture",
+          "fact-capsule-positioning.claim-capsule-product-fixture",
+          "fact-capsule-features.contact-management-capsule-product-fixture",
+          "fact-capsule-features.lead-management-capsule-product-fixture",
+          "fact-capsule-features.pipeline-management-capsule-product-fixture",
+          "fact-capsule-features.deal-management-capsule-product-fixture",
+          "fact-capsule-features.email-sync-capsule-product-fixture",
+          "fact-capsule-features.workflow-automation-capsule-product-fixture",
+          "fact-capsule-features.reporting-capsule-product-fixture",
+          "fact-capsule-features.custom-fields-capsule-product-fixture",
+          "fact-capsule-features.mobile-app-capsule-product-fixture",
+          "fact-capsule-features.ai-assistance-capsule-product-fixture",
+          "fact-capsule-ai.assistant-capsule-product-fixture"
+        ],
+        "methodologySlug": "crm-editorial",
+        "methodologyVersion": "1.0.0",
+        "agentVersion": "1.0.0",
+        "contextBuiltAt": "2026-08-13T12:26:39.336Z"
+      },
+      "blockers": [],
+      "warnings": [],
+      "agentTaskId": "exec-pricing-page-agent-capsule-1786623999333",
+      "draftId": "draft-deterministic-v1-pricing-page-agent-capsule-2026-08-13T12-26-39-337Z",
+      "startedAt": "2026-08-13T12:26:39.332Z",
+      "completedAt": "2026-08-13T12:26:39.339Z",
+      "revisionAttempts": 0
+    },
+    {
+      "id": "alternatives",
+      "definitionStepId": "alternatives",
+      "handler": "agent-run",
+      "label": "Alternatives",
+      "status": "completed",
+      "required": false,
+      "failurePolicy": "continue-with-warning",
+      "attempt": 1,
+      "maxAttempts": 2,
+      "dependsOn": [
+        "content-plan"
+      ],
+      "priority": "normal",
+      "config": {
+        "agentId": "alternatives-agent",
+        "targetSlug": "capsule",
+        "maxAutomaticRevisions": 1,
+        "expandFromContentPlan": false,
+        "expandKind": "none",
+        "stopAfterApproval": true,
+        "allowNormalizedFacts": false,
+        "optionalWhenBlocked": true,
+        "forceTransientFailOnce": false
+      },
+      "inputRefs": {},
+      "outputRefs": {
+        "draftId": "draft-deterministic-v1-alternatives-agent-capsule-2026-08-13T12-26-39-298Z",
+        "qaStatus": "pass",
+        "agentId": "alternatives-agent",
+        "target": "capsule"
+      },
+      "inputSnapshot": {
+        "researchFactIds": [
+          "fact-capsule-pricing.plans.professional-capsule-pricing-fixture",
+          "fact-capsule-pricing.plans.ultimate-capsule-pricing-fixture",
+          "fact-capsule-pricing.plans.enterprise-capsule-pricing-fixture",
+          "fact-capsule-pricing.currency-capsule-pricing-fixture",
+          "fact-capsule-pricing.hasFreeTrial-capsule-pricing-fixture",
+          "fact-capsule-pricing.hasFreePlan-capsule-pricing-fixture",
+          "fact-capsule-pricing.model-capsule-pricing-fixture",
+          "fact-capsule-identity.shortDescription-capsule-product-fixture",
+          "fact-capsule-positioning.claim-capsule-product-fixture",
+          "fact-capsule-features.contact-management-capsule-product-fixture",
+          "fact-capsule-features.lead-management-capsule-product-fixture",
+          "fact-capsule-features.pipeline-management-capsule-product-fixture",
+          "fact-capsule-features.deal-management-capsule-product-fixture",
+          "fact-capsule-features.email-sync-capsule-product-fixture",
+          "fact-capsule-features.workflow-automation-capsule-product-fixture",
+          "fact-capsule-features.reporting-capsule-product-fixture",
+          "fact-capsule-features.custom-fields-capsule-product-fixture",
+          "fact-capsule-features.mobile-app-capsule-product-fixture",
+          "fact-capsule-features.ai-assistance-capsule-product-fixture",
+          "fact-capsule-ai.assistant-capsule-product-fixture"
+        ],
+        "methodologySlug": "crm-editorial",
+        "methodologyVersion": "1.0.0",
+        "agentVersion": "1.0.0",
+        "contextBuiltAt": "2026-08-13T12:26:39.297Z"
+      },
+      "blockers": [],
+      "warnings": [],
+      "agentTaskId": "exec-alternatives-agent-capsule-1786623999292",
+      "draftId": "draft-deterministic-v1-alternatives-agent-capsule-2026-08-13T12-26-39-298Z",
+      "startedAt": "2026-08-13T12:26:39.291Z",
+      "completedAt": "2026-08-13T12:26:39.299Z",
+      "revisionAttempts": 0
+    },
+    {
+      "id": "comparison:capsule-vs-pipedrive",
+      "definitionStepId": "comparisons",
+      "handler": "agent-run",
+      "label": "Comparison capsule-vs-pipedrive",
+      "status": "completed",
+      "required": false,
+      "failurePolicy": "continue-with-warning",
+      "attempt": 1,
+      "maxAttempts": 2,
+      "dependsOn": [
+        "content-plan"
+      ],
+      "priority": "normal",
+      "config": {
+        "agentId": "comparison-agent",
+        "targetSlug": "capsule-vs-pipedrive",
+        "maxAutomaticRevisions": 1,
+        "expandFromContentPlan": true,
+        "expandKind": "comparisons",
+        "stopAfterApproval": true,
+        "allowNormalizedFacts": false,
+        "optionalWhenBlocked": true,
+        "forceTransientFailOnce": false
+      },
+      "expansionKey": "capsule-vs-pipedrive",
+      "inputRefs": {},
+      "outputRefs": {
+        "draftId": "draft-deterministic-v1-comparison-agent-capsule-vs-pipedrive-2026-08-13T12-26-39-317Z",
+        "qaStatus": "pass",
+        "agentId": "comparison-agent",
+        "target": "capsule-vs-pipedrive"
+      },
+      "inputSnapshot": {
+        "researchFactIds": [
+          "fact-capsule-pricing.plans.professional-capsule-pricing-fixture",
+          "fact-capsule-pricing.plans.ultimate-capsule-pricing-fixture",
+          "fact-capsule-pricing.plans.enterprise-capsule-pricing-fixture",
+          "fact-capsule-pricing.currency-capsule-pricing-fixture",
+          "fact-capsule-pricing.hasFreeTrial-capsule-pricing-fixture",
+          "fact-capsule-pricing.hasFreePlan-capsule-pricing-fixture",
+          "fact-capsule-pricing.model-capsule-pricing-fixture",
+          "fact-capsule-identity.shortDescription-capsule-product-fixture",
+          "fact-capsule-positioning.claim-capsule-product-fixture",
+          "fact-capsule-features.contact-management-capsule-product-fixture",
+          "fact-capsule-features.lead-management-capsule-product-fixture",
+          "fact-capsule-features.pipeline-management-capsule-product-fixture",
+          "fact-capsule-features.deal-management-capsule-product-fixture",
+          "fact-capsule-features.email-sync-capsule-product-fixture",
+          "fact-capsule-features.workflow-automation-capsule-product-fixture",
+          "fact-capsule-features.reporting-capsule-product-fixture",
+          "fact-capsule-features.custom-fields-capsule-product-fixture",
+          "fact-capsule-features.mobile-app-capsule-product-fixture",
+          "fact-capsule-features.ai-assistance-capsule-product-fixture",
+          "fact-capsule-ai.assistant-capsule-product-fixture",
+          "fact-pipedrive-pricing.plans.essential-pipedrive-pricing-fixture",
+          "fact-pipedrive-pricing.plans.advanced-pipedrive-pricing-fixture",
+          "fact-pipedrive-pricing.plans.professional-pipedrive-pricing-fixture",
+          "fact-pipedrive-pricing.plans.power-pipedrive-pricing-fixture",
+          "fact-pipedrive-pricing.plans.enterprise-pipedrive-pricing-fixture",
+          "fact-pipedrive-pricing.currency-pipedrive-pricing-fixture",
+          "fact-pipedrive-pricing.hasFreeTrial-pipedrive-pricing-fixture",
+          "fact-pipedrive-pricing.hasFreePlan-pipedrive-pricing-fixture",
+          "fact-pipedrive-pricing.model-pipedrive-pricing-fixture",
+          "fact-pipedrive-identity.shortDescription-pipedrive-product-fixture",
+          "fact-pipedrive-positioning.claim-pipedrive-product-fixture",
+          "fact-pipedrive-features.contact-management-pipedrive-product-fixture",
+          "fact-pipedrive-features.lead-management-pipedrive-product-fixture",
+          "fact-pipedrive-features.pipeline-management-pipedrive-product-fixture",
+          "fact-pipedrive-features.deal-management-pipedrive-product-fixture",
+          "fact-pipedrive-features.email-sync-pipedrive-product-fixture",
+          "fact-pipedrive-features.workflow-automation-pipedrive-product-fixture",
+          "fact-pipedrive-features.reporting-pipedrive-product-fixture",
+          "fact-pipedrive-features.forecasting-pipedrive-product-fixture",
+          "fact-pipedrive-features.custom-fields-pipedrive-product-fixture",
+          "fact-pipedrive-features.custom-pipelines-pipedrive-product-fixture",
+          "fact-pipedrive-features.mobile-app-pipedrive-product-fixture",
+          "fact-pipedrive-features.ai-assistance-pipedrive-product-fixture",
+          "fact-pipedrive-ai.email-generation-pipedrive-product-fixture",
+          "fact-pipedrive-ai.assistant-pipedrive-product-fixture",
+          "fact-pipedrive-ai.forecasting-pipedrive-product-fixture",
+          "fact-pipedrive-ai.automation-pipedrive-product-fixture"
+        ],
+        "methodologySlug": "crm-editorial",
+        "methodologyVersion": "1.0.0",
+        "agentVersion": "1.0.0",
+        "contextBuiltAt": "2026-08-13T12:26:39.316Z"
+      },
+      "blockers": [],
+      "warnings": [],
+      "agentTaskId": "exec-comparison-agent-capsule-vs-pipedrive-1786623999312",
+      "draftId": "draft-deterministic-v1-comparison-agent-capsule-vs-pipedrive-2026-08-13T12-26-39-317Z",
+      "startedAt": "2026-08-13T12:26:39.311Z",
+      "completedAt": "2026-08-13T12:26:39.320Z",
+      "revisionAttempts": 0
+    },
+    {
+      "id": "comparison:capsule-vs-salesflare",
+      "definitionStepId": "comparisons",
+      "handler": "agent-run",
+      "label": "Comparison capsule-vs-salesflare",
+      "status": "completed",
+      "required": false,
+      "failurePolicy": "continue-with-warning",
+      "attempt": 1,
+      "maxAttempts": 2,
+      "dependsOn": [
+        "content-plan"
+      ],
+      "priority": "normal",
+      "config": {
+        "agentId": "comparison-agent",
+        "targetSlug": "capsule-vs-salesflare",
+        "maxAutomaticRevisions": 1,
+        "expandFromContentPlan": true,
+        "expandKind": "comparisons",
+        "stopAfterApproval": true,
+        "allowNormalizedFacts": false,
+        "optionalWhenBlocked": true,
+        "forceTransientFailOnce": false
+      },
+      "expansionKey": "capsule-vs-salesflare",
+      "inputRefs": {},
+      "outputRefs": {
+        "draftId": "draft-deterministic-v1-comparison-agent-capsule-vs-salesflare-2026-08-13T12-26-39-329Z",
+        "qaStatus": "pass",
+        "agentId": "comparison-agent",
+        "target": "capsule-vs-salesflare"
+      },
+      "inputSnapshot": {
+        "researchFactIds": [
+          "fact-capsule-pricing.plans.professional-capsule-pricing-fixture",
+          "fact-capsule-pricing.plans.ultimate-capsule-pricing-fixture",
+          "fact-capsule-pricing.plans.enterprise-capsule-pricing-fixture",
+          "fact-capsule-pricing.currency-capsule-pricing-fixture",
+          "fact-capsule-pricing.hasFreeTrial-capsule-pricing-fixture",
+          "fact-capsule-pricing.hasFreePlan-capsule-pricing-fixture",
+          "fact-capsule-pricing.model-capsule-pricing-fixture",
+          "fact-capsule-identity.shortDescription-capsule-product-fixture",
+          "fact-capsule-positioning.claim-capsule-product-fixture",
+          "fact-capsule-features.contact-management-capsule-product-fixture",
+          "fact-capsule-features.lead-management-capsule-product-fixture",
+          "fact-capsule-features.pipeline-management-capsule-product-fixture",
+          "fact-capsule-features.deal-management-capsule-product-fixture",
+          "fact-capsule-features.email-sync-capsule-product-fixture",
+          "fact-capsule-features.workflow-automation-capsule-product-fixture",
+          "fact-capsule-features.reporting-capsule-product-fixture",
+          "fact-capsule-features.custom-fields-capsule-product-fixture",
+          "fact-capsule-features.mobile-app-capsule-product-fixture",
+          "fact-capsule-features.ai-assistance-capsule-product-fixture",
+          "fact-capsule-ai.assistant-capsule-product-fixture",
+          "fact-salesflare-pricing.plans.growth-salesflare-pricing-fixture",
+          "fact-salesflare-pricing.plans.pro-salesflare-pricing-fixture",
+          "fact-salesflare-pricing.plans.enterprise-salesflare-pricing-fixture",
+          "fact-salesflare-pricing.currency-salesflare-pricing-fixture",
+          "fact-salesflare-pricing.hasFreeTrial-salesflare-pricing-fixture",
+          "fact-salesflare-pricing.hasFreePlan-salesflare-pricing-fixture",
+          "fact-salesflare-pricing.model-salesflare-pricing-fixture",
+          "fact-salesflare-identity.shortDescription-salesflare-product-fixture",
+          "fact-salesflare-positioning.claim-salesflare-product-fixture",
+          "fact-salesflare-features.contact-management-salesflare-product-fixture",
+          "fact-salesflare-features.lead-management-salesflare-product-fixture",
+          "fact-salesflare-features.pipeline-management-salesflare-product-fixture",
+          "fact-salesflare-features.deal-management-salesflare-product-fixture",
+          "fact-salesflare-features.email-sync-salesflare-product-fixture",
+          "fact-salesflare-features.workflow-automation-salesflare-product-fixture",
+          "fact-salesflare-features.reporting-salesflare-product-fixture",
+          "fact-salesflare-features.custom-fields-salesflare-product-fixture",
+          "fact-salesflare-features.mobile-app-salesflare-product-fixture",
+          "fact-salesflare-features.ai-assistance-salesflare-product-fixture",
+          "fact-salesflare-ai.assistant-salesflare-product-fixture",
+          "fact-salesflare-ai.automation-salesflare-product-fixture"
+        ],
+        "methodologySlug": "crm-editorial",
+        "methodologyVersion": "1.0.0",
+        "agentVersion": "1.0.0",
+        "contextBuiltAt": "2026-08-13T12:26:39.328Z"
+      },
+      "blockers": [],
+      "warnings": [],
+      "agentTaskId": "exec-comparison-agent-capsule-vs-salesflare-1786623999322",
+      "draftId": "draft-deterministic-v1-comparison-agent-capsule-vs-salesflare-2026-08-13T12-26-39-329Z",
+      "startedAt": "2026-08-13T12:26:39.322Z",
+      "completedAt": "2026-08-13T12:26:39.331Z",
+      "revisionAttempts": 0
+    },
+    {
+      "id": "comparison:capsule-vs-folk",
+      "definitionStepId": "comparisons",
+      "handler": "agent-run",
+      "label": "Comparison capsule-vs-folk",
+      "status": "completed",
+      "required": false,
+      "failurePolicy": "continue-with-warning",
+      "attempt": 1,
+      "maxAttempts": 2,
+      "dependsOn": [
+        "content-plan"
+      ],
+      "priority": "normal",
+      "config": {
+        "agentId": "comparison-agent",
+        "targetSlug": "capsule-vs-folk",
+        "maxAutomaticRevisions": 1,
+        "expandFromContentPlan": true,
+        "expandKind": "comparisons",
+        "stopAfterApproval": true,
+        "allowNormalizedFacts": false,
+        "optionalWhenBlocked": true,
+        "forceTransientFailOnce": false
+      },
+      "expansionKey": "capsule-vs-folk",
+      "inputRefs": {},
+      "outputRefs": {
+        "draftId": "draft-deterministic-v1-comparison-agent-capsule-vs-folk-2026-08-13T12-26-39-306Z",
+        "qaStatus": "pass",
+        "agentId": "comparison-agent",
+        "target": "capsule-vs-folk"
+      },
+      "inputSnapshot": {
+        "researchFactIds": [
+          "fact-capsule-pricing.plans.professional-capsule-pricing-fixture",
+          "fact-capsule-pricing.plans.ultimate-capsule-pricing-fixture",
+          "fact-capsule-pricing.plans.enterprise-capsule-pricing-fixture",
+          "fact-capsule-pricing.currency-capsule-pricing-fixture",
+          "fact-capsule-pricing.hasFreeTrial-capsule-pricing-fixture",
+          "fact-capsule-pricing.hasFreePlan-capsule-pricing-fixture",
+          "fact-capsule-pricing.model-capsule-pricing-fixture",
+          "fact-capsule-identity.shortDescription-capsule-product-fixture",
+          "fact-capsule-positioning.claim-capsule-product-fixture",
+          "fact-capsule-features.contact-management-capsule-product-fixture",
+          "fact-capsule-features.lead-management-capsule-product-fixture",
+          "fact-capsule-features.pipeline-management-capsule-product-fixture",
+          "fact-capsule-features.deal-management-capsule-product-fixture",
+          "fact-capsule-features.email-sync-capsule-product-fixture",
+          "fact-capsule-features.workflow-automation-capsule-product-fixture",
+          "fact-capsule-features.reporting-capsule-product-fixture",
+          "fact-capsule-features.custom-fields-capsule-product-fixture",
+          "fact-capsule-features.mobile-app-capsule-product-fixture",
+          "fact-capsule-features.ai-assistance-capsule-product-fixture",
+          "fact-capsule-ai.assistant-capsule-product-fixture",
+          "fact-folk-pricing.plans.standard-folk-pricing-fixture",
+          "fact-folk-pricing.plans.premium-folk-pricing-fixture",
+          "fact-folk-pricing.plans.custom-folk-pricing-fixture",
+          "fact-folk-pricing.currency-folk-pricing-fixture",
+          "fact-folk-pricing.hasFreeTrial-folk-pricing-fixture",
+          "fact-folk-pricing.hasFreePlan-folk-pricing-fixture",
+          "fact-folk-pricing.model-folk-pricing-fixture",
+          "fact-folk-identity.shortDescription-folk-product-fixture",
+          "fact-folk-positioning.claim-folk-product-fixture",
+          "fact-folk-features.contact-management-folk-product-fixture",
+          "fact-folk-features.lead-management-folk-product-fixture",
+          "fact-folk-features.pipeline-management-folk-product-fixture",
+          "fact-folk-features.deal-management-folk-product-fixture",
+          "fact-folk-features.email-sync-folk-product-fixture",
+          "fact-folk-features.workflow-automation-folk-product-fixture",
+          "fact-folk-features.reporting-folk-product-fixture",
+          "fact-folk-features.custom-fields-folk-product-fixture",
+          "fact-folk-features.mobile-app-folk-product-fixture",
+          "fact-folk-features.ai-assistance-folk-product-fixture",
+          "fact-folk-ai.assistant-folk-product-fixture",
+          "fact-folk-ai.email-generation-folk-product-fixture"
+        ],
+        "methodologySlug": "crm-editorial",
+        "methodologyVersion": "1.0.0",
+        "agentVersion": "1.0.0",
+        "contextBuiltAt": "2026-08-13T12:26:39.304Z"
+      },
+      "blockers": [],
+      "warnings": [],
+      "agentTaskId": "exec-comparison-agent-capsule-vs-folk-1786623999301",
+      "draftId": "draft-deterministic-v1-comparison-agent-capsule-vs-folk-2026-08-13T12-26-39-306Z",
+      "startedAt": "2026-08-13T12:26:39.300Z",
+      "completedAt": "2026-08-13T12:26:39.309Z",
+      "revisionAttempts": 0
+    },
+    {
+      "id": "internal-links",
+      "definitionStepId": "internal-links",
+      "handler": "internal-link",
+      "label": "Internal Link Plan",
+      "status": "completed",
+      "required": false,
+      "failurePolicy": "continue-with-warning",
+      "attempt": 1,
+      "maxAttempts": 2,
+      "dependsOn": [
+        "software-review"
+      ],
+      "priority": "low",
+      "config": {
+        "agentId": "internal-link-agent",
+        "maxAutomaticRevisions": 1,
+        "expandFromContentPlan": false,
+        "expandKind": "none",
+        "stopAfterApproval": true,
+        "allowNormalizedFacts": false,
+        "optionalWhenBlocked": false,
+        "forceTransientFailOnce": false
+      },
+      "inputRefs": {},
+      "outputRefs": {
+        "draftId": "draft-deterministic-v1-internal-link-agent-capsule-2026-08-13T12-26-39-354Z",
+        "qaStatus": "pass",
+        "agentId": "internal-link-agent",
+        "target": "capsule"
+      },
+      "inputSnapshot": {
+        "researchFactIds": [
+          "fact-capsule-pricing.plans.professional-capsule-pricing-fixture",
+          "fact-capsule-pricing.plans.ultimate-capsule-pricing-fixture",
+          "fact-capsule-pricing.plans.enterprise-capsule-pricing-fixture",
+          "fact-capsule-pricing.currency-capsule-pricing-fixture",
+          "fact-capsule-pricing.hasFreeTrial-capsule-pricing-fixture",
+          "fact-capsule-pricing.hasFreePlan-capsule-pricing-fixture",
+          "fact-capsule-pricing.model-capsule-pricing-fixture",
+          "fact-capsule-identity.shortDescription-capsule-product-fixture",
+          "fact-capsule-positioning.claim-capsule-product-fixture",
+          "fact-capsule-features.contact-management-capsule-product-fixture",
+          "fact-capsule-features.lead-management-capsule-product-fixture",
+          "fact-capsule-features.pipeline-management-capsule-product-fixture",
+          "fact-capsule-features.deal-management-capsule-product-fixture",
+          "fact-capsule-features.email-sync-capsule-product-fixture",
+          "fact-capsule-features.workflow-automation-capsule-product-fixture",
+          "fact-capsule-features.reporting-capsule-product-fixture",
+          "fact-capsule-features.custom-fields-capsule-product-fixture",
+          "fact-capsule-features.mobile-app-capsule-product-fixture",
+          "fact-capsule-features.ai-assistance-capsule-product-fixture",
+          "fact-capsule-ai.assistant-capsule-product-fixture"
+        ],
+        "methodologySlug": "crm-editorial",
+        "methodologyVersion": "1.0.0",
+        "agentVersion": "1.0.0",
+        "contextBuiltAt": "2026-08-13T12:26:39.354Z"
+      },
+      "blockers": [],
+      "warnings": [],
+      "agentTaskId": "exec-internal-link-agent-capsule-1786623999350",
+      "draftId": "draft-deterministic-v1-internal-link-agent-capsule-2026-08-13T12-26-39-354Z",
+      "startedAt": "2026-08-13T12:26:39.349Z",
+      "completedAt": "2026-08-13T12:26:39.356Z",
+      "revisionAttempts": 0
+    },
+    {
+      "id": "finder-readiness",
+      "definitionStepId": "finder-readiness",
+      "handler": "update-recommendation-readiness",
+      "label": "Finder readiness",
+      "status": "completed",
+      "required": false,
+      "failurePolicy": "continue",
+      "attempt": 1,
+      "maxAttempts": 2,
+      "dependsOn": [
+        "content-plan"
+      ],
+      "priority": "low",
+      "config": {
+        "maxAutomaticRevisions": 1,
+        "expandFromContentPlan": false,
+        "expandKind": "none",
+        "stopAfterApproval": true,
+        "allowNormalizedFacts": false,
+        "optionalWhenBlocked": false,
+        "forceTransientFailOnce": false
+      },
+      "inputRefs": {},
+      "outputRefs": {
+        "finderReadiness": "checked"
+      },
+      "blockers": [],
+      "warnings": [],
+      "startedAt": "2026-08-13T12:26:39.346Z",
+      "completedAt": "2026-08-13T12:26:39.347Z",
+      "revisionAttempts": 0
+    },
+    {
+      "id": "editorial-approval",
+      "definitionStepId": "editorial-approval",
+      "handler": "approval-check",
+      "label": "Editorial approval",
+      "status": "waiting",
+      "required": true,
+      "failurePolicy": "manual-review",
+      "attempt": 1,
+      "maxAttempts": 2,
+      "dependsOn": [
+        "software-review"
+      ],
+      "priority": "critical",
+      "config": {
+        "approvalType": "editorial",
+        "maxAutomaticRevisions": 1,
+        "expandFromContentPlan": false,
+        "expandKind": "none",
+        "stopAfterApproval": true,
+        "allowNormalizedFacts": false,
+        "optionalWhenBlocked": false,
+        "forceTransientFailOnce": false
+      },
+      "inputRefs": {},
+      "outputRefs": {
+        "approvalId": "appr-wf-software-onboarding-content-capsule-1786623998982-software-review",
+        "draftId": "draft-deterministic-v1-software-review-agent-capsule-2026-08-13T12-26-39-283Z"
+      },
+      "blockers": [],
+      "warnings": [],
+      "approvalId": "appr-wf-software-onboarding-content-capsule-1786623998982-software-review",
+      "startedAt": "2026-08-13T12:26:39.361Z",
+      "completedAt": "2026-08-13T12:26:39.377Z",
+      "revisionAttempts": 0
+    },
+    {
+      "id": "pre-publish-validation",
+      "definitionStepId": "pre-publish-validation",
+      "handler": "pre-publish-validation",
+      "label": "Pre-publish validation",
+      "status": "pending",
+      "required": true,
+      "failurePolicy": "block-workflow",
+      "attempt": 0,
+      "maxAttempts": 2,
+      "dependsOn": [
+        "editorial-approval"
+      ],
+      "priority": "critical",
+      "config": {
+        "maxAutomaticRevisions": 1,
+        "expandFromContentPlan": false,
+        "expandKind": "none",
+        "stopAfterApproval": true,
+        "allowNormalizedFacts": false,
+        "optionalWhenBlocked": false,
+        "forceTransientFailOnce": false
+      },
+      "inputRefs": {},
+      "outputRefs": {},
+      "blockers": [],
+      "warnings": [],
+      "revisionAttempts": 0
+    }
+  ],
+  "history": [
+    {
+      "at": "2026-08-13T12:26:39.202Z",
+      "event": "workflow_created",
+      "message": "Created software-onboarding-content:v1.0.0"
+    },
+    {
+      "at": "2026-08-13T12:26:39.212Z",
+      "event": "workflow_started",
+      "message": "Workflow execution started"
+    },
+    {
+      "at": "2026-08-13T12:26:39.214Z",
+      "event": "workflow_step_started",
+      "stepId": "software-onboarding",
+      "message": "Started Software onboarding"
+    },
+    {
+      "at": "2026-08-13T12:26:39.234Z",
+      "event": "workflow_step_completed",
+      "stepId": "software-onboarding",
+      "message": "Reused onboarding run onboard-capsule-1786623694207 (review-required)"
+    },
+    {
+      "at": "2026-08-13T12:26:39.236Z",
+      "event": "workflow_step_started",
+      "stepId": "content-plan",
+      "message": "Started Content plan"
+    },
+    {
+      "at": "2026-08-13T12:26:39.263Z",
+      "event": "workflow_step_completed",
+      "stepId": "content-plan",
+      "message": "Content plan from onboarding onboard-capsule-1786623694207 (9 candidates)"
+    },
+    {
+      "at": "2026-08-13T12:26:39.264Z",
+      "event": "workflow_step_started",
+      "stepId": "software-review",
+      "message": "Started Software Review"
+    },
+    {
+      "at": "2026-08-13T12:26:39.288Z",
+      "event": "workflow_step_completed",
+      "stepId": "software-review",
+      "message": "Agent software-review-agent → draft draft-deterministic-v1-software-review-agent-capsule-2026-08-13T12-26-39-283Z (qa=pass)"
+    },
+    {
+      "at": "2026-08-13T12:26:39.290Z",
+      "event": "workflow_step_started",
+      "stepId": "alternatives",
+      "message": "Started Alternatives"
+    },
+    {
+      "at": "2026-08-13T12:26:39.299Z",
+      "event": "workflow_step_completed",
+      "stepId": "alternatives",
+      "message": "Agent alternatives-agent → draft draft-deterministic-v1-alternatives-agent-capsule-2026-08-13T12-26-39-298Z (qa=pass)"
+    },
+    {
+      "at": "2026-08-13T12:26:39.300Z",
+      "event": "workflow_step_started",
+      "stepId": "comparison:capsule-vs-folk",
+      "message": "Started Comparison capsule-vs-folk"
+    },
+    {
+      "at": "2026-08-13T12:26:39.309Z",
+      "event": "workflow_step_completed",
+      "stepId": "comparison:capsule-vs-folk",
+      "message": "Agent comparison-agent → draft draft-deterministic-v1-comparison-agent-capsule-vs-folk-2026-08-13T12-26-39-306Z (qa=pass)"
+    },
+    {
+      "at": "2026-08-13T12:26:39.311Z",
+      "event": "workflow_step_started",
+      "stepId": "comparison:capsule-vs-pipedrive",
+      "message": "Started Comparison capsule-vs-pipedrive"
+    },
+    {
+      "at": "2026-08-13T12:26:39.320Z",
+      "event": "workflow_step_completed",
+      "stepId": "comparison:capsule-vs-pipedrive",
+      "message": "Agent comparison-agent → draft draft-deterministic-v1-comparison-agent-capsule-vs-pipedrive-2026-08-13T12-26-39-317Z (qa=pass)"
+    },
+    {
+      "at": "2026-08-13T12:26:39.321Z",
+      "event": "workflow_step_started",
+      "stepId": "comparison:capsule-vs-salesflare",
+      "message": "Started Comparison capsule-vs-salesflare"
+    },
+    {
+      "at": "2026-08-13T12:26:39.331Z",
+      "event": "workflow_step_completed",
+      "stepId": "comparison:capsule-vs-salesflare",
+      "message": "Agent comparison-agent → draft draft-deterministic-v1-comparison-agent-capsule-vs-salesflare-2026-08-13T12-26-39-329Z (qa=pass)"
+    },
+    {
+      "at": "2026-08-13T12:26:39.332Z",
+      "event": "workflow_step_started",
+      "stepId": "pricing-page",
+      "message": "Started Pricing Page"
+    },
+    {
+      "at": "2026-08-13T12:26:39.339Z",
+      "event": "workflow_step_completed",
+      "stepId": "pricing-page",
+      "message": "Agent pricing-page-agent → draft draft-deterministic-v1-pricing-page-agent-capsule-2026-08-13T12-26-39-337Z (qa=pass)"
+    },
+    {
+      "at": "2026-08-13T12:26:39.346Z",
+      "event": "workflow_step_started",
+      "stepId": "finder-readiness",
+      "message": "Started Finder readiness"
+    },
+    {
+      "at": "2026-08-13T12:26:39.348Z",
+      "event": "workflow_step_completed",
+      "stepId": "finder-readiness",
+      "message": "Finder readiness noted for capsule"
+    },
+    {
+      "at": "2026-08-13T12:26:39.348Z",
+      "event": "workflow_step_started",
+      "stepId": "internal-links",
+      "message": "Started Internal Link Plan"
+    },
+    {
+      "at": "2026-08-13T12:26:39.356Z",
+      "event": "workflow_step_completed",
+      "stepId": "internal-links",
+      "message": "Agent internal-link-agent → draft draft-deterministic-v1-internal-link-agent-capsule-2026-08-13T12-26-39-354Z (qa=pass)"
+    },
+    {
+      "at": "2026-08-13T12:26:39.361Z",
+      "event": "workflow_step_started",
+      "stepId": "editorial-approval",
+      "message": "Started Editorial approval"
+    },
+    {
+      "at": "2026-08-13T12:26:39.377Z",
+      "event": "workflow_step_completed",
+      "stepId": "editorial-approval",
+      "message": "WAITING FOR EDITORIAL APPROVAL (appr-wf-software-onboarding-content-capsule-1786623998982-software-review)"
+    }
+  ],
+  "options": {
+    "generateReview": true,
+    "generatePricing": true,
+    "generateAlternatives": true,
+    "generateComparisons": true,
+    "runInternalLinks": true,
+    "stopAfterApproval": true,
+    "allowNormalizedFacts": false,
+    "dryRun": false,
+    "maxComparisons": 3,
+    "skipOnboarding": false
+  },
+  "supersededBy": "wf-software-onboarding-content-capsule-1786647439226",
+  "warnings": [],
+  "createdAt": "2026-08-13T12:26:39.202Z",
+  "updatedAt": "2026-08-13T18:57:19.412Z"
+}

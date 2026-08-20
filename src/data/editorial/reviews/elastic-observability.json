@@ -1,0 +1,297 @@
+{
+  "id": "review-elastic-observability-v1",
+  "productSlug": "elastic-observability",
+  "assessmentId": "assessment-elastic-observability-it-v1",
+  "editorialStatus": "approved",
+  "title": "Elastic Observability Review (2026)",
+  "h1": "Elastic Observability Review",
+  "intro": "Elastic Observability is evaluated here as an observability and infrastructure monitoring suite — Elastic Observability is Elastic’s metrics, logs, traces, and APM solution on Elastic Cloud — not the Elasticsearch search product alone. Elastic Cloud Hosted Standard publishes as low as $99/month for a small production config (120 GB storage / 2 zones on elastic.co/pricing/cloud-hosted). Serverless Observability is usage-based ingest (commonly cited ~$0.07–$0.09/GB). Self-managed Elastic Stack remains a separate OSS/licence path. Same observability-monitoring cluster as Datadog and Grafana Cloud. This review uses SoftwareGlimpse’s IT & Development methodology (ease of use, IT job fit, workflow depth, integrations, admin/security, scalability, value, AI), scoring products inside their job cluster rather than against unrelated peers. It is based on first-party research, not hands-on lab testing.",
+  "summary": "Choose Elastic Observability when Elastic Cloud telemetry (not search-only Elasticsearch) is the job — not Datadog host modules by default.",
+  "verdict": "Choose Elastic Observability when Elastic Cloud telemetry (not search-only Elasticsearch) is the job — not Datadog host modules by default. Compare Grafana Cloud for OSS-aligned managed telemetry; Datadog or Splunk Observability Cloud for host-priced suites. Scores reflect first-party documentation as of 2026-08-18 — not hands-on product testing. Confirm current packaging, host/GB rates and minimums on the vendor site before purchase.",
+  "overallScore": 7.6,
+  "criterionAssessments": [
+    {
+      "criterionSlug": "ease-of-use",
+      "score": 6,
+      "rationale": "Elastic Cloud plus cluster sizing is more ops-heavy than Datadog host tiles. Not a lab test.",
+      "supportingFactIds": [
+        "fact-elastic-observability-features.infrastructure-monitoring",
+        "fact-elastic-observability-pricing.model"
+      ],
+      "confidence": "medium",
+      "status": "approved",
+      "reviewedAt": "2026-08-18T20:00:00.000Z",
+      "reviewer": "editorial"
+    },
+    {
+      "criterionSlug": "it-job-fit",
+      "score": 8,
+      "rationale": "Observability solution on Elastic Cloud — cluster peer of Datadog/Grafana Cloud, not a search-only SKU.",
+      "supportingFactIds": [
+        "fact-elastic-observability-features.infrastructure-monitoring",
+        "fact-elastic-observability-pricing.model"
+      ],
+      "confidence": "medium",
+      "status": "approved",
+      "reviewedAt": "2026-08-18T20:00:00.000Z",
+      "reviewer": "editorial"
+    },
+    {
+      "criterionSlug": "workflow-depth",
+      "score": 8,
+      "rationale": "Logs, metrics, traces, and APM on Elastic are deep; Hosted vs Serverless vs self-managed is the packaging tax.",
+      "supportingFactIds": [
+        "fact-elastic-observability-features.apm-tracing",
+        "fact-elastic-observability-pricing.model"
+      ],
+      "confidence": "medium",
+      "status": "approved",
+      "reviewedAt": "2026-08-18T20:00:00.000Z",
+      "reviewer": "editorial"
+    },
+    {
+      "criterionSlug": "integrations",
+      "score": 8,
+      "rationale": "Beats/Agent, cloud, and API ecosystem are the integration story.",
+      "supportingFactIds": [
+        "fact-elastic-observability-features.analytics-reporting",
+        "fact-elastic-observability-pricing.model",
+        "fact-elastic-observability-positioning.vendorClaim"
+      ],
+      "confidence": "medium",
+      "status": "approved",
+      "reviewedAt": "2026-08-18T20:00:00.000Z",
+      "reviewer": "editorial"
+    },
+    {
+      "criterionSlug": "admin-security",
+      "score": 8,
+      "rationale": "Cloud subscription tiers gate support/SLA; enterprise security is real on paid Cloud.",
+      "supportingFactIds": [
+        "fact-elastic-observability-features.enterprise-security",
+        "fact-elastic-observability-pricing.model"
+      ],
+      "confidence": "medium",
+      "status": "approved",
+      "reviewedAt": "2026-08-18T20:00:00.000Z",
+      "reviewer": "editorial"
+    },
+    {
+      "criterionSlug": "scalability",
+      "score": 9,
+      "rationale": "Hosted resource scaling and serverless ingest both scale; TCO follows data.",
+      "supportingFactIds": [
+        "fact-elastic-observability-pricing.plans.self-managed-oss",
+        "fact-elastic-observability-pricing.model",
+        "fact-elastic-observability-pricing.plans.serverless-observability"
+      ],
+      "confidence": "medium",
+      "status": "approved",
+      "reviewedAt": "2026-08-18T20:00:00.000Z",
+      "reviewer": "editorial"
+    },
+    {
+      "criterionSlug": "value-for-money",
+      "score": 8,
+      "rationale": "Published $99 hosted floor plus OSS self-managed path is clearer than Dynatrace DPS. Affiliate economics excluded.",
+      "supportingFactIds": [
+        "fact-elastic-observability-pricing.hasFreePlan",
+        "fact-elastic-observability-pricing.model",
+        "fact-elastic-observability-pricing.startingPriceMonthly"
+      ],
+      "confidence": "medium",
+      "status": "approved",
+      "reviewedAt": "2026-08-18T20:00:00.000Z",
+      "reviewer": "editorial"
+    },
+    {
+      "criterionSlug": "ai-capabilities",
+      "score": 6,
+      "rationale": "AI is not the Elastic Observability buying reason versus telemetry depth.",
+      "supportingFactIds": [
+        "fact-elastic-observability-features.itsm-ai",
+        "fact-elastic-observability-pricing.model"
+      ],
+      "confidence": "medium",
+      "status": "approved",
+      "reviewedAt": "2026-08-18T20:00:00.000Z",
+      "reviewer": "editorial"
+    }
+  ],
+  "bestFor": [
+    "Teams already on Elasticsearch who want Observability as the Cloud solution",
+    "Buyers comparing Grafana Cloud OSS-aligned stacks to Elastic Cloud",
+    "Orgs that will actually size the $99 hosted config versus serverless ingest"
+  ],
+  "notIdealFor": [
+    "Search-only Elasticsearch buyers who do not need observability",
+    "Teams that want Datadog’s published per-host Infrastructure Pro tile only",
+    "ITSM or git purchases"
+  ],
+  "pros": [
+    "Published Hosted Standard from $99/mo",
+    "Observability identity distinct from search-only",
+    "Serverless ingest option",
+    "Self-managed OSS path",
+    "Strong log/metrics/trace depth"
+  ],
+  "cons": [
+    "$99 is not all-in TCO",
+    "Cluster sizing learning curve",
+    "AI is not a lead feature",
+    "Not Datadog host-SKU simplicity",
+    "Not ITSM/git/hosting"
+  ],
+  "keyFeatures": [
+    "Elastic Cloud Hosted Observability",
+    "Logs, metrics, and traces",
+    "APM",
+    "Serverless Observability ingest",
+    "Self-managed Elastic Stack option"
+  ],
+  "limitations": [
+    "This entity is Elastic Observability on Cloud — not “Elasticsearch search product only”",
+    "$99 Hosted Standard is a small 120 GB / 2-zone floor; real TCO follows resources",
+    "Serverless ingest rates are a different SKU from Hosted Standard $99",
+    "Self-managed OSS is people/infra cost, not a SaaS seat",
+    "Not ITSM, git, hosting panel, or managed hosting"
+  ],
+  "pricingSummary": "Elastic Cloud Hosted Standard from $99/mo (small 120 GB / 2-zone config). Serverless Observability usage-based ingest. Self-managed OSS path. Confirm live on elastic.co/pricing.",
+  "whoShouldChoose": "Choose Elastic Observability when Elastic Cloud telemetry (not search-only Elasticsearch) is the job — not Datadog host modules by default.",
+  "whoShouldConsiderAlternatives": "Compare Grafana Cloud for OSS-aligned managed telemetry; Datadog or Splunk Observability Cloud for host-priced suites.",
+  "alternativeSlugs": [
+    "datadog",
+    "grafana-cloud",
+    "splunk"
+  ],
+  "comparisonSlugs": [
+    "datadog-vs-elastic-observability",
+    "elastic-observability-vs-grafana-cloud",
+    "elastic-observability-vs-splunk"
+  ],
+  "relatedGuidePaths": [
+    "/categories/it-development/",
+    "/best/it-development-software/",
+    "/use-cases/observability-monitoring/",
+    "/use-cases/incident-oncall/",
+    "/use-cases/source-control-devops/",
+    "/use-cases/hosting-operations/",
+    "/use-cases/hosting-providers/",
+    "/use-cases/web-data-collection/"
+  ],
+  "methodologySlug": "it-development-editorial",
+  "methodologyVersion": "1.0.0",
+  "researchSourceIds": [
+    "elastic-observability-product-official",
+    "elastic-observability-pricing-official",
+    "elastic-pricing",
+    "elastic-cloud-hosted-pricing"
+  ],
+  "factRefs": [
+    {
+      "section": "pricing",
+      "factIds": [
+        "fact-elastic-observability-pricing.model",
+        "fact-elastic-observability-pricing.hasFreePlan",
+        "fact-elastic-observability-pricing.hasFreeTrial",
+        "fact-elastic-observability-pricing.startingPriceMonthly",
+        "fact-elastic-observability-pricing.plans.self-managed-oss",
+        "fact-elastic-observability-pricing.plans.cloud-hosted-standard",
+        "fact-elastic-observability-pricing.plans.serverless-observability"
+      ]
+    },
+    {
+      "section": "overview",
+      "factIds": [
+        "fact-elastic-observability-identity.shortDescription",
+        "fact-elastic-observability-positioning.vendorClaim",
+        "fact-elastic-observability-positioning.jobCluster"
+      ]
+    },
+    {
+      "section": "features",
+      "factIds": [
+        "fact-elastic-observability-features.incident-management",
+        "fact-elastic-observability-features.change-problem",
+        "fact-elastic-observability-features.service-catalog",
+        "fact-elastic-observability-features.infrastructure-monitoring",
+        "fact-elastic-observability-features.apm-tracing",
+        "fact-elastic-observability-features.log-management",
+        "fact-elastic-observability-features.source-control",
+        "fact-elastic-observability-features.cicd-actions",
+        "fact-elastic-observability-features.hosting-panel",
+        "fact-elastic-observability-features.managed-hosting",
+        "fact-elastic-observability-features.proxy-network",
+        "fact-elastic-observability-features.itsm-ai",
+        "fact-elastic-observability-features.dev-ai",
+        "fact-elastic-observability-features.oncall-paging",
+        "fact-elastic-observability-features.enterprise-security",
+        "fact-elastic-observability-features.analytics-reporting"
+      ]
+    }
+  ],
+  "faq": [
+    {
+      "question": "Is Elastic Observability IT / development software?",
+      "answer": "Yes. Elastic Observability is evaluated as an observability and infrastructure monitoring suite."
+    },
+    {
+      "question": "How is Elastic Observability priced?",
+      "answer": "Elastic Cloud Hosted Standard from $99/mo (small 120 GB / 2-zone config). Serverless Observability usage-based ingest. Self-managed OSS path. Confirm live on elastic.co/pricing."
+    },
+    {
+      "question": "Does Elastic Observability have a free plan or free trial?",
+      "answer": "Yes — a free plan is published. A free trial is documented. Confirm current terms with the vendor."
+    },
+    {
+      "question": "Did SoftwareGlimpse personally test Elastic Observability?",
+      "answer": "No. This review is based on first-party product and pricing research evidence, not hands-on product usage. Affiliate relationships never influence scores."
+    }
+  ],
+  "sections": [
+    {
+      "id": "overview",
+      "heading": "Overview",
+      "body": "Elastic Observability is Elastic’s metrics, logs, traces, and APM solution on Elastic Cloud — not the Elasticsearch search product alone. Elastic Cloud Hosted Standard publishes as low as $99/month for a small production config (120 GB storage / 2 zones on elastic.co/pricing/cloud-hosted). Serverless Observability is usage-based ingest (commonly cited ~$0.07–$0.09/GB). Self-managed Elastic Stack remains a separate OSS/licence path. Same observability-monitoring cluster as Datadog and Grafana Cloud."
+    },
+    {
+      "id": "best-for",
+      "heading": "Who it’s for",
+      "body": "• Teams already on Elasticsearch who want Observability as the Cloud solution\n• Buyers comparing Grafana Cloud OSS-aligned stacks to Elastic Cloud\n• Orgs that will actually size the $99 hosted config versus serverless ingest"
+    },
+    {
+      "id": "features",
+      "heading": "Feature coverage",
+      "body": "• incident-management: limited\n• change-problem: not-supported\n• service-catalog: not-supported\n• infrastructure-monitoring: supported\n• apm-tracing: supported\n• log-management: supported\n• source-control: not-supported\n• cicd-actions: limited\n• hosting-panel: not-supported\n• managed-hosting: not-supported\n• proxy-network: not-supported\n• itsm-ai: limited\n• dev-ai: limited\n• oncall-paging: limited\n• enterprise-security: supported\n• analytics-reporting: supported"
+    },
+    {
+      "id": "pricing",
+      "heading": "Pricing",
+      "body": "Elastic Cloud Hosted Standard from $99/mo (small 120 GB / 2-zone config). Serverless Observability usage-based ingest. Self-managed OSS path. Confirm live on elastic.co/pricing."
+    },
+    {
+      "id": "limitations",
+      "heading": "Limitations",
+      "body": "• This entity is Elastic Observability on Cloud — not “Elasticsearch search product only”\n• $99 Hosted Standard is a small 120 GB / 2-zone floor; real TCO follows resources\n• Serverless ingest rates are a different SKU from Hosted Standard $99\n• Self-managed OSS is people/infra cost, not a SaaS seat\n• Not ITSM, git, hosting panel, or managed hosting"
+    }
+  ],
+  "confidence": "medium",
+  "handsOnTesting": false,
+  "contentVersion": 1,
+  "refreshNeeded": false,
+  "lastUpdatedAt": "2026-08-18T20:00:00.000Z",
+  "metadata": {
+    "status": "published",
+    "publishedAt": "2026-08-18T00:00:00.000Z",
+    "updatedAt": "2026-08-18T20:00:00.000Z",
+    "reviewedAt": "2026-08-18T20:00:00.000Z",
+    "author": "author-lee-meyeridricks",
+    "researchStatus": "complete"
+  },
+  "seo": {
+    "title": "Elastic Observability Review (2026) — IT & Development",
+    "description": "Elastic Observability IT & development review on SoftwareGlimpse: strengths, trade-offs, pricing posture, and who should buy.",
+    "canonicalPath": "/software/elastic-observability/",
+    "indexable": true
+  }
+}

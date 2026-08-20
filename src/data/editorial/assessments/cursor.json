@@ -1,0 +1,178 @@
+{
+  "id": "assessment-cursor-ai-v1",
+  "productSlug": "cursor",
+  "methodologySlug": "ai-editorial",
+  "methodologyVersion": "1.0.0",
+  "status": "approved",
+  "verdict": "Cursor: Choose Cursor when the job is an AI-native coding editor and agents — not GitHub Copilot-as-a-plugin and not ChatGPT. Scores use the AI editorial methodology from first-party research as of 2026-08-18 — not hands-on product testing.",
+  "strengths": [
+    "AI-native editor and Agent loop",
+    "Hobby free + $20 Pro floor",
+    "Teams admin and SSO",
+    "MCP / skills / cloud agents",
+    "Frontier model access on paid plans"
+  ],
+  "weaknesses": [
+    "Editor switch cost",
+    "Usage overage on Agents",
+    "Enterprise is quote-based",
+    "Weaker github.com-native PR Copilot",
+    "Not a meeting or image product"
+  ],
+  "bestFor": [
+    "Developers who want an AI-native editor rather than a plugin",
+    "Teams running Agent-heavy refactors with MCP/tools",
+    "Orgs ready for Teams SSO and privacy modes"
+  ],
+  "notIdealFor": [
+    "Teams that refuse to leave VS Code/JetBrains + Copilot plugin",
+    "Procurement that only wants GitHub Enterprise Copilot SKUs",
+    "Non-coding LLM chat (ChatGPT / Perplexity)"
+  ],
+  "tradeoffs": [
+    "Published free tiers vs paid usage/credit caps",
+    "Bundled Workspace/One plans vs standalone assistant pricing",
+    "Credit/overage models vs predictable seat pricing",
+    "Enterprise admin controls vs individual consumer plans"
+  ],
+  "recommendation": "Choose Cursor when the job is an AI-native coding editor and agents — not GitHub Copilot-as-a-plugin and not ChatGPT. Compare GitHub Copilot if you must stay in current IDEs and GitHub policy; ChatGPT for general coding chat only.",
+  "editorialNotes": "AI Priority-2 batch. Approved on ai-editorial v1.0.0. membershipRole=primary. jobCluster=ai-code. handsOnTesting=false. Affiliate economics excluded.",
+  "handsOnTesting": false,
+  "confidence": "medium",
+  "criterionAssessments": [
+    {
+      "criterionSlug": "ease-of-use",
+      "score": 8,
+      "rationale": "VS Code-familiar editor with Agent-first UX; migration cost exists but onboarding is fast for VS Code users.",
+      "supportingFactIds": [
+        "fact-cursor-features.llm-chat",
+        "fact-cursor-pricing.model"
+      ],
+      "confidence": "medium",
+      "status": "approved",
+      "reviewedAt": "2026-08-18T12:00:00.000Z",
+      "reviewer": "editorial"
+    },
+    {
+      "criterionSlug": "ai-job-fit",
+      "score": 9,
+      "rationale": "AI-native coding editor — ai-code cluster peer of GitHub Copilot, not an LLM-assistant rank.",
+      "supportingFactIds": [
+        "fact-cursor-features.llm-chat",
+        "fact-cursor-pricing.model"
+      ],
+      "confidence": "medium",
+      "status": "approved",
+      "reviewedAt": "2026-08-18T12:00:00.000Z",
+      "reviewer": "editorial"
+    },
+    {
+      "criterionSlug": "output-quality",
+      "score": 9,
+      "rationale": "Frontier-model Agent and Tab are the quality story from vendor positioning — not a lab bake-off.",
+      "supportingFactIds": [
+        "fact-cursor-features.reasoning-models",
+        "fact-cursor-pricing.model"
+      ],
+      "confidence": "medium",
+      "status": "approved",
+      "reviewedAt": "2026-08-18T12:00:00.000Z",
+      "reviewer": "editorial"
+    },
+    {
+      "criterionSlug": "workflow-depth",
+      "score": 9,
+      "rationale": "Agent, Cloud Agents, MCP, skills, and hooks are deeper than plugin-style autocomplete.",
+      "supportingFactIds": [
+        "fact-cursor-features.custom-projects",
+        "fact-cursor-pricing.model"
+      ],
+      "confidence": "medium",
+      "status": "approved",
+      "reviewedAt": "2026-08-18T12:00:00.000Z",
+      "reviewer": "editorial"
+    },
+    {
+      "criterionSlug": "integrations",
+      "score": 8,
+      "rationale": "MCP and git remotes cover the coding loop; GitHub-native PR UI still belongs to Copilot/github.com.",
+      "supportingFactIds": [
+        "fact-cursor-features.connectors",
+        "fact-cursor-pricing.model",
+        "fact-cursor-positioning.vendorClaim"
+      ],
+      "confidence": "medium",
+      "status": "approved",
+      "reviewedAt": "2026-08-18T12:00:00.000Z",
+      "reviewer": "editorial"
+    },
+    {
+      "criterionSlug": "governance-privacy",
+      "score": 7,
+      "rationale": "Teams/Enterprise add SSO and privacy modes; consumer Pro is individual-grade.",
+      "supportingFactIds": [
+        "fact-cursor-features.enterprise-admin",
+        "fact-cursor-pricing.model"
+      ],
+      "confidence": "medium",
+      "status": "approved",
+      "reviewedAt": "2026-08-18T12:00:00.000Z",
+      "reviewer": "editorial"
+    },
+    {
+      "criterionSlug": "scalability",
+      "score": 8,
+      "rationale": "Hobby → Pro → Teams → Enterprise exists; usage economics matter at agent scale.",
+      "supportingFactIds": [
+        "fact-cursor-pricing.plans.hobby",
+        "fact-cursor-pricing.model",
+        "fact-cursor-pricing.plans.enterprise"
+      ],
+      "confidence": "medium",
+      "status": "approved",
+      "reviewedAt": "2026-08-18T12:00:00.000Z",
+      "reviewer": "editorial"
+    },
+    {
+      "criterionSlug": "value-for-money",
+      "score": 8,
+      "rationale": "Pro $20 matches ChatGPT Plus; Teams $40 is the procurement seat. Overage is the TCO watch-out. Affiliate economics excluded.",
+      "supportingFactIds": [
+        "fact-cursor-pricing.hasFreePlan",
+        "fact-cursor-pricing.model",
+        "fact-cursor-pricing.startingPriceMonthly"
+      ],
+      "confidence": "medium",
+      "status": "approved",
+      "reviewedAt": "2026-08-18T12:00:00.000Z",
+      "reviewer": "editorial"
+    },
+    {
+      "criterionSlug": "model-capability",
+      "score": 9,
+      "rationale": "Explicit frontier-model Agent access is a capability lead vs autocomplete-only tools.",
+      "supportingFactIds": [
+        "fact-cursor-features.reasoning-models",
+        "fact-cursor-pricing.model"
+      ],
+      "confidence": "medium",
+      "status": "approved",
+      "reviewedAt": "2026-08-18T12:00:00.000Z",
+      "reviewer": "editorial"
+    }
+  ],
+  "overallScore": 8.4,
+  "overallScoreRationale": "Weighted average of the nine AI editorial criteria using category weights (AI job fit 16, output quality 14, ease of use 12, workflow depth 12, integrations 10, governance/privacy 10, value 10, model capability 8, scalability 8), rounded to 1 decimal. Products are scored inside their job cluster — LLM assistants, writing, voice, presentations, websites, ad creative, and agent builders are not forced into one undifferentiated ranking. Not a hands-on lab score, and affiliate economics are excluded.",
+  "scoreAudit": [
+    {
+      "at": "2026-08-18T12:00:00.000Z",
+      "actor": "editorial",
+      "change": "AI Priority-2 onboarding; approved AI criteria with category weights; handsOnTesting=false",
+      "nextOverall": 8.4
+    }
+  ],
+  "reviewedAt": "2026-08-18T12:00:00.000Z",
+  "reviewer": "editorial",
+  "createdAt": "2026-08-18T12:00:00.000Z",
+  "updatedAt": "2026-08-18T12:00:00.000Z"
+}

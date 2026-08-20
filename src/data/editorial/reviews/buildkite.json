@@ -1,0 +1,294 @@
+{
+  "id": "review-buildkite-v1",
+  "productSlug": "buildkite",
+  "assessmentId": "assessment-buildkite-it-v1",
+  "editorialStatus": "approved",
+  "title": "Buildkite Review (2026)",
+  "h1": "Buildkite Review",
+  "intro": "Buildkite is evaluated here as a source control and DevOps collaboration platform — Buildkite is a CI/CD platform (pipelines, self-hosted agents, hosted agents) — not a Git host. It lives in source-control-devops so DevOps buyers can compare it with CircleCI, GitHub Actions, and GitLab CI, while remaining landscape-aware that GitHub the SCM is a different primary shape. Free plan exists. Pro is $30/active user/month. Enterprise custom. 30-day all-access trial. Same cluster as GitHub — GitHub remains the award (9.1); this entity does not outrank it. Distinct from CircleCI’s $15 Performance credit tile. This review uses SoftwareGlimpse’s IT & Development methodology (ease of use, IT job fit, workflow depth, integrations, admin/security, scalability, value, AI), scoring products inside their job cluster rather than against unrelated peers. It is based on first-party research, not hands-on lab testing.",
+  "summary": "Choose Buildkite when hybrid CI/CD (self-hosted + hosted agents) is the job — not GitHub the SCM by default, even though both sit in source-control-devops.",
+  "verdict": "Choose Buildkite when hybrid CI/CD (self-hosted + hosted agents) is the job — not GitHub the SCM by default, even though both sit in source-control-devops. Compare CircleCI for specialist hosted CI credits; GitHub or GitLab when you need repos plus CI in one licence; Azure DevOps for that ecosystem. Scores reflect first-party documentation as of 2026-08-18 — not hands-on product testing. Confirm current packaging, host/GB rates and minimums on the vendor site before purchase.",
+  "overallScore": 7.6,
+  "criterionAssessments": [
+    {
+      "criterionSlug": "ease-of-use",
+      "score": 8,
+      "rationale": "Pipeline YAML plus agent install is familiar to CI specialists; not a git-host onboarding path. Not a lab test.",
+      "supportingFactIds": [
+        "fact-buildkite-features.source-control",
+        "fact-buildkite-pricing.model"
+      ],
+      "confidence": "medium",
+      "status": "approved",
+      "reviewedAt": "2026-08-18T22:00:00.000Z",
+      "reviewer": "editorial"
+    },
+    {
+      "criterionSlug": "it-job-fit",
+      "score": 8,
+      "rationale": "CI/CD inside source-control-devops — peer path vs CircleCI/Actions, not a GitHub SCM replacement.",
+      "supportingFactIds": [
+        "fact-buildkite-features.source-control",
+        "fact-buildkite-pricing.model"
+      ],
+      "confidence": "medium",
+      "status": "approved",
+      "reviewedAt": "2026-08-18T22:00:00.000Z",
+      "reviewer": "editorial"
+    },
+    {
+      "criterionSlug": "workflow-depth",
+      "score": 8,
+      "rationale": "Self-hosted + hosted agents, pipelines, and queues are deep for CI; no repo/PR system of record.",
+      "supportingFactIds": [
+        "fact-buildkite-features.cicd-actions",
+        "fact-buildkite-pricing.model"
+      ],
+      "confidence": "medium",
+      "status": "approved",
+      "reviewedAt": "2026-08-18T22:00:00.000Z",
+      "reviewer": "editorial"
+    },
+    {
+      "criterionSlug": "integrations",
+      "score": 8,
+      "rationale": "Native GitHub/GitLab plus Slack/API for pipeline notifications.",
+      "supportingFactIds": [
+        "fact-buildkite-features.analytics-reporting",
+        "fact-buildkite-pricing.model",
+        "fact-buildkite-positioning.vendorClaim"
+      ],
+      "confidence": "medium",
+      "status": "approved",
+      "reviewedAt": "2026-08-18T22:00:00.000Z",
+      "reviewer": "editorial"
+    },
+    {
+      "criterionSlug": "admin-security",
+      "score": 8,
+      "rationale": "Self-hosted agents keep build compute in your network — a real security story versus hosted-only CI.",
+      "supportingFactIds": [
+        "fact-buildkite-features.enterprise-security",
+        "fact-buildkite-pricing.model"
+      ],
+      "confidence": "medium",
+      "status": "approved",
+      "reviewedAt": "2026-08-18T22:00:00.000Z",
+      "reviewer": "editorial"
+    },
+    {
+      "criterionSlug": "scalability",
+      "score": 8,
+      "rationale": "Pro → Enterprise plus your own agents; active-user definition still meters cost.",
+      "supportingFactIds": [
+        "fact-buildkite-pricing.plans.free",
+        "fact-buildkite-pricing.model",
+        "fact-buildkite-pricing.plans.enterprise"
+      ],
+      "confidence": "medium",
+      "status": "approved",
+      "reviewedAt": "2026-08-18T22:00:00.000Z",
+      "reviewer": "editorial"
+    },
+    {
+      "criterionSlug": "value-for-money",
+      "score": 8,
+      "rationale": "Free plus published $30 Pro floor is a clear CI entry; hybrid agents can beat hosted-minute TCO. Affiliate economics excluded.",
+      "supportingFactIds": [
+        "fact-buildkite-pricing.hasFreePlan",
+        "fact-buildkite-pricing.model",
+        "fact-buildkite-pricing.startingPriceMonthly"
+      ],
+      "confidence": "medium",
+      "status": "approved",
+      "reviewedAt": "2026-08-18T22:00:00.000Z",
+      "reviewer": "editorial"
+    },
+    {
+      "criterionSlug": "ai-capabilities",
+      "score": 5,
+      "rationale": "No meaningful dev-AI copilot versus GitHub Copilot — scored low on purpose.",
+      "supportingFactIds": [
+        "fact-buildkite-features.dev-ai",
+        "fact-buildkite-pricing.model"
+      ],
+      "confidence": "medium",
+      "status": "approved",
+      "reviewedAt": "2026-08-18T22:00:00.000Z",
+      "reviewer": "editorial"
+    }
+  ],
+  "bestFor": [
+    "Teams that want specialist CI/CD with self-hosted agents against an existing git remote",
+    "Buyers comparing Buildkite Pro $30 to CircleCI Performance $15 and GitHub Actions minutes",
+    "Orgs that will not move source control in order to buy CI"
+  ],
+  "notIdealFor": [
+    "Teams whose primary purchase is a git host (GitHub / GitLab)",
+    "Observability or on-call purchases",
+    "Hosting panel or managed WordPress hosting"
+  ],
+  "pros": [
+    "Published Pro $30/active user floor",
+    "Free plan and 30-day all-access trial",
+    "Self-hosted + hosted agents",
+    "Works with existing git hosts",
+    "Clear identity vs SCM"
+  ],
+  "cons": [
+    "Not a git host",
+    "Does not outrank GitHub",
+    "Active-user TCO above $30",
+    "AI not a lead feature",
+    "Not observability/hosting"
+  ],
+  "keyFeatures": [
+    "CI/CD pipelines",
+    "Self-hosted agents",
+    "Hosted agents",
+    "Pro $30/active user",
+    "VCS integrations (GitHub/GitLab)"
+  ],
+  "limitations": [
+    "Not a git host — you still need GitHub, GitLab, or Bitbucket for source control",
+    "Same source-control-devops cluster as GitHub, but GitHub the SCM is a different primary shape",
+    "Does not outrank GitHub (9.1)",
+    "Pro $30/active user is not unlimited CI; agent/minute math still exists",
+    "Not observability, on-call, hosting panel, or managed hosting"
+  ],
+  "pricingSummary": "Free plan. Pro from $30/active user/mo. Enterprise quote. 30-day all-access trial. Confirm live on buildkite.com/pricing.",
+  "whoShouldChoose": "Choose Buildkite when hybrid CI/CD (self-hosted + hosted agents) is the job — not GitHub the SCM by default, even though both sit in source-control-devops.",
+  "whoShouldConsiderAlternatives": "Compare CircleCI for specialist hosted CI credits; GitHub or GitLab when you need repos plus CI in one licence; Azure DevOps for that ecosystem.",
+  "alternativeSlugs": [
+    "circleci",
+    "github"
+  ],
+  "comparisonSlugs": [
+    "buildkite-vs-circleci",
+    "buildkite-vs-github"
+  ],
+  "relatedGuidePaths": [
+    "/categories/it-development/",
+    "/best/it-development-software/",
+    "/use-cases/itsm-service-desk/",
+    "/use-cases/observability-monitoring/",
+    "/use-cases/incident-oncall/",
+    "/use-cases/source-control-devops/",
+    "/use-cases/hosting-providers/",
+    "/use-cases/web-data-collection/"
+  ],
+  "methodologySlug": "it-development-editorial",
+  "methodologyVersion": "1.0.0",
+  "researchSourceIds": [
+    "buildkite-product-official",
+    "buildkite-pricing-official",
+    "buildkite-pricing"
+  ],
+  "factRefs": [
+    {
+      "section": "pricing",
+      "factIds": [
+        "fact-buildkite-pricing.model",
+        "fact-buildkite-pricing.hasFreePlan",
+        "fact-buildkite-pricing.hasFreeTrial",
+        "fact-buildkite-pricing.startingPriceMonthly",
+        "fact-buildkite-pricing.plans.free",
+        "fact-buildkite-pricing.plans.pro",
+        "fact-buildkite-pricing.plans.enterprise"
+      ]
+    },
+    {
+      "section": "overview",
+      "factIds": [
+        "fact-buildkite-identity.shortDescription",
+        "fact-buildkite-positioning.vendorClaim",
+        "fact-buildkite-positioning.jobCluster"
+      ]
+    },
+    {
+      "section": "features",
+      "factIds": [
+        "fact-buildkite-features.incident-management",
+        "fact-buildkite-features.change-problem",
+        "fact-buildkite-features.service-catalog",
+        "fact-buildkite-features.infrastructure-monitoring",
+        "fact-buildkite-features.apm-tracing",
+        "fact-buildkite-features.log-management",
+        "fact-buildkite-features.source-control",
+        "fact-buildkite-features.cicd-actions",
+        "fact-buildkite-features.hosting-panel",
+        "fact-buildkite-features.managed-hosting",
+        "fact-buildkite-features.proxy-network",
+        "fact-buildkite-features.itsm-ai",
+        "fact-buildkite-features.dev-ai",
+        "fact-buildkite-features.oncall-paging",
+        "fact-buildkite-features.enterprise-security",
+        "fact-buildkite-features.analytics-reporting"
+      ]
+    }
+  ],
+  "faq": [
+    {
+      "question": "Is Buildkite IT / development software?",
+      "answer": "Yes. Buildkite is evaluated as a source control and DevOps collaboration platform."
+    },
+    {
+      "question": "How is Buildkite priced?",
+      "answer": "Free plan. Pro from $30/active user/mo. Enterprise quote. 30-day all-access trial. Confirm live on buildkite.com/pricing."
+    },
+    {
+      "question": "Does Buildkite have a free plan or free trial?",
+      "answer": "Yes — a free plan is published. A free trial is documented (about 30 days). Confirm current terms with the vendor."
+    },
+    {
+      "question": "Did SoftwareGlimpse personally test Buildkite?",
+      "answer": "No. This review is based on first-party product and pricing research evidence, not hands-on product usage. Affiliate relationships never influence scores."
+    }
+  ],
+  "sections": [
+    {
+      "id": "overview",
+      "heading": "Overview",
+      "body": "Buildkite is a CI/CD platform (pipelines, self-hosted agents, hosted agents) — not a Git host. It lives in source-control-devops so DevOps buyers can compare it with CircleCI, GitHub Actions, and GitLab CI, while remaining landscape-aware that GitHub the SCM is a different primary shape. Free plan exists. Pro is $30/active user/month. Enterprise custom. 30-day all-access trial. Same cluster as GitHub — GitHub remains the award (9.1); this entity does not outrank it. Distinct from CircleCI’s $15 Performance credit tile."
+    },
+    {
+      "id": "best-for",
+      "heading": "Who it’s for",
+      "body": "• Teams that want specialist CI/CD with self-hosted agents against an existing git remote\n• Buyers comparing Buildkite Pro $30 to CircleCI Performance $15 and GitHub Actions minutes\n• Orgs that will not move source control in order to buy CI"
+    },
+    {
+      "id": "features",
+      "heading": "Feature coverage",
+      "body": "• incident-management: not-supported\n• change-problem: not-supported\n• service-catalog: not-supported\n• infrastructure-monitoring: not-supported\n• apm-tracing: not-supported\n• log-management: limited\n• source-control: not-supported\n• cicd-actions: supported\n• hosting-panel: not-supported\n• managed-hosting: not-supported\n• proxy-network: not-supported\n• itsm-ai: not-supported\n• dev-ai: limited\n• oncall-paging: not-supported\n• enterprise-security: limited\n• analytics-reporting: supported"
+    },
+    {
+      "id": "pricing",
+      "heading": "Pricing",
+      "body": "Free plan. Pro from $30/active user/mo. Enterprise quote. 30-day all-access trial. Confirm live on buildkite.com/pricing."
+    },
+    {
+      "id": "limitations",
+      "heading": "Limitations",
+      "body": "• Not a git host — you still need GitHub, GitLab, or Bitbucket for source control\n• Same source-control-devops cluster as GitHub, but GitHub the SCM is a different primary shape\n• Does not outrank GitHub (9.1)\n• Pro $30/active user is not unlimited CI; agent/minute math still exists\n• Not observability, on-call, hosting panel, or managed hosting"
+    }
+  ],
+  "confidence": "medium",
+  "handsOnTesting": false,
+  "contentVersion": 1,
+  "refreshNeeded": false,
+  "lastUpdatedAt": "2026-08-18T22:00:00.000Z",
+  "metadata": {
+    "status": "published",
+    "publishedAt": "2026-08-18T00:00:00.000Z",
+    "updatedAt": "2026-08-18T22:00:00.000Z",
+    "reviewedAt": "2026-08-18T22:00:00.000Z",
+    "author": "author-lee-meyeridricks",
+    "researchStatus": "complete"
+  },
+  "seo": {
+    "title": "Buildkite Review (2026) — IT & Development",
+    "description": "Buildkite IT & development review on SoftwareGlimpse: strengths, trade-offs, pricing posture, and who should buy.",
+    "canonicalPath": "/software/buildkite/",
+    "indexable": true
+  }
+}

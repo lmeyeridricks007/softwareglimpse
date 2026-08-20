@@ -1,0 +1,422 @@
+[
+  {
+    "id": "fact-streak-pricing.hasFreePlan",
+    "productSlug": "streak",
+    "domain": "free-plan",
+    "field": "pricing.hasFreePlan",
+    "value": true,
+    "sourceIds": [
+      "streak-pricing-official"
+    ],
+    "evidence": [
+      {
+        "sourceId": "streak-pricing-official",
+        "excerpt": "Free email power tools forever."
+      }
+    ],
+    "extractedAt": "2026-08-13T18:00:00.000Z",
+    "normalizedAt": "2026-08-13T18:00:00.000Z",
+    "verifiedAt": "2026-08-13T18:00:00.000Z",
+    "approvedAt": "2026-08-13T18:00:00.000Z",
+    "confidence": "high",
+    "status": "approved",
+    "isFixture": false
+  },
+  {
+    "id": "fact-streak-pricing.hasFreeTrial",
+    "productSlug": "streak",
+    "domain": "free-trial",
+    "field": "pricing.hasFreeTrial",
+    "value": true,
+    "sourceIds": [
+      "streak-pricing-official"
+    ],
+    "evidence": [
+      {
+        "sourceId": "streak-pricing-official",
+        "excerpt": "Try FREE for 14 days on paid plans."
+      }
+    ],
+    "extractedAt": "2026-08-13T18:00:00.000Z",
+    "normalizedAt": "2026-08-13T18:00:00.000Z",
+    "verifiedAt": "2026-08-13T18:00:00.000Z",
+    "approvedAt": "2026-08-13T18:00:00.000Z",
+    "confidence": "high",
+    "status": "approved",
+    "isFixture": false
+  },
+  {
+    "id": "fact-streak-pricing.startingPriceMonthly",
+    "productSlug": "streak",
+    "domain": "pricing",
+    "field": "pricing.startingPriceMonthly",
+    "value": 49,
+    "sourceIds": [
+      "streak-pricing-official"
+    ],
+    "evidence": [
+      {
+        "sourceId": "streak-pricing-official",
+        "excerpt": "Pro starts at $49/user/mo billed annually."
+      }
+    ],
+    "extractedAt": "2026-08-13T18:00:00.000Z",
+    "normalizedAt": "2026-08-13T18:00:00.000Z",
+    "verifiedAt": "2026-08-13T18:00:00.000Z",
+    "approvedAt": "2026-08-13T18:00:00.000Z",
+    "confidence": "high",
+    "status": "approved",
+    "isFixture": false
+  },
+  {
+    "id": "fact-streak-pricing.currency",
+    "productSlug": "streak",
+    "domain": "pricing",
+    "field": "pricing.currency",
+    "value": "USD",
+    "sourceIds": [
+      "streak-pricing-official"
+    ],
+    "evidence": [
+      {
+        "sourceId": "streak-pricing-official",
+        "excerpt": "USD pricing shown."
+      }
+    ],
+    "extractedAt": "2026-08-13T18:00:00.000Z",
+    "normalizedAt": "2026-08-13T18:00:00.000Z",
+    "verifiedAt": "2026-08-13T18:00:00.000Z",
+    "approvedAt": "2026-08-13T18:00:00.000Z",
+    "confidence": "high",
+    "status": "approved",
+    "isFixture": false
+  },
+  {
+    "id": "fact-streak-pricing.model",
+    "productSlug": "streak",
+    "domain": "pricing",
+    "field": "pricing.model",
+    "value": "freemium",
+    "sourceIds": [
+      "streak-pricing-official"
+    ],
+    "evidence": [
+      {
+        "sourceId": "streak-pricing-official",
+        "excerpt": "Free email tools + paid CRM plans."
+      }
+    ],
+    "extractedAt": "2026-08-13T18:00:00.000Z",
+    "normalizedAt": "2026-08-13T18:00:00.000Z",
+    "verifiedAt": "2026-08-13T18:00:00.000Z",
+    "approvedAt": "2026-08-13T18:00:00.000Z",
+    "confidence": "high",
+    "status": "approved",
+    "isFixture": false
+  },
+  {
+    "id": "fact-streak-pricing.plans.pro",
+    "productSlug": "streak",
+    "domain": "plans",
+    "field": "pricing.plans.pro",
+    "value": {
+      "id": "plan-pro",
+      "slug": "pro",
+      "name": "Pro",
+      "isFree": false,
+      "contactSales": false,
+      "hasFreeTrial": true,
+      "trialDays": 14,
+      "highlighted": false,
+      "rules": [
+        {
+          "kind": "per-seat",
+          "amountPerSeat": 49,
+          "currency": "USD",
+          "interval": "year",
+          "amountPeriod": "month"
+        },
+        {
+          "kind": "per-seat",
+          "amountPerSeat": 59,
+          "currency": "USD",
+          "interval": "month",
+          "amountPeriod": "month"
+        }
+      ]
+    },
+    "sourceIds": [
+      "streak-pricing-official"
+    ],
+    "evidence": [
+      {
+        "sourceId": "streak-pricing-official",
+        "excerpt": "Pro $49 annual / $59 monthly per user."
+      }
+    ],
+    "extractedAt": "2026-08-13T18:00:00.000Z",
+    "normalizedAt": "2026-08-13T18:00:00.000Z",
+    "verifiedAt": "2026-08-13T18:00:00.000Z",
+    "approvedAt": "2026-08-13T18:00:00.000Z",
+    "confidence": "high",
+    "status": "approved",
+    "isFixture": false
+  },
+  {
+    "id": "fact-streak-pricing.plans.pro-plus",
+    "productSlug": "streak",
+    "domain": "plans",
+    "field": "pricing.plans.pro-plus",
+    "value": {
+      "id": "plan-pro-plus",
+      "slug": "pro-plus",
+      "name": "Pro+",
+      "isFree": false,
+      "contactSales": false,
+      "hasFreeTrial": true,
+      "trialDays": 14,
+      "highlighted": true,
+      "rules": [
+        {
+          "kind": "per-seat",
+          "amountPerSeat": 69,
+          "currency": "USD",
+          "interval": "year",
+          "amountPeriod": "month"
+        },
+        {
+          "kind": "per-seat",
+          "amountPerSeat": 89,
+          "currency": "USD",
+          "interval": "month",
+          "amountPeriod": "month"
+        }
+      ]
+    },
+    "sourceIds": [
+      "streak-pricing-official"
+    ],
+    "evidence": [
+      {
+        "sourceId": "streak-pricing-official",
+        "excerpt": "Pro+ $69 annual / $89 monthly per user."
+      }
+    ],
+    "extractedAt": "2026-08-13T18:00:00.000Z",
+    "normalizedAt": "2026-08-13T18:00:00.000Z",
+    "verifiedAt": "2026-08-13T18:00:00.000Z",
+    "approvedAt": "2026-08-13T18:00:00.000Z",
+    "confidence": "high",
+    "status": "approved",
+    "isFixture": false
+  },
+  {
+    "id": "fact-streak-pricing.plans.enterprise",
+    "productSlug": "streak",
+    "domain": "plans",
+    "field": "pricing.plans.enterprise",
+    "value": {
+      "id": "plan-enterprise",
+      "slug": "enterprise",
+      "name": "Enterprise",
+      "isFree": false,
+      "contactSales": true,
+      "hasFreeTrial": true,
+      "trialDays": 14,
+      "highlighted": false,
+      "rules": [
+        {
+          "kind": "per-seat",
+          "amountPerSeat": 129,
+          "currency": "USD",
+          "interval": "year",
+          "amountPeriod": "month"
+        },
+        {
+          "kind": "per-seat",
+          "amountPerSeat": 159,
+          "currency": "USD",
+          "interval": "month",
+          "amountPeriod": "month"
+        }
+      ]
+    },
+    "sourceIds": [
+      "streak-pricing-official"
+    ],
+    "evidence": [
+      {
+        "sourceId": "streak-pricing-official",
+        "excerpt": "Enterprise $129 annual / $159 monthly per user; contact us."
+      }
+    ],
+    "extractedAt": "2026-08-13T18:00:00.000Z",
+    "normalizedAt": "2026-08-13T18:00:00.000Z",
+    "verifiedAt": "2026-08-13T18:00:00.000Z",
+    "approvedAt": "2026-08-13T18:00:00.000Z",
+    "confidence": "high",
+    "status": "approved",
+    "isFixture": false
+  },
+  {
+    "id": "fact-streak-features.pipeline-management",
+    "productSlug": "streak",
+    "domain": "features",
+    "field": "features.pipeline-management",
+    "value": true,
+    "sourceIds": [
+      "streak-product-official"
+    ],
+    "evidence": [
+      {
+        "sourceId": "streak-product-official",
+        "excerpt": "Shared pipelines and pipeline filters."
+      }
+    ],
+    "extractedAt": "2026-08-13T18:00:00.000Z",
+    "normalizedAt": "2026-08-13T18:00:00.000Z",
+    "verifiedAt": "2026-08-13T18:00:00.000Z",
+    "approvedAt": "2026-08-13T18:00:00.000Z",
+    "confidence": "high",
+    "status": "approved",
+    "isFixture": false
+  },
+  {
+    "id": "fact-streak-features.email-tracking",
+    "productSlug": "streak",
+    "domain": "features",
+    "field": "features.email-tracking",
+    "value": true,
+    "sourceIds": [
+      "streak-pricing-official"
+    ],
+    "evidence": [
+      {
+        "sourceId": "streak-pricing-official",
+        "excerpt": "Email & link tracking available free forever."
+      }
+    ],
+    "extractedAt": "2026-08-13T18:00:00.000Z",
+    "normalizedAt": "2026-08-13T18:00:00.000Z",
+    "verifiedAt": "2026-08-13T18:00:00.000Z",
+    "approvedAt": "2026-08-13T18:00:00.000Z",
+    "confidence": "high",
+    "status": "approved",
+    "isFixture": false
+  },
+  {
+    "id": "fact-streak-features.workflow-automation",
+    "productSlug": "streak",
+    "domain": "features",
+    "field": "features.workflow-automation",
+    "value": true,
+    "sourceIds": [
+      "streak-pricing-official"
+    ],
+    "evidence": [
+      {
+        "sourceId": "streak-pricing-official",
+        "excerpt": "Integrations & automations on Pro+."
+      }
+    ],
+    "extractedAt": "2026-08-13T18:00:00.000Z",
+    "normalizedAt": "2026-08-13T18:00:00.000Z",
+    "verifiedAt": "2026-08-13T18:00:00.000Z",
+    "approvedAt": "2026-08-13T18:00:00.000Z",
+    "confidence": "high",
+    "status": "approved",
+    "isFixture": false
+  },
+  {
+    "id": "fact-streak-features.mobile-app",
+    "productSlug": "streak",
+    "domain": "features",
+    "field": "features.mobile-app",
+    "value": true,
+    "sourceIds": [
+      "streak-product-official"
+    ],
+    "evidence": [
+      {
+        "sourceId": "streak-product-official",
+        "excerpt": "Native iOS, iPad & Android apps."
+      }
+    ],
+    "extractedAt": "2026-08-13T18:00:00.000Z",
+    "normalizedAt": "2026-08-13T18:00:00.000Z",
+    "verifiedAt": "2026-08-13T18:00:00.000Z",
+    "approvedAt": "2026-08-13T18:00:00.000Z",
+    "confidence": "high",
+    "status": "approved",
+    "isFixture": false
+  },
+  {
+    "id": "fact-streak-ai.assistant",
+    "productSlug": "streak",
+    "domain": "ai-capabilities",
+    "field": "ai.assistant",
+    "value": true,
+    "sourceIds": [
+      "streak-ai-official"
+    ],
+    "evidence": [
+      {
+        "sourceId": "streak-ai-official",
+        "excerpt": "Streak AI summaries, Q&A, formulas, pipeline creator."
+      }
+    ],
+    "extractedAt": "2026-08-13T18:00:00.000Z",
+    "normalizedAt": "2026-08-13T18:00:00.000Z",
+    "verifiedAt": "2026-08-13T18:00:00.000Z",
+    "approvedAt": "2026-08-13T18:00:00.000Z",
+    "confidence": "high",
+    "status": "approved",
+    "isFixture": false
+  },
+  {
+    "id": "fact-streak-positioning.gmail-native",
+    "productSlug": "streak",
+    "domain": "product-positioning",
+    "field": "positioning.gmail-native",
+    "value": true,
+    "sourceIds": [
+      "streak-product-official"
+    ],
+    "evidence": [
+      {
+        "sourceId": "streak-product-official",
+        "excerpt": "CRM built to live in Gmail."
+      }
+    ],
+    "extractedAt": "2026-08-13T18:00:00.000Z",
+    "normalizedAt": "2026-08-13T18:00:00.000Z",
+    "verifiedAt": "2026-08-13T18:00:00.000Z",
+    "approvedAt": "2026-08-13T18:00:00.000Z",
+    "confidence": "high",
+    "status": "approved",
+    "isFixture": false
+  },
+  {
+    "id": "fact-streak-integrations.gmail",
+    "productSlug": "streak",
+    "domain": "integrations",
+    "field": "integrations.gmail",
+    "value": true,
+    "sourceIds": [
+      "streak-product-official"
+    ],
+    "evidence": [
+      {
+        "sourceId": "streak-product-official",
+        "excerpt": "Deep Gmail/Google Workspace integration."
+      }
+    ],
+    "extractedAt": "2026-08-13T18:00:00.000Z",
+    "normalizedAt": "2026-08-13T18:00:00.000Z",
+    "verifiedAt": "2026-08-13T18:00:00.000Z",
+    "approvedAt": "2026-08-13T18:00:00.000Z",
+    "confidence": "high",
+    "status": "approved",
+    "isFixture": false
+  }
+]

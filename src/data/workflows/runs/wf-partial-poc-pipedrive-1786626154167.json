@@ -1,0 +1,211 @@
+{
+  "id": "wf-partial-poc-pipedrive-1786626154167",
+  "workflowId": "partial-poc",
+  "workflowVersion": "1.0.0",
+  "name": "Single Content Generation: pipedrive",
+  "targetType": "content",
+  "targetId": "pipedrive",
+  "status": "completed-with-warnings",
+  "steps": [
+    {
+      "id": "ready",
+      "definitionStepId": "ready",
+      "handler": "noop",
+      "label": "ready",
+      "status": "completed",
+      "required": true,
+      "failurePolicy": "block-workflow",
+      "attempt": 1,
+      "maxAttempts": 2,
+      "dependsOn": [],
+      "priority": "normal",
+      "config": {
+        "maxAutomaticRevisions": 1,
+        "expandFromContentPlan": false,
+        "expandKind": "none",
+        "stopAfterApproval": true,
+        "allowNormalizedFacts": false,
+        "optionalWhenBlocked": false,
+        "forceTransientFailOnce": false
+      },
+      "inputRefs": {},
+      "outputRefs": {},
+      "blockers": [],
+      "warnings": [],
+      "startedAt": "2026-08-13T13:02:34.265Z",
+      "completedAt": "2026-08-13T13:02:34.265Z",
+      "revisionAttempts": 0
+    },
+    {
+      "id": "review",
+      "definitionStepId": "review",
+      "handler": "agent-run",
+      "label": "review",
+      "status": "completed",
+      "required": true,
+      "failurePolicy": "block-workflow",
+      "attempt": 1,
+      "maxAttempts": 2,
+      "dependsOn": [
+        "ready"
+      ],
+      "priority": "normal",
+      "config": {
+        "agentId": "software-review-agent",
+        "targetSlug": "pipedrive",
+        "maxAutomaticRevisions": 1,
+        "expandFromContentPlan": false,
+        "expandKind": "none",
+        "stopAfterApproval": true,
+        "allowNormalizedFacts": false,
+        "optionalWhenBlocked": false,
+        "forceTransientFailOnce": false
+      },
+      "inputRefs": {},
+      "outputRefs": {
+        "draftId": "draft-deterministic-v1-software-review-agent-pipedrive-2026-08-13T13-02-34-274Z",
+        "qaStatus": "pass",
+        "agentId": "software-review-agent",
+        "target": "pipedrive"
+      },
+      "inputSnapshot": {
+        "researchFactIds": [
+          "fact-pipedrive-pricing.plans.essential-pipedrive-pricing-fixture",
+          "fact-pipedrive-pricing.plans.advanced-pipedrive-pricing-fixture",
+          "fact-pipedrive-pricing.plans.professional-pipedrive-pricing-fixture",
+          "fact-pipedrive-pricing.plans.power-pipedrive-pricing-fixture",
+          "fact-pipedrive-pricing.plans.enterprise-pipedrive-pricing-fixture",
+          "fact-pipedrive-pricing.currency-pipedrive-pricing-fixture",
+          "fact-pipedrive-pricing.hasFreeTrial-pipedrive-pricing-fixture",
+          "fact-pipedrive-pricing.hasFreePlan-pipedrive-pricing-fixture",
+          "fact-pipedrive-pricing.model-pipedrive-pricing-fixture",
+          "fact-pipedrive-identity.shortDescription-pipedrive-product-fixture",
+          "fact-pipedrive-positioning.claim-pipedrive-product-fixture",
+          "fact-pipedrive-features.contact-management-pipedrive-product-fixture",
+          "fact-pipedrive-features.lead-management-pipedrive-product-fixture",
+          "fact-pipedrive-features.pipeline-management-pipedrive-product-fixture",
+          "fact-pipedrive-features.deal-management-pipedrive-product-fixture",
+          "fact-pipedrive-features.email-sync-pipedrive-product-fixture",
+          "fact-pipedrive-features.workflow-automation-pipedrive-product-fixture",
+          "fact-pipedrive-features.reporting-pipedrive-product-fixture",
+          "fact-pipedrive-features.forecasting-pipedrive-product-fixture",
+          "fact-pipedrive-features.custom-fields-pipedrive-product-fixture",
+          "fact-pipedrive-features.custom-pipelines-pipedrive-product-fixture",
+          "fact-pipedrive-features.mobile-app-pipedrive-product-fixture",
+          "fact-pipedrive-features.ai-assistance-pipedrive-product-fixture",
+          "fact-pipedrive-ai.email-generation-pipedrive-product-fixture",
+          "fact-pipedrive-ai.assistant-pipedrive-product-fixture",
+          "fact-pipedrive-ai.forecasting-pipedrive-product-fixture",
+          "fact-pipedrive-ai.automation-pipedrive-product-fixture"
+        ],
+        "methodologySlug": "crm-editorial",
+        "methodologyVersion": "1.0.0",
+        "agentVersion": "1.0.0",
+        "contextBuiltAt": "2026-08-13T13:02:34.273Z"
+      },
+      "blockers": [],
+      "warnings": [],
+      "agentTaskId": "exec-software-review-agent-pipedrive-1786626154270",
+      "draftId": "draft-deterministic-v1-software-review-agent-pipedrive-2026-08-13T13-02-34-274Z",
+      "startedAt": "2026-08-13T13:02:34.269Z",
+      "completedAt": "2026-08-13T13:02:34.275Z",
+      "revisionAttempts": 0
+    },
+    {
+      "id": "pricing",
+      "definitionStepId": "pricing",
+      "handler": "agent-run",
+      "label": "pricing",
+      "status": "blocked",
+      "required": false,
+      "failurePolicy": "continue-with-warning",
+      "attempt": 1,
+      "maxAttempts": 2,
+      "dependsOn": [
+        "ready"
+      ],
+      "priority": "normal",
+      "config": {
+        "agentId": "pricing-page-agent",
+        "targetSlug": "unknown-product-xyz",
+        "maxAutomaticRevisions": 1,
+        "expandFromContentPlan": false,
+        "expandKind": "none",
+        "stopAfterApproval": true,
+        "allowNormalizedFacts": false,
+        "optionalWhenBlocked": true,
+        "forceTransientFailOnce": false
+      },
+      "inputRefs": {},
+      "outputRefs": {},
+      "blockers": [
+        "PRICING_UNVERIFIED: Product pricing data is unverified"
+      ],
+      "warnings": [
+        "PRICING_UNVERIFIED: Product pricing data is unverified"
+      ],
+      "startedAt": "2026-08-13T13:02:34.266Z",
+      "completedAt": "2026-08-13T13:02:34.268Z",
+      "revisionAttempts": 0
+    }
+  ],
+  "history": [
+    {
+      "at": "2026-08-13T13:02:34.263Z",
+      "event": "workflow_created",
+      "message": "Created partial-poc:v1.0.0"
+    },
+    {
+      "at": "2026-08-13T13:02:34.264Z",
+      "event": "workflow_started",
+      "message": "Workflow execution started"
+    },
+    {
+      "at": "2026-08-13T13:02:34.264Z",
+      "event": "workflow_step_started",
+      "stepId": "ready",
+      "message": "Started ready"
+    },
+    {
+      "at": "2026-08-13T13:02:34.265Z",
+      "event": "workflow_step_completed",
+      "stepId": "ready",
+      "message": "No-op step completed"
+    },
+    {
+      "at": "2026-08-13T13:02:34.266Z",
+      "event": "workflow_step_started",
+      "stepId": "pricing",
+      "message": "Started pricing"
+    },
+    {
+      "at": "2026-08-13T13:02:34.268Z",
+      "event": "workflow_step_completed",
+      "stepId": "pricing",
+      "message": "Agent blocked (optional): PRICING_UNVERIFIED: Product pricing data is unverified"
+    },
+    {
+      "at": "2026-08-13T13:02:34.269Z",
+      "event": "workflow_step_started",
+      "stepId": "review",
+      "message": "Started review"
+    },
+    {
+      "at": "2026-08-13T13:02:34.275Z",
+      "event": "workflow_step_completed",
+      "stepId": "review",
+      "message": "Agent software-review-agent → draft draft-deterministic-v1-software-review-agent-pipedrive-2026-08-13T13-02-34-274Z (qa=pass)"
+    },
+    {
+      "at": "2026-08-13T13:02:34.276Z",
+      "event": "workflow_completed",
+      "message": "Workflow completed-with-warnings"
+    }
+  ],
+  "options": {},
+  "warnings": [
+    "pricing blocked: PRICING_UNVERIFIED: Product pricing data is unverified"
+  ],
+  "createdAt": "2026-08-13T13:02:34.263Z",
+  "updatedAt": "2026-08-13T13:02:34.276Z"
+}

@@ -1,0 +1,683 @@
+{
+  "id": "wf-software-onboarding-content-diginius-1787140610462",
+  "workflowId": "software-onboarding-content",
+  "workflowVersion": "1.0.0",
+  "name": "Software Onboarding Content: diginius",
+  "targetType": "software",
+  "targetId": "diginius",
+  "status": "blocked",
+  "steps": [
+    {
+      "id": "software-onboarding",
+      "definitionStepId": "software-onboarding",
+      "handler": "software-onboarding",
+      "label": "Software onboarding",
+      "status": "completed",
+      "required": true,
+      "failurePolicy": "block-workflow",
+      "attempt": 1,
+      "maxAttempts": 2,
+      "dependsOn": [],
+      "priority": "critical",
+      "config": {
+        "maxAutomaticRevisions": 1,
+        "expandFromContentPlan": false,
+        "expandKind": "none",
+        "stopAfterApproval": true,
+        "allowNormalizedFacts": false,
+        "optionalWhenBlocked": false,
+        "forceTransientFailOnce": false
+      },
+      "inputRefs": {},
+      "outputRefs": {
+        "softwareOnboardingRunId": "onboard-diginius-1787140595783"
+      },
+      "blockers": [],
+      "warnings": [],
+      "startedAt": "2026-08-19T11:56:55.505Z",
+      "completedAt": "2026-08-19T11:56:55.763Z",
+      "revisionAttempts": 0
+    },
+    {
+      "id": "content-plan",
+      "definitionStepId": "content-plan",
+      "handler": "content-plan",
+      "label": "Content plan",
+      "status": "completed",
+      "required": true,
+      "failurePolicy": "block-workflow",
+      "attempt": 1,
+      "maxAttempts": 2,
+      "dependsOn": [
+        "software-onboarding"
+      ],
+      "priority": "high",
+      "config": {
+        "maxAutomaticRevisions": 1,
+        "expandFromContentPlan": false,
+        "expandKind": "none",
+        "stopAfterApproval": true,
+        "allowNormalizedFacts": false,
+        "optionalWhenBlocked": false,
+        "forceTransientFailOnce": false
+      },
+      "inputRefs": {},
+      "outputRefs": {
+        "softwareOnboardingRunId": "onboard-diginius-1787140595783",
+        "comparisonTargets": "brand24-vs-diginius,birch-vs-diginius,adcreative-ai-vs-diginius",
+        "pageCandidateCount": "7"
+      },
+      "blockers": [],
+      "warnings": [],
+      "startedAt": "2026-08-19T11:56:55.770Z",
+      "completedAt": "2026-08-19T11:56:57.639Z",
+      "revisionAttempts": 0
+    },
+    {
+      "id": "software-review",
+      "definitionStepId": "software-review",
+      "handler": "agent-run",
+      "label": "Software Review",
+      "status": "completed",
+      "required": true,
+      "failurePolicy": "block-workflow",
+      "attempt": 1,
+      "maxAttempts": 2,
+      "dependsOn": [
+        "content-plan"
+      ],
+      "priority": "high",
+      "config": {
+        "agentId": "software-review-agent",
+        "targetSlug": "diginius",
+        "maxAutomaticRevisions": 1,
+        "expandFromContentPlan": false,
+        "expandKind": "none",
+        "stopAfterApproval": true,
+        "allowNormalizedFacts": false,
+        "optionalWhenBlocked": false,
+        "forceTransientFailOnce": false
+      },
+      "inputRefs": {},
+      "outputRefs": {
+        "draftId": "draft-deterministic-v1-software-review-agent-diginius-2026-08-19T11-56-58-595Z-rev-1787140618660",
+        "qaStatus": "pass",
+        "agentId": "software-review-agent",
+        "target": "diginius"
+      },
+      "inputSnapshot": {
+        "researchFactIds": [
+          "fact-diginius-identity.shortDescription",
+          "fact-diginius-positioning.vendorClaim",
+          "fact-diginius-pricing.model",
+          "fact-diginius-pricing.hasFreePlan",
+          "fact-diginius-pricing.hasFreeTrial",
+          "fact-diginius-pricing.plans.enterprise"
+        ],
+        "methodologySlug": "marketing-editorial",
+        "methodologyVersion": "1.0.0",
+        "agentVersion": "1.0.0",
+        "contextBuiltAt": "2026-08-19T11:56:58.558Z"
+      },
+      "blockers": [],
+      "warnings": [],
+      "agentTaskId": "exec-software-review-agent-diginius-1787140617666",
+      "draftId": "draft-deterministic-v1-software-review-agent-diginius-2026-08-19T11-56-58-595Z-rev-1787140618660",
+      "startedAt": "2026-08-19T11:56:57.652Z",
+      "completedAt": "2026-08-19T11:56:58.677Z",
+      "revisionAttempts": 0
+    },
+    {
+      "id": "pricing-page",
+      "definitionStepId": "pricing-page",
+      "handler": "agent-run",
+      "label": "Pricing Page",
+      "status": "blocked",
+      "required": false,
+      "failurePolicy": "continue-with-warning",
+      "attempt": 1,
+      "maxAttempts": 2,
+      "dependsOn": [
+        "content-plan"
+      ],
+      "priority": "normal",
+      "config": {
+        "agentId": "pricing-page-agent",
+        "targetSlug": "diginius",
+        "maxAutomaticRevisions": 1,
+        "expandFromContentPlan": false,
+        "expandKind": "none",
+        "stopAfterApproval": true,
+        "allowNormalizedFacts": false,
+        "optionalWhenBlocked": true,
+        "forceTransientFailOnce": false
+      },
+      "inputRefs": {},
+      "outputRefs": {},
+      "blockers": [
+        "PRICING_UNVERIFIED: Product pricing data is unverified"
+      ],
+      "warnings": [
+        "PRICING_UNVERIFIED: Product pricing data is unverified"
+      ],
+      "startedAt": "2026-08-19T11:56:58.893Z",
+      "completedAt": "2026-08-19T11:56:59.060Z",
+      "revisionAttempts": 0
+    },
+    {
+      "id": "alternatives",
+      "definitionStepId": "alternatives",
+      "handler": "agent-run",
+      "label": "Alternatives",
+      "status": "blocked",
+      "required": false,
+      "failurePolicy": "continue-with-warning",
+      "attempt": 1,
+      "maxAttempts": 2,
+      "dependsOn": [
+        "content-plan"
+      ],
+      "priority": "normal",
+      "config": {
+        "agentId": "alternatives-agent",
+        "targetSlug": "diginius",
+        "maxAutomaticRevisions": 1,
+        "expandFromContentPlan": false,
+        "expandKind": "none",
+        "stopAfterApproval": true,
+        "allowNormalizedFacts": false,
+        "optionalWhenBlocked": true,
+        "forceTransientFailOnce": false
+      },
+      "inputRefs": {},
+      "outputRefs": {},
+      "blockers": [
+        "NO_APPROVED_ALTERNATIVES: Approved alternative relationships required — same-category alone is insufficient"
+      ],
+      "warnings": [
+        "NO_APPROVED_ALTERNATIVES: Approved alternative relationships required — same-category alone is insufficient"
+      ],
+      "startedAt": "2026-08-19T11:56:58.680Z",
+      "completedAt": "2026-08-19T11:56:58.713Z",
+      "revisionAttempts": 0
+    },
+    {
+      "id": "comparison:brand24-vs-diginius",
+      "definitionStepId": "comparisons",
+      "handler": "agent-run",
+      "label": "Comparison brand24-vs-diginius",
+      "status": "blocked",
+      "required": false,
+      "failurePolicy": "continue-with-warning",
+      "attempt": 1,
+      "maxAttempts": 2,
+      "dependsOn": [
+        "content-plan"
+      ],
+      "priority": "normal",
+      "config": {
+        "agentId": "comparison-agent",
+        "targetSlug": "brand24-vs-diginius",
+        "maxAutomaticRevisions": 1,
+        "expandFromContentPlan": true,
+        "expandKind": "comparisons",
+        "stopAfterApproval": true,
+        "allowNormalizedFacts": false,
+        "optionalWhenBlocked": true,
+        "forceTransientFailOnce": false
+      },
+      "expansionKey": "brand24-vs-diginius",
+      "inputRefs": {},
+      "outputRefs": {},
+      "blockers": [
+        "RELATIONSHIP_UNAPPROVED: Approved comparable relationship required"
+      ],
+      "warnings": [
+        "RELATIONSHIP_UNAPPROVED: Approved comparable relationship required"
+      ],
+      "startedAt": "2026-08-19T11:56:58.817Z",
+      "completedAt": "2026-08-19T11:56:58.879Z",
+      "revisionAttempts": 0
+    },
+    {
+      "id": "comparison:birch-vs-diginius",
+      "definitionStepId": "comparisons",
+      "handler": "agent-run",
+      "label": "Comparison birch-vs-diginius",
+      "status": "blocked",
+      "required": false,
+      "failurePolicy": "continue-with-warning",
+      "attempt": 1,
+      "maxAttempts": 2,
+      "dependsOn": [
+        "content-plan"
+      ],
+      "priority": "normal",
+      "config": {
+        "agentId": "comparison-agent",
+        "targetSlug": "birch-vs-diginius",
+        "maxAutomaticRevisions": 1,
+        "expandFromContentPlan": true,
+        "expandKind": "comparisons",
+        "stopAfterApproval": true,
+        "allowNormalizedFacts": false,
+        "optionalWhenBlocked": true,
+        "forceTransientFailOnce": false
+      },
+      "expansionKey": "birch-vs-diginius",
+      "inputRefs": {},
+      "outputRefs": {},
+      "blockers": [
+        "RELATIONSHIP_UNAPPROVED: Approved comparable relationship required"
+      ],
+      "warnings": [
+        "RELATIONSHIP_UNAPPROVED: Approved comparable relationship required"
+      ],
+      "startedAt": "2026-08-19T11:56:58.774Z",
+      "completedAt": "2026-08-19T11:56:58.804Z",
+      "revisionAttempts": 0
+    },
+    {
+      "id": "comparison:adcreative-ai-vs-diginius",
+      "definitionStepId": "comparisons",
+      "handler": "agent-run",
+      "label": "Comparison adcreative-ai-vs-diginius",
+      "status": "blocked",
+      "required": false,
+      "failurePolicy": "continue-with-warning",
+      "attempt": 1,
+      "maxAttempts": 2,
+      "dependsOn": [
+        "content-plan"
+      ],
+      "priority": "normal",
+      "config": {
+        "agentId": "comparison-agent",
+        "targetSlug": "adcreative-ai-vs-diginius",
+        "maxAutomaticRevisions": 1,
+        "expandFromContentPlan": true,
+        "expandKind": "comparisons",
+        "stopAfterApproval": true,
+        "allowNormalizedFacts": false,
+        "optionalWhenBlocked": true,
+        "forceTransientFailOnce": false
+      },
+      "expansionKey": "adcreative-ai-vs-diginius",
+      "inputRefs": {},
+      "outputRefs": {},
+      "blockers": [
+        "RELATIONSHIP_UNAPPROVED: Approved comparable relationship required"
+      ],
+      "warnings": [
+        "RELATIONSHIP_UNAPPROVED: Approved comparable relationship required"
+      ],
+      "startedAt": "2026-08-19T11:56:58.723Z",
+      "completedAt": "2026-08-19T11:56:58.771Z",
+      "revisionAttempts": 0
+    },
+    {
+      "id": "internal-links",
+      "definitionStepId": "internal-links",
+      "handler": "internal-link",
+      "label": "Internal Link Plan",
+      "status": "completed",
+      "required": false,
+      "failurePolicy": "continue-with-warning",
+      "attempt": 1,
+      "maxAttempts": 2,
+      "dependsOn": [
+        "software-review"
+      ],
+      "priority": "low",
+      "config": {
+        "agentId": "internal-link-agent",
+        "maxAutomaticRevisions": 1,
+        "expandFromContentPlan": false,
+        "expandKind": "none",
+        "stopAfterApproval": true,
+        "allowNormalizedFacts": false,
+        "optionalWhenBlocked": false,
+        "forceTransientFailOnce": false
+      },
+      "inputRefs": {},
+      "outputRefs": {
+        "draftId": "draft-deterministic-v1-internal-link-agent-diginius-2026-08-19T11-56-59-119Z",
+        "qaStatus": "pass",
+        "agentId": "internal-link-agent",
+        "target": "diginius"
+      },
+      "inputSnapshot": {
+        "researchFactIds": [
+          "fact-diginius-identity.shortDescription",
+          "fact-diginius-positioning.vendorClaim",
+          "fact-diginius-pricing.model",
+          "fact-diginius-pricing.hasFreePlan",
+          "fact-diginius-pricing.hasFreeTrial",
+          "fact-diginius-pricing.plans.enterprise"
+        ],
+        "methodologySlug": "marketing-editorial",
+        "methodologyVersion": "1.0.0",
+        "agentVersion": "1.0.0",
+        "contextBuiltAt": "2026-08-19T11:56:59.118Z"
+      },
+      "blockers": [],
+      "warnings": [],
+      "agentTaskId": "exec-internal-link-agent-diginius-1787140619078",
+      "draftId": "draft-deterministic-v1-internal-link-agent-diginius-2026-08-19T11-56-59-119Z",
+      "startedAt": "2026-08-19T11:56:59.076Z",
+      "completedAt": "2026-08-19T11:56:59.125Z",
+      "revisionAttempts": 0
+    },
+    {
+      "id": "finder-readiness",
+      "definitionStepId": "finder-readiness",
+      "handler": "update-recommendation-readiness",
+      "label": "Finder readiness",
+      "status": "completed",
+      "required": false,
+      "failurePolicy": "continue",
+      "attempt": 1,
+      "maxAttempts": 2,
+      "dependsOn": [
+        "content-plan"
+      ],
+      "priority": "low",
+      "config": {
+        "maxAutomaticRevisions": 1,
+        "expandFromContentPlan": false,
+        "expandKind": "none",
+        "stopAfterApproval": true,
+        "allowNormalizedFacts": false,
+        "optionalWhenBlocked": false,
+        "forceTransientFailOnce": false
+      },
+      "inputRefs": {},
+      "outputRefs": {
+        "finderReadiness": "checked"
+      },
+      "blockers": [],
+      "warnings": [],
+      "startedAt": "2026-08-19T11:56:59.062Z",
+      "completedAt": "2026-08-19T11:56:59.066Z",
+      "revisionAttempts": 0
+    },
+    {
+      "id": "editorial-approval",
+      "definitionStepId": "editorial-approval",
+      "handler": "approval-check",
+      "label": "Editorial approval",
+      "status": "completed",
+      "required": true,
+      "failurePolicy": "manual-review",
+      "attempt": 2,
+      "maxAttempts": 2,
+      "dependsOn": [
+        "software-review"
+      ],
+      "priority": "critical",
+      "config": {
+        "approvalType": "editorial",
+        "maxAutomaticRevisions": 1,
+        "expandFromContentPlan": false,
+        "expandKind": "none",
+        "stopAfterApproval": true,
+        "allowNormalizedFacts": false,
+        "optionalWhenBlocked": false,
+        "forceTransientFailOnce": false
+      },
+      "inputRefs": {},
+      "outputRefs": {
+        "approvalId": "appr-wf-software-onboarding-content-diginius-1787140610462-software-review",
+        "draftId": "draft-deterministic-v1-software-review-agent-diginius-2026-08-19T11-56-58-595Z-rev-1787140618660",
+        "approvalIds": "appr-wf-software-onboarding-content-diginius-1787140610462-software-review"
+      },
+      "blockers": [],
+      "warnings": [
+        "Approval received — resuming",
+        "1 optional draft(s) may still need separate editorial review"
+      ],
+      "approvalId": "appr-wf-software-onboarding-content-diginius-1787140610462-software-review",
+      "startedAt": "2026-08-19T12:05:14.653Z",
+      "completedAt": "2026-08-19T12:05:14.834Z",
+      "revisionAttempts": 0
+    },
+    {
+      "id": "pre-publish-validation",
+      "definitionStepId": "pre-publish-validation",
+      "handler": "pre-publish-validation",
+      "label": "Pre-publish validation",
+      "status": "blocked",
+      "required": true,
+      "failurePolicy": "block-workflow",
+      "attempt": 1,
+      "maxAttempts": 2,
+      "dependsOn": [
+        "editorial-approval"
+      ],
+      "priority": "critical",
+      "config": {
+        "maxAutomaticRevisions": 1,
+        "expandFromContentPlan": false,
+        "expandKind": "none",
+        "stopAfterApproval": true,
+        "allowNormalizedFacts": false,
+        "optionalWhenBlocked": false,
+        "forceTransientFailOnce": false
+      },
+      "inputRefs": {},
+      "outputRefs": {},
+      "blockers": [
+        "Stale context for software-review: new-critical-fact:fact-diginius-pricing.currency-diginius-pricing-official; new-critical-fact:fact-diginius-pricing.hasFreeTrial-diginius-pricing-official; new-critical-fact:fact-diginius-pricing.hasFreePlan-diginius-pricing-official; new-critical-fact:fact-diginius-pricing.model-diginius-pricing-official",
+        "Stale context for internal-links: new-critical-fact:fact-diginius-pricing.currency-diginius-pricing-official; new-critical-fact:fact-diginius-pricing.hasFreeTrial-diginius-pricing-official; new-critical-fact:fact-diginius-pricing.hasFreePlan-diginius-pricing-official; new-critical-fact:fact-diginius-pricing.model-diginius-pricing-official"
+      ],
+      "warnings": [],
+      "startedAt": "2026-08-19T12:05:14.837Z",
+      "completedAt": "2026-08-19T12:05:15.297Z",
+      "revisionAttempts": 0
+    }
+  ],
+  "history": [
+    {
+      "at": "2026-08-19T11:56:55.482Z",
+      "event": "workflow_created",
+      "message": "Created software-onboarding-content:v1.0.0"
+    },
+    {
+      "at": "2026-08-19T11:56:55.486Z",
+      "event": "workflow_started",
+      "message": "Workflow execution started"
+    },
+    {
+      "at": "2026-08-19T11:56:55.505Z",
+      "event": "workflow_step_started",
+      "stepId": "software-onboarding",
+      "message": "Started Software onboarding"
+    },
+    {
+      "at": "2026-08-19T11:56:55.763Z",
+      "event": "workflow_step_completed",
+      "stepId": "software-onboarding",
+      "message": "Reused onboarding run onboard-diginius-1787140595783 (ready)"
+    },
+    {
+      "at": "2026-08-19T11:56:55.769Z",
+      "event": "workflow_step_started",
+      "stepId": "content-plan",
+      "message": "Started Content plan"
+    },
+    {
+      "at": "2026-08-19T11:56:57.639Z",
+      "event": "workflow_step_completed",
+      "stepId": "content-plan",
+      "message": "Content plan from onboarding onboard-diginius-1787140595783 (7 candidates)"
+    },
+    {
+      "at": "2026-08-19T11:56:57.650Z",
+      "event": "workflow_step_started",
+      "stepId": "software-review",
+      "message": "Started Software Review"
+    },
+    {
+      "at": "2026-08-19T11:56:58.677Z",
+      "event": "workflow_step_completed",
+      "stepId": "software-review",
+      "message": "Agent software-review-agent → draft draft-deterministic-v1-software-review-agent-diginius-2026-08-19T11-56-58-595Z-rev-1787140618660 (qa=pass)"
+    },
+    {
+      "at": "2026-08-19T11:56:58.679Z",
+      "event": "workflow_step_started",
+      "stepId": "alternatives",
+      "message": "Started Alternatives"
+    },
+    {
+      "at": "2026-08-19T11:56:58.713Z",
+      "event": "workflow_step_completed",
+      "stepId": "alternatives",
+      "message": "Agent blocked (optional): NO_APPROVED_ALTERNATIVES: Approved alternative relationships required — same-category alone is insufficient"
+    },
+    {
+      "at": "2026-08-19T11:56:58.721Z",
+      "event": "workflow_step_started",
+      "stepId": "comparison:adcreative-ai-vs-diginius",
+      "message": "Started Comparison adcreative-ai-vs-diginius"
+    },
+    {
+      "at": "2026-08-19T11:56:58.771Z",
+      "event": "workflow_step_completed",
+      "stepId": "comparison:adcreative-ai-vs-diginius",
+      "message": "Agent blocked (optional): RELATIONSHIP_UNAPPROVED: Approved comparable relationship required"
+    },
+    {
+      "at": "2026-08-19T11:56:58.773Z",
+      "event": "workflow_step_started",
+      "stepId": "comparison:birch-vs-diginius",
+      "message": "Started Comparison birch-vs-diginius"
+    },
+    {
+      "at": "2026-08-19T11:56:58.804Z",
+      "event": "workflow_step_completed",
+      "stepId": "comparison:birch-vs-diginius",
+      "message": "Agent blocked (optional): RELATIONSHIP_UNAPPROVED: Approved comparable relationship required"
+    },
+    {
+      "at": "2026-08-19T11:56:58.813Z",
+      "event": "workflow_step_started",
+      "stepId": "comparison:brand24-vs-diginius",
+      "message": "Started Comparison brand24-vs-diginius"
+    },
+    {
+      "at": "2026-08-19T11:56:58.879Z",
+      "event": "workflow_step_completed",
+      "stepId": "comparison:brand24-vs-diginius",
+      "message": "Agent blocked (optional): RELATIONSHIP_UNAPPROVED: Approved comparable relationship required"
+    },
+    {
+      "at": "2026-08-19T11:56:58.887Z",
+      "event": "workflow_step_started",
+      "stepId": "pricing-page",
+      "message": "Started Pricing Page"
+    },
+    {
+      "at": "2026-08-19T11:56:59.060Z",
+      "event": "workflow_step_completed",
+      "stepId": "pricing-page",
+      "message": "Agent blocked (optional): PRICING_UNVERIFIED: Product pricing data is unverified"
+    },
+    {
+      "at": "2026-08-19T11:56:59.062Z",
+      "event": "workflow_step_started",
+      "stepId": "finder-readiness",
+      "message": "Started Finder readiness"
+    },
+    {
+      "at": "2026-08-19T11:56:59.066Z",
+      "event": "workflow_step_completed",
+      "stepId": "finder-readiness",
+      "message": "Finder readiness noted for diginius"
+    },
+    {
+      "at": "2026-08-19T11:56:59.075Z",
+      "event": "workflow_step_started",
+      "stepId": "internal-links",
+      "message": "Started Internal Link Plan"
+    },
+    {
+      "at": "2026-08-19T11:56:59.125Z",
+      "event": "workflow_step_completed",
+      "stepId": "internal-links",
+      "message": "Agent internal-link-agent → draft draft-deterministic-v1-internal-link-agent-diginius-2026-08-19T11-56-59-119Z (qa=pass)"
+    },
+    {
+      "at": "2026-08-19T11:56:59.128Z",
+      "event": "workflow_step_started",
+      "stepId": "editorial-approval",
+      "message": "Started Editorial approval"
+    },
+    {
+      "at": "2026-08-19T11:56:59.477Z",
+      "event": "workflow_step_completed",
+      "stepId": "editorial-approval",
+      "message": "WAITING FOR EDITORIAL APPROVAL (appr-wf-software-onboarding-content-diginius-1787140610462-software-review)"
+    },
+    {
+      "at": "2026-08-19T11:56:59.479Z",
+      "event": "workflow_blocked",
+      "message": "WAITING FOR EDITORIAL APPROVAL"
+    },
+    {
+      "at": "2026-08-19T12:05:14.650Z",
+      "event": "workflow_resumed",
+      "message": "Workflow resumed"
+    },
+    {
+      "at": "2026-08-19T12:05:14.652Z",
+      "event": "workflow_started",
+      "message": "Workflow execution started"
+    },
+    {
+      "at": "2026-08-19T12:05:14.653Z",
+      "event": "workflow_step_started",
+      "stepId": "editorial-approval",
+      "message": "Started Editorial approval"
+    },
+    {
+      "at": "2026-08-19T12:05:14.834Z",
+      "event": "workflow_step_completed",
+      "stepId": "editorial-approval",
+      "message": "Required editorial approvals satisfied"
+    },
+    {
+      "at": "2026-08-19T12:05:14.837Z",
+      "event": "workflow_step_started",
+      "stepId": "pre-publish-validation",
+      "message": "Started Pre-publish validation"
+    },
+    {
+      "at": "2026-08-19T12:05:15.297Z",
+      "event": "workflow_step_completed",
+      "stepId": "pre-publish-validation",
+      "message": "Pre-publish validation blocked: Stale context for software-review: new-critical-fact:fact-diginius-pricing.currency-diginius-pricing-official; new-critical-fact:fact-diginius-pricing.hasFreeTrial-diginius-pricing-official; new-critical-fact:fact-diginius-pricing.hasFreePlan-diginius-pricing-official; new-critical-fact:fact-diginius-pricing.model-diginius-pricing-official; Stale context for internal-links: new-critical-fact:fact-diginius-pricing.currency-diginius-pricing-official; new-critical-fact:fact-diginius-pricing.hasFreeTrial-diginius-pricing-official; new-critical-fact:fact-diginius-pricing.hasFreePlan-diginius-pricing-official; new-critical-fact:fact-diginius-pricing.model-diginius-pricing-official"
+    }
+  ],
+  "options": {
+    "generateReview": true,
+    "generatePricing": true,
+    "generateAlternatives": true,
+    "generateComparisons": true,
+    "runInternalLinks": true,
+    "stopAfterApproval": true,
+    "allowNormalizedFacts": false,
+    "dryRun": false,
+    "maxComparisons": 3,
+    "skipOnboarding": false
+  },
+  "warnings": [
+    "alternatives blocked: NO_APPROVED_ALTERNATIVES: Approved alternative relationships required — same-category alone is insufficient",
+    "comparison:adcreative-ai-vs-diginius blocked: RELATIONSHIP_UNAPPROVED: Approved comparable relationship required",
+    "comparison:birch-vs-diginius blocked: RELATIONSHIP_UNAPPROVED: Approved comparable relationship required",
+    "comparison:brand24-vs-diginius blocked: RELATIONSHIP_UNAPPROVED: Approved comparable relationship required",
+    "pricing-page blocked: PRICING_UNVERIFIED: Product pricing data is unverified"
+  ],
+  "createdAt": "2026-08-19T11:56:55.482Z",
+  "updatedAt": "2026-08-19T12:05:15.298Z"
+}

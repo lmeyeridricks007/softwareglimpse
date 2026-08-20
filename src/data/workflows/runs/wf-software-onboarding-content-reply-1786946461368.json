@@ -1,0 +1,745 @@
+{
+  "id": "wf-software-onboarding-content-reply-1786946461368",
+  "workflowId": "software-onboarding-content",
+  "workflowVersion": "1.0.0",
+  "name": "Software Onboarding Content: reply",
+  "targetType": "software",
+  "targetId": "reply",
+  "status": "completed-with-warnings",
+  "steps": [
+    {
+      "id": "software-onboarding",
+      "definitionStepId": "software-onboarding",
+      "handler": "software-onboarding",
+      "label": "Software onboarding",
+      "status": "completed",
+      "required": true,
+      "failurePolicy": "block-workflow",
+      "attempt": 1,
+      "maxAttempts": 2,
+      "dependsOn": [],
+      "priority": "critical",
+      "config": {
+        "maxAutomaticRevisions": 1,
+        "expandFromContentPlan": false,
+        "expandKind": "none",
+        "stopAfterApproval": true,
+        "allowNormalizedFacts": false,
+        "optionalWhenBlocked": false,
+        "forceTransientFailOnce": false
+      },
+      "inputRefs": {},
+      "outputRefs": {
+        "softwareOnboardingRunId": "onboard-reply-1786946407005"
+      },
+      "blockers": [],
+      "warnings": [],
+      "startedAt": "2026-08-17T06:01:01.801Z",
+      "completedAt": "2026-08-17T06:01:01.835Z",
+      "revisionAttempts": 0
+    },
+    {
+      "id": "content-plan",
+      "definitionStepId": "content-plan",
+      "handler": "content-plan",
+      "label": "Content plan",
+      "status": "completed",
+      "required": true,
+      "failurePolicy": "block-workflow",
+      "attempt": 1,
+      "maxAttempts": 2,
+      "dependsOn": [
+        "software-onboarding"
+      ],
+      "priority": "high",
+      "config": {
+        "maxAutomaticRevisions": 1,
+        "expandFromContentPlan": false,
+        "expandKind": "none",
+        "stopAfterApproval": true,
+        "allowNormalizedFacts": false,
+        "optionalWhenBlocked": false,
+        "forceTransientFailOnce": false
+      },
+      "inputRefs": {},
+      "outputRefs": {
+        "softwareOnboardingRunId": "onboard-reply-1786946407005",
+        "comparisonTargets": "amplemarket-vs-reply,apollo-vs-reply,closely-vs-reply",
+        "pageCandidateCount": "8"
+      },
+      "blockers": [],
+      "warnings": [],
+      "startedAt": "2026-08-17T06:01:01.836Z",
+      "completedAt": "2026-08-17T06:01:01.875Z",
+      "revisionAttempts": 0
+    },
+    {
+      "id": "software-review",
+      "definitionStepId": "software-review",
+      "handler": "agent-run",
+      "label": "Software Review",
+      "status": "completed",
+      "required": true,
+      "failurePolicy": "block-workflow",
+      "attempt": 1,
+      "maxAttempts": 2,
+      "dependsOn": [
+        "content-plan"
+      ],
+      "priority": "high",
+      "config": {
+        "agentId": "software-review-agent",
+        "targetSlug": "reply",
+        "maxAutomaticRevisions": 1,
+        "expandFromContentPlan": false,
+        "expandKind": "none",
+        "stopAfterApproval": true,
+        "allowNormalizedFacts": false,
+        "optionalWhenBlocked": false,
+        "forceTransientFailOnce": false
+      },
+      "inputRefs": {},
+      "outputRefs": {
+        "draftId": "draft-deterministic-v1-software-review-agent-reply-2026-08-17T06-01-01-918Z",
+        "qaStatus": "pass",
+        "agentId": "software-review-agent",
+        "target": "reply"
+      },
+      "inputSnapshot": {
+        "researchFactIds": [
+          "fact-reply-pricing.plans.email-volume-reply-pricing-fixture",
+          "fact-reply-pricing.plans.multichannel-reply-pricing-fixture",
+          "fact-reply-pricing.plans.jason-ai-sdr-reply-pricing-fixture",
+          "fact-reply-pricing.plans.agency-reply-pricing-fixture",
+          "fact-reply-pricing.currency-reply-pricing-fixture",
+          "fact-reply-pricing.hasFreeTrial-reply-pricing-fixture",
+          "fact-reply-pricing.hasFreePlan-reply-pricing-fixture",
+          "fact-reply-pricing.model-reply-pricing-fixture",
+          "fact-reply-identity.shortDescription-reply-product-fixture",
+          "fact-reply-positioning.claim-reply-product-fixture",
+          "fact-reply-features.lead-management-reply-product-fixture",
+          "fact-reply-features.contact-management-reply-product-fixture",
+          "fact-reply-features.email-sequences-reply-product-fixture",
+          "fact-reply-features.lead-scoring-reply-product-fixture",
+          "fact-reply-features.reporting-reply-product-fixture",
+          "fact-reply-features.ai-assistance-reply-product-fixture",
+          "fact-reply-features.meeting-scheduling-reply-product-fixture",
+          "fact-reply-ai.email-generation-reply-product-fixture",
+          "fact-reply-ai.automation-reply-product-fixture",
+          "fact-reply-ai.assistant-reply-product-fixture",
+          "fact-reply-ai.recommendations-reply-product-fixture"
+        ],
+        "methodologySlug": "crm-editorial",
+        "methodologyVersion": "1.0.0",
+        "agentVersion": "1.0.0",
+        "contextBuiltAt": "2026-08-17T06:01:01.915Z"
+      },
+      "blockers": [],
+      "warnings": [],
+      "agentTaskId": "exec-software-review-agent-reply-1786946461878",
+      "draftId": "draft-deterministic-v1-software-review-agent-reply-2026-08-17T06-01-01-918Z",
+      "startedAt": "2026-08-17T06:01:01.877Z",
+      "completedAt": "2026-08-17T06:01:01.924Z",
+      "revisionAttempts": 0
+    },
+    {
+      "id": "pricing-page",
+      "definitionStepId": "pricing-page",
+      "handler": "agent-run",
+      "label": "Pricing Page",
+      "status": "completed",
+      "required": false,
+      "failurePolicy": "continue-with-warning",
+      "attempt": 1,
+      "maxAttempts": 2,
+      "dependsOn": [
+        "content-plan"
+      ],
+      "priority": "normal",
+      "config": {
+        "agentId": "pricing-page-agent",
+        "targetSlug": "reply",
+        "maxAutomaticRevisions": 1,
+        "expandFromContentPlan": false,
+        "expandKind": "none",
+        "stopAfterApproval": true,
+        "allowNormalizedFacts": false,
+        "optionalWhenBlocked": true,
+        "forceTransientFailOnce": false
+      },
+      "inputRefs": {},
+      "outputRefs": {
+        "draftId": "draft-deterministic-v1-pricing-page-agent-reply-2026-08-17T06-01-01-968Z",
+        "qaStatus": "pass",
+        "agentId": "pricing-page-agent",
+        "target": "reply"
+      },
+      "inputSnapshot": {
+        "researchFactIds": [
+          "fact-reply-pricing.plans.email-volume-reply-pricing-fixture",
+          "fact-reply-pricing.plans.multichannel-reply-pricing-fixture",
+          "fact-reply-pricing.plans.jason-ai-sdr-reply-pricing-fixture",
+          "fact-reply-pricing.plans.agency-reply-pricing-fixture",
+          "fact-reply-pricing.currency-reply-pricing-fixture",
+          "fact-reply-pricing.hasFreeTrial-reply-pricing-fixture",
+          "fact-reply-pricing.hasFreePlan-reply-pricing-fixture",
+          "fact-reply-pricing.model-reply-pricing-fixture",
+          "fact-reply-identity.shortDescription-reply-product-fixture",
+          "fact-reply-positioning.claim-reply-product-fixture",
+          "fact-reply-features.lead-management-reply-product-fixture",
+          "fact-reply-features.contact-management-reply-product-fixture",
+          "fact-reply-features.email-sequences-reply-product-fixture",
+          "fact-reply-features.lead-scoring-reply-product-fixture",
+          "fact-reply-features.reporting-reply-product-fixture",
+          "fact-reply-features.ai-assistance-reply-product-fixture",
+          "fact-reply-features.meeting-scheduling-reply-product-fixture",
+          "fact-reply-ai.email-generation-reply-product-fixture",
+          "fact-reply-ai.automation-reply-product-fixture",
+          "fact-reply-ai.assistant-reply-product-fixture",
+          "fact-reply-ai.recommendations-reply-product-fixture"
+        ],
+        "methodologySlug": "crm-editorial",
+        "methodologyVersion": "1.0.0",
+        "agentVersion": "1.0.0",
+        "contextBuiltAt": "2026-08-17T06:01:01.967Z"
+      },
+      "blockers": [],
+      "warnings": [],
+      "agentTaskId": "exec-pricing-page-agent-reply-1786946461964",
+      "draftId": "draft-deterministic-v1-pricing-page-agent-reply-2026-08-17T06-01-01-968Z",
+      "startedAt": "2026-08-17T06:01:01.963Z",
+      "completedAt": "2026-08-17T06:01:01.975Z",
+      "revisionAttempts": 0
+    },
+    {
+      "id": "alternatives",
+      "definitionStepId": "alternatives",
+      "handler": "agent-run",
+      "label": "Alternatives",
+      "status": "blocked",
+      "required": false,
+      "failurePolicy": "continue-with-warning",
+      "attempt": 1,
+      "maxAttempts": 2,
+      "dependsOn": [
+        "content-plan"
+      ],
+      "priority": "normal",
+      "config": {
+        "agentId": "alternatives-agent",
+        "targetSlug": "reply",
+        "maxAutomaticRevisions": 1,
+        "expandFromContentPlan": false,
+        "expandKind": "none",
+        "stopAfterApproval": true,
+        "allowNormalizedFacts": false,
+        "optionalWhenBlocked": true,
+        "forceTransientFailOnce": false
+      },
+      "inputRefs": {},
+      "outputRefs": {},
+      "blockers": [
+        "NO_APPROVED_ALTERNATIVES: Approved alternative relationships required — same-category alone is insufficient"
+      ],
+      "warnings": [
+        "NO_APPROVED_ALTERNATIVES: Approved alternative relationships required — same-category alone is insufficient"
+      ],
+      "startedAt": "2026-08-17T06:01:01.925Z",
+      "completedAt": "2026-08-17T06:01:01.931Z",
+      "revisionAttempts": 0
+    },
+    {
+      "id": "comparison:amplemarket-vs-reply",
+      "definitionStepId": "comparisons",
+      "handler": "agent-run",
+      "label": "Comparison amplemarket-vs-reply",
+      "status": "blocked",
+      "required": false,
+      "failurePolicy": "continue-with-warning",
+      "attempt": 1,
+      "maxAttempts": 2,
+      "dependsOn": [
+        "content-plan"
+      ],
+      "priority": "normal",
+      "config": {
+        "agentId": "comparison-agent",
+        "targetSlug": "amplemarket-vs-reply",
+        "maxAutomaticRevisions": 1,
+        "expandFromContentPlan": true,
+        "expandKind": "comparisons",
+        "stopAfterApproval": true,
+        "allowNormalizedFacts": false,
+        "optionalWhenBlocked": true,
+        "forceTransientFailOnce": false
+      },
+      "expansionKey": "amplemarket-vs-reply",
+      "inputRefs": {},
+      "outputRefs": {},
+      "blockers": [
+        "RELATIONSHIP_UNAPPROVED: Approved comparable relationship required"
+      ],
+      "warnings": [
+        "RELATIONSHIP_UNAPPROVED: Approved comparable relationship required"
+      ],
+      "startedAt": "2026-08-17T06:01:01.932Z",
+      "completedAt": "2026-08-17T06:01:01.946Z",
+      "revisionAttempts": 0
+    },
+    {
+      "id": "comparison:apollo-vs-reply",
+      "definitionStepId": "comparisons",
+      "handler": "agent-run",
+      "label": "Comparison apollo-vs-reply",
+      "status": "blocked",
+      "required": false,
+      "failurePolicy": "continue-with-warning",
+      "attempt": 1,
+      "maxAttempts": 2,
+      "dependsOn": [
+        "content-plan"
+      ],
+      "priority": "normal",
+      "config": {
+        "agentId": "comparison-agent",
+        "targetSlug": "apollo-vs-reply",
+        "maxAutomaticRevisions": 1,
+        "expandFromContentPlan": true,
+        "expandKind": "comparisons",
+        "stopAfterApproval": true,
+        "allowNormalizedFacts": false,
+        "optionalWhenBlocked": true,
+        "forceTransientFailOnce": false
+      },
+      "expansionKey": "apollo-vs-reply",
+      "inputRefs": {},
+      "outputRefs": {},
+      "blockers": [
+        "RELATIONSHIP_UNAPPROVED: Approved comparable relationship required"
+      ],
+      "warnings": [
+        "RELATIONSHIP_UNAPPROVED: Approved comparable relationship required"
+      ],
+      "startedAt": "2026-08-17T06:01:01.947Z",
+      "completedAt": "2026-08-17T06:01:01.952Z",
+      "revisionAttempts": 0
+    },
+    {
+      "id": "comparison:closely-vs-reply",
+      "definitionStepId": "comparisons",
+      "handler": "agent-run",
+      "label": "Comparison closely-vs-reply",
+      "status": "blocked",
+      "required": false,
+      "failurePolicy": "continue-with-warning",
+      "attempt": 1,
+      "maxAttempts": 2,
+      "dependsOn": [
+        "content-plan"
+      ],
+      "priority": "normal",
+      "config": {
+        "agentId": "comparison-agent",
+        "targetSlug": "closely-vs-reply",
+        "maxAutomaticRevisions": 1,
+        "expandFromContentPlan": true,
+        "expandKind": "comparisons",
+        "stopAfterApproval": true,
+        "allowNormalizedFacts": false,
+        "optionalWhenBlocked": true,
+        "forceTransientFailOnce": false
+      },
+      "expansionKey": "closely-vs-reply",
+      "inputRefs": {},
+      "outputRefs": {},
+      "blockers": [
+        "RELATIONSHIP_UNAPPROVED: Approved comparable relationship required"
+      ],
+      "warnings": [
+        "RELATIONSHIP_UNAPPROVED: Approved comparable relationship required"
+      ],
+      "startedAt": "2026-08-17T06:01:01.954Z",
+      "completedAt": "2026-08-17T06:01:01.962Z",
+      "revisionAttempts": 0
+    },
+    {
+      "id": "internal-links",
+      "definitionStepId": "internal-links",
+      "handler": "internal-link",
+      "label": "Internal Link Plan",
+      "status": "completed",
+      "required": false,
+      "failurePolicy": "continue-with-warning",
+      "attempt": 1,
+      "maxAttempts": 2,
+      "dependsOn": [
+        "software-review"
+      ],
+      "priority": "low",
+      "config": {
+        "agentId": "internal-link-agent",
+        "maxAutomaticRevisions": 1,
+        "expandFromContentPlan": false,
+        "expandKind": "none",
+        "stopAfterApproval": true,
+        "allowNormalizedFacts": false,
+        "optionalWhenBlocked": false,
+        "forceTransientFailOnce": false
+      },
+      "inputRefs": {},
+      "outputRefs": {
+        "draftId": "draft-deterministic-v1-internal-link-agent-reply-2026-08-17T06-01-01-989Z",
+        "qaStatus": "pass",
+        "agentId": "internal-link-agent",
+        "target": "reply"
+      },
+      "inputSnapshot": {
+        "researchFactIds": [
+          "fact-reply-pricing.plans.email-volume-reply-pricing-fixture",
+          "fact-reply-pricing.plans.multichannel-reply-pricing-fixture",
+          "fact-reply-pricing.plans.jason-ai-sdr-reply-pricing-fixture",
+          "fact-reply-pricing.plans.agency-reply-pricing-fixture",
+          "fact-reply-pricing.currency-reply-pricing-fixture",
+          "fact-reply-pricing.hasFreeTrial-reply-pricing-fixture",
+          "fact-reply-pricing.hasFreePlan-reply-pricing-fixture",
+          "fact-reply-pricing.model-reply-pricing-fixture",
+          "fact-reply-identity.shortDescription-reply-product-fixture",
+          "fact-reply-positioning.claim-reply-product-fixture",
+          "fact-reply-features.lead-management-reply-product-fixture",
+          "fact-reply-features.contact-management-reply-product-fixture",
+          "fact-reply-features.email-sequences-reply-product-fixture",
+          "fact-reply-features.lead-scoring-reply-product-fixture",
+          "fact-reply-features.reporting-reply-product-fixture",
+          "fact-reply-features.ai-assistance-reply-product-fixture",
+          "fact-reply-features.meeting-scheduling-reply-product-fixture",
+          "fact-reply-ai.email-generation-reply-product-fixture",
+          "fact-reply-ai.automation-reply-product-fixture",
+          "fact-reply-ai.assistant-reply-product-fixture",
+          "fact-reply-ai.recommendations-reply-product-fixture"
+        ],
+        "methodologySlug": "crm-editorial",
+        "methodologyVersion": "1.0.0",
+        "agentVersion": "1.0.0",
+        "contextBuiltAt": "2026-08-17T06:01:01.986Z"
+      },
+      "blockers": [],
+      "warnings": [],
+      "agentTaskId": "exec-internal-link-agent-reply-1786946461982",
+      "draftId": "draft-deterministic-v1-internal-link-agent-reply-2026-08-17T06-01-01-989Z",
+      "startedAt": "2026-08-17T06:01:01.982Z",
+      "completedAt": "2026-08-17T06:01:01.991Z",
+      "revisionAttempts": 0
+    },
+    {
+      "id": "finder-readiness",
+      "definitionStepId": "finder-readiness",
+      "handler": "update-recommendation-readiness",
+      "label": "Finder readiness",
+      "status": "completed",
+      "required": false,
+      "failurePolicy": "continue",
+      "attempt": 1,
+      "maxAttempts": 2,
+      "dependsOn": [
+        "content-plan"
+      ],
+      "priority": "low",
+      "config": {
+        "maxAutomaticRevisions": 1,
+        "expandFromContentPlan": false,
+        "expandKind": "none",
+        "stopAfterApproval": true,
+        "allowNormalizedFacts": false,
+        "optionalWhenBlocked": false,
+        "forceTransientFailOnce": false
+      },
+      "inputRefs": {},
+      "outputRefs": {
+        "finderReadiness": "checked"
+      },
+      "blockers": [],
+      "warnings": [],
+      "startedAt": "2026-08-17T06:01:01.980Z",
+      "completedAt": "2026-08-17T06:01:01.981Z",
+      "revisionAttempts": 0
+    },
+    {
+      "id": "editorial-approval",
+      "definitionStepId": "editorial-approval",
+      "handler": "approval-check",
+      "label": "Editorial approval",
+      "status": "completed",
+      "required": true,
+      "failurePolicy": "manual-review",
+      "attempt": 2,
+      "maxAttempts": 2,
+      "dependsOn": [
+        "software-review"
+      ],
+      "priority": "critical",
+      "config": {
+        "approvalType": "editorial",
+        "maxAutomaticRevisions": 1,
+        "expandFromContentPlan": false,
+        "expandKind": "none",
+        "stopAfterApproval": true,
+        "allowNormalizedFacts": false,
+        "optionalWhenBlocked": false,
+        "forceTransientFailOnce": false
+      },
+      "inputRefs": {},
+      "outputRefs": {
+        "approvalId": "appr-wf-software-onboarding-content-reply-1786946461368-software-review",
+        "draftId": "draft-deterministic-v1-software-review-agent-reply-2026-08-17T06-01-01-918Z",
+        "approvalIds": "appr-wf-software-onboarding-content-reply-1786946461368-software-review"
+      },
+      "blockers": [],
+      "warnings": [
+        "Approval received — resuming",
+        "2 optional draft(s) may still need separate editorial review"
+      ],
+      "approvalId": "appr-wf-software-onboarding-content-reply-1786946461368-software-review",
+      "startedAt": "2026-08-17T06:13:06.812Z",
+      "completedAt": "2026-08-17T06:13:06.936Z",
+      "revisionAttempts": 0
+    },
+    {
+      "id": "pre-publish-validation",
+      "definitionStepId": "pre-publish-validation",
+      "handler": "pre-publish-validation",
+      "label": "Pre-publish validation",
+      "status": "completed",
+      "required": true,
+      "failurePolicy": "block-workflow",
+      "attempt": 1,
+      "maxAttempts": 2,
+      "dependsOn": [
+        "editorial-approval"
+      ],
+      "priority": "critical",
+      "config": {
+        "maxAutomaticRevisions": 1,
+        "expandFromContentPlan": false,
+        "expandKind": "none",
+        "stopAfterApproval": true,
+        "allowNormalizedFacts": false,
+        "optionalWhenBlocked": false,
+        "forceTransientFailOnce": false
+      },
+      "inputRefs": {},
+      "outputRefs": {
+        "publishState": "READY_TO_PUBLISH"
+      },
+      "blockers": [],
+      "warnings": [
+        "stopAfterApproval: workflow will not publish automatically"
+      ],
+      "startedAt": "2026-08-17T06:13:06.937Z",
+      "completedAt": "2026-08-17T06:13:07.151Z",
+      "revisionAttempts": 0
+    }
+  ],
+  "history": [
+    {
+      "at": "2026-08-17T06:01:01.798Z",
+      "event": "workflow_created",
+      "message": "Created software-onboarding-content:v1.0.0"
+    },
+    {
+      "at": "2026-08-17T06:01:01.800Z",
+      "event": "workflow_started",
+      "message": "Workflow execution started"
+    },
+    {
+      "at": "2026-08-17T06:01:01.801Z",
+      "event": "workflow_step_started",
+      "stepId": "software-onboarding",
+      "message": "Started Software onboarding"
+    },
+    {
+      "at": "2026-08-17T06:01:01.835Z",
+      "event": "workflow_step_completed",
+      "stepId": "software-onboarding",
+      "message": "Reused onboarding run onboard-reply-1786946407005 (review-required)"
+    },
+    {
+      "at": "2026-08-17T06:01:01.836Z",
+      "event": "workflow_step_started",
+      "stepId": "content-plan",
+      "message": "Started Content plan"
+    },
+    {
+      "at": "2026-08-17T06:01:01.876Z",
+      "event": "workflow_step_completed",
+      "stepId": "content-plan",
+      "message": "Content plan from onboarding onboard-reply-1786946407005 (8 candidates)"
+    },
+    {
+      "at": "2026-08-17T06:01:01.876Z",
+      "event": "workflow_step_started",
+      "stepId": "software-review",
+      "message": "Started Software Review"
+    },
+    {
+      "at": "2026-08-17T06:01:01.924Z",
+      "event": "workflow_step_completed",
+      "stepId": "software-review",
+      "message": "Agent software-review-agent → draft draft-deterministic-v1-software-review-agent-reply-2026-08-17T06-01-01-918Z (qa=pass)"
+    },
+    {
+      "at": "2026-08-17T06:01:01.924Z",
+      "event": "workflow_step_started",
+      "stepId": "alternatives",
+      "message": "Started Alternatives"
+    },
+    {
+      "at": "2026-08-17T06:01:01.931Z",
+      "event": "workflow_step_completed",
+      "stepId": "alternatives",
+      "message": "Agent blocked (optional): NO_APPROVED_ALTERNATIVES: Approved alternative relationships required — same-category alone is insufficient"
+    },
+    {
+      "at": "2026-08-17T06:01:01.932Z",
+      "event": "workflow_step_started",
+      "stepId": "comparison:amplemarket-vs-reply",
+      "message": "Started Comparison amplemarket-vs-reply"
+    },
+    {
+      "at": "2026-08-17T06:01:01.946Z",
+      "event": "workflow_step_completed",
+      "stepId": "comparison:amplemarket-vs-reply",
+      "message": "Agent blocked (optional): RELATIONSHIP_UNAPPROVED: Approved comparable relationship required"
+    },
+    {
+      "at": "2026-08-17T06:01:01.947Z",
+      "event": "workflow_step_started",
+      "stepId": "comparison:apollo-vs-reply",
+      "message": "Started Comparison apollo-vs-reply"
+    },
+    {
+      "at": "2026-08-17T06:01:01.952Z",
+      "event": "workflow_step_completed",
+      "stepId": "comparison:apollo-vs-reply",
+      "message": "Agent blocked (optional): RELATIONSHIP_UNAPPROVED: Approved comparable relationship required"
+    },
+    {
+      "at": "2026-08-17T06:01:01.953Z",
+      "event": "workflow_step_started",
+      "stepId": "comparison:closely-vs-reply",
+      "message": "Started Comparison closely-vs-reply"
+    },
+    {
+      "at": "2026-08-17T06:01:01.962Z",
+      "event": "workflow_step_completed",
+      "stepId": "comparison:closely-vs-reply",
+      "message": "Agent blocked (optional): RELATIONSHIP_UNAPPROVED: Approved comparable relationship required"
+    },
+    {
+      "at": "2026-08-17T06:01:01.963Z",
+      "event": "workflow_step_started",
+      "stepId": "pricing-page",
+      "message": "Started Pricing Page"
+    },
+    {
+      "at": "2026-08-17T06:01:01.975Z",
+      "event": "workflow_step_completed",
+      "stepId": "pricing-page",
+      "message": "Agent pricing-page-agent → draft draft-deterministic-v1-pricing-page-agent-reply-2026-08-17T06-01-01-968Z (qa=pass)"
+    },
+    {
+      "at": "2026-08-17T06:01:01.980Z",
+      "event": "workflow_step_started",
+      "stepId": "finder-readiness",
+      "message": "Started Finder readiness"
+    },
+    {
+      "at": "2026-08-17T06:01:01.981Z",
+      "event": "workflow_step_completed",
+      "stepId": "finder-readiness",
+      "message": "Finder readiness noted for reply"
+    },
+    {
+      "at": "2026-08-17T06:01:01.982Z",
+      "event": "workflow_step_started",
+      "stepId": "internal-links",
+      "message": "Started Internal Link Plan"
+    },
+    {
+      "at": "2026-08-17T06:01:01.991Z",
+      "event": "workflow_step_completed",
+      "stepId": "internal-links",
+      "message": "Agent internal-link-agent → draft draft-deterministic-v1-internal-link-agent-reply-2026-08-17T06-01-01-989Z (qa=pass)"
+    },
+    {
+      "at": "2026-08-17T06:01:01.992Z",
+      "event": "workflow_step_started",
+      "stepId": "editorial-approval",
+      "message": "Started Editorial approval"
+    },
+    {
+      "at": "2026-08-17T06:01:02.064Z",
+      "event": "workflow_step_completed",
+      "stepId": "editorial-approval",
+      "message": "WAITING FOR EDITORIAL APPROVAL (appr-wf-software-onboarding-content-reply-1786946461368-software-review)"
+    },
+    {
+      "at": "2026-08-17T06:13:06.809Z",
+      "event": "workflow_resumed",
+      "message": "Workflow resumed"
+    },
+    {
+      "at": "2026-08-17T06:13:06.811Z",
+      "event": "workflow_started",
+      "message": "Workflow execution started"
+    },
+    {
+      "at": "2026-08-17T06:13:06.812Z",
+      "event": "workflow_step_started",
+      "stepId": "editorial-approval",
+      "message": "Started Editorial approval"
+    },
+    {
+      "at": "2026-08-17T06:13:06.936Z",
+      "event": "workflow_step_completed",
+      "stepId": "editorial-approval",
+      "message": "Required editorial approvals satisfied"
+    },
+    {
+      "at": "2026-08-17T06:13:06.937Z",
+      "event": "workflow_step_started",
+      "stepId": "pre-publish-validation",
+      "message": "Started Pre-publish validation"
+    },
+    {
+      "at": "2026-08-17T06:13:07.151Z",
+      "event": "workflow_step_completed",
+      "stepId": "pre-publish-validation",
+      "message": "Pre-publish validation passed — READY TO PUBLISH (manual)"
+    },
+    {
+      "at": "2026-08-17T06:13:07.153Z",
+      "event": "workflow_completed",
+      "message": "Workflow completed-with-warnings"
+    }
+  ],
+  "options": {
+    "generateReview": true,
+    "generatePricing": true,
+    "generateAlternatives": true,
+    "generateComparisons": true,
+    "runInternalLinks": true,
+    "stopAfterApproval": true,
+    "allowNormalizedFacts": false,
+    "dryRun": false,
+    "maxComparisons": 3,
+    "skipOnboarding": false
+  },
+  "warnings": [
+    "alternatives blocked: NO_APPROVED_ALTERNATIVES: Approved alternative relationships required — same-category alone is insufficient",
+    "comparison:amplemarket-vs-reply blocked: RELATIONSHIP_UNAPPROVED: Approved comparable relationship required",
+    "comparison:apollo-vs-reply blocked: RELATIONSHIP_UNAPPROVED: Approved comparable relationship required",
+    "comparison:closely-vs-reply blocked: RELATIONSHIP_UNAPPROVED: Approved comparable relationship required"
+  ],
+  "createdAt": "2026-08-17T06:01:01.798Z",
+  "updatedAt": "2026-08-17T06:13:07.153Z"
+}

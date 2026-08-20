@@ -1,0 +1,175 @@
+{
+  "id": "assessment-saleor-ecommerce-v1",
+  "productSlug": "saleor",
+  "methodologySlug": "ecommerce-editorial",
+  "methodologyVersion": "1.0.0",
+  "status": "approved",
+  "verdict": "Saleor: Choose Saleor when headless GraphQL commerce is the job and you will either self-host OSS or budget for Cloud Select+ — not when Forever Free looks like a production free plan. Scores use the Ecommerce editorial methodology from first-party research as of 2026-08-17 — not hands-on product testing.",
+  "strengths": [
+    "Free OSS self-host for production",
+    "Published Cloud Select / Volume tiles",
+    "GraphQL-native headless commerce",
+    "Clear GMV bands on Cloud plans"
+  ],
+  "weaknesses": [
+    "High Cloud Select floor",
+    "Forever Free is non-commercial only",
+    "You still build the storefront experience"
+  ],
+  "bestFor": [
+    "Teams building headless GraphQL storefronts",
+    "Mid-market brands that will self-host or buy Cloud Select+",
+    "Composable stacks comparing Medusa and commercetools"
+  ],
+  "notIdealFor": [
+    "SMB founders wanting a theme marketplace weekend launch",
+    "Merchants mistaking Forever Free for production Cloud",
+    "Retail POS-first businesses"
+  ],
+  "tradeoffs": [
+    "Subscription floors vs payment-processing spreads and GMV/overage fees",
+    "App/extension TCO vs native feature depth",
+    "Open-source/hosting flexibility vs SaaS operational simplicity",
+    "Dropshipping product caps vs catalog automation depth"
+  ],
+  "recommendation": "Choose Saleor when headless GraphQL commerce is the job and you will either self-host OSS or budget for Cloud Select+ — not when Forever Free looks like a production free plan. Consider Medusa for JS/MIT headless with lower Cloud floors; Magento for deeper classic enterprise OSS; commercetools for quote-only composable SaaS.",
+  "editorialNotes": "Ecommerce Priority-3 batch. Approved on ecommerce-editorial v1.0.0. membershipRole=primary. jobCluster=open-source-platform. handsOnTesting=false. Affiliate economics excluded.",
+  "handsOnTesting": false,
+  "confidence": "medium",
+  "criterionAssessments": [
+    {
+      "criterionSlug": "ease-of-use",
+      "score": 5,
+      "rationale": "Developer/headless GraphQL stack — not a guided SMB theme admin.",
+      "supportingFactIds": [
+        "fact-saleor-features.product-catalog",
+        "fact-saleor-pricing.model"
+      ],
+      "confidence": "medium",
+      "status": "approved",
+      "reviewedAt": "2026-08-18T16:00:00.000Z",
+      "reviewer": "editorial"
+    },
+    {
+      "criterionSlug": "storefront-commerce-fit",
+      "score": 7,
+      "rationale": "Core job is headless open-source commerce. Landscape peer — WooCommerce keeps the award.",
+      "supportingFactIds": [
+        "fact-saleor-features.product-catalog",
+        "fact-saleor-pricing.model"
+      ],
+      "confidence": "medium",
+      "status": "approved",
+      "reviewedAt": "2026-08-18T16:00:00.000Z",
+      "reviewer": "editorial"
+    },
+    {
+      "criterionSlug": "catalog-orders-depth",
+      "score": 8,
+      "rationale": "Strong catalog and order APIs for composable storefronts.",
+      "supportingFactIds": [
+        "fact-saleor-features.order-management",
+        "fact-saleor-pricing.model"
+      ],
+      "confidence": "medium",
+      "status": "approved",
+      "reviewedAt": "2026-08-18T16:00:00.000Z",
+      "reviewer": "editorial"
+    },
+    {
+      "criterionSlug": "checkout-conversion",
+      "score": 7,
+      "rationale": "Checkout is composed in your front-end — capable when engineered well.",
+      "supportingFactIds": [
+        "fact-saleor-features.checkout-payments",
+        "fact-saleor-pricing.model"
+      ],
+      "confidence": "medium",
+      "status": "approved",
+      "reviewedAt": "2026-08-18T16:00:00.000Z",
+      "reviewer": "editorial"
+    },
+    {
+      "criterionSlug": "integrations",
+      "score": 8,
+      "rationale": "GraphQL APIs and apps support modern stacks; ecosystem is smaller than Shopify.",
+      "supportingFactIds": [
+        "fact-saleor-features.app-extensions",
+        "fact-saleor-pricing.model",
+        "fact-saleor-positioning.vendorClaim"
+      ],
+      "confidence": "medium",
+      "status": "approved",
+      "reviewedAt": "2026-08-18T16:00:00.000Z",
+      "reviewer": "editorial"
+    },
+    {
+      "criterionSlug": "omnichannel-pos",
+      "score": 4,
+      "rationale": "Not a retail POS product.",
+      "supportingFactIds": [
+        "fact-saleor-features.pos-omnichannel",
+        "fact-saleor-pricing.model"
+      ],
+      "confidence": "medium",
+      "status": "approved",
+      "reviewedAt": "2026-08-18T16:00:00.000Z",
+      "reviewer": "editorial"
+    },
+    {
+      "criterionSlug": "scalability",
+      "score": 8,
+      "rationale": "Cloud Volume/Enterprise and self-host scale for ambitious catalogues.",
+      "supportingFactIds": [
+        "fact-saleor-pricing.plans.open-source",
+        "fact-saleor-pricing.model",
+        "fact-saleor-pricing.plans.enterprise"
+      ],
+      "confidence": "medium",
+      "status": "approved",
+      "reviewedAt": "2026-08-18T16:00:00.000Z",
+      "reviewer": "editorial"
+    },
+    {
+      "criterionSlug": "value-for-money",
+      "score": 6,
+      "rationale": "OSS free is strong; Cloud Select $1599 floor is steep versus Woo/Medusa Cloud entry.",
+      "supportingFactIds": [
+        "fact-saleor-pricing.hasFreePlan",
+        "fact-saleor-pricing.model",
+        "fact-saleor-pricing.startingPriceMonthly"
+      ],
+      "confidence": "medium",
+      "status": "approved",
+      "reviewedAt": "2026-08-18T16:00:00.000Z",
+      "reviewer": "editorial"
+    },
+    {
+      "criterionSlug": "ai-capabilities",
+      "score": 6,
+      "rationale": "Limited first-party AI relative to large SaaS platforms.",
+      "supportingFactIds": [
+        "fact-saleor-features.ai-assistance",
+        "fact-saleor-pricing.model"
+      ],
+      "confidence": "medium",
+      "status": "approved",
+      "reviewedAt": "2026-08-18T16:00:00.000Z",
+      "reviewer": "editorial"
+    }
+  ],
+  "overallScore": 6.8,
+  "overallScoreRationale": "Weighted average of the nine ecommerce editorial criteria using category weights (storefront/commerce fit 15, catalog/orders 14, ease 12, checkout 12, integrations 12, value 12, omnichannel/POS 10, scalability 9, AI 6), rounded to 1 decimal. Products are scored inside their job cluster — SaaS platforms, open-source carts, omnichannel POS bundles, and dropshipping sourcing apps are not forced into one undifferentiated ranking. Not a hands-on lab score; affiliate economics are excluded.",
+  "scoreAudit": [
+    {
+      "at": "2026-08-18T16:00:00.000Z",
+      "actor": "editorial",
+      "change": "Ecommerce Priority-3 onboarding; approved HR criteria with category weights; handsOnTesting=false",
+      "nextOverall": 6.8
+    }
+  ],
+  "reviewedAt": "2026-08-18T16:00:00.000Z",
+  "reviewer": "editorial",
+  "createdAt": "2026-08-18T16:00:00.000Z",
+  "updatedAt": "2026-08-18T16:00:00.000Z"
+}

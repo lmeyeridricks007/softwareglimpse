@@ -1,0 +1,294 @@
+{
+  "id": "review-honeycomb-v1",
+  "productSlug": "honeycomb",
+  "assessmentId": "assessment-honeycomb-it-v1",
+  "editorialStatus": "approved",
+  "title": "Honeycomb Review (2026)",
+  "h1": "Honeycomb Review",
+  "intro": "Honeycomb is evaluated here as an observability and infrastructure monitoring suite — Honeycomb is a high-cardinality event and distributed-tracing observability specialist — BubbleUp, wide events, and trace-first debugging rather than a Datadog-style host/infra suite. Free plan exists. Pro publishes from $150/month; Enterprise is custom. Same observability-monitoring cluster as Datadog — Datadog remains the award (8.6); this entity does not outrank it. Distinct from AppDynamics vCPU APM and from Sentry’s error/replay specialist shape. Landscape-only versus PagerDuty on-call. This review uses SoftwareGlimpse’s IT & Development methodology (ease of use, IT job fit, workflow depth, integrations, admin/security, scalability, value, AI), scoring products inside their job cluster rather than against unrelated peers. It is based on first-party research, not hands-on lab testing.",
+  "summary": "Choose Honeycomb when high-cardinality event/trace debugging is the job — not Datadog infrastructure monitoring by default, and not PagerDuty.",
+  "verdict": "Choose Honeycomb when high-cardinality event/trace debugging is the job — not Datadog infrastructure monitoring by default, and not PagerDuty. Compare Datadog or AppDynamics for full-stack infra/APM; Sentry for error/replay specialists; PagerDuty only on landscape pages for paging. Scores reflect first-party documentation as of 2026-08-18 — not hands-on product testing. Confirm current packaging, host/GB rates and minimums on the vendor site before purchase.",
+  "overallScore": 7.8,
+  "criterionAssessments": [
+    {
+      "criterionSlug": "ease-of-use",
+      "score": 8,
+      "rationale": "Query-first wide-event UX is loved by tracing specialists; not a host-map onboarding path. Not a lab test.",
+      "supportingFactIds": [
+        "fact-honeycomb-features.infrastructure-monitoring",
+        "fact-honeycomb-pricing.model"
+      ],
+      "confidence": "medium",
+      "status": "approved",
+      "reviewedAt": "2026-08-18T22:00:00.000Z",
+      "reviewer": "editorial"
+    },
+    {
+      "criterionSlug": "it-job-fit",
+      "score": 8,
+      "rationale": "Observability specialist — high-cardinality events/traces, not Datadog infra replacement, not PagerDuty paging.",
+      "supportingFactIds": [
+        "fact-honeycomb-features.infrastructure-monitoring",
+        "fact-honeycomb-pricing.model"
+      ],
+      "confidence": "medium",
+      "status": "approved",
+      "reviewedAt": "2026-08-18T22:00:00.000Z",
+      "reviewer": "editorial"
+    },
+    {
+      "criterionSlug": "workflow-depth",
+      "score": 8,
+      "rationale": "BubbleUp, traces, and SLOs are deep for that job; not full-stack infra/logs the way Datadog modules are.",
+      "supportingFactIds": [
+        "fact-honeycomb-features.apm-tracing",
+        "fact-honeycomb-pricing.model"
+      ],
+      "confidence": "medium",
+      "status": "approved",
+      "reviewedAt": "2026-08-18T22:00:00.000Z",
+      "reviewer": "editorial"
+    },
+    {
+      "criterionSlug": "integrations",
+      "score": 8,
+      "rationale": "OpenTelemetry, Slack, and GitHub cover the debugging workflow.",
+      "supportingFactIds": [
+        "fact-honeycomb-features.analytics-reporting",
+        "fact-honeycomb-pricing.model",
+        "fact-honeycomb-positioning.vendorClaim"
+      ],
+      "confidence": "medium",
+      "status": "approved",
+      "reviewedAt": "2026-08-18T22:00:00.000Z",
+      "reviewer": "editorial"
+    },
+    {
+      "criterionSlug": "admin-security",
+      "score": 8,
+      "rationale": "Pro/Enterprise add governance; Free is team-grade.",
+      "supportingFactIds": [
+        "fact-honeycomb-features.enterprise-security",
+        "fact-honeycomb-pricing.model"
+      ],
+      "confidence": "medium",
+      "status": "approved",
+      "reviewedAt": "2026-08-18T22:00:00.000Z",
+      "reviewer": "editorial"
+    },
+    {
+      "criterionSlug": "scalability",
+      "score": 8,
+      "rationale": "Enterprise custom plus event volume; $150 Pro is not unlimited.",
+      "supportingFactIds": [
+        "fact-honeycomb-pricing.plans.free",
+        "fact-honeycomb-pricing.model",
+        "fact-honeycomb-pricing.plans.enterprise"
+      ],
+      "confidence": "medium",
+      "status": "approved",
+      "reviewedAt": "2026-08-18T22:00:00.000Z",
+      "reviewer": "editorial"
+    },
+    {
+      "criterionSlug": "value-for-money",
+      "score": 8,
+      "rationale": "Free plus published $150 Pro is a clear specialist floor versus Datadog module stacking. Affiliate economics excluded.",
+      "supportingFactIds": [
+        "fact-honeycomb-pricing.hasFreePlan",
+        "fact-honeycomb-pricing.model",
+        "fact-honeycomb-pricing.startingPriceMonthly"
+      ],
+      "confidence": "medium",
+      "status": "approved",
+      "reviewedAt": "2026-08-18T22:00:00.000Z",
+      "reviewer": "editorial"
+    },
+    {
+      "criterionSlug": "ai-capabilities",
+      "score": 6,
+      "rationale": "Query/assist exists — scored as supporting, not an LLM suite.",
+      "supportingFactIds": [
+        "fact-honeycomb-features.itsm-ai",
+        "fact-honeycomb-pricing.model"
+      ],
+      "confidence": "medium",
+      "status": "approved",
+      "reviewedAt": "2026-08-18T22:00:00.000Z",
+      "reviewer": "editorial"
+    }
+  ],
+  "bestFor": [
+    "Teams whose observability job is high-cardinality events and traces",
+    "OpenTelemetry-first debugging vs host/infra suites",
+    "Buyers who will start on Free before Pro $150"
+  ],
+  "notIdealFor": [
+    "SRE teams buying infrastructure monitoring as the core SKU (Datadog)",
+    "On-call-only paging (PagerDuty) — landscape, not a peer rank",
+    "Cisco vCPU APM as the primary shape (AppDynamics)"
+  ],
+  "pros": [
+    "Free plan",
+    "Published Pro $150/mo floor",
+    "High-cardinality event/trace specialist depth",
+    "Clear identity vs infra suites",
+    "OpenTelemetry-friendly"
+  ],
+  "cons": [
+    "Not infra monitoring",
+    "Does not outrank Datadog",
+    "Event volume still meters TCO",
+    "Not on-call-primary",
+    "AI is not the product"
+  ],
+  "keyFeatures": [
+    "High-cardinality events",
+    "Distributed tracing",
+    "BubbleUp / query-first debugging",
+    "Free and Pro $150/mo",
+    "OpenTelemetry"
+  ],
+  "limitations": [
+    "Not a Datadog-style infrastructure monitoring suite — high-cardinality events/traces are the job",
+    "Does not outrank Datadog (8.6)",
+    "Pro $150 is not unlimited telemetry",
+    "Not on-call paging (PagerDuty) — landscape only",
+    "Not ITSM, git host, hosting panel, or managed hosting"
+  ],
+  "pricingSummary": "Free plan. Pro from $150/mo. Enterprise quote. Confirm live event/trace allowances on honeycomb.io/pricing.",
+  "whoShouldChoose": "Choose Honeycomb when high-cardinality event/trace debugging is the job — not Datadog infrastructure monitoring by default, and not PagerDuty.",
+  "whoShouldConsiderAlternatives": "Compare Datadog or AppDynamics for full-stack infra/APM; Sentry for error/replay specialists; PagerDuty only on landscape pages for paging.",
+  "alternativeSlugs": [
+    "datadog",
+    "sentry"
+  ],
+  "comparisonSlugs": [
+    "datadog-vs-honeycomb",
+    "honeycomb-vs-sentry"
+  ],
+  "relatedGuidePaths": [
+    "/categories/it-development/",
+    "/best/it-development-software/",
+    "/use-cases/itsm-service-desk/",
+    "/use-cases/observability-monitoring/",
+    "/use-cases/incident-oncall/",
+    "/use-cases/source-control-devops/",
+    "/use-cases/hosting-providers/",
+    "/use-cases/web-data-collection/"
+  ],
+  "methodologySlug": "it-development-editorial",
+  "methodologyVersion": "1.0.0",
+  "researchSourceIds": [
+    "honeycomb-product-official",
+    "honeycomb-pricing-official",
+    "honeycomb-pricing"
+  ],
+  "factRefs": [
+    {
+      "section": "pricing",
+      "factIds": [
+        "fact-honeycomb-pricing.model",
+        "fact-honeycomb-pricing.hasFreePlan",
+        "fact-honeycomb-pricing.hasFreeTrial",
+        "fact-honeycomb-pricing.startingPriceMonthly",
+        "fact-honeycomb-pricing.plans.free",
+        "fact-honeycomb-pricing.plans.pro",
+        "fact-honeycomb-pricing.plans.enterprise"
+      ]
+    },
+    {
+      "section": "overview",
+      "factIds": [
+        "fact-honeycomb-identity.shortDescription",
+        "fact-honeycomb-positioning.vendorClaim",
+        "fact-honeycomb-positioning.jobCluster"
+      ]
+    },
+    {
+      "section": "features",
+      "factIds": [
+        "fact-honeycomb-features.incident-management",
+        "fact-honeycomb-features.change-problem",
+        "fact-honeycomb-features.service-catalog",
+        "fact-honeycomb-features.infrastructure-monitoring",
+        "fact-honeycomb-features.apm-tracing",
+        "fact-honeycomb-features.log-management",
+        "fact-honeycomb-features.source-control",
+        "fact-honeycomb-features.cicd-actions",
+        "fact-honeycomb-features.hosting-panel",
+        "fact-honeycomb-features.managed-hosting",
+        "fact-honeycomb-features.proxy-network",
+        "fact-honeycomb-features.itsm-ai",
+        "fact-honeycomb-features.dev-ai",
+        "fact-honeycomb-features.oncall-paging",
+        "fact-honeycomb-features.enterprise-security",
+        "fact-honeycomb-features.analytics-reporting"
+      ]
+    }
+  ],
+  "faq": [
+    {
+      "question": "Is Honeycomb IT / development software?",
+      "answer": "Yes. Honeycomb is evaluated as an observability and infrastructure monitoring suite."
+    },
+    {
+      "question": "How is Honeycomb priced?",
+      "answer": "Free plan. Pro from $150/mo. Enterprise quote. Confirm live event/trace allowances on honeycomb.io/pricing."
+    },
+    {
+      "question": "Does Honeycomb have a free plan or free trial?",
+      "answer": "Yes — a free plan is published. No free trial is documented on the pricing page. Confirm current terms with the vendor."
+    },
+    {
+      "question": "Did SoftwareGlimpse personally test Honeycomb?",
+      "answer": "No. This review is based on first-party product and pricing research evidence, not hands-on product usage. Affiliate relationships never influence scores."
+    }
+  ],
+  "sections": [
+    {
+      "id": "overview",
+      "heading": "Overview",
+      "body": "Honeycomb is a high-cardinality event and distributed-tracing observability specialist — BubbleUp, wide events, and trace-first debugging rather than a Datadog-style host/infra suite. Free plan exists. Pro publishes from $150/month; Enterprise is custom. Same observability-monitoring cluster as Datadog — Datadog remains the award (8.6); this entity does not outrank it. Distinct from AppDynamics vCPU APM and from Sentry’s error/replay specialist shape. Landscape-only versus PagerDuty on-call."
+    },
+    {
+      "id": "best-for",
+      "heading": "Who it’s for",
+      "body": "• Teams whose observability job is high-cardinality events and traces\n• OpenTelemetry-first debugging vs host/infra suites\n• Buyers who will start on Free before Pro $150"
+    },
+    {
+      "id": "features",
+      "heading": "Feature coverage",
+      "body": "• incident-management: limited\n• change-problem: not-supported\n• service-catalog: not-supported\n• infrastructure-monitoring: limited\n• apm-tracing: supported\n• log-management: limited\n• source-control: not-supported\n• cicd-actions: limited\n• hosting-panel: not-supported\n• managed-hosting: not-supported\n• proxy-network: not-supported\n• itsm-ai: limited\n• dev-ai: limited\n• oncall-paging: not-supported\n• enterprise-security: limited\n• analytics-reporting: supported"
+    },
+    {
+      "id": "pricing",
+      "heading": "Pricing",
+      "body": "Free plan. Pro from $150/mo. Enterprise quote. Confirm live event/trace allowances on honeycomb.io/pricing."
+    },
+    {
+      "id": "limitations",
+      "heading": "Limitations",
+      "body": "• Not a Datadog-style infrastructure monitoring suite — high-cardinality events/traces are the job\n• Does not outrank Datadog (8.6)\n• Pro $150 is not unlimited telemetry\n• Not on-call paging (PagerDuty) — landscape only\n• Not ITSM, git host, hosting panel, or managed hosting"
+    }
+  ],
+  "confidence": "medium",
+  "handsOnTesting": false,
+  "contentVersion": 1,
+  "refreshNeeded": false,
+  "lastUpdatedAt": "2026-08-18T22:00:00.000Z",
+  "metadata": {
+    "status": "published",
+    "publishedAt": "2026-08-18T00:00:00.000Z",
+    "updatedAt": "2026-08-18T22:00:00.000Z",
+    "reviewedAt": "2026-08-18T22:00:00.000Z",
+    "author": "author-lee-meyeridricks",
+    "researchStatus": "complete"
+  },
+  "seo": {
+    "title": "Honeycomb Review (2026) — IT & Development",
+    "description": "Honeycomb IT & development review on SoftwareGlimpse: strengths, trade-offs, pricing posture, and who should buy.",
+    "canonicalPath": "/software/honeycomb/",
+    "indexable": true
+  }
+}

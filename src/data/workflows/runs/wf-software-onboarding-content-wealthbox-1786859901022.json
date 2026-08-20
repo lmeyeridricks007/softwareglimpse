@@ -1,0 +1,956 @@
+{
+  "id": "wf-software-onboarding-content-wealthbox-1786859901022",
+  "workflowId": "software-onboarding-content",
+  "workflowVersion": "1.0.0",
+  "name": "Software Onboarding Content: wealthbox",
+  "targetType": "software",
+  "targetId": "wealthbox",
+  "status": "superseded",
+  "steps": [
+    {
+      "id": "software-onboarding",
+      "definitionStepId": "software-onboarding",
+      "handler": "software-onboarding",
+      "label": "Software onboarding",
+      "status": "completed",
+      "required": true,
+      "failurePolicy": "block-workflow",
+      "attempt": 1,
+      "maxAttempts": 2,
+      "dependsOn": [],
+      "priority": "critical",
+      "config": {
+        "maxAutomaticRevisions": 1,
+        "expandFromContentPlan": false,
+        "expandKind": "none",
+        "stopAfterApproval": true,
+        "allowNormalizedFacts": false,
+        "optionalWhenBlocked": false,
+        "forceTransientFailOnce": false
+      },
+      "inputRefs": {},
+      "outputRefs": {
+        "softwareOnboardingRunId": "onboard-wealthbox-1786859691301"
+      },
+      "blockers": [],
+      "warnings": [],
+      "startedAt": "2026-08-16T05:58:21.335Z",
+      "completedAt": "2026-08-16T05:58:21.382Z",
+      "revisionAttempts": 0
+    },
+    {
+      "id": "content-plan",
+      "definitionStepId": "content-plan",
+      "handler": "content-plan",
+      "label": "Content plan",
+      "status": "completed",
+      "required": true,
+      "failurePolicy": "block-workflow",
+      "attempt": 1,
+      "maxAttempts": 2,
+      "dependsOn": [
+        "software-onboarding"
+      ],
+      "priority": "high",
+      "config": {
+        "maxAutomaticRevisions": 1,
+        "expandFromContentPlan": false,
+        "expandKind": "none",
+        "stopAfterApproval": true,
+        "allowNormalizedFacts": false,
+        "optionalWhenBlocked": false,
+        "forceTransientFailOnce": false
+      },
+      "inputRefs": {},
+      "outputRefs": {
+        "softwareOnboardingRunId": "onboard-wealthbox-1786859691301",
+        "comparisonTargets": "salesforce-vs-wealthbox,hubspot-vs-wealthbox,cloze-vs-wealthbox",
+        "pageCandidateCount": "9"
+      },
+      "blockers": [],
+      "warnings": [],
+      "startedAt": "2026-08-16T05:58:21.383Z",
+      "completedAt": "2026-08-16T05:58:21.419Z",
+      "revisionAttempts": 0
+    },
+    {
+      "id": "software-review",
+      "definitionStepId": "software-review",
+      "handler": "agent-run",
+      "label": "Software Review",
+      "status": "completed",
+      "required": true,
+      "failurePolicy": "block-workflow",
+      "attempt": 1,
+      "maxAttempts": 2,
+      "dependsOn": [
+        "content-plan"
+      ],
+      "priority": "high",
+      "config": {
+        "agentId": "software-review-agent",
+        "targetSlug": "wealthbox",
+        "maxAutomaticRevisions": 1,
+        "expandFromContentPlan": false,
+        "expandKind": "none",
+        "stopAfterApproval": true,
+        "allowNormalizedFacts": false,
+        "optionalWhenBlocked": false,
+        "forceTransientFailOnce": false
+      },
+      "inputRefs": {},
+      "outputRefs": {
+        "draftId": "draft-deterministic-v1-software-review-agent-wealthbox-2026-08-16T05-58-21-467Z",
+        "qaStatus": "pass",
+        "agentId": "software-review-agent",
+        "target": "wealthbox"
+      },
+      "inputSnapshot": {
+        "researchFactIds": [
+          "fact-wealthbox-pricing.hasFreePlan",
+          "fact-wealthbox-pricing.hasFreeTrial",
+          "fact-wealthbox-pricing.currency",
+          "fact-wealthbox-pricing.model",
+          "fact-wealthbox-identity.shortDescription",
+          "fact-wealthbox-positioning.vendorClaim",
+          "fact-wealthbox-pricing.startingPriceMonthly",
+          "fact-wealthbox-pricing.plans.basic",
+          "fact-wealthbox-pricing.plans.pro",
+          "fact-wealthbox-pricing.plans.premier",
+          "fact-wealthbox-pricing.plans.enterprise",
+          "fact-wealthbox-features.contact-management",
+          "fact-wealthbox-features.lead-management",
+          "fact-wealthbox-features.pipeline-management",
+          "fact-wealthbox-features.deal-management",
+          "fact-wealthbox-features.custom-pipelines",
+          "fact-wealthbox-features.custom-fields",
+          "fact-wealthbox-features.email-sync",
+          "fact-wealthbox-features.email-tracking",
+          "fact-wealthbox-features.workflow-automation",
+          "fact-wealthbox-features.reporting",
+          "fact-wealthbox-features.mobile-app",
+          "fact-wealthbox-features.sales-automation",
+          "fact-wealthbox-features.integrations",
+          "fact-wealthbox-features.ai-assistance"
+        ],
+        "methodologySlug": "crm-editorial",
+        "methodologyVersion": "1.0.0",
+        "agentVersion": "1.0.0",
+        "contextBuiltAt": "2026-08-16T05:58:21.462Z"
+      },
+      "blockers": [],
+      "warnings": [],
+      "agentTaskId": "exec-software-review-agent-wealthbox-1786859901421",
+      "draftId": "draft-deterministic-v1-software-review-agent-wealthbox-2026-08-16T05-58-21-467Z",
+      "startedAt": "2026-08-16T05:58:21.420Z",
+      "completedAt": "2026-08-16T05:58:21.476Z",
+      "revisionAttempts": 0
+    },
+    {
+      "id": "pricing-page",
+      "definitionStepId": "pricing-page",
+      "handler": "agent-run",
+      "label": "Pricing Page",
+      "status": "completed",
+      "required": false,
+      "failurePolicy": "continue-with-warning",
+      "attempt": 1,
+      "maxAttempts": 2,
+      "dependsOn": [
+        "content-plan"
+      ],
+      "priority": "normal",
+      "config": {
+        "agentId": "pricing-page-agent",
+        "targetSlug": "wealthbox",
+        "maxAutomaticRevisions": 1,
+        "expandFromContentPlan": false,
+        "expandKind": "none",
+        "stopAfterApproval": true,
+        "allowNormalizedFacts": false,
+        "optionalWhenBlocked": true,
+        "forceTransientFailOnce": false
+      },
+      "inputRefs": {},
+      "outputRefs": {
+        "draftId": "draft-deterministic-v1-pricing-page-agent-wealthbox-2026-08-16T05-58-21-536Z",
+        "qaStatus": "pass",
+        "agentId": "pricing-page-agent",
+        "target": "wealthbox"
+      },
+      "inputSnapshot": {
+        "researchFactIds": [
+          "fact-wealthbox-pricing.hasFreePlan",
+          "fact-wealthbox-pricing.hasFreeTrial",
+          "fact-wealthbox-pricing.currency",
+          "fact-wealthbox-pricing.model",
+          "fact-wealthbox-identity.shortDescription",
+          "fact-wealthbox-positioning.vendorClaim",
+          "fact-wealthbox-pricing.startingPriceMonthly",
+          "fact-wealthbox-pricing.plans.basic",
+          "fact-wealthbox-pricing.plans.pro",
+          "fact-wealthbox-pricing.plans.premier",
+          "fact-wealthbox-pricing.plans.enterprise",
+          "fact-wealthbox-features.contact-management",
+          "fact-wealthbox-features.lead-management",
+          "fact-wealthbox-features.pipeline-management",
+          "fact-wealthbox-features.deal-management",
+          "fact-wealthbox-features.custom-pipelines",
+          "fact-wealthbox-features.custom-fields",
+          "fact-wealthbox-features.email-sync",
+          "fact-wealthbox-features.email-tracking",
+          "fact-wealthbox-features.workflow-automation",
+          "fact-wealthbox-features.reporting",
+          "fact-wealthbox-features.mobile-app",
+          "fact-wealthbox-features.sales-automation",
+          "fact-wealthbox-features.integrations",
+          "fact-wealthbox-features.ai-assistance"
+        ],
+        "methodologySlug": "crm-editorial",
+        "methodologyVersion": "1.0.0",
+        "agentVersion": "1.0.0",
+        "contextBuiltAt": "2026-08-16T05:58:21.536Z"
+      },
+      "blockers": [],
+      "warnings": [],
+      "agentTaskId": "exec-pricing-page-agent-wealthbox-1786859901532",
+      "draftId": "draft-deterministic-v1-pricing-page-agent-wealthbox-2026-08-16T05-58-21-536Z",
+      "startedAt": "2026-08-16T05:58:21.531Z",
+      "completedAt": "2026-08-16T05:58:21.540Z",
+      "revisionAttempts": 0
+    },
+    {
+      "id": "alternatives",
+      "definitionStepId": "alternatives",
+      "handler": "agent-run",
+      "label": "Alternatives",
+      "status": "blocked",
+      "required": false,
+      "failurePolicy": "continue-with-warning",
+      "attempt": 1,
+      "maxAttempts": 2,
+      "dependsOn": [
+        "content-plan"
+      ],
+      "priority": "normal",
+      "config": {
+        "agentId": "alternatives-agent",
+        "targetSlug": "wealthbox",
+        "maxAutomaticRevisions": 1,
+        "expandFromContentPlan": false,
+        "expandKind": "none",
+        "stopAfterApproval": true,
+        "allowNormalizedFacts": false,
+        "optionalWhenBlocked": true,
+        "forceTransientFailOnce": false
+      },
+      "inputRefs": {},
+      "outputRefs": {},
+      "blockers": [
+        "NO_APPROVED_ALTERNATIVES: Approved alternative relationships required — same-category alone is insufficient"
+      ],
+      "warnings": [
+        "NO_APPROVED_ALTERNATIVES: Approved alternative relationships required — same-category alone is insufficient"
+      ],
+      "startedAt": "2026-08-16T05:58:21.477Z",
+      "completedAt": "2026-08-16T05:58:21.484Z",
+      "revisionAttempts": 0
+    },
+    {
+      "id": "comparison:salesforce-vs-wealthbox",
+      "definitionStepId": "comparisons",
+      "handler": "agent-run",
+      "label": "Comparison salesforce-vs-wealthbox",
+      "status": "completed",
+      "required": false,
+      "failurePolicy": "continue-with-warning",
+      "attempt": 1,
+      "maxAttempts": 2,
+      "dependsOn": [
+        "content-plan"
+      ],
+      "priority": "normal",
+      "config": {
+        "agentId": "comparison-agent",
+        "targetSlug": "salesforce-vs-wealthbox",
+        "maxAutomaticRevisions": 1,
+        "expandFromContentPlan": true,
+        "expandKind": "comparisons",
+        "stopAfterApproval": true,
+        "allowNormalizedFacts": false,
+        "optionalWhenBlocked": true,
+        "forceTransientFailOnce": false
+      },
+      "expansionKey": "salesforce-vs-wealthbox",
+      "inputRefs": {},
+      "outputRefs": {
+        "draftId": "draft-deterministic-v1-comparison-agent-salesforce-vs-wealthbox-2026-08-16T05-58-21-527Z",
+        "qaStatus": "pass",
+        "agentId": "comparison-agent",
+        "target": "salesforce-vs-wealthbox"
+      },
+      "inputSnapshot": {
+        "researchFactIds": [
+          "fact-salesforce-pricing.hasFreePlan",
+          "fact-salesforce-pricing.hasFreeTrial",
+          "fact-salesforce-pricing.startingPriceMonthly",
+          "fact-salesforce-pricing.currency",
+          "fact-salesforce-pricing.model",
+          "fact-salesforce-pricing.plans.starter-suite",
+          "fact-salesforce-pricing.plans.pro-suite",
+          "fact-salesforce-pricing.plans.enterprise",
+          "fact-salesforce-pricing.plans.unlimited",
+          "fact-salesforce-pricing.addons",
+          "fact-salesforce-pricing.agentforce1",
+          "fact-salesforce-features.contact-management",
+          "fact-salesforce-features.lead-management",
+          "fact-salesforce-features.pipeline-management",
+          "fact-salesforce-features.deal-management",
+          "fact-salesforce-features.custom-pipelines",
+          "fact-salesforce-features.custom-fields",
+          "fact-salesforce-features.mobile-app",
+          "fact-salesforce-features.email-sync",
+          "fact-salesforce-features.email-tracking",
+          "fact-salesforce-features.email-sequences",
+          "fact-salesforce-features.workflow-automation",
+          "fact-salesforce-features.sales-automation",
+          "fact-salesforce-features.reporting",
+          "fact-salesforce-features.forecasting",
+          "fact-salesforce-features.lead-scoring",
+          "fact-salesforce-features.ai-assistance",
+          "fact-salesforce-features.integrations",
+          "fact-salesforce-features.email-campaigns",
+          "fact-salesforce-integrations.gmail",
+          "fact-salesforce-integrations.outlook",
+          "fact-salesforce-integrations.slack",
+          "fact-salesforce-integrations.appexchange",
+          "fact-salesforce-ai.assistant",
+          "fact-salesforce-ai.forecasting",
+          "fact-salesforce-ai.automation",
+          "fact-salesforce-ai.lead-scoring",
+          "fact-salesforce-positioning.summary",
+          "fact-wealthbox-pricing.hasFreePlan",
+          "fact-wealthbox-pricing.hasFreeTrial",
+          "fact-wealthbox-pricing.currency",
+          "fact-wealthbox-pricing.model",
+          "fact-wealthbox-identity.shortDescription",
+          "fact-wealthbox-positioning.vendorClaim",
+          "fact-wealthbox-pricing.startingPriceMonthly",
+          "fact-wealthbox-pricing.plans.basic",
+          "fact-wealthbox-pricing.plans.pro",
+          "fact-wealthbox-pricing.plans.premier",
+          "fact-wealthbox-pricing.plans.enterprise",
+          "fact-wealthbox-features.contact-management",
+          "fact-wealthbox-features.lead-management",
+          "fact-wealthbox-features.pipeline-management",
+          "fact-wealthbox-features.deal-management",
+          "fact-wealthbox-features.custom-pipelines",
+          "fact-wealthbox-features.custom-fields",
+          "fact-wealthbox-features.email-sync",
+          "fact-wealthbox-features.email-tracking",
+          "fact-wealthbox-features.workflow-automation",
+          "fact-wealthbox-features.reporting",
+          "fact-wealthbox-features.mobile-app",
+          "fact-wealthbox-features.sales-automation",
+          "fact-wealthbox-features.integrations",
+          "fact-wealthbox-features.ai-assistance"
+        ],
+        "methodologySlug": "crm-editorial",
+        "methodologyVersion": "1.0.0",
+        "agentVersion": "1.0.0",
+        "contextBuiltAt": "2026-08-16T05:58:21.526Z"
+      },
+      "blockers": [],
+      "warnings": [],
+      "agentTaskId": "exec-comparison-agent-salesforce-vs-wealthbox-1786859901519",
+      "draftId": "draft-deterministic-v1-comparison-agent-salesforce-vs-wealthbox-2026-08-16T05-58-21-527Z",
+      "startedAt": "2026-08-16T05:58:21.518Z",
+      "completedAt": "2026-08-16T05:58:21.530Z",
+      "revisionAttempts": 0
+    },
+    {
+      "id": "comparison:hubspot-vs-wealthbox",
+      "definitionStepId": "comparisons",
+      "handler": "agent-run",
+      "label": "Comparison hubspot-vs-wealthbox",
+      "status": "completed",
+      "required": false,
+      "failurePolicy": "continue-with-warning",
+      "attempt": 1,
+      "maxAttempts": 2,
+      "dependsOn": [
+        "content-plan"
+      ],
+      "priority": "normal",
+      "config": {
+        "agentId": "comparison-agent",
+        "targetSlug": "hubspot-vs-wealthbox",
+        "maxAutomaticRevisions": 1,
+        "expandFromContentPlan": true,
+        "expandKind": "comparisons",
+        "stopAfterApproval": true,
+        "allowNormalizedFacts": false,
+        "optionalWhenBlocked": true,
+        "forceTransientFailOnce": false
+      },
+      "expansionKey": "hubspot-vs-wealthbox",
+      "inputRefs": {},
+      "outputRefs": {
+        "draftId": "draft-deterministic-v1-comparison-agent-hubspot-vs-wealthbox-2026-08-16T05-58-21-515Z",
+        "qaStatus": "pass",
+        "agentId": "comparison-agent",
+        "target": "hubspot-vs-wealthbox"
+      },
+      "inputSnapshot": {
+        "researchFactIds": [
+          "fact-hubspot-pricing.hasFreePlan",
+          "fact-hubspot-pricing.hasFreeTrial",
+          "fact-hubspot-pricing.startingPriceMonthly",
+          "fact-hubspot-pricing.currency",
+          "fact-hubspot-pricing.model",
+          "fact-hubspot-pricing.plans.free",
+          "fact-hubspot-pricing.plans.starter",
+          "fact-hubspot-pricing.plans.professional",
+          "fact-hubspot-pricing.plans.enterprise",
+          "fact-hubspot-pricing.sales-hub.ladder",
+          "fact-hubspot-pricing.billing-notes",
+          "fact-hubspot-features.contact-management",
+          "fact-hubspot-features.pipeline-management",
+          "fact-hubspot-features.deal-management",
+          "fact-hubspot-features.lead-management",
+          "fact-hubspot-features.email-sync",
+          "fact-hubspot-features.email-sequences",
+          "fact-hubspot-features.workflow-automation",
+          "fact-hubspot-features.sales-automation",
+          "fact-hubspot-features.reporting",
+          "fact-hubspot-features.forecasting",
+          "fact-hubspot-features.lead-scoring",
+          "fact-hubspot-features.custom-fields",
+          "fact-hubspot-features.custom-objects",
+          "fact-hubspot-features.ai-assistance",
+          "fact-hubspot-features.integrations",
+          "fact-hubspot-features.sso",
+          "fact-hubspot-ai.assistant",
+          "fact-hubspot-ai.prospecting-agent",
+          "fact-hubspot-ai.forecasting",
+          "fact-hubspot-positioning.primary",
+          "fact-hubspot-positioning.free-crm",
+          "fact-hubspot-pricing.sales-hub.professional.catalog",
+          "fact-hubspot-pricing.sales-hub.professional.marketing",
+          "fact-hubspot-pricing.smart-crm.starter.catalog",
+          "fact-wealthbox-pricing.hasFreePlan",
+          "fact-wealthbox-pricing.hasFreeTrial",
+          "fact-wealthbox-pricing.currency",
+          "fact-wealthbox-pricing.model",
+          "fact-wealthbox-identity.shortDescription",
+          "fact-wealthbox-positioning.vendorClaim",
+          "fact-wealthbox-pricing.startingPriceMonthly",
+          "fact-wealthbox-pricing.plans.basic",
+          "fact-wealthbox-pricing.plans.pro",
+          "fact-wealthbox-pricing.plans.premier",
+          "fact-wealthbox-pricing.plans.enterprise",
+          "fact-wealthbox-features.contact-management",
+          "fact-wealthbox-features.lead-management",
+          "fact-wealthbox-features.pipeline-management",
+          "fact-wealthbox-features.deal-management",
+          "fact-wealthbox-features.custom-pipelines",
+          "fact-wealthbox-features.custom-fields",
+          "fact-wealthbox-features.email-sync",
+          "fact-wealthbox-features.email-tracking",
+          "fact-wealthbox-features.workflow-automation",
+          "fact-wealthbox-features.reporting",
+          "fact-wealthbox-features.mobile-app",
+          "fact-wealthbox-features.sales-automation",
+          "fact-wealthbox-features.integrations",
+          "fact-wealthbox-features.ai-assistance"
+        ],
+        "methodologySlug": "crm-editorial",
+        "methodologyVersion": "1.0.0",
+        "agentVersion": "1.0.0",
+        "contextBuiltAt": "2026-08-16T05:58:21.513Z"
+      },
+      "blockers": [],
+      "warnings": [],
+      "agentTaskId": "exec-comparison-agent-hubspot-vs-wealthbox-1786859901500",
+      "draftId": "draft-deterministic-v1-comparison-agent-hubspot-vs-wealthbox-2026-08-16T05-58-21-515Z",
+      "startedAt": "2026-08-16T05:58:21.499Z",
+      "completedAt": "2026-08-16T05:58:21.517Z",
+      "revisionAttempts": 0
+    },
+    {
+      "id": "comparison:cloze-vs-wealthbox",
+      "definitionStepId": "comparisons",
+      "handler": "agent-run",
+      "label": "Comparison cloze-vs-wealthbox",
+      "status": "completed",
+      "required": false,
+      "failurePolicy": "continue-with-warning",
+      "attempt": 1,
+      "maxAttempts": 2,
+      "dependsOn": [
+        "content-plan"
+      ],
+      "priority": "normal",
+      "config": {
+        "agentId": "comparison-agent",
+        "targetSlug": "cloze-vs-wealthbox",
+        "maxAutomaticRevisions": 1,
+        "expandFromContentPlan": true,
+        "expandKind": "comparisons",
+        "stopAfterApproval": true,
+        "allowNormalizedFacts": false,
+        "optionalWhenBlocked": true,
+        "forceTransientFailOnce": false
+      },
+      "expansionKey": "cloze-vs-wealthbox",
+      "inputRefs": {},
+      "outputRefs": {
+        "draftId": "draft-deterministic-v1-comparison-agent-cloze-vs-wealthbox-2026-08-16T05-58-21-493Z",
+        "qaStatus": "pass",
+        "agentId": "comparison-agent",
+        "target": "cloze-vs-wealthbox"
+      },
+      "inputSnapshot": {
+        "researchFactIds": [
+          "fact-cloze-pricing.hasFreePlan",
+          "fact-cloze-pricing.hasFreeTrial",
+          "fact-cloze-pricing.currency",
+          "fact-cloze-pricing.model",
+          "fact-cloze-identity.shortDescription",
+          "fact-cloze-positioning.vendorClaim",
+          "fact-cloze-pricing.startingPriceMonthly",
+          "fact-cloze-pricing.plans.pro",
+          "fact-cloze-pricing.plans.silver",
+          "fact-cloze-pricing.plans.gold",
+          "fact-cloze-pricing.plans.platinum",
+          "fact-cloze-features.contact-management",
+          "fact-cloze-features.lead-management",
+          "fact-cloze-features.pipeline-management",
+          "fact-cloze-features.deal-management",
+          "fact-cloze-features.custom-pipelines",
+          "fact-cloze-features.custom-fields",
+          "fact-cloze-features.email-sync",
+          "fact-cloze-features.email-tracking",
+          "fact-cloze-features.workflow-automation",
+          "fact-cloze-features.reporting",
+          "fact-cloze-features.mobile-app",
+          "fact-cloze-features.sales-automation",
+          "fact-cloze-features.integrations",
+          "fact-cloze-features.ai-assistance",
+          "fact-wealthbox-pricing.hasFreePlan",
+          "fact-wealthbox-pricing.hasFreeTrial",
+          "fact-wealthbox-pricing.currency",
+          "fact-wealthbox-pricing.model",
+          "fact-wealthbox-identity.shortDescription",
+          "fact-wealthbox-positioning.vendorClaim",
+          "fact-wealthbox-pricing.startingPriceMonthly",
+          "fact-wealthbox-pricing.plans.basic",
+          "fact-wealthbox-pricing.plans.pro",
+          "fact-wealthbox-pricing.plans.premier",
+          "fact-wealthbox-pricing.plans.enterprise",
+          "fact-wealthbox-features.contact-management",
+          "fact-wealthbox-features.lead-management",
+          "fact-wealthbox-features.pipeline-management",
+          "fact-wealthbox-features.deal-management",
+          "fact-wealthbox-features.custom-pipelines",
+          "fact-wealthbox-features.custom-fields",
+          "fact-wealthbox-features.email-sync",
+          "fact-wealthbox-features.email-tracking",
+          "fact-wealthbox-features.workflow-automation",
+          "fact-wealthbox-features.reporting",
+          "fact-wealthbox-features.mobile-app",
+          "fact-wealthbox-features.sales-automation",
+          "fact-wealthbox-features.integrations",
+          "fact-wealthbox-features.ai-assistance"
+        ],
+        "methodologySlug": "crm-editorial",
+        "methodologyVersion": "1.0.0",
+        "agentVersion": "1.0.0",
+        "contextBuiltAt": "2026-08-16T05:58:21.492Z"
+      },
+      "blockers": [],
+      "warnings": [],
+      "agentTaskId": "exec-comparison-agent-cloze-vs-wealthbox-1786859901485",
+      "draftId": "draft-deterministic-v1-comparison-agent-cloze-vs-wealthbox-2026-08-16T05-58-21-493Z",
+      "startedAt": "2026-08-16T05:58:21.485Z",
+      "completedAt": "2026-08-16T05:58:21.496Z",
+      "revisionAttempts": 0
+    },
+    {
+      "id": "internal-links",
+      "definitionStepId": "internal-links",
+      "handler": "internal-link",
+      "label": "Internal Link Plan",
+      "status": "completed",
+      "required": false,
+      "failurePolicy": "continue-with-warning",
+      "attempt": 1,
+      "maxAttempts": 2,
+      "dependsOn": [
+        "software-review"
+      ],
+      "priority": "low",
+      "config": {
+        "agentId": "internal-link-agent",
+        "maxAutomaticRevisions": 1,
+        "expandFromContentPlan": false,
+        "expandKind": "none",
+        "stopAfterApproval": true,
+        "allowNormalizedFacts": false,
+        "optionalWhenBlocked": false,
+        "forceTransientFailOnce": false
+      },
+      "inputRefs": {},
+      "outputRefs": {
+        "draftId": "draft-deterministic-v1-internal-link-agent-wealthbox-2026-08-16T05-58-21-558Z",
+        "qaStatus": "pass",
+        "agentId": "internal-link-agent",
+        "target": "wealthbox"
+      },
+      "inputSnapshot": {
+        "researchFactIds": [
+          "fact-wealthbox-pricing.hasFreePlan",
+          "fact-wealthbox-pricing.hasFreeTrial",
+          "fact-wealthbox-pricing.currency",
+          "fact-wealthbox-pricing.model",
+          "fact-wealthbox-identity.shortDescription",
+          "fact-wealthbox-positioning.vendorClaim",
+          "fact-wealthbox-pricing.startingPriceMonthly",
+          "fact-wealthbox-pricing.plans.basic",
+          "fact-wealthbox-pricing.plans.pro",
+          "fact-wealthbox-pricing.plans.premier",
+          "fact-wealthbox-pricing.plans.enterprise",
+          "fact-wealthbox-features.contact-management",
+          "fact-wealthbox-features.lead-management",
+          "fact-wealthbox-features.pipeline-management",
+          "fact-wealthbox-features.deal-management",
+          "fact-wealthbox-features.custom-pipelines",
+          "fact-wealthbox-features.custom-fields",
+          "fact-wealthbox-features.email-sync",
+          "fact-wealthbox-features.email-tracking",
+          "fact-wealthbox-features.workflow-automation",
+          "fact-wealthbox-features.reporting",
+          "fact-wealthbox-features.mobile-app",
+          "fact-wealthbox-features.sales-automation",
+          "fact-wealthbox-features.integrations",
+          "fact-wealthbox-features.ai-assistance"
+        ],
+        "methodologySlug": "crm-editorial",
+        "methodologyVersion": "1.0.0",
+        "agentVersion": "1.0.0",
+        "contextBuiltAt": "2026-08-16T05:58:21.556Z"
+      },
+      "blockers": [],
+      "warnings": [],
+      "agentTaskId": "exec-internal-link-agent-wealthbox-1786859901548",
+      "draftId": "draft-deterministic-v1-internal-link-agent-wealthbox-2026-08-16T05-58-21-558Z",
+      "startedAt": "2026-08-16T05:58:21.546Z",
+      "completedAt": "2026-08-16T05:58:21.561Z",
+      "revisionAttempts": 0
+    },
+    {
+      "id": "finder-readiness",
+      "definitionStepId": "finder-readiness",
+      "handler": "update-recommendation-readiness",
+      "label": "Finder readiness",
+      "status": "completed",
+      "required": false,
+      "failurePolicy": "continue",
+      "attempt": 1,
+      "maxAttempts": 2,
+      "dependsOn": [
+        "content-plan"
+      ],
+      "priority": "low",
+      "config": {
+        "maxAutomaticRevisions": 1,
+        "expandFromContentPlan": false,
+        "expandKind": "none",
+        "stopAfterApproval": true,
+        "allowNormalizedFacts": false,
+        "optionalWhenBlocked": false,
+        "forceTransientFailOnce": false
+      },
+      "inputRefs": {},
+      "outputRefs": {
+        "finderReadiness": "checked"
+      },
+      "blockers": [],
+      "warnings": [],
+      "startedAt": "2026-08-16T05:58:21.541Z",
+      "completedAt": "2026-08-16T05:58:21.542Z",
+      "revisionAttempts": 0
+    },
+    {
+      "id": "editorial-approval",
+      "definitionStepId": "editorial-approval",
+      "handler": "approval-check",
+      "label": "Editorial approval",
+      "status": "completed",
+      "required": true,
+      "failurePolicy": "manual-review",
+      "attempt": 2,
+      "maxAttempts": 2,
+      "dependsOn": [
+        "software-review"
+      ],
+      "priority": "critical",
+      "config": {
+        "approvalType": "editorial",
+        "maxAutomaticRevisions": 1,
+        "expandFromContentPlan": false,
+        "expandKind": "none",
+        "stopAfterApproval": true,
+        "allowNormalizedFacts": false,
+        "optionalWhenBlocked": false,
+        "forceTransientFailOnce": false
+      },
+      "inputRefs": {},
+      "outputRefs": {
+        "approvalId": "appr-wf-software-onboarding-content-wealthbox-1786859901022-software-review",
+        "draftId": "draft-deterministic-v1-software-review-agent-wealthbox-2026-08-16T05-58-21-467Z",
+        "approvalIds": "appr-wf-software-onboarding-content-wealthbox-1786859901022-software-review"
+      },
+      "blockers": [],
+      "warnings": [
+        "Approval received — resuming",
+        "5 optional draft(s) may still need separate editorial review"
+      ],
+      "approvalId": "appr-wf-software-onboarding-content-wealthbox-1786859901022-software-review",
+      "startedAt": "2026-08-16T06:13:23.301Z",
+      "completedAt": "2026-08-16T06:13:23.495Z",
+      "revisionAttempts": 0
+    },
+    {
+      "id": "pre-publish-validation",
+      "definitionStepId": "pre-publish-validation",
+      "handler": "pre-publish-validation",
+      "label": "Pre-publish validation",
+      "status": "blocked",
+      "required": true,
+      "failurePolicy": "block-workflow",
+      "attempt": 1,
+      "maxAttempts": 2,
+      "dependsOn": [
+        "editorial-approval"
+      ],
+      "priority": "critical",
+      "config": {
+        "maxAutomaticRevisions": 1,
+        "expandFromContentPlan": false,
+        "expandKind": "none",
+        "stopAfterApproval": true,
+        "allowNormalizedFacts": false,
+        "optionalWhenBlocked": false,
+        "forceTransientFailOnce": false
+      },
+      "inputRefs": {},
+      "outputRefs": {},
+      "blockers": [
+        "Stale context for comparison:salesforce-vs-wealthbox: removed-critical-fact:fact-salesforce-pricing.hasFreePlan; removed-critical-fact:fact-salesforce-pricing.hasFreeTrial; removed-critical-fact:fact-salesforce-pricing.startingPriceMonthly; removed-critical-fact:fact-salesforce-pricing.currency; removed-critical-fact:fact-salesforce-pricing.model; removed-critical-fact:fact-salesforce-pricing.plans.starter-suite; removed-critical-fact:fact-salesforce-pricing.plans.pro-suite; removed-critical-fact:fact-salesforce-pricing.plans.enterprise; removed-critical-fact:fact-salesforce-pricing.plans.unlimited; removed-critical-fact:fact-salesforce-pricing.addons; removed-critical-fact:fact-salesforce-pricing.agentforce1",
+        "Stale context for comparison:hubspot-vs-wealthbox: removed-critical-fact:fact-hubspot-pricing.hasFreePlan; removed-critical-fact:fact-hubspot-pricing.hasFreeTrial; removed-critical-fact:fact-hubspot-pricing.startingPriceMonthly; removed-critical-fact:fact-hubspot-pricing.currency; removed-critical-fact:fact-hubspot-pricing.model; removed-critical-fact:fact-hubspot-pricing.plans.free; removed-critical-fact:fact-hubspot-pricing.plans.starter; removed-critical-fact:fact-hubspot-pricing.plans.professional; removed-critical-fact:fact-hubspot-pricing.plans.enterprise; removed-critical-fact:fact-hubspot-pricing.sales-hub.ladder; removed-critical-fact:fact-hubspot-pricing.billing-notes; removed-critical-fact:fact-hubspot-pricing.sales-hub.professional.catalog; removed-critical-fact:fact-hubspot-pricing.sales-hub.professional.marketing; removed-critical-fact:fact-hubspot-pricing.smart-crm.starter.catalog",
+        "Stale context for comparison:cloze-vs-wealthbox: removed-critical-fact:fact-cloze-pricing.hasFreePlan; removed-critical-fact:fact-cloze-pricing.hasFreeTrial; removed-critical-fact:fact-cloze-pricing.currency; removed-critical-fact:fact-cloze-pricing.model; removed-critical-fact:fact-cloze-pricing.startingPriceMonthly; removed-critical-fact:fact-cloze-pricing.plans.pro; removed-critical-fact:fact-cloze-pricing.plans.silver; removed-critical-fact:fact-cloze-pricing.plans.gold; removed-critical-fact:fact-cloze-pricing.plans.platinum"
+      ],
+      "warnings": [],
+      "startedAt": "2026-08-16T06:13:23.501Z",
+      "completedAt": "2026-08-16T06:13:25.706Z",
+      "revisionAttempts": 0
+    }
+  ],
+  "history": [
+    {
+      "at": "2026-08-16T05:58:21.330Z",
+      "event": "workflow_created",
+      "message": "Created software-onboarding-content:v1.0.0"
+    },
+    {
+      "at": "2026-08-16T05:58:21.332Z",
+      "event": "workflow_started",
+      "message": "Workflow execution started"
+    },
+    {
+      "at": "2026-08-16T05:58:21.334Z",
+      "event": "workflow_step_started",
+      "stepId": "software-onboarding",
+      "message": "Started Software onboarding"
+    },
+    {
+      "at": "2026-08-16T05:58:21.382Z",
+      "event": "workflow_step_completed",
+      "stepId": "software-onboarding",
+      "message": "Reused onboarding run onboard-wealthbox-1786859691301 (review-required)"
+    },
+    {
+      "at": "2026-08-16T05:58:21.383Z",
+      "event": "workflow_step_started",
+      "stepId": "content-plan",
+      "message": "Started Content plan"
+    },
+    {
+      "at": "2026-08-16T05:58:21.419Z",
+      "event": "workflow_step_completed",
+      "stepId": "content-plan",
+      "message": "Content plan from onboarding onboard-wealthbox-1786859691301 (9 candidates)"
+    },
+    {
+      "at": "2026-08-16T05:58:21.420Z",
+      "event": "workflow_step_started",
+      "stepId": "software-review",
+      "message": "Started Software Review"
+    },
+    {
+      "at": "2026-08-16T05:58:21.476Z",
+      "event": "workflow_step_completed",
+      "stepId": "software-review",
+      "message": "Agent software-review-agent → draft draft-deterministic-v1-software-review-agent-wealthbox-2026-08-16T05-58-21-467Z (qa=pass)"
+    },
+    {
+      "at": "2026-08-16T05:58:21.477Z",
+      "event": "workflow_step_started",
+      "stepId": "alternatives",
+      "message": "Started Alternatives"
+    },
+    {
+      "at": "2026-08-16T05:58:21.484Z",
+      "event": "workflow_step_completed",
+      "stepId": "alternatives",
+      "message": "Agent blocked (optional): NO_APPROVED_ALTERNATIVES: Approved alternative relationships required — same-category alone is insufficient"
+    },
+    {
+      "at": "2026-08-16T05:58:21.485Z",
+      "event": "workflow_step_started",
+      "stepId": "comparison:cloze-vs-wealthbox",
+      "message": "Started Comparison cloze-vs-wealthbox"
+    },
+    {
+      "at": "2026-08-16T05:58:21.496Z",
+      "event": "workflow_step_completed",
+      "stepId": "comparison:cloze-vs-wealthbox",
+      "message": "Agent comparison-agent → draft draft-deterministic-v1-comparison-agent-cloze-vs-wealthbox-2026-08-16T05-58-21-493Z (qa=pass)"
+    },
+    {
+      "at": "2026-08-16T05:58:21.499Z",
+      "event": "workflow_step_started",
+      "stepId": "comparison:hubspot-vs-wealthbox",
+      "message": "Started Comparison hubspot-vs-wealthbox"
+    },
+    {
+      "at": "2026-08-16T05:58:21.517Z",
+      "event": "workflow_step_completed",
+      "stepId": "comparison:hubspot-vs-wealthbox",
+      "message": "Agent comparison-agent → draft draft-deterministic-v1-comparison-agent-hubspot-vs-wealthbox-2026-08-16T05-58-21-515Z (qa=pass)"
+    },
+    {
+      "at": "2026-08-16T05:58:21.518Z",
+      "event": "workflow_step_started",
+      "stepId": "comparison:salesforce-vs-wealthbox",
+      "message": "Started Comparison salesforce-vs-wealthbox"
+    },
+    {
+      "at": "2026-08-16T05:58:21.530Z",
+      "event": "workflow_step_completed",
+      "stepId": "comparison:salesforce-vs-wealthbox",
+      "message": "Agent comparison-agent → draft draft-deterministic-v1-comparison-agent-salesforce-vs-wealthbox-2026-08-16T05-58-21-527Z (qa=pass)"
+    },
+    {
+      "at": "2026-08-16T05:58:21.531Z",
+      "event": "workflow_step_started",
+      "stepId": "pricing-page",
+      "message": "Started Pricing Page"
+    },
+    {
+      "at": "2026-08-16T05:58:21.540Z",
+      "event": "workflow_step_completed",
+      "stepId": "pricing-page",
+      "message": "Agent pricing-page-agent → draft draft-deterministic-v1-pricing-page-agent-wealthbox-2026-08-16T05-58-21-536Z (qa=pass)"
+    },
+    {
+      "at": "2026-08-16T05:58:21.541Z",
+      "event": "workflow_step_started",
+      "stepId": "finder-readiness",
+      "message": "Started Finder readiness"
+    },
+    {
+      "at": "2026-08-16T05:58:21.542Z",
+      "event": "workflow_step_completed",
+      "stepId": "finder-readiness",
+      "message": "Finder readiness noted for wealthbox"
+    },
+    {
+      "at": "2026-08-16T05:58:21.546Z",
+      "event": "workflow_step_started",
+      "stepId": "internal-links",
+      "message": "Started Internal Link Plan"
+    },
+    {
+      "at": "2026-08-16T05:58:21.561Z",
+      "event": "workflow_step_completed",
+      "stepId": "internal-links",
+      "message": "Agent internal-link-agent → draft draft-deterministic-v1-internal-link-agent-wealthbox-2026-08-16T05-58-21-558Z (qa=pass)"
+    },
+    {
+      "at": "2026-08-16T05:58:21.562Z",
+      "event": "workflow_step_started",
+      "stepId": "editorial-approval",
+      "message": "Started Editorial approval"
+    },
+    {
+      "at": "2026-08-16T05:58:21.603Z",
+      "event": "workflow_step_completed",
+      "stepId": "editorial-approval",
+      "message": "WAITING FOR EDITORIAL APPROVAL (appr-wf-software-onboarding-content-wealthbox-1786859901022-software-review)"
+    },
+    {
+      "at": "2026-08-16T06:13:23.294Z",
+      "event": "workflow_resumed",
+      "message": "Workflow resumed"
+    },
+    {
+      "at": "2026-08-16T06:13:23.300Z",
+      "event": "workflow_started",
+      "message": "Workflow execution started"
+    },
+    {
+      "at": "2026-08-16T06:13:23.301Z",
+      "event": "workflow_step_started",
+      "stepId": "editorial-approval",
+      "message": "Started Editorial approval"
+    },
+    {
+      "at": "2026-08-16T06:13:23.495Z",
+      "event": "workflow_step_completed",
+      "stepId": "editorial-approval",
+      "message": "Required editorial approvals satisfied"
+    },
+    {
+      "at": "2026-08-16T06:13:23.501Z",
+      "event": "workflow_step_started",
+      "stepId": "pre-publish-validation",
+      "message": "Started Pre-publish validation"
+    },
+    {
+      "at": "2026-08-16T06:13:25.706Z",
+      "event": "workflow_step_completed",
+      "stepId": "pre-publish-validation",
+      "message": "Pre-publish validation blocked: Stale context for comparison:salesforce-vs-wealthbox: removed-critical-fact:fact-salesforce-pricing.hasFreePlan; removed-critical-fact:fact-salesforce-pricing.hasFreeTrial; removed-critical-fact:fact-salesforce-pricing.startingPriceMonthly; removed-critical-fact:fact-salesforce-pricing.currency; removed-critical-fact:fact-salesforce-pricing.model; removed-critical-fact:fact-salesforce-pricing.plans.starter-suite; removed-critical-fact:fact-salesforce-pricing.plans.pro-suite; removed-critical-fact:fact-salesforce-pricing.plans.enterprise; removed-critical-fact:fact-salesforce-pricing.plans.unlimited; removed-critical-fact:fact-salesforce-pricing.addons; removed-critical-fact:fact-salesforce-pricing.agentforce1; Stale context for comparison:hubspot-vs-wealthbox: removed-critical-fact:fact-hubspot-pricing.hasFreePlan; removed-critical-fact:fact-hubspot-pricing.hasFreeTrial; removed-critical-fact:fact-hubspot-pricing.startingPriceMonthly; removed-critical-fact:fact-hubspot-pricing.currency; removed-critical-fact:fact-hubspot-pricing.model; removed-critical-fact:fact-hubspot-pricing.plans.free; removed-critical-fact:fact-hubspot-pricing.plans.starter; removed-critical-fact:fact-hubspot-pricing.plans.professional; removed-critical-fact:fact-hubspot-pricing.plans.enterprise; removed-critical-fact:fact-hubspot-pricing.sales-hub.ladder; removed-critical-fact:fact-hubspot-pricing.billing-notes; removed-critical-fact:fact-hubspot-pricing.sales-hub.professional.catalog; removed-critical-fact:fact-hubspot-pricing.sales-hub.professional.marketing; removed-critical-fact:fact-hubspot-pricing.smart-crm.starter.catalog; Stale context for comparison:cloze-vs-wealthbox: removed-critical-fact:fact-cloze-pricing.hasFreePlan; removed-critical-fact:fact-cloze-pricing.hasFreeTrial; removed-critical-fact:fact-cloze-pricing.currency; removed-critical-fact:fact-cloze-pricing.model; removed-critical-fact:fact-cloze-pricing.startingPriceMonthly; removed-critical-fact:fact-cloze-pricing.plans.pro; removed-critical-fact:fact-cloze-pricing.plans.silver; removed-critical-fact:fact-cloze-pricing.plans.gold; removed-critical-fact:fact-cloze-pricing.plans.platinum"
+    }
+  ],
+  "options": {
+    "generateReview": true,
+    "generatePricing": true,
+    "generateAlternatives": true,
+    "generateComparisons": true,
+    "runInternalLinks": true,
+    "stopAfterApproval": true,
+    "allowNormalizedFacts": false,
+    "dryRun": false,
+    "maxComparisons": 3,
+    "skipOnboarding": false
+  },
+  "supersededBy": "wf-software-onboarding-content-wealthbox-1786861047593",
+  "warnings": [
+    "alternatives blocked: NO_APPROVED_ALTERNATIVES: Approved alternative relationships required — same-category alone is insufficient"
+  ],
+  "createdAt": "2026-08-16T05:58:21.330Z",
+  "updatedAt": "2026-08-16T06:17:27.747Z"
+}

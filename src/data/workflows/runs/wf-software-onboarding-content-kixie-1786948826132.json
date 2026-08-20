@@ -1,0 +1,920 @@
+{
+  "id": "wf-software-onboarding-content-kixie-1786948826132",
+  "workflowId": "software-onboarding-content",
+  "workflowVersion": "1.0.0",
+  "name": "Software Onboarding Content: kixie",
+  "targetType": "software",
+  "targetId": "kixie",
+  "status": "completed",
+  "steps": [
+    {
+      "id": "software-onboarding",
+      "definitionStepId": "software-onboarding",
+      "handler": "software-onboarding",
+      "label": "Software onboarding",
+      "status": "completed",
+      "required": true,
+      "failurePolicy": "block-workflow",
+      "attempt": 1,
+      "maxAttempts": 2,
+      "dependsOn": [],
+      "priority": "critical",
+      "config": {
+        "maxAutomaticRevisions": 1,
+        "expandFromContentPlan": false,
+        "expandKind": "none",
+        "stopAfterApproval": true,
+        "allowNormalizedFacts": false,
+        "optionalWhenBlocked": false,
+        "forceTransientFailOnce": false
+      },
+      "inputRefs": {},
+      "outputRefs": {
+        "softwareOnboardingRunId": "onboard-kixie-1786946412238"
+      },
+      "blockers": [],
+      "warnings": [],
+      "startedAt": "2026-08-17T06:40:26.471Z",
+      "completedAt": "2026-08-17T06:40:26.513Z",
+      "revisionAttempts": 0
+    },
+    {
+      "id": "content-plan",
+      "definitionStepId": "content-plan",
+      "handler": "content-plan",
+      "label": "Content plan",
+      "status": "completed",
+      "required": true,
+      "failurePolicy": "block-workflow",
+      "attempt": 1,
+      "maxAttempts": 2,
+      "dependsOn": [
+        "software-onboarding"
+      ],
+      "priority": "high",
+      "config": {
+        "maxAutomaticRevisions": 1,
+        "expandFromContentPlan": false,
+        "expandKind": "none",
+        "stopAfterApproval": true,
+        "allowNormalizedFacts": false,
+        "optionalWhenBlocked": false,
+        "forceTransientFailOnce": false
+      },
+      "inputRefs": {},
+      "outputRefs": {
+        "softwareOnboardingRunId": "onboard-kixie-1786946412238",
+        "comparisonTargets": "close-vs-kixie,amplemarket-vs-kixie,apollo-vs-kixie",
+        "pageCandidateCount": "8"
+      },
+      "blockers": [],
+      "warnings": [],
+      "startedAt": "2026-08-17T06:40:26.515Z",
+      "completedAt": "2026-08-17T06:40:26.551Z",
+      "revisionAttempts": 0
+    },
+    {
+      "id": "software-review",
+      "definitionStepId": "software-review",
+      "handler": "agent-run",
+      "label": "Software Review",
+      "status": "completed",
+      "required": true,
+      "failurePolicy": "block-workflow",
+      "attempt": 1,
+      "maxAttempts": 2,
+      "dependsOn": [
+        "content-plan"
+      ],
+      "priority": "high",
+      "config": {
+        "agentId": "software-review-agent",
+        "targetSlug": "kixie",
+        "maxAutomaticRevisions": 1,
+        "expandFromContentPlan": false,
+        "expandKind": "none",
+        "stopAfterApproval": true,
+        "allowNormalizedFacts": false,
+        "optionalWhenBlocked": false,
+        "forceTransientFailOnce": false
+      },
+      "inputRefs": {},
+      "outputRefs": {
+        "draftId": "draft-deterministic-v1-software-review-agent-kixie-2026-08-17T06-40-26-591Z",
+        "qaStatus": "pass",
+        "agentId": "software-review-agent",
+        "target": "kixie"
+      },
+      "inputSnapshot": {
+        "researchFactIds": [
+          "fact-kixie-pricing.plans.professional-kixie-pricing-fixture",
+          "fact-kixie-pricing.plans.single-line-powerdialer-kixie-pricing-fixture",
+          "fact-kixie-pricing.plans.multi-line-powerdialer-kixie-pricing-fixture",
+          "fact-kixie-pricing.currency-kixie-pricing-fixture",
+          "fact-kixie-pricing.hasFreeTrial-kixie-pricing-fixture",
+          "fact-kixie-pricing.hasFreePlan-kixie-pricing-fixture",
+          "fact-kixie-pricing.model-kixie-pricing-fixture",
+          "fact-kixie-identity.shortDescription-kixie-product-fixture",
+          "fact-kixie-positioning.claim-kixie-product-fixture",
+          "fact-kixie-features.lead-management-kixie-product-fixture",
+          "fact-kixie-features.contact-management-kixie-product-fixture",
+          "fact-kixie-features.email-sequences-kixie-product-fixture",
+          "fact-kixie-features.reporting-kixie-product-fixture",
+          "fact-kixie-features.ai-assistance-kixie-product-fixture",
+          "fact-kixie-features.meeting-scheduling-kixie-product-fixture",
+          "fact-kixie-features.workflow-automation-kixie-product-fixture",
+          "fact-kixie-ai.assistant-kixie-product-fixture",
+          "fact-kixie-ai.automation-kixie-product-fixture",
+          "fact-kixie-ai.recommendations-kixie-product-fixture"
+        ],
+        "methodologySlug": "sales-intelligence-editorial",
+        "methodologyVersion": "1.0.0",
+        "agentVersion": "1.0.0",
+        "contextBuiltAt": "2026-08-17T06:40:26.587Z"
+      },
+      "blockers": [],
+      "warnings": [],
+      "agentTaskId": "exec-software-review-agent-kixie-1786948826554",
+      "draftId": "draft-deterministic-v1-software-review-agent-kixie-2026-08-17T06-40-26-591Z",
+      "startedAt": "2026-08-17T06:40:26.553Z",
+      "completedAt": "2026-08-17T06:40:26.595Z",
+      "revisionAttempts": 0
+    },
+    {
+      "id": "pricing-page",
+      "definitionStepId": "pricing-page",
+      "handler": "agent-run",
+      "label": "Pricing Page",
+      "status": "completed",
+      "required": false,
+      "failurePolicy": "continue-with-warning",
+      "attempt": 1,
+      "maxAttempts": 2,
+      "dependsOn": [
+        "content-plan"
+      ],
+      "priority": "normal",
+      "config": {
+        "agentId": "pricing-page-agent",
+        "targetSlug": "kixie",
+        "maxAutomaticRevisions": 1,
+        "expandFromContentPlan": false,
+        "expandKind": "none",
+        "stopAfterApproval": true,
+        "allowNormalizedFacts": false,
+        "optionalWhenBlocked": true,
+        "forceTransientFailOnce": false
+      },
+      "inputRefs": {},
+      "outputRefs": {
+        "draftId": "draft-deterministic-v1-pricing-page-agent-kixie-2026-08-17T06-40-26-638Z",
+        "qaStatus": "pass",
+        "agentId": "pricing-page-agent",
+        "target": "kixie"
+      },
+      "inputSnapshot": {
+        "researchFactIds": [
+          "fact-kixie-pricing.plans.professional-kixie-pricing-fixture",
+          "fact-kixie-pricing.plans.single-line-powerdialer-kixie-pricing-fixture",
+          "fact-kixie-pricing.plans.multi-line-powerdialer-kixie-pricing-fixture",
+          "fact-kixie-pricing.currency-kixie-pricing-fixture",
+          "fact-kixie-pricing.hasFreeTrial-kixie-pricing-fixture",
+          "fact-kixie-pricing.hasFreePlan-kixie-pricing-fixture",
+          "fact-kixie-pricing.model-kixie-pricing-fixture",
+          "fact-kixie-identity.shortDescription-kixie-product-fixture",
+          "fact-kixie-positioning.claim-kixie-product-fixture",
+          "fact-kixie-features.lead-management-kixie-product-fixture",
+          "fact-kixie-features.contact-management-kixie-product-fixture",
+          "fact-kixie-features.email-sequences-kixie-product-fixture",
+          "fact-kixie-features.reporting-kixie-product-fixture",
+          "fact-kixie-features.ai-assistance-kixie-product-fixture",
+          "fact-kixie-features.meeting-scheduling-kixie-product-fixture",
+          "fact-kixie-features.workflow-automation-kixie-product-fixture",
+          "fact-kixie-ai.assistant-kixie-product-fixture",
+          "fact-kixie-ai.automation-kixie-product-fixture",
+          "fact-kixie-ai.recommendations-kixie-product-fixture"
+        ],
+        "methodologySlug": "sales-intelligence-editorial",
+        "methodologyVersion": "1.0.0",
+        "agentVersion": "1.0.0",
+        "contextBuiltAt": "2026-08-17T06:40:26.637Z"
+      },
+      "blockers": [],
+      "warnings": [],
+      "agentTaskId": "exec-pricing-page-agent-kixie-1786948826634",
+      "draftId": "draft-deterministic-v1-pricing-page-agent-kixie-2026-08-17T06-40-26-638Z",
+      "startedAt": "2026-08-17T06:40:26.633Z",
+      "completedAt": "2026-08-17T06:40:26.640Z",
+      "revisionAttempts": 0
+    },
+    {
+      "id": "alternatives",
+      "definitionStepId": "alternatives",
+      "handler": "agent-run",
+      "label": "Alternatives",
+      "status": "completed",
+      "required": false,
+      "failurePolicy": "continue-with-warning",
+      "attempt": 1,
+      "maxAttempts": 2,
+      "dependsOn": [
+        "content-plan"
+      ],
+      "priority": "normal",
+      "config": {
+        "agentId": "alternatives-agent",
+        "targetSlug": "kixie",
+        "maxAutomaticRevisions": 1,
+        "expandFromContentPlan": false,
+        "expandKind": "none",
+        "stopAfterApproval": true,
+        "allowNormalizedFacts": false,
+        "optionalWhenBlocked": true,
+        "forceTransientFailOnce": false
+      },
+      "inputRefs": {},
+      "outputRefs": {
+        "draftId": "draft-deterministic-v1-alternatives-agent-kixie-2026-08-17T06-40-26-600Z",
+        "qaStatus": "pass",
+        "agentId": "alternatives-agent",
+        "target": "kixie"
+      },
+      "inputSnapshot": {
+        "researchFactIds": [
+          "fact-kixie-pricing.plans.professional-kixie-pricing-fixture",
+          "fact-kixie-pricing.plans.single-line-powerdialer-kixie-pricing-fixture",
+          "fact-kixie-pricing.plans.multi-line-powerdialer-kixie-pricing-fixture",
+          "fact-kixie-pricing.currency-kixie-pricing-fixture",
+          "fact-kixie-pricing.hasFreeTrial-kixie-pricing-fixture",
+          "fact-kixie-pricing.hasFreePlan-kixie-pricing-fixture",
+          "fact-kixie-pricing.model-kixie-pricing-fixture",
+          "fact-kixie-identity.shortDescription-kixie-product-fixture",
+          "fact-kixie-positioning.claim-kixie-product-fixture",
+          "fact-kixie-features.lead-management-kixie-product-fixture",
+          "fact-kixie-features.contact-management-kixie-product-fixture",
+          "fact-kixie-features.email-sequences-kixie-product-fixture",
+          "fact-kixie-features.reporting-kixie-product-fixture",
+          "fact-kixie-features.ai-assistance-kixie-product-fixture",
+          "fact-kixie-features.meeting-scheduling-kixie-product-fixture",
+          "fact-kixie-features.workflow-automation-kixie-product-fixture",
+          "fact-kixie-ai.assistant-kixie-product-fixture",
+          "fact-kixie-ai.automation-kixie-product-fixture",
+          "fact-kixie-ai.recommendations-kixie-product-fixture"
+        ],
+        "methodologySlug": "sales-intelligence-editorial",
+        "methodologyVersion": "1.0.0",
+        "agentVersion": "1.0.0",
+        "contextBuiltAt": "2026-08-17T06:40:26.599Z"
+      },
+      "blockers": [],
+      "warnings": [],
+      "agentTaskId": "exec-alternatives-agent-kixie-1786948826596",
+      "draftId": "draft-deterministic-v1-alternatives-agent-kixie-2026-08-17T06-40-26-600Z",
+      "startedAt": "2026-08-17T06:40:26.596Z",
+      "completedAt": "2026-08-17T06:40:26.602Z",
+      "revisionAttempts": 0
+    },
+    {
+      "id": "comparison:close-vs-kixie",
+      "definitionStepId": "comparisons",
+      "handler": "agent-run",
+      "label": "Comparison close-vs-kixie",
+      "status": "completed",
+      "required": false,
+      "failurePolicy": "continue-with-warning",
+      "attempt": 1,
+      "maxAttempts": 2,
+      "dependsOn": [
+        "content-plan"
+      ],
+      "priority": "normal",
+      "config": {
+        "agentId": "comparison-agent",
+        "targetSlug": "close-vs-kixie",
+        "maxAutomaticRevisions": 1,
+        "expandFromContentPlan": true,
+        "expandKind": "comparisons",
+        "stopAfterApproval": true,
+        "allowNormalizedFacts": false,
+        "optionalWhenBlocked": true,
+        "forceTransientFailOnce": false
+      },
+      "expansionKey": "close-vs-kixie",
+      "inputRefs": {},
+      "outputRefs": {
+        "draftId": "draft-deterministic-v1-comparison-agent-close-vs-kixie-2026-08-17T06-40-26-630Z",
+        "qaStatus": "pass",
+        "agentId": "comparison-agent",
+        "target": "close-vs-kixie"
+      },
+      "inputSnapshot": {
+        "researchFactIds": [
+          "fact-close-pricing.hasFreePlan",
+          "fact-close-pricing.hasFreeTrial",
+          "fact-close-pricing.startingPriceMonthly",
+          "fact-close-pricing.currency",
+          "fact-close-pricing.model",
+          "fact-close-pricing.plans.solo",
+          "fact-close-pricing.plans.essentials",
+          "fact-close-pricing.plans.growth",
+          "fact-close-pricing.plans.scale",
+          "fact-close-features.contact-management",
+          "fact-close-features.lead-management",
+          "fact-close-features.pipeline-management",
+          "fact-close-features.deal-management",
+          "fact-close-features.custom-fields",
+          "fact-close-features.mobile-app",
+          "fact-close-features.email-sync",
+          "fact-close-features.email-tracking",
+          "fact-close-features.email-sequences",
+          "fact-close-features.workflow-automation",
+          "fact-close-features.sales-automation",
+          "fact-close-features.reporting",
+          "fact-close-features.forecasting",
+          "fact-close-features.ai-assistance",
+          "fact-close-features.call-functionality",
+          "fact-close-features.integrations",
+          "fact-close-features.data-enrichment",
+          "fact-close-ai.assistant",
+          "fact-close-ai.summaries",
+          "fact-close-ai.email-generation",
+          "fact-close-ai.automation",
+          "fact-close-ai.recommendations",
+          "fact-close-positioning.primary",
+          "fact-kixie-pricing.plans.professional-kixie-pricing-fixture",
+          "fact-kixie-pricing.plans.single-line-powerdialer-kixie-pricing-fixture",
+          "fact-kixie-pricing.plans.multi-line-powerdialer-kixie-pricing-fixture",
+          "fact-kixie-pricing.currency-kixie-pricing-fixture",
+          "fact-kixie-pricing.hasFreeTrial-kixie-pricing-fixture",
+          "fact-kixie-pricing.hasFreePlan-kixie-pricing-fixture",
+          "fact-kixie-pricing.model-kixie-pricing-fixture",
+          "fact-kixie-identity.shortDescription-kixie-product-fixture",
+          "fact-kixie-positioning.claim-kixie-product-fixture",
+          "fact-kixie-features.lead-management-kixie-product-fixture",
+          "fact-kixie-features.contact-management-kixie-product-fixture",
+          "fact-kixie-features.email-sequences-kixie-product-fixture",
+          "fact-kixie-features.reporting-kixie-product-fixture",
+          "fact-kixie-features.ai-assistance-kixie-product-fixture",
+          "fact-kixie-features.meeting-scheduling-kixie-product-fixture",
+          "fact-kixie-features.workflow-automation-kixie-product-fixture",
+          "fact-kixie-ai.assistant-kixie-product-fixture",
+          "fact-kixie-ai.automation-kixie-product-fixture",
+          "fact-kixie-ai.recommendations-kixie-product-fixture"
+        ],
+        "methodologySlug": "crm-editorial",
+        "methodologyVersion": "1.0.0",
+        "agentVersion": "1.0.0",
+        "contextBuiltAt": "2026-08-17T06:40:26.629Z"
+      },
+      "blockers": [],
+      "warnings": [],
+      "agentTaskId": "exec-comparison-agent-close-vs-kixie-1786948826624",
+      "draftId": "draft-deterministic-v1-comparison-agent-close-vs-kixie-2026-08-17T06-40-26-630Z",
+      "startedAt": "2026-08-17T06:40:26.623Z",
+      "completedAt": "2026-08-17T06:40:26.633Z",
+      "revisionAttempts": 0
+    },
+    {
+      "id": "comparison:amplemarket-vs-kixie",
+      "definitionStepId": "comparisons",
+      "handler": "agent-run",
+      "label": "Comparison amplemarket-vs-kixie",
+      "status": "completed",
+      "required": false,
+      "failurePolicy": "continue-with-warning",
+      "attempt": 1,
+      "maxAttempts": 2,
+      "dependsOn": [
+        "content-plan"
+      ],
+      "priority": "normal",
+      "config": {
+        "agentId": "comparison-agent",
+        "targetSlug": "amplemarket-vs-kixie",
+        "maxAutomaticRevisions": 1,
+        "expandFromContentPlan": true,
+        "expandKind": "comparisons",
+        "stopAfterApproval": true,
+        "allowNormalizedFacts": false,
+        "optionalWhenBlocked": true,
+        "forceTransientFailOnce": false
+      },
+      "expansionKey": "amplemarket-vs-kixie",
+      "inputRefs": {},
+      "outputRefs": {
+        "draftId": "draft-deterministic-v1-comparison-agent-amplemarket-vs-kixie-2026-08-17T06-40-26-610Z",
+        "qaStatus": "pass",
+        "agentId": "comparison-agent",
+        "target": "amplemarket-vs-kixie"
+      },
+      "inputSnapshot": {
+        "researchFactIds": [
+          "fact-amplemarket-pricing.hasFreePlan",
+          "fact-amplemarket-pricing.hasFreeTrial",
+          "fact-amplemarket-pricing.startingPriceMonthly",
+          "fact-amplemarket-pricing.currency",
+          "fact-amplemarket-pricing.model",
+          "fact-amplemarket-pricing.plans.startup",
+          "fact-amplemarket-pricing.plans.growth",
+          "fact-amplemarket-pricing.plans.elite",
+          "fact-amplemarket-positioning.core",
+          "fact-amplemarket-features.prospecting",
+          "fact-amplemarket-features.email-sequences",
+          "fact-amplemarket-features.sales-automation",
+          "fact-amplemarket-features.ai-assistance",
+          "fact-amplemarket-features.reporting",
+          "fact-amplemarket-features.integrations",
+          "fact-amplemarket-features.pipeline-management",
+          "fact-amplemarket-ai.assistant",
+          "fact-amplemarket-ai.email-generation",
+          "fact-amplemarket-integrations.crm",
+          "fact-kixie-pricing.plans.professional-kixie-pricing-fixture",
+          "fact-kixie-pricing.plans.single-line-powerdialer-kixie-pricing-fixture",
+          "fact-kixie-pricing.plans.multi-line-powerdialer-kixie-pricing-fixture",
+          "fact-kixie-pricing.currency-kixie-pricing-fixture",
+          "fact-kixie-pricing.hasFreeTrial-kixie-pricing-fixture",
+          "fact-kixie-pricing.hasFreePlan-kixie-pricing-fixture",
+          "fact-kixie-pricing.model-kixie-pricing-fixture",
+          "fact-kixie-identity.shortDescription-kixie-product-fixture",
+          "fact-kixie-positioning.claim-kixie-product-fixture",
+          "fact-kixie-features.lead-management-kixie-product-fixture",
+          "fact-kixie-features.contact-management-kixie-product-fixture",
+          "fact-kixie-features.email-sequences-kixie-product-fixture",
+          "fact-kixie-features.reporting-kixie-product-fixture",
+          "fact-kixie-features.ai-assistance-kixie-product-fixture",
+          "fact-kixie-features.meeting-scheduling-kixie-product-fixture",
+          "fact-kixie-features.workflow-automation-kixie-product-fixture",
+          "fact-kixie-ai.assistant-kixie-product-fixture",
+          "fact-kixie-ai.automation-kixie-product-fixture",
+          "fact-kixie-ai.recommendations-kixie-product-fixture"
+        ],
+        "methodologySlug": "crm-editorial",
+        "methodologyVersion": "1.0.0",
+        "agentVersion": "1.0.0",
+        "contextBuiltAt": "2026-08-17T06:40:26.608Z"
+      },
+      "blockers": [],
+      "warnings": [],
+      "agentTaskId": "exec-comparison-agent-amplemarket-vs-kixie-1786948826603",
+      "draftId": "draft-deterministic-v1-comparison-agent-amplemarket-vs-kixie-2026-08-17T06-40-26-610Z",
+      "startedAt": "2026-08-17T06:40:26.602Z",
+      "completedAt": "2026-08-17T06:40:26.612Z",
+      "revisionAttempts": 0
+    },
+    {
+      "id": "comparison:apollo-vs-kixie",
+      "definitionStepId": "comparisons",
+      "handler": "agent-run",
+      "label": "Comparison apollo-vs-kixie",
+      "status": "completed",
+      "required": false,
+      "failurePolicy": "continue-with-warning",
+      "attempt": 1,
+      "maxAttempts": 2,
+      "dependsOn": [
+        "content-plan"
+      ],
+      "priority": "normal",
+      "config": {
+        "agentId": "comparison-agent",
+        "targetSlug": "apollo-vs-kixie",
+        "maxAutomaticRevisions": 1,
+        "expandFromContentPlan": true,
+        "expandKind": "comparisons",
+        "stopAfterApproval": true,
+        "allowNormalizedFacts": false,
+        "optionalWhenBlocked": true,
+        "forceTransientFailOnce": false
+      },
+      "expansionKey": "apollo-vs-kixie",
+      "inputRefs": {},
+      "outputRefs": {
+        "draftId": "draft-deterministic-v1-comparison-agent-apollo-vs-kixie-2026-08-17T06-40-26-618Z",
+        "qaStatus": "pass",
+        "agentId": "comparison-agent",
+        "target": "apollo-vs-kixie"
+      },
+      "inputSnapshot": {
+        "researchFactIds": [
+          "fact-apollo-pricing.hasFreePlan",
+          "fact-apollo-pricing.hasFreeTrial",
+          "fact-apollo-pricing.startingPriceMonthly",
+          "fact-apollo-pricing.currency",
+          "fact-apollo-pricing.model",
+          "fact-apollo-pricing.plans.free",
+          "fact-apollo-pricing.plans.basic",
+          "fact-apollo-pricing.plans.professional",
+          "fact-apollo-pricing.plans.enterprise",
+          "fact-apollo-features.prospecting",
+          "fact-apollo-features.data-enrichment",
+          "fact-apollo-features.email-sequences",
+          "fact-apollo-features.pipeline-management",
+          "fact-apollo-ai.assistant",
+          "fact-apollo-positioning.sales-intelligence",
+          "fact-kixie-pricing.plans.professional-kixie-pricing-fixture",
+          "fact-kixie-pricing.plans.single-line-powerdialer-kixie-pricing-fixture",
+          "fact-kixie-pricing.plans.multi-line-powerdialer-kixie-pricing-fixture",
+          "fact-kixie-pricing.currency-kixie-pricing-fixture",
+          "fact-kixie-pricing.hasFreeTrial-kixie-pricing-fixture",
+          "fact-kixie-pricing.hasFreePlan-kixie-pricing-fixture",
+          "fact-kixie-pricing.model-kixie-pricing-fixture",
+          "fact-kixie-identity.shortDescription-kixie-product-fixture",
+          "fact-kixie-positioning.claim-kixie-product-fixture",
+          "fact-kixie-features.lead-management-kixie-product-fixture",
+          "fact-kixie-features.contact-management-kixie-product-fixture",
+          "fact-kixie-features.email-sequences-kixie-product-fixture",
+          "fact-kixie-features.reporting-kixie-product-fixture",
+          "fact-kixie-features.ai-assistance-kixie-product-fixture",
+          "fact-kixie-features.meeting-scheduling-kixie-product-fixture",
+          "fact-kixie-features.workflow-automation-kixie-product-fixture",
+          "fact-kixie-ai.assistant-kixie-product-fixture",
+          "fact-kixie-ai.automation-kixie-product-fixture",
+          "fact-kixie-ai.recommendations-kixie-product-fixture"
+        ],
+        "methodologySlug": "crm-editorial",
+        "methodologyVersion": "1.0.0",
+        "agentVersion": "1.0.0",
+        "contextBuiltAt": "2026-08-17T06:40:26.617Z"
+      },
+      "blockers": [],
+      "warnings": [],
+      "agentTaskId": "exec-comparison-agent-apollo-vs-kixie-1786948826613",
+      "draftId": "draft-deterministic-v1-comparison-agent-apollo-vs-kixie-2026-08-17T06-40-26-618Z",
+      "startedAt": "2026-08-17T06:40:26.613Z",
+      "completedAt": "2026-08-17T06:40:26.622Z",
+      "revisionAttempts": 0
+    },
+    {
+      "id": "internal-links",
+      "definitionStepId": "internal-links",
+      "handler": "internal-link",
+      "label": "Internal Link Plan",
+      "status": "completed",
+      "required": false,
+      "failurePolicy": "continue-with-warning",
+      "attempt": 1,
+      "maxAttempts": 2,
+      "dependsOn": [
+        "software-review"
+      ],
+      "priority": "low",
+      "config": {
+        "agentId": "internal-link-agent",
+        "maxAutomaticRevisions": 1,
+        "expandFromContentPlan": false,
+        "expandKind": "none",
+        "stopAfterApproval": true,
+        "allowNormalizedFacts": false,
+        "optionalWhenBlocked": false,
+        "forceTransientFailOnce": false
+      },
+      "inputRefs": {},
+      "outputRefs": {
+        "draftId": "draft-deterministic-v1-internal-link-agent-kixie-2026-08-17T06-40-26-646Z",
+        "qaStatus": "pass",
+        "agentId": "internal-link-agent",
+        "target": "kixie"
+      },
+      "inputSnapshot": {
+        "researchFactIds": [
+          "fact-kixie-pricing.plans.professional-kixie-pricing-fixture",
+          "fact-kixie-pricing.plans.single-line-powerdialer-kixie-pricing-fixture",
+          "fact-kixie-pricing.plans.multi-line-powerdialer-kixie-pricing-fixture",
+          "fact-kixie-pricing.currency-kixie-pricing-fixture",
+          "fact-kixie-pricing.hasFreeTrial-kixie-pricing-fixture",
+          "fact-kixie-pricing.hasFreePlan-kixie-pricing-fixture",
+          "fact-kixie-pricing.model-kixie-pricing-fixture",
+          "fact-kixie-identity.shortDescription-kixie-product-fixture",
+          "fact-kixie-positioning.claim-kixie-product-fixture",
+          "fact-kixie-features.lead-management-kixie-product-fixture",
+          "fact-kixie-features.contact-management-kixie-product-fixture",
+          "fact-kixie-features.email-sequences-kixie-product-fixture",
+          "fact-kixie-features.reporting-kixie-product-fixture",
+          "fact-kixie-features.ai-assistance-kixie-product-fixture",
+          "fact-kixie-features.meeting-scheduling-kixie-product-fixture",
+          "fact-kixie-features.workflow-automation-kixie-product-fixture",
+          "fact-kixie-ai.assistant-kixie-product-fixture",
+          "fact-kixie-ai.automation-kixie-product-fixture",
+          "fact-kixie-ai.recommendations-kixie-product-fixture"
+        ],
+        "methodologySlug": "sales-intelligence-editorial",
+        "methodologyVersion": "1.0.0",
+        "agentVersion": "1.0.0",
+        "contextBuiltAt": "2026-08-17T06:40:26.645Z"
+      },
+      "blockers": [],
+      "warnings": [],
+      "agentTaskId": "exec-internal-link-agent-kixie-1786948826642",
+      "draftId": "draft-deterministic-v1-internal-link-agent-kixie-2026-08-17T06-40-26-646Z",
+      "startedAt": "2026-08-17T06:40:26.642Z",
+      "completedAt": "2026-08-17T06:40:26.648Z",
+      "revisionAttempts": 0
+    },
+    {
+      "id": "finder-readiness",
+      "definitionStepId": "finder-readiness",
+      "handler": "update-recommendation-readiness",
+      "label": "Finder readiness",
+      "status": "completed",
+      "required": false,
+      "failurePolicy": "continue",
+      "attempt": 1,
+      "maxAttempts": 2,
+      "dependsOn": [
+        "content-plan"
+      ],
+      "priority": "low",
+      "config": {
+        "maxAutomaticRevisions": 1,
+        "expandFromContentPlan": false,
+        "expandKind": "none",
+        "stopAfterApproval": true,
+        "allowNormalizedFacts": false,
+        "optionalWhenBlocked": false,
+        "forceTransientFailOnce": false
+      },
+      "inputRefs": {},
+      "outputRefs": {
+        "finderReadiness": "checked"
+      },
+      "blockers": [],
+      "warnings": [],
+      "startedAt": "2026-08-17T06:40:26.641Z",
+      "completedAt": "2026-08-17T06:40:26.641Z",
+      "revisionAttempts": 0
+    },
+    {
+      "id": "editorial-approval",
+      "definitionStepId": "editorial-approval",
+      "handler": "approval-check",
+      "label": "Editorial approval",
+      "status": "completed",
+      "required": true,
+      "failurePolicy": "manual-review",
+      "attempt": 2,
+      "maxAttempts": 2,
+      "dependsOn": [
+        "software-review"
+      ],
+      "priority": "critical",
+      "config": {
+        "approvalType": "editorial",
+        "maxAutomaticRevisions": 1,
+        "expandFromContentPlan": false,
+        "expandKind": "none",
+        "stopAfterApproval": true,
+        "allowNormalizedFacts": false,
+        "optionalWhenBlocked": false,
+        "forceTransientFailOnce": false
+      },
+      "inputRefs": {},
+      "outputRefs": {
+        "approvalId": "appr-wf-software-onboarding-content-kixie-1786948826132-software-review",
+        "draftId": "draft-deterministic-v1-software-review-agent-kixie-2026-08-17T06-40-26-591Z",
+        "approvalIds": "appr-wf-software-onboarding-content-kixie-1786948826132-software-review"
+      },
+      "blockers": [],
+      "warnings": [
+        "Approval received — resuming",
+        "6 optional draft(s) may still need separate editorial review"
+      ],
+      "approvalId": "appr-wf-software-onboarding-content-kixie-1786948826132-software-review",
+      "startedAt": "2026-08-17T07:00:56.411Z",
+      "completedAt": "2026-08-17T07:00:56.523Z",
+      "revisionAttempts": 0
+    },
+    {
+      "id": "pre-publish-validation",
+      "definitionStepId": "pre-publish-validation",
+      "handler": "pre-publish-validation",
+      "label": "Pre-publish validation",
+      "status": "completed",
+      "required": true,
+      "failurePolicy": "block-workflow",
+      "attempt": 1,
+      "maxAttempts": 2,
+      "dependsOn": [
+        "editorial-approval"
+      ],
+      "priority": "critical",
+      "config": {
+        "maxAutomaticRevisions": 1,
+        "expandFromContentPlan": false,
+        "expandKind": "none",
+        "stopAfterApproval": true,
+        "allowNormalizedFacts": false,
+        "optionalWhenBlocked": false,
+        "forceTransientFailOnce": false
+      },
+      "inputRefs": {},
+      "outputRefs": {
+        "publishState": "READY_TO_PUBLISH"
+      },
+      "blockers": [],
+      "warnings": [
+        "stopAfterApproval: workflow will not publish automatically"
+      ],
+      "startedAt": "2026-08-17T07:00:56.525Z",
+      "completedAt": "2026-08-17T07:00:57.054Z",
+      "revisionAttempts": 0
+    }
+  ],
+  "history": [
+    {
+      "at": "2026-08-17T06:40:26.466Z",
+      "event": "workflow_created",
+      "message": "Created software-onboarding-content:v1.0.0"
+    },
+    {
+      "at": "2026-08-17T06:40:26.469Z",
+      "event": "workflow_started",
+      "message": "Workflow execution started"
+    },
+    {
+      "at": "2026-08-17T06:40:26.471Z",
+      "event": "workflow_step_started",
+      "stepId": "software-onboarding",
+      "message": "Started Software onboarding"
+    },
+    {
+      "at": "2026-08-17T06:40:26.513Z",
+      "event": "workflow_step_completed",
+      "stepId": "software-onboarding",
+      "message": "Reused onboarding run onboard-kixie-1786946412238 (review-required)"
+    },
+    {
+      "at": "2026-08-17T06:40:26.515Z",
+      "event": "workflow_step_started",
+      "stepId": "content-plan",
+      "message": "Started Content plan"
+    },
+    {
+      "at": "2026-08-17T06:40:26.551Z",
+      "event": "workflow_step_completed",
+      "stepId": "content-plan",
+      "message": "Content plan from onboarding onboard-kixie-1786946412238 (8 candidates)"
+    },
+    {
+      "at": "2026-08-17T06:40:26.552Z",
+      "event": "workflow_step_started",
+      "stepId": "software-review",
+      "message": "Started Software Review"
+    },
+    {
+      "at": "2026-08-17T06:40:26.595Z",
+      "event": "workflow_step_completed",
+      "stepId": "software-review",
+      "message": "Agent software-review-agent → draft draft-deterministic-v1-software-review-agent-kixie-2026-08-17T06-40-26-591Z (qa=pass)"
+    },
+    {
+      "at": "2026-08-17T06:40:26.596Z",
+      "event": "workflow_step_started",
+      "stepId": "alternatives",
+      "message": "Started Alternatives"
+    },
+    {
+      "at": "2026-08-17T06:40:26.602Z",
+      "event": "workflow_step_completed",
+      "stepId": "alternatives",
+      "message": "Agent alternatives-agent → draft draft-deterministic-v1-alternatives-agent-kixie-2026-08-17T06-40-26-600Z (qa=pass)"
+    },
+    {
+      "at": "2026-08-17T06:40:26.602Z",
+      "event": "workflow_step_started",
+      "stepId": "comparison:amplemarket-vs-kixie",
+      "message": "Started Comparison amplemarket-vs-kixie"
+    },
+    {
+      "at": "2026-08-17T06:40:26.612Z",
+      "event": "workflow_step_completed",
+      "stepId": "comparison:amplemarket-vs-kixie",
+      "message": "Agent comparison-agent → draft draft-deterministic-v1-comparison-agent-amplemarket-vs-kixie-2026-08-17T06-40-26-610Z (qa=pass)"
+    },
+    {
+      "at": "2026-08-17T06:40:26.613Z",
+      "event": "workflow_step_started",
+      "stepId": "comparison:apollo-vs-kixie",
+      "message": "Started Comparison apollo-vs-kixie"
+    },
+    {
+      "at": "2026-08-17T06:40:26.622Z",
+      "event": "workflow_step_completed",
+      "stepId": "comparison:apollo-vs-kixie",
+      "message": "Agent comparison-agent → draft draft-deterministic-v1-comparison-agent-apollo-vs-kixie-2026-08-17T06-40-26-618Z (qa=pass)"
+    },
+    {
+      "at": "2026-08-17T06:40:26.623Z",
+      "event": "workflow_step_started",
+      "stepId": "comparison:close-vs-kixie",
+      "message": "Started Comparison close-vs-kixie"
+    },
+    {
+      "at": "2026-08-17T06:40:26.633Z",
+      "event": "workflow_step_completed",
+      "stepId": "comparison:close-vs-kixie",
+      "message": "Agent comparison-agent → draft draft-deterministic-v1-comparison-agent-close-vs-kixie-2026-08-17T06-40-26-630Z (qa=pass)"
+    },
+    {
+      "at": "2026-08-17T06:40:26.633Z",
+      "event": "workflow_step_started",
+      "stepId": "pricing-page",
+      "message": "Started Pricing Page"
+    },
+    {
+      "at": "2026-08-17T06:40:26.640Z",
+      "event": "workflow_step_completed",
+      "stepId": "pricing-page",
+      "message": "Agent pricing-page-agent → draft draft-deterministic-v1-pricing-page-agent-kixie-2026-08-17T06-40-26-638Z (qa=pass)"
+    },
+    {
+      "at": "2026-08-17T06:40:26.640Z",
+      "event": "workflow_step_started",
+      "stepId": "finder-readiness",
+      "message": "Started Finder readiness"
+    },
+    {
+      "at": "2026-08-17T06:40:26.641Z",
+      "event": "workflow_step_completed",
+      "stepId": "finder-readiness",
+      "message": "Finder readiness noted for kixie"
+    },
+    {
+      "at": "2026-08-17T06:40:26.642Z",
+      "event": "workflow_step_started",
+      "stepId": "internal-links",
+      "message": "Started Internal Link Plan"
+    },
+    {
+      "at": "2026-08-17T06:40:26.648Z",
+      "event": "workflow_step_completed",
+      "stepId": "internal-links",
+      "message": "Agent internal-link-agent → draft draft-deterministic-v1-internal-link-agent-kixie-2026-08-17T06-40-26-646Z (qa=pass)"
+    },
+    {
+      "at": "2026-08-17T06:40:26.648Z",
+      "event": "workflow_step_started",
+      "stepId": "editorial-approval",
+      "message": "Started Editorial approval"
+    },
+    {
+      "at": "2026-08-17T06:40:26.679Z",
+      "event": "workflow_step_completed",
+      "stepId": "editorial-approval",
+      "message": "WAITING FOR EDITORIAL APPROVAL (appr-wf-software-onboarding-content-kixie-1786948826132-software-review)"
+    },
+    {
+      "at": "2026-08-17T07:00:56.406Z",
+      "event": "workflow_resumed",
+      "message": "Workflow resumed"
+    },
+    {
+      "at": "2026-08-17T07:00:56.409Z",
+      "event": "workflow_started",
+      "message": "Workflow execution started"
+    },
+    {
+      "at": "2026-08-17T07:00:56.410Z",
+      "event": "workflow_step_started",
+      "stepId": "editorial-approval",
+      "message": "Started Editorial approval"
+    },
+    {
+      "at": "2026-08-17T07:00:56.523Z",
+      "event": "workflow_step_completed",
+      "stepId": "editorial-approval",
+      "message": "Required editorial approvals satisfied"
+    },
+    {
+      "at": "2026-08-17T07:00:56.525Z",
+      "event": "workflow_step_started",
+      "stepId": "pre-publish-validation",
+      "message": "Started Pre-publish validation"
+    },
+    {
+      "at": "2026-08-17T07:00:57.054Z",
+      "event": "workflow_step_completed",
+      "stepId": "pre-publish-validation",
+      "message": "Pre-publish validation passed — READY TO PUBLISH (manual)"
+    },
+    {
+      "at": "2026-08-17T07:00:57.055Z",
+      "event": "workflow_completed",
+      "message": "Workflow completed"
+    }
+  ],
+  "options": {
+    "generateReview": true,
+    "generatePricing": true,
+    "generateAlternatives": true,
+    "generateComparisons": true,
+    "runInternalLinks": true,
+    "stopAfterApproval": true,
+    "allowNormalizedFacts": false,
+    "dryRun": false,
+    "maxComparisons": 3,
+    "skipOnboarding": false
+  },
+  "warnings": [],
+  "createdAt": "2026-08-17T06:40:26.466Z",
+  "updatedAt": "2026-08-17T07:00:57.055Z"
+}

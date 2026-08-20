@@ -1,0 +1,165 @@
+{
+  "id": "assessment-directadmin-it-v1",
+  "productSlug": "directadmin",
+  "methodologySlug": "it-development-editorial",
+  "methodologyVersion": "1.0.0",
+  "status": "approved",
+  "verdict": "DirectAdmin: Choose DirectAdmin when a low published panel licence is the job — not Plesk by default, and not Kinsta managed hosting. Scores use the IT & Development editorial methodology from first-party research as of 2026-08-18 — not hands-on product testing.",
+  "strengths": [
+    "Published Personal Plus $5/mo floor",
+    "Lite $15 and Standard $29 ladder",
+    "Unlimited accounts/domains on Standard",
+    "Clear panel-licence identity",
+    "Value versus Plesk/cPanel list"
+  ],
+  "weaknesses": [
+    "Does not outrank Plesk",
+    "Thinner ecosystem than cPanel/Plesk",
+    "No AI story",
+    "Not managed hosting",
+    "You still operate the server"
+  ],
+  "bestFor": [
+    "Admins who want a cheap panel licence on VPS/dedicated they already run",
+    "Buyers comparing Personal Plus $5 to Plesk Web Admin or cPanel Solo",
+    "Hosts that need Standard unlimited accounts/domains at $29"
+  ],
+  "notIdealFor": [
+    "Teams buying managed WordPress hosting (Kinsta / WP Engine)",
+    "Windows panel needs (Plesk)",
+    "ITSM, git, or observability purchases"
+  ],
+  "tradeoffs": [
+    "Per-agent vs per-host vs per-seat vs per-GB pricing models",
+    "Module stacking and consumption overages vs single-SKU floors",
+    "Free tiers vs enterprise SSO/audit gates",
+    "Landscape-adjacent tools vs primary job-cluster peers on best pages"
+  ],
+  "recommendation": "Choose DirectAdmin when a low published panel licence is the job — not Plesk by default, and not Kinsta managed hosting. Compare Plesk or cPanel for broader panel ecosystems; Kinsta/WP Engine only on landscape pages for managed hosting.",
+  "editorialNotes": "IT industry Tier-A batch. Approved on it-development-editorial v1.0.0. membershipRole=primary. jobCluster=hosting-operations. handsOnTesting=false. Affiliate economics excluded.",
+  "handsOnTesting": false,
+  "confidence": "medium",
+  "criterionAssessments": [
+    {
+      "criterionSlug": "ease-of-use",
+      "score": 7,
+      "rationale": "GUI panel for Linux hosts is approachable; thinner ecosystem UX than Plesk/cPanel. Not a lab test.",
+      "supportingFactIds": [
+        "fact-directadmin-features.hosting-panel",
+        "fact-directadmin-pricing.model"
+      ],
+      "confidence": "medium",
+      "status": "approved",
+      "reviewedAt": "2026-08-18T20:00:00.000Z",
+      "reviewer": "editorial"
+    },
+    {
+      "criterionSlug": "it-job-fit",
+      "score": 8,
+      "rationale": "Hosting-operations panel licence — ranked with Plesk/cPanel, not managed hosting (Kinsta).",
+      "supportingFactIds": [
+        "fact-directadmin-features.hosting-panel",
+        "fact-directadmin-pricing.model"
+      ],
+      "confidence": "medium",
+      "status": "approved",
+      "reviewedAt": "2026-08-18T20:00:00.000Z",
+      "reviewer": "editorial"
+    },
+    {
+      "criterionSlug": "workflow-depth",
+      "score": 7,
+      "rationale": "Accounts, domains, and mail cover the panel job; less WordPress/docker toolkit depth than Plesk.",
+      "supportingFactIds": [
+        "fact-directadmin-features.hosting-panel",
+        "fact-directadmin-pricing.model"
+      ],
+      "confidence": "medium",
+      "status": "approved",
+      "reviewedAt": "2026-08-18T20:00:00.000Z",
+      "reviewer": "editorial"
+    },
+    {
+      "criterionSlug": "integrations",
+      "score": 6,
+      "rationale": "API and hosting-stack hooks; not a SaaS integration graph.",
+      "supportingFactIds": [
+        "fact-directadmin-features.analytics-reporting",
+        "fact-directadmin-pricing.model",
+        "fact-directadmin-positioning.vendorClaim"
+      ],
+      "confidence": "medium",
+      "status": "approved",
+      "reviewedAt": "2026-08-18T20:00:00.000Z",
+      "reviewer": "editorial"
+    },
+    {
+      "criterionSlug": "admin-security",
+      "score": 7,
+      "rationale": "Panel hardening is operator-dependent; adequate for the licence class.",
+      "supportingFactIds": [
+        "fact-directadmin-features.enterprise-security",
+        "fact-directadmin-pricing.model"
+      ],
+      "confidence": "medium",
+      "status": "approved",
+      "reviewedAt": "2026-08-18T20:00:00.000Z",
+      "reviewer": "editorial"
+    },
+    {
+      "criterionSlug": "scalability",
+      "score": 7,
+      "rationale": "Standard unlimited accounts/domains scales the panel; you still own the metal.",
+      "supportingFactIds": [
+        "fact-directadmin-pricing.plans.personal-plus",
+        "fact-directadmin-pricing.model",
+        "fact-directadmin-pricing.plans.standard"
+      ],
+      "confidence": "medium",
+      "status": "approved",
+      "reviewedAt": "2026-08-18T20:00:00.000Z",
+      "reviewer": "editorial"
+    },
+    {
+      "criterionSlug": "value-for-money",
+      "score": 9,
+      "rationale": "Published $5 Personal Plus floor is the sharpest panel entry here versus Plesk Web Admin. Affiliate economics excluded.",
+      "supportingFactIds": [
+        "fact-directadmin-pricing.hasFreePlan",
+        "fact-directadmin-pricing.model",
+        "fact-directadmin-pricing.startingPriceMonthly"
+      ],
+      "confidence": "medium",
+      "status": "approved",
+      "reviewedAt": "2026-08-18T20:00:00.000Z",
+      "reviewer": "editorial"
+    },
+    {
+      "criterionSlug": "ai-capabilities",
+      "score": 3,
+      "rationale": "Not an AI product — scored low on the IT methodology’s AI criterion without pretending otherwise.",
+      "supportingFactIds": [
+        "fact-directadmin-features.itsm-ai",
+        "fact-directadmin-pricing.model"
+      ],
+      "confidence": "medium",
+      "status": "approved",
+      "reviewedAt": "2026-08-18T20:00:00.000Z",
+      "reviewer": "editorial"
+    }
+  ],
+  "overallScore": 6.8,
+  "overallScoreRationale": "Weighted average of the eight IT editorial criteria using category weights (IT job fit 16, workflow depth 14, ease of use 12, integrations 12, admin/security 12, value 12, AI 12, scalability 10), rounded to 1 decimal. Products are scored inside their job cluster — ITSM, observability, source control, hosting panels, and web-data platforms are not forced into one undifferentiated ranking. Not a hands-on lab score, and affiliate economics are excluded.",
+  "scoreAudit": [
+    {
+      "at": "2026-08-18T20:00:00.000Z",
+      "actor": "editorial",
+      "change": "IT industry Tier-A onboarding; approved IT criteria with category weights; handsOnTesting=false",
+      "nextOverall": 6.8
+    }
+  ],
+  "reviewedAt": "2026-08-18T20:00:00.000Z",
+  "reviewer": "editorial",
+  "createdAt": "2026-08-18T20:00:00.000Z",
+  "updatedAt": "2026-08-18T20:00:00.000Z"
+}

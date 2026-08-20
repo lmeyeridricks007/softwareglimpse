@@ -1,0 +1,165 @@
+{
+  "id": "assessment-render-it-v1",
+  "productSlug": "render",
+  "methodologySlug": "it-development-editorial",
+  "methodologyVersion": "1.0.0",
+  "status": "approved",
+  "verdict": "Render: Choose Render when a cloud PaaS / app platform with a published Pro $25 floor is the job — not WP Engine managed WordPress, and not Fly.io by default. Scores use the IT & Development editorial methodology from first-party research as of 2026-08-18 — not hands-on product testing.",
+  "strengths": [
+    "Cloud PaaS cluster award (7.9)",
+    "Hobby free plan + Pro $25 production floor",
+    "Native Git deploys",
+    "Clear identity vs managed WP / panel licences",
+    "Starter web $7 compute documented separately"
+  ],
+  "weaknesses": [
+    "Compute still meters above $25",
+    "Not managed WordPress",
+    "Not a panel licence",
+    "AI is not the product",
+    "Scale/Enterprise is a large step from Pro"
+  ],
+  "bestFor": [
+    "Teams that want a git-push app platform with a published Pro $25 production floor",
+    "Buyers comparing Render Pro to Fly.io shared-cpu PAYG",
+    "Orgs that will treat Hobby as evaluation, not production TCO"
+  ],
+  "notIdealFor": [
+    "Teams buying managed WordPress (WP Engine) or managed VMs (Cloudways) — landscape only",
+    "Admins buying Plesk/cPanel licences for servers they already own",
+    "ITSM or observability purchases"
+  ],
+  "tradeoffs": [
+    "Per-agent vs per-host vs per-seat vs per-GB pricing models",
+    "Module stacking and consumption overages vs single-SKU floors",
+    "Free tiers vs enterprise SSO/audit gates",
+    "Landscape-adjacent tools vs primary job-cluster peers on best pages"
+  ],
+  "recommendation": "Choose Render when a cloud PaaS / app platform with a published Pro $25 floor is the job — not WP Engine managed WordPress, and not Fly.io by default. Compare Fly.io for PAYG microVM/app hosting; Cloudways or WP Engine only on landscape pages for managed hosting; Plesk only for panel licences.",
+  "editorialNotes": "IT optional-next batch. Approved on it-development-editorial v1.0.0. membershipRole=primary. jobCluster=cloud-paas. handsOnTesting=false. Affiliate economics excluded.",
+  "handsOnTesting": false,
+  "confidence": "medium",
+  "criterionAssessments": [
+    {
+      "criterionSlug": "ease-of-use",
+      "score": 9,
+      "rationale": "Git-push dashboard plus Hobby $0 is the easiest PaaS on-ramp in this pair. Not a lab test.",
+      "supportingFactIds": [
+        "fact-render-features.cloud-paas",
+        "fact-render-pricing.model"
+      ],
+      "confidence": "medium",
+      "status": "approved",
+      "reviewedAt": "2026-08-18T22:00:00.000Z",
+      "reviewer": "editorial"
+    },
+    {
+      "criterionSlug": "it-job-fit",
+      "score": 9,
+      "rationale": "Cloud PaaS / app platform — ranked with Fly.io, not WP Engine managed WordPress or Plesk panels. Cluster award.",
+      "supportingFactIds": [
+        "fact-render-features.cloud-paas",
+        "fact-render-pricing.model"
+      ],
+      "confidence": "medium",
+      "status": "approved",
+      "reviewedAt": "2026-08-18T22:00:00.000Z",
+      "reviewer": "editorial"
+    },
+    {
+      "criterionSlug": "workflow-depth",
+      "score": 9,
+      "rationale": "Services, datastores, cron, and native Git deploys plus researched cicd-actions support cover more of the PaaS job than Railway’s limited CI story.",
+      "supportingFactIds": [
+        "fact-render-features.cicd-actions",
+        "fact-render-pricing.model"
+      ],
+      "confidence": "medium",
+      "status": "approved",
+      "reviewedAt": "2026-08-19T06:00:00.000Z",
+      "reviewer": "editorial"
+    },
+    {
+      "criterionSlug": "integrations",
+      "score": 8,
+      "rationale": "GitHub/GitLab native deploys plus API cover the app-platform workflow.",
+      "supportingFactIds": [
+        "fact-render-features.analytics-reporting",
+        "fact-render-pricing.model",
+        "fact-render-positioning.vendorClaim"
+      ],
+      "confidence": "medium",
+      "status": "approved",
+      "reviewedAt": "2026-08-18T22:00:00.000Z",
+      "reviewer": "editorial"
+    },
+    {
+      "criterionSlug": "admin-security",
+      "score": 7,
+      "rationale": "Pro/Scale add governance; Hobby is team-grade. Held at 7 versus enterprise clouds.",
+      "supportingFactIds": [
+        "fact-render-features.enterprise-security",
+        "fact-render-pricing.model"
+      ],
+      "confidence": "medium",
+      "status": "approved",
+      "reviewedAt": "2026-08-18T22:00:00.000Z",
+      "reviewer": "editorial"
+    },
+    {
+      "criterionSlug": "scalability",
+      "score": 8,
+      "rationale": "Scale $499 plus Enterprise; $25 Pro is not a large-estate Kubernetes story.",
+      "supportingFactIds": [
+        "fact-render-pricing.plans.hobby",
+        "fact-render-pricing.model",
+        "fact-render-pricing.plans.enterprise"
+      ],
+      "confidence": "medium",
+      "status": "approved",
+      "reviewedAt": "2026-08-18T22:00:00.000Z",
+      "reviewer": "editorial"
+    },
+    {
+      "criterionSlug": "value-for-money",
+      "score": 7,
+      "rationale": "Hobby $0 exists, but researched production floor is Pro $25/mo + compute — above Railway Hobby $5 including credits. Affiliate economics excluded.",
+      "supportingFactIds": [
+        "fact-render-pricing.hasFreePlan",
+        "fact-render-pricing.model",
+        "fact-render-pricing.startingPriceMonthly"
+      ],
+      "confidence": "medium",
+      "status": "approved",
+      "reviewedAt": "2026-08-19T06:00:00.000Z",
+      "reviewer": "editorial"
+    },
+    {
+      "criterionSlug": "ai-capabilities",
+      "score": 5,
+      "rationale": "No meaningful ITSM/dev AI copilot — scored low on purpose; PaaS job rarely needs AI scoring depth.",
+      "supportingFactIds": [
+        "fact-render-features.dev-ai",
+        "fact-render-pricing.model"
+      ],
+      "confidence": "medium",
+      "status": "approved",
+      "reviewedAt": "2026-08-18T22:00:00.000Z",
+      "reviewer": "editorial"
+    }
+  ],
+  "overallScore": 7.9,
+  "overallScoreRationale": "Weighted average of the eight IT editorial criteria using category weights (IT job fit 16, workflow depth 14, ease of use 12, integrations 12, admin/security 12, value 12, AI 12, scalability 10), rounded to 1 decimal. Products are scored inside their job cluster — ITSM, observability, source control, hosting panels, and web-data platforms are not forced into one undifferentiated ranking. Not a hands-on lab score, and affiliate economics are excluded.",
+  "scoreAudit": [
+    {
+      "at": "2026-08-18T22:00:00.000Z",
+      "actor": "editorial",
+      "change": "IT optional-next onboarding; approved IT criteria with category weights; handsOnTesting=false",
+      "nextOverall": 7.9
+    }
+  ],
+  "reviewedAt": "2026-08-18T22:00:00.000Z",
+  "reviewer": "editorial",
+  "createdAt": "2026-08-18T22:00:00.000Z",
+  "updatedAt": "2026-08-18T22:00:00.000Z"
+}

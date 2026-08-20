@@ -1,0 +1,683 @@
+{
+  "id": "wf-software-onboarding-content-evolve-1787140635725",
+  "workflowId": "software-onboarding-content",
+  "workflowVersion": "1.0.0",
+  "name": "Software Onboarding Content: evolve",
+  "targetType": "software",
+  "targetId": "evolve",
+  "status": "blocked",
+  "steps": [
+    {
+      "id": "software-onboarding",
+      "definitionStepId": "software-onboarding",
+      "handler": "software-onboarding",
+      "label": "Software onboarding",
+      "status": "completed",
+      "required": true,
+      "failurePolicy": "block-workflow",
+      "attempt": 1,
+      "maxAttempts": 2,
+      "dependsOn": [],
+      "priority": "critical",
+      "config": {
+        "maxAutomaticRevisions": 1,
+        "expandFromContentPlan": false,
+        "expandKind": "none",
+        "stopAfterApproval": true,
+        "allowNormalizedFacts": false,
+        "optionalWhenBlocked": false,
+        "forceTransientFailOnce": false
+      },
+      "inputRefs": {},
+      "outputRefs": {
+        "softwareOnboardingRunId": "onboard-evolve-1787140627190"
+      },
+      "blockers": [],
+      "warnings": [],
+      "startedAt": "2026-08-19T11:57:17.233Z",
+      "completedAt": "2026-08-19T11:57:17.320Z",
+      "revisionAttempts": 0
+    },
+    {
+      "id": "content-plan",
+      "definitionStepId": "content-plan",
+      "handler": "content-plan",
+      "label": "Content plan",
+      "status": "completed",
+      "required": true,
+      "failurePolicy": "block-workflow",
+      "attempt": 1,
+      "maxAttempts": 2,
+      "dependsOn": [
+        "software-onboarding"
+      ],
+      "priority": "high",
+      "config": {
+        "maxAutomaticRevisions": 1,
+        "expandFromContentPlan": false,
+        "expandKind": "none",
+        "stopAfterApproval": true,
+        "allowNormalizedFacts": false,
+        "optionalWhenBlocked": false,
+        "forceTransientFailOnce": false
+      },
+      "inputRefs": {},
+      "outputRefs": {
+        "softwareOnboardingRunId": "onboard-evolve-1787140627190",
+        "comparisonTargets": "evolve-vs-marketo,evolve-vs-learnworlds,evolve-vs-livestorm",
+        "pageCandidateCount": "9"
+      },
+      "blockers": [],
+      "warnings": [],
+      "startedAt": "2026-08-19T11:57:17.323Z",
+      "completedAt": "2026-08-19T11:57:17.458Z",
+      "revisionAttempts": 0
+    },
+    {
+      "id": "software-review",
+      "definitionStepId": "software-review",
+      "handler": "agent-run",
+      "label": "Software Review",
+      "status": "completed",
+      "required": true,
+      "failurePolicy": "block-workflow",
+      "attempt": 1,
+      "maxAttempts": 2,
+      "dependsOn": [
+        "content-plan"
+      ],
+      "priority": "high",
+      "config": {
+        "agentId": "software-review-agent",
+        "targetSlug": "evolve",
+        "maxAutomaticRevisions": 1,
+        "expandFromContentPlan": false,
+        "expandKind": "none",
+        "stopAfterApproval": true,
+        "allowNormalizedFacts": false,
+        "optionalWhenBlocked": false,
+        "forceTransientFailOnce": false
+      },
+      "inputRefs": {},
+      "outputRefs": {
+        "draftId": "draft-deterministic-v1-software-review-agent-evolve-2026-08-19T11-57-17-695Z-rev-1787140637712",
+        "qaStatus": "pass",
+        "agentId": "software-review-agent",
+        "target": "evolve"
+      },
+      "inputSnapshot": {
+        "researchFactIds": [
+          "fact-evolve-identity.shortDescription",
+          "fact-evolve-positioning.vendorClaim",
+          "fact-evolve-pricing.model",
+          "fact-evolve-pricing.hasFreePlan",
+          "fact-evolve-pricing.hasFreeTrial",
+          "fact-evolve-pricing.plans.enterprise"
+        ],
+        "methodologySlug": "marketing-editorial",
+        "methodologyVersion": "1.0.0",
+        "agentVersion": "1.0.0",
+        "contextBuiltAt": "2026-08-19T11:57:17.691Z"
+      },
+      "blockers": [],
+      "warnings": [],
+      "agentTaskId": "exec-software-review-agent-evolve-1787140637461",
+      "draftId": "draft-deterministic-v1-software-review-agent-evolve-2026-08-19T11-57-17-695Z-rev-1787140637712",
+      "startedAt": "2026-08-19T11:57:17.459Z",
+      "completedAt": "2026-08-19T11:57:17.714Z",
+      "revisionAttempts": 0
+    },
+    {
+      "id": "pricing-page",
+      "definitionStepId": "pricing-page",
+      "handler": "agent-run",
+      "label": "Pricing Page",
+      "status": "blocked",
+      "required": false,
+      "failurePolicy": "continue-with-warning",
+      "attempt": 1,
+      "maxAttempts": 2,
+      "dependsOn": [
+        "content-plan"
+      ],
+      "priority": "normal",
+      "config": {
+        "agentId": "pricing-page-agent",
+        "targetSlug": "evolve",
+        "maxAutomaticRevisions": 1,
+        "expandFromContentPlan": false,
+        "expandKind": "none",
+        "stopAfterApproval": true,
+        "allowNormalizedFacts": false,
+        "optionalWhenBlocked": true,
+        "forceTransientFailOnce": false
+      },
+      "inputRefs": {},
+      "outputRefs": {},
+      "blockers": [
+        "PRICING_UNVERIFIED: Product pricing data is unverified"
+      ],
+      "warnings": [
+        "PRICING_UNVERIFIED: Product pricing data is unverified"
+      ],
+      "startedAt": "2026-08-19T11:57:17.765Z",
+      "completedAt": "2026-08-19T11:57:17.774Z",
+      "revisionAttempts": 0
+    },
+    {
+      "id": "alternatives",
+      "definitionStepId": "alternatives",
+      "handler": "agent-run",
+      "label": "Alternatives",
+      "status": "blocked",
+      "required": false,
+      "failurePolicy": "continue-with-warning",
+      "attempt": 1,
+      "maxAttempts": 2,
+      "dependsOn": [
+        "content-plan"
+      ],
+      "priority": "normal",
+      "config": {
+        "agentId": "alternatives-agent",
+        "targetSlug": "evolve",
+        "maxAutomaticRevisions": 1,
+        "expandFromContentPlan": false,
+        "expandKind": "none",
+        "stopAfterApproval": true,
+        "allowNormalizedFacts": false,
+        "optionalWhenBlocked": true,
+        "forceTransientFailOnce": false
+      },
+      "inputRefs": {},
+      "outputRefs": {},
+      "blockers": [
+        "NO_APPROVED_ALTERNATIVES: Approved alternative relationships required — same-category alone is insufficient"
+      ],
+      "warnings": [
+        "NO_APPROVED_ALTERNATIVES: Approved alternative relationships required — same-category alone is insufficient"
+      ],
+      "startedAt": "2026-08-19T11:57:17.716Z",
+      "completedAt": "2026-08-19T11:57:17.726Z",
+      "revisionAttempts": 0
+    },
+    {
+      "id": "comparison:evolve-vs-marketo",
+      "definitionStepId": "comparisons",
+      "handler": "agent-run",
+      "label": "Comparison evolve-vs-marketo",
+      "status": "blocked",
+      "required": false,
+      "failurePolicy": "continue-with-warning",
+      "attempt": 1,
+      "maxAttempts": 2,
+      "dependsOn": [
+        "content-plan"
+      ],
+      "priority": "normal",
+      "config": {
+        "agentId": "comparison-agent",
+        "targetSlug": "evolve-vs-marketo",
+        "maxAutomaticRevisions": 1,
+        "expandFromContentPlan": true,
+        "expandKind": "comparisons",
+        "stopAfterApproval": true,
+        "allowNormalizedFacts": false,
+        "optionalWhenBlocked": true,
+        "forceTransientFailOnce": false
+      },
+      "expansionKey": "evolve-vs-marketo",
+      "inputRefs": {},
+      "outputRefs": {},
+      "blockers": [
+        "RELATIONSHIP_UNAPPROVED: Approved comparable relationship required"
+      ],
+      "warnings": [
+        "RELATIONSHIP_UNAPPROVED: Approved comparable relationship required"
+      ],
+      "startedAt": "2026-08-19T11:57:17.752Z",
+      "completedAt": "2026-08-19T11:57:17.762Z",
+      "revisionAttempts": 0
+    },
+    {
+      "id": "comparison:evolve-vs-learnworlds",
+      "definitionStepId": "comparisons",
+      "handler": "agent-run",
+      "label": "Comparison evolve-vs-learnworlds",
+      "status": "blocked",
+      "required": false,
+      "failurePolicy": "continue-with-warning",
+      "attempt": 1,
+      "maxAttempts": 2,
+      "dependsOn": [
+        "content-plan"
+      ],
+      "priority": "normal",
+      "config": {
+        "agentId": "comparison-agent",
+        "targetSlug": "evolve-vs-learnworlds",
+        "maxAutomaticRevisions": 1,
+        "expandFromContentPlan": true,
+        "expandKind": "comparisons",
+        "stopAfterApproval": true,
+        "allowNormalizedFacts": false,
+        "optionalWhenBlocked": true,
+        "forceTransientFailOnce": false
+      },
+      "expansionKey": "evolve-vs-learnworlds",
+      "inputRefs": {},
+      "outputRefs": {},
+      "blockers": [
+        "RELATIONSHIP_UNAPPROVED: Approved comparable relationship required"
+      ],
+      "warnings": [
+        "RELATIONSHIP_UNAPPROVED: Approved comparable relationship required"
+      ],
+      "startedAt": "2026-08-19T11:57:17.728Z",
+      "completedAt": "2026-08-19T11:57:17.738Z",
+      "revisionAttempts": 0
+    },
+    {
+      "id": "comparison:evolve-vs-livestorm",
+      "definitionStepId": "comparisons",
+      "handler": "agent-run",
+      "label": "Comparison evolve-vs-livestorm",
+      "status": "blocked",
+      "required": false,
+      "failurePolicy": "continue-with-warning",
+      "attempt": 1,
+      "maxAttempts": 2,
+      "dependsOn": [
+        "content-plan"
+      ],
+      "priority": "normal",
+      "config": {
+        "agentId": "comparison-agent",
+        "targetSlug": "evolve-vs-livestorm",
+        "maxAutomaticRevisions": 1,
+        "expandFromContentPlan": true,
+        "expandKind": "comparisons",
+        "stopAfterApproval": true,
+        "allowNormalizedFacts": false,
+        "optionalWhenBlocked": true,
+        "forceTransientFailOnce": false
+      },
+      "expansionKey": "evolve-vs-livestorm",
+      "inputRefs": {},
+      "outputRefs": {},
+      "blockers": [
+        "RELATIONSHIP_UNAPPROVED: Approved comparable relationship required"
+      ],
+      "warnings": [
+        "RELATIONSHIP_UNAPPROVED: Approved comparable relationship required"
+      ],
+      "startedAt": "2026-08-19T11:57:17.741Z",
+      "completedAt": "2026-08-19T11:57:17.751Z",
+      "revisionAttempts": 0
+    },
+    {
+      "id": "internal-links",
+      "definitionStepId": "internal-links",
+      "handler": "internal-link",
+      "label": "Internal Link Plan",
+      "status": "completed",
+      "required": false,
+      "failurePolicy": "continue-with-warning",
+      "attempt": 1,
+      "maxAttempts": 2,
+      "dependsOn": [
+        "software-review"
+      ],
+      "priority": "low",
+      "config": {
+        "agentId": "internal-link-agent",
+        "maxAutomaticRevisions": 1,
+        "expandFromContentPlan": false,
+        "expandKind": "none",
+        "stopAfterApproval": true,
+        "allowNormalizedFacts": false,
+        "optionalWhenBlocked": false,
+        "forceTransientFailOnce": false
+      },
+      "inputRefs": {},
+      "outputRefs": {
+        "draftId": "draft-deterministic-v1-internal-link-agent-evolve-2026-08-19T11-57-17-785Z",
+        "qaStatus": "pass",
+        "agentId": "internal-link-agent",
+        "target": "evolve"
+      },
+      "inputSnapshot": {
+        "researchFactIds": [
+          "fact-evolve-identity.shortDescription",
+          "fact-evolve-positioning.vendorClaim",
+          "fact-evolve-pricing.model",
+          "fact-evolve-pricing.hasFreePlan",
+          "fact-evolve-pricing.hasFreeTrial",
+          "fact-evolve-pricing.plans.enterprise"
+        ],
+        "methodologySlug": "marketing-editorial",
+        "methodologyVersion": "1.0.0",
+        "agentVersion": "1.0.0",
+        "contextBuiltAt": "2026-08-19T11:57:17.785Z"
+      },
+      "blockers": [],
+      "warnings": [],
+      "agentTaskId": "exec-internal-link-agent-evolve-1787140637777",
+      "draftId": "draft-deterministic-v1-internal-link-agent-evolve-2026-08-19T11-57-17-785Z",
+      "startedAt": "2026-08-19T11:57:17.776Z",
+      "completedAt": "2026-08-19T11:57:17.788Z",
+      "revisionAttempts": 0
+    },
+    {
+      "id": "finder-readiness",
+      "definitionStepId": "finder-readiness",
+      "handler": "update-recommendation-readiness",
+      "label": "Finder readiness",
+      "status": "completed",
+      "required": false,
+      "failurePolicy": "continue",
+      "attempt": 1,
+      "maxAttempts": 2,
+      "dependsOn": [
+        "content-plan"
+      ],
+      "priority": "low",
+      "config": {
+        "maxAutomaticRevisions": 1,
+        "expandFromContentPlan": false,
+        "expandKind": "none",
+        "stopAfterApproval": true,
+        "allowNormalizedFacts": false,
+        "optionalWhenBlocked": false,
+        "forceTransientFailOnce": false
+      },
+      "inputRefs": {},
+      "outputRefs": {
+        "finderReadiness": "checked"
+      },
+      "blockers": [],
+      "warnings": [],
+      "startedAt": "2026-08-19T11:57:17.775Z",
+      "completedAt": "2026-08-19T11:57:17.775Z",
+      "revisionAttempts": 0
+    },
+    {
+      "id": "editorial-approval",
+      "definitionStepId": "editorial-approval",
+      "handler": "approval-check",
+      "label": "Editorial approval",
+      "status": "completed",
+      "required": true,
+      "failurePolicy": "manual-review",
+      "attempt": 2,
+      "maxAttempts": 2,
+      "dependsOn": [
+        "software-review"
+      ],
+      "priority": "critical",
+      "config": {
+        "approvalType": "editorial",
+        "maxAutomaticRevisions": 1,
+        "expandFromContentPlan": false,
+        "expandKind": "none",
+        "stopAfterApproval": true,
+        "allowNormalizedFacts": false,
+        "optionalWhenBlocked": false,
+        "forceTransientFailOnce": false
+      },
+      "inputRefs": {},
+      "outputRefs": {
+        "approvalId": "appr-wf-software-onboarding-content-evolve-1787140635725-software-review",
+        "draftId": "draft-deterministic-v1-software-review-agent-evolve-2026-08-19T11-57-17-695Z-rev-1787140637712",
+        "approvalIds": "appr-wf-software-onboarding-content-evolve-1787140635725-software-review"
+      },
+      "blockers": [],
+      "warnings": [
+        "Approval received — resuming",
+        "1 optional draft(s) may still need separate editorial review"
+      ],
+      "approvalId": "appr-wf-software-onboarding-content-evolve-1787140635725-software-review",
+      "startedAt": "2026-08-19T12:05:08.943Z",
+      "completedAt": "2026-08-19T12:05:09.082Z",
+      "revisionAttempts": 0
+    },
+    {
+      "id": "pre-publish-validation",
+      "definitionStepId": "pre-publish-validation",
+      "handler": "pre-publish-validation",
+      "label": "Pre-publish validation",
+      "status": "blocked",
+      "required": true,
+      "failurePolicy": "block-workflow",
+      "attempt": 1,
+      "maxAttempts": 2,
+      "dependsOn": [
+        "editorial-approval"
+      ],
+      "priority": "critical",
+      "config": {
+        "maxAutomaticRevisions": 1,
+        "expandFromContentPlan": false,
+        "expandKind": "none",
+        "stopAfterApproval": true,
+        "allowNormalizedFacts": false,
+        "optionalWhenBlocked": false,
+        "forceTransientFailOnce": false
+      },
+      "inputRefs": {},
+      "outputRefs": {},
+      "blockers": [
+        "Stale context for software-review: new-critical-fact:fact-evolve-pricing.currency-evolve-pricing-official; new-critical-fact:fact-evolve-pricing.hasFreeTrial-evolve-pricing-official; new-critical-fact:fact-evolve-pricing.hasFreePlan-evolve-pricing-official; new-critical-fact:fact-evolve-pricing.model-evolve-pricing-official",
+        "Stale context for internal-links: new-critical-fact:fact-evolve-pricing.currency-evolve-pricing-official; new-critical-fact:fact-evolve-pricing.hasFreeTrial-evolve-pricing-official; new-critical-fact:fact-evolve-pricing.hasFreePlan-evolve-pricing-official; new-critical-fact:fact-evolve-pricing.model-evolve-pricing-official"
+      ],
+      "warnings": [],
+      "startedAt": "2026-08-19T12:05:09.084Z",
+      "completedAt": "2026-08-19T12:05:09.435Z",
+      "revisionAttempts": 0
+    }
+  ],
+  "history": [
+    {
+      "at": "2026-08-19T11:57:17.224Z",
+      "event": "workflow_created",
+      "message": "Created software-onboarding-content:v1.0.0"
+    },
+    {
+      "at": "2026-08-19T11:57:17.228Z",
+      "event": "workflow_started",
+      "message": "Workflow execution started"
+    },
+    {
+      "at": "2026-08-19T11:57:17.232Z",
+      "event": "workflow_step_started",
+      "stepId": "software-onboarding",
+      "message": "Started Software onboarding"
+    },
+    {
+      "at": "2026-08-19T11:57:17.320Z",
+      "event": "workflow_step_completed",
+      "stepId": "software-onboarding",
+      "message": "Reused onboarding run onboard-evolve-1787140627190 (review-required)"
+    },
+    {
+      "at": "2026-08-19T11:57:17.322Z",
+      "event": "workflow_step_started",
+      "stepId": "content-plan",
+      "message": "Started Content plan"
+    },
+    {
+      "at": "2026-08-19T11:57:17.458Z",
+      "event": "workflow_step_completed",
+      "stepId": "content-plan",
+      "message": "Content plan from onboarding onboard-evolve-1787140627190 (9 candidates)"
+    },
+    {
+      "at": "2026-08-19T11:57:17.459Z",
+      "event": "workflow_step_started",
+      "stepId": "software-review",
+      "message": "Started Software Review"
+    },
+    {
+      "at": "2026-08-19T11:57:17.714Z",
+      "event": "workflow_step_completed",
+      "stepId": "software-review",
+      "message": "Agent software-review-agent → draft draft-deterministic-v1-software-review-agent-evolve-2026-08-19T11-57-17-695Z-rev-1787140637712 (qa=pass)"
+    },
+    {
+      "at": "2026-08-19T11:57:17.716Z",
+      "event": "workflow_step_started",
+      "stepId": "alternatives",
+      "message": "Started Alternatives"
+    },
+    {
+      "at": "2026-08-19T11:57:17.726Z",
+      "event": "workflow_step_completed",
+      "stepId": "alternatives",
+      "message": "Agent blocked (optional): NO_APPROVED_ALTERNATIVES: Approved alternative relationships required — same-category alone is insufficient"
+    },
+    {
+      "at": "2026-08-19T11:57:17.727Z",
+      "event": "workflow_step_started",
+      "stepId": "comparison:evolve-vs-learnworlds",
+      "message": "Started Comparison evolve-vs-learnworlds"
+    },
+    {
+      "at": "2026-08-19T11:57:17.738Z",
+      "event": "workflow_step_completed",
+      "stepId": "comparison:evolve-vs-learnworlds",
+      "message": "Agent blocked (optional): RELATIONSHIP_UNAPPROVED: Approved comparable relationship required"
+    },
+    {
+      "at": "2026-08-19T11:57:17.741Z",
+      "event": "workflow_step_started",
+      "stepId": "comparison:evolve-vs-livestorm",
+      "message": "Started Comparison evolve-vs-livestorm"
+    },
+    {
+      "at": "2026-08-19T11:57:17.751Z",
+      "event": "workflow_step_completed",
+      "stepId": "comparison:evolve-vs-livestorm",
+      "message": "Agent blocked (optional): RELATIONSHIP_UNAPPROVED: Approved comparable relationship required"
+    },
+    {
+      "at": "2026-08-19T11:57:17.752Z",
+      "event": "workflow_step_started",
+      "stepId": "comparison:evolve-vs-marketo",
+      "message": "Started Comparison evolve-vs-marketo"
+    },
+    {
+      "at": "2026-08-19T11:57:17.762Z",
+      "event": "workflow_step_completed",
+      "stepId": "comparison:evolve-vs-marketo",
+      "message": "Agent blocked (optional): RELATIONSHIP_UNAPPROVED: Approved comparable relationship required"
+    },
+    {
+      "at": "2026-08-19T11:57:17.764Z",
+      "event": "workflow_step_started",
+      "stepId": "pricing-page",
+      "message": "Started Pricing Page"
+    },
+    {
+      "at": "2026-08-19T11:57:17.774Z",
+      "event": "workflow_step_completed",
+      "stepId": "pricing-page",
+      "message": "Agent blocked (optional): PRICING_UNVERIFIED: Product pricing data is unverified"
+    },
+    {
+      "at": "2026-08-19T11:57:17.774Z",
+      "event": "workflow_step_started",
+      "stepId": "finder-readiness",
+      "message": "Started Finder readiness"
+    },
+    {
+      "at": "2026-08-19T11:57:17.775Z",
+      "event": "workflow_step_completed",
+      "stepId": "finder-readiness",
+      "message": "Finder readiness noted for evolve"
+    },
+    {
+      "at": "2026-08-19T11:57:17.776Z",
+      "event": "workflow_step_started",
+      "stepId": "internal-links",
+      "message": "Started Internal Link Plan"
+    },
+    {
+      "at": "2026-08-19T11:57:17.788Z",
+      "event": "workflow_step_completed",
+      "stepId": "internal-links",
+      "message": "Agent internal-link-agent → draft draft-deterministic-v1-internal-link-agent-evolve-2026-08-19T11-57-17-785Z (qa=pass)"
+    },
+    {
+      "at": "2026-08-19T11:57:17.789Z",
+      "event": "workflow_step_started",
+      "stepId": "editorial-approval",
+      "message": "Started Editorial approval"
+    },
+    {
+      "at": "2026-08-19T11:57:18.012Z",
+      "event": "workflow_step_completed",
+      "stepId": "editorial-approval",
+      "message": "WAITING FOR EDITORIAL APPROVAL (appr-wf-software-onboarding-content-evolve-1787140635725-software-review)"
+    },
+    {
+      "at": "2026-08-19T11:57:18.014Z",
+      "event": "workflow_blocked",
+      "message": "WAITING FOR EDITORIAL APPROVAL"
+    },
+    {
+      "at": "2026-08-19T12:05:08.940Z",
+      "event": "workflow_resumed",
+      "message": "Workflow resumed"
+    },
+    {
+      "at": "2026-08-19T12:05:08.942Z",
+      "event": "workflow_started",
+      "message": "Workflow execution started"
+    },
+    {
+      "at": "2026-08-19T12:05:08.943Z",
+      "event": "workflow_step_started",
+      "stepId": "editorial-approval",
+      "message": "Started Editorial approval"
+    },
+    {
+      "at": "2026-08-19T12:05:09.082Z",
+      "event": "workflow_step_completed",
+      "stepId": "editorial-approval",
+      "message": "Required editorial approvals satisfied"
+    },
+    {
+      "at": "2026-08-19T12:05:09.084Z",
+      "event": "workflow_step_started",
+      "stepId": "pre-publish-validation",
+      "message": "Started Pre-publish validation"
+    },
+    {
+      "at": "2026-08-19T12:05:09.435Z",
+      "event": "workflow_step_completed",
+      "stepId": "pre-publish-validation",
+      "message": "Pre-publish validation blocked: Stale context for software-review: new-critical-fact:fact-evolve-pricing.currency-evolve-pricing-official; new-critical-fact:fact-evolve-pricing.hasFreeTrial-evolve-pricing-official; new-critical-fact:fact-evolve-pricing.hasFreePlan-evolve-pricing-official; new-critical-fact:fact-evolve-pricing.model-evolve-pricing-official; Stale context for internal-links: new-critical-fact:fact-evolve-pricing.currency-evolve-pricing-official; new-critical-fact:fact-evolve-pricing.hasFreeTrial-evolve-pricing-official; new-critical-fact:fact-evolve-pricing.hasFreePlan-evolve-pricing-official; new-critical-fact:fact-evolve-pricing.model-evolve-pricing-official"
+    }
+  ],
+  "options": {
+    "generateReview": true,
+    "generatePricing": true,
+    "generateAlternatives": true,
+    "generateComparisons": true,
+    "runInternalLinks": true,
+    "stopAfterApproval": true,
+    "allowNormalizedFacts": false,
+    "dryRun": false,
+    "maxComparisons": 3,
+    "skipOnboarding": false
+  },
+  "warnings": [
+    "alternatives blocked: NO_APPROVED_ALTERNATIVES: Approved alternative relationships required — same-category alone is insufficient",
+    "comparison:evolve-vs-learnworlds blocked: RELATIONSHIP_UNAPPROVED: Approved comparable relationship required",
+    "comparison:evolve-vs-livestorm blocked: RELATIONSHIP_UNAPPROVED: Approved comparable relationship required",
+    "comparison:evolve-vs-marketo blocked: RELATIONSHIP_UNAPPROVED: Approved comparable relationship required",
+    "pricing-page blocked: PRICING_UNVERIFIED: Product pricing data is unverified"
+  ],
+  "createdAt": "2026-08-19T11:57:17.223Z",
+  "updatedAt": "2026-08-19T12:05:09.436Z"
+}

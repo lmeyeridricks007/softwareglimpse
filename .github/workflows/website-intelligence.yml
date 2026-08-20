@@ -1,0 +1,80 @@
+name: Website intelligence
+
+# Soft reports only — never mutates production content.
+# Subjective / competitive scores never fail the job.
+
+on:
+  schedule:
+    # Weekly LIGHT: site health + search performance (UTC Monday 07:00)
+    - cron: "0 7 * * 1"
+    # Monthly FULL: first Sunday 06:00 UTC (competitor + ranking refresh)
+    - cron: "0 6 * * 0"
+    # Quarterly DEEP: 1st of Jan/Apr/Jul/Oct 05:00 UTC
+    - cron: "0 5 1 1,4,7,10 *"
+  workflow_dispatch:
+    inputs:
+      mode:
+        description: "LIGHT, FULL, or DEEP"
+        required: true
+        default: "FULL"
+        type: choice
+        options:
+          - LIGHT
+          - FULL
+          - DEEP
+
+jobs:
+  website-intelligence:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "22"
+          cache: npm
+      - run: npm ci
+
+      - name: Resolve mode
+        id: mode
+        run: |
+          if [ "${{ github.event_name }}" = "workflow_dispatch" ]; then
+            echo "value=${{ inputs.mode }}" >> "$GITHUB_OUTPUT"
+          elif [ "${{ github.event.schedule }}" = "0 5 1 1,4,7,10 *" ]; then
+            echo "value=DEEP" >> "$GITHUB_OUTPUT"
+          elif [ "${{ github.event.schedule }}" = "0 6 * * 0" ]; then
+            # Monthly cron fires every Sunday; FULL only on first Sunday
+            DAY=$(date -u +%d)
+            if [ "$DAY" -le 7 ]; then
+              echo "value=FULL" >> "$GITHUB_OUTPUT"
+            else
+              echo "value=LIGHT" >> "$GITHUB_OUTPUT"
+            fi
+          else
+            echo "value=LIGHT" >> "$GITHUB_OUTPUT"
+          fi
+
+      - name: Run website intelligence (report-only)
+        run: npm run site:intelligence -- --mode ${{ steps.mode.outputs.value }} --fixture
+        # --fixture keeps CI offline-safe (no live SERP/GSC credentials required).
+        # Never fail CI for subjective scores. Exit code 0 unless process crash.
+
+      - name: Upload site-intelligence reports
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: website-intelligence-${{ steps.mode.outputs.value }}
+          path: |
+            docs/site-intelligence/WEBSITE-INTELLIGENCE-LATEST.md
+            docs/site-intelligence/WEBSITE-OVERVIEW-LATEST.md
+            docs/site-intelligence/RANKING-OPPORTUNITIES-LATEST.md
+            docs/site-intelligence/SEARCH-PERFORMANCE-LATEST.md
+            docs/site-intelligence/website-intelligence-latest.json
+            docs/site-intelligence/website-intelligence-scorecard-latest.json
+            docs/site-intelligence/competitors/COMPETITIVE-GAPS-LATEST.md
+            docs/site-intelligence/competitors/COMPETITIVE-BENCHMARK-LATEST.md
+            docs/site-intelligence/competitors/SERP-COMPETITORS-LATEST.md
+            docs/site-intelligence/archive/
+          if-no-files-found: warn
+
+      # Reports are not auto-committed (repo policy). Download artifact or
+      # open a human PR if committing generated docs is desired.

@@ -1,0 +1,258 @@
+{
+  "id": "wf-single-content-generation-sales-intelligence-migration-guide-1786952337411",
+  "workflowId": "single-content-generation",
+  "workflowVersion": "1.0.0",
+  "name": "Single Content Generation: sales-intelligence-migration-guide",
+  "targetType": "content",
+  "targetId": "sales-intelligence-migration-guide",
+  "status": "completed",
+  "steps": [
+    {
+      "id": "content-readiness",
+      "definitionStepId": "content-readiness",
+      "handler": "noop",
+      "label": "Content readiness",
+      "status": "completed",
+      "required": true,
+      "failurePolicy": "block-workflow",
+      "attempt": 1,
+      "maxAttempts": 2,
+      "dependsOn": [],
+      "priority": "high",
+      "config": {
+        "maxAutomaticRevisions": 1,
+        "expandFromContentPlan": false,
+        "expandKind": "none",
+        "stopAfterApproval": true,
+        "allowNormalizedFacts": false,
+        "optionalWhenBlocked": false,
+        "forceTransientFailOnce": false
+      },
+      "inputRefs": {},
+      "outputRefs": {},
+      "blockers": [],
+      "warnings": [],
+      "startedAt": "2026-08-17T08:06:14.498Z",
+      "completedAt": "2026-08-17T08:06:14.499Z",
+      "revisionAttempts": 0
+    },
+    {
+      "id": "generate",
+      "definitionStepId": "generate",
+      "handler": "agent-run",
+      "label": "Generate content",
+      "status": "completed",
+      "required": true,
+      "failurePolicy": "block-workflow",
+      "attempt": 1,
+      "maxAttempts": 2,
+      "dependsOn": [
+        "content-readiness"
+      ],
+      "priority": "high",
+      "config": {
+        "agentId": "guide-agent",
+        "targetSlug": "sales-intelligence-migration-guide",
+        "maxAutomaticRevisions": 1,
+        "expandFromContentPlan": false,
+        "expandKind": "none",
+        "stopAfterApproval": true,
+        "allowNormalizedFacts": false,
+        "optionalWhenBlocked": false,
+        "forceTransientFailOnce": false
+      },
+      "inputRefs": {},
+      "outputRefs": {
+        "draftId": "draft-deterministic-v1-guide-agent-sales-intelligence-migration-guide-2026-08-17T08-06-14-537Z",
+        "qaStatus": "pass",
+        "agentId": "guide-agent",
+        "target": "sales-intelligence-migration-guide"
+      },
+      "inputSnapshot": {
+        "researchFactIds": [],
+        "methodologySlug": "sales-intelligence-editorial",
+        "methodologyVersion": "1.0.0",
+        "agentVersion": "1.0.0",
+        "contextBuiltAt": "2026-08-17T08:06:14.534Z"
+      },
+      "blockers": [],
+      "warnings": [],
+      "agentTaskId": "exec-guide-agent-sales-intelligence-migration-guide-1786953974501",
+      "draftId": "draft-deterministic-v1-guide-agent-sales-intelligence-migration-guide-2026-08-17T08-06-14-537Z",
+      "startedAt": "2026-08-17T08:06:14.500Z",
+      "completedAt": "2026-08-17T08:06:14.544Z",
+      "revisionAttempts": 0
+    },
+    {
+      "id": "editorial-approval",
+      "definitionStepId": "editorial-approval",
+      "handler": "approval-check",
+      "label": "Editorial approval",
+      "status": "completed",
+      "required": true,
+      "failurePolicy": "manual-review",
+      "attempt": 2,
+      "maxAttempts": 2,
+      "dependsOn": [
+        "generate"
+      ],
+      "priority": "critical",
+      "config": {
+        "approvalType": "editorial",
+        "maxAutomaticRevisions": 1,
+        "expandFromContentPlan": false,
+        "expandKind": "none",
+        "stopAfterApproval": true,
+        "allowNormalizedFacts": false,
+        "optionalWhenBlocked": false,
+        "forceTransientFailOnce": false
+      },
+      "inputRefs": {},
+      "outputRefs": {
+        "approvalId": "appr-wf-single-content-generation-sales-intelligence-migration-guide-1786952337411-generate",
+        "draftId": "draft-deterministic-v1-guide-agent-sales-intelligence-migration-guide-2026-08-17T08-06-14-537Z",
+        "approvalIds": "appr-wf-single-content-generation-sales-intelligence-migration-guide-1786952337411-generate"
+      },
+      "blockers": [],
+      "warnings": [
+        "Approval received — resuming"
+      ],
+      "approvalId": "appr-wf-single-content-generation-sales-intelligence-migration-guide-1786952337411-generate",
+      "startedAt": "2026-08-17T08:08:15.896Z",
+      "completedAt": "2026-08-17T08:08:15.955Z",
+      "revisionAttempts": 0
+    },
+    {
+      "id": "pre-publish-validation",
+      "definitionStepId": "pre-publish-validation",
+      "handler": "pre-publish-validation",
+      "label": "Pre-publish validation",
+      "status": "completed",
+      "required": true,
+      "failurePolicy": "block-workflow",
+      "attempt": 1,
+      "maxAttempts": 2,
+      "dependsOn": [
+        "editorial-approval"
+      ],
+      "priority": "critical",
+      "config": {
+        "maxAutomaticRevisions": 1,
+        "expandFromContentPlan": false,
+        "expandKind": "none",
+        "stopAfterApproval": true,
+        "allowNormalizedFacts": false,
+        "optionalWhenBlocked": false,
+        "forceTransientFailOnce": false
+      },
+      "inputRefs": {},
+      "outputRefs": {
+        "publishState": "READY_TO_PUBLISH"
+      },
+      "blockers": [],
+      "warnings": [
+        "stopAfterApproval: workflow will not publish automatically"
+      ],
+      "startedAt": "2026-08-17T08:08:15.957Z",
+      "completedAt": "2026-08-17T08:08:16.013Z",
+      "revisionAttempts": 0
+    }
+  ],
+  "history": [
+    {
+      "at": "2026-08-17T07:39:03.305Z",
+      "event": "workflow_created",
+      "message": "Created single-content-generation:v1.0.0"
+    },
+    {
+      "at": "2026-08-17T08:06:14.496Z",
+      "event": "workflow_started",
+      "message": "Workflow execution started"
+    },
+    {
+      "at": "2026-08-17T08:06:14.498Z",
+      "event": "workflow_step_started",
+      "stepId": "content-readiness",
+      "message": "Started Content readiness"
+    },
+    {
+      "at": "2026-08-17T08:06:14.499Z",
+      "event": "workflow_step_completed",
+      "stepId": "content-readiness",
+      "message": "No-op step completed"
+    },
+    {
+      "at": "2026-08-17T08:06:14.500Z",
+      "event": "workflow_step_started",
+      "stepId": "generate",
+      "message": "Started Generate content"
+    },
+    {
+      "at": "2026-08-17T08:06:14.544Z",
+      "event": "workflow_step_completed",
+      "stepId": "generate",
+      "message": "Agent guide-agent → draft draft-deterministic-v1-guide-agent-sales-intelligence-migration-guide-2026-08-17T08-06-14-537Z (qa=pass)"
+    },
+    {
+      "at": "2026-08-17T08:06:14.546Z",
+      "event": "workflow_step_started",
+      "stepId": "editorial-approval",
+      "message": "Started Editorial approval"
+    },
+    {
+      "at": "2026-08-17T08:06:14.620Z",
+      "event": "workflow_step_completed",
+      "stepId": "editorial-approval",
+      "message": "WAITING FOR EDITORIAL APPROVAL (appr-wf-single-content-generation-sales-intelligence-migration-guide-1786952337411-generate)"
+    },
+    {
+      "at": "2026-08-17T08:08:15.890Z",
+      "event": "workflow_resumed",
+      "message": "Workflow resumed"
+    },
+    {
+      "at": "2026-08-17T08:08:15.895Z",
+      "event": "workflow_started",
+      "message": "Workflow execution started"
+    },
+    {
+      "at": "2026-08-17T08:08:15.896Z",
+      "event": "workflow_step_started",
+      "stepId": "editorial-approval",
+      "message": "Started Editorial approval"
+    },
+    {
+      "at": "2026-08-17T08:08:15.955Z",
+      "event": "workflow_step_completed",
+      "stepId": "editorial-approval",
+      "message": "Required editorial approvals satisfied"
+    },
+    {
+      "at": "2026-08-17T08:08:15.957Z",
+      "event": "workflow_step_started",
+      "stepId": "pre-publish-validation",
+      "message": "Started Pre-publish validation"
+    },
+    {
+      "at": "2026-08-17T08:08:16.013Z",
+      "event": "workflow_step_completed",
+      "stepId": "pre-publish-validation",
+      "message": "Pre-publish validation passed — READY TO PUBLISH (manual)"
+    },
+    {
+      "at": "2026-08-17T08:08:16.014Z",
+      "event": "workflow_completed",
+      "message": "Workflow completed"
+    }
+  ],
+  "options": {
+    "agentId": "guide-agent",
+    "targetSlug": "sales-intelligence-migration-guide",
+    "productIds": [],
+    "categoryIds": [],
+    "allowNormalizedFacts": false
+  },
+  "warnings": [],
+  "createdAt": "2026-08-17T07:39:03.295Z",
+  "updatedAt": "2026-08-17T08:08:16.014Z"
+}

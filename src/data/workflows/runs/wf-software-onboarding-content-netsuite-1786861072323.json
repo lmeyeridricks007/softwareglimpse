@@ -1,0 +1,960 @@
+{
+  "id": "wf-software-onboarding-content-netsuite-1786861072323",
+  "workflowId": "software-onboarding-content",
+  "workflowVersion": "1.0.0",
+  "name": "Software Onboarding Content: netsuite",
+  "targetType": "software",
+  "targetId": "netsuite",
+  "status": "completed-with-warnings",
+  "steps": [
+    {
+      "id": "software-onboarding",
+      "definitionStepId": "software-onboarding",
+      "handler": "software-onboarding",
+      "label": "Software onboarding",
+      "status": "completed",
+      "required": true,
+      "failurePolicy": "block-workflow",
+      "attempt": 1,
+      "maxAttempts": 2,
+      "dependsOn": [],
+      "priority": "critical",
+      "config": {
+        "maxAutomaticRevisions": 1,
+        "expandFromContentPlan": false,
+        "expandKind": "none",
+        "stopAfterApproval": true,
+        "allowNormalizedFacts": false,
+        "optionalWhenBlocked": false,
+        "forceTransientFailOnce": false
+      },
+      "inputRefs": {},
+      "outputRefs": {
+        "softwareOnboardingRunId": "onboard-netsuite-1786859711833"
+      },
+      "blockers": [],
+      "warnings": [],
+      "startedAt": "2026-08-16T06:17:52.813Z",
+      "completedAt": "2026-08-16T06:17:52.849Z",
+      "revisionAttempts": 0
+    },
+    {
+      "id": "content-plan",
+      "definitionStepId": "content-plan",
+      "handler": "content-plan",
+      "label": "Content plan",
+      "status": "completed",
+      "required": true,
+      "failurePolicy": "block-workflow",
+      "attempt": 1,
+      "maxAttempts": 2,
+      "dependsOn": [
+        "software-onboarding"
+      ],
+      "priority": "high",
+      "config": {
+        "maxAutomaticRevisions": 1,
+        "expandFromContentPlan": false,
+        "expandKind": "none",
+        "stopAfterApproval": true,
+        "allowNormalizedFacts": false,
+        "optionalWhenBlocked": false,
+        "forceTransientFailOnce": false
+      },
+      "inputRefs": {},
+      "outputRefs": {
+        "softwareOnboardingRunId": "onboard-netsuite-1786859711833",
+        "comparisonTargets": "netsuite-vs-salesforce,dynamics-365-vs-netsuite,netsuite-vs-oracle-cx",
+        "pageCandidateCount": "9"
+      },
+      "blockers": [],
+      "warnings": [],
+      "startedAt": "2026-08-16T06:17:52.850Z",
+      "completedAt": "2026-08-16T06:17:52.891Z",
+      "revisionAttempts": 0
+    },
+    {
+      "id": "software-review",
+      "definitionStepId": "software-review",
+      "handler": "agent-run",
+      "label": "Software Review",
+      "status": "completed",
+      "required": true,
+      "failurePolicy": "block-workflow",
+      "attempt": 1,
+      "maxAttempts": 2,
+      "dependsOn": [
+        "content-plan"
+      ],
+      "priority": "high",
+      "config": {
+        "agentId": "software-review-agent",
+        "targetSlug": "netsuite",
+        "maxAutomaticRevisions": 1,
+        "expandFromContentPlan": false,
+        "expandKind": "none",
+        "stopAfterApproval": true,
+        "allowNormalizedFacts": false,
+        "optionalWhenBlocked": false,
+        "forceTransientFailOnce": false
+      },
+      "inputRefs": {},
+      "outputRefs": {
+        "draftId": "draft-deterministic-v1-software-review-agent-netsuite-2026-08-16T06-17-52-940Z",
+        "qaStatus": "pass",
+        "agentId": "software-review-agent",
+        "target": "netsuite"
+      },
+      "inputSnapshot": {
+        "researchFactIds": [
+          "fact-netsuite-pricing.hasFreePlan",
+          "fact-netsuite-pricing.hasFreeTrial",
+          "fact-netsuite-pricing.currency",
+          "fact-netsuite-pricing.model",
+          "fact-netsuite-identity.shortDescription",
+          "fact-netsuite-positioning.vendorClaim",
+          "fact-netsuite-pricing.plans.enterprise",
+          "fact-netsuite-features.contact-management",
+          "fact-netsuite-features.lead-management",
+          "fact-netsuite-features.pipeline-management",
+          "fact-netsuite-features.deal-management",
+          "fact-netsuite-features.custom-pipelines",
+          "fact-netsuite-features.custom-fields",
+          "fact-netsuite-features.email-sync",
+          "fact-netsuite-features.email-tracking",
+          "fact-netsuite-features.workflow-automation",
+          "fact-netsuite-features.reporting",
+          "fact-netsuite-features.mobile-app",
+          "fact-netsuite-features.sales-automation",
+          "fact-netsuite-features.integrations",
+          "fact-netsuite-features.ai-assistance"
+        ],
+        "methodologySlug": "crm-editorial",
+        "methodologyVersion": "1.0.0",
+        "agentVersion": "1.0.0",
+        "contextBuiltAt": "2026-08-16T06:17:52.934Z"
+      },
+      "blockers": [],
+      "warnings": [],
+      "agentTaskId": "exec-software-review-agent-netsuite-1786861072894",
+      "draftId": "draft-deterministic-v1-software-review-agent-netsuite-2026-08-16T06-17-52-940Z",
+      "startedAt": "2026-08-16T06:17:52.893Z",
+      "completedAt": "2026-08-16T06:17:52.948Z",
+      "revisionAttempts": 0
+    },
+    {
+      "id": "pricing-page",
+      "definitionStepId": "pricing-page",
+      "handler": "agent-run",
+      "label": "Pricing Page",
+      "status": "blocked",
+      "required": false,
+      "failurePolicy": "continue-with-warning",
+      "attempt": 1,
+      "maxAttempts": 2,
+      "dependsOn": [
+        "content-plan"
+      ],
+      "priority": "normal",
+      "config": {
+        "agentId": "pricing-page-agent",
+        "targetSlug": "netsuite",
+        "maxAutomaticRevisions": 1,
+        "expandFromContentPlan": false,
+        "expandKind": "none",
+        "stopAfterApproval": true,
+        "allowNormalizedFacts": false,
+        "optionalWhenBlocked": true,
+        "forceTransientFailOnce": false
+      },
+      "inputRefs": {},
+      "outputRefs": {},
+      "blockers": [
+        "PRICING_UNVERIFIED: Product pricing data is unverified"
+      ],
+      "warnings": [
+        "PRICING_UNVERIFIED: Product pricing data is unverified"
+      ],
+      "startedAt": "2026-08-16T06:17:53.016Z",
+      "completedAt": "2026-08-16T06:17:53.027Z",
+      "revisionAttempts": 0
+    },
+    {
+      "id": "alternatives",
+      "definitionStepId": "alternatives",
+      "handler": "agent-run",
+      "label": "Alternatives",
+      "status": "completed",
+      "required": false,
+      "failurePolicy": "continue-with-warning",
+      "attempt": 1,
+      "maxAttempts": 2,
+      "dependsOn": [
+        "content-plan"
+      ],
+      "priority": "normal",
+      "config": {
+        "agentId": "alternatives-agent",
+        "targetSlug": "netsuite",
+        "maxAutomaticRevisions": 1,
+        "expandFromContentPlan": false,
+        "expandKind": "none",
+        "stopAfterApproval": true,
+        "allowNormalizedFacts": false,
+        "optionalWhenBlocked": true,
+        "forceTransientFailOnce": false
+      },
+      "inputRefs": {},
+      "outputRefs": {
+        "draftId": "draft-deterministic-v1-alternatives-agent-netsuite-2026-08-16T06-17-52-955Z",
+        "qaStatus": "pass",
+        "agentId": "alternatives-agent",
+        "target": "netsuite"
+      },
+      "inputSnapshot": {
+        "researchFactIds": [
+          "fact-netsuite-pricing.hasFreePlan",
+          "fact-netsuite-pricing.hasFreeTrial",
+          "fact-netsuite-pricing.currency",
+          "fact-netsuite-pricing.model",
+          "fact-netsuite-identity.shortDescription",
+          "fact-netsuite-positioning.vendorClaim",
+          "fact-netsuite-pricing.plans.enterprise",
+          "fact-netsuite-features.contact-management",
+          "fact-netsuite-features.lead-management",
+          "fact-netsuite-features.pipeline-management",
+          "fact-netsuite-features.deal-management",
+          "fact-netsuite-features.custom-pipelines",
+          "fact-netsuite-features.custom-fields",
+          "fact-netsuite-features.email-sync",
+          "fact-netsuite-features.email-tracking",
+          "fact-netsuite-features.workflow-automation",
+          "fact-netsuite-features.reporting",
+          "fact-netsuite-features.mobile-app",
+          "fact-netsuite-features.sales-automation",
+          "fact-netsuite-features.integrations",
+          "fact-netsuite-features.ai-assistance"
+        ],
+        "methodologySlug": "crm-editorial",
+        "methodologyVersion": "1.0.0",
+        "agentVersion": "1.0.0",
+        "contextBuiltAt": "2026-08-16T06:17:52.953Z"
+      },
+      "blockers": [],
+      "warnings": [],
+      "agentTaskId": "exec-alternatives-agent-netsuite-1786861072950",
+      "draftId": "draft-deterministic-v1-alternatives-agent-netsuite-2026-08-16T06-17-52-955Z",
+      "startedAt": "2026-08-16T06:17:52.949Z",
+      "completedAt": "2026-08-16T06:17:52.957Z",
+      "revisionAttempts": 0
+    },
+    {
+      "id": "comparison:netsuite-vs-salesforce",
+      "definitionStepId": "comparisons",
+      "handler": "agent-run",
+      "label": "Comparison netsuite-vs-salesforce",
+      "status": "completed",
+      "required": false,
+      "failurePolicy": "continue-with-warning",
+      "attempt": 1,
+      "maxAttempts": 2,
+      "dependsOn": [
+        "content-plan"
+      ],
+      "priority": "normal",
+      "config": {
+        "agentId": "comparison-agent",
+        "targetSlug": "netsuite-vs-salesforce",
+        "maxAutomaticRevisions": 1,
+        "expandFromContentPlan": true,
+        "expandKind": "comparisons",
+        "stopAfterApproval": true,
+        "allowNormalizedFacts": false,
+        "optionalWhenBlocked": true,
+        "forceTransientFailOnce": false
+      },
+      "expansionKey": "netsuite-vs-salesforce",
+      "inputRefs": {},
+      "outputRefs": {
+        "draftId": "draft-deterministic-v1-comparison-agent-netsuite-vs-salesforce-2026-08-16T06-17-53-009Z",
+        "qaStatus": "pass",
+        "agentId": "comparison-agent",
+        "target": "netsuite-vs-salesforce"
+      },
+      "inputSnapshot": {
+        "researchFactIds": [
+          "fact-netsuite-pricing.hasFreePlan",
+          "fact-netsuite-pricing.hasFreeTrial",
+          "fact-netsuite-pricing.currency",
+          "fact-netsuite-pricing.model",
+          "fact-netsuite-identity.shortDescription",
+          "fact-netsuite-positioning.vendorClaim",
+          "fact-netsuite-pricing.plans.enterprise",
+          "fact-netsuite-features.contact-management",
+          "fact-netsuite-features.lead-management",
+          "fact-netsuite-features.pipeline-management",
+          "fact-netsuite-features.deal-management",
+          "fact-netsuite-features.custom-pipelines",
+          "fact-netsuite-features.custom-fields",
+          "fact-netsuite-features.email-sync",
+          "fact-netsuite-features.email-tracking",
+          "fact-netsuite-features.workflow-automation",
+          "fact-netsuite-features.reporting",
+          "fact-netsuite-features.mobile-app",
+          "fact-netsuite-features.sales-automation",
+          "fact-netsuite-features.integrations",
+          "fact-netsuite-features.ai-assistance",
+          "fact-salesforce-pricing.hasFreePlan",
+          "fact-salesforce-pricing.hasFreeTrial",
+          "fact-salesforce-pricing.startingPriceMonthly",
+          "fact-salesforce-pricing.currency",
+          "fact-salesforce-pricing.model",
+          "fact-salesforce-pricing.plans.starter-suite",
+          "fact-salesforce-pricing.plans.pro-suite",
+          "fact-salesforce-pricing.plans.enterprise",
+          "fact-salesforce-pricing.plans.unlimited",
+          "fact-salesforce-pricing.addons",
+          "fact-salesforce-pricing.agentforce1",
+          "fact-salesforce-features.contact-management",
+          "fact-salesforce-features.lead-management",
+          "fact-salesforce-features.pipeline-management",
+          "fact-salesforce-features.deal-management",
+          "fact-salesforce-features.custom-pipelines",
+          "fact-salesforce-features.custom-fields",
+          "fact-salesforce-features.mobile-app",
+          "fact-salesforce-features.email-sync",
+          "fact-salesforce-features.email-tracking",
+          "fact-salesforce-features.email-sequences",
+          "fact-salesforce-features.workflow-automation",
+          "fact-salesforce-features.sales-automation",
+          "fact-salesforce-features.reporting",
+          "fact-salesforce-features.forecasting",
+          "fact-salesforce-features.lead-scoring",
+          "fact-salesforce-features.ai-assistance",
+          "fact-salesforce-features.integrations",
+          "fact-salesforce-features.email-campaigns",
+          "fact-salesforce-integrations.gmail",
+          "fact-salesforce-integrations.outlook",
+          "fact-salesforce-integrations.slack",
+          "fact-salesforce-integrations.appexchange",
+          "fact-salesforce-ai.assistant",
+          "fact-salesforce-ai.forecasting",
+          "fact-salesforce-ai.automation",
+          "fact-salesforce-ai.lead-scoring",
+          "fact-salesforce-positioning.summary"
+        ],
+        "methodologySlug": "crm-editorial",
+        "methodologyVersion": "1.0.0",
+        "agentVersion": "1.0.0",
+        "contextBuiltAt": "2026-08-16T06:17:53.008Z"
+      },
+      "blockers": [],
+      "warnings": [],
+      "agentTaskId": "exec-comparison-agent-netsuite-vs-salesforce-1786861072997",
+      "draftId": "draft-deterministic-v1-comparison-agent-netsuite-vs-salesforce-2026-08-16T06-17-53-009Z",
+      "startedAt": "2026-08-16T06:17:52.994Z",
+      "completedAt": "2026-08-16T06:17:53.014Z",
+      "revisionAttempts": 0
+    },
+    {
+      "id": "comparison:dynamics-365-vs-netsuite",
+      "definitionStepId": "comparisons",
+      "handler": "agent-run",
+      "label": "Comparison dynamics-365-vs-netsuite",
+      "status": "completed",
+      "required": false,
+      "failurePolicy": "continue-with-warning",
+      "attempt": 1,
+      "maxAttempts": 2,
+      "dependsOn": [
+        "content-plan"
+      ],
+      "priority": "normal",
+      "config": {
+        "agentId": "comparison-agent",
+        "targetSlug": "dynamics-365-vs-netsuite",
+        "maxAutomaticRevisions": 1,
+        "expandFromContentPlan": true,
+        "expandKind": "comparisons",
+        "stopAfterApproval": true,
+        "allowNormalizedFacts": false,
+        "optionalWhenBlocked": true,
+        "forceTransientFailOnce": false
+      },
+      "expansionKey": "dynamics-365-vs-netsuite",
+      "inputRefs": {},
+      "outputRefs": {
+        "draftId": "draft-deterministic-v1-comparison-agent-dynamics-365-vs-netsuite-2026-08-16T06-17-52-967Z",
+        "qaStatus": "pass",
+        "agentId": "comparison-agent",
+        "target": "dynamics-365-vs-netsuite"
+      },
+      "inputSnapshot": {
+        "researchFactIds": [
+          "fact-dynamics-365-pricing.hasFreePlan",
+          "fact-dynamics-365-pricing.hasFreeTrial",
+          "fact-dynamics-365-pricing.trialDays",
+          "fact-dynamics-365-pricing.startingPriceMonthly",
+          "fact-dynamics-365-pricing.currency",
+          "fact-dynamics-365-pricing.model",
+          "fact-dynamics-365-pricing.plans.sales-professional",
+          "fact-dynamics-365-pricing.plans.sales-enterprise",
+          "fact-dynamics-365-pricing.plans.sales-premium",
+          "fact-dynamics-365-pricing.plans.relationship-sales",
+          "fact-dynamics-365-features.contact-management",
+          "fact-dynamics-365-features.lead-management",
+          "fact-dynamics-365-features.pipeline-management",
+          "fact-dynamics-365-features.deal-management",
+          "fact-dynamics-365-features.custom-fields",
+          "fact-dynamics-365-features.mobile-app",
+          "fact-dynamics-365-features.email-sync",
+          "fact-dynamics-365-features.email-tracking",
+          "fact-dynamics-365-features.workflow-automation",
+          "fact-dynamics-365-features.sales-automation",
+          "fact-dynamics-365-features.reporting",
+          "fact-dynamics-365-features.forecasting",
+          "fact-dynamics-365-features.ai-assistance",
+          "fact-dynamics-365-features.integrations",
+          "fact-dynamics-365-features.data-enrichment",
+          "fact-dynamics-365-ai.assistant",
+          "fact-dynamics-365-ai.summaries",
+          "fact-dynamics-365-ai.email-generation",
+          "fact-dynamics-365-ai.recommendations",
+          "fact-dynamics-365-ai.automation",
+          "fact-dynamics-365-ai.forecasting",
+          "fact-dynamics-365-integrations.microsoft-365",
+          "fact-dynamics-365-integrations.power-platform",
+          "fact-dynamics-365-integrations.linkedin",
+          "fact-dynamics-365-positioning.agentic-crm",
+          "fact-dynamics-365-positioning.microsoft-365-copilot",
+          "fact-netsuite-pricing.hasFreePlan",
+          "fact-netsuite-pricing.hasFreeTrial",
+          "fact-netsuite-pricing.currency",
+          "fact-netsuite-pricing.model",
+          "fact-netsuite-identity.shortDescription",
+          "fact-netsuite-positioning.vendorClaim",
+          "fact-netsuite-pricing.plans.enterprise",
+          "fact-netsuite-features.contact-management",
+          "fact-netsuite-features.lead-management",
+          "fact-netsuite-features.pipeline-management",
+          "fact-netsuite-features.deal-management",
+          "fact-netsuite-features.custom-pipelines",
+          "fact-netsuite-features.custom-fields",
+          "fact-netsuite-features.email-sync",
+          "fact-netsuite-features.email-tracking",
+          "fact-netsuite-features.workflow-automation",
+          "fact-netsuite-features.reporting",
+          "fact-netsuite-features.mobile-app",
+          "fact-netsuite-features.sales-automation",
+          "fact-netsuite-features.integrations",
+          "fact-netsuite-features.ai-assistance"
+        ],
+        "methodologySlug": "crm-editorial",
+        "methodologyVersion": "1.0.0",
+        "agentVersion": "1.0.0",
+        "contextBuiltAt": "2026-08-16T06:17:52.965Z"
+      },
+      "blockers": [],
+      "warnings": [],
+      "agentTaskId": "exec-comparison-agent-dynamics-365-vs-netsuite-1786861072958",
+      "draftId": "draft-deterministic-v1-comparison-agent-dynamics-365-vs-netsuite-2026-08-16T06-17-52-967Z",
+      "startedAt": "2026-08-16T06:17:52.957Z",
+      "completedAt": "2026-08-16T06:17:52.973Z",
+      "revisionAttempts": 0
+    },
+    {
+      "id": "comparison:netsuite-vs-oracle-cx",
+      "definitionStepId": "comparisons",
+      "handler": "agent-run",
+      "label": "Comparison netsuite-vs-oracle-cx",
+      "status": "completed",
+      "required": false,
+      "failurePolicy": "continue-with-warning",
+      "attempt": 1,
+      "maxAttempts": 2,
+      "dependsOn": [
+        "content-plan"
+      ],
+      "priority": "normal",
+      "config": {
+        "agentId": "comparison-agent",
+        "targetSlug": "netsuite-vs-oracle-cx",
+        "maxAutomaticRevisions": 1,
+        "expandFromContentPlan": true,
+        "expandKind": "comparisons",
+        "stopAfterApproval": true,
+        "allowNormalizedFacts": false,
+        "optionalWhenBlocked": true,
+        "forceTransientFailOnce": false
+      },
+      "expansionKey": "netsuite-vs-oracle-cx",
+      "inputRefs": {},
+      "outputRefs": {
+        "draftId": "draft-deterministic-v1-comparison-agent-netsuite-vs-oracle-cx-2026-08-16T06-17-52-985Z",
+        "qaStatus": "pass",
+        "agentId": "comparison-agent",
+        "target": "netsuite-vs-oracle-cx"
+      },
+      "inputSnapshot": {
+        "researchFactIds": [
+          "fact-netsuite-pricing.hasFreePlan",
+          "fact-netsuite-pricing.hasFreeTrial",
+          "fact-netsuite-pricing.currency",
+          "fact-netsuite-pricing.model",
+          "fact-netsuite-identity.shortDescription",
+          "fact-netsuite-positioning.vendorClaim",
+          "fact-netsuite-pricing.plans.enterprise",
+          "fact-netsuite-features.contact-management",
+          "fact-netsuite-features.lead-management",
+          "fact-netsuite-features.pipeline-management",
+          "fact-netsuite-features.deal-management",
+          "fact-netsuite-features.custom-pipelines",
+          "fact-netsuite-features.custom-fields",
+          "fact-netsuite-features.email-sync",
+          "fact-netsuite-features.email-tracking",
+          "fact-netsuite-features.workflow-automation",
+          "fact-netsuite-features.reporting",
+          "fact-netsuite-features.mobile-app",
+          "fact-netsuite-features.sales-automation",
+          "fact-netsuite-features.integrations",
+          "fact-netsuite-features.ai-assistance",
+          "fact-oracle-cx-pricing.hasFreePlan",
+          "fact-oracle-cx-pricing.hasFreeTrial",
+          "fact-oracle-cx-pricing.startingPriceMonthly",
+          "fact-oracle-cx-pricing.currency",
+          "fact-oracle-cx-pricing.model",
+          "fact-oracle-cx-pricing.plans.professional",
+          "fact-oracle-cx-pricing.plans.enterprise",
+          "fact-oracle-cx-features.contact-management",
+          "fact-oracle-cx-features.lead-management",
+          "fact-oracle-cx-features.pipeline-management",
+          "fact-oracle-cx-features.deal-management",
+          "fact-oracle-cx-features.email-sync",
+          "fact-oracle-cx-features.workflow-automation",
+          "fact-oracle-cx-features.sales-automation",
+          "fact-oracle-cx-features.reporting",
+          "fact-oracle-cx-features.forecasting",
+          "fact-oracle-cx-features.custom-fields",
+          "fact-oracle-cx-features.custom-pipelines",
+          "fact-oracle-cx-features.mobile-app",
+          "fact-oracle-cx-features.ai-assistance",
+          "fact-oracle-cx-features.integrations",
+          "fact-oracle-cx-positioning.summary",
+          "fact-oracle-cx-ai.assistant",
+          "fact-oracle-cx-ai.forecasting",
+          "fact-oracle-cx-ai.recommendations"
+        ],
+        "methodologySlug": "crm-editorial",
+        "methodologyVersion": "1.0.0",
+        "agentVersion": "1.0.0",
+        "contextBuiltAt": "2026-08-16T06:17:52.984Z"
+      },
+      "blockers": [],
+      "warnings": [],
+      "agentTaskId": "exec-comparison-agent-netsuite-vs-oracle-cx-1786861072976",
+      "draftId": "draft-deterministic-v1-comparison-agent-netsuite-vs-oracle-cx-2026-08-16T06-17-52-985Z",
+      "startedAt": "2026-08-16T06:17:52.975Z",
+      "completedAt": "2026-08-16T06:17:52.992Z",
+      "revisionAttempts": 0
+    },
+    {
+      "id": "internal-links",
+      "definitionStepId": "internal-links",
+      "handler": "internal-link",
+      "label": "Internal Link Plan",
+      "status": "completed",
+      "required": false,
+      "failurePolicy": "continue-with-warning",
+      "attempt": 1,
+      "maxAttempts": 2,
+      "dependsOn": [
+        "software-review"
+      ],
+      "priority": "low",
+      "config": {
+        "agentId": "internal-link-agent",
+        "maxAutomaticRevisions": 1,
+        "expandFromContentPlan": false,
+        "expandKind": "none",
+        "stopAfterApproval": true,
+        "allowNormalizedFacts": false,
+        "optionalWhenBlocked": false,
+        "forceTransientFailOnce": false
+      },
+      "inputRefs": {},
+      "outputRefs": {
+        "draftId": "draft-deterministic-v1-internal-link-agent-netsuite-2026-08-16T06-17-53-041Z",
+        "qaStatus": "pass",
+        "agentId": "internal-link-agent",
+        "target": "netsuite"
+      },
+      "inputSnapshot": {
+        "researchFactIds": [
+          "fact-netsuite-pricing.hasFreePlan",
+          "fact-netsuite-pricing.hasFreeTrial",
+          "fact-netsuite-pricing.currency",
+          "fact-netsuite-pricing.model",
+          "fact-netsuite-identity.shortDescription",
+          "fact-netsuite-positioning.vendorClaim",
+          "fact-netsuite-pricing.plans.enterprise",
+          "fact-netsuite-features.contact-management",
+          "fact-netsuite-features.lead-management",
+          "fact-netsuite-features.pipeline-management",
+          "fact-netsuite-features.deal-management",
+          "fact-netsuite-features.custom-pipelines",
+          "fact-netsuite-features.custom-fields",
+          "fact-netsuite-features.email-sync",
+          "fact-netsuite-features.email-tracking",
+          "fact-netsuite-features.workflow-automation",
+          "fact-netsuite-features.reporting",
+          "fact-netsuite-features.mobile-app",
+          "fact-netsuite-features.sales-automation",
+          "fact-netsuite-features.integrations",
+          "fact-netsuite-features.ai-assistance"
+        ],
+        "methodologySlug": "crm-editorial",
+        "methodologyVersion": "1.0.0",
+        "agentVersion": "1.0.0",
+        "contextBuiltAt": "2026-08-16T06:17:53.040Z"
+      },
+      "blockers": [],
+      "warnings": [],
+      "agentTaskId": "exec-internal-link-agent-netsuite-1786861073033",
+      "draftId": "draft-deterministic-v1-internal-link-agent-netsuite-2026-08-16T06-17-53-041Z",
+      "startedAt": "2026-08-16T06:17:53.032Z",
+      "completedAt": "2026-08-16T06:17:53.043Z",
+      "revisionAttempts": 0
+    },
+    {
+      "id": "finder-readiness",
+      "definitionStepId": "finder-readiness",
+      "handler": "update-recommendation-readiness",
+      "label": "Finder readiness",
+      "status": "completed",
+      "required": false,
+      "failurePolicy": "continue",
+      "attempt": 1,
+      "maxAttempts": 2,
+      "dependsOn": [
+        "content-plan"
+      ],
+      "priority": "low",
+      "config": {
+        "maxAutomaticRevisions": 1,
+        "expandFromContentPlan": false,
+        "expandKind": "none",
+        "stopAfterApproval": true,
+        "allowNormalizedFacts": false,
+        "optionalWhenBlocked": false,
+        "forceTransientFailOnce": false
+      },
+      "inputRefs": {},
+      "outputRefs": {
+        "finderReadiness": "checked"
+      },
+      "blockers": [],
+      "warnings": [],
+      "startedAt": "2026-08-16T06:17:53.028Z",
+      "completedAt": "2026-08-16T06:17:53.030Z",
+      "revisionAttempts": 0
+    },
+    {
+      "id": "editorial-approval",
+      "definitionStepId": "editorial-approval",
+      "handler": "approval-check",
+      "label": "Editorial approval",
+      "status": "completed",
+      "required": true,
+      "failurePolicy": "manual-review",
+      "attempt": 2,
+      "maxAttempts": 2,
+      "dependsOn": [
+        "software-review"
+      ],
+      "priority": "critical",
+      "config": {
+        "approvalType": "editorial",
+        "maxAutomaticRevisions": 1,
+        "expandFromContentPlan": false,
+        "expandKind": "none",
+        "stopAfterApproval": true,
+        "allowNormalizedFacts": false,
+        "optionalWhenBlocked": false,
+        "forceTransientFailOnce": false
+      },
+      "inputRefs": {},
+      "outputRefs": {
+        "approvalId": "appr-wf-software-onboarding-content-netsuite-1786861072323-software-review",
+        "draftId": "draft-deterministic-v1-software-review-agent-netsuite-2026-08-16T06-17-52-940Z",
+        "approvalIds": "appr-wf-software-onboarding-content-netsuite-1786861072323-software-review"
+      },
+      "blockers": [],
+      "warnings": [
+        "Approval received — resuming",
+        "5 optional draft(s) may still need separate editorial review"
+      ],
+      "approvalId": "appr-wf-software-onboarding-content-netsuite-1786861072323-software-review",
+      "startedAt": "2026-08-16T06:19:13.269Z",
+      "completedAt": "2026-08-16T06:19:13.328Z",
+      "revisionAttempts": 0
+    },
+    {
+      "id": "pre-publish-validation",
+      "definitionStepId": "pre-publish-validation",
+      "handler": "pre-publish-validation",
+      "label": "Pre-publish validation",
+      "status": "completed",
+      "required": true,
+      "failurePolicy": "block-workflow",
+      "attempt": 2,
+      "maxAttempts": 2,
+      "dependsOn": [
+        "editorial-approval"
+      ],
+      "priority": "critical",
+      "config": {
+        "maxAutomaticRevisions": 1,
+        "expandFromContentPlan": false,
+        "expandKind": "none",
+        "stopAfterApproval": true,
+        "allowNormalizedFacts": false,
+        "optionalWhenBlocked": false,
+        "forceTransientFailOnce": false
+      },
+      "inputRefs": {},
+      "outputRefs": {
+        "publishState": "READY_TO_PUBLISH"
+      },
+      "blockers": [],
+      "warnings": [
+        "Re-running blocked pre-publish validation on resume",
+        "stopAfterApproval: workflow will not publish automatically"
+      ],
+      "startedAt": "2026-08-16T06:20:28.459Z",
+      "completedAt": "2026-08-16T06:20:28.808Z",
+      "revisionAttempts": 0
+    }
+  ],
+  "history": [
+    {
+      "at": "2026-08-16T06:17:52.809Z",
+      "event": "workflow_created",
+      "message": "Created software-onboarding-content:v1.0.0"
+    },
+    {
+      "at": "2026-08-16T06:17:52.811Z",
+      "event": "workflow_started",
+      "message": "Workflow execution started"
+    },
+    {
+      "at": "2026-08-16T06:17:52.812Z",
+      "event": "workflow_step_started",
+      "stepId": "software-onboarding",
+      "message": "Started Software onboarding"
+    },
+    {
+      "at": "2026-08-16T06:17:52.849Z",
+      "event": "workflow_step_completed",
+      "stepId": "software-onboarding",
+      "message": "Reused onboarding run onboard-netsuite-1786859711833 (review-required)"
+    },
+    {
+      "at": "2026-08-16T06:17:52.850Z",
+      "event": "workflow_step_started",
+      "stepId": "content-plan",
+      "message": "Started Content plan"
+    },
+    {
+      "at": "2026-08-16T06:17:52.891Z",
+      "event": "workflow_step_completed",
+      "stepId": "content-plan",
+      "message": "Content plan from onboarding onboard-netsuite-1786859711833 (9 candidates)"
+    },
+    {
+      "at": "2026-08-16T06:17:52.892Z",
+      "event": "workflow_step_started",
+      "stepId": "software-review",
+      "message": "Started Software Review"
+    },
+    {
+      "at": "2026-08-16T06:17:52.948Z",
+      "event": "workflow_step_completed",
+      "stepId": "software-review",
+      "message": "Agent software-review-agent → draft draft-deterministic-v1-software-review-agent-netsuite-2026-08-16T06-17-52-940Z (qa=pass)"
+    },
+    {
+      "at": "2026-08-16T06:17:52.949Z",
+      "event": "workflow_step_started",
+      "stepId": "alternatives",
+      "message": "Started Alternatives"
+    },
+    {
+      "at": "2026-08-16T06:17:52.957Z",
+      "event": "workflow_step_completed",
+      "stepId": "alternatives",
+      "message": "Agent alternatives-agent → draft draft-deterministic-v1-alternatives-agent-netsuite-2026-08-16T06-17-52-955Z (qa=pass)"
+    },
+    {
+      "at": "2026-08-16T06:17:52.957Z",
+      "event": "workflow_step_started",
+      "stepId": "comparison:dynamics-365-vs-netsuite",
+      "message": "Started Comparison dynamics-365-vs-netsuite"
+    },
+    {
+      "at": "2026-08-16T06:17:52.973Z",
+      "event": "workflow_step_completed",
+      "stepId": "comparison:dynamics-365-vs-netsuite",
+      "message": "Agent comparison-agent → draft draft-deterministic-v1-comparison-agent-dynamics-365-vs-netsuite-2026-08-16T06-17-52-967Z (qa=pass)"
+    },
+    {
+      "at": "2026-08-16T06:17:52.974Z",
+      "event": "workflow_step_started",
+      "stepId": "comparison:netsuite-vs-oracle-cx",
+      "message": "Started Comparison netsuite-vs-oracle-cx"
+    },
+    {
+      "at": "2026-08-16T06:17:52.992Z",
+      "event": "workflow_step_completed",
+      "stepId": "comparison:netsuite-vs-oracle-cx",
+      "message": "Agent comparison-agent → draft draft-deterministic-v1-comparison-agent-netsuite-vs-oracle-cx-2026-08-16T06-17-52-985Z (qa=pass)"
+    },
+    {
+      "at": "2026-08-16T06:17:52.993Z",
+      "event": "workflow_step_started",
+      "stepId": "comparison:netsuite-vs-salesforce",
+      "message": "Started Comparison netsuite-vs-salesforce"
+    },
+    {
+      "at": "2026-08-16T06:17:53.014Z",
+      "event": "workflow_step_completed",
+      "stepId": "comparison:netsuite-vs-salesforce",
+      "message": "Agent comparison-agent → draft draft-deterministic-v1-comparison-agent-netsuite-vs-salesforce-2026-08-16T06-17-53-009Z (qa=pass)"
+    },
+    {
+      "at": "2026-08-16T06:17:53.015Z",
+      "event": "workflow_step_started",
+      "stepId": "pricing-page",
+      "message": "Started Pricing Page"
+    },
+    {
+      "at": "2026-08-16T06:17:53.027Z",
+      "event": "workflow_step_completed",
+      "stepId": "pricing-page",
+      "message": "Agent blocked (optional): PRICING_UNVERIFIED: Product pricing data is unverified"
+    },
+    {
+      "at": "2026-08-16T06:17:53.028Z",
+      "event": "workflow_step_started",
+      "stepId": "finder-readiness",
+      "message": "Started Finder readiness"
+    },
+    {
+      "at": "2026-08-16T06:17:53.030Z",
+      "event": "workflow_step_completed",
+      "stepId": "finder-readiness",
+      "message": "Finder readiness noted for netsuite"
+    },
+    {
+      "at": "2026-08-16T06:17:53.032Z",
+      "event": "workflow_step_started",
+      "stepId": "internal-links",
+      "message": "Started Internal Link Plan"
+    },
+    {
+      "at": "2026-08-16T06:17:53.043Z",
+      "event": "workflow_step_completed",
+      "stepId": "internal-links",
+      "message": "Agent internal-link-agent → draft draft-deterministic-v1-internal-link-agent-netsuite-2026-08-16T06-17-53-041Z (qa=pass)"
+    },
+    {
+      "at": "2026-08-16T06:17:53.045Z",
+      "event": "workflow_step_started",
+      "stepId": "editorial-approval",
+      "message": "Started Editorial approval"
+    },
+    {
+      "at": "2026-08-16T06:17:53.092Z",
+      "event": "workflow_step_completed",
+      "stepId": "editorial-approval",
+      "message": "WAITING FOR EDITORIAL APPROVAL (appr-wf-software-onboarding-content-netsuite-1786861072323-software-review)"
+    },
+    {
+      "at": "2026-08-16T06:19:13.268Z",
+      "event": "workflow_resumed",
+      "message": "Workflow resumed"
+    },
+    {
+      "at": "2026-08-16T06:19:13.269Z",
+      "event": "workflow_started",
+      "message": "Workflow execution started"
+    },
+    {
+      "at": "2026-08-16T06:19:13.269Z",
+      "event": "workflow_step_started",
+      "stepId": "editorial-approval",
+      "message": "Started Editorial approval"
+    },
+    {
+      "at": "2026-08-16T06:19:13.328Z",
+      "event": "workflow_step_completed",
+      "stepId": "editorial-approval",
+      "message": "Required editorial approvals satisfied"
+    },
+    {
+      "at": "2026-08-16T06:19:13.331Z",
+      "event": "workflow_step_started",
+      "stepId": "pre-publish-validation",
+      "message": "Started Pre-publish validation"
+    },
+    {
+      "at": "2026-08-16T06:19:13.726Z",
+      "event": "workflow_step_completed",
+      "stepId": "pre-publish-validation",
+      "message": "Pre-publish validation blocked: Stale context for comparison:netsuite-vs-salesforce: removed-critical-fact:fact-salesforce-pricing.hasFreePlan; removed-critical-fact:fact-salesforce-pricing.hasFreeTrial; removed-critical-fact:fact-salesforce-pricing.startingPriceMonthly; removed-critical-fact:fact-salesforce-pricing.currency; removed-critical-fact:fact-salesforce-pricing.model; removed-critical-fact:fact-salesforce-pricing.plans.starter-suite; removed-critical-fact:fact-salesforce-pricing.plans.pro-suite; removed-critical-fact:fact-salesforce-pricing.plans.enterprise; removed-critical-fact:fact-salesforce-pricing.plans.unlimited; removed-critical-fact:fact-salesforce-pricing.addons; removed-critical-fact:fact-salesforce-pricing.agentforce1; Stale context for comparison:dynamics-365-vs-netsuite: removed-critical-fact:fact-dynamics-365-pricing.hasFreePlan; removed-critical-fact:fact-dynamics-365-pricing.hasFreeTrial; removed-critical-fact:fact-dynamics-365-pricing.trialDays; removed-critical-fact:fact-dynamics-365-pricing.startingPriceMonthly; removed-critical-fact:fact-dynamics-365-pricing.currency; removed-critical-fact:fact-dynamics-365-pricing.model; removed-critical-fact:fact-dynamics-365-pricing.plans.sales-professional; removed-critical-fact:fact-dynamics-365-pricing.plans.sales-enterprise; removed-critical-fact:fact-dynamics-365-pricing.plans.sales-premium; removed-critical-fact:fact-dynamics-365-pricing.plans.relationship-sales; Stale context for comparison:netsuite-vs-oracle-cx: removed-critical-fact:fact-oracle-cx-pricing.hasFreePlan; removed-critical-fact:fact-oracle-cx-pricing.hasFreeTrial; removed-critical-fact:fact-oracle-cx-pricing.startingPriceMonthly; removed-critical-fact:fact-oracle-cx-pricing.currency; removed-critical-fact:fact-oracle-cx-pricing.model; removed-critical-fact:fact-oracle-cx-pricing.plans.professional; removed-critical-fact:fact-oracle-cx-pricing.plans.enterprise"
+    },
+    {
+      "at": "2026-08-16T06:20:28.457Z",
+      "event": "workflow_resumed",
+      "message": "Workflow resumed"
+    },
+    {
+      "at": "2026-08-16T06:20:28.458Z",
+      "event": "workflow_started",
+      "message": "Workflow execution started"
+    },
+    {
+      "at": "2026-08-16T06:20:28.459Z",
+      "event": "workflow_step_started",
+      "stepId": "pre-publish-validation",
+      "message": "Started Pre-publish validation"
+    },
+    {
+      "at": "2026-08-16T06:20:28.808Z",
+      "event": "workflow_step_completed",
+      "stepId": "pre-publish-validation",
+      "message": "Pre-publish validation passed — READY TO PUBLISH (manual)"
+    },
+    {
+      "at": "2026-08-16T06:20:28.810Z",
+      "event": "workflow_completed",
+      "message": "Workflow completed-with-warnings"
+    }
+  ],
+  "options": {
+    "generateReview": true,
+    "generatePricing": true,
+    "generateAlternatives": true,
+    "generateComparisons": true,
+    "runInternalLinks": true,
+    "stopAfterApproval": true,
+    "allowNormalizedFacts": false,
+    "dryRun": false,
+    "maxComparisons": 3,
+    "skipOnboarding": false
+  },
+  "warnings": [
+    "pricing-page blocked: PRICING_UNVERIFIED: Product pricing data is unverified"
+  ],
+  "createdAt": "2026-08-16T06:17:52.809Z",
+  "updatedAt": "2026-08-16T06:20:28.810Z"
+}

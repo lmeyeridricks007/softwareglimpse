@@ -1,0 +1,165 @@
+{
+  "id": "assessment-github-it-v1",
+  "productSlug": "github",
+  "methodologySlug": "it-development-editorial",
+  "methodologyVersion": "1.0.0",
+  "status": "approved",
+  "verdict": "GitHub: Choose GitHub when source control and developer collaboration are the primary job — with Actions for CI/CD if needed. Scores use the IT & Development editorial methodology from first-party research as of 2026-08-18 — not hands-on product testing.",
+  "strengths": [
+    "Dominant source-control primary job",
+    "Free tier plus affordable Team seats",
+    "Actions CI/CD integrated with repos",
+    "Enterprise security and audit options",
+    "Copilot dev-AI path"
+  ],
+  "weaknesses": [
+    "Copilot/Advanced Security cost extra",
+    "Not ITSM or full observability",
+    "Actions/storage overages possible",
+    "Landscape-only vs monitoring peers",
+    "Enterprise cloud may need quotes at scale"
+  ],
+  "bestFor": [
+    "Software teams needing Git source control as the system of record",
+    "Organizations standardising on Actions for CI/CD alongside repos",
+    "Enterprises needing audit/SSO governance on code"
+  ],
+  "notIdealFor": [
+    "ITSM/service-desk buyers (Freshservice)",
+    "SRE teams buying observability as the primary SKU (Datadog)",
+    "Web hosts needing server panel administration (Plesk)"
+  ],
+  "tradeoffs": [
+    "Per-agent vs per-host vs per-seat vs per-GB pricing models",
+    "Module stacking and consumption overages vs single-SKU floors",
+    "Free tiers vs enterprise SSO/audit gates",
+    "Landscape-adjacent tools vs primary job-cluster peers on best pages"
+  ],
+  "recommendation": "Choose GitHub when source control and developer collaboration are the primary job — with Actions for CI/CD if needed. Compare Datadog for observability and Freshservice for ITSM on landscape pages only — not as undifferentiated best-list peers.",
+  "editorialNotes": "IT Wave-1 batch. Approved on it-development-editorial v1.0.0. membershipRole=primary. jobCluster=source-control-devops. handsOnTesting=false. Affiliate economics excluded.",
+  "handsOnTesting": false,
+  "confidence": "medium",
+  "criterionAssessments": [
+    {
+      "criterionSlug": "ease-of-use",
+      "score": 8,
+      "rationale": "GitHub’s PR-centric workflow is the de facto standard for developers — low friction for engineering teams already on Git.",
+      "supportingFactIds": [
+        "fact-github-features.source-control",
+        "fact-github-pricing.model"
+      ],
+      "confidence": "medium",
+      "status": "approved",
+      "reviewedAt": "2026-08-18T09:30:00.000Z",
+      "reviewer": "editorial"
+    },
+    {
+      "criterionSlug": "it-job-fit",
+      "score": 10,
+      "rationale": "Category-defining source-control-devops fit — repos, reviews, and Actions CI/CD match the cluster perfectly.",
+      "supportingFactIds": [
+        "fact-github-features.source-control",
+        "fact-github-pricing.model"
+      ],
+      "confidence": "medium",
+      "status": "approved",
+      "reviewedAt": "2026-08-18T09:30:00.000Z",
+      "reviewer": "editorial"
+    },
+    {
+      "criterionSlug": "workflow-depth",
+      "score": 9,
+      "rationale": "Branch protection, environments, Actions pipelines, and code scanning provide deep DevOps workflow when paid tiers/add-ons are enabled.",
+      "supportingFactIds": [
+        "fact-github-features.cicd-actions",
+        "fact-github-pricing.model"
+      ],
+      "confidence": "medium",
+      "status": "approved",
+      "reviewedAt": "2026-08-18T09:30:00.000Z",
+      "reviewer": "editorial"
+    },
+    {
+      "criterionSlug": "integrations",
+      "score": 10,
+      "rationale": "Massive marketplace and native ties to Jira, Slack, cloud providers, and CI ecosystems — best-in-class integration surface for dev platforms.",
+      "supportingFactIds": [
+        "fact-github-features.analytics-reporting",
+        "fact-github-pricing.model",
+        "fact-github-positioning.vendorClaim"
+      ],
+      "confidence": "medium",
+      "status": "approved",
+      "reviewedAt": "2026-08-18T09:30:00.000Z",
+      "reviewer": "editorial"
+    },
+    {
+      "criterionSlug": "admin-security",
+      "score": 9,
+      "rationale": "Enterprise tier publishes SSO, audit log, and compliance features; Advanced Security is an add-on for code scanning/secrets.",
+      "supportingFactIds": [
+        "fact-github-features.enterprise-security",
+        "fact-github-pricing.model"
+      ],
+      "confidence": "medium",
+      "status": "approved",
+      "reviewedAt": "2026-08-18T09:30:00.000Z",
+      "reviewer": "editorial"
+    },
+    {
+      "criterionSlug": "scalability",
+      "score": 10,
+      "rationale": "Scales from solo OSS maintainers to global enterprises — seat ladder and enterprise cloud are proven at huge scale.",
+      "supportingFactIds": [
+        "fact-github-pricing.plans.free",
+        "fact-github-pricing.model",
+        "fact-github-pricing.plans.enterprise"
+      ],
+      "confidence": "medium",
+      "status": "approved",
+      "reviewedAt": "2026-08-18T09:30:00.000Z",
+      "reviewer": "editorial"
+    },
+    {
+      "criterionSlug": "value-for-money",
+      "score": 9,
+      "rationale": "Generous free tier plus $4 Team floor is excellent value for source control; add-ons (Copilot, Advanced Security) raise TCO predictably.",
+      "supportingFactIds": [
+        "fact-github-pricing.hasFreePlan",
+        "fact-github-pricing.model",
+        "fact-github-pricing.startingPriceMonthly"
+      ],
+      "confidence": "medium",
+      "status": "approved",
+      "reviewedAt": "2026-08-18T09:30:00.000Z",
+      "reviewer": "editorial"
+    },
+    {
+      "criterionSlug": "ai-capabilities",
+      "score": 8,
+      "rationale": "GitHub Copilot is the flagship dev-AI add-on — strong capability with separate billing rather than unlimited included AI.",
+      "supportingFactIds": [
+        "fact-github-features.dev-ai",
+        "fact-github-pricing.model"
+      ],
+      "confidence": "medium",
+      "status": "approved",
+      "reviewedAt": "2026-08-18T09:30:00.000Z",
+      "reviewer": "editorial"
+    }
+  ],
+  "overallScore": 9.1,
+  "overallScoreRationale": "Weighted average of the eight IT editorial criteria using category weights (IT job fit 16, workflow depth 14, ease of use 12, integrations 12, admin/security 12, value 12, AI 12, scalability 10), rounded to 1 decimal. Products are scored inside their job cluster — ITSM, observability, source control, hosting panels, and web-data platforms are not forced into one undifferentiated ranking. Not a hands-on lab score, and affiliate economics are excluded.",
+  "scoreAudit": [
+    {
+      "at": "2026-08-18T09:30:00.000Z",
+      "actor": "editorial",
+      "change": "IT Wave-1 onboarding; approved IT criteria with category weights; handsOnTesting=false",
+      "nextOverall": 9.1
+    }
+  ],
+  "reviewedAt": "2026-08-18T09:30:00.000Z",
+  "reviewer": "editorial",
+  "createdAt": "2026-08-18T09:30:00.000Z",
+  "updatedAt": "2026-08-18T09:30:00.000Z"
+}

@@ -1,0 +1,84 @@
+{
+  "id": "exec-pricing-page-agent-aweber-1786971087223",
+  "agentId": "pricing-page-agent",
+  "agentVersion": "1.0.0",
+  "status": "qa-failed",
+  "mode": "CREATE",
+  "targetSlug": "aweber",
+  "draftId": "draft-deterministic-v1-pricing-page-agent-aweber-2026-08-17T12-51-27-228Z",
+  "briefId": "agent-brief-pricing-page-agent-aweber-1786971087228",
+  "validation": {
+    "ok": false,
+    "errors": [
+      "unsourced-number:caveats:$12.49",
+      "unsourced-number:caveats:$19.99"
+    ]
+  },
+  "qa": {
+    "status": "fail",
+    "blockers": [
+      {
+        "type": "UNVERIFIED_NUMBER",
+        "severity": "blocker",
+        "message": "unsourced-number:caveats:$12.49"
+      },
+      {
+        "type": "UNVERIFIED_NUMBER",
+        "severity": "blocker",
+        "message": "unsourced-number:caveats:$19.99"
+      }
+    ],
+    "warnings": [],
+    "suggestions": [],
+    "checkedAt": "2026-08-17T12:51:27.230Z"
+  },
+  "errors": [
+    "unsourced-number:caveats:$12.49",
+    "unsourced-number:caveats:$19.99"
+  ],
+  "cost": {
+    "provider": "deterministic-v1",
+    "model": "deterministic-template-v1",
+    "inputTokens": 0,
+    "outputTokens": 0,
+    "estimatedCostUsd": 0
+  },
+  "contextSnapshot": {
+    "researchSnapshotIds": [],
+    "factIds": [
+      "fact-aweber-identity.shortDescription",
+      "fact-aweber-positioning.vendorClaim",
+      "fact-aweber-pricing.model",
+      "fact-aweber-pricing.hasFreePlan",
+      "fact-aweber-pricing.hasFreeTrial",
+      "fact-aweber-pricing.startingPriceMonthly",
+      "fact-aweber-pricing.plans.free",
+      "fact-aweber-pricing.plans.lite",
+      "fact-aweber-pricing.plans.plus",
+      "fact-aweber-pricing.plans.unlimited",
+      "fact-aweber-pricing.plans.large-account",
+      "fact-aweber-features.email-campaigns",
+      "fact-aweber-features.newsletter-builder",
+      "fact-aweber-features.email-templates",
+      "fact-aweber-features.drag-drop-editor",
+      "fact-aweber-features.automation-workflows",
+      "fact-aweber-features.segmentation",
+      "fact-aweber-features.personalization",
+      "fact-aweber-features.ab-testing",
+      "fact-aweber-features.contact-management",
+      "fact-aweber-features.landing-pages",
+      "fact-aweber-features.forms",
+      "fact-aweber-features.transactional-email",
+      "fact-aweber-features.analytics",
+      "fact-aweber-features.deliverability-tools",
+      "fact-aweber-features.ai-content-generation"
+    ],
+    "methodologySlug": "email-marketing-editorial",
+    "methodologyVersion": "1.0.0",
+    "pricingFreshnessAt": "2026-08-17T14:00:00.000Z",
+    "builtAt": "2026-08-17T12:51:27.227Z"
+  },
+  "dryRun": false,
+  "startedAt": "2026-08-17T12:51:27.223Z",
+  "completedAt": "2026-08-17T12:51:27.231Z"
+}

@@ -1,0 +1,165 @@
+{
+  "id": "assessment-honeycomb-it-v1",
+  "productSlug": "honeycomb",
+  "methodologySlug": "it-development-editorial",
+  "methodologyVersion": "1.0.0",
+  "status": "approved",
+  "verdict": "Honeycomb: Choose Honeycomb when high-cardinality event/trace debugging is the job — not Datadog infrastructure monitoring by default, and not PagerDuty. Scores use the IT & Development editorial methodology from first-party research as of 2026-08-18 — not hands-on product testing.",
+  "strengths": [
+    "Free plan",
+    "Published Pro $150/mo floor",
+    "High-cardinality event/trace specialist depth",
+    "Clear identity vs infra suites",
+    "OpenTelemetry-friendly"
+  ],
+  "weaknesses": [
+    "Not infra monitoring",
+    "Does not outrank Datadog",
+    "Event volume still meters TCO",
+    "Not on-call-primary",
+    "AI is not the product"
+  ],
+  "bestFor": [
+    "Teams whose observability job is high-cardinality events and traces",
+    "OpenTelemetry-first debugging vs host/infra suites",
+    "Buyers who will start on Free before Pro $150"
+  ],
+  "notIdealFor": [
+    "SRE teams buying infrastructure monitoring as the core SKU (Datadog)",
+    "On-call-only paging (PagerDuty) — landscape, not a peer rank",
+    "Cisco vCPU APM as the primary shape (AppDynamics)"
+  ],
+  "tradeoffs": [
+    "Per-agent vs per-host vs per-seat vs per-GB pricing models",
+    "Module stacking and consumption overages vs single-SKU floors",
+    "Free tiers vs enterprise SSO/audit gates",
+    "Landscape-adjacent tools vs primary job-cluster peers on best pages"
+  ],
+  "recommendation": "Choose Honeycomb when high-cardinality event/trace debugging is the job — not Datadog infrastructure monitoring by default, and not PagerDuty. Compare Datadog or AppDynamics for full-stack infra/APM; Sentry for error/replay specialists; PagerDuty only on landscape pages for paging.",
+  "editorialNotes": "IT Tier-B + ITSM SMB batch. Approved on it-development-editorial v1.0.0. membershipRole=primary. jobCluster=observability-monitoring. handsOnTesting=false. Affiliate economics excluded.",
+  "handsOnTesting": false,
+  "confidence": "medium",
+  "criterionAssessments": [
+    {
+      "criterionSlug": "ease-of-use",
+      "score": 8,
+      "rationale": "Query-first wide-event UX is loved by tracing specialists; not a host-map onboarding path. Not a lab test.",
+      "supportingFactIds": [
+        "fact-honeycomb-features.infrastructure-monitoring",
+        "fact-honeycomb-pricing.model"
+      ],
+      "confidence": "medium",
+      "status": "approved",
+      "reviewedAt": "2026-08-18T22:00:00.000Z",
+      "reviewer": "editorial"
+    },
+    {
+      "criterionSlug": "it-job-fit",
+      "score": 8,
+      "rationale": "Observability specialist — high-cardinality events/traces, not Datadog infra replacement, not PagerDuty paging.",
+      "supportingFactIds": [
+        "fact-honeycomb-features.infrastructure-monitoring",
+        "fact-honeycomb-pricing.model"
+      ],
+      "confidence": "medium",
+      "status": "approved",
+      "reviewedAt": "2026-08-18T22:00:00.000Z",
+      "reviewer": "editorial"
+    },
+    {
+      "criterionSlug": "workflow-depth",
+      "score": 8,
+      "rationale": "BubbleUp, traces, and SLOs are deep for that job; not full-stack infra/logs the way Datadog modules are.",
+      "supportingFactIds": [
+        "fact-honeycomb-features.apm-tracing",
+        "fact-honeycomb-pricing.model"
+      ],
+      "confidence": "medium",
+      "status": "approved",
+      "reviewedAt": "2026-08-18T22:00:00.000Z",
+      "reviewer": "editorial"
+    },
+    {
+      "criterionSlug": "integrations",
+      "score": 8,
+      "rationale": "OpenTelemetry, Slack, and GitHub cover the debugging workflow.",
+      "supportingFactIds": [
+        "fact-honeycomb-features.analytics-reporting",
+        "fact-honeycomb-pricing.model",
+        "fact-honeycomb-positioning.vendorClaim"
+      ],
+      "confidence": "medium",
+      "status": "approved",
+      "reviewedAt": "2026-08-18T22:00:00.000Z",
+      "reviewer": "editorial"
+    },
+    {
+      "criterionSlug": "admin-security",
+      "score": 8,
+      "rationale": "Pro/Enterprise add governance; Free is team-grade.",
+      "supportingFactIds": [
+        "fact-honeycomb-features.enterprise-security",
+        "fact-honeycomb-pricing.model"
+      ],
+      "confidence": "medium",
+      "status": "approved",
+      "reviewedAt": "2026-08-18T22:00:00.000Z",
+      "reviewer": "editorial"
+    },
+    {
+      "criterionSlug": "scalability",
+      "score": 8,
+      "rationale": "Enterprise custom plus event volume; $150 Pro is not unlimited.",
+      "supportingFactIds": [
+        "fact-honeycomb-pricing.plans.free",
+        "fact-honeycomb-pricing.model",
+        "fact-honeycomb-pricing.plans.enterprise"
+      ],
+      "confidence": "medium",
+      "status": "approved",
+      "reviewedAt": "2026-08-18T22:00:00.000Z",
+      "reviewer": "editorial"
+    },
+    {
+      "criterionSlug": "value-for-money",
+      "score": 8,
+      "rationale": "Free plus published $150 Pro is a clear specialist floor versus Datadog module stacking. Affiliate economics excluded.",
+      "supportingFactIds": [
+        "fact-honeycomb-pricing.hasFreePlan",
+        "fact-honeycomb-pricing.model",
+        "fact-honeycomb-pricing.startingPriceMonthly"
+      ],
+      "confidence": "medium",
+      "status": "approved",
+      "reviewedAt": "2026-08-18T22:00:00.000Z",
+      "reviewer": "editorial"
+    },
+    {
+      "criterionSlug": "ai-capabilities",
+      "score": 6,
+      "rationale": "Query/assist exists — scored as supporting, not an LLM suite.",
+      "supportingFactIds": [
+        "fact-honeycomb-features.itsm-ai",
+        "fact-honeycomb-pricing.model"
+      ],
+      "confidence": "medium",
+      "status": "approved",
+      "reviewedAt": "2026-08-18T22:00:00.000Z",
+      "reviewer": "editorial"
+    }
+  ],
+  "overallScore": 7.8,
+  "overallScoreRationale": "Weighted average of the eight IT editorial criteria using category weights (IT job fit 16, workflow depth 14, ease of use 12, integrations 12, admin/security 12, value 12, AI 12, scalability 10), rounded to 1 decimal. Products are scored inside their job cluster — ITSM, observability, source control, hosting panels, and web-data platforms are not forced into one undifferentiated ranking. Not a hands-on lab score, and affiliate economics are excluded.",
+  "scoreAudit": [
+    {
+      "at": "2026-08-18T22:00:00.000Z",
+      "actor": "editorial",
+      "change": "IT Tier-B + ITSM SMB onboarding; approved IT criteria with category weights; handsOnTesting=false",
+      "nextOverall": 7.8
+    }
+  ],
+  "reviewedAt": "2026-08-18T22:00:00.000Z",
+  "reviewer": "editorial",
+  "createdAt": "2026-08-18T22:00:00.000Z",
+  "updatedAt": "2026-08-18T22:00:00.000Z"
+}

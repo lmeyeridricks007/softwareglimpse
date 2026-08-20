@@ -1,0 +1,729 @@
+{
+  "id": "wf-software-onboarding-content-kartra-1786971027658",
+  "workflowId": "software-onboarding-content",
+  "workflowVersion": "1.0.0",
+  "name": "Software Onboarding Content: kartra",
+  "targetType": "software",
+  "targetId": "kartra",
+  "status": "cancelled",
+  "steps": [
+    {
+      "id": "software-onboarding",
+      "definitionStepId": "software-onboarding",
+      "handler": "software-onboarding",
+      "label": "Software onboarding",
+      "status": "completed",
+      "required": true,
+      "failurePolicy": "block-workflow",
+      "attempt": 1,
+      "maxAttempts": 2,
+      "dependsOn": [],
+      "priority": "critical",
+      "config": {
+        "maxAutomaticRevisions": 1,
+        "expandFromContentPlan": false,
+        "expandKind": "none",
+        "stopAfterApproval": true,
+        "allowNormalizedFacts": false,
+        "optionalWhenBlocked": false,
+        "forceTransientFailOnce": false
+      },
+      "inputRefs": {},
+      "outputRefs": {
+        "softwareOnboardingRunId": "onboard-kartra-1786970797662"
+      },
+      "blockers": [],
+      "warnings": [],
+      "startedAt": "2026-08-17T12:50:29.102Z",
+      "completedAt": "2026-08-17T12:50:30.913Z",
+      "revisionAttempts": 0
+    },
+    {
+      "id": "content-plan",
+      "definitionStepId": "content-plan",
+      "handler": "content-plan",
+      "label": "Content plan",
+      "status": "completed",
+      "required": true,
+      "failurePolicy": "block-workflow",
+      "attempt": 1,
+      "maxAttempts": 2,
+      "dependsOn": [
+        "software-onboarding"
+      ],
+      "priority": "high",
+      "config": {
+        "maxAutomaticRevisions": 1,
+        "expandFromContentPlan": false,
+        "expandKind": "none",
+        "stopAfterApproval": true,
+        "allowNormalizedFacts": false,
+        "optionalWhenBlocked": false,
+        "forceTransientFailOnce": false
+      },
+      "inputRefs": {},
+      "outputRefs": {
+        "softwareOnboardingRunId": "onboard-kartra-1786970797662",
+        "comparisonTargets": "clickfunnels-vs-kartra,kajabi-vs-kartra,kartra-vs-systeme-io",
+        "pageCandidateCount": "10"
+      },
+      "blockers": [],
+      "warnings": [],
+      "startedAt": "2026-08-17T12:50:30.975Z",
+      "completedAt": "2026-08-17T12:50:31.377Z",
+      "revisionAttempts": 0
+    },
+    {
+      "id": "software-review",
+      "definitionStepId": "software-review",
+      "handler": "agent-run",
+      "label": "Software Review",
+      "status": "completed",
+      "required": true,
+      "failurePolicy": "block-workflow",
+      "attempt": 1,
+      "maxAttempts": 2,
+      "dependsOn": [
+        "content-plan"
+      ],
+      "priority": "high",
+      "config": {
+        "agentId": "software-review-agent",
+        "targetSlug": "kartra",
+        "maxAutomaticRevisions": 1,
+        "expandFromContentPlan": false,
+        "expandKind": "none",
+        "stopAfterApproval": true,
+        "allowNormalizedFacts": false,
+        "optionalWhenBlocked": false,
+        "forceTransientFailOnce": false
+      },
+      "inputRefs": {},
+      "outputRefs": {
+        "draftId": "draft-deterministic-v1-software-review-agent-kartra-2026-08-17T12-50-31-463Z",
+        "qaStatus": "pass",
+        "agentId": "software-review-agent",
+        "target": "kartra"
+      },
+      "inputSnapshot": {
+        "researchFactIds": [
+          "fact-kartra-identity.shortDescription",
+          "fact-kartra-positioning.vendorClaim",
+          "fact-kartra-pricing.model",
+          "fact-kartra-pricing.hasFreePlan",
+          "fact-kartra-pricing.hasFreeTrial",
+          "fact-kartra-pricing.startingPriceMonthly",
+          "fact-kartra-pricing.plans.essentials",
+          "fact-kartra-pricing.plans.starter",
+          "fact-kartra-pricing.plans.growth",
+          "fact-kartra-pricing.plans.professional",
+          "fact-kartra-features.social-scheduling",
+          "fact-kartra-features.content-calendar",
+          "fact-kartra-features.social-listening",
+          "fact-kartra-features.funnel-builder",
+          "fact-kartra-features.landing-pages",
+          "fact-kartra-features.marketing-automation",
+          "fact-kartra-features.forms-lead-capture",
+          "fact-kartra-features.analytics",
+          "fact-kartra-features.ads-management",
+          "fact-kartra-features.reputation-reviews",
+          "fact-kartra-features.webinars",
+          "fact-kartra-features.email-sms-channels",
+          "fact-kartra-features.team-collaboration",
+          "fact-kartra-features.ai-content-generation"
+        ],
+        "methodologySlug": "marketing-editorial",
+        "methodologyVersion": "1.0.0",
+        "agentVersion": "1.0.0",
+        "contextBuiltAt": "2026-08-17T12:50:31.453Z"
+      },
+      "blockers": [],
+      "warnings": [],
+      "agentTaskId": "exec-software-review-agent-kartra-1786971031379",
+      "draftId": "draft-deterministic-v1-software-review-agent-kartra-2026-08-17T12-50-31-463Z",
+      "startedAt": "2026-08-17T12:50:31.378Z",
+      "completedAt": "2026-08-17T12:50:31.470Z",
+      "revisionAttempts": 0
+    },
+    {
+      "id": "pricing-page",
+      "definitionStepId": "pricing-page",
+      "handler": "agent-run",
+      "label": "Pricing Page",
+      "status": "completed-with-warning",
+      "required": false,
+      "failurePolicy": "continue-with-warning",
+      "attempt": 1,
+      "maxAttempts": 2,
+      "dependsOn": [
+        "content-plan"
+      ],
+      "priority": "normal",
+      "config": {
+        "agentId": "pricing-page-agent",
+        "targetSlug": "kartra",
+        "maxAutomaticRevisions": 1,
+        "expandFromContentPlan": false,
+        "expandKind": "none",
+        "stopAfterApproval": true,
+        "allowNormalizedFacts": false,
+        "optionalWhenBlocked": true,
+        "forceTransientFailOnce": false
+      },
+      "inputRefs": {},
+      "outputRefs": {
+        "draftId": "draft-deterministic-v1-pricing-page-agent-kartra-2026-08-17T12-50-31-551Z-rev-1786971031569",
+        "qaStatus": "fail"
+      },
+      "blockers": [],
+      "warnings": [
+        "QA still failing after revision: UNVERIFIED_NUMBER,UNVERIFIED_NUMBER",
+        "Optional review-required demoted on resume — required path continues"
+      ],
+      "agentTaskId": "exec-pricing-page-agent-kartra-1786971031544",
+      "draftId": "draft-deterministic-v1-pricing-page-agent-kartra-2026-08-17T12-50-31-551Z-rev-1786971031569",
+      "startedAt": "2026-08-17T12:50:31.544Z",
+      "completedAt": "2026-08-17T12:50:31.572Z",
+      "revisionAttempts": 1
+    },
+    {
+      "id": "alternatives",
+      "definitionStepId": "alternatives",
+      "handler": "agent-run",
+      "label": "Alternatives",
+      "status": "completed",
+      "required": false,
+      "failurePolicy": "continue-with-warning",
+      "attempt": 1,
+      "maxAttempts": 2,
+      "dependsOn": [
+        "content-plan"
+      ],
+      "priority": "normal",
+      "config": {
+        "agentId": "alternatives-agent",
+        "targetSlug": "kartra",
+        "maxAutomaticRevisions": 1,
+        "expandFromContentPlan": false,
+        "expandKind": "none",
+        "stopAfterApproval": true,
+        "allowNormalizedFacts": false,
+        "optionalWhenBlocked": true,
+        "forceTransientFailOnce": false
+      },
+      "inputRefs": {},
+      "outputRefs": {
+        "draftId": "draft-deterministic-v1-alternatives-agent-kartra-2026-08-17T12-50-31-482Z",
+        "qaStatus": "pass",
+        "agentId": "alternatives-agent",
+        "target": "kartra"
+      },
+      "inputSnapshot": {
+        "researchFactIds": [
+          "fact-kartra-identity.shortDescription",
+          "fact-kartra-positioning.vendorClaim",
+          "fact-kartra-pricing.model",
+          "fact-kartra-pricing.hasFreePlan",
+          "fact-kartra-pricing.hasFreeTrial",
+          "fact-kartra-pricing.startingPriceMonthly",
+          "fact-kartra-pricing.plans.essentials",
+          "fact-kartra-pricing.plans.starter",
+          "fact-kartra-pricing.plans.growth",
+          "fact-kartra-pricing.plans.professional",
+          "fact-kartra-features.social-scheduling",
+          "fact-kartra-features.content-calendar",
+          "fact-kartra-features.social-listening",
+          "fact-kartra-features.funnel-builder",
+          "fact-kartra-features.landing-pages",
+          "fact-kartra-features.marketing-automation",
+          "fact-kartra-features.forms-lead-capture",
+          "fact-kartra-features.analytics",
+          "fact-kartra-features.ads-management",
+          "fact-kartra-features.reputation-reviews",
+          "fact-kartra-features.webinars",
+          "fact-kartra-features.email-sms-channels",
+          "fact-kartra-features.team-collaboration",
+          "fact-kartra-features.ai-content-generation"
+        ],
+        "methodologySlug": "marketing-editorial",
+        "methodologyVersion": "1.0.0",
+        "agentVersion": "1.0.0",
+        "contextBuiltAt": "2026-08-17T12:50:31.482Z"
+      },
+      "blockers": [],
+      "warnings": [],
+      "agentTaskId": "exec-alternatives-agent-kartra-1786971031473",
+      "draftId": "draft-deterministic-v1-alternatives-agent-kartra-2026-08-17T12-50-31-482Z",
+      "startedAt": "2026-08-17T12:50:31.472Z",
+      "completedAt": "2026-08-17T12:50:31.485Z",
+      "revisionAttempts": 0
+    },
+    {
+      "id": "comparison:clickfunnels-vs-kartra",
+      "definitionStepId": "comparisons",
+      "handler": "agent-run",
+      "label": "Comparison clickfunnels-vs-kartra",
+      "status": "cancelled",
+      "required": false,
+      "failurePolicy": "continue-with-warning",
+      "attempt": 1,
+      "maxAttempts": 2,
+      "dependsOn": [
+        "content-plan"
+      ],
+      "priority": "normal",
+      "config": {
+        "agentId": "comparison-agent",
+        "targetSlug": "clickfunnels-vs-kartra",
+        "maxAutomaticRevisions": 1,
+        "expandFromContentPlan": true,
+        "expandKind": "comparisons",
+        "stopAfterApproval": true,
+        "allowNormalizedFacts": false,
+        "optionalWhenBlocked": true,
+        "forceTransientFailOnce": false
+      },
+      "expansionKey": "clickfunnels-vs-kartra",
+      "inputRefs": {},
+      "outputRefs": {},
+      "blockers": [
+        "RELATIONSHIP_UNAPPROVED: Approved comparable relationship required"
+      ],
+      "warnings": [
+        "RELATIONSHIP_UNAPPROVED: Approved comparable relationship required"
+      ],
+      "startedAt": "2026-08-17T12:50:31.486Z",
+      "completedAt": "2026-08-17T12:50:31.507Z",
+      "revisionAttempts": 0
+    },
+    {
+      "id": "comparison:kajabi-vs-kartra",
+      "definitionStepId": "comparisons",
+      "handler": "agent-run",
+      "label": "Comparison kajabi-vs-kartra",
+      "status": "cancelled",
+      "required": false,
+      "failurePolicy": "continue-with-warning",
+      "attempt": 1,
+      "maxAttempts": 2,
+      "dependsOn": [
+        "content-plan"
+      ],
+      "priority": "normal",
+      "config": {
+        "agentId": "comparison-agent",
+        "targetSlug": "kajabi-vs-kartra",
+        "maxAutomaticRevisions": 1,
+        "expandFromContentPlan": true,
+        "expandKind": "comparisons",
+        "stopAfterApproval": true,
+        "allowNormalizedFacts": false,
+        "optionalWhenBlocked": true,
+        "forceTransientFailOnce": false
+      },
+      "expansionKey": "kajabi-vs-kartra",
+      "inputRefs": {},
+      "outputRefs": {},
+      "blockers": [
+        "RELATIONSHIP_UNAPPROVED: Approved comparable relationship required"
+      ],
+      "warnings": [
+        "RELATIONSHIP_UNAPPROVED: Approved comparable relationship required"
+      ],
+      "startedAt": "2026-08-17T12:50:31.513Z",
+      "completedAt": "2026-08-17T12:50:31.529Z",
+      "revisionAttempts": 0
+    },
+    {
+      "id": "comparison:kartra-vs-systeme-io",
+      "definitionStepId": "comparisons",
+      "handler": "agent-run",
+      "label": "Comparison kartra-vs-systeme-io",
+      "status": "cancelled",
+      "required": false,
+      "failurePolicy": "continue-with-warning",
+      "attempt": 1,
+      "maxAttempts": 2,
+      "dependsOn": [
+        "content-plan"
+      ],
+      "priority": "normal",
+      "config": {
+        "agentId": "comparison-agent",
+        "targetSlug": "kartra-vs-systeme-io",
+        "maxAutomaticRevisions": 1,
+        "expandFromContentPlan": true,
+        "expandKind": "comparisons",
+        "stopAfterApproval": true,
+        "allowNormalizedFacts": false,
+        "optionalWhenBlocked": true,
+        "forceTransientFailOnce": false
+      },
+      "expansionKey": "kartra-vs-systeme-io",
+      "inputRefs": {},
+      "outputRefs": {},
+      "blockers": [
+        "RELATIONSHIP_UNAPPROVED: Approved comparable relationship required"
+      ],
+      "warnings": [
+        "RELATIONSHIP_UNAPPROVED: Approved comparable relationship required"
+      ],
+      "startedAt": "2026-08-17T12:50:31.530Z",
+      "completedAt": "2026-08-17T12:50:31.541Z",
+      "revisionAttempts": 0
+    },
+    {
+      "id": "internal-links",
+      "definitionStepId": "internal-links",
+      "handler": "internal-link",
+      "label": "Internal Link Plan",
+      "status": "completed",
+      "required": false,
+      "failurePolicy": "continue-with-warning",
+      "attempt": 1,
+      "maxAttempts": 2,
+      "dependsOn": [
+        "software-review"
+      ],
+      "priority": "low",
+      "config": {
+        "agentId": "internal-link-agent",
+        "maxAutomaticRevisions": 1,
+        "expandFromContentPlan": false,
+        "expandKind": "none",
+        "stopAfterApproval": true,
+        "allowNormalizedFacts": false,
+        "optionalWhenBlocked": false,
+        "forceTransientFailOnce": false
+      },
+      "inputRefs": {},
+      "outputRefs": {
+        "draftId": "draft-deterministic-v1-internal-link-agent-kartra-2026-08-18T08-49-50-995Z",
+        "qaStatus": "pass",
+        "agentId": "internal-link-agent",
+        "target": "kartra"
+      },
+      "inputSnapshot": {
+        "researchFactIds": [
+          "fact-kartra-identity.shortDescription",
+          "fact-kartra-positioning.vendorClaim",
+          "fact-kartra-pricing.model",
+          "fact-kartra-pricing.hasFreePlan",
+          "fact-kartra-pricing.hasFreeTrial",
+          "fact-kartra-pricing.startingPriceMonthly",
+          "fact-kartra-pricing.plans.essentials",
+          "fact-kartra-pricing.plans.starter",
+          "fact-kartra-pricing.plans.growth",
+          "fact-kartra-pricing.plans.professional",
+          "fact-kartra-features.social-scheduling",
+          "fact-kartra-features.content-calendar",
+          "fact-kartra-features.social-listening",
+          "fact-kartra-features.funnel-builder",
+          "fact-kartra-features.landing-pages",
+          "fact-kartra-features.marketing-automation",
+          "fact-kartra-features.forms-lead-capture",
+          "fact-kartra-features.analytics",
+          "fact-kartra-features.ads-management",
+          "fact-kartra-features.reputation-reviews",
+          "fact-kartra-features.webinars",
+          "fact-kartra-features.email-sms-channels",
+          "fact-kartra-features.team-collaboration",
+          "fact-kartra-features.ai-content-generation"
+        ],
+        "methodologySlug": "marketing-editorial",
+        "methodologyVersion": "1.0.0",
+        "agentVersion": "1.0.0",
+        "contextBuiltAt": "2026-08-18T08:49:50.994Z"
+      },
+      "blockers": [],
+      "warnings": [],
+      "agentTaskId": "exec-internal-link-agent-kartra-1787042990977",
+      "draftId": "draft-deterministic-v1-internal-link-agent-kartra-2026-08-18T08-49-50-995Z",
+      "startedAt": "2026-08-18T08:49:50.976Z",
+      "completedAt": "2026-08-18T08:49:50.997Z",
+      "revisionAttempts": 0
+    },
+    {
+      "id": "finder-readiness",
+      "definitionStepId": "finder-readiness",
+      "handler": "update-recommendation-readiness",
+      "label": "Finder readiness",
+      "status": "completed",
+      "required": false,
+      "failurePolicy": "continue",
+      "attempt": 1,
+      "maxAttempts": 2,
+      "dependsOn": [
+        "content-plan"
+      ],
+      "priority": "low",
+      "config": {
+        "maxAutomaticRevisions": 1,
+        "expandFromContentPlan": false,
+        "expandKind": "none",
+        "stopAfterApproval": true,
+        "allowNormalizedFacts": false,
+        "optionalWhenBlocked": false,
+        "forceTransientFailOnce": false
+      },
+      "inputRefs": {},
+      "outputRefs": {
+        "finderReadiness": "checked"
+      },
+      "blockers": [],
+      "warnings": [],
+      "startedAt": "2026-08-18T08:49:50.974Z",
+      "completedAt": "2026-08-18T08:49:50.975Z",
+      "revisionAttempts": 0
+    },
+    {
+      "id": "editorial-approval",
+      "definitionStepId": "editorial-approval",
+      "handler": "approval-check",
+      "label": "Editorial approval",
+      "status": "cancelled",
+      "required": true,
+      "failurePolicy": "manual-review",
+      "attempt": 1,
+      "maxAttempts": 2,
+      "dependsOn": [
+        "software-review"
+      ],
+      "priority": "critical",
+      "config": {
+        "approvalType": "editorial",
+        "maxAutomaticRevisions": 1,
+        "expandFromContentPlan": false,
+        "expandKind": "none",
+        "stopAfterApproval": true,
+        "allowNormalizedFacts": false,
+        "optionalWhenBlocked": false,
+        "forceTransientFailOnce": false
+      },
+      "inputRefs": {},
+      "outputRefs": {
+        "approvalId": "appr-wf-software-onboarding-content-kartra-1786971027658-software-review",
+        "draftId": "draft-deterministic-v1-software-review-agent-kartra-2026-08-17T12-50-31-463Z"
+      },
+      "blockers": [],
+      "warnings": [],
+      "approvalId": "appr-wf-software-onboarding-content-kartra-1786971027658-software-review",
+      "startedAt": "2026-08-18T08:49:50.998Z",
+      "completedAt": "2026-08-18T08:49:51.032Z",
+      "revisionAttempts": 0
+    },
+    {
+      "id": "pre-publish-validation",
+      "definitionStepId": "pre-publish-validation",
+      "handler": "pre-publish-validation",
+      "label": "Pre-publish validation",
+      "status": "cancelled",
+      "required": true,
+      "failurePolicy": "block-workflow",
+      "attempt": 0,
+      "maxAttempts": 2,
+      "dependsOn": [
+        "editorial-approval"
+      ],
+      "priority": "critical",
+      "config": {
+        "maxAutomaticRevisions": 1,
+        "expandFromContentPlan": false,
+        "expandKind": "none",
+        "stopAfterApproval": true,
+        "allowNormalizedFacts": false,
+        "optionalWhenBlocked": false,
+        "forceTransientFailOnce": false
+      },
+      "inputRefs": {},
+      "outputRefs": {},
+      "blockers": [],
+      "warnings": [],
+      "revisionAttempts": 0
+    }
+  ],
+  "history": [
+    {
+      "at": "2026-08-17T12:50:29.088Z",
+      "event": "workflow_created",
+      "message": "Created software-onboarding-content:v1.0.0"
+    },
+    {
+      "at": "2026-08-17T12:50:29.101Z",
+      "event": "workflow_started",
+      "message": "Workflow execution started"
+    },
+    {
+      "at": "2026-08-17T12:50:29.101Z",
+      "event": "workflow_step_started",
+      "stepId": "software-onboarding",
+      "message": "Started Software onboarding"
+    },
+    {
+      "at": "2026-08-17T12:50:30.913Z",
+      "event": "workflow_step_completed",
+      "stepId": "software-onboarding",
+      "message": "Reused onboarding run onboard-kartra-1786970797662 (review-required)"
+    },
+    {
+      "at": "2026-08-17T12:50:30.974Z",
+      "event": "workflow_step_started",
+      "stepId": "content-plan",
+      "message": "Started Content plan"
+    },
+    {
+      "at": "2026-08-17T12:50:31.377Z",
+      "event": "workflow_step_completed",
+      "stepId": "content-plan",
+      "message": "Content plan from onboarding onboard-kartra-1786970797662 (10 candidates)"
+    },
+    {
+      "at": "2026-08-17T12:50:31.378Z",
+      "event": "workflow_step_started",
+      "stepId": "software-review",
+      "message": "Started Software Review"
+    },
+    {
+      "at": "2026-08-17T12:50:31.470Z",
+      "event": "workflow_step_completed",
+      "stepId": "software-review",
+      "message": "Agent software-review-agent → draft draft-deterministic-v1-software-review-agent-kartra-2026-08-17T12-50-31-463Z (qa=pass)"
+    },
+    {
+      "at": "2026-08-17T12:50:31.471Z",
+      "event": "workflow_step_started",
+      "stepId": "alternatives",
+      "message": "Started Alternatives"
+    },
+    {
+      "at": "2026-08-17T12:50:31.485Z",
+      "event": "workflow_step_completed",
+      "stepId": "alternatives",
+      "message": "Agent alternatives-agent → draft draft-deterministic-v1-alternatives-agent-kartra-2026-08-17T12-50-31-482Z (qa=pass)"
+    },
+    {
+      "at": "2026-08-17T12:50:31.486Z",
+      "event": "workflow_step_started",
+      "stepId": "comparison:clickfunnels-vs-kartra",
+      "message": "Started Comparison clickfunnels-vs-kartra"
+    },
+    {
+      "at": "2026-08-17T12:50:31.507Z",
+      "event": "workflow_step_completed",
+      "stepId": "comparison:clickfunnels-vs-kartra",
+      "message": "Agent blocked (optional): RELATIONSHIP_UNAPPROVED: Approved comparable relationship required"
+    },
+    {
+      "at": "2026-08-17T12:50:31.512Z",
+      "event": "workflow_step_started",
+      "stepId": "comparison:kajabi-vs-kartra",
+      "message": "Started Comparison kajabi-vs-kartra"
+    },
+    {
+      "at": "2026-08-17T12:50:31.529Z",
+      "event": "workflow_step_completed",
+      "stepId": "comparison:kajabi-vs-kartra",
+      "message": "Agent blocked (optional): RELATIONSHIP_UNAPPROVED: Approved comparable relationship required"
+    },
+    {
+      "at": "2026-08-17T12:50:31.530Z",
+      "event": "workflow_step_started",
+      "stepId": "comparison:kartra-vs-systeme-io",
+      "message": "Started Comparison kartra-vs-systeme-io"
+    },
+    {
+      "at": "2026-08-17T12:50:31.541Z",
+      "event": "workflow_step_completed",
+      "stepId": "comparison:kartra-vs-systeme-io",
+      "message": "Agent blocked (optional): RELATIONSHIP_UNAPPROVED: Approved comparable relationship required"
+    },
+    {
+      "at": "2026-08-17T12:50:31.543Z",
+      "event": "workflow_step_started",
+      "stepId": "pricing-page",
+      "message": "Started Pricing Page"
+    },
+    {
+      "at": "2026-08-17T12:50:31.572Z",
+      "event": "workflow_step_completed",
+      "stepId": "pricing-page",
+      "message": "QA fail after one automatic revision → review-required"
+    },
+    {
+      "at": "2026-08-18T08:49:50.972Z",
+      "event": "workflow_resumed",
+      "message": "Workflow resumed"
+    },
+    {
+      "at": "2026-08-18T08:49:50.973Z",
+      "event": "workflow_started",
+      "message": "Workflow execution started"
+    },
+    {
+      "at": "2026-08-18T08:49:50.974Z",
+      "event": "workflow_step_started",
+      "stepId": "finder-readiness",
+      "message": "Started Finder readiness"
+    },
+    {
+      "at": "2026-08-18T08:49:50.975Z",
+      "event": "workflow_step_completed",
+      "stepId": "finder-readiness",
+      "message": "Finder readiness noted for kartra"
+    },
+    {
+      "at": "2026-08-18T08:49:50.976Z",
+      "event": "workflow_step_started",
+      "stepId": "internal-links",
+      "message": "Started Internal Link Plan"
+    },
+    {
+      "at": "2026-08-18T08:49:50.997Z",
+      "event": "workflow_step_completed",
+      "stepId": "internal-links",
+      "message": "Agent internal-link-agent → draft draft-deterministic-v1-internal-link-agent-kartra-2026-08-18T08-49-50-995Z (qa=pass)"
+    },
+    {
+      "at": "2026-08-18T08:49:50.998Z",
+      "event": "workflow_step_started",
+      "stepId": "editorial-approval",
+      "message": "Started Editorial approval"
+    },
+    {
+      "at": "2026-08-18T08:49:51.032Z",
+      "event": "workflow_step_completed",
+      "stepId": "editorial-approval",
+      "message": "WAITING FOR EDITORIAL APPROVAL (appr-wf-software-onboarding-content-kartra-1786971027658-software-review)"
+    },
+    {
+      "at": "2026-08-18T08:49:51.033Z",
+      "event": "workflow_blocked",
+      "message": "WAITING FOR EDITORIAL APPROVAL"
+    },
+    {
+      "at": "2026-08-18T13:34:16.197Z",
+      "event": "workflow_cancelled",
+      "message": "Catalogue software page already published; agent drafts remain unpublished"
+    }
+  ],
+  "options": {
+    "generateReview": true,
+    "generatePricing": true,
+    "generateAlternatives": true,
+    "generateComparisons": true,
+    "runInternalLinks": true,
+    "stopAfterApproval": true,
+    "allowNormalizedFacts": false,
+    "dryRun": false,
+    "maxComparisons": 3,
+    "skipOnboarding": false
+  },
+  "cancelReason": "Catalogue software page already published; agent drafts remain unpublished",
+  "warnings": [
+    "comparison:clickfunnels-vs-kartra blocked: RELATIONSHIP_UNAPPROVED: Approved comparable relationship required",
+    "comparison:kajabi-vs-kartra blocked: RELATIONSHIP_UNAPPROVED: Approved comparable relationship required",
+    "comparison:kartra-vs-systeme-io blocked: RELATIONSHIP_UNAPPROVED: Approved comparable relationship required"
+  ],
+  "createdAt": "2026-08-17T12:50:29.088Z",
+  "updatedAt": "2026-08-18T13:34:16.197Z"
+}

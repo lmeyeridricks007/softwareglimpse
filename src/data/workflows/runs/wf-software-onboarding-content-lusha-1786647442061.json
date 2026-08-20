@@ -1,0 +1,938 @@
+{
+  "id": "wf-software-onboarding-content-lusha-1786647442061",
+  "workflowId": "software-onboarding-content",
+  "workflowVersion": "1.0.0",
+  "name": "Software Onboarding Content: lusha",
+  "targetType": "software",
+  "targetId": "lusha",
+  "status": "completed",
+  "steps": [
+    {
+      "id": "software-onboarding",
+      "definitionStepId": "software-onboarding",
+      "handler": "software-onboarding",
+      "label": "Software onboarding",
+      "status": "completed",
+      "required": true,
+      "failurePolicy": "block-workflow",
+      "attempt": 1,
+      "maxAttempts": 2,
+      "dependsOn": [],
+      "priority": "critical",
+      "config": {
+        "maxAutomaticRevisions": 1,
+        "expandFromContentPlan": false,
+        "expandKind": "none",
+        "stopAfterApproval": true,
+        "allowNormalizedFacts": false,
+        "optionalWhenBlocked": false,
+        "forceTransientFailOnce": false
+      },
+      "inputRefs": {},
+      "outputRefs": {
+        "softwareOnboardingRunId": "onboard-lusha-1786623750867"
+      },
+      "blockers": [],
+      "warnings": [],
+      "startedAt": "2026-08-13T18:57:22.770Z",
+      "completedAt": "2026-08-13T18:57:22.815Z",
+      "revisionAttempts": 0
+    },
+    {
+      "id": "content-plan",
+      "definitionStepId": "content-plan",
+      "handler": "content-plan",
+      "label": "Content plan",
+      "status": "completed",
+      "required": true,
+      "failurePolicy": "block-workflow",
+      "attempt": 1,
+      "maxAttempts": 2,
+      "dependsOn": [
+        "software-onboarding"
+      ],
+      "priority": "high",
+      "config": {
+        "maxAutomaticRevisions": 1,
+        "expandFromContentPlan": false,
+        "expandKind": "none",
+        "stopAfterApproval": true,
+        "allowNormalizedFacts": false,
+        "optionalWhenBlocked": false,
+        "forceTransientFailOnce": false
+      },
+      "inputRefs": {},
+      "outputRefs": {
+        "softwareOnboardingRunId": "onboard-lusha-1786623750867",
+        "comparisonTargets": "apollo-vs-lusha,lusha-vs-rocketreach,amplemarket-vs-lusha",
+        "pageCandidateCount": "7"
+      },
+      "blockers": [],
+      "warnings": [],
+      "startedAt": "2026-08-13T18:57:22.816Z",
+      "completedAt": "2026-08-13T18:57:22.873Z",
+      "revisionAttempts": 0
+    },
+    {
+      "id": "software-review",
+      "definitionStepId": "software-review",
+      "handler": "agent-run",
+      "label": "Software Review",
+      "status": "completed",
+      "required": true,
+      "failurePolicy": "block-workflow",
+      "attempt": 1,
+      "maxAttempts": 2,
+      "dependsOn": [
+        "content-plan"
+      ],
+      "priority": "high",
+      "config": {
+        "agentId": "software-review-agent",
+        "targetSlug": "lusha",
+        "maxAutomaticRevisions": 1,
+        "expandFromContentPlan": false,
+        "expandKind": "none",
+        "stopAfterApproval": true,
+        "allowNormalizedFacts": false,
+        "optionalWhenBlocked": false,
+        "forceTransientFailOnce": false
+      },
+      "inputRefs": {},
+      "outputRefs": {
+        "draftId": "draft-deterministic-v1-software-review-agent-lusha-2026-08-13T18-57-22-928Z",
+        "qaStatus": "pass",
+        "agentId": "software-review-agent",
+        "target": "lusha"
+      },
+      "inputSnapshot": {
+        "researchFactIds": [
+          "fact-lusha-pricing.hasFreePlan",
+          "fact-lusha-pricing.hasFreeTrial",
+          "fact-lusha-pricing.currency",
+          "fact-lusha-pricing.model",
+          "fact-lusha-pricing.plans.free",
+          "fact-lusha-pricing.plans.starter",
+          "fact-lusha-pricing.plans.pro",
+          "fact-lusha-pricing.plans.premium",
+          "fact-lusha-pricing.plans.scale",
+          "fact-lusha-positioning.core",
+          "fact-lusha-features.prospecting",
+          "fact-lusha-features.data-enrichment",
+          "fact-lusha-features.email-sequences",
+          "fact-lusha-features.ai-assistance",
+          "fact-lusha-features.integrations",
+          "fact-lusha-features.pipeline-management",
+          "fact-lusha-ai.assistant",
+          "fact-lusha-ai.email-generation",
+          "fact-lusha-integrations.crm"
+        ],
+        "methodologySlug": "crm-editorial",
+        "methodologyVersion": "1.0.0",
+        "agentVersion": "1.0.0",
+        "contextBuiltAt": "2026-08-13T18:57:22.922Z"
+      },
+      "blockers": [],
+      "warnings": [],
+      "agentTaskId": "exec-software-review-agent-lusha-1786647442879",
+      "draftId": "draft-deterministic-v1-software-review-agent-lusha-2026-08-13T18-57-22-928Z",
+      "startedAt": "2026-08-13T18:57:22.877Z",
+      "completedAt": "2026-08-13T18:57:22.935Z",
+      "revisionAttempts": 0
+    },
+    {
+      "id": "pricing-page",
+      "definitionStepId": "pricing-page",
+      "handler": "agent-run",
+      "label": "Pricing Page",
+      "status": "completed",
+      "required": false,
+      "failurePolicy": "continue-with-warning",
+      "attempt": 1,
+      "maxAttempts": 2,
+      "dependsOn": [
+        "content-plan"
+      ],
+      "priority": "normal",
+      "config": {
+        "agentId": "pricing-page-agent",
+        "targetSlug": "lusha",
+        "maxAutomaticRevisions": 1,
+        "expandFromContentPlan": false,
+        "expandKind": "none",
+        "stopAfterApproval": true,
+        "allowNormalizedFacts": false,
+        "optionalWhenBlocked": true,
+        "forceTransientFailOnce": false
+      },
+      "inputRefs": {},
+      "outputRefs": {
+        "draftId": "draft-deterministic-v1-pricing-page-agent-lusha-2026-08-13T18-57-23-004Z",
+        "qaStatus": "pass",
+        "agentId": "pricing-page-agent",
+        "target": "lusha"
+      },
+      "inputSnapshot": {
+        "researchFactIds": [
+          "fact-lusha-pricing.hasFreePlan",
+          "fact-lusha-pricing.hasFreeTrial",
+          "fact-lusha-pricing.currency",
+          "fact-lusha-pricing.model",
+          "fact-lusha-pricing.plans.free",
+          "fact-lusha-pricing.plans.starter",
+          "fact-lusha-pricing.plans.pro",
+          "fact-lusha-pricing.plans.premium",
+          "fact-lusha-pricing.plans.scale",
+          "fact-lusha-positioning.core",
+          "fact-lusha-features.prospecting",
+          "fact-lusha-features.data-enrichment",
+          "fact-lusha-features.email-sequences",
+          "fact-lusha-features.ai-assistance",
+          "fact-lusha-features.integrations",
+          "fact-lusha-features.pipeline-management",
+          "fact-lusha-ai.assistant",
+          "fact-lusha-ai.email-generation",
+          "fact-lusha-integrations.crm"
+        ],
+        "methodologySlug": "crm-editorial",
+        "methodologyVersion": "1.0.0",
+        "agentVersion": "1.0.0",
+        "contextBuiltAt": "2026-08-13T18:57:23.004Z"
+      },
+      "blockers": [],
+      "warnings": [],
+      "agentTaskId": "exec-pricing-page-agent-lusha-1786647442997",
+      "draftId": "draft-deterministic-v1-pricing-page-agent-lusha-2026-08-13T18-57-23-004Z",
+      "startedAt": "2026-08-13T18:57:22.996Z",
+      "completedAt": "2026-08-13T18:57:23.006Z",
+      "revisionAttempts": 0
+    },
+    {
+      "id": "alternatives",
+      "definitionStepId": "alternatives",
+      "handler": "agent-run",
+      "label": "Alternatives",
+      "status": "completed",
+      "required": false,
+      "failurePolicy": "continue-with-warning",
+      "attempt": 1,
+      "maxAttempts": 2,
+      "dependsOn": [
+        "content-plan"
+      ],
+      "priority": "normal",
+      "config": {
+        "agentId": "alternatives-agent",
+        "targetSlug": "lusha",
+        "maxAutomaticRevisions": 1,
+        "expandFromContentPlan": false,
+        "expandKind": "none",
+        "stopAfterApproval": true,
+        "allowNormalizedFacts": false,
+        "optionalWhenBlocked": true,
+        "forceTransientFailOnce": false
+      },
+      "inputRefs": {},
+      "outputRefs": {
+        "draftId": "draft-deterministic-v1-alternatives-agent-lusha-2026-08-13T18-57-22-945Z",
+        "qaStatus": "pass",
+        "agentId": "alternatives-agent",
+        "target": "lusha"
+      },
+      "inputSnapshot": {
+        "researchFactIds": [
+          "fact-lusha-pricing.hasFreePlan",
+          "fact-lusha-pricing.hasFreeTrial",
+          "fact-lusha-pricing.currency",
+          "fact-lusha-pricing.model",
+          "fact-lusha-pricing.plans.free",
+          "fact-lusha-pricing.plans.starter",
+          "fact-lusha-pricing.plans.pro",
+          "fact-lusha-pricing.plans.premium",
+          "fact-lusha-pricing.plans.scale",
+          "fact-lusha-positioning.core",
+          "fact-lusha-features.prospecting",
+          "fact-lusha-features.data-enrichment",
+          "fact-lusha-features.email-sequences",
+          "fact-lusha-features.ai-assistance",
+          "fact-lusha-features.integrations",
+          "fact-lusha-features.pipeline-management",
+          "fact-lusha-ai.assistant",
+          "fact-lusha-ai.email-generation",
+          "fact-lusha-integrations.crm"
+        ],
+        "methodologySlug": "crm-editorial",
+        "methodologyVersion": "1.0.0",
+        "agentVersion": "1.0.0",
+        "contextBuiltAt": "2026-08-13T18:57:22.944Z"
+      },
+      "blockers": [],
+      "warnings": [],
+      "agentTaskId": "exec-alternatives-agent-lusha-1786647442938",
+      "draftId": "draft-deterministic-v1-alternatives-agent-lusha-2026-08-13T18-57-22-945Z",
+      "startedAt": "2026-08-13T18:57:22.937Z",
+      "completedAt": "2026-08-13T18:57:22.948Z",
+      "revisionAttempts": 0
+    },
+    {
+      "id": "comparison:apollo-vs-lusha",
+      "definitionStepId": "comparisons",
+      "handler": "agent-run",
+      "label": "Comparison apollo-vs-lusha",
+      "status": "completed",
+      "required": false,
+      "failurePolicy": "continue-with-warning",
+      "attempt": 1,
+      "maxAttempts": 2,
+      "dependsOn": [
+        "content-plan"
+      ],
+      "priority": "normal",
+      "config": {
+        "agentId": "comparison-agent",
+        "targetSlug": "apollo-vs-lusha",
+        "maxAutomaticRevisions": 1,
+        "expandFromContentPlan": true,
+        "expandKind": "comparisons",
+        "stopAfterApproval": true,
+        "allowNormalizedFacts": false,
+        "optionalWhenBlocked": true,
+        "forceTransientFailOnce": false
+      },
+      "expansionKey": "apollo-vs-lusha",
+      "inputRefs": {},
+      "outputRefs": {
+        "draftId": "draft-deterministic-v1-comparison-agent-apollo-vs-lusha-2026-08-13T18-57-22-977Z",
+        "qaStatus": "pass",
+        "agentId": "comparison-agent",
+        "target": "apollo-vs-lusha"
+      },
+      "inputSnapshot": {
+        "researchFactIds": [
+          "fact-apollo-pricing.hasFreePlan",
+          "fact-apollo-pricing.hasFreeTrial",
+          "fact-apollo-pricing.startingPriceMonthly",
+          "fact-apollo-pricing.currency",
+          "fact-apollo-pricing.model",
+          "fact-apollo-pricing.plans.free",
+          "fact-apollo-pricing.plans.basic",
+          "fact-apollo-pricing.plans.professional",
+          "fact-apollo-pricing.plans.enterprise",
+          "fact-apollo-features.prospecting",
+          "fact-apollo-features.data-enrichment",
+          "fact-apollo-features.email-sequences",
+          "fact-apollo-features.pipeline-management",
+          "fact-apollo-ai.assistant",
+          "fact-apollo-positioning.sales-intelligence",
+          "fact-lusha-pricing.hasFreePlan",
+          "fact-lusha-pricing.hasFreeTrial",
+          "fact-lusha-pricing.currency",
+          "fact-lusha-pricing.model",
+          "fact-lusha-pricing.plans.free",
+          "fact-lusha-pricing.plans.starter",
+          "fact-lusha-pricing.plans.pro",
+          "fact-lusha-pricing.plans.premium",
+          "fact-lusha-pricing.plans.scale",
+          "fact-lusha-positioning.core",
+          "fact-lusha-features.prospecting",
+          "fact-lusha-features.data-enrichment",
+          "fact-lusha-features.email-sequences",
+          "fact-lusha-features.ai-assistance",
+          "fact-lusha-features.integrations",
+          "fact-lusha-features.pipeline-management",
+          "fact-lusha-ai.assistant",
+          "fact-lusha-ai.email-generation",
+          "fact-lusha-integrations.crm"
+        ],
+        "methodologySlug": "crm-editorial",
+        "methodologyVersion": "1.0.0",
+        "agentVersion": "1.0.0",
+        "contextBuiltAt": "2026-08-13T18:57:22.976Z"
+      },
+      "blockers": [],
+      "warnings": [],
+      "agentTaskId": "exec-comparison-agent-apollo-vs-lusha-1786647442968",
+      "draftId": "draft-deterministic-v1-comparison-agent-apollo-vs-lusha-2026-08-13T18-57-22-977Z",
+      "startedAt": "2026-08-13T18:57:22.966Z",
+      "completedAt": "2026-08-13T18:57:22.981Z",
+      "revisionAttempts": 0
+    },
+    {
+      "id": "comparison:lusha-vs-rocketreach",
+      "definitionStepId": "comparisons",
+      "handler": "agent-run",
+      "label": "Comparison lusha-vs-rocketreach",
+      "status": "completed",
+      "required": false,
+      "failurePolicy": "continue-with-warning",
+      "attempt": 1,
+      "maxAttempts": 2,
+      "dependsOn": [
+        "content-plan"
+      ],
+      "priority": "normal",
+      "config": {
+        "agentId": "comparison-agent",
+        "targetSlug": "lusha-vs-rocketreach",
+        "maxAutomaticRevisions": 1,
+        "expandFromContentPlan": true,
+        "expandKind": "comparisons",
+        "stopAfterApproval": true,
+        "allowNormalizedFacts": false,
+        "optionalWhenBlocked": true,
+        "forceTransientFailOnce": false
+      },
+      "expansionKey": "lusha-vs-rocketreach",
+      "inputRefs": {},
+      "outputRefs": {
+        "draftId": "draft-deterministic-v1-comparison-agent-lusha-vs-rocketreach-2026-08-13T18-57-22-991Z",
+        "qaStatus": "pass",
+        "agentId": "comparison-agent",
+        "target": "lusha-vs-rocketreach"
+      },
+      "inputSnapshot": {
+        "researchFactIds": [
+          "fact-lusha-pricing.hasFreePlan",
+          "fact-lusha-pricing.hasFreeTrial",
+          "fact-lusha-pricing.currency",
+          "fact-lusha-pricing.model",
+          "fact-lusha-pricing.plans.free",
+          "fact-lusha-pricing.plans.starter",
+          "fact-lusha-pricing.plans.pro",
+          "fact-lusha-pricing.plans.premium",
+          "fact-lusha-pricing.plans.scale",
+          "fact-lusha-positioning.core",
+          "fact-lusha-features.prospecting",
+          "fact-lusha-features.data-enrichment",
+          "fact-lusha-features.email-sequences",
+          "fact-lusha-features.ai-assistance",
+          "fact-lusha-features.integrations",
+          "fact-lusha-features.pipeline-management",
+          "fact-lusha-ai.assistant",
+          "fact-lusha-ai.email-generation",
+          "fact-lusha-integrations.crm",
+          "fact-rocketreach-pricing.hasFreePlan",
+          "fact-rocketreach-pricing.hasFreeTrial",
+          "fact-rocketreach-pricing.startingPriceMonthly",
+          "fact-rocketreach-pricing.currency",
+          "fact-rocketreach-pricing.model",
+          "fact-rocketreach-pricing.plans.essentials",
+          "fact-rocketreach-pricing.plans.pro",
+          "fact-rocketreach-pricing.plans.ultimate",
+          "fact-rocketreach-positioning.core",
+          "fact-rocketreach-features.prospecting",
+          "fact-rocketreach-features.data-enrichment",
+          "fact-rocketreach-features.email-sequences",
+          "fact-rocketreach-features.sales-automation",
+          "fact-rocketreach-features.integrations",
+          "fact-rocketreach-features.pipeline-management",
+          "fact-rocketreach-ai.email-generation",
+          "fact-rocketreach-integrations.crm"
+        ],
+        "methodologySlug": "crm-editorial",
+        "methodologyVersion": "1.0.0",
+        "agentVersion": "1.0.0",
+        "contextBuiltAt": "2026-08-13T18:57:22.990Z"
+      },
+      "blockers": [],
+      "warnings": [],
+      "agentTaskId": "exec-comparison-agent-lusha-vs-rocketreach-1786647442984",
+      "draftId": "draft-deterministic-v1-comparison-agent-lusha-vs-rocketreach-2026-08-13T18-57-22-991Z",
+      "startedAt": "2026-08-13T18:57:22.982Z",
+      "completedAt": "2026-08-13T18:57:22.995Z",
+      "revisionAttempts": 0
+    },
+    {
+      "id": "comparison:amplemarket-vs-lusha",
+      "definitionStepId": "comparisons",
+      "handler": "agent-run",
+      "label": "Comparison amplemarket-vs-lusha",
+      "status": "completed",
+      "required": false,
+      "failurePolicy": "continue-with-warning",
+      "attempt": 1,
+      "maxAttempts": 2,
+      "dependsOn": [
+        "content-plan"
+      ],
+      "priority": "normal",
+      "config": {
+        "agentId": "comparison-agent",
+        "targetSlug": "amplemarket-vs-lusha",
+        "maxAutomaticRevisions": 1,
+        "expandFromContentPlan": true,
+        "expandKind": "comparisons",
+        "stopAfterApproval": true,
+        "allowNormalizedFacts": false,
+        "optionalWhenBlocked": true,
+        "forceTransientFailOnce": false
+      },
+      "expansionKey": "amplemarket-vs-lusha",
+      "inputRefs": {},
+      "outputRefs": {
+        "draftId": "draft-deterministic-v1-comparison-agent-amplemarket-vs-lusha-2026-08-13T18-57-22-961Z",
+        "qaStatus": "pass",
+        "agentId": "comparison-agent",
+        "target": "amplemarket-vs-lusha"
+      },
+      "inputSnapshot": {
+        "researchFactIds": [
+          "fact-amplemarket-pricing.hasFreePlan",
+          "fact-amplemarket-pricing.hasFreeTrial",
+          "fact-amplemarket-pricing.startingPriceMonthly",
+          "fact-amplemarket-pricing.currency",
+          "fact-amplemarket-pricing.model",
+          "fact-amplemarket-pricing.plans.startup",
+          "fact-amplemarket-pricing.plans.growth",
+          "fact-amplemarket-pricing.plans.elite",
+          "fact-amplemarket-positioning.core",
+          "fact-amplemarket-features.prospecting",
+          "fact-amplemarket-features.email-sequences",
+          "fact-amplemarket-features.sales-automation",
+          "fact-amplemarket-features.ai-assistance",
+          "fact-amplemarket-features.reporting",
+          "fact-amplemarket-features.integrations",
+          "fact-amplemarket-features.pipeline-management",
+          "fact-amplemarket-ai.assistant",
+          "fact-amplemarket-ai.email-generation",
+          "fact-amplemarket-integrations.crm",
+          "fact-lusha-pricing.hasFreePlan",
+          "fact-lusha-pricing.hasFreeTrial",
+          "fact-lusha-pricing.currency",
+          "fact-lusha-pricing.model",
+          "fact-lusha-pricing.plans.free",
+          "fact-lusha-pricing.plans.starter",
+          "fact-lusha-pricing.plans.pro",
+          "fact-lusha-pricing.plans.premium",
+          "fact-lusha-pricing.plans.scale",
+          "fact-lusha-positioning.core",
+          "fact-lusha-features.prospecting",
+          "fact-lusha-features.data-enrichment",
+          "fact-lusha-features.email-sequences",
+          "fact-lusha-features.ai-assistance",
+          "fact-lusha-features.integrations",
+          "fact-lusha-features.pipeline-management",
+          "fact-lusha-ai.assistant",
+          "fact-lusha-ai.email-generation",
+          "fact-lusha-integrations.crm"
+        ],
+        "methodologySlug": "crm-editorial",
+        "methodologyVersion": "1.0.0",
+        "agentVersion": "1.0.0",
+        "contextBuiltAt": "2026-08-13T18:57:22.959Z"
+      },
+      "blockers": [],
+      "warnings": [],
+      "agentTaskId": "exec-comparison-agent-amplemarket-vs-lusha-1786647442952",
+      "draftId": "draft-deterministic-v1-comparison-agent-amplemarket-vs-lusha-2026-08-13T18-57-22-961Z",
+      "startedAt": "2026-08-13T18:57:22.951Z",
+      "completedAt": "2026-08-13T18:57:22.965Z",
+      "revisionAttempts": 0
+    },
+    {
+      "id": "internal-links",
+      "definitionStepId": "internal-links",
+      "handler": "internal-link",
+      "label": "Internal Link Plan",
+      "status": "completed",
+      "required": false,
+      "failurePolicy": "continue-with-warning",
+      "attempt": 1,
+      "maxAttempts": 2,
+      "dependsOn": [
+        "software-review"
+      ],
+      "priority": "low",
+      "config": {
+        "agentId": "internal-link-agent",
+        "maxAutomaticRevisions": 1,
+        "expandFromContentPlan": false,
+        "expandKind": "none",
+        "stopAfterApproval": true,
+        "allowNormalizedFacts": false,
+        "optionalWhenBlocked": false,
+        "forceTransientFailOnce": false
+      },
+      "inputRefs": {},
+      "outputRefs": {
+        "draftId": "draft-deterministic-v1-internal-link-agent-lusha-2026-08-13T18-57-23-020Z",
+        "qaStatus": "pass",
+        "agentId": "internal-link-agent",
+        "target": "lusha"
+      },
+      "inputSnapshot": {
+        "researchFactIds": [
+          "fact-lusha-pricing.hasFreePlan",
+          "fact-lusha-pricing.hasFreeTrial",
+          "fact-lusha-pricing.currency",
+          "fact-lusha-pricing.model",
+          "fact-lusha-pricing.plans.free",
+          "fact-lusha-pricing.plans.starter",
+          "fact-lusha-pricing.plans.pro",
+          "fact-lusha-pricing.plans.premium",
+          "fact-lusha-pricing.plans.scale",
+          "fact-lusha-positioning.core",
+          "fact-lusha-features.prospecting",
+          "fact-lusha-features.data-enrichment",
+          "fact-lusha-features.email-sequences",
+          "fact-lusha-features.ai-assistance",
+          "fact-lusha-features.integrations",
+          "fact-lusha-features.pipeline-management",
+          "fact-lusha-ai.assistant",
+          "fact-lusha-ai.email-generation",
+          "fact-lusha-integrations.crm"
+        ],
+        "methodologySlug": "crm-editorial",
+        "methodologyVersion": "1.0.0",
+        "agentVersion": "1.0.0",
+        "contextBuiltAt": "2026-08-13T18:57:23.020Z"
+      },
+      "blockers": [],
+      "warnings": [],
+      "agentTaskId": "exec-internal-link-agent-lusha-1786647443012",
+      "draftId": "draft-deterministic-v1-internal-link-agent-lusha-2026-08-13T18-57-23-020Z",
+      "startedAt": "2026-08-13T18:57:23.011Z",
+      "completedAt": "2026-08-13T18:57:23.023Z",
+      "revisionAttempts": 0
+    },
+    {
+      "id": "finder-readiness",
+      "definitionStepId": "finder-readiness",
+      "handler": "update-recommendation-readiness",
+      "label": "Finder readiness",
+      "status": "completed",
+      "required": false,
+      "failurePolicy": "continue",
+      "attempt": 1,
+      "maxAttempts": 2,
+      "dependsOn": [
+        "content-plan"
+      ],
+      "priority": "low",
+      "config": {
+        "maxAutomaticRevisions": 1,
+        "expandFromContentPlan": false,
+        "expandKind": "none",
+        "stopAfterApproval": true,
+        "allowNormalizedFacts": false,
+        "optionalWhenBlocked": false,
+        "forceTransientFailOnce": false
+      },
+      "inputRefs": {},
+      "outputRefs": {
+        "finderReadiness": "checked"
+      },
+      "blockers": [],
+      "warnings": [],
+      "startedAt": "2026-08-13T18:57:23.007Z",
+      "completedAt": "2026-08-13T18:57:23.009Z",
+      "revisionAttempts": 0
+    },
+    {
+      "id": "editorial-approval",
+      "definitionStepId": "editorial-approval",
+      "handler": "approval-check",
+      "label": "Editorial approval",
+      "status": "completed",
+      "required": true,
+      "failurePolicy": "manual-review",
+      "attempt": 2,
+      "maxAttempts": 2,
+      "dependsOn": [
+        "software-review"
+      ],
+      "priority": "critical",
+      "config": {
+        "approvalType": "editorial",
+        "maxAutomaticRevisions": 1,
+        "expandFromContentPlan": false,
+        "expandKind": "none",
+        "stopAfterApproval": true,
+        "allowNormalizedFacts": false,
+        "optionalWhenBlocked": false,
+        "forceTransientFailOnce": false
+      },
+      "inputRefs": {},
+      "outputRefs": {
+        "approvalId": "appr-wf-software-onboarding-content-lusha-1786647442061-software-review",
+        "draftId": "draft-deterministic-v1-software-review-agent-lusha-2026-08-13T18-57-22-928Z",
+        "approvalIds": "appr-wf-software-onboarding-content-lusha-1786647442061-software-review"
+      },
+      "blockers": [],
+      "warnings": [
+        "Approval received — resuming",
+        "6 optional draft(s) may still need separate editorial review"
+      ],
+      "approvalId": "appr-wf-software-onboarding-content-lusha-1786647442061-software-review",
+      "startedAt": "2026-08-13T19:00:58.485Z",
+      "completedAt": "2026-08-13T19:00:58.580Z",
+      "revisionAttempts": 0
+    },
+    {
+      "id": "pre-publish-validation",
+      "definitionStepId": "pre-publish-validation",
+      "handler": "pre-publish-validation",
+      "label": "Pre-publish validation",
+      "status": "completed",
+      "required": true,
+      "failurePolicy": "block-workflow",
+      "attempt": 2,
+      "maxAttempts": 2,
+      "dependsOn": [
+        "editorial-approval"
+      ],
+      "priority": "critical",
+      "config": {
+        "maxAutomaticRevisions": 1,
+        "expandFromContentPlan": false,
+        "expandKind": "none",
+        "stopAfterApproval": true,
+        "allowNormalizedFacts": false,
+        "optionalWhenBlocked": false,
+        "forceTransientFailOnce": false
+      },
+      "inputRefs": {},
+      "outputRefs": {
+        "publishState": "READY_TO_PUBLISH"
+      },
+      "blockers": [],
+      "warnings": [
+        "Re-running blocked pre-publish validation on resume",
+        "stopAfterApproval: workflow will not publish automatically"
+      ],
+      "startedAt": "2026-08-18T08:49:51.651Z",
+      "completedAt": "2026-08-18T08:49:52.663Z",
+      "revisionAttempts": 0
+    }
+  ],
+  "history": [
+    {
+      "at": "2026-08-13T18:57:22.747Z",
+      "event": "workflow_created",
+      "message": "Created software-onboarding-content:v1.0.0"
+    },
+    {
+      "at": "2026-08-13T18:57:22.749Z",
+      "event": "workflow_started",
+      "message": "Workflow execution started"
+    },
+    {
+      "at": "2026-08-13T18:57:22.768Z",
+      "event": "workflow_step_started",
+      "stepId": "software-onboarding",
+      "message": "Started Software onboarding"
+    },
+    {
+      "at": "2026-08-13T18:57:22.815Z",
+      "event": "workflow_step_completed",
+      "stepId": "software-onboarding",
+      "message": "Reused onboarding run onboard-lusha-1786623750867 (review-required)"
+    },
+    {
+      "at": "2026-08-13T18:57:22.816Z",
+      "event": "workflow_step_started",
+      "stepId": "content-plan",
+      "message": "Started Content plan"
+    },
+    {
+      "at": "2026-08-13T18:57:22.873Z",
+      "event": "workflow_step_completed",
+      "stepId": "content-plan",
+      "message": "Content plan from onboarding onboard-lusha-1786623750867 (7 candidates)"
+    },
+    {
+      "at": "2026-08-13T18:57:22.877Z",
+      "event": "workflow_step_started",
+      "stepId": "software-review",
+      "message": "Started Software Review"
+    },
+    {
+      "at": "2026-08-13T18:57:22.935Z",
+      "event": "workflow_step_completed",
+      "stepId": "software-review",
+      "message": "Agent software-review-agent → draft draft-deterministic-v1-software-review-agent-lusha-2026-08-13T18-57-22-928Z (qa=pass)"
+    },
+    {
+      "at": "2026-08-13T18:57:22.937Z",
+      "event": "workflow_step_started",
+      "stepId": "alternatives",
+      "message": "Started Alternatives"
+    },
+    {
+      "at": "2026-08-13T18:57:22.948Z",
+      "event": "workflow_step_completed",
+      "stepId": "alternatives",
+      "message": "Agent alternatives-agent → draft draft-deterministic-v1-alternatives-agent-lusha-2026-08-13T18-57-22-945Z (qa=pass)"
+    },
+    {
+      "at": "2026-08-13T18:57:22.951Z",
+      "event": "workflow_step_started",
+      "stepId": "comparison:amplemarket-vs-lusha",
+      "message": "Started Comparison amplemarket-vs-lusha"
+    },
+    {
+      "at": "2026-08-13T18:57:22.965Z",
+      "event": "workflow_step_completed",
+      "stepId": "comparison:amplemarket-vs-lusha",
+      "message": "Agent comparison-agent → draft draft-deterministic-v1-comparison-agent-amplemarket-vs-lusha-2026-08-13T18-57-22-961Z (qa=pass)"
+    },
+    {
+      "at": "2026-08-13T18:57:22.966Z",
+      "event": "workflow_step_started",
+      "stepId": "comparison:apollo-vs-lusha",
+      "message": "Started Comparison apollo-vs-lusha"
+    },
+    {
+      "at": "2026-08-13T18:57:22.981Z",
+      "event": "workflow_step_completed",
+      "stepId": "comparison:apollo-vs-lusha",
+      "message": "Agent comparison-agent → draft draft-deterministic-v1-comparison-agent-apollo-vs-lusha-2026-08-13T18-57-22-977Z (qa=pass)"
+    },
+    {
+      "at": "2026-08-13T18:57:22.982Z",
+      "event": "workflow_step_started",
+      "stepId": "comparison:lusha-vs-rocketreach",
+      "message": "Started Comparison lusha-vs-rocketreach"
+    },
+    {
+      "at": "2026-08-13T18:57:22.995Z",
+      "event": "workflow_step_completed",
+      "stepId": "comparison:lusha-vs-rocketreach",
+      "message": "Agent comparison-agent → draft draft-deterministic-v1-comparison-agent-lusha-vs-rocketreach-2026-08-13T18-57-22-991Z (qa=pass)"
+    },
+    {
+      "at": "2026-08-13T18:57:22.996Z",
+      "event": "workflow_step_started",
+      "stepId": "pricing-page",
+      "message": "Started Pricing Page"
+    },
+    {
+      "at": "2026-08-13T18:57:23.006Z",
+      "event": "workflow_step_completed",
+      "stepId": "pricing-page",
+      "message": "Agent pricing-page-agent → draft draft-deterministic-v1-pricing-page-agent-lusha-2026-08-13T18-57-23-004Z (qa=pass)"
+    },
+    {
+      "at": "2026-08-13T18:57:23.007Z",
+      "event": "workflow_step_started",
+      "stepId": "finder-readiness",
+      "message": "Started Finder readiness"
+    },
+    {
+      "at": "2026-08-13T18:57:23.009Z",
+      "event": "workflow_step_completed",
+      "stepId": "finder-readiness",
+      "message": "Finder readiness noted for lusha"
+    },
+    {
+      "at": "2026-08-13T18:57:23.011Z",
+      "event": "workflow_step_started",
+      "stepId": "internal-links",
+      "message": "Started Internal Link Plan"
+    },
+    {
+      "at": "2026-08-13T18:57:23.023Z",
+      "event": "workflow_step_completed",
+      "stepId": "internal-links",
+      "message": "Agent internal-link-agent → draft draft-deterministic-v1-internal-link-agent-lusha-2026-08-13T18-57-23-020Z (qa=pass)"
+    },
+    {
+      "at": "2026-08-13T18:57:23.024Z",
+      "event": "workflow_step_started",
+      "stepId": "editorial-approval",
+      "message": "Started Editorial approval"
+    },
+    {
+      "at": "2026-08-13T18:57:23.054Z",
+      "event": "workflow_step_completed",
+      "stepId": "editorial-approval",
+      "message": "WAITING FOR EDITORIAL APPROVAL (appr-wf-software-onboarding-content-lusha-1786647442061-software-review)"
+    },
+    {
+      "at": "2026-08-13T19:00:58.479Z",
+      "event": "workflow_resumed",
+      "message": "Workflow resumed"
+    },
+    {
+      "at": "2026-08-13T19:00:58.483Z",
+      "event": "workflow_started",
+      "message": "Workflow execution started"
+    },
+    {
+      "at": "2026-08-13T19:00:58.485Z",
+      "event": "workflow_step_started",
+      "stepId": "editorial-approval",
+      "message": "Started Editorial approval"
+    },
+    {
+      "at": "2026-08-13T19:00:58.580Z",
+      "event": "workflow_step_completed",
+      "stepId": "editorial-approval",
+      "message": "Required editorial approvals satisfied"
+    },
+    {
+      "at": "2026-08-13T19:00:58.587Z",
+      "event": "workflow_step_started",
+      "stepId": "pre-publish-validation",
+      "message": "Started Pre-publish validation"
+    },
+    {
+      "at": "2026-08-13T19:00:59.216Z",
+      "event": "workflow_step_completed",
+      "stepId": "pre-publish-validation",
+      "message": "Pre-publish validation blocked: Stale context for comparison:apollo-vs-lusha: removed-critical-fact:fact-apollo-pricing.hasFreePlan; removed-critical-fact:fact-apollo-pricing.hasFreeTrial; removed-critical-fact:fact-apollo-pricing.startingPriceMonthly; removed-critical-fact:fact-apollo-pricing.currency; removed-critical-fact:fact-apollo-pricing.model; removed-critical-fact:fact-apollo-pricing.plans.free; removed-critical-fact:fact-apollo-pricing.plans.basic; removed-critical-fact:fact-apollo-pricing.plans.professional; removed-critical-fact:fact-apollo-pricing.plans.enterprise; Stale context for comparison:lusha-vs-rocketreach: removed-critical-fact:fact-rocketreach-pricing.hasFreePlan; removed-critical-fact:fact-rocketreach-pricing.hasFreeTrial; removed-critical-fact:fact-rocketreach-pricing.startingPriceMonthly; removed-critical-fact:fact-rocketreach-pricing.currency; removed-critical-fact:fact-rocketreach-pricing.model; removed-critical-fact:fact-rocketreach-pricing.plans.essentials; removed-critical-fact:fact-rocketreach-pricing.plans.pro; removed-critical-fact:fact-rocketreach-pricing.plans.ultimate; Stale context for comparison:amplemarket-vs-lusha: removed-critical-fact:fact-amplemarket-pricing.hasFreePlan; removed-critical-fact:fact-amplemarket-pricing.hasFreeTrial; removed-critical-fact:fact-amplemarket-pricing.startingPriceMonthly; removed-critical-fact:fact-amplemarket-pricing.currency; removed-critical-fact:fact-amplemarket-pricing.model; removed-critical-fact:fact-amplemarket-pricing.plans.startup; removed-critical-fact:fact-amplemarket-pricing.plans.growth; removed-critical-fact:fact-amplemarket-pricing.plans.elite"
+    },
+    {
+      "at": "2026-08-16T06:13:33.907Z",
+      "event": "workflow_resumed",
+      "message": "Workflow resumed"
+    },
+    {
+      "at": "2026-08-16T06:13:33.912Z",
+      "event": "workflow_started",
+      "message": "Workflow execution started"
+    },
+    {
+      "at": "2026-08-18T08:49:51.646Z",
+      "event": "workflow_resumed",
+      "message": "Workflow resumed"
+    },
+    {
+      "at": "2026-08-18T08:49:51.649Z",
+      "event": "workflow_started",
+      "message": "Workflow execution started"
+    },
+    {
+      "at": "2026-08-18T08:49:51.651Z",
+      "event": "workflow_step_started",
+      "stepId": "pre-publish-validation",
+      "message": "Started Pre-publish validation"
+    },
+    {
+      "at": "2026-08-18T08:49:52.663Z",
+      "event": "workflow_step_completed",
+      "stepId": "pre-publish-validation",
+      "message": "Pre-publish validation passed — READY TO PUBLISH (manual)"
+    },
+    {
+      "at": "2026-08-18T08:49:52.665Z",
+      "event": "workflow_completed",
+      "message": "Workflow completed"
+    }
+  ],
+  "options": {
+    "generateReview": true,
+    "generatePricing": true,
+    "generateAlternatives": true,
+    "generateComparisons": true,
+    "runInternalLinks": true,
+    "stopAfterApproval": true,
+    "allowNormalizedFacts": false,
+    "dryRun": false,
+    "maxComparisons": 3,
+    "skipOnboarding": false
+  },
+  "warnings": [],
+  "createdAt": "2026-08-13T18:57:22.747Z",
+  "updatedAt": "2026-08-18T08:49:52.665Z"
+}

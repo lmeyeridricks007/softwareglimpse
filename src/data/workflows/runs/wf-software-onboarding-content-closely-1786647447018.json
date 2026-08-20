@@ -1,0 +1,869 @@
+{
+  "id": "wf-software-onboarding-content-closely-1786647447018",
+  "workflowId": "software-onboarding-content",
+  "workflowVersion": "1.0.0",
+  "name": "Software Onboarding Content: closely",
+  "targetType": "software",
+  "targetId": "closely",
+  "status": "cancelled",
+  "steps": [
+    {
+      "id": "software-onboarding",
+      "definitionStepId": "software-onboarding",
+      "handler": "software-onboarding",
+      "label": "Software onboarding",
+      "status": "completed",
+      "required": true,
+      "failurePolicy": "block-workflow",
+      "attempt": 1,
+      "maxAttempts": 2,
+      "dependsOn": [],
+      "priority": "critical",
+      "config": {
+        "maxAutomaticRevisions": 1,
+        "expandFromContentPlan": false,
+        "expandKind": "none",
+        "stopAfterApproval": true,
+        "allowNormalizedFacts": false,
+        "optionalWhenBlocked": false,
+        "forceTransientFailOnce": false
+      },
+      "inputRefs": {},
+      "outputRefs": {
+        "softwareOnboardingRunId": "onboard-closely-1786623698613"
+      },
+      "blockers": [],
+      "warnings": [],
+      "startedAt": "2026-08-13T18:57:27.474Z",
+      "completedAt": "2026-08-13T18:57:27.512Z",
+      "revisionAttempts": 0
+    },
+    {
+      "id": "content-plan",
+      "definitionStepId": "content-plan",
+      "handler": "content-plan",
+      "label": "Content plan",
+      "status": "completed",
+      "required": true,
+      "failurePolicy": "block-workflow",
+      "attempt": 1,
+      "maxAttempts": 2,
+      "dependsOn": [
+        "software-onboarding"
+      ],
+      "priority": "high",
+      "config": {
+        "maxAutomaticRevisions": 1,
+        "expandFromContentPlan": false,
+        "expandKind": "none",
+        "stopAfterApproval": true,
+        "allowNormalizedFacts": false,
+        "optionalWhenBlocked": false,
+        "forceTransientFailOnce": false
+      },
+      "inputRefs": {},
+      "outputRefs": {
+        "softwareOnboardingRunId": "onboard-closely-1786623698613",
+        "comparisonTargets": "apollo-vs-closely,amplemarket-vs-closely,closely-vs-lusha",
+        "pageCandidateCount": "7"
+      },
+      "blockers": [],
+      "warnings": [],
+      "startedAt": "2026-08-13T18:57:27.514Z",
+      "completedAt": "2026-08-13T18:57:27.548Z",
+      "revisionAttempts": 0
+    },
+    {
+      "id": "software-review",
+      "definitionStepId": "software-review",
+      "handler": "agent-run",
+      "label": "Software Review",
+      "status": "completed",
+      "required": true,
+      "failurePolicy": "block-workflow",
+      "attempt": 1,
+      "maxAttempts": 2,
+      "dependsOn": [
+        "content-plan"
+      ],
+      "priority": "high",
+      "config": {
+        "agentId": "software-review-agent",
+        "targetSlug": "closely",
+        "maxAutomaticRevisions": 1,
+        "expandFromContentPlan": false,
+        "expandKind": "none",
+        "stopAfterApproval": true,
+        "allowNormalizedFacts": false,
+        "optionalWhenBlocked": false,
+        "forceTransientFailOnce": false
+      },
+      "inputRefs": {},
+      "outputRefs": {
+        "draftId": "draft-deterministic-v1-software-review-agent-closely-2026-08-13T18-57-27-577Z",
+        "qaStatus": "pass",
+        "agentId": "software-review-agent",
+        "target": "closely"
+      },
+      "inputSnapshot": {
+        "researchFactIds": [
+          "fact-closely-pricing.hasFreePlan",
+          "fact-closely-pricing.hasFreeTrial",
+          "fact-closely-pricing.startingPriceMonthly",
+          "fact-closely-pricing.currency",
+          "fact-closely-pricing.model",
+          "fact-closely-pricing.plans.starter",
+          "fact-closely-pricing.plans.growth",
+          "fact-closely-pricing.plans.essential",
+          "fact-closely-pricing.plans.custom",
+          "fact-closely-positioning.core",
+          "fact-closely-features.prospecting",
+          "fact-closely-features.email-sequences",
+          "fact-closely-features.sales-automation",
+          "fact-closely-features.ai-assistance",
+          "fact-closely-features.integrations",
+          "fact-closely-features.pipeline-management",
+          "fact-closely-features.reporting",
+          "fact-closely-ai.assistant",
+          "fact-closely-ai.email-generation",
+          "fact-closely-integrations.crm"
+        ],
+        "methodologySlug": "crm-editorial",
+        "methodologyVersion": "1.0.0",
+        "agentVersion": "1.0.0",
+        "contextBuiltAt": "2026-08-13T18:57:27.572Z"
+      },
+      "blockers": [],
+      "warnings": [],
+      "agentTaskId": "exec-software-review-agent-closely-1786647447552",
+      "draftId": "draft-deterministic-v1-software-review-agent-closely-2026-08-13T18-57-27-577Z",
+      "startedAt": "2026-08-13T18:57:27.551Z",
+      "completedAt": "2026-08-13T18:57:27.582Z",
+      "revisionAttempts": 0
+    },
+    {
+      "id": "pricing-page",
+      "definitionStepId": "pricing-page",
+      "handler": "agent-run",
+      "label": "Pricing Page",
+      "status": "completed-with-warning",
+      "required": false,
+      "failurePolicy": "continue-with-warning",
+      "attempt": 1,
+      "maxAttempts": 2,
+      "dependsOn": [
+        "content-plan"
+      ],
+      "priority": "normal",
+      "config": {
+        "agentId": "pricing-page-agent",
+        "targetSlug": "closely",
+        "maxAutomaticRevisions": 1,
+        "expandFromContentPlan": false,
+        "expandKind": "none",
+        "stopAfterApproval": true,
+        "allowNormalizedFacts": false,
+        "optionalWhenBlocked": true,
+        "forceTransientFailOnce": false
+      },
+      "inputRefs": {},
+      "outputRefs": {
+        "draftId": "draft-deterministic-v1-pricing-page-agent-closely-2026-08-13T18-57-27-654Z-rev-1786647447665",
+        "qaStatus": "fail"
+      },
+      "blockers": [],
+      "warnings": [
+        "QA still failing after revision: UNVERIFIED_NUMBER,UNVERIFIED_NUMBER",
+        "Optional review-required demoted on resume — required path continues"
+      ],
+      "agentTaskId": "exec-pricing-page-agent-closely-1786647447643",
+      "draftId": "draft-deterministic-v1-pricing-page-agent-closely-2026-08-13T18-57-27-654Z-rev-1786647447665",
+      "startedAt": "2026-08-13T18:57:27.638Z",
+      "completedAt": "2026-08-13T18:57:27.669Z",
+      "revisionAttempts": 1
+    },
+    {
+      "id": "alternatives",
+      "definitionStepId": "alternatives",
+      "handler": "agent-run",
+      "label": "Alternatives",
+      "status": "completed",
+      "required": false,
+      "failurePolicy": "continue-with-warning",
+      "attempt": 1,
+      "maxAttempts": 2,
+      "dependsOn": [
+        "content-plan"
+      ],
+      "priority": "normal",
+      "config": {
+        "agentId": "alternatives-agent",
+        "targetSlug": "closely",
+        "maxAutomaticRevisions": 1,
+        "expandFromContentPlan": false,
+        "expandKind": "none",
+        "stopAfterApproval": true,
+        "allowNormalizedFacts": false,
+        "optionalWhenBlocked": true,
+        "forceTransientFailOnce": false
+      },
+      "inputRefs": {},
+      "outputRefs": {
+        "draftId": "draft-deterministic-v1-alternatives-agent-closely-2026-08-13T18-57-27-591Z",
+        "qaStatus": "pass",
+        "agentId": "alternatives-agent",
+        "target": "closely"
+      },
+      "inputSnapshot": {
+        "researchFactIds": [
+          "fact-closely-pricing.hasFreePlan",
+          "fact-closely-pricing.hasFreeTrial",
+          "fact-closely-pricing.startingPriceMonthly",
+          "fact-closely-pricing.currency",
+          "fact-closely-pricing.model",
+          "fact-closely-pricing.plans.starter",
+          "fact-closely-pricing.plans.growth",
+          "fact-closely-pricing.plans.essential",
+          "fact-closely-pricing.plans.custom",
+          "fact-closely-positioning.core",
+          "fact-closely-features.prospecting",
+          "fact-closely-features.email-sequences",
+          "fact-closely-features.sales-automation",
+          "fact-closely-features.ai-assistance",
+          "fact-closely-features.integrations",
+          "fact-closely-features.pipeline-management",
+          "fact-closely-features.reporting",
+          "fact-closely-ai.assistant",
+          "fact-closely-ai.email-generation",
+          "fact-closely-integrations.crm"
+        ],
+        "methodologySlug": "crm-editorial",
+        "methodologyVersion": "1.0.0",
+        "agentVersion": "1.0.0",
+        "contextBuiltAt": "2026-08-13T18:57:27.590Z"
+      },
+      "blockers": [],
+      "warnings": [],
+      "agentTaskId": "exec-alternatives-agent-closely-1786647447585",
+      "draftId": "draft-deterministic-v1-alternatives-agent-closely-2026-08-13T18-57-27-591Z",
+      "startedAt": "2026-08-13T18:57:27.584Z",
+      "completedAt": "2026-08-13T18:57:27.594Z",
+      "revisionAttempts": 0
+    },
+    {
+      "id": "comparison:apollo-vs-closely",
+      "definitionStepId": "comparisons",
+      "handler": "agent-run",
+      "label": "Comparison apollo-vs-closely",
+      "status": "completed",
+      "required": false,
+      "failurePolicy": "continue-with-warning",
+      "attempt": 1,
+      "maxAttempts": 2,
+      "dependsOn": [
+        "content-plan"
+      ],
+      "priority": "normal",
+      "config": {
+        "agentId": "comparison-agent",
+        "targetSlug": "apollo-vs-closely",
+        "maxAutomaticRevisions": 1,
+        "expandFromContentPlan": true,
+        "expandKind": "comparisons",
+        "stopAfterApproval": true,
+        "allowNormalizedFacts": false,
+        "optionalWhenBlocked": true,
+        "forceTransientFailOnce": false
+      },
+      "expansionKey": "apollo-vs-closely",
+      "inputRefs": {},
+      "outputRefs": {
+        "draftId": "draft-deterministic-v1-comparison-agent-apollo-vs-closely-2026-08-13T18-57-27-615Z",
+        "qaStatus": "pass",
+        "agentId": "comparison-agent",
+        "target": "apollo-vs-closely"
+      },
+      "inputSnapshot": {
+        "researchFactIds": [
+          "fact-apollo-pricing.hasFreePlan",
+          "fact-apollo-pricing.hasFreeTrial",
+          "fact-apollo-pricing.startingPriceMonthly",
+          "fact-apollo-pricing.currency",
+          "fact-apollo-pricing.model",
+          "fact-apollo-pricing.plans.free",
+          "fact-apollo-pricing.plans.basic",
+          "fact-apollo-pricing.plans.professional",
+          "fact-apollo-pricing.plans.enterprise",
+          "fact-apollo-features.prospecting",
+          "fact-apollo-features.data-enrichment",
+          "fact-apollo-features.email-sequences",
+          "fact-apollo-features.pipeline-management",
+          "fact-apollo-ai.assistant",
+          "fact-apollo-positioning.sales-intelligence",
+          "fact-closely-pricing.hasFreePlan",
+          "fact-closely-pricing.hasFreeTrial",
+          "fact-closely-pricing.startingPriceMonthly",
+          "fact-closely-pricing.currency",
+          "fact-closely-pricing.model",
+          "fact-closely-pricing.plans.starter",
+          "fact-closely-pricing.plans.growth",
+          "fact-closely-pricing.plans.essential",
+          "fact-closely-pricing.plans.custom",
+          "fact-closely-positioning.core",
+          "fact-closely-features.prospecting",
+          "fact-closely-features.email-sequences",
+          "fact-closely-features.sales-automation",
+          "fact-closely-features.ai-assistance",
+          "fact-closely-features.integrations",
+          "fact-closely-features.pipeline-management",
+          "fact-closely-features.reporting",
+          "fact-closely-ai.assistant",
+          "fact-closely-ai.email-generation",
+          "fact-closely-integrations.crm"
+        ],
+        "methodologySlug": "crm-editorial",
+        "methodologyVersion": "1.0.0",
+        "agentVersion": "1.0.0",
+        "contextBuiltAt": "2026-08-13T18:57:27.614Z"
+      },
+      "blockers": [],
+      "warnings": [],
+      "agentTaskId": "exec-comparison-agent-apollo-vs-closely-1786647447608",
+      "draftId": "draft-deterministic-v1-comparison-agent-apollo-vs-closely-2026-08-13T18-57-27-615Z",
+      "startedAt": "2026-08-13T18:57:27.607Z",
+      "completedAt": "2026-08-13T18:57:27.619Z",
+      "revisionAttempts": 0
+    },
+    {
+      "id": "comparison:amplemarket-vs-closely",
+      "definitionStepId": "comparisons",
+      "handler": "agent-run",
+      "label": "Comparison amplemarket-vs-closely",
+      "status": "completed",
+      "required": false,
+      "failurePolicy": "continue-with-warning",
+      "attempt": 1,
+      "maxAttempts": 2,
+      "dependsOn": [
+        "content-plan"
+      ],
+      "priority": "normal",
+      "config": {
+        "agentId": "comparison-agent",
+        "targetSlug": "amplemarket-vs-closely",
+        "maxAutomaticRevisions": 1,
+        "expandFromContentPlan": true,
+        "expandKind": "comparisons",
+        "stopAfterApproval": true,
+        "allowNormalizedFacts": false,
+        "optionalWhenBlocked": true,
+        "forceTransientFailOnce": false
+      },
+      "expansionKey": "amplemarket-vs-closely",
+      "inputRefs": {},
+      "outputRefs": {
+        "draftId": "draft-deterministic-v1-comparison-agent-amplemarket-vs-closely-2026-08-13T18-57-27-604Z",
+        "qaStatus": "pass",
+        "agentId": "comparison-agent",
+        "target": "amplemarket-vs-closely"
+      },
+      "inputSnapshot": {
+        "researchFactIds": [
+          "fact-amplemarket-pricing.hasFreePlan",
+          "fact-amplemarket-pricing.hasFreeTrial",
+          "fact-amplemarket-pricing.startingPriceMonthly",
+          "fact-amplemarket-pricing.currency",
+          "fact-amplemarket-pricing.model",
+          "fact-amplemarket-pricing.plans.startup",
+          "fact-amplemarket-pricing.plans.growth",
+          "fact-amplemarket-pricing.plans.elite",
+          "fact-amplemarket-positioning.core",
+          "fact-amplemarket-features.prospecting",
+          "fact-amplemarket-features.email-sequences",
+          "fact-amplemarket-features.sales-automation",
+          "fact-amplemarket-features.ai-assistance",
+          "fact-amplemarket-features.reporting",
+          "fact-amplemarket-features.integrations",
+          "fact-amplemarket-features.pipeline-management",
+          "fact-amplemarket-ai.assistant",
+          "fact-amplemarket-ai.email-generation",
+          "fact-amplemarket-integrations.crm",
+          "fact-closely-pricing.hasFreePlan",
+          "fact-closely-pricing.hasFreeTrial",
+          "fact-closely-pricing.startingPriceMonthly",
+          "fact-closely-pricing.currency",
+          "fact-closely-pricing.model",
+          "fact-closely-pricing.plans.starter",
+          "fact-closely-pricing.plans.growth",
+          "fact-closely-pricing.plans.essential",
+          "fact-closely-pricing.plans.custom",
+          "fact-closely-positioning.core",
+          "fact-closely-features.prospecting",
+          "fact-closely-features.email-sequences",
+          "fact-closely-features.sales-automation",
+          "fact-closely-features.ai-assistance",
+          "fact-closely-features.integrations",
+          "fact-closely-features.pipeline-management",
+          "fact-closely-features.reporting",
+          "fact-closely-ai.assistant",
+          "fact-closely-ai.email-generation",
+          "fact-closely-integrations.crm"
+        ],
+        "methodologySlug": "crm-editorial",
+        "methodologyVersion": "1.0.0",
+        "agentVersion": "1.0.0",
+        "contextBuiltAt": "2026-08-13T18:57:27.603Z"
+      },
+      "blockers": [],
+      "warnings": [],
+      "agentTaskId": "exec-comparison-agent-amplemarket-vs-closely-1786647447596",
+      "draftId": "draft-deterministic-v1-comparison-agent-amplemarket-vs-closely-2026-08-13T18-57-27-604Z",
+      "startedAt": "2026-08-13T18:57:27.595Z",
+      "completedAt": "2026-08-13T18:57:27.607Z",
+      "revisionAttempts": 0
+    },
+    {
+      "id": "comparison:closely-vs-lusha",
+      "definitionStepId": "comparisons",
+      "handler": "agent-run",
+      "label": "Comparison closely-vs-lusha",
+      "status": "completed",
+      "required": false,
+      "failurePolicy": "continue-with-warning",
+      "attempt": 1,
+      "maxAttempts": 2,
+      "dependsOn": [
+        "content-plan"
+      ],
+      "priority": "normal",
+      "config": {
+        "agentId": "comparison-agent",
+        "targetSlug": "closely-vs-lusha",
+        "maxAutomaticRevisions": 1,
+        "expandFromContentPlan": true,
+        "expandKind": "comparisons",
+        "stopAfterApproval": true,
+        "allowNormalizedFacts": false,
+        "optionalWhenBlocked": true,
+        "forceTransientFailOnce": false
+      },
+      "expansionKey": "closely-vs-lusha",
+      "inputRefs": {},
+      "outputRefs": {
+        "draftId": "draft-deterministic-v1-comparison-agent-closely-vs-lusha-2026-08-13T18-57-27-630Z",
+        "qaStatus": "pass",
+        "agentId": "comparison-agent",
+        "target": "closely-vs-lusha"
+      },
+      "inputSnapshot": {
+        "researchFactIds": [
+          "fact-closely-pricing.hasFreePlan",
+          "fact-closely-pricing.hasFreeTrial",
+          "fact-closely-pricing.startingPriceMonthly",
+          "fact-closely-pricing.currency",
+          "fact-closely-pricing.model",
+          "fact-closely-pricing.plans.starter",
+          "fact-closely-pricing.plans.growth",
+          "fact-closely-pricing.plans.essential",
+          "fact-closely-pricing.plans.custom",
+          "fact-closely-positioning.core",
+          "fact-closely-features.prospecting",
+          "fact-closely-features.email-sequences",
+          "fact-closely-features.sales-automation",
+          "fact-closely-features.ai-assistance",
+          "fact-closely-features.integrations",
+          "fact-closely-features.pipeline-management",
+          "fact-closely-features.reporting",
+          "fact-closely-ai.assistant",
+          "fact-closely-ai.email-generation",
+          "fact-closely-integrations.crm",
+          "fact-lusha-pricing.hasFreePlan",
+          "fact-lusha-pricing.hasFreeTrial",
+          "fact-lusha-pricing.currency",
+          "fact-lusha-pricing.model",
+          "fact-lusha-pricing.plans.free",
+          "fact-lusha-pricing.plans.starter",
+          "fact-lusha-pricing.plans.pro",
+          "fact-lusha-pricing.plans.premium",
+          "fact-lusha-pricing.plans.scale",
+          "fact-lusha-positioning.core",
+          "fact-lusha-features.prospecting",
+          "fact-lusha-features.data-enrichment",
+          "fact-lusha-features.email-sequences",
+          "fact-lusha-features.ai-assistance",
+          "fact-lusha-features.integrations",
+          "fact-lusha-features.pipeline-management",
+          "fact-lusha-ai.assistant",
+          "fact-lusha-ai.email-generation",
+          "fact-lusha-integrations.crm"
+        ],
+        "methodologySlug": "crm-editorial",
+        "methodologyVersion": "1.0.0",
+        "agentVersion": "1.0.0",
+        "contextBuiltAt": "2026-08-13T18:57:27.629Z"
+      },
+      "blockers": [],
+      "warnings": [],
+      "agentTaskId": "exec-comparison-agent-closely-vs-lusha-1786647447621",
+      "draftId": "draft-deterministic-v1-comparison-agent-closely-vs-lusha-2026-08-13T18-57-27-630Z",
+      "startedAt": "2026-08-13T18:57:27.621Z",
+      "completedAt": "2026-08-13T18:57:27.635Z",
+      "revisionAttempts": 0
+    },
+    {
+      "id": "internal-links",
+      "definitionStepId": "internal-links",
+      "handler": "internal-link",
+      "label": "Internal Link Plan",
+      "status": "completed",
+      "required": false,
+      "failurePolicy": "continue-with-warning",
+      "attempt": 1,
+      "maxAttempts": 2,
+      "dependsOn": [
+        "software-review"
+      ],
+      "priority": "low",
+      "config": {
+        "agentId": "internal-link-agent",
+        "maxAutomaticRevisions": 1,
+        "expandFromContentPlan": false,
+        "expandKind": "none",
+        "stopAfterApproval": true,
+        "allowNormalizedFacts": false,
+        "optionalWhenBlocked": false,
+        "forceTransientFailOnce": false
+      },
+      "inputRefs": {},
+      "outputRefs": {
+        "draftId": "draft-deterministic-v1-internal-link-agent-closely-2026-08-18T08-49-51-516Z",
+        "qaStatus": "pass",
+        "agentId": "internal-link-agent",
+        "target": "closely"
+      },
+      "inputSnapshot": {
+        "researchFactIds": [
+          "fact-closely-pricing.hasFreePlan",
+          "fact-closely-pricing.hasFreeTrial",
+          "fact-closely-pricing.startingPriceMonthly",
+          "fact-closely-pricing.currency",
+          "fact-closely-pricing.model",
+          "fact-closely-pricing.plans.starter",
+          "fact-closely-pricing.plans.growth",
+          "fact-closely-pricing.plans.essential",
+          "fact-closely-pricing.plans.custom",
+          "fact-closely-positioning.core",
+          "fact-closely-features.prospecting",
+          "fact-closely-features.email-sequences",
+          "fact-closely-features.sales-automation",
+          "fact-closely-features.ai-assistance",
+          "fact-closely-features.integrations",
+          "fact-closely-features.pipeline-management",
+          "fact-closely-features.reporting",
+          "fact-closely-ai.assistant",
+          "fact-closely-ai.email-generation",
+          "fact-closely-integrations.crm"
+        ],
+        "methodologySlug": "crm-editorial",
+        "methodologyVersion": "1.0.0",
+        "agentVersion": "1.0.0",
+        "contextBuiltAt": "2026-08-18T08:49:51.515Z"
+      },
+      "blockers": [],
+      "warnings": [],
+      "agentTaskId": "exec-internal-link-agent-closely-1787042991497",
+      "draftId": "draft-deterministic-v1-internal-link-agent-closely-2026-08-18T08-49-51-516Z",
+      "startedAt": "2026-08-18T08:49:51.494Z",
+      "completedAt": "2026-08-18T08:49:51.521Z",
+      "revisionAttempts": 0
+    },
+    {
+      "id": "finder-readiness",
+      "definitionStepId": "finder-readiness",
+      "handler": "update-recommendation-readiness",
+      "label": "Finder readiness",
+      "status": "completed",
+      "required": false,
+      "failurePolicy": "continue",
+      "attempt": 1,
+      "maxAttempts": 2,
+      "dependsOn": [
+        "content-plan"
+      ],
+      "priority": "low",
+      "config": {
+        "maxAutomaticRevisions": 1,
+        "expandFromContentPlan": false,
+        "expandKind": "none",
+        "stopAfterApproval": true,
+        "allowNormalizedFacts": false,
+        "optionalWhenBlocked": false,
+        "forceTransientFailOnce": false
+      },
+      "inputRefs": {},
+      "outputRefs": {
+        "finderReadiness": "checked"
+      },
+      "blockers": [],
+      "warnings": [],
+      "startedAt": "2026-08-16T06:13:33.916Z",
+      "completedAt": "2026-08-16T06:13:33.917Z",
+      "revisionAttempts": 0
+    },
+    {
+      "id": "editorial-approval",
+      "definitionStepId": "editorial-approval",
+      "handler": "approval-check",
+      "label": "Editorial approval",
+      "status": "cancelled",
+      "required": true,
+      "failurePolicy": "manual-review",
+      "attempt": 1,
+      "maxAttempts": 2,
+      "dependsOn": [
+        "software-review"
+      ],
+      "priority": "critical",
+      "config": {
+        "approvalType": "editorial",
+        "maxAutomaticRevisions": 1,
+        "expandFromContentPlan": false,
+        "expandKind": "none",
+        "stopAfterApproval": true,
+        "allowNormalizedFacts": false,
+        "optionalWhenBlocked": false,
+        "forceTransientFailOnce": false
+      },
+      "inputRefs": {},
+      "outputRefs": {
+        "approvalId": "appr-wf-software-onboarding-content-closely-1786647447018-software-review",
+        "draftId": "draft-deterministic-v1-software-review-agent-closely-2026-08-13T18-57-27-577Z"
+      },
+      "blockers": [],
+      "warnings": [],
+      "approvalId": "appr-wf-software-onboarding-content-closely-1786647447018-software-review",
+      "startedAt": "2026-08-18T08:49:51.523Z",
+      "completedAt": "2026-08-18T08:49:51.635Z",
+      "revisionAttempts": 0
+    },
+    {
+      "id": "pre-publish-validation",
+      "definitionStepId": "pre-publish-validation",
+      "handler": "pre-publish-validation",
+      "label": "Pre-publish validation",
+      "status": "cancelled",
+      "required": true,
+      "failurePolicy": "block-workflow",
+      "attempt": 0,
+      "maxAttempts": 2,
+      "dependsOn": [
+        "editorial-approval"
+      ],
+      "priority": "critical",
+      "config": {
+        "maxAutomaticRevisions": 1,
+        "expandFromContentPlan": false,
+        "expandKind": "none",
+        "stopAfterApproval": true,
+        "allowNormalizedFacts": false,
+        "optionalWhenBlocked": false,
+        "forceTransientFailOnce": false
+      },
+      "inputRefs": {},
+      "outputRefs": {},
+      "blockers": [],
+      "warnings": [],
+      "revisionAttempts": 0
+    }
+  ],
+  "history": [
+    {
+      "at": "2026-08-13T18:57:27.470Z",
+      "event": "workflow_created",
+      "message": "Created software-onboarding-content:v1.0.0"
+    },
+    {
+      "at": "2026-08-13T18:57:27.471Z",
+      "event": "workflow_started",
+      "message": "Workflow execution started"
+    },
+    {
+      "at": "2026-08-13T18:57:27.473Z",
+      "event": "workflow_step_started",
+      "stepId": "software-onboarding",
+      "message": "Started Software onboarding"
+    },
+    {
+      "at": "2026-08-13T18:57:27.512Z",
+      "event": "workflow_step_completed",
+      "stepId": "software-onboarding",
+      "message": "Reused onboarding run onboard-closely-1786623698613 (review-required)"
+    },
+    {
+      "at": "2026-08-13T18:57:27.513Z",
+      "event": "workflow_step_started",
+      "stepId": "content-plan",
+      "message": "Started Content plan"
+    },
+    {
+      "at": "2026-08-13T18:57:27.548Z",
+      "event": "workflow_step_completed",
+      "stepId": "content-plan",
+      "message": "Content plan from onboarding onboard-closely-1786623698613 (7 candidates)"
+    },
+    {
+      "at": "2026-08-13T18:57:27.550Z",
+      "event": "workflow_step_started",
+      "stepId": "software-review",
+      "message": "Started Software Review"
+    },
+    {
+      "at": "2026-08-13T18:57:27.582Z",
+      "event": "workflow_step_completed",
+      "stepId": "software-review",
+      "message": "Agent software-review-agent → draft draft-deterministic-v1-software-review-agent-closely-2026-08-13T18-57-27-577Z (qa=pass)"
+    },
+    {
+      "at": "2026-08-13T18:57:27.584Z",
+      "event": "workflow_step_started",
+      "stepId": "alternatives",
+      "message": "Started Alternatives"
+    },
+    {
+      "at": "2026-08-13T18:57:27.594Z",
+      "event": "workflow_step_completed",
+      "stepId": "alternatives",
+      "message": "Agent alternatives-agent → draft draft-deterministic-v1-alternatives-agent-closely-2026-08-13T18-57-27-591Z (qa=pass)"
+    },
+    {
+      "at": "2026-08-13T18:57:27.595Z",
+      "event": "workflow_step_started",
+      "stepId": "comparison:amplemarket-vs-closely",
+      "message": "Started Comparison amplemarket-vs-closely"
+    },
+    {
+      "at": "2026-08-13T18:57:27.607Z",
+      "event": "workflow_step_completed",
+      "stepId": "comparison:amplemarket-vs-closely",
+      "message": "Agent comparison-agent → draft draft-deterministic-v1-comparison-agent-amplemarket-vs-closely-2026-08-13T18-57-27-604Z (qa=pass)"
+    },
+    {
+      "at": "2026-08-13T18:57:27.607Z",
+      "event": "workflow_step_started",
+      "stepId": "comparison:apollo-vs-closely",
+      "message": "Started Comparison apollo-vs-closely"
+    },
+    {
+      "at": "2026-08-13T18:57:27.619Z",
+      "event": "workflow_step_completed",
+      "stepId": "comparison:apollo-vs-closely",
+      "message": "Agent comparison-agent → draft draft-deterministic-v1-comparison-agent-apollo-vs-closely-2026-08-13T18-57-27-615Z (qa=pass)"
+    },
+    {
+      "at": "2026-08-13T18:57:27.620Z",
+      "event": "workflow_step_started",
+      "stepId": "comparison:closely-vs-lusha",
+      "message": "Started Comparison closely-vs-lusha"
+    },
+    {
+      "at": "2026-08-13T18:57:27.635Z",
+      "event": "workflow_step_completed",
+      "stepId": "comparison:closely-vs-lusha",
+      "message": "Agent comparison-agent → draft draft-deterministic-v1-comparison-agent-closely-vs-lusha-2026-08-13T18-57-27-630Z (qa=pass)"
+    },
+    {
+      "at": "2026-08-13T18:57:27.638Z",
+      "event": "workflow_step_started",
+      "stepId": "pricing-page",
+      "message": "Started Pricing Page"
+    },
+    {
+      "at": "2026-08-13T18:57:27.669Z",
+      "event": "workflow_step_completed",
+      "stepId": "pricing-page",
+      "message": "QA fail after one automatic revision → review-required"
+    },
+    {
+      "at": "2026-08-16T06:13:33.914Z",
+      "event": "workflow_resumed",
+      "message": "Workflow resumed"
+    },
+    {
+      "at": "2026-08-16T06:13:33.915Z",
+      "event": "workflow_started",
+      "message": "Workflow execution started"
+    },
+    {
+      "at": "2026-08-16T06:13:33.916Z",
+      "event": "workflow_step_started",
+      "stepId": "finder-readiness",
+      "message": "Started Finder readiness"
+    },
+    {
+      "at": "2026-08-16T06:13:33.917Z",
+      "event": "workflow_step_completed",
+      "stepId": "finder-readiness",
+      "message": "Finder readiness noted for closely"
+    },
+    {
+      "at": "2026-08-18T08:49:51.490Z",
+      "event": "workflow_resumed",
+      "message": "Workflow resumed"
+    },
+    {
+      "at": "2026-08-18T08:49:51.491Z",
+      "event": "workflow_started",
+      "message": "Workflow execution started"
+    },
+    {
+      "at": "2026-08-18T08:49:51.494Z",
+      "event": "workflow_step_started",
+      "stepId": "internal-links",
+      "message": "Started Internal Link Plan"
+    },
+    {
+      "at": "2026-08-18T08:49:51.522Z",
+      "event": "workflow_step_completed",
+      "stepId": "internal-links",
+      "message": "Agent internal-link-agent → draft draft-deterministic-v1-internal-link-agent-closely-2026-08-18T08-49-51-516Z (qa=pass)"
+    },
+    {
+      "at": "2026-08-18T08:49:51.523Z",
+      "event": "workflow_step_started",
+      "stepId": "editorial-approval",
+      "message": "Started Editorial approval"
+    },
+    {
+      "at": "2026-08-18T08:49:51.635Z",
+      "event": "workflow_step_completed",
+      "stepId": "editorial-approval",
+      "message": "WAITING FOR EDITORIAL APPROVAL (appr-wf-software-onboarding-content-closely-1786647447018-software-review)"
+    },
+    {
+      "at": "2026-08-18T08:49:51.643Z",
+      "event": "workflow_blocked",
+      "message": "WAITING FOR EDITORIAL APPROVAL"
+    },
+    {
+      "at": "2026-08-18T13:34:16.191Z",
+      "event": "workflow_cancelled",
+      "message": "Catalogue software page already published; agent drafts remain unpublished"
+    }
+  ],
+  "options": {
+    "generateReview": true,
+    "generatePricing": true,
+    "generateAlternatives": true,
+    "generateComparisons": true,
+    "runInternalLinks": true,
+    "stopAfterApproval": true,
+    "allowNormalizedFacts": false,
+    "dryRun": false,
+    "maxComparisons": 3,
+    "skipOnboarding": false
+  },
+  "cancelReason": "Catalogue software page already published; agent drafts remain unpublished",
+  "warnings": [],
+  "createdAt": "2026-08-13T18:57:27.469Z",
+  "updatedAt": "2026-08-18T13:34:16.191Z"
+}

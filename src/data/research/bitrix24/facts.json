@@ -1,0 +1,870 @@
+[
+  {
+    "id": "fact-bitrix24-pricing.hasFreePlan",
+    "productSlug": "bitrix24",
+    "domain": "free-plan",
+    "field": "pricing.hasFreePlan",
+    "value": true,
+    "sourceIds": [
+      "bitrix24-pricing"
+    ],
+    "evidence": [
+      {
+        "sourceId": "bitrix24-pricing",
+        "excerpt": "Free cloud plan for roughly 1–2 users."
+      }
+    ],
+    "extractedAt": "2026-08-14T08:00:00.000Z",
+    "normalizedAt": "2026-08-14T08:00:00.000Z",
+    "verifiedAt": "2026-08-14T08:00:00.000Z",
+    "approvedAt": "2026-08-14T08:00:00.000Z",
+    "confidence": "high",
+    "status": "approved",
+    "isFixture": false
+  },
+  {
+    "id": "fact-bitrix24-pricing.hasFreeTrial",
+    "productSlug": "bitrix24",
+    "domain": "free-trial",
+    "field": "pricing.hasFreeTrial",
+    "value": true,
+    "sourceIds": [
+      "bitrix24-pricing"
+    ],
+    "evidence": [
+      {
+        "sourceId": "bitrix24-pricing",
+        "excerpt": "Paid cloud plans commonly trialable; confirm live."
+      }
+    ],
+    "extractedAt": "2026-08-14T08:00:00.000Z",
+    "normalizedAt": "2026-08-14T08:00:00.000Z",
+    "verifiedAt": "2026-08-14T08:00:00.000Z",
+    "approvedAt": "2026-08-14T08:00:00.000Z",
+    "confidence": "high",
+    "status": "approved",
+    "isFixture": false
+  },
+  {
+    "id": "fact-bitrix24-pricing.startingPriceMonthly",
+    "productSlug": "bitrix24",
+    "domain": "pricing",
+    "field": "pricing.startingPriceMonthly",
+    "value": 0,
+    "sourceIds": [
+      "bitrix24-pricing"
+    ],
+    "evidence": [
+      {
+        "sourceId": "bitrix24-pricing",
+        "excerpt": "Free €0; paid Basic from ~€49/org/mo annual."
+      }
+    ],
+    "extractedAt": "2026-08-14T08:00:00.000Z",
+    "normalizedAt": "2026-08-14T08:00:00.000Z",
+    "verifiedAt": "2026-08-14T08:00:00.000Z",
+    "approvedAt": "2026-08-14T08:00:00.000Z",
+    "confidence": "high",
+    "status": "approved",
+    "isFixture": false
+  },
+  {
+    "id": "fact-bitrix24-pricing.currency",
+    "productSlug": "bitrix24",
+    "domain": "pricing",
+    "field": "pricing.currency",
+    "value": "EUR",
+    "sourceIds": [
+      "bitrix24-pricing"
+    ],
+    "evidence": [
+      {
+        "sourceId": "bitrix24-pricing",
+        "excerpt": "EUR organization pricing."
+      }
+    ],
+    "extractedAt": "2026-08-14T08:00:00.000Z",
+    "normalizedAt": "2026-08-14T08:00:00.000Z",
+    "verifiedAt": "2026-08-14T08:00:00.000Z",
+    "approvedAt": "2026-08-14T08:00:00.000Z",
+    "confidence": "high",
+    "status": "approved",
+    "isFixture": false
+  },
+  {
+    "id": "fact-bitrix24-pricing.model",
+    "productSlug": "bitrix24",
+    "domain": "pricing",
+    "field": "pricing.model",
+    "value": "subscription",
+    "sourceIds": [
+      "bitrix24-pricing"
+    ],
+    "evidence": [
+      {
+        "sourceId": "bitrix24-pricing",
+        "excerpt": "Organization subscription (not per-user) for cloud plans."
+      }
+    ],
+    "extractedAt": "2026-08-14T08:00:00.000Z",
+    "normalizedAt": "2026-08-14T08:00:00.000Z",
+    "verifiedAt": "2026-08-14T08:00:00.000Z",
+    "approvedAt": "2026-08-14T08:00:00.000Z",
+    "confidence": "high",
+    "status": "approved",
+    "isFixture": false
+  },
+  {
+    "id": "fact-bitrix24-pricing.plans.free",
+    "productSlug": "bitrix24",
+    "domain": "plans",
+    "field": "pricing.plans.free",
+    "value": {
+      "id": "plan-free",
+      "slug": "free",
+      "name": "Free",
+      "isFree": true,
+      "contactSales": false,
+      "hasFreeTrial": false,
+      "highlighted": false,
+      "rules": [
+        {
+          "kind": "flat",
+          "amount": 0,
+          "currency": "EUR",
+          "interval": "month",
+          "amountPeriod": "month"
+        }
+      ],
+      "notes": "Free for approximately 1–2 users."
+    },
+    "sourceIds": [
+      "bitrix24-pricing"
+    ],
+    "evidence": [
+      {
+        "sourceId": "bitrix24-pricing",
+        "excerpt": "Free for 1–2 users."
+      }
+    ],
+    "extractedAt": "2026-08-14T08:00:00.000Z",
+    "normalizedAt": "2026-08-14T08:00:00.000Z",
+    "verifiedAt": "2026-08-14T08:00:00.000Z",
+    "approvedAt": "2026-08-14T08:00:00.000Z",
+    "confidence": "high",
+    "status": "approved",
+    "isFixture": false
+  },
+  {
+    "id": "fact-bitrix24-pricing.plans.basic",
+    "productSlug": "bitrix24",
+    "domain": "plans",
+    "field": "pricing.plans.basic",
+    "value": {
+      "id": "plan-basic",
+      "slug": "basic",
+      "name": "Basic",
+      "isFree": false,
+      "contactSales": false,
+      "hasFreeTrial": false,
+      "highlighted": false,
+      "rules": [
+        {
+          "kind": "flat",
+          "currency": "EUR",
+          "interval": "year",
+          "amountPeriod": "month",
+          "amount": 49
+        },
+        {
+          "kind": "flat",
+          "currency": "EUR",
+          "interval": "month",
+          "amountPeriod": "month",
+          "amount": 69
+        }
+      ]
+    },
+    "sourceIds": [
+      "bitrix24-pricing"
+    ],
+    "evidence": [
+      {
+        "sourceId": "bitrix24-pricing",
+        "excerpt": "Basic ~€49 annual / €69 monthly per organization."
+      }
+    ],
+    "extractedAt": "2026-08-14T08:00:00.000Z",
+    "normalizedAt": "2026-08-14T08:00:00.000Z",
+    "verifiedAt": "2026-08-14T08:00:00.000Z",
+    "approvedAt": "2026-08-14T08:00:00.000Z",
+    "confidence": "high",
+    "status": "approved",
+    "isFixture": false
+  },
+  {
+    "id": "fact-bitrix24-pricing.plans.standard",
+    "productSlug": "bitrix24",
+    "domain": "plans",
+    "field": "pricing.plans.standard",
+    "value": {
+      "id": "plan-standard",
+      "slug": "standard",
+      "name": "Standard",
+      "isFree": false,
+      "contactSales": false,
+      "hasFreeTrial": false,
+      "highlighted": true,
+      "rules": [
+        {
+          "kind": "flat",
+          "currency": "EUR",
+          "interval": "year",
+          "amountPeriod": "month",
+          "amount": 99
+        },
+        {
+          "kind": "flat",
+          "currency": "EUR",
+          "interval": "month",
+          "amountPeriod": "month",
+          "amount": 144
+        }
+      ]
+    },
+    "sourceIds": [
+      "bitrix24-pricing"
+    ],
+    "evidence": [
+      {
+        "sourceId": "bitrix24-pricing",
+        "excerpt": "Standard €99 annual / €144 monthly per organization."
+      }
+    ],
+    "extractedAt": "2026-08-14T08:00:00.000Z",
+    "normalizedAt": "2026-08-14T08:00:00.000Z",
+    "verifiedAt": "2026-08-14T08:00:00.000Z",
+    "approvedAt": "2026-08-14T08:00:00.000Z",
+    "confidence": "high",
+    "status": "approved",
+    "isFixture": false
+  },
+  {
+    "id": "fact-bitrix24-pricing.plans.professional",
+    "productSlug": "bitrix24",
+    "domain": "plans",
+    "field": "pricing.plans.professional",
+    "value": {
+      "id": "plan-professional",
+      "slug": "professional",
+      "name": "Professional",
+      "isFree": false,
+      "contactSales": false,
+      "hasFreeTrial": false,
+      "highlighted": false,
+      "rules": [
+        {
+          "kind": "flat",
+          "currency": "EUR",
+          "interval": "year",
+          "amountPeriod": "month",
+          "amount": 199
+        },
+        {
+          "kind": "flat",
+          "currency": "EUR",
+          "interval": "month",
+          "amountPeriod": "month",
+          "amount": 289
+        }
+      ]
+    },
+    "sourceIds": [
+      "bitrix24-pricing"
+    ],
+    "evidence": [
+      {
+        "sourceId": "bitrix24-pricing",
+        "excerpt": "Professional €199 annual / €289 monthly per organization."
+      }
+    ],
+    "extractedAt": "2026-08-14T08:00:00.000Z",
+    "normalizedAt": "2026-08-14T08:00:00.000Z",
+    "verifiedAt": "2026-08-14T08:00:00.000Z",
+    "approvedAt": "2026-08-14T08:00:00.000Z",
+    "confidence": "high",
+    "status": "approved",
+    "isFixture": false
+  },
+  {
+    "id": "fact-bitrix24-pricing.plans.enterprise",
+    "productSlug": "bitrix24",
+    "domain": "plans",
+    "field": "pricing.plans.enterprise",
+    "value": {
+      "id": "plan-enterprise",
+      "slug": "enterprise",
+      "name": "Enterprise",
+      "isFree": false,
+      "contactSales": true,
+      "hasFreeTrial": false,
+      "highlighted": false,
+      "rules": [],
+      "notes": "Enterprise cloud higher than Professional; confirm live quote."
+    },
+    "sourceIds": [
+      "bitrix24-pricing"
+    ],
+    "evidence": [
+      {
+        "sourceId": "bitrix24-pricing",
+        "excerpt": "Enterprise higher / contact path."
+      }
+    ],
+    "extractedAt": "2026-08-14T08:00:00.000Z",
+    "normalizedAt": "2026-08-14T08:00:00.000Z",
+    "verifiedAt": "2026-08-14T08:00:00.000Z",
+    "approvedAt": "2026-08-14T08:00:00.000Z",
+    "confidence": "high",
+    "status": "approved",
+    "isFixture": false
+  },
+  {
+    "id": "fact-bitrix24-features.contact-management",
+    "productSlug": "bitrix24",
+    "domain": "features",
+    "field": "features.contact-management",
+    "value": {
+      "featureSlug": "contact-management",
+      "availability": "supported",
+      "planSlugs": [
+        "free",
+        "basic",
+        "standard",
+        "professional",
+        "enterprise"
+      ]
+    },
+    "sourceIds": [
+      "bitrix24-product"
+    ],
+    "evidence": [
+      {
+        "sourceId": "bitrix24-product",
+        "excerpt": "Bitrix24 documents contact management."
+      }
+    ],
+    "extractedAt": "2026-08-14T08:00:00.000Z",
+    "normalizedAt": "2026-08-14T08:00:00.000Z",
+    "verifiedAt": "2026-08-14T08:00:00.000Z",
+    "approvedAt": "2026-08-14T08:00:00.000Z",
+    "confidence": "high",
+    "status": "approved",
+    "isFixture": false
+  },
+  {
+    "id": "fact-bitrix24-features.lead-management",
+    "productSlug": "bitrix24",
+    "domain": "features",
+    "field": "features.lead-management",
+    "value": {
+      "featureSlug": "lead-management",
+      "availability": "supported",
+      "planSlugs": [
+        "free",
+        "basic",
+        "standard",
+        "professional",
+        "enterprise"
+      ]
+    },
+    "sourceIds": [
+      "bitrix24-product"
+    ],
+    "evidence": [
+      {
+        "sourceId": "bitrix24-product",
+        "excerpt": "Bitrix24 documents lead management."
+      }
+    ],
+    "extractedAt": "2026-08-14T08:00:00.000Z",
+    "normalizedAt": "2026-08-14T08:00:00.000Z",
+    "verifiedAt": "2026-08-14T08:00:00.000Z",
+    "approvedAt": "2026-08-14T08:00:00.000Z",
+    "confidence": "high",
+    "status": "approved",
+    "isFixture": false
+  },
+  {
+    "id": "fact-bitrix24-features.pipeline-management",
+    "productSlug": "bitrix24",
+    "domain": "features",
+    "field": "features.pipeline-management",
+    "value": {
+      "featureSlug": "pipeline-management",
+      "availability": "supported",
+      "planSlugs": [
+        "free",
+        "basic",
+        "standard",
+        "professional",
+        "enterprise"
+      ]
+    },
+    "sourceIds": [
+      "bitrix24-product"
+    ],
+    "evidence": [
+      {
+        "sourceId": "bitrix24-product",
+        "excerpt": "Bitrix24 documents pipeline management."
+      }
+    ],
+    "extractedAt": "2026-08-14T08:00:00.000Z",
+    "normalizedAt": "2026-08-14T08:00:00.000Z",
+    "verifiedAt": "2026-08-14T08:00:00.000Z",
+    "approvedAt": "2026-08-14T08:00:00.000Z",
+    "confidence": "high",
+    "status": "approved",
+    "isFixture": false
+  },
+  {
+    "id": "fact-bitrix24-features.deal-management",
+    "productSlug": "bitrix24",
+    "domain": "features",
+    "field": "features.deal-management",
+    "value": {
+      "featureSlug": "deal-management",
+      "availability": "supported",
+      "planSlugs": [
+        "free",
+        "basic",
+        "standard",
+        "professional",
+        "enterprise"
+      ]
+    },
+    "sourceIds": [
+      "bitrix24-product"
+    ],
+    "evidence": [
+      {
+        "sourceId": "bitrix24-product",
+        "excerpt": "Bitrix24 documents deal management."
+      }
+    ],
+    "extractedAt": "2026-08-14T08:00:00.000Z",
+    "normalizedAt": "2026-08-14T08:00:00.000Z",
+    "verifiedAt": "2026-08-14T08:00:00.000Z",
+    "approvedAt": "2026-08-14T08:00:00.000Z",
+    "confidence": "high",
+    "status": "approved",
+    "isFixture": false
+  },
+  {
+    "id": "fact-bitrix24-features.email-sync",
+    "productSlug": "bitrix24",
+    "domain": "features",
+    "field": "features.email-sync",
+    "value": {
+      "featureSlug": "email-sync",
+      "availability": "supported",
+      "planSlugs": [
+        "free",
+        "basic",
+        "standard",
+        "professional",
+        "enterprise"
+      ]
+    },
+    "sourceIds": [
+      "bitrix24-product"
+    ],
+    "evidence": [
+      {
+        "sourceId": "bitrix24-product",
+        "excerpt": "Bitrix24 documents email sync."
+      }
+    ],
+    "extractedAt": "2026-08-14T08:00:00.000Z",
+    "normalizedAt": "2026-08-14T08:00:00.000Z",
+    "verifiedAt": "2026-08-14T08:00:00.000Z",
+    "approvedAt": "2026-08-14T08:00:00.000Z",
+    "confidence": "high",
+    "status": "approved",
+    "isFixture": false
+  },
+  {
+    "id": "fact-bitrix24-features.workflow-automation",
+    "productSlug": "bitrix24",
+    "domain": "features",
+    "field": "features.workflow-automation",
+    "value": {
+      "featureSlug": "workflow-automation",
+      "availability": "supported",
+      "planSlugs": [
+        "free",
+        "basic",
+        "standard",
+        "professional",
+        "enterprise"
+      ]
+    },
+    "sourceIds": [
+      "bitrix24-product"
+    ],
+    "evidence": [
+      {
+        "sourceId": "bitrix24-product",
+        "excerpt": "Bitrix24 documents workflow automation."
+      }
+    ],
+    "extractedAt": "2026-08-14T08:00:00.000Z",
+    "normalizedAt": "2026-08-14T08:00:00.000Z",
+    "verifiedAt": "2026-08-14T08:00:00.000Z",
+    "approvedAt": "2026-08-14T08:00:00.000Z",
+    "confidence": "high",
+    "status": "approved",
+    "isFixture": false
+  },
+  {
+    "id": "fact-bitrix24-features.sales-automation",
+    "productSlug": "bitrix24",
+    "domain": "features",
+    "field": "features.sales-automation",
+    "value": {
+      "featureSlug": "sales-automation",
+      "availability": "supported",
+      "planSlugs": [
+        "free",
+        "basic",
+        "standard",
+        "professional",
+        "enterprise"
+      ]
+    },
+    "sourceIds": [
+      "bitrix24-product"
+    ],
+    "evidence": [
+      {
+        "sourceId": "bitrix24-product",
+        "excerpt": "Bitrix24 documents sales automation."
+      }
+    ],
+    "extractedAt": "2026-08-14T08:00:00.000Z",
+    "normalizedAt": "2026-08-14T08:00:00.000Z",
+    "verifiedAt": "2026-08-14T08:00:00.000Z",
+    "approvedAt": "2026-08-14T08:00:00.000Z",
+    "confidence": "high",
+    "status": "approved",
+    "isFixture": false
+  },
+  {
+    "id": "fact-bitrix24-features.reporting",
+    "productSlug": "bitrix24",
+    "domain": "features",
+    "field": "features.reporting",
+    "value": {
+      "featureSlug": "reporting",
+      "availability": "supported",
+      "planSlugs": [
+        "free",
+        "basic",
+        "standard",
+        "professional",
+        "enterprise"
+      ]
+    },
+    "sourceIds": [
+      "bitrix24-product"
+    ],
+    "evidence": [
+      {
+        "sourceId": "bitrix24-product",
+        "excerpt": "Bitrix24 documents reporting."
+      }
+    ],
+    "extractedAt": "2026-08-14T08:00:00.000Z",
+    "normalizedAt": "2026-08-14T08:00:00.000Z",
+    "verifiedAt": "2026-08-14T08:00:00.000Z",
+    "approvedAt": "2026-08-14T08:00:00.000Z",
+    "confidence": "high",
+    "status": "approved",
+    "isFixture": false
+  },
+  {
+    "id": "fact-bitrix24-features.forecasting",
+    "productSlug": "bitrix24",
+    "domain": "features",
+    "field": "features.forecasting",
+    "value": {
+      "featureSlug": "forecasting",
+      "availability": "limited",
+      "planSlugs": [
+        "standard",
+        "professional",
+        "enterprise"
+      ]
+    },
+    "sourceIds": [
+      "bitrix24-product"
+    ],
+    "evidence": [
+      {
+        "sourceId": "bitrix24-product",
+        "excerpt": "Bitrix24 documents forecasting."
+      }
+    ],
+    "extractedAt": "2026-08-14T08:00:00.000Z",
+    "normalizedAt": "2026-08-14T08:00:00.000Z",
+    "verifiedAt": "2026-08-14T08:00:00.000Z",
+    "approvedAt": "2026-08-14T08:00:00.000Z",
+    "confidence": "high",
+    "status": "approved",
+    "isFixture": false
+  },
+  {
+    "id": "fact-bitrix24-features.custom-fields",
+    "productSlug": "bitrix24",
+    "domain": "features",
+    "field": "features.custom-fields",
+    "value": {
+      "featureSlug": "custom-fields",
+      "availability": "supported",
+      "planSlugs": [
+        "free",
+        "basic",
+        "standard",
+        "professional",
+        "enterprise"
+      ]
+    },
+    "sourceIds": [
+      "bitrix24-product"
+    ],
+    "evidence": [
+      {
+        "sourceId": "bitrix24-product",
+        "excerpt": "Bitrix24 documents custom fields."
+      }
+    ],
+    "extractedAt": "2026-08-14T08:00:00.000Z",
+    "normalizedAt": "2026-08-14T08:00:00.000Z",
+    "verifiedAt": "2026-08-14T08:00:00.000Z",
+    "approvedAt": "2026-08-14T08:00:00.000Z",
+    "confidence": "high",
+    "status": "approved",
+    "isFixture": false
+  },
+  {
+    "id": "fact-bitrix24-features.custom-pipelines",
+    "productSlug": "bitrix24",
+    "domain": "features",
+    "field": "features.custom-pipelines",
+    "value": {
+      "featureSlug": "custom-pipelines",
+      "availability": "supported",
+      "planSlugs": [
+        "free",
+        "basic",
+        "standard",
+        "professional",
+        "enterprise"
+      ]
+    },
+    "sourceIds": [
+      "bitrix24-product"
+    ],
+    "evidence": [
+      {
+        "sourceId": "bitrix24-product",
+        "excerpt": "Bitrix24 documents custom pipelines."
+      }
+    ],
+    "extractedAt": "2026-08-14T08:00:00.000Z",
+    "normalizedAt": "2026-08-14T08:00:00.000Z",
+    "verifiedAt": "2026-08-14T08:00:00.000Z",
+    "approvedAt": "2026-08-14T08:00:00.000Z",
+    "confidence": "high",
+    "status": "approved",
+    "isFixture": false
+  },
+  {
+    "id": "fact-bitrix24-features.mobile-app",
+    "productSlug": "bitrix24",
+    "domain": "features",
+    "field": "features.mobile-app",
+    "value": {
+      "featureSlug": "mobile-app",
+      "availability": "supported",
+      "planSlugs": [
+        "free",
+        "basic",
+        "standard",
+        "professional",
+        "enterprise"
+      ]
+    },
+    "sourceIds": [
+      "bitrix24-product"
+    ],
+    "evidence": [
+      {
+        "sourceId": "bitrix24-product",
+        "excerpt": "Bitrix24 documents mobile app."
+      }
+    ],
+    "extractedAt": "2026-08-14T08:00:00.000Z",
+    "normalizedAt": "2026-08-14T08:00:00.000Z",
+    "verifiedAt": "2026-08-14T08:00:00.000Z",
+    "approvedAt": "2026-08-14T08:00:00.000Z",
+    "confidence": "high",
+    "status": "approved",
+    "isFixture": false
+  },
+  {
+    "id": "fact-bitrix24-features.ai-assistance",
+    "productSlug": "bitrix24",
+    "domain": "features",
+    "field": "features.ai-assistance",
+    "value": {
+      "featureSlug": "ai-assistance",
+      "availability": "limited",
+      "planSlugs": [
+        "professional",
+        "enterprise"
+      ]
+    },
+    "sourceIds": [
+      "bitrix24-product"
+    ],
+    "evidence": [
+      {
+        "sourceId": "bitrix24-product",
+        "excerpt": "Bitrix24 documents ai assistance."
+      }
+    ],
+    "extractedAt": "2026-08-14T08:00:00.000Z",
+    "normalizedAt": "2026-08-14T08:00:00.000Z",
+    "verifiedAt": "2026-08-14T08:00:00.000Z",
+    "approvedAt": "2026-08-14T08:00:00.000Z",
+    "confidence": "high",
+    "status": "approved",
+    "isFixture": false
+  },
+  {
+    "id": "fact-bitrix24-features.integrations",
+    "productSlug": "bitrix24",
+    "domain": "features",
+    "field": "features.integrations",
+    "value": {
+      "featureSlug": "integrations",
+      "availability": "supported",
+      "planSlugs": [
+        "free",
+        "basic",
+        "standard",
+        "professional",
+        "enterprise"
+      ]
+    },
+    "sourceIds": [
+      "bitrix24-product"
+    ],
+    "evidence": [
+      {
+        "sourceId": "bitrix24-product",
+        "excerpt": "Bitrix24 documents integrations."
+      }
+    ],
+    "extractedAt": "2026-08-14T08:00:00.000Z",
+    "normalizedAt": "2026-08-14T08:00:00.000Z",
+    "verifiedAt": "2026-08-14T08:00:00.000Z",
+    "approvedAt": "2026-08-14T08:00:00.000Z",
+    "confidence": "high",
+    "status": "approved",
+    "isFixture": false
+  },
+  {
+    "id": "fact-bitrix24-positioning.summary",
+    "productSlug": "bitrix24",
+    "domain": "product-positioning",
+    "field": "positioning.summary",
+    "value": "Bitrix24 is an all-in-one CRM and collaboration suite with a free tier and organization-based cloud pricing.",
+    "sourceIds": [
+      "bitrix24-product"
+    ],
+    "evidence": [
+      {
+        "sourceId": "bitrix24-product",
+        "excerpt": "Bitrix24 is an all-in-one CRM and collaboration suite with a free tier and organization-based cloud pricing."
+      }
+    ],
+    "extractedAt": "2026-08-14T08:00:00.000Z",
+    "normalizedAt": "2026-08-14T08:00:00.000Z",
+    "verifiedAt": "2026-08-14T08:00:00.000Z",
+    "approvedAt": "2026-08-14T08:00:00.000Z",
+    "confidence": "high",
+    "status": "approved",
+    "isFixture": false
+  },
+  {
+    "id": "fact-bitrix24-ai.assistant",
+    "productSlug": "bitrix24",
+    "domain": "ai-capabilities",
+    "field": "ai.assistant",
+    "value": {
+      "capability": "assistant",
+      "availability": "limited",
+      "sourceIds": [
+        "bitrix24-product"
+      ]
+    },
+    "sourceIds": [
+      "bitrix24-product"
+    ],
+    "evidence": [
+      {
+        "sourceId": "bitrix24-product",
+        "excerpt": "Bitrix24 AI: assistant"
+      }
+    ],
+    "extractedAt": "2026-08-14T08:00:00.000Z",
+    "normalizedAt": "2026-08-14T08:00:00.000Z",
+    "verifiedAt": "2026-08-14T08:00:00.000Z",
+    "approvedAt": "2026-08-14T08:00:00.000Z",
+    "confidence": "high",
+    "status": "approved",
+    "isFixture": false
+  },
+  {
+    "id": "fact-bitrix24-ai.automation",
+    "productSlug": "bitrix24",
+    "domain": "ai-capabilities",
+    "field": "ai.automation",
+    "value": {
+      "capability": "automation",
+      "availability": "supported",
+      "sourceIds": [
+        "bitrix24-product"
+      ]
+    },
+    "sourceIds": [
+      "bitrix24-product"
+    ],
+    "evidence": [
+      {
+        "sourceId": "bitrix24-product",
+        "excerpt": "Bitrix24 AI: automation"
+      }
+    ],
+    "extractedAt": "2026-08-14T08:00:00.000Z",
+    "normalizedAt": "2026-08-14T08:00:00.000Z",
+    "verifiedAt": "2026-08-14T08:00:00.000Z",
+    "approvedAt": "2026-08-14T08:00:00.000Z",
+    "confidence": "high",
+    "status": "approved",
+    "isFixture": false
+  }
+]

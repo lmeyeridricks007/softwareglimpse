@@ -1,0 +1,864 @@
+{
+  "id": "wf-software-onboarding-content-amplemarket-1786647445669",
+  "workflowId": "software-onboarding-content",
+  "workflowVersion": "1.0.0",
+  "name": "Software Onboarding Content: amplemarket",
+  "targetType": "software",
+  "targetId": "amplemarket",
+  "status": "cancelled",
+  "steps": [
+    {
+      "id": "software-onboarding",
+      "definitionStepId": "software-onboarding",
+      "handler": "software-onboarding",
+      "label": "Software onboarding",
+      "status": "completed",
+      "required": true,
+      "failurePolicy": "block-workflow",
+      "attempt": 1,
+      "maxAttempts": 2,
+      "dependsOn": [],
+      "priority": "critical",
+      "config": {
+        "maxAutomaticRevisions": 1,
+        "expandFromContentPlan": false,
+        "expandKind": "none",
+        "stopAfterApproval": true,
+        "allowNormalizedFacts": false,
+        "optionalWhenBlocked": false,
+        "forceTransientFailOnce": false
+      },
+      "inputRefs": {},
+      "outputRefs": {
+        "softwareOnboardingRunId": "onboard-amplemarket-1786623697744"
+      },
+      "blockers": [],
+      "warnings": [],
+      "startedAt": "2026-08-13T18:57:26.009Z",
+      "completedAt": "2026-08-13T18:57:26.029Z",
+      "revisionAttempts": 0
+    },
+    {
+      "id": "content-plan",
+      "definitionStepId": "content-plan",
+      "handler": "content-plan",
+      "label": "Content plan",
+      "status": "completed",
+      "required": true,
+      "failurePolicy": "block-workflow",
+      "attempt": 1,
+      "maxAttempts": 2,
+      "dependsOn": [
+        "software-onboarding"
+      ],
+      "priority": "high",
+      "config": {
+        "maxAutomaticRevisions": 1,
+        "expandFromContentPlan": false,
+        "expandKind": "none",
+        "stopAfterApproval": true,
+        "allowNormalizedFacts": false,
+        "optionalWhenBlocked": false,
+        "forceTransientFailOnce": false
+      },
+      "inputRefs": {},
+      "outputRefs": {
+        "softwareOnboardingRunId": "onboard-amplemarket-1786623697744",
+        "comparisonTargets": "amplemarket-vs-apollo,amplemarket-vs-closely,amplemarket-vs-lusha",
+        "pageCandidateCount": "7"
+      },
+      "blockers": [],
+      "warnings": [],
+      "startedAt": "2026-08-13T18:57:26.031Z",
+      "completedAt": "2026-08-13T18:57:26.057Z",
+      "revisionAttempts": 0
+    },
+    {
+      "id": "software-review",
+      "definitionStepId": "software-review",
+      "handler": "agent-run",
+      "label": "Software Review",
+      "status": "completed",
+      "required": true,
+      "failurePolicy": "block-workflow",
+      "attempt": 1,
+      "maxAttempts": 2,
+      "dependsOn": [
+        "content-plan"
+      ],
+      "priority": "high",
+      "config": {
+        "agentId": "software-review-agent",
+        "targetSlug": "amplemarket",
+        "maxAutomaticRevisions": 1,
+        "expandFromContentPlan": false,
+        "expandKind": "none",
+        "stopAfterApproval": true,
+        "allowNormalizedFacts": false,
+        "optionalWhenBlocked": false,
+        "forceTransientFailOnce": false
+      },
+      "inputRefs": {},
+      "outputRefs": {
+        "draftId": "draft-deterministic-v1-software-review-agent-amplemarket-2026-08-13T18-57-26-081Z",
+        "qaStatus": "pass",
+        "agentId": "software-review-agent",
+        "target": "amplemarket"
+      },
+      "inputSnapshot": {
+        "researchFactIds": [
+          "fact-amplemarket-pricing.hasFreePlan",
+          "fact-amplemarket-pricing.hasFreeTrial",
+          "fact-amplemarket-pricing.startingPriceMonthly",
+          "fact-amplemarket-pricing.currency",
+          "fact-amplemarket-pricing.model",
+          "fact-amplemarket-pricing.plans.startup",
+          "fact-amplemarket-pricing.plans.growth",
+          "fact-amplemarket-pricing.plans.elite",
+          "fact-amplemarket-positioning.core",
+          "fact-amplemarket-features.prospecting",
+          "fact-amplemarket-features.email-sequences",
+          "fact-amplemarket-features.sales-automation",
+          "fact-amplemarket-features.ai-assistance",
+          "fact-amplemarket-features.reporting",
+          "fact-amplemarket-features.integrations",
+          "fact-amplemarket-features.pipeline-management",
+          "fact-amplemarket-ai.assistant",
+          "fact-amplemarket-ai.email-generation",
+          "fact-amplemarket-integrations.crm"
+        ],
+        "methodologySlug": "crm-editorial",
+        "methodologyVersion": "1.0.0",
+        "agentVersion": "1.0.0",
+        "contextBuiltAt": "2026-08-13T18:57:26.077Z"
+      },
+      "blockers": [],
+      "warnings": [],
+      "agentTaskId": "exec-software-review-agent-amplemarket-1786647446061",
+      "draftId": "draft-deterministic-v1-software-review-agent-amplemarket-2026-08-13T18-57-26-081Z",
+      "startedAt": "2026-08-13T18:57:26.059Z",
+      "completedAt": "2026-08-13T18:57:26.087Z",
+      "revisionAttempts": 0
+    },
+    {
+      "id": "pricing-page",
+      "definitionStepId": "pricing-page",
+      "handler": "agent-run",
+      "label": "Pricing Page",
+      "status": "completed-with-warning",
+      "required": false,
+      "failurePolicy": "continue-with-warning",
+      "attempt": 1,
+      "maxAttempts": 2,
+      "dependsOn": [
+        "content-plan"
+      ],
+      "priority": "normal",
+      "config": {
+        "agentId": "pricing-page-agent",
+        "targetSlug": "amplemarket",
+        "maxAutomaticRevisions": 1,
+        "expandFromContentPlan": false,
+        "expandKind": "none",
+        "stopAfterApproval": true,
+        "allowNormalizedFacts": false,
+        "optionalWhenBlocked": true,
+        "forceTransientFailOnce": false
+      },
+      "inputRefs": {},
+      "outputRefs": {
+        "draftId": "draft-deterministic-v1-pricing-page-agent-amplemarket-2026-08-13T18-57-26-139Z-rev-1786647446146",
+        "qaStatus": "fail"
+      },
+      "blockers": [],
+      "warnings": [
+        "QA still failing after revision: UNVERIFIED_NUMBER",
+        "Optional review-required demoted on resume — required path continues"
+      ],
+      "agentTaskId": "exec-pricing-page-agent-amplemarket-1786647446132",
+      "draftId": "draft-deterministic-v1-pricing-page-agent-amplemarket-2026-08-13T18-57-26-139Z-rev-1786647446146",
+      "startedAt": "2026-08-13T18:57:26.132Z",
+      "completedAt": "2026-08-13T18:57:26.149Z",
+      "revisionAttempts": 1
+    },
+    {
+      "id": "alternatives",
+      "definitionStepId": "alternatives",
+      "handler": "agent-run",
+      "label": "Alternatives",
+      "status": "completed",
+      "required": false,
+      "failurePolicy": "continue-with-warning",
+      "attempt": 1,
+      "maxAttempts": 2,
+      "dependsOn": [
+        "content-plan"
+      ],
+      "priority": "normal",
+      "config": {
+        "agentId": "alternatives-agent",
+        "targetSlug": "amplemarket",
+        "maxAutomaticRevisions": 1,
+        "expandFromContentPlan": false,
+        "expandKind": "none",
+        "stopAfterApproval": true,
+        "allowNormalizedFacts": false,
+        "optionalWhenBlocked": true,
+        "forceTransientFailOnce": false
+      },
+      "inputRefs": {},
+      "outputRefs": {
+        "draftId": "draft-deterministic-v1-alternatives-agent-amplemarket-2026-08-13T18-57-26-095Z",
+        "qaStatus": "pass",
+        "agentId": "alternatives-agent",
+        "target": "amplemarket"
+      },
+      "inputSnapshot": {
+        "researchFactIds": [
+          "fact-amplemarket-pricing.hasFreePlan",
+          "fact-amplemarket-pricing.hasFreeTrial",
+          "fact-amplemarket-pricing.startingPriceMonthly",
+          "fact-amplemarket-pricing.currency",
+          "fact-amplemarket-pricing.model",
+          "fact-amplemarket-pricing.plans.startup",
+          "fact-amplemarket-pricing.plans.growth",
+          "fact-amplemarket-pricing.plans.elite",
+          "fact-amplemarket-positioning.core",
+          "fact-amplemarket-features.prospecting",
+          "fact-amplemarket-features.email-sequences",
+          "fact-amplemarket-features.sales-automation",
+          "fact-amplemarket-features.ai-assistance",
+          "fact-amplemarket-features.reporting",
+          "fact-amplemarket-features.integrations",
+          "fact-amplemarket-features.pipeline-management",
+          "fact-amplemarket-ai.assistant",
+          "fact-amplemarket-ai.email-generation",
+          "fact-amplemarket-integrations.crm"
+        ],
+        "methodologySlug": "crm-editorial",
+        "methodologyVersion": "1.0.0",
+        "agentVersion": "1.0.0",
+        "contextBuiltAt": "2026-08-13T18:57:26.094Z"
+      },
+      "blockers": [],
+      "warnings": [],
+      "agentTaskId": "exec-alternatives-agent-amplemarket-1786647446090",
+      "draftId": "draft-deterministic-v1-alternatives-agent-amplemarket-2026-08-13T18-57-26-095Z",
+      "startedAt": "2026-08-13T18:57:26.089Z",
+      "completedAt": "2026-08-13T18:57:26.096Z",
+      "revisionAttempts": 0
+    },
+    {
+      "id": "comparison:amplemarket-vs-apollo",
+      "definitionStepId": "comparisons",
+      "handler": "agent-run",
+      "label": "Comparison amplemarket-vs-apollo",
+      "status": "completed",
+      "required": false,
+      "failurePolicy": "continue-with-warning",
+      "attempt": 1,
+      "maxAttempts": 2,
+      "dependsOn": [
+        "content-plan"
+      ],
+      "priority": "normal",
+      "config": {
+        "agentId": "comparison-agent",
+        "targetSlug": "amplemarket-vs-apollo",
+        "maxAutomaticRevisions": 1,
+        "expandFromContentPlan": true,
+        "expandKind": "comparisons",
+        "stopAfterApproval": true,
+        "allowNormalizedFacts": false,
+        "optionalWhenBlocked": true,
+        "forceTransientFailOnce": false
+      },
+      "expansionKey": "amplemarket-vs-apollo",
+      "inputRefs": {},
+      "outputRefs": {
+        "draftId": "draft-deterministic-v1-comparison-agent-amplemarket-vs-apollo-2026-08-13T18-57-26-105Z",
+        "qaStatus": "pass",
+        "agentId": "comparison-agent",
+        "target": "amplemarket-vs-apollo"
+      },
+      "inputSnapshot": {
+        "researchFactIds": [
+          "fact-amplemarket-pricing.hasFreePlan",
+          "fact-amplemarket-pricing.hasFreeTrial",
+          "fact-amplemarket-pricing.startingPriceMonthly",
+          "fact-amplemarket-pricing.currency",
+          "fact-amplemarket-pricing.model",
+          "fact-amplemarket-pricing.plans.startup",
+          "fact-amplemarket-pricing.plans.growth",
+          "fact-amplemarket-pricing.plans.elite",
+          "fact-amplemarket-positioning.core",
+          "fact-amplemarket-features.prospecting",
+          "fact-amplemarket-features.email-sequences",
+          "fact-amplemarket-features.sales-automation",
+          "fact-amplemarket-features.ai-assistance",
+          "fact-amplemarket-features.reporting",
+          "fact-amplemarket-features.integrations",
+          "fact-amplemarket-features.pipeline-management",
+          "fact-amplemarket-ai.assistant",
+          "fact-amplemarket-ai.email-generation",
+          "fact-amplemarket-integrations.crm",
+          "fact-apollo-pricing.hasFreePlan",
+          "fact-apollo-pricing.hasFreeTrial",
+          "fact-apollo-pricing.startingPriceMonthly",
+          "fact-apollo-pricing.currency",
+          "fact-apollo-pricing.model",
+          "fact-apollo-pricing.plans.free",
+          "fact-apollo-pricing.plans.basic",
+          "fact-apollo-pricing.plans.professional",
+          "fact-apollo-pricing.plans.enterprise",
+          "fact-apollo-features.prospecting",
+          "fact-apollo-features.data-enrichment",
+          "fact-apollo-features.email-sequences",
+          "fact-apollo-features.pipeline-management",
+          "fact-apollo-ai.assistant",
+          "fact-apollo-positioning.sales-intelligence"
+        ],
+        "methodologySlug": "crm-editorial",
+        "methodologyVersion": "1.0.0",
+        "agentVersion": "1.0.0",
+        "contextBuiltAt": "2026-08-13T18:57:26.104Z"
+      },
+      "blockers": [],
+      "warnings": [],
+      "agentTaskId": "exec-comparison-agent-amplemarket-vs-apollo-1786647446098",
+      "draftId": "draft-deterministic-v1-comparison-agent-amplemarket-vs-apollo-2026-08-13T18-57-26-105Z",
+      "startedAt": "2026-08-13T18:57:26.097Z",
+      "completedAt": "2026-08-13T18:57:26.107Z",
+      "revisionAttempts": 0
+    },
+    {
+      "id": "comparison:amplemarket-vs-closely",
+      "definitionStepId": "comparisons",
+      "handler": "agent-run",
+      "label": "Comparison amplemarket-vs-closely",
+      "status": "completed",
+      "required": false,
+      "failurePolicy": "continue-with-warning",
+      "attempt": 1,
+      "maxAttempts": 2,
+      "dependsOn": [
+        "content-plan"
+      ],
+      "priority": "normal",
+      "config": {
+        "agentId": "comparison-agent",
+        "targetSlug": "amplemarket-vs-closely",
+        "maxAutomaticRevisions": 1,
+        "expandFromContentPlan": true,
+        "expandKind": "comparisons",
+        "stopAfterApproval": true,
+        "allowNormalizedFacts": false,
+        "optionalWhenBlocked": true,
+        "forceTransientFailOnce": false
+      },
+      "expansionKey": "amplemarket-vs-closely",
+      "inputRefs": {},
+      "outputRefs": {
+        "draftId": "draft-deterministic-v1-comparison-agent-amplemarket-vs-closely-2026-08-13T18-57-26-118Z",
+        "qaStatus": "pass",
+        "agentId": "comparison-agent",
+        "target": "amplemarket-vs-closely"
+      },
+      "inputSnapshot": {
+        "researchFactIds": [
+          "fact-amplemarket-pricing.hasFreePlan",
+          "fact-amplemarket-pricing.hasFreeTrial",
+          "fact-amplemarket-pricing.startingPriceMonthly",
+          "fact-amplemarket-pricing.currency",
+          "fact-amplemarket-pricing.model",
+          "fact-amplemarket-pricing.plans.startup",
+          "fact-amplemarket-pricing.plans.growth",
+          "fact-amplemarket-pricing.plans.elite",
+          "fact-amplemarket-positioning.core",
+          "fact-amplemarket-features.prospecting",
+          "fact-amplemarket-features.email-sequences",
+          "fact-amplemarket-features.sales-automation",
+          "fact-amplemarket-features.ai-assistance",
+          "fact-amplemarket-features.reporting",
+          "fact-amplemarket-features.integrations",
+          "fact-amplemarket-features.pipeline-management",
+          "fact-amplemarket-ai.assistant",
+          "fact-amplemarket-ai.email-generation",
+          "fact-amplemarket-integrations.crm",
+          "fact-closely-pricing.hasFreePlan",
+          "fact-closely-pricing.hasFreeTrial",
+          "fact-closely-pricing.startingPriceMonthly",
+          "fact-closely-pricing.currency",
+          "fact-closely-pricing.model",
+          "fact-closely-pricing.plans.starter",
+          "fact-closely-pricing.plans.growth",
+          "fact-closely-pricing.plans.essential",
+          "fact-closely-pricing.plans.custom",
+          "fact-closely-positioning.core",
+          "fact-closely-features.prospecting",
+          "fact-closely-features.email-sequences",
+          "fact-closely-features.sales-automation",
+          "fact-closely-features.ai-assistance",
+          "fact-closely-features.integrations",
+          "fact-closely-features.pipeline-management",
+          "fact-closely-features.reporting",
+          "fact-closely-ai.assistant",
+          "fact-closely-ai.email-generation",
+          "fact-closely-integrations.crm"
+        ],
+        "methodologySlug": "crm-editorial",
+        "methodologyVersion": "1.0.0",
+        "agentVersion": "1.0.0",
+        "contextBuiltAt": "2026-08-13T18:57:26.116Z"
+      },
+      "blockers": [],
+      "warnings": [],
+      "agentTaskId": "exec-comparison-agent-amplemarket-vs-closely-1786647446109",
+      "draftId": "draft-deterministic-v1-comparison-agent-amplemarket-vs-closely-2026-08-13T18-57-26-118Z",
+      "startedAt": "2026-08-13T18:57:26.108Z",
+      "completedAt": "2026-08-13T18:57:26.120Z",
+      "revisionAttempts": 0
+    },
+    {
+      "id": "comparison:amplemarket-vs-lusha",
+      "definitionStepId": "comparisons",
+      "handler": "agent-run",
+      "label": "Comparison amplemarket-vs-lusha",
+      "status": "completed",
+      "required": false,
+      "failurePolicy": "continue-with-warning",
+      "attempt": 1,
+      "maxAttempts": 2,
+      "dependsOn": [
+        "content-plan"
+      ],
+      "priority": "normal",
+      "config": {
+        "agentId": "comparison-agent",
+        "targetSlug": "amplemarket-vs-lusha",
+        "maxAutomaticRevisions": 1,
+        "expandFromContentPlan": true,
+        "expandKind": "comparisons",
+        "stopAfterApproval": true,
+        "allowNormalizedFacts": false,
+        "optionalWhenBlocked": true,
+        "forceTransientFailOnce": false
+      },
+      "expansionKey": "amplemarket-vs-lusha",
+      "inputRefs": {},
+      "outputRefs": {
+        "draftId": "draft-deterministic-v1-comparison-agent-amplemarket-vs-lusha-2026-08-13T18-57-26-129Z",
+        "qaStatus": "pass",
+        "agentId": "comparison-agent",
+        "target": "amplemarket-vs-lusha"
+      },
+      "inputSnapshot": {
+        "researchFactIds": [
+          "fact-amplemarket-pricing.hasFreePlan",
+          "fact-amplemarket-pricing.hasFreeTrial",
+          "fact-amplemarket-pricing.startingPriceMonthly",
+          "fact-amplemarket-pricing.currency",
+          "fact-amplemarket-pricing.model",
+          "fact-amplemarket-pricing.plans.startup",
+          "fact-amplemarket-pricing.plans.growth",
+          "fact-amplemarket-pricing.plans.elite",
+          "fact-amplemarket-positioning.core",
+          "fact-amplemarket-features.prospecting",
+          "fact-amplemarket-features.email-sequences",
+          "fact-amplemarket-features.sales-automation",
+          "fact-amplemarket-features.ai-assistance",
+          "fact-amplemarket-features.reporting",
+          "fact-amplemarket-features.integrations",
+          "fact-amplemarket-features.pipeline-management",
+          "fact-amplemarket-ai.assistant",
+          "fact-amplemarket-ai.email-generation",
+          "fact-amplemarket-integrations.crm",
+          "fact-lusha-pricing.hasFreePlan",
+          "fact-lusha-pricing.hasFreeTrial",
+          "fact-lusha-pricing.currency",
+          "fact-lusha-pricing.model",
+          "fact-lusha-pricing.plans.free",
+          "fact-lusha-pricing.plans.starter",
+          "fact-lusha-pricing.plans.pro",
+          "fact-lusha-pricing.plans.premium",
+          "fact-lusha-pricing.plans.scale",
+          "fact-lusha-positioning.core",
+          "fact-lusha-features.prospecting",
+          "fact-lusha-features.data-enrichment",
+          "fact-lusha-features.email-sequences",
+          "fact-lusha-features.ai-assistance",
+          "fact-lusha-features.integrations",
+          "fact-lusha-features.pipeline-management",
+          "fact-lusha-ai.assistant",
+          "fact-lusha-ai.email-generation",
+          "fact-lusha-integrations.crm"
+        ],
+        "methodologySlug": "crm-editorial",
+        "methodologyVersion": "1.0.0",
+        "agentVersion": "1.0.0",
+        "contextBuiltAt": "2026-08-13T18:57:26.128Z"
+      },
+      "blockers": [],
+      "warnings": [],
+      "agentTaskId": "exec-comparison-agent-amplemarket-vs-lusha-1786647446122",
+      "draftId": "draft-deterministic-v1-comparison-agent-amplemarket-vs-lusha-2026-08-13T18-57-26-129Z",
+      "startedAt": "2026-08-13T18:57:26.121Z",
+      "completedAt": "2026-08-13T18:57:26.131Z",
+      "revisionAttempts": 0
+    },
+    {
+      "id": "internal-links",
+      "definitionStepId": "internal-links",
+      "handler": "internal-link",
+      "label": "Internal Link Plan",
+      "status": "completed",
+      "required": false,
+      "failurePolicy": "continue-with-warning",
+      "attempt": 1,
+      "maxAttempts": 2,
+      "dependsOn": [
+        "software-review"
+      ],
+      "priority": "low",
+      "config": {
+        "agentId": "internal-link-agent",
+        "maxAutomaticRevisions": 1,
+        "expandFromContentPlan": false,
+        "expandKind": "none",
+        "stopAfterApproval": true,
+        "allowNormalizedFacts": false,
+        "optionalWhenBlocked": false,
+        "forceTransientFailOnce": false
+      },
+      "inputRefs": {},
+      "outputRefs": {
+        "draftId": "draft-deterministic-v1-internal-link-agent-amplemarket-2026-08-18T08-49-51-398Z",
+        "qaStatus": "pass",
+        "agentId": "internal-link-agent",
+        "target": "amplemarket"
+      },
+      "inputSnapshot": {
+        "researchFactIds": [
+          "fact-amplemarket-pricing.hasFreePlan",
+          "fact-amplemarket-pricing.hasFreeTrial",
+          "fact-amplemarket-pricing.startingPriceMonthly",
+          "fact-amplemarket-pricing.currency",
+          "fact-amplemarket-pricing.model",
+          "fact-amplemarket-pricing.plans.startup",
+          "fact-amplemarket-pricing.plans.growth",
+          "fact-amplemarket-pricing.plans.elite",
+          "fact-amplemarket-positioning.core",
+          "fact-amplemarket-features.prospecting",
+          "fact-amplemarket-features.email-sequences",
+          "fact-amplemarket-features.sales-automation",
+          "fact-amplemarket-features.ai-assistance",
+          "fact-amplemarket-features.reporting",
+          "fact-amplemarket-features.integrations",
+          "fact-amplemarket-features.pipeline-management",
+          "fact-amplemarket-ai.assistant",
+          "fact-amplemarket-ai.email-generation",
+          "fact-amplemarket-integrations.crm"
+        ],
+        "methodologySlug": "crm-editorial",
+        "methodologyVersion": "1.0.0",
+        "agentVersion": "1.0.0",
+        "contextBuiltAt": "2026-08-18T08:49:51.392Z"
+      },
+      "blockers": [],
+      "warnings": [],
+      "agentTaskId": "exec-internal-link-agent-amplemarket-1787042991366",
+      "draftId": "draft-deterministic-v1-internal-link-agent-amplemarket-2026-08-18T08-49-51-398Z",
+      "startedAt": "2026-08-18T08:49:51.365Z",
+      "completedAt": "2026-08-18T08:49:51.402Z",
+      "revisionAttempts": 0
+    },
+    {
+      "id": "finder-readiness",
+      "definitionStepId": "finder-readiness",
+      "handler": "update-recommendation-readiness",
+      "label": "Finder readiness",
+      "status": "completed",
+      "required": false,
+      "failurePolicy": "continue",
+      "attempt": 1,
+      "maxAttempts": 2,
+      "dependsOn": [
+        "content-plan"
+      ],
+      "priority": "low",
+      "config": {
+        "maxAutomaticRevisions": 1,
+        "expandFromContentPlan": false,
+        "expandKind": "none",
+        "stopAfterApproval": true,
+        "allowNormalizedFacts": false,
+        "optionalWhenBlocked": false,
+        "forceTransientFailOnce": false
+      },
+      "inputRefs": {},
+      "outputRefs": {
+        "finderReadiness": "checked"
+      },
+      "blockers": [],
+      "warnings": [],
+      "startedAt": "2026-08-16T06:13:33.922Z",
+      "completedAt": "2026-08-16T06:13:33.923Z",
+      "revisionAttempts": 0
+    },
+    {
+      "id": "editorial-approval",
+      "definitionStepId": "editorial-approval",
+      "handler": "approval-check",
+      "label": "Editorial approval",
+      "status": "cancelled",
+      "required": true,
+      "failurePolicy": "manual-review",
+      "attempt": 1,
+      "maxAttempts": 2,
+      "dependsOn": [
+        "software-review"
+      ],
+      "priority": "critical",
+      "config": {
+        "approvalType": "editorial",
+        "maxAutomaticRevisions": 1,
+        "expandFromContentPlan": false,
+        "expandKind": "none",
+        "stopAfterApproval": true,
+        "allowNormalizedFacts": false,
+        "optionalWhenBlocked": false,
+        "forceTransientFailOnce": false
+      },
+      "inputRefs": {},
+      "outputRefs": {
+        "approvalId": "appr-wf-software-onboarding-content-amplemarket-1786647445669-software-review",
+        "draftId": "draft-deterministic-v1-software-review-agent-amplemarket-2026-08-13T18-57-26-081Z"
+      },
+      "blockers": [],
+      "warnings": [],
+      "approvalId": "appr-wf-software-onboarding-content-amplemarket-1786647445669-software-review",
+      "startedAt": "2026-08-18T08:49:51.406Z",
+      "completedAt": "2026-08-18T08:49:51.479Z",
+      "revisionAttempts": 0
+    },
+    {
+      "id": "pre-publish-validation",
+      "definitionStepId": "pre-publish-validation",
+      "handler": "pre-publish-validation",
+      "label": "Pre-publish validation",
+      "status": "cancelled",
+      "required": true,
+      "failurePolicy": "block-workflow",
+      "attempt": 0,
+      "maxAttempts": 2,
+      "dependsOn": [
+        "editorial-approval"
+      ],
+      "priority": "critical",
+      "config": {
+        "maxAutomaticRevisions": 1,
+        "expandFromContentPlan": false,
+        "expandKind": "none",
+        "stopAfterApproval": true,
+        "allowNormalizedFacts": false,
+        "optionalWhenBlocked": false,
+        "forceTransientFailOnce": false
+      },
+      "inputRefs": {},
+      "outputRefs": {},
+      "blockers": [],
+      "warnings": [],
+      "revisionAttempts": 0
+    }
+  ],
+  "history": [
+    {
+      "at": "2026-08-13T18:57:26.005Z",
+      "event": "workflow_created",
+      "message": "Created software-onboarding-content:v1.0.0"
+    },
+    {
+      "at": "2026-08-13T18:57:26.007Z",
+      "event": "workflow_started",
+      "message": "Workflow execution started"
+    },
+    {
+      "at": "2026-08-13T18:57:26.008Z",
+      "event": "workflow_step_started",
+      "stepId": "software-onboarding",
+      "message": "Started Software onboarding"
+    },
+    {
+      "at": "2026-08-13T18:57:26.029Z",
+      "event": "workflow_step_completed",
+      "stepId": "software-onboarding",
+      "message": "Reused onboarding run onboard-amplemarket-1786623697744 (review-required)"
+    },
+    {
+      "at": "2026-08-13T18:57:26.031Z",
+      "event": "workflow_step_started",
+      "stepId": "content-plan",
+      "message": "Started Content plan"
+    },
+    {
+      "at": "2026-08-13T18:57:26.057Z",
+      "event": "workflow_step_completed",
+      "stepId": "content-plan",
+      "message": "Content plan from onboarding onboard-amplemarket-1786623697744 (7 candidates)"
+    },
+    {
+      "at": "2026-08-13T18:57:26.059Z",
+      "event": "workflow_step_started",
+      "stepId": "software-review",
+      "message": "Started Software Review"
+    },
+    {
+      "at": "2026-08-13T18:57:26.087Z",
+      "event": "workflow_step_completed",
+      "stepId": "software-review",
+      "message": "Agent software-review-agent → draft draft-deterministic-v1-software-review-agent-amplemarket-2026-08-13T18-57-26-081Z (qa=pass)"
+    },
+    {
+      "at": "2026-08-13T18:57:26.089Z",
+      "event": "workflow_step_started",
+      "stepId": "alternatives",
+      "message": "Started Alternatives"
+    },
+    {
+      "at": "2026-08-13T18:57:26.096Z",
+      "event": "workflow_step_completed",
+      "stepId": "alternatives",
+      "message": "Agent alternatives-agent → draft draft-deterministic-v1-alternatives-agent-amplemarket-2026-08-13T18-57-26-095Z (qa=pass)"
+    },
+    {
+      "at": "2026-08-13T18:57:26.097Z",
+      "event": "workflow_step_started",
+      "stepId": "comparison:amplemarket-vs-apollo",
+      "message": "Started Comparison amplemarket-vs-apollo"
+    },
+    {
+      "at": "2026-08-13T18:57:26.107Z",
+      "event": "workflow_step_completed",
+      "stepId": "comparison:amplemarket-vs-apollo",
+      "message": "Agent comparison-agent → draft draft-deterministic-v1-comparison-agent-amplemarket-vs-apollo-2026-08-13T18-57-26-105Z (qa=pass)"
+    },
+    {
+      "at": "2026-08-13T18:57:26.108Z",
+      "event": "workflow_step_started",
+      "stepId": "comparison:amplemarket-vs-closely",
+      "message": "Started Comparison amplemarket-vs-closely"
+    },
+    {
+      "at": "2026-08-13T18:57:26.120Z",
+      "event": "workflow_step_completed",
+      "stepId": "comparison:amplemarket-vs-closely",
+      "message": "Agent comparison-agent → draft draft-deterministic-v1-comparison-agent-amplemarket-vs-closely-2026-08-13T18-57-26-118Z (qa=pass)"
+    },
+    {
+      "at": "2026-08-13T18:57:26.121Z",
+      "event": "workflow_step_started",
+      "stepId": "comparison:amplemarket-vs-lusha",
+      "message": "Started Comparison amplemarket-vs-lusha"
+    },
+    {
+      "at": "2026-08-13T18:57:26.131Z",
+      "event": "workflow_step_completed",
+      "stepId": "comparison:amplemarket-vs-lusha",
+      "message": "Agent comparison-agent → draft draft-deterministic-v1-comparison-agent-amplemarket-vs-lusha-2026-08-13T18-57-26-129Z (qa=pass)"
+    },
+    {
+      "at": "2026-08-13T18:57:26.132Z",
+      "event": "workflow_step_started",
+      "stepId": "pricing-page",
+      "message": "Started Pricing Page"
+    },
+    {
+      "at": "2026-08-13T18:57:26.149Z",
+      "event": "workflow_step_completed",
+      "stepId": "pricing-page",
+      "message": "QA fail after one automatic revision → review-required"
+    },
+    {
+      "at": "2026-08-16T06:13:33.919Z",
+      "event": "workflow_resumed",
+      "message": "Workflow resumed"
+    },
+    {
+      "at": "2026-08-16T06:13:33.921Z",
+      "event": "workflow_started",
+      "message": "Workflow execution started"
+    },
+    {
+      "at": "2026-08-16T06:13:33.922Z",
+      "event": "workflow_step_started",
+      "stepId": "finder-readiness",
+      "message": "Started Finder readiness"
+    },
+    {
+      "at": "2026-08-16T06:13:33.923Z",
+      "event": "workflow_step_completed",
+      "stepId": "finder-readiness",
+      "message": "Finder readiness noted for amplemarket"
+    },
+    {
+      "at": "2026-08-18T08:49:51.359Z",
+      "event": "workflow_resumed",
+      "message": "Workflow resumed"
+    },
+    {
+      "at": "2026-08-18T08:49:51.363Z",
+      "event": "workflow_started",
+      "message": "Workflow execution started"
+    },
+    {
+      "at": "2026-08-18T08:49:51.364Z",
+      "event": "workflow_step_started",
+      "stepId": "internal-links",
+      "message": "Started Internal Link Plan"
+    },
+    {
+      "at": "2026-08-18T08:49:51.402Z",
+      "event": "workflow_step_completed",
+      "stepId": "internal-links",
+      "message": "Agent internal-link-agent → draft draft-deterministic-v1-internal-link-agent-amplemarket-2026-08-18T08-49-51-398Z (qa=pass)"
+    },
+    {
+      "at": "2026-08-18T08:49:51.405Z",
+      "event": "workflow_step_started",
+      "stepId": "editorial-approval",
+      "message": "Started Editorial approval"
+    },
+    {
+      "at": "2026-08-18T08:49:51.479Z",
+      "event": "workflow_step_completed",
+      "stepId": "editorial-approval",
+      "message": "WAITING FOR EDITORIAL APPROVAL (appr-wf-software-onboarding-content-amplemarket-1786647445669-software-review)"
+    },
+    {
+      "at": "2026-08-18T08:49:51.486Z",
+      "event": "workflow_blocked",
+      "message": "WAITING FOR EDITORIAL APPROVAL"
+    },
+    {
+      "at": "2026-08-18T13:34:16.192Z",
+      "event": "workflow_cancelled",
+      "message": "Catalogue software page already published; agent drafts remain unpublished"
+    }
+  ],
+  "options": {
+    "generateReview": true,
+    "generatePricing": true,
+    "generateAlternatives": true,
+    "generateComparisons": true,
+    "runInternalLinks": true,
+    "stopAfterApproval": true,
+    "allowNormalizedFacts": false,
+    "dryRun": false,
+    "maxComparisons": 3,
+    "skipOnboarding": false
+  },
+  "cancelReason": "Catalogue software page already published; agent drafts remain unpublished",
+  "warnings": [],
+  "createdAt": "2026-08-13T18:57:26.005Z",
+  "updatedAt": "2026-08-18T13:34:16.192Z"
+}

@@ -1,0 +1,982 @@
+[
+  {
+    "id": "fact-freshsales-pricing.hasFreePlan",
+    "productSlug": "freshsales",
+    "domain": "free-plan",
+    "field": "pricing.hasFreePlan",
+    "value": false,
+    "sourceIds": [
+      "freshsales-pricing-official"
+    ],
+    "evidence": [
+      {
+        "sourceId": "freshsales-pricing-official",
+        "excerpt": "hasFreePlan=False per official pricing research."
+      }
+    ],
+    "extractedAt": "2026-08-13T18:00:00.000Z",
+    "normalizedAt": "2026-08-13T18:00:00.000Z",
+    "verifiedAt": "2026-08-13T18:00:00.000Z",
+    "approvedAt": "2026-08-13T18:00:00.000Z",
+    "confidence": "high",
+    "status": "approved",
+    "isFixture": false
+  },
+  {
+    "id": "fact-freshsales-pricing.hasFreeTrial",
+    "productSlug": "freshsales",
+    "domain": "free-trial",
+    "field": "pricing.hasFreeTrial",
+    "value": true,
+    "sourceIds": [
+      "freshsales-pricing-official"
+    ],
+    "evidence": [
+      {
+        "sourceId": "freshsales-pricing-official",
+        "excerpt": "hasFreeTrial=True per official pricing page."
+      }
+    ],
+    "extractedAt": "2026-08-13T18:00:00.000Z",
+    "normalizedAt": "2026-08-13T18:00:00.000Z",
+    "verifiedAt": "2026-08-13T18:00:00.000Z",
+    "approvedAt": "2026-08-13T18:00:00.000Z",
+    "confidence": "high",
+    "status": "approved",
+    "isFixture": false
+  },
+  {
+    "id": "fact-freshsales-pricing.startingPriceMonthly",
+    "productSlug": "freshsales",
+    "domain": "pricing",
+    "field": "pricing.startingPriceMonthly",
+    "value": 9,
+    "sourceIds": [
+      "freshsales-pricing-official"
+    ],
+    "evidence": [
+      {
+        "sourceId": "freshsales-pricing-official",
+        "excerpt": "Starting list price $9/user/mo (annual where applicable)."
+      }
+    ],
+    "extractedAt": "2026-08-13T18:00:00.000Z",
+    "normalizedAt": "2026-08-13T18:00:00.000Z",
+    "verifiedAt": "2026-08-13T18:00:00.000Z",
+    "approvedAt": "2026-08-13T18:00:00.000Z",
+    "confidence": "high",
+    "status": "approved",
+    "isFixture": false
+  },
+  {
+    "id": "fact-freshsales-pricing.currency",
+    "productSlug": "freshsales",
+    "domain": "pricing",
+    "field": "pricing.currency",
+    "value": "USD",
+    "sourceIds": [
+      "freshsales-pricing-official"
+    ],
+    "evidence": [
+      {
+        "sourceId": "freshsales-pricing-official",
+        "excerpt": "USD list pricing used for enrichment."
+      }
+    ],
+    "extractedAt": "2026-08-13T18:00:00.000Z",
+    "normalizedAt": "2026-08-13T18:00:00.000Z",
+    "verifiedAt": "2026-08-13T18:00:00.000Z",
+    "approvedAt": "2026-08-13T18:00:00.000Z",
+    "confidence": "high",
+    "status": "approved",
+    "isFixture": false
+  },
+  {
+    "id": "fact-freshsales-pricing.model",
+    "productSlug": "freshsales",
+    "domain": "pricing",
+    "field": "pricing.model",
+    "value": "subscription",
+    "sourceIds": [
+      "freshsales-pricing-official"
+    ],
+    "evidence": [
+      {
+        "sourceId": "freshsales-pricing-official",
+        "excerpt": "Subscription pricing model."
+      }
+    ],
+    "extractedAt": "2026-08-13T18:00:00.000Z",
+    "normalizedAt": "2026-08-13T18:00:00.000Z",
+    "verifiedAt": "2026-08-13T18:00:00.000Z",
+    "approvedAt": "2026-08-13T18:00:00.000Z",
+    "confidence": "high",
+    "status": "approved",
+    "isFixture": false
+  },
+  {
+    "id": "fact-freshsales-pricing.plans.growth",
+    "productSlug": "freshsales",
+    "domain": "plans",
+    "field": "pricing.plans.growth",
+    "value": {
+      "id": "plan-growth",
+      "slug": "growth",
+      "name": "Growth",
+      "isFree": false,
+      "contactSales": false,
+      "hasFreeTrial": true,
+      "highlighted": true,
+      "rules": [
+        {
+          "kind": "per-seat",
+          "amountPerSeat": 9,
+          "currency": "USD",
+          "interval": "year",
+          "amountPeriod": "month"
+        },
+        {
+          "kind": "per-seat",
+          "amountPerSeat": 11,
+          "currency": "USD",
+          "interval": "month",
+          "amountPeriod": "month"
+        }
+      ],
+      "trialDays": 21
+    },
+    "sourceIds": [
+      "freshsales-pricing-official"
+    ],
+    "evidence": [
+      {
+        "sourceId": "freshsales-pricing-official",
+        "excerpt": "Plan Growth verified on official pricing page."
+      }
+    ],
+    "extractedAt": "2026-08-13T18:00:00.000Z",
+    "normalizedAt": "2026-08-13T18:00:00.000Z",
+    "verifiedAt": "2026-08-13T18:00:00.000Z",
+    "approvedAt": "2026-08-13T18:00:00.000Z",
+    "confidence": "high",
+    "status": "approved",
+    "isFixture": false
+  },
+  {
+    "id": "fact-freshsales-pricing.plans.pro",
+    "productSlug": "freshsales",
+    "domain": "plans",
+    "field": "pricing.plans.pro",
+    "value": {
+      "id": "plan-pro",
+      "slug": "pro",
+      "name": "Pro",
+      "isFree": false,
+      "contactSales": false,
+      "hasFreeTrial": true,
+      "highlighted": false,
+      "rules": [
+        {
+          "kind": "per-seat",
+          "amountPerSeat": 39,
+          "currency": "USD",
+          "interval": "year",
+          "amountPeriod": "month"
+        },
+        {
+          "kind": "per-seat",
+          "amountPerSeat": 47,
+          "currency": "USD",
+          "interval": "month",
+          "amountPeriod": "month"
+        }
+      ],
+      "trialDays": 21
+    },
+    "sourceIds": [
+      "freshsales-pricing-official"
+    ],
+    "evidence": [
+      {
+        "sourceId": "freshsales-pricing-official",
+        "excerpt": "Plan Pro verified on official pricing page."
+      }
+    ],
+    "extractedAt": "2026-08-13T18:00:00.000Z",
+    "normalizedAt": "2026-08-13T18:00:00.000Z",
+    "verifiedAt": "2026-08-13T18:00:00.000Z",
+    "approvedAt": "2026-08-13T18:00:00.000Z",
+    "confidence": "high",
+    "status": "approved",
+    "isFixture": false
+  },
+  {
+    "id": "fact-freshsales-pricing.plans.enterprise",
+    "productSlug": "freshsales",
+    "domain": "plans",
+    "field": "pricing.plans.enterprise",
+    "value": {
+      "id": "plan-enterprise",
+      "slug": "enterprise",
+      "name": "Enterprise",
+      "isFree": false,
+      "contactSales": false,
+      "hasFreeTrial": true,
+      "highlighted": false,
+      "rules": [
+        {
+          "kind": "per-seat",
+          "amountPerSeat": 59,
+          "currency": "USD",
+          "interval": "year",
+          "amountPeriod": "month"
+        },
+        {
+          "kind": "per-seat",
+          "amountPerSeat": 71,
+          "currency": "USD",
+          "interval": "month",
+          "amountPeriod": "month"
+        }
+      ],
+      "trialDays": 21
+    },
+    "sourceIds": [
+      "freshsales-pricing-official"
+    ],
+    "evidence": [
+      {
+        "sourceId": "freshsales-pricing-official",
+        "excerpt": "Plan Enterprise verified on official pricing page."
+      }
+    ],
+    "extractedAt": "2026-08-13T18:00:00.000Z",
+    "normalizedAt": "2026-08-13T18:00:00.000Z",
+    "verifiedAt": "2026-08-13T18:00:00.000Z",
+    "approvedAt": "2026-08-13T18:00:00.000Z",
+    "confidence": "high",
+    "status": "approved",
+    "isFixture": false
+  },
+  {
+    "id": "fact-freshsales-features.contact-management",
+    "productSlug": "freshsales",
+    "domain": "features",
+    "field": "features.contact-management",
+    "value": {
+      "featureSlug": "contact-management",
+      "availability": "supported",
+      "planSlugs": [
+        "growth",
+        "pro",
+        "enterprise"
+      ]
+    },
+    "sourceIds": [
+      "freshsales-product-official",
+      "freshsales-pricing-official"
+    ],
+    "evidence": [
+      {
+        "sourceId": "freshsales-product-official",
+        "excerpt": "contact-management marked supported from official sources."
+      }
+    ],
+    "extractedAt": "2026-08-13T18:00:00.000Z",
+    "normalizedAt": "2026-08-13T18:00:00.000Z",
+    "verifiedAt": "2026-08-13T18:00:00.000Z",
+    "approvedAt": "2026-08-13T18:00:00.000Z",
+    "confidence": "high",
+    "status": "approved",
+    "isFixture": false
+  },
+  {
+    "id": "fact-freshsales-features.lead-management",
+    "productSlug": "freshsales",
+    "domain": "features",
+    "field": "features.lead-management",
+    "value": {
+      "featureSlug": "lead-management",
+      "availability": "supported",
+      "planSlugs": [
+        "growth",
+        "pro",
+        "enterprise"
+      ]
+    },
+    "sourceIds": [
+      "freshsales-product-official"
+    ],
+    "evidence": [
+      {
+        "sourceId": "freshsales-product-official",
+        "excerpt": "lead-management marked supported from official sources."
+      }
+    ],
+    "extractedAt": "2026-08-13T18:00:00.000Z",
+    "normalizedAt": "2026-08-13T18:00:00.000Z",
+    "verifiedAt": "2026-08-13T18:00:00.000Z",
+    "approvedAt": "2026-08-13T18:00:00.000Z",
+    "confidence": "high",
+    "status": "approved",
+    "isFixture": false
+  },
+  {
+    "id": "fact-freshsales-features.pipeline-management",
+    "productSlug": "freshsales",
+    "domain": "features",
+    "field": "features.pipeline-management",
+    "value": {
+      "featureSlug": "pipeline-management",
+      "availability": "supported",
+      "planSlugs": [
+        "growth",
+        "pro",
+        "enterprise"
+      ]
+    },
+    "sourceIds": [
+      "freshsales-pricing-official"
+    ],
+    "evidence": [
+      {
+        "sourceId": "freshsales-pricing-official",
+        "excerpt": "pipeline-management marked supported from official sources."
+      }
+    ],
+    "extractedAt": "2026-08-13T18:00:00.000Z",
+    "normalizedAt": "2026-08-13T18:00:00.000Z",
+    "verifiedAt": "2026-08-13T18:00:00.000Z",
+    "approvedAt": "2026-08-13T18:00:00.000Z",
+    "confidence": "high",
+    "status": "approved",
+    "isFixture": false
+  },
+  {
+    "id": "fact-freshsales-features.deal-management",
+    "productSlug": "freshsales",
+    "domain": "features",
+    "field": "features.deal-management",
+    "value": {
+      "featureSlug": "deal-management",
+      "availability": "supported",
+      "planSlugs": [
+        "growth",
+        "pro",
+        "enterprise"
+      ]
+    },
+    "sourceIds": [
+      "freshsales-product-official",
+      "freshsales-pricing-official"
+    ],
+    "evidence": [
+      {
+        "sourceId": "freshsales-product-official",
+        "excerpt": "deal-management marked supported from official sources."
+      }
+    ],
+    "extractedAt": "2026-08-13T18:00:00.000Z",
+    "normalizedAt": "2026-08-13T18:00:00.000Z",
+    "verifiedAt": "2026-08-13T18:00:00.000Z",
+    "approvedAt": "2026-08-13T18:00:00.000Z",
+    "confidence": "high",
+    "status": "approved",
+    "isFixture": false
+  },
+  {
+    "id": "fact-freshsales-features.custom-fields",
+    "productSlug": "freshsales",
+    "domain": "features",
+    "field": "features.custom-fields",
+    "value": {
+      "featureSlug": "custom-fields",
+      "availability": "supported",
+      "planSlugs": [
+        "growth",
+        "pro",
+        "enterprise"
+      ]
+    },
+    "sourceIds": [
+      "freshsales-pricing-official"
+    ],
+    "evidence": [
+      {
+        "sourceId": "freshsales-pricing-official",
+        "excerpt": "custom-fields marked supported from official sources."
+      }
+    ],
+    "extractedAt": "2026-08-13T18:00:00.000Z",
+    "normalizedAt": "2026-08-13T18:00:00.000Z",
+    "verifiedAt": "2026-08-13T18:00:00.000Z",
+    "approvedAt": "2026-08-13T18:00:00.000Z",
+    "confidence": "high",
+    "status": "approved",
+    "isFixture": false
+  },
+  {
+    "id": "fact-freshsales-features.custom-pipelines",
+    "productSlug": "freshsales",
+    "domain": "features",
+    "field": "features.custom-pipelines",
+    "value": {
+      "featureSlug": "custom-pipelines",
+      "availability": "supported",
+      "planSlugs": [
+        "growth",
+        "pro",
+        "enterprise"
+      ]
+    },
+    "sourceIds": [
+      "freshsales-pricing-official"
+    ],
+    "evidence": [
+      {
+        "sourceId": "freshsales-pricing-official",
+        "excerpt": "custom-pipelines marked supported from official sources."
+      }
+    ],
+    "extractedAt": "2026-08-13T18:00:00.000Z",
+    "normalizedAt": "2026-08-13T18:00:00.000Z",
+    "verifiedAt": "2026-08-13T18:00:00.000Z",
+    "approvedAt": "2026-08-13T18:00:00.000Z",
+    "confidence": "high",
+    "status": "approved",
+    "isFixture": false
+  },
+  {
+    "id": "fact-freshsales-features.mobile-app",
+    "productSlug": "freshsales",
+    "domain": "features",
+    "field": "features.mobile-app",
+    "value": {
+      "featureSlug": "mobile-app",
+      "availability": "supported",
+      "planSlugs": [
+        "growth",
+        "pro",
+        "enterprise"
+      ]
+    },
+    "sourceIds": [
+      "freshsales-product-official"
+    ],
+    "evidence": [
+      {
+        "sourceId": "freshsales-product-official",
+        "excerpt": "mobile-app marked supported from official sources."
+      }
+    ],
+    "extractedAt": "2026-08-13T18:00:00.000Z",
+    "normalizedAt": "2026-08-13T18:00:00.000Z",
+    "verifiedAt": "2026-08-13T18:00:00.000Z",
+    "approvedAt": "2026-08-13T18:00:00.000Z",
+    "confidence": "high",
+    "status": "approved",
+    "isFixture": false
+  },
+  {
+    "id": "fact-freshsales-features.email-sync",
+    "productSlug": "freshsales",
+    "domain": "features",
+    "field": "features.email-sync",
+    "value": {
+      "featureSlug": "email-sync",
+      "availability": "supported",
+      "planSlugs": [
+        "growth",
+        "pro",
+        "enterprise"
+      ]
+    },
+    "sourceIds": [
+      "freshsales-pricing-official"
+    ],
+    "evidence": [
+      {
+        "sourceId": "freshsales-pricing-official",
+        "excerpt": "email-sync marked supported from official sources."
+      }
+    ],
+    "extractedAt": "2026-08-13T18:00:00.000Z",
+    "normalizedAt": "2026-08-13T18:00:00.000Z",
+    "verifiedAt": "2026-08-13T18:00:00.000Z",
+    "approvedAt": "2026-08-13T18:00:00.000Z",
+    "confidence": "high",
+    "status": "approved",
+    "isFixture": false
+  },
+  {
+    "id": "fact-freshsales-features.email-sequences",
+    "productSlug": "freshsales",
+    "domain": "features",
+    "field": "features.email-sequences",
+    "value": {
+      "featureSlug": "email-sequences",
+      "availability": "higher-plan-only",
+      "planSlugs": [
+        "pro",
+        "enterprise"
+      ]
+    },
+    "sourceIds": [
+      "freshsales-pricing-official"
+    ],
+    "evidence": [
+      {
+        "sourceId": "freshsales-pricing-official",
+        "excerpt": "email-sequences marked higher-plan-only from official sources."
+      }
+    ],
+    "extractedAt": "2026-08-13T18:00:00.000Z",
+    "normalizedAt": "2026-08-13T18:00:00.000Z",
+    "verifiedAt": "2026-08-13T18:00:00.000Z",
+    "approvedAt": "2026-08-13T18:00:00.000Z",
+    "confidence": "high",
+    "status": "approved",
+    "isFixture": false
+  },
+  {
+    "id": "fact-freshsales-features.workflow-automation",
+    "productSlug": "freshsales",
+    "domain": "features",
+    "field": "features.workflow-automation",
+    "value": {
+      "featureSlug": "workflow-automation",
+      "availability": "supported",
+      "planSlugs": [
+        "growth",
+        "pro",
+        "enterprise"
+      ]
+    },
+    "sourceIds": [
+      "freshsales-pricing-official"
+    ],
+    "evidence": [
+      {
+        "sourceId": "freshsales-pricing-official",
+        "excerpt": "workflow-automation marked supported from official sources."
+      }
+    ],
+    "extractedAt": "2026-08-13T18:00:00.000Z",
+    "normalizedAt": "2026-08-13T18:00:00.000Z",
+    "verifiedAt": "2026-08-13T18:00:00.000Z",
+    "approvedAt": "2026-08-13T18:00:00.000Z",
+    "confidence": "high",
+    "status": "approved",
+    "isFixture": false
+  },
+  {
+    "id": "fact-freshsales-features.sales-automation",
+    "productSlug": "freshsales",
+    "domain": "features",
+    "field": "features.sales-automation",
+    "value": {
+      "featureSlug": "sales-automation",
+      "availability": "supported",
+      "planSlugs": [
+        "growth",
+        "pro",
+        "enterprise"
+      ]
+    },
+    "sourceIds": [
+      "freshsales-product-official",
+      "freshsales-pricing-official"
+    ],
+    "evidence": [
+      {
+        "sourceId": "freshsales-product-official",
+        "excerpt": "sales-automation marked supported from official sources."
+      }
+    ],
+    "extractedAt": "2026-08-13T18:00:00.000Z",
+    "normalizedAt": "2026-08-13T18:00:00.000Z",
+    "verifiedAt": "2026-08-13T18:00:00.000Z",
+    "approvedAt": "2026-08-13T18:00:00.000Z",
+    "confidence": "high",
+    "status": "approved",
+    "isFixture": false
+  },
+  {
+    "id": "fact-freshsales-features.reporting",
+    "productSlug": "freshsales",
+    "domain": "features",
+    "field": "features.reporting",
+    "value": {
+      "featureSlug": "reporting",
+      "availability": "supported",
+      "planSlugs": [
+        "growth",
+        "pro",
+        "enterprise"
+      ]
+    },
+    "sourceIds": [
+      "freshsales-product-official"
+    ],
+    "evidence": [
+      {
+        "sourceId": "freshsales-product-official",
+        "excerpt": "reporting marked supported from official sources."
+      }
+    ],
+    "extractedAt": "2026-08-13T18:00:00.000Z",
+    "normalizedAt": "2026-08-13T18:00:00.000Z",
+    "verifiedAt": "2026-08-13T18:00:00.000Z",
+    "approvedAt": "2026-08-13T18:00:00.000Z",
+    "confidence": "high",
+    "status": "approved",
+    "isFixture": false
+  },
+  {
+    "id": "fact-freshsales-features.forecasting",
+    "productSlug": "freshsales",
+    "domain": "features",
+    "field": "features.forecasting",
+    "value": {
+      "featureSlug": "forecasting",
+      "availability": "higher-plan-only",
+      "planSlugs": [
+        "enterprise"
+      ]
+    },
+    "sourceIds": [
+      "freshsales-pricing-official"
+    ],
+    "evidence": [
+      {
+        "sourceId": "freshsales-pricing-official",
+        "excerpt": "forecasting marked higher-plan-only from official sources."
+      }
+    ],
+    "extractedAt": "2026-08-13T18:00:00.000Z",
+    "normalizedAt": "2026-08-13T18:00:00.000Z",
+    "verifiedAt": "2026-08-13T18:00:00.000Z",
+    "approvedAt": "2026-08-13T18:00:00.000Z",
+    "confidence": "high",
+    "status": "approved",
+    "isFixture": false
+  },
+  {
+    "id": "fact-freshsales-features.lead-scoring",
+    "productSlug": "freshsales",
+    "domain": "features",
+    "field": "features.lead-scoring",
+    "value": {
+      "featureSlug": "lead-scoring",
+      "availability": "higher-plan-only",
+      "planSlugs": [
+        "pro",
+        "enterprise"
+      ]
+    },
+    "sourceIds": [
+      "freshsales-pricing-official",
+      "freshsales-product-official"
+    ],
+    "evidence": [
+      {
+        "sourceId": "freshsales-pricing-official",
+        "excerpt": "lead-scoring marked higher-plan-only from official sources."
+      }
+    ],
+    "extractedAt": "2026-08-13T18:00:00.000Z",
+    "normalizedAt": "2026-08-13T18:00:00.000Z",
+    "verifiedAt": "2026-08-13T18:00:00.000Z",
+    "approvedAt": "2026-08-13T18:00:00.000Z",
+    "confidence": "high",
+    "status": "approved",
+    "isFixture": false
+  },
+  {
+    "id": "fact-freshsales-features.ai-assistance",
+    "productSlug": "freshsales",
+    "domain": "features",
+    "field": "features.ai-assistance",
+    "value": {
+      "featureSlug": "ai-assistance",
+      "availability": "supported",
+      "planSlugs": [
+        "growth",
+        "pro",
+        "enterprise"
+      ]
+    },
+    "sourceIds": [
+      "freshsales-freddy-ai",
+      "freshsales-product-official"
+    ],
+    "evidence": [
+      {
+        "sourceId": "freshsales-freddy-ai",
+        "excerpt": "ai-assistance marked supported from official sources."
+      }
+    ],
+    "extractedAt": "2026-08-13T18:00:00.000Z",
+    "normalizedAt": "2026-08-13T18:00:00.000Z",
+    "verifiedAt": "2026-08-13T18:00:00.000Z",
+    "approvedAt": "2026-08-13T18:00:00.000Z",
+    "confidence": "high",
+    "status": "approved",
+    "isFixture": false
+  },
+  {
+    "id": "fact-freshsales-features.call-functionality",
+    "productSlug": "freshsales",
+    "domain": "features",
+    "field": "features.call-functionality",
+    "value": {
+      "featureSlug": "call-functionality",
+      "availability": "supported",
+      "planSlugs": [
+        "growth",
+        "pro",
+        "enterprise"
+      ]
+    },
+    "sourceIds": [
+      "freshsales-pricing-official"
+    ],
+    "evidence": [
+      {
+        "sourceId": "freshsales-pricing-official",
+        "excerpt": "call-functionality marked supported from official sources."
+      }
+    ],
+    "extractedAt": "2026-08-13T18:00:00.000Z",
+    "normalizedAt": "2026-08-13T18:00:00.000Z",
+    "verifiedAt": "2026-08-13T18:00:00.000Z",
+    "approvedAt": "2026-08-13T18:00:00.000Z",
+    "confidence": "high",
+    "status": "approved",
+    "isFixture": false
+  },
+  {
+    "id": "fact-freshsales-features.integrations",
+    "productSlug": "freshsales",
+    "domain": "features",
+    "field": "features.integrations",
+    "value": {
+      "featureSlug": "integrations",
+      "availability": "supported",
+      "planSlugs": [
+        "growth",
+        "pro",
+        "enterprise"
+      ]
+    },
+    "sourceIds": [
+      "freshsales-product-official"
+    ],
+    "evidence": [
+      {
+        "sourceId": "freshsales-product-official",
+        "excerpt": "integrations marked supported from official sources."
+      }
+    ],
+    "extractedAt": "2026-08-13T18:00:00.000Z",
+    "normalizedAt": "2026-08-13T18:00:00.000Z",
+    "verifiedAt": "2026-08-13T18:00:00.000Z",
+    "approvedAt": "2026-08-13T18:00:00.000Z",
+    "confidence": "high",
+    "status": "approved",
+    "isFixture": false
+  },
+  {
+    "id": "fact-freshsales-features.territory-management",
+    "productSlug": "freshsales",
+    "domain": "features",
+    "field": "features.territory-management",
+    "value": {
+      "featureSlug": "territory-management",
+      "availability": "higher-plan-only",
+      "planSlugs": [
+        "pro",
+        "enterprise"
+      ]
+    },
+    "sourceIds": [
+      "freshsales-pricing-official"
+    ],
+    "evidence": [
+      {
+        "sourceId": "freshsales-pricing-official",
+        "excerpt": "territory-management marked higher-plan-only from official sources."
+      }
+    ],
+    "extractedAt": "2026-08-13T18:00:00.000Z",
+    "normalizedAt": "2026-08-13T18:00:00.000Z",
+    "verifiedAt": "2026-08-13T18:00:00.000Z",
+    "approvedAt": "2026-08-13T18:00:00.000Z",
+    "confidence": "high",
+    "status": "approved",
+    "isFixture": false
+  },
+  {
+    "id": "fact-freshsales-ai.assistant",
+    "productSlug": "freshsales",
+    "domain": "ai-capabilities",
+    "field": "ai.assistant",
+    "value": "supported",
+    "sourceIds": [
+      "freshsales-freddy-ai",
+      "freshsales-product-official"
+    ],
+    "evidence": [
+      {
+        "sourceId": "freshsales-freddy-ai",
+        "excerpt": "AI capability assistant: supported."
+      }
+    ],
+    "extractedAt": "2026-08-13T18:00:00.000Z",
+    "normalizedAt": "2026-08-13T18:00:00.000Z",
+    "verifiedAt": "2026-08-13T18:00:00.000Z",
+    "approvedAt": "2026-08-13T18:00:00.000Z",
+    "confidence": "high",
+    "status": "approved",
+    "isFixture": false
+  },
+  {
+    "id": "fact-freshsales-ai.lead-scoring",
+    "productSlug": "freshsales",
+    "domain": "ai-capabilities",
+    "field": "ai.lead-scoring",
+    "value": "higher-plan-only",
+    "sourceIds": [
+      "freshsales-pricing-official",
+      "freshsales-product-official"
+    ],
+    "evidence": [
+      {
+        "sourceId": "freshsales-pricing-official",
+        "excerpt": "AI capability lead-scoring: higher-plan-only."
+      }
+    ],
+    "extractedAt": "2026-08-13T18:00:00.000Z",
+    "normalizedAt": "2026-08-13T18:00:00.000Z",
+    "verifiedAt": "2026-08-13T18:00:00.000Z",
+    "approvedAt": "2026-08-13T18:00:00.000Z",
+    "confidence": "high",
+    "status": "approved",
+    "isFixture": false
+  },
+  {
+    "id": "fact-freshsales-ai.recommendations",
+    "productSlug": "freshsales",
+    "domain": "ai-capabilities",
+    "field": "ai.recommendations",
+    "value": "supported",
+    "sourceIds": [
+      "freshsales-product-official"
+    ],
+    "evidence": [
+      {
+        "sourceId": "freshsales-product-official",
+        "excerpt": "AI capability recommendations: supported."
+      }
+    ],
+    "extractedAt": "2026-08-13T18:00:00.000Z",
+    "normalizedAt": "2026-08-13T18:00:00.000Z",
+    "verifiedAt": "2026-08-13T18:00:00.000Z",
+    "approvedAt": "2026-08-13T18:00:00.000Z",
+    "confidence": "high",
+    "status": "approved",
+    "isFixture": false
+  },
+  {
+    "id": "fact-freshsales-ai.summaries",
+    "productSlug": "freshsales",
+    "domain": "ai-capabilities",
+    "field": "ai.summaries",
+    "value": "supported",
+    "sourceIds": [
+      "freshsales-freddy-ai"
+    ],
+    "evidence": [
+      {
+        "sourceId": "freshsales-freddy-ai",
+        "excerpt": "AI capability summaries: supported."
+      }
+    ],
+    "extractedAt": "2026-08-13T18:00:00.000Z",
+    "normalizedAt": "2026-08-13T18:00:00.000Z",
+    "verifiedAt": "2026-08-13T18:00:00.000Z",
+    "approvedAt": "2026-08-13T18:00:00.000Z",
+    "confidence": "high",
+    "status": "approved",
+    "isFixture": false
+  },
+  {
+    "id": "fact-freshsales-ai.forecasting",
+    "productSlug": "freshsales",
+    "domain": "ai-capabilities",
+    "field": "ai.forecasting",
+    "value": "higher-plan-only",
+    "sourceIds": [
+      "freshsales-pricing-official"
+    ],
+    "evidence": [
+      {
+        "sourceId": "freshsales-pricing-official",
+        "excerpt": "AI capability forecasting: higher-plan-only."
+      }
+    ],
+    "extractedAt": "2026-08-13T18:00:00.000Z",
+    "normalizedAt": "2026-08-13T18:00:00.000Z",
+    "verifiedAt": "2026-08-13T18:00:00.000Z",
+    "approvedAt": "2026-08-13T18:00:00.000Z",
+    "confidence": "high",
+    "status": "approved",
+    "isFixture": false
+  },
+  {
+    "id": "fact-freshsales-ai.automation",
+    "productSlug": "freshsales",
+    "domain": "ai-capabilities",
+    "field": "ai.automation",
+    "value": "supported",
+    "sourceIds": [
+      "freshsales-product-official"
+    ],
+    "evidence": [
+      {
+        "sourceId": "freshsales-product-official",
+        "excerpt": "AI capability automation: supported."
+      }
+    ],
+    "extractedAt": "2026-08-13T18:00:00.000Z",
+    "normalizedAt": "2026-08-13T18:00:00.000Z",
+    "verifiedAt": "2026-08-13T18:00:00.000Z",
+    "approvedAt": "2026-08-13T18:00:00.000Z",
+    "confidence": "high",
+    "status": "approved",
+    "isFixture": false
+  },
+  {
+    "id": "fact-freshsales-positioning.primary",
+    "productSlug": "freshsales",
+    "domain": "product-positioning",
+    "field": "positioning.primary",
+    "value": "AI-powered, easy-to-use sales CRM to grow pipeline, boost conversions, and power productivity — with Freddy AI highlighting best leads and deals.",
+    "sourceIds": [
+      "freshsales-product-official"
+    ],
+    "evidence": [
+      {
+        "sourceId": "freshsales-product-official",
+        "excerpt": "AI-powered, easy-to-use sales CRM to grow pipeline, boost conversions, and power productivity — with Freddy AI highlighting best leads and deals."
+      }
+    ],
+    "extractedAt": "2026-08-13T18:00:00.000Z",
+    "normalizedAt": "2026-08-13T18:00:00.000Z",
+    "verifiedAt": "2026-08-13T18:00:00.000Z",
+    "approvedAt": "2026-08-13T18:00:00.000Z",
+    "confidence": "high",
+    "status": "approved",
+    "isFixture": false
+  }
+]

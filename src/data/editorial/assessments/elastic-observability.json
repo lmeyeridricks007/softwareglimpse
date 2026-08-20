@@ -1,0 +1,165 @@
+{
+  "id": "assessment-elastic-observability-it-v1",
+  "productSlug": "elastic-observability",
+  "methodologySlug": "it-development-editorial",
+  "methodologyVersion": "1.0.0",
+  "status": "approved",
+  "verdict": "Elastic Observability: Choose Elastic Observability when Elastic Cloud telemetry (not search-only Elasticsearch) is the job — not Datadog host modules by default. Scores use the IT & Development editorial methodology from first-party research as of 2026-08-18 — not hands-on product testing.",
+  "strengths": [
+    "Published Hosted Standard from $99/mo",
+    "Observability identity distinct from search-only",
+    "Serverless ingest option",
+    "Self-managed OSS path",
+    "Strong log/metrics/trace depth"
+  ],
+  "weaknesses": [
+    "$99 is not all-in TCO",
+    "Cluster sizing learning curve",
+    "AI is not a lead feature",
+    "Not Datadog host-SKU simplicity",
+    "Not ITSM/git/hosting"
+  ],
+  "bestFor": [
+    "Teams already on Elasticsearch who want Observability as the Cloud solution",
+    "Buyers comparing Grafana Cloud OSS-aligned stacks to Elastic Cloud",
+    "Orgs that will actually size the $99 hosted config versus serverless ingest"
+  ],
+  "notIdealFor": [
+    "Search-only Elasticsearch buyers who do not need observability",
+    "Teams that want Datadog’s published per-host Infrastructure Pro tile only",
+    "ITSM or git purchases"
+  ],
+  "tradeoffs": [
+    "Per-agent vs per-host vs per-seat vs per-GB pricing models",
+    "Module stacking and consumption overages vs single-SKU floors",
+    "Free tiers vs enterprise SSO/audit gates",
+    "Landscape-adjacent tools vs primary job-cluster peers on best pages"
+  ],
+  "recommendation": "Choose Elastic Observability when Elastic Cloud telemetry (not search-only Elasticsearch) is the job — not Datadog host modules by default. Compare Grafana Cloud for OSS-aligned managed telemetry; Datadog or Splunk Observability Cloud for host-priced suites.",
+  "editorialNotes": "IT industry Tier-A batch. Approved on it-development-editorial v1.0.0. membershipRole=primary. jobCluster=observability-monitoring. handsOnTesting=false. Affiliate economics excluded.",
+  "handsOnTesting": false,
+  "confidence": "medium",
+  "criterionAssessments": [
+    {
+      "criterionSlug": "ease-of-use",
+      "score": 6,
+      "rationale": "Elastic Cloud plus cluster sizing is more ops-heavy than Datadog host tiles. Not a lab test.",
+      "supportingFactIds": [
+        "fact-elastic-observability-features.infrastructure-monitoring",
+        "fact-elastic-observability-pricing.model"
+      ],
+      "confidence": "medium",
+      "status": "approved",
+      "reviewedAt": "2026-08-18T20:00:00.000Z",
+      "reviewer": "editorial"
+    },
+    {
+      "criterionSlug": "it-job-fit",
+      "score": 8,
+      "rationale": "Observability solution on Elastic Cloud — cluster peer of Datadog/Grafana Cloud, not a search-only SKU.",
+      "supportingFactIds": [
+        "fact-elastic-observability-features.infrastructure-monitoring",
+        "fact-elastic-observability-pricing.model"
+      ],
+      "confidence": "medium",
+      "status": "approved",
+      "reviewedAt": "2026-08-18T20:00:00.000Z",
+      "reviewer": "editorial"
+    },
+    {
+      "criterionSlug": "workflow-depth",
+      "score": 8,
+      "rationale": "Logs, metrics, traces, and APM on Elastic are deep; Hosted vs Serverless vs self-managed is the packaging tax.",
+      "supportingFactIds": [
+        "fact-elastic-observability-features.apm-tracing",
+        "fact-elastic-observability-pricing.model"
+      ],
+      "confidence": "medium",
+      "status": "approved",
+      "reviewedAt": "2026-08-18T20:00:00.000Z",
+      "reviewer": "editorial"
+    },
+    {
+      "criterionSlug": "integrations",
+      "score": 8,
+      "rationale": "Beats/Agent, cloud, and API ecosystem are the integration story.",
+      "supportingFactIds": [
+        "fact-elastic-observability-features.analytics-reporting",
+        "fact-elastic-observability-pricing.model",
+        "fact-elastic-observability-positioning.vendorClaim"
+      ],
+      "confidence": "medium",
+      "status": "approved",
+      "reviewedAt": "2026-08-18T20:00:00.000Z",
+      "reviewer": "editorial"
+    },
+    {
+      "criterionSlug": "admin-security",
+      "score": 8,
+      "rationale": "Cloud subscription tiers gate support/SLA; enterprise security is real on paid Cloud.",
+      "supportingFactIds": [
+        "fact-elastic-observability-features.enterprise-security",
+        "fact-elastic-observability-pricing.model"
+      ],
+      "confidence": "medium",
+      "status": "approved",
+      "reviewedAt": "2026-08-18T20:00:00.000Z",
+      "reviewer": "editorial"
+    },
+    {
+      "criterionSlug": "scalability",
+      "score": 9,
+      "rationale": "Hosted resource scaling and serverless ingest both scale; TCO follows data.",
+      "supportingFactIds": [
+        "fact-elastic-observability-pricing.plans.self-managed-oss",
+        "fact-elastic-observability-pricing.model",
+        "fact-elastic-observability-pricing.plans.serverless-observability"
+      ],
+      "confidence": "medium",
+      "status": "approved",
+      "reviewedAt": "2026-08-18T20:00:00.000Z",
+      "reviewer": "editorial"
+    },
+    {
+      "criterionSlug": "value-for-money",
+      "score": 8,
+      "rationale": "Published $99 hosted floor plus OSS self-managed path is clearer than Dynatrace DPS. Affiliate economics excluded.",
+      "supportingFactIds": [
+        "fact-elastic-observability-pricing.hasFreePlan",
+        "fact-elastic-observability-pricing.model",
+        "fact-elastic-observability-pricing.startingPriceMonthly"
+      ],
+      "confidence": "medium",
+      "status": "approved",
+      "reviewedAt": "2026-08-18T20:00:00.000Z",
+      "reviewer": "editorial"
+    },
+    {
+      "criterionSlug": "ai-capabilities",
+      "score": 6,
+      "rationale": "AI is not the Elastic Observability buying reason versus telemetry depth.",
+      "supportingFactIds": [
+        "fact-elastic-observability-features.itsm-ai",
+        "fact-elastic-observability-pricing.model"
+      ],
+      "confidence": "medium",
+      "status": "approved",
+      "reviewedAt": "2026-08-18T20:00:00.000Z",
+      "reviewer": "editorial"
+    }
+  ],
+  "overallScore": 7.6,
+  "overallScoreRationale": "Weighted average of the eight IT editorial criteria using category weights (IT job fit 16, workflow depth 14, ease of use 12, integrations 12, admin/security 12, value 12, AI 12, scalability 10), rounded to 1 decimal. Products are scored inside their job cluster — ITSM, observability, source control, hosting panels, and web-data platforms are not forced into one undifferentiated ranking. Not a hands-on lab score, and affiliate economics are excluded.",
+  "scoreAudit": [
+    {
+      "at": "2026-08-18T20:00:00.000Z",
+      "actor": "editorial",
+      "change": "IT industry Tier-A onboarding; approved IT criteria with category weights; handsOnTesting=false",
+      "nextOverall": 7.6
+    }
+  ],
+  "reviewedAt": "2026-08-18T20:00:00.000Z",
+  "reviewer": "editorial",
+  "createdAt": "2026-08-18T20:00:00.000Z",
+  "updatedAt": "2026-08-18T20:00:00.000Z"
+}

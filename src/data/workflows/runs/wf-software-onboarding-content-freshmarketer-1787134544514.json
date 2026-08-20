@@ -1,0 +1,624 @@
+{
+  "id": "wf-software-onboarding-content-freshmarketer-1787134544514",
+  "workflowId": "software-onboarding-content",
+  "workflowVersion": "1.0.0",
+  "name": "Software Onboarding Content: freshmarketer",
+  "targetType": "software",
+  "targetId": "freshmarketer",
+  "status": "review-required",
+  "steps": [
+    {
+      "id": "software-onboarding",
+      "definitionStepId": "software-onboarding",
+      "handler": "software-onboarding",
+      "label": "Software onboarding",
+      "status": "completed",
+      "required": true,
+      "failurePolicy": "block-workflow",
+      "attempt": 1,
+      "maxAttempts": 2,
+      "dependsOn": [],
+      "priority": "critical",
+      "config": {
+        "maxAutomaticRevisions": 1,
+        "expandFromContentPlan": false,
+        "expandKind": "none",
+        "stopAfterApproval": true,
+        "allowNormalizedFacts": false,
+        "optionalWhenBlocked": false,
+        "forceTransientFailOnce": false
+      },
+      "inputRefs": {},
+      "outputRefs": {
+        "softwareOnboardingRunId": "onboard-freshmarketer-1786970947916"
+      },
+      "blockers": [],
+      "warnings": [
+        "Onboarding run exists but status=blocked"
+      ],
+      "startedAt": "2026-08-19T10:15:44.903Z",
+      "completedAt": "2026-08-19T10:15:45.113Z",
+      "revisionAttempts": 0
+    },
+    {
+      "id": "content-plan",
+      "definitionStepId": "content-plan",
+      "handler": "content-plan",
+      "label": "Content plan",
+      "status": "completed",
+      "required": true,
+      "failurePolicy": "block-workflow",
+      "attempt": 1,
+      "maxAttempts": 2,
+      "dependsOn": [
+        "software-onboarding"
+      ],
+      "priority": "high",
+      "config": {
+        "maxAutomaticRevisions": 1,
+        "expandFromContentPlan": false,
+        "expandKind": "none",
+        "stopAfterApproval": true,
+        "allowNormalizedFacts": false,
+        "optionalWhenBlocked": false,
+        "forceTransientFailOnce": false
+      },
+      "inputRefs": {},
+      "outputRefs": {
+        "softwareOnboardingRunId": "onboard-freshmarketer-1786970947916",
+        "comparisonTargets": "",
+        "pageCandidateCount": "0"
+      },
+      "blockers": [],
+      "warnings": [],
+      "startedAt": "2026-08-19T10:15:45.114Z",
+      "completedAt": "2026-08-19T10:15:45.216Z",
+      "revisionAttempts": 0
+    },
+    {
+      "id": "software-review",
+      "definitionStepId": "software-review",
+      "handler": "agent-run",
+      "label": "Software Review",
+      "status": "completed",
+      "required": true,
+      "failurePolicy": "block-workflow",
+      "attempt": 1,
+      "maxAttempts": 2,
+      "dependsOn": [
+        "content-plan"
+      ],
+      "priority": "high",
+      "config": {
+        "agentId": "software-review-agent",
+        "targetSlug": "freshmarketer",
+        "maxAutomaticRevisions": 1,
+        "expandFromContentPlan": false,
+        "expandKind": "none",
+        "stopAfterApproval": true,
+        "allowNormalizedFacts": false,
+        "optionalWhenBlocked": false,
+        "forceTransientFailOnce": false
+      },
+      "inputRefs": {},
+      "outputRefs": {
+        "draftId": "draft-deterministic-v1-software-review-agent-freshmarketer-2026-08-19T10-15-45-272Z",
+        "qaStatus": "pass",
+        "agentId": "software-review-agent",
+        "target": "freshmarketer"
+      },
+      "inputSnapshot": {
+        "researchFactIds": [
+          "fact-freshmarketer-identity.shortDescription",
+          "fact-freshmarketer-positioning.vendorClaim",
+          "fact-freshmarketer-pricing.model",
+          "fact-freshmarketer-pricing.hasFreePlan",
+          "fact-freshmarketer-pricing.hasFreeTrial",
+          "fact-freshmarketer-pricing.startingPriceMonthly",
+          "fact-freshmarketer-pricing.plans.free",
+          "fact-freshmarketer-pricing.plans.enterprise",
+          "fact-freshmarketer-pricing.plans.addon-contacts",
+          "fact-freshmarketer-pricing.plans.addon-cro",
+          "fact-freshmarketer-features.social-scheduling",
+          "fact-freshmarketer-features.content-calendar",
+          "fact-freshmarketer-features.social-listening",
+          "fact-freshmarketer-features.funnel-builder",
+          "fact-freshmarketer-features.landing-pages",
+          "fact-freshmarketer-features.marketing-automation",
+          "fact-freshmarketer-features.forms-lead-capture",
+          "fact-freshmarketer-features.analytics",
+          "fact-freshmarketer-features.ads-management",
+          "fact-freshmarketer-features.reputation-reviews",
+          "fact-freshmarketer-features.webinars",
+          "fact-freshmarketer-features.email-sms-channels",
+          "fact-freshmarketer-features.team-collaboration",
+          "fact-freshmarketer-features.ai-content-generation"
+        ],
+        "methodologySlug": "marketing-editorial",
+        "methodologyVersion": "1.0.0",
+        "agentVersion": "1.0.0",
+        "contextBuiltAt": "2026-08-19T10:15:45.254Z"
+      },
+      "blockers": [],
+      "warnings": [],
+      "agentTaskId": "exec-software-review-agent-freshmarketer-1787134545219",
+      "draftId": "draft-deterministic-v1-software-review-agent-freshmarketer-2026-08-19T10-15-45-272Z",
+      "startedAt": "2026-08-19T10:15:45.218Z",
+      "completedAt": "2026-08-19T10:15:45.290Z",
+      "revisionAttempts": 0
+    },
+    {
+      "id": "pricing-page",
+      "definitionStepId": "pricing-page",
+      "handler": "agent-run",
+      "label": "Pricing Page",
+      "status": "completed",
+      "required": false,
+      "failurePolicy": "continue-with-warning",
+      "attempt": 1,
+      "maxAttempts": 2,
+      "dependsOn": [
+        "content-plan"
+      ],
+      "priority": "normal",
+      "config": {
+        "agentId": "pricing-page-agent",
+        "targetSlug": "freshmarketer",
+        "maxAutomaticRevisions": 1,
+        "expandFromContentPlan": false,
+        "expandKind": "none",
+        "stopAfterApproval": true,
+        "allowNormalizedFacts": false,
+        "optionalWhenBlocked": true,
+        "forceTransientFailOnce": false
+      },
+      "inputRefs": {},
+      "outputRefs": {
+        "draftId": "draft-deterministic-v1-pricing-page-agent-freshmarketer-2026-08-19T10-15-45-339Z",
+        "qaStatus": "pass",
+        "agentId": "pricing-page-agent",
+        "target": "freshmarketer"
+      },
+      "inputSnapshot": {
+        "researchFactIds": [
+          "fact-freshmarketer-identity.shortDescription",
+          "fact-freshmarketer-positioning.vendorClaim",
+          "fact-freshmarketer-pricing.model",
+          "fact-freshmarketer-pricing.hasFreePlan",
+          "fact-freshmarketer-pricing.hasFreeTrial",
+          "fact-freshmarketer-pricing.startingPriceMonthly",
+          "fact-freshmarketer-pricing.plans.free",
+          "fact-freshmarketer-pricing.plans.enterprise",
+          "fact-freshmarketer-pricing.plans.addon-contacts",
+          "fact-freshmarketer-pricing.plans.addon-cro",
+          "fact-freshmarketer-features.social-scheduling",
+          "fact-freshmarketer-features.content-calendar",
+          "fact-freshmarketer-features.social-listening",
+          "fact-freshmarketer-features.funnel-builder",
+          "fact-freshmarketer-features.landing-pages",
+          "fact-freshmarketer-features.marketing-automation",
+          "fact-freshmarketer-features.forms-lead-capture",
+          "fact-freshmarketer-features.analytics",
+          "fact-freshmarketer-features.ads-management",
+          "fact-freshmarketer-features.reputation-reviews",
+          "fact-freshmarketer-features.webinars",
+          "fact-freshmarketer-features.email-sms-channels",
+          "fact-freshmarketer-features.team-collaboration",
+          "fact-freshmarketer-features.ai-content-generation"
+        ],
+        "methodologySlug": "marketing-editorial",
+        "methodologyVersion": "1.0.0",
+        "agentVersion": "1.0.0",
+        "contextBuiltAt": "2026-08-19T10:15:45.338Z"
+      },
+      "blockers": [],
+      "warnings": [],
+      "agentTaskId": "exec-pricing-page-agent-freshmarketer-1787134545322",
+      "draftId": "draft-deterministic-v1-pricing-page-agent-freshmarketer-2026-08-19T10-15-45-339Z",
+      "startedAt": "2026-08-19T10:15:45.321Z",
+      "completedAt": "2026-08-19T10:15:45.344Z",
+      "revisionAttempts": 0
+    },
+    {
+      "id": "alternatives",
+      "definitionStepId": "alternatives",
+      "handler": "agent-run",
+      "label": "Alternatives",
+      "status": "completed",
+      "required": false,
+      "failurePolicy": "continue-with-warning",
+      "attempt": 1,
+      "maxAttempts": 2,
+      "dependsOn": [
+        "content-plan"
+      ],
+      "priority": "normal",
+      "config": {
+        "agentId": "alternatives-agent",
+        "targetSlug": "freshmarketer",
+        "maxAutomaticRevisions": 1,
+        "expandFromContentPlan": false,
+        "expandKind": "none",
+        "stopAfterApproval": true,
+        "allowNormalizedFacts": false,
+        "optionalWhenBlocked": true,
+        "forceTransientFailOnce": false
+      },
+      "inputRefs": {},
+      "outputRefs": {
+        "draftId": "draft-deterministic-v1-alternatives-agent-freshmarketer-2026-08-19T10-15-45-313Z",
+        "qaStatus": "pass",
+        "agentId": "alternatives-agent",
+        "target": "freshmarketer"
+      },
+      "inputSnapshot": {
+        "researchFactIds": [
+          "fact-freshmarketer-identity.shortDescription",
+          "fact-freshmarketer-positioning.vendorClaim",
+          "fact-freshmarketer-pricing.model",
+          "fact-freshmarketer-pricing.hasFreePlan",
+          "fact-freshmarketer-pricing.hasFreeTrial",
+          "fact-freshmarketer-pricing.startingPriceMonthly",
+          "fact-freshmarketer-pricing.plans.free",
+          "fact-freshmarketer-pricing.plans.enterprise",
+          "fact-freshmarketer-pricing.plans.addon-contacts",
+          "fact-freshmarketer-pricing.plans.addon-cro",
+          "fact-freshmarketer-features.social-scheduling",
+          "fact-freshmarketer-features.content-calendar",
+          "fact-freshmarketer-features.social-listening",
+          "fact-freshmarketer-features.funnel-builder",
+          "fact-freshmarketer-features.landing-pages",
+          "fact-freshmarketer-features.marketing-automation",
+          "fact-freshmarketer-features.forms-lead-capture",
+          "fact-freshmarketer-features.analytics",
+          "fact-freshmarketer-features.ads-management",
+          "fact-freshmarketer-features.reputation-reviews",
+          "fact-freshmarketer-features.webinars",
+          "fact-freshmarketer-features.email-sms-channels",
+          "fact-freshmarketer-features.team-collaboration",
+          "fact-freshmarketer-features.ai-content-generation"
+        ],
+        "methodologySlug": "marketing-editorial",
+        "methodologyVersion": "1.0.0",
+        "agentVersion": "1.0.0",
+        "contextBuiltAt": "2026-08-19T10:15:45.311Z"
+      },
+      "blockers": [],
+      "warnings": [],
+      "agentTaskId": "exec-alternatives-agent-freshmarketer-1787134545293",
+      "draftId": "draft-deterministic-v1-alternatives-agent-freshmarketer-2026-08-19T10-15-45-313Z",
+      "startedAt": "2026-08-19T10:15:45.292Z",
+      "completedAt": "2026-08-19T10:15:45.318Z",
+      "revisionAttempts": 0
+    },
+    {
+      "id": "comparisons",
+      "definitionStepId": "comparisons",
+      "handler": "agent-run",
+      "label": "Comparisons",
+      "status": "skipped",
+      "required": false,
+      "failurePolicy": "continue-with-warning",
+      "attempt": 0,
+      "maxAttempts": 2,
+      "dependsOn": [
+        "content-plan"
+      ],
+      "priority": "normal",
+      "config": {
+        "agentId": "comparison-agent",
+        "maxAutomaticRevisions": 1,
+        "expandFromContentPlan": true,
+        "expandKind": "comparisons",
+        "stopAfterApproval": true,
+        "allowNormalizedFacts": false,
+        "optionalWhenBlocked": true,
+        "forceTransientFailOnce": false
+      },
+      "inputRefs": {},
+      "outputRefs": {},
+      "blockers": [],
+      "warnings": [
+        "Skipped by option generateComparisons=false"
+      ],
+      "revisionAttempts": 0
+    },
+    {
+      "id": "internal-links",
+      "definitionStepId": "internal-links",
+      "handler": "internal-link",
+      "label": "Internal Link Plan",
+      "status": "completed",
+      "required": false,
+      "failurePolicy": "continue-with-warning",
+      "attempt": 1,
+      "maxAttempts": 2,
+      "dependsOn": [
+        "software-review"
+      ],
+      "priority": "low",
+      "config": {
+        "agentId": "internal-link-agent",
+        "maxAutomaticRevisions": 1,
+        "expandFromContentPlan": false,
+        "expandKind": "none",
+        "stopAfterApproval": true,
+        "allowNormalizedFacts": false,
+        "optionalWhenBlocked": false,
+        "forceTransientFailOnce": false
+      },
+      "inputRefs": {},
+      "outputRefs": {
+        "draftId": "draft-deterministic-v1-internal-link-agent-freshmarketer-2026-08-19T10-15-45-370Z",
+        "qaStatus": "pass",
+        "agentId": "internal-link-agent",
+        "target": "freshmarketer"
+      },
+      "inputSnapshot": {
+        "researchFactIds": [
+          "fact-freshmarketer-identity.shortDescription",
+          "fact-freshmarketer-positioning.vendorClaim",
+          "fact-freshmarketer-pricing.model",
+          "fact-freshmarketer-pricing.hasFreePlan",
+          "fact-freshmarketer-pricing.hasFreeTrial",
+          "fact-freshmarketer-pricing.startingPriceMonthly",
+          "fact-freshmarketer-pricing.plans.free",
+          "fact-freshmarketer-pricing.plans.enterprise",
+          "fact-freshmarketer-pricing.plans.addon-contacts",
+          "fact-freshmarketer-pricing.plans.addon-cro",
+          "fact-freshmarketer-features.social-scheduling",
+          "fact-freshmarketer-features.content-calendar",
+          "fact-freshmarketer-features.social-listening",
+          "fact-freshmarketer-features.funnel-builder",
+          "fact-freshmarketer-features.landing-pages",
+          "fact-freshmarketer-features.marketing-automation",
+          "fact-freshmarketer-features.forms-lead-capture",
+          "fact-freshmarketer-features.analytics",
+          "fact-freshmarketer-features.ads-management",
+          "fact-freshmarketer-features.reputation-reviews",
+          "fact-freshmarketer-features.webinars",
+          "fact-freshmarketer-features.email-sms-channels",
+          "fact-freshmarketer-features.team-collaboration",
+          "fact-freshmarketer-features.ai-content-generation"
+        ],
+        "methodologySlug": "marketing-editorial",
+        "methodologyVersion": "1.0.0",
+        "agentVersion": "1.0.0",
+        "contextBuiltAt": "2026-08-19T10:15:45.368Z"
+      },
+      "blockers": [],
+      "warnings": [],
+      "agentTaskId": "exec-internal-link-agent-freshmarketer-1787134545351",
+      "draftId": "draft-deterministic-v1-internal-link-agent-freshmarketer-2026-08-19T10-15-45-370Z",
+      "startedAt": "2026-08-19T10:15:45.350Z",
+      "completedAt": "2026-08-19T10:15:45.377Z",
+      "revisionAttempts": 0
+    },
+    {
+      "id": "finder-readiness",
+      "definitionStepId": "finder-readiness",
+      "handler": "update-recommendation-readiness",
+      "label": "Finder readiness",
+      "status": "completed",
+      "required": false,
+      "failurePolicy": "continue",
+      "attempt": 1,
+      "maxAttempts": 2,
+      "dependsOn": [
+        "content-plan"
+      ],
+      "priority": "low",
+      "config": {
+        "maxAutomaticRevisions": 1,
+        "expandFromContentPlan": false,
+        "expandKind": "none",
+        "stopAfterApproval": true,
+        "allowNormalizedFacts": false,
+        "optionalWhenBlocked": false,
+        "forceTransientFailOnce": false
+      },
+      "inputRefs": {},
+      "outputRefs": {
+        "finderReadiness": "checked"
+      },
+      "blockers": [],
+      "warnings": [],
+      "startedAt": "2026-08-19T10:15:45.346Z",
+      "completedAt": "2026-08-19T10:15:45.347Z",
+      "revisionAttempts": 0
+    },
+    {
+      "id": "editorial-approval",
+      "definitionStepId": "editorial-approval",
+      "handler": "approval-check",
+      "label": "Editorial approval",
+      "status": "waiting",
+      "required": true,
+      "failurePolicy": "manual-review",
+      "attempt": 1,
+      "maxAttempts": 2,
+      "dependsOn": [
+        "software-review"
+      ],
+      "priority": "critical",
+      "config": {
+        "approvalType": "editorial",
+        "maxAutomaticRevisions": 1,
+        "expandFromContentPlan": false,
+        "expandKind": "none",
+        "stopAfterApproval": true,
+        "allowNormalizedFacts": false,
+        "optionalWhenBlocked": false,
+        "forceTransientFailOnce": false
+      },
+      "inputRefs": {},
+      "outputRefs": {
+        "approvalId": "appr-wf-software-onboarding-content-freshmarketer-1787134544514-software-review",
+        "draftId": "draft-deterministic-v1-software-review-agent-freshmarketer-2026-08-19T10-15-45-272Z"
+      },
+      "blockers": [],
+      "warnings": [],
+      "approvalId": "appr-wf-software-onboarding-content-freshmarketer-1787134544514-software-review",
+      "startedAt": "2026-08-19T10:15:45.380Z",
+      "completedAt": "2026-08-19T10:15:45.530Z",
+      "revisionAttempts": 0
+    },
+    {
+      "id": "pre-publish-validation",
+      "definitionStepId": "pre-publish-validation",
+      "handler": "pre-publish-validation",
+      "label": "Pre-publish validation",
+      "status": "pending",
+      "required": true,
+      "failurePolicy": "block-workflow",
+      "attempt": 0,
+      "maxAttempts": 2,
+      "dependsOn": [
+        "editorial-approval"
+      ],
+      "priority": "critical",
+      "config": {
+        "maxAutomaticRevisions": 1,
+        "expandFromContentPlan": false,
+        "expandKind": "none",
+        "stopAfterApproval": true,
+        "allowNormalizedFacts": false,
+        "optionalWhenBlocked": false,
+        "forceTransientFailOnce": false
+      },
+      "inputRefs": {},
+      "outputRefs": {},
+      "blockers": [],
+      "warnings": [],
+      "revisionAttempts": 0
+    }
+  ],
+  "history": [
+    {
+      "at": "2026-08-19T10:15:44.889Z",
+      "event": "workflow_created",
+      "message": "Created software-onboarding-content:v1.0.0"
+    },
+    {
+      "at": "2026-08-19T10:15:44.901Z",
+      "event": "workflow_started",
+      "message": "Workflow execution started"
+    },
+    {
+      "at": "2026-08-19T10:15:44.903Z",
+      "event": "workflow_step_started",
+      "stepId": "software-onboarding",
+      "message": "Started Software onboarding"
+    },
+    {
+      "at": "2026-08-19T10:15:45.113Z",
+      "event": "workflow_step_completed",
+      "stepId": "software-onboarding",
+      "message": "Reused onboarding run onboard-freshmarketer-1786970947916 (blocked)"
+    },
+    {
+      "at": "2026-08-19T10:15:45.114Z",
+      "event": "workflow_step_started",
+      "stepId": "content-plan",
+      "message": "Started Content plan"
+    },
+    {
+      "at": "2026-08-19T10:15:45.216Z",
+      "event": "workflow_step_completed",
+      "stepId": "content-plan",
+      "message": "Content plan from onboarding onboard-freshmarketer-1786970947916 (0 candidates)"
+    },
+    {
+      "at": "2026-08-19T10:15:45.218Z",
+      "event": "workflow_step_started",
+      "stepId": "software-review",
+      "message": "Started Software Review"
+    },
+    {
+      "at": "2026-08-19T10:15:45.290Z",
+      "event": "workflow_step_completed",
+      "stepId": "software-review",
+      "message": "Agent software-review-agent → draft draft-deterministic-v1-software-review-agent-freshmarketer-2026-08-19T10-15-45-272Z (qa=pass)"
+    },
+    {
+      "at": "2026-08-19T10:15:45.292Z",
+      "event": "workflow_step_started",
+      "stepId": "alternatives",
+      "message": "Started Alternatives"
+    },
+    {
+      "at": "2026-08-19T10:15:45.318Z",
+      "event": "workflow_step_completed",
+      "stepId": "alternatives",
+      "message": "Agent alternatives-agent → draft draft-deterministic-v1-alternatives-agent-freshmarketer-2026-08-19T10-15-45-313Z (qa=pass)"
+    },
+    {
+      "at": "2026-08-19T10:15:45.320Z",
+      "event": "workflow_step_started",
+      "stepId": "pricing-page",
+      "message": "Started Pricing Page"
+    },
+    {
+      "at": "2026-08-19T10:15:45.344Z",
+      "event": "workflow_step_completed",
+      "stepId": "pricing-page",
+      "message": "Agent pricing-page-agent → draft draft-deterministic-v1-pricing-page-agent-freshmarketer-2026-08-19T10-15-45-339Z (qa=pass)"
+    },
+    {
+      "at": "2026-08-19T10:15:45.345Z",
+      "event": "workflow_step_started",
+      "stepId": "finder-readiness",
+      "message": "Started Finder readiness"
+    },
+    {
+      "at": "2026-08-19T10:15:45.347Z",
+      "event": "workflow_step_completed",
+      "stepId": "finder-readiness",
+      "message": "Finder readiness noted for freshmarketer"
+    },
+    {
+      "at": "2026-08-19T10:15:45.350Z",
+      "event": "workflow_step_started",
+      "stepId": "internal-links",
+      "message": "Started Internal Link Plan"
+    },
+    {
+      "at": "2026-08-19T10:15:45.377Z",
+      "event": "workflow_step_completed",
+      "stepId": "internal-links",
+      "message": "Agent internal-link-agent → draft draft-deterministic-v1-internal-link-agent-freshmarketer-2026-08-19T10-15-45-370Z (qa=pass)"
+    },
+    {
+      "at": "2026-08-19T10:15:45.379Z",
+      "event": "workflow_step_started",
+      "stepId": "editorial-approval",
+      "message": "Started Editorial approval"
+    },
+    {
+      "at": "2026-08-19T10:15:45.530Z",
+      "event": "workflow_step_completed",
+      "stepId": "editorial-approval",
+      "message": "WAITING FOR EDITORIAL APPROVAL (appr-wf-software-onboarding-content-freshmarketer-1787134544514-software-review)"
+    },
+    {
+      "at": "2026-08-19T10:15:45.535Z",
+      "event": "workflow_blocked",
+      "message": "WAITING FOR EDITORIAL APPROVAL"
+    }
+  ],
+  "options": {
+    "generateReview": true,
+    "generatePricing": true,
+    "generateAlternatives": true,
+    "generateComparisons": false,
+    "runInternalLinks": true,
+    "stopAfterApproval": true,
+    "allowNormalizedFacts": false,
+    "dryRun": false,
+    "maxComparisons": 3,
+    "skipOnboarding": false
+  },
+  "warnings": [],
+  "createdAt": "2026-08-19T10:15:44.889Z",
+  "updatedAt": "2026-08-19T10:15:45.537Z"
+}

@@ -1,0 +1,175 @@
+{
+  "id": "assessment-shopware-ecommerce-v1",
+  "productSlug": "shopware",
+  "methodologySlug": "ecommerce-editorial",
+  "methodologyVersion": "1.0.0",
+  "status": "approved",
+  "verdict": "Shopware: Choose Shopware when you want a modern open-source commerce core with a commercial ladder — and you have partner capacity to implement it. Scores use the Ecommerce editorial methodology from first-party research as of 2026-08-17 — not hands-on product testing.",
+  "strengths": [
+    "Modern Symfony open-source core with a free Community Edition",
+    "Clear commercial ladder (Rise / Evolve / Beyond)",
+    "Stronger B2B/composable story than typical SMB carts",
+    "API / headless options for ambitious storefronts"
+  ],
+  "weaknesses": [
+    "Fair Usage and Rise floor raise TCO as GMV grows",
+    "Still needs developer capacity versus hosted SaaS",
+    "POS is not native"
+  ],
+  "bestFor": [
+    "Mid-market EU/global merchants wanting modern open-source commerce",
+    "Teams with Symfony/PHP capacity or a Shopware partner",
+    "Catalogs that outgrew Woo simplicity but do not want Magento TCO"
+  ],
+  "notIdealFor": [
+    "Solo founders wanting a weekend hosted launch",
+    "WordPress-native content + store teams (see WooCommerce)",
+    "Retailers whose center of gravity is POS hardware"
+  ],
+  "tradeoffs": [
+    "Subscription floors vs payment-processing spreads and GMV/overage fees",
+    "App/extension TCO vs native feature depth",
+    "Open-source/hosting flexibility vs SaaS operational simplicity",
+    "Dropshipping product caps vs catalog automation depth"
+  ],
+  "recommendation": "Choose Shopware when you want a modern open-source commerce core with a commercial ladder — and you have partner capacity to implement it. Consider PrestaShop for a lower-TCO PHP OSS peer; WooCommerce for WordPress-native stacks; Magento for deeper Adobe enterprise; Shopify for hosted SaaS.",
+  "editorialNotes": "Ecommerce Priority-2 batch. Approved on ecommerce-editorial v1.0.0. membershipRole=primary. jobCluster=open-source-platform. handsOnTesting=false. Affiliate economics excluded.",
+  "handsOnTesting": false,
+  "confidence": "medium",
+  "criterionAssessments": [
+    {
+      "criterionSlug": "ease-of-use",
+      "score": 7,
+      "rationale": "Modern admin versus Magento-era stacks, but still developer-led compared with Shopify.",
+      "supportingFactIds": [
+        "fact-shopware-features.product-catalog",
+        "fact-shopware-pricing.model"
+      ],
+      "confidence": "medium",
+      "status": "approved",
+      "reviewedAt": "2026-08-18T14:00:00.000Z",
+      "reviewer": "editorial"
+    },
+    {
+      "criterionSlug": "storefront-commerce-fit",
+      "score": 8,
+      "rationale": "Core job is open-source / composable storefront. Landscape peer — WooCommerce keeps the open-source cluster award.",
+      "supportingFactIds": [
+        "fact-shopware-features.product-catalog",
+        "fact-shopware-pricing.model"
+      ],
+      "confidence": "medium",
+      "status": "approved",
+      "reviewedAt": "2026-08-18T14:00:00.000Z",
+      "reviewer": "editorial"
+    },
+    {
+      "criterionSlug": "catalog-orders-depth",
+      "score": 8,
+      "rationale": "Strong catalog and B2B surfaces on Shopware 6 — competitive with PrestaShop and approaching Magento for many mid-market cases.",
+      "supportingFactIds": [
+        "fact-shopware-features.order-management",
+        "fact-shopware-pricing.model"
+      ],
+      "confidence": "medium",
+      "status": "approved",
+      "reviewedAt": "2026-08-18T14:00:00.000Z",
+      "reviewer": "editorial"
+    },
+    {
+      "criterionSlug": "checkout-conversion",
+      "score": 7,
+      "rationale": "Checkout is capable and extensible; conversion quality depends on storefront implementation.",
+      "supportingFactIds": [
+        "fact-shopware-features.checkout-payments",
+        "fact-shopware-pricing.model"
+      ],
+      "confidence": "medium",
+      "status": "approved",
+      "reviewedAt": "2026-08-18T14:00:00.000Z",
+      "reviewer": "editorial"
+    },
+    {
+      "criterionSlug": "integrations",
+      "score": 8,
+      "rationale": "App ecosystem plus APIs are solid for a European OSS platform.",
+      "supportingFactIds": [
+        "fact-shopware-features.app-extensions",
+        "fact-shopware-pricing.model",
+        "fact-shopware-positioning.vendorClaim"
+      ],
+      "confidence": "medium",
+      "status": "approved",
+      "reviewedAt": "2026-08-18T14:00:00.000Z",
+      "reviewer": "editorial"
+    },
+    {
+      "criterionSlug": "omnichannel-pos",
+      "score": 4,
+      "rationale": "POS is not a native Square-class bundle.",
+      "supportingFactIds": [
+        "fact-shopware-features.pos-omnichannel",
+        "fact-shopware-pricing.model"
+      ],
+      "confidence": "medium",
+      "status": "approved",
+      "reviewedAt": "2026-08-18T14:00:00.000Z",
+      "reviewer": "editorial"
+    },
+    {
+      "criterionSlug": "scalability",
+      "score": 8,
+      "rationale": "Rise/Evolve/Beyond and headless options support ambitious GMV better than typical SMB carts.",
+      "supportingFactIds": [
+        "fact-shopware-pricing.plans.community",
+        "fact-shopware-pricing.model",
+        "fact-shopware-pricing.plans.beyond"
+      ],
+      "confidence": "medium",
+      "status": "approved",
+      "reviewedAt": "2026-08-18T14:00:00.000Z",
+      "reviewer": "editorial"
+    },
+    {
+      "criterionSlug": "value-for-money",
+      "score": 7,
+      "rationale": "Community Edition is generous until Fair Usage; Rise’s €600 floor is steep for SMBs versus Woo.",
+      "supportingFactIds": [
+        "fact-shopware-pricing.hasFreePlan",
+        "fact-shopware-pricing.model",
+        "fact-shopware-pricing.startingPriceMonthly"
+      ],
+      "confidence": "medium",
+      "status": "approved",
+      "reviewedAt": "2026-08-18T14:00:00.000Z",
+      "reviewer": "editorial"
+    },
+    {
+      "criterionSlug": "ai-capabilities",
+      "score": 6,
+      "rationale": "Shopware AI / Copilot appears on commercial paths — secondary to the commerce core.",
+      "supportingFactIds": [
+        "fact-shopware-features.ai-assistance",
+        "fact-shopware-pricing.model"
+      ],
+      "confidence": "medium",
+      "status": "approved",
+      "reviewedAt": "2026-08-18T14:00:00.000Z",
+      "reviewer": "editorial"
+    }
+  ],
+  "overallScore": 7.3,
+  "overallScoreRationale": "Weighted average of the nine ecommerce editorial criteria using category weights (storefront/commerce fit 15, catalog/orders 14, ease 12, checkout 12, integrations 12, value 12, omnichannel/POS 10, scalability 9, AI 6), rounded to 1 decimal. Products are scored inside their job cluster — SaaS platforms, open-source carts, omnichannel POS bundles, and dropshipping sourcing apps are not forced into one undifferentiated ranking. Not a hands-on lab score; affiliate economics are excluded.",
+  "scoreAudit": [
+    {
+      "at": "2026-08-18T14:00:00.000Z",
+      "actor": "editorial",
+      "change": "Ecommerce Priority-2 onboarding; approved HR criteria with category weights; handsOnTesting=false",
+      "nextOverall": 7.3
+    }
+  ],
+  "reviewedAt": "2026-08-18T14:00:00.000Z",
+  "reviewer": "editorial",
+  "createdAt": "2026-08-18T14:00:00.000Z",
+  "updatedAt": "2026-08-18T14:00:00.000Z"
+}

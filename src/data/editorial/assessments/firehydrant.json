@@ -1,0 +1,165 @@
+{
+  "id": "assessment-firehydrant-it-v1",
+  "productSlug": "firehydrant",
+  "methodologySlug": "it-development-editorial",
+  "methodologyVersion": "1.0.0",
+  "status": "approved",
+  "verdict": "FireHydrant: Choose FireHydrant when incident command with a published $25 Pro floor is the job — not PagerDuty by default, and not Datadog/Honeycomb. Scores use the IT & Development editorial methodology from first-party research as of 2026-08-18 — not hands-on product testing.",
+  "strengths": [
+    "Free up to 10 responders",
+    "Published Pro $25/responder annual",
+    "14-day Pro trial",
+    "Incident command depth",
+    "PagerDuty-friendly integrations"
+  ],
+  "weaknesses": [
+    "Does not outrank PagerDuty",
+    "Paging is not the lead SKU",
+    "Thinner enterprise scale story",
+    "Not telemetry",
+    "Not ITSM CMDB"
+  ],
+  "bestFor": [
+    "Teams that want incident command with a 10-responder free path",
+    "Buyers comparing FireHydrant Pro $25 to Rootly $20 and incident.io Team $15",
+    "Orgs that will keep PagerDuty for paging and add FireHydrant for command"
+  ],
+  "notIdealFor": [
+    "Orgs whose primary job is PagerDuty-style on-call paging at enterprise scale",
+    "Honeycomb/Datadog observability purchases",
+    "ITSM ticket desks without incident command"
+  ],
+  "tradeoffs": [
+    "Per-agent vs per-host vs per-seat vs per-GB pricing models",
+    "Module stacking and consumption overages vs single-SKU floors",
+    "Free tiers vs enterprise SSO/audit gates",
+    "Landscape-adjacent tools vs primary job-cluster peers on best pages"
+  ],
+  "recommendation": "Choose FireHydrant when incident command with a published $25 Pro floor is the job — not PagerDuty by default, and not Datadog/Honeycomb. Compare PagerDuty for paging-first on-call; incident.io or Rootly for other product-led incident SKUs.",
+  "editorialNotes": "IT Tier-B + ITSM SMB batch. Approved on it-development-editorial v1.0.0. membershipRole=primary. jobCluster=incident-oncall. handsOnTesting=false. Affiliate economics excluded.",
+  "handsOnTesting": false,
+  "confidence": "medium",
+  "criterionAssessments": [
+    {
+      "criterionSlug": "ease-of-use",
+      "score": 8,
+      "rationale": "Incident command UX is approachable for SRE teams; 10-responder Free is an easy try. Not a lab test.",
+      "supportingFactIds": [
+        "fact-firehydrant-features.incident-management",
+        "fact-firehydrant-pricing.model"
+      ],
+      "confidence": "medium",
+      "status": "approved",
+      "reviewedAt": "2026-08-18T22:00:00.000Z",
+      "reviewer": "editorial"
+    },
+    {
+      "criterionSlug": "it-job-fit",
+      "score": 8,
+      "rationale": "Incident-oncall cluster — ranked with PagerDuty and incident.io, not as an observability peer.",
+      "supportingFactIds": [
+        "fact-firehydrant-features.incident-management",
+        "fact-firehydrant-pricing.model"
+      ],
+      "confidence": "medium",
+      "status": "approved",
+      "reviewedAt": "2026-08-18T22:00:00.000Z",
+      "reviewer": "editorial"
+    },
+    {
+      "criterionSlug": "workflow-depth",
+      "score": 8,
+      "rationale": "Declare/coordinate/retrospective workflows are deep; paging-first depth still sits with PagerDuty.",
+      "supportingFactIds": [
+        "fact-firehydrant-features.incident-management",
+        "fact-firehydrant-pricing.model"
+      ],
+      "confidence": "medium",
+      "status": "approved",
+      "reviewedAt": "2026-08-18T22:00:00.000Z",
+      "reviewer": "editorial"
+    },
+    {
+      "criterionSlug": "integrations",
+      "score": 8,
+      "rationale": "Slack/Teams plus PagerDuty hooks are the incident-command story.",
+      "supportingFactIds": [
+        "fact-firehydrant-features.analytics-reporting",
+        "fact-firehydrant-pricing.model",
+        "fact-firehydrant-positioning.vendorClaim"
+      ],
+      "confidence": "medium",
+      "status": "approved",
+      "reviewedAt": "2026-08-18T22:00:00.000Z",
+      "reviewer": "editorial"
+    },
+    {
+      "criterionSlug": "admin-security",
+      "score": 7,
+      "rationale": "Pro is product-led; Enterprise carries heavier governance.",
+      "supportingFactIds": [
+        "fact-firehydrant-features.enterprise-security",
+        "fact-firehydrant-pricing.model"
+      ],
+      "confidence": "medium",
+      "status": "approved",
+      "reviewedAt": "2026-08-18T22:00:00.000Z",
+      "reviewer": "editorial"
+    },
+    {
+      "criterionSlug": "scalability",
+      "score": 7,
+      "rationale": "Per-responder Pro plus Enterprise quote; held below PagerDuty’s scale story.",
+      "supportingFactIds": [
+        "fact-firehydrant-pricing.plans.free",
+        "fact-firehydrant-pricing.model",
+        "fact-firehydrant-pricing.plans.enterprise"
+      ],
+      "confidence": "medium",
+      "status": "approved",
+      "reviewedAt": "2026-08-18T22:00:00.000Z",
+      "reviewer": "editorial"
+    },
+    {
+      "criterionSlug": "value-for-money",
+      "score": 8,
+      "rationale": "Free 10 responders plus published $25 Pro annual is a clear floor; still not PagerDuty’s award path. Affiliate economics excluded.",
+      "supportingFactIds": [
+        "fact-firehydrant-pricing.hasFreePlan",
+        "fact-firehydrant-pricing.model",
+        "fact-firehydrant-pricing.startingPriceMonthly"
+      ],
+      "confidence": "medium",
+      "status": "approved",
+      "reviewedAt": "2026-08-18T22:00:00.000Z",
+      "reviewer": "editorial"
+    },
+    {
+      "criterionSlug": "ai-capabilities",
+      "score": 7,
+      "rationale": "Incident assist exists — scored as supporting, not the buying reason versus PagerDuty paging.",
+      "supportingFactIds": [
+        "fact-firehydrant-features.itsm-ai",
+        "fact-firehydrant-pricing.model"
+      ],
+      "confidence": "medium",
+      "status": "approved",
+      "reviewedAt": "2026-08-18T22:00:00.000Z",
+      "reviewer": "editorial"
+    }
+  ],
+  "overallScore": 7.7,
+  "overallScoreRationale": "Weighted average of the eight IT editorial criteria using category weights (IT job fit 16, workflow depth 14, ease of use 12, integrations 12, admin/security 12, value 12, AI 12, scalability 10), rounded to 1 decimal. Products are scored inside their job cluster — ITSM, observability, source control, hosting panels, and web-data platforms are not forced into one undifferentiated ranking. Not a hands-on lab score, and affiliate economics are excluded.",
+  "scoreAudit": [
+    {
+      "at": "2026-08-18T22:00:00.000Z",
+      "actor": "editorial",
+      "change": "IT Tier-B + ITSM SMB onboarding; approved IT criteria with category weights; handsOnTesting=false",
+      "nextOverall": 7.7
+    }
+  ],
+  "reviewedAt": "2026-08-18T22:00:00.000Z",
+  "reviewer": "editorial",
+  "createdAt": "2026-08-18T22:00:00.000Z",
+  "updatedAt": "2026-08-18T22:00:00.000Z"
+}

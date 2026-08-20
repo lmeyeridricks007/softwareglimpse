@@ -1,0 +1,70 @@
+{
+  "id": "exec-software-review-agent-getresponse-1786642076069",
+  "agentId": "software-review-agent",
+  "agentVersion": "1.0.0",
+  "status": "qa-failed",
+  "mode": "CREATE",
+  "targetSlug": "getresponse",
+  "draftId": "draft-deterministic-v1-software-review-agent-getresponse-2026-08-13T17-27-56-075Z",
+  "briefId": "agent-brief-software-review-agent-getresponse-1786642076074",
+  "validation": {
+    "ok": false,
+    "errors": [
+      "hands-on-claim-not-allowed:product-experience",
+      "prohibited-claim:product-experience:hands-on testing"
+    ]
+  },
+  "qa": {
+    "status": "fail",
+    "blockers": [
+      {
+        "type": "FAKE_TESTING_CLAIM",
+        "severity": "blocker",
+        "message": "Hands-on testing language without metadata in product-experience",
+        "section": "product-experience"
+      },
+      {
+        "type": "FAKE_TESTING_CLAIM",
+        "severity": "blocker",
+        "message": "hands-on-claim-not-allowed:product-experience"
+      },
+      {
+        "type": "PROHIBITED_CLAIM",
+        "severity": "blocker",
+        "message": "prohibited-claim:product-experience:hands-on testing"
+      }
+    ],
+    "warnings": [],
+    "suggestions": [],
+    "checkedAt": "2026-08-13T17:27:56.075Z"
+  },
+  "errors": [
+    "hands-on-claim-not-allowed:product-experience",
+    "prohibited-claim:product-experience:hands-on testing"
+  ],
+  "cost": {
+    "provider": "deterministic-v1",
+    "model": "deterministic-template-v1",
+    "inputTokens": 0,
+    "outputTokens": 0,
+    "estimatedCostUsd": 0
+  },
+  "contextSnapshot": {
+    "productUpdatedAt": "2026-08-13T17:09:14.438Z",
+    "researchSnapshotIds": [],
+    "factIds": [
+      "fact-getresponse-identity.shortDescription-getresponse-identity-fixture",
+      "fact-getresponse-features.email-campaigns-getresponse-product-fixture",
+      "fact-getresponse-features.automation-workflows-getresponse-product-fixture",
+      "fact-getresponse-pricing.model-getresponse-pricing-fixture",
+      "fact-getresponse-product-positioning.summary-getresponse-identity-fixture"
+    ],
+    "methodologySlug": "email-marketing-editorial",
+    "methodologyVersion": "1.0.0",
+    "pricingFreshnessAt": "2026-08-13T12:00:00.000Z",
+    "builtAt": "2026-08-13T17:27:56.074Z"
+  },
+  "dryRun": false,
+  "startedAt": "2026-08-13T17:27:56.069Z",
+  "completedAt": "2026-08-13T17:27:56.076Z"
+}

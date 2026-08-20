@@ -1,0 +1,256 @@
+/**
+ * Live-verified promotion channels (2026-08-15).
+ * Fit is audience-based — not “post everywhere.”
+ */
+
+import type { PromotionChannel } from "./types";
+
+export const PROMOTION_CHANNELS_VERIFIED_AT = "2026-08-15T09:30:00.000Z";
+
+const V = PROMOTION_CHANNELS_VERIFIED_AT;
+
+export const PROMOTION_LIVE_QUERIES_RUN: string[] = [
+  "RevGenius Modern Sales Pros Pavilion Slack community CRM Reddit",
+  "Product Hunt launch strategy B2B SaaS 2026",
+  "RevOps Co-op partner community",
+  "Revenue Operations Alliance community",
+  "r/sales CRM evaluation checklist discussion",
+];
+
+export const PROMOTION_CHANNELS: PromotionChannel[] = [
+  {
+    id: "linkedin-organic",
+    name: "LinkedIn (organic)",
+    kind: "LINKEDIN",
+    url: "https://www.linkedin.com/",
+    audience: "B2B buyers, RevOps, sales leaders, consultants",
+    notes:
+      "Strong for CRM evaluation narratives, carousels, and founder/operator POV — not spray-and-pray links.",
+    defaultFit: "strong",
+    paidFree: "free",
+    communityRules: "Lead with insight; soft CTA to free tools/resources.",
+    verifiedAt: V,
+    discoveryQuery: "RevGenius Modern Sales Pros Pavilion Slack community CRM Reddit",
+  },
+  {
+    id: "linkedin-ads",
+    name: "LinkedIn Sponsored Content",
+    kind: "LINKEDIN",
+    url: "https://www.linkedin.com/advertising/",
+    audience: "Targeted B2B CRM/RevOps decision-makers",
+    notes: "Paid amplification for tool launches and checklist downloads — see PaidPromotion experiments.",
+    defaultFit: "good",
+    paidFree: "paid",
+    verifiedAt: V,
+  },
+  {
+    id: "reddit-sales",
+    name: "Reddit r/sales",
+    kind: "REDDIT",
+    url: "https://www.reddit.com/r/sales/",
+    audience: "Sales practitioners discussing process and tooling",
+    notes:
+      "Help-first: answer buying/process questions; link only when it directly solves the ask. No drive-by promo.",
+    defaultFit: "good",
+    paidFree: "free",
+    communityRules:
+      "No automated posts, no fake accounts, no link dumps. Contribute answers; links secondary.",
+    verifiedAt: V,
+    discoveryQuery: "r/sales CRM evaluation checklist discussion",
+  },
+  {
+    id: "reddit-crm",
+    name: "Reddit r/CRM",
+    kind: "REDDIT",
+    url: "https://www.reddit.com/r/CRM/",
+    audience: "CRM admins and buyers comparing platforms",
+    notes: "Strong fit for evaluation/scorecard/cost questions when answering substantively.",
+    defaultFit: "strong",
+    paidFree: "free",
+    communityRules: "Same as r/sales — help first.",
+    verifiedAt: V,
+  },
+  {
+    id: "reddit-saas",
+    name: "Reddit r/SaaS",
+    kind: "REDDIT",
+    url: "https://www.reddit.com/r/SaaS/",
+    audience: "SaaS founders/operators",
+    notes: "Better for tool launches / build-in-public; weak for generic checklist spam.",
+    defaultFit: "good",
+    paidFree: "free",
+    communityRules: "No drive-by self-promo; discuss problem/solution honestly.",
+    verifiedAt: V,
+  },
+  {
+    id: "revgenius",
+    name: "RevGenius community",
+    kind: "REVOPS_COMMUNITY",
+    url: "https://community.revgenius.com/",
+    audience: "RevOps, sales, GTM practitioners (Slack-backed community)",
+    notes:
+      "Live 2026 activity includes CRM/GTM product discussions and Product Hunt advice threads — contribute usefully; dedicated pitch channels only when appropriate.",
+    defaultFit: "strong",
+    paidFree: "free",
+    communityRules:
+      "Follow community norms; startup pitches belong in designated spaces, not drive-by everywhere.",
+    verifiedAt: V,
+    discoveryQuery: "RevGenius Modern Sales Pros Pavilion Slack community CRM Reddit",
+  },
+  {
+    id: "revops-coop",
+    name: "RevOps Co-op",
+    kind: "REVOPS_COMMUNITY",
+    url: "https://www.revopscoop.com/",
+    audience: "Revenue operations professionals",
+    notes: "Partner/content collaboration path; workshops and member resources — see Partnerships report.",
+    defaultFit: "strong",
+    paidFree: "mixed",
+    verifiedAt: V,
+    discoveryQuery: "RevOps Co-op partner community",
+  },
+  {
+    id: "roa",
+    name: "Revenue Operations Alliance",
+    kind: "REVOPS_COMMUNITY",
+    url: "https://www.revenueoperationsalliance.com/",
+    audience: "RevOps practitioners and leaders",
+    notes: "Webinars/podcasts/partner packages — align with Partnership + Paid reports.",
+    defaultFit: "strong",
+    paidFree: "mixed",
+    verifiedAt: V,
+    discoveryQuery: "Revenue Operations Alliance community",
+  },
+  {
+    id: "product-hunt",
+    name: "Product Hunt",
+    kind: "PRODUCT_LAUNCH_PLATFORM",
+    url: "https://www.producthunt.com/",
+    audience: "Early adopters, makers, some B2B operators",
+    notes:
+      "Fit for interactive tools (Finder, Calculators) with prep + launch squad; weaker as primary CRM-buyer channel. Prep > launch day spam.",
+    defaultFit: "good",
+    paidFree: "free",
+    communityRules: "No fake upvotes/accounts; engage comments authentically.",
+    verifiedAt: V,
+    discoveryQuery: "Product Hunt launch strategy B2B SaaS 2026",
+  },
+  {
+    id: "youtube-edu",
+    name: "YouTube (educational)",
+    kind: "YOUTUBE",
+    url: "https://www.youtube.com/",
+    audience: "Buyers searching CRM how-to / comparison explainers",
+    notes: "Short demos of tools + checklist walkthroughs; do not invent product footage.",
+    defaultFit: "good",
+    paidFree: "free",
+  },
+  {
+    id: "owned-email",
+    name: "SoftwareGlimpse email newsletter",
+    kind: "EMAIL_NEWSLETTER_OWNED",
+    audience: "Existing SG subscribers / download leads",
+    notes: "Highest trust channel for new tools and resource drops.",
+    defaultFit: "strong",
+    paidFree: "free",
+  },
+  {
+    id: "revengine-nl",
+    name: "RevEngine / niche RevOps newsletters",
+    kind: "NEWSLETTER",
+    url: "https://www.revopsimpact.com/pricing",
+    audience: "RevOps and revenue leaders",
+    notes: "Paid sponsorship tests — see PaidPromotionOpportunityAgent (not SEO links).",
+    defaultFit: "strong",
+    paidFree: "paid",
+    verifiedAt: V,
+  },
+  {
+    id: "podcast-b2b",
+    name: "B2B / RevOps / sales podcasts",
+    kind: "PODCAST",
+    audience: "Sales and RevOps listeners",
+    notes: "Guest/talking points from Digital PR + Paid podcast category plays.",
+    defaultFit: "good",
+    paidFree: "mixed",
+  },
+  {
+    id: "qa-platforms",
+    name: "Q&A platforms (topic-matched)",
+    kind: "QA_PLATFORM",
+    audience: "People asking CRM selection / pricing questions",
+    notes: "Answer fully; cite SG tools only when they answer the question. No spam.",
+    defaultFit: "good",
+    paidFree: "free",
+    communityRules: "Helpful answers first; links secondary.",
+  },
+  {
+    id: "founder-communities",
+    name: "Founder communities (Indie Hackers / SaaS founder spaces)",
+    kind: "FOUNDER_COMMUNITY",
+    audience: "Founders choosing first CRM",
+    notes: "Good for Cost Calculator / Finder stories; weak for enterprise migration depth.",
+    defaultFit: "good",
+    paidFree: "free",
+  },
+  {
+    id: "vendor-ecosystems",
+    name: "Vendor partner ecosystems (via SI partners)",
+    kind: "VENDOR_ECOSYSTEM",
+    url: "https://ecosystem.hubspot.com/marketplace",
+    audience: "Buyers already in HubSpot/Pipedrive/Zoho partner journeys",
+    notes: "Promote via consultancy partners — never fake SI listing. See Partnerships.",
+    defaultFit: "good",
+    paidFree: "free",
+    verifiedAt: V,
+  },
+  {
+    id: "events-webinars",
+    name: "RevOps / SaaS events & webinars",
+    kind: "EVENT",
+    audience: "Conference and webinar attendees",
+    notes: "Speaking/workshop with partners; resource handouts.",
+    defaultFit: "good",
+    paidFree: "mixed",
+  },
+  {
+    id: "score-smb",
+    name: "SCORE / SMB mentoring networks",
+    kind: "PROFESSIONAL_COMMUNITY",
+    url: "https://www.score.org/resources/",
+    audience: "Small-business owners and mentors",
+    notes: "Resource inclusion path — educational CRM selection aids.",
+    defaultFit: "good",
+    paidFree: "free",
+    verifiedAt: V,
+  },
+  {
+    id: "consumer-social",
+    name: "Generic consumer social (TikTok/IG lifestyle)",
+    kind: "CONSUMER_SOCIAL",
+    audience: "General consumer audiences",
+    notes: "Weak fit for CRM Evaluation Checklist and buyer tools — avoid as primary.",
+    defaultFit: "weak",
+    paidFree: "free",
+  },
+  {
+    id: "discord-generic",
+    name: "Generic Discord servers (unrelated)",
+    kind: "DISCORD_COMMUNITY",
+    audience: "Mixed / often off-topic",
+    notes: "Avoid drive-by promo in unrelated Discords. Only topic-matched servers with clear rules.",
+    defaultFit: "avoid",
+    paidFree: "free",
+    communityRules: "No mass Discord spam.",
+  },
+];
+
+export function assertPromotionChannelsPresent(
+  channels: PromotionChannel[],
+): void {
+  if (channels.length < 10) {
+    throw new Error(
+      "ContentPromotionOpportunityAgent requires a live channel catalog.",
+    );
+  }
+}

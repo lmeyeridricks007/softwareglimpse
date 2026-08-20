@@ -1,0 +1,963 @@
+{
+  "id": "wf-software-onboarding-content-writesonic-1787132868148",
+  "workflowId": "software-onboarding-content",
+  "workflowVersion": "1.0.0",
+  "name": "Software Onboarding Content: writesonic",
+  "targetType": "software",
+  "targetId": "writesonic",
+  "status": "completed",
+  "steps": [
+    {
+      "id": "software-onboarding",
+      "definitionStepId": "software-onboarding",
+      "handler": "software-onboarding",
+      "label": "Software onboarding",
+      "status": "completed",
+      "required": true,
+      "failurePolicy": "block-workflow",
+      "attempt": 1,
+      "maxAttempts": 2,
+      "dependsOn": [],
+      "priority": "critical",
+      "config": {
+        "maxAutomaticRevisions": 1,
+        "expandFromContentPlan": false,
+        "expandKind": "none",
+        "stopAfterApproval": true,
+        "allowNormalizedFacts": false,
+        "optionalWhenBlocked": false,
+        "forceTransientFailOnce": false
+      },
+      "inputRefs": {},
+      "outputRefs": {
+        "softwareOnboardingRunId": "onboard-writesonic-1787132660995"
+      },
+      "blockers": [],
+      "warnings": [],
+      "startedAt": "2026-08-19T09:47:49.263Z",
+      "completedAt": "2026-08-19T09:47:49.503Z",
+      "revisionAttempts": 0
+    },
+    {
+      "id": "content-plan",
+      "definitionStepId": "content-plan",
+      "handler": "content-plan",
+      "label": "Content plan",
+      "status": "completed",
+      "required": true,
+      "failurePolicy": "block-workflow",
+      "attempt": 1,
+      "maxAttempts": 2,
+      "dependsOn": [
+        "software-onboarding"
+      ],
+      "priority": "high",
+      "config": {
+        "maxAutomaticRevisions": 1,
+        "expandFromContentPlan": false,
+        "expandKind": "none",
+        "stopAfterApproval": true,
+        "allowNormalizedFacts": false,
+        "optionalWhenBlocked": false,
+        "forceTransientFailOnce": false
+      },
+      "inputRefs": {},
+      "outputRefs": {
+        "softwareOnboardingRunId": "onboard-writesonic-1787132660995",
+        "comparisonTargets": "quillbot-vs-writesonic,chatgpt-vs-writesonic",
+        "pageCandidateCount": "6"
+      },
+      "blockers": [],
+      "warnings": [],
+      "startedAt": "2026-08-19T09:47:49.505Z",
+      "completedAt": "2026-08-19T09:47:49.597Z",
+      "revisionAttempts": 0
+    },
+    {
+      "id": "software-review",
+      "definitionStepId": "software-review",
+      "handler": "agent-run",
+      "label": "Software Review",
+      "status": "completed",
+      "required": true,
+      "failurePolicy": "block-workflow",
+      "attempt": 1,
+      "maxAttempts": 2,
+      "dependsOn": [
+        "content-plan"
+      ],
+      "priority": "high",
+      "config": {
+        "agentId": "software-review-agent",
+        "targetSlug": "writesonic",
+        "maxAutomaticRevisions": 1,
+        "expandFromContentPlan": false,
+        "expandKind": "none",
+        "stopAfterApproval": true,
+        "allowNormalizedFacts": false,
+        "optionalWhenBlocked": false,
+        "forceTransientFailOnce": false
+      },
+      "inputRefs": {},
+      "outputRefs": {
+        "draftId": "draft-deterministic-v1-software-review-agent-writesonic-2026-08-19T09-47-49-881Z",
+        "qaStatus": "pass",
+        "agentId": "software-review-agent",
+        "target": "writesonic"
+      },
+      "inputSnapshot": {
+        "researchFactIds": [
+          "fact-writesonic-identity.shortDescription-writesonic-product-official",
+          "fact-writesonic-positioning.claim-writesonic-product-official",
+          "fact-writesonic-features.llm-chat-writesonic-product-official",
+          "fact-writesonic-features.reasoning-models-writesonic-product-official",
+          "fact-writesonic-features.writing-assist-writesonic-product-official",
+          "fact-writesonic-features.image-generation-writesonic-product-official",
+          "fact-writesonic-features.voice-tts-writesonic-product-official",
+          "fact-writesonic-features.presentation-generation-writesonic-product-official",
+          "fact-writesonic-features.website-generation-writesonic-product-official",
+          "fact-writesonic-features.ad-creative-generation-writesonic-product-official",
+          "fact-writesonic-features.agent-builder-writesonic-product-official",
+          "fact-writesonic-features.custom-projects-writesonic-product-official",
+          "fact-writesonic-features.enterprise-admin-writesonic-product-official",
+          "fact-writesonic-features.usage-credits-writesonic-product-official",
+          "fact-writesonic-features.connectors-writesonic-product-official",
+          "fact-writesonic-features.data-privacy-writesonic-product-official",
+          "fact-writesonic-features.analytics-reporting-writesonic-product-official",
+          "fact-writesonic-ai.assistant-writesonic-product-official",
+          "fact-writesonic-ai.summaries-writesonic-product-official",
+          "fact-writesonic-ai.automation-writesonic-product-official",
+          "fact-writesonic-ai.recommendations-writesonic-product-official",
+          "fact-writesonic-pricing.plans.starter-writesonic-pricing-official",
+          "fact-writesonic-pricing.plans.basic-writesonic-pricing-official",
+          "fact-writesonic-pricing.plans.growth-writesonic-pricing-official",
+          "fact-writesonic-pricing.plans.enterprise-writesonic-pricing-official",
+          "fact-writesonic-pricing.currency-writesonic-pricing-official",
+          "fact-writesonic-pricing.hasFreeTrial-writesonic-pricing-official",
+          "fact-writesonic-pricing.hasFreePlan-writesonic-pricing-official",
+          "fact-writesonic-pricing.model-writesonic-pricing-official"
+        ],
+        "methodologySlug": "ai-editorial",
+        "methodologyVersion": "1.0.0",
+        "agentVersion": "1.0.0",
+        "contextBuiltAt": "2026-08-19T09:47:49.874Z"
+      },
+      "blockers": [],
+      "warnings": [],
+      "agentTaskId": "exec-software-review-agent-writesonic-1787132869600",
+      "draftId": "draft-deterministic-v1-software-review-agent-writesonic-2026-08-19T09-47-49-881Z",
+      "startedAt": "2026-08-19T09:47:49.598Z",
+      "completedAt": "2026-08-19T09:47:49.897Z",
+      "revisionAttempts": 0
+    },
+    {
+      "id": "pricing-page",
+      "definitionStepId": "pricing-page",
+      "handler": "agent-run",
+      "label": "Pricing Page",
+      "status": "completed",
+      "required": false,
+      "failurePolicy": "continue-with-warning",
+      "attempt": 1,
+      "maxAttempts": 2,
+      "dependsOn": [
+        "content-plan"
+      ],
+      "priority": "normal",
+      "config": {
+        "agentId": "pricing-page-agent",
+        "targetSlug": "writesonic",
+        "maxAutomaticRevisions": 1,
+        "expandFromContentPlan": false,
+        "expandKind": "none",
+        "stopAfterApproval": true,
+        "allowNormalizedFacts": false,
+        "optionalWhenBlocked": true,
+        "forceTransientFailOnce": false
+      },
+      "inputRefs": {},
+      "outputRefs": {
+        "draftId": "draft-deterministic-v1-pricing-page-agent-writesonic-2026-08-19T09-47-50-004Z",
+        "qaStatus": "pass",
+        "agentId": "pricing-page-agent",
+        "target": "writesonic"
+      },
+      "inputSnapshot": {
+        "researchFactIds": [
+          "fact-writesonic-identity.shortDescription-writesonic-product-official",
+          "fact-writesonic-positioning.claim-writesonic-product-official",
+          "fact-writesonic-features.llm-chat-writesonic-product-official",
+          "fact-writesonic-features.reasoning-models-writesonic-product-official",
+          "fact-writesonic-features.writing-assist-writesonic-product-official",
+          "fact-writesonic-features.image-generation-writesonic-product-official",
+          "fact-writesonic-features.voice-tts-writesonic-product-official",
+          "fact-writesonic-features.presentation-generation-writesonic-product-official",
+          "fact-writesonic-features.website-generation-writesonic-product-official",
+          "fact-writesonic-features.ad-creative-generation-writesonic-product-official",
+          "fact-writesonic-features.agent-builder-writesonic-product-official",
+          "fact-writesonic-features.custom-projects-writesonic-product-official",
+          "fact-writesonic-features.enterprise-admin-writesonic-product-official",
+          "fact-writesonic-features.usage-credits-writesonic-product-official",
+          "fact-writesonic-features.connectors-writesonic-product-official",
+          "fact-writesonic-features.data-privacy-writesonic-product-official",
+          "fact-writesonic-features.analytics-reporting-writesonic-product-official",
+          "fact-writesonic-ai.assistant-writesonic-product-official",
+          "fact-writesonic-ai.summaries-writesonic-product-official",
+          "fact-writesonic-ai.automation-writesonic-product-official",
+          "fact-writesonic-ai.recommendations-writesonic-product-official",
+          "fact-writesonic-pricing.plans.starter-writesonic-pricing-official",
+          "fact-writesonic-pricing.plans.basic-writesonic-pricing-official",
+          "fact-writesonic-pricing.plans.growth-writesonic-pricing-official",
+          "fact-writesonic-pricing.plans.enterprise-writesonic-pricing-official",
+          "fact-writesonic-pricing.currency-writesonic-pricing-official",
+          "fact-writesonic-pricing.hasFreeTrial-writesonic-pricing-official",
+          "fact-writesonic-pricing.hasFreePlan-writesonic-pricing-official",
+          "fact-writesonic-pricing.model-writesonic-pricing-official"
+        ],
+        "methodologySlug": "ai-editorial",
+        "methodologyVersion": "1.0.0",
+        "agentVersion": "1.0.0",
+        "contextBuiltAt": "2026-08-19T09:47:50.003Z"
+      },
+      "blockers": [],
+      "warnings": [],
+      "agentTaskId": "exec-pricing-page-agent-writesonic-1787132869995",
+      "draftId": "draft-deterministic-v1-pricing-page-agent-writesonic-2026-08-19T09-47-50-004Z",
+      "startedAt": "2026-08-19T09:47:49.995Z",
+      "completedAt": "2026-08-19T09:47:50.006Z",
+      "revisionAttempts": 0
+    },
+    {
+      "id": "alternatives",
+      "definitionStepId": "alternatives",
+      "handler": "agent-run",
+      "label": "Alternatives",
+      "status": "completed",
+      "required": false,
+      "failurePolicy": "continue-with-warning",
+      "attempt": 1,
+      "maxAttempts": 2,
+      "dependsOn": [
+        "content-plan"
+      ],
+      "priority": "normal",
+      "config": {
+        "agentId": "alternatives-agent",
+        "targetSlug": "writesonic",
+        "maxAutomaticRevisions": 1,
+        "expandFromContentPlan": false,
+        "expandKind": "none",
+        "stopAfterApproval": true,
+        "allowNormalizedFacts": false,
+        "optionalWhenBlocked": true,
+        "forceTransientFailOnce": false
+      },
+      "inputRefs": {},
+      "outputRefs": {
+        "draftId": "draft-deterministic-v1-alternatives-agent-writesonic-2026-08-19T09-51-34-767Z",
+        "qaStatus": "pass",
+        "agentId": "alternatives-agent",
+        "target": "writesonic"
+      },
+      "inputSnapshot": {
+        "researchFactIds": [
+          "fact-writesonic-identity.shortDescription-writesonic-product-official",
+          "fact-writesonic-positioning.claim-writesonic-product-official",
+          "fact-writesonic-features.llm-chat-writesonic-product-official",
+          "fact-writesonic-features.reasoning-models-writesonic-product-official",
+          "fact-writesonic-features.writing-assist-writesonic-product-official",
+          "fact-writesonic-features.image-generation-writesonic-product-official",
+          "fact-writesonic-features.voice-tts-writesonic-product-official",
+          "fact-writesonic-features.presentation-generation-writesonic-product-official",
+          "fact-writesonic-features.website-generation-writesonic-product-official",
+          "fact-writesonic-features.ad-creative-generation-writesonic-product-official",
+          "fact-writesonic-features.agent-builder-writesonic-product-official",
+          "fact-writesonic-features.custom-projects-writesonic-product-official",
+          "fact-writesonic-features.enterprise-admin-writesonic-product-official",
+          "fact-writesonic-features.usage-credits-writesonic-product-official",
+          "fact-writesonic-features.connectors-writesonic-product-official",
+          "fact-writesonic-features.data-privacy-writesonic-product-official",
+          "fact-writesonic-features.analytics-reporting-writesonic-product-official",
+          "fact-writesonic-ai.assistant-writesonic-product-official",
+          "fact-writesonic-ai.summaries-writesonic-product-official",
+          "fact-writesonic-ai.automation-writesonic-product-official",
+          "fact-writesonic-ai.recommendations-writesonic-product-official",
+          "fact-writesonic-pricing.plans.starter-writesonic-pricing-official",
+          "fact-writesonic-pricing.plans.basic-writesonic-pricing-official",
+          "fact-writesonic-pricing.plans.growth-writesonic-pricing-official",
+          "fact-writesonic-pricing.plans.enterprise-writesonic-pricing-official",
+          "fact-writesonic-pricing.currency-writesonic-pricing-official",
+          "fact-writesonic-pricing.hasFreeTrial-writesonic-pricing-official",
+          "fact-writesonic-pricing.hasFreePlan-writesonic-pricing-official",
+          "fact-writesonic-pricing.model-writesonic-pricing-official"
+        ],
+        "methodologySlug": "ai-editorial",
+        "methodologyVersion": "1.0.0",
+        "agentVersion": "1.0.0",
+        "contextBuiltAt": "2026-08-19T09:51:34.763Z"
+      },
+      "blockers": [],
+      "warnings": [
+        "NO_APPROVED_ALTERNATIVES: Approved alternative relationships required — same-category alone is insufficient"
+      ],
+      "agentTaskId": "exec-alternatives-agent-writesonic-1787133094538",
+      "draftId": "draft-deterministic-v1-alternatives-agent-writesonic-2026-08-19T09-51-34-767Z",
+      "startedAt": "2026-08-19T09:51:34.537Z",
+      "completedAt": "2026-08-19T09:51:34.775Z",
+      "revisionAttempts": 0
+    },
+    {
+      "id": "comparison:quillbot-vs-writesonic",
+      "definitionStepId": "comparisons",
+      "handler": "agent-run",
+      "label": "Comparison quillbot-vs-writesonic",
+      "status": "completed",
+      "required": false,
+      "failurePolicy": "continue-with-warning",
+      "attempt": 1,
+      "maxAttempts": 2,
+      "dependsOn": [
+        "content-plan"
+      ],
+      "priority": "normal",
+      "config": {
+        "agentId": "comparison-agent",
+        "targetSlug": "quillbot-vs-writesonic",
+        "maxAutomaticRevisions": 1,
+        "expandFromContentPlan": true,
+        "expandKind": "comparisons",
+        "stopAfterApproval": true,
+        "allowNormalizedFacts": false,
+        "optionalWhenBlocked": true,
+        "forceTransientFailOnce": false
+      },
+      "expansionKey": "quillbot-vs-writesonic",
+      "inputRefs": {},
+      "outputRefs": {
+        "draftId": "draft-deterministic-v1-comparison-agent-quillbot-vs-writesonic-2026-08-19T09-51-34-827Z",
+        "qaStatus": "pass",
+        "agentId": "comparison-agent",
+        "target": "quillbot-vs-writesonic"
+      },
+      "inputSnapshot": {
+        "researchFactIds": [
+          "fact-quillbot-identity.shortDescription",
+          "fact-quillbot-positioning.vendorClaim",
+          "fact-quillbot-positioning.jobCluster",
+          "fact-quillbot-pricing.model",
+          "fact-quillbot-pricing.hasFreePlan",
+          "fact-quillbot-pricing.hasFreeTrial",
+          "fact-quillbot-pricing.startingPriceMonthly",
+          "fact-quillbot-pricing.plans.free",
+          "fact-quillbot-pricing.plans.premium",
+          "fact-quillbot-features.llm-chat",
+          "fact-quillbot-features.reasoning-models",
+          "fact-quillbot-features.writing-assist",
+          "fact-quillbot-features.image-generation",
+          "fact-quillbot-features.voice-tts",
+          "fact-quillbot-features.presentation-generation",
+          "fact-quillbot-features.website-generation",
+          "fact-quillbot-features.ad-creative-generation",
+          "fact-quillbot-features.agent-builder",
+          "fact-quillbot-features.custom-projects",
+          "fact-quillbot-features.enterprise-admin",
+          "fact-quillbot-features.usage-credits",
+          "fact-quillbot-features.connectors",
+          "fact-quillbot-features.data-privacy",
+          "fact-quillbot-features.analytics-reporting",
+          "fact-writesonic-identity.shortDescription-writesonic-product-official",
+          "fact-writesonic-positioning.claim-writesonic-product-official",
+          "fact-writesonic-features.llm-chat-writesonic-product-official",
+          "fact-writesonic-features.reasoning-models-writesonic-product-official",
+          "fact-writesonic-features.writing-assist-writesonic-product-official",
+          "fact-writesonic-features.image-generation-writesonic-product-official",
+          "fact-writesonic-features.voice-tts-writesonic-product-official",
+          "fact-writesonic-features.presentation-generation-writesonic-product-official",
+          "fact-writesonic-features.website-generation-writesonic-product-official",
+          "fact-writesonic-features.ad-creative-generation-writesonic-product-official",
+          "fact-writesonic-features.agent-builder-writesonic-product-official",
+          "fact-writesonic-features.custom-projects-writesonic-product-official",
+          "fact-writesonic-features.enterprise-admin-writesonic-product-official",
+          "fact-writesonic-features.usage-credits-writesonic-product-official",
+          "fact-writesonic-features.connectors-writesonic-product-official",
+          "fact-writesonic-features.data-privacy-writesonic-product-official",
+          "fact-writesonic-features.analytics-reporting-writesonic-product-official",
+          "fact-writesonic-ai.assistant-writesonic-product-official",
+          "fact-writesonic-ai.summaries-writesonic-product-official",
+          "fact-writesonic-ai.automation-writesonic-product-official",
+          "fact-writesonic-ai.recommendations-writesonic-product-official",
+          "fact-writesonic-pricing.plans.starter-writesonic-pricing-official",
+          "fact-writesonic-pricing.plans.basic-writesonic-pricing-official",
+          "fact-writesonic-pricing.plans.growth-writesonic-pricing-official",
+          "fact-writesonic-pricing.plans.enterprise-writesonic-pricing-official",
+          "fact-writesonic-pricing.currency-writesonic-pricing-official",
+          "fact-writesonic-pricing.hasFreeTrial-writesonic-pricing-official",
+          "fact-writesonic-pricing.hasFreePlan-writesonic-pricing-official",
+          "fact-writesonic-pricing.model-writesonic-pricing-official"
+        ],
+        "methodologySlug": "ai-editorial",
+        "methodologyVersion": "1.0.0",
+        "agentVersion": "1.0.0",
+        "contextBuiltAt": "2026-08-19T09:51:34.823Z"
+      },
+      "blockers": [],
+      "warnings": [
+        "RELATIONSHIP_UNAPPROVED: Approved comparable relationship required"
+      ],
+      "agentTaskId": "exec-comparison-agent-quillbot-vs-writesonic-1787133094812",
+      "draftId": "draft-deterministic-v1-comparison-agent-quillbot-vs-writesonic-2026-08-19T09-51-34-827Z",
+      "startedAt": "2026-08-19T09:51:34.811Z",
+      "completedAt": "2026-08-19T09:51:34.841Z",
+      "revisionAttempts": 0
+    },
+    {
+      "id": "comparison:chatgpt-vs-writesonic",
+      "definitionStepId": "comparisons",
+      "handler": "agent-run",
+      "label": "Comparison chatgpt-vs-writesonic",
+      "status": "completed",
+      "required": false,
+      "failurePolicy": "continue-with-warning",
+      "attempt": 1,
+      "maxAttempts": 2,
+      "dependsOn": [
+        "content-plan"
+      ],
+      "priority": "normal",
+      "config": {
+        "agentId": "comparison-agent",
+        "targetSlug": "chatgpt-vs-writesonic",
+        "maxAutomaticRevisions": 1,
+        "expandFromContentPlan": true,
+        "expandKind": "comparisons",
+        "stopAfterApproval": true,
+        "allowNormalizedFacts": false,
+        "optionalWhenBlocked": true,
+        "forceTransientFailOnce": false
+      },
+      "expansionKey": "chatgpt-vs-writesonic",
+      "inputRefs": {},
+      "outputRefs": {
+        "draftId": "draft-deterministic-v1-comparison-agent-chatgpt-vs-writesonic-2026-08-19T09-51-34-807Z",
+        "qaStatus": "pass",
+        "agentId": "comparison-agent",
+        "target": "chatgpt-vs-writesonic"
+      },
+      "inputSnapshot": {
+        "researchFactIds": [
+          "fact-chatgpt-identity.shortDescription",
+          "fact-chatgpt-positioning.vendorClaim",
+          "fact-chatgpt-positioning.jobCluster",
+          "fact-chatgpt-pricing.model",
+          "fact-chatgpt-pricing.hasFreePlan",
+          "fact-chatgpt-pricing.hasFreeTrial",
+          "fact-chatgpt-pricing.startingPriceMonthly",
+          "fact-chatgpt-pricing.plans.free",
+          "fact-chatgpt-pricing.plans.plus",
+          "fact-chatgpt-pricing.plans.business-annual",
+          "fact-chatgpt-pricing.plans.business-monthly",
+          "fact-chatgpt-pricing.plans.pro",
+          "fact-chatgpt-pricing.plans.enterprise",
+          "fact-chatgpt-features.llm-chat",
+          "fact-chatgpt-features.reasoning-models",
+          "fact-chatgpt-features.writing-assist",
+          "fact-chatgpt-features.image-generation",
+          "fact-chatgpt-features.voice-tts",
+          "fact-chatgpt-features.presentation-generation",
+          "fact-chatgpt-features.website-generation",
+          "fact-chatgpt-features.ad-creative-generation",
+          "fact-chatgpt-features.agent-builder",
+          "fact-chatgpt-features.custom-projects",
+          "fact-chatgpt-features.enterprise-admin",
+          "fact-chatgpt-features.usage-credits",
+          "fact-chatgpt-features.connectors",
+          "fact-chatgpt-features.data-privacy",
+          "fact-chatgpt-features.analytics-reporting",
+          "fact-writesonic-identity.shortDescription-writesonic-product-official",
+          "fact-writesonic-positioning.claim-writesonic-product-official",
+          "fact-writesonic-features.llm-chat-writesonic-product-official",
+          "fact-writesonic-features.reasoning-models-writesonic-product-official",
+          "fact-writesonic-features.writing-assist-writesonic-product-official",
+          "fact-writesonic-features.image-generation-writesonic-product-official",
+          "fact-writesonic-features.voice-tts-writesonic-product-official",
+          "fact-writesonic-features.presentation-generation-writesonic-product-official",
+          "fact-writesonic-features.website-generation-writesonic-product-official",
+          "fact-writesonic-features.ad-creative-generation-writesonic-product-official",
+          "fact-writesonic-features.agent-builder-writesonic-product-official",
+          "fact-writesonic-features.custom-projects-writesonic-product-official",
+          "fact-writesonic-features.enterprise-admin-writesonic-product-official",
+          "fact-writesonic-features.usage-credits-writesonic-product-official",
+          "fact-writesonic-features.connectors-writesonic-product-official",
+          "fact-writesonic-features.data-privacy-writesonic-product-official",
+          "fact-writesonic-features.analytics-reporting-writesonic-product-official",
+          "fact-writesonic-ai.assistant-writesonic-product-official",
+          "fact-writesonic-ai.summaries-writesonic-product-official",
+          "fact-writesonic-ai.automation-writesonic-product-official",
+          "fact-writesonic-ai.recommendations-writesonic-product-official",
+          "fact-writesonic-pricing.plans.starter-writesonic-pricing-official",
+          "fact-writesonic-pricing.plans.basic-writesonic-pricing-official",
+          "fact-writesonic-pricing.plans.growth-writesonic-pricing-official",
+          "fact-writesonic-pricing.plans.enterprise-writesonic-pricing-official",
+          "fact-writesonic-pricing.currency-writesonic-pricing-official",
+          "fact-writesonic-pricing.hasFreeTrial-writesonic-pricing-official",
+          "fact-writesonic-pricing.hasFreePlan-writesonic-pricing-official",
+          "fact-writesonic-pricing.model-writesonic-pricing-official"
+        ],
+        "methodologySlug": "ai-editorial",
+        "methodologyVersion": "1.0.0",
+        "agentVersion": "1.0.0",
+        "contextBuiltAt": "2026-08-19T09:51:34.805Z"
+      },
+      "blockers": [],
+      "warnings": [
+        "RELATIONSHIP_UNAPPROVED: Approved comparable relationship required"
+      ],
+      "agentTaskId": "exec-comparison-agent-chatgpt-vs-writesonic-1787133094779",
+      "draftId": "draft-deterministic-v1-comparison-agent-chatgpt-vs-writesonic-2026-08-19T09-51-34-807Z",
+      "startedAt": "2026-08-19T09:51:34.778Z",
+      "completedAt": "2026-08-19T09:51:34.810Z",
+      "revisionAttempts": 0
+    },
+    {
+      "id": "internal-links",
+      "definitionStepId": "internal-links",
+      "handler": "internal-link",
+      "label": "Internal Link Plan",
+      "status": "completed",
+      "required": false,
+      "failurePolicy": "continue-with-warning",
+      "attempt": 1,
+      "maxAttempts": 2,
+      "dependsOn": [
+        "software-review"
+      ],
+      "priority": "low",
+      "config": {
+        "agentId": "internal-link-agent",
+        "maxAutomaticRevisions": 1,
+        "expandFromContentPlan": false,
+        "expandKind": "none",
+        "stopAfterApproval": true,
+        "allowNormalizedFacts": false,
+        "optionalWhenBlocked": false,
+        "forceTransientFailOnce": false
+      },
+      "inputRefs": {},
+      "outputRefs": {
+        "draftId": "draft-deterministic-v1-internal-link-agent-writesonic-2026-08-19T09-47-50-026Z",
+        "qaStatus": "pass",
+        "agentId": "internal-link-agent",
+        "target": "writesonic"
+      },
+      "inputSnapshot": {
+        "researchFactIds": [
+          "fact-writesonic-identity.shortDescription-writesonic-product-official",
+          "fact-writesonic-positioning.claim-writesonic-product-official",
+          "fact-writesonic-features.llm-chat-writesonic-product-official",
+          "fact-writesonic-features.reasoning-models-writesonic-product-official",
+          "fact-writesonic-features.writing-assist-writesonic-product-official",
+          "fact-writesonic-features.image-generation-writesonic-product-official",
+          "fact-writesonic-features.voice-tts-writesonic-product-official",
+          "fact-writesonic-features.presentation-generation-writesonic-product-official",
+          "fact-writesonic-features.website-generation-writesonic-product-official",
+          "fact-writesonic-features.ad-creative-generation-writesonic-product-official",
+          "fact-writesonic-features.agent-builder-writesonic-product-official",
+          "fact-writesonic-features.custom-projects-writesonic-product-official",
+          "fact-writesonic-features.enterprise-admin-writesonic-product-official",
+          "fact-writesonic-features.usage-credits-writesonic-product-official",
+          "fact-writesonic-features.connectors-writesonic-product-official",
+          "fact-writesonic-features.data-privacy-writesonic-product-official",
+          "fact-writesonic-features.analytics-reporting-writesonic-product-official",
+          "fact-writesonic-ai.assistant-writesonic-product-official",
+          "fact-writesonic-ai.summaries-writesonic-product-official",
+          "fact-writesonic-ai.automation-writesonic-product-official",
+          "fact-writesonic-ai.recommendations-writesonic-product-official",
+          "fact-writesonic-pricing.plans.starter-writesonic-pricing-official",
+          "fact-writesonic-pricing.plans.basic-writesonic-pricing-official",
+          "fact-writesonic-pricing.plans.growth-writesonic-pricing-official",
+          "fact-writesonic-pricing.plans.enterprise-writesonic-pricing-official",
+          "fact-writesonic-pricing.currency-writesonic-pricing-official",
+          "fact-writesonic-pricing.hasFreeTrial-writesonic-pricing-official",
+          "fact-writesonic-pricing.hasFreePlan-writesonic-pricing-official",
+          "fact-writesonic-pricing.model-writesonic-pricing-official"
+        ],
+        "methodologySlug": "ai-editorial",
+        "methodologyVersion": "1.0.0",
+        "agentVersion": "1.0.0",
+        "contextBuiltAt": "2026-08-19T09:47:50.025Z"
+      },
+      "blockers": [],
+      "warnings": [],
+      "agentTaskId": "exec-internal-link-agent-writesonic-1787132870009",
+      "draftId": "draft-deterministic-v1-internal-link-agent-writesonic-2026-08-19T09-47-50-026Z",
+      "startedAt": "2026-08-19T09:47:50.008Z",
+      "completedAt": "2026-08-19T09:47:50.029Z",
+      "revisionAttempts": 0
+    },
+    {
+      "id": "finder-readiness",
+      "definitionStepId": "finder-readiness",
+      "handler": "update-recommendation-readiness",
+      "label": "Finder readiness",
+      "status": "completed",
+      "required": false,
+      "failurePolicy": "continue",
+      "attempt": 1,
+      "maxAttempts": 2,
+      "dependsOn": [
+        "content-plan"
+      ],
+      "priority": "low",
+      "config": {
+        "maxAutomaticRevisions": 1,
+        "expandFromContentPlan": false,
+        "expandKind": "none",
+        "stopAfterApproval": true,
+        "allowNormalizedFacts": false,
+        "optionalWhenBlocked": false,
+        "forceTransientFailOnce": false
+      },
+      "inputRefs": {},
+      "outputRefs": {
+        "finderReadiness": "checked"
+      },
+      "blockers": [],
+      "warnings": [],
+      "startedAt": "2026-08-19T09:47:50.007Z",
+      "completedAt": "2026-08-19T09:47:50.007Z",
+      "revisionAttempts": 0
+    },
+    {
+      "id": "editorial-approval",
+      "definitionStepId": "editorial-approval",
+      "handler": "approval-check",
+      "label": "Editorial approval",
+      "status": "completed",
+      "required": true,
+      "failurePolicy": "manual-review",
+      "attempt": 2,
+      "maxAttempts": 2,
+      "dependsOn": [
+        "software-review"
+      ],
+      "priority": "critical",
+      "config": {
+        "approvalType": "editorial",
+        "maxAutomaticRevisions": 1,
+        "expandFromContentPlan": false,
+        "expandKind": "none",
+        "stopAfterApproval": true,
+        "allowNormalizedFacts": false,
+        "optionalWhenBlocked": false,
+        "forceTransientFailOnce": false
+      },
+      "inputRefs": {},
+      "outputRefs": {
+        "approvalId": "appr-wf-software-onboarding-content-writesonic-1787132868148-software-review",
+        "draftId": "draft-deterministic-v1-software-review-agent-writesonic-2026-08-19T09-47-49-881Z",
+        "approvalIds": "appr-wf-software-onboarding-content-writesonic-1787132868148-software-review"
+      },
+      "blockers": [],
+      "warnings": [
+        "Approval received — resuming",
+        "2 optional draft(s) may still need separate editorial review"
+      ],
+      "approvalId": "appr-wf-software-onboarding-content-writesonic-1787132868148-software-review",
+      "startedAt": "2026-08-19T09:49:38.038Z",
+      "completedAt": "2026-08-19T09:49:38.260Z",
+      "revisionAttempts": 0
+    },
+    {
+      "id": "pre-publish-validation",
+      "definitionStepId": "pre-publish-validation",
+      "handler": "pre-publish-validation",
+      "label": "Pre-publish validation",
+      "status": "completed",
+      "required": true,
+      "failurePolicy": "block-workflow",
+      "attempt": 1,
+      "maxAttempts": 2,
+      "dependsOn": [
+        "editorial-approval"
+      ],
+      "priority": "critical",
+      "config": {
+        "maxAutomaticRevisions": 1,
+        "expandFromContentPlan": false,
+        "expandKind": "none",
+        "stopAfterApproval": true,
+        "allowNormalizedFacts": false,
+        "optionalWhenBlocked": false,
+        "forceTransientFailOnce": false
+      },
+      "inputRefs": {},
+      "outputRefs": {
+        "publishState": "READY_TO_PUBLISH"
+      },
+      "blockers": [],
+      "warnings": [
+        "stopAfterApproval: workflow will not publish automatically"
+      ],
+      "startedAt": "2026-08-19T09:49:38.263Z",
+      "completedAt": "2026-08-19T09:49:38.764Z",
+      "revisionAttempts": 0
+    }
+  ],
+  "history": [
+    {
+      "at": "2026-08-19T09:47:49.258Z",
+      "event": "workflow_created",
+      "message": "Created software-onboarding-content:v1.0.0"
+    },
+    {
+      "at": "2026-08-19T09:47:49.262Z",
+      "event": "workflow_started",
+      "message": "Workflow execution started"
+    },
+    {
+      "at": "2026-08-19T09:47:49.263Z",
+      "event": "workflow_step_started",
+      "stepId": "software-onboarding",
+      "message": "Started Software onboarding"
+    },
+    {
+      "at": "2026-08-19T09:47:49.503Z",
+      "event": "workflow_step_completed",
+      "stepId": "software-onboarding",
+      "message": "Reused onboarding run onboard-writesonic-1787132660995 (ready)"
+    },
+    {
+      "at": "2026-08-19T09:47:49.504Z",
+      "event": "workflow_step_started",
+      "stepId": "content-plan",
+      "message": "Started Content plan"
+    },
+    {
+      "at": "2026-08-19T09:47:49.597Z",
+      "event": "workflow_step_completed",
+      "stepId": "content-plan",
+      "message": "Content plan from onboarding onboard-writesonic-1787132660995 (6 candidates)"
+    },
+    {
+      "at": "2026-08-19T09:47:49.598Z",
+      "event": "workflow_step_started",
+      "stepId": "software-review",
+      "message": "Started Software Review"
+    },
+    {
+      "at": "2026-08-19T09:47:49.897Z",
+      "event": "workflow_step_completed",
+      "stepId": "software-review",
+      "message": "Agent software-review-agent → draft draft-deterministic-v1-software-review-agent-writesonic-2026-08-19T09-47-49-881Z (qa=pass)"
+    },
+    {
+      "at": "2026-08-19T09:47:49.902Z",
+      "event": "workflow_step_started",
+      "stepId": "alternatives",
+      "message": "Started Alternatives"
+    },
+    {
+      "at": "2026-08-19T09:47:49.937Z",
+      "event": "workflow_step_completed",
+      "stepId": "alternatives",
+      "message": "Agent blocked (optional): NO_APPROVED_ALTERNATIVES: Approved alternative relationships required — same-category alone is insufficient"
+    },
+    {
+      "at": "2026-08-19T09:47:49.941Z",
+      "event": "workflow_step_started",
+      "stepId": "comparison:chatgpt-vs-writesonic",
+      "message": "Started Comparison chatgpt-vs-writesonic"
+    },
+    {
+      "at": "2026-08-19T09:47:49.978Z",
+      "event": "workflow_step_completed",
+      "stepId": "comparison:chatgpt-vs-writesonic",
+      "message": "Agent blocked (optional): RELATIONSHIP_UNAPPROVED: Approved comparable relationship required"
+    },
+    {
+      "at": "2026-08-19T09:47:49.979Z",
+      "event": "workflow_step_started",
+      "stepId": "comparison:quillbot-vs-writesonic",
+      "message": "Started Comparison quillbot-vs-writesonic"
+    },
+    {
+      "at": "2026-08-19T09:47:49.993Z",
+      "event": "workflow_step_completed",
+      "stepId": "comparison:quillbot-vs-writesonic",
+      "message": "Agent blocked (optional): RELATIONSHIP_UNAPPROVED: Approved comparable relationship required"
+    },
+    {
+      "at": "2026-08-19T09:47:49.995Z",
+      "event": "workflow_step_started",
+      "stepId": "pricing-page",
+      "message": "Started Pricing Page"
+    },
+    {
+      "at": "2026-08-19T09:47:50.006Z",
+      "event": "workflow_step_completed",
+      "stepId": "pricing-page",
+      "message": "Agent pricing-page-agent → draft draft-deterministic-v1-pricing-page-agent-writesonic-2026-08-19T09-47-50-004Z (qa=pass)"
+    },
+    {
+      "at": "2026-08-19T09:47:50.006Z",
+      "event": "workflow_step_started",
+      "stepId": "finder-readiness",
+      "message": "Started Finder readiness"
+    },
+    {
+      "at": "2026-08-19T09:47:50.007Z",
+      "event": "workflow_step_completed",
+      "stepId": "finder-readiness",
+      "message": "Finder readiness noted for writesonic"
+    },
+    {
+      "at": "2026-08-19T09:47:50.008Z",
+      "event": "workflow_step_started",
+      "stepId": "internal-links",
+      "message": "Started Internal Link Plan"
+    },
+    {
+      "at": "2026-08-19T09:47:50.029Z",
+      "event": "workflow_step_completed",
+      "stepId": "internal-links",
+      "message": "Agent internal-link-agent → draft draft-deterministic-v1-internal-link-agent-writesonic-2026-08-19T09-47-50-026Z (qa=pass)"
+    },
+    {
+      "at": "2026-08-19T09:47:50.030Z",
+      "event": "workflow_step_started",
+      "stepId": "editorial-approval",
+      "message": "Started Editorial approval"
+    },
+    {
+      "at": "2026-08-19T09:47:50.120Z",
+      "event": "workflow_step_completed",
+      "stepId": "editorial-approval",
+      "message": "WAITING FOR EDITORIAL APPROVAL (appr-wf-software-onboarding-content-writesonic-1787132868148-software-review)"
+    },
+    {
+      "at": "2026-08-19T09:47:50.121Z",
+      "event": "workflow_blocked",
+      "message": "WAITING FOR EDITORIAL APPROVAL"
+    },
+    {
+      "at": "2026-08-19T09:49:38.029Z",
+      "event": "workflow_resumed",
+      "message": "Workflow resumed"
+    },
+    {
+      "at": "2026-08-19T09:49:38.034Z",
+      "event": "workflow_started",
+      "message": "Workflow execution started"
+    },
+    {
+      "at": "2026-08-19T09:49:38.038Z",
+      "event": "workflow_step_started",
+      "stepId": "editorial-approval",
+      "message": "Started Editorial approval"
+    },
+    {
+      "at": "2026-08-19T09:49:38.260Z",
+      "event": "workflow_step_completed",
+      "stepId": "editorial-approval",
+      "message": "Required editorial approvals satisfied"
+    },
+    {
+      "at": "2026-08-19T09:49:38.262Z",
+      "event": "workflow_step_started",
+      "stepId": "pre-publish-validation",
+      "message": "Started Pre-publish validation"
+    },
+    {
+      "at": "2026-08-19T09:49:38.764Z",
+      "event": "workflow_step_completed",
+      "stepId": "pre-publish-validation",
+      "message": "Pre-publish validation passed — READY TO PUBLISH (manual)"
+    },
+    {
+      "at": "2026-08-19T09:49:38.765Z",
+      "event": "workflow_completed",
+      "message": "Workflow completed-with-warnings"
+    },
+    {
+      "at": "2026-08-19T09:51:25.220Z",
+      "event": "workflow_resumed",
+      "message": "Workflow resumed"
+    },
+    {
+      "at": "2026-08-19T09:51:25.222Z",
+      "event": "workflow_started",
+      "message": "Workflow execution started"
+    },
+    {
+      "at": "2026-08-19T09:51:25.223Z",
+      "event": "workflow_completed",
+      "message": "Workflow completed-with-warnings"
+    },
+    {
+      "at": "2026-08-19T09:51:34.531Z",
+      "event": "workflow_resumed",
+      "message": "Workflow resumed"
+    },
+    {
+      "at": "2026-08-19T09:51:34.535Z",
+      "event": "workflow_started",
+      "message": "Workflow execution started"
+    },
+    {
+      "at": "2026-08-19T09:51:34.536Z",
+      "event": "workflow_step_started",
+      "stepId": "alternatives",
+      "message": "Started Alternatives"
+    },
+    {
+      "at": "2026-08-19T09:51:34.775Z",
+      "event": "workflow_step_completed",
+      "stepId": "alternatives",
+      "message": "Agent alternatives-agent → draft draft-deterministic-v1-alternatives-agent-writesonic-2026-08-19T09-51-34-767Z (qa=pass)"
+    },
+    {
+      "at": "2026-08-19T09:51:34.777Z",
+      "event": "workflow_step_started",
+      "stepId": "comparison:chatgpt-vs-writesonic",
+      "message": "Started Comparison chatgpt-vs-writesonic"
+    },
+    {
+      "at": "2026-08-19T09:51:34.810Z",
+      "event": "workflow_step_completed",
+      "stepId": "comparison:chatgpt-vs-writesonic",
+      "message": "Agent comparison-agent → draft draft-deterministic-v1-comparison-agent-chatgpt-vs-writesonic-2026-08-19T09-51-34-807Z (qa=pass)"
+    },
+    {
+      "at": "2026-08-19T09:51:34.811Z",
+      "event": "workflow_step_started",
+      "stepId": "comparison:quillbot-vs-writesonic",
+      "message": "Started Comparison quillbot-vs-writesonic"
+    },
+    {
+      "at": "2026-08-19T09:51:34.841Z",
+      "event": "workflow_step_completed",
+      "stepId": "comparison:quillbot-vs-writesonic",
+      "message": "Agent comparison-agent → draft draft-deterministic-v1-comparison-agent-quillbot-vs-writesonic-2026-08-19T09-51-34-827Z (qa=pass)"
+    },
+    {
+      "at": "2026-08-19T09:51:34.844Z",
+      "event": "workflow_completed",
+      "message": "Workflow completed"
+    }
+  ],
+  "options": {
+    "generateReview": true,
+    "generatePricing": true,
+    "generateAlternatives": true,
+    "generateComparisons": true,
+    "runInternalLinks": true,
+    "stopAfterApproval": true,
+    "allowNormalizedFacts": false,
+    "dryRun": false,
+    "maxComparisons": 3,
+    "skipOnboarding": false
+  },
+  "warnings": [],
+  "createdAt": "2026-08-19T09:47:49.257Z",
+  "updatedAt": "2026-08-19T09:51:34.844Z"
+}

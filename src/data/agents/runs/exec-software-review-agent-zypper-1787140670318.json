@@ -1,0 +1,90 @@
+{
+  "id": "exec-software-review-agent-zypper-1787140670318",
+  "agentId": "software-review-agent",
+  "agentVersion": "1.0.0",
+  "status": "qa-failed",
+  "mode": "CREATE",
+  "targetSlug": "zypper",
+  "draftId": "draft-deterministic-v1-software-review-agent-zypper-2026-08-19T11-57-50-518Z",
+  "briefId": "agent-brief-software-review-agent-zypper-1787140670517",
+  "validation": {
+    "ok": false,
+    "errors": [
+      "unknown-fact-ref:fact-zypper-features.content-calendar",
+      "unknown-fact-ref:fact-zypper-features.social-scheduling",
+      "unknown-fact-ref:fact-zypper-features.marketing-automation"
+    ]
+  },
+  "qa": {
+    "status": "fail",
+    "blockers": [
+      {
+        "type": "UNSUPPORTED_FACT",
+        "severity": "blocker",
+        "message": "Fact ref not in approved context: fact-zypper-features.content-calendar",
+        "section": "verdict"
+      },
+      {
+        "type": "UNSUPPORTED_FACT",
+        "severity": "blocker",
+        "message": "Fact ref not in approved context: fact-zypper-features.social-scheduling",
+        "section": "verdict"
+      },
+      {
+        "type": "UNSUPPORTED_FACT",
+        "severity": "blocker",
+        "message": "Fact ref not in approved context: fact-zypper-features.marketing-automation",
+        "section": "verdict"
+      },
+      {
+        "type": "UNSUPPORTED_FACT",
+        "severity": "blocker",
+        "message": "unknown-fact-ref:fact-zypper-features.content-calendar"
+      },
+      {
+        "type": "UNSUPPORTED_FACT",
+        "severity": "blocker",
+        "message": "unknown-fact-ref:fact-zypper-features.social-scheduling"
+      },
+      {
+        "type": "UNSUPPORTED_FACT",
+        "severity": "blocker",
+        "message": "unknown-fact-ref:fact-zypper-features.marketing-automation"
+      }
+    ],
+    "warnings": [],
+    "suggestions": [],
+    "checkedAt": "2026-08-19T11:57:50.522Z"
+  },
+  "errors": [
+    "unknown-fact-ref:fact-zypper-features.content-calendar",
+    "unknown-fact-ref:fact-zypper-features.social-scheduling",
+    "unknown-fact-ref:fact-zypper-features.marketing-automation"
+  ],
+  "cost": {
+    "provider": "deterministic-v1",
+    "model": "deterministic-template-v1",
+    "inputTokens": 0,
+    "outputTokens": 0,
+    "estimatedCostUsd": 0
+  },
+  "contextSnapshot": {
+    "researchSnapshotIds": [],
+    "factIds": [
+      "fact-zypper-identity.shortDescription",
+      "fact-zypper-positioning.vendorClaim",
+      "fact-zypper-pricing.model",
+      "fact-zypper-pricing.hasFreePlan",
+      "fact-zypper-pricing.hasFreeTrial",
+      "fact-zypper-pricing.startingPriceMonthly",
+      "fact-zypper-pricing.plans.starter"
+    ],
+    "methodologySlug": "marketing-editorial",
+    "methodologyVersion": "1.0.0",
+    "pricingFreshnessAt": "2026-08-17T17:00:00.000Z",
+    "builtAt": "2026-08-19T11:57:50.513Z"
+  },
+  "dryRun": false,
+  "startedAt": "2026-08-19T11:57:50.318Z",
+  "completedAt": "2026-08-19T11:57:50.524Z"
+}

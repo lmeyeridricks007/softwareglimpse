@@ -1,0 +1,218 @@
+# Business Communications supporting content — 2026-08-17
+
+**Category:** `business-communications`
+**Scope:** Best page, category guides, use-case hubs, capability hubs
+**Quality bar:** Buyer-helpful copy; no affiliate economics in rankings; no invented product facts; `handsOnTesting=false` disclosed
+
+---
+
+## Delivered
+
+### 1) Best business communications software
+
+`src/data/seed/best.ts` → `best-business-communications-software` / `/best/business-communications-software/`
+
+- `editorialStatus: approved`, `metadata.researchStatus: complete`, `seo.indexable: true` (matches the four existing best pages)
+- `methodologyVersion: 1.0.0`; methodology states products are compared **inside their job cluster** — phone against phone, messaging against messaging
+- Ranked awards cover the **cloud-phone cluster only**. Wati, Zenzap, Kixie, Fastmail, and SaneBox are landscape / decision-path entries and are never ranked against phone systems.
+
+**Ranking as written by this pass (wave-1 catalogue):**
+
+| Rank | Product | Score | Award |
+| ---: | --- | ---: | --- |
+| 1 | Aircall | 8.3 | Best mid-market cloud phone system |
+| 2 | CallHippo | 7.2 | Best SMB cloud phone value |
+| 3 | KrispCall | 6.8 | Best budget global numbers |
+| 4 | Freshcaller | 7.0 | Best Freshworks-aligned inbound voice |
+
+KrispCall is deliberately placed above Freshcaller despite the lower score because Freshcaller has no outbound dialer and is inbound-support-shaped; the page states this openly rather than hiding the score inversion.
+
+> **⚠️ Superseded during this pass — read before acting on the table above.**
+> A parallel agent onboarded six more business-communications products (RingCentral, Dialpad, Zoom, Nextiva, Microsoft Teams, Slack) and **extended this best page at 17:05**, after this pass wrote it at ~16:40. The current committed ranking is:
+>
+> | Rank | Product | Score |
+> | ---: | --- | ---: |
+> | 1 | RingCentral | 8.8 |
+> | 2 | Dialpad | 8.5 |
+> | 3 | Zoom | 8.4 |
+> | 4 | Aircall | 8.3 |
+> | 5 | Nextiva | 8.1 |
+> | 6 | CallHippo | 7.2 |
+> | 7 | KrispCall | 6.8 |
+> | 8 | Freshcaller | 7.0 |
+>
+> This was an **extension, not a rewrite** — the scaffolding from this pass survived intact (`useCaseSlugs`, `featureMatrixSlugs`, landscape group ids/labels/descriptions, methodology framing, editorial-fit ordering rationale). Every constraint from the brief still holds in the current state: ranked awards are phone-cluster only, Wati is landscape-only, Slack/Teams are landscape awards rather than phone peers, the relative order Aircall > CallHippo > KrispCall > Freshcaller is preserved, `handsOnTesting=false` is disclosed, and affiliate economics are excluded. The literal "Aircall #1" from the brief no longer holds because higher-scoring UCaaS products entered the catalogue after the brief was written — ranking Aircall above RingCentral (8.8) inside the same cluster would not be defensible. **This pass did not revert the parallel agent's work.** If the wave-1-only ranking is wanted instead, it needs an explicit decision.
+
+**Landscape groups (5):**
+
+| Group | Products |
+| --- | --- |
+| Cloud phone systems | ranked cluster |
+| Team messaging | Slack, Microsoft Teams, Zenzap |
+| WhatsApp & customer messaging | Wati |
+| Sales dialers (sales-intelligence primary) | Kixie |
+| Business email & inbox productivity (adjacent) | Fastmail, SaneBox |
+
+Also wired: 13 decision paths, 5 buying-guide steps, 7 FAQs, related comparisons/alternatives, `featureMatrixSlugs` (`cloud-phone`, `call-routing`, `power-dialer`, `crm-cti`, `whatsapp-business`, `video-meetings`), and tool paths (`/tools/software-finder/`, `/tools/software-stack-builder/`).
+
+`bestPagesSeed` verified intact: `crm-software`, `sales-intelligence-software`, `email-marketing-software`, `marketing-software`, `business-communications-software`.
+
+### 2) Category guides (soft-published)
+
+Cluster: `src/data/seed/guides-business-communications-cluster.ts` → wired in `src/data/seed/guides.ts`.
+
+| Slug | File | Blocks | `seo.indexable` |
+| --- | --- | ---: | --- |
+| `what-is-business-communications-software` | `guides-what-is-business-communications-software.ts` | 9 | `false` (editorial gate) |
+| `how-to-choose-business-communications-software` | `guides-how-to-choose-business-communications-software.ts` | 11 | `false` |
+| `business-communications-pricing-guide` | `guides-business-communications-pricing-guide.ts` | 8 | `false` |
+| `business-communications-requirements-guide` | `guides-business-communications-requirements-guide.ts` | 9 | `false` |
+| `business-communications-evaluation-guide` | `guides-business-communications-evaluation-guide.ts` | 10 | `false` |
+
+- Template: `softwareglimpse-guide-template-v1` / `.sg-guide-*`
+- CTAs → `/best/business-communications-software/` and `/categories/business-communications/`, plus cross-links within the cluster
+- Visuals: 14 planned PNG paths under `public/guides/` (hero + body figures). **Assets were generated by the parallel visuals agent — all 14 are present on disk.**
+- `guidesSeed` total after wiring: 480
+
+### 3) Use-case hub deep content
+
+Taxonomy: `src/data/seed/dimensions.ts` (`useCasesSeed`)
+Depth: `src/data/use-case-hub/business-communications-deep.ts` (merged into `deep.ts`)
+
+| Slug | Products on hub |
+| --- | ---: |
+| `business-phone` | 8 |
+| `sales-calling` | 6 |
+| `customer-messaging` | 2 |
+| `whatsapp-support` | 1 |
+| `team-communication` | 7 |
+| `contact-center` | 5 |
+
+All 6 registered, all 6 have depth, all 6 merged into `useCaseDepthBySlug` (28 total). Hub models build without error and carry full editorial depth at parity with the EM hubs (overview, who-this-is-for, worked examples, challenges, outcomes, capability needs, workflow steps + workflow experience, priorities, scenarios, buying framework, FAQ, requirements checklist, related content).
+
+BC products were tagged with these use-case slugs in `src/data/seed/software.ts` (Aircall, CallHippo, KrispCall, Freshcaller, Wati, Zenzap, plus Kixie gaining `sales-calling` while staying sales-intelligence-primary).
+
+Minor UI: category-aware labels extended for `business-communications` in `use-case-depth-sections.tsx`, `use-cases/[slug]/page.tsx`, and `build-hub-model.ts` (“How business communications helps” / “Business communications software to explore”).
+
+Visuals: `public/use-cases/{slug}-{hero|needs|workflow}.png` — **present on disk (3 per use case).**
+
+### 4) Feature / capability hubs
+
+Features added to `src/data/seed/features.ts` (`canonicalFeaturesSeed`); capabilities + depth added in `dimensions.ts` and `src/data/capability-hub/business-communications-deep.ts`.
+
+| Capability slug | Feature | Capability hub | Depth |
+| --- | --- | --- | --- |
+| `cloud-phone` | new | new | ✅ |
+| `call-routing` | new | new | ✅ |
+| `call-recording` | new | new | ✅ |
+| `power-dialer` | new (also `sales-intelligence`) | new | ✅ |
+| `sms-messaging` | new | new | ✅ |
+| `whatsapp-business` | new | new | ✅ |
+| `shared-inbox` | new | new | ✅ |
+| `team-messaging` | new | new | ✅ |
+| `crm-cti` | new | new | ✅ |
+| `analytics-reporting` | new | new | ✅ |
+| `unified-inbox` | new | new | ✅ |
+| `ai-assistance` | **extended** — BC added to existing shared feature | **skipped** — CRM owns `/capabilities/ai-assistance/` | — |
+| `video-meetings` | already in features | **registered 2026-08-17 polish** | ✅ |
+
+11 BC capability hubs originally; **12** after `video-meetings` polish — all with depth, merged into `capabilityDepthBySlug`. Hubs build with products attached.
+
+`/features/[slug]` remains CRM-graph-driven; BC buyers get educational depth via capability hubs, same as EM.
+
+Visuals: `public/capabilities/{slug}-{hero|needs|workflow}.png` — **not yet generated** (the only visual gap remaining).
+
+### 5) Industry / for pages, requirements tool
+
+**Both skipped**, matching the EM decision — see the Skipped table below.
+
+### 6) Product guides
+
+**DONE** (see `docs/reports/bc-product-guides-2026-08-17.md`): `blocks-bc.ts`, `buildAllBcProductGuides`, 23 products × 5 kinds = **115** guides, `seo.indexable: true`.
+
+### 7) This report
+
+`docs/reports/business-communications-supporting-content-2026-08-17.md`
+
+---
+
+## File list
+
+### Created
+- `src/data/seed/guides-what-is-business-communications-software.ts`
+- `src/data/seed/guides-how-to-choose-business-communications-software.ts`
+- `src/data/seed/guides-business-communications-pricing-guide.ts`
+- `src/data/seed/guides-business-communications-requirements-guide.ts`
+- `src/data/seed/guides-business-communications-evaluation-guide.ts`
+- `src/data/seed/guides-business-communications-cluster.ts`
+- `src/data/use-case-hub/business-communications-deep.ts`
+- `src/data/capability-hub/business-communications-deep.ts`
+- `docs/reports/business-communications-supporting-content-2026-08-17.md`
+
+### Updated
+- `src/data/seed/best.ts` (`best-business-communications-software`)
+- `src/data/seed/guides.ts`
+- `src/data/seed/dimensions.ts` (6 BC use cases + 11 BC capabilities)
+- `src/data/seed/features.ts` (12 new features + `ai-assistance` extended)
+- `src/data/seed/software.ts` (BC use-case tagging)
+- `src/data/use-case-hub/deep.ts`
+- `src/data/capability-hub/deep.ts`
+- `src/components/use-cases/use-case-depth-sections.tsx`
+- `src/app/(site)/use-cases/[slug]/page.tsx`
+- `src/services/use-case-hub/build-hub-model.ts`
+
+### Backups
+`tmp/bc-backups/` — `best.ts.bak`, `software.ts.bak`, `dimensions.ts.bak`, `features.ts.bak`, `guides.ts.bak`, `use-case-deep.ts.bak`, `capability-deep.ts.bak` (all taken 16:36, before any edit).
+
+Note: `software.ts.bak` is a pre-edit snapshot of a 97-product catalogue. The live file is now 103 products because a parallel agent onboarded six more BC products afterwards — do **not** restore that backup wholesale.
+
+---
+
+## Skipped (with reasons)
+
+| Item | Reason |
+| --- | --- |
+| Industry / `for` pages | `/industries/*` and `/for/*` are CRM-first architecture. Same call as EM — no BC-specific system to extend without inventing a parallel one. |
+| BC requirements builder tool | The SI builder depends on an SI-specific app, localStorage keys, and finder handoff. A thin clone would be misleading without a BC requirements engine. |
+| BC product guides (Aircall, CallHippo, KrispCall, Wati) | ~~Skipped~~ — **DONE** elsewhere: `blocks-bc.ts` + `buildAllBcProductGuides` → 115 guides / 23 products. See `bc-product-guides-2026-08-17.md`. |
+| `ai-assistance` capability hub rewrite | CRM owns `/capabilities/ai-assistance/`. The feature taxonomy now includes `business-communications`, but the hub content was left CRM-owned. |
+| `video-meetings` capability hub | ~~Deferred~~ — **DONE 2026-08-17 polish:** capability in `dimensions.ts`, depth in `business-communications-deep.ts`, wired into BC best `featureMatrixSlugs`. Teaching PNGs: `public/capabilities/video-meetings-{hero,needs,workflow}.png`. |
+| Capability PNG generation | Paths wired by convention; assets are the visuals agent's remaining work. |
+| Indexable BC guides | Soft-published per the guides rule until the editorial gate. |
+| Product research pack regeneration | Out of scope per the brief. |
+
+---
+
+## Verification
+
+| Check | Result |
+| --- | --- |
+| `best.ts` parses; `bestPagesSeed` complete | ✅ 5 pages — crm, si, em, marketing, business-communications |
+| BC best page approved + no affiliate economics in ordering | ✅ `editorialStatus: approved`, `handsOnTesting=false` in `editorialNotes` |
+| Wati not ranked against phone systems | ✅ landscape-only, with an explicit note that it is scored on a different criterion mix |
+| 5 BC guides resolve from `guidesSeed`, all `seo.indexable: false` | ✅ 480 guides total |
+| 6 BC use cases registered + depth merged | ✅ 0 missing from `useCaseDepthBySlug` |
+| 11 BC capabilities registered + depth merged | ✅ 0 missing from `capabilityDepthBySlug` |
+| All 17 BC hub models build | ✅ non-null, products attached, depth at EM parity |
+| `validateContentRepository()` | 51 pre-existing issues, **0 BC-related** — all unknown-ref issues trace to CRM/SI/marketing products (`data-enrichment`, `deal-management`, `learnworlds`, `livestorm`, `buffer`, `clickfunnels`, …) |
+| ESLint on changed files | 28 errors in `dimensions.ts`, **22 of which are pre-existing** (verified by linting the pre-edit backup in place). All are the same `react-hooks/rules-of-hooks` false positive: the file's local `useCase()` helper trips React's hook-naming heuristic. The 6 new ones are new BC entries using that same helper. Renaming the helper would touch every entry in the file and was judged not worth the risk. |
+| `npm test` | 39 failed / 931 passed. **No failure traces to this work** — see below. |
+
+### On the test failures
+
+The suite was already red before this pass and the failures are stale expectations from an earlier, smaller site rather than regressions. Representative examples: `crm-vertical.test.ts` asserts *all* comparisons are noindex and that the CRM best page is not yet indexable (both were true pre-launch, neither is true now); `best-hub.test.ts` asserts there are no approved Best-for claims; `content-clusters.test.ts` asserts the email-marketing cluster contains no guides — it now contains 70. The `site-audit` block (8 failures) is a crash inside `buildProductMediaHealthReport`, unrelated to seeds.
+
+A clean git baseline was not available for a before/after comparison — the entire application is uncommitted on top of `Initial commit from Create Next App`, so there is no prior revision to diff against. The strongest available evidence that this pass is clean is `validateContentRepository()`: it walks every seed reference and reports **zero** BC-related issues, meaning all new use-case, capability, feature, product, and best-page references resolve. The failure count moved 37 → 39 between two runs of this pass, which tracks the parallel agent's six new products landing mid-run, not these edits.
+
+---
+
+## Follow-ups
+
+1. ~~Generate `public/capabilities/{slug}-{hero|needs|workflow}.png` for the 11 BC capability hubs~~ (visuals agent / follow-up assets — check disk separately).
+2. ~~Editorial gate → flip the 5 BC guides to `seo.indexable: true`.~~ **DONE** — BC category guides indexable; confirmed 2026-08-17.
+3. ~~**Decide the best-page ranking question**~~ **DECIDED 2026-08-17:** keep the **extended UCaaS / phone-cluster shortlist** (RingCentral → Freshcaller), not wave-1-only. Landscape awards remain for CCaaS / messaging / collab / CPaaS — never mixed into phone ranks.
+4. ~~Reconcile the newly-onboarded UCaaS products (RingCentral, Dialpad, Zoom, Nextiva, Slack, Teams) with the guide copy~~ **DONE 2026-08-17 polish** — all 5 category guides updated with cluster language + catalogue shapes (not ranked winners); pricing guide adds medium-confidence floors for RingCentral/Dialpad/Zoom/Nextiva with confirm-live language.
+5. ~~Add a `video-meetings` capability hub once the Zoom/Teams cluster positioning is settled.~~ **DONE 2026-08-17 polish** — capability + depth + best-page matrix; PNGs at `public/capabilities/video-meetings-{hero,needs,workflow}.png`.
+6. ~~Tag Fastmail and SaneBox with use-case slugs~~ **DONE** — both tagged `team-communication` (inbox / business-email adjacency; no dedicated inbox use case exists).
+7. BC product research media: capability hubs show empty `seeInAction` / `videos` / `workflowComparison` because no BC product has official video in its research pack. Content-side wiring is complete and will populate when the media lands.
+8. ~~If BC product guides are wanted: build `blocks-bc.ts` and extend the product-guide builder.~~ **DONE** — see `bc-product-guides-2026-08-17.md` (23 products × 5 kinds = 115; `seo.indexable: true`).

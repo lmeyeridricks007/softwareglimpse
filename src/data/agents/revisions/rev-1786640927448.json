@@ -1,0 +1,51 @@
+{
+  "id": "rev-1786640927448",
+  "originalDraftId": "draft-deterministic-v1-software-review-agent-pipedrive-2026-08-13T17-08-47-442Z",
+  "revisedDraftId": "draft-deterministic-v1-software-review-agent-pipedrive-2026-08-13T17-08-47-442Z-rev-1786640927448",
+  "issues": [
+    {
+      "type": "UNSUPPORTED_FACT",
+      "severity": "blocker",
+      "message": "Fact ref not in approved context: fact-does-not-exist",
+      "section": "bad-section"
+    },
+    {
+      "type": "FAKE_TESTING_CLAIM",
+      "severity": "blocker",
+      "message": "Hands-on testing language without metadata in bad-section",
+      "section": "bad-section"
+    },
+    {
+      "type": "FAKE_TESTING_CLAIM",
+      "severity": "blocker",
+      "message": "hands-on-claim-not-allowed:bad-section"
+    },
+    {
+      "type": "UNVERIFIED_NUMBER",
+      "severity": "blocker",
+      "message": "unsourced-number:bad-section:99999"
+    },
+    {
+      "type": "UNSUPPORTED_FACT",
+      "severity": "blocker",
+      "message": "unknown-fact-ref:fact-does-not-exist"
+    },
+    {
+      "type": "PROHIBITED_CLAIM",
+      "severity": "blocker",
+      "message": "prohibited-claim:bad-section:we tested"
+    },
+    {
+      "type": "PROHIBITED_CLAIM",
+      "severity": "blocker",
+      "message": "prohibited-claim:bad-section:in our testing"
+    }
+  ],
+  "instructions": [
+    "remove-fact:fact-does-not-exist"
+  ],
+  "sectionsTargeted": [
+    "bad-section"
+  ],
+  "createdAt": "2026-08-13T17:08:47.448Z"
+}

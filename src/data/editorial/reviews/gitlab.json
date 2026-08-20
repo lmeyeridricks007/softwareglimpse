@@ -1,0 +1,287 @@
+{
+  "id": "review-gitlab-v1",
+  "productSlug": "gitlab",
+  "assessmentId": "assessment-gitlab-it-v1",
+  "editorialStatus": "approved",
+  "title": "GitLab Review (2026)",
+  "h1": "GitLab Review",
+  "intro": "GitLab is evaluated here as a source control and DevOps collaboration platform — GitLab is a single application for source control, CI/CD, security, and (on higher tiers) DevSecOps. SaaS Free covers small private namespaces with CI minute/storage caps. Premium is $29/user/month billed annually (no true month-to-month on paid). Ultimate is listed as custom/contact on GitLab’s current pricing page (historically $99/user/mo — confirm live). Self-managed SKUs exist separately. Distinct from GitHub (source-control cluster peer) and from GitHub Copilot (AI coding product). This review uses SoftwareGlimpse’s IT & Development methodology (ease of use, IT job fit, workflow depth, integrations, admin/security, scalability, value, AI), scoring products inside their job cluster rather than against unrelated peers. It is based on first-party research, not hands-on lab testing.",
+  "summary": "Choose GitLab when a DevSecOps platform (git + CI + security) is the job — not GitHub Copilot and not Bitbucket-as-cheap-git.",
+  "verdict": "Choose GitLab when a DevSecOps platform (git + CI + security) is the job — not GitHub Copilot and not Bitbucket-as-cheap-git. Compare GitHub for ecosystem + Actions; Bitbucket if you are Atlassian-native and need cheaper git+Pipelines. Scores reflect first-party documentation as of 2026-08-18 — not hands-on product testing. Confirm current packaging, host/GB rates and minimums on the vendor site before purchase.",
+  "overallScore": 8.3,
+  "criterionAssessments": [
+    {
+      "criterionSlug": "ease-of-use",
+      "score": 7,
+      "rationale": "One application is conceptually simple; GitLab’s surface area is still large vs GitHub-for-git-only.",
+      "supportingFactIds": [
+        "fact-gitlab-features.source-control",
+        "fact-gitlab-pricing.model"
+      ],
+      "confidence": "medium",
+      "status": "approved",
+      "reviewedAt": "2026-08-18T12:00:00.000Z",
+      "reviewer": "editorial"
+    },
+    {
+      "criterionSlug": "it-job-fit",
+      "score": 9,
+      "rationale": "Source-control + CI/CD DevOps platform — peer of GitHub/Bitbucket, not Datadog.",
+      "supportingFactIds": [
+        "fact-gitlab-features.source-control",
+        "fact-gitlab-pricing.model"
+      ],
+      "confidence": "medium",
+      "status": "approved",
+      "reviewedAt": "2026-08-18T12:00:00.000Z",
+      "reviewer": "editorial"
+    },
+    {
+      "criterionSlug": "workflow-depth",
+      "score": 9,
+      "rationale": "Repo + CI + security in one product is the depth lead vs Bitbucket; GitHub remains the network-effect peer.",
+      "supportingFactIds": [
+        "fact-gitlab-features.cicd-actions",
+        "fact-gitlab-pricing.model"
+      ],
+      "confidence": "medium",
+      "status": "approved",
+      "reviewedAt": "2026-08-18T12:00:00.000Z",
+      "reviewer": "editorial"
+    },
+    {
+      "criterionSlug": "integrations",
+      "score": 8,
+      "rationale": "Jira/Slack native; GitHub-equivalent marketplace is thinner.",
+      "supportingFactIds": [
+        "fact-gitlab-features.analytics-reporting",
+        "fact-gitlab-pricing.model",
+        "fact-gitlab-positioning.vendorClaim"
+      ],
+      "confidence": "medium",
+      "status": "approved",
+      "reviewedAt": "2026-08-18T12:00:00.000Z",
+      "reviewer": "editorial"
+    },
+    {
+      "criterionSlug": "admin-security",
+      "score": 9,
+      "rationale": "Premium/Ultimate are built for SSO, approvals, and compliance.",
+      "supportingFactIds": [
+        "fact-gitlab-features.enterprise-security",
+        "fact-gitlab-pricing.model"
+      ],
+      "confidence": "medium",
+      "status": "approved",
+      "reviewedAt": "2026-08-18T12:00:00.000Z",
+      "reviewer": "editorial"
+    },
+    {
+      "criterionSlug": "scalability",
+      "score": 9,
+      "rationale": "SaaS and self-managed scale paths.",
+      "supportingFactIds": [
+        "fact-gitlab-pricing.plans.free",
+        "fact-gitlab-pricing.model",
+        "fact-gitlab-pricing.plans.ultimate"
+      ],
+      "confidence": "medium",
+      "status": "approved",
+      "reviewedAt": "2026-08-18T12:00:00.000Z",
+      "reviewer": "editorial"
+    },
+    {
+      "criterionSlug": "value-for-money",
+      "score": 7,
+      "rationale": "$29 Premium vs GitHub Team $4 is a different product (CI/DevSecOps). Fair for the scope; not a cheap git host. Affiliate economics excluded.",
+      "supportingFactIds": [
+        "fact-gitlab-pricing.hasFreePlan",
+        "fact-gitlab-pricing.model",
+        "fact-gitlab-pricing.startingPriceMonthly"
+      ],
+      "confidence": "medium",
+      "status": "approved",
+      "reviewedAt": "2026-08-18T12:00:00.000Z",
+      "reviewer": "editorial"
+    },
+    {
+      "criterionSlug": "ai-capabilities",
+      "score": 8,
+      "rationale": "GitLab Duo / AI features on paid platforms — scored as platform AI, not GitHub Copilot.",
+      "supportingFactIds": [
+        "fact-gitlab-features.dev-ai",
+        "fact-gitlab-pricing.model"
+      ],
+      "confidence": "medium",
+      "status": "approved",
+      "reviewedAt": "2026-08-18T12:00:00.000Z",
+      "reviewer": "editorial"
+    }
+  ],
+  "bestFor": [
+    "Teams that want git + CI + security in one licence",
+    "Self-managed / data-residency buyers",
+    "Orgs leaving a many-tool DevOps stack"
+  ],
+  "notIdealFor": [
+    "Teams that only need cheap git hosting (GitHub Free / Bitbucket)",
+    "AI-IDE-only buyers (Cursor)",
+    "Observability-only (Datadog)"
+  ],
+  "pros": [
+    "All-in-one DevSecOps",
+    "Published Premium $29 annual",
+    "Self-managed option",
+    "Strong MR/CI depth",
+    "AI on the platform (Duo)"
+  ],
+  "cons": [
+    "Annual-only paid SaaS",
+    "Ultimate quote",
+    "Heavier than git-only",
+    "Network effect vs GitHub",
+    "CI minute gates on Free"
+  ],
+  "keyFeatures": [
+    "Git repositories and MRs",
+    "CI/CD pipelines",
+    "Security scanning (Ultimate-oriented)",
+    "Project planning on higher tiers",
+    "GitLab Duo AI assistance"
+  ],
+  "limitations": [
+    "Paid SaaS is annual — no month-to-month Premium",
+    "Ultimate security suite is quote-gated on the current page",
+    "Not GitHub Copilot; GitLab Duo/AI is a platform feature, not the ai-code entity",
+    "CI minute overages on Free/low tiers",
+    "Not observability or ITSM"
+  ],
+  "pricingSummary": "Free with CI/storage caps. Premium $29/user/mo billed annually. Ultimate custom. Confirm on about.gitlab.com/pricing.",
+  "whoShouldChoose": "Choose GitLab when a DevSecOps platform (git + CI + security) is the job — not GitHub Copilot and not Bitbucket-as-cheap-git.",
+  "whoShouldConsiderAlternatives": "Compare GitHub for ecosystem + Actions; Bitbucket if you are Atlassian-native and need cheaper git+Pipelines.",
+  "alternativeSlugs": [
+    "github",
+    "bitbucket"
+  ],
+  "comparisonSlugs": [
+    "github-vs-gitlab",
+    "bitbucket-vs-gitlab"
+  ],
+  "relatedGuidePaths": [
+    "/categories/it-development/",
+    "/best/it-development-software/"
+  ],
+  "methodologySlug": "it-development-editorial",
+  "methodologyVersion": "1.0.0",
+  "researchSourceIds": [
+    "gitlab-product-official",
+    "gitlab-pricing-official",
+    "gitlab-pricing"
+  ],
+  "factRefs": [
+    {
+      "section": "pricing",
+      "factIds": [
+        "fact-gitlab-pricing.model",
+        "fact-gitlab-pricing.hasFreePlan",
+        "fact-gitlab-pricing.hasFreeTrial",
+        "fact-gitlab-pricing.startingPriceMonthly",
+        "fact-gitlab-pricing.plans.free",
+        "fact-gitlab-pricing.plans.premium",
+        "fact-gitlab-pricing.plans.ultimate"
+      ]
+    },
+    {
+      "section": "overview",
+      "factIds": [
+        "fact-gitlab-identity.shortDescription",
+        "fact-gitlab-positioning.vendorClaim",
+        "fact-gitlab-positioning.jobCluster"
+      ]
+    },
+    {
+      "section": "features",
+      "factIds": [
+        "fact-gitlab-features.incident-management",
+        "fact-gitlab-features.change-problem",
+        "fact-gitlab-features.service-catalog",
+        "fact-gitlab-features.infrastructure-monitoring",
+        "fact-gitlab-features.apm-tracing",
+        "fact-gitlab-features.log-management",
+        "fact-gitlab-features.source-control",
+        "fact-gitlab-features.cicd-actions",
+        "fact-gitlab-features.hosting-panel",
+        "fact-gitlab-features.proxy-network",
+        "fact-gitlab-features.itsm-ai",
+        "fact-gitlab-features.dev-ai",
+        "fact-gitlab-features.oncall-paging",
+        "fact-gitlab-features.enterprise-security",
+        "fact-gitlab-features.analytics-reporting"
+      ]
+    }
+  ],
+  "faq": [
+    {
+      "question": "Is GitLab IT / development software?",
+      "answer": "Yes. GitLab is evaluated as a source control and DevOps collaboration platform."
+    },
+    {
+      "question": "How is GitLab priced?",
+      "answer": "Free with CI/storage caps. Premium $29/user/mo billed annually. Ultimate custom. Confirm on about.gitlab.com/pricing."
+    },
+    {
+      "question": "Does GitLab have a free plan or free trial?",
+      "answer": "Yes — a free plan is published. A free trial is documented. Confirm current terms with the vendor."
+    },
+    {
+      "question": "Did SoftwareGlimpse personally test GitLab?",
+      "answer": "No. This review is based on first-party product and pricing research evidence, not hands-on product usage. Affiliate relationships never influence scores."
+    }
+  ],
+  "sections": [
+    {
+      "id": "overview",
+      "heading": "Overview",
+      "body": "GitLab is a single application for source control, CI/CD, security, and (on higher tiers) DevSecOps. SaaS Free covers small private namespaces with CI minute/storage caps. Premium is $29/user/month billed annually (no true month-to-month on paid). Ultimate is listed as custom/contact on GitLab’s current pricing page (historically $99/user/mo — confirm live). Self-managed SKUs exist separately. Distinct from GitHub (source-control cluster peer) and from GitHub Copilot (AI coding product)."
+    },
+    {
+      "id": "best-for",
+      "heading": "Who it’s for",
+      "body": "• Teams that want git + CI + security in one licence\n• Self-managed / data-residency buyers\n• Orgs leaving a many-tool DevOps stack"
+    },
+    {
+      "id": "features",
+      "heading": "Feature coverage",
+      "body": "• incident-management: not-supported\n• change-problem: not-supported\n• service-catalog: not-supported\n• infrastructure-monitoring: not-supported\n• apm-tracing: not-supported\n• log-management: limited\n• source-control: supported\n• cicd-actions: supported\n• hosting-panel: not-supported\n• proxy-network: not-supported\n• itsm-ai: not-supported\n• dev-ai: supported\n• oncall-paging: not-supported\n• enterprise-security: supported\n• analytics-reporting: supported"
+    },
+    {
+      "id": "pricing",
+      "heading": "Pricing",
+      "body": "Free with CI/storage caps. Premium $29/user/mo billed annually. Ultimate custom. Confirm on about.gitlab.com/pricing."
+    },
+    {
+      "id": "limitations",
+      "heading": "Limitations",
+      "body": "• Paid SaaS is annual — no month-to-month Premium\n• Ultimate security suite is quote-gated on the current page\n• Not GitHub Copilot; GitLab Duo/AI is a platform feature, not the ai-code entity\n• CI minute overages on Free/low tiers\n• Not observability or ITSM"
+    }
+  ],
+  "confidence": "medium",
+  "handsOnTesting": false,
+  "contentVersion": 1,
+  "refreshNeeded": false,
+  "lastUpdatedAt": "2026-08-18T12:00:00.000Z",
+  "metadata": {
+    "status": "published",
+    "publishedAt": "2026-08-18T00:00:00.000Z",
+    "updatedAt": "2026-08-18T12:00:00.000Z",
+    "reviewedAt": "2026-08-18T12:00:00.000Z",
+    "author": "author-lee-meyeridricks",
+    "researchStatus": "complete"
+  },
+  "seo": {
+    "title": "GitLab Review (2026) — IT & Development",
+    "description": "GitLab IT & development review on SoftwareGlimpse: strengths, trade-offs, pricing posture, and who should buy.",
+    "canonicalPath": "/software/gitlab/",
+    "indexable": true
+  }
+}

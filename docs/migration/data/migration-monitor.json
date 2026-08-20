@@ -1,0 +1,1966 @@
+{
+  "agent": {
+    "id": "legacy-migration-monitor-agent",
+    "name": "LegacyMigrationMonitorAgent",
+    "version": "1.0.0",
+    "mutatesProduction": false
+  },
+  "summary": {
+    "overall": "CRITICAL",
+    "generatedAt": "2026-08-19T11:38:17.037Z",
+    "mode": "static",
+    "totals": {
+      "issuesOpen": 73,
+      "issuesNew": 38,
+      "issuesResolved": 2,
+      "issuesRegressed": 0,
+      "issuesIntentional": 0,
+      "redirectsChecked": 71,
+      "importantUrlsWatched": 296,
+      "p0": 10,
+      "p1": 39,
+      "p2": 62
+    },
+    "checks": [
+      {
+        "id": "redirect_health",
+        "title": "Legacy redirect health",
+        "status": "pass",
+        "summary": "Configured redirects look consistent with mapping",
+        "issueCount": 0
+      },
+      {
+        "id": "target_status",
+        "title": "Redirect target status",
+        "status": "pass",
+        "summary": "All redirect targets validate against inventory",
+        "issueCount": 0
+      },
+      {
+        "id": "chains_loops",
+        "title": "Redirect chains / loops",
+        "status": "pass",
+        "summary": "No chains or loops detected",
+        "issueCount": 0
+      },
+      {
+        "id": "unexpected_404",
+        "title": "Unexpected 404 risk on important legacy URLs",
+        "status": "fail",
+        "summary": "48 active issue(s)",
+        "issueCount": 48
+      },
+      {
+        "id": "canonical_regression",
+        "title": "Canonical regressions",
+        "status": "pass",
+        "summary": "No canonical regressions detected",
+        "issueCount": 0
+      },
+      {
+        "id": "sitemap_regression",
+        "title": "Sitemap regressions",
+        "status": "pass",
+        "summary": "Sitemap does not include redirect/noindex URLs",
+        "issueCount": 0
+      },
+      {
+        "id": "internal_legacy",
+        "title": "Legacy URLs reintroduced internally",
+        "status": "pass",
+        "summary": "No internal links / repo hits to redirect sources",
+        "issueCount": 0
+      },
+      {
+        "id": "important_urls",
+        "title": "Important legacy URL watchlist",
+        "status": "fail",
+        "summary": "108 active issue(s)",
+        "issueCount": 108
+      },
+      {
+        "id": "gsc_signals",
+        "title": "Search Console signals",
+        "status": "warn",
+        "summary": "63 active issue(s)",
+        "issueCount": 63
+      }
+    ],
+    "scheduleHint": "**PRE-LAUNCH:** `npm run migration:audit` (full QA). **LAUNCH DAY:** `npm run migration:monitor` + redirect/canonical/sitemap focus; spot-check important 301s live. **FIRST WEEK:** daily monitor if CI scheduling supports it. **FIRST MONTH:** weekly monitor. **AFTER:** monthly monitor / fold into normal SEO audit cadence."
+  },
+  "issues": [
+    {
+      "id": "MIG-404-8F7F",
+      "kind": "404",
+      "severity": "P1",
+      "subject": "/benefits-of-freshsales-crm/",
+      "problem": "Important legacy URL has no implemented redirect (risk of unexpected 404)",
+      "evidence": "action=MERGE_AND_301; importance=HIGH",
+      "recommendedAction": "Approve mapping and regenerate redirects, or mark intentional retirement",
+      "important": true,
+      "state": "OPEN",
+      "firstSeenAt": "2026-08-15T17:26:25.155Z",
+      "lastSeenAt": "2026-08-19T11:38:17.037Z"
+    },
+    {
+      "id": "MIG-404-E3ED",
+      "kind": "404",
+      "severity": "P1",
+      "subject": "/benefits-of-microsoft-dynamics-crm/",
+      "problem": "Important legacy URL has no implemented redirect (risk of unexpected 404)",
+      "evidence": "action=MERGE_AND_301; importance=HIGH",
+      "recommendedAction": "Approve mapping and regenerate redirects, or mark intentional retirement",
+      "important": true,
+      "state": "OPEN",
+      "firstSeenAt": "2026-08-15T17:26:25.155Z",
+      "lastSeenAt": "2026-08-19T11:38:17.037Z"
+    },
+    {
+      "id": "MIG-404-62E7",
+      "kind": "404",
+      "severity": "P1",
+      "subject": "/benefits-of-podio-crm/",
+      "problem": "Important legacy URL has no implemented redirect (risk of unexpected 404)",
+      "evidence": "action=MERGE_AND_301; importance=MEDIUM",
+      "recommendedAction": "Approve mapping and regenerate redirects, or mark intentional retirement",
+      "important": true,
+      "state": "NEW",
+      "firstSeenAt": "2026-08-19T11:38:17.037Z",
+      "lastSeenAt": "2026-08-19T11:38:17.037Z"
+    },
+    {
+      "id": "MIG-404-683B",
+      "kind": "404",
+      "severity": "P1",
+      "subject": "/benefits-of-zoho-crm/",
+      "problem": "Important legacy URL has no implemented redirect (risk of unexpected 404)",
+      "evidence": "action=MERGE_AND_301; importance=HIGH",
+      "recommendedAction": "Approve mapping and regenerate redirects, or mark intentional retirement",
+      "important": true,
+      "state": "OPEN",
+      "firstSeenAt": "2026-08-15T17:26:25.155Z",
+      "lastSeenAt": "2026-08-19T11:38:17.037Z"
+    },
+    {
+      "id": "MIG-404-DAD8",
+      "kind": "404",
+      "severity": "P1",
+      "subject": "/best-commercial-real-estate-crm/",
+      "problem": "Important legacy URL has no implemented redirect (risk of unexpected 404)",
+      "evidence": "action=301_REDIRECT; importance=HIGH",
+      "recommendedAction": "Approve mapping and regenerate redirects, or mark intentional retirement",
+      "important": true,
+      "state": "OPEN",
+      "firstSeenAt": "2026-08-15T17:26:25.155Z",
+      "lastSeenAt": "2026-08-19T11:38:17.037Z"
+    },
+    {
+      "id": "MIG-404-AFB9",
+      "kind": "404",
+      "severity": "P1",
+      "subject": "/best-crm-for-facebook-leads/",
+      "problem": "Important legacy URL has no implemented redirect (risk of unexpected 404)",
+      "evidence": "action=301_REDIRECT; importance=HIGH",
+      "recommendedAction": "Approve mapping and regenerate redirects, or mark intentional retirement",
+      "important": true,
+      "state": "OPEN",
+      "firstSeenAt": "2026-08-15T17:26:25.155Z",
+      "lastSeenAt": "2026-08-19T11:38:17.037Z"
+    },
+    {
+      "id": "MIG-404-306A",
+      "kind": "404",
+      "severity": "P1",
+      "subject": "/best-crm-for-financial-advisors/",
+      "problem": "Important legacy URL has no implemented redirect (risk of unexpected 404)",
+      "evidence": "action=301_REDIRECT; importance=HIGH",
+      "recommendedAction": "Approve mapping and regenerate redirects, or mark intentional retirement",
+      "important": true,
+      "state": "OPEN",
+      "firstSeenAt": "2026-08-15T17:26:25.155Z",
+      "lastSeenAt": "2026-08-19T11:38:17.037Z"
+    },
+    {
+      "id": "MIG-404-9FA8",
+      "kind": "404",
+      "severity": "P1",
+      "subject": "/best-crm-for-hotels/",
+      "problem": "Important legacy URL has no implemented redirect (risk of unexpected 404)",
+      "evidence": "action=301_REDIRECT; importance=HIGH",
+      "recommendedAction": "Approve mapping and regenerate redirects, or mark intentional retirement",
+      "important": true,
+      "state": "OPEN",
+      "firstSeenAt": "2026-08-15T17:26:25.155Z",
+      "lastSeenAt": "2026-08-19T11:38:17.037Z"
+    },
+    {
+      "id": "MIG-404-D470",
+      "kind": "404",
+      "severity": "P1",
+      "subject": "/best-crm-for-linkedin/",
+      "problem": "Important legacy URL has no implemented redirect (risk of unexpected 404)",
+      "evidence": "action=301_REDIRECT; importance=HIGH",
+      "recommendedAction": "Approve mapping and regenerate redirects, or mark intentional retirement",
+      "important": true,
+      "state": "OPEN",
+      "firstSeenAt": "2026-08-15T17:26:25.155Z",
+      "lastSeenAt": "2026-08-19T11:38:17.037Z"
+    },
+    {
+      "id": "MIG-404-25AF",
+      "kind": "404",
+      "severity": "P1",
+      "subject": "/best-crm-for-real-estate-investors/",
+      "problem": "Important legacy URL has no implemented redirect (risk of unexpected 404)",
+      "evidence": "action=301_REDIRECT; importance=HIGH",
+      "recommendedAction": "Approve mapping and regenerate redirects, or mark intentional retirement",
+      "important": true,
+      "state": "OPEN",
+      "firstSeenAt": "2026-08-15T17:26:25.155Z",
+      "lastSeenAt": "2026-08-19T11:38:17.037Z"
+    },
+    {
+      "id": "MIG-404-B370",
+      "kind": "404",
+      "severity": "P1",
+      "subject": "/best-crm-for-small-legal-practices/",
+      "problem": "Important legacy URL has no implemented redirect (risk of unexpected 404)",
+      "evidence": "action=301_REDIRECT; importance=HIGH",
+      "recommendedAction": "Approve mapping and regenerate redirects, or mark intentional retirement",
+      "important": true,
+      "state": "OPEN",
+      "firstSeenAt": "2026-08-15T17:26:25.155Z",
+      "lastSeenAt": "2026-08-19T11:38:17.037Z"
+    },
+    {
+      "id": "MIG-404-3E63",
+      "kind": "404",
+      "severity": "P1",
+      "subject": "/best-crm-for-small-real-estate-business/",
+      "problem": "Important legacy URL has no implemented redirect (risk of unexpected 404)",
+      "evidence": "action=301_REDIRECT; importance=HIGH",
+      "recommendedAction": "Approve mapping and regenerate redirects, or mark intentional retirement",
+      "important": true,
+      "state": "OPEN",
+      "firstSeenAt": "2026-08-15T17:26:25.155Z",
+      "lastSeenAt": "2026-08-19T11:38:17.037Z"
+    },
+    {
+      "id": "MIG-404-C8FC",
+      "kind": "404",
+      "severity": "P1",
+      "subject": "/best-crm-software-for-car-dealerships/",
+      "problem": "Important legacy URL has no implemented redirect (risk of unexpected 404)",
+      "evidence": "action=301_REDIRECT; importance=HIGH",
+      "recommendedAction": "Approve mapping and regenerate redirects, or mark intentional retirement",
+      "important": true,
+      "state": "OPEN",
+      "firstSeenAt": "2026-08-15T17:26:25.155Z",
+      "lastSeenAt": "2026-08-19T11:38:17.037Z"
+    },
+    {
+      "id": "MIG-404-3729",
+      "kind": "404",
+      "severity": "P1",
+      "subject": "/best-crm-software-for-construction/",
+      "problem": "Important legacy URL has no implemented redirect (risk of unexpected 404)",
+      "evidence": "action=301_REDIRECT; importance=HIGH",
+      "recommendedAction": "Approve mapping and regenerate redirects, or mark intentional retirement",
+      "important": true,
+      "state": "OPEN",
+      "firstSeenAt": "2026-08-15T17:26:25.155Z",
+      "lastSeenAt": "2026-08-19T11:38:17.037Z"
+    },
+    {
+      "id": "MIG-404-8CFE",
+      "kind": "404",
+      "severity": "P1",
+      "subject": "/best-crm-software-for-restaurants/",
+      "problem": "Important legacy URL has no implemented redirect (risk of unexpected 404)",
+      "evidence": "action=301_REDIRECT; importance=HIGH",
+      "recommendedAction": "Approve mapping and regenerate redirects, or mark intentional retirement",
+      "important": true,
+      "state": "OPEN",
+      "firstSeenAt": "2026-08-15T17:26:25.155Z",
+      "lastSeenAt": "2026-08-19T11:38:17.037Z"
+    },
+    {
+      "id": "MIG-404-EEF3",
+      "kind": "404",
+      "severity": "P1",
+      "subject": "/best-practices-crm-deal-flow-private-equity/",
+      "problem": "Important legacy URL has no implemented redirect (risk of unexpected 404)",
+      "evidence": "action=MERGE_AND_301; importance=HIGH",
+      "recommendedAction": "Approve mapping and regenerate redirects, or mark intentional retirement",
+      "important": true,
+      "state": "OPEN",
+      "firstSeenAt": "2026-08-15T17:26:25.155Z",
+      "lastSeenAt": "2026-08-19T11:38:17.037Z"
+    },
+    {
+      "id": "MIG-404-DDA3",
+      "kind": "404",
+      "severity": "P1",
+      "subject": "/best-practices-crm/",
+      "problem": "Important legacy URL has no implemented redirect (risk of unexpected 404)",
+      "evidence": "action=MERGE_AND_301; importance=HIGH",
+      "recommendedAction": "Approve mapping and regenerate redirects, or mark intentional retirement",
+      "important": true,
+      "state": "OPEN",
+      "firstSeenAt": "2026-08-15T17:26:25.155Z",
+      "lastSeenAt": "2026-08-19T11:38:17.037Z"
+    },
+    {
+      "id": "MIG-404-720D",
+      "kind": "404",
+      "severity": "P1",
+      "subject": "/best-practices-for-ensuring-crm-security/",
+      "problem": "Important legacy URL has no implemented redirect (risk of unexpected 404)",
+      "evidence": "action=MERGE_AND_301; importance=HIGH",
+      "recommendedAction": "Approve mapping and regenerate redirects, or mark intentional retirement",
+      "important": true,
+      "state": "OPEN",
+      "firstSeenAt": "2026-08-15T17:26:25.155Z",
+      "lastSeenAt": "2026-08-19T11:38:17.037Z"
+    },
+    {
+      "id": "MIG-404-B60F",
+      "kind": "404",
+      "severity": "P1",
+      "subject": "/category/guides/",
+      "problem": "Important legacy URL has no implemented redirect (risk of unexpected 404)",
+      "evidence": "action=301_REDIRECT; importance=HIGH",
+      "recommendedAction": "Approve mapping and regenerate redirects, or mark intentional retirement",
+      "important": true,
+      "state": "OPEN",
+      "firstSeenAt": "2026-08-15T17:26:25.155Z",
+      "lastSeenAt": "2026-08-19T11:38:17.037Z"
+    },
+    {
+      "id": "MIG-404-9421",
+      "kind": "404",
+      "severity": "P1",
+      "subject": "/category/software-comparison/",
+      "problem": "Important legacy URL has no implemented redirect (risk of unexpected 404)",
+      "evidence": "action=301_REDIRECT; importance=HIGH",
+      "recommendedAction": "Approve mapping and regenerate redirects, or mark intentional retirement",
+      "important": true,
+      "state": "OPEN",
+      "firstSeenAt": "2026-08-15T17:26:25.155Z",
+      "lastSeenAt": "2026-08-19T11:38:17.037Z"
+    },
+    {
+      "id": "MIG-404-723C",
+      "kind": "404",
+      "severity": "P1",
+      "subject": "/copilot-vs-chatgpt/",
+      "problem": "Important legacy URL has no implemented redirect (risk of unexpected 404)",
+      "evidence": "action=301_REDIRECT; importance=LOW",
+      "recommendedAction": "Approve mapping and regenerate redirects, or mark intentional retirement",
+      "important": true,
+      "state": "NEW",
+      "firstSeenAt": "2026-08-19T11:38:17.037Z",
+      "lastSeenAt": "2026-08-19T11:38:17.037Z"
+    },
+    {
+      "id": "MIG-404-7A28",
+      "kind": "404",
+      "severity": "P1",
+      "subject": "/crm-guides/",
+      "problem": "Important legacy URL has no implemented redirect (risk of unexpected 404)",
+      "evidence": "action=301_REDIRECT; importance=HIGH",
+      "recommendedAction": "Approve mapping and regenerate redirects, or mark intentional retirement",
+      "important": true,
+      "state": "OPEN",
+      "firstSeenAt": "2026-08-15T17:26:25.155Z",
+      "lastSeenAt": "2026-08-19T11:38:17.037Z"
+    },
+    {
+      "id": "MIG-404-5167",
+      "kind": "404",
+      "severity": "P1",
+      "subject": "/diginius-review/",
+      "problem": "Important legacy URL has no implemented redirect (risk of unexpected 404)",
+      "evidence": "action=301_REDIRECT; importance=MEDIUM",
+      "recommendedAction": "Approve mapping and regenerate redirects, or mark intentional retirement",
+      "important": true,
+      "state": "NEW",
+      "firstSeenAt": "2026-08-19T11:38:17.037Z",
+      "lastSeenAt": "2026-08-19T11:38:17.037Z"
+    },
+    {
+      "id": "MIG-404-7ED1",
+      "kind": "404",
+      "severity": "P1",
+      "subject": "/fastmail-review/",
+      "problem": "Important legacy URL has no implemented redirect (risk of unexpected 404)",
+      "evidence": "action=301_REDIRECT; importance=MEDIUM",
+      "recommendedAction": "Approve mapping and regenerate redirects, or mark intentional retirement",
+      "important": true,
+      "state": "NEW",
+      "firstSeenAt": "2026-08-19T11:38:17.037Z",
+      "lastSeenAt": "2026-08-19T11:38:17.037Z"
+    },
+    {
+      "id": "MIG-404-2058",
+      "kind": "404",
+      "severity": "P1",
+      "subject": "/how-to-choose-best-ai-writer/",
+      "problem": "Important legacy URL has no implemented redirect (risk of unexpected 404)",
+      "evidence": "action=301_REDIRECT; importance=MEDIUM",
+      "recommendedAction": "Approve mapping and regenerate redirects, or mark intentional retirement",
+      "important": true,
+      "state": "NEW",
+      "firstSeenAt": "2026-08-19T11:38:17.037Z",
+      "lastSeenAt": "2026-08-19T11:38:17.037Z"
+    },
+    {
+      "id": "MIG-404-EFA7",
+      "kind": "404",
+      "severity": "P0",
+      "subject": "/hubspot-vs-mailchimp/",
+      "problem": "Important legacy URL has no implemented redirect (risk of unexpected 404)",
+      "evidence": "action=301_REDIRECT; importance=HIGH",
+      "recommendedAction": "Approve mapping and regenerate redirects, or mark intentional retirement",
+      "important": true,
+      "state": "NEW",
+      "firstSeenAt": "2026-08-19T11:38:17.037Z",
+      "lastSeenAt": "2026-08-19T11:38:17.037Z"
+    },
+    {
+      "id": "MIG-404-5404",
+      "kind": "404",
+      "severity": "P0",
+      "subject": "/hubspot-vs-marketo/",
+      "problem": "Important legacy URL has no implemented redirect (risk of unexpected 404)",
+      "evidence": "action=301_REDIRECT; importance=HIGH",
+      "recommendedAction": "Approve mapping and regenerate redirects, or mark intentional retirement",
+      "important": true,
+      "state": "NEW",
+      "firstSeenAt": "2026-08-19T11:38:17.037Z",
+      "lastSeenAt": "2026-08-19T11:38:17.037Z"
+    },
+    {
+      "id": "MIG-404-57D8",
+      "kind": "404",
+      "severity": "P0",
+      "subject": "/hubspot-vs-pardot/",
+      "problem": "Important legacy URL has no implemented redirect (risk of unexpected 404)",
+      "evidence": "action=301_REDIRECT; importance=HIGH",
+      "recommendedAction": "Approve mapping and regenerate redirects, or mark intentional retirement",
+      "important": true,
+      "state": "NEW",
+      "firstSeenAt": "2026-08-19T11:38:17.037Z",
+      "lastSeenAt": "2026-08-19T11:38:17.037Z"
+    },
+    {
+      "id": "MIG-404-1423",
+      "kind": "404",
+      "severity": "P0",
+      "subject": "/hubspot-vs-zendesk/",
+      "problem": "Important legacy URL has no implemented redirect (risk of unexpected 404)",
+      "evidence": "action=301_REDIRECT; importance=HIGH",
+      "recommendedAction": "Approve mapping and regenerate redirects, or mark intentional retirement",
+      "important": true,
+      "state": "NEW",
+      "firstSeenAt": "2026-08-19T11:38:17.037Z",
+      "lastSeenAt": "2026-08-19T11:38:17.037Z"
+    },
+    {
+      "id": "MIG-404-5865",
+      "kind": "404",
+      "severity": "P1",
+      "subject": "/kaspr-review/",
+      "problem": "Important legacy URL has no implemented redirect (risk of unexpected 404)",
+      "evidence": "action=301_REDIRECT; importance=MEDIUM",
+      "recommendedAction": "Approve mapping and regenerate redirects, or mark intentional retirement",
+      "important": true,
+      "state": "NEW",
+      "firstSeenAt": "2026-08-19T11:38:17.037Z",
+      "lastSeenAt": "2026-08-19T11:38:17.037Z"
+    },
+    {
+      "id": "MIG-404-2AB6",
+      "kind": "404",
+      "severity": "P1",
+      "subject": "/krispcall-review/",
+      "problem": "Important legacy URL has no implemented redirect (risk of unexpected 404)",
+      "evidence": "action=301_REDIRECT; importance=MEDIUM",
+      "recommendedAction": "Approve mapping and regenerate redirects, or mark intentional retirement",
+      "important": true,
+      "state": "NEW",
+      "firstSeenAt": "2026-08-19T11:38:17.037Z",
+      "lastSeenAt": "2026-08-19T11:38:17.037Z"
+    },
+    {
+      "id": "MIG-404-49CA",
+      "kind": "404",
+      "severity": "P1",
+      "subject": "/navan-review/",
+      "problem": "Important legacy URL has no implemented redirect (risk of unexpected 404)",
+      "evidence": "action=301_REDIRECT; importance=MEDIUM",
+      "recommendedAction": "Approve mapping and regenerate redirects, or mark intentional retirement",
+      "important": true,
+      "state": "NEW",
+      "firstSeenAt": "2026-08-19T11:38:17.037Z",
+      "lastSeenAt": "2026-08-19T11:38:17.037Z"
+    },
+    {
+      "id": "MIG-404-6F13",
+      "kind": "404",
+      "severity": "P1",
+      "subject": "/nicejob-review/",
+      "problem": "Important legacy URL has no implemented redirect (risk of unexpected 404)",
+      "evidence": "action=301_REDIRECT; importance=MEDIUM",
+      "recommendedAction": "Approve mapping and regenerate redirects, or mark intentional retirement",
+      "important": true,
+      "state": "NEW",
+      "firstSeenAt": "2026-08-19T11:38:17.037Z",
+      "lastSeenAt": "2026-08-19T11:38:17.037Z"
+    },
+    {
+      "id": "MIG-404-DFE3",
+      "kind": "404",
+      "severity": "P0",
+      "subject": "/salesforce-vs-act/",
+      "problem": "Important legacy URL has no implemented redirect (risk of unexpected 404)",
+      "evidence": "action=301_REDIRECT; importance=HIGH",
+      "recommendedAction": "Approve mapping and regenerate redirects, or mark intentional retirement",
+      "important": true,
+      "state": "NEW",
+      "firstSeenAt": "2026-08-19T11:38:17.037Z",
+      "lastSeenAt": "2026-08-19T11:38:17.037Z"
+    },
+    {
+      "id": "MIG-404-18D0",
+      "kind": "404",
+      "severity": "P0",
+      "subject": "/salesforce-vs-netsuite/",
+      "problem": "Important legacy URL has no implemented redirect (risk of unexpected 404)",
+      "evidence": "action=301_REDIRECT; importance=HIGH",
+      "recommendedAction": "Approve mapping and regenerate redirects, or mark intentional retirement",
+      "important": true,
+      "state": "NEW",
+      "firstSeenAt": "2026-08-19T11:38:17.037Z",
+      "lastSeenAt": "2026-08-19T11:38:17.037Z"
+    },
+    {
+      "id": "MIG-404-FB33",
+      "kind": "404",
+      "severity": "P0",
+      "subject": "/salesforce-vs-pega/",
+      "problem": "Important legacy URL has no implemented redirect (risk of unexpected 404)",
+      "evidence": "action=301_REDIRECT; importance=HIGH",
+      "recommendedAction": "Approve mapping and regenerate redirects, or mark intentional retirement",
+      "important": true,
+      "state": "NEW",
+      "firstSeenAt": "2026-08-19T11:38:17.037Z",
+      "lastSeenAt": "2026-08-19T11:38:17.037Z"
+    },
+    {
+      "id": "MIG-404-941D",
+      "kind": "404",
+      "severity": "P0",
+      "subject": "/salesforce-vs-sap/",
+      "problem": "Important legacy URL has no implemented redirect (risk of unexpected 404)",
+      "evidence": "action=301_REDIRECT; importance=HIGH",
+      "recommendedAction": "Approve mapping and regenerate redirects, or mark intentional retirement",
+      "important": true,
+      "state": "NEW",
+      "firstSeenAt": "2026-08-19T11:38:17.037Z",
+      "lastSeenAt": "2026-08-19T11:38:17.037Z"
+    },
+    {
+      "id": "MIG-404-D407",
+      "kind": "404",
+      "severity": "P0",
+      "subject": "/salesforce-vs-zendesk/",
+      "problem": "Important legacy URL has no implemented redirect (risk of unexpected 404)",
+      "evidence": "action=301_REDIRECT; importance=HIGH",
+      "recommendedAction": "Approve mapping and regenerate redirects, or mark intentional retirement",
+      "important": true,
+      "state": "NEW",
+      "firstSeenAt": "2026-08-19T11:38:17.037Z",
+      "lastSeenAt": "2026-08-19T11:38:17.037Z"
+    },
+    {
+      "id": "MIG-404-5340",
+      "kind": "404",
+      "severity": "P1",
+      "subject": "/sanebox-review/",
+      "problem": "Important legacy URL has no implemented redirect (risk of unexpected 404)",
+      "evidence": "action=301_REDIRECT; importance=MEDIUM",
+      "recommendedAction": "Approve mapping and regenerate redirects, or mark intentional retirement",
+      "important": true,
+      "state": "NEW",
+      "firstSeenAt": "2026-08-19T11:38:17.037Z",
+      "lastSeenAt": "2026-08-19T11:38:17.037Z"
+    },
+    {
+      "id": "MIG-404-D35F",
+      "kind": "404",
+      "severity": "P1",
+      "subject": "/shore-review/",
+      "problem": "Important legacy URL has no implemented redirect (risk of unexpected 404)",
+      "evidence": "action=301_REDIRECT; importance=MEDIUM",
+      "recommendedAction": "Approve mapping and regenerate redirects, or mark intentional retirement",
+      "important": true,
+      "state": "NEW",
+      "firstSeenAt": "2026-08-19T11:38:17.037Z",
+      "lastSeenAt": "2026-08-19T11:38:17.037Z"
+    },
+    {
+      "id": "MIG-404-2762",
+      "kind": "404",
+      "severity": "P0",
+      "subject": "/siebel-crm-vs-salesforce/",
+      "problem": "Important legacy URL has no implemented redirect (risk of unexpected 404)",
+      "evidence": "action=301_REDIRECT; importance=HIGH",
+      "recommendedAction": "Approve mapping and regenerate redirects, or mark intentional retirement",
+      "important": true,
+      "state": "NEW",
+      "firstSeenAt": "2026-08-19T11:38:17.037Z",
+      "lastSeenAt": "2026-08-19T11:38:17.037Z"
+    },
+    {
+      "id": "MIG-404-999D",
+      "kind": "404",
+      "severity": "P1",
+      "subject": "/tidio-review/",
+      "problem": "Important legacy URL has no implemented redirect (risk of unexpected 404)",
+      "evidence": "action=301_REDIRECT; importance=MEDIUM",
+      "recommendedAction": "Approve mapping and regenerate redirects, or mark intentional retirement",
+      "important": true,
+      "state": "NEW",
+      "firstSeenAt": "2026-08-19T11:38:17.037Z",
+      "lastSeenAt": "2026-08-19T11:38:17.037Z"
+    },
+    {
+      "id": "MIG-404-3B85",
+      "kind": "404",
+      "severity": "P1",
+      "subject": "/what-is-crm-lead-management/",
+      "problem": "Important legacy URL has no implemented redirect (risk of unexpected 404)",
+      "evidence": "action=MERGE_AND_301; importance=HIGH",
+      "recommendedAction": "Approve mapping and regenerate redirects, or mark intentional retirement",
+      "important": true,
+      "state": "OPEN",
+      "firstSeenAt": "2026-08-15T17:26:25.155Z",
+      "lastSeenAt": "2026-08-19T11:38:17.037Z"
+    },
+    {
+      "id": "MIG-404-86E6",
+      "kind": "404",
+      "severity": "P1",
+      "subject": "/what-is-crm-marketing/",
+      "problem": "Important legacy URL has no implemented redirect (risk of unexpected 404)",
+      "evidence": "action=MERGE_AND_301; importance=HIGH",
+      "recommendedAction": "Approve mapping and regenerate redirects, or mark intentional retirement",
+      "important": true,
+      "state": "OPEN",
+      "firstSeenAt": "2026-08-15T17:26:25.155Z",
+      "lastSeenAt": "2026-08-19T11:38:17.037Z"
+    },
+    {
+      "id": "MIG-404-DF8D",
+      "kind": "404",
+      "severity": "P1",
+      "subject": "/what-is-project-management-in-crm/",
+      "problem": "Important legacy URL has no implemented redirect (risk of unexpected 404)",
+      "evidence": "action=301_REDIRECT; importance=MEDIUM",
+      "recommendedAction": "Approve mapping and regenerate redirects, or mark intentional retirement",
+      "important": true,
+      "state": "NEW",
+      "firstSeenAt": "2026-08-19T11:38:17.037Z",
+      "lastSeenAt": "2026-08-19T11:38:17.037Z"
+    },
+    {
+      "id": "MIG-404-4BCD",
+      "kind": "404",
+      "severity": "P1",
+      "subject": "/what-is-tidio/",
+      "problem": "Important legacy URL has no implemented redirect (risk of unexpected 404)",
+      "evidence": "action=301_REDIRECT; importance=MEDIUM",
+      "recommendedAction": "Approve mapping and regenerate redirects, or mark intentional retirement",
+      "important": true,
+      "state": "NEW",
+      "firstSeenAt": "2026-08-19T11:38:17.037Z",
+      "lastSeenAt": "2026-08-19T11:38:17.037Z"
+    },
+    {
+      "id": "MIG-404-F1A1",
+      "kind": "404",
+      "severity": "P1",
+      "subject": "/writesonic-review/",
+      "problem": "Important legacy URL has no implemented redirect (risk of unexpected 404)",
+      "evidence": "action=301_REDIRECT; importance=LOW",
+      "recommendedAction": "Approve mapping and regenerate redirects, or mark intentional retirement",
+      "important": true,
+      "state": "NEW",
+      "firstSeenAt": "2026-08-19T11:38:17.037Z",
+      "lastSeenAt": "2026-08-19T11:38:17.037Z"
+    },
+    {
+      "id": "MIG-404-D291",
+      "kind": "404",
+      "severity": "P1",
+      "subject": "/writesonic-vs-chatgpt/",
+      "problem": "Important legacy URL has no implemented redirect (risk of unexpected 404)",
+      "evidence": "action=301_REDIRECT; importance=LOW",
+      "recommendedAction": "Approve mapping and regenerate redirects, or mark intentional retirement",
+      "important": true,
+      "state": "NEW",
+      "firstSeenAt": "2026-08-19T11:38:17.037Z",
+      "lastSeenAt": "2026-08-19T11:38:17.037Z"
+    },
+    {
+      "id": "MIG-GSC-A3D0",
+      "kind": "GSC",
+      "severity": "P2",
+      "subject": "Excluded by ‘noindex’ tag",
+      "problem": "GSC coverage reports “Excluded by ‘noindex’ tag” (228 pages)",
+      "evidence": "source=Website; validation=Not Started",
+      "recommendedAction": "Open GSC Coverage URL examples; map 404s/redirects to approved migration plan — do not bulk-fix from counts alone",
+      "important": false,
+      "state": "OPEN",
+      "firstSeenAt": "2026-08-15T17:28:36.202Z",
+      "lastSeenAt": "2026-08-19T11:38:17.037Z"
+    },
+    {
+      "id": "MIG-GSC-5C74",
+      "kind": "GSC",
+      "severity": "P1",
+      "subject": "Not found (404)",
+      "problem": "GSC coverage reports “Not found (404)” (57 pages)",
+      "evidence": "source=Website; validation=Not Started",
+      "recommendedAction": "Open GSC Coverage URL examples; map 404s/redirects to approved migration plan — do not bulk-fix from counts alone",
+      "important": true,
+      "state": "OPEN",
+      "firstSeenAt": "2026-08-15T17:28:36.202Z",
+      "lastSeenAt": "2026-08-19T11:38:17.037Z"
+    },
+    {
+      "id": "MIG-GSC-FE51",
+      "kind": "GSC",
+      "severity": "P2",
+      "subject": "Page with redirect",
+      "problem": "GSC coverage reports “Page with redirect” (37 pages)",
+      "evidence": "source=Website; validation=Not Started",
+      "recommendedAction": "Open GSC Coverage URL examples; map 404s/redirects to approved migration plan — do not bulk-fix from counts alone",
+      "important": true,
+      "state": "OPEN",
+      "firstSeenAt": "2026-08-15T17:28:36.202Z",
+      "lastSeenAt": "2026-08-19T11:38:17.037Z"
+    },
+    {
+      "id": "MIG-GSC-5049",
+      "kind": "GSC",
+      "severity": "P2",
+      "subject": "Alternative page with proper canonical tag",
+      "problem": "GSC coverage reports “Alternative page with proper canonical tag” (24 pages)",
+      "evidence": "source=Website; validation=Not Started",
+      "recommendedAction": "Open GSC Coverage URL examples; map 404s/redirects to approved migration plan — do not bulk-fix from counts alone",
+      "important": false,
+      "state": "OPEN",
+      "firstSeenAt": "2026-08-15T17:28:36.202Z",
+      "lastSeenAt": "2026-08-19T11:38:17.037Z"
+    },
+    {
+      "id": "MIG-GSC-1D07",
+      "kind": "GSC",
+      "severity": "P2",
+      "subject": "Duplicate, Google chose different canonical than user",
+      "problem": "GSC coverage reports “Duplicate, Google chose different canonical than user” (1 pages)",
+      "evidence": "source=Google systems; validation=Not Started",
+      "recommendedAction": "Open GSC Coverage URL examples; map 404s/redirects to approved migration plan — do not bulk-fix from counts alone",
+      "important": false,
+      "state": "OPEN",
+      "firstSeenAt": "2026-08-15T17:28:36.202Z",
+      "lastSeenAt": "2026-08-19T11:38:17.037Z"
+    },
+    {
+      "id": "MIG-GSC-E831",
+      "kind": "GSC",
+      "severity": "P2",
+      "subject": "/lusha-review/",
+      "problem": "Imported GSC data still shows impressions on a redirect source path",
+      "evidence": "impressions=182; clicks=1",
+      "recommendedAction": "After launch, confirm 301 in GSC URL inspection; do not treat alone as failure",
+      "important": true,
+      "state": "OPEN",
+      "firstSeenAt": "2026-08-15T17:28:36.202Z",
+      "lastSeenAt": "2026-08-19T11:38:17.037Z"
+    },
+    {
+      "id": "MIG-GSC-386D",
+      "kind": "GSC",
+      "severity": "P2",
+      "subject": "/contact/",
+      "problem": "Imported GSC data still shows impressions on a redirect source path",
+      "evidence": "impressions=18; clicks=1",
+      "recommendedAction": "After launch, confirm 301 in GSC URL inspection; do not treat alone as failure",
+      "important": true,
+      "state": "OPEN",
+      "firstSeenAt": "2026-08-15T17:28:36.202Z",
+      "lastSeenAt": "2026-08-19T11:38:17.037Z"
+    },
+    {
+      "id": "MIG-GSC-9522",
+      "kind": "GSC",
+      "severity": "P2",
+      "subject": "/best-crm-for-startups/",
+      "problem": "Imported GSC data still shows impressions on a redirect source path",
+      "evidence": "impressions=6; clicks=1",
+      "recommendedAction": "After launch, confirm 301 in GSC URL inspection; do not treat alone as failure",
+      "important": true,
+      "state": "OPEN",
+      "firstSeenAt": "2026-08-15T17:28:36.202Z",
+      "lastSeenAt": "2026-08-19T11:38:17.037Z"
+    },
+    {
+      "id": "MIG-GSC-C7FA",
+      "kind": "GSC",
+      "severity": "P2",
+      "subject": "/best-crm-for-plumbers/",
+      "problem": "Imported GSC data still shows impressions on a redirect source path",
+      "evidence": "impressions=1750; clicks=0",
+      "recommendedAction": "After launch, confirm 301 in GSC URL inspection; do not treat alone as failure",
+      "important": true,
+      "state": "NEW",
+      "firstSeenAt": "2026-08-19T11:38:17.037Z",
+      "lastSeenAt": "2026-08-19T11:38:17.037Z"
+    },
+    {
+      "id": "MIG-GSC-DBBD",
+      "kind": "GSC",
+      "severity": "P2",
+      "subject": "/best-crm-solar-businesses/",
+      "problem": "Imported GSC data still shows impressions on a redirect source path",
+      "evidence": "impressions=1428; clicks=0",
+      "recommendedAction": "After launch, confirm 301 in GSC URL inspection; do not treat alone as failure",
+      "important": true,
+      "state": "NEW",
+      "firstSeenAt": "2026-08-19T11:38:17.037Z",
+      "lastSeenAt": "2026-08-19T11:38:17.037Z"
+    },
+    {
+      "id": "MIG-GSC-7747",
+      "kind": "GSC",
+      "severity": "P2",
+      "subject": "/best-crm-for-event-management/",
+      "problem": "Imported GSC data still shows impressions on a redirect source path",
+      "evidence": "impressions=1052; clicks=0",
+      "recommendedAction": "After launch, confirm 301 in GSC URL inspection; do not treat alone as failure",
+      "important": true,
+      "state": "NEW",
+      "firstSeenAt": "2026-08-19T11:38:17.037Z",
+      "lastSeenAt": "2026-08-19T11:38:17.037Z"
+    },
+    {
+      "id": "MIG-GSC-F393",
+      "kind": "GSC",
+      "severity": "P2",
+      "subject": "/best-private-equity-crm/",
+      "problem": "Imported GSC data still shows impressions on a redirect source path",
+      "evidence": "impressions=1021; clicks=0",
+      "recommendedAction": "After launch, confirm 301 in GSC URL inspection; do not treat alone as failure",
+      "important": true,
+      "state": "NEW",
+      "firstSeenAt": "2026-08-19T11:38:17.037Z",
+      "lastSeenAt": "2026-08-19T11:38:17.037Z"
+    },
+    {
+      "id": "MIG-GSC-F225",
+      "kind": "GSC",
+      "severity": "P2",
+      "subject": "/activecampaign-crm-review/",
+      "problem": "Imported GSC data still shows impressions on a redirect source path",
+      "evidence": "impressions=1019; clicks=0",
+      "recommendedAction": "After launch, confirm 301 in GSC URL inspection; do not treat alone as failure",
+      "important": true,
+      "state": "OPEN",
+      "firstSeenAt": "2026-08-15T17:28:36.202Z",
+      "lastSeenAt": "2026-08-19T11:38:17.037Z"
+    },
+    {
+      "id": "MIG-GSC-F547",
+      "kind": "GSC",
+      "severity": "P2",
+      "subject": "/insightly-crm-review/",
+      "problem": "Imported GSC data still shows impressions on a redirect source path",
+      "evidence": "impressions=938; clicks=0",
+      "recommendedAction": "After launch, confirm 301 in GSC URL inspection; do not treat alone as failure",
+      "important": true,
+      "state": "OPEN",
+      "firstSeenAt": "2026-08-15T17:28:36.202Z",
+      "lastSeenAt": "2026-08-19T11:38:17.037Z"
+    },
+    {
+      "id": "MIG-GSC-899B",
+      "kind": "GSC",
+      "severity": "P2",
+      "subject": "/getresponse-review/",
+      "problem": "Imported GSC data still shows impressions on a redirect source path",
+      "evidence": "impressions=866; clicks=0",
+      "recommendedAction": "After launch, confirm 301 in GSC URL inspection; do not treat alone as failure",
+      "important": true,
+      "state": "OPEN",
+      "firstSeenAt": "2026-08-15T17:28:36.202Z",
+      "lastSeenAt": "2026-08-19T11:38:17.037Z"
+    },
+    {
+      "id": "MIG-GSC-6D77",
+      "kind": "GSC",
+      "severity": "P2",
+      "subject": "/best-crm-venture-capital/",
+      "problem": "Imported GSC data still shows impressions on a redirect source path",
+      "evidence": "impressions=656; clicks=0",
+      "recommendedAction": "After launch, confirm 301 in GSC URL inspection; do not treat alone as failure",
+      "important": true,
+      "state": "NEW",
+      "firstSeenAt": "2026-08-19T11:38:17.037Z",
+      "lastSeenAt": "2026-08-19T11:38:17.037Z"
+    },
+    {
+      "id": "MIG-GSC-17EB",
+      "kind": "GSC",
+      "severity": "P2",
+      "subject": "/best-crm-for-photographers/",
+      "problem": "Imported GSC data still shows impressions on a redirect source path",
+      "evidence": "impressions=479; clicks=0",
+      "recommendedAction": "After launch, confirm 301 in GSC URL inspection; do not treat alone as failure",
+      "important": true,
+      "state": "NEW",
+      "firstSeenAt": "2026-08-19T11:38:17.037Z",
+      "lastSeenAt": "2026-08-19T11:38:17.037Z"
+    },
+    {
+      "id": "MIG-GSC-C276",
+      "kind": "GSC",
+      "severity": "P2",
+      "subject": "/best-crm-for-coaches/",
+      "problem": "Imported GSC data still shows impressions on a redirect source path",
+      "evidence": "impressions=457; clicks=0",
+      "recommendedAction": "After launch, confirm 301 in GSC URL inspection; do not treat alone as failure",
+      "important": true,
+      "state": "NEW",
+      "firstSeenAt": "2026-08-19T11:38:17.037Z",
+      "lastSeenAt": "2026-08-19T11:38:17.037Z"
+    },
+    {
+      "id": "MIG-GSC-3ABE",
+      "kind": "GSC",
+      "severity": "P2",
+      "subject": "/hubspot-crm-review/",
+      "problem": "Imported GSC data still shows impressions on a redirect source path",
+      "evidence": "impressions=442; clicks=0",
+      "recommendedAction": "After launch, confirm 301 in GSC URL inspection; do not treat alone as failure",
+      "important": true,
+      "state": "OPEN",
+      "firstSeenAt": "2026-08-15T17:28:36.202Z",
+      "lastSeenAt": "2026-08-19T11:38:17.037Z"
+    },
+    {
+      "id": "MIG-GSC-64E6",
+      "kind": "GSC",
+      "severity": "P2",
+      "subject": "/capsule-crm-review-2/",
+      "problem": "Imported GSC data still shows impressions on a redirect source path",
+      "evidence": "impressions=428; clicks=0",
+      "recommendedAction": "After launch, confirm 301 in GSC URL inspection; do not treat alone as failure",
+      "important": true,
+      "state": "OPEN",
+      "firstSeenAt": "2026-08-15T17:28:36.202Z",
+      "lastSeenAt": "2026-08-19T11:38:17.037Z"
+    },
+    {
+      "id": "MIG-GSC-36CB",
+      "kind": "GSC",
+      "severity": "P2",
+      "subject": "/keap-crm-review-2/",
+      "problem": "Imported GSC data still shows impressions on a redirect source path",
+      "evidence": "impressions=421; clicks=0",
+      "recommendedAction": "After launch, confirm 301 in GSC URL inspection; do not treat alone as failure",
+      "important": true,
+      "state": "OPEN",
+      "firstSeenAt": "2026-08-15T17:28:36.202Z",
+      "lastSeenAt": "2026-08-19T11:38:17.037Z"
+    },
+    {
+      "id": "MIG-GSC-C4A2",
+      "kind": "GSC",
+      "severity": "P2",
+      "subject": "/best-crm-for-freelancers/",
+      "problem": "Imported GSC data still shows impressions on a redirect source path",
+      "evidence": "impressions=366; clicks=0",
+      "recommendedAction": "After launch, confirm 301 in GSC URL inspection; do not treat alone as failure",
+      "important": true,
+      "state": "OPEN",
+      "firstSeenAt": "2026-08-15T17:28:36.202Z",
+      "lastSeenAt": "2026-08-19T11:38:17.037Z"
+    },
+    {
+      "id": "MIG-GSC-AEC7",
+      "kind": "GSC",
+      "severity": "P2",
+      "subject": "/closely-review/",
+      "problem": "Imported GSC data still shows impressions on a redirect source path",
+      "evidence": "impressions=360; clicks=0",
+      "recommendedAction": "After launch, confirm 301 in GSC URL inspection; do not treat alone as failure",
+      "important": true,
+      "state": "OPEN",
+      "firstSeenAt": "2026-08-15T17:28:36.202Z",
+      "lastSeenAt": "2026-08-19T11:38:17.037Z"
+    },
+    {
+      "id": "MIG-GSC-4A85",
+      "kind": "GSC",
+      "severity": "P2",
+      "subject": "/best-crm-for-investor-relations/",
+      "problem": "Imported GSC data still shows impressions on a redirect source path",
+      "evidence": "impressions=335; clicks=0",
+      "recommendedAction": "After launch, confirm 301 in GSC URL inspection; do not treat alone as failure",
+      "important": true,
+      "state": "NEW",
+      "firstSeenAt": "2026-08-19T11:38:17.037Z",
+      "lastSeenAt": "2026-08-19T11:38:17.037Z"
+    },
+    {
+      "id": "MIG-GSC-9BEA",
+      "kind": "GSC",
+      "severity": "P2",
+      "subject": "/best-crm-engineering/",
+      "problem": "Imported GSC data still shows impressions on a redirect source path",
+      "evidence": "impressions=278; clicks=0",
+      "recommendedAction": "After launch, confirm 301 in GSC URL inspection; do not treat alone as failure",
+      "important": true,
+      "state": "NEW",
+      "firstSeenAt": "2026-08-19T11:38:17.037Z",
+      "lastSeenAt": "2026-08-19T11:38:17.037Z"
+    },
+    {
+      "id": "MIG-GSC-24A8",
+      "kind": "GSC",
+      "severity": "P2",
+      "subject": "/salesforce-crm-review/",
+      "problem": "Imported GSC data still shows impressions on a redirect source path",
+      "evidence": "impressions=264; clicks=0",
+      "recommendedAction": "After launch, confirm 301 in GSC URL inspection; do not treat alone as failure",
+      "important": true,
+      "state": "OPEN",
+      "firstSeenAt": "2026-08-15T17:28:36.202Z",
+      "lastSeenAt": "2026-08-19T11:38:17.037Z"
+    },
+    {
+      "id": "MIG-GSC-FEC5",
+      "kind": "GSC",
+      "severity": "P2",
+      "subject": "/best-crms/",
+      "problem": "Imported GSC data still shows impressions on a redirect source path",
+      "evidence": "impressions=218; clicks=0",
+      "recommendedAction": "After launch, confirm 301 in GSC URL inspection; do not treat alone as failure",
+      "important": true,
+      "state": "OPEN",
+      "firstSeenAt": "2026-08-15T17:28:36.202Z",
+      "lastSeenAt": "2026-08-19T11:38:17.037Z"
+    },
+    {
+      "id": "MIG-GSC-B362",
+      "kind": "GSC",
+      "severity": "P2",
+      "subject": "/microsoft-dynamics-crm-review/",
+      "problem": "Imported GSC data still shows impressions on a redirect source path",
+      "evidence": "impressions=213; clicks=0",
+      "recommendedAction": "After launch, confirm 301 in GSC URL inspection; do not treat alone as failure",
+      "important": true,
+      "state": "OPEN",
+      "firstSeenAt": "2026-08-15T17:28:36.202Z",
+      "lastSeenAt": "2026-08-19T11:38:17.037Z"
+    },
+    {
+      "id": "MIG-GSC-8497",
+      "kind": "GSC",
+      "severity": "P2",
+      "subject": "/best-crm-for-musicians/",
+      "problem": "Imported GSC data still shows impressions on a redirect source path",
+      "evidence": "impressions=202; clicks=0",
+      "recommendedAction": "After launch, confirm 301 in GSC URL inspection; do not treat alone as failure",
+      "important": true,
+      "state": "NEW",
+      "firstSeenAt": "2026-08-19T11:38:17.037Z",
+      "lastSeenAt": "2026-08-19T11:38:17.037Z"
+    },
+    {
+      "id": "MIG-GSC-EB18",
+      "kind": "GSC",
+      "severity": "P2",
+      "subject": "/salesforce-vs-pipedrive/",
+      "problem": "Imported GSC data still shows impressions on a redirect source path",
+      "evidence": "impressions=194; clicks=0",
+      "recommendedAction": "After launch, confirm 301 in GSC URL inspection; do not treat alone as failure",
+      "important": true,
+      "state": "OPEN",
+      "firstSeenAt": "2026-08-15T17:28:36.202Z",
+      "lastSeenAt": "2026-08-19T11:38:17.037Z"
+    },
+    {
+      "id": "MIG-GSC-7FE3",
+      "kind": "GSC",
+      "severity": "P2",
+      "subject": "/freshsales-crm-review/",
+      "problem": "Imported GSC data still shows impressions on a redirect source path",
+      "evidence": "impressions=191; clicks=0",
+      "recommendedAction": "After launch, confirm 301 in GSC URL inspection; do not treat alone as failure",
+      "important": true,
+      "state": "OPEN",
+      "firstSeenAt": "2026-08-15T17:28:36.202Z",
+      "lastSeenAt": "2026-08-19T11:38:17.037Z"
+    },
+    {
+      "id": "MIG-GSC-97D5",
+      "kind": "GSC",
+      "severity": "P2",
+      "subject": "/best-crm-for-web-designers/",
+      "problem": "Imported GSC data still shows impressions on a redirect source path",
+      "evidence": "impressions=170; clicks=0",
+      "recommendedAction": "After launch, confirm 301 in GSC URL inspection; do not treat alone as failure",
+      "important": true,
+      "state": "NEW",
+      "firstSeenAt": "2026-08-19T11:38:17.037Z",
+      "lastSeenAt": "2026-08-19T11:38:17.037Z"
+    },
+    {
+      "id": "MIG-GSC-ACB6",
+      "kind": "GSC",
+      "severity": "P2",
+      "subject": "/comparing-setup-pipedrive-vs-hubspot/",
+      "problem": "Imported GSC data still shows impressions on a redirect source path",
+      "evidence": "impressions=144; clicks=0",
+      "recommendedAction": "After launch, confirm 301 in GSC URL inspection; do not treat alone as failure",
+      "important": true,
+      "state": "OPEN",
+      "firstSeenAt": "2026-08-15T17:28:36.202Z",
+      "lastSeenAt": "2026-08-19T11:38:17.037Z"
+    },
+    {
+      "id": "MIG-GSC-2B3E",
+      "kind": "GSC",
+      "severity": "P2",
+      "subject": "/salesforce-vs-insightly/",
+      "problem": "Imported GSC data still shows impressions on a redirect source path",
+      "evidence": "impressions=142; clicks=0",
+      "recommendedAction": "After launch, confirm 301 in GSC URL inspection; do not treat alone as failure",
+      "important": true,
+      "state": "OPEN",
+      "firstSeenAt": "2026-08-15T17:28:36.202Z",
+      "lastSeenAt": "2026-08-19T11:38:17.037Z"
+    },
+    {
+      "id": "MIG-GSC-A973",
+      "kind": "GSC",
+      "severity": "P2",
+      "subject": "/close-crm-review/",
+      "problem": "Imported GSC data still shows impressions on a redirect source path",
+      "evidence": "impressions=137; clicks=0",
+      "recommendedAction": "After launch, confirm 301 in GSC URL inspection; do not treat alone as failure",
+      "important": true,
+      "state": "OPEN",
+      "firstSeenAt": "2026-08-15T17:28:36.202Z",
+      "lastSeenAt": "2026-08-19T11:38:17.037Z"
+    },
+    {
+      "id": "MIG-GSC-5CC0",
+      "kind": "GSC",
+      "severity": "P2",
+      "subject": "/salesforce-vs-sugar-crm/",
+      "problem": "Imported GSC data still shows impressions on a redirect source path",
+      "evidence": "impressions=122; clicks=0",
+      "recommendedAction": "After launch, confirm 301 in GSC URL inspection; do not treat alone as failure",
+      "important": true,
+      "state": "OPEN",
+      "firstSeenAt": "2026-08-15T17:28:36.202Z",
+      "lastSeenAt": "2026-08-19T11:38:17.037Z"
+    },
+    {
+      "id": "MIG-GSC-6D52",
+      "kind": "GSC",
+      "severity": "P2",
+      "subject": "/hubspot-vs-insightly/",
+      "problem": "Imported GSC data still shows impressions on a redirect source path",
+      "evidence": "impressions=87; clicks=0",
+      "recommendedAction": "After launch, confirm 301 in GSC URL inspection; do not treat alone as failure",
+      "important": true,
+      "state": "OPEN",
+      "firstSeenAt": "2026-08-15T17:28:36.202Z",
+      "lastSeenAt": "2026-08-19T11:38:17.037Z"
+    },
+    {
+      "id": "MIG-GSC-A9D8",
+      "kind": "GSC",
+      "severity": "P2",
+      "subject": "/infusionsoft-crm-review/",
+      "problem": "Imported GSC data still shows impressions on a redirect source path",
+      "evidence": "impressions=85; clicks=0",
+      "recommendedAction": "After launch, confirm 301 in GSC URL inspection; do not treat alone as failure",
+      "important": true,
+      "state": "OPEN",
+      "firstSeenAt": "2026-08-15T17:28:36.202Z",
+      "lastSeenAt": "2026-08-19T11:38:17.037Z"
+    },
+    {
+      "id": "MIG-GSC-7927",
+      "kind": "GSC",
+      "severity": "P2",
+      "subject": "/crm-for-security-companies/",
+      "problem": "Imported GSC data still shows impressions on a redirect source path",
+      "evidence": "impressions=65; clicks=0",
+      "recommendedAction": "After launch, confirm 301 in GSC URL inspection; do not treat alone as failure",
+      "important": true,
+      "state": "NEW",
+      "firstSeenAt": "2026-08-19T11:38:17.037Z",
+      "lastSeenAt": "2026-08-19T11:38:17.037Z"
+    },
+    {
+      "id": "MIG-GSC-E0BD",
+      "kind": "GSC",
+      "severity": "P2",
+      "subject": "/best-crm-for-field-sales/",
+      "problem": "Imported GSC data still shows impressions on a redirect source path",
+      "evidence": "impressions=63; clicks=0",
+      "recommendedAction": "After launch, confirm 301 in GSC URL inspection; do not treat alone as failure",
+      "important": true,
+      "state": "OPEN",
+      "firstSeenAt": "2026-08-15T17:28:36.202Z",
+      "lastSeenAt": "2026-08-19T11:38:17.037Z"
+    },
+    {
+      "id": "MIG-GSC-FAAE",
+      "kind": "GSC",
+      "severity": "P2",
+      "subject": "/salesforce-vs-monday/",
+      "problem": "Imported GSC data still shows impressions on a redirect source path",
+      "evidence": "impressions=59; clicks=0",
+      "recommendedAction": "After launch, confirm 301 in GSC URL inspection; do not treat alone as failure",
+      "important": true,
+      "state": "OPEN",
+      "firstSeenAt": "2026-08-15T17:28:36.202Z",
+      "lastSeenAt": "2026-08-19T11:38:17.037Z"
+    },
+    {
+      "id": "MIG-GSC-CDE4",
+      "kind": "GSC",
+      "severity": "P2",
+      "subject": "/pipedrive-crm-review/",
+      "problem": "Imported GSC data still shows impressions on a redirect source path",
+      "evidence": "impressions=53; clicks=0",
+      "recommendedAction": "After launch, confirm 301 in GSC URL inspection; do not treat alone as failure",
+      "important": true,
+      "state": "OPEN",
+      "firstSeenAt": "2026-08-15T17:28:36.202Z",
+      "lastSeenAt": "2026-08-19T11:38:17.037Z"
+    },
+    {
+      "id": "MIG-GSC-11C0",
+      "kind": "GSC",
+      "severity": "P2",
+      "subject": "/keap-crm-review/",
+      "problem": "Imported GSC data still shows impressions on a redirect source path",
+      "evidence": "impressions=47; clicks=0",
+      "recommendedAction": "After launch, confirm 301 in GSC URL inspection; do not treat alone as failure",
+      "important": true,
+      "state": "OPEN",
+      "firstSeenAt": "2026-08-15T17:28:36.202Z",
+      "lastSeenAt": "2026-08-19T11:38:17.037Z"
+    },
+    {
+      "id": "MIG-GSC-F7D5",
+      "kind": "GSC",
+      "severity": "P2",
+      "subject": "/monday-crm-review/",
+      "problem": "Imported GSC data still shows impressions on a redirect source path",
+      "evidence": "impressions=45; clicks=0",
+      "recommendedAction": "After launch, confirm 301 in GSC URL inspection; do not treat alone as failure",
+      "important": true,
+      "state": "OPEN",
+      "firstSeenAt": "2026-08-15T17:28:36.202Z",
+      "lastSeenAt": "2026-08-19T11:38:17.037Z"
+    },
+    {
+      "id": "MIG-GSC-3DBE",
+      "kind": "GSC",
+      "severity": "P2",
+      "subject": "/copper-crm-alternatives/",
+      "problem": "Imported GSC data still shows impressions on a redirect source path",
+      "evidence": "impressions=45; clicks=0",
+      "recommendedAction": "After launch, confirm 301 in GSC URL inspection; do not treat alone as failure",
+      "important": true,
+      "state": "OPEN",
+      "firstSeenAt": "2026-08-15T17:28:36.202Z",
+      "lastSeenAt": "2026-08-19T11:38:17.037Z"
+    },
+    {
+      "id": "MIG-GSC-9AF2",
+      "kind": "GSC",
+      "severity": "P2",
+      "subject": "/category/crm/",
+      "problem": "Imported GSC data still shows impressions on a redirect source path",
+      "evidence": "impressions=27; clicks=0",
+      "recommendedAction": "After launch, confirm 301 in GSC URL inspection; do not treat alone as failure",
+      "important": true,
+      "state": "OPEN",
+      "firstSeenAt": "2026-08-15T17:28:36.202Z",
+      "lastSeenAt": "2026-08-19T11:38:17.037Z"
+    },
+    {
+      "id": "MIG-GSC-5227",
+      "kind": "GSC",
+      "severity": "P2",
+      "subject": "/folk-crm-review/",
+      "problem": "Imported GSC data still shows impressions on a redirect source path",
+      "evidence": "impressions=26; clicks=0",
+      "recommendedAction": "After launch, confirm 301 in GSC URL inspection; do not treat alone as failure",
+      "important": true,
+      "state": "OPEN",
+      "firstSeenAt": "2026-08-15T17:28:36.202Z",
+      "lastSeenAt": "2026-08-19T11:38:17.037Z"
+    },
+    {
+      "id": "MIG-GSC-C71E",
+      "kind": "GSC",
+      "severity": "P2",
+      "subject": "/folk-app-review/",
+      "problem": "Imported GSC data still shows impressions on a redirect source path",
+      "evidence": "impressions=19; clicks=0",
+      "recommendedAction": "After launch, confirm 301 in GSC URL inspection; do not treat alone as failure",
+      "important": true,
+      "state": "OPEN",
+      "firstSeenAt": "2026-08-15T17:28:36.202Z",
+      "lastSeenAt": "2026-08-19T11:38:17.037Z"
+    },
+    {
+      "id": "MIG-GSC-4863",
+      "kind": "GSC",
+      "severity": "P2",
+      "subject": "/salesforce-vs-infusionsoft/",
+      "problem": "Imported GSC data still shows impressions on a redirect source path",
+      "evidence": "impressions=14; clicks=0",
+      "recommendedAction": "After launch, confirm 301 in GSC URL inspection; do not treat alone as failure",
+      "important": true,
+      "state": "OPEN",
+      "firstSeenAt": "2026-08-15T17:28:36.202Z",
+      "lastSeenAt": "2026-08-19T11:38:17.037Z"
+    },
+    {
+      "id": "MIG-GSC-5AC4",
+      "kind": "GSC",
+      "severity": "P2",
+      "subject": "/salesforce-vs-oracle/",
+      "problem": "Imported GSC data still shows impressions on a redirect source path",
+      "evidence": "impressions=14; clicks=0",
+      "recommendedAction": "After launch, confirm 301 in GSC URL inspection; do not treat alone as failure",
+      "important": true,
+      "state": "OPEN",
+      "firstSeenAt": "2026-08-15T17:28:36.202Z",
+      "lastSeenAt": "2026-08-19T11:38:17.037Z"
+    },
+    {
+      "id": "MIG-GSC-718F",
+      "kind": "GSC",
+      "severity": "P2",
+      "subject": "/hubspot-vs-infusionsoft/",
+      "problem": "Imported GSC data still shows impressions on a redirect source path",
+      "evidence": "impressions=9; clicks=0",
+      "recommendedAction": "After launch, confirm 301 in GSC URL inspection; do not treat alone as failure",
+      "important": true,
+      "state": "OPEN",
+      "firstSeenAt": "2026-08-15T17:28:36.202Z",
+      "lastSeenAt": "2026-08-19T11:38:17.037Z"
+    },
+    {
+      "id": "MIG-GSC-A057",
+      "kind": "GSC",
+      "severity": "P2",
+      "subject": "/sugar-crm-review/",
+      "problem": "Imported GSC data still shows impressions on a redirect source path",
+      "evidence": "impressions=8; clicks=0",
+      "recommendedAction": "After launch, confirm 301 in GSC URL inspection; do not treat alone as failure",
+      "important": true,
+      "state": "OPEN",
+      "firstSeenAt": "2026-08-15T17:28:36.202Z",
+      "lastSeenAt": "2026-08-19T11:38:17.037Z"
+    },
+    {
+      "id": "MIG-GSC-E0A0",
+      "kind": "GSC",
+      "severity": "P2",
+      "subject": "/hubspot-vs-freshsales/",
+      "problem": "Imported GSC data still shows impressions on a redirect source path",
+      "evidence": "impressions=7; clicks=0",
+      "recommendedAction": "After launch, confirm 301 in GSC URL inspection; do not treat alone as failure",
+      "important": true,
+      "state": "OPEN",
+      "firstSeenAt": "2026-08-15T17:28:36.202Z",
+      "lastSeenAt": "2026-08-19T11:38:17.037Z"
+    },
+    {
+      "id": "MIG-GSC-E1E8",
+      "kind": "GSC",
+      "severity": "P2",
+      "subject": "/hubspot-vs-keap/",
+      "problem": "Imported GSC data still shows impressions on a redirect source path",
+      "evidence": "impressions=6; clicks=0",
+      "recommendedAction": "After launch, confirm 301 in GSC URL inspection; do not treat alone as failure",
+      "important": true,
+      "state": "OPEN",
+      "firstSeenAt": "2026-08-15T17:28:36.202Z",
+      "lastSeenAt": "2026-08-19T11:38:17.037Z"
+    },
+    {
+      "id": "MIG-GSC-51B8",
+      "kind": "GSC",
+      "severity": "P2",
+      "subject": "/category/best-crms/",
+      "problem": "Imported GSC data still shows impressions on a redirect source path",
+      "evidence": "impressions=6; clicks=0",
+      "recommendedAction": "After launch, confirm 301 in GSC URL inspection; do not treat alone as failure",
+      "important": true,
+      "state": "OPEN",
+      "firstSeenAt": "2026-08-15T17:28:36.202Z",
+      "lastSeenAt": "2026-08-19T11:38:17.037Z"
+    },
+    {
+      "id": "MIG-GSC-CB5B",
+      "kind": "GSC",
+      "severity": "P2",
+      "subject": "/privacy-policy/",
+      "problem": "Imported GSC data still shows impressions on a redirect source path",
+      "evidence": "impressions=5; clicks=0",
+      "recommendedAction": "After launch, confirm 301 in GSC URL inspection; do not treat alone as failure",
+      "important": true,
+      "state": "OPEN",
+      "firstSeenAt": "2026-08-15T17:28:36.202Z",
+      "lastSeenAt": "2026-08-19T11:38:17.037Z"
+    },
+    {
+      "id": "MIG-GSC-2ADE",
+      "kind": "GSC",
+      "severity": "P2",
+      "subject": "/hubspot-vs-monday/",
+      "problem": "Imported GSC data still shows impressions on a redirect source path",
+      "evidence": "impressions=5; clicks=0",
+      "recommendedAction": "After launch, confirm 301 in GSC URL inspection; do not treat alone as failure",
+      "important": true,
+      "state": "OPEN",
+      "firstSeenAt": "2026-08-15T17:28:36.202Z",
+      "lastSeenAt": "2026-08-19T11:38:17.037Z"
+    },
+    {
+      "id": "MIG-GSC-EAFD",
+      "kind": "GSC",
+      "severity": "P2",
+      "subject": "/the-ultimate-guide-to-pipedrive-vs-hubspot/",
+      "problem": "Imported GSC data still shows impressions on a redirect source path",
+      "evidence": "impressions=3; clicks=0",
+      "recommendedAction": "After launch, confirm 301 in GSC URL inspection; do not treat alone as failure",
+      "important": true,
+      "state": "OPEN",
+      "firstSeenAt": "2026-08-15T17:28:36.202Z",
+      "lastSeenAt": "2026-08-19T11:38:17.037Z"
+    },
+    {
+      "id": "MIG-GSC-B26A",
+      "kind": "GSC",
+      "severity": "P2",
+      "subject": "/pipedrive-vs-hubspot/",
+      "problem": "Imported GSC data still shows impressions on a redirect source path",
+      "evidence": "impressions=3; clicks=0",
+      "recommendedAction": "After launch, confirm 301 in GSC URL inspection; do not treat alone as failure",
+      "important": true,
+      "state": "OPEN",
+      "firstSeenAt": "2026-08-15T17:28:36.202Z",
+      "lastSeenAt": "2026-08-19T11:38:17.037Z"
+    },
+    {
+      "id": "MIG-GSC-F971",
+      "kind": "GSC",
+      "severity": "P2",
+      "subject": "/capsule-crm-review/",
+      "problem": "Imported GSC data still shows impressions on a redirect source path",
+      "evidence": "impressions=3; clicks=0",
+      "recommendedAction": "After launch, confirm 301 in GSC URL inspection; do not treat alone as failure",
+      "important": true,
+      "state": "OPEN",
+      "firstSeenAt": "2026-08-15T17:28:36.202Z",
+      "lastSeenAt": "2026-08-19T11:38:17.037Z"
+    },
+    {
+      "id": "MIG-GSC-7C07",
+      "kind": "GSC",
+      "severity": "P2",
+      "subject": "/monday-com-review/",
+      "problem": "Imported GSC data still shows impressions on a redirect source path",
+      "evidence": "impressions=3; clicks=0",
+      "recommendedAction": "After launch, confirm 301 in GSC URL inspection; do not treat alone as failure",
+      "important": true,
+      "state": "OPEN",
+      "firstSeenAt": "2026-08-15T17:28:36.202Z",
+      "lastSeenAt": "2026-08-19T11:38:17.037Z"
+    },
+    {
+      "id": "MIG-GSC-C512",
+      "kind": "GSC",
+      "severity": "P2",
+      "subject": "/hubspot-vs-monday-2/",
+      "problem": "Imported GSC data still shows impressions on a redirect source path",
+      "evidence": "impressions=3; clicks=0",
+      "recommendedAction": "After launch, confirm 301 in GSC URL inspection; do not treat alone as failure",
+      "important": true,
+      "state": "OPEN",
+      "firstSeenAt": "2026-08-15T17:28:36.202Z",
+      "lastSeenAt": "2026-08-19T11:38:17.037Z"
+    },
+    {
+      "id": "MIG-GSC-E226",
+      "kind": "GSC",
+      "severity": "P2",
+      "subject": "/microsoft-dynamics-vs-salesforce/",
+      "problem": "Imported GSC data still shows impressions on a redirect source path",
+      "evidence": "impressions=2; clicks=0",
+      "recommendedAction": "After launch, confirm 301 in GSC URL inspection; do not treat alone as failure",
+      "important": true,
+      "state": "OPEN",
+      "firstSeenAt": "2026-08-15T17:28:36.202Z",
+      "lastSeenAt": "2026-08-19T11:38:17.037Z"
+    },
+    {
+      "id": "MIG-404-C399",
+      "kind": "404",
+      "severity": "P1",
+      "subject": "/best-crm-for-coaches/",
+      "problem": "Important legacy URL has no implemented redirect (risk of unexpected 404)",
+      "evidence": "No longer detected in this monitor run",
+      "recommendedAction": "Confirm fix holds on next run",
+      "important": true,
+      "state": "RESOLVED",
+      "firstSeenAt": "2026-08-15T17:26:25.155Z",
+      "lastSeenAt": "2026-08-19T11:38:17.037Z"
+    },
+    {
+      "id": "MIG-404-967A",
+      "kind": "404",
+      "severity": "P1",
+      "subject": "/best-crm-for-web-designers/",
+      "problem": "Important legacy URL has no implemented redirect (risk of unexpected 404)",
+      "evidence": "No longer detected in this monitor run",
+      "recommendedAction": "Confirm fix holds on next run",
+      "important": true,
+      "state": "RESOLVED",
+      "firstSeenAt": "2026-08-15T17:26:25.155Z",
+      "lastSeenAt": "2026-08-19T11:38:17.037Z"
+    }
+  ],
+  "gsc": {
+    "available": true,
+    "mode": "import",
+    "notes": [
+      "Approved import path present: /Users/LMeyeridricks/Documents/coding/SoftwareGlimpse/docs/migration/data/gsc-export.json",
+      "Do not interpret Search Console coverage warnings without crawl/context review.",
+      "Loaded coverage import: /Users/LMeyeridricks/Documents/coding/SoftwareGlimpse/docs/migration/data/gsc-coverage.json",
+      "Coverage reasons are aggregate counts only — not per-URL lists.",
+      "Do not treat Page with redirect / 404 counts as confirmed migration failures without URL inspection.",
+      "Scanned 1000 imported page row(s) for legacy redirect-source overlap."
+    ],
+    "signals": [
+      {
+        "id": "MIG-GSC-INDEX-TOTALS",
+        "label": "Indexed vs not-indexed totals (aggregate)",
+        "detail": "As of 2026-08-07: indexed=1527, notIndexed=4504, impressions=1193 — WordPress-era crawl inventory; re-check after Next.js launch.",
+        "interpretWithCaution": true
+      },
+      {
+        "id": "MIG-GSC-A3D0",
+        "label": "Coverage: Excluded by ‘noindex’ tag",
+        "detail": "228 page(s) — source=Website; validation=Not Started. Aggregate only; inspect URL examples in GSC before changing redirects.",
+        "interpretWithCaution": true
+      },
+      {
+        "id": "MIG-GSC-5C74",
+        "label": "Coverage: Not found (404)",
+        "detail": "57 page(s) — source=Website; validation=Not Started. Aggregate only; inspect URL examples in GSC before changing redirects.",
+        "interpretWithCaution": true
+      },
+      {
+        "id": "MIG-GSC-FE51",
+        "label": "Coverage: Page with redirect",
+        "detail": "37 page(s) — source=Website; validation=Not Started. Aggregate only; inspect URL examples in GSC before changing redirects.",
+        "interpretWithCaution": true
+      },
+      {
+        "id": "MIG-GSC-5049",
+        "label": "Coverage: Alternative page with proper canonical tag",
+        "detail": "24 page(s) — source=Website; validation=Not Started. Aggregate only; inspect URL examples in GSC before changing redirects.",
+        "interpretWithCaution": true
+      },
+      {
+        "id": "MIG-GSC-1D07",
+        "label": "Coverage: Duplicate, Google chose different canonical than user",
+        "detail": "1 page(s) — source=Google systems; validation=Not Started. Aggregate only; inspect URL examples in GSC before changing redirects.",
+        "interpretWithCaution": true
+      },
+      {
+        "id": "MIG-GSC-E831",
+        "label": "Legacy URL still receiving impressions (import)",
+        "detail": "/lusha-review/ impressions=182 clicks=1 — verify redirect live + GSC “Page with redirect” after launch",
+        "interpretWithCaution": true
+      },
+      {
+        "id": "MIG-GSC-386D",
+        "label": "Legacy URL still receiving impressions (import)",
+        "detail": "/contact/ impressions=18 clicks=1 — verify redirect live + GSC “Page with redirect” after launch",
+        "interpretWithCaution": true
+      },
+      {
+        "id": "MIG-GSC-9522",
+        "label": "Legacy URL still receiving impressions (import)",
+        "detail": "/best-crm-for-startups/ impressions=6 clicks=1 — verify redirect live + GSC “Page with redirect” after launch",
+        "interpretWithCaution": true
+      },
+      {
+        "id": "MIG-GSC-C7FA",
+        "label": "Legacy URL still receiving impressions (import)",
+        "detail": "/best-crm-for-plumbers/ impressions=1750 clicks=0 — verify redirect live + GSC “Page with redirect” after launch",
+        "interpretWithCaution": true
+      },
+      {
+        "id": "MIG-GSC-DBBD",
+        "label": "Legacy URL still receiving impressions (import)",
+        "detail": "/best-crm-solar-businesses/ impressions=1428 clicks=0 — verify redirect live + GSC “Page with redirect” after launch",
+        "interpretWithCaution": true
+      },
+      {
+        "id": "MIG-GSC-7747",
+        "label": "Legacy URL still receiving impressions (import)",
+        "detail": "/best-crm-for-event-management/ impressions=1052 clicks=0 — verify redirect live + GSC “Page with redirect” after launch",
+        "interpretWithCaution": true
+      },
+      {
+        "id": "MIG-GSC-F393",
+        "label": "Legacy URL still receiving impressions (import)",
+        "detail": "/best-private-equity-crm/ impressions=1021 clicks=0 — verify redirect live + GSC “Page with redirect” after launch",
+        "interpretWithCaution": true
+      },
+      {
+        "id": "MIG-GSC-F225",
+        "label": "Legacy URL still receiving impressions (import)",
+        "detail": "/activecampaign-crm-review/ impressions=1019 clicks=0 — verify redirect live + GSC “Page with redirect” after launch",
+        "interpretWithCaution": true
+      },
+      {
+        "id": "MIG-GSC-F547",
+        "label": "Legacy URL still receiving impressions (import)",
+        "detail": "/insightly-crm-review/ impressions=938 clicks=0 — verify redirect live + GSC “Page with redirect” after launch",
+        "interpretWithCaution": true
+      },
+      {
+        "id": "MIG-GSC-899B",
+        "label": "Legacy URL still receiving impressions (import)",
+        "detail": "/getresponse-review/ impressions=866 clicks=0 — verify redirect live + GSC “Page with redirect” after launch",
+        "interpretWithCaution": true
+      },
+      {
+        "id": "MIG-GSC-6D77",
+        "label": "Legacy URL still receiving impressions (import)",
+        "detail": "/best-crm-venture-capital/ impressions=656 clicks=0 — verify redirect live + GSC “Page with redirect” after launch",
+        "interpretWithCaution": true
+      },
+      {
+        "id": "MIG-GSC-17EB",
+        "label": "Legacy URL still receiving impressions (import)",
+        "detail": "/best-crm-for-photographers/ impressions=479 clicks=0 — verify redirect live + GSC “Page with redirect” after launch",
+        "interpretWithCaution": true
+      },
+      {
+        "id": "MIG-GSC-C276",
+        "label": "Legacy URL still receiving impressions (import)",
+        "detail": "/best-crm-for-coaches/ impressions=457 clicks=0 — verify redirect live + GSC “Page with redirect” after launch",
+        "interpretWithCaution": true
+      },
+      {
+        "id": "MIG-GSC-3ABE",
+        "label": "Legacy URL still receiving impressions (import)",
+        "detail": "/hubspot-crm-review/ impressions=442 clicks=0 — verify redirect live + GSC “Page with redirect” after launch",
+        "interpretWithCaution": true
+      },
+      {
+        "id": "MIG-GSC-64E6",
+        "label": "Legacy URL still receiving impressions (import)",
+        "detail": "/capsule-crm-review-2/ impressions=428 clicks=0 — verify redirect live + GSC “Page with redirect” after launch",
+        "interpretWithCaution": true
+      },
+      {
+        "id": "MIG-GSC-36CB",
+        "label": "Legacy URL still receiving impressions (import)",
+        "detail": "/keap-crm-review-2/ impressions=421 clicks=0 — verify redirect live + GSC “Page with redirect” after launch",
+        "interpretWithCaution": true
+      },
+      {
+        "id": "MIG-GSC-C4A2",
+        "label": "Legacy URL still receiving impressions (import)",
+        "detail": "/best-crm-for-freelancers/ impressions=366 clicks=0 — verify redirect live + GSC “Page with redirect” after launch",
+        "interpretWithCaution": true
+      },
+      {
+        "id": "MIG-GSC-AEC7",
+        "label": "Legacy URL still receiving impressions (import)",
+        "detail": "/closely-review/ impressions=360 clicks=0 — verify redirect live + GSC “Page with redirect” after launch",
+        "interpretWithCaution": true
+      },
+      {
+        "id": "MIG-GSC-4A85",
+        "label": "Legacy URL still receiving impressions (import)",
+        "detail": "/best-crm-for-investor-relations/ impressions=335 clicks=0 — verify redirect live + GSC “Page with redirect” after launch",
+        "interpretWithCaution": true
+      },
+      {
+        "id": "MIG-GSC-9BEA",
+        "label": "Legacy URL still receiving impressions (import)",
+        "detail": "/best-crm-engineering/ impressions=278 clicks=0 — verify redirect live + GSC “Page with redirect” after launch",
+        "interpretWithCaution": true
+      },
+      {
+        "id": "MIG-GSC-24A8",
+        "label": "Legacy URL still receiving impressions (import)",
+        "detail": "/salesforce-crm-review/ impressions=264 clicks=0 — verify redirect live + GSC “Page with redirect” after launch",
+        "interpretWithCaution": true
+      },
+      {
+        "id": "MIG-GSC-FEC5",
+        "label": "Legacy URL still receiving impressions (import)",
+        "detail": "/best-crms/ impressions=218 clicks=0 — verify redirect live + GSC “Page with redirect” after launch",
+        "interpretWithCaution": true
+      },
+      {
+        "id": "MIG-GSC-B362",
+        "label": "Legacy URL still receiving impressions (import)",
+        "detail": "/microsoft-dynamics-crm-review/ impressions=213 clicks=0 — verify redirect live + GSC “Page with redirect” after launch",
+        "interpretWithCaution": true
+      },
+      {
+        "id": "MIG-GSC-8497",
+        "label": "Legacy URL still receiving impressions (import)",
+        "detail": "/best-crm-for-musicians/ impressions=202 clicks=0 — verify redirect live + GSC “Page with redirect” after launch",
+        "interpretWithCaution": true
+      },
+      {
+        "id": "MIG-GSC-EB18",
+        "label": "Legacy URL still receiving impressions (import)",
+        "detail": "/salesforce-vs-pipedrive/ impressions=194 clicks=0 — verify redirect live + GSC “Page with redirect” after launch",
+        "interpretWithCaution": true
+      },
+      {
+        "id": "MIG-GSC-7FE3",
+        "label": "Legacy URL still receiving impressions (import)",
+        "detail": "/freshsales-crm-review/ impressions=191 clicks=0 — verify redirect live + GSC “Page with redirect” after launch",
+        "interpretWithCaution": true
+      },
+      {
+        "id": "MIG-GSC-97D5",
+        "label": "Legacy URL still receiving impressions (import)",
+        "detail": "/best-crm-for-web-designers/ impressions=170 clicks=0 — verify redirect live + GSC “Page with redirect” after launch",
+        "interpretWithCaution": true
+      },
+      {
+        "id": "MIG-GSC-ACB6",
+        "label": "Legacy URL still receiving impressions (import)",
+        "detail": "/comparing-setup-pipedrive-vs-hubspot/ impressions=144 clicks=0 — verify redirect live + GSC “Page with redirect” after launch",
+        "interpretWithCaution": true
+      },
+      {
+        "id": "MIG-GSC-2B3E",
+        "label": "Legacy URL still receiving impressions (import)",
+        "detail": "/salesforce-vs-insightly/ impressions=142 clicks=0 — verify redirect live + GSC “Page with redirect” after launch",
+        "interpretWithCaution": true
+      },
+      {
+        "id": "MIG-GSC-A973",
+        "label": "Legacy URL still receiving impressions (import)",
+        "detail": "/close-crm-review/ impressions=137 clicks=0 — verify redirect live + GSC “Page with redirect” after launch",
+        "interpretWithCaution": true
+      },
+      {
+        "id": "MIG-GSC-5CC0",
+        "label": "Legacy URL still receiving impressions (import)",
+        "detail": "/salesforce-vs-sugar-crm/ impressions=122 clicks=0 — verify redirect live + GSC “Page with redirect” after launch",
+        "interpretWithCaution": true
+      },
+      {
+        "id": "MIG-GSC-6D52",
+        "label": "Legacy URL still receiving impressions (import)",
+        "detail": "/hubspot-vs-insightly/ impressions=87 clicks=0 — verify redirect live + GSC “Page with redirect” after launch",
+        "interpretWithCaution": true
+      },
+      {
+        "id": "MIG-GSC-A9D8",
+        "label": "Legacy URL still receiving impressions (import)",
+        "detail": "/infusionsoft-crm-review/ impressions=85 clicks=0 — verify redirect live + GSC “Page with redirect” after launch",
+        "interpretWithCaution": true
+      },
+      {
+        "id": "MIG-GSC-7927",
+        "label": "Legacy URL still receiving impressions (import)",
+        "detail": "/crm-for-security-companies/ impressions=65 clicks=0 — verify redirect live + GSC “Page with redirect” after launch",
+        "interpretWithCaution": true
+      },
+      {
+        "id": "MIG-GSC-E0BD",
+        "label": "Legacy URL still receiving impressions (import)",
+        "detail": "/best-crm-for-field-sales/ impressions=63 clicks=0 — verify redirect live + GSC “Page with redirect” after launch",
+        "interpretWithCaution": true
+      },
+      {
+        "id": "MIG-GSC-FAAE",
+        "label": "Legacy URL still receiving impressions (import)",
+        "detail": "/salesforce-vs-monday/ impressions=59 clicks=0 — verify redirect live + GSC “Page with redirect” after launch",
+        "interpretWithCaution": true
+      },
+      {
+        "id": "MIG-GSC-CDE4",
+        "label": "Legacy URL still receiving impressions (import)",
+        "detail": "/pipedrive-crm-review/ impressions=53 clicks=0 — verify redirect live + GSC “Page with redirect” after launch",
+        "interpretWithCaution": true
+      },
+      {
+        "id": "MIG-GSC-11C0",
+        "label": "Legacy URL still receiving impressions (import)",
+        "detail": "/keap-crm-review/ impressions=47 clicks=0 — verify redirect live + GSC “Page with redirect” after launch",
+        "interpretWithCaution": true
+      },
+      {
+        "id": "MIG-GSC-F7D5",
+        "label": "Legacy URL still receiving impressions (import)",
+        "detail": "/monday-crm-review/ impressions=45 clicks=0 — verify redirect live + GSC “Page with redirect” after launch",
+        "interpretWithCaution": true
+      },
+      {
+        "id": "MIG-GSC-3DBE",
+        "label": "Legacy URL still receiving impressions (import)",
+        "detail": "/copper-crm-alternatives/ impressions=45 clicks=0 — verify redirect live + GSC “Page with redirect” after launch",
+        "interpretWithCaution": true
+      },
+      {
+        "id": "MIG-GSC-9AF2",
+        "label": "Legacy URL still receiving impressions (import)",
+        "detail": "/category/crm/ impressions=27 clicks=0 — verify redirect live + GSC “Page with redirect” after launch",
+        "interpretWithCaution": true
+      },
+      {
+        "id": "MIG-GSC-5227",
+        "label": "Legacy URL still receiving impressions (import)",
+        "detail": "/folk-crm-review/ impressions=26 clicks=0 — verify redirect live + GSC “Page with redirect” after launch",
+        "interpretWithCaution": true
+      },
+      {
+        "id": "MIG-GSC-C71E",
+        "label": "Legacy URL still receiving impressions (import)",
+        "detail": "/folk-app-review/ impressions=19 clicks=0 — verify redirect live + GSC “Page with redirect” after launch",
+        "interpretWithCaution": true
+      },
+      {
+        "id": "MIG-GSC-4863",
+        "label": "Legacy URL still receiving impressions (import)",
+        "detail": "/salesforce-vs-infusionsoft/ impressions=14 clicks=0 — verify redirect live + GSC “Page with redirect” after launch",
+        "interpretWithCaution": true
+      },
+      {
+        "id": "MIG-GSC-5AC4",
+        "label": "Legacy URL still receiving impressions (import)",
+        "detail": "/salesforce-vs-oracle/ impressions=14 clicks=0 — verify redirect live + GSC “Page with redirect” after launch",
+        "interpretWithCaution": true
+      },
+      {
+        "id": "MIG-GSC-718F",
+        "label": "Legacy URL still receiving impressions (import)",
+        "detail": "/hubspot-vs-infusionsoft/ impressions=9 clicks=0 — verify redirect live + GSC “Page with redirect” after launch",
+        "interpretWithCaution": true
+      },
+      {
+        "id": "MIG-GSC-A057",
+        "label": "Legacy URL still receiving impressions (import)",
+        "detail": "/sugar-crm-review/ impressions=8 clicks=0 — verify redirect live + GSC “Page with redirect” after launch",
+        "interpretWithCaution": true
+      },
+      {
+        "id": "MIG-GSC-E0A0",
+        "label": "Legacy URL still receiving impressions (import)",
+        "detail": "/hubspot-vs-freshsales/ impressions=7 clicks=0 — verify redirect live + GSC “Page with redirect” after launch",
+        "interpretWithCaution": true
+      },
+      {
+        "id": "MIG-GSC-E1E8",
+        "label": "Legacy URL still receiving impressions (import)",
+        "detail": "/hubspot-vs-keap/ impressions=6 clicks=0 — verify redirect live + GSC “Page with redirect” after launch",
+        "interpretWithCaution": true
+      },
+      {
+        "id": "MIG-GSC-51B8",
+        "label": "Legacy URL still receiving impressions (import)",
+        "detail": "/category/best-crms/ impressions=6 clicks=0 — verify redirect live + GSC “Page with redirect” after launch",
+        "interpretWithCaution": true
+      },
+      {
+        "id": "MIG-GSC-CB5B",
+        "label": "Legacy URL still receiving impressions (import)",
+        "detail": "/privacy-policy/ impressions=5 clicks=0 — verify redirect live + GSC “Page with redirect” after launch",
+        "interpretWithCaution": true
+      },
+      {
+        "id": "MIG-GSC-2ADE",
+        "label": "Legacy URL still receiving impressions (import)",
+        "detail": "/hubspot-vs-monday/ impressions=5 clicks=0 — verify redirect live + GSC “Page with redirect” after launch",
+        "interpretWithCaution": true
+      },
+      {
+        "id": "MIG-GSC-EAFD",
+        "label": "Legacy URL still receiving impressions (import)",
+        "detail": "/the-ultimate-guide-to-pipedrive-vs-hubspot/ impressions=3 clicks=0 — verify redirect live + GSC “Page with redirect” after launch",
+        "interpretWithCaution": true
+      },
+      {
+        "id": "MIG-GSC-B26A",
+        "label": "Legacy URL still receiving impressions (import)",
+        "detail": "/pipedrive-vs-hubspot/ impressions=3 clicks=0 — verify redirect live + GSC “Page with redirect” after launch",
+        "interpretWithCaution": true
+      },
+      {
+        "id": "MIG-GSC-F971",
+        "label": "Legacy URL still receiving impressions (import)",
+        "detail": "/capsule-crm-review/ impressions=3 clicks=0 — verify redirect live + GSC “Page with redirect” after launch",
+        "interpretWithCaution": true
+      },
+      {
+        "id": "MIG-GSC-7C07",
+        "label": "Legacy URL still receiving impressions (import)",
+        "detail": "/monday-com-review/ impressions=3 clicks=0 — verify redirect live + GSC “Page with redirect” after launch",
+        "interpretWithCaution": true
+      },
+      {
+        "id": "MIG-GSC-C512",
+        "label": "Legacy URL still receiving impressions (import)",
+        "detail": "/hubspot-vs-monday-2/ impressions=3 clicks=0 — verify redirect live + GSC “Page with redirect” after launch",
+        "interpretWithCaution": true
+      },
+      {
+        "id": "MIG-GSC-E226",
+        "label": "Legacy URL still receiving impressions (import)",
+        "detail": "/microsoft-dynamics-vs-salesforce/ impressions=2 clicks=0 — verify redirect live + GSC “Page with redirect” after launch",
+        "interpretWithCaution": true
+      },
+      {
+        "id": "MIG-GSC-CONTEXT",
+        "label": "GSC monitoring checklist (manual)",
+        "detail": "Watch Not found (404), Page with redirect, Duplicate without user-selected canonical, Indexed legacy URLs, new target indexing, and traffic deltas — with path context.",
+        "interpretWithCaution": true
+      }
+    ]
+  }
+}

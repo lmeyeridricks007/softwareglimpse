@@ -1,0 +1,164 @@
+{
+  "id": "assessment-coralogix-it-v1",
+  "productSlug": "coralogix",
+  "methodologySlug": "it-development-editorial",
+  "methodologyVersion": "1.0.0",
+  "status": "approved",
+  "verdict": "Coralogix: Choose Coralogix when a published per-GB observability rate card is the job — not Datadog host modules by default, and not a Chronosphere RFP. Scores use the IT & Development editorial methodology from first-party research as of 2026-08-18 — not hands-on product testing.",
+  "strengths": [
+    "Published usage rate card (no seat floor)",
+    "14-day / 8-unit trial",
+    "Logs, traces, metrics, and metered AI",
+    "Clear observability cluster fit",
+    "Easier published story than Chronosphere quotes"
+  ],
+  "weaknesses": [
+    "Does not outrank Datadog",
+    "No free forever plan",
+    "GB/token TCO still surprises",
+    "Thinner enterprise admin story",
+    "Not ITSM or PaaS"
+  ],
+  "bestFor": [
+    "Teams that want a published per-GB observability card instead of host SKUs",
+    "Buyers who will spend the 14-day / 8-unit trial before committing",
+    "Comparisons versus Datadog modules, Chronosphere quotes, and Honeycomb Pro $150"
+  ],
+  "notIdealFor": [
+    "SRE teams buying Datadog infrastructure monitoring as the award path",
+    "Prometheus-cardinality control-plane specialists (Chronosphere)",
+    "ITSM or cloud PaaS purchases"
+  ],
+  "tradeoffs": [
+    "Per-agent vs per-host vs per-seat vs per-GB pricing models",
+    "Module stacking and consumption overages vs single-SKU floors",
+    "Free tiers vs enterprise SSO/audit gates",
+    "Landscape-adjacent tools vs primary job-cluster peers on best pages"
+  ],
+  "recommendation": "Choose Coralogix when a published per-GB observability rate card is the job — not Datadog host modules by default, and not a Chronosphere RFP. Compare Datadog for the observability award path; Chronosphere for Prometheus cardinality control; Honeycomb for high-cardinality events/traces.",
+  "editorialNotes": "IT optional-next batch. Approved on it-development-editorial v1.0.0. membershipRole=primary. jobCluster=observability-monitoring. handsOnTesting=false. Affiliate economics excluded.",
+  "handsOnTesting": false,
+  "confidence": "medium",
+  "criterionAssessments": [
+    {
+      "criterionSlug": "ease-of-use",
+      "score": 8,
+      "rationale": "Published rate card plus a 14-day / 8-unit trial is easier to try than Chronosphere quotes. Not a lab test.",
+      "supportingFactIds": [
+        "fact-coralogix-features.infrastructure-monitoring",
+        "fact-coralogix-pricing.model"
+      ],
+      "confidence": "medium",
+      "status": "approved",
+      "reviewedAt": "2026-08-18T22:00:00.000Z",
+      "reviewer": "editorial"
+    },
+    {
+      "criterionSlug": "it-job-fit",
+      "score": 8,
+      "rationale": "Observability-monitoring — logs/traces/metrics peer of Datadog, not ITSM or PaaS.",
+      "supportingFactIds": [
+        "fact-coralogix-features.infrastructure-monitoring",
+        "fact-coralogix-pricing.model"
+      ],
+      "confidence": "medium",
+      "status": "approved",
+      "reviewedAt": "2026-08-18T22:00:00.000Z",
+      "reviewer": "editorial"
+    },
+    {
+      "criterionSlug": "workflow-depth",
+      "score": 8,
+      "rationale": "Telemetry pipeline plus querying is solid; held at 8 versus Datadog’s modular breadth.",
+      "supportingFactIds": [
+        "fact-coralogix-features.apm-tracing",
+        "fact-coralogix-pricing.model"
+      ],
+      "confidence": "medium",
+      "status": "approved",
+      "reviewedAt": "2026-08-18T22:00:00.000Z",
+      "reviewer": "editorial"
+    },
+    {
+      "criterionSlug": "integrations",
+      "score": 8,
+      "rationale": "OpenTelemetry/cloud/chat cover typical SRE ingest.",
+      "supportingFactIds": [
+        "fact-coralogix-features.analytics-reporting",
+        "fact-coralogix-pricing.model",
+        "fact-coralogix-positioning.vendorClaim"
+      ],
+      "confidence": "medium",
+      "status": "approved",
+      "reviewedAt": "2026-08-18T22:00:00.000Z",
+      "reviewer": "editorial"
+    },
+    {
+      "criterionSlug": "admin-security",
+      "score": 7,
+      "rationale": "Paid/commit paths add governance; thinner public enterprise-packaging story than Datadog. Held at 7.",
+      "supportingFactIds": [
+        "fact-coralogix-features.enterprise-security",
+        "fact-coralogix-pricing.model"
+      ],
+      "confidence": "medium",
+      "status": "approved",
+      "reviewedAt": "2026-08-18T22:00:00.000Z",
+      "reviewer": "editorial"
+    },
+    {
+      "criterionSlug": "scalability",
+      "score": 8,
+      "rationale": "GB/token scale; commitments exist — not unlimited ingest on the trial.",
+      "supportingFactIds": [
+        "fact-coralogix-pricing.plans.payg-rate-card",
+        "fact-coralogix-pricing.model",
+        "fact-coralogix-pricing.plans.commitments"
+      ],
+      "confidence": "medium",
+      "status": "approved",
+      "reviewedAt": "2026-08-18T22:00:00.000Z",
+      "reviewer": "editorial"
+    },
+    {
+      "criterionSlug": "value-for-money",
+      "score": 8,
+      "rationale": "Published per-GB card with no seat floor is a clear specialist story versus Datadog host modules. Affiliate economics excluded.",
+      "supportingFactIds": [
+        "fact-coralogix-pricing.hasFreePlan",
+        "fact-coralogix-pricing.model"
+      ],
+      "confidence": "medium",
+      "status": "approved",
+      "reviewedAt": "2026-08-18T22:00:00.000Z",
+      "reviewer": "editorial"
+    },
+    {
+      "criterionSlug": "ai-capabilities",
+      "score": 7,
+      "rationale": "AI is a metered $1.50/1M-token line — scored as supporting assistance, not an award reason versus Datadog.",
+      "supportingFactIds": [
+        "fact-coralogix-features.itsm-ai",
+        "fact-coralogix-pricing.model"
+      ],
+      "confidence": "medium",
+      "status": "approved",
+      "reviewedAt": "2026-08-18T22:00:00.000Z",
+      "reviewer": "editorial"
+    }
+  ],
+  "overallScore": 7.8,
+  "overallScoreRationale": "Weighted average of the eight IT editorial criteria using category weights (IT job fit 16, workflow depth 14, ease of use 12, integrations 12, admin/security 12, value 12, AI 12, scalability 10), rounded to 1 decimal. Products are scored inside their job cluster — ITSM, observability, source control, hosting panels, and web-data platforms are not forced into one undifferentiated ranking. Not a hands-on lab score, and affiliate economics are excluded.",
+  "scoreAudit": [
+    {
+      "at": "2026-08-18T22:00:00.000Z",
+      "actor": "editorial",
+      "change": "IT optional-next onboarding; approved IT criteria with category weights; handsOnTesting=false",
+      "nextOverall": 7.8
+    }
+  ],
+  "reviewedAt": "2026-08-18T22:00:00.000Z",
+  "reviewer": "editorial",
+  "createdAt": "2026-08-18T22:00:00.000Z",
+  "updatedAt": "2026-08-18T22:00:00.000Z"
+}

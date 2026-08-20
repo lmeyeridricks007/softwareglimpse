@@ -1,0 +1,390 @@
+{
+  "meta": {
+    "researchDate": "2026-08-17",
+    "category": "email-marketing",
+    "scope": "existing-affiliate-inventory-only",
+    "affiliateSourceIds": [
+      "aff-getresponse",
+      "aff-aweber",
+      "aff-campaign-monitor"
+    ],
+    "notes": [
+      "Prices are published vendor USD figures only; no affiliate economics.",
+      "Contact-tier prices scale with list size; starting prices are the lowest published contact band unless noted.",
+      "Mailchimp and ActiveCampaign included as credibilityContext from existing repo research (not re-priced inventively)."
+    ],
+    "sourcesChecked": [
+      "https://www.getresponse.com/pricing",
+      "https://www.getresponse.com/pricing/free",
+      "https://www.getresponse.com/",
+      "https://www.aweber.com/pricing.htm",
+      "https://docs.aweber.com/getting-started-with-aweber/aweber-information/how-much-does-aweber-cost",
+      "https://www.aweber.com/",
+      "https://www.campaignmonitor.com/pricing/",
+      "https://www.campaignmonitor.com/",
+      "https://meetmarigold.com/",
+      "https://www.youtube.com/watch?v=0hMDzGuc6WY",
+      "repo: src/data/research/mailchimp/",
+      "repo: src/data/research/activecampaign/"
+    ],
+    "blockers": [
+      "GetResponse: no verified official YouTube overview embed confirmed on 2026-08-17 (official channel exists; third-party tutorials found but excluded).",
+      "Campaign Monitor pricing page HTML scrape mangled decimals (e.g. annual Lite rendered as 1170); monthly floors cross-checked against official page copy (Essentials 'then $31/month') and annual 10% discount arithmetic ($11.70 → $13 Lite; $27.90 → $31 Essentials; $153.90 → $171 Premier).",
+      "AWeber marketing site promotes Lite/Plus/Done For You + 14-day trials; Free forever limits confirmed on official docs (docs.aweber.com), not the marketing pricing hero."
+    ]
+  },
+  "products": [
+    {
+      "slug": "getresponse",
+      "name": "GetResponse",
+      "company": "GetResponse",
+      "website": "https://www.getresponse.com",
+      "domain": "getresponse.com",
+      "pricingUrl": "https://www.getresponse.com/pricing",
+      "softShortDescription": "AI email, automation, landing pages & funnels with a forever-free tier and paid contact-based plans.",
+      "shortDescription": "GetResponse is an AI-driven email marketing and lifecycle automation platform with newsletters, automation workflows, landing pages, funnels, webinars (higher plans), and ecommerce tools. Paid plans use contact-list tiers with unlimited monthly email sends; a forever-free plan and 14-day premium trial are published.",
+      "vendorPositioning": "AI-powered email, automation, and SMS to convert customers and grow repeat revenue — all-in-one owned-channel marketing for entrepreneurs, ecommerce, and brands (claims 350k+ customers, 99% deliverability across 160+ countries).",
+      "pricingModel": "contact-tiers",
+      "hasFreePlan": true,
+      "hasFreeTrial": true,
+      "pricingNotes": "Verified 2026-08-17 from getresponse.com/pricing and /pricing/free. Paid Starter/Marketer/Creator priced by list size (published packages: 1k, 2.5k, 5k, 10k, 25k, 50k, 100k). Monthly floors at ~1,000 contacts: Starter $19/mo, Marketer $59/mo, Creator $69/mo; annual ~18% off ($15.58 / $48.38 / $56.58). Unlimited monthly sends on paid plans. Free forever: up to 500 contacts, 2,500 newsletters/mo, 1 landing page (post-trial limits). 14-day premium feature trial on Free signup (no credit card). Enterprise: custom quote / book a demo; 30-day Enterprise Pilot via demo. Taxes may apply.",
+      "plans": [
+        {
+          "name": "Free",
+          "approxStartingPriceUsdMo": 0,
+          "contactLimits": "Up to 500 contacts (Free plan); published free send cap 2,500 newsletters/mo",
+          "contactSales": false
+        },
+        {
+          "name": "Starter",
+          "approxStartingPriceUsdMo": 19,
+          "contactLimits": "List-size packages from 1,000 contacts upward (published ladder includes 1k–100k)",
+          "contactSales": false
+        },
+        {
+          "name": "Marketer",
+          "approxStartingPriceUsdMo": 59,
+          "contactLimits": "Same published list-size packages as other standard plans",
+          "contactSales": false
+        },
+        {
+          "name": "Creator",
+          "approxStartingPriceUsdMo": 69,
+          "contactLimits": "Same published list-size packages; webinars/courses with student limits on Creator",
+          "contactSales": false
+        },
+        {
+          "name": "Enterprise",
+          "approxStartingPriceUsdMo": null,
+          "contactLimits": "Custom / large lists — quote via demo",
+          "contactSales": true
+        }
+      ],
+      "keyFeatures": [
+        "email-campaigns",
+        "newsletter-builder",
+        "email-templates",
+        "automation-workflows",
+        "segmentation",
+        "landing-pages",
+        "analytics",
+        "deliverability-tools",
+        "ai-content-generation",
+        "contact-management",
+        "integrations",
+        "A/B testing"
+      ],
+      "bestFor": [
+        "SMBs wanting email + automation + landing pages in one stack",
+        "Ecommerce needing cart recovery and promo tools (Marketer+)",
+        "Creators monetizing courses/webinars/newsletters (Creator)",
+        "Teams starting on a forever-free plan before upgrading"
+      ],
+      "notIdealFor": [
+        "Buyers who only need a simple newsletter with no automation/landing-page bundle",
+        "Enterprises needing SSO/dedicated IP without moving to Enterprise quote",
+        "Teams that require unlimited AI generator uses on the cheapest paid tier (Starter AI capped)"
+      ],
+      "limitations": [
+        "Starter limited to 1 custom automation workflow and capped AI generator uses",
+        "Free plan heavily limited after 14-day premium window (branding, LP visits, automation filters, etc.)",
+        "SMS, dedicated IP/domain, and some enterprise tools require Enterprise",
+        "Full contact-band price table beyond headline floors requires plan/list selector on site"
+      ],
+      "competitorSlugs": [
+        "mailchimp",
+        "activecampaign",
+        "aweber",
+        "campaign-monitor",
+        "klaviyo",
+        "hubspot",
+        "kartra"
+      ],
+      "officialVideos": [],
+      "membershipRole": "primary",
+      "affiliateSourceId": "aff-getresponse"
+    },
+    {
+      "slug": "aweber",
+      "name": "AWeber",
+      "company": "AWeber Systems, Inc.",
+      "website": "https://www.aweber.com",
+      "domain": "aweber.com",
+      "pricingUrl": "https://www.aweber.com/pricing.htm",
+      "softShortDescription": "Creator- and SMB-focused email marketing with free forever, Lite/Plus tiers, and landing pages.",
+      "shortDescription": "AWeber is an email marketing and automation platform aimed at small businesses and creators, with newsletters, autoresponders/automations, landing pages, signup forms, ecommerce selling tools, and analytics. Pricing is subscriber-tiered; Free forever and 14-day paid-plan trials are published.",
+      "vendorPositioning": "Powerfully simple email marketing and automation to connect, automate, and sell — positioned for small businesses and creators (long-running ESP; homepage emphasizes ease and free start).",
+      "pricingModel": "contact-tiers",
+      "hasFreePlan": true,
+      "hasFreeTrial": true,
+      "pricingNotes": "Verified 2026-08-17 from aweber.com/pricing.htm and docs.aweber.com pricing help. Free: lifetime, up to 500 subscribers and 3,000 emails/mo (docs). Lite: from $15/mo monthly or ~$12.49–$12.50/mo billed annually at 500 subs (10× send cap). Plus: from $30/mo monthly or ~$19.99–$20/mo billed annually at 500 subs (12× send cap). Done For You: expert setup add-on marketed with Plus + setup fee (promo pricing on site). Unlimited: flat $899/mo (docs). 100,000+ subscribers: contact sales. Paid Lite/Plus: 14-day free trial. Limited-time setup promos appear on marketing pages — treat promo fees as non-evergreen.",
+      "plans": [
+        {
+          "name": "Free",
+          "approxStartingPriceUsdMo": 0,
+          "contactLimits": "Up to 500 subscribers; 3,000 emails/month (official docs)",
+          "contactSales": false
+        },
+        {
+          "name": "Lite",
+          "approxStartingPriceUsdMo": 15,
+          "contactLimits": "Subscriber tiers from 500 upward; 10× subscriber monthly send volume",
+          "contactSales": false
+        },
+        {
+          "name": "Plus",
+          "approxStartingPriceUsdMo": 30,
+          "contactLimits": "Subscriber tiers from 500 upward; 12× subscriber monthly send volume",
+          "contactSales": false
+        },
+        {
+          "name": "Done For You",
+          "approxStartingPriceUsdMo": 30,
+          "contactLimits": "Tied to Plus-tier software; setup fee marketed separately (promo amounts vary)",
+          "contactSales": false
+        },
+        {
+          "name": "Unlimited",
+          "approxStartingPriceUsdMo": 899,
+          "contactLimits": "Unlimited subscribers (docs); up to 15× monthly sends per subscriber",
+          "contactSales": false
+        },
+        {
+          "name": "Large account (100k+)",
+          "approxStartingPriceUsdMo": null,
+          "contactLimits": "100,000+ subscribers — contact sales / large-account pricing",
+          "contactSales": true
+        }
+      ],
+      "keyFeatures": [
+        "email-campaigns",
+        "newsletter-builder",
+        "email-templates",
+        "automation-workflows",
+        "segmentation",
+        "landing-pages",
+        "analytics",
+        "deliverability-tools",
+        "ai-content-generation",
+        "contact-management",
+        "integrations",
+        "A/B testing"
+      ],
+      "bestFor": [
+        "Creators and solopreneurs needing email + landing pages + basic funnels",
+        "Teams wanting a free forever starter with phone/chat support culture",
+        "Users who prefer subscriber-based plans with explicit monthly send multipliers"
+      ],
+      "notIdealFor": [
+        "Complex B2B multi-product marketing automation / CRM-heavy stacks",
+        "High-volume ecommerce needing deep product/catalog automation comparable to Klaviyo",
+        "Buyers who dislike vendor branding on Free-tier messages"
+      ],
+      "limitations": [
+        "Free: 1 list, limited automations/landing pages, AWeber branding, hard 500-sub / 3k-send caps (docs)",
+        "Lite caps lists, LPs, automations, users, and segments vs Plus",
+        "Marketing pricing page emphasizes Lite/Plus/Done For You; Unlimited details live primarily in docs",
+        "Promo setup fees and 'months free' offers are time-limited — verify live checkout"
+      ],
+      "competitorSlugs": [
+        "mailchimp",
+        "getresponse",
+        "campaign-monitor",
+        "activecampaign",
+        "klaviyo",
+        "hubspot",
+        "kartra"
+      ],
+      "officialVideos": [
+        {
+          "videoId": "rdUpyHxG9PA",
+          "title": "AI Sign-Up Form Builder: Personality Quiz, Postcard Flip, and a Playable Game / The Shift AI Show",
+          "channel": "AWeber (The Shift AI Show)",
+          "shows": "Product demo of AWeber AI signup-form builder",
+          "features": [
+            "ai-content-generation",
+            "contact-management",
+            "landing-pages"
+          ],
+          "verificationNote": "AWeber staff-led show content; not a classic homepage product overview reel."
+        }
+      ],
+      "membershipRole": "primary",
+      "affiliateSourceId": "aff-aweber"
+    },
+    {
+      "slug": "campaign-monitor",
+      "name": "Campaign Monitor",
+      "company": "Marigold (Campaign Monitor by Marigold)",
+      "website": "https://www.campaignmonitor.com",
+      "domain": "campaignmonitor.com",
+      "pricingUrl": "https://www.campaignmonitor.com/pricing/",
+      "softShortDescription": "Design-led email marketing by Marigold with contact-tier Lite, Essentials, Premier, and Enterprise.",
+      "shortDescription": "Campaign Monitor (by Marigold) is a design-focused email marketing platform with drag-and-drop building, templates, segmentation, automation/journeys, AI writing/boost tools, analytics, and agency/multi-account features. Pricing is contact-tiered across Lite, Essentials, Premier, plus custom Enterprise; free trial is offered (no forever free plan published).",
+      "vendorPositioning": "Smarter email for a better bottom line — simple, powerful email for businesses and agencies; Marigold positions Campaign Monitor as the self-serve SMB/agency email product in its loyalty suite.",
+      "pricingModel": "contact-tiers",
+      "hasFreePlan": false,
+      "hasFreeTrial": true,
+      "pricingNotes": "Verified 2026-08-17 from campaignmonitor.com/pricing. Plans: Free trial / Lite / Essentials / Premier / Enterprise. Contact bands on page: 0–500, 501–2,500, …, 50,001+. For 0–500 contacts, official page shows ~10% annual discount figures consistent with monthly floors Lite $13, Essentials $31 (explicit 'then $31/month' copy), Premier $171; annual effective ≈ $11.70 / $27.90 / $153.90. Lite: capped sends (~5× / 2,500 at 500 contacts). Essentials/Premier: unlimited sends. Website Builder add-on $10/mo on lower tiers. Enterprise: contact sales (GDPR/SOC2, custom DPA, invoice/PO). 30-day free trial documented (500 contacts / 500 emails on trial comparison). No forever-free plan on pricing page.",
+      "plans": [
+        {
+          "name": "Free trial",
+          "approxStartingPriceUsdMo": 0,
+          "contactLimits": "30-day trial; comparison table lists 500 contacts / 500 emails for trial",
+          "contactSales": false
+        },
+        {
+          "name": "Lite",
+          "approxStartingPriceUsdMo": 13,
+          "contactLimits": "Contact bands from 0–500 up; send volume capped (2,500 at 0–500 band)",
+          "contactSales": false
+        },
+        {
+          "name": "Essentials",
+          "approxStartingPriceUsdMo": 31,
+          "contactLimits": "Same contact bands; unlimited monthly email sends",
+          "contactSales": false
+        },
+        {
+          "name": "Premier",
+          "approxStartingPriceUsdMo": 171,
+          "contactLimits": "Same contact bands; unlimited sends; phone/premier support features",
+          "contactSales": false
+        },
+        {
+          "name": "Enterprise",
+          "approxStartingPriceUsdMo": null,
+          "contactLimits": "Custom — large lists / security / billing requirements; contact sales (50,001+ bands also push sales)",
+          "contactSales": true
+        }
+      ],
+      "keyFeatures": [
+        "email-campaigns",
+        "newsletter-builder",
+        "email-templates",
+        "automation-workflows",
+        "segmentation",
+        "landing-pages",
+        "analytics",
+        "deliverability-tools",
+        "ai-content-generation",
+        "contact-management",
+        "integrations",
+        "A/B testing"
+      ],
+      "bestFor": [
+        "Brand-conscious teams prioritizing email design/templates",
+        "Agencies needing client/subaccount tooling (higher plans)",
+        "Marketers wanting AI writer/booster and benchmarked campaign insights"
+      ],
+      "notIdealFor": [
+        "Buyers needing a forever-free ESP",
+        "Cost-sensitive senders who outgrow Lite’s send cap but find Essentials/Premier steep",
+        "Teams needing a full marketing CRM (sales pipeline) rather than email-first"
+      ],
+      "limitations": [
+        "No forever free plan — trial only",
+        "Lite monthly send caps force upgrades for frequent senders",
+        "Premier jump is large vs Essentials at the same contact band",
+        "Some advanced features / website builder may be add-ons or higher-tier only",
+        "Price rises sharply with contact band; 50,001+ often requires sales"
+      ],
+      "competitorSlugs": [
+        "mailchimp",
+        "getresponse",
+        "aweber",
+        "activecampaign",
+        "klaviyo",
+        "hubspot"
+      ],
+      "officialVideos": [
+        {
+          "videoId": "0hMDzGuc6WY",
+          "title": "Email Marketing Solutions | Campaign Monitor Product Overview",
+          "channel": "Campaign Monitor (@TryCampaignMonitor)",
+          "shows": "Official product walkthrough: lists/segments, campaign builder, personalization, scheduling, analytics",
+          "features": [
+            "email-campaigns",
+            "newsletter-builder",
+            "email-templates",
+            "segmentation",
+            "automation-workflows",
+            "analytics",
+            "deliverability-tools"
+          ]
+        }
+      ],
+      "membershipRole": "primary",
+      "affiliateSourceId": "aff-campaign-monitor"
+    }
+  ],
+  "credibilityContext": [
+    {
+      "slug": "mailchimp",
+      "name": "Mailchimp",
+      "company": "Intuit Mailchimp",
+      "website": "https://mailchimp.com",
+      "domain": "mailchimp.com",
+      "pricingUrl": "https://mailchimp.com/pricing/marketing/",
+      "membershipRole": "context",
+      "note": "Already partially researched in repo. Freemium email/marketing platform with CRM-oriented audience tools; has free plan; free trial documented false in approved facts; paid plans contact-based — verify live dollar ladders (not invented here).",
+      "repoResearchPath": "src/data/research/mailchimp/",
+      "softShortDescription": "Widely known freemium email marketing platform with audience/CRM-oriented tools.",
+      "pricingModel": "contact-tiers",
+      "hasFreePlan": true,
+      "hasFreeTrial": false,
+      "competitorSlugs": [
+        "getresponse",
+        "aweber",
+        "campaign-monitor",
+        "activecampaign",
+        "klaviyo",
+        "hubspot"
+      ]
+    },
+    {
+      "slug": "activecampaign",
+      "name": "ActiveCampaign",
+      "company": "ActiveCampaign",
+      "website": "https://www.activecampaign.com",
+      "domain": "activecampaign.com",
+      "pricingUrl": "https://www.activecampaign.com/pricing",
+      "membershipRole": "context",
+      "note": "Already partially researched in repo. Contact-tier marketing automation + CRM hybrid; no free plan; 14-day free trial; Starter from ~$15/mo annual at ~1k contacts per approved facts — verify live pricing.",
+      "repoResearchPath": "src/data/research/activecampaign/",
+      "softShortDescription": "Marketing automation platform with CRM features; contact-tier paid plans and free trial.",
+      "pricingModel": "contact-tiers",
+      "hasFreePlan": false,
+      "hasFreeTrial": true,
+      "approxStartingPriceUsdMo": 15,
+      "competitorSlugs": [
+        "mailchimp",
+        "getresponse",
+        "aweber",
+        "campaign-monitor",
+        "hubspot",
+        "klaviyo"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,825 @@
+{
+  "id": "wf-software-onboarding-content-zoho-crm-1786686359954",
+  "workflowId": "software-onboarding-content",
+  "workflowVersion": "1.0.0",
+  "name": "Software Onboarding Content: zoho-crm",
+  "targetType": "software",
+  "targetId": "zoho-crm",
+  "status": "completed-with-warnings",
+  "steps": [
+    {
+      "id": "software-onboarding",
+      "definitionStepId": "software-onboarding",
+      "handler": "software-onboarding",
+      "label": "Software onboarding",
+      "status": "completed",
+      "required": true,
+      "failurePolicy": "block-workflow",
+      "attempt": 1,
+      "maxAttempts": 2,
+      "dependsOn": [],
+      "priority": "critical",
+      "config": {
+        "maxAutomaticRevisions": 1,
+        "expandFromContentPlan": false,
+        "expandKind": "none",
+        "stopAfterApproval": true,
+        "allowNormalizedFacts": false,
+        "optionalWhenBlocked": false,
+        "forceTransientFailOnce": false
+      },
+      "inputRefs": {},
+      "outputRefs": {
+        "softwareOnboardingRunId": "onboard-zoho-crm-1786686332268"
+      },
+      "blockers": [],
+      "warnings": [],
+      "startedAt": "2026-08-14T05:46:00.456Z",
+      "completedAt": "2026-08-14T05:46:00.502Z",
+      "revisionAttempts": 0
+    },
+    {
+      "id": "content-plan",
+      "definitionStepId": "content-plan",
+      "handler": "content-plan",
+      "label": "Content plan",
+      "status": "completed",
+      "required": true,
+      "failurePolicy": "block-workflow",
+      "attempt": 1,
+      "maxAttempts": 2,
+      "dependsOn": [
+        "software-onboarding"
+      ],
+      "priority": "high",
+      "config": {
+        "maxAutomaticRevisions": 1,
+        "expandFromContentPlan": false,
+        "expandKind": "none",
+        "stopAfterApproval": true,
+        "allowNormalizedFacts": false,
+        "optionalWhenBlocked": false,
+        "forceTransientFailOnce": false
+      },
+      "inputRefs": {},
+      "outputRefs": {
+        "softwareOnboardingRunId": "onboard-zoho-crm-1786686332268",
+        "comparisonTargets": "hubspot-vs-zoho-crm,pipedrive-vs-zoho-crm,salesforce-vs-zoho-crm",
+        "pageCandidateCount": "9"
+      },
+      "blockers": [],
+      "warnings": [],
+      "startedAt": "2026-08-14T05:46:00.504Z",
+      "completedAt": "2026-08-14T05:46:00.533Z",
+      "revisionAttempts": 0
+    },
+    {
+      "id": "software-review",
+      "definitionStepId": "software-review",
+      "handler": "agent-run",
+      "label": "Software Review",
+      "status": "completed",
+      "required": true,
+      "failurePolicy": "block-workflow",
+      "attempt": 1,
+      "maxAttempts": 2,
+      "dependsOn": [
+        "content-plan"
+      ],
+      "priority": "high",
+      "config": {
+        "agentId": "software-review-agent",
+        "targetSlug": "zoho-crm",
+        "maxAutomaticRevisions": 1,
+        "expandFromContentPlan": false,
+        "expandKind": "none",
+        "stopAfterApproval": true,
+        "allowNormalizedFacts": false,
+        "optionalWhenBlocked": false,
+        "forceTransientFailOnce": false
+      },
+      "inputRefs": {},
+      "outputRefs": {
+        "draftId": "draft-deterministic-v1-software-review-agent-zoho-crm-2026-08-14T05-46-00-570Z",
+        "qaStatus": "pass",
+        "agentId": "software-review-agent",
+        "target": "zoho-crm"
+      },
+      "inputSnapshot": {
+        "researchFactIds": [
+          "fact-zoho-crm-pricing.hasFreePlan",
+          "fact-zoho-crm-pricing.hasFreeTrial",
+          "fact-zoho-crm-pricing.startingPriceMonthly",
+          "fact-zoho-crm-pricing.currency",
+          "fact-zoho-crm-pricing.model",
+          "fact-zoho-crm-pricing.plans.free",
+          "fact-zoho-crm-pricing.plans.standard",
+          "fact-zoho-crm-pricing.plans.professional",
+          "fact-zoho-crm-pricing.plans.enterprise",
+          "fact-zoho-crm-pricing.plans.ultimate",
+          "fact-zoho-crm-features.contact-management",
+          "fact-zoho-crm-features.lead-management",
+          "fact-zoho-crm-features.pipeline-management",
+          "fact-zoho-crm-features.deal-management",
+          "fact-zoho-crm-features.email-sync",
+          "fact-zoho-crm-features.workflow-automation",
+          "fact-zoho-crm-features.sales-automation",
+          "fact-zoho-crm-features.reporting",
+          "fact-zoho-crm-features.forecasting",
+          "fact-zoho-crm-features.custom-fields",
+          "fact-zoho-crm-features.custom-pipelines",
+          "fact-zoho-crm-features.mobile-app",
+          "fact-zoho-crm-features.ai-assistance",
+          "fact-zoho-crm-features.integrations",
+          "fact-zoho-crm-positioning.summary",
+          "fact-zoho-crm-ai.assistant",
+          "fact-zoho-crm-ai.automation",
+          "fact-zoho-crm-ai.recommendations"
+        ],
+        "methodologySlug": "crm-editorial",
+        "methodologyVersion": "1.0.0",
+        "agentVersion": "1.0.0",
+        "contextBuiltAt": "2026-08-14T05:46:00.565Z"
+      },
+      "blockers": [],
+      "warnings": [],
+      "agentTaskId": "exec-software-review-agent-zoho-crm-1786686360535",
+      "draftId": "draft-deterministic-v1-software-review-agent-zoho-crm-2026-08-14T05-46-00-570Z",
+      "startedAt": "2026-08-14T05:46:00.534Z",
+      "completedAt": "2026-08-14T05:46:00.577Z",
+      "revisionAttempts": 0
+    },
+    {
+      "id": "pricing-page",
+      "definitionStepId": "pricing-page",
+      "handler": "agent-run",
+      "label": "Pricing Page",
+      "status": "completed-with-warning",
+      "required": false,
+      "failurePolicy": "continue-with-warning",
+      "attempt": 1,
+      "maxAttempts": 2,
+      "dependsOn": [
+        "content-plan"
+      ],
+      "priority": "normal",
+      "config": {
+        "agentId": "pricing-page-agent",
+        "targetSlug": "zoho-crm",
+        "maxAutomaticRevisions": 1,
+        "expandFromContentPlan": false,
+        "expandKind": "none",
+        "stopAfterApproval": true,
+        "allowNormalizedFacts": false,
+        "optionalWhenBlocked": true,
+        "forceTransientFailOnce": false
+      },
+      "inputRefs": {},
+      "outputRefs": {
+        "draftId": "draft-deterministic-v1-pricing-page-agent-zoho-crm-2026-08-14T05-46-00-678Z-rev-1786686360688",
+        "qaStatus": "fail"
+      },
+      "blockers": [],
+      "warnings": [
+        "QA still failing after revision: UNVERIFIED_NUMBER",
+        "Manually advanced: optional pricing-page QA (UNVERIFIED_NUMBER / unverified) during CRM batch onboard"
+      ],
+      "agentTaskId": "exec-pricing-page-agent-zoho-crm-1786686360671",
+      "draftId": "draft-deterministic-v1-pricing-page-agent-zoho-crm-2026-08-14T05-46-00-678Z-rev-1786686360688",
+      "startedAt": "2026-08-14T05:46:00.670Z",
+      "completedAt": "2026-08-14T05:46:00.702Z",
+      "revisionAttempts": 1
+    },
+    {
+      "id": "alternatives",
+      "definitionStepId": "alternatives",
+      "handler": "agent-run",
+      "label": "Alternatives",
+      "status": "completed",
+      "required": false,
+      "failurePolicy": "continue-with-warning",
+      "attempt": 1,
+      "maxAttempts": 2,
+      "dependsOn": [
+        "content-plan"
+      ],
+      "priority": "normal",
+      "config": {
+        "agentId": "alternatives-agent",
+        "targetSlug": "zoho-crm",
+        "maxAutomaticRevisions": 1,
+        "expandFromContentPlan": false,
+        "expandKind": "none",
+        "stopAfterApproval": true,
+        "allowNormalizedFacts": false,
+        "optionalWhenBlocked": true,
+        "forceTransientFailOnce": false
+      },
+      "inputRefs": {},
+      "outputRefs": {
+        "draftId": "draft-deterministic-v1-alternatives-agent-zoho-crm-2026-08-14T05-46-00-592Z",
+        "qaStatus": "pass",
+        "agentId": "alternatives-agent",
+        "target": "zoho-crm"
+      },
+      "inputSnapshot": {
+        "researchFactIds": [
+          "fact-zoho-crm-pricing.hasFreePlan",
+          "fact-zoho-crm-pricing.hasFreeTrial",
+          "fact-zoho-crm-pricing.startingPriceMonthly",
+          "fact-zoho-crm-pricing.currency",
+          "fact-zoho-crm-pricing.model",
+          "fact-zoho-crm-pricing.plans.free",
+          "fact-zoho-crm-pricing.plans.standard",
+          "fact-zoho-crm-pricing.plans.professional",
+          "fact-zoho-crm-pricing.plans.enterprise",
+          "fact-zoho-crm-pricing.plans.ultimate",
+          "fact-zoho-crm-features.contact-management",
+          "fact-zoho-crm-features.lead-management",
+          "fact-zoho-crm-features.pipeline-management",
+          "fact-zoho-crm-features.deal-management",
+          "fact-zoho-crm-features.email-sync",
+          "fact-zoho-crm-features.workflow-automation",
+          "fact-zoho-crm-features.sales-automation",
+          "fact-zoho-crm-features.reporting",
+          "fact-zoho-crm-features.forecasting",
+          "fact-zoho-crm-features.custom-fields",
+          "fact-zoho-crm-features.custom-pipelines",
+          "fact-zoho-crm-features.mobile-app",
+          "fact-zoho-crm-features.ai-assistance",
+          "fact-zoho-crm-features.integrations",
+          "fact-zoho-crm-positioning.summary",
+          "fact-zoho-crm-ai.assistant",
+          "fact-zoho-crm-ai.automation",
+          "fact-zoho-crm-ai.recommendations"
+        ],
+        "methodologySlug": "crm-editorial",
+        "methodologyVersion": "1.0.0",
+        "agentVersion": "1.0.0",
+        "contextBuiltAt": "2026-08-14T05:46:00.591Z"
+      },
+      "blockers": [],
+      "warnings": [],
+      "agentTaskId": "exec-alternatives-agent-zoho-crm-1786686360579",
+      "draftId": "draft-deterministic-v1-alternatives-agent-zoho-crm-2026-08-14T05-46-00-592Z",
+      "startedAt": "2026-08-14T05:46:00.578Z",
+      "completedAt": "2026-08-14T05:46:00.595Z",
+      "revisionAttempts": 0
+    },
+    {
+      "id": "comparison:hubspot-vs-zoho-crm",
+      "definitionStepId": "comparisons",
+      "handler": "agent-run",
+      "label": "Comparison hubspot-vs-zoho-crm",
+      "status": "completed",
+      "required": false,
+      "failurePolicy": "continue-with-warning",
+      "attempt": 1,
+      "maxAttempts": 2,
+      "dependsOn": [
+        "content-plan"
+      ],
+      "priority": "normal",
+      "config": {
+        "agentId": "comparison-agent",
+        "targetSlug": "hubspot-vs-zoho-crm",
+        "maxAutomaticRevisions": 1,
+        "expandFromContentPlan": true,
+        "expandKind": "comparisons",
+        "stopAfterApproval": true,
+        "allowNormalizedFacts": false,
+        "optionalWhenBlocked": true,
+        "forceTransientFailOnce": false
+      },
+      "expansionKey": "hubspot-vs-zoho-crm",
+      "inputRefs": {},
+      "outputRefs": {
+        "draftId": "draft-deterministic-v1-comparison-agent-hubspot-vs-zoho-crm-2026-08-14T05-46-00-613Z",
+        "qaStatus": "pass",
+        "agentId": "comparison-agent",
+        "target": "hubspot-vs-zoho-crm"
+      },
+      "inputSnapshot": {
+        "researchFactIds": [],
+        "methodologySlug": "crm-editorial",
+        "methodologyVersion": "1.0.0",
+        "agentVersion": "1.0.0",
+        "contextBuiltAt": "2026-08-14T05:46:00.610Z"
+      },
+      "blockers": [],
+      "warnings": [],
+      "agentTaskId": "exec-comparison-agent-hubspot-vs-zoho-crm-1786686360602",
+      "draftId": "draft-deterministic-v1-comparison-agent-hubspot-vs-zoho-crm-2026-08-14T05-46-00-613Z",
+      "startedAt": "2026-08-14T05:46:00.601Z",
+      "completedAt": "2026-08-14T05:46:00.618Z",
+      "revisionAttempts": 0
+    },
+    {
+      "id": "comparison:pipedrive-vs-zoho-crm",
+      "definitionStepId": "comparisons",
+      "handler": "agent-run",
+      "label": "Comparison pipedrive-vs-zoho-crm",
+      "status": "completed",
+      "required": false,
+      "failurePolicy": "continue-with-warning",
+      "attempt": 1,
+      "maxAttempts": 2,
+      "dependsOn": [
+        "content-plan"
+      ],
+      "priority": "normal",
+      "config": {
+        "agentId": "comparison-agent",
+        "targetSlug": "pipedrive-vs-zoho-crm",
+        "maxAutomaticRevisions": 1,
+        "expandFromContentPlan": true,
+        "expandKind": "comparisons",
+        "stopAfterApproval": true,
+        "allowNormalizedFacts": false,
+        "optionalWhenBlocked": true,
+        "forceTransientFailOnce": false
+      },
+      "expansionKey": "pipedrive-vs-zoho-crm",
+      "inputRefs": {},
+      "outputRefs": {
+        "draftId": "draft-deterministic-v1-comparison-agent-pipedrive-vs-zoho-crm-2026-08-14T05-46-00-636Z",
+        "qaStatus": "pass",
+        "agentId": "comparison-agent",
+        "target": "pipedrive-vs-zoho-crm"
+      },
+      "inputSnapshot": {
+        "researchFactIds": [],
+        "methodologySlug": "crm-editorial",
+        "methodologyVersion": "1.0.0",
+        "agentVersion": "1.0.0",
+        "contextBuiltAt": "2026-08-14T05:46:00.634Z"
+      },
+      "blockers": [],
+      "warnings": [],
+      "agentTaskId": "exec-comparison-agent-pipedrive-vs-zoho-crm-1786686360620",
+      "draftId": "draft-deterministic-v1-comparison-agent-pipedrive-vs-zoho-crm-2026-08-14T05-46-00-636Z",
+      "startedAt": "2026-08-14T05:46:00.619Z",
+      "completedAt": "2026-08-14T05:46:00.640Z",
+      "revisionAttempts": 0
+    },
+    {
+      "id": "comparison:salesforce-vs-zoho-crm",
+      "definitionStepId": "comparisons",
+      "handler": "agent-run",
+      "label": "Comparison salesforce-vs-zoho-crm",
+      "status": "completed",
+      "required": false,
+      "failurePolicy": "continue-with-warning",
+      "attempt": 1,
+      "maxAttempts": 2,
+      "dependsOn": [
+        "content-plan"
+      ],
+      "priority": "normal",
+      "config": {
+        "agentId": "comparison-agent",
+        "targetSlug": "salesforce-vs-zoho-crm",
+        "maxAutomaticRevisions": 1,
+        "expandFromContentPlan": true,
+        "expandKind": "comparisons",
+        "stopAfterApproval": true,
+        "allowNormalizedFacts": false,
+        "optionalWhenBlocked": true,
+        "forceTransientFailOnce": false
+      },
+      "expansionKey": "salesforce-vs-zoho-crm",
+      "inputRefs": {},
+      "outputRefs": {
+        "draftId": "draft-deterministic-v1-comparison-agent-salesforce-vs-zoho-crm-2026-08-14T05-46-00-664Z",
+        "qaStatus": "pass",
+        "agentId": "comparison-agent",
+        "target": "salesforce-vs-zoho-crm"
+      },
+      "inputSnapshot": {
+        "researchFactIds": [],
+        "methodologySlug": "crm-editorial",
+        "methodologyVersion": "1.0.0",
+        "agentVersion": "1.0.0",
+        "contextBuiltAt": "2026-08-14T05:46:00.662Z"
+      },
+      "blockers": [],
+      "warnings": [],
+      "agentTaskId": "exec-comparison-agent-salesforce-vs-zoho-crm-1786686360646",
+      "draftId": "draft-deterministic-v1-comparison-agent-salesforce-vs-zoho-crm-2026-08-14T05-46-00-664Z",
+      "startedAt": "2026-08-14T05:46:00.644Z",
+      "completedAt": "2026-08-14T05:46:00.668Z",
+      "revisionAttempts": 0
+    },
+    {
+      "id": "internal-links",
+      "definitionStepId": "internal-links",
+      "handler": "internal-link",
+      "label": "Internal Link Plan",
+      "status": "completed",
+      "required": false,
+      "failurePolicy": "continue-with-warning",
+      "attempt": 1,
+      "maxAttempts": 2,
+      "dependsOn": [
+        "software-review"
+      ],
+      "priority": "low",
+      "config": {
+        "agentId": "internal-link-agent",
+        "maxAutomaticRevisions": 1,
+        "expandFromContentPlan": false,
+        "expandKind": "none",
+        "stopAfterApproval": true,
+        "allowNormalizedFacts": false,
+        "optionalWhenBlocked": false,
+        "forceTransientFailOnce": false
+      },
+      "inputRefs": {},
+      "outputRefs": {
+        "draftId": "draft-deterministic-v1-internal-link-agent-zoho-crm-2026-08-14T05-47-32-816Z",
+        "qaStatus": "pass",
+        "agentId": "internal-link-agent",
+        "target": "zoho-crm"
+      },
+      "inputSnapshot": {
+        "researchFactIds": [
+          "fact-zoho-crm-pricing.hasFreePlan",
+          "fact-zoho-crm-pricing.hasFreeTrial",
+          "fact-zoho-crm-pricing.startingPriceMonthly",
+          "fact-zoho-crm-pricing.currency",
+          "fact-zoho-crm-pricing.model",
+          "fact-zoho-crm-pricing.plans.free",
+          "fact-zoho-crm-pricing.plans.standard",
+          "fact-zoho-crm-pricing.plans.professional",
+          "fact-zoho-crm-pricing.plans.enterprise",
+          "fact-zoho-crm-pricing.plans.ultimate",
+          "fact-zoho-crm-features.contact-management",
+          "fact-zoho-crm-features.lead-management",
+          "fact-zoho-crm-features.pipeline-management",
+          "fact-zoho-crm-features.deal-management",
+          "fact-zoho-crm-features.email-sync",
+          "fact-zoho-crm-features.workflow-automation",
+          "fact-zoho-crm-features.sales-automation",
+          "fact-zoho-crm-features.reporting",
+          "fact-zoho-crm-features.forecasting",
+          "fact-zoho-crm-features.custom-fields",
+          "fact-zoho-crm-features.custom-pipelines",
+          "fact-zoho-crm-features.mobile-app",
+          "fact-zoho-crm-features.ai-assistance",
+          "fact-zoho-crm-features.integrations",
+          "fact-zoho-crm-positioning.summary",
+          "fact-zoho-crm-ai.assistant",
+          "fact-zoho-crm-ai.automation",
+          "fact-zoho-crm-ai.recommendations"
+        ],
+        "methodologySlug": "crm-editorial",
+        "methodologyVersion": "1.0.0",
+        "agentVersion": "1.0.0",
+        "contextBuiltAt": "2026-08-14T05:47:32.810Z"
+      },
+      "blockers": [],
+      "warnings": [],
+      "agentTaskId": "exec-internal-link-agent-zoho-crm-1786686452774",
+      "draftId": "draft-deterministic-v1-internal-link-agent-zoho-crm-2026-08-14T05-47-32-816Z",
+      "startedAt": "2026-08-14T05:47:32.773Z",
+      "completedAt": "2026-08-14T05:47:32.825Z",
+      "revisionAttempts": 0
+    },
+    {
+      "id": "finder-readiness",
+      "definitionStepId": "finder-readiness",
+      "handler": "update-recommendation-readiness",
+      "label": "Finder readiness",
+      "status": "completed",
+      "required": false,
+      "failurePolicy": "continue",
+      "attempt": 1,
+      "maxAttempts": 2,
+      "dependsOn": [
+        "content-plan"
+      ],
+      "priority": "low",
+      "config": {
+        "maxAutomaticRevisions": 1,
+        "expandFromContentPlan": false,
+        "expandKind": "none",
+        "stopAfterApproval": true,
+        "allowNormalizedFacts": false,
+        "optionalWhenBlocked": false,
+        "forceTransientFailOnce": false
+      },
+      "inputRefs": {},
+      "outputRefs": {
+        "finderReadiness": "checked"
+      },
+      "blockers": [],
+      "warnings": [],
+      "startedAt": "2026-08-14T05:47:16.619Z",
+      "completedAt": "2026-08-14T05:47:16.620Z",
+      "revisionAttempts": 0
+    },
+    {
+      "id": "editorial-approval",
+      "definitionStepId": "editorial-approval",
+      "handler": "approval-check",
+      "label": "Editorial approval",
+      "status": "completed",
+      "required": true,
+      "failurePolicy": "manual-review",
+      "attempt": 2,
+      "maxAttempts": 2,
+      "dependsOn": [
+        "software-review"
+      ],
+      "priority": "critical",
+      "config": {
+        "approvalType": "editorial",
+        "maxAutomaticRevisions": 1,
+        "expandFromContentPlan": false,
+        "expandKind": "none",
+        "stopAfterApproval": true,
+        "allowNormalizedFacts": false,
+        "optionalWhenBlocked": false,
+        "forceTransientFailOnce": false
+      },
+      "inputRefs": {},
+      "outputRefs": {
+        "approvalId": "appr-wf-software-onboarding-content-zoho-crm-1786686359954-software-review",
+        "draftId": "draft-deterministic-v1-software-review-agent-zoho-crm-2026-08-14T05-46-00-570Z",
+        "approvalIds": "appr-wf-software-onboarding-content-zoho-crm-1786686359954-software-review"
+      },
+      "blockers": [],
+      "warnings": [
+        "Approval received — resuming",
+        "6 optional draft(s) may still need separate editorial review"
+      ],
+      "approvalId": "appr-wf-software-onboarding-content-zoho-crm-1786686359954-software-review",
+      "startedAt": "2026-08-14T05:49:55.837Z",
+      "completedAt": "2026-08-14T05:49:55.915Z",
+      "revisionAttempts": 0
+    },
+    {
+      "id": "pre-publish-validation",
+      "definitionStepId": "pre-publish-validation",
+      "handler": "pre-publish-validation",
+      "label": "Pre-publish validation",
+      "status": "completed",
+      "required": true,
+      "failurePolicy": "block-workflow",
+      "attempt": 1,
+      "maxAttempts": 2,
+      "dependsOn": [
+        "editorial-approval"
+      ],
+      "priority": "critical",
+      "config": {
+        "maxAutomaticRevisions": 1,
+        "expandFromContentPlan": false,
+        "expandKind": "none",
+        "stopAfterApproval": true,
+        "allowNormalizedFacts": false,
+        "optionalWhenBlocked": false,
+        "forceTransientFailOnce": false
+      },
+      "inputRefs": {},
+      "outputRefs": {
+        "publishState": "READY_TO_PUBLISH"
+      },
+      "blockers": [],
+      "warnings": [
+        "stopAfterApproval: workflow will not publish automatically"
+      ],
+      "startedAt": "2026-08-14T05:49:55.917Z",
+      "completedAt": "2026-08-14T05:49:56.227Z",
+      "revisionAttempts": 0
+    }
+  ],
+  "history": [
+    {
+      "at": "2026-08-14T05:46:00.451Z",
+      "event": "workflow_created",
+      "message": "Created software-onboarding-content:v1.0.0"
+    },
+    {
+      "at": "2026-08-14T05:46:00.454Z",
+      "event": "workflow_started",
+      "message": "Workflow execution started"
+    },
+    {
+      "at": "2026-08-14T05:46:00.456Z",
+      "event": "workflow_step_started",
+      "stepId": "software-onboarding",
+      "message": "Started Software onboarding"
+    },
+    {
+      "at": "2026-08-14T05:46:00.502Z",
+      "event": "workflow_step_completed",
+      "stepId": "software-onboarding",
+      "message": "Reused onboarding run onboard-zoho-crm-1786686332268 (review-required)"
+    },
+    {
+      "at": "2026-08-14T05:46:00.503Z",
+      "event": "workflow_step_started",
+      "stepId": "content-plan",
+      "message": "Started Content plan"
+    },
+    {
+      "at": "2026-08-14T05:46:00.533Z",
+      "event": "workflow_step_completed",
+      "stepId": "content-plan",
+      "message": "Content plan from onboarding onboard-zoho-crm-1786686332268 (9 candidates)"
+    },
+    {
+      "at": "2026-08-14T05:46:00.534Z",
+      "event": "workflow_step_started",
+      "stepId": "software-review",
+      "message": "Started Software Review"
+    },
+    {
+      "at": "2026-08-14T05:46:00.577Z",
+      "event": "workflow_step_completed",
+      "stepId": "software-review",
+      "message": "Agent software-review-agent → draft draft-deterministic-v1-software-review-agent-zoho-crm-2026-08-14T05-46-00-570Z (qa=pass)"
+    },
+    {
+      "at": "2026-08-14T05:46:00.578Z",
+      "event": "workflow_step_started",
+      "stepId": "alternatives",
+      "message": "Started Alternatives"
+    },
+    {
+      "at": "2026-08-14T05:46:00.595Z",
+      "event": "workflow_step_completed",
+      "stepId": "alternatives",
+      "message": "Agent alternatives-agent → draft draft-deterministic-v1-alternatives-agent-zoho-crm-2026-08-14T05-46-00-592Z (qa=pass)"
+    },
+    {
+      "at": "2026-08-14T05:46:00.598Z",
+      "event": "workflow_step_started",
+      "stepId": "comparison:hubspot-vs-zoho-crm",
+      "message": "Started Comparison hubspot-vs-zoho-crm"
+    },
+    {
+      "at": "2026-08-14T05:46:00.618Z",
+      "event": "workflow_step_completed",
+      "stepId": "comparison:hubspot-vs-zoho-crm",
+      "message": "Agent comparison-agent → draft draft-deterministic-v1-comparison-agent-hubspot-vs-zoho-crm-2026-08-14T05-46-00-613Z (qa=pass)"
+    },
+    {
+      "at": "2026-08-14T05:46:00.619Z",
+      "event": "workflow_step_started",
+      "stepId": "comparison:pipedrive-vs-zoho-crm",
+      "message": "Started Comparison pipedrive-vs-zoho-crm"
+    },
+    {
+      "at": "2026-08-14T05:46:00.640Z",
+      "event": "workflow_step_completed",
+      "stepId": "comparison:pipedrive-vs-zoho-crm",
+      "message": "Agent comparison-agent → draft draft-deterministic-v1-comparison-agent-pipedrive-vs-zoho-crm-2026-08-14T05-46-00-636Z (qa=pass)"
+    },
+    {
+      "at": "2026-08-14T05:46:00.643Z",
+      "event": "workflow_step_started",
+      "stepId": "comparison:salesforce-vs-zoho-crm",
+      "message": "Started Comparison salesforce-vs-zoho-crm"
+    },
+    {
+      "at": "2026-08-14T05:46:00.668Z",
+      "event": "workflow_step_completed",
+      "stepId": "comparison:salesforce-vs-zoho-crm",
+      "message": "Agent comparison-agent → draft draft-deterministic-v1-comparison-agent-salesforce-vs-zoho-crm-2026-08-14T05-46-00-664Z (qa=pass)"
+    },
+    {
+      "at": "2026-08-14T05:46:00.669Z",
+      "event": "workflow_step_started",
+      "stepId": "pricing-page",
+      "message": "Started Pricing Page"
+    },
+    {
+      "at": "2026-08-14T05:46:00.702Z",
+      "event": "workflow_step_completed",
+      "stepId": "pricing-page",
+      "message": "QA fail after one automatic revision → review-required"
+    },
+    {
+      "at": "2026-08-14T05:47:16.604Z",
+      "event": "workflow_resumed",
+      "message": "Workflow resumed"
+    },
+    {
+      "at": "2026-08-14T05:47:16.607Z",
+      "event": "workflow_started",
+      "message": "Workflow execution started"
+    },
+    {
+      "at": "2026-08-14T05:47:16.618Z",
+      "event": "workflow_step_started",
+      "stepId": "finder-readiness",
+      "message": "Started Finder readiness"
+    },
+    {
+      "at": "2026-08-14T05:47:16.620Z",
+      "event": "workflow_step_completed",
+      "stepId": "finder-readiness",
+      "message": "Finder readiness noted for zoho-crm"
+    },
+    {
+      "at": "2026-08-14T05:47:32.768Z",
+      "event": "workflow_resumed",
+      "message": "Workflow resumed"
+    },
+    {
+      "at": "2026-08-14T05:47:32.771Z",
+      "event": "workflow_started",
+      "message": "Workflow execution started"
+    },
+    {
+      "at": "2026-08-14T05:47:32.772Z",
+      "event": "workflow_step_started",
+      "stepId": "internal-links",
+      "message": "Started Internal Link Plan"
+    },
+    {
+      "at": "2026-08-14T05:47:32.825Z",
+      "event": "workflow_step_completed",
+      "stepId": "internal-links",
+      "message": "Agent internal-link-agent → draft draft-deterministic-v1-internal-link-agent-zoho-crm-2026-08-14T05-47-32-816Z (qa=pass)"
+    },
+    {
+      "at": "2026-08-14T05:49:32.157Z",
+      "event": "workflow_resumed",
+      "message": "Workflow resumed"
+    },
+    {
+      "at": "2026-08-14T05:49:32.160Z",
+      "event": "workflow_started",
+      "message": "Workflow execution started"
+    },
+    {
+      "at": "2026-08-14T05:49:32.162Z",
+      "event": "workflow_step_started",
+      "stepId": "editorial-approval",
+      "message": "Started Editorial approval"
+    },
+    {
+      "at": "2026-08-14T05:49:32.318Z",
+      "event": "workflow_step_completed",
+      "stepId": "editorial-approval",
+      "message": "WAITING FOR EDITORIAL APPROVAL (appr-wf-software-onboarding-content-zoho-crm-1786686359954-software-review)"
+    },
+    {
+      "at": "2026-08-14T05:49:55.833Z",
+      "event": "workflow_resumed",
+      "message": "Workflow resumed"
+    },
+    {
+      "at": "2026-08-14T05:49:55.835Z",
+      "event": "workflow_started",
+      "message": "Workflow execution started"
+    },
+    {
+      "at": "2026-08-14T05:49:55.836Z",
+      "event": "workflow_step_started",
+      "stepId": "editorial-approval",
+      "message": "Started Editorial approval"
+    },
+    {
+      "at": "2026-08-14T05:49:55.915Z",
+      "event": "workflow_step_completed",
+      "stepId": "editorial-approval",
+      "message": "Required editorial approvals satisfied"
+    },
+    {
+      "at": "2026-08-14T05:49:55.917Z",
+      "event": "workflow_step_started",
+      "stepId": "pre-publish-validation",
+      "message": "Started Pre-publish validation"
+    },
+    {
+      "at": "2026-08-14T05:49:56.227Z",
+      "event": "workflow_step_completed",
+      "stepId": "pre-publish-validation",
+      "message": "Pre-publish validation passed — READY TO PUBLISH (manual)"
+    },
+    {
+      "at": "2026-08-14T05:49:56.229Z",
+      "event": "workflow_completed",
+      "message": "Workflow completed-with-warnings"
+    }
+  ],
+  "options": {
+    "generateReview": true,
+    "generatePricing": true,
+    "generateAlternatives": true,
+    "generateComparisons": true,
+    "runInternalLinks": true,
+    "stopAfterApproval": true,
+    "allowNormalizedFacts": false,
+    "dryRun": false,
+    "maxComparisons": 3,
+    "skipOnboarding": false
+  },
+  "warnings": [],
+  "createdAt": "2026-08-14T05:46:00.451Z",
+  "updatedAt": "2026-08-14T05:49:56.229Z"
+}

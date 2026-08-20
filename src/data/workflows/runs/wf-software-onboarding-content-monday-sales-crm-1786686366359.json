@@ -1,0 +1,819 @@
+{
+  "id": "wf-software-onboarding-content-monday-sales-crm-1786686366359",
+  "workflowId": "software-onboarding-content",
+  "workflowVersion": "1.0.0",
+  "name": "Software Onboarding Content: monday-sales-crm",
+  "targetType": "software",
+  "targetId": "monday-sales-crm",
+  "status": "completed-with-warnings",
+  "steps": [
+    {
+      "id": "software-onboarding",
+      "definitionStepId": "software-onboarding",
+      "handler": "software-onboarding",
+      "label": "Software onboarding",
+      "status": "completed",
+      "required": true,
+      "failurePolicy": "block-workflow",
+      "attempt": 1,
+      "maxAttempts": 2,
+      "dependsOn": [],
+      "priority": "critical",
+      "config": {
+        "maxAutomaticRevisions": 1,
+        "expandFromContentPlan": false,
+        "expandKind": "none",
+        "stopAfterApproval": true,
+        "allowNormalizedFacts": false,
+        "optionalWhenBlocked": false,
+        "forceTransientFailOnce": false
+      },
+      "inputRefs": {},
+      "outputRefs": {
+        "softwareOnboardingRunId": "onboard-monday-sales-crm-1786686336794"
+      },
+      "blockers": [],
+      "warnings": [],
+      "startedAt": "2026-08-14T05:46:06.756Z",
+      "completedAt": "2026-08-14T05:46:06.786Z",
+      "revisionAttempts": 0
+    },
+    {
+      "id": "content-plan",
+      "definitionStepId": "content-plan",
+      "handler": "content-plan",
+      "label": "Content plan",
+      "status": "completed",
+      "required": true,
+      "failurePolicy": "block-workflow",
+      "attempt": 1,
+      "maxAttempts": 2,
+      "dependsOn": [
+        "software-onboarding"
+      ],
+      "priority": "high",
+      "config": {
+        "maxAutomaticRevisions": 1,
+        "expandFromContentPlan": false,
+        "expandKind": "none",
+        "stopAfterApproval": true,
+        "allowNormalizedFacts": false,
+        "optionalWhenBlocked": false,
+        "forceTransientFailOnce": false
+      },
+      "inputRefs": {},
+      "outputRefs": {
+        "softwareOnboardingRunId": "onboard-monday-sales-crm-1786686336794",
+        "comparisonTargets": "monday-sales-crm-vs-pipedrive,hubspot-vs-monday-sales-crm,monday-sales-crm-vs-salesforce",
+        "pageCandidateCount": "9"
+      },
+      "blockers": [],
+      "warnings": [],
+      "startedAt": "2026-08-14T05:46:06.788Z",
+      "completedAt": "2026-08-14T05:46:06.812Z",
+      "revisionAttempts": 0
+    },
+    {
+      "id": "software-review",
+      "definitionStepId": "software-review",
+      "handler": "agent-run",
+      "label": "Software Review",
+      "status": "completed",
+      "required": true,
+      "failurePolicy": "block-workflow",
+      "attempt": 1,
+      "maxAttempts": 2,
+      "dependsOn": [
+        "content-plan"
+      ],
+      "priority": "high",
+      "config": {
+        "agentId": "software-review-agent",
+        "targetSlug": "monday-sales-crm",
+        "maxAutomaticRevisions": 1,
+        "expandFromContentPlan": false,
+        "expandKind": "none",
+        "stopAfterApproval": true,
+        "allowNormalizedFacts": false,
+        "optionalWhenBlocked": false,
+        "forceTransientFailOnce": false
+      },
+      "inputRefs": {},
+      "outputRefs": {
+        "draftId": "draft-deterministic-v1-software-review-agent-monday-sales-crm-2026-08-14T05-46-06-849Z",
+        "qaStatus": "pass",
+        "agentId": "software-review-agent",
+        "target": "monday-sales-crm"
+      },
+      "inputSnapshot": {
+        "researchFactIds": [
+          "fact-monday-sales-crm-pricing.hasFreePlan",
+          "fact-monday-sales-crm-pricing.hasFreeTrial",
+          "fact-monday-sales-crm-pricing.startingPriceMonthly",
+          "fact-monday-sales-crm-pricing.currency",
+          "fact-monday-sales-crm-pricing.model",
+          "fact-monday-sales-crm-pricing.plans.basic",
+          "fact-monday-sales-crm-pricing.plans.standard",
+          "fact-monday-sales-crm-pricing.plans.pro",
+          "fact-monday-sales-crm-pricing.plans.ultimate",
+          "fact-monday-sales-crm-features.contact-management",
+          "fact-monday-sales-crm-features.lead-management",
+          "fact-monday-sales-crm-features.pipeline-management",
+          "fact-monday-sales-crm-features.deal-management",
+          "fact-monday-sales-crm-features.email-sync",
+          "fact-monday-sales-crm-features.workflow-automation",
+          "fact-monday-sales-crm-features.sales-automation",
+          "fact-monday-sales-crm-features.reporting",
+          "fact-monday-sales-crm-features.forecasting",
+          "fact-monday-sales-crm-features.custom-fields",
+          "fact-monday-sales-crm-features.custom-pipelines",
+          "fact-monday-sales-crm-features.mobile-app",
+          "fact-monday-sales-crm-features.ai-assistance",
+          "fact-monday-sales-crm-features.integrations",
+          "fact-monday-sales-crm-positioning.summary",
+          "fact-monday-sales-crm-ai.assistant",
+          "fact-monday-sales-crm-ai.automation"
+        ],
+        "methodologySlug": "crm-editorial",
+        "methodologyVersion": "1.0.0",
+        "agentVersion": "1.0.0",
+        "contextBuiltAt": "2026-08-14T05:46:06.844Z"
+      },
+      "blockers": [],
+      "warnings": [],
+      "agentTaskId": "exec-software-review-agent-monday-sales-crm-1786686366815",
+      "draftId": "draft-deterministic-v1-software-review-agent-monday-sales-crm-2026-08-14T05-46-06-849Z",
+      "startedAt": "2026-08-14T05:46:06.814Z",
+      "completedAt": "2026-08-14T05:46:06.857Z",
+      "revisionAttempts": 0
+    },
+    {
+      "id": "pricing-page",
+      "definitionStepId": "pricing-page",
+      "handler": "agent-run",
+      "label": "Pricing Page",
+      "status": "completed-with-warning",
+      "required": false,
+      "failurePolicy": "continue-with-warning",
+      "attempt": 1,
+      "maxAttempts": 2,
+      "dependsOn": [
+        "content-plan"
+      ],
+      "priority": "normal",
+      "config": {
+        "agentId": "pricing-page-agent",
+        "targetSlug": "monday-sales-crm",
+        "maxAutomaticRevisions": 1,
+        "expandFromContentPlan": false,
+        "expandKind": "none",
+        "stopAfterApproval": true,
+        "allowNormalizedFacts": false,
+        "optionalWhenBlocked": true,
+        "forceTransientFailOnce": false
+      },
+      "inputRefs": {},
+      "outputRefs": {
+        "draftId": "draft-deterministic-v1-pricing-page-agent-monday-sales-crm-2026-08-14T05-46-06-926Z-rev-1786686366953",
+        "qaStatus": "fail"
+      },
+      "blockers": [],
+      "warnings": [
+        "QA still failing after revision: UNVERIFIED_NUMBER,UNVERIFIED_NUMBER",
+        "Manually advanced: optional pricing-page QA (UNVERIFIED_NUMBER / unverified) during CRM batch onboard"
+      ],
+      "agentTaskId": "exec-pricing-page-agent-monday-sales-crm-1786686366919",
+      "draftId": "draft-deterministic-v1-pricing-page-agent-monday-sales-crm-2026-08-14T05-46-06-926Z-rev-1786686366953",
+      "startedAt": "2026-08-14T05:46:06.919Z",
+      "completedAt": "2026-08-14T05:46:06.961Z",
+      "revisionAttempts": 1
+    },
+    {
+      "id": "alternatives",
+      "definitionStepId": "alternatives",
+      "handler": "agent-run",
+      "label": "Alternatives",
+      "status": "completed",
+      "required": false,
+      "failurePolicy": "continue-with-warning",
+      "attempt": 1,
+      "maxAttempts": 2,
+      "dependsOn": [
+        "content-plan"
+      ],
+      "priority": "normal",
+      "config": {
+        "agentId": "alternatives-agent",
+        "targetSlug": "monday-sales-crm",
+        "maxAutomaticRevisions": 1,
+        "expandFromContentPlan": false,
+        "expandKind": "none",
+        "stopAfterApproval": true,
+        "allowNormalizedFacts": false,
+        "optionalWhenBlocked": true,
+        "forceTransientFailOnce": false
+      },
+      "inputRefs": {},
+      "outputRefs": {
+        "draftId": "draft-deterministic-v1-alternatives-agent-monday-sales-crm-2026-08-14T05-46-06-865Z",
+        "qaStatus": "pass",
+        "agentId": "alternatives-agent",
+        "target": "monday-sales-crm"
+      },
+      "inputSnapshot": {
+        "researchFactIds": [
+          "fact-monday-sales-crm-pricing.hasFreePlan",
+          "fact-monday-sales-crm-pricing.hasFreeTrial",
+          "fact-monday-sales-crm-pricing.startingPriceMonthly",
+          "fact-monday-sales-crm-pricing.currency",
+          "fact-monday-sales-crm-pricing.model",
+          "fact-monday-sales-crm-pricing.plans.basic",
+          "fact-monday-sales-crm-pricing.plans.standard",
+          "fact-monday-sales-crm-pricing.plans.pro",
+          "fact-monday-sales-crm-pricing.plans.ultimate",
+          "fact-monday-sales-crm-features.contact-management",
+          "fact-monday-sales-crm-features.lead-management",
+          "fact-monday-sales-crm-features.pipeline-management",
+          "fact-monday-sales-crm-features.deal-management",
+          "fact-monday-sales-crm-features.email-sync",
+          "fact-monday-sales-crm-features.workflow-automation",
+          "fact-monday-sales-crm-features.sales-automation",
+          "fact-monday-sales-crm-features.reporting",
+          "fact-monday-sales-crm-features.forecasting",
+          "fact-monday-sales-crm-features.custom-fields",
+          "fact-monday-sales-crm-features.custom-pipelines",
+          "fact-monday-sales-crm-features.mobile-app",
+          "fact-monday-sales-crm-features.ai-assistance",
+          "fact-monday-sales-crm-features.integrations",
+          "fact-monday-sales-crm-positioning.summary",
+          "fact-monday-sales-crm-ai.assistant",
+          "fact-monday-sales-crm-ai.automation"
+        ],
+        "methodologySlug": "crm-editorial",
+        "methodologyVersion": "1.0.0",
+        "agentVersion": "1.0.0",
+        "contextBuiltAt": "2026-08-14T05:46:06.864Z"
+      },
+      "blockers": [],
+      "warnings": [],
+      "agentTaskId": "exec-alternatives-agent-monday-sales-crm-1786686366859",
+      "draftId": "draft-deterministic-v1-alternatives-agent-monday-sales-crm-2026-08-14T05-46-06-865Z",
+      "startedAt": "2026-08-14T05:46:06.858Z",
+      "completedAt": "2026-08-14T05:46:06.868Z",
+      "revisionAttempts": 0
+    },
+    {
+      "id": "comparison:monday-sales-crm-vs-pipedrive",
+      "definitionStepId": "comparisons",
+      "handler": "agent-run",
+      "label": "Comparison monday-sales-crm-vs-pipedrive",
+      "status": "completed",
+      "required": false,
+      "failurePolicy": "continue-with-warning",
+      "attempt": 1,
+      "maxAttempts": 2,
+      "dependsOn": [
+        "content-plan"
+      ],
+      "priority": "normal",
+      "config": {
+        "agentId": "comparison-agent",
+        "targetSlug": "monday-sales-crm-vs-pipedrive",
+        "maxAutomaticRevisions": 1,
+        "expandFromContentPlan": true,
+        "expandKind": "comparisons",
+        "stopAfterApproval": true,
+        "allowNormalizedFacts": false,
+        "optionalWhenBlocked": true,
+        "forceTransientFailOnce": false
+      },
+      "expansionKey": "monday-sales-crm-vs-pipedrive",
+      "inputRefs": {},
+      "outputRefs": {
+        "draftId": "draft-deterministic-v1-comparison-agent-monday-sales-crm-vs-pipedrive-2026-08-14T05-46-06-899Z",
+        "qaStatus": "pass",
+        "agentId": "comparison-agent",
+        "target": "monday-sales-crm-vs-pipedrive"
+      },
+      "inputSnapshot": {
+        "researchFactIds": [],
+        "methodologySlug": "crm-editorial",
+        "methodologyVersion": "1.0.0",
+        "agentVersion": "1.0.0",
+        "contextBuiltAt": "2026-08-14T05:46:06.896Z"
+      },
+      "blockers": [],
+      "warnings": [],
+      "agentTaskId": "exec-comparison-agent-monday-sales-crm-vs-pipedrive-1786686366890",
+      "draftId": "draft-deterministic-v1-comparison-agent-monday-sales-crm-vs-pipedrive-2026-08-14T05-46-06-899Z",
+      "startedAt": "2026-08-14T05:46:06.890Z",
+      "completedAt": "2026-08-14T05:46:06.903Z",
+      "revisionAttempts": 0
+    },
+    {
+      "id": "comparison:hubspot-vs-monday-sales-crm",
+      "definitionStepId": "comparisons",
+      "handler": "agent-run",
+      "label": "Comparison hubspot-vs-monday-sales-crm",
+      "status": "completed",
+      "required": false,
+      "failurePolicy": "continue-with-warning",
+      "attempt": 1,
+      "maxAttempts": 2,
+      "dependsOn": [
+        "content-plan"
+      ],
+      "priority": "normal",
+      "config": {
+        "agentId": "comparison-agent",
+        "targetSlug": "hubspot-vs-monday-sales-crm",
+        "maxAutomaticRevisions": 1,
+        "expandFromContentPlan": true,
+        "expandKind": "comparisons",
+        "stopAfterApproval": true,
+        "allowNormalizedFacts": false,
+        "optionalWhenBlocked": true,
+        "forceTransientFailOnce": false
+      },
+      "expansionKey": "hubspot-vs-monday-sales-crm",
+      "inputRefs": {},
+      "outputRefs": {
+        "draftId": "draft-deterministic-v1-comparison-agent-hubspot-vs-monday-sales-crm-2026-08-14T05-46-06-885Z",
+        "qaStatus": "pass",
+        "agentId": "comparison-agent",
+        "target": "hubspot-vs-monday-sales-crm"
+      },
+      "inputSnapshot": {
+        "researchFactIds": [],
+        "methodologySlug": "crm-editorial",
+        "methodologyVersion": "1.0.0",
+        "agentVersion": "1.0.0",
+        "contextBuiltAt": "2026-08-14T05:46:06.883Z"
+      },
+      "blockers": [],
+      "warnings": [],
+      "agentTaskId": "exec-comparison-agent-hubspot-vs-monday-sales-crm-1786686366871",
+      "draftId": "draft-deterministic-v1-comparison-agent-hubspot-vs-monday-sales-crm-2026-08-14T05-46-06-885Z",
+      "startedAt": "2026-08-14T05:46:06.870Z",
+      "completedAt": "2026-08-14T05:46:06.888Z",
+      "revisionAttempts": 0
+    },
+    {
+      "id": "comparison:monday-sales-crm-vs-salesforce",
+      "definitionStepId": "comparisons",
+      "handler": "agent-run",
+      "label": "Comparison monday-sales-crm-vs-salesforce",
+      "status": "completed",
+      "required": false,
+      "failurePolicy": "continue-with-warning",
+      "attempt": 1,
+      "maxAttempts": 2,
+      "dependsOn": [
+        "content-plan"
+      ],
+      "priority": "normal",
+      "config": {
+        "agentId": "comparison-agent",
+        "targetSlug": "monday-sales-crm-vs-salesforce",
+        "maxAutomaticRevisions": 1,
+        "expandFromContentPlan": true,
+        "expandKind": "comparisons",
+        "stopAfterApproval": true,
+        "allowNormalizedFacts": false,
+        "optionalWhenBlocked": true,
+        "forceTransientFailOnce": false
+      },
+      "expansionKey": "monday-sales-crm-vs-salesforce",
+      "inputRefs": {},
+      "outputRefs": {
+        "draftId": "draft-deterministic-v1-comparison-agent-monday-sales-crm-vs-salesforce-2026-08-14T05-46-06-914Z",
+        "qaStatus": "pass",
+        "agentId": "comparison-agent",
+        "target": "monday-sales-crm-vs-salesforce"
+      },
+      "inputSnapshot": {
+        "researchFactIds": [],
+        "methodologySlug": "crm-editorial",
+        "methodologyVersion": "1.0.0",
+        "agentVersion": "1.0.0",
+        "contextBuiltAt": "2026-08-14T05:46:06.913Z"
+      },
+      "blockers": [],
+      "warnings": [],
+      "agentTaskId": "exec-comparison-agent-monday-sales-crm-vs-salesforce-1786686366908",
+      "draftId": "draft-deterministic-v1-comparison-agent-monday-sales-crm-vs-salesforce-2026-08-14T05-46-06-914Z",
+      "startedAt": "2026-08-14T05:46:06.907Z",
+      "completedAt": "2026-08-14T05:46:06.917Z",
+      "revisionAttempts": 0
+    },
+    {
+      "id": "internal-links",
+      "definitionStepId": "internal-links",
+      "handler": "internal-link",
+      "label": "Internal Link Plan",
+      "status": "completed",
+      "required": false,
+      "failurePolicy": "continue-with-warning",
+      "attempt": 1,
+      "maxAttempts": 2,
+      "dependsOn": [
+        "software-review"
+      ],
+      "priority": "low",
+      "config": {
+        "agentId": "internal-link-agent",
+        "maxAutomaticRevisions": 1,
+        "expandFromContentPlan": false,
+        "expandKind": "none",
+        "stopAfterApproval": true,
+        "allowNormalizedFacts": false,
+        "optionalWhenBlocked": false,
+        "forceTransientFailOnce": false
+      },
+      "inputRefs": {},
+      "outputRefs": {
+        "draftId": "draft-deterministic-v1-internal-link-agent-monday-sales-crm-2026-08-14T05-47-36-470Z",
+        "qaStatus": "pass",
+        "agentId": "internal-link-agent",
+        "target": "monday-sales-crm"
+      },
+      "inputSnapshot": {
+        "researchFactIds": [
+          "fact-monday-sales-crm-pricing.hasFreePlan",
+          "fact-monday-sales-crm-pricing.hasFreeTrial",
+          "fact-monday-sales-crm-pricing.startingPriceMonthly",
+          "fact-monday-sales-crm-pricing.currency",
+          "fact-monday-sales-crm-pricing.model",
+          "fact-monday-sales-crm-pricing.plans.basic",
+          "fact-monday-sales-crm-pricing.plans.standard",
+          "fact-monday-sales-crm-pricing.plans.pro",
+          "fact-monday-sales-crm-pricing.plans.ultimate",
+          "fact-monday-sales-crm-features.contact-management",
+          "fact-monday-sales-crm-features.lead-management",
+          "fact-monday-sales-crm-features.pipeline-management",
+          "fact-monday-sales-crm-features.deal-management",
+          "fact-monday-sales-crm-features.email-sync",
+          "fact-monday-sales-crm-features.workflow-automation",
+          "fact-monday-sales-crm-features.sales-automation",
+          "fact-monday-sales-crm-features.reporting",
+          "fact-monday-sales-crm-features.forecasting",
+          "fact-monday-sales-crm-features.custom-fields",
+          "fact-monday-sales-crm-features.custom-pipelines",
+          "fact-monday-sales-crm-features.mobile-app",
+          "fact-monday-sales-crm-features.ai-assistance",
+          "fact-monday-sales-crm-features.integrations",
+          "fact-monday-sales-crm-positioning.summary",
+          "fact-monday-sales-crm-ai.assistant",
+          "fact-monday-sales-crm-ai.automation"
+        ],
+        "methodologySlug": "crm-editorial",
+        "methodologyVersion": "1.0.0",
+        "agentVersion": "1.0.0",
+        "contextBuiltAt": "2026-08-14T05:47:36.463Z"
+      },
+      "blockers": [],
+      "warnings": [],
+      "agentTaskId": "exec-internal-link-agent-monday-sales-crm-1786686456436",
+      "draftId": "draft-deterministic-v1-internal-link-agent-monday-sales-crm-2026-08-14T05-47-36-470Z",
+      "startedAt": "2026-08-14T05:47:36.434Z",
+      "completedAt": "2026-08-14T05:47:36.479Z",
+      "revisionAttempts": 0
+    },
+    {
+      "id": "finder-readiness",
+      "definitionStepId": "finder-readiness",
+      "handler": "update-recommendation-readiness",
+      "label": "Finder readiness",
+      "status": "completed",
+      "required": false,
+      "failurePolicy": "continue",
+      "attempt": 1,
+      "maxAttempts": 2,
+      "dependsOn": [
+        "content-plan"
+      ],
+      "priority": "low",
+      "config": {
+        "maxAutomaticRevisions": 1,
+        "expandFromContentPlan": false,
+        "expandKind": "none",
+        "stopAfterApproval": true,
+        "allowNormalizedFacts": false,
+        "optionalWhenBlocked": false,
+        "forceTransientFailOnce": false
+      },
+      "inputRefs": {},
+      "outputRefs": {
+        "finderReadiness": "checked"
+      },
+      "blockers": [],
+      "warnings": [],
+      "startedAt": "2026-08-14T05:47:20.479Z",
+      "completedAt": "2026-08-14T05:47:20.485Z",
+      "revisionAttempts": 0
+    },
+    {
+      "id": "editorial-approval",
+      "definitionStepId": "editorial-approval",
+      "handler": "approval-check",
+      "label": "Editorial approval",
+      "status": "completed",
+      "required": true,
+      "failurePolicy": "manual-review",
+      "attempt": 2,
+      "maxAttempts": 2,
+      "dependsOn": [
+        "software-review"
+      ],
+      "priority": "critical",
+      "config": {
+        "approvalType": "editorial",
+        "maxAutomaticRevisions": 1,
+        "expandFromContentPlan": false,
+        "expandKind": "none",
+        "stopAfterApproval": true,
+        "allowNormalizedFacts": false,
+        "optionalWhenBlocked": false,
+        "forceTransientFailOnce": false
+      },
+      "inputRefs": {},
+      "outputRefs": {
+        "approvalId": "appr-wf-software-onboarding-content-monday-sales-crm-1786686366359-software-review",
+        "draftId": "draft-deterministic-v1-software-review-agent-monday-sales-crm-2026-08-14T05-46-06-849Z",
+        "approvalIds": "appr-wf-software-onboarding-content-monday-sales-crm-1786686366359-software-review"
+      },
+      "blockers": [],
+      "warnings": [
+        "Approval received — resuming",
+        "6 optional draft(s) may still need separate editorial review"
+      ],
+      "approvalId": "appr-wf-software-onboarding-content-monday-sales-crm-1786686366359-software-review",
+      "startedAt": "2026-08-14T05:49:59.355Z",
+      "completedAt": "2026-08-14T05:49:59.420Z",
+      "revisionAttempts": 0
+    },
+    {
+      "id": "pre-publish-validation",
+      "definitionStepId": "pre-publish-validation",
+      "handler": "pre-publish-validation",
+      "label": "Pre-publish validation",
+      "status": "completed",
+      "required": true,
+      "failurePolicy": "block-workflow",
+      "attempt": 1,
+      "maxAttempts": 2,
+      "dependsOn": [
+        "editorial-approval"
+      ],
+      "priority": "critical",
+      "config": {
+        "maxAutomaticRevisions": 1,
+        "expandFromContentPlan": false,
+        "expandKind": "none",
+        "stopAfterApproval": true,
+        "allowNormalizedFacts": false,
+        "optionalWhenBlocked": false,
+        "forceTransientFailOnce": false
+      },
+      "inputRefs": {},
+      "outputRefs": {
+        "publishState": "READY_TO_PUBLISH"
+      },
+      "blockers": [],
+      "warnings": [
+        "stopAfterApproval: workflow will not publish automatically"
+      ],
+      "startedAt": "2026-08-14T05:49:59.423Z",
+      "completedAt": "2026-08-14T05:49:59.702Z",
+      "revisionAttempts": 0
+    }
+  ],
+  "history": [
+    {
+      "at": "2026-08-14T05:46:06.752Z",
+      "event": "workflow_created",
+      "message": "Created software-onboarding-content:v1.0.0"
+    },
+    {
+      "at": "2026-08-14T05:46:06.753Z",
+      "event": "workflow_started",
+      "message": "Workflow execution started"
+    },
+    {
+      "at": "2026-08-14T05:46:06.755Z",
+      "event": "workflow_step_started",
+      "stepId": "software-onboarding",
+      "message": "Started Software onboarding"
+    },
+    {
+      "at": "2026-08-14T05:46:06.786Z",
+      "event": "workflow_step_completed",
+      "stepId": "software-onboarding",
+      "message": "Reused onboarding run onboard-monday-sales-crm-1786686336794 (review-required)"
+    },
+    {
+      "at": "2026-08-14T05:46:06.787Z",
+      "event": "workflow_step_started",
+      "stepId": "content-plan",
+      "message": "Started Content plan"
+    },
+    {
+      "at": "2026-08-14T05:46:06.812Z",
+      "event": "workflow_step_completed",
+      "stepId": "content-plan",
+      "message": "Content plan from onboarding onboard-monday-sales-crm-1786686336794 (9 candidates)"
+    },
+    {
+      "at": "2026-08-14T05:46:06.814Z",
+      "event": "workflow_step_started",
+      "stepId": "software-review",
+      "message": "Started Software Review"
+    },
+    {
+      "at": "2026-08-14T05:46:06.857Z",
+      "event": "workflow_step_completed",
+      "stepId": "software-review",
+      "message": "Agent software-review-agent → draft draft-deterministic-v1-software-review-agent-monday-sales-crm-2026-08-14T05-46-06-849Z (qa=pass)"
+    },
+    {
+      "at": "2026-08-14T05:46:06.858Z",
+      "event": "workflow_step_started",
+      "stepId": "alternatives",
+      "message": "Started Alternatives"
+    },
+    {
+      "at": "2026-08-14T05:46:06.868Z",
+      "event": "workflow_step_completed",
+      "stepId": "alternatives",
+      "message": "Agent alternatives-agent → draft draft-deterministic-v1-alternatives-agent-monday-sales-crm-2026-08-14T05-46-06-865Z (qa=pass)"
+    },
+    {
+      "at": "2026-08-14T05:46:06.870Z",
+      "event": "workflow_step_started",
+      "stepId": "comparison:hubspot-vs-monday-sales-crm",
+      "message": "Started Comparison hubspot-vs-monday-sales-crm"
+    },
+    {
+      "at": "2026-08-14T05:46:06.888Z",
+      "event": "workflow_step_completed",
+      "stepId": "comparison:hubspot-vs-monday-sales-crm",
+      "message": "Agent comparison-agent → draft draft-deterministic-v1-comparison-agent-hubspot-vs-monday-sales-crm-2026-08-14T05-46-06-885Z (qa=pass)"
+    },
+    {
+      "at": "2026-08-14T05:46:06.890Z",
+      "event": "workflow_step_started",
+      "stepId": "comparison:monday-sales-crm-vs-pipedrive",
+      "message": "Started Comparison monday-sales-crm-vs-pipedrive"
+    },
+    {
+      "at": "2026-08-14T05:46:06.903Z",
+      "event": "workflow_step_completed",
+      "stepId": "comparison:monday-sales-crm-vs-pipedrive",
+      "message": "Agent comparison-agent → draft draft-deterministic-v1-comparison-agent-monday-sales-crm-vs-pipedrive-2026-08-14T05-46-06-899Z (qa=pass)"
+    },
+    {
+      "at": "2026-08-14T05:46:06.905Z",
+      "event": "workflow_step_started",
+      "stepId": "comparison:monday-sales-crm-vs-salesforce",
+      "message": "Started Comparison monday-sales-crm-vs-salesforce"
+    },
+    {
+      "at": "2026-08-14T05:46:06.917Z",
+      "event": "workflow_step_completed",
+      "stepId": "comparison:monday-sales-crm-vs-salesforce",
+      "message": "Agent comparison-agent → draft draft-deterministic-v1-comparison-agent-monday-sales-crm-vs-salesforce-2026-08-14T05-46-06-914Z (qa=pass)"
+    },
+    {
+      "at": "2026-08-14T05:46:06.919Z",
+      "event": "workflow_step_started",
+      "stepId": "pricing-page",
+      "message": "Started Pricing Page"
+    },
+    {
+      "at": "2026-08-14T05:46:06.961Z",
+      "event": "workflow_step_completed",
+      "stepId": "pricing-page",
+      "message": "QA fail after one automatic revision → review-required"
+    },
+    {
+      "at": "2026-08-14T05:47:20.461Z",
+      "event": "workflow_resumed",
+      "message": "Workflow resumed"
+    },
+    {
+      "at": "2026-08-14T05:47:20.463Z",
+      "event": "workflow_started",
+      "message": "Workflow execution started"
+    },
+    {
+      "at": "2026-08-14T05:47:20.479Z",
+      "event": "workflow_step_started",
+      "stepId": "finder-readiness",
+      "message": "Started Finder readiness"
+    },
+    {
+      "at": "2026-08-14T05:47:20.485Z",
+      "event": "workflow_step_completed",
+      "stepId": "finder-readiness",
+      "message": "Finder readiness noted for monday-sales-crm"
+    },
+    {
+      "at": "2026-08-14T05:47:36.429Z",
+      "event": "workflow_resumed",
+      "message": "Workflow resumed"
+    },
+    {
+      "at": "2026-08-14T05:47:36.432Z",
+      "event": "workflow_started",
+      "message": "Workflow execution started"
+    },
+    {
+      "at": "2026-08-14T05:47:36.434Z",
+      "event": "workflow_step_started",
+      "stepId": "internal-links",
+      "message": "Started Internal Link Plan"
+    },
+    {
+      "at": "2026-08-14T05:47:36.479Z",
+      "event": "workflow_step_completed",
+      "stepId": "internal-links",
+      "message": "Agent internal-link-agent → draft draft-deterministic-v1-internal-link-agent-monday-sales-crm-2026-08-14T05-47-36-470Z (qa=pass)"
+    },
+    {
+      "at": "2026-08-14T05:49:36.545Z",
+      "event": "workflow_resumed",
+      "message": "Workflow resumed"
+    },
+    {
+      "at": "2026-08-14T05:49:36.548Z",
+      "event": "workflow_started",
+      "message": "Workflow execution started"
+    },
+    {
+      "at": "2026-08-14T05:49:36.550Z",
+      "event": "workflow_step_started",
+      "stepId": "editorial-approval",
+      "message": "Started Editorial approval"
+    },
+    {
+      "at": "2026-08-14T05:49:36.612Z",
+      "event": "workflow_step_completed",
+      "stepId": "editorial-approval",
+      "message": "WAITING FOR EDITORIAL APPROVAL (appr-wf-software-onboarding-content-monday-sales-crm-1786686366359-software-review)"
+    },
+    {
+      "at": "2026-08-14T05:49:59.352Z",
+      "event": "workflow_resumed",
+      "message": "Workflow resumed"
+    },
+    {
+      "at": "2026-08-14T05:49:59.354Z",
+      "event": "workflow_started",
+      "message": "Workflow execution started"
+    },
+    {
+      "at": "2026-08-14T05:49:59.355Z",
+      "event": "workflow_step_started",
+      "stepId": "editorial-approval",
+      "message": "Started Editorial approval"
+    },
+    {
+      "at": "2026-08-14T05:49:59.420Z",
+      "event": "workflow_step_completed",
+      "stepId": "editorial-approval",
+      "message": "Required editorial approvals satisfied"
+    },
+    {
+      "at": "2026-08-14T05:49:59.422Z",
+      "event": "workflow_step_started",
+      "stepId": "pre-publish-validation",
+      "message": "Started Pre-publish validation"
+    },
+    {
+      "at": "2026-08-14T05:49:59.702Z",
+      "event": "workflow_step_completed",
+      "stepId": "pre-publish-validation",
+      "message": "Pre-publish validation passed — READY TO PUBLISH (manual)"
+    },
+    {
+      "at": "2026-08-14T05:49:59.703Z",
+      "event": "workflow_completed",
+      "message": "Workflow completed-with-warnings"
+    }
+  ],
+  "options": {
+    "generateReview": true,
+    "generatePricing": true,
+    "generateAlternatives": true,
+    "generateComparisons": true,
+    "runInternalLinks": true,
+    "stopAfterApproval": true,
+    "allowNormalizedFacts": false,
+    "dryRun": false,
+    "maxComparisons": 3,
+    "skipOnboarding": false
+  },
+  "warnings": [],
+  "createdAt": "2026-08-14T05:46:06.751Z",
+  "updatedAt": "2026-08-14T05:49:59.703Z"
+}

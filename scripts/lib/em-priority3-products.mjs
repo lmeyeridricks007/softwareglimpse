@@ -1,0 +1,395 @@
+/**
+ * Email Marketing Priority-3 mid-tier compact configs.
+ * Drip, Mailjet, Customer.io — pricing floors verified 2026-08-17.
+ */
+import { expandEmProduct } from "./em-compact-expand.mjs";
+
+const COMPACT = [
+  {
+    slug: "drip",
+    name: "Drip",
+    company: "Drip",
+    website: "https://www.drip.com",
+    domain: "drip.com",
+    pricingUrl: "https://www.drip.com/pricing",
+    softShortDescription:
+      "Ecommerce CRM/email platform with behavior-driven automation and contact-tier pricing from $39/mo.",
+    shortDescription:
+      "Drip is an ecommerce-focused email and marketing automation platform (often described as ecommerce CRM/email) with behavioral segmentation, workflows, and onsite campaigns. Single published plan scales by active people from $39/mo at up to 2,500 contacts with unlimited email sends; 14-day free trial; no forever-free plan.",
+    vendorPositioning:
+      "Ecommerce marketing automation — behavior-driven email and workflows to convert and retain online customers.",
+    pricingModel: "subscription",
+    hasFreePlan: false,
+    hasFreeTrial: true,
+    trialDays: 14,
+    startingPriceMonthly: 39,
+    pricingNotes:
+      "Verified 2026-08-17 from drip.com/pricing. Single plan from $39/mo for 1–2,500 people with unlimited email sends; scales with list (research corroboration ~$89 at 5k, ~$154 at 10k — confirm live slider). 14-day trial, no credit card. No forever-free plan.",
+    pricingSummary:
+      "No free plan. From $39/mo at ≤2,500 active people (unlimited sends). Scales with list size — confirm live slider. 14-day trial.",
+    plans: [
+      {
+        kind: "flat",
+        slug: "drip",
+        name: "Drip",
+        amount: 39,
+        highlighted: true,
+        limits: { includedContactsEntry: 2500 },
+        description: "From $39/mo at ≤2,500 people; unlimited email sends (research).",
+      },
+    ],
+    featureOverrides: {
+      "ai-content-generation": "limited",
+      "landing-pages": "limited",
+      "transactional-email": "limited",
+    },
+    integrations: [
+      { integrationSlug: "shopify", kind: "native" },
+      { integrationSlug: "woocommerce", kind: "native" },
+      { integrationSlug: "zapier", kind: "zapier-style" },
+    ],
+    limitations: [
+      "No forever-free plan — trial-only entry from $39/mo",
+      "Contact-tier pricing rises as the store list grows",
+      "Less creator-newsletter oriented than Kit/Flodesk",
+      "Brand mindshare trails Klaviyo in ecommerce email shortlists",
+      "Not a full sales CRM of record",
+    ],
+    scores: {
+      "ease-of-use": 7,
+      "email-creation": 7,
+      automation: 8,
+      segmentation: 8,
+      analytics: 7,
+      "deliverability-tooling": 6,
+      integrations: 7,
+      scalability: 7,
+      "value-for-money": 6,
+      "ai-capabilities": 5,
+    },
+    bestFor: [
+      "Ecommerce brands wanting behavior-driven email automation",
+      "Shopify stores comparing mid-tier alternatives to Klaviyo/Omnisend",
+      "Teams needing ecommerce CRM-lite journeys without MAP complexity",
+    ],
+    notIdealFor: [
+      "Creators who only need a free newsletter ESP",
+      "Buyers needing the lowest entry price among ecommerce ESPs",
+      "Enterprise B2B MAP buyers",
+    ],
+    pros: [
+      "Ecommerce-focused automation and segmentation",
+      "Unlimited sends on published packaging",
+      "Clear from-$39/mo entry at 2,500 people",
+      "Onsite campaigns alongside email",
+      "14-day trial without card",
+    ],
+    cons: [
+      "No free plan — $39/mo entry",
+      "List growth raises TCO",
+      "Trails Klaviyo mindshare/attribution narratives",
+      "Lighter AI than some peers",
+      "Not a sales CRM of record",
+    ],
+    keyFeatures: [
+      "Ecommerce email automation workflows",
+      "Behavioral segmentation",
+      "Onsite campaigns",
+      "Contact-tier pricing from $39/mo",
+      "Shopify-oriented integrations",
+    ],
+    whoShouldChoose:
+      "Choose Drip when ecommerce behavior-driven email automation is the job and you want a mid-tier alternative to Klaviyo/Omnisend.",
+    whoShouldConsiderAlternatives:
+      "Compare Klaviyo and Omnisend for ecommerce multichannel depth/value, ActiveCampaign for broader automation+CRM, and Brevo for send-based SMB value.",
+    alternativeSlugs: ["klaviyo", "omnisend", "activecampaign", "brevo"],
+    competitorSlugs: ["klaviyo", "omnisend", "mailchimp", "activecampaign", "brevo", "getresponse"],
+    comparableSlugs: ["klaviyo", "omnisend", "activecampaign"],
+    secondaryCategorySlugs: ["marketing", "ecommerce"],
+    useCaseSlugs: [
+      "ecommerce-email",
+      "marketing-automation",
+      "lead-nurturing",
+      "newsletters",
+      "small-business-campaigns",
+    ],
+    businessSizeSlugs: ["small-business", "mid-market"],
+  },
+  {
+    slug: "mailjet",
+    name: "Mailjet",
+    company: "Sinch Mailjet",
+    website: "https://www.mailjet.com",
+    domain: "mailjet.com",
+    pricingUrl: "https://www.mailjet.com/pricing/",
+    aliases: ["Sinch Mailjet"],
+    softShortDescription:
+      "EU-friendly email platform for marketing and transactional sending with send-volume pricing (Sinch).",
+    shortDescription:
+      "Mailjet (Sinch Mailjet) is an email platform covering marketing campaigns and transactional/API sending with a collaborative editor. Pricing is primarily send-volume based: Free $0 (6,000 emails/mo, 200/day), Starter from $9/mo, Essential from $17/mo, Premium from $27/mo at researched volume bands; Custom enterprise.",
+    vendorPositioning:
+      "Email platform for marketing and transactional sending — collaborative design, APIs/SMTP, and EU-friendly packaging under Sinch.",
+    pricingModel: "freemium",
+    hasFreePlan: true,
+    hasFreeTrial: false,
+    startingPriceMonthly: 9,
+    pricingNotes:
+      "Verified 2026-08-17 from mailjet.com/pricing. Free: 6,000 emails/mo (200/day), 1,000 contacts. Starter from $9/mo (8,000 emails/mo). Essential from $17/mo (15,000 emails/mo) with segmentation/AI assist. Premium from $27/mo with automations/landing pages. Custom enterprise. Annual ~10% off. Confirm live volume bands.",
+    pricingSummary:
+      "Free: 6,000 emails/mo (200/day). Starter from $9/mo, Essential from $17/mo, Premium from $27/mo (volume bands). Custom enterprise. Confirm live.",
+    plans: [
+      {
+        kind: "free",
+        slug: "free",
+        name: "Free",
+        limits: { maxEmailSendsMonthly: 6000, maxEmailSendsDaily: 200, maxContacts: 1000 },
+        description: "Free: 6,000 emails/mo, 200/day, 1,000 contacts.",
+      },
+      {
+        kind: "flat",
+        slug: "starter",
+        name: "Starter",
+        amount: 9,
+        limits: { includedEmailsMonthlyEntry: 8000 },
+        description: "From $9/mo at researched 8,000 emails/mo band.",
+      },
+      {
+        kind: "flat",
+        slug: "essential",
+        name: "Essential",
+        amount: 17,
+        highlighted: true,
+        limits: { includedEmailsMonthlyEntry: 15000 },
+        description: "From $17/mo — segmentation, AI assist, unlimited contacts (research).",
+      },
+      {
+        kind: "flat",
+        slug: "premium",
+        name: "Premium",
+        amount: 27,
+        limits: { includedEmailsMonthlyEntry: 15000 },
+        description: "From $27/mo — automations, landing pages, advanced stats (research).",
+      },
+      {
+        kind: "contact-sales",
+        slug: "custom",
+        name: "Custom",
+        description: "Enterprise custom for high-volume senders.",
+      },
+    ],
+    featureOverrides: {
+      "transactional-email": "supported",
+      "automation-workflows": "supported",
+      "ai-content-generation": "supported",
+      "landing-pages": "supported",
+    },
+    aiLines: [
+      "AI email-generation: supported",
+      "AI assistant: supported",
+      "AI recommendations: limited",
+      "AI automation: limited",
+    ],
+    integrations: [
+      { integrationSlug: "shopify", kind: "native" },
+      { integrationSlug: "wordpress", kind: "native" },
+      { integrationSlug: "salesforce", kind: "zapier-style" },
+      { integrationSlug: "zapier", kind: "zapier-style" },
+    ],
+    limitations: [
+      "Free plan daily send cap (200/day)",
+      "Automation depth concentrates on Premium+",
+      "Creator/ecommerce specialization trails Kit/Klaviyo",
+      "Marketing + transactional dual role can confuse pure ESP buyers",
+      "Not a full sales CRM of record",
+    ],
+    scores: {
+      "ease-of-use": 7,
+      "email-creation": 7,
+      automation: 7,
+      segmentation: 6,
+      analytics: 6,
+      "deliverability-tooling": 7,
+      integrations: 7,
+      scalability: 8,
+      "value-for-money": 8,
+      "ai-capabilities": 6,
+    },
+    bestFor: [
+      "EU/SMB teams needing marketing + transactional email in one vendor",
+      "Developers wanting API/SMTP alongside campaigns",
+      "Buyers comparing send-volume pricing vs contact-tier ESPs",
+    ],
+    notIdealFor: [
+      "Creators seeking the most polished newsletter design UX",
+      "Ecommerce brands needing catalog SMS attribution as primary",
+      "Enterprise B2B MAP buyers",
+    ],
+    pros: [
+      "Free plan with meaningful monthly send volume",
+      "Starter from $9/mo on send-volume packaging",
+      "Marketing + transactional/API in one platform",
+      "Collaborative editor and MJML heritage",
+      "EU/Sinch packaging familiarity",
+    ],
+    cons: [
+      "Free daily send cap",
+      "Automation gated toward Premium",
+      "Less creator/ecommerce specialist than peers",
+      "Dual marketing/transactional positioning can blur ESP shortlists",
+      "Not a sales CRM of record",
+    ],
+    keyFeatures: [
+      "Marketing email campaigns",
+      "Transactional email API/SMTP",
+      "Collaborative email editor",
+      "Automations on Premium+",
+      "Send-volume Free / Starter / Essential / Premium pricing",
+    ],
+    whoShouldChoose:
+      "Choose Mailjet when EU-friendly marketing + transactional email with send-volume pricing is the priority.",
+    whoShouldConsiderAlternatives:
+      "Compare Brevo for broader multi-channel SMB value, Customer.io for product-led event messaging, GetResponse for all-in-one marketing automation, and Mailchimp for brand-familiar freemium.",
+    alternativeSlugs: ["brevo", "mailchimp", "getresponse", "customer-io"],
+    competitorSlugs: ["brevo", "mailchimp", "getresponse", "activecampaign", "customer-io", "mailerlite"],
+    comparableSlugs: ["brevo", "mailchimp", "getresponse"],
+    businessSizeSlugs: ["micro", "small-business", "mid-market"],
+  },
+  {
+    slug: "customer-io",
+    name: "Customer.io",
+    company: "Customer.io",
+    website: "https://customer.io",
+    domain: "customer.io",
+    pricingUrl: "https://customer.io/pricing/",
+    membershipRole: "adjacent",
+    adjacentNote:
+      "Product-led / event-driven messaging platform — landscape on Best Email Marketing (MAP-adjacent); not ranked as a core ESP peer.",
+    softShortDescription:
+      "Product-led event-driven messaging across email, push, SMS, and in-app — MAP-adjacent to classic ESPs.",
+    shortDescription:
+      "Customer.io is a product-led messaging platform for behavior- and event-driven campaigns across email, push, in-app, SMS, and related channels. Pricing is profile-based: Essentials from $100/mo (5,000 profiles, 1M emails/mo researched), Premium from $1,000/mo, Enterprise custom; startup program may offer free periods for eligible companies. Not a classic list-blast ESP.",
+    vendorPositioning:
+      "Data-driven messaging automation for product and marketing teams — trigger relevant messages from customer events and profiles.",
+    pricingModel: "subscription",
+    hasFreePlan: false,
+    hasFreeTrial: true,
+    trialDays: 14,
+    startingPriceMonthly: 100,
+    pricingNotes:
+      "Verified 2026-08-17 from customer.io/pricing and corroborated plan tables. Essentials from $100/mo for 5,000 profiles + 1M emails/mo; overages ~$0.009/profile and ~$0.12/1k emails researched. Premium from $1,000/mo. Enterprise custom. 14-day trial. Confirm live calculator — do not invent custom-quote dollars beyond published floors.",
+    pricingSummary:
+      "No free plan. Essentials from $100/mo (5k profiles / 1M emails researched). Premium from $1,000/mo. Enterprise custom. 14-day trial. Confirm live.",
+    plans: [
+      {
+        kind: "flat",
+        slug: "essentials",
+        name: "Essentials",
+        amount: 100,
+        highlighted: true,
+        limits: { includedProfilesEntry: 5000, includedEmailsMonthly: 1000000 },
+        description: "From $100/mo — 5,000 profiles / 1M emails/mo (research).",
+      },
+      {
+        kind: "flat",
+        slug: "premium",
+        name: "Premium",
+        amount: 1000,
+        description: "From $1,000/mo — elevated limits and premium integrations (research).",
+      },
+      {
+        kind: "contact-sales",
+        slug: "enterprise",
+        name: "Enterprise",
+        description: "Custom infrastructure, compliance, and support.",
+      },
+    ],
+    featureOverrides: {
+      "newsletter-builder": "limited",
+      "automation-workflows": "supported",
+      "transactional-email": "supported",
+      "ai-content-generation": "supported",
+      "landing-pages": "not-supported",
+      forms: "limited",
+    },
+    aiLines: [
+      "AI email-generation: supported",
+      "AI assistant: supported",
+      "AI recommendations: supported",
+      "AI automation: supported",
+    ],
+    integrations: [
+      { integrationSlug: "segment", kind: "native" },
+      { integrationSlug: "shopify", kind: "native" },
+      { integrationSlug: "salesforce", kind: "zapier-style" },
+      { integrationSlug: "zapier", kind: "zapier-style" },
+    ],
+    limitations: [
+      "Essentials from $100/mo — not an SMB freemium ESP",
+      "Event/profile model requires product data maturity",
+      "Not optimized as a classic newsletter blast tool",
+      "Premium jump to $1,000/mo is steep",
+      "Adjacent to core ESP ranking peers",
+    ],
+    scores: {
+      "ease-of-use": 6,
+      "email-creation": 7,
+      automation: 9,
+      segmentation: 8,
+      analytics: 7,
+      "deliverability-tooling": 6,
+      integrations: 8,
+      scalability: 8,
+      "value-for-money": 5,
+      "ai-capabilities": 7,
+    },
+    bestFor: [
+      "Product-led teams sending event-driven multi-channel messages",
+      "SaaS/apps needing behavioral onboarding and lifecycle messaging",
+      "Teams comparing Braze-class engagement with a mid-market entry",
+    ],
+    notIdealFor: [
+      "SMBs wanting a free forever newsletter ESP",
+      "Local businesses needing Constant Contact-class simplicity",
+      "Buyers without event/profile data pipelines",
+    ],
+    pros: [
+      "Strong event-driven automation across channels",
+      "Published Essentials floor at $100/mo",
+      "Profile + object data model for product messaging",
+      "Transactional and marketing messaging in one system",
+      "AI-assisted content/workflow tooling marketed",
+    ],
+    cons: [
+      "Higher entry price than classic ESPs",
+      "Requires product/event data maturity",
+      "Not a classic newsletter ESP UX",
+      "Premium pricing jump is large",
+      "Adjacent for Best EM ranking",
+    ],
+    keyFeatures: [
+      "Event-driven cross-channel campaigns",
+      "Visual workflow builder",
+      "Email, push, in-app, SMS messaging",
+      "Profile-based Essentials / Premium / Enterprise pricing",
+      "Product data integrations",
+    ],
+    whoShouldChoose:
+      "Choose Customer.io when product-led, event-driven messaging is the primary job — not classic list-blast email marketing.",
+    whoShouldConsiderAlternatives:
+      "Compare Braze for enterprise B2C engagement, ActiveCampaign for SMB automation+CRM, Brevo/Mailjet for send-based ESP value, and Klaviyo for ecommerce-owned channels.",
+    alternativeSlugs: ["braze", "activecampaign", "brevo", "klaviyo"],
+    competitorSlugs: ["braze", "activecampaign", "klaviyo", "brevo", "mailjet", "hubspot"],
+    comparableSlugs: ["activecampaign", "brevo", "klaviyo"],
+    secondaryCategorySlugs: ["marketing"],
+    useCaseSlugs: [
+      "marketing-automation",
+      "lead-nurturing",
+      "ecommerce-email",
+      "newsletters",
+    ],
+    businessSizeSlugs: ["small-business", "mid-market", "enterprise"],
+    teamTypeSlugs: ["marketing", "founders"],
+  },
+];
+
+export const PRODUCTS = COMPACT.map(expandEmProduct);

@@ -1,0 +1,288 @@
+{
+  "id": "review-pagerduty-v1",
+  "productSlug": "pagerduty",
+  "assessmentId": "assessment-pagerduty-it-v1",
+  "editorialStatus": "approved",
+  "title": "PagerDuty Review (2026)",
+  "h1": "PagerDuty Review",
+  "intro": "PagerDuty is evaluated here as IT & development software — PagerDuty is an on-call scheduling, paging, and incident-response platform. Free covers up to 5 responders. Professional is $21/user/mo annual ($25 monthly); Business $41 annual ($49 monthly). Enterprise is quote. AIOps, extra status-page capacity, stakeholder licences, and PagerDuty Advance credits are commonly add-ons — the responder seat is not the whole bill. Distinct from Datadog/New Relic observability and from Freshservice ITSM. This review uses SoftwareGlimpse’s IT & Development methodology (ease of use, IT job fit, workflow depth, integrations, admin/security, scalability, value, AI), scoring products inside their job cluster rather than against unrelated peers. It is based on first-party research, not hands-on lab testing.",
+  "summary": "Choose PagerDuty when paging and incident response are the job — not when you need Datadog telemetry or ServiceNow ITSM.",
+  "verdict": "Choose PagerDuty when paging and incident response are the job — not when you need Datadog telemetry or ServiceNow ITSM. Compare Datadog if you only need monitors+some incident UI; JSM if Atlassian ops alerting is enough. Scores reflect first-party documentation as of 2026-08-18 — not hands-on product testing. Confirm current packaging, host/GB rates and minimums on the vendor site before purchase.",
+  "overallScore": 8,
+  "criterionAssessments": [
+    {
+      "criterionSlug": "ease-of-use",
+      "score": 8,
+      "rationale": "Schedules and mobile paging are straightforward for SRE teams. Not a lab test.",
+      "supportingFactIds": [
+        "fact-pagerduty-features.incident-management",
+        "fact-pagerduty-pricing.model"
+      ],
+      "confidence": "medium",
+      "status": "approved",
+      "reviewedAt": "2026-08-18T12:00:00.000Z",
+      "reviewer": "editorial"
+    },
+    {
+      "criterionSlug": "it-job-fit",
+      "score": 9,
+      "rationale": "Incident-oncall cluster — do not rank as an observability peer of Datadog.",
+      "supportingFactIds": [
+        "fact-pagerduty-features.incident-management",
+        "fact-pagerduty-pricing.model"
+      ],
+      "confidence": "medium",
+      "status": "approved",
+      "reviewedAt": "2026-08-18T12:00:00.000Z",
+      "reviewer": "editorial"
+    },
+    {
+      "criterionSlug": "workflow-depth",
+      "score": 8,
+      "rationale": "Escalation, major-incident workflows, and status pages (plan-gated) are deep for paging; not ITIL CMDB depth.",
+      "supportingFactIds": [
+        "fact-pagerduty-features.incident-management",
+        "fact-pagerduty-pricing.model"
+      ],
+      "confidence": "medium",
+      "status": "approved",
+      "reviewedAt": "2026-08-18T12:00:00.000Z",
+      "reviewer": "editorial"
+    },
+    {
+      "criterionSlug": "integrations",
+      "score": 9,
+      "rationale": "Native hooks into Datadog, cloud, Slack/Teams are the product.",
+      "supportingFactIds": [
+        "fact-pagerduty-features.analytics-reporting",
+        "fact-pagerduty-pricing.model",
+        "fact-pagerduty-positioning.vendorClaim"
+      ],
+      "confidence": "medium",
+      "status": "approved",
+      "reviewedAt": "2026-08-18T12:00:00.000Z",
+      "reviewer": "editorial"
+    },
+    {
+      "criterionSlug": "admin-security",
+      "score": 8,
+      "rationale": "SSO and advanced admin rise on Business/Enterprise.",
+      "supportingFactIds": [
+        "fact-pagerduty-features.enterprise-security",
+        "fact-pagerduty-pricing.model"
+      ],
+      "confidence": "medium",
+      "status": "approved",
+      "reviewedAt": "2026-08-18T12:00:00.000Z",
+      "reviewer": "editorial"
+    },
+    {
+      "criterionSlug": "scalability",
+      "score": 9,
+      "rationale": "Unlimited responders on paid plans; add-ons scale cost.",
+      "supportingFactIds": [
+        "fact-pagerduty-pricing.plans.free",
+        "fact-pagerduty-pricing.model",
+        "fact-pagerduty-pricing.plans.enterprise"
+      ],
+      "confidence": "medium",
+      "status": "approved",
+      "reviewedAt": "2026-08-18T12:00:00.000Z",
+      "reviewer": "editorial"
+    },
+    {
+      "criterionSlug": "value-for-money",
+      "score": 7,
+      "rationale": "$21 Professional is a clear floor; add-ons are the TCO trap. Affiliate economics excluded.",
+      "supportingFactIds": [
+        "fact-pagerduty-pricing.hasFreePlan",
+        "fact-pagerduty-pricing.model",
+        "fact-pagerduty-pricing.startingPriceMonthly"
+      ],
+      "confidence": "medium",
+      "status": "approved",
+      "reviewedAt": "2026-08-18T12:00:00.000Z",
+      "reviewer": "editorial"
+    },
+    {
+      "criterionSlug": "ai-capabilities",
+      "score": 6,
+      "rationale": "Advance/AIOps are add-ons, not included intelligence on Professional.",
+      "supportingFactIds": [
+        "fact-pagerduty-features.itsm-ai",
+        "fact-pagerduty-pricing.model"
+      ],
+      "confidence": "medium",
+      "status": "approved",
+      "reviewedAt": "2026-08-18T12:00:00.000Z",
+      "reviewer": "editorial"
+    }
+  ],
+  "bestFor": [
+    "SRE/IT teams that need on-call schedules and paging",
+    "Orgs already sending alerts from Datadog/CloudWatch",
+    "Incident commanders who want a dedicated ops cloud"
+  ],
+  "notIdealFor": [
+    "Teams that only need APM dashboards (New Relic / Grafana)",
+    "ITSM ticket desks without paging (Freshservice)",
+    "Git hosts (GitHub / GitLab)"
+  ],
+  "pros": [
+    "Category-defining on-call",
+    "Published Professional/Business seats",
+    "Deep alerting integrations",
+    "Free 5-responder trial path",
+    "Enterprise governance path"
+  ],
+  "cons": [
+    "Add-on math (AIOps, Advance, stakeholders)",
+    "Not observability telemetry",
+    "Not ITSM CMDB",
+    "AI not included by default",
+    "Responder definition can surprise finance"
+  ],
+  "keyFeatures": [
+    "On-call schedules",
+    "Escalation policies",
+    "Mobile/voice/SMS paging",
+    "Incident workflows",
+    "Alerting integrations"
+  ],
+  "limitations": [
+    "Does not replace Datadog/New Relic telemetry — it pages people",
+    "AIOps / Advance / status pages often stack on responder seats",
+    "Not an ITSM CMDB (ServiceNow / Freshservice)",
+    "Stakeholder (read-only) licences are extra on many plans",
+    "Free is a 5-responder cap"
+  ],
+  "pricingSummary": "Free ≤5 responders. Professional $21/user/mo annual. Business $41 annual. Enterprise quote. Confirm add-ons on pagerduty.com/pricing.",
+  "whoShouldChoose": "Choose PagerDuty when paging and incident response are the job — not when you need Datadog telemetry or ServiceNow ITSM.",
+  "whoShouldConsiderAlternatives": "Compare Datadog if you only need monitors+some incident UI; JSM if Atlassian ops alerting is enough.",
+  "alternativeSlugs": [
+    "datadog",
+    "jira-service-management"
+  ],
+  "comparisonSlugs": [
+    "datadog-vs-pagerduty",
+    "jira-service-management-vs-pagerduty"
+  ],
+  "relatedGuidePaths": [
+    "/categories/it-development/",
+    "/best/it-development-software/"
+  ],
+  "methodologySlug": "it-development-editorial",
+  "methodologyVersion": "1.0.0",
+  "researchSourceIds": [
+    "pagerduty-product-official",
+    "pagerduty-pricing-official",
+    "pagerduty-pricing"
+  ],
+  "factRefs": [
+    {
+      "section": "pricing",
+      "factIds": [
+        "fact-pagerduty-pricing.model",
+        "fact-pagerduty-pricing.hasFreePlan",
+        "fact-pagerduty-pricing.hasFreeTrial",
+        "fact-pagerduty-pricing.startingPriceMonthly",
+        "fact-pagerduty-pricing.plans.free",
+        "fact-pagerduty-pricing.plans.professional",
+        "fact-pagerduty-pricing.plans.business",
+        "fact-pagerduty-pricing.plans.enterprise"
+      ]
+    },
+    {
+      "section": "overview",
+      "factIds": [
+        "fact-pagerduty-identity.shortDescription",
+        "fact-pagerduty-positioning.vendorClaim",
+        "fact-pagerduty-positioning.jobCluster"
+      ]
+    },
+    {
+      "section": "features",
+      "factIds": [
+        "fact-pagerduty-features.incident-management",
+        "fact-pagerduty-features.change-problem",
+        "fact-pagerduty-features.service-catalog",
+        "fact-pagerduty-features.infrastructure-monitoring",
+        "fact-pagerduty-features.apm-tracing",
+        "fact-pagerduty-features.log-management",
+        "fact-pagerduty-features.source-control",
+        "fact-pagerduty-features.cicd-actions",
+        "fact-pagerduty-features.hosting-panel",
+        "fact-pagerduty-features.proxy-network",
+        "fact-pagerduty-features.itsm-ai",
+        "fact-pagerduty-features.dev-ai",
+        "fact-pagerduty-features.oncall-paging",
+        "fact-pagerduty-features.enterprise-security",
+        "fact-pagerduty-features.analytics-reporting"
+      ]
+    }
+  ],
+  "faq": [
+    {
+      "question": "Is PagerDuty IT / development software?",
+      "answer": "Yes. PagerDuty is evaluated as IT & development software."
+    },
+    {
+      "question": "How is PagerDuty priced?",
+      "answer": "Free ≤5 responders. Professional $21/user/mo annual. Business $41 annual. Enterprise quote. Confirm add-ons on pagerduty.com/pricing."
+    },
+    {
+      "question": "Does PagerDuty have a free plan or free trial?",
+      "answer": "Yes — a free plan is published. A free trial is documented. Confirm current terms with the vendor."
+    },
+    {
+      "question": "Did SoftwareGlimpse personally test PagerDuty?",
+      "answer": "No. This review is based on first-party product and pricing research evidence, not hands-on product usage. Affiliate relationships never influence scores."
+    }
+  ],
+  "sections": [
+    {
+      "id": "overview",
+      "heading": "Overview",
+      "body": "PagerDuty is an on-call scheduling, paging, and incident-response platform. Free covers up to 5 responders. Professional is $21/user/mo annual ($25 monthly); Business $41 annual ($49 monthly). Enterprise is quote. AIOps, extra status-page capacity, stakeholder licences, and PagerDuty Advance credits are commonly add-ons — the responder seat is not the whole bill. Distinct from Datadog/New Relic observability and from Freshservice ITSM."
+    },
+    {
+      "id": "best-for",
+      "heading": "Who it’s for",
+      "body": "• SRE/IT teams that need on-call schedules and paging\n• Orgs already sending alerts from Datadog/CloudWatch\n• Incident commanders who want a dedicated ops cloud"
+    },
+    {
+      "id": "features",
+      "heading": "Feature coverage",
+      "body": "• incident-management: supported\n• change-problem: limited\n• service-catalog: not-supported\n• infrastructure-monitoring: limited\n• apm-tracing: not-supported\n• log-management: not-supported\n• source-control: not-supported\n• cicd-actions: not-supported\n• hosting-panel: not-supported\n• proxy-network: not-supported\n• itsm-ai: limited\n• dev-ai: limited\n• oncall-paging: supported\n• enterprise-security: higher-plan-only\n• analytics-reporting: supported"
+    },
+    {
+      "id": "pricing",
+      "heading": "Pricing",
+      "body": "Free ≤5 responders. Professional $21/user/mo annual. Business $41 annual. Enterprise quote. Confirm add-ons on pagerduty.com/pricing."
+    },
+    {
+      "id": "limitations",
+      "heading": "Limitations",
+      "body": "• Does not replace Datadog/New Relic telemetry — it pages people\n• AIOps / Advance / status pages often stack on responder seats\n• Not an ITSM CMDB (ServiceNow / Freshservice)\n• Stakeholder (read-only) licences are extra on many plans\n• Free is a 5-responder cap"
+    }
+  ],
+  "confidence": "medium",
+  "handsOnTesting": false,
+  "contentVersion": 1,
+  "refreshNeeded": false,
+  "lastUpdatedAt": "2026-08-18T12:00:00.000Z",
+  "metadata": {
+    "status": "published",
+    "publishedAt": "2026-08-18T00:00:00.000Z",
+    "updatedAt": "2026-08-18T12:00:00.000Z",
+    "reviewedAt": "2026-08-18T12:00:00.000Z",
+    "author": "author-lee-meyeridricks",
+    "researchStatus": "complete"
+  },
+  "seo": {
+    "title": "PagerDuty Review (2026) — IT & Development",
+    "description": "PagerDuty IT & development review on SoftwareGlimpse: strengths, trade-offs, pricing posture, and who should buy.",
+    "canonicalPath": "/software/pagerduty/",
+    "indexable": true
+  }
+}

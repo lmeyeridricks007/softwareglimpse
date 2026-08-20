@@ -1,0 +1,604 @@
+{
+  "id": "wf-software-onboarding-content-databox-1787140587983",
+  "workflowId": "software-onboarding-content",
+  "workflowVersion": "1.0.0",
+  "name": "Software Onboarding Content: databox",
+  "targetType": "software",
+  "targetId": "databox",
+  "status": "blocked",
+  "steps": [
+    {
+      "id": "software-onboarding",
+      "definitionStepId": "software-onboarding",
+      "handler": "software-onboarding",
+      "label": "Software onboarding",
+      "status": "completed",
+      "required": true,
+      "failurePolicy": "block-workflow",
+      "attempt": 1,
+      "maxAttempts": 2,
+      "dependsOn": [],
+      "priority": "critical",
+      "config": {
+        "maxAutomaticRevisions": 1,
+        "expandFromContentPlan": false,
+        "expandKind": "none",
+        "stopAfterApproval": true,
+        "allowNormalizedFacts": false,
+        "optionalWhenBlocked": false,
+        "forceTransientFailOnce": false
+      },
+      "inputRefs": {},
+      "outputRefs": {
+        "softwareOnboardingRunId": "onboard-databox-1787140578530"
+      },
+      "blockers": [],
+      "warnings": [],
+      "startedAt": "2026-08-19T11:56:29.046Z",
+      "completedAt": "2026-08-19T11:56:29.111Z",
+      "revisionAttempts": 0
+    },
+    {
+      "id": "content-plan",
+      "definitionStepId": "content-plan",
+      "handler": "content-plan",
+      "label": "Content plan",
+      "status": "completed",
+      "required": true,
+      "failurePolicy": "block-workflow",
+      "attempt": 1,
+      "maxAttempts": 2,
+      "dependsOn": [
+        "software-onboarding"
+      ],
+      "priority": "high",
+      "config": {
+        "maxAutomaticRevisions": 1,
+        "expandFromContentPlan": false,
+        "expandKind": "none",
+        "stopAfterApproval": true,
+        "allowNormalizedFacts": false,
+        "optionalWhenBlocked": false,
+        "forceTransientFailOnce": false
+      },
+      "inputRefs": {},
+      "outputRefs": {
+        "softwareOnboardingRunId": "onboard-databox-1787140578530",
+        "comparisonTargets": "brand24-vs-databox",
+        "pageCandidateCount": "5"
+      },
+      "blockers": [],
+      "warnings": [],
+      "startedAt": "2026-08-19T11:56:29.112Z",
+      "completedAt": "2026-08-19T11:56:29.187Z",
+      "revisionAttempts": 0
+    },
+    {
+      "id": "software-review",
+      "definitionStepId": "software-review",
+      "handler": "agent-run",
+      "label": "Software Review",
+      "status": "completed",
+      "required": true,
+      "failurePolicy": "block-workflow",
+      "attempt": 1,
+      "maxAttempts": 2,
+      "dependsOn": [
+        "content-plan"
+      ],
+      "priority": "high",
+      "config": {
+        "agentId": "software-review-agent",
+        "targetSlug": "databox",
+        "maxAutomaticRevisions": 1,
+        "expandFromContentPlan": false,
+        "expandKind": "none",
+        "stopAfterApproval": true,
+        "allowNormalizedFacts": false,
+        "optionalWhenBlocked": false,
+        "forceTransientFailOnce": false
+      },
+      "inputRefs": {},
+      "outputRefs": {
+        "draftId": "draft-deterministic-v1-software-review-agent-databox-2026-08-19T11-56-29-395Z-rev-1787140589411",
+        "qaStatus": "pass",
+        "agentId": "software-review-agent",
+        "target": "databox"
+      },
+      "inputSnapshot": {
+        "researchFactIds": [
+          "fact-databox-identity.shortDescription",
+          "fact-databox-positioning.vendorClaim",
+          "fact-databox-pricing.model",
+          "fact-databox-pricing.hasFreePlan",
+          "fact-databox-pricing.hasFreeTrial",
+          "fact-databox-pricing.startingPriceMonthly",
+          "fact-databox-pricing.plans.free",
+          "fact-databox-pricing.plans.professional"
+        ],
+        "methodologySlug": "marketing-editorial",
+        "methodologyVersion": "1.0.0",
+        "agentVersion": "1.0.0",
+        "contextBuiltAt": "2026-08-19T11:56:29.389Z"
+      },
+      "blockers": [],
+      "warnings": [],
+      "agentTaskId": "exec-software-review-agent-databox-1787140589191",
+      "draftId": "draft-deterministic-v1-software-review-agent-databox-2026-08-19T11-56-29-395Z-rev-1787140589411",
+      "startedAt": "2026-08-19T11:56:29.189Z",
+      "completedAt": "2026-08-19T11:56:29.414Z",
+      "revisionAttempts": 0
+    },
+    {
+      "id": "pricing-page",
+      "definitionStepId": "pricing-page",
+      "handler": "agent-run",
+      "label": "Pricing Page",
+      "status": "completed",
+      "required": false,
+      "failurePolicy": "continue-with-warning",
+      "attempt": 1,
+      "maxAttempts": 2,
+      "dependsOn": [
+        "content-plan"
+      ],
+      "priority": "normal",
+      "config": {
+        "agentId": "pricing-page-agent",
+        "targetSlug": "databox",
+        "maxAutomaticRevisions": 1,
+        "expandFromContentPlan": false,
+        "expandKind": "none",
+        "stopAfterApproval": true,
+        "allowNormalizedFacts": false,
+        "optionalWhenBlocked": true,
+        "forceTransientFailOnce": false
+      },
+      "inputRefs": {},
+      "outputRefs": {
+        "draftId": "draft-deterministic-v1-pricing-page-agent-databox-2026-08-19T11-56-29-457Z",
+        "qaStatus": "pass",
+        "agentId": "pricing-page-agent",
+        "target": "databox"
+      },
+      "inputSnapshot": {
+        "researchFactIds": [
+          "fact-databox-identity.shortDescription",
+          "fact-databox-positioning.vendorClaim",
+          "fact-databox-pricing.model",
+          "fact-databox-pricing.hasFreePlan",
+          "fact-databox-pricing.hasFreeTrial",
+          "fact-databox-pricing.startingPriceMonthly",
+          "fact-databox-pricing.plans.free",
+          "fact-databox-pricing.plans.professional"
+        ],
+        "methodologySlug": "marketing-editorial",
+        "methodologyVersion": "1.0.0",
+        "agentVersion": "1.0.0",
+        "contextBuiltAt": "2026-08-19T11:56:29.456Z"
+      },
+      "blockers": [],
+      "warnings": [],
+      "agentTaskId": "exec-pricing-page-agent-databox-1787140589445",
+      "draftId": "draft-deterministic-v1-pricing-page-agent-databox-2026-08-19T11-56-29-457Z",
+      "startedAt": "2026-08-19T11:56:29.445Z",
+      "completedAt": "2026-08-19T11:56:29.460Z",
+      "revisionAttempts": 0
+    },
+    {
+      "id": "alternatives",
+      "definitionStepId": "alternatives",
+      "handler": "agent-run",
+      "label": "Alternatives",
+      "status": "blocked",
+      "required": false,
+      "failurePolicy": "continue-with-warning",
+      "attempt": 1,
+      "maxAttempts": 2,
+      "dependsOn": [
+        "content-plan"
+      ],
+      "priority": "normal",
+      "config": {
+        "agentId": "alternatives-agent",
+        "targetSlug": "databox",
+        "maxAutomaticRevisions": 1,
+        "expandFromContentPlan": false,
+        "expandKind": "none",
+        "stopAfterApproval": true,
+        "allowNormalizedFacts": false,
+        "optionalWhenBlocked": true,
+        "forceTransientFailOnce": false
+      },
+      "inputRefs": {},
+      "outputRefs": {},
+      "blockers": [
+        "NO_APPROVED_ALTERNATIVES: Approved alternative relationships required — same-category alone is insufficient"
+      ],
+      "warnings": [
+        "NO_APPROVED_ALTERNATIVES: Approved alternative relationships required — same-category alone is insufficient"
+      ],
+      "startedAt": "2026-08-19T11:56:29.416Z",
+      "completedAt": "2026-08-19T11:56:29.428Z",
+      "revisionAttempts": 0
+    },
+    {
+      "id": "comparison:brand24-vs-databox",
+      "definitionStepId": "comparisons",
+      "handler": "agent-run",
+      "label": "Comparison brand24-vs-databox",
+      "status": "blocked",
+      "required": false,
+      "failurePolicy": "continue-with-warning",
+      "attempt": 1,
+      "maxAttempts": 2,
+      "dependsOn": [
+        "content-plan"
+      ],
+      "priority": "normal",
+      "config": {
+        "agentId": "comparison-agent",
+        "targetSlug": "brand24-vs-databox",
+        "maxAutomaticRevisions": 1,
+        "expandFromContentPlan": true,
+        "expandKind": "comparisons",
+        "stopAfterApproval": true,
+        "allowNormalizedFacts": false,
+        "optionalWhenBlocked": true,
+        "forceTransientFailOnce": false
+      },
+      "expansionKey": "brand24-vs-databox",
+      "inputRefs": {},
+      "outputRefs": {},
+      "blockers": [
+        "RELATIONSHIP_UNAPPROVED: Approved comparable relationship required"
+      ],
+      "warnings": [
+        "RELATIONSHIP_UNAPPROVED: Approved comparable relationship required"
+      ],
+      "startedAt": "2026-08-19T11:56:29.430Z",
+      "completedAt": "2026-08-19T11:56:29.444Z",
+      "revisionAttempts": 0
+    },
+    {
+      "id": "internal-links",
+      "definitionStepId": "internal-links",
+      "handler": "internal-link",
+      "label": "Internal Link Plan",
+      "status": "completed",
+      "required": false,
+      "failurePolicy": "continue-with-warning",
+      "attempt": 1,
+      "maxAttempts": 2,
+      "dependsOn": [
+        "software-review"
+      ],
+      "priority": "low",
+      "config": {
+        "agentId": "internal-link-agent",
+        "maxAutomaticRevisions": 1,
+        "expandFromContentPlan": false,
+        "expandKind": "none",
+        "stopAfterApproval": true,
+        "allowNormalizedFacts": false,
+        "optionalWhenBlocked": false,
+        "forceTransientFailOnce": false
+      },
+      "inputRefs": {},
+      "outputRefs": {
+        "draftId": "draft-deterministic-v1-internal-link-agent-databox-2026-08-19T11-56-29-479Z",
+        "qaStatus": "pass",
+        "agentId": "internal-link-agent",
+        "target": "databox"
+      },
+      "inputSnapshot": {
+        "researchFactIds": [
+          "fact-databox-identity.shortDescription",
+          "fact-databox-positioning.vendorClaim",
+          "fact-databox-pricing.model",
+          "fact-databox-pricing.hasFreePlan",
+          "fact-databox-pricing.hasFreeTrial",
+          "fact-databox-pricing.startingPriceMonthly",
+          "fact-databox-pricing.plans.free",
+          "fact-databox-pricing.plans.professional"
+        ],
+        "methodologySlug": "marketing-editorial",
+        "methodologyVersion": "1.0.0",
+        "agentVersion": "1.0.0",
+        "contextBuiltAt": "2026-08-19T11:56:29.478Z"
+      },
+      "blockers": [],
+      "warnings": [],
+      "agentTaskId": "exec-internal-link-agent-databox-1787140589462",
+      "draftId": "draft-deterministic-v1-internal-link-agent-databox-2026-08-19T11-56-29-479Z",
+      "startedAt": "2026-08-19T11:56:29.462Z",
+      "completedAt": "2026-08-19T11:56:29.482Z",
+      "revisionAttempts": 0
+    },
+    {
+      "id": "finder-readiness",
+      "definitionStepId": "finder-readiness",
+      "handler": "update-recommendation-readiness",
+      "label": "Finder readiness",
+      "status": "completed",
+      "required": false,
+      "failurePolicy": "continue",
+      "attempt": 1,
+      "maxAttempts": 2,
+      "dependsOn": [
+        "content-plan"
+      ],
+      "priority": "low",
+      "config": {
+        "maxAutomaticRevisions": 1,
+        "expandFromContentPlan": false,
+        "expandKind": "none",
+        "stopAfterApproval": true,
+        "allowNormalizedFacts": false,
+        "optionalWhenBlocked": false,
+        "forceTransientFailOnce": false
+      },
+      "inputRefs": {},
+      "outputRefs": {
+        "finderReadiness": "checked"
+      },
+      "blockers": [],
+      "warnings": [],
+      "startedAt": "2026-08-19T11:56:29.461Z",
+      "completedAt": "2026-08-19T11:56:29.461Z",
+      "revisionAttempts": 0
+    },
+    {
+      "id": "editorial-approval",
+      "definitionStepId": "editorial-approval",
+      "handler": "approval-check",
+      "label": "Editorial approval",
+      "status": "completed",
+      "required": true,
+      "failurePolicy": "manual-review",
+      "attempt": 2,
+      "maxAttempts": 2,
+      "dependsOn": [
+        "software-review"
+      ],
+      "priority": "critical",
+      "config": {
+        "approvalType": "editorial",
+        "maxAutomaticRevisions": 1,
+        "expandFromContentPlan": false,
+        "expandKind": "none",
+        "stopAfterApproval": true,
+        "allowNormalizedFacts": false,
+        "optionalWhenBlocked": false,
+        "forceTransientFailOnce": false
+      },
+      "inputRefs": {},
+      "outputRefs": {
+        "approvalId": "appr-wf-software-onboarding-content-databox-1787140587983-software-review",
+        "draftId": "draft-deterministic-v1-software-review-agent-databox-2026-08-19T11-56-29-395Z-rev-1787140589411",
+        "approvalIds": "appr-wf-software-onboarding-content-databox-1787140587983-software-review"
+      },
+      "blockers": [],
+      "warnings": [
+        "Approval received — resuming",
+        "2 optional draft(s) may still need separate editorial review"
+      ],
+      "approvalId": "appr-wf-software-onboarding-content-databox-1787140587983-software-review",
+      "startedAt": "2026-08-19T12:05:21.731Z",
+      "completedAt": "2026-08-19T12:05:21.867Z",
+      "revisionAttempts": 0
+    },
+    {
+      "id": "pre-publish-validation",
+      "definitionStepId": "pre-publish-validation",
+      "handler": "pre-publish-validation",
+      "label": "Pre-publish validation",
+      "status": "blocked",
+      "required": true,
+      "failurePolicy": "block-workflow",
+      "attempt": 1,
+      "maxAttempts": 2,
+      "dependsOn": [
+        "editorial-approval"
+      ],
+      "priority": "critical",
+      "config": {
+        "maxAutomaticRevisions": 1,
+        "expandFromContentPlan": false,
+        "expandKind": "none",
+        "stopAfterApproval": true,
+        "allowNormalizedFacts": false,
+        "optionalWhenBlocked": false,
+        "forceTransientFailOnce": false
+      },
+      "inputRefs": {},
+      "outputRefs": {},
+      "blockers": [
+        "Stale context for software-review: new-critical-fact:fact-databox-pricing.currency-databox-pricing-official; new-critical-fact:fact-databox-pricing.hasFreeTrial-databox-pricing-official; new-critical-fact:fact-databox-pricing.hasFreePlan-databox-pricing-official; new-critical-fact:fact-databox-pricing.model-databox-pricing-official",
+        "Stale context for pricing-page: new-critical-fact:fact-databox-pricing.currency-databox-pricing-official; new-critical-fact:fact-databox-pricing.hasFreeTrial-databox-pricing-official; new-critical-fact:fact-databox-pricing.hasFreePlan-databox-pricing-official; new-critical-fact:fact-databox-pricing.model-databox-pricing-official",
+        "Stale context for internal-links: new-critical-fact:fact-databox-pricing.currency-databox-pricing-official; new-critical-fact:fact-databox-pricing.hasFreeTrial-databox-pricing-official; new-critical-fact:fact-databox-pricing.hasFreePlan-databox-pricing-official; new-critical-fact:fact-databox-pricing.model-databox-pricing-official"
+      ],
+      "warnings": [],
+      "startedAt": "2026-08-19T12:05:21.869Z",
+      "completedAt": "2026-08-19T12:05:22.357Z",
+      "revisionAttempts": 0
+    }
+  ],
+  "history": [
+    {
+      "at": "2026-08-19T11:56:29.041Z",
+      "event": "workflow_created",
+      "message": "Created software-onboarding-content:v1.0.0"
+    },
+    {
+      "at": "2026-08-19T11:56:29.044Z",
+      "event": "workflow_started",
+      "message": "Workflow execution started"
+    },
+    {
+      "at": "2026-08-19T11:56:29.046Z",
+      "event": "workflow_step_started",
+      "stepId": "software-onboarding",
+      "message": "Started Software onboarding"
+    },
+    {
+      "at": "2026-08-19T11:56:29.111Z",
+      "event": "workflow_step_completed",
+      "stepId": "software-onboarding",
+      "message": "Reused onboarding run onboard-databox-1787140578530 (ready)"
+    },
+    {
+      "at": "2026-08-19T11:56:29.112Z",
+      "event": "workflow_step_started",
+      "stepId": "content-plan",
+      "message": "Started Content plan"
+    },
+    {
+      "at": "2026-08-19T11:56:29.187Z",
+      "event": "workflow_step_completed",
+      "stepId": "content-plan",
+      "message": "Content plan from onboarding onboard-databox-1787140578530 (5 candidates)"
+    },
+    {
+      "at": "2026-08-19T11:56:29.189Z",
+      "event": "workflow_step_started",
+      "stepId": "software-review",
+      "message": "Started Software Review"
+    },
+    {
+      "at": "2026-08-19T11:56:29.414Z",
+      "event": "workflow_step_completed",
+      "stepId": "software-review",
+      "message": "Agent software-review-agent → draft draft-deterministic-v1-software-review-agent-databox-2026-08-19T11-56-29-395Z-rev-1787140589411 (qa=pass)"
+    },
+    {
+      "at": "2026-08-19T11:56:29.416Z",
+      "event": "workflow_step_started",
+      "stepId": "alternatives",
+      "message": "Started Alternatives"
+    },
+    {
+      "at": "2026-08-19T11:56:29.428Z",
+      "event": "workflow_step_completed",
+      "stepId": "alternatives",
+      "message": "Agent blocked (optional): NO_APPROVED_ALTERNATIVES: Approved alternative relationships required — same-category alone is insufficient"
+    },
+    {
+      "at": "2026-08-19T11:56:29.429Z",
+      "event": "workflow_step_started",
+      "stepId": "comparison:brand24-vs-databox",
+      "message": "Started Comparison brand24-vs-databox"
+    },
+    {
+      "at": "2026-08-19T11:56:29.444Z",
+      "event": "workflow_step_completed",
+      "stepId": "comparison:brand24-vs-databox",
+      "message": "Agent blocked (optional): RELATIONSHIP_UNAPPROVED: Approved comparable relationship required"
+    },
+    {
+      "at": "2026-08-19T11:56:29.445Z",
+      "event": "workflow_step_started",
+      "stepId": "pricing-page",
+      "message": "Started Pricing Page"
+    },
+    {
+      "at": "2026-08-19T11:56:29.460Z",
+      "event": "workflow_step_completed",
+      "stepId": "pricing-page",
+      "message": "Agent pricing-page-agent → draft draft-deterministic-v1-pricing-page-agent-databox-2026-08-19T11-56-29-457Z (qa=pass)"
+    },
+    {
+      "at": "2026-08-19T11:56:29.461Z",
+      "event": "workflow_step_started",
+      "stepId": "finder-readiness",
+      "message": "Started Finder readiness"
+    },
+    {
+      "at": "2026-08-19T11:56:29.461Z",
+      "event": "workflow_step_completed",
+      "stepId": "finder-readiness",
+      "message": "Finder readiness noted for databox"
+    },
+    {
+      "at": "2026-08-19T11:56:29.462Z",
+      "event": "workflow_step_started",
+      "stepId": "internal-links",
+      "message": "Started Internal Link Plan"
+    },
+    {
+      "at": "2026-08-19T11:56:29.482Z",
+      "event": "workflow_step_completed",
+      "stepId": "internal-links",
+      "message": "Agent internal-link-agent → draft draft-deterministic-v1-internal-link-agent-databox-2026-08-19T11-56-29-479Z (qa=pass)"
+    },
+    {
+      "at": "2026-08-19T11:56:29.483Z",
+      "event": "workflow_step_started",
+      "stepId": "editorial-approval",
+      "message": "Started Editorial approval"
+    },
+    {
+      "at": "2026-08-19T11:56:29.556Z",
+      "event": "workflow_step_completed",
+      "stepId": "editorial-approval",
+      "message": "WAITING FOR EDITORIAL APPROVAL (appr-wf-software-onboarding-content-databox-1787140587983-software-review)"
+    },
+    {
+      "at": "2026-08-19T11:56:29.557Z",
+      "event": "workflow_blocked",
+      "message": "WAITING FOR EDITORIAL APPROVAL"
+    },
+    {
+      "at": "2026-08-19T12:05:21.726Z",
+      "event": "workflow_resumed",
+      "message": "Workflow resumed"
+    },
+    {
+      "at": "2026-08-19T12:05:21.729Z",
+      "event": "workflow_started",
+      "message": "Workflow execution started"
+    },
+    {
+      "at": "2026-08-19T12:05:21.730Z",
+      "event": "workflow_step_started",
+      "stepId": "editorial-approval",
+      "message": "Started Editorial approval"
+    },
+    {
+      "at": "2026-08-19T12:05:21.867Z",
+      "event": "workflow_step_completed",
+      "stepId": "editorial-approval",
+      "message": "Required editorial approvals satisfied"
+    },
+    {
+      "at": "2026-08-19T12:05:21.869Z",
+      "event": "workflow_step_started",
+      "stepId": "pre-publish-validation",
+      "message": "Started Pre-publish validation"
+    },
+    {
+      "at": "2026-08-19T12:05:22.357Z",
+      "event": "workflow_step_completed",
+      "stepId": "pre-publish-validation",
+      "message": "Pre-publish validation blocked: Stale context for software-review: new-critical-fact:fact-databox-pricing.currency-databox-pricing-official; new-critical-fact:fact-databox-pricing.hasFreeTrial-databox-pricing-official; new-critical-fact:fact-databox-pricing.hasFreePlan-databox-pricing-official; new-critical-fact:fact-databox-pricing.model-databox-pricing-official; Stale context for pricing-page: new-critical-fact:fact-databox-pricing.currency-databox-pricing-official; new-critical-fact:fact-databox-pricing.hasFreeTrial-databox-pricing-official; new-critical-fact:fact-databox-pricing.hasFreePlan-databox-pricing-official; new-critical-fact:fact-databox-pricing.model-databox-pricing-official; Stale context for internal-links: new-critical-fact:fact-databox-pricing.currency-databox-pricing-official; new-critical-fact:fact-databox-pricing.hasFreeTrial-databox-pricing-official; new-critical-fact:fact-databox-pricing.hasFreePlan-databox-pricing-official; new-critical-fact:fact-databox-pricing.model-databox-pricing-official"
+    }
+  ],
+  "options": {
+    "generateReview": true,
+    "generatePricing": true,
+    "generateAlternatives": true,
+    "generateComparisons": true,
+    "runInternalLinks": true,
+    "stopAfterApproval": true,
+    "allowNormalizedFacts": false,
+    "dryRun": false,
+    "maxComparisons": 3,
+    "skipOnboarding": false
+  },
+  "warnings": [
+    "alternatives blocked: NO_APPROVED_ALTERNATIVES: Approved alternative relationships required — same-category alone is insufficient",
+    "comparison:brand24-vs-databox blocked: RELATIONSHIP_UNAPPROVED: Approved comparable relationship required"
+  ],
+  "createdAt": "2026-08-19T11:56:29.040Z",
+  "updatedAt": "2026-08-19T12:05:22.358Z"
+}

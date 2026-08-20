@@ -1,0 +1,664 @@
+{
+  "id": "wf-software-onboarding-content-zoominfo-1786953477037",
+  "workflowId": "software-onboarding-content",
+  "workflowVersion": "1.0.0",
+  "name": "Software Onboarding Content: zoominfo",
+  "targetType": "software",
+  "targetId": "zoominfo",
+  "status": "cancelled",
+  "steps": [
+    {
+      "id": "software-onboarding",
+      "definitionStepId": "software-onboarding",
+      "handler": "software-onboarding",
+      "label": "Software onboarding",
+      "status": "completed",
+      "required": true,
+      "failurePolicy": "block-workflow",
+      "attempt": 2,
+      "maxAttempts": 2,
+      "dependsOn": [],
+      "priority": "critical",
+      "config": {
+        "maxAutomaticRevisions": 1,
+        "expandFromContentPlan": false,
+        "expandKind": "none",
+        "stopAfterApproval": true,
+        "allowNormalizedFacts": false,
+        "optionalWhenBlocked": false,
+        "forceTransientFailOnce": false
+      },
+      "inputRefs": {},
+      "outputRefs": {
+        "softwareOnboardingRunId": "onboard-zoominfo-1786979764705"
+      },
+      "blockers": [],
+      "warnings": [
+        "Re-queued blocked onboarding attach on resume"
+      ],
+      "startedAt": "2026-08-18T08:52:13.056Z",
+      "completedAt": "2026-08-18T08:52:14.061Z",
+      "revisionAttempts": 0
+    },
+    {
+      "id": "content-plan",
+      "definitionStepId": "content-plan",
+      "handler": "content-plan",
+      "label": "Content plan",
+      "status": "completed",
+      "required": true,
+      "failurePolicy": "block-workflow",
+      "attempt": 1,
+      "maxAttempts": 2,
+      "dependsOn": [
+        "software-onboarding"
+      ],
+      "priority": "high",
+      "config": {
+        "maxAutomaticRevisions": 1,
+        "expandFromContentPlan": false,
+        "expandKind": "none",
+        "stopAfterApproval": true,
+        "allowNormalizedFacts": false,
+        "optionalWhenBlocked": false,
+        "forceTransientFailOnce": false
+      },
+      "inputRefs": {},
+      "outputRefs": {
+        "softwareOnboardingRunId": "onboard-zoominfo-1786979764705",
+        "comparisonTargets": "apollo-vs-zoominfo,cognism-vs-zoominfo,linkedin-sales-navigator-vs-zoominfo",
+        "pageCandidateCount": "9"
+      },
+      "blockers": [],
+      "warnings": [],
+      "startedAt": "2026-08-18T08:52:14.073Z",
+      "completedAt": "2026-08-18T08:52:14.337Z",
+      "revisionAttempts": 0
+    },
+    {
+      "id": "software-review",
+      "definitionStepId": "software-review",
+      "handler": "agent-run",
+      "label": "Software Review",
+      "status": "completed",
+      "required": true,
+      "failurePolicy": "block-workflow",
+      "attempt": 1,
+      "maxAttempts": 2,
+      "dependsOn": [
+        "content-plan"
+      ],
+      "priority": "high",
+      "config": {
+        "agentId": "software-review-agent",
+        "targetSlug": "zoominfo",
+        "maxAutomaticRevisions": 1,
+        "expandFromContentPlan": false,
+        "expandKind": "none",
+        "stopAfterApproval": true,
+        "allowNormalizedFacts": false,
+        "optionalWhenBlocked": false,
+        "forceTransientFailOnce": false
+      },
+      "inputRefs": {},
+      "outputRefs": {
+        "draftId": "draft-deterministic-v1-software-review-agent-zoominfo-2026-08-18T08-52-14-625Z",
+        "qaStatus": "pass",
+        "agentId": "software-review-agent",
+        "target": "zoominfo"
+      },
+      "inputSnapshot": {
+        "researchFactIds": [
+          "fact-zoominfo-identity.shortDescription",
+          "fact-zoominfo-positioning.vendorClaim",
+          "fact-zoominfo-pricing.model",
+          "fact-zoominfo-pricing.hasFreePlan",
+          "fact-zoominfo-pricing.hasFreeTrial",
+          "fact-zoominfo-pricing.plans.professional",
+          "fact-zoominfo-pricing.plans.copilot-advanced",
+          "fact-zoominfo-pricing.plans.copilot-enterprise",
+          "fact-zoominfo-features.contact-data",
+          "fact-zoominfo-features.prospecting",
+          "fact-zoominfo-features.data-enrichment",
+          "fact-zoominfo-features.email-outreach",
+          "fact-zoominfo-features.email-sequences",
+          "fact-zoominfo-features.crm-sync",
+          "fact-zoominfo-features.lead-management",
+          "fact-zoominfo-features.reporting",
+          "fact-zoominfo-features.ai-assistance",
+          "fact-zoominfo-features.lead-scoring",
+          "fact-zoominfo-features.integrations",
+          "fact-zoominfo-features.contact-management"
+        ],
+        "methodologySlug": "sales-intelligence-editorial",
+        "methodologyVersion": "1.0.0",
+        "agentVersion": "1.0.0",
+        "contextBuiltAt": "2026-08-18T08:52:14.611Z"
+      },
+      "blockers": [],
+      "warnings": [],
+      "agentTaskId": "exec-software-review-agent-zoominfo-1787043134359",
+      "draftId": "draft-deterministic-v1-software-review-agent-zoominfo-2026-08-18T08-52-14-625Z",
+      "startedAt": "2026-08-18T08:52:14.340Z",
+      "completedAt": "2026-08-18T08:52:14.654Z",
+      "revisionAttempts": 0
+    },
+    {
+      "id": "pricing-page",
+      "definitionStepId": "pricing-page",
+      "handler": "agent-run",
+      "label": "Pricing Page",
+      "status": "completed",
+      "required": false,
+      "failurePolicy": "continue-with-warning",
+      "attempt": 1,
+      "maxAttempts": 2,
+      "dependsOn": [
+        "content-plan"
+      ],
+      "priority": "normal",
+      "config": {
+        "agentId": "pricing-page-agent",
+        "targetSlug": "zoominfo",
+        "maxAutomaticRevisions": 1,
+        "expandFromContentPlan": false,
+        "expandKind": "none",
+        "stopAfterApproval": true,
+        "allowNormalizedFacts": false,
+        "optionalWhenBlocked": true,
+        "forceTransientFailOnce": false
+      },
+      "inputRefs": {},
+      "outputRefs": {
+        "draftId": "draft-deterministic-v1-pricing-page-agent-zoominfo-2026-08-18T08-52-14-844Z",
+        "qaStatus": "pass",
+        "agentId": "pricing-page-agent",
+        "target": "zoominfo"
+      },
+      "inputSnapshot": {
+        "researchFactIds": [
+          "fact-zoominfo-identity.shortDescription",
+          "fact-zoominfo-positioning.vendorClaim",
+          "fact-zoominfo-pricing.model",
+          "fact-zoominfo-pricing.hasFreePlan",
+          "fact-zoominfo-pricing.hasFreeTrial",
+          "fact-zoominfo-pricing.plans.professional",
+          "fact-zoominfo-pricing.plans.copilot-advanced",
+          "fact-zoominfo-pricing.plans.copilot-enterprise",
+          "fact-zoominfo-features.contact-data",
+          "fact-zoominfo-features.prospecting",
+          "fact-zoominfo-features.data-enrichment",
+          "fact-zoominfo-features.email-outreach",
+          "fact-zoominfo-features.email-sequences",
+          "fact-zoominfo-features.crm-sync",
+          "fact-zoominfo-features.lead-management",
+          "fact-zoominfo-features.reporting",
+          "fact-zoominfo-features.ai-assistance",
+          "fact-zoominfo-features.lead-scoring",
+          "fact-zoominfo-features.integrations",
+          "fact-zoominfo-features.contact-management"
+        ],
+        "methodologySlug": "sales-intelligence-editorial",
+        "methodologyVersion": "1.0.0",
+        "agentVersion": "1.0.0",
+        "contextBuiltAt": "2026-08-18T08:52:14.842Z"
+      },
+      "blockers": [],
+      "warnings": [],
+      "agentTaskId": "exec-pricing-page-agent-zoominfo-1787043134815",
+      "draftId": "draft-deterministic-v1-pricing-page-agent-zoominfo-2026-08-18T08-52-14-844Z",
+      "startedAt": "2026-08-18T08:52:14.813Z",
+      "completedAt": "2026-08-18T08:52:14.856Z",
+      "revisionAttempts": 0
+    },
+    {
+      "id": "alternatives",
+      "definitionStepId": "alternatives",
+      "handler": "agent-run",
+      "label": "Alternatives",
+      "status": "completed",
+      "required": false,
+      "failurePolicy": "continue-with-warning",
+      "attempt": 1,
+      "maxAttempts": 2,
+      "dependsOn": [
+        "content-plan"
+      ],
+      "priority": "normal",
+      "config": {
+        "agentId": "alternatives-agent",
+        "targetSlug": "zoominfo",
+        "maxAutomaticRevisions": 1,
+        "expandFromContentPlan": false,
+        "expandKind": "none",
+        "stopAfterApproval": true,
+        "allowNormalizedFacts": false,
+        "optionalWhenBlocked": true,
+        "forceTransientFailOnce": false
+      },
+      "inputRefs": {},
+      "outputRefs": {
+        "draftId": "draft-deterministic-v1-alternatives-agent-zoominfo-2026-08-18T08-52-14-707Z",
+        "qaStatus": "pass",
+        "agentId": "alternatives-agent",
+        "target": "zoominfo"
+      },
+      "inputSnapshot": {
+        "researchFactIds": [
+          "fact-zoominfo-identity.shortDescription",
+          "fact-zoominfo-positioning.vendorClaim",
+          "fact-zoominfo-pricing.model",
+          "fact-zoominfo-pricing.hasFreePlan",
+          "fact-zoominfo-pricing.hasFreeTrial",
+          "fact-zoominfo-pricing.plans.professional",
+          "fact-zoominfo-pricing.plans.copilot-advanced",
+          "fact-zoominfo-pricing.plans.copilot-enterprise",
+          "fact-zoominfo-features.contact-data",
+          "fact-zoominfo-features.prospecting",
+          "fact-zoominfo-features.data-enrichment",
+          "fact-zoominfo-features.email-outreach",
+          "fact-zoominfo-features.email-sequences",
+          "fact-zoominfo-features.crm-sync",
+          "fact-zoominfo-features.lead-management",
+          "fact-zoominfo-features.reporting",
+          "fact-zoominfo-features.ai-assistance",
+          "fact-zoominfo-features.lead-scoring",
+          "fact-zoominfo-features.integrations",
+          "fact-zoominfo-features.contact-management"
+        ],
+        "methodologySlug": "sales-intelligence-editorial",
+        "methodologyVersion": "1.0.0",
+        "agentVersion": "1.0.0",
+        "contextBuiltAt": "2026-08-18T08:52:14.705Z"
+      },
+      "blockers": [],
+      "warnings": [],
+      "agentTaskId": "exec-alternatives-agent-zoominfo-1787043134666",
+      "draftId": "draft-deterministic-v1-alternatives-agent-zoominfo-2026-08-18T08-52-14-707Z",
+      "startedAt": "2026-08-18T08:52:14.661Z",
+      "completedAt": "2026-08-18T08:52:14.716Z",
+      "revisionAttempts": 0
+    },
+    {
+      "id": "comparisons",
+      "definitionStepId": "comparisons",
+      "handler": "agent-run",
+      "label": "Comparisons",
+      "status": "cancelled",
+      "required": false,
+      "failurePolicy": "continue-with-warning",
+      "attempt": 1,
+      "maxAttempts": 2,
+      "dependsOn": [
+        "content-plan"
+      ],
+      "priority": "normal",
+      "config": {
+        "agentId": "comparison-agent",
+        "maxAutomaticRevisions": 1,
+        "expandFromContentPlan": true,
+        "expandKind": "comparisons",
+        "stopAfterApproval": true,
+        "allowNormalizedFacts": false,
+        "optionalWhenBlocked": true,
+        "forceTransientFailOnce": false
+      },
+      "inputRefs": {},
+      "outputRefs": {},
+      "blockers": [
+        "MISSING_PRODUCTS: Comparison requires two product slugs"
+      ],
+      "warnings": [
+        "MISSING_PRODUCTS: Comparison requires two product slugs"
+      ],
+      "startedAt": "2026-08-18T08:52:14.719Z",
+      "completedAt": "2026-08-18T08:52:14.802Z",
+      "revisionAttempts": 0
+    },
+    {
+      "id": "internal-links",
+      "definitionStepId": "internal-links",
+      "handler": "internal-link",
+      "label": "Internal Link Plan",
+      "status": "completed",
+      "required": false,
+      "failurePolicy": "continue-with-warning",
+      "attempt": 1,
+      "maxAttempts": 2,
+      "dependsOn": [
+        "software-review"
+      ],
+      "priority": "low",
+      "config": {
+        "agentId": "internal-link-agent",
+        "maxAutomaticRevisions": 1,
+        "expandFromContentPlan": false,
+        "expandKind": "none",
+        "stopAfterApproval": true,
+        "allowNormalizedFacts": false,
+        "optionalWhenBlocked": false,
+        "forceTransientFailOnce": false
+      },
+      "inputRefs": {},
+      "outputRefs": {
+        "draftId": "draft-deterministic-v1-internal-link-agent-zoominfo-2026-08-18T08-52-14-937Z",
+        "qaStatus": "pass",
+        "agentId": "internal-link-agent",
+        "target": "zoominfo"
+      },
+      "inputSnapshot": {
+        "researchFactIds": [
+          "fact-zoominfo-identity.shortDescription",
+          "fact-zoominfo-positioning.vendorClaim",
+          "fact-zoominfo-pricing.model",
+          "fact-zoominfo-pricing.hasFreePlan",
+          "fact-zoominfo-pricing.hasFreeTrial",
+          "fact-zoominfo-pricing.plans.professional",
+          "fact-zoominfo-pricing.plans.copilot-advanced",
+          "fact-zoominfo-pricing.plans.copilot-enterprise",
+          "fact-zoominfo-features.contact-data",
+          "fact-zoominfo-features.prospecting",
+          "fact-zoominfo-features.data-enrichment",
+          "fact-zoominfo-features.email-outreach",
+          "fact-zoominfo-features.email-sequences",
+          "fact-zoominfo-features.crm-sync",
+          "fact-zoominfo-features.lead-management",
+          "fact-zoominfo-features.reporting",
+          "fact-zoominfo-features.ai-assistance",
+          "fact-zoominfo-features.lead-scoring",
+          "fact-zoominfo-features.integrations",
+          "fact-zoominfo-features.contact-management"
+        ],
+        "methodologySlug": "sales-intelligence-editorial",
+        "methodologyVersion": "1.0.0",
+        "agentVersion": "1.0.0",
+        "contextBuiltAt": "2026-08-18T08:52:14.936Z"
+      },
+      "blockers": [],
+      "warnings": [],
+      "agentTaskId": "exec-internal-link-agent-zoominfo-1787043134871",
+      "draftId": "draft-deterministic-v1-internal-link-agent-zoominfo-2026-08-18T08-52-14-937Z",
+      "startedAt": "2026-08-18T08:52:14.868Z",
+      "completedAt": "2026-08-18T08:52:14.960Z",
+      "revisionAttempts": 0
+    },
+    {
+      "id": "finder-readiness",
+      "definitionStepId": "finder-readiness",
+      "handler": "update-recommendation-readiness",
+      "label": "Finder readiness",
+      "status": "completed",
+      "required": false,
+      "failurePolicy": "continue",
+      "attempt": 1,
+      "maxAttempts": 2,
+      "dependsOn": [
+        "content-plan"
+      ],
+      "priority": "low",
+      "config": {
+        "maxAutomaticRevisions": 1,
+        "expandFromContentPlan": false,
+        "expandKind": "none",
+        "stopAfterApproval": true,
+        "allowNormalizedFacts": false,
+        "optionalWhenBlocked": false,
+        "forceTransientFailOnce": false
+      },
+      "inputRefs": {},
+      "outputRefs": {
+        "finderReadiness": "checked"
+      },
+      "blockers": [],
+      "warnings": [],
+      "startedAt": "2026-08-18T08:52:14.858Z",
+      "completedAt": "2026-08-18T08:52:14.860Z",
+      "revisionAttempts": 0
+    },
+    {
+      "id": "editorial-approval",
+      "definitionStepId": "editorial-approval",
+      "handler": "approval-check",
+      "label": "Editorial approval",
+      "status": "cancelled",
+      "required": true,
+      "failurePolicy": "manual-review",
+      "attempt": 1,
+      "maxAttempts": 2,
+      "dependsOn": [
+        "software-review"
+      ],
+      "priority": "critical",
+      "config": {
+        "approvalType": "editorial",
+        "maxAutomaticRevisions": 1,
+        "expandFromContentPlan": false,
+        "expandKind": "none",
+        "stopAfterApproval": true,
+        "allowNormalizedFacts": false,
+        "optionalWhenBlocked": false,
+        "forceTransientFailOnce": false
+      },
+      "inputRefs": {},
+      "outputRefs": {
+        "approvalId": "appr-wf-software-onboarding-content-zoominfo-1786953477037-software-review",
+        "draftId": "draft-deterministic-v1-software-review-agent-zoominfo-2026-08-18T08-52-14-625Z"
+      },
+      "blockers": [],
+      "warnings": [],
+      "approvalId": "appr-wf-software-onboarding-content-zoominfo-1786953477037-software-review",
+      "startedAt": "2026-08-18T08:52:14.968Z",
+      "completedAt": "2026-08-18T08:52:15.511Z",
+      "revisionAttempts": 0
+    },
+    {
+      "id": "pre-publish-validation",
+      "definitionStepId": "pre-publish-validation",
+      "handler": "pre-publish-validation",
+      "label": "Pre-publish validation",
+      "status": "cancelled",
+      "required": true,
+      "failurePolicy": "block-workflow",
+      "attempt": 0,
+      "maxAttempts": 2,
+      "dependsOn": [
+        "editorial-approval"
+      ],
+      "priority": "critical",
+      "config": {
+        "maxAutomaticRevisions": 1,
+        "expandFromContentPlan": false,
+        "expandKind": "none",
+        "stopAfterApproval": true,
+        "allowNormalizedFacts": false,
+        "optionalWhenBlocked": false,
+        "forceTransientFailOnce": false
+      },
+      "inputRefs": {},
+      "outputRefs": {},
+      "blockers": [],
+      "warnings": [],
+      "revisionAttempts": 0
+    }
+  ],
+  "history": [
+    {
+      "at": "2026-08-17T07:57:58.829Z",
+      "event": "workflow_created",
+      "message": "Created software-onboarding-content:v1.0.0"
+    },
+    {
+      "at": "2026-08-17T07:57:58.831Z",
+      "event": "workflow_started",
+      "message": "Workflow execution started"
+    },
+    {
+      "at": "2026-08-17T07:57:58.835Z",
+      "event": "workflow_step_started",
+      "stepId": "software-onboarding",
+      "message": "Started Software onboarding"
+    },
+    {
+      "at": "2026-08-17T07:57:58.890Z",
+      "event": "workflow_step_completed",
+      "stepId": "software-onboarding",
+      "message": "Blocked: missing onboarding run"
+    },
+    {
+      "at": "2026-08-18T08:49:51.044Z",
+      "event": "workflow_resumed",
+      "message": "Workflow resumed"
+    },
+    {
+      "at": "2026-08-18T08:49:51.050Z",
+      "event": "workflow_started",
+      "message": "Workflow execution started"
+    },
+    {
+      "at": "2026-08-18T08:52:13.019Z",
+      "event": "workflow_resumed",
+      "message": "Workflow resumed"
+    },
+    {
+      "at": "2026-08-18T08:52:13.032Z",
+      "event": "workflow_started",
+      "message": "Workflow execution started"
+    },
+    {
+      "at": "2026-08-18T08:52:13.055Z",
+      "event": "workflow_step_started",
+      "stepId": "software-onboarding",
+      "message": "Started Software onboarding"
+    },
+    {
+      "at": "2026-08-18T08:52:14.061Z",
+      "event": "workflow_step_completed",
+      "stepId": "software-onboarding",
+      "message": "Reused onboarding run onboard-zoominfo-1786979764705 (ready)"
+    },
+    {
+      "at": "2026-08-18T08:52:14.071Z",
+      "event": "workflow_step_started",
+      "stepId": "content-plan",
+      "message": "Started Content plan"
+    },
+    {
+      "at": "2026-08-18T08:52:14.337Z",
+      "event": "workflow_step_completed",
+      "stepId": "content-plan",
+      "message": "Content plan from onboarding onboard-zoominfo-1786979764705 (9 candidates)"
+    },
+    {
+      "at": "2026-08-18T08:52:14.339Z",
+      "event": "workflow_step_started",
+      "stepId": "software-review",
+      "message": "Started Software Review"
+    },
+    {
+      "at": "2026-08-18T08:52:14.654Z",
+      "event": "workflow_step_completed",
+      "stepId": "software-review",
+      "message": "Agent software-review-agent → draft draft-deterministic-v1-software-review-agent-zoominfo-2026-08-18T08-52-14-625Z (qa=pass)"
+    },
+    {
+      "at": "2026-08-18T08:52:14.660Z",
+      "event": "workflow_step_started",
+      "stepId": "alternatives",
+      "message": "Started Alternatives"
+    },
+    {
+      "at": "2026-08-18T08:52:14.716Z",
+      "event": "workflow_step_completed",
+      "stepId": "alternatives",
+      "message": "Agent alternatives-agent → draft draft-deterministic-v1-alternatives-agent-zoominfo-2026-08-18T08-52-14-707Z (qa=pass)"
+    },
+    {
+      "at": "2026-08-18T08:52:14.718Z",
+      "event": "workflow_step_started",
+      "stepId": "comparisons",
+      "message": "Started Comparisons"
+    },
+    {
+      "at": "2026-08-18T08:52:14.802Z",
+      "event": "workflow_step_completed",
+      "stepId": "comparisons",
+      "message": "Agent blocked (optional): MISSING_PRODUCTS: Comparison requires two product slugs"
+    },
+    {
+      "at": "2026-08-18T08:52:14.812Z",
+      "event": "workflow_step_started",
+      "stepId": "pricing-page",
+      "message": "Started Pricing Page"
+    },
+    {
+      "at": "2026-08-18T08:52:14.856Z",
+      "event": "workflow_step_completed",
+      "stepId": "pricing-page",
+      "message": "Agent pricing-page-agent → draft draft-deterministic-v1-pricing-page-agent-zoominfo-2026-08-18T08-52-14-844Z (qa=pass)"
+    },
+    {
+      "at": "2026-08-18T08:52:14.858Z",
+      "event": "workflow_step_started",
+      "stepId": "finder-readiness",
+      "message": "Started Finder readiness"
+    },
+    {
+      "at": "2026-08-18T08:52:14.860Z",
+      "event": "workflow_step_completed",
+      "stepId": "finder-readiness",
+      "message": "Finder readiness noted for zoominfo"
+    },
+    {
+      "at": "2026-08-18T08:52:14.867Z",
+      "event": "workflow_step_started",
+      "stepId": "internal-links",
+      "message": "Started Internal Link Plan"
+    },
+    {
+      "at": "2026-08-18T08:52:14.960Z",
+      "event": "workflow_step_completed",
+      "stepId": "internal-links",
+      "message": "Agent internal-link-agent → draft draft-deterministic-v1-internal-link-agent-zoominfo-2026-08-18T08-52-14-937Z (qa=pass)"
+    },
+    {
+      "at": "2026-08-18T08:52:14.964Z",
+      "event": "workflow_step_started",
+      "stepId": "editorial-approval",
+      "message": "Started Editorial approval"
+    },
+    {
+      "at": "2026-08-18T08:52:15.511Z",
+      "event": "workflow_step_completed",
+      "stepId": "editorial-approval",
+      "message": "WAITING FOR EDITORIAL APPROVAL (appr-wf-software-onboarding-content-zoominfo-1786953477037-software-review)"
+    },
+    {
+      "at": "2026-08-18T08:52:15.517Z",
+      "event": "workflow_blocked",
+      "message": "WAITING FOR EDITORIAL APPROVAL"
+    },
+    {
+      "at": "2026-08-18T13:34:16.187Z",
+      "event": "workflow_cancelled",
+      "message": "Catalogue software page already published; agent drafts remain unpublished"
+    }
+  ],
+  "options": {
+    "generateReview": true,
+    "generatePricing": true,
+    "generateAlternatives": true,
+    "generateComparisons": true,
+    "runInternalLinks": true,
+    "stopAfterApproval": true,
+    "allowNormalizedFacts": false,
+    "dryRun": false,
+    "maxComparisons": 3,
+    "skipOnboarding": false
+  },
+  "cancelReason": "Catalogue software page already published; agent drafts remain unpublished",
+  "warnings": [
+    "comparisons blocked: MISSING_PRODUCTS: Comparison requires two product slugs"
+  ],
+  "createdAt": "2026-08-17T07:57:58.828Z",
+  "updatedAt": "2026-08-18T13:34:16.187Z"
+}

@@ -1,0 +1,830 @@
+{
+  "id": "wf-software-onboarding-content-oracle-cx-1786686374709",
+  "workflowId": "software-onboarding-content",
+  "workflowVersion": "1.0.0",
+  "name": "Software Onboarding Content: oracle-cx",
+  "targetType": "software",
+  "targetId": "oracle-cx",
+  "status": "completed-with-warnings",
+  "steps": [
+    {
+      "id": "software-onboarding",
+      "definitionStepId": "software-onboarding",
+      "handler": "software-onboarding",
+      "label": "Software onboarding",
+      "status": "completed",
+      "required": true,
+      "failurePolicy": "block-workflow",
+      "attempt": 1,
+      "maxAttempts": 2,
+      "dependsOn": [],
+      "priority": "critical",
+      "config": {
+        "maxAutomaticRevisions": 1,
+        "expandFromContentPlan": false,
+        "expandKind": "none",
+        "stopAfterApproval": true,
+        "allowNormalizedFacts": false,
+        "optionalWhenBlocked": false,
+        "forceTransientFailOnce": false
+      },
+      "inputRefs": {},
+      "outputRefs": {
+        "softwareOnboardingRunId": "onboard-oracle-cx-1786686341944"
+      },
+      "blockers": [],
+      "warnings": [],
+      "startedAt": "2026-08-14T05:46:15.057Z",
+      "completedAt": "2026-08-14T05:46:15.094Z",
+      "revisionAttempts": 0
+    },
+    {
+      "id": "content-plan",
+      "definitionStepId": "content-plan",
+      "handler": "content-plan",
+      "label": "Content plan",
+      "status": "completed",
+      "required": true,
+      "failurePolicy": "block-workflow",
+      "attempt": 1,
+      "maxAttempts": 2,
+      "dependsOn": [
+        "software-onboarding"
+      ],
+      "priority": "high",
+      "config": {
+        "maxAutomaticRevisions": 1,
+        "expandFromContentPlan": false,
+        "expandKind": "none",
+        "stopAfterApproval": true,
+        "allowNormalizedFacts": false,
+        "optionalWhenBlocked": false,
+        "forceTransientFailOnce": false
+      },
+      "inputRefs": {},
+      "outputRefs": {
+        "softwareOnboardingRunId": "onboard-oracle-cx-1786686341944",
+        "comparisonTargets": "oracle-cx-vs-salesforce,dynamics-365-vs-oracle-cx,hubspot-vs-oracle-cx",
+        "pageCandidateCount": "9"
+      },
+      "blockers": [],
+      "warnings": [],
+      "startedAt": "2026-08-14T05:46:15.095Z",
+      "completedAt": "2026-08-14T05:46:15.120Z",
+      "revisionAttempts": 0
+    },
+    {
+      "id": "software-review",
+      "definitionStepId": "software-review",
+      "handler": "agent-run",
+      "label": "Software Review",
+      "status": "completed",
+      "required": true,
+      "failurePolicy": "block-workflow",
+      "attempt": 1,
+      "maxAttempts": 2,
+      "dependsOn": [
+        "content-plan"
+      ],
+      "priority": "high",
+      "config": {
+        "agentId": "software-review-agent",
+        "targetSlug": "oracle-cx",
+        "maxAutomaticRevisions": 1,
+        "expandFromContentPlan": false,
+        "expandKind": "none",
+        "stopAfterApproval": true,
+        "allowNormalizedFacts": false,
+        "optionalWhenBlocked": false,
+        "forceTransientFailOnce": false
+      },
+      "inputRefs": {},
+      "outputRefs": {
+        "draftId": "draft-deterministic-v1-software-review-agent-oracle-cx-2026-08-14T05-46-15-151Z",
+        "qaStatus": "pass",
+        "agentId": "software-review-agent",
+        "target": "oracle-cx"
+      },
+      "inputSnapshot": {
+        "researchFactIds": [
+          "fact-oracle-cx-pricing.hasFreePlan",
+          "fact-oracle-cx-pricing.hasFreeTrial",
+          "fact-oracle-cx-pricing.startingPriceMonthly",
+          "fact-oracle-cx-pricing.currency",
+          "fact-oracle-cx-pricing.model",
+          "fact-oracle-cx-pricing.plans.professional",
+          "fact-oracle-cx-pricing.plans.enterprise",
+          "fact-oracle-cx-features.contact-management",
+          "fact-oracle-cx-features.lead-management",
+          "fact-oracle-cx-features.pipeline-management",
+          "fact-oracle-cx-features.deal-management",
+          "fact-oracle-cx-features.email-sync",
+          "fact-oracle-cx-features.workflow-automation",
+          "fact-oracle-cx-features.sales-automation",
+          "fact-oracle-cx-features.reporting",
+          "fact-oracle-cx-features.forecasting",
+          "fact-oracle-cx-features.custom-fields",
+          "fact-oracle-cx-features.custom-pipelines",
+          "fact-oracle-cx-features.mobile-app",
+          "fact-oracle-cx-features.ai-assistance",
+          "fact-oracle-cx-features.integrations",
+          "fact-oracle-cx-positioning.summary",
+          "fact-oracle-cx-ai.assistant",
+          "fact-oracle-cx-ai.forecasting",
+          "fact-oracle-cx-ai.recommendations"
+        ],
+        "methodologySlug": "crm-editorial",
+        "methodologyVersion": "1.0.0",
+        "agentVersion": "1.0.0",
+        "contextBuiltAt": "2026-08-14T05:46:15.147Z"
+      },
+      "blockers": [],
+      "warnings": [],
+      "agentTaskId": "exec-software-review-agent-oracle-cx-1786686375122",
+      "draftId": "draft-deterministic-v1-software-review-agent-oracle-cx-2026-08-14T05-46-15-151Z",
+      "startedAt": "2026-08-14T05:46:15.121Z",
+      "completedAt": "2026-08-14T05:46:15.157Z",
+      "revisionAttempts": 0
+    },
+    {
+      "id": "pricing-page",
+      "definitionStepId": "pricing-page",
+      "handler": "agent-run",
+      "label": "Pricing Page",
+      "status": "completed-with-warning",
+      "required": false,
+      "failurePolicy": "continue-with-warning",
+      "attempt": 1,
+      "maxAttempts": 2,
+      "dependsOn": [
+        "content-plan"
+      ],
+      "priority": "normal",
+      "config": {
+        "agentId": "pricing-page-agent",
+        "targetSlug": "oracle-cx",
+        "maxAutomaticRevisions": 1,
+        "expandFromContentPlan": false,
+        "expandKind": "none",
+        "stopAfterApproval": true,
+        "allowNormalizedFacts": false,
+        "optionalWhenBlocked": true,
+        "forceTransientFailOnce": false
+      },
+      "inputRefs": {},
+      "outputRefs": {},
+      "blockers": [],
+      "warnings": [
+        "PRICING_UNVERIFIED: Product pricing data is unverified",
+        "Manually advanced: optional pricing-page QA (UNVERIFIED_NUMBER / unverified) during CRM batch onboard"
+      ],
+      "startedAt": "2026-08-14T05:46:15.216Z",
+      "completedAt": "2026-08-14T05:46:15.223Z",
+      "revisionAttempts": 0
+    },
+    {
+      "id": "alternatives",
+      "definitionStepId": "alternatives",
+      "handler": "agent-run",
+      "label": "Alternatives",
+      "status": "completed",
+      "required": false,
+      "failurePolicy": "continue-with-warning",
+      "attempt": 1,
+      "maxAttempts": 2,
+      "dependsOn": [
+        "content-plan"
+      ],
+      "priority": "normal",
+      "config": {
+        "agentId": "alternatives-agent",
+        "targetSlug": "oracle-cx",
+        "maxAutomaticRevisions": 1,
+        "expandFromContentPlan": false,
+        "expandKind": "none",
+        "stopAfterApproval": true,
+        "allowNormalizedFacts": false,
+        "optionalWhenBlocked": true,
+        "forceTransientFailOnce": false
+      },
+      "inputRefs": {},
+      "outputRefs": {
+        "draftId": "draft-deterministic-v1-alternatives-agent-oracle-cx-2026-08-14T05-46-15-164Z",
+        "qaStatus": "pass",
+        "agentId": "alternatives-agent",
+        "target": "oracle-cx"
+      },
+      "inputSnapshot": {
+        "researchFactIds": [
+          "fact-oracle-cx-pricing.hasFreePlan",
+          "fact-oracle-cx-pricing.hasFreeTrial",
+          "fact-oracle-cx-pricing.startingPriceMonthly",
+          "fact-oracle-cx-pricing.currency",
+          "fact-oracle-cx-pricing.model",
+          "fact-oracle-cx-pricing.plans.professional",
+          "fact-oracle-cx-pricing.plans.enterprise",
+          "fact-oracle-cx-features.contact-management",
+          "fact-oracle-cx-features.lead-management",
+          "fact-oracle-cx-features.pipeline-management",
+          "fact-oracle-cx-features.deal-management",
+          "fact-oracle-cx-features.email-sync",
+          "fact-oracle-cx-features.workflow-automation",
+          "fact-oracle-cx-features.sales-automation",
+          "fact-oracle-cx-features.reporting",
+          "fact-oracle-cx-features.forecasting",
+          "fact-oracle-cx-features.custom-fields",
+          "fact-oracle-cx-features.custom-pipelines",
+          "fact-oracle-cx-features.mobile-app",
+          "fact-oracle-cx-features.ai-assistance",
+          "fact-oracle-cx-features.integrations",
+          "fact-oracle-cx-positioning.summary",
+          "fact-oracle-cx-ai.assistant",
+          "fact-oracle-cx-ai.forecasting",
+          "fact-oracle-cx-ai.recommendations"
+        ],
+        "methodologySlug": "crm-editorial",
+        "methodologyVersion": "1.0.0",
+        "agentVersion": "1.0.0",
+        "contextBuiltAt": "2026-08-14T05:46:15.163Z"
+      },
+      "blockers": [],
+      "warnings": [],
+      "agentTaskId": "exec-alternatives-agent-oracle-cx-1786686375159",
+      "draftId": "draft-deterministic-v1-alternatives-agent-oracle-cx-2026-08-14T05-46-15-164Z",
+      "startedAt": "2026-08-14T05:46:15.158Z",
+      "completedAt": "2026-08-14T05:46:15.166Z",
+      "revisionAttempts": 0
+    },
+    {
+      "id": "comparison:oracle-cx-vs-salesforce",
+      "definitionStepId": "comparisons",
+      "handler": "agent-run",
+      "label": "Comparison oracle-cx-vs-salesforce",
+      "status": "completed",
+      "required": false,
+      "failurePolicy": "continue-with-warning",
+      "attempt": 1,
+      "maxAttempts": 2,
+      "dependsOn": [
+        "content-plan"
+      ],
+      "priority": "normal",
+      "config": {
+        "agentId": "comparison-agent",
+        "targetSlug": "oracle-cx-vs-salesforce",
+        "maxAutomaticRevisions": 1,
+        "expandFromContentPlan": true,
+        "expandKind": "comparisons",
+        "stopAfterApproval": true,
+        "allowNormalizedFacts": false,
+        "optionalWhenBlocked": true,
+        "forceTransientFailOnce": false
+      },
+      "expansionKey": "oracle-cx-vs-salesforce",
+      "inputRefs": {},
+      "outputRefs": {
+        "draftId": "draft-deterministic-v1-comparison-agent-oracle-cx-vs-salesforce-2026-08-14T05-46-15-207Z",
+        "qaStatus": "pass",
+        "agentId": "comparison-agent",
+        "target": "oracle-cx-vs-salesforce"
+      },
+      "inputSnapshot": {
+        "researchFactIds": [],
+        "methodologySlug": "crm-editorial",
+        "methodologyVersion": "1.0.0",
+        "agentVersion": "1.0.0",
+        "contextBuiltAt": "2026-08-14T05:46:15.205Z"
+      },
+      "blockers": [],
+      "warnings": [],
+      "agentTaskId": "exec-comparison-agent-oracle-cx-vs-salesforce-1786686375193",
+      "draftId": "draft-deterministic-v1-comparison-agent-oracle-cx-vs-salesforce-2026-08-14T05-46-15-207Z",
+      "startedAt": "2026-08-14T05:46:15.193Z",
+      "completedAt": "2026-08-14T05:46:15.213Z",
+      "revisionAttempts": 0
+    },
+    {
+      "id": "comparison:dynamics-365-vs-oracle-cx",
+      "definitionStepId": "comparisons",
+      "handler": "agent-run",
+      "label": "Comparison dynamics-365-vs-oracle-cx",
+      "status": "completed",
+      "required": false,
+      "failurePolicy": "continue-with-warning",
+      "attempt": 1,
+      "maxAttempts": 2,
+      "dependsOn": [
+        "content-plan"
+      ],
+      "priority": "normal",
+      "config": {
+        "agentId": "comparison-agent",
+        "targetSlug": "dynamics-365-vs-oracle-cx",
+        "maxAutomaticRevisions": 1,
+        "expandFromContentPlan": true,
+        "expandKind": "comparisons",
+        "stopAfterApproval": true,
+        "allowNormalizedFacts": false,
+        "optionalWhenBlocked": true,
+        "forceTransientFailOnce": false
+      },
+      "expansionKey": "dynamics-365-vs-oracle-cx",
+      "inputRefs": {},
+      "outputRefs": {
+        "draftId": "draft-deterministic-v1-comparison-agent-dynamics-365-vs-oracle-cx-2026-08-14T05-46-15-178Z",
+        "qaStatus": "pass",
+        "agentId": "comparison-agent",
+        "target": "dynamics-365-vs-oracle-cx"
+      },
+      "inputSnapshot": {
+        "researchFactIds": [],
+        "methodologySlug": "crm-editorial",
+        "methodologyVersion": "1.0.0",
+        "agentVersion": "1.0.0",
+        "contextBuiltAt": "2026-08-14T05:46:15.176Z"
+      },
+      "blockers": [],
+      "warnings": [],
+      "agentTaskId": "exec-comparison-agent-dynamics-365-vs-oracle-cx-1786686375169",
+      "draftId": "draft-deterministic-v1-comparison-agent-dynamics-365-vs-oracle-cx-2026-08-14T05-46-15-178Z",
+      "startedAt": "2026-08-14T05:46:15.167Z",
+      "completedAt": "2026-08-14T05:46:15.182Z",
+      "revisionAttempts": 0
+    },
+    {
+      "id": "comparison:hubspot-vs-oracle-cx",
+      "definitionStepId": "comparisons",
+      "handler": "agent-run",
+      "label": "Comparison hubspot-vs-oracle-cx",
+      "status": "completed",
+      "required": false,
+      "failurePolicy": "continue-with-warning",
+      "attempt": 1,
+      "maxAttempts": 2,
+      "dependsOn": [
+        "content-plan"
+      ],
+      "priority": "normal",
+      "config": {
+        "agentId": "comparison-agent",
+        "targetSlug": "hubspot-vs-oracle-cx",
+        "maxAutomaticRevisions": 1,
+        "expandFromContentPlan": true,
+        "expandKind": "comparisons",
+        "stopAfterApproval": true,
+        "allowNormalizedFacts": false,
+        "optionalWhenBlocked": true,
+        "forceTransientFailOnce": false
+      },
+      "expansionKey": "hubspot-vs-oracle-cx",
+      "inputRefs": {},
+      "outputRefs": {
+        "draftId": "draft-deterministic-v1-comparison-agent-hubspot-vs-oracle-cx-2026-08-14T05-46-15-190Z",
+        "qaStatus": "pass",
+        "agentId": "comparison-agent",
+        "target": "hubspot-vs-oracle-cx"
+      },
+      "inputSnapshot": {
+        "researchFactIds": [],
+        "methodologySlug": "crm-editorial",
+        "methodologyVersion": "1.0.0",
+        "agentVersion": "1.0.0",
+        "contextBuiltAt": "2026-08-14T05:46:15.189Z"
+      },
+      "blockers": [],
+      "warnings": [],
+      "agentTaskId": "exec-comparison-agent-hubspot-vs-oracle-cx-1786686375183",
+      "draftId": "draft-deterministic-v1-comparison-agent-hubspot-vs-oracle-cx-2026-08-14T05-46-15-190Z",
+      "startedAt": "2026-08-14T05:46:15.183Z",
+      "completedAt": "2026-08-14T05:46:15.192Z",
+      "revisionAttempts": 0
+    },
+    {
+      "id": "internal-links",
+      "definitionStepId": "internal-links",
+      "handler": "internal-link",
+      "label": "Internal Link Plan",
+      "status": "completed",
+      "required": false,
+      "failurePolicy": "continue-with-warning",
+      "attempt": 1,
+      "maxAttempts": 2,
+      "dependsOn": [
+        "software-review"
+      ],
+      "priority": "low",
+      "config": {
+        "agentId": "internal-link-agent",
+        "maxAutomaticRevisions": 1,
+        "expandFromContentPlan": false,
+        "expandKind": "none",
+        "stopAfterApproval": true,
+        "allowNormalizedFacts": false,
+        "optionalWhenBlocked": false,
+        "forceTransientFailOnce": false
+      },
+      "inputRefs": {},
+      "outputRefs": {
+        "draftId": "draft-deterministic-v1-internal-link-agent-oracle-cx-2026-08-14T05-46-15-241Z",
+        "qaStatus": "pass",
+        "agentId": "internal-link-agent",
+        "target": "oracle-cx"
+      },
+      "inputSnapshot": {
+        "researchFactIds": [
+          "fact-oracle-cx-pricing.hasFreePlan",
+          "fact-oracle-cx-pricing.hasFreeTrial",
+          "fact-oracle-cx-pricing.startingPriceMonthly",
+          "fact-oracle-cx-pricing.currency",
+          "fact-oracle-cx-pricing.model",
+          "fact-oracle-cx-pricing.plans.professional",
+          "fact-oracle-cx-pricing.plans.enterprise",
+          "fact-oracle-cx-features.contact-management",
+          "fact-oracle-cx-features.lead-management",
+          "fact-oracle-cx-features.pipeline-management",
+          "fact-oracle-cx-features.deal-management",
+          "fact-oracle-cx-features.email-sync",
+          "fact-oracle-cx-features.workflow-automation",
+          "fact-oracle-cx-features.sales-automation",
+          "fact-oracle-cx-features.reporting",
+          "fact-oracle-cx-features.forecasting",
+          "fact-oracle-cx-features.custom-fields",
+          "fact-oracle-cx-features.custom-pipelines",
+          "fact-oracle-cx-features.mobile-app",
+          "fact-oracle-cx-features.ai-assistance",
+          "fact-oracle-cx-features.integrations",
+          "fact-oracle-cx-positioning.summary",
+          "fact-oracle-cx-ai.assistant",
+          "fact-oracle-cx-ai.forecasting",
+          "fact-oracle-cx-ai.recommendations"
+        ],
+        "methodologySlug": "crm-editorial",
+        "methodologyVersion": "1.0.0",
+        "agentVersion": "1.0.0",
+        "contextBuiltAt": "2026-08-14T05:46:15.240Z"
+      },
+      "blockers": [],
+      "warnings": [],
+      "agentTaskId": "exec-internal-link-agent-oracle-cx-1786686375229",
+      "draftId": "draft-deterministic-v1-internal-link-agent-oracle-cx-2026-08-14T05-46-15-241Z",
+      "startedAt": "2026-08-14T05:46:15.228Z",
+      "completedAt": "2026-08-14T05:46:15.243Z",
+      "revisionAttempts": 0
+    },
+    {
+      "id": "finder-readiness",
+      "definitionStepId": "finder-readiness",
+      "handler": "update-recommendation-readiness",
+      "label": "Finder readiness",
+      "status": "completed",
+      "required": false,
+      "failurePolicy": "continue",
+      "attempt": 1,
+      "maxAttempts": 2,
+      "dependsOn": [
+        "content-plan"
+      ],
+      "priority": "low",
+      "config": {
+        "maxAutomaticRevisions": 1,
+        "expandFromContentPlan": false,
+        "expandKind": "none",
+        "stopAfterApproval": true,
+        "allowNormalizedFacts": false,
+        "optionalWhenBlocked": false,
+        "forceTransientFailOnce": false
+      },
+      "inputRefs": {},
+      "outputRefs": {
+        "finderReadiness": "checked"
+      },
+      "blockers": [],
+      "warnings": [],
+      "startedAt": "2026-08-14T05:46:15.225Z",
+      "completedAt": "2026-08-14T05:46:15.226Z",
+      "revisionAttempts": 0
+    },
+    {
+      "id": "editorial-approval",
+      "definitionStepId": "editorial-approval",
+      "handler": "approval-check",
+      "label": "Editorial approval",
+      "status": "completed",
+      "required": true,
+      "failurePolicy": "manual-review",
+      "attempt": 2,
+      "maxAttempts": 2,
+      "dependsOn": [
+        "software-review"
+      ],
+      "priority": "critical",
+      "config": {
+        "approvalType": "editorial",
+        "maxAutomaticRevisions": 1,
+        "expandFromContentPlan": false,
+        "expandKind": "none",
+        "stopAfterApproval": true,
+        "allowNormalizedFacts": false,
+        "optionalWhenBlocked": false,
+        "forceTransientFailOnce": false
+      },
+      "inputRefs": {},
+      "outputRefs": {
+        "approvalId": "appr-wf-software-onboarding-content-oracle-cx-1786686374709-software-review",
+        "draftId": "draft-deterministic-v1-software-review-agent-oracle-cx-2026-08-14T05-46-15-151Z",
+        "approvalIds": "appr-wf-software-onboarding-content-oracle-cx-1786686374709-software-review"
+      },
+      "blockers": [],
+      "warnings": [
+        "Approval received — resuming",
+        "5 optional draft(s) may still need separate editorial review"
+      ],
+      "approvalId": "appr-wf-software-onboarding-content-oracle-cx-1786686374709-software-review",
+      "startedAt": "2026-08-14T05:47:25.920Z",
+      "completedAt": "2026-08-14T05:47:25.988Z",
+      "revisionAttempts": 0
+    },
+    {
+      "id": "pre-publish-validation",
+      "definitionStepId": "pre-publish-validation",
+      "handler": "pre-publish-validation",
+      "label": "Pre-publish validation",
+      "status": "completed",
+      "required": true,
+      "failurePolicy": "block-workflow",
+      "attempt": 2,
+      "maxAttempts": 2,
+      "dependsOn": [
+        "editorial-approval"
+      ],
+      "priority": "critical",
+      "config": {
+        "maxAutomaticRevisions": 1,
+        "expandFromContentPlan": false,
+        "expandKind": "none",
+        "stopAfterApproval": true,
+        "allowNormalizedFacts": false,
+        "optionalWhenBlocked": false,
+        "forceTransientFailOnce": false
+      },
+      "inputRefs": {},
+      "outputRefs": {
+        "publishState": "READY_TO_PUBLISH"
+      },
+      "blockers": [],
+      "warnings": [
+        "stopAfterApproval: workflow will not publish automatically"
+      ],
+      "startedAt": "2026-08-14T05:49:42.605Z",
+      "completedAt": "2026-08-14T05:49:43.067Z",
+      "revisionAttempts": 0
+    }
+  ],
+  "history": [
+    {
+      "at": "2026-08-14T05:46:15.054Z",
+      "event": "workflow_created",
+      "message": "Created software-onboarding-content:v1.0.0"
+    },
+    {
+      "at": "2026-08-14T05:46:15.056Z",
+      "event": "workflow_started",
+      "message": "Workflow execution started"
+    },
+    {
+      "at": "2026-08-14T05:46:15.057Z",
+      "event": "workflow_step_started",
+      "stepId": "software-onboarding",
+      "message": "Started Software onboarding"
+    },
+    {
+      "at": "2026-08-14T05:46:15.094Z",
+      "event": "workflow_step_completed",
+      "stepId": "software-onboarding",
+      "message": "Reused onboarding run onboard-oracle-cx-1786686341944 (review-required)"
+    },
+    {
+      "at": "2026-08-14T05:46:15.095Z",
+      "event": "workflow_step_started",
+      "stepId": "content-plan",
+      "message": "Started Content plan"
+    },
+    {
+      "at": "2026-08-14T05:46:15.120Z",
+      "event": "workflow_step_completed",
+      "stepId": "content-plan",
+      "message": "Content plan from onboarding onboard-oracle-cx-1786686341944 (9 candidates)"
+    },
+    {
+      "at": "2026-08-14T05:46:15.121Z",
+      "event": "workflow_step_started",
+      "stepId": "software-review",
+      "message": "Started Software Review"
+    },
+    {
+      "at": "2026-08-14T05:46:15.157Z",
+      "event": "workflow_step_completed",
+      "stepId": "software-review",
+      "message": "Agent software-review-agent → draft draft-deterministic-v1-software-review-agent-oracle-cx-2026-08-14T05-46-15-151Z (qa=pass)"
+    },
+    {
+      "at": "2026-08-14T05:46:15.158Z",
+      "event": "workflow_step_started",
+      "stepId": "alternatives",
+      "message": "Started Alternatives"
+    },
+    {
+      "at": "2026-08-14T05:46:15.166Z",
+      "event": "workflow_step_completed",
+      "stepId": "alternatives",
+      "message": "Agent alternatives-agent → draft draft-deterministic-v1-alternatives-agent-oracle-cx-2026-08-14T05-46-15-164Z (qa=pass)"
+    },
+    {
+      "at": "2026-08-14T05:46:15.167Z",
+      "event": "workflow_step_started",
+      "stepId": "comparison:dynamics-365-vs-oracle-cx",
+      "message": "Started Comparison dynamics-365-vs-oracle-cx"
+    },
+    {
+      "at": "2026-08-14T05:46:15.182Z",
+      "event": "workflow_step_completed",
+      "stepId": "comparison:dynamics-365-vs-oracle-cx",
+      "message": "Agent comparison-agent → draft draft-deterministic-v1-comparison-agent-dynamics-365-vs-oracle-cx-2026-08-14T05-46-15-178Z (qa=pass)"
+    },
+    {
+      "at": "2026-08-14T05:46:15.182Z",
+      "event": "workflow_step_started",
+      "stepId": "comparison:hubspot-vs-oracle-cx",
+      "message": "Started Comparison hubspot-vs-oracle-cx"
+    },
+    {
+      "at": "2026-08-14T05:46:15.192Z",
+      "event": "workflow_step_completed",
+      "stepId": "comparison:hubspot-vs-oracle-cx",
+      "message": "Agent comparison-agent → draft draft-deterministic-v1-comparison-agent-hubspot-vs-oracle-cx-2026-08-14T05-46-15-190Z (qa=pass)"
+    },
+    {
+      "at": "2026-08-14T05:46:15.193Z",
+      "event": "workflow_step_started",
+      "stepId": "comparison:oracle-cx-vs-salesforce",
+      "message": "Started Comparison oracle-cx-vs-salesforce"
+    },
+    {
+      "at": "2026-08-14T05:46:15.213Z",
+      "event": "workflow_step_completed",
+      "stepId": "comparison:oracle-cx-vs-salesforce",
+      "message": "Agent comparison-agent → draft draft-deterministic-v1-comparison-agent-oracle-cx-vs-salesforce-2026-08-14T05-46-15-207Z (qa=pass)"
+    },
+    {
+      "at": "2026-08-14T05:46:15.215Z",
+      "event": "workflow_step_started",
+      "stepId": "pricing-page",
+      "message": "Started Pricing Page"
+    },
+    {
+      "at": "2026-08-14T05:46:15.223Z",
+      "event": "workflow_step_completed",
+      "stepId": "pricing-page",
+      "message": "Agent blocked (optional): PRICING_UNVERIFIED: Product pricing data is unverified"
+    },
+    {
+      "at": "2026-08-14T05:46:15.225Z",
+      "event": "workflow_step_started",
+      "stepId": "finder-readiness",
+      "message": "Started Finder readiness"
+    },
+    {
+      "at": "2026-08-14T05:46:15.226Z",
+      "event": "workflow_step_completed",
+      "stepId": "finder-readiness",
+      "message": "Finder readiness noted for oracle-cx"
+    },
+    {
+      "at": "2026-08-14T05:46:15.228Z",
+      "event": "workflow_step_started",
+      "stepId": "internal-links",
+      "message": "Started Internal Link Plan"
+    },
+    {
+      "at": "2026-08-14T05:46:15.243Z",
+      "event": "workflow_step_completed",
+      "stepId": "internal-links",
+      "message": "Agent internal-link-agent → draft draft-deterministic-v1-internal-link-agent-oracle-cx-2026-08-14T05-46-15-241Z (qa=pass)"
+    },
+    {
+      "at": "2026-08-14T05:46:15.245Z",
+      "event": "workflow_step_started",
+      "stepId": "editorial-approval",
+      "message": "Started Editorial approval"
+    },
+    {
+      "at": "2026-08-14T05:46:15.284Z",
+      "event": "workflow_step_completed",
+      "stepId": "editorial-approval",
+      "message": "WAITING FOR EDITORIAL APPROVAL (appr-wf-software-onboarding-content-oracle-cx-1786686374709-software-review)"
+    },
+    {
+      "at": "2026-08-14T05:47:25.916Z",
+      "event": "workflow_resumed",
+      "message": "Workflow resumed"
+    },
+    {
+      "at": "2026-08-14T05:47:25.919Z",
+      "event": "workflow_started",
+      "message": "Workflow execution started"
+    },
+    {
+      "at": "2026-08-14T05:47:25.920Z",
+      "event": "workflow_step_started",
+      "stepId": "editorial-approval",
+      "message": "Started Editorial approval"
+    },
+    {
+      "at": "2026-08-14T05:47:25.988Z",
+      "event": "workflow_step_completed",
+      "stepId": "editorial-approval",
+      "message": "Required editorial approvals satisfied"
+    },
+    {
+      "at": "2026-08-14T05:47:25.991Z",
+      "event": "workflow_step_started",
+      "stepId": "pre-publish-validation",
+      "message": "Started Pre-publish validation"
+    },
+    {
+      "at": "2026-08-14T05:47:26.274Z",
+      "event": "workflow_step_completed",
+      "stepId": "pre-publish-validation",
+      "message": "Pre-publish validation blocked: Stale context for comparison:oracle-cx-vs-salesforce: removed-critical-fact:fact-salesforce-pricing.hasFreePlan; removed-critical-fact:fact-salesforce-pricing.hasFreeTrial; removed-critical-fact:fact-salesforce-pricing.startingPriceMonthly; removed-critical-fact:fact-salesforce-pricing.currency; removed-critical-fact:fact-salesforce-pricing.model; removed-critical-fact:fact-salesforce-pricing.plans.starter-suite; removed-critical-fact:fact-salesforce-pricing.plans.pro-suite; removed-critical-fact:fact-salesforce-pricing.plans.enterprise; removed-critical-fact:fact-salesforce-pricing.plans.unlimited; removed-critical-fact:fact-salesforce-pricing.addons; removed-critical-fact:fact-salesforce-pricing.agentforce1; Stale context for comparison:dynamics-365-vs-oracle-cx: removed-critical-fact:fact-dynamics-365-pricing.hasFreePlan; removed-critical-fact:fact-dynamics-365-pricing.hasFreeTrial; removed-critical-fact:fact-dynamics-365-pricing.trialDays; removed-critical-fact:fact-dynamics-365-pricing.startingPriceMonthly; removed-critical-fact:fact-dynamics-365-pricing.currency; removed-critical-fact:fact-dynamics-365-pricing.model; removed-critical-fact:fact-dynamics-365-pricing.plans.sales-professional; removed-critical-fact:fact-dynamics-365-pricing.plans.sales-enterprise; removed-critical-fact:fact-dynamics-365-pricing.plans.sales-premium; removed-critical-fact:fact-dynamics-365-pricing.plans.relationship-sales; Stale context for comparison:hubspot-vs-oracle-cx: removed-critical-fact:fact-hubspot-pricing.hasFreePlan; removed-critical-fact:fact-hubspot-pricing.hasFreeTrial; removed-critical-fact:fact-hubspot-pricing.startingPriceMonthly; removed-critical-fact:fact-hubspot-pricing.currency; removed-critical-fact:fact-hubspot-pricing.model; removed-critical-fact:fact-hubspot-pricing.plans.free; removed-critical-fact:fact-hubspot-pricing.plans.starter; removed-critical-fact:fact-hubspot-pricing.plans.professional; removed-critical-fact:fact-hubspot-pricing.plans.enterprise; removed-critical-fact:fact-hubspot-pricing.sales-hub.ladder; removed-critical-fact:fact-hubspot-pricing.billing-notes; removed-critical-fact:fact-hubspot-pricing.sales-hub.professional.catalog; removed-critical-fact:fact-hubspot-pricing.sales-hub.professional.marketing; removed-critical-fact:fact-hubspot-pricing.smart-crm.starter.catalog"
+    },
+    {
+      "at": "2026-08-14T05:47:41.175Z",
+      "event": "workflow_resumed",
+      "message": "Workflow resumed"
+    },
+    {
+      "at": "2026-08-14T05:47:41.177Z",
+      "event": "workflow_started",
+      "message": "Workflow execution started"
+    },
+    {
+      "at": "2026-08-14T05:49:42.600Z",
+      "event": "workflow_resumed",
+      "message": "Workflow resumed"
+    },
+    {
+      "at": "2026-08-14T05:49:42.603Z",
+      "event": "workflow_started",
+      "message": "Workflow execution started"
+    },
+    {
+      "at": "2026-08-14T05:49:42.605Z",
+      "event": "workflow_step_started",
+      "stepId": "pre-publish-validation",
+      "message": "Started Pre-publish validation"
+    },
+    {
+      "at": "2026-08-14T05:49:43.067Z",
+      "event": "workflow_step_completed",
+      "stepId": "pre-publish-validation",
+      "message": "Pre-publish validation passed — READY TO PUBLISH (manual)"
+    },
+    {
+      "at": "2026-08-14T05:49:43.069Z",
+      "event": "workflow_completed",
+      "message": "Workflow completed-with-warnings"
+    },
+    {
+      "at": "2026-08-14T05:50:04.342Z",
+      "event": "workflow_resumed",
+      "message": "Workflow resumed"
+    },
+    {
+      "at": "2026-08-14T05:50:04.344Z",
+      "event": "workflow_started",
+      "message": "Workflow execution started"
+    },
+    {
+      "at": "2026-08-14T05:50:04.346Z",
+      "event": "workflow_completed",
+      "message": "Workflow completed-with-warnings"
+    }
+  ],
+  "options": {
+    "generateReview": true,
+    "generatePricing": true,
+    "generateAlternatives": true,
+    "generateComparisons": true,
+    "runInternalLinks": true,
+    "stopAfterApproval": true,
+    "allowNormalizedFacts": false,
+    "dryRun": false,
+    "maxComparisons": 3,
+    "skipOnboarding": false
+  },
+  "warnings": [
+    "pricing-page blocked: PRICING_UNVERIFIED: Product pricing data is unverified"
+  ],
+  "createdAt": "2026-08-14T05:46:15.053Z",
+  "updatedAt": "2026-08-14T05:50:04.346Z"
+}

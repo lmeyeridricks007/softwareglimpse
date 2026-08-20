@@ -1,0 +1,619 @@
+{
+  "id": "wf-software-onboarding-content-sanebox-1786622899627",
+  "workflowId": "software-onboarding-content",
+  "workflowVersion": "1.0.0",
+  "name": "Software Onboarding Content: sanebox",
+  "targetType": "software",
+  "targetId": "sanebox",
+  "status": "cancelled",
+  "steps": [
+    {
+      "id": "software-onboarding",
+      "definitionStepId": "software-onboarding",
+      "handler": "software-onboarding",
+      "label": "Software onboarding",
+      "status": "completed",
+      "required": true,
+      "failurePolicy": "block-workflow",
+      "attempt": 2,
+      "maxAttempts": 2,
+      "dependsOn": [],
+      "priority": "critical",
+      "config": {
+        "maxAutomaticRevisions": 1,
+        "expandFromContentPlan": false,
+        "expandKind": "none",
+        "stopAfterApproval": true,
+        "allowNormalizedFacts": false,
+        "optionalWhenBlocked": false,
+        "forceTransientFailOnce": false
+      },
+      "inputRefs": {},
+      "outputRefs": {
+        "softwareOnboardingRunId": "onboard-sanebox-1787043097770"
+      },
+      "blockers": [],
+      "warnings": [
+        "Re-queued blocked onboarding attach on resume"
+      ],
+      "startedAt": "2026-08-18T08:52:15.529Z",
+      "completedAt": "2026-08-18T08:52:16.040Z",
+      "revisionAttempts": 0
+    },
+    {
+      "id": "content-plan",
+      "definitionStepId": "content-plan",
+      "handler": "content-plan",
+      "label": "Content plan",
+      "status": "completed",
+      "required": true,
+      "failurePolicy": "block-workflow",
+      "attempt": 1,
+      "maxAttempts": 2,
+      "dependsOn": [
+        "software-onboarding"
+      ],
+      "priority": "high",
+      "config": {
+        "maxAutomaticRevisions": 1,
+        "expandFromContentPlan": false,
+        "expandKind": "none",
+        "stopAfterApproval": true,
+        "allowNormalizedFacts": false,
+        "optionalWhenBlocked": false,
+        "forceTransientFailOnce": false
+      },
+      "inputRefs": {},
+      "outputRefs": {
+        "softwareOnboardingRunId": "onboard-sanebox-1787043097770",
+        "comparisonTargets": "fastmail-vs-sanebox",
+        "pageCandidateCount": "5"
+      },
+      "blockers": [],
+      "warnings": [],
+      "startedAt": "2026-08-18T08:52:16.089Z",
+      "completedAt": "2026-08-18T08:52:16.349Z",
+      "revisionAttempts": 0
+    },
+    {
+      "id": "software-review",
+      "definitionStepId": "software-review",
+      "handler": "agent-run",
+      "label": "Software Review",
+      "status": "completed",
+      "required": true,
+      "failurePolicy": "block-workflow",
+      "attempt": 1,
+      "maxAttempts": 2,
+      "dependsOn": [
+        "content-plan"
+      ],
+      "priority": "high",
+      "config": {
+        "agentId": "software-review-agent",
+        "targetSlug": "sanebox",
+        "maxAutomaticRevisions": 1,
+        "expandFromContentPlan": false,
+        "expandKind": "none",
+        "stopAfterApproval": true,
+        "allowNormalizedFacts": false,
+        "optionalWhenBlocked": false,
+        "forceTransientFailOnce": false
+      },
+      "inputRefs": {},
+      "outputRefs": {
+        "draftId": "draft-deterministic-v1-software-review-agent-sanebox-2026-08-18T08-52-16-397Z",
+        "qaStatus": "pass",
+        "agentId": "software-review-agent",
+        "target": "sanebox"
+      },
+      "inputSnapshot": {
+        "researchFactIds": [
+          "fact-sanebox-identity.shortDescription",
+          "fact-sanebox-positioning.vendorClaim",
+          "fact-sanebox-positioning.jobCluster",
+          "fact-sanebox-pricing.model",
+          "fact-sanebox-pricing.hasFreePlan",
+          "fact-sanebox-pricing.hasFreeTrial",
+          "fact-sanebox-positioning.membershipRole",
+          "fact-sanebox-pricing.startingPriceMonthly",
+          "fact-sanebox-pricing.plans.snack",
+          "fact-sanebox-pricing.plans.lunch",
+          "fact-sanebox-pricing.plans.dinner",
+          "fact-sanebox-features.cloud-phone",
+          "fact-sanebox-features.call-routing",
+          "fact-sanebox-features.call-recording",
+          "fact-sanebox-features.power-dialer",
+          "fact-sanebox-features.sms-messaging",
+          "fact-sanebox-features.whatsapp-business",
+          "fact-sanebox-features.shared-inbox",
+          "fact-sanebox-features.team-messaging",
+          "fact-sanebox-features.video-meetings",
+          "fact-sanebox-features.crm-cti",
+          "fact-sanebox-features.analytics-reporting",
+          "fact-sanebox-features.ai-assistance",
+          "fact-sanebox-features.unified-inbox"
+        ],
+        "methodologySlug": "business-communications-editorial",
+        "methodologyVersion": "1.0.0",
+        "agentVersion": "1.0.0",
+        "contextBuiltAt": "2026-08-18T08:52:16.394Z"
+      },
+      "blockers": [],
+      "warnings": [],
+      "agentTaskId": "exec-software-review-agent-sanebox-1787043136356",
+      "draftId": "draft-deterministic-v1-software-review-agent-sanebox-2026-08-18T08-52-16-397Z",
+      "startedAt": "2026-08-18T08:52:16.354Z",
+      "completedAt": "2026-08-18T08:52:16.404Z",
+      "revisionAttempts": 0
+    },
+    {
+      "id": "pricing-page",
+      "definitionStepId": "pricing-page",
+      "handler": "agent-run",
+      "label": "Pricing Page",
+      "status": "completed-with-warning",
+      "required": false,
+      "failurePolicy": "continue-with-warning",
+      "attempt": 1,
+      "maxAttempts": 2,
+      "dependsOn": [
+        "content-plan"
+      ],
+      "priority": "normal",
+      "config": {
+        "agentId": "pricing-page-agent",
+        "targetSlug": "sanebox",
+        "maxAutomaticRevisions": 1,
+        "expandFromContentPlan": false,
+        "expandKind": "none",
+        "stopAfterApproval": true,
+        "allowNormalizedFacts": false,
+        "optionalWhenBlocked": true,
+        "forceTransientFailOnce": false
+      },
+      "inputRefs": {},
+      "outputRefs": {
+        "draftId": "draft-deterministic-v1-pricing-page-agent-sanebox-2026-08-18T08-52-16-438Z-rev-1787043136456",
+        "qaStatus": "fail"
+      },
+      "blockers": [],
+      "warnings": [
+        "QA still failing after revision: UNVERIFIED_NUMBER,UNVERIFIED_NUMBER",
+        "Optional step held for QA/editorial review — required path continues"
+      ],
+      "agentTaskId": "exec-pricing-page-agent-sanebox-1787043136426",
+      "draftId": "draft-deterministic-v1-pricing-page-agent-sanebox-2026-08-18T08-52-16-438Z-rev-1787043136456",
+      "startedAt": "2026-08-18T08:52:16.424Z",
+      "completedAt": "2026-08-18T08:52:16.466Z",
+      "revisionAttempts": 1
+    },
+    {
+      "id": "alternatives",
+      "definitionStepId": "alternatives",
+      "handler": "agent-run",
+      "label": "Alternatives",
+      "status": "cancelled",
+      "required": false,
+      "failurePolicy": "continue-with-warning",
+      "attempt": 1,
+      "maxAttempts": 2,
+      "dependsOn": [
+        "content-plan"
+      ],
+      "priority": "normal",
+      "config": {
+        "agentId": "alternatives-agent",
+        "targetSlug": "sanebox",
+        "maxAutomaticRevisions": 1,
+        "expandFromContentPlan": false,
+        "expandKind": "none",
+        "stopAfterApproval": true,
+        "allowNormalizedFacts": false,
+        "optionalWhenBlocked": true,
+        "forceTransientFailOnce": false
+      },
+      "inputRefs": {},
+      "outputRefs": {},
+      "blockers": [
+        "NO_APPROVED_ALTERNATIVES: Approved alternative relationships required — same-category alone is insufficient"
+      ],
+      "warnings": [
+        "NO_APPROVED_ALTERNATIVES: Approved alternative relationships required — same-category alone is insufficient"
+      ],
+      "startedAt": "2026-08-18T08:52:16.406Z",
+      "completedAt": "2026-08-18T08:52:16.421Z",
+      "revisionAttempts": 0
+    },
+    {
+      "id": "comparisons",
+      "definitionStepId": "comparisons",
+      "handler": "agent-run",
+      "label": "Comparisons",
+      "status": "skipped",
+      "required": false,
+      "failurePolicy": "continue-with-warning",
+      "attempt": 0,
+      "maxAttempts": 2,
+      "dependsOn": [
+        "content-plan"
+      ],
+      "priority": "normal",
+      "config": {
+        "agentId": "comparison-agent",
+        "maxAutomaticRevisions": 1,
+        "expandFromContentPlan": true,
+        "expandKind": "comparisons",
+        "stopAfterApproval": true,
+        "allowNormalizedFacts": false,
+        "optionalWhenBlocked": true,
+        "forceTransientFailOnce": false
+      },
+      "inputRefs": {},
+      "outputRefs": {},
+      "blockers": [],
+      "warnings": [
+        "Skipped by option generateComparisons=false"
+      ],
+      "revisionAttempts": 0
+    },
+    {
+      "id": "internal-links",
+      "definitionStepId": "internal-links",
+      "handler": "internal-link",
+      "label": "Internal Link Plan",
+      "status": "completed",
+      "required": false,
+      "failurePolicy": "continue-with-warning",
+      "attempt": 1,
+      "maxAttempts": 2,
+      "dependsOn": [
+        "software-review"
+      ],
+      "priority": "low",
+      "config": {
+        "agentId": "internal-link-agent",
+        "maxAutomaticRevisions": 1,
+        "expandFromContentPlan": false,
+        "expandKind": "none",
+        "stopAfterApproval": true,
+        "allowNormalizedFacts": false,
+        "optionalWhenBlocked": false,
+        "forceTransientFailOnce": false
+      },
+      "inputRefs": {},
+      "outputRefs": {
+        "draftId": "draft-deterministic-v1-internal-link-agent-sanebox-2026-08-18T08-52-16-491Z",
+        "qaStatus": "pass",
+        "agentId": "internal-link-agent",
+        "target": "sanebox"
+      },
+      "inputSnapshot": {
+        "researchFactIds": [
+          "fact-sanebox-identity.shortDescription",
+          "fact-sanebox-positioning.vendorClaim",
+          "fact-sanebox-positioning.jobCluster",
+          "fact-sanebox-pricing.model",
+          "fact-sanebox-pricing.hasFreePlan",
+          "fact-sanebox-pricing.hasFreeTrial",
+          "fact-sanebox-positioning.membershipRole",
+          "fact-sanebox-pricing.startingPriceMonthly",
+          "fact-sanebox-pricing.plans.snack",
+          "fact-sanebox-pricing.plans.lunch",
+          "fact-sanebox-pricing.plans.dinner",
+          "fact-sanebox-features.cloud-phone",
+          "fact-sanebox-features.call-routing",
+          "fact-sanebox-features.call-recording",
+          "fact-sanebox-features.power-dialer",
+          "fact-sanebox-features.sms-messaging",
+          "fact-sanebox-features.whatsapp-business",
+          "fact-sanebox-features.shared-inbox",
+          "fact-sanebox-features.team-messaging",
+          "fact-sanebox-features.video-meetings",
+          "fact-sanebox-features.crm-cti",
+          "fact-sanebox-features.analytics-reporting",
+          "fact-sanebox-features.ai-assistance",
+          "fact-sanebox-features.unified-inbox"
+        ],
+        "methodologySlug": "business-communications-editorial",
+        "methodologyVersion": "1.0.0",
+        "agentVersion": "1.0.0",
+        "contextBuiltAt": "2026-08-18T08:52:16.490Z"
+      },
+      "blockers": [],
+      "warnings": [],
+      "agentTaskId": "exec-internal-link-agent-sanebox-1787043136476",
+      "draftId": "draft-deterministic-v1-internal-link-agent-sanebox-2026-08-18T08-52-16-491Z",
+      "startedAt": "2026-08-18T08:52:16.474Z",
+      "completedAt": "2026-08-18T08:52:16.494Z",
+      "revisionAttempts": 0
+    },
+    {
+      "id": "finder-readiness",
+      "definitionStepId": "finder-readiness",
+      "handler": "update-recommendation-readiness",
+      "label": "Finder readiness",
+      "status": "completed",
+      "required": false,
+      "failurePolicy": "continue",
+      "attempt": 1,
+      "maxAttempts": 2,
+      "dependsOn": [
+        "content-plan"
+      ],
+      "priority": "low",
+      "config": {
+        "maxAutomaticRevisions": 1,
+        "expandFromContentPlan": false,
+        "expandKind": "none",
+        "stopAfterApproval": true,
+        "allowNormalizedFacts": false,
+        "optionalWhenBlocked": false,
+        "forceTransientFailOnce": false
+      },
+      "inputRefs": {},
+      "outputRefs": {
+        "finderReadiness": "checked"
+      },
+      "blockers": [],
+      "warnings": [],
+      "startedAt": "2026-08-18T08:52:16.469Z",
+      "completedAt": "2026-08-18T08:52:16.472Z",
+      "revisionAttempts": 0
+    },
+    {
+      "id": "editorial-approval",
+      "definitionStepId": "editorial-approval",
+      "handler": "approval-check",
+      "label": "Editorial approval",
+      "status": "cancelled",
+      "required": true,
+      "failurePolicy": "manual-review",
+      "attempt": 1,
+      "maxAttempts": 2,
+      "dependsOn": [
+        "software-review"
+      ],
+      "priority": "critical",
+      "config": {
+        "approvalType": "editorial",
+        "maxAutomaticRevisions": 1,
+        "expandFromContentPlan": false,
+        "expandKind": "none",
+        "stopAfterApproval": true,
+        "allowNormalizedFacts": false,
+        "optionalWhenBlocked": false,
+        "forceTransientFailOnce": false
+      },
+      "inputRefs": {},
+      "outputRefs": {
+        "approvalId": "appr-wf-software-onboarding-content-sanebox-1786622899627-software-review",
+        "draftId": "draft-deterministic-v1-software-review-agent-sanebox-2026-08-18T08-52-16-397Z"
+      },
+      "blockers": [],
+      "warnings": [],
+      "approvalId": "appr-wf-software-onboarding-content-sanebox-1786622899627-software-review",
+      "startedAt": "2026-08-18T08:52:16.498Z",
+      "completedAt": "2026-08-18T08:52:16.655Z",
+      "revisionAttempts": 0
+    },
+    {
+      "id": "pre-publish-validation",
+      "definitionStepId": "pre-publish-validation",
+      "handler": "pre-publish-validation",
+      "label": "Pre-publish validation",
+      "status": "cancelled",
+      "required": true,
+      "failurePolicy": "block-workflow",
+      "attempt": 0,
+      "maxAttempts": 2,
+      "dependsOn": [
+        "editorial-approval"
+      ],
+      "priority": "critical",
+      "config": {
+        "maxAutomaticRevisions": 1,
+        "expandFromContentPlan": false,
+        "expandKind": "none",
+        "stopAfterApproval": true,
+        "allowNormalizedFacts": false,
+        "optionalWhenBlocked": false,
+        "forceTransientFailOnce": false
+      },
+      "inputRefs": {},
+      "outputRefs": {},
+      "blockers": [],
+      "warnings": [],
+      "revisionAttempts": 0
+    }
+  ],
+  "history": [
+    {
+      "at": "2026-08-13T12:08:19.676Z",
+      "event": "workflow_created",
+      "message": "Created software-onboarding-content:v1.0.0"
+    },
+    {
+      "at": "2026-08-17T05:29:10.780Z",
+      "event": "workflow_started",
+      "message": "Workflow execution started"
+    },
+    {
+      "at": "2026-08-17T05:29:10.781Z",
+      "event": "workflow_step_started",
+      "stepId": "software-onboarding",
+      "message": "Started Software onboarding"
+    },
+    {
+      "at": "2026-08-17T05:29:10.817Z",
+      "event": "workflow_step_completed",
+      "stepId": "software-onboarding",
+      "message": "Blocked: missing onboarding run"
+    },
+    {
+      "at": "2026-08-17T11:57:32.521Z",
+      "event": "workflow_resumed",
+      "message": "Workflow resumed"
+    },
+    {
+      "at": "2026-08-17T11:57:32.523Z",
+      "event": "workflow_started",
+      "message": "Workflow execution started"
+    },
+    {
+      "at": "2026-08-17T12:06:01.074Z",
+      "event": "workflow_resumed",
+      "message": "Workflow resumed"
+    },
+    {
+      "at": "2026-08-17T12:06:01.075Z",
+      "event": "workflow_started",
+      "message": "Workflow execution started"
+    },
+    {
+      "at": "2026-08-18T08:49:51.042Z",
+      "event": "workflow_resumed",
+      "message": "Workflow resumed"
+    },
+    {
+      "at": "2026-08-18T08:49:51.043Z",
+      "event": "workflow_started",
+      "message": "Workflow execution started"
+    },
+    {
+      "at": "2026-08-18T08:52:15.523Z",
+      "event": "workflow_resumed",
+      "message": "Workflow resumed"
+    },
+    {
+      "at": "2026-08-18T08:52:15.526Z",
+      "event": "workflow_started",
+      "message": "Workflow execution started"
+    },
+    {
+      "at": "2026-08-18T08:52:15.529Z",
+      "event": "workflow_step_started",
+      "stepId": "software-onboarding",
+      "message": "Started Software onboarding"
+    },
+    {
+      "at": "2026-08-18T08:52:16.040Z",
+      "event": "workflow_step_completed",
+      "stepId": "software-onboarding",
+      "message": "Reused onboarding run onboard-sanebox-1787043097770 (ready)"
+    },
+    {
+      "at": "2026-08-18T08:52:16.085Z",
+      "event": "workflow_step_started",
+      "stepId": "content-plan",
+      "message": "Started Content plan"
+    },
+    {
+      "at": "2026-08-18T08:52:16.349Z",
+      "event": "workflow_step_completed",
+      "stepId": "content-plan",
+      "message": "Content plan from onboarding onboard-sanebox-1787043097770 (5 candidates)"
+    },
+    {
+      "at": "2026-08-18T08:52:16.352Z",
+      "event": "workflow_step_started",
+      "stepId": "software-review",
+      "message": "Started Software Review"
+    },
+    {
+      "at": "2026-08-18T08:52:16.404Z",
+      "event": "workflow_step_completed",
+      "stepId": "software-review",
+      "message": "Agent software-review-agent → draft draft-deterministic-v1-software-review-agent-sanebox-2026-08-18T08-52-16-397Z (qa=pass)"
+    },
+    {
+      "at": "2026-08-18T08:52:16.406Z",
+      "event": "workflow_step_started",
+      "stepId": "alternatives",
+      "message": "Started Alternatives"
+    },
+    {
+      "at": "2026-08-18T08:52:16.421Z",
+      "event": "workflow_step_completed",
+      "stepId": "alternatives",
+      "message": "Agent blocked (optional): NO_APPROVED_ALTERNATIVES: Approved alternative relationships required — same-category alone is insufficient"
+    },
+    {
+      "at": "2026-08-18T08:52:16.423Z",
+      "event": "workflow_step_started",
+      "stepId": "pricing-page",
+      "message": "Started Pricing Page"
+    },
+    {
+      "at": "2026-08-18T08:52:16.466Z",
+      "event": "workflow_step_completed",
+      "stepId": "pricing-page",
+      "message": "QA fail after one automatic revision → review-required"
+    },
+    {
+      "at": "2026-08-18T08:52:16.468Z",
+      "event": "workflow_step_started",
+      "stepId": "finder-readiness",
+      "message": "Started Finder readiness"
+    },
+    {
+      "at": "2026-08-18T08:52:16.472Z",
+      "event": "workflow_step_completed",
+      "stepId": "finder-readiness",
+      "message": "Finder readiness noted for sanebox"
+    },
+    {
+      "at": "2026-08-18T08:52:16.474Z",
+      "event": "workflow_step_started",
+      "stepId": "internal-links",
+      "message": "Started Internal Link Plan"
+    },
+    {
+      "at": "2026-08-18T08:52:16.494Z",
+      "event": "workflow_step_completed",
+      "stepId": "internal-links",
+      "message": "Agent internal-link-agent → draft draft-deterministic-v1-internal-link-agent-sanebox-2026-08-18T08-52-16-491Z (qa=pass)"
+    },
+    {
+      "at": "2026-08-18T08:52:16.496Z",
+      "event": "workflow_step_started",
+      "stepId": "editorial-approval",
+      "message": "Started Editorial approval"
+    },
+    {
+      "at": "2026-08-18T08:52:16.655Z",
+      "event": "workflow_step_completed",
+      "stepId": "editorial-approval",
+      "message": "WAITING FOR EDITORIAL APPROVAL (appr-wf-software-onboarding-content-sanebox-1786622899627-software-review)"
+    },
+    {
+      "at": "2026-08-18T08:52:16.657Z",
+      "event": "workflow_blocked",
+      "message": "WAITING FOR EDITORIAL APPROVAL"
+    },
+    {
+      "at": "2026-08-18T13:34:16.185Z",
+      "event": "workflow_cancelled",
+      "message": "Catalogue software page already published; agent drafts remain unpublished"
+    }
+  ],
+  "options": {
+    "generateReview": true,
+    "generatePricing": true,
+    "generateAlternatives": true,
+    "generateComparisons": false,
+    "runInternalLinks": true,
+    "stopAfterApproval": true,
+    "allowNormalizedFacts": false,
+    "dryRun": false,
+    "maxComparisons": 3,
+    "skipOnboarding": false
+  },
+  "cancelReason": "Catalogue software page already published; agent drafts remain unpublished",
+  "warnings": [
+    "alternatives blocked: NO_APPROVED_ALTERNATIVES: Approved alternative relationships required — same-category alone is insufficient",
+    "pricing-page: optional review-required did not block the workflow"
+  ],
+  "createdAt": "2026-08-13T12:08:19.676Z",
+  "updatedAt": "2026-08-18T13:34:16.185Z"
+}

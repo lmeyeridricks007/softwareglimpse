@@ -1,0 +1,258 @@
+{
+  "id": "wf-single-content-generation-sales-intelligence-vs-crm-1786952134144",
+  "workflowId": "single-content-generation",
+  "workflowVersion": "1.0.0",
+  "name": "Single Content Generation: sales-intelligence-vs-crm",
+  "targetType": "content",
+  "targetId": "sales-intelligence-vs-crm",
+  "status": "completed",
+  "steps": [
+    {
+      "id": "content-readiness",
+      "definitionStepId": "content-readiness",
+      "handler": "noop",
+      "label": "Content readiness",
+      "status": "completed",
+      "required": true,
+      "failurePolicy": "block-workflow",
+      "attempt": 1,
+      "maxAttempts": 2,
+      "dependsOn": [],
+      "priority": "high",
+      "config": {
+        "maxAutomaticRevisions": 1,
+        "expandFromContentPlan": false,
+        "expandKind": "none",
+        "stopAfterApproval": true,
+        "allowNormalizedFacts": false,
+        "optionalWhenBlocked": false,
+        "forceTransientFailOnce": false
+      },
+      "inputRefs": {},
+      "outputRefs": {},
+      "blockers": [],
+      "warnings": [],
+      "startedAt": "2026-08-17T08:05:26.826Z",
+      "completedAt": "2026-08-17T08:05:26.826Z",
+      "revisionAttempts": 0
+    },
+    {
+      "id": "generate",
+      "definitionStepId": "generate",
+      "handler": "agent-run",
+      "label": "Generate content",
+      "status": "completed",
+      "required": true,
+      "failurePolicy": "block-workflow",
+      "attempt": 1,
+      "maxAttempts": 2,
+      "dependsOn": [
+        "content-readiness"
+      ],
+      "priority": "high",
+      "config": {
+        "agentId": "guide-agent",
+        "targetSlug": "sales-intelligence-vs-crm",
+        "maxAutomaticRevisions": 1,
+        "expandFromContentPlan": false,
+        "expandKind": "none",
+        "stopAfterApproval": true,
+        "allowNormalizedFacts": false,
+        "optionalWhenBlocked": false,
+        "forceTransientFailOnce": false
+      },
+      "inputRefs": {},
+      "outputRefs": {
+        "draftId": "draft-deterministic-v1-guide-agent-sales-intelligence-vs-crm-2026-08-17T08-05-26-877Z",
+        "qaStatus": "pass",
+        "agentId": "guide-agent",
+        "target": "sales-intelligence-vs-crm"
+      },
+      "inputSnapshot": {
+        "researchFactIds": [],
+        "methodologySlug": "sales-intelligence-editorial",
+        "methodologyVersion": "1.0.0",
+        "agentVersion": "1.0.0",
+        "contextBuiltAt": "2026-08-17T08:05:26.873Z"
+      },
+      "blockers": [],
+      "warnings": [],
+      "agentTaskId": "exec-guide-agent-sales-intelligence-vs-crm-1786953926828",
+      "draftId": "draft-deterministic-v1-guide-agent-sales-intelligence-vs-crm-2026-08-17T08-05-26-877Z",
+      "startedAt": "2026-08-17T08:05:26.827Z",
+      "completedAt": "2026-08-17T08:05:26.884Z",
+      "revisionAttempts": 0
+    },
+    {
+      "id": "editorial-approval",
+      "definitionStepId": "editorial-approval",
+      "handler": "approval-check",
+      "label": "Editorial approval",
+      "status": "completed",
+      "required": true,
+      "failurePolicy": "manual-review",
+      "attempt": 2,
+      "maxAttempts": 2,
+      "dependsOn": [
+        "generate"
+      ],
+      "priority": "critical",
+      "config": {
+        "approvalType": "editorial",
+        "maxAutomaticRevisions": 1,
+        "expandFromContentPlan": false,
+        "expandKind": "none",
+        "stopAfterApproval": true,
+        "allowNormalizedFacts": false,
+        "optionalWhenBlocked": false,
+        "forceTransientFailOnce": false
+      },
+      "inputRefs": {},
+      "outputRefs": {
+        "approvalId": "appr-wf-single-content-generation-sales-intelligence-vs-crm-1786952134144-generate",
+        "draftId": "draft-deterministic-v1-guide-agent-sales-intelligence-vs-crm-2026-08-17T08-05-26-877Z",
+        "approvalIds": "appr-wf-single-content-generation-sales-intelligence-vs-crm-1786952134144-generate"
+      },
+      "blockers": [],
+      "warnings": [
+        "Approval received — resuming"
+      ],
+      "approvalId": "appr-wf-single-content-generation-sales-intelligence-vs-crm-1786952134144-generate",
+      "startedAt": "2026-08-17T08:07:47.510Z",
+      "completedAt": "2026-08-17T08:07:47.586Z",
+      "revisionAttempts": 0
+    },
+    {
+      "id": "pre-publish-validation",
+      "definitionStepId": "pre-publish-validation",
+      "handler": "pre-publish-validation",
+      "label": "Pre-publish validation",
+      "status": "completed",
+      "required": true,
+      "failurePolicy": "block-workflow",
+      "attempt": 1,
+      "maxAttempts": 2,
+      "dependsOn": [
+        "editorial-approval"
+      ],
+      "priority": "critical",
+      "config": {
+        "maxAutomaticRevisions": 1,
+        "expandFromContentPlan": false,
+        "expandKind": "none",
+        "stopAfterApproval": true,
+        "allowNormalizedFacts": false,
+        "optionalWhenBlocked": false,
+        "forceTransientFailOnce": false
+      },
+      "inputRefs": {},
+      "outputRefs": {
+        "publishState": "READY_TO_PUBLISH"
+      },
+      "blockers": [],
+      "warnings": [
+        "stopAfterApproval: workflow will not publish automatically"
+      ],
+      "startedAt": "2026-08-17T08:07:47.588Z",
+      "completedAt": "2026-08-17T08:07:47.677Z",
+      "revisionAttempts": 0
+    }
+  ],
+  "history": [
+    {
+      "at": "2026-08-17T07:35:43.252Z",
+      "event": "workflow_created",
+      "message": "Created single-content-generation:v1.0.0"
+    },
+    {
+      "at": "2026-08-17T08:05:26.824Z",
+      "event": "workflow_started",
+      "message": "Workflow execution started"
+    },
+    {
+      "at": "2026-08-17T08:05:26.826Z",
+      "event": "workflow_step_started",
+      "stepId": "content-readiness",
+      "message": "Started Content readiness"
+    },
+    {
+      "at": "2026-08-17T08:05:26.826Z",
+      "event": "workflow_step_completed",
+      "stepId": "content-readiness",
+      "message": "No-op step completed"
+    },
+    {
+      "at": "2026-08-17T08:05:26.827Z",
+      "event": "workflow_step_started",
+      "stepId": "generate",
+      "message": "Started Generate content"
+    },
+    {
+      "at": "2026-08-17T08:05:26.884Z",
+      "event": "workflow_step_completed",
+      "stepId": "generate",
+      "message": "Agent guide-agent → draft draft-deterministic-v1-guide-agent-sales-intelligence-vs-crm-2026-08-17T08-05-26-877Z (qa=pass)"
+    },
+    {
+      "at": "2026-08-17T08:05:26.886Z",
+      "event": "workflow_step_started",
+      "stepId": "editorial-approval",
+      "message": "Started Editorial approval"
+    },
+    {
+      "at": "2026-08-17T08:05:27.039Z",
+      "event": "workflow_step_completed",
+      "stepId": "editorial-approval",
+      "message": "WAITING FOR EDITORIAL APPROVAL (appr-wf-single-content-generation-sales-intelligence-vs-crm-1786952134144-generate)"
+    },
+    {
+      "at": "2026-08-17T08:07:47.508Z",
+      "event": "workflow_resumed",
+      "message": "Workflow resumed"
+    },
+    {
+      "at": "2026-08-17T08:07:47.509Z",
+      "event": "workflow_started",
+      "message": "Workflow execution started"
+    },
+    {
+      "at": "2026-08-17T08:07:47.510Z",
+      "event": "workflow_step_started",
+      "stepId": "editorial-approval",
+      "message": "Started Editorial approval"
+    },
+    {
+      "at": "2026-08-17T08:07:47.586Z",
+      "event": "workflow_step_completed",
+      "stepId": "editorial-approval",
+      "message": "Required editorial approvals satisfied"
+    },
+    {
+      "at": "2026-08-17T08:07:47.587Z",
+      "event": "workflow_step_started",
+      "stepId": "pre-publish-validation",
+      "message": "Started Pre-publish validation"
+    },
+    {
+      "at": "2026-08-17T08:07:47.677Z",
+      "event": "workflow_step_completed",
+      "stepId": "pre-publish-validation",
+      "message": "Pre-publish validation passed — READY TO PUBLISH (manual)"
+    },
+    {
+      "at": "2026-08-17T08:07:47.679Z",
+      "event": "workflow_completed",
+      "message": "Workflow completed"
+    }
+  ],
+  "options": {
+    "agentId": "guide-agent",
+    "targetSlug": "sales-intelligence-vs-crm",
+    "productIds": [],
+    "categoryIds": [],
+    "allowNormalizedFacts": false
+  },
+  "warnings": [],
+  "createdAt": "2026-08-17T07:35:43.251Z",
+  "updatedAt": "2026-08-17T08:07:47.679Z"
+}

@@ -1,0 +1,165 @@
+{
+  "id": "assessment-splunk-it-v1",
+  "productSlug": "splunk",
+  "methodologySlug": "it-development-editorial",
+  "methodologyVersion": "1.0.0",
+  "status": "approved",
+  "verdict": "Splunk Observability Cloud: Choose Splunk Observability Cloud when Cisco/Splunk host-priced observability is the job — not Splunk Platform SIEM ingest, and not Datadog by default. Scores use the IT & Development editorial methodology from first-party research as of 2026-08-18 — not hands-on product testing.",
+  "strengths": [
+    "Published $15/host Infrastructure Monitoring floor",
+    "Clear App & Infra and End-to-End pack ladder",
+    "Free path up to 15 hosts (FAQ)",
+    "Enterprise admin-security posture",
+    "Distinct Observability Cloud identity vs Platform SIEM"
+  ],
+  "weaknesses": [
+    "Easy to confuse with Splunk Platform ingest pricing",
+    "Does not outrank Datadog",
+    "$60/$75 packs raise TCO fast",
+    "Heavier ease-of-use than specialist error tools",
+    "Not ITSM/git/hosting"
+  ],
+  "bestFor": [
+    "SRE teams that want Splunk Observability Cloud host packs rather than Platform ingest",
+    "Cisco/Splunk-aligned estates that need metrics and APM in one Cloud SKU",
+    "Buyers who will model $15 vs $60 vs $75 host packs before commit"
+  ],
+  "notIdealFor": [
+    "Teams buying Splunk Platform/SIEM ingest as if it were this SKU",
+    "Buyers who need Datadog’s broader module catalogue as the default award path",
+    "ITSM, git, or hosting-panel purchases"
+  ],
+  "tradeoffs": [
+    "Per-agent vs per-host vs per-seat vs per-GB pricing models",
+    "Module stacking and consumption overages vs single-SKU floors",
+    "Free tiers vs enterprise SSO/audit gates",
+    "Landscape-adjacent tools vs primary job-cluster peers on best pages"
+  ],
+  "recommendation": "Choose Splunk Observability Cloud when Cisco/Splunk host-priced observability is the job — not Splunk Platform SIEM ingest, and not Datadog by default. Compare Datadog for the observability award path; Elastic Observability for Elastic Cloud; Sentry for error/tracing specialists.",
+  "editorialNotes": "IT industry Tier-A batch. Approved on it-development-editorial v1.0.0. membershipRole=primary. jobCluster=observability-monitoring. handsOnTesting=false. Affiliate economics excluded.",
+  "handsOnTesting": false,
+  "confidence": "medium",
+  "criterionAssessments": [
+    {
+      "criterionSlug": "ease-of-use",
+      "score": 6,
+      "rationale": "Enterprise observability plus Splunk-family SKU confusion (Cloud vs Platform) raise the learning curve. Not a lab test.",
+      "supportingFactIds": [
+        "fact-splunk-features.infrastructure-monitoring",
+        "fact-splunk-pricing.model"
+      ],
+      "confidence": "medium",
+      "status": "approved",
+      "reviewedAt": "2026-08-18T20:00:00.000Z",
+      "reviewer": "editorial"
+    },
+    {
+      "criterionSlug": "it-job-fit",
+      "score": 9,
+      "rationale": "Observability Cloud is a real infra/APM/logs peer of Datadog — ranked in observability-monitoring, not as SIEM ingest.",
+      "supportingFactIds": [
+        "fact-splunk-features.infrastructure-monitoring",
+        "fact-splunk-pricing.model"
+      ],
+      "confidence": "medium",
+      "status": "approved",
+      "reviewedAt": "2026-08-18T20:00:00.000Z",
+      "reviewer": "editorial"
+    },
+    {
+      "criterionSlug": "workflow-depth",
+      "score": 8,
+      "rationale": "Host packs from infra through end-to-end cover a deep SRE loop; held at 8 versus Datadog’s modular breadth.",
+      "supportingFactIds": [
+        "fact-splunk-features.apm-tracing",
+        "fact-splunk-pricing.model"
+      ],
+      "confidence": "medium",
+      "status": "approved",
+      "reviewedAt": "2026-08-18T20:00:00.000Z",
+      "reviewer": "editorial"
+    },
+    {
+      "criterionSlug": "integrations",
+      "score": 8,
+      "rationale": "Cloud, chat, and on-call hooks are a published Observability Cloud story.",
+      "supportingFactIds": [
+        "fact-splunk-features.analytics-reporting",
+        "fact-splunk-pricing.model",
+        "fact-splunk-positioning.vendorClaim"
+      ],
+      "confidence": "medium",
+      "status": "approved",
+      "reviewedAt": "2026-08-18T20:00:00.000Z",
+      "reviewer": "editorial"
+    },
+    {
+      "criterionSlug": "admin-security",
+      "score": 9,
+      "rationale": "Cisco/Splunk enterprise security posture is a buying reason versus SMB observability tiles.",
+      "supportingFactIds": [
+        "fact-splunk-features.enterprise-security",
+        "fact-splunk-pricing.model"
+      ],
+      "confidence": "medium",
+      "status": "approved",
+      "reviewedAt": "2026-08-18T20:00:00.000Z",
+      "reviewer": "editorial"
+    },
+    {
+      "criterionSlug": "scalability",
+      "score": 9,
+      "rationale": "Host-priced packs and Cisco-scale estates; TCO still follows host count and pack choice.",
+      "supportingFactIds": [
+        "fact-splunk-pricing.plans.free-15-hosts",
+        "fact-splunk-pricing.model",
+        "fact-splunk-pricing.plans.end-to-end"
+      ],
+      "confidence": "medium",
+      "status": "approved",
+      "reviewedAt": "2026-08-18T20:00:00.000Z",
+      "reviewer": "editorial"
+    },
+    {
+      "criterionSlug": "value-for-money",
+      "score": 6,
+      "rationale": "Published $15/host floor matches Datadog’s infra tile; $60/$75 packs and SKU confusion cut value. Affiliate economics excluded.",
+      "supportingFactIds": [
+        "fact-splunk-pricing.hasFreePlan",
+        "fact-splunk-pricing.model",
+        "fact-splunk-pricing.startingPriceMonthly"
+      ],
+      "confidence": "medium",
+      "status": "approved",
+      "reviewedAt": "2026-08-18T20:00:00.000Z",
+      "reviewer": "editorial"
+    },
+    {
+      "criterionSlug": "ai-capabilities",
+      "score": 7,
+      "rationale": "Observability AI assist exists — scored as supporting, not a reason to skip Datadog.",
+      "supportingFactIds": [
+        "fact-splunk-features.itsm-ai",
+        "fact-splunk-pricing.model"
+      ],
+      "confidence": "medium",
+      "status": "approved",
+      "reviewedAt": "2026-08-18T20:00:00.000Z",
+      "reviewer": "editorial"
+    }
+  ],
+  "overallScore": 7.8,
+  "overallScoreRationale": "Weighted average of the eight IT editorial criteria using category weights (IT job fit 16, workflow depth 14, ease of use 12, integrations 12, admin/security 12, value 12, AI 12, scalability 10), rounded to 1 decimal. Products are scored inside their job cluster — ITSM, observability, source control, hosting panels, and web-data platforms are not forced into one undifferentiated ranking. Not a hands-on lab score, and affiliate economics are excluded.",
+  "scoreAudit": [
+    {
+      "at": "2026-08-18T20:00:00.000Z",
+      "actor": "editorial",
+      "change": "IT industry Tier-A onboarding; approved IT criteria with category weights; handsOnTesting=false",
+      "nextOverall": 7.8
+    }
+  ],
+  "reviewedAt": "2026-08-18T20:00:00.000Z",
+  "reviewer": "editorial",
+  "createdAt": "2026-08-18T20:00:00.000Z",
+  "updatedAt": "2026-08-18T20:00:00.000Z"
+}

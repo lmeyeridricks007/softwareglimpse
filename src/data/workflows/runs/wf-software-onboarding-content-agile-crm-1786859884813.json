@@ -1,0 +1,954 @@
+{
+  "id": "wf-software-onboarding-content-agile-crm-1786859884813",
+  "workflowId": "software-onboarding-content",
+  "workflowVersion": "1.0.0",
+  "name": "Software Onboarding Content: agile-crm",
+  "targetType": "software",
+  "targetId": "agile-crm",
+  "status": "superseded",
+  "steps": [
+    {
+      "id": "software-onboarding",
+      "definitionStepId": "software-onboarding",
+      "handler": "software-onboarding",
+      "label": "Software onboarding",
+      "status": "completed",
+      "required": true,
+      "failurePolicy": "block-workflow",
+      "attempt": 1,
+      "maxAttempts": 2,
+      "dependsOn": [],
+      "priority": "critical",
+      "config": {
+        "maxAutomaticRevisions": 1,
+        "expandFromContentPlan": false,
+        "expandKind": "none",
+        "stopAfterApproval": true,
+        "allowNormalizedFacts": false,
+        "optionalWhenBlocked": false,
+        "forceTransientFailOnce": false
+      },
+      "inputRefs": {},
+      "outputRefs": {
+        "softwareOnboardingRunId": "onboard-agile-crm-1786859662870"
+      },
+      "blockers": [],
+      "warnings": [],
+      "startedAt": "2026-08-16T05:58:05.297Z",
+      "completedAt": "2026-08-16T05:58:05.331Z",
+      "revisionAttempts": 0
+    },
+    {
+      "id": "content-plan",
+      "definitionStepId": "content-plan",
+      "handler": "content-plan",
+      "label": "Content plan",
+      "status": "completed",
+      "required": true,
+      "failurePolicy": "block-workflow",
+      "attempt": 1,
+      "maxAttempts": 2,
+      "dependsOn": [
+        "software-onboarding"
+      ],
+      "priority": "high",
+      "config": {
+        "maxAutomaticRevisions": 1,
+        "expandFromContentPlan": false,
+        "expandKind": "none",
+        "stopAfterApproval": true,
+        "allowNormalizedFacts": false,
+        "optionalWhenBlocked": false,
+        "forceTransientFailOnce": false
+      },
+      "inputRefs": {},
+      "outputRefs": {
+        "softwareOnboardingRunId": "onboard-agile-crm-1786859662870",
+        "comparisonTargets": "agile-crm-vs-hubspot,agile-crm-vs-zoho-crm,agile-crm-vs-freshsales",
+        "pageCandidateCount": "9"
+      },
+      "blockers": [],
+      "warnings": [],
+      "startedAt": "2026-08-16T05:58:05.333Z",
+      "completedAt": "2026-08-16T05:58:05.368Z",
+      "revisionAttempts": 0
+    },
+    {
+      "id": "software-review",
+      "definitionStepId": "software-review",
+      "handler": "agent-run",
+      "label": "Software Review",
+      "status": "completed",
+      "required": true,
+      "failurePolicy": "block-workflow",
+      "attempt": 1,
+      "maxAttempts": 2,
+      "dependsOn": [
+        "content-plan"
+      ],
+      "priority": "high",
+      "config": {
+        "agentId": "software-review-agent",
+        "targetSlug": "agile-crm",
+        "maxAutomaticRevisions": 1,
+        "expandFromContentPlan": false,
+        "expandKind": "none",
+        "stopAfterApproval": true,
+        "allowNormalizedFacts": false,
+        "optionalWhenBlocked": false,
+        "forceTransientFailOnce": false
+      },
+      "inputRefs": {},
+      "outputRefs": {
+        "draftId": "draft-deterministic-v1-software-review-agent-agile-crm-2026-08-16T05-58-05-408Z",
+        "qaStatus": "pass",
+        "agentId": "software-review-agent",
+        "target": "agile-crm"
+      },
+      "inputSnapshot": {
+        "researchFactIds": [
+          "fact-agile-crm-pricing.hasFreePlan",
+          "fact-agile-crm-pricing.hasFreeTrial",
+          "fact-agile-crm-pricing.currency",
+          "fact-agile-crm-pricing.model",
+          "fact-agile-crm-identity.shortDescription",
+          "fact-agile-crm-positioning.vendorClaim",
+          "fact-agile-crm-pricing.startingPriceMonthly",
+          "fact-agile-crm-pricing.plans.free",
+          "fact-agile-crm-pricing.plans.starter",
+          "fact-agile-crm-pricing.plans.regular",
+          "fact-agile-crm-pricing.plans.enterprise",
+          "fact-agile-crm-features.contact-management",
+          "fact-agile-crm-features.lead-management",
+          "fact-agile-crm-features.pipeline-management",
+          "fact-agile-crm-features.deal-management",
+          "fact-agile-crm-features.custom-pipelines",
+          "fact-agile-crm-features.custom-fields",
+          "fact-agile-crm-features.email-sync",
+          "fact-agile-crm-features.email-tracking",
+          "fact-agile-crm-features.workflow-automation",
+          "fact-agile-crm-features.reporting",
+          "fact-agile-crm-features.mobile-app",
+          "fact-agile-crm-features.sales-automation",
+          "fact-agile-crm-features.integrations",
+          "fact-agile-crm-features.ai-assistance"
+        ],
+        "methodologySlug": "crm-editorial",
+        "methodologyVersion": "1.0.0",
+        "agentVersion": "1.0.0",
+        "contextBuiltAt": "2026-08-16T05:58:05.403Z"
+      },
+      "blockers": [],
+      "warnings": [],
+      "agentTaskId": "exec-software-review-agent-agile-crm-1786859885370",
+      "draftId": "draft-deterministic-v1-software-review-agent-agile-crm-2026-08-16T05-58-05-408Z",
+      "startedAt": "2026-08-16T05:58:05.369Z",
+      "completedAt": "2026-08-16T05:58:05.414Z",
+      "revisionAttempts": 0
+    },
+    {
+      "id": "pricing-page",
+      "definitionStepId": "pricing-page",
+      "handler": "agent-run",
+      "label": "Pricing Page",
+      "status": "completed",
+      "required": false,
+      "failurePolicy": "continue-with-warning",
+      "attempt": 1,
+      "maxAttempts": 2,
+      "dependsOn": [
+        "content-plan"
+      ],
+      "priority": "normal",
+      "config": {
+        "agentId": "pricing-page-agent",
+        "targetSlug": "agile-crm",
+        "maxAutomaticRevisions": 1,
+        "expandFromContentPlan": false,
+        "expandKind": "none",
+        "stopAfterApproval": true,
+        "allowNormalizedFacts": false,
+        "optionalWhenBlocked": true,
+        "forceTransientFailOnce": false
+      },
+      "inputRefs": {},
+      "outputRefs": {
+        "draftId": "draft-deterministic-v1-pricing-page-agent-agile-crm-2026-08-16T05-58-05-460Z",
+        "qaStatus": "pass",
+        "agentId": "pricing-page-agent",
+        "target": "agile-crm"
+      },
+      "inputSnapshot": {
+        "researchFactIds": [
+          "fact-agile-crm-pricing.hasFreePlan",
+          "fact-agile-crm-pricing.hasFreeTrial",
+          "fact-agile-crm-pricing.currency",
+          "fact-agile-crm-pricing.model",
+          "fact-agile-crm-identity.shortDescription",
+          "fact-agile-crm-positioning.vendorClaim",
+          "fact-agile-crm-pricing.startingPriceMonthly",
+          "fact-agile-crm-pricing.plans.free",
+          "fact-agile-crm-pricing.plans.starter",
+          "fact-agile-crm-pricing.plans.regular",
+          "fact-agile-crm-pricing.plans.enterprise",
+          "fact-agile-crm-features.contact-management",
+          "fact-agile-crm-features.lead-management",
+          "fact-agile-crm-features.pipeline-management",
+          "fact-agile-crm-features.deal-management",
+          "fact-agile-crm-features.custom-pipelines",
+          "fact-agile-crm-features.custom-fields",
+          "fact-agile-crm-features.email-sync",
+          "fact-agile-crm-features.email-tracking",
+          "fact-agile-crm-features.workflow-automation",
+          "fact-agile-crm-features.reporting",
+          "fact-agile-crm-features.mobile-app",
+          "fact-agile-crm-features.sales-automation",
+          "fact-agile-crm-features.integrations",
+          "fact-agile-crm-features.ai-assistance"
+        ],
+        "methodologySlug": "crm-editorial",
+        "methodologyVersion": "1.0.0",
+        "agentVersion": "1.0.0",
+        "contextBuiltAt": "2026-08-16T05:58:05.459Z"
+      },
+      "blockers": [],
+      "warnings": [],
+      "agentTaskId": "exec-pricing-page-agent-agile-crm-1786859885455",
+      "draftId": "draft-deterministic-v1-pricing-page-agent-agile-crm-2026-08-16T05-58-05-460Z",
+      "startedAt": "2026-08-16T05:58:05.455Z",
+      "completedAt": "2026-08-16T05:58:05.462Z",
+      "revisionAttempts": 0
+    },
+    {
+      "id": "alternatives",
+      "definitionStepId": "alternatives",
+      "handler": "agent-run",
+      "label": "Alternatives",
+      "status": "blocked",
+      "required": false,
+      "failurePolicy": "continue-with-warning",
+      "attempt": 1,
+      "maxAttempts": 2,
+      "dependsOn": [
+        "content-plan"
+      ],
+      "priority": "normal",
+      "config": {
+        "agentId": "alternatives-agent",
+        "targetSlug": "agile-crm",
+        "maxAutomaticRevisions": 1,
+        "expandFromContentPlan": false,
+        "expandKind": "none",
+        "stopAfterApproval": true,
+        "allowNormalizedFacts": false,
+        "optionalWhenBlocked": true,
+        "forceTransientFailOnce": false
+      },
+      "inputRefs": {},
+      "outputRefs": {},
+      "blockers": [
+        "NO_APPROVED_ALTERNATIVES: Approved alternative relationships required — same-category alone is insufficient"
+      ],
+      "warnings": [
+        "NO_APPROVED_ALTERNATIVES: Approved alternative relationships required — same-category alone is insufficient"
+      ],
+      "startedAt": "2026-08-16T05:58:05.415Z",
+      "completedAt": "2026-08-16T05:58:05.420Z",
+      "revisionAttempts": 0
+    },
+    {
+      "id": "comparison:agile-crm-vs-hubspot",
+      "definitionStepId": "comparisons",
+      "handler": "agent-run",
+      "label": "Comparison agile-crm-vs-hubspot",
+      "status": "completed",
+      "required": false,
+      "failurePolicy": "continue-with-warning",
+      "attempt": 1,
+      "maxAttempts": 2,
+      "dependsOn": [
+        "content-plan"
+      ],
+      "priority": "normal",
+      "config": {
+        "agentId": "comparison-agent",
+        "targetSlug": "agile-crm-vs-hubspot",
+        "maxAutomaticRevisions": 1,
+        "expandFromContentPlan": true,
+        "expandKind": "comparisons",
+        "stopAfterApproval": true,
+        "allowNormalizedFacts": false,
+        "optionalWhenBlocked": true,
+        "forceTransientFailOnce": false
+      },
+      "expansionKey": "agile-crm-vs-hubspot",
+      "inputRefs": {},
+      "outputRefs": {
+        "draftId": "draft-deterministic-v1-comparison-agent-agile-crm-vs-hubspot-2026-08-16T05-58-05-440Z",
+        "qaStatus": "pass",
+        "agentId": "comparison-agent",
+        "target": "agile-crm-vs-hubspot"
+      },
+      "inputSnapshot": {
+        "researchFactIds": [
+          "fact-agile-crm-pricing.hasFreePlan",
+          "fact-agile-crm-pricing.hasFreeTrial",
+          "fact-agile-crm-pricing.currency",
+          "fact-agile-crm-pricing.model",
+          "fact-agile-crm-identity.shortDescription",
+          "fact-agile-crm-positioning.vendorClaim",
+          "fact-agile-crm-pricing.startingPriceMonthly",
+          "fact-agile-crm-pricing.plans.free",
+          "fact-agile-crm-pricing.plans.starter",
+          "fact-agile-crm-pricing.plans.regular",
+          "fact-agile-crm-pricing.plans.enterprise",
+          "fact-agile-crm-features.contact-management",
+          "fact-agile-crm-features.lead-management",
+          "fact-agile-crm-features.pipeline-management",
+          "fact-agile-crm-features.deal-management",
+          "fact-agile-crm-features.custom-pipelines",
+          "fact-agile-crm-features.custom-fields",
+          "fact-agile-crm-features.email-sync",
+          "fact-agile-crm-features.email-tracking",
+          "fact-agile-crm-features.workflow-automation",
+          "fact-agile-crm-features.reporting",
+          "fact-agile-crm-features.mobile-app",
+          "fact-agile-crm-features.sales-automation",
+          "fact-agile-crm-features.integrations",
+          "fact-agile-crm-features.ai-assistance",
+          "fact-hubspot-pricing.hasFreePlan",
+          "fact-hubspot-pricing.hasFreeTrial",
+          "fact-hubspot-pricing.startingPriceMonthly",
+          "fact-hubspot-pricing.currency",
+          "fact-hubspot-pricing.model",
+          "fact-hubspot-pricing.plans.free",
+          "fact-hubspot-pricing.plans.starter",
+          "fact-hubspot-pricing.plans.professional",
+          "fact-hubspot-pricing.plans.enterprise",
+          "fact-hubspot-pricing.sales-hub.ladder",
+          "fact-hubspot-pricing.billing-notes",
+          "fact-hubspot-features.contact-management",
+          "fact-hubspot-features.pipeline-management",
+          "fact-hubspot-features.deal-management",
+          "fact-hubspot-features.lead-management",
+          "fact-hubspot-features.email-sync",
+          "fact-hubspot-features.email-sequences",
+          "fact-hubspot-features.workflow-automation",
+          "fact-hubspot-features.sales-automation",
+          "fact-hubspot-features.reporting",
+          "fact-hubspot-features.forecasting",
+          "fact-hubspot-features.lead-scoring",
+          "fact-hubspot-features.custom-fields",
+          "fact-hubspot-features.custom-objects",
+          "fact-hubspot-features.ai-assistance",
+          "fact-hubspot-features.integrations",
+          "fact-hubspot-features.sso",
+          "fact-hubspot-ai.assistant",
+          "fact-hubspot-ai.prospecting-agent",
+          "fact-hubspot-ai.forecasting",
+          "fact-hubspot-positioning.primary",
+          "fact-hubspot-positioning.free-crm",
+          "fact-hubspot-pricing.sales-hub.professional.catalog",
+          "fact-hubspot-pricing.sales-hub.professional.marketing",
+          "fact-hubspot-pricing.smart-crm.starter.catalog"
+        ],
+        "methodologySlug": "crm-editorial",
+        "methodologyVersion": "1.0.0",
+        "agentVersion": "1.0.0",
+        "contextBuiltAt": "2026-08-16T05:58:05.439Z"
+      },
+      "blockers": [],
+      "warnings": [],
+      "agentTaskId": "exec-comparison-agent-agile-crm-vs-hubspot-1786859885434",
+      "draftId": "draft-deterministic-v1-comparison-agent-agile-crm-vs-hubspot-2026-08-16T05-58-05-440Z",
+      "startedAt": "2026-08-16T05:58:05.433Z",
+      "completedAt": "2026-08-16T05:58:05.443Z",
+      "revisionAttempts": 0
+    },
+    {
+      "id": "comparison:agile-crm-vs-zoho-crm",
+      "definitionStepId": "comparisons",
+      "handler": "agent-run",
+      "label": "Comparison agile-crm-vs-zoho-crm",
+      "status": "completed",
+      "required": false,
+      "failurePolicy": "continue-with-warning",
+      "attempt": 1,
+      "maxAttempts": 2,
+      "dependsOn": [
+        "content-plan"
+      ],
+      "priority": "normal",
+      "config": {
+        "agentId": "comparison-agent",
+        "targetSlug": "agile-crm-vs-zoho-crm",
+        "maxAutomaticRevisions": 1,
+        "expandFromContentPlan": true,
+        "expandKind": "comparisons",
+        "stopAfterApproval": true,
+        "allowNormalizedFacts": false,
+        "optionalWhenBlocked": true,
+        "forceTransientFailOnce": false
+      },
+      "expansionKey": "agile-crm-vs-zoho-crm",
+      "inputRefs": {},
+      "outputRefs": {
+        "draftId": "draft-deterministic-v1-comparison-agent-agile-crm-vs-zoho-crm-2026-08-16T05-58-05-451Z",
+        "qaStatus": "pass",
+        "agentId": "comparison-agent",
+        "target": "agile-crm-vs-zoho-crm"
+      },
+      "inputSnapshot": {
+        "researchFactIds": [
+          "fact-agile-crm-pricing.hasFreePlan",
+          "fact-agile-crm-pricing.hasFreeTrial",
+          "fact-agile-crm-pricing.currency",
+          "fact-agile-crm-pricing.model",
+          "fact-agile-crm-identity.shortDescription",
+          "fact-agile-crm-positioning.vendorClaim",
+          "fact-agile-crm-pricing.startingPriceMonthly",
+          "fact-agile-crm-pricing.plans.free",
+          "fact-agile-crm-pricing.plans.starter",
+          "fact-agile-crm-pricing.plans.regular",
+          "fact-agile-crm-pricing.plans.enterprise",
+          "fact-agile-crm-features.contact-management",
+          "fact-agile-crm-features.lead-management",
+          "fact-agile-crm-features.pipeline-management",
+          "fact-agile-crm-features.deal-management",
+          "fact-agile-crm-features.custom-pipelines",
+          "fact-agile-crm-features.custom-fields",
+          "fact-agile-crm-features.email-sync",
+          "fact-agile-crm-features.email-tracking",
+          "fact-agile-crm-features.workflow-automation",
+          "fact-agile-crm-features.reporting",
+          "fact-agile-crm-features.mobile-app",
+          "fact-agile-crm-features.sales-automation",
+          "fact-agile-crm-features.integrations",
+          "fact-agile-crm-features.ai-assistance",
+          "fact-zoho-crm-pricing.hasFreePlan",
+          "fact-zoho-crm-pricing.hasFreeTrial",
+          "fact-zoho-crm-pricing.startingPriceMonthly",
+          "fact-zoho-crm-pricing.currency",
+          "fact-zoho-crm-pricing.model",
+          "fact-zoho-crm-pricing.plans.free",
+          "fact-zoho-crm-pricing.plans.standard",
+          "fact-zoho-crm-pricing.plans.professional",
+          "fact-zoho-crm-pricing.plans.enterprise",
+          "fact-zoho-crm-pricing.plans.ultimate",
+          "fact-zoho-crm-features.contact-management",
+          "fact-zoho-crm-features.lead-management",
+          "fact-zoho-crm-features.pipeline-management",
+          "fact-zoho-crm-features.deal-management",
+          "fact-zoho-crm-features.email-sync",
+          "fact-zoho-crm-features.workflow-automation",
+          "fact-zoho-crm-features.sales-automation",
+          "fact-zoho-crm-features.reporting",
+          "fact-zoho-crm-features.forecasting",
+          "fact-zoho-crm-features.custom-fields",
+          "fact-zoho-crm-features.custom-pipelines",
+          "fact-zoho-crm-features.mobile-app",
+          "fact-zoho-crm-features.ai-assistance",
+          "fact-zoho-crm-features.integrations",
+          "fact-zoho-crm-positioning.summary",
+          "fact-zoho-crm-ai.assistant",
+          "fact-zoho-crm-ai.automation",
+          "fact-zoho-crm-ai.recommendations"
+        ],
+        "methodologySlug": "crm-editorial",
+        "methodologyVersion": "1.0.0",
+        "agentVersion": "1.0.0",
+        "contextBuiltAt": "2026-08-16T05:58:05.450Z"
+      },
+      "blockers": [],
+      "warnings": [],
+      "agentTaskId": "exec-comparison-agent-agile-crm-vs-zoho-crm-1786859885445",
+      "draftId": "draft-deterministic-v1-comparison-agent-agile-crm-vs-zoho-crm-2026-08-16T05-58-05-451Z",
+      "startedAt": "2026-08-16T05:58:05.444Z",
+      "completedAt": "2026-08-16T05:58:05.454Z",
+      "revisionAttempts": 0
+    },
+    {
+      "id": "comparison:agile-crm-vs-freshsales",
+      "definitionStepId": "comparisons",
+      "handler": "agent-run",
+      "label": "Comparison agile-crm-vs-freshsales",
+      "status": "completed",
+      "required": false,
+      "failurePolicy": "continue-with-warning",
+      "attempt": 1,
+      "maxAttempts": 2,
+      "dependsOn": [
+        "content-plan"
+      ],
+      "priority": "normal",
+      "config": {
+        "agentId": "comparison-agent",
+        "targetSlug": "agile-crm-vs-freshsales",
+        "maxAutomaticRevisions": 1,
+        "expandFromContentPlan": true,
+        "expandKind": "comparisons",
+        "stopAfterApproval": true,
+        "allowNormalizedFacts": false,
+        "optionalWhenBlocked": true,
+        "forceTransientFailOnce": false
+      },
+      "expansionKey": "agile-crm-vs-freshsales",
+      "inputRefs": {},
+      "outputRefs": {
+        "draftId": "draft-deterministic-v1-comparison-agent-agile-crm-vs-freshsales-2026-08-16T05-58-05-430Z",
+        "qaStatus": "pass",
+        "agentId": "comparison-agent",
+        "target": "agile-crm-vs-freshsales"
+      },
+      "inputSnapshot": {
+        "researchFactIds": [
+          "fact-agile-crm-pricing.hasFreePlan",
+          "fact-agile-crm-pricing.hasFreeTrial",
+          "fact-agile-crm-pricing.currency",
+          "fact-agile-crm-pricing.model",
+          "fact-agile-crm-identity.shortDescription",
+          "fact-agile-crm-positioning.vendorClaim",
+          "fact-agile-crm-pricing.startingPriceMonthly",
+          "fact-agile-crm-pricing.plans.free",
+          "fact-agile-crm-pricing.plans.starter",
+          "fact-agile-crm-pricing.plans.regular",
+          "fact-agile-crm-pricing.plans.enterprise",
+          "fact-agile-crm-features.contact-management",
+          "fact-agile-crm-features.lead-management",
+          "fact-agile-crm-features.pipeline-management",
+          "fact-agile-crm-features.deal-management",
+          "fact-agile-crm-features.custom-pipelines",
+          "fact-agile-crm-features.custom-fields",
+          "fact-agile-crm-features.email-sync",
+          "fact-agile-crm-features.email-tracking",
+          "fact-agile-crm-features.workflow-automation",
+          "fact-agile-crm-features.reporting",
+          "fact-agile-crm-features.mobile-app",
+          "fact-agile-crm-features.sales-automation",
+          "fact-agile-crm-features.integrations",
+          "fact-agile-crm-features.ai-assistance",
+          "fact-freshsales-pricing.hasFreePlan",
+          "fact-freshsales-pricing.hasFreeTrial",
+          "fact-freshsales-pricing.startingPriceMonthly",
+          "fact-freshsales-pricing.currency",
+          "fact-freshsales-pricing.model",
+          "fact-freshsales-pricing.plans.growth",
+          "fact-freshsales-pricing.plans.pro",
+          "fact-freshsales-pricing.plans.enterprise",
+          "fact-freshsales-features.contact-management",
+          "fact-freshsales-features.lead-management",
+          "fact-freshsales-features.pipeline-management",
+          "fact-freshsales-features.deal-management",
+          "fact-freshsales-features.custom-fields",
+          "fact-freshsales-features.custom-pipelines",
+          "fact-freshsales-features.mobile-app",
+          "fact-freshsales-features.email-sync",
+          "fact-freshsales-features.email-sequences",
+          "fact-freshsales-features.workflow-automation",
+          "fact-freshsales-features.sales-automation",
+          "fact-freshsales-features.reporting",
+          "fact-freshsales-features.forecasting",
+          "fact-freshsales-features.lead-scoring",
+          "fact-freshsales-features.ai-assistance",
+          "fact-freshsales-features.call-functionality",
+          "fact-freshsales-features.integrations",
+          "fact-freshsales-features.territory-management",
+          "fact-freshsales-ai.assistant",
+          "fact-freshsales-ai.lead-scoring",
+          "fact-freshsales-ai.recommendations",
+          "fact-freshsales-ai.summaries",
+          "fact-freshsales-ai.forecasting",
+          "fact-freshsales-ai.automation",
+          "fact-freshsales-positioning.primary"
+        ],
+        "methodologySlug": "crm-editorial",
+        "methodologyVersion": "1.0.0",
+        "agentVersion": "1.0.0",
+        "contextBuiltAt": "2026-08-16T05:58:05.428Z"
+      },
+      "blockers": [],
+      "warnings": [],
+      "agentTaskId": "exec-comparison-agent-agile-crm-vs-freshsales-1786859885422",
+      "draftId": "draft-deterministic-v1-comparison-agent-agile-crm-vs-freshsales-2026-08-16T05-58-05-430Z",
+      "startedAt": "2026-08-16T05:58:05.421Z",
+      "completedAt": "2026-08-16T05:58:05.432Z",
+      "revisionAttempts": 0
+    },
+    {
+      "id": "internal-links",
+      "definitionStepId": "internal-links",
+      "handler": "internal-link",
+      "label": "Internal Link Plan",
+      "status": "completed",
+      "required": false,
+      "failurePolicy": "continue-with-warning",
+      "attempt": 1,
+      "maxAttempts": 2,
+      "dependsOn": [
+        "software-review"
+      ],
+      "priority": "low",
+      "config": {
+        "agentId": "internal-link-agent",
+        "maxAutomaticRevisions": 1,
+        "expandFromContentPlan": false,
+        "expandKind": "none",
+        "stopAfterApproval": true,
+        "allowNormalizedFacts": false,
+        "optionalWhenBlocked": false,
+        "forceTransientFailOnce": false
+      },
+      "inputRefs": {},
+      "outputRefs": {
+        "draftId": "draft-deterministic-v1-internal-link-agent-agile-crm-2026-08-16T05-58-05-474Z",
+        "qaStatus": "pass",
+        "agentId": "internal-link-agent",
+        "target": "agile-crm"
+      },
+      "inputSnapshot": {
+        "researchFactIds": [
+          "fact-agile-crm-pricing.hasFreePlan",
+          "fact-agile-crm-pricing.hasFreeTrial",
+          "fact-agile-crm-pricing.currency",
+          "fact-agile-crm-pricing.model",
+          "fact-agile-crm-identity.shortDescription",
+          "fact-agile-crm-positioning.vendorClaim",
+          "fact-agile-crm-pricing.startingPriceMonthly",
+          "fact-agile-crm-pricing.plans.free",
+          "fact-agile-crm-pricing.plans.starter",
+          "fact-agile-crm-pricing.plans.regular",
+          "fact-agile-crm-pricing.plans.enterprise",
+          "fact-agile-crm-features.contact-management",
+          "fact-agile-crm-features.lead-management",
+          "fact-agile-crm-features.pipeline-management",
+          "fact-agile-crm-features.deal-management",
+          "fact-agile-crm-features.custom-pipelines",
+          "fact-agile-crm-features.custom-fields",
+          "fact-agile-crm-features.email-sync",
+          "fact-agile-crm-features.email-tracking",
+          "fact-agile-crm-features.workflow-automation",
+          "fact-agile-crm-features.reporting",
+          "fact-agile-crm-features.mobile-app",
+          "fact-agile-crm-features.sales-automation",
+          "fact-agile-crm-features.integrations",
+          "fact-agile-crm-features.ai-assistance"
+        ],
+        "methodologySlug": "crm-editorial",
+        "methodologyVersion": "1.0.0",
+        "agentVersion": "1.0.0",
+        "contextBuiltAt": "2026-08-16T05:58:05.473Z"
+      },
+      "blockers": [],
+      "warnings": [],
+      "agentTaskId": "exec-internal-link-agent-agile-crm-1786859885464",
+      "draftId": "draft-deterministic-v1-internal-link-agent-agile-crm-2026-08-16T05-58-05-474Z",
+      "startedAt": "2026-08-16T05:58:05.464Z",
+      "completedAt": "2026-08-16T05:58:05.477Z",
+      "revisionAttempts": 0
+    },
+    {
+      "id": "finder-readiness",
+      "definitionStepId": "finder-readiness",
+      "handler": "update-recommendation-readiness",
+      "label": "Finder readiness",
+      "status": "completed",
+      "required": false,
+      "failurePolicy": "continue",
+      "attempt": 1,
+      "maxAttempts": 2,
+      "dependsOn": [
+        "content-plan"
+      ],
+      "priority": "low",
+      "config": {
+        "maxAutomaticRevisions": 1,
+        "expandFromContentPlan": false,
+        "expandKind": "none",
+        "stopAfterApproval": true,
+        "allowNormalizedFacts": false,
+        "optionalWhenBlocked": false,
+        "forceTransientFailOnce": false
+      },
+      "inputRefs": {},
+      "outputRefs": {
+        "finderReadiness": "checked"
+      },
+      "blockers": [],
+      "warnings": [],
+      "startedAt": "2026-08-16T05:58:05.463Z",
+      "completedAt": "2026-08-16T05:58:05.463Z",
+      "revisionAttempts": 0
+    },
+    {
+      "id": "editorial-approval",
+      "definitionStepId": "editorial-approval",
+      "handler": "approval-check",
+      "label": "Editorial approval",
+      "status": "completed",
+      "required": true,
+      "failurePolicy": "manual-review",
+      "attempt": 2,
+      "maxAttempts": 2,
+      "dependsOn": [
+        "software-review"
+      ],
+      "priority": "critical",
+      "config": {
+        "approvalType": "editorial",
+        "maxAutomaticRevisions": 1,
+        "expandFromContentPlan": false,
+        "expandKind": "none",
+        "stopAfterApproval": true,
+        "allowNormalizedFacts": false,
+        "optionalWhenBlocked": false,
+        "forceTransientFailOnce": false
+      },
+      "inputRefs": {},
+      "outputRefs": {
+        "approvalId": "appr-wf-software-onboarding-content-agile-crm-1786859884813-software-review",
+        "draftId": "draft-deterministic-v1-software-review-agent-agile-crm-2026-08-16T05-58-05-408Z",
+        "approvalIds": "appr-wf-software-onboarding-content-agile-crm-1786859884813-software-review"
+      },
+      "blockers": [],
+      "warnings": [
+        "Approval received — resuming",
+        "5 optional draft(s) may still need separate editorial review"
+      ],
+      "approvalId": "appr-wf-software-onboarding-content-agile-crm-1786859884813-software-review",
+      "startedAt": "2026-08-16T06:13:27.969Z",
+      "completedAt": "2026-08-16T06:13:28.045Z",
+      "revisionAttempts": 0
+    },
+    {
+      "id": "pre-publish-validation",
+      "definitionStepId": "pre-publish-validation",
+      "handler": "pre-publish-validation",
+      "label": "Pre-publish validation",
+      "status": "blocked",
+      "required": true,
+      "failurePolicy": "block-workflow",
+      "attempt": 1,
+      "maxAttempts": 2,
+      "dependsOn": [
+        "editorial-approval"
+      ],
+      "priority": "critical",
+      "config": {
+        "maxAutomaticRevisions": 1,
+        "expandFromContentPlan": false,
+        "expandKind": "none",
+        "stopAfterApproval": true,
+        "allowNormalizedFacts": false,
+        "optionalWhenBlocked": false,
+        "forceTransientFailOnce": false
+      },
+      "inputRefs": {},
+      "outputRefs": {},
+      "blockers": [
+        "Stale context for comparison:agile-crm-vs-hubspot: removed-critical-fact:fact-hubspot-pricing.hasFreePlan; removed-critical-fact:fact-hubspot-pricing.hasFreeTrial; removed-critical-fact:fact-hubspot-pricing.startingPriceMonthly; removed-critical-fact:fact-hubspot-pricing.currency; removed-critical-fact:fact-hubspot-pricing.model; removed-critical-fact:fact-hubspot-pricing.plans.free; removed-critical-fact:fact-hubspot-pricing.plans.starter; removed-critical-fact:fact-hubspot-pricing.plans.professional; removed-critical-fact:fact-hubspot-pricing.plans.enterprise; removed-critical-fact:fact-hubspot-pricing.sales-hub.ladder; removed-critical-fact:fact-hubspot-pricing.billing-notes; removed-critical-fact:fact-hubspot-pricing.sales-hub.professional.catalog; removed-critical-fact:fact-hubspot-pricing.sales-hub.professional.marketing; removed-critical-fact:fact-hubspot-pricing.smart-crm.starter.catalog",
+        "Stale context for comparison:agile-crm-vs-zoho-crm: removed-critical-fact:fact-zoho-crm-pricing.hasFreePlan; removed-critical-fact:fact-zoho-crm-pricing.hasFreeTrial; removed-critical-fact:fact-zoho-crm-pricing.startingPriceMonthly; removed-critical-fact:fact-zoho-crm-pricing.currency; removed-critical-fact:fact-zoho-crm-pricing.model; removed-critical-fact:fact-zoho-crm-pricing.plans.free; removed-critical-fact:fact-zoho-crm-pricing.plans.standard; removed-critical-fact:fact-zoho-crm-pricing.plans.professional; removed-critical-fact:fact-zoho-crm-pricing.plans.enterprise; removed-critical-fact:fact-zoho-crm-pricing.plans.ultimate",
+        "Stale context for comparison:agile-crm-vs-freshsales: removed-critical-fact:fact-freshsales-pricing.hasFreePlan; removed-critical-fact:fact-freshsales-pricing.hasFreeTrial; removed-critical-fact:fact-freshsales-pricing.startingPriceMonthly; removed-critical-fact:fact-freshsales-pricing.currency; removed-critical-fact:fact-freshsales-pricing.model; removed-critical-fact:fact-freshsales-pricing.plans.growth; removed-critical-fact:fact-freshsales-pricing.plans.pro; removed-critical-fact:fact-freshsales-pricing.plans.enterprise"
+      ],
+      "warnings": [],
+      "startedAt": "2026-08-16T06:13:28.048Z",
+      "completedAt": "2026-08-16T06:13:29.858Z",
+      "revisionAttempts": 0
+    }
+  ],
+  "history": [
+    {
+      "at": "2026-08-16T05:58:05.295Z",
+      "event": "workflow_created",
+      "message": "Created software-onboarding-content:v1.0.0"
+    },
+    {
+      "at": "2026-08-16T05:58:05.296Z",
+      "event": "workflow_started",
+      "message": "Workflow execution started"
+    },
+    {
+      "at": "2026-08-16T05:58:05.297Z",
+      "event": "workflow_step_started",
+      "stepId": "software-onboarding",
+      "message": "Started Software onboarding"
+    },
+    {
+      "at": "2026-08-16T05:58:05.331Z",
+      "event": "workflow_step_completed",
+      "stepId": "software-onboarding",
+      "message": "Reused onboarding run onboard-agile-crm-1786859662870 (review-required)"
+    },
+    {
+      "at": "2026-08-16T05:58:05.332Z",
+      "event": "workflow_step_started",
+      "stepId": "content-plan",
+      "message": "Started Content plan"
+    },
+    {
+      "at": "2026-08-16T05:58:05.368Z",
+      "event": "workflow_step_completed",
+      "stepId": "content-plan",
+      "message": "Content plan from onboarding onboard-agile-crm-1786859662870 (9 candidates)"
+    },
+    {
+      "at": "2026-08-16T05:58:05.369Z",
+      "event": "workflow_step_started",
+      "stepId": "software-review",
+      "message": "Started Software Review"
+    },
+    {
+      "at": "2026-08-16T05:58:05.414Z",
+      "event": "workflow_step_completed",
+      "stepId": "software-review",
+      "message": "Agent software-review-agent → draft draft-deterministic-v1-software-review-agent-agile-crm-2026-08-16T05-58-05-408Z (qa=pass)"
+    },
+    {
+      "at": "2026-08-16T05:58:05.415Z",
+      "event": "workflow_step_started",
+      "stepId": "alternatives",
+      "message": "Started Alternatives"
+    },
+    {
+      "at": "2026-08-16T05:58:05.420Z",
+      "event": "workflow_step_completed",
+      "stepId": "alternatives",
+      "message": "Agent blocked (optional): NO_APPROVED_ALTERNATIVES: Approved alternative relationships required — same-category alone is insufficient"
+    },
+    {
+      "at": "2026-08-16T05:58:05.421Z",
+      "event": "workflow_step_started",
+      "stepId": "comparison:agile-crm-vs-freshsales",
+      "message": "Started Comparison agile-crm-vs-freshsales"
+    },
+    {
+      "at": "2026-08-16T05:58:05.432Z",
+      "event": "workflow_step_completed",
+      "stepId": "comparison:agile-crm-vs-freshsales",
+      "message": "Agent comparison-agent → draft draft-deterministic-v1-comparison-agent-agile-crm-vs-freshsales-2026-08-16T05-58-05-430Z (qa=pass)"
+    },
+    {
+      "at": "2026-08-16T05:58:05.433Z",
+      "event": "workflow_step_started",
+      "stepId": "comparison:agile-crm-vs-hubspot",
+      "message": "Started Comparison agile-crm-vs-hubspot"
+    },
+    {
+      "at": "2026-08-16T05:58:05.443Z",
+      "event": "workflow_step_completed",
+      "stepId": "comparison:agile-crm-vs-hubspot",
+      "message": "Agent comparison-agent → draft draft-deterministic-v1-comparison-agent-agile-crm-vs-hubspot-2026-08-16T05-58-05-440Z (qa=pass)"
+    },
+    {
+      "at": "2026-08-16T05:58:05.444Z",
+      "event": "workflow_step_started",
+      "stepId": "comparison:agile-crm-vs-zoho-crm",
+      "message": "Started Comparison agile-crm-vs-zoho-crm"
+    },
+    {
+      "at": "2026-08-16T05:58:05.454Z",
+      "event": "workflow_step_completed",
+      "stepId": "comparison:agile-crm-vs-zoho-crm",
+      "message": "Agent comparison-agent → draft draft-deterministic-v1-comparison-agent-agile-crm-vs-zoho-crm-2026-08-16T05-58-05-451Z (qa=pass)"
+    },
+    {
+      "at": "2026-08-16T05:58:05.455Z",
+      "event": "workflow_step_started",
+      "stepId": "pricing-page",
+      "message": "Started Pricing Page"
+    },
+    {
+      "at": "2026-08-16T05:58:05.462Z",
+      "event": "workflow_step_completed",
+      "stepId": "pricing-page",
+      "message": "Agent pricing-page-agent → draft draft-deterministic-v1-pricing-page-agent-agile-crm-2026-08-16T05-58-05-460Z (qa=pass)"
+    },
+    {
+      "at": "2026-08-16T05:58:05.463Z",
+      "event": "workflow_step_started",
+      "stepId": "finder-readiness",
+      "message": "Started Finder readiness"
+    },
+    {
+      "at": "2026-08-16T05:58:05.463Z",
+      "event": "workflow_step_completed",
+      "stepId": "finder-readiness",
+      "message": "Finder readiness noted for agile-crm"
+    },
+    {
+      "at": "2026-08-16T05:58:05.464Z",
+      "event": "workflow_step_started",
+      "stepId": "internal-links",
+      "message": "Started Internal Link Plan"
+    },
+    {
+      "at": "2026-08-16T05:58:05.477Z",
+      "event": "workflow_step_completed",
+      "stepId": "internal-links",
+      "message": "Agent internal-link-agent → draft draft-deterministic-v1-internal-link-agent-agile-crm-2026-08-16T05-58-05-474Z (qa=pass)"
+    },
+    {
+      "at": "2026-08-16T05:58:05.478Z",
+      "event": "workflow_step_started",
+      "stepId": "editorial-approval",
+      "message": "Started Editorial approval"
+    },
+    {
+      "at": "2026-08-16T05:58:05.519Z",
+      "event": "workflow_step_completed",
+      "stepId": "editorial-approval",
+      "message": "WAITING FOR EDITORIAL APPROVAL (appr-wf-software-onboarding-content-agile-crm-1786859884813-software-review)"
+    },
+    {
+      "at": "2026-08-16T06:13:27.967Z",
+      "event": "workflow_resumed",
+      "message": "Workflow resumed"
+    },
+    {
+      "at": "2026-08-16T06:13:27.968Z",
+      "event": "workflow_started",
+      "message": "Workflow execution started"
+    },
+    {
+      "at": "2026-08-16T06:13:27.969Z",
+      "event": "workflow_step_started",
+      "stepId": "editorial-approval",
+      "message": "Started Editorial approval"
+    },
+    {
+      "at": "2026-08-16T06:13:28.045Z",
+      "event": "workflow_step_completed",
+      "stepId": "editorial-approval",
+      "message": "Required editorial approvals satisfied"
+    },
+    {
+      "at": "2026-08-16T06:13:28.047Z",
+      "event": "workflow_step_started",
+      "stepId": "pre-publish-validation",
+      "message": "Started Pre-publish validation"
+    },
+    {
+      "at": "2026-08-16T06:13:29.858Z",
+      "event": "workflow_step_completed",
+      "stepId": "pre-publish-validation",
+      "message": "Pre-publish validation blocked: Stale context for comparison:agile-crm-vs-hubspot: removed-critical-fact:fact-hubspot-pricing.hasFreePlan; removed-critical-fact:fact-hubspot-pricing.hasFreeTrial; removed-critical-fact:fact-hubspot-pricing.startingPriceMonthly; removed-critical-fact:fact-hubspot-pricing.currency; removed-critical-fact:fact-hubspot-pricing.model; removed-critical-fact:fact-hubspot-pricing.plans.free; removed-critical-fact:fact-hubspot-pricing.plans.starter; removed-critical-fact:fact-hubspot-pricing.plans.professional; removed-critical-fact:fact-hubspot-pricing.plans.enterprise; removed-critical-fact:fact-hubspot-pricing.sales-hub.ladder; removed-critical-fact:fact-hubspot-pricing.billing-notes; removed-critical-fact:fact-hubspot-pricing.sales-hub.professional.catalog; removed-critical-fact:fact-hubspot-pricing.sales-hub.professional.marketing; removed-critical-fact:fact-hubspot-pricing.smart-crm.starter.catalog; Stale context for comparison:agile-crm-vs-zoho-crm: removed-critical-fact:fact-zoho-crm-pricing.hasFreePlan; removed-critical-fact:fact-zoho-crm-pricing.hasFreeTrial; removed-critical-fact:fact-zoho-crm-pricing.startingPriceMonthly; removed-critical-fact:fact-zoho-crm-pricing.currency; removed-critical-fact:fact-zoho-crm-pricing.model; removed-critical-fact:fact-zoho-crm-pricing.plans.free; removed-critical-fact:fact-zoho-crm-pricing.plans.standard; removed-critical-fact:fact-zoho-crm-pricing.plans.professional; removed-critical-fact:fact-zoho-crm-pricing.plans.enterprise; removed-critical-fact:fact-zoho-crm-pricing.plans.ultimate; Stale context for comparison:agile-crm-vs-freshsales: removed-critical-fact:fact-freshsales-pricing.hasFreePlan; removed-critical-fact:fact-freshsales-pricing.hasFreeTrial; removed-critical-fact:fact-freshsales-pricing.startingPriceMonthly; removed-critical-fact:fact-freshsales-pricing.currency; removed-critical-fact:fact-freshsales-pricing.model; removed-critical-fact:fact-freshsales-pricing.plans.growth; removed-critical-fact:fact-freshsales-pricing.plans.pro; removed-critical-fact:fact-freshsales-pricing.plans.enterprise"
+    }
+  ],
+  "options": {
+    "generateReview": true,
+    "generatePricing": true,
+    "generateAlternatives": true,
+    "generateComparisons": true,
+    "runInternalLinks": true,
+    "stopAfterApproval": true,
+    "allowNormalizedFacts": false,
+    "dryRun": false,
+    "maxComparisons": 3,
+    "skipOnboarding": false
+  },
+  "supersededBy": "wf-software-onboarding-content-agile-crm-1786861014669",
+  "warnings": [
+    "alternatives blocked: NO_APPROVED_ALTERNATIVES: Approved alternative relationships required — same-category alone is insufficient"
+  ],
+  "createdAt": "2026-08-16T05:58:05.294Z",
+  "updatedAt": "2026-08-16T06:16:54.903Z"
+}

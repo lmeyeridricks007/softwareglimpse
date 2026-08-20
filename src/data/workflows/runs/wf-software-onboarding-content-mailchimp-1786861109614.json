@@ -1,0 +1,991 @@
+{
+  "id": "wf-software-onboarding-content-mailchimp-1786861109614",
+  "workflowId": "software-onboarding-content",
+  "workflowVersion": "1.0.0",
+  "name": "Software Onboarding Content: mailchimp",
+  "targetType": "software",
+  "targetId": "mailchimp",
+  "status": "completed",
+  "steps": [
+    {
+      "id": "software-onboarding",
+      "definitionStepId": "software-onboarding",
+      "handler": "software-onboarding",
+      "label": "Software onboarding",
+      "status": "completed",
+      "required": true,
+      "failurePolicy": "block-workflow",
+      "attempt": 1,
+      "maxAttempts": 2,
+      "dependsOn": [],
+      "priority": "critical",
+      "config": {
+        "maxAutomaticRevisions": 1,
+        "expandFromContentPlan": false,
+        "expandKind": "none",
+        "stopAfterApproval": true,
+        "allowNormalizedFacts": false,
+        "optionalWhenBlocked": false,
+        "forceTransientFailOnce": false
+      },
+      "inputRefs": {},
+      "outputRefs": {
+        "softwareOnboardingRunId": "onboard-mailchimp-1786859744964"
+      },
+      "blockers": [],
+      "warnings": [],
+      "startedAt": "2026-08-16T06:18:30.002Z",
+      "completedAt": "2026-08-16T06:18:30.035Z",
+      "revisionAttempts": 0
+    },
+    {
+      "id": "content-plan",
+      "definitionStepId": "content-plan",
+      "handler": "content-plan",
+      "label": "Content plan",
+      "status": "completed",
+      "required": true,
+      "failurePolicy": "block-workflow",
+      "attempt": 1,
+      "maxAttempts": 2,
+      "dependsOn": [
+        "software-onboarding"
+      ],
+      "priority": "high",
+      "config": {
+        "maxAutomaticRevisions": 1,
+        "expandFromContentPlan": false,
+        "expandKind": "none",
+        "stopAfterApproval": true,
+        "allowNormalizedFacts": false,
+        "optionalWhenBlocked": false,
+        "forceTransientFailOnce": false
+      },
+      "inputRefs": {},
+      "outputRefs": {
+        "softwareOnboardingRunId": "onboard-mailchimp-1786859744964",
+        "comparisonTargets": "hubspot-vs-mailchimp,activecampaign-vs-mailchimp,keap-vs-mailchimp",
+        "pageCandidateCount": "9"
+      },
+      "blockers": [],
+      "warnings": [],
+      "startedAt": "2026-08-16T06:18:30.036Z",
+      "completedAt": "2026-08-16T06:18:30.070Z",
+      "revisionAttempts": 0
+    },
+    {
+      "id": "software-review",
+      "definitionStepId": "software-review",
+      "handler": "agent-run",
+      "label": "Software Review",
+      "status": "completed",
+      "required": true,
+      "failurePolicy": "block-workflow",
+      "attempt": 1,
+      "maxAttempts": 2,
+      "dependsOn": [
+        "content-plan"
+      ],
+      "priority": "high",
+      "config": {
+        "agentId": "software-review-agent",
+        "targetSlug": "mailchimp",
+        "maxAutomaticRevisions": 1,
+        "expandFromContentPlan": false,
+        "expandKind": "none",
+        "stopAfterApproval": true,
+        "allowNormalizedFacts": false,
+        "optionalWhenBlocked": false,
+        "forceTransientFailOnce": false
+      },
+      "inputRefs": {},
+      "outputRefs": {
+        "draftId": "draft-deterministic-v1-software-review-agent-mailchimp-2026-08-16T06-18-30-118Z",
+        "qaStatus": "pass",
+        "agentId": "software-review-agent",
+        "target": "mailchimp"
+      },
+      "inputSnapshot": {
+        "researchFactIds": [
+          "fact-mailchimp-pricing.hasFreePlan",
+          "fact-mailchimp-pricing.hasFreeTrial",
+          "fact-mailchimp-pricing.currency",
+          "fact-mailchimp-pricing.model",
+          "fact-mailchimp-identity.shortDescription",
+          "fact-mailchimp-positioning.vendorClaim",
+          "fact-mailchimp-pricing.startingPriceMonthly",
+          "fact-mailchimp-pricing.plans.free",
+          "fact-mailchimp-pricing.plans.standard",
+          "fact-mailchimp-pricing.plans.enterprise",
+          "fact-mailchimp-features.contact-management",
+          "fact-mailchimp-features.lead-management",
+          "fact-mailchimp-features.pipeline-management",
+          "fact-mailchimp-features.deal-management",
+          "fact-mailchimp-features.custom-pipelines",
+          "fact-mailchimp-features.custom-fields",
+          "fact-mailchimp-features.email-sync",
+          "fact-mailchimp-features.email-tracking",
+          "fact-mailchimp-features.workflow-automation",
+          "fact-mailchimp-features.reporting",
+          "fact-mailchimp-features.mobile-app",
+          "fact-mailchimp-features.sales-automation",
+          "fact-mailchimp-features.integrations",
+          "fact-mailchimp-features.ai-assistance"
+        ],
+        "methodologySlug": "crm-editorial",
+        "methodologyVersion": "1.0.0",
+        "agentVersion": "1.0.0",
+        "contextBuiltAt": "2026-08-16T06:18:30.114Z"
+      },
+      "blockers": [],
+      "warnings": [],
+      "agentTaskId": "exec-software-review-agent-mailchimp-1786861110072",
+      "draftId": "draft-deterministic-v1-software-review-agent-mailchimp-2026-08-16T06-18-30-118Z",
+      "startedAt": "2026-08-16T06:18:30.071Z",
+      "completedAt": "2026-08-16T06:18:30.124Z",
+      "revisionAttempts": 0
+    },
+    {
+      "id": "pricing-page",
+      "definitionStepId": "pricing-page",
+      "handler": "agent-run",
+      "label": "Pricing Page",
+      "status": "completed",
+      "required": false,
+      "failurePolicy": "continue-with-warning",
+      "attempt": 1,
+      "maxAttempts": 2,
+      "dependsOn": [
+        "content-plan"
+      ],
+      "priority": "normal",
+      "config": {
+        "agentId": "pricing-page-agent",
+        "targetSlug": "mailchimp",
+        "maxAutomaticRevisions": 1,
+        "expandFromContentPlan": false,
+        "expandKind": "none",
+        "stopAfterApproval": true,
+        "allowNormalizedFacts": false,
+        "optionalWhenBlocked": true,
+        "forceTransientFailOnce": false
+      },
+      "inputRefs": {},
+      "outputRefs": {
+        "draftId": "draft-deterministic-v1-pricing-page-agent-mailchimp-2026-08-16T06-18-30-200Z",
+        "qaStatus": "pass",
+        "agentId": "pricing-page-agent",
+        "target": "mailchimp"
+      },
+      "inputSnapshot": {
+        "researchFactIds": [
+          "fact-mailchimp-pricing.hasFreePlan",
+          "fact-mailchimp-pricing.hasFreeTrial",
+          "fact-mailchimp-pricing.currency",
+          "fact-mailchimp-pricing.model",
+          "fact-mailchimp-identity.shortDescription",
+          "fact-mailchimp-positioning.vendorClaim",
+          "fact-mailchimp-pricing.startingPriceMonthly",
+          "fact-mailchimp-pricing.plans.free",
+          "fact-mailchimp-pricing.plans.standard",
+          "fact-mailchimp-pricing.plans.enterprise",
+          "fact-mailchimp-features.contact-management",
+          "fact-mailchimp-features.lead-management",
+          "fact-mailchimp-features.pipeline-management",
+          "fact-mailchimp-features.deal-management",
+          "fact-mailchimp-features.custom-pipelines",
+          "fact-mailchimp-features.custom-fields",
+          "fact-mailchimp-features.email-sync",
+          "fact-mailchimp-features.email-tracking",
+          "fact-mailchimp-features.workflow-automation",
+          "fact-mailchimp-features.reporting",
+          "fact-mailchimp-features.mobile-app",
+          "fact-mailchimp-features.sales-automation",
+          "fact-mailchimp-features.integrations",
+          "fact-mailchimp-features.ai-assistance"
+        ],
+        "methodologySlug": "crm-editorial",
+        "methodologyVersion": "1.0.0",
+        "agentVersion": "1.0.0",
+        "contextBuiltAt": "2026-08-16T06:18:30.199Z"
+      },
+      "blockers": [],
+      "warnings": [],
+      "agentTaskId": "exec-pricing-page-agent-mailchimp-1786861110193",
+      "draftId": "draft-deterministic-v1-pricing-page-agent-mailchimp-2026-08-16T06-18-30-200Z",
+      "startedAt": "2026-08-16T06:18:30.192Z",
+      "completedAt": "2026-08-16T06:18:30.206Z",
+      "revisionAttempts": 0
+    },
+    {
+      "id": "alternatives",
+      "definitionStepId": "alternatives",
+      "handler": "agent-run",
+      "label": "Alternatives",
+      "status": "completed",
+      "required": false,
+      "failurePolicy": "continue-with-warning",
+      "attempt": 1,
+      "maxAttempts": 2,
+      "dependsOn": [
+        "content-plan"
+      ],
+      "priority": "normal",
+      "config": {
+        "agentId": "alternatives-agent",
+        "targetSlug": "mailchimp",
+        "maxAutomaticRevisions": 1,
+        "expandFromContentPlan": false,
+        "expandKind": "none",
+        "stopAfterApproval": true,
+        "allowNormalizedFacts": false,
+        "optionalWhenBlocked": true,
+        "forceTransientFailOnce": false
+      },
+      "inputRefs": {},
+      "outputRefs": {
+        "draftId": "draft-deterministic-v1-alternatives-agent-mailchimp-2026-08-16T06-18-30-131Z",
+        "qaStatus": "pass",
+        "agentId": "alternatives-agent",
+        "target": "mailchimp"
+      },
+      "inputSnapshot": {
+        "researchFactIds": [
+          "fact-mailchimp-pricing.hasFreePlan",
+          "fact-mailchimp-pricing.hasFreeTrial",
+          "fact-mailchimp-pricing.currency",
+          "fact-mailchimp-pricing.model",
+          "fact-mailchimp-identity.shortDescription",
+          "fact-mailchimp-positioning.vendorClaim",
+          "fact-mailchimp-pricing.startingPriceMonthly",
+          "fact-mailchimp-pricing.plans.free",
+          "fact-mailchimp-pricing.plans.standard",
+          "fact-mailchimp-pricing.plans.enterprise",
+          "fact-mailchimp-features.contact-management",
+          "fact-mailchimp-features.lead-management",
+          "fact-mailchimp-features.pipeline-management",
+          "fact-mailchimp-features.deal-management",
+          "fact-mailchimp-features.custom-pipelines",
+          "fact-mailchimp-features.custom-fields",
+          "fact-mailchimp-features.email-sync",
+          "fact-mailchimp-features.email-tracking",
+          "fact-mailchimp-features.workflow-automation",
+          "fact-mailchimp-features.reporting",
+          "fact-mailchimp-features.mobile-app",
+          "fact-mailchimp-features.sales-automation",
+          "fact-mailchimp-features.integrations",
+          "fact-mailchimp-features.ai-assistance"
+        ],
+        "methodologySlug": "crm-editorial",
+        "methodologyVersion": "1.0.0",
+        "agentVersion": "1.0.0",
+        "contextBuiltAt": "2026-08-16T06:18:30.130Z"
+      },
+      "blockers": [],
+      "warnings": [],
+      "agentTaskId": "exec-alternatives-agent-mailchimp-1786861110125",
+      "draftId": "draft-deterministic-v1-alternatives-agent-mailchimp-2026-08-16T06-18-30-131Z",
+      "startedAt": "2026-08-16T06:18:30.125Z",
+      "completedAt": "2026-08-16T06:18:30.134Z",
+      "revisionAttempts": 0
+    },
+    {
+      "id": "comparison:hubspot-vs-mailchimp",
+      "definitionStepId": "comparisons",
+      "handler": "agent-run",
+      "label": "Comparison hubspot-vs-mailchimp",
+      "status": "completed",
+      "required": false,
+      "failurePolicy": "continue-with-warning",
+      "attempt": 1,
+      "maxAttempts": 2,
+      "dependsOn": [
+        "content-plan"
+      ],
+      "priority": "normal",
+      "config": {
+        "agentId": "comparison-agent",
+        "targetSlug": "hubspot-vs-mailchimp",
+        "maxAutomaticRevisions": 1,
+        "expandFromContentPlan": true,
+        "expandKind": "comparisons",
+        "stopAfterApproval": true,
+        "allowNormalizedFacts": false,
+        "optionalWhenBlocked": true,
+        "forceTransientFailOnce": false
+      },
+      "expansionKey": "hubspot-vs-mailchimp",
+      "inputRefs": {},
+      "outputRefs": {
+        "draftId": "draft-deterministic-v1-comparison-agent-hubspot-vs-mailchimp-2026-08-16T06-18-30-155Z",
+        "qaStatus": "pass",
+        "agentId": "comparison-agent",
+        "target": "hubspot-vs-mailchimp"
+      },
+      "inputSnapshot": {
+        "researchFactIds": [
+          "fact-hubspot-pricing.hasFreePlan",
+          "fact-hubspot-pricing.hasFreeTrial",
+          "fact-hubspot-pricing.startingPriceMonthly",
+          "fact-hubspot-pricing.currency",
+          "fact-hubspot-pricing.model",
+          "fact-hubspot-pricing.plans.free",
+          "fact-hubspot-pricing.plans.starter",
+          "fact-hubspot-pricing.plans.professional",
+          "fact-hubspot-pricing.plans.enterprise",
+          "fact-hubspot-pricing.sales-hub.ladder",
+          "fact-hubspot-pricing.billing-notes",
+          "fact-hubspot-features.contact-management",
+          "fact-hubspot-features.pipeline-management",
+          "fact-hubspot-features.deal-management",
+          "fact-hubspot-features.lead-management",
+          "fact-hubspot-features.email-sync",
+          "fact-hubspot-features.email-sequences",
+          "fact-hubspot-features.workflow-automation",
+          "fact-hubspot-features.sales-automation",
+          "fact-hubspot-features.reporting",
+          "fact-hubspot-features.forecasting",
+          "fact-hubspot-features.lead-scoring",
+          "fact-hubspot-features.custom-fields",
+          "fact-hubspot-features.custom-objects",
+          "fact-hubspot-features.ai-assistance",
+          "fact-hubspot-features.integrations",
+          "fact-hubspot-features.sso",
+          "fact-hubspot-ai.assistant",
+          "fact-hubspot-ai.prospecting-agent",
+          "fact-hubspot-ai.forecasting",
+          "fact-hubspot-positioning.primary",
+          "fact-hubspot-positioning.free-crm",
+          "fact-hubspot-pricing.sales-hub.professional.catalog",
+          "fact-hubspot-pricing.sales-hub.professional.marketing",
+          "fact-hubspot-pricing.smart-crm.starter.catalog",
+          "fact-mailchimp-pricing.hasFreePlan",
+          "fact-mailchimp-pricing.hasFreeTrial",
+          "fact-mailchimp-pricing.currency",
+          "fact-mailchimp-pricing.model",
+          "fact-mailchimp-identity.shortDescription",
+          "fact-mailchimp-positioning.vendorClaim",
+          "fact-mailchimp-pricing.startingPriceMonthly",
+          "fact-mailchimp-pricing.plans.free",
+          "fact-mailchimp-pricing.plans.standard",
+          "fact-mailchimp-pricing.plans.enterprise",
+          "fact-mailchimp-features.contact-management",
+          "fact-mailchimp-features.lead-management",
+          "fact-mailchimp-features.pipeline-management",
+          "fact-mailchimp-features.deal-management",
+          "fact-mailchimp-features.custom-pipelines",
+          "fact-mailchimp-features.custom-fields",
+          "fact-mailchimp-features.email-sync",
+          "fact-mailchimp-features.email-tracking",
+          "fact-mailchimp-features.workflow-automation",
+          "fact-mailchimp-features.reporting",
+          "fact-mailchimp-features.mobile-app",
+          "fact-mailchimp-features.sales-automation",
+          "fact-mailchimp-features.integrations",
+          "fact-mailchimp-features.ai-assistance"
+        ],
+        "methodologySlug": "crm-editorial",
+        "methodologyVersion": "1.0.0",
+        "agentVersion": "1.0.0",
+        "contextBuiltAt": "2026-08-16T06:18:30.153Z"
+      },
+      "blockers": [],
+      "warnings": [],
+      "agentTaskId": "exec-comparison-agent-hubspot-vs-mailchimp-1786861110148",
+      "draftId": "draft-deterministic-v1-comparison-agent-hubspot-vs-mailchimp-2026-08-16T06-18-30-155Z",
+      "startedAt": "2026-08-16T06:18:30.147Z",
+      "completedAt": "2026-08-16T06:18:30.157Z",
+      "revisionAttempts": 0
+    },
+    {
+      "id": "comparison:activecampaign-vs-mailchimp",
+      "definitionStepId": "comparisons",
+      "handler": "agent-run",
+      "label": "Comparison activecampaign-vs-mailchimp",
+      "status": "completed",
+      "required": false,
+      "failurePolicy": "continue-with-warning",
+      "attempt": 1,
+      "maxAttempts": 2,
+      "dependsOn": [
+        "content-plan"
+      ],
+      "priority": "normal",
+      "config": {
+        "agentId": "comparison-agent",
+        "targetSlug": "activecampaign-vs-mailchimp",
+        "maxAutomaticRevisions": 1,
+        "expandFromContentPlan": true,
+        "expandKind": "comparisons",
+        "stopAfterApproval": true,
+        "allowNormalizedFacts": false,
+        "optionalWhenBlocked": true,
+        "forceTransientFailOnce": false
+      },
+      "expansionKey": "activecampaign-vs-mailchimp",
+      "inputRefs": {},
+      "outputRefs": {
+        "draftId": "draft-deterministic-v1-comparison-agent-activecampaign-vs-mailchimp-2026-08-16T06-18-30-143Z",
+        "qaStatus": "pass",
+        "agentId": "comparison-agent",
+        "target": "activecampaign-vs-mailchimp"
+      },
+      "inputSnapshot": {
+        "researchFactIds": [
+          "fact-activecampaign-pricing.hasFreePlan",
+          "fact-activecampaign-pricing.hasFreeTrial",
+          "fact-activecampaign-pricing.startingPriceMonthly",
+          "fact-activecampaign-pricing.currency",
+          "fact-activecampaign-pricing.model",
+          "fact-activecampaign-pricing.plans.starter",
+          "fact-activecampaign-pricing.plans.plus",
+          "fact-activecampaign-pricing.plans.professional",
+          "fact-activecampaign-pricing.plans.enterprise",
+          "fact-activecampaign-features.contact-management",
+          "fact-activecampaign-features.lead-management",
+          "fact-activecampaign-features.pipeline-management",
+          "fact-activecampaign-features.deal-management",
+          "fact-activecampaign-features.email-sync",
+          "fact-activecampaign-features.workflow-automation",
+          "fact-activecampaign-features.sales-automation",
+          "fact-activecampaign-features.reporting",
+          "fact-activecampaign-features.forecasting",
+          "fact-activecampaign-features.custom-fields",
+          "fact-activecampaign-features.custom-pipelines",
+          "fact-activecampaign-features.mobile-app",
+          "fact-activecampaign-features.ai-assistance",
+          "fact-activecampaign-features.integrations",
+          "fact-activecampaign-positioning.summary",
+          "fact-activecampaign-ai.email-generation",
+          "fact-activecampaign-ai.automation",
+          "fact-activecampaign-ai.recommendations",
+          "fact-mailchimp-pricing.hasFreePlan",
+          "fact-mailchimp-pricing.hasFreeTrial",
+          "fact-mailchimp-pricing.currency",
+          "fact-mailchimp-pricing.model",
+          "fact-mailchimp-identity.shortDescription",
+          "fact-mailchimp-positioning.vendorClaim",
+          "fact-mailchimp-pricing.startingPriceMonthly",
+          "fact-mailchimp-pricing.plans.free",
+          "fact-mailchimp-pricing.plans.standard",
+          "fact-mailchimp-pricing.plans.enterprise",
+          "fact-mailchimp-features.contact-management",
+          "fact-mailchimp-features.lead-management",
+          "fact-mailchimp-features.pipeline-management",
+          "fact-mailchimp-features.deal-management",
+          "fact-mailchimp-features.custom-pipelines",
+          "fact-mailchimp-features.custom-fields",
+          "fact-mailchimp-features.email-sync",
+          "fact-mailchimp-features.email-tracking",
+          "fact-mailchimp-features.workflow-automation",
+          "fact-mailchimp-features.reporting",
+          "fact-mailchimp-features.mobile-app",
+          "fact-mailchimp-features.sales-automation",
+          "fact-mailchimp-features.integrations",
+          "fact-mailchimp-features.ai-assistance"
+        ],
+        "methodologySlug": "crm-editorial",
+        "methodologyVersion": "1.0.0",
+        "agentVersion": "1.0.0",
+        "contextBuiltAt": "2026-08-16T06:18:30.141Z"
+      },
+      "blockers": [],
+      "warnings": [],
+      "agentTaskId": "exec-comparison-agent-activecampaign-vs-mailchimp-1786861110136",
+      "draftId": "draft-deterministic-v1-comparison-agent-activecampaign-vs-mailchimp-2026-08-16T06-18-30-143Z",
+      "startedAt": "2026-08-16T06:18:30.135Z",
+      "completedAt": "2026-08-16T06:18:30.146Z",
+      "revisionAttempts": 0
+    },
+    {
+      "id": "comparison:keap-vs-mailchimp",
+      "definitionStepId": "comparisons",
+      "handler": "agent-run",
+      "label": "Comparison keap-vs-mailchimp",
+      "status": "completed",
+      "required": false,
+      "failurePolicy": "continue-with-warning",
+      "attempt": 1,
+      "maxAttempts": 2,
+      "dependsOn": [
+        "content-plan"
+      ],
+      "priority": "normal",
+      "config": {
+        "agentId": "comparison-agent",
+        "targetSlug": "keap-vs-mailchimp",
+        "maxAutomaticRevisions": 1,
+        "expandFromContentPlan": true,
+        "expandKind": "comparisons",
+        "stopAfterApproval": true,
+        "allowNormalizedFacts": false,
+        "optionalWhenBlocked": true,
+        "forceTransientFailOnce": false
+      },
+      "expansionKey": "keap-vs-mailchimp",
+      "inputRefs": {},
+      "outputRefs": {
+        "draftId": "draft-deterministic-v1-comparison-agent-keap-vs-mailchimp-2026-08-16T06-18-30-177Z",
+        "qaStatus": "pass",
+        "agentId": "comparison-agent",
+        "target": "keap-vs-mailchimp"
+      },
+      "inputSnapshot": {
+        "researchFactIds": [
+          "fact-keap-pricing.hasFreePlan",
+          "fact-keap-pricing.hasFreeTrial",
+          "fact-keap-pricing.startingPriceMonthly",
+          "fact-keap-pricing.currency",
+          "fact-keap-pricing.model",
+          "fact-keap-pricing.plans.max-ignite",
+          "fact-keap-pricing.plans.max-grow",
+          "fact-keap-pricing.plans.max-scale",
+          "fact-keap-pricing.additionalUser",
+          "fact-keap-features.pipeline-management",
+          "fact-keap-features.workflow-automation",
+          "fact-keap-features.email-campaigns",
+          "fact-keap-features.mobile-app",
+          "fact-keap-ai.assistant",
+          "fact-keap-ai.email-generation",
+          "fact-keap-positioning.smb-automation",
+          "fact-keap-integrations.payments",
+          "fact-mailchimp-pricing.hasFreePlan",
+          "fact-mailchimp-pricing.hasFreeTrial",
+          "fact-mailchimp-pricing.currency",
+          "fact-mailchimp-pricing.model",
+          "fact-mailchimp-identity.shortDescription",
+          "fact-mailchimp-positioning.vendorClaim",
+          "fact-mailchimp-pricing.startingPriceMonthly",
+          "fact-mailchimp-pricing.plans.free",
+          "fact-mailchimp-pricing.plans.standard",
+          "fact-mailchimp-pricing.plans.enterprise",
+          "fact-mailchimp-features.contact-management",
+          "fact-mailchimp-features.lead-management",
+          "fact-mailchimp-features.pipeline-management",
+          "fact-mailchimp-features.deal-management",
+          "fact-mailchimp-features.custom-pipelines",
+          "fact-mailchimp-features.custom-fields",
+          "fact-mailchimp-features.email-sync",
+          "fact-mailchimp-features.email-tracking",
+          "fact-mailchimp-features.workflow-automation",
+          "fact-mailchimp-features.reporting",
+          "fact-mailchimp-features.mobile-app",
+          "fact-mailchimp-features.sales-automation",
+          "fact-mailchimp-features.integrations",
+          "fact-mailchimp-features.ai-assistance"
+        ],
+        "methodologySlug": "crm-editorial",
+        "methodologyVersion": "1.0.0",
+        "agentVersion": "1.0.0",
+        "contextBuiltAt": "2026-08-16T06:18:30.164Z"
+      },
+      "blockers": [],
+      "warnings": [],
+      "agentTaskId": "exec-comparison-agent-keap-vs-mailchimp-1786861110158",
+      "draftId": "draft-deterministic-v1-comparison-agent-keap-vs-mailchimp-2026-08-16T06-18-30-177Z",
+      "startedAt": "2026-08-16T06:18:30.158Z",
+      "completedAt": "2026-08-16T06:18:30.184Z",
+      "revisionAttempts": 0
+    },
+    {
+      "id": "internal-links",
+      "definitionStepId": "internal-links",
+      "handler": "internal-link",
+      "label": "Internal Link Plan",
+      "status": "completed",
+      "required": false,
+      "failurePolicy": "continue-with-warning",
+      "attempt": 1,
+      "maxAttempts": 2,
+      "dependsOn": [
+        "software-review"
+      ],
+      "priority": "low",
+      "config": {
+        "agentId": "internal-link-agent",
+        "maxAutomaticRevisions": 1,
+        "expandFromContentPlan": false,
+        "expandKind": "none",
+        "stopAfterApproval": true,
+        "allowNormalizedFacts": false,
+        "optionalWhenBlocked": false,
+        "forceTransientFailOnce": false
+      },
+      "inputRefs": {},
+      "outputRefs": {
+        "draftId": "draft-deterministic-v1-internal-link-agent-mailchimp-2026-08-16T06-18-30-234Z",
+        "qaStatus": "pass",
+        "agentId": "internal-link-agent",
+        "target": "mailchimp"
+      },
+      "inputSnapshot": {
+        "researchFactIds": [
+          "fact-mailchimp-pricing.hasFreePlan",
+          "fact-mailchimp-pricing.hasFreeTrial",
+          "fact-mailchimp-pricing.currency",
+          "fact-mailchimp-pricing.model",
+          "fact-mailchimp-identity.shortDescription",
+          "fact-mailchimp-positioning.vendorClaim",
+          "fact-mailchimp-pricing.startingPriceMonthly",
+          "fact-mailchimp-pricing.plans.free",
+          "fact-mailchimp-pricing.plans.standard",
+          "fact-mailchimp-pricing.plans.enterprise",
+          "fact-mailchimp-features.contact-management",
+          "fact-mailchimp-features.lead-management",
+          "fact-mailchimp-features.pipeline-management",
+          "fact-mailchimp-features.deal-management",
+          "fact-mailchimp-features.custom-pipelines",
+          "fact-mailchimp-features.custom-fields",
+          "fact-mailchimp-features.email-sync",
+          "fact-mailchimp-features.email-tracking",
+          "fact-mailchimp-features.workflow-automation",
+          "fact-mailchimp-features.reporting",
+          "fact-mailchimp-features.mobile-app",
+          "fact-mailchimp-features.sales-automation",
+          "fact-mailchimp-features.integrations",
+          "fact-mailchimp-features.ai-assistance"
+        ],
+        "methodologySlug": "crm-editorial",
+        "methodologyVersion": "1.0.0",
+        "agentVersion": "1.0.0",
+        "contextBuiltAt": "2026-08-16T06:18:30.234Z"
+      },
+      "blockers": [],
+      "warnings": [],
+      "agentTaskId": "exec-internal-link-agent-mailchimp-1786861110227",
+      "draftId": "draft-deterministic-v1-internal-link-agent-mailchimp-2026-08-16T06-18-30-234Z",
+      "startedAt": "2026-08-16T06:18:30.226Z",
+      "completedAt": "2026-08-16T06:18:30.236Z",
+      "revisionAttempts": 0
+    },
+    {
+      "id": "finder-readiness",
+      "definitionStepId": "finder-readiness",
+      "handler": "update-recommendation-readiness",
+      "label": "Finder readiness",
+      "status": "completed",
+      "required": false,
+      "failurePolicy": "continue",
+      "attempt": 1,
+      "maxAttempts": 2,
+      "dependsOn": [
+        "content-plan"
+      ],
+      "priority": "low",
+      "config": {
+        "maxAutomaticRevisions": 1,
+        "expandFromContentPlan": false,
+        "expandKind": "none",
+        "stopAfterApproval": true,
+        "allowNormalizedFacts": false,
+        "optionalWhenBlocked": false,
+        "forceTransientFailOnce": false
+      },
+      "inputRefs": {},
+      "outputRefs": {
+        "finderReadiness": "checked"
+      },
+      "blockers": [],
+      "warnings": [],
+      "startedAt": "2026-08-16T06:18:30.218Z",
+      "completedAt": "2026-08-16T06:18:30.223Z",
+      "revisionAttempts": 0
+    },
+    {
+      "id": "editorial-approval",
+      "definitionStepId": "editorial-approval",
+      "handler": "approval-check",
+      "label": "Editorial approval",
+      "status": "completed",
+      "required": true,
+      "failurePolicy": "manual-review",
+      "attempt": 2,
+      "maxAttempts": 2,
+      "dependsOn": [
+        "software-review"
+      ],
+      "priority": "critical",
+      "config": {
+        "approvalType": "editorial",
+        "maxAutomaticRevisions": 1,
+        "expandFromContentPlan": false,
+        "expandKind": "none",
+        "stopAfterApproval": true,
+        "allowNormalizedFacts": false,
+        "optionalWhenBlocked": false,
+        "forceTransientFailOnce": false
+      },
+      "inputRefs": {},
+      "outputRefs": {
+        "approvalId": "appr-wf-software-onboarding-content-mailchimp-1786861109614-software-review",
+        "draftId": "draft-deterministic-v1-software-review-agent-mailchimp-2026-08-16T06-18-30-118Z",
+        "approvalIds": "appr-wf-software-onboarding-content-mailchimp-1786861109614-software-review"
+      },
+      "blockers": [],
+      "warnings": [
+        "Approval received — resuming",
+        "6 optional draft(s) may still need separate editorial review"
+      ],
+      "approvalId": "appr-wf-software-onboarding-content-mailchimp-1786861109614-software-review",
+      "startedAt": "2026-08-16T06:19:11.049Z",
+      "completedAt": "2026-08-16T06:19:11.119Z",
+      "revisionAttempts": 0
+    },
+    {
+      "id": "pre-publish-validation",
+      "definitionStepId": "pre-publish-validation",
+      "handler": "pre-publish-validation",
+      "label": "Pre-publish validation",
+      "status": "completed",
+      "required": true,
+      "failurePolicy": "block-workflow",
+      "attempt": 2,
+      "maxAttempts": 2,
+      "dependsOn": [
+        "editorial-approval"
+      ],
+      "priority": "critical",
+      "config": {
+        "maxAutomaticRevisions": 1,
+        "expandFromContentPlan": false,
+        "expandKind": "none",
+        "stopAfterApproval": true,
+        "allowNormalizedFacts": false,
+        "optionalWhenBlocked": false,
+        "forceTransientFailOnce": false
+      },
+      "inputRefs": {},
+      "outputRefs": {
+        "publishState": "READY_TO_PUBLISH"
+      },
+      "blockers": [],
+      "warnings": [
+        "Re-running blocked pre-publish validation on resume",
+        "stopAfterApproval: workflow will not publish automatically"
+      ],
+      "startedAt": "2026-08-16T06:20:27.654Z",
+      "completedAt": "2026-08-16T06:20:28.077Z",
+      "revisionAttempts": 0
+    }
+  ],
+  "history": [
+    {
+      "at": "2026-08-16T06:18:29.999Z",
+      "event": "workflow_created",
+      "message": "Created software-onboarding-content:v1.0.0"
+    },
+    {
+      "at": "2026-08-16T06:18:30.001Z",
+      "event": "workflow_started",
+      "message": "Workflow execution started"
+    },
+    {
+      "at": "2026-08-16T06:18:30.002Z",
+      "event": "workflow_step_started",
+      "stepId": "software-onboarding",
+      "message": "Started Software onboarding"
+    },
+    {
+      "at": "2026-08-16T06:18:30.035Z",
+      "event": "workflow_step_completed",
+      "stepId": "software-onboarding",
+      "message": "Reused onboarding run onboard-mailchimp-1786859744964 (review-required)"
+    },
+    {
+      "at": "2026-08-16T06:18:30.036Z",
+      "event": "workflow_step_started",
+      "stepId": "content-plan",
+      "message": "Started Content plan"
+    },
+    {
+      "at": "2026-08-16T06:18:30.070Z",
+      "event": "workflow_step_completed",
+      "stepId": "content-plan",
+      "message": "Content plan from onboarding onboard-mailchimp-1786859744964 (9 candidates)"
+    },
+    {
+      "at": "2026-08-16T06:18:30.071Z",
+      "event": "workflow_step_started",
+      "stepId": "software-review",
+      "message": "Started Software Review"
+    },
+    {
+      "at": "2026-08-16T06:18:30.124Z",
+      "event": "workflow_step_completed",
+      "stepId": "software-review",
+      "message": "Agent software-review-agent → draft draft-deterministic-v1-software-review-agent-mailchimp-2026-08-16T06-18-30-118Z (qa=pass)"
+    },
+    {
+      "at": "2026-08-16T06:18:30.125Z",
+      "event": "workflow_step_started",
+      "stepId": "alternatives",
+      "message": "Started Alternatives"
+    },
+    {
+      "at": "2026-08-16T06:18:30.134Z",
+      "event": "workflow_step_completed",
+      "stepId": "alternatives",
+      "message": "Agent alternatives-agent → draft draft-deterministic-v1-alternatives-agent-mailchimp-2026-08-16T06-18-30-131Z (qa=pass)"
+    },
+    {
+      "at": "2026-08-16T06:18:30.135Z",
+      "event": "workflow_step_started",
+      "stepId": "comparison:activecampaign-vs-mailchimp",
+      "message": "Started Comparison activecampaign-vs-mailchimp"
+    },
+    {
+      "at": "2026-08-16T06:18:30.146Z",
+      "event": "workflow_step_completed",
+      "stepId": "comparison:activecampaign-vs-mailchimp",
+      "message": "Agent comparison-agent → draft draft-deterministic-v1-comparison-agent-activecampaign-vs-mailchimp-2026-08-16T06-18-30-143Z (qa=pass)"
+    },
+    {
+      "at": "2026-08-16T06:18:30.147Z",
+      "event": "workflow_step_started",
+      "stepId": "comparison:hubspot-vs-mailchimp",
+      "message": "Started Comparison hubspot-vs-mailchimp"
+    },
+    {
+      "at": "2026-08-16T06:18:30.157Z",
+      "event": "workflow_step_completed",
+      "stepId": "comparison:hubspot-vs-mailchimp",
+      "message": "Agent comparison-agent → draft draft-deterministic-v1-comparison-agent-hubspot-vs-mailchimp-2026-08-16T06-18-30-155Z (qa=pass)"
+    },
+    {
+      "at": "2026-08-16T06:18:30.158Z",
+      "event": "workflow_step_started",
+      "stepId": "comparison:keap-vs-mailchimp",
+      "message": "Started Comparison keap-vs-mailchimp"
+    },
+    {
+      "at": "2026-08-16T06:18:30.184Z",
+      "event": "workflow_step_completed",
+      "stepId": "comparison:keap-vs-mailchimp",
+      "message": "Agent comparison-agent → draft draft-deterministic-v1-comparison-agent-keap-vs-mailchimp-2026-08-16T06-18-30-177Z (qa=pass)"
+    },
+    {
+      "at": "2026-08-16T06:18:30.186Z",
+      "event": "workflow_step_started",
+      "stepId": "pricing-page",
+      "message": "Started Pricing Page"
+    },
+    {
+      "at": "2026-08-16T06:18:30.206Z",
+      "event": "workflow_step_completed",
+      "stepId": "pricing-page",
+      "message": "Agent pricing-page-agent → draft draft-deterministic-v1-pricing-page-agent-mailchimp-2026-08-16T06-18-30-200Z (qa=pass)"
+    },
+    {
+      "at": "2026-08-16T06:18:30.216Z",
+      "event": "workflow_step_started",
+      "stepId": "finder-readiness",
+      "message": "Started Finder readiness"
+    },
+    {
+      "at": "2026-08-16T06:18:30.223Z",
+      "event": "workflow_step_completed",
+      "stepId": "finder-readiness",
+      "message": "Finder readiness noted for mailchimp"
+    },
+    {
+      "at": "2026-08-16T06:18:30.226Z",
+      "event": "workflow_step_started",
+      "stepId": "internal-links",
+      "message": "Started Internal Link Plan"
+    },
+    {
+      "at": "2026-08-16T06:18:30.236Z",
+      "event": "workflow_step_completed",
+      "stepId": "internal-links",
+      "message": "Agent internal-link-agent → draft draft-deterministic-v1-internal-link-agent-mailchimp-2026-08-16T06-18-30-234Z (qa=pass)"
+    },
+    {
+      "at": "2026-08-16T06:18:30.237Z",
+      "event": "workflow_step_started",
+      "stepId": "editorial-approval",
+      "message": "Started Editorial approval"
+    },
+    {
+      "at": "2026-08-16T06:18:30.268Z",
+      "event": "workflow_step_completed",
+      "stepId": "editorial-approval",
+      "message": "WAITING FOR EDITORIAL APPROVAL (appr-wf-software-onboarding-content-mailchimp-1786861109614-software-review)"
+    },
+    {
+      "at": "2026-08-16T06:19:11.047Z",
+      "event": "workflow_resumed",
+      "message": "Workflow resumed"
+    },
+    {
+      "at": "2026-08-16T06:19:11.048Z",
+      "event": "workflow_started",
+      "message": "Workflow execution started"
+    },
+    {
+      "at": "2026-08-16T06:19:11.049Z",
+      "event": "workflow_step_started",
+      "stepId": "editorial-approval",
+      "message": "Started Editorial approval"
+    },
+    {
+      "at": "2026-08-16T06:19:11.119Z",
+      "event": "workflow_step_completed",
+      "stepId": "editorial-approval",
+      "message": "Required editorial approvals satisfied"
+    },
+    {
+      "at": "2026-08-16T06:19:11.121Z",
+      "event": "workflow_step_started",
+      "stepId": "pre-publish-validation",
+      "message": "Started Pre-publish validation"
+    },
+    {
+      "at": "2026-08-16T06:19:11.548Z",
+      "event": "workflow_step_completed",
+      "stepId": "pre-publish-validation",
+      "message": "Pre-publish validation blocked: Stale context for comparison:hubspot-vs-mailchimp: removed-critical-fact:fact-hubspot-pricing.hasFreePlan; removed-critical-fact:fact-hubspot-pricing.hasFreeTrial; removed-critical-fact:fact-hubspot-pricing.startingPriceMonthly; removed-critical-fact:fact-hubspot-pricing.currency; removed-critical-fact:fact-hubspot-pricing.model; removed-critical-fact:fact-hubspot-pricing.plans.free; removed-critical-fact:fact-hubspot-pricing.plans.starter; removed-critical-fact:fact-hubspot-pricing.plans.professional; removed-critical-fact:fact-hubspot-pricing.plans.enterprise; removed-critical-fact:fact-hubspot-pricing.sales-hub.ladder; removed-critical-fact:fact-hubspot-pricing.billing-notes; removed-critical-fact:fact-hubspot-pricing.sales-hub.professional.catalog; removed-critical-fact:fact-hubspot-pricing.sales-hub.professional.marketing; removed-critical-fact:fact-hubspot-pricing.smart-crm.starter.catalog; Stale context for comparison:activecampaign-vs-mailchimp: removed-critical-fact:fact-activecampaign-pricing.hasFreePlan; removed-critical-fact:fact-activecampaign-pricing.hasFreeTrial; removed-critical-fact:fact-activecampaign-pricing.startingPriceMonthly; removed-critical-fact:fact-activecampaign-pricing.currency; removed-critical-fact:fact-activecampaign-pricing.model; removed-critical-fact:fact-activecampaign-pricing.plans.starter; removed-critical-fact:fact-activecampaign-pricing.plans.plus; removed-critical-fact:fact-activecampaign-pricing.plans.professional; removed-critical-fact:fact-activecampaign-pricing.plans.enterprise; Stale context for comparison:keap-vs-mailchimp: removed-critical-fact:fact-keap-pricing.hasFreePlan; removed-critical-fact:fact-keap-pricing.hasFreeTrial; removed-critical-fact:fact-keap-pricing.startingPriceMonthly; removed-critical-fact:fact-keap-pricing.currency; removed-critical-fact:fact-keap-pricing.model; removed-critical-fact:fact-keap-pricing.plans.max-ignite; removed-critical-fact:fact-keap-pricing.plans.max-grow; removed-critical-fact:fact-keap-pricing.plans.max-scale; removed-critical-fact:fact-keap-pricing.additionalUser"
+    },
+    {
+      "at": "2026-08-16T06:20:27.652Z",
+      "event": "workflow_resumed",
+      "message": "Workflow resumed"
+    },
+    {
+      "at": "2026-08-16T06:20:27.653Z",
+      "event": "workflow_started",
+      "message": "Workflow execution started"
+    },
+    {
+      "at": "2026-08-16T06:20:27.654Z",
+      "event": "workflow_step_started",
+      "stepId": "pre-publish-validation",
+      "message": "Started Pre-publish validation"
+    },
+    {
+      "at": "2026-08-16T06:20:28.077Z",
+      "event": "workflow_step_completed",
+      "stepId": "pre-publish-validation",
+      "message": "Pre-publish validation passed — READY TO PUBLISH (manual)"
+    },
+    {
+      "at": "2026-08-16T06:20:28.078Z",
+      "event": "workflow_completed",
+      "message": "Workflow completed"
+    }
+  ],
+  "options": {
+    "generateReview": true,
+    "generatePricing": true,
+    "generateAlternatives": true,
+    "generateComparisons": true,
+    "runInternalLinks": true,
+    "stopAfterApproval": true,
+    "allowNormalizedFacts": false,
+    "dryRun": false,
+    "maxComparisons": 3,
+    "skipOnboarding": false
+  },
+  "warnings": [],
+  "createdAt": "2026-08-16T06:18:29.998Z",
+  "updatedAt": "2026-08-16T06:20:28.078Z"
+}

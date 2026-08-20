@@ -1,0 +1,289 @@
+{
+  "id": "review-coralogix-v1",
+  "productSlug": "coralogix",
+  "assessmentId": "assessment-coralogix-it-v1",
+  "editorialStatus": "approved",
+  "title": "Coralogix Review (2026)",
+  "h1": "Coralogix Review",
+  "intro": "Coralogix is evaluated here as an observability and infrastructure monitoring suite — Coralogix is an observability platform (logs, traces, metrics, plus an AI token meter) sold on a published usage rate card rather than a Datadog-style host SKU. First-party pricing: Logs $0.42/GB, Traces $0.16/GB, Metrics $0.06/GB, AI $1.50/1M tokens. Free trial is 14 days / 8 units. No free-forever plan and no published monthly seat floor — do not invent one. Same observability-monitoring cluster as Datadog — Datadog remains the award (8.6); this entity does not outrank it. Distinct from Chronosphere’s quote/pilot control plane and from Honeycomb’s $150 Pro event/trace tile. This review uses SoftwareGlimpse’s IT & Development methodology (ease of use, IT job fit, workflow depth, integrations, admin/security, scalability, value, AI), scoring products inside their job cluster rather than against unrelated peers. It is based on first-party research, not hands-on lab testing.",
+  "summary": "Choose Coralogix when a published per-GB observability rate card is the job — not Datadog host modules by default, and not a Chronosphere RFP.",
+  "verdict": "Choose Coralogix when a published per-GB observability rate card is the job — not Datadog host modules by default, and not a Chronosphere RFP. Compare Datadog for the observability award path; Chronosphere for Prometheus cardinality control; Honeycomb for high-cardinality events/traces. Scores reflect first-party documentation as of 2026-08-18 — not hands-on product testing. Confirm current packaging, host/GB rates and minimums on the vendor site before purchase.",
+  "overallScore": 7.8,
+  "criterionAssessments": [
+    {
+      "criterionSlug": "ease-of-use",
+      "score": 8,
+      "rationale": "Published rate card plus a 14-day / 8-unit trial is easier to try than Chronosphere quotes. Not a lab test.",
+      "supportingFactIds": [
+        "fact-coralogix-features.infrastructure-monitoring",
+        "fact-coralogix-pricing.model"
+      ],
+      "confidence": "medium",
+      "status": "approved",
+      "reviewedAt": "2026-08-18T22:00:00.000Z",
+      "reviewer": "editorial"
+    },
+    {
+      "criterionSlug": "it-job-fit",
+      "score": 8,
+      "rationale": "Observability-monitoring — logs/traces/metrics peer of Datadog, not ITSM or PaaS.",
+      "supportingFactIds": [
+        "fact-coralogix-features.infrastructure-monitoring",
+        "fact-coralogix-pricing.model"
+      ],
+      "confidence": "medium",
+      "status": "approved",
+      "reviewedAt": "2026-08-18T22:00:00.000Z",
+      "reviewer": "editorial"
+    },
+    {
+      "criterionSlug": "workflow-depth",
+      "score": 8,
+      "rationale": "Telemetry pipeline plus querying is solid; held at 8 versus Datadog’s modular breadth.",
+      "supportingFactIds": [
+        "fact-coralogix-features.apm-tracing",
+        "fact-coralogix-pricing.model"
+      ],
+      "confidence": "medium",
+      "status": "approved",
+      "reviewedAt": "2026-08-18T22:00:00.000Z",
+      "reviewer": "editorial"
+    },
+    {
+      "criterionSlug": "integrations",
+      "score": 8,
+      "rationale": "OpenTelemetry/cloud/chat cover typical SRE ingest.",
+      "supportingFactIds": [
+        "fact-coralogix-features.analytics-reporting",
+        "fact-coralogix-pricing.model",
+        "fact-coralogix-positioning.vendorClaim"
+      ],
+      "confidence": "medium",
+      "status": "approved",
+      "reviewedAt": "2026-08-18T22:00:00.000Z",
+      "reviewer": "editorial"
+    },
+    {
+      "criterionSlug": "admin-security",
+      "score": 7,
+      "rationale": "Paid/commit paths add governance; thinner public enterprise-packaging story than Datadog. Held at 7.",
+      "supportingFactIds": [
+        "fact-coralogix-features.enterprise-security",
+        "fact-coralogix-pricing.model"
+      ],
+      "confidence": "medium",
+      "status": "approved",
+      "reviewedAt": "2026-08-18T22:00:00.000Z",
+      "reviewer": "editorial"
+    },
+    {
+      "criterionSlug": "scalability",
+      "score": 8,
+      "rationale": "GB/token scale; commitments exist — not unlimited ingest on the trial.",
+      "supportingFactIds": [
+        "fact-coralogix-pricing.plans.payg-rate-card",
+        "fact-coralogix-pricing.model",
+        "fact-coralogix-pricing.plans.commitments"
+      ],
+      "confidence": "medium",
+      "status": "approved",
+      "reviewedAt": "2026-08-18T22:00:00.000Z",
+      "reviewer": "editorial"
+    },
+    {
+      "criterionSlug": "value-for-money",
+      "score": 8,
+      "rationale": "Published per-GB card with no seat floor is a clear specialist story versus Datadog host modules. Affiliate economics excluded.",
+      "supportingFactIds": [
+        "fact-coralogix-pricing.hasFreePlan",
+        "fact-coralogix-pricing.model"
+      ],
+      "confidence": "medium",
+      "status": "approved",
+      "reviewedAt": "2026-08-18T22:00:00.000Z",
+      "reviewer": "editorial"
+    },
+    {
+      "criterionSlug": "ai-capabilities",
+      "score": 7,
+      "rationale": "AI is a metered $1.50/1M-token line — scored as supporting assistance, not an award reason versus Datadog.",
+      "supportingFactIds": [
+        "fact-coralogix-features.itsm-ai",
+        "fact-coralogix-pricing.model"
+      ],
+      "confidence": "medium",
+      "status": "approved",
+      "reviewedAt": "2026-08-18T22:00:00.000Z",
+      "reviewer": "editorial"
+    }
+  ],
+  "bestFor": [
+    "Teams that want a published per-GB observability card instead of host SKUs",
+    "Buyers who will spend the 14-day / 8-unit trial before committing",
+    "Comparisons versus Datadog modules, Chronosphere quotes, and Honeycomb Pro $150"
+  ],
+  "notIdealFor": [
+    "SRE teams buying Datadog infrastructure monitoring as the award path",
+    "Prometheus-cardinality control-plane specialists (Chronosphere)",
+    "ITSM or cloud PaaS purchases"
+  ],
+  "pros": [
+    "Published usage rate card (no seat floor)",
+    "14-day / 8-unit trial",
+    "Logs, traces, metrics, and metered AI",
+    "Clear observability cluster fit",
+    "Easier published story than Chronosphere quotes"
+  ],
+  "cons": [
+    "Does not outrank Datadog",
+    "No free forever plan",
+    "GB/token TCO still surprises",
+    "Thinner enterprise admin story",
+    "Not ITSM or PaaS"
+  ],
+  "keyFeatures": [
+    "Logs $0.42/GB",
+    "Traces $0.16/GB",
+    "Metrics $0.06/GB",
+    "AI $1.50/1M tokens",
+    "14-day / 8-unit trial"
+  ],
+  "limitations": [
+    "Does not outrank Datadog (8.6)",
+    "No published seat floor — GB/token math still dominates TCO",
+    "14-day / 8-unit trial is not a free forever plan",
+    "Not a Chronosphere-style Prometheus control plane as the primary identity",
+    "Not ITSM, git, hosting panel, managed hosting, or cloud PaaS"
+  ],
+  "pricingSummary": "Usage rate card: Logs $0.42/GB, Traces $0.16/GB, Metrics $0.06/GB, AI $1.50/1M tokens. 14-day / 8-unit trial. No free plan and no seat floor. Confirm live on coralogix.com/pricing.",
+  "whoShouldChoose": "Choose Coralogix when a published per-GB observability rate card is the job — not Datadog host modules by default, and not a Chronosphere RFP.",
+  "whoShouldConsiderAlternatives": "Compare Datadog for the observability award path; Chronosphere for Prometheus cardinality control; Honeycomb for high-cardinality events/traces.",
+  "alternativeSlugs": [
+    "datadog",
+    "chronosphere"
+  ],
+  "comparisonSlugs": [
+    "coralogix-vs-datadog",
+    "chronosphere-vs-coralogix"
+  ],
+  "relatedGuidePaths": [
+    "/categories/it-development/",
+    "/best/it-development-software/",
+    "/use-cases/itsm-service-desk/",
+    "/use-cases/observability-monitoring/",
+    "/use-cases/cloud-paas/"
+  ],
+  "methodologySlug": "it-development-editorial",
+  "methodologyVersion": "1.0.0",
+  "researchSourceIds": [
+    "coralogix-product-official",
+    "coralogix-pricing-official",
+    "coralogix-pricing"
+  ],
+  "factRefs": [
+    {
+      "section": "pricing",
+      "factIds": [
+        "fact-coralogix-pricing.model",
+        "fact-coralogix-pricing.hasFreePlan",
+        "fact-coralogix-pricing.hasFreeTrial",
+        "fact-coralogix-pricing.plans.payg-rate-card",
+        "fact-coralogix-pricing.plans.commitments"
+      ]
+    },
+    {
+      "section": "overview",
+      "factIds": [
+        "fact-coralogix-identity.shortDescription",
+        "fact-coralogix-positioning.vendorClaim",
+        "fact-coralogix-positioning.jobCluster"
+      ]
+    },
+    {
+      "section": "features",
+      "factIds": [
+        "fact-coralogix-features.incident-management",
+        "fact-coralogix-features.change-problem",
+        "fact-coralogix-features.service-catalog",
+        "fact-coralogix-features.infrastructure-monitoring",
+        "fact-coralogix-features.apm-tracing",
+        "fact-coralogix-features.log-management",
+        "fact-coralogix-features.source-control",
+        "fact-coralogix-features.cicd-actions",
+        "fact-coralogix-features.hosting-panel",
+        "fact-coralogix-features.managed-hosting",
+        "fact-coralogix-features.cloud-paas",
+        "fact-coralogix-features.proxy-network",
+        "fact-coralogix-features.itsm-ai",
+        "fact-coralogix-features.dev-ai",
+        "fact-coralogix-features.oncall-paging",
+        "fact-coralogix-features.enterprise-security",
+        "fact-coralogix-features.analytics-reporting"
+      ]
+    }
+  ],
+  "faq": [
+    {
+      "question": "Is Coralogix IT / development software?",
+      "answer": "Yes. Coralogix is evaluated as an observability and infrastructure monitoring suite."
+    },
+    {
+      "question": "How is Coralogix priced?",
+      "answer": "Usage rate card: Logs $0.42/GB, Traces $0.16/GB, Metrics $0.06/GB, AI $1.50/1M tokens. 14-day / 8-unit trial. No free plan and no seat floor. Confirm live on coralogix.com/pricing."
+    },
+    {
+      "question": "Does Coralogix have a free plan or free trial?",
+      "answer": "No free plan is published. A free trial is documented (about 14 days). Confirm current terms with the vendor."
+    },
+    {
+      "question": "Did SoftwareGlimpse personally test Coralogix?",
+      "answer": "No. This review is based on first-party product and pricing research evidence, not hands-on product usage. Affiliate relationships never influence scores."
+    }
+  ],
+  "sections": [
+    {
+      "id": "overview",
+      "heading": "Overview",
+      "body": "Coralogix is an observability platform (logs, traces, metrics, plus an AI token meter) sold on a published usage rate card rather than a Datadog-style host SKU. First-party pricing: Logs $0.42/GB, Traces $0.16/GB, Metrics $0.06/GB, AI $1.50/1M tokens. Free trial is 14 days / 8 units. No free-forever plan and no published monthly seat floor — do not invent one. Same observability-monitoring cluster as Datadog — Datadog remains the award (8.6); this entity does not outrank it. Distinct from Chronosphere’s quote/pilot control plane and from Honeycomb’s $150 Pro event/trace tile."
+    },
+    {
+      "id": "best-for",
+      "heading": "Who it’s for",
+      "body": "• Teams that want a published per-GB observability card instead of host SKUs\n• Buyers who will spend the 14-day / 8-unit trial before committing\n• Comparisons versus Datadog modules, Chronosphere quotes, and Honeycomb Pro $150"
+    },
+    {
+      "id": "features",
+      "heading": "Feature coverage",
+      "body": "• incident-management: limited\n• change-problem: not-supported\n• service-catalog: not-supported\n• infrastructure-monitoring: supported\n• apm-tracing: supported\n• log-management: supported\n• source-control: not-supported\n• cicd-actions: limited\n• hosting-panel: not-supported\n• managed-hosting: not-supported\n• cloud-paas: not-supported\n• proxy-network: not-supported\n• itsm-ai: limited\n• dev-ai: limited\n• oncall-paging: limited\n• enterprise-security: supported\n• analytics-reporting: supported"
+    },
+    {
+      "id": "pricing",
+      "heading": "Pricing",
+      "body": "Usage rate card: Logs $0.42/GB, Traces $0.16/GB, Metrics $0.06/GB, AI $1.50/1M tokens. 14-day / 8-unit trial. No free plan and no seat floor. Confirm live on coralogix.com/pricing."
+    },
+    {
+      "id": "limitations",
+      "heading": "Limitations",
+      "body": "• Does not outrank Datadog (8.6)\n• No published seat floor — GB/token math still dominates TCO\n• 14-day / 8-unit trial is not a free forever plan\n• Not a Chronosphere-style Prometheus control plane as the primary identity\n• Not ITSM, git, hosting panel, managed hosting, or cloud PaaS"
+    }
+  ],
+  "confidence": "medium",
+  "handsOnTesting": false,
+  "contentVersion": 1,
+  "refreshNeeded": false,
+  "lastUpdatedAt": "2026-08-18T22:00:00.000Z",
+  "metadata": {
+    "status": "published",
+    "publishedAt": "2026-08-18T00:00:00.000Z",
+    "updatedAt": "2026-08-18T22:00:00.000Z",
+    "reviewedAt": "2026-08-18T22:00:00.000Z",
+    "author": "author-lee-meyeridricks",
+    "researchStatus": "complete"
+  },
+  "seo": {
+    "title": "Coralogix Review (2026) — IT & Development",
+    "description": "Coralogix IT & development review on SoftwareGlimpse: strengths, trade-offs, pricing posture, and who should buy.",
+    "canonicalPath": "/software/coralogix/",
+    "indexable": true
+  }
+}

@@ -1,0 +1,287 @@
+{
+  "id": "review-azure-devops-v1",
+  "productSlug": "azure-devops",
+  "assessmentId": "assessment-azure-devops-it-v1",
+  "editorialStatus": "approved",
+  "title": "Azure DevOps Review (2026)",
+  "h1": "Azure DevOps Review",
+  "intro": "Azure DevOps is evaluated here as a source control and DevOps collaboration platform — Azure DevOps is Microsoft’s cloud DevOps suite (Azure Boards, Repos, Pipelines, Artifacts, Test Plans). Basic access is free for the first 5 users, then $6/user/month. Stakeholders are free. Basic + Test Plans is $52/user/month for manual/exploratory test management. Azure Artifacts includes 2 GiB free then usage. Pipelines include a free Microsoft-hosted job with limited minutes; extra parallel jobs are usage-priced. Visual Studio subscribers often include Basic. Distinct from GitHub (separate source-control product, even under Microsoft) and from GitHub Copilot (AI coding). This review uses SoftwareGlimpse’s IT & Development methodology (ease of use, IT job fit, workflow depth, integrations, admin/security, scalability, value, AI), scoring products inside their job cluster rather than against unrelated peers. It is based on first-party research, not hands-on lab testing.",
+  "summary": "Choose Azure DevOps when Azure-native Boards/Repos/Pipelines are the job — not GitHub by default, and not GitHub Copilot.",
+  "verdict": "Choose Azure DevOps when Azure-native Boards/Repos/Pipelines are the job — not GitHub by default, and not GitHub Copilot. Compare GitHub for community + Actions; GitLab for DevSecOps-in-one; Jira Software if the job is PM issue tracking only. Scores reflect first-party documentation as of 2026-08-18 — not hands-on product testing. Confirm current packaging, host/GB rates and minimums on the vendor site before purchase.",
+  "overallScore": 8.2,
+  "criterionAssessments": [
+    {
+      "criterionSlug": "ease-of-use",
+      "score": 7,
+      "rationale": "Azure Portal + org/project model is familiar for Microsoft shops; new teams still hit Boards vs GitHub Issues friction. Not a lab test.",
+      "supportingFactIds": [
+        "fact-azure-devops-features.source-control",
+        "fact-azure-devops-pricing.model"
+      ],
+      "confidence": "medium",
+      "status": "approved",
+      "reviewedAt": "2026-08-18T14:00:00.000Z",
+      "reviewer": "editorial"
+    },
+    {
+      "criterionSlug": "it-job-fit",
+      "score": 9,
+      "rationale": "Source control + CI + boards as a DevOps suite — ranked with GitHub and GitLab, not Jira Software (PM) and not GitHub Copilot.",
+      "supportingFactIds": [
+        "fact-azure-devops-features.source-control",
+        "fact-azure-devops-pricing.model"
+      ],
+      "confidence": "medium",
+      "status": "approved",
+      "reviewedAt": "2026-08-18T14:00:00.000Z",
+      "reviewer": "editorial"
+    },
+    {
+      "criterionSlug": "workflow-depth",
+      "score": 9,
+      "rationale": "Repos, Boards, Pipelines, Artifacts, and Test Plans cover a full Azure delivery loop.",
+      "supportingFactIds": [
+        "fact-azure-devops-features.cicd-actions",
+        "fact-azure-devops-pricing.model"
+      ],
+      "confidence": "medium",
+      "status": "approved",
+      "reviewedAt": "2026-08-18T14:00:00.000Z",
+      "reviewer": "editorial"
+    },
+    {
+      "criterionSlug": "integrations",
+      "score": 9,
+      "rationale": "Native Azure AD/Entra, Teams, and Azure cloud; weaker GitHub Marketplace ecosystem.",
+      "supportingFactIds": [
+        "fact-azure-devops-features.analytics-reporting",
+        "fact-azure-devops-pricing.model",
+        "fact-azure-devops-positioning.vendorClaim"
+      ],
+      "confidence": "medium",
+      "status": "approved",
+      "reviewedAt": "2026-08-18T14:00:00.000Z",
+      "reviewer": "editorial"
+    },
+    {
+      "criterionSlug": "admin-security",
+      "score": 8,
+      "rationale": "Entra ID, org policies, and enterprise Microsoft procurement are the admin story.",
+      "supportingFactIds": [
+        "fact-azure-devops-features.enterprise-security",
+        "fact-azure-devops-pricing.model"
+      ],
+      "confidence": "medium",
+      "status": "approved",
+      "reviewedAt": "2026-08-18T14:00:00.000Z",
+      "reviewer": "editorial"
+    },
+    {
+      "criterionSlug": "scalability",
+      "score": 8,
+      "rationale": "Seat + pipeline/artifact usage scales; Visual Studio entitlements change TCO.",
+      "supportingFactIds": [
+        "fact-azure-devops-pricing.plans.basic-first-5",
+        "fact-azure-devops-pricing.model",
+        "fact-azure-devops-pricing.plans.basic-test-plans"
+      ],
+      "confidence": "medium",
+      "status": "approved",
+      "reviewedAt": "2026-08-18T14:00:00.000Z",
+      "reviewer": "editorial"
+    },
+    {
+      "criterionSlug": "value-for-money",
+      "score": 9,
+      "rationale": "First five Basic users free then $6 is a sharp published floor vs GitLab Premium. Affiliate economics excluded.",
+      "supportingFactIds": [
+        "fact-azure-devops-pricing.hasFreePlan",
+        "fact-azure-devops-pricing.model",
+        "fact-azure-devops-pricing.startingPriceMonthly"
+      ],
+      "confidence": "medium",
+      "status": "approved",
+      "reviewedAt": "2026-08-18T14:00:00.000Z",
+      "reviewer": "editorial"
+    },
+    {
+      "criterionSlug": "ai-capabilities",
+      "score": 6,
+      "rationale": "AI coding is GitHub Copilot, not this product — scored as limited assistance on Azure DevOps itself.",
+      "supportingFactIds": [
+        "fact-azure-devops-features.dev-ai",
+        "fact-azure-devops-pricing.model"
+      ],
+      "confidence": "medium",
+      "status": "approved",
+      "reviewedAt": "2026-08-18T14:00:00.000Z",
+      "reviewer": "editorial"
+    }
+  ],
+  "bestFor": [
+    "Microsoft/Azure-native engineering orgs",
+    "Teams that want Boards + Repos + Pipelines without GitHub",
+    "QA groups that will actually buy Test Plans seats"
+  ],
+  "notIdealFor": [
+    "Open-source and GitHub-community-first teams",
+    "Buyers who only need GitHub Copilot in an existing IDE",
+    "ITSM desks (Jira Service Management / ServiceNow)"
+  ],
+  "pros": [
+    "Five free Basic users",
+    "Published $6 Basic seat",
+    "Boards + Repos + Pipelines together",
+    "Azure/Entra native",
+    "Test Plans path for QA"
+  ],
+  "cons": [
+    "Not GitHub’s ecosystem",
+    "Test Plans $52 jump",
+    "Pipeline minutes extra",
+    "AI coding lives on Copilot",
+    "Weaker OSS community default"
+  ],
+  "keyFeatures": [
+    "Azure Repos (Git)",
+    "Azure Boards",
+    "Azure Pipelines",
+    "Azure Artifacts",
+    "Azure Test Plans (paid SKU)"
+  ],
+  "limitations": [
+    "User 6 onwards is $6/user/mo for every additional Basic seat — the free five are not a forever team cap workaround",
+    "Test Plans at $52/user is a QA licence, not something to assign to every developer",
+    "Pipeline minutes and Artifacts storage are extra TCO beyond seats",
+    "Not GitHub — Microsoft owns both; buying motions and community differ",
+    "GitHub Copilot is a separate AI-coding SKU — do not treat Azure DevOps as Copilot"
+  ],
+  "pricingSummary": "Free for 5 Basic users. Additional Basic $6/user/mo. Basic + Test Plans $52/user/mo. Confirm live on Azure DevOps Services pricing.",
+  "whoShouldChoose": "Choose Azure DevOps when Azure-native Boards/Repos/Pipelines are the job — not GitHub by default, and not GitHub Copilot.",
+  "whoShouldConsiderAlternatives": "Compare GitHub for community + Actions; GitLab for DevSecOps-in-one; Jira Software if the job is PM issue tracking only.",
+  "alternativeSlugs": [
+    "github",
+    "gitlab"
+  ],
+  "comparisonSlugs": [
+    "azure-devops-vs-github",
+    "azure-devops-vs-gitlab"
+  ],
+  "relatedGuidePaths": [
+    "/categories/it-development/",
+    "/best/it-development-software/"
+  ],
+  "methodologySlug": "it-development-editorial",
+  "methodologyVersion": "1.0.0",
+  "researchSourceIds": [
+    "azure-devops-product-official",
+    "azure-devops-pricing-official",
+    "azure-devops-pricing"
+  ],
+  "factRefs": [
+    {
+      "section": "pricing",
+      "factIds": [
+        "fact-azure-devops-pricing.model",
+        "fact-azure-devops-pricing.hasFreePlan",
+        "fact-azure-devops-pricing.hasFreeTrial",
+        "fact-azure-devops-pricing.startingPriceMonthly",
+        "fact-azure-devops-pricing.plans.basic-first-5",
+        "fact-azure-devops-pricing.plans.basic",
+        "fact-azure-devops-pricing.plans.basic-test-plans"
+      ]
+    },
+    {
+      "section": "overview",
+      "factIds": [
+        "fact-azure-devops-identity.shortDescription",
+        "fact-azure-devops-positioning.vendorClaim",
+        "fact-azure-devops-positioning.jobCluster"
+      ]
+    },
+    {
+      "section": "features",
+      "factIds": [
+        "fact-azure-devops-features.incident-management",
+        "fact-azure-devops-features.change-problem",
+        "fact-azure-devops-features.service-catalog",
+        "fact-azure-devops-features.infrastructure-monitoring",
+        "fact-azure-devops-features.apm-tracing",
+        "fact-azure-devops-features.log-management",
+        "fact-azure-devops-features.source-control",
+        "fact-azure-devops-features.cicd-actions",
+        "fact-azure-devops-features.hosting-panel",
+        "fact-azure-devops-features.proxy-network",
+        "fact-azure-devops-features.itsm-ai",
+        "fact-azure-devops-features.dev-ai",
+        "fact-azure-devops-features.oncall-paging",
+        "fact-azure-devops-features.enterprise-security",
+        "fact-azure-devops-features.analytics-reporting"
+      ]
+    }
+  ],
+  "faq": [
+    {
+      "question": "Is Azure DevOps IT / development software?",
+      "answer": "Yes. Azure DevOps is evaluated as a source control and DevOps collaboration platform."
+    },
+    {
+      "question": "How is Azure DevOps priced?",
+      "answer": "Free for 5 Basic users. Additional Basic $6/user/mo. Basic + Test Plans $52/user/mo. Confirm live on Azure DevOps Services pricing."
+    },
+    {
+      "question": "Does Azure DevOps have a free plan or free trial?",
+      "answer": "Yes — a free plan is published. A free trial is documented (about 30 days). Confirm current terms with the vendor."
+    },
+    {
+      "question": "Did SoftwareGlimpse personally test Azure DevOps?",
+      "answer": "No. This review is based on first-party product and pricing research evidence, not hands-on product usage. Affiliate relationships never influence scores."
+    }
+  ],
+  "sections": [
+    {
+      "id": "overview",
+      "heading": "Overview",
+      "body": "Azure DevOps is Microsoft’s cloud DevOps suite (Azure Boards, Repos, Pipelines, Artifacts, Test Plans). Basic access is free for the first 5 users, then $6/user/month. Stakeholders are free. Basic + Test Plans is $52/user/month for manual/exploratory test management. Azure Artifacts includes 2 GiB free then usage. Pipelines include a free Microsoft-hosted job with limited minutes; extra parallel jobs are usage-priced. Visual Studio subscribers often include Basic. Distinct from GitHub (separate source-control product, even under Microsoft) and from GitHub Copilot (AI coding)."
+    },
+    {
+      "id": "best-for",
+      "heading": "Who it’s for",
+      "body": "• Microsoft/Azure-native engineering orgs\n• Teams that want Boards + Repos + Pipelines without GitHub\n• QA groups that will actually buy Test Plans seats"
+    },
+    {
+      "id": "features",
+      "heading": "Feature coverage",
+      "body": "• incident-management: not-supported\n• change-problem: not-supported\n• service-catalog: not-supported\n• infrastructure-monitoring: not-supported\n• apm-tracing: not-supported\n• log-management: limited\n• source-control: supported\n• cicd-actions: supported\n• hosting-panel: not-supported\n• proxy-network: not-supported\n• itsm-ai: not-supported\n• dev-ai: limited\n• oncall-paging: not-supported\n• enterprise-security: supported\n• analytics-reporting: supported"
+    },
+    {
+      "id": "pricing",
+      "heading": "Pricing",
+      "body": "Free for 5 Basic users. Additional Basic $6/user/mo. Basic + Test Plans $52/user/mo. Confirm live on Azure DevOps Services pricing."
+    },
+    {
+      "id": "limitations",
+      "heading": "Limitations",
+      "body": "• User 6 onwards is $6/user/mo for every additional Basic seat — the free five are not a forever team cap workaround\n• Test Plans at $52/user is a QA licence, not something to assign to every developer\n• Pipeline minutes and Artifacts storage are extra TCO beyond seats\n• Not GitHub — Microsoft owns both; buying motions and community differ\n• GitHub Copilot is a separate AI-coding SKU — do not treat Azure DevOps as Copilot"
+    }
+  ],
+  "confidence": "medium",
+  "handsOnTesting": false,
+  "contentVersion": 1,
+  "refreshNeeded": false,
+  "lastUpdatedAt": "2026-08-18T14:00:00.000Z",
+  "metadata": {
+    "status": "published",
+    "publishedAt": "2026-08-18T00:00:00.000Z",
+    "updatedAt": "2026-08-18T14:00:00.000Z",
+    "reviewedAt": "2026-08-18T14:00:00.000Z",
+    "author": "author-lee-meyeridricks",
+    "researchStatus": "complete"
+  },
+  "seo": {
+    "title": "Azure DevOps Review (2026) — IT & Development",
+    "description": "Azure DevOps IT & development review on SoftwareGlimpse: strengths, trade-offs, pricing posture, and who should buy.",
+    "canonicalPath": "/software/azure-devops/",
+    "indexable": true
+  }
+}

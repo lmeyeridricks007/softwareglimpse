@@ -1,0 +1,1009 @@
+{
+  "id": "wf-software-onboarding-content-apptivo-1786861031464",
+  "workflowId": "software-onboarding-content",
+  "workflowVersion": "1.0.0",
+  "name": "Software Onboarding Content: apptivo",
+  "targetType": "software",
+  "targetId": "apptivo",
+  "status": "completed",
+  "steps": [
+    {
+      "id": "software-onboarding",
+      "definitionStepId": "software-onboarding",
+      "handler": "software-onboarding",
+      "label": "Software onboarding",
+      "status": "completed",
+      "required": true,
+      "failurePolicy": "block-workflow",
+      "attempt": 1,
+      "maxAttempts": 2,
+      "dependsOn": [],
+      "priority": "critical",
+      "config": {
+        "maxAutomaticRevisions": 1,
+        "expandFromContentPlan": false,
+        "expandKind": "none",
+        "stopAfterApproval": true,
+        "allowNormalizedFacts": false,
+        "optionalWhenBlocked": false,
+        "forceTransientFailOnce": false
+      },
+      "inputRefs": {},
+      "outputRefs": {
+        "softwareOnboardingRunId": "onboard-apptivo-1786859675976"
+      },
+      "blockers": [],
+      "warnings": [],
+      "startedAt": "2026-08-16T06:17:12.003Z",
+      "completedAt": "2026-08-16T06:17:12.038Z",
+      "revisionAttempts": 0
+    },
+    {
+      "id": "content-plan",
+      "definitionStepId": "content-plan",
+      "handler": "content-plan",
+      "label": "Content plan",
+      "status": "completed",
+      "required": true,
+      "failurePolicy": "block-workflow",
+      "attempt": 1,
+      "maxAttempts": 2,
+      "dependsOn": [
+        "software-onboarding"
+      ],
+      "priority": "high",
+      "config": {
+        "maxAutomaticRevisions": 1,
+        "expandFromContentPlan": false,
+        "expandKind": "none",
+        "stopAfterApproval": true,
+        "allowNormalizedFacts": false,
+        "optionalWhenBlocked": false,
+        "forceTransientFailOnce": false
+      },
+      "inputRefs": {},
+      "outputRefs": {
+        "softwareOnboardingRunId": "onboard-apptivo-1786859675976",
+        "comparisonTargets": "apptivo-vs-zoho-crm,apptivo-vs-bitrix24,apptivo-vs-hubspot",
+        "pageCandidateCount": "9"
+      },
+      "blockers": [],
+      "warnings": [],
+      "startedAt": "2026-08-16T06:17:12.040Z",
+      "completedAt": "2026-08-16T06:17:12.075Z",
+      "revisionAttempts": 0
+    },
+    {
+      "id": "software-review",
+      "definitionStepId": "software-review",
+      "handler": "agent-run",
+      "label": "Software Review",
+      "status": "completed",
+      "required": true,
+      "failurePolicy": "block-workflow",
+      "attempt": 1,
+      "maxAttempts": 2,
+      "dependsOn": [
+        "content-plan"
+      ],
+      "priority": "high",
+      "config": {
+        "agentId": "software-review-agent",
+        "targetSlug": "apptivo",
+        "maxAutomaticRevisions": 1,
+        "expandFromContentPlan": false,
+        "expandKind": "none",
+        "stopAfterApproval": true,
+        "allowNormalizedFacts": false,
+        "optionalWhenBlocked": false,
+        "forceTransientFailOnce": false
+      },
+      "inputRefs": {},
+      "outputRefs": {
+        "draftId": "draft-deterministic-v1-software-review-agent-apptivo-2026-08-16T06-17-12-153Z",
+        "qaStatus": "pass",
+        "agentId": "software-review-agent",
+        "target": "apptivo"
+      },
+      "inputSnapshot": {
+        "researchFactIds": [
+          "fact-apptivo-pricing.hasFreePlan",
+          "fact-apptivo-pricing.hasFreeTrial",
+          "fact-apptivo-pricing.currency",
+          "fact-apptivo-pricing.model",
+          "fact-apptivo-identity.shortDescription",
+          "fact-apptivo-positioning.vendorClaim",
+          "fact-apptivo-pricing.startingPriceMonthly",
+          "fact-apptivo-pricing.plans.lite",
+          "fact-apptivo-pricing.plans.premium",
+          "fact-apptivo-pricing.plans.ultimate",
+          "fact-apptivo-pricing.plans.enterprise",
+          "fact-apptivo-features.contact-management",
+          "fact-apptivo-features.lead-management",
+          "fact-apptivo-features.pipeline-management",
+          "fact-apptivo-features.deal-management",
+          "fact-apptivo-features.custom-pipelines",
+          "fact-apptivo-features.custom-fields",
+          "fact-apptivo-features.email-sync",
+          "fact-apptivo-features.email-tracking",
+          "fact-apptivo-features.workflow-automation",
+          "fact-apptivo-features.reporting",
+          "fact-apptivo-features.mobile-app",
+          "fact-apptivo-features.sales-automation",
+          "fact-apptivo-features.integrations",
+          "fact-apptivo-features.ai-assistance"
+        ],
+        "methodologySlug": "crm-editorial",
+        "methodologyVersion": "1.0.0",
+        "agentVersion": "1.0.0",
+        "contextBuiltAt": "2026-08-16T06:17:12.139Z"
+      },
+      "blockers": [],
+      "warnings": [],
+      "agentTaskId": "exec-software-review-agent-apptivo-1786861032077",
+      "draftId": "draft-deterministic-v1-software-review-agent-apptivo-2026-08-16T06-17-12-153Z",
+      "startedAt": "2026-08-16T06:17:12.076Z",
+      "completedAt": "2026-08-16T06:17:12.162Z",
+      "revisionAttempts": 0
+    },
+    {
+      "id": "pricing-page",
+      "definitionStepId": "pricing-page",
+      "handler": "agent-run",
+      "label": "Pricing Page",
+      "status": "completed",
+      "required": false,
+      "failurePolicy": "continue-with-warning",
+      "attempt": 1,
+      "maxAttempts": 2,
+      "dependsOn": [
+        "content-plan"
+      ],
+      "priority": "normal",
+      "config": {
+        "agentId": "pricing-page-agent",
+        "targetSlug": "apptivo",
+        "maxAutomaticRevisions": 1,
+        "expandFromContentPlan": false,
+        "expandKind": "none",
+        "stopAfterApproval": true,
+        "allowNormalizedFacts": false,
+        "optionalWhenBlocked": true,
+        "forceTransientFailOnce": false
+      },
+      "inputRefs": {},
+      "outputRefs": {
+        "draftId": "draft-deterministic-v1-pricing-page-agent-apptivo-2026-08-16T06-17-12-252Z",
+        "qaStatus": "pass",
+        "agentId": "pricing-page-agent",
+        "target": "apptivo"
+      },
+      "inputSnapshot": {
+        "researchFactIds": [
+          "fact-apptivo-pricing.hasFreePlan",
+          "fact-apptivo-pricing.hasFreeTrial",
+          "fact-apptivo-pricing.currency",
+          "fact-apptivo-pricing.model",
+          "fact-apptivo-identity.shortDescription",
+          "fact-apptivo-positioning.vendorClaim",
+          "fact-apptivo-pricing.startingPriceMonthly",
+          "fact-apptivo-pricing.plans.lite",
+          "fact-apptivo-pricing.plans.premium",
+          "fact-apptivo-pricing.plans.ultimate",
+          "fact-apptivo-pricing.plans.enterprise",
+          "fact-apptivo-features.contact-management",
+          "fact-apptivo-features.lead-management",
+          "fact-apptivo-features.pipeline-management",
+          "fact-apptivo-features.deal-management",
+          "fact-apptivo-features.custom-pipelines",
+          "fact-apptivo-features.custom-fields",
+          "fact-apptivo-features.email-sync",
+          "fact-apptivo-features.email-tracking",
+          "fact-apptivo-features.workflow-automation",
+          "fact-apptivo-features.reporting",
+          "fact-apptivo-features.mobile-app",
+          "fact-apptivo-features.sales-automation",
+          "fact-apptivo-features.integrations",
+          "fact-apptivo-features.ai-assistance"
+        ],
+        "methodologySlug": "crm-editorial",
+        "methodologyVersion": "1.0.0",
+        "agentVersion": "1.0.0",
+        "contextBuiltAt": "2026-08-16T06:17:12.251Z"
+      },
+      "blockers": [],
+      "warnings": [],
+      "agentTaskId": "exec-pricing-page-agent-apptivo-1786861032240",
+      "draftId": "draft-deterministic-v1-pricing-page-agent-apptivo-2026-08-16T06-17-12-252Z",
+      "startedAt": "2026-08-16T06:17:12.239Z",
+      "completedAt": "2026-08-16T06:17:12.258Z",
+      "revisionAttempts": 0
+    },
+    {
+      "id": "alternatives",
+      "definitionStepId": "alternatives",
+      "handler": "agent-run",
+      "label": "Alternatives",
+      "status": "completed",
+      "required": false,
+      "failurePolicy": "continue-with-warning",
+      "attempt": 1,
+      "maxAttempts": 2,
+      "dependsOn": [
+        "content-plan"
+      ],
+      "priority": "normal",
+      "config": {
+        "agentId": "alternatives-agent",
+        "targetSlug": "apptivo",
+        "maxAutomaticRevisions": 1,
+        "expandFromContentPlan": false,
+        "expandKind": "none",
+        "stopAfterApproval": true,
+        "allowNormalizedFacts": false,
+        "optionalWhenBlocked": true,
+        "forceTransientFailOnce": false
+      },
+      "inputRefs": {},
+      "outputRefs": {
+        "draftId": "draft-deterministic-v1-alternatives-agent-apptivo-2026-08-16T06-17-12-178Z",
+        "qaStatus": "pass",
+        "agentId": "alternatives-agent",
+        "target": "apptivo"
+      },
+      "inputSnapshot": {
+        "researchFactIds": [
+          "fact-apptivo-pricing.hasFreePlan",
+          "fact-apptivo-pricing.hasFreeTrial",
+          "fact-apptivo-pricing.currency",
+          "fact-apptivo-pricing.model",
+          "fact-apptivo-identity.shortDescription",
+          "fact-apptivo-positioning.vendorClaim",
+          "fact-apptivo-pricing.startingPriceMonthly",
+          "fact-apptivo-pricing.plans.lite",
+          "fact-apptivo-pricing.plans.premium",
+          "fact-apptivo-pricing.plans.ultimate",
+          "fact-apptivo-pricing.plans.enterprise",
+          "fact-apptivo-features.contact-management",
+          "fact-apptivo-features.lead-management",
+          "fact-apptivo-features.pipeline-management",
+          "fact-apptivo-features.deal-management",
+          "fact-apptivo-features.custom-pipelines",
+          "fact-apptivo-features.custom-fields",
+          "fact-apptivo-features.email-sync",
+          "fact-apptivo-features.email-tracking",
+          "fact-apptivo-features.workflow-automation",
+          "fact-apptivo-features.reporting",
+          "fact-apptivo-features.mobile-app",
+          "fact-apptivo-features.sales-automation",
+          "fact-apptivo-features.integrations",
+          "fact-apptivo-features.ai-assistance"
+        ],
+        "methodologySlug": "crm-editorial",
+        "methodologyVersion": "1.0.0",
+        "agentVersion": "1.0.0",
+        "contextBuiltAt": "2026-08-16T06:17:12.177Z"
+      },
+      "blockers": [],
+      "warnings": [],
+      "agentTaskId": "exec-alternatives-agent-apptivo-1786861032170",
+      "draftId": "draft-deterministic-v1-alternatives-agent-apptivo-2026-08-16T06-17-12-178Z",
+      "startedAt": "2026-08-16T06:17:12.169Z",
+      "completedAt": "2026-08-16T06:17:12.181Z",
+      "revisionAttempts": 0
+    },
+    {
+      "id": "comparison:apptivo-vs-zoho-crm",
+      "definitionStepId": "comparisons",
+      "handler": "agent-run",
+      "label": "Comparison apptivo-vs-zoho-crm",
+      "status": "completed",
+      "required": false,
+      "failurePolicy": "continue-with-warning",
+      "attempt": 1,
+      "maxAttempts": 2,
+      "dependsOn": [
+        "content-plan"
+      ],
+      "priority": "normal",
+      "config": {
+        "agentId": "comparison-agent",
+        "targetSlug": "apptivo-vs-zoho-crm",
+        "maxAutomaticRevisions": 1,
+        "expandFromContentPlan": true,
+        "expandKind": "comparisons",
+        "stopAfterApproval": true,
+        "allowNormalizedFacts": false,
+        "optionalWhenBlocked": true,
+        "forceTransientFailOnce": false
+      },
+      "expansionKey": "apptivo-vs-zoho-crm",
+      "inputRefs": {},
+      "outputRefs": {
+        "draftId": "draft-deterministic-v1-comparison-agent-apptivo-vs-zoho-crm-2026-08-16T06-17-12-235Z",
+        "qaStatus": "pass",
+        "agentId": "comparison-agent",
+        "target": "apptivo-vs-zoho-crm"
+      },
+      "inputSnapshot": {
+        "researchFactIds": [
+          "fact-apptivo-pricing.hasFreePlan",
+          "fact-apptivo-pricing.hasFreeTrial",
+          "fact-apptivo-pricing.currency",
+          "fact-apptivo-pricing.model",
+          "fact-apptivo-identity.shortDescription",
+          "fact-apptivo-positioning.vendorClaim",
+          "fact-apptivo-pricing.startingPriceMonthly",
+          "fact-apptivo-pricing.plans.lite",
+          "fact-apptivo-pricing.plans.premium",
+          "fact-apptivo-pricing.plans.ultimate",
+          "fact-apptivo-pricing.plans.enterprise",
+          "fact-apptivo-features.contact-management",
+          "fact-apptivo-features.lead-management",
+          "fact-apptivo-features.pipeline-management",
+          "fact-apptivo-features.deal-management",
+          "fact-apptivo-features.custom-pipelines",
+          "fact-apptivo-features.custom-fields",
+          "fact-apptivo-features.email-sync",
+          "fact-apptivo-features.email-tracking",
+          "fact-apptivo-features.workflow-automation",
+          "fact-apptivo-features.reporting",
+          "fact-apptivo-features.mobile-app",
+          "fact-apptivo-features.sales-automation",
+          "fact-apptivo-features.integrations",
+          "fact-apptivo-features.ai-assistance",
+          "fact-zoho-crm-pricing.hasFreePlan",
+          "fact-zoho-crm-pricing.hasFreeTrial",
+          "fact-zoho-crm-pricing.startingPriceMonthly",
+          "fact-zoho-crm-pricing.currency",
+          "fact-zoho-crm-pricing.model",
+          "fact-zoho-crm-pricing.plans.free",
+          "fact-zoho-crm-pricing.plans.standard",
+          "fact-zoho-crm-pricing.plans.professional",
+          "fact-zoho-crm-pricing.plans.enterprise",
+          "fact-zoho-crm-pricing.plans.ultimate",
+          "fact-zoho-crm-features.contact-management",
+          "fact-zoho-crm-features.lead-management",
+          "fact-zoho-crm-features.pipeline-management",
+          "fact-zoho-crm-features.deal-management",
+          "fact-zoho-crm-features.email-sync",
+          "fact-zoho-crm-features.workflow-automation",
+          "fact-zoho-crm-features.sales-automation",
+          "fact-zoho-crm-features.reporting",
+          "fact-zoho-crm-features.forecasting",
+          "fact-zoho-crm-features.custom-fields",
+          "fact-zoho-crm-features.custom-pipelines",
+          "fact-zoho-crm-features.mobile-app",
+          "fact-zoho-crm-features.ai-assistance",
+          "fact-zoho-crm-features.integrations",
+          "fact-zoho-crm-positioning.summary",
+          "fact-zoho-crm-ai.assistant",
+          "fact-zoho-crm-ai.automation",
+          "fact-zoho-crm-ai.recommendations"
+        ],
+        "methodologySlug": "crm-editorial",
+        "methodologyVersion": "1.0.0",
+        "agentVersion": "1.0.0",
+        "contextBuiltAt": "2026-08-16T06:17:12.231Z"
+      },
+      "blockers": [],
+      "warnings": [],
+      "agentTaskId": "exec-comparison-agent-apptivo-vs-zoho-crm-1786861032226",
+      "draftId": "draft-deterministic-v1-comparison-agent-apptivo-vs-zoho-crm-2026-08-16T06-17-12-235Z",
+      "startedAt": "2026-08-16T06:17:12.224Z",
+      "completedAt": "2026-08-16T06:17:12.238Z",
+      "revisionAttempts": 0
+    },
+    {
+      "id": "comparison:apptivo-vs-bitrix24",
+      "definitionStepId": "comparisons",
+      "handler": "agent-run",
+      "label": "Comparison apptivo-vs-bitrix24",
+      "status": "completed",
+      "required": false,
+      "failurePolicy": "continue-with-warning",
+      "attempt": 1,
+      "maxAttempts": 2,
+      "dependsOn": [
+        "content-plan"
+      ],
+      "priority": "normal",
+      "config": {
+        "agentId": "comparison-agent",
+        "targetSlug": "apptivo-vs-bitrix24",
+        "maxAutomaticRevisions": 1,
+        "expandFromContentPlan": true,
+        "expandKind": "comparisons",
+        "stopAfterApproval": true,
+        "allowNormalizedFacts": false,
+        "optionalWhenBlocked": true,
+        "forceTransientFailOnce": false
+      },
+      "expansionKey": "apptivo-vs-bitrix24",
+      "inputRefs": {},
+      "outputRefs": {
+        "draftId": "draft-deterministic-v1-comparison-agent-apptivo-vs-bitrix24-2026-08-16T06-17-12-197Z",
+        "qaStatus": "pass",
+        "agentId": "comparison-agent",
+        "target": "apptivo-vs-bitrix24"
+      },
+      "inputSnapshot": {
+        "researchFactIds": [
+          "fact-apptivo-pricing.hasFreePlan",
+          "fact-apptivo-pricing.hasFreeTrial",
+          "fact-apptivo-pricing.currency",
+          "fact-apptivo-pricing.model",
+          "fact-apptivo-identity.shortDescription",
+          "fact-apptivo-positioning.vendorClaim",
+          "fact-apptivo-pricing.startingPriceMonthly",
+          "fact-apptivo-pricing.plans.lite",
+          "fact-apptivo-pricing.plans.premium",
+          "fact-apptivo-pricing.plans.ultimate",
+          "fact-apptivo-pricing.plans.enterprise",
+          "fact-apptivo-features.contact-management",
+          "fact-apptivo-features.lead-management",
+          "fact-apptivo-features.pipeline-management",
+          "fact-apptivo-features.deal-management",
+          "fact-apptivo-features.custom-pipelines",
+          "fact-apptivo-features.custom-fields",
+          "fact-apptivo-features.email-sync",
+          "fact-apptivo-features.email-tracking",
+          "fact-apptivo-features.workflow-automation",
+          "fact-apptivo-features.reporting",
+          "fact-apptivo-features.mobile-app",
+          "fact-apptivo-features.sales-automation",
+          "fact-apptivo-features.integrations",
+          "fact-apptivo-features.ai-assistance",
+          "fact-bitrix24-pricing.hasFreePlan",
+          "fact-bitrix24-pricing.hasFreeTrial",
+          "fact-bitrix24-pricing.startingPriceMonthly",
+          "fact-bitrix24-pricing.currency",
+          "fact-bitrix24-pricing.model",
+          "fact-bitrix24-pricing.plans.free",
+          "fact-bitrix24-pricing.plans.basic",
+          "fact-bitrix24-pricing.plans.standard",
+          "fact-bitrix24-pricing.plans.professional",
+          "fact-bitrix24-pricing.plans.enterprise",
+          "fact-bitrix24-features.contact-management",
+          "fact-bitrix24-features.lead-management",
+          "fact-bitrix24-features.pipeline-management",
+          "fact-bitrix24-features.deal-management",
+          "fact-bitrix24-features.email-sync",
+          "fact-bitrix24-features.workflow-automation",
+          "fact-bitrix24-features.sales-automation",
+          "fact-bitrix24-features.reporting",
+          "fact-bitrix24-features.forecasting",
+          "fact-bitrix24-features.custom-fields",
+          "fact-bitrix24-features.custom-pipelines",
+          "fact-bitrix24-features.mobile-app",
+          "fact-bitrix24-features.ai-assistance",
+          "fact-bitrix24-features.integrations",
+          "fact-bitrix24-positioning.summary",
+          "fact-bitrix24-ai.assistant",
+          "fact-bitrix24-ai.automation"
+        ],
+        "methodologySlug": "crm-editorial",
+        "methodologyVersion": "1.0.0",
+        "agentVersion": "1.0.0",
+        "contextBuiltAt": "2026-08-16T06:17:12.195Z"
+      },
+      "blockers": [],
+      "warnings": [],
+      "agentTaskId": "exec-comparison-agent-apptivo-vs-bitrix24-1786861032185",
+      "draftId": "draft-deterministic-v1-comparison-agent-apptivo-vs-bitrix24-2026-08-16T06-17-12-197Z",
+      "startedAt": "2026-08-16T06:17:12.182Z",
+      "completedAt": "2026-08-16T06:17:12.204Z",
+      "revisionAttempts": 0
+    },
+    {
+      "id": "comparison:apptivo-vs-hubspot",
+      "definitionStepId": "comparisons",
+      "handler": "agent-run",
+      "label": "Comparison apptivo-vs-hubspot",
+      "status": "completed",
+      "required": false,
+      "failurePolicy": "continue-with-warning",
+      "attempt": 1,
+      "maxAttempts": 2,
+      "dependsOn": [
+        "content-plan"
+      ],
+      "priority": "normal",
+      "config": {
+        "agentId": "comparison-agent",
+        "targetSlug": "apptivo-vs-hubspot",
+        "maxAutomaticRevisions": 1,
+        "expandFromContentPlan": true,
+        "expandKind": "comparisons",
+        "stopAfterApproval": true,
+        "allowNormalizedFacts": false,
+        "optionalWhenBlocked": true,
+        "forceTransientFailOnce": false
+      },
+      "expansionKey": "apptivo-vs-hubspot",
+      "inputRefs": {},
+      "outputRefs": {
+        "draftId": "draft-deterministic-v1-comparison-agent-apptivo-vs-hubspot-2026-08-16T06-17-12-214Z",
+        "qaStatus": "pass",
+        "agentId": "comparison-agent",
+        "target": "apptivo-vs-hubspot"
+      },
+      "inputSnapshot": {
+        "researchFactIds": [
+          "fact-apptivo-pricing.hasFreePlan",
+          "fact-apptivo-pricing.hasFreeTrial",
+          "fact-apptivo-pricing.currency",
+          "fact-apptivo-pricing.model",
+          "fact-apptivo-identity.shortDescription",
+          "fact-apptivo-positioning.vendorClaim",
+          "fact-apptivo-pricing.startingPriceMonthly",
+          "fact-apptivo-pricing.plans.lite",
+          "fact-apptivo-pricing.plans.premium",
+          "fact-apptivo-pricing.plans.ultimate",
+          "fact-apptivo-pricing.plans.enterprise",
+          "fact-apptivo-features.contact-management",
+          "fact-apptivo-features.lead-management",
+          "fact-apptivo-features.pipeline-management",
+          "fact-apptivo-features.deal-management",
+          "fact-apptivo-features.custom-pipelines",
+          "fact-apptivo-features.custom-fields",
+          "fact-apptivo-features.email-sync",
+          "fact-apptivo-features.email-tracking",
+          "fact-apptivo-features.workflow-automation",
+          "fact-apptivo-features.reporting",
+          "fact-apptivo-features.mobile-app",
+          "fact-apptivo-features.sales-automation",
+          "fact-apptivo-features.integrations",
+          "fact-apptivo-features.ai-assistance",
+          "fact-hubspot-pricing.hasFreePlan",
+          "fact-hubspot-pricing.hasFreeTrial",
+          "fact-hubspot-pricing.startingPriceMonthly",
+          "fact-hubspot-pricing.currency",
+          "fact-hubspot-pricing.model",
+          "fact-hubspot-pricing.plans.free",
+          "fact-hubspot-pricing.plans.starter",
+          "fact-hubspot-pricing.plans.professional",
+          "fact-hubspot-pricing.plans.enterprise",
+          "fact-hubspot-pricing.sales-hub.ladder",
+          "fact-hubspot-pricing.billing-notes",
+          "fact-hubspot-features.contact-management",
+          "fact-hubspot-features.pipeline-management",
+          "fact-hubspot-features.deal-management",
+          "fact-hubspot-features.lead-management",
+          "fact-hubspot-features.email-sync",
+          "fact-hubspot-features.email-sequences",
+          "fact-hubspot-features.workflow-automation",
+          "fact-hubspot-features.sales-automation",
+          "fact-hubspot-features.reporting",
+          "fact-hubspot-features.forecasting",
+          "fact-hubspot-features.lead-scoring",
+          "fact-hubspot-features.custom-fields",
+          "fact-hubspot-features.custom-objects",
+          "fact-hubspot-features.ai-assistance",
+          "fact-hubspot-features.integrations",
+          "fact-hubspot-features.sso",
+          "fact-hubspot-ai.assistant",
+          "fact-hubspot-ai.prospecting-agent",
+          "fact-hubspot-ai.forecasting",
+          "fact-hubspot-positioning.primary",
+          "fact-hubspot-positioning.free-crm",
+          "fact-hubspot-pricing.sales-hub.professional.catalog",
+          "fact-hubspot-pricing.sales-hub.professional.marketing",
+          "fact-hubspot-pricing.smart-crm.starter.catalog"
+        ],
+        "methodologySlug": "crm-editorial",
+        "methodologyVersion": "1.0.0",
+        "agentVersion": "1.0.0",
+        "contextBuiltAt": "2026-08-16T06:17:12.213Z"
+      },
+      "blockers": [],
+      "warnings": [],
+      "agentTaskId": "exec-comparison-agent-apptivo-vs-hubspot-1786861032206",
+      "draftId": "draft-deterministic-v1-comparison-agent-apptivo-vs-hubspot-2026-08-16T06-17-12-214Z",
+      "startedAt": "2026-08-16T06:17:12.205Z",
+      "completedAt": "2026-08-16T06:17:12.222Z",
+      "revisionAttempts": 0
+    },
+    {
+      "id": "internal-links",
+      "definitionStepId": "internal-links",
+      "handler": "internal-link",
+      "label": "Internal Link Plan",
+      "status": "completed",
+      "required": false,
+      "failurePolicy": "continue-with-warning",
+      "attempt": 1,
+      "maxAttempts": 2,
+      "dependsOn": [
+        "software-review"
+      ],
+      "priority": "low",
+      "config": {
+        "agentId": "internal-link-agent",
+        "maxAutomaticRevisions": 1,
+        "expandFromContentPlan": false,
+        "expandKind": "none",
+        "stopAfterApproval": true,
+        "allowNormalizedFacts": false,
+        "optionalWhenBlocked": false,
+        "forceTransientFailOnce": false
+      },
+      "inputRefs": {},
+      "outputRefs": {
+        "draftId": "draft-deterministic-v1-internal-link-agent-apptivo-2026-08-16T06-17-12-278Z",
+        "qaStatus": "pass",
+        "agentId": "internal-link-agent",
+        "target": "apptivo"
+      },
+      "inputSnapshot": {
+        "researchFactIds": [
+          "fact-apptivo-pricing.hasFreePlan",
+          "fact-apptivo-pricing.hasFreeTrial",
+          "fact-apptivo-pricing.currency",
+          "fact-apptivo-pricing.model",
+          "fact-apptivo-identity.shortDescription",
+          "fact-apptivo-positioning.vendorClaim",
+          "fact-apptivo-pricing.startingPriceMonthly",
+          "fact-apptivo-pricing.plans.lite",
+          "fact-apptivo-pricing.plans.premium",
+          "fact-apptivo-pricing.plans.ultimate",
+          "fact-apptivo-pricing.plans.enterprise",
+          "fact-apptivo-features.contact-management",
+          "fact-apptivo-features.lead-management",
+          "fact-apptivo-features.pipeline-management",
+          "fact-apptivo-features.deal-management",
+          "fact-apptivo-features.custom-pipelines",
+          "fact-apptivo-features.custom-fields",
+          "fact-apptivo-features.email-sync",
+          "fact-apptivo-features.email-tracking",
+          "fact-apptivo-features.workflow-automation",
+          "fact-apptivo-features.reporting",
+          "fact-apptivo-features.mobile-app",
+          "fact-apptivo-features.sales-automation",
+          "fact-apptivo-features.integrations",
+          "fact-apptivo-features.ai-assistance"
+        ],
+        "methodologySlug": "crm-editorial",
+        "methodologyVersion": "1.0.0",
+        "agentVersion": "1.0.0",
+        "contextBuiltAt": "2026-08-16T06:17:12.277Z"
+      },
+      "blockers": [],
+      "warnings": [],
+      "agentTaskId": "exec-internal-link-agent-apptivo-1786861032268",
+      "draftId": "draft-deterministic-v1-internal-link-agent-apptivo-2026-08-16T06-17-12-278Z",
+      "startedAt": "2026-08-16T06:17:12.264Z",
+      "completedAt": "2026-08-16T06:17:12.281Z",
+      "revisionAttempts": 0
+    },
+    {
+      "id": "finder-readiness",
+      "definitionStepId": "finder-readiness",
+      "handler": "update-recommendation-readiness",
+      "label": "Finder readiness",
+      "status": "completed",
+      "required": false,
+      "failurePolicy": "continue",
+      "attempt": 1,
+      "maxAttempts": 2,
+      "dependsOn": [
+        "content-plan"
+      ],
+      "priority": "low",
+      "config": {
+        "maxAutomaticRevisions": 1,
+        "expandFromContentPlan": false,
+        "expandKind": "none",
+        "stopAfterApproval": true,
+        "allowNormalizedFacts": false,
+        "optionalWhenBlocked": false,
+        "forceTransientFailOnce": false
+      },
+      "inputRefs": {},
+      "outputRefs": {
+        "finderReadiness": "checked"
+      },
+      "blockers": [],
+      "warnings": [],
+      "startedAt": "2026-08-16T06:17:12.261Z",
+      "completedAt": "2026-08-16T06:17:12.262Z",
+      "revisionAttempts": 0
+    },
+    {
+      "id": "editorial-approval",
+      "definitionStepId": "editorial-approval",
+      "handler": "approval-check",
+      "label": "Editorial approval",
+      "status": "completed",
+      "required": true,
+      "failurePolicy": "manual-review",
+      "attempt": 2,
+      "maxAttempts": 2,
+      "dependsOn": [
+        "software-review"
+      ],
+      "priority": "critical",
+      "config": {
+        "approvalType": "editorial",
+        "maxAutomaticRevisions": 1,
+        "expandFromContentPlan": false,
+        "expandKind": "none",
+        "stopAfterApproval": true,
+        "allowNormalizedFacts": false,
+        "optionalWhenBlocked": false,
+        "forceTransientFailOnce": false
+      },
+      "inputRefs": {},
+      "outputRefs": {
+        "approvalId": "appr-wf-software-onboarding-content-apptivo-1786861031464-software-review",
+        "draftId": "draft-deterministic-v1-software-review-agent-apptivo-2026-08-16T06-17-12-153Z",
+        "approvalIds": "appr-wf-software-onboarding-content-apptivo-1786861031464-software-review"
+      },
+      "blockers": [],
+      "warnings": [
+        "Approval received — resuming",
+        "6 optional draft(s) may still need separate editorial review"
+      ],
+      "approvalId": "appr-wf-software-onboarding-content-apptivo-1786861031464-software-review",
+      "startedAt": "2026-08-16T06:19:16.244Z",
+      "completedAt": "2026-08-16T06:19:16.295Z",
+      "revisionAttempts": 0
+    },
+    {
+      "id": "pre-publish-validation",
+      "definitionStepId": "pre-publish-validation",
+      "handler": "pre-publish-validation",
+      "label": "Pre-publish validation",
+      "status": "completed",
+      "required": true,
+      "failurePolicy": "block-workflow",
+      "attempt": 2,
+      "maxAttempts": 2,
+      "dependsOn": [
+        "editorial-approval"
+      ],
+      "priority": "critical",
+      "config": {
+        "maxAutomaticRevisions": 1,
+        "expandFromContentPlan": false,
+        "expandKind": "none",
+        "stopAfterApproval": true,
+        "allowNormalizedFacts": false,
+        "optionalWhenBlocked": false,
+        "forceTransientFailOnce": false
+      },
+      "inputRefs": {},
+      "outputRefs": {
+        "publishState": "READY_TO_PUBLISH"
+      },
+      "blockers": [],
+      "warnings": [
+        "Re-running blocked pre-publish validation on resume",
+        "stopAfterApproval: workflow will not publish automatically"
+      ],
+      "startedAt": "2026-08-16T06:20:26.748Z",
+      "completedAt": "2026-08-16T06:20:27.228Z",
+      "revisionAttempts": 0
+    }
+  ],
+  "history": [
+    {
+      "at": "2026-08-16T06:17:12.000Z",
+      "event": "workflow_created",
+      "message": "Created software-onboarding-content:v1.0.0"
+    },
+    {
+      "at": "2026-08-16T06:17:12.001Z",
+      "event": "workflow_started",
+      "message": "Workflow execution started"
+    },
+    {
+      "at": "2026-08-16T06:17:12.002Z",
+      "event": "workflow_step_started",
+      "stepId": "software-onboarding",
+      "message": "Started Software onboarding"
+    },
+    {
+      "at": "2026-08-16T06:17:12.038Z",
+      "event": "workflow_step_completed",
+      "stepId": "software-onboarding",
+      "message": "Reused onboarding run onboard-apptivo-1786859675976 (review-required)"
+    },
+    {
+      "at": "2026-08-16T06:17:12.039Z",
+      "event": "workflow_step_started",
+      "stepId": "content-plan",
+      "message": "Started Content plan"
+    },
+    {
+      "at": "2026-08-16T06:17:12.075Z",
+      "event": "workflow_step_completed",
+      "stepId": "content-plan",
+      "message": "Content plan from onboarding onboard-apptivo-1786859675976 (9 candidates)"
+    },
+    {
+      "at": "2026-08-16T06:17:12.076Z",
+      "event": "workflow_step_started",
+      "stepId": "software-review",
+      "message": "Started Software Review"
+    },
+    {
+      "at": "2026-08-16T06:17:12.162Z",
+      "event": "workflow_step_completed",
+      "stepId": "software-review",
+      "message": "Agent software-review-agent → draft draft-deterministic-v1-software-review-agent-apptivo-2026-08-16T06-17-12-153Z (qa=pass)"
+    },
+    {
+      "at": "2026-08-16T06:17:12.164Z",
+      "event": "workflow_step_started",
+      "stepId": "alternatives",
+      "message": "Started Alternatives"
+    },
+    {
+      "at": "2026-08-16T06:17:12.181Z",
+      "event": "workflow_step_completed",
+      "stepId": "alternatives",
+      "message": "Agent alternatives-agent → draft draft-deterministic-v1-alternatives-agent-apptivo-2026-08-16T06-17-12-178Z (qa=pass)"
+    },
+    {
+      "at": "2026-08-16T06:17:12.182Z",
+      "event": "workflow_step_started",
+      "stepId": "comparison:apptivo-vs-bitrix24",
+      "message": "Started Comparison apptivo-vs-bitrix24"
+    },
+    {
+      "at": "2026-08-16T06:17:12.204Z",
+      "event": "workflow_step_completed",
+      "stepId": "comparison:apptivo-vs-bitrix24",
+      "message": "Agent comparison-agent → draft draft-deterministic-v1-comparison-agent-apptivo-vs-bitrix24-2026-08-16T06-17-12-197Z (qa=pass)"
+    },
+    {
+      "at": "2026-08-16T06:17:12.205Z",
+      "event": "workflow_step_started",
+      "stepId": "comparison:apptivo-vs-hubspot",
+      "message": "Started Comparison apptivo-vs-hubspot"
+    },
+    {
+      "at": "2026-08-16T06:17:12.222Z",
+      "event": "workflow_step_completed",
+      "stepId": "comparison:apptivo-vs-hubspot",
+      "message": "Agent comparison-agent → draft draft-deterministic-v1-comparison-agent-apptivo-vs-hubspot-2026-08-16T06-17-12-214Z (qa=pass)"
+    },
+    {
+      "at": "2026-08-16T06:17:12.224Z",
+      "event": "workflow_step_started",
+      "stepId": "comparison:apptivo-vs-zoho-crm",
+      "message": "Started Comparison apptivo-vs-zoho-crm"
+    },
+    {
+      "at": "2026-08-16T06:17:12.238Z",
+      "event": "workflow_step_completed",
+      "stepId": "comparison:apptivo-vs-zoho-crm",
+      "message": "Agent comparison-agent → draft draft-deterministic-v1-comparison-agent-apptivo-vs-zoho-crm-2026-08-16T06-17-12-235Z (qa=pass)"
+    },
+    {
+      "at": "2026-08-16T06:17:12.239Z",
+      "event": "workflow_step_started",
+      "stepId": "pricing-page",
+      "message": "Started Pricing Page"
+    },
+    {
+      "at": "2026-08-16T06:17:12.258Z",
+      "event": "workflow_step_completed",
+      "stepId": "pricing-page",
+      "message": "Agent pricing-page-agent → draft draft-deterministic-v1-pricing-page-agent-apptivo-2026-08-16T06-17-12-252Z (qa=pass)"
+    },
+    {
+      "at": "2026-08-16T06:17:12.261Z",
+      "event": "workflow_step_started",
+      "stepId": "finder-readiness",
+      "message": "Started Finder readiness"
+    },
+    {
+      "at": "2026-08-16T06:17:12.262Z",
+      "event": "workflow_step_completed",
+      "stepId": "finder-readiness",
+      "message": "Finder readiness noted for apptivo"
+    },
+    {
+      "at": "2026-08-16T06:17:12.264Z",
+      "event": "workflow_step_started",
+      "stepId": "internal-links",
+      "message": "Started Internal Link Plan"
+    },
+    {
+      "at": "2026-08-16T06:17:12.281Z",
+      "event": "workflow_step_completed",
+      "stepId": "internal-links",
+      "message": "Agent internal-link-agent → draft draft-deterministic-v1-internal-link-agent-apptivo-2026-08-16T06-17-12-278Z (qa=pass)"
+    },
+    {
+      "at": "2026-08-16T06:17:12.284Z",
+      "event": "workflow_step_started",
+      "stepId": "editorial-approval",
+      "message": "Started Editorial approval"
+    },
+    {
+      "at": "2026-08-16T06:17:12.390Z",
+      "event": "workflow_step_completed",
+      "stepId": "editorial-approval",
+      "message": "WAITING FOR EDITORIAL APPROVAL (appr-wf-software-onboarding-content-apptivo-1786861031464-software-review)"
+    },
+    {
+      "at": "2026-08-16T06:19:16.242Z",
+      "event": "workflow_resumed",
+      "message": "Workflow resumed"
+    },
+    {
+      "at": "2026-08-16T06:19:16.243Z",
+      "event": "workflow_started",
+      "message": "Workflow execution started"
+    },
+    {
+      "at": "2026-08-16T06:19:16.244Z",
+      "event": "workflow_step_started",
+      "stepId": "editorial-approval",
+      "message": "Started Editorial approval"
+    },
+    {
+      "at": "2026-08-16T06:19:16.295Z",
+      "event": "workflow_step_completed",
+      "stepId": "editorial-approval",
+      "message": "Required editorial approvals satisfied"
+    },
+    {
+      "at": "2026-08-16T06:19:16.297Z",
+      "event": "workflow_step_started",
+      "stepId": "pre-publish-validation",
+      "message": "Started Pre-publish validation"
+    },
+    {
+      "at": "2026-08-16T06:19:16.745Z",
+      "event": "workflow_step_completed",
+      "stepId": "pre-publish-validation",
+      "message": "Pre-publish validation blocked: Stale context for comparison:apptivo-vs-zoho-crm: removed-critical-fact:fact-zoho-crm-pricing.hasFreePlan; removed-critical-fact:fact-zoho-crm-pricing.hasFreeTrial; removed-critical-fact:fact-zoho-crm-pricing.startingPriceMonthly; removed-critical-fact:fact-zoho-crm-pricing.currency; removed-critical-fact:fact-zoho-crm-pricing.model; removed-critical-fact:fact-zoho-crm-pricing.plans.free; removed-critical-fact:fact-zoho-crm-pricing.plans.standard; removed-critical-fact:fact-zoho-crm-pricing.plans.professional; removed-critical-fact:fact-zoho-crm-pricing.plans.enterprise; removed-critical-fact:fact-zoho-crm-pricing.plans.ultimate; Stale context for comparison:apptivo-vs-bitrix24: removed-critical-fact:fact-bitrix24-pricing.hasFreePlan; removed-critical-fact:fact-bitrix24-pricing.hasFreeTrial; removed-critical-fact:fact-bitrix24-pricing.startingPriceMonthly; removed-critical-fact:fact-bitrix24-pricing.currency; removed-critical-fact:fact-bitrix24-pricing.model; removed-critical-fact:fact-bitrix24-pricing.plans.free; removed-critical-fact:fact-bitrix24-pricing.plans.basic; removed-critical-fact:fact-bitrix24-pricing.plans.standard; removed-critical-fact:fact-bitrix24-pricing.plans.professional; removed-critical-fact:fact-bitrix24-pricing.plans.enterprise; Stale context for comparison:apptivo-vs-hubspot: removed-critical-fact:fact-hubspot-pricing.hasFreePlan; removed-critical-fact:fact-hubspot-pricing.hasFreeTrial; removed-critical-fact:fact-hubspot-pricing.startingPriceMonthly; removed-critical-fact:fact-hubspot-pricing.currency; removed-critical-fact:fact-hubspot-pricing.model; removed-critical-fact:fact-hubspot-pricing.plans.free; removed-critical-fact:fact-hubspot-pricing.plans.starter; removed-critical-fact:fact-hubspot-pricing.plans.professional; removed-critical-fact:fact-hubspot-pricing.plans.enterprise; removed-critical-fact:fact-hubspot-pricing.sales-hub.ladder; removed-critical-fact:fact-hubspot-pricing.billing-notes; removed-critical-fact:fact-hubspot-pricing.sales-hub.professional.catalog; removed-critical-fact:fact-hubspot-pricing.sales-hub.professional.marketing; removed-critical-fact:fact-hubspot-pricing.smart-crm.starter.catalog"
+    },
+    {
+      "at": "2026-08-16T06:20:26.747Z",
+      "event": "workflow_resumed",
+      "message": "Workflow resumed"
+    },
+    {
+      "at": "2026-08-16T06:20:26.747Z",
+      "event": "workflow_started",
+      "message": "Workflow execution started"
+    },
+    {
+      "at": "2026-08-16T06:20:26.748Z",
+      "event": "workflow_step_started",
+      "stepId": "pre-publish-validation",
+      "message": "Started Pre-publish validation"
+    },
+    {
+      "at": "2026-08-16T06:20:27.228Z",
+      "event": "workflow_step_completed",
+      "stepId": "pre-publish-validation",
+      "message": "Pre-publish validation passed — READY TO PUBLISH (manual)"
+    },
+    {
+      "at": "2026-08-16T06:20:27.229Z",
+      "event": "workflow_completed",
+      "message": "Workflow completed"
+    }
+  ],
+  "options": {
+    "generateReview": true,
+    "generatePricing": true,
+    "generateAlternatives": true,
+    "generateComparisons": true,
+    "runInternalLinks": true,
+    "stopAfterApproval": true,
+    "allowNormalizedFacts": false,
+    "dryRun": false,
+    "maxComparisons": 3,
+    "skipOnboarding": false
+  },
+  "warnings": [],
+  "createdAt": "2026-08-16T06:17:11.999Z",
+  "updatedAt": "2026-08-16T06:20:27.229Z"
+}

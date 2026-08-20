@@ -1,0 +1,74 @@
+name: Content asset intelligence
+
+# Soft reports only — asset opportunity gaps never fail the job.
+# Deterministic integrity can be enabled locally via --strict-integrity;
+# this workflow always exits 0 for recommendation output.
+
+on:
+  schedule:
+    # Weekly LIGHT: media-health + inventory diffs (UTC Monday 07:00)
+    - cron: "0 7 * * 1"
+    # Monthly FULL: first Sunday 06:00 UTC
+    - cron: "0 6 * * 0"
+    # Quarterly DEEP hint: first Sunday of Jan/Apr/Jul/Oct also DEEP
+    # (resolved in the mode step below)
+  workflow_dispatch:
+    inputs:
+      mode:
+        description: "LIGHT, FULL, or DEEP"
+        required: true
+        default: "LIGHT"
+        type: choice
+        options:
+          - LIGHT
+          - FULL
+          - DEEP
+
+jobs:
+  content-asset-intelligence:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "22"
+          cache: npm
+      - run: npm ci
+
+      - name: Resolve mode
+        id: mode
+        run: |
+          if [ "${{ github.event_name }}" = "workflow_dispatch" ]; then
+            echo "value=${{ inputs.mode }}" >> "$GITHUB_OUTPUT"
+          elif [ "${{ github.event.schedule }}" = "0 6 * * 0" ]; then
+            DAY=$(date -u +%d)
+            MONTH=$(date -u +%m)
+            if [ "$DAY" -le 7 ]; then
+              case "$MONTH" in
+                01|04|07|10) echo "value=DEEP" >> "$GITHUB_OUTPUT" ;;
+                *) echo "value=FULL" >> "$GITHUB_OUTPUT" ;;
+              esac
+            else
+              echo "value=LIGHT" >> "$GITHUB_OUTPUT"
+            fi
+          else
+            echo "value=LIGHT" >> "$GITHUB_OUTPUT"
+          fi
+
+      - name: Run content asset intelligence (report-only)
+        run: npm run assets:intelligence -- --mode ${{ steps.mode.outputs.value }}
+        # Never fail CI for missing screenshots / opportunity gaps.
+
+      - name: Upload content-assets reports
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: content-asset-intelligence-${{ steps.mode.outputs.value }}
+          path: |
+            docs/content-assets/ASSET-INTELLIGENCE-LATEST.md
+            docs/content-assets/SOFTWARE-ASSET-OPPORTUNITIES.md
+            docs/content-assets/GUIDE-ASSET-OPPORTUNITIES.md
+            docs/content-assets/ASSET-ENRICHMENT-BACKLOG.md
+            docs/content-assets/archive/
+            data/content-assets/search-memory.json
+          if-no-files-found: warn

@@ -1,0 +1,94 @@
+{
+  "id": "exec-pricing-page-agent-salesflare-1786647430131",
+  "agentId": "pricing-page-agent",
+  "agentVersion": "1.0.0",
+  "status": "qa-failed",
+  "mode": "CREATE",
+  "targetSlug": "salesflare",
+  "draftId": "draft-deterministic-v1-pricing-page-agent-salesflare-2026-08-13T18-57-10-148Z",
+  "briefId": "agent-brief-pricing-page-agent-salesflare-1786647430148",
+  "validation": {
+    "ok": false,
+    "errors": [
+      "unsourced-number:caveats:250",
+      "unsourced-number:caveats:500",
+      "unsourced-number:caveats:1000"
+    ]
+  },
+  "qa": {
+    "status": "fail",
+    "blockers": [
+      {
+        "type": "UNVERIFIED_NUMBER",
+        "severity": "blocker",
+        "message": "unsourced-number:caveats:250"
+      },
+      {
+        "type": "UNVERIFIED_NUMBER",
+        "severity": "blocker",
+        "message": "unsourced-number:caveats:500"
+      },
+      {
+        "type": "UNVERIFIED_NUMBER",
+        "severity": "blocker",
+        "message": "unsourced-number:caveats:1000"
+      }
+    ],
+    "warnings": [],
+    "suggestions": [],
+    "checkedAt": "2026-08-13T18:57:10.150Z"
+  },
+  "errors": [
+    "unsourced-number:caveats:250",
+    "unsourced-number:caveats:500",
+    "unsourced-number:caveats:1000"
+  ],
+  "cost": {
+    "provider": "deterministic-v1",
+    "model": "deterministic-template-v1",
+    "inputTokens": 0,
+    "outputTokens": 0,
+    "estimatedCostUsd": 0
+  },
+  "contextSnapshot": {
+    "researchSnapshotIds": [],
+    "factIds": [
+      "fact-salesflare-pricing.hasFreePlan",
+      "fact-salesflare-pricing.hasFreeTrial",
+      "fact-salesflare-pricing.startingPriceMonthly",
+      "fact-salesflare-pricing.currency",
+      "fact-salesflare-pricing.model",
+      "fact-salesflare-pricing.plans.growth",
+      "fact-salesflare-pricing.plans.pro",
+      "fact-salesflare-pricing.plans.enterprise",
+      "fact-salesflare-features.contact-management",
+      "fact-salesflare-features.lead-management",
+      "fact-salesflare-features.pipeline-management",
+      "fact-salesflare-features.deal-management",
+      "fact-salesflare-features.email-sync",
+      "fact-salesflare-features.email-tracking",
+      "fact-salesflare-features.email-campaigns",
+      "fact-salesflare-features.email-sequences",
+      "fact-salesflare-features.workflow-automation",
+      "fact-salesflare-features.sales-automation",
+      "fact-salesflare-features.reporting",
+      "fact-salesflare-features.data-enrichment",
+      "fact-salesflare-features.prospecting",
+      "fact-salesflare-features.mobile-app",
+      "fact-salesflare-features.ai-assistance",
+      "fact-salesflare-features.integrations",
+      "fact-salesflare-features.custom-fields",
+      "fact-salesflare-ai.automation",
+      "fact-salesflare-ai.recommendations",
+      "fact-salesflare-ai.other",
+      "fact-salesflare-positioning.primary"
+    ],
+    "methodologySlug": "crm-editorial",
+    "methodologyVersion": "1.0.0",
+    "pricingFreshnessAt": "2026-08-13T18:00:00.000Z",
+    "builtAt": "2026-08-13T18:57:10.147Z"
+  },
+  "dryRun": false,
+  "startedAt": "2026-08-13T18:57:10.131Z",
+  "completedAt": "2026-08-13T18:57:10.154Z"
+}

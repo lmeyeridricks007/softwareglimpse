@@ -1,0 +1,816 @@
+[
+  {
+    "id": "fact-monday-sales-crm-pricing.hasFreePlan",
+    "productSlug": "monday-sales-crm",
+    "domain": "free-plan",
+    "field": "pricing.hasFreePlan",
+    "value": false,
+    "sourceIds": [
+      "monday-pricing"
+    ],
+    "evidence": [
+      {
+        "sourceId": "monday-pricing",
+        "excerpt": "No permanent free monday sales CRM plan in researched CRM classic ladder."
+      }
+    ],
+    "extractedAt": "2026-08-14T08:00:00.000Z",
+    "normalizedAt": "2026-08-14T08:00:00.000Z",
+    "verifiedAt": "2026-08-14T08:00:00.000Z",
+    "approvedAt": "2026-08-14T08:00:00.000Z",
+    "confidence": "high",
+    "status": "approved",
+    "isFixture": false
+  },
+  {
+    "id": "fact-monday-sales-crm-pricing.hasFreeTrial",
+    "productSlug": "monday-sales-crm",
+    "domain": "free-trial",
+    "field": "pricing.hasFreeTrial",
+    "value": true,
+    "sourceIds": [
+      "monday-pricing"
+    ],
+    "evidence": [
+      {
+        "sourceId": "monday-pricing",
+        "excerpt": "monday.com commonly offers trials/demos; confirm CRM trial CTA live."
+      }
+    ],
+    "extractedAt": "2026-08-14T08:00:00.000Z",
+    "normalizedAt": "2026-08-14T08:00:00.000Z",
+    "verifiedAt": "2026-08-14T08:00:00.000Z",
+    "approvedAt": "2026-08-14T08:00:00.000Z",
+    "confidence": "high",
+    "status": "approved",
+    "isFixture": false
+  },
+  {
+    "id": "fact-monday-sales-crm-pricing.startingPriceMonthly",
+    "productSlug": "monday-sales-crm",
+    "domain": "pricing",
+    "field": "pricing.startingPriceMonthly",
+    "value": 12,
+    "sourceIds": [
+      "monday-pricing"
+    ],
+    "evidence": [
+      {
+        "sourceId": "monday-pricing",
+        "excerpt": "Basic from €12/seat/mo billed yearly."
+      }
+    ],
+    "extractedAt": "2026-08-14T08:00:00.000Z",
+    "normalizedAt": "2026-08-14T08:00:00.000Z",
+    "verifiedAt": "2026-08-14T08:00:00.000Z",
+    "approvedAt": "2026-08-14T08:00:00.000Z",
+    "confidence": "high",
+    "status": "approved",
+    "isFixture": false
+  },
+  {
+    "id": "fact-monday-sales-crm-pricing.currency",
+    "productSlug": "monday-sales-crm",
+    "domain": "pricing",
+    "field": "pricing.currency",
+    "value": "EUR",
+    "sourceIds": [
+      "monday-pricing"
+    ],
+    "evidence": [
+      {
+        "sourceId": "monday-pricing",
+        "excerpt": "EUR pricing on monday CRM classic section."
+      }
+    ],
+    "extractedAt": "2026-08-14T08:00:00.000Z",
+    "normalizedAt": "2026-08-14T08:00:00.000Z",
+    "verifiedAt": "2026-08-14T08:00:00.000Z",
+    "approvedAt": "2026-08-14T08:00:00.000Z",
+    "confidence": "high",
+    "status": "approved",
+    "isFixture": false
+  },
+  {
+    "id": "fact-monday-sales-crm-pricing.model",
+    "productSlug": "monday-sales-crm",
+    "domain": "pricing",
+    "field": "pricing.model",
+    "value": "subscription",
+    "sourceIds": [
+      "monday-pricing"
+    ],
+    "evidence": [
+      {
+        "sourceId": "monday-pricing",
+        "excerpt": "Per-seat subscription; annual saves ~33%."
+      }
+    ],
+    "extractedAt": "2026-08-14T08:00:00.000Z",
+    "normalizedAt": "2026-08-14T08:00:00.000Z",
+    "verifiedAt": "2026-08-14T08:00:00.000Z",
+    "approvedAt": "2026-08-14T08:00:00.000Z",
+    "confidence": "high",
+    "status": "approved",
+    "isFixture": false
+  },
+  {
+    "id": "fact-monday-sales-crm-pricing.plans.basic",
+    "productSlug": "monday-sales-crm",
+    "domain": "plans",
+    "field": "pricing.plans.basic",
+    "value": {
+      "id": "plan-basic",
+      "slug": "basic",
+      "name": "Basic",
+      "isFree": false,
+      "contactSales": false,
+      "hasFreeTrial": false,
+      "highlighted": false,
+      "rules": [
+        {
+          "kind": "per-seat",
+          "currency": "EUR",
+          "interval": "year",
+          "amountPeriod": "month",
+          "amountPerSeat": 12
+        },
+        {
+          "kind": "per-seat",
+          "currency": "EUR",
+          "interval": "month",
+          "amountPeriod": "month",
+          "amountPerSeat": 18
+        }
+      ]
+    },
+    "sourceIds": [
+      "monday-pricing"
+    ],
+    "evidence": [
+      {
+        "sourceId": "monday-pricing",
+        "excerpt": "Basic €12 yearly / €18 monthly per seat."
+      }
+    ],
+    "extractedAt": "2026-08-14T08:00:00.000Z",
+    "normalizedAt": "2026-08-14T08:00:00.000Z",
+    "verifiedAt": "2026-08-14T08:00:00.000Z",
+    "approvedAt": "2026-08-14T08:00:00.000Z",
+    "confidence": "high",
+    "status": "approved",
+    "isFixture": false
+  },
+  {
+    "id": "fact-monday-sales-crm-pricing.plans.standard",
+    "productSlug": "monday-sales-crm",
+    "domain": "plans",
+    "field": "pricing.plans.standard",
+    "value": {
+      "id": "plan-standard",
+      "slug": "standard",
+      "name": "Standard",
+      "isFree": false,
+      "contactSales": false,
+      "hasFreeTrial": false,
+      "highlighted": true,
+      "rules": [
+        {
+          "kind": "per-seat",
+          "currency": "EUR",
+          "interval": "year",
+          "amountPeriod": "month",
+          "amountPerSeat": 17
+        },
+        {
+          "kind": "per-seat",
+          "currency": "EUR",
+          "interval": "month",
+          "amountPeriod": "month",
+          "amountPerSeat": 25
+        }
+      ]
+    },
+    "sourceIds": [
+      "monday-pricing"
+    ],
+    "evidence": [
+      {
+        "sourceId": "monday-pricing",
+        "excerpt": "Standard €17 yearly / €25 monthly per seat."
+      }
+    ],
+    "extractedAt": "2026-08-14T08:00:00.000Z",
+    "normalizedAt": "2026-08-14T08:00:00.000Z",
+    "verifiedAt": "2026-08-14T08:00:00.000Z",
+    "approvedAt": "2026-08-14T08:00:00.000Z",
+    "confidence": "high",
+    "status": "approved",
+    "isFixture": false
+  },
+  {
+    "id": "fact-monday-sales-crm-pricing.plans.pro",
+    "productSlug": "monday-sales-crm",
+    "domain": "plans",
+    "field": "pricing.plans.pro",
+    "value": {
+      "id": "plan-pro",
+      "slug": "pro",
+      "name": "Pro",
+      "isFree": false,
+      "contactSales": false,
+      "hasFreeTrial": false,
+      "highlighted": false,
+      "rules": [
+        {
+          "kind": "per-seat",
+          "currency": "EUR",
+          "interval": "year",
+          "amountPeriod": "month",
+          "amountPerSeat": 28
+        },
+        {
+          "kind": "per-seat",
+          "currency": "EUR",
+          "interval": "month",
+          "amountPeriod": "month",
+          "amountPerSeat": 41
+        }
+      ]
+    },
+    "sourceIds": [
+      "monday-pricing"
+    ],
+    "evidence": [
+      {
+        "sourceId": "monday-pricing",
+        "excerpt": "Pro €28 yearly / €41 monthly per seat."
+      }
+    ],
+    "extractedAt": "2026-08-14T08:00:00.000Z",
+    "normalizedAt": "2026-08-14T08:00:00.000Z",
+    "verifiedAt": "2026-08-14T08:00:00.000Z",
+    "approvedAt": "2026-08-14T08:00:00.000Z",
+    "confidence": "high",
+    "status": "approved",
+    "isFixture": false
+  },
+  {
+    "id": "fact-monday-sales-crm-pricing.plans.ultimate",
+    "productSlug": "monday-sales-crm",
+    "domain": "plans",
+    "field": "pricing.plans.ultimate",
+    "value": {
+      "id": "plan-ultimate",
+      "slug": "ultimate",
+      "name": "Ultimate",
+      "isFree": false,
+      "contactSales": false,
+      "hasFreeTrial": false,
+      "highlighted": false,
+      "rules": [],
+      "notes": "Ultimate listed on monday CRM pricing; confirm live quote."
+    },
+    "sourceIds": [
+      "monday-pricing"
+    ],
+    "evidence": [
+      {
+        "sourceId": "monday-pricing",
+        "excerpt": "Ultimate listed; confirm live pricing."
+      }
+    ],
+    "extractedAt": "2026-08-14T08:00:00.000Z",
+    "normalizedAt": "2026-08-14T08:00:00.000Z",
+    "verifiedAt": "2026-08-14T08:00:00.000Z",
+    "approvedAt": "2026-08-14T08:00:00.000Z",
+    "confidence": "high",
+    "status": "approved",
+    "isFixture": false
+  },
+  {
+    "id": "fact-monday-sales-crm-features.contact-management",
+    "productSlug": "monday-sales-crm",
+    "domain": "features",
+    "field": "features.contact-management",
+    "value": {
+      "featureSlug": "contact-management",
+      "availability": "supported",
+      "planSlugs": [
+        "basic",
+        "standard",
+        "pro",
+        "ultimate"
+      ]
+    },
+    "sourceIds": [
+      "monday-crm-product"
+    ],
+    "evidence": [
+      {
+        "sourceId": "monday-crm-product",
+        "excerpt": "monday sales CRM documents contact management."
+      }
+    ],
+    "extractedAt": "2026-08-14T08:00:00.000Z",
+    "normalizedAt": "2026-08-14T08:00:00.000Z",
+    "verifiedAt": "2026-08-14T08:00:00.000Z",
+    "approvedAt": "2026-08-14T08:00:00.000Z",
+    "confidence": "high",
+    "status": "approved",
+    "isFixture": false
+  },
+  {
+    "id": "fact-monday-sales-crm-features.lead-management",
+    "productSlug": "monday-sales-crm",
+    "domain": "features",
+    "field": "features.lead-management",
+    "value": {
+      "featureSlug": "lead-management",
+      "availability": "supported",
+      "planSlugs": [
+        "basic",
+        "standard",
+        "pro",
+        "ultimate"
+      ]
+    },
+    "sourceIds": [
+      "monday-crm-product"
+    ],
+    "evidence": [
+      {
+        "sourceId": "monday-crm-product",
+        "excerpt": "monday sales CRM documents lead management."
+      }
+    ],
+    "extractedAt": "2026-08-14T08:00:00.000Z",
+    "normalizedAt": "2026-08-14T08:00:00.000Z",
+    "verifiedAt": "2026-08-14T08:00:00.000Z",
+    "approvedAt": "2026-08-14T08:00:00.000Z",
+    "confidence": "high",
+    "status": "approved",
+    "isFixture": false
+  },
+  {
+    "id": "fact-monday-sales-crm-features.pipeline-management",
+    "productSlug": "monday-sales-crm",
+    "domain": "features",
+    "field": "features.pipeline-management",
+    "value": {
+      "featureSlug": "pipeline-management",
+      "availability": "supported",
+      "planSlugs": [
+        "basic",
+        "standard",
+        "pro",
+        "ultimate"
+      ]
+    },
+    "sourceIds": [
+      "monday-crm-product"
+    ],
+    "evidence": [
+      {
+        "sourceId": "monday-crm-product",
+        "excerpt": "monday sales CRM documents pipeline management."
+      }
+    ],
+    "extractedAt": "2026-08-14T08:00:00.000Z",
+    "normalizedAt": "2026-08-14T08:00:00.000Z",
+    "verifiedAt": "2026-08-14T08:00:00.000Z",
+    "approvedAt": "2026-08-14T08:00:00.000Z",
+    "confidence": "high",
+    "status": "approved",
+    "isFixture": false
+  },
+  {
+    "id": "fact-monday-sales-crm-features.deal-management",
+    "productSlug": "monday-sales-crm",
+    "domain": "features",
+    "field": "features.deal-management",
+    "value": {
+      "featureSlug": "deal-management",
+      "availability": "supported",
+      "planSlugs": [
+        "basic",
+        "standard",
+        "pro",
+        "ultimate"
+      ]
+    },
+    "sourceIds": [
+      "monday-crm-product"
+    ],
+    "evidence": [
+      {
+        "sourceId": "monday-crm-product",
+        "excerpt": "monday sales CRM documents deal management."
+      }
+    ],
+    "extractedAt": "2026-08-14T08:00:00.000Z",
+    "normalizedAt": "2026-08-14T08:00:00.000Z",
+    "verifiedAt": "2026-08-14T08:00:00.000Z",
+    "approvedAt": "2026-08-14T08:00:00.000Z",
+    "confidence": "high",
+    "status": "approved",
+    "isFixture": false
+  },
+  {
+    "id": "fact-monday-sales-crm-features.email-sync",
+    "productSlug": "monday-sales-crm",
+    "domain": "features",
+    "field": "features.email-sync",
+    "value": {
+      "featureSlug": "email-sync",
+      "availability": "supported",
+      "planSlugs": [
+        "basic",
+        "standard",
+        "pro",
+        "ultimate"
+      ]
+    },
+    "sourceIds": [
+      "monday-crm-product"
+    ],
+    "evidence": [
+      {
+        "sourceId": "monday-crm-product",
+        "excerpt": "monday sales CRM documents email sync."
+      }
+    ],
+    "extractedAt": "2026-08-14T08:00:00.000Z",
+    "normalizedAt": "2026-08-14T08:00:00.000Z",
+    "verifiedAt": "2026-08-14T08:00:00.000Z",
+    "approvedAt": "2026-08-14T08:00:00.000Z",
+    "confidence": "high",
+    "status": "approved",
+    "isFixture": false
+  },
+  {
+    "id": "fact-monday-sales-crm-features.workflow-automation",
+    "productSlug": "monday-sales-crm",
+    "domain": "features",
+    "field": "features.workflow-automation",
+    "value": {
+      "featureSlug": "workflow-automation",
+      "availability": "supported",
+      "planSlugs": [
+        "basic",
+        "standard",
+        "pro",
+        "ultimate"
+      ]
+    },
+    "sourceIds": [
+      "monday-crm-product"
+    ],
+    "evidence": [
+      {
+        "sourceId": "monday-crm-product",
+        "excerpt": "monday sales CRM documents workflow automation."
+      }
+    ],
+    "extractedAt": "2026-08-14T08:00:00.000Z",
+    "normalizedAt": "2026-08-14T08:00:00.000Z",
+    "verifiedAt": "2026-08-14T08:00:00.000Z",
+    "approvedAt": "2026-08-14T08:00:00.000Z",
+    "confidence": "high",
+    "status": "approved",
+    "isFixture": false
+  },
+  {
+    "id": "fact-monday-sales-crm-features.sales-automation",
+    "productSlug": "monday-sales-crm",
+    "domain": "features",
+    "field": "features.sales-automation",
+    "value": {
+      "featureSlug": "sales-automation",
+      "availability": "supported",
+      "planSlugs": [
+        "basic",
+        "standard",
+        "pro",
+        "ultimate"
+      ]
+    },
+    "sourceIds": [
+      "monday-crm-product"
+    ],
+    "evidence": [
+      {
+        "sourceId": "monday-crm-product",
+        "excerpt": "monday sales CRM documents sales automation."
+      }
+    ],
+    "extractedAt": "2026-08-14T08:00:00.000Z",
+    "normalizedAt": "2026-08-14T08:00:00.000Z",
+    "verifiedAt": "2026-08-14T08:00:00.000Z",
+    "approvedAt": "2026-08-14T08:00:00.000Z",
+    "confidence": "high",
+    "status": "approved",
+    "isFixture": false
+  },
+  {
+    "id": "fact-monday-sales-crm-features.reporting",
+    "productSlug": "monday-sales-crm",
+    "domain": "features",
+    "field": "features.reporting",
+    "value": {
+      "featureSlug": "reporting",
+      "availability": "supported",
+      "planSlugs": [
+        "basic",
+        "standard",
+        "pro",
+        "ultimate"
+      ]
+    },
+    "sourceIds": [
+      "monday-crm-product"
+    ],
+    "evidence": [
+      {
+        "sourceId": "monday-crm-product",
+        "excerpt": "monday sales CRM documents reporting."
+      }
+    ],
+    "extractedAt": "2026-08-14T08:00:00.000Z",
+    "normalizedAt": "2026-08-14T08:00:00.000Z",
+    "verifiedAt": "2026-08-14T08:00:00.000Z",
+    "approvedAt": "2026-08-14T08:00:00.000Z",
+    "confidence": "high",
+    "status": "approved",
+    "isFixture": false
+  },
+  {
+    "id": "fact-monday-sales-crm-features.forecasting",
+    "productSlug": "monday-sales-crm",
+    "domain": "features",
+    "field": "features.forecasting",
+    "value": {
+      "featureSlug": "forecasting",
+      "availability": "higher-plan-only",
+      "planSlugs": [
+        "pro",
+        "ultimate"
+      ]
+    },
+    "sourceIds": [
+      "monday-crm-product"
+    ],
+    "evidence": [
+      {
+        "sourceId": "monday-crm-product",
+        "excerpt": "monday sales CRM documents forecasting."
+      }
+    ],
+    "extractedAt": "2026-08-14T08:00:00.000Z",
+    "normalizedAt": "2026-08-14T08:00:00.000Z",
+    "verifiedAt": "2026-08-14T08:00:00.000Z",
+    "approvedAt": "2026-08-14T08:00:00.000Z",
+    "confidence": "high",
+    "status": "approved",
+    "isFixture": false
+  },
+  {
+    "id": "fact-monday-sales-crm-features.custom-fields",
+    "productSlug": "monday-sales-crm",
+    "domain": "features",
+    "field": "features.custom-fields",
+    "value": {
+      "featureSlug": "custom-fields",
+      "availability": "supported",
+      "planSlugs": [
+        "basic",
+        "standard",
+        "pro",
+        "ultimate"
+      ]
+    },
+    "sourceIds": [
+      "monday-crm-product"
+    ],
+    "evidence": [
+      {
+        "sourceId": "monday-crm-product",
+        "excerpt": "monday sales CRM documents custom fields."
+      }
+    ],
+    "extractedAt": "2026-08-14T08:00:00.000Z",
+    "normalizedAt": "2026-08-14T08:00:00.000Z",
+    "verifiedAt": "2026-08-14T08:00:00.000Z",
+    "approvedAt": "2026-08-14T08:00:00.000Z",
+    "confidence": "high",
+    "status": "approved",
+    "isFixture": false
+  },
+  {
+    "id": "fact-monday-sales-crm-features.custom-pipelines",
+    "productSlug": "monday-sales-crm",
+    "domain": "features",
+    "field": "features.custom-pipelines",
+    "value": {
+      "featureSlug": "custom-pipelines",
+      "availability": "supported",
+      "planSlugs": [
+        "basic",
+        "standard",
+        "pro",
+        "ultimate"
+      ]
+    },
+    "sourceIds": [
+      "monday-crm-product"
+    ],
+    "evidence": [
+      {
+        "sourceId": "monday-crm-product",
+        "excerpt": "monday sales CRM documents custom pipelines."
+      }
+    ],
+    "extractedAt": "2026-08-14T08:00:00.000Z",
+    "normalizedAt": "2026-08-14T08:00:00.000Z",
+    "verifiedAt": "2026-08-14T08:00:00.000Z",
+    "approvedAt": "2026-08-14T08:00:00.000Z",
+    "confidence": "high",
+    "status": "approved",
+    "isFixture": false
+  },
+  {
+    "id": "fact-monday-sales-crm-features.mobile-app",
+    "productSlug": "monday-sales-crm",
+    "domain": "features",
+    "field": "features.mobile-app",
+    "value": {
+      "featureSlug": "mobile-app",
+      "availability": "supported",
+      "planSlugs": [
+        "basic",
+        "standard",
+        "pro",
+        "ultimate"
+      ]
+    },
+    "sourceIds": [
+      "monday-crm-product"
+    ],
+    "evidence": [
+      {
+        "sourceId": "monday-crm-product",
+        "excerpt": "monday sales CRM documents mobile app."
+      }
+    ],
+    "extractedAt": "2026-08-14T08:00:00.000Z",
+    "normalizedAt": "2026-08-14T08:00:00.000Z",
+    "verifiedAt": "2026-08-14T08:00:00.000Z",
+    "approvedAt": "2026-08-14T08:00:00.000Z",
+    "confidence": "high",
+    "status": "approved",
+    "isFixture": false
+  },
+  {
+    "id": "fact-monday-sales-crm-features.ai-assistance",
+    "productSlug": "monday-sales-crm",
+    "domain": "features",
+    "field": "features.ai-assistance",
+    "value": {
+      "featureSlug": "ai-assistance",
+      "availability": "limited",
+      "planSlugs": [
+        "pro",
+        "ultimate"
+      ]
+    },
+    "sourceIds": [
+      "monday-crm-product"
+    ],
+    "evidence": [
+      {
+        "sourceId": "monday-crm-product",
+        "excerpt": "monday sales CRM documents ai assistance."
+      }
+    ],
+    "extractedAt": "2026-08-14T08:00:00.000Z",
+    "normalizedAt": "2026-08-14T08:00:00.000Z",
+    "verifiedAt": "2026-08-14T08:00:00.000Z",
+    "approvedAt": "2026-08-14T08:00:00.000Z",
+    "confidence": "high",
+    "status": "approved",
+    "isFixture": false
+  },
+  {
+    "id": "fact-monday-sales-crm-features.integrations",
+    "productSlug": "monday-sales-crm",
+    "domain": "features",
+    "field": "features.integrations",
+    "value": {
+      "featureSlug": "integrations",
+      "availability": "supported",
+      "planSlugs": [
+        "basic",
+        "standard",
+        "pro",
+        "ultimate"
+      ]
+    },
+    "sourceIds": [
+      "monday-crm-product"
+    ],
+    "evidence": [
+      {
+        "sourceId": "monday-crm-product",
+        "excerpt": "monday sales CRM documents integrations."
+      }
+    ],
+    "extractedAt": "2026-08-14T08:00:00.000Z",
+    "normalizedAt": "2026-08-14T08:00:00.000Z",
+    "verifiedAt": "2026-08-14T08:00:00.000Z",
+    "approvedAt": "2026-08-14T08:00:00.000Z",
+    "confidence": "high",
+    "status": "approved",
+    "isFixture": false
+  },
+  {
+    "id": "fact-monday-sales-crm-positioning.summary",
+    "productSlug": "monday-sales-crm",
+    "domain": "product-positioning",
+    "field": "positioning.summary",
+    "value": "monday sales CRM applies monday.com’s Work OS boards to sales pipelines, automations, and collaborative deal management.",
+    "sourceIds": [
+      "monday-crm-product"
+    ],
+    "evidence": [
+      {
+        "sourceId": "monday-crm-product",
+        "excerpt": "monday sales CRM applies monday.com’s Work OS boards to sales pipelines, automations, and collaborative deal management."
+      }
+    ],
+    "extractedAt": "2026-08-14T08:00:00.000Z",
+    "normalizedAt": "2026-08-14T08:00:00.000Z",
+    "verifiedAt": "2026-08-14T08:00:00.000Z",
+    "approvedAt": "2026-08-14T08:00:00.000Z",
+    "confidence": "high",
+    "status": "approved",
+    "isFixture": false
+  },
+  {
+    "id": "fact-monday-sales-crm-ai.assistant",
+    "productSlug": "monday-sales-crm",
+    "domain": "ai-capabilities",
+    "field": "ai.assistant",
+    "value": {
+      "capability": "assistant",
+      "availability": "limited",
+      "sourceIds": [
+        "monday-crm-product"
+      ]
+    },
+    "sourceIds": [
+      "monday-crm-product"
+    ],
+    "evidence": [
+      {
+        "sourceId": "monday-crm-product",
+        "excerpt": "monday sales CRM AI: assistant"
+      }
+    ],
+    "extractedAt": "2026-08-14T08:00:00.000Z",
+    "normalizedAt": "2026-08-14T08:00:00.000Z",
+    "verifiedAt": "2026-08-14T08:00:00.000Z",
+    "approvedAt": "2026-08-14T08:00:00.000Z",
+    "confidence": "high",
+    "status": "approved",
+    "isFixture": false
+  },
+  {
+    "id": "fact-monday-sales-crm-ai.automation",
+    "productSlug": "monday-sales-crm",
+    "domain": "ai-capabilities",
+    "field": "ai.automation",
+    "value": {
+      "capability": "automation",
+      "availability": "supported",
+      "sourceIds": [
+        "monday-crm-product"
+      ]
+    },
+    "sourceIds": [
+      "monday-crm-product"
+    ],
+    "evidence": [
+      {
+        "sourceId": "monday-crm-product",
+        "excerpt": "monday sales CRM AI: automation"
+      }
+    ],
+    "extractedAt": "2026-08-14T08:00:00.000Z",
+    "normalizedAt": "2026-08-14T08:00:00.000Z",
+    "verifiedAt": "2026-08-14T08:00:00.000Z",
+    "approvedAt": "2026-08-14T08:00:00.000Z",
+    "confidence": "high",
+    "status": "approved",
+    "isFixture": false
+  }
+]

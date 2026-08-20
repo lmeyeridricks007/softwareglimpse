@@ -1,0 +1,165 @@
+{
+  "id": "assessment-new-relic-it-v1",
+  "productSlug": "new-relic",
+  "methodologySlug": "it-development-editorial",
+  "methodologyVersion": "1.0.0",
+  "status": "approved",
+  "verdict": "New Relic: Choose New Relic when unified observability billed on ingest + users is the job — not Datadog host packs and not ITSM. Scores use the IT & Development editorial methodology from first-party research as of 2026-08-18 — not hands-on product testing.",
+  "strengths": [
+    "100 GB free ingest",
+    "All-in-one APM/logs/infra",
+    "Transparent user + GB list",
+    "Free basic users",
+    "Pro path for unlimited full users"
+  ],
+  "weaknesses": [
+    "Full-user price cliff",
+    "Standard 5-user cap",
+    "GB overage",
+    "Not ITSM or git",
+    "CCU add-ons"
+  ],
+  "bestFor": [
+    "Teams that want APM + logs + infra in one ingest bill",
+    "Orgs that can live with 1–5 Standard full users",
+    "Buyers comparing usage-based observability to Datadog hosts"
+  ],
+  "notIdealFor": [
+    "ITSM-only buyers (Freshservice / ServiceNow)",
+    "Teams standardised on Grafana OSS + cheap Cloud Pro usage",
+    "On-call-only (PagerDuty)"
+  ],
+  "tradeoffs": [
+    "Per-agent vs per-host vs per-seat vs per-GB pricing models",
+    "Module stacking and consumption overages vs single-SKU floors",
+    "Free tiers vs enterprise SSO/audit gates",
+    "Landscape-adjacent tools vs primary job-cluster peers on best pages"
+  ],
+  "recommendation": "Choose New Relic when unified observability billed on ingest + users is the job — not Datadog host packs and not ITSM. Compare Datadog for host/module packaging; Grafana Cloud for OSS-aligned usage; PagerDuty for on-call.",
+  "editorialNotes": "IT Priority-2 batch. Approved on it-development-editorial v1.0.0. membershipRole=primary. jobCluster=observability-monitoring. handsOnTesting=false. Affiliate economics excluded.",
+  "handsOnTesting": false,
+  "confidence": "medium",
+  "criterionAssessments": [
+    {
+      "criterionSlug": "ease-of-use",
+      "score": 7,
+      "rationale": "Unified NRQL/platform is powerful; pricing dimensions (users + GB) add buying friction.",
+      "supportingFactIds": [
+        "fact-new-relic-features.infrastructure-monitoring",
+        "fact-new-relic-pricing.model"
+      ],
+      "confidence": "medium",
+      "status": "approved",
+      "reviewedAt": "2026-08-18T12:00:00.000Z",
+      "reviewer": "editorial"
+    },
+    {
+      "criterionSlug": "it-job-fit",
+      "score": 9,
+      "rationale": "Observability suite — peer of Datadog/Grafana Cloud, not Freshservice.",
+      "supportingFactIds": [
+        "fact-new-relic-features.infrastructure-monitoring",
+        "fact-new-relic-pricing.model"
+      ],
+      "confidence": "medium",
+      "status": "approved",
+      "reviewedAt": "2026-08-18T12:00:00.000Z",
+      "reviewer": "editorial"
+    },
+    {
+      "criterionSlug": "workflow-depth",
+      "score": 9,
+      "rationale": "APM + logs + infra + traces in one product is deep; held at 9 vs Datadog’s modular breadth.",
+      "supportingFactIds": [
+        "fact-new-relic-features.apm-tracing",
+        "fact-new-relic-pricing.model"
+      ],
+      "confidence": "medium",
+      "status": "approved",
+      "reviewedAt": "2026-08-18T12:00:00.000Z",
+      "reviewer": "editorial"
+    },
+    {
+      "criterionSlug": "integrations",
+      "score": 8,
+      "rationale": "Broad APM language/cloud integrations; incident paging still often PagerDuty.",
+      "supportingFactIds": [
+        "fact-new-relic-features.analytics-reporting",
+        "fact-new-relic-pricing.model",
+        "fact-new-relic-positioning.vendorClaim"
+      ],
+      "confidence": "medium",
+      "status": "approved",
+      "reviewedAt": "2026-08-18T12:00:00.000Z",
+      "reviewer": "editorial"
+    },
+    {
+      "criterionSlug": "admin-security",
+      "score": 8,
+      "rationale": "Pro/Enterprise add governance; Standard is SMB-grade.",
+      "supportingFactIds": [
+        "fact-new-relic-features.enterprise-security",
+        "fact-new-relic-pricing.model"
+      ],
+      "confidence": "medium",
+      "status": "approved",
+      "reviewedAt": "2026-08-18T12:00:00.000Z",
+      "reviewer": "editorial"
+    },
+    {
+      "criterionSlug": "scalability",
+      "score": 9,
+      "rationale": "Data + user model scales; Pro user list price is steep.",
+      "supportingFactIds": [
+        "fact-new-relic-pricing.plans.free",
+        "fact-new-relic-pricing.model",
+        "fact-new-relic-pricing.plans.enterprise"
+      ],
+      "confidence": "medium",
+      "status": "approved",
+      "reviewedAt": "2026-08-18T12:00:00.000Z",
+      "reviewer": "editorial"
+    },
+    {
+      "criterionSlug": "value-for-money",
+      "score": 7,
+      "rationale": "Generous 100 GB free; full-user list prices are the gotcha vs Datadog host SKUs. Affiliate economics excluded.",
+      "supportingFactIds": [
+        "fact-new-relic-pricing.hasFreePlan",
+        "fact-new-relic-pricing.model",
+        "fact-new-relic-pricing.startingPriceMonthly"
+      ],
+      "confidence": "medium",
+      "status": "approved",
+      "reviewedAt": "2026-08-18T12:00:00.000Z",
+      "reviewer": "editorial"
+    },
+    {
+      "criterionSlug": "ai-capabilities",
+      "score": 7,
+      "rationale": "Platform AI assistance exists; not the buying reason vs APM depth.",
+      "supportingFactIds": [
+        "fact-new-relic-features.itsm-ai",
+        "fact-new-relic-pricing.model"
+      ],
+      "confidence": "medium",
+      "status": "approved",
+      "reviewedAt": "2026-08-18T12:00:00.000Z",
+      "reviewer": "editorial"
+    }
+  ],
+  "overallScore": 8,
+  "overallScoreRationale": "Weighted average of the eight IT editorial criteria using category weights (IT job fit 16, workflow depth 14, ease of use 12, integrations 12, admin/security 12, value 12, AI 12, scalability 10), rounded to 1 decimal. Products are scored inside their job cluster — ITSM, observability, source control, hosting panels, and web-data platforms are not forced into one undifferentiated ranking. Not a hands-on lab score, and affiliate economics are excluded.",
+  "scoreAudit": [
+    {
+      "at": "2026-08-18T12:00:00.000Z",
+      "actor": "editorial",
+      "change": "IT Priority-2 onboarding; approved IT criteria with category weights; handsOnTesting=false",
+      "nextOverall": 8
+    }
+  ],
+  "reviewedAt": "2026-08-18T12:00:00.000Z",
+  "reviewer": "editorial",
+  "createdAt": "2026-08-18T12:00:00.000Z",
+  "updatedAt": "2026-08-18T12:00:00.000Z"
+}

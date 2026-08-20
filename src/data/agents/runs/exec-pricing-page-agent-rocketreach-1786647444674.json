@@ -1,0 +1,82 @@
+{
+  "id": "exec-pricing-page-agent-rocketreach-1786647444674",
+  "agentId": "pricing-page-agent",
+  "agentVersion": "1.0.0",
+  "status": "qa-failed",
+  "mode": "CREATE",
+  "targetSlug": "rocketreach",
+  "draftId": "draft-deterministic-v1-pricing-page-agent-rocketreach-2026-08-13T18-57-24-689Z",
+  "briefId": "agent-brief-pricing-page-agent-rocketreach-1786647444689",
+  "validation": {
+    "ok": false,
+    "errors": [
+      "unsourced-number:caveats:$399",
+      "unsourced-number:caveats:399",
+      "unsourced-number:caveats:000"
+    ]
+  },
+  "qa": {
+    "status": "fail",
+    "blockers": [
+      {
+        "type": "UNVERIFIED_NUMBER",
+        "severity": "blocker",
+        "message": "unsourced-number:caveats:$399"
+      },
+      {
+        "type": "UNVERIFIED_NUMBER",
+        "severity": "blocker",
+        "message": "unsourced-number:caveats:399"
+      },
+      {
+        "type": "UNVERIFIED_NUMBER",
+        "severity": "blocker",
+        "message": "unsourced-number:caveats:000"
+      }
+    ],
+    "warnings": [],
+    "suggestions": [],
+    "checkedAt": "2026-08-13T18:57:24.690Z"
+  },
+  "errors": [
+    "unsourced-number:caveats:$399",
+    "unsourced-number:caveats:399",
+    "unsourced-number:caveats:000"
+  ],
+  "cost": {
+    "provider": "deterministic-v1",
+    "model": "deterministic-template-v1",
+    "inputTokens": 0,
+    "outputTokens": 0,
+    "estimatedCostUsd": 0
+  },
+  "contextSnapshot": {
+    "researchSnapshotIds": [],
+    "factIds": [
+      "fact-rocketreach-pricing.hasFreePlan",
+      "fact-rocketreach-pricing.hasFreeTrial",
+      "fact-rocketreach-pricing.startingPriceMonthly",
+      "fact-rocketreach-pricing.currency",
+      "fact-rocketreach-pricing.model",
+      "fact-rocketreach-pricing.plans.essentials",
+      "fact-rocketreach-pricing.plans.pro",
+      "fact-rocketreach-pricing.plans.ultimate",
+      "fact-rocketreach-positioning.core",
+      "fact-rocketreach-features.prospecting",
+      "fact-rocketreach-features.data-enrichment",
+      "fact-rocketreach-features.email-sequences",
+      "fact-rocketreach-features.sales-automation",
+      "fact-rocketreach-features.integrations",
+      "fact-rocketreach-features.pipeline-management",
+      "fact-rocketreach-ai.email-generation",
+      "fact-rocketreach-integrations.crm"
+    ],
+    "methodologySlug": "crm-editorial",
+    "methodologyVersion": "1.0.0",
+    "pricingFreshnessAt": "2026-08-13T18:00:00.000Z",
+    "builtAt": "2026-08-13T18:57:24.688Z"
+  },
+  "dryRun": false,
+  "startedAt": "2026-08-13T18:57:24.674Z",
+  "completedAt": "2026-08-13T18:57:24.691Z"
+}

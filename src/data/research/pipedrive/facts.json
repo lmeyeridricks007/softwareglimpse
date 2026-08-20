@@ -1,0 +1,1624 @@
+[
+  {
+    "id": "fact-pipedrive-pricing.hasFreePlan",
+    "productSlug": "pipedrive",
+    "domain": "free-plan",
+    "field": "pricing.hasFreePlan",
+    "value": false,
+    "sourceIds": [
+      "pipedrive-pricing-official",
+      "pipedrive-pricing-how-kb"
+    ],
+    "evidence": [
+      {
+        "sourceId": "pipedrive-pricing-official",
+        "excerpt": "No permanent free plan; paid plans only with free trial."
+      }
+    ],
+    "extractedAt": "2026-08-13T17:45:00.000Z",
+    "normalizedAt": "2026-08-13T17:45:00.000Z",
+    "verifiedAt": "2026-08-13T17:45:00.000Z",
+    "approvedAt": "2026-08-13T17:45:00.000Z",
+    "confidence": "high",
+    "status": "approved",
+    "isFixture": false
+  },
+  {
+    "id": "fact-pipedrive-pricing.hasFreeTrial",
+    "productSlug": "pipedrive",
+    "domain": "free-trial",
+    "field": "pricing.hasFreeTrial",
+    "value": true,
+    "sourceIds": [
+      "pipedrive-pricing-official",
+      "pipedrive-product-official"
+    ],
+    "evidence": [
+      {
+        "sourceId": "pipedrive-pricing-official",
+        "excerpt": "14-day free trial. Full access. No credit card required."
+      }
+    ],
+    "extractedAt": "2026-08-13T17:45:00.000Z",
+    "normalizedAt": "2026-08-13T17:45:00.000Z",
+    "verifiedAt": "2026-08-13T17:45:00.000Z",
+    "approvedAt": "2026-08-13T17:45:00.000Z",
+    "confidence": "high",
+    "status": "approved",
+    "isFixture": false
+  },
+  {
+    "id": "fact-pipedrive-pricing.startingPriceMonthly",
+    "productSlug": "pipedrive",
+    "domain": "pricing",
+    "field": "pricing.startingPriceMonthly",
+    "value": 14,
+    "sourceIds": [
+      "pipedrive-pricing-official"
+    ],
+    "evidence": [
+      {
+        "sourceId": "pipedrive-pricing-official",
+        "excerpt": "Lite starts at US$14 per seat per month when billed annually."
+      }
+    ],
+    "extractedAt": "2026-08-13T17:45:00.000Z",
+    "normalizedAt": "2026-08-13T17:45:00.000Z",
+    "verifiedAt": "2026-08-13T17:45:00.000Z",
+    "approvedAt": "2026-08-13T17:45:00.000Z",
+    "confidence": "high",
+    "status": "approved",
+    "isFixture": false
+  },
+  {
+    "id": "fact-pipedrive-pricing.currency",
+    "productSlug": "pipedrive",
+    "domain": "pricing",
+    "field": "pricing.currency",
+    "value": "USD",
+    "sourceIds": [
+      "pipedrive-pricing-official"
+    ],
+    "evidence": [
+      {
+        "sourceId": "pipedrive-pricing-official",
+        "excerpt": "USD list pricing shown on Pipedrive pricing page."
+      }
+    ],
+    "extractedAt": "2026-08-13T17:45:00.000Z",
+    "normalizedAt": "2026-08-13T17:45:00.000Z",
+    "verifiedAt": "2026-08-13T17:45:00.000Z",
+    "approvedAt": "2026-08-13T17:45:00.000Z",
+    "confidence": "high",
+    "status": "approved",
+    "isFixture": false
+  },
+  {
+    "id": "fact-pipedrive-pricing.model",
+    "productSlug": "pipedrive",
+    "domain": "pricing",
+    "field": "pricing.model",
+    "value": "subscription",
+    "sourceIds": [
+      "pipedrive-pricing-how-kb"
+    ],
+    "evidence": [
+      {
+        "sourceId": "pipedrive-pricing-how-kb",
+        "excerpt": "Per-seat subscription with monthly or annual billing."
+      }
+    ],
+    "extractedAt": "2026-08-13T17:45:00.000Z",
+    "normalizedAt": "2026-08-13T17:45:00.000Z",
+    "verifiedAt": "2026-08-13T17:45:00.000Z",
+    "approvedAt": "2026-08-13T17:45:00.000Z",
+    "confidence": "high",
+    "status": "approved",
+    "isFixture": false
+  },
+  {
+    "id": "fact-pipedrive-pricing.plans.lite",
+    "productSlug": "pipedrive",
+    "domain": "plans",
+    "field": "pricing.plans.lite",
+    "value": {
+      "id": "plan-lite",
+      "slug": "lite",
+      "name": "Lite",
+      "isFree": false,
+      "contactSales": false,
+      "hasFreeTrial": true,
+      "trialDays": 14,
+      "highlighted": false,
+      "rules": [
+        {
+          "kind": "per-seat",
+          "amountPerSeat": 14,
+          "currency": "USD",
+          "interval": "year",
+          "amountPeriod": "month"
+        },
+        {
+          "kind": "per-seat",
+          "amountPerSeat": 24,
+          "currency": "USD",
+          "interval": "month",
+          "amountPeriod": "month"
+        }
+      ]
+    },
+    "sourceIds": [
+      "pipedrive-pricing-official",
+      "pipedrive-pricing-how-kb",
+      "pipedrive-plans-kb"
+    ],
+    "evidence": [
+      {
+        "sourceId": "pipedrive-pricing-official",
+        "excerpt": "Lite: US$14/seat/mo billed annually (US$24 monthly)."
+      }
+    ],
+    "extractedAt": "2026-08-13T17:45:00.000Z",
+    "normalizedAt": "2026-08-13T17:45:00.000Z",
+    "verifiedAt": "2026-08-13T17:45:00.000Z",
+    "approvedAt": "2026-08-13T17:45:00.000Z",
+    "confidence": "high",
+    "status": "approved",
+    "isFixture": false,
+    "notes": "USD list prices as published on pipedrive.com/en/pricing (checked Aug 2026)."
+  },
+  {
+    "id": "fact-pipedrive-pricing.plans.growth",
+    "productSlug": "pipedrive",
+    "domain": "plans",
+    "field": "pricing.plans.growth",
+    "value": {
+      "id": "plan-growth",
+      "slug": "growth",
+      "name": "Growth",
+      "isFree": false,
+      "contactSales": false,
+      "hasFreeTrial": true,
+      "trialDays": 14,
+      "highlighted": true,
+      "rules": [
+        {
+          "kind": "per-seat",
+          "amountPerSeat": 39,
+          "currency": "USD",
+          "interval": "year",
+          "amountPeriod": "month"
+        },
+        {
+          "kind": "per-seat",
+          "amountPerSeat": 49,
+          "currency": "USD",
+          "interval": "month",
+          "amountPeriod": "month"
+        }
+      ]
+    },
+    "sourceIds": [
+      "pipedrive-pricing-official",
+      "pipedrive-pricing-how-kb",
+      "pipedrive-plans-kb"
+    ],
+    "evidence": [
+      {
+        "sourceId": "pipedrive-pricing-official",
+        "excerpt": "Growth: US$39/seat/mo billed annually (US$49 monthly)."
+      }
+    ],
+    "extractedAt": "2026-08-13T17:45:00.000Z",
+    "normalizedAt": "2026-08-13T17:45:00.000Z",
+    "verifiedAt": "2026-08-13T17:45:00.000Z",
+    "approvedAt": "2026-08-13T17:45:00.000Z",
+    "confidence": "high",
+    "status": "approved",
+    "isFixture": false,
+    "notes": "USD list prices as published on pipedrive.com/en/pricing (checked Aug 2026)."
+  },
+  {
+    "id": "fact-pipedrive-pricing.plans.premium",
+    "productSlug": "pipedrive",
+    "domain": "plans",
+    "field": "pricing.plans.premium",
+    "value": {
+      "id": "plan-premium",
+      "slug": "premium",
+      "name": "Premium",
+      "isFree": false,
+      "contactSales": false,
+      "hasFreeTrial": true,
+      "trialDays": 14,
+      "highlighted": false,
+      "rules": [
+        {
+          "kind": "per-seat",
+          "amountPerSeat": 59,
+          "currency": "USD",
+          "interval": "year",
+          "amountPeriod": "month"
+        },
+        {
+          "kind": "per-seat",
+          "amountPerSeat": 79,
+          "currency": "USD",
+          "interval": "month",
+          "amountPeriod": "month"
+        }
+      ]
+    },
+    "sourceIds": [
+      "pipedrive-pricing-official",
+      "pipedrive-pricing-how-kb",
+      "pipedrive-plans-kb"
+    ],
+    "evidence": [
+      {
+        "sourceId": "pipedrive-pricing-official",
+        "excerpt": "Premium: US$59/seat/mo billed annually (US$79 monthly)."
+      }
+    ],
+    "extractedAt": "2026-08-13T17:45:00.000Z",
+    "normalizedAt": "2026-08-13T17:45:00.000Z",
+    "verifiedAt": "2026-08-13T17:45:00.000Z",
+    "approvedAt": "2026-08-13T17:45:00.000Z",
+    "confidence": "high",
+    "status": "approved",
+    "isFixture": false,
+    "notes": "USD list prices as published on pipedrive.com/en/pricing (checked Aug 2026)."
+  },
+  {
+    "id": "fact-pipedrive-pricing.plans.ultimate",
+    "productSlug": "pipedrive",
+    "domain": "plans",
+    "field": "pricing.plans.ultimate",
+    "value": {
+      "id": "plan-ultimate",
+      "slug": "ultimate",
+      "name": "Ultimate",
+      "isFree": false,
+      "contactSales": false,
+      "hasFreeTrial": true,
+      "trialDays": 14,
+      "highlighted": false,
+      "rules": [
+        {
+          "kind": "per-seat",
+          "amountPerSeat": 79,
+          "currency": "USD",
+          "interval": "year",
+          "amountPeriod": "month"
+        },
+        {
+          "kind": "per-seat",
+          "amountPerSeat": 99,
+          "currency": "USD",
+          "interval": "month",
+          "amountPeriod": "month"
+        }
+      ]
+    },
+    "sourceIds": [
+      "pipedrive-pricing-official",
+      "pipedrive-pricing-how-kb",
+      "pipedrive-plans-kb"
+    ],
+    "evidence": [
+      {
+        "sourceId": "pipedrive-pricing-official",
+        "excerpt": "Ultimate: US$79/seat/mo billed annually (US$99 monthly)."
+      }
+    ],
+    "extractedAt": "2026-08-13T17:45:00.000Z",
+    "normalizedAt": "2026-08-13T17:45:00.000Z",
+    "verifiedAt": "2026-08-13T17:45:00.000Z",
+    "approvedAt": "2026-08-13T17:45:00.000Z",
+    "confidence": "high",
+    "status": "approved",
+    "isFixture": false,
+    "notes": "USD list prices as published on pipedrive.com/en/pricing (checked Aug 2026)."
+  },
+  {
+    "id": "fact-pipedrive-plans.mapping",
+    "productSlug": "pipedrive",
+    "domain": "plans",
+    "field": "pricing.planRenameMap",
+    "value": {
+      "essential": "lite",
+      "advanced": "growth",
+      "professional": "premium",
+      "power": "premium",
+      "enterprise": "ultimate"
+    },
+    "sourceIds": [
+      "pipedrive-plans-kb"
+    ],
+    "evidence": [
+      {
+        "sourceId": "pipedrive-plans-kb",
+        "excerpt": "Essential→Lite, Advanced→Growth, Professional and Power→Premium, Enterprise→Ultimate."
+      }
+    ],
+    "extractedAt": "2026-08-13T17:45:00.000Z",
+    "normalizedAt": "2026-08-13T17:45:00.000Z",
+    "verifiedAt": "2026-08-13T17:45:00.000Z",
+    "approvedAt": "2026-08-13T17:45:00.000Z",
+    "confidence": "high",
+    "status": "approved",
+    "isFixture": false
+  },
+  {
+    "id": "fact-pipedrive-addons.inclusion",
+    "productSlug": "pipedrive",
+    "domain": "plans",
+    "field": "pricing.addons.inclusion",
+    "value": {
+      "leadBooster": {
+        "lite": "add-on",
+        "growth": "add-on",
+        "premium": "included",
+        "ultimate": "included"
+      },
+      "projects": {
+        "lite": "add-on",
+        "growth": "add-on",
+        "premium": "included",
+        "ultimate": "included"
+      },
+      "smartDocs": {
+        "lite": "add-on",
+        "growth": "add-on",
+        "premium": "included",
+        "ultimate": "included"
+      },
+      "campaigns": {
+        "lite": "add-on",
+        "growth": "add-on",
+        "premium": "add-on",
+        "ultimate": "add-on"
+      },
+      "webVisitors": {
+        "lite": "add-on",
+        "growth": "add-on",
+        "premium": "add-on",
+        "ultimate": "add-on"
+      }
+    },
+    "sourceIds": [
+      "pipedrive-pricing-how-kb"
+    ],
+    "evidence": [
+      {
+        "sourceId": "pipedrive-pricing-how-kb",
+        "excerpt": "LeadBooster, Projects, and Smart Docs included on Premium and Ultimate; Campaigns and Web Visitors remain add-ons."
+      }
+    ],
+    "extractedAt": "2026-08-13T17:45:00.000Z",
+    "normalizedAt": "2026-08-13T17:45:00.000Z",
+    "verifiedAt": "2026-08-13T17:45:00.000Z",
+    "approvedAt": "2026-08-13T17:45:00.000Z",
+    "confidence": "high",
+    "status": "approved",
+    "isFixture": false
+  },
+  {
+    "id": "fact-pipedrive-features.contact-management",
+    "productSlug": "pipedrive",
+    "domain": "features",
+    "field": "features.contact-management",
+    "value": {
+      "featureSlug": "contact-management",
+      "availability": "supported",
+      "planSlugs": [
+        "lite",
+        "growth",
+        "premium",
+        "ultimate"
+      ]
+    },
+    "sourceIds": [
+      "pipedrive-pipeline-features",
+      "pipedrive-plans-kb",
+      "pipedrive-product-official",
+      "pipedrive-pricing-how-kb"
+    ],
+    "evidence": [
+      {
+        "sourceId": "pipedrive-pipeline-features",
+        "excerpt": "Contacts and companies with activity history."
+      }
+    ],
+    "extractedAt": "2026-08-13T17:45:00.000Z",
+    "normalizedAt": "2026-08-13T17:45:00.000Z",
+    "verifiedAt": "2026-08-13T17:45:00.000Z",
+    "approvedAt": "2026-08-13T17:45:00.000Z",
+    "confidence": "high",
+    "status": "approved",
+    "isFixture": false
+  },
+  {
+    "id": "fact-pipedrive-features.lead-management",
+    "productSlug": "pipedrive",
+    "domain": "features",
+    "field": "features.lead-management",
+    "value": {
+      "featureSlug": "lead-management",
+      "availability": "supported",
+      "planSlugs": [
+        "lite",
+        "growth",
+        "premium",
+        "ultimate"
+      ]
+    },
+    "sourceIds": [
+      "pipedrive-pipeline-features",
+      "pipedrive-plans-kb",
+      "pipedrive-product-official",
+      "pipedrive-pricing-how-kb"
+    ],
+    "evidence": [
+      {
+        "sourceId": "pipedrive-pipeline-features",
+        "excerpt": "Leads inbox and lead-to-deal conversion."
+      }
+    ],
+    "extractedAt": "2026-08-13T17:45:00.000Z",
+    "normalizedAt": "2026-08-13T17:45:00.000Z",
+    "verifiedAt": "2026-08-13T17:45:00.000Z",
+    "approvedAt": "2026-08-13T17:45:00.000Z",
+    "confidence": "high",
+    "status": "approved",
+    "isFixture": false
+  },
+  {
+    "id": "fact-pipedrive-features.pipeline-management",
+    "productSlug": "pipedrive",
+    "domain": "features",
+    "field": "features.pipeline-management",
+    "value": {
+      "featureSlug": "pipeline-management",
+      "availability": "supported",
+      "planSlugs": [
+        "lite",
+        "growth",
+        "premium",
+        "ultimate"
+      ]
+    },
+    "sourceIds": [
+      "pipedrive-pipeline-features",
+      "pipedrive-plans-kb",
+      "pipedrive-product-official",
+      "pipedrive-pricing-how-kb"
+    ],
+    "evidence": [
+      {
+        "sourceId": "pipedrive-pipeline-features",
+        "excerpt": "Visual deal pipelines with customizable stages."
+      }
+    ],
+    "extractedAt": "2026-08-13T17:45:00.000Z",
+    "normalizedAt": "2026-08-13T17:45:00.000Z",
+    "verifiedAt": "2026-08-13T17:45:00.000Z",
+    "approvedAt": "2026-08-13T17:45:00.000Z",
+    "confidence": "high",
+    "status": "approved",
+    "isFixture": false
+  },
+  {
+    "id": "fact-pipedrive-features.deal-management",
+    "productSlug": "pipedrive",
+    "domain": "features",
+    "field": "features.deal-management",
+    "value": {
+      "featureSlug": "deal-management",
+      "availability": "supported",
+      "planSlugs": [
+        "lite",
+        "growth",
+        "premium",
+        "ultimate"
+      ]
+    },
+    "sourceIds": [
+      "pipedrive-pipeline-features",
+      "pipedrive-plans-kb",
+      "pipedrive-product-official",
+      "pipedrive-pricing-how-kb"
+    ],
+    "evidence": [
+      {
+        "sourceId": "pipedrive-pipeline-features",
+        "excerpt": "Deal cards, activities, and deal rotting workflows."
+      }
+    ],
+    "extractedAt": "2026-08-13T17:45:00.000Z",
+    "normalizedAt": "2026-08-13T17:45:00.000Z",
+    "verifiedAt": "2026-08-13T17:45:00.000Z",
+    "approvedAt": "2026-08-13T17:45:00.000Z",
+    "confidence": "high",
+    "status": "approved",
+    "isFixture": false
+  },
+  {
+    "id": "fact-pipedrive-features.custom-pipelines",
+    "productSlug": "pipedrive",
+    "domain": "features",
+    "field": "features.custom-pipelines",
+    "value": {
+      "featureSlug": "custom-pipelines",
+      "availability": "supported",
+      "planSlugs": [
+        "lite",
+        "growth",
+        "premium",
+        "ultimate"
+      ]
+    },
+    "sourceIds": [
+      "pipedrive-pipeline-features",
+      "pipedrive-plans-kb",
+      "pipedrive-product-official",
+      "pipedrive-pricing-how-kb"
+    ],
+    "evidence": [
+      {
+        "sourceId": "pipedrive-pipeline-features",
+        "excerpt": "Multiple custom pipelines."
+      }
+    ],
+    "extractedAt": "2026-08-13T17:45:00.000Z",
+    "normalizedAt": "2026-08-13T17:45:00.000Z",
+    "verifiedAt": "2026-08-13T17:45:00.000Z",
+    "approvedAt": "2026-08-13T17:45:00.000Z",
+    "confidence": "high",
+    "status": "approved",
+    "isFixture": false
+  },
+  {
+    "id": "fact-pipedrive-features.custom-fields",
+    "productSlug": "pipedrive",
+    "domain": "features",
+    "field": "features.custom-fields",
+    "value": {
+      "featureSlug": "custom-fields",
+      "availability": "supported",
+      "planSlugs": [
+        "lite",
+        "growth",
+        "premium",
+        "ultimate"
+      ]
+    },
+    "sourceIds": [
+      "pipedrive-pipeline-features",
+      "pipedrive-plans-kb",
+      "pipedrive-product-official",
+      "pipedrive-pricing-how-kb"
+    ],
+    "evidence": [
+      {
+        "sourceId": "pipedrive-pipeline-features",
+        "excerpt": "Custom fields; higher limits on upper plans."
+      }
+    ],
+    "extractedAt": "2026-08-13T17:45:00.000Z",
+    "normalizedAt": "2026-08-13T17:45:00.000Z",
+    "verifiedAt": "2026-08-13T17:45:00.000Z",
+    "approvedAt": "2026-08-13T17:45:00.000Z",
+    "confidence": "high",
+    "status": "approved",
+    "isFixture": false
+  },
+  {
+    "id": "fact-pipedrive-features.mobile-app",
+    "productSlug": "pipedrive",
+    "domain": "features",
+    "field": "features.mobile-app",
+    "value": {
+      "featureSlug": "mobile-app",
+      "availability": "supported",
+      "planSlugs": [
+        "lite",
+        "growth",
+        "premium",
+        "ultimate"
+      ]
+    },
+    "sourceIds": [
+      "pipedrive-pipeline-features",
+      "pipedrive-plans-kb",
+      "pipedrive-product-official",
+      "pipedrive-pricing-how-kb"
+    ],
+    "evidence": [
+      {
+        "sourceId": "pipedrive-pipeline-features",
+        "excerpt": "Native mobile apps for on-the-go pipeline work."
+      }
+    ],
+    "extractedAt": "2026-08-13T17:45:00.000Z",
+    "normalizedAt": "2026-08-13T17:45:00.000Z",
+    "verifiedAt": "2026-08-13T17:45:00.000Z",
+    "approvedAt": "2026-08-13T17:45:00.000Z",
+    "confidence": "high",
+    "status": "approved",
+    "isFixture": false
+  },
+  {
+    "id": "fact-pipedrive-features.email-sync",
+    "productSlug": "pipedrive",
+    "domain": "features",
+    "field": "features.email-sync",
+    "value": {
+      "featureSlug": "email-sync",
+      "availability": "higher-plan-only",
+      "planSlugs": [
+        "growth",
+        "premium",
+        "ultimate"
+      ]
+    },
+    "sourceIds": [
+      "pipedrive-pipeline-features",
+      "pipedrive-plans-kb",
+      "pipedrive-product-official",
+      "pipedrive-pricing-how-kb"
+    ],
+    "evidence": [
+      {
+        "sourceId": "pipedrive-pipeline-features",
+        "excerpt": "Full email sync and tracking from Growth upward."
+      }
+    ],
+    "extractedAt": "2026-08-13T17:45:00.000Z",
+    "normalizedAt": "2026-08-13T17:45:00.000Z",
+    "verifiedAt": "2026-08-13T17:45:00.000Z",
+    "approvedAt": "2026-08-13T17:45:00.000Z",
+    "confidence": "high",
+    "status": "approved",
+    "isFixture": false
+  },
+  {
+    "id": "fact-pipedrive-features.email-tracking",
+    "productSlug": "pipedrive",
+    "domain": "features",
+    "field": "features.email-tracking",
+    "value": {
+      "featureSlug": "email-tracking",
+      "availability": "higher-plan-only",
+      "planSlugs": [
+        "growth",
+        "premium",
+        "ultimate"
+      ]
+    },
+    "sourceIds": [
+      "pipedrive-pipeline-features",
+      "pipedrive-plans-kb",
+      "pipedrive-product-official",
+      "pipedrive-pricing-how-kb"
+    ],
+    "evidence": [
+      {
+        "sourceId": "pipedrive-pipeline-features",
+        "excerpt": "Email open/engagement tracking with email sync."
+      }
+    ],
+    "extractedAt": "2026-08-13T17:45:00.000Z",
+    "normalizedAt": "2026-08-13T17:45:00.000Z",
+    "verifiedAt": "2026-08-13T17:45:00.000Z",
+    "approvedAt": "2026-08-13T17:45:00.000Z",
+    "confidence": "high",
+    "status": "approved",
+    "isFixture": false
+  },
+  {
+    "id": "fact-pipedrive-features.email-sequences",
+    "productSlug": "pipedrive",
+    "domain": "features",
+    "field": "features.email-sequences",
+    "value": {
+      "featureSlug": "email-sequences",
+      "availability": "higher-plan-only",
+      "planSlugs": [
+        "growth",
+        "premium",
+        "ultimate"
+      ]
+    },
+    "sourceIds": [
+      "pipedrive-pipeline-features",
+      "pipedrive-plans-kb",
+      "pipedrive-product-official",
+      "pipedrive-pricing-how-kb"
+    ],
+    "evidence": [
+      {
+        "sourceId": "pipedrive-pipeline-features",
+        "excerpt": "Sequences available from Growth; higher limits on Premium/Ultimate."
+      }
+    ],
+    "extractedAt": "2026-08-13T17:45:00.000Z",
+    "normalizedAt": "2026-08-13T17:45:00.000Z",
+    "verifiedAt": "2026-08-13T17:45:00.000Z",
+    "approvedAt": "2026-08-13T17:45:00.000Z",
+    "confidence": "high",
+    "status": "approved",
+    "isFixture": false
+  },
+  {
+    "id": "fact-pipedrive-features.workflow-automation",
+    "productSlug": "pipedrive",
+    "domain": "features",
+    "field": "features.workflow-automation",
+    "value": {
+      "featureSlug": "workflow-automation",
+      "availability": "higher-plan-only",
+      "planSlugs": [
+        "growth",
+        "premium",
+        "ultimate"
+      ]
+    },
+    "sourceIds": [
+      "pipedrive-pipeline-features",
+      "pipedrive-plans-kb",
+      "pipedrive-product-official",
+      "pipedrive-pricing-how-kb"
+    ],
+    "evidence": [
+      {
+        "sourceId": "pipedrive-pipeline-features",
+        "excerpt": "Workflow automation from Growth; higher automation limits on Premium/Ultimate."
+      }
+    ],
+    "extractedAt": "2026-08-13T17:45:00.000Z",
+    "normalizedAt": "2026-08-13T17:45:00.000Z",
+    "verifiedAt": "2026-08-13T17:45:00.000Z",
+    "approvedAt": "2026-08-13T17:45:00.000Z",
+    "confidence": "high",
+    "status": "approved",
+    "isFixture": false
+  },
+  {
+    "id": "fact-pipedrive-features.sales-automation",
+    "productSlug": "pipedrive",
+    "domain": "features",
+    "field": "features.sales-automation",
+    "value": {
+      "featureSlug": "sales-automation",
+      "availability": "higher-plan-only",
+      "planSlugs": [
+        "growth",
+        "premium",
+        "ultimate"
+      ]
+    },
+    "sourceIds": [
+      "pipedrive-pipeline-features",
+      "pipedrive-plans-kb",
+      "pipedrive-product-official",
+      "pipedrive-pricing-how-kb"
+    ],
+    "evidence": [
+      {
+        "sourceId": "pipedrive-pipeline-features",
+        "excerpt": "Sales workflow automation and sequences on Growth+."
+      }
+    ],
+    "extractedAt": "2026-08-13T17:45:00.000Z",
+    "normalizedAt": "2026-08-13T17:45:00.000Z",
+    "verifiedAt": "2026-08-13T17:45:00.000Z",
+    "approvedAt": "2026-08-13T17:45:00.000Z",
+    "confidence": "high",
+    "status": "approved",
+    "isFixture": false
+  },
+  {
+    "id": "fact-pipedrive-features.reporting",
+    "productSlug": "pipedrive",
+    "domain": "features",
+    "field": "features.reporting",
+    "value": {
+      "featureSlug": "reporting",
+      "availability": "supported",
+      "planSlugs": [
+        "lite",
+        "growth",
+        "premium",
+        "ultimate"
+      ]
+    },
+    "sourceIds": [
+      "pipedrive-pipeline-features",
+      "pipedrive-plans-kb",
+      "pipedrive-product-official",
+      "pipedrive-pricing-how-kb"
+    ],
+    "evidence": [
+      {
+        "sourceId": "pipedrive-pipeline-features",
+        "excerpt": "Insights reporting; custom reports expand on Growth+."
+      }
+    ],
+    "extractedAt": "2026-08-13T17:45:00.000Z",
+    "normalizedAt": "2026-08-13T17:45:00.000Z",
+    "verifiedAt": "2026-08-13T17:45:00.000Z",
+    "approvedAt": "2026-08-13T17:45:00.000Z",
+    "confidence": "high",
+    "status": "approved",
+    "isFixture": false
+  },
+  {
+    "id": "fact-pipedrive-features.forecasting",
+    "productSlug": "pipedrive",
+    "domain": "features",
+    "field": "features.forecasting",
+    "value": {
+      "featureSlug": "forecasting",
+      "availability": "higher-plan-only",
+      "planSlugs": [
+        "growth",
+        "premium",
+        "ultimate"
+      ]
+    },
+    "sourceIds": [
+      "pipedrive-pipeline-features",
+      "pipedrive-plans-kb",
+      "pipedrive-product-official",
+      "pipedrive-pricing-how-kb"
+    ],
+    "evidence": [
+      {
+        "sourceId": "pipedrive-pipeline-features",
+        "excerpt": "Forecast view/reports emphasized from Growth; deeper forecasting tools on Premium+."
+      }
+    ],
+    "extractedAt": "2026-08-13T17:45:00.000Z",
+    "normalizedAt": "2026-08-13T17:45:00.000Z",
+    "verifiedAt": "2026-08-13T17:45:00.000Z",
+    "approvedAt": "2026-08-13T17:45:00.000Z",
+    "confidence": "high",
+    "status": "approved",
+    "isFixture": false
+  },
+  {
+    "id": "fact-pipedrive-features.lead-scoring",
+    "productSlug": "pipedrive",
+    "domain": "features",
+    "field": "features.lead-scoring",
+    "value": {
+      "featureSlug": "lead-scoring",
+      "availability": "higher-plan-only",
+      "planSlugs": [
+        "premium",
+        "ultimate"
+      ]
+    },
+    "sourceIds": [
+      "pipedrive-pipeline-features",
+      "pipedrive-plans-kb",
+      "pipedrive-product-official",
+      "pipedrive-pricing-how-kb"
+    ],
+    "evidence": [
+      {
+        "sourceId": "pipedrive-pipeline-features",
+        "excerpt": "Custom lead scoring and enrichment on Premium+."
+      }
+    ],
+    "extractedAt": "2026-08-13T17:45:00.000Z",
+    "normalizedAt": "2026-08-13T17:45:00.000Z",
+    "verifiedAt": "2026-08-13T17:45:00.000Z",
+    "approvedAt": "2026-08-13T17:45:00.000Z",
+    "confidence": "high",
+    "status": "approved",
+    "isFixture": false
+  },
+  {
+    "id": "fact-pipedrive-features.ai-assistance",
+    "productSlug": "pipedrive",
+    "domain": "features",
+    "field": "features.ai-assistance",
+    "value": {
+      "featureSlug": "ai-assistance",
+      "availability": "supported",
+      "planSlugs": [
+        "lite",
+        "growth",
+        "premium",
+        "ultimate"
+      ]
+    },
+    "sourceIds": [
+      "pipedrive-pipeline-features",
+      "pipedrive-plans-kb",
+      "pipedrive-product-official",
+      "pipedrive-pricing-how-kb"
+    ],
+    "evidence": [
+      {
+        "sourceId": "pipedrive-pipeline-features",
+        "excerpt": "AI Sales Assistant and AI email tools documented on product pages."
+      }
+    ],
+    "extractedAt": "2026-08-13T17:45:00.000Z",
+    "normalizedAt": "2026-08-13T17:45:00.000Z",
+    "verifiedAt": "2026-08-13T17:45:00.000Z",
+    "approvedAt": "2026-08-13T17:45:00.000Z",
+    "confidence": "high",
+    "status": "approved",
+    "isFixture": false
+  },
+  {
+    "id": "fact-pipedrive-features.data-enrichment",
+    "productSlug": "pipedrive",
+    "domain": "features",
+    "field": "features.data-enrichment",
+    "value": {
+      "featureSlug": "data-enrichment",
+      "availability": "higher-plan-only",
+      "planSlugs": [
+        "premium",
+        "ultimate"
+      ]
+    },
+    "sourceIds": [
+      "pipedrive-pipeline-features",
+      "pipedrive-plans-kb",
+      "pipedrive-product-official",
+      "pipedrive-pricing-how-kb"
+    ],
+    "evidence": [
+      {
+        "sourceId": "pipedrive-pipeline-features",
+        "excerpt": "Data enrichment credits on Premium+."
+      }
+    ],
+    "extractedAt": "2026-08-13T17:45:00.000Z",
+    "normalizedAt": "2026-08-13T17:45:00.000Z",
+    "verifiedAt": "2026-08-13T17:45:00.000Z",
+    "approvedAt": "2026-08-13T17:45:00.000Z",
+    "confidence": "high",
+    "status": "approved",
+    "isFixture": false
+  },
+  {
+    "id": "fact-pipedrive-features.prospecting",
+    "productSlug": "pipedrive",
+    "domain": "features",
+    "field": "features.prospecting",
+    "value": {
+      "featureSlug": "prospecting",
+      "availability": "add-on",
+      "planSlugs": [
+        "premium",
+        "ultimate"
+      ]
+    },
+    "sourceIds": [
+      "pipedrive-pipeline-features",
+      "pipedrive-plans-kb",
+      "pipedrive-product-official",
+      "pipedrive-pricing-how-kb"
+    ],
+    "evidence": [
+      {
+        "sourceId": "pipedrive-pipeline-features",
+        "excerpt": "Prospector via LeadBooster (included Premium/Ultimate, add-on lower)."
+      }
+    ],
+    "extractedAt": "2026-08-13T17:45:00.000Z",
+    "normalizedAt": "2026-08-13T17:45:00.000Z",
+    "verifiedAt": "2026-08-13T17:45:00.000Z",
+    "approvedAt": "2026-08-13T17:45:00.000Z",
+    "confidence": "high",
+    "status": "approved",
+    "isFixture": false
+  },
+  {
+    "id": "fact-pipedrive-features.meeting-scheduling",
+    "productSlug": "pipedrive",
+    "domain": "features",
+    "field": "features.meeting-scheduling",
+    "value": {
+      "featureSlug": "meeting-scheduling",
+      "availability": "add-on",
+      "planSlugs": [
+        "premium",
+        "ultimate"
+      ]
+    },
+    "sourceIds": [
+      "pipedrive-pipeline-features",
+      "pipedrive-plans-kb",
+      "pipedrive-product-official",
+      "pipedrive-pricing-how-kb"
+    ],
+    "evidence": [
+      {
+        "sourceId": "pipedrive-pipeline-features",
+        "excerpt": "Scheduler via LeadBooster suite."
+      }
+    ],
+    "extractedAt": "2026-08-13T17:45:00.000Z",
+    "normalizedAt": "2026-08-13T17:45:00.000Z",
+    "verifiedAt": "2026-08-13T17:45:00.000Z",
+    "approvedAt": "2026-08-13T17:45:00.000Z",
+    "confidence": "high",
+    "status": "approved",
+    "isFixture": false
+  },
+  {
+    "id": "fact-pipedrive-features.call-functionality",
+    "productSlug": "pipedrive",
+    "domain": "features",
+    "field": "features.call-functionality",
+    "value": {
+      "featureSlug": "call-functionality",
+      "availability": "limited",
+      "planSlugs": [
+        "lite",
+        "growth",
+        "premium",
+        "ultimate"
+      ]
+    },
+    "sourceIds": [
+      "pipedrive-pipeline-features",
+      "pipedrive-plans-kb",
+      "pipedrive-product-official",
+      "pipedrive-pricing-how-kb"
+    ],
+    "evidence": [
+      {
+        "sourceId": "pipedrive-pipeline-features",
+        "excerpt": "Web-to-mobile calling and marketplace phone apps; not a full native dialer suite like Freshsales."
+      }
+    ],
+    "extractedAt": "2026-08-13T17:45:00.000Z",
+    "normalizedAt": "2026-08-13T17:45:00.000Z",
+    "verifiedAt": "2026-08-13T17:45:00.000Z",
+    "approvedAt": "2026-08-13T17:45:00.000Z",
+    "confidence": "high",
+    "status": "approved",
+    "isFixture": false
+  },
+  {
+    "id": "fact-pipedrive-features.integrations",
+    "productSlug": "pipedrive",
+    "domain": "features",
+    "field": "features.integrations",
+    "value": {
+      "featureSlug": "integrations",
+      "availability": "supported",
+      "planSlugs": [
+        "lite",
+        "growth",
+        "premium",
+        "ultimate"
+      ]
+    },
+    "sourceIds": [
+      "pipedrive-pipeline-features",
+      "pipedrive-plans-kb",
+      "pipedrive-product-official",
+      "pipedrive-pricing-how-kb"
+    ],
+    "evidence": [
+      {
+        "sourceId": "pipedrive-pipeline-features",
+        "excerpt": "500+ Marketplace apps and API access (API limits by plan)."
+      }
+    ],
+    "extractedAt": "2026-08-13T17:45:00.000Z",
+    "normalizedAt": "2026-08-13T17:45:00.000Z",
+    "verifiedAt": "2026-08-13T17:45:00.000Z",
+    "approvedAt": "2026-08-13T17:45:00.000Z",
+    "confidence": "high",
+    "status": "approved",
+    "isFixture": false
+  },
+  {
+    "id": "fact-pipedrive-features.email-campaigns",
+    "productSlug": "pipedrive",
+    "domain": "features",
+    "field": "features.email-campaigns",
+    "value": {
+      "featureSlug": "email-campaigns",
+      "availability": "add-on",
+      "planSlugs": [
+        "lite",
+        "growth",
+        "premium",
+        "ultimate"
+      ]
+    },
+    "sourceIds": [
+      "pipedrive-pipeline-features",
+      "pipedrive-plans-kb",
+      "pipedrive-product-official",
+      "pipedrive-pricing-how-kb"
+    ],
+    "evidence": [
+      {
+        "sourceId": "pipedrive-pipeline-features",
+        "excerpt": "Campaigns add-on for email marketing."
+      }
+    ],
+    "extractedAt": "2026-08-13T17:45:00.000Z",
+    "normalizedAt": "2026-08-13T17:45:00.000Z",
+    "verifiedAt": "2026-08-13T17:45:00.000Z",
+    "approvedAt": "2026-08-13T17:45:00.000Z",
+    "confidence": "high",
+    "status": "approved",
+    "isFixture": false
+  },
+  {
+    "id": "fact-pipedrive-integrations.gmail",
+    "productSlug": "pipedrive",
+    "domain": "integrations",
+    "field": "integrations.gmail",
+    "value": {
+      "integrationSlug": "gmail",
+      "kind": "official-connector"
+    },
+    "sourceIds": [
+      "pipedrive-marketplace",
+      "pipedrive-ai-assistant",
+      "pipedrive-product-official"
+    ],
+    "evidence": [
+      {
+        "sourceId": "pipedrive-marketplace",
+        "excerpt": "Gmail/email sync and Google workspace connectivity documented across product pages."
+      }
+    ],
+    "extractedAt": "2026-08-13T17:45:00.000Z",
+    "normalizedAt": "2026-08-13T17:45:00.000Z",
+    "verifiedAt": "2026-08-13T17:45:00.000Z",
+    "approvedAt": "2026-08-13T17:45:00.000Z",
+    "confidence": "high",
+    "status": "approved",
+    "isFixture": false
+  },
+  {
+    "id": "fact-pipedrive-integrations.slack",
+    "productSlug": "pipedrive",
+    "domain": "integrations",
+    "field": "integrations.slack",
+    "value": {
+      "integrationSlug": "slack",
+      "kind": "official-connector"
+    },
+    "sourceIds": [
+      "pipedrive-marketplace",
+      "pipedrive-ai-assistant",
+      "pipedrive-product-official"
+    ],
+    "evidence": [
+      {
+        "sourceId": "pipedrive-marketplace",
+        "excerpt": "Slack / Dealbot for Slack listed among Pipedrive integrations."
+      }
+    ],
+    "extractedAt": "2026-08-13T17:45:00.000Z",
+    "normalizedAt": "2026-08-13T17:45:00.000Z",
+    "verifiedAt": "2026-08-13T17:45:00.000Z",
+    "approvedAt": "2026-08-13T17:45:00.000Z",
+    "confidence": "high",
+    "status": "approved",
+    "isFixture": false
+  },
+  {
+    "id": "fact-pipedrive-integrations.microsoft-teams",
+    "productSlug": "pipedrive",
+    "domain": "integrations",
+    "field": "integrations.microsoft-teams",
+    "value": {
+      "integrationSlug": "microsoft-teams",
+      "kind": "official-connector"
+    },
+    "sourceIds": [
+      "pipedrive-marketplace",
+      "pipedrive-ai-assistant",
+      "pipedrive-product-official"
+    ],
+    "evidence": [
+      {
+        "sourceId": "pipedrive-marketplace",
+        "excerpt": "Microsoft Teams listed in Marketplace."
+      }
+    ],
+    "extractedAt": "2026-08-13T17:45:00.000Z",
+    "normalizedAt": "2026-08-13T17:45:00.000Z",
+    "verifiedAt": "2026-08-13T17:45:00.000Z",
+    "approvedAt": "2026-08-13T17:45:00.000Z",
+    "confidence": "high",
+    "status": "approved",
+    "isFixture": false
+  },
+  {
+    "id": "fact-pipedrive-integrations.zapier",
+    "productSlug": "pipedrive",
+    "domain": "integrations",
+    "field": "integrations.zapier",
+    "value": {
+      "integrationSlug": "zapier",
+      "kind": "zapier-style"
+    },
+    "sourceIds": [
+      "pipedrive-marketplace",
+      "pipedrive-ai-assistant",
+      "pipedrive-product-official"
+    ],
+    "evidence": [
+      {
+        "sourceId": "pipedrive-marketplace",
+        "excerpt": "Zapier listed in Marketplace for automation bridges."
+      }
+    ],
+    "extractedAt": "2026-08-13T17:45:00.000Z",
+    "normalizedAt": "2026-08-13T17:45:00.000Z",
+    "verifiedAt": "2026-08-13T17:45:00.000Z",
+    "approvedAt": "2026-08-13T17:45:00.000Z",
+    "confidence": "high",
+    "status": "approved",
+    "isFixture": false
+  },
+  {
+    "id": "fact-pipedrive-integrations.quickbooks",
+    "productSlug": "pipedrive",
+    "domain": "integrations",
+    "field": "integrations.quickbooks",
+    "value": {
+      "integrationSlug": "quickbooks",
+      "kind": "official-connector"
+    },
+    "sourceIds": [
+      "pipedrive-marketplace",
+      "pipedrive-ai-assistant",
+      "pipedrive-product-official"
+    ],
+    "evidence": [
+      {
+        "sourceId": "pipedrive-marketplace",
+        "excerpt": "QuickBooks listed in Marketplace accounting integrations."
+      }
+    ],
+    "extractedAt": "2026-08-13T17:45:00.000Z",
+    "normalizedAt": "2026-08-13T17:45:00.000Z",
+    "verifiedAt": "2026-08-13T17:45:00.000Z",
+    "approvedAt": "2026-08-13T17:45:00.000Z",
+    "confidence": "high",
+    "status": "approved",
+    "isFixture": false
+  },
+  {
+    "id": "fact-pipedrive-integrations.whatsapp-business",
+    "productSlug": "pipedrive",
+    "domain": "integrations",
+    "field": "integrations.whatsapp-business",
+    "value": {
+      "integrationSlug": "whatsapp-business",
+      "kind": "official-connector"
+    },
+    "sourceIds": [
+      "pipedrive-marketplace",
+      "pipedrive-ai-assistant",
+      "pipedrive-product-official"
+    ],
+    "evidence": [
+      {
+        "sourceId": "pipedrive-marketplace",
+        "excerpt": "WhatsApp Business listed in Marketplace messaging apps."
+      }
+    ],
+    "extractedAt": "2026-08-13T17:45:00.000Z",
+    "normalizedAt": "2026-08-13T17:45:00.000Z",
+    "verifiedAt": "2026-08-13T17:45:00.000Z",
+    "approvedAt": "2026-08-13T17:45:00.000Z",
+    "confidence": "high",
+    "status": "approved",
+    "isFixture": false
+  },
+  {
+    "id": "fact-pipedrive-integrations.google-meet",
+    "productSlug": "pipedrive",
+    "domain": "integrations",
+    "field": "integrations.google-meet",
+    "value": {
+      "integrationSlug": "google-meet",
+      "kind": "official-connector"
+    },
+    "sourceIds": [
+      "pipedrive-marketplace",
+      "pipedrive-ai-assistant",
+      "pipedrive-product-official"
+    ],
+    "evidence": [
+      {
+        "sourceId": "pipedrive-marketplace",
+        "excerpt": "Google Meet listed in Marketplace video solutions."
+      }
+    ],
+    "extractedAt": "2026-08-13T17:45:00.000Z",
+    "normalizedAt": "2026-08-13T17:45:00.000Z",
+    "verifiedAt": "2026-08-13T17:45:00.000Z",
+    "approvedAt": "2026-08-13T17:45:00.000Z",
+    "confidence": "high",
+    "status": "approved",
+    "isFixture": false
+  },
+  {
+    "id": "fact-pipedrive-integrations.pandadoc",
+    "productSlug": "pipedrive",
+    "domain": "integrations",
+    "field": "integrations.pandadoc",
+    "value": {
+      "integrationSlug": "pandadoc",
+      "kind": "third-party"
+    },
+    "sourceIds": [
+      "pipedrive-marketplace",
+      "pipedrive-ai-assistant",
+      "pipedrive-product-official"
+    ],
+    "evidence": [
+      {
+        "sourceId": "pipedrive-marketplace",
+        "excerpt": "PandaDoc listed for proposals and e-signatures."
+      }
+    ],
+    "extractedAt": "2026-08-13T17:45:00.000Z",
+    "normalizedAt": "2026-08-13T17:45:00.000Z",
+    "verifiedAt": "2026-08-13T17:45:00.000Z",
+    "approvedAt": "2026-08-13T17:45:00.000Z",
+    "confidence": "high",
+    "status": "approved",
+    "isFixture": false
+  },
+  {
+    "id": "fact-pipedrive-ai.assistant",
+    "productSlug": "pipedrive",
+    "domain": "ai-capabilities",
+    "field": "ai.assistant",
+    "value": {
+      "capability": "assistant",
+      "availability": "supported"
+    },
+    "sourceIds": [
+      "pipedrive-ai-assistant",
+      "pipedrive-plans-kb"
+    ],
+    "evidence": [
+      {
+        "sourceId": "pipedrive-ai-assistant",
+        "excerpt": "AI Sales Assistant surfaces insights, summaries, and next-best-action prompts."
+      }
+    ],
+    "extractedAt": "2026-08-13T17:45:00.000Z",
+    "normalizedAt": "2026-08-13T17:45:00.000Z",
+    "verifiedAt": "2026-08-13T17:45:00.000Z",
+    "approvedAt": "2026-08-13T17:45:00.000Z",
+    "confidence": "high",
+    "status": "approved",
+    "isFixture": false
+  },
+  {
+    "id": "fact-pipedrive-ai.email-generation",
+    "productSlug": "pipedrive",
+    "domain": "ai-capabilities",
+    "field": "ai.email-generation",
+    "value": {
+      "capability": "email-generation",
+      "availability": "supported"
+    },
+    "sourceIds": [
+      "pipedrive-ai-assistant",
+      "pipedrive-plans-kb"
+    ],
+    "evidence": [
+      {
+        "sourceId": "pipedrive-ai-assistant",
+        "excerpt": "AI email generator for sales emails."
+      }
+    ],
+    "extractedAt": "2026-08-13T17:45:00.000Z",
+    "normalizedAt": "2026-08-13T17:45:00.000Z",
+    "verifiedAt": "2026-08-13T17:45:00.000Z",
+    "approvedAt": "2026-08-13T17:45:00.000Z",
+    "confidence": "high",
+    "status": "approved",
+    "isFixture": false
+  },
+  {
+    "id": "fact-pipedrive-ai.summaries",
+    "productSlug": "pipedrive",
+    "domain": "ai-capabilities",
+    "field": "ai.summaries",
+    "value": {
+      "capability": "summaries",
+      "availability": "supported"
+    },
+    "sourceIds": [
+      "pipedrive-ai-assistant",
+      "pipedrive-plans-kb"
+    ],
+    "evidence": [
+      {
+        "sourceId": "pipedrive-ai-assistant",
+        "excerpt": "AI email summarizer for threads."
+      }
+    ],
+    "extractedAt": "2026-08-13T17:45:00.000Z",
+    "normalizedAt": "2026-08-13T17:45:00.000Z",
+    "verifiedAt": "2026-08-13T17:45:00.000Z",
+    "approvedAt": "2026-08-13T17:45:00.000Z",
+    "confidence": "high",
+    "status": "approved",
+    "isFixture": false
+  },
+  {
+    "id": "fact-pipedrive-ai.forecasting",
+    "productSlug": "pipedrive",
+    "domain": "ai-capabilities",
+    "field": "ai.forecasting",
+    "value": {
+      "capability": "forecasting",
+      "availability": "supported"
+    },
+    "sourceIds": [
+      "pipedrive-ai-assistant",
+      "pipedrive-plans-kb"
+    ],
+    "evidence": [
+      {
+        "sourceId": "pipedrive-ai-assistant",
+        "excerpt": "AI prompts and forecasting assistance via Sales Assistant / Insights."
+      }
+    ],
+    "extractedAt": "2026-08-13T17:45:00.000Z",
+    "normalizedAt": "2026-08-13T17:45:00.000Z",
+    "verifiedAt": "2026-08-13T17:45:00.000Z",
+    "approvedAt": "2026-08-13T17:45:00.000Z",
+    "confidence": "high",
+    "status": "approved",
+    "isFixture": false
+  },
+  {
+    "id": "fact-pipedrive-ai.recommendations",
+    "productSlug": "pipedrive",
+    "domain": "ai-capabilities",
+    "field": "ai.recommendations",
+    "value": {
+      "capability": "recommendations",
+      "availability": "supported"
+    },
+    "sourceIds": [
+      "pipedrive-ai-assistant",
+      "pipedrive-plans-kb"
+    ],
+    "evidence": [
+      {
+        "sourceId": "pipedrive-ai-assistant",
+        "excerpt": "Win-probability notifications and next-best-action recommendations."
+      }
+    ],
+    "extractedAt": "2026-08-13T17:45:00.000Z",
+    "normalizedAt": "2026-08-13T17:45:00.000Z",
+    "verifiedAt": "2026-08-13T17:45:00.000Z",
+    "approvedAt": "2026-08-13T17:45:00.000Z",
+    "confidence": "high",
+    "status": "approved",
+    "isFixture": false
+  },
+  {
+    "id": "fact-pipedrive-ai.automation",
+    "productSlug": "pipedrive",
+    "domain": "ai-capabilities",
+    "field": "ai.automation",
+    "value": {
+      "capability": "automation",
+      "availability": "supported"
+    },
+    "sourceIds": [
+      "pipedrive-ai-assistant",
+      "pipedrive-plans-kb"
+    ],
+    "evidence": [
+      {
+        "sourceId": "pipedrive-ai-assistant",
+        "excerpt": "AI-assisted workflow suggestions alongside Workflow Automation."
+      }
+    ],
+    "extractedAt": "2026-08-13T17:45:00.000Z",
+    "normalizedAt": "2026-08-13T17:45:00.000Z",
+    "verifiedAt": "2026-08-13T17:45:00.000Z",
+    "approvedAt": "2026-08-13T17:45:00.000Z",
+    "confidence": "high",
+    "status": "approved",
+    "isFixture": false
+  },
+  {
+    "id": "fact-pipedrive-ai.lead-scoring",
+    "productSlug": "pipedrive",
+    "domain": "ai-capabilities",
+    "field": "ai.lead-scoring",
+    "value": {
+      "capability": "lead-scoring",
+      "availability": "higher-plan-only"
+    },
+    "sourceIds": [
+      "pipedrive-ai-assistant",
+      "pipedrive-plans-kb"
+    ],
+    "evidence": [
+      {
+        "sourceId": "pipedrive-ai-assistant",
+        "excerpt": "Custom scoring models on Premium+."
+      }
+    ],
+    "extractedAt": "2026-08-13T17:45:00.000Z",
+    "normalizedAt": "2026-08-13T17:45:00.000Z",
+    "verifiedAt": "2026-08-13T17:45:00.000Z",
+    "approvedAt": "2026-08-13T17:45:00.000Z",
+    "confidence": "high",
+    "status": "approved",
+    "isFixture": false
+  },
+  {
+    "id": "fact-pipedrive-positioning.pipeline-first",
+    "productSlug": "pipedrive",
+    "domain": "product-positioning",
+    "field": "positioning.summary",
+    "value": "Sales CRM focused on visual pipeline management and activity-based selling for growing sales teams.",
+    "sourceIds": [
+      "pipedrive-product-official",
+      "pipedrive-pipeline-features"
+    ],
+    "evidence": [
+      {
+        "sourceId": "pipedrive-product-official",
+        "excerpt": "Pipedrive positions itself as pipeline management CRM that helps teams track deals, activities, and next steps."
+      }
+    ],
+    "extractedAt": "2026-08-13T17:45:00.000Z",
+    "normalizedAt": "2026-08-13T17:45:00.000Z",
+    "verifiedAt": "2026-08-13T17:45:00.000Z",
+    "approvedAt": "2026-08-13T17:45:00.000Z",
+    "confidence": "high",
+    "status": "approved",
+    "isFixture": false
+  },
+  {
+    "id": "fact-pipedrive-integrations.count",
+    "productSlug": "pipedrive",
+    "domain": "integrations",
+    "field": "integrations.marketplaceCount",
+    "value": "500+",
+    "sourceIds": [
+      "pipedrive-marketplace",
+      "pipedrive-pipeline-features",
+      "pipedrive-product-official"
+    ],
+    "evidence": [
+      {
+        "sourceId": "pipedrive-marketplace",
+        "excerpt": "Over 500 integrations / Marketplace apps referenced on product pages."
+      }
+    ],
+    "extractedAt": "2026-08-13T17:45:00.000Z",
+    "normalizedAt": "2026-08-13T17:45:00.000Z",
+    "verifiedAt": "2026-08-13T17:45:00.000Z",
+    "approvedAt": "2026-08-13T17:45:00.000Z",
+    "confidence": "high",
+    "status": "approved",
+    "isFixture": false
+  }
+]

@@ -1,0 +1,308 @@
+import type { MetadataRoute } from "next";
+import {
+  getAllAlternativesUnfiltered,
+  getAllBestPagesUnfiltered,
+  getAllComparisonsUnfiltered,
+  getAudiences,
+  getCapabilities,
+  getCategories,
+  getIndustries,
+  getResources,
+  getSoftware,
+  getUseCases,
+} from "@/data";
+import {
+  getGuides,
+} from "@/data/repositories/guides";
+import { TOOLS_REGISTRY } from "@/data/config/tools/registry";
+import { listFeatureDetailParams } from "@/data/feature-detail";
+import {
+  CRM_REQUIREMENT_PILLAR_SLUGS,
+  listRequirementDetailParams,
+} from "@/data/requirement-detail";
+import { isEntityIndexable } from "@/domain/quality-gates";
+import { COMPANY_ROUTES, LEGAL_ROUTES } from "@/services/site-foundation";
+import { getFeatureDetailPage } from "@/services/feature-detail";
+import { getRequirementDetailPage } from "@/services/requirement-detail";
+import { canonicalUrl } from "@/seo/canonical";
+import {
+  indexabilityForFeaturePage,
+  indexabilityForRequirementPage,
+  indexabilityFromSeoFlag,
+} from "@/seo/indexability";
+
+export type SitemapEntry = {
+  url: string;
+  lastModified?: string | Date;
+  changeFrequency?:
+    | "always"
+    | "hourly"
+    | "daily"
+    | "weekly"
+    | "monthly"
+    | "yearly"
+    | "never";
+  priority?: number;
+};
+
+type MutableEntry = SitemapEntry & { path: string };
+
+function pushUnique(
+  map: Map<string, MutableEntry>,
+  entry: Omit<MutableEntry, "url"> & { path: string },
+) {
+  const path = entry.path;
+  const url = canonicalUrl(path);
+  if (map.has(url)) return;
+  map.set(url, { ...entry, url });
+}
+
+/**
+ * Sitemap = canonical ∩ indexable ∩ publishable URLs only.
+ * Soft-published / noindex / redirects / utilities are excluded.
+ */
+export function getSitemapEntries(now: Date = new Date()): SitemapEntry[] {
+  const map = new Map<string, MutableEntry>();
+
+  const staticHubs: Array<Omit<MutableEntry, "url">> = [
+    { path: "/", changeFrequency: "weekly", priority: 1 },
+    { path: "/software/", changeFrequency: "weekly", priority: 0.8 },
+    { path: "/categories/", changeFrequency: "weekly", priority: 0.8 },
+    { path: "/tools/", changeFrequency: "weekly", priority: 0.6 },
+    { path: "/pricing/", changeFrequency: "weekly", priority: 0.7 },
+    { path: "/compare/", changeFrequency: "weekly", priority: 0.7 },
+    { path: "/guides/", changeFrequency: "weekly", priority: 0.7 },
+    { path: "/use-cases/", changeFrequency: "weekly", priority: 0.65 },
+    { path: "/capabilities/", changeFrequency: "weekly", priority: 0.65 },
+    { path: "/requirements/", changeFrequency: "weekly", priority: 0.65 },
+    { path: "/features/", changeFrequency: "weekly", priority: 0.65 },
+    { path: "/resources/", changeFrequency: "weekly", priority: 0.65 },
+    { path: "/for/", changeFrequency: "monthly", priority: 0.6 },
+    // Industries hub is intentionally noindex until vertical research completes.
+  ];
+  for (const hub of staticHubs) pushUnique(map, hub);
+
+  for (const route of Object.values(COMPANY_ROUTES)) {
+    pushUnique(map, {
+      path: route,
+      changeFrequency: "monthly",
+      priority: 0.4,
+    });
+  }
+  for (const route of Object.values(LEGAL_ROUTES)) {
+    pushUnique(map, {
+      path: route,
+      changeFrequency: "yearly",
+      priority: 0.2,
+    });
+  }
+
+  for (const tool of TOOLS_REGISTRY) {
+    if (tool.status !== "available" || !tool.href) continue;
+    // software-finder / stack-builder are noindex landings
+    if (
+      tool.slug === "software-finder" ||
+      tool.slug === "software-stack-builder"
+    ) {
+      continue;
+    }
+    pushUnique(map, {
+      path: tool.href,
+      changeFrequency: "weekly",
+      priority: 0.75,
+    });
+  }
+
+  for (const category of getCategories()) {
+    if (!isEntityIndexable({ kind: "category", entity: category }, now)) {
+      continue;
+    }
+    pushUnique(map, {
+      path: `/categories/${category.path.join("/")}/`,
+      lastModified: category.metadata.updatedAt || category.metadata.publishedAt,
+      changeFrequency: "weekly",
+      priority: category.parentSlug ? 0.6 : 0.7,
+    });
+  }
+
+  for (const software of getSoftware()) {
+    if (!isEntityIndexable({ kind: "software", entity: software }, now)) {
+      continue;
+    }
+    pushUnique(map, {
+      path: `/software/${software.slug}/`,
+      lastModified: software.metadata.updatedAt || software.metadata.publishedAt,
+      changeFrequency: "weekly",
+      priority: 0.7,
+    });
+  }
+
+  for (const comparison of getAllComparisonsUnfiltered()) {
+    if (!isEntityIndexable({ kind: "comparison", entity: comparison }, now)) {
+      continue;
+    }
+    pushUnique(map, {
+      path: `/compare/${comparison.slug}/`,
+      lastModified:
+        comparison.metadata.updatedAt || comparison.metadata.publishedAt,
+      changeFrequency: "monthly",
+      priority: 0.6,
+    });
+  }
+
+  for (const page of getAllAlternativesUnfiltered()) {
+    if (!isEntityIndexable({ kind: "alternatives", entity: page }, now)) {
+      continue;
+    }
+    pushUnique(map, {
+      path: `/alternatives/${page.slug}/`,
+      lastModified: page.metadata.updatedAt || page.metadata.publishedAt,
+      changeFrequency: "monthly",
+      priority: 0.6,
+    });
+  }
+
+  for (const page of getAllBestPagesUnfiltered()) {
+    if (!isEntityIndexable({ kind: "best", entity: page }, now)) continue;
+    pushUnique(map, {
+      path: `/best/${page.slug}/`,
+      lastModified: page.metadata.updatedAt || page.metadata.publishedAt,
+      changeFrequency: "weekly",
+      priority: 0.75,
+    });
+  }
+
+  for (const guide of getGuides()) {
+    if (!isEntityIndexable({ kind: "guide", entity: guide }, now)) continue;
+    pushUnique(map, {
+      path: guide.seo.canonicalPath || `/guides/${guide.slug}/`,
+      lastModified: guide.metadata.updatedAt || guide.metadata.publishedAt,
+      changeFrequency: "monthly",
+      priority: 0.65,
+    });
+  }
+
+  for (const useCase of getUseCases()) {
+    const decision = indexabilityFromSeoFlag({
+      seoIndexable: useCase.seo.indexable === true,
+      metadata: useCase.metadata,
+      now,
+    });
+    if (!decision.indexable) continue;
+    pushUnique(map, {
+      path: useCase.seo.canonicalPath || `/use-cases/${useCase.slug}/`,
+      lastModified: useCase.metadata.updatedAt || useCase.metadata.publishedAt,
+      changeFrequency: "monthly",
+      priority: 0.6,
+    });
+  }
+
+  for (const capability of getCapabilities()) {
+    const decision = indexabilityFromSeoFlag({
+      seoIndexable: capability.seo.indexable === true,
+      metadata: capability.metadata,
+      now,
+    });
+    if (!decision.indexable) continue;
+    pushUnique(map, {
+      path: capability.seo.canonicalPath || `/capabilities/${capability.slug}/`,
+      lastModified:
+        capability.metadata.updatedAt || capability.metadata.publishedAt,
+      changeFrequency: "monthly",
+      priority: 0.6,
+    });
+  }
+
+  for (const resource of getResources()) {
+    const decision = indexabilityFromSeoFlag({
+      seoIndexable: resource.seo.indexable === true,
+      metadata: resource.metadata,
+      now,
+    });
+    if (!decision.indexable) continue;
+    pushUnique(map, {
+      path: resource.seo.canonicalPath || `/resources/${resource.slug}/`,
+      lastModified: resource.metadata.updatedAt || resource.metadata.publishedAt,
+      changeFrequency: "monthly",
+      priority: 0.55,
+    });
+  }
+
+  for (const audience of getAudiences()) {
+    const decision = indexabilityFromSeoFlag({
+      seoIndexable: audience.seo.indexable === true,
+      metadata: audience.metadata,
+      now,
+    });
+    if (!decision.indexable) continue;
+    pushUnique(map, {
+      path: audience.seo.canonicalPath || `/for/${audience.slug}/`,
+      lastModified: audience.metadata.updatedAt || audience.metadata.publishedAt,
+      changeFrequency: "monthly",
+      priority: 0.55,
+    });
+  }
+
+  // Industries: only when explicitly indexable (none today — correctly excluded).
+  for (const industry of getIndustries()) {
+    const decision = indexabilityFromSeoFlag({
+      seoIndexable: industry.seo.indexable === true,
+      metadata: industry.metadata,
+      now,
+    });
+    if (!decision.indexable) continue;
+    pushUnique(map, {
+      path: industry.seo.canonicalPath || `/industries/${industry.slug}/`,
+      lastModified: industry.metadata.updatedAt || industry.metadata.publishedAt,
+      changeFrequency: "monthly",
+      priority: 0.6,
+    });
+  }
+
+  const pillar = new Set<string>(CRM_REQUIREMENT_PILLAR_SLUGS);
+  for (const { slug } of listRequirementDetailParams()) {
+    const model = getRequirementDetailPage(slug);
+    if (!model) continue;
+    const decision = indexabilityForRequirementPage({
+      isPillar: pillar.has(slug),
+      hasOverview: Boolean(model.profile.overview),
+      hasHero: Boolean(model.profile.heroVisual?.src),
+    });
+    if (!decision.indexable) continue;
+    pushUnique(map, {
+      path: `/requirements/${slug}/`,
+      changeFrequency: "monthly",
+      priority: 0.6,
+    });
+  }
+
+  for (const { slug } of listFeatureDetailParams()) {
+    const model = getFeatureDetailPage(slug);
+    if (!model) continue;
+    const decision = indexabilityForFeaturePage({
+      hasModel: true,
+      hasOverview: Boolean(model.profile.overview),
+      hasTagline: Boolean(model.tagline?.trim()),
+    });
+    if (!decision.indexable) continue;
+    pushUnique(map, {
+      path: `/features/${slug}/`,
+      changeFrequency: "monthly",
+      priority: 0.6,
+    });
+  }
+
+  return [...map.values()].map(({ path: _path, ...entry }) => entry);
+}
+
+/** Next.js MetadataRoute adapter. */
+export function toMetadataRouteSitemap(
+  entries: SitemapEntry[] = getSitemapEntries(),
+): MetadataRoute.Sitemap {
+  return entries.map((entry) => ({
+    url: entry.url,
+    lastModified: entry.lastModified,
+    changeFrequency: entry.changeFrequency,
+    priority: entry.priority,
+  }));
+}

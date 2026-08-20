@@ -1,0 +1,733 @@
+{
+  "id": "wf-software-onboarding-content-bookyourdata-1786946455690",
+  "workflowId": "software-onboarding-content",
+  "workflowVersion": "1.0.0",
+  "name": "Software Onboarding Content: bookyourdata",
+  "targetType": "software",
+  "targetId": "bookyourdata",
+  "status": "completed-with-warnings",
+  "steps": [
+    {
+      "id": "software-onboarding",
+      "definitionStepId": "software-onboarding",
+      "handler": "software-onboarding",
+      "label": "Software onboarding",
+      "status": "completed",
+      "required": true,
+      "failurePolicy": "block-workflow",
+      "attempt": 1,
+      "maxAttempts": 2,
+      "dependsOn": [],
+      "priority": "critical",
+      "config": {
+        "maxAutomaticRevisions": 1,
+        "expandFromContentPlan": false,
+        "expandKind": "none",
+        "stopAfterApproval": true,
+        "allowNormalizedFacts": false,
+        "optionalWhenBlocked": false,
+        "forceTransientFailOnce": false
+      },
+      "inputRefs": {},
+      "outputRefs": {
+        "softwareOnboardingRunId": "onboard-bookyourdata-1786946400796"
+      },
+      "blockers": [],
+      "warnings": [],
+      "startedAt": "2026-08-17T06:00:56.130Z",
+      "completedAt": "2026-08-17T06:00:56.164Z",
+      "revisionAttempts": 0
+    },
+    {
+      "id": "content-plan",
+      "definitionStepId": "content-plan",
+      "handler": "content-plan",
+      "label": "Content plan",
+      "status": "completed",
+      "required": true,
+      "failurePolicy": "block-workflow",
+      "attempt": 1,
+      "maxAttempts": 2,
+      "dependsOn": [
+        "software-onboarding"
+      ],
+      "priority": "high",
+      "config": {
+        "maxAutomaticRevisions": 1,
+        "expandFromContentPlan": false,
+        "expandKind": "none",
+        "stopAfterApproval": true,
+        "allowNormalizedFacts": false,
+        "optionalWhenBlocked": false,
+        "forceTransientFailOnce": false
+      },
+      "inputRefs": {},
+      "outputRefs": {
+        "softwareOnboardingRunId": "onboard-bookyourdata-1786946400796",
+        "comparisonTargets": "apollo-vs-bookyourdata,bookyourdata-vs-lusha,bookyourdata-vs-rocketreach",
+        "pageCandidateCount": "8"
+      },
+      "blockers": [],
+      "warnings": [],
+      "startedAt": "2026-08-17T06:00:56.165Z",
+      "completedAt": "2026-08-17T06:00:56.203Z",
+      "revisionAttempts": 0
+    },
+    {
+      "id": "software-review",
+      "definitionStepId": "software-review",
+      "handler": "agent-run",
+      "label": "Software Review",
+      "status": "completed",
+      "required": true,
+      "failurePolicy": "block-workflow",
+      "attempt": 1,
+      "maxAttempts": 2,
+      "dependsOn": [
+        "content-plan"
+      ],
+      "priority": "high",
+      "config": {
+        "agentId": "software-review-agent",
+        "targetSlug": "bookyourdata",
+        "maxAutomaticRevisions": 1,
+        "expandFromContentPlan": false,
+        "expandKind": "none",
+        "stopAfterApproval": true,
+        "allowNormalizedFacts": false,
+        "optionalWhenBlocked": false,
+        "forceTransientFailOnce": false
+      },
+      "inputRefs": {},
+      "outputRefs": {
+        "draftId": "draft-deterministic-v1-software-review-agent-bookyourdata-2026-08-17T06-00-56-246Z",
+        "qaStatus": "pass",
+        "agentId": "software-review-agent",
+        "target": "bookyourdata"
+      },
+      "inputSnapshot": {
+        "researchFactIds": [
+          "fact-bookyourdata-pricing.plans.credit-packs-bookyourdata-pricing-fixture",
+          "fact-bookyourdata-pricing.plans.bespoke-bookyourdata-pricing-fixture",
+          "fact-bookyourdata-pricing.currency-bookyourdata-pricing-fixture",
+          "fact-bookyourdata-pricing.hasFreeTrial-bookyourdata-pricing-fixture",
+          "fact-bookyourdata-pricing.hasFreePlan-bookyourdata-pricing-fixture",
+          "fact-bookyourdata-pricing.model-bookyourdata-pricing-fixture",
+          "fact-bookyourdata-identity.shortDescription-bookyourdata-product-fixture",
+          "fact-bookyourdata-positioning.claim-bookyourdata-product-fixture",
+          "fact-bookyourdata-features.lead-management-bookyourdata-product-fixture",
+          "fact-bookyourdata-features.contact-management-bookyourdata-product-fixture",
+          "fact-bookyourdata-features.reporting-bookyourdata-product-fixture",
+          "fact-bookyourdata-features.email-sequences-bookyourdata-product-fixture",
+          "fact-bookyourdata-features.lead-scoring-bookyourdata-product-fixture",
+          "fact-bookyourdata-features.ai-assistance-bookyourdata-product-fixture",
+          "fact-bookyourdata-features.meeting-scheduling-bookyourdata-product-fixture",
+          "fact-bookyourdata-ai.recommendations-bookyourdata-product-fixture",
+          "fact-bookyourdata-ai.assistant-bookyourdata-product-fixture"
+        ],
+        "methodologySlug": "crm-editorial",
+        "methodologyVersion": "1.0.0",
+        "agentVersion": "1.0.0",
+        "contextBuiltAt": "2026-08-17T06:00:56.242Z"
+      },
+      "blockers": [],
+      "warnings": [],
+      "agentTaskId": "exec-software-review-agent-bookyourdata-1786946456206",
+      "draftId": "draft-deterministic-v1-software-review-agent-bookyourdata-2026-08-17T06-00-56-246Z",
+      "startedAt": "2026-08-17T06:00:56.205Z",
+      "completedAt": "2026-08-17T06:00:56.252Z",
+      "revisionAttempts": 0
+    },
+    {
+      "id": "pricing-page",
+      "definitionStepId": "pricing-page",
+      "handler": "agent-run",
+      "label": "Pricing Page",
+      "status": "completed",
+      "required": false,
+      "failurePolicy": "continue-with-warning",
+      "attempt": 1,
+      "maxAttempts": 2,
+      "dependsOn": [
+        "content-plan"
+      ],
+      "priority": "normal",
+      "config": {
+        "agentId": "pricing-page-agent",
+        "targetSlug": "bookyourdata",
+        "maxAutomaticRevisions": 1,
+        "expandFromContentPlan": false,
+        "expandKind": "none",
+        "stopAfterApproval": true,
+        "allowNormalizedFacts": false,
+        "optionalWhenBlocked": true,
+        "forceTransientFailOnce": false
+      },
+      "inputRefs": {},
+      "outputRefs": {
+        "draftId": "draft-deterministic-v1-pricing-page-agent-bookyourdata-2026-08-17T06-00-56-294Z",
+        "qaStatus": "pass",
+        "agentId": "pricing-page-agent",
+        "target": "bookyourdata"
+      },
+      "inputSnapshot": {
+        "researchFactIds": [
+          "fact-bookyourdata-pricing.plans.credit-packs-bookyourdata-pricing-fixture",
+          "fact-bookyourdata-pricing.plans.bespoke-bookyourdata-pricing-fixture",
+          "fact-bookyourdata-pricing.currency-bookyourdata-pricing-fixture",
+          "fact-bookyourdata-pricing.hasFreeTrial-bookyourdata-pricing-fixture",
+          "fact-bookyourdata-pricing.hasFreePlan-bookyourdata-pricing-fixture",
+          "fact-bookyourdata-pricing.model-bookyourdata-pricing-fixture",
+          "fact-bookyourdata-identity.shortDescription-bookyourdata-product-fixture",
+          "fact-bookyourdata-positioning.claim-bookyourdata-product-fixture",
+          "fact-bookyourdata-features.lead-management-bookyourdata-product-fixture",
+          "fact-bookyourdata-features.contact-management-bookyourdata-product-fixture",
+          "fact-bookyourdata-features.reporting-bookyourdata-product-fixture",
+          "fact-bookyourdata-features.email-sequences-bookyourdata-product-fixture",
+          "fact-bookyourdata-features.lead-scoring-bookyourdata-product-fixture",
+          "fact-bookyourdata-features.ai-assistance-bookyourdata-product-fixture",
+          "fact-bookyourdata-features.meeting-scheduling-bookyourdata-product-fixture",
+          "fact-bookyourdata-ai.recommendations-bookyourdata-product-fixture",
+          "fact-bookyourdata-ai.assistant-bookyourdata-product-fixture"
+        ],
+        "methodologySlug": "crm-editorial",
+        "methodologyVersion": "1.0.0",
+        "agentVersion": "1.0.0",
+        "contextBuiltAt": "2026-08-17T06:00:56.294Z"
+      },
+      "blockers": [],
+      "warnings": [],
+      "agentTaskId": "exec-pricing-page-agent-bookyourdata-1786946456290",
+      "draftId": "draft-deterministic-v1-pricing-page-agent-bookyourdata-2026-08-17T06-00-56-294Z",
+      "startedAt": "2026-08-17T06:00:56.289Z",
+      "completedAt": "2026-08-17T06:00:56.297Z",
+      "revisionAttempts": 0
+    },
+    {
+      "id": "alternatives",
+      "definitionStepId": "alternatives",
+      "handler": "agent-run",
+      "label": "Alternatives",
+      "status": "blocked",
+      "required": false,
+      "failurePolicy": "continue-with-warning",
+      "attempt": 1,
+      "maxAttempts": 2,
+      "dependsOn": [
+        "content-plan"
+      ],
+      "priority": "normal",
+      "config": {
+        "agentId": "alternatives-agent",
+        "targetSlug": "bookyourdata",
+        "maxAutomaticRevisions": 1,
+        "expandFromContentPlan": false,
+        "expandKind": "none",
+        "stopAfterApproval": true,
+        "allowNormalizedFacts": false,
+        "optionalWhenBlocked": true,
+        "forceTransientFailOnce": false
+      },
+      "inputRefs": {},
+      "outputRefs": {},
+      "blockers": [
+        "NO_APPROVED_ALTERNATIVES: Approved alternative relationships required — same-category alone is insufficient"
+      ],
+      "warnings": [
+        "NO_APPROVED_ALTERNATIVES: Approved alternative relationships required — same-category alone is insufficient"
+      ],
+      "startedAt": "2026-08-17T06:00:56.253Z",
+      "completedAt": "2026-08-17T06:00:56.258Z",
+      "revisionAttempts": 0
+    },
+    {
+      "id": "comparison:apollo-vs-bookyourdata",
+      "definitionStepId": "comparisons",
+      "handler": "agent-run",
+      "label": "Comparison apollo-vs-bookyourdata",
+      "status": "blocked",
+      "required": false,
+      "failurePolicy": "continue-with-warning",
+      "attempt": 1,
+      "maxAttempts": 2,
+      "dependsOn": [
+        "content-plan"
+      ],
+      "priority": "normal",
+      "config": {
+        "agentId": "comparison-agent",
+        "targetSlug": "apollo-vs-bookyourdata",
+        "maxAutomaticRevisions": 1,
+        "expandFromContentPlan": true,
+        "expandKind": "comparisons",
+        "stopAfterApproval": true,
+        "allowNormalizedFacts": false,
+        "optionalWhenBlocked": true,
+        "forceTransientFailOnce": false
+      },
+      "expansionKey": "apollo-vs-bookyourdata",
+      "inputRefs": {},
+      "outputRefs": {},
+      "blockers": [
+        "RELATIONSHIP_UNAPPROVED: Approved comparable relationship required"
+      ],
+      "warnings": [
+        "RELATIONSHIP_UNAPPROVED: Approved comparable relationship required"
+      ],
+      "startedAt": "2026-08-17T06:00:56.259Z",
+      "completedAt": "2026-08-17T06:00:56.271Z",
+      "revisionAttempts": 0
+    },
+    {
+      "id": "comparison:bookyourdata-vs-lusha",
+      "definitionStepId": "comparisons",
+      "handler": "agent-run",
+      "label": "Comparison bookyourdata-vs-lusha",
+      "status": "blocked",
+      "required": false,
+      "failurePolicy": "continue-with-warning",
+      "attempt": 1,
+      "maxAttempts": 2,
+      "dependsOn": [
+        "content-plan"
+      ],
+      "priority": "normal",
+      "config": {
+        "agentId": "comparison-agent",
+        "targetSlug": "bookyourdata-vs-lusha",
+        "maxAutomaticRevisions": 1,
+        "expandFromContentPlan": true,
+        "expandKind": "comparisons",
+        "stopAfterApproval": true,
+        "allowNormalizedFacts": false,
+        "optionalWhenBlocked": true,
+        "forceTransientFailOnce": false
+      },
+      "expansionKey": "bookyourdata-vs-lusha",
+      "inputRefs": {},
+      "outputRefs": {},
+      "blockers": [
+        "RELATIONSHIP_UNAPPROVED: Approved comparable relationship required"
+      ],
+      "warnings": [
+        "RELATIONSHIP_UNAPPROVED: Approved comparable relationship required"
+      ],
+      "startedAt": "2026-08-17T06:00:56.273Z",
+      "completedAt": "2026-08-17T06:00:56.280Z",
+      "revisionAttempts": 0
+    },
+    {
+      "id": "comparison:bookyourdata-vs-rocketreach",
+      "definitionStepId": "comparisons",
+      "handler": "agent-run",
+      "label": "Comparison bookyourdata-vs-rocketreach",
+      "status": "blocked",
+      "required": false,
+      "failurePolicy": "continue-with-warning",
+      "attempt": 1,
+      "maxAttempts": 2,
+      "dependsOn": [
+        "content-plan"
+      ],
+      "priority": "normal",
+      "config": {
+        "agentId": "comparison-agent",
+        "targetSlug": "bookyourdata-vs-rocketreach",
+        "maxAutomaticRevisions": 1,
+        "expandFromContentPlan": true,
+        "expandKind": "comparisons",
+        "stopAfterApproval": true,
+        "allowNormalizedFacts": false,
+        "optionalWhenBlocked": true,
+        "forceTransientFailOnce": false
+      },
+      "expansionKey": "bookyourdata-vs-rocketreach",
+      "inputRefs": {},
+      "outputRefs": {},
+      "blockers": [
+        "RELATIONSHIP_UNAPPROVED: Approved comparable relationship required"
+      ],
+      "warnings": [
+        "RELATIONSHIP_UNAPPROVED: Approved comparable relationship required"
+      ],
+      "startedAt": "2026-08-17T06:00:56.282Z",
+      "completedAt": "2026-08-17T06:00:56.288Z",
+      "revisionAttempts": 0
+    },
+    {
+      "id": "internal-links",
+      "definitionStepId": "internal-links",
+      "handler": "internal-link",
+      "label": "Internal Link Plan",
+      "status": "completed",
+      "required": false,
+      "failurePolicy": "continue-with-warning",
+      "attempt": 1,
+      "maxAttempts": 2,
+      "dependsOn": [
+        "software-review"
+      ],
+      "priority": "low",
+      "config": {
+        "agentId": "internal-link-agent",
+        "maxAutomaticRevisions": 1,
+        "expandFromContentPlan": false,
+        "expandKind": "none",
+        "stopAfterApproval": true,
+        "allowNormalizedFacts": false,
+        "optionalWhenBlocked": false,
+        "forceTransientFailOnce": false
+      },
+      "inputRefs": {},
+      "outputRefs": {
+        "draftId": "draft-deterministic-v1-internal-link-agent-bookyourdata-2026-08-17T06-00-56-306Z",
+        "qaStatus": "pass",
+        "agentId": "internal-link-agent",
+        "target": "bookyourdata"
+      },
+      "inputSnapshot": {
+        "researchFactIds": [
+          "fact-bookyourdata-pricing.plans.credit-packs-bookyourdata-pricing-fixture",
+          "fact-bookyourdata-pricing.plans.bespoke-bookyourdata-pricing-fixture",
+          "fact-bookyourdata-pricing.currency-bookyourdata-pricing-fixture",
+          "fact-bookyourdata-pricing.hasFreeTrial-bookyourdata-pricing-fixture",
+          "fact-bookyourdata-pricing.hasFreePlan-bookyourdata-pricing-fixture",
+          "fact-bookyourdata-pricing.model-bookyourdata-pricing-fixture",
+          "fact-bookyourdata-identity.shortDescription-bookyourdata-product-fixture",
+          "fact-bookyourdata-positioning.claim-bookyourdata-product-fixture",
+          "fact-bookyourdata-features.lead-management-bookyourdata-product-fixture",
+          "fact-bookyourdata-features.contact-management-bookyourdata-product-fixture",
+          "fact-bookyourdata-features.reporting-bookyourdata-product-fixture",
+          "fact-bookyourdata-features.email-sequences-bookyourdata-product-fixture",
+          "fact-bookyourdata-features.lead-scoring-bookyourdata-product-fixture",
+          "fact-bookyourdata-features.ai-assistance-bookyourdata-product-fixture",
+          "fact-bookyourdata-features.meeting-scheduling-bookyourdata-product-fixture",
+          "fact-bookyourdata-ai.recommendations-bookyourdata-product-fixture",
+          "fact-bookyourdata-ai.assistant-bookyourdata-product-fixture"
+        ],
+        "methodologySlug": "crm-editorial",
+        "methodologyVersion": "1.0.0",
+        "agentVersion": "1.0.0",
+        "contextBuiltAt": "2026-08-17T06:00:56.305Z"
+      },
+      "blockers": [],
+      "warnings": [],
+      "agentTaskId": "exec-internal-link-agent-bookyourdata-1786946456301",
+      "draftId": "draft-deterministic-v1-internal-link-agent-bookyourdata-2026-08-17T06-00-56-306Z",
+      "startedAt": "2026-08-17T06:00:56.300Z",
+      "completedAt": "2026-08-17T06:00:56.309Z",
+      "revisionAttempts": 0
+    },
+    {
+      "id": "finder-readiness",
+      "definitionStepId": "finder-readiness",
+      "handler": "update-recommendation-readiness",
+      "label": "Finder readiness",
+      "status": "completed",
+      "required": false,
+      "failurePolicy": "continue",
+      "attempt": 1,
+      "maxAttempts": 2,
+      "dependsOn": [
+        "content-plan"
+      ],
+      "priority": "low",
+      "config": {
+        "maxAutomaticRevisions": 1,
+        "expandFromContentPlan": false,
+        "expandKind": "none",
+        "stopAfterApproval": true,
+        "allowNormalizedFacts": false,
+        "optionalWhenBlocked": false,
+        "forceTransientFailOnce": false
+      },
+      "inputRefs": {},
+      "outputRefs": {
+        "finderReadiness": "checked"
+      },
+      "blockers": [],
+      "warnings": [],
+      "startedAt": "2026-08-17T06:00:56.298Z",
+      "completedAt": "2026-08-17T06:00:56.299Z",
+      "revisionAttempts": 0
+    },
+    {
+      "id": "editorial-approval",
+      "definitionStepId": "editorial-approval",
+      "handler": "approval-check",
+      "label": "Editorial approval",
+      "status": "completed",
+      "required": true,
+      "failurePolicy": "manual-review",
+      "attempt": 2,
+      "maxAttempts": 2,
+      "dependsOn": [
+        "software-review"
+      ],
+      "priority": "critical",
+      "config": {
+        "approvalType": "editorial",
+        "maxAutomaticRevisions": 1,
+        "expandFromContentPlan": false,
+        "expandKind": "none",
+        "stopAfterApproval": true,
+        "allowNormalizedFacts": false,
+        "optionalWhenBlocked": false,
+        "forceTransientFailOnce": false
+      },
+      "inputRefs": {},
+      "outputRefs": {
+        "approvalId": "appr-wf-software-onboarding-content-bookyourdata-1786946455690-software-review",
+        "draftId": "draft-deterministic-v1-software-review-agent-bookyourdata-2026-08-17T06-00-56-246Z",
+        "approvalIds": "appr-wf-software-onboarding-content-bookyourdata-1786946455690-software-review"
+      },
+      "blockers": [],
+      "warnings": [
+        "Approval received — resuming",
+        "2 optional draft(s) may still need separate editorial review"
+      ],
+      "approvalId": "appr-wf-software-onboarding-content-bookyourdata-1786946455690-software-review",
+      "startedAt": "2026-08-17T06:12:52.403Z",
+      "completedAt": "2026-08-17T06:12:52.571Z",
+      "revisionAttempts": 0
+    },
+    {
+      "id": "pre-publish-validation",
+      "definitionStepId": "pre-publish-validation",
+      "handler": "pre-publish-validation",
+      "label": "Pre-publish validation",
+      "status": "completed",
+      "required": true,
+      "failurePolicy": "block-workflow",
+      "attempt": 1,
+      "maxAttempts": 2,
+      "dependsOn": [
+        "editorial-approval"
+      ],
+      "priority": "critical",
+      "config": {
+        "maxAutomaticRevisions": 1,
+        "expandFromContentPlan": false,
+        "expandKind": "none",
+        "stopAfterApproval": true,
+        "allowNormalizedFacts": false,
+        "optionalWhenBlocked": false,
+        "forceTransientFailOnce": false
+      },
+      "inputRefs": {},
+      "outputRefs": {
+        "publishState": "READY_TO_PUBLISH"
+      },
+      "blockers": [],
+      "warnings": [
+        "stopAfterApproval: workflow will not publish automatically"
+      ],
+      "startedAt": "2026-08-17T06:12:52.577Z",
+      "completedAt": "2026-08-17T06:12:52.901Z",
+      "revisionAttempts": 0
+    }
+  ],
+  "history": [
+    {
+      "at": "2026-08-17T06:00:56.127Z",
+      "event": "workflow_created",
+      "message": "Created software-onboarding-content:v1.0.0"
+    },
+    {
+      "at": "2026-08-17T06:00:56.129Z",
+      "event": "workflow_started",
+      "message": "Workflow execution started"
+    },
+    {
+      "at": "2026-08-17T06:00:56.130Z",
+      "event": "workflow_step_started",
+      "stepId": "software-onboarding",
+      "message": "Started Software onboarding"
+    },
+    {
+      "at": "2026-08-17T06:00:56.164Z",
+      "event": "workflow_step_completed",
+      "stepId": "software-onboarding",
+      "message": "Reused onboarding run onboard-bookyourdata-1786946400796 (review-required)"
+    },
+    {
+      "at": "2026-08-17T06:00:56.165Z",
+      "event": "workflow_step_started",
+      "stepId": "content-plan",
+      "message": "Started Content plan"
+    },
+    {
+      "at": "2026-08-17T06:00:56.203Z",
+      "event": "workflow_step_completed",
+      "stepId": "content-plan",
+      "message": "Content plan from onboarding onboard-bookyourdata-1786946400796 (8 candidates)"
+    },
+    {
+      "at": "2026-08-17T06:00:56.205Z",
+      "event": "workflow_step_started",
+      "stepId": "software-review",
+      "message": "Started Software Review"
+    },
+    {
+      "at": "2026-08-17T06:00:56.252Z",
+      "event": "workflow_step_completed",
+      "stepId": "software-review",
+      "message": "Agent software-review-agent → draft draft-deterministic-v1-software-review-agent-bookyourdata-2026-08-17T06-00-56-246Z (qa=pass)"
+    },
+    {
+      "at": "2026-08-17T06:00:56.253Z",
+      "event": "workflow_step_started",
+      "stepId": "alternatives",
+      "message": "Started Alternatives"
+    },
+    {
+      "at": "2026-08-17T06:00:56.259Z",
+      "event": "workflow_step_completed",
+      "stepId": "alternatives",
+      "message": "Agent blocked (optional): NO_APPROVED_ALTERNATIVES: Approved alternative relationships required — same-category alone is insufficient"
+    },
+    {
+      "at": "2026-08-17T06:00:56.259Z",
+      "event": "workflow_step_started",
+      "stepId": "comparison:apollo-vs-bookyourdata",
+      "message": "Started Comparison apollo-vs-bookyourdata"
+    },
+    {
+      "at": "2026-08-17T06:00:56.271Z",
+      "event": "workflow_step_completed",
+      "stepId": "comparison:apollo-vs-bookyourdata",
+      "message": "Agent blocked (optional): RELATIONSHIP_UNAPPROVED: Approved comparable relationship required"
+    },
+    {
+      "at": "2026-08-17T06:00:56.272Z",
+      "event": "workflow_step_started",
+      "stepId": "comparison:bookyourdata-vs-lusha",
+      "message": "Started Comparison bookyourdata-vs-lusha"
+    },
+    {
+      "at": "2026-08-17T06:00:56.280Z",
+      "event": "workflow_step_completed",
+      "stepId": "comparison:bookyourdata-vs-lusha",
+      "message": "Agent blocked (optional): RELATIONSHIP_UNAPPROVED: Approved comparable relationship required"
+    },
+    {
+      "at": "2026-08-17T06:00:56.281Z",
+      "event": "workflow_step_started",
+      "stepId": "comparison:bookyourdata-vs-rocketreach",
+      "message": "Started Comparison bookyourdata-vs-rocketreach"
+    },
+    {
+      "at": "2026-08-17T06:00:56.288Z",
+      "event": "workflow_step_completed",
+      "stepId": "comparison:bookyourdata-vs-rocketreach",
+      "message": "Agent blocked (optional): RELATIONSHIP_UNAPPROVED: Approved comparable relationship required"
+    },
+    {
+      "at": "2026-08-17T06:00:56.289Z",
+      "event": "workflow_step_started",
+      "stepId": "pricing-page",
+      "message": "Started Pricing Page"
+    },
+    {
+      "at": "2026-08-17T06:00:56.297Z",
+      "event": "workflow_step_completed",
+      "stepId": "pricing-page",
+      "message": "Agent pricing-page-agent → draft draft-deterministic-v1-pricing-page-agent-bookyourdata-2026-08-17T06-00-56-294Z (qa=pass)"
+    },
+    {
+      "at": "2026-08-17T06:00:56.298Z",
+      "event": "workflow_step_started",
+      "stepId": "finder-readiness",
+      "message": "Started Finder readiness"
+    },
+    {
+      "at": "2026-08-17T06:00:56.299Z",
+      "event": "workflow_step_completed",
+      "stepId": "finder-readiness",
+      "message": "Finder readiness noted for bookyourdata"
+    },
+    {
+      "at": "2026-08-17T06:00:56.300Z",
+      "event": "workflow_step_started",
+      "stepId": "internal-links",
+      "message": "Started Internal Link Plan"
+    },
+    {
+      "at": "2026-08-17T06:00:56.309Z",
+      "event": "workflow_step_completed",
+      "stepId": "internal-links",
+      "message": "Agent internal-link-agent → draft draft-deterministic-v1-internal-link-agent-bookyourdata-2026-08-17T06-00-56-306Z (qa=pass)"
+    },
+    {
+      "at": "2026-08-17T06:00:56.310Z",
+      "event": "workflow_step_started",
+      "stepId": "editorial-approval",
+      "message": "Started Editorial approval"
+    },
+    {
+      "at": "2026-08-17T06:00:56.352Z",
+      "event": "workflow_step_completed",
+      "stepId": "editorial-approval",
+      "message": "WAITING FOR EDITORIAL APPROVAL (appr-wf-software-onboarding-content-bookyourdata-1786946455690-software-review)"
+    },
+    {
+      "at": "2026-08-17T06:12:52.399Z",
+      "event": "workflow_resumed",
+      "message": "Workflow resumed"
+    },
+    {
+      "at": "2026-08-17T06:12:52.402Z",
+      "event": "workflow_started",
+      "message": "Workflow execution started"
+    },
+    {
+      "at": "2026-08-17T06:12:52.403Z",
+      "event": "workflow_step_started",
+      "stepId": "editorial-approval",
+      "message": "Started Editorial approval"
+    },
+    {
+      "at": "2026-08-17T06:12:52.571Z",
+      "event": "workflow_step_completed",
+      "stepId": "editorial-approval",
+      "message": "Required editorial approvals satisfied"
+    },
+    {
+      "at": "2026-08-17T06:12:52.576Z",
+      "event": "workflow_step_started",
+      "stepId": "pre-publish-validation",
+      "message": "Started Pre-publish validation"
+    },
+    {
+      "at": "2026-08-17T06:12:52.901Z",
+      "event": "workflow_step_completed",
+      "stepId": "pre-publish-validation",
+      "message": "Pre-publish validation passed — READY TO PUBLISH (manual)"
+    },
+    {
+      "at": "2026-08-17T06:12:52.903Z",
+      "event": "workflow_completed",
+      "message": "Workflow completed-with-warnings"
+    }
+  ],
+  "options": {
+    "generateReview": true,
+    "generatePricing": true,
+    "generateAlternatives": true,
+    "generateComparisons": true,
+    "runInternalLinks": true,
+    "stopAfterApproval": true,
+    "allowNormalizedFacts": false,
+    "dryRun": false,
+    "maxComparisons": 3,
+    "skipOnboarding": false
+  },
+  "warnings": [
+    "alternatives blocked: NO_APPROVED_ALTERNATIVES: Approved alternative relationships required — same-category alone is insufficient",
+    "comparison:apollo-vs-bookyourdata blocked: RELATIONSHIP_UNAPPROVED: Approved comparable relationship required",
+    "comparison:bookyourdata-vs-lusha blocked: RELATIONSHIP_UNAPPROVED: Approved comparable relationship required",
+    "comparison:bookyourdata-vs-rocketreach blocked: RELATIONSHIP_UNAPPROVED: Approved comparable relationship required"
+  ],
+  "createdAt": "2026-08-17T06:00:56.127Z",
+  "updatedAt": "2026-08-17T06:12:52.903Z"
+}

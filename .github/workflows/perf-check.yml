@@ -1,0 +1,22 @@
+name: Performance checks
+
+on:
+  pull_request:
+  push:
+    branches: [main, master]
+
+jobs:
+  perf-check:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "22"
+          cache: npm
+      - run: npm ci
+      # Soft budgets / antipatterns — not brittle Lighthouse score gates.
+      - name: Performance budget check
+        run: npm run perf:check
+      - name: Performance unit tests
+        run: npx vitest run src/performance/budgets.test.ts

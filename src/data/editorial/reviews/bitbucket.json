@@ -1,0 +1,287 @@
+{
+  "id": "review-bitbucket-v1",
+  "productSlug": "bitbucket",
+  "assessmentId": "assessment-bitbucket-it-v1",
+  "editorialStatus": "approved",
+  "title": "Bitbucket Cloud Review (2026)",
+  "h1": "Bitbucket Cloud Review",
+  "intro": "Bitbucket Cloud is evaluated here as a source control and DevOps collaboration platform — Bitbucket Cloud is Atlassian’s Git host with Pipelines CI. Free is unlimited repos for up to 5 users (50 build minutes, 1 GB LFS). Standard is $3.65/user/month with a 5-user minimum bill (~$18.25). Premium is $7.25/user/month (~$36.25 minimum) with IP allowlisting, enforced merge checks, and more minutes. 30-day paid trials typical. Best when the team already lives in Jira — not a GitHub social/ecosystem substitute. This review uses SoftwareGlimpse’s IT & Development methodology (ease of use, IT job fit, workflow depth, integrations, admin/security, scalability, value, AI), scoring products inside their job cluster rather than against unrelated peers. It is based on first-party research, not hands-on lab testing.",
+  "summary": "Choose Bitbucket Cloud when cheap Atlassian-native git + Pipelines is the job — not GitHub’s ecosystem and not GitLab DevSecOps.",
+  "verdict": "Choose Bitbucket Cloud when cheap Atlassian-native git + Pipelines is the job — not GitHub’s ecosystem and not GitLab DevSecOps. Compare GitHub for ecosystem/Actions; GitLab for CI+security in one platform. Scores reflect first-party documentation as of 2026-08-18 — not hands-on product testing. Confirm current packaging, host/GB rates and minimums on the vendor site before purchase.",
+  "overallScore": 7.6,
+  "criterionAssessments": [
+    {
+      "criterionSlug": "ease-of-use",
+      "score": 8,
+      "rationale": "Simple git + Pipelines for Jira-native teams. Not a lab test.",
+      "supportingFactIds": [
+        "fact-bitbucket-features.source-control",
+        "fact-bitbucket-pricing.model"
+      ],
+      "confidence": "medium",
+      "status": "approved",
+      "reviewedAt": "2026-08-18T12:00:00.000Z",
+      "reviewer": "editorial"
+    },
+    {
+      "criterionSlug": "it-job-fit",
+      "score": 7,
+      "rationale": "Source-control hosting — peer of GitHub/GitLab, weaker as a full DevSecOps platform than GitLab.",
+      "supportingFactIds": [
+        "fact-bitbucket-features.source-control",
+        "fact-bitbucket-pricing.model"
+      ],
+      "confidence": "medium",
+      "status": "approved",
+      "reviewedAt": "2026-08-18T12:00:00.000Z",
+      "reviewer": "editorial"
+    },
+    {
+      "criterionSlug": "workflow-depth",
+      "score": 7,
+      "rationale": "Repos + Pipelines + Jira links; less platform depth than GitLab, less ecosystem than GitHub.",
+      "supportingFactIds": [
+        "fact-bitbucket-features.cicd-actions",
+        "fact-bitbucket-pricing.model"
+      ],
+      "confidence": "medium",
+      "status": "approved",
+      "reviewedAt": "2026-08-18T12:00:00.000Z",
+      "reviewer": "editorial"
+    },
+    {
+      "criterionSlug": "integrations",
+      "score": 9,
+      "rationale": "Best Jira-native git host in the cluster.",
+      "supportingFactIds": [
+        "fact-bitbucket-features.analytics-reporting",
+        "fact-bitbucket-pricing.model",
+        "fact-bitbucket-positioning.vendorClaim"
+      ],
+      "confidence": "medium",
+      "status": "approved",
+      "reviewedAt": "2026-08-18T12:00:00.000Z",
+      "reviewer": "editorial"
+    },
+    {
+      "criterionSlug": "admin-security",
+      "score": 7,
+      "rationale": "Premium adds IP allowlist and merge checks; Guard extra for SSO.",
+      "supportingFactIds": [
+        "fact-bitbucket-features.enterprise-security",
+        "fact-bitbucket-pricing.model"
+      ],
+      "confidence": "medium",
+      "status": "approved",
+      "reviewedAt": "2026-08-18T12:00:00.000Z",
+      "reviewer": "editorial"
+    },
+    {
+      "criterionSlug": "scalability",
+      "score": 8,
+      "rationale": "Cloud user scale is fine; Data Center is a different SKU.",
+      "supportingFactIds": [
+        "fact-bitbucket-pricing.plans.free",
+        "fact-bitbucket-pricing.model",
+        "fact-bitbucket-pricing.plans.premium"
+      ],
+      "confidence": "medium",
+      "status": "approved",
+      "reviewedAt": "2026-08-18T12:00:00.000Z",
+      "reviewer": "editorial"
+    },
+    {
+      "criterionSlug": "value-for-money",
+      "score": 9,
+      "rationale": "Lowest published paid git seat in this wave; 5-user minimum is the catch. Affiliate economics excluded.",
+      "supportingFactIds": [
+        "fact-bitbucket-pricing.hasFreePlan",
+        "fact-bitbucket-pricing.model",
+        "fact-bitbucket-pricing.startingPriceMonthly"
+      ],
+      "confidence": "medium",
+      "status": "approved",
+      "reviewedAt": "2026-08-18T12:00:00.000Z",
+      "reviewer": "editorial"
+    },
+    {
+      "criterionSlug": "ai-capabilities",
+      "score": 6,
+      "rationale": "Atlassian AI is not the reason to pick Bitbucket vs GitHub Copilot.",
+      "supportingFactIds": [
+        "fact-bitbucket-features.dev-ai",
+        "fact-bitbucket-pricing.model"
+      ],
+      "confidence": "medium",
+      "status": "approved",
+      "reviewedAt": "2026-08-18T12:00:00.000Z",
+      "reviewer": "editorial"
+    }
+  ],
+  "bestFor": [
+    "Jira Cloud teams that want cheap git + Pipelines",
+    "Small orgs that fit in Free (≤5 users)",
+    "Premium buyers who need IP allowlisting"
+  ],
+  "notIdealFor": [
+    "Open-source / GitHub-ecosystem-first teams",
+    "DevSecOps consolidation (GitLab)",
+    "AI-native coding (Cursor)"
+  ],
+  "pros": [
+    "Low Standard seat price",
+    "Jira-native",
+    "Real Free 5-user tier",
+    "Pipelines included",
+    "Premium security controls"
+  ],
+  "cons": [
+    "5-user paid minimum",
+    "Thinner ecosystem vs GitHub",
+    "DevSecOps vs GitLab",
+    "Guard extra for SSO",
+    "AI not a lead feature"
+  ],
+  "keyFeatures": [
+    "Git hosting",
+    "Bitbucket Pipelines",
+    "Jira integration",
+    "Merge checks / IP allowlist (Premium)",
+    "LFS and build-minute packs"
+  ],
+  "limitations": [
+    "Paid plans bill a 5-user floor even for 2-person teams",
+    "Ecosystem and Actions marketplace trail GitHub",
+    "DevSecOps depth trails GitLab Ultimate",
+    "SAML SSO often needs Atlassian Guard extra",
+    "Not observability or ITSM (use JSM separately)"
+  ],
+  "pricingSummary": "Free ≤5 users. Standard $3.65/user/mo. Premium $7.25/user/mo. 5-user minimum on paid. Confirm on Atlassian Bitbucket pricing.",
+  "whoShouldChoose": "Choose Bitbucket Cloud when cheap Atlassian-native git + Pipelines is the job — not GitHub’s ecosystem and not GitLab DevSecOps.",
+  "whoShouldConsiderAlternatives": "Compare GitHub for ecosystem/Actions; GitLab for CI+security in one platform.",
+  "alternativeSlugs": [
+    "github",
+    "gitlab"
+  ],
+  "comparisonSlugs": [
+    "bitbucket-vs-github",
+    "bitbucket-vs-gitlab"
+  ],
+  "relatedGuidePaths": [
+    "/categories/it-development/",
+    "/best/it-development-software/"
+  ],
+  "methodologySlug": "it-development-editorial",
+  "methodologyVersion": "1.0.0",
+  "researchSourceIds": [
+    "bitbucket-product-official",
+    "bitbucket-pricing-official",
+    "bitbucket-pricing"
+  ],
+  "factRefs": [
+    {
+      "section": "pricing",
+      "factIds": [
+        "fact-bitbucket-pricing.model",
+        "fact-bitbucket-pricing.hasFreePlan",
+        "fact-bitbucket-pricing.hasFreeTrial",
+        "fact-bitbucket-pricing.startingPriceMonthly",
+        "fact-bitbucket-pricing.plans.free",
+        "fact-bitbucket-pricing.plans.standard",
+        "fact-bitbucket-pricing.plans.premium"
+      ]
+    },
+    {
+      "section": "overview",
+      "factIds": [
+        "fact-bitbucket-identity.shortDescription",
+        "fact-bitbucket-positioning.vendorClaim",
+        "fact-bitbucket-positioning.jobCluster"
+      ]
+    },
+    {
+      "section": "features",
+      "factIds": [
+        "fact-bitbucket-features.incident-management",
+        "fact-bitbucket-features.change-problem",
+        "fact-bitbucket-features.service-catalog",
+        "fact-bitbucket-features.infrastructure-monitoring",
+        "fact-bitbucket-features.apm-tracing",
+        "fact-bitbucket-features.log-management",
+        "fact-bitbucket-features.source-control",
+        "fact-bitbucket-features.cicd-actions",
+        "fact-bitbucket-features.hosting-panel",
+        "fact-bitbucket-features.proxy-network",
+        "fact-bitbucket-features.itsm-ai",
+        "fact-bitbucket-features.dev-ai",
+        "fact-bitbucket-features.oncall-paging",
+        "fact-bitbucket-features.enterprise-security",
+        "fact-bitbucket-features.analytics-reporting"
+      ]
+    }
+  ],
+  "faq": [
+    {
+      "question": "Is Bitbucket Cloud IT / development software?",
+      "answer": "Yes. Bitbucket Cloud is evaluated as a source control and DevOps collaboration platform."
+    },
+    {
+      "question": "How is Bitbucket Cloud priced?",
+      "answer": "Free ≤5 users. Standard $3.65/user/mo. Premium $7.25/user/mo. 5-user minimum on paid. Confirm on Atlassian Bitbucket pricing."
+    },
+    {
+      "question": "Does Bitbucket Cloud have a free plan or free trial?",
+      "answer": "Yes — a free plan is published. A free trial is documented (about 30 days). Confirm current terms with the vendor."
+    },
+    {
+      "question": "Did SoftwareGlimpse personally test Bitbucket Cloud?",
+      "answer": "No. This review is based on first-party product and pricing research evidence, not hands-on product usage. Affiliate relationships never influence scores."
+    }
+  ],
+  "sections": [
+    {
+      "id": "overview",
+      "heading": "Overview",
+      "body": "Bitbucket Cloud is Atlassian’s Git host with Pipelines CI. Free is unlimited repos for up to 5 users (50 build minutes, 1 GB LFS). Standard is $3.65/user/month with a 5-user minimum bill (~$18.25). Premium is $7.25/user/month (~$36.25 minimum) with IP allowlisting, enforced merge checks, and more minutes. 30-day paid trials typical. Best when the team already lives in Jira — not a GitHub social/ecosystem substitute."
+    },
+    {
+      "id": "best-for",
+      "heading": "Who it’s for",
+      "body": "• Jira Cloud teams that want cheap git + Pipelines\n• Small orgs that fit in Free (≤5 users)\n• Premium buyers who need IP allowlisting"
+    },
+    {
+      "id": "features",
+      "heading": "Feature coverage",
+      "body": "• incident-management: not-supported\n• change-problem: not-supported\n• service-catalog: not-supported\n• infrastructure-monitoring: not-supported\n• apm-tracing: not-supported\n• log-management: limited\n• source-control: supported\n• cicd-actions: supported\n• hosting-panel: not-supported\n• proxy-network: not-supported\n• itsm-ai: not-supported\n• dev-ai: limited\n• oncall-paging: not-supported\n• enterprise-security: higher-plan-only\n• analytics-reporting: supported"
+    },
+    {
+      "id": "pricing",
+      "heading": "Pricing",
+      "body": "Free ≤5 users. Standard $3.65/user/mo. Premium $7.25/user/mo. 5-user minimum on paid. Confirm on Atlassian Bitbucket pricing."
+    },
+    {
+      "id": "limitations",
+      "heading": "Limitations",
+      "body": "• Paid plans bill a 5-user floor even for 2-person teams\n• Ecosystem and Actions marketplace trail GitHub\n• DevSecOps depth trails GitLab Ultimate\n• SAML SSO often needs Atlassian Guard extra\n• Not observability or ITSM (use JSM separately)"
+    }
+  ],
+  "confidence": "medium",
+  "handsOnTesting": false,
+  "contentVersion": 1,
+  "refreshNeeded": false,
+  "lastUpdatedAt": "2026-08-18T12:00:00.000Z",
+  "metadata": {
+    "status": "published",
+    "publishedAt": "2026-08-18T00:00:00.000Z",
+    "updatedAt": "2026-08-18T12:00:00.000Z",
+    "reviewedAt": "2026-08-18T12:00:00.000Z",
+    "author": "author-lee-meyeridricks",
+    "researchStatus": "complete"
+  },
+  "seo": {
+    "title": "Bitbucket Cloud Review (2026) — IT & Development",
+    "description": "Bitbucket Cloud IT & development review on SoftwareGlimpse: strengths, trade-offs, pricing posture, and who should buy.",
+    "canonicalPath": "/software/bitbucket/",
+    "indexable": true
+  }
+}

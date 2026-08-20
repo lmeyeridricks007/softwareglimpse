@@ -1,0 +1,623 @@
+{
+  "id": "wf-software-onboarding-content-inboxally-1786944550955",
+  "workflowId": "software-onboarding-content",
+  "workflowVersion": "1.0.0",
+  "name": "Software Onboarding Content: inboxally",
+  "targetType": "software",
+  "targetId": "inboxally",
+  "status": "cancelled",
+  "steps": [
+    {
+      "id": "software-onboarding",
+      "definitionStepId": "software-onboarding",
+      "handler": "software-onboarding",
+      "label": "Software onboarding",
+      "status": "completed",
+      "required": true,
+      "failurePolicy": "block-workflow",
+      "attempt": 2,
+      "maxAttempts": 2,
+      "dependsOn": [],
+      "priority": "critical",
+      "config": {
+        "maxAutomaticRevisions": 1,
+        "expandFromContentPlan": false,
+        "expandKind": "none",
+        "stopAfterApproval": true,
+        "allowNormalizedFacts": false,
+        "optionalWhenBlocked": false,
+        "forceTransientFailOnce": false
+      },
+      "inputRefs": {},
+      "outputRefs": {
+        "softwareOnboardingRunId": "onboard-inboxally-1786970862025"
+      },
+      "blockers": [],
+      "warnings": [
+        "Re-queued blocked onboarding attach on resume"
+      ],
+      "startedAt": "2026-08-18T08:52:16.666Z",
+      "completedAt": "2026-08-18T08:52:16.861Z",
+      "revisionAttempts": 0
+    },
+    {
+      "id": "content-plan",
+      "definitionStepId": "content-plan",
+      "handler": "content-plan",
+      "label": "Content plan",
+      "status": "completed",
+      "required": true,
+      "failurePolicy": "block-workflow",
+      "attempt": 1,
+      "maxAttempts": 2,
+      "dependsOn": [
+        "software-onboarding"
+      ],
+      "priority": "high",
+      "config": {
+        "maxAutomaticRevisions": 1,
+        "expandFromContentPlan": false,
+        "expandKind": "none",
+        "stopAfterApproval": true,
+        "allowNormalizedFacts": false,
+        "optionalWhenBlocked": false,
+        "forceTransientFailOnce": false
+      },
+      "inputRefs": {},
+      "outputRefs": {
+        "softwareOnboardingRunId": "onboard-inboxally-1786970862025",
+        "comparisonTargets": "inboxally-vs-mailreach,inboxally-vs-warmup-inbox,inboxally-vs-lemwarm",
+        "pageCandidateCount": "10"
+      },
+      "blockers": [],
+      "warnings": [],
+      "startedAt": "2026-08-18T08:52:16.864Z",
+      "completedAt": "2026-08-18T08:52:16.994Z",
+      "revisionAttempts": 0
+    },
+    {
+      "id": "software-review",
+      "definitionStepId": "software-review",
+      "handler": "agent-run",
+      "label": "Software Review",
+      "status": "completed",
+      "required": true,
+      "failurePolicy": "block-workflow",
+      "attempt": 1,
+      "maxAttempts": 2,
+      "dependsOn": [
+        "content-plan"
+      ],
+      "priority": "high",
+      "config": {
+        "agentId": "software-review-agent",
+        "targetSlug": "inboxally",
+        "maxAutomaticRevisions": 1,
+        "expandFromContentPlan": false,
+        "expandKind": "none",
+        "stopAfterApproval": true,
+        "allowNormalizedFacts": false,
+        "optionalWhenBlocked": false,
+        "forceTransientFailOnce": false
+      },
+      "inputRefs": {},
+      "outputRefs": {
+        "draftId": "draft-deterministic-v1-software-review-agent-inboxally-2026-08-18T08-52-17-006Z",
+        "qaStatus": "pass",
+        "agentId": "software-review-agent",
+        "target": "inboxally"
+      },
+      "inputSnapshot": {
+        "researchFactIds": [
+          "fact-inboxally-identity.shortDescription",
+          "fact-inboxally-positioning.vendorClaim",
+          "fact-inboxally-pricing.model",
+          "fact-inboxally-pricing.hasFreePlan",
+          "fact-inboxally-pricing.hasFreeTrial",
+          "fact-inboxally-positioning.membershipRole",
+          "fact-inboxally-pricing.startingPriceMonthly",
+          "fact-inboxally-pricing.plans.starter",
+          "fact-inboxally-pricing.plans.plus",
+          "fact-inboxally-pricing.plans.premium",
+          "fact-inboxally-pricing.plans.enterprise",
+          "fact-inboxally-features.email-campaigns",
+          "fact-inboxally-features.newsletter-builder",
+          "fact-inboxally-features.email-templates",
+          "fact-inboxally-features.drag-drop-editor",
+          "fact-inboxally-features.automation-workflows",
+          "fact-inboxally-features.segmentation",
+          "fact-inboxally-features.personalization",
+          "fact-inboxally-features.ab-testing",
+          "fact-inboxally-features.contact-management",
+          "fact-inboxally-features.landing-pages",
+          "fact-inboxally-features.forms",
+          "fact-inboxally-features.transactional-email",
+          "fact-inboxally-features.analytics",
+          "fact-inboxally-features.deliverability-tools",
+          "fact-inboxally-features.ai-content-generation"
+        ],
+        "methodologySlug": "email-marketing-editorial",
+        "methodologyVersion": "1.0.0",
+        "agentVersion": "1.0.0",
+        "contextBuiltAt": "2026-08-18T08:52:17.005Z"
+      },
+      "blockers": [],
+      "warnings": [],
+      "agentTaskId": "exec-software-review-agent-inboxally-1787043136996",
+      "draftId": "draft-deterministic-v1-software-review-agent-inboxally-2026-08-18T08-52-17-006Z",
+      "startedAt": "2026-08-18T08:52:16.995Z",
+      "completedAt": "2026-08-18T08:52:17.015Z",
+      "revisionAttempts": 0
+    },
+    {
+      "id": "pricing-page",
+      "definitionStepId": "pricing-page",
+      "handler": "agent-run",
+      "label": "Pricing Page",
+      "status": "completed-with-warning",
+      "required": false,
+      "failurePolicy": "continue-with-warning",
+      "attempt": 1,
+      "maxAttempts": 2,
+      "dependsOn": [
+        "content-plan"
+      ],
+      "priority": "normal",
+      "config": {
+        "agentId": "pricing-page-agent",
+        "targetSlug": "inboxally",
+        "maxAutomaticRevisions": 1,
+        "expandFromContentPlan": false,
+        "expandKind": "none",
+        "stopAfterApproval": true,
+        "allowNormalizedFacts": false,
+        "optionalWhenBlocked": true,
+        "forceTransientFailOnce": false
+      },
+      "inputRefs": {},
+      "outputRefs": {
+        "draftId": "draft-deterministic-v1-pricing-page-agent-inboxally-2026-08-18T08-52-17-056Z-rev-1787043137076",
+        "qaStatus": "fail"
+      },
+      "blockers": [],
+      "warnings": [
+        "QA still failing after revision: UNVERIFIED_NUMBER",
+        "Optional step held for QA/editorial review — required path continues"
+      ],
+      "agentTaskId": "exec-pricing-page-agent-inboxally-1787043137038",
+      "draftId": "draft-deterministic-v1-pricing-page-agent-inboxally-2026-08-18T08-52-17-056Z-rev-1787043137076",
+      "startedAt": "2026-08-18T08:52:17.037Z",
+      "completedAt": "2026-08-18T08:52:17.080Z",
+      "revisionAttempts": 1
+    },
+    {
+      "id": "alternatives",
+      "definitionStepId": "alternatives",
+      "handler": "agent-run",
+      "label": "Alternatives",
+      "status": "cancelled",
+      "required": false,
+      "failurePolicy": "continue-with-warning",
+      "attempt": 1,
+      "maxAttempts": 2,
+      "dependsOn": [
+        "content-plan"
+      ],
+      "priority": "normal",
+      "config": {
+        "agentId": "alternatives-agent",
+        "targetSlug": "inboxally",
+        "maxAutomaticRevisions": 1,
+        "expandFromContentPlan": false,
+        "expandKind": "none",
+        "stopAfterApproval": true,
+        "allowNormalizedFacts": false,
+        "optionalWhenBlocked": true,
+        "forceTransientFailOnce": false
+      },
+      "inputRefs": {},
+      "outputRefs": {},
+      "blockers": [
+        "NO_APPROVED_ALTERNATIVES: Approved alternative relationships required — same-category alone is insufficient"
+      ],
+      "warnings": [
+        "NO_APPROVED_ALTERNATIVES: Approved alternative relationships required — same-category alone is insufficient"
+      ],
+      "startedAt": "2026-08-18T08:52:17.016Z",
+      "completedAt": "2026-08-18T08:52:17.036Z",
+      "revisionAttempts": 0
+    },
+    {
+      "id": "comparisons",
+      "definitionStepId": "comparisons",
+      "handler": "agent-run",
+      "label": "Comparisons",
+      "status": "skipped",
+      "required": false,
+      "failurePolicy": "continue-with-warning",
+      "attempt": 0,
+      "maxAttempts": 2,
+      "dependsOn": [
+        "content-plan"
+      ],
+      "priority": "normal",
+      "config": {
+        "agentId": "comparison-agent",
+        "maxAutomaticRevisions": 1,
+        "expandFromContentPlan": true,
+        "expandKind": "comparisons",
+        "stopAfterApproval": true,
+        "allowNormalizedFacts": false,
+        "optionalWhenBlocked": true,
+        "forceTransientFailOnce": false
+      },
+      "inputRefs": {},
+      "outputRefs": {},
+      "blockers": [],
+      "warnings": [
+        "Skipped by option generateComparisons=false"
+      ],
+      "revisionAttempts": 0
+    },
+    {
+      "id": "internal-links",
+      "definitionStepId": "internal-links",
+      "handler": "internal-link",
+      "label": "Internal Link Plan",
+      "status": "completed",
+      "required": false,
+      "failurePolicy": "continue-with-warning",
+      "attempt": 1,
+      "maxAttempts": 2,
+      "dependsOn": [
+        "software-review"
+      ],
+      "priority": "low",
+      "config": {
+        "agentId": "internal-link-agent",
+        "maxAutomaticRevisions": 1,
+        "expandFromContentPlan": false,
+        "expandKind": "none",
+        "stopAfterApproval": true,
+        "allowNormalizedFacts": false,
+        "optionalWhenBlocked": false,
+        "forceTransientFailOnce": false
+      },
+      "inputRefs": {},
+      "outputRefs": {
+        "draftId": "draft-deterministic-v1-internal-link-agent-inboxally-2026-08-18T08-52-17-098Z",
+        "qaStatus": "pass",
+        "agentId": "internal-link-agent",
+        "target": "inboxally"
+      },
+      "inputSnapshot": {
+        "researchFactIds": [
+          "fact-inboxally-identity.shortDescription",
+          "fact-inboxally-positioning.vendorClaim",
+          "fact-inboxally-pricing.model",
+          "fact-inboxally-pricing.hasFreePlan",
+          "fact-inboxally-pricing.hasFreeTrial",
+          "fact-inboxally-positioning.membershipRole",
+          "fact-inboxally-pricing.startingPriceMonthly",
+          "fact-inboxally-pricing.plans.starter",
+          "fact-inboxally-pricing.plans.plus",
+          "fact-inboxally-pricing.plans.premium",
+          "fact-inboxally-pricing.plans.enterprise",
+          "fact-inboxally-features.email-campaigns",
+          "fact-inboxally-features.newsletter-builder",
+          "fact-inboxally-features.email-templates",
+          "fact-inboxally-features.drag-drop-editor",
+          "fact-inboxally-features.automation-workflows",
+          "fact-inboxally-features.segmentation",
+          "fact-inboxally-features.personalization",
+          "fact-inboxally-features.ab-testing",
+          "fact-inboxally-features.contact-management",
+          "fact-inboxally-features.landing-pages",
+          "fact-inboxally-features.forms",
+          "fact-inboxally-features.transactional-email",
+          "fact-inboxally-features.analytics",
+          "fact-inboxally-features.deliverability-tools",
+          "fact-inboxally-features.ai-content-generation"
+        ],
+        "methodologySlug": "email-marketing-editorial",
+        "methodologyVersion": "1.0.0",
+        "agentVersion": "1.0.0",
+        "contextBuiltAt": "2026-08-18T08:52:17.098Z"
+      },
+      "blockers": [],
+      "warnings": [],
+      "agentTaskId": "exec-internal-link-agent-inboxally-1787043137085",
+      "draftId": "draft-deterministic-v1-internal-link-agent-inboxally-2026-08-18T08-52-17-098Z",
+      "startedAt": "2026-08-18T08:52:17.083Z",
+      "completedAt": "2026-08-18T08:52:17.101Z",
+      "revisionAttempts": 0
+    },
+    {
+      "id": "finder-readiness",
+      "definitionStepId": "finder-readiness",
+      "handler": "update-recommendation-readiness",
+      "label": "Finder readiness",
+      "status": "completed",
+      "required": false,
+      "failurePolicy": "continue",
+      "attempt": 1,
+      "maxAttempts": 2,
+      "dependsOn": [
+        "content-plan"
+      ],
+      "priority": "low",
+      "config": {
+        "maxAutomaticRevisions": 1,
+        "expandFromContentPlan": false,
+        "expandKind": "none",
+        "stopAfterApproval": true,
+        "allowNormalizedFacts": false,
+        "optionalWhenBlocked": false,
+        "forceTransientFailOnce": false
+      },
+      "inputRefs": {},
+      "outputRefs": {
+        "finderReadiness": "checked"
+      },
+      "blockers": [],
+      "warnings": [],
+      "startedAt": "2026-08-18T08:52:17.082Z",
+      "completedAt": "2026-08-18T08:52:17.082Z",
+      "revisionAttempts": 0
+    },
+    {
+      "id": "editorial-approval",
+      "definitionStepId": "editorial-approval",
+      "handler": "approval-check",
+      "label": "Editorial approval",
+      "status": "cancelled",
+      "required": true,
+      "failurePolicy": "manual-review",
+      "attempt": 1,
+      "maxAttempts": 2,
+      "dependsOn": [
+        "software-review"
+      ],
+      "priority": "critical",
+      "config": {
+        "approvalType": "editorial",
+        "maxAutomaticRevisions": 1,
+        "expandFromContentPlan": false,
+        "expandKind": "none",
+        "stopAfterApproval": true,
+        "allowNormalizedFacts": false,
+        "optionalWhenBlocked": false,
+        "forceTransientFailOnce": false
+      },
+      "inputRefs": {},
+      "outputRefs": {
+        "approvalId": "appr-wf-software-onboarding-content-inboxally-1786944550955-software-review",
+        "draftId": "draft-deterministic-v1-software-review-agent-inboxally-2026-08-18T08-52-17-006Z"
+      },
+      "blockers": [],
+      "warnings": [],
+      "approvalId": "appr-wf-software-onboarding-content-inboxally-1786944550955-software-review",
+      "startedAt": "2026-08-18T08:52:17.103Z",
+      "completedAt": "2026-08-18T08:52:17.169Z",
+      "revisionAttempts": 0
+    },
+    {
+      "id": "pre-publish-validation",
+      "definitionStepId": "pre-publish-validation",
+      "handler": "pre-publish-validation",
+      "label": "Pre-publish validation",
+      "status": "cancelled",
+      "required": true,
+      "failurePolicy": "block-workflow",
+      "attempt": 0,
+      "maxAttempts": 2,
+      "dependsOn": [
+        "editorial-approval"
+      ],
+      "priority": "critical",
+      "config": {
+        "maxAutomaticRevisions": 1,
+        "expandFromContentPlan": false,
+        "expandKind": "none",
+        "stopAfterApproval": true,
+        "allowNormalizedFacts": false,
+        "optionalWhenBlocked": false,
+        "forceTransientFailOnce": false
+      },
+      "inputRefs": {},
+      "outputRefs": {},
+      "blockers": [],
+      "warnings": [],
+      "revisionAttempts": 0
+    }
+  ],
+  "history": [
+    {
+      "at": "2026-08-17T05:29:11.194Z",
+      "event": "workflow_created",
+      "message": "Created software-onboarding-content:v1.0.0"
+    },
+    {
+      "at": "2026-08-17T05:29:11.195Z",
+      "event": "workflow_started",
+      "message": "Workflow execution started"
+    },
+    {
+      "at": "2026-08-17T05:29:11.196Z",
+      "event": "workflow_step_started",
+      "stepId": "software-onboarding",
+      "message": "Started Software onboarding"
+    },
+    {
+      "at": "2026-08-17T05:29:11.239Z",
+      "event": "workflow_step_completed",
+      "stepId": "software-onboarding",
+      "message": "Blocked: missing onboarding run"
+    },
+    {
+      "at": "2026-08-17T11:57:32.790Z",
+      "event": "workflow_resumed",
+      "message": "Workflow resumed"
+    },
+    {
+      "at": "2026-08-17T11:57:32.791Z",
+      "event": "workflow_started",
+      "message": "Workflow execution started"
+    },
+    {
+      "at": "2026-08-17T12:06:01.322Z",
+      "event": "workflow_resumed",
+      "message": "Workflow resumed"
+    },
+    {
+      "at": "2026-08-17T12:06:01.323Z",
+      "event": "workflow_started",
+      "message": "Workflow execution started"
+    },
+    {
+      "at": "2026-08-18T08:49:51.037Z",
+      "event": "workflow_resumed",
+      "message": "Workflow resumed"
+    },
+    {
+      "at": "2026-08-18T08:49:51.038Z",
+      "event": "workflow_started",
+      "message": "Workflow execution started"
+    },
+    {
+      "at": "2026-08-18T08:52:16.661Z",
+      "event": "workflow_resumed",
+      "message": "Workflow resumed"
+    },
+    {
+      "at": "2026-08-18T08:52:16.664Z",
+      "event": "workflow_started",
+      "message": "Workflow execution started"
+    },
+    {
+      "at": "2026-08-18T08:52:16.666Z",
+      "event": "workflow_step_started",
+      "stepId": "software-onboarding",
+      "message": "Started Software onboarding"
+    },
+    {
+      "at": "2026-08-18T08:52:16.861Z",
+      "event": "workflow_step_completed",
+      "stepId": "software-onboarding",
+      "message": "Reused onboarding run onboard-inboxally-1786970862025 (review-required)"
+    },
+    {
+      "at": "2026-08-18T08:52:16.864Z",
+      "event": "workflow_step_started",
+      "stepId": "content-plan",
+      "message": "Started Content plan"
+    },
+    {
+      "at": "2026-08-18T08:52:16.994Z",
+      "event": "workflow_step_completed",
+      "stepId": "content-plan",
+      "message": "Content plan from onboarding onboard-inboxally-1786970862025 (10 candidates)"
+    },
+    {
+      "at": "2026-08-18T08:52:16.995Z",
+      "event": "workflow_step_started",
+      "stepId": "software-review",
+      "message": "Started Software Review"
+    },
+    {
+      "at": "2026-08-18T08:52:17.015Z",
+      "event": "workflow_step_completed",
+      "stepId": "software-review",
+      "message": "Agent software-review-agent → draft draft-deterministic-v1-software-review-agent-inboxally-2026-08-18T08-52-17-006Z (qa=pass)"
+    },
+    {
+      "at": "2026-08-18T08:52:17.016Z",
+      "event": "workflow_step_started",
+      "stepId": "alternatives",
+      "message": "Started Alternatives"
+    },
+    {
+      "at": "2026-08-18T08:52:17.036Z",
+      "event": "workflow_step_completed",
+      "stepId": "alternatives",
+      "message": "Agent blocked (optional): NO_APPROVED_ALTERNATIVES: Approved alternative relationships required — same-category alone is insufficient"
+    },
+    {
+      "at": "2026-08-18T08:52:17.037Z",
+      "event": "workflow_step_started",
+      "stepId": "pricing-page",
+      "message": "Started Pricing Page"
+    },
+    {
+      "at": "2026-08-18T08:52:17.080Z",
+      "event": "workflow_step_completed",
+      "stepId": "pricing-page",
+      "message": "QA fail after one automatic revision → review-required"
+    },
+    {
+      "at": "2026-08-18T08:52:17.082Z",
+      "event": "workflow_step_started",
+      "stepId": "finder-readiness",
+      "message": "Started Finder readiness"
+    },
+    {
+      "at": "2026-08-18T08:52:17.082Z",
+      "event": "workflow_step_completed",
+      "stepId": "finder-readiness",
+      "message": "Finder readiness noted for inboxally"
+    },
+    {
+      "at": "2026-08-18T08:52:17.083Z",
+      "event": "workflow_step_started",
+      "stepId": "internal-links",
+      "message": "Started Internal Link Plan"
+    },
+    {
+      "at": "2026-08-18T08:52:17.101Z",
+      "event": "workflow_step_completed",
+      "stepId": "internal-links",
+      "message": "Agent internal-link-agent → draft draft-deterministic-v1-internal-link-agent-inboxally-2026-08-18T08-52-17-098Z (qa=pass)"
+    },
+    {
+      "at": "2026-08-18T08:52:17.102Z",
+      "event": "workflow_step_started",
+      "stepId": "editorial-approval",
+      "message": "Started Editorial approval"
+    },
+    {
+      "at": "2026-08-18T08:52:17.169Z",
+      "event": "workflow_step_completed",
+      "stepId": "editorial-approval",
+      "message": "WAITING FOR EDITORIAL APPROVAL (appr-wf-software-onboarding-content-inboxally-1786944550955-software-review)"
+    },
+    {
+      "at": "2026-08-18T08:52:17.170Z",
+      "event": "workflow_blocked",
+      "message": "WAITING FOR EDITORIAL APPROVAL"
+    },
+    {
+      "at": "2026-08-18T13:34:16.184Z",
+      "event": "workflow_cancelled",
+      "message": "Catalogue software page already published; agent drafts remain unpublished"
+    }
+  ],
+  "options": {
+    "generateReview": true,
+    "generatePricing": true,
+    "generateAlternatives": true,
+    "generateComparisons": false,
+    "runInternalLinks": true,
+    "stopAfterApproval": true,
+    "allowNormalizedFacts": false,
+    "dryRun": false,
+    "maxComparisons": 3,
+    "skipOnboarding": false
+  },
+  "cancelReason": "Catalogue software page already published; agent drafts remain unpublished",
+  "warnings": [
+    "alternatives blocked: NO_APPROVED_ALTERNATIVES: Approved alternative relationships required — same-category alone is insufficient",
+    "pricing-page: optional review-required did not block the workflow"
+  ],
+  "createdAt": "2026-08-17T05:29:11.194Z",
+  "updatedAt": "2026-08-18T13:34:16.184Z"
+}

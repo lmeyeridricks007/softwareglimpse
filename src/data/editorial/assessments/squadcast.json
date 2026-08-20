@@ -1,0 +1,165 @@
+{
+  "id": "assessment-squadcast-it-v1",
+  "productSlug": "squadcast",
+  "methodologySlug": "it-development-editorial",
+  "methodologyVersion": "1.0.0",
+  "status": "approved",
+  "verdict": "SolarWinds Incident Response: Choose SolarWinds Incident Response (Squadcast) when on-call + incident response with a published $15 Pro floor is the job — not PagerDuty by default. Scores use the IT & Development editorial methodology from first-party research as of 2026-08-18 — not hands-on product testing.",
+  "strengths": [
+    "Pro $15/user annual floor",
+    "On-call paging + incident management supported",
+    "14-day trial",
+    "URL-stable squadcast slug after SolarWinds rebrand",
+    "Same-cluster peer of PagerDuty / incident.io / FireHydrant / Rootly"
+  ],
+  "weaknesses": [
+    "Does not outrank PagerDuty",
+    "Rebrand / acquisition naming confusion",
+    "No free plan",
+    "Thinner enterprise scale story than PagerDuty",
+    "Not telemetry or ITSM CMDB"
+  ],
+  "bestFor": [
+    "Teams that want on-call + incident response with a published Pro $15 annual floor",
+    "Buyers comparing SolarWinds Incident Response (Squadcast) to incident.io, FireHydrant, and Rootly",
+    "Orgs that will spend the 14-day trial before committing"
+  ],
+  "notIdealFor": [
+    "Orgs whose primary job is PagerDuty-style enterprise paging as the award path",
+    "Honeycomb/Datadog observability purchases",
+    "ITSM ticket desks without on-call / incident command"
+  ],
+  "tradeoffs": [
+    "Per-agent vs per-host vs per-seat vs per-GB pricing models",
+    "Module stacking and consumption overages vs single-SKU floors",
+    "Free tiers vs enterprise SSO/audit gates",
+    "Landscape-adjacent tools vs primary job-cluster peers on best pages"
+  ],
+  "recommendation": "Choose SolarWinds Incident Response (Squadcast) when on-call + incident response with a published $15 Pro floor is the job — not PagerDuty by default. Compare PagerDuty for the incident-oncall award path; incident.io, FireHydrant, or Rootly for other product-led incident SKUs.",
+  "editorialNotes": "IT gap-fill PaaS + incident batch. Approved on it-development-editorial v1.0.0. membershipRole=primary. jobCluster=incident-oncall. handsOnTesting=false. Affiliate economics excluded.",
+  "handsOnTesting": false,
+  "confidence": "medium",
+  "criterionAssessments": [
+    {
+      "criterionSlug": "ease-of-use",
+      "score": 8,
+      "rationale": "Product-led on-call/incident UX is approachable; SolarWinds rebrand is the naming tax. Not a lab test.",
+      "supportingFactIds": [
+        "fact-squadcast-features.incident-management",
+        "fact-squadcast-pricing.model"
+      ],
+      "confidence": "medium",
+      "status": "approved",
+      "reviewedAt": "2026-08-18T22:00:00.000Z",
+      "reviewer": "editorial"
+    },
+    {
+      "criterionSlug": "it-job-fit",
+      "score": 9,
+      "rationale": "Incident-oncall — on-call paging plus incident management, ranked with PagerDuty / incident.io / FireHydrant / Rootly.",
+      "supportingFactIds": [
+        "fact-squadcast-features.incident-management",
+        "fact-squadcast-pricing.model"
+      ],
+      "confidence": "medium",
+      "status": "approved",
+      "reviewedAt": "2026-08-18T22:00:00.000Z",
+      "reviewer": "editorial"
+    },
+    {
+      "criterionSlug": "workflow-depth",
+      "score": 8,
+      "rationale": "Paging + incident command cover the cluster job; held at 8 versus PagerDuty’s award depth.",
+      "supportingFactIds": [
+        "fact-squadcast-features.incident-management",
+        "fact-squadcast-pricing.model"
+      ],
+      "confidence": "medium",
+      "status": "approved",
+      "reviewedAt": "2026-08-18T22:00:00.000Z",
+      "reviewer": "editorial"
+    },
+    {
+      "criterionSlug": "integrations",
+      "score": 8,
+      "rationale": "Slack/Teams/API cover typical SRE on-call stacks.",
+      "supportingFactIds": [
+        "fact-squadcast-features.analytics-reporting",
+        "fact-squadcast-pricing.model",
+        "fact-squadcast-positioning.vendorClaim"
+      ],
+      "confidence": "medium",
+      "status": "approved",
+      "reviewedAt": "2026-08-18T22:00:00.000Z",
+      "reviewer": "editorial"
+    },
+    {
+      "criterionSlug": "admin-security",
+      "score": 7,
+      "rationale": "Pro/Premium are product-led; Enterprise carries heavier governance. Held at 7.",
+      "supportingFactIds": [
+        "fact-squadcast-features.enterprise-security",
+        "fact-squadcast-pricing.model"
+      ],
+      "confidence": "medium",
+      "status": "approved",
+      "reviewedAt": "2026-08-18T22:00:00.000Z",
+      "reviewer": "editorial"
+    },
+    {
+      "criterionSlug": "scalability",
+      "score": 7,
+      "rationale": "Per-user Pro/Premium plus Enterprise quote; held below PagerDuty’s scale story.",
+      "supportingFactIds": [
+        "fact-squadcast-pricing.plans.pro",
+        "fact-squadcast-pricing.model",
+        "fact-squadcast-pricing.plans.enterprise"
+      ],
+      "confidence": "medium",
+      "status": "approved",
+      "reviewedAt": "2026-08-18T22:00:00.000Z",
+      "reviewer": "editorial"
+    },
+    {
+      "criterionSlug": "value-for-money",
+      "score": 8,
+      "rationale": "Published Pro $15/user annual floor matches incident.io Team math and undercuts FireHydrant Pro $25. Affiliate economics excluded.",
+      "supportingFactIds": [
+        "fact-squadcast-pricing.hasFreePlan",
+        "fact-squadcast-pricing.model",
+        "fact-squadcast-pricing.startingPriceMonthly"
+      ],
+      "confidence": "medium",
+      "status": "approved",
+      "reviewedAt": "2026-08-18T22:00:00.000Z",
+      "reviewer": "editorial"
+    },
+    {
+      "criterionSlug": "ai-capabilities",
+      "score": 6,
+      "rationale": "Incident assist exists — scored as supporting, not the buying reason versus PagerDuty paging.",
+      "supportingFactIds": [
+        "fact-squadcast-features.itsm-ai",
+        "fact-squadcast-pricing.model"
+      ],
+      "confidence": "medium",
+      "status": "approved",
+      "reviewedAt": "2026-08-18T22:00:00.000Z",
+      "reviewer": "editorial"
+    }
+  ],
+  "overallScore": 7.7,
+  "overallScoreRationale": "Weighted average of the eight IT editorial criteria using category weights (IT job fit 16, workflow depth 14, ease of use 12, integrations 12, admin/security 12, value 12, AI 12, scalability 10), rounded to 1 decimal. Products are scored inside their job cluster — ITSM, observability, source control, hosting panels, and web-data platforms are not forced into one undifferentiated ranking. Not a hands-on lab score, and affiliate economics are excluded.",
+  "scoreAudit": [
+    {
+      "at": "2026-08-18T22:00:00.000Z",
+      "actor": "editorial",
+      "change": "IT gap-fill PaaS + incident onboarding; approved IT criteria with category weights; handsOnTesting=false",
+      "nextOverall": 7.7
+    }
+  ],
+  "reviewedAt": "2026-08-18T22:00:00.000Z",
+  "reviewer": "editorial",
+  "createdAt": "2026-08-18T22:00:00.000Z",
+  "updatedAt": "2026-08-18T22:00:00.000Z"
+}

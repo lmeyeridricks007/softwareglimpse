@@ -1,0 +1,865 @@
+{
+  "id": "wf-software-onboarding-content-copper-1786686364430",
+  "workflowId": "software-onboarding-content",
+  "workflowVersion": "1.0.0",
+  "name": "Software Onboarding Content: copper",
+  "targetType": "software",
+  "targetId": "copper",
+  "status": "completed",
+  "steps": [
+    {
+      "id": "software-onboarding",
+      "definitionStepId": "software-onboarding",
+      "handler": "software-onboarding",
+      "label": "Software onboarding",
+      "status": "completed",
+      "required": true,
+      "failurePolicy": "block-workflow",
+      "attempt": 1,
+      "maxAttempts": 2,
+      "dependsOn": [],
+      "priority": "critical",
+      "config": {
+        "maxAutomaticRevisions": 1,
+        "expandFromContentPlan": false,
+        "expandKind": "none",
+        "stopAfterApproval": true,
+        "allowNormalizedFacts": false,
+        "optionalWhenBlocked": false,
+        "forceTransientFailOnce": false
+      },
+      "inputRefs": {},
+      "outputRefs": {
+        "softwareOnboardingRunId": "onboard-copper-1786686335380"
+      },
+      "blockers": [],
+      "warnings": [],
+      "startedAt": "2026-08-14T05:46:04.925Z",
+      "completedAt": "2026-08-14T05:46:05.001Z",
+      "revisionAttempts": 0
+    },
+    {
+      "id": "content-plan",
+      "definitionStepId": "content-plan",
+      "handler": "content-plan",
+      "label": "Content plan",
+      "status": "completed",
+      "required": true,
+      "failurePolicy": "block-workflow",
+      "attempt": 1,
+      "maxAttempts": 2,
+      "dependsOn": [
+        "software-onboarding"
+      ],
+      "priority": "high",
+      "config": {
+        "maxAutomaticRevisions": 1,
+        "expandFromContentPlan": false,
+        "expandKind": "none",
+        "stopAfterApproval": true,
+        "allowNormalizedFacts": false,
+        "optionalWhenBlocked": false,
+        "forceTransientFailOnce": false
+      },
+      "inputRefs": {},
+      "outputRefs": {
+        "softwareOnboardingRunId": "onboard-copper-1786686335380",
+        "comparisonTargets": "copper-vs-streak,copper-vs-hubspot,copper-vs-pipedrive",
+        "pageCandidateCount": "9"
+      },
+      "blockers": [],
+      "warnings": [],
+      "startedAt": "2026-08-14T05:46:05.003Z",
+      "completedAt": "2026-08-14T05:46:05.042Z",
+      "revisionAttempts": 0
+    },
+    {
+      "id": "software-review",
+      "definitionStepId": "software-review",
+      "handler": "agent-run",
+      "label": "Software Review",
+      "status": "completed",
+      "required": true,
+      "failurePolicy": "block-workflow",
+      "attempt": 1,
+      "maxAttempts": 2,
+      "dependsOn": [
+        "content-plan"
+      ],
+      "priority": "high",
+      "config": {
+        "agentId": "software-review-agent",
+        "targetSlug": "copper",
+        "maxAutomaticRevisions": 1,
+        "expandFromContentPlan": false,
+        "expandKind": "none",
+        "stopAfterApproval": true,
+        "allowNormalizedFacts": false,
+        "optionalWhenBlocked": false,
+        "forceTransientFailOnce": false
+      },
+      "inputRefs": {},
+      "outputRefs": {
+        "draftId": "draft-deterministic-v1-software-review-agent-copper-2026-08-14T05-46-05-087Z",
+        "qaStatus": "pass",
+        "agentId": "software-review-agent",
+        "target": "copper"
+      },
+      "inputSnapshot": {
+        "researchFactIds": [
+          "fact-copper-pricing.hasFreePlan",
+          "fact-copper-pricing.hasFreeTrial",
+          "fact-copper-pricing.startingPriceMonthly",
+          "fact-copper-pricing.currency",
+          "fact-copper-pricing.model",
+          "fact-copper-pricing.plans.basic",
+          "fact-copper-pricing.plans.professional",
+          "fact-copper-pricing.plans.business",
+          "fact-copper-features.contact-management",
+          "fact-copper-features.lead-management",
+          "fact-copper-features.pipeline-management",
+          "fact-copper-features.deal-management",
+          "fact-copper-features.email-sync",
+          "fact-copper-features.workflow-automation",
+          "fact-copper-features.sales-automation",
+          "fact-copper-features.reporting",
+          "fact-copper-features.forecasting",
+          "fact-copper-features.custom-fields",
+          "fact-copper-features.custom-pipelines",
+          "fact-copper-features.mobile-app",
+          "fact-copper-features.ai-assistance",
+          "fact-copper-features.integrations",
+          "fact-copper-positioning.summary",
+          "fact-copper-ai.assistant",
+          "fact-copper-ai.summaries"
+        ],
+        "methodologySlug": "crm-editorial",
+        "methodologyVersion": "1.0.0",
+        "agentVersion": "1.0.0",
+        "contextBuiltAt": "2026-08-14T05:46:05.079Z"
+      },
+      "blockers": [],
+      "warnings": [],
+      "agentTaskId": "exec-software-review-agent-copper-1786686365045",
+      "draftId": "draft-deterministic-v1-software-review-agent-copper-2026-08-14T05-46-05-087Z",
+      "startedAt": "2026-08-14T05:46:05.043Z",
+      "completedAt": "2026-08-14T05:46:05.094Z",
+      "revisionAttempts": 0
+    },
+    {
+      "id": "pricing-page",
+      "definitionStepId": "pricing-page",
+      "handler": "agent-run",
+      "label": "Pricing Page",
+      "status": "completed",
+      "required": false,
+      "failurePolicy": "continue-with-warning",
+      "attempt": 1,
+      "maxAttempts": 2,
+      "dependsOn": [
+        "content-plan"
+      ],
+      "priority": "normal",
+      "config": {
+        "agentId": "pricing-page-agent",
+        "targetSlug": "copper",
+        "maxAutomaticRevisions": 1,
+        "expandFromContentPlan": false,
+        "expandKind": "none",
+        "stopAfterApproval": true,
+        "allowNormalizedFacts": false,
+        "optionalWhenBlocked": true,
+        "forceTransientFailOnce": false
+      },
+      "inputRefs": {},
+      "outputRefs": {
+        "draftId": "draft-deterministic-v1-pricing-page-agent-copper-2026-08-14T05-46-05-174Z",
+        "qaStatus": "pass",
+        "agentId": "pricing-page-agent",
+        "target": "copper"
+      },
+      "inputSnapshot": {
+        "researchFactIds": [
+          "fact-copper-pricing.hasFreePlan",
+          "fact-copper-pricing.hasFreeTrial",
+          "fact-copper-pricing.startingPriceMonthly",
+          "fact-copper-pricing.currency",
+          "fact-copper-pricing.model",
+          "fact-copper-pricing.plans.basic",
+          "fact-copper-pricing.plans.professional",
+          "fact-copper-pricing.plans.business",
+          "fact-copper-features.contact-management",
+          "fact-copper-features.lead-management",
+          "fact-copper-features.pipeline-management",
+          "fact-copper-features.deal-management",
+          "fact-copper-features.email-sync",
+          "fact-copper-features.workflow-automation",
+          "fact-copper-features.sales-automation",
+          "fact-copper-features.reporting",
+          "fact-copper-features.forecasting",
+          "fact-copper-features.custom-fields",
+          "fact-copper-features.custom-pipelines",
+          "fact-copper-features.mobile-app",
+          "fact-copper-features.ai-assistance",
+          "fact-copper-features.integrations",
+          "fact-copper-positioning.summary",
+          "fact-copper-ai.assistant",
+          "fact-copper-ai.summaries"
+        ],
+        "methodologySlug": "crm-editorial",
+        "methodologyVersion": "1.0.0",
+        "agentVersion": "1.0.0",
+        "contextBuiltAt": "2026-08-14T05:46:05.173Z"
+      },
+      "blockers": [],
+      "warnings": [],
+      "agentTaskId": "exec-pricing-page-agent-copper-1786686365166",
+      "draftId": "draft-deterministic-v1-pricing-page-agent-copper-2026-08-14T05-46-05-174Z",
+      "startedAt": "2026-08-14T05:46:05.165Z",
+      "completedAt": "2026-08-14T05:46:05.177Z",
+      "revisionAttempts": 0
+    },
+    {
+      "id": "alternatives",
+      "definitionStepId": "alternatives",
+      "handler": "agent-run",
+      "label": "Alternatives",
+      "status": "completed",
+      "required": false,
+      "failurePolicy": "continue-with-warning",
+      "attempt": 1,
+      "maxAttempts": 2,
+      "dependsOn": [
+        "content-plan"
+      ],
+      "priority": "normal",
+      "config": {
+        "agentId": "alternatives-agent",
+        "targetSlug": "copper",
+        "maxAutomaticRevisions": 1,
+        "expandFromContentPlan": false,
+        "expandKind": "none",
+        "stopAfterApproval": true,
+        "allowNormalizedFacts": false,
+        "optionalWhenBlocked": true,
+        "forceTransientFailOnce": false
+      },
+      "inputRefs": {},
+      "outputRefs": {
+        "draftId": "draft-deterministic-v1-alternatives-agent-copper-2026-08-14T05-46-05-102Z",
+        "qaStatus": "pass",
+        "agentId": "alternatives-agent",
+        "target": "copper"
+      },
+      "inputSnapshot": {
+        "researchFactIds": [
+          "fact-copper-pricing.hasFreePlan",
+          "fact-copper-pricing.hasFreeTrial",
+          "fact-copper-pricing.startingPriceMonthly",
+          "fact-copper-pricing.currency",
+          "fact-copper-pricing.model",
+          "fact-copper-pricing.plans.basic",
+          "fact-copper-pricing.plans.professional",
+          "fact-copper-pricing.plans.business",
+          "fact-copper-features.contact-management",
+          "fact-copper-features.lead-management",
+          "fact-copper-features.pipeline-management",
+          "fact-copper-features.deal-management",
+          "fact-copper-features.email-sync",
+          "fact-copper-features.workflow-automation",
+          "fact-copper-features.sales-automation",
+          "fact-copper-features.reporting",
+          "fact-copper-features.forecasting",
+          "fact-copper-features.custom-fields",
+          "fact-copper-features.custom-pipelines",
+          "fact-copper-features.mobile-app",
+          "fact-copper-features.ai-assistance",
+          "fact-copper-features.integrations",
+          "fact-copper-positioning.summary",
+          "fact-copper-ai.assistant",
+          "fact-copper-ai.summaries"
+        ],
+        "methodologySlug": "crm-editorial",
+        "methodologyVersion": "1.0.0",
+        "agentVersion": "1.0.0",
+        "contextBuiltAt": "2026-08-14T05:46:05.101Z"
+      },
+      "blockers": [],
+      "warnings": [],
+      "agentTaskId": "exec-alternatives-agent-copper-1786686365096",
+      "draftId": "draft-deterministic-v1-alternatives-agent-copper-2026-08-14T05-46-05-102Z",
+      "startedAt": "2026-08-14T05:46:05.095Z",
+      "completedAt": "2026-08-14T05:46:05.105Z",
+      "revisionAttempts": 0
+    },
+    {
+      "id": "comparison:copper-vs-streak",
+      "definitionStepId": "comparisons",
+      "handler": "agent-run",
+      "label": "Comparison copper-vs-streak",
+      "status": "completed",
+      "required": false,
+      "failurePolicy": "continue-with-warning",
+      "attempt": 1,
+      "maxAttempts": 2,
+      "dependsOn": [
+        "content-plan"
+      ],
+      "priority": "normal",
+      "config": {
+        "agentId": "comparison-agent",
+        "targetSlug": "copper-vs-streak",
+        "maxAutomaticRevisions": 1,
+        "expandFromContentPlan": true,
+        "expandKind": "comparisons",
+        "stopAfterApproval": true,
+        "allowNormalizedFacts": false,
+        "optionalWhenBlocked": true,
+        "forceTransientFailOnce": false
+      },
+      "expansionKey": "copper-vs-streak",
+      "inputRefs": {},
+      "outputRefs": {
+        "draftId": "draft-deterministic-v1-comparison-agent-copper-vs-streak-2026-08-14T05-46-05-160Z",
+        "qaStatus": "pass",
+        "agentId": "comparison-agent",
+        "target": "copper-vs-streak"
+      },
+      "inputSnapshot": {
+        "researchFactIds": [],
+        "methodologySlug": "crm-editorial",
+        "methodologyVersion": "1.0.0",
+        "agentVersion": "1.0.0",
+        "contextBuiltAt": "2026-08-14T05:46:05.159Z"
+      },
+      "blockers": [],
+      "warnings": [],
+      "agentTaskId": "exec-comparison-agent-copper-vs-streak-1786686365152",
+      "draftId": "draft-deterministic-v1-comparison-agent-copper-vs-streak-2026-08-14T05-46-05-160Z",
+      "startedAt": "2026-08-14T05:46:05.151Z",
+      "completedAt": "2026-08-14T05:46:05.163Z",
+      "revisionAttempts": 0
+    },
+    {
+      "id": "comparison:copper-vs-hubspot",
+      "definitionStepId": "comparisons",
+      "handler": "agent-run",
+      "label": "Comparison copper-vs-hubspot",
+      "status": "completed",
+      "required": false,
+      "failurePolicy": "continue-with-warning",
+      "attempt": 1,
+      "maxAttempts": 2,
+      "dependsOn": [
+        "content-plan"
+      ],
+      "priority": "normal",
+      "config": {
+        "agentId": "comparison-agent",
+        "targetSlug": "copper-vs-hubspot",
+        "maxAutomaticRevisions": 1,
+        "expandFromContentPlan": true,
+        "expandKind": "comparisons",
+        "stopAfterApproval": true,
+        "allowNormalizedFacts": false,
+        "optionalWhenBlocked": true,
+        "forceTransientFailOnce": false
+      },
+      "expansionKey": "copper-vs-hubspot",
+      "inputRefs": {},
+      "outputRefs": {
+        "draftId": "draft-deterministic-v1-comparison-agent-copper-vs-hubspot-2026-08-14T05-46-05-126Z",
+        "qaStatus": "pass",
+        "agentId": "comparison-agent",
+        "target": "copper-vs-hubspot"
+      },
+      "inputSnapshot": {
+        "researchFactIds": [],
+        "methodologySlug": "crm-editorial",
+        "methodologyVersion": "1.0.0",
+        "agentVersion": "1.0.0",
+        "contextBuiltAt": "2026-08-14T05:46:05.125Z"
+      },
+      "blockers": [],
+      "warnings": [],
+      "agentTaskId": "exec-comparison-agent-copper-vs-hubspot-1786686365107",
+      "draftId": "draft-deterministic-v1-comparison-agent-copper-vs-hubspot-2026-08-14T05-46-05-126Z",
+      "startedAt": "2026-08-14T05:46:05.106Z",
+      "completedAt": "2026-08-14T05:46:05.131Z",
+      "revisionAttempts": 0
+    },
+    {
+      "id": "comparison:copper-vs-pipedrive",
+      "definitionStepId": "comparisons",
+      "handler": "agent-run",
+      "label": "Comparison copper-vs-pipedrive",
+      "status": "completed",
+      "required": false,
+      "failurePolicy": "continue-with-warning",
+      "attempt": 1,
+      "maxAttempts": 2,
+      "dependsOn": [
+        "content-plan"
+      ],
+      "priority": "normal",
+      "config": {
+        "agentId": "comparison-agent",
+        "targetSlug": "copper-vs-pipedrive",
+        "maxAutomaticRevisions": 1,
+        "expandFromContentPlan": true,
+        "expandKind": "comparisons",
+        "stopAfterApproval": true,
+        "allowNormalizedFacts": false,
+        "optionalWhenBlocked": true,
+        "forceTransientFailOnce": false
+      },
+      "expansionKey": "copper-vs-pipedrive",
+      "inputRefs": {},
+      "outputRefs": {
+        "draftId": "draft-deterministic-v1-comparison-agent-copper-vs-pipedrive-2026-08-14T05-46-05-141Z",
+        "qaStatus": "pass",
+        "agentId": "comparison-agent",
+        "target": "copper-vs-pipedrive"
+      },
+      "inputSnapshot": {
+        "researchFactIds": [],
+        "methodologySlug": "crm-editorial",
+        "methodologyVersion": "1.0.0",
+        "agentVersion": "1.0.0",
+        "contextBuiltAt": "2026-08-14T05:46:05.140Z"
+      },
+      "blockers": [],
+      "warnings": [],
+      "agentTaskId": "exec-comparison-agent-copper-vs-pipedrive-1786686365133",
+      "draftId": "draft-deterministic-v1-comparison-agent-copper-vs-pipedrive-2026-08-14T05-46-05-141Z",
+      "startedAt": "2026-08-14T05:46:05.133Z",
+      "completedAt": "2026-08-14T05:46:05.150Z",
+      "revisionAttempts": 0
+    },
+    {
+      "id": "internal-links",
+      "definitionStepId": "internal-links",
+      "handler": "internal-link",
+      "label": "Internal Link Plan",
+      "status": "completed",
+      "required": false,
+      "failurePolicy": "continue-with-warning",
+      "attempt": 1,
+      "maxAttempts": 2,
+      "dependsOn": [
+        "software-review"
+      ],
+      "priority": "low",
+      "config": {
+        "agentId": "internal-link-agent",
+        "maxAutomaticRevisions": 1,
+        "expandFromContentPlan": false,
+        "expandKind": "none",
+        "stopAfterApproval": true,
+        "allowNormalizedFacts": false,
+        "optionalWhenBlocked": false,
+        "forceTransientFailOnce": false
+      },
+      "inputRefs": {},
+      "outputRefs": {
+        "draftId": "draft-deterministic-v1-internal-link-agent-copper-2026-08-14T05-46-05-192Z",
+        "qaStatus": "pass",
+        "agentId": "internal-link-agent",
+        "target": "copper"
+      },
+      "inputSnapshot": {
+        "researchFactIds": [
+          "fact-copper-pricing.hasFreePlan",
+          "fact-copper-pricing.hasFreeTrial",
+          "fact-copper-pricing.startingPriceMonthly",
+          "fact-copper-pricing.currency",
+          "fact-copper-pricing.model",
+          "fact-copper-pricing.plans.basic",
+          "fact-copper-pricing.plans.professional",
+          "fact-copper-pricing.plans.business",
+          "fact-copper-features.contact-management",
+          "fact-copper-features.lead-management",
+          "fact-copper-features.pipeline-management",
+          "fact-copper-features.deal-management",
+          "fact-copper-features.email-sync",
+          "fact-copper-features.workflow-automation",
+          "fact-copper-features.sales-automation",
+          "fact-copper-features.reporting",
+          "fact-copper-features.forecasting",
+          "fact-copper-features.custom-fields",
+          "fact-copper-features.custom-pipelines",
+          "fact-copper-features.mobile-app",
+          "fact-copper-features.ai-assistance",
+          "fact-copper-features.integrations",
+          "fact-copper-positioning.summary",
+          "fact-copper-ai.assistant",
+          "fact-copper-ai.summaries"
+        ],
+        "methodologySlug": "crm-editorial",
+        "methodologyVersion": "1.0.0",
+        "agentVersion": "1.0.0",
+        "contextBuiltAt": "2026-08-14T05:46:05.192Z"
+      },
+      "blockers": [],
+      "warnings": [],
+      "agentTaskId": "exec-internal-link-agent-copper-1786686365184",
+      "draftId": "draft-deterministic-v1-internal-link-agent-copper-2026-08-14T05-46-05-192Z",
+      "startedAt": "2026-08-14T05:46:05.183Z",
+      "completedAt": "2026-08-14T05:46:05.194Z",
+      "revisionAttempts": 0
+    },
+    {
+      "id": "finder-readiness",
+      "definitionStepId": "finder-readiness",
+      "handler": "update-recommendation-readiness",
+      "label": "Finder readiness",
+      "status": "completed",
+      "required": false,
+      "failurePolicy": "continue",
+      "attempt": 1,
+      "maxAttempts": 2,
+      "dependsOn": [
+        "content-plan"
+      ],
+      "priority": "low",
+      "config": {
+        "maxAutomaticRevisions": 1,
+        "expandFromContentPlan": false,
+        "expandKind": "none",
+        "stopAfterApproval": true,
+        "allowNormalizedFacts": false,
+        "optionalWhenBlocked": false,
+        "forceTransientFailOnce": false
+      },
+      "inputRefs": {},
+      "outputRefs": {
+        "finderReadiness": "checked"
+      },
+      "blockers": [],
+      "warnings": [],
+      "startedAt": "2026-08-14T05:46:05.179Z",
+      "completedAt": "2026-08-14T05:46:05.181Z",
+      "revisionAttempts": 0
+    },
+    {
+      "id": "editorial-approval",
+      "definitionStepId": "editorial-approval",
+      "handler": "approval-check",
+      "label": "Editorial approval",
+      "status": "completed",
+      "required": true,
+      "failurePolicy": "manual-review",
+      "attempt": 2,
+      "maxAttempts": 2,
+      "dependsOn": [
+        "software-review"
+      ],
+      "priority": "critical",
+      "config": {
+        "approvalType": "editorial",
+        "maxAutomaticRevisions": 1,
+        "expandFromContentPlan": false,
+        "expandKind": "none",
+        "stopAfterApproval": true,
+        "allowNormalizedFacts": false,
+        "optionalWhenBlocked": false,
+        "forceTransientFailOnce": false
+      },
+      "inputRefs": {},
+      "outputRefs": {
+        "approvalId": "appr-wf-software-onboarding-content-copper-1786686364430-software-review",
+        "draftId": "draft-deterministic-v1-software-review-agent-copper-2026-08-14T05-46-05-087Z",
+        "approvalIds": "appr-wf-software-onboarding-content-copper-1786686364430-software-review"
+      },
+      "blockers": [],
+      "warnings": [
+        "Approval received — resuming",
+        "6 optional draft(s) may still need separate editorial review"
+      ],
+      "approvalId": "appr-wf-software-onboarding-content-copper-1786686364430-software-review",
+      "startedAt": "2026-08-14T05:47:19.164Z",
+      "completedAt": "2026-08-14T05:47:19.223Z",
+      "revisionAttempts": 0
+    },
+    {
+      "id": "pre-publish-validation",
+      "definitionStepId": "pre-publish-validation",
+      "handler": "pre-publish-validation",
+      "label": "Pre-publish validation",
+      "status": "completed",
+      "required": true,
+      "failurePolicy": "block-workflow",
+      "attempt": 2,
+      "maxAttempts": 2,
+      "dependsOn": [
+        "editorial-approval"
+      ],
+      "priority": "critical",
+      "config": {
+        "maxAutomaticRevisions": 1,
+        "expandFromContentPlan": false,
+        "expandKind": "none",
+        "stopAfterApproval": true,
+        "allowNormalizedFacts": false,
+        "optionalWhenBlocked": false,
+        "forceTransientFailOnce": false
+      },
+      "inputRefs": {},
+      "outputRefs": {
+        "publishState": "READY_TO_PUBLISH"
+      },
+      "blockers": [],
+      "warnings": [
+        "stopAfterApproval: workflow will not publish automatically"
+      ],
+      "startedAt": "2026-08-14T05:49:35.130Z",
+      "completedAt": "2026-08-14T05:49:35.524Z",
+      "revisionAttempts": 0
+    }
+  ],
+  "history": [
+    {
+      "at": "2026-08-14T05:46:04.920Z",
+      "event": "workflow_created",
+      "message": "Created software-onboarding-content:v1.0.0"
+    },
+    {
+      "at": "2026-08-14T05:46:04.924Z",
+      "event": "workflow_started",
+      "message": "Workflow execution started"
+    },
+    {
+      "at": "2026-08-14T05:46:04.925Z",
+      "event": "workflow_step_started",
+      "stepId": "software-onboarding",
+      "message": "Started Software onboarding"
+    },
+    {
+      "at": "2026-08-14T05:46:05.001Z",
+      "event": "workflow_step_completed",
+      "stepId": "software-onboarding",
+      "message": "Reused onboarding run onboard-copper-1786686335380 (review-required)"
+    },
+    {
+      "at": "2026-08-14T05:46:05.003Z",
+      "event": "workflow_step_started",
+      "stepId": "content-plan",
+      "message": "Started Content plan"
+    },
+    {
+      "at": "2026-08-14T05:46:05.042Z",
+      "event": "workflow_step_completed",
+      "stepId": "content-plan",
+      "message": "Content plan from onboarding onboard-copper-1786686335380 (9 candidates)"
+    },
+    {
+      "at": "2026-08-14T05:46:05.043Z",
+      "event": "workflow_step_started",
+      "stepId": "software-review",
+      "message": "Started Software Review"
+    },
+    {
+      "at": "2026-08-14T05:46:05.094Z",
+      "event": "workflow_step_completed",
+      "stepId": "software-review",
+      "message": "Agent software-review-agent → draft draft-deterministic-v1-software-review-agent-copper-2026-08-14T05-46-05-087Z (qa=pass)"
+    },
+    {
+      "at": "2026-08-14T05:46:05.095Z",
+      "event": "workflow_step_started",
+      "stepId": "alternatives",
+      "message": "Started Alternatives"
+    },
+    {
+      "at": "2026-08-14T05:46:05.105Z",
+      "event": "workflow_step_completed",
+      "stepId": "alternatives",
+      "message": "Agent alternatives-agent → draft draft-deterministic-v1-alternatives-agent-copper-2026-08-14T05-46-05-102Z (qa=pass)"
+    },
+    {
+      "at": "2026-08-14T05:46:05.106Z",
+      "event": "workflow_step_started",
+      "stepId": "comparison:copper-vs-hubspot",
+      "message": "Started Comparison copper-vs-hubspot"
+    },
+    {
+      "at": "2026-08-14T05:46:05.131Z",
+      "event": "workflow_step_completed",
+      "stepId": "comparison:copper-vs-hubspot",
+      "message": "Agent comparison-agent → draft draft-deterministic-v1-comparison-agent-copper-vs-hubspot-2026-08-14T05-46-05-126Z (qa=pass)"
+    },
+    {
+      "at": "2026-08-14T05:46:05.133Z",
+      "event": "workflow_step_started",
+      "stepId": "comparison:copper-vs-pipedrive",
+      "message": "Started Comparison copper-vs-pipedrive"
+    },
+    {
+      "at": "2026-08-14T05:46:05.150Z",
+      "event": "workflow_step_completed",
+      "stepId": "comparison:copper-vs-pipedrive",
+      "message": "Agent comparison-agent → draft draft-deterministic-v1-comparison-agent-copper-vs-pipedrive-2026-08-14T05-46-05-141Z (qa=pass)"
+    },
+    {
+      "at": "2026-08-14T05:46:05.151Z",
+      "event": "workflow_step_started",
+      "stepId": "comparison:copper-vs-streak",
+      "message": "Started Comparison copper-vs-streak"
+    },
+    {
+      "at": "2026-08-14T05:46:05.163Z",
+      "event": "workflow_step_completed",
+      "stepId": "comparison:copper-vs-streak",
+      "message": "Agent comparison-agent → draft draft-deterministic-v1-comparison-agent-copper-vs-streak-2026-08-14T05-46-05-160Z (qa=pass)"
+    },
+    {
+      "at": "2026-08-14T05:46:05.165Z",
+      "event": "workflow_step_started",
+      "stepId": "pricing-page",
+      "message": "Started Pricing Page"
+    },
+    {
+      "at": "2026-08-14T05:46:05.177Z",
+      "event": "workflow_step_completed",
+      "stepId": "pricing-page",
+      "message": "Agent pricing-page-agent → draft draft-deterministic-v1-pricing-page-agent-copper-2026-08-14T05-46-05-174Z (qa=pass)"
+    },
+    {
+      "at": "2026-08-14T05:46:05.179Z",
+      "event": "workflow_step_started",
+      "stepId": "finder-readiness",
+      "message": "Started Finder readiness"
+    },
+    {
+      "at": "2026-08-14T05:46:05.181Z",
+      "event": "workflow_step_completed",
+      "stepId": "finder-readiness",
+      "message": "Finder readiness noted for copper"
+    },
+    {
+      "at": "2026-08-14T05:46:05.182Z",
+      "event": "workflow_step_started",
+      "stepId": "internal-links",
+      "message": "Started Internal Link Plan"
+    },
+    {
+      "at": "2026-08-14T05:46:05.194Z",
+      "event": "workflow_step_completed",
+      "stepId": "internal-links",
+      "message": "Agent internal-link-agent → draft draft-deterministic-v1-internal-link-agent-copper-2026-08-14T05-46-05-192Z (qa=pass)"
+    },
+    {
+      "at": "2026-08-14T05:46:05.198Z",
+      "event": "workflow_step_started",
+      "stepId": "editorial-approval",
+      "message": "Started Editorial approval"
+    },
+    {
+      "at": "2026-08-14T05:46:05.240Z",
+      "event": "workflow_step_completed",
+      "stepId": "editorial-approval",
+      "message": "WAITING FOR EDITORIAL APPROVAL (appr-wf-software-onboarding-content-copper-1786686364430-software-review)"
+    },
+    {
+      "at": "2026-08-14T05:47:19.159Z",
+      "event": "workflow_resumed",
+      "message": "Workflow resumed"
+    },
+    {
+      "at": "2026-08-14T05:47:19.162Z",
+      "event": "workflow_started",
+      "message": "Workflow execution started"
+    },
+    {
+      "at": "2026-08-14T05:47:19.164Z",
+      "event": "workflow_step_started",
+      "stepId": "editorial-approval",
+      "message": "Started Editorial approval"
+    },
+    {
+      "at": "2026-08-14T05:47:19.223Z",
+      "event": "workflow_step_completed",
+      "stepId": "editorial-approval",
+      "message": "Required editorial approvals satisfied"
+    },
+    {
+      "at": "2026-08-14T05:47:19.225Z",
+      "event": "workflow_step_started",
+      "stepId": "pre-publish-validation",
+      "message": "Started Pre-publish validation"
+    },
+    {
+      "at": "2026-08-14T05:47:19.533Z",
+      "event": "workflow_step_completed",
+      "stepId": "pre-publish-validation",
+      "message": "Pre-publish validation blocked: Stale context for comparison:copper-vs-streak: removed-critical-fact:fact-streak-pricing.hasFreePlan; removed-critical-fact:fact-streak-pricing.hasFreeTrial; removed-critical-fact:fact-streak-pricing.startingPriceMonthly; removed-critical-fact:fact-streak-pricing.currency; removed-critical-fact:fact-streak-pricing.model; removed-critical-fact:fact-streak-pricing.plans.pro; removed-critical-fact:fact-streak-pricing.plans.pro-plus; removed-critical-fact:fact-streak-pricing.plans.enterprise; Stale context for comparison:copper-vs-hubspot: removed-critical-fact:fact-hubspot-pricing.hasFreePlan; removed-critical-fact:fact-hubspot-pricing.hasFreeTrial; removed-critical-fact:fact-hubspot-pricing.startingPriceMonthly; removed-critical-fact:fact-hubspot-pricing.currency; removed-critical-fact:fact-hubspot-pricing.model; removed-critical-fact:fact-hubspot-pricing.plans.free; removed-critical-fact:fact-hubspot-pricing.plans.starter; removed-critical-fact:fact-hubspot-pricing.plans.professional; removed-critical-fact:fact-hubspot-pricing.plans.enterprise; removed-critical-fact:fact-hubspot-pricing.sales-hub.ladder; removed-critical-fact:fact-hubspot-pricing.billing-notes; removed-critical-fact:fact-hubspot-pricing.sales-hub.professional.catalog; removed-critical-fact:fact-hubspot-pricing.sales-hub.professional.marketing; removed-critical-fact:fact-hubspot-pricing.smart-crm.starter.catalog; Stale context for comparison:copper-vs-pipedrive: removed-critical-fact:fact-pipedrive-pricing.hasFreePlan; removed-critical-fact:fact-pipedrive-pricing.hasFreeTrial; removed-critical-fact:fact-pipedrive-pricing.startingPriceMonthly; removed-critical-fact:fact-pipedrive-pricing.currency; removed-critical-fact:fact-pipedrive-pricing.model; removed-critical-fact:fact-pipedrive-pricing.plans.lite; removed-critical-fact:fact-pipedrive-pricing.plans.growth; removed-critical-fact:fact-pipedrive-pricing.plans.premium; removed-critical-fact:fact-pipedrive-pricing.plans.ultimate; removed-critical-fact:fact-pipedrive-plans.mapping"
+    },
+    {
+      "at": "2026-08-14T05:47:35.196Z",
+      "event": "workflow_resumed",
+      "message": "Workflow resumed"
+    },
+    {
+      "at": "2026-08-14T05:47:35.199Z",
+      "event": "workflow_started",
+      "message": "Workflow execution started"
+    },
+    {
+      "at": "2026-08-14T05:49:35.125Z",
+      "event": "workflow_resumed",
+      "message": "Workflow resumed"
+    },
+    {
+      "at": "2026-08-14T05:49:35.128Z",
+      "event": "workflow_started",
+      "message": "Workflow execution started"
+    },
+    {
+      "at": "2026-08-14T05:49:35.130Z",
+      "event": "workflow_step_started",
+      "stepId": "pre-publish-validation",
+      "message": "Started Pre-publish validation"
+    },
+    {
+      "at": "2026-08-14T05:49:35.524Z",
+      "event": "workflow_step_completed",
+      "stepId": "pre-publish-validation",
+      "message": "Pre-publish validation passed — READY TO PUBLISH (manual)"
+    },
+    {
+      "at": "2026-08-14T05:49:35.526Z",
+      "event": "workflow_completed",
+      "message": "Workflow completed"
+    },
+    {
+      "at": "2026-08-14T05:49:58.317Z",
+      "event": "workflow_resumed",
+      "message": "Workflow resumed"
+    },
+    {
+      "at": "2026-08-14T05:49:58.319Z",
+      "event": "workflow_started",
+      "message": "Workflow execution started"
+    },
+    {
+      "at": "2026-08-14T05:49:58.320Z",
+      "event": "workflow_completed",
+      "message": "Workflow completed"
+    }
+  ],
+  "options": {
+    "generateReview": true,
+    "generatePricing": true,
+    "generateAlternatives": true,
+    "generateComparisons": true,
+    "runInternalLinks": true,
+    "stopAfterApproval": true,
+    "allowNormalizedFacts": false,
+    "dryRun": false,
+    "maxComparisons": 3,
+    "skipOnboarding": false
+  },
+  "warnings": [],
+  "createdAt": "2026-08-14T05:46:04.920Z",
+  "updatedAt": "2026-08-14T05:49:58.320Z"
+}

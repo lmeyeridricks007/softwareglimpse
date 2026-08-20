@@ -1,0 +1,72 @@
+name: Content intelligence
+
+# Soft reports only — subjective quality scores never fail the job.
+# Deterministic integrity can be enabled via --strict-integrity locally;
+# this workflow always exits 0 for recommendation output.
+
+on:
+  schedule:
+    # Weekly FAST: important / commercial / thin-hub pages (UTC Monday 06:00)
+    - cron: "0 6 * * 1"
+    # Monthly FULL: first Sunday 05:00 UTC
+    - cron: "0 5 * * 0"
+  workflow_dispatch:
+    inputs:
+      mode:
+        description: "FAST or FULL"
+        required: true
+        default: "FAST"
+        type: choice
+        options:
+          - FAST
+          - FULL
+
+jobs:
+  content-intelligence:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "22"
+          cache: npm
+      - run: npm ci
+
+      - name: Resolve mode
+        id: mode
+        run: |
+          if [ "${{ github.event_name }}" = "workflow_dispatch" ]; then
+            echo "value=${{ inputs.mode }}" >> "$GITHUB_OUTPUT"
+          elif [ "${{ github.event.schedule }}" = "0 5 * * 0" ]; then
+            # First run of the month-ish: monthly cron fires every Sunday;
+            # only FULL on the first Sunday of the month.
+            DAY=$(date -u +%d)
+            if [ "$DAY" -le 7 ]; then
+              echo "value=FULL" >> "$GITHUB_OUTPUT"
+            else
+              echo "value=FAST" >> "$GITHUB_OUTPUT"
+            fi
+          else
+            echo "value=FAST" >> "$GITHUB_OUTPUT"
+          fi
+
+      - name: Run content intelligence (report-only)
+        run: npm run content:intelligence -- --mode ${{ steps.mode.outputs.value }}
+        # Never fail CI for subjective scores. Exit code 0 unless process crash.
+
+      - name: Upload content-quality reports
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: content-intelligence-${{ steps.mode.outputs.value }}
+          path: |
+            docs/content-quality/CONTENT-INTELLIGENCE-LATEST.md
+            docs/content-quality/CONTENT-QUALITY-LATEST.md
+            docs/content-quality/CONTENT-IMPROVEMENT-BACKLOG.md
+            docs/content-quality/NEW-CONTENT-OPPORTUNITIES.md
+            docs/content-quality/CONTENT-MAP-COVERAGE-LATEST.md
+            docs/content-quality/archive/
+          if-no-files-found: warn
+
+      # Reports are not auto-committed (repo policy). Download artifact or
+      # open a human PR if committing generated docs is desired.

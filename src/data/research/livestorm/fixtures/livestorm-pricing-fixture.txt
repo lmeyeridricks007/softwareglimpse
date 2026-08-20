@@ -1,0 +1,16 @@
+# FIXTURE SNAPSHOT — structured from first-party research (2026-08-17)
+# Label: fixture extract for FixtureFactExtractor — not a live HTML scrape dump.
+
+CURRENCY: EUR
+PRICING_MODEL: usage
+FREE_PLAN: false
+FREE_TRIAL: true
+
+
+
+NOTES:
+Verified 2026-08-17 from livestorm.co/pricing/. Pro: €2.50 per attendee credit (yearly credit packs; 1 credit per unique participant per session for live/replay/on-demand; team members not counted; no-shows not charged). Pro highlights: up to 4 hours/session, unlimited events/recording/team members, up to 3,000 live attendees/event, standard multilingual support. Enterprise: custom (up to 12 hours/session, enterprise integrations, custom analytics, dedicated CS, VIP support/SLA). Free trial CTA on pricing. Add-ons include AI Studio, live translations, SSO, restreaming, etc. Do not invent USD monthly starting prices — model is usage/credit-based in EUR.
+
+PLANS:
+- PLAN pro: name=Pro; amountPerUnit=2.50; currency=EUR; unit=attendee-credit; interval=year; maxLiveAttendees=3000; maxDurationHours=4
+- PLAN enterprise: name=Enterprise; contactSales=true; currency=EUR; interval=custom; maxDurationHours=12

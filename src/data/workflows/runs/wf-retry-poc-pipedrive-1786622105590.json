@@ -1,0 +1,174 @@
+{
+  "id": "wf-retry-poc-pipedrive-1786622105590",
+  "workflowId": "retry-poc",
+  "workflowVersion": "1.0.0",
+  "name": "Single Content Generation: pipedrive",
+  "targetType": "content",
+  "targetId": "pipedrive",
+  "status": "completed",
+  "steps": [
+    {
+      "id": "ready",
+      "definitionStepId": "ready",
+      "handler": "noop",
+      "label": "ready",
+      "status": "completed",
+      "required": true,
+      "failurePolicy": "block-workflow",
+      "attempt": 1,
+      "maxAttempts": 2,
+      "dependsOn": [],
+      "priority": "normal",
+      "config": {
+        "maxAutomaticRevisions": 1,
+        "expandFromContentPlan": false,
+        "expandKind": "none",
+        "stopAfterApproval": true,
+        "allowNormalizedFacts": false,
+        "optionalWhenBlocked": false,
+        "forceTransientFailOnce": false
+      },
+      "inputRefs": {},
+      "outputRefs": {},
+      "blockers": [],
+      "warnings": [],
+      "startedAt": "2026-08-13T11:55:05.603Z",
+      "completedAt": "2026-08-13T11:55:05.604Z",
+      "revisionAttempts": 0
+    },
+    {
+      "id": "generate",
+      "definitionStepId": "generate",
+      "handler": "agent-run",
+      "label": "generate",
+      "status": "completed",
+      "required": true,
+      "failurePolicy": "retry",
+      "attempt": 2,
+      "maxAttempts": 2,
+      "dependsOn": [
+        "ready"
+      ],
+      "priority": "normal",
+      "config": {
+        "agentId": "software-review-agent",
+        "targetSlug": "pipedrive",
+        "maxAutomaticRevisions": 1,
+        "expandFromContentPlan": false,
+        "expandKind": "none",
+        "stopAfterApproval": true,
+        "allowNormalizedFacts": false,
+        "optionalWhenBlocked": false,
+        "forceTransientFailOnce": true
+      },
+      "inputRefs": {},
+      "outputRefs": {
+        "draftId": "draft-deterministic-v1-software-review-agent-pipedrive-2026-08-13T11-55-05-620Z",
+        "qaStatus": "pass",
+        "agentId": "software-review-agent",
+        "target": "pipedrive"
+      },
+      "inputSnapshot": {
+        "researchFactIds": [
+          "fact-pipedrive-pricing.plans.essential-pipedrive-pricing-fixture",
+          "fact-pipedrive-pricing.plans.advanced-pipedrive-pricing-fixture",
+          "fact-pipedrive-pricing.plans.professional-pipedrive-pricing-fixture",
+          "fact-pipedrive-pricing.plans.power-pipedrive-pricing-fixture",
+          "fact-pipedrive-pricing.plans.enterprise-pipedrive-pricing-fixture",
+          "fact-pipedrive-pricing.currency-pipedrive-pricing-fixture",
+          "fact-pipedrive-pricing.hasFreeTrial-pipedrive-pricing-fixture",
+          "fact-pipedrive-pricing.hasFreePlan-pipedrive-pricing-fixture",
+          "fact-pipedrive-pricing.model-pipedrive-pricing-fixture",
+          "fact-pipedrive-identity.shortDescription-pipedrive-product-fixture",
+          "fact-pipedrive-positioning.claim-pipedrive-product-fixture",
+          "fact-pipedrive-features.contact-management-pipedrive-product-fixture",
+          "fact-pipedrive-features.lead-management-pipedrive-product-fixture",
+          "fact-pipedrive-features.pipeline-management-pipedrive-product-fixture",
+          "fact-pipedrive-features.deal-management-pipedrive-product-fixture",
+          "fact-pipedrive-features.email-sync-pipedrive-product-fixture",
+          "fact-pipedrive-features.workflow-automation-pipedrive-product-fixture",
+          "fact-pipedrive-features.reporting-pipedrive-product-fixture",
+          "fact-pipedrive-features.forecasting-pipedrive-product-fixture",
+          "fact-pipedrive-features.custom-fields-pipedrive-product-fixture",
+          "fact-pipedrive-features.custom-pipelines-pipedrive-product-fixture",
+          "fact-pipedrive-features.mobile-app-pipedrive-product-fixture",
+          "fact-pipedrive-features.ai-assistance-pipedrive-product-fixture",
+          "fact-pipedrive-ai.email-generation-pipedrive-product-fixture",
+          "fact-pipedrive-ai.assistant-pipedrive-product-fixture",
+          "fact-pipedrive-ai.forecasting-pipedrive-product-fixture",
+          "fact-pipedrive-ai.automation-pipedrive-product-fixture"
+        ],
+        "methodologySlug": "crm-editorial",
+        "methodologyVersion": "1.0.0",
+        "agentVersion": "1.0.0",
+        "contextBuiltAt": "2026-08-13T11:55:05.619Z"
+      },
+      "blockers": [],
+      "warnings": [
+        "Retry scheduled (1/2): provider-timeout"
+      ],
+      "agentTaskId": "exec-software-review-agent-pipedrive-1786622105613",
+      "draftId": "draft-deterministic-v1-software-review-agent-pipedrive-2026-08-13T11-55-05-620Z",
+      "startedAt": "2026-08-13T11:55:05.613Z",
+      "completedAt": "2026-08-13T11:55:05.622Z",
+      "revisionAttempts": 0
+    }
+  ],
+  "history": [
+    {
+      "at": "2026-08-13T11:55:05.602Z",
+      "event": "workflow_created",
+      "message": "Created retry-poc:v1.0.0"
+    },
+    {
+      "at": "2026-08-13T11:55:05.603Z",
+      "event": "workflow_started",
+      "message": "Workflow execution started"
+    },
+    {
+      "at": "2026-08-13T11:55:05.603Z",
+      "event": "workflow_step_started",
+      "stepId": "ready",
+      "message": "Started ready"
+    },
+    {
+      "at": "2026-08-13T11:55:05.604Z",
+      "event": "workflow_step_completed",
+      "stepId": "ready",
+      "message": "No-op step completed"
+    },
+    {
+      "at": "2026-08-13T11:55:05.604Z",
+      "event": "workflow_step_started",
+      "stepId": "generate",
+      "message": "Started generate"
+    },
+    {
+      "at": "2026-08-13T11:55:05.605Z",
+      "event": "workflow_step_failed",
+      "stepId": "generate",
+      "message": "Retryable failure on generate: transient: simulated provider timeout"
+    },
+    {
+      "at": "2026-08-13T11:55:05.612Z",
+      "event": "workflow_step_started",
+      "stepId": "generate",
+      "message": "Started generate"
+    },
+    {
+      "at": "2026-08-13T11:55:05.622Z",
+      "event": "workflow_step_completed",
+      "stepId": "generate",
+      "message": "Agent software-review-agent → draft draft-deterministic-v1-software-review-agent-pipedrive-2026-08-13T11-55-05-620Z (qa=pass)"
+    },
+    {
+      "at": "2026-08-13T11:55:05.623Z",
+      "event": "workflow_completed",
+      "message": "Workflow completed"
+    }
+  ],
+  "options": {},
+  "warnings": [],
+  "createdAt": "2026-08-13T11:55:05.602Z",
+  "updatedAt": "2026-08-13T11:55:05.623Z"
+}

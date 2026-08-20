@@ -1,0 +1,28 @@
+[
+  {
+    "id": "conflict-hubspot-sales-hub-professional-price",
+    "productSlug": "hubspot",
+    "field": "pricing.salesHub.professional.amountPerSeatMonthly",
+    "factIds": [
+      "fact-hubspot-pricing.sales-hub.professional.catalog",
+      "fact-hubspot-pricing.sales-hub.professional.marketing"
+    ],
+    "status": "resolved-manual",
+    "preferredFactId": "fact-hubspot-pricing.sales-hub.professional.catalog",
+    "notes": "Re-checked 2026-08-18 from first-party sources. Catalog still publishes Sales Hub Professional as Starts at $100/month per seat. The Sales product page (hubspot.com/products/sales) now also publishes Starts at $100/month per seat — the earlier $120 marketing card is superseded, not a second list amount. Dedicated Sales pricing (hubspot.com/pricing/sales) shows $90/mo/seat billed annually vs $100/mo/seat monthly; that is a billing-period display, not used as amountPerSeatMonthly. Preferred value is catalog $100.",
+    "detectedAt": "2026-08-14T06:00:00.000Z"
+  },
+  {
+    "id": "conflict-hubspot-smart-crm-starter-promo",
+    "productSlug": "hubspot",
+    "field": "pricing.plans.starter.amountPerSeatMonthly",
+    "factIds": [
+      "fact-hubspot-pricing.plans.starter",
+      "fact-hubspot-pricing.smart-crm.starter.catalog"
+    ],
+    "status": "resolved-manual",
+    "preferredFactId": "fact-hubspot-pricing.plans.starter",
+    "notes": "Marketing Starter $15* is new-customer discount; catalog Smart CRM Starter list $20. Primary card uses marketing starts-at $15 with catalog note.",
+    "detectedAt": "2026-08-14T06:00:00.000Z"
+  }
+]

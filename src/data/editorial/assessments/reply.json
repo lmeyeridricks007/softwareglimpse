@@ -1,0 +1,178 @@
+{
+  "id": "assessment-reply-si-v1",
+  "productSlug": "reply",
+  "methodologySlug": "sales-intelligence-editorial",
+  "methodologyVersion": "1.0.0",
+  "status": "approved",
+  "verdict": "Reply.io is an AI sales engagement platform that bundles its own B2B data layer, so it scores well across the sales intelligence methodology rather than in a single column. Email outreach is the standout — sequences, AI generation, and deliverability tooling are the product's core — with prospecting, CRM sync, and campaign reporting close behind. Based on first-party Reply.io research; the live pricing page HTML was Cloudflare-blocked, so plan amounts come from first-party published figures. Not hands-on tested.",
+  "strengths": [
+    "Multichannel sequences across email, LinkedIn, calls, SMS, and WhatsApp in one campaign builder",
+    "Built-in Reply Data means prospecting and sending live in the same tool rather than across two vendors",
+    "AI email generation, Jason AI SDR, and sequence-level automation are documented as supported capabilities",
+    "Campaign, channel, and team reporting is a first-class module rather than a usage dashboard",
+    "Published starting rungs of $49/month per seat for Email Volume and $89/month per seat for Multichannel"
+  ],
+  "weaknesses": [
+    "Reply Data is a bundled convenience layer, not a specialist database with published coverage figures",
+    "Jason AI SDR and Agency tiers are quote-gated, so the top of the ladder is not self-serve",
+    "Mailbox warmup, LinkedIn accounts, and data credits create ongoing operational overhead per seat",
+    "LinkedIn automation carries platform compliance risk that some organizations cannot accept",
+    "There is no free plan — evaluation runs through a time-limited trial only"
+  ],
+  "bestFor": [
+    "Outbound SDR teams consolidating contact data and multichannel sequencing into one subscription",
+    "Agencies running outreach infrastructure across multiple client workspaces",
+    "Teams evaluating AI SDR agents and AI personalization inside an engagement suite rather than as bolt-ons",
+    "Sales managers who need per-sequence and per-channel reporting to tune outbound"
+  ],
+  "notIdealFor": [
+    "Buyers who only need a contact database and already own a sequencer",
+    "Organizations whose compliance posture rules out LinkedIn automation",
+    "Teams needing a CRM system of record — Reply feeds a CRM, it does not replace one",
+    "Buyers who require a free tier or published pricing for every tier before shortlisting"
+  ],
+  "tradeoffs": [
+    "One-vendor consolidation of data plus engagement vs the deeper coverage of a specialist data provider",
+    "Published entry pricing vs quote-gated AI SDR and Agency tiers",
+    "AI automation and multichannel reach vs the compliance and deliverability overhead they create",
+    "Per-seat subscription predictability vs data and AI credits that stack on top"
+  ],
+  "recommendation": "Choose Reply.io when multichannel outbound execution is the primary job and you would rather have adequate built-in data than manage a separate data vendor. Keep HubSpot, Salesforce, or Pipedrive as the system of record. Compare Apollo when you want the same consolidation with a free tier, Lusha or BookYourData when data coverage matters more than sequencing, and Amplemarket for AI-first outbound. Confirm current plan pricing and credit allowances on reply.io before purchase.",
+  "editorialNotes": "Re-scored on the sales intelligence editorial methodology v1.0.0 — replaces the earlier CRM-methodology assessment, which penalized Reply for not being a pipeline CRM it never claimed to be. Sourced from Reply.io first-party fixtures covering positioning, features, AI capabilities, and plan structure. Dollar amounts ($49 Email Volume, $89 Multichannel per seat/month) are first-party published figures held in fixtures; the live /pricing page HTML was not retrieved in this pass. handsOnTesting=false.",
+  "handsOnTesting": false,
+  "confidence": "medium",
+  "criterionAssessments": [
+    {
+      "criterionSlug": "contact-data",
+      "score": 7,
+      "rationale": "Reply Data ships B2B contact and company records inside the platform, and contact management is documented as supported — enough to build lists without a second vendor, though coverage depth is not published the way a specialist database publishes it.",
+      "supportingFactIds": [
+        "fact-reply-identity.shortDescription-reply-product-fixture",
+        "fact-reply-features.contact-management-reply-product-fixture"
+      ],
+      "confidence": "medium",
+      "status": "approved",
+      "reviewedAt": "2026-08-17T06:30:00.000Z",
+      "reviewer": "editorial"
+    },
+    {
+      "criterionSlug": "prospecting",
+      "score": 8,
+      "rationale": "Lead management is supported and the built-in data layer feeds sequences directly, so list building, filtering, and enrollment happen in one place; Jason AI SDR extends this into automated prospect selection.",
+      "supportingFactIds": [
+        "fact-reply-features.lead-management-reply-product-fixture",
+        "fact-reply-positioning.claim-reply-product-fixture",
+        "fact-reply-pricing.plans.jason-ai-sdr-reply-pricing-fixture"
+      ],
+      "confidence": "medium",
+      "status": "approved",
+      "reviewedAt": "2026-08-17T06:30:00.000Z",
+      "reviewer": "editorial"
+    },
+    {
+      "criterionSlug": "data-enrichment",
+      "score": 7,
+      "rationale": "Contact and lead records are enriched inside the outbound workflow so sequences fire against complete profiles; it is enrichment in service of sending rather than a standalone CRM hygiene engine.",
+      "supportingFactIds": [
+        "fact-reply-features.contact-management-reply-product-fixture",
+        "fact-reply-features.lead-management-reply-product-fixture"
+      ],
+      "confidence": "medium",
+      "status": "approved",
+      "reviewedAt": "2026-08-17T06:30:00.000Z",
+      "reviewer": "editorial"
+    },
+    {
+      "criterionSlug": "email-outreach",
+      "score": 9,
+      "rationale": "This is the product's core: email sequences are supported, AI email generation and automation are supported capabilities, and the Email Volume plan exists specifically to price sending capacity — with LinkedIn, calls, SMS, and WhatsApp layered into the same campaign.",
+      "supportingFactIds": [
+        "fact-reply-features.email-sequences-reply-product-fixture",
+        "fact-reply-ai.email-generation-reply-product-fixture",
+        "fact-reply-ai.automation-reply-product-fixture",
+        "fact-reply-pricing.plans.email-volume-reply-pricing-fixture"
+      ],
+      "confidence": "medium",
+      "status": "approved",
+      "reviewedAt": "2026-08-17T06:30:00.000Z",
+      "reviewer": "editorial"
+    },
+    {
+      "criterionSlug": "crm-sync",
+      "score": 8,
+      "rationale": "CRM import, contact sync, and activity write-back are part of the documented outbound loop, with lead and contact management both supported — Reply is designed to feed a CRM of record rather than replace it.",
+      "supportingFactIds": [
+        "fact-reply-features.lead-management-reply-product-fixture",
+        "fact-reply-features.contact-management-reply-product-fixture",
+        "fact-reply-positioning.claim-reply-product-fixture"
+      ],
+      "confidence": "medium",
+      "status": "approved",
+      "reviewedAt": "2026-08-17T06:30:00.000Z",
+      "reviewer": "editorial"
+    },
+    {
+      "criterionSlug": "ease-of-use",
+      "score": 7,
+      "rationale": "The sequence-first workspace and clear Email Volume versus Multichannel split make the mental model easy, and AI assistance removes blank-page friction; multichannel setup — mailbox warmup, LinkedIn accounts, channel limits — is where the learning curve actually sits.",
+      "supportingFactIds": [
+        "fact-reply-identity.shortDescription-reply-product-fixture",
+        "fact-reply-features.ai-assistance-reply-product-fixture",
+        "fact-reply-pricing.plans.multichannel-reply-pricing-fixture"
+      ],
+      "confidence": "medium",
+      "status": "approved",
+      "reviewedAt": "2026-08-17T06:30:00.000Z",
+      "reviewer": "editorial"
+    },
+    {
+      "criterionSlug": "reporting",
+      "score": 8,
+      "rationale": "Reporting is documented as supported and spans sequence, channel, and team performance — the analytics a sales intelligence buyer actually needs to tune outbound, rather than a credit-usage dashboard.",
+      "supportingFactIds": [
+        "fact-reply-features.reporting-reply-product-fixture",
+        "fact-reply-features.email-sequences-reply-product-fixture"
+      ],
+      "confidence": "medium",
+      "status": "approved",
+      "reviewedAt": "2026-08-17T06:30:00.000Z",
+      "reviewer": "editorial"
+    },
+    {
+      "criterionSlug": "value-for-money",
+      "score": 7,
+      "rationale": "Published starting rungs of $49 and $89 per seat per month plus a free trial are competitive for a data-and-engagement bundle; the score is held back by quote-gated AI SDR and Agency tiers, the absence of a free plan, and data/AI credits that stack on top of seats.",
+      "supportingFactIds": [
+        "fact-reply-pricing.plans.email-volume-reply-pricing-fixture",
+        "fact-reply-pricing.plans.multichannel-reply-pricing-fixture",
+        "fact-reply-pricing.hasFreeTrial-reply-pricing-fixture",
+        "fact-reply-pricing.hasFreePlan-reply-pricing-fixture"
+      ],
+      "confidence": "medium",
+      "status": "approved",
+      "reviewedAt": "2026-08-17T06:30:00.000Z",
+      "reviewer": "editorial"
+    }
+  ],
+  "overallScore": 7.6,
+  "overallScoreRationale": "Equal-weight average of the eight sales intelligence criteria (61/8 = 7.625, rounded to 7.6). Email outreach carries the score because sequencing is the product's core competence; contact data, enrichment, ease of use, and value sit at 7 because the bundled data layer and quote-gated upper tiers are good rather than best-in-class. Scoring Reply on CRM criteria previously produced 6.7 by penalizing an absent pipeline board it never claimed to offer.",
+  "scoreAudit": [
+    {
+      "at": "2026-08-17T06:00:00.000Z",
+      "actor": "editorial",
+      "change": "Initial scoring against CRM editorial methodology (10 criteria)",
+      "nextOverall": 6.7
+    },
+    {
+      "at": "2026-08-17T06:30:00.000Z",
+      "actor": "editorial",
+      "change": "Re-scored on sales-intelligence-editorial v1.0.0 across all 8 SI criteria; CRM criteria retired as category-inappropriate; approved with medium confidence; handsOnTesting=false",
+      "previousOverall": 6.7,
+      "nextOverall": 7.6
+    }
+  ],
+  "reviewedAt": "2026-08-17T06:30:00.000Z",
+  "reviewer": "editorial",
+  "createdAt": "2026-08-17T05:55:10.617Z",
+  "updatedAt": "2026-08-17T06:30:00.000Z"
+}

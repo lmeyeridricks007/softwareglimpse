@@ -1,0 +1,881 @@
+[
+  {
+    "id": "fact-salesflare-pricing.hasFreePlan",
+    "productSlug": "salesflare",
+    "domain": "free-plan",
+    "field": "pricing.hasFreePlan",
+    "value": false,
+    "sourceIds": [
+      "salesflare-pricing-official"
+    ],
+    "evidence": [
+      {
+        "sourceId": "salesflare-pricing-official",
+        "excerpt": "hasFreePlan=False per official pricing research."
+      }
+    ],
+    "extractedAt": "2026-08-13T18:00:00.000Z",
+    "normalizedAt": "2026-08-13T18:00:00.000Z",
+    "verifiedAt": "2026-08-13T18:00:00.000Z",
+    "approvedAt": "2026-08-13T18:00:00.000Z",
+    "confidence": "high",
+    "status": "approved",
+    "isFixture": false
+  },
+  {
+    "id": "fact-salesflare-pricing.hasFreeTrial",
+    "productSlug": "salesflare",
+    "domain": "free-trial",
+    "field": "pricing.hasFreeTrial",
+    "value": true,
+    "sourceIds": [
+      "salesflare-pricing-official"
+    ],
+    "evidence": [
+      {
+        "sourceId": "salesflare-pricing-official",
+        "excerpt": "hasFreeTrial=True per official pricing page."
+      }
+    ],
+    "extractedAt": "2026-08-13T18:00:00.000Z",
+    "normalizedAt": "2026-08-13T18:00:00.000Z",
+    "verifiedAt": "2026-08-13T18:00:00.000Z",
+    "approvedAt": "2026-08-13T18:00:00.000Z",
+    "confidence": "high",
+    "status": "approved",
+    "isFixture": false
+  },
+  {
+    "id": "fact-salesflare-pricing.startingPriceMonthly",
+    "productSlug": "salesflare",
+    "domain": "pricing",
+    "field": "pricing.startingPriceMonthly",
+    "value": 29,
+    "sourceIds": [
+      "salesflare-pricing-official"
+    ],
+    "evidence": [
+      {
+        "sourceId": "salesflare-pricing-official",
+        "excerpt": "Starting list price $29/user/mo (annual where applicable)."
+      }
+    ],
+    "extractedAt": "2026-08-13T18:00:00.000Z",
+    "normalizedAt": "2026-08-13T18:00:00.000Z",
+    "verifiedAt": "2026-08-13T18:00:00.000Z",
+    "approvedAt": "2026-08-13T18:00:00.000Z",
+    "confidence": "high",
+    "status": "approved",
+    "isFixture": false
+  },
+  {
+    "id": "fact-salesflare-pricing.currency",
+    "productSlug": "salesflare",
+    "domain": "pricing",
+    "field": "pricing.currency",
+    "value": "USD",
+    "sourceIds": [
+      "salesflare-pricing-official"
+    ],
+    "evidence": [
+      {
+        "sourceId": "salesflare-pricing-official",
+        "excerpt": "USD list pricing used for enrichment."
+      }
+    ],
+    "extractedAt": "2026-08-13T18:00:00.000Z",
+    "normalizedAt": "2026-08-13T18:00:00.000Z",
+    "verifiedAt": "2026-08-13T18:00:00.000Z",
+    "approvedAt": "2026-08-13T18:00:00.000Z",
+    "confidence": "high",
+    "status": "approved",
+    "isFixture": false
+  },
+  {
+    "id": "fact-salesflare-pricing.model",
+    "productSlug": "salesflare",
+    "domain": "pricing",
+    "field": "pricing.model",
+    "value": "subscription",
+    "sourceIds": [
+      "salesflare-pricing-official"
+    ],
+    "evidence": [
+      {
+        "sourceId": "salesflare-pricing-official",
+        "excerpt": "Subscription pricing model."
+      }
+    ],
+    "extractedAt": "2026-08-13T18:00:00.000Z",
+    "normalizedAt": "2026-08-13T18:00:00.000Z",
+    "verifiedAt": "2026-08-13T18:00:00.000Z",
+    "approvedAt": "2026-08-13T18:00:00.000Z",
+    "confidence": "high",
+    "status": "approved",
+    "isFixture": false
+  },
+  {
+    "id": "fact-salesflare-pricing.plans.growth",
+    "productSlug": "salesflare",
+    "domain": "plans",
+    "field": "pricing.plans.growth",
+    "value": {
+      "id": "plan-growth",
+      "slug": "growth",
+      "name": "Growth",
+      "isFree": false,
+      "contactSales": false,
+      "hasFreeTrial": true,
+      "highlighted": false,
+      "rules": [
+        {
+          "kind": "per-seat",
+          "amountPerSeat": 29,
+          "currency": "USD",
+          "interval": "year",
+          "amountPeriod": "month"
+        },
+        {
+          "kind": "per-seat",
+          "amountPerSeat": 39,
+          "currency": "USD",
+          "interval": "month",
+          "amountPeriod": "month"
+        }
+      ],
+      "trialDays": 30
+    },
+    "sourceIds": [
+      "salesflare-pricing-official"
+    ],
+    "evidence": [
+      {
+        "sourceId": "salesflare-pricing-official",
+        "excerpt": "Plan Growth verified on official pricing page."
+      }
+    ],
+    "extractedAt": "2026-08-13T18:00:00.000Z",
+    "normalizedAt": "2026-08-13T18:00:00.000Z",
+    "verifiedAt": "2026-08-13T18:00:00.000Z",
+    "approvedAt": "2026-08-13T18:00:00.000Z",
+    "confidence": "high",
+    "status": "approved",
+    "isFixture": false
+  },
+  {
+    "id": "fact-salesflare-pricing.plans.pro",
+    "productSlug": "salesflare",
+    "domain": "plans",
+    "field": "pricing.plans.pro",
+    "value": {
+      "id": "plan-pro",
+      "slug": "pro",
+      "name": "Pro",
+      "isFree": false,
+      "contactSales": false,
+      "hasFreeTrial": true,
+      "highlighted": true,
+      "rules": [
+        {
+          "kind": "per-seat",
+          "amountPerSeat": 49,
+          "currency": "USD",
+          "interval": "year",
+          "amountPeriod": "month"
+        },
+        {
+          "kind": "per-seat",
+          "amountPerSeat": 64,
+          "currency": "USD",
+          "interval": "month",
+          "amountPeriod": "month"
+        }
+      ],
+      "trialDays": 30
+    },
+    "sourceIds": [
+      "salesflare-pricing-official"
+    ],
+    "evidence": [
+      {
+        "sourceId": "salesflare-pricing-official",
+        "excerpt": "Plan Pro verified on official pricing page."
+      }
+    ],
+    "extractedAt": "2026-08-13T18:00:00.000Z",
+    "normalizedAt": "2026-08-13T18:00:00.000Z",
+    "verifiedAt": "2026-08-13T18:00:00.000Z",
+    "approvedAt": "2026-08-13T18:00:00.000Z",
+    "confidence": "high",
+    "status": "approved",
+    "isFixture": false
+  },
+  {
+    "id": "fact-salesflare-pricing.plans.enterprise",
+    "productSlug": "salesflare",
+    "domain": "plans",
+    "field": "pricing.plans.enterprise",
+    "value": {
+      "id": "plan-enterprise",
+      "slug": "enterprise",
+      "name": "Enterprise",
+      "isFree": false,
+      "contactSales": false,
+      "hasFreeTrial": true,
+      "highlighted": false,
+      "rules": [
+        {
+          "kind": "per-seat",
+          "amountPerSeat": 99,
+          "currency": "USD",
+          "interval": "year",
+          "amountPeriod": "month"
+        },
+        {
+          "kind": "per-seat",
+          "amountPerSeat": 124,
+          "currency": "USD",
+          "interval": "month",
+          "amountPeriod": "month"
+        }
+      ],
+      "trialDays": 30,
+      "notes": "Minimum of 5 users per pricing page."
+    },
+    "sourceIds": [
+      "salesflare-pricing-official"
+    ],
+    "evidence": [
+      {
+        "sourceId": "salesflare-pricing-official",
+        "excerpt": "Plan Enterprise verified on official pricing page."
+      }
+    ],
+    "extractedAt": "2026-08-13T18:00:00.000Z",
+    "normalizedAt": "2026-08-13T18:00:00.000Z",
+    "verifiedAt": "2026-08-13T18:00:00.000Z",
+    "approvedAt": "2026-08-13T18:00:00.000Z",
+    "confidence": "high",
+    "status": "approved",
+    "isFixture": false
+  },
+  {
+    "id": "fact-salesflare-features.contact-management",
+    "productSlug": "salesflare",
+    "domain": "features",
+    "field": "features.contact-management",
+    "value": {
+      "featureSlug": "contact-management",
+      "availability": "supported",
+      "planSlugs": [
+        "growth",
+        "pro",
+        "enterprise"
+      ]
+    },
+    "sourceIds": [
+      "salesflare-product-official"
+    ],
+    "evidence": [
+      {
+        "sourceId": "salesflare-product-official",
+        "excerpt": "contact-management marked supported from official sources."
+      }
+    ],
+    "extractedAt": "2026-08-13T18:00:00.000Z",
+    "normalizedAt": "2026-08-13T18:00:00.000Z",
+    "verifiedAt": "2026-08-13T18:00:00.000Z",
+    "approvedAt": "2026-08-13T18:00:00.000Z",
+    "confidence": "high",
+    "status": "approved",
+    "isFixture": false
+  },
+  {
+    "id": "fact-salesflare-features.lead-management",
+    "productSlug": "salesflare",
+    "domain": "features",
+    "field": "features.lead-management",
+    "value": {
+      "featureSlug": "lead-management",
+      "availability": "supported",
+      "planSlugs": [
+        "growth",
+        "pro",
+        "enterprise"
+      ]
+    },
+    "sourceIds": [
+      "salesflare-product-official",
+      "salesflare-pricing-official"
+    ],
+    "evidence": [
+      {
+        "sourceId": "salesflare-product-official",
+        "excerpt": "lead-management marked supported from official sources."
+      }
+    ],
+    "extractedAt": "2026-08-13T18:00:00.000Z",
+    "normalizedAt": "2026-08-13T18:00:00.000Z",
+    "verifiedAt": "2026-08-13T18:00:00.000Z",
+    "approvedAt": "2026-08-13T18:00:00.000Z",
+    "confidence": "high",
+    "status": "approved",
+    "isFixture": false
+  },
+  {
+    "id": "fact-salesflare-features.pipeline-management",
+    "productSlug": "salesflare",
+    "domain": "features",
+    "field": "features.pipeline-management",
+    "value": {
+      "featureSlug": "pipeline-management",
+      "availability": "supported",
+      "planSlugs": [
+        "growth",
+        "pro",
+        "enterprise"
+      ]
+    },
+    "sourceIds": [
+      "salesflare-product-official"
+    ],
+    "evidence": [
+      {
+        "sourceId": "salesflare-product-official",
+        "excerpt": "pipeline-management marked supported from official sources."
+      }
+    ],
+    "extractedAt": "2026-08-13T18:00:00.000Z",
+    "normalizedAt": "2026-08-13T18:00:00.000Z",
+    "verifiedAt": "2026-08-13T18:00:00.000Z",
+    "approvedAt": "2026-08-13T18:00:00.000Z",
+    "confidence": "high",
+    "status": "approved",
+    "isFixture": false
+  },
+  {
+    "id": "fact-salesflare-features.deal-management",
+    "productSlug": "salesflare",
+    "domain": "features",
+    "field": "features.deal-management",
+    "value": {
+      "featureSlug": "deal-management",
+      "availability": "supported",
+      "planSlugs": [
+        "growth",
+        "pro",
+        "enterprise"
+      ]
+    },
+    "sourceIds": [
+      "salesflare-product-official"
+    ],
+    "evidence": [
+      {
+        "sourceId": "salesflare-product-official",
+        "excerpt": "deal-management marked supported from official sources."
+      }
+    ],
+    "extractedAt": "2026-08-13T18:00:00.000Z",
+    "normalizedAt": "2026-08-13T18:00:00.000Z",
+    "verifiedAt": "2026-08-13T18:00:00.000Z",
+    "approvedAt": "2026-08-13T18:00:00.000Z",
+    "confidence": "high",
+    "status": "approved",
+    "isFixture": false
+  },
+  {
+    "id": "fact-salesflare-features.email-sync",
+    "productSlug": "salesflare",
+    "domain": "features",
+    "field": "features.email-sync",
+    "value": {
+      "featureSlug": "email-sync",
+      "availability": "supported",
+      "planSlugs": [
+        "growth",
+        "pro",
+        "enterprise"
+      ]
+    },
+    "sourceIds": [
+      "salesflare-product-official"
+    ],
+    "evidence": [
+      {
+        "sourceId": "salesflare-product-official",
+        "excerpt": "email-sync marked supported from official sources."
+      }
+    ],
+    "extractedAt": "2026-08-13T18:00:00.000Z",
+    "normalizedAt": "2026-08-13T18:00:00.000Z",
+    "verifiedAt": "2026-08-13T18:00:00.000Z",
+    "approvedAt": "2026-08-13T18:00:00.000Z",
+    "confidence": "high",
+    "status": "approved",
+    "isFixture": false
+  },
+  {
+    "id": "fact-salesflare-features.email-tracking",
+    "productSlug": "salesflare",
+    "domain": "features",
+    "field": "features.email-tracking",
+    "value": {
+      "featureSlug": "email-tracking",
+      "availability": "supported",
+      "planSlugs": [
+        "growth",
+        "pro",
+        "enterprise"
+      ]
+    },
+    "sourceIds": [
+      "salesflare-product-official"
+    ],
+    "evidence": [
+      {
+        "sourceId": "salesflare-product-official",
+        "excerpt": "email-tracking marked supported from official sources."
+      }
+    ],
+    "extractedAt": "2026-08-13T18:00:00.000Z",
+    "normalizedAt": "2026-08-13T18:00:00.000Z",
+    "verifiedAt": "2026-08-13T18:00:00.000Z",
+    "approvedAt": "2026-08-13T18:00:00.000Z",
+    "confidence": "high",
+    "status": "approved",
+    "isFixture": false
+  },
+  {
+    "id": "fact-salesflare-features.email-campaigns",
+    "productSlug": "salesflare",
+    "domain": "features",
+    "field": "features.email-campaigns",
+    "value": {
+      "featureSlug": "email-campaigns",
+      "availability": "supported",
+      "planSlugs": [
+        "growth",
+        "pro",
+        "enterprise"
+      ]
+    },
+    "sourceIds": [
+      "salesflare-pricing-official"
+    ],
+    "evidence": [
+      {
+        "sourceId": "salesflare-pricing-official",
+        "excerpt": "email-campaigns marked supported from official sources."
+      }
+    ],
+    "extractedAt": "2026-08-13T18:00:00.000Z",
+    "normalizedAt": "2026-08-13T18:00:00.000Z",
+    "verifiedAt": "2026-08-13T18:00:00.000Z",
+    "approvedAt": "2026-08-13T18:00:00.000Z",
+    "confidence": "high",
+    "status": "approved",
+    "isFixture": false
+  },
+  {
+    "id": "fact-salesflare-features.email-sequences",
+    "productSlug": "salesflare",
+    "domain": "features",
+    "field": "features.email-sequences",
+    "value": {
+      "featureSlug": "email-sequences",
+      "availability": "higher-plan-only",
+      "planSlugs": [
+        "pro",
+        "enterprise"
+      ]
+    },
+    "sourceIds": [
+      "salesflare-pricing-official"
+    ],
+    "evidence": [
+      {
+        "sourceId": "salesflare-pricing-official",
+        "excerpt": "email-sequences marked higher-plan-only from official sources."
+      }
+    ],
+    "extractedAt": "2026-08-13T18:00:00.000Z",
+    "normalizedAt": "2026-08-13T18:00:00.000Z",
+    "verifiedAt": "2026-08-13T18:00:00.000Z",
+    "approvedAt": "2026-08-13T18:00:00.000Z",
+    "confidence": "high",
+    "status": "approved",
+    "isFixture": false
+  },
+  {
+    "id": "fact-salesflare-features.workflow-automation",
+    "productSlug": "salesflare",
+    "domain": "features",
+    "field": "features.workflow-automation",
+    "value": {
+      "featureSlug": "workflow-automation",
+      "availability": "higher-plan-only",
+      "planSlugs": [
+        "pro",
+        "enterprise"
+      ]
+    },
+    "sourceIds": [
+      "salesflare-pricing-official"
+    ],
+    "evidence": [
+      {
+        "sourceId": "salesflare-pricing-official",
+        "excerpt": "workflow-automation marked higher-plan-only from official sources."
+      }
+    ],
+    "extractedAt": "2026-08-13T18:00:00.000Z",
+    "normalizedAt": "2026-08-13T18:00:00.000Z",
+    "verifiedAt": "2026-08-13T18:00:00.000Z",
+    "approvedAt": "2026-08-13T18:00:00.000Z",
+    "confidence": "high",
+    "status": "approved",
+    "isFixture": false
+  },
+  {
+    "id": "fact-salesflare-features.sales-automation",
+    "productSlug": "salesflare",
+    "domain": "features",
+    "field": "features.sales-automation",
+    "value": {
+      "featureSlug": "sales-automation",
+      "availability": "supported",
+      "planSlugs": [
+        "growth",
+        "pro",
+        "enterprise"
+      ]
+    },
+    "sourceIds": [
+      "salesflare-product-official"
+    ],
+    "evidence": [
+      {
+        "sourceId": "salesflare-product-official",
+        "excerpt": "sales-automation marked supported from official sources."
+      }
+    ],
+    "extractedAt": "2026-08-13T18:00:00.000Z",
+    "normalizedAt": "2026-08-13T18:00:00.000Z",
+    "verifiedAt": "2026-08-13T18:00:00.000Z",
+    "approvedAt": "2026-08-13T18:00:00.000Z",
+    "confidence": "high",
+    "status": "approved",
+    "isFixture": false
+  },
+  {
+    "id": "fact-salesflare-features.reporting",
+    "productSlug": "salesflare",
+    "domain": "features",
+    "field": "features.reporting",
+    "value": {
+      "featureSlug": "reporting",
+      "availability": "supported",
+      "planSlugs": [
+        "growth",
+        "pro",
+        "enterprise"
+      ]
+    },
+    "sourceIds": [
+      "salesflare-pricing-official"
+    ],
+    "evidence": [
+      {
+        "sourceId": "salesflare-pricing-official",
+        "excerpt": "reporting marked supported from official sources."
+      }
+    ],
+    "extractedAt": "2026-08-13T18:00:00.000Z",
+    "normalizedAt": "2026-08-13T18:00:00.000Z",
+    "verifiedAt": "2026-08-13T18:00:00.000Z",
+    "approvedAt": "2026-08-13T18:00:00.000Z",
+    "confidence": "high",
+    "status": "approved",
+    "isFixture": false
+  },
+  {
+    "id": "fact-salesflare-features.data-enrichment",
+    "productSlug": "salesflare",
+    "domain": "features",
+    "field": "features.data-enrichment",
+    "value": {
+      "featureSlug": "data-enrichment",
+      "availability": "supported",
+      "planSlugs": [
+        "growth",
+        "pro",
+        "enterprise"
+      ]
+    },
+    "sourceIds": [
+      "salesflare-product-official",
+      "salesflare-pricing-official"
+    ],
+    "evidence": [
+      {
+        "sourceId": "salesflare-product-official",
+        "excerpt": "data-enrichment marked supported from official sources."
+      }
+    ],
+    "extractedAt": "2026-08-13T18:00:00.000Z",
+    "normalizedAt": "2026-08-13T18:00:00.000Z",
+    "verifiedAt": "2026-08-13T18:00:00.000Z",
+    "approvedAt": "2026-08-13T18:00:00.000Z",
+    "confidence": "high",
+    "status": "approved",
+    "isFixture": false
+  },
+  {
+    "id": "fact-salesflare-features.prospecting",
+    "productSlug": "salesflare",
+    "domain": "features",
+    "field": "features.prospecting",
+    "value": {
+      "featureSlug": "prospecting",
+      "availability": "supported",
+      "planSlugs": [
+        "growth",
+        "pro",
+        "enterprise"
+      ]
+    },
+    "sourceIds": [
+      "salesflare-pricing-official"
+    ],
+    "evidence": [
+      {
+        "sourceId": "salesflare-pricing-official",
+        "excerpt": "prospecting marked supported from official sources."
+      }
+    ],
+    "extractedAt": "2026-08-13T18:00:00.000Z",
+    "normalizedAt": "2026-08-13T18:00:00.000Z",
+    "verifiedAt": "2026-08-13T18:00:00.000Z",
+    "approvedAt": "2026-08-13T18:00:00.000Z",
+    "confidence": "high",
+    "status": "approved",
+    "isFixture": false
+  },
+  {
+    "id": "fact-salesflare-features.mobile-app",
+    "productSlug": "salesflare",
+    "domain": "features",
+    "field": "features.mobile-app",
+    "value": {
+      "featureSlug": "mobile-app",
+      "availability": "supported",
+      "planSlugs": [
+        "growth",
+        "pro",
+        "enterprise"
+      ]
+    },
+    "sourceIds": [
+      "salesflare-product-official"
+    ],
+    "evidence": [
+      {
+        "sourceId": "salesflare-product-official",
+        "excerpt": "mobile-app marked supported from official sources."
+      }
+    ],
+    "extractedAt": "2026-08-13T18:00:00.000Z",
+    "normalizedAt": "2026-08-13T18:00:00.000Z",
+    "verifiedAt": "2026-08-13T18:00:00.000Z",
+    "approvedAt": "2026-08-13T18:00:00.000Z",
+    "confidence": "high",
+    "status": "approved",
+    "isFixture": false
+  },
+  {
+    "id": "fact-salesflare-features.ai-assistance",
+    "productSlug": "salesflare",
+    "domain": "features",
+    "field": "features.ai-assistance",
+    "value": {
+      "featureSlug": "ai-assistance",
+      "availability": "limited",
+      "planSlugs": [
+        "growth",
+        "pro",
+        "enterprise"
+      ]
+    },
+    "sourceIds": [
+      "salesflare-product-official"
+    ],
+    "evidence": [
+      {
+        "sourceId": "salesflare-product-official",
+        "excerpt": "ai-assistance marked limited from official sources."
+      }
+    ],
+    "extractedAt": "2026-08-13T18:00:00.000Z",
+    "normalizedAt": "2026-08-13T18:00:00.000Z",
+    "verifiedAt": "2026-08-13T18:00:00.000Z",
+    "approvedAt": "2026-08-13T18:00:00.000Z",
+    "confidence": "high",
+    "status": "approved",
+    "isFixture": false
+  },
+  {
+    "id": "fact-salesflare-features.integrations",
+    "productSlug": "salesflare",
+    "domain": "features",
+    "field": "features.integrations",
+    "value": {
+      "featureSlug": "integrations",
+      "availability": "supported",
+      "planSlugs": [
+        "growth",
+        "pro",
+        "enterprise"
+      ]
+    },
+    "sourceIds": [
+      "salesflare-product-official"
+    ],
+    "evidence": [
+      {
+        "sourceId": "salesflare-product-official",
+        "excerpt": "integrations marked supported from official sources."
+      }
+    ],
+    "extractedAt": "2026-08-13T18:00:00.000Z",
+    "normalizedAt": "2026-08-13T18:00:00.000Z",
+    "verifiedAt": "2026-08-13T18:00:00.000Z",
+    "approvedAt": "2026-08-13T18:00:00.000Z",
+    "confidence": "high",
+    "status": "approved",
+    "isFixture": false
+  },
+  {
+    "id": "fact-salesflare-features.custom-fields",
+    "productSlug": "salesflare",
+    "domain": "features",
+    "field": "features.custom-fields",
+    "value": {
+      "featureSlug": "custom-fields",
+      "availability": "supported",
+      "planSlugs": [
+        "growth",
+        "pro",
+        "enterprise"
+      ]
+    },
+    "sourceIds": [
+      "salesflare-product-official"
+    ],
+    "evidence": [
+      {
+        "sourceId": "salesflare-product-official",
+        "excerpt": "custom-fields marked supported from official sources."
+      }
+    ],
+    "extractedAt": "2026-08-13T18:00:00.000Z",
+    "normalizedAt": "2026-08-13T18:00:00.000Z",
+    "verifiedAt": "2026-08-13T18:00:00.000Z",
+    "approvedAt": "2026-08-13T18:00:00.000Z",
+    "confidence": "high",
+    "status": "approved",
+    "isFixture": false
+  },
+  {
+    "id": "fact-salesflare-ai.automation",
+    "productSlug": "salesflare",
+    "domain": "ai-capabilities",
+    "field": "ai.automation",
+    "value": "supported",
+    "sourceIds": [
+      "salesflare-product-official"
+    ],
+    "evidence": [
+      {
+        "sourceId": "salesflare-product-official",
+        "excerpt": "AI capability automation: supported."
+      }
+    ],
+    "extractedAt": "2026-08-13T18:00:00.000Z",
+    "normalizedAt": "2026-08-13T18:00:00.000Z",
+    "verifiedAt": "2026-08-13T18:00:00.000Z",
+    "approvedAt": "2026-08-13T18:00:00.000Z",
+    "confidence": "high",
+    "status": "approved",
+    "isFixture": false
+  },
+  {
+    "id": "fact-salesflare-ai.recommendations",
+    "productSlug": "salesflare",
+    "domain": "ai-capabilities",
+    "field": "ai.recommendations",
+    "value": "supported",
+    "sourceIds": [
+      "salesflare-product-official"
+    ],
+    "evidence": [
+      {
+        "sourceId": "salesflare-product-official",
+        "excerpt": "AI capability recommendations: supported."
+      }
+    ],
+    "extractedAt": "2026-08-13T18:00:00.000Z",
+    "normalizedAt": "2026-08-13T18:00:00.000Z",
+    "verifiedAt": "2026-08-13T18:00:00.000Z",
+    "approvedAt": "2026-08-13T18:00:00.000Z",
+    "confidence": "high",
+    "status": "approved",
+    "isFixture": false
+  },
+  {
+    "id": "fact-salesflare-ai.other",
+    "productSlug": "salesflare",
+    "domain": "ai-capabilities",
+    "field": "ai.other",
+    "value": "supported",
+    "sourceIds": [
+      "salesflare-product-official"
+    ],
+    "evidence": [
+      {
+        "sourceId": "salesflare-product-official",
+        "excerpt": "AI capability data-enrichment: supported."
+      }
+    ],
+    "extractedAt": "2026-08-13T18:00:00.000Z",
+    "normalizedAt": "2026-08-13T18:00:00.000Z",
+    "verifiedAt": "2026-08-13T18:00:00.000Z",
+    "approvedAt": "2026-08-13T18:00:00.000Z",
+    "confidence": "high",
+    "status": "approved",
+    "isFixture": false
+  },
+  {
+    "id": "fact-salesflare-positioning.primary",
+    "productSlug": "salesflare",
+    "domain": "product-positioning",
+    "field": "positioning.primary",
+    "value": "A simple yet powerful CRM for small and medium-sized businesses selling B2B — designed so teams actually keep it up to date.",
+    "sourceIds": [
+      "salesflare-product-official"
+    ],
+    "evidence": [
+      {
+        "sourceId": "salesflare-product-official",
+        "excerpt": "A simple yet powerful CRM for small and medium-sized businesses selling B2B — designed so teams actually keep it up to date."
+      }
+    ],
+    "extractedAt": "2026-08-13T18:00:00.000Z",
+    "normalizedAt": "2026-08-13T18:00:00.000Z",
+    "verifiedAt": "2026-08-13T18:00:00.000Z",
+    "approvedAt": "2026-08-13T18:00:00.000Z",
+    "confidence": "high",
+    "status": "approved",
+    "isFixture": false
+  }
+]

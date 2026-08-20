@@ -1,0 +1,165 @@
+{
+  "id": "assessment-pagerduty-it-v1",
+  "productSlug": "pagerduty",
+  "methodologySlug": "it-development-editorial",
+  "methodologyVersion": "1.0.0",
+  "status": "approved",
+  "verdict": "PagerDuty: Choose PagerDuty when paging and incident response are the job — not when you need Datadog telemetry or ServiceNow ITSM. Scores use the IT & Development editorial methodology from first-party research as of 2026-08-18 — not hands-on product testing.",
+  "strengths": [
+    "Category-defining on-call",
+    "Published Professional/Business seats",
+    "Deep alerting integrations",
+    "Free 5-responder trial path",
+    "Enterprise governance path"
+  ],
+  "weaknesses": [
+    "Add-on math (AIOps, Advance, stakeholders)",
+    "Not observability telemetry",
+    "Not ITSM CMDB",
+    "AI not included by default",
+    "Responder definition can surprise finance"
+  ],
+  "bestFor": [
+    "SRE/IT teams that need on-call schedules and paging",
+    "Orgs already sending alerts from Datadog/CloudWatch",
+    "Incident commanders who want a dedicated ops cloud"
+  ],
+  "notIdealFor": [
+    "Teams that only need APM dashboards (New Relic / Grafana)",
+    "ITSM ticket desks without paging (Freshservice)",
+    "Git hosts (GitHub / GitLab)"
+  ],
+  "tradeoffs": [
+    "Per-agent vs per-host vs per-seat vs per-GB pricing models",
+    "Module stacking and consumption overages vs single-SKU floors",
+    "Free tiers vs enterprise SSO/audit gates",
+    "Landscape-adjacent tools vs primary job-cluster peers on best pages"
+  ],
+  "recommendation": "Choose PagerDuty when paging and incident response are the job — not when you need Datadog telemetry or ServiceNow ITSM. Compare Datadog if you only need monitors+some incident UI; JSM if Atlassian ops alerting is enough.",
+  "editorialNotes": "IT Priority-2 batch. Approved on it-development-editorial v1.0.0. membershipRole=primary. jobCluster=incident-oncall. handsOnTesting=false. Affiliate economics excluded.",
+  "handsOnTesting": false,
+  "confidence": "medium",
+  "criterionAssessments": [
+    {
+      "criterionSlug": "ease-of-use",
+      "score": 8,
+      "rationale": "Schedules and mobile paging are straightforward for SRE teams. Not a lab test.",
+      "supportingFactIds": [
+        "fact-pagerduty-features.incident-management",
+        "fact-pagerduty-pricing.model"
+      ],
+      "confidence": "medium",
+      "status": "approved",
+      "reviewedAt": "2026-08-18T12:00:00.000Z",
+      "reviewer": "editorial"
+    },
+    {
+      "criterionSlug": "it-job-fit",
+      "score": 9,
+      "rationale": "Incident-oncall cluster — do not rank as an observability peer of Datadog.",
+      "supportingFactIds": [
+        "fact-pagerduty-features.incident-management",
+        "fact-pagerduty-pricing.model"
+      ],
+      "confidence": "medium",
+      "status": "approved",
+      "reviewedAt": "2026-08-18T12:00:00.000Z",
+      "reviewer": "editorial"
+    },
+    {
+      "criterionSlug": "workflow-depth",
+      "score": 8,
+      "rationale": "Escalation, major-incident workflows, and status pages (plan-gated) are deep for paging; not ITIL CMDB depth.",
+      "supportingFactIds": [
+        "fact-pagerduty-features.incident-management",
+        "fact-pagerduty-pricing.model"
+      ],
+      "confidence": "medium",
+      "status": "approved",
+      "reviewedAt": "2026-08-18T12:00:00.000Z",
+      "reviewer": "editorial"
+    },
+    {
+      "criterionSlug": "integrations",
+      "score": 9,
+      "rationale": "Native hooks into Datadog, cloud, Slack/Teams are the product.",
+      "supportingFactIds": [
+        "fact-pagerduty-features.analytics-reporting",
+        "fact-pagerduty-pricing.model",
+        "fact-pagerduty-positioning.vendorClaim"
+      ],
+      "confidence": "medium",
+      "status": "approved",
+      "reviewedAt": "2026-08-18T12:00:00.000Z",
+      "reviewer": "editorial"
+    },
+    {
+      "criterionSlug": "admin-security",
+      "score": 8,
+      "rationale": "SSO and advanced admin rise on Business/Enterprise.",
+      "supportingFactIds": [
+        "fact-pagerduty-features.enterprise-security",
+        "fact-pagerduty-pricing.model"
+      ],
+      "confidence": "medium",
+      "status": "approved",
+      "reviewedAt": "2026-08-18T12:00:00.000Z",
+      "reviewer": "editorial"
+    },
+    {
+      "criterionSlug": "scalability",
+      "score": 9,
+      "rationale": "Unlimited responders on paid plans; add-ons scale cost.",
+      "supportingFactIds": [
+        "fact-pagerduty-pricing.plans.free",
+        "fact-pagerduty-pricing.model",
+        "fact-pagerduty-pricing.plans.enterprise"
+      ],
+      "confidence": "medium",
+      "status": "approved",
+      "reviewedAt": "2026-08-18T12:00:00.000Z",
+      "reviewer": "editorial"
+    },
+    {
+      "criterionSlug": "value-for-money",
+      "score": 7,
+      "rationale": "$21 Professional is a clear floor; add-ons are the TCO trap. Affiliate economics excluded.",
+      "supportingFactIds": [
+        "fact-pagerduty-pricing.hasFreePlan",
+        "fact-pagerduty-pricing.model",
+        "fact-pagerduty-pricing.startingPriceMonthly"
+      ],
+      "confidence": "medium",
+      "status": "approved",
+      "reviewedAt": "2026-08-18T12:00:00.000Z",
+      "reviewer": "editorial"
+    },
+    {
+      "criterionSlug": "ai-capabilities",
+      "score": 6,
+      "rationale": "Advance/AIOps are add-ons, not included intelligence on Professional.",
+      "supportingFactIds": [
+        "fact-pagerduty-features.itsm-ai",
+        "fact-pagerduty-pricing.model"
+      ],
+      "confidence": "medium",
+      "status": "approved",
+      "reviewedAt": "2026-08-18T12:00:00.000Z",
+      "reviewer": "editorial"
+    }
+  ],
+  "overallScore": 8,
+  "overallScoreRationale": "Weighted average of the eight IT editorial criteria using category weights (IT job fit 16, workflow depth 14, ease of use 12, integrations 12, admin/security 12, value 12, AI 12, scalability 10), rounded to 1 decimal. Products are scored inside their job cluster — ITSM, observability, source control, hosting panels, and web-data platforms are not forced into one undifferentiated ranking. Not a hands-on lab score, and affiliate economics are excluded.",
+  "scoreAudit": [
+    {
+      "at": "2026-08-18T12:00:00.000Z",
+      "actor": "editorial",
+      "change": "IT Priority-2 onboarding; approved IT criteria with category weights; handsOnTesting=false",
+      "nextOverall": 8
+    }
+  ],
+  "reviewedAt": "2026-08-18T12:00:00.000Z",
+  "reviewer": "editorial",
+  "createdAt": "2026-08-18T12:00:00.000Z",
+  "updatedAt": "2026-08-18T12:00:00.000Z"
+}

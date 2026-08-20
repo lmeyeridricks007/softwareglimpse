@@ -1,0 +1,1045 @@
+[
+  {
+    "id": "fact-hubspot-pricing.hasFreePlan",
+    "productSlug": "hubspot",
+    "domain": "free-plan",
+    "field": "pricing.hasFreePlan",
+    "value": true,
+    "sourceIds": [
+      "hubspot-crm-product",
+      "hubspot-sales-product"
+    ],
+    "evidence": [
+      {
+        "sourceId": "hubspot-crm-product",
+        "excerpt": "And unlike a free trial, it's 100% free with no expiration date. Get free CRM No credit card required."
+      }
+    ],
+    "extractedAt": "2026-08-14T06:00:00.000Z",
+    "normalizedAt": "2026-08-14T06:00:00.000Z",
+    "verifiedAt": "2026-08-14T06:00:00.000Z",
+    "approvedAt": "2026-08-14T06:00:00.000Z",
+    "confidence": "high",
+    "status": "approved",
+    "isFixture": false
+  },
+  {
+    "id": "fact-hubspot-pricing.hasFreeTrial",
+    "productSlug": "hubspot",
+    "domain": "free-trial",
+    "field": "pricing.hasFreeTrial",
+    "value": true,
+    "sourceIds": [
+      "hubspot-sales-product"
+    ],
+    "evidence": [
+      {
+        "sourceId": "hubspot-sales-product",
+        "excerpt": "Start 14-day free trial of HubSpot's sales tools"
+      }
+    ],
+    "extractedAt": "2026-08-14T06:00:00.000Z",
+    "normalizedAt": "2026-08-14T06:00:00.000Z",
+    "verifiedAt": "2026-08-14T06:00:00.000Z",
+    "approvedAt": "2026-08-14T06:00:00.000Z",
+    "confidence": "high",
+    "status": "approved",
+    "isFixture": false
+  },
+  {
+    "id": "fact-hubspot-pricing.startingPriceMonthly",
+    "productSlug": "hubspot",
+    "domain": "pricing",
+    "field": "pricing.startingPriceMonthly",
+    "value": 15,
+    "sourceIds": [
+      "hubspot-crm-product"
+    ],
+    "evidence": [
+      {
+        "sourceId": "hubspot-crm-product",
+        "excerpt": "Starter Starts at $15/month per seat*"
+      }
+    ],
+    "extractedAt": "2026-08-14T06:00:00.000Z",
+    "normalizedAt": "2026-08-14T06:00:00.000Z",
+    "verifiedAt": "2026-08-14T06:00:00.000Z",
+    "approvedAt": "2026-08-14T06:00:00.000Z",
+    "confidence": "high",
+    "status": "approved",
+    "isFixture": false
+  },
+  {
+    "id": "fact-hubspot-pricing.currency",
+    "productSlug": "hubspot",
+    "domain": "pricing",
+    "field": "pricing.currency",
+    "value": "USD",
+    "sourceIds": [
+      "hubspot-sales-product"
+    ],
+    "evidence": [
+      {
+        "sourceId": "hubspot-sales-product",
+        "excerpt": "Price shown in USD and subject to applicable tax."
+      }
+    ],
+    "extractedAt": "2026-08-14T06:00:00.000Z",
+    "normalizedAt": "2026-08-14T06:00:00.000Z",
+    "verifiedAt": "2026-08-14T06:00:00.000Z",
+    "approvedAt": "2026-08-14T06:00:00.000Z",
+    "confidence": "high",
+    "status": "approved",
+    "isFixture": false
+  },
+  {
+    "id": "fact-hubspot-pricing.model",
+    "productSlug": "hubspot",
+    "domain": "pricing",
+    "field": "pricing.model",
+    "value": "subscription",
+    "sourceIds": [
+      "hubspot-product-catalog"
+    ],
+    "evidence": [
+      {
+        "sourceId": "hubspot-product-catalog",
+        "excerpt": "In general, products are available through the purchase of HubSpot Seats, which grant individual users access to specific features."
+      }
+    ],
+    "extractedAt": "2026-08-14T06:00:00.000Z",
+    "normalizedAt": "2026-08-14T06:00:00.000Z",
+    "verifiedAt": "2026-08-14T06:00:00.000Z",
+    "approvedAt": "2026-08-14T06:00:00.000Z",
+    "confidence": "high",
+    "status": "approved",
+    "isFixture": false
+  },
+  {
+    "id": "fact-hubspot-pricing.plans.free",
+    "productSlug": "hubspot",
+    "domain": "plans",
+    "field": "pricing.plans.free",
+    "value": {
+      "id": "plan-free",
+      "slug": "free",
+      "name": "Free CRM",
+      "isFree": true,
+      "contactSales": false,
+      "hasFreeTrial": false,
+      "highlighted": false,
+      "rules": [
+        {
+          "kind": "per-seat",
+          "amountPerSeat": 0,
+          "currency": "USD",
+          "interval": "month",
+          "amountPeriod": "month"
+        }
+      ]
+    },
+    "sourceIds": [
+      "hubspot-crm-product",
+      "hubspot-sales-product"
+    ],
+    "evidence": [
+      {
+        "sourceId": "hubspot-crm-product",
+        "excerpt": "Free No credit card required Popular features Contact management Deal pipelines CRM import Breeze Assistant Reporting dashboard"
+      }
+    ],
+    "extractedAt": "2026-08-14T06:00:00.000Z",
+    "normalizedAt": "2026-08-14T06:00:00.000Z",
+    "verifiedAt": "2026-08-14T06:00:00.000Z",
+    "approvedAt": "2026-08-14T06:00:00.000Z",
+    "confidence": "high",
+    "status": "approved",
+    "isFixture": false
+  },
+  {
+    "id": "fact-hubspot-pricing.plans.starter",
+    "productSlug": "hubspot",
+    "domain": "plans",
+    "field": "pricing.plans.starter",
+    "value": {
+      "id": "plan-starter",
+      "slug": "starter",
+      "name": "Starter (Smart CRM / Customer Platform)",
+      "isFree": false,
+      "contactSales": false,
+      "hasFreeTrial": true,
+      "trialDays": 14,
+      "highlighted": true,
+      "rules": [
+        {
+          "kind": "per-seat",
+          "amountPerSeat": 15,
+          "currency": "USD",
+          "interval": "month",
+          "amountPeriod": "month"
+        }
+      ]
+    },
+    "sourceIds": [
+      "hubspot-crm-product",
+      "hubspot-product-catalog"
+    ],
+    "evidence": [
+      {
+        "sourceId": "hubspot-crm-product",
+        "excerpt": "Starter Starts at $15/month per seat* ... *Discount available for new customers only. Catalog Smart CRM Starter Starts at $20/month per seat."
+      }
+    ],
+    "extractedAt": "2026-08-14T06:00:00.000Z",
+    "normalizedAt": "2026-08-14T06:00:00.000Z",
+    "verifiedAt": "2026-08-14T06:00:00.000Z",
+    "approvedAt": "2026-08-14T06:00:00.000Z",
+    "confidence": "high",
+    "status": "approved",
+    "isFixture": false
+  },
+  {
+    "id": "fact-hubspot-pricing.plans.professional",
+    "productSlug": "hubspot",
+    "domain": "plans",
+    "field": "pricing.plans.professional",
+    "value": {
+      "id": "plan-professional",
+      "slug": "professional",
+      "name": "Professional (Smart CRM / Customer Platform)",
+      "isFree": false,
+      "contactSales": false,
+      "hasFreeTrial": true,
+      "trialDays": 14,
+      "highlighted": false,
+      "rules": [
+        {
+          "kind": "per-seat",
+          "amountPerSeat": 50,
+          "currency": "USD",
+          "interval": "month",
+          "amountPeriod": "month"
+        }
+      ]
+    },
+    "sourceIds": [
+      "hubspot-crm-product",
+      "hubspot-product-catalog"
+    ],
+    "evidence": [
+      {
+        "sourceId": "hubspot-crm-product",
+        "excerpt": "Professional Starts at $50/month per seat ... Smart CRM Professional Starts at $50/month per seat"
+      }
+    ],
+    "extractedAt": "2026-08-14T06:00:00.000Z",
+    "normalizedAt": "2026-08-14T06:00:00.000Z",
+    "verifiedAt": "2026-08-14T06:00:00.000Z",
+    "approvedAt": "2026-08-14T06:00:00.000Z",
+    "confidence": "high",
+    "status": "approved",
+    "isFixture": false
+  },
+  {
+    "id": "fact-hubspot-pricing.plans.enterprise",
+    "productSlug": "hubspot",
+    "domain": "plans",
+    "field": "pricing.plans.enterprise",
+    "value": {
+      "id": "plan-enterprise",
+      "slug": "enterprise",
+      "name": "Enterprise (Smart CRM / Customer Platform)",
+      "isFree": false,
+      "contactSales": false,
+      "hasFreeTrial": true,
+      "trialDays": 14,
+      "highlighted": false,
+      "rules": [
+        {
+          "kind": "per-seat",
+          "amountPerSeat": 75,
+          "currency": "USD",
+          "interval": "month",
+          "amountPeriod": "month"
+        }
+      ]
+    },
+    "sourceIds": [
+      "hubspot-crm-product",
+      "hubspot-product-catalog"
+    ],
+    "evidence": [
+      {
+        "sourceId": "hubspot-crm-product",
+        "excerpt": "Enterprise Starts at $75/month per seat ... Smart CRM Enterprise Starts at $75/month per seat"
+      }
+    ],
+    "extractedAt": "2026-08-14T06:00:00.000Z",
+    "normalizedAt": "2026-08-14T06:00:00.000Z",
+    "verifiedAt": "2026-08-14T06:00:00.000Z",
+    "approvedAt": "2026-08-14T06:00:00.000Z",
+    "confidence": "high",
+    "status": "approved",
+    "isFixture": false
+  },
+  {
+    "id": "fact-hubspot-pricing.sales-hub.ladder",
+    "productSlug": "hubspot",
+    "domain": "pricing",
+    "field": "pricing.salesHubLadder",
+    "value": {
+      "free": {
+        "amountPerSeatMonthly": 0,
+        "source": "sales-product"
+      },
+      "starterList": {
+        "amountPerSeatMonthly": 20,
+        "promoShown": 10,
+        "source": "sales-product+catalog"
+      },
+      "professionalCatalog": {
+        "amountPerSeatMonthly": 100,
+        "source": "catalog"
+      },
+      "professionalMarketing": {
+        "amountPerSeatMonthly": 100,
+        "source": "sales-product"
+      },
+      "enterprise": {
+        "amountPerSeatMonthly": 150,
+        "billedAnnually": true,
+        "source": "catalog+sales-product"
+      }
+    },
+    "sourceIds": [
+      "hubspot-sales-product",
+      "hubspot-product-catalog"
+    ],
+    "evidence": [
+      {
+        "sourceId": "hubspot-sales-product",
+        "excerpt": "Sales Hub Starter Starts at $20/month per seat ... Professional Starts at $100/month per seat (catalog and sales product page) ... Enterprise Starts at $150/month per seat Billed annually."
+      }
+    ],
+    "extractedAt": "2026-08-14T06:00:00.000Z",
+    "normalizedAt": "2026-08-14T06:00:00.000Z",
+    "verifiedAt": "2026-08-18T18:20:00.000Z",
+    "approvedAt": "2026-08-14T06:00:00.000Z",
+    "confidence": "high",
+    "status": "approved",
+    "isFixture": false
+  },
+  {
+    "id": "fact-hubspot-pricing.billing-notes",
+    "productSlug": "hubspot",
+    "domain": "pricing",
+    "field": "pricing.billingNotes",
+    "value": "CRM marketing page publishes Free + Starter $15*/Pro $50/Enterprise $75 per seat for the Customer Platform/Smart CRM ladder; asterisk is new-customer discount (catalog Smart CRM Starter list is $20). Sales Hub is a separate seat ladder: Starter $20 list ($10 promo on the sales product page); Professional $100/month per seat on catalog and sales product page; Enterprise $150 billed annually per catalog. HubSpot’s Sales pricing page also shows Professional $90/mo/seat billed annually vs $100/mo/seat monthly, plus a required Professional onboarding fee of $1,500. Confirm live checkout for annual vs monthly commit.",
+    "sourceIds": [
+      "hubspot-crm-product",
+      "hubspot-sales-product",
+      "hubspot-product-catalog",
+      "hubspot-sales-pricing"
+    ],
+    "evidence": [
+      {
+        "sourceId": "hubspot-crm-product",
+        "excerpt": "*Discount available for new customers only. Offer has no set end date and can be discontinued at any time."
+      },
+      {
+        "sourceId": "hubspot-sales-pricing",
+        "excerpt": "Professional Starts at $90/mo/seat $100/mo/seat"
+      }
+    ],
+    "extractedAt": "2026-08-14T06:00:00.000Z",
+    "normalizedAt": "2026-08-14T06:00:00.000Z",
+    "verifiedAt": "2026-08-18T18:20:00.000Z",
+    "approvedAt": "2026-08-14T06:00:00.000Z",
+    "confidence": "high",
+    "status": "approved",
+    "isFixture": false
+  },
+  {
+    "id": "fact-hubspot-features.contact-management",
+    "productSlug": "hubspot",
+    "domain": "features",
+    "field": "features.contact-management",
+    "value": {
+      "availability": "supported",
+      "planSlugs": [
+        "free",
+        "starter",
+        "professional",
+        "enterprise"
+      ]
+    },
+    "sourceIds": [
+      "hubspot-crm-product"
+    ],
+    "evidence": [
+      {
+        "sourceId": "hubspot-crm-product",
+        "excerpt": "Contact management Create contacts, keep records up to date"
+      }
+    ],
+    "extractedAt": "2026-08-14T06:00:00.000Z",
+    "normalizedAt": "2026-08-14T06:00:00.000Z",
+    "verifiedAt": "2026-08-14T06:00:00.000Z",
+    "approvedAt": "2026-08-14T06:00:00.000Z",
+    "confidence": "high",
+    "status": "approved",
+    "isFixture": false
+  },
+  {
+    "id": "fact-hubspot-features.pipeline-management",
+    "productSlug": "hubspot",
+    "domain": "features",
+    "field": "features.pipeline-management",
+    "value": {
+      "availability": "supported",
+      "planSlugs": [
+        "free",
+        "starter",
+        "professional",
+        "enterprise"
+      ]
+    },
+    "sourceIds": [
+      "hubspot-crm-product",
+      "hubspot-sales-product"
+    ],
+    "evidence": [
+      {
+        "sourceId": "hubspot-crm-product",
+        "excerpt": "Deal pipelines ... Deal and pipeline management"
+      }
+    ],
+    "extractedAt": "2026-08-14T06:00:00.000Z",
+    "normalizedAt": "2026-08-14T06:00:00.000Z",
+    "verifiedAt": "2026-08-14T06:00:00.000Z",
+    "approvedAt": "2026-08-14T06:00:00.000Z",
+    "confidence": "high",
+    "status": "approved",
+    "isFixture": false
+  },
+  {
+    "id": "fact-hubspot-features.deal-management",
+    "productSlug": "hubspot",
+    "domain": "features",
+    "field": "features.deal-management",
+    "value": {
+      "availability": "supported",
+      "planSlugs": [
+        "free",
+        "starter",
+        "professional",
+        "enterprise"
+      ]
+    },
+    "sourceIds": [
+      "hubspot-sales-product"
+    ],
+    "evidence": [
+      {
+        "sourceId": "hubspot-sales-product",
+        "excerpt": "Track deals Get help from an AI assistant Schedule meetings"
+      }
+    ],
+    "extractedAt": "2026-08-14T06:00:00.000Z",
+    "normalizedAt": "2026-08-14T06:00:00.000Z",
+    "verifiedAt": "2026-08-14T06:00:00.000Z",
+    "approvedAt": "2026-08-14T06:00:00.000Z",
+    "confidence": "high",
+    "status": "approved",
+    "isFixture": false
+  },
+  {
+    "id": "fact-hubspot-features.lead-management",
+    "productSlug": "hubspot",
+    "domain": "features",
+    "field": "features.lead-management",
+    "value": {
+      "availability": "supported",
+      "planSlugs": [
+        "free",
+        "starter",
+        "professional",
+        "enterprise"
+      ]
+    },
+    "sourceIds": [
+      "hubspot-sales-product"
+    ],
+    "evidence": [
+      {
+        "sourceId": "hubspot-sales-product",
+        "excerpt": "Identify ready customers Scale prospecting with AI Automatically enrich data"
+      }
+    ],
+    "extractedAt": "2026-08-14T06:00:00.000Z",
+    "normalizedAt": "2026-08-14T06:00:00.000Z",
+    "verifiedAt": "2026-08-14T06:00:00.000Z",
+    "approvedAt": "2026-08-14T06:00:00.000Z",
+    "confidence": "high",
+    "status": "approved",
+    "isFixture": false
+  },
+  {
+    "id": "fact-hubspot-features.email-sync",
+    "productSlug": "hubspot",
+    "domain": "features",
+    "field": "features.email-sync",
+    "value": {
+      "availability": "supported",
+      "planSlugs": [
+        "free",
+        "starter",
+        "professional",
+        "enterprise"
+      ]
+    },
+    "sourceIds": [
+      "hubspot-product-catalog"
+    ],
+    "evidence": [
+      {
+        "sourceId": "hubspot-product-catalog",
+        "excerpt": "Email scheduling Write one-to-one prospect emails, and schedule them ... Email tracking"
+      }
+    ],
+    "extractedAt": "2026-08-14T06:00:00.000Z",
+    "normalizedAt": "2026-08-14T06:00:00.000Z",
+    "verifiedAt": "2026-08-14T06:00:00.000Z",
+    "approvedAt": "2026-08-14T06:00:00.000Z",
+    "confidence": "high",
+    "status": "approved",
+    "isFixture": false
+  },
+  {
+    "id": "fact-hubspot-features.email-sequences",
+    "productSlug": "hubspot",
+    "domain": "features",
+    "field": "features.email-sequences",
+    "value": {
+      "availability": "supported",
+      "planSlugs": [
+        "starter",
+        "professional",
+        "enterprise"
+      ]
+    },
+    "sourceIds": [
+      "hubspot-sales-product"
+    ],
+    "evidence": [
+      {
+        "sourceId": "hubspot-sales-product",
+        "excerpt": "automate personalized email sequences, and schedule emails for optimal timing"
+      }
+    ],
+    "extractedAt": "2026-08-14T06:00:00.000Z",
+    "normalizedAt": "2026-08-14T06:00:00.000Z",
+    "verifiedAt": "2026-08-14T06:00:00.000Z",
+    "approvedAt": "2026-08-14T06:00:00.000Z",
+    "confidence": "high",
+    "status": "approved",
+    "isFixture": false
+  },
+  {
+    "id": "fact-hubspot-features.workflow-automation",
+    "productSlug": "hubspot",
+    "domain": "features",
+    "field": "features.workflow-automation",
+    "value": {
+      "availability": "supported",
+      "planSlugs": [
+        "starter",
+        "professional",
+        "enterprise"
+      ]
+    },
+    "sourceIds": [
+      "hubspot-sales-product"
+    ],
+    "evidence": [
+      {
+        "sourceId": "hubspot-sales-product",
+        "excerpt": "Create playbooks for every conversation"
+      }
+    ],
+    "extractedAt": "2026-08-14T06:00:00.000Z",
+    "normalizedAt": "2026-08-14T06:00:00.000Z",
+    "verifiedAt": "2026-08-14T06:00:00.000Z",
+    "approvedAt": "2026-08-14T06:00:00.000Z",
+    "confidence": "high",
+    "status": "approved",
+    "isFixture": false
+  },
+  {
+    "id": "fact-hubspot-features.sales-automation",
+    "productSlug": "hubspot",
+    "domain": "features",
+    "field": "features.sales-automation",
+    "value": {
+      "availability": "supported",
+      "planSlugs": [
+        "starter",
+        "professional",
+        "enterprise"
+      ]
+    },
+    "sourceIds": [
+      "hubspot-sales-product"
+    ],
+    "evidence": [
+      {
+        "sourceId": "hubspot-sales-product",
+        "excerpt": "AI Sales Software for Pipeline & Closed Deals"
+      }
+    ],
+    "extractedAt": "2026-08-14T06:00:00.000Z",
+    "normalizedAt": "2026-08-14T06:00:00.000Z",
+    "verifiedAt": "2026-08-14T06:00:00.000Z",
+    "approvedAt": "2026-08-14T06:00:00.000Z",
+    "confidence": "high",
+    "status": "approved",
+    "isFixture": false
+  },
+  {
+    "id": "fact-hubspot-features.reporting",
+    "productSlug": "hubspot",
+    "domain": "features",
+    "field": "features.reporting",
+    "value": {
+      "availability": "supported",
+      "planSlugs": [
+        "free",
+        "starter",
+        "professional",
+        "enterprise"
+      ]
+    },
+    "sourceIds": [
+      "hubspot-crm-product",
+      "hubspot-sales-product"
+    ],
+    "evidence": [
+      {
+        "sourceId": "hubspot-crm-product",
+        "excerpt": "Reporting dashboard ... Sales Analytics & Reporting"
+      }
+    ],
+    "extractedAt": "2026-08-14T06:00:00.000Z",
+    "normalizedAt": "2026-08-14T06:00:00.000Z",
+    "verifiedAt": "2026-08-14T06:00:00.000Z",
+    "approvedAt": "2026-08-14T06:00:00.000Z",
+    "confidence": "high",
+    "status": "approved",
+    "isFixture": false
+  },
+  {
+    "id": "fact-hubspot-features.forecasting",
+    "productSlug": "hubspot",
+    "domain": "features",
+    "field": "features.forecasting",
+    "value": {
+      "availability": "higher-plan-only",
+      "planSlugs": [
+        "professional",
+        "enterprise"
+      ]
+    },
+    "sourceIds": [
+      "hubspot-sales-product"
+    ],
+    "evidence": [
+      {
+        "sourceId": "hubspot-sales-product",
+        "excerpt": "Predict revenue with AI-powered forecasting"
+      }
+    ],
+    "extractedAt": "2026-08-14T06:00:00.000Z",
+    "normalizedAt": "2026-08-14T06:00:00.000Z",
+    "verifiedAt": "2026-08-14T06:00:00.000Z",
+    "approvedAt": "2026-08-14T06:00:00.000Z",
+    "confidence": "high",
+    "status": "approved",
+    "isFixture": false
+  },
+  {
+    "id": "fact-hubspot-features.lead-scoring",
+    "productSlug": "hubspot",
+    "domain": "features",
+    "field": "features.lead-scoring",
+    "value": {
+      "availability": "higher-plan-only",
+      "planSlugs": [
+        "professional",
+        "enterprise"
+      ]
+    },
+    "sourceIds": [
+      "hubspot-crm-product",
+      "hubspot-sales-product"
+    ],
+    "evidence": [
+      {
+        "sourceId": "hubspot-crm-product",
+        "excerpt": "Standard contact scoring ... predictive lead scoring"
+      }
+    ],
+    "extractedAt": "2026-08-14T06:00:00.000Z",
+    "normalizedAt": "2026-08-14T06:00:00.000Z",
+    "verifiedAt": "2026-08-14T06:00:00.000Z",
+    "approvedAt": "2026-08-14T06:00:00.000Z",
+    "confidence": "high",
+    "status": "approved",
+    "isFixture": false
+  },
+  {
+    "id": "fact-hubspot-features.custom-fields",
+    "productSlug": "hubspot",
+    "domain": "features",
+    "field": "features.custom-fields",
+    "value": {
+      "availability": "supported",
+      "planSlugs": [
+        "starter",
+        "professional",
+        "enterprise"
+      ]
+    },
+    "sourceIds": [
+      "hubspot-crm-product",
+      "hubspot-product-catalog"
+    ],
+    "evidence": [
+      {
+        "sourceId": "hubspot-crm-product",
+        "excerpt": "Required fields ... Custom properties Associate specific data points with contacts, companies, and deals"
+      }
+    ],
+    "extractedAt": "2026-08-14T06:00:00.000Z",
+    "normalizedAt": "2026-08-14T06:00:00.000Z",
+    "verifiedAt": "2026-08-14T06:00:00.000Z",
+    "approvedAt": "2026-08-14T06:00:00.000Z",
+    "confidence": "high",
+    "status": "approved",
+    "isFixture": false
+  },
+  {
+    "id": "fact-hubspot-features.custom-objects",
+    "productSlug": "hubspot",
+    "domain": "features",
+    "field": "features.custom-objects",
+    "value": {
+      "availability": "higher-plan-only",
+      "planSlugs": [
+        "enterprise"
+      ]
+    },
+    "sourceIds": [
+      "hubspot-crm-product",
+      "hubspot-sales-product"
+    ],
+    "evidence": [
+      {
+        "sourceId": "hubspot-crm-product",
+        "excerpt": "Custom objects Organize teams ... Create custom objects for your processes"
+      }
+    ],
+    "extractedAt": "2026-08-14T06:00:00.000Z",
+    "normalizedAt": "2026-08-14T06:00:00.000Z",
+    "verifiedAt": "2026-08-14T06:00:00.000Z",
+    "approvedAt": "2026-08-14T06:00:00.000Z",
+    "confidence": "high",
+    "status": "approved",
+    "isFixture": false
+  },
+  {
+    "id": "fact-hubspot-features.ai-assistance",
+    "productSlug": "hubspot",
+    "domain": "features",
+    "field": "features.ai-assistance",
+    "value": {
+      "availability": "supported",
+      "planSlugs": [
+        "free",
+        "starter",
+        "professional",
+        "enterprise"
+      ]
+    },
+    "sourceIds": [
+      "hubspot-crm-product",
+      "hubspot-sales-product"
+    ],
+    "evidence": [
+      {
+        "sourceId": "hubspot-crm-product",
+        "excerpt": "Breeze Assistant Use HubSpot’s AI-powered assistant"
+      }
+    ],
+    "extractedAt": "2026-08-14T06:00:00.000Z",
+    "normalizedAt": "2026-08-14T06:00:00.000Z",
+    "verifiedAt": "2026-08-14T06:00:00.000Z",
+    "approvedAt": "2026-08-14T06:00:00.000Z",
+    "confidence": "high",
+    "status": "approved",
+    "isFixture": false
+  },
+  {
+    "id": "fact-hubspot-features.integrations",
+    "productSlug": "hubspot",
+    "domain": "features",
+    "field": "features.integrations",
+    "value": {
+      "availability": "supported",
+      "planSlugs": [
+        "free",
+        "starter",
+        "professional",
+        "enterprise"
+      ]
+    },
+    "sourceIds": [
+      "hubspot-marketplace",
+      "hubspot-crm-product"
+    ],
+    "evidence": [
+      {
+        "sourceId": "hubspot-marketplace",
+        "excerpt": "HubSpot Marketplace Connect your favorite apps to HubSpot See all integrations"
+      }
+    ],
+    "extractedAt": "2026-08-14T06:00:00.000Z",
+    "normalizedAt": "2026-08-14T06:00:00.000Z",
+    "verifiedAt": "2026-08-14T06:00:00.000Z",
+    "approvedAt": "2026-08-14T06:00:00.000Z",
+    "confidence": "high",
+    "status": "approved",
+    "isFixture": false
+  },
+  {
+    "id": "fact-hubspot-features.sso",
+    "productSlug": "hubspot",
+    "domain": "features",
+    "field": "features.sso",
+    "value": {
+      "availability": "higher-plan-only",
+      "planSlugs": [
+        "enterprise"
+      ]
+    },
+    "sourceIds": [
+      "hubspot-crm-product"
+    ],
+    "evidence": [
+      {
+        "sourceId": "hubspot-crm-product",
+        "excerpt": "Single sign-on Field-level permissions"
+      }
+    ],
+    "extractedAt": "2026-08-14T06:00:00.000Z",
+    "normalizedAt": "2026-08-14T06:00:00.000Z",
+    "verifiedAt": "2026-08-14T06:00:00.000Z",
+    "approvedAt": "2026-08-14T06:00:00.000Z",
+    "confidence": "high",
+    "status": "approved",
+    "isFixture": false
+  },
+  {
+    "id": "fact-hubspot-ai.assistant",
+    "productSlug": "hubspot",
+    "domain": "ai-capabilities",
+    "field": "ai.assistant",
+    "value": {
+      "capability": "assistant",
+      "availability": "supported"
+    },
+    "sourceIds": [
+      "hubspot-crm-product"
+    ],
+    "evidence": [
+      {
+        "sourceId": "hubspot-crm-product",
+        "excerpt": "Breeze Assistant"
+      }
+    ],
+    "extractedAt": "2026-08-14T06:00:00.000Z",
+    "normalizedAt": "2026-08-14T06:00:00.000Z",
+    "verifiedAt": "2026-08-14T06:00:00.000Z",
+    "approvedAt": "2026-08-14T06:00:00.000Z",
+    "confidence": "high",
+    "status": "approved",
+    "isFixture": false
+  },
+  {
+    "id": "fact-hubspot-ai.prospecting-agent",
+    "productSlug": "hubspot",
+    "domain": "ai-capabilities",
+    "field": "ai.prospecting",
+    "value": {
+      "capability": "recommendations",
+      "availability": "supported"
+    },
+    "sourceIds": [
+      "hubspot-sales-product"
+    ],
+    "evidence": [
+      {
+        "sourceId": "hubspot-sales-product",
+        "excerpt": "Breeze Prospecting Agent (Beta) Find accounts, source buying committees"
+      }
+    ],
+    "extractedAt": "2026-08-14T06:00:00.000Z",
+    "normalizedAt": "2026-08-14T06:00:00.000Z",
+    "verifiedAt": "2026-08-14T06:00:00.000Z",
+    "approvedAt": "2026-08-14T06:00:00.000Z",
+    "confidence": "high",
+    "status": "approved",
+    "isFixture": false
+  },
+  {
+    "id": "fact-hubspot-ai.forecasting",
+    "productSlug": "hubspot",
+    "domain": "ai-capabilities",
+    "field": "ai.forecasting",
+    "value": {
+      "capability": "forecasting",
+      "availability": "higher-plan-only"
+    },
+    "sourceIds": [
+      "hubspot-sales-product"
+    ],
+    "evidence": [
+      {
+        "sourceId": "hubspot-sales-product",
+        "excerpt": "Predict revenue with AI-powered forecasting"
+      }
+    ],
+    "extractedAt": "2026-08-14T06:00:00.000Z",
+    "normalizedAt": "2026-08-14T06:00:00.000Z",
+    "verifiedAt": "2026-08-14T06:00:00.000Z",
+    "approvedAt": "2026-08-14T06:00:00.000Z",
+    "confidence": "high",
+    "status": "approved",
+    "isFixture": false
+  },
+  {
+    "id": "fact-hubspot-positioning.primary",
+    "productSlug": "hubspot",
+    "domain": "product-positioning",
+    "field": "positioning.primary",
+    "value": "AI-powered customer platform with free Smart CRM plus Marketing, Sales, Service, Content, Data, and Revenue Hubs.",
+    "sourceIds": [
+      "hubspot-get-started",
+      "hubspot-crm-product"
+    ],
+    "evidence": [
+      {
+        "sourceId": "hubspot-get-started",
+        "excerpt": "HubSpot is an agentic customer platform with all the tools you need for marketing, sales, and customer service."
+      }
+    ],
+    "extractedAt": "2026-08-14T06:00:00.000Z",
+    "normalizedAt": "2026-08-14T06:00:00.000Z",
+    "verifiedAt": "2026-08-14T06:00:00.000Z",
+    "approvedAt": "2026-08-14T06:00:00.000Z",
+    "confidence": "high",
+    "status": "approved",
+    "isFixture": false
+  },
+  {
+    "id": "fact-hubspot-positioning.free-crm",
+    "productSlug": "hubspot",
+    "domain": "product-positioning",
+    "field": "positioning.freeCrm",
+    "value": "Free CRM with no expiration date and no credit card required; upgrade to paid Customer Platform / hub seats when ready.",
+    "sourceIds": [
+      "hubspot-crm-product"
+    ],
+    "evidence": [
+      {
+        "sourceId": "hubspot-crm-product",
+        "excerpt": "And unlike a free trial, it's 100% free with no expiration date."
+      }
+    ],
+    "extractedAt": "2026-08-14T06:00:00.000Z",
+    "normalizedAt": "2026-08-14T06:00:00.000Z",
+    "verifiedAt": "2026-08-14T06:00:00.000Z",
+    "approvedAt": "2026-08-14T06:00:00.000Z",
+    "confidence": "high",
+    "status": "approved",
+    "isFixture": false
+  },
+  {
+    "id": "fact-hubspot-pricing.sales-hub.professional.catalog",
+    "productSlug": "hubspot",
+    "domain": "pricing",
+    "field": "pricing.salesHub.professional.catalog",
+    "value": 100,
+    "sourceIds": [
+      "hubspot-product-catalog"
+    ],
+    "evidence": [
+      {
+        "sourceId": "hubspot-product-catalog",
+        "excerpt": "Sales Hub Professional Starts at $100/month per seat"
+      }
+    ],
+    "extractedAt": "2026-08-14T06:00:00.000Z",
+    "normalizedAt": "2026-08-14T06:00:00.000Z",
+    "verifiedAt": "2026-08-18T18:20:00.000Z",
+    "approvedAt": "2026-08-14T06:00:00.000Z",
+    "confidence": "high",
+    "status": "approved",
+    "isFixture": false
+  },
+  {
+    "id": "fact-hubspot-pricing.sales-hub.professional.marketing",
+    "productSlug": "hubspot",
+    "domain": "pricing",
+    "field": "pricing.salesHub.professional.marketing",
+    "value": 100,
+    "sourceIds": [
+      "hubspot-sales-product"
+    ],
+    "evidence": [
+      {
+        "sourceId": "hubspot-sales-product",
+        "excerpt": "Professional Starts at $100/month per seat"
+      }
+    ],
+    "extractedAt": "2026-08-14T06:00:00.000Z",
+    "normalizedAt": "2026-08-14T06:00:00.000Z",
+    "verifiedAt": "2026-08-18T18:20:00.000Z",
+    "approvedAt": "2026-08-18T18:20:00.000Z",
+    "confidence": "high",
+    "status": "approved",
+    "isFixture": false
+  },
+  {
+    "id": "fact-hubspot-pricing.smart-crm.starter.catalog",
+    "productSlug": "hubspot",
+    "domain": "pricing",
+    "field": "pricing.smartCrm.starter.catalog",
+    "value": 20,
+    "sourceIds": [
+      "hubspot-product-catalog"
+    ],
+    "evidence": [
+      {
+        "sourceId": "hubspot-product-catalog",
+        "excerpt": "Smart CRM Starter Starts at $20/month per seat"
+      }
+    ],
+    "extractedAt": "2026-08-14T06:00:00.000Z",
+    "normalizedAt": "2026-08-14T06:00:00.000Z",
+    "verifiedAt": "2026-08-14T06:00:00.000Z",
+    "approvedAt": "2026-08-14T06:00:00.000Z",
+    "confidence": "high",
+    "status": "approved",
+    "isFixture": false
+  }
+]

@@ -1,0 +1,181 @@
+/**
+ * Affiliate gap PM pack — contractor-foreman, mrpeasy, vektoros, servicem8.
+ */
+import { expandPmProduct } from "./pm-compact-expand.mjs";
+import { PM_CRITERIA } from "./pm-onboard-runtime.mjs";
+import { VERIFIED_AT, scores, contactSalesPlanEntry } from "./affiliate-gap-shared.mjs";
+
+export { VERIFIED_AT };
+
+const S = (overrides) => scores(PM_CRITERIA, overrides);
+
+const COMPACT = [
+  {
+    slug: "contractor-foreman",
+    name: "Contractor Foreman",
+    company: "Contractor Foreman",
+    website: "https://contractorforeman.com",
+    domain: "contractorforeman.com",
+    pricingUrl: "https://contractorforeman.com/pricing",
+    membershipRole: "primary",
+    jobCluster: "project-tracking",
+    shortDescription:
+      "Contractor Foreman is construction management software for contractors — estimates, scheduling, daily logs, change orders, and field documentation. Flat monthly pricing (2026-08-19 — confirm on contractorforeman.com/pricing).",
+    vendorPositioning: "All-in-one construction management for contractors — office and field in one app.",
+    pricingModel: "flat",
+    hasFreePlan: false,
+    hasFreeTrial: true,
+    trialDays: 30,
+    startingPriceMonthly: 49,
+    pricingNotes: "Verified 2026-08-19 from contractorforeman.com (medium confidence). Flat monthly tiers; 30-day trial. Affiliate economics excluded.",
+    pricingSummary: "Flat monthly plans from ~$49/mo — 30-day trial; confirm live tiers.",
+    plans: [
+      { kind: "flat-monthly", slug: "standard", name: "Standard", amount: 49, highlighted: true, hasFreeTrial: true, trialDays: 30 },
+    ],
+    featureOverrides: {
+      "task-boards": "supported",
+      "timeline-gantt": "supported",
+      "time-tracking": "supported",
+      "document-pdf": "supported",
+      "workload-resources": "limited",
+    },
+    scores: S({ "work-planning": 8, "automation-workflows": 7, reporting: 7 }),
+    bestFor: ["General contractors needing estimates + field logs", "SMB construction teams"],
+    notIdealFor: ["Generic tech PM (monday.com)", "Manufacturing ERP (MRPeasy)"],
+    pros: ["Construction-specific workflows", "Flat pricing", "30-day trial"],
+    cons: ["Construction niche", "Not generic PM", "Mobile UX varies by role"],
+    keyFeatures: ["Estimates", "Scheduling", "Daily logs", "Change orders"],
+    whoShouldChoose: "Choose Contractor Foreman for construction project + field management.",
+    whoShouldConsiderAlternatives: "Compare Procore for enterprise construction; monday for generic PM.",
+    limitations: ["Construction vertical — not general PM"],
+  },
+  {
+    slug: "mrpeasy",
+    name: "MRPeasy",
+    company: "MRPeasy",
+    website: "https://www.mrpeasy.com",
+    domain: "mrpeasy.com",
+    pricingUrl: "https://www.mrpeasy.com/pricing/",
+    membershipRole: "primary",
+    jobCluster: "resource-planning",
+    shortDescription:
+      "MRPeasy is MRP/ERP software for small manufacturers — production planning, inventory, BOMs, purchasing, and shop floor tracking. Per-user pricing (2026-08-19 — confirm on mrpeasy.com/pricing).",
+    vendorPositioning: "MRP software for small manufacturers — plan production without enterprise ERP complexity.",
+    pricingModel: "per-seat",
+    hasFreePlan: false,
+    hasFreeTrial: true,
+    trialDays: 15,
+    startingPriceMonthly: 49,
+    pricingNotes: "Verified 2026-08-19 from mrpeasy.com/pricing (medium confidence). Per-user tiers; 15-day trial. Affiliate economics excluded.",
+    pricingSummary: "Per-user plans from ~$49/user/mo — 15-day trial; confirm on mrpeasy.com/pricing.",
+    plans: [
+      { kind: "per-seat-monthly", slug: "starter", name: "Starter", amount: 49, highlighted: true, hasFreeTrial: true, trialDays: 15 },
+    ],
+    featureOverrides: {
+      "workload-resources": "supported",
+      "timeline-gantt": "supported",
+      "time-tracking": "supported",
+      "task-boards": "limited",
+    },
+    scores: S({ "work-planning": 9, reporting: 8, integrations: 7 }),
+    bestFor: ["Small manufacturers needing MRP without SAP complexity"],
+    notIdealFor: ["Generic creative PM teams", "Construction (Contractor Foreman)"],
+    pros: ["Manufacturing MRP depth", "Inventory + BOM", "SMB pricing"],
+    cons: ["Manufacturing niche", "Per-user cost scales", "Not generic PM"],
+    keyFeatures: ["Production planning", "Inventory", "BOM", "Purchasing"],
+    whoShouldChoose: "Choose MRPeasy when small-manufacturer MRP is the job.",
+    whoShouldConsiderAlternatives: "Compare monday.com or Hive for non-manufacturing PM.",
+    alternativeSlugs: ["hive", "monday"],
+    competitorSlugs: ["hive", "monday", "office-timeline"],
+    comparableSlugs: ["hive"],
+    limitations: ["Manufacturing ERP/MRP — not general PM"],
+  },
+  {
+    slug: "vektoros",
+    name: "VektorOS",
+    company: "VektorOS",
+    website: "https://vektoros.com",
+    domain: "vektoros.com",
+    pricingUrl: "https://vektoros.com",
+    membershipRole: "adjacent",
+    jobCluster: "work-management",
+    adjacentNote:
+      "Adjacent to general PM: VektorOS is service-business ops/work management — not full portfolio PM like monday.com.",
+    shortDescription:
+      "VektorOS is a business operations and work management platform for SMB teams — tasks, workflows, and client delivery tracking. Quote/tiered pricing (2026-08-19 — confirm on vektoros.com).",
+    vendorPositioning: "Operations OS for service businesses — coordinate work, clients, and delivery.",
+    pricingModel: "quote-led",
+    hasFreePlan: false,
+    hasFreeTrial: true,
+    trialDays: 14,
+    pricingNotes: "Confirm tiers on vektoros.com. Affiliate economics excluded.",
+    pricingSummary: "Contact/trial — confirm published seat pricing on vendor site.",
+    plans: contactSalesPlanEntry("VektorOS", { hasFreeTrial: true, trialDays: 14 }),
+    featureOverrides: {
+      "task-boards": "supported",
+      "automations-workflows": "limited",
+      reporting: "limited",
+    },
+    scores: S({ "work-planning": 7, collaboration: 7, integrations: 6 }),
+    bestFor: ["Service SMBs coordinating client delivery"],
+    notIdealFor: ["Enterprise PM RFPs", "Manufacturing MRP"],
+    pros: ["Ops/work management focus", "Client delivery tracking"],
+    cons: ["Limited public pricing", "Less ecosystem depth than monday/Asana", "Emerging vendor"],
+    keyFeatures: ["Task management", "Client workflows", "Delivery tracking"],
+    whoShouldChoose: "Choose VektorOS for lightweight service-business ops.",
+    whoShouldConsiderAlternatives: "Compare monday.com or Hive for broader PM depth.",
+    limitations: ["SMB ops platform — limited public pricing transparency"],
+  },
+  {
+    slug: "servicem8",
+    name: "ServiceM8",
+    company: "ServiceM8",
+    website: "https://www.servicem8.com",
+    domain: "servicem8.com",
+    pricingUrl: "https://www.servicem8.com/pricing",
+    membershipRole: "primary",
+    jobCluster: "work-management",
+    softShortDescription:
+      "Field service management for trades — Free solo plan; Growing $29/mo; Premium $79/mo; Premium Plus $149/mo per company.",
+    shortDescription:
+      "ServiceM8 is field service management software for trades and contractors — job scheduling, dispatch, quotes, invoicing, and mobile apps for technicians. Published pricing (2026-08-19): Free (1 user), Growing $29/mo, Premium $79/mo, Premium Plus $149/mo per company. Scored as PM/field-service job — not generic tech PM.",
+    vendorPositioning: "Field service app for trades — schedule jobs, quote, invoice, and get paid faster.",
+    pricingModel: "tiered",
+    hasFreePlan: true,
+    hasFreeTrial: false,
+    startingPriceMonthly: 0,
+    pricingNotes: "Verified 2026-08-19 from servicem8.com/pricing (high confidence). Per-company tiers; Free for 1 user. Affiliate aff-servicem8. Affiliate economics excluded.",
+    pricingSummary: "Free (1 user); Growing $29/mo; Premium $79/mo; Premium Plus $149/mo per company.",
+    plans: [
+      { kind: "free", slug: "free", name: "Free", description: "1 user, limited jobs." },
+      { kind: "flat-monthly", slug: "growing", name: "Growing", amount: 29, highlighted: true },
+      { kind: "flat-monthly", slug: "premium", name: "Premium", amount: 79 },
+      { kind: "flat-monthly", slug: "premium-plus", name: "Premium Plus", amount: 149 },
+    ],
+    featureOverrides: {
+      "task-boards": "supported",
+      "time-tracking": "supported",
+      "timeline-gantt": "limited",
+      "document-pdf": "supported",
+      "integrations-ecosystem": "supported",
+    },
+    scores: S({ "work-planning": 8, "automation-workflows": 7, reporting: 7, "value-for-money": 8 }),
+    bestFor: ["Trades and field service SMBs", "Solo technicians on Free tier"],
+    notIdealFor: ["Software team PM", "Manufacturing MRP"],
+    pros: ["Free solo tier", "Published pricing", "Mobile-first field app", "Quotes + invoicing"],
+    cons: ["Field-service niche", "Per-company tiers not per-seat SaaS", "Not generic PM"],
+    keyFeatures: ["Job scheduling", "Dispatch", "Quoting", "Invoicing", "Mobile app"],
+    whoShouldChoose: "Choose ServiceM8 when field service scheduling and invoicing is the job.",
+    whoShouldConsiderAlternatives: "Compare Contractor Foreman for construction PM; Jobber for overlapping trades.",
+    limitations: ["Field service/trades scope — not general PM"],
+    catalogueSourceId: "aff-servicem8",
+  },
+];
+
+export const PRODUCTS = COMPACT.map(expandPmProduct);
+
+export const COMPARISON_PAIRS = [
+  ["contractor-foreman", "servicem8"],
+  ["mrpeasy", "hive"],
+  ["mrpeasy", "monday"],
+];

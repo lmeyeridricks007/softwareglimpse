@@ -1,0 +1,610 @@
+{
+  "generatedAt": "2026-08-19T05:10:06.186Z",
+  "mode": "FULL",
+  "cluster": "crm",
+  "overallScore": 84,
+  "scorecard": [
+    {
+      "id": "overall",
+      "label": "Overall Website Quality",
+      "score": 84,
+      "status": "scored",
+      "display": "84 / 100",
+      "confidence": "medium"
+    },
+    {
+      "id": "technical",
+      "label": "Technical SEO",
+      "score": 100,
+      "status": "scored",
+      "display": "100",
+      "confidence": "high"
+    },
+    {
+      "id": "content",
+      "label": "Content Quality",
+      "score": 87,
+      "status": "scored",
+      "display": "87",
+      "confidence": "high"
+    },
+    {
+      "id": "experience",
+      "label": "Website Experience",
+      "score": 83,
+      "status": "scored",
+      "display": "83",
+      "confidence": "high"
+    },
+    {
+      "id": "ecosystem",
+      "label": "Content Ecosystem",
+      "score": 85,
+      "status": "scored",
+      "display": "85",
+      "confidence": "high"
+    },
+    {
+      "id": "competitive",
+      "label": "Competitive Strength",
+      "score": 56,
+      "status": "scored",
+      "display": "56",
+      "confidence": "medium",
+      "note": "8 competitors sampled"
+    },
+    {
+      "id": "visibility",
+      "label": "Search Visibility",
+      "score": null,
+      "status": "not-connected",
+      "display": "NOT CONNECTED",
+      "confidence": "low"
+    }
+  ],
+  "confidence": {
+    "level": "medium",
+    "reasons": [
+      "15 sources available",
+      "0 sources missing",
+      "Competitive strength scored from competitor pack",
+      "Search visibility NOT CONNECTED / NOT AVAILABLE",
+      "Authority / backlinks NOT MEASURED"
+    ]
+  },
+  "executiveVerdict": {
+    "howGood": "Overall Website Quality is 84/100 — readiness and usefulness are measurable; this is not a ranking prediction.",
+    "howCompetitive": "Content depth and decision tooling often match or exceed many affiliate-style competitors on sampled CRM queries, but marketplace and vendor pages remain formidable on head terms.",
+    "rankingOutlook": "CRM evaluation and implementation-style opportunities appear more attainable than broad head terms such as “apollo.io review”. External authority not measured — feasibility may be overstated.",
+    "growthLimits": "Technically relatively strong but authority-constrained. Search Console / live visibility not connected. Backlink authority NOT MEASURED. Content depth exceeds many affiliate competitors, but product/industry clusters remain incomplete or non-indexable in places."
+  },
+  "topRisks": [
+    {
+      "id": "RISK-01",
+      "priority": "P0",
+      "area": "Content",
+      "title": "Material target-ecosystem tools/pages still missing",
+      "evidence": "Map missing/NOT-YET=7; ids=CRM-TOOL-004, CRM-TOOL-011, CRM-TOOL-014, CRM-TOOL-015, CRM-TOOL-016"
+    },
+    {
+      "id": "RISK-02",
+      "priority": "P0",
+      "area": "Research/data",
+      "title": "Thin/research-required map density still high",
+      "evidence": "Thin rows=23 of 207"
+    },
+    {
+      "id": "RISK-03",
+      "priority": "P0",
+      "area": "Authority",
+      "title": "Off-site authority unknown — may cap ranking opportunity",
+      "evidence": "Off-site authority / backlink data not integrated for this overview"
+    },
+    {
+      "id": "RISK-04",
+      "priority": "P1",
+      "area": "Authority",
+      "title": "No live search visibility measurement",
+      "evidence": "Search Visibility DATA NOT AVAILABLE (no live GSC)"
+    }
+  ],
+  "topActions": [
+    {
+      "id": "WI-001",
+      "priority": "P1",
+      "area": "UX / Tools",
+      "affected": "CRM-TOOL-004",
+      "problem": "CRM ROI Calculator not yet implemented",
+      "evidence": "Cost/ROI journey gap vs map target ecosystem",
+      "recommendation": "Build CRM ROI Calculator per master map CRM-TOOL-004 (separate build)",
+      "impact": "medium",
+      "effort": "large",
+      "dependency": "CRM-TOOL-004, CONTENT-MAP-COVERAGE-LATEST"
+    },
+    {
+      "id": "WI-002",
+      "priority": "P1",
+      "area": "Authority / Measurement",
+      "affected": "seo-intelligence",
+      "problem": "Live Search Console data not connected to Site Intelligence",
+      "evidence": "Cannot prioritize true visibility gaps; Ranking Opportunity lacks current-visibility truth",
+      "recommendation": "Configure GSC provider or import non-synthetic performance snapshots",
+      "impact": "medium",
+      "effort": "medium",
+      "dependency": "seo-intelligence, Search Visibility"
+    },
+    {
+      "id": "WI-003",
+      "priority": "P2",
+      "area": "Authority",
+      "affected": "AuthorityLimitations",
+      "problem": "Off-site authority / backlink gap unknown",
+      "evidence": "May overestimate Ranking Opportunity for competitive heads",
+      "recommendation": "Integrate referring-domain / authority data when available; do not invent DA",
+      "impact": "medium",
+      "effort": "medium",
+      "dependency": "AuthorityLimitations"
+    },
+    {
+      "id": "WI-004",
+      "priority": "---",
+      "area": "Content",
+      "affected": "---",
+      "problem": "---",
+      "evidence": "Page --- (---) scored ---:; commercial/journey leverage",
+      "recommendation": "---",
+      "impact": "medium",
+      "effort": "medium",
+      "dependency": "---, CONTENT-IMPROVEMENT-BACKLOG, CONTENT-INTELLIGENCE-LATEST"
+    },
+    {
+      "id": "WI-005",
+      "priority": "CQ-P1",
+      "area": "Content",
+      "affected": "P0",
+      "problem": "Best CRM pillar lacks complete approved rationales per pick and evidence depth relative to",
+      "evidence": "Page /best/crm-software/ (best) scored 91→100; commercial/journey leverage",
+      "recommendation": "Best CRM (`/best/crm-software/`) is a P0 commercial pillar but still fails approved-recommendation / rationale",
+      "impact": "medium",
+      "effort": "large",
+      "dependency": "P0, CONTENT-IMPROVEMENT-BACKLOG, CONTENT-INTELLIGENCE-LATEST"
+    },
+    {
+      "id": "WI-006",
+      "priority": "CQ-P2",
+      "area": "Content",
+      "affected": "CONTENT-IMPROVEMENT-BACKLOG",
+      "problem": "Attach primary sources, verification dates, or remove unsupported claims.",
+      "evidence": "Page /software/creatio/ (product-review) scored 86→94; commercial/journey leverage",
+      "recommendation": "Attach official documentation / pricing sources to factual claims on /software/creatio/, record verification d",
+      "impact": "small",
+      "effort": "small",
+      "dependency": "CONTENT-IMPROVEMENT-BACKLOG, CONTENT-INTELLIGENCE-LATEST"
+    },
+    {
+      "id": "WI-007",
+      "priority": "CQ-P2",
+      "area": "Content",
+      "affected": "CONTENT-IMPROVEMENT-BACKLOG",
+      "problem": "Add workflow diagram, matrix, screenshot, or teaching figure — not decorative filler.",
+      "evidence": "Page /compare/act-vs-activecampaign/ (comparison) scored 86→90; commercial/journey leverage",
+      "recommendation": "Add one teaching figure (workflow, boundary, or worked example) unique to /compare/act-vs-activecampaign/; avo",
+      "impact": "medium",
+      "effort": "medium",
+      "dependency": "CONTENT-IMPROVEMENT-BACKLOG, CONTENT-INTELLIGENCE-LATEST"
+    },
+    {
+      "id": "WI-008",
+      "priority": "P1",
+      "area": "Competitive",
+      "affected": "/categories/crm/",
+      "problem": "No matching SoftwareGlimpse page in CQ inventory for this query seed. Recommended action: create-new",
+      "evidence": "Competitive gaps pack",
+      "recommendation": "Coverage gap for “crm software”",
+      "impact": "medium",
+      "effort": "medium",
+      "dependency": "COMPETITIVE-GAPS-LATEST"
+    },
+    {
+      "id": "WI-009",
+      "priority": "P1",
+      "area": "Competitive",
+      "affected": "/resources/crm-evaluation-checklist/",
+      "problem": "No matching SoftwareGlimpse page in CQ inventory for this query seed. Intent alignment proxy 95. Benchmark strength SG 60 vs competitor avg 57. Recommended action: create-new",
+      "evidence": "Competitive gaps pack",
+      "recommendation": "Coverage gap for “crm evaluation checklist”",
+      "impact": "medium",
+      "effort": "medium",
+      "dependency": "COMPETITIVE-GAPS-LATEST"
+    },
+    {
+      "id": "WI-010",
+      "priority": "P1",
+      "area": "Competitive",
+      "affected": "Map gap: Multi-product compare",
+      "problem": "CRM-CMP-003 (P2)",
+      "evidence": "Competitive gaps pack",
+      "recommendation": "Map gap: Multi-product compare",
+      "impact": "medium",
+      "effort": "medium",
+      "dependency": "COMPETITIVE-GAPS-LATEST"
+    },
+    {
+      "id": "WI-011",
+      "priority": "P1",
+      "area": "Competitive",
+      "affected": "Map-missing tool: CRM ROI Calculator",
+      "problem": "CRM-TOOL-004 (P1) — not yet implemented",
+      "evidence": "Competitive gaps pack",
+      "recommendation": "Map-missing tool: CRM ROI Calculator",
+      "impact": "medium",
+      "effort": "medium",
+      "dependency": "COMPETITIVE-GAPS-LATEST"
+    },
+    {
+      "id": "WI-012",
+      "priority": "P1",
+      "area": "Competitive",
+      "affected": "Map-missing tool: CRM RFP / Vendor Brief Builder",
+      "problem": "CRM-TOOL-011 (P1) — not yet implemented",
+      "evidence": "Competitive gaps pack",
+      "recommendation": "Map-missing tool: CRM RFP / Vendor Brief Builder",
+      "impact": "medium",
+      "effort": "medium",
+      "dependency": "COMPETITIVE-GAPS-LATEST"
+    },
+    {
+      "id": "WI-013",
+      "priority": "P1",
+      "area": "Competitive",
+      "affected": "Map-missing tool: CRM Plan Selector",
+      "problem": "CRM-TOOL-014 (P1) — not yet implemented",
+      "evidence": "Competitive gaps pack",
+      "recommendation": "Map-missing tool: CRM Plan Selector",
+      "impact": "medium",
+      "effort": "medium",
+      "dependency": "COMPETITIVE-GAPS-LATEST"
+    },
+    {
+      "id": "WI-014",
+      "priority": "P1",
+      "area": "Competitive",
+      "affected": "Map-missing tool: CRM Migration Cost Calculator",
+      "problem": "CRM-TOOL-015 (P2) — not yet implemented",
+      "evidence": "Competitive gaps pack",
+      "recommendation": "Map-missing tool: CRM Migration Cost Calculator",
+      "impact": "medium",
+      "effort": "medium",
+      "dependency": "COMPETITIVE-GAPS-LATEST"
+    },
+    {
+      "id": "WI-015",
+      "priority": "P1",
+      "area": "Competitive",
+      "affected": "Map-missing tool: CRM Adoption / Health Assessment",
+      "problem": "CRM-TOOL-016 (P2) — not yet implemented",
+      "evidence": "Competitive gaps pack",
+      "recommendation": "Map-missing tool: CRM Adoption / Health Assessment",
+      "impact": "medium",
+      "effort": "medium",
+      "dependency": "COMPETITIVE-GAPS-LATEST"
+    },
+    {
+      "id": "WI-016",
+      "priority": "P1",
+      "area": "Competitive",
+      "affected": "Map-missing resource: UAT test script worksheet (CRM)",
+      "problem": "CRM-RES-UAT (P2)",
+      "evidence": "Competitive gaps pack",
+      "recommendation": "Map-missing resource: UAT test script worksheet (CRM)",
+      "impact": "medium",
+      "effort": "medium",
+      "dependency": "COMPETITIVE-GAPS-LATEST"
+    },
+    {
+      "id": "WI-017",
+      "priority": "P1",
+      "area": "Competitive",
+      "affected": "/best/crm-software/",
+      "problem": "CRM-BUY-001 (P0) needs research depth",
+      "evidence": "Competitive gaps pack",
+      "recommendation": "Thin map row: Best CRM Software",
+      "impact": "medium",
+      "effort": "medium",
+      "dependency": "COMPETITIVE-GAPS-LATEST"
+    },
+    {
+      "id": "WI-018",
+      "priority": "P1",
+      "area": "Competitive",
+      "affected": "/industries/",
+      "problem": "CRM-IND-000 (P0) needs research depth",
+      "evidence": "Competitive gaps pack",
+      "recommendation": "Thin map row: Industries index",
+      "impact": "medium",
+      "effort": "medium",
+      "dependency": "COMPETITIVE-GAPS-LATEST"
+    },
+    {
+      "id": "WI-019",
+      "priority": "P1",
+      "area": "Competitive",
+      "affected": "/industries/financial-services/",
+      "problem": "CRM-IND-FS (P0) needs research depth",
+      "evidence": "Competitive gaps pack",
+      "recommendation": "Thin map row: CRM for Financial Services",
+      "impact": "medium",
+      "effort": "medium",
+      "dependency": "COMPETITIVE-GAPS-LATEST"
+    },
+    {
+      "id": "WI-020",
+      "priority": "P1",
+      "area": "Ranking opportunity",
+      "affected": "/guides/how-to-choose-crm/",
+      "problem": "how to choose crm feasibility GOOD OPPORTUNITY",
+      "evidence": "Opportunity score 69",
+      "recommendation": "Improve existing page (links + modules) — protect advantage",
+      "impact": "medium",
+      "effort": "medium",
+      "dependency": "RANKING-OPPORTUNITIES-LATEST"
+    },
+    {
+      "id": "WI-021",
+      "priority": "P1",
+      "area": "Ranking opportunity",
+      "affected": "/guides/what-is-crm/",
+      "problem": "what is crm feasibility GOOD OPPORTUNITY",
+      "evidence": "Opportunity score 68",
+      "recommendation": "Improve existing page (links + modules) — protect advantage",
+      "impact": "medium",
+      "effort": "medium",
+      "dependency": "RANKING-OPPORTUNITIES-LATEST"
+    },
+    {
+      "id": "WI-022",
+      "priority": "P1",
+      "area": "Ranking opportunity",
+      "affected": "/guides/do-i-need-a-crm/",
+      "problem": "do i need a crm decision signals that matter feasibility GOOD OPPORTUNITY",
+      "evidence": "Opportunity score 68",
+      "recommendation": "Improve existing page (links + modules) — protect advantage",
+      "impact": "medium",
+      "effort": "medium",
+      "dependency": "RANKING-OPPORTUNITIES-LATEST"
+    },
+    {
+      "id": "WI-023",
+      "priority": "P1",
+      "area": "Ranking opportunity",
+      "affected": "/guides/how-crm-works/",
+      "problem": "how crm software works feasibility GOOD OPPORTUNITY",
+      "evidence": "Opportunity score 67",
+      "recommendation": "Improve existing page (links + modules) — protect advantage",
+      "impact": "medium",
+      "effort": "medium",
+      "dependency": "RANKING-OPPORTUNITIES-LATEST"
+    },
+    {
+      "id": "WI-024",
+      "priority": "P1",
+      "area": "Ranking opportunity",
+      "affected": "/guides/crm-requirements-guide/",
+      "problem": "crm requirements guide feasibility GOOD OPPORTUNITY",
+      "evidence": "Opportunity score 67",
+      "recommendation": "Improve existing page (links + modules) — protect advantage",
+      "impact": "medium",
+      "effort": "medium",
+      "dependency": "RANKING-OPPORTUNITIES-LATEST"
+    },
+    {
+      "id": "WI-025",
+      "priority": "P1",
+      "area": "Ranking opportunity",
+      "affected": "/guides/crm-evaluation-guide/",
+      "problem": "crm evaluation guide feasibility GOOD OPPORTUNITY",
+      "evidence": "Opportunity score 67",
+      "recommendation": "Improve existing page (links + modules) — protect advantage",
+      "impact": "medium",
+      "effort": "medium",
+      "dependency": "RANKING-OPPORTUNITIES-LATEST"
+    },
+    {
+      "id": "WI-026",
+      "priority": "P1",
+      "area": "Ranking opportunity",
+      "affected": "/guides/hubspot-implementation/",
+      "problem": "hubspot implementation feasibility GOOD OPPORTUNITY",
+      "evidence": "Opportunity score 67",
+      "recommendation": "Improve existing page (links + modules) — protect advantage",
+      "impact": "medium",
+      "effort": "medium",
+      "dependency": "RANKING-OPPORTUNITIES-LATEST"
+    },
+    {
+      "id": "WI-027",
+      "priority": "P1",
+      "area": "Ranking opportunity",
+      "affected": "/guides/hubspot-migration/",
+      "problem": "hubspot migration feasibility GOOD OPPORTUNITY",
+      "evidence": "Opportunity score 67",
+      "recommendation": "Improve existing page (links + modules) — protect advantage",
+      "impact": "medium",
+      "effort": "medium",
+      "dependency": "RANKING-OPPORTUNITIES-LATEST"
+    }
+  ],
+  "measurementStatus": [
+    {
+      "label": "Backlink authority",
+      "status": "NOT MEASURED"
+    },
+    {
+      "label": "Search traffic",
+      "status": "NOT AVAILABLE"
+    },
+    {
+      "label": "Search Console",
+      "status": "NOT CONNECTED"
+    },
+    {
+      "label": "Competitor pack",
+      "status": "AVAILABLE"
+    }
+  ],
+  "scoreHistory": [
+    {
+      "id": "overall",
+      "label": "Overall",
+      "previous": 83,
+      "current": 84,
+      "previousDisplay": "83 / 100",
+      "currentDisplay": "84 / 100",
+      "delta": 1,
+      "change": "IMPROVED"
+    },
+    {
+      "id": "technical",
+      "label": "Technical SEO",
+      "previous": 100,
+      "current": 100,
+      "previousDisplay": "100",
+      "currentDisplay": "100",
+      "delta": 0,
+      "change": "UNCHANGED"
+    },
+    {
+      "id": "content",
+      "label": "Content Quality",
+      "previous": 86,
+      "current": 87,
+      "previousDisplay": "86",
+      "currentDisplay": "87",
+      "delta": 1,
+      "change": "IMPROVED"
+    },
+    {
+      "id": "experience",
+      "label": "Website Experience",
+      "previous": 83,
+      "current": 83,
+      "previousDisplay": "83",
+      "currentDisplay": "83",
+      "delta": 0,
+      "change": "UNCHANGED"
+    },
+    {
+      "id": "ecosystem",
+      "label": "Content Ecosystem",
+      "previous": 84,
+      "current": 85,
+      "previousDisplay": "84",
+      "currentDisplay": "85",
+      "delta": 1,
+      "change": "IMPROVED"
+    },
+    {
+      "id": "competitive",
+      "label": "Competitive Strength",
+      "previous": 50,
+      "current": 56,
+      "previousDisplay": "50",
+      "currentDisplay": "56",
+      "delta": 6,
+      "change": "IMPROVED"
+    },
+    {
+      "id": "visibility",
+      "label": "Search Visibility",
+      "previous": null,
+      "current": null,
+      "previousDisplay": "NOT CONNECTED",
+      "currentDisplay": "NOT CONNECTED",
+      "delta": null,
+      "change": "N/A"
+    }
+  ],
+  "refreshNotes": [
+    "Competitive gaps refreshed → docs/site-intelligence/competitors/COMPETITIVE-GAPS-LATEST.md",
+    "Ranking opportunities refreshed → docs/site-intelligence/RANKING-OPPORTUNITIES-LATEST.md",
+    "Search performance refreshed (none, live=false) → docs/site-intelligence/SEARCH-PERFORMANCE-LATEST.md",
+    "Website overview refreshed → docs/site-intelligence/WEBSITE-OVERVIEW-LATEST.md"
+  ],
+  "sources": [
+    {
+      "id": "SEO-HEALTH-LATEST.md",
+      "path": "docs/seo/reports/SEO-HEALTH-LATEST.md",
+      "status": "available"
+    },
+    {
+      "id": "performance-latest.md",
+      "path": "docs/seo/reports/performance-latest.md",
+      "status": "available"
+    },
+    {
+      "id": "internal-linking-latest.md",
+      "path": "docs/seo/reports/internal-linking-latest.md",
+      "status": "available"
+    },
+    {
+      "id": "CONTENT-INTELLIGENCE-LATEST.md",
+      "path": "docs/content-quality/CONTENT-INTELLIGENCE-LATEST.md",
+      "status": "available"
+    },
+    {
+      "id": "CONTENT-QUALITY-LATEST.md",
+      "path": "docs/content-quality/CONTENT-QUALITY-LATEST.md",
+      "status": "available"
+    },
+    {
+      "id": "CONTENT-MAP-COVERAGE-LATEST.md",
+      "path": "docs/content-quality/CONTENT-MAP-COVERAGE-LATEST.md",
+      "status": "available"
+    },
+    {
+      "id": "ASSET-INTELLIGENCE-LATEST.md",
+      "path": "docs/content-assets/ASSET-INTELLIGENCE-LATEST.md",
+      "status": "available"
+    },
+    {
+      "id": "RESOURCE-AUDIT.md",
+      "path": "docs/content-ecosystem/resources/RESOURCE-AUDIT.md",
+      "status": "available"
+    },
+    {
+      "id": "SERP-COMPETITORS-LATEST.md",
+      "path": "docs/site-intelligence/competitors/SERP-COMPETITORS-LATEST.md",
+      "status": "available"
+    },
+    {
+      "id": "COMPETITIVE-BENCHMARK-LATEST.md",
+      "path": "docs/site-intelligence/competitors/COMPETITIVE-BENCHMARK-LATEST.md",
+      "status": "available"
+    },
+    {
+      "id": "COMPETITIVE-GAPS-LATEST.md",
+      "path": "docs/site-intelligence/competitors/COMPETITIVE-GAPS-LATEST.md",
+      "status": "available"
+    },
+    {
+      "id": "RANKING-OPPORTUNITIES-LATEST.md",
+      "path": "docs/site-intelligence/RANKING-OPPORTUNITIES-LATEST.md",
+      "status": "available"
+    },
+    {
+      "id": "SEARCH-PERFORMANCE-LATEST.md",
+      "path": "docs/site-intelligence/SEARCH-PERFORMANCE-LATEST.md",
+      "status": "available"
+    },
+    {
+      "id": "WEBSITE-OVERVIEW-LATEST.md",
+      "path": "docs/site-intelligence/WEBSITE-OVERVIEW-LATEST.md",
+      "status": "available"
+    },
+    {
+      "id": "competitor-pack-latest.json",
+      "path": "docs/site-intelligence/competitors/competitor-pack-latest.json",
+      "status": "available"
+    }
+  ]
+}

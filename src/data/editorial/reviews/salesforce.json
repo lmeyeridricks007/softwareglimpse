@@ -1,0 +1,865 @@
+{
+  "id": "review-salesforce-v1",
+  "productSlug": "salesforce",
+  "assessmentId": "assessment-salesforce-crm-v1",
+  "editorialStatus": "approved",
+  "title": "Salesforce Review (2026)",
+  "h1": "Salesforce Review",
+  "intro": "Salesforce Sales Cloud is an enterprise CRM platform spanning Starter Suite, Pro Suite, Enterprise, and Unlimited editions. This review covers published USD Sales Cloud pricing, core CRM capabilities, Agentforce AI messaging, limitations, and when lighter CRMs are a better fit.",
+  "summary": "Salesforce is a strong fit for mid-market and enterprise teams that need deep customization, reporting, and ecosystem scale. Starter Suite starts at $25/user/mo, but serious sales ops usually land on Pro ($100), Enterprise ($175), or Unlimited ($350) annual list pricing \u2014 before add-ons. Scores reflect first-party research, not hands-on lab testing.",
+  "verdict": "Salesforce Sales Cloud is a top-tier enterprise CRM when customization, reporting, scalability, and ecosystem breadth matter more than simplicity or sticker price. Starter Suite offers a published $25 entry point, but most serious mid-market/enterprise buyers should evaluate Pro Suite through Unlimited (and related add-ons) against true TCO. This review is based on first-party Sales Cloud pricing and product research \u2014 not hands-on product testing.",
+  "overallScore": 7.8,
+  "criterionAssessments": [
+    {
+      "criterionSlug": "ease-of-use",
+      "score": 5,
+      "rationale": "Sales Cloud is a deep enterprise platform. Starter Suite lowers the entry bar, but the product story still centers on configuration, multiple editions/add-ons, and admin concepts that are heavier than SMB-first CRMs like Pipedrive. Time-to-productivity for non-admin sellers depends heavily on implementation quality.",
+      "supportingFactIds": [
+        "fact-salesforce-positioning.summary",
+        "fact-salesforce-pricing.plans.starter-suite",
+        "fact-salesforce-features.pipeline-management"
+      ],
+      "confidence": "medium",
+      "status": "approved",
+      "reviewedAt": "2026-08-14T06:00:00.000Z",
+      "reviewer": "editorial"
+    },
+    {
+      "criterionSlug": "pipeline-management",
+      "score": 9,
+      "rationale": "Pipeline and opportunity management are core Sales Cloud capabilities, with Advanced Pipeline Management & Deal Insights explicitly called out from Enterprise. Official feature assets document pipeline and opportunity workflows suitable for complex sales motions.",
+      "supportingFactIds": [
+        "fact-salesforce-features.pipeline-management",
+        "fact-salesforce-features.deal-management",
+        "fact-salesforce-pricing.plans.enterprise"
+      ],
+      "confidence": "medium",
+      "status": "approved",
+      "reviewedAt": "2026-08-14T06:00:00.000Z",
+      "reviewer": "editorial"
+    },
+    {
+      "criterionSlug": "sales-automation",
+      "score": 9,
+      "rationale": "Built-in Sales Flows start on Starter; Pro Suite adds greater automation; Unlimited adds Sales Engagement and intelligent automation. Workflow/process automation is a documented Sales Cloud strength, with Agentforce extending agentic automation on higher editions.",
+      "supportingFactIds": [
+        "fact-salesforce-features.workflow-automation",
+        "fact-salesforce-features.sales-automation",
+        "fact-salesforce-features.email-sequences",
+        "fact-salesforce-ai.automation"
+      ],
+      "confidence": "medium",
+      "status": "approved",
+      "reviewedAt": "2026-08-14T06:00:00.000Z",
+      "reviewer": "editorial"
+    },
+    {
+      "criterionSlug": "email-capabilities",
+      "score": 8,
+      "rationale": "Starter Suite documents AI email/event/contact sync plus Gmail/Outlook integration and dynamic email marketing. Activity capture is a clear Sales Cloud feature. Full Sales Engagement sequencing depth is positioned on Unlimited, so the score reflects strong core email CRM with plan-gated engagement suite depth.",
+      "supportingFactIds": [
+        "fact-salesforce-features.email-sync",
+        "fact-salesforce-features.email-tracking",
+        "fact-salesforce-features.email-campaigns",
+        "fact-salesforce-integrations.gmail"
+      ],
+      "confidence": "medium",
+      "status": "approved",
+      "reviewedAt": "2026-08-14T06:00:00.000Z",
+      "reviewer": "editorial"
+    },
+    {
+      "criterionSlug": "reporting",
+      "score": 9,
+      "rationale": "Reports and dashboards are first-class Sales Cloud features. Forecasting arrives from Pro Suite, with Predictive AI on Unlimited and optional Revenue Intelligence add-on for deeper analytics \u2014 a clear enterprise reporting ladder.",
+      "supportingFactIds": [
+        "fact-salesforce-features.reporting",
+        "fact-salesforce-features.forecasting",
+        "fact-salesforce-ai.forecasting",
+        "fact-salesforce-pricing.addons"
+      ],
+      "confidence": "medium",
+      "status": "approved",
+      "reviewedAt": "2026-08-14T06:00:00.000Z",
+      "reviewer": "editorial"
+    },
+    {
+      "criterionSlug": "customization",
+      "score": 10,
+      "rationale": "Customization is a defining Salesforce strength: Pro Suite explicitly markets greater customization and automation, Enterprise adds web API flexibility, and Unlimited adds developer support / full sandbox. Few SMB CRMs match this configurability ceiling.",
+      "supportingFactIds": [
+        "fact-salesforce-features.custom-fields",
+        "fact-salesforce-features.custom-pipelines",
+        "fact-salesforce-pricing.plans.pro-suite",
+        "fact-salesforce-pricing.plans.unlimited"
+      ],
+      "confidence": "medium",
+      "status": "approved",
+      "reviewedAt": "2026-08-14T06:00:00.000Z",
+      "reviewer": "editorial"
+    },
+    {
+      "criterionSlug": "integrations",
+      "score": 9,
+      "rationale": "AgentExchange (formerly AppExchange), Slack connectivity, Gmail/Outlook email integration, and a large partner ecosystem make Salesforce one of the broadest CRM integration platforms. Add-on and partner complexity is the tradeoff.",
+      "supportingFactIds": [
+        "fact-salesforce-integrations.appexchange",
+        "fact-salesforce-integrations.slack",
+        "fact-salesforce-features.integrations",
+        "fact-salesforce-integrations.gmail"
+      ],
+      "confidence": "medium",
+      "status": "approved",
+      "reviewedAt": "2026-08-14T06:00:00.000Z",
+      "reviewer": "editorial"
+    },
+    {
+      "criterionSlug": "administration-overhead",
+      "score": 4,
+      "rationale": "Edition ladder, Success Plans, sandboxes, API/add-on packaging, and platform configurability imply ongoing admin and often implementation-partner overhead. Strong capability comes with operational cost \u2014 a deliberate enterprise tradeoff versus lighter CRMs.",
+      "supportingFactIds": [
+        "fact-salesforce-pricing.addons",
+        "fact-salesforce-pricing.plans.unlimited",
+        "fact-salesforce-positioning.summary"
+      ],
+      "confidence": "medium",
+      "status": "approved",
+      "reviewedAt": "2026-08-14T06:00:00.000Z",
+      "reviewer": "editorial"
+    },
+    {
+      "criterionSlug": "scalability",
+      "score": 10,
+      "rationale": "Enterprise and Unlimited editions, API access, sandboxes, ecosystem breadth, and multi-cloud Salesforce platform context make this one of the clearest scale-up CRM choices for complex mid-market and enterprise orgs.",
+      "supportingFactIds": [
+        "fact-salesforce-pricing.plans.enterprise",
+        "fact-salesforce-pricing.plans.unlimited",
+        "fact-salesforce-integrations.appexchange",
+        "fact-salesforce-positioning.summary"
+      ],
+      "confidence": "medium",
+      "status": "approved",
+      "reviewedAt": "2026-08-14T06:00:00.000Z",
+      "reviewer": "editorial"
+    },
+    {
+      "criterionSlug": "value-for-money",
+      "score": 5,
+      "rationale": "Starter Suite at $25/user/mo is a real entry price, but usable mid-market/enterprise capability typically lands at Pro ($100), Enterprise ($175), or Unlimited ($350) annual list \u2014 before Agentforce/Revenue add-ons. Excellent capability density for large orgs; poor value if you only need a simple pipeline CRM.",
+      "supportingFactIds": [
+        "fact-salesforce-pricing.startingPriceMonthly",
+        "fact-salesforce-pricing.plans.pro-suite",
+        "fact-salesforce-pricing.plans.enterprise",
+        "fact-salesforce-pricing.plans.unlimited",
+        "fact-salesforce-pricing.addons"
+      ],
+      "confidence": "medium",
+      "status": "approved",
+      "reviewedAt": "2026-08-14T06:00:00.000Z",
+      "reviewer": "editorial"
+    }
+  ],
+  "bestFor": [
+    "Mid-market and enterprise sales orgs needing deep customization and reporting",
+    "Teams standardizing on the Salesforce platform / multi-cloud stack",
+    "Complex pipeline, forecasting, and governance requirements",
+    "Buyers who can budget Enterprise/Unlimited (or Pro with clear add-on plans)"
+  ],
+  "notIdealFor": [
+    "Solo sellers or micro teams wanting a lightweight pipeline CRM",
+    "Buyers who need the lowest TCO without admin/partner resources",
+    "Teams that want a simple visual board CRM without platform complexity",
+    "Organizations unwilling to navigate edition and add-on packaging"
+  ],
+  "pros": [
+    "Enterprise-grade customization, API flexibility, and sandbox/developer depth on upper editions",
+    "Strong pipeline, opportunity, forecasting, and reporting ladder across Pro/Enterprise/Unlimited",
+    "Broad ecosystem via AgentExchange (formerly AppExchange), Slack, and partner network",
+    "Documented Agentforce AI and automation story across Sales Cloud",
+    "Clear published USD edition ladder from Starter Suite through Unlimited"
+  ],
+  "cons": [
+    "Steep learning curve and high administration/implementation overhead versus SMB CRMs",
+    "List pricing escalates quickly beyond Starter ($100/$175/$350 annual per user/mo)",
+    "Important capabilities and support depth often require higher editions or paid add-ons",
+    "Some add-ons (e.g. Agentforce for Sales) require Contact us rather than transparent self-serve checkout",
+    "Overkill for teams that only need a simple visual pipeline CRM"
+  ],
+  "pricingSummary": "Sales Cloud USD list editions: Starter Suite $25/user/mo (monthly or annual), Pro Suite $100, Enterprise $175, Unlimited $350 per user/mo billed annually. 30-day free trial; no permanent free plan. Add-ons (Agentforce for Sales, Revenue Intelligence, Premier Support, etc.) can raise TCO; some require Contact us.",
+  "keyFeatures": [
+    "Lead, account, contact, and opportunity management",
+    "Pipeline management with advanced deal insights on Enterprise+",
+    "Sales Flows and workflow/process automation",
+    "Reports, dashboards, and forecasting (Pro+)",
+    "Email sync with Gmail/Outlook and activity capture",
+    "Agentforce AI capabilities across Sales Cloud",
+    "AgentExchange (formerly AppExchange) ecosystem",
+    "Slack connectivity and partner solutions"
+  ],
+  "limitations": [
+    "Steep learning curve and high administration/implementation overhead versus SMB CRMs",
+    "List pricing escalates quickly beyond Starter ($100/$175/$350 annual per user/mo)",
+    "Important capabilities and support depth often require higher editions or paid add-ons",
+    "Some add-ons (e.g. Agentforce for Sales) require Contact us rather than transparent self-serve checkout",
+    "Overkill for teams that only need a simple visual pipeline CRM"
+  ],
+  "whoShouldChoose": "Mid-market and enterprise sales organizations that need a configurable system of record with strong reporting, automation, and integration depth \u2014 and that can fund admin/implementation alongside licenses.",
+  "whoShouldConsiderAlternatives": "SMB teams seeking a lightweight pipeline CRM, or buyers optimizing for minimal admin overhead and lower seat cost, should compare Pipedrive, HubSpot, or Freshsales.",
+  "alternativeSlugs": [
+    "hubspot",
+    "dynamics-365",
+    "pipedrive",
+    "freshsales"
+  ],
+  "comparisonSlugs": [],
+  "relatedGuidePaths": [
+    "/guides/what-is-crm/",
+    "/guides/how-to-choose-crm/"
+  ],
+  "methodologySlug": "crm-editorial",
+  "methodologyVersion": "1.0.0",
+  "researchSourceIds": [
+    "salesforce-sales-cloud-pricing",
+    "salesforce-crm-pricing",
+    "salesforce-sales-cloud-product",
+    "salesforce-sales-cloud-features",
+    "salesforce-crm-product",
+    "salesforce-free-trial"
+  ],
+  "factRefs": [
+    {
+      "section": "pricing",
+      "factIds": [
+        "fact-salesforce-pricing.startingPriceMonthly",
+        "fact-salesforce-pricing.plans.starter-suite",
+        "fact-salesforce-pricing.plans.pro-suite",
+        "fact-salesforce-pricing.plans.enterprise",
+        "fact-salesforce-pricing.plans.unlimited"
+      ]
+    },
+    {
+      "section": "features",
+      "factIds": [
+        "fact-salesforce-features.pipeline-management",
+        "fact-salesforce-features.workflow-automation",
+        "fact-salesforce-features.reporting"
+      ]
+    },
+    {
+      "section": "integrations",
+      "factIds": [
+        "fact-salesforce-integrations.appexchange"
+      ]
+    },
+    {
+      "section": "ai",
+      "factIds": [
+        "fact-salesforce-ai.assistant",
+        "fact-salesforce-ai.automation"
+      ]
+    }
+  ],
+  "faq": [
+    {
+      "question": "How much does Salesforce Sales Cloud cost?",
+      "answer": "Published USD list pricing (Aug 2026): Starter Suite $25/user/mo (billed monthly or annually); Pro Suite $100, Enterprise $175, and Unlimited $350 per user/mo billed annually. Agentforce 1 Sales is also listed at $550/user/mo billed annually. Always confirm current regional pricing on Salesforce\u2019s site.",
+      "factIds": [
+        "fact-salesforce-pricing.plans.starter-suite",
+        "fact-salesforce-pricing.plans.pro-suite",
+        "fact-salesforce-pricing.plans.enterprise",
+        "fact-salesforce-pricing.plans.unlimited"
+      ]
+    },
+    {
+      "question": "Does Salesforce have a free plan or free trial?",
+      "answer": "There is no permanent free Sales Cloud plan on the pricing pages reviewed. Salesforce offers a free 30-day Sales Cloud trial (trial form states no credit card required). Pricing FAQ also mentions a free 30-day Starter Suite trial for up to 10 users.",
+      "factIds": [
+        "fact-salesforce-pricing.hasFreePlan",
+        "fact-salesforce-pricing.hasFreeTrial"
+      ]
+    },
+    {
+      "question": "Which Sales Cloud edition should most teams buy?",
+      "answer": "Starter Suite fits smaller teams needing core CRM plus light marketing/commerce suite tools. Choose Pro Suite when quoting/forecasting and greater customization matter. Enterprise adds advanced pipeline/deal insights and Conversation Intelligence. Unlimited adds Predictive AI, Sales Engagement, Premier Success Plan, and Full Sandbox.",
+      "factIds": [
+        "fact-salesforce-pricing.plans.starter-suite",
+        "fact-salesforce-pricing.plans.pro-suite",
+        "fact-salesforce-pricing.plans.enterprise",
+        "fact-salesforce-pricing.plans.unlimited"
+      ]
+    },
+    {
+      "question": "Are Salesforce add-ons required?",
+      "answer": "Often for advanced use cases. Premier Support is an add-on on Pro Suite. Agentforce for Sales (from $125/user/mo, Contact us), Sales Programs, Revenue Intelligence, and Revenue Cloud are separately priced. Unlimited includes Premier Success Plan and Full Sandbox.",
+      "factIds": [
+        "fact-salesforce-pricing.addons"
+      ]
+    },
+    {
+      "question": "Is this a hands-on SoftwareGlimpse lab review?",
+      "answer": "No. This review is approved based on first-party Salesforce Sales Cloud pricing, product, features, CRM, and trial-form research. SoftwareGlimpse has not recorded hands-on product testing for Salesforce in this assessment.",
+      "factIds": []
+    }
+  ],
+  "sections": [
+    {
+      "id": "overview",
+      "heading": "What Salesforce Sales Cloud is",
+      "body": "Sales Cloud is Salesforce\u2019s sales CRM \u2014 a configurable platform for leads, accounts, opportunities, automation, reporting, and AI-assisted selling, sold through Starter Suite, Pro Suite, Enterprise, and Unlimited editions.",
+      "factRefs": [
+        "fact-salesforce-positioning.summary"
+      ]
+    },
+    {
+      "id": "pricing",
+      "heading": "Pricing and plans",
+      "body": "USD list pricing starts at Starter Suite $25/user/mo (monthly or annual). Pro Suite ($100), Enterprise ($175), and Unlimited ($350) are billed annually per the Sales Cloud pricing page. A 30-day free trial is offered; add-ons and Contact-us SKUs can materially change TCO.",
+      "factRefs": [
+        "fact-salesforce-pricing.plans.starter-suite",
+        "fact-salesforce-pricing.plans.enterprise",
+        "fact-salesforce-pricing.addons"
+      ]
+    },
+    {
+      "id": "features",
+      "heading": "Core CRM capabilities",
+      "body": "Documented strengths include opportunity/pipeline management, Sales Flows and automation, reports/dashboards, forecasting (Pro+), email/activity capture, Agentforce AI, and AgentExchange/Slack ecosystem connectivity. Administration and packaging complexity are the main tradeoffs.",
+      "factRefs": [
+        "fact-salesforce-features.pipeline-management",
+        "fact-salesforce-features.reporting",
+        "fact-salesforce-integrations.appexchange"
+      ]
+    },
+    {
+      "id": "who-its-for",
+      "heading": "Who it\u2019s for",
+      "body": "Best for mid-market and enterprise sales orgs that need platform depth. Less ideal for micro teams seeking a simple, low-admin pipeline CRM.",
+      "factRefs": [
+        "fact-salesforce-positioning.summary"
+      ]
+    }
+  ],
+  "deepReview": {
+    "productExperience": {
+      "summary": "Based on Salesforce\u2019s documented Sales Cloud workflow, teams typically capture leads, manage accounts/opportunities, advance pipeline stages, automate with Flows, sync email/activities, and coach from reports/forecasts \u2014 with Agentforce capabilities layered on higher editions.",
+      "workflowSteps": [
+        {
+          "id": "step-capture",
+          "title": "Capture leads",
+          "description": "Bring leads into Sales Cloud and route them with built-in sales flows and lead routing.",
+          "icon": "inbox",
+          "featureSlug": "lead-management"
+        },
+        {
+          "id": "step-qualify",
+          "title": "Manage accounts and opportunities",
+          "description": "Track accounts, contacts, and opportunities as deals progress through the sales process.",
+          "icon": "filter",
+          "featureSlug": "deal-management"
+        },
+        {
+          "id": "step-pipeline",
+          "title": "Run the pipeline",
+          "description": "Use pipeline management and (on Enterprise+) advanced deal insights to prioritize work.",
+          "icon": "calendar",
+          "featureSlug": "pipeline-management"
+        },
+        {
+          "id": "step-email",
+          "title": "Sync email and activities",
+          "description": "Connect Gmail/Outlook and use activity capture so customer interactions stay on the record.",
+          "icon": "mail",
+          "featureSlug": "email-sync"
+        },
+        {
+          "id": "step-automate",
+          "title": "Automate with Flows",
+          "description": "Reduce repetitive work with Sales Flows and broader workflow/process automation as editions increase.",
+          "icon": "zap",
+          "featureSlug": "workflow-automation"
+        },
+        {
+          "id": "step-report",
+          "title": "Report and forecast",
+          "description": "Use reports/dashboards and Pro+ forecasting to manage revenue predictability.",
+          "icon": "chart",
+          "featureSlug": "reporting"
+        }
+      ],
+      "claimType": "research-inference",
+      "evidenceNote": "Workflow reconstructed from official Sales Cloud pricing and features pages \u2014 not from SoftwareGlimpse hands-on testing."
+    },
+    "detailedSections": [
+      {
+        "id": "criterion-ease-of-use",
+        "criterionSlug": "ease-of-use",
+        "title": "Ease of use",
+        "summary": "Powerful but heavy \u2014 Starter helps entry, yet Salesforce remains an enterprise learning curve.",
+        "body": [
+          "Sales Cloud can serve sellers well once configured, but setup, edition choices, and admin concepts are heavier than SMB pipeline CRMs.",
+          "Expect implementation time or partner help for non-trivial orgs."
+        ],
+        "score": 5,
+        "scoreApproved": true,
+        "verdictLabel": "mixed",
+        "strengths": [
+          "Starter Suite lowers entry price/complexity vs classic enterprise-only packaging"
+        ],
+        "weaknesses": [
+          "Platform depth increases learning and admin burden"
+        ],
+        "claimType": "editorial-assessment",
+        "evidenceLabels": [
+          "Sales Cloud pricing",
+          "Sales Cloud product pages"
+        ],
+        "competitorsMentioned": [
+          "pipedrive",
+          "hubspot"
+        ]
+      },
+      {
+        "id": "criterion-pipeline-management",
+        "criterionSlug": "pipeline-management",
+        "title": "Pipeline management",
+        "summary": "A core Sales Cloud strength, deepening with Enterprise deal insights.",
+        "body": [
+          "Opportunity and pipeline management are foundational.",
+          "Enterprise\u2019s Advanced Pipeline Management & Deal Insights messaging targets complex sales motions."
+        ],
+        "score": 9,
+        "scoreApproved": true,
+        "verdictLabel": "excellent",
+        "strengths": [
+          "Opportunity management",
+          "Advanced pipeline insights on Enterprise+"
+        ],
+        "weaknesses": [
+          "Best pipeline depth is edition-gated"
+        ],
+        "claimType": "editorial-assessment",
+        "evidenceLabels": [
+          "Sales Cloud features",
+          "Sales Cloud pricing"
+        ],
+        "competitorsMentioned": [
+          "pipedrive",
+          "hubspot"
+        ]
+      },
+      {
+        "id": "criterion-sales-automation",
+        "criterionSlug": "sales-automation",
+        "title": "Sales automation",
+        "summary": "Flows and process automation are strong; Sales Engagement deepens on Unlimited.",
+        "body": [
+          "Starter includes built-in Sales Flows; Pro increases automation/customization.",
+          "Unlimited adds Sales Engagement and intelligent automation alongside Agentforce messaging."
+        ],
+        "score": 9,
+        "scoreApproved": true,
+        "verdictLabel": "excellent",
+        "strengths": [
+          "Sales Flows",
+          "Workflow automation",
+          "Higher-edition Sales Engagement"
+        ],
+        "weaknesses": [
+          "Full engagement suite depth is upper-edition"
+        ],
+        "claimType": "editorial-assessment",
+        "evidenceLabels": [
+          "Sales Cloud pricing",
+          "Features automation page assets"
+        ],
+        "competitorsMentioned": [
+          "hubspot"
+        ]
+      },
+      {
+        "id": "criterion-email-capabilities",
+        "criterionSlug": "email-capabilities",
+        "title": "Email capabilities",
+        "summary": "Strong CRM email sync and activity capture; engagement sequencing is plan-sensitive.",
+        "body": [
+          "AI email sync and Gmail/Outlook integration appear early in the ladder.",
+          "Sales Engagement is explicitly associated with Unlimited on the pricing page."
+        ],
+        "score": 8,
+        "scoreApproved": true,
+        "verdictLabel": "strong",
+        "strengths": [
+          "Email sync",
+          "Activity capture",
+          "Gmail/Outlook"
+        ],
+        "weaknesses": [
+          "Sales Engagement positioned on Unlimited"
+        ],
+        "claimType": "editorial-assessment",
+        "evidenceLabels": [
+          "Sales Cloud pricing",
+          "Activity capture feature asset"
+        ],
+        "competitorsMentioned": [
+          "pipedrive"
+        ]
+      },
+      {
+        "id": "criterion-reporting",
+        "criterionSlug": "reporting",
+        "title": "Reporting",
+        "summary": "Reports/dashboards plus a serious forecasting ladder \u2014 an enterprise differentiator.",
+        "body": [
+          "Out-of-the-box reporting tools are a documented Sales Cloud strength.",
+          "Forecasting from Pro and Predictive AI on Unlimited extend revenue intelligence; add-ons can go further."
+        ],
+        "score": 9,
+        "scoreApproved": true,
+        "verdictLabel": "excellent",
+        "strengths": [
+          "Reports and dashboards",
+          "Forecasting ladder",
+          "Optional Revenue Intelligence"
+        ],
+        "weaknesses": [
+          "Advanced analytics may require add-ons"
+        ],
+        "claimType": "editorial-assessment",
+        "evidenceLabels": [
+          "Sales Cloud features",
+          "Pricing add-ons"
+        ],
+        "competitorsMentioned": [
+          "hubspot",
+          "dynamics-365"
+        ]
+      },
+      {
+        "id": "criterion-customization",
+        "criterionSlug": "customization",
+        "title": "Customization",
+        "summary": "Best-in-class ceiling for process fit \u2014 the reason many enterprises standardize on Salesforce.",
+        "body": [
+          "Pro Suite markets greater customization; Enterprise adds web API flexibility; Unlimited adds developer support and full sandbox.",
+          "This is where Salesforce most clearly outclasses lightweight CRMs."
+        ],
+        "score": 10,
+        "scoreApproved": true,
+        "verdictLabel": "excellent",
+        "strengths": [
+          "Deep configuration",
+          "API",
+          "Sandbox on Unlimited"
+        ],
+        "weaknesses": [
+          "Customization power increases admin cost"
+        ],
+        "claimType": "editorial-assessment",
+        "evidenceLabels": [
+          "Sales Cloud pricing edition bullets"
+        ],
+        "competitorsMentioned": [
+          "dynamics-365"
+        ]
+      },
+      {
+        "id": "criterion-integrations",
+        "criterionSlug": "integrations",
+        "title": "Integrations",
+        "summary": "AgentExchange/AppExchange ecosystem plus Slack and email connectors.",
+        "body": [
+          "Salesforce\u2019s partner marketplace (AgentExchange, formerly AppExchange) remains a major buying reason.",
+          "Slack and Gmail/Outlook connectivity are explicitly documented on first-party pages."
+        ],
+        "score": 9,
+        "scoreApproved": true,
+        "verdictLabel": "excellent",
+        "strengths": [
+          "AgentExchange",
+          "Slack",
+          "Email connectors"
+        ],
+        "weaknesses": [
+          "Ecosystem sprawl can increase project complexity"
+        ],
+        "claimType": "editorial-assessment",
+        "evidenceLabels": [
+          "CRM product page",
+          "Sales Cloud pricing"
+        ],
+        "competitorsMentioned": [
+          "hubspot"
+        ]
+      },
+      {
+        "id": "criterion-administration-overhead",
+        "criterionSlug": "administration-overhead",
+        "title": "Administration overhead",
+        "summary": "Expect meaningful ongoing admin and often partner/implementation investment.",
+        "body": [
+          "Success Plans, sandboxes, add-ons, and deep configuration create operational work.",
+          "This is acceptable for enterprise programs and a poor fit for no-admin SMB teams."
+        ],
+        "score": 4,
+        "scoreApproved": true,
+        "verdictLabel": "limited",
+        "strengths": [
+          "Success Plans and Trailhead-style enablement exist in the ecosystem"
+        ],
+        "weaknesses": [
+          "High ongoing admin/implementation burden"
+        ],
+        "claimType": "editorial-assessment",
+        "evidenceLabels": [
+          "Pricing Success Plans / add-ons",
+          "Unlimited sandbox messaging"
+        ],
+        "competitorsMentioned": [
+          "pipedrive"
+        ]
+      },
+      {
+        "id": "criterion-scalability",
+        "criterionSlug": "scalability",
+        "title": "Scalability",
+        "summary": "Among the strongest CRM scale stories for complex organizations.",
+        "body": [
+          "Edition ladder, API, sandbox, and ecosystem support large-org growth.",
+          "Salesforce is frequently the default shortlist item for enterprise sales platforms."
+        ],
+        "score": 10,
+        "scoreApproved": true,
+        "verdictLabel": "excellent",
+        "strengths": [
+          "Enterprise/Unlimited depth",
+          "Ecosystem",
+          "Platform scalability"
+        ],
+        "weaknesses": [
+          "Scale comes with cost and complexity"
+        ],
+        "claimType": "editorial-assessment",
+        "evidenceLabels": [
+          "Sales Cloud pricing",
+          "CRM platform pages"
+        ],
+        "competitorsMentioned": [
+          "dynamics-365",
+          "hubspot"
+        ]
+      },
+      {
+        "id": "criterion-value-for-money",
+        "criterionSlug": "value-for-money",
+        "title": "Value for money",
+        "summary": "Strong value for complex orgs that use the platform deeply; weak if you only need a simple CRM.",
+        "body": [
+          "Starter\u2019s $25 list price is real but incomplete for many mid-market needs.",
+          "Pro/Enterprise/Unlimited annual list prices plus add-ons define the true comparison set versus HubSpot or Dynamics."
+        ],
+        "score": 5,
+        "scoreApproved": true,
+        "verdictLabel": "mixed",
+        "strengths": [
+          "Published edition ladder",
+          "30-day trial",
+          "Capability density at upper tiers"
+        ],
+        "weaknesses": [
+          "High seat + add-on TCO",
+          "Contact-us add-ons reduce price clarity"
+        ],
+        "claimType": "editorial-assessment",
+        "evidenceLabels": [
+          "Official Sales Cloud pricing"
+        ],
+        "competitorsMentioned": [
+          "hubspot",
+          "pipedrive",
+          "dynamics-365"
+        ]
+      }
+    ],
+    "limitations": [
+      {
+        "id": "lim-complexity",
+        "title": "Enterprise complexity is the default tradeoff",
+        "explanation": "Even with Starter Suite, Salesforce is a platform CRM. Teams without admin capacity usually overpay in time even if licenses look affordable.",
+        "whoItAffects": "SMB teams without Salesforce admins or partners",
+        "claimType": "editorial-assessment"
+      },
+      {
+        "id": "lim-addons",
+        "title": "Add-ons and Contact-us SKUs affect TCO",
+        "explanation": "Premier Support, Agentforce for Sales, Revenue Intelligence, and related products are separately priced; Agentforce for Sales shows Contact us.",
+        "whoItAffects": "Buyers comparing headline edition prices only",
+        "claimType": "verified-fact"
+      },
+      {
+        "id": "lim-annual-billing",
+        "title": "Upper editions publish annual billing list prices",
+        "explanation": "Pro Suite, Enterprise, and Unlimited show billed annually on the pricing page; only Starter Suite explicitly lists monthly or annual at $25.",
+        "whoItAffects": "Buyers needing month-to-month flexibility on higher editions",
+        "claimType": "verified-fact"
+      }
+    ],
+    "planRecommendations": [
+      {
+        "planSlug": "starter-suite",
+        "planName": "Starter Suite",
+        "bestFor": [
+          "Small teams",
+          "First Salesforce CRM footprint"
+        ],
+        "chooseIf": [
+          "You need core CRM plus suite tools at the lowest published Sales Cloud price",
+          "Monthly or annual billing at $25 matters"
+        ],
+        "skipIf": [
+          "You need advanced forecasting, deep customization, or enterprise pipeline insights"
+        ],
+        "upgradeWhen": [
+          "Quoting/forecasting or greater automation becomes required"
+        ]
+      },
+      {
+        "planSlug": "pro-suite",
+        "planName": "Pro Suite",
+        "bestFor": [
+          "Growing mid-market sales teams"
+        ],
+        "chooseIf": [
+          "You need Sales Quoting and Forecasting",
+          "You need greater customization and automation",
+          "You want AgentExchange access"
+        ],
+        "skipIf": [
+          "You need Advanced Pipeline Management & Deal Insights / Conversation Intelligence"
+        ],
+        "upgradeWhen": [
+          "Pipeline complexity or AI conversation intelligence requirements increase"
+        ]
+      },
+      {
+        "planSlug": "enterprise",
+        "planName": "Enterprise",
+        "bestFor": [
+          "Complex sales orgs",
+          "API-centric integrations"
+        ],
+        "chooseIf": [
+          "You need advanced pipeline/deal insights",
+          "Web API flexibility matters",
+          "Conversation Intelligence / Agentforce features are on the shortlist"
+        ],
+        "skipIf": [
+          "Pro Suite already covers forecasting and customization needs"
+        ],
+        "upgradeWhen": [
+          "You need Predictive AI, Sales Engagement, Premier Success Plan, or Full Sandbox"
+        ]
+      },
+      {
+        "planSlug": "unlimited",
+        "planName": "Unlimited",
+        "bestFor": [
+          "Enterprise programs",
+          "AI + developer/admin depth"
+        ],
+        "chooseIf": [
+          "You need Predictive AI and Sales Engagement",
+          "Premier Success Plan and Full Sandbox matter"
+        ],
+        "skipIf": [
+          "Enterprise already meets feature needs and budget is tight"
+        ],
+        "upgradeWhen": []
+      }
+    ],
+    "competitorDeepDives": [
+      {
+        "competitorSlug": "hubspot",
+        "competitorName": "HubSpot",
+        "headline": "Choose Salesforce for enterprise depth; HubSpot for hub-centric growth stacks",
+        "chooseCurrentIf": [
+          "You need maximum CRM configurability and enterprise ecosystem scale",
+          "Salesforce platform standardization is a company mandate"
+        ],
+        "chooseCompetitorIf": [
+          "You want a freer CRM core and marketing-led hub packaging",
+          "Lower admin overhead is the priority"
+        ],
+        "keyDifference": "Salesforce leans platform/enterprise CRM depth; HubSpot leans accessible hub packaging for growing teams.",
+        "summary": "Shortlist both for mid-market+, then pressure-test admin capacity and TCO.",
+        "comparisonHref": "/compare/"
+      },
+      {
+        "competitorSlug": "pipedrive",
+        "competitorName": "Pipedrive",
+        "headline": "Choose Pipedrive for pipeline simplicity; Salesforce for enterprise systems of record",
+        "chooseCurrentIf": [
+          "Complex processes, forecasting, and integrations dominate requirements"
+        ],
+        "chooseCompetitorIf": [
+          "Visual pipeline hygiene with lower admin burden is enough"
+        ],
+        "keyDifference": "Pipedrive optimizes SMB pipeline UX; Salesforce optimizes enterprise configurability and scale.",
+        "summary": "These overlap only loosely \u2014 pick based on complexity, not brand prestige.",
+        "comparisonHref": "/compare/"
+      }
+    ],
+    "finalVerdict": {
+      "chooseIf": [
+        "You need an enterprise sales system of record with deep customization and reporting",
+        "You can fund licenses plus admin/implementation (and possibly add-ons)",
+        "Ecosystem/integrations and long-term scalability are buying criteria"
+      ],
+      "considerOtherIf": [
+        "You want a lightweight pipeline CRM with minimal admin",
+        "Seat + add-on TCO must stay in SMB budget territory",
+        "Your team will not invest in Salesforce configuration discipline"
+      ],
+      "body": [
+        "Salesforce Sales Cloud earns a strong research-based recommendation for mid-market and enterprise buyers who need platform depth. Customization, scalability, pipeline/reporting, automation, and ecosystem breadth are the clear upsides.",
+        "The buying mistake is treating Starter Suite\u2019s $25 price as the whole story. Model Pro/Enterprise/Unlimited annual list pricing and likely add-ons against HubSpot or Dynamics, and compare Pipedrive when simplicity wins. This SoftwareGlimpse review is research-based (first-party sources), not a hands-on lab evaluation."
+      ]
+    },
+    "whyWeLike": [
+      "Published, comparable Sales Cloud edition ladder with clear USD list prices",
+      "Best-in-class customization and scalability ceiling for CRM",
+      "Serious reporting/forecasting story for revenue leaders",
+      "Broad AgentExchange/Slack ecosystem"
+    ],
+    "keyTakeaway": "Salesforce is the enterprise CRM default for complex sales orgs \u2014 budget for real edition/add-on TCO, not just Starter Suite.",
+    "handsOnTests": [],
+    "coverage": {
+      "productOverview": "complete",
+      "editorialVerdict": "complete",
+      "majorCriteria": "complete",
+      "pricing": "complete",
+      "planSelection": "complete",
+      "alternatives": "complete",
+      "competitorContext": "complete",
+      "limitations": "complete",
+      "researchTransparency": "complete",
+      "productExperience": "partial"
+    }
+  },
+  "confidence": "medium",
+  "handsOnTesting": false,
+  "contentVersion": 1,
+  "refreshNeeded": false,
+  "lastUpdatedAt": "2026-08-14T06:00:00.000Z",
+  "metadata": {
+    "status": "published",
+    "publishedAt": "2026-08-14T06:00:00.000Z",
+    "researchStatus": "complete"
+  },
+  "seo": {
+    "title": "Salesforce Review (2026): Sales Cloud Pricing, Features, Pros & Cons",
+    "description": "In-depth Salesforce Sales Cloud review covering 2026 USD edition pricing (Starter Suite to Unlimited), CRM features, Agentforce AI, limitations, and who should buy.",
+    "canonicalPath": "/software/salesforce/",
+    "indexable": true
+  }
+}

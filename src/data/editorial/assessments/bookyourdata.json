@@ -1,0 +1,172 @@
+{
+  "id": "assessment-bookyourdata-si-v1",
+  "productSlug": "bookyourdata",
+  "methodologySlug": "sales-intelligence-editorial",
+  "methodologyVersion": "1.0.0",
+  "status": "approved",
+  "verdict": "BookYourData is a pay-as-you-go B2B contact database — sales intelligence you buy by the record rather than by the seat. Scored on SoftwareGlimpse's sales intelligence methodology, it is strongest where the category is judged hardest (contact data, prospecting filters, price transparency of the credit model) and weakest on outreach execution, which it deliberately leaves to your sequencer. Based on first-party Help Center research; the marketing pricing page HTML was Cloudflare-blocked, so no dollar credit-pack amounts are asserted here. Not hands-on tested.",
+  "strengths": [
+    "Real-time verified B2B emails and phone numbers with a 97% deliverability guarantee backed by credit refunds",
+    "100+ targeting filters plus BeSpoke private list building for niches the self-serve index cannot cover",
+    "Pay-as-you-go credits with no subscription commitment and no seat minimums",
+    "Credits never expire, so unused budget carries into the next campaign instead of being forfeited",
+    "Excel/CSV export and push into 1,000+ CRMs including HubSpot and Salesforce"
+  ],
+  "weaknesses": [
+    "No native email sequencing or multichannel engagement — outreach must happen in another tool",
+    "Reporting is list and credit operations only; there is no campaign or reply analytics layer",
+    "Dollar credit-pack tiers were not confirmed from live first-party pricing HTML in this research pass",
+    "BeSpoke list building sits outside the self-serve packs and requires a custom quote",
+    "No continuous CRM enrichment daemon — refreshes are pull-based exports rather than scheduled syncs"
+  ],
+  "bestFor": [
+    "Outbound and recruiting teams that buy verified contacts in bursts rather than on a monthly data subscription",
+    "Founders and small SDR teams testing a new ICP before committing to a seat-based data platform",
+    "Buyers who want deliverability risk priced in via guarantee-backed credit refunds",
+    "RevOps topping up list coverage for territories a primary data vendor misses"
+  ],
+  "notIdealFor": [
+    "Teams that want prospecting, sequencing, and reply handling inside a single sales-engagement suite",
+    "RevOps needing scheduled, automatic CRM record enrichment rather than manual export cycles",
+    "Buyers who require published dollar price cards before any evaluation purchase",
+    "Managers who expect campaign analytics and rep performance reporting from their data vendor"
+  ],
+  "tradeoffs": [
+    "Usage-based credit flexibility vs the budget predictability of a seat subscription",
+    "Deep contact-data and filter coverage vs zero outreach execution in the same product",
+    "Self-serve credit packs vs BeSpoke custom list quotes for hard-to-reach segments",
+    "Never-expiring credits vs the ongoing freshness a continuously refreshed enrichment platform provides"
+  ],
+  "recommendation": "Choose BookYourData when verified contact data — not workflow — is the thing you are actually buying. It pairs cleanly with a separate sequencer (Reply, Apollo) and your CRM of record. Compare Apollo, Lusha, or RocketReach when you want prospecting plus sequencing under one subscription, and confirm current credit-pack dollar amounts on the live pricing page before purchase.",
+  "editorialNotes": "Re-scored on the sales intelligence editorial methodology v1.0.0 — replaces the earlier CRM-methodology assessment, which mis-framed a contact database as a CRM substitute. Sourced from BookYourData Help Center fixtures (What is BookYourData?, credits, pricing model, free credits, subscription FAQ). Marketing /pricing page was Cloudflare-blocked, so dollar pack amounts are omitted. handsOnTesting=false.",
+  "handsOnTesting": false,
+  "confidence": "medium",
+  "criterionAssessments": [
+    {
+      "criterionSlug": "contact-data",
+      "score": 9,
+      "rationale": "A real-time verified B2B contact database is the entire product, and the 97% deliverability guarantee puts vendor money behind the accuracy claim rather than leaving it as marketing copy.",
+      "supportingFactIds": [
+        "fact-bookyourdata-identity.shortDescription-bookyourdata-product-fixture",
+        "fact-bookyourdata-features.contact-management-bookyourdata-product-fixture"
+      ],
+      "confidence": "medium",
+      "status": "approved",
+      "reviewedAt": "2026-08-17T06:30:00.000Z",
+      "reviewer": "editorial"
+    },
+    {
+      "criterionSlug": "prospecting",
+      "score": 8,
+      "rationale": "100+ filters in a self-serve Prospector cover most ICP shapes, and BeSpoke private list building handles segments the standing index misses; what is absent is signal-based prioritization to rank the list once built.",
+      "supportingFactIds": [
+        "fact-bookyourdata-positioning.claim-bookyourdata-product-fixture",
+        "fact-bookyourdata-features.lead-management-bookyourdata-product-fixture",
+        "fact-bookyourdata-pricing.plans.bespoke-bookyourdata-pricing-fixture"
+      ],
+      "confidence": "medium",
+      "status": "approved",
+      "reviewedAt": "2026-08-17T06:30:00.000Z",
+      "reviewer": "editorial"
+    },
+    {
+      "criterionSlug": "data-enrichment",
+      "score": 7,
+      "rationale": "Records are verified at reveal time and can be exported or pushed into a CRM, which enriches on demand; there is no scheduled background refresh of records already sitting in your CRM.",
+      "supportingFactIds": [
+        "fact-bookyourdata-features.contact-management-bookyourdata-product-fixture",
+        "fact-bookyourdata-identity.shortDescription-bookyourdata-product-fixture"
+      ],
+      "confidence": "medium",
+      "status": "approved",
+      "reviewedAt": "2026-08-17T06:30:00.000Z",
+      "reviewer": "editorial"
+    },
+    {
+      "criterionSlug": "email-outreach",
+      "score": 3,
+      "rationale": "Email sequencing is not a documented capability in this research pass. BookYourData supplies verified addresses and a deliverability guarantee, then hands off — sending, sequencing, and reply handling all happen elsewhere.",
+      "supportingFactIds": [
+        "fact-bookyourdata-features.email-sequences-bookyourdata-product-fixture"
+      ],
+      "confidence": "medium",
+      "status": "approved",
+      "reviewedAt": "2026-08-17T06:30:00.000Z",
+      "reviewer": "editorial"
+    },
+    {
+      "criterionSlug": "crm-sync",
+      "score": 7,
+      "rationale": "Help Center documents Excel/CSV export plus push into 1,000+ CRMs including HubSpot and Salesforce, which covers the practical handoff; it is a push model rather than a bi-directional, field-mapped sync.",
+      "supportingFactIds": [
+        "fact-bookyourdata-features.contact-management-bookyourdata-product-fixture",
+        "fact-bookyourdata-features.lead-management-bookyourdata-product-fixture"
+      ],
+      "confidence": "medium",
+      "status": "approved",
+      "reviewedAt": "2026-08-17T06:30:00.000Z",
+      "reviewer": "editorial"
+    },
+    {
+      "criterionSlug": "ease-of-use",
+      "score": 9,
+      "rationale": "One credit per contact, no seats to provision, and no plan hierarchy to learn — a new user can filter, reveal, and export in a single session without an onboarding call.",
+      "supportingFactIds": [
+        "fact-bookyourdata-pricing.model-bookyourdata-pricing-fixture",
+        "fact-bookyourdata-identity.shortDescription-bookyourdata-product-fixture"
+      ],
+      "confidence": "medium",
+      "status": "approved",
+      "reviewedAt": "2026-08-17T06:30:00.000Z",
+      "reviewer": "editorial"
+    },
+    {
+      "criterionSlug": "reporting",
+      "score": 4,
+      "rationale": "Reporting is documented as limited: credit balances, export history, and list operations. Lead scoring is likewise limited, so there is no analytics layer to tell you which segments converted.",
+      "supportingFactIds": [
+        "fact-bookyourdata-features.reporting-bookyourdata-product-fixture",
+        "fact-bookyourdata-features.lead-scoring-bookyourdata-product-fixture"
+      ],
+      "confidence": "medium",
+      "status": "approved",
+      "reviewedAt": "2026-08-17T06:30:00.000Z",
+      "reviewer": "editorial"
+    },
+    {
+      "criterionSlug": "value-for-money",
+      "score": 9,
+      "rationale": "Usage-based pricing with never-expiring credits, free starter credits, and no subscription floor means spend tracks output rather than headcount — unusually buyer-friendly for the category, though live pack dollar amounts still need confirmation on the pricing page.",
+      "supportingFactIds": [
+        "fact-bookyourdata-pricing.model-bookyourdata-pricing-fixture",
+        "fact-bookyourdata-pricing.hasFreeTrial-bookyourdata-pricing-fixture",
+        "fact-bookyourdata-pricing.plans.credit-packs-bookyourdata-pricing-fixture"
+      ],
+      "confidence": "medium",
+      "status": "approved",
+      "reviewedAt": "2026-08-17T06:30:00.000Z",
+      "reviewer": "editorial"
+    }
+  ],
+  "overallScore": 7,
+  "overallScoreRationale": "Equal-weight average of the eight sales intelligence criteria (56/8 = 7.0). Contact data, ease of use, and value-for-money score at the top of the band because they are the product's actual job; email-outreach and reporting sit low because BookYourData deliberately does not compete there. Scoring this tool on CRM criteria would have understated it — this methodology asks the questions a data buyer actually has.",
+  "scoreAudit": [
+    {
+      "at": "2026-08-17T06:00:00.000Z",
+      "actor": "editorial",
+      "change": "Initial scoring against CRM editorial methodology (10 criteria)",
+      "nextOverall": 5.8
+    },
+    {
+      "at": "2026-08-17T06:30:00.000Z",
+      "actor": "editorial",
+      "change": "Re-scored on sales-intelligence-editorial v1.0.0 across all 8 SI criteria; CRM criteria retired as category-inappropriate; approved with medium confidence; handsOnTesting=false",
+      "previousOverall": 5.8,
+      "nextOverall": 7
+    }
+  ],
+  "reviewedAt": "2026-08-17T06:30:00.000Z",
+  "reviewer": "editorial",
+  "createdAt": "2026-08-17T05:55:10.617Z",
+  "updatedAt": "2026-08-17T06:30:00.000Z"
+}

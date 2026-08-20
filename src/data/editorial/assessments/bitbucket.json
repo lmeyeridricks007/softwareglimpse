@@ -1,0 +1,165 @@
+{
+  "id": "assessment-bitbucket-it-v1",
+  "productSlug": "bitbucket",
+  "methodologySlug": "it-development-editorial",
+  "methodologyVersion": "1.0.0",
+  "status": "approved",
+  "verdict": "Bitbucket Cloud: Choose Bitbucket Cloud when cheap Atlassian-native git + Pipelines is the job — not GitHub’s ecosystem and not GitLab DevSecOps. Scores use the IT & Development editorial methodology from first-party research as of 2026-08-18 — not hands-on product testing.",
+  "strengths": [
+    "Low Standard seat price",
+    "Jira-native",
+    "Real Free 5-user tier",
+    "Pipelines included",
+    "Premium security controls"
+  ],
+  "weaknesses": [
+    "5-user paid minimum",
+    "Thinner ecosystem vs GitHub",
+    "DevSecOps vs GitLab",
+    "Guard extra for SSO",
+    "AI not a lead feature"
+  ],
+  "bestFor": [
+    "Jira Cloud teams that want cheap git + Pipelines",
+    "Small orgs that fit in Free (≤5 users)",
+    "Premium buyers who need IP allowlisting"
+  ],
+  "notIdealFor": [
+    "Open-source / GitHub-ecosystem-first teams",
+    "DevSecOps consolidation (GitLab)",
+    "AI-native coding (Cursor)"
+  ],
+  "tradeoffs": [
+    "Per-agent vs per-host vs per-seat vs per-GB pricing models",
+    "Module stacking and consumption overages vs single-SKU floors",
+    "Free tiers vs enterprise SSO/audit gates",
+    "Landscape-adjacent tools vs primary job-cluster peers on best pages"
+  ],
+  "recommendation": "Choose Bitbucket Cloud when cheap Atlassian-native git + Pipelines is the job — not GitHub’s ecosystem and not GitLab DevSecOps. Compare GitHub for ecosystem/Actions; GitLab for CI+security in one platform.",
+  "editorialNotes": "IT Priority-2 batch. Approved on it-development-editorial v1.0.0. membershipRole=primary. jobCluster=source-control-devops. handsOnTesting=false. Affiliate economics excluded.",
+  "handsOnTesting": false,
+  "confidence": "medium",
+  "criterionAssessments": [
+    {
+      "criterionSlug": "ease-of-use",
+      "score": 8,
+      "rationale": "Simple git + Pipelines for Jira-native teams. Not a lab test.",
+      "supportingFactIds": [
+        "fact-bitbucket-features.source-control",
+        "fact-bitbucket-pricing.model"
+      ],
+      "confidence": "medium",
+      "status": "approved",
+      "reviewedAt": "2026-08-18T12:00:00.000Z",
+      "reviewer": "editorial"
+    },
+    {
+      "criterionSlug": "it-job-fit",
+      "score": 7,
+      "rationale": "Source-control hosting — peer of GitHub/GitLab, weaker as a full DevSecOps platform than GitLab.",
+      "supportingFactIds": [
+        "fact-bitbucket-features.source-control",
+        "fact-bitbucket-pricing.model"
+      ],
+      "confidence": "medium",
+      "status": "approved",
+      "reviewedAt": "2026-08-18T12:00:00.000Z",
+      "reviewer": "editorial"
+    },
+    {
+      "criterionSlug": "workflow-depth",
+      "score": 7,
+      "rationale": "Repos + Pipelines + Jira links; less platform depth than GitLab, less ecosystem than GitHub.",
+      "supportingFactIds": [
+        "fact-bitbucket-features.cicd-actions",
+        "fact-bitbucket-pricing.model"
+      ],
+      "confidence": "medium",
+      "status": "approved",
+      "reviewedAt": "2026-08-18T12:00:00.000Z",
+      "reviewer": "editorial"
+    },
+    {
+      "criterionSlug": "integrations",
+      "score": 9,
+      "rationale": "Best Jira-native git host in the cluster.",
+      "supportingFactIds": [
+        "fact-bitbucket-features.analytics-reporting",
+        "fact-bitbucket-pricing.model",
+        "fact-bitbucket-positioning.vendorClaim"
+      ],
+      "confidence": "medium",
+      "status": "approved",
+      "reviewedAt": "2026-08-18T12:00:00.000Z",
+      "reviewer": "editorial"
+    },
+    {
+      "criterionSlug": "admin-security",
+      "score": 7,
+      "rationale": "Premium adds IP allowlist and merge checks; Guard extra for SSO.",
+      "supportingFactIds": [
+        "fact-bitbucket-features.enterprise-security",
+        "fact-bitbucket-pricing.model"
+      ],
+      "confidence": "medium",
+      "status": "approved",
+      "reviewedAt": "2026-08-18T12:00:00.000Z",
+      "reviewer": "editorial"
+    },
+    {
+      "criterionSlug": "scalability",
+      "score": 8,
+      "rationale": "Cloud user scale is fine; Data Center is a different SKU.",
+      "supportingFactIds": [
+        "fact-bitbucket-pricing.plans.free",
+        "fact-bitbucket-pricing.model",
+        "fact-bitbucket-pricing.plans.premium"
+      ],
+      "confidence": "medium",
+      "status": "approved",
+      "reviewedAt": "2026-08-18T12:00:00.000Z",
+      "reviewer": "editorial"
+    },
+    {
+      "criterionSlug": "value-for-money",
+      "score": 9,
+      "rationale": "Lowest published paid git seat in this wave; 5-user minimum is the catch. Affiliate economics excluded.",
+      "supportingFactIds": [
+        "fact-bitbucket-pricing.hasFreePlan",
+        "fact-bitbucket-pricing.model",
+        "fact-bitbucket-pricing.startingPriceMonthly"
+      ],
+      "confidence": "medium",
+      "status": "approved",
+      "reviewedAt": "2026-08-18T12:00:00.000Z",
+      "reviewer": "editorial"
+    },
+    {
+      "criterionSlug": "ai-capabilities",
+      "score": 6,
+      "rationale": "Atlassian AI is not the reason to pick Bitbucket vs GitHub Copilot.",
+      "supportingFactIds": [
+        "fact-bitbucket-features.dev-ai",
+        "fact-bitbucket-pricing.model"
+      ],
+      "confidence": "medium",
+      "status": "approved",
+      "reviewedAt": "2026-08-18T12:00:00.000Z",
+      "reviewer": "editorial"
+    }
+  ],
+  "overallScore": 7.6,
+  "overallScoreRationale": "Weighted average of the eight IT editorial criteria using category weights (IT job fit 16, workflow depth 14, ease of use 12, integrations 12, admin/security 12, value 12, AI 12, scalability 10), rounded to 1 decimal. Products are scored inside their job cluster — ITSM, observability, source control, hosting panels, and web-data platforms are not forced into one undifferentiated ranking. Not a hands-on lab score, and affiliate economics are excluded.",
+  "scoreAudit": [
+    {
+      "at": "2026-08-18T12:00:00.000Z",
+      "actor": "editorial",
+      "change": "IT Priority-2 onboarding; approved IT criteria with category weights; handsOnTesting=false",
+      "nextOverall": 7.6
+    }
+  ],
+  "reviewedAt": "2026-08-18T12:00:00.000Z",
+  "reviewer": "editorial",
+  "createdAt": "2026-08-18T12:00:00.000Z",
+  "updatedAt": "2026-08-18T12:00:00.000Z"
+}
