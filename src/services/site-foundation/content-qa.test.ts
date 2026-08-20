@@ -23,7 +23,7 @@ describe("site foundation content QA", () => {
     const founder = config.authors.find(
       (a) => a.id === config.identity.founderAuthorId,
     );
-    expect(founder?.name).toBe("Lee Meyeridricks");
+    expect(founder?.name).toBe("Lee M.");
     const blob = `${founder?.shortBio ?? ""} ${founder?.fullBio ?? ""}`.toLowerCase();
     expect(blob).not.toMatch(/\bwe tested every\b/);
     expect(blob).not.toMatch(/\byears at\b/);

@@ -2,7 +2,7 @@
 
 **Window:** 18 Aug 2026 → 18 Feb 2027 (six months)  
 **Channels:** Facebook Page + Instagram (same Meta Business Suite)  
-**Owner:** Lee Meyeridricks (founder-operated; no social team assumed)  
+**Owner:** Lee M. (founder-operated; no social team assumed)  
 **Job of the channels:** Send qualified buyers to decision tools, then to reviews / comparisons / downloads — not to grow vanity followers.
 
 Companion docs: [six-month calendar](./facebook-instagram-calendar-2026-08-to-2027-02.md) · [templates](./facebook-instagram-post-templates.md) · [week 1](./week-1-copy-paste.md) · [week 2](./week-2-copy-paste.md) · [week 3](./week-3-copy-paste.md) · [week 4](./week-4-copy-paste.md) · [week 5](./week-5-copy-paste.md) · [week 6](./week-6-copy-paste.md) · [week 7](./week-7-copy-paste.md) · [week 8](./week-8-copy-paste.md) · [week 9](./week-9-copy-paste.md) · [week 10](./week-10-copy-paste.md) · [week 11](./week-11-copy-paste.md) · [week 12](./week-12-copy-paste.md)

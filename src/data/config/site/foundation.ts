@@ -33,13 +33,13 @@ export const siteFoundationConfig: SiteFoundationConfig =
     authors: [
       {
         id: "author-lee-meyeridricks",
-        name: "Lee Meyeridricks",
+        name: "Lee M.",
         slug: "lee-meyeridricks",
         role: "Founder",
         shortBio:
           "Founder of SoftwareGlimpse. Building a software decision platform that separates research, editorial judgment, and affiliate relationships — starting with CRM and sales tools.",
         fullBio:
-          "I’m Lee Meyeridricks, the founder of SoftwareGlimpse. I built the original site as a more conventional review/affiliate publication, then decided that model wasn’t good enough for people who need to choose software carefully. SoftwareGlimpse is being rebuilt as a decision platform: structured research, category methodologies, comparisons, pricing tools, and recommendations that do not use commission as a ranking input. I care about transparent sourcing, clear disclosures, and saying when we have not hands-on tested a product. This biography does not invent employers, years of experience, or product-testing claims beyond what is documented for the site.",
+          "I’m Lee M., the founder of SoftwareGlimpse. I built the original site as a more conventional review/affiliate publication, then decided that model wasn’t good enough for people who need to choose software carefully. SoftwareGlimpse is being rebuilt as a decision platform: structured research, category methodologies, comparisons, pricing tools, and recommendations that do not use commission as a ranking input. I care about transparent sourcing, clear disclosures, and saying when we have not hands-on tested a product. This biography does not invent employers, years of experience, or product-testing claims beyond what is documented for the site.",
         expertise: [
           "Software buying research workflows",
           "CRM and sales software evaluation frameworks",

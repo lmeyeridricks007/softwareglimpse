@@ -14,7 +14,7 @@ import {
 export const metadata: Metadata = buildPageMetadata({
   title: "My Story",
   description:
-    "Why Lee Meyeridricks is rebuilding SoftwareGlimpse as a software decision platform.",
+    "Why Lee M. is rebuilding SoftwareGlimpse as a software decision platform.",
   path: COMPANY_ROUTES.myStory,
   indexable: true,
 });
