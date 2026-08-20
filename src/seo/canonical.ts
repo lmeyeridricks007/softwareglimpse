@@ -91,8 +91,39 @@ export function defaultOgImagePath(): string {
   return "/og/default.png";
 }
 
+/**
+ * Origin for static assets (OG images, etc.).
+ * On Vercel, prefer the deployment production host so assets resolve before the
+ * custom domain is pointed at this app (legacy WordPress may still own SITE_URL).
+ */
+export function assetOrigin(): string {
+  if (process.env.VERCEL === "1") {
+    const host =
+      process.env.VERCEL_PROJECT_PRODUCTION_URL?.replace(/^https?:\/\//, "") ||
+      process.env.VERCEL_URL?.replace(/^https?:\/\//, "");
+    if (host) return `https://${host.replace(/\/$/, "")}`;
+  }
+  return getSiteUrl().replace(/\/$/, "");
+}
+
+/** Absolute URL for a static asset path — never forces a trailing slash. */
+export function absoluteAssetUrl(path: string): string {
+  const origin = assetOrigin();
+  let p = path.trim();
+  if (/^https?:\/\//i.test(p)) {
+    try {
+      const u = new URL(p);
+      return `${u.origin}${u.pathname.replace(/\/$/, "") || "/"}`;
+    } catch {
+      return p;
+    }
+  }
+  if (!p.startsWith("/")) p = `/${p}`;
+  if (p.length > 1 && p.endsWith("/")) p = p.slice(0, -1);
+  return `${origin}${p}`;
+}
+
 /** Absolute OG image URL — must NOT use trailing-slash page canonicalization. */
 export function defaultOgImageUrl(): string {
-  const base = getSiteUrl().replace(/\/$/, "");
-  return `${base}${defaultOgImagePath()}`;
+  return absoluteAssetUrl(defaultOgImagePath());
 }

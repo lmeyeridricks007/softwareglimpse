@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { SITE_NAME } from "@/lib/site";
 import {
+  absoluteAssetUrl,
   canonicalUrl,
   defaultOgImageUrl,
   normalizePath,
@@ -83,8 +84,8 @@ export function buildPageMetadataFromDecision(
 
 function resolveOgImage(ogImage: string | null | undefined): string {
   if (!ogImage) return defaultOgImageUrl();
-  if (/^https?:\/\//i.test(ogImage)) return ogImage;
-  return canonicalUrl(ogImage);
+  if (/^https?:\/\//i.test(ogImage)) return absoluteAssetUrl(ogImage);
+  return absoluteAssetUrl(ogImage);
 }
 
 /**
