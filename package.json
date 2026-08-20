@@ -93,6 +93,7 @@
     "site:search-performance": "tsx scripts/site-search-performance-cli.ts",
     "search:quality": "tsx scripts/search-quality-cli.ts",
     "search:build-index": "tsx scripts/build-search-index.ts",
+    "media:upload-blob": "node --env-file=.env.local scripts/upload-public-to-blob.mjs",
     "search:demand": "tsx scripts/search-quality-cli.ts demand",
     "site:page-readiness": "tsx scripts/site-page-ranking-readiness-cli.ts",
     "perf:check": "tsx scripts/perf-check.ts",
@@ -236,6 +237,7 @@
     "resources:ecosystem": "tsx scripts/audit-resource-ecosystem.ts"
   },
   "dependencies": {
+    "@vercel/blob": "^2.8.0",
     "jspdf": "^4.2.1",
     "lucide-react": "^1.31.0",
     "next": "16.3.0",

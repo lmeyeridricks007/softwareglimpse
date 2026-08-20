@@ -29,6 +29,12 @@ const nextConfig: NextConfig = {
     deviceSizes: [640, 750, 828, 1080, 1200, 1920],
     imageSizes: [16, 32, 48, 64, 96, 128, 256, 384],
     minimumCacheTTL: 60 * 60 * 24 * 30,
+    remotePatterns: [
+      {
+        protocol: "https",
+        hostname: "kxxfqtgoxjcif3x5.public.blob.vercel-storage.com",
+      },
+    ],
   },
   // Heavy export libs are dynamically imported on user action only.
   serverExternalPackages: ["jspdf", "xlsx"],
@@ -46,6 +52,30 @@ const nextConfig: NextConfig = {
    */
   async redirects() {
     return toNextConfigRedirects();
+  },
+  /**
+   * Site media packs live in Vercel Blob (not in the Git deploy).
+   * Paths stay /guides/… etc.; production proxies to the public Blob host.
+   */
+  async rewrites() {
+    const blob = (process.env.BLOB_PUBLIC_HOST ?? "").replace(/\/$/, "");
+    if (!blob) return [];
+    const folders = [
+      "guides",
+      "software",
+      "capabilities",
+      "use-cases",
+      "vendor-ui",
+      "industries",
+      "features",
+      "resources",
+      "requirements",
+      "for",
+    ];
+    return folders.map((folder) => ({
+      source: `/${folder}/:path*`,
+      destination: `${blob}/${folder}/:path*`,
+    }));
   },
   async headers() {
     return [
