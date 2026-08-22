@@ -1,13 +1,13 @@
 # Earned backlink opportunities — revenueoperationsalliance.com
 
-> From EarnedBacklinkOpportunityAgent · 2026-08-20T10:46:27.246Z
-> Topic: CRM / business software
+> From EarnedBacklinkOpportunityAgent · 2026-08-20T10:50:33.197Z
+> Topic: CRM, sales intelligence & business software
 
-## P17 — Revenue Operations Alliance
+## P27 — Revenue Operations Alliance
 
 | Field | Value |
 | --- | --- |
-| Priority | 17 |
+| Priority | 27 |
 | Site | Revenue Operations Alliance |
 | Domain | `revenueoperationsalliance.com` |
 | Opportunity URL | https://www.revenueoperationsalliance.com/ |
@@ -33,7 +33,7 @@ Open https://www.revenueoperationsalliance.com/. Locate editorial/about/contact.
 
 ### Suggested ask
 
-Hi — for members researching CRM selection, we offer a free CRM Evaluation Checklist (https://www.softwareglimpse.com/resources/crm-evaluation-checklist/). Member education often needs free evaluation tooling; CRM Finder and evaluation checklist support members choosing or replacing CRM systems without vendor lock-in. Open to listing it in your resources, or swapping a short member tip?
+Hi — for members researching software selection, we offer a free CRM Evaluation Checklist (https://www.softwareglimpse.com/resources/crm-evaluation-checklist/). Member education often needs free evaluation tooling; CRM Finder and evaluation checklist support members choosing or replacing CRM systems without vendor lock-in. Open to listing it in your resources, or swapping a short member tip?
 
 ### Why they might link
 

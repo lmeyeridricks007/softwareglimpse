@@ -1,22 +1,32 @@
-# SoftwareGlimpse CRM Internal-Linking & Content-Support Architecture
+# SoftwareGlimpse Internal-Linking & Content-Support Architecture
 
-> Spec date: 2026-08-14  
-> Status: **authoritative linking blueprint** (documentation only — do **not** implement links from this change)  
+> Spec date: 2026-08-14 · Updated: 2026-08-20  
+> Status: **authoritative linking blueprint** (implemented in `src/services/internal-linking/`)  
 > Inputs: [`01-current-page-inventory.md`](./01-current-page-inventory.md), [`02-crm-target-ecosystem.md`](./02-crm-target-ecosystem.md)  
-> Related code today: `src/services/relationships/`, `src/services/graph/`, `docs/softwareglimpse/internal-linking.md`
+> Related code: `src/services/internal-linking/`, `src/services/relationships/`, `docs/softwareglimpse/internal-linking.md`
 
 ---
 
 ## Executive summary
 
-Internal linking for SoftwareGlimpse CRM is a **buyer-journey + research graph**, not a “related posts” SEO widget.
+Internal linking for SoftwareGlimpse is a **buyer-journey + research graph**, not a “related posts” SEO widget. CRM remains the densest cluster; the same module system now applies across dedicated tool categories (sales intelligence, marketing, HR, AI, etc.).
 
 - **Chrome nav** is intentionally sparse and hardcoded (hub discovery).  
-- **In-page modules** must be **graph- and journey-driven**: parent/child, supports/supported-by, next-step, tool-for, resource-for, evidence-for.  
-- Today, **product → category/compare/alternatives/guides/tools** is the only mature graph linker (`getSoftwareRelationshipLinks`). Most L3/L4 knowledge pages lack standardized next-step and parent modules.  
-- Target: every published CRM page has **≥1 parent/hub inbound** and **≥1 meaningful next-step outbound** (orphan rule), with density caps (typically **3–6** items per module).
+- **In-page modules** are **graph- and journey-driven**: parent/child, supports/supported-by, next-step, tool-for, resource-for.  
+- Category journey resolution lives in `resolveCategoryJourneyModules` — never emit soft `/tools/software-finder/` as an indexable next step.  
+- Target: every published page has **≥1 parent/hub inbound** and **≥1 meaningful next-step outbound**, with density caps (typically **3–6** items per module).  
+- Measure success with **per-category hub coverage + next-step %**, not orphan count alone (`npm run seo:internal-links`).
 
-Canonical CRM hub remains **`/categories/crm/`**.
+Canonical CRM hub remains **`/categories/crm/`**. Other categories use `/categories/{slug}/` plus dedicated finders under `/tools/{slug}-finder/`.
+
+### Ops commands
+
+```bash
+npm run seo:internal-links
+npm run content:clusters -- ai
+npm run content:clusters:gaps -- --category ai
+npm run content:clusters:gaps -- --category hr
+```
 
 ---
 

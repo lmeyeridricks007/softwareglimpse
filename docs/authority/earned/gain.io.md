@@ -1,13 +1,13 @@
 # Earned backlink opportunities — gain.io
 
-> From EarnedBacklinkOpportunityAgent · 2026-08-20T10:46:27.246Z
-> Topic: CRM / business software
+> From EarnedBacklinkOpportunityAgent · 2026-08-20T10:50:33.197Z
+> Topic: CRM, sales intelligence & business software
 
-## P4 — CRM Buying Checklist / Evaluation
+## P6 — CRM Buying Checklist / Evaluation
 
 | Field | Value |
 | --- | --- |
-| Priority | 4 |
+| Priority | 6 |
 | Site | Gain |
 | Domain | `gain.io` |
 | Opportunity URL | https://gain.io/blog/crm-buying-checklist-evaluation |

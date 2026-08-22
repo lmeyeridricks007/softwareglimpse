@@ -22,3 +22,8 @@ Investigated via live search but not recommended.
 | CB Insights | `cbinsights.com` | https://cbinsights.com/company/american-association-of-inside-sales-professionals | DIRECTORY | No actual submission route | CB Insights company profile — no submission/editorial route. |
 | JobStars | `jobstars.com` | https://jobstars.com/professional-associations/emblaze/ | DIRECTORY | Low quality | Thin association listing — insufficient editorial quality. |
 | Notion | `notion.com` | https://www.notion.com/templates/sales-operations-crm | VENDOR_ECOSYSTEM | Vendor-locked competitor asset | Notion marketplace template — vendor-locked product surface. |
+| Gojiberry.ai | `blog.gojiberry.ai` | https://blog.gojiberry.ai/blog/sales-intelligence-plateforme | VENDOR_ECOSYSTEM | Vendor-locked competitor asset | Gojiberry product-led SI buyer's guide — vendor-locked. |
+| RevoScale | `revoscale.io` | https://www.revoscale.io/blog/b-2-b-sales-intelligence-tools | VENDOR_ECOSYSTEM | Vendor-locked competitor asset | RevoScale product roundup — vendor-locked. |
+| Aaxonix | `aaxonix.com` | https://aaxonix.com/resources/crm-readiness-assessment-tool/ | COMPETITOR_LINK_GAP | Direct competitor selling same artifact | Own readiness assessment tool — not complementary. |
+| SpotSaaS | `spotsaas.com` | https://www.spotsaas.com/resources/project-management-software/scorecard | COMPETITOR_LINK_GAP | Direct competitor selling same artifact | Own PM scorecard — same reject pattern as SpotSaaS CRM scorecard. |
+| HR Cloud | `hrcloud.com` | https://www.hrcloud.com/blog/hr-software-evaluation-checklist | VENDOR_ECOSYSTEM | Vendor-locked competitor asset | HR Cloud product-led checklist — vendor-locked. |

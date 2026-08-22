@@ -59,6 +59,8 @@ import { listPublishedLearningGuides } from "@/services/content-clusters";
 import { buildPricingSnapshot } from "@/services/pricing/server";
 import { loadEnrichment } from "@/data/research/store";
 import { COMPANY_ROUTES, LEGAL_ROUTES } from "@/services/site-foundation";
+import { buildBestLinkPlan } from "@/services/internal-linking";
+import { InternalLinkingModules } from "@/components/internal-linking";
 import { buildPageMetadata } from "@/seo/metadata";
 import {
   JsonLdScript,
@@ -271,6 +273,14 @@ export default async function BestDetailPage({ params }: Props) {
   if (faqLd) jsonLd.push(faqLd);
 
   const indexable = isEntityIndexable({ kind: "best", entity: page });
+
+  const linkPlan = buildBestLinkPlan({
+    bestSlug: page.slug,
+    categorySlug: page.categorySlug,
+    title: page.title,
+    productSlugs: page.eligibleProductSlugs,
+    relatedComparisonSlugs: page.relatedComparisonSlugs,
+  });
 
   const glanceItems = model.quickAnswer
     ? [...model.quickAnswer.featured, ...model.quickAnswer.compact].slice(0, 5)
@@ -513,6 +523,13 @@ export default async function BestDetailPage({ params }: Props) {
               ) : null}
             </div>
           </SectionShell>
+
+          <InternalLinkingModules
+            plan={linkPlan}
+            omit={["relatedProducts", "relatedComparisons", "relatedGuides"]}
+            showParentInline
+            className="mt-8"
+          />
 
           <NewsletterCard
             source="article-end"

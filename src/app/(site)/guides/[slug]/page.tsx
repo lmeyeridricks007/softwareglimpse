@@ -49,6 +49,12 @@ import {
 } from "@/services/site-foundation";
 import { buildGuideLinkPlan } from "@/services/internal-linking";
 import { InternalLinkingModules } from "@/components/internal-linking";
+import {
+  categoryDecisionFinderHref,
+  categoryFinderCtaLabel,
+  categoryShortName,
+  hasDedicatedCategoryTools,
+} from "@/data/config/tools/category-tool-meta";
 import { buildPageMetadata } from "@/seo/metadata";
 import {
   JsonLdScript,
@@ -170,8 +176,17 @@ export default async function GuideDetailPage({ params }: Props) {
   if (!guide) notFound();
 
   const useBlocks = guide.blocks.length > 0;
-  /** All guides share the same template chrome (hero visual + CTAs + sidebar). */
-  const isCrmGuide = guide.categorySlugs.includes("crm");
+  /** Guides share the same template chrome; CTAs resolve by primary category. */
+  const primaryCategorySlug = guide.categorySlugs[0];
+  const hasCategoryTools =
+    Boolean(primaryCategorySlug) &&
+    hasDedicatedCategoryTools(primaryCategorySlug!);
+  const categoryFinderHref = primaryCategorySlug
+    ? categoryDecisionFinderHref(primaryCategorySlug)
+    : null;
+  const categoryLabel = primaryCategorySlug
+    ? categoryShortName(primaryCategorySlug)
+    : "software";
   const relatedDecisionGuide = (
     await Promise.all(
       guide.relatedGuideSlugs.map((s) => resolveGuide(s)),
@@ -318,7 +333,7 @@ export default async function GuideDetailPage({ params }: Props) {
   }
 
   const tools =
-    category?.slug === "crm"
+    hasCategoryTools && linkPlan.tryDecisionTool.length > 0
       ? linkPlan.tryDecisionTool.map((l) => ({
           href: l.href,
           label: l.label,
@@ -329,19 +344,10 @@ export default async function GuideDetailPage({ params }: Props) {
               ? ("calculator" as const)
               : ("other" as const),
         }))
-      : category
-        ? [
-            {
-              href: "/tools/software-finder/",
-              label: "Software Finder",
-              description: "Coming soon — category-aware matching.",
-              kind: "finder" as const,
-            },
-          ]
-        : [];
+      : [];
 
   const nextIsFinder =
-    next?.kind === "tool" && next.path.includes("crm-finder");
+    next?.kind === "tool" && Boolean(next.path.includes("finder"));
 
   const productSlugsNeeded = new Set<string>([
     ...guide.productSlugs,
@@ -473,30 +479,35 @@ export default async function GuideDetailPage({ params }: Props) {
         visual={
           guide.heroVisual
             ? "default"
-            : isCrmGuide
+            : primaryCategorySlug === "crm"
               ? "framework"
               : "default"
         }
         frameworkSteps={frameworkSteps}
         primaryCta={
-          isCrmGuide
-            ? { href: "/tools/crm-finder/", label: "Find My CRM (2 min)" }
+          categoryFinderHref
+            ? {
+                href: categoryFinderHref,
+                label: `${categoryFinderCtaLabel(primaryCategorySlug!)} (2 min)`,
+              }
             : undefined
         }
         secondaryCta={
-          isCrmGuide
+          hasCategoryTools
             ? guide.topicType === "selection" ||
               guide.topicType === "buying-guide"
               ? { href: "#demo-checklist", label: "Download checklist" }
               : relatedDecisionGuide
                 ? {
                     href: `/guides/${relatedDecisionGuide.slug}/`,
-                    label: "How to choose a CRM",
+                    label: `How to choose ${categoryLabel}`,
                   }
-                : {
-                    href: "/guides/how-to-choose-crm/",
-                    label: "How to choose a CRM",
-                  }
+                : primaryCategorySlug === "crm"
+                  ? {
+                      href: "/guides/how-to-choose-crm/",
+                      label: "How to choose a CRM",
+                    }
+                  : undefined
             : undefined
         }
         belowCta={
@@ -599,13 +610,11 @@ export default async function GuideDetailPage({ params }: Props) {
             }
           />
 
-          {isCrmGuide ? (
-            <InternalLinkingModules
-              plan={linkPlan}
-              omit={["relatedGuides", "tryDecisionTool"]}
-              showParentInline
-            />
-          ) : null}
+          <InternalLinkingModules
+            plan={linkPlan}
+            omit={["relatedGuides", "tryDecisionTool"]}
+            showParentInline
+          />
         </div>
 
         <GuideSidebar
@@ -613,7 +622,7 @@ export default async function GuideDetailPage({ params }: Props) {
           toc={toc}
           relatedArticles={relatedArticles}
           tools={tools}
-          resourcesHref={isCrmGuide ? "/resources/" : null}
+          resourcesHref={hasCategoryTools ? "/resources/" : null}
         />
       </div>
 

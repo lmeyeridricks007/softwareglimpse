@@ -33,6 +33,8 @@ import {
 } from "@/services/comparison-page/tabs";
 import { buildPageMetadata } from "@/seo/metadata";
 import { JsonLdScript, breadcrumbJsonLd } from "@/seo/structured-data";
+import { buildComparisonLinkPlan } from "@/services/internal-linking";
+import { InternalLinkingModules } from "@/components/internal-linking";
 
 type Props = {
   params: Promise<{ slug: string }>;
@@ -115,6 +117,13 @@ export default async function ComparisonDetailPage({
 
   const showCtaA = canPlaceCta("comparison", "mid", 0);
   const showCtaB = canPlaceCta("comparison", "final", 0);
+
+  const linkPlan = buildComparisonLinkPlan({
+    comparisonSlug: model.slug,
+    title: model.title,
+    productSlugs: [model.productA.slug, model.productB.slug],
+    categorySlug: productA?.primaryCategorySlug ?? productB?.primaryCategorySlug,
+  });
 
   const breadcrumbItems = [
     { name: "Home", path: "/" },
@@ -243,6 +252,14 @@ export default async function ComparisonDetailPage({
         fixtureBased={model.provisional}
         aiUsed={model.criteria.length > 0}
       />
+
+      <div className="mx-auto mt-10 w-full max-w-[var(--sg-container-wide)] px-4 sm:px-6">
+        <InternalLinkingModules
+          plan={linkPlan}
+          omit={["relatedProducts", "relatedComparisons"]}
+          showParentInline
+        />
+      </div>
 
       <section className="mt-16 border-t border-[var(--sg-color-border)] pt-12">
         <TrustStrip />

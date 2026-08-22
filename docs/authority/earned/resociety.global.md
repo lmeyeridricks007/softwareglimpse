@@ -1,13 +1,13 @@
 # Earned backlink opportunities — resociety.global
 
-> From EarnedBacklinkOpportunityAgent · 2026-08-20T10:46:27.246Z
-> Topic: CRM / business software
+> From EarnedBacklinkOpportunityAgent · 2026-08-20T10:50:33.197Z
+> Topic: CRM, sales intelligence & business software
 
-## P18 — Revenue Enablement Society
+## P28 — Revenue Enablement Society
 
 | Field | Value |
 | --- | --- |
-| Priority | 18 |
+| Priority | 28 |
 | Site | Revenue Enablement Society |
 | Domain | `resociety.global` |
 | Opportunity URL | https://www.resociety.global/ |
@@ -33,7 +33,7 @@ Open https://www.resociety.global/. Locate editorial/about/contact. Request a ci
 
 ### Suggested ask
 
-Hi — for members researching CRM selection, we offer a free CRM Training Plan (https://www.softwareglimpse.com/resources/crm-training-plan/). Enablement audiences train sellers on systems adoption; a CRM training plan plus implementation checklist are natural free member resources alongside enablement curricula. Open to listing it in your resources, or swapping a short member tip?
+Hi — for members researching software selection, we offer a free CRM Training Plan (https://www.softwareglimpse.com/resources/crm-training-plan/). Enablement audiences train sellers on systems adoption; a CRM training plan plus implementation checklist are natural free member resources alongside enablement curricula. Open to listing it in your resources, or swapping a short member tip?
 
 ### Why they might link
 

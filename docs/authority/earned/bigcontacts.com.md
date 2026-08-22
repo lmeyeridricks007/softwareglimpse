@@ -1,13 +1,13 @@
 # Earned backlink opportunities — bigcontacts.com
 
-> From EarnedBacklinkOpportunityAgent · 2026-08-20T10:46:27.246Z
-> Topic: CRM / business software
+> From EarnedBacklinkOpportunityAgent · 2026-08-20T10:50:33.197Z
+> Topic: CRM, sales intelligence & business software
 
-## P32 — How to Choose a CRM for Small Business
+## P42 — How to Choose a CRM for Small Business
 
 | Field | Value |
 | --- | --- |
-| Priority | 32 |
+| Priority | 42 |
 | Site | BigContacts |
 | Domain | `bigcontacts.com` |
 | Opportunity URL | https://www.bigcontacts.com/blog/how-to-choose-crm-small-business/ |

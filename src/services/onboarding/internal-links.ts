@@ -1,4 +1,9 @@
 import type { InternalLinkCandidate, PageCandidate, Software } from "@/domain";
+import {
+  categoryDecisionFinderHref,
+  categoryShortName,
+  hasDedicatedCategoryTools,
+} from "@/data/config/tools/category-tool-meta";
 
 /**
  * Candidate internal-link plan — uses content map + taxonomy.
@@ -88,17 +93,21 @@ export function buildInternalLinkPlan(input: {
     }
   }
 
-  if (product.primaryCategorySlug === "crm") {
-    links.push({
-      sourceContentHint: productPath,
-      targetContentHint: "/tools/crm-finder/",
-      relationship: "related-tool",
-      suggestedContext: "tools section",
-      anchorConcept: "CRM Finder",
-      reason: "CRM products link to CRM Finder when category matches",
-      priority: 40,
-      activeWhenPublished: true,
-    });
+  if (hasDedicatedCategoryTools(product.primaryCategorySlug)) {
+    const finderHref = categoryDecisionFinderHref(product.primaryCategorySlug);
+    if (finderHref) {
+      const short = categoryShortName(product.primaryCategorySlug);
+      links.push({
+        sourceContentHint: productPath,
+        targetContentHint: finderHref,
+        relationship: "related-tool",
+        suggestedContext: "tools section",
+        anchorConcept: `${short} Finder`,
+        reason: `${short} products link to the category Finder when tools exist`,
+        priority: 40,
+        activeWhenPublished: true,
+      });
+    }
   }
 
   return links;

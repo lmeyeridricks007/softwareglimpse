@@ -1,13 +1,13 @@
 # Earned backlink opportunities — spotsaas.com
 
-> From EarnedBacklinkOpportunityAgent · 2026-08-20T10:46:27.246Z
-> Topic: CRM / business software
+> From EarnedBacklinkOpportunityAgent · 2026-08-20T10:50:33.197Z
+> Topic: CRM, sales intelligence & business software
 
-## P9 — CRM Software Setup Checklist
+## P12 — CRM Software Setup Checklist
 
 | Field | Value |
 | --- | --- |
-| Priority | 9 |
+| Priority | 12 |
 | Site | SpotSaaS |
 | Domain | `spotsaas.com` |
 | Opportunity URL | https://www.spotsaas.com/resources/crm-software/setup-checklist |
@@ -29,11 +29,11 @@
 
 ### How to submit / request
 
-Open the resource page (https://www.spotsaas.com/resources/crm-software/setup-checklist). Find About/Contact/Contribute, or reply via the site’s editorial contact. Ask to add CRM Evaluation Checklist (https://www.softwareglimpse.com/resources/crm-evaluation-checklist/) to the resource list because it helps their readers with vendor-neutral CRM selection/evaluation.
+Open the resource page (https://www.spotsaas.com/resources/crm-software/setup-checklist). Find About/Contact/Contribute, or reply via the site’s editorial contact. Ask to add CRM Evaluation Checklist (https://www.softwareglimpse.com/resources/crm-evaluation-checklist/) to the resource list because it helps their readers with vendor-neutral software selection/evaluation.
 
 ### Suggested ask
 
-Hi — I noticed “CRM Software Setup Checklist” already helps people evaluate CRM/RevOps tooling. Related-resources nav can include complementary evaluation tools; SoftwareGlimpse’s evaluation checklist and implementation checklist extend setup content into selection and rol… Would you consider adding our free CRM Evaluation Checklist for readers? Link: https://www.softwareglimpse.com/resources/crm-evaluation-checklist/ Happy to adjust title/blurb to match your list style.
+Hi — I noticed “CRM Software Setup Checklist” already helps people evaluate software and tooling. Related-resources nav can include complementary evaluation tools; SoftwareGlimpse’s evaluation checklist and implementation checklist extend setup content into selection and rol… Would you consider adding our free CRM Evaluation Checklist for readers? Link: https://www.softwareglimpse.com/resources/crm-evaluation-checklist/ Happy to adjust title/blurb to match your list style.
 
 ### Why they might link
 

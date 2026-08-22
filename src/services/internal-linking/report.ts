@@ -1,13 +1,16 @@
 import {
+  getCategoryBySlug,
+} from "@/data";
+import {
   getGuides,
 } from "@/data/repositories/guides";
 import { isEntityIndexable } from "@/domain/quality-gates";
-import { findSupportingGuides } from "./builders";
+import { ALL_SHARED_TOOL_CATEGORY_SLUGS } from "@/data/config/tools/category-tool-meta";
+import { factoryProductGuideKind } from "@/services/product-guides/kinds";
+import { findSupportingGuides, buildGuideLinkPlan } from "./builders";
 import { validateInternalLinkHealth } from "./health";
 import { detectSeoOrphans } from "./orphan-detector";
 import { collectCrmOutboundEdges } from "./outbound-graph";
-import { flattenPlanLinks } from "./select";
-import { buildGuideLinkPlan } from "./builders";
 
 export type InternalLinkingReportData = {
   generatedAt: string;
@@ -23,11 +26,20 @@ export type InternalLinkingReportData = {
   topInbound: Array<{ path: string; count: number }>;
   topOutgoing: Array<{ path: string; count: number }>;
   hubCoverage: Array<{ hub: string; childEdges: number }>;
+  categoryHubCoverage: Array<{
+    category: string;
+    hub: string;
+    childEdges: number;
+    guideNextStepCoverage: number;
+    guideParentCoverage: number;
+    guideCount: number;
+  }>;
   pillarSupport: Array<{
     pillar: string;
     supportingCount: number;
     supporting: string[];
   }>;
+  missingNextStepSample: string[];
   healthIssues: Array<{ code: string; severity: string; message: string; to?: string; from?: string }>;
   recommendedAdditions: string[];
 };
@@ -49,7 +61,6 @@ export function buildInternalLinkingReportData(): InternalLinkingReportData {
 
   const hubPaths = [
     "/categories/",
-    "/categories/crm/",
     "/software/",
     "/guides/",
     "/use-cases/",
@@ -61,24 +72,48 @@ export function buildInternalLinkingReportData(): InternalLinkingReportData {
     "/best/",
     "/alternatives/",
     "/industries/",
+    ...ALL_SHARED_TOOL_CATEGORY_SLUGS.map((slug) => `/categories/${slug}/`),
   ];
   const hubCoverage = hubPaths.map((hub) => ({
     hub,
     childEdges: edges.filter((e) => e.from === hub).length,
   }));
 
+  const categoryHubCoverage = ALL_SHARED_TOOL_CATEGORY_SLUGS.map((slug) => {
+    const cat = getCategoryBySlug(slug);
+    const hub = cat
+      ? cat.seo.canonicalPath || `/categories/${slug}/`
+      : `/categories/${slug}/`;
+    const guides = getGuides()
+      .filter((g) => g.categorySlugs.includes(slug))
+      .filter((g) => isEntityIndexable({ kind: "guide", entity: g }))
+      .filter((g) => !factoryProductGuideKind(g));
+    let withNext = 0;
+    let withParent = 0;
+    for (const g of guides) {
+      const plan = buildGuideLinkPlan(g);
+      if (plan.recommendedNextStep.length > 0) withNext += 1;
+      if (plan.parentHub.length > 0) withParent += 1;
+    }
+    return {
+      category: slug,
+      hub,
+      childEdges: edges.filter((e) => e.from === hub).length,
+      guideNextStepCoverage: guides.length === 0 ? 1 : withNext / guides.length,
+      guideParentCoverage: guides.length === 0 ? 1 : withParent / guides.length,
+      guideCount: guides.length,
+    };
+  });
+
   const pillarSupport = getGuides()
-    .filter((g) => g.categorySlugs.includes("crm"))
     .filter((g) => isEntityIndexable({ kind: "guide", entity: g }))
     .filter(
       (g) =>
         g.topicType === "implementation" ||
         g.topicType === "buying-guide" ||
-        g.topicType === "selection" ||
-        g.slug === "crm-implementation" ||
-        g.slug === "how-to-choose-crm",
+        g.topicType === "selection",
     )
-    .slice(0, 12)
+    .slice(0, 40)
     .map((pillar) => {
       const supporting = findSupportingGuides(pillar);
       return {
@@ -88,11 +123,10 @@ export function buildInternalLinkingReportData(): InternalLinkingReportData {
       };
     });
 
-  // Sample guide plans for missing next-step
   const missingNext: string[] = [];
   for (const g of getGuides()) {
-    if (!g.categorySlugs.includes("crm")) continue;
     if (!isEntityIndexable({ kind: "guide", entity: g })) continue;
+    if (factoryProductGuideKind(g)) continue;
     const plan = buildGuideLinkPlan(g);
     if (plan.recommendedNextStep.length === 0) {
       missingNext.push(`/guides/${g.slug}/`);
@@ -102,6 +136,18 @@ export function buildInternalLinkingReportData(): InternalLinkingReportData {
     }
   }
 
+  const thinCategories = categoryHubCoverage
+    .filter(
+      (c) =>
+        c.childEdges < 3 ||
+        c.guideNextStepCoverage < 0.7 ||
+        c.guideParentCoverage < 0.9,
+    )
+    .map(
+      (c) =>
+        `Strengthen ${c.category} hub mesh (edges=${c.childEdges}, next=${(c.guideNextStepCoverage * 100).toFixed(0)}%, parent=${(c.guideParentCoverage * 100).toFixed(0)}%, guides=${c.guideCount})`,
+    );
+
   const recommendedAdditions = [
     ...orphans.orphans.slice(0, 15).map(
       (o) => `Add parent/hub inbound to ${o.path}`,
@@ -110,6 +156,7 @@ export function buildInternalLinkingReportData(): InternalLinkingReportData {
       (o) => `Add contextual (non-chrome) inbound to ${o.path}`,
     ),
     ...missingNext.slice(0, 10).map((p) => `Ensure next-step/parent on ${p}`),
+    ...thinCategories.slice(0, 10),
   ];
 
   return {
@@ -126,7 +173,9 @@ export function buildInternalLinkingReportData(): InternalLinkingReportData {
     topInbound,
     topOutgoing,
     hubCoverage,
+    categoryHubCoverage,
     pillarSupport,
+    missingNextStepSample: missingNext.slice(0, 25),
     healthIssues: health.slice(0, 80).map((h) => ({
       code: h.code,
       severity: h.severity,
@@ -174,74 +223,62 @@ export function formatInternalLinkingReportMarkdown(
     for (const p of data.chromeOnly) lines.push(`- \`${p}\``);
   }
   lines.push("");
-  lines.push("## Weakly linked (missing parent / sparse content inbound)");
+  lines.push("## Per-category hub coverage");
   lines.push("");
-  if (data.weaklyLinked.length === 0) {
-    lines.push("_None._");
-  } else {
-    for (const p of data.weaklyLinked.slice(0, 40)) lines.push(`- \`${p}\``);
+  lines.push(
+    "| Category | Hub child edges | Guides | Next-step % | Parent % |",
+  );
+  lines.push("| --- | ---: | ---: | ---: | ---: |");
+  for (const row of data.categoryHubCoverage) {
+    lines.push(
+      `| ${row.category} | ${row.childEdges} | ${row.guideCount} | ${(row.guideNextStepCoverage * 100).toFixed(0)}% | ${(row.guideParentCoverage * 100).toFixed(0)}% |`,
+    );
   }
   lines.push("");
-  lines.push("## Hub coverage (child edges from hub)");
+  lines.push("## Hub coverage (outbound child edges)");
   lines.push("");
-  lines.push("| Hub | Child edges |");
-  lines.push("| --- | ---: |");
   for (const h of data.hubCoverage) {
-    lines.push(`| \`${h.hub}\` | ${h.childEdges} |`);
+    lines.push(`- \`${h.hub}\` → ${h.childEdges} child edges`);
+  }
+  lines.push("");
+  lines.push("## Missing next-step / parent (sample)");
+  lines.push("");
+  if (data.missingNextStepSample.length === 0) {
+    lines.push("_All sampled guides have parent + next-step modules._");
+  } else {
+    for (const p of data.missingNextStepSample) lines.push(`- \`${p}\``);
   }
   lines.push("");
   lines.push("## Pillar → supporting guides");
   lines.push("");
-  for (const p of data.pillarSupport) {
-    lines.push(`### \`${p.pillar}\` (${p.supportingCount})`);
-    if (p.supporting.length === 0) lines.push("- _(no supporting guides resolved)_");
-    else for (const s of p.supporting) lines.push(`- \`${s}\``);
-    lines.push("");
+  for (const p of data.pillarSupport.slice(0, 20)) {
+    lines.push(
+      `- \`${p.pillar}\` supports **${p.supportingCount}** (${p.supporting.join(", ") || "none"})`,
+    );
   }
-  lines.push("## Top inbound targets");
+  lines.push("");
+  lines.push("## Top inbound");
   lines.push("");
   for (const row of data.topInbound.slice(0, 15)) {
-    lines.push(`- \`${row.path}\` — ${row.count}`);
-  }
-  lines.push("");
-  lines.push("## Top outgoing sources");
-  lines.push("");
-  for (const row of data.topOutgoing.slice(0, 15)) {
-    lines.push(`- \`${row.path}\` — ${row.count}`);
-  }
-  lines.push("");
-  lines.push("## Health issues (sample)");
-  lines.push("");
-  if (data.healthIssues.length === 0) {
-    lines.push("_No issues._");
-  } else {
-    for (const issue of data.healthIssues.slice(0, 40)) {
-      lines.push(
-        `- **${issue.severity}** \`${issue.code}\`${issue.from ? ` from \`${issue.from}\`` : ""}${issue.to ? ` → \`${issue.to}\`` : ""} — ${issue.message}`,
-      );
-    }
+    lines.push(`- \`${row.path}\` ← ${row.count}`);
   }
   lines.push("");
   lines.push("## Recommended additions");
   lines.push("");
-  for (const r of data.recommendedAdditions) lines.push(`- ${r}`);
+  for (const tip of data.recommendedAdditions) lines.push(`- ${tip}`);
   lines.push("");
-  lines.push("## Notes");
+  lines.push("## Health issues (sample)");
+  lines.push("");
+  for (const issue of data.healthIssues.slice(0, 30)) {
+    lines.push(
+      `- **${issue.severity}** \`${issue.code}\`: ${issue.message}${issue.from ? ` (${issue.from} → ${issue.to ?? ""})` : ""}`,
+    );
+  }
   lines.push("");
   lines.push(
-    "- Detector uses the **link relationship engine** + hub discovery, not a live HTML crawl.",
+    "> Do not treat orphanCount=0 as success alone — check category hub coverage and next-step % above.",
   );
-  lines.push(
-    "- Primary related modules only emit **indexable** canonical targets (no drafts, `/go/`, aliases, or soft-noindex).",
-  );
-  lines.push(
-    "- Affiliate status is never used in ranking.",
-  );
-  lines.push("");
-  lines.push("*End of internal linking report.*");
   lines.push("");
   return lines.join("\n");
 }
 
-// silence unused in case tree-shaken
-void flattenPlanLinks;

@@ -1,19 +1,19 @@
 # Earned backlink opportunities — toolkitcafe.com
 
-> From EarnedBacklinkOpportunityAgent · 2026-08-20T10:46:27.246Z
-> Topic: CRM / business software
+> From EarnedBacklinkOpportunityAgent · 2026-08-20T10:50:33.197Z
+> Topic: CRM, sales intelligence & business software
 
-## P2 — CRM Implementation Checklist for SMB
+## P4 — CRM Implementation Checklist for SMB
 
 | Field | Value |
 | --- | --- |
-| Priority | 2 |
+| Priority | 4 |
 | Site | Toolkit Cafe |
 | Domain | `toolkitcafe.com` |
 | Opportunity URL | https://toolkitcafe.com/blog/crm-implementation-checklist-for-smb |
 | Submit / request page | https://toolkitcafe.com/blog/crm-implementation-checklist-for-smb |
-| Link this SG page | [CRM Implementation Checklist](https://www.softwareglimpse.com/resources/crm-implementation-checklist/) |
-| SG path | `/resources/crm-implementation-checklist/` |
+| Link this SG page | [CRM Readiness Assessment](https://www.softwareglimpse.com/tools/crm-readiness-assessment/) |
+| SG path | `/tools/crm-readiness-assessment/` |
 | Type | TEMPLATE_CITATION |
 | SEO value | good |
 | Referral value | strong |
@@ -29,15 +29,15 @@
 
 ### How to submit / request
 
-Open the resource page (https://toolkitcafe.com/blog/crm-implementation-checklist-for-smb). Find About/Contact/Contribute, or reply via the site’s editorial contact. Ask to add CRM Implementation Checklist (https://www.softwareglimpse.com/resources/crm-implementation-checklist/) to the resource list because it helps their readers with vendor-neutral CRM selection/evaluation.
+Open the resource page (https://toolkitcafe.com/blog/crm-implementation-checklist-for-smb). Find About/Contact/Contribute, or reply via the site’s editorial contact. Ask to add CRM Readiness Assessment (https://www.softwareglimpse.com/tools/crm-readiness-assessment/) to the resource list because it helps their readers with vendor-neutral software selection/evaluation.
 
 ### Suggested ask
 
-Hi — I noticed “CRM Implementation Checklist for SMB” already helps people evaluate CRM/RevOps tooling. Guide teaches implementation sequencing; SoftwareGlimpse’s downloadable implementation checklist and planner are ready-to-use artifacts that match the article’s SMB audience and… Would you consider adding our free CRM Implementation Checklist for readers? Link: https://www.softwareglimpse.com/resources/crm-implementation-checklist/ Happy to adjust title/blurb to match your list style.
+Hi — I noticed “CRM Implementation Checklist for SMB” already helps people evaluate software and tooling. Guide teaches implementation sequencing and readiness; SoftwareGlimpse’s free CRM Readiness Assessment plus implementation checklist give SMB readers a scored prep step before r… Would you consider adding our free CRM Readiness Assessment for readers? Link: https://www.softwareglimpse.com/tools/crm-readiness-assessment/ Happy to adjust title/blurb to match your list style.
 
 ### Why they might link
 
-Guide teaches implementation sequencing; SoftwareGlimpse’s downloadable implementation checklist and planner are ready-to-use artifacts that match the article’s SMB audience and checklist framing.
+Guide teaches implementation sequencing and readiness; SoftwareGlimpse’s free CRM Readiness Assessment plus implementation checklist give SMB readers a scored prep step before rollout.
 
 ### Do not
 
@@ -45,11 +45,11 @@ Guide teaches implementation sequencing; SoftwareGlimpse’s downloadable implem
 - Do not pitch homepage if a tool/resource deep link fits better.
 - Do not claim paid/dofollow link value.
 
-## P19 — Sales Operations Playbook
+## P29 — Sales Operations Playbook
 
 | Field | Value |
 | --- | --- |
-| Priority | 19 |
+| Priority | 29 |
 | Site | Toolkit Cafe |
 | Domain | `toolkitcafe.com` |
 | Opportunity URL | https://toolkitcafe.com/blog/sales-operations-playbook |

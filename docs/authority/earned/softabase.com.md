@@ -1,13 +1,13 @@
 # Earned backlink opportunities — softabase.com
 
-> From EarnedBacklinkOpportunityAgent · 2026-08-20T10:46:27.246Z
-> Topic: CRM / business software
+> From EarnedBacklinkOpportunityAgent · 2026-08-20T10:50:33.197Z
+> Topic: CRM, sales intelligence & business software
 
-## P22 — CRM Implementation Checklist
+## P32 — CRM Implementation Checklist
 
 | Field | Value |
 | --- | --- |
-| Priority | 22 |
+| Priority | 32 |
 | Site | Softabase |
 | Domain | `softabase.com` |
 | Opportunity URL | https://softabase.com/guides/crm-implementation-checklist |
@@ -29,11 +29,11 @@
 
 ### How to submit / request
 
-Open the resource page (https://softabase.com/guides/crm-implementation-checklist). Find About/Contact/Contribute, or reply via the site’s editorial contact. Ask to add CRM Implementation Checklist (https://www.softwareglimpse.com/resources/crm-implementation-checklist/) to the resource list because it helps their readers with vendor-neutral CRM selection/evaluation.
+Open the resource page (https://softabase.com/guides/crm-implementation-checklist). Find About/Contact/Contribute, or reply via the site’s editorial contact. Ask to add CRM Implementation Checklist (https://www.softwareglimpse.com/resources/crm-implementation-checklist/) to the resource list because it helps their readers with vendor-neutral software selection/evaluation.
 
 ### Suggested ask
 
-Hi — I noticed “CRM Implementation Checklist” already helps people evaluate CRM/RevOps tooling. Checklist guide readers expect downloadable companions; SoftwareGlimpse’s implementation checklist and training plan cover go-live readiness gaps the guide outlines. Would you consider adding our free CRM Implementation Checklist for readers? Link: https://www.softwareglimpse.com/resources/crm-implementation-checklist/ Happy to adjust title/blurb to match your list style.
+Hi — I noticed “CRM Implementation Checklist” already helps people evaluate software and tooling. Checklist guide readers expect downloadable companions; SoftwareGlimpse’s implementation checklist and training plan cover go-live readiness gaps the guide outlines. Would you consider adding our free CRM Implementation Checklist for readers? Link: https://www.softwareglimpse.com/resources/crm-implementation-checklist/ Happy to adjust title/blurb to match your list style.
 
 ### Why they might link
 

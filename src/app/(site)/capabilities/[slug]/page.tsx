@@ -31,6 +31,8 @@ import { Breadcrumbs } from "@/components/seo/breadcrumbs";
 import { SoftwareCard } from "@/components/software/software-card";
 import { TrustStrip } from "@/components/trust/trust-strip";
 import { buildCapabilityHubModel } from "@/services/capability-hub";
+import { buildCapabilityLinkPlan } from "@/services/internal-linking";
+import { InternalLinkingModules } from "@/components/internal-linking";
 import { buildPageMetadata } from "@/seo/metadata";
 import {
   JsonLdScript,
@@ -356,6 +358,18 @@ export default async function CapabilityDetailPage({ params }: Props) {
                 />
               </>
             ) : null}
+
+            <InternalLinkingModules
+              plan={buildCapabilityLinkPlan({
+                capabilitySlug: capability.slug,
+                capabilityName: capability.name,
+                useCaseSlugs: model.relatedUseCases?.map((u) => u.slug),
+                featureSlugs: model.relatedFeatures?.map((f) => f.slug),
+                requirementSlugs: model.relatedRequirements?.map((r) => r.slug),
+              })}
+              omit={["relatedCapabilities", "relatedFeatures", "relatedUseCases", "relatedRequirements"]}
+              showParentInline
+            />
           </div>
         </div>
 

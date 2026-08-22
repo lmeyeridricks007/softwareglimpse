@@ -1,13 +1,13 @@
 # Earned backlink opportunities — nextpageit.com
 
-> From EarnedBacklinkOpportunityAgent · 2026-08-20T10:46:27.246Z
-> Topic: CRM / business software
+> From EarnedBacklinkOpportunityAgent · 2026-08-20T10:50:33.197Z
+> Topic: CRM, sales intelligence & business software
 
-## P25 — CRM Migration Checklist
+## P35 — CRM Migration Checklist
 
 | Field | Value |
 | --- | --- |
-| Priority | 25 |
+| Priority | 35 |
 | Site | Next Page IT |
 | Domain | `nextpageit.com` |
 | Opportunity URL | https://www.nextpageit.com/blog/crm-migration-checklist |
@@ -29,11 +29,11 @@
 
 ### How to submit / request
 
-Open the resource page (https://www.nextpageit.com/blog/crm-migration-checklist). Find About/Contact/Contribute, or reply via the site’s editorial contact. Ask to add CRM Migration Planner (https://www.softwareglimpse.com/tools/crm-migration-planner/) to the resource list because it helps their readers with vendor-neutral CRM selection/evaluation.
+Open the resource page (https://www.nextpageit.com/blog/crm-migration-checklist). Find About/Contact/Contribute, or reply via the site’s editorial contact. Ask to add CRM Migration Planner (https://www.softwareglimpse.com/tools/crm-migration-planner/) to the resource list because it helps their readers with vendor-neutral software selection/evaluation.
 
 ### Suggested ask
 
-Hi — I noticed “CRM Migration Checklist” already helps people evaluate CRM/RevOps tooling. Migration checklist posts pair well with free field-mapping and data-migration templates; SoftwareGlimpse’s migration planner fills the planning-tool gap beside the article’s st… Would you consider adding our free CRM Migration Planner for readers? Link: https://www.softwareglimpse.com/tools/crm-migration-planner/ Happy to adjust title/blurb to match your list style.
+Hi — I noticed “CRM Migration Checklist” already helps people evaluate software and tooling. Migration checklist posts pair well with free field-mapping and data-migration templates; SoftwareGlimpse’s migration planner fills the planning-tool gap beside the article’s st… Would you consider adding our free CRM Migration Planner for readers? Link: https://www.softwareglimpse.com/tools/crm-migration-planner/ Happy to adjust title/blurb to match your list style.
 
 ### Why they might link
 

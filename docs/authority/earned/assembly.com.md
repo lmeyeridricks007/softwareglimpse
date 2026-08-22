@@ -1,13 +1,13 @@
 # Earned backlink opportunities — assembly.com
 
-> From EarnedBacklinkOpportunityAgent · 2026-08-20T10:46:27.246Z
-> Topic: CRM / business software
+> From EarnedBacklinkOpportunityAgent · 2026-08-20T10:50:33.197Z
+> Topic: CRM, sales intelligence & business software
 
-## P31 — CRM Requirements
+## P41 — CRM Requirements
 
 | Field | Value |
 | --- | --- |
-| Priority | 31 |
+| Priority | 41 |
 | Site | Assembly |
 | Domain | `assembly.com` |
 | Opportunity URL | https://assembly.com/blog/crm-requirements |
@@ -29,11 +29,11 @@
 
 ### How to submit / request
 
-Open the resource page (https://assembly.com/blog/crm-requirements). Find About/Contact/Contribute, or reply via the site’s editorial contact. Ask to add CRM Requirements Template (https://www.softwareglimpse.com/resources/crm-requirements-template/) to the resource list because it helps their readers with vendor-neutral CRM selection/evaluation.
+Open the resource page (https://assembly.com/blog/crm-requirements). Find About/Contact/Contribute, or reply via the site’s editorial contact. Ask to add CRM Requirements Template (https://www.softwareglimpse.com/resources/crm-requirements-template/) to the resource list because it helps their readers with vendor-neutral software selection/evaluation.
 
 ### Suggested ask
 
-Hi — I noticed “CRM Requirements” already helps people evaluate CRM/RevOps tooling. Requirements-focused editorial fits a free requirements template and builder so readers leave with a structured requirements pack rather than only narrative tips. Would you consider adding our free CRM Requirements Template for readers? Link: https://www.softwareglimpse.com/resources/crm-requirements-template/ Happy to adjust title/blurb to match your list style.
+Hi — I noticed “CRM Requirements” already helps people evaluate software and tooling. Requirements-focused editorial fits a free requirements template and builder so readers leave with a structured requirements pack rather than only narrative tips. Would you consider adding our free CRM Requirements Template for readers? Link: https://www.softwareglimpse.com/resources/crm-requirements-template/ Happy to adjust title/blurb to match your list style.
 
 ### Why they might link
 

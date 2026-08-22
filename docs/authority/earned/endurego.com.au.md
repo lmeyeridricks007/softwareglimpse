@@ -1,13 +1,13 @@
 # Earned backlink opportunities — endurego.com.au
 
-> From EarnedBacklinkOpportunityAgent · 2026-08-20T10:46:27.246Z
-> Topic: CRM / business software
+> From EarnedBacklinkOpportunityAgent · 2026-08-20T10:50:33.197Z
+> Topic: CRM, sales intelligence & business software
 
-## P34 — CRM Guide for Australian SMBs
+## P44 — CRM Guide for Australian SMBs
 
 | Field | Value |
 | --- | --- |
-| Priority | 34 |
+| Priority | 44 |
 | Site | EndureGo |
 | Domain | `endurego.com.au` |
 | Opportunity URL | https://www.endurego.com.au/crm/ |

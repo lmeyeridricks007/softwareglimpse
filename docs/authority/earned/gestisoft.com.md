@@ -1,13 +1,13 @@
 # Earned backlink opportunities — gestisoft.com
 
-> From EarnedBacklinkOpportunityAgent · 2026-08-20T10:46:27.246Z
-> Topic: CRM / business software
+> From EarnedBacklinkOpportunityAgent · 2026-08-20T10:50:33.197Z
+> Topic: CRM, sales intelligence & business software
 
-## P33 — CRM Software Selection
+## P43 — CRM Software Selection
 
 | Field | Value |
 | --- | --- |
-| Priority | 33 |
+| Priority | 43 |
 | Site | Gestisoft |
 | Domain | `gestisoft.com` |
 | Opportunity URL | https://www.gestisoft.com/en/blog/crm-software-selection |

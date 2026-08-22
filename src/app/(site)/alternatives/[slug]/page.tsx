@@ -32,6 +32,13 @@ import {
 import { isEntityIndexable } from "@/domain/quality-gates";
 import { listPublishedLearningGuides } from "@/services/content-clusters";
 import { COMPANY_ROUTES, LEGAL_ROUTES } from "@/services/site-foundation";
+import {
+  categoryDecisionCostHref,
+  categoryDecisionFinderHref,
+  categoryFinderCtaLabel,
+  categoryShortName,
+  hasDedicatedCategoryTools,
+} from "@/data/config/tools/category-tool-meta";
 import { buildPageMetadata } from "@/seo/metadata";
 import {
   JsonLdScript,
@@ -243,21 +250,20 @@ export default async function AlternativesDetailPage({ params }: Props) {
     });
 
   const categorySlug = source.primaryCategorySlug;
+  const categoryHasTools = hasDedicatedCategoryTools(categorySlug);
+  const finderHref = categoryDecisionFinderHref(categorySlug);
+  const costHref = categoryDecisionCostHref(categorySlug);
+  const shortName = categoryShortName(categorySlug);
   const guides = [
     ...listPublishedLearningGuides(categorySlug).map((g) => ({
       href: g.path,
       label: g.title,
     })),
-    ...(categorySlug === "crm"
+    ...(finderHref
       ? [
           {
-            href: "/best/crm-software/",
-            label: "Best CRM Software",
-            description: "Editorial shortlist and methodology",
-          },
-          {
-            href: "/tools/crm-finder/",
-            label: "CRM Finder",
+            href: finderHref,
+            label: `${shortName} Finder`,
             description: "Shortlist from your answers",
           },
         ]
@@ -266,7 +272,7 @@ export default async function AlternativesDetailPage({ params }: Props) {
 
   const path = page.seo.canonicalPath || `/alternatives/${page.slug}/`;
   const compareAllHref =
-    categorySlug === "crm" ? "/compare/" : relatedComparisons[0]?.href;
+    categoryHasTools ? "/compare/" : relatedComparisons[0]?.href;
 
   const detailedEntries = page.alternatives.filter(
     (entry) =>
@@ -429,23 +435,26 @@ export default async function AlternativesDetailPage({ params }: Props) {
             </section>
           ) : null}
 
-          {categorySlug === "crm" ? (
+          {finderHref ? (
             <section className="rounded-[var(--sg-radius-lg)] border border-[var(--sg-color-border)] bg-[var(--sg-color-surface)] p-5 shadow-[var(--sg-shadow-sm)]">
               <h2 className="font-[family-name:var(--font-display)] text-lg font-semibold">
                 Prefer a tailored shortlist?
               </h2>
               <p className="mt-2 text-sm text-[var(--sg-color-text-muted)]">
-                Use the CRM Finder for a fit-based shortlist, or estimate seat
-                costs from public pricing.
+                Use the {shortName} Finder for a fit-based shortlist
+                {costHref
+                  ? ", or estimate seat costs from public pricing."
+                  : "."}
               </p>
               <div className="mt-4 flex flex-wrap gap-3">
-                <ButtonLink href="/tools/crm-finder/">Open CRM Finder</ButtonLink>
-                <ButtonLink
-                  href="/tools/crm-cost-calculator/"
-                  variant="outline"
-                >
-                  CRM Cost Calculator
+                <ButtonLink href={finderHref}>
+                  Open {shortName} Finder
                 </ButtonLink>
+                {costHref ? (
+                  <ButtonLink href={costHref} variant="outline">
+                    {shortName} Cost Calculator
+                  </ButtonLink>
+                ) : null}
               </div>
             </section>
           ) : null}
@@ -456,12 +465,12 @@ export default async function AlternativesDetailPage({ params }: Props) {
           sourceName={source.name}
           whyItems={whyItems}
           finder={
-            categorySlug === "crm"
+            finderHref
               ? {
-                  href: "/tools/crm-finder/",
-                  title: "Not sure which CRM is right?",
+                  href: finderHref,
+                  title: `Not sure which ${shortName} is right?`,
                   body: "Answer a few questions for a deterministic shortlist — affiliate status never changes the order.",
-                  ctaLabel: "Try CRM Finder",
+                  ctaLabel: categoryFinderCtaLabel(categorySlug),
                 }
               : undefined
           }

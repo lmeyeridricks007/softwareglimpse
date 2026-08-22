@@ -134,7 +134,7 @@ export default async function SoftwareOverviewPage({ params }: Props) {
         researchIncomplete={researchIncomplete}
       />
 
-      {software.primaryCategorySlug === "crm" && softwareLinkPlan ? (
+      {softwareLinkPlan ? (
         <div className="mx-auto mt-10 w-full max-w-[var(--sg-container-wide)] px-4 sm:px-6">
           <InternalLinkingModules
             plan={softwareLinkPlan}

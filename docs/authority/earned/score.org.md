@@ -1,13 +1,13 @@
 # Earned backlink opportunities — score.org
 
-> From EarnedBacklinkOpportunityAgent · 2026-08-20T10:46:27.246Z
-> Topic: CRM / business software
+> From EarnedBacklinkOpportunityAgent · 2026-08-20T10:50:33.197Z
+> Topic: CRM, sales intelligence & business software
 
-## P15 — Growing Your Business: A CRM (SCORE webinar)
+## P25 — Growing Your Business: A CRM (SCORE webinar)
 
 | Field | Value |
 | --- | --- |
-| Priority | 15 |
+| Priority | 25 |
 | Site | SCORE Twin Cities |
 | Domain | `score.org` |
 | Opportunity URL | https://www.score.org/twincities/event/growing-your-business-a-crm-14 |

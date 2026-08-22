@@ -13,6 +13,12 @@ import {
   getGuidesByProduct,
 } from "@/data/repositories/guides";
 import {
+  categoryDecisionCostHref,
+  categoryDecisionFinderHref,
+  categoryShortName,
+  hasDedicatedCategoryTools,
+} from "@/data/config/tools/category-tool-meta";
+import {
   resolveAlternativeSlugs,
   resolveCompetitorSlugs,
 } from "@/services/graph/resolve-relationships";
@@ -196,39 +202,35 @@ export function getSoftwareLinkGroups(software: Software): SoftwareLinkGroups {
     );
   }
 
-  // Planned general software finder remains available; CRM uses the live finder.
-  tools.push(
-    link({
-      href: "/tools/software-finder/",
-      label: "Software finder",
-      pageType: "tool",
-      relationship: "relatedTool",
-      published: true,
-      priorityBoost: 0,
-    }),
-  );
-
-  if (software.primaryCategorySlug === "crm") {
-    tools.push(
-      link({
-        href: "/tools/crm-finder/",
-        label: "CRM finder",
-        pageType: "tool",
-        relationship: "relatedTool",
-        published: true,
-        priorityBoost: 10,
-      }),
-    );
-    tools.push(
-      link({
-        href: "/tools/crm-cost-calculator/",
-        label: "CRM cost calculator",
-        pageType: "tool",
-        relationship: "relatedTool",
-        published: true,
-        priorityBoost: 8,
-      }),
-    );
+  // Category-specific decision tools only — never soft software-finder.
+  if (hasDedicatedCategoryTools(software.primaryCategorySlug)) {
+    const short = categoryShortName(software.primaryCategorySlug);
+    const finderHref = categoryDecisionFinderHref(software.primaryCategorySlug);
+    const costHref = categoryDecisionCostHref(software.primaryCategorySlug);
+    if (finderHref) {
+      tools.push(
+        link({
+          href: finderHref,
+          label: `${short} finder`,
+          pageType: "tool",
+          relationship: "relatedTool",
+          published: true,
+          priorityBoost: 10,
+        }),
+      );
+    }
+    if (costHref) {
+      tools.push(
+        link({
+          href: costHref,
+          label: `${short} cost calculator`,
+          pageType: "tool",
+          relationship: "relatedTool",
+          published: true,
+          priorityBoost: 8,
+        }),
+      );
+    }
   }
 
   const trimmed = {

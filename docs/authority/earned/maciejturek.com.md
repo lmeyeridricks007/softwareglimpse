@@ -1,13 +1,13 @@
 # Earned backlink opportunities — maciejturek.com
 
-> From EarnedBacklinkOpportunityAgent · 2026-08-20T10:46:27.246Z
-> Topic: CRM / business software
+> From EarnedBacklinkOpportunityAgent · 2026-08-20T10:50:33.197Z
+> Topic: CRM, sales intelligence & business software
 
-## P24 — CRM Implementation Checklist 2026
+## P34 — CRM Implementation Checklist 2026
 
 | Field | Value |
 | --- | --- |
-| Priority | 24 |
+| Priority | 34 |
 | Site | Maciej Turek |
 | Domain | `maciejturek.com` |
 | Opportunity URL | https://maciejturek.com/resources/crm-implementation-checklist-2026.html |
@@ -29,11 +29,11 @@
 
 ### How to submit / request
 
-Open the resource page (https://maciejturek.com/resources/crm-implementation-checklist-2026.html). Find About/Contact/Contribute, or reply via the site’s editorial contact. Ask to add CRM Implementation Checklist (https://www.softwareglimpse.com/resources/crm-implementation-checklist/) to the resource list because it helps their readers with vendor-neutral CRM selection/evaluation.
+Open the resource page (https://maciejturek.com/resources/crm-implementation-checklist-2026.html). Find About/Contact/Contribute, or reply via the site’s editorial contact. Ask to add CRM Implementation Checklist (https://www.softwareglimpse.com/resources/crm-implementation-checklist/) to the resource list because it helps their readers with vendor-neutral software selection/evaluation.
 
 ### Suggested ask
 
-Hi — I noticed “CRM Implementation Checklist 2026” already helps people evaluate CRM/RevOps tooling. Author publishes checklist resources; linking SoftwareGlimpse’s maintained implementation checklist and migration checklist expands the resource set for practitioners following … Would you consider adding our free CRM Implementation Checklist for readers? Link: https://www.softwareglimpse.com/resources/crm-implementation-checklist/ Happy to adjust title/blurb to match your list style.
+Hi — I noticed “CRM Implementation Checklist 2026” already helps people evaluate software and tooling. Author publishes checklist resources; linking SoftwareGlimpse’s maintained implementation checklist and migration checklist expands the resource set for practitioners following … Would you consider adding our free CRM Implementation Checklist for readers? Link: https://www.softwareglimpse.com/resources/crm-implementation-checklist/ Happy to adjust title/blurb to match your list style.
 
 ### Why they might link
 

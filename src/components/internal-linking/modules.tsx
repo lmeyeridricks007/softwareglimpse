@@ -82,7 +82,7 @@ export function RecommendedNextStep({ links }: { links: ContextualLink[] }) {
         Next step
       </p>
       <p className="mt-1 font-semibold text-[var(--sg-color-text)]">
-        Continue your CRM decision journey
+        Continue your decision journey
       </p>
       {primary.description ? (
         <p className="mt-1 text-sm text-[var(--sg-color-text-muted)]">

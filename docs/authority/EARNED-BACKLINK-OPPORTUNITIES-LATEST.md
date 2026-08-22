@@ -1,8 +1,8 @@
 # Earned Backlink Opportunities — Latest
 
-> Agent: **EarnedBacklinkOpportunityAgent** · Topic: **CRM / business software**
-> Generated: 2026-08-20T10:46:27.246Z · Framework v1.0.0
-> Live web search required: **yes** · Hits investigated: **74**
+> Agent: **EarnedBacklinkOpportunityAgent** · Topic: **CRM, sales intelligence & business software**
+> Generated: 2026-08-20T10:50:33.197Z · Framework v1.0.0
+> Live web search required: **yes** · Hits investigated: **93**
 > Evaluate only — no outreach, form submissions, or production edits.
 
 ## How to use this report
@@ -17,10 +17,10 @@ For each opportunity:
 
 | Metric | Value |
 | --- | --- |
-| Accepted (qualified) | 56 |
+| Accepted (qualified) | 70 |
 | Top N listed | 50 |
-| Rejected | 18 |
-| Queries run | 20 |
+| Rejected | 23 |
+| Queries run | 28 |
 
 ## TOP 50 REALISTIC EARNED LINK OPPORTUNITIES
 
@@ -29,55 +29,55 @@ Ranked by realistic probability/value (likelihood + fit), not domain prestige al
 | Priority | Site | Domain | Opportunity | Type | Link this SG page | Submit / request page | How to submit/request | SEO | Referral | Difficulty | Effort | Status |
 | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |
 | 1 | Rework | `resources.rework.com` | [Awesome CRM Systems — curated CRM resources](https://resources.rework.com/libraries/awesome-business-resources/awesome-crm-systems) | RESOURCE_PAGE | [CRM Finder](https://www.softwareglimpse.com/tools/crm-finder/) | [Open page](https://resources.rework.com/libraries/awesome-business-resources/awesome-crm-systems) | Open https://resources.rework.com/libraries/awesome-business-resources/awesome-crm-systems → Contributing / “Know a grea… | strong | strong | moderate | small | recommended |
-| 2 | Toolkit Cafe | `toolkitcafe.com` | [CRM Implementation Checklist for SMB](https://toolkitcafe.com/blog/crm-implementation-checklist-for-smb) | TEMPLATE_CITATION | [CRM Implementation Checklist](https://www.softwareglimpse.com/resources/crm-implementation-checklist/) | [Open page](https://toolkitcafe.com/blog/crm-implementation-checklist-for-smb) | Open the resource page (https://toolkitcafe.com/blog/crm-implementation-checklist-for-smb). Find About/Contact/Contribut… | good | strong | moderate | small | needs-contact-path |
-| 3 | SoftwareInspect | `softwareinspect.com` | [CRM Requirements Checklist](https://softwareinspect.com/blog/crm-requirements-checklist) | TEMPLATE_CITATION | [CRM Requirements Template](https://www.softwareglimpse.com/resources/crm-requirements-template/) | [Open page](https://softwareinspect.com/blog/crm-requirements-checklist) | Open the resource page (https://softwareinspect.com/blog/crm-requirements-checklist). Find About/Contact/Contribute, or … | good | strong | moderate | small | needs-contact-path |
-| 4 | Gain | `gain.io` | [CRM Buying Checklist / Evaluation](https://gain.io/blog/crm-buying-checklist-evaluation) | REFERENCE_LINK | [CRM Vendor Scorecard](https://www.softwareglimpse.com/tools/crm-vendor-scorecard/) | [Open page](https://gain.io/blog/crm-buying-checklist-evaluation) | Open https://gain.io/blog/crm-buying-checklist-evaluation. Locate editorial/about/contact. Request a citation to CRM Ven… | good | strong | moderate | small | needs-contact-path |
-| 5 | Nex365 | `nex365.com` | [Vendor Scorecard Template — Rate Your CRM and Micro-App Vendor](https://nex365.com/vendor-scorecard-template-rate-your-crm-and-micro-app-vendor) | TEMPLATE_CITATION | [CRM Vendor Scorecard](https://www.softwareglimpse.com/tools/crm-vendor-scorecard/) | [Open page](https://nex365.com/vendor-scorecard-template-rate-your-crm-and-micro-app-vendor) | Open the resource page (https://nex365.com/vendor-scorecard-template-rate-your-crm-and-micro-app-vendor). Find About/Con… | good | strong | moderate | small | needs-contact-path |
-| 6 | Singleclic | `singleclic.com` | [CRM Selection Checklist](https://singleclic.com/crm-selection-checklist/) | TEMPLATE_CITATION | [CRM Evaluation Checklist](https://www.softwareglimpse.com/resources/crm-evaluation-checklist/) | [Open page](https://singleclic.com/crm-selection-checklist/) | Open the resource page (https://singleclic.com/crm-selection-checklist/). Find About/Contact/Contribute, or reply via th… | good | strong | moderate | small | needs-contact-path |
-| 7 | Flowla | `flowla.com` | [Resources for RevOps professionals](https://www.flowla.com/blog/resources-for-revops-professionals) | RESOURCE_PAGE | [CRM Finder](https://www.softwareglimpse.com/tools/crm-finder/) | [Open page](https://www.flowla.com/blog/resources-for-revops-professionals) | Open the resource page (https://www.flowla.com/blog/resources-for-revops-professionals). Find About/Contact/Contribute, … | good | strong | moderate | small | needs-contact-path |
-| 8 | Umbrex | `umbrex.com` | [B2B Sales Operations Playbook](https://umbrex.com/resources/b2b-sales-operations-playbook/) | RESOURCE_PAGE | [CRM Implementation Planner](https://www.softwareglimpse.com/tools/crm-implementation-planner/) | [Open page](https://umbrex.com/resources/b2b-sales-operations-playbook/) | Open the resource page (https://umbrex.com/resources/b2b-sales-operations-playbook/). Find About/Contact/Contribute, or … | strong | good | moderate | small | needs-contact-path |
-| 9 | SpotSaaS | `spotsaas.com` | [CRM Software Setup Checklist](https://www.spotsaas.com/resources/crm-software/setup-checklist) | RESOURCE_PAGE | [CRM Evaluation Checklist](https://www.softwareglimpse.com/resources/crm-evaluation-checklist/) | [Open page](https://www.spotsaas.com/resources/crm-software/setup-checklist) | Open the resource page (https://www.spotsaas.com/resources/crm-software/setup-checklist). Find About/Contact/Contribute,… | good | good | moderate | small | needs-contact-path |
-| 10 | SaaS CRM Review | `saascrmreview.com` | [Best Free CRM Software](https://saascrmreview.com/best-free-crm-software/) | TOOL_CITATION | [CRM Finder](https://www.softwareglimpse.com/tools/crm-finder/) | [Open page](https://saascrmreview.com/best-free-crm-software/) | Open the resource page (https://saascrmreview.com/best-free-crm-software/). Find About/Contact/Contribute, or reply via … | good | strong | moderate | small | needs-contact-path |
-| 11 | The GTM Advisor | `thegtmadvisor.com` | [RevOps Playbook Templates](https://www.thegtmadvisor.com/blog/revops-playbook-templates) | TEMPLATE_CITATION | [CRM Vendor Scorecard](https://www.softwareglimpse.com/tools/crm-vendor-scorecard/) | [Open page](https://www.thegtmadvisor.com/blog/revops-playbook-templates) | Open the resource page (https://www.thegtmadvisor.com/blog/revops-playbook-templates). Find About/Contact/Contribute, or… | good | strong | moderate | small | needs-contact-path |
-| 12 | RevenueOps LLC | `revenueopsllc.com` | [Best RevOps Toolkit](https://www.revenueopsllc.com/best-revops-toolkit/) | RESOURCE_PAGE | [CRM Requirements Template](https://www.softwareglimpse.com/resources/crm-requirements-template/) | [Open page](https://www.revenueopsllc.com/best-revops-toolkit/) | Open the resource page (https://www.revenueopsllc.com/best-revops-toolkit/). Find About/Contact/Contribute, or reply via… | good | strong | moderate | small | needs-contact-path |
-| 13 | Zapier | `zapier.com` | [Best Free CRM](https://zapier.com/blog/best-free-crm/) | TOOL_CITATION | [CRM Finder](https://www.softwareglimpse.com/tools/crm-finder/) | [Open page](https://zapier.com/blog/best-free-crm/) | Open the resource page (https://zapier.com/blog/best-free-crm/). Find About/Contact/Contribute, or reply via the site’s … | excellent | excellent | hard | medium | needs-contact-path |
-| 14 | Pipedrive | `pipedrive.com` | [CRM Checklist (Pipedrive resources)](https://www.pipedrive.com/en/crm/resources/crm-checklist) | RESOURCE_PAGE | [CRM Evaluation Checklist](https://www.softwareglimpse.com/resources/crm-evaluation-checklist/) | [Open page](https://www.pipedrive.com/en/crm/resources/crm-checklist) | Open the resource page (https://www.pipedrive.com/en/crm/resources/crm-checklist). Find About/Contact/Contribute, or rep… | excellent | strong | hard | medium | needs-contact-path |
-| 15 | SCORE Twin Cities | `score.org` | [Growing Your Business: A CRM (SCORE webinar)](https://www.score.org/twincities/event/growing-your-business-a-crm-14) | ACADEMIC_EDUCATIONAL | [What is CRM?](https://www.softwareglimpse.com/guides/what-is-crm/) | [Open page](https://www.score.org/twincities/event/growing-your-business-a-crm-14) | Open https://www.score.org/twincities/event/growing-your-business-a-crm-14. Contact the page author/department listed on… | strong | strong | hard | medium | needs-contact-path |
-| 16 | Rivery | `rivery.io` | [Complete Data Migration Checklist](https://rivery.io/data-learning-center/complete-data-migration-checklist/) | REFERENCE_LINK | [CRM Migration Planner](https://www.softwareglimpse.com/tools/crm-migration-planner/) | [Open page](https://rivery.io/data-learning-center/complete-data-migration-checklist/) | Open https://rivery.io/data-learning-center/complete-data-migration-checklist/. Locate editorial/about/contact. Request … | strong | good | moderate | small | needs-contact-path |
-| 17 | Revenue Operations Alliance | `revenueoperationsalliance.com` | [Revenue Operations Alliance](https://www.revenueoperationsalliance.com/) | ASSOCIATION | [CRM Evaluation Checklist](https://www.softwareglimpse.com/resources/crm-evaluation-checklist/) | [Open page](https://www.revenueoperationsalliance.com/) | Open https://www.revenueoperationsalliance.com/. Locate editorial/about/contact. Request a citation to CRM Evaluation Ch… | good | strong | hard | medium | needs-contact-path |
-| 18 | Revenue Enablement Society | `resociety.global` | [Revenue Enablement Society](https://www.resociety.global/) | ASSOCIATION | [CRM Training Plan](https://www.softwareglimpse.com/resources/crm-training-plan/) | [Open page](https://www.resociety.global/) | Open https://www.resociety.global/. Locate editorial/about/contact. Request a citation to CRM Training Plan (https://www… | good | strong | hard | medium | needs-contact-path |
-| 19 | Toolkit Cafe | `toolkitcafe.com` | [Sales Operations Playbook](https://toolkitcafe.com/blog/sales-operations-playbook) | REFERENCE_LINK | [How to Choose a CRM](https://www.softwareglimpse.com/guides/how-to-choose-crm/) | [Open page](https://toolkitcafe.com/blog/sales-operations-playbook) | Open https://toolkitcafe.com/blog/sales-operations-playbook. Locate editorial/about/contact. Request a citation to How t… | good | good | moderate | small | needs-contact-path |
-| 20 | SoftwareInspect | `softwareinspect.com` | [CRM Implementation Checklist](https://softwareinspect.com/blog/crm-implementation-checklist) | REFERENCE_LINK | [CRM Requirements Builder](https://www.softwareglimpse.com/tools/crm-requirements-builder/) | [Open page](https://softwareinspect.com/blog/crm-implementation-checklist) | Open https://softwareinspect.com/blog/crm-implementation-checklist. Locate editorial/about/contact. Request a citation t… | good | good | moderate | small | needs-contact-path |
-| 21 | Kynetto | `kynetto.com` | [CRM Implementation Plan](https://kynetto.com/crm-implementation-plan/) | REFERENCE_LINK | [CRM Implementation Planner](https://www.softwareglimpse.com/tools/crm-implementation-planner/) | [Open page](https://kynetto.com/crm-implementation-plan/) | Open https://kynetto.com/crm-implementation-plan/. Locate editorial/about/contact. Request a citation to CRM Implementat… | good | good | moderate | small | needs-contact-path |
-| 22 | Softabase | `softabase.com` | [CRM Implementation Checklist](https://softabase.com/guides/crm-implementation-checklist) | TEMPLATE_CITATION | [CRM Implementation Checklist](https://www.softwareglimpse.com/resources/crm-implementation-checklist/) | [Open page](https://softabase.com/guides/crm-implementation-checklist) | Open the resource page (https://softabase.com/guides/crm-implementation-checklist). Find About/Contact/Contribute, or re… | good | good | moderate | small | needs-contact-path |
-| 23 | Empat | `empat.tech` | [CRM Implementation Guide 2026](https://www.empat.tech/blog/crm-implementation-guide-2026) | REFERENCE_LINK | [CRM Implementation Planner](https://www.softwareglimpse.com/tools/crm-implementation-planner/) | [Open page](https://www.empat.tech/blog/crm-implementation-guide-2026) | Open https://www.empat.tech/blog/crm-implementation-guide-2026. Locate editorial/about/contact. Request a citation to CR… | good | good | moderate | small | needs-contact-path |
-| 24 | Maciej Turek | `maciejturek.com` | [CRM Implementation Checklist 2026](https://maciejturek.com/resources/crm-implementation-checklist-2026.html) | TEMPLATE_CITATION | [CRM Implementation Checklist](https://www.softwareglimpse.com/resources/crm-implementation-checklist/) | [Open page](https://maciejturek.com/resources/crm-implementation-checklist-2026.html) | Open the resource page (https://maciejturek.com/resources/crm-implementation-checklist-2026.html). Find About/Contact/Co… | low | good | easy | trivial | needs-contact-path |
-| 25 | Next Page IT | `nextpageit.com` | [CRM Migration Checklist](https://www.nextpageit.com/blog/crm-migration-checklist) | TEMPLATE_CITATION | [CRM Migration Planner](https://www.softwareglimpse.com/tools/crm-migration-planner/) | [Open page](https://www.nextpageit.com/blog/crm-migration-checklist) | Open the resource page (https://www.nextpageit.com/blog/crm-migration-checklist). Find About/Contact/Contribute, or repl… | good | good | moderate | small | needs-contact-path |
-| 26 | Digital Applied | `digitalapplied.com` | [CRM Data Migration Checklist 2026 — Zero-Downtime Playbook](https://www.digitalapplied.com/blog/crm-data-migration-checklist-2026-zero-downtime-playbook) | TEMPLATE_CITATION | [CRM Migration Checklist](https://www.softwareglimpse.com/resources/crm-migration-checklist/) | [Open page](https://www.digitalapplied.com/blog/crm-data-migration-checklist-2026-zero-downtime-playbook) | Open the resource page (https://www.digitalapplied.com/blog/crm-data-migration-checklist-2026-zero-downtime-playbook). F… | good | good | moderate | small | needs-contact-path |
-| 27 | Migrate to Monday | `migratetomonday.com` | [CRM Migration Checklist](https://www.migratetomonday.com/resources/blog/crm-migration-checklist/) | TEMPLATE_CITATION | [CRM Field Mapping Template](https://www.softwareglimpse.com/resources/crm-field-mapping-template/) | [Open page](https://www.migratetomonday.com/resources/blog/crm-migration-checklist/) | Open the resource page (https://www.migratetomonday.com/resources/blog/crm-migration-checklist/). Find About/Contact/Con… | good | good | moderate | small | needs-contact-path |
-| 28 | Topickz | `topickz.com` | [How to Evaluate CRM Software](https://topickz.com/guides/sales/how-to-evaluate-crm-software/) | REFERENCE_LINK | [CRM Vendor Scorecard (download)](https://www.softwareglimpse.com/resources/crm-vendor-scorecard/) | [Open page](https://topickz.com/guides/sales/how-to-evaluate-crm-software/) | Open https://topickz.com/guides/sales/how-to-evaluate-crm-software/. Locate editorial/about/contact. Request a citation … | good | good | moderate | small | needs-contact-path |
-| 29 | Complivex | `complivex.com` | [CRM Evaluation Checklist](https://complivex.com/checklists/crm-evaluation-checklist) | TEMPLATE_CITATION | [CRM Evaluation Checklist](https://www.softwareglimpse.com/resources/crm-evaluation-checklist/) | [Open page](https://complivex.com/checklists/crm-evaluation-checklist) | Open the resource page (https://complivex.com/checklists/crm-evaluation-checklist). Find About/Contact/Contribute, or re… | good | good | moderate | small | needs-contact-path |
-| 30 | Office Atlas | `officeatlas.org` | [CRM Evaluation Template](https://officeatlas.org/software/crm-evaluation-template/) | TEMPLATE_CITATION | [CRM Vendor Scorecard (download)](https://www.softwareglimpse.com/resources/crm-vendor-scorecard/) | [Open page](https://officeatlas.org/software/crm-evaluation-template/) | Open the resource page (https://officeatlas.org/software/crm-evaluation-template/). Find About/Contact/Contribute, or re… | good | good | moderate | small | needs-contact-path |
-| 31 | Assembly | `assembly.com` | [CRM Requirements](https://assembly.com/blog/crm-requirements) | TEMPLATE_CITATION | [CRM Requirements Template](https://www.softwareglimpse.com/resources/crm-requirements-template/) | [Open page](https://assembly.com/blog/crm-requirements) | Open the resource page (https://assembly.com/blog/crm-requirements). Find About/Contact/Contribute, or reply via the sit… | good | good | moderate | small | needs-contact-path |
-| 32 | BigContacts | `bigcontacts.com` | [How to Choose a CRM for Small Business](https://www.bigcontacts.com/blog/how-to-choose-crm-small-business/) | REFERENCE_LINK | [How to Choose a CRM](https://www.softwareglimpse.com/guides/how-to-choose-crm/) | [Open page](https://www.bigcontacts.com/blog/how-to-choose-crm-small-business/) | Open https://www.bigcontacts.com/blog/how-to-choose-crm-small-business/. Locate editorial/about/contact. Request a citat… | good | good | moderate | small | needs-contact-path |
-| 33 | Gestisoft | `gestisoft.com` | [CRM Software Selection](https://www.gestisoft.com/en/blog/crm-software-selection) | REFERENCE_LINK | [CRM Vendor Scorecard](https://www.softwareglimpse.com/tools/crm-vendor-scorecard/) | [Open page](https://www.gestisoft.com/en/blog/crm-software-selection) | Open https://www.gestisoft.com/en/blog/crm-software-selection. Locate editorial/about/contact. Request a citation to CRM… | good | good | moderate | small | needs-contact-path |
-| 34 | EndureGo | `endurego.com.au` | [CRM Guide for Australian SMBs](https://www.endurego.com.au/crm/) | REFERENCE_LINK | [CRM Evaluation Checklist](https://www.softwareglimpse.com/resources/crm-evaluation-checklist/) | [Open page](https://www.endurego.com.au/crm/) | Open https://www.endurego.com.au/crm/. Locate editorial/about/contact. Request a citation to CRM Evaluation Checklist (h… | good | good | moderate | small | needs-contact-path |
-| 35 | We Tech Talk | `wetechtalk.com` | [Software Buying Guide — How to Choose the Right Software](https://www.wetechtalk.com/software-buying-guide-how-to-choose-the-right-software/) | REFERENCE_LINK | [CRM Finder](https://www.softwareglimpse.com/tools/crm-finder/) | [Open page](https://www.wetechtalk.com/software-buying-guide-how-to-choose-the-right-software/) | Open https://www.wetechtalk.com/software-buying-guide-how-to-choose-the-right-software/. Locate editorial/about/contact.… | good | good | moderate | small | needs-contact-path |
-| 36 | Tech Verifiers | `techverifiers.com` | [Best Free CRM 2026](https://techverifiers.com/crm/best-free-crm-2026) | TOOL_CITATION | [CRM Cost Calculator](https://www.softwareglimpse.com/tools/crm-cost-calculator/) | [Open page](https://techverifiers.com/crm/best-free-crm-2026) | Open the resource page (https://techverifiers.com/crm/best-free-crm-2026). Find About/Contact/Contribute, or reply via t… | good | good | moderate | small | needs-contact-path |
-| 37 | Useful Stack | `usefulstack.com` | [Best Free CRM Tools in 2026 (Tested with Real Clients)](https://usefulstack.com/best-free-crm-tools-in-2026-tested-with-real-clients/) | TOOL_CITATION | [CRM Finder](https://www.softwareglimpse.com/tools/crm-finder/) | [Open page](https://usefulstack.com/best-free-crm-tools-in-2026-tested-with-real-clients/) | Open the resource page (https://usefulstack.com/best-free-crm-tools-in-2026-tested-with-real-clients/). Find About/Conta… | good | good | moderate | small | needs-contact-path |
-| 38 | Perimattic | `perimattic.com` | [CRM Calculator](https://perimattic.com/tools/software/crm-calculator/) | TOOL_CITATION | [CRM Cost Calculator](https://www.softwareglimpse.com/tools/crm-cost-calculator/) | [Open page](https://perimattic.com/tools/software/crm-calculator/) | Open the resource page (https://perimattic.com/tools/software/crm-calculator/). Find About/Contact/Contribute, or reply … | good | good | moderate | small | needs-contact-path |
-| 39 | The Spinnaker Group | `thespinnakergroupinc.com` | [CRM Implementation Total Cost Calculator](https://thespinnakergroupinc.com/crm-implementation-total-cost-calculator/) | TOOL_CITATION | [CRM TCO Calculator](https://www.softwareglimpse.com/tools/crm-tco-calculator/) | [Open page](https://thespinnakergroupinc.com/crm-implementation-total-cost-calculator/) | Open the resource page (https://thespinnakergroupinc.com/crm-implementation-total-cost-calculator/). Find About/Contact/… | good | good | moderate | small | needs-contact-path |
-| 40 | GitHub (community playbook) | `github.com` | [RevOps Infrastructure Playbook](https://github.com/shubham1502-hue/revops-infrastructure-playbook) | COMMUNITY | [CRM Implementation Checklist](https://www.softwareglimpse.com/resources/crm-implementation-checklist/) | [Open page](https://github.com/shubham1502-hue/revops-infrastructure-playbook) | Open https://github.com/shubham1502-hue/revops-infrastructure-playbook → Issues or PR adding a Resources link in the REA… | good | good | easy | small | recommended |
-| 41 | Checklist.com | `checklist.com` | [CRM Checklist](https://checklist.com/crm-checklist) | TEMPLATE_CITATION | [CRM Evaluation Checklist](https://www.softwareglimpse.com/resources/crm-evaluation-checklist/) | [Open page](https://checklist.com/crm-checklist) | Open the resource page (https://checklist.com/crm-checklist). Find About/Contact/Contribute, or reply via the site’s edi… | good | good | moderate | small | needs-contact-path |
-| 42 | Pulse RevOps | `pulserevops.com` | [Pulse RevOps Knowledge Library](https://pulserevops.com/knowledge) | RESOURCE_PAGE | [CRM Vendor Scorecard](https://www.softwareglimpse.com/tools/crm-vendor-scorecard/) | [Open page](https://pulserevops.com/knowledge) | Open the resource page (https://pulserevops.com/knowledge). Find About/Contact/Contribute, or reply via the site’s edito… | good | good | moderate | medium | needs-contact-path |
-| 43 | HubSpot | `blog.hubspot.com` | [CRM Data Migration Guide](https://blog.hubspot.com/marketing/crm-data-migration) | REFERENCE_LINK | [CRM Data Migration Template](https://www.softwareglimpse.com/resources/crm-data-migration-template/) | [Open page](https://blog.hubspot.com/marketing/crm-data-migration) | Open https://blog.hubspot.com/marketing/crm-data-migration. Locate editorial/about/contact. Request a citation to CRM Da… | excellent | strong | hard | medium | needs-contact-path |
-| 44 | Academia.edu | `academia.edu` | [Sample CRM Requirements Document](https://www.academia.edu/33654314/Sample_CRM_Requirements_Document) | ACADEMIC_EDUCATIONAL | [CRM Requirements Template](https://www.softwareglimpse.com/resources/crm-requirements-template/) | [Open page](https://www.academia.edu/33654314/Sample_CRM_Requirements_Document) | Open https://www.academia.edu/33654314/Sample_CRM_Requirements_Document. Contact the page author/department listed on th… | good | good | moderate | small | needs-contact-path |
-| 45 | HubSpot | `blog.hubspot.com` | [CRM Deployment Guide](https://blog.hubspot.com/marketing/crm-deployment) | REFERENCE_LINK | [CRM Implementation Checklist](https://www.softwareglimpse.com/resources/crm-implementation-checklist/) | [Open page](https://blog.hubspot.com/marketing/crm-deployment) | Open https://blog.hubspot.com/marketing/crm-deployment. Locate editorial/about/contact. Request a citation to CRM Implem… | excellent | strong | hard | medium | needs-contact-path |
-| 46 | Excelsior University | `excelsior.edu` | [What Is a CRM System?](https://www.excelsior.edu/article/what-is-a-crm-system/) | ACADEMIC_EDUCATIONAL | [What is CRM?](https://www.softwareglimpse.com/guides/what-is-crm/) | [Open page](https://www.excelsior.edu/article/what-is-a-crm-system/) | Open https://www.excelsior.edu/article/what-is-a-crm-system/. Contact the page author/department listed on the page (or … | strong | good | hard | medium | needs-contact-path |
-| 47 | Calbright College | `calbright.edu` | [Calbright CRM Program](https://www.calbright.edu/programs/crm/) | ACADEMIC_EDUCATIONAL | [CRM Glossary](https://www.softwareglimpse.com/guides/crm-glossary/) | [Open page](https://www.calbright.edu/programs/crm/) | Open https://www.calbright.edu/programs/crm/. Contact the page author/department listed on the page (or .edu contact). S… | strong | good | hard | medium | needs-contact-path |
-| 48 | Insightly | `insightly.com` | [CRM Needs Assessment](https://www.insightly.com/blog/crm_needs_assessment/) | REFERENCE_LINK | [CRM Requirements Builder](https://www.softwareglimpse.com/tools/crm-requirements-builder/) | [Open page](https://www.insightly.com/blog/crm_needs_assessment/) | Open https://www.insightly.com/blog/crm_needs_assessment/. Locate editorial/about/contact. Request a citation to CRM Req… | strong | good | hard | medium | needs-contact-path |
-| 49 | CRMCalc | `crmcalc.com` | [CRM Calculators Hub](https://crmcalc.com/) | COMPETITOR_LINK_GAP | [CRM Cost Calculator](https://www.softwareglimpse.com/tools/crm-cost-calculator/) | [Open page](https://crmcalc.com/) | Open https://crmcalc.com/. Locate editorial/about/contact. Request a citation to CRM Cost Calculator (https://www.softwa… | strong | good | hard | medium | needs-contact-path |
-| 50 | CRMCalc | `crmcalc.com` | [CRM TCO Calculator](https://crmcalc.com/calculators/tco) | TOOL_CITATION | [CRM TCO Calculator](https://www.softwareglimpse.com/tools/crm-tco-calculator/) | [Open page](https://crmcalc.com/calculators/tco) | Open the resource page (https://crmcalc.com/calculators/tco). Find About/Contact/Contribute, or reply via the site’s edi… | strong | good | hard | medium | needs-contact-path |
+| 2 | Rework | `resources.rework.com` | [Project Management Software Evaluation Criteria](https://resources.rework.com/guides/choosing-software/project-management-software-evaluation-criteria) | RESOURCE_PAGE | [Project Management Vendor Scorecard](https://www.softwareglimpse.com/tools/project-management-vendor-scorecard/) | [Open page](https://resources.rework.com/guides/choosing-software/project-management-software-evaluation-criteria) | Open https://resources.rework.com/guides/choosing-software/project-management-software-evaluation-criteria → Contributin… | strong | strong | moderate | small | recommended |
+| 3 | Rework | `resources.rework.com` | [SaaS Vendor Evaluation Scorecard (With Template)](https://resources.rework.com/guides/choosing-software/saas-vendor-evaluation-scorecard) | RESOURCE_PAGE | [Software Finder](https://www.softwareglimpse.com/tools/software-finder/) | [Open page](https://resources.rework.com/guides/choosing-software/saas-vendor-evaluation-scorecard) | Open https://resources.rework.com/guides/choosing-software/saas-vendor-evaluation-scorecard → Contributing / suggest a r… | strong | strong | moderate | small | recommended |
+| 4 | Toolkit Cafe | `toolkitcafe.com` | [CRM Implementation Checklist for SMB](https://toolkitcafe.com/blog/crm-implementation-checklist-for-smb) | TEMPLATE_CITATION | [CRM Readiness Assessment](https://www.softwareglimpse.com/tools/crm-readiness-assessment/) | [Open page](https://toolkitcafe.com/blog/crm-implementation-checklist-for-smb) | Open the resource page (https://toolkitcafe.com/blog/crm-implementation-checklist-for-smb). Find About/Contact/Contribut… | good | strong | moderate | small | needs-contact-path |
+| 5 | SoftwareInspect | `softwareinspect.com` | [CRM Requirements Checklist](https://softwareinspect.com/blog/crm-requirements-checklist) | TEMPLATE_CITATION | [CRM Requirements Template](https://www.softwareglimpse.com/resources/crm-requirements-template/) | [Open page](https://softwareinspect.com/blog/crm-requirements-checklist) | Open the resource page (https://softwareinspect.com/blog/crm-requirements-checklist). Find About/Contact/Contribute, or … | good | strong | moderate | small | needs-contact-path |
+| 6 | Gain | `gain.io` | [CRM Buying Checklist / Evaluation](https://gain.io/blog/crm-buying-checklist-evaluation) | REFERENCE_LINK | [CRM Vendor Scorecard](https://www.softwareglimpse.com/tools/crm-vendor-scorecard/) | [Open page](https://gain.io/blog/crm-buying-checklist-evaluation) | Open https://gain.io/blog/crm-buying-checklist-evaluation. Locate editorial/about/contact. Request a citation to CRM Ven… | good | strong | moderate | small | needs-contact-path |
+| 7 | Nex365 | `nex365.com` | [Vendor Scorecard Template — Rate Your CRM and Micro-App Vendor](https://nex365.com/vendor-scorecard-template-rate-your-crm-and-micro-app-vendor) | TEMPLATE_CITATION | [CRM Vendor Scorecard](https://www.softwareglimpse.com/tools/crm-vendor-scorecard/) | [Open page](https://nex365.com/vendor-scorecard-template-rate-your-crm-and-micro-app-vendor) | Open the resource page (https://nex365.com/vendor-scorecard-template-rate-your-crm-and-micro-app-vendor). Find About/Con… | good | strong | moderate | small | needs-contact-path |
+| 8 | Singleclic | `singleclic.com` | [CRM Selection Checklist](https://singleclic.com/crm-selection-checklist/) | TEMPLATE_CITATION | [CRM Evaluation Checklist](https://www.softwareglimpse.com/resources/crm-evaluation-checklist/) | [Open page](https://singleclic.com/crm-selection-checklist/) | Open the resource page (https://singleclic.com/crm-selection-checklist/). Find About/Contact/Contribute, or reply via th… | good | strong | moderate | small | needs-contact-path |
+| 9 | Flowla | `flowla.com` | [Resources for RevOps professionals](https://www.flowla.com/blog/resources-for-revops-professionals) | RESOURCE_PAGE | [CRM Finder](https://www.softwareglimpse.com/tools/crm-finder/) | [Open page](https://www.flowla.com/blog/resources-for-revops-professionals) | Open the resource page (https://www.flowla.com/blog/resources-for-revops-professionals). Find About/Contact/Contribute, … | good | strong | moderate | small | needs-contact-path |
+| 10 | Umbrex | `umbrex.com` | [B2B Sales Operations Playbook](https://umbrex.com/resources/b2b-sales-operations-playbook/) | RESOURCE_PAGE | [CRM Implementation Planner](https://www.softwareglimpse.com/tools/crm-implementation-planner/) | [Open page](https://umbrex.com/resources/b2b-sales-operations-playbook/) | Open the resource page (https://umbrex.com/resources/b2b-sales-operations-playbook/). Find About/Contact/Contribute, or … | strong | good | moderate | small | needs-contact-path |
+| 11 | Crustdata | `crustdata.com` | [How to Choose a Sales Intelligence Platform in 2026 [8 Steps]](https://crustdata.com/blog/how-to-choose-a-sales-intelligence-platform) | REFERENCE_LINK | [Sales Intelligence Finder](https://www.softwareglimpse.com/tools/sales-intelligence-finder/) | [Open page](https://crustdata.com/blog/how-to-choose-a-sales-intelligence-platform) | Open https://crustdata.com/blog/how-to-choose-a-sales-intelligence-platform. Use contact route: https://crustdata.com/bl… | strong | strong | moderate | small | recommended |
+| 12 | SpotSaaS | `spotsaas.com` | [CRM Software Setup Checklist](https://www.spotsaas.com/resources/crm-software/setup-checklist) | RESOURCE_PAGE | [CRM Evaluation Checklist](https://www.softwareglimpse.com/resources/crm-evaluation-checklist/) | [Open page](https://www.spotsaas.com/resources/crm-software/setup-checklist) | Open the resource page (https://www.spotsaas.com/resources/crm-software/setup-checklist). Find About/Contact/Contribute,… | good | good | moderate | small | needs-contact-path |
+| 13 | SaaS CRM Review | `saascrmreview.com` | [Best Free CRM Software](https://saascrmreview.com/best-free-crm-software/) | TOOL_CITATION | [CRM Finder](https://www.softwareglimpse.com/tools/crm-finder/) | [Open page](https://saascrmreview.com/best-free-crm-software/) | Open the resource page (https://saascrmreview.com/best-free-crm-software/). Find About/Contact/Contribute, or reply via … | good | strong | moderate | small | needs-contact-path |
+| 14 | The GTM Advisor | `thegtmadvisor.com` | [RevOps Playbook Templates](https://www.thegtmadvisor.com/blog/revops-playbook-templates) | TEMPLATE_CITATION | [CRM Vendor Scorecard](https://www.softwareglimpse.com/tools/crm-vendor-scorecard/) | [Open page](https://www.thegtmadvisor.com/blog/revops-playbook-templates) | Open the resource page (https://www.thegtmadvisor.com/blog/revops-playbook-templates). Find About/Contact/Contribute, or… | good | strong | moderate | small | needs-contact-path |
+| 15 | RevenueOps LLC | `revenueopsllc.com` | [Best RevOps Toolkit](https://www.revenueopsllc.com/best-revops-toolkit/) | RESOURCE_PAGE | [CRM Requirements Template](https://www.softwareglimpse.com/resources/crm-requirements-template/) | [Open page](https://www.revenueopsllc.com/best-revops-toolkit/) | Open the resource page (https://www.revenueopsllc.com/best-revops-toolkit/). Find About/Contact/Contribute, or reply via… | good | strong | moderate | small | needs-contact-path |
+| 16 | Lead Seeker | `theleadseeker.com` | [Sales Intelligence Platforms Guide — How to Evaluate Vendors](https://theleadseeker.com/insights/lead-intelligence/sales-intelligence-platforms/) | TEMPLATE_CITATION | [Sales Intelligence Vendor Scorecard](https://www.softwareglimpse.com/tools/sales-intelligence-vendor-scorecard/) | [Open page](https://theleadseeker.com/insights/lead-intelligence/sales-intelligence-platforms/) | Open the resource page (https://theleadseeker.com/insights/lead-intelligence/sales-intelligence-platforms/). Find About/… | good | strong | moderate | small | needs-contact-path |
+| 17 | Lead Seeker | `theleadseeker.com` | [Top B2B Sales Intelligence Tools (2026 Roundup)](https://theleadseeker.com/insights/lead-intelligence/top-b2b-sales-intelligence-tools/) | TOOL_CITATION | [Sales Intelligence Finder](https://www.softwareglimpse.com/tools/sales-intelligence-finder/) | [Open page](https://theleadseeker.com/insights/lead-intelligence/top-b2b-sales-intelligence-tools/) | Open the resource page (https://theleadseeker.com/insights/lead-intelligence/top-b2b-sales-intelligence-tools/). Find Ab… | good | strong | moderate | small | needs-contact-path |
+| 18 | TopickZ | `topickz.com` | [How to Evaluate Project Management Software](https://topickz.com/guides/operations/how-to-evaluate-project-management/) | REFERENCE_LINK | [Project Management Vendor Scorecard](https://www.softwareglimpse.com/tools/project-management-vendor-scorecard/) | [Open page](https://topickz.com/guides/operations/how-to-evaluate-project-management/) | Open https://topickz.com/guides/operations/how-to-evaluate-project-management/. Locate editorial/about/contact. Request … | good | strong | moderate | small | needs-contact-path |
+| 19 | Toolscreener | `toolscreener.com` | [How To Evaluate A Marketing SaaS Tool (Free Checklist)](https://toolscreener.com/how-to-evaluate-a-marketing-saas-tool-free-checklist/) | TEMPLATE_CITATION | [Marketing Vendor Scorecard](https://www.softwareglimpse.com/tools/marketing-vendor-scorecard/) | [Open page](https://toolscreener.com/how-to-evaluate-a-marketing-saas-tool-free-checklist/) | Open the resource page (https://toolscreener.com/how-to-evaluate-a-marketing-saas-tool-free-checklist/). Find About/Cont… | good | strong | moderate | small | needs-contact-path |
+| 20 | HR Tech SaaS | `hrtechsaas.com` | [HR Software RFP Template: Weighted Scorecard and 40 Vendor Questions](https://hrtechsaas.com/blog/hr-software-rfp-template/) | TEMPLATE_CITATION | [HR RFP / Vendor Brief Builder](https://www.softwareglimpse.com/tools/hr-rfp-builder/) | [Open page](https://hrtechsaas.com/blog/hr-software-rfp-template/) | Open the resource page (https://hrtechsaas.com/blog/hr-software-rfp-template/). Find About/Contact/Contribute, or reply … | good | strong | moderate | small | needs-contact-path |
+| 21 | TopickZ | `topickz.com` | [How to Evaluate HRIS Platforms](https://topickz.com/guides/hr-recruiting/how-to-evaluate-hris-platforms/) | REFERENCE_LINK | [HR Vendor Scorecard](https://www.softwareglimpse.com/tools/hr-vendor-scorecard/) | [Open page](https://topickz.com/guides/hr-recruiting/how-to-evaluate-hris-platforms/) | Open https://topickz.com/guides/hr-recruiting/how-to-evaluate-hris-platforms/. Locate editorial/about/contact. Request a… | good | strong | moderate | small | needs-contact-path |
+| 22 | CRM Insights | `crminsights.co.uk` | [How to build your CRM business case [CRM Business Case Template]](https://crminsights.co.uk/start/crm-business-case-template/) | TEMPLATE_CITATION | [CRM Business Case Template](https://www.softwareglimpse.com/resources/crm-business-case-template/) | [Open page](https://crminsights.co.uk/start/crm-business-case-template/) | Open the resource page (https://crminsights.co.uk/start/crm-business-case-template/). Find About/Contact/Contribute, or … | good | strong | moderate | small | needs-contact-path |
+| 23 | Zapier | `zapier.com` | [Best Free CRM](https://zapier.com/blog/best-free-crm/) | TOOL_CITATION | [CRM Finder](https://www.softwareglimpse.com/tools/crm-finder/) | [Open page](https://zapier.com/blog/best-free-crm/) | Open the resource page (https://zapier.com/blog/best-free-crm/). Find About/Contact/Contribute, or reply via the site’s … | excellent | excellent | hard | medium | needs-contact-path |
+| 24 | Pipedrive | `pipedrive.com` | [CRM Checklist (Pipedrive resources)](https://www.pipedrive.com/en/crm/resources/crm-checklist) | RESOURCE_PAGE | [CRM Readiness Assessment](https://www.softwareglimpse.com/tools/crm-readiness-assessment/) | [Open page](https://www.pipedrive.com/en/crm/resources/crm-checklist) | Open the resource page (https://www.pipedrive.com/en/crm/resources/crm-checklist). Find About/Contact/Contribute, or rep… | excellent | strong | hard | medium | needs-contact-path |
+| 25 | SCORE Twin Cities | `score.org` | [Growing Your Business: A CRM (SCORE webinar)](https://www.score.org/twincities/event/growing-your-business-a-crm-14) | ACADEMIC_EDUCATIONAL | [What is CRM?](https://www.softwareglimpse.com/guides/what-is-crm/) | [Open page](https://www.score.org/twincities/event/growing-your-business-a-crm-14) | Open https://www.score.org/twincities/event/growing-your-business-a-crm-14. Contact the page author/department listed on… | strong | strong | hard | medium | needs-contact-path |
+| 26 | Rivery | `rivery.io` | [Complete Data Migration Checklist](https://rivery.io/data-learning-center/complete-data-migration-checklist/) | REFERENCE_LINK | [CRM Migration Planner](https://www.softwareglimpse.com/tools/crm-migration-planner/) | [Open page](https://rivery.io/data-learning-center/complete-data-migration-checklist/) | Open https://rivery.io/data-learning-center/complete-data-migration-checklist/. Locate editorial/about/contact. Request … | strong | good | moderate | small | needs-contact-path |
+| 27 | Revenue Operations Alliance | `revenueoperationsalliance.com` | [Revenue Operations Alliance](https://www.revenueoperationsalliance.com/) | ASSOCIATION | [CRM Evaluation Checklist](https://www.softwareglimpse.com/resources/crm-evaluation-checklist/) | [Open page](https://www.revenueoperationsalliance.com/) | Open https://www.revenueoperationsalliance.com/. Locate editorial/about/contact. Request a citation to CRM Evaluation Ch… | good | strong | hard | medium | needs-contact-path |
+| 28 | Revenue Enablement Society | `resociety.global` | [Revenue Enablement Society](https://www.resociety.global/) | ASSOCIATION | [CRM Training Plan](https://www.softwareglimpse.com/resources/crm-training-plan/) | [Open page](https://www.resociety.global/) | Open https://www.resociety.global/. Locate editorial/about/contact. Request a citation to CRM Training Plan (https://www… | good | strong | hard | medium | needs-contact-path |
+| 29 | Toolkit Cafe | `toolkitcafe.com` | [Sales Operations Playbook](https://toolkitcafe.com/blog/sales-operations-playbook) | REFERENCE_LINK | [How to Choose a CRM](https://www.softwareglimpse.com/guides/how-to-choose-crm/) | [Open page](https://toolkitcafe.com/blog/sales-operations-playbook) | Open https://toolkitcafe.com/blog/sales-operations-playbook. Locate editorial/about/contact. Request a citation to How t… | good | good | moderate | small | needs-contact-path |
+| 30 | SoftwareInspect | `softwareinspect.com` | [CRM Implementation Checklist](https://softwareinspect.com/blog/crm-implementation-checklist) | REFERENCE_LINK | [CRM Requirements Builder](https://www.softwareglimpse.com/tools/crm-requirements-builder/) | [Open page](https://softwareinspect.com/blog/crm-implementation-checklist) | Open https://softwareinspect.com/blog/crm-implementation-checklist. Locate editorial/about/contact. Request a citation t… | good | good | moderate | small | needs-contact-path |
+| 31 | Kynetto | `kynetto.com` | [CRM Implementation Plan](https://kynetto.com/crm-implementation-plan/) | REFERENCE_LINK | [CRM Implementation Planner](https://www.softwareglimpse.com/tools/crm-implementation-planner/) | [Open page](https://kynetto.com/crm-implementation-plan/) | Open https://kynetto.com/crm-implementation-plan/. Locate editorial/about/contact. Request a citation to CRM Implementat… | good | good | moderate | small | needs-contact-path |
+| 32 | Softabase | `softabase.com` | [CRM Implementation Checklist](https://softabase.com/guides/crm-implementation-checklist) | TEMPLATE_CITATION | [CRM Implementation Checklist](https://www.softwareglimpse.com/resources/crm-implementation-checklist/) | [Open page](https://softabase.com/guides/crm-implementation-checklist) | Open the resource page (https://softabase.com/guides/crm-implementation-checklist). Find About/Contact/Contribute, or re… | good | good | moderate | small | needs-contact-path |
+| 33 | Empat | `empat.tech` | [CRM Implementation Guide 2026](https://www.empat.tech/blog/crm-implementation-guide-2026) | REFERENCE_LINK | [CRM Implementation Planner](https://www.softwareglimpse.com/tools/crm-implementation-planner/) | [Open page](https://www.empat.tech/blog/crm-implementation-guide-2026) | Open https://www.empat.tech/blog/crm-implementation-guide-2026. Locate editorial/about/contact. Request a citation to CR… | good | good | moderate | small | needs-contact-path |
+| 34 | Maciej Turek | `maciejturek.com` | [CRM Implementation Checklist 2026](https://maciejturek.com/resources/crm-implementation-checklist-2026.html) | TEMPLATE_CITATION | [CRM Implementation Checklist](https://www.softwareglimpse.com/resources/crm-implementation-checklist/) | [Open page](https://maciejturek.com/resources/crm-implementation-checklist-2026.html) | Open the resource page (https://maciejturek.com/resources/crm-implementation-checklist-2026.html). Find About/Contact/Co… | low | good | easy | trivial | needs-contact-path |
+| 35 | Next Page IT | `nextpageit.com` | [CRM Migration Checklist](https://www.nextpageit.com/blog/crm-migration-checklist) | TEMPLATE_CITATION | [CRM Migration Planner](https://www.softwareglimpse.com/tools/crm-migration-planner/) | [Open page](https://www.nextpageit.com/blog/crm-migration-checklist) | Open the resource page (https://www.nextpageit.com/blog/crm-migration-checklist). Find About/Contact/Contribute, or repl… | good | good | moderate | small | needs-contact-path |
+| 36 | Digital Applied | `digitalapplied.com` | [CRM Data Migration Checklist 2026 — Zero-Downtime Playbook](https://www.digitalapplied.com/blog/crm-data-migration-checklist-2026-zero-downtime-playbook) | TEMPLATE_CITATION | [CRM Migration Checklist](https://www.softwareglimpse.com/resources/crm-migration-checklist/) | [Open page](https://www.digitalapplied.com/blog/crm-data-migration-checklist-2026-zero-downtime-playbook) | Open the resource page (https://www.digitalapplied.com/blog/crm-data-migration-checklist-2026-zero-downtime-playbook). F… | good | good | moderate | small | needs-contact-path |
+| 37 | Migrate to Monday | `migratetomonday.com` | [CRM Migration Checklist](https://www.migratetomonday.com/resources/blog/crm-migration-checklist/) | TEMPLATE_CITATION | [CRM Field Mapping Template](https://www.softwareglimpse.com/resources/crm-field-mapping-template/) | [Open page](https://www.migratetomonday.com/resources/blog/crm-migration-checklist/) | Open the resource page (https://www.migratetomonday.com/resources/blog/crm-migration-checklist/). Find About/Contact/Con… | good | good | moderate | small | needs-contact-path |
+| 38 | Topickz | `topickz.com` | [How to Evaluate CRM Software](https://topickz.com/guides/sales/how-to-evaluate-crm-software/) | REFERENCE_LINK | [CRM Vendor Scorecard](https://www.softwareglimpse.com/resources/crm-vendor-scorecard/) | [Open page](https://topickz.com/guides/sales/how-to-evaluate-crm-software/) | Open https://topickz.com/guides/sales/how-to-evaluate-crm-software/. Locate editorial/about/contact. Request a citation … | good | good | moderate | small | needs-contact-path |
+| 39 | Complivex | `complivex.com` | [CRM Evaluation Checklist](https://complivex.com/checklists/crm-evaluation-checklist) | TEMPLATE_CITATION | [CRM Evaluation Checklist](https://www.softwareglimpse.com/resources/crm-evaluation-checklist/) | [Open page](https://complivex.com/checklists/crm-evaluation-checklist) | Open the resource page (https://complivex.com/checklists/crm-evaluation-checklist). Find About/Contact/Contribute, or re… | good | good | moderate | small | needs-contact-path |
+| 40 | Office Atlas | `officeatlas.org` | [CRM Evaluation Template](https://officeatlas.org/software/crm-evaluation-template/) | TEMPLATE_CITATION | [CRM Vendor Scorecard](https://www.softwareglimpse.com/resources/crm-vendor-scorecard/) | [Open page](https://officeatlas.org/software/crm-evaluation-template/) | Open the resource page (https://officeatlas.org/software/crm-evaluation-template/). Find About/Contact/Contribute, or re… | good | good | moderate | small | needs-contact-path |
+| 41 | Assembly | `assembly.com` | [CRM Requirements](https://assembly.com/blog/crm-requirements) | TEMPLATE_CITATION | [CRM Requirements Template](https://www.softwareglimpse.com/resources/crm-requirements-template/) | [Open page](https://assembly.com/blog/crm-requirements) | Open the resource page (https://assembly.com/blog/crm-requirements). Find About/Contact/Contribute, or reply via the sit… | good | good | moderate | small | needs-contact-path |
+| 42 | BigContacts | `bigcontacts.com` | [How to Choose a CRM for Small Business](https://www.bigcontacts.com/blog/how-to-choose-crm-small-business/) | REFERENCE_LINK | [How to Choose a CRM](https://www.softwareglimpse.com/guides/how-to-choose-crm/) | [Open page](https://www.bigcontacts.com/blog/how-to-choose-crm-small-business/) | Open https://www.bigcontacts.com/blog/how-to-choose-crm-small-business/. Locate editorial/about/contact. Request a citat… | good | good | moderate | small | needs-contact-path |
+| 43 | Gestisoft | `gestisoft.com` | [CRM Software Selection](https://www.gestisoft.com/en/blog/crm-software-selection) | REFERENCE_LINK | [CRM Vendor Scorecard](https://www.softwareglimpse.com/tools/crm-vendor-scorecard/) | [Open page](https://www.gestisoft.com/en/blog/crm-software-selection) | Open https://www.gestisoft.com/en/blog/crm-software-selection. Locate editorial/about/contact. Request a citation to CRM… | good | good | moderate | small | needs-contact-path |
+| 44 | EndureGo | `endurego.com.au` | [CRM Guide for Australian SMBs](https://www.endurego.com.au/crm/) | REFERENCE_LINK | [CRM Evaluation Checklist](https://www.softwareglimpse.com/resources/crm-evaluation-checklist/) | [Open page](https://www.endurego.com.au/crm/) | Open https://www.endurego.com.au/crm/. Locate editorial/about/contact. Request a citation to CRM Evaluation Checklist (h… | good | good | moderate | small | needs-contact-path |
+| 45 | We Tech Talk | `wetechtalk.com` | [Software Buying Guide — How to Choose the Right Software](https://www.wetechtalk.com/software-buying-guide-how-to-choose-the-right-software/) | REFERENCE_LINK | [CRM Finder](https://www.softwareglimpse.com/tools/crm-finder/) | [Open page](https://www.wetechtalk.com/software-buying-guide-how-to-choose-the-right-software/) | Open https://www.wetechtalk.com/software-buying-guide-how-to-choose-the-right-software/. Locate editorial/about/contact.… | good | good | moderate | small | needs-contact-path |
+| 46 | Tech Verifiers | `techverifiers.com` | [Best Free CRM 2026](https://techverifiers.com/crm/best-free-crm-2026) | TOOL_CITATION | [CRM Cost Calculator](https://www.softwareglimpse.com/tools/crm-cost-calculator/) | [Open page](https://techverifiers.com/crm/best-free-crm-2026) | Open the resource page (https://techverifiers.com/crm/best-free-crm-2026). Find About/Contact/Contribute, or reply via t… | good | good | moderate | small | needs-contact-path |
+| 47 | Useful Stack | `usefulstack.com` | [Best Free CRM Tools in 2026 (Tested with Real Clients)](https://usefulstack.com/best-free-crm-tools-in-2026-tested-with-real-clients/) | TOOL_CITATION | [CRM Finder](https://www.softwareglimpse.com/tools/crm-finder/) | [Open page](https://usefulstack.com/best-free-crm-tools-in-2026-tested-with-real-clients/) | Open the resource page (https://usefulstack.com/best-free-crm-tools-in-2026-tested-with-real-clients/). Find About/Conta… | good | good | moderate | small | needs-contact-path |
+| 48 | Perimattic | `perimattic.com` | [CRM Calculator](https://perimattic.com/tools/software/crm-calculator/) | TOOL_CITATION | [CRM Cost Calculator](https://www.softwareglimpse.com/tools/crm-cost-calculator/) | [Open page](https://perimattic.com/tools/software/crm-calculator/) | Open the resource page (https://perimattic.com/tools/software/crm-calculator/). Find About/Contact/Contribute, or reply … | good | good | moderate | small | needs-contact-path |
+| 49 | The Spinnaker Group | `thespinnakergroupinc.com` | [CRM Implementation Total Cost Calculator](https://thespinnakergroupinc.com/crm-implementation-total-cost-calculator/) | TOOL_CITATION | [CRM TCO Calculator](https://www.softwareglimpse.com/tools/crm-tco-calculator/) | [Open page](https://thespinnakergroupinc.com/crm-implementation-total-cost-calculator/) | Open the resource page (https://thespinnakergroupinc.com/crm-implementation-total-cost-calculator/). Find About/Contact/… | good | good | moderate | small | needs-contact-path |
+| 50 | GitHub (community playbook) | `github.com` | [RevOps Infrastructure Playbook](https://github.com/shubham1502-hue/revops-infrastructure-playbook) | COMMUNITY | [CRM Implementation Checklist](https://www.softwareglimpse.com/resources/crm-implementation-checklist/) | [Open page](https://github.com/shubham1502-hue/revops-infrastructure-playbook) | Open https://github.com/shubham1502-hue/revops-infrastructure-playbook → Issues or PR adding a Resources link in the REA… | good | good | easy | small | recommended |
 
 ## Opportunity detail (Top 15)
 
@@ -100,17 +100,67 @@ Open https://resources.rework.com/libraries/awesome-business-resources/awesome-c
 
 **Suggested ask** (human edit before send — do not auto-send)
 
-> Hi — I noticed “Awesome CRM Systems — curated CRM resources” already helps people evaluate CRM/RevOps tooling. Their Templates/resources section is built for complementary buyer utilities; SoftwareGlimpse’s CRM Finder and evaluation checklist fit as vendor-neutral selection aids alongsid… Would you consider adding our free CRM Finder for readers? Link: https://www.softwareglimpse.com/tools/crm-finder/ Happy to adjust title/blurb to match your list style.
+> Hi — I noticed “Awesome CRM Systems — curated CRM resources” already helps people evaluate software and tooling. Their Templates/resources section is built for complementary buyer utilities; SoftwareGlimpse’s CRM Finder and evaluation checklist fit as vendor-neutral selection aids alongsid… Would you consider adding our free CRM Finder for readers? Link: https://www.softwareglimpse.com/tools/crm-finder/ Happy to adjust title/blurb to match your list style.
 
 **Why they might link**
 
 Their Templates/resources section is built for complementary buyer utilities; SoftwareGlimpse’s CRM Finder and evaluation checklist fit as vendor-neutral selection aids alongside their existing CRM system links.
 
-### 2. Toolkit Cafe — TEMPLATE_CITATION
+### 2. Rework — RESOURCE_PAGE
+
+- **Opportunity URL (where the list/article is):** https://resources.rework.com/guides/choosing-software/project-management-software-evaluation-criteria
+- **Submit / request page:** https://resources.rework.com/guides/choosing-software/project-management-software-evaluation-criteria
+- **Link this SG page:** [Project Management Vendor Scorecard](https://www.softwareglimpse.com/tools/project-management-vendor-scorecard/) (`/tools/project-management-vendor-scorecard/`)
+- Domain: `resources.rework.com`
+- Score: **STRONG** (75)
+- SEO / Referral: strong / strong
+- Difficulty / Effort / Likelihood: moderate / small / high
+- Contact notes: —
+- Submission notes: Open https://resources.rework.com/guides/choosing-software/project-management-software-evaluation-criteria → Contributing / suggest a resource
+- Competitor gap class: —
+
+**How to submit / request**
+
+Open https://resources.rework.com/guides/choosing-software/project-management-software-evaluation-criteria → Contributing / suggest a resource. Propose adding Project Management Vendor Scorecard (https://www.softwareglimpse.com/tools/project-management-vendor-scorecard/) as a complementary resource.
+
+**Suggested ask** (human edit before send — do not auto-send)
+
+> Hi — I noticed “Project Management Software Evaluation Criteria” already helps people evaluate software and tooling. Criteria guides pair naturally with interactive shortlisting; Project Management Finder and Vendor Scorecard let readers apply Rework’s criteria to a fit-based shortlist. Would you consider adding our free Project Management Vendor Scorecard for readers? Link: https://www.softwareglimpse.com/tools/project-management-vendor-scorecard/ Happy to adjust title/blurb to match your list style.
+
+**Why they might link**
+
+Criteria guides pair naturally with interactive shortlisting; Project Management Finder and Vendor Scorecard let readers apply Rework’s criteria to a fit-based shortlist.
+
+### 3. Rework — RESOURCE_PAGE
+
+- **Opportunity URL (where the list/article is):** https://resources.rework.com/guides/choosing-software/saas-vendor-evaluation-scorecard
+- **Submit / request page:** https://resources.rework.com/guides/choosing-software/saas-vendor-evaluation-scorecard
+- **Link this SG page:** [Software Finder](https://www.softwareglimpse.com/tools/software-finder/) (`/tools/software-finder/`)
+- Domain: `resources.rework.com`
+- Score: **STRONG** (75)
+- SEO / Referral: strong / strong
+- Difficulty / Effort / Likelihood: moderate / small / high
+- Contact notes: —
+- Submission notes: Open https://resources.rework.com/guides/choosing-software/saas-vendor-evaluation-scorecard → Contributing / suggest a resource
+- Competitor gap class: —
+
+**How to submit / request**
+
+Open https://resources.rework.com/guides/choosing-software/saas-vendor-evaluation-scorecard → Contributing / suggest a resource. Propose adding Software Finder (https://www.softwareglimpse.com/tools/software-finder/) as a complementary resource.
+
+**Suggested ask** (human edit before send — do not auto-send)
+
+> Hi — I noticed “SaaS Vendor Evaluation Scorecard (With Template)” already helps people evaluate software and tooling. Cross-category scorecard guides fit Software Glimpse’s Software Finder as a category-agnostic shortlist step before filling the scorecard template. Would you consider adding our free Software Finder for readers? Link: https://www.softwareglimpse.com/tools/software-finder/ Happy to adjust title/blurb to match your list style.
+
+**Why they might link**
+
+Cross-category scorecard guides fit Software Glimpse’s Software Finder as a category-agnostic shortlist step before filling the scorecard template.
+
+### 4. Toolkit Cafe — TEMPLATE_CITATION
 
 - **Opportunity URL (where the list/article is):** https://toolkitcafe.com/blog/crm-implementation-checklist-for-smb
 - **Submit / request page:** https://toolkitcafe.com/blog/crm-implementation-checklist-for-smb
-- **Link this SG page:** [CRM Implementation Checklist](https://www.softwareglimpse.com/resources/crm-implementation-checklist/) (`/resources/crm-implementation-checklist/`)
+- **Link this SG page:** [CRM Readiness Assessment](https://www.softwareglimpse.com/tools/crm-readiness-assessment/) (`/tools/crm-readiness-assessment/`)
 - Domain: `toolkitcafe.com`
 - Score: **STRONG** (73)
 - SEO / Referral: good / strong
@@ -121,17 +171,17 @@ Their Templates/resources section is built for complementary buyer utilities; So
 
 **How to submit / request**
 
-Open the resource page (https://toolkitcafe.com/blog/crm-implementation-checklist-for-smb). Find About/Contact/Contribute, or reply via the site’s editorial contact. Ask to add CRM Implementation Checklist (https://www.softwareglimpse.com/resources/crm-implementation-checklist/) to the resource list because it helps their readers with vendor-neutral CRM selection/evaluation.
+Open the resource page (https://toolkitcafe.com/blog/crm-implementation-checklist-for-smb). Find About/Contact/Contribute, or reply via the site’s editorial contact. Ask to add CRM Readiness Assessment (https://www.softwareglimpse.com/tools/crm-readiness-assessment/) to the resource list because it helps their readers with vendor-neutral software selection/evaluation.
 
 **Suggested ask** (human edit before send — do not auto-send)
 
-> Hi — I noticed “CRM Implementation Checklist for SMB” already helps people evaluate CRM/RevOps tooling. Guide teaches implementation sequencing; SoftwareGlimpse’s downloadable implementation checklist and planner are ready-to-use artifacts that match the article’s SMB audience and… Would you consider adding our free CRM Implementation Checklist for readers? Link: https://www.softwareglimpse.com/resources/crm-implementation-checklist/ Happy to adjust title/blurb to match your list style.
+> Hi — I noticed “CRM Implementation Checklist for SMB” already helps people evaluate software and tooling. Guide teaches implementation sequencing and readiness; SoftwareGlimpse’s free CRM Readiness Assessment plus implementation checklist give SMB readers a scored prep step before r… Would you consider adding our free CRM Readiness Assessment for readers? Link: https://www.softwareglimpse.com/tools/crm-readiness-assessment/ Happy to adjust title/blurb to match your list style.
 
 **Why they might link**
 
-Guide teaches implementation sequencing; SoftwareGlimpse’s downloadable implementation checklist and planner are ready-to-use artifacts that match the article’s SMB audience and checklist framing.
+Guide teaches implementation sequencing and readiness; SoftwareGlimpse’s free CRM Readiness Assessment plus implementation checklist give SMB readers a scored prep step before rollout.
 
-### 3. SoftwareInspect — TEMPLATE_CITATION
+### 5. SoftwareInspect — TEMPLATE_CITATION
 
 - **Opportunity URL (where the list/article is):** https://softwareinspect.com/blog/crm-requirements-checklist
 - **Submit / request page:** https://softwareinspect.com/blog/crm-requirements-checklist
@@ -146,17 +196,17 @@ Guide teaches implementation sequencing; SoftwareGlimpse’s downloadable implem
 
 **How to submit / request**
 
-Open the resource page (https://softwareinspect.com/blog/crm-requirements-checklist). Find About/Contact/Contribute, or reply via the site’s editorial contact. Ask to add CRM Requirements Template (https://www.softwareglimpse.com/resources/crm-requirements-template/) to the resource list because it helps their readers with vendor-neutral CRM selection/evaluation.
+Open the resource page (https://softwareinspect.com/blog/crm-requirements-checklist). Find About/Contact/Contribute, or reply via the site’s editorial contact. Ask to add CRM Requirements Template (https://www.softwareglimpse.com/resources/crm-requirements-template/) to the resource list because it helps their readers with vendor-neutral software selection/evaluation.
 
 **Suggested ask** (human edit before send — do not auto-send)
 
-> Hi — I noticed “CRM Requirements Checklist” already helps people evaluate CRM/RevOps tooling. Content is checklist-centric; SoftwareGlimpse’s CRM requirements template and builder give readers a fillable artifact instead of only reading checklist prose. Would you consider adding our free CRM Requirements Template for readers? Link: https://www.softwareglimpse.com/resources/crm-requirements-template/ Happy to adjust title/blurb to match your list style.
+> Hi — I noticed “CRM Requirements Checklist” already helps people evaluate software and tooling. Content is checklist-centric; SoftwareGlimpse’s CRM requirements template and builder give readers a fillable artifact instead of only reading checklist prose. Would you consider adding our free CRM Requirements Template for readers? Link: https://www.softwareglimpse.com/resources/crm-requirements-template/ Happy to adjust title/blurb to match your list style.
 
 **Why they might link**
 
 Content is checklist-centric; SoftwareGlimpse’s CRM requirements template and builder give readers a fillable artifact instead of only reading checklist prose.
 
-### 4. Gain — REFERENCE_LINK
+### 6. Gain — REFERENCE_LINK
 
 - **Opportunity URL (where the list/article is):** https://gain.io/blog/crm-buying-checklist-evaluation
 - **Submit / request page:** https://gain.io/blog/crm-buying-checklist-evaluation
@@ -181,7 +231,7 @@ Open https://gain.io/blog/crm-buying-checklist-evaluation. Locate editorial/abou
 
 Article already mentions weighted scorecards; SoftwareGlimpse’s vendor scorecard tool and evaluation checklist are the interactive/downloadable counterparts to that advice.
 
-### 5. Nex365 — TEMPLATE_CITATION
+### 7. Nex365 — TEMPLATE_CITATION
 
 - **Opportunity URL (where the list/article is):** https://nex365.com/vendor-scorecard-template-rate-your-crm-and-micro-app-vendor
 - **Submit / request page:** https://nex365.com/vendor-scorecard-template-rate-your-crm-and-micro-app-vendor
@@ -196,17 +246,17 @@ Article already mentions weighted scorecards; SoftwareGlimpse’s vendor scoreca
 
 **How to submit / request**
 
-Open the resource page (https://nex365.com/vendor-scorecard-template-rate-your-crm-and-micro-app-vendor). Find About/Contact/Contribute, or reply via the site’s editorial contact. Ask to add CRM Vendor Scorecard (https://www.softwareglimpse.com/tools/crm-vendor-scorecard/) to the resource list because it helps their readers with vendor-neutral CRM selection/evaluation.
+Open the resource page (https://nex365.com/vendor-scorecard-template-rate-your-crm-and-micro-app-vendor). Find About/Contact/Contribute, or reply via the site’s editorial contact. Ask to add CRM Vendor Scorecard (https://www.softwareglimpse.com/tools/crm-vendor-scorecard/) to the resource list because it helps their readers with vendor-neutral software selection/evaluation.
 
 **Suggested ask** (human edit before send — do not auto-send)
 
-> Hi — I noticed “Vendor Scorecard Template — Rate Your CRM and Micro-App Vendor” already helps people evaluate CRM/RevOps tooling. Scorecard article audiences want a CRM-specific interactive scorecard; SoftwareGlimpse’s CRM vendor scorecard tool specializes the generic vendor-rating advice for CRM selection. Would you consider adding our free CRM Vendor Scorecard for readers? Link: https://www.softwareglimpse.com/tools/crm-vendor-scorecard/ Happy to adjust title/blurb to match your list style.
+> Hi — I noticed “Vendor Scorecard Template — Rate Your CRM and Micro-App Vendor” already helps people evaluate software and tooling. Scorecard article audiences want a CRM-specific interactive scorecard; SoftwareGlimpse’s CRM vendor scorecard tool specializes the generic vendor-rating advice for CRM selection. Would you consider adding our free CRM Vendor Scorecard for readers? Link: https://www.softwareglimpse.com/tools/crm-vendor-scorecard/ Happy to adjust title/blurb to match your list style.
 
 **Why they might link**
 
 Scorecard article audiences want a CRM-specific interactive scorecard; SoftwareGlimpse’s CRM vendor scorecard tool specializes the generic vendor-rating advice for CRM selection.
 
-### 6. Singleclic — TEMPLATE_CITATION
+### 8. Singleclic — TEMPLATE_CITATION
 
 - **Opportunity URL (where the list/article is):** https://singleclic.com/crm-selection-checklist/
 - **Submit / request page:** https://singleclic.com/crm-selection-checklist/
@@ -221,17 +271,17 @@ Scorecard article audiences want a CRM-specific interactive scorecard; SoftwareG
 
 **How to submit / request**
 
-Open the resource page (https://singleclic.com/crm-selection-checklist/). Find About/Contact/Contribute, or reply via the site’s editorial contact. Ask to add CRM Evaluation Checklist (https://www.softwareglimpse.com/resources/crm-evaluation-checklist/) to the resource list because it helps their readers with vendor-neutral CRM selection/evaluation.
+Open the resource page (https://singleclic.com/crm-selection-checklist/). Find About/Contact/Contribute, or reply via the site’s editorial contact. Ask to add CRM Evaluation Checklist (https://www.softwareglimpse.com/resources/crm-evaluation-checklist/) to the resource list because it helps their readers with vendor-neutral software selection/evaluation.
 
 **Suggested ask** (human edit before send — do not auto-send)
 
-> Hi — I noticed “CRM Selection Checklist” already helps people evaluate CRM/RevOps tooling. Page already cites external resources; SoftwareGlimpse’s evaluation checklist and vendor scorecard are natural additional citations for selection teams following the checklist. Would you consider adding our free CRM Evaluation Checklist for readers? Link: https://www.softwareglimpse.com/resources/crm-evaluation-checklist/ Happy to adjust title/blurb to match your list style.
+> Hi — I noticed “CRM Selection Checklist” already helps people evaluate software and tooling. Page already cites external resources; SoftwareGlimpse’s evaluation checklist and vendor scorecard are natural additional citations for selection teams following the checklist. Would you consider adding our free CRM Evaluation Checklist for readers? Link: https://www.softwareglimpse.com/resources/crm-evaluation-checklist/ Happy to adjust title/blurb to match your list style.
 
 **Why they might link**
 
 Page already cites external resources; SoftwareGlimpse’s evaluation checklist and vendor scorecard are natural additional citations for selection teams following the checklist.
 
-### 7. Flowla — RESOURCE_PAGE
+### 9. Flowla — RESOURCE_PAGE
 
 - **Opportunity URL (where the list/article is):** https://www.flowla.com/blog/resources-for-revops-professionals
 - **Submit / request page:** https://www.flowla.com/blog/resources-for-revops-professionals
@@ -246,17 +296,17 @@ Page already cites external resources; SoftwareGlimpse’s evaluation checklist 
 
 **How to submit / request**
 
-Open the resource page (https://www.flowla.com/blog/resources-for-revops-professionals). Find About/Contact/Contribute, or reply via the site’s editorial contact. Ask to add CRM Finder (https://www.softwareglimpse.com/tools/crm-finder/) to the resource list because it helps their readers with vendor-neutral CRM selection/evaluation.
+Open the resource page (https://www.flowla.com/blog/resources-for-revops-professionals). Find About/Contact/Contribute, or reply via the site’s editorial contact. Ask to add CRM Finder (https://www.softwareglimpse.com/tools/crm-finder/) to the resource list because it helps their readers with vendor-neutral software selection/evaluation.
 
 **Suggested ask** (human edit before send — do not auto-send)
 
-> Hi — I noticed “Resources for RevOps professionals” already helps people evaluate CRM/RevOps tooling. Roundup already aggregates RevOps-facing utilities; a vendor-neutral CRM Finder plus cost calculator helps readers shortlist and budget CRM stack choices without competing with … Would you consider adding our free CRM Finder for readers? Link: https://www.softwareglimpse.com/tools/crm-finder/ Happy to adjust title/blurb to match your list style.
+> Hi — I noticed “Resources for RevOps professionals” already helps people evaluate software and tooling. Roundup already aggregates RevOps-facing utilities; a vendor-neutral CRM Finder plus cost calculator helps readers shortlist and budget CRM stack choices without competing with … Would you consider adding our free CRM Finder for readers? Link: https://www.softwareglimpse.com/tools/crm-finder/ Happy to adjust title/blurb to match your list style.
 
 **Why they might link**
 
 Roundup already aggregates RevOps-facing utilities; a vendor-neutral CRM Finder plus cost calculator helps readers shortlist and budget CRM stack choices without competing with Flowla’s deal-room product.
 
-### 8. Umbrex — RESOURCE_PAGE
+### 10. Umbrex — RESOURCE_PAGE
 
 - **Opportunity URL (where the list/article is):** https://umbrex.com/resources/b2b-sales-operations-playbook/
 - **Submit / request page:** https://umbrex.com/resources/b2b-sales-operations-playbook/
@@ -271,17 +321,42 @@ Roundup already aggregates RevOps-facing utilities; a vendor-neutral CRM Finder 
 
 **How to submit / request**
 
-Open the resource page (https://umbrex.com/resources/b2b-sales-operations-playbook/). Find About/Contact/Contribute, or reply via the site’s editorial contact. Ask to add CRM Implementation Planner (https://www.softwareglimpse.com/tools/crm-implementation-planner/) to the resource list because it helps their readers with vendor-neutral CRM selection/evaluation.
+Open the resource page (https://umbrex.com/resources/b2b-sales-operations-playbook/). Find About/Contact/Contribute, or reply via the site’s editorial contact. Ask to add CRM Implementation Planner (https://www.softwareglimpse.com/tools/crm-implementation-planner/) to the resource list because it helps their readers with vendor-neutral software selection/evaluation.
 
 **Suggested ask** (human edit before send — do not auto-send)
 
-> Hi — I noticed “B2B Sales Operations Playbook” already helps people evaluate CRM/RevOps tooling. Playbook’s templates chapter covers sales ops tooling; SoftwareGlimpse’s CRM implementation planner and field-mapping template fill practical gaps for readers executing CRM-back… Would you consider adding our free CRM Implementation Planner for readers? Link: https://www.softwareglimpse.com/tools/crm-implementation-planner/ Happy to adjust title/blurb to match your list style.
+> Hi — I noticed “B2B Sales Operations Playbook” already helps people evaluate software and tooling. Playbook’s templates chapter covers sales ops tooling; SoftwareGlimpse’s CRM implementation planner and field-mapping template fill practical gaps for readers executing CRM-back… Would you consider adding our free CRM Implementation Planner for readers? Link: https://www.softwareglimpse.com/tools/crm-implementation-planner/ Happy to adjust title/blurb to match your list style.
 
 **Why they might link**
 
 Playbook’s templates chapter covers sales ops tooling; SoftwareGlimpse’s CRM implementation planner and field-mapping template fill practical gaps for readers executing CRM-backed process changes.
 
-### 9. SpotSaaS — RESOURCE_PAGE
+### 11. Crustdata — REFERENCE_LINK
+
+- **Opportunity URL (where the list/article is):** https://crustdata.com/blog/how-to-choose-a-sales-intelligence-platform
+- **Submit / request page:** https://crustdata.com/blog/how-to-choose-a-sales-intelligence-platform
+- **Link this SG page:** [Sales Intelligence Finder](https://www.softwareglimpse.com/tools/sales-intelligence-finder/) (`/tools/sales-intelligence-finder/`)
+- Domain: `crustdata.com`
+- Score: **STRONG** (72)
+- SEO / Referral: strong / strong
+- Difficulty / Effort / Likelihood: moderate / small / medium
+- Contact notes: https://crustdata.com/blog/how-to-choose-a-sales-intelligence-platform
+- Submission notes: —
+- Competitor gap class: COMPLEMENTARY
+
+**How to submit / request**
+
+Open https://crustdata.com/blog/how-to-choose-a-sales-intelligence-platform. Use contact route: https://crustdata.com/blog/how-to-choose-a-sales-intelligence-platform. Request a citation/link to Sales Intelligence Finder (https://www.softwareglimpse.com/tools/sales-intelligence-finder/).
+
+**Suggested ask** (human edit before send — do not auto-send)
+
+> Hi — regarding “How to Choose a Sales Intelligence Platform in 2026 [8 Steps]”: Guide already teaches a structured SI selection process; SoftwareGlimpse’s Sales Intelligence Finder and how-to-choose-SI guide give readers a free interactive shortlist step af… If useful for your audience, here’s our free Sales Intelligence Finder: https://www.softwareglimpse.com/tools/sales-intelligence-finder/. Glad to rephrase the mention to your house style.
+
+**Why they might link**
+
+Guide already teaches a structured SI selection process; SoftwareGlimpse’s Sales Intelligence Finder and how-to-choose-SI guide give readers a free interactive shortlist step after the framework.
+
+### 12. SpotSaaS — RESOURCE_PAGE
 
 - **Opportunity URL (where the list/article is):** https://www.spotsaas.com/resources/crm-software/setup-checklist
 - **Submit / request page:** https://www.spotsaas.com/resources/crm-software/setup-checklist
@@ -296,17 +371,17 @@ Playbook’s templates chapter covers sales ops tooling; SoftwareGlimpse’s CRM
 
 **How to submit / request**
 
-Open the resource page (https://www.spotsaas.com/resources/crm-software/setup-checklist). Find About/Contact/Contribute, or reply via the site’s editorial contact. Ask to add CRM Evaluation Checklist (https://www.softwareglimpse.com/resources/crm-evaluation-checklist/) to the resource list because it helps their readers with vendor-neutral CRM selection/evaluation.
+Open the resource page (https://www.spotsaas.com/resources/crm-software/setup-checklist). Find About/Contact/Contribute, or reply via the site’s editorial contact. Ask to add CRM Evaluation Checklist (https://www.softwareglimpse.com/resources/crm-evaluation-checklist/) to the resource list because it helps their readers with vendor-neutral software selection/evaluation.
 
 **Suggested ask** (human edit before send — do not auto-send)
 
-> Hi — I noticed “CRM Software Setup Checklist” already helps people evaluate CRM/RevOps tooling. Related-resources nav can include complementary evaluation tools; SoftwareGlimpse’s evaluation checklist and implementation checklist extend setup content into selection and rol… Would you consider adding our free CRM Evaluation Checklist for readers? Link: https://www.softwareglimpse.com/resources/crm-evaluation-checklist/ Happy to adjust title/blurb to match your list style.
+> Hi — I noticed “CRM Software Setup Checklist” already helps people evaluate software and tooling. Related-resources nav can include complementary evaluation tools; SoftwareGlimpse’s evaluation checklist and implementation checklist extend setup content into selection and rol… Would you consider adding our free CRM Evaluation Checklist for readers? Link: https://www.softwareglimpse.com/resources/crm-evaluation-checklist/ Happy to adjust title/blurb to match your list style.
 
 **Why they might link**
 
 Related-resources nav can include complementary evaluation tools; SoftwareGlimpse’s evaluation checklist and implementation checklist extend setup content into selection and rollout.
 
-### 10. SaaS CRM Review — TOOL_CITATION
+### 13. SaaS CRM Review — TOOL_CITATION
 
 - **Opportunity URL (where the list/article is):** https://saascrmreview.com/best-free-crm-software/
 - **Submit / request page:** https://saascrmreview.com/best-free-crm-software/
@@ -321,17 +396,17 @@ Related-resources nav can include complementary evaluation tools; SoftwareGlimps
 
 **How to submit / request**
 
-Open the resource page (https://saascrmreview.com/best-free-crm-software/). Find About/Contact/Contribute, or reply via the site’s editorial contact. Ask to add CRM Finder (https://www.softwareglimpse.com/tools/crm-finder/) to the resource list because it helps their readers with vendor-neutral CRM selection/evaluation.
+Open the resource page (https://saascrmreview.com/best-free-crm-software/). Find About/Contact/Contribute, or reply via the site’s editorial contact. Ask to add CRM Finder (https://www.softwareglimpse.com/tools/crm-finder/) to the resource list because it helps their readers with vendor-neutral software selection/evaluation.
 
 **Suggested ask** (human edit before send — do not auto-send)
 
-> Hi — I noticed “Best Free CRM Software” already helps people evaluate CRM/RevOps tooling. Free-CRM lists help readers discover products but not evaluate fit; citing CRM Finder as an evaluation helper lets readers filter free options against requirements after reading… Would you consider adding our free CRM Finder for readers? Link: https://www.softwareglimpse.com/tools/crm-finder/ Happy to adjust title/blurb to match your list style.
+> Hi — I noticed “Best Free CRM Software” already helps people evaluate software and tooling. Free-CRM lists help readers discover products but not evaluate fit; citing CRM Finder as an evaluation helper lets readers filter free options against requirements after reading… Would you consider adding our free CRM Finder for readers? Link: https://www.softwareglimpse.com/tools/crm-finder/ Happy to adjust title/blurb to match your list style.
 
 **Why they might link**
 
 Free-CRM lists help readers discover products but not evaluate fit; citing CRM Finder as an evaluation helper lets readers filter free options against requirements after reading the list.
 
-### 11. The GTM Advisor — TEMPLATE_CITATION
+### 14. The GTM Advisor — TEMPLATE_CITATION
 
 - **Opportunity URL (where the list/article is):** https://www.thegtmadvisor.com/blog/revops-playbook-templates
 - **Submit / request page:** https://www.thegtmadvisor.com/blog/revops-playbook-templates
@@ -346,17 +421,17 @@ Free-CRM lists help readers discover products but not evaluate fit; citing CRM F
 
 **How to submit / request**
 
-Open the resource page (https://www.thegtmadvisor.com/blog/revops-playbook-templates). Find About/Contact/Contribute, or reply via the site’s editorial contact. Ask to add CRM Vendor Scorecard (https://www.softwareglimpse.com/tools/crm-vendor-scorecard/) to the resource list because it helps their readers with vendor-neutral CRM selection/evaluation.
+Open the resource page (https://www.thegtmadvisor.com/blog/revops-playbook-templates). Find About/Contact/Contribute, or reply via the site’s editorial contact. Ask to add CRM Vendor Scorecard (https://www.softwareglimpse.com/tools/crm-vendor-scorecard/) to the resource list because it helps their readers with vendor-neutral software selection/evaluation.
 
 **Suggested ask** (human edit before send — do not auto-send)
 
-> Hi — I noticed “RevOps Playbook Templates” already helps people evaluate CRM/RevOps tooling. Tech-stack evaluation SOPs need CRM selection tooling; vendor scorecard and CRM Finder help RevOps teams evaluate CRM within the broader stack playbooks described. Would you consider adding our free CRM Vendor Scorecard for readers? Link: https://www.softwareglimpse.com/tools/crm-vendor-scorecard/ Happy to adjust title/blurb to match your list style.
+> Hi — I noticed “RevOps Playbook Templates” already helps people evaluate software and tooling. Tech-stack evaluation SOPs need CRM selection tooling; vendor scorecard and CRM Finder help RevOps teams evaluate CRM within the broader stack playbooks described. Would you consider adding our free CRM Vendor Scorecard for readers? Link: https://www.softwareglimpse.com/tools/crm-vendor-scorecard/ Happy to adjust title/blurb to match your list style.
 
 **Why they might link**
 
 Tech-stack evaluation SOPs need CRM selection tooling; vendor scorecard and CRM Finder help RevOps teams evaluate CRM within the broader stack playbooks described.
 
-### 12. RevenueOps LLC — RESOURCE_PAGE
+### 15. RevenueOps LLC — RESOURCE_PAGE
 
 - **Opportunity URL (where the list/article is):** https://www.revenueopsllc.com/best-revops-toolkit/
 - **Submit / request page:** https://www.revenueopsllc.com/best-revops-toolkit/
@@ -371,90 +446,15 @@ Tech-stack evaluation SOPs need CRM selection tooling; vendor scorecard and CRM 
 
 **How to submit / request**
 
-Open the resource page (https://www.revenueopsllc.com/best-revops-toolkit/). Find About/Contact/Contribute, or reply via the site’s editorial contact. Ask to add CRM Requirements Template (https://www.softwareglimpse.com/resources/crm-requirements-template/) to the resource list because it helps their readers with vendor-neutral CRM selection/evaluation.
+Open the resource page (https://www.revenueopsllc.com/best-revops-toolkit/). Find About/Contact/Contribute, or reply via the site’s editorial contact. Ask to add CRM Requirements Template (https://www.softwareglimpse.com/resources/crm-requirements-template/) to the resource list because it helps their readers with vendor-neutral software selection/evaluation.
 
 **Suggested ask** (human edit before send — do not auto-send)
 
-> Hi — I noticed “Best RevOps Toolkit” already helps people evaluate CRM/RevOps tooling. Toolkit pages curate practical assets; SoftwareGlimpse’s requirements template and evaluation checklist fit as free CRM-selection toolkit items for RevOps operators. Would you consider adding our free CRM Requirements Template for readers? Link: https://www.softwareglimpse.com/resources/crm-requirements-template/ Happy to adjust title/blurb to match your list style.
+> Hi — I noticed “Best RevOps Toolkit” already helps people evaluate software and tooling. Toolkit pages curate practical assets; SoftwareGlimpse’s requirements template and evaluation checklist fit as free CRM-selection toolkit items for RevOps operators. Would you consider adding our free CRM Requirements Template for readers? Link: https://www.softwareglimpse.com/resources/crm-requirements-template/ Happy to adjust title/blurb to match your list style.
 
 **Why they might link**
 
 Toolkit pages curate practical assets; SoftwareGlimpse’s requirements template and evaluation checklist fit as free CRM-selection toolkit items for RevOps operators.
-
-### 13. Zapier — TOOL_CITATION
-
-- **Opportunity URL (where the list/article is):** https://zapier.com/blog/best-free-crm/
-- **Submit / request page:** https://zapier.com/blog/best-free-crm/
-- **Link this SG page:** [CRM Finder](https://www.softwareglimpse.com/tools/crm-finder/) (`/tools/crm-finder/`)
-- Domain: `zapier.com`
-- Score: **STRONG** (72)
-- SEO / Referral: excellent / excellent
-- Difficulty / Effort / Likelihood: hard / medium / low
-- Contact notes: —
-- Submission notes: —
-- Competitor gap class: COMPLEMENTARY
-
-**How to submit / request**
-
-Open the resource page (https://zapier.com/blog/best-free-crm/). Find About/Contact/Contribute, or reply via the site’s editorial contact. Ask to add CRM Finder (https://www.softwareglimpse.com/tools/crm-finder/) to the resource list because it helps their readers with vendor-neutral CRM selection/evaluation.
-
-**Suggested ask** (human edit before send — do not auto-send)
-
-> Hi — I noticed “Best Free CRM” already helps people evaluate CRM/RevOps tooling. Zapier’s free-CRM roundup is product-centric; citing CRM Finder and cost calculator as complementary evaluation tools helps readers shortlist and budget beyond feature bullets. Would you consider adding our free CRM Finder for readers? Link: https://www.softwareglimpse.com/tools/crm-finder/ Happy to adjust title/blurb to match your list style.
-
-**Why they might link**
-
-Zapier’s free-CRM roundup is product-centric; citing CRM Finder and cost calculator as complementary evaluation tools helps readers shortlist and budget beyond feature bullets.
-
-### 14. Pipedrive — RESOURCE_PAGE
-
-- **Opportunity URL (where the list/article is):** https://www.pipedrive.com/en/crm/resources/crm-checklist
-- **Submit / request page:** https://www.pipedrive.com/en/crm/resources/crm-checklist
-- **Link this SG page:** [CRM Evaluation Checklist](https://www.softwareglimpse.com/resources/crm-evaluation-checklist/) (`/resources/crm-evaluation-checklist/`)
-- Domain: `pipedrive.com`
-- Score: **STRONG** (71)
-- SEO / Referral: excellent / strong
-- Difficulty / Effort / Likelihood: hard / medium / low
-- Contact notes: —
-- Submission notes: —
-- Competitor gap class: COMPLEMENTARY
-
-**How to submit / request**
-
-Open the resource page (https://www.pipedrive.com/en/crm/resources/crm-checklist). Find About/Contact/Contribute, or reply via the site’s editorial contact. Ask to add CRM Evaluation Checklist (https://www.softwareglimpse.com/resources/crm-evaluation-checklist/) to the resource list because it helps their readers with vendor-neutral CRM selection/evaluation.
-
-**Suggested ask** (human edit before send — do not auto-send)
-
-> Hi — I noticed “CRM Checklist (Pipedrive resources)” already helps people evaluate CRM/RevOps tooling. Vendor resource hubs sometimes link vendor-neutral planning tools; SoftwareGlimpse’s evaluation checklist and cost calculator help readers prepare before committing to any CRM—i… Would you consider adding our free CRM Evaluation Checklist for readers? Link: https://www.softwareglimpse.com/resources/crm-evaluation-checklist/ Happy to adjust title/blurb to match your list style.
-
-**Why they might link**
-
-Vendor resource hubs sometimes link vendor-neutral planning tools; SoftwareGlimpse’s evaluation checklist and cost calculator help readers prepare before committing to any CRM—including Pipedrive.
-
-### 15. SCORE Twin Cities — ACADEMIC_EDUCATIONAL
-
-- **Opportunity URL (where the list/article is):** https://www.score.org/twincities/event/growing-your-business-a-crm-14
-- **Submit / request page:** https://www.score.org/twincities/event/growing-your-business-a-crm-14
-- **Link this SG page:** [What is CRM?](https://www.softwareglimpse.com/guides/what-is-crm/) (`/guides/what-is-crm/`)
-- Domain: `score.org`
-- Score: **GOOD** (66)
-- SEO / Referral: strong / strong
-- Difficulty / Effort / Likelihood: hard / medium / medium
-- Contact notes: —
-- Submission notes: —
-- Competitor gap class: —
-
-**How to submit / request**
-
-Open https://www.score.org/twincities/event/growing-your-business-a-crm-14. Contact the page author/department listed on the page (or .edu contact). Suggest citing What is CRM? (https://www.softwareglimpse.com/guides/what-is-crm/) as a free practical worksheet/tool for students or trainees.
-
-**Suggested ask** (human edit before send — do not auto-send)
-
-> Hello — your page “Growing Your Business: A CRM (SCORE webinar)” is a strong educational resource. We publish a free What is CRM? students/practitioners can use without signup: https://www.softwareglimpse.com/guides/what-is-crm/. If it fits your materials, a citation would help learners apply the concepts.
-
-**Why they might link**
-
-SCORE education pages often list free attendee resources; what-is-CRM guide and evaluation checklist are appropriate post-webinar handouts for SMB owners.
 
 ## Rejected / investigated but not recommended
 
@@ -480,6 +480,11 @@ See also [`earned-backlink-rejects-latest.md`](./earned-backlink-rejects-latest.
 | CB Insights | `cbinsights.com` | No actual submission route | CB Insights company profile — no submission/editorial route. |
 | JobStars | `jobstars.com` | Low quality | Thin association listing — insufficient editorial quality. |
 | Notion | `notion.com` | Vendor-locked competitor asset | Notion marketplace template — vendor-locked product surface. |
+| Gojiberry.ai | `blog.gojiberry.ai` | Vendor-locked competitor asset | Gojiberry product-led SI buyer's guide — vendor-locked. |
+| RevoScale | `revoscale.io` | Vendor-locked competitor asset | RevoScale product roundup — vendor-locked. |
+| Aaxonix | `aaxonix.com` | Direct competitor selling same artifact | Own readiness assessment tool — not complementary. |
+| SpotSaaS | `spotsaas.com` | Direct competitor selling same artifact | Own PM scorecard — same reject pattern as SpotSaaS CRM scorecard. |
+| HR Cloud | `hrcloud.com` | Vendor-locked competitor asset | HR Cloud product-led checklist — vendor-locked. |
 
 ## Queries run (live)
 
@@ -503,6 +508,14 @@ See also [`earned-backlink-rejects-latest.md`](./earned-backlink-rejects-latest.
 - `softwareglimpse.com CRM mention`
 - `CRM evaluation checklist complementary resources`
 - `CRM deployment checklist HubSpot Pipedrive`
+- `sales intelligence tools resources roundup checklist evaluation 2026`
+- `how to choose a sales intelligence platform 2026`
+- `project management software evaluation criteria scorecard`
+- `marketing software evaluation checklist vendor scorecard`
+- `SaaS vendor evaluation scorecard template`
+- `HR software evaluation checklist OR RFP scorecard`
+- `CRM business case template OR CRM ROI calculator resources`
+- `CRM readiness assessment complementary resources`
 
 ## Limitations
 

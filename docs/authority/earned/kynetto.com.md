@@ -1,13 +1,13 @@
 # Earned backlink opportunities — kynetto.com
 
-> From EarnedBacklinkOpportunityAgent · 2026-08-20T10:46:27.246Z
-> Topic: CRM / business software
+> From EarnedBacklinkOpportunityAgent · 2026-08-20T10:50:33.197Z
+> Topic: CRM, sales intelligence & business software
 
-## P21 — CRM Implementation Plan
+## P31 — CRM Implementation Plan
 
 | Field | Value |
 | --- | --- |
-| Priority | 21 |
+| Priority | 31 |
 | Site | Kynetto |
 | Domain | `kynetto.com` |
 | Opportunity URL | https://kynetto.com/crm-implementation-plan/ |

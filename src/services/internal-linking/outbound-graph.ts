@@ -23,7 +23,10 @@ import { isEntityIndexable } from "@/domain/quality-gates";
 import { indexabilityFromSeoFlag } from "@/seo/indexability";
 import { normalizePath } from "@/seo/canonical";
 import {
+  buildBestLinkPlan,
   buildCapabilityLinkPlan,
+  buildCategoryLinkPlan,
+  buildComparisonLinkPlan,
   buildFeatureLinkPlan,
   buildGuideLinkPlan,
   buildRequirementLinkPlan,
@@ -76,6 +79,27 @@ function hubDiscoveryEdges(): OutboundEdge[] {
   push("/", "/compare/", "home");
   push("/", "/tools/", "home");
   push("/", "/for/", "home");
+  for (const slug of [
+    "crm",
+    "sales-intelligence",
+    "marketing",
+    "email-marketing",
+    "business-communications",
+    "customer-service",
+    "project-management",
+    "hr",
+    "ecommerce",
+    "ai",
+    "it-development",
+  ]) {
+    const cat = getCategoryBySlug(slug);
+    if (!cat || !isEntityIndexable({ kind: "category", entity: cat })) continue;
+    const hub = categoryHubPath(cat);
+    push("/", hub, "home");
+    push(hub, "/guides/", "category");
+    push(hub, "/compare/", "category");
+    push(hub, "/best/", "category");
+  }
   push("/categories/crm/", "/use-cases/", "category");
   push("/categories/crm/", "/capabilities/", "category");
   push("/categories/crm/", "/features/", "category");
@@ -252,6 +276,40 @@ export function collectCrmOutboundEdges(options?: {
     if (!isEntityIndexable({ kind: "software", entity: soft })) continue;
     const plan = buildSoftwareLinkPlan(soft.slug);
     if (plan) edges.push(...edgesFromPlan(plan));
+  }
+
+  for (const cat of getCategories()) {
+    if (!isEntityIndexable({ kind: "category", entity: cat })) continue;
+    const plan = buildCategoryLinkPlan(cat.slug);
+    if (plan) edges.push(...edgesFromPlan(plan));
+  }
+
+  for (const page of getAllBestPagesUnfiltered()) {
+    if (!isEntityIndexable({ kind: "best", entity: page })) continue;
+    edges.push(
+      ...edgesFromPlan(
+        buildBestLinkPlan({
+          bestSlug: page.slug,
+          categorySlug: page.categorySlug,
+          title: page.title,
+          productSlugs: page.eligibleProductSlugs,
+          relatedComparisonSlugs: page.relatedComparisonSlugs,
+        }),
+      ),
+    );
+  }
+
+  for (const comparison of getComparisons()) {
+    if (!isEntityIndexable({ kind: "comparison", entity: comparison })) continue;
+    edges.push(
+      ...edgesFromPlan(
+        buildComparisonLinkPlan({
+          comparisonSlug: comparison.slug,
+          title: comparison.title,
+          productSlugs: comparison.productSlugs,
+        }),
+      ),
+    );
   }
 
   // Features / requirements — profile-light (avoid full page model builds)

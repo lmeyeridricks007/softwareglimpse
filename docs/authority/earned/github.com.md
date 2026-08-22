@@ -1,13 +1,13 @@
 # Earned backlink opportunities — github.com
 
-> From EarnedBacklinkOpportunityAgent · 2026-08-20T10:46:27.246Z
-> Topic: CRM / business software
+> From EarnedBacklinkOpportunityAgent · 2026-08-20T10:50:33.197Z
+> Topic: CRM, sales intelligence & business software
 
-## P40 — RevOps Infrastructure Playbook
+## P50 — RevOps Infrastructure Playbook
 
 | Field | Value |
 | --- | --- |
-| Priority | 40 |
+| Priority | 50 |
 | Site | GitHub (community playbook) |
 | Domain | `github.com` |
 | Opportunity URL | https://github.com/shubham1502-hue/revops-infrastructure-playbook |
@@ -33,7 +33,7 @@ Open https://github.com/shubham1502-hue/revops-infrastructure-playbook → Issue
 
 ### Suggested ask
 
-Hi — for members researching CRM selection, we offer a free CRM Implementation Checklist (https://www.softwareglimpse.com/resources/crm-implementation-checklist/). Open playbook covering CRM hygiene can reference free evaluation and implementation checklists as companion docs for teams improving CRM data quality and process. Open to listing it in your resources, or swapping a short member tip?
+Hi — for members researching software selection, we offer a free CRM Implementation Checklist (https://www.softwareglimpse.com/resources/crm-implementation-checklist/). Open playbook covering CRM hygiene can reference free evaluation and implementation checklists as companion docs for teams improving CRM data quality and process. Open to listing it in your resources, or swapping a short member tip?
 
 ### Why they might link
 

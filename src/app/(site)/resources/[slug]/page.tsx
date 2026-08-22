@@ -22,6 +22,8 @@ import { NewsletterCard } from "@/components/newsletter/newsletter-card";
 import { Breadcrumbs } from "@/components/seo/breadcrumbs";
 import { TrustStrip } from "@/components/trust/trust-strip";
 import { buildResourceHubModel } from "@/services/resource-hub";
+import { buildResourceLinkPlan } from "@/services/internal-linking";
+import { InternalLinkingModules } from "@/components/internal-linking";
 import { buildPageMetadata } from "@/seo/metadata";
 import {
   JsonLdScript,
@@ -190,6 +192,18 @@ export default async function ResourceDetailPage({ params }: Props) {
           <ResourceFaq items={model.faq} />
 
           <ResourceFinalCta model={model} />
+
+          <InternalLinkingModules
+            plan={buildResourceLinkPlan({
+              resourceSlug: model.resource.slug,
+              resourceName: model.resource.name,
+              relatedGuideSlugs: model.guides.map((g) =>
+                g.href.replace(/^\/guides\//, "").replace(/\/$/, ""),
+              ),
+            })}
+            omit={["relatedGuides"]}
+            showParentInline
+          />
         </div>
 
         <ResourceSidebar

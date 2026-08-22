@@ -1,13 +1,13 @@
 # Earned backlink opportunities — empat.tech
 
-> From EarnedBacklinkOpportunityAgent · 2026-08-20T10:46:27.246Z
-> Topic: CRM / business software
+> From EarnedBacklinkOpportunityAgent · 2026-08-20T10:50:33.197Z
+> Topic: CRM, sales intelligence & business software
 
-## P23 — CRM Implementation Guide 2026
+## P33 — CRM Implementation Guide 2026
 
 | Field | Value |
 | --- | --- |
-| Priority | 23 |
+| Priority | 33 |
 | Site | Empat |
 | Domain | `empat.tech` |
 | Opportunity URL | https://www.empat.tech/blog/crm-implementation-guide-2026 |

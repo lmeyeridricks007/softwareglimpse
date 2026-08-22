@@ -15,6 +15,12 @@ import type {
 } from "@/domain";
 import { formatMoney, fromMajor } from "@/domain";
 import {
+  categoryDecisionCostHref,
+  categoryDecisionFinderHref,
+  categoryFinderCtaLabel,
+  categorySharedToolHref,
+} from "@/data/config/tools/category-tool-meta";
+import {
   getAllAlternativesUnfiltered,
   getAllComparisonsUnfiltered,
   getAllSoftwareUnfiltered,
@@ -699,22 +705,22 @@ export function buildSoftwareReviewModel(
       ? "#pricing"
       : null;
 
-  const costCalculatorHref =
-    software.primaryCategorySlug === "crm"
-      ? "/tools/crm-cost-calculator/"
-      : null;
+  const costCalculatorHref = categoryDecisionCostHref(
+    software.primaryCategorySlug,
+  );
 
+  const planSelectorBase = categorySharedToolHref(
+    software.primaryCategorySlug,
+    "plan-selector",
+  );
   const planSelectorHref =
-    software.primaryCategorySlug === "crm"
-      ? `/tools/crm-plan-selector/?vendor=${encodeURIComponent(software.slug)}`
-      : null;
+    software.primaryCategorySlug === "crm" && planSelectorBase
+      ? `${planSelectorBase}?vendor=${encodeURIComponent(software.slug)}`
+      : planSelectorBase;
 
   const finderHref =
-    software.primaryCategorySlug === "crm"
-      ? "/tools/crm-finder/"
-      : "/tools/software-finder/";
-  const finderLabel =
-    software.primaryCategorySlug === "crm" ? "Find My CRM" : "Find Software";
+    categoryDecisionFinderHref(software.primaryCategorySlug) ?? null;
+  const finderLabel = categoryFinderCtaLabel(software.primaryCategorySlug);
 
   const compareColumns = [
     { slug: software.slug, name: software.name, isSubject: true },

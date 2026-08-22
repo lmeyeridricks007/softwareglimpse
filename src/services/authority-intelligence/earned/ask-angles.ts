@@ -82,7 +82,7 @@ export function buildAskBundle(input: {
     input.type === "TEMPLATE_CITATION" ||
     input.type === "TOOL_CITATION"
   ) {
-    howToSubmitOrRequest = `Open the resource page (${input.opportunityUrl}). Find About/Contact/Contribute, or reply via the site’s editorial contact. Ask to add ${targetPageName} (${targetPageUrl}) to the resource list because it helps their readers with vendor-neutral CRM selection/evaluation.`;
+    howToSubmitOrRequest = `Open the resource page (${input.opportunityUrl}). Find About/Contact/Contribute, or reply via the site’s editorial contact. Ask to add ${targetPageName} (${targetPageUrl}) to the resource list because it helps their readers with vendor-neutral software selection/evaluation.`;
   } else if (input.type === "ACADEMIC_EDUCATIONAL") {
     howToSubmitOrRequest = `Open ${input.opportunityUrl}. Contact the page author/department listed on the page (or .edu contact). Suggest citing ${targetPageName} (${targetPageUrl}) as a free practical worksheet/tool for students or trainees.`;
   } else {
@@ -140,7 +140,7 @@ function buildSuggestedAsk(input: {
     input.type === "TEMPLATE_CITATION" ||
     input.type === "TOOL_CITATION"
   ) {
-    return `Hi — I noticed “${input.opportunityTitle}” already helps people evaluate CRM/RevOps tooling. ${fitShort} Would you consider adding our free ${input.targetPageName} for readers? Link: ${input.targetPageUrl} Happy to adjust title/blurb to match your list style.`;
+    return `Hi — I noticed “${input.opportunityTitle}” already helps people evaluate software and tooling. ${fitShort} Would you consider adding our free ${input.targetPageName} for readers? Link: ${input.targetPageUrl} Happy to adjust title/blurb to match your list style.`;
   }
 
   if (input.type === "ACADEMIC_EDUCATIONAL") {
@@ -148,7 +148,7 @@ function buildSuggestedAsk(input: {
   }
 
   if (input.type === "ASSOCIATION" || input.type === "COMMUNITY") {
-    return `Hi — for members researching CRM selection, we offer a free ${input.targetPageName} (${input.targetPageUrl}). ${fitShort} Open to listing it in your resources, or swapping a short member tip?`;
+    return `Hi — for members researching software selection, we offer a free ${input.targetPageName} (${input.targetPageUrl}). ${fitShort} Open to listing it in your resources, or swapping a short member tip?`;
   }
 
   return `Hi — regarding “${input.opportunityTitle}”: ${fitShort} If useful for your audience, here’s our free ${input.targetPageName}: ${input.targetPageUrl}. Glad to rephrase the mention to your house style.`;

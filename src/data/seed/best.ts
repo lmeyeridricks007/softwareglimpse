@@ -765,7 +765,7 @@ export const bestPagesSeed: BestInput[] = [
       "/tools/crm-readiness-assessment/",
       "/tools/crm-finder/",
       "/tools/crm-cost-calculator/",
-      "/tools/software-finder/",
+      "/tools/crm-requirements-builder/",
     ],
     featureMatrixSlugs: [
       "pipeline-management",
@@ -2518,7 +2518,12 @@ export const bestPagesSeed: BestInput[] = [
       "apollo-vs-kixie",
     ],
     relatedAlternativeSlugs: ["apollo", "lusha", "bookyourdata", "reply", "kixie"],
-    relatedToolPaths: ["/tools/software-finder/", "/tools/software-stack-builder/"],
+    relatedToolPaths: [
+      "/tools/sales-intelligence-finder/",
+      "/tools/sales-intelligence-cost-calculator/",
+      "/tools/sales-intelligence-requirements-builder/",
+      "/tools/sales-intelligence-readiness-assessment/",
+    ],
     featureMatrixSlugs: [
       "contact-data",
       "prospecting",
@@ -3281,9 +3286,10 @@ export const bestPagesSeed: BestInput[] = [
     ],
     relatedAlternativeSlugs: ["klaviyo", "omnisend", "kit", "brevo"],
     relatedToolPaths: [
-      "/tools/software-finder/",
-      "/tools/software-stack-builder/",
-      "/tools/software-cost-calculator/",
+      "/tools/email-marketing-finder/",
+      "/tools/email-marketing-cost-calculator/",
+      "/tools/email-marketing-requirements-builder/",
+      "/tools/email-marketing-readiness-assessment/",
     ],
     featureMatrixSlugs: [
       "email-campaigns",
@@ -4078,7 +4084,12 @@ export const bestPagesSeed: BestInput[] = [
       "hootsuite",
       "sprout-social",
     ],
-    relatedToolPaths: ["/tools/software-finder/", "/tools/software-stack-builder/"],
+    relatedToolPaths: [
+      "/tools/marketing-finder/",
+      "/tools/marketing-cost-calculator/",
+      "/tools/marketing-requirements-builder/",
+      "/tools/marketing-readiness-assessment/",
+    ],
     featureMatrixSlugs: [
       "marketing-automation",
       "landing-pages",
@@ -5328,7 +5339,12 @@ export const bestPagesSeed: BestInput[] = [
       "slack",
       "microsoft-teams",
     ],
-    relatedToolPaths: ["/tools/software-finder/", "/tools/software-stack-builder/"],
+    relatedToolPaths: [
+      "/tools/business-communications-finder/",
+      "/tools/business-communications-cost-calculator/",
+      "/tools/business-communications-requirements-builder/",
+      "/tools/business-communications-readiness-assessment/",
+    ],
     featureMatrixSlugs: [
       "cloud-phone",
       "call-routing",
@@ -6146,7 +6162,12 @@ export const bestPagesSeed: BestInput[] = [
       "jira-vs-linear",
       "monday-vs-office-timeline",
     ],
-    relatedToolPaths: ["/tools/software-finder/", "/tools/software-stack-builder/"],
+    relatedToolPaths: [
+      "/tools/project-management-finder/",
+      "/tools/project-management-cost-calculator/",
+      "/tools/project-management-requirements-builder/",
+      "/tools/project-management-readiness-assessment/",
+    ],
     faq: [
       {
         question: "Why are only some products ranked?",
@@ -6616,7 +6637,12 @@ export const bestPagesSeed: BestInput[] = [
       "paycor-vs-paylocity",
       "adp-workforce-now-vs-paylocity",
     ],
-    relatedToolPaths: ["/tools/software-finder/", "/tools/software-stack-builder/"],
+    relatedToolPaths: [
+      "/tools/hr-finder/",
+      "/tools/hr-cost-calculator/",
+      "/tools/hr-requirements-builder/",
+      "/tools/hr-readiness-assessment/",
+    ],
     faq: [
       {
         question: "Why isn’t there a single #1 ranking?",
@@ -7136,7 +7162,12 @@ export const bestPagesSeed: BestInput[] = [
       "pos-omnichannel",
       "dropshipping-sourcing",
     ],
-    relatedToolPaths: ["/tools/software-finder/", "/tools/software-stack-builder/"],
+    relatedToolPaths: [
+      "/tools/ecommerce-finder/",
+      "/tools/ecommerce-cost-calculator/",
+      "/tools/ecommerce-requirements-builder/",
+      "/tools/ecommerce-readiness-assessment/",
+    ],
     verdict: {
       heading: "How to choose ecommerce software",
       body: "There is no single best ecommerce product. Shortlist by job: Shopify for hosted SaaS, WooCommerce for open-source WordPress, Wix for website-builder commerce, Square Online for omnichannel POS, and Spocket for dropshipping sourcing. Confirm live checkout, apps, and payment TCO before you migrate.",
@@ -7546,7 +7577,12 @@ export const bestPagesSeed: BestInput[] = [
       "fireflies-vs-otter-ai",
       "n8n-vs-zapier",
     ],
-    relatedToolPaths: ["/tools/software-finder/", "/tools/software-stack-builder/"],
+    relatedToolPaths: [
+      "/tools/ai-finder/",
+      "/tools/ai-cost-calculator/",
+      "/tools/ai-requirements-builder/",
+      "/tools/ai-readiness-assessment/",
+    ],
     verdict: {
       heading: "How to choose AI software",
       body: "There is no single best AI product. Shortlist by job: ChatGPT for general LLM assistants, Cursor for AI-native coding, Midjourney for stills, Synthesia for avatar/L&D video, Fireflies.ai for meeting notes, QuillBot for writing, ElevenLabs for voice, Gamma for decks, Wegic for prompt-to-site, AdCreative.ai for paid-media creative, MindStudio for no-code agents, and Zapier for workflow automation. Confirm live credits and data-retention terms before you buy.",
@@ -7962,7 +7998,12 @@ export const bestPagesSeed: BestInput[] = [
       "bright-data-vs-oxylabs",
       "pagerduty-vs-squadcast",
     ],
-    relatedToolPaths: ["/tools/software-finder/", "/tools/software-stack-builder/"],
+    relatedToolPaths: [
+      "/tools/it-development-finder/",
+      "/tools/it-development-cost-calculator/",
+      "/tools/it-development-requirements-builder/",
+      "/tools/it-development-readiness-assessment/",
+    ],
     verdict: {
       heading: "How to choose IT & development software",
       body: "IT software is several jobs. Shortlist by cluster: ServiceNow for enterprise ITSM, Datadog for observability, PagerDuty for on-call, GitHub for source control, Plesk for hosting panels, WP Engine for managed hosting, Render for cloud PaaS, and Bright Data for web data. Confirm live SKUs and commit terms before you buy.",
@@ -8272,7 +8313,12 @@ export const bestPagesSeed: BestInput[] = [
       "freshchat-vs-tidio",
       "livechat-vs-tidio",
     ],
-    relatedToolPaths: ["/tools/software-finder/", "/tools/software-stack-builder/"],
+    relatedToolPaths: [
+      "/tools/customer-service-finder/",
+      "/tools/customer-service-cost-calculator/",
+      "/tools/customer-service-requirements-builder/",
+      "/tools/customer-service-readiness-assessment/",
+    ],
     faq: [
       {
         question: "Why isn’t there a single #1 ranking?",

@@ -1,13 +1,13 @@
 # Earned backlink opportunities — rivery.io
 
-> From EarnedBacklinkOpportunityAgent · 2026-08-20T10:46:27.246Z
-> Topic: CRM / business software
+> From EarnedBacklinkOpportunityAgent · 2026-08-20T10:50:33.197Z
+> Topic: CRM, sales intelligence & business software
 
-## P16 — Complete Data Migration Checklist
+## P26 — Complete Data Migration Checklist
 
 | Field | Value |
 | --- | --- |
-| Priority | 16 |
+| Priority | 26 |
 | Site | Rivery |
 | Domain | `rivery.io` |
 | Opportunity URL | https://rivery.io/data-learning-center/complete-data-migration-checklist/ |
