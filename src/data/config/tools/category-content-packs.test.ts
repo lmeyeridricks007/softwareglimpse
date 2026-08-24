@@ -1,7 +1,9 @@
 import { describe, expect, it } from "vitest";
 import {
   NEW_TOOL_CATEGORY_SLUGS,
+  ALL_SHARED_TOOL_CATEGORY_SLUGS,
 } from "@/data/config/tools/category-tool-meta";
+import { TOOL_CATEGORY_SLUGS } from "@/domain/schemas/finder";
 import { getCategoryContentPack } from "@/data/config/tools/category-content-packs";
 import {
   localizeCrmReadinessCatalog,
@@ -24,6 +26,13 @@ describe("category content packs", () => {
 });
 
 describe("category tool completeness", () => {
+  it("keeps shared tool categories aligned with DecisionProfile schema", () => {
+    expect([...ALL_SHARED_TOOL_CATEGORY_SLUGS]).toEqual([...TOOL_CATEGORY_SLUGS]);
+    expect(NEW_TOOL_CATEGORY_SLUGS).toHaveLength(
+      TOOL_CATEGORY_SLUGS.length - 2,
+    );
+  });
+
   it("marks cost calculator and plan selector available with honesty notes", () => {
     const tools = buildCategoryToolDefinitions();
     const cost = tools.filter((tool) => tool.slug.endsWith("-cost-calculator"));

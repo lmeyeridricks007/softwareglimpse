@@ -3,22 +3,21 @@
  * Does not import category-onboarding seeds (those stay server-only).
  */
 
-export const NEW_TOOL_CATEGORY_SLUGS = [
-  "marketing",
-  "email-marketing",
-  "business-communications",
-  "customer-service",
-  "project-management",
-  "hr",
-  "ecommerce",
-  "accounting-finance",
-  "social-media-marketing",
-  "webinar-virtual-events",
-  "ai",
-  "it-development",
-] as const;
+import {
+  TOOL_CATEGORY_SLUGS,
+  type FinderCategorySlug,
+} from "@/domain/schemas/finder";
 
-export type NewToolCategorySlug = (typeof NEW_TOOL_CATEGORY_SLUGS)[number];
+/** Categories with shared decision-tool packs (excludes legacy CRM + SI dedicated routes). */
+export type NewToolCategorySlug = Exclude<
+  FinderCategorySlug,
+  "crm" | "sales-intelligence"
+>;
+
+export const NEW_TOOL_CATEGORY_SLUGS = TOOL_CATEGORY_SLUGS.filter(
+  (slug): slug is NewToolCategorySlug =>
+    slug !== "crm" && slug !== "sales-intelligence",
+);
 
 export const CATEGORY_TOOL_KINDS = [
   "finder",
@@ -594,8 +593,4 @@ export function buildCategoryToolDefinitions() {
   return tools;
 }
 
-export const ALL_SHARED_TOOL_CATEGORY_SLUGS = [
-  "crm",
-  "sales-intelligence",
-  ...NEW_TOOL_CATEGORY_SLUGS,
-] as const;
+export const ALL_SHARED_TOOL_CATEGORY_SLUGS = TOOL_CATEGORY_SLUGS;

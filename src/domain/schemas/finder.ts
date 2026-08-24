@@ -81,6 +81,9 @@ export const TOOL_CATEGORY_SLUGS = [
   "project-management",
   "hr",
   "ecommerce",
+  "accounting-finance",
+  "social-media-marketing",
+  "webinar-virtual-events",
   "ai",
   "it-development",
 ] as const;
