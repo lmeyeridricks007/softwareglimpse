@@ -1,6 +1,10 @@
 import type { Metadata } from "next";
 import { notFound, permanentRedirect } from "next/navigation";
-import { getAllComparisonsUnfiltered, getAllSoftwareUnfiltered } from "@/data";
+import {
+  getComparisonBySlug,
+  getComparisons,
+  getSoftwareBySlug,
+} from "@/data";
 import { SoftwareCta } from "@/components/affiliate/software-cta";
 import {
   ComparisonEvidenceTab,
@@ -43,7 +47,7 @@ type Props = {
 
 export function generateStaticParams() {
   const params: { slug: string }[] = [];
-  for (const item of getAllComparisonsUnfiltered()) {
+  for (const item of getComparisons()) {
     params.push({ slug: item.slug });
     const parts = item.slug.split("-vs-");
     if (parts.length === 2) {
@@ -55,9 +59,7 @@ export function generateStaticParams() {
 
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const { slug } = await params;
-  const comparison = getAllComparisonsUnfiltered().find(
-    (item) => item.slug === slug,
-  );
+  const comparison = getComparisonBySlug(slug);
   if (!comparison) {
     return buildPageMetadata({
       title: "Comparison not found",
@@ -93,20 +95,14 @@ export default async function ComparisonDetailPage({
     }
   }
 
-  const comparison = getAllComparisonsUnfiltered().find(
-    (item) => item.slug === slug,
-  );
+  const comparison = getComparisonBySlug(slug);
   if (!comparison) notFound();
 
   const model = buildComparisonPageModel(comparison);
   if (!model) notFound();
 
-  const productA = getAllSoftwareUnfiltered().find(
-    (item) => item.slug === model.productA.slug,
-  );
-  const productB = getAllSoftwareUnfiltered().find(
-    (item) => item.slug === model.productB.slug,
-  );
+  const productA = getSoftwareBySlug(model.productA.slug);
+  const productB = getSoftwareBySlug(model.productB.slug);
 
   const initialTab: ComparisonPageTabId =
     tabParam &&

@@ -5,6 +5,10 @@ import type { ProductMedia, ProductScreenshot } from "@/domain";
 import { mediaWhatThisShows } from "@/domain";
 import { OfficialProductVideo } from "@/components/software/official-product-video";
 import { ExternalLink } from "@/components/outbound/external-link";
+import {
+  publicScreenshotCaption,
+  publicScreenshotSourceUrl,
+} from "@/services/product-media/public-screenshot-copy";
 import { cn } from "@/lib/cn";
 
 type MediaTab =
@@ -136,18 +140,17 @@ export function FeatureMediaCarousel({
               loading="lazy"
               decoding="async"
             />
-            {active.shot.caption ? (
-              <figcaption className="mt-1.5 text-xs text-[var(--sg-color-text-muted)]">
-                {active.shot.caption}
-              </figcaption>
-            ) : (
-              <figcaption className="mt-1.5 text-xs text-[var(--sg-color-text-muted)]">
-                Product UI screenshot
-              </figcaption>
-            )}
-            {active.shot.source ? (
+            {(() => {
+              const caption = publicScreenshotCaption(active.shot);
+              return caption ? (
+                <figcaption className="mt-1.5 text-xs text-[var(--sg-color-text-muted)]">
+                  {caption}
+                </figcaption>
+              ) : null;
+            })()}
+            {publicScreenshotSourceUrl(active.shot) ? (
               <ExternalLink
-                href={active.shot.source}
+                href={publicScreenshotSourceUrl(active.shot)!}
                 type="vendor-official"
                 className="mt-1 inline-flex text-xs font-medium text-[var(--sg-color-primary)]"
               >

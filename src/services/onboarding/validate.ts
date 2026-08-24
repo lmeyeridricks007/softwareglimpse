@@ -1,4 +1,6 @@
+import { getAllSoftwareUnfiltered } from "@/data";
 import {
+  listManifests,
   listOnboardingRuns,
   listCandidateSoftware,
   loadOnboardingRun,
@@ -94,6 +96,16 @@ export function validateOnboardingRepository(): OnboardingValidationIssue[] {
         code: "run-unreadable",
         message: `Could not reload run ${run.id}`,
         runId: run.id,
+      });
+    }
+  }
+
+  const manifestSlugs = new Set(listManifests().map((m) => m.productSlug));
+  for (const product of getAllSoftwareUnfiltered()) {
+    if (!manifestSlugs.has(product.slug)) {
+      issues.push({
+        code: "missing-manifest",
+        message: `Seed product ${product.slug} has no onboarding manifest — run npm run onboard:manifest-backfill`,
       });
     }
   }

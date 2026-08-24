@@ -3,9 +3,8 @@ import Link from "next/link";
 import { draftMode } from "next/headers";
 import { notFound } from "next/navigation";
 import {
-  getAllCategoriesUnfiltered,
-  getAllSoftwareUnfiltered,
   getCategories,
+  getCategoryBySlug,
   getSoftwareBySlug,
 } from "@/data";
 import { getEducationalGuideBySlug } from "@/data/repositories/guides-educational";
@@ -38,7 +37,6 @@ import { NewsletterCard } from "@/components/newsletter/newsletter-card";
 import { Breadcrumbs } from "@/components/seo/breadcrumbs";
 import { TrustStrip } from "@/components/trust/trust-strip";
 import { isEntityIndexable } from "@/domain/quality-gates";
-import { isPubliclyAvailable } from "@/domain/publishing";
 import { buildCategoryGuideMediaBundle } from "@/services/guides/category-guide-media";
 import { buildProductGuideMediaBundle } from "@/services/product-guides/media";
 import { pathForContent } from "@/services/publishing/ids";
@@ -110,18 +108,18 @@ function resolvePublishedAnchor(contentId: string): {
     return { path, published: true, kind: type };
   }
   if (type === "category") {
-    const cat = getAllCategoriesUnfiltered().find((c) => c.slug === slug);
+    const cat = getCategoryBySlug(slug);
     return {
       path,
-      published: Boolean(cat && isPubliclyAvailable(cat.metadata)),
+      published: Boolean(cat),
       kind: type,
     };
   }
   if (type === "software") {
-    const soft = getAllSoftwareUnfiltered().find((s) => s.slug === slug);
+    const soft = getSoftwareBySlug(slug);
     return {
       path,
-      published: Boolean(soft && isPubliclyAvailable(soft.metadata)),
+      published: Boolean(soft),
       kind: type,
     };
   }

@@ -2,9 +2,8 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import { ArrowLeftRight } from "lucide-react";
 import {
-  getAllAlternativesUnfiltered,
-  getAllSoftwareUnfiltered,
   getAlternativesPages,
+  getSoftwareBySlug,
 } from "@/data";
 import { Breadcrumbs } from "@/components/seo/breadcrumbs";
 import { PageHero } from "@/components/ui/page-hero";
@@ -27,15 +26,10 @@ export const metadata: Metadata = buildPageMetadata({
 });
 
 export default function AlternativesIndexPage() {
-  const pages = getAllAlternativesUnfiltered()
+  const pages = getAlternativesPages()
     .filter((item) => item.alternatives.length >= 2)
     .slice()
-    .sort((a, b) => {
-      const aPublic = isPubliclyAvailable(a.metadata) ? 0 : 1;
-      const bPublic = isPubliclyAvailable(b.metadata) ? 0 : 1;
-      if (aPublic !== bPublic) return aPublic - bPublic;
-      return a.title.localeCompare(b.title);
-    });
+    .sort((a, b) => a.title.localeCompare(b.title));
   const ranked = pages.filter(
     (item) =>
       isPubliclyAvailable(item.metadata) &&
@@ -65,9 +59,7 @@ export default function AlternativesIndexPage() {
       ) : (
         <ul className="mt-8 grid gap-4 sm:grid-cols-2">
           {pages.map((page) => {
-            const source = getAllSoftwareUnfiltered().find(
-              (s) => s.slug === page.sourceSlug,
-            );
+            const source = getSoftwareBySlug(page.sourceSlug);
             const rankedPage = isEntityIndexable({
               kind: "alternatives",
               entity: page,

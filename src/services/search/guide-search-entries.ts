@@ -1,4 +1,8 @@
-import { isPubliclyAvailable } from "@/domain/publishing";
+import {
+  isContentVisible,
+  type PublicationListOptions,
+  resolvePublicationListOptions,
+} from "@/domain/publication-context";
 import { getSoftwareBySlug } from "@/data/repositories/catalog";
 import { getEducationalGuides } from "@/data/repositories/guides-educational";
 import {
@@ -68,19 +72,28 @@ const PRODUCT_GUIDE_CATALOGS: Array<{
   { categorySlug: "it-development", listSlugs: listItProductGuideSlugs },
 ];
 
-function buildProductGuideSearchEntries(now = new Date()): GuideSearchEntry[] {
+function buildProductGuideSearchEntries(
+  options: PublicationListOptions = {},
+): GuideSearchEntry[] {
+  const resolved = resolvePublicationListOptions(options);
   const entries: GuideSearchEntry[] = [];
   const seen = new Set<string>();
 
   for (const { categorySlug, listSlugs } of PRODUCT_GUIDE_CATALOGS) {
     const publishedAt =
       CATEGORY_PUBLISHED_AT[categorySlug] ?? CATEGORY_PUBLISHED_AT.crm;
-    if (!isPubliclyAvailable({ status: "published", publishedAt }, now)) {
+    if (
+      !isContentVisible(
+        { status: "published", publishedAt },
+        resolved.context,
+        resolved.now,
+      )
+    ) {
       continue;
     }
 
     for (const productSlug of listSlugs()) {
-      const software = getSoftwareBySlug(productSlug);
+      const software = getSoftwareBySlug(productSlug, resolved);
       if (!software || software.primaryCategorySlug !== categorySlug) continue;
 
       const productName = software.name;
@@ -112,8 +125,10 @@ function buildProductGuideSearchEntries(now = new Date()): GuideSearchEntry[] {
   return entries;
 }
 
-function educationalGuideEntries(now = new Date()): GuideSearchEntry[] {
-  return getEducationalGuides({ now }).map((guide) => {
+function educationalGuideEntries(
+  options: PublicationListOptions = {},
+): GuideSearchEntry[] {
+  return getEducationalGuides(options).map((guide) => {
     const bodyLen =
       guide.sections.reduce((n, s) => n + s.body.length, 0) +
       (guide.summary?.length ?? 0);
@@ -136,9 +151,11 @@ function educationalGuideEntries(now = new Date()): GuideSearchEntry[] {
 }
 
 /** Published guides for search — educational seeds + lightweight product-guide metadata. */
-export function getGuideSearchEntries(now = new Date()): GuideSearchEntry[] {
+export function getGuideSearchEntries(
+  options: PublicationListOptions = {},
+): GuideSearchEntry[] {
   return [
-    ...educationalGuideEntries(now),
-    ...buildProductGuideSearchEntries(now),
+    ...educationalGuideEntries(options),
+    ...buildProductGuideSearchEntries(options),
   ];
 }

@@ -186,6 +186,34 @@ export function comparisonShell(input: {
   };
 }
 
+/**
+ * Tier-hub comparison shells — explicit intra-roster pairs with categorySlug set.
+ */
+export function buildTierHubComparisonShells(
+  products: EcosystemProduct[],
+  authored: ComparisonInput[],
+  pairs: Array<{ categorySlug: string; productSlugs: readonly [string, string] }>,
+): ComparisonInput[] {
+  const bySlug = new Map(products.map((product) => [product.slug, product]));
+  const covered = existingComparisonKeys(authored);
+  const generated: ComparisonInput[] = [];
+
+  for (const pair of pairs) {
+    const [aSlug, bSlug] = pair.productSlugs;
+    const a = bySlug.get(aSlug);
+    const b = bySlug.get(bSlug);
+    if (!a || !b) continue;
+    const canonical = canonicalizeComparisonSlug([aSlug, bSlug]);
+    if (covered.has(canonical)) continue;
+    const shell = comparisonShell({ a, b });
+    if (!shell) continue;
+    generated.push({ ...shell, categorySlug: pair.categorySlug });
+    covered.add(canonical);
+  }
+
+  return generated;
+}
+
 function existingAltKeys(pages: AltInput[]): Set<string> {
   const keys = new Set<string>();
   for (const page of pages) {

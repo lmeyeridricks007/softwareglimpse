@@ -6,6 +6,8 @@ export {
   listOnboardingStages,
   validateOnboardingRepository,
   formatScorecard,
+  formatLaunchCompletionReport,
+  previewCommandForLaunch,
 } from "./index";
 export {
   saveOnboardingRun,

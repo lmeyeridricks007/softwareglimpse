@@ -12,12 +12,23 @@ export type PartnerLinkRecord = {
   primaryCategory: string;
   /** Null when no live affiliate destination is configured. */
   affiliateUrl: string | null;
+  /**
+   * When affiliateUrl is null: `pending` = awaiting PartnerStack/Impact link;
+   * `declined` = programme rejected or inactive — not a gap.
+   */
+  affiliateUrlState?: "pending" | "declined";
   /** Preferred software slug when/if onboarded. */
   productSlug: string;
   catalogueSourceId?: string;
   /** Alternate QuillBot tracking destinations (primary is affiliateUrl). */
   alternateUrls?: string[];
 };
+
+/** True when partner-links row still needs an operator-supplied tracking URL. */
+export function isUnresolvedPartnerUrl(row: PartnerLinkRecord): boolean {
+  if (row.affiliateUrl) return false;
+  return row.affiliateUrlState !== "pending" && row.affiliateUrlState !== "declined";
+}
 
 export const partnerLinks: PartnerLinkRecord[] = [
   { name: "Accelerated Growth Studio", primaryCategory: "Marketing / Growth Services", affiliateUrl: "https://acceleratedgrowthstudio.partnerlinks.io/7q3b5o2oy7d7", productSlug: "accelerated-growth-studio", catalogueSourceId: "aff-accelerated-growth-studio" },
@@ -39,7 +50,7 @@ export const partnerLinks: PartnerLinkRecord[] = [
   { name: "Bright Data", primaryCategory: "Proxy / Web Data Collection", affiliateUrl: "https://get.brightdata.com/egcchebrm7g5", productSlug: "bright-data", catalogueSourceId: "aff-bright-data" },
   { name: "CallHippo", primaryCategory: "Business Phone / VoIP", affiliateUrl: "https://join.callhippo.com/nmdfk28yy5a9", productSlug: "callhippo", catalogueSourceId: "aff-callhippo" },
   { name: "Campaign Monitor by Marigold", primaryCategory: "Email Marketing", affiliateUrl: "https://partners.campaignmonitor.com/ezb6s7olowj1", productSlug: "campaign-monitor", catalogueSourceId: "aff-campaign-monitor" },
-  { name: "Canvas Score by Roya.com", primaryCategory: "Marketing / Website Analytics", affiliateUrl: null, productSlug: "canvas-score" },
+  { name: "Canvas Score by Roya.com", primaryCategory: "Marketing / Website Analytics", affiliateUrl: null, affiliateUrlState: "pending", productSlug: "canvas-score" },
   { name: "Capsule and Transpond", primaryCategory: "CRM / Email Marketing", affiliateUrl: "https://get.capsulenow.io/zs1cakqfksi6", productSlug: "capsule", catalogueSourceId: "aff-capsule-transpond" },
   { name: "Carepatron", primaryCategory: "Practice Management / Healthcare", affiliateUrl: "https://get.carepatron.com/57qubyw3gk9y", productSlug: "carepatron", catalogueSourceId: "aff-carepatron" },
   { name: "ClickUp", primaryCategory: "Project Management / Work OS", affiliateUrl: "https://try.web.clickup.com/q22d8kyvpi6i", productSlug: "clickup", catalogueSourceId: "aff-clickup" },
@@ -58,21 +69,21 @@ export const partnerLinks: PartnerLinkRecord[] = [
   { name: "Flippa.com", primaryCategory: "Website / Online Business Marketplace", affiliateUrl: "https://referral.flippa.com/nyzykxmdpi62-5i76g", productSlug: "flippa", catalogueSourceId: "aff-flippa" },
   { name: "folk", primaryCategory: "CRM", affiliateUrl: "https://try.folk.app/rng1ia1n0a51", productSlug: "folk", catalogueSourceId: "aff-folk" },
   { name: "Foxit", primaryCategory: "PDF / Document Management", affiliateUrl: "https://partnerstack.foxit.com/toctmtlu4bjy", productSlug: "foxit", catalogueSourceId: "aff-foxit" },
-  { name: "Freshcaller", primaryCategory: "Business Phone / Contact Center", affiliateUrl: null, productSlug: "freshcaller", catalogueSourceId: "aff-freshcaller" },
-  { name: "Freshchat", primaryCategory: "Live Chat / Customer Messaging", affiliateUrl: null, productSlug: "freshchat", catalogueSourceId: "aff-freshchat" },
-  { name: "Freshdesk by Freshworks", primaryCategory: "Help Desk / Customer Support", affiliateUrl: null, productSlug: "freshdesk", catalogueSourceId: "aff-freshdesk" },
-  { name: "Freshmarketer", primaryCategory: "Marketing Automation / CRO", affiliateUrl: null, productSlug: "freshmarketer", catalogueSourceId: "aff-freshmarketer" },
+  { name: "Freshcaller", primaryCategory: "Business Phone / Contact Center", affiliateUrl: null, affiliateUrlState: "pending", productSlug: "freshcaller", catalogueSourceId: "aff-freshcaller" },
+  { name: "Freshchat", primaryCategory: "Live Chat / Customer Messaging", affiliateUrl: null, affiliateUrlState: "pending", productSlug: "freshchat", catalogueSourceId: "aff-freshchat" },
+  { name: "Freshdesk by Freshworks", primaryCategory: "Help Desk / Customer Support", affiliateUrl: null, affiliateUrlState: "pending", productSlug: "freshdesk", catalogueSourceId: "aff-freshdesk" },
+  { name: "Freshmarketer", primaryCategory: "Marketing Automation / CRO", affiliateUrl: null, affiliateUrlState: "pending", productSlug: "freshmarketer", catalogueSourceId: "aff-freshmarketer" },
   { name: "Freshsales", primaryCategory: "CRM", affiliateUrl: "https://affiliatepartner-freshsales.freshworks.com/umqnj18oe0m7", productSlug: "freshsales", catalogueSourceId: "aff-freshsales" },
-  { name: "Freshservice by Freshworks", primaryCategory: "IT Service Management", affiliateUrl: null, productSlug: "freshservice", catalogueSourceId: "aff-freshservice" },
-  { name: "Freshteam", primaryCategory: "HR / Applicant Tracking", affiliateUrl: null, productSlug: "freshteam", catalogueSourceId: "aff-freshteam" },
-  { name: "Freshworks", primaryCategory: "CRM / Customer Service Suite", affiliateUrl: null, productSlug: "freshworks", catalogueSourceId: "aff-freshworks" },
+  { name: "Freshservice by Freshworks", primaryCategory: "IT Service Management", affiliateUrl: null, affiliateUrlState: "pending", productSlug: "freshservice", catalogueSourceId: "aff-freshservice" },
+  { name: "Freshteam", primaryCategory: "HR / Applicant Tracking", affiliateUrl: null, affiliateUrlState: "pending", productSlug: "freshteam", catalogueSourceId: "aff-freshteam" },
+  { name: "Freshworks", primaryCategory: "CRM / Customer Service Suite", affiliateUrl: null, affiliateUrlState: "pending", productSlug: "freshworks", catalogueSourceId: "aff-freshworks" },
   { name: "Gamma", primaryCategory: "AI Presentation / Content Design", affiliateUrl: "https://try.gamma.app/m8cx9huc5414", productSlug: "gamma", catalogueSourceId: "aff-gamma" },
   { name: "Getscreen.me", primaryCategory: "Remote Desktop", affiliateUrl: "https://try.getscreen.me/uror44gjaujf", productSlug: "getscreen-me", catalogueSourceId: "aff-getscreen-me" },
   { name: "GetResponse", primaryCategory: "Email Marketing / Marketing Automation", affiliateUrl: "https://try.getresponsetoday.com/bggogt2lfafv-xlkg1t", productSlug: "getresponse", catalogueSourceId: "aff-getresponse" },
   { name: "Hive", primaryCategory: "Project Management", affiliateUrl: "https://get.hive.com/eerwc3eeweji", productSlug: "hive", catalogueSourceId: "aff-hive" },
   { name: "HubSpot", primaryCategory: "CRM / Marketing Automation", affiliateUrl: "https://hubspot.sjv.io/WqWO7n", productSlug: "hubspot", catalogueSourceId: "aff-hubspot" },
   { name: "InboxAlly", primaryCategory: "Email Deliverability", affiliateUrl: "https://get.inboxally.com/email-placement-tester-bznqt8ycxvhu", productSlug: "inboxally", catalogueSourceId: "aff-inboxally" },
-  { name: "Instantly", primaryCategory: "Cold Email / Sales Outreach", affiliateUrl: null, productSlug: "instantly", catalogueSourceId: "aff-instantly" },
+  { name: "Instantly", primaryCategory: "Cold Email / Sales Outreach", affiliateUrl: null, affiliateUrlState: "declined", productSlug: "instantly", catalogueSourceId: "aff-instantly" },
   { name: "Jibble", primaryCategory: "Time Tracking / Workforce Management", affiliateUrl: "https://affiliate.jibble.io/acciur08fa6h", productSlug: "jibble", catalogueSourceId: "aff-jibble" },
   { name: "Kartra", primaryCategory: "Marketing Automation / Funnel Builder", affiliateUrl: "https://try.kartra.com/jzs0bc88f4ur", productSlug: "kartra", catalogueSourceId: "aff-kartra" },
   { name: "Keap", primaryCategory: "CRM / Marketing Automation", affiliateUrl: "https://get.keap.com/0nqpwzftjbre", productSlug: "keap", catalogueSourceId: "aff-keap" },
@@ -81,12 +92,12 @@ export const partnerLinks: PartnerLinkRecord[] = [
   { name: "KrispCall Communications Inc.", primaryCategory: "Business Phone / VoIP", affiliateUrl: "https://try.krispcall.com/4l3iuvw2crqn", productSlug: "krispcall", catalogueSourceId: "aff-krispcall" },
   { name: "LearnWorlds", primaryCategory: "LMS / Online Course Platform", affiliateUrl: "https://get.learnworlds.com/eigvvf6yiu74", productSlug: "learnworlds", catalogueSourceId: "aff-learnworlds" },
   { name: "Leadpages", primaryCategory: "Landing Page Builder / CRO", affiliateUrl: "https://try.leadpages.com/p0v2tlud22mf", productSlug: "leadpages", catalogueSourceId: "aff-leadpages" },
-  { name: "Livestorm", primaryCategory: "Webinar / Video Conferencing", affiliateUrl: null, productSlug: "livestorm", catalogueSourceId: "aff-livestorm" },
+  { name: "Livestorm", primaryCategory: "Webinar / Video Conferencing", affiliateUrl: null, affiliateUrlState: "pending", productSlug: "livestorm", catalogueSourceId: "aff-livestorm" },
   { name: "LucroVox", primaryCategory: "Business Software", affiliateUrl: "https://try.lucrovox.com/fhruhgg6gk78", productSlug: "lucrovox", catalogueSourceId: "aff-lucrovox" },
   { name: "Lusha", primaryCategory: "Sales Intelligence / Lead Generation", affiliateUrl: "https://partnerstack.lusha.com/x4qgyinabuq1", productSlug: "lusha", catalogueSourceId: "aff-lusha" },
   { name: "MindStudio", primaryCategory: "AI App / Agent Builder", affiliateUrl: "https://get.mindstudio.ai/lgjc5c17fkpb", productSlug: "mindstudio", catalogueSourceId: "aff-mindstudio" },
   { name: "monday.com", primaryCategory: "Project Management / Work Management", affiliateUrl: "https://try.monday.com/h9l0vmame38h", productSlug: "monday", catalogueSourceId: "aff-monday-com" },
-  { name: "Motion", primaryCategory: "Productivity / Task Management", affiliateUrl: null, productSlug: "motion", catalogueSourceId: "aff-motion" },
+  { name: "Motion", primaryCategory: "Productivity / Task Management", affiliateUrl: null, affiliateUrlState: "pending", productSlug: "motion", catalogueSourceId: "aff-motion" },
   { name: "MRPeasy", primaryCategory: "Manufacturing ERP / MRP", affiliateUrl: "https://try.mrpeasy.com/9apyp927cq1s", productSlug: "mrpeasy", catalogueSourceId: "aff-mrpeasy" },
   { name: "Navan", primaryCategory: "Business Travel / Expense Management", affiliateUrl: "https://get.navan.com/qt37anemz9g9", productSlug: "navan", catalogueSourceId: "aff-navan" },
   { name: "NiceJob", primaryCategory: "Reputation Management", affiliateUrl: "https://try.nicejob.com/ni0oxnp3349z", productSlug: "nicejob", catalogueSourceId: "aff-nicejob" },
@@ -97,10 +108,11 @@ export const partnerLinks: PartnerLinkRecord[] = [
   { name: "QuillBot", primaryCategory: "AI Writing", affiliateUrl: "https://try.quillbot.com/db3a97ce993a", productSlug: "quillbot", catalogueSourceId: "aff-quillbot", alternateUrls: ["https://try.quillbot.com/Lee", "https://try.quillbot.com/0n59kg46nmug"] },
   { name: "Rank Prompt", primaryCategory: "AI SEO / Search Marketing", affiliateUrl: "https://join.rankprompt.com/7qr6ufz6gjxq-xj5vs", productSlug: "rank-prompt", catalogueSourceId: "aff-rank-prompt" },
   { name: "Reply.io", primaryCategory: "Sales Engagement / Email Outreach", affiliateUrl: "https://get.reply.io/se3w5qrz6hyy", productSlug: "reply", catalogueSourceId: "aff-reply-io" },
-  { name: "RocketReach LLC", primaryCategory: "Contact Data / Lead Generation", affiliateUrl: null, productSlug: "rocketreach", catalogueSourceId: "aff-rocketreach" },
+  { name: "RocketReach LLC", primaryCategory: "Contact Data / Lead Generation", affiliateUrl: null, affiliateUrlState: "pending", productSlug: "rocketreach", catalogueSourceId: "aff-rocketreach" },
   { name: "Salesflare", primaryCategory: "CRM", affiliateUrl: "https://go.salesflare.com/d10dqhxqfl23", productSlug: "salesflare", catalogueSourceId: "aff-salesflare" },
   { name: "SaneBox", primaryCategory: "Email Productivity", affiliateUrl: "https://try.sanebox.com/vub7fxpb2g7m", productSlug: "sanebox", catalogueSourceId: "aff-sanebox" },
   { name: "Sendcloud", primaryCategory: "Ecommerce Shipping / Returns", affiliateUrl: "https://sendcloud.getsc.eu/dl0hxgf7026b-returns", productSlug: "sendcloud", catalogueSourceId: "aff-sendcloud" },
+  { name: "Sellfy", primaryCategory: "Ecommerce / Digital Downloads", affiliateUrl: "https://get.sellfy.com/h8et05cnnokc", productSlug: "sellfy", catalogueSourceId: "aff-sellfy" },
   { name: "ShipBob", primaryCategory: "Ecommerce Fulfillment", affiliateUrl: "https://partnerwith.shipbob.com/6ft74869kg22", productSlug: "shipbob", catalogueSourceId: "aff-shipbob" },
   { name: "Shore", primaryCategory: "Appointment Scheduling / Business Management", affiliateUrl: "https://try.shore.com/vmcpzg5nbg9j", productSlug: "shore", catalogueSourceId: "aff-shore" },
   { name: "Shopify", primaryCategory: "Ecommerce / Online Store", affiliateUrl: "https://shopify.pxf.io/4189861-link?sharedid=4189861", productSlug: "shopify", catalogueSourceId: "aff-shopify" },
@@ -111,7 +123,7 @@ export const partnerLinks: PartnerLinkRecord[] = [
   { name: "ThorData", primaryCategory: "Proxy / Web Data Infrastructure", affiliateUrl: "https://affiliate.thordata.com/eu3nfozhzp5f", productSlug: "thordata", catalogueSourceId: "aff-thordata" },
   { name: "Tidio", primaryCategory: "Live Chat / Customer Support", affiliateUrl: "https://affiliate.tidio.com/9dfzehpzpg2p-8xvu4", productSlug: "tidio", catalogueSourceId: "aff-tidio" },
   { name: "Trainual", primaryCategory: "Employee Training / Knowledge Management", affiliateUrl: "https://start.trainual.com/8kshk4tc5bv4", productSlug: "trainual", catalogueSourceId: "aff-trainual" },
-  { name: "Uniqode", primaryCategory: "QR Code / Digital Engagement", affiliateUrl: null, productSlug: "uniqode", catalogueSourceId: "aff-uniqode" },
+  { name: "Uniqode", primaryCategory: "QR Code / Digital Engagement", affiliateUrl: null, affiliateUrlState: "pending", productSlug: "uniqode", catalogueSourceId: "aff-uniqode" },
   { name: "UENI.com", primaryCategory: "Website Builder", affiliateUrl: "https://psc.ueni.com/w640wkjyyhd5", productSlug: "ueni", catalogueSourceId: "aff-ueni" },
   { name: "VektorOS", primaryCategory: "Business / Operations Software", affiliateUrl: "https://partners.vektoros.ai/zg4y82bv06pe", productSlug: "vektoros", catalogueSourceId: "aff-vektoros" },
   { name: "Wati.io", primaryCategory: "WhatsApp Business / Customer Messaging", affiliateUrl: "https://affiliates.wati.io/v2fe9kxh7wq8", productSlug: "wati", catalogueSourceId: "aff-wati" },
@@ -130,4 +142,10 @@ export const partnerLinksBySlug = new Map(
 
 export function getPartnerAffiliateUrl(productSlug: string): string | null {
   return partnerLinksBySlug.get(productSlug)?.affiliateUrl ?? null;
+}
+
+export function getPartnerLinkRecord(
+  productSlug: string,
+): PartnerLinkRecord | undefined {
+  return partnerLinksBySlug.get(productSlug);
 }

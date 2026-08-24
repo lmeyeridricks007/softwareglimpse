@@ -637,6 +637,13 @@ export const bestPagesSeed: BestInput[] = [
         description: "Calling, sequences, and high-activity outbound.",
         productSlugs: ["freshsales", "close"],
       },
+      {
+        id: "smb-marketing-crm",
+        label: "SMB CRM + marketing automation (landscape)",
+        description:
+          "Combined pipelines, campaigns, SMS, and payments for SMB operators — not a pipeline-only CRM or enterprise MAP. Keap is landscape for automation-heavy SMB buyers; ActiveCampaign is the email-first peer in eligible set.",
+        productSlugs: ["keap", "activecampaign"],
+      },
     ],
     companySizes: [
       {
@@ -899,7 +906,6 @@ export const bestPagesSeed: BestInput[] = [
       "closely",
       "bookyourdata",
       "reply",
-      "kixie",
       "sixsense",
       "demandbase",
       "seamless-ai",
@@ -2355,7 +2361,7 @@ export const bestPagesSeed: BestInput[] = [
         label: "Sales engagement",
         description:
           "Sequencing, dialing, and multichannel outreach built on top of prospect data.",
-        productSlugs: ["reply", "amplemarket", "closely", "kixie", "hunter", "snov", "outreach", "salesloft"],
+        productSlugs: ["reply", "amplemarket", "closely", "hunter", "snov", "outreach", "salesloft"],
       },
       {
         id: "cold-email-infra",
@@ -3403,82 +3409,26 @@ export const bestPagesSeed: BestInput[] = [
       "We evaluate marketing software across campaign content, automation, funnels, social execution, analytics, usability, integrations, scalability, value, and AI. Commercial relationships do not determine recommendations.",
     methodologyVersion: "1.0.0",
     eligibleProductSlugs: [
-      "kartra",
       "marketo",
       "braze",
       "iterable",
-      "freshmarketer",
       "clickfunnels",
-      "buffer",
-      "socialbee",
       "brand24",
       "later",
       "agorapulse",
-      "hootsuite",
       "sprout-social",
       "meltwater",
       "brandwatch",
-      "whatconverts",
       "uniqode",
-      "switcher-studio",
-      "learnworlds",
-      "livestorm",
       "pardot",
+      "accelerated-growth-studio",
+      "evolve",
+      "lucrovox",
     ],
         recommendations: [
       {
-        productSlug: "kartra",
-        rank: 1,
-        badge: "Best all-in-one creator marketing platform",
-        recommendationLabel: "Best all-in-one creator marketing platform",
-        rationale: "Highest creator all-in-one fit (~7.4) with funnel conversion as the center of gravity.",
-        editorialSummary: "Kartra suits coaches, consultants, and creators who want funnels, email/SMS, courses, and checkouts in one platform instead of stitching an ESP to a funnel builder and course host. Funnel conversion is the center of gravity, with published tier ladders and AI copy assistance on paid plans.\n\nTrade-offs show up as complexity versus a dedicated ESP and contact/page caps that push upgrades. Pick a lightweight email tool if you only send newsletters; ClickFunnels if funnels alone are the job; Marketo if you need enterprise B2B MAP; Buffer or Brand24 if social scheduling or listening is primary.",
-        strengths: [
-          "True all-in-one: funnels, email/SMS, courses, and checkouts",
-          "Clear published tier ladder with annual discounts",
-          "Kartra AI copy assistance on paid tiers",
-        ],
-        tradeOffs: [
-          "Heavier to run than a dedicated ESP or social scheduler",
-          "Contact, page, and AI caps push teams up the ladder",
-          "Weak on social listening and native paid-ads management",
-        ],
-        scenarios: [
-          "Creators consolidating funnel + email + course stack",
-          "Solopreneurs replacing a multi-tool marketing stack",
-        ],
-        whyPicked: "Strongest creator all-in-one fit in this set.",
-        idealFor: [
-          "Coaches, consultants, and creators consolidating funnel + email + courses",
-          "Solopreneurs who want one platform instead of many point tools",
-          "Teams that need checkouts and memberships beside marketing pages",
-        ],
-        avoidIf: [
-          "You only need a lightweight ESP or newsletter tool",
-          "Social listening or paid-ads management is the primary job",
-          "You need enterprise B2B CRM/MAP depth as the system of record",
-        ],
-        alternatives: [
-          { productSlug: "clickfunnels", when: "Funnel peer comparison" },
-          { productSlug: "marketo", when: "Enterprise B2B MAP" },
-          { productSlug: "buffer", when: "Social scheduling primary" },
-        ],
-        featureSnapshot: [
-          { label: "Funnel conversion", level: "strong", score: 9 },
-          { label: "Marketing automation", level: "strong", score: 8 },
-          { label: "Campaign content", level: "strong", score: 8 },
-        ],
-        keyDetails: [
-          { label: "Best for", value: "Creator all-in-one" },
-          { label: "Primary job", value: "Funnels + email + courses" },
-          { label: "Deployment", value: "Cloud" },
-        ],
-        approved: true,
-        editorialNotes: "Creator all-in-one #1. handsOnTesting=false. Affiliate excluded.",
-      },
-      {
         productSlug: "marketo",
-        rank: 2,
+        rank: 1,
         badge: "Best enterprise B2B MAP",
         recommendationLabel: "Best enterprise B2B MAP",
         rationale: "Enterprise B2B marketing automation credibility (~7.4). Wins enterprise MAP award even when overall ties creator tools.",
@@ -3528,7 +3478,7 @@ export const bestPagesSeed: BestInput[] = [
       },
       {
         productSlug: "braze",
-        rank: 3,
+        rank: 2,
         badge: "Best enterprise B2C engagement",
         recommendationLabel: "Best enterprise B2C engagement",
         rationale: "Enterprise multi-channel B2C engagement (~7.0).",
@@ -3577,7 +3527,7 @@ export const bestPagesSeed: BestInput[] = [
       },
       {
         productSlug: "iterable",
-        rank: 4,
+        rank: 3,
         badge: "Best Braze peer for B2C engagement",
         recommendationLabel: "Best Braze peer for B2C engagement",
         rationale: "Enterprise B2C cross-channel engagement peer to Braze (~6.9).",
@@ -3626,60 +3576,12 @@ export const bestPagesSeed: BestInput[] = [
         editorialNotes: "Enterprise B2C peer award Marketing P2. overall 6.9. Affiliate excluded.",
       },
       {
-        productSlug: "freshmarketer",
-        rank: 5,
-        badge: "Best Freshworks-aligned marketing automation",
-        recommendationLabel: "Best Freshworks-aligned marketing automation",
-        rationale: "Freshworks marketing automation for ecosystem-aligned teams (~7.0).",
-        editorialSummary: "Freshmarketer fits teams already on or standardizing on Freshworks who want marketing automation, landing pages, and multichannel nurture beside CRM — including a free entry rung for small contact bases. Ecosystem alignment is the practical reason it ranks here.\n\nPublic paid packaging is thinner than specialist ESPs, and contact add-ons can dominate cost. Outside Freshworks, ActiveCampaign or GetResponse usually win on standalone automation depth; Kartra wins for creator funnels and courses; Brand24 wins if listening is the job.",
-        strengths: [
-          "Freshworks CRM-aligned marketing automation and journeys",
-          "Free plan plus approachable published Enterprise entry",
-          "Landing pages, forms, segmentation, and Freddy AI assistance",
-        ],
-        tradeOffs: [
-          "Less funnel/course depth than Kartra or ClickFunnels",
-          "Public mid-tier packaging is thin; contact add-ons raise TCO",
-          "Listening and scheduling trail specialist social tools",
-        ],
-        scenarios: [
-          "Freshworks stack buyers",
-          "SMB marketing automation with a free on-ramp",
-        ],
-        whyPicked: "Best Freshworks-aligned MA option in this set.",
-        idealFor: [
-          "Teams already in or adopting the Freshworks CRM stack",
-          "SMBs wanting marketing automation with a free starting tier",
-          "Buyers running multichannel nurture (email + messaging) inside Freshworks",
-        ],
-        avoidIf: [
-          "You want a best-of-breed standalone ESP outside Freshworks",
-          "Enterprise Adobe/Salesforce MAP is the evaluation center of gravity",
-          "Social listening is the primary marketing job",
-        ],
-        alternatives: [
-          { productSlug: "kartra", when: "Creator all-in-one" },
-          { productSlug: "marketo", when: "Enterprise MAP" },
-        ],
-        featureSnapshot: [
-          { label: "Marketing automation", level: "strong" },
-          { label: "Value for money", level: "good" },
-        ],
-        keyDetails: [
-          { label: "Best for", value: "Freshworks MA" },
-          { label: "Primary job", value: "Marketing automation" },
-          { label: "Deployment", value: "Cloud" },
-        ],
-        approved: true,
-        editorialNotes: "Freshworks MA award retained.",
-      },
-      {
         productSlug: "clickfunnels",
-        rank: 6,
-        badge: "Best funnel peer to Kartra",
-        recommendationLabel: "Best funnel peer to Kartra",
+        rank: 4,
+        badge: "Best creator funnel platform",
+        recommendationLabel: "Best creator funnel platform",
         rationale: "Funnel-conversion center of gravity for creator marketers (~6.8).",
-        editorialSummary: "ClickFunnels suits creators and info-product marketers whose primary job is sales funnels and landing-page conversion — with email and related marketing tooling alongside the funnel builder. It is the closest ranked peer to Kartra when funnel conversion, not courses or MAP, is the buying criterion.\n\nEntry price is higher than SMB ESPs or social schedulers, and listening/MAP depth are out of scope. Prefer Kartra when courses and memberships need equal weight; GetResponse for ESP-led funnels on a freer rung; Marketo for enterprise B2B automation; Buffer if you only need social scheduling.",
+        editorialSummary: "ClickFunnels suits creators and info-product marketers whose primary job is sales funnels and landing-page conversion — with email and related marketing tooling alongside the funnel builder. It is the closest ranked funnel platform on the parent marketing hub when conversion pages, not MAP or social scheduling, is the buying criterion.\n\nEntry price is higher than SMB ESPs or social schedulers, and listening/MAP depth are out of scope. Prefer the landing-pages-cro sub-hub for Kartra, Leadpages, and Freshmarketer comparisons; GetResponse for ESP-led funnels on a freer rung; Marketo for enterprise B2B automation.",
         strengths: [
           "Funnel-builder depth as the product center of gravity",
           "Clear Launch/Scale/Optimize/Dominate plan ladder",
@@ -3694,27 +3596,27 @@ export const bestPagesSeed: BestInput[] = [
           "Funnel-first creators",
           "Teams shortlisting Kartra peers for conversion pages",
         ],
-        whyPicked: "Primary Kartra funnel peer for Marketing Priority-1 credibility.",
+        whyPicked: "Primary creator funnel platform on the parent marketing hub.",
         idealFor: [
           "Creators and info-product marketers building sales funnels",
-          "Teams comparing Kartra with funnels as the primary job",
+          "Teams shortlisting funnel builders with conversion pages as the primary job",
           "Buyers who need conversion pages plus an email path in one vendor",
         ],
         avoidIf: [
-          "You only need a lightweight social scheduler",
+          "You only need a lightweight social scheduler — see social-media-management sub-hub",
           "Enterprise B2B MAP is what you are actually buying",
           "Deep social listening is the core requirement",
         ],
         alternatives: [
-          { productSlug: "kartra", when: "Courses/memberships depth" },
           { productSlug: "getresponse", when: "ESP-led funnels" },
+          { productSlug: "marketo", when: "Enterprise MAP" },
         ],
         featureSnapshot: [
           { label: "Funnel conversion", level: "strong", score: 9 },
           { label: "Campaign content", level: "strong", score: 8 },
         ],
         keyDetails: [
-          { label: "Best for", value: "Funnel peer to Kartra" },
+          { label: "Best for", value: "Creator funnel platform" },
           { label: "Primary job", value: "Sales funnels + LPs" },
           { label: "Deployment", value: "Cloud" },
         ],
@@ -3722,111 +3624,12 @@ export const bestPagesSeed: BestInput[] = [
         editorialNotes: "Funnel peer award Marketing P1. overall 6.8.",
       },
       {
-        productSlug: "buffer",
-        rank: 7,
-        badge: "Best mainstream social scheduler",
-        recommendationLabel: "Best mainstream social scheduler",
-        rationale: "Category-default social scheduling brand with free plan and per-channel pricing (~6.6).",
-        editorialSummary: "Buffer suits SMBs and creators who want simple, affordable social scheduling with mainstream brand recognition — free for a few channels, then clear per-channel Essentials/Team pricing with analytics and an AI assistant. Ease of use and category familiarity are why it remains the default scheduler award even as Hootsuite/Sprout/Later/Agorapulse appear in landscape.\n\nIt is not a listening suite, funnel builder, or MAP. Choose SocialBee when content recycling matters more; Later for visual Instagram-centric workflows; Agorapulse for inbox depth; Brand24 when reputation monitoring is the job; Hootsuite/Sprout for full social suites.",
-        strengths: [
-          "Approachable free plan plus per-channel paid pricing",
-          "Scheduling, analytics, and engagement in one approachable toolkit",
-          "Strong category-default brand recognition for SMB social teams",
-        ],
-        tradeOffs: [
-          "Listening depth trails Brand24-class monitoring tools",
-          "No funnel or marketing-automation platform depth",
-          "Multi-channel brands pay per channel as they grow",
-        ],
-        scenarios: [
-          "SMB social scheduling",
-          "Mainstream scheduler seekers comparing SocialBee/Later",
-        ],
-        whyPicked: "Mainstream social scheduler award retained (Buffer over Hootsuite/Sprout suite pricing).",
-        idealFor: [
-          "SMBs and creators needing simple social scheduling",
-          "Teams wanting affordable per-channel publishing with analytics",
-          "Buyers who prefer a mainstream scheduler brand over recycling specialists",
-        ],
-        avoidIf: [
-          "Deep social listening or suite governance is the primary job",
-          "Funnels or enterprise MAP automation are what you need to buy",
-          "Native paid social ads management is the core requirement",
-        ],
-        alternatives: [
-          { productSlug: "socialbee", when: "Content recycling depth" },
-          { productSlug: "later", when: "Visual Instagram-centric scheduling" },
-          { productSlug: "agorapulse", when: "Inbox + publishing mid-market" },
-          { productSlug: "brand24", when: "Listening primary" },
-        ],
-        featureSnapshot: [
-          { label: "Ease of use", level: "strong", score: 9 },
-          { label: "Campaign content", level: "strong", score: 8 },
-          { label: "Value for money", level: "strong", score: 8 },
-        ],
-        keyDetails: [
-          { label: "Best for", value: "Mainstream social scheduler" },
-          { label: "Primary job", value: "Social scheduling" },
-          { label: "Deployment", value: "Cloud" },
-        ],
-        approved: true,
-        editorialNotes: "Social scheduler award Marketing P1/P2 retained. overall 6.6. Rank ~#7 after Iterable insert — still mainstream scheduler award.",
-      },
-      {
-        productSlug: "socialbee",
-        rank: 8,
-        badge: "Best social content recycling",
-        recommendationLabel: "Best social content recycling",
-        rationale: "Social scheduling with content recycling strengths (~6.6).",
-        editorialSummary: "SocialBee fits solopreneurs, SMBs, and agencies whose primary job is multi-network scheduling with content recycling, calendars, and AI-assisted posting — not listening or funnels. Content categories and evergreen queues are why campaign/content tools score high while brand monitoring and funnel conversion stay deliberately low.\n\nTrade-offs are by design: it is not Brand24-class listening, not an ESP, and not a funnel suite, and profile/workspace caps push upgrades. Pick Buffer for the mainstream scheduler brand and free rung; Brand24 when reputation monitoring is the job; Kartra or ClickFunnels when funnels and courses matter.",
-        strengths: [
-          "Multi-network scheduling with strong content recycling workflows",
-          "AI-assisted social copy marketed as a core daily job",
-          "Agency workspace ladders with clear profile packs",
-        ],
-        tradeOffs: [
-          "Not an enterprise social listening or reputation platform",
-          "No funnel builder or ESP depth versus Kartra-class suites",
-          "Profile and workspace caps force plan upgrades",
-        ],
-        scenarios: [
-          "Social content recycling and calendar-led posting",
-          "Agencies managing multiple client workspaces",
-        ],
-        whyPicked: "Best recycling-oriented social tool in this set.",
-        idealFor: [
-          "Solopreneurs and SMBs scheduling evergreen social content",
-          "Social media managers and agencies needing multi-workspace profile packs",
-          "Teams optimizing content recycling and AI-assisted posting calendars",
-        ],
-        avoidIf: [
-          "You need enterprise social listening as the primary job",
-          "Email marketing or funnel builders are what you actually need to buy",
-          "Paid social ads management is the core requirement",
-        ],
-        alternatives: [
-          { productSlug: "buffer", when: "Mainstream scheduler brand" },
-          { productSlug: "brand24", when: "Listening" },
-        ],
-        featureSnapshot: [
-          { label: "Campaign content", level: "good" },
-          { label: "Ease of use", level: "good" },
-        ],
-        keyDetails: [
-          { label: "Best for", value: "Social recycling" },
-          { label: "Primary job", value: "Social content calendar" },
-          { label: "Deployment", value: "Cloud" },
-        ],
-        approved: true,
-        editorialNotes: "Social recycling award retained.",
-      },
-      {
         productSlug: "brand24",
-        rank: 9,
+        rank: 5,
         badge: "Best social listening / brand monitoring",
         recommendationLabel: "Best social listening / brand monitoring",
         rationale: "Social listening and brand monitoring specialist (~6.2).",
-        editorialSummary: "Brand24 fits PR and marketing teams whose primary job is social listening, reputation monitoring, and mention analytics across many source types — not scheduling posts or building funnels. Sentiment, reach, and keyword/mention plan ladders are the product job that schedulers do not cover well.\n\nPricing sits well above SMB schedulers, and mention caps force upgrades; there is no native scheduler or funnel builder. Choose Buffer or SocialBee when publishing is the daily need; enterprise listening suites when you need deeper governance; Kartra when the stack is funnels and courses.",
+        editorialSummary: "Brand24 fits PR and marketing teams whose primary job is social listening, reputation monitoring, and mention analytics across many source types — not scheduling posts or building funnels. Sentiment, reach, and keyword/mention plan ladders are the product job that schedulers do not cover well.\n\nPricing sits well above SMB schedulers, and mention caps force upgrades; there is no native scheduler or funnel builder. Choose the social-media-management sub-hub when publishing is the daily need; enterprise listening suites when you need deeper governance; landing-pages-cro when the stack is funnels and CRO.",
         strengths: [
           "Dedicated social listening across many source types",
           "Sentiment, reach, and awareness metrics for reputation work",
@@ -3853,7 +3656,6 @@ export const bestPagesSeed: BestInput[] = [
           "Email or funnel platforms are what you are actually buying",
         ],
         alternatives: [
-          { productSlug: "buffer", when: "Scheduling primary" },
           { productSlug: "meltwater", when: "Enterprise media intelligence" },
           { productSlug: "brandwatch", when: "Enterprise consumer intelligence" },
         ],
@@ -3873,12 +3675,6 @@ export const bestPagesSeed: BestInput[] = [
 
     decisionPaths: [
       {
-        priority: "Need funnels + email + courses in one stack",
-        productSlug: "kartra",
-        label: "Creator all-in-one marketing platform",
-        approved: true,
-      },
-      {
         priority: "Enterprise B2B marketing automation",
         productSlug: "marketo",
         label: "Enterprise B2B MAP",
@@ -3897,27 +3693,9 @@ export const bestPagesSeed: BestInput[] = [
         approved: true,
       },
       {
-        priority: "Freshworks-aligned marketing automation",
-        productSlug: "freshmarketer",
-        label: "Freshworks marketing automation",
-        approved: true,
-      },
-      {
-        priority: "Creator funnel builder alternative",
+        priority: "Creator funnel builder",
         productSlug: "clickfunnels",
-        label: "Funnel builder peer",
-        approved: true,
-      },
-      {
-        priority: "Mainstream social scheduling",
-        productSlug: "buffer",
-        label: "Social scheduling",
-        approved: true,
-      },
-      {
-        priority: "Social scheduling with content recycling",
-        productSlug: "socialbee",
-        label: "Social scheduling & recycling",
+        label: "Funnel builder (parent landscape)",
         approved: true,
       },
       {
@@ -3930,12 +3708,6 @@ export const bestPagesSeed: BestInput[] = [
         priority: "Social inbox + publishing mid-market",
         productSlug: "agorapulse",
         label: "Social inbox suite (landscape)",
-        approved: true,
-      },
-      {
-        priority: "Enterprise social suite (publish + engage + monitor)",
-        productSlug: "hootsuite",
-        label: "Major social suite (landscape)",
         approved: true,
       },
       {
@@ -3963,33 +3735,9 @@ export const bestPagesSeed: BestInput[] = [
         approved: true,
       },
       {
-        priority: "Lead / call attribution tracking",
-        productSlug: "whatconverts",
-        label: "Lead tracking & call attribution (landscape)",
-        approved: true,
-      },
-      {
         priority: "QR / offline→online campaigns",
         productSlug: "uniqode",
         label: "Dynamic QR & digital cards (landscape)",
-        approved: true,
-      },
-      {
-        priority: "Multi-camera live social video production",
-        productSlug: "switcher-studio",
-        label: "Live video production (landscape)",
-        approved: true,
-      },
-      {
-        priority: "AI-powered LMS / online course academy",
-        productSlug: "learnworlds",
-        label: "Course LMS & academy commerce (landscape)",
-        approved: true,
-      },
-      {
-        priority: "Webinars & virtual events for marketing teams",
-        productSlug: "livestorm",
-        label: "Webinar / events platform (landscape)",
         approved: true,
       },
       {
@@ -4002,15 +3750,16 @@ export const bestPagesSeed: BestInput[] = [
     landscape: [
       {
         id: "creator-funnels",
-        label: "Creator / funnel platforms",
-        description: "All-in-one and funnel builders for creator-led GTM.",
-        productSlugs: ["kartra", "clickfunnels"],
+        label: "Creator / funnel platforms (landscape)",
+        description:
+          "Kartra moved to landing-pages-cro sub-hub — parent landscape retains ClickFunnels only.",
+        productSlugs: ["clickfunnels"],
       },
       {
         id: "b2b-map",
         label: "B2B marketing automation platforms",
         description: "Enterprise / mid-market MAP and Salesforce-native MA.",
-        productSlugs: ["marketo", "freshmarketer", "pardot"],
+        productSlugs: ["marketo", "pardot"],
       },
       {
         id: "b2c-engagement",
@@ -4020,33 +3769,66 @@ export const bestPagesSeed: BestInput[] = [
       },
       {
         id: "social-scheduling",
-        label: "Social scheduling",
-        description: "Multi-network posting, recycling, and visual calendars.",
-        productSlugs: ["buffer", "socialbee", "later", "agorapulse"],
+        label: "Social scheduling (landscape)",
+        description:
+          "Buffer, SocialBee, and Hootsuite moved to social-media-management sub-hub — Later and Agorapulse remain parent landscape peers.",
+        productSlugs: ["later", "agorapulse"],
       },
       {
         id: "social-suites",
-        label: "Major social suites",
-        description: "Enterprise/mid-market social OS tools ranked below Buffer’s mainstream scheduler award.",
-        productSlugs: ["hootsuite", "sprout-social"],
+        label: "Major social suites (landscape)",
+        description:
+          "Enterprise/mid-market social OS tools — full scheduling suites live on social-media-management sub-hub.",
+        productSlugs: ["sprout-social"],
+      },
+      {
+        id: "landing-pages-cro-hub",
+        label: "Landing pages & CRO (sub-hub)",
+        description:
+          "Kartra, Leadpages, and Freshmarketer — indexable marketing subcategory for funnel/LP/CRO jobs.",
+        productSlugs: [],
+      },
+      {
+        id: "ppc-advertising-hub",
+        label: "PPC & ad ops (sub-hub)",
+        description:
+          "Diginius and Birch — deferred hub until 4+ PPC peers onboard.",
+        productSlugs: [],
       },
       {
         id: "social-listening",
-        label: "Social listening",
-        description: "Mention monitoring, media intelligence, and reputation analytics.",
-        productSlugs: ["brand24", "meltwater", "brandwatch"],
+        label: "Social listening (landscape)",
+        description:
+          "Mention monitoring — Brand24 recategorized to social-media-marketing hub.",
+        productSlugs: ["meltwater", "brandwatch"],
       },
       {
         id: "attribution-offline",
-        label: "Attribution & offline→online",
-        description: "Lead/call tracking and QR / digital engagement specialties.",
-        productSlugs: ["whatconverts", "uniqode"],
+        label: "Attribution & offline→online (adjacent)",
+        description:
+          "Lead/call tracking moved to analytics-bi hub (WhatConverts). Marketing landscape retains QR/offline engagement only.",
+        productSlugs: ["uniqode"],
       },
       {
-        id: "lms-events",
-        label: "LMS, webinars & live video (adjacent)",
-        description: "Course LMS, webinar, and live production platforms adjacent to marketing stacks.",
-        productSlugs: ["learnworlds", "livestorm", "switcher-studio"],
+        id: "lms-adjacent",
+        label: "Course LMS (adjacent)",
+        description:
+          "Course LMS platforms moved to lms-course-creation hub (LearnWorlds). Marketing landscape retains creator/funnel tools only.",
+        productSlugs: [],
+      },
+      {
+        id: "marketing-reporting",
+        label: "Marketing reporting & dashboards (adjacent)",
+        description:
+          "KPI dashboards moved to analytics-bi hub (Databox). Landscape pointer only on marketing best page.",
+        productSlugs: [],
+      },
+      {
+        id: "affiliate-growth-ops",
+        label: "Affiliate / growth ops (landscape)",
+        description:
+          "Agency, affiliate, and influencer growth platforms — specialist marketing ops adjacent to core MAP. Diginius/Birch moved to ppc-advertising sub-hub.",
+        productSlugs: ["accelerated-growth-studio", "lucrovox", "evolve"],
       },
     ],
     buyingGuideSteps: [
@@ -4073,15 +3855,11 @@ export const bestPagesSeed: BestInput[] = [
     ],
     relatedComparisonSlugs: [],
     relatedAlternativeSlugs: [
-      "kartra",
       "marketo",
       "braze",
       "iterable",
       "clickfunnels",
-      "buffer",
-      "socialbee",
       "brand24",
-      "hootsuite",
       "sprout-social",
     ],
     relatedToolPaths: [
@@ -4107,7 +3885,7 @@ export const bestPagesSeed: BestInput[] = [
       {
         question: "What is the best marketing software?",
         answer:
-          "There is no universal best. Kartra leads this eligible set for creator all-in-one stacks; Freshmarketer for Freshworks-aligned automation; SocialBee for scheduling; Brand24 for listening. Match the job first.",
+          "There is no universal best. Marketo leads for enterprise B2B MAP; Braze/Iterable for B2C engagement; ClickFunnels for creator funnels on this parent hub; Brand24 for listening. Scheduling, landing/CRO, and PPC jobs live on marketing sub-hubs — match the job first.",
       },
       {
         question: "Is marketing software the same as email marketing software?",
@@ -4122,7 +3900,7 @@ export const bestPagesSeed: BestInput[] = [
     ],
     editorialStatus: "approved",
     editorialNotes:
-      "Editorially approved 2026-08-17 (Marketing Wave-2 + priority expansions). Ranked awards include Kartra, Marketo, Braze, Freshmarketer, ClickFunnels, Buffer, SocialBee, Brand24. Landscape-adjacent: LearnWorlds, Livestorm, Pardot. Affiliate relationships do not determine order. handsOnTesting=false.",
+      "Editorially approved 2026-08-17 (Marketing Wave-2 + priority expansions). Parent hub retains MAP, B2C engagement, ClickFunnels landscape, and Brand24 listening. Sub-hubs: social-media-management, landing-pages-cro, ppc-advertising (Sep 2027). Affiliate relationships do not determine order. handsOnTesting=false.",
     metadata: {
       status: "published",
       publishedAt: "2026-08-17T00:00:00.000Z",
@@ -4132,7 +3910,7 @@ export const bestPagesSeed: BestInput[] = [
     seo: {
       title: "Best Marketing Software (2026 Buying Guide)",
       description:
-        "Evidence-backed Best Marketing Software guide: compare Kartra, Freshmarketer, SocialBee, and Brand24 on marketing-editorial criteria — funnels, automation, social scheduling, and listening.",
+        "Evidence-backed Best Marketing Software guide: compare Marketo, Braze, ClickFunnels, and Brand24 on marketing-editorial criteria — MAP, engagement, funnels, and listening.",
       indexable: true,
       canonicalPath: "/best/marketing-software/",
     },
@@ -4173,15 +3951,9 @@ export const bestPagesSeed: BestInput[] = [
       "five9",
       "twilio",
       "manychat",
-      "intercom",
-      "aircall",
-      "callhippo",
-      "krispcall",
-      "freshcaller",
       "wati",
       "respond-io",
       "zenzap",
-      "kixie",
       "fastmail",
       "sanebox",
     ],
@@ -5042,12 +4814,6 @@ export const bestPagesSeed: BestInput[] = [
       },
       {
         priority: "Mid-market business phone with deep CRM CTI",
-        productSlug: "aircall",
-        label: "Mid-market CRM CTI phone",
-        approved: true,
-      },
-      {
-        priority: "SMB / mid-market all-in-one business communications",
         productSlug: "nextiva",
         label: "SMB/mid all-in-one",
         approved: true,
@@ -5083,33 +4849,15 @@ export const bestPagesSeed: BestInput[] = [
         approved: true,
       },
       {
-        priority: "SMB business phone on the tightest sensible budget",
-        productSlug: "callhippo",
-        label: "SMB cloud phone value",
-        approved: true,
-      },
-      {
         priority: "SMB/mid published per-line VoIP with SMS",
         productSlug: "vonage",
         label: "Best SMB/mid published-line VoIP",
         approved: true,
       },
       {
-        priority: "Local numbers across many countries at low cost",
-        productSlug: "krispcall",
-        label: "Budget global VoIP",
-        approved: true,
-      },
-      {
         priority: "No-contract SMB Office VoIP under ~15 seats",
         productSlug: "ooma",
         label: "Best no-contract SMB Office VoIP",
-        approved: true,
-      },
-      {
-        priority: "Inbound support calling on a Freshworks stack",
-        productSlug: "freshcaller",
-        label: "Freshworks cloud PBX",
         approved: true,
       },
       {
@@ -5149,12 +4897,6 @@ export const bestPagesSeed: BestInput[] = [
         approved: true,
       },
       {
-        priority: "AI-first customer messaging inbox (Messenger + Fin)",
-        productSlug: "intercom",
-        label: "Best AI customer messaging inbox (landscape — CS-borderline, not a phone peer)",
-        approved: true,
-      },
-      {
         priority: "Programmable voice / SMS / WhatsApp APIs (CPaaS)",
         productSlug: "twilio",
         label: "Best programmable communications platform (landscape — adjacent CPaaS, not a phone peer)",
@@ -5178,12 +4920,6 @@ export const bestPagesSeed: BestInput[] = [
         label: "Frontline team chat (different job — not a phone system)",
         approved: true,
       },
-      {
-        priority: "Outbound sales dialing tied to prospecting workflows",
-        productSlug: "kixie",
-        label: "Sales dialer (sales-intelligence primary)",
-        approved: true,
-      },
     ],
     landscape: [
       {
@@ -5197,17 +4933,20 @@ export const bestPagesSeed: BestInput[] = [
           "dialpad",
           "zoom",
           "nextiva",
-          "aircall",
           "webex",
           "openphone",
           "goto-connect",
-          "callhippo",
           "vonage",
-          "krispcall",
           "ooma",
-          "freshcaller",
           "grasshopper",
         ],
+      },
+      {
+        id: "affiliate-voip",
+        label: "Affiliate VoIP cluster (adjacent)",
+        description:
+          "Aircall, CallHippo, KrispCall, Freshcaller, and Kixie recategorized to voip-business-phone subcategory hub — landscape pointer only on parent BC best page.",
+        productSlugs: [],
       },
       {
         id: "contact-center",
@@ -5227,8 +4966,15 @@ export const bestPagesSeed: BestInput[] = [
         id: "customer-messaging",
         label: "WhatsApp & customer messaging",
         description:
-          "Official WhatsApp Business API / omnichannel / marketing messaging platforms with shared inboxes, broadcasts, and chatbots. Wati = WhatsApp BSP specialist; respond.io = Best omnichannel WhatsApp inbox; ManyChat = Best marketing messaging chatbot; Intercom = Best AI customer messaging inbox (CS-borderline). Scored on a different criterion mix and deliberately not ranked against phone systems.",
-        productSlugs: ["wati", "respond-io", "manychat", "intercom"],
+          "Official WhatsApp Business API / omnichannel / marketing messaging platforms with shared inboxes, broadcasts, and chatbots. Wati = WhatsApp BSP specialist; respond.io = Best omnichannel WhatsApp inbox; ManyChat = Best marketing messaging chatbot. Scored on a different criterion mix and deliberately not ranked against phone systems.",
+        productSlugs: ["wati", "respond-io", "manychat"],
+      },
+      {
+        id: "live-chat-adjacent",
+        label: "Live chat & AI inbox (adjacent)",
+        description:
+          "Intercom recategorized to live-chat subcategory hub under customer-service — landscape pointer only on parent BC best page.",
+        productSlugs: [],
       },
       {
         id: "communications-platform",
@@ -5239,10 +4985,10 @@ export const bestPagesSeed: BestInput[] = [
       },
       {
         id: "sales-dialers",
-        label: "Sales dialers (sales-intelligence primary)",
+        label: "Sales dialers (adjacent)",
         description:
-          "Power dialers framed around outbound prospecting. Kixie is catalogued under sales intelligence and appears here as an adjacent option.",
-        productSlugs: ["kixie"],
+          "Kixie recategorized to voip-business-phone subcategory hub — landscape pointer only on parent BC best page.",
+        productSlugs: [],
       },
       {
         id: "inbox-adjacent",
@@ -5335,7 +5081,6 @@ export const bestPagesSeed: BestInput[] = [
       "wati",
       "respond-io",
       "manychat",
-      "intercom",
       "slack",
       "microsoft-teams",
     ],
@@ -5454,6 +5199,7 @@ export const bestPagesSeed: BestInput[] = [
       "basecamp",
       "todoist",
       "microsoft-project",
+      "vektoros",
     ],
     useCaseSlugs: [
       "work-management",
@@ -6064,7 +5810,7 @@ export const bestPagesSeed: BestInput[] = [
         label: "Work OS / project management",
         description:
           "Ranked cluster — boards, timelines, automations, and team collaboration for executing work.",
-        productSlugs: ["monday", "asana", "clickup", "wrike", "hive"],
+        productSlugs: ["monday", "asana", "clickup", "wrike", "hive", "vektoros"],
       },
       {
         id: "eng-tracker",
@@ -6114,6 +5860,13 @@ export const bestPagesSeed: BestInput[] = [
         description:
           "PDF editing, remote desktop, and desktop workspace organizers — landscape only.",
         productSlugs: ["foxit", "getscreen-me", "webcatalog"],
+      },
+      {
+        id: "field-service-construction",
+        label: "Field service / trades (adjacent)",
+        description:
+          "Construction and trades job costing moved to field-service-operations hub — landscape pointer only on PM best page.",
+        productSlugs: [],
       },
     ],
     buyingGuideSteps: [
@@ -6213,11 +5966,11 @@ export const bestPagesSeed: BestInput[] = [
     title: "Best HR Software",
     heroEyebrow: "BUYING GUIDE",
     heroSubtitle:
-      "We evaluate HR, workforce, and training products on ease of use, hiring/workforce fit, workflow depth, integrations, mobile/frontline readiness, analytics, scalability, value, and AI assistance — so you can shortlist by job: core HRIS, payroll, people platform, ATS, frontline WFM, time & attendance, SOP training, or employee LMS.",
+      "We evaluate HR, workforce, and training products on ease of use, hiring/workforce fit, workflow depth, integrations, mobile/frontline readiness, analytics, scalability, value, and AI assistance — so you can shortlist by job: core HRIS, payroll, people platform, enterprise HCM, ATS (see ats-recruiting sub-hub), frontline time & attendance (see time-attendance sub-hub), SOP training, or employee LMS.",
     summary:
-      "Compare HR and workforce tools by job cluster — core HRIS, payroll/benefits, people platforms, enterprise HCM, ATS, frontline WFM, time clocks, SOP training, and LMS — with an explicit methodology and no false peer ranking across different jobs.",
+      "Compare HR and workforce tools by job cluster — core HRIS, payroll/benefits, people platforms, enterprise HCM, ATS, frontline time & attendance, SOP training, and LMS — with an explicit methodology. ATS and time & attendance moved to subcategory hubs.",
     quickAnswerIntro:
-      "There is no single best HR software — core HRIS, payroll, recruiting, frontline workforce, time tracking, and training paths are different purchases. Use the picks below for your job, then explore the landscape section for enterprise HCM, ATS peers, and LMS options.",
+      "There is no single best HR software — core HRIS, payroll, recruiting, frontline workforce, time tracking, and training paths are different purchases. Use the ats-recruiting sub-hub for applicant tracking; use the time-attendance sub-hub for clock-in and shift scheduling. Then explore the landscape for enterprise HCM and payroll peers.",
     categorySlug: "hr",
     methodology:
       "SoftwareGlimpse evaluates HR, workforce, and training products on ease of use, hiring/workforce fit, workflow depth, integrations, mobile/frontline readiness, analytics, scalability, value for money, and AI assistance. Products are compared inside their job cluster: core HRIS against HRIS, payroll against payroll, people platforms against people platforms, enterprise HCM against enterprise HCM, ATS against ATS, frontline WFM against WFM, time & attendance against time clocks, SOP training against SOP peers, and LMS against LMS. Affiliate relationships never determine ranking.",
@@ -6230,11 +5983,6 @@ export const bestPagesSeed: BestInput[] = [
       "gusto",
       "greenhouse",
       "workable",
-      "breezy-hr",
-      "connecteam",
-      "jibble",
-      "trainual",
-      "learnworlds",
       "homebase",
       "when-i-work",
       "deputy",
@@ -6250,6 +5998,8 @@ export const bestPagesSeed: BestInput[] = [
       "adp-workforce-now",
       "paylocity",
       "paycor",
+      "bolt-for-business",
+      "carepatron",
     ],
     useCaseSlugs: [
       "core-hris",
@@ -6302,7 +6052,7 @@ export const bestPagesSeed: BestInput[] = [
         label: "Editor’s pick — enterprise HCM",
         productSlug: "workday",
         rationale:
-          "Workday is the Priority-3 enterprise-HCM landscape award (overall 8.2) for 1,000+ employee programmes. Oracle Cloud HCM (7.9), UKG Pro (8.1 WFM-heavy path), and Dayforce (7.8) are landscape peers — not SMB HRIS or published-PEPM payroll products. Connecteam keeps the frontline-WFM award.",
+          "Workday is the Priority-3 enterprise-HCM landscape award (overall 8.2) for 1,000+ employee programmes. Oracle Cloud HCM (7.9), UKG Pro (8.1 WFM-heavy path), and Dayforce (7.8) are landscape peers — not SMB HRIS or published-PEPM payroll products.",
         approved: true,
         editorialNotes:
           "enterprise-hcm landscape award. handsOnTesting=false. Affiliate economics excluded.",
@@ -6312,56 +6062,10 @@ export const bestPagesSeed: BestInput[] = [
         label: "Editor’s pick — ATS / recruiting",
         productSlug: "greenhouse",
         rationale:
-          "Greenhouse is the ATS cluster award (overall 8.0) for structured hiring. Breezy HR (7.9) remains the transparent-SMB ATS path; Workable (7.2) is the published-floor + trial peer; Lever (7.6) and Ashby (7.9) are landscape ATS.",
+          "Greenhouse is the ATS cluster award (overall 8.0) for structured hiring on the parent HR hub. Breezy HR and Freshteam moved to ats-recruiting subcategory hub; Workable (7.2) is the published-floor + trial peer; Lever (7.6) and Ashby (7.9) are landscape ATS.",
         approved: true,
         editorialNotes:
           "ats-recruiting cluster award. handsOnTesting=false. Affiliate economics excluded.",
-      },
-      {
-        useCaseSlug: "workforce-scheduling",
-        label: "Editor’s pick — frontline WFM / scheduling",
-        productSlug: "connecteam",
-        rationale:
-          "Connecteam is the frontline-WFM cluster award (overall 8.3) for mobile scheduling, comms, and deskless ops. Homebase (8.1), Deputy (8.2), and When I Work (7.9) are WFM peers; 7shifts (8.2) is hospitality landscape — not a generic WFM #1.",
-        approved: true,
-        editorialNotes:
-          "frontline-wfm cluster award. handsOnTesting=false. Affiliate economics excluded.",
-      },
-      {
-        useCaseSlug: "frontline-ops",
-        label: "Editor’s pick — frontline operations",
-        productSlug: "connecteam",
-        rationale:
-          "Connecteam’s mobile-first hubs cover scheduling, communications, and frontline tasking for deskless teams.",
-        approved: true,
-      },
-      {
-        useCaseSlug: "time-attendance",
-        label: "Editor’s pick — time & attendance",
-        productSlug: "jibble",
-        rationale:
-          "Jibble is the Wave-1 time-attendance cluster leader (overall 7.7) with GPS/face-recognition clock-in and a generous free plan — not a full WFM suite.",
-        approved: true,
-        editorialNotes:
-          "time-attendance cluster award. handsOnTesting=false. Affiliate economics excluded.",
-      },
-      {
-        useCaseSlug: "sop-documentation",
-        label: "Editor’s pick — SOP documentation",
-        productSlug: "trainual",
-        rationale:
-          "Trainual is the Wave-1 SOP-training cluster leader (overall 7.3) for playbooks and role paths — demo/quote pricing and implementation fees apply.",
-        approved: true,
-        editorialNotes:
-          "sop-training cluster award. handsOnTesting=false. Affiliate economics excluded.",
-      },
-      {
-        useCaseSlug: "employee-training",
-        label: "Editor’s pick — employee training paths",
-        productSlug: "trainual",
-        rationale:
-          "Trainual fits internal SOP and role-based training paths. LearnWorlds remains LMS landscape for course commerce / academy delivery — not forced into this ATS/WFM/SOP ranking.",
-        approved: true,
       },
     ],
     decisionPaths: [
@@ -6387,36 +6091,6 @@ export const bestPagesSeed: BestInput[] = [
         priority: "Structured hiring ATS (kits, scorecards, governance)",
         productSlug: "greenhouse",
         label: "Best ATS / recruiting",
-        approved: true,
-      },
-      {
-        priority: "SMB ATS with a free Bootstrap tier",
-        productSlug: "breezy-hr",
-        label: "Best free-tier ATS path",
-        approved: true,
-      },
-      {
-        priority: "Frontline workforce scheduling, mobile comms, and deskless ops",
-        productSlug: "connecteam",
-        label: "Best frontline WFM",
-        approved: true,
-      },
-      {
-        priority: "GPS / face-recognition time clock and attendance policies",
-        productSlug: "jibble",
-        label: "Best time & attendance",
-        approved: true,
-      },
-      {
-        priority: "SOP knowledge base and employee training paths",
-        productSlug: "trainual",
-        label: "Best SOP / training docs",
-        approved: true,
-      },
-      {
-        priority: "LMS / employee academy with course commerce (marketing-primary)",
-        productSlug: "learnworlds",
-        label: "Best LMS / academy landscape pick",
         approved: true,
       },
       {
@@ -6541,38 +6215,45 @@ export const bestPagesSeed: BestInput[] = [
       },
       {
         id: "ats-recruiting",
-        label: "ATS / recruiting",
+        label: "ATS / recruiting (adjacent)",
         description:
-          "Applicant tracking, career sites, and interview workflows. Greenhouse leads structured hiring; Breezy HR is the free-tier SMB path; Workable is the published-floor + trial peer; Lever and Ashby are landscape ATS.",
-        productSlugs: ["greenhouse", "breezy-hr", "workable", "lever", "ashby"],
+          "Breezy HR and Freshteam moved to ats-recruiting subcategory hub — landscape pointer only on parent HR best page. Greenhouse, Workable, Lever, and Ashby remain parent HR ATS landscape peers.",
+        productSlugs: ["greenhouse", "workable", "lever", "ashby"],
       },
       {
         id: "frontline-wfm",
-        label: "Frontline workforce management",
+        label: "Frontline workforce management (adjacent)",
         description:
-          "Mobile scheduling, frontline communications, and deskless ops. Connecteam keeps the WFM award; Homebase / When I Work / Deputy are peers; 7shifts is hospitality landscape — not a generic WFM #1.",
-        productSlugs: ["connecteam", "homebase", "when-i-work", "deputy", "7shifts"],
+          "Connecteam and Jibble moved to time-attendance subcategory hub — landscape pointer only on parent HR best page. Homebase / When I Work / Deputy are WFM peers; 7shifts is hospitality landscape.",
+        productSlugs: ["homebase", "when-i-work", "deputy", "7shifts"],
       },
       {
         id: "time-attendance",
-        label: "Time & attendance",
+        label: "Time & attendance (adjacent)",
         description:
-          "Clock-in, timesheets, GPS/geofence, and attendance policies — distinct from project task time tracking.",
-        productSlugs: ["jibble"],
+          "Connecteam and Jibble moved to time-attendance subcategory hub — editor’s picks and affiliate what-is guides live there.",
+        productSlugs: [],
       },
       {
-        id: "sop-training",
-        label: "SOP / employee training docs",
+        id: "lms-training-adjacent",
+        label: "LMS, SOP & assessments (adjacent)",
         description:
-          "Playbooks, knowledge bases, and role-based training paths for internal ops.",
-        productSlugs: ["trainual"],
+          "Course LMS, team playbooks, and quiz tools recategorized to lms-course-creation hub — Trainual, LearnWorlds, FlexiQuiz landscape only on HR page for buyers who landed here first.",
+        productSlugs: [],
       },
       {
-        id: "lms-academy",
-        label: "LMS / employee academy (landscape)",
+        id: "travel-expense",
+        label: "Corporate travel & expense (landscape)",
         description:
-          "Course/academy LMS — LearnWorlds is marketing-primary; shown here for employee-learning jobs only. Do not rank its marketing score against HR ATS/WFM peers.",
-        productSlugs: ["learnworlds"],
+          "T&E booking, policy, and reimbursement — recategorized to accounting-finance hub (Navan). Bolt for Business remains benefits-adjacent landscape only.",
+        productSlugs: ["bolt-for-business"],
+      },
+      {
+        id: "healthcare-practice",
+        label: "Healthcare practice management (landscape)",
+        description:
+          "Clinical and admin workflows for solo and small practices — not generic HRIS, ATS, or WFM.",
+        productSlugs: ["carepatron"],
       },
     ],
     buyingGuideSteps: [
@@ -6667,7 +6348,7 @@ export const bestPagesSeed: BestInput[] = [
     ],
     editorialStatus: "approved",
     editorialNotes:
-      "HR Priority-3 2026-08-18: added Workday (8.2 enterprise-HCM landscape award), Oracle Cloud HCM (7.9), UKG Pro (8.1 WFM-heavy path), Dayforce (7.8), ADP Workforce Now (7.3), Paylocity (7.7), Paycor (7.3). Cluster awards unchanged (BambooHR / Rippling / Gusto / Greenhouse / Connecteam / Jibble / Trainual). UKG Pro does not steal Connecteam’s WFM award. Paylocity does not steal Gusto’s published-SMB payroll award. Freshteam skipped (sunset). No cross-cluster ranked set. seo.indexable=true. methodologyVersion 1.0.0 hr-editorial. handsOnTesting=false. Affiliate economics excluded.",
+      "HR Priority-3 2026-08-18: added Workday (8.2 enterprise-HCM landscape award), Oracle Cloud HCM (7.9), UKG Pro (8.1 WFM-heavy path), Dayforce (7.8), ADP Workforce Now (7.3), Paylocity (7.7), Paycor (7.3). Cluster awards unchanged (BambooHR / Rippling / Gusto / Greenhouse / Trainual). Breezy HR, Freshteam, Connecteam, and Jibble moved to Aug 2027 subcategory hubs (ats-recruiting, time-attendance). UKG Pro does not steal WFM awards on sub-hub pages. Paylocity does not steal Gusto’s published-SMB payroll award. No cross-cluster ranked set. seo.indexable=true. methodologyVersion 1.0.0 hr-editorial. handsOnTesting=false. Affiliate economics excluded.",
     metadata: {
       status: "published",
       publishedAt: "2026-08-17T00:00:00.000Z",
@@ -6689,11 +6370,11 @@ export const bestPagesSeed: BestInput[] = [
     title: "Best Ecommerce Software",
     heroEyebrow: "BUYING GUIDE",
     heroSubtitle:
-      "We evaluate ecommerce products on storefront depth, catalog & order workflows, checkout & payments, integrations & channels, omnichannel readiness, analytics, scalability, value, and AI assistance — so you can shortlist by job: hosted SaaS platform, open-source cart, website builder, omnichannel POS, dropshipping sourcing, or print-on-demand.",
+      "We evaluate ecommerce products on storefront depth, catalog & order workflows, checkout & payments, integrations & channels, omnichannel readiness, analytics, scalability, value, and AI assistance — so you can shortlist by job: hosted SaaS platform, open-source cart, website builder, omnichannel POS, or adjacent dropshipping/POD and fulfillment ops (see subcategory hubs).",
     summary:
-      "Compare ecommerce tools by job cluster — hosted SaaS platforms, open-source carts, website-first builders, omnichannel retail, dropshipping sourcing, and print-on-demand — with an explicit methodology and no false peer ranking across different jobs.",
+      "Compare ecommerce tools by job cluster — hosted SaaS platforms, open-source carts, website-first builders, and omnichannel retail — with an explicit methodology. Dropshipping/POD and fulfillment/shipping moved to subcategory hubs.",
     quickAnswerIntro:
-      "There is no single best ecommerce platform — hosted SaaS, open-source carts, website builders, omnichannel POS, and dropshipping sourcing are different jobs. Shopify leads hosted SaaS, WooCommerce fits WordPress, Wix suits site-first stores, Square Online covers omnichannel retail, and Spocket helps dropshippers source products. Use this shortlist to compare by shape, then check pricing, channels, and the workflow you will run daily.",
+      "There is no single best ecommerce platform — hosted SaaS, open-source carts, website builders, and omnichannel POS are different jobs. Shopify leads hosted SaaS, WooCommerce fits WordPress, Wix suits site-first stores, and Square Online covers omnichannel retail. For dropshipping sourcing and print-on-demand, use the dropshipping-pod sub-hub; for 3PL and shipping labels, use the fulfillment-shipping sub-hub.",
     categorySlug: "ecommerce",
     methodology:
       "SoftwareGlimpse evaluates ecommerce products on ease of use, primary job fit, workflow depth, integrations & channels, omnichannel readiness, analytics, scalability, value for money, and AI assistance. Products are compared inside their job cluster: SaaS platforms against SaaS platforms, open-source against open-source, website builders against website builders, omnichannel POS against omnichannel, and dropshipping sourcing against sourcing peers. Affiliate relationships never determine ranking.",
@@ -6701,21 +6382,17 @@ export const bestPagesSeed: BestInput[] = [
       "We evaluate ecommerce software by primary job fit — hosted platform, open-source stack, website-first builder, omnichannel retail, or supplier import automation — then workflow depth, payment TCO, channel integrations, and scalability. Commercial relationships do not determine recommendations, and specialist tools are not penalised for lacking capabilities outside their job.",
     methodologyVersion: "1.0.0",
     eligibleProductSlugs: [
-      "shopify",
       "bigcommerce",
       "woocommerce",
       "magento",
       "wix",
       "squarespace",
       "square-online",
-      "spocket",
-      "alidrop",
       "ecwid",
       "salesforce-commerce-cloud",
       "prestashop",
       "shopware",
       "printful",
-      "printify",
       "webflow",
       "lightspeed-retail",
       "opencart",
@@ -6724,6 +6401,7 @@ export const bestPagesSeed: BestInput[] = [
       "saleor",
       "medusa",
       "tiendanube",
+      "sellfy",
     ],
     useCaseSlugs: [
       "online-storefront",
@@ -6740,12 +6418,12 @@ export const bestPagesSeed: BestInput[] = [
       {
         useCaseSlug: "online-storefront",
         label: "Editor’s pick — hosted SaaS platform",
-        productSlug: "shopify",
+        productSlug: "bigcommerce",
         rationale:
-          "Shopify is the saas-platform cluster award (overall 9.2 under ecommerce-editorial v1.0.0) with published Basic/Grow/Advanced tiers and channel depth. BigCommerce (8.5) is the primary SaaS peer — not ranked as a single undifferentiated platform #1 against Shopify. Priority-3 landscape (commercetools, VTEX, Tiendanube) does not steal the award.",
+          "BigCommerce is the saas-platform cluster award on the ecommerce best page (overall 8.5 under ecommerce-editorial v1.0.0) with published Core/Growth/Scale tiers. Shopify (9.2) is recategorized to website-digital-presence — landscape for hosted storefront jobs on the ecommerce hub only.",
         approved: true,
         editorialNotes:
-          "saas-platform cluster award. handsOnTesting=false. Affiliate economics excluded.",
+          "saas-platform cluster award after Shopify hub move. handsOnTesting=false. Affiliate economics excluded.",
       },
       {
         useCaseSlug: "catalog-management",
@@ -6768,16 +6446,6 @@ export const bestPagesSeed: BestInput[] = [
           "omnichannel-pos cluster award. handsOnTesting=false.",
       },
       {
-        useCaseSlug: "dropshipping-sourcing",
-        label: "Editor’s pick — dropshipping sourcing",
-        productSlug: "spocket",
-        rationale:
-          "Spocket is the dropshipping-sourcing cluster award (overall 7.1) for US/EU supplier imports with published plan caps. AliDrop (7.0) is the Shopify-native import peer — requires an existing storefront.",
-        approved: true,
-        editorialNotes:
-          "dropshipping-sourcing cluster award. handsOnTesting=false. Affiliate mapped; economics excluded from scores.",
-      },
-      {
         useCaseSlug: "website-builder-commerce",
         label: "Editor’s pick — website-builder commerce",
         productSlug: "wix",
@@ -6791,8 +6459,14 @@ export const bestPagesSeed: BestInput[] = [
     decisionPaths: [
       {
         priority: "Hosted all-in-one storefront with apps and channels",
-        productSlug: "shopify",
+        productSlug: "bigcommerce",
         label: "Best SaaS platform",
+        approved: true,
+      },
+      {
+        priority: "Shopify-class hosted storefront (website-digital-presence hub)",
+        productSlug: "shopify",
+        label: "Shopify storefront landscape",
         approved: true,
       },
       {
@@ -6832,18 +6506,6 @@ export const bestPagesSeed: BestInput[] = [
         approved: true,
       },
       {
-        priority: "Import US/EU suppliers into an existing store",
-        productSlug: "spocket",
-        label: "Best sourcing app (Spocket)",
-        approved: true,
-      },
-      {
-        priority: "Shopify-only dropshipping import automation",
-        productSlug: "alidrop",
-        label: "Shopify sourcing path (AliDrop)",
-        approved: true,
-      },
-      {
         priority: "Embeddable cart on an existing website (keep the CMS)",
         productSlug: "ecwid",
         label: "Ecwid embeddable SaaS landscape",
@@ -6871,12 +6533,6 @@ export const bestPagesSeed: BestInput[] = [
         priority: "Print-on-demand fulfillment into an existing store",
         productSlug: "printful",
         label: "Printful POD landscape",
-        approved: true,
-      },
-      {
-        priority: "Print-on-demand marketplace / multi-provider catalog",
-        productSlug: "printify",
-        label: "Printify POD landscape",
         approved: true,
       },
       {
@@ -6975,10 +6631,24 @@ export const bestPagesSeed: BestInput[] = [
       },
       {
         id: "dropshipping-sourcing",
-        label: "Dropshipping sourcing",
+        label: "Dropshipping & POD (adjacent)",
         description:
-          "Apps that require an existing storefront. Spocket is the sourcing award for US/EU supplier import; AliDrop is the Shopify-native marketplace-import peer. Printful and Printify are print-on-demand landscape (fulfillment/catalog networks) — distinct from supplier-import, and they do not steal Spocket’s award.",
-        productSlugs: ["spocket", "alidrop", "printful", "printify"],
+          "Spocket, AliDrop, and Printify moved to dropshipping-pod subcategory hub — landscape pointer only on ecommerce best page.",
+        productSlugs: [],
+      },
+      {
+        id: "fulfillment-shipping",
+        label: "Fulfillment & shipping ops (adjacent)",
+        description:
+          "ShipBob and Sendcloud moved to fulfillment-shipping subcategory hub — landscape pointer only on ecommerce best page.",
+        productSlugs: [],
+      },
+      {
+        id: "website-digital-presence-adjacent",
+        label: "Storefront & marketplace (adjacent)",
+        description:
+          "Shopify, UENI, and Flippa recategorized to website-digital-presence hub — landscape pointer only on ecommerce best page.",
+        productSlugs: [],
       },
     ],
     comparisons: [
@@ -7170,18 +6840,17 @@ export const bestPagesSeed: BestInput[] = [
     ],
     verdict: {
       heading: "How to choose ecommerce software",
-      body: "There is no single best ecommerce product. Shortlist by job: Shopify for hosted SaaS, WooCommerce for open-source WordPress, Wix for website-builder commerce, Square Online for omnichannel POS, and Spocket for dropshipping sourcing. Confirm live checkout, apps, and payment TCO before you migrate.",
+      body: "There is no single best ecommerce product. Shortlist by job: Shopify for hosted SaaS, WooCommerce for open-source WordPress, Wix for website-builder commerce, and Square Online for omnichannel POS. For dropshipping/POD sourcing use the dropshipping-pod sub-hub; for 3PL and shipping labels use the fulfillment-shipping sub-hub. Confirm live checkout, apps, and payment TCO before you migrate.",
       paths: [
         { productSlug: "shopify", when: "You want a hosted SaaS storefront with channels and apps", approved: true },
         { productSlug: "woocommerce", when: "You already run WordPress and want an open-source cart", approved: true },
         { productSlug: "wix", when: "You want website-first commerce rather than a dedicated store platform", approved: true },
         { productSlug: "square-online", when: "You already run Square POS and need an online store beside it", approved: true },
-        { productSlug: "spocket", when: "You already have a store and need US/EU supplier import", approved: true },
       ],
     },
     editorialStatus: "approved",
     editorialNotes:
-      "Ecommerce Priority-3 2026-08-18: added opencart (6.0), commercetools (7.7), vtex (7.5), saleor (6.8), medusa (6.9), tiendanube (6.9) as landscape only. Cluster awards UNCHANGED: Shopify 9.2, WooCommerce 8.1, Wix 7.1, Square Online 8.0, Spocket 7.1. Priority-3 does not steal awards. Job-cluster landscape groups cover all 23 eligible products — no cross-cluster ranked recommendations[]. seo.indexable=true. methodologyVersion 1.0.0 ecommerce-editorial. handsOnTesting=false.",
+      "Ecommerce parent hub 2026-08-23: Spocket/AliDrop/Printify moved to dropshipping-pod sub-hub; ShipBob/Sendcloud moved to fulfillment-shipping sub-hub. Cluster awards UNCHANGED on storefront clusters: Shopify 9.2, WooCommerce 8.1, Wix 7.1, Square Online 8.0. Dropshipping/POD and fulfillment landscapes are pointer-only on parent. seo.indexable=true. methodologyVersion 1.0.0 ecommerce-editorial. handsOnTesting=false.",
     metadata: {
       status: "published",
       publishedAt: "2026-08-18T00:00:00.000Z",
@@ -7191,7 +6860,7 @@ export const bestPagesSeed: BestInput[] = [
     seo: {
       title: "Best Ecommerce Software (2026 Buying Guide)",
       description:
-        "Compare ecommerce software by job — SaaS platforms, open-source carts, website builders, omnichannel POS, and dropshipping sourcing — with editor’s picks and an explicit methodology.",
+        "Compare ecommerce software by job — SaaS platforms, open-source carts, website builders, and omnichannel POS — with dropshipping-pod and fulfillment-shipping subcategory hubs.",
       indexable: true,
       canonicalPath: "/best/ecommerce-software/",
     },
@@ -7227,14 +6896,14 @@ export const bestPagesSeed: BestInput[] = [
       "synthesia",
       "otter-ai",
       "fireflies",
-      "quillbot",
       "elevenlabs",
       "gamma",
-      "wegic",
       "adcreative-ai",
-      "mindstudio",
       "zapier",
       "n8n",
+      "ai-intelekt",
+      "aira",
+      "rank-prompt",
     ],
     useCaseSlugs: [
       "llm-assistant",
@@ -7242,10 +6911,8 @@ export const bestPagesSeed: BestInput[] = [
       "ai-image",
       "ai-video",
       "ai-meeting",
-      "ai-writing",
       "ai-voice",
       "ai-presentations",
-      "ai-website-builder",
       "ai-ad-creative",
       "ai-agents",
       "ai-automation",
@@ -7299,15 +6966,6 @@ export const bestPagesSeed: BestInput[] = [
         editorialNotes: "ai-meeting cluster award.",
       },
       {
-        useCaseSlug: "ai-writing",
-        label: "Editor’s pick — AI writing",
-        productSlug: "quillbot",
-        rationale:
-          "QuillBot is the writing-assistant cluster award (overall 7.5) with a usable free tier and published Premium annual floor (~$8.33/mo). Not ranked as an LLM-assistant peer against ChatGPT.",
-        approved: true,
-        editorialNotes: "ai-writing cluster award.",
-      },
-      {
         useCaseSlug: "ai-voice",
         label: "Editor’s pick — AI voice / TTS",
         productSlug: "elevenlabs",
@@ -7326,15 +6984,6 @@ export const bestPagesSeed: BestInput[] = [
         editorialNotes: "ai-presentations cluster award.",
       },
       {
-        useCaseSlug: "ai-website-builder",
-        label: "Editor’s pick — AI website builder",
-        productSlug: "wegic",
-        rationale:
-          "Wegic is the website-builder cluster award (overall 7.0) for prompt-to-site generation — confirm live plan gates on wegic.ai.",
-        approved: true,
-        editorialNotes: "ai-website-builder cluster award.",
-      },
-      {
         useCaseSlug: "ai-ad-creative",
         label: "Editor’s pick — AI ad creative",
         productSlug: "adcreative-ai",
@@ -7342,15 +6991,6 @@ export const bestPagesSeed: BestInput[] = [
           "AdCreative.ai leads the ad-creative cluster (overall 7.6) with published Starter download tiers for paid-media teams.",
         approved: true,
         editorialNotes: "ai-ad-creative cluster award; marketing-secondary.",
-      },
-      {
-        useCaseSlug: "ai-agents",
-        label: "Editor’s pick — AI agents / builders",
-        productSlug: "mindstudio",
-        rationale:
-          "MindStudio is the agent-builder cluster award (overall 7.3) for no-code AI app/agent workflows with a published Individual plan.",
-        approved: true,
-        editorialNotes: "ai-agents cluster award.",
       },
       {
         useCaseSlug: "ai-automation",
@@ -7395,12 +7035,6 @@ export const bestPagesSeed: BestInput[] = [
         approved: true,
       },
       {
-        priority: "Writing / paraphrasing assistant (not a full LLM chat product)",
-        productSlug: "quillbot",
-        label: "Best AI writing assistant",
-        approved: true,
-      },
-      {
         priority: "Voice / text-to-speech with published credit tiers",
         productSlug: "elevenlabs",
         label: "Best AI voice / TTS",
@@ -7413,21 +7047,9 @@ export const bestPagesSeed: BestInput[] = [
         approved: true,
       },
       {
-        priority: "Prompt-to-site website generation",
-        productSlug: "wegic",
-        label: "Best AI website builder",
-        approved: true,
-      },
-      {
         priority: "Paid-media ad creative generation",
         productSlug: "adcreative-ai",
         label: "Best AI ad creative",
-        approved: true,
-      },
-      {
-        priority: "No-code AI app / agent builder",
-        productSlug: "mindstudio",
-        label: "Best AI agent builder",
         approved: true,
       },
       {
@@ -7481,10 +7103,10 @@ export const bestPagesSeed: BestInput[] = [
       },
       {
         id: "ai-writing",
-        label: "AI writing assistants",
+        label: "AI writing assistants (adjacent)",
         description:
-          "QuillBot is the writing/paraphrase award. Not ranked as an LLM-assistant peer against ChatGPT.",
-        productSlugs: ["quillbot"],
+          "QuillBot and Writesonic recategorized to ai-writing subcategory hub — landscape pointer only on AI best page.",
+        productSlugs: [],
       },
       {
         id: "ai-voice",
@@ -7502,10 +7124,10 @@ export const bestPagesSeed: BestInput[] = [
       },
       {
         id: "ai-website-builder",
-        label: "AI website builders",
+        label: "AI website builders (adjacent)",
         description:
-          "Wegic is the prompt-to-site award. Confirm live plan gates; not a Wix/ecommerce-store ranking.",
-        productSlugs: ["wegic"],
+          "Wegic, MindStudio, and Emergent recategorized to ai-website-builder subcategory hub — landscape pointer only on AI best page.",
+        productSlugs: [],
       },
       {
         id: "ai-ad-creative",
@@ -7516,10 +7138,10 @@ export const bestPagesSeed: BestInput[] = [
       },
       {
         id: "ai-agents",
-        label: "AI agents / builders",
+        label: "AI agents / builders (adjacent)",
         description:
-          "MindStudio is the no-code agent-builder award. Distinct from Zapier/n8n workflow automation.",
-        productSlugs: ["mindstudio"],
+          "MindStudio and Emergent recategorized to ai-website-builder hub — Aira and Rank Prompt remain landscape peers on AI best page.",
+        productSlugs: ["aira", "rank-prompt"],
       },
       {
         id: "ai-automation",
@@ -7638,9 +7260,9 @@ export const bestPagesSeed: BestInput[] = [
     title: "Best IT & Development Software",
     heroEyebrow: "BUYING GUIDE",
     heroSubtitle:
-      "We evaluate IT and development platforms on ease of use, job fit, workflow depth, integrations, admin/security, scalability, value, and AI assistance — so you can shortlist ITSM (including SMB and enterprise desks), observability, on-call, source control and CI, hosting panels, managed hosting providers, cloud PaaS, and web-data tools without false peer ranking.",
+      "We evaluate IT and development platforms on ease of use, job fit, workflow depth, integrations, admin/security, scalability, value, and AI assistance — so you can shortlist ITSM (see itsm sub-hub), observability, on-call, source control and CI, hosting panels (see web-hosting sub-hub), managed hosting providers, cloud PaaS, and web-data tools without false peer ranking.",
     summary:
-      "Compare IT & development software by job cluster — ITSM, observability, incident/on-call, source control, hosting operations, managed hosting providers, cloud PaaS, and web data — with an explicit methodology.",
+      "Compare IT & development software by job cluster — ITSM, observability, incident/on-call, source control, hosting operations, managed hosting providers, cloud PaaS, and web data — with an explicit methodology. Freshservice and Plesk moved to deferred subcategory hubs.",
     quickAnswerIntro:
       "IT software spans several jobs — ITSM, observability, on-call, source control, hosting, and web data are not interchangeable. Use this shortlist to compare recommended options within the job you are buying for, then check integrations, admin burden, and scale.",
     categorySlug: "it-development",
@@ -7652,7 +7274,6 @@ export const bestPagesSeed: BestInput[] = [
     eligibleProductSlugs: [
       "servicenow",
       "jira-service-management",
-      "freshservice",
       "manageengine-servicedesk-plus",
       "sysaid",
       "haloitsm",
@@ -7675,7 +7296,6 @@ export const bestPagesSeed: BestInput[] = [
       "azure-devops",
       "circleci",
       "buildkite",
-      "plesk",
       "cpanel",
       "directadmin",
       "cloudways",
@@ -7718,9 +7338,9 @@ export const bestPagesSeed: BestInput[] = [
         label: "Editor’s pick — ITSM / service desk",
         productSlug: "servicenow",
         rationale:
-          "ServiceNow is the ITSM cluster award (overall 8.7) for enterprise ITIL depth, CMDB, and Now Assist packaging. Freshservice (8.4) remains the published-price SMB/mid-market peer; Jira Service Management (8.0) is the Atlassian-native peer. BMC Helix (8.3) and Ivanti (8.0) are enterprise quote-led peers; HaloITSM (7.9) is the all-in-one GBP-floor peer; ManageEngine ServiceDesk Plus (7.8) and TOPdesk (7.8, £51 Essential) are published-price peers; SysAid (7.7) is the quote-led ~$89 peer (medium confidence). Jira Software stays project-management primary.",
+          "ServiceNow is the ITSM cluster award (overall 8.7) for enterprise ITIL depth, CMDB, and Now Assist packaging. Freshservice moved to itsm subcategory hub. Jira Service Management (8.0) is the Atlassian-native peer. BMC Helix (8.3) and Ivanti (8.0) are enterprise quote-led peers; HaloITSM (7.9) is the all-in-one GBP-floor peer; ManageEngine ServiceDesk Plus (7.8) and TOPdesk (7.8, £51 Essential) are published-price peers; SysAid (7.7) is the quote-led ~$89 peer (medium confidence). Jira Software stays project-management primary.",
         approved: true,
-        editorialNotes: "itsm-service-desk cluster award. ServiceNow quote-only; Freshservice is the published-SKU alternative.",
+        editorialNotes: "itsm-service-desk cluster award. ServiceNow quote-only; Freshservice on itsm sub-hub.",
       },
       {
         useCaseSlug: "observability-monitoring",
@@ -7748,15 +7368,6 @@ export const bestPagesSeed: BestInput[] = [
           "GitHub is the source-control cluster award (overall 9.1) with Free through Enterprise packaging and Actions CI/CD. GitLab (8.3) is the DevSecOps-platform peer; Azure DevOps (8.2) is the Azure-native Boards/Repos/Pipelines peer; Bitbucket (7.6) is the Atlassian-native cheap-git peer; CircleCI (7.5) and Buildkite (7.6) are CI specialists (not git hosts). GitHub Copilot is a separate AI-coding entity.",
         approved: true,
         editorialNotes: "source-control-devops cluster award.",
-      },
-      {
-        useCaseSlug: "hosting-operations",
-        label: "Editor’s pick — hosting panel",
-        productSlug: "plesk",
-        rationale:
-          "Plesk leads hosting-panel operations (overall 7.4) with published Web Admin/Pro/Host per-server licences. cPanel (7.3) is the volume-hosting peer on 2026 store list pricing; DirectAdmin (6.8) is the lower-floor panel peer.",
-        approved: true,
-        editorialNotes: "hosting-operations cluster award.",
       },
       {
         useCaseSlug: "hosting-providers",
@@ -7797,12 +7408,6 @@ export const bestPagesSeed: BestInput[] = [
         approved: true,
       },
       {
-        priority: "Published-price SMB / mid-market ITSM",
-        productSlug: "freshservice",
-        label: "Best published-price ITSM path",
-        approved: true,
-      },
-      {
         priority: "Infrastructure, APM, and logs observability suite",
         productSlug: "datadog",
         label: "Best observability suite",
@@ -7818,12 +7423,6 @@ export const bestPagesSeed: BestInput[] = [
         priority: "Source control with Actions CI/CD",
         productSlug: "github",
         label: "Best source control & DevOps",
-        approved: true,
-      },
-      {
-        priority: "Hosting control panel licences",
-        productSlug: "plesk",
-        label: "Best hosting panel",
         approved: true,
       },
       {
@@ -7850,10 +7449,9 @@ export const bestPagesSeed: BestInput[] = [
         id: "itsm-service-desk",
         label: "ITSM / service desk",
         description:
-          "ServiceNow is the enterprise ITIL award; Freshservice is the published-price SMB/mid-market peer. Jira Service Management, ManageEngine ServiceDesk Plus, SysAid, HaloITSM, TOPdesk, Ivanti, and BMC Helix are cluster peers — not observability or on-call products.",
+          "ServiceNow is the enterprise ITIL award. Freshservice moved to itsm subcategory hub. Jira Service Management, ManageEngine ServiceDesk Plus, SysAid, HaloITSM, TOPdesk, Ivanti, and BMC Helix are cluster peers — not observability or on-call products.",
         productSlugs: [
           "servicenow",
-          "freshservice",
           "jira-service-management",
           "manageengine-servicedesk-plus",
           "sysaid",
@@ -7911,10 +7509,10 @@ export const bestPagesSeed: BestInput[] = [
       },
       {
         id: "hosting-operations",
-        label: "Hosting panels",
+        label: "Hosting panels (adjacent)",
         description:
-          "Plesk is the panel-licence award; cPanel and DirectAdmin are peers. Distinct from managed hosting providers and cloud PaaS.",
-        productSlugs: ["plesk", "cpanel", "directadmin"],
+          "Plesk moved to web-hosting subcategory hub — landscape pointer only on parent IT best page. cPanel and DirectAdmin remain parent landscape peers.",
+        productSlugs: ["cpanel", "directadmin"],
       },
       {
         id: "hosting-providers",
@@ -8060,29 +7658,18 @@ export const bestPagesSeed: BestInput[] = [
     title: "Best Customer Service Software",
     heroEyebrow: "BUYING GUIDE",
     heroSubtitle:
-      "We evaluate customer service products on ease of use, support job fit, workflow depth, omnichannel coverage, self-service, integrations, analytics, scalability, value, and AI assistance — so you can shortlist by job: helpdesk ticketing, live chat, ecommerce helpdesk, ITSM service desk, or AI inbox.",
+      "We evaluate customer service products on ease of use, support job fit, workflow depth, omnichannel coverage, self-service, integrations, analytics, scalability, value, and AI assistance — so you can shortlist by job cluster. Helpdesk, ecommerce helpdesk, and ITSM moved to the helpdesk-ticketing sub-hub; live chat and website messenger moved to the live-chat sub-hub.",
     summary:
-      "Compare customer service tools by job cluster — helpdesk, live chat, ecommerce helpdesk, ITSM, and AI messaging — with an explicit methodology and no false peer ranking across different jobs.",
+      "Parent hub for customer service software — shortlist by job cluster using the live-chat and helpdesk-ticketing subcategory hubs, with an explicit methodology and no false peer ranking across channels.",
     quickAnswerIntro:
-      "There is no single best customer service platform — helpdesk, live chat, ecommerce support, and ITSM solve different problems. Use this shortlist to compare recommended options by job, then check channels, self-service depth, and integrations before you commit.",
+      "There is no single best customer service platform — helpdesk ticketing, live chat, ecommerce helpdesk, and ITSM are different purchases. Use the live-chat sub-hub for website messenger and chatbot deflection; use the helpdesk-ticketing sub-hub for shared inbox, ticketing, ecommerce helpdesk, and ITSM. Then check channels, self-service depth, and integrations before you commit.",
     categorySlug: "customer-service",
     methodology:
       "SoftwareGlimpse evaluates customer service platforms on ease of use, fit to the primary support job, workflow depth, omnichannel coverage, self-service, integrations, analytics, scalability, value, and AI assistance (customer-service-editorial v1.0.0). Products are compared inside their job cluster: helpdesk against helpdesk, live chat against live chat, ecommerce helpdesk against ecommerce helpdesk, and ITSM against ITSM. Affiliate relationships never determine ranking.",
     methodologyIntro:
       "We evaluate customer service software by primary job fit — helpdesk ticketing, live chat, ecommerce helpdesk, ITSM, or AI inbox — then workflow depth, channels, self-service, integrations, and value. Commercial relationships do not determine recommendations, and specialist tools are not penalised for lacking capabilities outside their job.",
     methodologyVersion: "1.0.0",
-    eligibleProductSlugs: [
-      "freshdesk",
-      "zendesk-suite",
-      "help-scout",
-      "gorgias",
-      "tidio",
-      "freshchat",
-      "livechat",
-      "zoho-desk",
-      "freshservice",
-      "intercom",
-    ],
+    eligibleProductSlugs: [],
     useCaseSlugs: [
       "helpdesk-ticketing",
       "live-chat-support",
@@ -8093,177 +7680,59 @@ export const bestPagesSeed: BestInput[] = [
       "ai-customer-service",
     ],
     // Wave-1: skip a cross-cluster ranked set.
-    // Editor’s picks live in useCaseRecommendations + decisionPaths + landscape.
+    // Editor’s picks live in subcategory hubs (live-chat, helpdesk-ticketing).
     recommendations: [],
-    useCaseRecommendations: [
-      {
-        useCaseSlug: "helpdesk-ticketing",
-        label: "Editor’s pick — helpdesk / ticketing",
-        productSlug: "zendesk-suite",
-        rationale:
-          "Zendesk Suite is the helpdesk-ticketing cluster award (overall 8.2 under customer-service-editorial v1.0.0) for omnichannel depth, SLA/routing, and Suite AI. Freshdesk (7.9) is the Freshworks mid-market award peer at a similar $19/agent floor — not ranked as a single undifferentiated helpdesk #1. Help Scout (7.5) and Zoho Desk (7.8) are SMB / value landscape.",
-        approved: true,
-        editorialNotes:
-          "helpdesk-ticketing cluster award. Freshdesk 7.9 is the co-peer award for Freshworks mid-market. handsOnTesting=false. Affiliate economics excluded.",
-      },
-      {
-        useCaseSlug: "omnichannel-support",
-        label: "Editor’s pick — omnichannel support",
-        productSlug: "zendesk-suite",
-        rationale:
-          "Zendesk Suite leads Wave-1 omnichannel inbox depth. Freshdesk remains the mid-market omnichannel peer — not a stolen Suite #1.",
-        approved: true,
-        editorialNotes:
-          "omnichannel landscape follows the helpdesk award. handsOnTesting=false.",
-      },
-      {
-        useCaseSlug: "live-chat-support",
-        label: "Editor’s pick — live chat support",
-        productSlug: "freshchat",
-        rationale:
-          "Freshchat is the live-chat-support cluster award (overall 7.6) with a free 10-agent tier inside Freshworks. LiveChat (7.4) and Tidio (7.3) are live-chat peers — Tidio is conversation-cap + Lyro AI, not a CRM.",
-        approved: true,
-        editorialNotes:
-          "live-chat-support cluster award. handsOnTesting=false. Affiliate economics excluded.",
-      },
-      {
-        useCaseSlug: "ecommerce-support",
-        label: "Editor’s pick — ecommerce helpdesk",
-        productSlug: "gorgias",
-        rationale:
-          "Gorgias is the ecommerce-helpdesk cluster award (overall 7.7) for Shopify/Magento/BigCommerce order context and ticket-based pricing. Do not rank it against generic helpdesk or live-chat peers.",
-        approved: true,
-        editorialNotes:
-          "ecommerce-helpdesk cluster award. handsOnTesting=false. Affiliate economics excluded.",
-      },
-      {
-        useCaseSlug: "itsm-service-desk",
-        label: "ITSM landscape — service desk",
-        productSlug: "freshservice",
-        rationale:
-          "Freshservice is Wave-1 ITSM / employee service-desk landscape (overall 8.0) — incidents, problems, changes, and assets. Distinct from Freshdesk (customer helpdesk) and Freshchat (live chat). Not ranked against helpdesk or ecommerce peers.",
-        approved: true,
-        editorialNotes:
-          "itsm-service-desk landscape award. handsOnTesting=false. Affiliate economics excluded.",
-      },
-      {
-        useCaseSlug: "knowledge-base-self-service",
-        label: "SMB shared inbox / Docs landscape",
-        productSlug: "help-scout",
-        rationale:
-          "Help Scout is SMB shared-inbox landscape (overall 7.5) with a free 5-user tier and Docs-first self-service — not an enterprise omnichannel or ITSM award. Zendesk Suite keeps the helpdesk cluster award.",
-        approved: true,
-        editorialNotes:
-          "help-scout SMB shared-inbox landscape. handsOnTesting=false.",
-      },
-      {
-        useCaseSlug: "ai-customer-service",
-        label: "AI customer service landscape",
-        productSlug: "tidio",
-        rationale:
-          "Tidio’s Lyro AI agent is the Wave-1 live-chat AI deflection landscape note (overall 7.3 as a live-chat product). Zendesk Suite AI agents sit on helpdesk Suite packaging. Intercom Fin is business-communications primary — secondary/borderline here, not a CS methodology peer award.",
-        approved: true,
-        editorialNotes:
-          "AI is scored as assistance, not a substitute for a helpdesk core. Intercom is BC-primary. handsOnTesting=false.",
-      },
-    ],
-    decisionPaths: [
-      {
-        priority: "Enterprise omnichannel helpdesk with SLA/routing at scale",
-        productSlug: "zendesk-suite",
-        label: "Best helpdesk / ticketing",
-        approved: true,
-      },
-      {
-        priority: "Mid-market helpdesk with Freshworks ecosystem alignment",
-        productSlug: "freshdesk",
-        label: "Freshworks helpdesk path",
-        approved: true,
-      },
-      {
-        priority: "SMB shared inbox and Docs-first self-service (free 5-user tier)",
-        productSlug: "help-scout",
-        label: "SMB shared inbox landscape",
-        approved: true,
-      },
-      {
-        priority: "Budget helpdesk / Zoho suite adjacency (free 3-agent or $7 Express)",
-        productSlug: "zoho-desk",
-        label: "Value helpdesk path",
-        approved: true,
-      },
-      {
-        priority: "Live chat / messaging with a free 10-agent tier",
-        productSlug: "freshchat",
-        label: "Best live chat",
-        approved: true,
-      },
-      {
-        priority: "Established website live chat (Text ecosystem)",
-        productSlug: "livechat",
-        label: "LiveChat path",
-        approved: true,
-      },
-      {
-        priority: "Website chat + Lyro AI deflection on conversation-cap pricing",
-        productSlug: "tidio",
-        label: "AI visitor-chat path",
-        approved: true,
-      },
-      {
-        priority: "Ecommerce / Shopify order-aware helpdesk (ticket-based pricing)",
-        productSlug: "gorgias",
-        label: "Best ecommerce helpdesk",
-        approved: true,
-      },
-      {
-        priority: "ITSM / internal employee service desk (not customer ecommerce chat)",
-        productSlug: "freshservice",
-        label: "ITSM landscape",
-        approved: true,
-      },
-      {
-        priority: "AI inbox / Fin-style messaging (business-communications primary)",
-        productSlug: "intercom",
-        label: "Intercom secondary / borderline note",
-        approved: true,
-      },
-    ],
+    useCaseRecommendations: [],
+    decisionPaths: [],
     landscape: [
       {
-        id: "helpdesk-ticketing",
-        label: "Helpdesk / ticketing",
+        id: "helpdesk-adjacent",
+        label: "Helpdesk / ticketing (adjacent)",
         description:
-          "Email-to-ticket queues, macros, SLAs, and assignment. Zendesk Suite is the omnichannel award; Freshdesk is the Freshworks mid-market peer; Help Scout is SMB shared-inbox landscape; Zoho Desk is the value / suite-adjacent peer.",
-        productSlugs: ["zendesk-suite", "freshdesk", "help-scout", "zoho-desk"],
+          "Zendesk Suite, Freshdesk, Help Scout, Zoho Desk, and Gorgias moved to helpdesk-ticketing subcategory hub — landscape pointer only on parent CS best page.",
+        productSlugs: [],
       },
       {
-        id: "live-chat-support",
-        label: "Live chat support",
+        id: "live-chat-adjacent",
+        label: "Live chat & website messenger (adjacent)",
         description:
-          "Website and in-app messengers. Freshchat keeps the award (free 10-agent); LiveChat and Tidio are peers. Not ranked against full helpdesk or ITSM products.",
-        productSlugs: ["freshchat", "livechat", "tidio"],
+          "Freshchat, LiveChat, Tidio, and Intercom moved to live-chat subcategory hub — landscape pointer only on parent CS best page.",
+        productSlugs: [],
       },
       {
         id: "ecommerce-helpdesk",
-        label: "Ecommerce helpdesk",
+        label: "Ecommerce helpdesk (adjacent)",
         description:
-          "Order, refund, and storefront context in the agent workspace. Gorgias is the Wave-1 award — ticket-based pricing, not per-agent. Do not force-rank against generic B2B helpdesk.",
-        productSlugs: ["gorgias"],
+          "Gorgias moved to helpdesk-ticketing subcategory hub — landscape pointer only on parent CS best page.",
+        productSlugs: [],
       },
       {
         id: "itsm-service-desk",
-        label: "ITSM / service desk (landscape)",
+        label: "ITSM / service desk (adjacent)",
         description:
-          "ITIL-style incidents, problems, changes, and assets. Freshservice is landscape only — distinct from Freshdesk and Freshchat. Not an SMB live-chat or Shopify helpdesk peer.",
-        productSlugs: ["freshservice"],
+          "Freshservice moved to itsm subcategory hub under it-development — landscape pointer only on parent CS best page.",
+        productSlugs: [],
       },
       {
-        id: "ai-inbox-secondary",
-        label: "AI inbox / messaging (secondary)",
+        id: "ai-inbox-adjacent",
+        label: "AI inbox / messaging (adjacent)",
         description:
-          "Intercom is business-communications primary (Fin AI + messenger). Shown here as a borderline CS adjacency only — we do not treat its BC-editorial score as a customer-service methodology peer against Zendesk Suite or Freshdesk.",
-        productSlugs: ["intercom"],
+          "AI-first messaging moved to live-chat subcategory hub (Intercom editorial anchor). Landscape pointer only — not ranked against helpdesk methodology peers.",
+        productSlugs: [],
+      },
+      {
+        id: "reputation-reviews",
+        label: "Reputation & review management (adjacent)",
+        description:
+          "Review generation moved to reputation-reviews hub (NiceJob). Landscape pointer only on CS best page.",
+        productSlugs: [],
+      },
+      {
+        id: "appointment-scheduling",
+        label: "Appointment scheduling (adjacent)",
+        description:
+          "Booking and local business management moved to field-service-operations hub (Shore). Landscape pointer only on CS best page.",
+        productSlugs: [],
       },
     ],
     buyingGuideSteps: [
@@ -8348,7 +7817,7 @@ export const bestPagesSeed: BestInput[] = [
     ],
     editorialStatus: "approved",
     editorialNotes:
-      "CS Wave-1 2026-08-18: Zendesk Suite 8.2 helpdesk award; Freshdesk 7.9 mid-market peer award; Freshchat 7.6 live-chat award; Gorgias 7.7 ecommerce-helpdesk award; Freshservice 8.0 ITSM landscape; Help Scout 7.5 SMB shared-inbox landscape. Intercom secondary/borderline only (BC-primary). Tidio removed from Best CRM. No cross-cluster ranked set. seo.indexable=true. methodologyVersion 1.0.0 customer-service-editorial. handsOnTesting=false. Affiliate economics excluded.",
+      "CS parent hub 2026-08-23: eligible products moved to subcategory hubs — live-chat (Tidio/Freshchat/LiveChat/Intercom) and helpdesk-ticketing (Zendesk/Freshdesk/Help Scout/Zoho Desk/Gorgias). Freshservice on itsm sub-hub. No cross-cluster ranked set on parent. seo.indexable=true. methodologyVersion 1.0.0 customer-service-editorial. handsOnTesting=false. Affiliate economics excluded.",
     metadata: {
       status: "published",
       publishedAt: "2026-08-18T00:00:00.000Z",
@@ -8358,9 +7827,3390 @@ export const bestPagesSeed: BestInput[] = [
     seo: {
       title: "Best Customer Service Software (2026 Buying Guide)",
       description:
-        "Compare customer service software by job — helpdesk, live chat, ecommerce helpdesk, ITSM, and AI inbox — with editor’s picks and an explicit methodology.",
+        "Parent hub for customer service software — live-chat and helpdesk-ticketing subcategory hubs with editor’s picks and an explicit methodology.",
       indexable: true,
       canonicalPath: "/best/customer-service-software/",
+    },
+  },
+  {
+    id: "best-accounting-finance-software",
+    slug: "accounting-finance-software",
+    title: "Best Accounting & Finance Software",
+    heroEyebrow: "BUYING GUIDE",
+    heroSubtitle:
+      "We evaluate accounting and finance products on ease of use, primary job fit, workflow depth, integrations, reporting, scalability, value, and automation — so you can shortlist by job: expense management, travel & expense, bookkeeping automation, or inventory and manufacturing ERP.",
+    summary:
+      "Compare expense, bookkeeping, T&E, and manufacturing ERP tools by job cluster — with an explicit methodology and no false peer ranking across different jobs.",
+    quickAnswerIntro:
+      "There is no single best accounting and finance software — expense apps, bookkeeping automation, T&E platforms, and manufacturing ERP are different purchases. Use the picks below for your job, then explore the landscape for cluster peers.",
+    categorySlug: "accounting-finance",
+    methodology:
+      "SoftwareGlimpse evaluates accounting and finance products on ease of use, finance job fit, workflow depth, integrations, reporting, scalability, value for money, and automation. Products are compared inside their job cluster: expense management against expense tools, bookkeeping automation against bookkeeping peers, travel & expense against T&E platforms, and inventory/manufacturing ERP against MRP peers. Affiliate relationships never determine ranking.",
+    methodologyIntro:
+      "We evaluate accounting and finance software by primary job fit — expenses, receipts, T&E, or production/inventory — then workflow depth, integrations, and value. Commercial relationships do not determine recommendations.",
+    methodologyVersion: "1.0.0",
+    eligibleProductSlugs: ["navan", "dext", "mrpeasy", "monday", "hive"],
+    useCaseSlugs: [
+      "expense-management",
+      "travel-expense",
+      "bookkeeping-automation",
+      "inventory-erp",
+    ],
+    recommendations: [],
+    useCaseRecommendations: [
+      {
+        useCaseSlug: "travel-expense",
+        label: "Editor's pick — travel & expense",
+        productSlug: "navan",
+        rationale:
+          "Navan is the Wave-1 travel-expense cluster anchor for corporate booking, policy, and reimbursement — distinct from core HRIS or payroll system-of-record.",
+        approved: true,
+        editorialNotes:
+          "T&E cluster award. handsOnTesting=false. Affiliate economics excluded.",
+      },
+      {
+        useCaseSlug: "bookkeeping-automation",
+        label: "Editor's pick — bookkeeping automation",
+        productSlug: "dext",
+        rationale:
+          "Dext is the Wave-1 bookkeeping-automation award for receipt capture and accountant workflows — not a payroll or WFM purchase.",
+        approved: true,
+        editorialNotes:
+          "bookkeeping-automation cluster award. handsOnTesting=false. Affiliate economics excluded.",
+      },
+      {
+        useCaseSlug: "inventory-erp",
+        label: "Editor's pick — inventory & manufacturing ERP",
+        productSlug: "mrpeasy",
+        rationale:
+          "MRPeasy is the Wave-1 manufacturing MRP award for small manufacturers tracking BOM, stock, and production — not a Kanban Work OS peer.",
+        approved: true,
+        editorialNotes:
+          "inventory-erp cluster award. handsOnTesting=false. Affiliate economics excluded.",
+      },
+    ],
+    decisionPaths: [
+      {
+        priority: "Corporate travel booking plus expense policy and reimbursement",
+        productSlug: "navan",
+        label: "Travel & expense path",
+        approved: true,
+      },
+      {
+        priority: "Receipt capture and bookkeeper handoff for SMB owners",
+        productSlug: "dext",
+        label: "Bookkeeping automation path",
+        approved: true,
+      },
+      {
+        priority: "BOM, inventory, and shop-floor production for small manufacturers",
+        productSlug: "mrpeasy",
+        label: "Manufacturing ERP path",
+        approved: true,
+      },
+    ],
+    landscape: [
+      {
+        id: "travel-expense",
+        label: "Travel & expense",
+        description:
+          "Corporate travel booking, policy, and reimbursement. Navan is the Wave-1 affiliate anchor — not core HRIS.",
+        productSlugs: ["navan"],
+      },
+      {
+        id: "bookkeeping-automation",
+        label: "Bookkeeping automation",
+        description:
+          "Receipt OCR and categorisation for owners and accounting firms. Dext is the Wave-1 award.",
+        productSlugs: ["dext"],
+      },
+      {
+        id: "inventory-erp",
+        label: "Inventory & manufacturing ERP",
+        description:
+          "Stock, BOM, work orders, and production for small manufacturers. MRPeasy is the Wave-1 award — not a Work OS board.",
+        productSlugs: ["mrpeasy"],
+      },
+      {
+        id: "work-os-finance",
+        label: "Work OS with finance views (landscape)",
+        description:
+          "Project and portfolio boards with budget tracking — Monday and Hive as landscape peers, not ERP substitutes.",
+        productSlugs: ["monday", "hive"],
+      },
+    ],
+    buyingGuideSteps: [
+      {
+        step: 1,
+        title: "Name the job",
+        body: "Expense, T&E, bookkeeping automation, or inventory/manufacturing ERP — one sentence.",
+      },
+      {
+        step: 2,
+        title: "Map must-have workflows",
+        body: "Approvals, receipt OCR, travel policy, or BOM/production — note plan gates.",
+      },
+      {
+        step: 3,
+        title: "Model real TCO",
+        body: "Seats, entities, receipt volume, and MRP modules matter as much as list prices.",
+      },
+      {
+        step: 4,
+        title: "Shortlist inside the job cluster",
+        body: "Do not rank an expense app, a receipt scanner, and an ERP as undifferentiated finance suite peers.",
+      },
+      {
+        step: 5,
+        title: "Pilot with real data",
+        body: "Run one month of expenses, one receipt batch, or one production SKU path on the qualifying plan.",
+      },
+    ],
+    featureMatrixSlugs: [
+      "receipt-capture",
+      "expense-management",
+      "bookkeeping-automation",
+      "bank-reconciliation",
+      "inventory-management",
+      "manufacturing-mrp",
+    ],
+    faq: [
+      {
+        question: "What is accounting and finance software?",
+        answer:
+          "Software that captures receipts, manages expenses, automates bookkeeping, runs corporate T&E, or plans inventory and production — distinct from CRM pipelines and HR payroll system-of-record.",
+      },
+      {
+        question: "Do affiliate relationships affect these rankings?",
+        answer:
+          "No. Rankings follow the accounting-finance editorial methodology. Affiliate status is excluded from every criterion score.",
+      },
+    ],
+    editorialStatus: "approved",
+    editorialNotes:
+      "Wave-1 2026-09 launch: three affiliate anchors only — Navan (T&E), Dext (bookkeeping), MRPeasy (MRP). No cross-cluster ranked set. seo.indexable scheduled Sep 2026. methodologyVersion 1.0.0 accounting-finance-editorial. handsOnTesting=false.",
+    metadata: {
+      status: "scheduled",
+      scheduledAt: "2026-09-19T06:00:00.000Z",
+      updatedAt: "2026-08-23T12:00:00.000Z",
+      researchStatus: "complete",
+    },
+    seo: {
+      title: "Best Accounting & Finance Software (2026 Buying Guide)",
+      description:
+        "Compare Navan, Dext, and MRPeasy by job cluster — travel & expense, bookkeeping automation, and manufacturing ERP — with editor's picks and an explicit methodology.",
+      indexable: false,
+      canonicalPath: "/best/accounting-finance-software/",
+    },
+  },
+  {
+    id: "best-social-media-marketing-software",
+    slug: "social-media-marketing-software",
+    title: "Best Social Media Marketing Software",
+    heroEyebrow: "BUYING GUIDE",
+    heroSubtitle:
+      "We evaluate social media marketing products on ease of use, social job fit, workflow depth, analytics, integrations, scalability, value, and AI assistance — so you can shortlist by job: social listening or influencer campaigns (scheduling moved to social-media-management sub-hub).",
+    summary:
+      "Compare social listening tools and influencer platforms by job cluster — with an explicit methodology and no false peer ranking across different jobs.",
+    quickAnswerIntro:
+      "There is no single best social media marketing tool for every job — listening suites and influencer platforms are different purchases. Scheduling and publishing live on the social-media-management sub-hub under marketing.",
+    categorySlug: "social-media-marketing",
+    methodology:
+      "SoftwareGlimpse evaluates social media marketing platforms on ease of use, social job fit, workflow depth, analytics, integrations, scalability, value for money, and AI assistance. Products are compared inside their job cluster: schedulers against schedulers, listening against listening, influencer tools against influencer peers. Affiliate relationships never determine ranking.",
+    methodologyIntro:
+      "We evaluate social media marketing software by primary job fit — scheduling, listening, influencer campaigns, or suite depth — then workflow, analytics, and value. Commercial relationships do not determine recommendations.",
+    methodologyVersion: "1.0.0",
+    eligibleProductSlugs: [
+      "brand24",
+      "zypper",
+      "sprout-social",
+      "meltwater",
+      "brandwatch",
+    ],
+    useCaseSlugs: [
+      "social-media-management",
+      "social-media-marketing",
+      "social-listening",
+      "brand-monitoring",
+      "influencer-marketing",
+    ],
+    recommendations: [],
+    useCaseRecommendations: [
+      {
+        useCaseSlug: "social-listening",
+        label: "Editor's pick — social listening",
+        productSlug: "brand24",
+        rationale:
+          "Brand24 is the Wave-1 social-listening award for mention monitoring and sentiment — not a scheduler peer.",
+        approved: true,
+        editorialNotes:
+          "listening cluster award. handsOnTesting=false. Affiliate economics excluded.",
+      },
+      {
+        useCaseSlug: "influencer-marketing",
+        label: "Editor's pick — influencer marketing",
+        productSlug: "zypper",
+        rationale:
+          "Zypper is the Wave-1 influencer-marketing landscape anchor for creator campaigns — distinct from post scheduling.",
+        approved: true,
+        editorialNotes:
+          "influencer cluster award. handsOnTesting=false. Affiliate economics excluded.",
+      },
+    ],
+    decisionPaths: [
+      {
+        priority: "Brand mention monitoring and sentiment alerts",
+        productSlug: "brand24",
+        label: "Social listening path",
+        approved: true,
+      },
+      {
+        priority: "Influencer discovery and campaign workflows",
+        productSlug: "zypper",
+        label: "Influencer marketing path",
+        approved: true,
+      },
+    ],
+    landscape: [
+      {
+        id: "social-listening",
+        label: "Social listening",
+        description:
+          "Mention monitoring and reputation analytics. Brand24 is the Wave-1 listening award.",
+        productSlugs: ["brand24", "meltwater", "brandwatch"],
+      },
+      {
+        id: "influencer-marketing",
+        label: "Influencer marketing",
+        description:
+          "Creator discovery and campaign tracking. Zypper is the Wave-1 influencer anchor.",
+        productSlugs: ["zypper"],
+      },
+      {
+        id: "social-suite",
+        label: "Social suite",
+        description:
+          "Publishing, inbox, and analytics for larger teams — landscape peers on the category hub.",
+        productSlugs: ["sprout-social"],
+      },
+      {
+        id: "social-management-hub",
+        label: "Social scheduling & publishing (sub-hub)",
+        description:
+          "Buffer, SocialBee, and Hootsuite moved to social-media-management sub-hub under marketing.",
+        productSlugs: [],
+      },
+    ],
+    buyingGuideSteps: [
+      {
+        step: 1,
+        title: "Name the social job",
+        body: "Scheduling, listening, influencer campaigns, or full suite — one sentence.",
+      },
+      {
+        step: 2,
+        title: "Map channels and caps",
+        body: "Profiles, seats, keywords, and mention limits decide real cost.",
+      },
+      {
+        step: 3,
+        title: "Shortlist inside the job cluster",
+        body: "Do not rank a scheduler, a listening suite, and an influencer tool as undifferentiated peers.",
+      },
+      {
+        step: 4,
+        title: "Pilot with real content",
+        body: "Run one week of posts, one listening query, or one creator campaign on the qualifying plan.",
+      },
+    ],
+    featureMatrixSlugs: [
+      "social-scheduling",
+      "content-calendar",
+      "social-listening",
+      "influencer-marketing",
+      "social-analytics",
+    ],
+    faq: [
+      {
+        question: "What is social media marketing software?",
+        answer:
+          "Tools for scheduling posts, monitoring mentions, running influencer campaigns, and reporting on social channels — distinct from MAP, funnels, and ESPs.",
+      },
+      {
+        question: "Do affiliate relationships affect these rankings?",
+        answer:
+          "No. Rankings follow the social-media-marketing editorial methodology. Affiliate status is excluded from every criterion score.",
+      },
+    ],
+    editorialStatus: "approved",
+    editorialNotes:
+      "Wave-1 2026-10 launch: Brand24/Zypper affiliates. Scheduling anchors moved to social-media-management sub-hub (Sep 2027). No cross-cluster ranked set. seo.indexable scheduled Oct 2026. methodologyVersion 1.0.0 social-media-marketing-editorial. handsOnTesting=false.",
+    metadata: {
+      status: "scheduled",
+      scheduledAt: "2026-10-19T06:00:00.000Z",
+      updatedAt: "2026-08-23T14:30:00.000Z",
+      researchStatus: "complete",
+    },
+    seo: {
+      title: "Best Social Media Marketing Software (2026 Buying Guide)",
+      description:
+        "Compare social listening, influencer, and social suite tools by job cluster — with editor's picks for Brand24 and Zypper.",
+      indexable: false,
+      canonicalPath: "/best/social-media-marketing-software/",
+    },
+  },
+
+  {
+    id: "best-webinar-virtual-events-software",
+    slug: "webinar-virtual-events-software",
+    title: "Best Webinar & Virtual Events Software",
+    heroEyebrow: "BUYING GUIDE",
+    heroSubtitle:
+      "We evaluate webinar and virtual events products on ease of use, webinar job fit, workflow depth, integrations, analytics, audience scale, scalability, value, and automation — so you can shortlist by job: live hosting, evergreen automation, virtual events, or live production.",
+    summary:
+      "Compare webinar hosts, virtual event platforms, evergreen tools, and live production software by job cluster — with an explicit methodology and no false peer ranking across different jobs.",
+    quickAnswerIntro:
+      "There is no single best webinar tool — live hosts, virtual event platforms, and production tools are different purchases. Use the picks below for your job, then explore landscape peers for meetings-first options.",
+    categorySlug: "webinar-virtual-events",
+    methodology:
+      "SoftwareGlimpse evaluates webinar and virtual events platforms on ease of use, webinar job fit, workflow depth, integrations, analytics, audience scale, scalability, value for money, and automation. Products are compared inside their job cluster: live hosts against live hosts, virtual events against event platforms, production tools against production peers. Affiliate relationships never determine ranking.",
+    methodologyIntro:
+      "We evaluate webinar software by primary job fit — live hosting, evergreen, virtual events, or production — then workflow depth, integrations, and value. Commercial relationships do not determine recommendations.",
+    methodologyVersion: "1.0.0",
+    eligibleProductSlugs: [
+      "webinarjam-everwebinar",
+      "livestorm",
+      "switcher-studio",
+      "zoom",
+      "webex",
+      "microsoft-teams",
+    ],
+    useCaseSlugs: [
+      "webinar-marketing",
+      "webinars-events",
+      "virtual-events",
+      "live-streaming",
+    ],
+    recommendations: [],
+    useCaseRecommendations: [
+      {
+        useCaseSlug: "webinar-marketing",
+        label: "Editor's pick — live + evergreen webinars",
+        productSlug: "webinarjam-everwebinar",
+        rationale:
+          "WebinarJam & EverWebinar is the Wave-1 live + evergreen webinar award — distinct from virtual event platforms or production tools.",
+        approved: true,
+        editorialNotes:
+          "live-host cluster award. handsOnTesting=false. Affiliate economics excluded.",
+      },
+      {
+        useCaseSlug: "webinars-events",
+        label: "Editor's pick — virtual events",
+        productSlug: "livestorm",
+        rationale:
+          "Livestorm is the Wave-1 virtual events award for browser-based multi-session events — not a live production peer.",
+        approved: true,
+        editorialNotes:
+          "virtual-events cluster award. handsOnTesting=false. Affiliate economics excluded.",
+      },
+      {
+        useCaseSlug: "live-streaming",
+        label: "Editor's pick — live stream production",
+        productSlug: "switcher-studio",
+        rationale:
+          "Switcher Studio is the Wave-1 live production award for multi-camera switching and multistream — not a registration platform.",
+        approved: true,
+        editorialNotes:
+          "production cluster award. handsOnTesting=false. Affiliate economics excluded.",
+      },
+      {
+        useCaseSlug: "webinars-events",
+        label: "Editor's pick — meetings & webinars landscape",
+        productSlug: "zoom",
+        rationale:
+          "Zoom is the Wave-1 meetings-first landscape anchor for teams that already run Zoom Workplace and add Zoom Webinars — BC-primary, not ranked against specialist hosts.",
+        approved: true,
+        editorialNotes:
+          "meetings landscape anchor. handsOnTesting=false. Affiliate economics excluded.",
+      },
+    ],
+    decisionPaths: [
+      {
+        priority: "Live webinars plus evergreen / simulive automation",
+        productSlug: "webinarjam-everwebinar",
+        label: "Live + evergreen webinar path",
+        approved: true,
+      },
+      {
+        priority: "Browser-based virtual events and multi-session programs",
+        productSlug: "livestorm",
+        label: "Virtual events path",
+        approved: true,
+      },
+      {
+        priority: "Multi-camera live production and multistream outputs",
+        productSlug: "switcher-studio",
+        label: "Live production path",
+        approved: true,
+      },
+      {
+        priority: "Meetings-first stack adding webinar SKUs",
+        productSlug: "zoom",
+        label: "Meetings + webinars landscape",
+        approved: true,
+      },
+    ],
+    landscape: [
+      {
+        id: "live-evergreen",
+        label: "Live + evergreen webinar hosting",
+        description:
+          "Registration, live rooms, and automated replays. WebinarJam is the affiliate award in this cluster.",
+        productSlugs: ["webinarjam-everwebinar"],
+      },
+      {
+        id: "virtual-events",
+        label: "Virtual events",
+        description:
+          "Multi-session events and stages. Livestorm is the virtual events award.",
+        productSlugs: ["livestorm"],
+      },
+      {
+        id: "live-production",
+        label: "Live stream production",
+        description:
+          "Multi-camera switching and multistream. Switcher Studio is the production award.",
+        productSlugs: ["switcher-studio"],
+      },
+      {
+        id: "meetings-webinars",
+        label: "Meetings & webinars (landscape)",
+        description:
+          "Meetings-first UCaaS with webinar add-ons. Zoom is landscape — BC-primary, not ranked against specialist hosts.",
+        productSlugs: ["zoom"],
+      },
+      {
+        id: "enterprise-ucaas",
+        label: "Enterprise UCaaS (landscape)",
+        description:
+          "Webex and Microsoft Teams as meetings-first landscape peers for teams already on those stacks.",
+        productSlugs: ["webex", "microsoft-teams"],
+      },
+    ],
+    buyingGuideSteps: [
+      {
+        step: 1,
+        title: "Name the webinar job",
+        body: "Live hosting, evergreen, virtual events, or production — one sentence.",
+      },
+      {
+        step: 2,
+        title: "Map audience and integrations",
+        body: "Attendee caps, CRM/MAP sync, and simulive vs live requirements.",
+      },
+      {
+        step: 3,
+        title: "Shortlist inside the job cluster",
+        body: "Do not rank a host, an event platform, and a production tool as undifferentiated peers.",
+      },
+      {
+        step: 4,
+        title: "Pilot with one real event",
+        body: "Run one live session, one evergreen replay, or one production stream on the qualifying plan.",
+      },
+    ],
+    featureMatrixSlugs: [
+      "webinars",
+      "evergreen-webinars",
+      "virtual-events",
+      "webinar-registration",
+      "live-streaming-production",
+      "webinar-analytics",
+    ],
+    faq: [
+      {
+        question: "What is webinar and virtual events software?",
+        answer:
+          "Tools for hosting live webinars, running virtual events, automating evergreen replays, and producing live streams — distinct from MAP and meetings-only UCaaS.",
+      },
+      {
+        question: "Do affiliate relationships affect these rankings?",
+        answer:
+          "No. Rankings follow the webinar-virtual-events editorial methodology. Affiliate status is excluded from every criterion score.",
+      },
+    ],
+    editorialStatus: "approved",
+    editorialNotes:
+      "Wave-1 2026-11 launch: WebinarJam/Livestorm/Switcher Studio affiliates + Zoom landscape anchor. No cross-cluster ranked set. seo.indexable scheduled Nov 2026. methodologyVersion 1.0.0 webinar-virtual-events-editorial. handsOnTesting=false.",
+    metadata: {
+      status: "scheduled",
+      scheduledAt: "2026-11-19T06:00:00.000Z",
+      updatedAt: "2026-08-23T15:00:00.000Z",
+      researchStatus: "complete",
+    },
+    seo: {
+      title: "Best Webinar & Virtual Events Software (2026 Buying Guide)",
+      description:
+        "Compare WebinarJam, Livestorm, Switcher Studio, and Zoom by job cluster — live hosting, virtual events, evergreen, and production — with editor's picks.",
+      indexable: false,
+      canonicalPath: "/best/webinar-virtual-events-software/",
+    },
+  },
+
+  {
+    id: "best-lms-course-creation-software",
+    slug: "lms-course-creation-software",
+    title: "Best LMS & Course Creation Software",
+    heroEyebrow: "BUYING GUIDE",
+    heroSubtitle:
+      "We evaluate LMS and course creation products on ease of use, learning job fit, workflow depth, commerce, assessments, integrations, analytics, scalability, and value — so you can shortlist by job: course LMS, cohort programs, team playbooks, or learner assessments.",
+    summary:
+      "Compare course LMS platforms, team playbook tools, and assessment software by job cluster — with an explicit methodology and no false peer ranking across different jobs.",
+    quickAnswerIntro:
+      "There is no single best LMS — course academies, team playbooks, and quiz tools are different purchases. Use the picks below for your job. Dedicated category finder tooling is deferred until six or more primary products exist.",
+    categorySlug: "lms-course-creation",
+    methodology:
+      "SoftwareGlimpse evaluates LMS and course creation platforms on ease of use, learning job fit, workflow depth, course commerce, assessments, integrations, analytics, scalability, and value for money. Products are compared inside their job cluster: course LMS against LMS peers, playbooks against playbook tools, assessments against assessment peers. Affiliate relationships never determine ranking.",
+    methodologyIntro:
+      "We evaluate LMS software by primary job fit — course commerce, cohorts, team playbooks, or assessments — then workflow depth, integrations, and value. Commercial relationships do not determine recommendations.",
+    methodologyVersion: "1.0.0",
+    eligibleProductSlugs: [
+      "learnworlds",
+      "trainual",
+      "flexiquiz",
+      "kartra",
+      "clickfunnels",
+    ],
+    useCaseSlugs: [
+      "online-courses",
+      "course-commerce",
+      "cohort-learning",
+      "learner-assessments",
+      "employee-training",
+      "sop-documentation",
+    ],
+    recommendations: [],
+    useCaseRecommendations: [
+      {
+        useCaseSlug: "course-commerce",
+        label: "Editor's pick — course LMS & academy",
+        productSlug: "learnworlds",
+        rationale:
+          "LearnWorlds is the Wave-1 course LMS + academy commerce award — distinct from internal playbook or quiz-only purchases.",
+        approved: true,
+        editorialNotes:
+          "course-lms cluster award. handsOnTesting=false. Affiliate economics excluded.",
+      },
+      {
+        useCaseSlug: "sop-documentation",
+        label: "Editor's pick — team playbooks & training paths",
+        productSlug: "trainual",
+        rationale:
+          "Trainual is the Wave-1 team playbook award for SOPs and role-based training paths — HR-adjacent but not external course commerce.",
+        approved: true,
+        editorialNotes:
+          "playbooks cluster award. handsOnTesting=false. Affiliate economics excluded.",
+      },
+      {
+        useCaseSlug: "learner-assessments",
+        label: "Editor's pick — quizzes & assessments",
+        productSlug: "flexiquiz",
+        rationale:
+          "FlexiQuiz is the Wave-1 assessment award for tests and knowledge checks — not a full course LMS peer.",
+        approved: true,
+        editorialNotes:
+          "assessments cluster award. handsOnTesting=false. Affiliate economics excluded.",
+      },
+    ],
+    decisionPaths: [
+      {
+        priority: "Sell online courses and run a branded academy",
+        productSlug: "learnworlds",
+        label: "Course LMS / academy path",
+        approved: true,
+      },
+      {
+        priority: "Internal SOP playbooks and role-based training paths",
+        productSlug: "trainual",
+        label: "Team playbooks path",
+        approved: true,
+      },
+      {
+        priority: "Quizzes, tests, and certification workflows",
+        productSlug: "flexiquiz",
+        label: "Assessments path",
+        approved: true,
+      },
+    ],
+    landscape: [
+      {
+        id: "course-lms",
+        label: "Course LMS / academy",
+        description:
+          "Sell courses, memberships, and structured programs. LearnWorlds is the course LMS award.",
+        productSlugs: ["learnworlds"],
+      },
+      {
+        id: "team-playbooks",
+        label: "Team playbooks & training paths",
+        description:
+          "Internal SOPs and role paths. Trainual is the playbook award — overlaps HR SOP jobs with scope notes.",
+        productSlugs: ["trainual"],
+      },
+      {
+        id: "assessments",
+        label: "Quizzes & assessments",
+        description:
+          "Tests and knowledge checks. FlexiQuiz is the assessment award.",
+        productSlugs: ["flexiquiz"],
+      },
+      {
+        id: "funnel-lms",
+        label: "Funnel + course commerce (landscape)",
+        description:
+          "All-in-one funnels with course modules — Kartra and ClickFunnels as landscape peers on the LMS hub.",
+        productSlugs: ["kartra", "clickfunnels"],
+      },
+    ],
+    buyingGuideSteps: [
+      {
+        step: 1,
+        title: "Name the learning job",
+        body: "Course LMS, cohort program, team playbooks, or assessments — one sentence.",
+      },
+      {
+        step: 2,
+        title: "Map audience and commerce",
+        body: "External students vs internal team; checkout and membership needs.",
+      },
+      {
+        step: 3,
+        title: "Shortlist inside the job cluster",
+        body: "Do not rank a course LMS, a playbook tool, and a quiz platform as undifferentiated peers.",
+      },
+      {
+        step: 4,
+        title: "Pilot with one real module",
+        body: "Run one course module, one playbook path, or one assessment on the qualifying plan.",
+      },
+    ],
+    featureMatrixSlugs: [
+      "course-creation",
+      "course-commerce",
+      "cohort-learning",
+      "certificates",
+      "learner-assessments",
+      "learner-progress",
+    ],
+    faq: [
+      {
+        question: "What is LMS and course creation software?",
+        answer:
+          "Tools for building courses, selling academies, running cohorts, and assessing learners — distinct from HR onboarding checklists and frontline WFM.",
+      },
+      {
+        question: "Do affiliate relationships affect these rankings?",
+        answer:
+          "No. Rankings follow the lms-course-creation editorial methodology. Affiliate status is excluded from every criterion score.",
+      },
+    ],
+    editorialStatus: "approved",
+    editorialNotes:
+      "Wave-1 2026-12 launch: LearnWorlds/Trainual/FlexiQuiz affiliates. No dedicated finder until 6+ primaries. No cross-cluster ranked set. seo.indexable scheduled Dec 2026. methodologyVersion 1.0.0 lms-course-creation-editorial. handsOnTesting=false.",
+    metadata: {
+      status: "scheduled",
+      scheduledAt: "2026-12-19T06:00:00.000Z",
+      updatedAt: "2026-08-23T16:00:00.000Z",
+      researchStatus: "complete",
+    },
+    seo: {
+      title: "Best LMS & Course Creation Software (2026 Buying Guide)",
+      description:
+        "Compare LearnWorlds, Trainual, and FlexiQuiz by job cluster — course LMS, team playbooks, and assessments — with editor's picks.",
+      indexable: false,
+      canonicalPath: "/best/lms-course-creation-software/",
+    },
+  },
+
+  {
+    id: "best-website-digital-presence-software",
+    slug: "website-digital-presence-software",
+    title: "Best Website & Digital Presence Software",
+    heroEyebrow: "BUYING GUIDE",
+    heroSubtitle:
+      "We evaluate website and digital presence products on ease of use, web job fit, workflow depth, commerce, CRO, integrations, scalability, value, and AI assistance — so you can shortlist by job: hosted storefront, site builder, landing pages, AI site generation, hosting panel, or digital business marketplace.",
+    summary:
+      "Compare storefronts, site builders, landing tools, AI site generators, hosting panels, and marketplaces by job cluster — with an explicit methodology and no false peer ranking across different jobs.",
+    quickAnswerIntro:
+      "There is no single best website tool — storefronts, builders, landing pages, panels, and marketplaces are different purchases. Use the picks below for your job. Dedicated category finder is deferred until six or more primary products exist.",
+    categorySlug: "website-digital-presence",
+    methodology:
+      "SoftwareGlimpse evaluates website and digital presence platforms on ease of use, web job fit, workflow depth, commerce, CRO, integrations, scalability, value for money, and AI assistance. Products are compared inside their job cluster only. Affiliate relationships never determine ranking.",
+    methodologyIntro:
+      "We evaluate website software by primary job fit — storefront, builder, landing, panel, marketplace, or AI site — then workflow depth, integrations, and value. Commercial relationships do not determine recommendations.",
+    methodologyVersion: "1.0.0",
+    eligibleProductSlugs: ["shopify", "ueni", "flippa", "leadpages", "wegic"],
+    useCaseSlugs: [
+      "online-storefront",
+      "website-builder-commerce",
+      "landing-pages",
+      "digital-business-marketplace",
+    ],
+    recommendations: [],
+    useCaseRecommendations: [
+      {
+        useCaseSlug: "online-storefront",
+        label: "Editor's pick — hosted storefront",
+        productSlug: "shopify",
+        rationale:
+          "Shopify is the Wave-1 hosted storefront award (overall 9.2) with published Basic/Grow/Advanced tiers — distinct from landing-page or panel peers.",
+        approved: true,
+        editorialNotes:
+          "storefront cluster award. handsOnTesting=false. Affiliate economics excluded.",
+      },
+      {
+        useCaseSlug: "website-builder-commerce",
+        label: "Editor's pick — SMB website builder",
+        productSlug: "ueni",
+        rationale:
+          "UENI is the Wave-1 SMB website-builder award for local-business sites — not enterprise storefront or panel depth.",
+        approved: true,
+        editorialNotes:
+          "builder cluster award. handsOnTesting=false. Affiliate economics excluded.",
+      },
+      {
+        useCaseSlug: "digital-business-marketplace",
+        label: "Editor's pick — digital business marketplace",
+        productSlug: "flippa",
+        rationale:
+          "Flippa is the Wave-1 marketplace award for buying and selling online businesses — not site authoring software.",
+        approved: true,
+        editorialNotes:
+          "marketplace cluster award. handsOnTesting=false. Affiliate economics excluded.",
+      },
+    ],
+    decisionPaths: [
+      {
+        priority: "Hosted ecommerce storefront with apps and channels",
+        productSlug: "shopify",
+        label: "Hosted storefront path",
+        approved: true,
+      },
+      {
+        priority: "Local SMB website builder",
+        productSlug: "ueni",
+        label: "SMB site builder path",
+        approved: true,
+      },
+      {
+        priority: "Buy or sell existing online businesses",
+        productSlug: "flippa",
+        label: "Digital business marketplace path",
+        approved: true,
+      },
+    ],
+    landscape: [
+      {
+        id: "hosted-storefront",
+        label: "Hosted storefront",
+        description: "Catalog, checkout, and channels. Shopify is the storefront award.",
+        productSlugs: ["shopify"],
+      },
+      {
+        id: "landing-cro",
+        label: "Landing pages & CRO (landscape)",
+        description:
+          "Campaign landing pages — Leadpages as a landscape peer; full LP/CRO cluster lives on the landing-pages-cro sub-hub.",
+        productSlugs: ["leadpages"],
+      },
+      {
+        id: "ai-site",
+        label: "AI website generation (landscape)",
+        description:
+          "AI site builders — Wegic as a landscape peer; full cluster on ai-website-builder sub-hub.",
+        productSlugs: ["wegic"],
+      },
+      {
+        id: "smb-builder",
+        label: "SMB website builders",
+        description: "Local-business site builders. UENI is the builder award.",
+        productSlugs: ["ueni"],
+      },
+      {
+        id: "marketplace",
+        label: "Digital business marketplace",
+        description: "Buy/sell sites and stores. Flippa is the marketplace award.",
+        productSlugs: ["flippa"],
+      },
+      {
+        id: "hosting-panel",
+        label: "Hosting panels (adjacent)",
+        description:
+          "Plesk moved to web-hosting subcategory hub under it-development — landscape pointer only on WDP best page.",
+        productSlugs: [],
+      },
+    ],
+    buyingGuideSteps: [
+      {
+        step: 1,
+        title: "Name the web job",
+        body: "Storefront, builder, landing, panel, marketplace, or AI site — one sentence.",
+      },
+      {
+        step: 2,
+        title: "Map commerce and technical depth",
+        body: "Checkout needs, catalog size, self-host vs hosted, and domain/DNS control.",
+      },
+      {
+        step: 3,
+        title: "Shortlist inside the job cluster",
+        body: "Do not rank a storefront, a landing tool, and a hosting panel as undifferentiated peers.",
+      },
+      {
+        step: 4,
+        title: "Pilot with one real page or SKU",
+        body: "Publish one landing page, one product, or one site on the qualifying plan.",
+      },
+    ],
+    featureMatrixSlugs: [
+      "website-builder",
+      "landing-pages",
+      "online-storefront",
+      "ai-site-generation",
+      "hosting-control-panel",
+      "digital-business-marketplace",
+    ],
+    faq: [
+      {
+        question: "What is website and digital presence software?",
+        answer:
+          "Tools for launching sites, landing pages, hosted stores, hosting panels, AI site generation, and buying/selling digital businesses — distinct from MAP-only or 3PL fulfillment tools.",
+      },
+      {
+        question: "Do affiliate relationships affect these rankings?",
+        answer:
+          "No. Rankings follow the website-digital-presence editorial methodology. Affiliate status is excluded from every criterion score.",
+      },
+    ],
+    editorialStatus: "approved",
+    editorialNotes:
+      "Wave-1 2027-01 launch: Shopify/Leadpages/Wegic/UENI/Flippa affiliates + Plesk IT landscape. No dedicated finder until 6+ primaries. No cross-cluster ranked set. seo.indexable scheduled Jan 2027. methodologyVersion 1.0.0 website-digital-presence-editorial. handsOnTesting=false.",
+    metadata: {
+      status: "scheduled",
+      scheduledAt: "2027-01-19T06:00:00.000Z",
+      updatedAt: "2026-08-23T16:30:00.000Z",
+      researchStatus: "complete",
+    },
+    seo: {
+      title: "Best Website & Digital Presence Software (2027 Buying Guide)",
+      description:
+        "Compare Shopify, Leadpages, Wegic, UENI, Flippa, and Plesk by job cluster — storefronts, builders, landing pages, AI sites, and marketplaces.",
+      indexable: false,
+      canonicalPath: "/best/website-digital-presence-software/",
+    },
+  },
+
+  {
+    id: "best-analytics-bi-software",
+    slug: "analytics-bi-software",
+    title: "Best Analytics & Business Intelligence Software",
+    heroEyebrow: "BUYING GUIDE",
+    heroSubtitle:
+      "We evaluate analytics and BI products on ease of use, analytics job fit, connector depth, attribution accuracy, dashboard flexibility, integrations, scalability, value, and alert workflows — so you can shortlist by job: lead attribution, KPI dashboards, or marketing metrics unification.",
+    summary:
+      "Compare attribution tools and KPI dashboard platforms by job cluster — with an explicit methodology and no false peer ranking across different jobs.",
+    quickAnswerIntro:
+      "There is no single best analytics tool — attribution and KPI dashboards are different purchases. Use the picks below for your job. Dedicated category finder is deferred until canvas-score onboarding and six or more primary products.",
+    categorySlug: "analytics-bi",
+    methodology:
+      "SoftwareGlimpse evaluates analytics and BI platforms on ease of use, analytics job fit, data connector depth, attribution accuracy, dashboard flexibility, integrations, scalability, value for money, and alert workflows. Products are compared inside their job cluster only. Affiliate relationships never determine ranking.",
+    methodologyIntro:
+      "We evaluate analytics software by primary job fit — attribution vs dashboards vs connectors — then data depth, integrations, and value. Commercial relationships do not determine recommendations.",
+    methodologyVersion: "1.0.0",
+    eligibleProductSlugs: [
+      "whatconverts",
+      "databox",
+      "brand24",
+      "meltwater",
+      "uniqode",
+      "canvas-score",
+    ],
+    useCaseSlugs: [
+      "marketing-attribution",
+      "kpi-dashboards",
+      "marketing-metrics",
+      "analytics",
+    ],
+    recommendations: [],
+    useCaseRecommendations: [
+      {
+        useCaseSlug: "marketing-attribution",
+        label: "Editor's pick — lead & call attribution",
+        productSlug: "whatconverts",
+        rationale:
+          "WhatConverts is the Wave-1 lead/call attribution award with published Call Tracking tiers from $30/mo — distinct from KPI dashboard peers.",
+        approved: true,
+        editorialNotes:
+          "attribution cluster award. handsOnTesting=false. Affiliate economics excluded.",
+      },
+      {
+        useCaseSlug: "kpi-dashboards",
+        label: "Editor's pick — KPI dashboards & connectors",
+        productSlug: "databox",
+        rationale:
+          "Databox is the Wave-1 KPI dashboard award for marketing data connectors and executive views — not call-tracking or MAP depth.",
+        approved: true,
+        editorialNotes:
+          "dashboard cluster award. handsOnTesting=false. Affiliate economics excluded.",
+      },
+    ],
+    decisionPaths: [
+      {
+        priority: "Lead, call, and form attribution to campaigns",
+        productSlug: "whatconverts",
+        label: "Lead attribution path",
+        approved: true,
+      },
+      {
+        priority: "Executive KPI dashboards across marketing sources",
+        productSlug: "databox",
+        label: "KPI dashboard path",
+        approved: true,
+      },
+    ],
+    landscape: [
+      {
+        id: "attribution",
+        label: "Lead & call attribution",
+        description:
+          "Track leads, calls, and forms to sources. WhatConverts is the attribution award.",
+        productSlugs: ["whatconverts"],
+      },
+      {
+        id: "dashboards",
+        label: "KPI dashboards & connectors",
+        description:
+          "Executive dashboards and marketing data connectors. Databox is the dashboard award.",
+        productSlugs: ["databox"],
+      },
+      {
+        id: "social-listening",
+        label: "Social listening (landscape)",
+        description:
+          "Mention monitoring and sentiment from the social-media-marketing hub — landscape peers for metrics unification.",
+        productSlugs: ["brand24", "meltwater"],
+      },
+      {
+        id: "qr-attribution",
+        label: "QR & offline attribution (landscape)",
+        description:
+          "Offline-to-digital attribution and QR workflows — Uniqode as a landscape peer.",
+        productSlugs: ["uniqode"],
+      },
+      {
+        id: "website-analytics",
+        label: "Website analytics (landscape)",
+        description:
+          "Website performance scoring — Canvas Score affiliate pending full onboarding.",
+        productSlugs: ["canvas-score"],
+      },
+    ],
+    buyingGuideSteps: [
+      {
+        step: 1,
+        title: "Name the proof job",
+        body: "Attribution, executive dashboards, or metrics unification — one sentence.",
+      },
+      {
+        step: 2,
+        title: "Map required data sources",
+        body: "Ads, CRM, analytics, call tracking, and offline channels you must connect.",
+      },
+      {
+        step: 3,
+        title: "Shortlist inside the job cluster",
+        body: "Do not rank attribution tools and dashboard platforms as undifferentiated peers.",
+      },
+      {
+        step: 4,
+        title: "Pilot with one campaign or dashboard",
+        body: "Connect one live source or publish one executive KPI view on the qualifying plan.",
+      },
+    ],
+    featureMatrixSlugs: [
+      "lead-attribution",
+      "call-tracking",
+      "kpi-dashboards",
+      "marketing-data-connectors",
+      "channel-reporting",
+      "goal-alerts",
+    ],
+    faq: [
+      {
+        question: "What is analytics and business intelligence software?",
+        answer:
+          "Tools for attributing leads, unifying marketing metrics, and building KPI dashboards — distinct from MAP, funnel builders, or social schedulers.",
+      },
+      {
+        question: "Do affiliate relationships affect these rankings?",
+        answer:
+          "No. Rankings follow the analytics-bi editorial methodology. Affiliate status is excluded from every criterion score.",
+      },
+    ],
+    editorialStatus: "approved",
+    editorialNotes:
+      "Wave-1 2027-02 launch: WhatConverts/Databox affiliates. Canvas Score pending seed. No dedicated finder until 6+ primaries. No cross-cluster ranked set. seo.indexable scheduled Feb 2027. methodologyVersion 1.0.0 analytics-bi-editorial. handsOnTesting=false.",
+    metadata: {
+      status: "scheduled",
+      scheduledAt: "2027-02-20T06:00:00.000Z",
+      updatedAt: "2026-08-23T17:00:00.000Z",
+      researchStatus: "complete",
+    },
+    seo: {
+      title: "Best Analytics & Business Intelligence Software (2027 Buying Guide)",
+      description:
+        "Compare WhatConverts and Databox by job cluster — lead attribution vs KPI dashboards and marketing connectors.",
+      indexable: false,
+      canonicalPath: "/best/analytics-bi-software/",
+    },
+  },
+
+  {
+    id: "best-field-service-operations-software",
+    slug: "field-service-operations-software",
+    title: "Best Field Service & Operations Software",
+    heroEyebrow: "BUYING GUIDE",
+    heroSubtitle:
+      "We evaluate field service and operations products on ease of use, field job fit, scheduling depth, job costing, mobile workflows, integrations, scalability, and value — so you can shortlist by job: construction management, trades dispatch, or appointment scheduling.",
+    summary:
+      "Compare construction, trades FSM, and appointment scheduling tools by job cluster — with an explicit methodology and no false peer ranking across different jobs.",
+    quickAnswerIntro:
+      "There is no single best field service tool — construction, trades dispatch, and appointment scheduling are different purchases. Use the picks below for your job. Generic category finder is deferred in favor of vertical-specific industry pages.",
+    categorySlug: "field-service-operations",
+    methodology:
+      "SoftwareGlimpse evaluates field service and operations platforms on ease of use, field job fit, scheduling depth, job costing, mobile workflows, integrations, scalability, and value for money. Products are compared inside their job cluster only. Affiliate relationships never determine ranking.",
+    methodologyIntro:
+      "We evaluate field service software by primary job fit — construction, trades FSM, or appointments — then scheduling depth, mobile workflows, and value. Commercial relationships do not determine recommendations.",
+    methodologyVersion: "1.0.0",
+    eligibleProductSlugs: [
+      "contractor-foreman",
+      "shore",
+      "servicem8",
+      "connecteam",
+      "jibble",
+    ],
+    useCaseSlugs: [
+      "construction-management",
+      "trades-field-service",
+      "appointment-scheduling",
+      "work-management",
+    ],
+    recommendations: [],
+    useCaseRecommendations: [
+      {
+        useCaseSlug: "construction-management",
+        label: "Editor's pick — construction management",
+        productSlug: "contractor-foreman",
+        rationale:
+          "Contractor Foreman is the Wave-1 construction management award for job costing and contractor workflows — distinct from trades dispatch or appointment peers.",
+        approved: true,
+        editorialNotes:
+          "construction cluster award. handsOnTesting=false. Affiliate economics excluded.",
+      },
+      {
+        useCaseSlug: "trades-field-service",
+        label: "Editor's pick — trades field service",
+        productSlug: "servicem8",
+        rationale:
+          "ServiceM8 is the Wave-1 trades FSM award for dispatch, quotes, and mobile jobs — editorial anchor; affiliate URL pending.",
+        approved: true,
+        editorialNotes:
+          "trades-fsm cluster award. editorial anchor. handsOnTesting=false. Affiliate economics excluded.",
+      },
+      {
+        useCaseSlug: "appointment-scheduling",
+        label: "Editor's pick — appointment scheduling",
+        productSlug: "shore",
+        rationale:
+          "Shore is the Wave-1 appointment scheduling award for local business booking and reminders — not helpdesk or live-chat depth.",
+        approved: true,
+        editorialNotes:
+          "appointments cluster award. what-is ships Tier 7 CS Nov 2026. handsOnTesting=false. Affiliate economics excluded.",
+      },
+    ],
+    decisionPaths: [
+      {
+        priority: "Construction job costing and contractor financial workflows",
+        productSlug: "contractor-foreman",
+        label: "Construction management path",
+        approved: true,
+      },
+      {
+        priority: "Trades dispatch, quotes, and mobile field jobs",
+        productSlug: "servicem8",
+        label: "Trades field service path",
+        approved: true,
+      },
+      {
+        priority: "Client appointment booking for local services",
+        productSlug: "shore",
+        label: "Appointment scheduling path",
+        approved: true,
+      },
+    ],
+    landscape: [
+      {
+        id: "construction",
+        label: "Construction management",
+        description:
+          "Job costing and contractor workflows. Contractor Foreman is the construction award.",
+        productSlugs: ["contractor-foreman"],
+      },
+      {
+        id: "trades-fsm",
+        label: "Trades field service",
+        description:
+          "Dispatch, quotes, and mobile jobs. ServiceM8 is the trades FSM award.",
+        productSlugs: ["servicem8"],
+      },
+      {
+        id: "appointments",
+        label: "Appointment scheduling",
+        description:
+          "Booking and local business management. Shore is the appointment award.",
+        productSlugs: ["shore"],
+      },
+      {
+        id: "crew-ops",
+        label: "Crew scheduling & time (landscape)",
+        description:
+          "Workforce scheduling and time tracking for field crews — Connecteam and Jibble as landscape peers.",
+        productSlugs: ["connecteam", "jibble"],
+      },
+    ],
+    buyingGuideSteps: [
+      {
+        step: 1,
+        title: "Name the field job",
+        body: "Construction, trades dispatch, or appointment scheduling — one sentence.",
+      },
+      {
+        step: 2,
+        title: "Map crew and mobile requirements",
+        body: "Crew size, routes, offline mobile, and quote-to-cash depth.",
+      },
+      {
+        step: 3,
+        title: "Shortlist inside the job cluster",
+        body: "Do not rank construction, trades FSM, and appointment tools as undifferentiated peers.",
+      },
+      {
+        step: 4,
+        title: "Pilot with one real job or booking",
+        body: "Run one site visit, dispatch route, or client booking on the qualifying plan.",
+      },
+    ],
+    featureMatrixSlugs: [
+      "job-scheduling",
+      "crew-dispatch",
+      "job-costing",
+      "quotes-invoicing",
+      "appointment-booking",
+      "mobile-field-app",
+    ],
+    faq: [
+      {
+        question: "What is field service and operations software?",
+        answer:
+          "Tools for scheduling field crews, managing construction jobs, dispatching trades work, and running appointment-based local services — distinct from generic Work OS boards and helpdesk ticketing.",
+      },
+      {
+        question: "Do affiliate relationships affect these rankings?",
+        answer:
+          "No. Rankings follow the field-service-operations editorial methodology. Affiliate status is excluded from every criterion score.",
+      },
+    ],
+    editorialStatus: "approved",
+    editorialNotes:
+      "Wave-1 2027-03 launch: Contractor Foreman/Shore affiliates + ServiceM8 editorial anchor. Shore what-is Tier 7 CS Nov 2026. No generic finder. seo.indexable scheduled Mar 2027. methodologyVersion 1.0.0 field-service-operations-editorial. handsOnTesting=false.",
+    metadata: {
+      status: "scheduled",
+      scheduledAt: "2027-03-20T06:00:00.000Z",
+      updatedAt: "2026-08-23T17:30:00.000Z",
+      researchStatus: "complete",
+    },
+    seo: {
+      title: "Best Field Service & Operations Software (2027 Buying Guide)",
+      description:
+        "Compare Contractor Foreman, ServiceM8, and Shore by job cluster — construction, trades dispatch, and appointment scheduling.",
+      indexable: false,
+      canonicalPath: "/best/field-service-operations-software/",
+    },
+  },
+
+  {
+    id: "best-reputation-reviews-software",
+    slug: "reputation-reviews-software",
+    title: "Best Reputation & Review Management Software",
+    heroEyebrow: "BUYING GUIDE",
+    heroSubtitle:
+      "We evaluate reputation and review management products on ease of use, reputation job fit, collection automation, monitoring depth, response workflows, integrations, scalability, and value — for local businesses collecting and managing public reviews.",
+    summary:
+      "Compare reputation and review management tools with an explicit methodology — single-product Wave-1 hub until inventory grows.",
+    quickAnswerIntro:
+      "Wave-1 inventory is a single primary product (NiceJob). Use the pick below for review collection and local reputation jobs. Finder tooling is deferred until four or more products exist.",
+    categorySlug: "reputation-reviews",
+    methodology:
+      "SoftwareGlimpse evaluates reputation and review management platforms on ease of use, reputation job fit, collection automation, monitoring depth, response workflows, integrations, scalability, and value for money. Products are compared inside reputation job clusters only. Affiliate relationships never determine ranking.",
+    methodologyIntro:
+      "We evaluate reputation software by review collection, monitoring, and response workflows — not helpdesk ticketing depth. Commercial relationships do not determine recommendations.",
+    methodologyVersion: "1.0.0",
+    eligibleProductSlugs: ["nicejob", "wati", "shore", "ueni", "uniqode"],
+    useCaseSlugs: [
+      "reputation-reviews",
+      "review-generation",
+      "local-reputation",
+    ],
+    recommendations: [],
+    useCaseRecommendations: [
+      {
+        useCaseSlug: "reputation-reviews",
+        label: "Editor's pick — reputation & review management",
+        productSlug: "nicejob",
+        rationale:
+          "NiceJob is the Wave-1 reputation award for automated review requests, social proof, and local reputation workflows — explicitly not a helpdesk or live-chat peer.",
+        approved: true,
+        editorialNotes:
+          "single-product cluster award. what-is ships Tier 7 CS Nov 2026. handsOnTesting=false. Affiliate economics excluded.",
+      },
+    ],
+    decisionPaths: [
+      {
+        priority: "Automated review collection and local Google reputation",
+        productSlug: "nicejob",
+        label: "Reputation management path",
+        approved: true,
+      },
+    ],
+    landscape: [
+      {
+        id: "reputation-management",
+        label: "Reputation & review management",
+        description:
+          "Review collection, monitoring, and response for local businesses. NiceJob is the Wave-1 award.",
+        productSlugs: ["nicejob"],
+      },
+      {
+        id: "local-comms",
+        label: "Local business messaging (landscape)",
+        description:
+          "WhatsApp and messaging workflows adjacent to reputation — Wati and Shore as landscape peers.",
+        productSlugs: ["wati", "shore"],
+      },
+      {
+        id: "local-presence",
+        label: "Local digital presence (landscape)",
+        description:
+          "SMB websites and QR-led local discovery — UENI and Uniqode as landscape peers.",
+        productSlugs: ["ueni", "uniqode"],
+      },
+    ],
+    buyingGuideSteps: [
+      {
+        step: 1,
+        title: "Name the reputation job",
+        body: "Review collection, monitoring, or response — one sentence.",
+      },
+      {
+        step: 2,
+        title: "Map platforms and locations",
+        body: "Google, Facebook, location count, and integration needs.",
+      },
+      {
+        step: 3,
+        title: "Confirm not a helpdesk purchase",
+        body: "Ticket queues and live chat are different tools — scope reputation only.",
+      },
+      {
+        step: 4,
+        title: "Pilot with one review campaign",
+        body: "Run one post-job review request flow on the qualifying plan.",
+      },
+    ],
+    featureMatrixSlugs: [
+      "review-collection",
+      "review-monitoring",
+      "review-response",
+      "social-proof-widgets",
+      "referral-workflows",
+      "reputation-automation",
+    ],
+    faq: [
+      {
+        question: "What is reputation and review management software?",
+        answer:
+          "Tools for collecting customer reviews, monitoring ratings, and automating reputation workflows — distinct from helpdesk ticketing and live chat.",
+      },
+      {
+        question: "Do affiliate relationships affect these rankings?",
+        answer:
+          "No. Rankings follow the reputation-reviews editorial methodology. Affiliate status is excluded from every criterion score.",
+      },
+    ],
+    editorialStatus: "approved",
+    editorialNotes:
+      "Wave-1 2027-04 launch: NiceJob affiliate only. Single-product hub. NiceJob what-is Tier 7 CS Nov 2026. No finder until 4+ products. seo.indexable scheduled Apr 2027. methodologyVersion 1.0.0 reputation-reviews-editorial. handsOnTesting=false.",
+    metadata: {
+      status: "scheduled",
+      scheduledAt: "2027-04-30T06:00:00.000Z",
+      updatedAt: "2026-08-23T18:00:00.000Z",
+      researchStatus: "complete",
+    },
+    seo: {
+      title: "Best Reputation & Review Management Software (2027 Buying Guide)",
+      description:
+        "Compare NiceJob for review collection, monitoring, and local reputation workflows.",
+      indexable: false,
+      canonicalPath: "/best/reputation-reviews-software/",
+    },
+  },
+
+  {
+    id: "best-ai-writing-software",
+    slug: "ai-writing-software",
+    title: "Best AI Writing Software",
+    heroEyebrow: "BUYING GUIDE",
+    heroSubtitle:
+      "We evaluate AI writing tools on ease of use, writing job fit, paraphrasing depth, grammar clarity, copy generation, GEO/AEO capabilities, integrations, scalability, and value — for paraphrasing, grammar, and marketing copy workflows.",
+    summary:
+      "Compare AI writing assistants by job cluster — paraphrasing & grammar vs GEO/marketing copy — with an explicit methodology.",
+    quickAnswerIntro:
+      "There is no single best AI writing tool — paraphrasing assistants and GEO copy platforms are different purchases. Use the picks below by primary writing job, then confirm word limits, integrations, and the workflows you will run daily.",
+    categorySlug: "ai-writing",
+    methodology:
+      "SoftwareGlimpse evaluates AI writing platforms on ease of use, writing job fit, paraphrasing depth, grammar clarity, copy generation, GEO/AEO capabilities, integrations, scalability, and value for money. Products are compared inside writing job clusters only. Affiliate relationships never determine ranking.",
+    methodologyIntro:
+      "We evaluate AI writing software by paraphrasing vs GEO/copy job fit — then workflow depth, integrations, and value. Commercial relationships do not determine recommendations.",
+    methodologyVersion: "1.0.0",
+    eligibleProductSlugs: ["quillbot", "writesonic"],
+    useCaseSlugs: ["ai-writing", "paraphrasing", "ai-copywriting"],
+    recommendations: [],
+    useCaseRecommendations: [
+      {
+        useCaseSlug: "paraphrasing",
+        label: "Editor's pick — paraphrasing & grammar",
+        productSlug: "quillbot",
+        rationale:
+          "QuillBot is the paraphrasing cluster award (overall 7.5) with a usable free tier and published Premium annual floor (~$8.33/mo) — explicitly not an LLM-assistant peer against ChatGPT.",
+        approved: true,
+        editorialNotes:
+          "paraphrasing cluster award. handsOnTesting=false. Affiliate economics excluded.",
+      },
+      {
+        useCaseSlug: "ai-copywriting",
+        label: "Editor's pick — GEO / marketing copy",
+        productSlug: "writesonic",
+        rationale:
+          "Writesonic is the GEO/AEO and marketing-copy cluster award for AI search visibility and long-form drafts — distinct from QuillBot grammar-first paraphrasing workflows.",
+        approved: true,
+        editorialNotes:
+          "ai-copywriting cluster award. handsOnTesting=false. Affiliate economics excluded.",
+      },
+    ],
+    decisionPaths: [
+      {
+        priority: "Paraphrasing, grammar, and polish on existing drafts",
+        productSlug: "quillbot",
+        label: "Paraphrasing & grammar path",
+        approved: true,
+      },
+      {
+        priority: "GEO/AEO visibility and marketing copy from prompts",
+        productSlug: "writesonic",
+        label: "GEO / marketing copy path",
+        approved: true,
+      },
+    ],
+    landscape: [
+      {
+        id: "paraphrasing",
+        label: "Paraphrasing & grammar",
+        description:
+          "Rewrite, proofread, and polish existing text. QuillBot is the paraphrasing award.",
+        productSlugs: ["quillbot"],
+      },
+      {
+        id: "geo-copy",
+        label: "GEO / marketing copy",
+        description:
+          "AI search content and marketing drafts from prompts. Writesonic is the GEO/copy award.",
+        productSlugs: ["writesonic"],
+      },
+    ],
+    buyingGuideSteps: [
+      {
+        step: 1,
+        title: "Name the writing job",
+        body: "Paraphrasing polish vs GEO/marketing copy — one sentence.",
+      },
+      {
+        step: 2,
+        title: "Map volume and integrations",
+        body: "Word limits, browser/doc extensions, and CMS export needs.",
+      },
+      {
+        step: 3,
+        title: "Shortlist inside the job cluster",
+        body: "Do not rank paraphrasing tools and GEO copy platforms as undifferentiated peers.",
+      },
+      {
+        step: 4,
+        title: "Pilot with one real draft",
+        body: "Run one rewrite pass or one blog draft on the qualifying plan.",
+      },
+    ],
+    featureMatrixSlugs: [
+      "paraphrasing",
+      "grammar-clarity",
+      "copy-generation",
+      "geo-aeo-content",
+      "summarisation",
+      "tone-style",
+    ],
+    faq: [
+      {
+        question: "What is AI writing software?",
+        answer:
+          "Tools for paraphrasing, grammar, marketing copy, and GEO/AEO content — distinct from general-purpose LLM chat assistants.",
+      },
+      {
+        question: "Do affiliate relationships affect these rankings?",
+        answer:
+          "No. Rankings follow the ai-writing editorial methodology. Affiliate status is excluded from every criterion score.",
+      },
+    ],
+    editorialStatus: "approved",
+    editorialNotes:
+      "Wave-1 2027-05 launch: QuillBot + Writesonic affiliates. Parent ai-finder ai-writing use-case tag — no dedicated subcategory finder. what-is guides moved from Tier 5 Nov 2026. seo.indexable scheduled May 2027. methodologyVersion 1.0.0 ai-writing-editorial. handsOnTesting=false.",
+    metadata: {
+      status: "scheduled",
+      scheduledAt: "2027-05-20T06:00:00.000Z",
+      updatedAt: "2026-08-23T18:30:00.000Z",
+      researchStatus: "complete",
+    },
+    seo: {
+      title: "Best AI Writing Software (2027 Buying Guide)",
+      description:
+        "Compare QuillBot and Writesonic by job cluster — paraphrasing & grammar vs GEO/marketing copy.",
+      indexable: false,
+      canonicalPath: "/best/ai-writing-software/",
+    },
+  },
+
+  {
+    id: "best-ai-website-builder-software",
+    slug: "ai-website-builder-software",
+    title: "Best AI Website Builder Software",
+    heroEyebrow: "BUYING GUIDE",
+    heroSubtitle:
+      "We evaluate AI website and app builders on ease of use, build-surface job fit, generation quality, customization, deployment, integrations, scalability, and value — for prompt-to-site, agent app, and lightweight app development workflows.",
+    summary:
+      "Compare AI website builders by job cluster — prompt-to-site vs agent/app builder vs AI app development — with an explicit methodology.",
+    quickAnswerIntro:
+      "There is no single best AI website builder — site generators, agent builders, and app dev platforms are different purchases. Use the picks below by primary build surface, then confirm generation limits, deploy workflow, and integrations.",
+    categorySlug: "ai-website-builder",
+    methodology:
+      "SoftwareGlimpse evaluates AI website and app builders on ease of use, build-surface job fit, generation quality, customization depth, deployment, integrations, scalability, and value for money. Products are compared inside build job clusters only. Affiliate relationships never determine ranking.",
+    methodologyIntro:
+      "We evaluate AI website builder software by site vs agent vs app-dev job fit — then workflow depth, integrations, and value. Commercial relationships do not determine recommendations.",
+    methodologyVersion: "1.0.0",
+    eligibleProductSlugs: ["wegic", "mindstudio", "emergent"],
+    useCaseSlugs: ["ai-website-builder", "ai-agents", "ai-app-development"],
+    recommendations: [],
+    useCaseRecommendations: [
+      {
+        useCaseSlug: "ai-website-builder",
+        label: "Editor's pick — prompt-to-site",
+        productSlug: "wegic",
+        rationale:
+          "Wegic is the prompt-to-site cluster award for marketing site generation from natural-language prompts — confirm live plan gates on wegic.ai.",
+        approved: true,
+        editorialNotes:
+          "prompt-to-site cluster award. handsOnTesting=false. Affiliate economics excluded.",
+      },
+      {
+        useCaseSlug: "ai-agents",
+        label: "Editor's pick — AI app / agent builder",
+        productSlug: "mindstudio",
+        rationale:
+          "MindStudio is the no-code AI app/agent builder cluster award (overall 7.3) with a published Individual plan — distinct from Wegic site generation.",
+        approved: true,
+        editorialNotes:
+          "agent-builder cluster award. handsOnTesting=false. Affiliate economics excluded.",
+      },
+      {
+        useCaseSlug: "ai-app-development",
+        label: "Editor's pick — AI app development",
+        productSlug: "emergent",
+        rationale:
+          "Emergent is the AI app development cluster award for lightweight app generation from prompts — distinct from site builders and general LLM chat.",
+        approved: true,
+        editorialNotes:
+          "app-dev cluster award. handsOnTesting=false. Affiliate economics excluded.",
+      },
+    ],
+    decisionPaths: [
+      {
+        priority: "Marketing site or landing page from a prompt",
+        productSlug: "wegic",
+        label: "Prompt-to-site path",
+        approved: true,
+      },
+      {
+        priority: "No-code AI apps and internal agents",
+        productSlug: "mindstudio",
+        label: "Agent / app builder path",
+        approved: true,
+      },
+      {
+        priority: "AI-assisted lightweight app development",
+        productSlug: "emergent",
+        label: "AI app development path",
+        approved: true,
+      },
+    ],
+    landscape: [
+      {
+        id: "prompt-site",
+        label: "Prompt-to-site",
+        description:
+          "Marketing sites and landing pages from prompts. Wegic is the prompt-to-site award.",
+        productSlugs: ["wegic"],
+      },
+      {
+        id: "agent-app",
+        label: "AI app / agent builder",
+        description:
+          "No-code AI apps and agents. MindStudio is the agent-builder award.",
+        productSlugs: ["mindstudio"],
+      },
+      {
+        id: "app-dev",
+        label: "AI app development",
+        description:
+          "Lightweight app generation from prompts. Emergent is the app-dev award.",
+        productSlugs: ["emergent"],
+      },
+    ],
+    buyingGuideSteps: [
+      {
+        step: 1,
+        title: "Name the build surface",
+        body: "Prompt-to-site, agent/app builder, or app development — one sentence.",
+      },
+      {
+        step: 2,
+        title: "Map deploy and integration needs",
+        body: "Live URL, domain, CMS export, and API connectors.",
+      },
+      {
+        step: 3,
+        title: "Shortlist inside the job cluster",
+        body: "Do not rank site generators, agent builders, and app dev platforms as undifferentiated peers.",
+      },
+      {
+        step: 4,
+        title: "Pilot with one real build",
+        body: "Generate one site, agent, or app on the qualifying plan.",
+      },
+    ],
+    featureMatrixSlugs: [
+      "ai-site-generation",
+      "website-generation",
+      "agent-builder",
+      "app-generation",
+      "prompt-to-deploy",
+      "customization",
+    ],
+    faq: [
+      {
+        question: "What is AI website builder software?",
+        answer:
+          "Tools that generate sites, landing pages, or lightweight apps from prompts — distinct from general LLM assistants and traditional drag-and-drop builders.",
+      },
+      {
+        question: "Do affiliate relationships affect these rankings?",
+        answer:
+          "No. Rankings follow the ai-website-builder editorial methodology. Affiliate status is excluded from every criterion score.",
+      },
+    ],
+    editorialStatus: "approved",
+    editorialNotes:
+      "Wave-1 2027-05 launch: Wegic/MindStudio/Emergent affiliates. Parent ai-finder build-surface constraint — no dedicated subcategory finder. Wegic what-is moved from Tier 16 WDP Jan 2027; MindStudio/Emergent from Tier 5 Nov 2026. seo.indexable scheduled May 2027. methodologyVersion 1.0.0 ai-website-builder-editorial. handsOnTesting=false.",
+    metadata: {
+      status: "scheduled",
+      scheduledAt: "2027-05-22T06:00:00.000Z",
+      updatedAt: "2026-08-23T19:00:00.000Z",
+      researchStatus: "complete",
+    },
+    seo: {
+      title: "Best AI Website Builder Software (2027 Buying Guide)",
+      description:
+        "Compare Wegic, MindStudio, and Emergent by job cluster — prompt-to-site, agent builder, and app development.",
+      indexable: false,
+      canonicalPath: "/best/ai-website-builder-software/",
+    },
+  },
+
+  {
+    id: "best-voip-business-phone-software",
+    slug: "voip-business-phone-software",
+    title: "Best VoIP & Business Phone Software",
+    heroEyebrow: "BUYING GUIDE",
+    heroSubtitle:
+      "We evaluate VoIP and business phone platforms on ease of use, voice job fit, routing depth, CRM CTI, outbound dialer, analytics, integrations, scalability, and value — for cloud phone, sales dialers, and contact-center voice workflows.",
+    summary:
+      "Compare affiliate VoIP and business phone tools by job cluster — SMB cloud VoIP, CRM CTI, sales dialer, and inbound CC voice — with an explicit methodology.",
+    quickAnswerIntro:
+      "There is no single best business phone tool — SMB VoIP, mid-market CRM CTI, sales dialers, and inbound contact-center voice are different purchases. Use the picks below by primary voice job, then confirm seat minimums, IVR depth, and CRM integrations.",
+    categorySlug: "voip-business-phone",
+    methodology:
+      "SoftwareGlimpse evaluates VoIP and business phone platforms on ease of use, voice job fit, routing depth, CRM CTI, outbound dialer, analytics, integrations, scalability, and value for money. Products are compared inside voice job clusters only. Affiliate relationships never determine ranking.",
+    methodologyIntro:
+      "We evaluate VoIP software by SMB VoIP vs CRM CTI vs sales dialer vs inbound CC job fit — then routing, integrations, and value. Commercial relationships do not determine recommendations.",
+    methodologyVersion: "1.0.0",
+    eligibleProductSlugs: ["krispcall", "callhippo", "aircall", "freshcaller", "kixie"],
+    useCaseSlugs: ["business-phone", "sales-calling", "contact-center"],
+    recommendations: [],
+    useCaseRecommendations: [
+      {
+        useCaseSlug: "business-phone",
+        label: "Editor's pick — SMB cloud VoIP value",
+        productSlug: "callhippo",
+        rationale:
+          "CallHippo is the SMB cloud VoIP cluster award (overall 7.2) with a genuine on-ramp and outbound dialing — distinct from mid-market Aircall CTI depth.",
+        approved: true,
+        editorialNotes:
+          "smb-voip cluster award. KrispCall is the budget global-numbers peer. handsOnTesting=false. Affiliate economics excluded.",
+      },
+      {
+        useCaseSlug: "business-phone",
+        label: "Editor's pick — budget global numbers",
+        productSlug: "krispcall",
+        rationale:
+          "KrispCall is the budget global-numbers cluster award (overall 6.8) with virtual numbers across 100+ countries — explicitly not mid-market CTI depth against Aircall.",
+        approved: true,
+        editorialNotes:
+          "global-numbers cluster award within business-phone jobs. handsOnTesting=false. Affiliate economics excluded.",
+      },
+      {
+        useCaseSlug: "business-phone",
+        label: "Editor's pick — mid-market CRM CTI",
+        productSlug: "aircall",
+        rationale:
+          "Aircall is the mid-market CRM CTI cluster award (overall 8.3, integrations 10/10) — built for CRM-connected phone workflows with a three-licence minimum.",
+        approved: true,
+        editorialNotes:
+          "crm-cti cluster award. handsOnTesting=false. Affiliate economics excluded.",
+      },
+      {
+        useCaseSlug: "sales-calling",
+        label: "Editor's pick — sales power dialer",
+        productSlug: "kixie",
+        rationale:
+          "Kixie is the sales dialer cluster award for CRM-connected outbound calling, SMS, and coaching — recategorized from sales-intelligence primary.",
+        approved: true,
+        editorialNotes:
+          "sales-dialer cluster award. handsOnTesting=false. Affiliate economics excluded.",
+      },
+      {
+        useCaseSlug: "contact-center",
+        label: "Editor's pick — inbound contact-center voice",
+        productSlug: "freshcaller",
+        rationale:
+          "Freshcaller is the inbound CC voice cluster award (overall 7.0) with a free agent tier and Freshworks alignment — not an outbound dialer peer against Kixie.",
+        approved: true,
+        editorialNotes:
+          "inbound-cc cluster award. handsOnTesting=false. Affiliate economics excluded.",
+      },
+    ],
+    decisionPaths: [
+      {
+        priority: "SMB business phone on the tightest sensible budget",
+        productSlug: "callhippo",
+        label: "SMB cloud VoIP path",
+        approved: true,
+      },
+      {
+        priority: "Local numbers across many countries at low cost",
+        productSlug: "krispcall",
+        label: "Budget global VoIP path",
+        approved: true,
+      },
+      {
+        priority: "Mid-market business phone with deep CRM CTI",
+        productSlug: "aircall",
+        label: "CRM CTI phone path",
+        approved: true,
+      },
+      {
+        priority: "Outbound sales dialing tied to CRM workflows",
+        productSlug: "kixie",
+        label: "Sales dialer path",
+        approved: true,
+      },
+      {
+        priority: "Inbound support calling on a Freshworks stack",
+        productSlug: "freshcaller",
+        label: "Inbound CC voice path",
+        approved: true,
+      },
+    ],
+    landscape: [
+      {
+        id: "smb-voip",
+        label: "SMB cloud VoIP",
+        description:
+          "Budget business phone with dialing. CallHippo is the SMB value award; KrispCall is the global-numbers peer.",
+        productSlugs: ["callhippo", "krispcall"],
+      },
+      {
+        id: "crm-cti",
+        label: "Mid-market CRM CTI",
+        description:
+          "CRM-connected phone with IVR and queues. Aircall is the CTI award.",
+        productSlugs: ["aircall"],
+      },
+      {
+        id: "sales-dialer",
+        label: "Sales power dialer",
+        description:
+          "Outbound dialing with CRM logging. Kixie is the sales dialer award.",
+        productSlugs: ["kixie"],
+      },
+      {
+        id: "inbound-cc",
+        label: "Inbound contact-center voice",
+        description:
+          "Cloud PBX and inbound queues. Freshcaller is the inbound CC award.",
+        productSlugs: ["freshcaller"],
+      },
+    ],
+    buyingGuideSteps: [
+      {
+        step: 1,
+        title: "Name the voice job",
+        body: "SMB VoIP, CRM CTI, sales dialer, or inbound CC — one sentence.",
+      },
+      {
+        step: 2,
+        title: "Map seat minimums and CRM stack",
+        body: "Licence floors, CRM/helpdesk integrations, and number porting needs.",
+      },
+      {
+        step: 3,
+        title: "Shortlist inside the job cluster",
+        body: "Do not rank SMB VoIP, CRM CTI, dialers, and inbound CC as undifferentiated peers.",
+      },
+      {
+        step: 4,
+        title: "Pilot with one real call flow",
+        body: "Run one inbound queue or outbound dial session on the qualifying plan.",
+      },
+    ],
+    featureMatrixSlugs: [
+      "cloud-phone",
+      "call-routing",
+      "power-dialer",
+      "crm-cti",
+      "call-recording",
+      "contact-center-queues",
+    ],
+    faq: [
+      {
+        question: "What is VoIP and business phone software?",
+        answer:
+          "Cloud phone systems for business voice — numbers, IVR, dialers, and CRM call logging — distinct from team chat and WhatsApp messaging inboxes.",
+      },
+      {
+        question: "Do affiliate relationships affect these rankings?",
+        answer:
+          "No. Rankings follow the voip-business-phone editorial methodology. Affiliate status is excluded from every criterion score.",
+      },
+    ],
+    editorialStatus: "approved",
+    editorialNotes:
+      "Wave-1 2027-06 launch: KrispCall/CallHippo/Aircall/Freshcaller/Kixie affiliates. Parent BC finder voice-vs-chat job — no dedicated subcategory finder. Kixie recategorized from sales-intelligence. seo.indexable scheduled June 2027. methodologyVersion 1.0.0 voip-business-phone-editorial. handsOnTesting=false.",
+    metadata: {
+      status: "scheduled",
+      scheduledAt: "2027-06-20T06:00:00.000Z",
+      updatedAt: "2026-08-23T19:30:00.000Z",
+      researchStatus: "complete",
+    },
+    seo: {
+      title: "Best VoIP & Business Phone Software (2027 Buying Guide)",
+      description:
+        "Compare KrispCall, CallHippo, Aircall, Freshcaller, and Kixie by voice job cluster.",
+      indexable: false,
+      canonicalPath: "/best/voip-business-phone-software/",
+    },
+  },
+
+  {
+    id: "best-live-chat-software",
+    slug: "live-chat-software",
+    title: "Best Live Chat Software",
+    heroEyebrow: "BUYING GUIDE",
+    heroSubtitle:
+      "We evaluate live chat platforms on ease of use, messenger job fit, proactive chat, chatbot deflection, helpdesk integrations, visitor context, analytics, scalability, value, and AI assistance — for website messenger, proactive triggers, and AI deflection workflows.",
+    summary:
+      "Compare live chat tools by job cluster — per-agent website chat, conversation-cap deflection, and AI-first inbox — with an explicit methodology.",
+    quickAnswerIntro:
+      "There is no single best live chat tool — per-agent website chat, conversation-cap AI deflection, and AI inbox platforms are different purchases. Use the picks below by primary messenger job, then confirm pricing unit, proactive triggers, and helpdesk handoffs.",
+    categorySlug: "live-chat",
+    methodology:
+      "SoftwareGlimpse evaluates live chat platforms on ease of use, messenger job fit, proactive chat, chatbot deflection, helpdesk integrations, visitor context, analytics, scalability, value, and AI assistance. Products are compared inside live-chat job clusters only. Affiliate relationships never determine ranking.",
+    methodologyIntro:
+      "We evaluate live chat software by website messenger vs deflection vs AI inbox job fit — then proactive chat, integrations, and value. Commercial relationships do not determine recommendations.",
+    methodologyVersion: "1.0.0",
+    eligibleProductSlugs: ["tidio", "freshchat", "livechat", "intercom"],
+    useCaseSlugs: ["live-chat-support", "ai-customer-service"],
+    recommendations: [],
+    useCaseRecommendations: [
+      {
+        useCaseSlug: "live-chat-support",
+        label: "Editor's pick — per-agent website chat",
+        productSlug: "freshchat",
+        rationale:
+          "Freshchat is the per-agent website chat cluster award (overall 7.6) with a free 10-agent tier inside Freshworks. LiveChat (7.4) is the established Text ecosystem peer — not ranked as a single undifferentiated live-chat #1.",
+        approved: true,
+        editorialNotes:
+          "website-messenger cluster award. handsOnTesting=false. Affiliate economics excluded.",
+      },
+      {
+        useCaseSlug: "live-chat-support",
+        label: "Editor's pick — established website live chat",
+        productSlug: "livechat",
+        rationale:
+          "LiveChat is the established per-seat website chat cluster award (overall 7.4) from Text — mature widget and chatbot add-ons at published per-person tiers.",
+        approved: true,
+        editorialNotes:
+          "website-messenger co-peer award within live-chat-support. handsOnTesting=false.",
+      },
+      {
+        useCaseSlug: "ai-customer-service",
+        label: "Editor's pick — conversation-cap AI deflection",
+        productSlug: "tidio",
+        rationale:
+          "Tidio is the chatbot-deflection cluster award (overall 7.3) with Lyro AI and conversation-cap pricing — not a helpdesk or CRM purchase.",
+        approved: true,
+        editorialNotes:
+          "chatbot-deflection cluster award. handsOnTesting=false. Affiliate economics excluded.",
+      },
+      {
+        useCaseSlug: "ai-customer-service",
+        label: "Editorial anchor — AI-first inbox",
+        productSlug: "intercom",
+        rationale:
+          "Intercom is the AI inbox landscape anchor (BC methodology overall 8.0) with Fin outcome-priced resolutions — editorial anchor without affiliate; not ranked against per-agent chat peers on affiliate economics.",
+        approved: true,
+        editorialNotes:
+          "ai-inbox editorial anchor. Scored under business-communications methodology historically; live-chat-primary recategorization. handsOnTesting=false. No affiliate.",
+      },
+    ],
+    decisionPaths: [
+      {
+        priority: "Freshworks-aligned live chat with free 10-agent tier",
+        productSlug: "freshchat",
+        label: "Per-agent website chat path",
+        approved: true,
+      },
+      {
+        priority: "Established per-seat website chat (Text ecosystem)",
+        productSlug: "livechat",
+        label: "LiveChat path",
+        approved: true,
+      },
+      {
+        priority: "Website chat + Lyro AI deflection on conversation-cap pricing",
+        productSlug: "tidio",
+        label: "AI deflection path",
+        approved: true,
+      },
+      {
+        priority: "AI-first shared inbox with Fin-style resolutions",
+        productSlug: "intercom",
+        label: "AI inbox landscape (editorial anchor)",
+        approved: true,
+      },
+    ],
+    landscape: [
+      {
+        id: "website-messenger",
+        label: "Website messenger",
+        description:
+          "Per-agent live chat widgets. Freshchat is the Freshworks award; LiveChat is the Text ecosystem peer.",
+        productSlugs: ["freshchat", "livechat"],
+      },
+      {
+        id: "chatbot-deflection",
+        label: "Chatbot / AI deflection",
+        description:
+          "Conversation-cap pricing with flows and AI agents. Tidio is the deflection award.",
+        productSlugs: ["tidio"],
+      },
+      {
+        id: "ai-inbox",
+        label: "AI-first inbox (landscape)",
+        description:
+          "Shared inbox with outcome-priced AI resolutions. Intercom is editorial anchor — no affiliate; BC methodology score used as landscape note only.",
+        productSlugs: ["intercom"],
+      },
+    ],
+    buyingGuideSteps: [
+      {
+        step: 1,
+        title: "Name the messenger job",
+        body: "Website chat, proactive triggers, AI deflection, or AI inbox — one sentence.",
+      },
+      {
+        step: 2,
+        title: "Map pricing unit and integrations",
+        body: "Per-agent seats vs conversation caps vs AI outcomes; helpdesk and CRM handoffs.",
+      },
+      {
+        step: 3,
+        title: "Shortlist inside the job cluster",
+        body: "Do not rank per-agent chat, deflection tools, and AI inbox as undifferentiated peers.",
+      },
+      {
+        step: 4,
+        title: "Pilot with one real visitor workflow",
+        body: "Run one proactive trigger or deflection flow on the qualifying plan.",
+      },
+    ],
+    featureMatrixSlugs: [
+      "website-messenger",
+      "live-chat",
+      "proactive-chat",
+      "chatbot-ai-agent",
+      "helpdesk-integrations",
+      "agent-copilot",
+    ],
+    faq: [
+      {
+        question: "What is live chat software?",
+        answer:
+          "Website and in-app messengers with agent routing, proactive triggers, and chatbot deflection — distinct from full helpdesk ticketing.",
+      },
+      {
+        question: "Do affiliate relationships affect these rankings?",
+        answer:
+          "No. Rankings follow the live-chat editorial methodology. Affiliate status is excluded from every criterion score.",
+      },
+    ],
+    editorialStatus: "approved",
+    editorialNotes:
+      "Wave-1 2027-07 launch: Tidio/Freshchat affiliates; LiveChat/Intercom editorial anchors. Parent CS finder channel-primary job — no dedicated subcategory finder. Intercom recategorized from BC primary. seo.indexable scheduled July 2027. methodologyVersion 1.0.0 live-chat-editorial. handsOnTesting=false.",
+    metadata: {
+      status: "scheduled",
+      scheduledAt: "2027-07-20T06:00:00.000Z",
+      updatedAt: "2026-08-23T20:00:00.000Z",
+      researchStatus: "complete",
+    },
+    seo: {
+      title: "Best Live Chat Software (2027 Buying Guide)",
+      description:
+        "Compare Tidio, Freshchat, LiveChat, and Intercom by live-chat job cluster.",
+      indexable: false,
+      canonicalPath: "/best/live-chat-software/",
+    },
+  },
+
+  {
+    id: "best-helpdesk-ticketing-software",
+    slug: "helpdesk-ticketing-software",
+    title: "Best Helpdesk & Ticketing Software",
+    heroEyebrow: "BUYING GUIDE",
+    heroSubtitle:
+      "We evaluate helpdesk and ticketing platforms on ease of use, support job fit, workflow depth, omnichannel coverage, self-service, integrations, analytics, scalability, value, and AI assistance — for omnichannel helpdesk, SMB shared inbox, and ecommerce helpdesk workflows. ITSM moved to the itsm sub-hub.",
+    summary:
+      "Compare helpdesk tools by job cluster — omnichannel ticketing, SMB shared inbox, and ecommerce helpdesk — with an explicit methodology. ITSM moved to the itsm sub-hub.",
+    quickAnswerIntro:
+      "There is no single best helpdesk tool — enterprise omnichannel, mid-market Freshworks, SMB shared inbox, and ecommerce order-aware are different purchases. Use the itsm sub-hub for internal employee service desk. Then confirm pricing unit, SLA depth, and channel integrations.",
+    categorySlug: "helpdesk-ticketing",
+    methodology:
+      "SoftwareGlimpse evaluates helpdesk and ticketing platforms on ease of use, support job fit, workflow depth, omnichannel coverage, self-service, integrations, analytics, scalability, value, and AI assistance. Products are compared inside helpdesk job clusters only. Affiliate relationships never determine ranking.",
+    methodologyIntro:
+      "We evaluate helpdesk software by omnichannel ticketing vs SMB shared inbox vs ecommerce helpdesk job fit — then workflow depth, channels, self-service, and value. Commercial relationships do not determine recommendations.",
+    methodologyVersion: "1.0.0",
+    eligibleProductSlugs: [
+      "freshdesk",
+      "zendesk-suite",
+      "help-scout",
+      "gorgias",
+      "zoho-desk",
+    ],
+    useCaseSlugs: [
+      "helpdesk-ticketing",
+      "omnichannel-support",
+      "ecommerce-support",
+      "knowledge-base-self-service",
+    ],
+    recommendations: [],
+    useCaseRecommendations: [
+      {
+        useCaseSlug: "helpdesk-ticketing",
+        label: "Editor's pick — omnichannel helpdesk",
+        productSlug: "zendesk-suite",
+        rationale:
+          "Zendesk Suite is the omnichannel helpdesk cluster award (overall 8.2) for SLA/routing and Suite AI depth. Freshdesk (7.9) is the Freshworks mid-market co-peer award at a similar $19/agent floor — not ranked as a single undifferentiated helpdesk #1.",
+        approved: true,
+        editorialNotes:
+          "omnichannel-helpdesk cluster award. Freshdesk 7.9 co-peer. handsOnTesting=false. Affiliate economics excluded.",
+      },
+      {
+        useCaseSlug: "omnichannel-support",
+        label: "Editor's pick — Freshworks mid-market helpdesk",
+        productSlug: "freshdesk",
+        rationale:
+          "Freshdesk is the Freshworks mid-market helpdesk co-peer award (overall 7.9) with ecosystem alignment — not a stolen Zendesk Suite #1.",
+        approved: true,
+        editorialNotes:
+          "omnichannel-helpdesk co-peer award. handsOnTesting=false.",
+      },
+      {
+        useCaseSlug: "knowledge-base-self-service",
+        label: "Editor's pick — SMB shared inbox",
+        productSlug: "help-scout",
+        rationale:
+          "Help Scout is the SMB shared-inbox cluster award (overall 7.5) with Docs-first self-service and a free 5-user tier — not an enterprise omnichannel award.",
+        approved: true,
+        editorialNotes:
+          "smb-shared-inbox cluster award. handsOnTesting=false. Affiliate economics excluded.",
+      },
+      {
+        useCaseSlug: "helpdesk-ticketing",
+        label: "Editor's pick — value helpdesk",
+        productSlug: "zoho-desk",
+        rationale:
+          "Zoho Desk is the value helpdesk landscape peer (overall 7.8) with free 3-agent or $7 Express tiers — suite-adjacent, not enterprise omnichannel #1.",
+        approved: true,
+        editorialNotes:
+          "smb-shared-inbox value peer in landscape. handsOnTesting=false.",
+      },
+      {
+        useCaseSlug: "ecommerce-support",
+        label: "Editor's pick — ecommerce helpdesk",
+        productSlug: "gorgias",
+        rationale:
+          "Gorgias is the ecommerce-helpdesk cluster award (overall 7.7) for Shopify/Magento/BigCommerce order context and ticket-based pricing — not a generic B2B helpdesk peer.",
+        approved: true,
+        editorialNotes:
+          "ecommerce-helpdesk cluster award. handsOnTesting=false. Affiliate economics excluded.",
+      },
+    ],
+    decisionPaths: [
+      {
+        priority: "Enterprise omnichannel helpdesk with SLA/routing at scale",
+        productSlug: "zendesk-suite",
+        label: "Omnichannel helpdesk path",
+        approved: true,
+      },
+      {
+        priority: "Mid-market helpdesk with Freshworks ecosystem alignment",
+        productSlug: "freshdesk",
+        label: "Freshworks helpdesk path",
+        approved: true,
+      },
+      {
+        priority: "SMB shared inbox and Docs-first self-service (free 5-user tier)",
+        productSlug: "help-scout",
+        label: "SMB shared inbox path",
+        approved: true,
+      },
+      {
+        priority: "Budget helpdesk / Zoho suite adjacency (free 3-agent or $7 Express)",
+        productSlug: "zoho-desk",
+        label: "Value helpdesk path",
+        approved: true,
+      },
+      {
+        priority: "Ecommerce / Shopify order-aware helpdesk (ticket-based pricing)",
+        productSlug: "gorgias",
+        label: "Ecommerce helpdesk path",
+        approved: true,
+      },
+    ],
+    landscape: [
+      {
+        id: "omnichannel-helpdesk",
+        label: "Omnichannel helpdesk",
+        description:
+          "Enterprise and mid-market ticketing with SLA/routing. Zendesk Suite is the omnichannel award (8.2); Freshdesk is the Freshworks co-peer (7.9).",
+        productSlugs: ["zendesk-suite", "freshdesk"],
+      },
+      {
+        id: "smb-shared-inbox",
+        label: "SMB shared inbox",
+        description:
+          "Email-first shared inbox with Docs self-service. Help Scout is the SMB award (7.5); Zoho Desk is the value peer (7.8).",
+        productSlugs: ["help-scout", "zoho-desk"],
+      },
+      {
+        id: "ecommerce-helpdesk",
+        label: "Ecommerce helpdesk",
+        description:
+          "Order, refund, and storefront context in the agent workspace. Gorgias is the ecommerce helpdesk award (7.7) — ticket-based pricing, not per-agent.",
+        productSlugs: ["gorgias"],
+      },
+      {
+        id: "itsm-adjacent",
+        label: "ITSM / service desk (adjacent)",
+        description:
+          "Freshservice moved to itsm subcategory hub under it-development — landscape pointer only on helpdesk-ticketing best page.",
+        productSlugs: [],
+      },
+    ],
+    buyingGuideSteps: [
+      {
+        step: 1,
+        title: "Name the helpdesk job",
+        body: "Omnichannel ticketing, SMB shared inbox, or ecommerce order-aware support — one sentence.",
+      },
+      {
+        step: 2,
+        title: "Map pricing unit and channels",
+        body: "Per-agent seats vs ticket caps vs ITSM asset packs; email, chat, social, and voice channels.",
+      },
+      {
+        step: 3,
+        title: "Shortlist inside the job cluster",
+        body: "Do not rank omnichannel helpdesk, SMB inbox, and ecommerce helpdesk as undifferentiated peers — use the itsm sub-hub for internal IT service desk.",
+      },
+      {
+        step: 4,
+        title: "Pilot with real tickets",
+        body: "Run one week of real conversations on the qualifying plan — then decide.",
+      },
+    ],
+    featureMatrixSlugs: [
+      "helpdesk-ticketing",
+      "ticketing",
+      "knowledge-base",
+      "omnichannel-inbox",
+      "sla-routing",
+      "macros-automation",
+    ],
+    relatedToolPaths: [
+      "/tools/customer-service-finder/",
+      "/tools/customer-service-cost-calculator/",
+      "/tools/customer-service-requirements-builder/",
+      "/tools/customer-service-readiness-assessment/",
+    ],
+    faq: [
+      {
+        question: "What is helpdesk and ticketing software?",
+        answer:
+          "Shared inboxes, ticket workflows, SLA routing, knowledge bases, and omnichannel agent workspaces — distinct from website live chat widgets and phone-only VoIP.",
+      },
+      {
+        question: "Do affiliate relationships affect these rankings?",
+        answer:
+          "No. Rankings follow the helpdesk-ticketing editorial methodology. Affiliate status is excluded from every criterion score.",
+      },
+    ],
+    editorialStatus: "approved",
+    editorialNotes:
+      "Wave-1 2027-07 launch: Zendesk/Freshdesk/Help Scout/Zoho Desk/Gorgias affiliates. Freshservice moved to itsm sub-hub (Tier 30 Aug 2027). Parent CS finder helpdesk-primary job — no dedicated subcategory finder. seo.indexable scheduled July 2027. methodologyVersion 1.0.0 helpdesk-ticketing-editorial. handsOnTesting=false.",
+    metadata: {
+      status: "scheduled",
+      scheduledAt: "2027-07-22T06:00:00.000Z",
+      updatedAt: "2026-08-23T20:30:00.000Z",
+      researchStatus: "complete",
+    },
+    seo: {
+      title: "Best Helpdesk & Ticketing Software (2027 Buying Guide)",
+      description:
+        "Compare Zendesk Suite, Freshdesk, Help Scout, Zoho Desk, Gorgias, and Freshservice by helpdesk job cluster.",
+      indexable: false,
+      canonicalPath: "/best/helpdesk-ticketing-software/",
+    },
+  },
+
+  {
+    id: "best-dropshipping-pod-software",
+    slug: "dropshipping-pod-software",
+    title: "Best Dropshipping & Print-on-Demand Software",
+    heroEyebrow: "BUYING GUIDE",
+    heroSubtitle:
+      "We evaluate dropshipping and POD apps on ease of use, sourcing job fit, supplier catalog depth, storefront integrations, import automation, fulfillment margins, analytics, scalability, value, and AI assistance — for curated supplier import, marketplace automation, and POD fulfillment network workflows.",
+    summary:
+      "Compare dropshipping and POD tools by job cluster — supplier sourcing, marketplace import, and print-on-demand networks — with an explicit methodology.",
+    quickAnswerIntro:
+      "There is no single best dropshipping app — curated US/EU supplier import, AliExpress marketplace automation, and POD fulfillment networks are different purchases. Use the picks below by primary sourcing job, then confirm product caps, storefront integrations, and margin rules.",
+    categorySlug: "dropshipping-pod",
+    methodology:
+      "SoftwareGlimpse evaluates dropshipping and POD apps on ease of use, sourcing job fit, supplier catalog depth, storefront integrations, import automation, fulfillment margins, analytics, scalability, value, and AI assistance. Products are compared inside dropshipping/POD job clusters only. Affiliate relationships never determine ranking.",
+    methodologyIntro:
+      "We evaluate dropshipping and POD software by supplier import vs marketplace automation vs POD network job fit — then integrations, product caps, shipping regions, and value. Commercial relationships do not determine recommendations.",
+    methodologyVersion: "1.0.0",
+    eligibleProductSlugs: ["spocket", "alidrop", "printify"],
+    useCaseSlugs: ["dropshipping-sourcing", "online-storefront"],
+    recommendations: [],
+    useCaseRecommendations: [
+      {
+        useCaseSlug: "dropshipping-sourcing",
+        label: "Editor's pick — curated supplier sourcing",
+        productSlug: "spocket",
+        rationale:
+          "Spocket is the dropshipping-sourcing cluster award (overall 7.1) for US/EU supplier imports with published plan caps — requires an existing storefront.",
+        approved: true,
+        editorialNotes:
+          "dropshipping-sourcing cluster award. handsOnTesting=false. Affiliate economics excluded.",
+      },
+      {
+        useCaseSlug: "dropshipping-sourcing",
+        label: "Editor's pick — marketplace import automation",
+        productSlug: "alidrop",
+        rationale:
+          "AliDrop is the Shopify-native marketplace-import peer award (overall 7.0) for AliExpress/Temu/Alibaba automation — requires an existing Shopify storefront.",
+        approved: true,
+        editorialNotes:
+          "marketplace-import co-peer award. handsOnTesting=false. Affiliate economics excluded.",
+      },
+      {
+        useCaseSlug: "dropshipping-sourcing",
+        label: "Editor's pick — POD fulfillment network",
+        productSlug: "printify",
+        rationale:
+          "Printify is the print-on-demand cluster award (overall 6.9) for multi-provider POD catalogs and fulfillment — distinct from supplier-import sourcing peers.",
+        approved: true,
+        editorialNotes:
+          "pod-fulfillment cluster award. handsOnTesting=false. Affiliate economics excluded.",
+      },
+    ],
+    decisionPaths: [
+      {
+        priority: "Import US/EU curated suppliers into an existing store",
+        productSlug: "spocket",
+        label: "Supplier sourcing path",
+        approved: true,
+      },
+      {
+        priority: "Shopify-only AliExpress marketplace import automation",
+        productSlug: "alidrop",
+        label: "Marketplace import path",
+        approved: true,
+      },
+      {
+        priority: "Print-on-demand marketplace / multi-provider catalog",
+        productSlug: "printify",
+        label: "POD fulfillment path",
+        approved: true,
+      },
+    ],
+    landscape: [
+      {
+        id: "dropshipping-sourcing",
+        label: "Dropshipping supplier sourcing",
+        description:
+          "Curated supplier import and marketplace automation. Spocket is the sourcing award (7.1); AliDrop is the Shopify-native peer (7.0).",
+        productSlugs: ["spocket", "alidrop"],
+      },
+      {
+        id: "pod-fulfillment",
+        label: "Print-on-demand fulfillment",
+        description:
+          "POD catalogs and fulfillment networks into an existing store. Printify is the POD award (6.9) — print costs separate from subscription.",
+        productSlugs: ["printify"],
+      },
+    ],
+    buyingGuideSteps: [
+      {
+        step: 1,
+        title: "Name the sourcing job",
+        body: "Curated supplier import, marketplace automation, or POD fulfillment network — one sentence.",
+      },
+      {
+        step: 2,
+        title: "Confirm storefront and integrations",
+        body: "These apps require an existing Shopify, WooCommerce, or similar store — not a standalone storefront.",
+      },
+      {
+        step: 3,
+        title: "Shortlist inside the job cluster",
+        body: "Do not rank supplier import, marketplace automation, and POD networks as undifferentiated peers.",
+      },
+      {
+        step: 4,
+        title: "Pilot with a real product import",
+        body: "Import a slice of products, confirm shipping regions and margins on the qualifying plan.",
+      },
+    ],
+    featureMatrixSlugs: [
+      "dropshipping-sourcing",
+      "print-on-demand",
+      "supplier-catalog",
+      "product-import",
+      "storefront-integrations",
+    ],
+    relatedToolPaths: [
+      "/tools/ecommerce-finder/",
+      "/tools/ecommerce-cost-calculator/",
+      "/tools/ecommerce-requirements-builder/",
+      "/tools/ecommerce-readiness-assessment/",
+    ],
+    faq: [
+      {
+        question: "What is dropshipping and POD software?",
+        answer:
+          "Apps that source supplier catalogs, import products to an existing storefront, and fulfill orders without holding inventory — distinct from hosted storefront platforms and 3PL shipping labels.",
+      },
+      {
+        question: "Do affiliate relationships affect these rankings?",
+        answer:
+          "No. Rankings follow the dropshipping-pod editorial methodology. Affiliate status is excluded from every criterion score.",
+      },
+    ],
+    editorialStatus: "approved",
+    editorialNotes:
+      "Wave-1 2027-07 launch: Spocket/AliDrop/Printify affiliates. Parent ecommerce finder with fulfillment-model constraint (dropshipping/POD) — no dedicated subcategory finder. seo.indexable scheduled July 2027. methodologyVersion 1.0.0 dropshipping-pod-editorial. handsOnTesting=false.",
+    metadata: {
+      status: "scheduled",
+      scheduledAt: "2027-07-30T06:00:00.000Z",
+      updatedAt: "2026-08-23T20:30:00.000Z",
+      researchStatus: "complete",
+    },
+    seo: {
+      title: "Best Dropshipping & Print-on-Demand Software (2027 Buying Guide)",
+      description:
+        "Compare Spocket, AliDrop, and Printify by dropshipping and POD job cluster.",
+      indexable: false,
+      canonicalPath: "/best/dropshipping-pod-software/",
+    },
+  },
+
+  {
+    id: "best-fulfillment-shipping-software",
+    slug: "fulfillment-shipping-software",
+    title: "Best Fulfillment & Shipping Software",
+    heroEyebrow: "BUYING GUIDE",
+    heroSubtitle:
+      "We evaluate fulfillment and shipping platforms on ease of use, ops job fit, carrier coverage, label workflows, returns management, 3PL outsourcing, storefront integrations, analytics, scalability, value, and automation — for outsourced 3PL warehouse fulfillment and multi-carrier shipping label workflows.",
+    summary:
+      "Compare fulfillment and shipping tools by job cluster — 3PL outsourcing and multi-carrier shipping labels — with an explicit methodology.",
+    quickAnswerIntro:
+      "There is no single best fulfillment tool — outsourced 3PL warehouse fulfillment and multi-carrier shipping label generation are different purchases. Use the picks below by primary ops job, then confirm carrier coverage, returns workflows, and per-label or per-pick TCO.",
+    categorySlug: "fulfillment-shipping",
+    methodology:
+      "SoftwareGlimpse evaluates fulfillment and shipping platforms on ease of use, ops job fit, carrier coverage, label workflows, returns management, 3PL outsourcing, storefront integrations, analytics, scalability, value, and automation. Products are compared inside fulfillment job clusters only. Affiliate relationships never determine ranking.",
+    methodologyIntro:
+      "We evaluate fulfillment software by 3PL outsourcing vs multi-carrier label tool job fit — then carrier coverage, returns, integrations, and per-label or per-order TCO. Commercial relationships do not determine recommendations.",
+    methodologyVersion: "1.0.0",
+    eligibleProductSlugs: ["shipbob", "sendcloud", "spocket", "alidrop"],
+    useCaseSlugs: ["order-fulfillment"],
+    recommendations: [],
+    useCaseRecommendations: [
+      {
+        useCaseSlug: "order-fulfillment",
+        label: "Editor's pick — 3PL warehouse fulfillment",
+        productSlug: "shipbob",
+        rationale:
+          "ShipBob is the 3PL fulfillment cluster award (overall 6.6) for outsourced warehouse pick/pack with a merchant portal — distinct from shipping-label-only tools.",
+        approved: true,
+        editorialNotes:
+          "3pl-fulfillment cluster award. handsOnTesting=false. Affiliate economics excluded.",
+      },
+      {
+        useCaseSlug: "order-fulfillment",
+        label: "Editor's pick — multi-carrier shipping labels",
+        productSlug: "sendcloud",
+        rationale:
+          "Sendcloud is the shipping-labels cluster award (overall 6.3) for multi-carrier rate shopping and label generation — not a 3PL warehouse outsource purchase.",
+        approved: true,
+        editorialNotes:
+          "shipping-labels cluster award. handsOnTesting=false. Affiliate economics excluded.",
+      },
+    ],
+    decisionPaths: [
+      {
+        priority: "Outsource warehouse pick/pack with a merchant fulfillment portal",
+        productSlug: "shipbob",
+        label: "3PL fulfillment path",
+        approved: true,
+      },
+      {
+        priority: "Multi-carrier label generation and rate shopping",
+        productSlug: "sendcloud",
+        label: "Shipping labels path",
+        approved: true,
+      },
+    ],
+    landscape: [
+      {
+        id: "3pl-fulfillment",
+        label: "3PL warehouse fulfillment",
+        description:
+          "Outsourced warehouse pick/pack with merchant portal. ShipBob is the 3PL award (6.6) — storage and per-order fees separate from SaaS.",
+        productSlugs: ["shipbob"],
+      },
+      {
+        id: "shipping-labels",
+        label: "Multi-carrier shipping labels",
+        description:
+          "Rate shopping and label generation for merchants shipping from their own warehouse. Sendcloud is the shipping-labels award (6.3).",
+        productSlugs: ["sendcloud"],
+      },
+      {
+        id: "dropshipping-adjacent",
+        label: "Dropshipping sourcing (adjacent)",
+        description:
+          "Spocket and AliDrop are dropshipping-pod primary — landscape pointer only on fulfillment-shipping best page. Not ranked as 3PL or label-tool peers.",
+        productSlugs: [],
+      },
+    ],
+    buyingGuideSteps: [
+      {
+        step: 1,
+        title: "Name the fulfillment job",
+        body: "Outsourced 3PL warehouse fulfillment or multi-carrier shipping labels — one sentence.",
+      },
+      {
+        step: 2,
+        title: "Map carrier coverage and TCO",
+        body: "Per-label fees, storage, pick/pack costs, and returns workflows matter as much as SaaS subscription tiles.",
+      },
+      {
+        step: 3,
+        title: "Shortlist inside the job cluster",
+        body: "Do not rank 3PL outsourcing and shipping-label tools as undifferentiated fulfillment peers.",
+      },
+      {
+        step: 4,
+        title: "Pilot with real shipment volume",
+        body: "Run labels or a 3PL test batch on the qualifying plan for your regions and carriers.",
+      },
+    ],
+    featureMatrixSlugs: [
+      "order-fulfillment",
+      "shipping-labels",
+      "3pl-fulfillment",
+      "carrier-integrations",
+      "returns-management",
+      "product-import",
+    ],
+    relatedToolPaths: [
+      "/tools/ecommerce-finder/",
+      "/tools/ecommerce-cost-calculator/",
+      "/tools/ecommerce-requirements-builder/",
+      "/tools/ecommerce-readiness-assessment/",
+    ],
+    faq: [
+      {
+        question: "What is fulfillment and shipping software?",
+        answer:
+          "Order fulfillment workflows, shipping labels, returns, and 3PL outsourcing for merchants with an existing storefront — distinct from storefront platforms and dropshipping product sourcing.",
+      },
+      {
+        question: "Are Spocket and AliDrop ranked here?",
+        answer:
+          "No. Spocket and AliDrop are dropshipping-pod primary and appear as landscape pointers only — not ranked as 3PL or shipping-label peers.",
+      },
+      {
+        question: "Do affiliate relationships affect these rankings?",
+        answer:
+          "No. Rankings follow the fulfillment-shipping editorial methodology. Affiliate status is excluded from every criterion score.",
+      },
+    ],
+    editorialStatus: "approved",
+    editorialNotes:
+      "Wave-1 2027-07 launch: ShipBob/Sendcloud affiliates. Spocket/AliDrop eligible for landscape pointer only (dropshipping-pod primary). Parent ecommerce finder with fulfillment-model constraint (3PL/shipping labels) — no dedicated subcategory finder. seo.indexable scheduled July 2027. methodologyVersion 1.0.0 fulfillment-shipping-editorial. handsOnTesting=false.",
+    metadata: {
+      status: "scheduled",
+      scheduledAt: "2027-07-30T06:00:00.000Z",
+      updatedAt: "2026-08-23T20:30:00.000Z",
+      researchStatus: "complete",
+    },
+    seo: {
+      title: "Best Fulfillment & Shipping Software (2027 Buying Guide)",
+      description:
+        "Compare ShipBob and Sendcloud by fulfillment job cluster — 3PL outsourcing vs multi-carrier shipping labels.",
+      indexable: false,
+      canonicalPath: "/best/fulfillment-shipping-software/",
+    },
+  },
+
+  {
+    id: "best-ats-recruiting-software",
+    slug: "ats-recruiting-software",
+    title: "Best ATS & Recruiting Software",
+    heroEyebrow: "BUYING GUIDE",
+    heroSubtitle:
+      "We evaluate ATS and recruiting platforms on ease of use, hiring job fit, career sites, interview workflows, integrations, analytics, scalability, value, and AI assistance — for SMB ATS and structured hiring workflows.",
+    summary:
+      "Compare ATS tools by job cluster — SMB applicant tracking and structured hiring — with an explicit methodology.",
+    quickAnswerIntro:
+      "There is no single best ATS — SMB free-tier paths, mid-market hiring, and structured enterprise hiring are different purchases. Use the picks below by primary recruiting job, then confirm per-seat vs job-posting TCO.",
+    categorySlug: "ats-recruiting",
+    methodology:
+      "SoftwareGlimpse evaluates ATS and recruiting platforms on ease of use, hiring job fit, career sites, interview workflows, integrations, analytics, scalability, value, and AI assistance. Products are compared inside ATS clusters only. Affiliate relationships never determine ranking.",
+    methodologyIntro:
+      "We evaluate ATS software by SMB ATS vs structured hiring job fit — then pipeline depth, career sites, interview scheduling, and value. Commercial relationships do not determine recommendations.",
+    methodologyVersion: "1.0.0",
+    eligibleProductSlugs: ["breezy-hr", "freshteam", "greenhouse", "workable"],
+    useCaseSlugs: ["recruiting-ats"],
+    recommendations: [],
+    useCaseRecommendations: [
+      {
+        useCaseSlug: "recruiting-ats",
+        label: "Editor's pick — SMB ATS",
+        productSlug: "breezy-hr",
+        rationale:
+          "Breezy HR is the SMB ATS cluster award (overall 7.9) with a free Bootstrap tier and published Growth floors — distinct from enterprise structured-hiring peers.",
+        approved: true,
+        editorialNotes:
+          "smb-ats cluster award. handsOnTesting=false. Affiliate economics excluded.",
+      },
+      {
+        useCaseSlug: "recruiting-ats",
+        label: "Editor's pick — structured hiring ATS",
+        productSlug: "greenhouse",
+        rationale:
+          "Greenhouse is the structured-hiring cluster award (overall 8.0) for scorecards and hiring-team governance — editorial anchor without affiliate on this sub-hub.",
+        approved: true,
+        editorialNotes:
+          "structured-hiring editorial anchor. handsOnTesting=false. No affiliate.",
+      },
+      {
+        useCaseSlug: "recruiting-ats",
+        label: "Affiliate inventory — Freshworks ATS (sunset)",
+        productSlug: "freshteam",
+        rationale:
+          "Freshteam is affiliate inventory only — Freshworks sunset announced ~Mar 2026; listed for coverage completeness, not ranked as a structured-hiring #1.",
+        approved: true,
+        editorialNotes:
+          "sunset inventory. handsOnTesting=false. Affiliate economics excluded from ranking.",
+      },
+    ],
+    decisionPaths: [
+      {
+        priority: "SMB ATS with free Bootstrap tier and published Growth floors",
+        productSlug: "breezy-hr",
+        label: "SMB ATS path",
+        approved: true,
+      },
+      {
+        priority: "Structured hiring with scorecards and governance",
+        productSlug: "greenhouse",
+        label: "Structured hiring path",
+        approved: true,
+      },
+      {
+        priority: "Published-floor ATS with trial (landscape)",
+        productSlug: "workable",
+        label: "Workable landscape path",
+        approved: true,
+      },
+    ],
+    landscape: [
+      {
+        id: "smb-ats",
+        label: "SMB ATS",
+        description:
+          "Career sites, pipelines, and interview workflows with transparent SMB pricing. Breezy HR is the SMB award (7.9); Freshteam is sunset inventory only.",
+        productSlugs: ["breezy-hr", "freshteam"],
+      },
+      {
+        id: "structured-hiring",
+        label: "Structured hiring ATS",
+        description:
+          "Scorecards, kits, and hiring-team governance. Greenhouse is the structured-hiring award (8.0); Workable (7.2) is the published-floor landscape peer.",
+        productSlugs: ["greenhouse", "workable"],
+      },
+    ],
+    buyingGuideSteps: [
+      { step: 1, title: "Name the hiring job", body: "SMB ATS with career site vs structured enterprise hiring — one sentence." },
+      { step: 2, title: "Map seats, jobs, and integrations", body: "Per-recruiter seats, active job caps, and HRIS handoffs matter as much as list price." },
+      { step: 3, title: "Shortlist inside the ATS cluster", body: "Do not rank SMB ATS, structured hiring, and HRIS-with-ATS modules as undifferentiated peers." },
+      { step: 4, title: "Pilot with one open role", body: "Run one hiring pool through career site, pipeline, and interview scheduling on the qualifying plan." },
+    ],
+    featureMatrixSlugs: [
+      "applicant-tracking",
+      "career-site-job-boards",
+      "interview-scheduling",
+      "hris-integrations",
+      "analytics-reporting",
+    ],
+    relatedToolPaths: [
+      "/tools/hr-finder/",
+      "/tools/hr-cost-calculator/",
+      "/tools/hr-requirements-builder/",
+      "/tools/hr-readiness-assessment/",
+    ],
+    faq: [
+      {
+        question: "What is ATS and recruiting software?",
+        answer:
+          "Applicant tracking, career sites, job-board posting, and interview workflows — distinct from core HRIS, payroll, and frontline scheduling.",
+      },
+      {
+        question: "Is Freshteam still recommended?",
+        answer:
+          "Freshteam appears for affiliate inventory completeness only. Freshworks announced a sunset ~Mar 2026 — confirm current buyability before you shortlist.",
+      },
+      {
+        question: "Do affiliate relationships affect these rankings?",
+        answer:
+          "No. Rankings follow the ats-recruiting editorial methodology. Affiliate status is excluded from every criterion score.",
+      },
+    ],
+    editorialStatus: "approved",
+    editorialNotes:
+      "Wave-1 2027-08 launch: Breezy HR/Freshteam affiliates; Greenhouse/Workable editorial anchors. Parent HR finder with hiring-team-size constraints — no dedicated subcategory finder. seo.indexable scheduled August 2027. methodologyVersion 1.0.0 ats-recruiting-editorial. handsOnTesting=false.",
+    metadata: {
+      status: "scheduled",
+      scheduledAt: "2027-08-20T06:00:00.000Z",
+      updatedAt: "2026-08-23T22:00:00.000Z",
+      researchStatus: "complete",
+    },
+    seo: {
+      title: "Best ATS & Recruiting Software (2027 Buying Guide)",
+      description:
+        "Compare Breezy HR, Freshteam, Greenhouse, and Workable by ATS job cluster.",
+      indexable: false,
+      canonicalPath: "/best/ats-recruiting-software/",
+    },
+  },
+
+  {
+    id: "best-time-attendance-software",
+    slug: "time-attendance-software",
+    title: "Best Time & Attendance Software",
+    heroEyebrow: "BUYING GUIDE",
+    heroSubtitle:
+      "We evaluate time and attendance platforms on ease of use, clock-in workflows, shift scheduling, GPS/geofence, mobile frontline readiness, integrations, analytics, scalability, value, and automation — for time clocks and frontline WFM suites.",
+    summary:
+      "Compare time & attendance tools by job cluster — dedicated time clocks vs frontline WFM suites — with an explicit methodology.",
+    quickAnswerIntro:
+      "There is no single best time tool — GPS time-clock specialists and full frontline WFM suites are different purchases. Use the picks below by primary job, then confirm per-user vs location TCO.",
+    categorySlug: "time-attendance",
+    methodology:
+      "SoftwareGlimpse evaluates time and attendance platforms on ease of use, clock-in workflows, shift scheduling, GPS/geofence, mobile frontline readiness, integrations, analytics, scalability, value, and automation. Products are compared inside time & attendance clusters only. Affiliate relationships never determine ranking.",
+    methodologyIntro:
+      "We evaluate time & attendance software by time-clock vs WFM-suite job fit — then attendance policies, scheduling depth, and value. Commercial relationships do not determine recommendations.",
+    methodologyVersion: "1.0.0",
+    eligibleProductSlugs: ["connecteam", "jibble"],
+    useCaseSlugs: ["time-attendance", "workforce-scheduling", "frontline-ops"],
+    recommendations: [],
+    useCaseRecommendations: [
+      {
+        useCaseSlug: "workforce-scheduling",
+        label: "Editor's pick — frontline WFM suite",
+        productSlug: "connecteam",
+        rationale:
+          "Connecteam is the frontline-WFM cluster award (overall 8.3) for mobile scheduling, comms, and deskless ops — not a lightweight clock-only tool.",
+        approved: true,
+        editorialNotes:
+          "frontline-wfm cluster award. handsOnTesting=false. Affiliate economics excluded.",
+      },
+      {
+        useCaseSlug: "time-attendance",
+        label: "Editor's pick — time clock & attendance",
+        productSlug: "jibble",
+        rationale:
+          "Jibble is the time-clock cluster award (overall 7.7) with GPS/face-recognition clock-in and a generous free plan — distinct from full WFM suite pricing.",
+        approved: true,
+        editorialNotes:
+          "time-clock cluster award. handsOnTesting=false. Affiliate economics excluded.",
+      },
+    ],
+    decisionPaths: [
+      {
+        priority: "Frontline scheduling, comms, and deskless ops in one mobile app",
+        productSlug: "connecteam",
+        label: "Frontline WFM path",
+        approved: true,
+      },
+      {
+        priority: "GPS / face-recognition time clock with attendance policies",
+        productSlug: "jibble",
+        label: "Time clock path",
+        approved: true,
+      },
+    ],
+    landscape: [
+      {
+        id: "frontline-wfm",
+        label: "Frontline WFM suite",
+        description:
+          "Mobile scheduling, comms, and deskless task hubs. Connecteam is the WFM award (8.3).",
+        productSlugs: ["connecteam"],
+      },
+      {
+        id: "time-clock",
+        label: "Time clock & attendance",
+        description:
+          "GPS, kiosk, and face-recognition clock-in with timesheets. Jibble is the time-clock award (7.7).",
+        productSlugs: ["jibble"],
+      },
+    ],
+    buyingGuideSteps: [
+      { step: 1, title: "Name the frontline job", body: "Shift scheduling with comms vs dedicated time clock — one sentence." },
+      { step: 2, title: "Map users, locations, and clock rules", body: "Per-user vs per-location pricing; GPS, geofence, and kiosk requirements." },
+      { step: 3, title: "Shortlist inside the cluster", body: "Do not rank WFM suites and clock-only tools as undifferentiated peers." },
+      { step: 4, title: "Pilot one week of shifts", body: "Run one rota and one payroll export on the qualifying plan." },
+    ],
+    featureMatrixSlugs: [
+      "time-attendance",
+      "workforce-scheduling",
+      "gps-geofence-clockin",
+      "frontline-comms",
+      "hris-integrations",
+    ],
+    relatedToolPaths: [
+      "/tools/hr-finder/",
+      "/tools/hr-cost-calculator/",
+      "/tools/hr-requirements-builder/",
+      "/tools/hr-readiness-assessment/",
+    ],
+    faq: [
+      {
+        question: "What is time & attendance software?",
+        answer:
+          "Clock-in, timesheets, shift scheduling, and attendance policies for hourly teams — distinct from core HRIS and ATS hiring workflows.",
+      },
+      {
+        question: "Do affiliate relationships affect these rankings?",
+        answer:
+          "No. Rankings follow the time-attendance editorial methodology. Affiliate status is excluded from every criterion score.",
+      },
+    ],
+    editorialStatus: "approved",
+    editorialNotes:
+      "Wave-1 2027-08 launch: Connecteam/Jibble affiliates. Parent HR finder with shift-scheduling dimension — no dedicated subcategory finder. seo.indexable scheduled August 2027. methodologyVersion 1.0.0 time-attendance-editorial. handsOnTesting=false.",
+    metadata: {
+      status: "scheduled",
+      scheduledAt: "2027-08-22T06:00:00.000Z",
+      updatedAt: "2026-08-23T22:00:00.000Z",
+      researchStatus: "complete",
+    },
+    seo: {
+      title: "Best Time & Attendance Software (2027 Buying Guide)",
+      description:
+        "Compare Connecteam and Jibble by time & attendance job cluster.",
+      indexable: false,
+      canonicalPath: "/best/time-attendance-software/",
+    },
+  },
+
+  {
+    id: "best-web-hosting-software",
+    slug: "web-hosting-software",
+    title: "Best Web Hosting & Server Management Software",
+    heroEyebrow: "BUYING GUIDE",
+    heroSubtitle:
+      "We evaluate hosting control panels on ease of use, server administration depth, domain/SSL workflows, backup/restore, security, integrations, scalability, value, and automation — deferred hub until peer inventory expands.",
+    summary:
+      "Compare hosting control panels by server administration job — single-SKU inventory with landscape peers noted.",
+    quickAnswerIntro:
+      "Hosting panel purchases are distinct from managed WordPress hosts and cloud PaaS. Plesk is the Wave-1 affiliate SKU; expand cPanel/DirectAdmin peer depth before treating this hub as indexable.",
+    categorySlug: "web-hosting",
+    methodology:
+      "SoftwareGlimpse evaluates hosting control panels on ease of use, server admin depth, domain/SSL, backup/restore, security, integrations, scalability, value, and automation. Products are compared inside hosting-panel clusters only. Affiliate relationships never determine ranking.",
+    methodologyIntro:
+      "We evaluate web hosting panels by per-server licence job fit — then admin depth, security, and TCO. Commercial relationships do not determine recommendations.",
+    methodologyVersion: "1.0.0",
+    eligibleProductSlugs: ["plesk"],
+    useCaseSlugs: ["hosting-operations"],
+    recommendations: [],
+    useCaseRecommendations: [
+      {
+        useCaseSlug: "hosting-operations",
+        label: "Editor's pick — hosting control panel",
+        productSlug: "plesk",
+        rationale:
+          "Plesk is the hosting-panel cluster award (overall 7.4) with published Web Admin/Pro/Host per-server licences — single affiliate SKU; expand peer inventory before indexable hub.",
+        approved: true,
+        editorialNotes:
+          "hosting-panel cluster award. defer indexable hub. handsOnTesting=false. Affiliate economics excluded.",
+      },
+    ],
+    decisionPaths: [
+      {
+        priority: "Multi-site server administration on VPS or dedicated hosts",
+        productSlug: "plesk",
+        label: "Hosting panel path",
+        approved: true,
+      },
+    ],
+    landscape: [
+      {
+        id: "hosting-panel",
+        label: "Hosting control panel",
+        description:
+          "Per-server panel licences for multi-site administration. Plesk is the award (7.4); cPanel and DirectAdmin are IT-parent landscape peers — not ranked here until onboarded.",
+        productSlugs: ["plesk"],
+      },
+    ],
+    buyingGuideSteps: [
+      { step: 1, title: "Name the hosting job", body: "Panel licence vs managed host vs cloud PaaS — one sentence." },
+      { step: 2, title: "Map servers and editions", body: "Web Admin vs Pro vs Host tiers; VPS count and mailbox limits." },
+      { step: 3, title: "Confirm peer depth", body: "Single-SKU hub — expand inventory before SEO indexable launch." },
+      { step: 4, title: "Pilot on one server", body: "Provision one site and one mailbox on the qualifying licence." },
+    ],
+    featureMatrixSlugs: ["hosting-panel", "server-admin", "domain-ssl", "backup-restore"],
+    relatedToolPaths: [
+      "/tools/it-development-finder/",
+      "/tools/it-development-cost-calculator/",
+      "/tools/it-development-requirements-builder/",
+      "/tools/it-development-readiness-assessment/",
+    ],
+    faq: [
+      {
+        question: "Why is this hub deferred?",
+        answer:
+          "Web-hosting is a single affiliate SKU today. We schedule guides and best-page content but keep seo.indexable false until 3+ hosting-panel peers are onboarded.",
+      },
+      {
+        question: "Do affiliate relationships affect these rankings?",
+        answer:
+          "No. Rankings follow the web-hosting editorial methodology. Affiliate status is excluded from every criterion score.",
+      },
+    ],
+    editorialStatus: "approved",
+    editorialNotes:
+      "Wave-1 2027-08 launch: Plesk affiliate (what-is Tier 16 Jan 2027). pageIntent hub — not indexable until inventory expands. Parent IT finder hosting constraint. methodologyVersion 1.0.0 web-hosting-editorial. handsOnTesting=false.",
+    metadata: {
+      status: "scheduled",
+      scheduledAt: "2027-08-30T06:00:00.000Z",
+      updatedAt: "2026-08-23T22:00:00.000Z",
+      researchStatus: "complete",
+    },
+    seo: {
+      title: "Best Web Hosting Software (2027 Buying Guide)",
+      description:
+        "Compare Plesk hosting control panels — deferred indexable hub until peer inventory expands.",
+      indexable: false,
+      canonicalPath: "/best/web-hosting-software/",
+    },
+  },
+
+  {
+    id: "best-social-media-management-software",
+    slug: "social-media-management-software",
+    title: "Best Social Media Management Software",
+    heroEyebrow: "BUYING GUIDE",
+    heroSubtitle:
+      "We evaluate social media management products on ease of use, scheduling job fit, publishing workflows, social analytics, integrations, scalability, value, and AI assistance — for scheduling, publishing, and channel analytics (not listening or influencer campaigns).",
+    summary:
+      "Compare social schedulers and social suites by job cluster — mainstream SMB scheduling, content recycling, and mid-market suites — with an explicit methodology.",
+    quickAnswerIntro:
+      "Social media management is scheduling and publishing — distinct from social listening (Brand24) or influencer tools (Zypper) on the parent social-media-marketing hub. Use the picks below by primary scheduling job, then confirm per-profile and seat TCO.",
+    categorySlug: "social-media-management",
+    methodology:
+      "SoftwareGlimpse evaluates social media management platforms on ease of use, scheduling job fit, publishing workflows, social analytics, integrations, scalability, value for money, and AI assistance. Products are compared inside scheduling clusters only. Affiliate relationships never determine ranking.",
+    methodologyIntro:
+      "We evaluate social media management software by scheduler vs suite job fit — then calendar depth, inbox workflows, analytics, and value. Commercial relationships do not determine recommendations.",
+    methodologyVersion: "1.0.0",
+    eligibleProductSlugs: [
+      "buffer",
+      "socialbee",
+      "hootsuite",
+      "agorapulse",
+      "later",
+    ],
+    useCaseSlugs: ["social-media-management"],
+    recommendations: [],
+    useCaseRecommendations: [
+      {
+        useCaseSlug: "social-media-management",
+        label: "Editor's pick — mainstream social scheduler",
+        productSlug: "buffer",
+        rationale:
+          "Buffer is the mainstream scheduler award (overall 6.6) with free tier and per-channel Essentials/Team pricing — editorial anchor without affiliate on this sub-hub.",
+        approved: true,
+        editorialNotes:
+          "mainstream-scheduler cluster award. handsOnTesting=false. Affiliate economics excluded.",
+      },
+      {
+        useCaseSlug: "social-media-management",
+        label: "Editor's pick — content recycling & agency workspaces",
+        productSlug: "socialbee",
+        rationale:
+          "SocialBee is the content-recycling cluster award for evergreen queues, calendars, and agency profile packs — affiliate SKU with what-is scheduled Oct 2026.",
+        approved: true,
+        editorialNotes:
+          "recycling-scheduler cluster award. handsOnTesting=false. Affiliate economics excluded.",
+      },
+      {
+        useCaseSlug: "social-media-management",
+        label: "Editor's pick — mid-market social suite (landscape)",
+        productSlug: "hootsuite",
+        rationale:
+          "Hootsuite is the social-suite landscape anchor for publish + inbox + analytics at scale — not ranked against lightweight schedulers.",
+        approved: true,
+        editorialNotes:
+          "social-suite editorial anchor. handsOnTesting=false. No affiliate.",
+      },
+    ],
+    decisionPaths: [
+      {
+        priority: "Mainstream SMB scheduling with per-channel pricing",
+        productSlug: "buffer",
+        label: "Mainstream scheduler path",
+        approved: true,
+      },
+      {
+        priority: "Content recycling and agency workspace calendars",
+        productSlug: "socialbee",
+        label: "Content recycling path",
+        approved: true,
+      },
+      {
+        priority: "Mid-market social suite (publish + inbox + analytics)",
+        productSlug: "hootsuite",
+        label: "Social suite landscape path",
+        approved: true,
+      },
+    ],
+    landscape: [
+      {
+        id: "mainstream-scheduler",
+        label: "Mainstream social scheduler",
+        description:
+          "Per-channel pricing and approachable onboarding. Buffer is the mainstream award (6.6).",
+        productSlugs: ["buffer"],
+      },
+      {
+        id: "recycling-scheduler",
+        label: "Content recycling scheduler",
+        description:
+          "Evergreen queues and agency workspaces. SocialBee is the recycling award (6.6).",
+        productSlugs: ["socialbee"],
+      },
+      {
+        id: "social-suite",
+        label: "Social suite (landscape)",
+        description:
+          "Publish + inbox + analytics for larger teams. Hootsuite, Agorapulse, and Later as suite landscape peers.",
+        productSlugs: ["hootsuite", "agorapulse", "later"],
+      },
+    ],
+    buyingGuideSteps: [
+      { step: 1, title: "Name the scheduling job", body: "Lightweight scheduler vs content recycling vs full social suite — one sentence." },
+      { step: 2, title: "Map profiles, seats, and channels", body: "Per-channel pricing, profile packs, and inbox seats decide real cost." },
+      { step: 3, title: "Shortlist inside the scheduler cluster", body: "Do not rank schedulers against listening or influencer tools." },
+      { step: 4, title: "Pilot one week of posts", body: "Queue one week across your networks on the qualifying plan." },
+    ],
+    featureMatrixSlugs: [
+      "social-scheduling",
+      "content-calendar",
+      "social-analytics",
+      "ai-content-generation",
+    ],
+    relatedToolPaths: [
+      "/tools/marketing-finder/",
+      "/tools/marketing-cost-calculator/",
+      "/tools/marketing-requirements-builder/",
+      "/tools/marketing-readiness-assessment/",
+    ],
+    faq: [
+      {
+        question: "How is this different from social media marketing software?",
+        answer:
+          "Social media management covers scheduling and publishing. Listening (Brand24) and influencer campaigns (Zypper) stay on the parent social-media-marketing hub.",
+      },
+      {
+        question: "Do affiliate relationships affect these rankings?",
+        answer:
+          "No. Rankings follow the social-media-management editorial methodology. Affiliate status is excluded from every criterion score.",
+      },
+    ],
+    editorialStatus: "approved",
+    editorialNotes:
+      "Wave-1 2027-09 launch: Buffer/Hootsuite anchors + SocialBee affiliate (what-is Tier 13 Oct 2026). Indexable marketing sub-hub. Parent marketing finder with social job filter. methodologyVersion 1.0.0 social-media-management-editorial. handsOnTesting=false.",
+    metadata: {
+      status: "scheduled",
+      scheduledAt: "2027-09-20T06:00:00.000Z",
+      updatedAt: "2026-08-23T23:00:00.000Z",
+      researchStatus: "complete",
+    },
+    seo: {
+      title: "Best Social Media Management Software (2027 Buying Guide)",
+      description:
+        "Compare Buffer, SocialBee, and Hootsuite by scheduling job cluster — mainstream scheduler, content recycling, and social suites.",
+      indexable: false,
+      canonicalPath: "/best/social-media-management-software/",
+    },
+  },
+
+  {
+    id: "best-landing-pages-cro-software",
+    slug: "landing-pages-cro-software",
+    title: "Best Landing Page & CRO Software",
+    heroEyebrow: "BUYING GUIDE",
+    heroSubtitle:
+      "We evaluate landing page and CRO platforms on ease of use, conversion workflow depth, funnel builder fit, A/B testing, forms, integrations, scalability, value, and AI assistance — distinct from email MAP platforms.",
+    summary:
+      "Compare funnel builders, landing page platforms, and Freshworks CRO tooling by job cluster — with an explicit methodology.",
+    quickAnswerIntro:
+      "Landing pages and CRO are a distinct purchase from email marketing automation. Kartra suits creator all-in-one funnels; Leadpages suits campaign LP/CRO; Freshmarketer fits Freshworks-aligned MA with landing pages.",
+    categorySlug: "landing-pages-cro",
+    methodology:
+      "SoftwareGlimpse evaluates landing page and CRO platforms on ease of use, conversion workflow depth, funnel builder fit, A/B testing, forms and lead capture, integrations, scalability, value for money, and AI assistance. Products are compared inside LP/CRO clusters only. Affiliate relationships never determine ranking.",
+    methodologyIntro:
+      "We evaluate landing/CRO software by creator funnel vs campaign LP vs Freshworks MA job fit — then conversion depth, testing, and value. Commercial relationships do not determine recommendations.",
+    methodologyVersion: "1.0.0",
+    eligibleProductSlugs: ["kartra", "leadpages", "freshmarketer"],
+    useCaseSlugs: ["landing-pages", "funnel-building", "lead-generation"],
+    recommendations: [],
+    useCaseRecommendations: [
+      {
+        useCaseSlug: "funnel-building",
+        label: "Editor's pick — creator all-in-one funnels",
+        productSlug: "kartra",
+        rationale:
+          "Kartra is the creator all-in-one funnel award (overall 7.4) with courses, checkouts, and email beside landing pages — what-is scheduled Tier 11 Jan 2027.",
+        approved: true,
+        editorialNotes:
+          "creator-funnel cluster award. handsOnTesting=false. Affiliate economics excluded.",
+      },
+      {
+        useCaseSlug: "landing-pages",
+        label: "Editor's pick — campaign landing pages & CRO",
+        productSlug: "leadpages",
+        rationale:
+          "Leadpages is the campaign LP/CRO award for A/B tests, Smart Traffic, and conversion workflows — what-is scheduled Tier 16 Jan 2027 (not rescheduled here).",
+        approved: true,
+        editorialNotes:
+          "campaign-lp cluster award. handsOnTesting=false. Affiliate economics excluded.",
+      },
+      {
+        useCaseSlug: "lead-generation",
+        label: "Editor's pick — Freshworks MA with landing pages",
+        productSlug: "freshmarketer",
+        rationale:
+          "Freshmarketer is the Freshworks-aligned MA/CRO award for teams standardizing on Freshworks CRM with landing pages and journeys.",
+        approved: true,
+        editorialNotes:
+          "freshworks-cro cluster award. handsOnTesting=false. Affiliate economics excluded.",
+      },
+    ],
+    decisionPaths: [
+      {
+        priority: "Creator funnels + email + courses in one stack",
+        productSlug: "kartra",
+        label: "Creator all-in-one funnel path",
+        approved: true,
+      },
+      {
+        priority: "Campaign landing pages with A/B testing and CRO",
+        productSlug: "leadpages",
+        label: "Campaign LP/CRO path",
+        approved: true,
+      },
+      {
+        priority: "Freshworks CRM-aligned MA with landing pages",
+        productSlug: "freshmarketer",
+        label: "Freshworks CRO path",
+        approved: true,
+      },
+    ],
+    landscape: [
+      {
+        id: "creator-funnel",
+        label: "Creator all-in-one funnels",
+        description:
+          "Funnels, email/SMS, courses, and checkouts. Kartra is the creator funnel award (7.4).",
+        productSlugs: ["kartra"],
+      },
+      {
+        id: "campaign-lp",
+        label: "Campaign landing pages & CRO",
+        description:
+          "LP builders with A/B testing and conversion optimization. Leadpages is the campaign LP award.",
+        productSlugs: ["leadpages"],
+      },
+      {
+        id: "freshworks-cro",
+        label: "Freshworks MA + landing pages",
+        description:
+          "CRM-aligned marketing automation with landing pages and journeys. Freshmarketer is the Freshworks CRO award.",
+        productSlugs: ["freshmarketer"],
+      },
+    ],
+    buyingGuideSteps: [
+      { step: 1, title: "Name the conversion job", body: "Creator all-in-one funnel vs campaign LP vs Freshworks MA — one sentence." },
+      { step: 2, title: "Map contacts, pages, and tests", body: "Contact caps, page limits, and A/B test gates decide real cost." },
+      { step: 3, title: "Shortlist inside the LP/CRO cluster", body: "Do not rank funnels against ESP-only or social scheduling tools." },
+      { step: 4, title: "Pilot one conversion workflow", body: "Publish one LP or funnel step with a form and one test on the qualifying plan." },
+    ],
+    featureMatrixSlugs: [
+      "landing-pages",
+      "funnel-builder",
+      "forms-lead-capture",
+      "ab-testing",
+      "marketing-automation",
+    ],
+    relatedToolPaths: [
+      "/tools/marketing-finder/",
+      "/tools/marketing-cost-calculator/",
+      "/tools/marketing-requirements-builder/",
+      "/tools/marketing-readiness-assessment/",
+    ],
+    faq: [
+      {
+        question: "Is this the same as email marketing software?",
+        answer:
+          "No. Landing pages and CRO focus on conversion pages, funnels, and tests — distinct from ESP-led email automation on the email-marketing hub.",
+      },
+      {
+        question: "Do affiliate relationships affect these rankings?",
+        answer:
+          "No. Rankings follow the landing-pages-cro editorial methodology. Affiliate status is excluded from every criterion score.",
+      },
+    ],
+    editorialStatus: "approved",
+    editorialNotes:
+      "Wave-1 2027-09 launch: Kartra (Tier 11), Leadpages (Tier 16), Freshmarketer affiliates. Indexable marketing sub-hub. methodologyVersion 1.0.0 landing-pages-cro-editorial. handsOnTesting=false.",
+    metadata: {
+      status: "scheduled",
+      scheduledAt: "2027-09-22T06:00:00.000Z",
+      updatedAt: "2026-08-23T23:00:00.000Z",
+      researchStatus: "complete",
+    },
+    seo: {
+      title: "Best Landing Page & CRO Software (2027 Buying Guide)",
+      description:
+        "Compare Kartra, Leadpages, and Freshmarketer by LP/CRO job cluster — creator funnels, campaign pages, and Freshworks MA.",
+      indexable: false,
+      canonicalPath: "/best/landing-pages-cro-software/",
+    },
+  },
+
+  {
+    id: "best-ppc-advertising-software",
+    slug: "ppc-advertising-software",
+    title: "Best PPC & Advertising Automation Software",
+    heroEyebrow: "BUYING GUIDE",
+    heroSubtitle:
+      "We evaluate PPC and advertising automation platforms on ease of use, paid-media job fit, campaign workflow depth, reporting, integrations, scalability, value, and automation — deferred hub until 4+ PPC-native peers onboard.",
+    summary:
+      "Compare PPC management and paid-social automation tools by job cluster — two affiliate SKUs with landscape peers noted.",
+    quickAnswerIntro:
+      "PPC and ad ops are niche but monetizable — Diginius suits PPC/digital marketing management; Birch suits paid-social advertising automation. Hub stays deferred until peer inventory expands.",
+    categorySlug: "ppc-advertising",
+    methodology:
+      "SoftwareGlimpse evaluates PPC and advertising automation platforms on ease of use, paid-media job fit, campaign workflow depth, reporting, integrations, scalability, value for money, and automation. Products are compared inside PPC clusters only. Affiliate relationships never determine ranking.",
+    methodologyIntro:
+      "We evaluate PPC software by search/PPC management vs paid-social automation job fit — then workflow depth, reporting, and value. Commercial relationships do not determine recommendations.",
+    methodologyVersion: "1.0.0",
+    eligibleProductSlugs: ["diginius", "birch"],
+    useCaseSlugs: ["marketing-automation"],
+    recommendations: [],
+    useCaseRecommendations: [
+      {
+        useCaseSlug: "marketing-automation",
+        label: "Editor's pick — PPC & digital marketing management",
+        productSlug: "diginius",
+        rationale:
+          "Diginius is the PPC management cluster award for paid search and digital marketing ops — what-is scheduled Tier 11 Jan 2027.",
+        approved: true,
+        editorialNotes:
+          "ppc-management cluster award. defer indexable hub. handsOnTesting=false. Affiliate economics excluded.",
+      },
+      {
+        useCaseSlug: "marketing-automation",
+        label: "Editor's pick — paid-social advertising automation",
+        productSlug: "birch",
+        rationale:
+          "Birch (formerly Revealbot) is the paid-social automation cluster award for rules-based ad ops — single affiliate SKU; expand peers before indexable hub.",
+        approved: true,
+        editorialNotes:
+          "paid-social-automation cluster award. defer indexable hub. handsOnTesting=false. Affiliate economics excluded.",
+      },
+    ],
+    decisionPaths: [
+      {
+        priority: "PPC and digital marketing campaign management",
+        productSlug: "diginius",
+        label: "PPC management path",
+        approved: true,
+      },
+      {
+        priority: "Paid-social rules and advertising automation",
+        productSlug: "birch",
+        label: "Paid-social automation path",
+        approved: true,
+      },
+    ],
+    landscape: [
+      {
+        id: "ppc-management",
+        label: "PPC & digital marketing management",
+        description:
+          "Paid search and digital marketing ops. Diginius is the PPC management award.",
+        productSlugs: ["diginius"],
+      },
+      {
+        id: "paid-social-automation",
+        label: "Paid-social advertising automation",
+        description:
+          "Rules-based paid social ad ops (formerly Revealbot). Birch is the paid-social automation award.",
+        productSlugs: ["birch"],
+      },
+    ],
+    buyingGuideSteps: [
+      { step: 1, title: "Name the paid-media job", body: "Search/PPC management vs paid-social automation — one sentence." },
+      { step: 2, title: "Map ad accounts and spend", body: "Account limits, seat pricing, and automation rules decide real cost." },
+      { step: 3, title: "Confirm peer depth", body: "Two-SKU hub — expand inventory before SEO indexable launch." },
+      { step: 4, title: "Pilot on one campaign", body: "Run one campaign workflow with reporting on the qualifying plan." },
+    ],
+    featureMatrixSlugs: ["ads-management", "marketing-automation", "analytics-reporting"],
+    relatedToolPaths: [
+      "/tools/marketing-finder/",
+      "/tools/marketing-cost-calculator/",
+      "/tools/marketing-requirements-builder/",
+      "/tools/marketing-readiness-assessment/",
+    ],
+    faq: [
+      {
+        question: "Why is this hub deferred?",
+        answer:
+          "PPC advertising has two affiliate SKUs today. We schedule guides and best-page content but keep seo.indexable false until 4+ PPC-native peers are onboarded.",
+      },
+      {
+        question: "Do affiliate relationships affect these rankings?",
+        answer:
+          "No. Rankings follow the ppc-advertising editorial methodology. Affiliate status is excluded from every criterion score.",
+      },
+    ],
+    editorialStatus: "approved",
+    editorialNotes:
+      "Wave-1 2027-09 launch: Diginius (Tier 11), Birch affiliates. pageIntent hub — not indexable until 4+ peers. Parent marketing finder. methodologyVersion 1.0.0 ppc-advertising-editorial. handsOnTesting=false.",
+    metadata: {
+      status: "scheduled",
+      scheduledAt: "2027-09-30T06:00:00.000Z",
+      updatedAt: "2026-08-23T23:00:00.000Z",
+      researchStatus: "complete",
+    },
+    seo: {
+      title: "Best PPC & Advertising Automation Software (2027 Buying Guide)",
+      description:
+        "Compare Diginius and Birch by PPC job cluster — deferred indexable hub until peer inventory expands.",
+      indexable: false,
+      canonicalPath: "/best/ppc-advertising-software/",
+    },
+  },
+
+  {
+    id: "best-itsm-software",
+    slug: "itsm-software",
+    title: "Best ITSM Software",
+    heroEyebrow: "BUYING GUIDE",
+    heroSubtitle:
+      "We evaluate ITSM platforms on ease of use, ITIL workflow depth, incident/change/problem management, service catalog, asset/CMDB, integrations, analytics, scalability, value, and AI assistance — deferred hub until ITSM-native peer depth expands.",
+    summary:
+      "Compare IT service management tools by internal service desk job — single affiliate SKU with enterprise landscape peers noted.",
+    quickAnswerIntro:
+      "ITSM is internal employee service desk — not customer ecommerce helpdesk. Freshservice is the Wave-1 affiliate SKU; expand ITSM-native peers before treating this hub as indexable.",
+    categorySlug: "itsm",
+    methodology:
+      "SoftwareGlimpse evaluates ITSM platforms on ease of use, ITIL workflow depth, incident/change/problem management, service catalog, asset/CMDB, integrations, analytics, scalability, value, and AI assistance. Products are compared inside ITSM clusters only. Affiliate relationships never determine ranking.",
+    methodologyIntro:
+      "We evaluate ITSM software by SMB/mid-market vs enterprise ITIL job fit — then workflow depth, asset management, and value. Commercial relationships do not determine recommendations.",
+    methodologyVersion: "1.0.0",
+    eligibleProductSlugs: ["freshservice"],
+    useCaseSlugs: ["itsm-service-desk"],
+    recommendations: [],
+    useCaseRecommendations: [
+      {
+        useCaseSlug: "itsm-service-desk",
+        label: "Editor's pick — published-price ITSM",
+        productSlug: "freshservice",
+        rationale:
+          "Freshservice is the published-price ITSM cluster award (overall 8.0) for incidents, problems, changes, and assets — distinct from Freshdesk customer helpdesk. Single affiliate SKU; expand ITSM-native peers before indexable hub.",
+        approved: true,
+        editorialNotes:
+          "smb-mid-market-itsm cluster award. defer indexable hub. handsOnTesting=false. Affiliate economics excluded.",
+      },
+    ],
+    decisionPaths: [
+      {
+        priority: "Published-price SMB / mid-market ITSM with ITIL modules",
+        productSlug: "freshservice",
+        label: "Published-price ITSM path",
+        approved: true,
+      },
+    ],
+    landscape: [
+      {
+        id: "published-price-itsm",
+        label: "Published-price ITSM",
+        description:
+          "Starter/Growth/Pro agent tiers with ITIL modules. Freshservice is the award (8.0) — defer indexable hub until 3+ ITSM-native affiliates onboard.",
+        productSlugs: ["freshservice"],
+      },
+      {
+        id: "enterprise-itsm-adjacent",
+        label: "Enterprise ITSM (adjacent)",
+        description:
+          "ServiceNow, Jira Service Management, and other enterprise peers remain on parent IT best page — landscape pointer only on ITSM sub-hub.",
+        productSlugs: [],
+      },
+    ],
+    buyingGuideSteps: [
+      { step: 1, title: "Scope internal vs customer-facing", body: "Employee IT requests vs customer helpdesk — one sentence." },
+      { step: 2, title: "Map ITIL modules and pricing unit", body: "Incidents, changes, assets, and per-agent vs IT-user pricing." },
+      { step: 3, title: "Confirm peer depth", body: "Single-SKU hub — expand ITSM-native inventory before SEO indexable launch." },
+      { step: 4, title: "Pilot one service desk queue", body: "Run incidents and one change workflow on the qualifying plan." },
+    ],
+    featureMatrixSlugs: [
+      "incident-management",
+      "change-problem",
+      "service-catalog",
+      "itsm-service-desk",
+      "itsm-ai",
+    ],
+    relatedToolPaths: [
+      "/tools/it-development-finder/",
+      "/tools/it-development-cost-calculator/",
+      "/tools/it-development-requirements-builder/",
+      "/tools/it-development-readiness-assessment/",
+    ],
+    faq: [
+      {
+        question: "How is ITSM different from helpdesk ticketing?",
+        answer:
+          "ITSM handles internal employee incidents, changes, and assets. Customer helpdesk ticketing handles external support inboxes — Freshdesk vs Freshservice are different buyer jobs.",
+      },
+      {
+        question: "Why is this hub deferred?",
+        answer:
+          "ITSM needs 3+ ITSM-native peers before an indexable sub-hub. Freshservice is scheduled content; seo.indexable stays false until inventory expands.",
+      },
+      {
+        question: "Do affiliate relationships affect these rankings?",
+        answer:
+          "No. Rankings follow the itsm editorial methodology. Affiliate status is excluded from every criterion score.",
+      },
+    ],
+    editorialStatus: "approved",
+    editorialNotes:
+      "Wave-1 2027-08 launch: Freshservice affiliate (what-is Tier 7 Nov 2026). pageIntent hub — not indexable until 3+ ITSM-native peers. Scope internal vs customer-facing ITSM. methodologyVersion 1.0.0 itsm-editorial. handsOnTesting=false.",
+    metadata: {
+      status: "scheduled",
+      scheduledAt: "2027-08-30T06:00:00.000Z",
+      updatedAt: "2026-08-23T22:00:00.000Z",
+      researchStatus: "complete",
+    },
+    seo: {
+      title: "Best ITSM Software (2027 Buying Guide)",
+      description:
+        "Compare Freshservice for internal IT service desk — deferred indexable hub until peer inventory expands.",
+      indexable: false,
+      canonicalPath: "/best/itsm-software/",
     },
   },
 

@@ -8,6 +8,11 @@ import {
   getSoftware,
   getUseCases,
 } from "@/data";
+import {
+  getPublicationContextSync,
+  getSearchIndexPublicationContext,
+  type PublicationContext,
+} from "@/domain/publication-context";
 import { existsSync, readFileSync } from "node:fs";
 import path from "node:path";
 import { getGuideSearchEntries } from "./guide-search-entries";
@@ -139,11 +144,23 @@ function resourceFormatsFromProfile(
  * Build normalized searchable index from published (publicly available) entities.
  * Excludes drafts, empty shells, admin/redirect routes, and non-routable tools.
  */
-export function buildSearchIndexFromSources(): SearchDocument[] {
+export function buildSearchIndexFromSources(options?: {
+  context?: PublicationContext;
+  now?: Date;
+}): SearchDocument[] {
+  const context =
+    options?.context ??
+    (process.env.NODE_ENV === "production"
+      ? getSearchIndexPublicationContext()
+      : getPublicationContextSync());
+  const listOptions = {
+    context,
+    now: options?.now,
+  };
   const docs: SearchDocument[] = [];
   const seen = new Set<string>();
   const softwareBySlug = new Map(
-    getSoftware()
+    getSoftware(listOptions)
       .filter(
         (s) =>
           s.productLifecycle === "active" &&
@@ -203,7 +220,7 @@ export function buildSearchIndexFromSources(): SearchDocument[] {
     });
   }
 
-  for (const comparison of getComparisons()) {
+  for (const comparison of getComparisons(listOptions)) {
     const [aSlug, bSlug] = comparison.productSlugs;
     const a = aSlug ? softwareBySlug.get(aSlug) : undefined;
     const b = bSlug ? softwareBySlug.get(bSlug) : undefined;
@@ -247,7 +264,7 @@ export function buildSearchIndexFromSources(): SearchDocument[] {
     });
   }
 
-  for (const guide of getGuideSearchEntries()) {
+  for (const guide of getGuideSearchEntries(listOptions)) {
     pushUnique(docs, seen, {
       id: guide.id,
       type: "GUIDE",
@@ -320,7 +337,7 @@ export function buildSearchIndexFromSources(): SearchDocument[] {
     });
   }
 
-  for (const resource of getResources()) {
+  for (const resource of getResources(listOptions)) {
     const profile = getResourceHubProfile(resource.slug);
     const formats = resourceFormatsFromProfile(profile?.downloadFiles);
 
@@ -360,7 +377,7 @@ export function buildSearchIndexFromSources(): SearchDocument[] {
     });
   }
 
-  for (const page of getBestPages()) {
+  for (const page of getBestPages(listOptions)) {
     pushUnique(docs, seen, {
       id: page.id,
       type: "BEST_PAGE",
@@ -390,7 +407,7 @@ export function buildSearchIndexFromSources(): SearchDocument[] {
     });
   }
 
-  for (const category of getCategories()) {
+  for (const category of getCategories(listOptions)) {
     pushUnique(docs, seen, {
       id: category.id,
       type: "CATEGORY",
@@ -422,7 +439,7 @@ export function buildSearchIndexFromSources(): SearchDocument[] {
     });
   }
 
-  for (const industry of getIndustries()) {
+  for (const industry of getIndustries(listOptions)) {
     pushUnique(docs, seen, {
       id: industry.id,
       type: "INDUSTRY",
@@ -449,7 +466,7 @@ export function buildSearchIndexFromSources(): SearchDocument[] {
     });
   }
 
-  for (const useCase of getUseCases()) {
+  for (const useCase of getUseCases(listOptions)) {
     if (!getUseCaseHubProfile(useCase.slug)) continue;
     pushUnique(docs, seen, {
       id: useCase.id,
@@ -477,7 +494,7 @@ export function buildSearchIndexFromSources(): SearchDocument[] {
     });
   }
 
-  for (const capability of getCapabilities()) {
+  for (const capability of getCapabilities(listOptions)) {
     if (!getCapabilityHubProfile(capability.slug)) continue;
     pushUnique(docs, seen, {
       id: capability.id,
@@ -592,10 +609,24 @@ export function buildSearchIndexFromSources(): SearchDocument[] {
  * Resolve the search index — prefers the build-time artifact on disk, then
  * in-process cache, then a live compile from catalogue sources.
  */
-export function buildSearchIndex(options?: { force?: boolean }): SearchDocument[] {
-  if (cachedIndex && !options?.force) return cachedIndex;
+export function buildSearchIndex(options?: {
+  force?: boolean;
+  context?: PublicationContext;
+}): SearchDocument[] {
+  const context =
+    options?.context ??
+    (process.env.NODE_ENV === "production"
+      ? getSearchIndexPublicationContext()
+      : getPublicationContextSync());
 
-  if (!options?.force) {
+  const usePrecompiled =
+    !options?.force &&
+    !options?.context &&
+    process.env.NODE_ENV === "production";
+
+  if (cachedIndex && !options?.force && !options?.context) return cachedIndex;
+
+  if (usePrecompiled) {
     const precompiled = loadPrecompiledSearchIndex();
     if (precompiled) {
       cachedIndex = precompiled;
@@ -604,14 +635,17 @@ export function buildSearchIndex(options?: { force?: boolean }): SearchDocument[
     }
   }
 
-  cachedIndex = buildSearchIndexFromSources();
+  cachedIndex = buildSearchIndexFromSources({ context });
   cachedRuntime = null;
   return cachedIndex;
 }
 
-export function getSearchRuntime(options?: { force?: boolean }): SearchRuntimeIndex {
+export function getSearchRuntime(options?: {
+  force?: boolean;
+  context?: PublicationContext;
+}): SearchRuntimeIndex {
   const documents = buildSearchIndex(options);
-  if (cachedRuntime && !options?.force) return cachedRuntime;
+  if (cachedRuntime && !options?.force && !options?.context) return cachedRuntime;
   cachedRuntime = buildSearchRuntimeIndex(documents);
   return cachedRuntime;
 }

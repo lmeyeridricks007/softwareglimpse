@@ -39,7 +39,10 @@ import {
   type UseCase,
   type UserPriority,
 } from "@/domain";
-import { isPubliclyAvailable } from "@/domain/publishing";
+import {
+  filterByPublicationVisibility,
+  type PublicationListOptions,
+} from "@/domain/publication-context";
 import { alternativesSeed } from "../seed/alternatives";
 import { bestPagesSeed } from "../seed/best";
 import { categoriesSeed } from "../seed/categories";
@@ -61,11 +64,10 @@ import { relationshipsSeed } from "../seed/relationships";
 import { resourcesSeed } from "../seed/resources";
 import { listCandidateSoftware } from "../onboarding/store";
 import { softwareSeed } from "../seed/software";
+import { applyCategoryMembershipPatches } from "../seed/category-product-membership";
+import { applyComparisonCategoryPatches } from "../seed/comparison-category-patches";
 
-export type ListOptions = {
-  includeUnpublished?: boolean;
-  now?: Date;
-};
+export type ListOptions = PublicationListOptions;
 
 type Cache = {
   software: Software[] | null;
@@ -144,21 +146,14 @@ function assertUniqueSlugs(items: { slug: string }[], label: string): void {
   }
 }
 
-function filterPublic<T extends { metadata: { status: Software["metadata"]["status"]; publishedAt?: string; scheduledAt?: string } }>(
-  items: T[],
-  options: ListOptions = {},
-): T[] {
-  if (options.includeUnpublished) return items;
-  return items.filter((item) =>
-    isPubliclyAvailable(
-      {
-        status: item.metadata.status,
-        publishedAt: item.metadata.publishedAt,
-        scheduledAt: item.metadata.scheduledAt,
-      },
-      options.now,
-    ),
-  );
+function filterPublic<T extends {
+  metadata: {
+    status: Software["metadata"]["status"];
+    publishedAt?: string;
+    scheduledAt?: string;
+  };
+}>(items: T[], options: ListOptions = {}): T[] {
+  return filterByPublicationVisibility(items, options);
 }
 
 function loadSoftware(): Software[] {
@@ -172,7 +167,7 @@ function loadSoftware(): Software[] {
     } catch {
       candidates = [];
     }
-    cache.software = [...fromSeed, ...candidates];
+    cache.software = applyCategoryMembershipPatches([...fromSeed, ...candidates]);
     assertUniqueSlugs(cache.software, "software");
   }
   return cache.software;
@@ -217,7 +212,8 @@ function assertUniqueRelationshipKeys(items: SoftwareRelationship[]): void {
 
 function loadComparisons(): Comparison[] {
   if (!cache.comparisons) {
-    cache.comparisons = parseAll(ComparisonSchema, comparisonsSeed, "comparison");
+    const parsed = parseAll(ComparisonSchema, comparisonsSeed, "comparison");
+    cache.comparisons = applyComparisonCategoryPatches(parsed);
     assertUniqueSlugs(cache.comparisons, "comparison");
     for (const comparison of cache.comparisons) {
       const canonical = canonicalizeComparisonSlug(comparison.productSlugs);

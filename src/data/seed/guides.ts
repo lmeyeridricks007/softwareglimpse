@@ -68,9 +68,61 @@ import { hrCategoryGuides } from "./guides-hr-cluster";
 import { ecommerceCategoryGuides } from "./guides-ecommerce-cluster";
 import { csCategoryGuides } from "./guides-cs-cluster";
 import { csProductGuides } from "./guides-product-cs";
+import { affiliateDeepenProductGuides } from "./guides-product-affiliate-deepen";
+import { aiAffiliateDeepenProductGuides } from "./guides-product-ai-affiliate-deepen";
+import { crmAffiliateDeepenProductGuides } from "./guides-product-crm-affiliate-deepen";
+import { ecommerceAffiliateDeepenProductGuides } from "./guides-product-ecommerce-affiliate-deepen";
+import { hrAffiliateDeepenProductGuides } from "./guides-product-hr-affiliate-deepen";
+import { itAffiliateDeepenProductGuides } from "./guides-product-it-affiliate-deepen";
+import { marketingAffiliateDeepenProductGuides } from "./guides-product-marketing-affiliate-deepen";
+import { pmAffiliateDeepenProductGuides } from "./guides-product-pm-affiliate-deepen";
+import { editorialAnchorProductGuides } from "./guides-product-editorial-anchors";
 import { aiCategoryGuides } from "./guides-ai-cluster";
 import { itDevelopmentCategoryGuides } from "./guides-it-development-cluster";
 import { marketingCategoryGuides } from "./guides-marketing-cluster";
+import { accountingFinanceCategoryGuides } from "./guides-accounting-finance-cluster";
+import { accountingFinanceAffiliateDeepenProductGuides } from "./guides-product-accounting-finance-affiliate-deepen";
+import { socialMediaMarketingCategoryGuides } from "./guides-social-media-marketing-cluster";
+import { socialMediaMarketingAffiliateDeepenProductGuides } from "./guides-product-social-media-marketing-affiliate-deepen";
+import { webinarVirtualEventsCategoryGuides } from "./guides-webinar-virtual-events-cluster";
+import { webinarVirtualEventsAffiliateDeepenProductGuides } from "./guides-product-webinar-virtual-events-affiliate-deepen";
+import { lmsCourseCreationCategoryGuides } from "./guides-lms-course-creation-cluster";
+import { lmsCourseCreationAffiliateDeepenProductGuides } from "./guides-product-lms-course-creation-affiliate-deepen";
+import { websiteDigitalPresenceCategoryGuides } from "./guides-website-digital-presence-cluster";
+import { websiteDigitalPresenceAffiliateDeepenProductGuides } from "./guides-product-website-digital-presence-affiliate-deepen";
+import { analyticsBiCategoryGuides } from "./guides-analytics-bi-cluster";
+import { analyticsBiAffiliateDeepenProductGuides } from "./guides-product-analytics-bi-affiliate-deepen";
+import { fieldServiceOperationsCategoryGuides } from "./guides-field-service-operations-cluster";
+import { fieldServiceOperationsProductGuides } from "./guides-product-field-service-operations-affiliate-deepen";
+import { reputationReviewsCategoryGuides } from "./guides-reputation-reviews-cluster";
+import { aiWritingCategoryGuides } from "./guides-ai-writing-cluster";
+import { aiWritingAffiliateDeepenProductGuides } from "./guides-product-ai-writing-affiliate-deepen";
+import { aiWebsiteBuilderCategoryGuides } from "./guides-ai-website-builder-cluster";
+import { aiWebsiteBuilderAffiliateDeepenProductGuides } from "./guides-product-ai-website-builder-affiliate-deepen";
+import { voipBusinessPhoneCategoryGuides } from "./guides-voip-business-phone-cluster";
+import { voipBusinessPhoneAffiliateDeepenProductGuides } from "./guides-product-voip-business-phone-affiliate-deepen";
+import { liveChatCategoryGuides } from "./guides-live-chat-cluster";
+import { liveChatAffiliateDeepenProductGuides } from "./guides-product-live-chat-affiliate-deepen";
+import { helpdeskTicketingCategoryGuides } from "./guides-helpdesk-ticketing-cluster";
+import { helpdeskTicketingAffiliateDeepenProductGuides } from "./guides-product-helpdesk-ticketing-affiliate-deepen";
+import { dropshippingPodCategoryGuides } from "./guides-dropshipping-pod-cluster";
+import { dropshippingPodAffiliateDeepenProductGuides } from "./guides-product-dropshipping-pod-affiliate-deepen";
+import { fulfillmentShippingCategoryGuides } from "./guides-fulfillment-shipping-cluster";
+import { fulfillmentShippingAffiliateDeepenProductGuides } from "./guides-product-fulfillment-shipping-affiliate-deepen";
+import { atsRecruitingCategoryGuides } from "./guides-ats-recruiting-cluster";
+import { timeAttendanceCategoryGuides } from "./guides-time-attendance-cluster";
+import { webHostingCategoryGuides } from "./guides-web-hosting-cluster";
+import { itsmCategoryGuides } from "./guides-itsm-cluster";
+import { socialMediaManagementCategoryGuides } from "./guides-social-media-management-cluster";
+import { landingPagesCroCategoryGuides } from "./guides-landing-pages-cro-cluster";
+import { ppcAdvertisingCategoryGuides } from "./guides-ppc-advertising-cluster";
+import { socialMediaManagementAffiliateDeepenProductGuides } from "./guides-product-social-media-management-affiliate-deepen";
+import { landingPagesCroAffiliateDeepenProductGuides } from "./guides-product-landing-pages-cro-affiliate-deepen";
+import { ppcAdvertisingAffiliateDeepenProductGuides } from "./guides-product-ppc-advertising-affiliate-deepen";
+import { atsRecruitingAffiliateDeepenProductGuides } from "./guides-product-ats-recruiting-affiliate-deepen";
+import { timeAttendanceAffiliateDeepenProductGuides } from "./guides-product-time-attendance-affiliate-deepen";
+import { webHostingAffiliateDeepenProductGuides } from "./guides-product-web-hosting-affiliate-deepen";
+import { itsmAffiliateDeepenProductGuides } from "./guides-product-itsm-affiliate-deepen";
 
 /**
  * Educational guides (supporting articles). Published and indexable.
@@ -150,7 +202,59 @@ export const guidesSeed: GuidePage[] = [
   ...ecommerceCategoryGuides,
   ...csCategoryGuides,
   ...csProductGuides,
+  ...affiliateDeepenProductGuides,
+  ...aiAffiliateDeepenProductGuides,
+  ...crmAffiliateDeepenProductGuides,
+  ...ecommerceAffiliateDeepenProductGuides,
+  ...hrAffiliateDeepenProductGuides,
+  ...itAffiliateDeepenProductGuides,
+  ...marketingAffiliateDeepenProductGuides,
+  ...pmAffiliateDeepenProductGuides,
+  ...editorialAnchorProductGuides,
   ...aiCategoryGuides,
   ...itDevelopmentCategoryGuides,
   ...marketingCategoryGuides,
+  ...accountingFinanceCategoryGuides,
+  ...accountingFinanceAffiliateDeepenProductGuides,
+  ...socialMediaMarketingCategoryGuides,
+  ...socialMediaMarketingAffiliateDeepenProductGuides,
+  ...webinarVirtualEventsCategoryGuides,
+  ...webinarVirtualEventsAffiliateDeepenProductGuides,
+  ...lmsCourseCreationCategoryGuides,
+  ...lmsCourseCreationAffiliateDeepenProductGuides,
+  ...websiteDigitalPresenceCategoryGuides,
+  ...websiteDigitalPresenceAffiliateDeepenProductGuides,
+  ...analyticsBiCategoryGuides,
+  ...analyticsBiAffiliateDeepenProductGuides,
+  ...fieldServiceOperationsCategoryGuides,
+  ...fieldServiceOperationsProductGuides,
+  ...reputationReviewsCategoryGuides,
+  ...aiWritingCategoryGuides,
+  ...aiWritingAffiliateDeepenProductGuides,
+  ...aiWebsiteBuilderCategoryGuides,
+  ...aiWebsiteBuilderAffiliateDeepenProductGuides,
+  ...voipBusinessPhoneCategoryGuides,
+  ...voipBusinessPhoneAffiliateDeepenProductGuides,
+  ...liveChatCategoryGuides,
+  ...liveChatAffiliateDeepenProductGuides,
+  ...helpdeskTicketingCategoryGuides,
+  ...helpdeskTicketingAffiliateDeepenProductGuides,
+  ...dropshippingPodCategoryGuides,
+  ...dropshippingPodAffiliateDeepenProductGuides,
+  ...fulfillmentShippingCategoryGuides,
+  ...fulfillmentShippingAffiliateDeepenProductGuides,
+  ...atsRecruitingCategoryGuides,
+  ...timeAttendanceCategoryGuides,
+  ...webHostingCategoryGuides,
+  ...itsmCategoryGuides,
+  ...atsRecruitingAffiliateDeepenProductGuides,
+  ...timeAttendanceAffiliateDeepenProductGuides,
+  ...webHostingAffiliateDeepenProductGuides,
+  ...itsmAffiliateDeepenProductGuides,
+  ...socialMediaManagementCategoryGuides,
+  ...landingPagesCroCategoryGuides,
+  ...ppcAdvertisingCategoryGuides,
+  ...socialMediaManagementAffiliateDeepenProductGuides,
+  ...landingPagesCroAffiliateDeepenProductGuides,
+  ...ppcAdvertisingAffiliateDeepenProductGuides,
 ];

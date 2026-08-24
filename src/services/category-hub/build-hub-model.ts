@@ -13,6 +13,10 @@ import type {
   UseCase,
 } from "@/domain";
 import { formatMoney, fromMajor } from "@/domain";
+import {
+  getPublicationContextSync,
+  isContentVisible,
+} from "@/domain/publication-context";
 import { isPubliclyAvailable } from "@/domain/publishing";
 import { isEntityIndexable } from "@/domain/quality-gates";
 import {
@@ -45,6 +49,7 @@ import {
   getFeatureDetailProfile,
   resolveFeatureDetailHref,
 } from "@/data/feature-detail";
+import { resolveProductPricing } from "@/services/pricing/resolve-product-pricing";
 import { COMPANY_ROUTES, LEGAL_ROUTES } from "@/services/site-foundation";
 import { firstPublicCopy, publicCopy } from "./public-copy";
 
@@ -212,11 +217,16 @@ export type CategoryHubModel = {
 };
 
 function pricingTeaser(software: Software): string | null {
-  const pricing = software.pricing;
-  if (!pricing || pricing.startingPriceMonthly == null) return null;
-  if (!software.pricingVerifiedAt) return null;
+  const { pricing, verifiedAt } = resolveProductPricing(software);
+  if (!pricing || pricing.startingPriceMonthly == null || !verifiedAt) {
+    return null;
+  }
   const currency = (pricing.currency ?? "USD") as CurrencyCode;
   return `From ${formatMoney(fromMajor(pricing.startingPriceMonthly, currency))}/user/mo`;
+}
+
+function pricingVerifiedAtForProduct(software: Software): string | null {
+  return resolveProductPricing(software).verifiedAt;
 }
 
 function positioningFromSoftware(software: Software): string | null {
@@ -388,6 +398,7 @@ function compareHrefForProduct(slug: string, comparisons: Comparison[]): string 
 function defaultExplorePaths(input: {
   shortLabel: string;
   bestHref: string | null;
+  chooseGuideHref: string | null;
   guides: Array<{ href: string }>;
   categorySlug: string;
 }): CategoryHubExplorePath[] {
@@ -440,12 +451,13 @@ function defaultExplorePaths(input: {
     });
   }
 
-  if (input.guides[0]) {
+  const guideHref = input.guides[0]?.href ?? input.chooseGuideHref;
+  if (guideHref) {
     paths.push({
       id: "guides",
       title: `${input.shortLabel} Guides`,
       description: `Learn how to choose and use ${input.shortLabel}.`,
-      href: input.guides[0].href,
+      href: guideHref,
       ctaLabel: `Learn about ${input.shortLabel}`,
       tone: "pink",
       icon: "book",
@@ -463,6 +475,8 @@ function sanitizeExplorePaths(
   paths: CategoryHubExplorePath[],
   input: {
     bestIndexable: boolean;
+    bestContentVisible: boolean;
+    showScheduledExploreLinks: boolean;
     indexableGuideHref: string | null;
     finderHref: string | null;
   },
@@ -481,6 +495,13 @@ function sanitizeExplorePaths(
     if (path.id === "best" && !input.bestIndexable) {
       // Drop noindex Best CTA when Finder (or equivalent) is already present.
       if (hasFinder) return [];
+      if (
+        input.showScheduledExploreLinks &&
+        input.bestContentVisible &&
+        path.href
+      ) {
+        return [path];
+      }
       if (!input.finderHref) return [];
       return [
         {
@@ -534,19 +555,39 @@ function defaultTypesFromScope(
   }));
 }
 
+const MIN_HUB_PRODUCTS = 5;
+
+function resolveHubCatalogueProducts(category: Category): Software[] {
+  // Subcategory hubs (e.g. sales-crm) tag products via subcategorySlugs while
+  // primaryCategorySlug stays on the parent (crm). Include adjacent membership
+  // so those hubs are not empty grids.
+  if (category.parentSlug) {
+    return getSoftwareByCategory(category.slug, { membership: "all" });
+  }
+
+  const primary = getPrimarySoftwareByCategory(category.slug);
+  if (primary.length >= MIN_HUB_PRODUCTS) {
+    return primary;
+  }
+
+  // Tier launches often tag listening/adjacent tools as secondary on a thin
+  // primary roster — still show them on the parent hub grid.
+  return getSoftwareByCategory(category.slug, { membership: "core" });
+}
+
 export function buildCategoryHubModel(category: Category): CategoryHubModel {
+  const publicationContext = getPublicationContextSync();
+  const showScheduledExploreLinks =
+    publicationContext.kind === "DEVELOPMENT" ||
+    publicationContext.kind === "AUTHORIZED_PREVIEW";
+
   const profile = getCategoryHubProfile(category.slug);
   const definition =
     loadActivatedCategory(category.slug)?.definition ??
     getCategoryDefinitionSeed(category.slug);
 
   const shortLabel = shortCategoryLabel(category, profile?.shortName);
-  // Subcategory hubs (e.g. sales-crm) tag products via subcategorySlugs while
-  // primaryCategorySlug stays on the parent (crm). Include adjacent membership
-  // so those hubs are not empty grids.
-  const catalogueProducts = category.parentSlug
-    ? getSoftwareByCategory(category.slug, { membership: "all" })
-    : getPrimarySoftwareByCategory(category.slug);
+  const catalogueProducts = resolveHubCatalogueProducts(category);
   const primaryProducts = [...catalogueProducts].sort(
     (a, b) => {
       const assessmentA = loadAssessment(a.slug);
@@ -560,12 +601,21 @@ export function buildCategoryHubModel(category: Category): CategoryHubModel {
     },
   );
 
+  const hubProductSlugs = new Set(primaryProducts.map((p) => p.slug));
+
   const allCategoryComparisons = getAllComparisonsUnfiltered().filter(
-    (item) =>
-      item.categorySlug === category.slug &&
-      (isPubliclyAvailable(item.metadata) ||
+    (item) => {
+      const inCategory = item.categorySlug === category.slug;
+      const inHubRoster =
+        item.productSlugs.length >= 2 &&
+        item.productSlugs.every((slug) => hubProductSlugs.has(slug));
+      if (!inCategory && !inHubRoster) return false;
+      return (
+        isPubliclyAvailable(item.metadata) ||
         item.outcomes.length > 0 ||
-        item.metadata.researchStatus !== "none"),
+        item.metadata.researchStatus !== "none"
+      );
+    },
   );
 
   const bestPages = getAllBestPagesUnfiltered().filter(
@@ -577,7 +627,8 @@ export function buildCategoryHubModel(category: Category): CategoryHubModel {
     null;
   const rankingsApproved =
     bestPage?.editorialStatus === "approved" &&
-    bestPage.recommendations.some((r) => r.approved);
+    ((bestPage.recommendations ?? []).some((r) => r.approved) ||
+      (bestPage.useCaseRecommendations ?? []).some((r) => r.approved));
 
   const displayName =
     profile?.displayName ?? `${shortLabel} Software`;
@@ -599,11 +650,14 @@ export function buildCategoryHubModel(category: Category): CategoryHubModel {
   // Full primary catalogue — do not hard-cap; buyers need every researched
   // product discoverable from the category hub (Best page remains the ranked shortlist).
   // The UI paginates / filters this list client-side.
-  const bestPickSlugs = new Set(
-    (bestPage?.recommendations ?? [])
+  const bestPickSlugs = new Set([
+    ...(bestPage?.recommendations ?? [])
       .filter((r) => r.approved)
       .map((r) => r.productSlug),
-  );
+    ...(bestPage?.useCaseRecommendations ?? [])
+      .filter((r) => r.approved)
+      .map((r) => r.productSlug),
+  ]);
 
   const productCards: CategoryHubProductCard[] = primaryProducts.map(
     (product) => {
@@ -627,7 +681,7 @@ export function buildCategoryHubModel(category: Category): CategoryHubModel {
         bestFor: productBestFor(product),
         strengths: productStrengths(product),
         pricingTeaser: pricingTeaser(product),
-        pricingVerifiedAt: product.pricingVerifiedAt ?? null,
+        pricingVerifiedAt: pricingVerifiedAtForProduct(product),
         overallScore,
         updatedAt,
         isBestPick: bestPickSlugs.has(product.slug),
@@ -645,24 +699,33 @@ export function buildCategoryHubModel(category: Category): CategoryHubModel {
   }));
 
   const bestPreview: CategoryHubBestPreviewItem[] = rankingsApproved
-    ? (bestPage?.recommendations ?? [])
-        .filter((r) => r.approved)
-        .slice(0, 3)
-        .map((rec, index) => {
+    ? (() => {
+        const ranked = (bestPage?.recommendations ?? []).filter((r) => r.approved);
+        const cluster = (bestPage?.useCaseRecommendations ?? []).filter(
+          (r) => r.approved,
+        );
+        const source = ranked.length > 0 ? ranked : cluster;
+        return source.slice(0, 3).map((rec, index) => {
           const product = getSoftwareBySlug(rec.productSlug);
+          const isCluster = "useCaseSlug" in rec;
           return {
-            rank: rec.rank ?? index + 1,
+            rank: ("rank" in rec && rec.rank) ? rec.rank : index + 1,
             slug: rec.productSlug,
             name: product?.name ?? rec.productSlug,
             logo: product?.logo,
             bestFor: firstPublicCopy([
-              rec.scenarios[0],
+              isCluster ? undefined : rec.scenarios?.[0],
               product?.bestFor[0],
               publicCopy(rec.rationale),
             ]),
-            badge: publicCopy(rec.badge ?? rec.recommendationLabel),
+            badge: publicCopy(
+              isCluster
+                ? rec.label
+                : (rec.badge ?? rec.recommendationLabel),
+            ),
           };
-        })
+        });
+      })()
     : [];
 
   const comparisons = allCategoryComparisons.slice(0, 6).map((comparison) => {
@@ -761,9 +824,7 @@ export function buildCategoryHubModel(category: Category): CategoryHubModel {
       href,
     }));
 
-  const guides = getGuidesByCategory(category.slug)
-    .filter((g) => isPubliclyAvailable(g.metadata))
-    .map((g) => ({
+  const guides = getGuidesByCategory(category.slug).map((g) => ({
       href: `/guides/${g.slug}/`,
       title: g.title,
       summary: publicCopy(g.summary),
@@ -848,6 +909,17 @@ export function buildCategoryHubModel(category: Category): CategoryHubModel {
   const bestIndexable = Boolean(
     bestPage && isEntityIndexable({ kind: "best", entity: bestPage }),
   );
+  const bestContentVisible = Boolean(
+    bestPage &&
+      isContentVisible(
+        {
+          status: bestPage.metadata.status,
+          publishedAt: bestPage.metadata.publishedAt,
+          scheduledAt: bestPage.metadata.scheduledAt,
+        },
+        publicationContext,
+      ),
+  );
   const finderHref =
     profile?.finderHref ?? categoryDecisionFinderHref(category.slug);
 
@@ -857,12 +929,19 @@ export function buildCategoryHubModel(category: Category): CategoryHubModel {
       : defaultExplorePaths({
           shortLabel,
           bestHref,
+          chooseGuideHref:
+            profile?.chooseGuideHref ??
+            indexableGuideHref ??
+            guides[0]?.href ??
+            null,
           guides,
           categorySlug: category.slug,
         });
 
   const explorePaths = sanitizeExplorePaths(rawExplorePaths, {
     bestIndexable,
+    bestContentVisible,
+    showScheduledExploreLinks,
     indexableGuideHref: chooseGuideHref,
     finderHref,
   });
@@ -970,6 +1049,8 @@ export function buildCategoryHubModel(category: Category): CategoryHubModel {
         assessment?.updatedAt ??
         s.lastVerifiedAt ??
         null;
+      const score =
+        assessment?.status === "approved" ? (assessment.overallScore ?? 0) : 0;
       return {
         href: `/software/${s.slug}/`,
         name: s.name,
@@ -978,12 +1059,19 @@ export function buildCategoryHubModel(category: Category): CategoryHubModel {
         dateLabel: updatedAt ? updatedAt.slice(0, 10) : undefined,
         categoryLabel: shortLabel,
         _sort: updatedAt ?? "",
+        _score: score,
+        _name: s.name,
       };
     })
     .filter((r) => r.bestFor || r.dateLabel)
-    .sort((a, b) => b._sort.localeCompare(a._sort))
-    .slice(0, 4)
-    .map(({ _sort: _, ...rest }) => rest);
+    .sort((a, b) => {
+      const byDate = b._sort.localeCompare(a._sort);
+      if (byDate !== 0) return byDate;
+      if (b._score !== a._score) return b._score - a._score;
+      return a._name.localeCompare(b._name);
+    })
+    .slice(0, Math.max(6, primaryProducts.length))
+    .map(({ _sort: _, _score: __, _name: ___, ...rest }) => rest);
 
   const verifiedStartingPrices = primaryProducts
     .map((s) => {
@@ -993,7 +1081,7 @@ export function buildCategoryHubModel(category: Category): CategoryHubModel {
         slug: s.slug,
         name: s.name,
         teaser,
-        verifiedAt: s.pricingVerifiedAt ?? null,
+        verifiedAt: pricingVerifiedAtForProduct(s),
       };
     })
     .filter(Boolean) as CategoryHubModel["verifiedStartingPrices"];

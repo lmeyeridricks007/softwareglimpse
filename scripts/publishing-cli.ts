@@ -40,6 +40,11 @@ import {
 } from "@/domain";
 import { resolveAffectedPages } from "@/services/editorial/dependencies";
 import { getPublicationStateForEntry } from "@/services/publishing";
+import { runScheduledContentAudit } from "@/services/publishing/agents/scheduled-content-audit";
+import { runContentCalendarAgent } from "@/services/publishing/agents/content-calendar";
+import { runPostPublicationAudit } from "@/services/publishing/agents/post-publication-audit";
+import { validatePublicationDependencies } from "@/services/publishing/dependency-validation";
+import { writeScheduledContentReport } from "@/services/publishing/launches";
 import {
   approveVersion,
   buildContentRegistry,
@@ -74,6 +79,10 @@ Commands:
   refresh:status [--category <slug>]
   refresh:run [--dry-run]
   validate
+  scheduled
+  prepublish
+  audit:scheduled
+  report:scheduled
 
 Aliases (via package.json): content:status, content:calendar, content:publish,
   refresh:scan, refresh:status, refresh:run, publishing:validate
@@ -806,6 +815,60 @@ function cmdValidate(): void {
   if (issues.length > 0) process.exitCode = 1;
 }
 
+function cmdScheduled(): void {
+  const now = new Date();
+  const registry = buildContentRegistry();
+  const scheduled = registry
+    .filter((e) => e.metadata.status === "scheduled")
+    .sort((a, b) => {
+      const aTs = Date.parse(a.metadata.scheduledAt ?? "") || Infinity;
+      const bTs = Date.parse(b.metadata.scheduledAt ?? "") || Infinity;
+      return aTs - bTs;
+    });
+
+  console.log(`Scheduled content (${scheduled.length})`);
+  for (const entry of scheduled) {
+    const state = getPublicationStateForEntry(entry, now);
+    console.log(
+      `  ${entry.metadata.scheduledAt ?? "TBD"}  ${entry.type.padEnd(12)}  ${entry.path}  listings=${state.isVisibleInListings}`,
+    );
+  }
+}
+
+function cmdPrepublish(): void {
+  const deps = validatePublicationDependencies();
+  const audit = runScheduledContentAudit();
+  console.log(`Prepublish audit: ${audit.verdict}`);
+  console.log(`  blocked=${audit.blocked} warnings=${audit.warnings}`);
+  console.log(`  report: ${audit.outputPath}`);
+  if (deps.length) {
+    console.log(`  dependency issues: ${deps.length}`);
+    for (const d of deps) {
+      console.log(`    ${d.sourceId}: ${d.message}`);
+    }
+    process.exitCode = 1;
+  }
+  if (audit.verdict === "BLOCKED") process.exitCode = 1;
+}
+
+function cmdAuditScheduled(): void {
+  const result = runScheduledContentAudit();
+  console.log(`Scheduled audit: ${result.verdict} → ${result.outputPath}`);
+  if (result.verdict === "BLOCKED") process.exitCode = 1;
+}
+
+function cmdReportScheduled(): void {
+  const path = writeScheduledContentReport();
+  runContentCalendarAgent();
+  console.log(`Wrote ${path}`);
+  console.log(`Wrote docs/publishing/CONTENT-CALENDAR-LATEST.md`);
+}
+
+function cmdPostPublishAudit(): void {
+  const path = runPostPublicationAudit();
+  console.log(`Post-publication audit → ${path}`);
+}
+
 function main(): void {
   const args = parseArgs(process.argv.slice(2));
 
@@ -837,6 +900,21 @@ function main(): void {
       break;
     case "validate":
       cmdValidate();
+      break;
+    case "scheduled":
+      cmdScheduled();
+      break;
+    case "prepublish":
+      cmdPrepublish();
+      break;
+    case "audit:scheduled":
+      cmdAuditScheduled();
+      break;
+    case "report:scheduled":
+      cmdReportScheduled();
+      break;
+    case "audit:post-publish":
+      cmdPostPublishAudit();
       break;
     default:
       console.error(`Unknown command: ${args.command}`);

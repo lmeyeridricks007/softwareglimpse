@@ -6,12 +6,12 @@ import type {
 } from "@/domain";
 import {
   getAllResourcesUnfiltered,
-  getResourceBySlug,
   getResources,
 } from "@/data";
 import { getResourceHubProfile } from "@/data/resource-hub";
 import { listPublishedLearningGuides } from "@/services/content-clusters";
 import { buildResourceDownloadFiles } from "@/services/resource-hub/export-documents";
+import { resolveForPublicRoute } from "@/services/publishing/route-resolution";
 
 export type ResourceHubNavItem = {
   id: string;
@@ -166,23 +166,19 @@ function formatsLabel(
 }
 
 export function buildResourceHubModel(slug: string): ResourceHubModel | null {
-  const resource =
-    getResourceBySlug(slug) ??
-    getAllResourcesUnfiltered().find((r) => r.slug === slug);
+  const raw = getAllResourcesUnfiltered().find((r) => r.slug === slug);
+  const resource = resolveForPublicRoute(raw);
   if (!resource) return null;
-  if (resource.metadata.status !== "published") {
-    const published = getResources().find((r) => r.slug === slug);
-    if (!published) return null;
-  }
 
   const profile = getResourceHubProfile(slug);
   const categorySlug =
     profile?.categorySlug ?? resource.categorySlugs[0] ?? "crm";
 
+  const visibleResources = getResources();
   const relatedSlugs =
     profile?.relatedResourceSlugs?.length
       ? profile.relatedResourceSlugs
-      : getAllResourcesUnfiltered()
+      : visibleResources
           .filter(
             (r) =>
               r.slug !== resource.slug &&
@@ -193,7 +189,7 @@ export function buildResourceHubModel(slug: string): ResourceHubModel | null {
           .map((r) => r.slug);
 
   const relatedResources = relatedSlugs
-    .map((s) => getAllResourcesUnfiltered().find((r) => r.slug === s))
+    .map((s) => visibleResources.find((r) => r.slug === s))
     .filter(Boolean)
     .map((r) => ({
       slug: r!.slug,

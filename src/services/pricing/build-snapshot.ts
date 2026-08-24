@@ -5,7 +5,7 @@ import type {
   Software,
 } from "@/domain";
 import { PricingSchema } from "@/domain";
-import { getAllSoftwareUnfiltered } from "@/data/repositories/catalog";
+import { getAllSoftwareUnfiltered, getSoftware } from "@/data/repositories/catalog";
 import { loadEnrichment } from "@/data/research/store";
 import { CRM_PRICING_CONFIG } from "@/data/config/pricing/crm-pricing-v1";
 import type { PricingSnapshot } from "./types";
@@ -69,12 +69,11 @@ export function listPricingSnapshotsForCategory(
   const cached = snapshotListCache.get(key);
   if (cached) return cached;
 
-  const software = getAllSoftwareUnfiltered();
+  const software = opts?.includeUnpublished
+    ? getAllSoftwareUnfiltered()
+    : getSoftware();
   const snapshots = software
     .filter((s) => s.primaryCategorySlug === primaryCategorySlug)
-    .filter((s) =>
-      opts?.includeUnpublished ? true : s.metadata.status === "published",
-    )
     .slice()
     .sort((a, b) => a.slug.localeCompare(b.slug))
     .map((s) =>
@@ -223,8 +222,16 @@ export function normalizePricingInput(raw: unknown): unknown {
   if (raw == null || typeof raw !== "object" || Array.isArray(raw)) return raw;
   const input = { ...(raw as Record<string, unknown>) };
 
-  if (input.model === "custom-quote") {
-    input.model = "custom";
+  if (typeof input.model === "string") {
+    const modelAliases: Record<string, string> = {
+      "custom-quote": "custom",
+      "quote-led": "custom",
+      "per-seat": "subscription",
+      flat: "subscription",
+      tiered: "subscription",
+    };
+    const aliased = modelAliases[input.model];
+    if (aliased) input.model = aliased;
   }
 
   if (!Array.isArray(input.plans)) return input;

@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { DM_Sans } from "next/font/google";
 import { SiteFooter } from "@/components/navigation/site-footer";
 import { SiteHeader } from "@/components/navigation/site-header";
+import { DevPreviewBanner } from "@/components/publishing/dev-preview-banner";
 import { SiteAnnouncementBar } from "@/components/site/announcement-bar";
 import { SiteProviders } from "@/components/site/site-providers";
 import { SITE_NAME, SITE_TAGLINE, getSiteUrl } from "@/lib/site";
@@ -41,6 +42,7 @@ export default function RootLayout({
     <html lang="en" className={`${dmSans.variable} h-full antialiased`}>
       <body className="flex min-h-full flex-col">
         <SiteProviders>
+          <DevPreviewBanner />
           <SiteAnnouncementBar />
           <SiteHeader />
           <main className="flex-1">{children}</main>

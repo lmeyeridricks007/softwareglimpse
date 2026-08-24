@@ -1,0 +1,826 @@
+{
+  "id": "cat-knowledge-plan:helpdesk-ticketing:1787493055932",
+  "categorySlug": "helpdesk-ticketing",
+  "plannerId": "category-knowledge-planner-agent",
+  "plannerVersion": "1.0.0",
+  "methodologyVersion": "1.0.0",
+  "knowledgeAreas": [
+    {
+      "slug": "fundamentals",
+      "label": "Fundamentals",
+      "applicable": true,
+      "reason": "Every category needs definitional education",
+      "targetCoreCount": 2
+    },
+    {
+      "slug": "selection",
+      "label": "Selection",
+      "applicable": true,
+      "reason": "Buyer evaluation education supports Best / Finder",
+      "targetCoreCount": 2
+    },
+    {
+      "slug": "pricing",
+      "label": "Pricing education",
+      "applicable": true,
+      "reason": "Pricing capability present — educate before calculator/pricing pages",
+      "targetCoreCount": 1
+    },
+    {
+      "slug": "features",
+      "label": "Features",
+      "applicable": true,
+      "reason": "8 important features — selective explainers only",
+      "targetCoreCount": 1
+    },
+    {
+      "slug": "implementation",
+      "label": "Implementation",
+      "applicable": false,
+      "reason": "Not in supportingKnowledgeAreas for helpdesk-ticketing",
+      "targetCoreCount": 0
+    },
+    {
+      "slug": "migration",
+      "label": "Migration / switching",
+      "applicable": false,
+      "reason": "Not in supportingKnowledgeAreas for helpdesk-ticketing",
+      "targetCoreCount": 0
+    },
+    {
+      "slug": "strategy",
+      "label": "Strategy",
+      "applicable": false,
+      "reason": "Not in supportingKnowledgeAreas for helpdesk-ticketing",
+      "targetCoreCount": 0
+    },
+    {
+      "slug": "troubleshooting",
+      "label": "Troubleshooting",
+      "applicable": false,
+      "reason": "Not in supportingKnowledgeAreas for helpdesk-ticketing",
+      "targetCoreCount": 0
+    },
+    {
+      "slug": "usage",
+      "label": "Usage",
+      "applicable": false,
+      "reason": "Not in supportingKnowledgeAreas for helpdesk-ticketing",
+      "targetCoreCount": 0
+    },
+    {
+      "slug": "integrations",
+      "label": "Integrations",
+      "applicable": false,
+      "reason": "Not in supportingKnowledgeAreas for helpdesk-ticketing",
+      "targetCoreCount": 0
+    }
+  ],
+  "topicCandidates": [
+    {
+      "id": "candidate:helpdesk-ticketing-feature-checklist",
+      "titleConcept": "Helpdesk & Ticketing feature checklist",
+      "suggestedSlug": "helpdesk-ticketing-feature-checklist",
+      "categorySlug": "helpdesk-ticketing",
+      "productSlugs": [],
+      "topicType": "checklist",
+      "journeyStage": "evaluate",
+      "knowledgeAreaSlug": "selection",
+      "targetIntent": "helpdesk-ticketing features checklist",
+      "supports": [
+        {
+          "contentId": "content:best:helpdesk-ticketing-software",
+          "relationType": "supports-anchor"
+        },
+        {
+          "contentId": "content:category:helpdesk-ticketing",
+          "relationType": "supports-anchor"
+        }
+      ],
+      "evidence": {
+        "seoQueryCount": 0,
+        "seoImpressions": 0,
+        "knowledgeGap": true,
+        "userJourneyValue": 9,
+        "multiAnchorValue": 2,
+        "notes": []
+      },
+      "scores": {
+        "journeyValue": 9,
+        "searchEvidence": 0,
+        "anchorSupport": 6,
+        "knowledgeGap": 9,
+        "strategicRelevance": 10,
+        "effortPenalty": 0,
+        "total": 42.5
+      },
+      "priorityClass": "CORE",
+      "placement": "EXPAND_EXISTING_PAGE",
+      "placementReason": "Duplicate intent with existing guide helpdesk-ticketing-requirements-guide",
+      "readiness": "duplicate",
+      "expandTargetSlug": "helpdesk-ticketing-requirements-guide",
+      "priority": 1042.5
+    },
+    {
+      "id": "candidate:helpdesk-ticketing-how-to-choose",
+      "titleConcept": "How to choose Helpdesk & Ticketing software",
+      "suggestedSlug": "how-to-choose-helpdesk-ticketing",
+      "categorySlug": "helpdesk-ticketing",
+      "productSlugs": [],
+      "topicType": "selection",
+      "journeyStage": "evaluate",
+      "knowledgeAreaSlug": "selection",
+      "targetIntent": "how to choose helpdesk-ticketing",
+      "supports": [
+        {
+          "contentId": "content:category:helpdesk-ticketing",
+          "relationType": "supports-anchor"
+        },
+        {
+          "contentId": "content:best:helpdesk-ticketing-software",
+          "relationType": "supports-anchor"
+        }
+      ],
+      "evidence": {
+        "seoQueryCount": 0,
+        "seoImpressions": 0,
+        "knowledgeGap": true,
+        "userJourneyValue": 9,
+        "multiAnchorValue": 2,
+        "notes": []
+      },
+      "scores": {
+        "journeyValue": 9,
+        "searchEvidence": 0,
+        "anchorSupport": 6,
+        "knowledgeGap": 9,
+        "strategicRelevance": 10,
+        "effortPenalty": 3,
+        "total": 39.5
+      },
+      "priorityClass": "CORE",
+      "placement": "NEW_PAGE",
+      "placementReason": "Standalone value sufficient (signals=5/5)",
+      "readiness": "ready",
+      "priority": 1039.5
+    },
+    {
+      "id": "candidate:helpdesk-ticketing-pricing-explained",
+      "titleConcept": "Helpdesk & Ticketing pricing explained",
+      "suggestedSlug": "helpdesk-ticketing-pricing-explained",
+      "categorySlug": "helpdesk-ticketing",
+      "productSlugs": [],
+      "topicType": "pricing-education",
+      "journeyStage": "evaluate",
+      "knowledgeAreaSlug": "pricing",
+      "targetIntent": "how much does helpdesk-ticketing cost",
+      "supports": [
+        {
+          "contentId": "content:category:helpdesk-ticketing",
+          "relationType": "explains-pricing"
+        },
+        {
+          "contentId": "content:best:helpdesk-ticketing-software",
+          "relationType": "explains-pricing"
+        }
+      ],
+      "evidence": {
+        "seoQueryCount": 0,
+        "seoImpressions": 0,
+        "knowledgeGap": true,
+        "userJourneyValue": 9,
+        "multiAnchorValue": 2,
+        "notes": []
+      },
+      "scores": {
+        "journeyValue": 9,
+        "searchEvidence": 0,
+        "anchorSupport": 6,
+        "knowledgeGap": 9,
+        "strategicRelevance": 10,
+        "effortPenalty": 3,
+        "total": 39.5
+      },
+      "priorityClass": "CORE",
+      "placement": "NEW_PAGE",
+      "placementReason": "Standalone value sufficient (signals=5/5)",
+      "readiness": "ready",
+      "priority": 1039.5
+    },
+    {
+      "id": "candidate:helpdesk-ticketing-what-is",
+      "titleConcept": "What is Helpdesk & Ticketing software?",
+      "suggestedSlug": "what-is-helpdesk-ticketing",
+      "categorySlug": "helpdesk-ticketing",
+      "productSlugs": [],
+      "topicType": "fundamental",
+      "journeyStage": "learn",
+      "knowledgeAreaSlug": "fundamentals",
+      "targetIntent": "what is helpdesk & ticketing",
+      "supports": [
+        {
+          "contentId": "content:category:helpdesk-ticketing",
+          "relationType": "supports-anchor"
+        },
+        {
+          "contentId": "content:best:helpdesk-ticketing-software",
+          "relationType": "supports-anchor"
+        }
+      ],
+      "evidence": {
+        "seoQueryCount": 0,
+        "seoImpressions": 0,
+        "knowledgeGap": true,
+        "userJourneyValue": 8,
+        "multiAnchorValue": 2,
+        "notes": []
+      },
+      "scores": {
+        "journeyValue": 8,
+        "searchEvidence": 0,
+        "anchorSupport": 6,
+        "knowledgeGap": 9,
+        "strategicRelevance": 10,
+        "effortPenalty": 3,
+        "total": 38.3
+      },
+      "priorityClass": "CORE",
+      "placement": "NEW_PAGE",
+      "placementReason": "Standalone value sufficient (signals=5/5)",
+      "readiness": "ready",
+      "priority": 1038.3
+    },
+    {
+      "id": "candidate:helpdesk-ticketing-how-works",
+      "titleConcept": "How does Helpdesk & Ticketing software work?",
+      "suggestedSlug": "how-helpdesk-ticketing-works",
+      "categorySlug": "helpdesk-ticketing",
+      "productSlugs": [],
+      "topicType": "how-it-works",
+      "journeyStage": "understand",
+      "knowledgeAreaSlug": "fundamentals",
+      "targetIntent": "how helpdesk-ticketing works",
+      "supports": [
+        {
+          "contentId": "content:category:helpdesk-ticketing",
+          "relationType": "supports-anchor"
+        },
+        {
+          "contentId": "content:best:helpdesk-ticketing-software",
+          "relationType": "supports-anchor"
+        }
+      ],
+      "evidence": {
+        "seoQueryCount": 0,
+        "seoImpressions": 0,
+        "knowledgeGap": true,
+        "userJourneyValue": 8,
+        "multiAnchorValue": 2,
+        "notes": [
+          "May merge into what-is guide if depth is thin"
+        ]
+      },
+      "scores": {
+        "journeyValue": 8,
+        "searchEvidence": 0,
+        "anchorSupport": 6,
+        "knowledgeGap": 9,
+        "strategicRelevance": 10,
+        "effortPenalty": 3,
+        "total": 38.3
+      },
+      "priorityClass": "CORE",
+      "placement": "NEW_PAGE",
+      "placementReason": "Standalone value sufficient (signals=5/5)",
+      "readiness": "ready",
+      "priority": 1038.3
+    },
+    {
+      "id": "candidate:helpdesk-ticketing-feature-ticketing",
+      "titleConcept": "Helpdesk & Ticketing ticketing explained",
+      "suggestedSlug": "helpdesk-ticketing-ticketing-explained",
+      "categorySlug": "helpdesk-ticketing",
+      "productSlugs": [],
+      "topicType": "feature-explainer",
+      "journeyStage": "understand",
+      "knowledgeAreaSlug": "features",
+      "targetIntent": "helpdesk-ticketing ticketing",
+      "supports": [
+        {
+          "contentId": "content:category:helpdesk-ticketing",
+          "relationType": "explains-feature"
+        },
+        {
+          "contentId": "content:best:helpdesk-ticketing-software",
+          "relationType": "explains-feature"
+        }
+      ],
+      "evidence": {
+        "seoQueryCount": 0,
+        "seoImpressions": 0,
+        "knowledgeGap": false,
+        "userJourneyValue": 8,
+        "multiAnchorValue": 2,
+        "notes": [
+          "One selective feature explainer — do not create one guide per feature"
+        ]
+      },
+      "scores": {
+        "journeyValue": 8,
+        "searchEvidence": 0,
+        "anchorSupport": 6,
+        "knowledgeGap": 3,
+        "strategicRelevance": 7,
+        "effortPenalty": 3,
+        "total": 27.5
+      },
+      "priorityClass": "SECONDARY",
+      "placement": "NEW_PAGE",
+      "placementReason": "Standalone value sufficient (signals=5/5)",
+      "readiness": "ready",
+      "priority": 527.5
+    },
+    {
+      "id": "candidate:helpdesk-ticketing-micro-definition",
+      "titleConcept": "What is a Helpdesk & Ticketing custom field?",
+      "suggestedSlug": "helpdesk-ticketing-custom-field-meaning",
+      "categorySlug": "helpdesk-ticketing",
+      "productSlugs": [],
+      "topicType": "feature-explainer",
+      "journeyStage": "learn",
+      "knowledgeAreaSlug": "features",
+      "targetIntent": "helpdesk-ticketing custom field",
+      "supports": [
+        {
+          "contentId": "content:category:helpdesk-ticketing",
+          "relationType": "supports-anchor"
+        }
+      ],
+      "evidence": {
+        "seoQueryCount": 0,
+        "seoImpressions": 0,
+        "knowledgeGap": false,
+        "userJourneyValue": 8,
+        "multiAnchorValue": 1,
+        "notes": [
+          "Micro-topic — reject standalone page"
+        ]
+      },
+      "scores": {
+        "journeyValue": 8,
+        "searchEvidence": 0,
+        "anchorSupport": 3,
+        "knowledgeGap": 3,
+        "strategicRelevance": 0,
+        "effortPenalty": 0,
+        "total": 16.8
+      },
+      "priorityClass": "NOT_RECOMMENDED",
+      "placement": "NO_ACTION",
+      "placementReason": "Marked NOT_RECOMMENDED — product section or insufficient value",
+      "readiness": "not-recommended",
+      "priority": 0
+    }
+  ],
+  "anchors": [
+    {
+      "contentId": "content:category:helpdesk-ticketing",
+      "type": "category",
+      "slug": "helpdesk-ticketing",
+      "path": "/categories/helpdesk-ticketing/",
+      "title": "Helpdesk & Ticketing",
+      "published": false
+    },
+    {
+      "contentId": "content:best:helpdesk-ticketing-software",
+      "type": "best",
+      "slug": "helpdesk-ticketing-software",
+      "path": "/best/helpdesk-ticketing-software/",
+      "title": "Best Helpdesk & Ticketing Software",
+      "published": false
+    },
+    {
+      "contentId": "content:software:freshservice",
+      "type": "software",
+      "slug": "freshservice",
+      "path": "/software/freshservice/",
+      "title": "Freshservice",
+      "published": true
+    },
+    {
+      "contentId": "content:software:freshdesk",
+      "type": "software",
+      "slug": "freshdesk",
+      "path": "/software/freshdesk/",
+      "title": "Freshdesk",
+      "published": true
+    },
+    {
+      "contentId": "content:software:zendesk-suite",
+      "type": "software",
+      "slug": "zendesk-suite",
+      "path": "/software/zendesk-suite/",
+      "title": "Zendesk Suite",
+      "published": true
+    },
+    {
+      "contentId": "content:software:help-scout",
+      "type": "software",
+      "slug": "help-scout",
+      "path": "/software/help-scout/",
+      "title": "Help Scout",
+      "published": true
+    },
+    {
+      "contentId": "content:software:gorgias",
+      "type": "software",
+      "slug": "gorgias",
+      "path": "/software/gorgias/",
+      "title": "Gorgias",
+      "published": true
+    },
+    {
+      "contentId": "content:software:zoho-desk",
+      "type": "software",
+      "slug": "zoho-desk",
+      "path": "/software/zoho-desk/",
+      "title": "Zoho Desk",
+      "published": true
+    },
+    {
+      "contentId": "content:pricing:freshservice",
+      "type": "pricing",
+      "slug": "freshservice",
+      "path": "/pricing/freshservice/",
+      "title": "Freshservice pricing",
+      "published": true
+    },
+    {
+      "contentId": "content:pricing:freshdesk",
+      "type": "pricing",
+      "slug": "freshdesk",
+      "path": "/pricing/freshdesk/",
+      "title": "Freshdesk pricing",
+      "published": true
+    },
+    {
+      "contentId": "content:pricing:zendesk-suite",
+      "type": "pricing",
+      "slug": "zendesk-suite",
+      "path": "/pricing/zendesk-suite/",
+      "title": "Zendesk Suite pricing",
+      "published": true
+    },
+    {
+      "contentId": "content:pricing:help-scout",
+      "type": "pricing",
+      "slug": "help-scout",
+      "path": "/pricing/help-scout/",
+      "title": "Help Scout pricing",
+      "published": true
+    },
+    {
+      "contentId": "content:pricing:gorgias",
+      "type": "pricing",
+      "slug": "gorgias",
+      "path": "/pricing/gorgias/",
+      "title": "Gorgias pricing",
+      "published": true
+    },
+    {
+      "contentId": "content:pricing:zoho-desk",
+      "type": "pricing",
+      "slug": "zoho-desk",
+      "path": "/pricing/zoho-desk/",
+      "title": "Zoho Desk pricing",
+      "published": true
+    },
+    {
+      "contentId": "content:alternatives:freshservice",
+      "type": "alternatives",
+      "slug": "freshservice",
+      "path": "/alternatives/freshservice/",
+      "title": "Freshservice alternatives",
+      "published": true
+    },
+    {
+      "contentId": "content:alternatives:freshdesk",
+      "type": "alternatives",
+      "slug": "freshdesk",
+      "path": "/alternatives/freshdesk/",
+      "title": "Freshdesk alternatives",
+      "published": true
+    },
+    {
+      "contentId": "content:alternatives:zendesk-suite",
+      "type": "alternatives",
+      "slug": "zendesk-suite",
+      "path": "/alternatives/zendesk-suite/",
+      "title": "Zendesk Suite alternatives",
+      "published": true
+    },
+    {
+      "contentId": "content:alternatives:help-scout",
+      "type": "alternatives",
+      "slug": "help-scout",
+      "path": "/alternatives/help-scout/",
+      "title": "Help Scout alternatives",
+      "published": true
+    },
+    {
+      "contentId": "content:alternatives:gorgias",
+      "type": "alternatives",
+      "slug": "gorgias",
+      "path": "/alternatives/gorgias/",
+      "title": "Gorgias alternatives",
+      "published": true
+    },
+    {
+      "contentId": "content:alternatives:zoho-desk",
+      "type": "alternatives",
+      "slug": "zoho-desk",
+      "path": "/alternatives/zoho-desk/",
+      "title": "Zoho Desk alternatives",
+      "published": true
+    },
+    {
+      "contentId": "content:comparison:freshdesk-vs-intercom",
+      "type": "comparison",
+      "slug": "freshdesk-vs-intercom",
+      "path": "/compare/freshdesk-vs-intercom/",
+      "title": "Freshdesk vs Intercom",
+      "published": false
+    },
+    {
+      "contentId": "content:comparison:intercom-vs-zendesk-suite",
+      "type": "comparison",
+      "slug": "intercom-vs-zendesk-suite",
+      "path": "/compare/intercom-vs-zendesk-suite/",
+      "title": "Zendesk Suite vs Intercom",
+      "published": false
+    },
+    {
+      "contentId": "content:comparison:help-scout-vs-intercom",
+      "type": "comparison",
+      "slug": "help-scout-vs-intercom",
+      "path": "/compare/help-scout-vs-intercom/",
+      "title": "Help Scout vs Intercom",
+      "published": false
+    },
+    {
+      "contentId": "content:comparison:freshdesk-vs-gorgias",
+      "type": "comparison",
+      "slug": "freshdesk-vs-gorgias",
+      "path": "/compare/freshdesk-vs-gorgias/",
+      "title": "Gorgias vs Freshdesk",
+      "published": false
+    },
+    {
+      "contentId": "content:comparison:gorgias-vs-zendesk-suite",
+      "type": "comparison",
+      "slug": "gorgias-vs-zendesk-suite",
+      "path": "/compare/gorgias-vs-zendesk-suite/",
+      "title": "Gorgias vs Zendesk Suite",
+      "published": false
+    },
+    {
+      "contentId": "content:comparison:freshservice-vs-zoho-desk",
+      "type": "comparison",
+      "slug": "freshservice-vs-zoho-desk",
+      "path": "/compare/freshservice-vs-zoho-desk/",
+      "title": "Zoho Desk vs Freshservice",
+      "published": false
+    }
+  ],
+  "anchorCoverage": [
+    {
+      "contentId": "content:category:helpdesk-ticketing",
+      "title": "helpdesk-ticketing category hub",
+      "path": "/categories/helpdesk-ticketing/",
+      "supportingGuideCount": 0,
+      "supportingGuideSlugs": [],
+      "missingCoreTopicIds": [
+        "helpdesk-ticketing-feature-checklist",
+        "helpdesk-ticketing-how-to-choose",
+        "helpdesk-ticketing-pricing-explained",
+        "helpdesk-ticketing-what-is",
+        "helpdesk-ticketing-how-works"
+      ]
+    },
+    {
+      "contentId": "content:best:helpdesk-ticketing-software",
+      "title": "Best helpdesk-ticketing",
+      "path": "/best/helpdesk-ticketing-software/",
+      "supportingGuideCount": 0,
+      "supportingGuideSlugs": [],
+      "missingCoreTopicIds": [
+        "helpdesk-ticketing-feature-checklist",
+        "helpdesk-ticketing-how-to-choose",
+        "helpdesk-ticketing-pricing-explained",
+        "helpdesk-ticketing-what-is",
+        "helpdesk-ticketing-how-works"
+      ]
+    },
+    {
+      "contentId": "content:tool:helpdesk-ticketing-finder",
+      "title": "helpdesk-ticketing-finder",
+      "path": "/tools/helpdesk-ticketing-finder/",
+      "supportingGuideCount": 0,
+      "supportingGuideSlugs": [],
+      "missingCoreTopicIds": []
+    },
+    {
+      "contentId": "content:tool:helpdesk-ticketing-cost-calculator",
+      "title": "helpdesk-ticketing-cost-calculator",
+      "path": "/tools/helpdesk-ticketing-cost-calculator/",
+      "supportingGuideCount": 0,
+      "supportingGuideSlugs": [],
+      "missingCoreTopicIds": []
+    }
+  ],
+  "coverage": [
+    {
+      "knowledgeAreaSlug": "fundamentals",
+      "label": "Fundamentals",
+      "targetCoreCount": 2,
+      "existingCoreCount": 0,
+      "existingSecondaryCount": 0,
+      "missingCoreTopicIds": [
+        "helpdesk-ticketing-what-is",
+        "helpdesk-ticketing-how-works"
+      ]
+    },
+    {
+      "knowledgeAreaSlug": "selection",
+      "label": "Selection",
+      "targetCoreCount": 2,
+      "existingCoreCount": 0,
+      "existingSecondaryCount": 0,
+      "missingCoreTopicIds": [
+        "helpdesk-ticketing-how-to-choose",
+        "helpdesk-ticketing-feature-checklist"
+      ]
+    },
+    {
+      "knowledgeAreaSlug": "pricing",
+      "label": "Pricing education",
+      "targetCoreCount": 1,
+      "existingCoreCount": 0,
+      "existingSecondaryCount": 0,
+      "missingCoreTopicIds": [
+        "helpdesk-ticketing-pricing-explained"
+      ]
+    },
+    {
+      "knowledgeAreaSlug": "features",
+      "label": "Features",
+      "targetCoreCount": 1,
+      "existingCoreCount": 0,
+      "existingSecondaryCount": 0,
+      "missingCoreTopicIds": []
+    }
+  ],
+  "journeyAudit": [
+    {
+      "stage": "learn",
+      "status": "STRONG",
+      "guideCount": 5,
+      "candidateCount": 2
+    },
+    {
+      "stage": "understand",
+      "status": "GOOD",
+      "guideCount": 1,
+      "candidateCount": 2
+    },
+    {
+      "stage": "evaluate",
+      "status": "STRONG",
+      "guideCount": 4,
+      "candidateCount": 3
+    },
+    {
+      "stage": "choose",
+      "status": "NONE",
+      "guideCount": 0,
+      "candidateCount": 0
+    },
+    {
+      "stage": "implement",
+      "status": "NONE",
+      "guideCount": 0,
+      "candidateCount": 0
+    },
+    {
+      "stage": "optimize",
+      "status": "NONE",
+      "guideCount": 0,
+      "candidateCount": 0
+    },
+    {
+      "stage": "switch",
+      "status": "NONE",
+      "guideCount": 0,
+      "candidateCount": 0
+    }
+  ],
+  "gaps": [
+    {
+      "id": "gap:helpdesk-ticketing-what-is",
+      "kind": "missing-core-topic",
+      "severity": "high",
+      "message": "Missing CORE topic helpdesk-ticketing-what-is in Fundamentals",
+      "relatedTopicIds": [
+        "helpdesk-ticketing-what-is"
+      ],
+      "relatedContentIds": []
+    },
+    {
+      "id": "gap:helpdesk-ticketing-how-works",
+      "kind": "missing-core-topic",
+      "severity": "high",
+      "message": "Missing CORE topic helpdesk-ticketing-how-works in Fundamentals",
+      "relatedTopicIds": [
+        "helpdesk-ticketing-how-works"
+      ],
+      "relatedContentIds": []
+    },
+    {
+      "id": "gap:helpdesk-ticketing-how-to-choose",
+      "kind": "missing-core-topic",
+      "severity": "high",
+      "message": "Missing CORE topic helpdesk-ticketing-how-to-choose in Selection",
+      "relatedTopicIds": [
+        "helpdesk-ticketing-how-to-choose"
+      ],
+      "relatedContentIds": []
+    },
+    {
+      "id": "gap:helpdesk-ticketing-feature-checklist",
+      "kind": "missing-core-topic",
+      "severity": "high",
+      "message": "Missing CORE topic helpdesk-ticketing-feature-checklist in Selection",
+      "relatedTopicIds": [
+        "helpdesk-ticketing-feature-checklist"
+      ],
+      "relatedContentIds": []
+    },
+    {
+      "id": "gap:helpdesk-ticketing-pricing-explained",
+      "kind": "missing-core-topic",
+      "severity": "high",
+      "message": "Missing CORE topic helpdesk-ticketing-pricing-explained in Pricing education",
+      "relatedTopicIds": [
+        "helpdesk-ticketing-pricing-explained"
+      ],
+      "relatedContentIds": []
+    },
+    {
+      "id": "gap-anchor:content:category:helpdesk-ticketing",
+      "kind": "anchor-unsupported",
+      "severity": "medium",
+      "message": "helpdesk-ticketing category hub has no supporting guides yet",
+      "relatedTopicIds": [
+        "helpdesk-ticketing-feature-checklist",
+        "helpdesk-ticketing-how-to-choose",
+        "helpdesk-ticketing-pricing-explained",
+        "helpdesk-ticketing-what-is",
+        "helpdesk-ticketing-how-works"
+      ],
+      "relatedContentIds": [
+        "content:category:helpdesk-ticketing"
+      ]
+    },
+    {
+      "id": "gap-anchor:content:best:helpdesk-ticketing-software",
+      "kind": "anchor-unsupported",
+      "severity": "medium",
+      "message": "Best helpdesk-ticketing has no supporting guides yet",
+      "relatedTopicIds": [
+        "helpdesk-ticketing-feature-checklist",
+        "helpdesk-ticketing-how-to-choose",
+        "helpdesk-ticketing-pricing-explained",
+        "helpdesk-ticketing-what-is",
+        "helpdesk-ticketing-how-works"
+      ],
+      "relatedContentIds": [
+        "content:best:helpdesk-ticketing-software"
+      ]
+    }
+  ],
+  "summary": {
+    "coreCount": 5,
+    "secondaryCount": 1,
+    "optionalCount": 0,
+    "existingCount": 0,
+    "newPageCount": 5,
+    "expandCount": 1,
+    "sectionCount": 0,
+    "rejectedCount": 1,
+    "seoEvidence": "NONE"
+  },
+  "warnings": [
+    "SEO evidence: NONE — foundational topics planned from category structure only"
+  ],
+  "generatedAt": "2026-08-23T13:50:55.932Z"
+}

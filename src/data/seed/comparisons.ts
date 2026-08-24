@@ -10,7 +10,11 @@ import {
   researchedFreePlanOutcome,
   softenUnfactedProductA,
 } from "@/services/comparison-research";
-import { buildMissingComparisonShells } from "./ecosystem-shells";
+import {
+  buildMissingComparisonShells,
+  buildTierHubComparisonShells,
+} from "./ecosystem-shells";
+import { tierHubComparisonPairs } from "./tier-hub-comparison-pairs";
 import { softwareSeed } from "./software";
 
 type ComparisonInput = z.input<typeof ComparisonSchema>;
@@ -11995,12 +11999,19 @@ const comparisonsSeedAuthored: ComparisonInput[] =
 
 const competitorPairsFromResearch = buildCompetitorPairComparisonsFromResearch();
 
+const tierHubShells = buildTierHubComparisonShells(softwareSeed, [
+  ...comparisonsSeedAuthored,
+  ...competitorPairsFromResearch,
+], tierHubComparisonPairs);
+
 export const comparisonsSeed: ComparisonInput[] = uniqueCanonicalComparisons([
   ...comparisonsSeedAuthored,
   ...competitorPairsFromResearch,
+  ...tierHubShells,
   ...buildMissingComparisonShells(softwareSeed, [
     ...comparisonsSeedAuthored,
     ...competitorPairsFromResearch,
+    ...tierHubShells,
   ]),
 ]);
 

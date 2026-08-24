@@ -121,6 +121,22 @@ describe("category hub", () => {
     ).toBe(true);
   });
 
+  it("surfaces scheduled hub explore paths in development preview", () => {
+    const category = getCategoryBySlug("field-service-operations", {
+      includeUnpublished: true,
+    });
+    expect(category).toBeDefined();
+    const model = buildCategoryHubModel(category!);
+    const exploreIds = model.explorePaths.map((p) => p.id);
+    expect(exploreIds).toEqual(
+      expect.arrayContaining(["best", "compare", "guides"]),
+    );
+    expect(model.guides.length).toBeGreaterThan(0);
+    expect(model.chooseGuideHref).toBe(
+      "/guides/how-to-choose-field-service-operations-software/",
+    );
+  });
+
   it("keeps CRM-parity quick nav on thin category hubs", () => {
     const category = getCategoryBySlug("project-management");
     expect(category).toBeDefined();

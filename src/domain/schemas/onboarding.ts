@@ -34,6 +34,8 @@ export const OnboardingStageIdSchema = z.enum([
   "content-mapping",
   "internal-link-planning",
   "validation",
+  "launch-scheduling",
+  "launch-report",
   "onboarding-summary",
 ]);
 
@@ -53,6 +55,8 @@ export const ONBOARDING_STAGE_ORDER: readonly OnboardingStageId[] = [
   "content-mapping",
   "internal-link-planning",
   "validation",
+  "launch-scheduling",
+  "launch-report",
   "onboarding-summary",
 ] as const;
 
@@ -99,6 +103,9 @@ export const OnboardingBlockerCodeSchema = z.enum([
   "DISCONTINUED_PRODUCT",
   "INVALID_STAGE_TRANSITION",
   "TASK_DEPENDENCY_CYCLE",
+  "PUBLICATION_SCHEDULE_INVALID",
+  "PUBLICATION_DEPENDENCY_ERROR",
+  "SCHEDULE_QUALITY_BLOCKED",
 ]);
 
 export type OnboardingBlockerCode = z.infer<typeof OnboardingBlockerCodeSchema>;
@@ -313,6 +320,78 @@ export const AgentHandoffTaskSchema = z.object({
 
 export type AgentHandoffTask = z.infer<typeof AgentHandoffTaskSchema>;
 
+export const OnboardingContentScopeSchema = z.enum([
+  "full",
+  "standard",
+  "minimal",
+]);
+
+export type OnboardingContentScope = z.infer<
+  typeof OnboardingContentScopeSchema
+>;
+
+export const OnboardingScheduleRequestSchema = z.object({
+  /** ISO instant (with offset) or UTC Z */
+  publishAt: z.string().min(1).optional(),
+  publishDate: z.string().regex(/^\d{4}-\d{2}-\d{2}$/).optional(),
+  publishTime: z.string().regex(/^\d{2}:\d{2}$/).optional(),
+  timezone: z.string().min(1).optional(),
+  vendor: z.string().min(1).optional(),
+  contentScope: OnboardingContentScopeSchema.default("standard"),
+  /** Per page-candidate id → ISO UTC publish instant */
+  itemPublishAt: z.record(z.string(), z.string()).optional(),
+  /** Shorthand offsets — ISO UTC */
+  alternativesAt: z.string().optional(),
+  comparisonsAt: z.string().optional(),
+  guidesAt: z.string().optional(),
+});
+
+export type OnboardingScheduleRequest = z.infer<
+  typeof OnboardingScheduleRequestSchema
+>;
+
+export const LaunchReadinessSchema = z.enum([
+  "READY",
+  "READY_WITH_WARNINGS",
+  "BLOCKED",
+]);
+
+export type LaunchReadiness = z.infer<typeof LaunchReadinessSchema>;
+
+export const LaunchContentItemSchema = z.object({
+  contentId: z.string().min(1),
+  pageType: OnboardingPageTypeSchema,
+  title: z.string().min(1),
+  path: z.string().startsWith("/"),
+  publishStatus: z.enum(["draft", "scheduled", "scheduled-blocked"]),
+  scheduledAt: z.string().optional(),
+  quality: LaunchReadinessSchema,
+  warnings: z.array(z.string()).default([]),
+  dependencies: z.array(z.string()).default([]),
+});
+
+export type LaunchContentItem = z.infer<typeof LaunchContentItemSchema>;
+
+export const OnboardingLaunchPlanSchema = z.object({
+  launchId: z.string().min(1),
+  name: z.string().min(1),
+  productSlug: SlugSchema,
+  vendor: z.string().optional(),
+  categorySlug: SlugSchema.optional(),
+  publishAtUtc: z.string().min(1),
+  humanPublishLabel: z.string().min(1),
+  timezone: z.string().min(1),
+  status: z.enum(["draft", "scheduled", "blocked"]),
+  readiness: LaunchReadinessSchema,
+  manifestPath: z.string().optional(),
+  previewCommand: z.string().min(1),
+  contentItems: z.array(LaunchContentItemSchema).default([]),
+  auditPath: z.string().optional(),
+  auditVerdict: LaunchReadinessSchema.optional(),
+});
+
+export type OnboardingLaunchPlan = z.infer<typeof OnboardingLaunchPlanSchema>;
+
 export const SoftwareOnboardingRequestSchema = z.object({
   name: z.string().min(1),
   slug: SlugSchema.optional(),
@@ -322,6 +401,7 @@ export const SoftwareOnboardingRequestSchema = z.object({
   suggestedCategoryIds: z.array(SlugSchema).default([]),
   entityTypeHint: SoftwareEntityTypeSchema.optional(),
   aliases: z.array(z.string().min(1)).default([]),
+  schedule: OnboardingScheduleRequestSchema.optional(),
   options: z
     .object({
       runResearch: z.boolean().default(true),
@@ -415,6 +495,7 @@ export const SoftwareOnboardingRunSchema = z.object({
   agentTasks: z.array(AgentHandoffTaskSchema).default([]),
   issues: z.array(OnboardingIssueSchema).default([]),
   scorecard: OnboardingScorecardSchema.optional(),
+  launchPlan: OnboardingLaunchPlanSchema.optional(),
   affiliateStatus: z.enum(["LINKED", "NONE", "CATALOGUE_HINT"]).default("NONE"),
   migrationNotes: z.array(z.string()).default([]),
   createdAt: IsoDateTimeSchema,

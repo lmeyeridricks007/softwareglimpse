@@ -8,6 +8,7 @@ import {
   isOriginalProductDiagram,
   isVendorUiScreenshot,
 } from "@/services/product-media/screenshot-kind";
+import { publicScreenshotCaption } from "@/services/product-media/public-screenshot-copy";
 
 export type ProductScreenshot = {
   id: string;
@@ -33,40 +34,16 @@ type DiagramProps = {
   className?: string;
 };
 
-function formatCheckedDate(value?: string): string | null {
-  if (!value) return null;
-  return value.slice(0, 10);
-}
-
 function ShotMeta({
   selected,
 }: {
   selected: ProductScreenshot;
 }) {
-  const checkedLabel = formatCheckedDate(selected.checkedAt);
-  if (
-    !selected.caption &&
-    !selected.source &&
-    !checkedLabel &&
-    !selected.annotation
-  ) {
-    return null;
-  }
+  const label = publicScreenshotCaption(selected);
+  if (!label) return null;
 
   return (
-    <div className="mt-4 space-y-1 text-sm text-[var(--sg-color-text-muted)]">
-      {selected.caption ? (
-        <p className="font-medium text-[var(--sg-color-text)]">
-          {selected.caption}
-        </p>
-      ) : null}
-      {selected.annotation ? <p>{selected.annotation}</p> : null}
-      <p className="text-xs">
-        {[selected.source, checkedLabel ? `Checked ${checkedLabel}` : null]
-          .filter(Boolean)
-          .join(" · ")}
-      </p>
-    </div>
+    <p className="mt-4 text-sm text-[var(--sg-color-text-muted)]">{label}</p>
   );
 }
 

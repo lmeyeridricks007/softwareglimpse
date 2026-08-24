@@ -8,6 +8,11 @@ import type {
   Software,
 } from "@/domain/schemas";
 import { isPubliclyAvailable } from "@/domain/publishing";
+import {
+  getSitemapPublicationContext,
+  isContentVisible,
+  type PublicationContext,
+} from "@/domain/publication-context";
 
 export type IndexableEntity =
   | { kind: "software"; entity: Software }
@@ -24,16 +29,18 @@ export type IndexableEntity =
 export function isEntityIndexable(
   input: IndexableEntity,
   now: Date = new Date(),
+  context: PublicationContext = getSitemapPublicationContext(now),
 ): boolean {
   const { metadata, seo } = input.entity;
   if (!seo.indexable) return false;
   if (
-    !isPubliclyAvailable(
+    !isContentVisible(
       {
         status: metadata.status,
         publishedAt: metadata.publishedAt,
         scheduledAt: metadata.scheduledAt,
       },
+      context,
       now,
     )
   ) {

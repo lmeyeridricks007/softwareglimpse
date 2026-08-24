@@ -19,3 +19,13 @@ export {
   validateOnboardingRepository,
   assertValidOnboarding,
 } from "./validate";
+export {
+  resolvePublishInstant,
+  buildLaunchId,
+} from "./schedule-time";
+export {
+  applyOnboardingLaunchSchedule,
+  buildLaunchContentPackage,
+  formatLaunchCompletionReport,
+  previewCommandForLaunch,
+} from "./launch-scheduling";

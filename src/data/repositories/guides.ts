@@ -1,5 +1,8 @@
 import { GuidePageSchema, type GuidePage } from "@/domain";
-import { isPubliclyAvailable } from "@/domain/publishing";
+import {
+  filterByPublicationVisibility,
+  type PublicationListOptions,
+} from "@/domain/publication-context";
 import {
   loadEducationalGuidesUnfiltered,
   __resetEducationalGuideCaches,
@@ -18,10 +21,7 @@ import {
   buildProductGuidePackForSlug,
 } from "@/services/product-guides/build";
 
-type ListOptions = {
-  includeUnpublished?: boolean;
-  now?: Date;
-};
+type ListOptions = PublicationListOptions;
 
 let fullCache: GuidePage[] | null = null;
 
@@ -82,10 +82,7 @@ function publishFilter(
   guides: GuidePage[],
   options: ListOptions = {},
 ): GuidePage[] {
-  const now = options.now ?? new Date();
-  return options.includeUnpublished
-    ? guides
-    : guides.filter((g) => isPubliclyAvailable(g.metadata, now));
+  return filterByPublicationVisibility(guides, options);
 }
 
 const PRODUCT_GUIDE_KIND_SUFFIXES = [

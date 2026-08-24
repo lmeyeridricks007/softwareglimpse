@@ -11,6 +11,9 @@ export const NEW_TOOL_CATEGORY_SLUGS = [
   "project-management",
   "hr",
   "ecommerce",
+  "accounting-finance",
+  "social-media-marketing",
+  "webinar-virtual-events",
   "ai",
   "it-development",
 ] as const;
@@ -157,6 +160,54 @@ export const CATEGORY_TOOL_META: Record<NewToolCategorySlug, CategoryToolMeta> =
         { value: "stripe", label: "Stripe" },
         { value: "paypal", label: "PayPal" },
         { value: "mailchimp", label: "Mailchimp" },
+      ],
+    },
+    "accounting-finance": {
+      slug: "accounting-finance",
+      shortName: "Accounting & Finance",
+      productNoun: "accounting & finance",
+      productNounPlural: "accounting & finance products",
+      softwarePhrase: "accounting & finance software",
+      bestSlug: "accounting-finance-software",
+      jobSummary:
+        "expenses, receipt capture, bookkeeping automation and manufacturing ERP",
+      integrationExtras: [
+        { value: "quickbooks", label: "QuickBooks" },
+        { value: "xero", label: "Xero" },
+        { value: "gusto", label: "Gusto" },
+        { value: "shopify", label: "Shopify" },
+      ],
+    },
+    "social-media-marketing": {
+      slug: "social-media-marketing",
+      shortName: "Social Media Marketing",
+      productNoun: "social media marketing",
+      productNounPlural: "social media marketing products",
+      softwarePhrase: "social media marketing software",
+      bestSlug: "social-media-marketing-software",
+      jobSummary:
+        "scheduling, listening, influencer campaigns and social suites",
+      integrationExtras: [
+        { value: "instagram", label: "Instagram" },
+        { value: "linkedin", label: "LinkedIn" },
+        { value: "canva", label: "Canva" },
+        { value: "shopify", label: "Shopify" },
+      ],
+    },
+    "webinar-virtual-events": {
+      slug: "webinar-virtual-events",
+      shortName: "Webinar & Virtual Events",
+      productNoun: "webinar",
+      productNounPlural: "webinar & virtual events products",
+      softwarePhrase: "webinar and virtual events software",
+      bestSlug: "webinar-virtual-events-software",
+      jobSummary:
+        "live webinars, evergreen replays, virtual events and live production",
+      integrationExtras: [
+        { value: "hubspot", label: "HubSpot" },
+        { value: "salesforce", label: "Salesforce" },
+        { value: "zoom", label: "Zoom" },
+        { value: "youtube", label: "YouTube Live" },
       ],
     },
     ai: {

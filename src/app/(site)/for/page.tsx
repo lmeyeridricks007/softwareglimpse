@@ -3,9 +3,9 @@ import Link from "next/link";
 import { Lightbulb } from "lucide-react";
 import {
   getAllAudiencesUnfiltered,
-  getAllComparisonsUnfiltered,
-  getAllSoftwareUnfiltered,
+  getComparisons,
   getSoftwareByCategory,
+  getSoftwareBySlug,
 } from "@/data";
 import { getAudienceHubProfile } from "@/data/audience-hub";
 import { AudienceHubHero } from "@/components/for/audience-hero";
@@ -63,12 +63,12 @@ export default function ForIndexPage() {
     })
     .slice(0, 8);
 
-  const comparisons = getAllComparisonsUnfiltered()
+  const comparisons = getComparisons()
     .filter((c) => c.categorySlug === "crm")
     .slice(0, 4)
     .map((comparison) => {
       const products = comparison.productSlugs
-        .map((s) => getAllSoftwareUnfiltered().find((x) => x.slug === s))
+        .map((s) => getSoftwareBySlug(s))
         .filter(Boolean)
         .map((p) => ({ name: p!.name, logo: p!.logo }));
       return {

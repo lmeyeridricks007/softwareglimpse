@@ -149,6 +149,14 @@ describe("best page model", () => {
       "email-marketing": "email-marketing-software",
       "customer-service": "customer-service-software",
       ecommerce: "ecommerce-software",
+      "accounting-finance": "accounting-finance-software",
+      "social-media-marketing": "social-media-marketing-software",
+      "webinar-virtual-events": "webinar-virtual-events-software",
+      "lms-course-creation": "lms-course-creation-software",
+      "website-digital-presence": "website-digital-presence-software",
+      "analytics-bi": "analytics-bi-software",
+      "field-service-operations": "field-service-operations-software",
+      "reputation-reviews": "reputation-reviews-software",
     };
     for (const [categorySlug, bestSlug] of Object.entries(expected)) {
       expect(navBestSlugByCategory[categorySlug]).toBe(bestSlug);
@@ -157,6 +165,19 @@ describe("best page model", () => {
       expect(page!.categorySlug).toBe(categorySlug);
       expect(evaluateBestQuality(page!)).toEqual({ ok: true, failures: [] });
       expect(isEntityIndexable({ kind: "best", entity: page! })).toBe(true);
+    }
+  });
+
+  it("lists every top-level category with a Best page in the Best Software nav", () => {
+    const top = getCategories().filter((c) => !c.parentSlug);
+    const pages = getAllBestPagesUnfiltered();
+    for (const category of top) {
+      const page = pages.find((p) => p.categorySlug === category.slug);
+      if (!page) continue;
+      expect(
+        navBestSlugByCategory[category.slug],
+        `${category.slug} missing from Best Software nav`,
+      ).toBe(page.slug);
     }
   });
 

@@ -6,6 +6,10 @@ import { ProductLogo } from "@/components/software/product-logo";
 import { ButtonLink } from "@/components/ui/button";
 import { Rating } from "@/components/ui/rating";
 import type { BestPageRecommendationModel } from "@/services/best-page";
+import {
+  publicScreenshotCaption,
+  publicScreenshotSourceUrl,
+} from "@/services/product-media/public-screenshot-copy";
 import { cn } from "@/lib/cn";
 
 type Props = {
@@ -137,22 +141,33 @@ export function BestSoftwareProductSection({
                 loading="lazy"
               />
             </div>
-            <figcaption className="mt-2 text-xs leading-snug text-[var(--sg-color-text-muted)]">
-              {item.screenshot.caption}
-              {item.screenshot.source ? (
-                <>
-                  {" "}
-                  <a
-                    href={item.screenshot.source}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="font-medium text-[var(--sg-color-primary)] underline-offset-2 hover:underline"
-                  >
-                    Source
-                  </a>
-                </>
-              ) : null}
-            </figcaption>
+            {(() => {
+              const caption = item.screenshot
+                ? publicScreenshotCaption(item.screenshot)
+                : null;
+              const source = item.screenshot
+                ? publicScreenshotSourceUrl(item.screenshot)
+                : null;
+              if (!caption && !source) return null;
+              return (
+                <figcaption className="mt-2 text-xs leading-snug text-[var(--sg-color-text-muted)]">
+                  {caption}
+                  {source ? (
+                    <>
+                      {caption ? " " : null}
+                      <a
+                        href={source}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="font-medium text-[var(--sg-color-primary)] underline-offset-2 hover:underline"
+                      >
+                        Source
+                      </a>
+                    </>
+                  ) : null}
+                </figcaption>
+              );
+            })()}
           </figure>
         ) : null}
       </div>

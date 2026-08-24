@@ -3,10 +3,17 @@ import {
   type ContentRegistryEntry,
   type PublicationState,
 } from "@/domain";
+import {
+  getPublicationContextSync,
+  getSitemapPublicationContext,
+  isContentVisible,
+  type PublicationContext,
+} from "@/domain/publication-context";
 
 export function getPublicationStateForEntry(
   entry: ContentRegistryEntry,
   now: Date = new Date(),
+  context: PublicationContext = getPublicationContextSync(),
 ): PublicationState {
   return getPublicationState(
     {
@@ -23,9 +30,18 @@ export function getPublicationStateForEntry(
 export function filterVisibleEntries(
   entries: ContentRegistryEntry[],
   now: Date = new Date(),
+  context: PublicationContext = getPublicationContextSync(),
 ): ContentRegistryEntry[] {
-  return entries.filter(
-    (entry) => getPublicationStateForEntry(entry, now).isVisibleInListings,
+  return entries.filter((entry) =>
+    isContentVisible(
+      {
+        status: entry.metadata.status,
+        publishedAt: entry.metadata.publishedAt,
+        scheduledAt: entry.metadata.scheduledAt,
+      },
+      context,
+      now,
+    ),
   );
 }
 
@@ -33,9 +49,22 @@ export function filterVisibleEntries(
 export function filterSitemapEntries(
   entries: ContentRegistryEntry[],
   now: Date = new Date(),
+  context: PublicationContext = getSitemapPublicationContext(now),
 ): ContentRegistryEntry[] {
   return entries.filter((entry) => {
-    const state = getPublicationStateForEntry(entry, now);
-    return state.isVisibleInListings && state.isIndexable;
+    const state = getPublicationStateForEntry(entry, now, context);
+    return (
+      isContentVisible(
+        {
+          status: entry.metadata.status,
+          publishedAt: entry.metadata.publishedAt,
+          scheduledAt: entry.metadata.scheduledAt,
+        },
+        context,
+        now,
+      ) &&
+      state.isIndexable &&
+      entry.seoIndexable
+    );
   });
 }

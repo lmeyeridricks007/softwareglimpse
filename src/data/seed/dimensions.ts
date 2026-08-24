@@ -426,7 +426,7 @@ export const useCasesSeed: UseCaseInput[] = [
       "Give the business real phone numbers, shared answering, and call logging instead of personal mobiles.",
     description:
       "Business phone use cases cover number provisioning and porting, softphone apps, shared answering, and call logging so customer calls reach the right person and leave a record.",
-    categorySlugs: ["business-communications"],
+    categorySlugs: ["business-communications", "voip-business-phone"],
     seo: {
       indexable: true,
       canonicalPath: "/use-cases/business-phone/",
@@ -443,7 +443,7 @@ export const useCasesSeed: UseCaseInput[] = [
       "Run outbound call volume with dialing tools and automatic CRM logging instead of hand-typed numbers.",
     description:
       "Sales calling use cases cover power dialing, local presence, call dispositions, and CRM write-back for teams whose day is measured in conversations attempted.",
-    categorySlugs: ["business-communications"],
+    categorySlugs: ["business-communications", "voip-business-phone"],
     seo: {
       indexable: true,
       canonicalPath: "/use-cases/sales-calling/",
@@ -511,7 +511,7 @@ export const useCasesSeed: UseCaseInput[] = [
       "Route inbound volume through IVR menus and queues with reporting managers can act on.",
     description:
       "Contact center use cases cover IVR menus, queues and overflow, business-hours rules, agent availability, and the queue reporting a support manager reviews weekly.",
-    categorySlugs: ["business-communications"],
+    categorySlugs: ["business-communications", "voip-business-phone"],
     seo: {
       indexable: true,
       canonicalPath: "/use-cases/contact-center/",
@@ -904,7 +904,7 @@ export const useCasesSeed: UseCaseInput[] = [
       "Pick, pack, ship, and track orders across channels.",
     description:
       "Order fulfillment use cases cover shipping labels, 3PL handoffs, and post-purchase tracking.",
-    categorySlugs: ["ecommerce"],
+    categorySlugs: ["ecommerce", "fulfillment-shipping"],
     seo: {
       indexable: true,
       canonicalPath: "/use-cases/order-fulfillment/",
@@ -921,7 +921,7 @@ export const useCasesSeed: UseCaseInput[] = [
       "Import supplier catalogs and automate order routing without holding inventory.",
     description:
       "Dropshipping sourcing use cases cover product import apps and supplier marketplaces — not full storefront platforms.",
-    categorySlugs: ["ecommerce"],
+    categorySlugs: ["ecommerce", "dropshipping-pod"],
     seo: {
       indexable: true,
       canonicalPath: "/use-cases/dropshipping-sourcing/",
@@ -972,7 +972,7 @@ export const useCasesSeed: UseCaseInput[] = [
       "Queue, assign, and resolve customer tickets with SLAs and macros.",
     description:
       "Helpdesk / ticketing use cases cover email-to-ticket workflows, assignment, SLAs, and resolution tracking for support teams.",
-    categorySlugs: ["customer-service"],
+    categorySlugs: ["customer-service", "helpdesk-ticketing"],
     seo: {
       indexable: true,
       canonicalPath: "/use-cases/helpdesk-ticketing/",
@@ -989,7 +989,7 @@ export const useCasesSeed: UseCaseInput[] = [
       "Talk to website visitors in real time and route chats to the right agent.",
     description:
       "Live chat support use cases cover website messengers, routing, canned replies, and visitor context for support and pre-sales teams.",
-    categorySlugs: ["customer-service"],
+    categorySlugs: ["customer-service", "live-chat"],
     seo: {
       indexable: true,
       canonicalPath: "/use-cases/live-chat-support/",
@@ -1074,13 +1074,81 @@ export const useCasesSeed: UseCaseInput[] = [
       "Deflect or resolve support conversations with an AI agent, plus copilot for humans.",
     description:
       "AI customer service use cases cover resolution bots, outcome-priced AI agents, and agent copilots — scored as assistance, not a substitute for a helpdesk core.",
-    categorySlugs: ["customer-service"],
+    categorySlugs: ["customer-service", "live-chat"],
     seo: {
       indexable: true,
       canonicalPath: "/use-cases/ai-customer-service/",
       title: "AI customer service software | SoftwareGlimpse",
       description:
         "How AI agents and copilots deflect tickets and assist human support teams.",
+    },
+  }),
+  useCase({
+    id: "uc-expense-management",
+    slug: "expense-management",
+    name: "Expense management",
+    shortDescription:
+      "Capture, approve, and reimburse employee expenses with policy controls.",
+    description:
+      "Expense management software handles receipt capture, approval workflows, corporate card feeds, and reimbursement — distinct from payroll system-of-record or general ledger bookkeeping.",
+    categorySlugs: ["accounting-finance"],
+    seo: {
+      indexable: true,
+      canonicalPath: "/use-cases/expense-management/",
+      title: "Expense management software | SoftwareGlimpse",
+      description:
+        "How expense tools capture receipts, enforce policy, and route reimbursements.",
+    },
+  }),
+  useCase({
+    id: "uc-travel-expense",
+    slug: "travel-expense",
+    name: "Travel & expense (T&E)",
+    shortDescription:
+      "Corporate travel booking, policy, and expense reporting in one stack.",
+    description:
+      "Travel and expense platforms combine booking, itinerary management, policy enforcement, and reimbursement — often adjacent to HR people platforms but a distinct finance-ops purchase.",
+    categorySlugs: ["accounting-finance", "hr"],
+    seo: {
+      indexable: true,
+      canonicalPath: "/use-cases/travel-expense/",
+      title: "Travel & expense software | SoftwareGlimpse",
+      description:
+        "How T&E platforms manage corporate travel booking and expense policy.",
+    },
+  }),
+  useCase({
+    id: "uc-bookkeeping-automation",
+    slug: "bookkeeping-automation",
+    name: "Bookkeeping automation",
+    shortDescription:
+      "Receipt capture, categorisation, and accountant handoff for small businesses.",
+    description:
+      "Bookkeeping automation tools digitise receipts, suggest categories, and sync with accounting ledgers — built for owners, bookkeepers, and accounting firms rather than enterprise ERP buyers.",
+    categorySlugs: ["accounting-finance"],
+    seo: {
+      indexable: true,
+      canonicalPath: "/use-cases/bookkeeping-automation/",
+      title: "Bookkeeping automation software | SoftwareGlimpse",
+      description:
+        "How bookkeeping tools automate receipt capture and categorisation.",
+    },
+  }),
+  useCase({
+    id: "uc-inventory-erp",
+    slug: "inventory-erp",
+    name: "Inventory & manufacturing ERP",
+    shortDescription:
+      "Stock, BOM, production planning, and shop-floor workflows for makers.",
+    description:
+      "Inventory and manufacturing ERP/MRP software tracks materials, bills of materials, work orders, and production — distinct from Kanban work OS tools or expense-only purchases.",
+    categorySlugs: ["accounting-finance", "project-management"],
+    seo: {
+      indexable: true,
+      canonicalPath: "/use-cases/inventory-erp/",
+      title: "Inventory & manufacturing ERP software | SoftwareGlimpse",
+      description:
+        "How MRP/ERP tools plan production, inventory, and shop-floor work.",
     },
   }),
   useCase({
@@ -1106,13 +1174,43 @@ export const useCasesSeed: UseCaseInput[] = [
     name: "AI writing",
     shortDescription:
       "Paraphrase, grammar, summarisation, and rewrite tools for writers and teams.",
-    categorySlugs: ["ai"],
+    categorySlugs: ["ai", "ai-writing"],
     seo: {
       indexable: true,
       canonicalPath: "/use-cases/ai-writing/",
       title: "AI writing software | SoftwareGlimpse",
       description:
         "How AI writing assistants help paraphrase, polish, and summarise text.",
+    },
+  }),
+  useCase({
+    id: "uc-paraphrasing",
+    slug: "paraphrasing",
+    name: "Paraphrasing & rewriting",
+    shortDescription:
+      "Rephrase sentences and passages with tone controls — grammar-first writing workflows.",
+    categorySlugs: ["ai-writing", "ai"],
+    seo: {
+      indexable: true,
+      canonicalPath: "/use-cases/paraphrasing/",
+      title: "Paraphrasing software | SoftwareGlimpse",
+      description:
+        "How paraphrasing tools help rewrite and polish text with AI.",
+    },
+  }),
+  useCase({
+    id: "uc-ai-copywriting",
+    slug: "ai-copywriting",
+    name: "AI copywriting",
+    shortDescription:
+      "Generate marketing copy, blogs, and landing pages from prompts — including GEO/AEO content.",
+    categorySlugs: ["ai-writing", "ai", "marketing"],
+    seo: {
+      indexable: true,
+      canonicalPath: "/use-cases/ai-copywriting/",
+      title: "AI copywriting software | SoftwareGlimpse",
+      description:
+        "How AI copywriting platforms draft marketing content and optimize for AI search.",
     },
   }),
   useCase({
@@ -1151,13 +1249,28 @@ export const useCasesSeed: UseCaseInput[] = [
     name: "AI website builder",
     shortDescription:
       "Prompt-to-website builders for marketing sites and landing pages.",
-    categorySlugs: ["ai"],
+    categorySlugs: ["ai", "ai-website-builder"],
     seo: {
       indexable: true,
       canonicalPath: "/use-cases/ai-website-builder/",
       title: "AI website builder software | SoftwareGlimpse",
       description:
         "How AI website builders generate marketing sites from prompts.",
+    },
+  }),
+  useCase({
+    id: "uc-ai-app-development",
+    slug: "ai-app-development",
+    name: "AI app development",
+    shortDescription:
+      "Generate and iterate lightweight apps from prompts — distinct from site builders and agent UX shells.",
+    categorySlugs: ["ai-website-builder", "ai", "it-development"],
+    seo: {
+      indexable: true,
+      canonicalPath: "/use-cases/ai-app-development/",
+      title: "AI app development software | SoftwareGlimpse",
+      description:
+        "How AI app development platforms generate lightweight apps from prompts.",
     },
   }),
   useCase({
@@ -1181,7 +1294,7 @@ export const useCasesSeed: UseCaseInput[] = [
     name: "AI agents / builders",
     shortDescription:
       "No-code or low-code builders for custom AI agents and internal apps.",
-    categorySlugs: ["ai"],
+    categorySlugs: ["ai", "ai-website-builder"],
     seo: {
       indexable: true,
       canonicalPath: "/use-cases/ai-agents/",
@@ -1392,19 +1505,19 @@ function taxonomyUseCases(): UseCaseInput[] {
       "social-media-management",
       "Social media management",
       "Plan, publish, and manage social posts across networks from one calendar.",
-      ["marketing"],
+      ["marketing", "social-media-marketing"],
     ],
     [
       "social-media-marketing",
       "Social media marketing",
       "Run social campaigns, scheduling, and engagement as a marketing motion.",
-      ["marketing"],
+      ["marketing", "social-media-marketing"],
     ],
     [
       "social-listening",
       "Social listening",
       "Monitor brand, competitor, and keyword mentions across social and the web.",
-      ["marketing"],
+      ["marketing", "social-media-marketing"],
     ],
     [
       "content-marketing",
@@ -1416,19 +1529,25 @@ function taxonomyUseCases(): UseCaseInput[] {
       "brand-monitoring",
       "Brand monitoring",
       "Track brand mentions, reputation signals, and share of voice.",
-      ["marketing"],
+      ["marketing", "social-media-marketing"],
+    ],
+    [
+      "influencer-marketing",
+      "Influencer marketing",
+      "Discover creators, run outreach, and measure influencer campaign ROI.",
+      ["marketing", "social-media-marketing"],
     ],
     [
       "funnel-building",
       "Funnel building",
       "Design multi-step acquisition funnels from landing page to conversion.",
-      ["marketing"],
+      ["marketing", "website-digital-presence"],
     ],
     [
       "landing-pages",
       "Landing pages",
       "Build campaign landing pages and lead-capture destinations.",
-      ["marketing"],
+      ["marketing", "website-digital-presence"],
     ],
     [
       "lead-generation",
@@ -1446,13 +1565,49 @@ function taxonomyUseCases(): UseCaseInput[] {
       "creator-marketing",
       "Creator marketing",
       "Sell courses, memberships, and creator-led offers with campaign tooling.",
-      ["marketing"],
+      ["marketing", "lms-course-creation"],
     ],
     [
       "analytics",
       "Analytics",
       "Measure campaign, funnel, and channel performance to decide what to keep.",
-      ["marketing"],
+      ["marketing", "analytics-bi"],
+    ],
+    [
+      "marketing-attribution",
+      "Marketing attribution",
+      "Attribute leads, calls, and forms to campaigns and prove channel ROI.",
+      ["analytics-bi", "marketing"],
+    ],
+    [
+      "kpi-dashboards",
+      "KPI dashboards",
+      "Build executive and team dashboards with goals across marketing data sources.",
+      ["analytics-bi"],
+    ],
+    [
+      "marketing-metrics",
+      "Marketing metrics unification",
+      "Connect ads, CRM, and analytics tools into one reporting view.",
+      ["analytics-bi", "marketing"],
+    ],
+    [
+      "construction-management",
+      "Construction management",
+      "Job costing, schedules, and contractor workflows for field crews.",
+      ["field-service-operations", "project-management"],
+    ],
+    [
+      "trades-field-service",
+      "Trades field service",
+      "Dispatch, quotes, invoicing, and mobile jobs for trades businesses.",
+      ["field-service-operations"],
+    ],
+    [
+      "appointment-scheduling",
+      "Appointment scheduling",
+      "Client booking, reminders, and local business management.",
+      ["field-service-operations", "customer-service"],
     ],
     [
       "creator-newsletters",
@@ -1464,19 +1619,73 @@ function taxonomyUseCases(): UseCaseInput[] {
       "webinar-marketing",
       "Webinar marketing",
       "Use webinars and live events as a demand-generation channel.",
-      ["email-marketing", "marketing"],
+      ["email-marketing", "marketing", "webinar-virtual-events"],
     ],
     [
       "webinars-events",
       "Webinars & events",
       "Host webinars, meetings, and live events as a communications workflow.",
-      ["business-communications"],
+      ["business-communications", "webinar-virtual-events"],
+    ],
+    [
+      "virtual-events",
+      "Virtual events",
+      "Run multi-session virtual events with stages, networking, and attendee journeys.",
+      ["webinar-virtual-events"],
+    ],
+    [
+      "live-streaming",
+      "Live streaming",
+      "Produce and multistream live video with multi-camera production workflows.",
+      ["webinar-virtual-events", "marketing"],
+    ],
+    [
+      "online-courses",
+      "Online courses",
+      "Build and deliver structured online courses and academies.",
+      ["lms-course-creation", "marketing"],
+    ],
+    [
+      "course-commerce",
+      "Course commerce",
+      "Sell courses, memberships, and training products with checkout.",
+      ["lms-course-creation", "marketing"],
+    ],
+    [
+      "cohort-learning",
+      "Cohort learning",
+      "Run scheduled cohort programs with drip content and milestones.",
+      ["lms-course-creation"],
+    ],
+    [
+      "learner-assessments",
+      "Learner assessments",
+      "Quizzes, tests, and knowledge checks for learners.",
+      ["lms-course-creation", "hr"],
+    ],
+    [
+      "digital-business-marketplace",
+      "Digital business marketplace",
+      "Buy and sell websites, online stores, and digital businesses.",
+      ["website-digital-presence", "ecommerce"],
     ],
     [
       "reputation-reviews",
       "Reputation & reviews",
       "Collect, monitor, and respond to customer reviews and reputation signals.",
-      ["customer-service", "marketing"],
+      ["reputation-reviews", "customer-service", "marketing"],
+    ],
+    [
+      "review-generation",
+      "Review generation",
+      "Automate post-job review requests and grow Google ratings.",
+      ["reputation-reviews"],
+    ],
+    [
+      "local-reputation",
+      "Local reputation management",
+      "Manage Google and social reputation for local service businesses.",
+      ["reputation-reviews"],
     ],
   ];
 

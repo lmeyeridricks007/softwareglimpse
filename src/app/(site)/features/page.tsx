@@ -1,10 +1,10 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import {
-  getAllComparisonsUnfiltered,
-  getAllSoftwareUnfiltered,
+  getComparisons,
   getCategories,
   getSoftwareByCategory,
+  getSoftwareBySlug,
 } from "@/data";
 import { listFeaturePillarProfiles } from "@/data/feature-detail";
 import { FeatureExploreGrid } from "@/components/features/feature-explore-grid";
@@ -46,12 +46,12 @@ export default function FeaturesIndexPage() {
 
   const featured = profiles.find((p) => p.slug === "multiple-pipelines") ?? profiles[0];
 
-  const comparisons = getAllComparisonsUnfiltered()
+  const comparisons = getComparisons()
     .filter((c) => c.categorySlug === "crm")
     .slice(0, 4)
     .map((comparison) => {
       const products = comparison.productSlugs
-        .map((s) => getAllSoftwareUnfiltered().find((x) => x.slug === s))
+        .map((s) => getSoftwareBySlug(s))
         .filter(Boolean)
         .map((p) => ({ name: p!.name, logo: p!.logo }));
       return {

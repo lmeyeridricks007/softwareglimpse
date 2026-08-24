@@ -212,13 +212,40 @@ function CategoryHubPage({ category }: { category: Category }) {
         />
 
         {model.rankingsApproved ? (
-          <CategoryBestPreview
-            title={`Best ${shortLabel} software`}
-            subtitle="Our current shortlist"
-            items={model.bestPreview}
-            viewAllHref={model.bestHref ?? undefined}
-            viewAllLabel={`See all Best ${shortLabel} Software`}
-          />
+          <>
+            <CategoryBestPreview
+              title={`Best ${shortLabel} software`}
+              subtitle="Our current shortlist"
+              items={model.bestPreview}
+              viewAllHref={model.bestHref ?? undefined}
+              viewAllLabel={`See all Best ${shortLabel} Software`}
+            />
+            {model.productCards.length > model.bestPreview.length ? (
+              <CategoryBestPreview
+                title={`More ${shortLabel} software worth comparing`}
+                subtitle="Landscape peers alongside editor's picks — compare inside the same job cluster."
+                items={[]}
+                unranked
+                unrankedItems={model.productCards
+                  .filter(
+                    (p) => !model.bestPreview.some((b) => b.slug === p.slug),
+                  )
+                  .slice(0, 6)
+                  .map((p) => ({
+                    slug: p.slug,
+                    name: p.name,
+                    logo: p.logo,
+                    bestFor: p.bestFor,
+                  }))}
+                viewAllHref={model.bestHref ?? undefined}
+                viewAllLabel={
+                  model.bestHref
+                    ? `See how we evaluate ${shortLabel}`
+                    : undefined
+                }
+              />
+            ) : null}
+          </>
         ) : model.productCards.length > 0 ? (
           <CategoryBestPreview
             title={`${shortLabel} software worth comparing`}

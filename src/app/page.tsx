@@ -2,8 +2,8 @@ import Link from "next/link";
 import type { Metadata } from "next";
 import { Search } from "lucide-react";
 import {
-  getAllComparisonsUnfiltered,
-  getAllSoftwareUnfiltered,
+  getComparisons,
+  getSoftware,
   getBestPages,
   getIndustries,
   getSoftwareByCategory,
@@ -76,7 +76,7 @@ function publicBestBuyingContext(categoryLabel: string): string {
 export default function HomePage() {
   const categories = getTopLevelCategories();
   const categoryBySlug = new Map(categories.map((c) => [c.slug, c]));
-  const software = getAllSoftwareUnfiltered().filter(
+  const software = getSoftware().filter(
     (s) => s.productLifecycle === "active",
   );
   const bestPages = getBestPages();
@@ -84,7 +84,7 @@ export default function HomePage() {
   const guides = getEducationalGuides();
   const useCases = getUseCases();
   const industries = getIndustries();
-  const comparisons = getAllComparisonsUnfiltered().filter(
+  const comparisons = getComparisons().filter(
     (c) => c.categorySlug === "crm" && c.productSlugs.length >= 2,
   );
 

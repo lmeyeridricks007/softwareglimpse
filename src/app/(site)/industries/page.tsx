@@ -1,9 +1,9 @@
 import type { Metadata } from "next";
 import {
-  getAllComparisonsUnfiltered,
-  getAllSoftwareUnfiltered,
+  getComparisons,
   getIndustries,
   getSoftwareByCategory,
+  getSoftwareBySlug,
 } from "@/data";
 import { IndustryExploreGrid } from "@/components/industries/industry-explore-grid";
 import { IndustryHubHero } from "@/components/industries/industry-hero";
@@ -54,12 +54,12 @@ export default function IndustriesIndexPage() {
     })
     .slice(0, 8);
 
-  const comparisons = getAllComparisonsUnfiltered()
+  const comparisons = getComparisons()
     .filter((c) => c.categorySlug === "crm")
     .slice(0, 4)
     .map((comparison) => {
       const products = comparison.productSlugs
-        .map((s) => getAllSoftwareUnfiltered().find((x) => x.slug === s))
+        .map((s) => getSoftwareBySlug(s))
         .filter(Boolean)
         .map((p) => ({ name: p!.name, logo: p!.logo }));
       return {

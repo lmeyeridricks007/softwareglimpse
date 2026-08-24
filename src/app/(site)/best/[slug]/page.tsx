@@ -1,10 +1,10 @@
 import type { Metadata } from "next";
 import { notFound } from "next/navigation";
 import {
-  getAllAlternativesUnfiltered,
-  getAllBestPagesUnfiltered,
-  getAllComparisonsUnfiltered,
-  getAllSoftwareUnfiltered,
+  getAlternativesPages,
+  getBestPageBySlug,
+  getBestPages,
+  getComparisons,
   getCategories,
   getSoftwareBySlug,
   getUseCases,
@@ -103,12 +103,12 @@ function resolveMethodology(categorySlug?: string) {
 }
 
 export function generateStaticParams() {
-  return getAllBestPagesUnfiltered().map((item) => ({ slug: item.slug }));
+  return getBestPages().map((item) => ({ slug: item.slug }));
 }
 
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const { slug } = await params;
-  const page = getAllBestPagesUnfiltered().find((item) => item.slug === slug);
+  const page = getBestPageBySlug(slug);
   if (!page) {
     return buildPageMetadata({
       title: "Guide not found",
@@ -158,7 +158,7 @@ function SectionShell({
 
 export default async function BestDetailPage({ params }: Props) {
   const { slug } = await params;
-  const page = getAllBestPagesUnfiltered().find((item) => item.slug === slug);
+  const page = getBestPageBySlug(slug);
   if (!page) notFound();
 
   const category = page.categorySlug
@@ -192,9 +192,7 @@ export default async function BestDetailPage({ params }: Props) {
           shortName: category.name.replace(/\s+Software$/i, ""),
         }
       : null,
-    softwareBySlug: (productSlug) =>
-      getSoftwareBySlug(productSlug) ??
-      getAllSoftwareUnfiltered().find((s) => s.slug === productSlug),
+    softwareBySlug: (productSlug) => getSoftwareBySlug(productSlug),
     methodology: methodology
       ? {
           description: methodology.description,
@@ -212,13 +210,13 @@ export default async function BestDetailPage({ params }: Props) {
       page.eligibleProductSlugs,
     ),
     productGuides,
-    comparisons: getAllComparisonsUnfiltered().map((c) => ({
+    comparisons: getComparisons().map((c) => ({
       slug: c.slug,
       title: c.title,
       summary: c.summary,
       productSlugs: c.productSlugs,
     })),
-    alternatives: getAllAlternativesUnfiltered().map((a) => ({
+    alternatives: getAlternativesPages().map((a) => ({
       slug: a.slug,
       title: a.title,
       sourceSlug: a.sourceSlug,
@@ -288,9 +286,7 @@ export default async function BestDetailPage({ params }: Props) {
 
   const pricingSnapshots =
     model.pricing?.interactiveProductSlugs.map((productSlug) => {
-      const software =
-        getSoftwareBySlug(productSlug) ??
-        getAllSoftwareUnfiltered().find((s) => s.slug === productSlug);
+      const software = getSoftwareBySlug(productSlug);
       if (!software) return null;
       return buildPricingSnapshot({
         software,

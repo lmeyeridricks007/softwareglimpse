@@ -35,14 +35,17 @@ export function checkDuplicateProduct(input: {
   );
   const host = input.website ? normalizeWebsiteHost(input.website) : null;
 
+  // Reconcile path: slug already in seed — vendor-family website overlap is expected.
+  const existingBySlug = all.find((product) => product.slug === slugKey);
+  if (existingBySlug) {
+    return {
+      outcome: "EXISTING",
+      matched: existingBySlug,
+      reason: `Slug already exists: ${existingBySlug.slug}`,
+    };
+  }
+
   for (const product of all) {
-    if (product.slug === slugKey) {
-      return {
-        outcome: "EXISTING",
-        matched: product,
-        reason: `Slug already exists: ${product.slug}`,
-      };
-    }
 
     const productKeys = new Set(
       [

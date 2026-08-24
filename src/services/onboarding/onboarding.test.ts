@@ -45,6 +45,18 @@ describe("software onboarding", () => {
     expect(result.matched?.slug).toBe("pipedrive");
   });
 
+  it("treats vendor-family SKU as EXISTING despite shared website host", () => {
+    for (const slug of ["freshmarketer", "freshteam", "pardot", "siebel"]) {
+      const product = checkDuplicateProduct({
+        name: slug,
+        slug,
+        website: "https://www.freshworks.com",
+      });
+      expect(product.outcome).toBe("EXISTING");
+      expect(product.matched?.slug).toBe(slug);
+    }
+  });
+
   it("classifies email-marketing taxonomy for getresponse hint", () => {
     const tax = classifyTaxonomy({
       productSlug: "getresponse",

@@ -1,11 +1,11 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import {
-  getAllComparisonsUnfiltered,
-  getAllSoftwareUnfiltered,
+  getComparisons,
   getCapabilities,
   getCategories,
   getSoftwareByCategory,
+  getSoftwareBySlug,
 } from "@/data";
 import { CapabilityExploreGrid } from "@/components/capabilities/capability-explore-grid";
 import { CapabilityHubHero } from "@/components/capabilities/capability-hero";
@@ -50,17 +50,17 @@ export default function CapabilitiesIndexPage() {
     crmCapabilities.find((c) => c.slug === "pipeline-management") ??
     crmCapabilities[0];
 
-  const featuredProducts = getAllSoftwareUnfiltered()
+  const featuredProducts = getSoftwareByCategory("crm")
     .filter((s) => s.useCaseSlugs.includes("pipeline-management"))
     .slice(0, 3)
     .map((s) => s.name);
 
-  const comparisons = getAllComparisonsUnfiltered()
+  const comparisons = getComparisons()
     .filter((c) => c.categorySlug === "crm")
     .slice(0, 4)
     .map((comparison) => {
       const products = comparison.productSlugs
-        .map((s) => getAllSoftwareUnfiltered().find((x) => x.slug === s))
+        .map((s) => getSoftwareBySlug(s))
         .filter(Boolean)
         .map((p) => ({ name: p!.name, logo: p!.logo }));
       return {

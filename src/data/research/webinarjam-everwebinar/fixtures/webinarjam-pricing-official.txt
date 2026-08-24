@@ -1,0 +1,21 @@
+# FIXTURE SNAPSHOT — structured from first-party research (2026-08-23)
+# Label: fixture extract for FixtureFactExtractor — not a live HTML scrape dump.
+
+CURRENCY: USD
+PRICING_MODEL: subscription
+FREE_PLAN: false
+FREE_TRIAL: true
+TRIAL_DAYS: 14
+STARTING_PRICE_MONTHLY: 39
+
+NOTES:
+WebinarJam (webinarjam.com/pricing, 2026-08-23): $1 trial for 14 days, then paid tiers by attendee cap — Starter ~$49/mo list ($39/mo annual), Basic ~$99 ($79 annual), Professional ~$299 ($229 annual), Enterprise ~$499 ($379 annual). Caps scale from ~100 to 5,000 attendees; host seats vary by tier. EverWebinar (everwebinar.com/pricing): separate flat subscription — $199/mo monthly, $99/mo effective on $1,188 annual prepay, or $79/mo effective on $1,896 two-year prepay; $1 trial then monthly billing. Products are sold separately; Genesis Digital may bundle. Confirm live checkout and affiliate packaging.
+
+PLANS:
+- PLAN webinarjam-starter: name=WebinarJam Starter; amount=49; currency=USD; interval=month; annualAmount=39
+- PLAN webinarjam-basic: name=WebinarJam Basic; amount=99; currency=USD; interval=month; annualAmount=79
+- PLAN webinarjam-professional: name=WebinarJam Professional; amount=299; currency=USD; interval=month; annualAmount=229
+- PLAN webinarjam-enterprise: name=WebinarJam Enterprise; amount=499; currency=USD; interval=month; annualAmount=379
+- PLAN everwebinar-monthly: name=EverWebinar Monthly; amount=199; currency=USD; interval=month
+- PLAN everwebinar-annual: name=EverWebinar Annual; amount=1188; currency=USD; interval=year
+- PLAN everwebinar-two-year: name=EverWebinar Two-Year; amount=1896; currency=USD; interval=year

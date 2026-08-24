@@ -2,9 +2,9 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import { notFound } from "next/navigation";
 import {
-  getAllAlternativesUnfiltered,
-  getAllComparisonsUnfiltered,
-  getAllSoftwareUnfiltered,
+  getAlternativesPageBySlug,
+  getAlternativesPages,
+  getComparisons,
   getSoftwareBySlug,
 } from "@/data";
 import { loadAssessment, loadReview, getMethodologyBySlug } from "@/data/editorial/store";
@@ -72,28 +72,25 @@ function pricingTeaser(software: Software): string | null {
 }
 
 function resolveSoftware(slug: string): Software | undefined {
-  return (
-    getSoftwareBySlug(slug) ??
-    getAllSoftwareUnfiltered().find((item) => item.slug === slug)
-  );
+  return getSoftwareBySlug(slug);
 }
 
 function comparisonHref(a: string, b: string): string | undefined {
   const forward = `${a}-vs-${b}`;
   const reverse = `${b}-vs-${a}`;
-  const found = getAllComparisonsUnfiltered().find(
+  const found = getComparisons().find(
     (c) => c.slug === forward || c.slug === reverse,
   );
   return found ? `/compare/${found.slug}/` : undefined;
 }
 
 export function generateStaticParams() {
-  return getAllAlternativesUnfiltered().map((item) => ({ slug: item.slug }));
+  return getAlternativesPages().map((item) => ({ slug: item.slug }));
 }
 
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const { slug } = await params;
-  const page = getAllAlternativesUnfiltered().find((item) => item.slug === slug);
+  const page = getAlternativesPageBySlug(slug);
   if (!page) {
     return buildPageMetadata({
       title: "Alternatives not found",
@@ -113,7 +110,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
 
 export default async function AlternativesDetailPage({ params }: Props) {
   const { slug } = await params;
-  const page = getAllAlternativesUnfiltered().find((item) => item.slug === slug);
+  const page = getAlternativesPageBySlug(slug);
   if (!page) notFound();
 
   const source = resolveSoftware(page.sourceSlug);
@@ -230,7 +227,7 @@ export default async function AlternativesDetailPage({ params }: Props) {
     );
   }
 
-  const relatedComparisons = getAllComparisonsUnfiltered()
+  const relatedComparisons = getComparisons()
     .filter(
       (c) =>
         c.productSlugs.includes(page.sourceSlug) ||

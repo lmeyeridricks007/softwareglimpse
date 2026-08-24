@@ -8,11 +8,11 @@ import {
 } from "lucide-react";
 import {
   getAllAudiencesUnfiltered,
-  getAllBestPagesUnfiltered,
-  getAllComparisonsUnfiltered,
-  getAllSoftwareUnfiltered,
+  getBestPages,
+  getComparisons,
   getCategories,
   getSoftwareByCategory,
+  getSoftwareBySlug,
   getUseCases,
 } from "@/data";
 import {
@@ -31,7 +31,6 @@ import {
 import { NewsletterCard } from "@/components/newsletter/newsletter-card";
 import { Breadcrumbs } from "@/components/seo/breadcrumbs";
 import { TrustStrip } from "@/components/trust/trust-strip";
-import { isPubliclyAvailable } from "@/domain/publishing";
 import { listPublishedLearningGuides } from "@/services/content-clusters";
 import { buildCrmHubResourceLinks } from "@/services/hub-linking/crm-hub-links";
 import { COMPANY_ROUTES } from "@/services/site-foundation";
@@ -61,9 +60,7 @@ export default function UseCasesIndexPage() {
   const category = getCategories({ includeUnpublished: true }).find(
     (c) => c.slug === "crm",
   );
-  const bestCrm = getAllBestPagesUnfiltered().find(
-    (p) => p.categorySlug === "crm" && isPubliclyAvailable(p.metadata),
-  );
+  const bestCrm = getBestPages().find((p) => p.categorySlug === "crm");
   const featuredRec = bestCrm?.useCaseRecommendations.find(
     (r) => r.useCaseSlug === "pipeline-management",
   );
@@ -71,17 +68,17 @@ export default function UseCasesIndexPage() {
     crmUseCases.find((u) => u.slug === "pipeline-management") ??
     crmUseCases[0];
 
-  const featuredProducts = getAllSoftwareUnfiltered()
+  const featuredProducts = getSoftwareByCategory("crm")
     .filter((s) => s.useCaseSlugs.includes(featuredUc?.slug ?? ""))
     .slice(0, 3)
     .map((s) => s.name);
 
-  const comparisons = getAllComparisonsUnfiltered()
+  const comparisons = getComparisons()
     .filter((c) => c.categorySlug === "crm")
     .slice(0, 4)
     .map((comparison) => {
       const products = comparison.productSlugs
-        .map((s) => getAllSoftwareUnfiltered().find((x) => x.slug === s))
+        .map((s) => getSoftwareBySlug(s))
         .filter(Boolean)
         .map((p) => ({ name: p!.name, logo: p!.logo }));
       return {

@@ -1,4 +1,5 @@
 import type { GuidePage } from "@/domain";
+import { getSoftwareBySlug } from "@/data/repositories/catalog";
 import {
   guideContentId,
   pricingContentId,
@@ -40,6 +41,36 @@ const ECOM_PUBLISHED_AT = "2026-08-18T00:00:00.000Z";
 const PM_PUBLISHED_AT = "2026-08-18T05:30:00.000Z";
 const AI_IT_PUBLISHED_AT = "2026-08-18T12:00:00.000Z";
 const AUTHOR = "author-lee-meyeridricks";
+
+function productGuideMetadataForSlug(
+  productSlug: string,
+): GuidePage["metadata"] {
+  const software = getSoftwareBySlug(productSlug, { includeUnpublished: true });
+  if (
+    software?.metadata.status === "scheduled" &&
+    software.metadata.scheduledAt
+  ) {
+    const at = software.metadata.scheduledAt;
+    return {
+      status: "scheduled",
+      scheduledAt: at,
+      updatedAt: at,
+      reviewedAt: at,
+      author: AUTHOR,
+      researchStatus: "complete",
+      seoStatus: "optimized",
+    };
+  }
+  return {
+    status: "published",
+    updatedAt: AI_IT_PUBLISHED_AT,
+    publishedAt: AI_IT_PUBLISHED_AT,
+    reviewedAt: AI_IT_PUBLISHED_AT,
+    author: AUTHOR,
+    researchStatus: "complete",
+    seoStatus: "optimized",
+  };
+}
 
 type CategoryJourneyPillars = {
   choose: string;
@@ -637,15 +668,7 @@ export function buildMarketingProductGuide(
     sections: [],
     faq: [],
     freshnessClass: "slow-moving",
-    metadata: {
-      status: "published",
-      updatedAt: MARKETING_PUBLISHED_AT,
-      publishedAt: MARKETING_PUBLISHED_AT,
-      reviewedAt: MARKETING_PUBLISHED_AT,
-      author: AUTHOR,
-      researchStatus: "complete",
-      seoStatus: "optimized",
-    },
+    metadata: productGuideMetadataForSlug(productSlug),
     seo: {
       title: cfg.seoTitle(ctx.productName),
       description: cfg.summary(ctx.productName).slice(0, 320),
@@ -1087,15 +1110,7 @@ export function buildAiProductGuide(
     sections: [],
     faq: [],
     freshnessClass: "slow-moving",
-    metadata: {
-      status: "published",
-      updatedAt: AI_IT_PUBLISHED_AT,
-      publishedAt: AI_IT_PUBLISHED_AT,
-      reviewedAt: AI_IT_PUBLISHED_AT,
-      author: AUTHOR,
-      researchStatus: "complete",
-      seoStatus: "optimized",
-    },
+    metadata: productGuideMetadataForSlug(productSlug),
     seo: {
       title: cfg.seoTitle(ctx.productName),
       description: cfg.summary(ctx.productName).slice(0, 320),

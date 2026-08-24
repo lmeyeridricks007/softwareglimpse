@@ -22,7 +22,7 @@ import {
 import { listCrmPricingSnapshots } from "@/services/pricing/server";
 import { buildPageMetadata } from "@/seo/metadata";
 import { JsonLdScript, breadcrumbJsonLd } from "@/seo/structured-data";
-import { getAllSoftwareUnfiltered } from "@/data";
+import { getSoftwareBySlug } from "@/data";
 
 type Props = {
   params: Promise<{ slug: string }>;
@@ -110,9 +110,7 @@ export default async function ProductPricingPage({ params }: Props) {
   }
 
   const alternatives = resolveAlternativeSlugs(slug)
-    .map((altSlug) =>
-      getAllSoftwareUnfiltered().find((item) => item.slug === altSlug),
-    )
+    .map((altSlug) => getSoftwareBySlug(altSlug))
     .filter(Boolean)
     .slice(0, 4);
 

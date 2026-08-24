@@ -39,6 +39,11 @@ import {
 import { buildScorecard } from "./scorecard";
 import { buildAgentHandoffTasks } from "./tasks";
 import { classifyTaxonomy } from "./taxonomy";
+import {
+  applyOnboardingLaunchSchedule,
+  formatLaunchCompletionReport,
+} from "./launch-scheduling";
+import { resolvePublishInstant } from "./schedule-time";
 
 export type OnboardSoftwareOptions = {
   /** When resuming, pass run id or set request.options.resumeRunId */
@@ -817,7 +822,97 @@ async function executeStages(
     persist(run, dryRun);
   }
 
-  // 14. summary
+  // 14–15. Launch scheduling + report (when publication date supplied)
+  if (run.request.schedule) {
+    if (!stageDone(run, "launch-scheduling")) {
+      try {
+        resolvePublishInstant(run.request.schedule);
+      } catch (err) {
+        const message = err instanceof Error ? err.message : String(err);
+        addIssue(run, {
+          code: "PUBLICATION_SCHEDULE_INVALID",
+          severity: "blocker",
+          message,
+          stageId: "launch-scheduling",
+        });
+        upsertStage(
+          run,
+          stageResult("launch-scheduling", "blocked", message),
+        );
+        run.status = "blocked";
+        persist(run, dryRun);
+        return;
+      }
+
+      const launchResult = applyOnboardingLaunchSchedule({
+        run,
+        product: workingProduct,
+        dryRun,
+      });
+
+      run.launchPlan = launchResult.plan;
+      workingProduct = launchResult.product;
+
+      if (!dryRun) {
+        saveCandidateSoftware(workingProduct);
+        __resetDataCaches();
+        workingProduct =
+          getSoftwareBySlug(workingProduct.slug, {
+            includeUnpublished: true,
+          }) ?? workingProduct;
+      }
+
+      if (launchResult.plan.readiness === "BLOCKED") {
+        addIssue(run, {
+          code: "SCHEDULE_QUALITY_BLOCKED",
+          severity: "blocker",
+          message: "Launch scheduling blocked — see launch manifest",
+          stageId: "launch-scheduling",
+        });
+      }
+
+      upsertStage(
+        run,
+        stageResult(
+          "launch-scheduling",
+          launchResult.plan.readiness === "BLOCKED" ? "blocked" : "completed",
+          `Launch ${launchResult.plan.launchId} — ${launchResult.plan.readiness}`,
+          {
+            publishAtUtc: launchResult.plan.publishAtUtc,
+            scheduledRoutes: launchResult.plan.contentItems.filter(
+              (i) => i.publishStatus === "scheduled",
+            ).length,
+          },
+        ),
+      );
+      logEvent("launch_scheduled", {
+        runId: run.id,
+        launchId: launchResult.plan.launchId,
+        readiness: launchResult.plan.readiness,
+      });
+      persist(run, dryRun);
+    }
+
+    if (!stageDone(run, "launch-report")) {
+      const lines = formatLaunchCompletionReport(run);
+      upsertStage(
+        run,
+        stageResult(
+          "launch-report",
+          "completed",
+          run.launchPlan?.readiness ?? "n/a",
+          { reportLines: lines },
+        ),
+      );
+      logEvent("launch_report_written", {
+        runId: run.id,
+        manifest: run.launchPlan?.manifestPath,
+      });
+      persist(run, dryRun);
+    }
+  }
+
+  // 16. summary
   const hasReviewWarnings = run.issues.some((i) => i.severity === "warning");
   const hasBlockers = run.issues.some((i) => i.severity === "blocker");
   run.scorecard = buildScorecard({
@@ -833,7 +928,10 @@ async function executeStages(
   });
 
   if (hasBlockers) run.status = "blocked";
+  else if (run.launchPlan?.readiness === "BLOCKED") run.status = "blocked";
   else if (hasReviewWarnings || run.scorecard.overall === "READY_WITH_REVIEW")
+    run.status = "review-required";
+  else if (run.launchPlan?.readiness === "READY_WITH_WARNINGS")
     run.status = "review-required";
   else run.status = "ready";
 

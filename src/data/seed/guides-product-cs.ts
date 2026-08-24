@@ -1,6 +1,7 @@
 import type { GuidePage } from "@/domain";
 import type { z } from "zod";
 import type { GuideContentBlockSchema } from "@/domain";
+import { tier7CsGuideScheduledAt } from "@/data/config/publishing/tier-7-cs-short-guides-launch-2026-11-01";
 
 type GuideBlockInput = z.input<typeof GuideContentBlockSchema>;
 
@@ -95,6 +96,94 @@ const CS_PRODUCTS: CsProductGuideInput[] = [
       "Teams that need full ticketing/SLAs, per-agent Freshworks chat, or CRM pipeline management.",
     pricingNote:
       "Conversation packs, not per-agent seats. Model overage at your chat volume.",
+  },
+  {
+    slug: "livechat",
+    name: "LiveChat",
+    cluster: "live chat support",
+    whatIs:
+      "LiveChat is Text’s established live chat product — Starter $19, Team $49, Business $79, Enterprise $52 per person/month annual. It is a chat-first layer, not a full helpdesk or CRM.",
+    worthIt:
+      "LiveChat is worth it when agent-per-seat live chat with Text’s ecosystem is the job. It is not worth stretching into full ticketing, ITSM, or pipeline CRM.",
+    chooseWhen:
+      "Teams that need mature live chat, chatbot add-ons, and per-agent pricing they can model.",
+    skipWhen:
+      "Helpdesk-first buyers (Freshdesk/Zendesk), conversation-cap tools (Tidio), or CRM pipeline management.",
+    pricingNote:
+      "Per person/month on annual tiers — model seat count, not ticket caps.",
+  },
+  {
+    slug: "freshservice",
+    name: "Freshservice",
+    cluster: "ITSM / service desk",
+    whatIs:
+      "Freshservice is Freshworks’ ITSM service desk — Starter $19, Growth $49, Pro $99 agent/month annual. It is ITIL-oriented internal IT support, distinct from Freshdesk (customer helpdesk) and Freshchat (live chat).",
+    worthIt:
+      "Freshservice is worth a shortlist when ITSM workflows, change/incident management, and agent-based IT support are the job. It is not worth forcing into customer helpdesk, live-chat-only, or CRM purchases.",
+    chooseWhen:
+      "IT and operations teams that need owned tickets, SLAs, and ITSM depth on a published per-agent ladder.",
+    skipWhen:
+      "Customer-facing helpdesk buyers (Freshdesk), live-chat-only teams (Freshchat/Tidio), or Shopify order desks (Gorgias).",
+    pricingNote:
+      "Starter $19/agent/mo annual is the published floor — model Growth/Pro for automations and ITSM depth.",
+  },
+  {
+    slug: "freshchat",
+    name: "Freshchat",
+    cluster: "live chat support",
+    whatIs:
+      "Freshchat is Freshworks’ live chat and messaging product — free up to 10 agents; Growth $19, Pro $49, Enterprise $79 agent/month annual. It is distinct from Freshdesk (ticketing) and Freshservice (ITSM).",
+    worthIt:
+      "Freshchat is worth it when Freshworks-aligned live chat with per-agent pricing is the job. It is not worth stretching into full helpdesk ticketing, ITSM, or CRM pipeline management.",
+    chooseWhen:
+      "Teams that want Freshworks chat depth, bot add-ons, and a clear free-to-paid agent ladder.",
+    skipWhen:
+      "Helpdesk-first buyers (Freshdesk/Zendesk), ITSM programmes (Freshservice), or conversation-cap tools (Tidio).",
+    pricingNote:
+      "Free 10-agent tier is real; model the qualifying paid SKU for bots, campaigns, and routing.",
+  },
+  {
+    slug: "zoho-desk",
+    name: "Zoho Desk",
+    cluster: "helpdesk / ticketing",
+    whatIs:
+      "Zoho Desk is Zoho’s helpdesk — free for 3 agents; Express $7, Standard $14, Professional $23, Enterprise $40 agent/month annual. Distinct from Zoho CRM.",
+    worthIt:
+      "Zoho Desk is worth it when budget helpdesk depth inside the Zoho suite is the job. It is not worth it as a CRM or live-chat-only purchase.",
+    chooseWhen:
+      "SMB teams that want per-agent helpdesk pricing and may already use Zoho apps.",
+    skipWhen:
+      "Enterprise omnichannel programmes, ecommerce-native desks (Gorgias), or CRM-only buyers.",
+    pricingNote:
+      "Free 3-agent tier is real; model the qualifying paid SKU for SLAs and automations.",
+  },
+  {
+    slug: "nicejob",
+    name: "NiceJob",
+    cluster: "reputation / review management",
+    whatIs:
+      "NiceJob is reputation and review management for local businesses — review requests, social proof, and referral workflows. It is not a helpdesk or live chat product.",
+    worthIt:
+      "NiceJob is worth it when review generation and local reputation are the job. It is not worth it as ticketing, live chat, or CRM.",
+    chooseWhen:
+      "Local service businesses that need automated review asks and social proof widgets.",
+    skipWhen:
+      "B2B helpdesk buyers, enterprise omnichannel support, or pipeline CRM teams.",
+    pricingNote: "Confirm live tiers on get.nicejob.com before modelling TCO.",
+  },
+  {
+    slug: "shore",
+    name: "Shore",
+    cluster: "appointment scheduling / local business",
+    whatIs:
+      "Shore is appointment scheduling and local business management — booking, reminders, and client communication. Distinct from helpdesk ticketing.",
+    worthIt:
+      "Shore is worth it when appointment booking for local businesses is the job. It is not worth it as helpdesk, live chat, or CRM.",
+    chooseWhen:
+      "Salons, clinics, and local services that need scheduling-first workflows.",
+    skipWhen:
+      "Ticket-based support teams, ecommerce helpdesks, or sales pipeline CRM buyers.",
+    pricingNote: "Confirm qualifying plan on try.shore.com — not per-agent helpdesk math.",
   },
 ];
 
@@ -379,6 +468,8 @@ function csGuide(args: {
     kind === "what-is"
       ? `what-is-${product.slug}`
       : `is-${product.slug}-worth-it`;
+  const scheduledAt = tier7CsGuideScheduledAt(slug);
+  const isScheduled = scheduledAt !== undefined;
   const title =
     kind === "what-is"
       ? `What Is ${product.name}?`
@@ -462,24 +553,40 @@ function csGuide(args: {
     sections: [],
     faq: [],
     freshnessClass: "slow-moving",
-    metadata: {
-      status: "published",
-      updatedAt: "2026-08-18T00:00:00.000Z",
-      publishedAt: "2026-08-18T00:00:00.000Z",
-      reviewedAt: "2026-08-18T00:00:00.000Z",
-      researchStatus: "complete",
-      author: "author-lee-meyeridricks",
-    },
+    metadata: isScheduled
+      ? {
+          status: "scheduled",
+          scheduledAt,
+          updatedAt: "2026-08-23T12:00:00.000Z",
+          reviewedAt: "2026-08-23T12:00:00.000Z",
+          researchStatus: "complete",
+          author: "author-lee-meyeridricks",
+        }
+      : {
+          status: "published",
+          updatedAt: "2026-08-18T00:00:00.000Z",
+          publishedAt: "2026-08-18T00:00:00.000Z",
+          reviewedAt: "2026-08-18T00:00:00.000Z",
+          researchStatus: "complete",
+          author: "author-lee-meyeridricks",
+        },
     seo: {
       title: `${title} | SoftwareGlimpse`,
       description: summary.slice(0, 160),
       canonicalPath: `/guides/${slug}/`,
-      indexable: true,
+      indexable: !isScheduled,
     },
   };
 }
 
-export const csProductGuides: GuidePage[] = CS_PRODUCTS.flatMap((product) => [
+const LIVE_CHAT_AFFILIATE_SLUGS = new Set(["tidio", "freshchat"]);
+const HELPDESK_AFFILIATE_SLUGS = new Set(["freshdesk", "freshservice"]);
+
+export const csProductGuides: GuidePage[] = CS_PRODUCTS.filter(
+  (product) =>
+    !LIVE_CHAT_AFFILIATE_SLUGS.has(product.slug) &&
+    !HELPDESK_AFFILIATE_SLUGS.has(product.slug),
+).flatMap((product) => [
   csGuide({ kind: "what-is", product }),
   csGuide({ kind: "worth-it", product }),
 ]);

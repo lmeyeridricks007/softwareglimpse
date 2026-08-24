@@ -1,11 +1,11 @@
 import { CategorySchema, type Category } from "@/domain";
-import { isPubliclyAvailable } from "@/domain/publishing";
+import {
+  filterByPublicationVisibility,
+  type PublicationListOptions,
+} from "@/domain/publication-context";
 import { categoriesSeed } from "../seed/categories";
 
-type ListOptions = {
-  includeUnpublished?: boolean;
-  now?: Date;
-};
+type ListOptions = PublicationListOptions;
 
 /**
  * Category lookups for site chrome. Isolated so the header/footer do not
@@ -43,21 +43,8 @@ function loadCategories(): Category[] {
   return cache;
 }
 
-function filterPublic(
-  items: Category[],
-  options: ListOptions = {},
-): Category[] {
-  if (options.includeUnpublished) return items;
-  return items.filter((item) =>
-    isPubliclyAvailable(
-      {
-        status: item.metadata.status,
-        publishedAt: item.metadata.publishedAt,
-        scheduledAt: item.metadata.scheduledAt,
-      },
-      options.now,
-    ),
-  );
+function filterPublic(items: Category[], options: ListOptions = {}): Category[] {
+  return filterByPublicationVisibility(items, options);
 }
 
 export function getCategories(options?: ListOptions): Category[] {

@@ -1,12 +1,33 @@
 import type { z } from "zod";
 import { SoftwareSchema } from "@/domain";
+import {
+  TIER_1_SCHEDULED_SOFTWARE_SLUGS,
+  tier1SoftwareScheduledAt,
+} from "@/data/config/publishing/tier-1-content-launch-2026-08-26";
+import { WEBINARJAM_EVERWEBINAR_LAUNCH_UTC } from "@/data/config/publishing/webinarjam-everwebinar-launch-2026-09-01";
 
 /** Minimal catalogue entries for affiliate inventory not yet in softwareSeed. */
 export type AffiliatePartnerGapInput = z.input<typeof SoftwareSchema>;
 
 const publishedAt = "2026-08-19T00:00:00.000Z";
+const WEBINARJAM_SCHEDULED_SLUGS = ["webinarjam-everwebinar"] as const;
+const scheduledSlugs = new Set<string>([
+  ...TIER_1_SCHEDULED_SOFTWARE_SLUGS,
+  ...WEBINARJAM_SCHEDULED_SLUGS,
+]);
+
+function gapScheduledAt(slug: string): string | undefined {
+  return (
+    tier1SoftwareScheduledAt(slug) ??
+    (slug === "webinarjam-everwebinar"
+      ? WEBINARJAM_EVERWEBINAR_LAUNCH_UTC
+      : undefined)
+  );
+}
 
 function gap(input: AffiliatePartnerGapInput): AffiliatePartnerGapInput {
+  const scheduledAt = gapScheduledAt(input.slug);
+  const scheduled = scheduledSlugs.has(input.slug) && scheduledAt !== undefined;
   return {
     competitorSlugs: [],
     alternativeSlugs: [],
@@ -19,10 +40,12 @@ function gap(input: AffiliatePartnerGapInput): AffiliatePartnerGapInput {
     sources: [],
     ...input,
     metadata: {
-      status: "published",
-      publishedAt,
       researchStatus: "complete",
       ...(input.metadata ?? {}),
+      status: scheduled
+        ? "scheduled"
+        : ((input.metadata?.status as string | undefined) ?? "published"),
+      ...(scheduled ? { scheduledAt } : { publishedAt }),
     },
     seo: {
       title: String(input.name),
@@ -59,9 +82,9 @@ export const affiliatePartnerGapSeed: AffiliatePartnerGapInput[] = [
     website: "https://aiintelekt.com",
     logo: { src: "/brands/ai-intelekt.png", alt: "AI InteleKt logo" },
     shortDescription:
-      "AI software platform — affiliate partner in the AI category.",
+      "AI InteleKt is a customer data and retail intelligence platform — unify POS, web, and mobile touchpoints; predict churn and CLV; orchestrate loyalty and omnichannel engagement.",
     primaryCategorySlug: "ai",
-    useCaseSlugs: ["ai-automation"],
+    useCaseSlugs: ["ai-automation", "marketing-automation"],
     teamTypeSlugs: ["engineering", "marketing"],
     businessSizeSlugs: ["small-business", "mid-market"],
     competitorSlugs: ["writesonic", "gamma", "emergent"],
@@ -92,7 +115,8 @@ export const affiliatePartnerGapSeed: AffiliatePartnerGapInput[] = [
     logo: { src: "/brands/birch.png", alt: "Bïrch logo" },
     shortDescription:
       "Advertising automation for paid social — formerly Revealbot; affiliate partner in marketing.",
-    primaryCategorySlug: "marketing",
+    primaryCategorySlug: "ppc-advertising",
+    secondaryCategorySlugs: ["marketing"],
     useCaseSlugs: ["marketing-automation"],
     teamTypeSlugs: ["marketing"],
     businessSizeSlugs: ["small-business", "mid-market"],
@@ -143,10 +167,29 @@ export const affiliatePartnerGapSeed: AffiliatePartnerGapInput[] = [
     },
     shortDescription:
       "Construction management software for contractors — affiliate partner in project management.",
-    primaryCategorySlug: "project-management",
-    useCaseSlugs: ["project-tracking", "work-management"],
+    primaryCategorySlug: "field-service-operations",
+    secondaryCategorySlugs: ["project-management"],
+    useCaseSlugs: ["construction-management", "project-tracking", "work-management"],
     teamTypeSlugs: ["operations"],
     businessSizeSlugs: ["micro", "small-business", "mid-market"],
+  }),
+  gap({
+    id: "soft-canvas-score",
+    slug: "canvas-score",
+    name: "Canvas Score",
+    company: "Roya.com",
+    website: "https://www.roya.com",
+    logo: { src: "/brands/canvas-score.png", alt: "Canvas Score logo" },
+    shortDescription:
+      "Website analytics and performance scoring — affiliate partner pending URL in PartnerStack.",
+    primaryCategorySlug: "analytics-bi",
+    secondaryCategorySlugs: ["marketing"],
+    useCaseSlugs: ["marketing-metrics", "analytics"],
+    teamTypeSlugs: ["marketing"],
+    businessSizeSlugs: ["small-business", "mid-market"],
+    competitorSlugs: ["databox", "whatconverts"],
+    alternativeSlugs: ["databox"],
+    comparableSlugs: ["databox"],
   }),
   gap({
     id: "soft-databox",
@@ -157,8 +200,9 @@ export const affiliatePartnerGapSeed: AffiliatePartnerGapInput[] = [
     logo: { src: "/brands/databox.png", alt: "Databox logo" },
     shortDescription:
       "Business analytics and KPI dashboard platform — affiliate partner in marketing analytics.",
-    primaryCategorySlug: "marketing",
-    useCaseSlugs: ["reporting"],
+    primaryCategorySlug: "analytics-bi",
+    secondaryCategorySlugs: ["marketing"],
+    useCaseSlugs: ["kpi-dashboards", "marketing-metrics", "reporting"],
     teamTypeSlugs: ["marketing", "operations"],
     businessSizeSlugs: ["small-business", "mid-market"],
     competitorSlugs: ["brand24"],
@@ -174,8 +218,8 @@ export const affiliatePartnerGapSeed: AffiliatePartnerGapInput[] = [
     logo: { src: "/brands/dext.png", alt: "Dext logo" },
     shortDescription:
       "Bookkeeping and receipt automation for accountants and small businesses — affiliate partner.",
-    primaryCategorySlug: "hr",
-    useCaseSlugs: ["payroll-benefits", "core-hris"],
+    primaryCategorySlug: "accounting-finance",
+    useCaseSlugs: ["bookkeeping-automation"],
     teamTypeSlugs: ["operations"],
     businessSizeSlugs: ["micro", "small-business", "mid-market"],
     competitorSlugs: ["navan", "jibble"],
@@ -191,7 +235,8 @@ export const affiliatePartnerGapSeed: AffiliatePartnerGapInput[] = [
     logo: { src: "/brands/diginius.png", alt: "Diginius logo" },
     shortDescription:
       "PPC and digital marketing management platform — affiliate partner in marketing.",
-    primaryCategorySlug: "marketing",
+    primaryCategorySlug: "ppc-advertising",
+    secondaryCategorySlugs: ["marketing"],
     useCaseSlugs: ["marketing-automation"],
     teamTypeSlugs: ["marketing"],
     businessSizeSlugs: ["small-business", "mid-market"],
@@ -207,9 +252,10 @@ export const affiliatePartnerGapSeed: AffiliatePartnerGapInput[] = [
     website: "https://emergent.sh",
     logo: { src: "/brands/emergent.png", alt: "Emergent logo" },
     shortDescription:
-      "AI app development platform — affiliate partner in the AI category.",
-    primaryCategorySlug: "ai",
-    useCaseSlugs: ["ai-automation"],
+      "AI app development platform — affiliate partner in the AI website builder category.",
+    primaryCategorySlug: "ai-website-builder",
+    secondaryCategorySlugs: ["ai"],
+    useCaseSlugs: ["ai-website-builder", "ai-app-development"],
     teamTypeSlugs: ["engineering"],
     businessSizeSlugs: ["small-business", "mid-market"],
     competitorSlugs: ["writesonic", "gamma", "mindstudio"],
@@ -241,9 +287,10 @@ export const affiliatePartnerGapSeed: AffiliatePartnerGapInput[] = [
     website: "https://www.flexiquiz.com",
     logo: { src: "/brands/flexiquiz.png", alt: "FlexiQuiz logo" },
     shortDescription:
-      "Quiz and assessment software for training and education — affiliate partner in HR.",
-    primaryCategorySlug: "hr",
-    useCaseSlugs: ["employee-training"],
+      "Quiz and assessment software for training and education — affiliate partner in LMS & course creation.",
+    primaryCategorySlug: "lms-course-creation",
+    secondaryCategorySlugs: ["hr"],
+    useCaseSlugs: ["learner-assessments", "employee-training"],
     teamTypeSlugs: ["recruiting", "operations"],
     businessSizeSlugs: ["small-business", "mid-market", "enterprise"],
     competitorSlugs: ["trainual", "breezy-hr"],
@@ -258,9 +305,10 @@ export const affiliatePartnerGapSeed: AffiliatePartnerGapInput[] = [
     website: "https://flippa.com",
     logo: { src: "/brands/flippa.png", alt: "Flippa logo" },
     shortDescription:
-      "Online business and website marketplace — affiliate partner in ecommerce.",
-    primaryCategorySlug: "ecommerce",
-    useCaseSlugs: ["online-storefront"],
+      "Online business and website marketplace — affiliate partner in website & digital presence.",
+    primaryCategorySlug: "website-digital-presence",
+    secondaryCategorySlugs: ["ecommerce"],
+    useCaseSlugs: ["digital-business-marketplace", "online-storefront"],
     teamTypeSlugs: ["founders", "marketing"],
     businessSizeSlugs: ["solo", "micro", "small-business"],
     competitorSlugs: ["spocket", "alidrop"],
@@ -290,8 +338,8 @@ export const affiliatePartnerGapSeed: AffiliatePartnerGapInput[] = [
     logo: { src: "/brands/mrpeasy.png", alt: "MRPeasy logo" },
     shortDescription:
       "Manufacturing ERP and MRP software for small manufacturers — affiliate partner.",
-    primaryCategorySlug: "project-management",
-    useCaseSlugs: ["work-management", "resource-planning"],
+    primaryCategorySlug: "accounting-finance",
+    useCaseSlugs: ["inventory-erp", "work-management"],
     teamTypeSlugs: ["operations"],
     businessSizeSlugs: ["small-business", "mid-market"],
     competitorSlugs: ["hive", "monday", "office-timeline"],
@@ -307,9 +355,9 @@ export const affiliatePartnerGapSeed: AffiliatePartnerGapInput[] = [
     website: "https://navan.com",
     logo: { src: "/brands/navan.png", alt: "Navan logo" },
     shortDescription:
-      "Corporate travel and expense management — affiliate partner mapped to HR / finance ops.",
-    primaryCategorySlug: "hr",
-    useCaseSlugs: ["people-platform", "core-hris"],
+      "Corporate travel and expense management — affiliate partner in accounting & finance.",
+    primaryCategorySlug: "accounting-finance",
+    useCaseSlugs: ["travel-expense", "expense-management"],
     teamTypeSlugs: ["operations"],
     businessSizeSlugs: ["mid-market", "enterprise"],
     competitorSlugs: ["bolt-for-business", "jibble", "bamboohr", "rippling"],
@@ -325,8 +373,9 @@ export const affiliatePartnerGapSeed: AffiliatePartnerGapInput[] = [
     logo: { src: "/brands/nicejob.png", alt: "NiceJob logo" },
     shortDescription:
       "Reputation and review management for local businesses — affiliate partner.",
-    primaryCategorySlug: "customer-service",
-    useCaseSlugs: ["helpdesk-ticketing"],
+    primaryCategorySlug: "reputation-reviews",
+    secondaryCategorySlugs: ["customer-service"],
+    useCaseSlugs: ["reputation-reviews", "review-generation", "local-reputation"],
     teamTypeSlugs: ["marketing", "customer-success"],
     businessSizeSlugs: ["micro", "small-business"],
     competitorSlugs: ["brand24", "tidio"],
@@ -359,7 +408,8 @@ export const affiliatePartnerGapSeed: AffiliatePartnerGapInput[] = [
     logo: { src: "/brands/shipbob.png", alt: "ShipBob logo" },
     shortDescription:
       "Ecommerce fulfillment and logistics platform — affiliate partner in ecommerce.",
-    primaryCategorySlug: "ecommerce",
+    primaryCategorySlug: "fulfillment-shipping",
+    secondaryCategorySlugs: ["ecommerce"],
     useCaseSlugs: ["order-fulfillment"],
     teamTypeSlugs: ["operations"],
     businessSizeSlugs: ["small-business", "mid-market"],
@@ -376,8 +426,9 @@ export const affiliatePartnerGapSeed: AffiliatePartnerGapInput[] = [
     logo: { src: "/brands/shore.png", alt: "Shore logo" },
     shortDescription:
       "Appointment scheduling and local business management — affiliate partner in customer service.",
-    primaryCategorySlug: "customer-service",
-    useCaseSlugs: ["live-chat-support"],
+    primaryCategorySlug: "field-service-operations",
+    secondaryCategorySlugs: ["customer-service"],
+    useCaseSlugs: ["appointment-scheduling"],
     teamTypeSlugs: ["operations"],
     businessSizeSlugs: ["micro", "small-business"],
     competitorSlugs: ["tidio", "wati"],
@@ -392,8 +443,9 @@ export const affiliatePartnerGapSeed: AffiliatePartnerGapInput[] = [
     website: "https://ueni.com",
     logo: { src: "/brands/ueni.png", alt: "UENI logo" },
     shortDescription:
-      "Website builder for local businesses — affiliate partner in ecommerce.",
-    primaryCategorySlug: "ecommerce",
+      "Website builder for local businesses — affiliate partner in website & digital presence.",
+    primaryCategorySlug: "website-digital-presence",
+    secondaryCategorySlugs: ["ecommerce"],
     useCaseSlugs: ["website-builder-commerce"],
     teamTypeSlugs: ["marketing", "founders"],
     businessSizeSlugs: ["solo", "micro", "small-business"],
@@ -420,20 +472,38 @@ export const affiliatePartnerGapSeed: AffiliatePartnerGapInput[] = [
     slug: "webinarjam-everwebinar",
     name: "WebinarJam & EverWebinar",
     company: "Genesis Digital, LLC",
-    website: "https://home.kartra.com",
+    website: "https://webinarjam.com",
     logo: {
       src: "/brands/webinarjam-everwebinar.png",
       alt: "WebinarJam and EverWebinar logo",
     },
     shortDescription:
-      "Webinar hosting and evergreen webinar automation (Kartra family) — affiliate partner in marketing.",
-    primaryCategorySlug: "marketing",
+      "Webinar hosting and evergreen webinar automation (Kartra family) — affiliate partner in webinar & virtual events.",
+    primaryCategorySlug: "webinar-virtual-events",
+    secondaryCategorySlugs: ["marketing"],
     useCaseSlugs: ["marketing-automation"],
     teamTypeSlugs: ["marketing"],
     businessSizeSlugs: ["small-business", "mid-market"],
     competitorSlugs: ["kartra", "getresponse", "leadpages"],
     alternativeSlugs: ["kartra", "getresponse"],
     comparableSlugs: ["kartra"],
+  }),
+  gap({
+    id: "soft-sellfy",
+    slug: "sellfy",
+    name: "Sellfy",
+    company: "Sellfy",
+    website: "https://sellfy.com",
+    logo: { src: "/brands/sellfy.png", alt: "Sellfy logo" },
+    shortDescription:
+      "Ecommerce platform for digital downloads and subscriptions — affiliate partner in ecommerce.",
+    primaryCategorySlug: "ecommerce",
+    useCaseSlugs: ["online-store", "digital-products"],
+    teamTypeSlugs: ["marketing", "operations"],
+    businessSizeSlugs: ["micro", "small-business"],
+    competitorSlugs: ["shopify", "ecwid", "kartra"],
+    alternativeSlugs: ["ecwid", "shopify"],
+    comparableSlugs: ["ecwid"],
   }),
   gap({
     id: "soft-zypper",
@@ -443,9 +513,10 @@ export const affiliatePartnerGapSeed: AffiliatePartnerGapInput[] = [
     website: "https://zypper.com",
     logo: { src: "/brands/zypper.png", alt: "Zypper logo" },
     shortDescription:
-      "Influencer marketing platform — affiliate partner in marketing.",
-    primaryCategorySlug: "marketing",
-    useCaseSlugs: ["marketing-automation", "lead-nurturing"],
+      "Influencer marketing platform — affiliate partner in social media marketing.",
+    primaryCategorySlug: "social-media-marketing",
+    secondaryCategorySlugs: ["marketing"],
+    useCaseSlugs: ["influencer-marketing", "social-media-marketing"],
     teamTypeSlugs: ["marketing"],
     businessSizeSlugs: ["small-business", "mid-market"],
     competitorSlugs: ["brand24", "socialbee"],
@@ -461,7 +532,8 @@ export const affiliatePartnerGapSeed: AffiliatePartnerGapInput[] = [
     logo: { src: "/brands/freshteam.png", alt: "Freshteam logo" },
     shortDescription:
       "Freshworks HRMS/ATS — sunset announced ~Mar 2026; onboarded for affiliate inventory completeness only.",
-    primaryCategorySlug: "hr",
+    primaryCategorySlug: "ats-recruiting",
+    secondaryCategorySlugs: ["hr"],
     useCaseSlugs: ["recruiting-ats", "core-hris"],
     teamTypeSlugs: ["recruiting", "operations"],
     businessSizeSlugs: ["small-business", "mid-market"],
@@ -478,8 +550,9 @@ export const affiliatePartnerGapSeed: AffiliatePartnerGapInput[] = [
     logo: { src: "/brands/servicem8.png", alt: "ServiceM8 logo" },
     shortDescription:
       "Field service management for trades — scheduling, dispatch, quotes, and invoicing.",
-    primaryCategorySlug: "project-management",
-    useCaseSlugs: ["work-management", "project-tracking"],
+    primaryCategorySlug: "field-service-operations",
+    secondaryCategorySlugs: ["project-management"],
+    useCaseSlugs: ["trades-field-service", "work-management", "project-tracking"],
     teamTypeSlugs: ["operations"],
     businessSizeSlugs: ["micro", "small-business", "mid-market"],
   }),

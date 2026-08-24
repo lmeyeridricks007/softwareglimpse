@@ -23,8 +23,13 @@ import {
   listOnboardingRuns,
   loadOnboardingRun,
 } from "@/data/onboarding/store";
-import type { SoftwareOnboardingRequest, SoftwareOnboardingRun } from "@/domain";
+import type {
+  OnboardingContentScope,
+  SoftwareOnboardingRequest,
+  SoftwareOnboardingRun,
+} from "@/domain";
 import {
+  formatLaunchCompletionReport,
   formatScorecard,
   onboardSoftware,
   validateOnboardingRepository,
@@ -40,6 +45,14 @@ type Args = {
   category?: string;
   source?: SoftwareOnboardingRequest["source"];
   json: boolean;
+  vendor?: string;
+  publishAt?: string;
+  publishDate?: string;
+  publishTime?: string;
+  timezone?: string;
+  contentScope?: OnboardingContentScope;
+  alternativesAt?: string;
+  comparisonsAt?: string;
 };
 
 function usage(exitCode = 1): never {
@@ -59,16 +72,25 @@ Flags:
   --research                Force research (default when not skipped)
   --category <slug>         Suggested primary category
   --source <source>         affiliate-catalogue | manual | migration | existing-content
+  --vendor <name>           Vendor / company name for launch metadata
+  --publish-at <ISO>        Full publication instant (with offset or Z)
+  --publish-date <YYYY-MM-DD>  Launch date (requires --publish-time or uses default 08:00)
+  --publish-time <HH:mm>    Local publish time (with --publish-date)
+  --timezone <IANA>         e.g. Europe/Amsterdam (default from publishing config)
+  --content-scope <scope>   full | standard | minimal (default: standard)
+  --alternatives-at <ISO>   Optional later schedule for alternatives page
+  --comparisons-at <ISO>    Optional later schedule for comparison pages
   --json                    Machine-readable output
 
 Examples:
+  npm run onboard:software -- attio --category crm --publish-date 2026-09-15 --publish-time 08:00 --timezone Europe/Amsterdam
   npm run onboard:software -- getresponse --source affiliate-catalogue
   npm run onboard:software -- pipedrive --skip-research
   npm run onboard:status -- getresponse
   npm run onboard:plan -- getresponse --json
 
 Notes:
-  - Does NOT auto-publish pages or assign editorial scores / best rankings
+  - Does NOT publish pages live — use --publish-date to SCHEDULE for future launch
   - Affiliate absence does not block onboarding
   - Affiliate data never affects recommendation rankings
 `);
@@ -97,6 +119,14 @@ function parseArgs(argv: string[]): Args {
   let category: string | undefined;
   let source: SoftwareOnboardingRequest["source"] | undefined;
   let json = false;
+  let vendor: string | undefined;
+  let publishAt: string | undefined;
+  let publishDate: string | undefined;
+  let publishTime: string | undefined;
+  let timezone: string | undefined;
+  let contentScope: Args["contentScope"];
+  let alternativesAt: string | undefined;
+  let comparisonsAt: string | undefined;
 
   for (let i = 0; i < rest.length; i++) {
     const arg = rest[i]!;
@@ -111,7 +141,19 @@ function parseArgs(argv: string[]): Args {
     else if (arg === "--category") category = rest[++i];
     else if (arg === "--source") {
       source = rest[++i] as SoftwareOnboardingRequest["source"];
-    } else if (arg.startsWith("-")) {
+    } else if (arg === "--vendor") vendor = rest[++i];
+    else if (arg === "--publish-at") publishAt = rest[++i];
+    else if (arg.startsWith("--publish-at=")) publishAt = arg.slice("--publish-at=".length);
+    else if (arg === "--publish-date") publishDate = rest[++i];
+    else if (arg.startsWith("--publish-date=")) publishDate = arg.slice("--publish-date=".length);
+    else if (arg === "--publish-time") publishTime = rest[++i];
+    else if (arg.startsWith("--publish-time=")) publishTime = arg.slice("--publish-time=".length);
+    else if (arg === "--timezone") timezone = rest[++i];
+    else if (arg.startsWith("--timezone=")) timezone = arg.slice("--timezone=".length);
+    else if (arg === "--content-scope") contentScope = rest[++i] as Args["contentScope"];
+    else if (arg.startsWith("--content-scope=")) contentScope = arg.slice("--content-scope=".length) as Args["contentScope"];
+    else if (arg === "--alternatives-at") alternativesAt = rest[++i];
+    else if (arg === "--comparisons-at") comparisonsAt = rest[++i]; else if (arg.startsWith("-")) {
       console.error(`Unknown flag: ${arg}`);
       usage(1);
     } else {
@@ -129,6 +171,14 @@ function parseArgs(argv: string[]): Args {
     category,
     source,
     json,
+    vendor,
+    publishAt,
+    publishDate,
+    publishTime,
+    timezone,
+    contentScope,
+    alternativesAt,
+    comparisonsAt,
   };
 }
 
@@ -163,9 +213,16 @@ function printRunHuman(run: SoftwareOnboardingRun): void {
   if (run.scorecard) {
     console.log("\n" + formatScorecard(run.scorecard));
   }
-  console.log(
-    "\nReminder: onboarding does not publish pages or set editorial rankings.",
-  );
+  if (run.launchPlan) {
+    console.log("\n--- Launch ---");
+    for (const line of formatLaunchCompletionReport(run)) {
+      console.log(line);
+    }
+  } else {
+    console.log(
+      "\nReminder: onboarding does not publish pages live. Use --publish-date to schedule a launch.",
+    );
+  }
 }
 
 async function cmdSoftware(args: Args): Promise<void> {
@@ -230,6 +287,12 @@ async function cmdSoftware(args: Args): Promise<void> {
     );
   const slug = existing?.slug ?? affiliate?.suggestedSlug ?? nameOrSlug.toLowerCase();
 
+  const hasSchedule =
+    args.publishAt ||
+    args.publishDate ||
+    args.publishTime ||
+    args.timezone;
+
   const request: SoftwareOnboardingRequest = {
     name: existing?.name ?? name,
     slug,
@@ -245,6 +308,20 @@ async function cmdSoftware(args: Args): Promise<void> {
           : [],
     aliases: affiliate?.aliases ?? [],
     entityTypeHint: affiliate?.entityTypeHint ?? existing?.entityType,
+    ...(hasSchedule
+      ? {
+          schedule: {
+            publishAt: args.publishAt,
+            publishDate: args.publishDate,
+            publishTime: args.publishTime,
+            timezone: args.timezone,
+            vendor: args.vendor,
+            contentScope: args.contentScope ?? "standard",
+            alternativesAt: args.alternativesAt,
+            comparisonsAt: args.comparisonsAt,
+          },
+        }
+      : {}),
     options: {
       dryRun: args.dryRun,
       runResearch: args.research,

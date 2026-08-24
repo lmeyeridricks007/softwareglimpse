@@ -1,12 +1,12 @@
 import { GuidePageSchema, type GuidePage } from "@/domain";
-import { isPubliclyAvailable } from "@/domain/publishing";
+import {
+  filterByPublicationVisibility,
+  type PublicationListOptions,
+} from "@/domain/publication-context";
 import { withTeachingDepth } from "@/services/guides/teaching-depth";
 import { guidesSeed } from "../seed/guides";
 
-type ListOptions = {
-  includeUnpublished?: boolean;
-  now?: Date;
-};
+type ListOptions = PublicationListOptions;
 
 let educationalCache: GuidePage[] | null = null;
 
@@ -40,10 +40,7 @@ function publishFilter(
   guides: GuidePage[],
   options: ListOptions = {},
 ): GuidePage[] {
-  const now = options.now ?? new Date();
-  return options.includeUnpublished
-    ? guides
-    : guides.filter((g) => isPubliclyAvailable(g.metadata, now));
+  return filterByPublicationVisibility(guides, options);
 }
 
 function loadEducationalGuides(): GuidePage[] {

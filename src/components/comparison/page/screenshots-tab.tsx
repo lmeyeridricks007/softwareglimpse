@@ -5,6 +5,7 @@ import { Card } from "@/components/ui/card";
 import { cn } from "@/lib/cn";
 import type { ProductScreenshot } from "@/components/software/product-screenshot-gallery";
 import type { ComparisonPageModel } from "@/services/comparison-page/types";
+import { publicScreenshotCaption } from "@/services/product-media/public-screenshot-copy";
 import { isVendorUiScreenshot } from "@/services/product-media/screenshot-kind";
 
 type Props = {
@@ -14,14 +15,10 @@ type Props = {
 type ShotWithSide = ProductScreenshot & { side: "a" | "b"; productName: string };
 
 function categoryFromCaption(caption?: string): string {
-  if (!caption) return "General";
-  const first = caption.split(/[:|—–-]/)[0]?.trim();
+  const label = caption?.trim();
+  if (!label) return "General";
+  const first = label.split(/[:|—–-]/)[0]?.trim();
   return first && first.length < 40 ? first : "General";
-}
-
-function formatDate(value?: string): string | null {
-  if (!value) return null;
-  return value.slice(0, 10);
 }
 
 export function ComparisonScreenshotsTab({ model }: Props) {
@@ -41,7 +38,9 @@ export function ComparisonScreenshotsTab({ model }: Props) {
   }, [model.productA, model.productB]);
 
   const categories = useMemo(() => {
-    const set = new Set(all.map((s) => categoryFromCaption(s.caption)));
+    const set = new Set(
+      all.map((s) => categoryFromCaption(publicScreenshotCaption(s) ?? undefined)),
+    );
     return ["All", ...Array.from(set)];
   }, [all]);
 
@@ -51,7 +50,11 @@ export function ComparisonScreenshotsTab({ model }: Props) {
   const filtered =
     filter === "All"
       ? all
-      : all.filter((s) => categoryFromCaption(s.caption) === filter);
+      : all.filter(
+          (s) =>
+            categoryFromCaption(publicScreenshotCaption(s) ?? undefined) ===
+            filter,
+        );
 
   const shotsA = filtered.filter((s) => s.side === "a");
   const shotsB = filtered.filter((s) => s.side === "b");
@@ -130,17 +133,9 @@ export function ComparisonScreenshotsTab({ model }: Props) {
             <div className="mt-3 text-sm text-[var(--sg-color-text-muted)]">
               <p className="font-medium text-[var(--sg-color-text)]">
                 {lightbox.productName}
-                {lightbox.caption ? ` — ${lightbox.caption}` : ""}
-              </p>
-              <p className="mt-1">
-                {[
-                  formatDate(lightbox.checkedAt)
-                    ? `Captured ${formatDate(lightbox.checkedAt)}`
-                    : null,
-                  lightbox.source ? `Source: ${lightbox.source}` : null,
-                ]
-                  .filter(Boolean)
-                  .join(" · ")}
+                {publicScreenshotCaption(lightbox)
+                  ? ` — ${publicScreenshotCaption(lightbox)}`
+                  : ""}
               </p>
             </div>
             <button
@@ -189,10 +184,7 @@ function ShotColumn({
                   className="aspect-video w-full object-contain bg-[var(--sg-color-surface-muted)]"
                 />
                 <div className="px-3 py-2 text-xs text-[var(--sg-color-text-muted)]">
-                  {shot.caption ?? shot.alt}
-                  {formatDate(shot.checkedAt)
-                    ? ` · ${formatDate(shot.checkedAt)}`
-                    : ""}
+                  {publicScreenshotCaption(shot) ?? shot.alt}
                 </div>
               </button>
             </li>
