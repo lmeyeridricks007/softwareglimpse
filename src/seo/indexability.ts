@@ -1,4 +1,5 @@
 import type { ContentMetadata } from "@/domain/schemas";
+import { isMergedFeatureSlug } from "@/data/config/hub-page-twins";
 import { isPubliclyAvailable } from "@/domain/publishing";
 import { isEntityIndexable, type IndexableEntity } from "@/domain/quality-gates";
 
@@ -111,12 +112,16 @@ export function indexabilityForUtility(
   return decisionNoindex({ nofollow, reason: `utility:${kind}` });
 }
 
-/** Feature detail — requires substantive profile (not empty shell). */
+/** Feature detail — requires substantive profile (not empty shell). Merged hub twins stay noindex. */
 export function indexabilityForFeaturePage(input: {
+  featureSlug?: string;
   hasModel: boolean;
   hasOverview: boolean;
   hasTagline: boolean;
 }): IndexabilityDecision {
+  if (input.featureSlug && isMergedFeatureSlug(input.featureSlug)) {
+    return decisionNoindex({ reason: "hub-twin-merged-into-capability" });
+  }
   if (!input.hasModel) {
     return decisionNoindex({ reason: "feature-missing" });
   }

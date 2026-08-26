@@ -15,6 +15,7 @@ import {
   getGuides,
 } from "@/data/repositories/guides";
 import { TOOLS_REGISTRY } from "@/data/config/tools/registry";
+import { buildBestHubModel } from "@/services/best-hub";
 import {
   getFeatureDetailProfile,
   listFeatureDetailParams,
@@ -25,6 +26,7 @@ import {
   listRequirementDetailParams,
 } from "@/data/requirement-detail";
 import { isEntityIndexable } from "@/domain/quality-gates";
+import { isMergedFeatureSlug } from "@/data/config/hub-page-twins";
 import {
   COMPANY_ROUTES,
   getLegalDocumentByPath,
@@ -94,10 +96,32 @@ export function getSitemapEntries(now: Date = new Date()): SitemapEntry[] {
     { path: "/features/", changeFrequency: "weekly", priority: 0.65 },
     { path: "/resources/", changeFrequency: "weekly", priority: 0.65 },
     { path: "/for/", changeFrequency: "monthly", priority: 0.6 },
-    // Industries hub is intentionally noindex until vertical research completes.
+    { path: "/industries/", changeFrequency: "weekly", priority: 0.65 },
   ];
   for (const hub of staticHubs) {
     pushUnique(map, { ...hub, lastModified: generatedAt });
+  }
+
+  const bestHub = buildBestHubModel();
+  if (bestHub.indexable) {
+    pushUnique(map, {
+      path: "/best/",
+      lastModified: generatedAt,
+      changeFrequency: "weekly",
+      priority: 0.75,
+    });
+  }
+
+  const hasIndexableAlternativesHub = getAllAlternativesUnfiltered().some(
+    (page) => isEntityIndexable({ kind: "alternatives", entity: page }, now),
+  );
+  if (hasIndexableAlternativesHub) {
+    pushUnique(map, {
+      path: "/alternatives/",
+      lastModified: generatedAt,
+      changeFrequency: "weekly",
+      priority: 0.65,
+    });
   }
 
   pushUnique(map, {
@@ -127,11 +151,8 @@ export function getSitemapEntries(now: Date = new Date()): SitemapEntry[] {
 
   for (const tool of TOOLS_REGISTRY) {
     if (tool.status !== "available" || !tool.href) continue;
-    // software-finder / stack-builder are noindex landings
-    if (
-      tool.slug === "software-finder" ||
-      tool.slug === "software-stack-builder"
-    ) {
+    // stack-builder is a noindex landing
+    if (tool.slug === "software-stack-builder") {
       continue;
     }
     pushUnique(map, {
@@ -272,7 +293,7 @@ export function getSitemapEntries(now: Date = new Date()): SitemapEntry[] {
     });
   }
 
-  // Industries: only when explicitly indexable (none today — correctly excluded).
+  // Industry detail pages when explicitly indexable in seed.
   for (const industry of getIndustries()) {
     const decision = indexabilityFromSeoFlag({
       seoIndexable: industry.seo.indexable === true,
@@ -307,6 +328,7 @@ export function getSitemapEntries(now: Date = new Date()): SitemapEntry[] {
   }
 
   for (const { slug } of listFeatureDetailParams()) {
+    if (isMergedFeatureSlug(slug)) continue;
     const profile = getFeatureDetailProfile(slug);
     if (!profile) continue;
     const decision = indexabilityForFeaturePage({

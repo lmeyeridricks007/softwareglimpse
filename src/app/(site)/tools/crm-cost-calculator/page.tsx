@@ -61,6 +61,10 @@ export default function CrmCostCalculatorPage() {
       />
       <Breadcrumbs items={breadcrumbItems} />
 
+      <h1 className="mt-2 font-[family-name:var(--font-display)] text-[length:var(--sg-text-h1)] font-semibold leading-[var(--sg-leading-tight)] text-[var(--sg-color-navy)]">
+        {TITLE}
+      </h1>
+
       <Suspense
         fallback={
           <p className="mt-8 text-sm text-[var(--sg-color-text-muted)]">
@@ -73,6 +77,7 @@ export default function CrmCostCalculatorPage() {
           resourceLinks={resourceLinks}
           title={TITLE}
           description={DESCRIPTION}
+          titleElement="h2"
         />
       </Suspense>
 

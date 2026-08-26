@@ -34,6 +34,7 @@ import { Breadcrumbs } from "@/components/seo/breadcrumbs";
 import { TrustStrip } from "@/components/trust/trust-strip";
 import { isEntityIndexable } from "@/domain/quality-gates";
 import type { Category } from "@/domain";
+import { getCategoryHubDisplayName } from "@/services/category-hub/display-name";
 import { buildCategoryHubModel } from "@/services/category-hub";
 import { buildPageMetadata } from "@/seo/metadata";
 import {
@@ -63,7 +64,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   }
 
   return buildPageMetadata({
-    title: category.seo.title || category.name,
+    title: getCategoryHubDisplayName(category),
     description:
       category.seo.description ||
       category.shortDescription ||

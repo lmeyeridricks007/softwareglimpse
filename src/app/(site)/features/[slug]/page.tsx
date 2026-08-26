@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
-import { notFound } from "next/navigation";
+import { notFound, permanentRedirect } from "next/navigation";
 import { FeatureDetailPage } from "@/components/features/feature-detail-page";
+import { mergedFeatureHref } from "@/data/config/hub-page-twins";
 import { listFeatureDetailParams } from "@/data/feature-detail";
 import { getFeatureDetailPage } from "@/services/feature-detail";
 import { buildPageMetadata, buildPageMetadataFromDecision } from "@/seo/metadata";
@@ -22,6 +23,15 @@ export function generateStaticParams() {
 
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const { slug } = await params;
+  const mergeTarget = mergedFeatureHref(slug);
+  if (mergeTarget) {
+    return buildPageMetadata({
+      title: "Redirecting…",
+      description: "This feature page has moved.",
+      path: `/features/${slug}/`,
+      indexable: false,
+    });
+  }
   const model = getFeatureDetailPage(slug);
   if (!model) {
     return buildPageMetadata({
@@ -37,6 +47,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
     description: model.tagline.slice(0, 320),
     path: `/features/${slug}/`,
     decision: indexabilityForFeaturePage({
+      featureSlug: slug,
       hasModel: true,
       hasOverview: Boolean(model.profile.overview),
       hasTagline: Boolean(model.tagline?.trim()),
@@ -47,6 +58,10 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
 
 export default async function FeatureDetailRoute({ params }: Props) {
   const { slug } = await params;
+  const mergeTarget = mergedFeatureHref(slug);
+  if (mergeTarget) {
+    permanentRedirect(mergeTarget);
+  }
   const model = getFeatureDetailPage(slug);
   if (!model) notFound();
 

@@ -22,6 +22,8 @@ const PATH_ALIASES: Record<string, string> = {
   "/features/call-functionality/": "/features/calling/",
   "/features/reporting": "/features/reporting-dashboards/",
   "/features/reporting/": "/features/reporting-dashboards/",
+  "/features/pipeline-management": "/capabilities/pipeline-management/",
+  "/features/pipeline-management/": "/capabilities/pipeline-management/",
 };
 
 /** Ensure a path starts with `/` and ends with `/` (except root). */

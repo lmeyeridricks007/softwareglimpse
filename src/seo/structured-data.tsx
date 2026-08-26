@@ -74,8 +74,6 @@ export function softwareApplicationJsonLd(input: {
   url?: string;
   applicationCategory?: string;
   dateModified?: string | null;
-  editorialScore?: number | null;
-  methodologyVersion?: string | null;
   priceOffer?: {
     price: number;
     currency: string;
@@ -97,32 +95,6 @@ export function softwareApplicationJsonLd(input: {
   }
   if (input.dateModified) {
     data.dateModified = input.dateModified;
-  }
-
-  if (
-    input.editorialScore != null &&
-    Number.isFinite(input.editorialScore)
-  ) {
-    data.review = {
-      "@type": "Review",
-      author: {
-        "@type": "Organization",
-        name: SITE_NAME,
-        url: `${getSiteUrl()}/`,
-      },
-      reviewRating: {
-        "@type": "Rating",
-        ratingValue: input.editorialScore,
-        bestRating: 10,
-        worstRating: 0,
-      },
-      ...(input.methodologyVersion
-        ? {
-            description: `SoftwareGlimpse editorial score (methodology v${input.methodologyVersion}) — research-grounded, not a user review aggregate.`,
-          }
-        : {}),
-      ...(input.dateModified ? { datePublished: input.dateModified } : {}),
-    };
   }
 
   if (input.priceOffer && Number.isFinite(input.priceOffer.price)) {

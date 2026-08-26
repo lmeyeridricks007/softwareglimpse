@@ -264,15 +264,10 @@ function productBestFor(software: Software): string | null {
   ]);
 }
 
-function shortCategoryLabel(category: Category, profileShortName?: string): string {
-  if (profileShortName) return profileShortName;
-  // Prefer the part before an ampersand / comma for CTAs and nav density.
-  const clipped = category.name.split(/\s*[&,/]\s*/)[0]?.trim();
-  if (clipped && clipped.length >= 2 && clipped.length < category.name.length) {
-    return clipped;
-  }
-  return category.name;
-}
+import {
+  getCategoryHubDisplayName,
+  shortCategoryLabel,
+} from "./display-name";
 
 const DEFAULT_DECISION_CRITERIA = [
   "Core workflow fit",
@@ -630,8 +625,7 @@ export function buildCategoryHubModel(category: Category): CategoryHubModel {
     ((bestPage.recommendations ?? []).some((r) => r.approved) ||
       (bestPage.useCaseRecommendations ?? []).some((r) => r.approved));
 
-  const displayName =
-    profile?.displayName ?? `${shortLabel} Software`;
+  const displayName = getCategoryHubDisplayName(category);
 
   const tagline =
     profile?.tagline ??

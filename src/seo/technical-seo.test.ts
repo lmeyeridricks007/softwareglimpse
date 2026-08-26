@@ -172,6 +172,9 @@ describe("sitemap eligibility", () => {
       expect(urls.has(canonicalUrl("/dev/design-system/"))).toBe(false);
       expect(urls.has(canonicalUrl("/tools/crm-vendor-scorecard/"))).toBe(true);
       expect(urls.has(canonicalUrl("/tools/crm-tco-calculator/"))).toBe(true);
+      expect(urls.has(canonicalUrl("/tools/software-finder/"))).toBe(true);
+      expect(urls.has(canonicalUrl("/best/"))).toBe(true);
+      expect(urls.has(canonicalUrl("/alternatives/"))).toBe(true);
       expect(entries.length).toBeGreaterThan(400);
     },
     20_000,
@@ -215,8 +218,6 @@ describe("breadcrumbs + structured data", () => {
     const scored = softwareApplicationJsonLd({
       name: "Pipedrive",
       path: "/software/pipedrive/",
-      editorialScore: 7.5,
-      methodologyVersion: "1.1.0",
       dateModified: "2026-08-26T00:00:00.000Z",
       priceOffer: {
         price: 14,
@@ -224,7 +225,8 @@ describe("breadcrumbs + structured data", () => {
         priceAsOf: "2026-08-13T00:00:00.000Z",
       },
     });
-    expect((scored.review as { reviewRating?: { ratingValue?: number } })?.reviewRating?.ratingValue).toBe(7.5);
+    expect(scored.review).toBeUndefined();
+    expect(scored.dateModified).toBe("2026-08-26T00:00:00.000Z");
     expect((scored.offers as { price?: string })?.price).toBe("14");
     expect(
       videoObjectJsonLd({

@@ -125,9 +125,10 @@ export default async function SoftwareOverviewPage({ params }: Props) {
             description: model.tagline ?? undefined,
             url: software.website,
             applicationCategory: model.primaryCategory?.name,
-            dateModified: model.lastUpdated,
-            editorialScore: model.scoresApproved ? model.overallScore : null,
-            methodologyVersion: model.research.methodologyVersion,
+            dateModified:
+              model.lastUpdated ??
+              software.metadata.updatedAt ??
+              software.metadata.publishedAt,
             priceOffer:
               startingPrice != null &&
               Number.isFinite(startingPrice) &&

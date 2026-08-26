@@ -25,6 +25,7 @@ import { CapabilityWorkflowComparison } from "@/components/capabilities/capabili
 import { DynamicEvidenceExplorer } from "@/components/evidence/dynamic-evidence-explorer";
 import { buildCapabilityEvidenceExplorer } from "@/services/evidence-explorer";
 import { HubDecisionLinks } from "@/components/hub/hub-decision-links";
+import { HubPageTwinSiblings } from "@/components/hub/hub-page-twin-siblings";
 import { IndustryFinalCta } from "@/components/industries/industry-final-cta";
 import { NewsletterCard } from "@/components/newsletter/newsletter-card";
 import { Breadcrumbs } from "@/components/seo/breadcrumbs";
@@ -120,6 +121,8 @@ export default async function CapabilityDetailPage({ params }: Props) {
       />
 
       <CapabilityGlanceStrip model={model} className="mt-6" />
+
+      <HubPageTwinSiblings path={path} className="mt-6" />
 
       <div className="mt-8 grid gap-10 lg:grid-cols-[minmax(0,1fr)_minmax(16rem,20rem)] lg:items-start">
         <div className="min-w-0 space-y-10">

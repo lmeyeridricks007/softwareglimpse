@@ -34,7 +34,7 @@ export const metadata: Metadata = buildPageMetadata({
   title: TITLE,
   description: DESCRIPTION,
   path: "/industries/",
-  indexable: false,
+  indexable: true,
 });
 
 export default function IndustriesIndexPage() {

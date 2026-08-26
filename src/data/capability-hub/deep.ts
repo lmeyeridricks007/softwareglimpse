@@ -998,7 +998,7 @@ export const capabilityDepthBySlug: Record<string, Depth> = {
         title: "Configurable stages",
         description: "Define stages yourself instead of adapting to a fixed default.",
         priority: "must",
-        href: "/features/pipeline-management/",
+        href: "/features/multiple-pipelines/",
       },
       {
         id: "deal-records",
@@ -1171,7 +1171,7 @@ export const capabilityDepthBySlug: Record<string, Depth> = {
     relatedCapabilitySlugs: ["deal-management", "forecasting", "workflow-automation", "reporting"],
     relatedUseCaseSlugs: ["pipeline-management", "complex-sales-processes", "field-sales"],
     relatedRequirementSlugs: ["separate-sales-processes"],
-    relatedFeatureSlugs: ["pipeline-management", "deal-management", "forecasting"],
+    relatedFeatureSlugs: ["multiple-pipelines", "deal-management", "forecasting"],
     featuredGuideHrefs: [
       "/guides/crm-requirements-guide/",
       "/guides/crm-vs-spreadsheet/",
@@ -1443,7 +1443,7 @@ export const capabilityDepthBySlug: Record<string, Depth> = {
     relatedCapabilitySlugs: ["pipeline-management", "forecasting", "customization"],
     relatedUseCaseSlugs: ["pipeline-management", "complex-sales-processes"],
     relatedRequirementSlugs: ["separate-sales-processes"],
-    relatedFeatureSlugs: ["deal-management", "pipeline-management", "custom-fields"],
+    relatedFeatureSlugs: ["deal-management", "multiple-pipelines", "custom-fields"],
     featuredGuideHrefs: [
       "/guides/crm-requirements-guide/",
       "/guides/crm-selection-mistakes/",

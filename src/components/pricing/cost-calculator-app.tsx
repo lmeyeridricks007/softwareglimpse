@@ -88,6 +88,7 @@ type Props = {
   resourceLinks?: Array<{ href: string; label: string }>;
   title?: string;
   description?: string;
+  titleElement?: "h1" | "h2" | "none";
   /** Defaults to CRM calculator behaviour. */
   config?: CostCalculatorConfig;
 };
@@ -121,6 +122,7 @@ export function CostCalculatorApp({
   resourceLinks = [],
   title,
   description,
+  titleElement = "h1",
   config = CRM_COST_CALCULATOR_CONFIG,
 }: Props) {
   const resolvedTitle = title ?? config.defaultTitle;
@@ -691,6 +693,7 @@ export function CostCalculatorApp({
         description={resolvedDescription}
         valueProps={calculatorValuePropsFor(config.productNounPlural)}
         className="mt-2"
+        titleElement={titleElement}
         visualSlot={
           <CalculatorHeroPreview
             estimates={liveEstimates}

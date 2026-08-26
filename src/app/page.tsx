@@ -10,6 +10,7 @@ import {
   getSoftwareBySlug,
   getTopLevelCategories,
   getUseCases,
+  getCategoryBySlug,
 } from "@/data";
 import type { BestPage } from "@/domain";
 import { isEntityIndexable } from "@/domain/quality-gates";
@@ -43,14 +44,15 @@ import {
   organizationJsonLd,
   websiteJsonLd,
 } from "@/seo/structured-data";
-import { SITE_NAME, SITE_TAGLINE } from "@/lib/site";
+import { SITE_HOME_DESCRIPTION, SITE_HOME_TITLE } from "@/lib/site";
+import { getGuides } from "@/data/repositories/guides";
 import { resolveVisitCta } from "@/services/affiliate/resolve-visit-cta";
 import { publicAlternativesHref } from "@/services/relationships/software-links";
 import { homepageCrmComparisons } from "@/services/homepage/prioritized-comparisons";
 
 export const metadata: Metadata = buildPageMetadata({
-  title: SITE_NAME,
-  description: SITE_TAGLINE,
+  title: SITE_HOME_TITLE,
+  description: SITE_HOME_DESCRIPTION,
   path: "/",
   indexable: true,
   pageType: "home",
@@ -66,11 +68,8 @@ function formatDateLabel(iso: string): string {
   });
 }
 
-function categoryLabelFor(
-  slug: string,
-  categories: Array<{ slug: string; name: string }>,
-): string {
-  return categories.find((c) => c.slug === slug)?.name ?? "Software";
+function categoryLabelFor(slug: string): string {
+  return getCategoryBySlug(slug)?.name ?? "Software";
 }
 
 function publicBestBuyingContext(categoryLabel: string): string {
@@ -222,6 +221,10 @@ export default function HomePage() {
     },
   ];
 
+  const indexableGuideCount = getGuides().filter((guide) =>
+    isEntityIndexable({ kind: "guide", entity: guide }),
+  ).length;
+
   const trustMetrics = [
     { value: `${software.length}+`, label: "Software covered" },
     {
@@ -229,7 +232,7 @@ export default function HomePage() {
       label: "Categories with products",
     },
     { value: `${software.length}`, label: "Product profiles" },
-    { value: `${guides.length}`, label: "Buying guides" },
+    { value: `${indexableGuideCount}`, label: "Software guides" },
   ];
 
   const newsletterEnabled = siteFoundationConfig.newsletter.enabled;
@@ -326,10 +329,7 @@ export default function HomePage() {
               product={{
                 slug: featured.slug,
                 name: featured.name,
-                categoryLabel: categoryLabelFor(
-                  featured.primaryCategorySlug,
-                  categories,
-                ),
+                categoryLabel: categoryLabelFor(featured.primaryCategorySlug),
                 bestFor:
                   featuredAssessment?.bestFor?.[0] ??
                   featured.bestFor?.[0] ??
@@ -461,10 +461,7 @@ export default function HomePage() {
               <SoftwareCard
                 key={s.id}
                 software={s}
-                categoryLabel={categoryLabelFor(
-                  s.primaryCategorySlug,
-                  categories,
-                )}
+                categoryLabel={categoryLabelFor(s.primaryCategorySlug)}
                 rating={approved ? a?.overallScore : null}
                 ratingApproved={approved}
                 bestFor={a?.bestFor?.[0] ?? s.bestFor?.[0]}
@@ -546,9 +543,9 @@ export default function HomePage() {
                 title={page.title}
                 href={`/best/${page.slug}/`}
                 categorySlug={catSlug}
-                categoryLabel={categoryLabelFor(catSlug, categories)}
+                categoryLabel={categoryLabelFor(catSlug)}
                 buyingContext={publicBestBuyingContext(
-                  categoryLabelFor(catSlug, categories),
+                  categoryLabelFor(catSlug),
                 )}
                 evaluatedCount={page.eligibleProductSlugs?.length}
                 fitScenarios={homepageBestFitScenarios(page)}
@@ -570,9 +567,9 @@ export default function HomePage() {
                   title={page.title}
                   href={`/best/${page.slug}/`}
                   categorySlug={catSlug}
-                  categoryLabel={categoryLabelFor(catSlug, categories)}
+                  categoryLabel={categoryLabelFor(catSlug)}
                   buyingContext={publicBestBuyingContext(
-                    categoryLabelFor(catSlug, categories),
+                    categoryLabelFor(catSlug),
                   )}
                   evaluatedCount={page.eligibleProductSlugs?.length}
                   fitScenarios={homepageBestFitScenarios(page)}

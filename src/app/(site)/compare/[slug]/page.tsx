@@ -36,7 +36,7 @@ import {
   type ComparisonPageTabId,
 } from "@/services/comparison-page/tabs";
 import { buildPageMetadata } from "@/seo/metadata";
-import { JsonLdScript, breadcrumbJsonLd } from "@/seo/structured-data";
+import { JsonLdScript, breadcrumbJsonLd, webPageJsonLd } from "@/seo/structured-data";
 import { buildComparisonLinkPlan } from "@/services/internal-linking";
 import { InternalLinkingModules } from "@/components/internal-linking";
 
@@ -185,7 +185,22 @@ export default async function ComparisonDetailPage({
 
   return (
     <>
-      <JsonLdScript data={breadcrumbJsonLd(breadcrumbItems)} />
+      <JsonLdScript
+        data={[
+          webPageJsonLd({
+            name: model.title,
+            description:
+              comparison.seo.description ||
+              `${model.title} on SoftwareGlimpse.`,
+            path: `/compare/${model.slug}/`,
+            dateModified:
+              model.lastUpdated ??
+              comparison.metadata.updatedAt ??
+              comparison.metadata.publishedAt,
+          }),
+          breadcrumbJsonLd(breadcrumbItems),
+        ]}
+      />
 
       <ComparisonPageClient
         chrome={{

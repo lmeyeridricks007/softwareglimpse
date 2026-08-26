@@ -41,6 +41,7 @@ import {
 import { FeatureSeeInAction } from "@/components/features/feature-media-sections";
 import { DynamicEvidenceExplorer } from "@/components/evidence/dynamic-evidence-explorer";
 import { InternalLinkingModules } from "@/components/internal-linking";
+import { HubPageTwinSiblings } from "@/components/hub/hub-page-twin-siblings";
 import { buildFeatureEvidenceExplorer } from "@/services/evidence-explorer";
 import type { FeatureDetailModel } from "@/services/feature-detail";
 import { buildFeatureLinkPlan } from "@/services/internal-linking";
@@ -107,6 +108,10 @@ export function FeatureDetailPage({ model }: { model: FeatureDetailModel }) {
 
       <FeatureHero model={model} className="mt-2" />
       <FeatureGlanceStrip glance={model.glance} className="mt-6" />
+
+      {!model.industry ? (
+        <HubPageTwinSiblings path={path} className="mt-6" />
+      ) : null}
 
       <div className="mt-8 grid gap-6 lg:grid-cols-[minmax(0,1fr)_minmax(15rem,18rem)] lg:items-start">
         <div className="min-w-0 space-y-8">
