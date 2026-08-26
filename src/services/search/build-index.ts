@@ -29,6 +29,7 @@ import {
 import { publicAlternativesHref } from "@/services/relationships/software-links";
 import { getUseCaseHubProfile } from "@/data/use-case-hub";
 import { getResourceHubProfile } from "@/data/resource-hub";
+import { getCapabilityHubProfile } from "@/data/capability-hub";
 import { TOOLS_REGISTRY } from "@/data/config/tools/registry";
 import {
   buildSearchRuntimeIndex,
