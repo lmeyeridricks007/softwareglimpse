@@ -3,7 +3,7 @@ import { buildProductWhatIsDeepenGuide } from "@/services/product-guides/affilia
 
 const STAMP = "2026-08-23T20:00:00.000Z";
 
-const LIVE_CHAT_AFFILIATE_PRODUCT_SLUGS = ["tidio", "freshchat"] as const;
+const LIVE_CHAT_AFFILIATE_PRODUCT_SLUGS = ["tidio", "freshchat", "cometchat"] as const;
 
 function scheduledAtFor(productSlug: string): string | undefined {
   if (productSlug === "freshchat") {

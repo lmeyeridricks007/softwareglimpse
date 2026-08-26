@@ -244,7 +244,10 @@ export function SoftwareHubUseCasesTab({ model }: Props) {
         ) : null}
         <SoftwareHubPopularComparisons items={model.comparisonLinks} />
         <Link
-          href={softwareHubPath(software.slug, "alternatives")}
+          href={
+            model.alternativesHref ??
+            softwareHubPath(software.slug, "alternatives")
+          }
           className="inline-flex text-sm font-medium text-[var(--sg-color-primary)] underline-offset-2 hover:underline"
         >
           Browse alternatives →

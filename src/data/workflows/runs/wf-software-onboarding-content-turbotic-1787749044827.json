@@ -1,0 +1,752 @@
+{
+  "id": "wf-software-onboarding-content-turbotic-1787749044827",
+  "workflowId": "software-onboarding-content",
+  "workflowVersion": "1.0.0",
+  "name": "Software Onboarding Content: turbotic",
+  "targetType": "software",
+  "targetId": "turbotic",
+  "status": "completed-with-warnings",
+  "steps": [
+    {
+      "id": "software-onboarding",
+      "definitionStepId": "software-onboarding",
+      "handler": "software-onboarding",
+      "label": "Software onboarding",
+      "status": "completed",
+      "required": true,
+      "failurePolicy": "block-workflow",
+      "attempt": 1,
+      "maxAttempts": 2,
+      "dependsOn": [],
+      "priority": "critical",
+      "config": {
+        "maxAutomaticRevisions": 1,
+        "expandFromContentPlan": false,
+        "expandKind": "none",
+        "stopAfterApproval": true,
+        "allowNormalizedFacts": false,
+        "optionalWhenBlocked": false,
+        "forceTransientFailOnce": false
+      },
+      "inputRefs": {},
+      "outputRefs": {
+        "softwareOnboardingRunId": "onboard-turbotic-1787748002774"
+      },
+      "blockers": [],
+      "warnings": [],
+      "startedAt": "2026-08-26T12:57:26.423Z",
+      "completedAt": "2026-08-26T12:57:26.666Z",
+      "revisionAttempts": 0
+    },
+    {
+      "id": "content-plan",
+      "definitionStepId": "content-plan",
+      "handler": "content-plan",
+      "label": "Content plan",
+      "status": "completed",
+      "required": true,
+      "failurePolicy": "block-workflow",
+      "attempt": 1,
+      "maxAttempts": 2,
+      "dependsOn": [
+        "software-onboarding"
+      ],
+      "priority": "high",
+      "config": {
+        "maxAutomaticRevisions": 1,
+        "expandFromContentPlan": false,
+        "expandKind": "none",
+        "stopAfterApproval": true,
+        "allowNormalizedFacts": false,
+        "optionalWhenBlocked": false,
+        "forceTransientFailOnce": false
+      },
+      "inputRefs": {},
+      "outputRefs": {
+        "softwareOnboardingRunId": "onboard-turbotic-1787748002774",
+        "comparisonTargets": "chatgpt-vs-turbotic,claude-vs-turbotic,gemini-vs-turbotic",
+        "pageCandidateCount": "9"
+      },
+      "blockers": [],
+      "warnings": [],
+      "startedAt": "2026-08-26T12:57:26.667Z",
+      "completedAt": "2026-08-26T12:57:26.972Z",
+      "revisionAttempts": 0
+    },
+    {
+      "id": "software-review",
+      "definitionStepId": "software-review",
+      "handler": "agent-run",
+      "label": "Software Review",
+      "status": "completed",
+      "required": true,
+      "failurePolicy": "block-workflow",
+      "attempt": 1,
+      "maxAttempts": 2,
+      "dependsOn": [
+        "content-plan"
+      ],
+      "priority": "high",
+      "config": {
+        "agentId": "software-review-agent",
+        "targetSlug": "turbotic",
+        "maxAutomaticRevisions": 1,
+        "expandFromContentPlan": false,
+        "expandKind": "none",
+        "stopAfterApproval": true,
+        "allowNormalizedFacts": false,
+        "optionalWhenBlocked": false,
+        "forceTransientFailOnce": false
+      },
+      "inputRefs": {},
+      "outputRefs": {
+        "draftId": "draft-deterministic-v1-software-review-agent-turbotic-2026-08-26T12-57-27-343Z",
+        "qaStatus": "pass",
+        "agentId": "software-review-agent",
+        "target": "turbotic"
+      },
+      "inputSnapshot": {
+        "researchFactIds": [
+          "fact-turbotic-identity.shortDescription",
+          "fact-turbotic-positioning.vendorClaim",
+          "fact-turbotic-positioning.jobCluster",
+          "fact-turbotic-pricing.model",
+          "fact-turbotic-pricing.hasFreePlan",
+          "fact-turbotic-pricing.hasFreeTrial",
+          "fact-turbotic-pricing.startingPriceMonthly",
+          "fact-turbotic-pricing.plans.free",
+          "fact-turbotic-pricing.plans.basic",
+          "fact-turbotic-pricing.plans.pro",
+          "fact-turbotic-pricing.plans.enterprise",
+          "fact-turbotic-features.llm-chat",
+          "fact-turbotic-features.reasoning-models",
+          "fact-turbotic-features.writing-assist",
+          "fact-turbotic-features.image-generation",
+          "fact-turbotic-features.voice-tts",
+          "fact-turbotic-features.presentation-generation",
+          "fact-turbotic-features.website-generation",
+          "fact-turbotic-features.ad-creative-generation",
+          "fact-turbotic-features.agent-builder",
+          "fact-turbotic-features.custom-projects",
+          "fact-turbotic-features.enterprise-admin",
+          "fact-turbotic-features.usage-credits",
+          "fact-turbotic-features.connectors",
+          "fact-turbotic-features.data-privacy",
+          "fact-turbotic-features.analytics-reporting",
+          "fact-turbotic-features.video-generation",
+          "fact-turbotic-features.code-assist",
+          "fact-turbotic-features.meeting-notes",
+          "fact-turbotic-features.workflow-automation"
+        ],
+        "methodologySlug": "ai-editorial",
+        "methodologyVersion": "1.0.0",
+        "agentVersion": "1.0.0",
+        "contextBuiltAt": "2026-08-26T12:57:27.335Z"
+      },
+      "blockers": [],
+      "warnings": [],
+      "agentTaskId": "exec-software-review-agent-turbotic-1787749046976",
+      "draftId": "draft-deterministic-v1-software-review-agent-turbotic-2026-08-26T12-57-27-343Z",
+      "startedAt": "2026-08-26T12:57:26.975Z",
+      "completedAt": "2026-08-26T12:57:27.358Z",
+      "revisionAttempts": 0
+    },
+    {
+      "id": "pricing-page",
+      "definitionStepId": "pricing-page",
+      "handler": "agent-run",
+      "label": "Pricing Page",
+      "status": "blocked",
+      "required": false,
+      "failurePolicy": "continue-with-warning",
+      "attempt": 1,
+      "maxAttempts": 2,
+      "dependsOn": [
+        "content-plan"
+      ],
+      "priority": "normal",
+      "config": {
+        "agentId": "pricing-page-agent",
+        "targetSlug": "turbotic",
+        "maxAutomaticRevisions": 1,
+        "expandFromContentPlan": false,
+        "expandKind": "none",
+        "stopAfterApproval": true,
+        "allowNormalizedFacts": false,
+        "optionalWhenBlocked": true,
+        "forceTransientFailOnce": false
+      },
+      "inputRefs": {},
+      "outputRefs": {},
+      "blockers": [
+        "PRICING_UNVERIFIED: Product pricing data is unverified"
+      ],
+      "warnings": [
+        "PRICING_UNVERIFIED: Product pricing data is unverified"
+      ],
+      "startedAt": "2026-08-26T12:57:27.526Z",
+      "completedAt": "2026-08-26T12:57:27.545Z",
+      "revisionAttempts": 0
+    },
+    {
+      "id": "alternatives",
+      "definitionStepId": "alternatives",
+      "handler": "agent-run",
+      "label": "Alternatives",
+      "status": "blocked",
+      "required": false,
+      "failurePolicy": "continue-with-warning",
+      "attempt": 1,
+      "maxAttempts": 2,
+      "dependsOn": [
+        "content-plan"
+      ],
+      "priority": "normal",
+      "config": {
+        "agentId": "alternatives-agent",
+        "targetSlug": "turbotic",
+        "maxAutomaticRevisions": 1,
+        "expandFromContentPlan": false,
+        "expandKind": "none",
+        "stopAfterApproval": true,
+        "allowNormalizedFacts": false,
+        "optionalWhenBlocked": true,
+        "forceTransientFailOnce": false
+      },
+      "inputRefs": {},
+      "outputRefs": {},
+      "blockers": [
+        "NO_APPROVED_ALTERNATIVES: Approved alternative relationships required — same-category alone is insufficient"
+      ],
+      "warnings": [
+        "NO_APPROVED_ALTERNATIVES: Approved alternative relationships required — same-category alone is insufficient"
+      ],
+      "startedAt": "2026-08-26T12:57:27.360Z",
+      "completedAt": "2026-08-26T12:57:27.392Z",
+      "revisionAttempts": 0
+    },
+    {
+      "id": "comparison:chatgpt-vs-turbotic",
+      "definitionStepId": "comparisons",
+      "handler": "agent-run",
+      "label": "Comparison chatgpt-vs-turbotic",
+      "status": "blocked",
+      "required": false,
+      "failurePolicy": "continue-with-warning",
+      "attempt": 1,
+      "maxAttempts": 2,
+      "dependsOn": [
+        "content-plan"
+      ],
+      "priority": "normal",
+      "config": {
+        "agentId": "comparison-agent",
+        "targetSlug": "chatgpt-vs-turbotic",
+        "maxAutomaticRevisions": 1,
+        "expandFromContentPlan": true,
+        "expandKind": "comparisons",
+        "stopAfterApproval": true,
+        "allowNormalizedFacts": false,
+        "optionalWhenBlocked": true,
+        "forceTransientFailOnce": false
+      },
+      "expansionKey": "chatgpt-vs-turbotic",
+      "inputRefs": {},
+      "outputRefs": {},
+      "blockers": [
+        "RELATIONSHIP_UNAPPROVED: Approved comparable relationship required"
+      ],
+      "warnings": [
+        "RELATIONSHIP_UNAPPROVED: Approved comparable relationship required"
+      ],
+      "startedAt": "2026-08-26T12:57:27.403Z",
+      "completedAt": "2026-08-26T12:57:27.452Z",
+      "revisionAttempts": 0
+    },
+    {
+      "id": "comparison:claude-vs-turbotic",
+      "definitionStepId": "comparisons",
+      "handler": "agent-run",
+      "label": "Comparison claude-vs-turbotic",
+      "status": "blocked",
+      "required": false,
+      "failurePolicy": "continue-with-warning",
+      "attempt": 1,
+      "maxAttempts": 2,
+      "dependsOn": [
+        "content-plan"
+      ],
+      "priority": "normal",
+      "config": {
+        "agentId": "comparison-agent",
+        "targetSlug": "claude-vs-turbotic",
+        "maxAutomaticRevisions": 1,
+        "expandFromContentPlan": true,
+        "expandKind": "comparisons",
+        "stopAfterApproval": true,
+        "allowNormalizedFacts": false,
+        "optionalWhenBlocked": true,
+        "forceTransientFailOnce": false
+      },
+      "expansionKey": "claude-vs-turbotic",
+      "inputRefs": {},
+      "outputRefs": {},
+      "blockers": [
+        "RELATIONSHIP_UNAPPROVED: Approved comparable relationship required"
+      ],
+      "warnings": [
+        "RELATIONSHIP_UNAPPROVED: Approved comparable relationship required"
+      ],
+      "startedAt": "2026-08-26T12:57:27.454Z",
+      "completedAt": "2026-08-26T12:57:27.493Z",
+      "revisionAttempts": 0
+    },
+    {
+      "id": "comparison:gemini-vs-turbotic",
+      "definitionStepId": "comparisons",
+      "handler": "agent-run",
+      "label": "Comparison gemini-vs-turbotic",
+      "status": "blocked",
+      "required": false,
+      "failurePolicy": "continue-with-warning",
+      "attempt": 1,
+      "maxAttempts": 2,
+      "dependsOn": [
+        "content-plan"
+      ],
+      "priority": "normal",
+      "config": {
+        "agentId": "comparison-agent",
+        "targetSlug": "gemini-vs-turbotic",
+        "maxAutomaticRevisions": 1,
+        "expandFromContentPlan": true,
+        "expandKind": "comparisons",
+        "stopAfterApproval": true,
+        "allowNormalizedFacts": false,
+        "optionalWhenBlocked": true,
+        "forceTransientFailOnce": false
+      },
+      "expansionKey": "gemini-vs-turbotic",
+      "inputRefs": {},
+      "outputRefs": {},
+      "blockers": [
+        "RELATIONSHIP_UNAPPROVED: Approved comparable relationship required"
+      ],
+      "warnings": [
+        "RELATIONSHIP_UNAPPROVED: Approved comparable relationship required"
+      ],
+      "startedAt": "2026-08-26T12:57:27.494Z",
+      "completedAt": "2026-08-26T12:57:27.525Z",
+      "revisionAttempts": 0
+    },
+    {
+      "id": "internal-links",
+      "definitionStepId": "internal-links",
+      "handler": "internal-link",
+      "label": "Internal Link Plan",
+      "status": "completed",
+      "required": false,
+      "failurePolicy": "continue-with-warning",
+      "attempt": 1,
+      "maxAttempts": 2,
+      "dependsOn": [
+        "software-review"
+      ],
+      "priority": "low",
+      "config": {
+        "agentId": "internal-link-agent",
+        "maxAutomaticRevisions": 1,
+        "expandFromContentPlan": false,
+        "expandKind": "none",
+        "stopAfterApproval": true,
+        "allowNormalizedFacts": false,
+        "optionalWhenBlocked": false,
+        "forceTransientFailOnce": false
+      },
+      "inputRefs": {},
+      "outputRefs": {
+        "draftId": "draft-deterministic-v1-internal-link-agent-turbotic-2026-08-26T12-57-27-575Z",
+        "qaStatus": "pass",
+        "agentId": "internal-link-agent",
+        "target": "turbotic"
+      },
+      "inputSnapshot": {
+        "researchFactIds": [
+          "fact-turbotic-identity.shortDescription",
+          "fact-turbotic-positioning.vendorClaim",
+          "fact-turbotic-positioning.jobCluster",
+          "fact-turbotic-pricing.model",
+          "fact-turbotic-pricing.hasFreePlan",
+          "fact-turbotic-pricing.hasFreeTrial",
+          "fact-turbotic-pricing.startingPriceMonthly",
+          "fact-turbotic-pricing.plans.free",
+          "fact-turbotic-pricing.plans.basic",
+          "fact-turbotic-pricing.plans.pro",
+          "fact-turbotic-pricing.plans.enterprise",
+          "fact-turbotic-features.llm-chat",
+          "fact-turbotic-features.reasoning-models",
+          "fact-turbotic-features.writing-assist",
+          "fact-turbotic-features.image-generation",
+          "fact-turbotic-features.voice-tts",
+          "fact-turbotic-features.presentation-generation",
+          "fact-turbotic-features.website-generation",
+          "fact-turbotic-features.ad-creative-generation",
+          "fact-turbotic-features.agent-builder",
+          "fact-turbotic-features.custom-projects",
+          "fact-turbotic-features.enterprise-admin",
+          "fact-turbotic-features.usage-credits",
+          "fact-turbotic-features.connectors",
+          "fact-turbotic-features.data-privacy",
+          "fact-turbotic-features.analytics-reporting",
+          "fact-turbotic-features.video-generation",
+          "fact-turbotic-features.code-assist",
+          "fact-turbotic-features.meeting-notes",
+          "fact-turbotic-features.workflow-automation"
+        ],
+        "methodologySlug": "ai-editorial",
+        "methodologyVersion": "1.0.0",
+        "agentVersion": "1.0.0",
+        "contextBuiltAt": "2026-08-26T12:57:27.575Z"
+      },
+      "blockers": [],
+      "warnings": [],
+      "agentTaskId": "exec-internal-link-agent-turbotic-1787749047551",
+      "draftId": "draft-deterministic-v1-internal-link-agent-turbotic-2026-08-26T12-57-27-575Z",
+      "startedAt": "2026-08-26T12:57:27.550Z",
+      "completedAt": "2026-08-26T12:57:27.580Z",
+      "revisionAttempts": 0
+    },
+    {
+      "id": "finder-readiness",
+      "definitionStepId": "finder-readiness",
+      "handler": "update-recommendation-readiness",
+      "label": "Finder readiness",
+      "status": "completed",
+      "required": false,
+      "failurePolicy": "continue",
+      "attempt": 1,
+      "maxAttempts": 2,
+      "dependsOn": [
+        "content-plan"
+      ],
+      "priority": "low",
+      "config": {
+        "maxAutomaticRevisions": 1,
+        "expandFromContentPlan": false,
+        "expandKind": "none",
+        "stopAfterApproval": true,
+        "allowNormalizedFacts": false,
+        "optionalWhenBlocked": false,
+        "forceTransientFailOnce": false
+      },
+      "inputRefs": {},
+      "outputRefs": {
+        "finderReadiness": "checked"
+      },
+      "blockers": [],
+      "warnings": [],
+      "startedAt": "2026-08-26T12:57:27.548Z",
+      "completedAt": "2026-08-26T12:57:27.549Z",
+      "revisionAttempts": 0
+    },
+    {
+      "id": "editorial-approval",
+      "definitionStepId": "editorial-approval",
+      "handler": "approval-check",
+      "label": "Editorial approval",
+      "status": "completed",
+      "required": true,
+      "failurePolicy": "manual-review",
+      "attempt": 2,
+      "maxAttempts": 2,
+      "dependsOn": [
+        "software-review"
+      ],
+      "priority": "critical",
+      "config": {
+        "approvalType": "editorial",
+        "maxAutomaticRevisions": 1,
+        "expandFromContentPlan": false,
+        "expandKind": "none",
+        "stopAfterApproval": true,
+        "allowNormalizedFacts": false,
+        "optionalWhenBlocked": false,
+        "forceTransientFailOnce": false
+      },
+      "inputRefs": {},
+      "outputRefs": {
+        "approvalId": "appr-wf-software-onboarding-content-turbotic-1787749044827-software-review",
+        "draftId": "draft-deterministic-v1-software-review-agent-turbotic-2026-08-26T12-57-27-343Z",
+        "approvalIds": "appr-wf-software-onboarding-content-turbotic-1787749044827-software-review"
+      },
+      "blockers": [],
+      "warnings": [
+        "Approval received — resuming",
+        "1 optional draft(s) may still need separate editorial review"
+      ],
+      "approvalId": "appr-wf-software-onboarding-content-turbotic-1787749044827-software-review",
+      "startedAt": "2026-08-26T12:59:20.982Z",
+      "completedAt": "2026-08-26T12:59:21.372Z",
+      "revisionAttempts": 0
+    },
+    {
+      "id": "pre-publish-validation",
+      "definitionStepId": "pre-publish-validation",
+      "handler": "pre-publish-validation",
+      "label": "Pre-publish validation",
+      "status": "completed",
+      "required": true,
+      "failurePolicy": "block-workflow",
+      "attempt": 1,
+      "maxAttempts": 2,
+      "dependsOn": [
+        "editorial-approval"
+      ],
+      "priority": "critical",
+      "config": {
+        "maxAutomaticRevisions": 1,
+        "expandFromContentPlan": false,
+        "expandKind": "none",
+        "stopAfterApproval": true,
+        "allowNormalizedFacts": false,
+        "optionalWhenBlocked": false,
+        "forceTransientFailOnce": false
+      },
+      "inputRefs": {},
+      "outputRefs": {
+        "publishState": "READY_TO_PUBLISH"
+      },
+      "blockers": [],
+      "warnings": [
+        "stopAfterApproval: workflow will not publish automatically"
+      ],
+      "startedAt": "2026-08-26T12:59:21.374Z",
+      "completedAt": "2026-08-26T12:59:21.976Z",
+      "revisionAttempts": 0
+    }
+  ],
+  "history": [
+    {
+      "at": "2026-08-26T12:57:26.409Z",
+      "event": "workflow_created",
+      "message": "Created software-onboarding-content:v1.0.0"
+    },
+    {
+      "at": "2026-08-26T12:57:26.419Z",
+      "event": "workflow_started",
+      "message": "Workflow execution started"
+    },
+    {
+      "at": "2026-08-26T12:57:26.422Z",
+      "event": "workflow_step_started",
+      "stepId": "software-onboarding",
+      "message": "Started Software onboarding"
+    },
+    {
+      "at": "2026-08-26T12:57:26.666Z",
+      "event": "workflow_step_completed",
+      "stepId": "software-onboarding",
+      "message": "Reused onboarding run onboard-turbotic-1787748002774 (review-required)"
+    },
+    {
+      "at": "2026-08-26T12:57:26.667Z",
+      "event": "workflow_step_started",
+      "stepId": "content-plan",
+      "message": "Started Content plan"
+    },
+    {
+      "at": "2026-08-26T12:57:26.973Z",
+      "event": "workflow_step_completed",
+      "stepId": "content-plan",
+      "message": "Content plan from onboarding onboard-turbotic-1787748002774 (9 candidates)"
+    },
+    {
+      "at": "2026-08-26T12:57:26.975Z",
+      "event": "workflow_step_started",
+      "stepId": "software-review",
+      "message": "Started Software Review"
+    },
+    {
+      "at": "2026-08-26T12:57:27.358Z",
+      "event": "workflow_step_completed",
+      "stepId": "software-review",
+      "message": "Agent software-review-agent → draft draft-deterministic-v1-software-review-agent-turbotic-2026-08-26T12-57-27-343Z (qa=pass)"
+    },
+    {
+      "at": "2026-08-26T12:57:27.359Z",
+      "event": "workflow_step_started",
+      "stepId": "alternatives",
+      "message": "Started Alternatives"
+    },
+    {
+      "at": "2026-08-26T12:57:27.392Z",
+      "event": "workflow_step_completed",
+      "stepId": "alternatives",
+      "message": "Agent blocked (optional): NO_APPROVED_ALTERNATIVES: Approved alternative relationships required — same-category alone is insufficient"
+    },
+    {
+      "at": "2026-08-26T12:57:27.402Z",
+      "event": "workflow_step_started",
+      "stepId": "comparison:chatgpt-vs-turbotic",
+      "message": "Started Comparison chatgpt-vs-turbotic"
+    },
+    {
+      "at": "2026-08-26T12:57:27.452Z",
+      "event": "workflow_step_completed",
+      "stepId": "comparison:chatgpt-vs-turbotic",
+      "message": "Agent blocked (optional): RELATIONSHIP_UNAPPROVED: Approved comparable relationship required"
+    },
+    {
+      "at": "2026-08-26T12:57:27.453Z",
+      "event": "workflow_step_started",
+      "stepId": "comparison:claude-vs-turbotic",
+      "message": "Started Comparison claude-vs-turbotic"
+    },
+    {
+      "at": "2026-08-26T12:57:27.493Z",
+      "event": "workflow_step_completed",
+      "stepId": "comparison:claude-vs-turbotic",
+      "message": "Agent blocked (optional): RELATIONSHIP_UNAPPROVED: Approved comparable relationship required"
+    },
+    {
+      "at": "2026-08-26T12:57:27.494Z",
+      "event": "workflow_step_started",
+      "stepId": "comparison:gemini-vs-turbotic",
+      "message": "Started Comparison gemini-vs-turbotic"
+    },
+    {
+      "at": "2026-08-26T12:57:27.525Z",
+      "event": "workflow_step_completed",
+      "stepId": "comparison:gemini-vs-turbotic",
+      "message": "Agent blocked (optional): RELATIONSHIP_UNAPPROVED: Approved comparable relationship required"
+    },
+    {
+      "at": "2026-08-26T12:57:27.526Z",
+      "event": "workflow_step_started",
+      "stepId": "pricing-page",
+      "message": "Started Pricing Page"
+    },
+    {
+      "at": "2026-08-26T12:57:27.545Z",
+      "event": "workflow_step_completed",
+      "stepId": "pricing-page",
+      "message": "Agent blocked (optional): PRICING_UNVERIFIED: Product pricing data is unverified"
+    },
+    {
+      "at": "2026-08-26T12:57:27.548Z",
+      "event": "workflow_step_started",
+      "stepId": "finder-readiness",
+      "message": "Started Finder readiness"
+    },
+    {
+      "at": "2026-08-26T12:57:27.549Z",
+      "event": "workflow_step_completed",
+      "stepId": "finder-readiness",
+      "message": "Finder readiness noted for turbotic"
+    },
+    {
+      "at": "2026-08-26T12:57:27.550Z",
+      "event": "workflow_step_started",
+      "stepId": "internal-links",
+      "message": "Started Internal Link Plan"
+    },
+    {
+      "at": "2026-08-26T12:57:27.580Z",
+      "event": "workflow_step_completed",
+      "stepId": "internal-links",
+      "message": "Agent internal-link-agent → draft draft-deterministic-v1-internal-link-agent-turbotic-2026-08-26T12-57-27-575Z (qa=pass)"
+    },
+    {
+      "at": "2026-08-26T12:57:27.582Z",
+      "event": "workflow_step_started",
+      "stepId": "editorial-approval",
+      "message": "Started Editorial approval"
+    },
+    {
+      "at": "2026-08-26T12:57:27.691Z",
+      "event": "workflow_step_completed",
+      "stepId": "editorial-approval",
+      "message": "WAITING FOR EDITORIAL APPROVAL (appr-wf-software-onboarding-content-turbotic-1787749044827-software-review)"
+    },
+    {
+      "at": "2026-08-26T12:57:27.693Z",
+      "event": "workflow_blocked",
+      "message": "WAITING FOR EDITORIAL APPROVAL"
+    },
+    {
+      "at": "2026-08-26T12:59:20.975Z",
+      "event": "workflow_resumed",
+      "message": "Workflow resumed"
+    },
+    {
+      "at": "2026-08-26T12:59:20.980Z",
+      "event": "workflow_started",
+      "message": "Workflow execution started"
+    },
+    {
+      "at": "2026-08-26T12:59:20.982Z",
+      "event": "workflow_step_started",
+      "stepId": "editorial-approval",
+      "message": "Started Editorial approval"
+    },
+    {
+      "at": "2026-08-26T12:59:21.372Z",
+      "event": "workflow_step_completed",
+      "stepId": "editorial-approval",
+      "message": "Required editorial approvals satisfied"
+    },
+    {
+      "at": "2026-08-26T12:59:21.374Z",
+      "event": "workflow_step_started",
+      "stepId": "pre-publish-validation",
+      "message": "Started Pre-publish validation"
+    },
+    {
+      "at": "2026-08-26T12:59:21.976Z",
+      "event": "workflow_step_completed",
+      "stepId": "pre-publish-validation",
+      "message": "Pre-publish validation passed — READY TO PUBLISH (manual)"
+    },
+    {
+      "at": "2026-08-26T12:59:21.978Z",
+      "event": "workflow_completed",
+      "message": "Workflow completed-with-warnings"
+    },
+    {
+      "at": "2026-08-26T13:02:31.318Z",
+      "event": "workflow_resumed",
+      "message": "Workflow resumed"
+    },
+    {
+      "at": "2026-08-26T13:02:31.338Z",
+      "event": "workflow_started",
+      "message": "Workflow execution started"
+    },
+    {
+      "at": "2026-08-26T13:02:31.351Z",
+      "event": "workflow_completed",
+      "message": "Workflow completed-with-warnings"
+    }
+  ],
+  "options": {
+    "generateReview": true,
+    "generatePricing": true,
+    "generateAlternatives": true,
+    "generateComparisons": true,
+    "runInternalLinks": true,
+    "stopAfterApproval": true,
+    "allowNormalizedFacts": false,
+    "dryRun": false,
+    "maxComparisons": 3,
+    "skipOnboarding": false
+  },
+  "warnings": [
+    "alternatives blocked: NO_APPROVED_ALTERNATIVES: Approved alternative relationships required — same-category alone is insufficient",
+    "comparison:chatgpt-vs-turbotic blocked: RELATIONSHIP_UNAPPROVED: Approved comparable relationship required",
+    "comparison:claude-vs-turbotic blocked: RELATIONSHIP_UNAPPROVED: Approved comparable relationship required",
+    "comparison:gemini-vs-turbotic blocked: RELATIONSHIP_UNAPPROVED: Approved comparable relationship required",
+    "pricing-page blocked: PRICING_UNVERIFIED: Product pricing data is unverified"
+  ],
+  "createdAt": "2026-08-26T12:57:26.409Z",
+  "updatedAt": "2026-08-26T13:02:31.351Z"
+}

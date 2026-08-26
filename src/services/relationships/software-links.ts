@@ -70,6 +70,16 @@ export function getSoftwareRelationshipLinks(
   return getSoftwareLinkGroups(software).all;
 }
 
+export function publicAlternativesHref(productSlug: string): string | null {
+  const page = getAllAlternativesUnfiltered().find(
+    (item) => item.sourceSlug === productSlug || item.slug === productSlug,
+  );
+  if (!page || page.alternatives.length < 2) return null;
+  if (!isPubliclyAvailable(page.metadata)) return null;
+  if (!isEntityIndexable({ kind: "alternatives", entity: page })) return null;
+  return `/alternatives/${page.slug}/`;
+}
+
 export function getSoftwareLinkGroups(software: Software): SoftwareLinkGroups {
   const categories: RelatedLink[] = [];
   const softwareLinks: RelatedLink[] = [];
@@ -157,10 +167,11 @@ export function getSoftwareLinkGroups(software: Software): SoftwareLinkGroups {
   const altPage = getAllAlternativesUnfiltered().find(
     (p) => p.sourceSlug === software.slug,
   );
-  if (altPage && isPubliclyAvailable(altPage.metadata)) {
+  const altHref = altPage ? publicAlternativesHref(software.slug) : null;
+  if (altPage && altHref) {
     alternatives.push(
       link({
-        href: `/alternatives/${altPage.slug}/`,
+        href: altHref,
         label: altPage.title,
         pageType: "alternatives",
         relationship: "alternativesPage",

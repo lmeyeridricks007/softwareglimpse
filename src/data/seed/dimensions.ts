@@ -1864,7 +1864,7 @@ export const capabilitiesSeed: CapabilityInput[] = [
     slug: "ai-assistance",
     name: "AI assistance",
     shortDescription:
-      "Assistive CRM features that draft, summarize, or suggest — verified before trust.",
+      "Assistive CRM features and agentic sales workflows — verified governance and credit TCO before trust.",
     categorySlugs: ["crm"],
   }),
   // Email marketing capabilities (hub depth in capability-hub/email-marketing-deep.ts)

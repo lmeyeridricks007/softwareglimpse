@@ -11,6 +11,8 @@ import {
   getTopLevelCategories,
   getUseCases,
 } from "@/data";
+import type { BestPage } from "@/domain";
+import { isEntityIndexable } from "@/domain/quality-gates";
 import { getEducationalGuides } from "@/data/repositories/guides-educational";
 import { loadAssessment } from "@/data/editorial/store";
 import { CategoryCard } from "@/components/category/category-card";
@@ -43,6 +45,8 @@ import {
 } from "@/seo/structured-data";
 import { SITE_NAME, SITE_TAGLINE } from "@/lib/site";
 import { resolveVisitCta } from "@/services/affiliate/resolve-visit-cta";
+import { publicAlternativesHref } from "@/services/relationships/software-links";
+import { homepageCrmComparisons } from "@/services/homepage/prioritized-comparisons";
 
 export const metadata: Metadata = buildPageMetadata({
   title: SITE_NAME,
@@ -73,19 +77,37 @@ function publicBestBuyingContext(categoryLabel: string): string {
   return `Find ${categoryLabel} software that fits specific team needs — evaluated with the same category methodology, not affiliate rankings.`;
 }
 
+function homepageBestFitScenarios(page: BestPage): string[] {
+  const fromPaths = (page.decisionPaths ?? [])
+    .filter((d) => d.approved !== false)
+    .slice(0, 3)
+    .map((d) => d.label);
+  if (fromPaths.length >= 2) return fromPaths;
+  const fromClusters = (page.useCaseRecommendations ?? [])
+    .filter((r) => r.approved && r.label)
+    .slice(0, 3)
+    .map((r) => r.label.replace(/^Editor['']s pick — /i, "").trim());
+  if (fromClusters.length >= 2) return fromClusters;
+  return [];
+}
+
 export default function HomePage() {
   const categories = getTopLevelCategories();
   const categoryBySlug = new Map(categories.map((c) => [c.slug, c]));
   const software = getSoftware().filter(
     (s) => s.productLifecycle === "active",
   );
-  const bestPages = getBestPages();
+  const bestPages = getBestPages().filter((page) =>
+    isEntityIndexable({ kind: "best", entity: page }),
+  );
   // Educational guides only — avoid generating every product-guide pack on home.
   const guides = getEducationalGuides();
   const useCases = getUseCases();
   const industries = getIndustries();
-  const comparisons = getComparisons().filter(
-    (c) => c.categorySlug === "crm" && c.productSlugs.length >= 2,
+  const comparisons = homepageCrmComparisons(
+    getComparisons().filter(
+      (c) => c.categorySlug === "crm" && c.productSlugs.length >= 2,
+    ),
   );
 
   const featured =
@@ -96,6 +118,7 @@ export default function HomePage() {
 
   const popularCategorySlugs = [
     "crm",
+    "customer-service",
     "sales-intelligence",
     "marketing",
     "project-management",
@@ -179,6 +202,15 @@ export default function HomePage() {
       href: "/tools/crm-cost-calculator/",
       cta: "Try calculators →",
       icon: "calculate" as const,
+    },
+    {
+      id: "cs-find",
+      title: "Find customer service software",
+      description:
+        "Shortlist helpdesk, live chat, or AI deflection tools by job cluster.",
+      href: "/tools/customer-service-finder/",
+      cta: "CS Finder →",
+      icon: "finder" as const,
     },
     {
       id: "stack",
@@ -316,6 +348,7 @@ export default function HomePage() {
                 ),
                 logo: featured.logo,
                 reviewHref: `/software/${featured.slug}/`,
+                alternativesHref: publicAlternativesHref(featured.slug),
                 visitHref: visit?.href,
                 visitIsAffiliate: visit?.isAffiliate,
               }}
@@ -460,7 +493,7 @@ export default function HomePage() {
             }
           />
           <Grid cols={3} gap={4}>
-            {comparisons.slice(0, 6).map((cmp) => {
+            {comparisons.map((cmp) => {
               const left = getSoftwareBySlug(cmp.productSlugs[0]!);
               const right = getSoftwareBySlug(cmp.productSlugs[1]!);
               if (!left || !right) return null;
@@ -518,11 +551,7 @@ export default function HomePage() {
                   categoryLabelFor(catSlug, categories),
                 )}
                 evaluatedCount={page.eligibleProductSlugs?.length}
-                fitScenarios={[
-                  "Small teams",
-                  "Sales-led businesses",
-                  "Simple pipeline management",
-                ]}
+                fitScenarios={homepageBestFitScenarios(page)}
                 topProducts={(page.eligibleProductSlugs ?? [])
                   .slice(0, 3)
                   .map((slug) => getSoftwareBySlug(slug))
@@ -546,6 +575,7 @@ export default function HomePage() {
                     categoryLabelFor(catSlug, categories),
                   )}
                   evaluatedCount={page.eligibleProductSlugs?.length}
+                  fitScenarios={homepageBestFitScenarios(page)}
                   topProducts={(page.eligibleProductSlugs ?? [])
                     .slice(0, 3)
                     .map((slug) => getSoftwareBySlug(slug))

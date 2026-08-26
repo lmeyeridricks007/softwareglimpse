@@ -8,10 +8,10 @@ export const crmMethodology: Methodology = MethodologySchema.parse({
   id: "methodology-crm-v1",
   slug: "crm-editorial",
   name: "CRM Editorial Methodology",
-  version: "1.0.0",
+  version: "1.1.0",
   categorySlug: "crm",
   description:
-    "SoftwareGlimpse evaluates CRM products across sales workflow fit, usability, automation, reporting, administration burden, and value. Affiliate relationships never influence scores.",
+    "SoftwareGlimpse evaluates CRM products across sales workflow fit, usability, automation, reporting, administration burden, integrations, scalability, value, and agentic readiness — governance, observability, and agent-credit TCO for AI sales agents. Affiliate relationships never influence scores. We do not reproduce or imply Gartner Magic Quadrant placement.",
   criteria: [
     {
       id: "crit-crm-ease-of-use",
@@ -150,7 +150,55 @@ export const crmMethodology: Methodology = MethodologySchema.parse({
       categorySlug: "crm",
       displayOrder: 9,
     },
+    {
+      id: "crit-crm-agent-governance",
+      slug: "agent-governance",
+      name: "Agent governance",
+      description:
+        "Policies, permissions, and guardrails for AI sales agents — who can deploy agents, what data they may access, approval flows, and auditability.",
+      weight: 1,
+      evidenceRequirements: [
+        "features:ai-assistance",
+        "features:workflow-automation",
+        "security-compliance",
+        "product-positioning",
+      ],
+      scoringScaleMin: 0,
+      scoringScaleMax: 10,
+      categorySlug: "crm",
+      displayOrder: 10,
+    },
+    {
+      id: "crit-crm-agent-observability",
+      slug: "agent-observability",
+      name: "Agent observability",
+      description:
+        "Visibility into agent actions, handoffs, failures, and human override — logs, transcripts, and operational dashboards for sales AI.",
+      weight: 1,
+      evidenceRequirements: [
+        "features:ai-assistance",
+        "features:reporting",
+        "product-positioning",
+      ],
+      scoringScaleMin: 0,
+      scoringScaleMax: 10,
+      categorySlug: "crm",
+      displayOrder: 11,
+    },
+    {
+      id: "crit-crm-agent-credit-tco",
+      slug: "agent-credit-tco",
+      name: "Agent credit TCO",
+      description:
+        "Total cost of AI agent usage — credits, conversation/resolution caps, seat bundles, and overage math versus predictable per-seat CRM pricing.",
+      weight: 1,
+      evidenceRequirements: ["pricing", "plans", "features:ai-assistance"],
+      scoringScaleMin: 0,
+      scoringScaleMax: 10,
+      categorySlug: "crm",
+      displayOrder: 12,
+    },
   ],
   notes:
-    "Provisional feature-availability auto-scores are demo-only (low confidence). Hands-on criteria require human judgment.",
+    "v1.1.0 adds agent-governance, agent-observability, and agent-credit-tco for agentic CRM evaluation (2026). Provisional feature-availability auto-scores are demo-only (low confidence). Hands-on criteria require human judgment. External analyst maps (e.g. Gartner CRM Sales Platforms MQ) are cited for market context only — never as SoftwareGlimpse rankings.",
 });

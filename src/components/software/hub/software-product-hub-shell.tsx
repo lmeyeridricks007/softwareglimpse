@@ -129,6 +129,7 @@ export function SoftwareProductHubShell({
       <SoftwareProductHubTabs
         productSlug={software.slug}
         activeTab={activeTab}
+        alternativesHref={chrome.alternativesHref}
         className="mt-8"
       />
 

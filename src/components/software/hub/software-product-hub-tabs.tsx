@@ -12,6 +12,7 @@ import {
 type Props = {
   productSlug: string;
   activeTab: SoftwareHubTabId;
+  alternativesHref?: string | null;
   className?: string;
 };
 
@@ -119,6 +120,7 @@ function TabIcon({ id, active }: { id: string; active: boolean }) {
 export function SoftwareProductHubTabs({
   productSlug,
   activeTab,
+  alternativesHref = null,
   className,
 }: Props) {
   return (
@@ -131,7 +133,10 @@ export function SoftwareProductHubTabs({
     >
       <ul className="flex min-w-max items-end gap-1" role="tablist">
         {SOFTWARE_HUB_TABS.map((tab) => {
-          const href = softwareHubPath(productSlug, tab.id);
+          const href =
+            tab.id === "alternatives" && alternativesHref
+              ? alternativesHref
+              : softwareHubPath(productSlug, tab.id);
           const active = tab.id === activeTab;
           const label = getSoftwareHubTab(tab.id).label;
           const classNameTab = cn(

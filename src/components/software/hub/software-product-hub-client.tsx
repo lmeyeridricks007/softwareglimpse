@@ -30,11 +30,14 @@ export type SoftwareHubChrome = {
   lastUpdated: string | null;
   scoresApproved: boolean;
   heroFacts: ReviewQuickFact[];
+  /** Canonical /alternatives/[slug]/ when indexable; hub tab links here instead of nested URL. */
+  alternativesHref?: string | null;
 };
 
 type HubTabContextValue = {
   activeTab: SoftwareHubTabId;
   productSlug: string;
+  alternativesHref?: string | null;
 };
 
 const SoftwareHubTabContext = createContext<HubTabContextValue | null>(null);
@@ -54,9 +57,12 @@ export function SoftwareHubTabLink({
   children: ReactNode;
 }) {
   const hub = useContext(SoftwareHubTabContext);
-  const href = hub
-    ? softwareHubPath(hub.productSlug, tab)
-    : "#";
+  const href =
+    tab === "alternatives" && hub?.alternativesHref
+      ? hub.alternativesHref
+      : hub
+        ? softwareHubPath(hub.productSlug, tab)
+        : "#";
 
   return (
     <Link href={href} prefetch={false} className={className}>
@@ -95,6 +101,7 @@ export function SoftwareProductHubClient({
   const hubCtx = {
     activeTab: initialTab,
     productSlug: software.slug,
+    alternativesHref: chrome.alternativesHref ?? null,
   };
 
   return (

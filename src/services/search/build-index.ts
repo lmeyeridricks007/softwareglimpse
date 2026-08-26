@@ -26,7 +26,7 @@ import {
   getRequirementDetailProfile,
   listRequirementDetailParams,
 } from "@/data/requirement-detail";
-import { getCapabilityHubProfile } from "@/data/capability-hub";
+import { publicAlternativesHref } from "@/services/relationships/software-links";
 import { getUseCaseHubProfile } from "@/data/use-case-hub";
 import { getResourceHubProfile } from "@/data/resource-hub";
 import { TOOLS_REGISTRY } from "@/data/config/tools/registry";
@@ -171,12 +171,15 @@ export function buildSearchIndexFromSources(options?: {
 
   for (const software of softwareBySlug.values()) {
     const cat = categoryLabel(software.primaryCategorySlug);
+    const alternativesHref = publicAlternativesHref(software.slug);
     const quickLinks = [
       { label: "Overview", href: `/software/${software.slug}/` },
       { label: "Features", href: `/software/${software.slug}/features/` },
       { label: "Pricing", href: `/software/${software.slug}/pricing/` },
       { label: "Use Cases", href: `/software/${software.slug}/use-cases/` },
-      { label: "Alternatives", href: `/software/${software.slug}/alternatives/` },
+      ...(alternativesHref
+        ? [{ label: "Alternatives", href: alternativesHref }]
+        : []),
     ];
 
     pushUnique(docs, seen, {

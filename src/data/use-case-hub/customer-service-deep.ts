@@ -631,7 +631,7 @@ export const customerServiceUseCaseDepth: Record<string, Depth> = {
     tagline:
       "Deflect or resolve support conversations with an AI agent, plus copilot for humans — without pretending the bot replaces a helpdesk core.",
     overview:
-      "AI customer service is assistance on top of chat or ticketing: resolution bots, outcome-priced agents, and copilots. Score it as a layer. A bot without a queue still leaves exceptions unowned.",
+      "AI customer service is assistance on top of chat or ticketing: resolution bots, outcome-priced agents, and copilots. Score it as a layer. A bot without a queue still leaves exceptions unowned. Gartner’s July 2026 Conversational AI Magic Quadrant maps the CAI platform market — use it for category context; SoftwareGlimpse scores products inside job clusters with dated research, not MQ placement.",
     who: "Support leads who have a working helpdesk or live-chat core and want deflection or agent assist — not a first-time inbox.",
     matters:
       "Prioritise where the bot is allowed to act, how outcomes/credits are billed, and what happens when it fails. Confirm the plan that includes the AI SKU.",
@@ -647,7 +647,7 @@ export const customerServiceUseCaseDepth: Record<string, Depth> = {
       "Human fallback",
       "Quality review",
     ],
-    productsNote: "tidio, zendesk-suite, freshchat; intercom is BC-primary adjacency",
+    productsNote: "tidio, cometchat, zendesk-suite, freshchat; intercom is BC-primary adjacency",
     related: ["live-chat-support", "knowledge-base-self-service"],
     needs: [
       {

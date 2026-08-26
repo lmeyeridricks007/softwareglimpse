@@ -22,10 +22,10 @@ export const bestPagesSeed: BestInput[] = [
       "The best CRM depends on team size, sales process, budget, and the capabilities you need every day. Use this shortlist to compare recommended options, then dig into pricing, features, and fit.",
     categorySlug: "crm",
     methodology:
-      "SoftwareGlimpse evaluates CRM tools using fit for sales workflows, ease of use, automation, reporting, administration burden, integrations, scalability, and value. Affiliate relationships never determine ranking.",
+      "SoftwareGlimpse evaluates CRM tools using fit for sales workflows, ease of use, automation, reporting, administration burden, integrations, scalability, value, and agentic readiness — agent governance, agent observability, and agent-credit TCO for AI sales agents (crm-editorial v1.1.0). Gartner’s 2026 CRM Sales Platforms Magic Quadrant reflects the market shift toward agentic platforms; we cite that context but do not reproduce MQ positions or imply SoftwareGlimpse is a Gartner ranking. Affiliate relationships never determine ranking.",
     methodologyIntro:
-      "We evaluate CRM software across pipeline workflows, usability, automation, communication, reporting, integrations, and value. Commercial relationships do not determine recommendations.",
-    methodologyVersion: "1.0.0",
+      "We evaluate CRM software across pipeline workflows, usability, automation, communication, reporting, integrations, value, and how platforms govern AI sales agents — permissions, observability, and credit-based TCO. Commercial relationships do not determine recommendations.",
+    methodologyVersion: "1.1.0",
     eligibleProductSlugs: [
       "pipedrive",
       "freshsales",
@@ -617,6 +617,12 @@ export const bestPagesSeed: BestInput[] = [
         label: "Enterprise CRM platform",
         approved: true,
       },
+      {
+        priority: "Agentic sales agents with governance and observable credit TCO",
+        productSlug: "salesforce",
+        label: "Agentic CRM evaluation path",
+        approved: true,
+      },
     ],
     landscape: [
       {
@@ -643,6 +649,20 @@ export const bestPagesSeed: BestInput[] = [
         description:
           "Combined pipelines, campaigns, SMS, and payments for SMB operators — not a pipeline-only CRM or enterprise MAP. Keap is landscape for automation-heavy SMB buyers; ActiveCampaign is the email-first peer in eligible set.",
         productSlugs: ["keap", "activecampaign"],
+      },
+      {
+        id: "agentic-crm",
+        label: "Agentic CRM / sales agents (2026)",
+        description:
+          "CRM Sales Platforms now include governed sales agents — not just copilots. Creatio published on Agentic AI in CRM (26 February 2026); Gartner’s first CRM Sales Platforms Magic Quadrant (July 2026) names Salesforce and Microsoft as Leaders per Gartner. SoftwareGlimpse scores agent governance, observability, and agent-credit TCO in crm-editorial v1.1.0 inside /capabilities/ai-assistance/ — no separate shallow pillar.",
+        productSlugs: [
+          "salesforce",
+          "hubspot",
+          "dynamics-365",
+          "creatio",
+          "zoho-crm",
+          "attio",
+        ],
       },
     ],
     companySizes: [
@@ -859,6 +879,11 @@ export const bestPagesSeed: BestInput[] = [
         question: "What CRM is best for a small sales team?",
         answer:
           "Small sales teams usually need clear pipeline stages, light administration, and predictable pricing. Start with pipeline-focused options on this page, then confirm fit with the CRM Finder.",
+      },
+      {
+        question: "How do you evaluate agentic CRM and AI sales agents?",
+        answer:
+          "crm-editorial v1.1.0 adds agent governance (permissions and guardrails), agent observability (logs, handoffs, override), and agent-credit TCO (credits, resolution caps, overage math). Gartner published the first CRM Sales Platforms Magic Quadrant in July 2026 — Leaders include Salesforce and Microsoft per Gartner — which reflects how buyers should scrutinize AI agents. SoftwareGlimpse scores platforms on our published criteria; we do not claim Magic Quadrant placement or reproduce Gartner graphics.",
       },
     ],
     editorialStatus: "approved",
@@ -6901,9 +6926,6 @@ export const bestPagesSeed: BestInput[] = [
       "adcreative-ai",
       "zapier",
       "n8n",
-      "ai-intelekt",
-      "aira",
-      "rank-prompt",
     ],
     useCaseSlugs: [
       "llm-assistant",
@@ -6924,7 +6946,7 @@ export const bestPagesSeed: BestInput[] = [
         label: "Editor’s pick — LLM assistant",
         productSlug: "chatgpt",
         rationale:
-          "ChatGPT is the LLM-assistant cluster award (overall 8.7) for breadth — Free through Business/Enterprise with custom GPTs and broad model access. Claude (8.4) and Gemini (8.0) are strong peers for reasoning and Google-stack buyers.",
+          "ChatGPT is the LLM-assistant cluster award (overall 8.7) for breadth — Free and Go through Business/Enterprise with custom GPTs and broad model access. Claude (8.4) and Gemini (8.0) are strong peers for reasoning and Google-stack buyers.",
         approved: true,
         editorialNotes:
           "llm-assistant cluster award. handsOnTesting=false. Affiliate economics excluded. Microsoft 365 Copilot (8.2) and Perplexity (8.3) are peers for Microsoft 365 and cited-research buyers.",
@@ -7075,9 +7097,9 @@ export const bestPagesSeed: BestInput[] = [
       },
       {
         id: "ai-code",
-        label: "AI coding",
+        label: "Enterprise AI coding assistants (EXPLORE)",
         description:
-          "AI-native editors and IDE copilots. Cursor is the award; GitHub Copilot is the peer inside GitHub/existing IDEs. Distinct from GitHub the source-control product.",
+          "AI-native editors and IDE copilots for professional software teams. Cursor is the cluster award; GitHub Copilot is the peer inside GitHub/existing IDEs. Gartner published an Enterprise AI Coding Agents Magic Quadrant (20 May 2026) — we segment this job here instead of dumping coding tools into undifferentiated “AI software”. Distinct from GitHub the source-control product and from Microsoft 365 Copilot.",
         productSlugs: ["cursor", "github-copilot"],
       },
       {
@@ -7138,10 +7160,10 @@ export const bestPagesSeed: BestInput[] = [
       },
       {
         id: "ai-agents",
-        label: "AI agents / builders (adjacent)",
+        label: "Horizontal agent platforms (WATCH — off-ICP)",
         description:
-          "MindStudio and Emergent recategorized to ai-website-builder hub — Aira and Rank Prompt remain landscape peers on AI best page.",
-        productSlugs: ["aira", "rank-prompt"],
+          "Aira, Rank Prompt, and similar one-off agent SKUs stay off the eligible pool until they have a verified job cluster home. G2 Fall 2026 added hundreds of agent/analytics reports — more SKUs, not category collapse. MindStudio lives on the ai-website-builder sub-hub when indexed.",
+        productSlugs: [],
       },
       {
         id: "ai-automation",
@@ -7669,7 +7691,18 @@ export const bestPagesSeed: BestInput[] = [
     methodologyIntro:
       "We evaluate customer service software by primary job fit — helpdesk ticketing, live chat, ecommerce helpdesk, ITSM, or AI inbox — then workflow depth, channels, self-service, integrations, and value. Commercial relationships do not determine recommendations, and specialist tools are not penalised for lacking capabilities outside their job.",
     methodologyVersion: "1.0.0",
-    eligibleProductSlugs: [],
+    eligibleProductSlugs: [
+      "freshdesk",
+      "zendesk-suite",
+      "help-scout",
+      "gorgias",
+      "zoho-desk",
+      "tidio",
+      "freshchat",
+      "livechat",
+      "intercom",
+      "cometchat",
+    ],
     useCaseSlugs: [
       "helpdesk-ticketing",
       "live-chat-support",
@@ -7680,31 +7713,171 @@ export const bestPagesSeed: BestInput[] = [
       "ai-customer-service",
     ],
     // Wave-1: skip a cross-cluster ranked set.
-    // Editor’s picks live in subcategory hubs (live-chat, helpdesk-ticketing).
+    // Editor’s picks live in useCaseRecommendations + decisionPaths + landscape.
     recommendations: [],
-    useCaseRecommendations: [],
-    decisionPaths: [],
+    useCaseRecommendations: [
+      {
+        useCaseSlug: "helpdesk-ticketing",
+        label: "Editor's pick — omnichannel helpdesk",
+        productSlug: "zendesk-suite",
+        rationale:
+          "Zendesk Suite is the omnichannel helpdesk cluster award (overall 8.2) for SLA/routing and Suite AI depth. Freshdesk (7.9) is the Freshworks mid-market co-peer — not a single undifferentiated helpdesk #1.",
+        approved: true,
+        editorialNotes:
+          "omnichannel-helpdesk cluster award. handsOnTesting=false. Affiliate economics excluded.",
+      },
+      {
+        useCaseSlug: "omnichannel-support",
+        label: "Editor's pick — Freshworks mid-market helpdesk",
+        productSlug: "freshdesk",
+        rationale:
+          "Freshdesk is the Freshworks mid-market helpdesk co-peer award (overall 7.9) with ecosystem alignment — not a stolen Zendesk Suite #1.",
+        approved: true,
+        editorialNotes:
+          "omnichannel-helpdesk co-peer award. handsOnTesting=false.",
+      },
+      {
+        useCaseSlug: "knowledge-base-self-service",
+        label: "Editor's pick — SMB shared inbox",
+        productSlug: "help-scout",
+        rationale:
+          "Help Scout is the SMB shared-inbox cluster award (overall 7.5) with Docs-first self-service and a free 5-user tier — not an enterprise omnichannel award.",
+        approved: true,
+        editorialNotes:
+          "smb-shared-inbox cluster award. handsOnTesting=false. Affiliate economics excluded.",
+      },
+      {
+        useCaseSlug: "ecommerce-support",
+        label: "Editor's pick — ecommerce helpdesk",
+        productSlug: "gorgias",
+        rationale:
+          "Gorgias is the ecommerce-helpdesk cluster award (overall 7.7) for Shopify/Magento/BigCommerce order context and ticket-based pricing — not a generic B2B helpdesk peer.",
+        approved: true,
+        editorialNotes:
+          "ecommerce-helpdesk cluster award. handsOnTesting=false. Affiliate economics excluded.",
+      },
+      {
+        useCaseSlug: "live-chat-support",
+        label: "Editor's pick — per-agent website chat",
+        productSlug: "freshchat",
+        rationale:
+          "Freshchat is the per-agent website chat cluster award (overall 7.6) with a free 10-agent tier inside Freshworks. LiveChat (7.4) is the established Text ecosystem peer.",
+        approved: true,
+        editorialNotes:
+          "website-messenger cluster award. handsOnTesting=false. Affiliate economics excluded.",
+      },
+      {
+        useCaseSlug: "ai-customer-service",
+        label: "Editor's pick — conversation-cap AI deflection",
+        productSlug: "tidio",
+        rationale:
+          "Tidio is the chatbot-deflection cluster award (overall 7.3) with Lyro AI and conversation-cap pricing — not a helpdesk or CRM purchase.",
+        approved: true,
+        editorialNotes:
+          "chatbot-deflection cluster award. handsOnTesting=false. Affiliate economics excluded.",
+      },
+      {
+        useCaseSlug: "ai-customer-service",
+        label: "Editor's pick — embedded conversational AI / in-app agents",
+        productSlug: "cometchat",
+        rationale:
+          "CometChat is the embedded in-app messaging cluster award (overall 7.2) for product teams shipping chat, voice, video, and AI moderation inside their own app — not a plug-and-play website widget. Gartner’s July 2026 Conversational AI Magic Quadrant covers CAI platforms; evaluate SDK/API depth and MAU pricing separately from helpdesk AI add-ons.",
+        approved: true,
+        editorialNotes:
+          "embedded-conversational-ai cluster award. cometchat onboarding 2026-08-26. handsOnTesting=false.",
+      },
+      {
+        useCaseSlug: "ai-customer-service",
+        label: "Editor's pick — helpdesk AI agents (Suite AI)",
+        productSlug: "zendesk-suite",
+        rationale:
+          "Zendesk Suite scores 8/10 on ai-capabilities for omnichannel helpdesk AI agents, copilots, and deflection inside a full ticketing core — not a website-widget purchase. Compare agent-credit and resolution pricing against seat-based helpdesk TCO.",
+        approved: true,
+        editorialNotes:
+          "helpdesk-ai-agent cluster award. ai-capabilities=8. handsOnTesting=false.",
+      },
+      {
+        useCaseSlug: "ai-customer-service",
+        label: "Editor's pick — ecommerce AI agent",
+        productSlug: "gorgias",
+        rationale:
+          "Gorgias scores 8/10 on ai-capabilities for Shopify/Magento order-context AI inside an ecommerce helpdesk — ticket-based pricing, not per-agent live chat. Strong when refunds and order lookups dominate bot scope.",
+        approved: true,
+        editorialNotes:
+          "ecommerce-ai-agent cluster award. ai-capabilities=8. handsOnTesting=false.",
+      },
+    ],
+    decisionPaths: [
+      {
+        priority: "Enterprise omnichannel helpdesk with SLA/routing at scale",
+        productSlug: "zendesk-suite",
+        label: "Omnichannel helpdesk path",
+        approved: true,
+      },
+      {
+        priority: "Mid-market helpdesk with Freshworks ecosystem alignment",
+        productSlug: "freshdesk",
+        label: "Freshworks helpdesk path",
+        approved: true,
+      },
+      {
+        priority: "SMB shared inbox and Docs-first self-service (free 5-user tier)",
+        productSlug: "help-scout",
+        label: "SMB shared inbox path",
+        approved: true,
+      },
+      {
+        priority: "Ecommerce / Shopify order-aware helpdesk (ticket-based pricing)",
+        productSlug: "gorgias",
+        label: "Ecommerce helpdesk path",
+        approved: true,
+      },
+      {
+        priority: "Website messenger with Freshworks free tier",
+        productSlug: "freshchat",
+        label: "Website live chat path",
+        approved: true,
+      },
+      {
+        priority: "AI chatbot deflection on conversation-cap pricing",
+        productSlug: "tidio",
+        label: "Chatbot deflection path",
+        approved: true,
+      },
+      {
+        priority: "Embedded in-app chat, voice, video, and AI agents for product teams",
+        productSlug: "cometchat",
+        label: "Embedded conversational AI path",
+        approved: true,
+      },
+    ],
     landscape: [
       {
         id: "helpdesk-adjacent",
-        label: "Helpdesk / ticketing (adjacent)",
+        label: "Helpdesk / ticketing",
         description:
-          "Zendesk Suite, Freshdesk, Help Scout, Zoho Desk, and Gorgias moved to helpdesk-ticketing subcategory hub — landscape pointer only on parent CS best page.",
-        productSlugs: [],
+          "Zendesk Suite, Freshdesk, Help Scout, Zoho Desk, and Gorgias — omnichannel helpdesk, SMB shared inbox, and ecommerce helpdesk cluster awards. See helpdesk-ticketing sub-hub for full methodology detail.",
+        productSlugs: [
+          "zendesk-suite",
+          "freshdesk",
+          "help-scout",
+          "zoho-desk",
+          "gorgias",
+        ],
       },
       {
         id: "live-chat-adjacent",
-        label: "Live chat & website messenger (adjacent)",
+        label: "Live chat & website messenger",
         description:
-          "Freshchat, LiveChat, Tidio, and Intercom moved to live-chat subcategory hub — landscape pointer only on parent CS best page.",
-        productSlugs: [],
+          "Freshchat, LiveChat, Tidio, CometChat, and Intercom — per-agent website chat, conversation-cap deflection, embedded in-app messaging, and AI inbox anchors. See live-chat sub-hub for full methodology detail.",
+        productSlugs: ["freshchat", "livechat", "tidio", "cometchat", "intercom"],
       },
       {
         id: "ecommerce-helpdesk",
-        label: "Ecommerce helpdesk (adjacent)",
+        label: "Ecommerce helpdesk",
         description:
-          "Gorgias moved to helpdesk-ticketing subcategory hub — landscape pointer only on parent CS best page.",
-        productSlugs: [],
+          "Gorgias is the ecommerce-helpdesk cluster award (7.7) for Shopify/Magento/BigCommerce order context — ticket-based pricing, not per-agent.",
+        productSlugs: ["gorgias"],
       },
       {
         id: "itsm-service-desk",
@@ -7715,10 +7888,16 @@ export const bestPagesSeed: BestInput[] = [
       },
       {
         id: "ai-inbox-adjacent",
-        label: "AI inbox / messaging (adjacent)",
+        label: "Conversational AI / CS agents (scored)",
         description:
-          "AI-first messaging moved to live-chat subcategory hub (Intercom editorial anchor). Landscape pointer only — not ranked against helpdesk methodology peers.",
-        productSlugs: [],
+          "Agent-capability scores (customer-service-editorial ai-capabilities criterion): Zendesk Suite 8, Gorgias 8, Tidio 7, CometChat 7, Freshchat 7. Intercom Fin AI (9 on BC methodology) is business-communications primary — landscape pointer only, not a CS peer rank. Gartner Conversational AI MQ (7 July 2026) is market context, not a SoftwareGlimpse ranking.",
+        productSlugs: [
+          "zendesk-suite",
+          "gorgias",
+          "tidio",
+          "cometchat",
+          "freshchat",
+        ],
       },
       {
         id: "reputation-reviews",
@@ -7814,14 +7993,19 @@ export const bestPagesSeed: BestInput[] = [
         answer:
           "No. These assessments are research-grounded editorial judgments built from vendor documentation, published pricing, and product materials — not hands-on lab testing. Confirm current figures with the vendor before purchase.",
       },
+      {
+        question: "How do you evaluate conversational AI and AI customer service agents?",
+        answer:
+          "Inside the ai-customer-service job cluster we score chatbot deflection, copilot assist, handoff rules, and outcome/credit pricing — not a single undifferentiated AI rank. Website widgets (Tidio), embedded SDK/API platforms (CometChat), and helpdesk AI add-ons (Zendesk Suite) are different purchases. Gartner published a Conversational AI Magic Quadrant on 7 July 2026; we reference that market map for buyer education but do not reproduce MQ positions or score vendors as Gartner Leaders.",
+      },
     ],
     editorialStatus: "approved",
     editorialNotes:
-      "CS parent hub 2026-08-23: eligible products moved to subcategory hubs — live-chat (Tidio/Freshchat/LiveChat/Intercom) and helpdesk-ticketing (Zendesk/Freshdesk/Help Scout/Zoho Desk/Gorgias). Freshservice on itsm sub-hub. No cross-cluster ranked set on parent. seo.indexable=true. methodologyVersion 1.0.0 customer-service-editorial. handsOnTesting=false. Affiliate economics excluded.",
+      "CS parent hub 2026-08-26: eligible pool 10 products (added CometChat for embedded conversational AI). Cluster awards on parent; subcategory hubs retain deeper picks. seo.indexable=true. methodologyVersion 1.0.0 customer-service-editorial. handsOnTesting=false. Affiliate economics excluded.",
     metadata: {
       status: "published",
       publishedAt: "2026-08-18T00:00:00.000Z",
-      updatedAt: "2026-08-18T12:00:00.000Z",
+      updatedAt: "2026-08-26T12:00:00.000Z",
       researchStatus: "complete",
     },
     seo: {

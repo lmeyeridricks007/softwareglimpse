@@ -4036,9 +4036,9 @@ export const capabilityDepthBySlug: Record<string, Depth> = {
   "ai-assistance": {
     displayTitle: "CRM AI Assistance capability",
     badgeLabel: "AI Assistance",
-    tagline: "Assistive suggestions — summaries, drafts, scoring signals — that speed up work but always need a human check before you trust them.",
+    tagline: "Assistive suggestions and agentic sales workflows — drafts, summaries, scoring signals, and governed AI agents that need human oversight and observable TCO.",
     overview:
-      "AI assistance is the CRM capability covering AI-generated suggestions layered onto CRM data: email drafts, call or meeting summaries, lead-scoring signals, and similar assistive features. It's explicitly assistive, not autonomous — output should be treated as a starting point that a person verifies, not a decision the software makes on your behalf.",
+      "AI assistance is the CRM capability covering AI-generated suggestions layered onto CRM data: email drafts, call or meeting summaries, lead-scoring signals, and — in 2026 — agentic sales workflows that can act inside CRM with permissions and audit trails. Creatio and Gartner framed the shift as **Agentic AI in CRM** (February 2026); Gartner’s first **CRM Sales Platforms** Magic Quadrant (July 2026) reflects the same market move toward governed agents, not just copilots. SoftwareGlimpse folds agentic evaluation into **crm-editorial v1.1.0** (agent governance, agent observability, agent-credit TCO) inside this CRM cluster — we do not spawn a separate shallow “agentic CRM” pillar or reproduce analyst quadrant graphics.",
     whoThisIsFor:
       "Any CRM user who wants help with repetitive drafting or summarizing work — but especially teams evaluating whether AI features actually save time versus adding a review burden that offsets the benefit.",
     whatMattersIntro:
@@ -4059,6 +4059,18 @@ export const capabilityDepthBySlug: Record<string, Depth> = {
       ],
     },
     challenges: [
+      {
+        id: "agent-governance-gap",
+        title: "Agentic CRM features ship faster than governance",
+        pain: "Sales agents can draft emails or update records without clear permission boundaries or audit logs.",
+        crmHelps: "crm-editorial v1.1.0 scores agent governance and observability alongside classic CRM criteria — compare platforms on guardrails, not marketing demos alone.",
+      },
+      {
+        id: "agent-credit-tco",
+        title: "Agent credits hide in the seat price",
+        pain: "Resolution caps, credit packs, and overage math make agent TCO unpredictable versus per-seat CRM.",
+        crmHelps: "Model agent-credit TCO before rollout — especially when agents replace repetitive rep tasks at scale.",
+      },
       {
         id: "manual-drafting-time",
         title: "Repetitive drafting eats time that could go to actual selling",
@@ -4107,6 +4119,13 @@ export const capabilityDepthBySlug: Record<string, Depth> = {
       },
     ],
     capabilityNeeds: [
+      {
+        id: "agent-governance",
+        title: "Agent governance and observability",
+        description: "Permissions, approval flows, action logs, and human override for sales agents.",
+        priority: "must",
+        href: "/best/crm-software/",
+      },
       {
         id: "draft-generation",
         title: "AI-assisted drafting",
@@ -4231,6 +4250,11 @@ export const capabilityDepthBySlug: Record<string, Depth> = {
     buyingGuideHref: "/guides/how-to-choose-crm/",
     faq: [
       {
+        question: "What changed in CRM AI in 2026?",
+        answer:
+          "Vendors are shipping agentic sales workflows — not just copilots. Creatio published on Agentic AI in CRM (26 February 2026), and Gartner’s first CRM Sales Platforms Magic Quadrant (July 2026) reflects the same shift. SoftwareGlimpse evaluates agent governance, observability, and agent-credit TCO in crm-editorial v1.1.0 inside this capability hub — we cite analyst maps for context but do not claim Magic Quadrant placement.",
+      },
+      {
         question: "What does AI assistance mean in a CRM?",
         answer:
           "It's the capability that layers AI-generated suggestions — drafts, summaries, scoring signals — onto CRM data, meant to be reviewed and verified by a person, not acted on automatically.",
@@ -4255,8 +4279,8 @@ export const capabilityDepthBySlug: Record<string, Depth> = {
         answer: NO_UNIVERSAL_BEST_ANSWER,
       },
     ],
-    relatedCapabilitySlugs: ["reporting", "lead-management", "email"],
-    relatedUseCaseSlugs: ["lead-management", "sales-engagement", "reporting"],
+    relatedCapabilitySlugs: ["reporting", "lead-management", "email", "workflow-automation"],
+    relatedUseCaseSlugs: ["lead-management", "sales-engagement", "reporting", "sales-automation"],
     relatedRequirementSlugs: [],
     relatedFeatureSlugs: ["ai-assistance"],
     featuredGuideHrefs: [

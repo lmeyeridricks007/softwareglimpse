@@ -21,7 +21,6 @@ import {
   categorySharedToolHref,
 } from "@/data/config/tools/category-tool-meta";
 import {
-  getAllAlternativesUnfiltered,
   getAllComparisonsUnfiltered,
   getAllSoftwareUnfiltered,
   getCategories,
@@ -47,7 +46,7 @@ import {
   resolveAlternativeSlugs,
   resolveCompetitorSlugs,
 } from "@/services/graph/resolve-relationships";
-import { getSoftwareLinkGroups } from "@/services/relationships/software-links";
+import { getSoftwareLinkGroups, publicAlternativesHref } from "@/services/relationships/software-links";
 import { listCrmPricingSnapshots } from "@/services/pricing/server";
 import { COMPANY_ROUTES } from "@/services/site-foundation";
 import {
@@ -347,11 +346,7 @@ function compareHrefForPair(
 }
 
 function alternativesCatalogueHref(productSlug: string): string | null {
-  const page = getAllAlternativesUnfiltered().find(
-    (item) => item.sourceSlug === productSlug || item.slug === productSlug,
-  );
-  if (!page || page.alternatives.length < 2) return null;
-  return `/alternatives/${page.slug}/`;
+  return publicAlternativesHref(productSlug);
 }
 
 function defaultFaq(input: {

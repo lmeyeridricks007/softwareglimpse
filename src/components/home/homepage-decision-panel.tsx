@@ -14,6 +14,7 @@ export type DecisionPanelProduct = {
   strengths: string[];
   logo?: { src: string; alt: string } | null;
   reviewHref: string;
+  alternativesHref?: string | null;
   promotionLabel?: string | null;
   /** Direct affiliate/official visit URL when available. */
   visitHref?: string | null;
@@ -79,6 +80,11 @@ export function HomepageDecisionPanel({ product, className }: Props) {
             <ButtonLink href={product.reviewHref} size="md">
               Read review
             </ButtonLink>
+            {product.alternativesHref ? (
+              <ButtonLink href={product.alternativesHref} variant="outline" size="md">
+                View alternatives
+              </ButtonLink>
+            ) : null}
             {product.visitHref ? (
               <AffiliateAnchor
                 href={product.visitHref}

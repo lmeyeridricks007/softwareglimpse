@@ -7,8 +7,7 @@ import { softwareSeed } from "./software";
 type AltInput = z.input<typeof AlternativesPageSchema>;
 
 /**
- * Hand-authored alternatives. Pipedrive stays review-required / noindex.
- * Thin shells were removed so research materialize can approve them.
+ * Hand-authored alternatives. Thin shells were removed so research materialize can approve them.
  * Products with fewer than two honest substitutes are not invented.
  */
 const alternativesSeedAuthored: AltInput[] = [
@@ -18,49 +17,49 @@ const alternativesSeedAuthored: AltInput[] = [
     title: "Pipedrive alternatives",
     sourceSlug: "pipedrive",
     summary:
-      "Structured alternatives to Pipedrive for teams comparing pipeline CRM options. Reasons below are provisional (review-required) and not a finished ranking.",
+      "Approved alternatives to Pipedrive for teams comparing pipeline CRM options with engagement suites, calling-first CRMs, and lighter relationship tools. Reasons come from approved editorial assessments — not a ranked best-of list.",
     editorialRecommendation:
-      "Start with Freshsales when engagement suite features matter; Close when built-in communication-centric selling is the priority; Salesflare when relationship automation for smaller teams is the focus. Not an approved best-of list.",
-    editorialStatus: "review-required",
+      "Stay on Pipedrive when visual pipeline hygiene and Marketplace breadth are the job. Choose Freshsales when native calling and AI lead scoring matter more; Close when communication-centric outbound is daily work; Salesflare when smaller teams want automated relationship capture over pipeline ops.",
+    editorialStatus: "approved",
     alternatives: [
       {
         targetSlug: "freshsales",
         reason:
-          "Freshsales is a relevant alternative when buyers want pipeline CRM plus stronger built-in engagement signals (phone, lead scoring) than Pipedrive fixtures currently emphasize.",
+          "Freshsales fits when you want pipeline CRM plus stronger built-in engagement (phone, lead scoring) in one Freshworks suite — not Pipedrive’s pipeline-first packaging alone.",
         betterWhen: [
           "Native calling and lead scoring matter in the same product",
           "You are evaluating Freshworks ecosystem fit",
         ],
         worseWhen: [
-          "You want the most pipeline-specialized CRM signal from current evidence",
-          "You prefer a narrower CRM surface over a broader engagement suite",
+          "Visual pipeline discipline and Marketplace depth are the primary buy drivers",
+          "You prefer a narrower sales CRM over a broader engagement suite",
         ],
         keyTradeoff:
-          "Broader sales engagement suite vs Pipedrive’s pipeline-first focus.",
+          "Native engagement suite vs Pipedrive’s pipeline-first focus.",
         relativePricing: "unknown",
-        researchStatus: "in-progress",
+        researchStatus: "complete",
       },
       {
         targetSlug: "close",
         reason:
-          "Close is often considered by teams that want CRM workflows tightly coupled to outbound calling and communication-heavy selling motions.",
+          "Close fits communication-heavy outbound teams that want CRM workflows tightly coupled to calling and SMS — rather than board-first pipeline operations.",
         betterWhen: [
           "Calling and communication cadence are central to the sales process",
           "You want a CRM oriented around conversation workflows",
         ],
         worseWhen: [
-          "You primarily need a visual multi-pipeline CRM with extensive marketplace depth",
+          "You primarily need visual multi-pipeline CRM with extensive marketplace depth",
           "Your team is not communication/outbound-centric",
         ],
         keyTradeoff:
           "Communication-centric CRM workflows vs classic pipeline CRM orientation.",
         relativePricing: "unknown",
-        researchStatus: "in-progress",
+        researchStatus: "complete",
       },
       {
         targetSlug: "salesflare",
         reason:
-          "Salesflare is a lighter relationship-oriented CRM alternative for smaller teams that want automated relationship capture rather than Pipedrive-style pipeline operations.",
+          "Salesflare fits smaller teams that want automated relationship capture and lighter admin — rather than Pipedrive-style pipeline stage discipline.",
         betterWhen: [
           "Smaller teams prioritize automatic relationship tracking",
           "You want less pipeline admin overhead",
@@ -72,30 +71,20 @@ const alternativesSeedAuthored: AltInput[] = [
         keyTradeoff:
           "Automated relationship CRM simplicity vs pipeline operations depth.",
         relativePricing: "unknown",
-        researchStatus: "in-progress",
-      },
-      {
-        targetSlug: "capsule",
-        relativePricing: "unknown",
-        researchStatus: "none",
-      },
-      {
-        targetSlug: "keap",
-        relativePricing: "unknown",
-        researchStatus: "none",
+        researchStatus: "complete",
       },
     ],
     metadata: {
       status: "published",
       publishedAt: "2026-08-13T00:00:00.000Z",
-      updatedAt: "2026-08-13T00:00:00.000Z",
-      researchStatus: "in-progress",
+      updatedAt: "2026-08-26T12:00:00.000Z",
+      researchStatus: "complete",
     },
     seo: {
-      title: "Pipedrive alternatives",
+      title: "Pipedrive Alternatives (2026)",
       description:
-        "Compare Pipedrive with researched CRM alternatives — provisional reasons until editorial approval.",
-      indexable: false,
+        "Compare Pipedrive with Freshsales, Close, and Salesflare — approved CRM alternatives for pipeline-focused sales teams.",
+      indexable: true,
       canonicalPath: "/alternatives/pipedrive/",
     },
   },

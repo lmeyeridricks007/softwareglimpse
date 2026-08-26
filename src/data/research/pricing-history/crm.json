@@ -1,0 +1,53 @@
+{
+  "datasetId": "crm-pricing-history-v1",
+  "categorySlug": "crm",
+  "description": "Verified starting-price snapshots for CRM products. Each row is a point-in-time observation from first-party vendor pricing — not invented market averages.",
+  "methodology": "Snapshots append when research re-verifies pricing.startingPriceMonthly on the vendor site. Currency and billing context come from enrichment at observation time.",
+  "snapshots": [
+    {
+      "productSlug": "pipedrive",
+      "observedAt": "2026-08-13",
+      "startingPriceMonthly": 14,
+      "currency": "USD",
+      "planName": "Lite",
+      "billingNotes": "Annual per-seat list; $24/mo on monthly billing per research 2026-08-13",
+      "sourceIds": ["pipedrive-pricing-official", "pipedrive-pricing-how-kb"]
+    },
+    {
+      "productSlug": "hubspot",
+      "observedAt": "2026-08-18",
+      "startingPriceMonthly": 15,
+      "currency": "USD",
+      "planName": "Starter (Sales Hub)",
+      "billingNotes": "Paid Sales Hub entry from published hub ladder; Free CRM separate tier",
+      "sourceIds": ["hubspot-pricing-official"]
+    },
+    {
+      "productSlug": "salesforce",
+      "observedAt": "2026-08-14",
+      "startingPriceMonthly": 25,
+      "currency": "USD",
+      "planName": "Starter",
+      "billingNotes": "Sales Cloud Starter list per research — confirm live edition packaging",
+      "sourceIds": ["salesforce-pricing-official"]
+    },
+    {
+      "productSlug": "zoho-crm",
+      "observedAt": "2026-08-14",
+      "startingPriceMonthly": 0,
+      "currency": "USD",
+      "planName": "Free",
+      "billingNotes": "Forever-free tier with user/feature caps; paid Standard entry separate",
+      "sourceIds": ["zoho-crm-pricing-official"]
+    },
+    {
+      "productSlug": "freshsales",
+      "observedAt": "2026-08-14",
+      "startingPriceMonthly": 9,
+      "currency": "USD",
+      "planName": "Growth",
+      "billingNotes": "Paid entry per research; free tier availability plan-dependent",
+      "sourceIds": ["freshsales-pricing-official"]
+    }
+  ]
+}

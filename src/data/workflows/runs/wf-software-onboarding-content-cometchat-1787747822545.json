@@ -1,0 +1,453 @@
+{
+  "id": "wf-software-onboarding-content-cometchat-1787747822545",
+  "workflowId": "software-onboarding-content",
+  "workflowVersion": "1.0.0",
+  "name": "Software Onboarding Content: cometchat",
+  "targetType": "software",
+  "targetId": "cometchat",
+  "status": "superseded",
+  "steps": [
+    {
+      "id": "software-onboarding",
+      "definitionStepId": "software-onboarding",
+      "handler": "software-onboarding",
+      "label": "Software onboarding",
+      "status": "completed",
+      "required": true,
+      "failurePolicy": "block-workflow",
+      "attempt": 1,
+      "maxAttempts": 2,
+      "dependsOn": [],
+      "priority": "critical",
+      "config": {
+        "maxAutomaticRevisions": 1,
+        "expandFromContentPlan": false,
+        "expandKind": "none",
+        "stopAfterApproval": true,
+        "allowNormalizedFacts": false,
+        "optionalWhenBlocked": false,
+        "forceTransientFailOnce": false
+      },
+      "inputRefs": {},
+      "outputRefs": {
+        "softwareOnboardingRunId": "onboard-cometchat-1787747778250"
+      },
+      "blockers": [],
+      "warnings": [],
+      "startedAt": "2026-08-26T12:37:03.775Z",
+      "completedAt": "2026-08-26T12:37:04.089Z",
+      "revisionAttempts": 0
+    },
+    {
+      "id": "content-plan",
+      "definitionStepId": "content-plan",
+      "handler": "content-plan",
+      "label": "Content plan",
+      "status": "completed",
+      "required": true,
+      "failurePolicy": "block-workflow",
+      "attempt": 1,
+      "maxAttempts": 2,
+      "dependsOn": [
+        "software-onboarding"
+      ],
+      "priority": "high",
+      "config": {
+        "maxAutomaticRevisions": 1,
+        "expandFromContentPlan": false,
+        "expandKind": "none",
+        "stopAfterApproval": true,
+        "allowNormalizedFacts": false,
+        "optionalWhenBlocked": false,
+        "forceTransientFailOnce": false
+      },
+      "inputRefs": {},
+      "outputRefs": {
+        "softwareOnboardingRunId": "onboard-cometchat-1787747778250",
+        "comparisonTargets": "cometchat-vs-tidio,cometchat-vs-intercom,cometchat-vs-freshchat",
+        "pageCandidateCount": "8"
+      },
+      "blockers": [],
+      "warnings": [],
+      "startedAt": "2026-08-26T12:37:04.096Z",
+      "completedAt": "2026-08-26T12:37:04.554Z",
+      "revisionAttempts": 0
+    },
+    {
+      "id": "software-review",
+      "definitionStepId": "software-review",
+      "handler": "agent-run",
+      "label": "Software Review",
+      "status": "blocked",
+      "required": true,
+      "failurePolicy": "block-workflow",
+      "attempt": 1,
+      "maxAttempts": 2,
+      "dependsOn": [
+        "content-plan"
+      ],
+      "priority": "high",
+      "config": {
+        "agentId": "software-review-agent",
+        "targetSlug": "cometchat",
+        "maxAutomaticRevisions": 1,
+        "expandFromContentPlan": false,
+        "expandKind": "none",
+        "stopAfterApproval": true,
+        "allowNormalizedFacts": false,
+        "optionalWhenBlocked": false,
+        "forceTransientFailOnce": false
+      },
+      "inputRefs": {},
+      "outputRefs": {},
+      "blockers": [
+        "RESEARCH_INCOMPLETE: Core research facts missing (need approved/verified facts)",
+        "ASSESSMENT_MISSING: Editorial assessment required"
+      ],
+      "warnings": [],
+      "startedAt": "2026-08-26T12:37:04.560Z",
+      "completedAt": "2026-08-26T12:37:04.921Z",
+      "revisionAttempts": 0
+    },
+    {
+      "id": "pricing-page",
+      "definitionStepId": "pricing-page",
+      "handler": "agent-run",
+      "label": "Pricing Page",
+      "status": "ready",
+      "required": false,
+      "failurePolicy": "continue-with-warning",
+      "attempt": 0,
+      "maxAttempts": 2,
+      "dependsOn": [
+        "content-plan"
+      ],
+      "priority": "normal",
+      "config": {
+        "agentId": "pricing-page-agent",
+        "targetSlug": "cometchat",
+        "maxAutomaticRevisions": 1,
+        "expandFromContentPlan": false,
+        "expandKind": "none",
+        "stopAfterApproval": true,
+        "allowNormalizedFacts": false,
+        "optionalWhenBlocked": true,
+        "forceTransientFailOnce": false
+      },
+      "inputRefs": {},
+      "outputRefs": {},
+      "blockers": [],
+      "warnings": [],
+      "revisionAttempts": 0
+    },
+    {
+      "id": "alternatives",
+      "definitionStepId": "alternatives",
+      "handler": "agent-run",
+      "label": "Alternatives",
+      "status": "ready",
+      "required": false,
+      "failurePolicy": "continue-with-warning",
+      "attempt": 0,
+      "maxAttempts": 2,
+      "dependsOn": [
+        "content-plan"
+      ],
+      "priority": "normal",
+      "config": {
+        "agentId": "alternatives-agent",
+        "targetSlug": "cometchat",
+        "maxAutomaticRevisions": 1,
+        "expandFromContentPlan": false,
+        "expandKind": "none",
+        "stopAfterApproval": true,
+        "allowNormalizedFacts": false,
+        "optionalWhenBlocked": true,
+        "forceTransientFailOnce": false
+      },
+      "inputRefs": {},
+      "outputRefs": {},
+      "blockers": [],
+      "warnings": [],
+      "revisionAttempts": 0
+    },
+    {
+      "id": "comparison:cometchat-vs-tidio",
+      "definitionStepId": "comparisons",
+      "handler": "agent-run",
+      "label": "Comparison cometchat-vs-tidio",
+      "status": "ready",
+      "required": false,
+      "failurePolicy": "continue-with-warning",
+      "attempt": 0,
+      "maxAttempts": 2,
+      "dependsOn": [
+        "content-plan"
+      ],
+      "priority": "normal",
+      "config": {
+        "agentId": "comparison-agent",
+        "targetSlug": "cometchat-vs-tidio",
+        "maxAutomaticRevisions": 1,
+        "expandFromContentPlan": true,
+        "expandKind": "comparisons",
+        "stopAfterApproval": true,
+        "allowNormalizedFacts": false,
+        "optionalWhenBlocked": true,
+        "forceTransientFailOnce": false
+      },
+      "expansionKey": "cometchat-vs-tidio",
+      "inputRefs": {},
+      "outputRefs": {},
+      "blockers": [],
+      "warnings": [],
+      "revisionAttempts": 0
+    },
+    {
+      "id": "comparison:cometchat-vs-intercom",
+      "definitionStepId": "comparisons",
+      "handler": "agent-run",
+      "label": "Comparison cometchat-vs-intercom",
+      "status": "ready",
+      "required": false,
+      "failurePolicy": "continue-with-warning",
+      "attempt": 0,
+      "maxAttempts": 2,
+      "dependsOn": [
+        "content-plan"
+      ],
+      "priority": "normal",
+      "config": {
+        "agentId": "comparison-agent",
+        "targetSlug": "cometchat-vs-intercom",
+        "maxAutomaticRevisions": 1,
+        "expandFromContentPlan": true,
+        "expandKind": "comparisons",
+        "stopAfterApproval": true,
+        "allowNormalizedFacts": false,
+        "optionalWhenBlocked": true,
+        "forceTransientFailOnce": false
+      },
+      "expansionKey": "cometchat-vs-intercom",
+      "inputRefs": {},
+      "outputRefs": {},
+      "blockers": [],
+      "warnings": [],
+      "revisionAttempts": 0
+    },
+    {
+      "id": "comparison:cometchat-vs-freshchat",
+      "definitionStepId": "comparisons",
+      "handler": "agent-run",
+      "label": "Comparison cometchat-vs-freshchat",
+      "status": "ready",
+      "required": false,
+      "failurePolicy": "continue-with-warning",
+      "attempt": 0,
+      "maxAttempts": 2,
+      "dependsOn": [
+        "content-plan"
+      ],
+      "priority": "normal",
+      "config": {
+        "agentId": "comparison-agent",
+        "targetSlug": "cometchat-vs-freshchat",
+        "maxAutomaticRevisions": 1,
+        "expandFromContentPlan": true,
+        "expandKind": "comparisons",
+        "stopAfterApproval": true,
+        "allowNormalizedFacts": false,
+        "optionalWhenBlocked": true,
+        "forceTransientFailOnce": false
+      },
+      "expansionKey": "cometchat-vs-freshchat",
+      "inputRefs": {},
+      "outputRefs": {},
+      "blockers": [],
+      "warnings": [],
+      "revisionAttempts": 0
+    },
+    {
+      "id": "internal-links",
+      "definitionStepId": "internal-links",
+      "handler": "internal-link",
+      "label": "Internal Link Plan",
+      "status": "pending",
+      "required": false,
+      "failurePolicy": "continue-with-warning",
+      "attempt": 0,
+      "maxAttempts": 2,
+      "dependsOn": [
+        "software-review"
+      ],
+      "priority": "low",
+      "config": {
+        "agentId": "internal-link-agent",
+        "maxAutomaticRevisions": 1,
+        "expandFromContentPlan": false,
+        "expandKind": "none",
+        "stopAfterApproval": true,
+        "allowNormalizedFacts": false,
+        "optionalWhenBlocked": false,
+        "forceTransientFailOnce": false
+      },
+      "inputRefs": {},
+      "outputRefs": {},
+      "blockers": [],
+      "warnings": [],
+      "revisionAttempts": 0
+    },
+    {
+      "id": "finder-readiness",
+      "definitionStepId": "finder-readiness",
+      "handler": "update-recommendation-readiness",
+      "label": "Finder readiness",
+      "status": "ready",
+      "required": false,
+      "failurePolicy": "continue",
+      "attempt": 0,
+      "maxAttempts": 2,
+      "dependsOn": [
+        "content-plan"
+      ],
+      "priority": "low",
+      "config": {
+        "maxAutomaticRevisions": 1,
+        "expandFromContentPlan": false,
+        "expandKind": "none",
+        "stopAfterApproval": true,
+        "allowNormalizedFacts": false,
+        "optionalWhenBlocked": false,
+        "forceTransientFailOnce": false
+      },
+      "inputRefs": {},
+      "outputRefs": {},
+      "blockers": [],
+      "warnings": [],
+      "revisionAttempts": 0
+    },
+    {
+      "id": "editorial-approval",
+      "definitionStepId": "editorial-approval",
+      "handler": "approval-check",
+      "label": "Editorial approval",
+      "status": "pending",
+      "required": true,
+      "failurePolicy": "manual-review",
+      "attempt": 0,
+      "maxAttempts": 2,
+      "dependsOn": [
+        "software-review"
+      ],
+      "priority": "critical",
+      "config": {
+        "approvalType": "editorial",
+        "maxAutomaticRevisions": 1,
+        "expandFromContentPlan": false,
+        "expandKind": "none",
+        "stopAfterApproval": true,
+        "allowNormalizedFacts": false,
+        "optionalWhenBlocked": false,
+        "forceTransientFailOnce": false
+      },
+      "inputRefs": {},
+      "outputRefs": {},
+      "blockers": [],
+      "warnings": [],
+      "revisionAttempts": 0
+    },
+    {
+      "id": "pre-publish-validation",
+      "definitionStepId": "pre-publish-validation",
+      "handler": "pre-publish-validation",
+      "label": "Pre-publish validation",
+      "status": "pending",
+      "required": true,
+      "failurePolicy": "block-workflow",
+      "attempt": 0,
+      "maxAttempts": 2,
+      "dependsOn": [
+        "editorial-approval"
+      ],
+      "priority": "critical",
+      "config": {
+        "maxAutomaticRevisions": 1,
+        "expandFromContentPlan": false,
+        "expandKind": "none",
+        "stopAfterApproval": true,
+        "allowNormalizedFacts": false,
+        "optionalWhenBlocked": false,
+        "forceTransientFailOnce": false
+      },
+      "inputRefs": {},
+      "outputRefs": {},
+      "blockers": [],
+      "warnings": [],
+      "revisionAttempts": 0
+    }
+  ],
+  "history": [
+    {
+      "at": "2026-08-26T12:37:03.765Z",
+      "event": "workflow_created",
+      "message": "Created software-onboarding-content:v1.0.0"
+    },
+    {
+      "at": "2026-08-26T12:37:03.772Z",
+      "event": "workflow_started",
+      "message": "Workflow execution started"
+    },
+    {
+      "at": "2026-08-26T12:37:03.774Z",
+      "event": "workflow_step_started",
+      "stepId": "software-onboarding",
+      "message": "Started Software onboarding"
+    },
+    {
+      "at": "2026-08-26T12:37:04.089Z",
+      "event": "workflow_step_completed",
+      "stepId": "software-onboarding",
+      "message": "Reused onboarding run onboard-cometchat-1787747778250 (review-required)"
+    },
+    {
+      "at": "2026-08-26T12:37:04.095Z",
+      "event": "workflow_step_started",
+      "stepId": "content-plan",
+      "message": "Started Content plan"
+    },
+    {
+      "at": "2026-08-26T12:37:04.554Z",
+      "event": "workflow_step_completed",
+      "stepId": "content-plan",
+      "message": "Content plan from onboarding onboard-cometchat-1787747778250 (8 candidates)"
+    },
+    {
+      "at": "2026-08-26T12:37:04.558Z",
+      "event": "workflow_step_started",
+      "stepId": "software-review",
+      "message": "Started Software Review"
+    },
+    {
+      "at": "2026-08-26T12:37:04.921Z",
+      "event": "workflow_step_completed",
+      "stepId": "software-review",
+      "message": "Agent blocked: RESEARCH_INCOMPLETE: Core research facts missing (need approved/verified facts); ASSESSMENT_MISSING: Editorial assessment required"
+    }
+  ],
+  "options": {
+    "generateReview": true,
+    "generatePricing": true,
+    "generateAlternatives": true,
+    "generateComparisons": true,
+    "runInternalLinks": true,
+    "stopAfterApproval": true,
+    "allowNormalizedFacts": false,
+    "dryRun": false,
+    "maxComparisons": 3,
+    "skipOnboarding": false
+  },
+  "supersededBy": "wf-software-onboarding-content-cometchat-1787748947939",
+  "warnings": [],
+  "createdAt": "2026-08-26T12:37:03.765Z",
+  "updatedAt": "2026-08-26T12:55:49.108Z"
+}

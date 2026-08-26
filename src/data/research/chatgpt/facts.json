@@ -4,7 +4,7 @@
     "productSlug": "chatgpt",
     "domain": "identity",
     "field": "identity.shortDescription",
-    "value": "ChatGPT is OpenAI's general-purpose LLM assistant for chat, reasoning, coding help, image generation, and custom GPT projects. Free tier covers everyday chat with usage limits. Plus is $20/mo for individuals. Business is $25/seat/mo monthly or $20/seat/mo on annual billing with a 2-seat minimum. Pro starts around $100/mo for higher compute and model access. Enterprise is contact sales for admin, security, and scale.",
+    "value": "ChatGPT is OpenAI's general-purpose LLM assistant for chat, reasoning, coding help, image generation, and custom GPT projects on the GPT-5.6 model family. Free tier covers everyday chat with usage limits. Go is a paid tier between Free and Plus (verify live price on chatgpt.com/pricing). Plus is $20/mo for individuals. Business is $25/seat/mo monthly or $20/seat/mo on annual billing with a 2-seat minimum. Pro starts around $100/mo for higher compute and model access. Enterprise is contact sales for admin, security, and scale.",
     "sourceIds": [
       "chatgpt-product-official"
     ],
@@ -210,6 +210,41 @@
     "status": "approved",
     "isFixture": true,
     "notes": "AI Wave-1 first-party research extract"
+  },
+  {
+    "id": "fact-chatgpt-pricing.plans.go",
+    "productSlug": "chatgpt",
+    "domain": "plans",
+    "field": "pricing.plans.go",
+    "value": {
+      "id": "plan-go",
+      "slug": "go",
+      "name": "Go",
+      "isFree": false,
+      "contactSales": false,
+      "hasFreeTrial": false,
+      "highlighted": false,
+      "rules": [],
+      "description": "Budget tier between Free and Plus — verify live list price on chatgpt.com/pricing (vendor confirmed plan 2026-08-26; dollar amount not captured in research snapshot)."
+    },
+    "sourceIds": [
+      "chatgpt-pricing-official"
+    ],
+    "evidence": [
+      {
+        "sourceId": "chatgpt-pricing-official",
+        "excerpt": "Go plan listed on vendor pricing page 2026-08-26",
+        "locator": "PLAN go"
+      }
+    ],
+    "extractedAt": "2026-08-26T12:00:00.000Z",
+    "normalizedAt": "2026-08-26T12:00:00.000Z",
+    "verifiedAt": "2026-08-26T12:00:00.000Z",
+    "approvedAt": "2026-08-26T12:00:00.000Z",
+    "confidence": "medium",
+    "status": "approved",
+    "isFixture": true,
+    "notes": "Go tier confirmed on vendor site; priceUnpublished in snapshot per editorial policy"
   },
   {
     "id": "fact-chatgpt-pricing.plans.plus",

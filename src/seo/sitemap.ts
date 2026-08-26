@@ -15,15 +15,21 @@ import {
   getGuides,
 } from "@/data/repositories/guides";
 import { TOOLS_REGISTRY } from "@/data/config/tools/registry";
-import { listFeatureDetailParams } from "@/data/feature-detail";
+import {
+  getFeatureDetailProfile,
+  listFeatureDetailParams,
+} from "@/data/feature-detail";
 import {
   CRM_REQUIREMENT_PILLAR_SLUGS,
+  getRequirementDetailProfile,
   listRequirementDetailParams,
 } from "@/data/requirement-detail";
 import { isEntityIndexable } from "@/domain/quality-gates";
-import { COMPANY_ROUTES, LEGAL_ROUTES } from "@/services/site-foundation";
-import { getFeatureDetailPage } from "@/services/feature-detail";
-import { getRequirementDetailPage } from "@/services/requirement-detail";
+import {
+  COMPANY_ROUTES,
+  getLegalDocumentByPath,
+  LEGAL_ROUTES,
+} from "@/services/site-foundation";
 import { canonicalUrl } from "@/seo/canonical";
 import {
   indexabilityForFeaturePage,
@@ -47,6 +53,15 @@ export type SitemapEntry = {
 
 type MutableEntry = SitemapEntry & { path: string };
 
+function resolveLastModified(
+  primary: string | Date | undefined,
+  fallback: Date,
+): Date {
+  if (!primary) return fallback;
+  const parsed = new Date(primary);
+  return Number.isNaN(parsed.getTime()) ? fallback : parsed;
+}
+
 function pushUnique(
   map: Map<string, MutableEntry>,
   entry: Omit<MutableEntry, "url"> & { path: string },
@@ -63,6 +78,7 @@ function pushUnique(
  */
 export function getSitemapEntries(now: Date = new Date()): SitemapEntry[] {
   const map = new Map<string, MutableEntry>();
+  const generatedAt = now;
 
   const staticHubs: Array<Omit<MutableEntry, "url">> = [
     { path: "/", changeFrequency: "weekly", priority: 1 },
@@ -80,18 +96,30 @@ export function getSitemapEntries(now: Date = new Date()): SitemapEntry[] {
     { path: "/for/", changeFrequency: "monthly", priority: 0.6 },
     // Industries hub is intentionally noindex until vertical research completes.
   ];
-  for (const hub of staticHubs) pushUnique(map, hub);
+  for (const hub of staticHubs) {
+    pushUnique(map, { ...hub, lastModified: generatedAt });
+  }
+
+  pushUnique(map, {
+    path: "/research/crm-pricing-history/",
+    lastModified: generatedAt,
+    changeFrequency: "weekly",
+    priority: 0.45,
+  });
 
   for (const route of Object.values(COMPANY_ROUTES)) {
     pushUnique(map, {
       path: route,
+      lastModified: generatedAt,
       changeFrequency: "monthly",
       priority: 0.4,
     });
   }
   for (const route of Object.values(LEGAL_ROUTES)) {
+    const doc = getLegalDocumentByPath(route);
     pushUnique(map, {
       path: route,
+      lastModified: resolveLastModified(doc?.lastUpdatedAt, generatedAt),
       changeFrequency: "yearly",
       priority: 0.2,
     });
@@ -108,6 +136,7 @@ export function getSitemapEntries(now: Date = new Date()): SitemapEntry[] {
     }
     pushUnique(map, {
       path: tool.href,
+      lastModified: generatedAt,
       changeFrequency: "weekly",
       priority: 0.75,
     });
@@ -261,32 +290,34 @@ export function getSitemapEntries(now: Date = new Date()): SitemapEntry[] {
 
   const pillar = new Set<string>(CRM_REQUIREMENT_PILLAR_SLUGS);
   for (const { slug } of listRequirementDetailParams()) {
-    const model = getRequirementDetailPage(slug);
-    if (!model) continue;
+    const profile = getRequirementDetailProfile(slug);
+    if (!profile) continue;
     const decision = indexabilityForRequirementPage({
       isPillar: pillar.has(slug),
-      hasOverview: Boolean(model.profile.overview),
-      hasHero: Boolean(model.profile.heroVisual?.src),
+      hasOverview: Boolean(profile.overview),
+      hasHero: Boolean(profile.heroVisual?.src),
     });
     if (!decision.indexable) continue;
     pushUnique(map, {
       path: `/requirements/${slug}/`,
+      lastModified: generatedAt,
       changeFrequency: "monthly",
       priority: 0.6,
     });
   }
 
   for (const { slug } of listFeatureDetailParams()) {
-    const model = getFeatureDetailPage(slug);
-    if (!model) continue;
+    const profile = getFeatureDetailProfile(slug);
+    if (!profile) continue;
     const decision = indexabilityForFeaturePage({
       hasModel: true,
-      hasOverview: Boolean(model.profile.overview),
-      hasTagline: Boolean(model.tagline?.trim()),
+      hasOverview: Boolean(profile.overview),
+      hasTagline: Boolean(profile.tagline?.trim()),
     });
     if (!decision.indexable) continue;
     pushUnique(map, {
       path: `/features/${slug}/`,
+      lastModified: generatedAt,
       changeFrequency: "monthly",
       priority: 0.6,
     });

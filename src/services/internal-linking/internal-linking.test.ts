@@ -6,6 +6,7 @@ import {
   getGuideBySlug,
 } from "@/data/repositories/guides";
 import {
+  buildComparisonLinkPlan,
   buildFeatureLinkPlan,
   buildGuideLinkPlan,
   buildSoftwareLinkPlan,
@@ -93,6 +94,40 @@ describe("guide + software link plans", () => {
     expect(plan!.parentHub.some((l) => l.href.includes("/categories/crm"))).toBe(
       true,
     );
+  });
+
+  it("links flagship CRM comparisons to both reviews and indexable alternatives pages", () => {
+    for (const slug of ["hubspot-vs-pipedrive", "hubspot-vs-salesforce"] as const) {
+      const plan = buildComparisonLinkPlan({
+        comparisonSlug: slug,
+        title: slug,
+        productSlugs: slug === "hubspot-vs-pipedrive"
+          ? ["hubspot", "pipedrive"]
+          : ["hubspot", "salesforce"],
+        categorySlug: "crm",
+      });
+      expect(
+        plan.relatedProducts.some((l) => l.href === "/software/hubspot/"),
+      ).toBe(true);
+      expect(
+        plan.relatedProducts.some((l) => l.href === "/alternatives/hubspot/"),
+      ).toBe(true);
+      if (slug === "hubspot-vs-pipedrive") {
+        expect(
+          plan.relatedProducts.some((l) => l.href === "/software/pipedrive/"),
+        ).toBe(true);
+        expect(
+          plan.relatedProducts.some((l) => l.href === "/alternatives/pipedrive/"),
+        ).toBe(true);
+      } else {
+        expect(
+          plan.relatedProducts.some((l) => l.href === "/software/salesforce/"),
+        ).toBe(true);
+        expect(
+          plan.relatedProducts.some((l) => l.href === "/alternatives/salesforce/"),
+        ).toBe(true);
+      }
+    }
   });
 
   it("gives product-guide packs a kind-directed journey, not knowledge-area fan-out", () => {

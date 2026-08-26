@@ -176,6 +176,12 @@ describe("sitemap eligibility", () => {
     },
     20_000,
   );
+
+  it("includes lastModified on every sitemap URL", () => {
+    const entries = getSitemapEntries();
+    const missing = entries.filter((entry) => !entry.lastModified);
+    expect(missing).toEqual([]);
+  });
 });
 
 describe("breadcrumbs + structured data", () => {
@@ -204,7 +210,22 @@ describe("breadcrumbs + structured data", () => {
       path: "/software/pipedrive/",
     });
     expect(app.aggregateRating).toBeUndefined();
+    expect(app.review).toBeUndefined();
     expect(app.offers).toBeUndefined();
+    const scored = softwareApplicationJsonLd({
+      name: "Pipedrive",
+      path: "/software/pipedrive/",
+      editorialScore: 7.5,
+      methodologyVersion: "1.1.0",
+      dateModified: "2026-08-26T00:00:00.000Z",
+      priceOffer: {
+        price: 14,
+        currency: "USD",
+        priceAsOf: "2026-08-13T00:00:00.000Z",
+      },
+    });
+    expect((scored.review as { reviewRating?: { ratingValue?: number } })?.reviewRating?.ratingValue).toBe(7.5);
+    expect((scored.offers as { price?: string })?.price).toBe("14");
     expect(
       videoObjectJsonLd({
         name: "Demo",

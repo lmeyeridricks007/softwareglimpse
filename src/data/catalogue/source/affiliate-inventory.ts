@@ -613,6 +613,18 @@ export const affiliateInventoryRows: InventoryRow[] = [
     notes: "SOP and employee training documentation",
   },
   {
+    sourceId: "aff-turbotic",
+    rawName: "Turbotic",
+    status: "active",
+    website: "https://turbotic.com",
+    affiliateUrl: "https://try.turbotic.com/cjl61tbufha3",
+    network: "other",
+    categoryHint: "ai",
+    entityTypeHint: "software",
+    notes:
+      "Newly approved affiliate — enterprise automation AI / agent workflows; not yet software-onboarded",
+  },
+  {
     sourceId: "aff-webcatalog",
     rawName: "WebCatalog",
     status: "active",
@@ -696,6 +708,19 @@ export const affiliateInventoryRows: InventoryRow[] = [
     categoryHint: "sales-intelligence",
     entityTypeHint: "software",
     notes: "LinkedIn automation / sales outreach",
+  },
+  {
+    sourceId: "aff-cometchat",
+    rawName: "CometChat",
+    status: "active",
+    website: "https://www.cometchat.com",
+    affiliateUrl: "https://try.cometchat.com/6dfysgmscrmo",
+    network: "other",
+    categoryHint: "live-chat",
+    entityTypeHint: "software",
+    aliases: ["Comet Chat"],
+    notes:
+      "Newly approved affiliate — in-app chat SDK/API, voice & video; not yet software-onboarded",
   },
   {
     sourceId: "aff-reply-io",

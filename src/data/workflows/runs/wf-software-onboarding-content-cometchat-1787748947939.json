@@ -1,0 +1,746 @@
+{
+  "id": "wf-software-onboarding-content-cometchat-1787748947939",
+  "workflowId": "software-onboarding-content",
+  "workflowVersion": "1.0.0",
+  "name": "Software Onboarding Content: cometchat",
+  "targetType": "software",
+  "targetId": "cometchat",
+  "status": "completed-with-warnings",
+  "steps": [
+    {
+      "id": "software-onboarding",
+      "definitionStepId": "software-onboarding",
+      "handler": "software-onboarding",
+      "label": "Software onboarding",
+      "status": "completed",
+      "required": true,
+      "failurePolicy": "block-workflow",
+      "attempt": 1,
+      "maxAttempts": 2,
+      "dependsOn": [],
+      "priority": "critical",
+      "config": {
+        "maxAutomaticRevisions": 1,
+        "expandFromContentPlan": false,
+        "expandKind": "none",
+        "stopAfterApproval": true,
+        "allowNormalizedFacts": false,
+        "optionalWhenBlocked": false,
+        "forceTransientFailOnce": false
+      },
+      "inputRefs": {},
+      "outputRefs": {
+        "softwareOnboardingRunId": "onboard-cometchat-1787747778250"
+      },
+      "blockers": [],
+      "warnings": [],
+      "startedAt": "2026-08-26T12:55:51.042Z",
+      "completedAt": "2026-08-26T12:55:51.324Z",
+      "revisionAttempts": 0
+    },
+    {
+      "id": "content-plan",
+      "definitionStepId": "content-plan",
+      "handler": "content-plan",
+      "label": "Content plan",
+      "status": "completed",
+      "required": true,
+      "failurePolicy": "block-workflow",
+      "attempt": 1,
+      "maxAttempts": 2,
+      "dependsOn": [
+        "software-onboarding"
+      ],
+      "priority": "high",
+      "config": {
+        "maxAutomaticRevisions": 1,
+        "expandFromContentPlan": false,
+        "expandKind": "none",
+        "stopAfterApproval": true,
+        "allowNormalizedFacts": false,
+        "optionalWhenBlocked": false,
+        "forceTransientFailOnce": false
+      },
+      "inputRefs": {},
+      "outputRefs": {
+        "softwareOnboardingRunId": "onboard-cometchat-1787747778250",
+        "comparisonTargets": "cometchat-vs-tidio,cometchat-vs-intercom,cometchat-vs-freshchat",
+        "pageCandidateCount": "8"
+      },
+      "blockers": [],
+      "warnings": [],
+      "startedAt": "2026-08-26T12:55:51.342Z",
+      "completedAt": "2026-08-26T12:55:51.612Z",
+      "revisionAttempts": 0
+    },
+    {
+      "id": "software-review",
+      "definitionStepId": "software-review",
+      "handler": "agent-run",
+      "label": "Software Review",
+      "status": "completed",
+      "required": true,
+      "failurePolicy": "block-workflow",
+      "attempt": 1,
+      "maxAttempts": 2,
+      "dependsOn": [
+        "content-plan"
+      ],
+      "priority": "high",
+      "config": {
+        "agentId": "software-review-agent",
+        "targetSlug": "cometchat",
+        "maxAutomaticRevisions": 1,
+        "expandFromContentPlan": false,
+        "expandKind": "none",
+        "stopAfterApproval": true,
+        "allowNormalizedFacts": false,
+        "optionalWhenBlocked": false,
+        "forceTransientFailOnce": false
+      },
+      "inputRefs": {},
+      "outputRefs": {
+        "draftId": "draft-deterministic-v1-software-review-agent-cometchat-2026-08-26T12-55-52-046Z",
+        "qaStatus": "pass",
+        "agentId": "software-review-agent",
+        "target": "cometchat"
+      },
+      "inputSnapshot": {
+        "researchFactIds": [
+          "fact-cometchat-identity.shortDescription",
+          "fact-cometchat-positioning.vendorClaim",
+          "fact-cometchat-positioning.jobCluster",
+          "fact-cometchat-pricing.model",
+          "fact-cometchat-pricing.hasFreePlan",
+          "fact-cometchat-pricing.hasFreeTrial",
+          "fact-cometchat-pricing.startingPriceMonthly",
+          "fact-cometchat-pricing.plans.build",
+          "fact-cometchat-pricing.plans.basic-1k-mau",
+          "fact-cometchat-pricing.plans.advanced-1k-mau",
+          "fact-cometchat-pricing.plans.enterprise",
+          "fact-cometchat-features.ticketing",
+          "fact-cometchat-features.shared-inbox",
+          "fact-cometchat-features.live-chat",
+          "fact-cometchat-features.knowledge-base",
+          "fact-cometchat-features.omnichannel-inbox",
+          "fact-cometchat-features.sla-routing",
+          "fact-cometchat-features.macros-automation",
+          "fact-cometchat-features.self-service-portal",
+          "fact-cometchat-features.csat-surveys",
+          "fact-cometchat-features.helpdesk-reporting",
+          "fact-cometchat-features.ecommerce-helpdesk",
+          "fact-cometchat-features.itsm-service-desk",
+          "fact-cometchat-features.chatbot-ai-agent",
+          "fact-cometchat-features.agent-copilot",
+          "fact-cometchat-features.phone-support",
+          "fact-cometchat-features.helpdesk-integrations"
+        ],
+        "methodologySlug": "customer-service-editorial",
+        "methodologyVersion": "1.0.0",
+        "agentVersion": "1.0.0",
+        "contextBuiltAt": "2026-08-26T12:55:51.983Z"
+      },
+      "blockers": [],
+      "warnings": [],
+      "agentTaskId": "exec-software-review-agent-cometchat-1787748951615",
+      "draftId": "draft-deterministic-v1-software-review-agent-cometchat-2026-08-26T12-55-52-046Z",
+      "startedAt": "2026-08-26T12:55:51.613Z",
+      "completedAt": "2026-08-26T12:55:52.063Z",
+      "revisionAttempts": 0
+    },
+    {
+      "id": "pricing-page",
+      "definitionStepId": "pricing-page",
+      "handler": "agent-run",
+      "label": "Pricing Page",
+      "status": "blocked",
+      "required": false,
+      "failurePolicy": "continue-with-warning",
+      "attempt": 1,
+      "maxAttempts": 2,
+      "dependsOn": [
+        "content-plan"
+      ],
+      "priority": "normal",
+      "config": {
+        "agentId": "pricing-page-agent",
+        "targetSlug": "cometchat",
+        "maxAutomaticRevisions": 1,
+        "expandFromContentPlan": false,
+        "expandKind": "none",
+        "stopAfterApproval": true,
+        "allowNormalizedFacts": false,
+        "optionalWhenBlocked": true,
+        "forceTransientFailOnce": false
+      },
+      "inputRefs": {},
+      "outputRefs": {},
+      "blockers": [
+        "PRICING_UNVERIFIED: Product pricing data is unverified"
+      ],
+      "warnings": [
+        "PRICING_UNVERIFIED: Product pricing data is unverified"
+      ],
+      "startedAt": "2026-08-26T12:55:52.789Z",
+      "completedAt": "2026-08-26T12:55:53.032Z",
+      "revisionAttempts": 0
+    },
+    {
+      "id": "alternatives",
+      "definitionStepId": "alternatives",
+      "handler": "agent-run",
+      "label": "Alternatives",
+      "status": "blocked",
+      "required": false,
+      "failurePolicy": "continue-with-warning",
+      "attempt": 1,
+      "maxAttempts": 2,
+      "dependsOn": [
+        "content-plan"
+      ],
+      "priority": "normal",
+      "config": {
+        "agentId": "alternatives-agent",
+        "targetSlug": "cometchat",
+        "maxAutomaticRevisions": 1,
+        "expandFromContentPlan": false,
+        "expandKind": "none",
+        "stopAfterApproval": true,
+        "allowNormalizedFacts": false,
+        "optionalWhenBlocked": true,
+        "forceTransientFailOnce": false
+      },
+      "inputRefs": {},
+      "outputRefs": {},
+      "blockers": [
+        "NO_APPROVED_ALTERNATIVES: Approved alternative relationships required — same-category alone is insufficient"
+      ],
+      "warnings": [
+        "NO_APPROVED_ALTERNATIVES: Approved alternative relationships required — same-category alone is insufficient"
+      ],
+      "startedAt": "2026-08-26T12:55:52.069Z",
+      "completedAt": "2026-08-26T12:55:52.265Z",
+      "revisionAttempts": 0
+    },
+    {
+      "id": "comparison:cometchat-vs-tidio",
+      "definitionStepId": "comparisons",
+      "handler": "agent-run",
+      "label": "Comparison cometchat-vs-tidio",
+      "status": "blocked",
+      "required": false,
+      "failurePolicy": "continue-with-warning",
+      "attempt": 1,
+      "maxAttempts": 2,
+      "dependsOn": [
+        "content-plan"
+      ],
+      "priority": "normal",
+      "config": {
+        "agentId": "comparison-agent",
+        "targetSlug": "cometchat-vs-tidio",
+        "maxAutomaticRevisions": 1,
+        "expandFromContentPlan": true,
+        "expandKind": "comparisons",
+        "stopAfterApproval": true,
+        "allowNormalizedFacts": false,
+        "optionalWhenBlocked": true,
+        "forceTransientFailOnce": false
+      },
+      "expansionKey": "cometchat-vs-tidio",
+      "inputRefs": {},
+      "outputRefs": {},
+      "blockers": [
+        "RELATIONSHIP_UNAPPROVED: Approved comparable relationship required"
+      ],
+      "warnings": [
+        "RELATIONSHIP_UNAPPROVED: Approved comparable relationship required"
+      ],
+      "startedAt": "2026-08-26T12:55:52.509Z",
+      "completedAt": "2026-08-26T12:55:52.781Z",
+      "revisionAttempts": 0
+    },
+    {
+      "id": "comparison:cometchat-vs-intercom",
+      "definitionStepId": "comparisons",
+      "handler": "agent-run",
+      "label": "Comparison cometchat-vs-intercom",
+      "status": "blocked",
+      "required": false,
+      "failurePolicy": "continue-with-warning",
+      "attempt": 1,
+      "maxAttempts": 2,
+      "dependsOn": [
+        "content-plan"
+      ],
+      "priority": "normal",
+      "config": {
+        "agentId": "comparison-agent",
+        "targetSlug": "cometchat-vs-intercom",
+        "maxAutomaticRevisions": 1,
+        "expandFromContentPlan": true,
+        "expandKind": "comparisons",
+        "stopAfterApproval": true,
+        "allowNormalizedFacts": false,
+        "optionalWhenBlocked": true,
+        "forceTransientFailOnce": false
+      },
+      "expansionKey": "cometchat-vs-intercom",
+      "inputRefs": {},
+      "outputRefs": {},
+      "blockers": [
+        "RELATIONSHIP_UNAPPROVED: Approved comparable relationship required"
+      ],
+      "warnings": [
+        "RELATIONSHIP_UNAPPROVED: Approved comparable relationship required"
+      ],
+      "startedAt": "2026-08-26T12:55:52.371Z",
+      "completedAt": "2026-08-26T12:55:52.496Z",
+      "revisionAttempts": 0
+    },
+    {
+      "id": "comparison:cometchat-vs-freshchat",
+      "definitionStepId": "comparisons",
+      "handler": "agent-run",
+      "label": "Comparison cometchat-vs-freshchat",
+      "status": "blocked",
+      "required": false,
+      "failurePolicy": "continue-with-warning",
+      "attempt": 1,
+      "maxAttempts": 2,
+      "dependsOn": [
+        "content-plan"
+      ],
+      "priority": "normal",
+      "config": {
+        "agentId": "comparison-agent",
+        "targetSlug": "cometchat-vs-freshchat",
+        "maxAutomaticRevisions": 1,
+        "expandFromContentPlan": true,
+        "expandKind": "comparisons",
+        "stopAfterApproval": true,
+        "allowNormalizedFacts": false,
+        "optionalWhenBlocked": true,
+        "forceTransientFailOnce": false
+      },
+      "expansionKey": "cometchat-vs-freshchat",
+      "inputRefs": {},
+      "outputRefs": {},
+      "blockers": [
+        "RELATIONSHIP_UNAPPROVED: Approved comparable relationship required"
+      ],
+      "warnings": [
+        "RELATIONSHIP_UNAPPROVED: Approved comparable relationship required"
+      ],
+      "startedAt": "2026-08-26T12:55:52.269Z",
+      "completedAt": "2026-08-26T12:55:52.366Z",
+      "revisionAttempts": 0
+    },
+    {
+      "id": "internal-links",
+      "definitionStepId": "internal-links",
+      "handler": "internal-link",
+      "label": "Internal Link Plan",
+      "status": "completed",
+      "required": false,
+      "failurePolicy": "continue-with-warning",
+      "attempt": 1,
+      "maxAttempts": 2,
+      "dependsOn": [
+        "software-review"
+      ],
+      "priority": "low",
+      "config": {
+        "agentId": "internal-link-agent",
+        "maxAutomaticRevisions": 1,
+        "expandFromContentPlan": false,
+        "expandKind": "none",
+        "stopAfterApproval": true,
+        "allowNormalizedFacts": false,
+        "optionalWhenBlocked": false,
+        "forceTransientFailOnce": false
+      },
+      "inputRefs": {},
+      "outputRefs": {
+        "draftId": "draft-deterministic-v1-internal-link-agent-cometchat-2026-08-26T12-55-53-369Z",
+        "qaStatus": "pass",
+        "agentId": "internal-link-agent",
+        "target": "cometchat"
+      },
+      "inputSnapshot": {
+        "researchFactIds": [
+          "fact-cometchat-identity.shortDescription",
+          "fact-cometchat-positioning.vendorClaim",
+          "fact-cometchat-positioning.jobCluster",
+          "fact-cometchat-pricing.model",
+          "fact-cometchat-pricing.hasFreePlan",
+          "fact-cometchat-pricing.hasFreeTrial",
+          "fact-cometchat-pricing.startingPriceMonthly",
+          "fact-cometchat-pricing.plans.build",
+          "fact-cometchat-pricing.plans.basic-1k-mau",
+          "fact-cometchat-pricing.plans.advanced-1k-mau",
+          "fact-cometchat-pricing.plans.enterprise",
+          "fact-cometchat-features.ticketing",
+          "fact-cometchat-features.shared-inbox",
+          "fact-cometchat-features.live-chat",
+          "fact-cometchat-features.knowledge-base",
+          "fact-cometchat-features.omnichannel-inbox",
+          "fact-cometchat-features.sla-routing",
+          "fact-cometchat-features.macros-automation",
+          "fact-cometchat-features.self-service-portal",
+          "fact-cometchat-features.csat-surveys",
+          "fact-cometchat-features.helpdesk-reporting",
+          "fact-cometchat-features.ecommerce-helpdesk",
+          "fact-cometchat-features.itsm-service-desk",
+          "fact-cometchat-features.chatbot-ai-agent",
+          "fact-cometchat-features.agent-copilot",
+          "fact-cometchat-features.phone-support",
+          "fact-cometchat-features.helpdesk-integrations"
+        ],
+        "methodologySlug": "customer-service-editorial",
+        "methodologyVersion": "1.0.0",
+        "agentVersion": "1.0.0",
+        "contextBuiltAt": "2026-08-26T12:55:53.363Z"
+      },
+      "blockers": [],
+      "warnings": [],
+      "agentTaskId": "exec-internal-link-agent-cometchat-1787748953068",
+      "draftId": "draft-deterministic-v1-internal-link-agent-cometchat-2026-08-26T12-55-53-369Z",
+      "startedAt": "2026-08-26T12:55:53.066Z",
+      "completedAt": "2026-08-26T12:55:53.546Z",
+      "revisionAttempts": 0
+    },
+    {
+      "id": "finder-readiness",
+      "definitionStepId": "finder-readiness",
+      "handler": "update-recommendation-readiness",
+      "label": "Finder readiness",
+      "status": "completed",
+      "required": false,
+      "failurePolicy": "continue",
+      "attempt": 1,
+      "maxAttempts": 2,
+      "dependsOn": [
+        "content-plan"
+      ],
+      "priority": "low",
+      "config": {
+        "maxAutomaticRevisions": 1,
+        "expandFromContentPlan": false,
+        "expandKind": "none",
+        "stopAfterApproval": true,
+        "allowNormalizedFacts": false,
+        "optionalWhenBlocked": false,
+        "forceTransientFailOnce": false
+      },
+      "inputRefs": {},
+      "outputRefs": {
+        "finderReadiness": "checked"
+      },
+      "blockers": [],
+      "warnings": [],
+      "startedAt": "2026-08-26T12:55:53.053Z",
+      "completedAt": "2026-08-26T12:55:53.063Z",
+      "revisionAttempts": 0
+    },
+    {
+      "id": "editorial-approval",
+      "definitionStepId": "editorial-approval",
+      "handler": "approval-check",
+      "label": "Editorial approval",
+      "status": "completed",
+      "required": true,
+      "failurePolicy": "manual-review",
+      "attempt": 2,
+      "maxAttempts": 2,
+      "dependsOn": [
+        "software-review"
+      ],
+      "priority": "critical",
+      "config": {
+        "approvalType": "editorial",
+        "maxAutomaticRevisions": 1,
+        "expandFromContentPlan": false,
+        "expandKind": "none",
+        "stopAfterApproval": true,
+        "allowNormalizedFacts": false,
+        "optionalWhenBlocked": false,
+        "forceTransientFailOnce": false
+      },
+      "inputRefs": {},
+      "outputRefs": {
+        "approvalId": "appr-wf-software-onboarding-content-cometchat-1787748947939-software-review",
+        "draftId": "draft-deterministic-v1-software-review-agent-cometchat-2026-08-26T12-55-52-046Z",
+        "approvalIds": "appr-wf-software-onboarding-content-cometchat-1787748947939-software-review"
+      },
+      "blockers": [],
+      "warnings": [
+        "Approval received — resuming",
+        "1 optional draft(s) may still need separate editorial review"
+      ],
+      "approvalId": "appr-wf-software-onboarding-content-cometchat-1787748947939-software-review",
+      "startedAt": "2026-08-26T12:57:08.169Z",
+      "completedAt": "2026-08-26T12:57:08.538Z",
+      "revisionAttempts": 0
+    },
+    {
+      "id": "pre-publish-validation",
+      "definitionStepId": "pre-publish-validation",
+      "handler": "pre-publish-validation",
+      "label": "Pre-publish validation",
+      "status": "completed",
+      "required": true,
+      "failurePolicy": "block-workflow",
+      "attempt": 1,
+      "maxAttempts": 2,
+      "dependsOn": [
+        "editorial-approval"
+      ],
+      "priority": "critical",
+      "config": {
+        "maxAutomaticRevisions": 1,
+        "expandFromContentPlan": false,
+        "expandKind": "none",
+        "stopAfterApproval": true,
+        "allowNormalizedFacts": false,
+        "optionalWhenBlocked": false,
+        "forceTransientFailOnce": false
+      },
+      "inputRefs": {},
+      "outputRefs": {
+        "publishState": "READY_TO_PUBLISH"
+      },
+      "blockers": [],
+      "warnings": [
+        "stopAfterApproval: workflow will not publish automatically"
+      ],
+      "startedAt": "2026-08-26T12:57:08.543Z",
+      "completedAt": "2026-08-26T12:57:09.480Z",
+      "revisionAttempts": 0
+    }
+  ],
+  "history": [
+    {
+      "at": "2026-08-26T12:55:51.034Z",
+      "event": "workflow_created",
+      "message": "Created software-onboarding-content:v1.0.0"
+    },
+    {
+      "at": "2026-08-26T12:55:51.039Z",
+      "event": "workflow_started",
+      "message": "Workflow execution started"
+    },
+    {
+      "at": "2026-08-26T12:55:51.041Z",
+      "event": "workflow_step_started",
+      "stepId": "software-onboarding",
+      "message": "Started Software onboarding"
+    },
+    {
+      "at": "2026-08-26T12:55:51.324Z",
+      "event": "workflow_step_completed",
+      "stepId": "software-onboarding",
+      "message": "Reused onboarding run onboard-cometchat-1787747778250 (review-required)"
+    },
+    {
+      "at": "2026-08-26T12:55:51.334Z",
+      "event": "workflow_step_started",
+      "stepId": "content-plan",
+      "message": "Started Content plan"
+    },
+    {
+      "at": "2026-08-26T12:55:51.612Z",
+      "event": "workflow_step_completed",
+      "stepId": "content-plan",
+      "message": "Content plan from onboarding onboard-cometchat-1787747778250 (8 candidates)"
+    },
+    {
+      "at": "2026-08-26T12:55:51.613Z",
+      "event": "workflow_step_started",
+      "stepId": "software-review",
+      "message": "Started Software Review"
+    },
+    {
+      "at": "2026-08-26T12:55:52.063Z",
+      "event": "workflow_step_completed",
+      "stepId": "software-review",
+      "message": "Agent software-review-agent → draft draft-deterministic-v1-software-review-agent-cometchat-2026-08-26T12-55-52-046Z (qa=pass)"
+    },
+    {
+      "at": "2026-08-26T12:55:52.066Z",
+      "event": "workflow_step_started",
+      "stepId": "alternatives",
+      "message": "Started Alternatives"
+    },
+    {
+      "at": "2026-08-26T12:55:52.265Z",
+      "event": "workflow_step_completed",
+      "stepId": "alternatives",
+      "message": "Agent blocked (optional): NO_APPROVED_ALTERNATIVES: Approved alternative relationships required — same-category alone is insufficient"
+    },
+    {
+      "at": "2026-08-26T12:55:52.268Z",
+      "event": "workflow_step_started",
+      "stepId": "comparison:cometchat-vs-freshchat",
+      "message": "Started Comparison cometchat-vs-freshchat"
+    },
+    {
+      "at": "2026-08-26T12:55:52.366Z",
+      "event": "workflow_step_completed",
+      "stepId": "comparison:cometchat-vs-freshchat",
+      "message": "Agent blocked (optional): RELATIONSHIP_UNAPPROVED: Approved comparable relationship required"
+    },
+    {
+      "at": "2026-08-26T12:55:52.370Z",
+      "event": "workflow_step_started",
+      "stepId": "comparison:cometchat-vs-intercom",
+      "message": "Started Comparison cometchat-vs-intercom"
+    },
+    {
+      "at": "2026-08-26T12:55:52.496Z",
+      "event": "workflow_step_completed",
+      "stepId": "comparison:cometchat-vs-intercom",
+      "message": "Agent blocked (optional): RELATIONSHIP_UNAPPROVED: Approved comparable relationship required"
+    },
+    {
+      "at": "2026-08-26T12:55:52.507Z",
+      "event": "workflow_step_started",
+      "stepId": "comparison:cometchat-vs-tidio",
+      "message": "Started Comparison cometchat-vs-tidio"
+    },
+    {
+      "at": "2026-08-26T12:55:52.781Z",
+      "event": "workflow_step_completed",
+      "stepId": "comparison:cometchat-vs-tidio",
+      "message": "Agent blocked (optional): RELATIONSHIP_UNAPPROVED: Approved comparable relationship required"
+    },
+    {
+      "at": "2026-08-26T12:55:52.786Z",
+      "event": "workflow_step_started",
+      "stepId": "pricing-page",
+      "message": "Started Pricing Page"
+    },
+    {
+      "at": "2026-08-26T12:55:53.033Z",
+      "event": "workflow_step_completed",
+      "stepId": "pricing-page",
+      "message": "Agent blocked (optional): PRICING_UNVERIFIED: Product pricing data is unverified"
+    },
+    {
+      "at": "2026-08-26T12:55:53.047Z",
+      "event": "workflow_step_started",
+      "stepId": "finder-readiness",
+      "message": "Started Finder readiness"
+    },
+    {
+      "at": "2026-08-26T12:55:53.063Z",
+      "event": "workflow_step_completed",
+      "stepId": "finder-readiness",
+      "message": "Finder readiness noted for cometchat"
+    },
+    {
+      "at": "2026-08-26T12:55:53.066Z",
+      "event": "workflow_step_started",
+      "stepId": "internal-links",
+      "message": "Started Internal Link Plan"
+    },
+    {
+      "at": "2026-08-26T12:55:53.546Z",
+      "event": "workflow_step_completed",
+      "stepId": "internal-links",
+      "message": "Agent internal-link-agent → draft draft-deterministic-v1-internal-link-agent-cometchat-2026-08-26T12-55-53-369Z (qa=pass)"
+    },
+    {
+      "at": "2026-08-26T12:55:53.598Z",
+      "event": "workflow_step_started",
+      "stepId": "editorial-approval",
+      "message": "Started Editorial approval"
+    },
+    {
+      "at": "2026-08-26T12:55:55.612Z",
+      "event": "workflow_step_completed",
+      "stepId": "editorial-approval",
+      "message": "WAITING FOR EDITORIAL APPROVAL (appr-wf-software-onboarding-content-cometchat-1787748947939-software-review)"
+    },
+    {
+      "at": "2026-08-26T12:55:55.666Z",
+      "event": "workflow_blocked",
+      "message": "WAITING FOR EDITORIAL APPROVAL"
+    },
+    {
+      "at": "2026-08-26T12:57:08.161Z",
+      "event": "workflow_resumed",
+      "message": "Workflow resumed"
+    },
+    {
+      "at": "2026-08-26T12:57:08.164Z",
+      "event": "workflow_started",
+      "message": "Workflow execution started"
+    },
+    {
+      "at": "2026-08-26T12:57:08.167Z",
+      "event": "workflow_step_started",
+      "stepId": "editorial-approval",
+      "message": "Started Editorial approval"
+    },
+    {
+      "at": "2026-08-26T12:57:08.538Z",
+      "event": "workflow_step_completed",
+      "stepId": "editorial-approval",
+      "message": "Required editorial approvals satisfied"
+    },
+    {
+      "at": "2026-08-26T12:57:08.543Z",
+      "event": "workflow_step_started",
+      "stepId": "pre-publish-validation",
+      "message": "Started Pre-publish validation"
+    },
+    {
+      "at": "2026-08-26T12:57:09.480Z",
+      "event": "workflow_step_completed",
+      "stepId": "pre-publish-validation",
+      "message": "Pre-publish validation passed — READY TO PUBLISH (manual)"
+    },
+    {
+      "at": "2026-08-26T12:57:09.486Z",
+      "event": "workflow_completed",
+      "message": "Workflow completed-with-warnings"
+    },
+    {
+      "at": "2026-08-26T13:01:29.172Z",
+      "event": "workflow_resumed",
+      "message": "Workflow resumed"
+    },
+    {
+      "at": "2026-08-26T13:01:29.208Z",
+      "event": "workflow_started",
+      "message": "Workflow execution started"
+    },
+    {
+      "at": "2026-08-26T13:01:29.226Z",
+      "event": "workflow_completed",
+      "message": "Workflow completed-with-warnings"
+    }
+  ],
+  "options": {
+    "generateReview": true,
+    "generatePricing": true,
+    "generateAlternatives": true,
+    "generateComparisons": true,
+    "runInternalLinks": true,
+    "stopAfterApproval": true,
+    "allowNormalizedFacts": false,
+    "dryRun": false,
+    "maxComparisons": 3,
+    "skipOnboarding": false
+  },
+  "warnings": [
+    "alternatives blocked: NO_APPROVED_ALTERNATIVES: Approved alternative relationships required — same-category alone is insufficient",
+    "comparison:cometchat-vs-freshchat blocked: RELATIONSHIP_UNAPPROVED: Approved comparable relationship required",
+    "comparison:cometchat-vs-intercom blocked: RELATIONSHIP_UNAPPROVED: Approved comparable relationship required",
+    "comparison:cometchat-vs-tidio blocked: RELATIONSHIP_UNAPPROVED: Approved comparable relationship required",
+    "pricing-page blocked: PRICING_UNVERIFIED: Product pricing data is unverified"
+  ],
+  "createdAt": "2026-08-26T12:55:51.034Z",
+  "updatedAt": "2026-08-26T13:01:29.226Z"
+}

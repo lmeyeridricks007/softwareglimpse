@@ -92,6 +92,7 @@ function chromeFromModel(model: SoftwareReviewModel): SoftwareHubChrome {
     lastUpdated: model.lastUpdated,
     scoresApproved: model.scoresApproved,
     heroFacts: model.heroFacts,
+    alternativesHref: model.alternativesHref,
   };
 }
 

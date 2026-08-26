@@ -6847,6 +6847,58 @@ const softwareSeedRaw: SoftwareInput[] = [
     },
   }),
   ...affiliatePartnerGapSeed.map((entry) => soft(entry)),
+
+  
+  soft({
+    id: "soft-cometchat",
+    slug: "cometchat",
+    name: "CometChat",
+    company: "CometChat",
+    website: "https://www.cometchat.com",
+    logo: { src: "/brands/cometchat.png", alt: "CometChat logo" },
+    shortDescription:
+      "In-app chat SDK/API with UI kits — Build free (100 MAU); Basic from ~$239/mo annual at 1k MAU tier.",
+    aliases: ["Comet Chat"],
+    primaryCategorySlug: "live-chat",
+    secondaryCategorySlugs: ["customer-service","it-development"],
+    subcategorySlugs: [],
+    useCaseSlugs: ["live-chat-support","ai-customer-service"],
+    teamTypeSlugs: ["engineering","product","customer-success"],
+    businessSizeSlugs: ["small-business","mid-market","enterprise"],
+    competitorSlugs: ["tidio","intercom","freshchat","livechat"],
+    alternativeSlugs: ["tidio","intercom","freshchat"],
+    comparableSlugs: ["tidio","freshchat"],
+    metadata: {
+      status: "published",
+      publishedAt: "2026-08-26T00:00:00.000Z",
+      researchStatus: "complete",
+    },
+  }),
+  
+  soft({
+    id: "soft-turbotic",
+    slug: "turbotic",
+    name: "Turbotic",
+    company: "Turbotic",
+    website: "https://turbotic.com",
+    logo: { src: "/brands/turbotic.png", alt: "Turbotic logo" },
+    shortDescription:
+      "Automation AI platform — Free tier; Basic from $14.99/mo annual; Pro from $79.99/mo annual.",
+    aliases: ["Turbotic Automation AI"],
+    primaryCategorySlug: "ai",
+    subcategorySlugs: [],
+    useCaseSlugs: ["ai-automation"],
+    teamTypeSlugs: ["operations","engineering","marketing"],
+    businessSizeSlugs: ["small-business","mid-market","enterprise"],
+    competitorSlugs: ["zapier","n8n"],
+    alternativeSlugs: ["zapier","n8n"],
+    comparableSlugs: ["zapier","n8n"],
+    metadata: {
+      status: "published",
+      publishedAt: "2026-08-26T00:00:00.000Z",
+      researchStatus: "complete",
+    },
+  }),
 ];
 
 export const softwareSeed: SoftwareInput[] =

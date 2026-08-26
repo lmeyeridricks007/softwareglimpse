@@ -1295,20 +1295,40 @@ export function buildComparisonLinkPlan(input: {
     { module: "parentHub", excludeHrefs: exclude },
   );
 
-  plan.relatedProducts = selectLinks(
-    input.productSlugs.map((slug) => {
+  const productLinks: Array<ContextualLink | null> = input.productSlugs.flatMap(
+    (slug) => {
       const soft = getSoftware().find((s) => s.slug === slug);
-      return makeLink({
-        href: `/software/${slug}/`,
-        label: soft ? `${soft.name} review` : slug,
-        relationship: "compares",
-        module: "relatedProducts",
-        entityType: "software",
-        score: 90,
-      });
-    }),
-    { module: "relatedProducts", excludeHrefs: exclude },
+      const links: Array<ContextualLink | null> = [
+        makeLink({
+          href: `/software/${slug}/`,
+          label: soft ? `${soft.name} review` : slug,
+          relationship: "compares",
+          module: "relatedProducts",
+          entityType: "software",
+          score: 90,
+        }),
+      ];
+      const alts = getAlternativesPageBySlug(slug);
+      if (alts && isEntityIndexable({ kind: "alternatives", entity: alts })) {
+        links.push(
+          makeLink({
+            href: alts.seo.canonicalPath || `/alternatives/${slug}/`,
+            label: alts.title,
+            relationship: "alternativeTo",
+            module: "relatedProducts",
+            entityType: "alternatives",
+            score: 92,
+          }),
+        );
+      }
+      return links;
+    },
   );
+
+  plan.relatedProducts = selectLinks(productLinks, {
+    module: "relatedProducts",
+    excludeHrefs: exclude,
+  });
 
   const peerComparisons = getAllComparisonsUnfiltered()
     .filter((c) => c.slug !== input.comparisonSlug)

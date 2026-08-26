@@ -182,7 +182,10 @@ export function SoftwareHubFaqTab({ model }: Props) {
             </li>
             <li>
               <Link
-                href={softwareHubPath(software.slug, "alternatives")}
+                href={
+                  model.alternativesHref ??
+                  softwareHubPath(software.slug, "alternatives")
+                }
                 className="text-[var(--sg-color-primary)] underline-offset-2 hover:underline"
               >
                 View top {software.name} alternatives →

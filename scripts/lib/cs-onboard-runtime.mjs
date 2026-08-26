@@ -922,7 +922,7 @@ export function softSnippet(p) {
     logo: { src: "/brands/${p.slug}.png", alt: "${p.name} logo" },
     shortDescription:
       ${JSON.stringify(p.softShortDescription)},${aliases}
-    primaryCategorySlug: "customer-service",${secondary}
+    primaryCategorySlug: "${p.primaryCategorySlug ?? "customer-service"}",${secondary}
     subcategorySlugs: ${JSON.stringify(p.subcategorySlugs ?? [])},
     useCaseSlugs: ${JSON.stringify(p.useCaseSlugs)},
     teamTypeSlugs: ${JSON.stringify(p.teamTypeSlugs)},
@@ -961,9 +961,30 @@ export function writeProduct(p) {
     {
       id: `job-${p.slug}-${JOB_TAG}`,
       productSlug: p.slug,
-      status: "completed",
+      domains: [
+        "identity",
+        "pricing",
+        "plans",
+        "features",
+        "product-positioning",
+        "ai-capabilities",
+        "integrations",
+        "free-trial",
+        "free-plan",
+        "limits",
+        "security-compliance",
+      ],
+      status: "approved",
       createdAt: VERIFIED_AT,
+      updatedAt: VERIFIED_AT,
       completedAt: VERIFIED_AT,
+      dryRun: false,
+      allowFixtures: true,
+      sourceIds: [`${p.slug}-product-official`, `${p.slug}-pricing-official`],
+      snapshotIds: [],
+      factIds: [],
+      conflictIds: [],
+      errors: [],
       notes: `${BATCH_LABEL}; membershipRole=${p.membershipRole}; jobCluster=${p.jobCluster}`,
     },
   ]);

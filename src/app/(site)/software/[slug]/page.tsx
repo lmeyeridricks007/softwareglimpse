@@ -95,6 +95,12 @@ export default async function SoftwareOverviewPage({ params }: Props) {
   const softwareLinkPlan = buildSoftwareLinkPlan(software.slug);
   const faqLd = model.faq.length ? faqPageJsonLd(model.faq) : null;
   const overviewVideo = model.overviewVideos[0];
+  const startingPrice = model.pricing?.startingPriceMonthly;
+  const priceCurrency = model.pricing?.currency ?? "USD";
+  const priceAsOf =
+    model.pricingVerifiedAt ??
+    model.research.pricingChecked ??
+    model.lastUpdated;
   const videoLd =
     overviewVideo &&
     videoObjectJsonLd({
@@ -119,6 +125,20 @@ export default async function SoftwareOverviewPage({ params }: Props) {
             description: model.tagline ?? undefined,
             url: software.website,
             applicationCategory: model.primaryCategory?.name,
+            dateModified: model.lastUpdated,
+            editorialScore: model.scoresApproved ? model.overallScore : null,
+            methodologyVersion: model.research.methodologyVersion,
+            priceOffer:
+              startingPrice != null &&
+              Number.isFinite(startingPrice) &&
+              priceAsOf
+                ? {
+                    price: startingPrice,
+                    currency: priceCurrency,
+                    priceAsOf,
+                    description: model.pricingNotes ?? undefined,
+                  }
+                : null,
           }),
           ...(faqLd ? [faqLd] : []),
           ...(videoLd ? [videoLd] : []),

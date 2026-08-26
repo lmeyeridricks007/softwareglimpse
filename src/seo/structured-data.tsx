@@ -43,8 +43,9 @@ export function webPageJsonLd(input: {
   name: string;
   description: string;
   path: string;
+  dateModified?: string | null;
 }): JsonLd {
-  return {
+  const data: JsonLd = {
     "@context": "https://schema.org",
     "@type": "WebPage",
     name: input.name,
@@ -56,6 +57,10 @@ export function webPageJsonLd(input: {
       url: `${getSiteUrl()}/`,
     },
   };
+  if (input.dateModified) {
+    data.dateModified = input.dateModified;
+  }
+  return data;
 }
 
 /**
@@ -68,6 +73,15 @@ export function softwareApplicationJsonLd(input: {
   description?: string;
   url?: string;
   applicationCategory?: string;
+  dateModified?: string | null;
+  editorialScore?: number | null;
+  methodologyVersion?: string | null;
+  priceOffer?: {
+    price: number;
+    currency: string;
+    priceAsOf: string;
+    description?: string;
+  } | null;
 }): JsonLd {
   const data: JsonLd = {
     "@context": "https://schema.org",
@@ -80,6 +94,48 @@ export function softwareApplicationJsonLd(input: {
   if (input.url) data.sameAs = input.url;
   if (input.applicationCategory) {
     data.applicationCategory = input.applicationCategory;
+  }
+  if (input.dateModified) {
+    data.dateModified = input.dateModified;
+  }
+
+  if (
+    input.editorialScore != null &&
+    Number.isFinite(input.editorialScore)
+  ) {
+    data.review = {
+      "@type": "Review",
+      author: {
+        "@type": "Organization",
+        name: SITE_NAME,
+        url: `${getSiteUrl()}/`,
+      },
+      reviewRating: {
+        "@type": "Rating",
+        ratingValue: input.editorialScore,
+        bestRating: 10,
+        worstRating: 0,
+      },
+      ...(input.methodologyVersion
+        ? {
+            description: `SoftwareGlimpse editorial score (methodology v${input.methodologyVersion}) — research-grounded, not a user review aggregate.`,
+          }
+        : {}),
+      ...(input.dateModified ? { datePublished: input.dateModified } : {}),
+    };
+  }
+
+  if (input.priceOffer && Number.isFinite(input.priceOffer.price)) {
+    data.offers = {
+      "@type": "Offer",
+      price: String(input.priceOffer.price),
+      priceCurrency: input.priceOffer.currency,
+      url: canonicalUrl(input.path),
+      description:
+        input.priceOffer.description ??
+        `Starting list price as of ${input.priceOffer.priceAsOf.slice(0, 10)} from vendor research.`,
+      priceValidUntil: input.priceOffer.priceAsOf,
+    };
   }
 
   return data;

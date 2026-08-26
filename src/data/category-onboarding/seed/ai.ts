@@ -123,6 +123,9 @@ export const aiDefinition: CategoryDefinition = CategoryDefinitionSchema.parse({
       "Midjourney and Adobe Firefly are ai-image peers — not LLM-assistant ranks",
       "Runway is ai-video primary; Otter.ai is ai-meeting primary",
       "Do not force one undifferentiated best list across these jobs",
+      "Enterprise AI coding agents: Gartner MQ published 20 May 2026 — Cursor and GitHub Copilot stay in ai-code cluster only (EXPLORE), not lumped with LLM assistants",
+      "Horizontal agent platforms (Aira, Rank Prompt, etc.) stay off Best AI until a verified job cluster home — WATCH, do not promote as peers",
+      "G2 Fall 2026 report expansion (700+ new reports per G2) signals more SKUs — segment by job, do not collapse into one AI Software ranking",
     ],
   },
   features: [
