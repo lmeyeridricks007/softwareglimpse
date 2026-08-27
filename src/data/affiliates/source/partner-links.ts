@@ -109,6 +109,7 @@ export const partnerLinks: PartnerLinkRecord[] = [
   { name: "QuillBot", primaryCategory: "AI Writing", affiliateUrl: "https://try.quillbot.com/db3a97ce993a", productSlug: "quillbot", catalogueSourceId: "aff-quillbot", alternateUrls: ["https://try.quillbot.com/Lee", "https://try.quillbot.com/0n59kg46nmug"] },
   { name: "Rank Prompt", primaryCategory: "AI SEO / Search Marketing", affiliateUrl: "https://join.rankprompt.com/7qr6ufz6gjxq-xj5vs", productSlug: "rank-prompt", catalogueSourceId: "aff-rank-prompt" },
   { name: "Reply.io", primaryCategory: "Sales Engagement / Email Outreach", affiliateUrl: "https://get.reply.io/se3w5qrz6hyy", productSlug: "reply", catalogueSourceId: "aff-reply-io" },
+  { name: "Rippling", primaryCategory: "HR / Payroll / IT Platform", affiliateUrl: "https://try.rippling.com/o79elvy346nf", productSlug: "rippling", catalogueSourceId: "aff-rippling" },
   { name: "RocketReach LLC", primaryCategory: "Contact Data / Lead Generation", affiliateUrl: null, affiliateUrlState: "pending", productSlug: "rocketreach", catalogueSourceId: "aff-rocketreach" },
   { name: "Salesflare", primaryCategory: "CRM", affiliateUrl: "https://go.salesflare.com/d10dqhxqfl23", productSlug: "salesflare", catalogueSourceId: "aff-salesflare" },
   { name: "SaneBox", primaryCategory: "Email Productivity", affiliateUrl: "https://try.sanebox.com/vub7fxpb2g7m", productSlug: "sanebox", catalogueSourceId: "aff-sanebox" },

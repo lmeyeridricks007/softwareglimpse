@@ -1,0 +1,890 @@
+{
+  "id": "wf-software-onboarding-content-rippling-1787832452370",
+  "workflowId": "software-onboarding-content",
+  "workflowVersion": "1.0.0",
+  "name": "Software Onboarding Content: rippling",
+  "targetType": "software",
+  "targetId": "rippling",
+  "status": "completed-with-warnings",
+  "steps": [
+    {
+      "id": "software-onboarding",
+      "definitionStepId": "software-onboarding",
+      "handler": "software-onboarding",
+      "label": "Software onboarding",
+      "status": "completed",
+      "required": true,
+      "failurePolicy": "block-workflow",
+      "attempt": 1,
+      "maxAttempts": 2,
+      "dependsOn": [],
+      "priority": "critical",
+      "config": {
+        "maxAutomaticRevisions": 1,
+        "expandFromContentPlan": false,
+        "expandKind": "none",
+        "stopAfterApproval": true,
+        "allowNormalizedFacts": false,
+        "optionalWhenBlocked": false,
+        "forceTransientFailOnce": false
+      },
+      "inputRefs": {},
+      "outputRefs": {
+        "softwareOnboardingRunId": "onboard-rippling-1787480421481"
+      },
+      "blockers": [],
+      "warnings": [],
+      "startedAt": "2026-08-27T12:07:33.629Z",
+      "completedAt": "2026-08-27T12:07:33.782Z",
+      "revisionAttempts": 0
+    },
+    {
+      "id": "content-plan",
+      "definitionStepId": "content-plan",
+      "handler": "content-plan",
+      "label": "Content plan",
+      "status": "completed",
+      "required": true,
+      "failurePolicy": "block-workflow",
+      "attempt": 1,
+      "maxAttempts": 2,
+      "dependsOn": [
+        "software-onboarding"
+      ],
+      "priority": "high",
+      "config": {
+        "maxAutomaticRevisions": 1,
+        "expandFromContentPlan": false,
+        "expandKind": "none",
+        "stopAfterApproval": true,
+        "allowNormalizedFacts": false,
+        "optionalWhenBlocked": false,
+        "forceTransientFailOnce": false
+      },
+      "inputRefs": {},
+      "outputRefs": {
+        "softwareOnboardingRunId": "onboard-rippling-1787480421481",
+        "comparisonTargets": "bamboohr-vs-rippling,gusto-vs-rippling,rippling-vs-workday",
+        "pageCandidateCount": "9"
+      },
+      "blockers": [],
+      "warnings": [],
+      "startedAt": "2026-08-27T12:07:33.783Z",
+      "completedAt": "2026-08-27T12:07:33.959Z",
+      "revisionAttempts": 0
+    },
+    {
+      "id": "software-review",
+      "definitionStepId": "software-review",
+      "handler": "agent-run",
+      "label": "Software Review",
+      "status": "completed",
+      "required": true,
+      "failurePolicy": "block-workflow",
+      "attempt": 1,
+      "maxAttempts": 2,
+      "dependsOn": [
+        "content-plan"
+      ],
+      "priority": "high",
+      "config": {
+        "agentId": "software-review-agent",
+        "targetSlug": "rippling",
+        "maxAutomaticRevisions": 1,
+        "expandFromContentPlan": false,
+        "expandKind": "none",
+        "stopAfterApproval": true,
+        "allowNormalizedFacts": false,
+        "optionalWhenBlocked": false,
+        "forceTransientFailOnce": false
+      },
+      "inputRefs": {},
+      "outputRefs": {
+        "draftId": "draft-deterministic-v1-software-review-agent-rippling-2026-08-27T12-07-34-164Z",
+        "qaStatus": "pass",
+        "agentId": "software-review-agent",
+        "target": "rippling"
+      },
+      "inputSnapshot": {
+        "researchFactIds": [
+          "fact-rippling-identity.shortDescription",
+          "fact-rippling-positioning.vendorClaim",
+          "fact-rippling-positioning.jobCluster",
+          "fact-rippling-pricing.model",
+          "fact-rippling-pricing.hasFreePlan",
+          "fact-rippling-pricing.hasFreeTrial",
+          "fact-rippling-pricing.startingPriceMonthly",
+          "fact-rippling-pricing.plans.platform",
+          "fact-rippling-pricing.plans.modules",
+          "fact-rippling-features.applicant-tracking",
+          "fact-rippling-features.career-site-job-boards",
+          "fact-rippling-features.interview-scheduling",
+          "fact-rippling-features.core-hris",
+          "fact-rippling-features.payroll-processing",
+          "fact-rippling-features.benefits-admin",
+          "fact-rippling-features.workforce-scheduling",
+          "fact-rippling-features.frontline-comms",
+          "fact-rippling-features.time-attendance",
+          "fact-rippling-features.gps-geofence-clockin",
+          "fact-rippling-features.sop-knowledge-base",
+          "fact-rippling-features.employee-training-paths",
+          "fact-rippling-features.lms-course-commerce",
+          "fact-rippling-features.hris-integrations",
+          "fact-rippling-features.analytics-reporting",
+          "fact-rippling-features.ai-assistance"
+        ],
+        "methodologySlug": "hr-editorial",
+        "methodologyVersion": "1.0.0",
+        "agentVersion": "1.0.0",
+        "contextBuiltAt": "2026-08-27T12:07:34.159Z"
+      },
+      "blockers": [],
+      "warnings": [],
+      "agentTaskId": "exec-software-review-agent-rippling-1787832453963",
+      "draftId": "draft-deterministic-v1-software-review-agent-rippling-2026-08-27T12-07-34-164Z",
+      "startedAt": "2026-08-27T12:07:33.961Z",
+      "completedAt": "2026-08-27T12:07:34.173Z",
+      "revisionAttempts": 0
+    },
+    {
+      "id": "pricing-page",
+      "definitionStepId": "pricing-page",
+      "handler": "agent-run",
+      "label": "Pricing Page",
+      "status": "completed-with-warning",
+      "required": false,
+      "failurePolicy": "continue-with-warning",
+      "attempt": 1,
+      "maxAttempts": 2,
+      "dependsOn": [
+        "content-plan"
+      ],
+      "priority": "normal",
+      "config": {
+        "agentId": "pricing-page-agent",
+        "targetSlug": "rippling",
+        "maxAutomaticRevisions": 1,
+        "expandFromContentPlan": false,
+        "expandKind": "none",
+        "stopAfterApproval": true,
+        "allowNormalizedFacts": false,
+        "optionalWhenBlocked": true,
+        "forceTransientFailOnce": false
+      },
+      "inputRefs": {},
+      "outputRefs": {
+        "draftId": "draft-deterministic-v1-pricing-page-agent-rippling-2026-08-27T12-07-34-303Z-rev-1787832454333",
+        "qaStatus": "fail"
+      },
+      "blockers": [],
+      "warnings": [
+        "QA still failing after revision: UNVERIFIED_NUMBER",
+        "Optional step held for QA/editorial review — required path continues"
+      ],
+      "agentTaskId": "exec-pricing-page-agent-rippling-1787832454283",
+      "draftId": "draft-deterministic-v1-pricing-page-agent-rippling-2026-08-27T12-07-34-303Z-rev-1787832454333",
+      "startedAt": "2026-08-27T12:07:34.282Z",
+      "completedAt": "2026-08-27T12:07:34.336Z",
+      "revisionAttempts": 1
+    },
+    {
+      "id": "alternatives",
+      "definitionStepId": "alternatives",
+      "handler": "agent-run",
+      "label": "Alternatives",
+      "status": "completed",
+      "required": false,
+      "failurePolicy": "continue-with-warning",
+      "attempt": 1,
+      "maxAttempts": 2,
+      "dependsOn": [
+        "content-plan"
+      ],
+      "priority": "normal",
+      "config": {
+        "agentId": "alternatives-agent",
+        "targetSlug": "rippling",
+        "maxAutomaticRevisions": 1,
+        "expandFromContentPlan": false,
+        "expandKind": "none",
+        "stopAfterApproval": true,
+        "allowNormalizedFacts": false,
+        "optionalWhenBlocked": true,
+        "forceTransientFailOnce": false
+      },
+      "inputRefs": {},
+      "outputRefs": {
+        "draftId": "draft-deterministic-v1-alternatives-agent-rippling-2026-08-27T12-07-34-197Z",
+        "qaStatus": "pass",
+        "agentId": "alternatives-agent",
+        "target": "rippling"
+      },
+      "inputSnapshot": {
+        "researchFactIds": [
+          "fact-rippling-identity.shortDescription",
+          "fact-rippling-positioning.vendorClaim",
+          "fact-rippling-positioning.jobCluster",
+          "fact-rippling-pricing.model",
+          "fact-rippling-pricing.hasFreePlan",
+          "fact-rippling-pricing.hasFreeTrial",
+          "fact-rippling-pricing.startingPriceMonthly",
+          "fact-rippling-pricing.plans.platform",
+          "fact-rippling-pricing.plans.modules",
+          "fact-rippling-features.applicant-tracking",
+          "fact-rippling-features.career-site-job-boards",
+          "fact-rippling-features.interview-scheduling",
+          "fact-rippling-features.core-hris",
+          "fact-rippling-features.payroll-processing",
+          "fact-rippling-features.benefits-admin",
+          "fact-rippling-features.workforce-scheduling",
+          "fact-rippling-features.frontline-comms",
+          "fact-rippling-features.time-attendance",
+          "fact-rippling-features.gps-geofence-clockin",
+          "fact-rippling-features.sop-knowledge-base",
+          "fact-rippling-features.employee-training-paths",
+          "fact-rippling-features.lms-course-commerce",
+          "fact-rippling-features.hris-integrations",
+          "fact-rippling-features.analytics-reporting",
+          "fact-rippling-features.ai-assistance"
+        ],
+        "methodologySlug": "hr-editorial",
+        "methodologyVersion": "1.0.0",
+        "agentVersion": "1.0.0",
+        "contextBuiltAt": "2026-08-27T12:07:34.195Z"
+      },
+      "blockers": [],
+      "warnings": [],
+      "agentTaskId": "exec-alternatives-agent-rippling-1787832454175",
+      "draftId": "draft-deterministic-v1-alternatives-agent-rippling-2026-08-27T12-07-34-197Z",
+      "startedAt": "2026-08-27T12:07:34.175Z",
+      "completedAt": "2026-08-27T12:07:34.200Z",
+      "revisionAttempts": 0
+    },
+    {
+      "id": "comparison:bamboohr-vs-rippling",
+      "definitionStepId": "comparisons",
+      "handler": "agent-run",
+      "label": "Comparison bamboohr-vs-rippling",
+      "status": "completed",
+      "required": false,
+      "failurePolicy": "continue-with-warning",
+      "attempt": 1,
+      "maxAttempts": 2,
+      "dependsOn": [
+        "content-plan"
+      ],
+      "priority": "normal",
+      "config": {
+        "agentId": "comparison-agent",
+        "targetSlug": "bamboohr-vs-rippling",
+        "maxAutomaticRevisions": 1,
+        "expandFromContentPlan": true,
+        "expandKind": "comparisons",
+        "stopAfterApproval": true,
+        "allowNormalizedFacts": false,
+        "optionalWhenBlocked": true,
+        "forceTransientFailOnce": false
+      },
+      "expansionKey": "bamboohr-vs-rippling",
+      "inputRefs": {},
+      "outputRefs": {
+        "draftId": "draft-deterministic-v1-comparison-agent-bamboohr-vs-rippling-2026-08-27T12-07-34-220Z",
+        "qaStatus": "pass",
+        "agentId": "comparison-agent",
+        "target": "bamboohr-vs-rippling"
+      },
+      "inputSnapshot": {
+        "researchFactIds": [
+          "fact-bamboohr-identity.shortDescription",
+          "fact-bamboohr-positioning.vendorClaim",
+          "fact-bamboohr-positioning.jobCluster",
+          "fact-bamboohr-pricing.model",
+          "fact-bamboohr-pricing.hasFreePlan",
+          "fact-bamboohr-pricing.hasFreeTrial",
+          "fact-bamboohr-pricing.startingPriceMonthly",
+          "fact-bamboohr-pricing.plans.core",
+          "fact-bamboohr-pricing.plans.pro",
+          "fact-bamboohr-pricing.plans.elite",
+          "fact-bamboohr-pricing.plans.core-small-team",
+          "fact-bamboohr-features.applicant-tracking",
+          "fact-bamboohr-features.career-site-job-boards",
+          "fact-bamboohr-features.interview-scheduling",
+          "fact-bamboohr-features.core-hris",
+          "fact-bamboohr-features.payroll-processing",
+          "fact-bamboohr-features.benefits-admin",
+          "fact-bamboohr-features.workforce-scheduling",
+          "fact-bamboohr-features.frontline-comms",
+          "fact-bamboohr-features.time-attendance",
+          "fact-bamboohr-features.gps-geofence-clockin",
+          "fact-bamboohr-features.sop-knowledge-base",
+          "fact-bamboohr-features.employee-training-paths",
+          "fact-bamboohr-features.lms-course-commerce",
+          "fact-bamboohr-features.hris-integrations",
+          "fact-bamboohr-features.analytics-reporting",
+          "fact-bamboohr-features.ai-assistance",
+          "fact-rippling-identity.shortDescription",
+          "fact-rippling-positioning.vendorClaim",
+          "fact-rippling-positioning.jobCluster",
+          "fact-rippling-pricing.model",
+          "fact-rippling-pricing.hasFreePlan",
+          "fact-rippling-pricing.hasFreeTrial",
+          "fact-rippling-pricing.startingPriceMonthly",
+          "fact-rippling-pricing.plans.platform",
+          "fact-rippling-pricing.plans.modules",
+          "fact-rippling-features.applicant-tracking",
+          "fact-rippling-features.career-site-job-boards",
+          "fact-rippling-features.interview-scheduling",
+          "fact-rippling-features.core-hris",
+          "fact-rippling-features.payroll-processing",
+          "fact-rippling-features.benefits-admin",
+          "fact-rippling-features.workforce-scheduling",
+          "fact-rippling-features.frontline-comms",
+          "fact-rippling-features.time-attendance",
+          "fact-rippling-features.gps-geofence-clockin",
+          "fact-rippling-features.sop-knowledge-base",
+          "fact-rippling-features.employee-training-paths",
+          "fact-rippling-features.lms-course-commerce",
+          "fact-rippling-features.hris-integrations",
+          "fact-rippling-features.analytics-reporting",
+          "fact-rippling-features.ai-assistance"
+        ],
+        "methodologySlug": "hr-editorial",
+        "methodologyVersion": "1.0.0",
+        "agentVersion": "1.0.0",
+        "contextBuiltAt": "2026-08-27T12:07:34.219Z"
+      },
+      "blockers": [],
+      "warnings": [],
+      "agentTaskId": "exec-comparison-agent-bamboohr-vs-rippling-1787832454202",
+      "draftId": "draft-deterministic-v1-comparison-agent-bamboohr-vs-rippling-2026-08-27T12-07-34-220Z",
+      "startedAt": "2026-08-27T12:07:34.201Z",
+      "completedAt": "2026-08-27T12:07:34.225Z",
+      "revisionAttempts": 0
+    },
+    {
+      "id": "comparison:gusto-vs-rippling",
+      "definitionStepId": "comparisons",
+      "handler": "agent-run",
+      "label": "Comparison gusto-vs-rippling",
+      "status": "completed",
+      "required": false,
+      "failurePolicy": "continue-with-warning",
+      "attempt": 1,
+      "maxAttempts": 2,
+      "dependsOn": [
+        "content-plan"
+      ],
+      "priority": "normal",
+      "config": {
+        "agentId": "comparison-agent",
+        "targetSlug": "gusto-vs-rippling",
+        "maxAutomaticRevisions": 1,
+        "expandFromContentPlan": true,
+        "expandKind": "comparisons",
+        "stopAfterApproval": true,
+        "allowNormalizedFacts": false,
+        "optionalWhenBlocked": true,
+        "forceTransientFailOnce": false
+      },
+      "expansionKey": "gusto-vs-rippling",
+      "inputRefs": {},
+      "outputRefs": {
+        "draftId": "draft-deterministic-v1-comparison-agent-gusto-vs-rippling-2026-08-27T12-07-34-244Z",
+        "qaStatus": "pass",
+        "agentId": "comparison-agent",
+        "target": "gusto-vs-rippling"
+      },
+      "inputSnapshot": {
+        "researchFactIds": [
+          "fact-gusto-identity.shortDescription",
+          "fact-gusto-positioning.vendorClaim",
+          "fact-gusto-positioning.jobCluster",
+          "fact-gusto-pricing.model",
+          "fact-gusto-pricing.hasFreePlan",
+          "fact-gusto-pricing.hasFreeTrial",
+          "fact-gusto-pricing.startingPriceMonthly",
+          "fact-gusto-pricing.plans.simple",
+          "fact-gusto-pricing.plans.plus",
+          "fact-gusto-pricing.plans.premium",
+          "fact-gusto-pricing.plans.contractor-only",
+          "fact-gusto-features.applicant-tracking",
+          "fact-gusto-features.career-site-job-boards",
+          "fact-gusto-features.interview-scheduling",
+          "fact-gusto-features.core-hris",
+          "fact-gusto-features.payroll-processing",
+          "fact-gusto-features.benefits-admin",
+          "fact-gusto-features.workforce-scheduling",
+          "fact-gusto-features.frontline-comms",
+          "fact-gusto-features.time-attendance",
+          "fact-gusto-features.gps-geofence-clockin",
+          "fact-gusto-features.sop-knowledge-base",
+          "fact-gusto-features.employee-training-paths",
+          "fact-gusto-features.lms-course-commerce",
+          "fact-gusto-features.hris-integrations",
+          "fact-gusto-features.analytics-reporting",
+          "fact-gusto-features.ai-assistance",
+          "fact-rippling-identity.shortDescription",
+          "fact-rippling-positioning.vendorClaim",
+          "fact-rippling-positioning.jobCluster",
+          "fact-rippling-pricing.model",
+          "fact-rippling-pricing.hasFreePlan",
+          "fact-rippling-pricing.hasFreeTrial",
+          "fact-rippling-pricing.startingPriceMonthly",
+          "fact-rippling-pricing.plans.platform",
+          "fact-rippling-pricing.plans.modules",
+          "fact-rippling-features.applicant-tracking",
+          "fact-rippling-features.career-site-job-boards",
+          "fact-rippling-features.interview-scheduling",
+          "fact-rippling-features.core-hris",
+          "fact-rippling-features.payroll-processing",
+          "fact-rippling-features.benefits-admin",
+          "fact-rippling-features.workforce-scheduling",
+          "fact-rippling-features.frontline-comms",
+          "fact-rippling-features.time-attendance",
+          "fact-rippling-features.gps-geofence-clockin",
+          "fact-rippling-features.sop-knowledge-base",
+          "fact-rippling-features.employee-training-paths",
+          "fact-rippling-features.lms-course-commerce",
+          "fact-rippling-features.hris-integrations",
+          "fact-rippling-features.analytics-reporting",
+          "fact-rippling-features.ai-assistance"
+        ],
+        "methodologySlug": "hr-editorial",
+        "methodologyVersion": "1.0.0",
+        "agentVersion": "1.0.0",
+        "contextBuiltAt": "2026-08-27T12:07:34.243Z"
+      },
+      "blockers": [],
+      "warnings": [],
+      "agentTaskId": "exec-comparison-agent-gusto-vs-rippling-1787832454227",
+      "draftId": "draft-deterministic-v1-comparison-agent-gusto-vs-rippling-2026-08-27T12-07-34-244Z",
+      "startedAt": "2026-08-27T12:07:34.226Z",
+      "completedAt": "2026-08-27T12:07:34.249Z",
+      "revisionAttempts": 0
+    },
+    {
+      "id": "comparison:rippling-vs-workday",
+      "definitionStepId": "comparisons",
+      "handler": "agent-run",
+      "label": "Comparison rippling-vs-workday",
+      "status": "blocked",
+      "required": false,
+      "failurePolicy": "continue-with-warning",
+      "attempt": 1,
+      "maxAttempts": 2,
+      "dependsOn": [
+        "content-plan"
+      ],
+      "priority": "normal",
+      "config": {
+        "agentId": "comparison-agent",
+        "targetSlug": "rippling-vs-workday",
+        "maxAutomaticRevisions": 1,
+        "expandFromContentPlan": true,
+        "expandKind": "comparisons",
+        "stopAfterApproval": true,
+        "allowNormalizedFacts": false,
+        "optionalWhenBlocked": true,
+        "forceTransientFailOnce": false
+      },
+      "expansionKey": "rippling-vs-workday",
+      "inputRefs": {},
+      "outputRefs": {},
+      "blockers": [
+        "RELATIONSHIP_UNAPPROVED: Approved comparable relationship required"
+      ],
+      "warnings": [
+        "RELATIONSHIP_UNAPPROVED: Approved comparable relationship required"
+      ],
+      "startedAt": "2026-08-27T12:07:34.252Z",
+      "completedAt": "2026-08-27T12:07:34.281Z",
+      "revisionAttempts": 0
+    },
+    {
+      "id": "internal-links",
+      "definitionStepId": "internal-links",
+      "handler": "internal-link",
+      "label": "Internal Link Plan",
+      "status": "completed",
+      "required": false,
+      "failurePolicy": "continue-with-warning",
+      "attempt": 1,
+      "maxAttempts": 2,
+      "dependsOn": [
+        "software-review"
+      ],
+      "priority": "low",
+      "config": {
+        "agentId": "internal-link-agent",
+        "maxAutomaticRevisions": 1,
+        "expandFromContentPlan": false,
+        "expandKind": "none",
+        "stopAfterApproval": true,
+        "allowNormalizedFacts": false,
+        "optionalWhenBlocked": false,
+        "forceTransientFailOnce": false
+      },
+      "inputRefs": {},
+      "outputRefs": {
+        "draftId": "draft-deterministic-v1-internal-link-agent-rippling-2026-08-27T12-07-34-362Z",
+        "qaStatus": "pass",
+        "agentId": "internal-link-agent",
+        "target": "rippling"
+      },
+      "inputSnapshot": {
+        "researchFactIds": [
+          "fact-rippling-identity.shortDescription",
+          "fact-rippling-positioning.vendorClaim",
+          "fact-rippling-positioning.jobCluster",
+          "fact-rippling-pricing.model",
+          "fact-rippling-pricing.hasFreePlan",
+          "fact-rippling-pricing.hasFreeTrial",
+          "fact-rippling-pricing.startingPriceMonthly",
+          "fact-rippling-pricing.plans.platform",
+          "fact-rippling-pricing.plans.modules",
+          "fact-rippling-features.applicant-tracking",
+          "fact-rippling-features.career-site-job-boards",
+          "fact-rippling-features.interview-scheduling",
+          "fact-rippling-features.core-hris",
+          "fact-rippling-features.payroll-processing",
+          "fact-rippling-features.benefits-admin",
+          "fact-rippling-features.workforce-scheduling",
+          "fact-rippling-features.frontline-comms",
+          "fact-rippling-features.time-attendance",
+          "fact-rippling-features.gps-geofence-clockin",
+          "fact-rippling-features.sop-knowledge-base",
+          "fact-rippling-features.employee-training-paths",
+          "fact-rippling-features.lms-course-commerce",
+          "fact-rippling-features.hris-integrations",
+          "fact-rippling-features.analytics-reporting",
+          "fact-rippling-features.ai-assistance"
+        ],
+        "methodologySlug": "hr-editorial",
+        "methodologyVersion": "1.0.0",
+        "agentVersion": "1.0.0",
+        "contextBuiltAt": "2026-08-27T12:07:34.361Z"
+      },
+      "blockers": [],
+      "warnings": [],
+      "agentTaskId": "exec-internal-link-agent-rippling-1787832454341",
+      "draftId": "draft-deterministic-v1-internal-link-agent-rippling-2026-08-27T12-07-34-362Z",
+      "startedAt": "2026-08-27T12:07:34.340Z",
+      "completedAt": "2026-08-27T12:07:34.365Z",
+      "revisionAttempts": 0
+    },
+    {
+      "id": "finder-readiness",
+      "definitionStepId": "finder-readiness",
+      "handler": "update-recommendation-readiness",
+      "label": "Finder readiness",
+      "status": "completed",
+      "required": false,
+      "failurePolicy": "continue",
+      "attempt": 1,
+      "maxAttempts": 2,
+      "dependsOn": [
+        "content-plan"
+      ],
+      "priority": "low",
+      "config": {
+        "maxAutomaticRevisions": 1,
+        "expandFromContentPlan": false,
+        "expandKind": "none",
+        "stopAfterApproval": true,
+        "allowNormalizedFacts": false,
+        "optionalWhenBlocked": false,
+        "forceTransientFailOnce": false
+      },
+      "inputRefs": {},
+      "outputRefs": {
+        "finderReadiness": "checked"
+      },
+      "blockers": [],
+      "warnings": [],
+      "startedAt": "2026-08-27T12:07:34.337Z",
+      "completedAt": "2026-08-27T12:07:34.338Z",
+      "revisionAttempts": 0
+    },
+    {
+      "id": "editorial-approval",
+      "definitionStepId": "editorial-approval",
+      "handler": "approval-check",
+      "label": "Editorial approval",
+      "status": "completed",
+      "required": true,
+      "failurePolicy": "manual-review",
+      "attempt": 2,
+      "maxAttempts": 2,
+      "dependsOn": [
+        "software-review"
+      ],
+      "priority": "critical",
+      "config": {
+        "approvalType": "editorial",
+        "maxAutomaticRevisions": 1,
+        "expandFromContentPlan": false,
+        "expandKind": "none",
+        "stopAfterApproval": true,
+        "allowNormalizedFacts": false,
+        "optionalWhenBlocked": false,
+        "forceTransientFailOnce": false
+      },
+      "inputRefs": {},
+      "outputRefs": {
+        "approvalId": "appr-wf-software-onboarding-content-rippling-1787832452370-software-review",
+        "draftId": "draft-deterministic-v1-software-review-agent-rippling-2026-08-27T12-07-34-164Z",
+        "approvalIds": "appr-wf-software-onboarding-content-rippling-1787832452370-software-review"
+      },
+      "blockers": [],
+      "warnings": [
+        "Approval received — resuming",
+        "5 optional draft(s) may still need separate editorial review"
+      ],
+      "approvalId": "appr-wf-software-onboarding-content-rippling-1787832452370-software-review",
+      "startedAt": "2026-08-27T12:08:31.379Z",
+      "completedAt": "2026-08-27T12:08:31.650Z",
+      "revisionAttempts": 0
+    },
+    {
+      "id": "pre-publish-validation",
+      "definitionStepId": "pre-publish-validation",
+      "handler": "pre-publish-validation",
+      "label": "Pre-publish validation",
+      "status": "completed",
+      "required": true,
+      "failurePolicy": "block-workflow",
+      "attempt": 1,
+      "maxAttempts": 2,
+      "dependsOn": [
+        "editorial-approval"
+      ],
+      "priority": "critical",
+      "config": {
+        "maxAutomaticRevisions": 1,
+        "expandFromContentPlan": false,
+        "expandKind": "none",
+        "stopAfterApproval": true,
+        "allowNormalizedFacts": false,
+        "optionalWhenBlocked": false,
+        "forceTransientFailOnce": false
+      },
+      "inputRefs": {},
+      "outputRefs": {
+        "publishState": "READY_TO_PUBLISH"
+      },
+      "blockers": [],
+      "warnings": [
+        "stopAfterApproval: workflow will not publish automatically"
+      ],
+      "startedAt": "2026-08-27T12:08:31.652Z",
+      "completedAt": "2026-08-27T12:08:34.373Z",
+      "revisionAttempts": 0
+    }
+  ],
+  "history": [
+    {
+      "at": "2026-08-27T12:07:33.626Z",
+      "event": "workflow_created",
+      "message": "Created software-onboarding-content:v1.0.0"
+    },
+    {
+      "at": "2026-08-27T12:07:33.628Z",
+      "event": "workflow_started",
+      "message": "Workflow execution started"
+    },
+    {
+      "at": "2026-08-27T12:07:33.629Z",
+      "event": "workflow_step_started",
+      "stepId": "software-onboarding",
+      "message": "Started Software onboarding"
+    },
+    {
+      "at": "2026-08-27T12:07:33.782Z",
+      "event": "workflow_step_completed",
+      "stepId": "software-onboarding",
+      "message": "Reused onboarding run onboard-rippling-1787480421481 (ready)"
+    },
+    {
+      "at": "2026-08-27T12:07:33.783Z",
+      "event": "workflow_step_started",
+      "stepId": "content-plan",
+      "message": "Started Content plan"
+    },
+    {
+      "at": "2026-08-27T12:07:33.959Z",
+      "event": "workflow_step_completed",
+      "stepId": "content-plan",
+      "message": "Content plan from onboarding onboard-rippling-1787480421481 (9 candidates)"
+    },
+    {
+      "at": "2026-08-27T12:07:33.961Z",
+      "event": "workflow_step_started",
+      "stepId": "software-review",
+      "message": "Started Software Review"
+    },
+    {
+      "at": "2026-08-27T12:07:34.173Z",
+      "event": "workflow_step_completed",
+      "stepId": "software-review",
+      "message": "Agent software-review-agent → draft draft-deterministic-v1-software-review-agent-rippling-2026-08-27T12-07-34-164Z (qa=pass)"
+    },
+    {
+      "at": "2026-08-27T12:07:34.174Z",
+      "event": "workflow_step_started",
+      "stepId": "alternatives",
+      "message": "Started Alternatives"
+    },
+    {
+      "at": "2026-08-27T12:07:34.200Z",
+      "event": "workflow_step_completed",
+      "stepId": "alternatives",
+      "message": "Agent alternatives-agent → draft draft-deterministic-v1-alternatives-agent-rippling-2026-08-27T12-07-34-197Z (qa=pass)"
+    },
+    {
+      "at": "2026-08-27T12:07:34.201Z",
+      "event": "workflow_step_started",
+      "stepId": "comparison:bamboohr-vs-rippling",
+      "message": "Started Comparison bamboohr-vs-rippling"
+    },
+    {
+      "at": "2026-08-27T12:07:34.225Z",
+      "event": "workflow_step_completed",
+      "stepId": "comparison:bamboohr-vs-rippling",
+      "message": "Agent comparison-agent → draft draft-deterministic-v1-comparison-agent-bamboohr-vs-rippling-2026-08-27T12-07-34-220Z (qa=pass)"
+    },
+    {
+      "at": "2026-08-27T12:07:34.226Z",
+      "event": "workflow_step_started",
+      "stepId": "comparison:gusto-vs-rippling",
+      "message": "Started Comparison gusto-vs-rippling"
+    },
+    {
+      "at": "2026-08-27T12:07:34.249Z",
+      "event": "workflow_step_completed",
+      "stepId": "comparison:gusto-vs-rippling",
+      "message": "Agent comparison-agent → draft draft-deterministic-v1-comparison-agent-gusto-vs-rippling-2026-08-27T12-07-34-244Z (qa=pass)"
+    },
+    {
+      "at": "2026-08-27T12:07:34.252Z",
+      "event": "workflow_step_started",
+      "stepId": "comparison:rippling-vs-workday",
+      "message": "Started Comparison rippling-vs-workday"
+    },
+    {
+      "at": "2026-08-27T12:07:34.281Z",
+      "event": "workflow_step_completed",
+      "stepId": "comparison:rippling-vs-workday",
+      "message": "Agent blocked (optional): RELATIONSHIP_UNAPPROVED: Approved comparable relationship required"
+    },
+    {
+      "at": "2026-08-27T12:07:34.282Z",
+      "event": "workflow_step_started",
+      "stepId": "pricing-page",
+      "message": "Started Pricing Page"
+    },
+    {
+      "at": "2026-08-27T12:07:34.336Z",
+      "event": "workflow_step_completed",
+      "stepId": "pricing-page",
+      "message": "QA fail after one automatic revision → review-required"
+    },
+    {
+      "at": "2026-08-27T12:07:34.337Z",
+      "event": "workflow_step_started",
+      "stepId": "finder-readiness",
+      "message": "Started Finder readiness"
+    },
+    {
+      "at": "2026-08-27T12:07:34.338Z",
+      "event": "workflow_step_completed",
+      "stepId": "finder-readiness",
+      "message": "Finder readiness noted for rippling"
+    },
+    {
+      "at": "2026-08-27T12:07:34.340Z",
+      "event": "workflow_step_started",
+      "stepId": "internal-links",
+      "message": "Started Internal Link Plan"
+    },
+    {
+      "at": "2026-08-27T12:07:34.365Z",
+      "event": "workflow_step_completed",
+      "stepId": "internal-links",
+      "message": "Agent internal-link-agent → draft draft-deterministic-v1-internal-link-agent-rippling-2026-08-27T12-07-34-362Z (qa=pass)"
+    },
+    {
+      "at": "2026-08-27T12:07:34.367Z",
+      "event": "workflow_step_started",
+      "stepId": "editorial-approval",
+      "message": "Started Editorial approval"
+    },
+    {
+      "at": "2026-08-27T12:07:34.491Z",
+      "event": "workflow_step_completed",
+      "stepId": "editorial-approval",
+      "message": "WAITING FOR EDITORIAL APPROVAL (appr-wf-software-onboarding-content-rippling-1787832452370-software-review)"
+    },
+    {
+      "at": "2026-08-27T12:07:34.493Z",
+      "event": "workflow_blocked",
+      "message": "WAITING FOR EDITORIAL APPROVAL"
+    },
+    {
+      "at": "2026-08-27T12:08:31.372Z",
+      "event": "workflow_resumed",
+      "message": "Workflow resumed"
+    },
+    {
+      "at": "2026-08-27T12:08:31.377Z",
+      "event": "workflow_started",
+      "message": "Workflow execution started"
+    },
+    {
+      "at": "2026-08-27T12:08:31.379Z",
+      "event": "workflow_step_started",
+      "stepId": "editorial-approval",
+      "message": "Started Editorial approval"
+    },
+    {
+      "at": "2026-08-27T12:08:31.650Z",
+      "event": "workflow_step_completed",
+      "stepId": "editorial-approval",
+      "message": "Required editorial approvals satisfied"
+    },
+    {
+      "at": "2026-08-27T12:08:31.652Z",
+      "event": "workflow_step_started",
+      "stepId": "pre-publish-validation",
+      "message": "Started Pre-publish validation"
+    },
+    {
+      "at": "2026-08-27T12:08:34.373Z",
+      "event": "workflow_step_completed",
+      "stepId": "pre-publish-validation",
+      "message": "Pre-publish validation passed — READY TO PUBLISH (manual)"
+    },
+    {
+      "at": "2026-08-27T12:08:34.375Z",
+      "event": "workflow_completed",
+      "message": "Workflow completed-with-warnings"
+    }
+  ],
+  "options": {
+    "generateReview": true,
+    "generatePricing": true,
+    "generateAlternatives": true,
+    "generateComparisons": true,
+    "runInternalLinks": true,
+    "stopAfterApproval": true,
+    "allowNormalizedFacts": false,
+    "dryRun": false,
+    "maxComparisons": 3,
+    "skipOnboarding": false
+  },
+  "warnings": [
+    "comparison:rippling-vs-workday blocked: RELATIONSHIP_UNAPPROVED: Approved comparable relationship required",
+    "pricing-page: optional review-required did not block the workflow"
+  ],
+  "createdAt": "2026-08-27T12:07:33.626Z",
+  "updatedAt": "2026-08-27T12:08:34.375Z"
+}

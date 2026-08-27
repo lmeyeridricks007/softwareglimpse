@@ -613,6 +613,19 @@ export const affiliateInventoryRows: InventoryRow[] = [
     notes: "SOP and employee training documentation",
   },
   {
+    sourceId: "aff-rippling",
+    rawName: "Rippling",
+    status: "active",
+    website: "https://www.rippling.com",
+    affiliateUrl: "https://try.rippling.com/o79elvy346nf",
+    network: "other",
+    categoryHint: "hr",
+    entityTypeHint: "software",
+    aliases: ["Rippling HR"],
+    notes:
+      "Newly approved affiliate — unified HR/payroll/IT people platform; product already editorially onboarded",
+  },
+  {
     sourceId: "aff-turbotic",
     rawName: "Turbotic",
     status: "active",
