@@ -23,4 +23,8 @@ export const aiAffiliateDeepenProductGuides = [
     variant: "affiliate",
     stamp: STAMP,
   }),
+  buildProductWhatIsDeepenGuide("hynote", {
+    variant: "affiliate",
+    stamp: STAMP,
+  }),
 ];

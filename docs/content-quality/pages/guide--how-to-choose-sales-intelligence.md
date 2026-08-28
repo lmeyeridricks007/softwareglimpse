@@ -5,21 +5,21 @@
 | Route | `/guides/how-to-choose-sales-intelligence/` |
 | Page type | guide |
 | Status | EXCELLENT |
-| Overall score | **93/100** |
+| Overall score | **95/100** |
 | Quality band | **EXCELLENT** |
 | Improvement priority | **CQ-P3** |
 | Page importance | supporting |
 | Journey importance | high |
 | Agent | GuideQualityAgent |
 | Profile | GuideQualityProfile |
-| Evaluated | 2026-08-18T12:41:39.769Z |
+| Evaluated | 2026-08-28T06:19:44.107Z |
 | Evaluator | v1.0.0 |
 
 > Evaluation only — does not rewrite, publish, or mutate content.
 
 ## Executive assessment
 
-This guide page is in good editorial shape overall (93/100), with remaining gaps listed below.
+This guide page is in good editorial shape overall (95/100), with remaining gaps listed below.
 
 
 ## Scorecard
@@ -28,11 +28,11 @@ This guide page is in good editorial shape overall (93/100), with remaining gaps
 | --- | ---: | ---: | --- |
 | User Intent Fit | 5/5 | 1.2 | Page intent, title/H1, and profile expectations align. |
 | Content Completeness | 5/5 | 1.1 | All profile-expected sections are present. |
-| Subject Depth | 4/5 | 1.2 | Found 4 depth signal(s); 4 high-value categories covered. |
+| Subject Depth | 4/5 | 1.2 | Found 6 depth signal(s); 6 high-value categories covered. |
 | Original Value | 5/5 | 1 | Original value signals: SoftwareGlimpse decision framework; buyer checklist; interactive tool handoff; original teaching |
 | Evidence / Source Quality | 3/5 | 0.9 | Claims appear backed by primary/official sources and/or fact refs. |
 | Research Freshness | 5/5 | 0.7 | Research/pricing freshness within policy. |
-| Decision Support | 4/5 | 0.8 | Decision support present: selection framework; checklist; tool handoff. |
+| Decision Support | 5/5 | 0.8 | Decision support present: selection framework; checklist; tool handoff; best-fit scenarios; scorecard. |
 | Actionability | 5/5 | 1 | Actionable outs: open decision tool; use checklist; follow next step; follow step-by-step process. |
 | Structure / Readability | 5/5 | 0.8 | Clear opening, headings, and scannable structure. |
 | Visual / Media Support | 5/5 | 0.8 | Teaching visuals present (3). |
@@ -46,10 +46,10 @@ This guide page is in good editorial shape overall (93/100), with remaining gaps
 
 - User Intent Fit: Page intent, title/H1, and profile expectations align.
 - Content Completeness: All profile-expected sections are present.
-- Subject Depth: Found 4 depth signal(s); 4 high-value categories covered.
+- Subject Depth: Found 6 depth signal(s); 6 high-value categories covered.
 - Original Value: Original value signals: SoftwareGlimpse decision framework; buyer checklist; interactive tool handoff; original teaching visuals.
 - Research Freshness: Research/pricing freshness within policy.
-- Decision Support: Decision support present: selection framework; checklist; tool handoff.
+- Decision Support: Decision support present: selection framework; checklist; tool handoff; best-fit scenarios; scorecard.
 - Actionability: Actionable outs: open decision tool; use checklist; follow next step; follow step-by-step process.
 - Structure / Readability: Clear opening, headings, and scannable structure.
 - Visual / Media Support: Teaching visuals present (3).

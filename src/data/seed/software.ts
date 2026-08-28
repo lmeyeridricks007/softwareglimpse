@@ -6899,6 +6899,32 @@ const softwareSeedRaw: SoftwareInput[] = [
       researchStatus: "complete",
     },
   }),
+
+  
+  soft({
+    id: "soft-hynote",
+    slug: "hynote",
+    name: "HyNote",
+    company: "Turing Intelligence LLC",
+    website: "https://hynote.ai",
+    logo: { src: "/brands/hynote.png", alt: "HyNote logo" },
+    shortDescription:
+      "AI note taker — Free $0; Pro from $6.66/mo annual ($79.99/yr); Plus $10.83; Unlimited $15.83; Teams $15/seat.",
+    aliases: ["HyNote AI","Hy Note","HyNote.ai"],
+    primaryCategorySlug: "ai",
+    subcategorySlugs: [],
+    useCaseSlugs: ["ai-meeting"],
+    teamTypeSlugs: ["operations","sales","marketing"],
+    businessSizeSlugs: ["solo","small-business","mid-market"],
+    competitorSlugs: ["fireflies","otter-ai"],
+    alternativeSlugs: ["fireflies","otter-ai"],
+    comparableSlugs: ["fireflies","otter-ai"],
+    metadata: {
+      status: "published",
+      publishedAt: "2026-08-28T00:00:00.000Z",
+      researchStatus: "complete",
+    },
+  }),
 ];
 
 export const softwareSeed: SoftwareInput[] =

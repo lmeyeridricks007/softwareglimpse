@@ -5,21 +5,21 @@
 | Route | `/software/outreach/` |
 | Page type | product-review |
 | Status | EXCELLENT |
-| Overall score | **93/100** |
+| Overall score | **94/100** |
 | Quality band | **EXCELLENT** |
 | Improvement priority | **CQ-P3** |
 | Page importance | high-commercial |
 | Journey importance | high |
 | Agent | ProductReviewQualityAgent |
 | Profile | ProductReviewQualityProfile |
-| Evaluated | 2026-08-18T12:41:35.268Z |
+| Evaluated | 2026-08-28T06:20:04.930Z |
 | Evaluator | v1.0.0 |
 
 > Evaluation only — does not rewrite, publish, or mutate content.
 
 ## Executive assessment
 
-This product-review page is in good editorial shape overall (93/100), with remaining gaps listed below.
+This product-review page is in good editorial shape overall (94/100), with remaining gaps listed below.
 
 
 ## Scorecard
@@ -29,7 +29,7 @@ This product-review page is in good editorial shape overall (93/100), with remai
 | User Intent Fit | 5/5 | 1.2 | Page intent, title/H1, and profile expectations align. |
 | Content Completeness | 5/5 | 1.1 | All profile-expected sections are present. |
 | Subject Depth | 4/5 | 1 | Found 5 depth signal(s); 4 high-value categories covered. |
-| Original Value | 3/5 | 1.1 | Original value signals: SoftwareGlimpse assessment; best-for / not-for framing. |
+| Original Value | 4/5 | 1.1 | Original value signals: SoftwareGlimpse assessment; best-for / not-for framing; stated limitations. |
 | Evidence / Source Quality | 5/5 | 1.3 | Claims appear backed by primary/official sources and/or fact refs. |
 | Research Freshness | 5/5 | 1 | Research/pricing freshness within policy. |
 | Decision Support | 5/5 | 1.2 | Decision support present: criterion assessments; best-for scenarios; alternatives / comparisons; when to look elsewhere. |
@@ -47,6 +47,7 @@ This product-review page is in good editorial shape overall (93/100), with remai
 - User Intent Fit: Page intent, title/H1, and profile expectations align.
 - Content Completeness: All profile-expected sections are present.
 - Subject Depth: Found 5 depth signal(s); 4 high-value categories covered.
+- Original Value: Original value signals: SoftwareGlimpse assessment; best-for / not-for framing; stated limitations.
 - Evidence / Source Quality: Claims appear backed by primary/official sources and/or fact refs.
 - Research Freshness: Research/pricing freshness within policy.
 - Decision Support: Decision support present: criterion assessments; best-for scenarios; alternatives / comparisons; when to look elsewhere.

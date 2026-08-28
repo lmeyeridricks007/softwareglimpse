@@ -5,21 +5,21 @@
 | Route | `/software/dynamics-365/` |
 | Page type | product-review |
 | Status | EXCELLENT |
-| Overall score | **91/100** |
+| Overall score | **95/100** |
 | Quality band | **EXCELLENT** |
 | Improvement priority | **CQ-P3** |
 | Page importance | high-commercial |
 | Journey importance | high |
 | Agent | ProductReviewQualityAgent |
 | Profile | ProductReviewQualityProfile |
-| Evaluated | 2026-08-18T12:41:35.268Z |
+| Evaluated | 2026-08-28T06:20:04.930Z |
 | Evaluator | v1.0.0 |
 
 > Evaluation only — does not rewrite, publish, or mutate content.
 
 ## Executive assessment
 
-This product-review page is in good editorial shape overall (91/100), with remaining gaps listed below.
+This product-review page is in good editorial shape overall (95/100), with remaining gaps listed below.
 
 
 ## Scorecard
@@ -29,7 +29,7 @@ This product-review page is in good editorial shape overall (91/100), with remai
 | User Intent Fit | 5/5 | 1.2 | Page intent, title/H1, and profile expectations align. |
 | Content Completeness | 5/5 | 1.1 | All profile-expected sections are present. |
 | Subject Depth | 4/5 | 1 | Found 5 depth signal(s); 4 high-value categories covered. |
-| Original Value | 3/5 | 1.1 | Original value signals: SoftwareGlimpse assessment; best-for / not-for framing. |
+| Original Value | 4/5 | 1.1 | Original value signals: SoftwareGlimpse assessment; best-for / not-for framing; stated limitations. |
 | Evidence / Source Quality | 5/5 | 1.3 | Claims appear backed by primary/official sources and/or fact refs. |
 | Research Freshness | 5/5 | 1 | Research/pricing freshness within policy. |
 | Decision Support | 5/5 | 1.2 | Decision support present: criterion assessments; best-for scenarios; alternatives / comparisons; when to look elsewhere. |
@@ -37,7 +37,7 @@ This product-review page is in good editorial shape overall (91/100), with remai
 | Structure / Readability | 5/5 | 0.8 | Clear opening, headings, and scannable structure. |
 | Visual / Media Support | 5/5 | 0.5 | Teaching visuals present (22). |
 | Internal Linking | 4/5 | 0.7 | Parent/hub and next-step linking present; supporting links evaluated for quality. |
-| Journey / Next Step | 3/5 | 0.8 | Next step fits journey stage (research). |
+| Journey / Next Step | 5/5 | 0.8 | Next step fits journey stage (research). |
 | Trust / Transparency | 5/5 | 1 | Commercial trust signals present (disclosure, methodology/ownership as applicable). |
 | Content Differentiation | 5/5 | 0.7 | Page has a distinct purpose from related siblings. |
 | Page-Type Specific Quality | 5/5 | 1.2 | All ProductReviewQualityProfile checklist items passed. |
@@ -47,6 +47,7 @@ This product-review page is in good editorial shape overall (91/100), with remai
 - User Intent Fit: Page intent, title/H1, and profile expectations align.
 - Content Completeness: All profile-expected sections are present.
 - Subject Depth: Found 5 depth signal(s); 4 high-value categories covered.
+- Original Value: Original value signals: SoftwareGlimpse assessment; best-for / not-for framing; stated limitations.
 - Evidence / Source Quality: Claims appear backed by primary/official sources and/or fact refs.
 - Research Freshness: Research/pricing freshness within policy.
 - Decision Support: Decision support present: criterion assessments; best-for scenarios; alternatives / comparisons; when to look elsewhere.
@@ -54,6 +55,7 @@ This product-review page is in good editorial shape overall (91/100), with remai
 - Structure / Readability: Clear opening, headings, and scannable structure.
 - Visual / Media Support: Teaching visuals present (22).
 - Internal Linking: Parent/hub and next-step linking present; supporting links evaluated for quality.
+- Journey / Next Step: Next step fits journey stage (research).
 - Trust / Transparency: Commercial trust signals present (disclosure, methodology/ownership as applicable).
 - Content Differentiation: Page has a distinct purpose from related siblings.
 - Page-Type Specific Quality: All ProductReviewQualityProfile checklist items passed.

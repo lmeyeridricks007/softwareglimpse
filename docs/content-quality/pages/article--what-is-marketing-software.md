@@ -4,22 +4,22 @@
 | --- | --- |
 | Route | `/guides/what-is-marketing-software/` |
 | Page type | article |
-| Status | STRONG |
-| Overall score | **84/100** |
-| Quality band | **STRONG** |
-| Improvement priority | **CQ-P2** |
+| Status | EXCELLENT |
+| Overall score | **94/100** |
+| Quality band | **EXCELLENT** |
+| Improvement priority | **CQ-P3** |
 | Page importance | long-tail |
 | Journey importance | low |
 | Agent | ArticleQualityAgent |
 | Profile | ArticleQualityProfile |
-| Evaluated | 2026-08-18T12:41:39.769Z |
+| Evaluated | 2026-08-28T06:19:44.107Z |
 | Evaluator | v1.0.0 |
 
 > Evaluation only — does not rewrite, publish, or mutate content.
 
 ## Executive assessment
 
-This article page is in good editorial shape overall (84/100), with remaining gaps listed below.
+This article page is in good editorial shape overall (94/100), with remaining gaps listed below.
 
 
 ## Scorecard
@@ -27,34 +27,36 @@ This article page is in good editorial shape overall (84/100), with remaining ga
 | Dimension | Score | Weight | Notes |
 | --- | ---: | ---: | --- |
 | User Intent Fit | 5/5 | 1.2 | Page intent, title/H1, and profile expectations align. |
-| Content Completeness | 4/5 | 1.1 | Missing: examples |
-| Subject Depth | 3/5 | 1 | Found 2 depth signal(s); 2 high-value categories covered. |
-| Original Value | 4/5 | 1 | Original value signals: SoftwareGlimpse decision framework; buyer checklist; original teaching visuals. |
-| Evidence / Source Quality | 3/5 | 0.6 | No heavy evidence attached — acceptable only for general guidance. |
+| Content Completeness | 5/5 | 1.1 | All profile-expected sections are present. |
+| Subject Depth | 4/5 | 1 | Found 4 depth signal(s); 4 high-value categories covered. |
+| Original Value | 5/5 | 1 | Original value signals: SoftwareGlimpse decision framework; buyer checklist; interactive tool handoff; original teaching |
+| Evidence / Source Quality | 3/5 | 0.6 | Claims appear backed by primary/official sources and/or fact refs. |
 | Research Freshness | 5/5 | 0.7 | Research/pricing freshness within policy. |
-| Decision Support | 3/5 | 0.5 | Decision support present: selection framework; checklist. |
-| Actionability | 4/5 | 0.8 | Actionable outs: use checklist; follow next step; follow step-by-step process. |
+| Decision Support | 4/5 | 0.5 | Decision support present: selection framework; checklist; tool handoff. |
+| Actionability | 5/5 | 0.8 | Actionable outs: open decision tool; use checklist; follow next step; follow step-by-step process. |
 | Structure / Readability | 5/5 | 0.8 | Clear opening, headings, and scannable structure. |
 | Visual / Media Support | 5/5 | 0.4 | Teaching visuals present (3). |
 | Internal Linking | 5/5 | 0.7 | Parent/hub and next-step linking present; supporting links evaluated for quality. |
 | Journey / Next Step | 5/5 | 0.8 | Next step fits journey stage (learn). |
 | Trust / Transparency | 3/5 | 0.6 | Adequate trust/transparency for page type. |
 | Content Differentiation | 5/5 | 0.7 | Page has a distinct purpose from related siblings. |
-| Page-Type Specific Quality | 4/5 | 1.2 | Failed: concrete-example |
+| Page-Type Specific Quality | 5/5 | 1.2 | All ArticleQualityProfile checklist items passed. |
 
 ## What is strong
 
 - User Intent Fit: Page intent, title/H1, and profile expectations align.
-- Content Completeness: Missing 1 expected section(s) for article.
-- Original Value: Original value signals: SoftwareGlimpse decision framework; buyer checklist; original teaching visuals.
+- Content Completeness: All profile-expected sections are present.
+- Subject Depth: Found 4 depth signal(s); 4 high-value categories covered.
+- Original Value: Original value signals: SoftwareGlimpse decision framework; buyer checklist; interactive tool handoff; original teaching visuals.
 - Research Freshness: Research/pricing freshness within policy.
-- Actionability: Actionable outs: use checklist; follow next step; follow step-by-step process.
+- Decision Support: Decision support present: selection framework; checklist; tool handoff.
+- Actionability: Actionable outs: open decision tool; use checklist; follow next step; follow step-by-step process.
 - Structure / Readability: Clear opening, headings, and scannable structure.
 - Visual / Media Support: Teaching visuals present (3).
 - Internal Linking: Parent/hub and next-step linking present; supporting links evaluated for quality.
 - Journey / Next Step: Next step fits journey stage (learn).
 - Content Differentiation: Page has a distinct purpose from related siblings.
-- Page-Type Specific Quality: 1 ArticleQualityProfile checklist item(s) failed.
+- Page-Type Specific Quality: All ArticleQualityProfile checklist items passed.
 
 ## Critical gaps
 
@@ -62,9 +64,7 @@ _None flagged._
 
 ## Improvement opportunities
 
-- Add expected section “examples” for Supporting article.
-- Add concrete workflows, decision criteria, limitations, or edge cases — not more word count.
-- Satisfy page-type checklist item “concrete-example”.
+_None flagged._
 
 ## Missing evidence
 
@@ -76,7 +76,7 @@ _None flagged._
 
 ## Missing tools/resources
 
-- Satisfy page-type checklist item “concrete-example”.
+_None flagged._
 
 ## Internal-linking issues
 
@@ -92,6 +92,6 @@ _No critical freshness issues flagged._
 
 ## Suggested next step
 
-Add expected section “examples” for Supporting article.
+Maintain current quality; re-evaluate after research refresh.
 
-Priority: **CQ-P2** (long-tail × low journey).
+Priority: **CQ-P3** (long-tail × low journey).

@@ -87,6 +87,25 @@ export const AI_FEATURES = [
       "workflow-automation",
     ];
 
+/** PricingPlan.limits must be a string-keyed record (not a string[]). */
+export function coercePlanLimits(limits) {
+  if (!limits) return undefined;
+  if (!Array.isArray(limits)) return limits;
+  const entries = limits
+    .map((item, index) => {
+      if (
+        typeof item === "string" ||
+        typeof item === "number" ||
+        typeof item === "boolean"
+      ) {
+        return [`note${index + 1}`, item];
+      }
+      return null;
+    })
+    .filter(Boolean);
+  return entries.length ? Object.fromEntries(entries) : undefined;
+}
+
 export function contactSalesPlan(slug, name, extra = {}) {
   return {
     id: `plan-${slug}`,
@@ -99,7 +118,7 @@ export function contactSalesPlan(slug, name, extra = {}) {
     highlighted: Boolean(extra.highlighted),
     rules: [],
     ...(extra.description ? { description: extra.description } : {}),
-    ...(extra.limits ? { limits: extra.limits } : {}),
+    ...(extra.limits ? { limits: coercePlanLimits(extra.limits) } : {}),
   };
 }
 
@@ -122,7 +141,7 @@ export function freePlan(slug = "free", name = "Free", extra = {}) {
       },
     ],
     ...(extra.description ? { description: extra.description } : {}),
-    ...(extra.limits ? { limits: extra.limits } : {}),
+    ...(extra.limits ? { limits: coercePlanLimits(extra.limits) } : {}),
   };
 }
 
@@ -149,7 +168,7 @@ export function planPerSeatAnnual(slug, name, monthlyPerSeat, extra = {}) {
       },
     ],
     ...(extra.description ? { description: extra.description } : {}),
-    ...(extra.limits ? { limits: extra.limits } : {}),
+    ...(extra.limits ? { limits: coercePlanLimits(extra.limits) } : {}),
   };
 }
 
@@ -176,7 +195,7 @@ export function planPerSeatMonthly(slug, name, monthlyPerSeat, extra = {}) {
       },
     ],
     ...(extra.description ? { description: extra.description } : {}),
-    ...(extra.limits ? { limits: extra.limits } : {}),
+    ...(extra.limits ? { limits: coercePlanLimits(extra.limits) } : {}),
   };
 }
 
@@ -201,7 +220,7 @@ export function planFlatAnnual(slug, name, monthly, extra = {}) {
       },
     ],
     ...(extra.description ? { description: extra.description } : {}),
-    ...(extra.limits ? { limits: extra.limits } : {}),
+    ...(extra.limits ? { limits: coercePlanLimits(extra.limits) } : {}),
   };
 }
 
@@ -259,7 +278,7 @@ export function planFlatMonthly(slug, name, monthly, extra = {}) {
       },
     ],
     ...(extra.description ? { description: extra.description } : {}),
-    ...(extra.limits ? { limits: extra.limits } : {}),
+    ...(extra.limits ? { limits: coercePlanLimits(extra.limits) } : {}),
   };
 }
 

@@ -290,6 +290,18 @@ export function normalizePricingInput(raw: unknown): unknown {
     }
 
     plan.rules = rules;
+    // Research onboard packs sometimes store limits as string[]; schema wants a record.
+    if (Array.isArray(plan.limits)) {
+      const entries = (plan.limits as unknown[])
+        .map((item, index) => {
+          if (typeof item === "string" || typeof item === "number" || typeof item === "boolean") {
+            return [`note${index + 1}`, item] as const;
+          }
+          return null;
+        })
+        .filter((entry): entry is readonly [string, string | number | boolean] => entry != null);
+      plan.limits = entries.length > 0 ? Object.fromEntries(entries) : undefined;
+    }
     delete plan.amountPerSeat;
     delete plan.amount;
     delete plan.currency;

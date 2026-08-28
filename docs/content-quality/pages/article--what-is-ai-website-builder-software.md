@@ -1,0 +1,95 @@
+# Content Quality Assessment
+
+| Field | Value |
+| --- | --- |
+| Route | `/guides/what-is-ai-website-builder-software/` |
+| Page type | article |
+| Status | STRONG |
+| Overall score | **87/100** |
+| Quality band | **STRONG** |
+| Improvement priority | **CQ-P3** |
+| Page importance | long-tail |
+| Journey importance | low |
+| Agent | ArticleQualityAgent |
+| Profile | ArticleQualityProfile |
+| Evaluated | 2026-08-28T06:19:44.107Z |
+| Evaluator | v1.0.0 |
+
+> Evaluation only — does not rewrite, publish, or mutate content.
+
+## Executive assessment
+
+This article page is in good editorial shape overall (87/100), with remaining gaps listed below.
+
+- Visual / Media Support: No visuals; subject may not require them.
+
+## Scorecard
+
+| Dimension | Score | Weight | Notes |
+| --- | ---: | ---: | --- |
+| User Intent Fit | 5/5 | 1.2 | Page intent, title/H1, and profile expectations align. |
+| Content Completeness | 5/5 | 1.1 | All profile-expected sections are present. |
+| Subject Depth | 4/5 | 1 | Found 6 depth signal(s); 6 high-value categories covered. |
+| Original Value | 3/5 | 1 | Original value signals: buyer checklist; interactive tool handoff. |
+| Evidence / Source Quality | 3/5 | 0.6 | Claims appear backed by primary/official sources and/or fact refs. |
+| Research Freshness | 5/5 | 0.7 | Research/pricing freshness within policy. |
+| Decision Support | 3/5 | 0.5 | Decision support present: checklist; tool handoff. |
+| Actionability | 5/5 | 0.8 | Actionable outs: open decision tool; use checklist; follow next step; follow step-by-step process. |
+| Structure / Readability | 5/5 | 0.8 | Clear opening, headings, and scannable structure. |
+| Visual / Media Support | 2/5 | 0.4 | No visuals; subject may not require them. |
+| Internal Linking | 5/5 | 0.7 | Parent/hub and next-step linking present; supporting links evaluated for quality. |
+| Journey / Next Step | 5/5 | 0.8 | Next step fits journey stage (learn). |
+| Trust / Transparency | 3/5 | 0.6 | Adequate trust/transparency for page type. |
+| Content Differentiation | 5/5 | 0.7 | Page has a distinct purpose from related siblings. |
+| Page-Type Specific Quality | 5/5 | 1.2 | All ArticleQualityProfile checklist items passed. |
+
+## What is strong
+
+- User Intent Fit: Page intent, title/H1, and profile expectations align.
+- Content Completeness: All profile-expected sections are present.
+- Subject Depth: Found 6 depth signal(s); 6 high-value categories covered.
+- Research Freshness: Research/pricing freshness within policy.
+- Actionability: Actionable outs: open decision tool; use checklist; follow next step; follow step-by-step process.
+- Structure / Readability: Clear opening, headings, and scannable structure.
+- Internal Linking: Parent/hub and next-step linking present; supporting links evaluated for quality.
+- Journey / Next Step: Next step fits journey stage (learn).
+- Content Differentiation: Page has a distinct purpose from related siblings.
+- Page-Type Specific Quality: All ArticleQualityProfile checklist items passed.
+
+## Critical gaps
+
+_None flagged._
+
+## Improvement opportunities
+
+_None flagged._
+
+## Missing evidence
+
+_None flagged._
+
+## Missing visuals/media
+
+_None flagged._
+
+## Missing tools/resources
+
+_None flagged._
+
+## Internal-linking issues
+
+_None flagged._
+
+## Cannibalization/overlap concerns
+
+_No significant overlap concerns flagged._
+
+## Freshness issues
+
+_No critical freshness issues flagged._
+
+## Suggested next step
+
+Maintain current quality; re-evaluate after research refresh.
+
+Priority: **CQ-P3** (long-tail × low journey).

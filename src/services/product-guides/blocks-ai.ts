@@ -214,6 +214,17 @@ function aiJob(ctx: ProductGuideContext): AiJob {
         notPeer: "ChatGPT or a general LLM tab",
         categoryHowTo: howTo,
       };
+    case "hynote":
+      return {
+        noun: "AI note taker for meetings, audio, and documents",
+        loop: "record or upload one meeting, PDF, or YouTube link, get a transcript plus summary and action items, and export to Docs or Notion",
+        setupFirst: "one free or Pro workspace, a capture path (live record or upload), and an export destination you already use",
+        migrateObjects: "notes, folders, tags, and exported summaries",
+        prove: "finish one multimodal capture with searchable notes a teammate can open without an admin",
+        team: "Harbor Ops (weekly standups and study notes)",
+        notPeer: "Fireflies-style calendar auto-join bots or a general LLM chatbot",
+        categoryHowTo: howTo,
+      };
     default:
       return {
         noun: "AI assistant for a specific job cluster",

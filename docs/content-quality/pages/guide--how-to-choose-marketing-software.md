@@ -4,73 +4,66 @@
 | --- | --- |
 | Route | `/guides/how-to-choose-marketing-software/` |
 | Page type | guide |
-| Status | WEAK |
-| Overall score | **60/100** |
-| Quality band | **WEAK** |
-| Improvement priority | **CQ-P1** |
+| Status | EXCELLENT |
+| Overall score | **90/100** |
+| Quality band | **EXCELLENT** |
+| Improvement priority | **CQ-P3** |
 | Page importance | supporting |
 | Journey importance | high |
 | Agent | GuideQualityAgent |
 | Profile | GuideQualityProfile |
-| Evaluated | 2026-08-18T12:41:39.769Z |
+| Evaluated | 2026-08-28T06:19:44.107Z |
 | Evaluator | v1.0.0 |
 
 > Evaluation only — does not rewrite, publish, or mutate content.
 
 ## Executive assessment
 
-This guide page is usable but has meaningful quality gaps (60/100). Prioritize the critical gaps before expansion.
+This guide page is in good editorial shape overall (90/100), with remaining gaps listed below.
 
-- Content Completeness: Missing 4 expected section(s) for guide.
-- Subject Depth: Found 1 depth signal(s); 1 high-value categories covered.
-- Original Value: Original value signals: original teaching visuals.
 
 ## Scorecard
 
 | Dimension | Score | Weight | Notes |
 | --- | ---: | ---: | --- |
 | User Intent Fit | 5/5 | 1.2 | Page intent, title/H1, and profile expectations align. |
-| Content Completeness | 2/5 | 1.1 | Missing: examples, tools-or-resources, sources, next-step |
-| Subject Depth | 2/5 | 1.2 | Page stays surface-level — add workflows, trade-offs, or worked examples. |
-| Original Value | 2/5 | 1 | Content largely summarizes vendor material without SG frameworks or assessments. |
-| Evidence / Source Quality | 3/5 | 0.9 | No heavy evidence attached — acceptable only for general guidance. |
+| Content Completeness | 5/5 | 1.1 | All profile-expected sections are present. |
+| Subject Depth | 4/5 | 1.2 | Found 4 depth signal(s); 4 high-value categories covered. |
+| Original Value | 4/5 | 1 | Original value signals: buyer checklist; interactive tool handoff; original teaching visuals. |
+| Evidence / Source Quality | 3/5 | 0.9 | Claims appear backed by primary/official sources and/or fact refs. |
 | Research Freshness | 5/5 | 0.7 | Research/pricing freshness within policy. |
-| Decision Support | 1/5 | 0.8 | Page explains a topic but does not help the reader choose or evaluate. |
-| Actionability | 2/5 | 1 | Reader cannot do something concrete after reading. |
+| Decision Support | 3/5 | 0.8 | Decision support present: checklist; tool handoff. |
+| Actionability | 5/5 | 1 | Actionable outs: open decision tool; use checklist; follow next step; follow step-by-step process. |
 | Structure / Readability | 5/5 | 0.8 | Clear opening, headings, and scannable structure. |
 | Visual / Media Support | 5/5 | 0.8 | Teaching visuals present (3). |
-| Internal Linking | 3/5 | 0.7 | Internal linking incomplete relative to journey architecture. |
-| Journey / Next Step | 1/5 | 0.8 | Define a stage-appropriate next step (Learn→Requirements→Finder→Review→Compare→Cost→Implement). |
-| Trust / Transparency | 2/5 | 0.6 | Limited trust signals — acceptable if page type does not require all elements. |
+| Internal Linking | 5/5 | 0.7 | Parent/hub and next-step linking present; supporting links evaluated for quality. |
+| Journey / Next Step | 5/5 | 0.8 | Next step fits journey stage (evaluate). |
+| Trust / Transparency | 3/5 | 0.6 | Adequate trust/transparency for page type. |
 | Content Differentiation | 5/5 | 0.7 | Page has a distinct purpose from related siblings. |
-| Page-Type Specific Quality | 3/5 | 1.2 | Failed: worked-example, checklist-or-framework |
+| Page-Type Specific Quality | 5/5 | 1.2 | All GuideQualityProfile checklist items passed. |
 
 ## What is strong
 
 - User Intent Fit: Page intent, title/H1, and profile expectations align.
+- Content Completeness: All profile-expected sections are present.
+- Subject Depth: Found 4 depth signal(s); 4 high-value categories covered.
+- Original Value: Original value signals: buyer checklist; interactive tool handoff; original teaching visuals.
 - Research Freshness: Research/pricing freshness within policy.
+- Actionability: Actionable outs: open decision tool; use checklist; follow next step; follow step-by-step process.
 - Structure / Readability: Clear opening, headings, and scannable structure.
 - Visual / Media Support: Teaching visuals present (3).
+- Internal Linking: Parent/hub and next-step linking present; supporting links evaluated for quality.
+- Journey / Next Step: Next step fits journey stage (evaluate).
 - Content Differentiation: Page has a distinct purpose from related siblings.
+- Page-Type Specific Quality: All GuideQualityProfile checklist items passed.
 
 ## Critical gaps
 
-- Decision Support: Page explains a topic but does not help the reader choose or evaluate.
-- Add requirements, scorecard, comparison handoff, best-fit scenarios, or vendor questions.
-- Journey / Next Step: Define a stage-appropriate next step (Learn→Requirements→Finder→Review→Compare→Cost→Implement).
-- Add a RecommendedNextStep module that matches the page’s journey stage.
+_None flagged._
 
 ## Improvement opportunities
 
-- Add expected section “examples” for Guide.
-- Add expected section “tools-or-resources” for Guide.
-- Add expected section “sources” for Guide.
-- Add expected section “next-step” for Guide.
-- Add concrete workflows, decision criteria, limitations, or edge cases — not more word count.
-- Add an SG framework, scorecard, checklist, assessment, or interactive tool — avoid vendor-doc paraphrase.
-- Add a checklist download, Finder/Requirements Builder, comparison, calculator, or step process CTA.
-- Satisfy page-type checklist item “worked-example”.
-- Satisfy page-type checklist item “checklist-or-framework”.
+_None flagged._
 
 ## Missing evidence
 
@@ -82,17 +75,11 @@ _None flagged._
 
 ## Missing tools/resources
 
-- Add a checklist download, Finder/Requirements Builder, comparison, calculator, or step process CTA.
-- Add expected section “tools-or-resources” for Guide.
-- Add an SG framework, scorecard, checklist, assessment, or interactive tool — avoid vendor-doc paraphrase.
-- Add requirements, scorecard, comparison handoff, best-fit scenarios, or vendor questions.
-- Add a checklist download, Finder/Requirements Builder, comparison, calculator, or step process CTA.
-- Satisfy page-type checklist item “worked-example”.
-- Satisfy page-type checklist item “checklist-or-framework”.
+_None flagged._
 
 ## Internal-linking issues
 
-- Add expected section “next-step” for Guide.
+_None flagged._
 
 ## Cannibalization/overlap concerns
 
@@ -104,6 +91,6 @@ _No critical freshness issues flagged._
 
 ## Suggested next step
 
-Decision Support: Page explains a topic but does not help the reader choose or evaluate.
+Maintain current quality; re-evaluate after research refresh.
 
-Priority: **CQ-P1** (supporting × high journey).
+Priority: **CQ-P3** (supporting × high journey).

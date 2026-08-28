@@ -1099,6 +1099,19 @@ export const affiliateInventoryRows: InventoryRow[] = [
     entityTypeHint: "software",
   },
   {
+    sourceId: "aff-hynote",
+    rawName: "HyNote",
+    status: "active",
+    website: "https://hynote.ai",
+    affiliateUrl: "https://hynote.ai/?via=J4VZPD6BKN",
+    network: "other",
+    categoryHint: "ai",
+    entityTypeHint: "software",
+    aliases: ["HyNote AI", "Hy Note"],
+    notes:
+      "Newly approved affiliate — AI meeting/multimodal note taker; ai-meeting cluster peer of Fireflies/Otter",
+  },
+  {
     sourceId: "aff-socialbee",
     rawName: "SocialBee",
     status: "active",

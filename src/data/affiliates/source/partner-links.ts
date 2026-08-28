@@ -82,6 +82,7 @@ export const partnerLinks: PartnerLinkRecord[] = [
   { name: "Getscreen.me", primaryCategory: "Remote Desktop", affiliateUrl: "https://try.getscreen.me/uror44gjaujf", productSlug: "getscreen-me", catalogueSourceId: "aff-getscreen-me" },
   { name: "GetResponse", primaryCategory: "Email Marketing / Marketing Automation", affiliateUrl: "https://try.getresponsetoday.com/bggogt2lfafv-xlkg1t", productSlug: "getresponse", catalogueSourceId: "aff-getresponse" },
   { name: "Hive", primaryCategory: "Project Management", affiliateUrl: "https://get.hive.com/eerwc3eeweji", productSlug: "hive", catalogueSourceId: "aff-hive" },
+  { name: "HyNote", primaryCategory: "AI Meeting Notes / Note Taker", affiliateUrl: "https://hynote.ai/?via=J4VZPD6BKN", productSlug: "hynote", catalogueSourceId: "aff-hynote" },
   { name: "HubSpot", primaryCategory: "CRM / Marketing Automation", affiliateUrl: "https://hubspot.sjv.io/WqWO7n", productSlug: "hubspot", catalogueSourceId: "aff-hubspot" },
   { name: "InboxAlly", primaryCategory: "Email Deliverability", affiliateUrl: "https://get.inboxally.com/email-placement-tester-bznqt8ycxvhu", productSlug: "inboxally", catalogueSourceId: "aff-inboxally" },
   { name: "Instantly", primaryCategory: "Cold Email / Sales Outreach", affiliateUrl: null, affiliateUrlState: "declined", productSlug: "instantly", catalogueSourceId: "aff-instantly" },

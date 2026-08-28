@@ -4,24 +4,23 @@
 | --- | --- |
 | Route | `/software/constant-contact/` |
 | Page type | product-review |
-| Status | STRONG |
-| Overall score | **87/100** |
-| Quality band | **STRONG** |
-| Improvement priority | **CQ-P2** |
+| Status | EXCELLENT |
+| Overall score | **94/100** |
+| Quality band | **EXCELLENT** |
+| Improvement priority | **CQ-P3** |
 | Page importance | high-commercial |
 | Journey importance | high |
 | Agent | ProductReviewQualityAgent |
 | Profile | ProductReviewQualityProfile |
-| Evaluated | 2026-08-18T12:41:35.268Z |
+| Evaluated | 2026-08-28T06:20:04.930Z |
 | Evaluator | v1.0.0 |
 
 > Evaluation only — does not rewrite, publish, or mutate content.
 
 ## Executive assessment
 
-This product-review page is in good editorial shape overall (87/100), with remaining gaps listed below.
+This product-review page is in good editorial shape overall (94/100), with remaining gaps listed below.
 
-- Evidence / Source Quality: 1 unsupported claim flag(s); evidence trail incomplete.
 
 ## Scorecard
 
@@ -30,8 +29,8 @@ This product-review page is in good editorial shape overall (87/100), with remai
 | User Intent Fit | 5/5 | 1.2 | Page intent, title/H1, and profile expectations align. |
 | Content Completeness | 5/5 | 1.1 | All profile-expected sections are present. |
 | Subject Depth | 4/5 | 1 | Found 5 depth signal(s); 4 high-value categories covered. |
-| Original Value | 3/5 | 1.1 | Original value signals: SoftwareGlimpse assessment; best-for / not-for framing. |
-| Evidence / Source Quality | 2/5 | 1.3 | Attach primary sources, verification dates, or remove unsupported claims. |
+| Original Value | 4/5 | 1.1 | Original value signals: SoftwareGlimpse assessment; best-for / not-for framing; stated limitations. |
+| Evidence / Source Quality | 5/5 | 1.3 | Claims appear backed by primary/official sources and/or fact refs. |
 | Research Freshness | 5/5 | 1 | Research/pricing freshness within policy. |
 | Decision Support | 5/5 | 1.2 | Decision support present: criterion assessments; best-for scenarios; alternatives / comparisons; when to look elsewhere. |
 | Actionability | 4/5 | 0.8 | Actionable outs: compare alternatives; review pricing; visit product CTA. |
@@ -48,6 +47,8 @@ This product-review page is in good editorial shape overall (87/100), with remai
 - User Intent Fit: Page intent, title/H1, and profile expectations align.
 - Content Completeness: All profile-expected sections are present.
 - Subject Depth: Found 5 depth signal(s); 4 high-value categories covered.
+- Original Value: Original value signals: SoftwareGlimpse assessment; best-for / not-for framing; stated limitations.
+- Evidence / Source Quality: Claims appear backed by primary/official sources and/or fact refs.
 - Research Freshness: Research/pricing freshness within policy.
 - Decision Support: Decision support present: criterion assessments; best-for scenarios; alternatives / comparisons; when to look elsewhere.
 - Actionability: Actionable outs: compare alternatives; review pricing; visit product CTA.
@@ -65,11 +66,11 @@ _None flagged._
 
 ## Improvement opportunities
 
-- Link official documentation / pricing sources and record verification dates; drop unsupported superlatives.
+_None flagged._
 
 ## Missing evidence
 
-- Link official documentation / pricing sources and record verification dates; drop unsupported superlatives.
+_None flagged._
 
 ## Missing visuals/media
 
@@ -93,6 +94,6 @@ _No critical freshness issues flagged._
 
 ## Suggested next step
 
-Link official documentation / pricing sources and record verification dates; drop unsupported superlatives.
+Maintain current quality; re-evaluate after research refresh.
 
-Priority: **CQ-P2** (high-commercial × high journey).
+Priority: **CQ-P3** (high-commercial × high journey).

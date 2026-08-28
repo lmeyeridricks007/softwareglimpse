@@ -25,6 +25,7 @@ import {
 import { loadEnrichment, loadFacts } from "@/data/research/store";
 import { emailMarketingDefinition } from "@/data/category-onboarding/seed/email-marketing";
 import { crmMethodology } from "@/data/seed/crm-methodology";
+import { normalizePricingInput } from "@/services/pricing/build-snapshot";
 
 const HANDS_ON_PROHIBITED = [
   "we tested",
@@ -167,7 +168,9 @@ function buildPricingSummary(productSlug: string) {
   const enrichment = loadEnrichment(productSlug);
   const software = resolveSoftware(productSlug);
   const pricingRaw = enrichment?.pricing ?? software?.pricing;
-  const parsed = pricingRaw ? PricingSchema.safeParse(pricingRaw) : null;
+  const parsed = pricingRaw
+    ? PricingSchema.safeParse(normalizePricingInput(pricingRaw))
+    : null;
   const pricing = parsed?.success ? parsed.data : undefined;
   const planCount = pricing?.plans?.length ?? 0;
   const pricingFacts = loadFacts(productSlug).filter(
