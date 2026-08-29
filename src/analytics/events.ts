@@ -1,6 +1,6 @@
 /**
  * Thin analytics event API — provider-agnostic.
- * Wire GA4/affiliate pixels later without coupling UI to vendors.
+ * GA4 sink is registered from ConsentAwareAnalytics (consent-gated).
  */
 
 export type AnalyticsEventName =

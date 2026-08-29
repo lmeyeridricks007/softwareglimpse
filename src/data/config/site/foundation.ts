@@ -69,6 +69,15 @@ export const siteFoundationConfig: SiteFoundationConfig =
         configured: true,
       },
       {
+        id: "analytics-ga4",
+        name: "Google Analytics 4",
+        purpose:
+          "Optional usage analytics (page views and events) via GA4 measurement ID from the pre-rebuild site, loaded only after analytics consent",
+        privacyPolicyUrl: "https://policies.google.com/privacy",
+        dataLocation: "United States / global (Google)",
+        configured: true,
+      },
+      {
         id: "newsletter",
         name: "Newsletter provider (not configured)",
         purpose: "Email newsletter subscription management",
@@ -161,18 +170,19 @@ export const siteFoundationConfig: SiteFoundationConfig =
       {
         id: "pa-analytics",
         purpose:
-          "Understand aggregated site usage (page views and visitor metrics) via Vercel Web Analytics after analytics consent",
+          "Understand site usage (page views and events) via Vercel Web Analytics and Google Analytics 4 after analytics consent",
         dataCategories: [
           "pseudonymous usage events",
           "page path",
           "referrer / traffic source (where available)",
           "coarse geography derived from IP (aggregated)",
+          "device / browser signals (GA4)",
         ],
         legalBasis: "consent",
-        recipients: ["analytics"],
+        recipients: ["analytics", "analytics-ga4"],
         retention:
-          "Aggregated Web Analytics metrics per Vercel retention practices; SoftwareGlimpse does not store a separate analytics profile",
-        source: "Consent-gated Vercel Web Analytics component",
+          "Aggregated Vercel Web Analytics metrics per Vercel retention; GA4 retention per Google Analytics property settings. SoftwareGlimpse does not store a separate first-party analytics profile",
+        source: "Consent-gated Vercel Web Analytics and GA4 (gtag) components",
         active: true,
       },
       {
@@ -425,6 +435,16 @@ export const siteFoundationConfig: SiteFoundationConfig =
         storageType: "cookie",
       },
       {
+        name: "_ga / _ga_* / _gid (Google Analytics)",
+        provider: "Google LLC",
+        purpose:
+          "Measures site usage and distinguishes visitors after analytics consent. Loads only when the analytics category is allowed (legacy SoftwareGlimpse GA4 property)",
+        category: "analytics",
+        duration: "Up to 24 months (_ga) / shorter session identifiers (_gid) — see Google Analytics documentation",
+        firstParty: false,
+        storageType: "cookie",
+      },
+      {
         name: "YouTube embed cookies (when player loads)",
         provider: "Google / YouTube",
         purpose:
@@ -446,8 +466,8 @@ export const siteFoundationConfig: SiteFoundationConfig =
       },
     ],
     consent: {
-      version: "1.2.0",
-      effectiveAt: "2026-08-20",
+      version: "1.3.0",
+      effectiveAt: "2026-08-28",
       renewAfterDays: 365,
       categoriesInUse: [
         "strictly-necessary",
@@ -459,14 +479,14 @@ export const siteFoundationConfig: SiteFoundationConfig =
       marketingRequiresConsent: true,
       bannerTitle: "Cookies & privacy choices",
       bannerBody:
-        "We use necessary storage to run the site and tools (for example consent choices and finder progress). Optional analytics (Vercel Web Analytics) and official product video embeds (YouTube/Vimeo) are not loaded unless you allow them. You can change your mind anytime via Cookie settings.",
+        "We use necessary storage to run the site and tools (for example consent choices and finder progress). Optional analytics (Vercel Web Analytics and Google Analytics) and official product video embeds (YouTube/Vimeo) are not loaded unless you allow them. You can change your mind anytime via Cookie settings.",
       categoryDescriptions: {
         strictlyNecessary:
           "Required for consent storage and core site/tool function (including CRM Finder and calculator drafts on this device).",
         preferences:
           "Optional UI preferences such as newsletter popup dismissal when that feature is enabled.",
         analytics:
-          "Optional usage analytics via Vercel Web Analytics. Loads only after you allow this category.",
+          "Optional usage analytics via Vercel Web Analytics and Google Analytics 4. Loads only after you allow this category.",
         marketing:
           "Optional third-party embeds used for official vendor product videos (YouTube / Vimeo). Players load only after you allow this category and choose to play.",
       },
@@ -528,7 +548,7 @@ export const siteFoundationConfig: SiteFoundationConfig =
       newsletterMetadata:
         "Not active until a newsletter provider is configured and signup is enabled",
       analytics:
-        "Aggregated Vercel Web Analytics metrics per Vercel retention practices; no separate SoftwareGlimpse analytics profile",
+        "Aggregated Vercel Web Analytics metrics per Vercel retention; GA4 event/session data per Google Analytics property retention. No separate SoftwareGlimpse first-party analytics profile",
       serverLogs:
         "Operational hosting/access logs; typically up to 90 days (Vercel)",
     },
@@ -541,10 +561,10 @@ export const siteFoundationConfig: SiteFoundationConfig =
         summary:
           "How SoftwareGlimpse processes personal data — generated from configured processing activities.",
         status: "approved",
-        version: "0.2.2",
-        effectiveAt: "2026-08-20",
-        lastUpdatedAt: "2026-08-20",
-        approvedAt: "2026-08-20",
+        version: "0.2.3",
+        effectiveAt: "2026-08-28",
+        lastUpdatedAt: "2026-08-28",
+        approvedAt: "2026-08-28",
         indexable: true,
         dependsOn: [
           "processors",
@@ -562,10 +582,10 @@ export const siteFoundationConfig: SiteFoundationConfig =
         summary:
           "Cookies and similar browser storage used by SoftwareGlimpse — generated from the live consent and storage inventory.",
         status: "approved",
-        version: "0.2.2",
-        effectiveAt: "2026-08-20",
-        lastUpdatedAt: "2026-08-20",
-        approvedAt: "2026-08-20",
+        version: "0.2.3",
+        effectiveAt: "2026-08-28",
+        lastUpdatedAt: "2026-08-28",
+        approvedAt: "2026-08-28",
         indexable: true,
         dependsOn: ["cookies", "consent", "processors"],
         sections: [],

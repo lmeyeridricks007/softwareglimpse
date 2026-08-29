@@ -236,7 +236,11 @@ export function buildCookiePolicySections(
   });
 
   const hosting = config.processors.find((p) => p.id === "hosting");
-  const analyticsProcessor = config.processors.find((p) => p.id === "analytics");
+  const analyticsProcessors = config.processors.filter(
+    (p) =>
+      p.configured &&
+      (p.id === "analytics" || p.id.startsWith("analytics-")),
+  );
   const newsletterProcessor = config.processors.find(
     (p) => p.id === "newsletter",
   );
@@ -246,11 +250,13 @@ export function buildCookiePolicySections(
       p.id !== "consent-storage" &&
       p.id !== "contact" &&
       p.id !== "analytics" &&
+      !p.id.startsWith("analytics-") &&
       p.id !== "newsletter",
   );
-  const analyticsCopy = analyticsProcessor?.configured
-    ? `Analytics (${analyticsProcessor.name}) loads only after analytics consent and is designed to avoid persistent analytics cookies.`
-    : "Analytics provider is not configured — no analytics vendor script is loaded today.";
+  const analyticsCopy =
+    analyticsProcessors.length > 0
+      ? `Analytics (${analyticsProcessors.map((p) => p.name).join("; ")}) loads only after analytics consent. Vercel Web Analytics is designed to avoid persistent analytics cookies; Google Analytics may set cookies such as _ga / _gid when allowed.`
+      : "Analytics provider is not configured — no analytics vendor script is loaded today.";
   const newsletterCopy = newsletterProcessor?.configured
     ? `Newsletter (${newsletterProcessor.name}) may set cookies only when that feature is enabled.`
     : "Newsletter provider is not configured — no newsletter cookies are loaded today.";

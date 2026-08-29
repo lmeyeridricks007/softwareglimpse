@@ -4,10 +4,11 @@ import { useEffect, useRef } from "react";
 import { Analytics } from "@vercel/analytics/next";
 import { registerAnalyticsSink, type AnalyticsEvent } from "@/analytics/events";
 import { useConsentOptional } from "@/components/site/consent-provider";
+import { GoogleAnalytics } from "@/components/site/google-analytics";
 import { siteFoundationConfig } from "@/data/config/site/foundation-client";
 
 /**
- * Registers a consent-gated analytics sink and mounts Vercel Web Analytics
+ * Registers a consent-gated analytics sink and mounts Vercel Web Analytics + GA4
  * only when the analytics category is allowed.
  * Affiliate redirects must NOT depend on this sink.
  */
@@ -47,8 +48,12 @@ export function ConsentAwareAnalytics() {
     buffer.current = [];
   }, [allowed]);
 
-  if (!loadAnalytics) return null;
-  return <Analytics />;
+  return (
+    <>
+      <GoogleAnalytics enabled={loadAnalytics} />
+      {loadAnalytics ? <Analytics /> : null}
+    </>
+  );
 }
 
 type ConsentScriptProps = {
