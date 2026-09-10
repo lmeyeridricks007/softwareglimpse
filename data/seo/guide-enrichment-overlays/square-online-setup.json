@@ -1,0 +1,206 @@
+{
+  "slug": "square-online-setup",
+  "enrichmentType": "IMPLEMENTATION_GUIDE",
+  "updatedAt": "2026-09-10T12:09:06.062Z",
+  "uniqueValueAdded": [
+    "implementation_workflow",
+    "scenario_analysis",
+    "decision_framework",
+    "limitations_evidence",
+    "pricing_comparison",
+    "sg_original_data",
+    "buyer_checklist"
+  ],
+  "patch": {
+    "summary": "online storefront; product catalog; checkout payments; order management. Square Free · free · online storefront | Square Plus | Square Premium. Instagram, Facebook. Brick-and-click retailers already on Square POS; Local businesses adding a simple online catalog; Merchants prioritizing in-person + online unity over app marketplace breadth. Square Online is the ecommerce storefront layer inside Square’s commerce ecosystem — best when you already sell in person with Square POS and want unified catalog, payments, and lo Buyer question: is Square Online the right ecommerce commit for Brick-and-click retailers already on Square POS, or is Online-only brands needing maximum channel/app extensibility the real constraint? Thesis for setup: Square Online is a yes only when online storefront plus online storefront are must-haves; not worth it if Online-only brands needing maximum channel/app extensibility dominates the operating model.",
+    "blocks": [
+      {
+        "id": "da-square-online-setup-1",
+        "type": "direct-answer",
+        "body": "online storefront decides whether Square Online setup is a one-team pilot or a specialist project — confirm unlocks for must-have capabilities before invites.",
+        "bullets": [
+          "Start with: online storefront",
+          "Gate check: confirm paid unlocks before go-live",
+          "Integrate after: data quality pass on Instagram"
+        ]
+      },
+      {
+        "id": "impl-square-online-setup-2",
+        "type": "step",
+        "heading": "Square Online day-zero to steady-state sequence",
+        "body": "Treat Square Online setup as a controlled rollout — not a weekend dump of CSV files.",
+        "stepNumber": 1,
+        "scenarios": [
+          {
+            "title": "Day zero — objects and owners",
+            "body": "Define owners for online storefront, product catalog, checkout payments before inviting the whole org."
+          },
+          {
+            "title": "SMB pilot",
+            "body": "One pipeline / one team proves Brick-and-click retailers already on Square POS before company-wide seats."
+          },
+          {
+            "title": "Cutover",
+            "body": "Freeze legacy writes briefly; validate Instagram and Facebook before reopen."
+          }
+        ]
+      },
+      {
+        "id": "df-square-online-setup-3",
+        "type": "decision-framework",
+        "title": "Square Online implementation go / no-go",
+        "steps": [
+          {
+            "id": "i-1",
+            "label": "Go when plan unlocks cover must-have capabilities"
+          },
+          {
+            "id": "i-2",
+            "label": "Pause if this limitation blocks ops: Best fit inside Square POS ecosystem — weaker as standalone SaaS platform vs Shopify"
+          },
+          {
+            "id": "i-3",
+            "label": "Do not expand seats until online storefront is green"
+          }
+        ]
+      },
+      {
+        "id": "mist-square-online-setup-4",
+        "type": "mistakes",
+        "title": "Square Online implementation mistakes",
+        "items": [
+          {
+            "title": "Mistake 1",
+            "body": "Best fit inside Square POS ecosystem — weaker as standalone SaaS platform vs Shopify"
+          },
+          {
+            "title": "Mistake 2",
+            "body": "Free tier online processing spread (3.3% + 30¢) can exceed paid-tier savings at volume"
+          },
+          {
+            "title": "Mistake 3",
+            "body": "Per-location pricing multiplies for multi-site retail"
+          },
+          {
+            "title": "Mistake 4",
+            "body": "Extension/marketplace depth trails Shopify for complex catalog needs"
+          },
+          {
+            "title": "Big-bang invite",
+            "body": "Inviting every user before object design creates junk data that is expensive to unwind."
+          }
+        ]
+      },
+      {
+        "id": "cost-square-online-setup-5",
+        "type": "cost-breakdown",
+        "title": "Square Online plan gates that affect rollout",
+        "body": "Implementation fails when unlocks needed for go-live sit on a higher tier than budgeted.",
+        "lines": [
+          {
+            "label": "Square Free",
+            "description": "Free plan · Unlocks: online storefront, product catalog, checkout payments · Suits: explore before committing seats"
+          },
+          {
+            "label": "Square Plus",
+            "description": "30-day trial · Suits: teams whose must-have gates appear on this tier"
+          },
+          {
+            "label": "Square Premium",
+            "description": "30-day trial · Suits: teams whose must-have gates appear on this tier"
+          }
+        ]
+      },
+      {
+        "id": "sel-square-online-setup-6",
+        "type": "selection-checklist",
+        "title": "Square Online implementation checklist",
+        "dimensions": [
+          {
+            "id": "prep",
+            "label": "Prep",
+            "options": [
+              "Object model drafted",
+              "Owners named",
+              "Legacy freeze window set"
+            ]
+          },
+          {
+            "id": "pilot",
+            "label": "Pilot",
+            "options": [
+              "online storefront",
+              "Junk-data rules set",
+              "Support path clear"
+            ]
+          },
+          {
+            "id": "scale",
+            "label": "Scale",
+            "options": [
+              "Instagram",
+              "Seat expansion criteria written",
+              "Rollback plan noted"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "cta-square-online-setup-7",
+        "type": "interactive-cta",
+        "title": "Validate ecommerce fit before a deep Square Online rollout",
+        "body": "If Square Online fails constraint fit, stop implementation early.",
+        "href": "/tools/ecommerce-finder/",
+        "ctaLabel": "Open Finder",
+        "variant": "finder"
+      }
+    ],
+    "sections": [
+      {
+        "id": "sec-thesis-square-online-setup",
+        "heading": "Square Online buyer question and thesis",
+        "body": "online storefront; product catalog; checkout payments; order management. Square Free · free · online storefront | Square Plus | Square Premium. Instagram, Facebook. Brick-and-click retailers already on Square POS; Local businesses adding a simple online catalog; Merchants prioritizing in-person + online unity over app marketplace breadth. Square Online is the ecommerce storefront layer inside Square’s commerce ecosystem — best when you already sell in person with Square POS and want unified catalog, payments, and lo. That catalogue mix is the Square Online setup filter — not a generic ecommerce lecture.\n\nBuyer question: is Square Online the right ecommerce commit for Brick-and-click retailers already on Square POS, or is Online-only brands needing maximum channel/app extensibility the real constraint?\n\nThesis for setup: Square Online is a yes only when online storefront plus online storefront are must-haves; not worth it if Online-only brands needing maximum channel/app extensibility dominates the operating model.\n\nBest for: Brick-and-click retailers already on Square POS; Local businesses adding a simple online catalog; Merchants prioritizing in-person + online unity over app marketplace breadth (Brick-and-click retailers already on Square POS).\n\nPoor fit when: Online-only brands needing maximum channel/app extensibility; High-complexity B2B wholesale catalogs; Merchants standardized on Shopify/Woo stacks. Avoid if Best fit inside Square POS ecosystem — weaker as standalone SaaS platform vs Shopify would block go-live."
+      },
+      {
+        "id": "sec-limits-square-online-setup",
+        "heading": "Square Online limitation, pricing interpretation, and alternative context",
+        "body": "Limitation: Best fit inside Square POS ecosystem — weaker as standalone SaaS platform vs Shopify; Free tier online processing spread (3.3% + 30¢) can exceed paid-tier savings at volume; Per-location pricing multiplies for multi-site retail because it forces process changes or add-ons around Square Online when online storefront is the job.\n\nPricing interpretation: stay on Square Free until online storefront is mandatory; plan jumps to Square Plus only after that hinge is proven.\n\nPlan trade-off: you gain online storefront at the expense of Subscription floors vs payment-processing spreads and GMV/overage fees — measure both in the pilot. Researched packaging: Square Free · free · online storefront | Square Plus | Square Premium.\n\nAlternative context: unlike Shopify, Square Online is preferable when Brick-and-click retailers already on Square POS because online storefront plus online storefront match; prefer Shopify when Online-only brands needing maximum channel/app extensibility because the operating loops differ."
+      },
+      {
+        "id": "sec-scenario-square-online-setup",
+        "heading": "Decision scenario and conclusion for Square Online",
+        "body": "Use-case: for Brick-and-click retailers already on Square POS running online storefront, prefer Square Online when online storefront is weekly; pick another path when Online-only brands needing maximum channel/app extensibility.\n\nSetup requires a specialist owner when Best fit inside Square POS ecosystem — weaker as standalone SaaS platform vs Shopify collides with online storefront; SMB pilots can stay lighter if online storefront is already on Square Plus.\n\nIntegrations in research: Instagram, Facebook.\n\nWrap: choose Square Online only if the setup job is online storefront under Brick-and-click retailers already on Square POS; otherwise use Finder constraints instead of copying this page for another vendor."
+      }
+    ],
+    "checklist": [
+      {
+        "id": "enrich-chk-0",
+        "label": "Draft Square Online object owners before invites",
+        "order": 0
+      },
+      {
+        "id": "enrich-chk-1",
+        "label": "Confirm plan unlocks for go-live features",
+        "order": 1
+      },
+      {
+        "id": "enrich-chk-2",
+        "label": "Pilot one team on online storefront",
+        "order": 2
+      },
+      {
+        "id": "enrich-chk-3",
+        "label": "If blocked, evaluate Shopify before sunk-cost expansion",
+        "order": 3
+      }
+    ],
+    "nextAction": {
+      "contentId": "tool:finder:ecommerce",
+      "label": "Open Finder shortlist"
+    }
+  },
+  "notes": [
+    "Implementation: workflow, constraints, mistakes, checklist.",
+    "Type-specific skeleton: IMPLEMENTATION_GUIDE"
+  ]
+}

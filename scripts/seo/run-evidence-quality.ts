@@ -31,13 +31,21 @@ async function main(): Promise<void> {
   const apply = args.includes("--apply");
   const dryRun = args.includes("--dry-run") || !apply;
   const limit = Number(argValue(args, "--limit") ?? "40");
+  const slugsRaw = argValue(args, "--slugs");
+  const slugs = slugsRaw
+    ? slugsRaw
+        .split(",")
+        .map((s) => s.trim())
+        .filter(Boolean)
+    : undefined;
 
   console.log(
-    `Evidence quality: limit=${limit} mode=${dryRun ? "dry-run (no stamps)" : "apply"}`,
+    `Evidence quality: limit=${limit} slugs=${slugs?.length ?? "queue"} mode=${dryRun ? "dry-run (no stamps)" : "apply"}`,
   );
 
   const report = await runEvidenceQuality({
     limit,
+    slugs,
     apply: !dryRun,
     writeArtifacts: true,
   });

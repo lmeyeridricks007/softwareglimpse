@@ -2,8 +2,10 @@ import { existsSync, mkdirSync, writeFileSync } from "node:fs";
 import path from "node:path";
 import {
   clearPricingVerificationCaches,
+  explainPricingVerification,
   reconcileDataVerifiedCoverage,
 } from "@/services/editorial/pricing-verified-at";
+import { getSoftwareBySlug } from "@/data";
 import { buildProductTestingQueue } from "@/services/product-testing/queue";
 import { buildProductEvidencePack } from "./build-pack";
 import { verifyPricingAgainstVendor } from "./verify-pricing";
@@ -79,7 +81,12 @@ export async function runEvidenceQuality(
     const pack = buildProductEvidencePack(item.productSlug);
     if (!pack) continue;
 
-    if (pack.evidenceLevelBefore === "data_verified") {
+    const software = getSoftwareBySlug(item.productSlug);
+    const reconAccepted = software
+      ? Boolean(explainPricingVerification(software).acceptedAt)
+      : false;
+
+    if (reconAccepted) {
       alreadyDataVerified += 1;
       if (skipAlready) {
         packs.push(pack);
@@ -96,9 +103,11 @@ export async function runEvidenceQuality(
       continue;
     }
 
-    // Skip live verify when already DATA_VERIFIED / hands-on — still normalize pack.
+    // Live-verify when reconcile has not accepted a stamp — including
+    // twin/clock stamps that resolveEvidenceLevel still labels data_verified.
     const shouldVerify =
-      pack.evidenceLevelBefore === "researched" &&
+      !reconAccepted &&
+      pack.evidenceLevelBefore !== "hands_on_tested" &&
       pack.plans.length > 0 &&
       pack.pricingSourceCount > 0;
 
@@ -153,7 +162,7 @@ export async function runEvidenceQuality(
     `Reconciliation rejected: ${recon.rejected}`,
     `Source coverage: ${(recon.sourceCoverage.acceptedShare * 100).toFixed(1)}%`,
     "No AggregateRating / fabricated Review schema in this pass — trust uses editorial timestamps only.",
-    "Hands-on tested remains 0 until a completed ProductTestSession exists.",
+    "Hands-on tested remains 0 / NOT_CURRENT_SCOPE for the current remediation phase — not a promotion or growth gate.",
   ];
   if (recon.accepted > 0 && recon.sourceCoverage.confidence === "high") {
     schemaQaNotes.push("Schema/evidence reconciliation confidence: high");

@@ -1,10 +1,10 @@
 {
   "slug": "todoist",
-  "updatedAt": "2026-09-07T22:31:21.564Z",
+  "updatedAt": "2026-09-10T11:46:30.174Z",
   "version": "1.0.0",
   "fieldAudit": {
     "slug": "todoist",
-    "checkedAt": "2026-09-07T22:31:21.563Z",
+    "checkedAt": "2026-09-10T11:46:30.171Z",
     "items": [
       {
         "field": "name",
@@ -20,9 +20,9 @@
       },
       {
         "field": "canonical_vendor",
-        "status": "UNKNOWN",
-        "detail": "Company/vendor not documented",
-        "source": "none"
+        "status": "PASS",
+        "detail": "Vendor: Doist Inc.",
+        "source": "seed"
       },
       {
         "field": "category",
@@ -115,11 +115,11 @@
         "source": "enrichment"
       }
     ],
-    "passCount": 17,
+    "passCount": 18,
     "partialCount": 0,
     "missingCount": 0,
-    "unknownCount": 1,
-    "score": 94
+    "unknownCount": 0,
+    "score": 100
   },
   "decisionHub": {
     "whatItIs": "Todoist is a task and to-do manager for individuals and small teams with natural-language task capture, projects, labels, filters and light board/calendar views. Beginner Free; Pro ~$6.25/user/mo annual; Business ~$10/user/mo (plus local tax) with team workspace features. Strong for personal productivity and light team tasks — not a full Work OS.",
@@ -140,7 +140,12 @@
       "Team features mainly on Business"
     ],
     "coreCapabilities": [
+      "task boards",
+      "automations workflows",
+      "docs collaboration",
       "integrations ecosystem",
+      "reporting dashboards",
+      "ai assistance",
       "project tracking"
     ],
     "pricingSummary": "3 documented plans · 1 free · entry paid: Pro · trial documented on at least one plan",
@@ -234,9 +239,7 @@
     ],
     "evidenceState": "Research/data-based (no completed hands-on test) · Latest verification/research signal: 2026-08-17T21:00:00.000Z · Editorial assessment: approved",
     "nextDecisionStep": "Compare against peers: Basecamp vs Todoist",
-    "missingSections": [
-      "canonical_vendor"
-    ]
+    "missingSections": []
   },
   "dependents": [
     {
@@ -376,13 +379,11 @@
     }
   ],
   "dependentsNeedingRefresh": [],
-  "remediation": [
-    "verify:canonical_vendor"
-  ],
+  "remediation": [],
   "notes": [
-    "fieldAudit score=94",
+    "fieldAudit score=100",
     "decisionHub bestFor=6 notIdeal=6",
     "dependents=27"
   ],
-  "materiallyImproved": false
+  "materiallyImproved": true
 }

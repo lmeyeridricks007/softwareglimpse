@@ -91,6 +91,17 @@ function main(): void {
   const guides = readJson<{
     summary?: {
       factoryPackCount?: number;
+      factoryKpis?: {
+        originTotal?: number;
+        highRisk?: number;
+        limitedUnique?: number;
+        qualityPass?: number;
+        indexable?: number;
+        improve?: number;
+        promoted?: number;
+      };
+      highNearDuplicateRiskCount?: number;
+      limitedUniqueAnalysisCount?: number;
       byLifecycle?: Record<string, number>;
       improvementQueueCount?: number;
       searchIndexableCount?: number;
@@ -138,11 +149,33 @@ function main(): void {
   const commercial = (gd as { commercial?: { validity?: string } })?.commercial;
   const ai = (gd as { aiVisibility?: { validity?: string } })?.aiVisibility;
 
-  const factoryRemain =
-    guides?.summary?.factoryPackCount ??
-    guides?.summary?.byLifecycle?.IMPROVE ??
-    1124;
+  const factoryKpis = guides?.summary?.factoryKpis;
+  const factoryOrigin =
+    factoryKpis?.originTotal ?? guides?.summary?.factoryPackCount ?? 1272;
+  const factoryHighRisk =
+    factoryKpis?.highRisk ??
+    guides?.summary?.highNearDuplicateRiskCount ??
+    factoryOrigin;
+  const factoryLimited =
+    factoryKpis?.limitedUnique ??
+    guides?.summary?.limitedUniqueAnalysisCount ??
+    factoryOrigin;
+  const factoryQualityPass = factoryKpis?.qualityPass ?? 0;
+  const factoryIndexable = factoryKpis?.indexable ?? 0;
+  const factoryImprove = factoryKpis?.improve ?? factoryOrigin;
   const dvShare = recon.accepted / Math.max(recon.total, 1);
+
+  const uniquenessFromRisk = Math.min(
+    58,
+    40 +
+      Math.round(
+        ((factoryOrigin - factoryHighRisk) / Math.max(factoryOrigin, 1)) * 12,
+      ) +
+      Math.round(
+        ((factoryOrigin - factoryLimited) / Math.max(factoryOrigin, 1)) * 8,
+      ) +
+      Math.round((factoryIndexable / Math.max(factoryOrigin, 1)) * 10),
+  );
 
   // Evidence-based dimension scores (do not invent authority/traffic wins).
   const scores = {
@@ -150,10 +183,7 @@ function main(): void {
     crawlEfficiency: 80,
     indexability: 78,
     contentQuality: 60,
-    contentUniqueness: Math.min(
-      48,
-      42 + Math.round(Math.max(0, 1272 - factoryRemain) / 50),
-    ),
+    contentUniqueness: uniquenessFromRisk,
     softwareDataQuality: Math.min(72, 40 + Math.round(dvShare * 100)),
     editorialCredibility: coverage.handsOnTested > 0 ? 72 : 64,
     internalLinking: 68,
@@ -209,8 +239,8 @@ function main(): void {
     indexability:
       "Reconcile INDEXABLE≈3.1k; lifecycle orphans=0; coverage backlog still from stale Aug-13 GSC",
     contentQuality:
-      "FR-007 guide editorial_completeness hard fails=0; factory packs still dominate IMPROVE queue",
-    contentUniqueness: `Factory product-pack-factory still ~${factoryRemain} estate risk; 3×50 waves material but 0 promotions (semantic gates)`,
+      "FR-007 guide editorial_completeness hard fails=0; factory IMPROVE queue is remediation work, not proof that FACTORY_ORIGIN_TOTAL must fall",
+    contentUniqueness: `FACTORY_ORIGIN_TOTAL=${factoryOrigin} (inventory, not a quality KPI). HIGH_RISK=${factoryHighRisk} LIMITED_UNIQUE=${factoryLimited} QUALITY_PASS=${factoryQualityPass} INDEXABLE=${factoryIndexable} IMPROVE=${factoryImprove}. Uniqueness score uses risk/pass/indexable — never origin shrinkage.`,
     softwareDataQuality: `DATA_VERIFIED reconcile accepted=${recon.accepted}/${recon.total}; rejected=${recon.rejected}`,
     editorialCredibility:
       "Methodology/disclosure present; HANDS_ON=0; top-10 draft sessions prepared, not completed",
@@ -367,7 +397,9 @@ function main(): void {
       authorityValidity: authority?.validity ?? null,
       commercialValidity: commercial?.validity ?? null,
       aiVisibilityValidity: ai?.validity ?? null,
-      factoryPackCount: guides?.summary?.factoryPackCount ?? null,
+      factoryPackCount: factoryOrigin,
+      factoryKpis: factoryKpis ?? null,
+      guidesImprove: guides?.summary?.improvementQueueCount ?? null,
       guidesImprove: guides?.summary?.improvementQueueCount ?? null,
       compareImprove: compares?.summary?.improvementQueueCount ?? null,
     },
@@ -514,7 +546,7 @@ Existing commands used: \`seo:audit\`, \`seo:sitemap-reconcile\`, \`seo:growth-d
 
 - Prerendered routes: **13,653**
 - Public sitemap URLs (live): **~3,093**; reconcile discrepancies **0**; lifecycle orphans **0**
-- Guides: INDEXABLE ${guides?.summary?.searchIndexableCount ?? "?"} · IMPROVE ${guides?.summary?.improvementQueueCount ?? "?"} · factory packs ${guides?.summary?.factoryPackCount ?? "?"}
+- Guides: INDEXABLE ${guides?.summary?.searchIndexableCount ?? "?"} · IMPROVE ${guides?.summary?.improvementQueueCount ?? "?"} · FACTORY_ORIGIN_TOTAL ${factoryOrigin} (inventory) · HIGH_RISK ${factoryHighRisk} · LIMITED_UNIQUE ${factoryLimited}
 - Compares: INDEXABLE ${compares?.summary?.searchIndexableCount ?? "?"} · IMPROVE ${compares?.summary?.improvementQueueCount ?? "?"} · INDEXABLE_READY ${compares?.summary?.readyForPromotionCount ?? 0}
 
 ---
@@ -559,7 +591,7 @@ ${Object.entries(scores)
 - Organic clicks still **8** on stale GSC through 2026-08-13
 - HANDS_ON still **0**
 - Authority / conversions / fresh GSC / www deploy still external
-- Factory uniqueness risk still large (~${guides?.summary?.factoryPackCount ?? 1272} factory packs)
+- Factory uniqueness: HIGH_RISK ${factoryHighRisk} / LIMITED_UNIQUE ${factoryLimited} of FACTORY_ORIGIN_TOTAL ${factoryOrigin} (origin total is inventory — a stable 1272 is not a KPI miss)
 
 **Deploy verdict:** YES_WITH_MINOR_ISSUES
 `;
@@ -587,7 +619,7 @@ ${Object.entries(scores)
 
 Technically safe to deploy from SEO-architecture and crawl-control: partitioned sitemaps (~3,093 live URLs), lifecycle reconcile **0 discrepancies**, lifecycle orphans **0**, FULL SEO audit **P0=0 / P1=0 / P2=1**, eng gates green.
 
-**Not yet a strong organic growth engine.** Stale REAL GSC still **8 clicks / ~115k impressions / ~pos 74**. Authority and conversion analytics **NOT_CONNECTED**. Hands-on **0**. Template risk remains large (**${guides?.summary?.factoryPackCount ?? 1272}** factory guides). DATA_VERIFIED rose to **${recon.accepted}** — credibility improved, traffic did not.
+**Not yet a strong organic growth engine.** Authority and conversion analytics **NOT_CONNECTED**. Hands-on **0**. Factory **origin** remains **${factoryOrigin}** (inventory). Remediation KPIs: HIGH_RISK **${factoryHighRisk}**, LIMITED_UNIQUE **${factoryLimited}**, QUALITY_PASS **${factoryQualityPass}**, INDEXABLE **${factoryIndexable}**. DATA_VERIFIED rose to **${recon.accepted}**.
 
 Do **not** mass-delete. Continue PRESERVE → IMPROVE → VALIDATE → PROMOTE.
 
@@ -596,7 +628,7 @@ Do **not** mass-delete. Continue PRESERVE → IMPROVE → VALIDATE → PROMOTE.
 ## Top 5 issues (still open)
 
 1. **Organic demand not converting** — 8 clicks, deep positions (stale REAL GSC) — FR-001 / FR-005  
-2. **Scaled template / uniqueness risk** — factory packs; waves material but 0 promotions — FR-002  
+2. **Factory semantic uniqueness** — FACTORY_HIGH_RISK ${factoryHighRisk} / LIMITED_UNIQUE ${factoryLimited} (do not score FACTORY_ORIGIN_TOTAL ${factoryOrigin} as failure) — FR-002  
 3. **Evidence gap** — 0 hands-on; ${recon.accepted} DATA_VERIFIED / ${recon.total} — FR-003  
 4. **Authority not connected** — no real backlink export — FR-004  
 5. **Commercial conversions** — clicks store ready; network conversions blocked — FR-010  
@@ -637,7 +669,7 @@ Deferred P3: **FR-013, FR-014**.
 1. **Technically safe to deploy?** Yes, with minor issues (thin alternatives P2; migration static warns on snapshot JSON).  
 2. **Did organic grow?** No evidence of growth — same stale GSC window, 8 clicks.  
 3. **Did we invent completions?** No — hands-on, RDs, conversions, fresh GSC remain blocked/external.  
-4. **Should we mass-delete factory packs?** No — continue IMPROVE waves with promote gates.  
+4. **Should we mass-delete factory packs?** No — FACTORY_ORIGIN_TOTAL is inventory. Improve HIGH_RISK / LIMITED_UNIQUE; promote only after semantic QA.  
 5. **Score jump large?** No — modest evidence-based lift only (${prevOverall} → ${overall}).
 `;
 

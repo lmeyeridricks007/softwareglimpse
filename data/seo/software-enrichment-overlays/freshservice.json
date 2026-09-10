@@ -1,10 +1,10 @@
 {
   "slug": "freshservice",
-  "updatedAt": "2026-09-07T22:31:21.718Z",
+  "updatedAt": "2026-09-10T11:46:30.323Z",
   "version": "1.0.0",
   "fieldAudit": {
     "slug": "freshservice",
-    "checkedAt": "2026-09-07T22:31:21.717Z",
+    "checkedAt": "2026-09-10T11:46:30.320Z",
     "items": [
       {
         "field": "name",
@@ -20,9 +20,9 @@
       },
       {
         "field": "canonical_vendor",
-        "status": "UNKNOWN",
-        "detail": "Company/vendor not documented",
-        "source": "none"
+        "status": "PASS",
+        "detail": "Vendor: Freshworks Inc.",
+        "source": "seed"
       },
       {
         "field": "category",
@@ -115,11 +115,11 @@
         "source": "enrichment"
       }
     ],
-    "passCount": 17,
+    "passCount": 18,
     "partialCount": 0,
     "missingCount": 0,
-    "unknownCount": 1,
-    "score": 94
+    "unknownCount": 0,
+    "score": 100
   },
   "decisionHub": {
     "whatItIs": "Freshservice is Freshworks' IT service management (ITSM) platform for incidents, problems, changes, assets, and employee service desks. Annual per-agent pricing: Starter $19, Growth $49, Pro $99 per agent/month billed annually. Scored as itsm-service-desk primary — ranked only within ITSM landscape, not against helpdesk or live-chat peers. Distinct from Freshdesk (customer helpdesk) and Freshchat (live chat).",
@@ -142,12 +142,12 @@
     "coreCapabilities": [
       "ticketing",
       "shared inbox",
+      "live chat",
       "knowledge base",
+      "omnichannel inbox",
       "sla routing",
       "macros automation",
-      "self service portal",
-      "csat surveys",
-      "helpdesk reporting"
+      "self service portal"
     ],
     "pricingSummary": "3 documented plans · entry paid: Starter · trial documented on at least one plan",
     "keyTradeoffs": [
@@ -249,9 +249,7 @@
     ],
     "evidenceState": "Research/data-based (no completed hands-on test) · Latest verification/research signal: 2026-08-18T12:00:00.000Z · Editorial assessment: approved",
     "nextDecisionStep": "Compare against peers: Freshservice vs Datadog",
-    "missingSections": [
-      "canonical_vendor"
-    ]
+    "missingSections": []
   },
   "dependents": [
     {
@@ -356,13 +354,11 @@
     }
   ],
   "dependentsNeedingRefresh": [],
-  "remediation": [
-    "verify:canonical_vendor"
-  ],
+  "remediation": [],
   "notes": [
-    "fieldAudit score=94",
+    "fieldAudit score=100",
     "decisionHub bestFor=6 notIdeal=6",
     "dependents=20"
   ],
-  "materiallyImproved": false
+  "materiallyImproved": true
 }

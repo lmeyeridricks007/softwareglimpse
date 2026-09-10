@@ -2,7 +2,7 @@
   "slug": "bookyourdata",
   "name": "BookYourData",
   "categorySlug": "sales-intelligence",
-  "generatedAt": "2026-09-09T18:07:33.516Z",
+  "generatedAt": "2026-09-10T11:37:45.178Z",
   "version": "1.0.0",
   "evidenceLevelBefore": "researched",
   "evidenceLevelAfter": "researched",
@@ -127,9 +127,9 @@
   "pricingVerification": {
     "attempted": true,
     "verified": false,
-    "httpStatus": 403,
-    "sourceId": "bookyourdata-product-official",
-    "sourceUrl": "https://www.bookyourdata.com/",
+    "httpStatus": 200,
+    "sourceId": "bookyourdata-help-center-official",
+    "sourceUrl": "https://intercom.help/bookyourdata/en/",
     "planNamesChecked": [
       "Credit packs",
       "BeSpoke"
@@ -138,9 +138,12 @@
       "Credit packs"
     ],
     "planHitRatio": 0.5,
-    "rejectReason": "http_403",
+    "rejectReason": "plan_hit_ratio_below_0.75",
     "verifiedAt": null,
-    "stampApplied": false
+    "stampApplied": false,
+    "attemptedUrls": [
+      "https://intercom.help/bookyourdata/en/"
+    ]
   },
   "dependentPages": [
     {
@@ -365,6 +368,6 @@
     }
   ],
   "notes": [
-    "Pricing verify: http_403"
+    "Pricing verify: plan_hit_ratio_below_0.75"
   ]
 }

@@ -90,7 +90,7 @@ export function renderImprovementCycleMarkdown(
     ...listItems(
       "Human testing required",
       s.humanTestingRequired.map((p) => ({ path: p.path, reason: p.reason })),
-      "See docs/editorial/PRODUCT-TESTING-QUEUE.md",
+      "None — HANDS_ON is 0 / NOT_CURRENT_SCOPE (future enhancement, not a current queue)",
     ),
     ...listItems(
       "Internal-link opportunities",
@@ -136,7 +136,6 @@ export function renderImprovementCycleMarkdown(
 
   const artifactSet = new Set([
     ...report.existingArtifacts,
-    "docs/editorial/PRODUCT-TESTING-QUEUE.md",
     "docs/editorial/DATA-VERIFIED-RECONCILIATION.md",
     "docs/seo/GSC-OPPORTUNITIES.md",
     "docs/seo/GROWTH-DASHBOARD.md",

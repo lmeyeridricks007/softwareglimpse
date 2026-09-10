@@ -1,10 +1,10 @@
 {
   "slug": "emergent",
-  "updatedAt": "2026-09-07T22:31:22.031Z",
+  "updatedAt": "2026-09-10T11:46:30.403Z",
   "version": "1.0.0",
   "fieldAudit": {
     "slug": "emergent",
-    "checkedAt": "2026-09-07T22:31:22.030Z",
+    "checkedAt": "2026-09-10T11:46:30.393Z",
     "items": [
       {
         "field": "name",
@@ -20,9 +20,9 @@
       },
       {
         "field": "canonical_vendor",
-        "status": "UNKNOWN",
-        "detail": "Company/vendor not documented",
-        "source": "none"
+        "status": "PASS",
+        "detail": "Vendor: Emergent Labs Inc.",
+        "source": "seed"
       },
       {
         "field": "category",
@@ -115,11 +115,11 @@
         "source": "enrichment"
       }
     ],
-    "passCount": 16,
+    "passCount": 17,
     "partialCount": 0,
     "missingCount": 0,
-    "unknownCount": 2,
-    "score": 89
+    "unknownCount": 1,
+    "score": 94
   },
   "decisionHub": {
     "whatItIs": "Emergent is an AI app development platform — build and deploy AI agents and lightweight apps from natural language prompts with hosting. Usage/credit pricing (2026-08-19 — confirm on emergent.sh).",
@@ -135,11 +135,14 @@
       "Builder platform — not enterprise MAP or writing suite"
     ],
     "coreCapabilities": [
+      "writing assist",
+      "image generation",
       "website generation",
       "agent builder",
-      "code assist",
-      "ai website builder",
-      "ai app development"
+      "connectors",
+      "data privacy",
+      "analytics reporting",
+      "code assist"
     ],
     "pricingSummary": "2 documented plans · 1 free · entry paid: Pro",
     "keyTradeoffs": [
@@ -217,7 +220,6 @@
     "evidenceState": "Research/data-based (no completed hands-on test) · Latest verification/research signal: 2026-08-19T12:00:00.000Z · Editorial assessment: approved",
     "nextDecisionStep": "Compare against peers: AI InteleKt vs Emergent",
     "missingSections": [
-      "canonical_vendor",
       "trial"
     ]
   },
@@ -295,13 +297,12 @@
   ],
   "dependentsNeedingRefresh": [],
   "remediation": [
-    "verify:canonical_vendor",
     "verify:trial"
   ],
   "notes": [
-    "fieldAudit score=89",
+    "fieldAudit score=94",
     "decisionHub bestFor=4 notIdeal=3",
     "dependents=14"
   ],
-  "materiallyImproved": false
+  "materiallyImproved": true
 }

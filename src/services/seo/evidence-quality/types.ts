@@ -47,6 +47,8 @@ export type PricingVerificationResult = {
   verifiedAt: string | null;
   /** True when enrichment stamp was written this run. */
   stampApplied: boolean;
+  /** URLs actually fetched this run — used to avoid re-hitting blocks. */
+  attemptedUrls?: string[];
 };
 
 export type ProductEvidencePack = {

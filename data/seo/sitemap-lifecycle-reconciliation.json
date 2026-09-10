@@ -1,6 +1,6 @@
 {
   "version": "1.0.0",
-  "generatedAt": "2026-09-09T18:50:48.763Z",
+  "generatedAt": "2026-09-10T20:17:13.433Z",
   "canonicalOrigin": "https://www.softwareglimpse.com",
   "pageTypes": [
     {
@@ -8,18 +8,18 @@
       "sitemapContentType": "guides",
       "counts": {
         "totalExisting": 1715,
-        "INDEXABLE": 587,
-        "IMPROVE": 2,
+        "INDEXABLE": 767,
+        "IMPROVE": 451,
         "IMPROVING": 0,
         "INDEXABLE_READY": 0,
         "READY_FOR_REVIEW": 0,
-        "MANUAL_REVIEW": 120,
+        "MANUAL_REVIEW": 0,
         "RETIRED": 0,
-        "UNTRACKED": 1006,
-        "inSitemap": 409,
-        "notInSitemap": 1306
+        "UNTRACKED": 497,
+        "inSitemap": 589,
+        "notInSitemap": 1126
       },
-      "expectedInSitemap": 409,
+      "expectedInSitemap": 589,
       "discrepancies": [],
       "notes": [
         "Lifecycle registry + seed seo.indexable; sitemap via isEntityIndexable.",
@@ -31,18 +31,18 @@
       "sitemapContentType": "comparisons",
       "counts": {
         "totalExisting": 4000,
-        "INDEXABLE": 1717,
-        "IMPROVE": 65,
+        "INDEXABLE": 2154,
+        "IMPROVE": 167,
         "IMPROVING": 0,
         "INDEXABLE_READY": 0,
         "READY_FOR_REVIEW": 0,
-        "MANUAL_REVIEW": 590,
+        "MANUAL_REVIEW": 51,
         "RETIRED": 0,
         "UNTRACKED": 1628,
-        "inSitemap": 1699,
-        "notInSitemap": 2301
+        "inSitemap": 2138,
+        "notInSitemap": 1862
       },
-      "expectedInSitemap": 1699,
+      "expectedInSitemap": 2138,
       "discrepancies": [],
       "notes": [
         "Lifecycle registry + seed; reviews are not a separate compare surface."
@@ -253,68 +253,28 @@
   ],
   "totals": {
     "totalExisting": 6691,
-    "INDEXABLE": 3177,
-    "IMPROVE": 170,
+    "INDEXABLE": 3794,
+    "IMPROVE": 721,
     "IMPROVING": 0,
     "INDEXABLE_READY": 0,
     "READY_FOR_REVIEW": 0,
-    "MANUAL_REVIEW": 710,
+    "MANUAL_REVIEW": 51,
     "RETIRED": 0,
-    "UNTRACKED": 2634,
-    "inSitemap": 2981,
-    "notInSitemap": 3710,
-    "discrepancyCount": 4,
-    "fixableCount": 4
+    "UNTRACKED": 2125,
+    "inSitemap": 3600,
+    "notInSitemap": 3091,
+    "discrepancyCount": 0,
+    "fixableCount": 0
   },
-  "discrepancies": [
-    {
-      "kind": "lifecycle_orphan",
-      "pageType": "comparisons",
-      "slug": "alidrop-vs-printify",
-      "path": "/compare/alidrop-vs-printify/",
-      "detail": "promotion_gates_fail: Promotion/index gates fail: thin-comparison-mesh; unique-ratio-below-0.35:0; missing-verdict; missing-best-for",
-      "fixable": true
-    },
-    {
-      "kind": "lifecycle_orphan",
-      "pageType": "comparisons",
-      "slug": "alidrop-vs-spocket",
-      "path": "/compare/alidrop-vs-spocket/",
-      "detail": "promotion_gates_fail: Promotion/index gates fail: thin-comparison-mesh",
-      "fixable": true
-    },
-    {
-      "kind": "lifecycle_orphan",
-      "pageType": "comparisons",
-      "slug": "aircall-vs-kixie",
-      "path": "/compare/aircall-vs-kixie/",
-      "detail": "promotion_gates_fail: Promotion/index gates fail: thin-comparison-mesh; unique-ratio-below-0.35:0; missing-verdict; missing-best-for",
-      "fixable": true
-    },
-    {
-      "kind": "lifecycle_orphan",
-      "pageType": "comparisons",
-      "slug": "alidrop-vs-flippa",
-      "path": "/compare/alidrop-vs-flippa/",
-      "detail": "promotion_gates_fail: Promotion/index gates fail: thin-comparison-mesh; unique-ratio-below-0.35:0; missing-verdict; missing-best-for",
-      "fixable": true
-    }
-  ],
+  "discrepancies": [],
   "liveValidation": {
-    "attempted": true,
-    "baseUrl": "https://www.softwareglimpse.com",
-    "ok": false,
+    "attempted": false,
+    "baseUrl": null,
+    "ok": true,
     "notes": [
-      "Legacy monolithic <urlset> at /sitemap.xml — named child sitemaps not deployed yet. Local/production build serves sitemapindex."
+      "Live validation runs from CLI after build."
     ],
-    "childChecks": [
-      {
-        "path": "/sitemap.xml",
-        "status": 200,
-        "urlCount": 6370,
-        "error": null
-      }
-    ]
+    "childChecks": []
   },
   "schemaNotes": [
     "Hydration: content-lifecycle.json is bundled into the lifecycle store and reloaded from disk in Node sitemap builds.",

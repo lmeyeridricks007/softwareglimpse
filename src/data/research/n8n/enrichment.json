@@ -269,6 +269,22 @@
       ]
     }
   ],
+  "integrationSupport": [
+    {
+      "integrationSlug": "slack",
+      "kind": "native",
+      "sourceIds": [
+        "n8n-product-official"
+      ]
+    },
+    {
+      "integrationSlug": "api",
+      "kind": "api-only",
+      "sourceIds": [
+        "n8n-product-official"
+      ]
+    }
+  ],
   "aiCapabilities": [
     {
       "capability": "assistant",
@@ -294,22 +310,6 @@
     {
       "capability": "recommendations",
       "availability": "limited",
-      "sourceIds": [
-        "n8n-product-official"
-      ]
-    }
-  ],
-  "integrationSupport": [
-    {
-      "integrationSlug": "slack",
-      "kind": "native",
-      "sourceIds": [
-        "n8n-product-official"
-      ]
-    },
-    {
-      "integrationSlug": "api",
-      "kind": "api-only",
       "sourceIds": [
         "n8n-product-official"
       ]
@@ -398,6 +398,95 @@
         "n8n-product-official"
       ],
       "isEditorial": false
+    }
+  ],
+  "screenshots": [
+    {
+      "id": "n8n-shot-overview",
+      "src": "/software/n8n/overview.png",
+      "alt": "n8n workflow automation teaching overview visual",
+      "caption": "SoftwareGlimpse teaching visual for n8n (original-diagram) — vendor OG was on a blocked third-party host.",
+      "source": "https://n8n.io/pricing/",
+      "checkedAt": "2026-08-18T18:00:00.000Z",
+      "annotation": "Original teaching diagram — not vendor UI",
+      "kind": "original-diagram",
+      "featureIds": [
+        "workflow-automation",
+        "connectors"
+      ],
+      "useCaseIds": [
+        "ai-automation"
+      ]
+    }
+  ],
+  "media": [
+    {
+      "id": "n8n-video-1mwsob0gnm4",
+      "productSlug": "n8n",
+      "productIds": [
+        "n8n"
+      ],
+      "type": "official-video",
+      "provider": "youtube",
+      "sourceUrl": "https://www.youtube.com/watch?v=1MwSoB0gnM4",
+      "videoId": "1MwSoB0gnM4",
+      "providerId": "1MwSoB0gnM4",
+      "embedUrl": "https://www.youtube-nocookie.com/embed/1MwSoB0gnM4",
+      "title": "n8n Quickstart",
+      "description": "Official n8n product video from the vendor YouTube channel.",
+      "thumbnailUrl": "https://i.ytimg.com/vi/1MwSoB0gnM4/hqdefault.jpg",
+      "sourceOrganization": "n8n",
+      "channelName": "n8n",
+      "officialSource": true,
+      "officialSourceKind": "vendor-channel",
+      "verifiedAt": "2026-08-18T14:00:00.000Z",
+      "lastCheckedAt": "2026-08-18T14:00:00.000Z",
+      "sourceHealth": "unknown",
+      "refreshFlags": [],
+      "embeddingAllowed": true,
+      "capabilityIds": [],
+      "featureIds": [
+        "workflow-automation",
+        "connectors"
+      ],
+      "requirementIds": [],
+      "useCaseIds": [
+        "ai-automation"
+      ],
+      "industryIds": [],
+      "guideIds": [],
+      "evidenceRefs": [],
+      "evidenceClaimIds": [],
+      "evidenceClaimKinds": [
+        "workflow-demo",
+        "ui-layout",
+        "feature-existence"
+      ],
+      "demonstratedDimensionIds": [],
+      "requirementCriterionIds": [],
+      "workflowStageIds": [],
+      "mediaContext": "general-workflow",
+      "reportedOutcomes": [],
+      "placements": [
+        "overview",
+        "features",
+        "evidence"
+      ],
+      "purpose": "Official n8n video for product research pages",
+      "demonstratesCaption": "How n8n presents the product in an official vendor video.",
+      "editorialCommentary": "Official vendor demo — treat as UI/workflow evidence, not SoftwareGlimpse scoring.",
+      "whatThisShows": [
+        "n8n product surfaces as shown in the official vendor video",
+        "UI/workflow layout marketed by the vendor"
+      ],
+      "limitations": [
+        "pricing",
+        "comparative superiority",
+        "security or compliance certification",
+        "implementation effort or total cost of ownership"
+      ],
+      "whatToNotice": [],
+      "status": "published"
     }
   ],
   "pricing": {
@@ -499,107 +588,12 @@
       }
     ],
     "notes": "Verified 2026-08-18 from n8n.io/pricing (high confidence). Amounts are EUR, not USD: Cloud Starter €20/mo annual (2.5k executions + AI credits); Pro €50; Business €667; Enterprise quote. Community Edition is free self-host — that is the free plan, not a Cloud $0 SKU. startingPriceMonthly 20 is the Starter annual euro floor stored as a number; confirm FX and live euro tiles. Affiliate economics excluded.",
-    "verifiedAt": "2026-08-18T18:00:00.000Z",
+    "verifiedAt": "2026-09-10T08:15:10.303Z",
     "sourceIds": [
       "n8n-pricing-official"
     ],
     "startingPriceMonthly": 20
   },
-  "screenshots": [
-    {
-      "id": "n8n-shot-overview",
-      "src": "/software/n8n/overview.png",
-      "alt": "n8n workflow automation teaching overview visual",
-      "caption": "SoftwareGlimpse teaching visual for n8n (original-diagram) — vendor OG was on a blocked third-party host.",
-      "source": "https://n8n.io/pricing/",
-      "checkedAt": "2026-08-18T18:00:00.000Z",
-      "annotation": "Original teaching diagram — not vendor UI",
-      "kind": "original-diagram",
-      "featureIds": [
-        "workflow-automation",
-        "connectors"
-      ],
-      "useCaseIds": [
-        "ai-automation"
-      ]
-    }
-  ],
-  "media": [
-    {
-      "id": "n8n-video-1mwsob0gnm4",
-      "productSlug": "n8n",
-      "productIds": [
-        "n8n"
-      ],
-      "type": "official-video",
-      "provider": "youtube",
-      "sourceUrl": "https://www.youtube.com/watch?v=1MwSoB0gnM4",
-      "videoId": "1MwSoB0gnM4",
-      "providerId": "1MwSoB0gnM4",
-      "embedUrl": "https://www.youtube-nocookie.com/embed/1MwSoB0gnM4",
-      "title": "n8n Quickstart",
-      "description": "Official n8n product video from the vendor YouTube channel.",
-      "thumbnailUrl": "https://i.ytimg.com/vi/1MwSoB0gnM4/hqdefault.jpg",
-      "sourceOrganization": "n8n",
-      "channelName": "n8n",
-      "officialSource": true,
-      "officialSourceKind": "vendor-channel",
-      "verifiedAt": "2026-08-18T14:00:00.000Z",
-      "lastCheckedAt": "2026-08-18T14:00:00.000Z",
-      "sourceHealth": "unknown",
-      "refreshFlags": [],
-      "embeddingAllowed": true,
-      "capabilityIds": [],
-      "featureIds": [
-        "workflow-automation",
-        "connectors"
-      ],
-      "requirementIds": [],
-      "useCaseIds": [
-        "ai-automation"
-      ],
-      "industryIds": [],
-      "guideIds": [],
-      "evidenceRefs": [],
-      "evidenceClaimIds": [],
-      "evidenceClaimKinds": [
-        "workflow-demo",
-        "ui-layout",
-        "feature-existence"
-      ],
-      "demonstratedDimensionIds": [],
-      "requirementCriterionIds": [],
-      "workflowStageIds": [],
-      "reportedOutcomes": [],
-      "placements": [
-        "overview",
-        "features",
-        "evidence"
-      ],
-      "mediaContext": "general-workflow",
-      "purpose": "Official n8n video for product research pages",
-      "demonstratesCaption": "How n8n presents the product in an official vendor video.",
-      "editorialCommentary": "Official vendor demo — treat as UI/workflow evidence, not SoftwareGlimpse scoring.",
-      "whatThisShows": [
-        "n8n product surfaces as shown in the official vendor video",
-        "UI/workflow layout marketed by the vendor"
-      ],
-      "limitations": [
-        "pricing",
-        "comparative superiority",
-        "security or compliance certification",
-        "implementation effort or total cost of ownership"
-      ],
-      "whatToNotice": [],
-      "status": "published"
-    }
-  ],
-  "sourceIds": [
-    "n8n-product-official",
-    "n8n-pricing-official",
-    "n8n-pricing"
-  ],
-  "notes": "AI automation overlay onboarding enrichment from first-party research 2026-08-18T18:00:00.000Z. handsOnTesting=false. membershipRole=primary. jobCluster=ai-automation.",
   "domainCheckedAt": {
     "identity": "2026-08-18T18:00:00.000Z",
     "pricing": "2026-08-18T18:00:00.000Z",
@@ -613,5 +607,11 @@
     "limits": "2026-08-18T18:00:00.000Z",
     "security-compliance": "2026-08-18T18:00:00.000Z"
   },
-  "updatedAt": "2026-08-18T18:00:00.000Z"
+  "sourceIds": [
+    "n8n-product-official",
+    "n8n-pricing-official",
+    "n8n-pricing"
+  ],
+  "updatedAt": "2026-08-18T18:00:00.000Z",
+  "notes": "AI automation overlay onboarding enrichment from first-party research 2026-08-18T18:00:00.000Z. handsOnTesting=false. membershipRole=primary. jobCluster=ai-automation."
 }

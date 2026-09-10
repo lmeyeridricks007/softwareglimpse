@@ -159,36 +159,6 @@
       ]
     }
   ],
-  "aiCapabilities": [
-    {
-      "capability": "assistant",
-      "availability": "add-on",
-      "sourceIds": [
-        "asana-product-official"
-      ]
-    },
-    {
-      "capability": "summaries",
-      "availability": "add-on",
-      "sourceIds": [
-        "asana-product-official"
-      ]
-    },
-    {
-      "capability": "automation",
-      "availability": "supported",
-      "sourceIds": [
-        "asana-product-official"
-      ]
-    },
-    {
-      "capability": "recommendations",
-      "availability": "add-on",
-      "sourceIds": [
-        "asana-product-official"
-      ]
-    }
-  ],
   "integrationSupport": [
     {
       "integrationSlug": "slack",
@@ -221,6 +191,36 @@
     {
       "integrationSlug": "zapier",
       "kind": "zapier-style",
+      "sourceIds": [
+        "asana-product-official"
+      ]
+    }
+  ],
+  "aiCapabilities": [
+    {
+      "capability": "assistant",
+      "availability": "add-on",
+      "sourceIds": [
+        "asana-product-official"
+      ]
+    },
+    {
+      "capability": "summaries",
+      "availability": "add-on",
+      "sourceIds": [
+        "asana-product-official"
+      ]
+    },
+    {
+      "capability": "automation",
+      "availability": "supported",
+      "sourceIds": [
+        "asana-product-official"
+      ]
+    },
+    {
+      "capability": "recommendations",
+      "availability": "add-on",
       "sourceIds": [
         "asana-product-official"
       ]
@@ -296,88 +296,6 @@
       "isEditorial": false
     }
   ],
-  "pricing": {
-    "currency": "USD",
-    "model": "freemium",
-    "hasFreePlan": true,
-    "hasFreeTrial": true,
-    "plans": [
-      {
-        "id": "plan-free",
-        "slug": "free",
-        "name": "Personal/Free",
-        "isFree": true,
-        "contactSales": false,
-        "hasFreeTrial": false,
-        "highlighted": false,
-        "rules": [
-          {
-            "kind": "flat",
-            "amount": 0,
-            "currency": "USD",
-            "interval": "month",
-            "amountPeriod": "month"
-          }
-        ],
-        "description": "Free plan with limited seats/features for small teams."
-      },
-      {
-        "id": "plan-starter",
-        "slug": "starter",
-        "name": "Starter",
-        "isFree": false,
-        "contactSales": false,
-        "hasFreeTrial": true,
-        "highlighted": true,
-        "rules": [
-          {
-            "kind": "per-seat",
-            "amountPerSeat": 10.99,
-            "currency": "USD",
-            "interval": "year",
-            "amountPeriod": "month"
-          }
-        ],
-        "description": "$10.99/user/mo billed annually — entry paid work management."
-      },
-      {
-        "id": "plan-advanced",
-        "slug": "advanced",
-        "name": "Advanced",
-        "isFree": false,
-        "contactSales": false,
-        "hasFreeTrial": true,
-        "highlighted": false,
-        "rules": [
-          {
-            "kind": "per-seat",
-            "amountPerSeat": 24.99,
-            "currency": "USD",
-            "interval": "year",
-            "amountPeriod": "month"
-          }
-        ],
-        "description": "$24.99/user/mo annual — goals, forms, reporting depth and stronger automation."
-      },
-      {
-        "id": "plan-enterprise",
-        "slug": "enterprise",
-        "name": "Enterprise",
-        "isFree": false,
-        "contactSales": true,
-        "hasFreeTrial": false,
-        "highlighted": false,
-        "rules": [],
-        "description": "Enterprise — custom quote for governance and scale."
-      }
-    ],
-    "notes": "Cross-checked 2026-08-17: Free (limited users); Starter $10.99 / Advanced $24.99 per user/mo annual; Enterprise quote. Monthly higher. AI Studio/Teammates on paid tiers with credits — confirm live asana.com/pricing.",
-    "verifiedAt": "2026-08-17T20:00:00.000Z",
-    "sourceIds": [
-      "asana-pricing-official"
-    ],
-    "startingPriceMonthly": 10.99
-  },
   "screenshots": [
     {
       "id": "asana-shot-homepage-ui",
@@ -467,13 +385,13 @@
       "demonstratedDimensionIds": [],
       "requirementCriterionIds": [],
       "workflowStageIds": [],
+      "mediaContext": "general-workflow",
       "reportedOutcomes": [],
       "placements": [
         "overview",
         "features",
         "evidence"
       ],
-      "mediaContext": "general-workflow",
       "purpose": "Official Asana video for product research pages",
       "demonstratesCaption": "How Asana presents the product in an official vendor video.",
       "editorialCommentary": "Official vendor demo — treat as UI/workflow evidence, not SoftwareGlimpse scoring.",
@@ -533,13 +451,13 @@
       "demonstratedDimensionIds": [],
       "requirementCriterionIds": [],
       "workflowStageIds": [],
+      "mediaContext": "general-workflow",
       "reportedOutcomes": [],
       "placements": [
         "overview",
         "features",
         "evidence"
       ],
-      "mediaContext": "general-workflow",
       "purpose": "Official Asana video for product research pages",
       "demonstratesCaption": "How Asana presents the product in an official vendor video.",
       "editorialCommentary": "Official vendor demo — treat as UI/workflow evidence, not SoftwareGlimpse scoring.",
@@ -557,11 +475,88 @@
       "status": "published"
     }
   ],
-  "sourceIds": [
-    "asana-product-official",
-    "asana-pricing-official"
-  ],
-  "notes": "Project-management Priority-1 onboarding enrichment from first-party research 2026-08-17T20:00:00.000Z. handsOnTesting=false. membershipRole=primary. jobCluster=work-os.",
+  "pricing": {
+    "currency": "USD",
+    "model": "freemium",
+    "hasFreePlan": true,
+    "hasFreeTrial": true,
+    "plans": [
+      {
+        "id": "plan-free",
+        "slug": "free",
+        "name": "Personal/Free",
+        "isFree": true,
+        "contactSales": false,
+        "hasFreeTrial": false,
+        "highlighted": false,
+        "rules": [
+          {
+            "kind": "flat",
+            "amount": 0,
+            "currency": "USD",
+            "interval": "month",
+            "amountPeriod": "month"
+          }
+        ],
+        "description": "Free plan with limited seats/features for small teams."
+      },
+      {
+        "id": "plan-starter",
+        "slug": "starter",
+        "name": "Starter",
+        "isFree": false,
+        "contactSales": false,
+        "hasFreeTrial": true,
+        "highlighted": true,
+        "rules": [
+          {
+            "kind": "per-seat",
+            "amountPerSeat": 10.99,
+            "currency": "USD",
+            "interval": "year",
+            "amountPeriod": "month"
+          }
+        ],
+        "description": "$10.99/user/mo billed annually — entry paid work management."
+      },
+      {
+        "id": "plan-advanced",
+        "slug": "advanced",
+        "name": "Advanced",
+        "isFree": false,
+        "contactSales": false,
+        "hasFreeTrial": true,
+        "highlighted": false,
+        "rules": [
+          {
+            "kind": "per-seat",
+            "amountPerSeat": 24.99,
+            "currency": "USD",
+            "interval": "year",
+            "amountPeriod": "month"
+          }
+        ],
+        "description": "$24.99/user/mo annual — goals, forms, reporting depth and stronger automation."
+      },
+      {
+        "id": "plan-enterprise",
+        "slug": "enterprise",
+        "name": "Enterprise",
+        "isFree": false,
+        "contactSales": true,
+        "hasFreeTrial": false,
+        "highlighted": false,
+        "rules": [],
+        "description": "Enterprise — custom quote for governance and scale."
+      }
+    ],
+    "notes": "Cross-checked 2026-08-17: Free (limited users); Starter $10.99 / Advanced $24.99 per user/mo annual; Enterprise quote. Monthly higher. AI Studio/Teammates on paid tiers with credits — confirm live asana.com/pricing.",
+    "verifiedAt": "2026-09-10T11:38:17.320Z",
+    "sourceIds": [
+      "asana-pricing-official"
+    ],
+    "startingPriceMonthly": 10.99
+  },
   "domainCheckedAt": {
     "identity": "2026-08-17T20:00:00.000Z",
     "pricing": "2026-08-17T20:00:00.000Z",
@@ -575,5 +570,10 @@
     "limits": "2026-08-17T20:00:00.000Z",
     "security-compliance": "2026-08-17T20:00:00.000Z"
   },
-  "updatedAt": "2026-08-18T07:00:00.000Z"
+  "sourceIds": [
+    "asana-product-official",
+    "asana-pricing-official"
+  ],
+  "updatedAt": "2026-08-18T07:00:00.000Z",
+  "notes": "Project-management Priority-1 onboarding enrichment from first-party research 2026-08-17T20:00:00.000Z. handsOnTesting=false. membershipRole=primary. jobCluster=work-os."
 }

@@ -1,10 +1,10 @@
 {
   "slug": "ueni",
-  "updatedAt": "2026-09-07T22:31:22.067Z",
+  "updatedAt": "2026-09-10T11:46:30.410Z",
   "version": "1.0.0",
   "fieldAudit": {
     "slug": "ueni",
-    "checkedAt": "2026-09-07T22:31:22.066Z",
+    "checkedAt": "2026-09-10T11:46:30.408Z",
     "items": [
       {
         "field": "name",
@@ -20,9 +20,9 @@
       },
       {
         "field": "canonical_vendor",
-        "status": "UNKNOWN",
-        "detail": "Company/vendor not documented",
-        "source": "none"
+        "status": "PASS",
+        "detail": "Vendor: UENI.com",
+        "source": "seed"
       },
       {
         "field": "category",
@@ -115,11 +115,11 @@
         "source": "enrichment"
       }
     ],
-    "passCount": 16,
+    "passCount": 17,
     "partialCount": 0,
     "missingCount": 0,
-    "unknownCount": 2,
-    "score": 89
+    "unknownCount": 1,
+    "score": 94
   },
   "decisionHub": {
     "whatItIs": "UENI is a done-for-you website service for local small businesses — custom-designed site, domain, hosting, SSL, business email, basic ecommerce/booking, and human support. US pricing (2026-08-19): Launch $79 one-time setup + $24.99/month; Plus (most popular) $59/month with unlimited concierge edits; Growth $124.99/month with 1-on-1 marketing; Ecommerce tier $99/month on published US grid. 30-day money-back guarantee. 0% transaction fee on published ecommerce tiers. Website-builder-commerce cluster peer of Wegic — not a Shopify-class commerce OS.",
@@ -141,8 +141,13 @@
     ],
     "coreCapabilities": [
       "online storefront",
+      "product catalog",
       "checkout payments",
-      "website builder commerce"
+      "order management",
+      "inventory management",
+      "marketing automation",
+      "analytics reporting",
+      "ai assistance"
     ],
     "pricingSummary": "4 documented plans · entry paid: Launch",
     "keyTradeoffs": [
@@ -219,7 +224,6 @@
     "evidenceState": "Research/data-based (no completed hands-on test) · Latest verification/research signal: 2026-08-19T12:00:00.000Z · Editorial assessment: approved",
     "nextDecisionStep": "Compare against peers: UENI vs Wegic",
     "missingSections": [
-      "canonical_vendor",
       "trial"
     ]
   },
@@ -297,13 +301,12 @@
   ],
   "dependentsNeedingRefresh": [],
   "remediation": [
-    "verify:canonical_vendor",
     "verify:trial"
   ],
   "notes": [
-    "fieldAudit score=89",
+    "fieldAudit score=94",
     "decisionHub bestFor=6 notIdeal=6",
     "dependents=14"
   ],
-  "materiallyImproved": false
+  "materiallyImproved": true
 }

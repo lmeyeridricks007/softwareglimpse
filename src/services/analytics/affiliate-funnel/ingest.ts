@@ -188,7 +188,7 @@ export function importAffiliateConversionsFromFile(
     hasAnyCommission && money.commissionTotal == null;
   const incompleteOrder = hasAnyOrder && money.orderRevenueTotal == null;
 
-  let finalValidity: AffiliateConversionStore["validity"] =
+  const finalValidity: AffiliateConversionStore["validity"] =
     conversions.length === 0
       ? "NOT_CONNECTED"
       : classifyFunnelValidity({

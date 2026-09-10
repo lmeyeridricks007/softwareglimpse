@@ -1583,7 +1583,7 @@ function taxonomyUseCases(): UseCaseInput[] {
       "kpi-dashboards",
       "KPI dashboards",
       "Build executive and team dashboards with goals across marketing data sources.",
-      ["analytics-bi"],
+      ["analytics-bi", "marketing"],
     ],
     [
       "marketing-metrics",
@@ -1679,13 +1679,13 @@ function taxonomyUseCases(): UseCaseInput[] {
       "review-generation",
       "Review generation",
       "Automate post-job review requests and grow Google ratings.",
-      ["reputation-reviews"],
+      ["reputation-reviews", "customer-service"],
     ],
     [
       "local-reputation",
       "Local reputation management",
       "Manage Google and social reputation for local service businesses.",
-      ["reputation-reviews"],
+      ["reputation-reviews", "customer-service"],
     ],
   ];
 

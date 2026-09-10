@@ -118,6 +118,55 @@ async function main(): Promise<void> {
   console.log(
     `Factory IMPROVE pool≈${remainingFactoryImprove}; already processed excluded=${excludedAlreadyProcessed}; legitimate selected=${selected.length}; thin/illegitimate skipped this pass=${skippedIllegitimate.length}`,
   );
+
+  if (selected.length === 0) {
+    const outDir = path.join(ROOT, "data/seo/batches", waveId);
+    mkdirSync(outDir, { recursive: true });
+    const blocked = skippedIllegitimate.map((thin) => ({
+      slug: thin.slug,
+      packKind: thin.existence.packKind,
+      lane: thin.lane,
+      existenceOk: false,
+      existenceReason: thin.existence.reason,
+      userJob: thin.existence.userJob,
+      applied: false,
+      materiallyImproved: false,
+      promoted: false,
+      remainingImprove: true,
+      semanticFailure: false,
+      skipReasons: [`existence:${thin.existence.reason}`],
+      dataBlockers: thin.existence.dataBlockers,
+    }));
+    const summary = {
+      wave: waveId,
+      fr: "FR-002",
+      generatedAt: new Date().toISOString(),
+      applied: apply && !dryRun,
+      promote,
+      waveSize,
+      metrics: {
+        processed: 0,
+        promoted: 0,
+        illegitimateSkipped: skippedIllegitimate.length,
+        excludedAlreadyProcessed,
+        factoryImproveRemainingApprox: remainingFactoryImprove,
+      },
+      pages: blocked,
+      notes: [
+        "No remaining legitimate factory packs in the unprocessed IMPROVE pool.",
+        "Existence-failed pages stay IMPROVE with machine-readable existence blockers.",
+      ],
+    };
+    writeFileSync(
+      path.join(outDir, "wave-report.json"),
+      `${JSON.stringify(summary, null, 2)}\n`,
+      "utf8",
+    );
+    console.log(
+      `No legitimate factory candidates left. Recorded ${blocked.length} existence blockers.`,
+    );
+    return;
+  }
   console.log(
     "Wave lanes:",
     selected.reduce(
@@ -287,7 +336,6 @@ async function main(): Promise<void> {
       semanticFailure,
       semanticRiskBefore: semBefore?.riskLevel ?? null,
       semanticRiskAfter: semantic?.riskLevel ?? null,
-      // Risk reduced only when estate-compatible riskLevel drops — not a 0.02 sim blip.
       semanticRiskReduced:
         riskRank(semantic?.riskLevel) < riskRank(semBefore?.riskLevel),
       maxSimilarityBefore: semBefore?.maxSemanticSimilarity ?? null,
@@ -301,6 +349,38 @@ async function main(): Promise<void> {
       qualityAfter: qAfter,
       qualityDelta: delta,
       skipReasons,
+    });
+  }
+
+  // Record existence failures so later waves do not re-select them.
+  for (const thin of skippedIllegitimate) {
+    if (pages.some((p) => p.slug === thin.slug)) continue;
+    pages.push({
+      slug: thin.slug,
+      packKind: thin.existence.packKind,
+      lane: thin.lane,
+      existenceOk: false,
+      existenceReason: thin.existence.reason,
+      userJob: thin.existence.userJob,
+      applied: false,
+      materiallyImproved: false,
+      promoted: false,
+      remainingImprove: true,
+      semanticFailure: false,
+      semanticRiskBefore: null,
+      semanticRiskAfter: null,
+      semanticRiskReduced: false,
+      maxSimilarityBefore: null,
+      maxSimilarityAfter: null,
+      uniqueSignalsBefore: 0,
+      uniqueSignalsAfter: 0,
+      uniqueSignalsGained: 0,
+      dataBlockers: thin.existence.dataBlockers,
+      evidenceBlockers: [],
+      qualityBefore: null,
+      qualityAfter: null,
+      qualityDelta: null,
+      skipReasons: [`existence:${thin.existence.reason}`],
     });
   }
 
@@ -386,7 +466,8 @@ async function main(): Promise<void> {
       illegitimateSkipped: skippedIllegitimate.length,
       excludedAlreadyProcessed,
     },
-    pages: wavePages,
+    // Include existence-failed rows so later waves exclude them as BLOCKED.
+    pages,
     thinExistenceSkipsSample: thinSample,
     laneMix: selected.reduce(
       (acc, s) => {

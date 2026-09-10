@@ -1,3 +1,5 @@
+import { existsSync, readFileSync } from "node:fs";
+import path from "node:path";
 import {
   loadEnrichment,
   loadManualSources,
@@ -16,25 +18,146 @@ const FETCH_TIMEOUT_MS = 20_000;
 
 type PricingSourceCandidate = { id: string; url: string; score: number };
 
-/** Ranked first-party / pricing-domain sources (highest score first). */
+function urlKey(url: string): string {
+  return url.replace(/\/$/, "").toLowerCase();
+}
+
+function urlHost(url: string): string | null {
+  try {
+    return new URL(url).hostname.replace(/^www\./i, "").toLowerCase();
+  } catch {
+    return null;
+  }
+}
+
+/**
+ * Hosts/URLs we must not re-fetch: prior 403/401/429/timeout/plan_hit.
+ * 404 skips the exact URL only so a sibling docs path can still be tried.
+ */
+export function priorPricingFetchBlocks(slug: string): {
+  skipHosts: Set<string>;
+  skipUrls: Set<string>;
+} {
+  const skipHosts = new Set<string>();
+  const skipUrls = new Set<string>();
+  const packPath = path.join(
+    process.cwd(),
+    "data/seo/evidence-packs",
+    `${slug}.json`,
+  );
+  if (!existsSync(packPath)) return { skipHosts, skipUrls };
+  try {
+    const pack = JSON.parse(readFileSync(packPath, "utf8")) as {
+      pricingVerification?: PricingVerificationResult;
+    };
+    const v = pack.pricingVerification;
+    if (!v?.attempted || v.verified) return { skipHosts, skipUrls };
+    const reason = v.rejectReason ?? "";
+    const attempted = [
+      ...(v.attemptedUrls ?? []),
+      ...(v.sourceUrl ? [v.sourceUrl] : []),
+    ];
+    for (const last of attempted) {
+      skipUrls.add(urlKey(last));
+      const host = urlHost(last);
+      const skipWholeHost =
+        reason.startsWith("http_403") ||
+        reason.startsWith("http_401") ||
+        reason.startsWith("http_429") ||
+        reason.startsWith("plan_hit") ||
+        reason.startsWith("fetch_failed") ||
+        /timeout|aborted/i.test(reason);
+      if (skipWholeHost && host) skipHosts.add(host);
+    }
+  } catch {
+    return { skipHosts, skipUrls };
+  }
+  return { skipHosts, skipUrls };
+}
+
+function isFixtureSource(source: {
+  authority?: string | null;
+  sourceType?: string | null;
+}): boolean {
+  return (
+    source.authority === "fixture" ||
+    (source.sourceType ?? "").toLowerCase() === "fixture"
+  );
+}
+
+function isPricingOrDocsSignal(
+  url: string,
+  type: string,
+  domains: string[],
+): boolean {
+  const urlL = url.toLowerCase();
+  return (
+    type.includes("pricing") ||
+    domains.includes("pricing") ||
+    domains.includes("plans") ||
+    /\/pricing/i.test(url) ||
+    type.includes("help") ||
+    type.includes("documentation") ||
+    type.includes("docs") ||
+    type.includes("release") ||
+    type.includes("marketplace") ||
+    /(help|docs|support|billing|\/plans\/|marketplace|appsource)/i.test(urlL)
+  );
+}
+
+function scorePricingCandidate(input: {
+  url: string;
+  sourceType?: string | null;
+  authority?: string | null;
+  domains?: string[] | null;
+}): number | null {
+  const url = input.url;
+  const type = (input.sourceType ?? "").toLowerCase();
+  const domains = input.domains ?? [];
+  if (!isPricingOrDocsSignal(url, type, domains)) return null;
+
+  const urlL = url.toLowerCase();
+  let score = 0;
+  if (type.includes("pricing")) score += 50;
+  if (domains.includes("pricing")) score += 30;
+  if (/\/pricing/i.test(url)) score += 40;
+  if (type.includes("help") || type.includes("documentation") || type.includes("docs")) {
+    score += 25;
+  }
+  if (/(help|docs|support|billing|\/plans)/i.test(urlL)) score += 20;
+  if (/(marketplace|appsource)/i.test(urlL) || type.includes("marketplace")) {
+    score += 18;
+  }
+  if (/release|changelog/i.test(urlL) || type.includes("release")) score += 15;
+  if (domains.includes("plans") || domains.includes("limits")) score += 10;
+  if (input.authority === "first-party") score += 8;
+  if (type.includes("official")) score += 5;
+  return score > 0 ? score : null;
+}
+
+/** Ranked first-party pricing / docs / help / marketplace sources. */
 export function pickPricingSources(
   slug: string,
-  limit = 3,
+  limit = 4,
 ): PricingSourceCandidate[] {
+  const { skipHosts, skipUrls } = priorPricingFetchBlocks(slug);
   const sources = loadManualSources(slug).filter((s) => s.status !== "rejected");
   const scored = sources
     .map((s) => {
+      if (isFixtureSource(s)) return null;
       const url = s.url?.trim();
       if (!url) return null;
-      const type = (s.sourceType ?? "").toLowerCase();
-      const domains = s.domains ?? [];
-      let score = 0;
-      if (type.includes("pricing")) score += 50;
-      if (domains.includes("pricing")) score += 30;
-      if (/\/pricing/i.test(url)) score += 40;
-      if (type.includes("official")) score += 10;
-      if (s.authority === "first-party") score += 5;
-      if (score <= 0) return null;
+      const key = urlKey(url);
+      if (skipUrls.has(key)) return null;
+      const host = urlHost(url);
+      if (host && skipHosts.has(host)) return null;
+      const score = scorePricingCandidate({
+        url,
+        sourceType: s.sourceType,
+        authority: s.authority,
+        domains: s.domains,
+      });
+      if (score == null) return null;
       return { id: s.id, url, score };
     })
     .filter((x): x is PricingSourceCandidate => Boolean(x))
@@ -43,7 +166,7 @@ export function pickPricingSources(
   const seen = new Set<string>();
   const out: PricingSourceCandidate[] = [];
   for (const s of scored) {
-    const key = s.url.replace(/\/$/, "").toLowerCase();
+    const key = urlKey(s.url);
     if (seen.has(key)) continue;
     seen.add(key);
     out.push(s);
@@ -107,8 +230,9 @@ export async function verifyPricingAgainstVendor(
   const apply = options.apply === true;
   const stampIndex = options.stampIndex ?? 0;
 
-  const candidates = pickPricingSources(pack.slug, 3);
+  const candidates = pickPricingSources(pack.slug, 4);
   const planNames = pack.plans.map((p) => p.name);
+  const attemptedUrls: string[] = [];
 
   if (candidates.length === 0) {
     return {
@@ -123,6 +247,7 @@ export async function verifyPricingAgainstVendor(
       rejectReason: "no_pricing_source_url",
       verifiedAt: null,
       stampApplied: false,
+      attemptedUrls,
     };
   }
 
@@ -140,6 +265,7 @@ export async function verifyPricingAgainstVendor(
       rejectReason: "no_enrichment_plans",
       verifiedAt: null,
       stampApplied: false,
+      attemptedUrls,
     };
   }
 
@@ -148,9 +274,13 @@ export async function verifyPricingAgainstVendor(
   let lastFound: string[] = [];
   let lastRatio = 0;
   let lastReject = "http_error";
+  const skipHostsThisRun = new Set<string>();
 
   for (const source of candidates) {
+    const host = urlHost(source.url);
+    if (host && skipHostsThisRun.has(host)) continue;
     lastSource = source;
+    attemptedUrls.push(source.url);
     let httpStatus: number | null = null;
     let html = "";
     try {
@@ -168,17 +298,27 @@ export async function verifyPricingAgainstVendor(
     } catch (error) {
       lastHttp = httpStatus;
       lastReject = `fetch_failed:${error instanceof Error ? error.message : String(error)}`;
+      if (host) skipHostsThisRun.add(host);
       continue;
     }
 
     lastHttp = httpStatus;
     if (httpStatus !== 200) {
       lastReject = `http_${httpStatus}`;
-      // Try next ranked pricing URL on hard blocks / missing pages.
-      if (httpStatus === 403 || httpStatus === 404 || httpStatus === 401) {
+      // Try next ranked URL on hard blocks. 429: skip this host, not other hosts.
+      if (
+        httpStatus === 403 ||
+        httpStatus === 404 ||
+        httpStatus === 401 ||
+        httpStatus === 429
+      ) {
+        if ((httpStatus === 403 || httpStatus === 429) && host) {
+          skipHostsThisRun.add(host);
+        }
         continue;
       }
-      break;
+      if (host) skipHostsThisRun.add(host);
+      continue;
     }
 
     const { found, ratio } = matchPlanNamesInHtml(html, planNames);
@@ -212,6 +352,7 @@ export async function verifyPricingAgainstVendor(
       rejectReason: stampApplied || !apply ? null : "stamp_not_accepted_by_policy",
       verifiedAt: stampApplied || !apply ? verifiedAt : null,
       stampApplied,
+      attemptedUrls,
     };
   }
 
@@ -227,6 +368,7 @@ export async function verifyPricingAgainstVendor(
     rejectReason: lastReject,
     verifiedAt: null,
     stampApplied: false,
+    attemptedUrls,
   };
 }
 

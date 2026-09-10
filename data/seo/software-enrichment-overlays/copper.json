@@ -1,10 +1,10 @@
 {
   "slug": "copper",
-  "updatedAt": "2026-09-07T22:31:21.131Z",
+  "updatedAt": "2026-09-10T10:59:05.720Z",
   "version": "1.0.0",
   "fieldAudit": {
     "slug": "copper",
-    "checkedAt": "2026-09-07T22:31:21.129Z",
+    "checkedAt": "2026-09-10T10:59:05.719Z",
     "items": [
       {
         "field": "name",
@@ -20,9 +20,9 @@
       },
       {
         "field": "canonical_vendor",
-        "status": "UNKNOWN",
-        "detail": "Company/vendor not documented",
-        "source": "none"
+        "status": "PASS",
+        "detail": "Vendor: Copper",
+        "source": "seed"
       },
       {
         "field": "category",
@@ -115,11 +115,11 @@
         "source": "enrichment"
       }
     ],
-    "passCount": 16,
+    "passCount": 17,
     "partialCount": 0,
     "missingCount": 0,
-    "unknownCount": 2,
-    "score": 89
+    "unknownCount": 1,
+    "score": 94
   },
   "decisionHub": {
     "whatItIs": "Google Workspace-native CRM for pipeline and relationship management inside Gmail and Google apps.",
@@ -237,7 +237,6 @@
     "evidenceState": "Research/data-based (no completed hands-on test) · Latest verification/research signal: 2026-08-14T08:00:00.000Z · Editorial assessment: approved",
     "nextDecisionStep": "Compare against peers: ACT! vs Copper",
     "missingSections": [
-      "canonical_vendor",
       "trial"
     ]
   },
@@ -475,13 +474,12 @@
   ],
   "dependentsNeedingRefresh": [],
   "remediation": [
-    "verify:canonical_vendor",
     "verify:trial"
   ],
   "notes": [
-    "fieldAudit score=89",
+    "fieldAudit score=94",
     "decisionHub bestFor=6 notIdeal=4",
     "dependents=46"
   ],
-  "materiallyImproved": false
+  "materiallyImproved": true
 }

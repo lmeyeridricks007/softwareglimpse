@@ -1,11 +1,11 @@
 # Migration SEO QA
 
-**Generated:** 2026-09-09T08:02:34.157Z
+**Generated:** 2026-09-10T20:39:01.509Z
 **Agent:** MigrationSEOAuditAgent v1.0.0
-**Mode:** static+live
+**Mode:** static
 **Overall:** **PASS**
 
-> Static audit **plus** live HTTP probes against the configured `BASE_URL` (redirect hops, loops, locale 410/301, taxonomy 410).
+> Static pre-launch audit against mapping plan, redirect config, inventory, sitemap, internal-link graph, and repository scan. Pass `--base-url` / `BASE_URL` to enable live HTTP probes.
 
 ## PASS / FAIL summary
 
@@ -37,7 +37,6 @@
 | `hardcoded_legacy` | pass | 0 | App/components/data/services scanned for redirect sources |
 | `legacy_assets` | pass | 0 | wp-content/uploads and attachment patterns scanned |
 | `not_found_experience` | pass | 0 | not-found.tsx present with messaging + navigation |
-| `live_http_probes` | pass | 0 | Probed 33 URLs against http://127.0.0.1:3000 — no issues |
 
 ## Legacy URL coverage
 
@@ -113,7 +112,7 @@ _None._
 
 ## Notes
 
-- Live probes ran against the configured origin. Sample set covers legacy redirects, locale 301/410, taxonomy 410, and high-risk redirect destinations.
+- Soft 404 / live 500 / redirect loops require a running deployment (`BASE_URL` live probe) — not asserted in static mode.
 - Source of truth for redirects: `config/legacy-redirects.json`.
 - Regenerate: `npm run migration:seo-audit` or `npm run migration:seo-audit -- --base-url=http://127.0.0.1:3000`
 

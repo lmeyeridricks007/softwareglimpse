@@ -1,10 +1,10 @@
 {
   "slug": "buffer",
-  "updatedAt": "2026-09-07T22:31:21.353Z",
+  "updatedAt": "2026-09-10T11:46:30.293Z",
   "version": "1.0.0",
   "fieldAudit": {
     "slug": "buffer",
-    "checkedAt": "2026-09-07T22:31:21.351Z",
+    "checkedAt": "2026-09-10T11:46:30.291Z",
     "items": [
       {
         "field": "name",
@@ -20,9 +20,9 @@
       },
       {
         "field": "canonical_vendor",
-        "status": "UNKNOWN",
-        "detail": "Company/vendor not documented",
-        "source": "none"
+        "status": "PASS",
+        "detail": "Vendor: Buffer",
+        "source": "seed"
       },
       {
         "field": "category",
@@ -115,11 +115,11 @@
         "source": "enrichment"
       }
     ],
-    "passCount": 17,
+    "passCount": 18,
     "partialCount": 0,
     "missingCount": 0,
-    "unknownCount": 1,
-    "score": 94
+    "unknownCount": 0,
+    "score": 100
   },
   "decisionHub": {
     "whatItIs": "Buffer is a social media management platform for scheduling, analytics, engagement, and AI-assisted content. Pricing: Free (up to 3 channels, 10 scheduled posts/channel), Essentials from $6/mo per channel, Team from $12/mo per channel, with volume discounts as channels grow; 14-day trial on paid plans.",
@@ -142,12 +142,12 @@
     "coreCapabilities": [
       "social scheduling",
       "content calendar",
+      "social listening",
+      "landing pages",
+      "marketing automation",
       "analytics",
       "team collaboration",
-      "ai content generation",
-      "social media marketing",
-      "content marketing",
-      "brand monitoring"
+      "ai content generation"
     ],
     "pricingSummary": "3 documented plans · 1 free · entry paid: Essentials · trial documented on at least one plan",
     "keyTradeoffs": [
@@ -244,9 +244,7 @@
     ],
     "evidenceState": "Research/data-based (no completed hands-on test) · Latest verification/research signal: 2026-08-17T17:00:00.000Z · Editorial assessment: approved",
     "nextDecisionStep": "Compare against peers: Buffer vs SocialBee",
-    "missingSections": [
-      "canonical_vendor"
-    ]
+    "missingSections": []
   },
   "dependents": [
     {
@@ -361,13 +359,11 @@
     }
   ],
   "dependentsNeedingRefresh": [],
-  "remediation": [
-    "verify:canonical_vendor"
-  ],
+  "remediation": [],
   "notes": [
-    "fieldAudit score=94",
+    "fieldAudit score=100",
     "decisionHub bestFor=6 notIdeal=6",
     "dependents=22"
   ],
-  "materiallyImproved": false
+  "materiallyImproved": true
 }

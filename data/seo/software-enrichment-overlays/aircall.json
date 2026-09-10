@@ -1,10 +1,10 @@
 {
   "slug": "aircall",
-  "updatedAt": "2026-09-07T22:31:21.377Z",
+  "updatedAt": "2026-09-10T11:06:09.119Z",
   "version": "1.0.0",
   "fieldAudit": {
     "slug": "aircall",
-    "checkedAt": "2026-09-07T22:31:21.376Z",
+    "checkedAt": "2026-09-10T11:06:09.117Z",
     "items": [
       {
         "field": "name",
@@ -20,9 +20,9 @@
       },
       {
         "field": "canonical_vendor",
-        "status": "UNKNOWN",
-        "detail": "Company/vendor not documented",
-        "source": "none"
+        "status": "PASS",
+        "detail": "Vendor: Aircall",
+        "source": "seed"
       },
       {
         "field": "category",
@@ -115,11 +115,11 @@
         "source": "enrichment"
       }
     ],
-    "passCount": 17,
+    "passCount": 18,
     "partialCount": 0,
     "missingCount": 0,
-    "unknownCount": 1,
-    "score": 94
+    "unknownCount": 0,
+    "score": 100
   },
   "decisionHub": {
     "whatItIs": "Aircall is a cloud business phone and customer-conversation platform for sales and support teams, with IVR and call routing, call recording, SMS/MMS, 250+ integrations including a Salesforce CTI, and Power Dialer on the Professional plan. Licences are sold with a 3-licence minimum on Essentials and Professional (25 on Custom), and AI Assist, AI Voice Agents, Analytics+ and WhatsApp are priced add-ons.",
@@ -143,10 +143,10 @@
       "call routing",
       "call recording",
       "sms messaging",
+      "shared inbox",
+      "team messaging",
       "crm cti",
-      "analytics reporting",
-      "business phone",
-      "contact center"
+      "analytics reporting"
     ],
     "pricingSummary": "3 documented plans · entry paid: Essentials · trial documented on at least one plan",
     "keyTradeoffs": [
@@ -248,9 +248,7 @@
     ],
     "evidenceState": "Research/data-based (no completed hands-on test) · Latest verification/research signal: 2026-08-17T09:00:00.000Z · Editorial assessment: approved",
     "nextDecisionStep": "Compare against peers: Aircall vs CallHippo",
-    "missingSections": [
-      "canonical_vendor"
-    ]
+    "missingSections": []
   },
   "dependents": [
     {
@@ -400,13 +398,11 @@
     }
   ],
   "dependentsNeedingRefresh": [],
-  "remediation": [
-    "verify:canonical_vendor"
-  ],
+  "remediation": [],
   "notes": [
-    "fieldAudit score=94",
+    "fieldAudit score=100",
     "decisionHub bestFor=5 notIdeal=6",
     "dependents=29"
   ],
-  "materiallyImproved": false
+  "materiallyImproved": true
 }

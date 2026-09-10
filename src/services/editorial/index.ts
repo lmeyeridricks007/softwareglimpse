@@ -118,6 +118,14 @@ export type {
   DataVerifiedReconciliation,
 } from "./pricing-verified-at";
 
+export {
+  HANDS_ON_SCOPE,
+  HANDS_ON_SCOPE_LABEL,
+  HANDS_ON_SCOPE_NOTE,
+  DATA_VERIFIED_EVIDENCE_ON_TRACK,
+} from "./hands-on-scope";
+export type { HandsOnScope } from "./hands-on-scope";
+
 export { buildComparisonTrustMetadata } from "./comparison-trust";
 
 export {

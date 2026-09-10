@@ -219,6 +219,29 @@
       ]
     }
   ],
+  "integrationSupport": [
+    {
+      "integrationSlug": "microsoft-teams",
+      "kind": "native",
+      "sourceIds": [
+        "microsoft-copilot-product-official"
+      ]
+    },
+    {
+      "integrationSlug": "slack",
+      "kind": "third-party",
+      "sourceIds": [
+        "microsoft-copilot-product-official"
+      ]
+    },
+    {
+      "integrationSlug": "zapier",
+      "kind": "zapier-style",
+      "sourceIds": [
+        "microsoft-copilot-product-official"
+      ]
+    }
+  ],
   "aiCapabilities": [
     {
       "capability": "assistant",
@@ -244,29 +267,6 @@
     {
       "capability": "recommendations",
       "availability": "supported",
-      "sourceIds": [
-        "microsoft-copilot-product-official"
-      ]
-    }
-  ],
-  "integrationSupport": [
-    {
-      "integrationSlug": "microsoft-teams",
-      "kind": "native",
-      "sourceIds": [
-        "microsoft-copilot-product-official"
-      ]
-    },
-    {
-      "integrationSlug": "slack",
-      "kind": "third-party",
-      "sourceIds": [
-        "microsoft-copilot-product-official"
-      ]
-    },
-    {
-      "integrationSlug": "zapier",
-      "kind": "zapier-style",
       "sourceIds": [
         "microsoft-copilot-product-official"
       ]
@@ -350,69 +350,6 @@
       "isEditorial": false
     }
   ],
-  "pricing": {
-    "currency": "USD",
-    "model": "per-seat",
-    "hasFreePlan": false,
-    "hasFreeTrial": false,
-    "plans": [
-      {
-        "id": "plan-copilot-business",
-        "slug": "copilot-business",
-        "name": "Copilot Business (add-on)",
-        "isFree": false,
-        "contactSales": false,
-        "hasFreeTrial": false,
-        "highlighted": true,
-        "rules": [
-          {
-            "kind": "per-seat",
-            "amountPerSeat": 21,
-            "currency": "USD",
-            "interval": "year",
-            "amountPeriod": "month"
-          }
-        ],
-        "description": "$21/user/mo billed annually — SMB Copilot add-on on a qualifying Business plan (≤300 seats typical)."
-      },
-      {
-        "id": "plan-copilot-enterprise",
-        "slug": "copilot-enterprise",
-        "name": "Copilot (Enterprise add-on)",
-        "isFree": false,
-        "contactSales": false,
-        "hasFreeTrial": false,
-        "highlighted": false,
-        "rules": [
-          {
-            "kind": "per-seat",
-            "amountPerSeat": 30,
-            "currency": "USD",
-            "interval": "year",
-            "amountPeriod": "month"
-          }
-        ],
-        "description": "$30/user/mo billed annually — enterprise Copilot add-on on E3/E5-class Microsoft 365."
-      },
-      {
-        "id": "plan-enterprise-quote",
-        "slug": "enterprise-quote",
-        "name": "Enterprise / volume",
-        "isFree": false,
-        "contactSales": true,
-        "hasFreeTrial": false,
-        "highlighted": false,
-        "rules": [],
-        "description": "Volume, education, and frontline packaging — confirm with Microsoft or a Cloud Solution Provider."
-      }
-    ],
-    "notes": "Verified 2026-08-18 from microsoft.com Microsoft 365 Copilot pricing (high confidence). Copilot Business add-on from $21/user/mo annual; Enterprise add-on $30/user/mo annual ($31.50 monthly). Qualifying Microsoft 365 base licence required — all-in TCO is base + Copilot. Promo $18 windows are time-boxed; do not treat as the durable floor. Affiliate economics excluded.",
-    "verifiedAt": "2026-08-18T12:00:00.000Z",
-    "sourceIds": [
-      "microsoft-copilot-pricing-official"
-    ],
-    "startingPriceMonthly": 21
-  },
   "screenshots": [
     {
       "id": "microsoft-copilot-shot-overview",
@@ -546,13 +483,13 @@
       "demonstratedDimensionIds": [],
       "requirementCriterionIds": [],
       "workflowStageIds": [],
+      "mediaContext": "general-workflow",
       "reportedOutcomes": [],
       "placements": [
         "overview",
         "features",
         "evidence"
       ],
-      "mediaContext": "general-workflow",
       "purpose": "Official Microsoft 365 Copilot video for product research pages",
       "demonstratesCaption": "How Microsoft 365 Copilot presents the product in an official vendor video.",
       "editorialCommentary": "Official vendor demo — treat as UI/workflow evidence, not SoftwareGlimpse scoring.",
@@ -570,12 +507,69 @@
       "status": "published"
     }
   ],
-  "sourceIds": [
-    "microsoft-copilot-product-official",
-    "microsoft-copilot-pricing-official",
-    "m365-copilot-pricing-official"
-  ],
-  "notes": "AI Priority-2 onboarding enrichment from first-party research 2026-08-18T12:00:00.000Z. handsOnTesting=false. membershipRole=primary. jobCluster=llm-assistant.",
+  "pricing": {
+    "currency": "USD",
+    "model": "per-seat",
+    "hasFreePlan": false,
+    "hasFreeTrial": false,
+    "plans": [
+      {
+        "id": "plan-copilot-business",
+        "slug": "copilot-business",
+        "name": "Copilot Business (add-on)",
+        "isFree": false,
+        "contactSales": false,
+        "hasFreeTrial": false,
+        "highlighted": true,
+        "rules": [
+          {
+            "kind": "per-seat",
+            "amountPerSeat": 21,
+            "currency": "USD",
+            "interval": "year",
+            "amountPeriod": "month"
+          }
+        ],
+        "description": "$21/user/mo billed annually — SMB Copilot add-on on a qualifying Business plan (≤300 seats typical)."
+      },
+      {
+        "id": "plan-copilot-enterprise",
+        "slug": "copilot-enterprise",
+        "name": "Copilot (Enterprise add-on)",
+        "isFree": false,
+        "contactSales": false,
+        "hasFreeTrial": false,
+        "highlighted": false,
+        "rules": [
+          {
+            "kind": "per-seat",
+            "amountPerSeat": 30,
+            "currency": "USD",
+            "interval": "year",
+            "amountPeriod": "month"
+          }
+        ],
+        "description": "$30/user/mo billed annually — enterprise Copilot add-on on E3/E5-class Microsoft 365."
+      },
+      {
+        "id": "plan-enterprise-quote",
+        "slug": "enterprise-quote",
+        "name": "Enterprise / volume",
+        "isFree": false,
+        "contactSales": true,
+        "hasFreeTrial": false,
+        "highlighted": false,
+        "rules": [],
+        "description": "Volume, education, and frontline packaging — confirm with Microsoft or a Cloud Solution Provider."
+      }
+    ],
+    "notes": "Verified 2026-08-18 from microsoft.com Microsoft 365 Copilot pricing (high confidence). Copilot Business add-on from $21/user/mo annual; Enterprise add-on $30/user/mo annual ($31.50 monthly). Qualifying Microsoft 365 base licence required — all-in TCO is base + Copilot. Promo $18 windows are time-boxed; do not treat as the durable floor. Affiliate economics excluded.",
+    "verifiedAt": "2026-09-10T08:14:53.646Z",
+    "sourceIds": [
+      "microsoft-copilot-pricing-official"
+    ],
+    "startingPriceMonthly": 21
+  },
   "domainCheckedAt": {
     "identity": "2026-08-18T12:00:00.000Z",
     "pricing": "2026-08-18T12:00:00.000Z",
@@ -589,5 +583,11 @@
     "limits": "2026-08-18T12:00:00.000Z",
     "security-compliance": "2026-08-18T12:00:00.000Z"
   },
-  "updatedAt": "2026-08-18T10:00:00.000Z"
+  "sourceIds": [
+    "microsoft-copilot-product-official",
+    "microsoft-copilot-pricing-official",
+    "m365-copilot-pricing-official"
+  ],
+  "updatedAt": "2026-08-18T10:00:00.000Z",
+  "notes": "AI Priority-2 onboarding enrichment from first-party research 2026-08-18T12:00:00.000Z. handsOnTesting=false. membershipRole=primary. jobCluster=llm-assistant."
 }

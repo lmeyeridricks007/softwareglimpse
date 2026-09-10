@@ -1,0 +1,122 @@
+{
+  "generatedAt": "2026-09-10T08:38:06.000Z",
+  "from": {
+    "audit": "FULL_REVIEW_4",
+    "generatedAt": "2026-09-09T18:59:39.000Z",
+    "overall": 55
+  },
+  "to": {
+    "audit": "FULL_REVIEW_5",
+    "generatedAt": "2026-09-10T08:38:06.000Z",
+    "overall": 59
+  },
+  "overallDelta": 4,
+  "headlineOutcomes": {
+    "factoryNearDuplicateRisk": { "previous": 1272, "current": 1272, "delta": 0 },
+    "limitedUnique": { "previous": 1342, "current": 1326, "delta": -16 },
+    "dataVerified": { "previous": 164, "current": 187, "delta": 23 },
+    "handsOn": {
+      "previous": 0,
+      "current": 0,
+      "delta": 0,
+      "scope": "NOT_CURRENT_SCOPE"
+    },
+    "improveOrphansSample": { "previous": "15/80", "current": "2/80", "delta": -13 },
+    "knowledgeGraphEdgesComparable": {
+      "previous": 26853,
+      "current": 26856,
+      "delta": 3,
+      "note": "semanticEdges; totalEdges 72584 includes contextual — not scored as growth"
+    },
+    "knowledgeGraphNodes": { "previous": 6785, "current": 6785, "delta": 0 },
+    "promotionsIncrementalSincePreviousReview": {
+      "previous": 7,
+      "currentIncremental": 16,
+      "liveIndexed": 0,
+      "note": "16 local INDEXABLE promotions; www still noindex + missing from sitemap-guides.xml"
+    },
+    "gsc": {
+      "previous": "8 clicks / 115457 impressions / 74.5 position",
+      "current": "8 clicks / 115457 impressions / 74.5 position",
+      "freshness": "STALE identical through 2026-08-13",
+      "comparable": false,
+      "rankClickMovement": "NOT_MEASURABLE"
+    },
+    "authority": { "previous": "NOT_CONNECTED", "current": "NOT_CONNECTED" },
+    "conversions": { "previous": "NOT_CONNECTED", "current": "NOT_CONNECTED" },
+    "productionParity": {
+      "previous": "NO — www monolithic 6370 vs local index 3133",
+      "current": "YES — www sitemapindex 3133; local now 3149 (16 URL lag)",
+      "safeProductionState": "YES",
+      "liveValidationOk": true
+    },
+    "liveP0": { "previous": 8, "current": 0, "delta": -8 }
+  },
+  "executionBatchesSinceReview4": [
+    {
+      "id": "factory-pack-100c-2026-09-10",
+      "processed": 100,
+      "promoted": 10,
+      "limitedUniqueAfter": 1326,
+      "highNearDuplicateAfter": 1312,
+      "estateFactoryPackCountStill": 1272
+    },
+    {
+      "id": "same-day-factory-promotions-before-100c",
+      "promoted": 6,
+      "slugs": [
+        "podio-setup",
+        "sap-setup",
+        "siebel-implementation",
+        "siebel-setup",
+        "wealthbox-implementation",
+        "wealthbox-setup"
+      ]
+    },
+    {
+      "id": "evidence-wave-50-2026-09-10",
+      "productsProcessed": 50,
+      "newVerified": 23,
+      "endingVerified": 187,
+      "blockedLive": 26
+    },
+    {
+      "id": "improve-orphan-graph-fix-2026-09-10",
+      "orphanSample": "15/80 → 2/80",
+      "semanticEdges": "26853 → 26856"
+    },
+    {
+      "id": "production-parity-live-2026-09-10",
+      "localParity": "YES_ARCHITECTURE",
+      "prodSitemapUrls": 3133,
+      "localArchSitemapUrls": 3149,
+      "seoAuditP0": 0
+    }
+  ],
+  "top5OutcomeImprovements": [
+    "www sitemap 6370 monolithic → 3133 sitemapindex (liveValidation OK)",
+    "Live FULL P0 8→0 (404s now 200/301/410)",
+    "IMPROVE orphan sample 15/80→2/80",
+    "DATA_VERIFIED reconcile 164→187 (+23 accepted)",
+    "Limited unique 1342→1326 (−16); +16 local promotions (not live-indexed)"
+  ],
+  "top5RemainingBlockers": [
+    "STALE GSC identical 8/115457/74.5 — rank/click movement not measurable",
+    "Factory pack near-dup headline still 1272",
+    "Authority still NOT_CONNECTED",
+    "Conversions still NOT_CONNECTED",
+    "16 INDEXABLE promotions still noindex on www (local 3149 vs live 3133)"
+  ],
+  "biggestFailureToImprove": "factoryPackCount still 1272 despite factory-100c; GSC freshness still STALE. Production crawl — Review #4's biggest failure — recovered on www.",
+  "next30Days": [
+    "Deploy 16 INDEXABLE promotions until live sitemap loc-sum matches local 3149 and those URLs emit index,follow",
+    "Import fresh GSC Performance + Coverage + page×query (replace 2026-08-13 STALE)",
+    "Continue factory waves only when estate factoryPackCount / limitedUnique move — not wave-local theatre",
+    "Drop REAL backlink export; connect authority",
+    "Import affiliate network conversions",
+    "Continue evidence wave on 403/429/timeout/plan-hit blockers",
+    "Keep scoring semanticEdges + orphan sample — do not celebrate contextual edge inflation",
+    "HANDS_ON is a future enhancement, not a current deploy/growth gate"
+  ],
+  "scoringNote": "Scores reward measurable www outcomes for crawl/indexability. Local DV/orphan/uniqueness gains are scored as local systems. 16 promotions are not credited as live-indexed. KG totalEdges 72584 is not credited (semantic 26856). HANDS_ON remaining 0 is NOT_CURRENT_SCOPE and does not reduce this cycle. Production architecture recovery drove 55→59; GSC/factory/authority/conversions still cap organic-growth claims."
+}

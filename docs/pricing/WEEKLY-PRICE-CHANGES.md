@@ -1,7 +1,7 @@
 # Weekly price changes
 
-Generated: 2026-09-08T23:17:49.561Z  
-Week: 2026-09-08
+Generated: 2026-09-10T10:34:44.090Z  
+Week: 2026-09-10
 
 Price changes require validation. **LIKELY** and **REQUIRES_REVIEW** must not be published as facts. Only **CONFIRMED** rows may drive observation appends and publishing refresh events.
 
@@ -61,6 +61,12 @@ _None in this run._
 - `/alternatives/podio/` (alternatives) ← monday-sales-crm
 - `/alternatives/monday/` (alternatives) ← monday-sales-crm
 - `/best/crm-software/` (best) ← monday-sales-crm
+- `/guides/what-is-monday-sales-crm/` (guide) ← monday-sales-crm
+- `/guides/monday-sales-crm-implementation/` (guide) ← monday-sales-crm
+- `/guides/monday-sales-crm-migration/` (guide) ← monday-sales-crm
+- `/guides/monday-sales-crm-setup/` (guide) ← monday-sales-crm
+- `/guides/monday-sales-crm-plans/` (guide) ← monday-sales-crm
+- `/guides/is-monday-sales-crm-worth-it/` (guide) ← monday-sales-crm
 - `/research/` (research) ← monday-sales-crm
 - `/research/crm-pricing/` (research) ← monday-sales-crm
 - `/research/crm-pricing-history/` (research) ← monday-sales-crm
@@ -81,20 +87,20 @@ _None in this run._
 ## Monitoring queue (top)
 
 - #1 HubSpot — **HIGH** (score 113.6) — high SEO opportunity; material impressions; frequent comparisons; wide page impact; commercial importance; priority category
-- #2 ActiveCampaign — **HIGH** (score 97.8) — material impressions; frequent comparisons; wide page impact; commercial importance
-- #3 Keap — **HIGH** (score 97.1) — material impressions; frequent comparisons; wide page impact; commercial importance; priority category
-- #4 GetResponse — **HIGH** (score 96.5) — material impressions; frequent comparisons; wide page impact; commercial importance
-- #5 Capsule — **HIGH** (score 95.4) — material impressions; frequent comparisons; wide page impact; commercial importance; priority category
-- #6 Freshsales — **HIGH** (score 90.3) — material impressions; frequent comparisons; wide page impact; commercial importance; priority category
-- #7 Insightly — **HIGH** (score 89.2) — material impressions; frequent comparisons; wide page impact; priority category
-- #8 folk — **HIGH** (score 88.8) — high SEO opportunity; frequent comparisons; wide page impact; commercial importance; priority category
-- #9 Close — **HIGH** (score 88.5) — material impressions; frequent comparisons; wide page impact; commercial importance; priority category
-- #10 Closely — **HIGH** (score 87.1) — high SEO opportunity; material impressions; frequent comparisons; wide page impact; commercial importance
-- #11 Pipedrive — **HIGH** (score 85.4) — frequent comparisons; wide page impact; commercial importance; priority category
-- #12 Salesforce — **HIGH** (score 80.4) — material impressions; frequent comparisons; wide page impact; priority category
-- #13 Lusha — **HIGH** (score 79.6) — material impressions; frequent comparisons; wide page impact; commercial importance
-- #14 SaneBox — **HIGH** (score 78.6) — material impressions; frequent comparisons; wide page impact; commercial importance
-- #15 Nimble — **HIGH** (score 78.5) — high SEO opportunity; material impressions; frequent comparisons; wide page impact; priority category
+- #2 Capsule — **HIGH** (score 112.5) — high SEO opportunity; material impressions; frequent comparisons; wide page impact; commercial importance; priority category
+- #3 Freshsales — **HIGH** (score 112.2) — high SEO opportunity; material impressions; frequent comparisons; wide page impact; commercial importance; priority category
+- #4 Keap — **HIGH** (score 111.8) — material impressions; frequent comparisons; wide page impact; commercial importance; priority category
+- #5 Close — **HIGH** (score 105.8) — high SEO opportunity; material impressions; frequent comparisons; wide page impact; commercial importance; priority category
+- #6 GetResponse — **HIGH** (score 105.6) — high SEO opportunity; material impressions; frequent comparisons; wide page impact; commercial importance
+- #7 Fastmail — **HIGH** (score 103.5) — high SEO opportunity; material impressions; frequent comparisons; wide page impact; commercial importance
+- #8 ActiveCampaign — **HIGH** (score 102.8) — material impressions; frequent comparisons; wide page impact; commercial importance
+- #9 Closely — **HIGH** (score 101.7) — high SEO opportunity; material impressions; frequent comparisons; wide page impact; commercial importance
+- #10 Lusha — **HIGH** (score 99.8) — material impressions; frequent comparisons; wide page impact; commercial importance
+- #11 folk — **HIGH** (score 99.6) — high SEO opportunity; material impressions; frequent comparisons; wide page impact; commercial importance; priority category
+- #12 KrispCall — **HIGH** (score 98.6) — high SEO opportunity; material impressions; frequent comparisons; wide page impact; commercial importance
+- #13 Pipedrive — **HIGH** (score 96.9) — material impressions; frequent comparisons; wide page impact; commercial importance; priority category
+- #14 SaneBox — **HIGH** (score 96.5) — material impressions; frequent comparisons; wide page impact; commercial importance
+- #15 Navan — **HIGH** (score 96.5) — material impressions; frequent comparisons; wide page impact; commercial importance
 
 ## Refresh tasks (from CONFIRMED)
 

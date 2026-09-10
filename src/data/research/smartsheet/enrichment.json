@@ -147,6 +147,15 @@
       ]
     }
   ],
+  "integrationSupport": [
+    {
+      "integrationSlug": "zapier",
+      "kind": "zapier-style",
+      "sourceIds": [
+        "smartsheet-product-official"
+      ]
+    }
+  ],
   "aiCapabilities": [
     {
       "capability": "assistant",
@@ -172,15 +181,6 @@
     {
       "capability": "recommendations",
       "availability": "limited",
-      "sourceIds": [
-        "smartsheet-product-official"
-      ]
-    }
-  ],
-  "integrationSupport": [
-    {
-      "integrationSlug": "zapier",
-      "kind": "zapier-style",
       "sourceIds": [
         "smartsheet-product-official"
       ]
@@ -256,72 +256,6 @@
       "isEditorial": false
     }
   ],
-  "pricing": {
-    "currency": "USD",
-    "model": "subscription",
-    "hasFreePlan": false,
-    "hasFreeTrial": true,
-    "plans": [
-      {
-        "id": "plan-pro",
-        "slug": "pro",
-        "name": "Pro",
-        "isFree": false,
-        "contactSales": false,
-        "hasFreeTrial": true,
-        "trialDays": 30,
-        "highlighted": true,
-        "rules": [
-          {
-            "kind": "per-seat",
-            "amountPerSeat": 9,
-            "currency": "USD",
-            "interval": "year",
-            "amountPeriod": "month"
-          }
-        ],
-        "description": "$9/member/mo annual — sheet/Gantt entry."
-      },
-      {
-        "id": "plan-business",
-        "slug": "business",
-        "name": "Business",
-        "isFree": false,
-        "contactSales": false,
-        "hasFreeTrial": true,
-        "trialDays": 30,
-        "highlighted": false,
-        "rules": [
-          {
-            "kind": "per-seat",
-            "amountPerSeat": 19,
-            "currency": "USD",
-            "interval": "year",
-            "amountPeriod": "month"
-          }
-        ],
-        "description": "$19/member/mo annual — workload, richer automation/views."
-      },
-      {
-        "id": "plan-enterprise",
-        "slug": "enterprise",
-        "name": "Enterprise",
-        "isFree": false,
-        "contactSales": true,
-        "hasFreeTrial": false,
-        "highlighted": false,
-        "rules": [],
-        "description": "Enterprise — portfolio/governance quote."
-      }
-    ],
-    "notes": "Cross-checked 2026-08-17: Pro ~$9/member/mo annual (often 1–10 members packaging); Business ~$19 annual; Enterprise custom. Trial commonly ~30 days. Confirm live smartsheet.com/pricing.",
-    "verifiedAt": "2026-08-17T20:00:00.000Z",
-    "sourceIds": [
-      "smartsheet-pricing-official"
-    ],
-    "startingPriceMonthly": 9,
-    "trialDays": 30
-  },
   "screenshots": [
     {
       "id": "smartsheet-shot-workspace",
@@ -398,13 +332,13 @@
       "demonstratedDimensionIds": [],
       "requirementCriterionIds": [],
       "workflowStageIds": [],
+      "mediaContext": "general-workflow",
       "reportedOutcomes": [],
       "placements": [
         "overview",
         "features",
         "evidence"
       ],
-      "mediaContext": "general-workflow",
       "purpose": "Official Smartsheet video for product research pages",
       "demonstratesCaption": "How Smartsheet presents the product in an official vendor video.",
       "editorialCommentary": "Official vendor demo — treat as UI/workflow evidence, not SoftwareGlimpse scoring.",
@@ -463,13 +397,13 @@
       "demonstratedDimensionIds": [],
       "requirementCriterionIds": [],
       "workflowStageIds": [],
+      "mediaContext": "general-workflow",
       "reportedOutcomes": [],
       "placements": [
         "overview",
         "features",
         "evidence"
       ],
-      "mediaContext": "general-workflow",
       "purpose": "Official Smartsheet video for product research pages",
       "demonstratesCaption": "How Smartsheet presents the product in an official vendor video.",
       "editorialCommentary": "Official vendor demo — treat as UI/workflow evidence, not SoftwareGlimpse scoring.",
@@ -487,11 +421,72 @@
       "status": "published"
     }
   ],
-  "sourceIds": [
-    "smartsheet-product-official",
-    "smartsheet-pricing-official"
-  ],
-  "notes": "Project-management Priority-2 onboarding enrichment from first-party research 2026-08-17T20:00:00.000Z. handsOnTesting=false. membershipRole=primary. jobCluster=spreadsheet-pmo.",
+  "pricing": {
+    "currency": "USD",
+    "model": "subscription",
+    "hasFreePlan": false,
+    "hasFreeTrial": true,
+    "plans": [
+      {
+        "id": "plan-pro",
+        "slug": "pro",
+        "name": "Pro",
+        "isFree": false,
+        "contactSales": false,
+        "hasFreeTrial": true,
+        "trialDays": 30,
+        "highlighted": true,
+        "rules": [
+          {
+            "kind": "per-seat",
+            "amountPerSeat": 9,
+            "currency": "USD",
+            "interval": "year",
+            "amountPeriod": "month"
+          }
+        ],
+        "description": "$9/member/mo annual — sheet/Gantt entry."
+      },
+      {
+        "id": "plan-business",
+        "slug": "business",
+        "name": "Business",
+        "isFree": false,
+        "contactSales": false,
+        "hasFreeTrial": true,
+        "trialDays": 30,
+        "highlighted": false,
+        "rules": [
+          {
+            "kind": "per-seat",
+            "amountPerSeat": 19,
+            "currency": "USD",
+            "interval": "year",
+            "amountPeriod": "month"
+          }
+        ],
+        "description": "$19/member/mo annual — workload, richer automation/views."
+      },
+      {
+        "id": "plan-enterprise",
+        "slug": "enterprise",
+        "name": "Enterprise",
+        "isFree": false,
+        "contactSales": true,
+        "hasFreeTrial": false,
+        "highlighted": false,
+        "rules": [],
+        "description": "Enterprise — portfolio/governance quote."
+      }
+    ],
+    "notes": "Cross-checked 2026-08-17: Pro ~$9/member/mo annual (often 1–10 members packaging); Business ~$19 annual; Enterprise custom. Trial commonly ~30 days. Confirm live smartsheet.com/pricing.",
+    "verifiedAt": "2026-09-10T11:40:26.694Z",
+    "sourceIds": [
+      "smartsheet-pricing-official"
+    ],
+    "startingPriceMonthly": 9,
+    "trialDays": 30
+  },
   "domainCheckedAt": {
     "identity": "2026-08-17T20:00:00.000Z",
     "pricing": "2026-08-17T20:00:00.000Z",
@@ -505,5 +500,10 @@
     "limits": "2026-08-17T20:00:00.000Z",
     "security-compliance": "2026-08-17T20:00:00.000Z"
   },
-  "updatedAt": "2026-08-18T07:00:00.000Z"
+  "sourceIds": [
+    "smartsheet-product-official",
+    "smartsheet-pricing-official"
+  ],
+  "updatedAt": "2026-08-18T07:00:00.000Z",
+  "notes": "Project-management Priority-2 onboarding enrichment from first-party research 2026-08-17T20:00:00.000Z. handsOnTesting=false. membershipRole=primary. jobCluster=spreadsheet-pmo."
 }

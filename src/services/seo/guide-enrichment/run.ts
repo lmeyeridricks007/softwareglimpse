@@ -25,7 +25,12 @@ import {
   DEFAULT_ENRICHMENT_BATCH_SIZE,
   GUIDE_ENRICHMENT_VERSION,
   type EnrichmentBatchResult,
+  type EnrichmentQueueItem,
 } from "./types";
+import {
+  loadGscOpportunitySignalsByPath,
+  type GscOpportunityPathSignal,
+} from "@/services/seo/gsc-opportunity/load-report";
 
 export type RunEnrichmentBatchOptions = BuildEnrichmentQueueOptions & {
   batchSize?: number;
@@ -52,6 +57,64 @@ function peersWithOverlays(seeds: GuidePage[]): GuidePage[] {
     const overlay = loadGuideEnrichmentOverlay(g.slug);
     return overlay ? mergeGuideWithOverlay(g, overlay) : g;
   });
+}
+
+/**
+ * Resolve a slug without rebuilding the IMPROVE queue.
+ * peekEnrichmentBatch → runGuidesIndexAudit; calling it per slug makes a
+ * 20-page factory wave re-run the full estate semantic audit 20 times.
+ */
+function queueItemForSlug(
+  slug: string,
+  gscMap: Map<string, GscOpportunityPathSignal>,
+): EnrichmentQueueItem | null {
+  const guide = getGuideBySlug(slug, { includeUnpublished: true });
+  if (!guide) return null;
+  const plan = planGuideEnrichment(guide);
+  const path = `/guides/${slug}/`;
+  const gsc = gscMap.get(path);
+  const impressions = gsc?.impressions ?? 0;
+  const clicks = gsc?.clicks ?? 0;
+  const position = gsc?.position ?? null;
+  const hasDirectQuery = gsc?.hasDirectQuery ?? false;
+  return {
+    slug: guide.slug,
+    url: path,
+    title: guide.title,
+    enrichmentType: plan.enrichmentType,
+    lifecycle: "IMPROVE",
+    improvementReasons: plan.remediationFocus,
+    priorityScore: 0,
+    overallScore: 0,
+    lane: impressions > 0 ? "A" : "C",
+    gscEvidenceScore: 0,
+    gscDemandScore: 0,
+    strategicScore: 0,
+    qualityGap: 0,
+    qualityGapScore: 0,
+    commercialScore: 0,
+    authorityScore: 0,
+    strategicOverride: false,
+    strategicOverrideReasons: [],
+    orderingReason: "Manual slug run — skip estate-audit queue rebuild",
+    reason: "Manual slug run — skip estate-audit queue rebuild",
+    prioritySignals: {
+      gscImpressions: impressions,
+      gscClicks: clicks,
+      gscPosition: position,
+      hasDirectQuery,
+      realAiCitations: 0,
+      knownBacklinks: 0,
+      commercialIntentWeight: 0,
+      categoryImportance: 0,
+      internalLinkOpportunity: 0,
+      productPopularity: 0,
+      affiliateOpportunity: 0,
+      qualityGap: 0,
+      existingAuthority: 0,
+    },
+    intent: plan.intent,
+  };
 }
 
 /** Replace one slug in a cached peer list after overlay write/delete. */
@@ -83,54 +146,16 @@ export function runGuideEnrichmentBatch(
     // Browser / non-node contexts skip disk load.
   }
   const batchSize = opts.batchSize ?? DEFAULT_ENRICHMENT_BATCH_SIZE;
+  let gscMap: Map<string, GscOpportunityPathSignal> = new Map();
+  try {
+    gscMap = loadGscOpportunitySignalsByPath();
+  } catch {
+    gscMap = new Map();
+  }
   const queueItems = opts.slugs?.length
-    ? opts.slugs.map((slug) => {
-        const fromQueue = peekEnrichmentBatch(10_000, opts).find(
-          (q) => q.slug === slug,
-        );
-        if (fromQueue) return fromQueue;
-        const guide = getGuideBySlug(slug, { includeUnpublished: true });
-        if (!guide) return null;
-        const plan = planGuideEnrichment(guide);
-        return {
-          slug: guide.slug,
-          url: `/guides/${guide.slug}/`,
-          title: guide.title,
-          enrichmentType: plan.enrichmentType,
-          lifecycle: "IMPROVE" as const,
-          improvementReasons: plan.remediationFocus,
-          priorityScore: 0,
-          overallScore: 0,
-          lane: "C" as const,
-          gscEvidenceScore: 0,
-          gscDemandScore: 0,
-          strategicScore: 0,
-          qualityGap: 0,
-          qualityGapScore: 0,
-          commercialScore: 0,
-          authorityScore: 0,
-          strategicOverride: false,
-          strategicOverrideReasons: [],
-          orderingReason: "Manual slug run — lane not scored from queue",
-          reason: "Manual slug run — lane not scored from queue",
-          prioritySignals: {
-            gscImpressions: 0,
-            gscClicks: 0,
-            gscPosition: null,
-            hasDirectQuery: false,
-            realAiCitations: 0,
-            knownBacklinks: 0,
-            commercialIntentWeight: 0,
-            categoryImportance: 0,
-            internalLinkOpportunity: 0,
-            productPopularity: 0,
-            affiliateOpportunity: 0,
-            qualityGap: 0,
-            existingAuthority: 0,
-          },
-          intent: plan.intent,
-        };
-      }).filter((q): q is NonNullable<typeof q> => q != null)
+    ? opts.slugs
+        .map((slug) => queueItemForSlug(slug, gscMap))
+        .filter((q): q is EnrichmentQueueItem => q != null)
     : peekEnrichmentBatch(batchSize, opts);
 
   const seeds = getGuides({ includeUnpublished: true });

@@ -1,10 +1,10 @@
 {
   "slug": "otter-ai",
-  "updatedAt": "2026-09-07T22:31:21.778Z",
+  "updatedAt": "2026-09-10T08:15:10.354Z",
   "version": "1.0.0",
   "fieldAudit": {
     "slug": "otter-ai",
-    "checkedAt": "2026-09-07T22:31:21.777Z",
+    "checkedAt": "2026-09-10T08:15:10.352Z",
     "items": [
       {
         "field": "name",
@@ -20,9 +20,9 @@
       },
       {
         "field": "canonical_vendor",
-        "status": "UNKNOWN",
-        "detail": "Company/vendor not documented",
-        "source": "none"
+        "status": "PASS",
+        "detail": "Vendor: Otter.ai, Inc.",
+        "source": "seed"
       },
       {
         "field": "category",
@@ -115,11 +115,11 @@
         "source": "enrichment"
       }
     ],
-    "passCount": 16,
+    "passCount": 17,
     "partialCount": 0,
     "missingCount": 0,
-    "unknownCount": 2,
-    "score": 89
+    "unknownCount": 1,
+    "score": 94
   },
   "decisionHub": {
     "whatItIs": "Otter.ai is an AI meeting assistant for live transcription, summaries, and action items with OtterPilot joining Zoom, Meet, and Teams. Basic is free (300 minutes/month, 30-minute conversation cap). Pro is $8.33/user/mo annual or $16.99 monthly (1,200 minutes, 90-minute cap). Business is $19.99/user/mo annual or $30 monthly with much higher/unlimited meeting minutes and admin. Enterprise is contact sales (SSO/SCIM, OtterPilot for Sales).",
@@ -140,7 +140,9 @@
       "Language coverage is narrower than specialist transcription suites"
     ],
     "coreCapabilities": [
+      "llm chat",
       "writing assist",
+      "custom projects",
       "usage credits",
       "connectors",
       "analytics reporting",
@@ -231,7 +233,6 @@
     "evidenceState": "Research/data-based (no completed hands-on test) · Latest verification/research signal: 2026-08-18T12:00:00.000Z · Editorial assessment: approved",
     "nextDecisionStep": "Compare against peers: Otter.ai vs Microsoft 365 Copilot",
     "missingSections": [
-      "canonical_vendor",
       "trial"
     ]
   },
@@ -409,13 +410,12 @@
   ],
   "dependentsNeedingRefresh": [],
   "remediation": [
-    "verify:canonical_vendor",
     "verify:trial"
   ],
   "notes": [
-    "fieldAudit score=89",
+    "fieldAudit score=94",
     "decisionHub bestFor=6 notIdeal=6",
     "dependents=34"
   ],
-  "materiallyImproved": false
+  "materiallyImproved": true
 }

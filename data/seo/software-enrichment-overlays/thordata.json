@@ -1,10 +1,10 @@
 {
   "slug": "thordata",
-  "updatedAt": "2026-09-07T22:31:21.834Z",
+  "updatedAt": "2026-09-10T11:10:41.831Z",
   "version": "1.0.0",
   "fieldAudit": {
     "slug": "thordata",
-    "checkedAt": "2026-09-07T22:31:21.833Z",
+    "checkedAt": "2026-09-10T11:10:41.829Z",
     "items": [
       {
         "field": "name",
@@ -20,9 +20,9 @@
       },
       {
         "field": "canonical_vendor",
-        "status": "UNKNOWN",
-        "detail": "Company/vendor not documented",
-        "source": "none"
+        "status": "PASS",
+        "detail": "Vendor: ThorData",
+        "source": "seed"
       },
       {
         "field": "category",
@@ -115,11 +115,11 @@
         "source": "enrichment"
       }
     ],
-    "passCount": 16,
+    "passCount": 17,
     "partialCount": 0,
     "missingCount": 0,
-    "unknownCount": 2,
-    "score": 89
+    "unknownCount": 1,
+    "score": 94
   },
   "decisionHub": {
     "whatItIs": "ThorData (Thordata) sells residential, datacenter, mobile, and ISP proxies plus Web Scraper API, SERP API, Web Unlocker, and Scraping Browser. Residential packs publish from 1GB at $2.00/GB ($2 total) through volume tiers (e.g. 150GB at $1.00/GB). Mobile from $2.20–$5.00/GB depending on pack. Web Scraper API credit packs from about $30 (30,000 credits). Affiliate programme aff-thordata. Same web-data-collection cluster as Bright Data — budget / SMB entry peer, not the enterprise award path. Identity previously REVIEW_REQUIRED for low-confidence mapping; first-party pricing confirms proxy/scraper product lines.",
@@ -140,7 +140,10 @@
       "Pack-based GB/credits — not a seat SaaS; small packs are not monthly all-you-can-scrape"
     ],
     "coreCapabilities": [
+      "cicd actions",
       "proxy network",
+      "enterprise security",
+      "analytics reporting",
       "web data collection"
     ],
     "pricingSummary": "4 documented plans · entry paid: Residential 1GB",
@@ -236,7 +239,6 @@
     "evidenceState": "Research/data-based (no completed hands-on test) · Latest verification/research signal: 2026-08-18T16:00:00.000Z · Editorial assessment: approved",
     "nextDecisionStep": "Compare against peers: ThorData vs Bright Data",
     "missingSections": [
-      "canonical_vendor",
       "trial"
     ]
   },
@@ -524,13 +526,12 @@
   ],
   "dependentsNeedingRefresh": [],
   "remediation": [
-    "verify:canonical_vendor",
     "verify:trial"
   ],
   "notes": [
-    "fieldAudit score=89",
+    "fieldAudit score=94",
     "decisionHub bestFor=6 notIdeal=6",
     "dependents=56"
   ],
-  "materiallyImproved": false
+  "materiallyImproved": true
 }

@@ -1,10 +1,10 @@
 {
   "slug": "gemini",
-  "updatedAt": "2026-09-07T22:31:21.685Z",
+  "updatedAt": "2026-09-10T08:15:10.335Z",
   "version": "1.0.0",
   "fieldAudit": {
     "slug": "gemini",
-    "checkedAt": "2026-09-07T22:31:21.684Z",
+    "checkedAt": "2026-09-10T08:15:10.332Z",
     "items": [
       {
         "field": "name",
@@ -20,9 +20,9 @@
       },
       {
         "field": "canonical_vendor",
-        "status": "UNKNOWN",
-        "detail": "Company/vendor not documented",
-        "source": "none"
+        "status": "PASS",
+        "detail": "Vendor: Google",
+        "source": "seed"
       },
       {
         "field": "category",
@@ -115,11 +115,11 @@
         "source": "enrichment"
       }
     ],
-    "passCount": 16,
+    "passCount": 17,
     "partialCount": 0,
     "missingCount": 0,
-    "unknownCount": 2,
-    "score": 89
+    "unknownCount": 1,
+    "score": 94
   },
   "decisionHub": {
     "whatItIs": "Gemini is Google's LLM assistant for chat, research, coding help, and Workspace-integrated workflows. Free covers everyday use with limits. Google AI Pro is $19.99/mo for expanded model access and Google One benefits. Ultra starts around $99.99/mo for the deepest Gemini model access and usage. Strong fit for teams already on Google Workspace.",
@@ -144,8 +144,10 @@
       "reasoning models",
       "writing assist",
       "image generation",
-      "connectors",
-      "llm assistant"
+      "voice tts",
+      "presentation generation",
+      "agent builder",
+      "custom projects"
     ],
     "pricingSummary": "3 documented plans · 1 free · entry paid: Google AI Pro",
     "keyTradeoffs": [
@@ -235,7 +237,6 @@
     "evidenceState": "Research/data-based (no completed hands-on test) · Latest verification/research signal: 2026-08-18T09:30:00.000Z · Editorial assessment: approved",
     "nextDecisionStep": "Compare against peers: ChatGPT vs Gemini",
     "missingSections": [
-      "canonical_vendor",
       "trial"
     ]
   },
@@ -413,13 +414,12 @@
   ],
   "dependentsNeedingRefresh": [],
   "remediation": [
-    "verify:canonical_vendor",
     "verify:trial"
   ],
   "notes": [
-    "fieldAudit score=89",
+    "fieldAudit score=94",
     "decisionHub bestFor=6 notIdeal=6",
     "dependents=34"
   ],
-  "materiallyImproved": false
+  "materiallyImproved": true
 }

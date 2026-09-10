@@ -1,10 +1,10 @@
 {
   "slug": "servicem8",
-  "updatedAt": "2026-09-07T22:31:22.087Z",
+  "updatedAt": "2026-09-10T11:46:30.436Z",
   "version": "1.0.0",
   "fieldAudit": {
     "slug": "servicem8",
-    "checkedAt": "2026-09-07T22:31:22.086Z",
+    "checkedAt": "2026-09-10T11:46:30.434Z",
     "items": [
       {
         "field": "name",
@@ -20,9 +20,9 @@
       },
       {
         "field": "canonical_vendor",
-        "status": "UNKNOWN",
-        "detail": "Company/vendor not documented",
-        "source": "none"
+        "status": "PASS",
+        "detail": "Vendor: ServiceM8",
+        "source": "seed"
       },
       {
         "field": "category",
@@ -115,11 +115,11 @@
         "source": "enrichment"
       }
     ],
-    "passCount": 14,
+    "passCount": 15,
     "partialCount": 2,
     "missingCount": 0,
-    "unknownCount": 2,
-    "score": 83
+    "unknownCount": 1,
+    "score": 89
   },
   "decisionHub": {
     "whatItIs": "ServiceM8 is field service management software for trades and contractors — job scheduling, dispatch, quotes, invoicing, and mobile apps for technicians. Published pricing (2026-08-19): Free (1 user), Growing $29/mo, Premium $79/mo, Premium Plus $149/mo per company. Scored as PM/field-service job — not generic tech PM.",
@@ -136,12 +136,13 @@
     ],
     "coreCapabilities": [
       "task boards",
+      "timeline gantt",
+      "automations workflows",
       "time tracking",
+      "docs collaboration",
       "integrations ecosystem",
-      "document pdf",
-      "trades field service",
-      "work management",
-      "project tracking"
+      "reporting dashboards",
+      "ai assistance"
     ],
     "pricingSummary": "4 documented plans · 1 free · entry paid: Growing",
     "keyTradeoffs": [
@@ -206,7 +207,6 @@
     "evidenceState": "Research/data-based (no completed hands-on test) · Latest verification/research signal: 2026-08-19T12:00:00.000Z · Editorial assessment: approved",
     "nextDecisionStep": "Compare against peers: ServiceM8 vs Contractor Foreman",
     "missingSections": [
-      "canonical_vendor",
       "trial"
     ]
   },
@@ -284,13 +284,12 @@
   ],
   "dependentsNeedingRefresh": [],
   "remediation": [
-    "verify:canonical_vendor",
     "verify:trial"
   ],
   "notes": [
-    "fieldAudit score=83",
+    "fieldAudit score=89",
     "decisionHub bestFor=4 notIdeal=3",
     "dependents=14"
   ],
-  "materiallyImproved": false
+  "materiallyImproved": true
 }

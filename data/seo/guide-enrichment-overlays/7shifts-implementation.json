@@ -1,0 +1,210 @@
+{
+  "slug": "7shifts-implementation",
+  "enrichmentType": "IMPLEMENTATION_GUIDE",
+  "updatedAt": "2026-09-10T12:02:47.346Z",
+  "uniqueValueAdded": [
+    "implementation_workflow",
+    "scenario_analysis",
+    "decision_framework",
+    "limitations_evidence",
+    "pricing_comparison",
+    "sg_original_data",
+    "buyer_checklist"
+  ],
+  "patch": {
+    "summary": "applicant tracking; career site and job boards; core hris; payroll processing. Comp (Free) · free · applicant tracking | Essentials | Pro. Slack. Restaurants and hospitality groups that want scheduling, punches, tips, and POS in one WFM; Operators comparing 7shifts as the hospitality default versus Homebase; Teams that will trial Pro for 14 days before Premium payroll. 7shifts is hospitality workforce management: scheduling, 7punches time clock, tips, tasks, POS sync, and optional restaurant payroll. Paid per-location floors (first-party 2026): E Buyer question: is 7shifts worth it when applicant tracking is weekly, or is Homebase the cleaner fit? Thesis: 7shifts earns the Essentials seat when applicant tracking; career site and job boards; core hris; payroll processing is the weekly loop and payroll processing (Comp (Free), Essentials, Pro, Premium) is unlocked; skip if Non-restaurant hourly businesses (Homebase / When I Work / Connecteam fit better); Core HRIS or structured ATS buyers; Deskless field teams that need GPS clocks without restaurant features.",
+    "blocks": [
+      {
+        "id": "da-7shifts-implementation-1",
+        "type": "direct-answer",
+        "body": "payroll processing (Comp (Free), Essentials, Pro, Premium) decides whether 7shifts implementation is a one-team pilot or a specialist project — confirm unlocks for payroll processing (Comp (Free), Essentials, Pro, Premium) before invites.",
+        "bullets": [
+          "Start with: applicant tracking",
+          "Gate check: payroll processing (Comp (Free), Essentials, Pro, Premium)",
+          "Integrate after: data quality pass on Slack"
+        ]
+      },
+      {
+        "id": "impl-7shifts-implementation-2",
+        "type": "step",
+        "heading": "7shifts day-zero to steady-state sequence",
+        "body": "Treat 7shifts setup as a controlled rollout — not a weekend dump of CSV files.",
+        "stepNumber": 1,
+        "scenarios": [
+          {
+            "title": "Day zero — objects and owners",
+            "body": "Define owners for applicant tracking, career site and job boards, workforce scheduling before inviting the whole org."
+          },
+          {
+            "title": "SMB pilot",
+            "body": "One pipeline / one team proves Restaurants and hospitality groups that want scheduling, punches, tips, and POS in one WFM before company-wide seats."
+          },
+          {
+            "title": "Cutover",
+            "body": "Freeze legacy writes briefly; validate Slack before reopen."
+          }
+        ]
+      },
+      {
+        "id": "df-7shifts-implementation-3",
+        "type": "decision-framework",
+        "title": "7shifts implementation go / no-go",
+        "steps": [
+          {
+            "id": "i-1",
+            "label": "Go when plan unlocks cover payroll processing (Comp (Free), Essentials, Pro, Premium)"
+          },
+          {
+            "id": "i-2",
+            "label": "Pause if this limitation blocks ops: Hospitality-specialist — not a general retail/field WFM"
+          },
+          {
+            "id": "i-3",
+            "label": "Do not expand seats until applicant tracking is green"
+          }
+        ]
+      },
+      {
+        "id": "mist-7shifts-implementation-4",
+        "type": "mistakes",
+        "title": "7shifts implementation mistakes",
+        "items": [
+          {
+            "title": "Mistake 1",
+            "body": "Hospitality-specialist — not a general retail/field WFM"
+          },
+          {
+            "title": "Mistake 2",
+            "body": "Per-location pricing and employee caps force Pro/Premium as sites grow"
+          },
+          {
+            "title": "Mistake 3",
+            "body": "Tip/task/auto-scheduler depth is Premium-gated"
+          },
+          {
+            "title": "Mistake 4",
+            "body": "Payroll still bills list price/employee paid even when ‘included’"
+          },
+          {
+            "title": "Big-bang invite",
+            "body": "Inviting every user before object design creates junk data that is expensive to unwind."
+          }
+        ]
+      },
+      {
+        "id": "cost-7shifts-implementation-5",
+        "type": "cost-breakdown",
+        "title": "7shifts plan gates that affect rollout",
+        "body": "Implementation fails when unlocks needed for go-live sit on a higher tier than budgeted.",
+        "lines": [
+          {
+            "label": "Comp (Free)",
+            "description": "Free plan · Unlocks: applicant tracking, career site and job boards, core hris · Suits: explore before committing seats"
+          },
+          {
+            "label": "Essentials",
+            "description": "14-day trial · Suits: teams whose must-have gates appear on this tier"
+          },
+          {
+            "label": "Pro",
+            "description": "14-day trial · Suits: teams whose must-have gates appear on this tier"
+          },
+          {
+            "label": "Premium",
+            "description": "14-day trial · Suits: teams whose must-have gates appear on this tier"
+          }
+        ]
+      },
+      {
+        "id": "sel-7shifts-implementation-6",
+        "type": "selection-checklist",
+        "title": "7shifts implementation checklist",
+        "dimensions": [
+          {
+            "id": "prep",
+            "label": "Prep",
+            "options": [
+              "Object model drafted",
+              "Owners named",
+              "Legacy freeze window set"
+            ]
+          },
+          {
+            "id": "pilot",
+            "label": "Pilot",
+            "options": [
+              "applicant tracking",
+              "Junk-data rules set",
+              "Support path clear"
+            ]
+          },
+          {
+            "id": "scale",
+            "label": "Scale",
+            "options": [
+              "Slack",
+              "Seat expansion criteria written",
+              "Rollback plan noted"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "cta-7shifts-implementation-7",
+        "type": "interactive-cta",
+        "title": "Validate hr fit before a deep 7shifts rollout",
+        "body": "If 7shifts fails constraint fit, stop implementation early.",
+        "href": "/tools/hr-finder/",
+        "ctaLabel": "Open Finder",
+        "variant": "finder"
+      }
+    ],
+    "sections": [
+      {
+        "id": "sec-thesis-7shifts-implementation",
+        "heading": "7shifts buyer question and thesis",
+        "body": "applicant tracking; career site and job boards; core hris; payroll processing. Comp (Free) · free · applicant tracking | Essentials | Pro. Slack. Restaurants and hospitality groups that want scheduling, punches, tips, and POS in one WFM; Operators comparing 7shifts as the hospitality default versus Homebase; Teams that will trial Pro for 14 days before Premium payroll. 7shifts is hospitality workforce management: scheduling, 7punches time clock, tips, tasks, POS sync, and optional restaurant payroll. Paid per-location floors (first-party 2026): E. That catalogue mix is the 7shifts implementation filter — not a generic hr lecture.\n\nBuyer question: is 7shifts worth it when applicant tracking is weekly, or is Homebase the cleaner fit?\n\nThesis: 7shifts earns the Essentials seat when applicant tracking; career site and job boards; core hris; payroll processing is the weekly loop and payroll processing (Comp (Free), Essentials, Pro, Premium) is unlocked; skip if Non-restaurant hourly businesses (Homebase / When I Work / Connecteam fit better); Core HRIS or structured ATS buyers; Deskless field teams that need GPS clocks without restaurant features.\n\nBest for: Restaurants and hospitality groups that want scheduling, punches, tips, and POS in one WFM; Operators comparing 7shifts as the hospitality default versus Homebase; Teams that will trial Pro for 14 days before Premium payroll (Restaurants and hospitality groups that want scheduling, punches, tips, and POS in one WFM).\n\nPoor fit when: Non-restaurant hourly businesses (Homebase / When I Work / Connecteam fit better); Core HRIS or structured ATS buyers; Deskless field teams that need GPS clocks without restaurant features. Avoid if Hospitality-specialist — not a general retail/field WFM would block go-live."
+      },
+      {
+        "id": "sec-limits-7shifts-implementation",
+        "heading": "7shifts limitation, pricing interpretation, and alternative context",
+        "body": "Limitation: Hospitality-specialist — not a general retail/field WFM; Per-location pricing and employee caps force Pro/Premium as sites grow; Tip/task/auto-scheduler depth is Premium-gated because it forces process changes or add-ons around 7shifts when applicant tracking is the job.\n\nPricing interpretation: stay on Comp (Free) until payroll processing (Comp (Free), Essentials, Pro, Premium) is mandatory; plan jumps to Essentials only after that hinge is proven.\n\nPlan trade-off: you gain payroll processing (Comp (Free), Essentials, Pro, Premium) at the expense of Published free tiers vs paid depth for ATS, WFM, time, or training jobs — measure both in the pilot. Researched packaging: Comp (Free) · free · applicant tracking | Essentials | Pro.\n\nAlternative context: unlike Homebase, 7shifts is preferable when Restaurants and hospitality groups that want scheduling, punches, tips, and POS in one WFM because applicant tracking plus payroll processing (Comp (Free), Essentials, Pro, Premium) match; prefer Homebase when Non-restaurant hourly businesses (Homebase / When I Work / Connecteam fit better) because the operating loops differ."
+      },
+      {
+        "id": "sec-scenario-7shifts-implementation",
+        "heading": "Decision scenario and conclusion for 7shifts",
+        "body": "Use-case: for Restaurants and hospitality groups that want scheduling, punches, tips, and POS in one WFM running applicant tracking, prefer 7shifts when applicant tracking is weekly; pick another path when Non-restaurant hourly businesses (Homebase / When I Work / Connecteam fit better).\n\nSetup requires a specialist owner when Hospitality-specialist — not a general retail/field WFM collides with applicant tracking; SMB pilots can stay lighter if payroll processing (Comp (Free), Essentials, Pro, Premium) is already on Essentials.\n\nIntegrations in research: Slack.\n\nWrap: choose 7shifts only if the implementation job is applicant tracking under Restaurants and hospitality groups that want scheduling, punches, tips, and POS in one WFM; otherwise use Finder constraints instead of copying this page for another vendor."
+      }
+    ],
+    "checklist": [
+      {
+        "id": "enrich-chk-0",
+        "label": "Draft 7shifts object owners before invites",
+        "order": 0
+      },
+      {
+        "id": "enrich-chk-1",
+        "label": "Confirm plan unlocks for go-live features",
+        "order": 1
+      },
+      {
+        "id": "enrich-chk-2",
+        "label": "Pilot one team on applicant tracking",
+        "order": 2
+      },
+      {
+        "id": "enrich-chk-3",
+        "label": "If blocked, evaluate Homebase before sunk-cost expansion",
+        "order": 3
+      }
+    ],
+    "nextAction": {
+      "contentId": "tool:finder:hr",
+      "label": "Open Finder shortlist"
+    }
+  },
+  "notes": [
+    "Implementation: workflow, constraints, mistakes, checklist.",
+    "Type-specific skeleton: IMPLEMENTATION_GUIDE"
+  ]
+}

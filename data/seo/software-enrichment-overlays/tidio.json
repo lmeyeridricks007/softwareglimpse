@@ -1,10 +1,10 @@
 {
   "slug": "tidio",
-  "updatedAt": "2026-09-07T22:31:21.216Z",
+  "updatedAt": "2026-09-10T11:03:34.634Z",
   "version": "1.0.0",
   "fieldAudit": {
     "slug": "tidio",
-    "checkedAt": "2026-09-07T22:31:21.214Z",
+    "checkedAt": "2026-09-10T11:03:34.633Z",
     "items": [
       {
         "field": "name",
@@ -20,9 +20,9 @@
       },
       {
         "field": "canonical_vendor",
-        "status": "UNKNOWN",
-        "detail": "Company/vendor not documented",
-        "source": "none"
+        "status": "PASS",
+        "detail": "Vendor: Tidio LLC",
+        "source": "seed"
       },
       {
         "field": "category",
@@ -115,11 +115,11 @@
         "source": "enrichment"
       }
     ],
-    "passCount": 17,
+    "passCount": 18,
     "partialCount": 0,
     "missingCount": 0,
-    "unknownCount": 1,
-    "score": 94
+    "unknownCount": 0,
+    "score": 100
   },
   "decisionHub": {
     "whatItIs": "Tidio is a live chat and AI messaging platform for website visitor support and conversation automation. Reconciled from CRM-primary to customer-service live-chat primary. Annual pricing: Starter $24.17/mo for 100 billable conversations; Growth from $49.17/mo annual. Lyro AI agent and flows for deflection. Not a sales CRM — scored in live-chat-support cluster only.",
@@ -140,14 +140,14 @@
       "Re-homed from CRM; not a sales pipeline CRM replacement"
     ],
     "coreCapabilities": [
+      "ticketing",
       "shared inbox",
       "live chat",
+      "knowledge base",
+      "omnichannel inbox",
       "macros automation",
-      "chatbot ai agent",
-      "agent copilot",
-      "helpdesk integrations",
-      "live chat support",
-      "ai customer service"
+      "self service portal",
+      "csat surveys"
     ],
     "pricingSummary": "3 documented plans · 1 free · entry paid: Starter · trial documented on at least one plan",
     "keyTradeoffs": [
@@ -220,9 +220,7 @@
     ],
     "evidenceState": "Research/data-based (no completed hands-on test) · Latest verification/research signal: 2026-08-18T12:00:00.000Z · Editorial assessment: approved",
     "nextDecisionStep": "Compare against peers: Freshchat vs Tidio",
-    "missingSections": [
-      "canonical_vendor"
-    ]
+    "missingSections": []
   },
   "dependents": [
     {
@@ -307,13 +305,11 @@
     }
   ],
   "dependentsNeedingRefresh": [],
-  "remediation": [
-    "verify:canonical_vendor"
-  ],
+  "remediation": [],
   "notes": [
-    "fieldAudit score=94",
+    "fieldAudit score=100",
     "decisionHub bestFor=6 notIdeal=6",
     "dependents=16"
   ],
-  "materiallyImproved": false
+  "materiallyImproved": true
 }

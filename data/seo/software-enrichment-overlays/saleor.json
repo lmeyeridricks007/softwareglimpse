@@ -1,10 +1,10 @@
 {
   "slug": "saleor",
-  "updatedAt": "2026-09-07T22:31:21.980Z",
+  "updatedAt": "2026-09-10T11:46:30.199Z",
   "version": "1.0.0",
   "fieldAudit": {
     "slug": "saleor",
-    "checkedAt": "2026-09-07T22:31:21.979Z",
+    "checkedAt": "2026-09-10T11:46:30.198Z",
     "items": [
       {
         "field": "name",
@@ -20,9 +20,9 @@
       },
       {
         "field": "canonical_vendor",
-        "status": "UNKNOWN",
-        "detail": "Company/vendor not documented",
-        "source": "none"
+        "status": "PASS",
+        "detail": "Vendor: Saleor Commerce",
+        "source": "seed"
       },
       {
         "field": "category",
@@ -115,11 +115,11 @@
         "source": "enrichment"
       }
     ],
-    "passCount": 16,
+    "passCount": 17,
     "partialCount": 0,
     "missingCount": 0,
-    "unknownCount": 2,
-    "score": 89
+    "unknownCount": 1,
+    "score": 94
   },
   "decisionHub": {
     "whatItIs": "Saleor is a headless, GraphQL-first open-source commerce platform. OSS self-host is free for production; Saleor Cloud Forever Free is non-commercial prototyping only — do not treat it as a merchant production free plan. Production Cloud (first-party 2026-08-18): Select $1599/mo (up to $200k GMV/mo, 0.8% overage), Volume $3999/mo (up to $1M GMV, 0.4% overage), Enterprise contact. Landscape open-source peer — WooCommerce keeps the cluster award (8.1). Research grounded 2026-08-18 from saleor.io/pricing.",
@@ -145,8 +145,8 @@
       "order management",
       "inventory management",
       "shipping fulfillment",
-      "b2b wholesale",
-      "analytics reporting"
+      "pos omnichannel",
+      "b2b wholesale"
     ],
     "pricingSummary": "4 documented plans · 1 free · entry paid: Cloud Select",
     "keyTradeoffs": [
@@ -232,7 +232,6 @@
     "evidenceState": "Research/data-based (no completed hands-on test) · Latest verification/research signal: 2026-08-18T16:00:00.000Z · Editorial assessment: approved",
     "nextDecisionStep": "Compare against peers: Saleor vs Medusa",
     "missingSections": [
-      "canonical_vendor",
       "trial"
     ]
   },
@@ -375,13 +374,12 @@
   ],
   "dependentsNeedingRefresh": [],
   "remediation": [
-    "verify:canonical_vendor",
     "verify:trial"
   ],
   "notes": [
-    "fieldAudit score=89",
+    "fieldAudit score=94",
     "decisionHub bestFor=5 notIdeal=6",
     "dependents=27"
   ],
-  "materiallyImproved": false
+  "materiallyImproved": true
 }

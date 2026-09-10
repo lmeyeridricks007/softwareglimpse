@@ -1,66 +1,81 @@
 {
   "synthetic": false,
-  "label": "GSC Coverage export \u2014 softwareglimpse.com \u2014 2026-08-15",
+  "label": "GSC Coverage drilldowns \u2014 softwareglimpse.com \u2014 2026-09-05",
   "meta": {
-    "retrievedAt": "2026-08-15T17:30:00.000Z",
-    "dataThroughDate": "2026-08-13",
-    "sourceFile": "softwareglimpse.com-Coverage-2026-08-15.xlsx",
+    "retrievedAt": "2026-09-05T14:41:00.000Z",
+    "dataThroughDate": "2026-08-28",
+    "exportDate": "2026-09-05",
+    "coverageComplete": false,
+    "sourceFiles": [
+      "softwareglimpse.com-Coverage-Drilldown-crawled-not-indexed-2026-09-05.xlsx",
+      "softwareglimpse.com-Coverage-Drilldown-discovered-not-indexed-2026-09-05.xlsx"
+    ],
     "property": {
       "Sitemap": "All known pages"
+    },
+    "dateWindow": {
+      "startDate": "2026-06-08",
+      "endDate": "2026-08-28",
+      "label": "Coverage issue charts (not Performance window)"
     }
   },
   "latestTotals": {
-    "date": "2026-08-07",
-    "notIndexed": 4504,
-    "indexed": 1527,
-    "impressions": 1193.0
+    "date": "2026-08-28",
+    "indexed": null,
+    "notIndexed": null,
+    "impressions": null,
+    "incomplete": true,
+    "note": "Overview/Indexed timeseries was not in this export. Do not reuse 2026-08-15 indexed=1527."
   },
   "criticalIssues": [
     {
-      "reason": "Excluded by \u2018noindex\u2019 tag",
-      "source": "Website",
-      "validation": "Not Started",
-      "pages": 228
-    },
-    {
-      "reason": "Not found (404)",
-      "source": "Website",
-      "validation": "Not Started",
-      "pages": 57
-    },
-    {
-      "reason": "Page with redirect",
-      "source": "Website",
-      "validation": "Not Started",
-      "pages": 37
-    },
-    {
-      "reason": "Alternative page with proper canonical tag",
-      "source": "Website",
-      "validation": "Not Started",
-      "pages": 24
-    },
-    {
       "reason": "Crawled - currently not indexed",
       "source": "Google systems",
-      "validation": "Not Started",
-      "pages": 1607
-    },
-    {
-      "reason": "Duplicate, Google chose different canonical than user",
-      "source": "Google systems",
-      "validation": "Not Started",
-      "pages": 1
+      "validation": "Unknown",
+      "pages": 1687,
+      "asOf": "2026-08-28"
     },
     {
       "reason": "Discovered \u2013 currently not indexed",
       "source": "Google systems",
-      "validation": "Passed",
-      "pages": 2550
+      "validation": "Unknown",
+      "pages": 8797,
+      "asOf": "2026-08-28"
     }
   ],
+  "issueTimeseries": {
+    "crawledNotIndexed": {
+      "start": "2026-06-08",
+      "end": "2026-08-28",
+      "first": 2234.0,
+      "last": 1687.0
+    },
+    "discoveredNotIndexed": {
+      "start": "2026-06-08",
+      "end": "2026-08-28",
+      "first": 1990.0,
+      "last": 8797.0
+    }
+  },
+  "sitemap": {
+    "gscProperty": "All known pages",
+    "sitemapsReport": "NOT_IN_THIS_EXPORT",
+    "note": "Coverage metadata says Sitemap=All known pages. No GSC Sitemaps inventory (submitted/indexed/errors) was included."
+  },
+  "notInThisExport": [
+    "Indexed total",
+    "Excluded by noindex tag",
+    "Not found (404)",
+    "Page with redirect",
+    "Alternative page with proper canonical tag",
+    "Duplicate, Google chose different canonical",
+    "GSC Sitemaps report"
+  ],
   "notes": [
-    "Coverage reasons are aggregate counts only \u2014 not per-URL lists.",
-    "Do not treat Page with redirect / 404 counts as confirmed migration failures without URL inspection."
+    "PARTIAL Coverage: only two issue drilldowns were available (Crawled not indexed; Discovered not indexed).",
+    "Do not compare these aggregates to the 2026-08-15 Coverage Overview (indexed 1527 / crawled 1607 / discovered 2550). That overview predates the production sitemapindex cutover and is a different export type.",
+    "Issue URL tables are GSC-capped at 1000 URLs; Chart totals are the issue counts.",
+    "Coverage charts run 2026-06-08 \u2192 2026-08-28 \u2014 not the Performance Last-12-months window.",
+    "Indexed / noindex / 404 / redirect / canonical counts are NOT_IN_THIS_EXPORT."
   ]
 }

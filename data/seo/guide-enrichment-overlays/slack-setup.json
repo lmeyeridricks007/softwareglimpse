@@ -1,0 +1,210 @@
+{
+  "slug": "slack-setup",
+  "enrichmentType": "IMPLEMENTATION_GUIDE",
+  "updatedAt": "2026-09-10T12:45:43.894Z",
+  "uniqueValueAdded": [
+    "implementation_workflow",
+    "scenario_analysis",
+    "decision_framework",
+    "limitations_evidence",
+    "pricing_comparison",
+    "sg_original_data",
+    "buyer_checklist"
+  ],
+  "patch": {
+    "summary": "shared inbox; team messaging; video meetings; CRM CTI. Free · free · shared inbox | Pro | Business+. Salesforce, HubSpot, Google Workspace, Microsoft 365. Knowledge-worker teams that need channel-based team messaging as the primary collaboration hub; Organisations that want a freemium chat workspace with a deep app ecosystem; Salesforce-centric companies aligning chat with CRM workflows. Slack is a team-messaging workspace built around channels, DMs, canvas and workflow automation. Verified slack.com/pricing 2026-08-17: Free list price Pro list pricenth annual (lis Buyer question: is Slack worth it if weekly work actually needs shared inbox and AI assistance (Free, Pro, Business+, Enterprise+), or does Anyone shortlisting a cloud phone, contact centre or WhatsApp platform dominate? Thesis: Slack earns budget when shared inbox; team messaging; video meetings; CRM CTI is the operating loop; walk when Not a business phone system — no cloud phone, call routing, recording or power dialer because it forces workarounds.",
+    "blocks": [
+      {
+        "id": "da-slack-setup-1",
+        "type": "direct-answer",
+        "body": "AI assistance (Free, Pro, Business+, Enterprise+) decides whether Slack setup is a one-team pilot or a specialist project — confirm unlocks for AI assistance (Free, Pro, Business+, Enterprise+) before invites.",
+        "bullets": [
+          "Start with: shared inbox",
+          "Gate check: AI assistance (Free, Pro, Business+, Enterprise+)",
+          "Integrate after: data quality pass on Salesforce"
+        ]
+      },
+      {
+        "id": "impl-slack-setup-2",
+        "type": "step",
+        "heading": "Slack day-zero to steady-state sequence",
+        "body": "Treat Slack setup as a controlled rollout — not a weekend dump of CSV files.",
+        "stepNumber": 1,
+        "scenarios": [
+          {
+            "title": "Day zero — objects and owners",
+            "body": "Define owners for shared inbox, team messaging, video meetings before inviting the whole org."
+          },
+          {
+            "title": "SMB pilot",
+            "body": "One pipeline / one team proves Knowledge-worker teams that need channel-based team messaging as the primary collaboration hub before company-wide seats."
+          },
+          {
+            "title": "Cutover",
+            "body": "Freeze legacy writes briefly; validate Salesforce and HubSpot before reopen."
+          }
+        ]
+      },
+      {
+        "id": "df-slack-setup-3",
+        "type": "decision-framework",
+        "title": "Slack implementation go / no-go",
+        "steps": [
+          {
+            "id": "i-1",
+            "label": "Go when plan unlocks cover AI assistance (Free, Pro, Business+, Enterprise+)"
+          },
+          {
+            "id": "i-2",
+            "label": "Pause if this limitation blocks ops: Not a business phone system — no cloud phone, call routing, recording or power dialer"
+          },
+          {
+            "id": "i-3",
+            "label": "Do not expand seats until shared inbox is green"
+          }
+        ]
+      },
+      {
+        "id": "mist-slack-setup-4",
+        "type": "mistakes",
+        "title": "Slack implementation mistakes",
+        "items": [
+          {
+            "title": "Mistake 1",
+            "body": "Not a business phone system — no cloud phone, call routing, recording or power dialer"
+          },
+          {
+            "title": "Mistake 2",
+            "body": "No SMS or WhatsApp Business customer channels"
+          },
+          {
+            "title": "Mistake 3",
+            "body": "Video is limited to huddles / meeting integrations rather than a full meetings suite"
+          },
+          {
+            "title": "Mistake 4",
+            "body": "AI assistance is higher-plan-only (Business+ emphasis)"
+          },
+          {
+            "title": "Big-bang invite",
+            "body": "Inviting every user before object design creates junk data that is expensive to unwind."
+          }
+        ]
+      },
+      {
+        "id": "cost-slack-setup-5",
+        "type": "cost-breakdown",
+        "title": "Slack plan gates that affect rollout",
+        "body": "Implementation fails when unlocks needed for go-live sit on a higher tier than budgeted.",
+        "lines": [
+          {
+            "label": "Free",
+            "description": "Free plan · Unlocks: shared inbox, team messaging, video meetings · Suits: explore before committing seats"
+          },
+          {
+            "label": "Pro",
+            "description": "Suits: teams whose must-have gates appear on this tier"
+          },
+          {
+            "label": "Business+",
+            "description": "Suits: teams whose must-have gates appear on this tier"
+          },
+          {
+            "label": "Enterprise+",
+            "description": "Contact sales · Suits: teams that need custom procurement"
+          }
+        ]
+      },
+      {
+        "id": "sel-slack-setup-6",
+        "type": "selection-checklist",
+        "title": "Slack implementation checklist",
+        "dimensions": [
+          {
+            "id": "prep",
+            "label": "Prep",
+            "options": [
+              "Object model drafted",
+              "Owners named",
+              "Legacy freeze window set"
+            ]
+          },
+          {
+            "id": "pilot",
+            "label": "Pilot",
+            "options": [
+              "shared inbox",
+              "Junk-data rules set",
+              "Support path clear"
+            ]
+          },
+          {
+            "id": "scale",
+            "label": "Scale",
+            "options": [
+              "Salesforce",
+              "Seat expansion criteria written",
+              "Rollback plan noted"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "cta-slack-setup-7",
+        "type": "interactive-cta",
+        "title": "Validate business-communications fit before a deep Slack rollout",
+        "body": "If Slack fails constraint fit, stop implementation early.",
+        "href": "/tools/business-communications-finder/",
+        "ctaLabel": "Open Finder",
+        "variant": "finder"
+      }
+    ],
+    "sections": [
+      {
+        "id": "sec-thesis-slack-setup",
+        "heading": "Slack buyer question and thesis",
+        "body": "shared inbox; team messaging; video meetings; CRM CTI. Free · free · shared inbox | Pro | Business+. Salesforce, HubSpot, Google Workspace, Microsoft 365. Knowledge-worker teams that need channel-based team messaging as the primary collaboration hub; Organisations that want a freemium chat workspace with a deep app ecosystem; Salesforce-centric companies aligning chat with CRM workflows. Slack is a team-messaging workspace built around channels, DMs, canvas and workflow automation. Verified slack.com/pricing 2026-08-17: Free list price Pro list pricenth annual (lis. That catalogue mix is the Slack setup filter — not a generic business-communications lecture.\n\nBuyer question: is Slack worth it if weekly work actually needs shared inbox and AI assistance (Free, Pro, Business+, Enterprise+), or does Anyone shortlisting a cloud phone, contact centre or WhatsApp platform dominate?\n\nThesis: Slack earns budget when shared inbox; team messaging; video meetings; CRM CTI is the operating loop; walk when Not a business phone system — no cloud phone, call routing, recording or power dialer because it forces workarounds.\n\nBest for: Knowledge-worker teams that need channel-based team messaging as the primary collaboration hub; Organisations that want a freemium chat workspace with a deep app ecosystem; Salesforce-centric companies aligning chat with CRM workflows (Knowledge-worker teams that need channel-based team messaging as the primary collaboration hub).\n\nPoor fit when: Anyone shortlisting a cloud phone, contact centre or WhatsApp platform; Teams that need native video meetings as the primary product (prefer Zoom/Teams); Buyers who need AI assistance included on Pro. Avoid if Not a business phone system — no cloud phone, call routing, recording or power dialer would block go-live."
+      },
+      {
+        "id": "sec-limits-slack-setup",
+        "heading": "Slack limitation, pricing interpretation, and alternative context",
+        "body": "Limitation: Not a business phone system — no cloud phone, call routing, recording or power dialer; No SMS or WhatsApp Business customer channels; Video is limited to huddles / meeting integrations rather than a full meetings suite because it forces process changes or add-ons around Slack when shared inbox is the job.\n\nPricing interpretation: stay on Free until AI assistance (Free, Pro, Business+, Enterprise+) is mandatory; plan jumps to Pro only after that hinge is proven.\n\nPlan trade-off: you gain AI assistance (Free, Pro, Business+, Enterprise+) at the expense of Entry price and seat minimums vs routing, CTI and analytics depth — measure both in the pilot. Researched packaging: Free · free · shared inbox | Pro | Business+.\n\nAlternative context: unlike Microsoft Teams, Slack is preferable when Knowledge-worker teams that need channel-based team messaging as the primary collaboration hub because shared inbox plus AI assistance (Free, Pro, Business+, Enterprise+) match; prefer Microsoft Teams when Anyone shortlisting a cloud phone, contact centre or WhatsApp platform because the operating loops differ."
+      },
+      {
+        "id": "sec-scenario-slack-setup",
+        "heading": "Decision scenario and conclusion for Slack",
+        "body": "Scenario: recommend Slack for Knowledge-worker teams that need channel-based team messaging as the primary collaboration hub; do not choose it when Anyone shortlisting a cloud phone, contact centre or WhatsApp platform — the jobs diverge at AI assistance (Free, Pro, Business+, Enterprise+).\n\nImplementation time: weeks to configure shared inbox if Salesforce, HubSpot, Google Workspace, Microsoft 365 must be green before invites.\n\nIntegrations in research: Salesforce, HubSpot, Google Workspace, Microsoft 365.\n\nDecision conclusion: buy Slack when researched fit (Knowledge-worker teams that need channel-based team messaging as the primary collaboration hub) beats researched limits (Not a business phone system — no cloud phone, call routing, recording or power dialer); otherwise keep researching — do not substitute product names into a generic setup essay."
+      }
+    ],
+    "checklist": [
+      {
+        "id": "enrich-chk-0",
+        "label": "Draft Slack object owners before invites",
+        "order": 0
+      },
+      {
+        "id": "enrich-chk-1",
+        "label": "Confirm plan unlocks for go-live features",
+        "order": 1
+      },
+      {
+        "id": "enrich-chk-2",
+        "label": "Pilot one team on shared inbox",
+        "order": 2
+      },
+      {
+        "id": "enrich-chk-3",
+        "label": "If blocked, evaluate Microsoft Teams before sunk-cost expansion",
+        "order": 3
+      }
+    ],
+    "nextAction": {
+      "contentId": "tool:finder:business-communications",
+      "label": "Open Finder shortlist"
+    }
+  },
+  "notes": [
+    "Implementation: workflow, constraints, mistakes, checklist.",
+    "Type-specific skeleton: IMPLEMENTATION_GUIDE"
+  ]
+}

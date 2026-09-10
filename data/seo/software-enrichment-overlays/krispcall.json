@@ -1,10 +1,10 @@
 {
   "slug": "krispcall",
-  "updatedAt": "2026-09-07T22:31:21.384Z",
+  "updatedAt": "2026-09-10T10:56:08.702Z",
   "version": "1.0.0",
   "fieldAudit": {
     "slug": "krispcall",
-    "checkedAt": "2026-09-07T22:31:21.383Z",
+    "checkedAt": "2026-09-10T10:56:08.698Z",
     "items": [
       {
         "field": "name",
@@ -20,9 +20,9 @@
       },
       {
         "field": "canonical_vendor",
-        "status": "UNKNOWN",
-        "detail": "Company/vendor not documented",
-        "source": "none"
+        "status": "PASS",
+        "detail": "Vendor: KrispCall",
+        "source": "seed"
       },
       {
         "field": "category",
@@ -115,11 +115,11 @@
         "source": "enrichment"
       }
     ],
-    "passCount": 16,
+    "passCount": 17,
     "partialCount": 0,
     "missingCount": 0,
-    "unknownCount": 2,
-    "score": 89
+    "unknownCount": 1,
+    "score": 94
   },
   "decisionHub": {
     "whatItIs": "KrispCall is a low-cost cloud telephony platform built around virtual numbers in a wide list of countries and a unified callbox that keeps calls, SMS and contact history in one workspace. Essential starts at $12/user/month on annual billing but caps at 5 users; Standard unlocks up to 50 users with power dialer, call monitoring, multi-level IVR and API access. Calling minutes and SMS are billed pay-as-you-go on top of the seat price.",
@@ -144,9 +144,9 @@
       "call recording",
       "sms messaging",
       "shared inbox",
-      "unified inbox",
-      "business phone",
-      "sales calling"
+      "team messaging",
+      "crm cti",
+      "analytics reporting"
     ],
     "pricingSummary": "3 documented plans · entry paid: Essential",
     "keyTradeoffs": [
@@ -249,7 +249,6 @@
     "evidenceState": "Research/data-based (no completed hands-on test) · Latest verification/research signal: 2026-08-17T09:00:00.000Z · Editorial assessment: approved",
     "nextDecisionStep": "Compare against peers: Aircall vs KrispCall",
     "missingSections": [
-      "canonical_vendor",
       "trial"
     ]
   },
@@ -352,13 +351,12 @@
   ],
   "dependentsNeedingRefresh": [],
   "remediation": [
-    "verify:canonical_vendor",
     "verify:trial"
   ],
   "notes": [
-    "fieldAudit score=89",
+    "fieldAudit score=94",
     "decisionHub bestFor=5 notIdeal=6",
     "dependents=19"
   ],
-  "materiallyImproved": false
+  "materiallyImproved": true
 }

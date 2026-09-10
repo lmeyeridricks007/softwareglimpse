@@ -1,6 +1,6 @@
 # Guide enrichment system
 
-**Generated:** 2026-09-06T19:36:19.751Z
+**Generated:** 2026-09-10T15:09:20.027Z
 **Engine:** guide-enrichment v2.0.0
 
 Progressive enrichment of **existing** guide URLs. Weak/noindex pages stay live, get type-specific blueprints + real SoftwareGlimpse data, then promote only when quality gates pass. No replacement URLs.
@@ -11,28 +11,29 @@ Execution lanes separate **proven search demand** from strategic catalogue work.
 
 | Metric | Count |
 | --- | ---: |
-| Improvement queue | 1370 |
+| Improvement queue | 571 |
 | Default batch size | 30 |
-| Ready-for-promotion (estimate) | 98 |
+| Ready-for-promotion (estimate) | 1 |
 | Batch mix (A/B/C) | 65% / 25% / 10% |
 
 ## Queue by lane
 
 | Lane | Meaning | Count |
 | --- | --- | ---: |
-| A | Proven search demand (GSC / REAL citations / backlinks) | 1 |
-| B | Strategic existing content (no meaningful GSC yet) | 982 |
-| C | Long-tail improvement — preserve, enrich after A/B | 387 |
+| A | Proven search demand (GSC / REAL citations / backlinks) | 0 |
+| B | Strategic existing content (no meaningful GSC yet) | 525 |
+| C | Long-tail improvement — preserve, enrich after A/B | 46 |
 
 ## Queue by enrichment type
 
 | Type | Count |
 | --- | ---: |
-| IMPLEMENTATION_GUIDE | 506 |
-| DECISION_GUIDE | 260 |
-| COST_GUIDE | 253 |
-| MIGRATION_GUIDE | 253 |
-| PRODUCT_EXPLAINER | 98 |
+| IMPLEMENTATION_GUIDE | 157 |
+| DECISION_GUIDE | 150 |
+| COST_GUIDE | 144 |
+| MIGRATION_GUIDE | 92 |
+| CATEGORY_EDUCATION | 22 |
+| PRODUCT_EXPLAINER | 6 |
 
 ## Quality blueprints
 
@@ -138,7 +139,6 @@ _Highest execution priority. Real GSC impressions/clicks/position, direct page×
 
 | Rank | URL | Type | Lane | Overall | GSC demand | Strategic | Quality gap | Commercial | Authority | Override | GSC impr. | Reason |
 | ---: | --- | --- | --- | ---: | ---: | ---: | ---: | ---: | ---: | --- | ---: | --- |
-| 1 | /guides/zoho-crm-setup/ | IMPLEMENTATION_GUIDE | A | 129.49 | 63.09 | 67 | 30 | 18 | 0 | — | 44 | Lane A — proven search demand (GSC impressions/clicks/position) |
 
 ## Top Lane B — Strategic existing content
 
@@ -146,31 +146,31 @@ _No meaningful GSC demand yet, but important category / popular product / commer
 
 | Rank | URL | Type | Lane | Overall | GSC demand | Strategic | Quality gap | Commercial | Authority | Override | GSC impr. | Reason |
 | ---: | --- | --- | --- | ---: | ---: | ---: | ---: | ---: | ---: | --- | ---: | --- |
-| 1 | /guides/capsule-plans/ | COST_GUIDE | B | 166.03 | 0 | 119.3 | 31 | 38.8 | 0 | yes | 0 | Lane B — strategic existing content (IMPORTANT_CATEGORY, POPULAR_PRODUCT, HIGH_COMMERCIAL_RELEVANCE, IMPORTANT_BUYER_QUESTION); no meaningful GSC demand yet |
-| 2 | /guides/hubspot-plans/ | COST_GUIDE | B | 166.03 | 0 | 119.3 | 31 | 38.8 | 0 | yes | 0 | Lane B — strategic existing content (IMPORTANT_CATEGORY, POPULAR_PRODUCT, HIGH_COMMERCIAL_RELEVANCE, IMPORTANT_BUYER_QUESTION); no meaningful GSC demand yet |
-| 3 | /guides/is-capsule-worth-it/ | DECISION_GUIDE | B | 165.48 | 0 | 119.3 | 30 | 38.8 | 0 | yes | 0 | Lane B — strategic existing content (IMPORTANT_CATEGORY, POPULAR_PRODUCT, HIGH_COMMERCIAL_RELEVANCE, IMPORTANT_BUYER_QUESTION); no meaningful GSC demand yet |
-| 4 | /guides/close-plans/ | COST_GUIDE | B | 165.48 | 0 | 119.3 | 30 | 38.8 | 0 | yes | 0 | Lane B — strategic existing content (IMPORTANT_CATEGORY, POPULAR_PRODUCT, HIGH_COMMERCIAL_RELEVANCE, IMPORTANT_BUYER_QUESTION); no meaningful GSC demand yet |
-| 5 | /guides/is-close-worth-it/ | DECISION_GUIDE | B | 165.48 | 0 | 119.3 | 30 | 38.8 | 0 | yes | 0 | Lane B — strategic existing content (IMPORTANT_CATEGORY, POPULAR_PRODUCT, HIGH_COMMERCIAL_RELEVANCE, IMPORTANT_BUYER_QUESTION); no meaningful GSC demand yet |
-| 6 | /guides/folk-plans/ | COST_GUIDE | B | 165.48 | 0 | 119.3 | 30 | 38.8 | 0 | yes | 0 | Lane B — strategic existing content (IMPORTANT_CATEGORY, POPULAR_PRODUCT, HIGH_COMMERCIAL_RELEVANCE, IMPORTANT_BUYER_QUESTION); no meaningful GSC demand yet |
-| 7 | /guides/is-folk-worth-it/ | DECISION_GUIDE | B | 165.48 | 0 | 119.3 | 30 | 38.8 | 0 | yes | 0 | Lane B — strategic existing content (IMPORTANT_CATEGORY, POPULAR_PRODUCT, HIGH_COMMERCIAL_RELEVANCE, IMPORTANT_BUYER_QUESTION); no meaningful GSC demand yet |
-| 8 | /guides/freshsales-plans/ | COST_GUIDE | B | 165.48 | 0 | 119.3 | 30 | 38.8 | 0 | yes | 0 | Lane B — strategic existing content (IMPORTANT_CATEGORY, POPULAR_PRODUCT, HIGH_COMMERCIAL_RELEVANCE, IMPORTANT_BUYER_QUESTION); no meaningful GSC demand yet |
-| 9 | /guides/is-freshsales-worth-it/ | DECISION_GUIDE | B | 165.48 | 0 | 119.3 | 30 | 38.8 | 0 | yes | 0 | Lane B — strategic existing content (IMPORTANT_CATEGORY, POPULAR_PRODUCT, HIGH_COMMERCIAL_RELEVANCE, IMPORTANT_BUYER_QUESTION); no meaningful GSC demand yet |
-| 10 | /guides/is-hubspot-worth-it/ | DECISION_GUIDE | B | 165.48 | 0 | 119.3 | 30 | 38.8 | 0 | yes | 0 | Lane B — strategic existing content (IMPORTANT_CATEGORY, POPULAR_PRODUCT, HIGH_COMMERCIAL_RELEVANCE, IMPORTANT_BUYER_QUESTION); no meaningful GSC demand yet |
-| 11 | /guides/keap-plans/ | COST_GUIDE | B | 165.48 | 0 | 119.3 | 30 | 38.8 | 0 | yes | 0 | Lane B — strategic existing content (IMPORTANT_CATEGORY, POPULAR_PRODUCT, HIGH_COMMERCIAL_RELEVANCE, IMPORTANT_BUYER_QUESTION); no meaningful GSC demand yet |
-| 12 | /guides/is-keap-worth-it/ | DECISION_GUIDE | B | 165.48 | 0 | 119.3 | 30 | 38.8 | 0 | yes | 0 | Lane B — strategic existing content (IMPORTANT_CATEGORY, POPULAR_PRODUCT, HIGH_COMMERCIAL_RELEVANCE, IMPORTANT_BUYER_QUESTION); no meaningful GSC demand yet |
-| 13 | /guides/pipedrive-plans/ | COST_GUIDE | B | 165.48 | 0 | 119.3 | 30 | 38.8 | 0 | yes | 0 | Lane B — strategic existing content (IMPORTANT_CATEGORY, POPULAR_PRODUCT, HIGH_COMMERCIAL_RELEVANCE, IMPORTANT_BUYER_QUESTION); no meaningful GSC demand yet |
-| 14 | /guides/is-pipedrive-worth-it/ | DECISION_GUIDE | B | 165.48 | 0 | 119.3 | 30 | 38.8 | 0 | yes | 0 | Lane B — strategic existing content (IMPORTANT_CATEGORY, POPULAR_PRODUCT, HIGH_COMMERCIAL_RELEVANCE, IMPORTANT_BUYER_QUESTION); no meaningful GSC demand yet |
-| 15 | /guides/salesflare-plans/ | COST_GUIDE | B | 165.48 | 0 | 119.3 | 30 | 38.8 | 0 | yes | 0 | Lane B — strategic existing content (IMPORTANT_CATEGORY, POPULAR_PRODUCT, HIGH_COMMERCIAL_RELEVANCE, IMPORTANT_BUYER_QUESTION); no meaningful GSC demand yet |
-| 16 | /guides/is-salesflare-worth-it/ | DECISION_GUIDE | B | 165.48 | 0 | 119.3 | 30 | 38.8 | 0 | yes | 0 | Lane B — strategic existing content (IMPORTANT_CATEGORY, POPULAR_PRODUCT, HIGH_COMMERCIAL_RELEVANCE, IMPORTANT_BUYER_QUESTION); no meaningful GSC demand yet |
-| 17 | /guides/amplemarket-plans/ | COST_GUIDE | B | 161.28 | 0 | 115.8 | 30 | 38.8 | 0 | yes | 0 | Lane B — strategic existing content (IMPORTANT_CATEGORY, POPULAR_PRODUCT, HIGH_COMMERCIAL_RELEVANCE, IMPORTANT_BUYER_QUESTION); no meaningful GSC demand yet |
-| 18 | /guides/is-amplemarket-worth-it/ | DECISION_GUIDE | B | 161.28 | 0 | 115.8 | 30 | 38.8 | 0 | yes | 0 | Lane B — strategic existing content (IMPORTANT_CATEGORY, POPULAR_PRODUCT, HIGH_COMMERCIAL_RELEVANCE, IMPORTANT_BUYER_QUESTION); no meaningful GSC demand yet |
-| 19 | /guides/apollo-plans/ | COST_GUIDE | B | 161.28 | 0 | 115.8 | 30 | 38.8 | 0 | yes | 0 | Lane B — strategic existing content (IMPORTANT_CATEGORY, POPULAR_PRODUCT, HIGH_COMMERCIAL_RELEVANCE, IMPORTANT_BUYER_QUESTION); no meaningful GSC demand yet |
-| 20 | /guides/is-apollo-worth-it/ | DECISION_GUIDE | B | 161.28 | 0 | 115.8 | 30 | 38.8 | 0 | yes | 0 | Lane B — strategic existing content (IMPORTANT_CATEGORY, POPULAR_PRODUCT, HIGH_COMMERCIAL_RELEVANCE, IMPORTANT_BUYER_QUESTION); no meaningful GSC demand yet |
-| 21 | /guides/bookyourdata-plans/ | COST_GUIDE | B | 161.28 | 0 | 115.8 | 30 | 38.8 | 0 | yes | 0 | Lane B — strategic existing content (IMPORTANT_CATEGORY, POPULAR_PRODUCT, HIGH_COMMERCIAL_RELEVANCE, IMPORTANT_BUYER_QUESTION); no meaningful GSC demand yet |
-| 22 | /guides/closely-plans/ | COST_GUIDE | B | 161.28 | 0 | 115.8 | 30 | 38.8 | 0 | yes | 0 | Lane B — strategic existing content (IMPORTANT_CATEGORY, POPULAR_PRODUCT, HIGH_COMMERCIAL_RELEVANCE, IMPORTANT_BUYER_QUESTION); no meaningful GSC demand yet |
-| 23 | /guides/is-closely-worth-it/ | DECISION_GUIDE | B | 161.28 | 0 | 115.8 | 30 | 38.8 | 0 | yes | 0 | Lane B — strategic existing content (IMPORTANT_CATEGORY, POPULAR_PRODUCT, HIGH_COMMERCIAL_RELEVANCE, IMPORTANT_BUYER_QUESTION); no meaningful GSC demand yet |
-| 24 | /guides/lusha-plans/ | COST_GUIDE | B | 161.28 | 0 | 115.8 | 30 | 38.8 | 0 | yes | 0 | Lane B — strategic existing content (IMPORTANT_CATEGORY, POPULAR_PRODUCT, HIGH_COMMERCIAL_RELEVANCE, IMPORTANT_BUYER_QUESTION); no meaningful GSC demand yet |
-| 25 | /guides/is-lusha-worth-it/ | DECISION_GUIDE | B | 161.28 | 0 | 115.8 | 30 | 38.8 | 0 | yes | 0 | Lane B — strategic existing content (IMPORTANT_CATEGORY, POPULAR_PRODUCT, HIGH_COMMERCIAL_RELEVANCE, IMPORTANT_BUYER_QUESTION); no meaningful GSC demand yet |
+| 1 | /guides/what-is-keap/ | PRODUCT_EXPLAINER | B | 137.03 | 0 | 97.3 | 25 | 16.8 | 0 | yes | 0 | Lane B — strategic existing content (IMPORTANT_CATEGORY, POPULAR_PRODUCT, IMPORTANT_BUYER_QUESTION); no meaningful GSC demand yet |
+| 2 | /guides/what-is-hubspot/ | PRODUCT_EXPLAINER | B | 137.03 | 0 | 97.3 | 25 | 16.8 | 0 | yes | 0 | Lane B — strategic existing content (IMPORTANT_CATEGORY, POPULAR_PRODUCT, IMPORTANT_BUYER_QUESTION); no meaningful GSC demand yet |
+| 3 | /guides/is-greenhouse-worth-it/ | DECISION_GUIDE | B | 117.45 | 0 | 84.5 | 21 | 30 | 0 | yes | 0 | Lane B — strategic existing content (HIGH_COMMERCIAL_RELEVANCE, IMPORTANT_BUYER_QUESTION); no meaningful GSC demand yet |
+| 4 | /guides/gusto-plans/ | COST_GUIDE | B | 117.45 | 0 | 84.5 | 21 | 30 | 0 | yes | 0 | Lane B — strategic existing content (HIGH_COMMERCIAL_RELEVANCE, IMPORTANT_BUYER_QUESTION); no meaningful GSC demand yet |
+| 5 | /guides/is-gusto-worth-it/ | DECISION_GUIDE | B | 117.45 | 0 | 84.5 | 21 | 30 | 0 | yes | 0 | Lane B — strategic existing content (HIGH_COMMERCIAL_RELEVANCE, IMPORTANT_BUYER_QUESTION); no meaningful GSC demand yet |
+| 6 | /guides/hibob-plans/ | COST_GUIDE | B | 117.45 | 0 | 84.5 | 21 | 30 | 0 | yes | 0 | Lane B — strategic existing content (HIGH_COMMERCIAL_RELEVANCE, IMPORTANT_BUYER_QUESTION); no meaningful GSC demand yet |
+| 7 | /guides/is-hibob-worth-it/ | DECISION_GUIDE | B | 117.45 | 0 | 84.5 | 21 | 30 | 0 | yes | 0 | Lane B — strategic existing content (HIGH_COMMERCIAL_RELEVANCE, IMPORTANT_BUYER_QUESTION); no meaningful GSC demand yet |
+| 8 | /guides/homebase-plans/ | COST_GUIDE | B | 117.45 | 0 | 84.5 | 21 | 30 | 0 | yes | 0 | Lane B — strategic existing content (HIGH_COMMERCIAL_RELEVANCE, IMPORTANT_BUYER_QUESTION); no meaningful GSC demand yet |
+| 9 | /guides/is-homebase-worth-it/ | DECISION_GUIDE | B | 117.45 | 0 | 84.5 | 21 | 30 | 0 | yes | 0 | Lane B — strategic existing content (HIGH_COMMERCIAL_RELEVANCE, IMPORTANT_BUYER_QUESTION); no meaningful GSC demand yet |
+| 10 | /guides/lever-plans/ | COST_GUIDE | B | 117.45 | 0 | 84.5 | 21 | 30 | 0 | yes | 0 | Lane B — strategic existing content (HIGH_COMMERCIAL_RELEVANCE, IMPORTANT_BUYER_QUESTION); no meaningful GSC demand yet |
+| 11 | /guides/is-lever-worth-it/ | DECISION_GUIDE | B | 117.45 | 0 | 84.5 | 21 | 30 | 0 | yes | 0 | Lane B — strategic existing content (HIGH_COMMERCIAL_RELEVANCE, IMPORTANT_BUYER_QUESTION); no meaningful GSC demand yet |
+| 12 | /guides/oracle-hcm-plans/ | COST_GUIDE | B | 117.45 | 0 | 84.5 | 21 | 30 | 0 | yes | 0 | Lane B — strategic existing content (HIGH_COMMERCIAL_RELEVANCE, IMPORTANT_BUYER_QUESTION); no meaningful GSC demand yet |
+| 13 | /guides/is-oracle-hcm-worth-it/ | DECISION_GUIDE | B | 117.45 | 0 | 84.5 | 21 | 30 | 0 | yes | 0 | Lane B — strategic existing content (HIGH_COMMERCIAL_RELEVANCE, IMPORTANT_BUYER_QUESTION); no meaningful GSC demand yet |
+| 14 | /guides/paycor-plans/ | COST_GUIDE | B | 117.45 | 0 | 84.5 | 21 | 30 | 0 | yes | 0 | Lane B — strategic existing content (HIGH_COMMERCIAL_RELEVANCE, IMPORTANT_BUYER_QUESTION); no meaningful GSC demand yet |
+| 15 | /guides/is-paycor-worth-it/ | DECISION_GUIDE | B | 117.45 | 0 | 84.5 | 21 | 30 | 0 | yes | 0 | Lane B — strategic existing content (HIGH_COMMERCIAL_RELEVANCE, IMPORTANT_BUYER_QUESTION); no meaningful GSC demand yet |
+| 16 | /guides/paylocity-plans/ | COST_GUIDE | B | 117.45 | 0 | 84.5 | 21 | 30 | 0 | yes | 0 | Lane B — strategic existing content (HIGH_COMMERCIAL_RELEVANCE, IMPORTANT_BUYER_QUESTION); no meaningful GSC demand yet |
+| 17 | /guides/is-paylocity-worth-it/ | DECISION_GUIDE | B | 117.45 | 0 | 84.5 | 21 | 30 | 0 | yes | 0 | Lane B — strategic existing content (HIGH_COMMERCIAL_RELEVANCE, IMPORTANT_BUYER_QUESTION); no meaningful GSC demand yet |
+| 18 | /guides/personio-plans/ | COST_GUIDE | B | 117.45 | 0 | 84.5 | 21 | 30 | 0 | yes | 0 | Lane B — strategic existing content (HIGH_COMMERCIAL_RELEVANCE, IMPORTANT_BUYER_QUESTION); no meaningful GSC demand yet |
+| 19 | /guides/is-personio-worth-it/ | DECISION_GUIDE | B | 117.45 | 0 | 84.5 | 21 | 30 | 0 | yes | 0 | Lane B — strategic existing content (HIGH_COMMERCIAL_RELEVANCE, IMPORTANT_BUYER_QUESTION); no meaningful GSC demand yet |
+| 20 | /guides/ukg-pro-plans/ | COST_GUIDE | B | 117.45 | 0 | 84.5 | 21 | 30 | 0 | yes | 0 | Lane B — strategic existing content (HIGH_COMMERCIAL_RELEVANCE, IMPORTANT_BUYER_QUESTION); no meaningful GSC demand yet |
+| 21 | /guides/is-ukg-pro-worth-it/ | DECISION_GUIDE | B | 117.45 | 0 | 84.5 | 21 | 30 | 0 | yes | 0 | Lane B — strategic existing content (HIGH_COMMERCIAL_RELEVANCE, IMPORTANT_BUYER_QUESTION); no meaningful GSC demand yet |
+| 22 | /guides/when-i-work-plans/ | COST_GUIDE | B | 117.45 | 0 | 84.5 | 21 | 30 | 0 | yes | 0 | Lane B — strategic existing content (HIGH_COMMERCIAL_RELEVANCE, IMPORTANT_BUYER_QUESTION); no meaningful GSC demand yet |
+| 23 | /guides/is-when-i-work-worth-it/ | DECISION_GUIDE | B | 117.45 | 0 | 84.5 | 21 | 30 | 0 | yes | 0 | Lane B — strategic existing content (HIGH_COMMERCIAL_RELEVANCE, IMPORTANT_BUYER_QUESTION); no meaningful GSC demand yet |
+| 24 | /guides/workable-plans/ | COST_GUIDE | B | 117.45 | 0 | 84.5 | 21 | 30 | 0 | yes | 0 | Lane B — strategic existing content (HIGH_COMMERCIAL_RELEVANCE, IMPORTANT_BUYER_QUESTION); no meaningful GSC demand yet |
+| 25 | /guides/is-workable-worth-it/ | DECISION_GUIDE | B | 117.45 | 0 | 84.5 | 21 | 30 | 0 | yes | 0 | Lane B — strategic existing content (HIGH_COMMERCIAL_RELEVANCE, IMPORTANT_BUYER_QUESTION); no meaningful GSC demand yet |
 
 ## Top Lane C — Long-tail improvement
 
@@ -178,52 +178,57 @@ _Existing valid pages with no current demand and no strong business priority. Pr
 
 | Rank | URL | Type | Lane | Overall | GSC demand | Strategic | Quality gap | Commercial | Authority | Override | GSC impr. | Reason |
 | ---: | --- | --- | --- | ---: | ---: | ---: | ---: | ---: | ---: | --- | ---: | --- |
-| 1 | /guides/saleor-implementation/ | IMPLEMENTATION_GUIDE | C | 46.15 | 0 | 53 | 31 | 18 | 0 | — | 0 | Lane C — long-tail improvement; preserve and enrich after A/B |
-| 2 | /guides/7shifts-implementation/ | IMPLEMENTATION_GUIDE | C | 46.13 | 0 | 56.5 | 30 | 18 | 0 | — | 0 | Lane C — long-tail improvement; preserve and enrich after A/B |
-| 3 | /guides/7shifts-migration/ | MIGRATION_GUIDE | C | 46.13 | 0 | 56.5 | 30 | 18 | 0 | — | 0 | Lane C — long-tail improvement; preserve and enrich after A/B |
-| 4 | /guides/7shifts-setup/ | IMPLEMENTATION_GUIDE | C | 46.13 | 0 | 56.5 | 30 | 18 | 0 | — | 0 | Lane C — long-tail improvement; preserve and enrich after A/B |
-| 5 | /guides/adp-workforce-now-implementation/ | IMPLEMENTATION_GUIDE | C | 46.13 | 0 | 56.5 | 30 | 18 | 0 | — | 0 | Lane C — long-tail improvement; preserve and enrich after A/B |
-| 6 | /guides/adp-workforce-now-migration/ | MIGRATION_GUIDE | C | 46.13 | 0 | 56.5 | 30 | 18 | 0 | — | 0 | Lane C — long-tail improvement; preserve and enrich after A/B |
-| 7 | /guides/adp-workforce-now-setup/ | IMPLEMENTATION_GUIDE | C | 46.13 | 0 | 56.5 | 30 | 18 | 0 | — | 0 | Lane C — long-tail improvement; preserve and enrich after A/B |
-| 8 | /guides/ashby-implementation/ | IMPLEMENTATION_GUIDE | C | 46.13 | 0 | 56.5 | 30 | 18 | 0 | — | 0 | Lane C — long-tail improvement; preserve and enrich after A/B |
-| 9 | /guides/ashby-migration/ | MIGRATION_GUIDE | C | 46.13 | 0 | 56.5 | 30 | 18 | 0 | — | 0 | Lane C — long-tail improvement; preserve and enrich after A/B |
-| 10 | /guides/ashby-setup/ | IMPLEMENTATION_GUIDE | C | 46.13 | 0 | 56.5 | 30 | 18 | 0 | — | 0 | Lane C — long-tail improvement; preserve and enrich after A/B |
-| 11 | /guides/bamboohr-implementation/ | IMPLEMENTATION_GUIDE | C | 46.13 | 0 | 56.5 | 30 | 18 | 0 | — | 0 | Lane C — long-tail improvement; preserve and enrich after A/B |
-| 12 | /guides/bamboohr-migration/ | MIGRATION_GUIDE | C | 46.13 | 0 | 56.5 | 30 | 18 | 0 | — | 0 | Lane C — long-tail improvement; preserve and enrich after A/B |
-| 13 | /guides/bamboohr-setup/ | IMPLEMENTATION_GUIDE | C | 46.13 | 0 | 56.5 | 30 | 18 | 0 | — | 0 | Lane C — long-tail improvement; preserve and enrich after A/B |
-| 14 | /guides/dayforce-implementation/ | IMPLEMENTATION_GUIDE | C | 46.13 | 0 | 56.5 | 30 | 18 | 0 | — | 0 | Lane C — long-tail improvement; preserve and enrich after A/B |
-| 15 | /guides/dayforce-migration/ | MIGRATION_GUIDE | C | 46.13 | 0 | 56.5 | 30 | 18 | 0 | — | 0 | Lane C — long-tail improvement; preserve and enrich after A/B |
-| 16 | /guides/dayforce-setup/ | IMPLEMENTATION_GUIDE | C | 46.13 | 0 | 56.5 | 30 | 18 | 0 | — | 0 | Lane C — long-tail improvement; preserve and enrich after A/B |
-| 17 | /guides/deputy-implementation/ | IMPLEMENTATION_GUIDE | C | 46.13 | 0 | 56.5 | 30 | 18 | 0 | — | 0 | Lane C — long-tail improvement; preserve and enrich after A/B |
-| 18 | /guides/deputy-migration/ | MIGRATION_GUIDE | C | 46.13 | 0 | 56.5 | 30 | 18 | 0 | — | 0 | Lane C — long-tail improvement; preserve and enrich after A/B |
-| 19 | /guides/deputy-setup/ | IMPLEMENTATION_GUIDE | C | 46.13 | 0 | 56.5 | 30 | 18 | 0 | — | 0 | Lane C — long-tail improvement; preserve and enrich after A/B |
-| 20 | /guides/greenhouse-implementation/ | IMPLEMENTATION_GUIDE | C | 46.13 | 0 | 56.5 | 30 | 18 | 0 | — | 0 | Lane C — long-tail improvement; preserve and enrich after A/B |
-| 21 | /guides/greenhouse-migration/ | MIGRATION_GUIDE | C | 46.13 | 0 | 56.5 | 30 | 18 | 0 | — | 0 | Lane C — long-tail improvement; preserve and enrich after A/B |
-| 22 | /guides/greenhouse-setup/ | IMPLEMENTATION_GUIDE | C | 46.13 | 0 | 56.5 | 30 | 18 | 0 | — | 0 | Lane C — long-tail improvement; preserve and enrich after A/B |
-| 23 | /guides/gusto-implementation/ | IMPLEMENTATION_GUIDE | C | 46.13 | 0 | 56.5 | 30 | 18 | 0 | — | 0 | Lane C — long-tail improvement; preserve and enrich after A/B |
-| 24 | /guides/gusto-migration/ | MIGRATION_GUIDE | C | 46.13 | 0 | 56.5 | 30 | 18 | 0 | — | 0 | Lane C — long-tail improvement; preserve and enrich after A/B |
-| 25 | /guides/gusto-setup/ | IMPLEMENTATION_GUIDE | C | 46.13 | 0 | 56.5 | 30 | 18 | 0 | — | 0 | Lane C — long-tail improvement; preserve and enrich after A/B |
+| 1 | /guides/servicenow-implementation/ | IMPLEMENTATION_GUIDE | C | 35.84 | 0 | 47.75 | 21 | 18 | 0 | — | 0 | Lane C — long-tail improvement; preserve and enrich after A/B |
+| 2 | /guides/servicenow-migration/ | MIGRATION_GUIDE | C | 35.84 | 0 | 47.75 | 21 | 18 | 0 | — | 0 | Lane C — long-tail improvement; preserve and enrich after A/B |
+| 3 | /guides/servicenow-setup/ | IMPLEMENTATION_GUIDE | C | 35.84 | 0 | 47.75 | 21 | 18 | 0 | — | 0 | Lane C — long-tail improvement; preserve and enrich after A/B |
+| 4 | /guides/siteground-implementation/ | IMPLEMENTATION_GUIDE | C | 35.84 | 0 | 47.75 | 21 | 18 | 0 | — | 0 | Lane C — long-tail improvement; preserve and enrich after A/B |
+| 5 | /guides/siteground-migration/ | MIGRATION_GUIDE | C | 35.84 | 0 | 47.75 | 21 | 18 | 0 | — | 0 | Lane C — long-tail improvement; preserve and enrich after A/B |
+| 6 | /guides/siteground-setup/ | IMPLEMENTATION_GUIDE | C | 35.84 | 0 | 47.75 | 21 | 18 | 0 | — | 0 | Lane C — long-tail improvement; preserve and enrich after A/B |
+| 7 | /guides/smartproxy-implementation/ | IMPLEMENTATION_GUIDE | C | 35.84 | 0 | 47.75 | 21 | 18 | 0 | — | 0 | Lane C — long-tail improvement; preserve and enrich after A/B |
+| 8 | /guides/smartproxy-migration/ | MIGRATION_GUIDE | C | 35.84 | 0 | 47.75 | 21 | 18 | 0 | — | 0 | Lane C — long-tail improvement; preserve and enrich after A/B |
+| 9 | /guides/smartproxy-setup/ | IMPLEMENTATION_GUIDE | C | 35.84 | 0 | 47.75 | 21 | 18 | 0 | — | 0 | Lane C — long-tail improvement; preserve and enrich after A/B |
+| 10 | /guides/splunk-implementation/ | IMPLEMENTATION_GUIDE | C | 35.84 | 0 | 47.75 | 21 | 18 | 0 | — | 0 | Lane C — long-tail improvement; preserve and enrich after A/B |
+| 11 | /guides/splunk-migration/ | MIGRATION_GUIDE | C | 35.84 | 0 | 47.75 | 21 | 18 | 0 | — | 0 | Lane C — long-tail improvement; preserve and enrich after A/B |
+| 12 | /guides/splunk-setup/ | IMPLEMENTATION_GUIDE | C | 35.84 | 0 | 47.75 | 21 | 18 | 0 | — | 0 | Lane C — long-tail improvement; preserve and enrich after A/B |
+| 13 | /guides/squadcast-implementation/ | IMPLEMENTATION_GUIDE | C | 35.84 | 0 | 47.75 | 21 | 18 | 0 | — | 0 | Lane C — long-tail improvement; preserve and enrich after A/B |
+| 14 | /guides/squadcast-migration/ | MIGRATION_GUIDE | C | 35.84 | 0 | 47.75 | 21 | 18 | 0 | — | 0 | Lane C — long-tail improvement; preserve and enrich after A/B |
+| 15 | /guides/squadcast-setup/ | IMPLEMENTATION_GUIDE | C | 35.84 | 0 | 47.75 | 21 | 18 | 0 | — | 0 | Lane C — long-tail improvement; preserve and enrich after A/B |
+| 16 | /guides/sysaid-implementation/ | IMPLEMENTATION_GUIDE | C | 35.84 | 0 | 47.75 | 21 | 18 | 0 | — | 0 | Lane C — long-tail improvement; preserve and enrich after A/B |
+| 17 | /guides/sysaid-migration/ | MIGRATION_GUIDE | C | 35.84 | 0 | 47.75 | 21 | 18 | 0 | — | 0 | Lane C — long-tail improvement; preserve and enrich after A/B |
+| 18 | /guides/sysaid-setup/ | IMPLEMENTATION_GUIDE | C | 35.84 | 0 | 47.75 | 21 | 18 | 0 | — | 0 | Lane C — long-tail improvement; preserve and enrich after A/B |
+| 19 | /guides/topdesk-implementation/ | IMPLEMENTATION_GUIDE | C | 35.84 | 0 | 47.75 | 21 | 18 | 0 | — | 0 | Lane C — long-tail improvement; preserve and enrich after A/B |
+| 20 | /guides/topdesk-migration/ | MIGRATION_GUIDE | C | 35.84 | 0 | 47.75 | 21 | 18 | 0 | — | 0 | Lane C — long-tail improvement; preserve and enrich after A/B |
+| 21 | /guides/topdesk-setup/ | IMPLEMENTATION_GUIDE | C | 35.84 | 0 | 47.75 | 21 | 18 | 0 | — | 0 | Lane C — long-tail improvement; preserve and enrich after A/B |
+| 22 | /guides/wp-engine-implementation/ | IMPLEMENTATION_GUIDE | C | 35.84 | 0 | 47.75 | 21 | 18 | 0 | — | 0 | Lane C — long-tail improvement; preserve and enrich after A/B |
+| 23 | /guides/wp-engine-migration/ | MIGRATION_GUIDE | C | 35.84 | 0 | 47.75 | 21 | 18 | 0 | — | 0 | Lane C — long-tail improvement; preserve and enrich after A/B |
+| 24 | /guides/wp-engine-setup/ | IMPLEMENTATION_GUIDE | C | 35.84 | 0 | 47.75 | 21 | 18 | 0 | — | 0 | Lane C — long-tail improvement; preserve and enrich after A/B |
+| 25 | /guides/what-is-social-media-marketing-software/ | CATEGORY_EDUCATION | C | 25.05 | 0 | 19 | 17 | 8 | 0 | — | 0 | Lane C — long-tail improvement; preserve and enrich after A/B |
 
 ## Latest batch
 
-- Batch size: 30
+- Batch size: 2
 - Applied overlays: 0
 - Promoted: 0
-- Skipped promotion: 24
-- Queue remaining (approx): 1340
+- Skipped promotion: 2
+- Queue remaining (approx): 567
+- Family QA: **FLAGGED** (1 shared patterns)
+  - Family QA flagged: ≥35% of batch pages share thesis/recommendation/skeleton patterns
+  - recommendation: 100% share (2 pages) — “common alternatives peers catalogue relationships comparisons understa…”
 
 ## Operating rules
 
 1. Default batch mix ≈ **65% Lane A / 25% Lane B / 10% Lane C** (configurable via `laneAllocation`).
 2. A zero-impression page may not outrank Lane A unless `strategicOverride === true` (Lane B only) with an explicit reason.
-3. Process batches of 20–50 — do not rewrite 1,300 guides blindly.
-4. Use real catalogue/pricing/research data; omit unsupported sections.
-5. Reject generic filler and near-duplicate intros/conclusions (QA).
-6. Promote only via `validateAndMaybePromoteGuide` → content-lifecycle.
-7. Overlays live in `data/seo/guide-enrichment-overlays/{slug}.json`.
-8. Never fabricate GSC demand; FIXTURE AI/backlink inputs do not count for Lane A.
+3. Semantic template risk (interchangeable analysis after stripping names/prices) blocks auto-promote — stay IMPROVE or MANUAL_REVIEW.
+4. Process batches of 20–50 — do not rewrite 1,300 guides blindly.
+5. Use real catalogue/pricing/research data; omit unsupported sections.
+6. Reject generic filler and near-duplicate intros/conclusions (QA).
+7. Promote only via `validateAndMaybePromoteGuide` → content-lifecycle.
+8. Overlays live in `data/seo/guide-enrichment-overlays/{slug}.json`.
+9. Never fabricate GSC demand; FIXTURE AI/backlink inputs do not count for Lane A.
 
 ## Machine-readable output
 
 - `data/seo/guide-enrichment.json`
+- Semantic history: `data/seo/content-quality-gate-history.json` (`semanticRecords`, `familyQaRecords`)
 

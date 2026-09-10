@@ -73,7 +73,7 @@ export function collectGscMonitorSignals(opts?: {
           signals.push({
             id: "MIG-GSC-INDEX-TOTALS",
             label: "Indexed vs not-indexed totals (aggregate)",
-            detail: `As of ${t.date ?? "n/a"}: indexed=${t.indexed ?? "n/a"}, notIndexed=${t.notIndexed ?? "n/a"}, impressions=${t.impressions ?? "n/a"} — WordPress-era crawl inventory; re-check after Next.js launch.`,
+            detail: `As of ${t.date ?? "n/a"}: indexed=${t.indexed ?? "n/a"}, notIndexed=${t.notIndexed ?? "n/a"}, impressions=${t.impressions ?? "n/a"} — Coverage Overview totals; incomplete when indexed is n/a. Do not compare incompatible export types or date windows.`,
             interpretWithCaution: true,
           });
         }

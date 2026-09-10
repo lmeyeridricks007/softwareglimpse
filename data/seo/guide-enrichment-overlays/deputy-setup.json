@@ -1,0 +1,206 @@
+{
+  "slug": "deputy-setup",
+  "enrichmentType": "IMPLEMENTATION_GUIDE",
+  "updatedAt": "2026-09-10T12:03:35.576Z",
+  "uniqueValueAdded": [
+    "implementation_workflow",
+    "scenario_analysis",
+    "decision_framework",
+    "limitations_evidence",
+    "pricing_comparison",
+    "sg_original_data",
+    "buyer_checklist"
+  ],
+  "patch": {
+    "summary": "applicant tracking; career site and job boards; core hris; payroll processing. Lite · applicant tracking | Core | Pro. Slack, Google Workspace. Multi-location hourly operators who need scheduling + time + labor compliance; Teams that will trial Core for up to 31 days before Homebase-style SMB hubs; Ops leaders who want WFM AI with a human-in-the-loop. Deputy is a shift-work platform for scheduling, timekeeping, compliance, comms, and optional HR/payroll add-ons. Published USD per-user: Lite list price Core list price (most popul Buyer question: is Deputy the right hr commit for Multi-location hourly operators who need scheduling + time + labor compliance, or is Tiny shops that need a free ≤10-employee plan the real constraint? Thesis for setup: Deputy is a yes only when applicant tracking plus core hris (Lite, Core, Pro) are must-haves; not worth it if Tiny shops that need a free ≤10-employee plan dominates the operating model.",
+    "blocks": [
+      {
+        "id": "da-deputy-setup-1",
+        "type": "direct-answer",
+        "body": "core hris (Lite, Core, Pro) decides whether Deputy setup is a one-team pilot or a specialist project — confirm unlocks for core hris (Lite, Core, Pro), payroll processing (Lite, Core, Pro) before invites.",
+        "bullets": [
+          "Start with: applicant tracking",
+          "Gate check: core hris (Lite, Core, Pro)",
+          "Integrate after: data quality pass on Slack"
+        ]
+      },
+      {
+        "id": "impl-deputy-setup-2",
+        "type": "step",
+        "heading": "Deputy day-zero to steady-state sequence",
+        "body": "Treat Deputy setup as a controlled rollout — not a weekend dump of CSV files.",
+        "stepNumber": 1,
+        "scenarios": [
+          {
+            "title": "Day zero — objects and owners",
+            "body": "Define owners for applicant tracking, career site and job boards, workforce scheduling before inviting the whole org."
+          },
+          {
+            "title": "SMB pilot",
+            "body": "One pipeline / one team proves Multi-location hourly operators who need scheduling + time + labor compliance before company-wide seats."
+          },
+          {
+            "title": "Cutover",
+            "body": "Freeze legacy writes briefly; validate Slack and Google Workspace before reopen."
+          }
+        ]
+      },
+      {
+        "id": "df-deputy-setup-3",
+        "type": "decision-framework",
+        "title": "Deputy implementation go / no-go",
+        "steps": [
+          {
+            "id": "i-1",
+            "label": "Go when plan unlocks cover core hris (Lite, Core, Pro)"
+          },
+          {
+            "id": "i-2",
+            "label": "Pause if this limitation blocks ops: Every user including managers is billed; list price invoice minimum"
+          },
+          {
+            "id": "i-3",
+            "label": "Do not expand seats until applicant tracking is green"
+          }
+        ]
+      },
+      {
+        "id": "mist-deputy-setup-4",
+        "type": "mistakes",
+        "title": "Deputy implementation mistakes",
+        "items": [
+          {
+            "title": "Mistake 1",
+            "body": "Every user including managers is billed; list price invoice minimum"
+          },
+          {
+            "title": "Mistake 2",
+            "body": "HR, analytics, messaging, and US payroll are add-ons (some bundled on Pro)"
+          },
+          {
+            "title": "Mistake 3",
+            "body": "SMS is usage-priced by country"
+          },
+          {
+            "title": "Mistake 4",
+            "body": "No free forever plan"
+          },
+          {
+            "title": "Big-bang invite",
+            "body": "Inviting every user before object design creates junk data that is expensive to unwind."
+          }
+        ]
+      },
+      {
+        "id": "cost-deputy-setup-5",
+        "type": "cost-breakdown",
+        "title": "Deputy plan gates that affect rollout",
+        "body": "Implementation fails when unlocks needed for go-live sit on a higher tier than budgeted.",
+        "lines": [
+          {
+            "label": "Lite",
+            "description": "31-day trial · Unlocks: applicant tracking, career site and job boards, core hris · Suits: teams whose must-have gates appear on this tier"
+          },
+          {
+            "label": "Core",
+            "description": "31-day trial · Suits: teams whose must-have gates appear on this tier"
+          },
+          {
+            "label": "Pro",
+            "description": "31-day trial · Suits: teams whose must-have gates appear on this tier"
+          }
+        ]
+      },
+      {
+        "id": "sel-deputy-setup-6",
+        "type": "selection-checklist",
+        "title": "Deputy implementation checklist",
+        "dimensions": [
+          {
+            "id": "prep",
+            "label": "Prep",
+            "options": [
+              "Object model drafted",
+              "Owners named",
+              "Legacy freeze window set"
+            ]
+          },
+          {
+            "id": "pilot",
+            "label": "Pilot",
+            "options": [
+              "applicant tracking",
+              "Junk-data rules set",
+              "Support path clear"
+            ]
+          },
+          {
+            "id": "scale",
+            "label": "Scale",
+            "options": [
+              "Slack",
+              "Seat expansion criteria written",
+              "Rollback plan noted"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "cta-deputy-setup-7",
+        "type": "interactive-cta",
+        "title": "Validate hr fit before a deep Deputy rollout",
+        "body": "If Deputy fails constraint fit, stop implementation early.",
+        "href": "/tools/hr-finder/",
+        "ctaLabel": "Open Finder",
+        "variant": "finder"
+      }
+    ],
+    "sections": [
+      {
+        "id": "sec-thesis-deputy-setup",
+        "heading": "Deputy buyer question and thesis",
+        "body": "applicant tracking; career site and job boards; core hris; payroll processing. Lite · applicant tracking | Core | Pro. Slack, Google Workspace. Multi-location hourly operators who need scheduling + time + labor compliance; Teams that will trial Core for up to 31 days before Homebase-style SMB hubs; Ops leaders who want WFM AI with a human-in-the-loop. Deputy is a shift-work platform for scheduling, timekeeping, compliance, comms, and optional HR/payroll add-ons. Published USD per-user: Lite list price Core list price (most popul. That catalogue mix is the Deputy setup filter — not a generic hr lecture.\n\nBuyer question: is Deputy the right hr commit for Multi-location hourly operators who need scheduling + time + labor compliance, or is Tiny shops that need a free ≤10-employee plan the real constraint?\n\nThesis for setup: Deputy is a yes only when applicant tracking plus core hris (Lite, Core, Pro) are must-haves; not worth it if Tiny shops that need a free ≤10-employee plan dominates the operating model.\n\nBest for: Multi-location hourly operators who need scheduling + time + labor compliance; Teams that will trial Core for up to 31 days before Homebase-style SMB hubs; Ops leaders who want WFM AI with a human-in-the-loop (Multi-location hourly operators who need scheduling + time + labor compliance).\n\nPoor fit when: Tiny shops that need a free ≤10-employee plan; Restaurant groups standardised on 7shifts; Buyers whose primary job is core HRIS or structured ATS. Avoid if Every user including managers is billed; list price invoice minimum would block go-live."
+      },
+      {
+        "id": "sec-limits-deputy-setup",
+        "heading": "Deputy limitation, pricing interpretation, and alternative context",
+        "body": "Limitation: Every user including managers is billed; list price invoice minimum; HR, analytics, messaging, and US payroll are add-ons (some bundled on Pro); SMS is usage-priced by country because it forces process changes or add-ons around Deputy when applicant tracking is the job.\n\nPricing interpretation: no free plan confirmed — scope a paid pilot on Lite with exit criteria before annual seats.\n\nPlan trade-off: you gain core hris (Lite, Core, Pro) at the expense of Published free tiers vs paid depth for ATS, WFM, time, or training jobs — measure both in the pilot. Researched packaging: Lite · applicant tracking | Core | Pro.\n\nAlternative context: unlike Connecteam, Deputy is preferable when Multi-location hourly operators who need scheduling + time + labor compliance because applicant tracking plus core hris (Lite, Core, Pro) match; prefer Connecteam when Tiny shops that need a free ≤10-employee plan because the operating loops differ."
+      },
+      {
+        "id": "sec-scenario-deputy-setup",
+        "heading": "Decision scenario and conclusion for Deputy",
+        "body": "Use-case: for Multi-location hourly operators who need scheduling + time + labor compliance running applicant tracking, prefer Deputy when applicant tracking is weekly; pick another path when Tiny shops that need a free ≤10-employee plan.\n\nSetup requires a specialist owner when Every user including managers is billed; list price invoice minimum collides with applicant tracking; SMB pilots can stay lighter if core hris (Lite, Core, Pro) is already on Lite.\n\nIntegrations in research: Slack, Google Workspace.\n\nWrap: choose Deputy only if the setup job is applicant tracking under Multi-location hourly operators who need scheduling + time + labor compliance; otherwise use Finder constraints instead of copying this page for another vendor."
+      }
+    ],
+    "checklist": [
+      {
+        "id": "enrich-chk-0",
+        "label": "Draft Deputy object owners before invites",
+        "order": 0
+      },
+      {
+        "id": "enrich-chk-1",
+        "label": "Confirm plan unlocks for go-live features",
+        "order": 1
+      },
+      {
+        "id": "enrich-chk-2",
+        "label": "Pilot one team on applicant tracking",
+        "order": 2
+      },
+      {
+        "id": "enrich-chk-3",
+        "label": "If blocked, evaluate Connecteam before sunk-cost expansion",
+        "order": 3
+      }
+    ],
+    "nextAction": {
+      "contentId": "tool:finder:hr",
+      "label": "Open Finder shortlist"
+    }
+  },
+  "notes": [
+    "Implementation: workflow, constraints, mistakes, checklist.",
+    "Type-specific skeleton: IMPLEMENTATION_GUIDE"
+  ]
+}

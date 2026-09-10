@@ -1,7 +1,7 @@
 # Guides index-worthiness audit
 
-**Generated:** 2026-09-09T18:57:52.861Z
-**Engine:** guides-index-worthiness v2.1.0
+**Generated:** 2026-09-10T20:40:27.314Z
+**Engine:** guides-index-worthiness v2.2.0
 
 Lifecycle-first policy: weak guides are **preserved** under IMPROVE (temporary `noindex,follow`), then enriched, validated, and promoted to INDEXABLE. Robots noindex is a directive — not a permanent business classification. Factory packs and product explainers stay routable for onsite UX.
 
@@ -10,17 +10,23 @@ Lifecycle-first policy: weak guides are **preserved** under IMPROVE (temporary `
 | Metric | Count |
 | --- | ---: |
 | Total guide pages | 1715 |
-| Indexable | 508 |
-| Improvement queue | 1079 (IMPROVE 1079 · IMPROVING 0) |
+| Indexable | 688 |
+| Improvement queue | 1019 (IMPROVE 1019 · IMPROVING 0) |
 | Ready for promotion | 1 (INDEXABLE_READY 1 · READY_FOR_REVIEW 0) |
-| Manual review | 127 |
+| Manual review | 7 |
 | Retired | 0 |
-| Potential indexable after remediation | 1207 |
-| Search-indexable (post-policy) | 508 |
+| Potential indexable after remediation | 1027 |
+| Search-indexable (post-policy) | 688 |
 | Seed `seo.indexable=true` (pre-policy) | 348 |
-| Factory product packs (inventory) | 1272 |
-| High near-duplicate risk (content/semantic) | 1328 |
-| Limited unique-analysis signals | 1342 |
+| FACTORY_ORIGIN_TOTAL (inventory — not a quality KPI) | 1272 |
+| FACTORY_HIGH_RISK | 1104 |
+| FACTORY_LIMITED_UNIQUE | 1106 |
+| FACTORY_QUALITY_PASS | 1272 |
+| FACTORY_INDEXABLE | 419 |
+| FACTORY_IMPROVE | 853 |
+| FACTORY_PROMOTED (promoted after remediation) | 419 |
+| Estate high near-duplicate risk (all guides) | 1192 |
+| Estate limited unique-analysis (all guides) | 1206 |
 | Orphans (0 inbound estimate) | 0 |
 | Near-orphans (1 inbound) | 0 |
 | Duplicate-risk clusters | 6 |
@@ -30,8 +36,8 @@ Lifecycle-first policy: weak guides are **preserved** under IMPROVE (temporary `
 
 | Class | Count |
 | --- | ---: |
-| KEEP_INDEX | 314 |
-| IMPROVE | 1394 |
+| KEEP_INDEX | 450 |
+| IMPROVE | 1258 |
 | NOINDEX | 0 |
 | MERGE | 0 |
 | REMOVE | 0 |
@@ -39,6 +45,7 @@ Lifecycle-first policy: weak guides are **preserved** under IMPROVE (temporary `
 
 ## Policy
 
+- **FACTORY_ORIGIN_TOTAL** is inventory/history (slug-class packs). It does **not** fall when those pages become excellent. Remediation KPIs are HIGH_RISK ↓, LIMITED_UNIQUE ↓, QUALITY_PASS ↑, INDEXABLE ↑, IMPROVE ↓.
 - **Factory product packs** → **IMPROVE** (TEMPLATE_HEAVY) — preserved; temporary noindex until enriched + promoted.
 - **Product explainers** → **IMPROVE** (THIN_EXPLAINER / TEMPLATE_HEAVY) — preserved for product-hub UX.
 - Category educational guides with substance + uniqueness → **INDEXABLE**.
@@ -50,7 +57,7 @@ Lifecycle-first policy: weak guides are **preserved** under IMPROVE (temporary `
 
 | Type | Total | Indexable |
 | --- | ---: | ---: |
-| product-pack-factory | 1272 | 241 |
+| product-pack-factory | 1272 | 421 |
 | product-explainer | 101 | 13 |
 | educational-explainer | 75 | 53 |
 | software-selection | 58 | 36 |
@@ -69,37 +76,37 @@ Lifecycle-first policy: weak guides are **preserved** under IMPROVE (temporary `
 
 | Category | Total | Indexable | Not indexed | Improve queue |
 | --- | ---: | ---: | ---: | ---: |
-| crm | 268 | 145 | 123 | 197 |
-| it-development | 250 | 15 | 235 | 238 |
-| sales-intelligence | 180 | 93 | 88 | 140 |
-| ai | 132 | 27 | 106 | 120 |
-| business-communications | 125 | 20 | 107 | 113 |
-| hr | 121 | 13 | 109 | 111 |
-| project-management | 115 | 27 | 88 | 107 |
-| ecommerce | 109 | 16 | 94 | 98 |
-| email-marketing | 100 | 28 | 72 | 89 |
-| marketing | 80 | 13 | 67 | 72 |
+| crm | 268 | 153 | 115 | 189 |
+| it-development | 250 | 50 | 200 | 203 |
+| sales-intelligence | 180 | 120 | 61 | 131 |
+| ai | 132 | 50 | 83 | 98 |
+| business-communications | 125 | 43 | 84 | 92 |
+| hr | 121 | 33 | 89 | 100 |
+| project-management | 115 | 33 | 82 | 101 |
+| ecommerce | 109 | 23 | 87 | 92 |
+| email-marketing | 100 | 39 | 61 | 87 |
+| marketing | 80 | 33 | 47 | 62 |
 | customer-service | 21 | 7 | 14 | 14 |
-| voip-business-phone | 13 | 6 | 8 | 7 |
+| voip-business-phone | 13 | 6 | 8 | 8 |
 | accounting-finance | 11 | 5 | 6 | 6 |
 | live-chat | 11 | 5 | 6 | 6 |
 | dropshipping-pod | 11 | 5 | 6 | 6 |
 | landing-pages-cro | 11 | 5 | 6 | 6 |
-| website-digital-presence | 10 | 7 | 5 | 3 |
+| website-digital-presence | 10 | 7 | 5 | 5 |
 | field-service-operations | 10 | 5 | 5 | 5 |
-| fulfillment-shipping | 10 | 7 | 5 | 3 |
+| fulfillment-shipping | 10 | 7 | 5 | 4 |
 | ats-recruiting | 10 | 5 | 5 | 5 |
 | time-attendance | 10 | 5 | 5 | 5 |
 | ppc-advertising | 10 | 5 | 5 | 5 |
 | social-media-marketing | 9 | 5 | 4 | 4 |
-| webinar-virtual-events | 9 | 6 | 4 | 3 |
+| webinar-virtual-events | 9 | 6 | 4 | 4 |
 | lms-course-creation | 9 | 5 | 4 | 4 |
 | analytics-bi | 9 | 5 | 4 | 4 |
 | ai-website-builder | 9 | 5 | 4 | 4 |
-| helpdesk-ticketing | 9 | 6 | 4 | 3 |
+| helpdesk-ticketing | 9 | 6 | 4 | 4 |
 | web-hosting | 9 | 5 | 4 | 4 |
-| itsm | 9 | 6 | 4 | 3 |
-| social-media-management | 9 | 6 | 4 | 3 |
+| itsm | 9 | 6 | 4 | 4 |
+| social-media-management | 9 | 6 | 4 | 4 |
 | reputation-reviews | 8 | 5 | 3 | 3 |
 | ai-writing | 8 | 5 | 3 | 3 |
 
@@ -108,14 +115,14 @@ Lifecycle-first policy: weak guides are **preserved** under IMPROVE (temporary `
 | Metric | p25 | p50 | p75 |
 | --- | ---: | ---: | ---: |
 | Unique content ratio | 0.55 | 0.55 | 0.55 |
-| Word count | 1227 | 1336 | 1462 |
+| Word count | 1227 | 1344 | 1491 |
 
 ## Duplicate-risk clusters
 
-- **dup-factory-worth-it** (high): 247 factory worth-it product packs still high near-duplicate after overlay+sibling analysis — sample: is-zendesk-suite-worth-it, is-help-scout-worth-it, is-gorgias-worth-it, is-livechat-worth-it, is-zoho-desk-worth-it, is-nicejob-worth-it, is-shore-worth-it, is-act-worth-it
-- **dup-factory-implementation** (high): 250 factory implementation product packs still high near-duplicate after overlay+sibling analysis — sample: act-implementation, affinity-implementation, agile-crm-implementation, apptivo-implementation, attio-implementation, bitrix24-implementation, capsule-implementation, close-implementation
-- **dup-factory-migration** (high): 251 factory migration product packs still high near-duplicate after overlay+sibling analysis — sample: act-migration, affinity-migration, agile-crm-migration, apptivo-migration, attio-migration, bitrix24-migration, capsule-migration, close-migration
-- **dup-factory-setup** (high): 250 factory setup product packs still high near-duplicate after overlay+sibling analysis — sample: act-setup, affinity-setup, agile-crm-setup, apptivo-setup, attio-setup, bitrix24-setup, capsule-setup, close-setup
+- **dup-factory-worth-it** (high): 243 factory worth-it product packs still high near-duplicate after overlay+sibling analysis — sample: is-zendesk-suite-worth-it, is-help-scout-worth-it, is-gorgias-worth-it, is-livechat-worth-it, is-zoho-desk-worth-it, is-nicejob-worth-it, is-shore-worth-it, is-act-worth-it
+- **dup-factory-implementation** (high): 183 factory implementation product packs still high near-duplicate after overlay+sibling analysis — sample: act-implementation, affinity-implementation, agile-crm-implementation, apptivo-implementation, attio-implementation, bitrix24-implementation, capsule-implementation, close-implementation
+- **dup-factory-migration** (high): 248 factory migration product packs still high near-duplicate after overlay+sibling analysis — sample: act-migration, affinity-migration, agile-crm-migration, apptivo-migration, attio-migration, bitrix24-migration, capsule-migration, close-migration
+- **dup-factory-setup** (high): 188 factory setup product packs still high near-duplicate after overlay+sibling analysis — sample: act-setup, affinity-setup, agile-crm-setup, apptivo-setup, attio-setup, bitrix24-setup, capsule-setup, close-setup
 - **dup-factory-plans** (high): 242 factory plans product packs still high near-duplicate after overlay+sibling analysis — sample: act-plans, affinity-plans, agile-crm-plans, apptivo-plans, attio-plans, bitrix24-plans, close-plans, cloze-plans
 - **dup-product-explainer-what-is** (high): 88 what-is-{product} explainers still high template overlap — sample: what-is-zendesk-suite, what-is-help-scout, what-is-gorgias, what-is-livechat, what-is-zoho-desk, what-is-nicejob, what-is-shore, what-is-inboxally
 
@@ -226,25 +233,25 @@ Orphans: 0. Near-orphans: 0.
 | 79 | /guides/attio-implementation/ | IMPROVE | product-pack-factory | 0.55 | TEMPLATE_HEAVY, INSUFFICIENT_UNIQUE_VALUE | product_specific_analysis, data_backed_comparison, category_specific_guidance |
 | 80 | /guides/attio-migration/ | IMPROVE | product-pack-factory | 0.55 | TEMPLATE_HEAVY, INSUFFICIENT_UNIQUE_VALUE | product_specific_analysis, data_backed_comparison, category_specific_guidance |
 | 81 | /guides/attio-setup/ | IMPROVE | product-pack-factory | 0.55 | TEMPLATE_HEAVY, INSUFFICIENT_UNIQUE_VALUE | product_specific_analysis, data_backed_comparison, category_specific_guidance |
-| 82 | /guides/bitrix24-implementation/ | IMPROVE | product-pack-factory | 0.55 | TEMPLATE_HEAVY, INSUFFICIENT_UNIQUE_VALUE | product_specific_analysis, data_backed_comparison, category_specific_guidance |
-| 83 | /guides/bitrix24-migration/ | IMPROVE | product-pack-factory | 0.55 | TEMPLATE_HEAVY, INSUFFICIENT_UNIQUE_VALUE | product_specific_analysis, data_backed_comparison, category_specific_guidance |
-| 84 | /guides/bitrix24-setup/ | IMPROVE | product-pack-factory | 0.55 | TEMPLATE_HEAVY, INSUFFICIENT_UNIQUE_VALUE | product_specific_analysis, data_backed_comparison, category_specific_guidance |
-| 85 | /guides/cloze-implementation/ | IMPROVE | product-pack-factory | 0.55 | TEMPLATE_HEAVY, INSUFFICIENT_UNIQUE_VALUE | product_specific_analysis, data_backed_comparison, category_specific_guidance |
-| 86 | /guides/cloze-migration/ | IMPROVE | product-pack-factory | 0.55 | TEMPLATE_HEAVY, INSUFFICIENT_UNIQUE_VALUE | product_specific_analysis, data_backed_comparison, category_specific_guidance |
-| 87 | /guides/cloze-setup/ | IMPROVE | product-pack-factory | 0.55 | TEMPLATE_HEAVY, INSUFFICIENT_UNIQUE_VALUE | product_specific_analysis, data_backed_comparison, category_specific_guidance |
-| 88 | /guides/copper-implementation/ | IMPROVE | product-pack-factory | 0.55 | TEMPLATE_HEAVY, INSUFFICIENT_UNIQUE_VALUE | product_specific_analysis, data_backed_comparison, category_specific_guidance |
-| 89 | /guides/copper-migration/ | IMPROVE | product-pack-factory | 0.55 | TEMPLATE_HEAVY, INSUFFICIENT_UNIQUE_VALUE | product_specific_analysis, data_backed_comparison, category_specific_guidance |
-| 90 | /guides/copper-setup/ | IMPROVE | product-pack-factory | 0.55 | TEMPLATE_HEAVY, INSUFFICIENT_UNIQUE_VALUE | product_specific_analysis, data_backed_comparison, category_specific_guidance |
-| 91 | /guides/creatio-implementation/ | IMPROVE | product-pack-factory | 0.55 | TEMPLATE_HEAVY, INSUFFICIENT_UNIQUE_VALUE | product_specific_analysis, data_backed_comparison, category_specific_guidance |
-| 92 | /guides/creatio-migration/ | IMPROVE | product-pack-factory | 0.55 | TEMPLATE_HEAVY, INSUFFICIENT_UNIQUE_VALUE | product_specific_analysis, data_backed_comparison, category_specific_guidance |
-| 93 | /guides/creatio-setup/ | IMPROVE | product-pack-factory | 0.55 | TEMPLATE_HEAVY, INSUFFICIENT_UNIQUE_VALUE | product_specific_analysis, data_backed_comparison, category_specific_guidance |
-| 94 | /guides/dynamics-365-implementation/ | IMPROVE | product-pack-factory | 0.55 | TEMPLATE_HEAVY, INSUFFICIENT_UNIQUE_VALUE | product_specific_analysis, data_backed_comparison, category_specific_guidance |
-| 95 | /guides/dynamics-365-migration/ | IMPROVE | product-pack-factory | 0.55 | TEMPLATE_HEAVY, INSUFFICIENT_UNIQUE_VALUE | product_specific_analysis, data_backed_comparison, category_specific_guidance |
-| 96 | /guides/dynamics-365-setup/ | IMPROVE | product-pack-factory | 0.55 | TEMPLATE_HEAVY, INSUFFICIENT_UNIQUE_VALUE | product_specific_analysis, data_backed_comparison, category_specific_guidance |
-| 97 | /guides/insightly-implementation/ | IMPROVE | product-pack-factory | 0.55 | TEMPLATE_HEAVY, INSUFFICIENT_UNIQUE_VALUE | product_specific_analysis, data_backed_comparison, category_specific_guidance |
-| 98 | /guides/insightly-migration/ | IMPROVE | product-pack-factory | 0.55 | TEMPLATE_HEAVY, INSUFFICIENT_UNIQUE_VALUE | product_specific_analysis, data_backed_comparison, category_specific_guidance |
-| 99 | /guides/insightly-setup/ | IMPROVE | product-pack-factory | 0.55 | TEMPLATE_HEAVY, INSUFFICIENT_UNIQUE_VALUE | product_specific_analysis, data_backed_comparison, category_specific_guidance |
-| 100 | /guides/mailchimp-implementation/ | IMPROVE | product-pack-factory | 0.55 | TEMPLATE_HEAVY, INSUFFICIENT_UNIQUE_VALUE | product_specific_analysis, data_backed_comparison, category_specific_guidance |
+| 82 | /guides/is-attio-worth-it/ | IMPROVE | product-pack-factory | 0.55 | TEMPLATE_HEAVY, INSUFFICIENT_UNIQUE_VALUE | product_specific_analysis, data_backed_comparison, category_specific_guidance |
+| 83 | /guides/bitrix24-implementation/ | IMPROVE | product-pack-factory | 0.55 | TEMPLATE_HEAVY, INSUFFICIENT_UNIQUE_VALUE | product_specific_analysis, data_backed_comparison, category_specific_guidance |
+| 84 | /guides/bitrix24-migration/ | IMPROVE | product-pack-factory | 0.55 | TEMPLATE_HEAVY, INSUFFICIENT_UNIQUE_VALUE | product_specific_analysis, data_backed_comparison, category_specific_guidance |
+| 85 | /guides/bitrix24-setup/ | IMPROVE | product-pack-factory | 0.55 | TEMPLATE_HEAVY, INSUFFICIENT_UNIQUE_VALUE | product_specific_analysis, data_backed_comparison, category_specific_guidance |
+| 86 | /guides/is-bitrix24-worth-it/ | IMPROVE | product-pack-factory | 0.55 | TEMPLATE_HEAVY, INSUFFICIENT_UNIQUE_VALUE | product_specific_analysis, data_backed_comparison, category_specific_guidance |
+| 87 | /guides/cloze-implementation/ | IMPROVE | product-pack-factory | 0.55 | TEMPLATE_HEAVY, INSUFFICIENT_UNIQUE_VALUE | product_specific_analysis, data_backed_comparison, category_specific_guidance |
+| 88 | /guides/cloze-migration/ | IMPROVE | product-pack-factory | 0.55 | TEMPLATE_HEAVY, INSUFFICIENT_UNIQUE_VALUE | product_specific_analysis, data_backed_comparison, category_specific_guidance |
+| 89 | /guides/cloze-setup/ | IMPROVE | product-pack-factory | 0.55 | TEMPLATE_HEAVY, INSUFFICIENT_UNIQUE_VALUE | product_specific_analysis, data_backed_comparison, category_specific_guidance |
+| 90 | /guides/copper-implementation/ | IMPROVE | product-pack-factory | 0.55 | TEMPLATE_HEAVY, INSUFFICIENT_UNIQUE_VALUE | product_specific_analysis, data_backed_comparison, category_specific_guidance |
+| 91 | /guides/copper-migration/ | IMPROVE | product-pack-factory | 0.55 | TEMPLATE_HEAVY, INSUFFICIENT_UNIQUE_VALUE | product_specific_analysis, data_backed_comparison, category_specific_guidance |
+| 92 | /guides/copper-setup/ | IMPROVE | product-pack-factory | 0.55 | TEMPLATE_HEAVY, INSUFFICIENT_UNIQUE_VALUE | product_specific_analysis, data_backed_comparison, category_specific_guidance |
+| 93 | /guides/is-copper-worth-it/ | IMPROVE | product-pack-factory | 0.55 | TEMPLATE_HEAVY, INSUFFICIENT_UNIQUE_VALUE | product_specific_analysis, data_backed_comparison, category_specific_guidance |
+| 94 | /guides/creatio-implementation/ | IMPROVE | product-pack-factory | 0.55 | TEMPLATE_HEAVY, INSUFFICIENT_UNIQUE_VALUE | product_specific_analysis, data_backed_comparison, category_specific_guidance |
+| 95 | /guides/creatio-migration/ | IMPROVE | product-pack-factory | 0.55 | TEMPLATE_HEAVY, INSUFFICIENT_UNIQUE_VALUE | product_specific_analysis, data_backed_comparison, category_specific_guidance |
+| 96 | /guides/creatio-setup/ | IMPROVE | product-pack-factory | 0.55 | TEMPLATE_HEAVY, INSUFFICIENT_UNIQUE_VALUE | product_specific_analysis, data_backed_comparison, category_specific_guidance |
+| 97 | /guides/is-creatio-worth-it/ | IMPROVE | product-pack-factory | 0.55 | TEMPLATE_HEAVY, INSUFFICIENT_UNIQUE_VALUE | product_specific_analysis, data_backed_comparison, category_specific_guidance |
+| 98 | /guides/dynamics-365-implementation/ | IMPROVE | product-pack-factory | 0.55 | TEMPLATE_HEAVY, INSUFFICIENT_UNIQUE_VALUE | product_specific_analysis, data_backed_comparison, category_specific_guidance |
+| 99 | /guides/dynamics-365-migration/ | IMPROVE | product-pack-factory | 0.55 | TEMPLATE_HEAVY, INSUFFICIENT_UNIQUE_VALUE | product_specific_analysis, data_backed_comparison, category_specific_guidance |
+| 100 | /guides/dynamics-365-setup/ | IMPROVE | product-pack-factory | 0.55 | TEMPLATE_HEAVY, INSUFFICIENT_UNIQUE_VALUE | product_specific_analysis, data_backed_comparison, category_specific_guidance |
 
 ## Weak guides (completeness / uniqueness)
 
@@ -255,7 +262,7 @@ Only **INDEXABLE** guides enter the sitemap. IMPROVE / MANUAL_REVIEW pages remai
 
 | Seed indexable flag (current) | Indexable (sitemap) | Improvement queue |
 | ---: | ---: | ---: |
-| 348 | 508 | 1079 |
+| 348 | 688 | 1019 |
 
 ## Safe consolidations applied
 

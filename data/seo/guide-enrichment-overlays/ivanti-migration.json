@@ -1,0 +1,176 @@
+{
+  "slug": "ivanti-migration",
+  "enrichmentType": "MIGRATION_GUIDE",
+  "updatedAt": "2026-09-10T12:54:11.879Z",
+  "uniqueValueAdded": [
+    "implementation_workflow",
+    "scenario_analysis",
+    "decision_framework",
+    "limitations_evidence",
+    "buyer_checklist"
+  ],
+  "patch": {
+    "summary": "incident management; change and problem management; service catalog; infrastructure monitoring. Ivanti Neurons for ITSM · incident management | Enterprise RFP. Slack, Microsoft Teams. Enterprises already in Ivanti endpoint/ITAM who want Neurons ITSM on the same gravity well; RFP buyers comparing Ivanti to ServiceNow and BMC Helix; Desks that will not self-serve a list price Freshservice Starter. Ivanti Neurons for ITSM (also sold as Ivanti Service Manager) is enterprise IT service management — incidents, changes, catalog, and Neurons workspace automation. Ivanti does not p Buyer question: is Ivanti Neurons for ITSM worth it if weekly work actually needs incident management and incident management, or does SMBs that need a published agent floor (Freshservice / TOPdesk / ManageEngine) dominate? Thesis: Ivanti Neurons for ITSM earns budget when incident management; change and problem management; service catalog; infrastructure monitoring is the operating loop; walk when No published self-serve price — list price is a low-confidence third-party named-agent estimate, not an Ivanti SKU because it forces workarounds.",
+    "blocks": [
+      {
+        "id": "da-ivanti-migration-1",
+        "type": "direct-answer",
+        "body": "Highest migration risk for Ivanti Neurons for ITSM is No published self-serve price — list price is a low-confidence third-party named-agent estimate, not an Ivanti SKU — inventory legacy incident management / change and problem management fields, rehearse a freeze, then validate Slack, Microsoft Teams before reopening writes.",
+        "bullets": [
+          "Inventory → map → rehearse → cut over → reopen",
+          "Highest risk: No published self-serve price — list price is a low-confidence third-party named-agent estimate, not an Ivanti SKU",
+          "Success signal: incident management works for the pilot cohort"
+        ]
+      },
+      {
+        "id": "mig-ivanti-migration-2",
+        "type": "step",
+        "heading": "Ivanti Neurons for ITSM migration cutover playbook",
+        "body": "Migrations fail from optimistic timelines — not from missing motivation.",
+        "stepNumber": 1,
+        "scenarios": [
+          {
+            "title": "Field inventory",
+            "body": "Export legacy fields that power incident management, change and problem management, service catalog and mark must-map vs archive."
+          },
+          {
+            "title": "Rehearsal load",
+            "body": "Run a non-prod load into Ivanti Neurons for ITSM; measure match rates before the freeze."
+          },
+          {
+            "title": "Production freeze",
+            "body": "Freeze legacy writes; cut over; validate Slack; then reopen."
+          }
+        ]
+      },
+      {
+        "id": "df-ivanti-migration-3",
+        "type": "decision-framework",
+        "title": "Migrate to Ivanti Neurons for ITSM?",
+        "steps": [
+          {
+            "id": "m-1",
+            "label": "Migrate when Enterprises already in Ivanti endpoint/ITAM who want Neurons ITSM on the same gravity well outweigh migration cost"
+          },
+          {
+            "id": "m-2",
+            "label": "Delay if this limitation hits cutover: No published self-serve price — list price is a low-confidence third-party named-agent estimate, not an Ivanti SKU"
+          },
+          {
+            "id": "m-3",
+            "label": "If Ivanti Neurons for ITSM mapping is poor, compare destination fit with ServiceNow before moving data twice"
+          }
+        ]
+      },
+      {
+        "id": "mist-ivanti-migration-4",
+        "type": "mistakes",
+        "title": "Ivanti Neurons for ITSM migration mistakes",
+        "items": [
+          {
+            "title": "No freeze window",
+            "body": "Dual-writing without a freeze creates irrevocable duplicates."
+          },
+          {
+            "title": "Integrations last",
+            "body": "Wire Slack in rehearsal — not on Monday morning after cutover."
+          },
+          {
+            "title": "Data risk 1",
+            "body": "No published self-serve price — list price is a low-confidence third-party named-agent estimate, not an Ivanti SKU"
+          },
+          {
+            "title": "Data risk 2",
+            "body": "Does not outrank ServiceNow (8.7) or Freshservice (8.4)"
+          },
+          {
+            "title": "Data risk 3",
+            "body": "Neurons / Service Manager naming overlap is a buying-motion trap"
+          }
+        ]
+      },
+      {
+        "id": "sel-ivanti-migration-5",
+        "type": "selection-checklist",
+        "title": "Ivanti Neurons for ITSM migration checklist",
+        "dimensions": [
+          {
+            "id": "map",
+            "label": "Mapping",
+            "options": [
+              "Must-map fields listed",
+              "Owners assigned",
+              "Archive rules written"
+            ]
+          },
+          {
+            "id": "rehearse",
+            "label": "Rehearsal",
+            "options": [
+              "Non-prod load done",
+              "Match rate measured",
+              "Rollback tested"
+            ]
+          },
+          {
+            "id": "cutover",
+            "label": "Cutover",
+            "options": [
+              "Freeze communicated",
+              "Integrations green",
+              "Pilot cohort signed off"
+            ]
+          }
+        ]
+      }
+    ],
+    "sections": [
+      {
+        "id": "sec-thesis-ivanti-migration",
+        "heading": "Ivanti Neurons for ITSM buyer question and thesis",
+        "body": "incident management; change and problem management; service catalog; infrastructure monitoring. Ivanti Neurons for ITSM · incident management | Enterprise RFP. Slack, Microsoft Teams. Enterprises already in Ivanti endpoint/ITAM who want Neurons ITSM on the same gravity well; RFP buyers comparing Ivanti to ServiceNow and BMC Helix; Desks that will not self-serve a list price Freshservice Starter. Ivanti Neurons for ITSM (also sold as Ivanti Service Manager) is enterprise IT service management — incidents, changes, catalog, and Neurons workspace automation. Ivanti does not p. That catalogue mix is the Ivanti Neurons for ITSM migration filter — not a generic it-development lecture.\n\nBuyer question: is Ivanti Neurons for ITSM worth it if weekly work actually needs incident management and incident management, or does SMBs that need a published agent floor (Freshservice / TOPdesk / ManageEngine) dominate?\n\nThesis: Ivanti Neurons for ITSM earns budget when incident management; change and problem management; service catalog; infrastructure monitoring is the operating loop; walk when No published self-serve price — list price is a low-confidence third-party named-agent estimate, not an Ivanti SKU because it forces workarounds.\n\nBest for: Enterprises already in Ivanti endpoint/ITAM who want Neurons ITSM on the same gravity well; RFP buyers comparing Ivanti to ServiceNow and BMC Helix; Desks that will not self-serve a list price Freshservice Starter (Enterprises already in Ivanti endpoint/ITAM who want Neurons ITSM on the same gravity well).\n\nPoor fit when: SMBs that need a published agent floor (Freshservice / TOPdesk / ManageEngine); Teams standardising on ServiceNow as the enterprise award path; Observability or cloud PaaS purchases. Avoid if No published self-serve price — list price is a low-confidence third-party named-agent estimate, not an Ivanti SKU would block go-live."
+      },
+      {
+        "id": "sec-limits-ivanti-migration",
+        "heading": "Ivanti Neurons for ITSM limitation, pricing interpretation, and alternative context",
+        "body": "Limitation: No published self-serve price — list price is a low-confidence third-party named-agent estimate, not an Ivanti SKU; Does not outrank ServiceNow (8.7) or Freshservice (8.4); Neurons / Service Manager naming overlap is a buying-motion trap because it forces process changes or add-ons around Ivanti Neurons for ITSM when incident management is the job.\n\nPricing interpretation: no free plan confirmed — scope a paid pilot on Ivanti Neurons for ITSM with exit criteria before annual seats.\n\nPlan trade-off: you gain incident management at the expense of Per-agent vs per-host vs per-seat vs per-GB pricing models — measure both in the pilot. Researched packaging: Ivanti Neurons for ITSM · incident management | Enterprise RFP.\n\nAlternative context: unlike ServiceNow, Ivanti Neurons for ITSM is preferable when Enterprises already in Ivanti endpoint/ITAM who want Neurons ITSM on the same gravity well because incident management plus incident management match; prefer ServiceNow when SMBs that need a published agent floor (Freshservice / TOPdesk / ManageEngine) because the operating loops differ."
+      },
+      {
+        "id": "sec-scenario-ivanti-migration",
+        "heading": "Decision scenario and conclusion for Ivanti Neurons for ITSM",
+        "body": "Scenario: recommend Ivanti Neurons for ITSM for Enterprises already in Ivanti endpoint/ITAM who want Neurons ITSM on the same gravity well; do not choose it when SMBs that need a published agent floor (Freshservice / TOPdesk / ManageEngine) — the jobs diverge at incident management.\n\nImplementation time: weeks to configure incident management if Slack, Microsoft Teams must be green before invites.\n\nIntegrations in research: Slack, Microsoft Teams.\n\nDecision conclusion: buy Ivanti Neurons for ITSM when researched fit (Enterprises already in Ivanti endpoint/ITAM who want Neurons ITSM on the same gravity well) beats researched limits (No published self-serve price — list price is a low-confidence third-party named-agent estimate, not an Ivanti SKU); otherwise keep researching — do not substitute product names into a generic migration essay."
+      }
+    ],
+    "checklist": [
+      {
+        "id": "enrich-chk-0",
+        "label": "Complete field inventory for incident management",
+        "order": 0
+      },
+      {
+        "id": "enrich-chk-1",
+        "label": "Rehearse load before production freeze",
+        "order": 1
+      },
+      {
+        "id": "enrich-chk-2",
+        "label": "Validate Slack pre-reopen",
+        "order": 2
+      },
+      {
+        "id": "enrich-chk-3",
+        "label": "Mitigate: No published self-serve price — list price is a low-confidence third-party named-agent estimate, not an Ivanti SKU",
+        "order": 3
+      }
+    ],
+    "nextAction": {
+      "contentId": "tool:finder:it-development",
+      "label": "Open Finder shortlist"
+    }
+  },
+  "notes": [
+    "Omit unsupported: testing_evidence",
+    "Migration: cutover risks, data mapping, checklist.",
+    "Type-specific skeleton: MIGRATION_GUIDE"
+  ]
+}

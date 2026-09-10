@@ -2,7 +2,7 @@ import path from "node:path";
 import { getSoftware } from "@/data";
 import { isEntityIndexable } from "@/domain/quality-gates";
 import { getSitemapEntries } from "@/seo/sitemap";
-import { firstExisting, readJsonIfExists } from "./io";
+import { firstExisting, num, readJsonIfExists } from "./io";
 import type {
   ContentEstateSection,
   LifecycleBucketCounts,
@@ -11,6 +11,18 @@ import type {
 type AuditLifecycle = {
   summary?: {
     total?: number;
+    factoryKpis?: {
+      originTotal?: number;
+      highRisk?: number;
+      limitedUnique?: number;
+      qualityPass?: number;
+      indexable?: number;
+      improve?: number;
+      promoted?: number;
+    };
+    factoryPackCount?: number;
+    highNearDuplicateRiskCount?: number;
+    limitedUniqueAnalysisCount?: number;
     byLifecycle?: {
       INDEXABLE?: number;
       IMPROVE?: number;
@@ -148,9 +160,42 @@ export function buildContentEstateSection(
   const notes: string[] = [
     "Strategy: PRESERVE → IMPROVE → PROMOTE → RANK → EARN TRAFFIC.",
     "Guides/comparisons lifecycle from seo audits; software from catalogue indexability; other ≈ sitemap remainder.",
+    "FACTORY_ORIGIN_TOTAL is inventory (slug-class packs). Do not treat a stable count as remediation failure. Quality KPIs are HIGH_RISK, LIMITED_UNIQUE, QUALITY_PASS, INDEXABLE, IMPROVE.",
   ];
   if (!guides) notes.push("guides-audit.json missing — guide estate incomplete.");
   if (!compare) notes.push("compare-audit.json missing — comparison estate incomplete.");
+
+  const fk = guides?.summary?.factoryKpis;
+  const factoryRemediation: ContentEstateSection["factoryRemediation"] = {
+    originTotal: num(
+      fk?.originTotal ?? guides?.summary?.factoryPackCount ?? 0,
+      "FACTORY_ORIGIN_TOTAL — inventory/history, not a quality KPI",
+    ),
+    highRisk: num(
+      fk?.highRisk ?? 0,
+      "FACTORY_HIGH_RISK — factory-origin failing semantic uniqueness",
+    ),
+    limitedUnique: num(
+      fk?.limitedUnique ?? 0,
+      "FACTORY_LIMITED_UNIQUE — factory-origin lacking unique analysis",
+    ),
+    qualityPass: num(
+      fk?.qualityPass ?? 0,
+      "FACTORY_QUALITY_PASS — factory-origin passing current quality gate",
+    ),
+    indexable: num(
+      fk?.indexable ?? 0,
+      "FACTORY_INDEXABLE — factory-origin legitimately INDEXABLE",
+    ),
+    improve: num(
+      fk?.improve ?? 0,
+      "FACTORY_IMPROVE — factory-origin still requiring improvement",
+    ),
+    promoted: num(
+      fk?.promoted ?? 0,
+      "FACTORY_PROMOTED — factory-origin promoted after remediation",
+    ),
+  };
 
   return {
     status:
@@ -163,6 +208,7 @@ export function buildContentEstateSection(
       software: softwareBuckets,
       other,
     },
+    factoryRemediation,
     notes,
   };
 }

@@ -1,0 +1,214 @@
+{
+  "slug": "dialpad-setup",
+  "enrichmentType": "IMPLEMENTATION_GUIDE",
+  "updatedAt": "2026-09-10T12:10:28.851Z",
+  "uniqueValueAdded": [
+    "implementation_workflow",
+    "scenario_analysis",
+    "decision_framework",
+    "limitations_evidence",
+    "pricing_comparison",
+    "sg_original_data",
+    "buyer_checklist"
+  ],
+  "patch": {
+    "summary": "cloud phone; call routing; call recording; power dialer. Connect Standard · cloud phone | Connect Pro | Connect Enterprise. Salesforce, HubSpot, Zendesk, Slack. Teams that want AI transcription and call summaries included in the cloud phone licence; SMB and mid-market buyers starting on Connect Standard at a clear list price annual floor; Sales orgs willing to add Dialpad Sell when power dialer becomes the primary job. Dialpad is an AI-centred business communications platform. Dialpad Connect is the core cloud phone scored here (Standard list price Pro list price annual per user/month; Enterprise Buyer question: is Dialpad the right business-communications commit for Teams that want AI transcription and call summaries included in the cloud phone licence, or is Buyers who need power dialer on the cheapest Connect seat the real constraint? Thesis for setup: Dialpad is a yes only when cloud phone plus power dialer (Connect Standard, Connect Pro, Connect Enterprise, Dialpad Sell, Dialpad Support) are must-haves; not worth it if Buyers who need power dialer on the cheapest Connect seat dominates the operating model.",
+    "blocks": [
+      {
+        "id": "da-dialpad-setup-1",
+        "type": "direct-answer",
+        "body": "power dialer (Connect Standard, Connect Pro, Connect Enterprise, Dialpad Sell, Dialpad Support) decides whether Dialpad setup is a one-team pilot or a specialist project — confirm unlocks for power dialer (Connect Standard, Connect Pro, Connect Enterprise, Dialpad Sell, Dialpad Support), CRM CTI (Connect Standard, Connect Pro, Connect Enterprise, Dialpad Sell, Dialpad Support) before invites.",
+        "bullets": [
+          "Start with: cloud phone",
+          "Gate check: power dialer (Connect Standard, Connect Pro, Connect Enterprise, Dialpad Sell, Dialpad Support)",
+          "Integrate after: data quality pass on Salesforce"
+        ]
+      },
+      {
+        "id": "impl-dialpad-setup-2",
+        "type": "step",
+        "heading": "Dialpad day-zero to steady-state sequence",
+        "body": "Treat Dialpad setup as a controlled rollout — not a weekend dump of CSV files.",
+        "stepNumber": 1,
+        "scenarios": [
+          {
+            "title": "Day zero — objects and owners",
+            "body": "Define owners for cloud phone, call routing, call recording before inviting the whole org."
+          },
+          {
+            "title": "SMB pilot",
+            "body": "One pipeline / one team proves Teams that want AI transcription and call summaries included in the cloud phone licence before company-wide seats."
+          },
+          {
+            "title": "Cutover",
+            "body": "Freeze legacy writes briefly; validate Salesforce and HubSpot before reopen."
+          }
+        ]
+      },
+      {
+        "id": "df-dialpad-setup-3",
+        "type": "decision-framework",
+        "title": "Dialpad implementation go / no-go",
+        "steps": [
+          {
+            "id": "i-1",
+            "label": "Go when plan unlocks cover power dialer (Connect Standard, Connect Pro, Connect Enterprise, Dialpad Sell, Dialpad Support)"
+          },
+          {
+            "id": "i-2",
+            "label": "Pause if this limitation blocks ops: Pricing page is product-tab heavy — Connect vs Support vs Sell can confuse buyers comparing a single seat price"
+          },
+          {
+            "id": "i-3",
+            "label": "Do not expand seats until cloud phone is green"
+          }
+        ]
+      },
+      {
+        "id": "mist-dialpad-setup-4",
+        "type": "mistakes",
+        "title": "Dialpad implementation mistakes",
+        "items": [
+          {
+            "title": "Mistake 1",
+            "body": "Pricing page is product-tab heavy — Connect vs Support vs Sell can confuse buyers comparing a single seat price"
+          },
+          {
+            "title": "Mistake 2",
+            "body": "Connect Pro has a 3-user minimum; Enterprise requires 100 users"
+          },
+          {
+            "title": "Mistake 3",
+            "body": "Power dialer depth requires Dialpad Sell, not Connect Standard"
+          },
+          {
+            "title": "Mistake 4",
+            "body": "Stronger CRM/CTI is Pro+ gated"
+          },
+          {
+            "title": "Big-bang invite",
+            "body": "Inviting every user before object design creates junk data that is expensive to unwind."
+          }
+        ]
+      },
+      {
+        "id": "cost-dialpad-setup-5",
+        "type": "cost-breakdown",
+        "title": "Dialpad plan gates that affect rollout",
+        "body": "Implementation fails when unlocks needed for go-live sit on a higher tier than budgeted.",
+        "lines": [
+          {
+            "label": "Connect Standard",
+            "description": "14-day trial · Unlocks: cloud phone, call routing, call recording · Suits: teams whose must-have gates appear on this tier"
+          },
+          {
+            "label": "Connect Pro",
+            "description": "14-day trial · Suits: teams whose must-have gates appear on this tier"
+          },
+          {
+            "label": "Connect Enterprise",
+            "description": "Contact sales · Suits: teams that need custom procurement"
+          },
+          {
+            "label": "Dialpad Sell",
+            "description": "Suits: teams whose must-have gates appear on this tier"
+          },
+          {
+            "label": "Dialpad Support",
+            "description": "Suits: teams whose must-have gates appear on this tier"
+          }
+        ]
+      },
+      {
+        "id": "sel-dialpad-setup-6",
+        "type": "selection-checklist",
+        "title": "Dialpad implementation checklist",
+        "dimensions": [
+          {
+            "id": "prep",
+            "label": "Prep",
+            "options": [
+              "Object model drafted",
+              "Owners named",
+              "Legacy freeze window set"
+            ]
+          },
+          {
+            "id": "pilot",
+            "label": "Pilot",
+            "options": [
+              "cloud phone",
+              "Junk-data rules set",
+              "Support path clear"
+            ]
+          },
+          {
+            "id": "scale",
+            "label": "Scale",
+            "options": [
+              "Salesforce",
+              "Seat expansion criteria written",
+              "Rollback plan noted"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "cta-dialpad-setup-7",
+        "type": "interactive-cta",
+        "title": "Validate business-communications fit before a deep Dialpad rollout",
+        "body": "If Dialpad fails constraint fit, stop implementation early.",
+        "href": "/tools/business-communications-finder/",
+        "ctaLabel": "Open Finder",
+        "variant": "finder"
+      }
+    ],
+    "sections": [
+      {
+        "id": "sec-thesis-dialpad-setup",
+        "heading": "Dialpad buyer question and thesis",
+        "body": "cloud phone; call routing; call recording; power dialer. Connect Standard · cloud phone | Connect Pro | Connect Enterprise. Salesforce, HubSpot, Zendesk, Slack. Teams that want AI transcription and call summaries included in the cloud phone licence; SMB and mid-market buyers starting on Connect Standard at a clear list price annual floor; Sales orgs willing to add Dialpad Sell when power dialer becomes the primary job. Dialpad is an AI-centred business communications platform. Dialpad Connect is the core cloud phone scored here (Standard list price Pro list price annual per user/month; Enterprise. That catalogue mix is the Dialpad setup filter — not a generic business-communications lecture.\n\nBuyer question: is Dialpad the right business-communications commit for Teams that want AI transcription and call summaries included in the cloud phone licence, or is Buyers who need power dialer on the cheapest Connect seat the real constraint?\n\nThesis for setup: Dialpad is a yes only when cloud phone plus power dialer (Connect Standard, Connect Pro, Connect Enterprise, Dialpad Sell, Dialpad Support) are must-haves; not worth it if Buyers who need power dialer on the cheapest Connect seat dominates the operating model.\n\nBest for: Teams that want AI transcription and call summaries included in the cloud phone licence; SMB and mid-market buyers starting on Connect Standard at a clear list price annual floor; Sales orgs willing to add Dialpad Sell when power dialer becomes the primary job (Teams that want AI transcription and call summaries included in the cloud phone licence).\n\nPoor fit when: Buyers who need power dialer on the cheapest Connect seat; Enterprises that want one quoted UCaaS+contact-centre bundle without product-tab shopping; Teams whose only need is Slack-style team chat. Avoid if Pricing page is product-tab heavy — Connect vs Support vs Sell can confuse buyers comparing a single seat price would block go-live."
+      },
+      {
+        "id": "sec-limits-dialpad-setup",
+        "heading": "Dialpad limitation, pricing interpretation, and alternative context",
+        "body": "Limitation: Pricing page is product-tab heavy — Connect vs Support vs Sell can confuse buyers comparing a single seat price; Connect Pro has a 3-user minimum; Enterprise requires 100 users; Power dialer depth requires Dialpad Sell, not Connect Standard because it forces process changes or add-ons around Dialpad when cloud phone is the job.\n\nPricing interpretation: no free plan confirmed — scope a paid pilot on Connect Standard with exit criteria before annual seats.\n\nPlan trade-off: you gain power dialer (Connect Standard, Connect Pro, Connect Enterprise, Dialpad Sell, Dialpad Support) at the expense of Entry price and seat minimums vs routing, CTI and analytics depth — measure both in the pilot. Researched packaging: Connect Standard · cloud phone | Connect Pro | Connect Enterprise.\n\nAlternative context: unlike RingCentral, Dialpad is preferable when Teams that want AI transcription and call summaries included in the cloud phone licence because cloud phone plus power dialer (Connect Standard, Connect Pro, Connect Enterprise, Dialpad Sell, Dialpad Support) match; prefer RingCentral when Buyers who need power dialer on the cheapest Connect seat because the operating loops differ."
+      },
+      {
+        "id": "sec-scenario-dialpad-setup",
+        "heading": "Decision scenario and conclusion for Dialpad",
+        "body": "Use-case: for Teams that want AI transcription and call summaries included in the cloud phone licence running cloud phone, prefer Dialpad when cloud phone is weekly; pick another path when Buyers who need power dialer on the cheapest Connect seat.\n\nSetup requires a specialist owner when Pricing page is product-tab heavy — Connect vs Support vs Sell can confuse buyers comparing a single seat price collides with cloud phone; SMB pilots can stay lighter if power dialer (Connect Standard, Connect Pro, Connect Enterprise, Dialpad Sell, Dialpad Support) is already on Connect Standard.\n\nIntegrations in research: Salesforce, HubSpot, Zendesk, Slack.\n\nWrap: choose Dialpad only if the setup job is cloud phone under Teams that want AI transcription and call summaries included in the cloud phone licence; otherwise use Finder constraints instead of copying this page for another vendor."
+      }
+    ],
+    "checklist": [
+      {
+        "id": "enrich-chk-0",
+        "label": "Draft Dialpad object owners before invites",
+        "order": 0
+      },
+      {
+        "id": "enrich-chk-1",
+        "label": "Confirm plan unlocks for go-live features",
+        "order": 1
+      },
+      {
+        "id": "enrich-chk-2",
+        "label": "Pilot one team on cloud phone",
+        "order": 2
+      },
+      {
+        "id": "enrich-chk-3",
+        "label": "If blocked, evaluate RingCentral before sunk-cost expansion",
+        "order": 3
+      }
+    ],
+    "nextAction": {
+      "contentId": "tool:finder:business-communications",
+      "label": "Open Finder shortlist"
+    }
+  },
+  "notes": [
+    "Implementation: workflow, constraints, mistakes, checklist.",
+    "Type-specific skeleton: IMPLEMENTATION_GUIDE"
+  ]
+}

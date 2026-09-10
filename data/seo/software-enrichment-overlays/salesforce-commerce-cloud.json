@@ -1,10 +1,10 @@
 {
   "slug": "salesforce-commerce-cloud",
-  "updatedAt": "2026-09-07T22:31:21.910Z",
+  "updatedAt": "2026-09-10T11:46:30.190Z",
   "version": "1.0.0",
   "fieldAudit": {
     "slug": "salesforce-commerce-cloud",
-    "checkedAt": "2026-09-07T22:31:21.908Z",
+    "checkedAt": "2026-09-10T11:46:30.187Z",
     "items": [
       {
         "field": "name",
@@ -20,9 +20,9 @@
       },
       {
         "field": "canonical_vendor",
-        "status": "UNKNOWN",
-        "detail": "Company/vendor not documented",
-        "source": "none"
+        "status": "PASS",
+        "detail": "Vendor: Salesforce",
+        "source": "seed"
       },
       {
         "field": "category",
@@ -115,11 +115,11 @@
         "source": "enrichment"
       }
     ],
-    "passCount": 16,
+    "passCount": 17,
     "partialCount": 0,
     "missingCount": 0,
-    "unknownCount": 2,
-    "score": 89
+    "unknownCount": 1,
+    "score": 94
   },
   "decisionHub": {
     "whatItIs": "Salesforce Commerce Cloud (B2C Commerce, formerly Demandware) is Salesforce’s enterprise hosted commerce suite for complex B2C/B2B storefronts, catalogs, and Marketing Cloud adjacency. Pricing is quote-only as a GMV percentage across Growth, Plus, and Premium — Salesforce does not publish a monthly list tile. Magento/Adobe Commerce is the open-source enterprise peer; SFCC is the Salesforce SaaS enterprise path. Research grounded 2026-08-18 from Salesforce commerce pricing pages. Landscape peer — does not displace Shopify as the SMB/mid-market SaaS award.",
@@ -232,7 +232,6 @@
     "evidenceState": "Research/data-based (no completed hands-on test) · Latest verification/research signal: 2026-08-18T14:00:00.000Z · Editorial assessment: approved",
     "nextDecisionStep": "Compare against peers: Salesforce Commerce Cloud vs Magento",
     "missingSections": [
-      "canonical_vendor",
       "trial"
     ]
   },
@@ -375,13 +374,12 @@
   ],
   "dependentsNeedingRefresh": [],
   "remediation": [
-    "verify:canonical_vendor",
     "verify:trial"
   ],
   "notes": [
-    "fieldAudit score=89",
+    "fieldAudit score=94",
     "decisionHub bestFor=5 notIdeal=6",
     "dependents=27"
   ],
-  "materiallyImproved": false
+  "materiallyImproved": true
 }

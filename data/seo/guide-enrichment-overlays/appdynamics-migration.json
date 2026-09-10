@@ -1,0 +1,176 @@
+{
+  "slug": "appdynamics-migration",
+  "enrichmentType": "MIGRATION_GUIDE",
+  "updatedAt": "2026-09-10T12:49:51.187Z",
+  "uniqueValueAdded": [
+    "implementation_workflow",
+    "scenario_analysis",
+    "decision_framework",
+    "limitations_evidence",
+    "buyer_checklist"
+  ],
+  "patch": {
+    "summary": "incident management; infrastructure monitoring; APM and distributed tracing; log management. Aws, Azure, Slack. Cisco-aligned estates that will model vCPU Premium list price (not list price infra-only) as APM TCO; APM buyers comparing AppDynamics to Dynatrace DPS and Datadog modules; Teams already in a Cisco EA who will not self-serve Datadog tiles. AppDynamics is Cisco’s application-performance and observability platform (APM, infra, business iQ). Observability Cloud-style public list: Infrastructure from about list price/vCP Buyer question: choose AppDynamics only if Cisco-aligned estates that will model vCPU Premium list price (not list price infra-only) as APM TCO outweighs Does not outrank Datadog (8.6) — otherwise keep researching. Verdict shape: yes for teams built around Cisco-aligned estates that will model vCPU Premium list price (not list price infra-only) as APM TCO; APM buyers comparing AppDynamics to Dynatrace DPS and Datadog modules; Teams already in a Cisco EA who will not self-serve Datadog tiles; no when SMBs that need Datadog’s published list price/host Infrastructure Pro tile; High-cardinality event specialists (Honeycomb); ITSM or on-call-only purchases — incident management is the hinge, not brand familiarity.",
+    "blocks": [
+      {
+        "id": "da-appdynamics-migration-1",
+        "type": "direct-answer",
+        "body": "Highest migration risk for AppDynamics is Does not outrank Datadog (8.6) — inventory legacy incident management / infrastructure monitoring fields, rehearse a freeze, then validate Aws, Azure, Slack before reopening writes.",
+        "bullets": [
+          "Inventory → map → rehearse → cut over → reopen",
+          "Highest risk: Does not outrank Datadog (8.6)",
+          "Success signal: incident management works for the pilot cohort"
+        ]
+      },
+      {
+        "id": "mig-appdynamics-migration-2",
+        "type": "step",
+        "heading": "AppDynamics migration cutover playbook",
+        "body": "Migrations fail from optimistic timelines — not from missing motivation.",
+        "stepNumber": 1,
+        "scenarios": [
+          {
+            "title": "Field inventory",
+            "body": "Export legacy fields that power incident management, infrastructure monitoring, APM and distributed tracing and mark must-map vs archive."
+          },
+          {
+            "title": "Rehearsal load",
+            "body": "Run a non-prod load into AppDynamics; measure match rates before the freeze."
+          },
+          {
+            "title": "Production freeze",
+            "body": "Freeze legacy writes; cut over; validate Aws; then reopen."
+          }
+        ]
+      },
+      {
+        "id": "df-appdynamics-migration-3",
+        "type": "decision-framework",
+        "title": "Migrate to AppDynamics?",
+        "steps": [
+          {
+            "id": "m-1",
+            "label": "Migrate when Cisco-aligned estates that will model vCPU Premium list price (not list price infra-only) as APM TCO outweigh migration cost"
+          },
+          {
+            "id": "m-2",
+            "label": "Delay if this limitation hits cutover: Does not outrank Datadog (8.6)"
+          },
+          {
+            "id": "m-3",
+            "label": "If AppDynamics mapping is poor, compare destination fit with Datadog before moving data twice"
+          }
+        ]
+      },
+      {
+        "id": "mist-appdynamics-migration-4",
+        "type": "mistakes",
+        "title": "AppDynamics migration mistakes",
+        "items": [
+          {
+            "title": "No freeze window",
+            "body": "Dual-writing without a freeze creates irrevocable duplicates."
+          },
+          {
+            "title": "Integrations last",
+            "body": "Wire Aws in rehearsal — not on Monday morning after cutover."
+          },
+          {
+            "title": "Data risk 1",
+            "body": "Does not outrank Datadog (8.6)"
+          },
+          {
+            "title": "Data risk 2",
+            "body": "list price/vCPU Infrastructure is not the APM-relevant floor — Premium list price is"
+          },
+          {
+            "title": "Data risk 3",
+            "body": "Cisco EA quotes often replace public vCPU tiles"
+          }
+        ]
+      },
+      {
+        "id": "sel-appdynamics-migration-5",
+        "type": "selection-checklist",
+        "title": "AppDynamics migration checklist",
+        "dimensions": [
+          {
+            "id": "map",
+            "label": "Mapping",
+            "options": [
+              "Must-map fields listed",
+              "Owners assigned",
+              "Archive rules written"
+            ]
+          },
+          {
+            "id": "rehearse",
+            "label": "Rehearsal",
+            "options": [
+              "Non-prod load done",
+              "Match rate measured",
+              "Rollback tested"
+            ]
+          },
+          {
+            "id": "cutover",
+            "label": "Cutover",
+            "options": [
+              "Freeze communicated",
+              "Integrations green",
+              "Pilot cohort signed off"
+            ]
+          }
+        ]
+      }
+    ],
+    "sections": [
+      {
+        "id": "sec-thesis-appdynamics-migration",
+        "heading": "AppDynamics buyer question and thesis",
+        "body": "incident management; infrastructure monitoring; APM and distributed tracing; log management. Aws, Azure, Slack. Cisco-aligned estates that will model vCPU Premium list price (not list price infra-only) as APM TCO; APM buyers comparing AppDynamics to Dynatrace DPS and Datadog modules; Teams already in a Cisco EA who will not self-serve Datadog tiles. AppDynamics is Cisco’s application-performance and observability platform (APM, infra, business iQ). Observability Cloud-style public list: Infrastructure from about list price/vCP. That catalogue mix is the AppDynamics migration filter — not a generic it-development lecture.\n\nBuyer question: choose AppDynamics only if Cisco-aligned estates that will model vCPU Premium list price (not list price infra-only) as APM TCO outweighs Does not outrank Datadog (8.6) — otherwise keep researching.\n\nVerdict shape: yes for teams built around Cisco-aligned estates that will model vCPU Premium list price (not list price infra-only) as APM TCO; APM buyers comparing AppDynamics to Dynatrace DPS and Datadog modules; Teams already in a Cisco EA who will not self-serve Datadog tiles; no when SMBs that need Datadog’s published list price/host Infrastructure Pro tile; High-cardinality event specialists (Honeycomb); ITSM or on-call-only purchases — incident management is the hinge, not brand familiarity.\n\nBest for: Cisco-aligned estates that will model vCPU Premium list price (not list price infra-only) as APM TCO; APM buyers comparing AppDynamics to Dynatrace DPS and Datadog modules; Teams already in a Cisco EA who will not self-serve Datadog tiles (Cisco-aligned estates that will model vCPU Premium list price (not list price infra-only) as APM TCO).\n\nPoor fit when: SMBs that need Datadog’s published list price/host Infrastructure Pro tile; High-cardinality event specialists (Honeycomb); ITSM or on-call-only purchases. Avoid if Does not outrank Datadog (8.6) would block go-live."
+      },
+      {
+        "id": "sec-limits-appdynamics-migration",
+        "heading": "AppDynamics limitation, pricing interpretation, and alternative context",
+        "body": "Limitation: Does not outrank Datadog (8.6); list price/vCPU Infrastructure is not the APM-relevant floor — Premium list price is; Cisco EA quotes often replace public vCPU tiles because it forces process changes or add-ons around AppDynamics when incident management is the job.\n\nPricing interpretation: no free plan confirmed — scope a paid pilot on paid tier with exit criteria before annual seats.\n\nPlan trade-off: you gain incident management at the expense of Per-agent vs per-host vs per-seat vs per-GB pricing models — measure both in the pilot.\n\nAlternative context: unlike Datadog, AppDynamics is preferable when Cisco-aligned estates that will model vCPU Premium list price (not list price infra-only) as APM TCO because incident management plus incident management match; prefer Datadog when SMBs that need Datadog’s published list price/host Infrastructure Pro tile because the operating loops differ."
+      },
+      {
+        "id": "sec-scenario-appdynamics-migration",
+        "heading": "Decision scenario and conclusion for AppDynamics",
+        "body": "Scenario: for incident management teams, recommend AppDynamics when Cisco-aligned estates that will model vCPU Premium list price (not list price infra-only) as APM TCO; recommend an alternative path when SMBs that need Datadog’s published list price/host Infrastructure Pro tile because Does not outrank Datadog (8.6) dominates.\n\nImplementation effort: setup takes a named admin for incident management plus a freeze window if Aws are in the cutover path.\n\nIntegrations in research: Aws, Azure, Slack.\n\nFinal call: proceed with AppDynamics when incident management plus incident management outweigh Does not outrank Datadog (8.6); walk when SMBs that need Datadog’s published list price/host Infrastructure Pro tile because workarounds will eat the paid tier spend."
+      }
+    ],
+    "checklist": [
+      {
+        "id": "enrich-chk-0",
+        "label": "Complete field inventory for incident management",
+        "order": 0
+      },
+      {
+        "id": "enrich-chk-1",
+        "label": "Rehearse load before production freeze",
+        "order": 1
+      },
+      {
+        "id": "enrich-chk-2",
+        "label": "Validate Aws pre-reopen",
+        "order": 2
+      },
+      {
+        "id": "enrich-chk-3",
+        "label": "Mitigate: Does not outrank Datadog (8.6)",
+        "order": 3
+      }
+    ],
+    "nextAction": {
+      "contentId": "tool:finder:it-development",
+      "label": "Open Finder shortlist"
+    }
+  },
+  "notes": [
+    "Omit unsupported: plan_structure, testing_evidence",
+    "Migration: cutover risks, data mapping, checklist.",
+    "Type-specific skeleton: MIGRATION_GUIDE"
+  ]
+}

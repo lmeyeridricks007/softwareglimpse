@@ -1,10 +1,10 @@
 {
   "slug": "affinity",
-  "updatedAt": "2026-09-07T22:31:21.176Z",
+  "updatedAt": "2026-09-10T10:56:08.756Z",
   "version": "1.0.0",
   "fieldAudit": {
     "slug": "affinity",
-    "checkedAt": "2026-09-07T22:31:21.175Z",
+    "checkedAt": "2026-09-10T10:56:08.755Z",
     "items": [
       {
         "field": "name",
@@ -20,9 +20,9 @@
       },
       {
         "field": "canonical_vendor",
-        "status": "UNKNOWN",
-        "detail": "Company/vendor not documented",
-        "source": "none"
+        "status": "PASS",
+        "detail": "Vendor: Affinity",
+        "source": "seed"
       },
       {
         "field": "category",
@@ -115,11 +115,11 @@
         "source": "enrichment"
       }
     ],
-    "passCount": 15,
+    "passCount": 16,
     "partialCount": 1,
     "missingCount": 0,
-    "unknownCount": 2,
-    "score": 86
+    "unknownCount": 1,
+    "score": 92
   },
   "decisionHub": {
     "whatItIs": "Relationship intelligence CRM for private capital teams with Essential through Advanced annual seat pricing.",
@@ -240,7 +240,6 @@
     "evidenceState": "Research/data-based (no completed hands-on test) · Latest verification/research signal: 2026-08-16T12:00:00.000Z · Editorial assessment: approved",
     "nextDecisionStep": "Compare against peers: ACT! vs Affinity",
     "missingSections": [
-      "canonical_vendor",
       "trial"
     ]
   },
@@ -488,13 +487,12 @@
   ],
   "dependentsNeedingRefresh": [],
   "remediation": [
-    "verify:canonical_vendor",
     "verify:trial"
   ],
   "notes": [
-    "fieldAudit score=86",
+    "fieldAudit score=92",
     "decisionHub bestFor=5 notIdeal=6",
     "dependents=48"
   ],
-  "materiallyImproved": false
+  "materiallyImproved": true
 }

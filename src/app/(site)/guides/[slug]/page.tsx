@@ -31,7 +31,7 @@ import {
 } from "@/components/guides/guide-reading-time";
 import { GuideProductMediaSection } from "@/components/guides/guide-product-media";
 import { GuideCategoryMediaSection } from "@/components/guides/guide-category-media";
-import { GuideSidebar } from "@/components/guides/guide-sidebar";
+import { GuideSidebar, type GuideSidebarLink } from "@/components/guides/guide-sidebar";
 import { QuickAnswerVisual } from "@/components/guides/guide-visuals";
 import { GUIDE_LAYOUT } from "@/components/guides/guide-template";
 import { NewsletterCard } from "@/components/newsletter/newsletter-card";
@@ -224,29 +224,30 @@ export default async function GuideDetailPage({ params }: Props) {
 
   // Sidebar related articles must reflect merged overlay relatedGuideSlugs
   // (improve-linking writes those). Do not rely solely on selectLinks peers.
-  const relatedFromOverlay = guide.relatedGuideSlugs
-    .map((slug) => {
+  const relatedFromOverlay: GuideSidebarLink[] = guide.relatedGuideSlugs.flatMap(
+    (slug) => {
       const g = getGuides({ includeUnpublished: true }).find(
         (x) => x.slug === slug,
       );
-      if (!g || g.slug === guide.slug) return null;
-      return {
+      if (!g || g.slug === guide.slug) return [];
+      const item: GuideSidebarLink = {
         href: `/guides/${slug}/`,
         label: g.title,
-        description: g.summary,
+        description: g.summary ?? undefined,
       };
-    })
-    .filter((x): x is { href: string; label: string; description?: string } =>
-      Boolean(x),
-    );
+      return [item];
+    },
+  );
   const relatedArticles = (
     relatedFromOverlay.length > 0
       ? relatedFromOverlay
-      : linkPlan.relatedGuides.map((l) => ({
-          href: l.href,
-          label: l.label,
-          description: l.description,
-        }))
+      : linkPlan.relatedGuides.map(
+          (l): GuideSidebarLink => ({
+            href: l.href,
+            label: l.label,
+            description: l.description,
+          }),
+        )
   ).slice(0, 8);
 
   const previousGuide =

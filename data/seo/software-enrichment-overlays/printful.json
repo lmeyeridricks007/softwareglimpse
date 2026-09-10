@@ -1,10 +1,10 @@
 {
   "slug": "printful",
-  "updatedAt": "2026-09-07T22:31:21.927Z",
+  "updatedAt": "2026-09-10T11:46:30.473Z",
   "version": "1.0.0",
   "fieldAudit": {
     "slug": "printful",
-    "checkedAt": "2026-09-07T22:31:21.926Z",
+    "checkedAt": "2026-09-10T11:46:30.469Z",
     "items": [
       {
         "field": "name",
@@ -20,9 +20,9 @@
       },
       {
         "field": "canonical_vendor",
-        "status": "UNKNOWN",
-        "detail": "Company/vendor not documented",
-        "source": "none"
+        "status": "PASS",
+        "detail": "Vendor: Printful",
+        "source": "seed"
       },
       {
         "field": "category",
@@ -115,11 +115,11 @@
         "source": "enrichment"
       }
     ],
-    "passCount": 17,
+    "passCount": 18,
     "partialCount": 0,
     "missingCount": 0,
-    "unknownCount": 1,
-    "score": 94
+    "unknownCount": 0,
+    "score": 100
   },
   "decisionHub": {
     "whatItIs": "Printful is a print-on-demand fulfillment network: you design products, they print and ship to the customer. It is a POD sourcing/fulfillment layer, not a full checkout platform (Printful Stores is an add-on storefront). Plans (2026-08-18): Free $0; Growth $24.99/mo with a 14-day trial (subscription waived after $12k/year in Printful sales); Enterprise quote. White-label product costs and shipping are billed separately from the subscription. POD landscape peer — Spocket keeps the dropshipping-sourcing cluster award. Research grounded 2026-08-18 from printful.com/pricing.",
@@ -140,11 +140,14 @@
       "Catalog is POD blanks, not a general merchandise sourcing network"
     ],
     "coreCapabilities": [
+      "product catalog",
+      "order management",
+      "inventory management",
       "shipping fulfillment",
       "marketplace channels",
-      "dropshipping sourcing",
-      "app extensions",
-      "online storefront"
+      "analytics reporting",
+      "ai assistance",
+      "dropshipping sourcing"
     ],
     "pricingSummary": "3 documented plans · 1 free · entry paid: Growth · trial documented on at least one plan",
     "keyTradeoffs": [
@@ -214,9 +217,7 @@
     ],
     "evidenceState": "Research/data-based (no completed hands-on test) · Latest verification/research signal: 2026-08-18T14:00:00.000Z · Editorial assessment: approved",
     "nextDecisionStep": "Compare against peers: Printful vs Printify",
-    "missingSections": [
-      "canonical_vendor"
-    ]
+    "missingSections": []
   },
   "dependents": [
     {
@@ -276,13 +277,11 @@
     }
   ],
   "dependentsNeedingRefresh": [],
-  "remediation": [
-    "verify:canonical_vendor"
-  ],
+  "remediation": [],
   "notes": [
-    "fieldAudit score=94",
+    "fieldAudit score=100",
     "decisionHub bestFor=6 notIdeal=6",
     "dependents=11"
   ],
-  "materiallyImproved": false
+  "materiallyImproved": true
 }

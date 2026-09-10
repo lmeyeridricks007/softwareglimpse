@@ -1,0 +1,210 @@
+{
+  "slug": "runway-implementation",
+  "enrichmentType": "IMPLEMENTATION_GUIDE",
+  "updatedAt": "2026-09-10T12:48:54.942Z",
+  "uniqueValueAdded": [
+    "implementation_workflow",
+    "scenario_analysis",
+    "decision_framework",
+    "limitations_evidence",
+    "pricing_comparison",
+    "sg_original_data",
+    "buyer_checklist"
+  ],
+  "patch": {
+    "summary": "LLM chat and assistants; image generation; voice / text-to-speech; projects, GPTs, and memory. Free · free · LLM chat and assistants | Standard (annual) | Pro (annual). Creators and agencies generating short AI video clips; Teams that can budget credits rather than unlimited renders; Pro buyers who need commercial rights. Runway is a generative video studio (Gen-4 / Gen-4.5 and partner models) billed per editor with monthly credits. Free includes a one-time 125-credit deposit. Standard is list price Buyer question: is Runway the right ai commit for Creators and agencies generating short AI video clips, or is Buyers who need unlimited video for a flat list price the real constraint? Thesis for implementation: Runway is a yes only when LLM chat and assistants plus enterprise admin and SSO (Free, Standard (annual), Pro (annual), Max (annual)) are must-haves; not worth it if Buyers who need unlimited video for a flat list price dominates the operating model.",
+    "blocks": [
+      {
+        "id": "da-runway-implementation-1",
+        "type": "direct-answer",
+        "body": "enterprise admin and SSO (Free, Standard (annual), Pro (annual), Max (annual)) decides whether Runway implementation is a one-team pilot or a specialist project — confirm unlocks for enterprise admin and SSO (Free, Standard (annual), Pro (annual), Max (annual)) before invites.",
+        "bullets": [
+          "Start with: LLM chat and assistants",
+          "Gate check: enterprise admin and SSO (Free, Standard (annual), Pro (annual), Max (annual))",
+          "Integrate after: data quality pass on systems of record"
+        ]
+      },
+      {
+        "id": "impl-runway-implementation-2",
+        "type": "step",
+        "heading": "Runway day-zero to steady-state sequence",
+        "body": "Treat Runway setup as a controlled rollout — not a weekend dump of CSV files.",
+        "stepNumber": 1,
+        "scenarios": [
+          {
+            "title": "Day zero — objects and owners",
+            "body": "Define owners for LLM chat and assistants, image generation, voice / text-to-speech before inviting the whole org."
+          },
+          {
+            "title": "SMB pilot",
+            "body": "One pipeline / one team proves Creators and agencies generating short AI video clips before company-wide seats."
+          },
+          {
+            "title": "Cutover",
+            "body": "Freeze legacy writes briefly; validate priority integrations before reopen."
+          }
+        ]
+      },
+      {
+        "id": "df-runway-implementation-3",
+        "type": "decision-framework",
+        "title": "Runway implementation go / no-go",
+        "steps": [
+          {
+            "id": "i-1",
+            "label": "Go when plan unlocks cover enterprise admin and SSO (Free, Standard (annual), Pro (annual), Max (annual))"
+          },
+          {
+            "id": "i-2",
+            "label": "Pause if this limitation blocks ops: Credits buy seconds of flagship video — Standard is not an unlimited studio"
+          },
+          {
+            "id": "i-3",
+            "label": "Do not expand seats until LLM chat and assistants is green"
+          }
+        ]
+      },
+      {
+        "id": "mist-runway-implementation-4",
+        "type": "mistakes",
+        "title": "Runway implementation mistakes",
+        "items": [
+          {
+            "title": "Mistake 1",
+            "body": "Credits buy seconds of flagship video — Standard is not an unlimited studio"
+          },
+          {
+            "title": "Mistake 2",
+            "body": "Free credits do not refill monthly"
+          },
+          {
+            "title": "Mistake 3",
+            "body": "Commercial use typically needs Pro+"
+          },
+          {
+            "title": "Mistake 4",
+            "body": "Per-editor billing: extra editors duplicate the plan fee"
+          },
+          {
+            "title": "Big-bang invite",
+            "body": "Inviting every user before object design creates junk data that is expensive to unwind."
+          }
+        ]
+      },
+      {
+        "id": "cost-runway-implementation-5",
+        "type": "cost-breakdown",
+        "title": "Runway plan gates that affect rollout",
+        "body": "Implementation fails when unlocks needed for go-live sit on a higher tier than budgeted.",
+        "lines": [
+          {
+            "label": "Free",
+            "description": "Free plan · Unlocks: LLM chat and assistants, image generation, voice / text-to-speech · Suits: explore before committing seats"
+          },
+          {
+            "label": "Standard (annual)",
+            "description": "Suits: teams whose must-have gates appear on this tier"
+          },
+          {
+            "label": "Pro (annual)",
+            "description": "Suits: teams whose must-have gates appear on this tier"
+          },
+          {
+            "label": "Max (annual)",
+            "description": "Suits: teams whose must-have gates appear on this tier"
+          }
+        ]
+      },
+      {
+        "id": "sel-runway-implementation-6",
+        "type": "selection-checklist",
+        "title": "Runway implementation checklist",
+        "dimensions": [
+          {
+            "id": "prep",
+            "label": "Prep",
+            "options": [
+              "Object model drafted",
+              "Owners named",
+              "Legacy freeze window set"
+            ]
+          },
+          {
+            "id": "pilot",
+            "label": "Pilot",
+            "options": [
+              "LLM chat and assistants",
+              "Junk-data rules set",
+              "Support path clear"
+            ]
+          },
+          {
+            "id": "scale",
+            "label": "Scale",
+            "options": [
+              "Integrations validated",
+              "Seat expansion criteria written",
+              "Rollback plan noted"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "cta-runway-implementation-7",
+        "type": "interactive-cta",
+        "title": "Validate ai fit before a deep Runway rollout",
+        "body": "If Runway fails constraint fit, stop implementation early.",
+        "href": "/tools/ai-finder/",
+        "ctaLabel": "Open Finder",
+        "variant": "finder"
+      }
+    ],
+    "sections": [
+      {
+        "id": "sec-thesis-runway-implementation",
+        "heading": "Runway buyer question and thesis",
+        "body": "LLM chat and assistants; image generation; voice / text-to-speech; projects, GPTs, and memory. Free · free · LLM chat and assistants | Standard (annual) | Pro (annual). Creators and agencies generating short AI video clips; Teams that can budget credits rather than unlimited renders; Pro buyers who need commercial rights. Runway is a generative video studio (Gen-4 / Gen-4.5 and partner models) billed per editor with monthly credits. Free includes a one-time 125-credit deposit. Standard is list price. That catalogue mix is the Runway implementation filter — not a generic ai lecture.\n\nBuyer question: is Runway the right ai commit for Creators and agencies generating short AI video clips, or is Buyers who need unlimited video for a flat list price the real constraint?\n\nThesis for implementation: Runway is a yes only when LLM chat and assistants plus enterprise admin and SSO (Free, Standard (annual), Pro (annual), Max (annual)) are must-haves; not worth it if Buyers who need unlimited video for a flat list price dominates the operating model.\n\nBest for: Creators and agencies generating short AI video clips; Teams that can budget credits rather than unlimited renders; Pro buyers who need commercial rights (Creators and agencies generating short AI video clips).\n\nPoor fit when: Buyers who need unlimited video for a flat list price; Still-image-only art direction (Midjourney); Meeting transcription (Otter). Avoid if Credits buy seconds of flagship video — Standard is not an unlimited studio would block go-live."
+      },
+      {
+        "id": "sec-limits-runway-implementation",
+        "heading": "Runway limitation, pricing interpretation, and alternative context",
+        "body": "Limitation: Credits buy seconds of flagship video — Standard is not an unlimited studio; Free credits do not refill monthly; Commercial use typically needs Pro+ because it forces process changes or add-ons around Runway when LLM chat and assistants is the job.\n\nPricing interpretation: stay on Free until enterprise admin and SSO (Free, Standard (annual), Pro (annual), Max (annual)) is mandatory; plan jumps to Standard (annual) only after that hinge is proven.\n\nPlan trade-off: you gain enterprise admin and SSO (Free, Standard (annual), Pro (annual), Max (annual)) at the expense of Published free tiers vs paid usage/credit caps — measure both in the pilot. Researched packaging: Free · free · LLM chat and assistants | Standard (annual) | Pro (annual).\n\nAlternative context: unlike Midjourney, Runway is preferable when Creators and agencies generating short AI video clips because LLM chat and assistants plus enterprise admin and SSO (Free, Standard (annual), Pro (annual), Max (annual)) match; prefer Midjourney when Buyers who need unlimited video for a flat list price because the operating loops differ."
+      },
+      {
+        "id": "sec-scenario-runway-implementation",
+        "heading": "Decision scenario and conclusion for Runway",
+        "body": "Use-case: for Creators and agencies generating short AI video clips running LLM chat and assistants, prefer Runway when LLM chat and assistants is weekly; pick another path when Buyers who need unlimited video for a flat list price.\n\nSetup requires a specialist owner when Credits buy seconds of flagship video — Standard is not an unlimited studio collides with LLM chat and assistants; SMB pilots can stay lighter if enterprise admin and SSO (Free, Standard (annual), Pro (annual), Max (annual)) is already on Standard (annual).\n\nWrap: choose Runway only if the implementation job is LLM chat and assistants under Creators and agencies generating short AI video clips; otherwise use Finder constraints instead of copying this page for another vendor."
+      }
+    ],
+    "checklist": [
+      {
+        "id": "enrich-chk-0",
+        "label": "Draft Runway object owners before invites",
+        "order": 0
+      },
+      {
+        "id": "enrich-chk-1",
+        "label": "Confirm plan unlocks for go-live features",
+        "order": 1
+      },
+      {
+        "id": "enrich-chk-2",
+        "label": "Pilot one team on LLM chat and assistants",
+        "order": 2
+      },
+      {
+        "id": "enrich-chk-3",
+        "label": "If blocked, evaluate Midjourney before sunk-cost expansion",
+        "order": 3
+      }
+    ],
+    "nextAction": {
+      "contentId": "tool:finder:ai",
+      "label": "Open Finder shortlist"
+    }
+  },
+  "notes": [
+    "Implementation: workflow, constraints, mistakes, checklist.",
+    "Type-specific skeleton: IMPLEMENTATION_GUIDE"
+  ]
+}

@@ -1,14 +1,14 @@
 # Guides sitemap reconciliation
 
-Generated: 2026-09-08T20:10:52.030Z
+Generated: 2026-09-10T14:49:15.084Z
 
 | Metric | Count |
 | --- | ---: |
-| KEEP_INDEX (audit) | 370 |
-| sitemap-guides entity URLs | 369 |
-| KEEP_INDEX present in sitemap | 162 |
-| KEEP_INDEX excluded from sitemap | 208 |
-| Incorrect exclusions (should be fixed) | 15 |
+| KEEP_INDEX (audit) | 450 |
+| sitemap-guides entity URLs | 545 |
+| KEEP_INDEX present in sitemap | 326 |
+| KEEP_INDEX excluded from sitemap | 124 |
+| Incorrect exclusions (should be fixed) | 6 |
 
 ## Why the gap exists
 
@@ -26,84 +26,49 @@ Incorrect pattern (fixed): coupling schedule wrappers to `seo.indexable: false`,
 
 | Count | Reason family |
 | ---: | --- |
-| 193 | `publication_gate:scheduled_in_future` |
-| 83 | `seo.indexable=false` |
-| 15 | `seo.indexable=false (incorrect: publication-visible KEEP_INDEX blocked from sitemap)` |
+| 118 | `publication_gate:scheduled_in_future` |
+| 9 | `seo.indexable=false` |
+| 6 | `seo.indexable=false (incorrect: publication-visible KEEP_INDEX blocked from sitemap)` |
+| 2 | `fails_isGuideSearchIndexWorthy(factory_product_pack)` |
 
 ### Exact reason strings (including scheduledAt)
 
 | Count | Reason |
 | ---: | --- |
-| 15 | `seo.indexable=false (incorrect: publication-visible KEEP_INDEX blocked from sitemap)` |
-| 4 | `publication_gate:scheduled_in_future(scheduledAt=2026-10-25T06:00:00.000Z) + seo.indexable=false` |
-| 3 | `publication_gate:scheduled_in_future(scheduledAt=2026-11-01T06:00:00.000Z) + seo.indexable=false` |
-| 3 | `publication_gate:scheduled_in_future(scheduledAt=2027-01-11T06:00:00.000Z) + seo.indexable=false` |
-| 2 | `publication_gate:scheduled_in_future(scheduledAt=2026-11-04T06:00:00.000Z) + seo.indexable=false` |
-| 2 | `publication_gate:scheduled_in_future(scheduledAt=2026-12-01T06:00:00.000Z) + seo.indexable=false` |
-| 2 | `publication_gate:scheduled_in_future(scheduledAt=2026-12-04T06:00:00.000Z) + seo.indexable=false` |
-| 2 | `publication_gate:scheduled_in_future(scheduledAt=2026-12-26T06:00:00.000Z) + seo.indexable=false` |
-| 2 | `publication_gate:scheduled_in_future(scheduledAt=2027-02-01T06:00:00.000Z) + seo.indexable=false` |
-| 2 | `publication_gate:scheduled_in_future(scheduledAt=2027-02-04T06:00:00.000Z) + seo.indexable=false` |
-| 2 | `publication_gate:scheduled_in_future(scheduledAt=2027-02-07T06:00:00.000Z) + seo.indexable=false` |
-| 2 | `publication_gate:scheduled_in_future(scheduledAt=2026-10-01T06:00:00.000Z) + seo.indexable=false` |
-| 2 | `publication_gate:scheduled_in_future(scheduledAt=2026-10-04T06:00:00.000Z) + seo.indexable=false` |
-| 2 | `publication_gate:scheduled_in_future(scheduledAt=2026-10-07T06:00:00.000Z) + seo.indexable=false` |
-| 2 | `publication_gate:scheduled_in_future(scheduledAt=2026-10-10T06:00:00.000Z) + seo.indexable=false` |
-| 2 | `publication_gate:scheduled_in_future(scheduledAt=2026-10-13T06:00:00.000Z) + seo.indexable=false` |
-| 2 | `publication_gate:scheduled_in_future(scheduledAt=2026-10-16T06:00:00.000Z) + seo.indexable=false` |
-| 2 | `publication_gate:scheduled_in_future(scheduledAt=2026-10-19T06:00:00.000Z) + seo.indexable=false` |
-| 2 | `publication_gate:scheduled_in_future(scheduledAt=2026-10-22T06:00:00.000Z) + seo.indexable=false` |
-| 2 | `publication_gate:scheduled_in_future(scheduledAt=2026-10-28T06:00:00.000Z) + seo.indexable=false` |
-| 2 | `publication_gate:scheduled_in_future(scheduledAt=2027-01-21T06:00:00.000Z) + seo.indexable=false` |
+| 4 | `seo.indexable=false (incorrect: publication-visible KEEP_INDEX blocked from sitemap)` |
 | 2 | `publication_gate:scheduled_in_future(scheduledAt=2027-07-15T06:00:00.000Z)` |
 | 2 | `publication_gate:scheduled_in_future(scheduledAt=2027-07-18T06:00:00.000Z)` |
 | 2 | `publication_gate:scheduled_in_future(scheduledAt=2027-07-27T06:00:00.000Z)` |
 | 2 | `publication_gate:scheduled_in_future(scheduledAt=2027-08-15T06:00:00.000Z)` |
 | 2 | `publication_gate:scheduled_in_future(scheduledAt=2027-08-18T06:00:00.000Z)` |
 | 2 | `publication_gate:scheduled_in_future(scheduledAt=2027-08-27T06:00:00.000Z)` |
-| 1 | `publication_gate:scheduled_in_future(scheduledAt=2026-11-07T06:00:00.000Z) + seo.indexable=false` |
-| 1 | `publication_gate:scheduled_in_future(scheduledAt=2026-11-10T06:00:00.000Z) + seo.indexable=false` |
-| 1 | `publication_gate:scheduled_in_future(scheduledAt=2026-11-13T06:00:00.000Z) + seo.indexable=false` |
-| 1 | `publication_gate:scheduled_in_future(scheduledAt=2026-11-16T06:00:00.000Z) + seo.indexable=false` |
-| 1 | `publication_gate:scheduled_in_future(scheduledAt=2027-01-02T06:00:00.000Z) + seo.indexable=false` |
-| 1 | `publication_gate:scheduled_in_future(scheduledAt=2027-01-06T06:00:00.000Z) + seo.indexable=false` |
-| 1 | `publication_gate:scheduled_in_future(scheduledAt=2027-01-14T06:00:00.000Z) + seo.indexable=false` |
-| 1 | `publication_gate:scheduled_in_future(scheduledAt=2027-02-10T06:00:00.000Z) + seo.indexable=false` |
-| 1 | `publication_gate:scheduled_in_future(scheduledAt=2026-09-09T06:00:00.000Z)` |
+| 2 | `seo.indexable=false (incorrect: publication-visible KEEP_INDEX blocked from sitemap) + fails_isGuideSearchIndexWorthy(factory_product_pack)` |
 | 1 | `publication_gate:scheduled_in_future(scheduledAt=2026-09-11T06:00:00.000Z)` |
 | 1 | `publication_gate:scheduled_in_future(scheduledAt=2026-09-13T06:00:00.000Z)` |
 | 1 | `publication_gate:scheduled_in_future(scheduledAt=2026-09-15T06:00:00.000Z)` |
 | 1 | `publication_gate:scheduled_in_future(scheduledAt=2026-09-17T06:00:00.000Z)` |
-| 1 | `publication_gate:scheduled_in_future(scheduledAt=2026-09-25T06:00:00.000Z) + seo.indexable=false` |
-| 1 | `publication_gate:scheduled_in_future(scheduledAt=2026-09-28T06:00:00.000Z) + seo.indexable=false` |
-| 1 | `publication_gate:scheduled_in_future(scheduledAt=2026-09-29T06:00:00.000Z) + seo.indexable=false` |
 | 1 | `publication_gate:scheduled_in_future(scheduledAt=2026-10-09T06:00:00.000Z)` |
 | 1 | `publication_gate:scheduled_in_future(scheduledAt=2026-10-11T06:00:00.000Z)` |
 | 1 | `publication_gate:scheduled_in_future(scheduledAt=2026-10-13T06:00:00.000Z)` |
 | 1 | `publication_gate:scheduled_in_future(scheduledAt=2026-10-15T06:00:00.000Z)` |
 | 1 | `publication_gate:scheduled_in_future(scheduledAt=2026-10-17T06:00:00.000Z)` |
-| 1 | `publication_gate:scheduled_in_future(scheduledAt=2026-10-23T06:00:00.000Z) + seo.indexable=false` |
 | 1 | `publication_gate:scheduled_in_future(scheduledAt=2026-11-09T06:00:00.000Z)` |
 | 1 | `publication_gate:scheduled_in_future(scheduledAt=2026-11-11T06:00:00.000Z)` |
 | 1 | `publication_gate:scheduled_in_future(scheduledAt=2026-11-13T06:00:00.000Z)` |
 | 1 | `publication_gate:scheduled_in_future(scheduledAt=2026-11-15T06:00:00.000Z)` |
 | 1 | `publication_gate:scheduled_in_future(scheduledAt=2026-11-17T06:00:00.000Z)` |
 | 1 | `publication_gate:scheduled_in_future(scheduledAt=2026-11-23T06:00:00.000Z) + seo.indexable=false` |
-| 1 | `publication_gate:scheduled_in_future(scheduledAt=2026-11-25T06:00:00.000Z) + seo.indexable=false` |
-| 1 | `publication_gate:scheduled_in_future(scheduledAt=2026-11-27T06:00:00.000Z) + seo.indexable=false` |
 | 1 | `publication_gate:scheduled_in_future(scheduledAt=2026-12-09T06:00:00.000Z)` |
 | 1 | `publication_gate:scheduled_in_future(scheduledAt=2026-12-11T06:00:00.000Z)` |
 | 1 | `publication_gate:scheduled_in_future(scheduledAt=2026-12-13T06:00:00.000Z)` |
 | 1 | `publication_gate:scheduled_in_future(scheduledAt=2026-12-15T06:00:00.000Z)` |
 | 1 | `publication_gate:scheduled_in_future(scheduledAt=2026-12-17T06:00:00.000Z)` |
-| 1 | `publication_gate:scheduled_in_future(scheduledAt=2026-12-21T06:00:00.000Z) + seo.indexable=false` |
-| 1 | `publication_gate:scheduled_in_future(scheduledAt=2026-12-23T06:00:00.000Z) + seo.indexable=false` |
-| 1 | `publication_gate:scheduled_in_future(scheduledAt=2026-12-25T06:00:00.000Z) + seo.indexable=false` |
 | 1 | `publication_gate:scheduled_in_future(scheduledAt=2027-01-09T06:00:00.000Z)` |
 | 1 | `publication_gate:scheduled_in_future(scheduledAt=2027-01-11T06:00:00.000Z)` |
 | 1 | `publication_gate:scheduled_in_future(scheduledAt=2027-01-13T06:00:00.000Z)` |
 | 1 | `publication_gate:scheduled_in_future(scheduledAt=2027-01-15T06:00:00.000Z)` |
 | 1 | `publication_gate:scheduled_in_future(scheduledAt=2027-01-17T06:00:00.000Z)` |
+| 1 | `publication_gate:scheduled_in_future(scheduledAt=2027-01-21T06:00:00.000Z) + seo.indexable=false` |
 | 1 | `publication_gate:scheduled_in_future(scheduledAt=2027-01-25T06:00:00.000Z) + seo.indexable=false` |
 | 1 | `publication_gate:scheduled_in_future(scheduledAt=2027-01-27T06:00:00.000Z) + seo.indexable=false` |
 | 1 | `publication_gate:scheduled_in_future(scheduledAt=2027-02-09T06:00:00.000Z)` |
@@ -111,15 +76,11 @@ Incorrect pattern (fixed): coupling schedule wrappers to `seo.indexable: false`,
 | 1 | `publication_gate:scheduled_in_future(scheduledAt=2027-02-13T06:00:00.000Z)` |
 | 1 | `publication_gate:scheduled_in_future(scheduledAt=2027-02-15T06:00:00.000Z)` |
 | 1 | `publication_gate:scheduled_in_future(scheduledAt=2027-02-17T06:00:00.000Z)` |
-| 1 | `publication_gate:scheduled_in_future(scheduledAt=2027-02-24T06:00:00.000Z) + seo.indexable=false` |
-| 1 | `publication_gate:scheduled_in_future(scheduledAt=2027-02-28T06:00:00.000Z) + seo.indexable=false` |
 | 1 | `publication_gate:scheduled_in_future(scheduledAt=2027-03-09T06:00:00.000Z)` |
 | 1 | `publication_gate:scheduled_in_future(scheduledAt=2027-03-11T06:00:00.000Z)` |
 | 1 | `publication_gate:scheduled_in_future(scheduledAt=2027-03-13T06:00:00.000Z)` |
 | 1 | `publication_gate:scheduled_in_future(scheduledAt=2027-03-15T06:00:00.000Z)` |
 | 1 | `publication_gate:scheduled_in_future(scheduledAt=2027-03-17T06:00:00.000Z)` |
-| 1 | `publication_gate:scheduled_in_future(scheduledAt=2027-03-25T06:00:00.000Z) + seo.indexable=false` |
-| 1 | `publication_gate:scheduled_in_future(scheduledAt=2027-03-30T06:00:00.000Z) + seo.indexable=false` |
 | 1 | `publication_gate:scheduled_in_future(scheduledAt=2027-04-13T06:00:00.000Z)` |
 | 1 | `publication_gate:scheduled_in_future(scheduledAt=2027-04-16T06:00:00.000Z)` |
 | 1 | `publication_gate:scheduled_in_future(scheduledAt=2027-04-19T06:00:00.000Z)` |
@@ -130,25 +91,16 @@ Incorrect pattern (fixed): coupling schedule wrappers to `seo.indexable: false`,
 | 1 | `publication_gate:scheduled_in_future(scheduledAt=2027-05-13T06:00:00.000Z)` |
 | 1 | `publication_gate:scheduled_in_future(scheduledAt=2027-05-15T06:00:00.000Z)` |
 | 1 | `publication_gate:scheduled_in_future(scheduledAt=2027-05-17T06:00:00.000Z)` |
-| 1 | `publication_gate:scheduled_in_future(scheduledAt=2027-05-25T06:00:00.000Z) + seo.indexable=false` |
-| 1 | `publication_gate:scheduled_in_future(scheduledAt=2027-05-30T06:00:00.000Z) + seo.indexable=false` |
 | 1 | `publication_gate:scheduled_in_future(scheduledAt=2027-05-10T06:00:00.000Z)` |
 | 1 | `publication_gate:scheduled_in_future(scheduledAt=2027-05-12T06:00:00.000Z)` |
 | 1 | `publication_gate:scheduled_in_future(scheduledAt=2027-05-14T06:00:00.000Z)` |
 | 1 | `publication_gate:scheduled_in_future(scheduledAt=2027-05-16T06:00:00.000Z)` |
 | 1 | `publication_gate:scheduled_in_future(scheduledAt=2027-05-18T06:00:00.000Z)` |
-| 1 | `publication_gate:scheduled_in_future(scheduledAt=2027-05-26T06:00:00.000Z) + seo.indexable=false` |
-| 1 | `publication_gate:scheduled_in_future(scheduledAt=2027-05-28T06:00:00.000Z) + seo.indexable=false` |
-| 1 | `publication_gate:scheduled_in_future(scheduledAt=2027-05-29T06:00:00.000Z) + seo.indexable=false` |
 | 1 | `publication_gate:scheduled_in_future(scheduledAt=2027-06-09T06:00:00.000Z)` |
 | 1 | `publication_gate:scheduled_in_future(scheduledAt=2027-06-11T06:00:00.000Z)` |
 | 1 | `publication_gate:scheduled_in_future(scheduledAt=2027-06-13T06:00:00.000Z)` |
 | 1 | `publication_gate:scheduled_in_future(scheduledAt=2027-06-15T06:00:00.000Z)` |
 | 1 | `publication_gate:scheduled_in_future(scheduledAt=2027-06-17T06:00:00.000Z)` |
-| 1 | `publication_gate:scheduled_in_future(scheduledAt=2027-06-23T06:00:00.000Z) + seo.indexable=false` |
-| 1 | `publication_gate:scheduled_in_future(scheduledAt=2027-06-25T06:00:00.000Z) + seo.indexable=false` |
-| 1 | `publication_gate:scheduled_in_future(scheduledAt=2027-06-27T06:00:00.000Z) + seo.indexable=false` |
-| 1 | `publication_gate:scheduled_in_future(scheduledAt=2027-06-28T06:00:00.000Z) + seo.indexable=false` |
 | 1 | `publication_gate:scheduled_in_future(scheduledAt=2027-06-30T06:00:00.000Z) + seo.indexable=false` |
 | 1 | `publication_gate:scheduled_in_future(scheduledAt=2027-07-09T06:00:00.000Z)` |
 | 1 | `publication_gate:scheduled_in_future(scheduledAt=2027-07-11T06:00:00.000Z)` |
@@ -180,9 +132,7 @@ Incorrect pattern (fixed): coupling schedule wrappers to `seo.indexable: false`,
 | 1 | `publication_gate:scheduled_in_future(scheduledAt=2027-08-29T06:00:00.000Z)` |
 | 1 | `publication_gate:scheduled_in_future(scheduledAt=2027-08-21T06:00:00.000Z)` |
 | 1 | `publication_gate:scheduled_in_future(scheduledAt=2027-08-24T06:00:00.000Z)` |
-| 1 | `publication_gate:scheduled_in_future(scheduledAt=2026-12-27T06:00:00.000Z) + seo.indexable=false` |
-| 1 | `publication_gate:scheduled_in_future(scheduledAt=2026-12-28T06:00:00.000Z) + seo.indexable=false` |
-| 1 | `publication_gate:scheduled_in_future(scheduledAt=2027-01-29T06:00:00.000Z) + seo.indexable=false` |
+| 1 | `publication_gate:scheduled_in_future(scheduledAt=2026-11-01T06:00:00.000Z) + seo.indexable=false` |
 | 1 | `publication_gate:scheduled_in_future(scheduledAt=2027-09-09T06:00:00.000Z)` |
 | 1 | `publication_gate:scheduled_in_future(scheduledAt=2027-09-11T06:00:00.000Z)` |
 | 1 | `publication_gate:scheduled_in_future(scheduledAt=2027-09-13T06:00:00.000Z)` |
@@ -198,6 +148,7 @@ Incorrect pattern (fixed): coupling schedule wrappers to `seo.indexable: false`,
 | 1 | `publication_gate:scheduled_in_future(scheduledAt=2027-09-27T06:00:00.000Z)` |
 | 1 | `publication_gate:scheduled_in_future(scheduledAt=2027-09-28T06:00:00.000Z)` |
 | 1 | `publication_gate:scheduled_in_future(scheduledAt=2027-09-29T06:00:00.000Z)` |
+| 1 | `publication_gate:scheduled_in_future(scheduledAt=2026-10-25T06:00:00.000Z) + seo.indexable=false` |
 
 ## Every KEEP_INDEX guide excluded from sitemap-guides
 
@@ -212,12 +163,14 @@ Incorrect pattern (fixed): coupling schedule wrappers to `seo.indexable: false`,
 | `ai-writing-evaluation-guide` | buying-guide | ai-writing | scheduled | 2027-05-17T06:00:00.000Z | true | false | `publication_gate:scheduled_in_future(scheduledAt=2027-05-17T06:00:00.000Z)` |
 | `ai-writing-requirements-guide` | checklist | ai-writing | scheduled | 2027-05-15T06:00:00.000Z | true | false | `publication_gate:scheduled_in_future(scheduledAt=2027-05-15T06:00:00.000Z)` |
 | `ai-writing-vs-ai-software` | comparison-education | ai-writing | scheduled | 2027-05-13T06:00:00.000Z | true | false | `publication_gate:scheduled_in_future(scheduledAt=2027-05-13T06:00:00.000Z)` |
+| `aira-plans` | product-pack-factory | ai | published | — | false | true | `seo.indexable=false (incorrect: publication-visible KEEP_INDEX blocked from sitemap)`<br>`fails_isGuideSearchIndexWorthy(factory_product_pack)` |
 | `analytics-bi-evaluation-guide` | buying-guide | analytics-bi | scheduled | 2027-02-17T06:00:00.000Z | true | false | `publication_gate:scheduled_in_future(scheduledAt=2027-02-17T06:00:00.000Z)` |
 | `analytics-bi-requirements-guide` | checklist | analytics-bi | scheduled | 2027-02-15T06:00:00.000Z | true | false | `publication_gate:scheduled_in_future(scheduledAt=2027-02-15T06:00:00.000Z)` |
 | `analytics-bi-vs-marketing-software` | comparison-education | analytics-bi | scheduled | 2027-02-13T06:00:00.000Z | true | false | `publication_gate:scheduled_in_future(scheduledAt=2027-02-13T06:00:00.000Z)` |
 | `ats-recruiting-evaluation-guide` | buying-guide | ats-recruiting | scheduled | 2027-08-17T06:00:00.000Z | true | false | `publication_gate:scheduled_in_future(scheduledAt=2027-08-17T06:00:00.000Z)` |
 | `ats-recruiting-requirements-guide` | checklist | ats-recruiting | scheduled | 2027-08-15T06:00:00.000Z | true | false | `publication_gate:scheduled_in_future(scheduledAt=2027-08-15T06:00:00.000Z)` |
 | `ats-recruiting-vs-hr-software` | comparison-education | ats-recruiting | scheduled | 2027-08-13T06:00:00.000Z | true | false | `publication_gate:scheduled_in_future(scheduledAt=2027-08-13T06:00:00.000Z)` |
+| `carepatron-plans` | product-pack-factory | hr | published | — | false | true | `seo.indexable=false (incorrect: publication-visible KEEP_INDEX blocked from sitemap)`<br>`fails_isGuideSearchIndexWorthy(factory_product_pack)` |
 | `dropshipping-pod-evaluation-guide` | buying-guide | dropshipping-pod | scheduled | 2027-07-29T06:00:00.000Z | true | false | `publication_gate:scheduled_in_future(scheduledAt=2027-07-29T06:00:00.000Z)` |
 | `dropshipping-pod-requirements-guide` | checklist | dropshipping-pod | scheduled | 2027-07-28T06:00:00.000Z | true | false | `publication_gate:scheduled_in_future(scheduledAt=2027-07-28T06:00:00.000Z)` |
 | `dropshipping-pod-vs-ecommerce-software` | comparison-education | dropshipping-pod | scheduled | 2027-07-27T06:00:00.000Z | true | false | `publication_gate:scheduled_in_future(scheduledAt=2027-07-27T06:00:00.000Z)` |
@@ -230,7 +183,6 @@ Incorrect pattern (fixed): coupling schedule wrappers to `seo.indexable: false`,
 | `helpdesk-ticketing-evaluation-guide` | buying-guide | helpdesk-ticketing | scheduled | 2027-07-18T06:00:00.000Z | true | false | `publication_gate:scheduled_in_future(scheduledAt=2027-07-18T06:00:00.000Z)` |
 | `helpdesk-ticketing-requirements-guide` | checklist | helpdesk-ticketing | scheduled | 2027-07-16T06:00:00.000Z | true | false | `publication_gate:scheduled_in_future(scheduledAt=2027-07-16T06:00:00.000Z)` |
 | `helpdesk-ticketing-vs-customer-service-software` | comparison-education | helpdesk-ticketing | scheduled | 2027-07-14T06:00:00.000Z | true | false | `publication_gate:scheduled_in_future(scheduledAt=2027-07-14T06:00:00.000Z)` |
-| `how-accounting-finance-software-works` | how-to | accounting-finance | scheduled | 2026-09-09T06:00:00.000Z | true | false | `publication_gate:scheduled_in_future(scheduledAt=2026-09-09T06:00:00.000Z)` |
 | `how-ai-website-builder-software-works` | how-to | ai-website-builder | scheduled | 2027-05-10T06:00:00.000Z | true | false | `publication_gate:scheduled_in_future(scheduledAt=2027-05-10T06:00:00.000Z)` |
 | `how-ai-writing-software-works` | how-to | ai-writing | scheduled | 2027-05-09T06:00:00.000Z | true | false | `publication_gate:scheduled_in_future(scheduledAt=2027-05-09T06:00:00.000Z)` |
 | `how-analytics-bi-software-works` | how-to | analytics-bi | scheduled | 2027-02-09T06:00:00.000Z | true | false | `publication_gate:scheduled_in_future(scheduledAt=2027-02-09T06:00:00.000Z)` |
@@ -313,102 +265,17 @@ Incorrect pattern (fixed): coupling schedule wrappers to `seo.indexable: false`,
 | `website-digital-presence-evaluation-guide` | buying-guide | website-digital-presence | scheduled | 2027-01-17T06:00:00.000Z | true | false | `publication_gate:scheduled_in_future(scheduledAt=2027-01-17T06:00:00.000Z)` |
 | `website-digital-presence-requirements-guide` | checklist | website-digital-presence | scheduled | 2027-01-15T06:00:00.000Z | true | false | `publication_gate:scheduled_in_future(scheduledAt=2027-01-15T06:00:00.000Z)` |
 | `website-digital-presence-vs-ecommerce-software` | comparison-education | website-digital-presence | scheduled | 2027-01-13T06:00:00.000Z | true | false | `publication_gate:scheduled_in_future(scheduledAt=2027-01-13T06:00:00.000Z)` |
-| `what-is-affinity` | product-explainer | crm | scheduled | 2026-10-28T06:00:00.000Z | false | false | `publication_gate:scheduled_in_future(scheduledAt=2026-10-28T06:00:00.000Z)`<br>`seo.indexable=false` |
-| `what-is-agile-crm` | product-explainer | crm | scheduled | 2026-10-25T06:00:00.000Z | false | false | `publication_gate:scheduled_in_future(scheduledAt=2026-10-25T06:00:00.000Z)`<br>`seo.indexable=false` |
-| `what-is-aircall` | product-explainer | voip-business-phone | scheduled | 2027-06-27T06:00:00.000Z | false | false | `publication_gate:scheduled_in_future(scheduledAt=2027-06-27T06:00:00.000Z)`<br>`seo.indexable=false` |
-| `what-is-alidrop` | product-explainer | dropshipping-pod | published | — | false | true | `seo.indexable=false (incorrect: publication-visible KEEP_INDEX blocked from sitemap)` |
-| `what-is-apptivo` | product-explainer | crm | scheduled | 2026-10-28T06:00:00.000Z | false | false | `publication_gate:scheduled_in_future(scheduledAt=2026-10-28T06:00:00.000Z)`<br>`seo.indexable=false` |
-| `what-is-attio` | product-explainer | crm | scheduled | 2026-10-13T06:00:00.000Z | false | false | `publication_gate:scheduled_in_future(scheduledAt=2026-10-13T06:00:00.000Z)`<br>`seo.indexable=false` |
-| `what-is-birch` | product-explainer | ppc-advertising | published | — | false | true | `seo.indexable=false (incorrect: publication-visible KEEP_INDEX blocked from sitemap)` |
-| `what-is-bitrix24` | product-explainer | crm | scheduled | 2026-10-19T06:00:00.000Z | false | false | `publication_gate:scheduled_in_future(scheduledAt=2026-10-19T06:00:00.000Z)`<br>`seo.indexable=false` |
-| `what-is-brand24` | product-explainer | marketing | scheduled | 2026-10-23T06:00:00.000Z | false | false | `publication_gate:scheduled_in_future(scheduledAt=2026-10-23T06:00:00.000Z)`<br>`seo.indexable=false` |
-| `what-is-breezy-hr` | product-explainer | ats-recruiting | scheduled | 2026-12-27T06:00:00.000Z | false | false | `publication_gate:scheduled_in_future(scheduledAt=2026-12-27T06:00:00.000Z)`<br>`seo.indexable=false` |
-| `what-is-bright-data` | product-explainer | it-development | scheduled | 2027-01-02T06:00:00.000Z | false | false | `publication_gate:scheduled_in_future(scheduledAt=2027-01-02T06:00:00.000Z)`<br>`seo.indexable=false` |
-| `what-is-callhippo` | product-explainer | voip-business-phone | scheduled | 2027-06-25T06:00:00.000Z | false | false | `publication_gate:scheduled_in_future(scheduledAt=2027-06-25T06:00:00.000Z)`<br>`seo.indexable=false` |
-| `what-is-carepatron` | product-explainer | hr | scheduled | 2026-12-26T06:00:00.000Z | false | false | `publication_gate:scheduled_in_future(scheduledAt=2026-12-26T06:00:00.000Z)`<br>`seo.indexable=false` |
-| `what-is-cometchat` | product-explainer | live-chat | published | — | false | true | `seo.indexable=false (incorrect: publication-visible KEEP_INDEX blocked from sitemap)` |
-| `what-is-connecteam` | product-explainer | time-attendance | scheduled | 2026-12-26T06:00:00.000Z | false | false | `publication_gate:scheduled_in_future(scheduledAt=2026-12-26T06:00:00.000Z)`<br>`seo.indexable=false` |
-| `what-is-contractor-foreman` | product-explainer | field-service-operations | scheduled | 2027-03-25T06:00:00.000Z | false | false | `publication_gate:scheduled_in_future(scheduledAt=2027-03-25T06:00:00.000Z)`<br>`seo.indexable=false` |
-| `what-is-copper` | product-explainer | crm | scheduled | 2026-10-13T06:00:00.000Z | false | false | `publication_gate:scheduled_in_future(scheduledAt=2026-10-13T06:00:00.000Z)`<br>`seo.indexable=false` |
-| `what-is-creatio` | product-explainer | crm | scheduled | 2026-10-22T06:00:00.000Z | false | false | `publication_gate:scheduled_in_future(scheduledAt=2026-10-22T06:00:00.000Z)`<br>`seo.indexable=false` |
-| `what-is-databox` | product-explainer | analytics-bi | scheduled | 2027-02-28T06:00:00.000Z | false | false | `publication_gate:scheduled_in_future(scheduledAt=2027-02-28T06:00:00.000Z)`<br>`seo.indexable=false` |
-| `what-is-dext` | product-explainer | accounting-finance | scheduled | 2026-09-28T06:00:00.000Z | false | false | `publication_gate:scheduled_in_future(scheduledAt=2026-09-28T06:00:00.000Z)`<br>`seo.indexable=false` |
-| `what-is-diginius` | product-explainer | ppc-advertising | scheduled | 2027-01-11T06:00:00.000Z | false | false | `publication_gate:scheduled_in_future(scheduledAt=2027-01-11T06:00:00.000Z)`<br>`seo.indexable=false` |
-| `what-is-dynamics-365` | product-explainer | crm | scheduled | 2026-10-10T06:00:00.000Z | false | false | `publication_gate:scheduled_in_future(scheduledAt=2026-10-10T06:00:00.000Z)`<br>`seo.indexable=false` |
-| `what-is-elevenlabs` | product-explainer | ai | scheduled | 2026-11-01T06:00:00.000Z | false | false | `publication_gate:scheduled_in_future(scheduledAt=2026-11-01T06:00:00.000Z)`<br>`seo.indexable=false` |
-| `what-is-emergent` | product-explainer | ai-website-builder | scheduled | 2027-05-29T06:00:00.000Z | false | false | `publication_gate:scheduled_in_future(scheduledAt=2027-05-29T06:00:00.000Z)`<br>`seo.indexable=false` |
-| `what-is-evolve` | product-explainer | marketing | scheduled | 2027-01-11T06:00:00.000Z | false | false | `publication_gate:scheduled_in_future(scheduledAt=2027-01-11T06:00:00.000Z)`<br>`seo.indexable=false` |
-| `what-is-flexiquiz` | product-explainer | lms-course-creation | scheduled | 2026-12-25T06:00:00.000Z | false | false | `publication_gate:scheduled_in_future(scheduledAt=2026-12-25T06:00:00.000Z)`<br>`seo.indexable=false` |
 | `what-is-flippa` | product-explainer | website-digital-presence | scheduled | 2027-01-27T06:00:00.000Z | false | false | `publication_gate:scheduled_in_future(scheduledAt=2027-01-27T06:00:00.000Z)`<br>`seo.indexable=false` |
-| `what-is-foxit` | product-explainer | project-management | scheduled | 2027-02-01T06:00:00.000Z | false | false | `publication_gate:scheduled_in_future(scheduledAt=2027-02-01T06:00:00.000Z)`<br>`seo.indexable=false` |
-| `what-is-freshcaller` | product-explainer | voip-business-phone | scheduled | 2027-06-28T06:00:00.000Z | false | false | `publication_gate:scheduled_in_future(scheduledAt=2027-06-28T06:00:00.000Z)`<br>`seo.indexable=false` |
-| `what-is-freshchat` | product-explainer | live-chat | scheduled | 2026-11-04T06:00:00.000Z | false | false | `publication_gate:scheduled_in_future(scheduledAt=2026-11-04T06:00:00.000Z)`<br>`seo.indexable=false` |
 | `what-is-freshdesk` | product-explainer | helpdesk-ticketing | published | — | false | true | `seo.indexable=false (incorrect: publication-visible KEEP_INDEX blocked from sitemap)` |
-| `what-is-freshmarketer` | product-explainer | landing-pages-cro | published | — | false | true | `seo.indexable=false (incorrect: publication-visible KEEP_INDEX blocked from sitemap)` |
 | `what-is-freshservice` | product-explainer | itsm | scheduled | 2026-11-01T06:00:00.000Z | false | false | `publication_gate:scheduled_in_future(scheduledAt=2026-11-01T06:00:00.000Z)`<br>`seo.indexable=false` |
-| `what-is-freshteam` | product-explainer | ats-recruiting | published | — | false | true | `seo.indexable=false (incorrect: publication-visible KEEP_INDEX blocked from sitemap)` |
-| `what-is-gamma` | product-explainer | ai | scheduled | 2026-11-01T06:00:00.000Z | false | false | `publication_gate:scheduled_in_future(scheduledAt=2026-11-01T06:00:00.000Z)`<br>`seo.indexable=false` |
-| `what-is-getscreen-me` | product-explainer | project-management | scheduled | 2027-02-07T06:00:00.000Z | false | false | `publication_gate:scheduled_in_future(scheduledAt=2027-02-07T06:00:00.000Z)`<br>`seo.indexable=false` |
-| `what-is-hive` | product-explainer | project-management | scheduled | 2027-02-04T06:00:00.000Z | false | false | `publication_gate:scheduled_in_future(scheduledAt=2027-02-04T06:00:00.000Z)`<br>`seo.indexable=false` |
-| `what-is-hubspot` | product-explainer | crm | scheduled | 2026-12-04T06:00:00.000Z | false | false | `publication_gate:scheduled_in_future(scheduledAt=2026-12-04T06:00:00.000Z)`<br>`seo.indexable=false` |
-| `what-is-hynote` | product-explainer | ai | published | — | false | true | `seo.indexable=false (incorrect: publication-visible KEEP_INDEX blocked from sitemap)` |
-| `what-is-inboxally` | product-explainer | email-marketing | scheduled | 2026-09-01T06:00:00.000Z | false | true | `seo.indexable=false (incorrect: publication-visible KEEP_INDEX blocked from sitemap)` |
-| `what-is-insightly` | product-explainer | crm | scheduled | 2026-10-16T06:00:00.000Z | false | false | `publication_gate:scheduled_in_future(scheduledAt=2026-10-16T06:00:00.000Z)`<br>`seo.indexable=false` |
-| `what-is-jibble` | product-explainer | time-attendance | scheduled | 2026-12-28T06:00:00.000Z | false | false | `publication_gate:scheduled_in_future(scheduledAt=2026-12-28T06:00:00.000Z)`<br>`seo.indexable=false` |
-| `what-is-kartra` | product-explainer | landing-pages-cro | scheduled | 2027-01-11T06:00:00.000Z | false | false | `publication_gate:scheduled_in_future(scheduledAt=2027-01-11T06:00:00.000Z)`<br>`seo.indexable=false` |
-| `what-is-keap` | product-explainer | crm | scheduled | 2026-12-01T06:00:00.000Z | false | false | `publication_gate:scheduled_in_future(scheduledAt=2026-12-01T06:00:00.000Z)`<br>`seo.indexable=false` |
-| `what-is-kit` | product-explainer | email-marketing | scheduled | 2026-09-04T06:00:00.000Z | false | true | `seo.indexable=false (incorrect: publication-visible KEEP_INDEX blocked from sitemap)` |
 | `what-is-kixie` | product-explainer | voip-business-phone | scheduled | 2027-06-30T06:00:00.000Z | false | false | `publication_gate:scheduled_in_future(scheduledAt=2027-06-30T06:00:00.000Z)`<br>`seo.indexable=false` |
-| `what-is-krispcall` | product-explainer | voip-business-phone | scheduled | 2027-06-23T06:00:00.000Z | false | false | `publication_gate:scheduled_in_future(scheduledAt=2027-06-23T06:00:00.000Z)`<br>`seo.indexable=false` |
-| `what-is-leadpages` | product-explainer | landing-pages-cro | scheduled | 2027-01-21T06:00:00.000Z | false | false | `publication_gate:scheduled_in_future(scheduledAt=2027-01-21T06:00:00.000Z)`<br>`seo.indexable=false` |
-| `what-is-learnworlds` | product-explainer | marketing | scheduled | 2026-12-21T06:00:00.000Z | false | false | `publication_gate:scheduled_in_future(scheduledAt=2026-12-21T06:00:00.000Z)`<br>`seo.indexable=false` |
-| `what-is-livechat` | product-explainer | customer-service | scheduled | 2026-11-07T06:00:00.000Z | false | false | `publication_gate:scheduled_in_future(scheduledAt=2026-11-07T06:00:00.000Z)`<br>`seo.indexable=false` |
-| `what-is-livestorm` | product-explainer | marketing | scheduled | 2026-11-25T06:00:00.000Z | false | false | `publication_gate:scheduled_in_future(scheduledAt=2026-11-25T06:00:00.000Z)`<br>`seo.indexable=false` |
-| `what-is-lucrovox` | product-explainer | marketing | scheduled | 2027-01-14T06:00:00.000Z | false | false | `publication_gate:scheduled_in_future(scheduledAt=2027-01-14T06:00:00.000Z)`<br>`seo.indexable=false` |
-| `what-is-mailchimp` | product-explainer | crm | scheduled | 2026-10-01T06:00:00.000Z | false | false | `publication_gate:scheduled_in_future(scheduledAt=2026-10-01T06:00:00.000Z)`<br>`seo.indexable=false` |
-| `what-is-mindstudio` | product-explainer | ai | scheduled | 2027-05-28T06:00:00.000Z | false | false | `publication_gate:scheduled_in_future(scheduledAt=2027-05-28T06:00:00.000Z)`<br>`seo.indexable=false` |
-| `what-is-monday` | product-explainer | project-management | scheduled | 2027-02-01T06:00:00.000Z | false | false | `publication_gate:scheduled_in_future(scheduledAt=2027-02-01T06:00:00.000Z)`<br>`seo.indexable=false` |
-| `what-is-monday-sales-crm` | product-explainer | crm | scheduled | 2026-10-07T06:00:00.000Z | false | false | `publication_gate:scheduled_in_future(scheduledAt=2026-10-07T06:00:00.000Z)`<br>`seo.indexable=false` |
-| `what-is-mrpeasy` | product-explainer | accounting-finance | scheduled | 2026-09-29T06:00:00.000Z | false | false | `publication_gate:scheduled_in_future(scheduledAt=2026-09-29T06:00:00.000Z)`<br>`seo.indexable=false` |
-| `what-is-navan` | product-explainer | accounting-finance | scheduled | 2026-09-25T06:00:00.000Z | false | false | `publication_gate:scheduled_in_future(scheduledAt=2026-09-25T06:00:00.000Z)`<br>`seo.indexable=false` |
-| `what-is-nicejob` | product-explainer | customer-service | scheduled | 2026-11-13T06:00:00.000Z | false | false | `publication_gate:scheduled_in_future(scheduledAt=2026-11-13T06:00:00.000Z)`<br>`seo.indexable=false` |
-| `what-is-nimble` | product-explainer | crm | scheduled | 2026-10-25T06:00:00.000Z | false | false | `publication_gate:scheduled_in_future(scheduledAt=2026-10-25T06:00:00.000Z)`<br>`seo.indexable=false` |
-| `what-is-nutshell` | product-explainer | crm | scheduled | 2026-10-16T06:00:00.000Z | false | false | `publication_gate:scheduled_in_future(scheduledAt=2026-10-16T06:00:00.000Z)`<br>`seo.indexable=false` |
-| `what-is-office-timeline` | product-explainer | project-management | scheduled | 2027-02-04T06:00:00.000Z | false | false | `publication_gate:scheduled_in_future(scheduledAt=2027-02-04T06:00:00.000Z)`<br>`seo.indexable=false` |
-| `what-is-oracle-cx` | product-explainer | crm | scheduled | 2026-10-19T06:00:00.000Z | false | false | `publication_gate:scheduled_in_future(scheduledAt=2026-10-19T06:00:00.000Z)`<br>`seo.indexable=false` |
-| `what-is-pardot` | product-explainer | crm | scheduled | 2026-10-01T06:00:00.000Z | false | false | `publication_gate:scheduled_in_future(scheduledAt=2026-10-01T06:00:00.000Z)`<br>`seo.indexable=false` |
-| `what-is-plesk` | product-explainer | web-hosting | scheduled | 2027-01-29T06:00:00.000Z | false | false | `publication_gate:scheduled_in_future(scheduledAt=2027-01-29T06:00:00.000Z)`<br>`seo.indexable=false` |
-| `what-is-printify` | product-explainer | dropshipping-pod | scheduled | 2026-12-04T06:00:00.000Z | false | false | `publication_gate:scheduled_in_future(scheduledAt=2026-12-04T06:00:00.000Z)`<br>`seo.indexable=false` |
-| `what-is-quillbot` | product-explainer | ai | scheduled | 2027-05-25T06:00:00.000Z | false | false | `publication_gate:scheduled_in_future(scheduledAt=2027-05-25T06:00:00.000Z)`<br>`seo.indexable=false` |
-| `what-is-rank-prompt` | product-explainer | ai | scheduled | 2026-11-04T06:00:00.000Z | false | false | `publication_gate:scheduled_in_future(scheduledAt=2026-11-04T06:00:00.000Z)`<br>`seo.indexable=false` |
-| `what-is-rippling` | product-explainer | hr | published | — | false | true | `seo.indexable=false (incorrect: publication-visible KEEP_INDEX blocked from sitemap)` |
-| `what-is-salesforce` | product-explainer | crm | scheduled | 2026-10-04T06:00:00.000Z | false | false | `publication_gate:scheduled_in_future(scheduledAt=2026-10-04T06:00:00.000Z)`<br>`seo.indexable=false` |
 | `what-is-sanebox` | product-explainer | business-communications | scheduled | 2026-09-01T06:00:00.000Z | false | true | `seo.indexable=false (incorrect: publication-visible KEEP_INDEX blocked from sitemap)` |
 | `what-is-sendcloud` | product-explainer | fulfillment-shipping | scheduled | 2026-12-10T06:00:00.000Z | false | false | `publication_gate:scheduled_in_future(scheduledAt=2026-12-10T06:00:00.000Z)`<br>`seo.indexable=false` |
-| `what-is-servicem8` | product-explainer | field-service-operations | scheduled | 2027-03-30T06:00:00.000Z | false | false | `publication_gate:scheduled_in_future(scheduledAt=2027-03-30T06:00:00.000Z)`<br>`seo.indexable=false` |
 | `what-is-shipbob` | product-explainer | fulfillment-shipping | scheduled | 2026-12-07T06:00:00.000Z | false | false | `publication_gate:scheduled_in_future(scheduledAt=2026-12-07T06:00:00.000Z)`<br>`seo.indexable=false` |
 | `what-is-shopify` | product-explainer | ecommerce | scheduled | 2027-01-21T06:00:00.000Z | false | false | `publication_gate:scheduled_in_future(scheduledAt=2027-01-21T06:00:00.000Z)`<br>`seo.indexable=false` |
-| `what-is-shore` | product-explainer | customer-service | scheduled | 2026-11-16T06:00:00.000Z | false | false | `publication_gate:scheduled_in_future(scheduledAt=2026-11-16T06:00:00.000Z)`<br>`seo.indexable=false` |
 | `what-is-snov` | product-explainer | sales-intelligence | scheduled | 2026-09-04T06:00:00.000Z | false | true | `seo.indexable=false (incorrect: publication-visible KEEP_INDEX blocked from sitemap)` |
 | `what-is-socialbee` | product-explainer | social-media-management | scheduled | 2026-10-25T06:00:00.000Z | false | false | `publication_gate:scheduled_in_future(scheduledAt=2026-10-25T06:00:00.000Z)`<br>`seo.indexable=false` |
-| `what-is-spocket` | product-explainer | dropshipping-pod | scheduled | 2026-12-01T06:00:00.000Z | false | false | `publication_gate:scheduled_in_future(scheduledAt=2026-12-01T06:00:00.000Z)`<br>`seo.indexable=false` |
-| `what-is-streak` | product-explainer | crm | scheduled | 2026-10-07T06:00:00.000Z | false | false | `publication_gate:scheduled_in_future(scheduledAt=2026-10-07T06:00:00.000Z)`<br>`seo.indexable=false` |
-| `what-is-sugarcrm` | product-explainer | crm | scheduled | 2026-10-22T06:00:00.000Z | false | false | `publication_gate:scheduled_in_future(scheduledAt=2026-10-22T06:00:00.000Z)`<br>`seo.indexable=false` |
-| `what-is-switcher-studio` | product-explainer | marketing | scheduled | 2026-11-27T06:00:00.000Z | false | false | `publication_gate:scheduled_in_future(scheduledAt=2026-11-27T06:00:00.000Z)`<br>`seo.indexable=false` |
-| `what-is-thordata` | product-explainer | it-development | scheduled | 2027-01-06T06:00:00.000Z | false | false | `publication_gate:scheduled_in_future(scheduledAt=2027-01-06T06:00:00.000Z)`<br>`seo.indexable=false` |
-| `what-is-tidio` | product-explainer | live-chat | published | — | false | true | `seo.indexable=false (incorrect: publication-visible KEEP_INDEX blocked from sitemap)` |
-| `what-is-trainual` | product-explainer | hr | scheduled | 2026-12-23T06:00:00.000Z | false | false | `publication_gate:scheduled_in_future(scheduledAt=2026-12-23T06:00:00.000Z)`<br>`seo.indexable=false` |
-| `what-is-turbotic` | product-explainer | ai | published | — | false | true | `seo.indexable=false (incorrect: publication-visible KEEP_INDEX blocked from sitemap)` |
 | `what-is-ueni` | product-explainer | website-digital-presence | scheduled | 2027-01-25T06:00:00.000Z | false | false | `publication_gate:scheduled_in_future(scheduledAt=2027-01-25T06:00:00.000Z)`<br>`seo.indexable=false` |
-| `what-is-vektoros` | product-explainer | project-management | scheduled | 2027-02-10T06:00:00.000Z | false | false | `publication_gate:scheduled_in_future(scheduledAt=2027-02-10T06:00:00.000Z)`<br>`seo.indexable=false` |
-| `what-is-webcatalog` | product-explainer | project-management | scheduled | 2027-02-07T06:00:00.000Z | false | false | `publication_gate:scheduled_in_future(scheduledAt=2027-02-07T06:00:00.000Z)`<br>`seo.indexable=false` |
 | `what-is-webinarjam-everwebinar` | product-explainer | webinar-virtual-events | scheduled | 2026-11-23T06:00:00.000Z | false | false | `publication_gate:scheduled_in_future(scheduledAt=2026-11-23T06:00:00.000Z)`<br>`seo.indexable=false` |
-| `what-is-wegic` | product-explainer | ai | scheduled | 2027-05-26T06:00:00.000Z | false | false | `publication_gate:scheduled_in_future(scheduledAt=2027-05-26T06:00:00.000Z)`<br>`seo.indexable=false` |
-| `what-is-whatconverts` | product-explainer | marketing | scheduled | 2027-02-24T06:00:00.000Z | false | false | `publication_gate:scheduled_in_future(scheduledAt=2027-02-24T06:00:00.000Z)`<br>`seo.indexable=false` |
-| `what-is-writesonic` | product-explainer | ai | scheduled | 2027-05-30T06:00:00.000Z | false | false | `publication_gate:scheduled_in_future(scheduledAt=2027-05-30T06:00:00.000Z)`<br>`seo.indexable=false` |
-| `what-is-zendesk` | product-explainer | crm | scheduled | 2026-10-04T06:00:00.000Z | false | false | `publication_gate:scheduled_in_future(scheduledAt=2026-10-04T06:00:00.000Z)`<br>`seo.indexable=false` |
 | `what-is-zenzap` | product-explainer | business-communications | scheduled | 2026-09-01T06:00:00.000Z | false | true | `seo.indexable=false (incorrect: publication-visible KEEP_INDEX blocked from sitemap)` |
-| `what-is-zoho-crm` | product-explainer | crm | scheduled | 2026-10-10T06:00:00.000Z | false | false | `publication_gate:scheduled_in_future(scheduledAt=2026-10-10T06:00:00.000Z)`<br>`seo.indexable=false` |
-| `what-is-zoho-desk` | product-explainer | customer-service | scheduled | 2026-11-10T06:00:00.000Z | false | false | `publication_gate:scheduled_in_future(scheduledAt=2026-11-10T06:00:00.000Z)`<br>`seo.indexable=false` |
-| `what-is-zypper` | product-explainer | social-media-marketing | scheduled | 2026-10-25T06:00:00.000Z | false | false | `publication_gate:scheduled_in_future(scheduledAt=2026-10-25T06:00:00.000Z)`<br>`seo.indexable=false` |
 

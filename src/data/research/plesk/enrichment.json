@@ -171,6 +171,29 @@
       ]
     }
   ],
+  "integrationSupport": [
+    {
+      "integrationSlug": "wordpress",
+      "kind": "native",
+      "sourceIds": [
+        "plesk-product-official"
+      ]
+    },
+    {
+      "integrationSlug": "docker",
+      "kind": "native",
+      "sourceIds": [
+        "plesk-product-official"
+      ]
+    },
+    {
+      "integrationSlug": "lets-encrypt",
+      "kind": "native",
+      "sourceIds": [
+        "plesk-product-official"
+      ]
+    }
+  ],
   "aiCapabilities": [
     {
       "capability": "other",
@@ -196,29 +219,6 @@
     {
       "capability": "recommendations",
       "availability": "not-supported",
-      "sourceIds": [
-        "plesk-product-official"
-      ]
-    }
-  ],
-  "integrationSupport": [
-    {
-      "integrationSlug": "wordpress",
-      "kind": "native",
-      "sourceIds": [
-        "plesk-product-official"
-      ]
-    },
-    {
-      "integrationSlug": "docker",
-      "kind": "native",
-      "sourceIds": [
-        "plesk-product-official"
-      ]
-    },
-    {
-      "integrationSlug": "lets-encrypt",
-      "kind": "native",
       "sourceIds": [
         "plesk-product-official"
       ]
@@ -302,81 +302,6 @@
       "isEditorial": false
     }
   ],
-  "pricing": {
-    "currency": "USD",
-    "model": "flat",
-    "hasFreePlan": false,
-    "hasFreeTrial": true,
-    "plans": [
-      {
-        "id": "plan-web-admin",
-        "slug": "web-admin",
-        "name": "Web Admin Edition",
-        "isFree": false,
-        "contactSales": false,
-        "hasFreeTrial": true,
-        "trialDays": 14,
-        "highlighted": true,
-        "rules": [
-          {
-            "kind": "flat",
-            "amount": 16.99,
-            "currency": "USD",
-            "interval": "month",
-            "amountPeriod": "month"
-          }
-        ],
-        "description": "~$16.99/month VPS licence — admin panel for up to limited domains/sites (edition dependent)."
-      },
-      {
-        "id": "plan-web-pro",
-        "slug": "web-pro",
-        "name": "Web Pro Edition",
-        "isFree": false,
-        "contactSales": false,
-        "hasFreeTrial": true,
-        "trialDays": 14,
-        "highlighted": false,
-        "rules": [
-          {
-            "kind": "flat",
-            "amount": 23.99,
-            "currency": "USD",
-            "interval": "month",
-            "amountPeriod": "month"
-          }
-        ],
-        "description": "Higher-tier panel for developers/resellers needing more domains and WordPress/docker tooling."
-      },
-      {
-        "id": "plan-web-host",
-        "slug": "web-host",
-        "name": "Web Host Edition",
-        "isFree": false,
-        "contactSales": false,
-        "hasFreeTrial": true,
-        "trialDays": 14,
-        "highlighted": false,
-        "rules": [
-          {
-            "kind": "flat",
-            "amount": 41.99,
-            "currency": "USD",
-            "interval": "month",
-            "amountPeriod": "month"
-          }
-        ],
-        "description": "Host/reseller edition with multi-customer management — confirm live pricing for server type."
-      }
-    ],
-    "notes": "Verified 2026-08-18 from plesk.com/pricing (high confidence). Web Admin Edition ~$16.99/mo VPS licence commonly cited; Web Pro/Web Host higher. Pricing varies by server type (VPS vs dedicated) and edition. 14-day trial. Affiliate aff-plesk with published reader offer history. Affiliate economics excluded from scoring.",
-    "verifiedAt": "2026-08-18T09:30:00.000Z",
-    "sourceIds": [
-      "plesk-pricing-official"
-    ],
-    "startingPriceMonthly": 16.99,
-    "trialDays": 14
-  },
   "screenshots": [
     {
       "id": "plesk-shot-overview",
@@ -472,13 +397,13 @@
       "demonstratedDimensionIds": [],
       "requirementCriterionIds": [],
       "workflowStageIds": [],
+      "mediaContext": "general-workflow",
       "reportedOutcomes": [],
       "placements": [
         "overview",
         "features",
         "evidence"
       ],
-      "mediaContext": "general-workflow",
       "purpose": "Official Plesk video for product research pages",
       "demonstratesCaption": "How Plesk presents the product in an official vendor video.",
       "editorialCommentary": "Official vendor demo — treat as UI/workflow evidence, not SoftwareGlimpse scoring.",
@@ -496,11 +421,81 @@
       "status": "published"
     }
   ],
-  "sourceIds": [
-    "plesk-product-official",
-    "plesk-pricing-official"
-  ],
-  "notes": "IT Wave-1 onboarding enrichment from first-party research 2026-08-18T09:30:00.000Z. handsOnTesting=false. membershipRole=primary. jobCluster=hosting-operations.",
+  "pricing": {
+    "currency": "USD",
+    "model": "flat",
+    "hasFreePlan": false,
+    "hasFreeTrial": true,
+    "plans": [
+      {
+        "id": "plan-web-admin",
+        "slug": "web-admin",
+        "name": "Web Admin Edition",
+        "isFree": false,
+        "contactSales": false,
+        "hasFreeTrial": true,
+        "trialDays": 14,
+        "highlighted": true,
+        "rules": [
+          {
+            "kind": "flat",
+            "amount": 16.99,
+            "currency": "USD",
+            "interval": "month",
+            "amountPeriod": "month"
+          }
+        ],
+        "description": "~$16.99/month VPS licence — admin panel for up to limited domains/sites (edition dependent)."
+      },
+      {
+        "id": "plan-web-pro",
+        "slug": "web-pro",
+        "name": "Web Pro Edition",
+        "isFree": false,
+        "contactSales": false,
+        "hasFreeTrial": true,
+        "trialDays": 14,
+        "highlighted": false,
+        "rules": [
+          {
+            "kind": "flat",
+            "amount": 23.99,
+            "currency": "USD",
+            "interval": "month",
+            "amountPeriod": "month"
+          }
+        ],
+        "description": "Higher-tier panel for developers/resellers needing more domains and WordPress/docker tooling."
+      },
+      {
+        "id": "plan-web-host",
+        "slug": "web-host",
+        "name": "Web Host Edition",
+        "isFree": false,
+        "contactSales": false,
+        "hasFreeTrial": true,
+        "trialDays": 14,
+        "highlighted": false,
+        "rules": [
+          {
+            "kind": "flat",
+            "amount": 41.99,
+            "currency": "USD",
+            "interval": "month",
+            "amountPeriod": "month"
+          }
+        ],
+        "description": "Host/reseller edition with multi-customer management — confirm live pricing for server type."
+      }
+    ],
+    "notes": "Verified 2026-08-18 from plesk.com/pricing (high confidence). Web Admin Edition ~$16.99/mo VPS licence commonly cited; Web Pro/Web Host higher. Pricing varies by server type (VPS vs dedicated) and edition. 14-day trial. Affiliate aff-plesk with published reader offer history. Affiliate economics excluded from scoring.",
+    "verifiedAt": "2026-09-10T11:43:07.639Z",
+    "sourceIds": [
+      "plesk-pricing-official"
+    ],
+    "startingPriceMonthly": 16.99,
+    "trialDays": 14
+  },
   "domainCheckedAt": {
     "identity": "2026-08-18T09:30:00.000Z",
     "pricing": "2026-08-18T09:30:00.000Z",
@@ -514,5 +509,10 @@
     "limits": "2026-08-18T09:30:00.000Z",
     "security-compliance": "2026-08-18T09:30:00.000Z"
   },
-  "updatedAt": "2026-08-18T14:00:00.000Z"
+  "sourceIds": [
+    "plesk-product-official",
+    "plesk-pricing-official"
+  ],
+  "updatedAt": "2026-08-18T14:00:00.000Z",
+  "notes": "IT Wave-1 onboarding enrichment from first-party research 2026-08-18T09:30:00.000Z. handsOnTesting=false. membershipRole=primary. jobCluster=hosting-operations."
 }

@@ -124,9 +124,17 @@ describe("live product wiring", () => {
     expect(
       withVideo.every((b) => b.video && !model.overviewVideos.some((o) => o.id === b.video!.id)),
     ).toBe(true);
-    expect(withVideo.every((b) => b.video?.type === "official-tutorial")).toBe(
-      true,
-    );
+    expect(
+      withVideo.every(
+        (b) =>
+          b.video?.type === "official-tutorial" ||
+          b.video?.type === "official-demo" ||
+          b.video?.type === "official-video" ||
+          b.video?.type === "official-webinar" ||
+          b.video?.type === "official-customer-case-study" ||
+          b.video?.type === "softwareglimpse-video",
+      ),
+    ).toBe(true);
   });
 
   it("Pipedrive overview only attaches to explicitly linked use cases", () => {

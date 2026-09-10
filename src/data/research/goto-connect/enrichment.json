@@ -1,6 +1,6 @@
 {
   "productSlug": "goto-connect",
-  "shortDescription": "GoTo Connect is a cloud business phone / UCaaS platform (evolved from Jive) aimed at remote and multi-location teams: softphones, unlimited auto attendants and queues, video meetings (up to 250), team messaging, SMS, and optional CX / Contact Center ladders with shared inbox and digital channels. First-party pricing (goto.com/connect/pricing, checked 2026-08-17) routes every plan to sales \u2014 no published per-seat dollars. Industry corroboration commonly cites Phone System ~$26\u2013$29, CX ~$32\u2013$34 and Contact Center ~$80 per user/month, but those are medium/low confidence research ranges, not vendor list prices. AI Receptionist is an add-on across Phone System tiers.",
+  "shortDescription": "GoTo Connect is a cloud business phone / UCaaS platform (evolved from Jive) aimed at remote and multi-location teams: softphones, unlimited auto attendants and queues, video meetings (up to 250), team messaging, SMS, and optional CX / Contact Center ladders with shared inbox and digital channels. First-party pricing (goto.com/connect/pricing, checked 2026-08-17) routes every plan to sales — no published per-seat dollars. Industry corroboration commonly cites Phone System ~$26–$29, CX ~$32–$34 and Contact Center ~$80 per user/month, but those are medium/low confidence research ranges, not vendor list prices. AI Receptionist is an add-on across Phone System tiers.",
   "featureSupport": [
     {
       "featureSlug": "cloud-phone",
@@ -172,40 +172,6 @@
       ]
     }
   ],
-  "aiCapabilities": [
-    {
-      "capability": "summaries",
-      "availability": "supported",
-      "sourceIds": [
-        "goto-connect-product-official"
-      ],
-      "notes": "Vendor label: meeting summary."
-    },
-    {
-      "capability": "summaries",
-      "availability": "add-on",
-      "sourceIds": [
-        "goto-connect-product-official"
-      ],
-      "notes": "Vendor label: call summaries."
-    },
-    {
-      "capability": "assistant",
-      "availability": "add-on",
-      "sourceIds": [
-        "goto-connect-product-official"
-      ],
-      "notes": "Vendor label: receptionist."
-    },
-    {
-      "capability": "other",
-      "availability": "higher-plan-only",
-      "sourceIds": [
-        "goto-connect-product-official"
-      ],
-      "notes": "Vendor label: chat analysis."
-    }
-  ],
   "integrationSupport": [
     {
       "integrationSlug": "salesforce",
@@ -250,9 +216,43 @@
       ]
     }
   ],
+  "aiCapabilities": [
+    {
+      "capability": "summaries",
+      "availability": "supported",
+      "sourceIds": [
+        "goto-connect-product-official"
+      ],
+      "notes": "Vendor label: meeting summary."
+    },
+    {
+      "capability": "summaries",
+      "availability": "add-on",
+      "sourceIds": [
+        "goto-connect-product-official"
+      ],
+      "notes": "Vendor label: call summaries."
+    },
+    {
+      "capability": "assistant",
+      "availability": "add-on",
+      "sourceIds": [
+        "goto-connect-product-official"
+      ],
+      "notes": "Vendor label: receptionist."
+    },
+    {
+      "capability": "other",
+      "availability": "higher-plan-only",
+      "sourceIds": [
+        "goto-connect-product-official"
+      ],
+      "notes": "Vendor label: chat analysis."
+    }
+  ],
   "vendorPositioning": [
     {
-      "claim": "All-in-one voice and video software for modern workplaces \u2014 cloud phone, meetings and messaging with a path into customer experience.",
+      "claim": "All-in-one voice and video software for modern workplaces — cloud phone, meetings and messaging with a path into customer experience.",
       "audienceHints": [
         "Remote and multi-location teams wanting phone + meetings + messaging from one vendor",
         "Buyers who may grow into CX digital channels or Contact Center later",
@@ -282,7 +282,7 @@
   "limitations": [
     {
       "kind": "other",
-      "description": "No published self-serve seat dollars \u2014 every plan is sales-quoted",
+      "description": "No published self-serve seat dollars — every plan is sales-quoted",
       "sourceIds": [
         "goto-connect-product-official"
       ],
@@ -329,64 +329,6 @@
       "isEditorial": false
     }
   ],
-  "pricing": {
-    "currency": "USD",
-    "model": "subscription",
-    "hasFreePlan": false,
-    "hasFreeTrial": true,
-    "plans": [
-      {
-        "id": "plan-phone-system",
-        "slug": "phone-system",
-        "name": "Phone System",
-        "isFree": false,
-        "contactSales": true,
-        "hasFreeTrial": true,
-        "highlighted": false,
-        "rules": [],
-        "description": "Core cloud phone + meetings + messaging. Public page is quote-only (2026-08-17). Industry research sometimes cites ~$26\u2013$29/user/month \u2014 low confidence; confirm with sales."
-      },
-      {
-        "id": "plan-cx",
-        "slug": "cx",
-        "name": "Customer Experience (CX)",
-        "isFree": false,
-        "contactSales": true,
-        "hasFreeTrial": false,
-        "highlighted": true,
-        "rules": [],
-        "description": "Adds shared inbox, web chat, WhatsApp/social channels, surveys and richer reporting. Quote-based."
-      },
-      {
-        "id": "plan-cx-complete",
-        "slug": "cx-complete",
-        "name": "CX Complete",
-        "isFree": false,
-        "contactSales": true,
-        "hasFreeTrial": false,
-        "highlighted": false,
-        "rules": [],
-        "description": "Phone + AI-powered CX packaging for growing businesses \u2014 contact sales."
-      },
-      {
-        "id": "plan-contact-center",
-        "slug": "contact-center",
-        "name": "Contact Center",
-        "isFree": false,
-        "contactSales": true,
-        "hasFreeTrial": false,
-        "highlighted": false,
-        "rules": [],
-        "description": "Agent softphone, skill routing, monitoring, auto-dialer and supervisor tooling \u2014 separate quote ladder."
-      }
-    ],
-    "notes": "Confirmed 2026-08-17: goto.com/connect/pricing publishes Phone System, Customer Experience (CX), CX Complete and Contact Center feature matrices but requires talking to sales for dollars \u2014 no self-serve seat prices. Research ranges from industry sources (~$26 Phone System / ~$34 CX / ~$80 Contact Center) are low-to-medium confidence only. AI Receptionist add-on. Do not invent precise dollars; quote custom packaging as primary commercial fact.",
-    "verifiedAt": "2026-08-17T18:00:00.000Z",
-    "sourceIds": [
-      "goto-connect-pricing-official"
-    ],
-    "startingPriceMonthly": 26
-  },
   "screenshots": [
     {
       "id": "goto-connect-shot-ai-receptionist",
@@ -397,18 +339,20 @@
       "checkedAt": "2026-08-17T17:00:00.000Z",
       "annotation": "Official GoTo YouTube thumbnail showing GoTo Connect product UI",
       "kind": "vendor-ui",
-      "featureIds": []
+      "featureIds": [],
+      "useCaseIds": []
     },
     {
       "id": "goto-connect-shot-grasshopper-hero",
       "src": "/vendor-ui/goto-connect/grasshopper-hero.png",
       "alt": "GoTo family Grasshopper hero product banner",
-      "caption": "Related GoTo family product hero (Grasshopper) from official Sitecore CDN \u2014 GoTo Connect pages were bot-blocked at capture time.",
+      "caption": "Related GoTo family product hero (Grasshopper) from official Sitecore CDN — GoTo Connect pages were bot-blocked at capture time.",
       "source": "https://grasshopper.com/",
       "checkedAt": "2026-08-17T17:00:00.000Z",
       "annotation": "Official GoTo Sitecore CDN marketing frame (Grasshopper sibling under GoTo)",
       "kind": "vendor-ui",
-      "featureIds": []
+      "featureIds": [],
+      "useCaseIds": []
     },
     {
       "id": "goto-connect-shot-webinar-2",
@@ -419,7 +363,8 @@
       "checkedAt": "2026-08-17T17:00:00.000Z",
       "annotation": "Official GoTo YouTube thumbnail showing product UI",
       "kind": "vendor-ui",
-      "featureIds": []
+      "featureIds": [],
+      "useCaseIds": []
     },
     {
       "id": "goto-connect-shot-ai-receptionist-hq",
@@ -430,7 +375,8 @@
       "checkedAt": "2026-08-17T17:00:00.000Z",
       "annotation": "Official GoTo YouTube thumbnail showing GoTo Connect product UI",
       "kind": "vendor-ui",
-      "featureIds": []
+      "featureIds": [],
+      "useCaseIds": []
     },
     {
       "id": "goto-connect-shot-story-ui",
@@ -441,7 +387,8 @@
       "checkedAt": "2026-08-17T17:00:00.000Z",
       "annotation": "Official GoTo Sitecore CDN marketing UI frame",
       "kind": "vendor-ui",
-      "featureIds": []
+      "featureIds": [],
+      "useCaseIds": []
     },
     {
       "id": "goto-connect-shot-story-ui-2",
@@ -452,7 +399,8 @@
       "checkedAt": "2026-08-17T17:00:00.000Z",
       "annotation": "Official GoTo Sitecore CDN marketing UI frame",
       "kind": "vendor-ui",
-      "featureIds": []
+      "featureIds": [],
+      "useCaseIds": []
     }
   ],
   "media": [
@@ -468,7 +416,7 @@
       "videoId": "1tUmre4sxFc",
       "providerId": "1tUmre4sxFc",
       "embedUrl": "https://www.youtube-nocookie.com/embed/1tUmre4sxFc",
-      "title": "On-Demand Webinar \u2013 Revolutionize Every Call with GoTo Connect\u2019s AI Receptionist",
+      "title": "On-Demand Webinar – Revolutionize Every Call with GoTo Connect’s AI Receptionist",
       "description": "Official GoTo Connect AI Receptionist webinar from the GoTo channel.",
       "thumbnailUrl": "https://i.ytimg.com/vi/1tUmre4sxFc/hqdefault.jpg",
       "sourceOrganization": "GoTo",
@@ -496,16 +444,16 @@
       "demonstratedDimensionIds": [],
       "requirementCriterionIds": [],
       "workflowStageIds": [],
+      "mediaContext": "general-workflow",
       "reportedOutcomes": [],
       "placements": [
         "overview",
         "features",
         "evidence"
       ],
-      "mediaContext": "general-workflow",
       "purpose": "Official GoTo Connect video for product research pages",
       "demonstratesCaption": "How GoTo Connect presents the product in an official vendor video.",
-      "editorialCommentary": "Official vendor demo \u2014 treat as UI/workflow evidence, not SoftwareGlimpse scoring.",
+      "editorialCommentary": "Official vendor demo — treat as UI/workflow evidence, not SoftwareGlimpse scoring.",
       "whatThisShows": [
         "GoTo Connect product surfaces as shown in the official vendor video",
         "UI/workflow layout marketed by the vendor"
@@ -559,16 +507,16 @@
       "demonstratedDimensionIds": [],
       "requirementCriterionIds": [],
       "workflowStageIds": [],
+      "mediaContext": "general-workflow",
       "reportedOutcomes": [],
       "placements": [
         "overview",
         "features",
         "evidence"
       ],
-      "mediaContext": "general-workflow",
       "purpose": "Official GoTo Connect video for product research pages",
       "demonstratesCaption": "How GoTo Connect presents the product in an official vendor video.",
-      "editorialCommentary": "Official vendor demo \u2014 treat as UI/workflow evidence, not SoftwareGlimpse scoring.",
+      "editorialCommentary": "Official vendor demo — treat as UI/workflow evidence, not SoftwareGlimpse scoring.",
       "whatThisShows": [
         "GoTo Connect product surfaces as shown in the official vendor video",
         "UI/workflow layout marketed by the vendor"
@@ -583,12 +531,64 @@
       "status": "published"
     }
   ],
-  "sourceIds": [
-    "goto-connect-product-official",
-    "goto-connect-pricing-official",
-    "goto-connect-product"
-  ],
-  "notes": "Business-communications Priority-2 onboarding enrichment from first-party research 2026-08-17T18:00:00.000Z. handsOnTesting=false. membershipRole=primary. jobCluster=cloud-phone.",
+  "pricing": {
+    "currency": "USD",
+    "model": "subscription",
+    "hasFreePlan": false,
+    "hasFreeTrial": true,
+    "plans": [
+      {
+        "id": "plan-phone-system",
+        "slug": "phone-system",
+        "name": "Phone System",
+        "isFree": false,
+        "contactSales": true,
+        "hasFreeTrial": true,
+        "highlighted": false,
+        "rules": [],
+        "description": "Core cloud phone + meetings + messaging. Public page is quote-only (2026-08-17). Industry research sometimes cites ~$26–$29/user/month — low confidence; confirm with sales."
+      },
+      {
+        "id": "plan-cx",
+        "slug": "cx",
+        "name": "Customer Experience (CX)",
+        "isFree": false,
+        "contactSales": true,
+        "hasFreeTrial": false,
+        "highlighted": true,
+        "rules": [],
+        "description": "Adds shared inbox, web chat, WhatsApp/social channels, surveys and richer reporting. Quote-based."
+      },
+      {
+        "id": "plan-cx-complete",
+        "slug": "cx-complete",
+        "name": "CX Complete",
+        "isFree": false,
+        "contactSales": true,
+        "hasFreeTrial": false,
+        "highlighted": false,
+        "rules": [],
+        "description": "Phone + AI-powered CX packaging for growing businesses — contact sales."
+      },
+      {
+        "id": "plan-contact-center",
+        "slug": "contact-center",
+        "name": "Contact Center",
+        "isFree": false,
+        "contactSales": true,
+        "hasFreeTrial": false,
+        "highlighted": false,
+        "rules": [],
+        "description": "Agent softphone, skill routing, monitoring, auto-dialer and supervisor tooling — separate quote ladder."
+      }
+    ],
+    "notes": "Confirmed 2026-08-17: goto.com/connect/pricing publishes Phone System, Customer Experience (CX), CX Complete and Contact Center feature matrices but requires talking to sales for dollars — no self-serve seat prices. Research ranges from industry sources (~$26 Phone System / ~$34 CX / ~$80 Contact Center) are low-to-medium confidence only. AI Receptionist add-on. Do not invent precise dollars; quote custom packaging as primary commercial fact.",
+    "verifiedAt": "2026-09-10T08:16:32.665Z",
+    "sourceIds": [
+      "goto-connect-pricing-official"
+    ],
+    "startingPriceMonthly": 26
+  },
   "domainCheckedAt": {
     "identity": "2026-08-17T18:00:00.000Z",
     "pricing": "2026-08-17T18:00:00.000Z",
@@ -602,5 +602,11 @@
     "limits": "2026-08-17T18:00:00.000Z",
     "security-compliance": "2026-08-17T18:00:00.000Z"
   },
-  "updatedAt": "2026-08-17T17:00:00.000Z"
+  "sourceIds": [
+    "goto-connect-product-official",
+    "goto-connect-pricing-official",
+    "goto-connect-product"
+  ],
+  "updatedAt": "2026-08-17T17:00:00.000Z",
+  "notes": "Business-communications Priority-2 onboarding enrichment from first-party research 2026-08-17T18:00:00.000Z. handsOnTesting=false. membershipRole=primary. jobCluster=cloud-phone."
 }

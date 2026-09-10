@@ -1,10 +1,10 @@
 {
   "slug": "gamma",
-  "updatedAt": "2026-09-07T22:31:21.706Z",
+  "updatedAt": "2026-09-10T11:06:09.161Z",
   "version": "1.0.0",
   "fieldAudit": {
     "slug": "gamma",
-    "checkedAt": "2026-09-07T22:31:21.704Z",
+    "checkedAt": "2026-09-10T11:06:09.157Z",
     "items": [
       {
         "field": "name",
@@ -20,9 +20,9 @@
       },
       {
         "field": "canonical_vendor",
-        "status": "UNKNOWN",
-        "detail": "Company/vendor not documented",
-        "source": "none"
+        "status": "PASS",
+        "detail": "Vendor: Gamma",
+        "source": "seed"
       },
       {
         "field": "category",
@@ -115,11 +115,11 @@
         "source": "enrichment"
       }
     ],
-    "passCount": 16,
+    "passCount": 17,
     "partialCount": 0,
     "missingCount": 0,
-    "unknownCount": 2,
-    "score": 89
+    "unknownCount": 1,
+    "score": 94
   },
   "decisionHub": {
     "whatItIs": "Gamma is an AI presentation and document platform that generates slide decks, docs, and webpages from prompts. Free covers basic creation with limits. Plus is $8/mo on annual billing ($10/mo monthly) for premium AI models, branding removal, and expanded exports.",
@@ -140,10 +140,14 @@
       "Ad-creative depth trails AdCreative.ai for paid-media teams"
     ],
     "coreCapabilities": [
+      "llm chat",
       "writing assist",
       "image generation",
       "presentation generation",
-      "ai presentations"
+      "website generation",
+      "ad creative generation",
+      "custom projects",
+      "enterprise admin"
     ],
     "pricingSummary": "2 documented plans · 1 free · entry paid: Plus",
     "keyTradeoffs": [
@@ -238,7 +242,6 @@
     "evidenceState": "Research/data-based (no completed hands-on test) · Latest verification/research signal: 2026-08-18T09:30:00.000Z · Editorial assessment: approved",
     "nextDecisionStep": "Compare against peers: ElevenLabs vs Gamma",
     "missingSections": [
-      "canonical_vendor",
       "trial"
     ]
   },
@@ -431,13 +434,12 @@
   ],
   "dependentsNeedingRefresh": [],
   "remediation": [
-    "verify:canonical_vendor",
     "verify:trial"
   ],
   "notes": [
-    "fieldAudit score=89",
+    "fieldAudit score=94",
     "decisionHub bestFor=6 notIdeal=6",
     "dependents=37"
   ],
-  "materiallyImproved": false
+  "materiallyImproved": true
 }

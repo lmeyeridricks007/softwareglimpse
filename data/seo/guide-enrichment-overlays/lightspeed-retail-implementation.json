@@ -1,0 +1,210 @@
+{
+  "slug": "lightspeed-retail-implementation",
+  "enrichmentType": "IMPLEMENTATION_GUIDE",
+  "updatedAt": "2026-09-10T12:07:47.493Z",
+  "uniqueValueAdded": [
+    "implementation_workflow",
+    "scenario_analysis",
+    "decision_framework",
+    "limitations_evidence",
+    "pricing_comparison",
+    "sg_original_data",
+    "buyer_checklist"
+  ],
+  "patch": {
+    "summary": "online storefront; product catalog; checkout payments; order management. Basic · online storefront | Core | Plus. QuickBooks, Xero. Brick-and-click retailers who need POS + inventory as the system of record; Multi-location specialty retail outgrowing Square’s simplest online store; Merchants who will use Lightspeed Payments rather than fight processor surcharges. Lightspeed Retail (X-Series POS) is a retail point-of-sale platform with catalog, inventory, and omnichannel selling — including built-in Lightspeed eCommerce on higher tiers. US t Buyer question: is Lightspeed Retail worth it if weekly work actually needs online storefront and online storefront, or does Online-only brands without a retail floor (see Shopify) dominate? Thesis: Lightspeed Retail earns budget when online storefront; product catalog; checkout payments; order management is the operating loop; walk when No free plan or documented self-serve trial — contact sales is the common path because it forces workarounds.",
+    "blocks": [
+      {
+        "id": "da-lightspeed-retail-implementation-1",
+        "type": "direct-answer",
+        "body": "online storefront decides whether Lightspeed Retail implementation is a one-team pilot or a specialist project — confirm unlocks for must-have capabilities before invites.",
+        "bullets": [
+          "Start with: online storefront",
+          "Gate check: confirm paid unlocks before go-live",
+          "Integrate after: data quality pass on QuickBooks"
+        ]
+      },
+      {
+        "id": "impl-lightspeed-retail-implementation-2",
+        "type": "step",
+        "heading": "Lightspeed Retail day-zero to steady-state sequence",
+        "body": "Treat Lightspeed Retail setup as a controlled rollout — not a weekend dump of CSV files.",
+        "stepNumber": 1,
+        "scenarios": [
+          {
+            "title": "Day zero — objects and owners",
+            "body": "Define owners for online storefront, product catalog, checkout payments before inviting the whole org."
+          },
+          {
+            "title": "SMB pilot",
+            "body": "One pipeline / one team proves Brick-and-click retailers who need POS + inventory as the system of record before company-wide seats."
+          },
+          {
+            "title": "Cutover",
+            "body": "Freeze legacy writes briefly; validate QuickBooks and Xero before reopen."
+          }
+        ]
+      },
+      {
+        "id": "df-lightspeed-retail-implementation-3",
+        "type": "decision-framework",
+        "title": "Lightspeed Retail implementation go / no-go",
+        "steps": [
+          {
+            "id": "i-1",
+            "label": "Go when plan unlocks cover must-have capabilities"
+          },
+          {
+            "id": "i-2",
+            "label": "Pause if this limitation blocks ops: No free plan or documented self-serve trial — contact sales is the common path"
+          },
+          {
+            "id": "i-3",
+            "label": "Do not expand seats until online storefront is green"
+          }
+        ]
+      },
+      {
+        "id": "mist-lightspeed-retail-implementation-4",
+        "type": "mistakes",
+        "title": "Lightspeed Retail implementation mistakes",
+        "items": [
+          {
+            "title": "Mistake 1",
+            "body": "No free plan or documented self-serve trial — contact sales is the common path"
+          },
+          {
+            "title": "Mistake 2",
+            "body": "Third-party payment processors may incur a high monthly surcharge versus Lightspeed Payments (~1.5% card-present) — confirm live"
+          },
+          {
+            "title": "Mistake 3",
+            "body": "Built-in eCommerce is a POS-tied storefront, not Ecwid’s embed-on-any-site widget"
+          },
+          {
+            "title": "Mistake 4",
+            "body": "Online-only DTC brands without a retail floor usually fit Square Online or Shopify better"
+          },
+          {
+            "title": "Big-bang invite",
+            "body": "Inviting every user before object design creates junk data that is expensive to unwind."
+          }
+        ]
+      },
+      {
+        "id": "cost-lightspeed-retail-implementation-5",
+        "type": "cost-breakdown",
+        "title": "Lightspeed Retail plan gates that affect rollout",
+        "body": "Implementation fails when unlocks needed for go-live sit on a higher tier than budgeted.",
+        "lines": [
+          {
+            "label": "Basic",
+            "description": "Unlocks: online storefront, product catalog, checkout payments · Suits: teams whose must-have gates appear on this tier"
+          },
+          {
+            "label": "Core",
+            "description": "Suits: teams whose must-have gates appear on this tier"
+          },
+          {
+            "label": "Plus",
+            "description": "Suits: teams whose must-have gates appear on this tier"
+          },
+          {
+            "label": "Contact sales",
+            "description": "Contact sales · Suits: teams that need custom procurement"
+          }
+        ]
+      },
+      {
+        "id": "sel-lightspeed-retail-implementation-6",
+        "type": "selection-checklist",
+        "title": "Lightspeed Retail implementation checklist",
+        "dimensions": [
+          {
+            "id": "prep",
+            "label": "Prep",
+            "options": [
+              "Object model drafted",
+              "Owners named",
+              "Legacy freeze window set"
+            ]
+          },
+          {
+            "id": "pilot",
+            "label": "Pilot",
+            "options": [
+              "online storefront",
+              "Junk-data rules set",
+              "Support path clear"
+            ]
+          },
+          {
+            "id": "scale",
+            "label": "Scale",
+            "options": [
+              "QuickBooks",
+              "Seat expansion criteria written",
+              "Rollback plan noted"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "cta-lightspeed-retail-implementation-7",
+        "type": "interactive-cta",
+        "title": "Validate ecommerce fit before a deep Lightspeed Retail rollout",
+        "body": "If Lightspeed Retail fails constraint fit, stop implementation early.",
+        "href": "/tools/ecommerce-finder/",
+        "ctaLabel": "Open Finder",
+        "variant": "finder"
+      }
+    ],
+    "sections": [
+      {
+        "id": "sec-thesis-lightspeed-retail-implementation",
+        "heading": "Lightspeed Retail buyer question and thesis",
+        "body": "online storefront; product catalog; checkout payments; order management. Basic · online storefront | Core | Plus. QuickBooks, Xero. Brick-and-click retailers who need POS + inventory as the system of record; Multi-location specialty retail outgrowing Square’s simplest online store; Merchants who will use Lightspeed Payments rather than fight processor surcharges. Lightspeed Retail (X-Series POS) is a retail point-of-sale platform with catalog, inventory, and omnichannel selling — including built-in Lightspeed eCommerce on higher tiers. US t. That catalogue mix is the Lightspeed Retail implementation filter — not a generic ecommerce lecture.\n\nBuyer question: is Lightspeed Retail worth it if weekly work actually needs online storefront and online storefront, or does Online-only brands without a retail floor (see Shopify) dominate?\n\nThesis: Lightspeed Retail earns budget when online storefront; product catalog; checkout payments; order management is the operating loop; walk when No free plan or documented self-serve trial — contact sales is the common path because it forces workarounds.\n\nBest for: Brick-and-click retailers who need POS + inventory as the system of record; Multi-location specialty retail outgrowing Square’s simplest online store; Merchants who will use Lightspeed Payments rather than fight processor surcharges (Brick-and-click retailers who need POS + inventory as the system of record).\n\nPoor fit when: Online-only brands without a retail floor (see Shopify); Existing-site owners who only need an embeddable cart (see Ecwid); Teams standardized on Square hardware who want the cheapest online add-on. Avoid if No free plan or documented self-serve trial — contact sales is the common path would block go-live."
+      },
+      {
+        "id": "sec-limits-lightspeed-retail-implementation",
+        "heading": "Lightspeed Retail limitation, pricing interpretation, and alternative context",
+        "body": "Limitation: No free plan or documented self-serve trial — contact sales is the common path; Third-party payment processors may incur a high monthly surcharge versus Lightspeed Payments (~1.5% card-present) — confirm live; Built-in eCommerce is a POS-tied storefront, not Ecwid’s embed-on-any-site widget because it forces process changes or add-ons around Lightspeed Retail when online storefront is the job.\n\nPricing interpretation: no free plan confirmed — scope a paid pilot on Basic with exit criteria before annual seats.\n\nPlan trade-off: you gain online storefront at the expense of Subscription floors vs payment-processing spreads and GMV/overage fees — measure both in the pilot. Researched packaging: Basic · online storefront | Core | Plus.\n\nAlternative context: unlike Square Online, Lightspeed Retail is preferable when Brick-and-click retailers who need POS + inventory as the system of record because online storefront plus online storefront match; prefer Square Online when Online-only brands without a retail floor (see Shopify) because the operating loops differ."
+      },
+      {
+        "id": "sec-scenario-lightspeed-retail-implementation",
+        "heading": "Decision scenario and conclusion for Lightspeed Retail",
+        "body": "Scenario: recommend Lightspeed Retail for Brick-and-click retailers who need POS + inventory as the system of record; do not choose it when Online-only brands without a retail floor (see Shopify) — the jobs diverge at online storefront.\n\nImplementation time: weeks to configure online storefront if QuickBooks, Xero must be green before invites.\n\nIntegrations in research: QuickBooks, Xero.\n\nDecision conclusion: buy Lightspeed Retail when researched fit (Brick-and-click retailers who need POS + inventory as the system of record) beats researched limits (No free plan or documented self-serve trial — contact sales is the common path); otherwise keep researching — do not substitute product names into a generic implementation essay."
+      }
+    ],
+    "checklist": [
+      {
+        "id": "enrich-chk-0",
+        "label": "Draft Lightspeed Retail object owners before invites",
+        "order": 0
+      },
+      {
+        "id": "enrich-chk-1",
+        "label": "Confirm plan unlocks for go-live features",
+        "order": 1
+      },
+      {
+        "id": "enrich-chk-2",
+        "label": "Pilot one team on online storefront",
+        "order": 2
+      },
+      {
+        "id": "enrich-chk-3",
+        "label": "If blocked, evaluate Square Online before sunk-cost expansion",
+        "order": 3
+      }
+    ],
+    "nextAction": {
+      "contentId": "tool:finder:ecommerce",
+      "label": "Open Finder shortlist"
+    }
+  },
+  "notes": [
+    "Implementation: workflow, constraints, mistakes, checklist.",
+    "Type-specific skeleton: IMPLEMENTATION_GUIDE"
+  ]
+}

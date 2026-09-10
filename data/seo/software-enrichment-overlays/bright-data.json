@@ -1,10 +1,10 @@
 {
   "slug": "bright-data",
-  "updatedAt": "2026-09-07T22:31:21.731Z",
+  "updatedAt": "2026-09-10T11:06:09.139Z",
   "version": "1.0.0",
   "fieldAudit": {
     "slug": "bright-data",
-    "checkedAt": "2026-09-07T22:31:21.730Z",
+    "checkedAt": "2026-09-10T11:06:09.137Z",
     "items": [
       {
         "field": "name",
@@ -20,9 +20,9 @@
       },
       {
         "field": "canonical_vendor",
-        "status": "UNKNOWN",
-        "detail": "Company/vendor not documented",
-        "source": "none"
+        "status": "PASS",
+        "detail": "Vendor: Bright Data Ltd.",
+        "source": "seed"
       },
       {
         "field": "category",
@@ -115,11 +115,11 @@
         "source": "enrichment"
       }
     ],
-    "passCount": 16,
+    "passCount": 17,
     "partialCount": 0,
     "missingCount": 0,
-    "unknownCount": 2,
-    "score": 89
+    "unknownCount": 1,
+    "score": 94
   },
   "decisionHub": {
     "whatItIs": "Bright Data operates a large proxy and web data collection network (residential, datacenter, ISP, mobile) with APIs and scraper tooling for engineering and data teams. Pay-as-you-go residential pricing publishes from about $4/GB; committed starter plans commonly begin near $499/month depending on product line and bandwidth. Usage/GB and commitment pricing dominates — not per-seat ITSM math. Compliance and robots.txt policy posture must be validated for each use case. Affiliate via aff-bright-data.",
@@ -140,7 +140,9 @@
       "Not ITSM, observability, source control, or hosting panel"
     ],
     "coreCapabilities": [
+      "cicd actions",
       "proxy network",
+      "dev ai",
       "enterprise security",
       "analytics reporting",
       "web data collection"
@@ -246,7 +248,6 @@
     "evidenceState": "Research/data-based (no completed hands-on test) · Latest verification/research signal: 2026-08-18T09:30:00.000Z · Editorial assessment: approved",
     "nextDecisionStep": "Compare against peers: Plesk vs Bright Data",
     "missingSections": [
-      "canonical_vendor",
       "trial"
     ]
   },
@@ -544,13 +545,12 @@
   ],
   "dependentsNeedingRefresh": [],
   "remediation": [
-    "verify:canonical_vendor",
     "verify:trial"
   ],
   "notes": [
-    "fieldAudit score=89",
+    "fieldAudit score=94",
     "decisionHub bestFor=6 notIdeal=6",
     "dependents=58"
   ],
-  "materiallyImproved": false
+  "materiallyImproved": true
 }

@@ -1,10 +1,10 @@
 {
   "slug": "n8n",
-  "updatedAt": "2026-09-07T22:31:21.845Z",
+  "updatedAt": "2026-09-10T08:15:10.374Z",
   "version": "1.0.0",
   "fieldAudit": {
     "slug": "n8n",
-    "checkedAt": "2026-09-07T22:31:21.844Z",
+    "checkedAt": "2026-09-10T08:15:10.373Z",
     "items": [
       {
         "field": "name",
@@ -20,9 +20,9 @@
       },
       {
         "field": "canonical_vendor",
-        "status": "UNKNOWN",
-        "detail": "Company/vendor not documented",
-        "source": "none"
+        "status": "PASS",
+        "detail": "Vendor: n8n GmbH",
+        "source": "seed"
       },
       {
         "field": "category",
@@ -115,11 +115,11 @@
         "source": "enrichment"
       }
     ],
-    "passCount": 16,
+    "passCount": 17,
     "partialCount": 0,
     "missingCount": 0,
-    "unknownCount": 2,
-    "score": 89
+    "unknownCount": 1,
+    "score": 94
   },
   "decisionHub": {
     "whatItIs": "n8n is a workflow-automation platform with a free Community Edition for self-host and a Cloud ladder priced in EUR. Cloud Starter is €20/mo billed annually (2,500 executions plus AI credits). Pro €50. Business €667. Enterprise quote. Same ai-automation cluster as Zapier — more self-host / execution-volume shaped, not an LLM-assistant peer of ChatGPT. MindStudio is landscape (ai-agents).",
@@ -140,12 +140,14 @@
       "Not a general LLM assistant (ChatGPT) and not MindStudio as the primary agent-builder job"
     ],
     "coreCapabilities": [
+      "llm chat",
+      "writing assist",
+      "agent builder",
       "custom projects",
       "usage credits",
       "connectors",
       "data privacy",
-      "workflow automation",
-      "ai automation"
+      "analytics reporting"
     ],
     "pricingSummary": "5 documented plans · 1 free · entry paid: Cloud Starter",
     "keyTradeoffs": [
@@ -227,7 +229,6 @@
     "evidenceState": "Research/data-based (no completed hands-on test) · Latest verification/research signal: 2026-08-18T18:00:00.000Z · Editorial assessment: approved",
     "nextDecisionStep": "Compare against peers: Zapier vs n8n",
     "missingSections": [
-      "canonical_vendor",
       "trial"
     ]
   },
@@ -405,13 +406,12 @@
   ],
   "dependentsNeedingRefresh": [],
   "remediation": [
-    "verify:canonical_vendor",
     "verify:trial"
   ],
   "notes": [
-    "fieldAudit score=89",
+    "fieldAudit score=94",
     "decisionHub bestFor=6 notIdeal=6",
     "dependents=34"
   ],
-  "materiallyImproved": false
+  "materiallyImproved": true
 }

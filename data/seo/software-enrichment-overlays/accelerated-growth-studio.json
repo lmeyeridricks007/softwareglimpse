@@ -1,10 +1,10 @@
 {
   "slug": "accelerated-growth-studio",
-  "updatedAt": "2026-09-07T22:31:21.996Z",
+  "updatedAt": "2026-09-10T11:06:09.106Z",
   "version": "1.0.0",
   "fieldAudit": {
     "slug": "accelerated-growth-studio",
-    "checkedAt": "2026-09-07T22:31:21.995Z",
+    "checkedAt": "2026-09-10T11:06:09.104Z",
     "items": [
       {
         "field": "name",
@@ -20,9 +20,9 @@
       },
       {
         "field": "canonical_vendor",
-        "status": "UNKNOWN",
-        "detail": "Company/vendor not documented",
-        "source": "none"
+        "status": "PASS",
+        "detail": "Vendor: Accelerated Growth Studio",
+        "source": "seed"
       },
       {
         "field": "category",
@@ -115,11 +115,11 @@
         "source": "enrichment"
       }
     ],
-    "passCount": 15,
+    "passCount": 16,
     "partialCount": 2,
     "missingCount": 0,
-    "unknownCount": 1,
-    "score": 89
+    "unknownCount": 0,
+    "score": 94
   },
   "decisionHub": {
     "whatItIs": "Accelerated Growth Studio is a marketing and growth services platform — campaigns, funnels, and growth consulting packaged for SMB teams. Pricing is services/quote-led (2026-08-19). Marketing-adjacent; not a self-serve MAP like HubSpot.",
@@ -134,10 +134,14 @@
       "Services-heavy — not a classic marketing SaaS"
     ],
     "coreCapabilities": [
-      "forms lead capture",
-      "team collaboration",
+      "content calendar",
+      "funnel builder",
+      "landing pages",
       "marketing automation",
-      "lead nurturing"
+      "forms lead capture",
+      "analytics",
+      "email sms channels",
+      "team collaboration"
     ],
     "pricingSummary": "1 documented plan · entry paid: Enterprise · trial documented on at least one plan",
     "keyTradeoffs": [
@@ -211,9 +215,7 @@
     ],
     "evidenceState": "Research/data-based (no completed hands-on test) · Latest verification/research signal: 2026-08-17T17:00:00.000Z · Editorial assessment: approved",
     "nextDecisionStep": "Compare against peers: Accelerated Growth Studio vs Agorapulse",
-    "missingSections": [
-      "canonical_vendor"
-    ]
+    "missingSections": []
   },
   "dependents": [
     {
@@ -388,13 +390,11 @@
     }
   ],
   "dependentsNeedingRefresh": [],
-  "remediation": [
-    "verify:canonical_vendor"
-  ],
+  "remediation": [],
   "notes": [
-    "fieldAudit score=89",
+    "fieldAudit score=94",
     "decisionHub bestFor=3 notIdeal=3",
     "dependents=34"
   ],
-  "materiallyImproved": false
+  "materiallyImproved": true
 }

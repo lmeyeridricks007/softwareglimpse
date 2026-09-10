@@ -219,5 +219,6 @@ function guessPageType(
   if (pagePath.startsWith("/categories/")) return "category";
   if (pagePath.startsWith("/research/")) return "research";
   if (pagePath.startsWith("/alternatives/")) return "alternatives";
+  if (pagePath.startsWith("/guides/")) return "guide";
   return "pricing";
 }

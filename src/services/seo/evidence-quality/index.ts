@@ -13,6 +13,7 @@ export { buildProductEvidencePack } from "./build-pack";
 export {
   pickPricingSource,
   pickPricingSources,
+  priorPricingFetchBlocks,
   matchPlanNamesInHtml,
   verifyPricingAgainstVendor,
 } from "./verify-pricing";

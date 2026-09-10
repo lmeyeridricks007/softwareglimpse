@@ -1,10 +1,10 @@
 {
   "slug": "asana",
-  "updatedAt": "2026-09-07T22:31:21.528Z",
+  "updatedAt": "2026-09-10T11:46:30.043Z",
   "version": "1.0.0",
   "fieldAudit": {
     "slug": "asana",
-    "checkedAt": "2026-09-07T22:31:21.527Z",
+    "checkedAt": "2026-09-10T11:46:30.041Z",
     "items": [
       {
         "field": "name",
@@ -20,9 +20,9 @@
       },
       {
         "field": "canonical_vendor",
-        "status": "UNKNOWN",
-        "detail": "Company/vendor not documented",
-        "source": "none"
+        "status": "PASS",
+        "detail": "Vendor: Asana, Inc.",
+        "source": "seed"
       },
       {
         "field": "category",
@@ -115,11 +115,11 @@
         "source": "enrichment"
       }
     ],
-    "passCount": 17,
+    "passCount": 18,
     "partialCount": 0,
     "missingCount": 0,
-    "unknownCount": 1,
-    "score": 94
+    "unknownCount": 0,
+    "score": 100
   },
   "decisionHub": {
     "whatItIs": "Asana is a work management platform for tasks, projects, portfolios and goals with strong adoption for marketing, ops and cross-functional teams. Free covers limited users; Starter is $10.99/user/mo annual; Advanced $24.99; Enterprise custom. AI Studio / AI Teammates packaging rides paid tiers with credit models — confirm live. Distinct from engineering trackers like Jira.",
@@ -249,9 +249,7 @@
     ],
     "evidenceState": "Research/data-based (no completed hands-on test) · Latest verification/research signal: 2026-08-17T20:00:00.000Z · Editorial assessment: approved",
     "nextDecisionStep": "Compare against peers: Asana vs monday.com",
-    "missingSections": [
-      "canonical_vendor"
-    ]
+    "missingSections": []
   },
   "dependents": [
     {
@@ -421,13 +419,11 @@
     }
   ],
   "dependentsNeedingRefresh": [],
-  "remediation": [
-    "verify:canonical_vendor"
-  ],
+  "remediation": [],
   "notes": [
-    "fieldAudit score=94",
+    "fieldAudit score=100",
     "decisionHub bestFor=6 notIdeal=6",
     "dependents=33"
   ],
-  "materiallyImproved": false
+  "materiallyImproved": true
 }

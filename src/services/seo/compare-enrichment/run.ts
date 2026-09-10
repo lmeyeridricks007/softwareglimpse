@@ -52,10 +52,6 @@ export function runCompareEnrichmentBatch(
   const queueItems = opts.slugs?.length
     ? opts.slugs
         .map((slug) => {
-          const fromQueue = peekCompareEnrichmentBatch(10_000, opts).find(
-            (q) => q.slug === slug,
-          );
-          if (fromQueue) return fromQueue;
           const comparison = getAllComparisonsUnfiltered().find(
             (c) => c.slug === slug,
           );
@@ -198,10 +194,12 @@ export function runCompareEnrichmentBatch(
     recordFamilyQaHistory(familyQa, { persist: true });
   }
 
-  const remaining = Math.max(
-    0,
-    peekCompareEnrichmentBatch(10_000, opts).length - queueItems.length,
-  );
+  const remaining = opts.slugs?.length
+    ? 0
+    : Math.max(
+        0,
+        peekCompareEnrichmentBatch(10_000, opts).length - queueItems.length,
+      );
 
   return {
     version: COMPARE_ENRICHMENT_VERSION,

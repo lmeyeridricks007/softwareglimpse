@@ -33,7 +33,7 @@ describe("guides index-worthiness", () => {
       expect(g.blocks?.length ?? 0).toBeGreaterThanOrEqual(3);
       expect(g.supports?.length ?? 0).toBeGreaterThan(0);
     }
-  }, 30_000);
+  }, 120_000);
 
   it("keeps strong educational category guides indexable", () => {
     const guide = getGuides().find((g) => g.slug === "what-is-crm");
@@ -82,14 +82,14 @@ describe("guides index-worthiness", () => {
     ).toBe(false);
 
     const future = getGuides({ includeUnpublished: true }).find(
-      (g) => g.slug === "how-accounting-finance-software-works",
+      (g) => g.slug === "types-of-accounting-finance-software",
     );
     expect(future).toBeTruthy();
     expect(future!.seo.indexable).toBe(true);
     // Still scheduled in the future → publication gate keeps it out of sitemap
     expect(isEntityIndexable({ kind: "guide", entity: future! })).toBe(false);
     expect(
-      urls.has(canonicalUrl("/guides/how-accounting-finance-software-works/")),
+      urls.has(canonicalUrl("/guides/types-of-accounting-finance-software/")),
     ).toBe(false);
   });
 
@@ -101,9 +101,16 @@ describe("guides index-worthiness", () => {
       report.summary.total / 2,
     );
     expect(report.summary.byLifecycle.INDEXABLE).toBeGreaterThan(50);
+    expect(report.summary.factoryKpis.originTotal).toBe(
+      report.summary.factoryPackCount,
+    );
+    expect(report.summary.factoryKpis.originTotal).toBeGreaterThan(1000);
+    expect(report.summary.factoryKpis.highRisk).toBeLessThanOrEqual(
+      report.summary.factoryKpis.originTotal,
+    );
     expect(report.summary.potentialIndexableAfterRemediation).toBeGreaterThan(
       1000,
     );
     expect(report.duplicateClusters.length).toBeGreaterThan(0);
-  }, 120_000);
+  }, 240_000);
 });

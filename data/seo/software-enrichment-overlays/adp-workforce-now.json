@@ -1,10 +1,10 @@
 {
   "slug": "adp-workforce-now",
-  "updatedAt": "2026-09-07T22:31:21.636Z",
+  "updatedAt": "2026-09-10T11:10:41.868Z",
   "version": "1.0.0",
   "fieldAudit": {
     "slug": "adp-workforce-now",
-    "checkedAt": "2026-09-07T22:31:21.630Z",
+    "checkedAt": "2026-09-10T11:10:41.867Z",
     "items": [
       {
         "field": "name",
@@ -20,9 +20,9 @@
       },
       {
         "field": "canonical_vendor",
-        "status": "UNKNOWN",
-        "detail": "Company/vendor not documented",
-        "source": "none"
+        "status": "PASS",
+        "detail": "Vendor: ADP, Inc.",
+        "source": "seed"
       },
       {
         "field": "category",
@@ -115,11 +115,11 @@
         "source": "enrichment"
       }
     ],
-    "passCount": 16,
+    "passCount": 17,
     "partialCount": 0,
     "missingCount": 0,
-    "unknownCount": 2,
-    "score": 89
+    "unknownCount": 1,
+    "score": 94
   },
   "decisionHub": {
     "whatItIs": "ADP Workforce Now is ADP’s mid-to-enterprise HCM for payroll, tax filing, HR records, benefits, and optional time/talent modules. Industry coverage consistently describes three named packages — Select (payroll + core HR), Plus (benefits), Premium (time & workforce) — all contact-sales. First-party pages do not publish PEPM. Score as payroll-benefits landscape (compliance-scale), not a Gusto SMB award peer and not a Workday enterprise-HCM peer.",
@@ -140,12 +140,14 @@
       "Not a Workday-class global HCM"
     ],
     "coreCapabilities": [
+      "career site job boards",
+      "interview scheduling",
       "core hris",
       "payroll processing",
-      "hris integrations",
-      "analytics reporting",
-      "ai assistance",
-      "payroll benefits"
+      "frontline comms",
+      "gps geofence clockin",
+      "sop knowledge base",
+      "employee training paths"
     ],
     "pricingSummary": "3 documented plans · entry paid: Select",
     "keyTradeoffs": [
@@ -240,7 +242,6 @@
     "evidenceState": "Research/data-based (no completed hands-on test) · Latest verification/research signal: 2026-08-18T14:00:00.000Z · Editorial assessment: approved",
     "nextDecisionStep": "Compare against peers: ADP Workforce Now vs Gusto",
     "missingSections": [
-      "canonical_vendor",
       "trial"
     ]
   },
@@ -433,13 +434,12 @@
   ],
   "dependentsNeedingRefresh": [],
   "remediation": [
-    "verify:canonical_vendor",
     "verify:trial"
   ],
   "notes": [
-    "fieldAudit score=89",
+    "fieldAudit score=94",
     "decisionHub bestFor=6 notIdeal=6",
     "dependents=37"
   ],
-  "materiallyImproved": false
+  "materiallyImproved": true
 }

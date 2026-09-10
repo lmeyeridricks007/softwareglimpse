@@ -344,7 +344,6 @@ export const financialServicesCrmImplementationGuide: GuidePageInput = {
     "financial-services-crm",
     "financial-services-crm-requirements",
     "financial-services-crm-features",
-    "financial-services-crm-implementation",
     "financial-services-crm-security",
     "financial-services-crm-migration",
     "financial-services-crm-checklist",

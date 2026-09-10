@@ -1,6 +1,6 @@
 # Pricing verification tasks
 
-Updated: 2026-09-08T23:17:49.555Z
+Updated: 2026-09-10T10:34:44.088Z
 
 REQUIRES_REVIEW / LIKELY pricing changes stay unpublished until confirmed.
 
@@ -74,7 +74,7 @@ Pending: **1**
 - tier 5: `/compare/monday-sales-crm-vs-zendesk/` (comparison)
 - tier 5: `/compare/monday-sales-crm-vs-zoho-crm/` (comparison)
 - tier 5: `/compare/monday-vs-monday-sales-crm/` (comparison)
-- _…+8 more_
+- _…+14 more_
 
 Confirm with: `npm run pricing:confirm -- --task 0a8b1a7c3d42cd08`
 

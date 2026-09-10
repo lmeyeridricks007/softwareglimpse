@@ -185,6 +185,29 @@
       ]
     }
   ],
+  "integrationSupport": [
+    {
+      "integrationSlug": "stripe",
+      "kind": "third-party",
+      "sourceIds": [
+        "shopware-product-official"
+      ]
+    },
+    {
+      "integrationSlug": "paypal",
+      "kind": "native",
+      "sourceIds": [
+        "shopware-product-official"
+      ]
+    },
+    {
+      "integrationSlug": "zapier",
+      "kind": "zapier-style",
+      "sourceIds": [
+        "shopware-product-official"
+      ]
+    }
+  ],
   "aiCapabilities": [
     {
       "capability": "assistant",
@@ -210,29 +233,6 @@
     {
       "capability": "recommendations",
       "availability": "supported",
-      "sourceIds": [
-        "shopware-product-official"
-      ]
-    }
-  ],
-  "integrationSupport": [
-    {
-      "integrationSlug": "stripe",
-      "kind": "third-party",
-      "sourceIds": [
-        "shopware-product-official"
-      ]
-    },
-    {
-      "integrationSlug": "paypal",
-      "kind": "native",
-      "sourceIds": [
-        "shopware-product-official"
-      ]
-    },
-    {
-      "integrationSlug": "zapier",
-      "kind": "zapier-style",
       "sourceIds": [
         "shopware-product-official"
       ]
@@ -308,6 +308,45 @@
       "isEditorial": false
     }
   ],
+  "screenshots": [
+    {
+      "id": "shopware-shot-homepage-og",
+      "src": "/vendor-ui/shopware/homepage-og.png",
+      "alt": "Shopware official Open Graph marketing visual",
+      "caption": "Official Open Graph marketing visual from shopware.com.",
+      "source": "https://www.shopware.com/en/",
+      "checkedAt": "2026-08-18T16:00:00.000Z",
+      "annotation": "Official shopware marketing UI asset",
+      "kind": "vendor-ui",
+      "featureIds": [
+        "online-storefront",
+        "product-catalog"
+      ],
+      "useCaseIds": [
+        "online-storefront",
+        "catalog-management"
+      ]
+    },
+    {
+      "id": "shopware-shot-nav-product-tour",
+      "src": "/vendor-ui/shopware/nav-product-tour.png",
+      "alt": "Shopware product tour feature image",
+      "caption": "Shopware product tour feature image from shopware.com.",
+      "source": "https://www.shopware.com/en/",
+      "checkedAt": "2026-08-18T08:00:00.000Z",
+      "annotation": "Official Shopware marketing UI asset",
+      "kind": "vendor-ui",
+      "featureIds": [
+        "online-storefront",
+        "product-catalog"
+      ],
+      "useCaseIds": [
+        "online-storefront",
+        "catalog-management"
+      ]
+    }
+  ],
+  "media": [],
   "pricing": {
     "currency": "USD",
     "model": "hybrid",
@@ -376,56 +415,12 @@
       }
     ],
     "notes": "Verified 2026-08-18 from shopware.com/en/pricing (high confidence for plan names). Community Edition free (MIT) with Fair Usage — paid required above ~€1M GMV. Rise from €600/mo (~$660 USD). Evolve from €2400/mo (contact in this catalogue). Beyond quote-only. USD conversion is approximate (medium confidence). Affiliate economics excluded.",
-    "verifiedAt": "2026-08-18T14:00:00.000Z",
+    "verifiedAt": "2026-09-10T11:41:48.409Z",
     "sourceIds": [
       "shopware-pricing-official"
     ],
     "startingPriceMonthly": 0
   },
-  "screenshots": [
-    {
-      "id": "shopware-shot-homepage-og",
-      "src": "/vendor-ui/shopware/homepage-og.png",
-      "alt": "Shopware official Open Graph marketing visual",
-      "caption": "Official Open Graph marketing visual from shopware.com.",
-      "source": "https://www.shopware.com/en/",
-      "checkedAt": "2026-08-18T16:00:00.000Z",
-      "annotation": "Official shopware marketing UI asset",
-      "kind": "vendor-ui",
-      "featureIds": [
-        "online-storefront",
-        "product-catalog"
-      ],
-      "useCaseIds": [
-        "online-storefront",
-        "catalog-management"
-      ]
-    },
-    {
-      "id": "shopware-shot-nav-product-tour",
-      "src": "/vendor-ui/shopware/nav-product-tour.png",
-      "alt": "Shopware product tour feature image",
-      "caption": "Shopware product tour feature image from shopware.com.",
-      "source": "https://www.shopware.com/en/",
-      "checkedAt": "2026-08-18T08:00:00.000Z",
-      "annotation": "Official Shopware marketing UI asset",
-      "kind": "vendor-ui",
-      "featureIds": [
-        "online-storefront",
-        "product-catalog"
-      ],
-      "useCaseIds": [
-        "online-storefront",
-        "catalog-management"
-      ]
-    }
-  ],
-  "media": [],
-  "sourceIds": [
-    "shopware-product-official",
-    "shopware-pricing-official"
-  ],
-  "notes": "Ecommerce Priority-2 onboarding enrichment from first-party research 2026-08-18T14:00:00.000Z. handsOnTesting=false. membershipRole=primary. jobCluster=open-source-platform.",
   "domainCheckedAt": {
     "identity": "2026-08-18T14:00:00.000Z",
     "pricing": "2026-08-18T14:00:00.000Z",
@@ -439,5 +434,10 @@
     "limits": "2026-08-18T14:00:00.000Z",
     "security-compliance": "2026-08-18T14:00:00.000Z"
   },
-  "updatedAt": "2026-08-18T08:00:00.000Z"
+  "sourceIds": [
+    "shopware-product-official",
+    "shopware-pricing-official"
+  ],
+  "updatedAt": "2026-08-18T08:00:00.000Z",
+  "notes": "Ecommerce Priority-2 onboarding enrichment from first-party research 2026-08-18T14:00:00.000Z. handsOnTesting=false. membershipRole=primary. jobCluster=open-source-platform."
 }

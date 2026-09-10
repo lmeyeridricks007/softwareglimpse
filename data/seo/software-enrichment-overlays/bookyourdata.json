@@ -1,10 +1,10 @@
 {
   "slug": "bookyourdata",
-  "updatedAt": "2026-09-07T22:31:21.093Z",
+  "updatedAt": "2026-09-10T11:06:09.064Z",
   "version": "1.0.0",
   "fieldAudit": {
     "slug": "bookyourdata",
-    "checkedAt": "2026-09-07T22:31:21.092Z",
+    "checkedAt": "2026-09-10T11:06:09.061Z",
     "items": [
       {
         "field": "name",
@@ -20,9 +20,9 @@
       },
       {
         "field": "canonical_vendor",
-        "status": "UNKNOWN",
-        "detail": "Company/vendor not documented",
-        "source": "none"
+        "status": "PASS",
+        "detail": "Vendor: BookYourData",
+        "source": "seed"
       },
       {
         "field": "category",
@@ -115,11 +115,11 @@
         "source": "enrichment"
       }
     ],
-    "passCount": 15,
+    "passCount": 16,
     "partialCount": 1,
     "missingCount": 0,
-    "unknownCount": 2,
-    "score": 86
+    "unknownCount": 1,
+    "score": 92
   },
   "decisionHub": {
     "whatItIs": "Real-time B2B contact database for building verified prospect lists with pay-as-you-go credits and a 97% deliverability guarantee.",
@@ -138,11 +138,12 @@
     "coreCapabilities": [
       "lead management",
       "contact management",
+      "reporting",
+      "lead scoring",
       "contact data",
       "crm sync",
       "list building",
-      "prospecting",
-      "email outreach"
+      "prospecting"
     ],
     "pricingSummary": "2 documented plans · entry paid: Credit packs",
     "keyTradeoffs": [
@@ -233,7 +234,6 @@
     "evidenceState": "Research/data-based (no completed hands-on test) · Latest verification/research signal: 2026-08-17T05:54:14.073Z · Editorial assessment: approved",
     "nextDecisionStep": "Compare against peers: Apollo.io vs BookYourData",
     "missingSections": [
-      "canonical_vendor",
       "trial"
     ]
   },
@@ -461,13 +461,12 @@
   ],
   "dependentsNeedingRefresh": [],
   "remediation": [
-    "verify:canonical_vendor",
     "verify:trial"
   ],
   "notes": [
-    "fieldAudit score=86",
+    "fieldAudit score=92",
     "decisionHub bestFor=4 notIdeal=4",
     "dependents=44"
   ],
-  "materiallyImproved": false
+  "materiallyImproved": true
 }

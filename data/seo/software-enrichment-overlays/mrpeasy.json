@@ -1,10 +1,10 @@
 {
   "slug": "mrpeasy",
-  "updatedAt": "2026-09-07T22:31:22.047Z",
+  "updatedAt": "2026-09-10T11:46:30.445Z",
   "version": "1.0.0",
   "fieldAudit": {
     "slug": "mrpeasy",
-    "checkedAt": "2026-09-07T22:31:22.046Z",
+    "checkedAt": "2026-09-10T11:46:30.444Z",
     "items": [
       {
         "field": "name",
@@ -20,9 +20,9 @@
       },
       {
         "field": "canonical_vendor",
-        "status": "UNKNOWN",
-        "detail": "Company/vendor not documented",
-        "source": "none"
+        "status": "PASS",
+        "detail": "Vendor: MRPeasy",
+        "source": "seed"
       },
       {
         "field": "category",
@@ -115,11 +115,11 @@
         "source": "enrichment"
       }
     ],
-    "passCount": 17,
+    "passCount": 18,
     "partialCount": 0,
     "missingCount": 0,
-    "unknownCount": 1,
-    "score": 94
+    "unknownCount": 0,
+    "score": 100
   },
   "decisionHub": {
     "whatItIs": "MRPeasy is MRP/ERP software for small manufacturers — production planning, inventory, BOMs, purchasing, and shop floor tracking. Per-user pricing (2026-08-19 — confirm on mrpeasy.com/pricing).",
@@ -134,11 +134,14 @@
       "Manufacturing ERP/MRP — not general PM"
     ],
     "coreCapabilities": [
+      "task boards",
       "timeline gantt",
       "workload resources",
+      "automations workflows",
       "time tracking",
-      "inventory erp",
-      "work management"
+      "docs collaboration",
+      "integrations ecosystem",
+      "reporting dashboards"
     ],
     "pricingSummary": "1 documented plan · entry paid: Starter · trial documented on at least one plan",
     "keyTradeoffs": [
@@ -210,9 +213,7 @@
     ],
     "evidenceState": "Research/data-based (no completed hands-on test) · Latest verification/research signal: 2026-08-19T12:00:00.000Z · Editorial assessment: approved",
     "nextDecisionStep": "Compare against peers: Hive vs MRPeasy",
-    "missingSections": [
-      "canonical_vendor"
-    ]
+    "missingSections": []
   },
   "dependents": [
     {
@@ -282,13 +283,11 @@
     }
   ],
   "dependentsNeedingRefresh": [],
-  "remediation": [
-    "verify:canonical_vendor"
-  ],
+  "remediation": [],
   "notes": [
-    "fieldAudit score=94",
+    "fieldAudit score=100",
     "decisionHub bestFor=3 notIdeal=3",
     "dependents=13"
   ],
-  "materiallyImproved": false
+  "materiallyImproved": true
 }

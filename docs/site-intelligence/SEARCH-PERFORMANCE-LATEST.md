@@ -33,7 +33,7 @@
 - **Snapshot:** `fixture-28d-current-2026-08-13`
 - **Source:** fixture
 - **Range label:** 28d-current
-- **Period:** 2026-08-11 → 2026-09-08
+- **Period:** 2026-08-13 → 2026-09-10
 - **Data through:** 2026-08-13
 - **Rows:** 8
 - **Compare vs:** `fixture-28d-previous-2026-07-16` (2026-07-16)

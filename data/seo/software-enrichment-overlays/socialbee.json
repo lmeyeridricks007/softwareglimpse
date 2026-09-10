@@ -1,10 +1,10 @@
 {
   "slug": "socialbee",
-  "updatedAt": "2026-09-07T22:31:21.373Z",
+  "updatedAt": "2026-09-10T11:46:30.328Z",
   "version": "1.0.0",
   "fieldAudit": {
     "slug": "socialbee",
-    "checkedAt": "2026-09-07T22:31:21.372Z",
+    "checkedAt": "2026-09-10T11:46:30.326Z",
     "items": [
       {
         "field": "name",
@@ -20,9 +20,9 @@
       },
       {
         "field": "canonical_vendor",
-        "status": "UNKNOWN",
-        "detail": "Company/vendor not documented",
-        "source": "none"
+        "status": "PASS",
+        "detail": "Vendor: SocialBee LABS SRL (part of WebPros)",
+        "source": "seed"
       },
       {
         "field": "category",
@@ -115,11 +115,11 @@
         "source": "enrichment"
       }
     ],
-    "passCount": 16,
+    "passCount": 17,
     "partialCount": 0,
     "missingCount": 1,
-    "unknownCount": 1,
-    "score": 89
+    "unknownCount": 0,
+    "score": 94
   },
   "decisionHub": {
     "whatItIs": "SocialBee is a social media management platform for planning, AI content, scheduling across major networks, analytics, and agency workspaces.",
@@ -142,6 +142,8 @@
     "coreCapabilities": [
       "social scheduling",
       "content calendar",
+      "social listening",
+      "marketing automation",
       "analytics",
       "team collaboration",
       "ai content generation"
@@ -239,7 +241,6 @@
     "evidenceState": "Research/data-based (no completed hands-on test) · Latest verification/research signal: 2026-08-17T15:00:00.000Z · Editorial assessment: approved",
     "nextDecisionStep": "Compare against peers: Brand24 vs SocialBee",
     "missingSections": [
-      "canonical_vendor",
       "use_cases"
     ]
   },
@@ -423,13 +424,12 @@
     }
   ],
   "remediation": [
-    "verify:canonical_vendor",
     "catalogue_fill:use_cases"
   ],
   "notes": [
-    "fieldAudit score=89",
+    "fieldAudit score=94",
     "decisionHub bestFor=6 notIdeal=6",
     "dependents=19"
   ],
-  "materiallyImproved": false
+  "materiallyImproved": true
 }

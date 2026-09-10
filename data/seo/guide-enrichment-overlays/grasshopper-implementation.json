@@ -1,0 +1,206 @@
+{
+  "slug": "grasshopper-implementation",
+  "enrichmentType": "IMPLEMENTATION_GUIDE",
+  "updatedAt": "2026-09-10T12:11:19.803Z",
+  "uniqueValueAdded": [
+    "implementation_workflow",
+    "scenario_analysis",
+    "decision_framework",
+    "limitations_evidence",
+    "pricing_comparison",
+    "sg_original_data",
+    "buyer_checklist"
+  ],
+  "patch": {
+    "summary": "cloud phone; call routing; call recording; sms messaging. True Solo · up to 1 seat · cloud phone | Solo Plus | Small Business. Solo operators and tiny teams that primarily need a professional virtual number; SMBs that want flat account pricing instead of per-seat UCaaS maths; Buyers replacing a personal mobile with a branded business line. Grasshopper is a long-standing SMB virtual phone system for US/Canada: pick a local or toll-free number, route to extensions, and take calls on mobile/desktop apps. Plans are flat Buyer question: for cloud phone teams, is Grasshopper worth the True Solo unlock, or does Virtual-number / simple phone product — not full UCaaS (no native team chat or video meetings suite) kill the rollout? ROI gate: Grasshopper is worth the True Solo spend if cloud phone + call routing are weekly; not worth buying when Virtual-number / simple phone product — not full UCaaS (no native team chat or video meetings suite).",
+    "blocks": [
+      {
+        "id": "da-grasshopper-implementation-1",
+        "type": "direct-answer",
+        "body": "call routing (True Solo, Solo Plus, Small Business) decides whether Grasshopper implementation is a one-team pilot or a specialist project — confirm unlocks for call routing (True Solo, Solo Plus, Small Business), call recording (True Solo, Solo Plus, Small Business) before invites.",
+        "bullets": [
+          "Start with: cloud phone",
+          "Gate check: call routing (True Solo, Solo Plus, Small Business)",
+          "Integrate after: data quality pass on systems of record"
+        ]
+      },
+      {
+        "id": "impl-grasshopper-implementation-2",
+        "type": "step",
+        "heading": "Grasshopper day-zero to steady-state sequence",
+        "body": "Treat Grasshopper setup as a controlled rollout — not a weekend dump of CSV files.",
+        "stepNumber": 1,
+        "scenarios": [
+          {
+            "title": "Day zero — objects and owners",
+            "body": "Define owners for cloud phone, call routing, call recording before inviting the whole org."
+          },
+          {
+            "title": "SMB pilot",
+            "body": "One pipeline / one team proves Solo operators and tiny teams that primarily need a professional virtual number before company-wide seats."
+          },
+          {
+            "title": "Cutover",
+            "body": "Freeze legacy writes briefly; validate priority integrations before reopen."
+          }
+        ]
+      },
+      {
+        "id": "df-grasshopper-implementation-3",
+        "type": "decision-framework",
+        "title": "Grasshopper implementation go / no-go",
+        "steps": [
+          {
+            "id": "i-1",
+            "label": "Go when plan unlocks cover call routing (True Solo, Solo Plus, Small Business)"
+          },
+          {
+            "id": "i-2",
+            "label": "Pause if this limitation blocks ops: Virtual-number / simple phone product — not full UCaaS (no native team chat or video meetings suite)"
+          },
+          {
+            "id": "i-3",
+            "label": "Do not expand seats until cloud phone is green"
+          }
+        ]
+      },
+      {
+        "id": "mist-grasshopper-implementation-4",
+        "type": "mistakes",
+        "title": "Grasshopper implementation mistakes",
+        "items": [
+          {
+            "title": "Mistake 1",
+            "body": "Virtual-number / simple phone product — not full UCaaS (no native team chat or video meetings suite)"
+          },
+          {
+            "title": "Mistake 2",
+            "body": "IVR, recording and simultaneous ringing require Solo Plus or above"
+          },
+          {
+            "title": "Mistake 3",
+            "body": "True Solo is capped at one user and one extension"
+          },
+          {
+            "title": "Mistake 4",
+            "body": "US/Canada focus; limited CRM/CTI versus Aircall-class phones"
+          },
+          {
+            "title": "Big-bang invite",
+            "body": "Inviting every user before object design creates junk data that is expensive to unwind."
+          }
+        ]
+      },
+      {
+        "id": "cost-grasshopper-implementation-5",
+        "type": "cost-breakdown",
+        "title": "Grasshopper plan gates that affect rollout",
+        "body": "Implementation fails when unlocks needed for go-live sit on a higher tier than budgeted.",
+        "lines": [
+          {
+            "label": "True Solo",
+            "description": "7-day trial · up to 1 seat · Unlocks: cloud phone, call routing, call recording · Suits: teams whose must-have gates appear on this tier"
+          },
+          {
+            "label": "Solo Plus",
+            "description": "7-day trial · Suits: teams whose must-have gates appear on this tier"
+          },
+          {
+            "label": "Small Business",
+            "description": "7-day trial · Suits: teams whose must-have gates appear on this tier"
+          }
+        ]
+      },
+      {
+        "id": "sel-grasshopper-implementation-6",
+        "type": "selection-checklist",
+        "title": "Grasshopper implementation checklist",
+        "dimensions": [
+          {
+            "id": "prep",
+            "label": "Prep",
+            "options": [
+              "Object model drafted",
+              "Owners named",
+              "Legacy freeze window set"
+            ]
+          },
+          {
+            "id": "pilot",
+            "label": "Pilot",
+            "options": [
+              "cloud phone",
+              "Junk-data rules set",
+              "Support path clear"
+            ]
+          },
+          {
+            "id": "scale",
+            "label": "Scale",
+            "options": [
+              "Integrations validated",
+              "Seat expansion criteria written",
+              "Rollback plan noted"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "cta-grasshopper-implementation-7",
+        "type": "interactive-cta",
+        "title": "Validate business-communications fit before a deep Grasshopper rollout",
+        "body": "If Grasshopper fails constraint fit, stop implementation early.",
+        "href": "/tools/business-communications-finder/",
+        "ctaLabel": "Open Finder",
+        "variant": "finder"
+      }
+    ],
+    "sections": [
+      {
+        "id": "sec-thesis-grasshopper-implementation",
+        "heading": "Grasshopper buyer question and thesis",
+        "body": "cloud phone; call routing; call recording; sms messaging. True Solo · up to 1 seat · cloud phone | Solo Plus | Small Business. Solo operators and tiny teams that primarily need a professional virtual number; SMBs that want flat account pricing instead of per-seat UCaaS maths; Buyers replacing a personal mobile with a branded business line. Grasshopper is a long-standing SMB virtual phone system for US/Canada: pick a local or toll-free number, route to extensions, and take calls on mobile/desktop apps. Plans are flat. That catalogue mix is the Grasshopper implementation filter — not a generic business-communications lecture.\n\nBuyer question: for cloud phone teams, is Grasshopper worth the True Solo unlock, or does Virtual-number / simple phone product — not full UCaaS (no native team chat or video meetings suite) kill the rollout?\n\nROI gate: Grasshopper is worth the True Solo spend if cloud phone + call routing are weekly; not worth buying when Virtual-number / simple phone product — not full UCaaS (no native team chat or video meetings suite).\n\nBest for: Solo operators and tiny teams that primarily need a professional virtual number; SMBs that want flat account pricing instead of per-seat UCaaS maths; Buyers replacing a personal mobile with a branded business line (Solo operators and tiny teams that primarily need a professional virtual number).\n\nPoor fit when: Teams needing full UCaaS (meetings + team chat + deep IVR + CTI); Sales orgs that need a power dialer or CRM-first phone; Multi-country or contact-centre deployments. Avoid if Virtual-number / simple phone product — not full UCaaS (no native team chat or video meetings suite) would block go-live."
+      },
+      {
+        "id": "sec-limits-grasshopper-implementation",
+        "heading": "Grasshopper limitation, pricing interpretation, and alternative context",
+        "body": "Limitation: Virtual-number / simple phone product — not full UCaaS (no native team chat or video meetings suite); IVR, recording and simultaneous ringing require Solo Plus or above; True Solo is capped at one user and one extension because it forces process changes or add-ons around Grasshopper when cloud phone is the job.\n\nPricing interpretation: no free plan confirmed — scope a paid pilot on True Solo with exit criteria before annual seats. Capacity note: True Solo: up to 1 seat.\n\nPlan trade-off: you gain call routing (True Solo, Solo Plus, Small Business) at the expense of Entry price and seat minimums vs routing, CTI and analytics depth — measure both in the pilot. Researched packaging: True Solo · up to 1 seat · cloud phone | Solo Plus | Small Business.\n\nAlternative context: unlike OpenPhone, Grasshopper is preferable when Solo operators and tiny teams that primarily need a professional virtual number because cloud phone plus call routing (True Solo, Solo Plus, Small Business) match; prefer OpenPhone when Teams needing full UCaaS (meetings + team chat + deep IVR + CTI) because the operating loops differ."
+      },
+      {
+        "id": "sec-scenario-grasshopper-implementation",
+        "heading": "Decision scenario and conclusion for Grasshopper",
+        "body": "Workflow advantage: Grasshopper is faster for cloud phone when cloud phone; call routing; call recording; sms messaging is in-product; skip when Virtual-number / simple phone product — not full UCaaS (no native team chat or video meetings suite) because that loop lives elsewhere.\n\nImplementation complexity: setup requires confirming call routing (True Solo, Solo Plus, Small Business) ownership and Zapier before rollout — do not scale seats first.\n\nConclusion: Grasshopper is worth it if Solo operators and tiny teams that primarily need a professional virtual number and call routing (True Solo, Solo Plus, Small Business) are weekly; skip Grasshopper if Teams needing full UCaaS (meetings + team chat + deep IVR + CTI). That is the decision, not a template with the logo swapped."
+      }
+    ],
+    "checklist": [
+      {
+        "id": "enrich-chk-0",
+        "label": "Draft Grasshopper object owners before invites",
+        "order": 0
+      },
+      {
+        "id": "enrich-chk-1",
+        "label": "Confirm plan unlocks for go-live features",
+        "order": 1
+      },
+      {
+        "id": "enrich-chk-2",
+        "label": "Pilot one team on cloud phone",
+        "order": 2
+      },
+      {
+        "id": "enrich-chk-3",
+        "label": "If blocked, evaluate OpenPhone before sunk-cost expansion",
+        "order": 3
+      }
+    ],
+    "nextAction": {
+      "contentId": "tool:finder:business-communications",
+      "label": "Open Finder shortlist"
+    }
+  },
+  "notes": [
+    "Implementation: workflow, constraints, mistakes, checklist.",
+    "Type-specific skeleton: IMPLEMENTATION_GUIDE"
+  ]
+}

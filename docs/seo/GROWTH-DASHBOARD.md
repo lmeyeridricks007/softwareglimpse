@@ -2,7 +2,7 @@
 
 **Internal only.** Not a public SEO dashboard. Do not fabricate unavailable metrics.
 
-Generated: 2026-09-09T18:59:14.406Z  
+Generated: 2026-09-10T16:01:30.153Z  
 Engine: 2.3.0  
 Strategy: **PRESERVE → IMPROVE → PROMOTE → RANK → EARN TRAFFIC**
 
@@ -48,20 +48,20 @@ Secret gate matches product testing: `GROWTH_SECRET` or `TESTING_SECRET` or `PRE
 
 Confidence: `low` · Freshness: Last 7 days · Trend: `unavailable`
 
-Indexable 2,521 · Improve 2,791 · Ready 1
+Indexable 2,811 · Improve 2,278 · Ready 1
 
 Evidence:
 - Strategy: PRESERVE → IMPROVE → PROMOTE → RANK → EARN TRAFFIC.
 - Guides/comparisons lifecycle from seo audits; software from catalogue indexability; other ≈ sitemap remainder.
 
 Gaps:
-- Large IMPROVE backlog vs indexable set
+_None._
 
 ### More promoted pages — `on_track`
 
 Confidence: `medium` · Freshness: Last 7 days · Trend: `partial`
 
-Promoted this week: 517 · Ready for promotion: 1
+Promoted this week: 854 · Ready for promotion: 1
 
 Evidence:
 - Largest improvements: /compare/alidrop-vs-flippa/ (+28); /compare/alidrop-vs-printify/ (+28); /compare/alidrop-vs-shipbob/ (+28)
@@ -72,22 +72,21 @@ _None._
 
 ### More page-one rankings — `insufficient_trend`
 
-Confidence: `low` · Freshness: 2026-08-13 · Trend: `unavailable`
+Confidence: `low` · Freshness: 2026-09-03 · Trend: `unavailable`
 
-Top 10: 109 · clicks 1 · share 1.2% · commercial 0 · CTR 0.006928986549104861%
+Top 10: 37 · clicks 3 · share 0.9% · commercial 0 · CTR 0.034333147823582995%
 
 Evidence:
-- Source: GSC Performance export — softwareglimpse.com — 2026-08-15
+- Source: GSC Performance export — softwareglimpse.com — 2026-09-05
 - Validity: REAL
-- Top-10 ≥100 imp: 6 · with clicks: 1 · commercial: 0
+- Top-10 ≥100 imp: 12 · with clicks: 3 · commercial: 0
 - Page-one quality uses impressions, clicks, CTR, intent mix, and Top-10 share — not page count alone.
-- Only one REAL GSC Performance period on disk — retain this snapshot, then import a newer export for comparable pre/post.
+- No comparable REAL GSC Performance period on disk (same range label required). Last-12-months vs Last-3-months is NOT_YET_MEASURABLE — retain this snapshot and import a later Last-12-months export.
 
 Gaps:
 - No historical trend — status stays insufficient_trend (not on_track)
 - Top-10 click volume still thin
 - Low share of impressions occurring in Top 10
-- Few Top-10 pages have ≥100 impressions
 - Few Top-10 pages earn clicks
 - Few commercial/search-intent pages in Top 10
 - Top-10 mix is light on commercial/search-intent URLs
@@ -95,32 +94,32 @@ Gaps:
 
 ### More clicks — `insufficient_trend`
 
-Confidence: `low` · Freshness: 2026-08-13 · Trend: `unavailable`
+Confidence: `low` · Freshness: 2026-09-03 · Trend: `unavailable`
 
-Organic clicks 8 · pages with clicks 7
+Organic clicks 124 · pages with clicks 79
 
 Evidence:
-- CTR opportunities listed: 7
+- CTR opportunities listed: 15
 - Expected CTR is a heuristic baseline for opportunity spotting — not a GSC guarantee.
-- Only one REAL GSC Performance period on disk — retain this snapshot, then import a newer export for comparable pre/post.
-- Absolute click volume is too thin to frame as strong performance
+- No comparable REAL GSC Performance period on disk (same range label required). Last-12-months vs Last-3-months is NOT_YET_MEASURABLE — retain this snapshot and import a later Last-12-months export.
+- Click volume assessed with trend when available
 
 Gaps:
 - No period-over-period trend — avoid strong directional click labels
-- Click volume far too low to call building or on_track
 
-### More evidence — `building`
+### More evidence — `on_track`
 
-Confidence: `medium` · Freshness: 2026-09-09T18:59:14.376Z · Trend: `partial`
+Confidence: `medium` · Freshness: 2026-09-10T16:01:30.081Z · Trend: `partial`
 
-Hands-on 0 · data-verified 166 · research-based 149
+Data-verified 240 · research-based 75 · hands-on 0 / NOT_CURRENT_SCOPE
 
 Evidence:
-- Evidence levels from catalogue + completed test sessions — unfinished sessions do not count as hands-on.
+- HANDS_ON is 0 / NOT_CURRENT_SCOPE for the current remediation phase — future enhancement, not a growth gate.
+- Current evidence gate is DATA_VERIFIED (vendor primary sources + documented pricing with sourceIds) plus research-based pages. Unfinished test sessions do not count as hands-on and must not block improvement or promotion.
 - Trend points: previous snapshot → current
 
 Gaps:
-- No completed hands-on test sessions counted
+_None._
 
 ### More relevant links — `not_connected`
 
@@ -143,20 +142,20 @@ Gaps:
 
 ### What improved
 - Trend comparison not connected or GSC not REAL — import a prior live GSC period.
-- Promoted 517 page(s) to indexable this week
-- Quality score improved on 174 page(s)
+- Promoted 854 page(s) to indexable this week
+- Quality score improved on 251 page(s)
 
 
 ### What declined
-- Crawled-not-indexed count high (1607) — inspect Coverage export
+- Crawled-not-indexed count high (1687) — inspect Coverage export
 
 
 ### Top actions
-- /software/miocommerce/ → OPTIMIZE_TITLE (score 59)
-- /software/diginius/ → MANUAL_REVIEW (score 58)
-- /software/podio/ → OPTIMIZE_TITLE (score 57)
-- /categories/ecommerce/ → OPTIMIZE_TITLE (score 56)
-- / → OPTIMIZE_TITLE (score 54)
+- /software/fastmail/ → MANUAL_REVIEW (score 67)
+- /legal/privacy/ → OPTIMIZE_TITLE (score 66)
+- /legal/terms/ → OPTIMIZE_TITLE (score 66)
+- /compare/livechat-vs-tidio/ → OPTIMIZE_TITLE (score 65)
+- /compare/hubspot-vs-tidio/ → OPTIMIZE_TITLE (score 64)
 
 
 ### Major pricing changes
@@ -174,8 +173,8 @@ Gaps:
 - No LINK_EARNED records — not connected / none recorded.
 
 
-### New tested products
-- No completed product test sessions on disk.
+### New tested products (HANDS_ON = NOT_CURRENT_SCOPE)
+- HANDS_ON 0 / NOT_CURRENT_SCOPE — no completed sessions expected in this phase.
 
 
 ### Research published
@@ -192,63 +191,66 @@ _Strategy: PRESERVE → IMPROVE → PROMOTE → RANK → EARN TRAFFIC._
 ## 1. Search visibility (Discovery · Ranking · CTR · Traffic)
 
 Status: `connected` · Validity: `REAL`  
-Source: GSC Performance export — softwareglimpse.com — 2026-08-15 · Through 2026-08-13
+Source: GSC Performance export — softwareglimpse.com — 2026-09-05 · Through 2026-09-03
 
 ### Discovery
 | Metric | Value |
 |---|---|
-| Pages with impressions | 995 _(Pages receiving ≥1 impression)_ |
-| Impressions | 115457 _(Discovery demand — not ranking strength)_ |
+| Pages with impressions | 991 _(Pages receiving ≥1 impression in the Pages tab (GSC export capped at 1000))_ |
+| Impressions | 361167 _(Discovery demand — not ranking strength)_ |
 
 ### Ranking
 | Band | Value |
 |---|---|
-| Top 10 | 109 _(Pages with avg position ≤ 10 — count alone is not quality)_ |
-| 11–20 | 40 _(Pages with avg position 11–20)_ |
-| 21–50 | 272 _(Pages with avg position 21–50)_ |
-| >50 | 574 _(Pages with avg position > 50)_ |
-| Weighted position | 74.5 _(Impression-weighted average — not fixed SERP rank)_ |
+| Top 10 | 37 _(Pages with avg position ≤ 10 — count alone is not quality)_ |
+| 11–20 | 82 _(Pages with avg position 11–20)_ |
+| 21–50 | 352 _(Pages with avg position 21–50)_ |
+| >50 | 520 _(Pages with avg position > 50)_ |
+| Weighted position | 69 _(Impression-weighted average — not fixed SERP rank)_ |
 
 ### Page-one quality
 | Metric | Value |
 |---|---|
-| Top-10 impressions | 1348 _(Impressions on pages averaging ≤10)_ |
-| Top-10 clicks | 1 _(Clicks on pages averaging ≤10)_ |
-| Top-10 share of impressions | 1.20% _(Share of site impressions occurring in Top 10)_ |
-| Top-10 pages ≥100 impressions | 6 _(Top-10 pages with ≥100 impressions)_ |
-| Top-10 pages with clicks | 1 _(Top-10 pages earning ≥1 click)_ |
+| Top-10 impressions | 3362 _(Impressions on pages averaging ≤10)_ |
+| Top-10 clicks | 3 _(Clicks on pages averaging ≤10)_ |
+| Top-10 share of impressions | 0.90% _(Share of site impressions occurring in Top 10)_ |
+| Top-10 pages ≥100 impressions | 12 _(Top-10 pages with ≥100 impressions)_ |
+| Top-10 pages with clicks | 3 _(Top-10 pages earning ≥1 click)_ |
 | Top-10 commercial pages | 0 _(Top-10 pages on software/compare/best/buying-guide paths)_ |
 | Commercial Top-10 share | 0.00% _(Share of Top-10 pages that look commercial/search-intent)_ |
-| Site CTR | 0.01% _(Site CTR — not a ranking quality label)_ |
+| Site CTR | 0.03% _(Site CTR — not a ranking quality label)_ |
 
 Page-one quality uses impressions, clicks, CTR, intent mix, and Top-10 share — not page count alone.
 
 ### CTR
 | Metric | Value |
 |---|---|
-| Site CTR | 0.01% _(Site CTR — not a ranking quality label)_ |
-| Compared pages | 256 _(Pages with ≥50 impressions and expected CTR baseline)_ |
+| Site CTR | 0.03% _(Site CTR — not a ranking quality label)_ |
+| Compared pages | 604 _(Pages with ≥50 impressions and expected CTR baseline)_ |
 
 Expected CTR is a heuristic baseline for opportunity spotting — not a GSC guarantee.
 
 High-impression low-CTR opportunities:
 
-- `/ar/` — 152 imp · pos 1.1 · CTR 0% vs expected 28% (gap 28pp)
-- `/zh/` — 152 imp · pos 2.2 · CTR 0% vs expected 15% (gap 15pp)
-- `/nl/` — 153 imp · pos 3.3 · CTR 0% vs expected 11% (gap 11pp)
-- `/nl/voorwaarden/` — 152 imp · pos 5.3 · CTR 0% vs expected 6% (gap 6pp)
-- `/hi/surferseovspop/` — 155 imp · pos 7.8 · CTR 0% vs expected 4% (gap 4pp)
-- `/de/crm/` — 152 imp · pos 7.4 · CTR 0% vs expected 4% (gap 4pp)
-- `/zh/%E6%8C%87%E5%8D%97%E9%80%89%E6%8B%A9%E6%9C%80%E4%BD%B3-seo-%E8%BD%AF%E4%BB%B6/` — 191 imp · pos 14.8 · CTR 0% vs expected 1.5% (gap 1.5pp)
+- `/ar/` — 266 imp · pos 2 · CTR 0% vs expected 28% (gap 28pp)
+- `/zh/` — 264 imp · pos 2.9 · CTR 0% vs expected 15% (gap 15pp)
+- `/nl/` — 244 imp · pos 4.3 · CTR 0% vs expected 8% (gap 8pp)
+- `/nl/voorwaarden/` — 202 imp · pos 5.4 · CTR 0% vs expected 6% (gap 6pp)
+- `/hi/what-are-the-best-crm-with-analytics/` — 115 imp · pos 5.9 · CTR 0% vs expected 6% (gap 6pp)
+- `/de/crm/` — 247 imp · pos 7.6 · CTR 0% vs expected 4% (gap 4pp)
+- `/hi/salesforce-vs-zoho/` — 134 imp · pos 7.5 · CTR 0% vs expected 4% (gap 4pp)
+- `/hi/surferseovspop/` — 412 imp · pos 9.9 · CTR 0% vs expected 2.5% (gap 2.5pp)
+- `/my-story/` — 104 imp · pos 7.2 · CTR 0.96% vs expected 4% (gap 3.04pp)
+- `/de/surferseovsclearscope/` — 162 imp · pos 10.4 · CTR 0% vs expected 2.5% (gap 2.5pp)
 
 
 ### Traffic
 | Metric | Value |
 |---|---|
-| Organic clicks | 8 _(Low absolute volume — not strong performance)_ |
-| Pages with clicks | 7 _(Pages earning ≥1 click)_ |
+| Organic clicks | 124 |
+| Pages with clicks | 79 _(Pages earning ≥1 click)_ |
 
-Trend: `not_connected` — Only one REAL GSC Performance period on disk — retain this snapshot, then import a newer export for comparable pre/post.
+Trend: `not_connected` — No comparable REAL GSC Performance period on disk (same range label required). Last-12-months vs Last-3-months is NOT_YET_MEASURABLE — retain this snapshot and import a later Last-12-months export.
 
 ---
 
@@ -260,19 +262,19 @@ Status: `connected`
 
 | Total | Indexable | Improve | Improving | Ready | Manual | Retired |
 | ---: | ---: | ---: | ---: | ---: | ---: | ---: |
-| 6030 | 2521 | 2791 | 0 | 1 | 717 | 0 |
+| 6030 | 2811 | 2278 | 0 | 1 | 940 | 0 |
 
 ### By type
 
 #### Guides
 | Total | Indexable | Improve | Improving | Ready | Manual | Retired |
 | ---: | ---: | ---: | ---: | ---: | ---: | ---: |
-| 1715 | 508 | 1079 | 0 | 1 | 127 | 0 |
+| 1715 | 644 | 570 | 0 | 1 | 500 | 0 |
 
 #### Comparisons
 | Total | Indexable | Improve | Improving | Ready | Manual | Retired |
 | ---: | ---: | ---: | ---: | ---: | ---: | ---: |
-| 4000 | 1699 | 1711 | 0 | 0 | 590 | 0 |
+| 4000 | 1853 | 1707 | 0 | 0 | 440 | 0 |
 
 #### Software
 | Total | Indexable | Improve | Improving | Ready | Manual | Retired |
@@ -284,8 +286,23 @@ Status: `connected`
 | ---: | ---: | ---: | ---: | ---: | ---: | ---: |
 | 0 | 0 | 0 | 0 | 0 | 0 | 0 |
 
+### Factory-origin remediation
+
+FACTORY_ORIGIN_TOTAL is **inventory** (pages created from factory families). It does **not** fall when those pages become excellent. Quality KPIs: HIGH_RISK ↓, LIMITED_UNIQUE ↓, QUALITY_PASS ↑, INDEXABLE ↑, IMPROVE ↓.
+
+| Metric | Value |
+|---|---|
+| FACTORY_ORIGIN_TOTAL | 1272 _(FACTORY_ORIGIN_TOTAL — inventory/history, not a quality KPI)_ |
+| FACTORY_HIGH_RISK | 1104 _(FACTORY_HIGH_RISK — factory-origin failing semantic uniqueness)_ |
+| FACTORY_LIMITED_UNIQUE | 1106 _(FACTORY_LIMITED_UNIQUE — factory-origin lacking unique analysis)_ |
+| FACTORY_QUALITY_PASS | 1272 _(FACTORY_QUALITY_PASS — factory-origin passing current quality gate)_ |
+| FACTORY_INDEXABLE | 375 _(FACTORY_INDEXABLE — factory-origin legitimately INDEXABLE)_ |
+| FACTORY_IMPROVE | 499 _(FACTORY_IMPROVE — factory-origin still requiring improvement)_ |
+| FACTORY_PROMOTED | 375 _(FACTORY_PROMOTED — factory-origin promoted after remediation)_ |
+
 - Strategy: PRESERVE → IMPROVE → PROMOTE → RANK → EARN TRAFFIC.
 - Guides/comparisons lifecycle from seo audits; software from catalogue indexability; other ≈ sitemap remainder.
+- FACTORY_ORIGIN_TOTAL is inventory (slug-class packs). Do not treat a stable count as remediation failure. Quality KPIs are HIGH_RISK, LIMITED_UNIQUE, QUALITY_PASS, INDEXABLE, IMPROVE.
 
 
 ---
@@ -296,12 +313,12 @@ Status: `connected`
 
 | Metric | Value |
 |---|---|
-| Pages improved | 174 _(URLs with positive quality delta in window)_ |
-| Promoted to indexable | 517 _(Lifecycle promotedAt and/or snapshot sourceEvent=promoted)_ |
-| Quality score improved | 174 _(before→after qualityScore increases)_ |
-| Average quality delta | 10.55 _(Mean score delta for improved URLs)_ |
+| Pages improved | 251 _(URLs with positive quality delta in window)_ |
+| Promoted to indexable | 854 _(Lifecycle promotedAt and/or snapshot sourceEvent=promoted)_ |
+| Quality score improved | 251 _(before→after qualityScore increases)_ |
+| Average quality delta | 8.54 _(Mean score delta for improved URLs)_ |
 | Quality regressions | 0 _(QUALITY_REGRESSION flags (policy guard — no auto-deindex))_ |
-| Promotion conversion rate | 2.971 _(promoted ÷ improved in window)_ |
+| Promotion conversion rate | 3.402 _(promoted ÷ improved in window)_ |
 | Rankings improved after upgrade | Requires paired pre/post GSC for upgraded URLs — not connected |
 
 ### Largest improvements
@@ -326,18 +343,21 @@ Status: `connected`
 ## 4. Indexation
 
 Status: `connected` · Validity: `REAL`  
-Source: GSC Coverage export — softwareglimpse.com — 2026-08-15
+Source: GSC Coverage drilldowns — softwareglimpse.com — 2026-09-05
 
 | Metric | Value |
 |---|---|
-| Sitemap URL count | 3133 _(Actual public sitemap URL count)_ |
-| GSC indexed (Coverage) | 1527 _(GSC Coverage latestTotals.indexed — property aggregate)_ |
-| Discovered not indexed | 2550 |
-| Crawled not indexed | 1607 |
-| Indexation ratio | Not comparable as a ratio — GSC indexed 1,527 vs sitemap 3,133 (different scopes) |
+| Sitemap URL count | 3419 _(Actual public sitemap URL count)_ |
+| GSC indexed (Coverage) | not connected |
+| Discovered not indexed | 8797 |
+| Crawled not indexed | 1687 |
+| Indexation ratio | Need both sitemap count and GSC indexed total — and an explicit comparable-scope declaration |
 
-- Coverage reasons are aggregate counts only — not per-URL lists.
-- Do not treat Page with redirect / 404 counts as confirmed migration failures without URL inspection.
+- PARTIAL Coverage: only two issue drilldowns were available (Crawled not indexed; Discovered not indexed).
+- Do not compare these aggregates to the 2026-08-15 Coverage Overview (indexed 1527 / crawled 1607 / discovered 2550). That overview predates the production sitemapindex cutover and is a different export type.
+- Issue URL tables are GSC-capped at 1000 URLs; Chart totals are the issue counts.
+- Coverage charts run 2026-06-08 → 2026-08-28 — not the Performance Last-12-months window.
+- Indexed / noindex / 404 / redirect / canonical counts are NOT_IN_THIS_EXPORT.
 - Sitemap URL count is the submitted/indexable denominator for this dashboard.
 - GSC Coverage “indexed” totals are property-wide aggregates — not automatically comparable 1:1 to sitemap rows (Coverage may include URLs outside the sitemap or exclude some submitted URLs).
 
@@ -348,30 +368,30 @@ Source: GSC Coverage export — softwareglimpse.com — 2026-08-15
 
 Status: `connected` · Validity: `REAL`
 
-1. `/software/miocommerce/` — score 59 · pos 28.49 · OPTIMIZE_TITLE · UNKNOWN · actionConf PAGE_LEVEL
-2. `/software/diginius/` — score 58 · pos 34.34 · MANUAL_REVIEW · INFERRED_HIGH · query: diginius · actionConf REVIEW_REQUIRED
-3. `/software/podio/` — score 57 · pos 27.278965517241378 · OPTIMIZE_TITLE · UNKNOWN · actionConf PAGE_LEVEL
-4. `/categories/ecommerce/` — score 56 · pos 39.17 · OPTIMIZE_TITLE · UNKNOWN · actionConf PAGE_LEVEL
-5. `/` — score 54 · pos 49.34 · OPTIMIZE_TITLE · UNKNOWN · actionConf PAGE_LEVEL
-6. `/software/hubspot/` — score 53 · pos 66.38997014925373 · MANUAL_REVIEW · INFERRED_HIGH · query: hubspot review · actionConf REVIEW_REQUIRED
-7. `/compare/salesforce-vs-siebel/` — score 52 · pos 69.55 · IMPROVE_INTRO · INFERRED_HIGH · query: siebel vs salesforce · actionConf REVIEW_REQUIRED
-8. `/categories/crm/` — score 51 · pos 83.4100472937467 · OPTIMIZE_TITLE · INFERRED_LOW · actionConf SUPPRESSED
-9. `/software/closely/` — score 51 · pos 36.26 · MANUAL_REVIEW · INFERRED_HIGH · query: closely · actionConf REVIEW_REQUIRED
-10. `/software/fastmail/` — score 51 · pos 41.25 · MANUAL_REVIEW · INFERRED_HIGH · query: fastmail · actionConf REVIEW_REQUIRED
-11. `/compare/pipedrive-vs-salesforce/` — score 51 · pos 63.75 · MANUAL_REVIEW · INFERRED_HIGH · query: pipedrive vs salesforce · actionConf REVIEW_REQUIRED
-12. `/compare/pega-vs-salesforce/` — score 51 · pos 58.51 · MANUAL_REVIEW · INFERRED_HIGH · query: pega crm vs salesforce · actionConf REVIEW_REQUIRED
-13. `/compare/hubspot-vs-pipedrive/` — score 51 · pos 67.5688 · MANUAL_REVIEW · INFERRED_HIGH · query: pipedrive vs hubspot · actionConf REVIEW_REQUIRED
-14. `/compare/insightly-vs-salesforce/` — score 51 · pos 54.76 · MANUAL_REVIEW · INFERRED_HIGH · query: salesforce vs insightly · actionConf REVIEW_REQUIRED
-15. `/compare/salesforce-vs-sugarcrm/` — score 51 · pos 69.07264705882353 · OPTIMIZE_TITLE · INFERRED_LOW · actionConf SUPPRESSED
-16. `/software/folk/` — score 51 · pos 43.11266666666666 · OPTIMIZE_TITLE · UNKNOWN · actionConf PAGE_LEVEL
-17. `/categories/marketing/` — score 50 · pos 60.27477491961414 · OPTIMIZE_TITLE · INFERRED_LOW · actionConf SUPPRESSED
-18. `/software/nimble/` — score 50 · pos 65.10516556291391 · MANUAL_REVIEW · INFERRED_HIGH · query: nimble crm review · actionConf REVIEW_REQUIRED
-19. `/compare/hubspot-vs-insightly/` — score 50 · pos 67.62 · MANUAL_REVIEW · INFERRED_HIGH · query: hubspot vs insightly · actionConf REVIEW_REQUIRED
-20. `/guides/` — score 50 · pos 41.665 · OPTIMIZE_TITLE · UNKNOWN · actionConf PAGE_LEVEL
+1. `/software/fastmail/` — score 67 · pos 23.52 · MANUAL_REVIEW · INFERRED_HIGH · query: fastmail review · actionConf REVIEW_REQUIRED
+2. `/legal/privacy/` — score 66 · pos 14.12 · OPTIMIZE_TITLE · INFERRED_LOW · actionConf SUPPRESSED
+3. `/legal/terms/` — score 66 · pos 18.37 · OPTIMIZE_TITLE · INFERRED_LOW · actionConf SUPPRESSED
+4. `/compare/livechat-vs-tidio/` — score 65 · pos 27.6 · OPTIMIZE_TITLE · INFERRED_LOW · actionConf SUPPRESSED
+5. `/compare/hubspot-vs-tidio/` — score 64 · pos 23 · OPTIMIZE_TITLE · INFERRED_LOW · actionConf SUPPRESSED
+6. `/software/shore/` — score 63 · pos 22.86 · OPTIMIZE_TITLE · UNKNOWN · actionConf PAGE_LEVEL
+7. `/compare/hubspot-vs-zendesk/` — score 63 · pos 34.95 · OPTIMIZE_TITLE · INFERRED_LOW · actionConf SUPPRESSED
+8. `/software/affinity/` — score 62 · pos 34.55 · OPTIMIZE_TITLE · UNKNOWN · actionConf PAGE_LEVEL
+9. `/compare/chatgpt-vs-github-copilot/` — score 62 · pos 24.37 · OPTIMIZE_TITLE · INFERRED_LOW · actionConf SUPPRESSED
+10. `/software/miocommerce/` — score 60 · pos 23.58 · MANUAL_REVIEW · INFERRED_HIGH · query: miocommerce · actionConf REVIEW_REQUIRED
+11. `/compare/chatgpt-vs-writesonic/` — score 60 · pos 39.67 · MANUAL_REVIEW · INFERRED_HIGH · query: writesonic vs chatgpt · actionConf REVIEW_REQUIRED
+12. `/guides/` — score 60 · pos 33.18 · OPTIMIZE_TITLE · UNKNOWN · actionConf PAGE_LEVEL
+13. `/categories/ai/` — score 59 · pos 49.76613815789474 · OPTIMIZE_TITLE · INFERRED_LOW · actionConf SUPPRESSED
+14. `/compare/crisp-vs-tidio/` — score 59 · pos 44.25 · MANUAL_REVIEW · INFERRED_HIGH · query: tidio vs crisp · actionConf REVIEW_REQUIRED
+15. `/` — score 58 · pos 27.95 · OPTIMIZE_TITLE · UNKNOWN · actionConf PAGE_LEVEL
+16. `/company/my-story/` — score 58 · pos 7.15 · OPTIMIZE_TITLE · UNKNOWN · actionConf PAGE_LEVEL
+17. `/compare/hubspot-vs-marketo/` — score 58 · pos 37.41 · MANUAL_REVIEW · INFERRED_HIGH · query: hubspot vs marketo · actionConf REVIEW_REQUIRED
+18. `/for/startups/` — score 58 · pos 17.15 · OPTIMIZE_TITLE · INFERRED_LOW · actionConf SUPPRESSED
+19. `/industries/music/` — score 57 · pos 49.32792869269949 · OPTIMIZE_TITLE · INFERRED_LOW · actionConf SUPPRESSED
+20. `/software/folk/` — score 57 · pos 36.6229958677686 · MANUAL_REVIEW · INFERRED_HIGH · query: folk crm review · actionConf REVIEW_REQUIRED
 
 
-- Top 20 from GSC Opportunity Engine (real export through 2026-08-13).
-- Queue A (indexed): 50 · Queue B (IMPROVE/promote): 0
+- Top 20 from GSC Opportunity Engine (real export through 2026-09-03).
+- Queue A (indexed): 50 · Queue B (IMPROVE/promote): 3
 - “Entering” lists are current-position slices (≤10 / 11–20), not proven week-over-week entries without a prior snapshot.
 - Ranking declines: not connected without prior-period comparison (refresh flags shown only when opportunity report exists).
 
@@ -384,22 +404,23 @@ Status: `connected` · Validity: `REAL`
 
 | Level | Value |
 |---|---|
-| Hands-on tested | 0 |
-| Data verified | 166 |
-| Research-based | 149 |
+| Hands-on tested | 0 _(NOT_CURRENT_SCOPE — future enhancement, not a growth gate)_ |
+| Data verified | 240 |
+| Research-based | 75 |
 | Reviews with evidence | 0 |
-| Stale pricing pages | 45 _(Unique paths with outdatedPricing in price-monitor growth feed)_ |
+| Stale pricing pages | 51 _(Unique paths with outdatedPricing in price-monitor growth feed)_ |
 | Pages requiring refresh | 0 _(Refresh scanner candidates)_ |
 
 ### Evidence over time
 
-- **previous snapshot** (2026-09-09T18:46:58.382Z): hands-on 0 · data-verified 166 · research-based 149
-- **current** (2026-09-09T18:59:14.376Z): hands-on 0 · data-verified 166 · research-based 149
+- **previous snapshot** (2026-09-10T11:47:23.008Z): hands-on 0 · data-verified 240 · research-based 75
+- **current** (2026-09-10T16:01:30.081Z): hands-on 0 · data-verified 240 · research-based 75
 
 
-- Evidence levels from catalogue + completed test sessions — unfinished sessions do not count as hands-on.
+- HANDS_ON is 0 / NOT_CURRENT_SCOPE for the current remediation phase — future enhancement, not a growth gate.
+- Current evidence gate is DATA_VERIFIED (vendor primary sources + documented pricing with sourceIds) plus research-based pages. Unfinished test sessions do not count as hands-on and must not block improvement or promotion.
 - DATA_VERIFIED requires software.pricingVerifiedAt / software.pricing.verifiedAt / enrichment.pricing.verifiedAt with sources — never domainCheckedAt, updatedAt/generatedAt twins, or mass-identical backfill stamps.
-- Price growth signals from 2026-09-08T23:17:49.543Z
+- Price growth signals from 2026-09-10T10:34:44.084Z
 
 
 ---

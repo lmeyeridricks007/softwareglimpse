@@ -1,10 +1,10 @@
 {
   "slug": "zendesk-suite",
-  "updatedAt": "2026-09-07T22:31:21.740Z",
+  "updatedAt": "2026-09-10T11:46:30.341Z",
   "version": "1.0.0",
   "fieldAudit": {
     "slug": "zendesk-suite",
-    "checkedAt": "2026-09-07T22:31:21.737Z",
+    "checkedAt": "2026-09-10T11:46:30.337Z",
     "items": [
       {
         "field": "name",
@@ -20,9 +20,9 @@
       },
       {
         "field": "canonical_vendor",
-        "status": "UNKNOWN",
-        "detail": "Company/vendor not documented",
-        "source": "none"
+        "status": "PASS",
+        "detail": "Vendor: Zendesk, Inc.",
+        "source": "seed"
       },
       {
         "field": "category",
@@ -115,11 +115,11 @@
         "source": "enrichment"
       }
     ],
-    "passCount": 17,
+    "passCount": 18,
     "partialCount": 0,
     "missingCount": 0,
-    "unknownCount": 1,
-    "score": 94
+    "unknownCount": 0,
+    "score": 100
   },
   "decisionHub": {
     "whatItIs": "Zendesk Suite is Zendesk's customer service platform (distinct from Zendesk Sell CRM at slug `zendesk`). Helpdesk ticketing, messaging, voice, and AI agents across Support Team ($19/agent/mo annual), Suite Team ($55), and Suite Pro ($115) per agent/month billed annually. Scored as helpdesk-ticketing primary within the CS category — not collapsed into CRM Sell.",
@@ -240,9 +240,7 @@
     ],
     "evidenceState": "Research/data-based (no completed hands-on test) · Latest verification/research signal: 2026-08-18T12:00:00.000Z · Editorial assessment: approved",
     "nextDecisionStep": "Compare against peers: Freshdesk vs Zendesk Suite",
-    "missingSections": [
-      "canonical_vendor"
-    ]
+    "missingSections": []
   },
   "dependents": [
     {
@@ -342,13 +340,11 @@
     }
   ],
   "dependentsNeedingRefresh": [],
-  "remediation": [
-    "verify:canonical_vendor"
-  ],
+  "remediation": [],
   "notes": [
-    "fieldAudit score=94",
+    "fieldAudit score=100",
     "decisionHub bestFor=5 notIdeal=6",
     "dependents=19"
   ],
-  "materiallyImproved": false
+  "materiallyImproved": true
 }

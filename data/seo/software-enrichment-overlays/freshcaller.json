@@ -1,10 +1,10 @@
 {
   "slug": "freshcaller",
-  "updatedAt": "2026-09-07T22:31:21.388Z",
+  "updatedAt": "2026-09-10T11:46:30.348Z",
   "version": "1.0.0",
   "fieldAudit": {
     "slug": "freshcaller",
-    "checkedAt": "2026-09-07T22:31:21.386Z",
+    "checkedAt": "2026-09-10T11:46:30.345Z",
     "items": [
       {
         "field": "name",
@@ -20,9 +20,9 @@
       },
       {
         "field": "canonical_vendor",
-        "status": "UNKNOWN",
-        "detail": "Company/vendor not documented",
-        "source": "none"
+        "status": "PASS",
+        "detail": "Vendor: Freshworks",
+        "source": "seed"
       },
       {
         "field": "category",
@@ -115,11 +115,11 @@
         "source": "enrichment"
       }
     ],
-    "passCount": 17,
+    "passCount": 18,
     "partialCount": 0,
     "missingCount": 0,
-    "unknownCount": 1,
-    "score": 94
+    "unknownCount": 0,
+    "score": 100
   },
   "decisionHub": {
     "whatItIs": "Freshcaller is Freshworks’ cloud PBX for voice support teams. It is unusual in this cluster for publishing a $0 agent tier (pay per minute only) and for bundling included incoming minutes into each paid tier — 2,000 on Growth, 3,000 on Pro, 5,000 on Enterprise. Routing depth climbs with the ladder (wait queues and recording on Growth, routing automation and conferencing on Pro, speech-enabled IVR and service-level monitoring on Enterprise), and day passes let occasional agents log in without a full seat.",
@@ -248,9 +248,7 @@
     ],
     "evidenceState": "Research/data-based (no completed hands-on test) · Latest verification/research signal: 2026-08-17T09:00:00.000Z · Editorial assessment: approved",
     "nextDecisionStep": "Compare against peers: Aircall vs Freshcaller",
-    "missingSections": [
-      "canonical_vendor"
-    ]
+    "missingSections": []
   },
   "dependents": [
     {
@@ -345,13 +343,11 @@
     }
   ],
   "dependentsNeedingRefresh": [],
-  "remediation": [
-    "verify:canonical_vendor"
-  ],
+  "remediation": [],
   "notes": [
-    "fieldAudit score=94",
+    "fieldAudit score=100",
     "decisionHub bestFor=5 notIdeal=6",
     "dependents=18"
   ],
-  "materiallyImproved": false
+  "materiallyImproved": true
 }

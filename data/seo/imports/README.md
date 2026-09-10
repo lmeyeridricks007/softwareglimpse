@@ -7,6 +7,21 @@ Canonical REAL files (latest available in repo):
 - `docs/migration/data/gsc-export.json` — Performance (`synthetic: false`)
 - `docs/migration/data/gsc-coverage.json` — Coverage / Indexing
 
+### Current import (2026-09-05)
+
+| Field | Value |
+| --- | --- |
+| Source | Google Search Console UI export (xlsx) — softwareglimpse.com, Search type Web |
+| Export date | 2026-09-05 |
+| Performance data-through | 2026-09-03 |
+| Performance window | 2025-09-04 → 2026-09-03 (Last 12 months) |
+| Coverage data-through | 2026-08-28 |
+| Coverage window | 2026-06-08 → 2026-08-28 (issue-chart drilldowns only) |
+| Page × query | **Not in this export** — query mappings stay `INFERRED_*` / `UNKNOWN` |
+| Sitemap GSC report | **Not in this export** (Metadata: Sitemap = All known pages) |
+
+Raw xlsx: `data/seo/imports/gsc/2026-09-05/`. Prior live snapshot archived at `data/seo/archives/gsc/` (`*-2026-08-13.json` and `*-replaced-2026-09-10.json`). Do **not** compare Last-12-months Performance to the archived Last-3-months snapshot, or Coverage drilldowns to the pre-sitemap-cutover Overview.
+
 Optional drop zones (auto-discovered):
 
 - `data/seo/gsc-export.json`

@@ -1,0 +1,202 @@
+{
+  "slug": "woocommerce-setup",
+  "enrichmentType": "IMPLEMENTATION_GUIDE",
+  "updatedAt": "2026-09-10T12:10:17.978Z",
+  "uniqueValueAdded": [
+    "implementation_workflow",
+    "scenario_analysis",
+    "decision_framework",
+    "limitations_evidence",
+    "pricing_comparison",
+    "sg_original_data",
+    "buyer_checklist"
+  ],
+  "patch": {
+    "summary": "online storefront; product catalog; checkout payments; order management. WooCommerce core · free · online storefront | Extensions & hosting. WordPress, Stripe, PayPal. WordPress-native brands and content-heavy stores; Developers/agencies building custom commerce stacks; Merchants optimizing for control over convenience. WooCommerce is an open-source ecommerce plugin for WordPress — free to install with costs coming from hosting, themes, extensions, and payment processing (WooPayments or gateways). Buyer question: does Extensions & hosting gating pos omnichannel (WooCommerce core, Extensions & hosting) change the WooCommerce decision before seats scale? Decision thesis: unlike a generic ecommerce shortlist, WooCommerce is worth it if WordPress-native brands and content-heavy stores outweighs You own hosting, security, updates, and plugin compatibility — operational burden vs SaaS — trade-off accepted before seats scale.",
+    "blocks": [
+      {
+        "id": "da-woocommerce-setup-1",
+        "type": "direct-answer",
+        "body": "pos omnichannel (WooCommerce core, Extensions & hosting) decides whether WooCommerce setup is a one-team pilot or a specialist project — confirm unlocks for pos omnichannel (WooCommerce core, Extensions & hosting), marketplace channels (WooCommerce core, Extensions & hosting), b2b wholesale (WooCommerce core, Extensions & hosting) before invites.",
+        "bullets": [
+          "Start with: online storefront",
+          "Gate check: pos omnichannel (WooCommerce core, Extensions & hosting)",
+          "Integrate after: data quality pass on WordPress"
+        ]
+      },
+      {
+        "id": "impl-woocommerce-setup-2",
+        "type": "step",
+        "heading": "WooCommerce day-zero to steady-state sequence",
+        "body": "Treat WooCommerce setup as a controlled rollout — not a weekend dump of CSV files.",
+        "stepNumber": 1,
+        "scenarios": [
+          {
+            "title": "Day zero — objects and owners",
+            "body": "Define owners for online storefront, product catalog, checkout payments before inviting the whole org."
+          },
+          {
+            "title": "SMB pilot",
+            "body": "One pipeline / one team proves WordPress-native brands and content-heavy stores before company-wide seats."
+          },
+          {
+            "title": "Cutover",
+            "body": "Freeze legacy writes briefly; validate WordPress and Stripe before reopen."
+          }
+        ]
+      },
+      {
+        "id": "df-woocommerce-setup-3",
+        "type": "decision-framework",
+        "title": "WooCommerce implementation go / no-go",
+        "steps": [
+          {
+            "id": "i-1",
+            "label": "Go when plan unlocks cover pos omnichannel (WooCommerce core, Extensions & hosting)"
+          },
+          {
+            "id": "i-2",
+            "label": "Pause if this limitation blocks ops: You own hosting, security, updates, and plugin compatibility — operational burden vs SaaS"
+          },
+          {
+            "id": "i-3",
+            "label": "Do not expand seats until online storefront is green"
+          }
+        ]
+      },
+      {
+        "id": "mist-woocommerce-setup-4",
+        "type": "mistakes",
+        "title": "WooCommerce implementation mistakes",
+        "items": [
+          {
+            "title": "Mistake 1",
+            "body": "You own hosting, security, updates, and plugin compatibility — operational burden vs SaaS"
+          },
+          {
+            "title": "Mistake 2",
+            "body": "Extension sprawl can inflate TCO and maintenance"
+          },
+          {
+            "title": "Mistake 3",
+            "body": "Checkout performance depends on hosting stack and plugin choices"
+          },
+          {
+            "title": "Mistake 4",
+            "body": "Not a retail POS-first bundle out of the box"
+          },
+          {
+            "title": "Big-bang invite",
+            "body": "Inviting every user before object design creates junk data that is expensive to unwind."
+          }
+        ]
+      },
+      {
+        "id": "cost-woocommerce-setup-5",
+        "type": "cost-breakdown",
+        "title": "WooCommerce plan gates that affect rollout",
+        "body": "Implementation fails when unlocks needed for go-live sit on a higher tier than budgeted.",
+        "lines": [
+          {
+            "label": "WooCommerce core",
+            "description": "Free plan · Unlocks: online storefront, product catalog, checkout payments · Suits: explore before committing seats"
+          },
+          {
+            "label": "Extensions & hosting",
+            "description": "Contact sales · Suits: teams that need custom procurement"
+          }
+        ]
+      },
+      {
+        "id": "sel-woocommerce-setup-6",
+        "type": "selection-checklist",
+        "title": "WooCommerce implementation checklist",
+        "dimensions": [
+          {
+            "id": "prep",
+            "label": "Prep",
+            "options": [
+              "Object model drafted",
+              "Owners named",
+              "Legacy freeze window set"
+            ]
+          },
+          {
+            "id": "pilot",
+            "label": "Pilot",
+            "options": [
+              "online storefront",
+              "Junk-data rules set",
+              "Support path clear"
+            ]
+          },
+          {
+            "id": "scale",
+            "label": "Scale",
+            "options": [
+              "WordPress",
+              "Seat expansion criteria written",
+              "Rollback plan noted"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "cta-woocommerce-setup-7",
+        "type": "interactive-cta",
+        "title": "Validate ecommerce fit before a deep WooCommerce rollout",
+        "body": "If WooCommerce fails constraint fit, stop implementation early.",
+        "href": "/tools/ecommerce-finder/",
+        "ctaLabel": "Open Finder",
+        "variant": "finder"
+      }
+    ],
+    "sections": [
+      {
+        "id": "sec-thesis-woocommerce-setup",
+        "heading": "WooCommerce buyer question and thesis",
+        "body": "online storefront; product catalog; checkout payments; order management. WooCommerce core · free · online storefront | Extensions & hosting. WordPress, Stripe, PayPal. WordPress-native brands and content-heavy stores; Developers/agencies building custom commerce stacks; Merchants optimizing for control over convenience. WooCommerce is an open-source ecommerce plugin for WordPress — free to install with costs coming from hosting, themes, extensions, and payment processing (WooPayments or gateways).. That catalogue mix is the WooCommerce setup filter — not a generic ecommerce lecture.\n\nBuyer question: does Extensions & hosting gating pos omnichannel (WooCommerce core, Extensions & hosting) change the WooCommerce decision before seats scale?\n\nDecision thesis: unlike a generic ecommerce shortlist, WooCommerce is worth it if WordPress-native brands and content-heavy stores outweighs You own hosting, security, updates, and plugin compatibility — operational burden vs SaaS — trade-off accepted before seats scale.\n\nBest for: WordPress-native brands and content-heavy stores; Developers/agencies building custom commerce stacks; Merchants optimizing for control over convenience (WordPress-native brands and content-heavy stores).\n\nPoor fit when: Non-technical founders who want zero ops overhead; Retail-first POS-led businesses; Teams that want one vendor subscription for everything. Avoid if You own hosting, security, updates, and plugin compatibility — operational burden vs SaaS would block go-live."
+      },
+      {
+        "id": "sec-limits-woocommerce-setup",
+        "heading": "WooCommerce limitation, pricing interpretation, and alternative context",
+        "body": "Limitation: You own hosting, security, updates, and plugin compatibility — operational burden vs SaaS; Extension sprawl can inflate TCO and maintenance; Checkout performance depends on hosting stack and plugin choices because it forces process changes or add-ons around WooCommerce when online storefront is the job.\n\nPricing interpretation: stay on WooCommerce core until pos omnichannel (WooCommerce core, Extensions & hosting) is mandatory; plan jumps to Extensions & hosting only after that hinge is proven.\n\nPlan trade-off: you gain pos omnichannel (WooCommerce core, Extensions & hosting) at the expense of Subscription floors vs payment-processing spreads and GMV/overage fees — measure both in the pilot. Researched packaging: WooCommerce core · free · online storefront | Extensions & hosting.\n\nAlternative context: unlike Shopify, WooCommerce is preferable when WordPress-native brands and content-heavy stores because online storefront plus pos omnichannel (WooCommerce core, Extensions & hosting) match; prefer Shopify when Non-technical founders who want zero ops overhead because the operating loops differ."
+      },
+      {
+        "id": "sec-scenario-woocommerce-setup",
+        "heading": "Decision scenario and conclusion for WooCommerce",
+        "body": "Scenario: for online storefront teams, recommend WooCommerce when WordPress-native brands and content-heavy stores; recommend an alternative path when Non-technical founders who want zero ops overhead because You own hosting, security, updates, and plugin compatibility — operational burden vs SaaS dominates.\n\nImplementation effort: setup takes a named admin for online storefront plus a freeze window if WordPress are in the cutover path.\n\nIntegrations in research: WordPress, Stripe, PayPal.\n\nFinal call: proceed with WooCommerce when online storefront plus online storefront outweigh You own hosting, security, updates, and plugin compatibility — operational burden vs SaaS; walk when Non-technical founders who want zero ops overhead because workarounds will eat the Extensions & hosting spend."
+      }
+    ],
+    "checklist": [
+      {
+        "id": "enrich-chk-0",
+        "label": "Draft WooCommerce object owners before invites",
+        "order": 0
+      },
+      {
+        "id": "enrich-chk-1",
+        "label": "Confirm plan unlocks for go-live features",
+        "order": 1
+      },
+      {
+        "id": "enrich-chk-2",
+        "label": "Pilot one team on online storefront",
+        "order": 2
+      },
+      {
+        "id": "enrich-chk-3",
+        "label": "If blocked, evaluate Shopify before sunk-cost expansion",
+        "order": 3
+      }
+    ],
+    "nextAction": {
+      "contentId": "tool:finder:ecommerce",
+      "label": "Open Finder shortlist"
+    }
+  },
+  "notes": [
+    "Implementation: workflow, constraints, mistakes, checklist.",
+    "Type-specific skeleton: IMPLEMENTATION_GUIDE"
+  ]
+}

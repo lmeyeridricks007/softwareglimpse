@@ -1,10 +1,10 @@
 {
   "slug": "ecwid",
-  "updatedAt": "2026-09-07T22:31:21.907Z",
+  "updatedAt": "2026-09-10T11:46:30.071Z",
   "version": "1.0.0",
   "fieldAudit": {
     "slug": "ecwid",
-    "checkedAt": "2026-09-07T22:31:21.905Z",
+    "checkedAt": "2026-09-10T11:46:30.069Z",
     "items": [
       {
         "field": "name",
@@ -20,9 +20,9 @@
       },
       {
         "field": "canonical_vendor",
-        "status": "UNKNOWN",
-        "detail": "Company/vendor not documented",
-        "source": "none"
+        "status": "PASS",
+        "detail": "Vendor: Lightspeed",
+        "source": "seed"
       },
       {
         "field": "category",
@@ -115,11 +115,11 @@
         "source": "enrichment"
       }
     ],
-    "passCount": 16,
+    "passCount": 17,
     "partialCount": 0,
     "missingCount": 0,
-    "unknownCount": 2,
-    "score": 89
+    "unknownCount": 1,
+    "score": 94
   },
   "decisionHub": {
     "whatItIs": "Ecwid (Lightspeed) is a hosted ecommerce widget you embed on an existing website, WordPress, or social storefront rather than replacing the CMS. US tiles after the 2 March 2026 update: Starter $5/mo; Venture $35/mo or $29 annual; Business $65/mo or $49 annual; Unlimited $149/mo or $119 annual. Ecwid does not add its own transaction fee on top of payment processing. Landscape SaaS peer — not a Shopify-class commerce OS. Research grounded 2026-08-18 from first-party pricing; confirm live on ecwid.com/pricing.",
@@ -146,8 +146,8 @@
       "order management",
       "inventory management",
       "shipping fulfillment",
-      "analytics reporting",
-      "app extensions"
+      "pos omnichannel",
+      "b2b wholesale"
     ],
     "pricingSummary": "4 documented plans · entry paid: Starter",
     "keyTradeoffs": [
@@ -238,7 +238,6 @@
     "evidenceState": "Research/data-based (no completed hands-on test) · Latest verification/research signal: 2026-08-18T14:00:00.000Z · Editorial assessment: approved",
     "nextDecisionStep": "Compare against peers: Ecwid vs Shopify",
     "missingSections": [
-      "canonical_vendor",
       "trial"
     ]
   },
@@ -406,13 +405,12 @@
   ],
   "dependentsNeedingRefresh": [],
   "remediation": [
-    "verify:canonical_vendor",
     "verify:trial"
   ],
   "notes": [
-    "fieldAudit score=89",
+    "fieldAudit score=94",
     "decisionHub bestFor=6 notIdeal=6",
     "dependents=32"
   ],
-  "materiallyImproved": false
+  "materiallyImproved": true
 }

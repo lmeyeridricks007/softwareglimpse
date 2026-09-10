@@ -1,9 +1,9 @@
 {
   "meta": {
-    "generatedAt": "2026-09-08T23:15:00.661Z",
+    "generatedAt": "2026-09-10T10:33:55.381Z",
     "sourceFile": "docs/migration/data/gsc-export.json",
-    "dataThroughDate": "2026-08-13",
-    "rangeLabel": "Last 3 months",
+    "dataThroughDate": "2026-09-03",
+    "rangeLabel": "Last 12 months",
     "engineVersion": "3.1.0",
     "synthetic": false
   },
@@ -13,9 +13,9 @@
       "estateType": "guides",
       "queueBucket": "indexed_improvement",
       "lifecycleState": null,
-      "opportunityScore": 50,
-      "impressions": 48,
-      "position": 41.665,
+      "opportunityScore": 60,
+      "impressions": 144,
+      "position": 33.18,
       "ctr": 0,
       "primaryQuery": null,
       "targetQuery": null,
@@ -28,82 +28,89 @@
         }
       ],
       "querySourceDateRange": {
-        "startDate": "2026-05-14",
-        "endDate": "2026-08-13"
+        "startDate": "2025-09-04",
+        "endDate": "2026-09-03"
       },
       "actionConfidence": "PAGE_LEVEL",
       "requiresHumanReview": false,
       "intent": "informational",
       "primaryAction": "OPTIMIZE_TITLE",
       "remediation": [
-        "OPTIMIZE_TITLE"
+        "OPTIMIZE_TITLE",
+        "OPTIMIZE_META",
+        "IMPROVE_INTRO",
+        "BUILD_LINKS"
       ],
       "slug": null,
       "queries": [],
       "inferredQueryCandidates": []
     },
     {
-      "path": "/guides/how-to-choose-crm/",
+      "path": "/guides/what-is-tidio/",
       "estateType": "guides",
-      "queueBucket": "indexed_improvement",
-      "lifecycleState": "INDEXABLE",
-      "opportunityScore": 45,
-      "impressions": 507,
-      "position": 84.12897435897436,
+      "queueBucket": "improve_promotion",
+      "lifecycleState": "MANUAL_REVIEW",
+      "opportunityScore": 54,
+      "impressions": 237,
+      "position": 41.78,
       "ctr": 0,
-      "primaryQuery": null,
-      "targetQuery": null,
-      "relationshipSource": "INFERRED_LOW",
+      "primaryQuery": "tidio",
+      "targetQuery": "tidio",
+      "relationshipSource": "INFERRED_HIGH",
       "queryProvenance": "INFERRED",
-      "queryMappingConfidence": "LOW",
+      "queryMappingConfidence": "HIGH",
       "queryEvidence": [
         {
           "label": "heuristic_overlap",
-          "detail": "shared product/entity"
+          "detail": "shared product/entity; specific token overlap"
         },
         {
           "label": "relationship_source",
-          "detail": "INFERRED_LOW"
+          "detail": "INFERRED_HIGH"
         }
       ],
       "querySourceDateRange": {
-        "startDate": "2026-05-14",
-        "endDate": "2026-08-13"
+        "startDate": "2025-09-04",
+        "endDate": "2026-09-03"
       },
-      "actionConfidence": "SUPPRESSED",
+      "actionConfidence": "REVIEW_REQUIRED",
       "requiresHumanReview": true,
-      "intent": "informational",
-      "primaryAction": "IMPROVE_INTRO",
+      "intent": "low_value",
+      "primaryAction": "MANUAL_REVIEW",
       "remediation": [
+        "MANUAL_REVIEW",
+        "ENRICH_AND_PROMOTE",
+        "OPTIMIZE_TITLE",
         "IMPROVE_INTRO",
-        "ADD_UNIQUE_ANALYSIS",
-        "BUILD_LINKS"
+        "ADD_UNIQUE_ANALYSIS"
       ],
-      "slug": "how-to-choose-crm",
-      "queries": [],
+      "slug": "what-is-tidio",
+      "queries": [
+        "tidio"
+      ],
       "inferredQueryCandidates": [
         {
-          "query": "microsoft dynamics crm",
+          "query": "what is semrush",
           "clicks": 0,
-          "impressions": 991,
+          "impressions": 811,
           "ctr": 0,
-          "position": 70.36,
+          "position": 80.88,
           "intent": "informational",
-          "matchScore": 0.4341666666666666,
-          "clusterKey": "microsoft dynamics crm",
+          "matchScore": 0.4041666666666666,
+          "clusterKey": "what is semrush",
           "relationshipSource": "INFERRED_LOW",
           "confidence": "LOW",
           "mappingConfidence": "LOW",
-          "reason": "INFERRED — NOT DIRECT GSC DATA (shared product/entity)",
-          "mappingReason": "INFERRED — NOT DIRECT GSC DATA (shared product/entity)",
+          "reason": "INFERRED — NOT DIRECT GSC DATA (specific token overlap)",
+          "mappingReason": "INFERRED — NOT DIRECT GSC DATA (specific token overlap)",
           "evidence": [
             {
               "label": "heuristic_overlap",
-              "detail": "shared product/entity"
+              "detail": "specific token overlap"
             },
             {
               "label": "match_score",
-              "detail": "0.434"
+              "detail": "0.404"
             },
             {
               "label": "relationship_source",
@@ -111,152 +118,360 @@
             }
           ],
           "sourceDateRange": {
-            "startDate": "2026-05-14",
-            "endDate": "2026-08-13"
+            "startDate": "2025-09-04",
+            "endDate": "2026-09-03"
           }
         },
         {
-          "query": "plumber crm",
+          "query": "tidio",
           "clicks": 0,
-          "impressions": 616,
+          "impressions": 136,
           "ctr": 0,
-          "position": 88.04,
-          "intent": "informational",
-          "matchScore": 0.49249999999999994,
-          "clusterKey": "plumber crm",
-          "relationshipSource": "INFERRED_LOW",
-          "confidence": "LOW",
-          "mappingConfidence": "LOW",
-          "reason": "INFERRED — NOT DIRECT GSC DATA (shared product/entity)",
-          "mappingReason": "INFERRED — NOT DIRECT GSC DATA (shared product/entity)",
+          "position": 62.160000000000004,
+          "intent": "low_value",
+          "matchScore": 0.9475000000000001,
+          "clusterKey": "tidio",
+          "relationshipSource": "INFERRED_HIGH",
+          "confidence": "HIGH",
+          "mappingConfidence": "HIGH",
+          "reason": "INFERRED — NOT DIRECT GSC DATA (shared product/entity; specific token overlap)",
+          "mappingReason": "INFERRED — NOT DIRECT GSC DATA (shared product/entity; specific token overlap)",
           "evidence": [
             {
               "label": "heuristic_overlap",
-              "detail": "shared product/entity"
+              "detail": "shared product/entity; specific token overlap"
             },
             {
               "label": "match_score",
-              "detail": "0.492"
+              "detail": "0.948"
             },
             {
               "label": "relationship_source",
-              "detail": "INFERRED_LOW"
+              "detail": "INFERRED_HIGH"
             }
           ],
           "sourceDateRange": {
-            "startDate": "2026-05-14",
-            "endDate": "2026-08-13"
+            "startDate": "2025-09-04",
+            "endDate": "2026-09-03"
           }
         },
         {
-          "query": "crm freelancer",
+          "query": "what is tidio",
           "clicks": 0,
-          "impressions": 388,
+          "impressions": 101,
           "ctr": 0,
-          "position": 81.97,
+          "position": 64.54,
           "intent": "informational",
-          "matchScore": 0.49249999999999994,
-          "clusterKey": "crm freelancer",
-          "relationshipSource": "INFERRED_LOW",
-          "confidence": "LOW",
-          "mappingConfidence": "LOW",
-          "reason": "INFERRED — NOT DIRECT GSC DATA (shared product/entity)",
-          "mappingReason": "INFERRED — NOT DIRECT GSC DATA (shared product/entity)",
+          "matchScore": 0.9475000000000001,
+          "clusterKey": "what is tidio",
+          "relationshipSource": "INFERRED_HIGH",
+          "confidence": "HIGH",
+          "mappingConfidence": "HIGH",
+          "reason": "INFERRED — NOT DIRECT GSC DATA (shared product/entity; specific token overlap)",
+          "mappingReason": "INFERRED — NOT DIRECT GSC DATA (shared product/entity; specific token overlap)",
           "evidence": [
             {
               "label": "heuristic_overlap",
-              "detail": "shared product/entity"
+              "detail": "shared product/entity; specific token overlap"
             },
             {
               "label": "match_score",
-              "detail": "0.492"
+              "detail": "0.948"
             },
             {
               "label": "relationship_source",
-              "detail": "INFERRED_LOW"
+              "detail": "INFERRED_HIGH"
             }
           ],
           "sourceDateRange": {
-            "startDate": "2026-05-14",
-            "endDate": "2026-08-13"
+            "startDate": "2025-09-04",
+            "endDate": "2026-09-03"
           }
         },
         {
-          "query": "commercial crm",
+          "query": "tidio vs crisp",
           "clicks": 0,
-          "impressions": 369,
+          "impressions": 114,
           "ctr": 0,
-          "position": 77.96,
-          "intent": "informational",
-          "matchScore": 0.49249999999999994,
-          "clusterKey": "commercial crm",
-          "relationshipSource": "INFERRED_LOW",
-          "confidence": "LOW",
-          "mappingConfidence": "LOW",
-          "reason": "INFERRED — NOT DIRECT GSC DATA (shared product/entity)",
-          "mappingReason": "INFERRED — NOT DIRECT GSC DATA (shared product/entity)",
+          "position": 55.22,
+          "intent": "comparison",
+          "matchScore": 0.6725,
+          "clusterKey": "comparison:crisp+tidio",
+          "relationshipSource": "INFERRED_MEDIUM",
+          "confidence": "MEDIUM",
+          "mappingConfidence": "MEDIUM",
+          "reason": "INFERRED — NOT DIRECT GSC DATA (shared product/entity; specific token overlap)",
+          "mappingReason": "INFERRED — NOT DIRECT GSC DATA (shared product/entity; specific token overlap)",
           "evidence": [
             {
               "label": "heuristic_overlap",
-              "detail": "shared product/entity"
+              "detail": "shared product/entity; specific token overlap"
             },
             {
               "label": "match_score",
-              "detail": "0.492"
+              "detail": "0.672"
             },
             {
               "label": "relationship_source",
-              "detail": "INFERRED_LOW"
+              "detail": "INFERRED_MEDIUM"
             }
           ],
           "sourceDateRange": {
-            "startDate": "2026-05-14",
-            "endDate": "2026-08-13"
+            "startDate": "2025-09-04",
+            "endDate": "2026-09-03"
           }
         },
         {
-          "query": "hubspot crm",
+          "query": "tidio vs zendesk",
           "clicks": 0,
-          "impressions": 340,
+          "impressions": 112,
           "ctr": 0,
-          "position": 85.41,
-          "intent": "informational",
-          "matchScore": 0.49249999999999994,
-          "clusterKey": "hubspot crm",
-          "relationshipSource": "INFERRED_LOW",
-          "confidence": "LOW",
-          "mappingConfidence": "LOW",
-          "reason": "INFERRED — NOT DIRECT GSC DATA (shared product/entity)",
-          "mappingReason": "INFERRED — NOT DIRECT GSC DATA (shared product/entity)",
+          "position": 56.18,
+          "intent": "comparison",
+          "matchScore": 0.6725,
+          "clusterKey": "comparison:tidio+zendesk",
+          "relationshipSource": "INFERRED_MEDIUM",
+          "confidence": "MEDIUM",
+          "mappingConfidence": "MEDIUM",
+          "reason": "INFERRED — NOT DIRECT GSC DATA (shared product/entity; specific token overlap)",
+          "mappingReason": "INFERRED — NOT DIRECT GSC DATA (shared product/entity; specific token overlap)",
           "evidence": [
             {
               "label": "heuristic_overlap",
-              "detail": "shared product/entity"
+              "detail": "shared product/entity; specific token overlap"
             },
             {
               "label": "match_score",
-              "detail": "0.492"
+              "detail": "0.672"
             },
             {
               "label": "relationship_source",
-              "detail": "INFERRED_LOW"
+              "detail": "INFERRED_MEDIUM"
             }
           ],
           "sourceDateRange": {
-            "startDate": "2026-05-14",
-            "endDate": "2026-08-13"
+            "startDate": "2025-09-04",
+            "endDate": "2026-09-03"
           }
         }
       ]
     },
     {
-      "path": "/guides/zoho-crm-setup/",
+      "path": "/guides/what-is-ai-software/",
       "estateType": "guides",
       "queueBucket": "indexed_improvement",
       "lifecycleState": "INDEXABLE",
-      "opportunityScore": 39,
-      "impressions": 44,
-      "position": 79.27,
+      "opportunityScore": 49,
+      "impressions": 82,
+      "position": 7.94,
+      "ctr": 0,
+      "primaryQuery": null,
+      "targetQuery": null,
+      "relationshipSource": "INFERRED_LOW",
+      "queryProvenance": "INFERRED",
+      "queryMappingConfidence": "LOW",
+      "queryEvidence": [
+        {
+          "label": "heuristic_overlap",
+          "detail": "specific token overlap"
+        },
+        {
+          "label": "relationship_source",
+          "detail": "INFERRED_LOW"
+        }
+      ],
+      "querySourceDateRange": {
+        "startDate": "2025-09-04",
+        "endDate": "2026-09-03"
+      },
+      "actionConfidence": "SUPPRESSED",
+      "requiresHumanReview": true,
+      "intent": "informational",
+      "primaryAction": "OPTIMIZE_TITLE",
+      "remediation": [
+        "OPTIMIZE_TITLE",
+        "IMPROVE_INTRO",
+        "ADD_UNIQUE_ANALYSIS",
+        "OPTIMIZE_META"
+      ],
+      "slug": "what-is-ai-software",
+      "queries": [],
+      "inferredQueryCandidates": [
+        {
+          "query": "what is semrush",
+          "clicks": 0,
+          "impressions": 811,
+          "ctr": 0,
+          "position": 80.88,
+          "intent": "informational",
+          "matchScore": 0.4041666666666666,
+          "clusterKey": "what is semrush",
+          "relationshipSource": "INFERRED_LOW",
+          "confidence": "LOW",
+          "mappingConfidence": "LOW",
+          "reason": "INFERRED — NOT DIRECT GSC DATA (specific token overlap)",
+          "mappingReason": "INFERRED — NOT DIRECT GSC DATA (specific token overlap)",
+          "evidence": [
+            {
+              "label": "heuristic_overlap",
+              "detail": "specific token overlap"
+            },
+            {
+              "label": "match_score",
+              "detail": "0.404"
+            },
+            {
+              "label": "relationship_source",
+              "detail": "INFERRED_LOW"
+            }
+          ],
+          "sourceDateRange": {
+            "startDate": "2025-09-04",
+            "endDate": "2026-09-03"
+          }
+        },
+        {
+          "query": "caktus ai vs chatgpt",
+          "clicks": 0,
+          "impressions": 365,
+          "ctr": 0,
+          "position": 19.32,
+          "intent": "comparison",
+          "matchScore": 0.5008333333333332,
+          "clusterKey": "comparison:chatgpt",
+          "relationshipSource": "INFERRED_LOW",
+          "confidence": "LOW",
+          "mappingConfidence": "LOW",
+          "reason": "INFERRED — NOT DIRECT GSC DATA (shared product/entity; specific token overlap)",
+          "mappingReason": "INFERRED — NOT DIRECT GSC DATA (shared product/entity; specific token overlap)",
+          "evidence": [
+            {
+              "label": "heuristic_overlap",
+              "detail": "shared product/entity; specific token overlap"
+            },
+            {
+              "label": "match_score",
+              "detail": "0.501"
+            },
+            {
+              "label": "relationship_source",
+              "detail": "INFERRED_LOW"
+            }
+          ],
+          "sourceDateRange": {
+            "startDate": "2025-09-04",
+            "endDate": "2026-09-03"
+          }
+        },
+        {
+          "query": "ai schrijver",
+          "clicks": 0,
+          "impressions": 119,
+          "ctr": 0,
+          "position": 89.82,
+          "intent": "low_value",
+          "matchScore": 0.5924999999999999,
+          "clusterKey": "ai schrijver",
+          "relationshipSource": "INFERRED_MEDIUM",
+          "confidence": "MEDIUM",
+          "mappingConfidence": "MEDIUM",
+          "reason": "INFERRED — NOT DIRECT GSC DATA (shared product/entity; specific token overlap)",
+          "mappingReason": "INFERRED — NOT DIRECT GSC DATA (shared product/entity; specific token overlap)",
+          "evidence": [
+            {
+              "label": "heuristic_overlap",
+              "detail": "shared product/entity; specific token overlap"
+            },
+            {
+              "label": "match_score",
+              "detail": "0.592"
+            },
+            {
+              "label": "relationship_source",
+              "detail": "INFERRED_MEDIUM"
+            }
+          ],
+          "sourceDateRange": {
+            "startDate": "2025-09-04",
+            "endDate": "2026-09-03"
+          }
+        },
+        {
+          "query": "what is insightly",
+          "clicks": 0,
+          "impressions": 124,
+          "ctr": 0,
+          "position": 71.57,
+          "intent": "informational",
+          "matchScore": 0.4041666666666666,
+          "clusterKey": "what is insightly",
+          "relationshipSource": "INFERRED_LOW",
+          "confidence": "LOW",
+          "mappingConfidence": "LOW",
+          "reason": "INFERRED — NOT DIRECT GSC DATA (specific token overlap)",
+          "mappingReason": "INFERRED — NOT DIRECT GSC DATA (specific token overlap)",
+          "evidence": [
+            {
+              "label": "heuristic_overlap",
+              "detail": "specific token overlap"
+            },
+            {
+              "label": "match_score",
+              "detail": "0.404"
+            },
+            {
+              "label": "relationship_source",
+              "detail": "INFERRED_LOW"
+            }
+          ],
+          "sourceDateRange": {
+            "startDate": "2025-09-04",
+            "endDate": "2026-09-03"
+          }
+        },
+        {
+          "query": "success group business ai",
+          "clicks": 0,
+          "impressions": 100,
+          "ctr": 0,
+          "position": 69.6,
+          "intent": "low_value",
+          "matchScore": 0.4716666666666666,
+          "clusterKey": "success group business ai",
+          "relationshipSource": "INFERRED_LOW",
+          "confidence": "LOW",
+          "mappingConfidence": "LOW",
+          "reason": "INFERRED — NOT DIRECT GSC DATA (shared product/entity; specific token overlap)",
+          "mappingReason": "INFERRED — NOT DIRECT GSC DATA (shared product/entity; specific token overlap)",
+          "evidence": [
+            {
+              "label": "heuristic_overlap",
+              "detail": "shared product/entity; specific token overlap"
+            },
+            {
+              "label": "match_score",
+              "detail": "0.472"
+            },
+            {
+              "label": "relationship_source",
+              "detail": "INFERRED_LOW"
+            }
+          ],
+          "sourceDateRange": {
+            "startDate": "2025-09-04",
+            "endDate": "2026-09-03"
+          }
+        }
+      ]
+    },
+    {
+      "path": "/guides/crm-implementation/",
+      "estateType": "guides",
+      "queueBucket": "indexed_improvement",
+      "lifecycleState": "INDEXABLE",
+      "opportunityScore": 48,
+      "impressions": 33,
+      "position": 45.7,
       "ctr": 0,
       "primaryQuery": null,
       "targetQuery": null,
@@ -274,8 +489,8 @@
         }
       ],
       "querySourceDateRange": {
-        "startDate": "2026-05-14",
-        "endDate": "2026-08-13"
+        "startDate": "2025-09-04",
+        "endDate": "2026-09-03"
       },
       "actionConfidence": "SUPPRESSED",
       "requiresHumanReview": true,
@@ -285,15 +500,15 @@
         "IMPROVE_INTRO",
         "ADD_UNIQUE_ANALYSIS"
       ],
-      "slug": "zoho-crm-setup",
+      "slug": "crm-implementation",
       "queries": [],
       "inferredQueryCandidates": [
         {
           "query": "microsoft dynamics crm",
           "clicks": 0,
-          "impressions": 991,
+          "impressions": 2264,
           "ctr": 0,
-          "position": 70.36,
+          "position": 73.88,
           "intent": "informational",
           "matchScore": 0.4341666666666666,
           "clusterKey": "microsoft dynamics crm",
@@ -317,16 +532,16 @@
             }
           ],
           "sourceDateRange": {
-            "startDate": "2026-05-14",
-            "endDate": "2026-08-13"
+            "startDate": "2025-09-04",
+            "endDate": "2026-09-03"
           }
         },
         {
           "query": "plumber crm",
           "clicks": 0,
-          "impressions": 616,
+          "impressions": 1060,
           "ctr": 0,
-          "position": 88.04,
+          "position": 89.03,
           "intent": "informational",
           "matchScore": 0.49249999999999994,
           "clusterKey": "plumber crm",
@@ -350,19 +565,19 @@
             }
           ],
           "sourceDateRange": {
-            "startDate": "2026-05-14",
-            "endDate": "2026-08-13"
+            "startDate": "2025-09-04",
+            "endDate": "2026-09-03"
           }
         },
         {
-          "query": "crm freelancer",
+          "query": "activecampaign crm",
           "clicks": 0,
-          "impressions": 388,
+          "impressions": 1024,
           "ctr": 0,
-          "position": 81.97,
+          "position": 72.08,
           "intent": "informational",
           "matchScore": 0.49249999999999994,
-          "clusterKey": "crm freelancer",
+          "clusterKey": "activecampaign crm",
           "relationshipSource": "INFERRED_LOW",
           "confidence": "LOW",
           "mappingConfidence": "LOW",
@@ -383,19 +598,52 @@
             }
           ],
           "sourceDateRange": {
-            "startDate": "2026-05-14",
-            "endDate": "2026-08-13"
+            "startDate": "2025-09-04",
+            "endDate": "2026-09-03"
           }
         },
         {
-          "query": "commercial crm",
+          "query": "crm para restaurantes",
           "clicks": 0,
-          "impressions": 369,
+          "impressions": 1120,
           "ctr": 0,
-          "position": 77.96,
+          "position": 83.24,
+          "intent": "informational",
+          "matchScore": 0.4341666666666666,
+          "clusterKey": "crm para restaurantes",
+          "relationshipSource": "INFERRED_LOW",
+          "confidence": "LOW",
+          "mappingConfidence": "LOW",
+          "reason": "INFERRED — NOT DIRECT GSC DATA (shared product/entity)",
+          "mappingReason": "INFERRED — NOT DIRECT GSC DATA (shared product/entity)",
+          "evidence": [
+            {
+              "label": "heuristic_overlap",
+              "detail": "shared product/entity"
+            },
+            {
+              "label": "match_score",
+              "detail": "0.434"
+            },
+            {
+              "label": "relationship_source",
+              "detail": "INFERRED_LOW"
+            }
+          ],
+          "sourceDateRange": {
+            "startDate": "2025-09-04",
+            "endDate": "2026-09-03"
+          }
+        },
+        {
+          "query": "insightly crm",
+          "clicks": 1,
+          "impressions": 944,
+          "ctr": 0.001059322033898305,
+          "position": 69.44,
           "intent": "informational",
           "matchScore": 0.49249999999999994,
-          "clusterKey": "commercial crm",
+          "clusterKey": "insightly crm",
           "relationshipSource": "INFERRED_LOW",
           "confidence": "LOW",
           "mappingConfidence": "LOW",
@@ -416,41 +664,8 @@
             }
           ],
           "sourceDateRange": {
-            "startDate": "2026-05-14",
-            "endDate": "2026-08-13"
-          }
-        },
-        {
-          "query": "hubspot crm",
-          "clicks": 0,
-          "impressions": 340,
-          "ctr": 0,
-          "position": 85.41,
-          "intent": "informational",
-          "matchScore": 0.49249999999999994,
-          "clusterKey": "hubspot crm",
-          "relationshipSource": "INFERRED_LOW",
-          "confidence": "LOW",
-          "mappingConfidence": "LOW",
-          "reason": "INFERRED — NOT DIRECT GSC DATA (shared product/entity)",
-          "mappingReason": "INFERRED — NOT DIRECT GSC DATA (shared product/entity)",
-          "evidence": [
-            {
-              "label": "heuristic_overlap",
-              "detail": "shared product/entity"
-            },
-            {
-              "label": "match_score",
-              "detail": "0.492"
-            },
-            {
-              "label": "relationship_source",
-              "detail": "INFERRED_LOW"
-            }
-          ],
-          "sourceDateRange": {
-            "startDate": "2026-05-14",
-            "endDate": "2026-08-13"
+            "startDate": "2025-09-04",
+            "endDate": "2026-09-03"
           }
         }
       ]
@@ -460,10 +675,10 @@
       "estateType": "guides",
       "queueBucket": "indexed_improvement",
       "lifecycleState": "INDEXABLE",
-      "opportunityScore": 38,
-      "impressions": 110,
-      "position": 72.35809090909092,
-      "ctr": 0,
+      "opportunityScore": 47,
+      "impressions": 716,
+      "position": 56.22715083798882,
+      "ctr": 0.0013966480446927375,
       "primaryQuery": null,
       "targetQuery": null,
       "relationshipSource": "INFERRED_LOW",
@@ -480,8 +695,8 @@
         }
       ],
       "querySourceDateRange": {
-        "startDate": "2026-05-14",
-        "endDate": "2026-08-13"
+        "startDate": "2025-09-04",
+        "endDate": "2026-09-03"
       },
       "actionConfidence": "SUPPRESSED",
       "requiresHumanReview": true,
@@ -498,9 +713,9 @@
         {
           "query": "microsoft dynamics crm",
           "clicks": 0,
-          "impressions": 991,
+          "impressions": 2264,
           "ctr": 0,
-          "position": 70.36,
+          "position": 73.88,
           "intent": "informational",
           "matchScore": 0.4341666666666666,
           "clusterKey": "microsoft dynamics crm",
@@ -524,16 +739,16 @@
             }
           ],
           "sourceDateRange": {
-            "startDate": "2026-05-14",
-            "endDate": "2026-08-13"
+            "startDate": "2025-09-04",
+            "endDate": "2026-09-03"
           }
         },
         {
           "query": "plumber crm",
           "clicks": 0,
-          "impressions": 616,
+          "impressions": 1060,
           "ctr": 0,
-          "position": 88.04,
+          "position": 89.03,
           "intent": "informational",
           "matchScore": 0.49249999999999994,
           "clusterKey": "plumber crm",
@@ -557,19 +772,19 @@
             }
           ],
           "sourceDateRange": {
-            "startDate": "2026-05-14",
-            "endDate": "2026-08-13"
+            "startDate": "2025-09-04",
+            "endDate": "2026-09-03"
           }
         },
         {
-          "query": "crm freelancer",
+          "query": "activecampaign crm",
           "clicks": 0,
-          "impressions": 388,
+          "impressions": 1024,
           "ctr": 0,
-          "position": 81.97,
+          "position": 72.08,
           "intent": "informational",
           "matchScore": 0.49249999999999994,
-          "clusterKey": "crm freelancer",
+          "clusterKey": "activecampaign crm",
           "relationshipSource": "INFERRED_LOW",
           "confidence": "LOW",
           "mappingConfidence": "LOW",
@@ -590,19 +805,52 @@
             }
           ],
           "sourceDateRange": {
-            "startDate": "2026-05-14",
-            "endDate": "2026-08-13"
+            "startDate": "2025-09-04",
+            "endDate": "2026-09-03"
           }
         },
         {
-          "query": "commercial crm",
+          "query": "crm para restaurantes",
           "clicks": 0,
-          "impressions": 369,
+          "impressions": 1120,
           "ctr": 0,
-          "position": 77.96,
+          "position": 83.24,
+          "intent": "informational",
+          "matchScore": 0.4341666666666666,
+          "clusterKey": "crm para restaurantes",
+          "relationshipSource": "INFERRED_LOW",
+          "confidence": "LOW",
+          "mappingConfidence": "LOW",
+          "reason": "INFERRED — NOT DIRECT GSC DATA (shared product/entity)",
+          "mappingReason": "INFERRED — NOT DIRECT GSC DATA (shared product/entity)",
+          "evidence": [
+            {
+              "label": "heuristic_overlap",
+              "detail": "shared product/entity"
+            },
+            {
+              "label": "match_score",
+              "detail": "0.434"
+            },
+            {
+              "label": "relationship_source",
+              "detail": "INFERRED_LOW"
+            }
+          ],
+          "sourceDateRange": {
+            "startDate": "2025-09-04",
+            "endDate": "2026-09-03"
+          }
+        },
+        {
+          "query": "insightly crm",
+          "clicks": 1,
+          "impressions": 944,
+          "ctr": 0.001059322033898305,
+          "position": 69.44,
           "intent": "informational",
           "matchScore": 0.49249999999999994,
-          "clusterKey": "commercial crm",
+          "clusterKey": "insightly crm",
           "relationshipSource": "INFERRED_LOW",
           "confidence": "LOW",
           "mappingConfidence": "LOW",
@@ -623,19 +871,94 @@
             }
           ],
           "sourceDateRange": {
-            "startDate": "2026-05-14",
-            "endDate": "2026-08-13"
+            "startDate": "2025-09-04",
+            "endDate": "2026-09-03"
+          }
+        }
+      ]
+    },
+    {
+      "path": "/guides/how-to-choose-crm/",
+      "estateType": "guides",
+      "queueBucket": "indexed_improvement",
+      "lifecycleState": "INDEXABLE",
+      "opportunityScore": 46,
+      "impressions": 1093,
+      "position": 82.12463860933212,
+      "ctr": 0.0009149130832570906,
+      "primaryQuery": null,
+      "targetQuery": null,
+      "relationshipSource": "INFERRED_LOW",
+      "queryProvenance": "INFERRED",
+      "queryMappingConfidence": "LOW",
+      "queryEvidence": [
+        {
+          "label": "heuristic_overlap",
+          "detail": "shared product/entity"
+        },
+        {
+          "label": "relationship_source",
+          "detail": "INFERRED_LOW"
+        }
+      ],
+      "querySourceDateRange": {
+        "startDate": "2025-09-04",
+        "endDate": "2026-09-03"
+      },
+      "actionConfidence": "SUPPRESSED",
+      "requiresHumanReview": true,
+      "intent": "informational",
+      "primaryAction": "IMPROVE_INTRO",
+      "remediation": [
+        "IMPROVE_INTRO",
+        "ADD_UNIQUE_ANALYSIS",
+        "BUILD_LINKS"
+      ],
+      "slug": "how-to-choose-crm",
+      "queries": [],
+      "inferredQueryCandidates": [
+        {
+          "query": "microsoft dynamics crm",
+          "clicks": 0,
+          "impressions": 2264,
+          "ctr": 0,
+          "position": 73.88,
+          "intent": "informational",
+          "matchScore": 0.4341666666666666,
+          "clusterKey": "microsoft dynamics crm",
+          "relationshipSource": "INFERRED_LOW",
+          "confidence": "LOW",
+          "mappingConfidence": "LOW",
+          "reason": "INFERRED — NOT DIRECT GSC DATA (shared product/entity)",
+          "mappingReason": "INFERRED — NOT DIRECT GSC DATA (shared product/entity)",
+          "evidence": [
+            {
+              "label": "heuristic_overlap",
+              "detail": "shared product/entity"
+            },
+            {
+              "label": "match_score",
+              "detail": "0.434"
+            },
+            {
+              "label": "relationship_source",
+              "detail": "INFERRED_LOW"
+            }
+          ],
+          "sourceDateRange": {
+            "startDate": "2025-09-04",
+            "endDate": "2026-09-03"
           }
         },
         {
-          "query": "hubspot crm",
+          "query": "plumber crm",
           "clicks": 0,
-          "impressions": 340,
+          "impressions": 1060,
           "ctr": 0,
-          "position": 85.41,
+          "position": 89.03,
           "intent": "informational",
           "matchScore": 0.49249999999999994,
-          "clusterKey": "hubspot crm",
+          "clusterKey": "plumber crm",
           "relationshipSource": "INFERRED_LOW",
           "confidence": "LOW",
           "mappingConfidence": "LOW",
@@ -656,8 +979,521 @@
             }
           ],
           "sourceDateRange": {
-            "startDate": "2026-05-14",
-            "endDate": "2026-08-13"
+            "startDate": "2025-09-04",
+            "endDate": "2026-09-03"
+          }
+        },
+        {
+          "query": "activecampaign crm",
+          "clicks": 0,
+          "impressions": 1024,
+          "ctr": 0,
+          "position": 72.08,
+          "intent": "informational",
+          "matchScore": 0.49249999999999994,
+          "clusterKey": "activecampaign crm",
+          "relationshipSource": "INFERRED_LOW",
+          "confidence": "LOW",
+          "mappingConfidence": "LOW",
+          "reason": "INFERRED — NOT DIRECT GSC DATA (shared product/entity)",
+          "mappingReason": "INFERRED — NOT DIRECT GSC DATA (shared product/entity)",
+          "evidence": [
+            {
+              "label": "heuristic_overlap",
+              "detail": "shared product/entity"
+            },
+            {
+              "label": "match_score",
+              "detail": "0.492"
+            },
+            {
+              "label": "relationship_source",
+              "detail": "INFERRED_LOW"
+            }
+          ],
+          "sourceDateRange": {
+            "startDate": "2025-09-04",
+            "endDate": "2026-09-03"
+          }
+        },
+        {
+          "query": "crm para restaurantes",
+          "clicks": 0,
+          "impressions": 1120,
+          "ctr": 0,
+          "position": 83.24,
+          "intent": "informational",
+          "matchScore": 0.4341666666666666,
+          "clusterKey": "crm para restaurantes",
+          "relationshipSource": "INFERRED_LOW",
+          "confidence": "LOW",
+          "mappingConfidence": "LOW",
+          "reason": "INFERRED — NOT DIRECT GSC DATA (shared product/entity)",
+          "mappingReason": "INFERRED — NOT DIRECT GSC DATA (shared product/entity)",
+          "evidence": [
+            {
+              "label": "heuristic_overlap",
+              "detail": "shared product/entity"
+            },
+            {
+              "label": "match_score",
+              "detail": "0.434"
+            },
+            {
+              "label": "relationship_source",
+              "detail": "INFERRED_LOW"
+            }
+          ],
+          "sourceDateRange": {
+            "startDate": "2025-09-04",
+            "endDate": "2026-09-03"
+          }
+        },
+        {
+          "query": "insightly crm",
+          "clicks": 1,
+          "impressions": 944,
+          "ctr": 0.001059322033898305,
+          "position": 69.44,
+          "intent": "informational",
+          "matchScore": 0.49249999999999994,
+          "clusterKey": "insightly crm",
+          "relationshipSource": "INFERRED_LOW",
+          "confidence": "LOW",
+          "mappingConfidence": "LOW",
+          "reason": "INFERRED — NOT DIRECT GSC DATA (shared product/entity)",
+          "mappingReason": "INFERRED — NOT DIRECT GSC DATA (shared product/entity)",
+          "evidence": [
+            {
+              "label": "heuristic_overlap",
+              "detail": "shared product/entity"
+            },
+            {
+              "label": "match_score",
+              "detail": "0.492"
+            },
+            {
+              "label": "relationship_source",
+              "detail": "INFERRED_LOW"
+            }
+          ],
+          "sourceDateRange": {
+            "startDate": "2025-09-04",
+            "endDate": "2026-09-03"
+          }
+        }
+      ]
+    },
+    {
+      "path": "/guides/zoho-crm-setup/",
+      "estateType": "guides",
+      "queueBucket": "indexed_improvement",
+      "lifecycleState": "INDEXABLE",
+      "opportunityScore": 46,
+      "impressions": 209,
+      "position": 61.39062200956938,
+      "ctr": 0,
+      "primaryQuery": null,
+      "targetQuery": null,
+      "relationshipSource": "INFERRED_LOW",
+      "queryProvenance": "INFERRED",
+      "queryMappingConfidence": "LOW",
+      "queryEvidence": [
+        {
+          "label": "heuristic_overlap",
+          "detail": "shared product/entity"
+        },
+        {
+          "label": "relationship_source",
+          "detail": "INFERRED_LOW"
+        }
+      ],
+      "querySourceDateRange": {
+        "startDate": "2025-09-04",
+        "endDate": "2026-09-03"
+      },
+      "actionConfidence": "SUPPRESSED",
+      "requiresHumanReview": true,
+      "intent": "informational",
+      "primaryAction": "IMPROVE_INTRO",
+      "remediation": [
+        "IMPROVE_INTRO",
+        "ADD_UNIQUE_ANALYSIS",
+        "BUILD_LINKS"
+      ],
+      "slug": "zoho-crm-setup",
+      "queries": [],
+      "inferredQueryCandidates": [
+        {
+          "query": "microsoft dynamics crm",
+          "clicks": 0,
+          "impressions": 2264,
+          "ctr": 0,
+          "position": 73.88,
+          "intent": "informational",
+          "matchScore": 0.4341666666666666,
+          "clusterKey": "microsoft dynamics crm",
+          "relationshipSource": "INFERRED_LOW",
+          "confidence": "LOW",
+          "mappingConfidence": "LOW",
+          "reason": "INFERRED — NOT DIRECT GSC DATA (shared product/entity)",
+          "mappingReason": "INFERRED — NOT DIRECT GSC DATA (shared product/entity)",
+          "evidence": [
+            {
+              "label": "heuristic_overlap",
+              "detail": "shared product/entity"
+            },
+            {
+              "label": "match_score",
+              "detail": "0.434"
+            },
+            {
+              "label": "relationship_source",
+              "detail": "INFERRED_LOW"
+            }
+          ],
+          "sourceDateRange": {
+            "startDate": "2025-09-04",
+            "endDate": "2026-09-03"
+          }
+        },
+        {
+          "query": "plumber crm",
+          "clicks": 0,
+          "impressions": 1060,
+          "ctr": 0,
+          "position": 89.03,
+          "intent": "informational",
+          "matchScore": 0.49249999999999994,
+          "clusterKey": "plumber crm",
+          "relationshipSource": "INFERRED_LOW",
+          "confidence": "LOW",
+          "mappingConfidence": "LOW",
+          "reason": "INFERRED — NOT DIRECT GSC DATA (shared product/entity)",
+          "mappingReason": "INFERRED — NOT DIRECT GSC DATA (shared product/entity)",
+          "evidence": [
+            {
+              "label": "heuristic_overlap",
+              "detail": "shared product/entity"
+            },
+            {
+              "label": "match_score",
+              "detail": "0.492"
+            },
+            {
+              "label": "relationship_source",
+              "detail": "INFERRED_LOW"
+            }
+          ],
+          "sourceDateRange": {
+            "startDate": "2025-09-04",
+            "endDate": "2026-09-03"
+          }
+        },
+        {
+          "query": "activecampaign crm",
+          "clicks": 0,
+          "impressions": 1024,
+          "ctr": 0,
+          "position": 72.08,
+          "intent": "informational",
+          "matchScore": 0.49249999999999994,
+          "clusterKey": "activecampaign crm",
+          "relationshipSource": "INFERRED_LOW",
+          "confidence": "LOW",
+          "mappingConfidence": "LOW",
+          "reason": "INFERRED — NOT DIRECT GSC DATA (shared product/entity)",
+          "mappingReason": "INFERRED — NOT DIRECT GSC DATA (shared product/entity)",
+          "evidence": [
+            {
+              "label": "heuristic_overlap",
+              "detail": "shared product/entity"
+            },
+            {
+              "label": "match_score",
+              "detail": "0.492"
+            },
+            {
+              "label": "relationship_source",
+              "detail": "INFERRED_LOW"
+            }
+          ],
+          "sourceDateRange": {
+            "startDate": "2025-09-04",
+            "endDate": "2026-09-03"
+          }
+        },
+        {
+          "query": "crm para restaurantes",
+          "clicks": 0,
+          "impressions": 1120,
+          "ctr": 0,
+          "position": 83.24,
+          "intent": "informational",
+          "matchScore": 0.4341666666666666,
+          "clusterKey": "crm para restaurantes",
+          "relationshipSource": "INFERRED_LOW",
+          "confidence": "LOW",
+          "mappingConfidence": "LOW",
+          "reason": "INFERRED — NOT DIRECT GSC DATA (shared product/entity)",
+          "mappingReason": "INFERRED — NOT DIRECT GSC DATA (shared product/entity)",
+          "evidence": [
+            {
+              "label": "heuristic_overlap",
+              "detail": "shared product/entity"
+            },
+            {
+              "label": "match_score",
+              "detail": "0.434"
+            },
+            {
+              "label": "relationship_source",
+              "detail": "INFERRED_LOW"
+            }
+          ],
+          "sourceDateRange": {
+            "startDate": "2025-09-04",
+            "endDate": "2026-09-03"
+          }
+        },
+        {
+          "query": "insightly crm",
+          "clicks": 1,
+          "impressions": 944,
+          "ctr": 0.001059322033898305,
+          "position": 69.44,
+          "intent": "informational",
+          "matchScore": 0.49249999999999994,
+          "clusterKey": "insightly crm",
+          "relationshipSource": "INFERRED_LOW",
+          "confidence": "LOW",
+          "mappingConfidence": "LOW",
+          "reason": "INFERRED — NOT DIRECT GSC DATA (shared product/entity)",
+          "mappingReason": "INFERRED — NOT DIRECT GSC DATA (shared product/entity)",
+          "evidence": [
+            {
+              "label": "heuristic_overlap",
+              "detail": "shared product/entity"
+            },
+            {
+              "label": "match_score",
+              "detail": "0.492"
+            },
+            {
+              "label": "relationship_source",
+              "detail": "INFERRED_LOW"
+            }
+          ],
+          "sourceDateRange": {
+            "startDate": "2025-09-04",
+            "endDate": "2026-09-03"
+          }
+        }
+      ]
+    },
+    {
+      "path": "/guides/crm-data-migration/",
+      "estateType": "guides",
+      "queueBucket": "indexed_improvement",
+      "lifecycleState": "INDEXABLE",
+      "opportunityScore": 43,
+      "impressions": 351,
+      "position": 80.03,
+      "ctr": 0,
+      "primaryQuery": null,
+      "targetQuery": null,
+      "relationshipSource": "INFERRED_LOW",
+      "queryProvenance": "INFERRED",
+      "queryMappingConfidence": "LOW",
+      "queryEvidence": [
+        {
+          "label": "heuristic_overlap",
+          "detail": "shared product/entity"
+        },
+        {
+          "label": "relationship_source",
+          "detail": "INFERRED_LOW"
+        }
+      ],
+      "querySourceDateRange": {
+        "startDate": "2025-09-04",
+        "endDate": "2026-09-03"
+      },
+      "actionConfidence": "SUPPRESSED",
+      "requiresHumanReview": true,
+      "intent": "informational",
+      "primaryAction": "IMPROVE_INTRO",
+      "remediation": [
+        "IMPROVE_INTRO",
+        "ADD_UNIQUE_ANALYSIS",
+        "BUILD_LINKS"
+      ],
+      "slug": "crm-data-migration",
+      "queries": [],
+      "inferredQueryCandidates": [
+        {
+          "query": "microsoft dynamics crm",
+          "clicks": 0,
+          "impressions": 2264,
+          "ctr": 0,
+          "position": 73.88,
+          "intent": "informational",
+          "matchScore": 0.4341666666666666,
+          "clusterKey": "microsoft dynamics crm",
+          "relationshipSource": "INFERRED_LOW",
+          "confidence": "LOW",
+          "mappingConfidence": "LOW",
+          "reason": "INFERRED — NOT DIRECT GSC DATA (shared product/entity)",
+          "mappingReason": "INFERRED — NOT DIRECT GSC DATA (shared product/entity)",
+          "evidence": [
+            {
+              "label": "heuristic_overlap",
+              "detail": "shared product/entity"
+            },
+            {
+              "label": "match_score",
+              "detail": "0.434"
+            },
+            {
+              "label": "relationship_source",
+              "detail": "INFERRED_LOW"
+            }
+          ],
+          "sourceDateRange": {
+            "startDate": "2025-09-04",
+            "endDate": "2026-09-03"
+          }
+        },
+        {
+          "query": "plumber crm",
+          "clicks": 0,
+          "impressions": 1060,
+          "ctr": 0,
+          "position": 89.03,
+          "intent": "informational",
+          "matchScore": 0.49249999999999994,
+          "clusterKey": "plumber crm",
+          "relationshipSource": "INFERRED_LOW",
+          "confidence": "LOW",
+          "mappingConfidence": "LOW",
+          "reason": "INFERRED — NOT DIRECT GSC DATA (shared product/entity)",
+          "mappingReason": "INFERRED — NOT DIRECT GSC DATA (shared product/entity)",
+          "evidence": [
+            {
+              "label": "heuristic_overlap",
+              "detail": "shared product/entity"
+            },
+            {
+              "label": "match_score",
+              "detail": "0.492"
+            },
+            {
+              "label": "relationship_source",
+              "detail": "INFERRED_LOW"
+            }
+          ],
+          "sourceDateRange": {
+            "startDate": "2025-09-04",
+            "endDate": "2026-09-03"
+          }
+        },
+        {
+          "query": "activecampaign crm",
+          "clicks": 0,
+          "impressions": 1024,
+          "ctr": 0,
+          "position": 72.08,
+          "intent": "informational",
+          "matchScore": 0.49249999999999994,
+          "clusterKey": "activecampaign crm",
+          "relationshipSource": "INFERRED_LOW",
+          "confidence": "LOW",
+          "mappingConfidence": "LOW",
+          "reason": "INFERRED — NOT DIRECT GSC DATA (shared product/entity)",
+          "mappingReason": "INFERRED — NOT DIRECT GSC DATA (shared product/entity)",
+          "evidence": [
+            {
+              "label": "heuristic_overlap",
+              "detail": "shared product/entity"
+            },
+            {
+              "label": "match_score",
+              "detail": "0.492"
+            },
+            {
+              "label": "relationship_source",
+              "detail": "INFERRED_LOW"
+            }
+          ],
+          "sourceDateRange": {
+            "startDate": "2025-09-04",
+            "endDate": "2026-09-03"
+          }
+        },
+        {
+          "query": "crm para restaurantes",
+          "clicks": 0,
+          "impressions": 1120,
+          "ctr": 0,
+          "position": 83.24,
+          "intent": "informational",
+          "matchScore": 0.4341666666666666,
+          "clusterKey": "crm para restaurantes",
+          "relationshipSource": "INFERRED_LOW",
+          "confidence": "LOW",
+          "mappingConfidence": "LOW",
+          "reason": "INFERRED — NOT DIRECT GSC DATA (shared product/entity)",
+          "mappingReason": "INFERRED — NOT DIRECT GSC DATA (shared product/entity)",
+          "evidence": [
+            {
+              "label": "heuristic_overlap",
+              "detail": "shared product/entity"
+            },
+            {
+              "label": "match_score",
+              "detail": "0.434"
+            },
+            {
+              "label": "relationship_source",
+              "detail": "INFERRED_LOW"
+            }
+          ],
+          "sourceDateRange": {
+            "startDate": "2025-09-04",
+            "endDate": "2026-09-03"
+          }
+        },
+        {
+          "query": "insightly crm",
+          "clicks": 1,
+          "impressions": 944,
+          "ctr": 0.001059322033898305,
+          "position": 69.44,
+          "intent": "informational",
+          "matchScore": 0.49249999999999994,
+          "clusterKey": "insightly crm",
+          "relationshipSource": "INFERRED_LOW",
+          "confidence": "LOW",
+          "mappingConfidence": "LOW",
+          "reason": "INFERRED — NOT DIRECT GSC DATA (shared product/entity)",
+          "mappingReason": "INFERRED — NOT DIRECT GSC DATA (shared product/entity)",
+          "evidence": [
+            {
+              "label": "heuristic_overlap",
+              "detail": "shared product/entity"
+            },
+            {
+              "label": "match_score",
+              "detail": "0.492"
+            },
+            {
+              "label": "relationship_source",
+              "detail": "INFERRED_LOW"
+            }
+          ],
+          "sourceDateRange": {
+            "startDate": "2025-09-04",
+            "endDate": "2026-09-03"
           }
         }
       ]

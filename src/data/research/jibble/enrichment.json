@@ -172,36 +172,6 @@
       ]
     }
   ],
-  "aiCapabilities": [
-    {
-      "capability": "assistant",
-      "availability": "not-supported",
-      "sourceIds": [
-        "jibble-product-official"
-      ]
-    },
-    {
-      "capability": "summaries",
-      "availability": "not-supported",
-      "sourceIds": [
-        "jibble-product-official"
-      ]
-    },
-    {
-      "capability": "automation",
-      "availability": "limited",
-      "sourceIds": [
-        "jibble-product-official"
-      ]
-    },
-    {
-      "capability": "recommendations",
-      "availability": "not-supported",
-      "sourceIds": [
-        "jibble-product-official"
-      ]
-    }
-  ],
   "integrationSupport": [
     {
       "integrationSlug": "slack",
@@ -227,6 +197,36 @@
     {
       "integrationSlug": "zapier",
       "kind": "zapier-style",
+      "sourceIds": [
+        "jibble-product-official"
+      ]
+    }
+  ],
+  "aiCapabilities": [
+    {
+      "capability": "assistant",
+      "availability": "not-supported",
+      "sourceIds": [
+        "jibble-product-official"
+      ]
+    },
+    {
+      "capability": "summaries",
+      "availability": "not-supported",
+      "sourceIds": [
+        "jibble-product-official"
+      ]
+    },
+    {
+      "capability": "automation",
+      "availability": "limited",
+      "sourceIds": [
+        "jibble-product-official"
+      ]
+    },
+    {
+      "capability": "recommendations",
+      "availability": "not-supported",
       "sourceIds": [
         "jibble-product-official"
       ]
@@ -310,88 +310,6 @@
       "isEditorial": false
     }
   ],
-  "pricing": {
-    "currency": "USD",
-    "model": "per-seat",
-    "hasFreePlan": true,
-    "hasFreeTrial": false,
-    "plans": [
-      {
-        "id": "plan-free",
-        "slug": "free",
-        "name": "Free",
-        "isFree": true,
-        "contactSales": false,
-        "hasFreeTrial": false,
-        "highlighted": false,
-        "rules": [
-          {
-            "kind": "flat",
-            "amount": 0,
-            "currency": "USD",
-            "interval": "month",
-            "amountPeriod": "month"
-          }
-        ],
-        "description": "Free forever unlimited users — GPS, face recognition, timesheets, Slack/Teams/QuickBooks."
-      },
-      {
-        "id": "plan-premium",
-        "slug": "premium",
-        "name": "Premium",
-        "isFree": false,
-        "contactSales": false,
-        "hasFreeTrial": false,
-        "highlighted": true,
-        "rules": [
-          {
-            "kind": "per-seat",
-            "amountPerSeat": 4.49,
-            "currency": "USD",
-            "interval": "year",
-            "amountPeriod": "month"
-          }
-        ],
-        "description": "~$4.49/user/month billed annually (medium confidence from widely cited 2026 figures; confirm live)."
-      },
-      {
-        "id": "plan-ultimate",
-        "slug": "ultimate",
-        "name": "Ultimate",
-        "isFree": false,
-        "contactSales": false,
-        "hasFreeTrial": false,
-        "highlighted": false,
-        "rules": [
-          {
-            "kind": "per-seat",
-            "amountPerSeat": 7.99,
-            "currency": "USD",
-            "interval": "year",
-            "amountPeriod": "month"
-          }
-        ],
-        "description": "~$7.99/user/month billed annually (medium confidence; confirm live)."
-      },
-      {
-        "id": "plan-enterprise",
-        "slug": "enterprise",
-        "name": "Enterprise",
-        "isFree": false,
-        "contactSales": true,
-        "hasFreeTrial": false,
-        "highlighted": false,
-        "rules": [],
-        "description": "Enterprise — custom quote for advanced governance and scale."
-      }
-    ],
-    "notes": "Researched 2026-08-17. Free forever unlimited users confirmed first-party (GPS, face recognition, timesheets, Slack/Teams/QuickBooks). Paid annual commonly cited Premium ~$3.99–$4.49 and Ultimate ~$6.99–$7.99 per user/mo; prefer StackArbiter May 2026 cite Premium $4.49 / Ultimate $7.99 annual (medium confidence). Enterprise custom. Confirm live on jibble.io upgrade plans. Affiliate economics excluded.",
-    "verifiedAt": "2026-08-17T20:00:00.000Z",
-    "sourceIds": [
-      "jibble-pricing-official"
-    ],
-    "startingPriceMonthly": 4.49
-  },
   "screenshots": [
     {
       "id": "jibble-shot-dashboard",
@@ -522,13 +440,13 @@
       "demonstratedDimensionIds": [],
       "requirementCriterionIds": [],
       "workflowStageIds": [],
+      "mediaContext": "general-workflow",
       "reportedOutcomes": [],
       "placements": [
         "overview",
         "features",
         "evidence"
       ],
-      "mediaContext": "general-workflow",
       "purpose": "Official Jibble video for product research pages",
       "demonstratesCaption": "How Jibble presents the product in an official vendor video.",
       "editorialCommentary": "Official vendor demo — treat as UI/workflow evidence, not SoftwareGlimpse scoring.",
@@ -546,12 +464,88 @@
       "status": "published"
     }
   ],
-  "sourceIds": [
-    "jibble-product-official",
-    "jibble-pricing-official",
-    "jibble-product"
-  ],
-  "notes": "HR Wave-1 onboarding enrichment from first-party research 2026-08-17T20:00:00.000Z. handsOnTesting=false. membershipRole=primary. jobCluster=time-attendance.",
+  "pricing": {
+    "currency": "USD",
+    "model": "per-seat",
+    "hasFreePlan": true,
+    "hasFreeTrial": false,
+    "plans": [
+      {
+        "id": "plan-free",
+        "slug": "free",
+        "name": "Free",
+        "isFree": true,
+        "contactSales": false,
+        "hasFreeTrial": false,
+        "highlighted": false,
+        "rules": [
+          {
+            "kind": "flat",
+            "amount": 0,
+            "currency": "USD",
+            "interval": "month",
+            "amountPeriod": "month"
+          }
+        ],
+        "description": "Free forever unlimited users — GPS, face recognition, timesheets, Slack/Teams/QuickBooks."
+      },
+      {
+        "id": "plan-premium",
+        "slug": "premium",
+        "name": "Premium",
+        "isFree": false,
+        "contactSales": false,
+        "hasFreeTrial": false,
+        "highlighted": true,
+        "rules": [
+          {
+            "kind": "per-seat",
+            "amountPerSeat": 4.49,
+            "currency": "USD",
+            "interval": "year",
+            "amountPeriod": "month"
+          }
+        ],
+        "description": "~$4.49/user/month billed annually (medium confidence from widely cited 2026 figures; confirm live)."
+      },
+      {
+        "id": "plan-ultimate",
+        "slug": "ultimate",
+        "name": "Ultimate",
+        "isFree": false,
+        "contactSales": false,
+        "hasFreeTrial": false,
+        "highlighted": false,
+        "rules": [
+          {
+            "kind": "per-seat",
+            "amountPerSeat": 7.99,
+            "currency": "USD",
+            "interval": "year",
+            "amountPeriod": "month"
+          }
+        ],
+        "description": "~$7.99/user/month billed annually (medium confidence; confirm live)."
+      },
+      {
+        "id": "plan-enterprise",
+        "slug": "enterprise",
+        "name": "Enterprise",
+        "isFree": false,
+        "contactSales": true,
+        "hasFreeTrial": false,
+        "highlighted": false,
+        "rules": [],
+        "description": "Enterprise — custom quote for advanced governance and scale."
+      }
+    ],
+    "notes": "Researched 2026-08-17. Free forever unlimited users confirmed first-party (GPS, face recognition, timesheets, Slack/Teams/QuickBooks). Paid annual commonly cited Premium ~$3.99–$4.49 and Ultimate ~$6.99–$7.99 per user/mo; prefer StackArbiter May 2026 cite Premium $4.49 / Ultimate $7.99 annual (medium confidence). Enterprise custom. Confirm live on jibble.io upgrade plans. Affiliate economics excluded.",
+    "verifiedAt": "2026-09-10T11:43:16.355Z",
+    "sourceIds": [
+      "jibble-pricing-official"
+    ],
+    "startingPriceMonthly": 4.49
+  },
   "domainCheckedAt": {
     "identity": "2026-08-17T20:00:00.000Z",
     "pricing": "2026-08-17T20:00:00.000Z",
@@ -565,5 +559,11 @@
     "limits": "2026-08-17T20:00:00.000Z",
     "security-compliance": "2026-08-17T20:00:00.000Z"
   },
-  "updatedAt": "2026-08-18T06:00:00.000Z"
+  "sourceIds": [
+    "jibble-product-official",
+    "jibble-pricing-official",
+    "jibble-product"
+  ],
+  "updatedAt": "2026-08-18T06:00:00.000Z",
+  "notes": "HR Wave-1 onboarding enrichment from first-party research 2026-08-17T20:00:00.000Z. handsOnTesting=false. membershipRole=primary. jobCluster=time-attendance."
 }

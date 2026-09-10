@@ -6,6 +6,7 @@ import {
   getGuideBySlug,
 } from "@/data/repositories/guides";
 import {
+  buildCategoryLinkPlan,
   buildComparisonLinkPlan,
   buildFeatureLinkPlan,
   buildGuideLinkPlan,
@@ -100,6 +101,57 @@ describe("guide + software link plans", () => {
     expect(plan!.parentHub.some((l) => l.href.includes("/categories/crm"))).toBe(
       true,
     );
+  });
+
+  it("emits already-rendered category use-case hrefs including IMPROVE destinations", () => {
+    const marketing = buildCategoryLinkPlan("marketing");
+    expect(marketing).toBeTruthy();
+    expect(
+      marketing!.relatedUseCases.some(
+        (l) => l.href === "/use-cases/marketing-attribution/",
+      ),
+    ).toBe(true);
+    expect(
+      marketing!.relatedUseCases.some(
+        (l) => l.href === "/use-cases/marketing-metrics/",
+      ),
+    ).toBe(true);
+    expect(
+      marketing!.relatedUseCases.some(
+        (l) => l.href === "/use-cases/kpi-dashboards/",
+      ),
+    ).toBe(true);
+
+    const customerService = buildCategoryLinkPlan("customer-service");
+    expect(customerService).toBeTruthy();
+    expect(
+      customerService!.relatedUseCases.some(
+        (l) => l.href === "/use-cases/review-generation/",
+      ),
+    ).toBe(true);
+    expect(
+      customerService!.relatedUseCases.some(
+        (l) => l.href === "/use-cases/local-reputation/",
+      ),
+    ).toBe(true);
+  });
+
+  it("links indexable products to declared use cases even when the use-case page is IMPROVE", () => {
+    const databox = buildSoftwareLinkPlan("databox");
+    expect(databox).toBeTruthy();
+    expect(
+      databox!.relatedUseCases.some(
+        (l) => l.href === "/use-cases/kpi-dashboards/",
+      ),
+    ).toBe(true);
+
+    const whatConverts = buildSoftwareLinkPlan("whatconverts");
+    expect(whatConverts).toBeTruthy();
+    expect(
+      whatConverts!.relatedUseCases.some(
+        (l) => l.href === "/use-cases/marketing-attribution/",
+      ),
+    ).toBe(true);
   });
 
   it("links flagship CRM comparisons to both reviews and indexable alternatives pages", () => {

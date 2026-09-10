@@ -6,7 +6,12 @@ import { readFileSync, existsSync } from "node:fs";
 import path from "node:path";
 import { identityPath } from "@/seo/canonical";
 import { dedupePlanByHref } from "./select";
-import type { ContextualLink, LinkModuleId, PageLinkPlan } from "./types";
+import {
+  MODULE_LIMITS,
+  type ContextualLink,
+  type LinkModuleId,
+  type PageLinkPlan,
+} from "./types";
 
 export const LINK_INJECTIONS_VERSION = "1.0.0";
 
@@ -152,7 +157,11 @@ export function mergeLinkInjectionsIntoPlan(plan: PageLinkPlan): PageLinkPlan {
       planHrefs.add(link.href);
       merged.push(link);
     }
-    (next as Record<string, unknown>)[module] = merged;
+    const max =
+      module === "relatedComparisons"
+        ? MODULE_LIMITS.relatedComparisons.max
+        : merged.length;
+    (next as Record<string, unknown>)[module] = merged.slice(0, max);
   }
   return next;
 }

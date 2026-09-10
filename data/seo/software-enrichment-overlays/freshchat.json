@@ -1,10 +1,10 @@
 {
   "slug": "freshchat",
-  "updatedAt": "2026-09-07T22:31:21.751Z",
+  "updatedAt": "2026-09-10T11:46:30.359Z",
   "version": "1.0.0",
   "fieldAudit": {
     "slug": "freshchat",
-    "checkedAt": "2026-09-07T22:31:21.750Z",
+    "checkedAt": "2026-09-10T11:46:30.354Z",
     "items": [
       {
         "field": "name",
@@ -20,9 +20,9 @@
       },
       {
         "field": "canonical_vendor",
-        "status": "UNKNOWN",
-        "detail": "Company/vendor not documented",
-        "source": "none"
+        "status": "PASS",
+        "detail": "Vendor: Freshworks Inc.",
+        "source": "seed"
       },
       {
         "field": "category",
@@ -115,11 +115,11 @@
         "source": "enrichment"
       }
     ],
-    "passCount": 17,
+    "passCount": 18,
     "partialCount": 0,
     "missingCount": 0,
-    "unknownCount": 1,
-    "score": 94
+    "unknownCount": 0,
+    "score": 100
   },
   "decisionHub": {
     "whatItIs": "Freshchat is Freshworks' live chat and messaging platform for website and in-app customer support. Free plan for up to 10 agents; annual per-agent pricing: Growth $19, Pro $49, Enterprise $79 per agent/month billed annually. Distinct from Freshdesk (helpdesk) and Freshservice (ITSM). Scored as live-chat-support primary.",
@@ -140,14 +140,14 @@
       "Freshworks suite overlap with Freshdesk/Freshservice"
     ],
     "coreCapabilities": [
+      "ticketing",
       "shared inbox",
       "live chat",
+      "knowledge base",
       "omnichannel inbox",
       "macros automation",
-      "csat surveys",
-      "helpdesk reporting",
-      "chatbot ai agent",
-      "agent copilot"
+      "self service portal",
+      "csat surveys"
     ],
     "pricingSummary": "4 documented plans · 1 free · entry paid: Growth · trial documented on at least one plan",
     "keyTradeoffs": [
@@ -241,9 +241,7 @@
     ],
     "evidenceState": "Research/data-based (no completed hands-on test) · Latest verification/research signal: 2026-08-18T12:00:00.000Z · Editorial assessment: approved",
     "nextDecisionStep": "Compare against peers: Freshchat vs LiveChat",
-    "missingSections": [
-      "canonical_vendor"
-    ]
+    "missingSections": []
   },
   "dependents": [
     {
@@ -333,13 +331,11 @@
     }
   ],
   "dependentsNeedingRefresh": [],
-  "remediation": [
-    "verify:canonical_vendor"
-  ],
+  "remediation": [],
   "notes": [
-    "fieldAudit score=94",
+    "fieldAudit score=100",
     "decisionHub bestFor=6 notIdeal=6",
     "dependents=17"
   ],
-  "materiallyImproved": false
+  "materiallyImproved": true
 }

@@ -1,0 +1,240 @@
+{
+  "generatedAt": "2026-09-10T08:38:06.000Z",
+  "audit": "FULL_REVIEW_5",
+  "gitCommit": "37acc9bd8f272cf78cef7344419323c984f1861c",
+  "gitCommitShort": "37acc9bd",
+  "previousOverall": 55,
+  "previousGeneratedAt": "2026-09-09T18:59:39.000Z",
+  "previousAudit": "FULL_REVIEW_4",
+  "originalOverall": 49,
+  "gscDataThrough": "2026-08-13",
+  "gscImportDate": "2026-08-15",
+  "gscFreshness": "STALE — identical export window as Review #4 (8 / 115457 / 74.5) — not comparable for post-execution rank/click lift",
+  "scores": {
+    "technicalSeo": 87,
+    "crawlEfficiency": 86,
+    "indexability": 83,
+    "contentQuality": 65,
+    "contentUniqueness": 48,
+    "softwareDataQuality": 81,
+    "editorialCredibility": 66,
+    "internalLinking": 80,
+    "searchOpportunityExecution": 59,
+    "authorityBacklinks": 18,
+    "originalResearch": 45,
+    "evidenceTesting": 44,
+    "pricingFreshness": 66,
+    "ux": 54,
+    "performance": 50,
+    "commercialTracking": 42,
+    "aiVisibilityMeasurement": 22
+  },
+  "rationale": {
+    "technicalSeo": "Live FULL audit vs www: P0 8→0. Locale/taxonomy 410 and /fr/mon-histoire/ 301 confirmed without following redirects. Residual lab TTFB P1 on /search/.",
+    "crawlEfficiency": "Production architecture recovered: www sitemapindex 3133 vs R4 monolithic 6370. Residual: 16 INDEXABLE guides still noindex and absent from live sitemap-guides.xml (409 vs local 425).",
+    "indexability": "Live over-inclusion of ~3.2k URLs is gone. Local diagnostics 3149 vs live 3133 — do not award the 16 unpublished promotions as live-indexed.",
+    "contentQuality": "Factory-100c material uniqueness work; +1 only",
+    "contentUniqueness": "limitedUniqueAnalysisCount 1342→1326 (−16). factoryPackCount still 1272. highNearDuplicateRiskCount 1328→1312.",
+    "softwareDataQuality": "DATA_VERIFIED reconcile accepted 164→187 (+23); dashboard shows 189 — reconcile remains policy source of truth",
+    "editorialCredibility": "HANDS_ON 0 / NOT_CURRENT_SCOPE — not a current growth gate. DV 187 supports structured-evidence credibility.",
+    "internalLinking": "IMPROVE orphan sample 15/80→2/80. Semantic edges 26853→26856 (+3) — do not credit totalEdges 72584 (contextual 45728).",
+    "searchOpportunityExecution": "+16 lifecycle promotions since R4; www still serves those URLs noindex. GSC STALE caps traffic claim.",
+    "authorityBacklinks": "NOT_CONNECTED — no REAL Ahrefs/Semrush export",
+    "originalResearch": "CRM pricing research still live; no new earned citation proof",
+    "evidenceTesting": "Evidence wave 2026-09-10: +23 reconcile DV; 26 live-blocked; HO NOT_CURRENT_SCOPE",
+    "pricingFreshness": "Evidence stamps continued; monitor signals remain",
+    "ux": "No new UX outcome measured",
+    "performance": "No field CWV; one live lab TTFB P1 on /search/",
+    "commercialTracking": "Clicks REAL(8) STALE; conversions NOT_CONNECTED",
+    "aiVisibilityMeasurement": "NOT_CONNECTED"
+  },
+  "overall": 59,
+  "evidenceSnapshot": {
+    "dataVerifiedAccepted": {
+      "previous": 164,
+      "current": 187,
+      "delta": 23,
+      "dashboardShows": 189,
+      "sourceOfTruth": "reconcileDataVerifiedCoverage().accepted"
+    },
+    "handsOn": {
+      "previous": 0,
+      "current": 0,
+      "delta": 0,
+      "scope": "NOT_CURRENT_SCOPE",
+      "note": "Reported honestly; not a current growth/promotion/deploy gate"
+    },
+    "catalogue": 315,
+    "promotionsIncrementalSinceReview4": {
+      "lifecyclePromotedAtAfter_2026-09-09T18:59:39Z": 16,
+      "liveSitemapGuides": 409,
+      "localGuidesInSitemap": 425,
+      "wwwRobotsOnSamplePromotions": "noindex, follow",
+      "note": "Local promotions only; not live-indexed"
+    },
+    "factoryNearDuplicateRisk": {
+      "metric": "factoryPackCount (R3 baseline series)",
+      "previous": 1272,
+      "current": 1272,
+      "delta": 0,
+      "highNearDuplicateRiskCount_previous": 1328,
+      "highNearDuplicateRiskCount_current": 1312,
+      "note": "Headline factoryPackCount unchanged. Separate highNearDuplicateRiskCount 1328→1312."
+    },
+    "limitedUnique": {
+      "metric": "limitedUniqueAnalysisCount",
+      "previous": 1342,
+      "current": 1326,
+      "delta": -16
+    },
+    "knowledgeGraph": {
+      "previous": { "nodes": 6785, "edgesComparableSemantic": 26853 },
+      "current": {
+        "nodes": 6785,
+        "edgesComparableSemantic": 26856,
+        "edgesTotalIncludingContextual": 72584,
+        "contextualEdges": 45728,
+        "note": "Do not score 72584 as edge growth — semantic +3 only"
+      },
+      "improveOrphanSample": { "previous": "15/80", "current": "2/80", "deltaOrphans": -13 }
+    },
+    "gsc": {
+      "previous": { "clicks": 8, "impressions": 115457, "position": 74.5 },
+      "current": { "clicks": 8, "impressions": 115457, "position": 74.5 },
+      "comparable": false,
+      "reason": "identical STALE window through 2026-08-13"
+    },
+    "indexing": {
+      "gscIndexed": 1527,
+      "crawledNotIndexed": 1607,
+      "discoveredNotIndexed": 2550,
+      "liveSitemapUrls": 3133,
+      "localSitemapUrls": 3149,
+      "ratioComparable": false,
+      "note": "Coverage export 2026-08-15 predates sitemapindex cutover"
+    },
+    "authority": {
+      "previous": "NOT_CONNECTED",
+      "current": "NOT_CONNECTED"
+    },
+    "conversions": {
+      "previous": "NOT_CONNECTED",
+      "current": "NOT_CONNECTED"
+    },
+    "productionParity": {
+      "previous": "NO",
+      "current": "YES",
+      "liveSitemapUrls": 3133,
+      "liveSitemapShape": "sitemapindex",
+      "localArchSitemapUrls": 3149,
+      "localArchShape": "sitemapindex",
+      "liveValidationOk": true,
+      "urlSetLag": 16,
+      "note": "Architecture parity YES vs R4. URL-set lag: 16 local INDEXABLE guides still noindex on www."
+    }
+  },
+  "issueStatusCounts": {
+    "resolved": 9,
+    "in_progress": 6,
+    "blocked_external": 3,
+    "deferred": 2,
+    "open": 0,
+    "regressed": 0
+  },
+  "p0Count": 0,
+  "p1Count": 5,
+  "p2Count": 4,
+  "p3Count": 2,
+  "deployVerdict": "YES_ARCHITECTURE_SAFE_TO_CRAWL",
+  "verification": {
+    "growthDashboard": {
+      "engine": "2.3.0",
+      "generatedAt": "2026-09-10T08:27:53.637Z",
+      "result": "PASS"
+    },
+    "guidesAudit": {
+      "generatedAt": "2026-09-10T08:33:25.115Z",
+      "factoryPacks": 1272,
+      "highNearDuplicateRiskCount": 1312,
+      "limitedUnique": 1326,
+      "indexable": 524,
+      "improve": 1044,
+      "result": "PASS"
+    },
+    "knowledgeGraph": {
+      "generatedAt": "2026-09-10T08:10:16.754Z",
+      "nodes": 6785,
+      "semanticEdges": 26856,
+      "totalEdges": 72584,
+      "improveOrphansSample": "2/80",
+      "remainingOrphans": [
+        "/alternatives/canvas-score/",
+        "/use-cases/cohort-learning/"
+      ],
+      "result": "PASS_ORPHANS_IMPROVED_SEMANTIC_EDGES_PLUS_3"
+    },
+    "dataVerifiedReconcile": {
+      "accepted": 187,
+      "rejected": 128,
+      "total": 315
+    },
+    "handsOnCoverage": {
+      "handsOnTested": 0,
+      "scope": "NOT_CURRENT_SCOPE",
+      "dataVerifiedCoverageMetric": 189,
+      "dataVerifiedReconcileAccepted": 187
+    },
+    "factoryPack100c": {
+      "processed": 100,
+      "promoted": 10,
+      "limitedUniqueAfter": 1326,
+      "highNearDuplicateAfter": 1312,
+      "estateFactoryPackCountStill": 1272
+    },
+    "evidenceWave50_2026_09_10": {
+      "startingVerified": 164,
+      "endingVerified": 187,
+      "newVerified": 23,
+      "productsProcessed": 50,
+      "blockedLive": 26
+    },
+    "productionLiveAudit": {
+      "baseUrl": "https://www.softwareglimpse.com",
+      "sitemapUrls": 3133,
+      "sitemapShape": "sitemapindex",
+      "childSitemapsOk": 15,
+      "localArchUrls": 3149,
+      "localArchShape": "sitemapindex",
+      "seoAuditP0": 0,
+      "seoAuditP1": 1,
+      "seoAuditP2": 0,
+      "localParity": "YES_ARCHITECTURE",
+      "urlSetLag": 16,
+      "safeProductionState": "YES"
+    },
+    "sitemapReconcileLive": {
+      "liveValidationOk": true,
+      "generatedAt": "2026-09-10T08:32:05.467Z",
+      "note": "15 child sitemaps probed — partitioned architecture live"
+    }
+  },
+  "scoreDelta": {
+    "technicalSeo": { "previous": 76, "current": 87, "delta": 11 },
+    "crawlEfficiency": { "previous": 58, "current": 86, "delta": 28 },
+    "indexability": { "previous": 70, "current": 83, "delta": 13 },
+    "contentQuality": { "previous": 64, "current": 65, "delta": 1 },
+    "contentUniqueness": { "previous": 46, "current": 48, "delta": 2 },
+    "softwareDataQuality": { "previous": 78, "current": 81, "delta": 3 },
+    "editorialCredibility": { "previous": 64, "current": 66, "delta": 2 },
+    "internalLinking": { "previous": 74, "current": 80, "delta": 6 },
+    "searchOpportunityExecution": { "previous": 57, "current": 59, "delta": 2 },
+    "authorityBacklinks": { "previous": 18, "current": 18, "delta": 0 },
+    "originalResearch": { "previous": 45, "current": 45, "delta": 0 },
+    "evidenceTesting": { "previous": 40, "current": 44, "delta": 4 },
+    "pricingFreshness": { "previous": 65, "current": 66, "delta": 1 },
+    "ux": { "previous": 54, "current": 54, "delta": 0 },
+    "performance": { "previous": 50, "current": 50, "delta": 0 },
+    "commercialTracking": { "previous": 42, "current": 42, "delta": 0 },
+    "aiVisibilityMeasurement": { "previous": 22, "current": 22, "delta": 0 }
+  }
+}

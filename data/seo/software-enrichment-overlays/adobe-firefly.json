@@ -1,10 +1,10 @@
 {
   "slug": "adobe-firefly",
-  "updatedAt": "2026-09-07T22:31:21.773Z",
+  "updatedAt": "2026-09-10T08:15:10.347Z",
   "version": "1.0.0",
   "fieldAudit": {
     "slug": "adobe-firefly",
-    "checkedAt": "2026-09-07T22:31:21.772Z",
+    "checkedAt": "2026-09-10T08:15:10.345Z",
     "items": [
       {
         "field": "name",
@@ -20,9 +20,9 @@
       },
       {
         "field": "canonical_vendor",
-        "status": "UNKNOWN",
-        "detail": "Company/vendor not documented",
-        "source": "none"
+        "status": "PASS",
+        "detail": "Vendor: Adobe Inc.",
+        "source": "seed"
       },
       {
         "field": "category",
@@ -115,11 +115,11 @@
         "source": "enrichment"
       }
     ],
-    "passCount": 16,
+    "passCount": 17,
     "partialCount": 0,
     "missingCount": 0,
-    "unknownCount": 2,
-    "score": 89
+    "unknownCount": 1,
+    "score": 94
   },
   "decisionHub": {
     "whatItIs": "Adobe Firefly is Adobe’s generative model family for images, vectors, and (on higher credits) video — integrated with Photoshop, Express, and Firefly web. Free includes a small credit allotment. Standalone Standard is commonly listed around $9.99/mo and Pro around $19.99/mo with premium credit pools; Creative Cloud Pro bundles Firefly credits for designers already in Adobe apps. Commercial IP posture and indemnification are the buying reason vs Midjourney for many brands.",
@@ -141,12 +141,13 @@
     ],
     "coreCapabilities": [
       "image generation",
+      "ad creative generation",
       "custom projects",
       "usage credits",
       "connectors",
       "data privacy",
-      "video generation",
-      "ai image"
+      "analytics reporting",
+      "video generation"
     ],
     "pricingSummary": "4 documented plans · 1 free · entry paid: Firefly Standard",
     "keyTradeoffs": [
@@ -233,7 +234,6 @@
     "evidenceState": "Research/data-based (no completed hands-on test) · Latest verification/research signal: 2026-08-18T12:00:00.000Z · Editorial assessment: approved",
     "nextDecisionStep": "Compare against peers: Midjourney vs Adobe Firefly",
     "missingSections": [
-      "canonical_vendor",
       "trial"
     ]
   },
@@ -436,13 +436,12 @@
   ],
   "dependentsNeedingRefresh": [],
   "remediation": [
-    "verify:canonical_vendor",
     "verify:trial"
   ],
   "notes": [
-    "fieldAudit score=89",
+    "fieldAudit score=94",
     "decisionHub bestFor=6 notIdeal=6",
     "dependents=39"
   ],
-  "materiallyImproved": false
+  "materiallyImproved": true
 }

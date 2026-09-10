@@ -162,6 +162,19 @@ export type ContentEstateSection = {
     software: LifecycleBucketCounts;
     other: LifecycleBucketCounts;
   };
+  /**
+   * Factory-origin remediation. Origin total is inventory — never a
+   * quality-failure signal if it stays flat after packs become excellent.
+   */
+  factoryRemediation: {
+    originTotal: MetricValue;
+    highRisk: MetricValue;
+    limitedUnique: MetricValue;
+    qualityPass: MetricValue;
+    indexable: MetricValue;
+    improve: MetricValue;
+    promoted: MetricValue;
+  };
   notes: string[];
 };
 

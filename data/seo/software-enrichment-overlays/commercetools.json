@@ -1,10 +1,10 @@
 {
   "slug": "commercetools",
-  "updatedAt": "2026-09-07T22:31:21.975Z",
+  "updatedAt": "2026-09-10T11:10:41.882Z",
   "version": "1.0.0",
   "fieldAudit": {
     "slug": "commercetools",
-    "checkedAt": "2026-09-07T22:31:21.974Z",
+    "checkedAt": "2026-09-10T11:10:41.881Z",
     "items": [
       {
         "field": "name",
@@ -20,9 +20,9 @@
       },
       {
         "field": "canonical_vendor",
-        "status": "UNKNOWN",
-        "detail": "Company/vendor not documented",
-        "source": "none"
+        "status": "PASS",
+        "detail": "Vendor: commercetools GmbH",
+        "source": "seed"
       },
       {
         "field": "category",
@@ -115,11 +115,11 @@
         "source": "enrichment"
       }
     ],
-    "passCount": 17,
+    "passCount": 18,
     "partialCount": 0,
     "missingCount": 0,
-    "unknownCount": 1,
-    "score": 94
+    "unknownCount": 0,
+    "score": 100
   },
   "decisionHub": {
     "whatItIs": "commercetools is a composable, API-first enterprise commerce platform (MACH-oriented) for mid-market and enterprise brands that assemble storefronts, catalogs, and channels on a commerce engine rather than an all-in-one SMB admin. Pricing is quote-only with a published 60-day free trial — no public monthly $ tiles. Landscape saas-platform peer — Shopify keeps the cluster award (9.2). Research grounded 2026-08-18 from commercetools.com/pricing.",
@@ -236,9 +236,7 @@
     ],
     "evidenceState": "Research/data-based (no completed hands-on test) · Latest verification/research signal: 2026-08-18T16:00:00.000Z · Editorial assessment: approved",
     "nextDecisionStep": "Compare against peers: commercetools vs Salesforce Commerce Cloud",
-    "missingSections": [
-      "canonical_vendor"
-    ]
+    "missingSections": []
   },
   "dependents": [
     {
@@ -418,13 +416,11 @@
     }
   ],
   "dependentsNeedingRefresh": [],
-  "remediation": [
-    "verify:canonical_vendor"
-  ],
+  "remediation": [],
   "notes": [
-    "fieldAudit score=94",
+    "fieldAudit score=100",
     "decisionHub bestFor=5 notIdeal=6",
     "dependents=35"
   ],
-  "materiallyImproved": false
+  "materiallyImproved": true
 }

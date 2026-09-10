@@ -311,7 +311,12 @@ export function runSearch(options: RunSearchOptions): SearchResponse {
   }
 
   let queryForScoring = rawQuery;
-  let correction = findTypoCorrection(rawQuery, documents);
+  let correction = findTypoCorrection(rawQuery, [
+    ...runtime.softwareDocuments,
+    ...documents.filter(
+      (d) => d.type === "CATEGORY" || d.type === "TOOL",
+    ),
+  ]);
   const preliminaryIntent = detectSearchIntent(
     rawQuery,
     documents,

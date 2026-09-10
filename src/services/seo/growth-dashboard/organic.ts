@@ -20,6 +20,15 @@ type RawExport = {
     dataThroughDate?: string;
     rangeLabel?: string;
     retrievedAt?: string;
+    /** Property totals from Chart/Devices — use when Pages tab is GSC-capped. */
+    siteTotals?: {
+      clicks?: number;
+      impressions?: number;
+      ctr?: number;
+      position?: number;
+      source?: string;
+    };
+    pageExportCap?: number;
   };
   rows?: Array<{
     page?: string;
@@ -58,6 +67,7 @@ function loadGscPerformanceExport(cwd: string): {
 /** Prior REAL snapshot only — never pair REAL current with fixture previous. */
 function loadComparableRealPrior(
   currentThrough: string | null,
+  rangeLabel?: string,
 ): SearchSnapshot | null {
   if (!currentThrough) return null;
   const metas = listSnapshots()
@@ -65,6 +75,9 @@ function loadComparableRealPrior(
     .sort((a, b) => b.dataThroughDate.localeCompare(a.dataThroughDate));
   for (const meta of metas) {
     if (meta.dataThroughDate >= currentThrough) continue;
+    if (rangeLabel && meta.rangeLabel && meta.rangeLabel !== rangeLabel) {
+      continue;
+    }
     const snap = loadSnapshot(meta.id);
     if (!snap || snap.synthetic) continue;
     return snap;
@@ -258,8 +271,27 @@ export function buildOrganicSearchSection(
       a.ctrGapPctPoints * Math.log10(1 + a.impressions),
   );
 
-  const ctr = impressions > 0 ? clicks / impressions : 0;
-  const avgPos = impressions > 0 ? positionWeighted / impressions : 0;
+  const siteTotals = loaded.data.meta?.siteTotals;
+  const siteClicks =
+    typeof siteTotals?.clicks === "number" ? siteTotals.clicks : clicks;
+  const siteImpressions =
+    typeof siteTotals?.impressions === "number"
+      ? siteTotals.impressions
+      : impressions;
+  const ctr =
+    typeof siteTotals?.ctr === "number"
+      ? siteTotals.ctr
+      : siteImpressions > 0
+        ? siteClicks / siteImpressions
+        : 0;
+  const avgPos =
+    typeof siteTotals?.position === "number"
+      ? siteTotals.position
+      : impressions > 0
+        ? positionWeighted / impressions
+        : 0;
+  clicks = siteClicks;
+  impressions = siteImpressions;
 
   let trend: OrganicSearchSection["trend"] = {
     status: "not_connected",
@@ -297,7 +329,10 @@ export function buildOrganicSearchSection(
       };
     }
   } else {
-    const previous = loadComparableRealPrior(dataThrough);
+    const previous = loadComparableRealPrior(
+      dataThrough,
+      loaded.data.meta?.rangeLabel,
+    );
     if (previous) {
       const prevPages = aggregatePage(previous.rows.filter((r) => r.page));
       const prevClicks = prevPages.reduce((s, p) => s + p.clicks, 0);
@@ -308,20 +343,15 @@ export function buildOrganicSearchSection(
           ? prevPages.reduce((s, p) => s + p.position * p.impressions, 0) /
             prevImp
           : 0;
-      const sameRangeLabel =
-        (loaded.data.meta?.rangeLabel ?? "") ===
-        (previous.meta.rangeLabel ?? "");
       trend = {
-        status: sameRangeLabel ? "connected" : "partial",
+        status: "connected",
         clicksDeltaPct:
           prevClicks > 0 ? ((clicks - prevClicks) / prevClicks) * 100 : null,
         impressionsDeltaPct:
           prevImp > 0 ? ((impressions - prevImp) / prevImp) * 100 : null,
         ctrDeltaPct: prevCtr > 0 ? ((ctr - prevCtr) / prevCtr) * 100 : null,
         positionDelta: avgPos - prevPos,
-        note: sameRangeLabel
-          ? `REAL period-over-period vs snapshot through ${previous.meta.dataThroughDate}`
-          : `REAL prior snapshot through ${previous.meta.dataThroughDate} (range labels differ — interpret cautiously)`,
+        note: `REAL period-over-period vs snapshot through ${previous.meta.dataThroughDate} (${previous.meta.rangeLabel})`,
       };
     } else {
       trend = {
@@ -330,7 +360,8 @@ export function buildOrganicSearchSection(
         impressionsDeltaPct: null,
         ctrDeltaPct: null,
         positionDelta: null,
-        note: "Only one REAL GSC Performance period on disk — retain this snapshot, then import a newer export for comparable pre/post.",
+        note:
+          "No comparable REAL GSC Performance period on disk (same range label required). Last-12-months vs Last-3-months is NOT_YET_MEASURABLE — retain this snapshot and import a later Last-12-months export.",
       };
     }
   }
@@ -374,7 +405,9 @@ export function buildOrganicSearchSection(
     discovery: {
       pagesWithImpressions: num(
         pagesWithImpressions,
-        "Pages receiving ≥1 impression",
+        loaded.data.meta?.pageExportCap
+          ? `Pages receiving ≥1 impression in the Pages tab (GSC export capped at ${loaded.data.meta.pageExportCap})`
+          : "Pages receiving ≥1 impression",
       ),
       impressions: num(impressions, "Discovery demand — not ranking strength"),
     },

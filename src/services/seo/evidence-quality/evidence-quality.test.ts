@@ -2,6 +2,7 @@ import { describe, expect, it } from "vitest";
 import {
   matchPlanNamesInHtml,
   pickPricingSource,
+  pickPricingSources,
   buildProductEvidencePack,
   BANNED_HANDS_ON_LANGUAGE,
 } from "./index";
@@ -25,6 +26,23 @@ describe("evidence-quality", () => {
     expect(source?.url).toMatch(/pricing/i);
   });
 
+  it("ranks pricing pages above generic official homepages", () => {
+    const ranked = pickPricingSources("asana", 4);
+    expect(ranked[0]?.url).toMatch(/pricing/i);
+    expect(ranked.every((s) => !/^https:\/\/asana\.com\/?$/i.test(s.url))).toBe(
+      true,
+    );
+  });
+
+  it("does not re-queue blocked vendor hosts after a failed live check", () => {
+    const ranked = pickPricingSources("chatgpt", 4);
+    expect(
+      ranked.every(
+        (s) => !/chatgpt\.com/i.test(s.url) && !/openai\.com/i.test(s.url),
+      ),
+    ).toBe(true);
+  });
+
   it("builds a normalized pack from existing research only", () => {
     const pack = buildProductEvidencePack("capsule");
     expect(pack).not.toBeNull();
@@ -39,5 +57,7 @@ describe("evidence-quality", () => {
     expect(labels).toContain("We tested");
     expect(labels).toContain("Our experience");
     expect(labels).toContain("During testing");
+    expect(labels).toContain("our testing found");
+    expect(labels).toContain("we used the product");
   });
 });

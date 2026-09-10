@@ -186,7 +186,12 @@ export default async function SoftwareOverviewPage({ params }: Props) {
         <div className="mx-auto mt-10 w-full max-w-[var(--sg-container-wide)] px-4 sm:px-6">
           <InternalLinkingModules
             plan={softwareLinkPlan}
-            omit={["relatedProducts", "relatedComparisons", "relatedGuides"]}
+            omit={[
+              "relatedProducts",
+              "relatedComparisons",
+              "relatedGuides",
+              "relatedUseCases",
+            ]}
             showParentInline
           />
         </div>

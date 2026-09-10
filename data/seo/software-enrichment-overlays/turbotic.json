@@ -1,10 +1,10 @@
 {
   "slug": "turbotic",
-  "updatedAt": "2026-09-07T22:31:22.094Z",
+  "updatedAt": "2026-09-10T11:10:41.916Z",
   "version": "1.0.0",
   "fieldAudit": {
     "slug": "turbotic",
-    "checkedAt": "2026-09-07T22:31:22.092Z",
+    "checkedAt": "2026-09-10T11:10:41.915Z",
     "items": [
       {
         "field": "name",
@@ -20,9 +20,9 @@
       },
       {
         "field": "canonical_vendor",
-        "status": "UNKNOWN",
-        "detail": "Company/vendor not documented",
-        "source": "none"
+        "status": "PASS",
+        "detail": "Vendor: Turbotic",
+        "source": "seed"
       },
       {
         "field": "category",
@@ -115,11 +115,11 @@
         "source": "enrichment"
       }
     ],
-    "passCount": 16,
+    "passCount": 17,
     "partialCount": 0,
     "missingCount": 0,
-    "unknownCount": 2,
-    "score": 89
+    "unknownCount": 1,
+    "score": 94
   },
   "decisionHub": {
     "whatItIs": "Turbotic Automation AI is an enterprise-oriented automation platform where teams describe workflows in natural language and the system generates, tests, and runs integrations with self-healing execution and ROI reporting. Free includes up to 100 executions/mo, 100 AI chats/mo, and 3 automations. Basic starts at $14.99/mo billed annually with higher execution and chat tiers. Pro from $79.99/mo annual adds priority support and custom workflows (most popular on first-party pricing). Enterprise is contact-sales with unlimited automations, SLA, and optional on-premise deployment. Same ai-automation cluster as Zapier and n8n — AI-native orchestration rather than classic Zap-only wiring.",
@@ -141,13 +141,13 @@
     ],
     "coreCapabilities": [
       "llm chat",
+      "reasoning models",
+      "writing assist",
       "agent builder",
       "custom projects",
       "usage credits",
       "connectors",
-      "analytics reporting",
-      "code assist",
-      "workflow automation"
+      "data privacy"
     ],
     "pricingSummary": "4 documented plans · 1 free · entry paid: Basic",
     "keyTradeoffs": [
@@ -234,7 +234,6 @@
     "evidenceState": "Research/data-based (no completed hands-on test) · Latest verification/research signal: 2026-08-26T12:00:00.000Z · Editorial assessment: approved",
     "nextDecisionStep": "Compare against peers: Turbotic vs Zapier",
     "missingSections": [
-      "canonical_vendor",
       "trial"
     ]
   },
@@ -417,13 +416,12 @@
   ],
   "dependentsNeedingRefresh": [],
   "remediation": [
-    "verify:canonical_vendor",
     "verify:trial"
   ],
   "notes": [
-    "fieldAudit score=89",
+    "fieldAudit score=94",
     "decisionHub bestFor=6 notIdeal=6",
     "dependents=35"
   ],
-  "materiallyImproved": false
+  "materiallyImproved": true
 }

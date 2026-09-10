@@ -222,7 +222,7 @@ export function selectLaneAGscImprovePages(
     return b.opportunityScore - a.opportunityScore;
   });
 
-  let selected = candidates.slice(0, limit);
+  const selected = candidates.slice(0, limit);
 
   // Fill to limit with next Lane A commercial pages (still real page-level GSC).
   if (selected.length < limit) {

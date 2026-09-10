@@ -25,6 +25,10 @@ import {
 } from "./quality-authority";
 import { firstExisting, readJsonIfExists } from "./io";
 import { validityAllowsNorthStar } from "./validity";
+import {
+  DATA_VERIFIED_EVIDENCE_ON_TRACK,
+  HANDS_ON_SCOPE_LABEL,
+} from "@/services/editorial/hands-on-scope";
 import path from "node:path";
 import { GROWTH_DASHBOARD_VERSION } from "./types";
 
@@ -108,7 +112,6 @@ export function buildScorecard(
   const indexable = estate.totals.indexable;
   const ready = estate.totals.readyForPromotion;
   const promoted = metricNumber(velocity.pagesPromotedToIndexable);
-  const handsOn = metricNumber(quality.handsOnTested);
   const dataVerified = metricNumber(quality.dataVerified);
   const linksEarned = metricNumber(auth.linksEarned);
 
@@ -307,30 +310,32 @@ export function buildScorecard(
       status: objectiveStatus({
         connected: quality.status !== "not_connected",
         real: evidenceReal,
-        onTrackIf: Boolean(handsOn != null && handsOn >= 5),
-        buildingIf: Boolean(
-          (handsOn != null && handsOn > 0) ||
-            (dataVerified != null && dataVerified > 0),
+        onTrackIf: Boolean(
+          dataVerified != null && dataVerified >= DATA_VERIFIED_EVIDENCE_ON_TRACK,
         ),
+        buildingIf: Boolean(dataVerified != null && dataVerified > 0),
       }),
       confidence: confidenceFor({
         real: evidenceReal,
         trend:
           quality.evidenceTrend.length > 1 ? "partial" : "unavailable",
-        strongEvidence: (handsOn ?? 0) >= 5,
+        strongEvidence:
+          (dataVerified ?? 0) >= DATA_VERIFIED_EVIDENCE_ON_TRACK,
       }),
       dataFreshness: quality.evidenceTrend.at(-1)?.at ?? null,
       trendAvailability:
         quality.evidenceTrend.length > 1 ? "partial" : "unavailable",
-      summary: `Hands-on ${handsOn ?? 0} · data-verified ${dataVerified ?? 0} · research-based ${metricNumber(quality.researchOnly) ?? 0}`,
+      summary: `Data-verified ${dataVerified ?? 0} · research-based ${metricNumber(quality.researchOnly) ?? 0} · hands-on ${HANDS_ON_SCOPE_LABEL}`,
       evidence: [
-        ...quality.notes.slice(0, 1),
+        ...quality.notes.slice(0, 2),
         quality.evidenceTrend.length > 1
           ? `Trend points: ${quality.evidenceTrend.map((t) => t.label).join(" → ")}`
           : "No prior evidence snapshot for delta yet",
       ],
       gaps: [
-        (handsOn ?? 0) === 0 ? "No completed hands-on test sessions counted" : "",
+        (dataVerified ?? 0) < DATA_VERIFIED_EVIDENCE_ON_TRACK
+          ? `DATA_VERIFIED coverage below ${DATA_VERIFIED_EVIDENCE_ON_TRACK}`
+          : "",
       ].filter(Boolean),
     },
     {
@@ -483,7 +488,9 @@ export function buildWeeklyView(
 
   const newTestedProducts = [...listRecentlyCompletedTests(8)];
   if (newTestedProducts.length === 0) {
-    newTestedProducts.push("No completed product test sessions on disk.");
+    newTestedProducts.push(
+      "HANDS_ON 0 / NOT_CURRENT_SCOPE — no completed sessions expected in this phase.",
+    );
   }
 
   const researchPublished = [

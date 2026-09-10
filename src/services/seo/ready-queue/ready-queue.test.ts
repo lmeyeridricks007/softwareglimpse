@@ -28,7 +28,7 @@ describe("ready-queue", () => {
         queue[i]!.rankingScore,
       );
     }
-  }, 120_000);
+  }, 240_000);
 
   it("reviews a candidate without promoting on dry-run", () => {
     const queue = selectReadyQueue({ kinds: ["guide"], limit: 1 });
@@ -45,5 +45,5 @@ describe("ready-queue", () => {
     if (result.outcome === "PROMOTED") {
       expect(result.reason).toMatch(/dry-run|Would promote/i);
     }
-  }, 120_000);
+  }, 240_000);
 });

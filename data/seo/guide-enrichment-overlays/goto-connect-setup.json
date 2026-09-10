@@ -1,0 +1,210 @@
+{
+  "slug": "goto-connect-setup",
+  "enrichmentType": "IMPLEMENTATION_GUIDE",
+  "updatedAt": "2026-09-10T12:11:14.439Z",
+  "uniqueValueAdded": [
+    "implementation_workflow",
+    "scenario_analysis",
+    "decision_framework",
+    "limitations_evidence",
+    "pricing_comparison",
+    "sg_original_data",
+    "buyer_checklist"
+  ],
+  "patch": {
+    "summary": "cloud phone; call routing; call recording; power dialer. Phone System · cloud phone | Customer Experience (CX) | CX Complete. Salesforce, Microsoft Teams, Zendesk, Servicenow. Remote and multi-location teams wanting phone + meetings + messaging from one vendor; Buyers who may grow into CX digital channels or Contact Center later; Organisations already familiar with GoTo / former Jive deployments. GoTo Connect is a cloud business phone / UCaaS platform (evolved from Jive) aimed at remote and multi-location teams: softphones, unlimited auto attendants and queues, video meetin Buyer question: is GoTo Connect worth it if weekly work actually needs cloud phone and power dialer (Phone System, Customer Experience (CX), CX Complete, Contact Center), or does Buyers who require transparent self-serve published seat prices dominate? Thesis: GoTo Connect earns budget when cloud phone; call routing; call recording; power dialer is the operating loop; walk when No published self-serve seat dollars — every plan is sales-quoted because it forces workarounds.",
+    "blocks": [
+      {
+        "id": "da-goto-connect-setup-1",
+        "type": "direct-answer",
+        "body": "power dialer (Phone System, Customer Experience (CX), CX Complete, Contact Center) decides whether GoTo Connect setup is a one-team pilot or a specialist project — confirm unlocks for power dialer (Phone System, Customer Experience (CX), CX Complete, Contact Center), WhatsApp Business (Phone System, Customer Experience (CX), CX Complete, Contact Center), shared inbox (Phone System, Customer Experience (CX), CX Complete, Contact Center) before invites.",
+        "bullets": [
+          "Start with: cloud phone",
+          "Gate check: power dialer (Phone System, Customer Experience (CX), CX Complete, Contact Center)",
+          "Integrate after: data quality pass on Salesforce"
+        ]
+      },
+      {
+        "id": "impl-goto-connect-setup-2",
+        "type": "step",
+        "heading": "GoTo Connect day-zero to steady-state sequence",
+        "body": "Treat GoTo Connect setup as a controlled rollout — not a weekend dump of CSV files.",
+        "stepNumber": 1,
+        "scenarios": [
+          {
+            "title": "Day zero — objects and owners",
+            "body": "Define owners for cloud phone, call routing, call recording before inviting the whole org."
+          },
+          {
+            "title": "SMB pilot",
+            "body": "One pipeline / one team proves Remote and multi-location teams wanting phone + meetings + messaging from one vendor before company-wide seats."
+          },
+          {
+            "title": "Cutover",
+            "body": "Freeze legacy writes briefly; validate Salesforce and Microsoft Teams before reopen."
+          }
+        ]
+      },
+      {
+        "id": "df-goto-connect-setup-3",
+        "type": "decision-framework",
+        "title": "GoTo Connect implementation go / no-go",
+        "steps": [
+          {
+            "id": "i-1",
+            "label": "Go when plan unlocks cover power dialer (Phone System, Customer Experience (CX), CX Complete, Contact Center)"
+          },
+          {
+            "id": "i-2",
+            "label": "Pause if this limitation blocks ops: No published self-serve seat dollars — every plan is sales-quoted"
+          },
+          {
+            "id": "i-3",
+            "label": "Do not expand seats until cloud phone is green"
+          }
+        ]
+      },
+      {
+        "id": "mist-goto-connect-setup-4",
+        "type": "mistakes",
+        "title": "GoTo Connect implementation mistakes",
+        "items": [
+          {
+            "title": "Mistake 1",
+            "body": "No published self-serve seat dollars — every plan is sales-quoted"
+          },
+          {
+            "title": "Mistake 2",
+            "body": "Industry dollar ranges are low confidence and must not be treated as list prices"
+          },
+          {
+            "title": "Mistake 3",
+            "body": "AI Receptionist and some AI analytics are add-ons"
+          },
+          {
+            "title": "Mistake 4",
+            "body": "WhatsApp, shared inbox and unified inbox depth require CX / Contact Center ladders"
+          },
+          {
+            "title": "Big-bang invite",
+            "body": "Inviting every user before object design creates junk data that is expensive to unwind."
+          }
+        ]
+      },
+      {
+        "id": "cost-goto-connect-setup-5",
+        "type": "cost-breakdown",
+        "title": "GoTo Connect plan gates that affect rollout",
+        "body": "Implementation fails when unlocks needed for go-live sit on a higher tier than budgeted.",
+        "lines": [
+          {
+            "label": "Phone System",
+            "description": "Trial available · Contact sales · Unlocks: cloud phone, call routing, call recording · Suits: teams that need custom procurement"
+          },
+          {
+            "label": "Customer Experience (CX)",
+            "description": "Contact sales · Suits: teams that need custom procurement"
+          },
+          {
+            "label": "CX Complete",
+            "description": "Contact sales · Suits: teams that need custom procurement"
+          },
+          {
+            "label": "Contact Center",
+            "description": "Contact sales · Suits: teams that need custom procurement"
+          }
+        ]
+      },
+      {
+        "id": "sel-goto-connect-setup-6",
+        "type": "selection-checklist",
+        "title": "GoTo Connect implementation checklist",
+        "dimensions": [
+          {
+            "id": "prep",
+            "label": "Prep",
+            "options": [
+              "Object model drafted",
+              "Owners named",
+              "Legacy freeze window set"
+            ]
+          },
+          {
+            "id": "pilot",
+            "label": "Pilot",
+            "options": [
+              "cloud phone",
+              "Junk-data rules set",
+              "Support path clear"
+            ]
+          },
+          {
+            "id": "scale",
+            "label": "Scale",
+            "options": [
+              "Salesforce",
+              "Seat expansion criteria written",
+              "Rollback plan noted"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "cta-goto-connect-setup-7",
+        "type": "interactive-cta",
+        "title": "Validate business-communications fit before a deep GoTo Connect rollout",
+        "body": "If GoTo Connect fails constraint fit, stop implementation early.",
+        "href": "/tools/business-communications-finder/",
+        "ctaLabel": "Open Finder",
+        "variant": "finder"
+      }
+    ],
+    "sections": [
+      {
+        "id": "sec-thesis-goto-connect-setup",
+        "heading": "GoTo Connect buyer question and thesis",
+        "body": "cloud phone; call routing; call recording; power dialer. Phone System · cloud phone | Customer Experience (CX) | CX Complete. Salesforce, Microsoft Teams, Zendesk, Servicenow. Remote and multi-location teams wanting phone + meetings + messaging from one vendor; Buyers who may grow into CX digital channels or Contact Center later; Organisations already familiar with GoTo / former Jive deployments. GoTo Connect is a cloud business phone / UCaaS platform (evolved from Jive) aimed at remote and multi-location teams: softphones, unlimited auto attendants and queues, video meetin. That catalogue mix is the GoTo Connect setup filter — not a generic business-communications lecture.\n\nBuyer question: is GoTo Connect worth it if weekly work actually needs cloud phone and power dialer (Phone System, Customer Experience (CX), CX Complete, Contact Center), or does Buyers who require transparent self-serve published seat prices dominate?\n\nThesis: GoTo Connect earns budget when cloud phone; call routing; call recording; power dialer is the operating loop; walk when No published self-serve seat dollars — every plan is sales-quoted because it forces workarounds.\n\nBest for: Remote and multi-location teams wanting phone + meetings + messaging from one vendor; Buyers who may grow into CX digital channels or Contact Center later; Organisations already familiar with GoTo / former Jive deployments (Remote and multi-location teams wanting phone + meetings + messaging from one vendor).\n\nPoor fit when: Buyers who require transparent self-serve published seat prices; Micro teams that only need a simple virtual number (prefer Grasshopper/OpenPhone); Enterprises comparing primarily on global UCaaS depth (prefer RingCentral/8x8). Avoid if No published self-serve seat dollars — every plan is sales-quoted would block go-live."
+      },
+      {
+        "id": "sec-limits-goto-connect-setup",
+        "heading": "GoTo Connect limitation, pricing interpretation, and alternative context",
+        "body": "Limitation: No published self-serve seat dollars — every plan is sales-quoted; Industry dollar ranges are low confidence and must not be treated as list prices; AI Receptionist and some AI analytics are add-ons because it forces process changes or add-ons around GoTo Connect when cloud phone is the job.\n\nPricing interpretation: no free plan confirmed — scope a paid pilot on Phone System with exit criteria before annual seats.\n\nPlan trade-off: you gain power dialer (Phone System, Customer Experience (CX), CX Complete, Contact Center) at the expense of Entry price and seat minimums vs routing, CTI and analytics depth — measure both in the pilot. Researched packaging: Phone System · cloud phone | Customer Experience (CX) | CX Complete.\n\nAlternative context: unlike RingCentral, GoTo Connect is preferable when Remote and multi-location teams wanting phone + meetings + messaging from one vendor because cloud phone plus power dialer (Phone System, Customer Experience (CX), CX Complete, Contact Center) match; prefer RingCentral when Buyers who require transparent self-serve published seat prices because the operating loops differ."
+      },
+      {
+        "id": "sec-scenario-goto-connect-setup",
+        "heading": "Decision scenario and conclusion for GoTo Connect",
+        "body": "Scenario: recommend GoTo Connect for Remote and multi-location teams wanting phone + meetings + messaging from one vendor; do not choose it when Buyers who require transparent self-serve published seat prices — the jobs diverge at power dialer (Phone System, Customer Experience (CX), CX Complete, Contact Center).\n\nImplementation time: weeks to configure cloud phone if Salesforce, Microsoft Teams, Zendesk, Servicenow must be green before invites.\n\nIntegrations in research: Salesforce, Microsoft Teams, Zendesk, Servicenow.\n\nDecision conclusion: buy GoTo Connect when researched fit (Remote and multi-location teams wanting phone + meetings + messaging from one vendor) beats researched limits (No published self-serve seat dollars — every plan is sales-quoted); otherwise keep researching — do not substitute product names into a generic setup essay."
+      }
+    ],
+    "checklist": [
+      {
+        "id": "enrich-chk-0",
+        "label": "Draft GoTo Connect object owners before invites",
+        "order": 0
+      },
+      {
+        "id": "enrich-chk-1",
+        "label": "Confirm plan unlocks for go-live features",
+        "order": 1
+      },
+      {
+        "id": "enrich-chk-2",
+        "label": "Pilot one team on cloud phone",
+        "order": 2
+      },
+      {
+        "id": "enrich-chk-3",
+        "label": "If blocked, evaluate RingCentral before sunk-cost expansion",
+        "order": 3
+      }
+    ],
+    "nextAction": {
+      "contentId": "tool:finder:business-communications",
+      "label": "Open Finder shortlist"
+    }
+  },
+  "notes": [
+    "Implementation: workflow, constraints, mistakes, checklist.",
+    "Type-specific skeleton: IMPLEMENTATION_GUIDE"
+  ]
+}

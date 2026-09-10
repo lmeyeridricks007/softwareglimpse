@@ -1,0 +1,211 @@
+{
+  "slug": "gusto-implementation",
+  "enrichmentType": "IMPLEMENTATION_GUIDE",
+  "updatedAt": "2026-09-10T12:03:53.876Z",
+  "uniqueValueAdded": [
+    "implementation_workflow",
+    "scenario_analysis",
+    "decision_framework",
+    "limitations_evidence",
+    "pricing_comparison",
+    "sg_original_data",
+    "buyer_checklist"
+  ],
+  "patch": {
+    "summary": "applicant tracking; core hris; payroll processing; benefits admin. Simple · applicant tracking | Plus | Premium. Slack. US small businesses running payroll (and benefits) for the first time; Teams that want published month-to-month pricing instead of HCM quotes; Single-state companies that can start on Simple and upgrade for multi-state. Gusto is transparent US payroll with benefits and light HR for small businesses. Published 2026 plans: Contractor Only list price + list price/person (promo list price base for fir Buyer question: is Gusto worth it when applicant tracking is weekly, or is Rippling the cleaner fit? Thesis: Gusto earns the Simple seat when applicant tracking; core hris; payroll processing; benefits admin is the weekly loop and time and attendance (Simple, Plus, Premium, Contractor Only) is unlocked; skip if Companies whose primary job is a full HRIS or people platform; High-volume recruiting / structured hiring ATS buyers; Global EOR or 1,000+ employee HCM buyers.",
+    "blocks": [
+      {
+        "id": "da-gusto-implementation-1",
+        "type": "direct-answer",
+        "body": "time and attendance (Simple, Plus, Premium, Contractor Only) decides whether Gusto implementation is a one-team pilot or a specialist project — confirm unlocks for time and attendance (Simple, Plus, Premium, Contractor Only) before invites.",
+        "bullets": [
+          "Start with: applicant tracking",
+          "Gate check: time and attendance (Simple, Plus, Premium, Contractor Only)",
+          "Integrate after: data quality pass on Slack"
+        ]
+      },
+      {
+        "id": "impl-gusto-implementation-2",
+        "type": "step",
+        "heading": "Gusto day-zero to steady-state sequence",
+        "body": "Treat Gusto setup as a controlled rollout — not a weekend dump of CSV files.",
+        "stepNumber": 1,
+        "scenarios": [
+          {
+            "title": "Day zero — objects and owners",
+            "body": "Define owners for applicant tracking, time and attendance, HRIS integrations before inviting the whole org."
+          },
+          {
+            "title": "SMB pilot",
+            "body": "One pipeline / one team proves US small businesses running payroll (and benefits) for the first time before company-wide seats."
+          },
+          {
+            "title": "Cutover",
+            "body": "Freeze legacy writes briefly; validate Slack before reopen."
+          }
+        ]
+      },
+      {
+        "id": "df-gusto-implementation-3",
+        "type": "decision-framework",
+        "title": "Gusto implementation go / no-go",
+        "steps": [
+          {
+            "id": "i-1",
+            "label": "Go when plan unlocks cover time and attendance (Simple, Plus, Premium, Contractor Only)"
+          },
+          {
+            "id": "i-2",
+            "label": "Pause if this limitation blocks ops: Simple plan is single-state payroll — multi-state needs Plus"
+          },
+          {
+            "id": "i-3",
+            "label": "Do not expand seats until applicant tracking is green"
+          }
+        ]
+      },
+      {
+        "id": "mist-gusto-implementation-4",
+        "type": "mistakes",
+        "title": "Gusto implementation mistakes",
+        "items": [
+          {
+            "title": "Mistake 1",
+            "body": "Simple plan is single-state payroll — multi-state needs Plus"
+          },
+          {
+            "title": "Mistake 2",
+            "body": "People/HRIS depth is light versus BambooHR; Gusto is payroll-first"
+          },
+          {
+            "title": "Mistake 3",
+            "body": "Time, performance, next-day pay, and many benefits tools are add-ons"
+          },
+          {
+            "title": "Mistake 4",
+            "body": "US-centric; not a global EOR (Deel) or enterprise HCM"
+          },
+          {
+            "title": "Big-bang invite",
+            "body": "Inviting every user before object design creates junk data that is expensive to unwind."
+          }
+        ]
+      },
+      {
+        "id": "cost-gusto-implementation-5",
+        "type": "cost-breakdown",
+        "title": "Gusto plan gates that affect rollout",
+        "body": "Implementation fails when unlocks needed for go-live sit on a higher tier than budgeted.",
+        "lines": [
+          {
+            "label": "Simple",
+            "description": "Trial available · Unlocks: applicant tracking, core hris, payroll processing · Suits: teams whose must-have gates appear on this tier"
+          },
+          {
+            "label": "Plus",
+            "description": "Trial available · Suits: teams whose must-have gates appear on this tier"
+          },
+          {
+            "label": "Premium",
+            "description": "Trial available · Suits: teams whose must-have gates appear on this tier"
+          },
+          {
+            "label": "Contractor Only",
+            "description": "Trial available · Suits: teams whose must-have gates appear on this tier"
+          }
+        ]
+      },
+      {
+        "id": "sel-gusto-implementation-6",
+        "type": "selection-checklist",
+        "title": "Gusto implementation checklist",
+        "dimensions": [
+          {
+            "id": "prep",
+            "label": "Prep",
+            "options": [
+              "Object model drafted",
+              "Owners named",
+              "Legacy freeze window set"
+            ]
+          },
+          {
+            "id": "pilot",
+            "label": "Pilot",
+            "options": [
+              "applicant tracking",
+              "Junk-data rules set",
+              "Support path clear"
+            ]
+          },
+          {
+            "id": "scale",
+            "label": "Scale",
+            "options": [
+              "Slack",
+              "Seat expansion criteria written",
+              "Rollback plan noted"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "cta-gusto-implementation-7",
+        "type": "interactive-cta",
+        "title": "Validate hr fit before a deep Gusto rollout",
+        "body": "If Gusto fails constraint fit, stop implementation early.",
+        "href": "/tools/hr-finder/",
+        "ctaLabel": "Open Finder",
+        "variant": "finder"
+      }
+    ],
+    "sections": [
+      {
+        "id": "sec-thesis-gusto-implementation",
+        "heading": "Gusto buyer question and thesis",
+        "body": "applicant tracking; core hris; payroll processing; benefits admin. Simple · applicant tracking | Plus | Premium. Slack. US small businesses running payroll (and benefits) for the first time; Teams that want published month-to-month pricing instead of HCM quotes; Single-state companies that can start on Simple and upgrade for multi-state. Gusto is transparent US payroll with benefits and light HR for small businesses. Published 2026 plans: Contractor Only list price + list price/person (promo list price base for fir. That catalogue mix is the Gusto implementation filter — not a generic hr lecture.\n\nBuyer question: is Gusto worth it when applicant tracking is weekly, or is Rippling the cleaner fit?\n\nThesis: Gusto earns the Simple seat when applicant tracking; core hris; payroll processing; benefits admin is the weekly loop and time and attendance (Simple, Plus, Premium, Contractor Only) is unlocked; skip if Companies whose primary job is a full HRIS or people platform; High-volume recruiting / structured hiring ATS buyers; Global EOR or 1,000+ employee HCM buyers.\n\nBest for: US small businesses running payroll (and benefits) for the first time; Teams that want published month-to-month pricing instead of HCM quotes; Single-state companies that can start on Simple and upgrade for multi-state (US small businesses running payroll (and benefits) for the first time).\n\nPoor fit when: Companies whose primary job is a full HRIS or people platform; High-volume recruiting / structured hiring ATS buyers; Global EOR or 1,000+ employee HCM buyers. Avoid if Simple plan is single-state payroll — multi-state needs Plus would block go-live."
+      },
+      {
+        "id": "sec-limits-gusto-implementation",
+        "heading": "Gusto limitation, pricing interpretation, and alternative context",
+        "body": "Limitation: Simple plan is single-state payroll — multi-state needs Plus; People/HRIS depth is light versus BambooHR; Gusto is payroll-first; Time, performance, next-day pay, and many benefits tools are add-ons because it forces process changes or add-ons around Gusto when applicant tracking is the job.\n\nPricing interpretation: no free plan confirmed — scope a paid pilot on Simple with exit criteria before annual seats.\n\nPlan trade-off: you gain time and attendance (Simple, Plus, Premium, Contractor Only) at the expense of Published free tiers vs paid depth for ATS, WFM, time, or training jobs — measure both in the pilot. Researched packaging: Simple · applicant tracking | Plus | Premium.\n\nAlternative context: unlike Rippling, Gusto is preferable when US small businesses running payroll (and benefits) for the first time because applicant tracking plus time and attendance (Simple, Plus, Premium, Contractor Only) match; prefer Rippling when Companies whose primary job is a full HRIS or people platform because the operating loops differ."
+      },
+      {
+        "id": "sec-scenario-gusto-implementation",
+        "heading": "Decision scenario and conclusion for Gusto",
+        "body": "Use-case: for US small businesses running payroll (and benefits) for the first time running applicant tracking, prefer Gusto when applicant tracking is weekly; pick another path when Companies whose primary job is a full HRIS or people platform.\n\nSetup requires a specialist owner when Simple plan is single-state payroll — multi-state needs Plus collides with applicant tracking; SMB pilots can stay lighter if time and attendance (Simple, Plus, Premium, Contractor Only) is already on Simple.\n\nIntegrations in research: Slack.\n\nWrap: choose Gusto only if the implementation job is applicant tracking under US small businesses running payroll (and benefits) for the first time; otherwise use Finder constraints instead of copying this page for another vendor."
+      }
+    ],
+    "checklist": [
+      {
+        "id": "enrich-chk-0",
+        "label": "Draft Gusto object owners before invites",
+        "order": 0
+      },
+      {
+        "id": "enrich-chk-1",
+        "label": "Confirm plan unlocks for go-live features",
+        "order": 1
+      },
+      {
+        "id": "enrich-chk-2",
+        "label": "Pilot one team on applicant tracking",
+        "order": 2
+      },
+      {
+        "id": "enrich-chk-3",
+        "label": "If blocked, evaluate Rippling before sunk-cost expansion",
+        "order": 3
+      }
+    ],
+    "nextAction": {
+      "contentId": "tool:finder:hr",
+      "label": "Open Finder shortlist"
+    }
+  },
+  "notes": [
+    "Omit unsupported: testing_evidence",
+    "Implementation: workflow, constraints, mistakes, checklist.",
+    "Type-specific skeleton: IMPLEMENTATION_GUIDE"
+  ]
+}

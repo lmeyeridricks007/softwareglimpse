@@ -1,10 +1,10 @@
 {
   "slug": "woocommerce",
-  "updatedAt": "2026-09-07T22:31:21.652Z",
+  "updatedAt": "2026-09-10T11:46:30.119Z",
   "version": "1.0.0",
   "fieldAudit": {
     "slug": "woocommerce",
-    "checkedAt": "2026-09-07T22:31:21.651Z",
+    "checkedAt": "2026-09-10T11:46:30.117Z",
     "items": [
       {
         "field": "name",
@@ -20,9 +20,9 @@
       },
       {
         "field": "canonical_vendor",
-        "status": "UNKNOWN",
-        "detail": "Company/vendor not documented",
-        "source": "none"
+        "status": "PASS",
+        "detail": "Vendor: Automattic",
+        "source": "seed"
       },
       {
         "field": "category",
@@ -115,11 +115,11 @@
         "source": "enrichment"
       }
     ],
-    "passCount": 16,
+    "passCount": 17,
     "partialCount": 0,
     "missingCount": 0,
-    "unknownCount": 2,
-    "score": 89
+    "unknownCount": 1,
+    "score": 94
   },
   "decisionHub": {
     "whatItIs": "WooCommerce is an open-source ecommerce plugin for WordPress — free to install with costs coming from hosting, themes, extensions, and payment processing (WooPayments or gateways). Suited to merchants who want CMS + store control on their own infrastructure. No SaaS subscription for core plugin; extension bundles and Woo Express/hosted offerings are optional paid paths.",
@@ -147,7 +147,7 @@
       "inventory management",
       "shipping fulfillment",
       "analytics reporting",
-      "app extensions"
+      "ai assistance"
     ],
     "pricingSummary": "2 documented plans · 1 free · entry paid: Extensions & hosting",
     "keyTradeoffs": [
@@ -229,7 +229,6 @@
     "evidenceState": "Research/data-based (no completed hands-on test) · Latest verification/research signal: 2026-08-18T12:00:00.000Z · Editorial assessment: approved",
     "nextDecisionStep": "Compare against peers: Magento vs WooCommerce",
     "missingSections": [
-      "canonical_vendor",
       "trial"
     ]
   },
@@ -377,13 +376,12 @@
   ],
   "dependentsNeedingRefresh": [],
   "remediation": [
-    "verify:canonical_vendor",
     "verify:trial"
   ],
   "notes": [
-    "fieldAudit score=89",
+    "fieldAudit score=94",
     "decisionHub bestFor=6 notIdeal=6",
     "dependents=28"
   ],
-  "materiallyImproved": false
+  "materiallyImproved": true
 }

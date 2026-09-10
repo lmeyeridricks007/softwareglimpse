@@ -199,6 +199,29 @@
       ]
     }
   ],
+  "integrationSupport": [
+    {
+      "integrationSlug": "stripe",
+      "kind": "native",
+      "sourceIds": [
+        "medusa-product-official"
+      ]
+    },
+    {
+      "integrationSlug": "paypal",
+      "kind": "third-party",
+      "sourceIds": [
+        "medusa-product-official"
+      ]
+    },
+    {
+      "integrationSlug": "zapier",
+      "kind": "zapier-style",
+      "sourceIds": [
+        "medusa-product-official"
+      ]
+    }
+  ],
   "aiCapabilities": [
     {
       "capability": "assistant",
@@ -224,29 +247,6 @@
     {
       "capability": "recommendations",
       "availability": "supported",
-      "sourceIds": [
-        "medusa-product-official"
-      ]
-    }
-  ],
-  "integrationSupport": [
-    {
-      "integrationSlug": "stripe",
-      "kind": "native",
-      "sourceIds": [
-        "medusa-product-official"
-      ]
-    },
-    {
-      "integrationSlug": "paypal",
-      "kind": "third-party",
-      "sourceIds": [
-        "medusa-product-official"
-      ]
-    },
-    {
-      "integrationSlug": "zapier",
-      "kind": "zapier-style",
       "sourceIds": [
         "medusa-product-official"
       ]
@@ -322,107 +322,6 @@
       "isEditorial": false
     }
   ],
-  "pricing": {
-    "currency": "USD",
-    "model": "hybrid",
-    "hasFreePlan": true,
-    "hasFreeTrial": false,
-    "plans": [
-      {
-        "id": "plan-open-source",
-        "slug": "open-source",
-        "name": "Open Source (self-host)",
-        "isFree": true,
-        "contactSales": false,
-        "hasFreeTrial": false,
-        "highlighted": false,
-        "rules": [
-          {
-            "kind": "flat",
-            "amount": 0,
-            "currency": "USD",
-            "interval": "month",
-            "amountPeriod": "month"
-          }
-        ],
-        "description": "Free MIT license — you own hosting and the storefront."
-      },
-      {
-        "id": "plan-develop",
-        "slug": "develop",
-        "name": "Cloud Develop",
-        "isFree": false,
-        "contactSales": false,
-        "hasFreeTrial": false,
-        "highlighted": false,
-        "rules": [
-          {
-            "kind": "flat",
-            "amount": 29,
-            "currency": "USD",
-            "interval": "year",
-            "amountPeriod": "month"
-          }
-        ],
-        "description": "From $29/mo — early Cloud / development band."
-      },
-      {
-        "id": "plan-launch",
-        "slug": "launch",
-        "name": "Cloud Launch",
-        "isFree": false,
-        "contactSales": false,
-        "hasFreeTrial": false,
-        "highlighted": true,
-        "rules": [
-          {
-            "kind": "flat",
-            "amount": 99,
-            "currency": "USD",
-            "interval": "year",
-            "amountPeriod": "month"
-          }
-        ],
-        "description": "From $99/mo — typical production Cloud entry (highlighted)."
-      },
-      {
-        "id": "plan-scale",
-        "slug": "scale",
-        "name": "Cloud Scale",
-        "isFree": false,
-        "contactSales": false,
-        "hasFreeTrial": false,
-        "highlighted": false,
-        "rules": [
-          {
-            "kind": "flat",
-            "amount": 299,
-            "currency": "USD",
-            "interval": "year",
-            "amountPeriod": "month"
-          }
-        ],
-        "description": "From $299/mo — higher Cloud capacity band."
-      },
-      {
-        "id": "plan-enterprise",
-        "slug": "enterprise",
-        "name": "Cloud Enterprise",
-        "isFree": false,
-        "contactSales": true,
-        "hasFreeTrial": false,
-        "highlighted": false,
-        "rules": [],
-        "description": "Custom Enterprise Cloud — confirm live with Medusa."
-      }
-    ],
-    "notes": "Verified 2026-08-18 from medusajs.com/pricing (high confidence). MIT OSS self-host free. Cloud: Develop from $29/mo, Launch from $99/mo, Scale from $299/mo, Enterprise custom. No GMV tax on published Cloud tiles. Affiliate economics excluded.",
-    "verifiedAt": "2026-08-18T16:00:00.000Z",
-    "sourceIds": [
-      "medusa-pricing-official"
-    ],
-    "startingPriceMonthly": 0
-  },
   "screenshots": [
     {
       "id": "medusa-shot-og-meta",
@@ -539,13 +438,13 @@
       "demonstratedDimensionIds": [],
       "requirementCriterionIds": [],
       "workflowStageIds": [],
+      "mediaContext": "general-workflow",
       "reportedOutcomes": [],
       "placements": [
         "overview",
         "features",
         "evidence"
       ],
-      "mediaContext": "general-workflow",
       "purpose": "Official Medusa video for product research pages",
       "demonstratesCaption": "How Medusa presents the product in an official vendor video.",
       "editorialCommentary": "Official vendor demo — treat as UI/workflow evidence, not SoftwareGlimpse scoring.",
@@ -607,13 +506,13 @@
       "demonstratedDimensionIds": [],
       "requirementCriterionIds": [],
       "workflowStageIds": [],
+      "mediaContext": "general-workflow",
       "reportedOutcomes": [],
       "placements": [
         "overview",
         "features",
         "evidence"
       ],
-      "mediaContext": "general-workflow",
       "purpose": "Official Medusa video for product research pages",
       "demonstratesCaption": "How Medusa presents the product in an official vendor video.",
       "editorialCommentary": "Official vendor demo — treat as UI/workflow evidence, not SoftwareGlimpse scoring.",
@@ -631,11 +530,107 @@
       "status": "published"
     }
   ],
-  "sourceIds": [
-    "medusa-product-official",
-    "medusa-pricing-official"
-  ],
-  "notes": "Ecommerce Priority-3 onboarding enrichment from first-party research 2026-08-18T16:00:00.000Z. handsOnTesting=false. membershipRole=primary. jobCluster=open-source-platform.",
+  "pricing": {
+    "currency": "USD",
+    "model": "hybrid",
+    "hasFreePlan": true,
+    "hasFreeTrial": false,
+    "plans": [
+      {
+        "id": "plan-open-source",
+        "slug": "open-source",
+        "name": "Open Source (self-host)",
+        "isFree": true,
+        "contactSales": false,
+        "hasFreeTrial": false,
+        "highlighted": false,
+        "rules": [
+          {
+            "kind": "flat",
+            "amount": 0,
+            "currency": "USD",
+            "interval": "month",
+            "amountPeriod": "month"
+          }
+        ],
+        "description": "Free MIT license — you own hosting and the storefront."
+      },
+      {
+        "id": "plan-develop",
+        "slug": "develop",
+        "name": "Cloud Develop",
+        "isFree": false,
+        "contactSales": false,
+        "hasFreeTrial": false,
+        "highlighted": false,
+        "rules": [
+          {
+            "kind": "flat",
+            "amount": 29,
+            "currency": "USD",
+            "interval": "year",
+            "amountPeriod": "month"
+          }
+        ],
+        "description": "From $29/mo — early Cloud / development band."
+      },
+      {
+        "id": "plan-launch",
+        "slug": "launch",
+        "name": "Cloud Launch",
+        "isFree": false,
+        "contactSales": false,
+        "hasFreeTrial": false,
+        "highlighted": true,
+        "rules": [
+          {
+            "kind": "flat",
+            "amount": 99,
+            "currency": "USD",
+            "interval": "year",
+            "amountPeriod": "month"
+          }
+        ],
+        "description": "From $99/mo — typical production Cloud entry (highlighted)."
+      },
+      {
+        "id": "plan-scale",
+        "slug": "scale",
+        "name": "Cloud Scale",
+        "isFree": false,
+        "contactSales": false,
+        "hasFreeTrial": false,
+        "highlighted": false,
+        "rules": [
+          {
+            "kind": "flat",
+            "amount": 299,
+            "currency": "USD",
+            "interval": "year",
+            "amountPeriod": "month"
+          }
+        ],
+        "description": "From $299/mo — higher Cloud capacity band."
+      },
+      {
+        "id": "plan-enterprise",
+        "slug": "enterprise",
+        "name": "Cloud Enterprise",
+        "isFree": false,
+        "contactSales": true,
+        "hasFreeTrial": false,
+        "highlighted": false,
+        "rules": [],
+        "description": "Custom Enterprise Cloud — confirm live with Medusa."
+      }
+    ],
+    "notes": "Verified 2026-08-18 from medusajs.com/pricing (high confidence). MIT OSS self-host free. Cloud: Develop from $29/mo, Launch from $99/mo, Scale from $299/mo, Enterprise custom. No GMV tax on published Cloud tiles. Affiliate economics excluded.",
+    "verifiedAt": "2026-09-10T11:42:27.727Z",
+    "sourceIds": [
+      "medusa-pricing-official"
+    ],
+    "startingPriceMonthly": 0
+  },
   "domainCheckedAt": {
     "identity": "2026-08-18T16:00:00.000Z",
     "pricing": "2026-08-18T16:00:00.000Z",
@@ -649,5 +644,10 @@
     "limits": "2026-08-18T16:00:00.000Z",
     "security-compliance": "2026-08-18T16:00:00.000Z"
   },
-  "updatedAt": "2026-08-18T08:00:00.000Z"
+  "sourceIds": [
+    "medusa-product-official",
+    "medusa-pricing-official"
+  ],
+  "updatedAt": "2026-08-18T08:00:00.000Z",
+  "notes": "Ecommerce Priority-3 onboarding enrichment from first-party research 2026-08-18T16:00:00.000Z. handsOnTesting=false. membershipRole=primary. jobCluster=open-source-platform."
 }

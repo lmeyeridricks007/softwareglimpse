@@ -23,7 +23,8 @@ export type PriceChangeImpactPage = {
     | "tool"
     | "pricing"
     | "research"
-    | "category";
+    | "category"
+    | "guide";
   slug: string;
   productId: string;
 };

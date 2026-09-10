@@ -1,0 +1,214 @@
+{
+  "slug": "heroku-setup",
+  "enrichmentType": "IMPLEMENTATION_GUIDE",
+  "updatedAt": "2026-09-10T12:53:37.359Z",
+  "uniqueValueAdded": [
+    "implementation_workflow",
+    "scenario_analysis",
+    "decision_framework",
+    "limitations_evidence",
+    "pricing_comparison",
+    "sg_original_data",
+    "buyer_checklist"
+  ],
+  "patch": {
+    "summary": "infrastructure monitoring; log management; CI/CD and automation; managed hosting. Eco · infrastructure monitoring | Basic | Standard-1X. Github. Teams that want Salesforce-backed Cedar dynos with a published Basic list price always-on floor; Buyers comparing Heroku Basic to Railway Hobby/Pro and Render Pro list price; Orgs that will not treat Eco sleep dynos as production always-on TCO. Heroku is Salesforce’s cloud PaaS (Cedar dynos, add-ons, and git-push deploys) — not a managed WordPress host and not a panel licence. Eco is list pricenth but sleeps after 30 minu Buyer question: what must be true before Heroku is worth buying versus staying on trial/research? Keep Heroku on the shortlist only if Teams that want Salesforce-backed Cedar dynos with a published Basic list price always-on floor; drop it when Teams that need a forever-free dyno or Hobby-credit evaluation path because Does not outrank Render (7.9) as the cloud-paas award cannot be patched with more seats.",
+    "blocks": [
+      {
+        "id": "da-heroku-setup-1",
+        "type": "direct-answer",
+        "body": "infrastructure monitoring decides whether Heroku setup is a one-team pilot or a specialist project — confirm unlocks for must-have capabilities before invites.",
+        "bullets": [
+          "Start with: infrastructure monitoring",
+          "Gate check: confirm paid unlocks before go-live",
+          "Integrate after: data quality pass on Github"
+        ]
+      },
+      {
+        "id": "impl-heroku-setup-2",
+        "type": "step",
+        "heading": "Heroku day-zero to steady-state sequence",
+        "body": "Treat Heroku setup as a controlled rollout — not a weekend dump of CSV files.",
+        "stepNumber": 1,
+        "scenarios": [
+          {
+            "title": "Day zero — objects and owners",
+            "body": "Define owners for infrastructure monitoring, log management, CI/CD and automation before inviting the whole org."
+          },
+          {
+            "title": "SMB pilot",
+            "body": "One pipeline / one team proves Teams that want Salesforce-backed Cedar dynos with a published Basic list price always-on floor before company-wide seats."
+          },
+          {
+            "title": "Cutover",
+            "body": "Freeze legacy writes briefly; validate Github before reopen."
+          }
+        ]
+      },
+      {
+        "id": "df-heroku-setup-3",
+        "type": "decision-framework",
+        "title": "Heroku implementation go / no-go",
+        "steps": [
+          {
+            "id": "i-1",
+            "label": "Go when plan unlocks cover must-have capabilities"
+          },
+          {
+            "id": "i-2",
+            "label": "Pause if this limitation blocks ops: Does not outrank Render (7.9) as the cloud-paas award"
+          },
+          {
+            "id": "i-3",
+            "label": "Do not expand seats until infrastructure monitoring is green"
+          }
+        ]
+      },
+      {
+        "id": "mist-heroku-setup-4",
+        "type": "mistakes",
+        "title": "Heroku implementation mistakes",
+        "items": [
+          {
+            "title": "Mistake 1",
+            "body": "Does not outrank Render (7.9) as the cloud-paas award"
+          },
+          {
+            "title": "Mistake 2",
+            "body": "Eco list price dynos sleep after 30 minutes of inactivity and are personal-only — not always-on production; Basic list price is the always-on floor"
+          },
+          {
+            "title": "Mistake 3",
+            "body": "No forever-free dyno (hasFreePlan false)"
+          },
+          {
+            "title": "Mistake 4",
+            "body": "Not managed WordPress hosting (WP Engine) — landscape only"
+          },
+          {
+            "title": "Big-bang invite",
+            "body": "Inviting every user before object design creates junk data that is expensive to unwind."
+          }
+        ]
+      },
+      {
+        "id": "cost-heroku-setup-5",
+        "type": "cost-breakdown",
+        "title": "Heroku plan gates that affect rollout",
+        "body": "Implementation fails when unlocks needed for go-live sit on a higher tier than budgeted.",
+        "lines": [
+          {
+            "label": "Eco",
+            "description": "Unlocks: infrastructure monitoring, log management, CI/CD and automation · Suits: teams whose must-have gates appear on this tier"
+          },
+          {
+            "label": "Basic",
+            "description": "Suits: teams whose must-have gates appear on this tier"
+          },
+          {
+            "label": "Standard-1X",
+            "description": "Suits: teams whose must-have gates appear on this tier"
+          },
+          {
+            "label": "Standard-2X",
+            "description": "Suits: teams whose must-have gates appear on this tier"
+          },
+          {
+            "label": "Performance-M",
+            "description": "Suits: teams whose must-have gates appear on this tier"
+          }
+        ]
+      },
+      {
+        "id": "sel-heroku-setup-6",
+        "type": "selection-checklist",
+        "title": "Heroku implementation checklist",
+        "dimensions": [
+          {
+            "id": "prep",
+            "label": "Prep",
+            "options": [
+              "Object model drafted",
+              "Owners named",
+              "Legacy freeze window set"
+            ]
+          },
+          {
+            "id": "pilot",
+            "label": "Pilot",
+            "options": [
+              "infrastructure monitoring",
+              "Junk-data rules set",
+              "Support path clear"
+            ]
+          },
+          {
+            "id": "scale",
+            "label": "Scale",
+            "options": [
+              "Github",
+              "Seat expansion criteria written",
+              "Rollback plan noted"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "cta-heroku-setup-7",
+        "type": "interactive-cta",
+        "title": "Validate it-development fit before a deep Heroku rollout",
+        "body": "If Heroku fails constraint fit, stop implementation early.",
+        "href": "/tools/it-development-finder/",
+        "ctaLabel": "Open Finder",
+        "variant": "finder"
+      }
+    ],
+    "sections": [
+      {
+        "id": "sec-thesis-heroku-setup",
+        "heading": "Heroku buyer question and thesis",
+        "body": "infrastructure monitoring; log management; CI/CD and automation; managed hosting. Eco · infrastructure monitoring | Basic | Standard-1X. Github. Teams that want Salesforce-backed Cedar dynos with a published Basic list price always-on floor; Buyers comparing Heroku Basic to Railway Hobby/Pro and Render Pro list price; Orgs that will not treat Eco sleep dynos as production always-on TCO. Heroku is Salesforce’s cloud PaaS (Cedar dynos, add-ons, and git-push deploys) — not a managed WordPress host and not a panel licence. Eco is list pricenth but sleeps after 30 minu. That catalogue mix is the Heroku setup filter — not a generic it-development lecture.\n\nBuyer question: what must be true before Heroku is worth buying versus staying on trial/research?\n\nKeep Heroku on the shortlist only if Teams that want Salesforce-backed Cedar dynos with a published Basic list price always-on floor; drop it when Teams that need a forever-free dyno or Hobby-credit evaluation path because Does not outrank Render (7.9) as the cloud-paas award cannot be patched with more seats.\n\nBest for: Teams that want Salesforce-backed Cedar dynos with a published Basic list price always-on floor; Buyers comparing Heroku Basic to Railway Hobby/Pro and Render Pro list price; Orgs that will not treat Eco sleep dynos as production always-on TCO (Teams that want Salesforce-backed Cedar dynos with a published Basic list price always-on floor).\n\nPoor fit when: Teams that need a forever-free dyno or Hobby-credit evaluation path; Managed WordPress buyers (WP Engine) — landscape only; ITSM or observability purchases. Avoid if Does not outrank Render (7.9) as the cloud-paas award would block go-live."
+      },
+      {
+        "id": "sec-limits-heroku-setup",
+        "heading": "Heroku limitation, pricing interpretation, and alternative context",
+        "body": "Limitation: Does not outrank Render (7.9) as the cloud-paas award; Eco list price dynos sleep after 30 minutes of inactivity and are personal-only — not always-on production; Basic list price is the always-on floor; No forever-free dyno (hasFreePlan false) because it forces process changes or add-ons around Heroku when infrastructure monitoring is the job.\n\nPricing interpretation: no free plan confirmed — scope a paid pilot on Eco with exit criteria before annual seats.\n\nPlan trade-off: you gain infrastructure monitoring at the expense of Per-agent vs per-host vs per-seat vs per-GB pricing models — measure both in the pilot. Researched packaging: Eco · infrastructure monitoring | Basic | Standard-1X.\n\nAlternative context: unlike Render, Heroku is preferable when Teams that want Salesforce-backed Cedar dynos with a published Basic list price always-on floor because infrastructure monitoring plus infrastructure monitoring match; prefer Render when Teams that need a forever-free dyno or Hobby-credit evaluation path because the operating loops differ."
+      },
+      {
+        "id": "sec-scenario-heroku-setup",
+        "heading": "Decision scenario and conclusion for Heroku",
+        "body": "Scenario: recommend Heroku for Teams that want Salesforce-backed Cedar dynos with a published Basic list price always-on floor; do not choose it when Teams that need a forever-free dyno or Hobby-credit evaluation path — the jobs diverge at infrastructure monitoring.\n\nImplementation time: weeks to configure infrastructure monitoring if Github must be green before invites.\n\nIntegrations in research: Github.\n\nDecision conclusion: buy Heroku when researched fit (Teams that want Salesforce-backed Cedar dynos with a published Basic list price always-on floor) beats researched limits (Does not outrank Render (7.9) as the cloud-paas award); otherwise keep researching — do not substitute product names into a generic setup essay."
+      }
+    ],
+    "checklist": [
+      {
+        "id": "enrich-chk-0",
+        "label": "Draft Heroku object owners before invites",
+        "order": 0
+      },
+      {
+        "id": "enrich-chk-1",
+        "label": "Confirm plan unlocks for go-live features",
+        "order": 1
+      },
+      {
+        "id": "enrich-chk-2",
+        "label": "Pilot one team on infrastructure monitoring",
+        "order": 2
+      },
+      {
+        "id": "enrich-chk-3",
+        "label": "If blocked, evaluate Render before sunk-cost expansion",
+        "order": 3
+      }
+    ],
+    "nextAction": {
+      "contentId": "tool:finder:it-development",
+      "label": "Open Finder shortlist"
+    }
+  },
+  "notes": [
+    "Implementation: workflow, constraints, mistakes, checklist.",
+    "Type-specific skeleton: IMPLEMENTATION_GUIDE"
+  ]
+}

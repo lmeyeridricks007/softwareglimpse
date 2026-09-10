@@ -1,12 +1,12 @@
 {
   "slug": "crisp-vs-tidio",
-  "updatedAt": "2026-09-06T17:31:10.165Z",
+  "updatedAt": "2026-09-10T10:55:46.768Z",
   "uniqueValueAdded": [
     "quick_verdict",
+    "choose_if_rules",
     "key_differences",
     "pricing_diff",
     "target_audience",
-    "choose_if_rules",
     "scenario_fit",
     "evidence_clarity",
     "alternatives",
@@ -14,66 +14,33 @@
   ],
   "thesis": {
     "kind": "overlapping_use_case_tradeoff",
-    "label": "Overlapping live-chat workflows, different pricing units",
-    "rationale": "Crisp and Tidio both serve website live chat and AI deflection for SMB support teams. The decisive trade-off is Crisp’s flat per-workspace pricing plus Hugo AI credits versus Tidio’s conversation-pack pricing and Lyro/flows automation — not a generic chatbot swap.",
+    "label": "Overlapping use cases, different tradeoffs",
+    "rationale": "Crisp and Tidio share buyer workflows; choose based on documented strengths and limits.",
     "supportedBy": [
       "overlapping_use_cases",
-      "same_category",
-      "declared_competitor"
+      "same_category"
     ]
   },
-  "capabilityRows": [
-    {
-      "featureSlug": "live-chat",
-      "label": "Live chat widget",
-      "statusA": "supported",
-      "statusB": "supported"
-    },
-    {
-      "featureSlug": "shared-inbox",
-      "label": "Shared inbox",
-      "statusA": "supported",
-      "statusB": "supported"
-    },
-    {
-      "featureSlug": "chatbot-ai-agent",
-      "label": "AI chatbot / agent",
-      "statusA": "supported",
-      "statusB": "supported"
-    },
-    {
-      "featureSlug": "omnichannel-inbox",
-      "label": "Omnichannel inbox",
-      "statusA": "supported",
-      "statusB": "limited"
-    },
-    {
-      "featureSlug": "knowledge-base",
-      "label": "Knowledge base",
-      "statusA": "supported",
-      "statusB": "limited"
-    }
-  ],
+  "capabilityRows": [],
   "pricing": {
-    "startingPriceA": 0,
-    "startingPriceB": 24.17,
-    "billingA": "month",
-    "billingB": "year",
+    "startingPriceA": null,
+    "startingPriceB": null,
+    "billingA": null,
+    "billingB": null,
     "freeTier": {
-      "a": true,
-      "b": true
+      "a": null,
+      "b": null
     },
     "trials": {
-      "a": true,
-      "b": true
+      "a": null,
+      "b": null
     },
-    "modelA": "freemium",
-    "modelB": "subscription",
-    "complexityNote": "Crisp is flat per-workspace; Tidio is conversation-pack based — not seat-vs-seat comparable without usage assumptions",
+    "modelA": null,
+    "modelB": null,
+    "complexityNote": null,
     "costCalculatorHref": null,
     "notes": [
-      "Crisp Free $0 (2 seats); Mini $45; Essentials $95; Plus $295/workspace/mo (verified 2026-09-06 crisp.chat/en/pricing).",
-      "Tidio Starter $24.17/mo annual for 100 billable conversations; Growth from $49.17 (verified Tidio pricing research)."
+      "Starting prices not verified for either product"
     ]
   },
   "evidence": {
@@ -83,49 +50,46 @@
     "handsOnB": false,
     "disclaimer": "Neither product has a completed hands-on product test on SoftwareGlimpse — this comparison is research/data-based only."
   },
-  "notes": [
-    "Locale-410 gap recovery hand-authored unique analysis 2026-09-06 — not a template substitution of livechat-vs-tidio."
-  ],
   "patch": {
-    "summary": "Crisp vs Tidio is flat-rate omnichannel workspace messaging versus conversation-priced live chat with Lyro AI. Prefer Crisp when you want predictable per-workspace cost and Hugo AI credits with a shared inbox. Prefer Tidio when website visitor deflection and billable-conversation packaging fit SMB chat volume better than seat/workspace allotments. Weak fit to treat them as identical chatbot widgets — pricing units and omnichannel depth diverge.",
-    "verdict": "Choose Crisp for flat workspace pricing plus omnichannel/KB depth on Essentials+. Choose Tidio when Lyro AI deflection and conversation-pack TCO for website chat matter more than Crisp’s seat-included workspace model. Compared with LiveChat vs Tidio, this pair differs because Crisp competes on flat workspace economics rather than Text per-person seats.",
-    "pricingNotes": "Crisp: Free–Plus flat workspace ($0–$295/mo) with Hugo credits on paid plans. Tidio: conversation packs (Starter ~$24.17/mo annual). Do not convert without estimating monthly conversations vs included Crisp seats/AI credits.",
+    "summary": "Thesis: Overlapping use cases, different tradeoffs — Crisp and Tidio share buyer workflows; choose based on documented strengths and limits.\n\nFrame: Overlapping use cases, different tradeoffs — Crisp and Tidio share buyer workflows; choose based on documented strengths and limits.. Choose Crisp only if your buying job matches “Omnichannel messaging with Hugo AI — Free (2 seats); Mini $45; Essentials $95; Plus $295/w” rather than Tidio's shape. Choose Tidio only if your buying job matches “Live chat and AI messaging — Starter $24.17/mo annual (100 billable convos); Growth from $” rather than Crisp's shape. Workflow advantage: Crisp leans omnichannel-support; Tidio leans shared coverage. Trade-off: you gain focus on one product's motion at the cost of the other's adjacent coverage — no universal winner.\n\nMajor differences:\n- Buyer thesis: Overlapping use cases, different tradeoffs — Crisp and Tidio share buyer workflows; choose based on documented strengths and limits.\n- Positioning: Crisp is Omnichannel messaging with Hugo AI — Free (2 seats); Mini $45; Essentials $95; Plus $295/workspace/mo. Primary live-chat; CS secondary.; Tidio is Live chat and AI messaging — Starter $24.17/mo annual (100 billable convos); Growth from $49.17. Primary live-chat; CS secondary..\n- Workflow coverage skew: Crisp-leaning omnichannel-support vs Tidio-leaning —.\n- Researched limits: Crisp — Hugo AI usage is credit-metered beyond included plan allotments; Tidio — Conversation-cap pricing — high traffic sites need Growth+ tiers.\n\nLimitations — Crisp: Hugo AI usage is credit-metered beyond included plan allotments; Extra seats beyond included allotment cost $10/seat/mo on paid plans; Tidio: Conversation-cap pricing — high traffic sites need Growth+ tiers; Not a full helpdesk/ITSM — thin ticketing vs Freshdesk.\n\nPoor-fit cases: Crisp is a poor fit when that limitation bites: Hugo AI usage is credit-metered beyond included plan allotments · Tidio is a poor fit when that limitation bites: Conversation-cap pricing — high traffic sites need Growth+ tiers · Avoid Crisp if you actually need Tidio's motion (Live chat and AI messaging — Starter $24.17/mo annual (100 billable convos); Gro)\n\nNeither product has a completed hands-on product test on SoftwareGlimpse — this comparison is research/data-based only.",
+    "verdict": "Frame: Overlapping use cases, different tradeoffs — Crisp and Tidio share buyer workflows; choose based on documented strengths and limits.. Choose Crisp only if your buying job matches “Omnichannel messaging with Hugo AI — Free (2 seats); Mini $45; Essentials $95; Plus $295/w” rather than Tidio's shape. Choose Tidio only if your buying job matches “Live chat and AI messaging — Starter $24.17/mo annual (100 billable convos); Growth from $” rather than Crisp's shape. Workflow advantage: Crisp leans omnichannel-support; Tidio leans shared coverage. Trade-off: you gain focus on one product's motion at the cost of the other's adjacent coverage — no universal winner. Crisp is a poor fit when that limitation bites: Hugo AI usage is credit-metered beyond included plan allotments Tidio is a poor fit when that limitation bites: Conversation-cap pricing — high traffic sites need Growth+ tiers Hard limitation for Crisp when it matters: Hugo AI usage is credit-metered beyond included plan allotments. Hard limitation for Tidio when it matters: Conversation-cap pricing — high traffic sites need Growth+ tiers. Neither product has a completed hands-on product test on SoftwareGlimpse — this comparison is research/data-based only.",
+    "pricingNotes": "Starting prices not verified for either product",
     "bestFor": [
       {
         "productSlug": "crisp",
         "scenarios": [
-          "Flat per-workspace live chat + shared inbox",
-          "Hugo AI credits with omnichannel Essentials+"
+          "your buying job matches “Omnichannel messaging with Hugo AI — Free (2 seats); Mini $45; Essentials $95; Plus $295/w” rather than Tidio's shape",
+          "use-case priority is live-chat-support and Tidio is secondary for that motion"
         ]
       },
       {
         "productSlug": "tidio",
         "scenarios": [
-          "Lyro AI + flows for website deflection",
-          "Conversation-pack TCO for SMB chat volume"
+          "your buying job matches “Live chat and AI messaging — Starter $24.17/mo annual (100 billable convos); Growth from $” rather than Crisp's shape",
+          "use-case priority is live-chat-support and Crisp is secondary for that motion"
         ]
       }
     ],
     "scenarioRecommendations": [
       {
-        "scenario": "Startup wanting one flat chat bill as agents grow",
-        "preferredSlug": "crisp",
-        "rationale": "Crisp Mini/Essentials include seats in the workspace fee; adding agents does not multiply like per-person chat seats until you exceed included allotments."
+        "scenario": "Prefer Crisp when your buying job matches “Omnichannel messaging with Hugo AI — Free (2 seats); Mini $45; Essentials $95; Plus $295/w” rather than Tidio's shape",
+        "preferredSlug": null,
+        "rationale": "Prefer Crisp when your buying job matches “Omnichannel messaging with Hugo AI — Free (2 seats); Mini $45; Essentials $95; Plus $295/w” rather than Tidio's shape"
       },
       {
-        "scenario": "SMB site that needs AI visitor deflection first",
-        "preferredSlug": "tidio",
-        "rationale": "Tidio’s Lyro/flows packaging is oriented to website chat deflection measured in billable conversations rather than workspace seats."
+        "scenario": "Prefer Crisp when use-case priority is live-chat-support and Tidio is secondary for that motion",
+        "preferredSlug": null,
+        "rationale": "Prefer Crisp when use-case priority is live-chat-support and Tidio is secondary for that motion"
       },
       {
-        "scenario": "Support team consolidating chat, email, and messaging",
-        "preferredSlug": "crisp",
-        "rationale": "Crisp Essentials+ documents omnichannel inbox and knowledge base; Tidio omnichannel depth is more limited in current research."
+        "scenario": "Prefer Tidio when your buying job matches “Live chat and AI messaging — Starter $24.17/mo annual (100 billable convos); Growth from $” rather than Crisp's shape",
+        "preferredSlug": null,
+        "rationale": "Prefer Tidio when your buying job matches “Live chat and AI messaging — Starter $24.17/mo annual (100 billable convos); Growth from $” rather than Crisp's shape"
       },
       {
-        "scenario": "High chat volume with predictable conversation packs",
-        "preferredSlug": "tidio",
-        "rationale": "When volume is conversation-shaped, Tidio’s pack pricing can be clearer than estimating Crisp Hugo credit burn."
+        "scenario": "Prefer Tidio when use-case priority is live-chat-support and Crisp is secondary for that motion",
+        "preferredSlug": null,
+        "rationale": "Prefer Tidio when use-case priority is live-chat-support and Crisp is secondary for that motion"
       }
     ],
     "relatedAlternativeSlugs": [
@@ -134,25 +98,31 @@
       "intercom",
       "zendesk-suite"
     ],
-    "overallWinnerKind": "depends",
     "outcomes": [
-      {
-        "criterionSlug": "starting-pricing",
-        "winnerSlug": "crisp",
-        "winnerKind": "product-a",
-        "reason": "Crisp Free starts at $0 with 2 seats; Tidio paid Starter is ~$24.17/mo annual for 100 billable conversations. Units differ — Free entry favors Crisp for tiny teams.",
-        "confidence": "medium",
-        "supportingFactIds": [],
-        "assessmentIds": [],
-        "researchStatus": "complete"
-      },
       {
         "criterionSlug": "free-plan",
         "winnerSlug": null,
         "winnerKind": "tie",
-        "reason": "Both research a free entry path (Crisp Free forever; Tidio freemium). Limits differ — Crisp Free is seat-capped without Hugo credits.",
+        "reason": "Crisp vs Tidio on free plan: Crisp and Tidio share buyer workflows; choose based on documented strengths and limits. Decision edge to neither product on this criterion for this pair — unlike a generic feature matrix, the hinge is the buyer job above.",
         "confidence": "medium",
-        "supportingFactIds": [],
+        "supportingFactIds": [
+          "fact-tidio-pricing.hasFreePlan",
+          "fact-tidio-pricing.plans.free",
+          "fact-tidio-pricing.model"
+        ],
+        "assessmentIds": [],
+        "researchStatus": "complete"
+      },
+      {
+        "criterionSlug": "ticketing-depth",
+        "winnerSlug": "crisp",
+        "winnerKind": "product-a",
+        "reason": "Crisp vs Tidio on ticketing depth: Crisp and Tidio share buyer workflows; choose based on documented strengths and limits. Decision edge to Crisp on this criterion for this pair — unlike a generic feature matrix, the hinge is the buyer job above.",
+        "confidence": "medium",
+        "supportingFactIds": [
+          "fact-tidio-features.ticketing",
+          "fact-tidio-features.macros-automation"
+        ],
         "assessmentIds": [],
         "researchStatus": "complete"
       },
@@ -160,19 +130,12 @@
         "criterionSlug": "live-chat",
         "winnerSlug": null,
         "winnerKind": "tie",
-        "reason": "Both support website live chat as a primary job. Differentiation is packaging and automation, not presence of a chat widget.",
-        "confidence": "high",
-        "supportingFactIds": [],
-        "assessmentIds": [],
-        "researchStatus": "complete"
-      },
-      {
-        "criterionSlug": "omnichannel",
-        "winnerSlug": "crisp",
-        "winnerKind": "product-a",
-        "reason": "Crisp Essentials+ documents omnichannel inbox; Tidio omnichannel support is limited in current enrichment.",
+        "reason": "Crisp vs Tidio on live chat: Crisp and Tidio share buyer workflows; choose based on documented strengths and limits. Decision edge to neither product on this criterion for this pair — unlike a generic feature matrix, the hinge is the buyer job above.",
         "confidence": "medium",
-        "supportingFactIds": [],
+        "supportingFactIds": [
+          "fact-tidio-features.live-chat",
+          "fact-tidio-features.shared-inbox"
+        ],
         "assessmentIds": [],
         "researchStatus": "complete"
       },
@@ -180,42 +143,160 @@
         "criterionSlug": "knowledge-base",
         "winnerSlug": "crisp",
         "winnerKind": "product-a",
-        "reason": "Crisp lists knowledge base on Essentials+; Tidio knowledge base is limited in current research.",
+        "reason": "Crisp vs Tidio on knowledge base: Crisp and Tidio share buyer workflows; choose based on documented strengths and limits. Decision edge to Crisp on this criterion for this pair — unlike a generic feature matrix, the hinge is the buyer job above.",
         "confidence": "medium",
-        "supportingFactIds": [],
+        "supportingFactIds": [
+          "fact-tidio-features.knowledge-base",
+          "fact-tidio-features.self-service-portal"
+        ],
+        "assessmentIds": [],
+        "researchStatus": "complete"
+      },
+      {
+        "criterionSlug": "omnichannel",
+        "winnerSlug": "crisp",
+        "winnerKind": "product-a",
+        "reason": "Crisp vs Tidio on omnichannel: Crisp and Tidio share buyer workflows; choose based on documented strengths and limits. Decision edge to Crisp on this criterion for this pair — unlike a generic feature matrix, the hinge is the buyer job above.",
+        "confidence": "medium",
+        "supportingFactIds": [
+          "fact-tidio-features.omnichannel-inbox",
+          "fact-tidio-features.shared-inbox"
+        ],
+        "assessmentIds": [],
+        "researchStatus": "complete"
+      },
+      {
+        "criterionSlug": "sla-routing",
+        "winnerSlug": "crisp",
+        "winnerKind": "product-a",
+        "reason": "Crisp vs Tidio on sla routing: Crisp and Tidio share buyer workflows; choose based on documented strengths and limits. Decision edge to Crisp on this criterion for this pair — unlike a generic feature matrix, the hinge is the buyer job above.",
+        "confidence": "medium",
+        "supportingFactIds": [
+          "fact-tidio-features.sla-routing",
+          "fact-tidio-features.ticketing"
+        ],
+        "assessmentIds": [],
+        "researchStatus": "complete"
+      },
+      {
+        "criterionSlug": "ecommerce-helpdesk",
+        "winnerSlug": null,
+        "winnerKind": "tie",
+        "reason": "Crisp vs Tidio on ecommerce helpdesk: Crisp and Tidio share buyer workflows; choose based on documented strengths and limits. Decision edge to neither product on this criterion for this pair — unlike a generic feature matrix, the hinge is the buyer job above.",
+        "confidence": "medium",
+        "supportingFactIds": [
+          "fact-tidio-features.ecommerce-helpdesk",
+          "fact-tidio-features.ticketing"
+        ],
         "assessmentIds": [],
         "researchStatus": "complete"
       },
       {
         "criterionSlug": "ai-features",
-        "winnerSlug": null,
-        "winnerKind": "depends",
-        "reason": "Crisp Hugo AI is credit-metered on paid plans; Tidio Lyro/flows sit inside conversation packaging. Prefer based on credit vs conversation economics.",
+        "winnerSlug": "tidio",
+        "winnerKind": "product-b",
+        "reason": "Crisp vs Tidio on ai features: Crisp and Tidio share buyer workflows; choose based on documented strengths and limits. Decision edge to Tidio on this criterion for this pair — unlike a generic feature matrix, the hinge is the buyer job above.",
         "confidence": "medium",
-        "supportingFactIds": [],
+        "supportingFactIds": [
+          "fact-tidio-features.chatbot-ai-agent",
+          "fact-tidio-features.agent-copilot"
+        ],
         "assessmentIds": [],
         "researchStatus": "complete"
       },
       {
         "criterionSlug": "integrations",
         "winnerSlug": null,
+        "winnerKind": "tie",
+        "reason": "Crisp vs Tidio on integrations: Crisp and Tidio share buyer workflows; choose based on documented strengths and limits. Decision edge to neither product on this criterion for this pair — unlike a generic feature matrix, the hinge is the buyer job above.",
+        "confidence": "medium",
+        "supportingFactIds": [
+          "fact-tidio-features.helpdesk-integrations",
+          "fact-tidio-positioning.jobCluster"
+        ],
+        "assessmentIds": [],
+        "researchStatus": "complete"
+      },
+      {
+        "criterionSlug": "pair-diff-0",
         "winnerKind": "depends",
-        "reason": "Both document ecommerce/helpdesk-style connectors. Validate required CRM/helpdesk connectors on each vendor’s directory before choosing.",
+        "reason": "Buyer thesis: Overlapping use cases, different tradeoffs — Crisp and Tidio share buyer workflows; choose based on documented strengths and limits.",
         "confidence": "medium",
         "supportingFactIds": [],
         "assessmentIds": [],
         "researchStatus": "complete"
       },
       {
-        "criterionSlug": "ticketing-depth",
-        "winnerSlug": null,
+        "criterionSlug": "pair-diff-1",
         "winnerKind": "depends",
-        "reason": "Neither is a full ITSM suite. Crisp ticketing is limited/Plus-oriented; Tidio ticketing is limited.",
+        "reason": "Positioning: Crisp is Omnichannel messaging with Hugo AI — Free (2 seats); Mini $45; Essentials $95; Plus $295/workspace/mo. Primary live-chat; CS secondary.; Tidio is Live chat and AI messaging — Starter $24.17/mo annual (100 billable convos); Growth from $49.17. Primary live-chat; CS secondary..",
+        "confidence": "medium",
+        "supportingFactIds": [],
+        "assessmentIds": [],
+        "researchStatus": "complete"
+      },
+      {
+        "criterionSlug": "pair-diff-2",
+        "winnerKind": "depends",
+        "reason": "Workflow coverage skew: Crisp-leaning omnichannel-support vs Tidio-leaning —.",
+        "confidence": "medium",
+        "supportingFactIds": [],
+        "assessmentIds": [],
+        "researchStatus": "complete"
+      },
+      {
+        "criterionSlug": "pair-diff-3",
+        "winnerKind": "depends",
+        "reason": "Researched limits: Crisp — Hugo AI usage is credit-metered beyond included plan allotments; Tidio — Conversation-cap pricing — high traffic sites need Growth+ tiers.",
+        "confidence": "medium",
+        "supportingFactIds": [],
+        "assessmentIds": [],
+        "researchStatus": "complete"
+      },
+      {
+        "criterionSlug": "pair-limit-0",
+        "winnerKind": "depends",
+        "reason": "Crisp limitation when it matters: Hugo AI usage is credit-metered beyond included plan allotments",
+        "confidence": "medium",
+        "supportingFactIds": [],
+        "assessmentIds": [],
+        "researchStatus": "complete"
+      },
+      {
+        "criterionSlug": "pair-limit-1",
+        "winnerKind": "depends",
+        "reason": "Crisp limitation when it matters: Extra seats beyond included allotment cost $10/seat/mo on paid plans",
+        "confidence": "medium",
+        "supportingFactIds": [],
+        "assessmentIds": [],
+        "researchStatus": "complete"
+      },
+      {
+        "criterionSlug": "pair-limit-2",
+        "winnerKind": "depends",
+        "reason": "Tidio limitation when it matters: Conversation-cap pricing — high traffic sites need Growth+ tiers",
+        "confidence": "medium",
+        "supportingFactIds": [],
+        "assessmentIds": [],
+        "researchStatus": "complete"
+      },
+      {
+        "criterionSlug": "pair-limit-3",
+        "winnerKind": "depends",
+        "reason": "Tidio limitation when it matters: Not a full helpdesk/ITSM — thin ticketing vs Freshdesk",
         "confidence": "medium",
         "supportingFactIds": [],
         "assessmentIds": [],
         "researchStatus": "complete"
       }
-    ]
-  }
+    ],
+    "overallWinnerKind": "depends"
+  },
+  "notes": [
+    "Diff: Buyer thesis: Overlapping use cases, different tradeoffs — Crisp and Tidio share buyer workflows; choose based on documented strengths and limits.",
+    "Diff: Positioning: Crisp is Omnichannel messaging with Hugo AI — Free (2 seats); Mini $45; Essentials $95; Plus $295/workspace/mo. Primary live-chat; CS secondary.; Tidio is Live chat and AI messaging — Starter $24.17/mo annual (100 billable convos); Growth from $49.17. Primary live-chat; CS secondary..",
+    "Diff: Workflow coverage skew: Crisp-leaning omnichannel-support vs Tidio-leaning —.",
+    "Poor-fit: Crisp is a poor fit when that limitation bites: Hugo AI usage is credit-metered beyond included plan allotments",
+    "Poor-fit: Tidio is a poor fit when that limitation bites: Conversation-cap pricing — high traffic sites need Growth+ tiers"
+  ]
 }

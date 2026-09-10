@@ -7,12 +7,24 @@
  */
 import { analyzeKnowledgeGraph } from "@/services/seo/knowledge-graph";
 
+function argValue(args: string[], name: string): string | undefined {
+  const idx = args.indexOf(name);
+  if (idx >= 0 && args[idx + 1] && !args[idx + 1]!.startsWith("--")) {
+    return args[idx + 1];
+  }
+  return undefined;
+}
+
 function main(): void {
   const args = process.argv.slice(2);
   const write = !args.includes("--no-write");
   const json = args.includes("--json");
+  const improveLimitRaw = argValue(args, "--improve-limit");
+  const improveLimit = improveLimitRaw
+    ? Number(improveLimitRaw)
+    : 100_000;
 
-  const report = analyzeKnowledgeGraph({ write });
+  const report = analyzeKnowledgeGraph({ write, improveLimit });
 
   if (json) {
     console.log(

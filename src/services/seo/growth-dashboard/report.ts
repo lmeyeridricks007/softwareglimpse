@@ -140,7 +140,7 @@ ${bulletList(report.weekly.majorPricingChanges)}
 ### Links earned
 ${bulletList(report.weekly.linksEarned)}
 
-### New tested products
+### New tested products (HANDS_ON = NOT_CURRENT_SCOPE)
 ${bulletList(report.weekly.newTestedProducts)}
 
 ### Research published
@@ -227,6 +227,20 @@ ${lifecycleTable(report.contentEstate.byType.software)}
 
 #### Other (sitemap remainder)
 ${lifecycleTable(report.contentEstate.byType.other)}
+
+### Factory-origin remediation
+
+FACTORY_ORIGIN_TOTAL is **inventory** (pages created from factory families). It does **not** fall when those pages become excellent. Quality KPIs: HIGH_RISK ↓, LIMITED_UNIQUE ↓, QUALITY_PASS ↑, INDEXABLE ↑, IMPROVE ↓.
+
+| Metric | Value |
+|---|---|
+| FACTORY_ORIGIN_TOTAL | ${fmtMetric(report.contentEstate.factoryRemediation.originTotal)} |
+| FACTORY_HIGH_RISK | ${fmtMetric(report.contentEstate.factoryRemediation.highRisk)} |
+| FACTORY_LIMITED_UNIQUE | ${fmtMetric(report.contentEstate.factoryRemediation.limitedUnique)} |
+| FACTORY_QUALITY_PASS | ${fmtMetric(report.contentEstate.factoryRemediation.qualityPass)} |
+| FACTORY_INDEXABLE | ${fmtMetric(report.contentEstate.factoryRemediation.indexable)} |
+| FACTORY_IMPROVE | ${fmtMetric(report.contentEstate.factoryRemediation.improve)} |
+| FACTORY_PROMOTED | ${fmtMetric(report.contentEstate.factoryRemediation.promoted)} |
 
 ${bulletList(report.contentEstate.notes)}
 

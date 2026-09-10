@@ -1,6 +1,6 @@
 # Comparison index-worthiness audit
 
-**Generated:** 2026-09-08T23:08:03.934Z
+**Generated:** 2026-09-10T20:42:55.806Z
 **Engine:** compare-index-worthiness v2.0.0
 
 Lifecycle-first policy: weak comparisons are **preserved** under IMPROVE (temporary `noindex,follow`), then remediated and promoted to INDEXABLE. Cartesian pairs are not deleted — they stay in the improvement queue until competitive relationships and quality gates clear.
@@ -10,13 +10,13 @@ Lifecycle-first policy: weak comparisons are **preserved** under IMPROVE (tempor
 | Metric | Count |
 | --- | ---: |
 | Total comparison pages | 4000 |
-| Indexable | 1699 |
-| Improvement queue | 1711 (IMPROVE 1711 · IMPROVING 0) |
+| Indexable | 2140 |
+| Improvement queue | 1809 (IMPROVE 1809 · IMPROVING 0) |
 | Ready for promotion | 0 (INDEXABLE_READY 0 · READY_FOR_REVIEW 0) |
-| Manual review | 590 |
+| Manual review | 51 |
 | Retired | 0 |
-| Potential indexable after remediation | 2301 |
-| Search-indexable (post-policy) | 1699 |
+| Potential indexable after remediation | 1860 |
+| Search-indexable (post-policy) | 2140 |
 | Seed `seo.indexable=true` (pre-policy) | 1440 |
 | Orphans (0 inbound estimate) | 0 |
 | Near-orphans (1 inbound) | 0 |
@@ -49,14 +49,14 @@ Lifecycle-first policy: weak comparisons are **preserved** under IMPROVE (tempor
 | --- | ---: | ---: | ---: | ---: |
 | it-development | 1144 | 182 | 967 | 944 |
 | crm | 666 | 659 | 7 | 7 |
-| sales-intelligence | 409 | 390 | 270 | 19 |
+| sales-intelligence | 409 | 390 | 117 | 117 |
 | ai | 361 | 76 | 288 | 264 |
-| business-communications | 282 | 204 | 158 | 78 |
+| business-communications | 282 | 204 | 81 | 78 |
 | hr | 275 | 82 | 193 | 193 |
 | marketing | 207 | 115 | 93 | 92 |
-| project-management | 196 | 145 | 98 | 51 |
-| ecommerce | 194 | 192 | 113 | 2 |
-| email-marketing | 185 | 185 | 53 | 0 |
+| project-management | 196 | 145 | 51 | 51 |
+| ecommerce | 194 | 192 | 2 | 2 |
+| email-marketing | 185 | 185 | 0 | 0 |
 | customer-service | 16 | 13 | 3 | 3 |
 | live-chat | 10 | 0 | 10 | 10 |
 | analytics-bi | 9 | 6 | 4 | 4 |
@@ -102,106 +102,106 @@ _None currently INDEXABLE_READY._
 
 | Rank | URL | Lifecycle | Category | Unique | Improvement reasons | Remediation |
 | ---: | --- | --- | --- | ---: | --- | --- |
-| 1 | /compare/dialpad-vs-microsoft-teams/ | MANUAL_REVIEW | business-communications | 1 | — | — |
-| 2 | /compare/dialpad-vs-slack/ | MANUAL_REVIEW | business-communications | 1 | — | — |
-| 3 | /compare/dialpad-vs-twilio/ | MANUAL_REVIEW | business-communications | 1 | — | — |
-| 4 | /compare/five9-vs-twilio/ | MANUAL_REVIEW | business-communications | 1 | — | — |
-| 5 | /compare/goto-connect-vs-microsoft-teams/ | MANUAL_REVIEW | business-communications | 1 | — | — |
-| 6 | /compare/goto-connect-vs-slack/ | MANUAL_REVIEW | business-communications | 1 | — | — |
-| 7 | /compare/goto-connect-vs-twilio/ | MANUAL_REVIEW | business-communications | 1 | — | — |
-| 8 | /compare/manychat-vs-nextiva/ | MANUAL_REVIEW | business-communications | 1 | — | — |
-| 9 | /compare/manychat-vs-twilio/ | MANUAL_REVIEW | business-communications | 1 | — | — |
-| 10 | /compare/microsoft-teams-vs-nextiva/ | MANUAL_REVIEW | business-communications | 1 | — | — |
-| 11 | /compare/nextiva-vs-slack/ | MANUAL_REVIEW | business-communications | 1 | — | — |
-| 12 | /compare/ooma-vs-twilio/ | MANUAL_REVIEW | business-communications | 1 | — | — |
-| 13 | /compare/openphone-vs-twilio/ | MANUAL_REVIEW | business-communications | 1 | — | — |
-| 14 | /compare/ringcentral-vs-slack/ | MANUAL_REVIEW | business-communications | 1 | — | — |
-| 15 | /compare/ringcentral-vs-wati/ | MANUAL_REVIEW | business-communications | 1 | — | — |
-| 16 | /compare/talkdesk-vs-wati/ | MANUAL_REVIEW | business-communications | 1 | — | — |
-| 17 | /compare/twilio-vs-vonage/ | MANUAL_REVIEW | business-communications | 1 | — | — |
-| 18 | /compare/twilio-vs-webex/ | MANUAL_REVIEW | business-communications | 1 | — | — |
-| 19 | /compare/bouncer-vs-brevo/ | MANUAL_REVIEW | email-marketing | 1 | — | — |
-| 20 | /compare/bouncer-vs-constant-contact/ | MANUAL_REVIEW | email-marketing | 1 | — | — |
-| 21 | /compare/bouncer-vs-drip/ | MANUAL_REVIEW | email-marketing | 1 | — | — |
-| 22 | /compare/bouncer-vs-flodesk/ | MANUAL_REVIEW | email-marketing | 1 | — | — |
-| 23 | /compare/bouncer-vs-klaviyo/ | MANUAL_REVIEW | email-marketing | 1 | — | — |
-| 24 | /compare/bouncer-vs-mailerlite/ | MANUAL_REVIEW | email-marketing | 1 | — | — |
-| 25 | /compare/bouncer-vs-mailjet/ | MANUAL_REVIEW | email-marketing | 1 | — | — |
-| 26 | /compare/bouncer-vs-moosend/ | MANUAL_REVIEW | email-marketing | 1 | — | — |
-| 27 | /compare/bouncer-vs-omnisend/ | MANUAL_REVIEW | email-marketing | 1 | — | — |
-| 28 | /compare/brevo-vs-inboxally/ | MANUAL_REVIEW | email-marketing | 1 | — | — |
-| 29 | /compare/constant-contact-vs-inboxally/ | MANUAL_REVIEW | email-marketing | 1 | — | — |
-| 30 | /compare/drip-vs-inboxally/ | MANUAL_REVIEW | email-marketing | 1 | — | — |
-| 31 | /compare/flodesk-vs-inboxally/ | MANUAL_REVIEW | email-marketing | 1 | — | — |
-| 32 | /compare/inboxally-vs-klaviyo/ | MANUAL_REVIEW | email-marketing | 1 | — | — |
-| 33 | /compare/inboxally-vs-mailerlite/ | MANUAL_REVIEW | email-marketing | 1 | — | — |
-| 34 | /compare/inboxally-vs-mailjet/ | MANUAL_REVIEW | email-marketing | 1 | — | — |
-| 35 | /compare/inboxally-vs-moosend/ | MANUAL_REVIEW | email-marketing | 1 | — | — |
-| 36 | /compare/inboxally-vs-omnisend/ | MANUAL_REVIEW | email-marketing | 1 | — | — |
-| 37 | /compare/office-timeline-vs-todoist/ | MANUAL_REVIEW | project-management | 1 | — | — |
-| 38 | /compare/office-timeline-vs-trello/ | MANUAL_REVIEW | project-management | 1 | — | — |
-| 39 | /compare/office-timeline-vs-wrike/ | MANUAL_REVIEW | project-management | 1 | — | — |
-| 40 | /compare/smartsheet-vs-vektoros/ | MANUAL_REVIEW | project-management | 1 | — | — |
-| 41 | /compare/vektoros-vs-wrike/ | MANUAL_REVIEW | project-management | 1 | — | — |
-| 42 | /compare/evolve-vs-uniqode/ | MANUAL_REVIEW | marketing | 1 | — | — |
-| 43 | /compare/mindstudio-vs-wegic/ | IMPROVE | ai | 1 | — | — |
-| 44 | /compare/cloudways-vs-directadmin/ | MANUAL_REVIEW | it-development | 1 | — | — |
-| 45 | /compare/cpanel-vs-kinsta/ | MANUAL_REVIEW | it-development | 1 | — | — |
-| 46 | /compare/cpanel-vs-siteground/ | MANUAL_REVIEW | it-development | 1 | — | — |
-| 47 | /compare/directadmin-vs-kinsta/ | MANUAL_REVIEW | it-development | 1 | — | — |
-| 48 | /compare/directadmin-vs-siteground/ | MANUAL_REVIEW | it-development | 1 | — | — |
-| 49 | /compare/bigcommerce-vs-lightspeed-retail/ | MANUAL_REVIEW | ecommerce | 1 | — | — |
-| 50 | /compare/bigcommerce-vs-sellfy/ | MANUAL_REVIEW | ecommerce | 1 | — | — |
-| 51 | /compare/bigcommerce-vs-square-online/ | MANUAL_REVIEW | ecommerce | 1 | — | — |
-| 52 | /compare/bigcommerce-vs-squarespace/ | MANUAL_REVIEW | ecommerce | 1 | — | — |
-| 53 | /compare/bigcommerce-vs-webflow/ | MANUAL_REVIEW | ecommerce | 1 | — | — |
-| 54 | /compare/bigcommerce-vs-wix/ | MANUAL_REVIEW | ecommerce | 1 | — | — |
-| 55 | /compare/commercetools-vs-lightspeed-retail/ | MANUAL_REVIEW | ecommerce | 1 | — | — |
-| 56 | /compare/commercetools-vs-sellfy/ | MANUAL_REVIEW | ecommerce | 1 | — | — |
-| 57 | /compare/commercetools-vs-square-online/ | MANUAL_REVIEW | ecommerce | 1 | — | — |
-| 58 | /compare/commercetools-vs-squarespace/ | MANUAL_REVIEW | ecommerce | 1 | — | — |
-| 59 | /compare/commercetools-vs-webflow/ | MANUAL_REVIEW | ecommerce | 1 | — | — |
-| 60 | /compare/commercetools-vs-wix/ | MANUAL_REVIEW | ecommerce | 1 | — | — |
-| 61 | /compare/ecwid-vs-square-online/ | MANUAL_REVIEW | ecommerce | 1 | — | — |
-| 62 | /compare/ecwid-vs-webflow/ | MANUAL_REVIEW | ecommerce | 1 | — | — |
-| 63 | /compare/lightspeed-retail-vs-magento/ | MANUAL_REVIEW | ecommerce | 1 | — | — |
-| 64 | /compare/lightspeed-retail-vs-medusa/ | MANUAL_REVIEW | ecommerce | 1 | — | — |
-| 65 | /compare/lightspeed-retail-vs-opencart/ | MANUAL_REVIEW | ecommerce | 1 | — | — |
-| 66 | /compare/lightspeed-retail-vs-prestashop/ | MANUAL_REVIEW | ecommerce | 1 | — | — |
-| 67 | /compare/lightspeed-retail-vs-saleor/ | MANUAL_REVIEW | ecommerce | 1 | — | — |
-| 68 | /compare/lightspeed-retail-vs-salesforce-commerce-cloud/ | MANUAL_REVIEW | ecommerce | 1 | — | — |
-| 69 | /compare/lightspeed-retail-vs-sellfy/ | MANUAL_REVIEW | ecommerce | 1 | — | — |
-| 70 | /compare/lightspeed-retail-vs-shopware/ | MANUAL_REVIEW | ecommerce | 1 | — | — |
-| 71 | /compare/lightspeed-retail-vs-squarespace/ | MANUAL_REVIEW | ecommerce | 1 | — | — |
-| 72 | /compare/lightspeed-retail-vs-tiendanube/ | MANUAL_REVIEW | ecommerce | 1 | — | — |
-| 73 | /compare/lightspeed-retail-vs-vtex/ | MANUAL_REVIEW | ecommerce | 1 | — | — |
-| 74 | /compare/lightspeed-retail-vs-webflow/ | MANUAL_REVIEW | ecommerce | 1 | — | — |
-| 75 | /compare/lightspeed-retail-vs-wix/ | MANUAL_REVIEW | ecommerce | 1 | — | — |
-| 76 | /compare/lightspeed-retail-vs-woocommerce/ | MANUAL_REVIEW | ecommerce | 1 | — | — |
-| 77 | /compare/magento-vs-sellfy/ | MANUAL_REVIEW | ecommerce | 1 | — | — |
-| 78 | /compare/magento-vs-square-online/ | MANUAL_REVIEW | ecommerce | 1 | — | — |
-| 79 | /compare/magento-vs-squarespace/ | MANUAL_REVIEW | ecommerce | 1 | — | — |
-| 80 | /compare/magento-vs-webflow/ | MANUAL_REVIEW | ecommerce | 1 | — | — |
-| 81 | /compare/magento-vs-wix/ | MANUAL_REVIEW | ecommerce | 1 | — | — |
-| 82 | /compare/medusa-vs-sellfy/ | MANUAL_REVIEW | ecommerce | 1 | — | — |
-| 83 | /compare/medusa-vs-square-online/ | MANUAL_REVIEW | ecommerce | 1 | — | — |
-| 84 | /compare/medusa-vs-squarespace/ | MANUAL_REVIEW | ecommerce | 1 | — | — |
-| 85 | /compare/medusa-vs-webflow/ | MANUAL_REVIEW | ecommerce | 1 | — | — |
-| 86 | /compare/medusa-vs-wix/ | MANUAL_REVIEW | ecommerce | 1 | — | — |
-| 87 | /compare/opencart-vs-square-online/ | MANUAL_REVIEW | ecommerce | 1 | — | — |
-| 88 | /compare/opencart-vs-squarespace/ | MANUAL_REVIEW | ecommerce | 1 | — | — |
-| 89 | /compare/opencart-vs-webflow/ | MANUAL_REVIEW | ecommerce | 1 | — | — |
-| 90 | /compare/opencart-vs-wix/ | MANUAL_REVIEW | ecommerce | 1 | — | — |
-| 91 | /compare/prestashop-vs-square-online/ | MANUAL_REVIEW | ecommerce | 1 | — | — |
-| 92 | /compare/prestashop-vs-squarespace/ | MANUAL_REVIEW | ecommerce | 1 | — | — |
-| 93 | /compare/prestashop-vs-webflow/ | MANUAL_REVIEW | ecommerce | 1 | — | — |
-| 94 | /compare/prestashop-vs-wix/ | MANUAL_REVIEW | ecommerce | 1 | — | — |
-| 95 | /compare/saleor-vs-square-online/ | MANUAL_REVIEW | ecommerce | 1 | — | — |
-| 96 | /compare/saleor-vs-squarespace/ | MANUAL_REVIEW | ecommerce | 1 | — | — |
-| 97 | /compare/saleor-vs-webflow/ | MANUAL_REVIEW | ecommerce | 1 | — | — |
-| 98 | /compare/saleor-vs-wix/ | MANUAL_REVIEW | ecommerce | 1 | — | — |
-| 99 | /compare/salesforce-commerce-cloud-vs-square-online/ | MANUAL_REVIEW | ecommerce | 1 | — | — |
-| 100 | /compare/salesforce-commerce-cloud-vs-squarespace/ | MANUAL_REVIEW | ecommerce | 1 | — | — |
+| 1 | /compare/ringcentral-vs-wati/ | MANUAL_REVIEW | business-communications | 1 | — | — |
+| 2 | /compare/evolve-vs-uniqode/ | MANUAL_REVIEW | marketing | 1 | — | — |
+| 3 | /compare/mindstudio-vs-wegic/ | IMPROVE | ai | 1 | — | — |
+| 4 | /compare/cloudways-vs-directadmin/ | MANUAL_REVIEW | it-development | 1 | — | — |
+| 5 | /compare/cpanel-vs-kinsta/ | MANUAL_REVIEW | it-development | 1 | — | — |
+| 6 | /compare/cpanel-vs-siteground/ | MANUAL_REVIEW | it-development | 1 | — | — |
+| 7 | /compare/directadmin-vs-kinsta/ | MANUAL_REVIEW | it-development | 1 | — | — |
+| 8 | /compare/directadmin-vs-siteground/ | MANUAL_REVIEW | it-development | 1 | — | — |
+| 9 | /compare/eightx8-vs-respond-io/ | MANUAL_REVIEW | business-communications | 0.934 | — | — |
+| 10 | /compare/respond-io-vs-ringcentral/ | MANUAL_REVIEW | business-communications | 0.934 | — | — |
+| 11 | /compare/gamma-vs-rank-prompt/ | IMPROVE | ai | 0.893 | — | — |
+| 12 | /compare/meltwater-vs-uniqode/ | IMPROVE | analytics-bi | 0.863 | — | — |
+| 13 | /compare/demandbase-vs-kaspr/ | IMPROVE | sales-intelligence | 0.801 | — | — |
+| 14 | /compare/instantly-vs-kaspr/ | IMPROVE | sales-intelligence | 0.801 | — | — |
+| 15 | /compare/bombora-vs-kaspr/ | IMPROVE | sales-intelligence | 0.8 | — | — |
+| 16 | /compare/demandbase-vs-instantly/ | IMPROVE | sales-intelligence | 0.8 | — | — |
+| 17 | /compare/clay-vs-demandbase/ | IMPROVE | sales-intelligence | 0.799 | — | — |
+| 18 | /compare/adcreative-ai-vs-rank-prompt/ | IMPROVE | ai | 0.799 | — | — |
+| 19 | /compare/clay-vs-instantly/ | IMPROVE | sales-intelligence | 0.798 | — | — |
+| 20 | /compare/cognism-vs-instantly/ | IMPROVE | sales-intelligence | 0.798 | — | — |
+| 21 | /compare/gong-vs-instantly/ | IMPROVE | sales-intelligence | 0.798 | — | — |
+| 22 | /compare/instantly-vs-leadiq/ | IMPROVE | sales-intelligence | 0.798 | — | — |
+| 23 | /compare/gong-vs-kaspr/ | IMPROVE | sales-intelligence | 0.797 | — | — |
+| 24 | /compare/demandbase-vs-lemlist/ | IMPROVE | sales-intelligence | 0.796 | — | — |
+| 25 | /compare/bombora-vs-hunter/ | IMPROVE | sales-intelligence | 0.795 | — | — |
+| 26 | /compare/cognism-vs-ocean/ | IMPROVE | sales-intelligence | 0.795 | — | — |
+| 27 | /compare/demandbase-vs-hunter/ | IMPROVE | sales-intelligence | 0.795 | — | — |
+| 28 | /compare/leadiq-vs-salesloft/ | IMPROVE | sales-intelligence | 0.795 | — | — |
+| 29 | /compare/clay-vs-hunter/ | IMPROVE | sales-intelligence | 0.794 | — | — |
+| 30 | /compare/cognism-vs-leadiq/ | IMPROVE | sales-intelligence | 0.794 | — | — |
+| 31 | /compare/cognism-vs-lemlist/ | IMPROVE | sales-intelligence | 0.794 | — | — |
+| 32 | /compare/leadiq-vs-lemlist/ | IMPROVE | sales-intelligence | 0.794 | — | — |
+| 33 | /compare/cognism-vs-smartlead/ | IMPROVE | sales-intelligence | 0.793 | — | — |
+| 34 | /compare/gong-vs-lemlist/ | IMPROVE | sales-intelligence | 0.793 | — | — |
+| 35 | /compare/clay-vs-smartlead/ | IMPROVE | sales-intelligence | 0.792 | — | — |
+| 36 | /compare/clearbit-vs-uplead/ | IMPROVE | sales-intelligence | 0.792 | — | — |
+| 37 | /compare/gong-vs-smartlead/ | IMPROVE | sales-intelligence | 0.792 | — | — |
+| 38 | /compare/instantly-vs-ocean/ | IMPROVE | sales-intelligence | 0.792 | — | — |
+| 39 | /compare/leadiq-vs-smartlead/ | IMPROVE | sales-intelligence | 0.792 | — | — |
+| 40 | /compare/lemlist-vs-uplead/ | IMPROVE | sales-intelligence | 0.792 | — | — |
+| 41 | /compare/linkedin-sales-navigator-vs-salesloft/ | IMPROVE | sales-intelligence | 0.792 | — | — |
+| 42 | /compare/clay-vs-linkedin-sales-navigator/ | IMPROVE | sales-intelligence | 0.791 | — | — |
+| 43 | /compare/demandbase-vs-leadiq/ | IMPROVE | sales-intelligence | 0.791 | — | — |
+| 44 | /compare/hunter-vs-uplead/ | IMPROVE | sales-intelligence | 0.791 | — | — |
+| 45 | /compare/kaspr-vs-ocean/ | IMPROVE | sales-intelligence | 0.791 | — | — |
+| 46 | /compare/leadiq-vs-ocean/ | IMPROVE | sales-intelligence | 0.791 | — | — |
+| 47 | /compare/linkedin-sales-navigator-vs-uplead/ | IMPROVE | sales-intelligence | 0.791 | — | — |
+| 48 | /compare/rocketreach-vs-salesloft/ | IMPROVE | sales-intelligence | 0.791 | — | — |
+| 49 | /compare/clay-vs-uplead/ | IMPROVE | sales-intelligence | 0.79 | — | — |
+| 50 | /compare/clearbit-vs-hunter/ | IMPROVE | sales-intelligence | 0.79 | — | — |
+| 51 | /compare/hunter-vs-leadiq/ | IMPROVE | sales-intelligence | 0.79 | — | — |
+| 52 | /compare/salesloft-vs-smartlead/ | IMPROVE | sales-intelligence | 0.79 | — | — |
+| 53 | /compare/kaspr-vs-rocketreach/ | IMPROVE | sales-intelligence | 0.789 | — | — |
+| 54 | /compare/outreach-vs-uplead/ | IMPROVE | sales-intelligence | 0.789 | — | — |
+| 55 | /compare/cognism-vs-uplead/ | IMPROVE | sales-intelligence | 0.788 | — | — |
+| 56 | /compare/demandbase-vs-ocean/ | IMPROVE | sales-intelligence | 0.788 | — | — |
+| 57 | /compare/hunter-vs-ocean/ | IMPROVE | sales-intelligence | 0.788 | — | — |
+| 58 | /compare/rocketreach-vs-zoominfo/ | IMPROVE | sales-intelligence | 0.788 | — | — |
+| 59 | /compare/demandbase-vs-linkedin-sales-navigator/ | IMPROVE | sales-intelligence | 0.787 | — | — |
+| 60 | /compare/kaspr-vs-lemlist/ | IMPROVE | sales-intelligence | 0.787 | — | — |
+| 61 | /compare/smartlead-vs-uplead/ | IMPROVE | sales-intelligence | 0.787 | — | — |
+| 62 | /compare/demandbase-vs-uplead/ | IMPROVE | sales-intelligence | 0.786 | — | — |
+| 63 | /compare/linkedin-sales-navigator-vs-ocean/ | IMPROVE | sales-intelligence | 0.786 | — | — |
+| 64 | /compare/ocean-vs-rocketreach/ | IMPROVE | sales-intelligence | 0.786 | — | — |
+| 65 | /compare/ocean-vs-smartlead/ | IMPROVE | sales-intelligence | 0.786 | — | — |
+| 66 | /compare/rocketreach-vs-uplead/ | IMPROVE | sales-intelligence | 0.786 | — | — |
+| 67 | /compare/clay-vs-lemlist/ | IMPROVE | sales-intelligence | 0.784 | — | — |
+| 68 | /compare/gong-vs-uplead/ | IMPROVE | sales-intelligence | 0.784 | — | — |
+| 69 | /compare/hunter-vs-linkedin-sales-navigator/ | IMPROVE | sales-intelligence | 0.784 | — | — |
+| 70 | /compare/lemlist-vs-ocean/ | IMPROVE | sales-intelligence | 0.784 | — | — |
+| 71 | /compare/instantly-vs-linkedin-sales-navigator/ | IMPROVE | sales-intelligence | 0.783 | — | — |
+| 72 | /compare/linkedin-sales-navigator-vs-smartlead/ | IMPROVE | sales-intelligence | 0.783 | — | — |
+| 73 | /compare/lemlist-vs-linkedin-sales-navigator/ | IMPROVE | sales-intelligence | 0.78 | — | — |
+| 74 | /compare/lemlist-vs-rocketreach/ | IMPROVE | sales-intelligence | 0.78 | — | — |
+| 75 | /compare/instantly-vs-rocketreach/ | IMPROVE | sales-intelligence | 0.779 | — | — |
+| 76 | /compare/rocketreach-vs-smartlead/ | IMPROVE | sales-intelligence | 0.779 | — | — |
+| 77 | /compare/linkedin-sales-navigator-vs-rocketreach/ | IMPROVE | sales-intelligence | 0.774 | — | — |
+| 78 | /compare/salesloft-vs-sixsense/ | IMPROVE | sales-intelligence | 0.723 | — | — |
+| 79 | /compare/clearbit-vs-seamless-ai/ | IMPROVE | sales-intelligence | 0.721 | — | — |
+| 80 | /compare/adapt-io-vs-outreach/ | IMPROVE | sales-intelligence | 0.719 | — | — |
+| 81 | /compare/salesloft-vs-seamless-ai/ | IMPROVE | sales-intelligence | 0.719 | — | — |
+| 82 | /compare/adapt-io-vs-seamless-ai/ | IMPROVE | sales-intelligence | 0.718 | — | — |
+| 83 | /compare/hunter-vs-seamless-ai/ | IMPROVE | sales-intelligence | 0.718 | — | — |
+| 84 | /compare/kaspr-vs-sixsense/ | IMPROVE | sales-intelligence | 0.718 | — | — |
+| 85 | /compare/rocketreach-vs-seamless-ai/ | IMPROVE | sales-intelligence | 0.718 | — | — |
+| 86 | /compare/adapt-io-vs-clay/ | IMPROVE | sales-intelligence | 0.717 | — | — |
+| 87 | /compare/adapt-io-vs-instantly/ | IMPROVE | sales-intelligence | 0.717 | — | — |
+| 88 | /compare/instantly-vs-sixsense/ | IMPROVE | sales-intelligence | 0.717 | — | — |
+| 89 | /compare/adapt-io-vs-cognism/ | IMPROVE | sales-intelligence | 0.715 | — | — |
+| 90 | /compare/cognism-vs-seamless-ai/ | IMPROVE | sales-intelligence | 0.715 | — | — |
+| 91 | /compare/instantly-vs-seamless-ai/ | IMPROVE | sales-intelligence | 0.715 | — | — |
+| 92 | /compare/leadiq-vs-sixsense/ | IMPROVE | sales-intelligence | 0.715 | — | — |
+| 93 | /compare/adapt-io-vs-leadiq/ | IMPROVE | sales-intelligence | 0.714 | — | — |
+| 94 | /compare/adapt-io-vs-rocketreach/ | IMPROVE | sales-intelligence | 0.714 | — | — |
+| 95 | /compare/adapt-io-vs-lemlist/ | IMPROVE | sales-intelligence | 0.713 | — | — |
+| 96 | /compare/lemlist-vs-sixsense/ | IMPROVE | sales-intelligence | 0.713 | — | — |
+| 97 | /compare/ocean-vs-seamless-ai/ | IMPROVE | sales-intelligence | 0.713 | — | — |
+| 98 | /compare/adapt-io-vs-smartlead/ | IMPROVE | sales-intelligence | 0.712 | — | — |
+| 99 | /compare/hunter-vs-sixsense/ | IMPROVE | sales-intelligence | 0.712 | — | — |
+| 100 | /compare/lemlist-vs-seamless-ai/ | IMPROVE | sales-intelligence | 0.711 | — | — |
 
 ## Lifecycle samples
 
@@ -233,14 +233,14 @@ _None._
 
 ### MANUAL_REVIEW (sample)
 
-- /compare/adapt-io-vs-bombora/ — All index-worthiness gates passed (unique=0.725, features=1)
-- /compare/adapt-io-vs-clay/ — All index-worthiness gates passed (unique=0.717, features=1)
-- /compare/adapt-io-vs-clearbit/ — All index-worthiness gates passed (unique=0.721, features=1)
-- /compare/adapt-io-vs-cognism/ — All index-worthiness gates passed (unique=0.715, features=1)
-- /compare/adapt-io-vs-demandbase/ — All index-worthiness gates passed (unique=0.725, features=1)
-- /compare/adapt-io-vs-instantly/ — All index-worthiness gates passed (unique=0.717, features=1)
-- /compare/adapt-io-vs-kaspr/ — All index-worthiness gates passed (unique=0.702, features=1)
-- /compare/adapt-io-vs-leadiq/ — All index-worthiness gates passed (unique=0.714, features=1)
+- /compare/adcreative-ai-vs-cursor/ — WEAK_COMPARISON_RELATIONSHIP (unique=0.811, features=1)
+- /compare/adcreative-ai-vs-elevenlabs/ — WEAK_COMPARISON_RELATIONSHIP (unique=0.812, features=1)
+- /compare/adcreative-ai-vs-fireflies/ — WEAK_COMPARISON_RELATIONSHIP (unique=0.93, features=1)
+- /compare/adcreative-ai-vs-zapier/ — WEAK_COMPARISON_RELATIONSHIP (unique=0.816, features=1)
+- /compare/bright-data-vs-datadog/ — WEAK_COMPARISON_RELATIONSHIP (unique=1, features=1)
+- /compare/bright-data-vs-github/ — WEAK_COMPARISON_RELATIONSHIP (unique=1, features=1)
+- /compare/bright-data-vs-pagerduty/ — WEAK_COMPARISON_RELATIONSHIP (unique=1, features=1)
+- /compare/bright-data-vs-render/ — WEAK_COMPARISON_RELATIONSHIP (unique=1, features=1)
 
 ## Machine-readable output
 

@@ -1,10 +1,10 @@
 {
   "slug": "openphone",
-  "updatedAt": "2026-09-07T22:31:21.427Z",
+  "updatedAt": "2026-09-10T08:15:10.389Z",
   "version": "1.0.0",
   "fieldAudit": {
     "slug": "openphone",
-    "checkedAt": "2026-09-07T22:31:21.426Z",
+    "checkedAt": "2026-09-10T08:15:10.388Z",
     "items": [
       {
         "field": "name",
@@ -20,9 +20,9 @@
       },
       {
         "field": "canonical_vendor",
-        "status": "UNKNOWN",
-        "detail": "Company/vendor not documented",
-        "source": "none"
+        "status": "PASS",
+        "detail": "Vendor: OpenPhone Technologies, Inc. (Quo)",
+        "source": "seed"
       },
       {
         "field": "category",
@@ -115,11 +115,11 @@
         "source": "enrichment"
       }
     ],
-    "passCount": 17,
+    "passCount": 18,
     "partialCount": 0,
     "missingCount": 0,
-    "unknownCount": 1,
-    "score": 94
+    "unknownCount": 0,
+    "score": 100
   },
   "decisionHub": {
     "whatItIs": "OpenPhone (rebranded Quo in 2025; product surface unchanged) is a modern shared business phone for SMB teams: one local or toll-free number per user, unlimited US/Canada calling and SMS under fair use, shared inboxes, and Sona AI answering. Starter $15, Business $23 and Scale $35 per user/month annual ($19/$33/$47 monthly) were confirmed on openphone.com/pricing 2026-08-17. Phone menus, automatic recording and deeper CRM (HubSpot/Salesforce) land on Business+; Scale adds AI call tags and dedicated onboarding. Fair-use policy prohibits cold calling and auto-dialers — not a power-dialer product.",
@@ -143,11 +143,11 @@
       "cloud phone",
       "sms messaging",
       "shared inbox",
+      "team messaging",
       "analytics reporting",
       "ai assistance",
-      "business phone",
-      "sales calling",
-      "team communication"
+      "unified inbox",
+      "business phone"
     ],
     "pricingSummary": "3 documented plans · entry paid: Starter · trial documented on at least one plan",
     "keyTradeoffs": [
@@ -240,9 +240,7 @@
     ],
     "evidenceState": "Research/data-based (no completed hands-on test) · Latest verification/research signal: 2026-08-17T18:00:00.000Z · Editorial assessment: approved",
     "nextDecisionStep": "Compare against peers: Aircall vs OpenPhone",
-    "missingSections": [
-      "canonical_vendor"
-    ]
+    "missingSections": []
   },
   "dependents": [
     {
@@ -412,13 +410,11 @@
     }
   ],
   "dependentsNeedingRefresh": [],
-  "remediation": [
-    "verify:canonical_vendor"
-  ],
+  "remediation": [],
   "notes": [
-    "fieldAudit score=94",
+    "fieldAudit score=100",
     "decisionHub bestFor=6 notIdeal=6",
     "dependents=33"
   ],
-  "materiallyImproved": false
+  "materiallyImproved": true
 }

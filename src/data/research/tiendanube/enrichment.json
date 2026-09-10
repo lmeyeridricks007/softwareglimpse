@@ -199,6 +199,29 @@
       ]
     }
   ],
+  "integrationSupport": [
+    {
+      "integrationSlug": "stripe",
+      "kind": "third-party",
+      "sourceIds": [
+        "tiendanube-product-official"
+      ]
+    },
+    {
+      "integrationSlug": "paypal",
+      "kind": "third-party",
+      "sourceIds": [
+        "tiendanube-product-official"
+      ]
+    },
+    {
+      "integrationSlug": "zapier",
+      "kind": "zapier-style",
+      "sourceIds": [
+        "tiendanube-product-official"
+      ]
+    }
+  ],
   "aiCapabilities": [
     {
       "capability": "assistant",
@@ -224,29 +247,6 @@
     {
       "capability": "recommendations",
       "availability": "limited",
-      "sourceIds": [
-        "tiendanube-product-official"
-      ]
-    }
-  ],
-  "integrationSupport": [
-    {
-      "integrationSlug": "stripe",
-      "kind": "third-party",
-      "sourceIds": [
-        "tiendanube-product-official"
-      ]
-    },
-    {
-      "integrationSlug": "paypal",
-      "kind": "third-party",
-      "sourceIds": [
-        "tiendanube-product-official"
-      ]
-    },
-    {
-      "integrationSlug": "zapier",
-      "kind": "zapier-style",
       "sourceIds": [
         "tiendanube-product-official"
       ]
@@ -315,111 +315,6 @@
       "isEditorial": false
     }
   ],
-  "pricing": {
-    "currency": "USD",
-    "model": "flat",
-    "hasFreePlan": true,
-    "hasFreeTrial": true,
-    "plans": [
-      {
-        "id": "plan-inicial",
-        "slug": "inicial",
-        "name": "Inicial",
-        "isFree": true,
-        "contactSales": false,
-        "hasFreeTrial": false,
-        "highlighted": false,
-        "rules": [
-          {
-            "kind": "flat",
-            "amount": 0,
-            "currency": "USD",
-            "interval": "month",
-            "amountPeriod": "month"
-          }
-        ],
-        "description": "ARS $0 — free entry plan (confirm live limits and fees)."
-      },
-      {
-        "id": "plan-esencial",
-        "slug": "esencial",
-        "name": "Esencial",
-        "isFree": false,
-        "contactSales": false,
-        "hasFreeTrial": true,
-        "trialDays": 7,
-        "highlighted": false,
-        "rules": [
-          {
-            "kind": "flat",
-            "amount": 20,
-            "currency": "USD",
-            "interval": "year",
-            "amountPeriod": "month"
-          }
-        ],
-        "description": "~$20/mo USD equiv. of ARS $26.999/mo (FX ~1350, medium confidence). ARS is source of truth."
-      },
-      {
-        "id": "plan-impulso",
-        "slug": "impulso",
-        "name": "Impulso",
-        "isFree": false,
-        "contactSales": false,
-        "hasFreeTrial": true,
-        "trialDays": 7,
-        "highlighted": true,
-        "rules": [
-          {
-            "kind": "flat",
-            "amount": 59,
-            "currency": "USD",
-            "interval": "year",
-            "amountPeriod": "month"
-          }
-        ],
-        "description": "~$59/mo USD equiv. of ARS $78.999/mo (highlighted). ARS is source of truth."
-      },
-      {
-        "id": "plan-escala",
-        "slug": "escala",
-        "name": "Escala",
-        "isFree": false,
-        "contactSales": false,
-        "hasFreeTrial": true,
-        "trialDays": 7,
-        "highlighted": false,
-        "rules": [
-          {
-            "kind": "flat",
-            "amount": 174,
-            "currency": "USD",
-            "interval": "year",
-            "amountPeriod": "month"
-          }
-        ],
-        "description": "~$174/mo USD equiv. of ARS $234.999/mo. ARS is source of truth."
-      },
-      {
-        "id": "plan-evolucion",
-        "slug": "evolucion",
-        "name": "Evolución",
-        "isFree": false,
-        "contactSales": true,
-        "hasFreeTrial": false,
-        "highlighted": false,
-        "rules": [],
-        "description": "Contact sales — confirm live with Tiendanube."
-      }
-    ],
-    "notes": "Verified 2026-08-18 from tiendanube.com/planes-y-precios Argentina schema.org Offers (high confidence for ARS amounts). Inicial ARS $0; Esencial ARS $26.999/mo; Impulso ARS $78.999/mo; Escala ARS $234.999/mo; Evolución contact. 7-day trial on paid. Annual ~25% discount noted on page. USD approximates (~$20 / ~$59 / ~$174) use ~1350 ARS/USD — medium confidence FX; do not treat USD as first-party. Transaction fees vary by plan with external processors; Pago Nube may waive TN txn fee — confirm live. Affiliate economics excluded. Nuvemshop is an alias — not a separate product page.",
-    "verifiedAt": "2026-08-18T16:00:00.000Z",
-    "sourceIds": [
-      "tiendanube-pricing-official"
-    ],
-    "startingPriceMonthly": 0,
-    "trialDays": 7
-  },
   "screenshots": [
     {
       "id": "tiendanube-shot-og-latam-default",
@@ -536,13 +431,13 @@
       "demonstratedDimensionIds": [],
       "requirementCriterionIds": [],
       "workflowStageIds": [],
+      "mediaContext": "general-workflow",
       "reportedOutcomes": [],
       "placements": [
         "overview",
         "features",
         "evidence"
       ],
-      "mediaContext": "general-workflow",
       "purpose": "Official Tiendanube video for product research pages",
       "demonstratesCaption": "How Tiendanube presents the product in an official vendor video.",
       "editorialCommentary": "Official vendor demo — treat as UI/workflow evidence, not SoftwareGlimpse scoring.",
@@ -604,13 +499,13 @@
       "demonstratedDimensionIds": [],
       "requirementCriterionIds": [],
       "workflowStageIds": [],
+      "mediaContext": "general-workflow",
       "reportedOutcomes": [],
       "placements": [
         "overview",
         "features",
         "evidence"
       ],
-      "mediaContext": "general-workflow",
       "purpose": "Official Tiendanube video for product research pages",
       "demonstratesCaption": "How Tiendanube presents the product in an official vendor video.",
       "editorialCommentary": "Official vendor demo — treat as UI/workflow evidence, not SoftwareGlimpse scoring.",
@@ -628,11 +523,111 @@
       "status": "published"
     }
   ],
-  "sourceIds": [
-    "tiendanube-product-official",
-    "tiendanube-pricing-official"
-  ],
-  "notes": "Ecommerce Priority-3 onboarding enrichment from first-party research 2026-08-18T16:00:00.000Z. handsOnTesting=false. membershipRole=primary. jobCluster=saas-platform.",
+  "pricing": {
+    "currency": "USD",
+    "model": "flat",
+    "hasFreePlan": true,
+    "hasFreeTrial": true,
+    "plans": [
+      {
+        "id": "plan-inicial",
+        "slug": "inicial",
+        "name": "Inicial",
+        "isFree": true,
+        "contactSales": false,
+        "hasFreeTrial": false,
+        "highlighted": false,
+        "rules": [
+          {
+            "kind": "flat",
+            "amount": 0,
+            "currency": "USD",
+            "interval": "month",
+            "amountPeriod": "month"
+          }
+        ],
+        "description": "ARS $0 — free entry plan (confirm live limits and fees)."
+      },
+      {
+        "id": "plan-esencial",
+        "slug": "esencial",
+        "name": "Esencial",
+        "isFree": false,
+        "contactSales": false,
+        "hasFreeTrial": true,
+        "trialDays": 7,
+        "highlighted": false,
+        "rules": [
+          {
+            "kind": "flat",
+            "amount": 20,
+            "currency": "USD",
+            "interval": "year",
+            "amountPeriod": "month"
+          }
+        ],
+        "description": "~$20/mo USD equiv. of ARS $26.999/mo (FX ~1350, medium confidence). ARS is source of truth."
+      },
+      {
+        "id": "plan-impulso",
+        "slug": "impulso",
+        "name": "Impulso",
+        "isFree": false,
+        "contactSales": false,
+        "hasFreeTrial": true,
+        "trialDays": 7,
+        "highlighted": true,
+        "rules": [
+          {
+            "kind": "flat",
+            "amount": 59,
+            "currency": "USD",
+            "interval": "year",
+            "amountPeriod": "month"
+          }
+        ],
+        "description": "~$59/mo USD equiv. of ARS $78.999/mo (highlighted). ARS is source of truth."
+      },
+      {
+        "id": "plan-escala",
+        "slug": "escala",
+        "name": "Escala",
+        "isFree": false,
+        "contactSales": false,
+        "hasFreeTrial": true,
+        "trialDays": 7,
+        "highlighted": false,
+        "rules": [
+          {
+            "kind": "flat",
+            "amount": 174,
+            "currency": "USD",
+            "interval": "year",
+            "amountPeriod": "month"
+          }
+        ],
+        "description": "~$174/mo USD equiv. of ARS $234.999/mo. ARS is source of truth."
+      },
+      {
+        "id": "plan-evolucion",
+        "slug": "evolucion",
+        "name": "Evolución",
+        "isFree": false,
+        "contactSales": true,
+        "hasFreeTrial": false,
+        "highlighted": false,
+        "rules": [],
+        "description": "Contact sales — confirm live with Tiendanube."
+      }
+    ],
+    "notes": "Verified 2026-08-18 from tiendanube.com/planes-y-precios Argentina schema.org Offers (high confidence for ARS amounts). Inicial ARS $0; Esencial ARS $26.999/mo; Impulso ARS $78.999/mo; Escala ARS $234.999/mo; Evolución contact. 7-day trial on paid. Annual ~25% discount noted on page. USD approximates (~$20 / ~$59 / ~$174) use ~1350 ARS/USD — medium confidence FX; do not treat USD as first-party. Transaction fees vary by plan with external processors; Pago Nube may waive TN txn fee — confirm live. Affiliate economics excluded. Nuvemshop is an alias — not a separate product page.",
+    "verifiedAt": "2026-09-10T11:42:42.939Z",
+    "sourceIds": [
+      "tiendanube-pricing-official"
+    ],
+    "startingPriceMonthly": 0,
+    "trialDays": 7
+  },
   "domainCheckedAt": {
     "identity": "2026-08-18T16:00:00.000Z",
     "pricing": "2026-08-18T16:00:00.000Z",
@@ -646,5 +641,10 @@
     "limits": "2026-08-18T16:00:00.000Z",
     "security-compliance": "2026-08-18T16:00:00.000Z"
   },
-  "updatedAt": "2026-08-18T08:00:00.000Z"
+  "sourceIds": [
+    "tiendanube-product-official",
+    "tiendanube-pricing-official"
+  ],
+  "updatedAt": "2026-08-18T08:00:00.000Z",
+  "notes": "Ecommerce Priority-3 onboarding enrichment from first-party research 2026-08-18T16:00:00.000Z. handsOnTesting=false. membershipRole=primary. jobCluster=saas-platform."
 }

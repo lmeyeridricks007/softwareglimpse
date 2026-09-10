@@ -8,9 +8,9 @@ Site Intelligence scores measure readiness, usefulness, coherence, relative comp
 
 ## Executive answer
 
-**How good is SoftwareGlimpse today?** Overall Website Quality **84 / 100** (Strong).
+**How good is SoftwareGlimpse today?** Overall Website Quality **79 / 100** (Good).
 
-**What is strong?** Structured comparison library (3944 published comparisons; 1440 indexable); Interactive CRM decision tools (119 available in tools registry); Strong Content Quality aggregate (87/100, importance-weighted); Internal linking graph healthy (54810 edges, 0 orphans per latest InternalLinkAuditAgent); Deep CRM product coverage (314 published software hubs)
+**What is strong?** Structured comparison library (3944 published comparisons; 1440 indexable); Interactive CRM decision tools (119 available in tools registry); Strong Content Quality aggregate (87/100, importance-weighted); Internal linking graph healthy (60500 edges, 0 orphans per latest InternalLinkAuditAgent); Deep CRM product coverage (314 published software hubs)
 
 **What is weak?** Content map gaps: 7 missing/NOT-YET rows (e.g. CRM-TOOL-004, CRM-TOOL-011, CRM-TOOL-014, CRM-TOOL-015); Thin/research-required map rows: 23 (includes commercial anchors such as Best CRM when flagged); Search Visibility DATA NOT AVAILABLE — no live Search Console performance snapshot (fixtures are not treated as live GSC); Weak/unknown off-site authority — backlink/DA data unavailable (constrains Ranking Opportunity confidence); Media enrichment backlog still large (Asset Intelligence A1=928)
 
@@ -24,12 +24,12 @@ Site Intelligence scores measure readiness, usefulness, coherence, relative comp
 
 ```text
 OVERALL WEBSITE QUALITY
-84 / 100
-Strong
+79 / 100
+Good
 
-Technical SEO ……… 99  (confidence: high)
+Technical SEO ……… 78  (confidence: high)
 Content Quality …… 87  (confidence: high)
-Website Experience … 83  (confidence: high)
+Website Experience … 80  (confidence: high)
 Content Ecosystem … 85  (confidence: high)
 Competitive Strength 56  (confidence: medium)
 Search Visibility … Not available  (confidence: low)
@@ -37,19 +37,19 @@ Search Visibility … Not available  (confidence: low)
 
 | Component | Score | Band / status | Confidence | Notes |
 | --- | ---: | --- | --- | --- |
-| technical-seo-health | 99 | Excellent | high | 1 open SEO finding(s) applied |
+| technical-seo-health | 78 | Good | high | 6 open SEO finding(s) applied |
 | content-quality | 87 | Strong | high | Importance-weighted aggregate across 910 page(s) |
-| website-experience | 83 | Strong | high | 14/14 expected experience dimensions provided |
+| website-experience | 80 | Strong | high | 14/14 expected experience dimensions provided |
 | content-ecosystem-strength | 85 | Strong | high | 100% of ecosystem dimensions supplied |
 | competitive-content-strength | 56 | Weak | medium | 8 competitor(s) sampled |
 | search-visibility | — | DATA NOT AVAILABLE | low | DATA NOT AVAILABLE — no search-performance snapshot |
-| overall-website-quality | 84 | Strong | medium | Weighted from 5 component(s); Ranking Opportunity and Search Visibility excluded |
+| overall-website-quality | 79 | Good | medium | Weighted from 5 component(s); Ranking Opportunity and Search Visibility excluded |
 
 ### Overall breakdown
 
-- **technical-seo-health:** 99/100 × weight 0.20 (confidence high)
+- **technical-seo-health:** 78/100 × weight 0.20 (confidence high)
 - **content-quality:** 87/100 × weight 0.30 (confidence high)
-- **website-experience:** 83/100 × weight 0.15 (confidence high)
+- **website-experience:** 80/100 × weight 0.15 (confidence high)
 - **content-ecosystem-strength:** 85/100 × weight 0.20 (confidence high)
 - **competitive-content-strength:** 56/100 × weight 0.15 (confidence medium)
 
@@ -59,17 +59,17 @@ Search Visibility … Not available  (confidence: low)
 
 | Source | Status | Path |
 | --- | --- | --- |
-| Technical SEO / SEO Health | available (2026-09-08) | `docs/seo/reports/SEO-HEALTH-LATEST.md` |
-| Technical SEO agent | available (2026-09-08) | `docs/seo/reports/technical-seo-latest.md` |
-| Performance | available (2026-09-08) | `docs/seo/reports/performance-latest.md` |
-| Internal Linking | available (2026-09-08) | `docs/seo/reports/internal-linking-latest.md` |
-| SEO issues snapshot | available (2026-09-08) | `docs/seo/reports/archive/seo-issues-latest.json` |
+| Technical SEO / SEO Health | available (2026-09-10) | `docs/seo/reports/SEO-HEALTH-LATEST.md` |
+| Technical SEO agent | available (2026-09-10) | `docs/seo/reports/technical-seo-latest.md` |
+| Performance | available (2026-09-10) | `docs/seo/reports/performance-latest.md` |
+| Internal Linking | available (2026-09-10) | `docs/seo/reports/internal-linking-latest.md` |
+| SEO issues snapshot | available (2026-09-10) | `docs/seo/reports/archive/seo-issues-latest.json` |
 | Content Intelligence | stale (2026-08-17) | `docs/content-quality/CONTENT-INTELLIGENCE-LATEST.md` |
 | Content Quality | available (2026-08-28) | `docs/content-quality/CONTENT-QUALITY-LATEST.md` |
 | Content score snapshot | stale (2026-08-17) | `docs/content-quality/archive/scores-latest.json` |
 | Content improvement backlog | available (2026-09-07) | `docs/content-quality/CONTENT-IMPROVEMENT-BACKLOG.md` |
 | Content Map coverage | stale (2026-08-17) | `docs/content-quality/CONTENT-MAP-COVERAGE-LATEST.md` |
-| CRM master content map | stale (2026-08-18) | `docs/content-ecosystem/04-crm-master-content-map.md` |
+| CRM master content map | available (2026-09-09) | `docs/content-ecosystem/04-crm-master-content-map.md` |
 | Asset Intelligence | stale (2026-08-17) | `docs/content-assets/ASSET-INTELLIGENCE-LATEST.md` |
 | Resource Quality | stale (2026-08-15) | `docs/content-ecosystem/resources/RESOURCE-AUDIT.md` |
 | Search visibility | available | `docs/site-intelligence/search-visibility-metrics-latest.json` |
@@ -81,7 +81,7 @@ Expensive audits were **not** re-run. Missing/stale sources reduce confidence.
 
 | Metric | Count |
 | --- | ---: |
-| Sitemap / indexable surface URLs | 3093 |
+| Sitemap / indexable surface URLs | 3752 |
 | Software published / indexable | 314 / 313 |
 | Comparisons published / indexable | 3944 / 1440 |
 | Guides published / indexable | 1447 / 172 |
@@ -131,12 +131,11 @@ Expensive audits were **not** re-run. Missing/stale sources reduce confidence.
 - Structured comparison library (3944 published comparisons; 1440 indexable)
 - Interactive CRM decision tools (119 available in tools registry)
 - Strong Content Quality aggregate (87/100, importance-weighted)
-- Internal linking graph healthy (54810 edges, 0 orphans per latest InternalLinkAuditAgent)
+- Internal linking graph healthy (60500 edges, 0 orphans per latest InternalLinkAuditAgent)
 - Deep CRM product coverage (314 published software hubs)
 - Product media catalog (267 ResearchMedia records)
 - Buyer resources library (16 resources live per resource audit/inventory)
 - Use-case + capability taxonomy (120 use cases, 70 capabilities)
-- Technical SEO Health 99/100 from latest SEO audit findings (open findings: 1)
 
 ## Site weaknesses
 
@@ -186,14 +185,14 @@ Expensive audits were **not** re-run. Missing/stale sources reduce confidence.
 
 | Cluster | Pages | Avg CQ | Technical | Linking | Competitive | Ranking opportunity |
 | --- | ---: | ---: | --- | --- | --- | --- |
-| CRM Capabilities | 16 | 90 | Site technical 99 | 0 orphans (54810 edges) | 56 | 76 / good |
-| CRM Choose | 5 | 90 | Site technical 99 | 0 orphans (54810 edges) | 56 | 76 / good |
-| CRM Compare | 780 | 86 | Site technical 99 | 0 orphans (54810 edges) | 56 | 76 / good |
-| CRM Implementation / Migration | 18 | 87 | Site technical 99 | 0 orphans (54810 edges) | 56 | 76 / good |
-| CRM Industries | 25 | 91 | Site technical 99 | 0 orphans (54810 edges) | 56 | 76 / good |
-| CRM Learn | 10 | 92 | Site technical 99 | 0 orphans (54810 edges) | 56 | 76 / good |
-| CRM Products | 40 | 92 | Site technical 99 | 0 orphans (54810 edges) | 56 | 76 / good |
-| CRM Use Cases | 16 | 90 | Site technical 99 | 0 orphans (54810 edges) | 56 | 76 / good |
+| CRM Capabilities | 16 | 90 | Site technical 78 — review SEO-HEALTH | 0 orphans (60500 edges) | 56 | 76 / good |
+| CRM Choose | 5 | 90 | Site technical 78 — review SEO-HEALTH | 0 orphans (60500 edges) | 56 | 76 / good |
+| CRM Compare | 780 | 86 | Site technical 78 — review SEO-HEALTH | 0 orphans (60500 edges) | 56 | 76 / good |
+| CRM Implementation / Migration | 18 | 87 | Site technical 78 — review SEO-HEALTH | 0 orphans (60500 edges) | 56 | 76 / good |
+| CRM Industries | 25 | 91 | Site technical 78 — review SEO-HEALTH | 0 orphans (60500 edges) | 56 | 76 / good |
+| CRM Learn | 10 | 92 | Site technical 78 — review SEO-HEALTH | 0 orphans (60500 edges) | 56 | 76 / good |
+| CRM Products | 40 | 92 | Site technical 78 — review SEO-HEALTH | 0 orphans (60500 edges) | 56 | 76 / good |
+| CRM Use Cases | 16 | 90 | Site technical 78 — review SEO-HEALTH | 0 orphans (60500 edges) | 56 | 76 / good |
 
 Cluster CRM opportunity score: **76** (GOOD) — opportunity assessment, not a ranking probability.
 

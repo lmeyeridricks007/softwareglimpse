@@ -1,0 +1,214 @@
+{
+  "slug": "claude-setup",
+  "enrichmentType": "IMPLEMENTATION_GUIDE",
+  "updatedAt": "2026-09-10T12:47:15.298Z",
+  "uniqueValueAdded": [
+    "implementation_workflow",
+    "scenario_analysis",
+    "decision_framework",
+    "limitations_evidence",
+    "pricing_comparison",
+    "sg_original_data",
+    "buyer_checklist"
+  ],
+  "patch": {
+    "summary": "LLM chat and assistants; reasoning / advanced models; writing and paraphrasing; image generation. Free · free · LLM chat and assistants | Pro (annual) | Pro (monthly). Slack, Google Workspace. Writers and analysts who prioritize long-document and reasoning quality; Teams wanting a ChatGPT alternative with Projects and team workspaces; Buyers who value careful output tone for customer-facing drafts. Claude is Anthropic's LLM assistant for chat, long-document analysis, coding help, and team collaboration. Free covers everyday use with limits. Pro is list price or ~list price on Buyer question: choose Claude only if Writers and analysts who prioritize long-document and reasoning quality outweighs Free tier usage caps limit heavy document and coding workflows — otherwise keep researching. Verdict shape: yes for teams built around Writers and analysts who prioritize long-document and reasoning quality; Teams wanting a ChatGPT alternative with Projects and team workspaces; Buyers who value careful output tone for customer-facing drafts; no when Orgs needing the broadest third-party connector catalog (ChatGPT leads); Google Workspace-native buyers who want Gemini integration depth; Specialist voice, presentation, or ad-creative production jobs — enterprise admin and SSO (Free, Pro (annual), Pro (monthly), Max, Team Standard (annual), Team Standard (monthly)) is the hinge, not brand familiarity.",
+    "blocks": [
+      {
+        "id": "da-claude-setup-1",
+        "type": "direct-answer",
+        "body": "enterprise admin and SSO (Free, Pro (annual), Pro (monthly), Max, Team Standard (annual), Team Standard (monthly)) decides whether Claude setup is a one-team pilot or a specialist project — confirm unlocks for enterprise admin and SSO (Free, Pro (annual), Pro (monthly), Max, Team Standard (annual), Team Standard (monthly)), data privacy controls (Free, Pro (annual), Pro (monthly), Max, Team Standard (annual), Team Standard (monthly)) before invites.",
+        "bullets": [
+          "Start with: LLM chat and assistants",
+          "Gate check: enterprise admin and SSO (Free, Pro (annual), Pro (monthly), Max, Team Standard (annual), Team Standard (monthly))",
+          "Integrate after: data quality pass on Slack"
+        ]
+      },
+      {
+        "id": "impl-claude-setup-2",
+        "type": "step",
+        "heading": "Claude day-zero to steady-state sequence",
+        "body": "Treat Claude setup as a controlled rollout — not a weekend dump of CSV files.",
+        "stepNumber": 1,
+        "scenarios": [
+          {
+            "title": "Day zero — objects and owners",
+            "body": "Define owners for LLM chat and assistants, reasoning / advanced models, writing and paraphrasing before inviting the whole org."
+          },
+          {
+            "title": "SMB pilot",
+            "body": "One pipeline / one team proves Writers and analysts who prioritize long-document and reasoning quality before company-wide seats."
+          },
+          {
+            "title": "Cutover",
+            "body": "Freeze legacy writes briefly; validate Slack and Google Workspace before reopen."
+          }
+        ]
+      },
+      {
+        "id": "df-claude-setup-3",
+        "type": "decision-framework",
+        "title": "Claude implementation go / no-go",
+        "steps": [
+          {
+            "id": "i-1",
+            "label": "Go when plan unlocks cover enterprise admin and SSO (Free, Pro (annual), Pro (monthly), Max, Team Standard (annual), Team Standard (monthly))"
+          },
+          {
+            "id": "i-2",
+            "label": "Pause if this limitation blocks ops: Free tier usage caps limit heavy document and coding workflows"
+          },
+          {
+            "id": "i-3",
+            "label": "Do not expand seats until LLM chat and assistants is green"
+          }
+        ]
+      },
+      {
+        "id": "mist-claude-setup-4",
+        "type": "mistakes",
+        "title": "Claude implementation mistakes",
+        "items": [
+          {
+            "title": "Mistake 1",
+            "body": "Free tier usage caps limit heavy document and coding workflows"
+          },
+          {
+            "title": "Mistake 2",
+            "body": "Team Standard enforces 2-seat minimum on paid team packaging"
+          },
+          {
+            "title": "Mistake 3",
+            "body": "Max tier required for highest usage — raises individual TCO"
+          },
+          {
+            "title": "Mistake 4",
+            "body": "Connector ecosystem trails ChatGPT breadth"
+          },
+          {
+            "title": "Big-bang invite",
+            "body": "Inviting every user before object design creates junk data that is expensive to unwind."
+          }
+        ]
+      },
+      {
+        "id": "cost-claude-setup-5",
+        "type": "cost-breakdown",
+        "title": "Claude plan gates that affect rollout",
+        "body": "Implementation fails when unlocks needed for go-live sit on a higher tier than budgeted.",
+        "lines": [
+          {
+            "label": "Free",
+            "description": "Free plan · Unlocks: LLM chat and assistants, reasoning / advanced models, writing and paraphrasing · Suits: explore before committing seats"
+          },
+          {
+            "label": "Pro (annual)",
+            "description": "Suits: teams whose must-have gates appear on this tier"
+          },
+          {
+            "label": "Pro (monthly)",
+            "description": "Suits: teams whose must-have gates appear on this tier"
+          },
+          {
+            "label": "Max",
+            "description": "Suits: teams whose must-have gates appear on this tier"
+          },
+          {
+            "label": "Team Standard (annual)",
+            "description": "Suits: teams whose must-have gates appear on this tier"
+          }
+        ]
+      },
+      {
+        "id": "sel-claude-setup-6",
+        "type": "selection-checklist",
+        "title": "Claude implementation checklist",
+        "dimensions": [
+          {
+            "id": "prep",
+            "label": "Prep",
+            "options": [
+              "Object model drafted",
+              "Owners named",
+              "Legacy freeze window set"
+            ]
+          },
+          {
+            "id": "pilot",
+            "label": "Pilot",
+            "options": [
+              "LLM chat and assistants",
+              "Junk-data rules set",
+              "Support path clear"
+            ]
+          },
+          {
+            "id": "scale",
+            "label": "Scale",
+            "options": [
+              "Slack",
+              "Seat expansion criteria written",
+              "Rollback plan noted"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "cta-claude-setup-7",
+        "type": "interactive-cta",
+        "title": "Validate ai fit before a deep Claude rollout",
+        "body": "If Claude fails constraint fit, stop implementation early.",
+        "href": "/tools/ai-finder/",
+        "ctaLabel": "Open Finder",
+        "variant": "finder"
+      }
+    ],
+    "sections": [
+      {
+        "id": "sec-thesis-claude-setup",
+        "heading": "Claude buyer question and thesis",
+        "body": "LLM chat and assistants; reasoning / advanced models; writing and paraphrasing; image generation. Free · free · LLM chat and assistants | Pro (annual) | Pro (monthly). Slack, Google Workspace. Writers and analysts who prioritize long-document and reasoning quality; Teams wanting a ChatGPT alternative with Projects and team workspaces; Buyers who value careful output tone for customer-facing drafts. Claude is Anthropic's LLM assistant for chat, long-document analysis, coding help, and team collaboration. Free covers everyday use with limits. Pro is list price or ~list price on. That catalogue mix is the Claude setup filter — not a generic ai lecture.\n\nBuyer question: choose Claude only if Writers and analysts who prioritize long-document and reasoning quality outweighs Free tier usage caps limit heavy document and coding workflows — otherwise keep researching.\n\nVerdict shape: yes for teams built around Writers and analysts who prioritize long-document and reasoning quality; Teams wanting a ChatGPT alternative with Projects and team workspaces; Buyers who value careful output tone for customer-facing drafts; no when Orgs needing the broadest third-party connector catalog (ChatGPT leads); Google Workspace-native buyers who want Gemini integration depth; Specialist voice, presentation, or ad-creative production jobs — enterprise admin and SSO (Free, Pro (annual), Pro (monthly), Max, Team Standard (annual), Team Standard (monthly)) is the hinge, not brand familiarity.\n\nBest for: Writers and analysts who prioritize long-document and reasoning quality; Teams wanting a ChatGPT alternative with Projects and team workspaces; Buyers who value careful output tone for customer-facing drafts (Writers and analysts who prioritize long-document and reasoning quality).\n\nPoor fit when: Orgs needing the broadest third-party connector catalog (ChatGPT leads); Google Workspace-native buyers who want Gemini integration depth; Specialist voice, presentation, or ad-creative production jobs. Avoid if Free tier usage caps limit heavy document and coding workflows would block go-live."
+      },
+      {
+        "id": "sec-limits-claude-setup",
+        "heading": "Claude limitation, pricing interpretation, and alternative context",
+        "body": "Limitation: Free tier usage caps limit heavy document and coding workflows; Team Standard enforces 2-seat minimum on paid team packaging; Max tier required for highest usage — raises individual TCO because it forces process changes or add-ons around Claude when LLM chat and assistants is the job.\n\nPricing interpretation: stay on Free until enterprise admin and SSO (Free, Pro (annual), Pro (monthly), Max, Team Standard (annual), Team Standard (monthly)) is mandatory; plan jumps to Pro (annual) only after that hinge is proven.\n\nPlan trade-off: you gain enterprise admin and SSO (Free, Pro (annual), Pro (monthly), Max, Team Standard (annual), Team Standard (monthly)) at the expense of Published free tiers vs paid usage/credit caps — measure both in the pilot. Researched packaging: Free · free · LLM chat and assistants | Pro (annual) | Pro (monthly).\n\nAlternative context: unlike ChatGPT, Claude is preferable when Writers and analysts who prioritize long-document and reasoning quality because LLM chat and assistants plus enterprise admin and SSO (Free, Pro (annual), Pro (monthly), Max, Team Standard (annual), Team Standard (monthly)) match; prefer ChatGPT when Orgs needing the broadest third-party connector catalog (ChatGPT leads) because the operating loops differ."
+      },
+      {
+        "id": "sec-scenario-claude-setup",
+        "heading": "Decision scenario and conclusion for Claude",
+        "body": "Scenario: for LLM chat and assistants teams, recommend Claude when Writers and analysts who prioritize long-document and reasoning quality; recommend an alternative path when Orgs needing the broadest third-party connector catalog (ChatGPT leads) because Free tier usage caps limit heavy document and coding workflows dominates.\n\nImplementation effort: setup takes a named admin for LLM chat and assistants plus a freeze window if Slack are in the cutover path.\n\nIntegrations in research: Slack, Google Workspace.\n\nFinal call: proceed with Claude when LLM chat and assistants plus LLM chat and assistants outweigh Free tier usage caps limit heavy document and coding workflows; walk when Orgs needing the broadest third-party connector catalog (ChatGPT leads) because workarounds will eat the Pro (annual) spend."
+      }
+    ],
+    "checklist": [
+      {
+        "id": "enrich-chk-0",
+        "label": "Draft Claude object owners before invites",
+        "order": 0
+      },
+      {
+        "id": "enrich-chk-1",
+        "label": "Confirm plan unlocks for go-live features",
+        "order": 1
+      },
+      {
+        "id": "enrich-chk-2",
+        "label": "Pilot one team on LLM chat and assistants",
+        "order": 2
+      },
+      {
+        "id": "enrich-chk-3",
+        "label": "If blocked, evaluate ChatGPT before sunk-cost expansion",
+        "order": 3
+      }
+    ],
+    "nextAction": {
+      "contentId": "tool:finder:ai",
+      "label": "Open Finder shortlist"
+    }
+  },
+  "notes": [
+    "Implementation: workflow, constraints, mistakes, checklist.",
+    "Type-specific skeleton: IMPLEMENTATION_GUIDE"
+  ]
+}

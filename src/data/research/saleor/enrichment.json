@@ -185,6 +185,29 @@
       ]
     }
   ],
+  "integrationSupport": [
+    {
+      "integrationSlug": "stripe",
+      "kind": "native",
+      "sourceIds": [
+        "saleor-product-official"
+      ]
+    },
+    {
+      "integrationSlug": "paypal",
+      "kind": "third-party",
+      "sourceIds": [
+        "saleor-product-official"
+      ]
+    },
+    {
+      "integrationSlug": "zapier",
+      "kind": "zapier-style",
+      "sourceIds": [
+        "saleor-product-official"
+      ]
+    }
+  ],
   "aiCapabilities": [
     {
       "capability": "assistant",
@@ -210,29 +233,6 @@
     {
       "capability": "recommendations",
       "availability": "supported",
-      "sourceIds": [
-        "saleor-product-official"
-      ]
-    }
-  ],
-  "integrationSupport": [
-    {
-      "integrationSlug": "stripe",
-      "kind": "native",
-      "sourceIds": [
-        "saleor-product-official"
-      ]
-    },
-    {
-      "integrationSlug": "paypal",
-      "kind": "third-party",
-      "sourceIds": [
-        "saleor-product-official"
-      ]
-    },
-    {
-      "integrationSlug": "zapier",
-      "kind": "zapier-style",
       "sourceIds": [
         "saleor-product-official"
       ]
@@ -301,88 +301,6 @@
       "isEditorial": false
     }
   ],
-  "pricing": {
-    "currency": "USD",
-    "model": "hybrid",
-    "hasFreePlan": true,
-    "hasFreeTrial": false,
-    "plans": [
-      {
-        "id": "plan-open-source",
-        "slug": "open-source",
-        "name": "Open Source (self-host)",
-        "isFree": true,
-        "contactSales": false,
-        "hasFreeTrial": false,
-        "highlighted": false,
-        "rules": [
-          {
-            "kind": "flat",
-            "amount": 0,
-            "currency": "USD",
-            "interval": "month",
-            "amountPeriod": "month"
-          }
-        ],
-        "description": "Free OSS for production self-host — you own hosting, DevOps, and front-end."
-      },
-      {
-        "id": "plan-select",
-        "slug": "select",
-        "name": "Cloud Select",
-        "isFree": false,
-        "contactSales": false,
-        "hasFreeTrial": false,
-        "highlighted": true,
-        "rules": [
-          {
-            "kind": "flat",
-            "amount": 1599,
-            "currency": "USD",
-            "interval": "year",
-            "amountPeriod": "month"
-          }
-        ],
-        "description": "$1599/mo — up to $200k GMV/mo, 0.8% overage. Production Cloud band."
-      },
-      {
-        "id": "plan-volume",
-        "slug": "volume",
-        "name": "Cloud Volume",
-        "isFree": false,
-        "contactSales": false,
-        "hasFreeTrial": false,
-        "highlighted": false,
-        "rules": [
-          {
-            "kind": "flat",
-            "amount": 3999,
-            "currency": "USD",
-            "interval": "year",
-            "amountPeriod": "month"
-          }
-        ],
-        "description": "$3999/mo — up to $1M GMV/mo, 0.4% overage. Confirm live packaging."
-      },
-      {
-        "id": "plan-enterprise",
-        "slug": "enterprise",
-        "name": "Cloud Enterprise",
-        "isFree": false,
-        "contactSales": true,
-        "hasFreeTrial": false,
-        "highlighted": false,
-        "rules": [],
-        "description": "Enterprise Cloud quote — confirm live with Saleor. Forever Free is non-commercial prototyping only."
-      }
-    ],
-    "notes": "Verified 2026-08-18 from saleor.io/pricing (high confidence for Cloud tiles). OSS self-host free for production. Forever Free Cloud is non-commercial prototyping only — not a production merchant free plan. Select $1599/mo (≤$200k GMV/mo, 0.8% overage); Volume $3999/mo (≤$1M GMV, 0.4% overage); Enterprise contact. Accelerator and professional services (e.g. ~$6000 one-time) may apply — confirm live. Affiliate economics excluded.",
-    "verifiedAt": "2026-08-18T16:00:00.000Z",
-    "sourceIds": [
-      "saleor-pricing-official"
-    ],
-    "startingPriceMonthly": 0
-  },
   "screenshots": [
     {
       "id": "saleor-shot-og-opengraph",
@@ -485,13 +403,13 @@
       "demonstratedDimensionIds": [],
       "requirementCriterionIds": [],
       "workflowStageIds": [],
+      "mediaContext": "general-workflow",
       "reportedOutcomes": [],
       "placements": [
         "overview",
         "features",
         "evidence"
       ],
-      "mediaContext": "general-workflow",
       "purpose": "Official Saleor video for product research pages",
       "demonstratesCaption": "How Saleor presents the product in an official vendor video.",
       "editorialCommentary": "Official vendor demo — treat as UI/workflow evidence, not SoftwareGlimpse scoring.",
@@ -554,13 +472,13 @@
       "demonstratedDimensionIds": [],
       "requirementCriterionIds": [],
       "workflowStageIds": [],
+      "mediaContext": "general-workflow",
       "reportedOutcomes": [],
       "placements": [
         "overview",
         "features",
         "evidence"
       ],
-      "mediaContext": "general-workflow",
       "purpose": "Official Saleor video for product research pages",
       "demonstratesCaption": "How Saleor presents the product in an official vendor video.",
       "editorialCommentary": "Official vendor demo — treat as UI/workflow evidence, not SoftwareGlimpse scoring.",
@@ -578,11 +496,88 @@
       "status": "published"
     }
   ],
-  "sourceIds": [
-    "saleor-product-official",
-    "saleor-pricing-official"
-  ],
-  "notes": "Ecommerce Priority-3 onboarding enrichment from first-party research 2026-08-18T16:00:00.000Z. handsOnTesting=false. membershipRole=primary. jobCluster=open-source-platform.",
+  "pricing": {
+    "currency": "USD",
+    "model": "hybrid",
+    "hasFreePlan": true,
+    "hasFreeTrial": false,
+    "plans": [
+      {
+        "id": "plan-open-source",
+        "slug": "open-source",
+        "name": "Open Source (self-host)",
+        "isFree": true,
+        "contactSales": false,
+        "hasFreeTrial": false,
+        "highlighted": false,
+        "rules": [
+          {
+            "kind": "flat",
+            "amount": 0,
+            "currency": "USD",
+            "interval": "month",
+            "amountPeriod": "month"
+          }
+        ],
+        "description": "Free OSS for production self-host — you own hosting, DevOps, and front-end."
+      },
+      {
+        "id": "plan-select",
+        "slug": "select",
+        "name": "Cloud Select",
+        "isFree": false,
+        "contactSales": false,
+        "hasFreeTrial": false,
+        "highlighted": true,
+        "rules": [
+          {
+            "kind": "flat",
+            "amount": 1599,
+            "currency": "USD",
+            "interval": "year",
+            "amountPeriod": "month"
+          }
+        ],
+        "description": "$1599/mo — up to $200k GMV/mo, 0.8% overage. Production Cloud band."
+      },
+      {
+        "id": "plan-volume",
+        "slug": "volume",
+        "name": "Cloud Volume",
+        "isFree": false,
+        "contactSales": false,
+        "hasFreeTrial": false,
+        "highlighted": false,
+        "rules": [
+          {
+            "kind": "flat",
+            "amount": 3999,
+            "currency": "USD",
+            "interval": "year",
+            "amountPeriod": "month"
+          }
+        ],
+        "description": "$3999/mo — up to $1M GMV/mo, 0.4% overage. Confirm live packaging."
+      },
+      {
+        "id": "plan-enterprise",
+        "slug": "enterprise",
+        "name": "Cloud Enterprise",
+        "isFree": false,
+        "contactSales": true,
+        "hasFreeTrial": false,
+        "highlighted": false,
+        "rules": [],
+        "description": "Enterprise Cloud quote — confirm live with Saleor. Forever Free is non-commercial prototyping only."
+      }
+    ],
+    "notes": "Verified 2026-08-18 from saleor.io/pricing (high confidence for Cloud tiles). OSS self-host free for production. Forever Free Cloud is non-commercial prototyping only — not a production merchant free plan. Select $1599/mo (≤$200k GMV/mo, 0.8% overage); Volume $3999/mo (≤$1M GMV, 0.4% overage); Enterprise contact. Accelerator and professional services (e.g. ~$6000 one-time) may apply — confirm live. Affiliate economics excluded.",
+    "verifiedAt": "2026-09-10T11:42:20.732Z",
+    "sourceIds": [
+      "saleor-pricing-official"
+    ],
+    "startingPriceMonthly": 0
+  },
   "domainCheckedAt": {
     "identity": "2026-08-18T16:00:00.000Z",
     "pricing": "2026-08-18T16:00:00.000Z",
@@ -596,5 +591,10 @@
     "limits": "2026-08-18T16:00:00.000Z",
     "security-compliance": "2026-08-18T16:00:00.000Z"
   },
-  "updatedAt": "2026-08-18T08:00:00.000Z"
+  "sourceIds": [
+    "saleor-product-official",
+    "saleor-pricing-official"
+  ],
+  "updatedAt": "2026-08-18T08:00:00.000Z",
+  "notes": "Ecommerce Priority-3 onboarding enrichment from first-party research 2026-08-18T16:00:00.000Z. handsOnTesting=false. membershipRole=primary. jobCluster=open-source-platform."
 }

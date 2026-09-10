@@ -8,6 +8,7 @@ export type {
   GuidePageMetrics,
   GuideAuditReport,
   GuideAuditSummary,
+  FactoryRemediationKpis,
 } from "./types";
 
 export {
@@ -19,6 +20,11 @@ export {
   intentClusterKey,
   normalizeIntentTitle,
 } from "./classify";
+
+export {
+  computeFactoryRemediationKpis,
+  isFactoryOrigin,
+} from "./factory-kpis";
 
 export {
   estimateGuideUniqueContentRatio,

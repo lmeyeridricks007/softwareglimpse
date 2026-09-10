@@ -13,8 +13,8 @@ export type ExternalEnrichmentEvidence = {
   aiCitationsByPath: Map<string, number>;
   /** Path → known backlink / referring count when REAL export exists. */
   backlinksByPath: Map<string, number>;
-  aiValidity: "REAL" | "FIXTURE" | "NOT_CONNECTED" | "STALE";
-  backlinkValidity: "REAL" | "FIXTURE" | "NOT_CONNECTED" | "STALE";
+  aiValidity: "REAL" | "PARTIAL" | "FIXTURE" | "NOT_CONNECTED" | "STALE";
+  backlinkValidity: "REAL" | "PARTIAL" | "FIXTURE" | "NOT_CONNECTED" | "STALE";
 };
 
 function ensureSlash(p: string): string {

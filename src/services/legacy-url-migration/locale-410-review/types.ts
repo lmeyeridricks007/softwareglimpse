@@ -29,7 +29,7 @@ export type GscPathSignals = {
 export type BacklinkPathSignals = {
   referringDomains: number | null;
   available: boolean;
-  validity: "REAL" | "FIXTURE" | "NOT_CONNECTED" | "STALE";
+  validity: "REAL" | "PARTIAL" | "FIXTURE" | "NOT_CONNECTED" | "STALE";
 };
 
 /**

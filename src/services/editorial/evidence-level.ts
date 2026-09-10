@@ -26,6 +26,8 @@ export type ResolveEvidenceLevelInput = {
  *
  * Rules:
  * - HANDS_ON_TESTED only when handsOnTesting is true AND testedAt (or equivalent) exists.
+ *   Current remediation phase: HANDS_ON is NOT_CURRENT_SCOPE — absence must not
+ *   block DATA_VERIFIED promotion or page improvement.
  * - DATA_VERIFIED when pricing/data verification timestamps exist (without conflating testing).
  * - RESEARCHED otherwise when research activity is recorded or assumed for a review surface.
  * - Never promote to HANDS_ON_TESTED because an AI pipeline processed the product.

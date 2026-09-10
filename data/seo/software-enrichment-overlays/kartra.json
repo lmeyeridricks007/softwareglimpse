@@ -1,10 +1,10 @@
 {
   "slug": "kartra",
-  "updatedAt": "2026-09-07T22:31:21.370Z",
+  "updatedAt": "2026-09-10T11:46:30.287Z",
   "version": "1.0.0",
   "fieldAudit": {
     "slug": "kartra",
-    "checkedAt": "2026-09-07T22:31:21.369Z",
+    "checkedAt": "2026-09-10T11:46:30.284Z",
     "items": [
       {
         "field": "name",
@@ -20,9 +20,9 @@
       },
       {
         "field": "canonical_vendor",
-        "status": "UNKNOWN",
-        "detail": "Company/vendor not documented",
-        "source": "none"
+        "status": "PASS",
+        "detail": "Vendor: Kartra",
+        "source": "seed"
       },
       {
         "field": "category",
@@ -115,11 +115,11 @@
         "source": "enrichment"
       }
     ],
-    "passCount": 16,
+    "passCount": 17,
     "partialCount": 0,
     "missingCount": 1,
-    "unknownCount": 1,
-    "score": 89
+    "unknownCount": 0,
+    "score": 94
   },
   "decisionHub": {
     "whatItIs": "Kartra combines landing pages, email/SMS marketing, memberships/courses, checkouts, funnels, AI copy, and related automation in one platform aimed at coaches, experts, and creators.",
@@ -140,14 +140,14 @@
       "Essentials charges 5% transaction fees"
     ],
     "coreCapabilities": [
+      "social scheduling",
+      "content calendar",
       "funnel builder",
       "landing pages",
       "marketing automation",
       "forms lead capture",
       "analytics",
-      "email sms channels",
-      "team collaboration",
-      "ai content generation"
+      "webinars"
     ],
     "pricingSummary": "4 documented plans · entry paid: Essentials · trial documented on at least one plan",
     "keyTradeoffs": [
@@ -246,7 +246,6 @@
     "evidenceState": "Research/data-based (no completed hands-on test) · Latest verification/research signal: 2026-08-17T15:00:00.000Z · Editorial assessment: approved",
     "nextDecisionStep": "Compare against peers: Kartra vs Freshmarketer",
     "missingSections": [
-      "canonical_vendor",
       "use_cases"
     ]
   },
@@ -470,13 +469,12 @@
     }
   ],
   "remediation": [
-    "verify:canonical_vendor",
     "catalogue_fill:use_cases"
   ],
   "notes": [
-    "fieldAudit score=89",
+    "fieldAudit score=94",
     "decisionHub bestFor=6 notIdeal=6",
     "dependents=23"
   ],
-  "materiallyImproved": false
+  "materiallyImproved": true
 }

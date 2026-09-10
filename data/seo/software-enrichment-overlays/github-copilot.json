@@ -1,10 +1,10 @@
 {
   "slug": "github-copilot",
-  "updatedAt": "2026-09-07T22:31:21.766Z",
+  "updatedAt": "2026-09-10T08:15:10.342Z",
   "version": "1.0.0",
   "fieldAudit": {
     "slug": "github-copilot",
-    "checkedAt": "2026-09-07T22:31:21.764Z",
+    "checkedAt": "2026-09-10T08:15:10.340Z",
     "items": [
       {
         "field": "name",
@@ -20,9 +20,9 @@
       },
       {
         "field": "canonical_vendor",
-        "status": "UNKNOWN",
-        "detail": "Company/vendor not documented",
-        "source": "none"
+        "status": "PASS",
+        "detail": "Vendor: GitHub, Inc.",
+        "source": "seed"
       },
       {
         "field": "category",
@@ -115,11 +115,11 @@
         "source": "enrichment"
       }
     ],
-    "passCount": 16,
+    "passCount": 17,
     "partialCount": 0,
     "missingCount": 0,
-    "unknownCount": 2,
-    "score": 89
+    "unknownCount": 1,
+    "score": 94
   },
   "decisionHub": {
     "whatItIs": "GitHub Copilot is GitHub’s AI coding assistant for completions, Copilot Chat, and coding agents inside VS Code, JetBrains, and github.com. Distinct from Microsoft 365 Copilot and from GitHub the source-control platform. Published seats: Copilot Pro $10/mo, Pro+ $39, Max $100, Business $19/user/mo, Enterprise $39/user/mo. From 1 June 2026 plans include monthly GitHub AI Credits with $0.01/credit overage. Completions on paid plans remain unlimited in GitHub’s billing docs.",
@@ -142,12 +142,12 @@
     "coreCapabilities": [
       "llm chat",
       "reasoning models",
+      "writing assist",
       "agent builder",
       "custom projects",
       "enterprise admin",
       "usage credits",
-      "connectors",
-      "data privacy"
+      "connectors"
     ],
     "pricingSummary": "4 documented plans · 1 free · entry paid: Copilot Pro",
     "keyTradeoffs": [
@@ -233,7 +233,6 @@
     "evidenceState": "Research/data-based (no completed hands-on test) · Latest verification/research signal: 2026-08-18T12:00:00.000Z · Editorial assessment: approved",
     "nextDecisionStep": "Compare against peers: GitHub Copilot vs Cursor",
     "missingSections": [
-      "canonical_vendor",
       "trial"
     ]
   },
@@ -411,13 +410,12 @@
   ],
   "dependentsNeedingRefresh": [],
   "remediation": [
-    "verify:canonical_vendor",
     "verify:trial"
   ],
   "notes": [
-    "fieldAudit score=89",
+    "fieldAudit score=94",
     "decisionHub bestFor=6 notIdeal=6",
     "dependents=34"
   ],
-  "materiallyImproved": false
+  "materiallyImproved": true
 }

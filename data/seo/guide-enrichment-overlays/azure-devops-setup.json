@@ -1,0 +1,206 @@
+{
+  "slug": "azure-devops-setup",
+  "enrichmentType": "IMPLEMENTATION_GUIDE",
+  "updatedAt": "2026-09-10T12:50:12.358Z",
+  "uniqueValueAdded": [
+    "implementation_workflow",
+    "scenario_analysis",
+    "decision_framework",
+    "limitations_evidence",
+    "pricing_comparison",
+    "sg_original_data",
+    "buyer_checklist"
+  ],
+  "patch": {
+    "summary": "log management; source control and repos; CI/CD and automation; developer AI assistance. Basic (first 5 users) · free · log management | Basic | Basic + Test Plans. Microsoft Teams. Microsoft/Azure-native engineering orgs; Teams that want Boards + Repos + Pipelines without GitHub; QA groups that will actually buy Test Plans seats. Azure DevOps is Microsoft’s cloud DevOps suite (Azure Boards, Repos, Pipelines, Artifacts, Test Plans). Basic access is free for the first 5 users, then list pricenth. Stakeholders Buyer question: is Azure DevOps the right it-development commit for Microsoft/Azure-native engineering orgs, or is Open-source and GitHub-community-first teams the real constraint? Thesis for setup: Azure DevOps is a yes only when log management plus log management are must-haves; not worth it if Open-source and GitHub-community-first teams dominates the operating model.",
+    "blocks": [
+      {
+        "id": "da-azure-devops-setup-1",
+        "type": "direct-answer",
+        "body": "log management decides whether Azure DevOps setup is a one-team pilot or a specialist project — confirm unlocks for must-have capabilities before invites.",
+        "bullets": [
+          "Start with: log management",
+          "Gate check: confirm paid unlocks before go-live",
+          "Integrate after: data quality pass on Microsoft Teams"
+        ]
+      },
+      {
+        "id": "impl-azure-devops-setup-2",
+        "type": "step",
+        "heading": "Azure DevOps day-zero to steady-state sequence",
+        "body": "Treat Azure DevOps setup as a controlled rollout — not a weekend dump of CSV files.",
+        "stepNumber": 1,
+        "scenarios": [
+          {
+            "title": "Day zero — objects and owners",
+            "body": "Define owners for log management, source control and repos, CI/CD and automation before inviting the whole org."
+          },
+          {
+            "title": "SMB pilot",
+            "body": "One pipeline / one team proves Microsoft/Azure-native engineering orgs before company-wide seats."
+          },
+          {
+            "title": "Cutover",
+            "body": "Freeze legacy writes briefly; validate Microsoft Teams before reopen."
+          }
+        ]
+      },
+      {
+        "id": "df-azure-devops-setup-3",
+        "type": "decision-framework",
+        "title": "Azure DevOps implementation go / no-go",
+        "steps": [
+          {
+            "id": "i-1",
+            "label": "Go when plan unlocks cover must-have capabilities"
+          },
+          {
+            "id": "i-2",
+            "label": "Pause if this limitation blocks ops: User 6 onwards is list price for every additional Basic seat — the free five are not a forever team cap workaround"
+          },
+          {
+            "id": "i-3",
+            "label": "Do not expand seats until log management is green"
+          }
+        ]
+      },
+      {
+        "id": "mist-azure-devops-setup-4",
+        "type": "mistakes",
+        "title": "Azure DevOps implementation mistakes",
+        "items": [
+          {
+            "title": "Mistake 1",
+            "body": "User 6 onwards is list price for every additional Basic seat — the free five are not a forever team cap workaround"
+          },
+          {
+            "title": "Mistake 2",
+            "body": "Test Plans at list price is a QA licence, not something to assign to every developer"
+          },
+          {
+            "title": "Mistake 3",
+            "body": "Pipeline minutes and Artifacts storage are extra TCO beyond seats"
+          },
+          {
+            "title": "Mistake 4",
+            "body": "Not GitHub — Microsoft owns both; buying motions and community differ"
+          },
+          {
+            "title": "Big-bang invite",
+            "body": "Inviting every user before object design creates junk data that is expensive to unwind."
+          }
+        ]
+      },
+      {
+        "id": "cost-azure-devops-setup-5",
+        "type": "cost-breakdown",
+        "title": "Azure DevOps plan gates that affect rollout",
+        "body": "Implementation fails when unlocks needed for go-live sit on a higher tier than budgeted.",
+        "lines": [
+          {
+            "label": "Basic (first 5 users)",
+            "description": "Free plan · Unlocks: log management, source control and repos, CI/CD and automation · Suits: explore before committing seats"
+          },
+          {
+            "label": "Basic",
+            "description": "30-day trial · Suits: teams whose must-have gates appear on this tier"
+          },
+          {
+            "label": "Basic + Test Plans",
+            "description": "30-day trial · Suits: teams whose must-have gates appear on this tier"
+          }
+        ]
+      },
+      {
+        "id": "sel-azure-devops-setup-6",
+        "type": "selection-checklist",
+        "title": "Azure DevOps implementation checklist",
+        "dimensions": [
+          {
+            "id": "prep",
+            "label": "Prep",
+            "options": [
+              "Object model drafted",
+              "Owners named",
+              "Legacy freeze window set"
+            ]
+          },
+          {
+            "id": "pilot",
+            "label": "Pilot",
+            "options": [
+              "log management",
+              "Junk-data rules set",
+              "Support path clear"
+            ]
+          },
+          {
+            "id": "scale",
+            "label": "Scale",
+            "options": [
+              "Microsoft Teams",
+              "Seat expansion criteria written",
+              "Rollback plan noted"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "cta-azure-devops-setup-7",
+        "type": "interactive-cta",
+        "title": "Validate it-development fit before a deep Azure DevOps rollout",
+        "body": "If Azure DevOps fails constraint fit, stop implementation early.",
+        "href": "/tools/it-development-finder/",
+        "ctaLabel": "Open Finder",
+        "variant": "finder"
+      }
+    ],
+    "sections": [
+      {
+        "id": "sec-thesis-azure-devops-setup",
+        "heading": "Azure DevOps buyer question and thesis",
+        "body": "log management; source control and repos; CI/CD and automation; developer AI assistance. Basic (first 5 users) · free · log management | Basic | Basic + Test Plans. Microsoft Teams. Microsoft/Azure-native engineering orgs; Teams that want Boards + Repos + Pipelines without GitHub; QA groups that will actually buy Test Plans seats. Azure DevOps is Microsoft’s cloud DevOps suite (Azure Boards, Repos, Pipelines, Artifacts, Test Plans). Basic access is free for the first 5 users, then list pricenth. Stakeholders. That catalogue mix is the Azure DevOps setup filter — not a generic it-development lecture.\n\nBuyer question: is Azure DevOps the right it-development commit for Microsoft/Azure-native engineering orgs, or is Open-source and GitHub-community-first teams the real constraint?\n\nThesis for setup: Azure DevOps is a yes only when log management plus log management are must-haves; not worth it if Open-source and GitHub-community-first teams dominates the operating model.\n\nBest for: Microsoft/Azure-native engineering orgs; Teams that want Boards + Repos + Pipelines without GitHub; QA groups that will actually buy Test Plans seats (Microsoft/Azure-native engineering orgs).\n\nPoor fit when: Open-source and GitHub-community-first teams; Buyers who only need GitHub Copilot in an existing IDE; ITSM desks (Jira Service Management / ServiceNow). Avoid if User 6 onwards is list price for every additional Basic seat — the free five are not a forever team cap workaround would block go-live."
+      },
+      {
+        "id": "sec-limits-azure-devops-setup",
+        "heading": "Azure DevOps limitation, pricing interpretation, and alternative context",
+        "body": "Limitation: User 6 onwards is list price for every additional Basic seat — the free five are not a forever team cap workaround; Test Plans at list price is a QA licence, not something to assign to every developer; Pipeline minutes and Artifacts storage are extra TCO beyond seats because it forces process changes or add-ons around Azure DevOps when log management is the job.\n\nPricing interpretation: stay on Basic (first 5 users) until log management is mandatory; plan jumps to Basic only after that hinge is proven.\n\nPlan trade-off: you gain log management at the expense of Per-agent vs per-host vs per-seat vs per-GB pricing models — measure both in the pilot. Researched packaging: Basic (first 5 users) · free · log management | Basic | Basic + Test Plans.\n\nAlternative context: unlike GitHub, Azure DevOps is preferable when Microsoft/Azure-native engineering orgs because log management plus log management match; prefer GitHub when Open-source and GitHub-community-first teams because the operating loops differ."
+      },
+      {
+        "id": "sec-scenario-azure-devops-setup",
+        "heading": "Decision scenario and conclusion for Azure DevOps",
+        "body": "Use-case: for Microsoft/Azure-native engineering orgs running log management, prefer Azure DevOps when log management is weekly; pick another path when Open-source and GitHub-community-first teams.\n\nSetup requires a specialist owner when User 6 onwards is list price for every additional Basic seat — the free five are not a forever team cap workaround collides with log management; SMB pilots can stay lighter if log management is already on Basic.\n\nIntegrations in research: Microsoft Teams.\n\nWrap: choose Azure DevOps only if the setup job is log management under Microsoft/Azure-native engineering orgs; otherwise use Finder constraints instead of copying this page for another vendor."
+      }
+    ],
+    "checklist": [
+      {
+        "id": "enrich-chk-0",
+        "label": "Draft Azure DevOps object owners before invites",
+        "order": 0
+      },
+      {
+        "id": "enrich-chk-1",
+        "label": "Confirm plan unlocks for go-live features",
+        "order": 1
+      },
+      {
+        "id": "enrich-chk-2",
+        "label": "Pilot one team on log management",
+        "order": 2
+      },
+      {
+        "id": "enrich-chk-3",
+        "label": "If blocked, evaluate GitHub before sunk-cost expansion",
+        "order": 3
+      }
+    ],
+    "nextAction": {
+      "contentId": "tool:finder:it-development",
+      "label": "Open Finder shortlist"
+    }
+  },
+  "notes": [
+    "Implementation: workflow, constraints, mistakes, checklist.",
+    "Type-specific skeleton: IMPLEMENTATION_GUIDE"
+  ]
+}

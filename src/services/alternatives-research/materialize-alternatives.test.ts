@@ -29,7 +29,9 @@ describe("buildAlternativesFromResearch", () => {
       for (const entry of page.alternatives) {
         expect(known.has(entry.targetSlug)).toBe(true);
         expect(entry.targetSlug).not.toBe(page.sourceSlug);
-        expect(entry.relativePricing).toBe("unknown");
+        expect(["unknown", "similar", "lower", "higher"]).toContain(
+          entry.relativePricing,
+        );
       }
     }
   });

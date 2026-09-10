@@ -2,9 +2,7 @@ import {
   getResources,
   getTopLevelCategories,
 } from "@/data";
-import {
-  getGuides,
-} from "@/data/repositories/guides";
+import { getEducationalGuides } from "@/data/repositories/guides-educational";
 import { TOOLS_REGISTRY } from "@/data/config/tools/registry";
 import { parseCategoryToolSlug } from "@/data/config/tools/category-tool-meta";
 import { categoryHasPublishedPillar } from "@/services/category-tools/pillar-gate";
@@ -25,7 +23,9 @@ export function buildDiscoveryHub(): DiscoveryHubModel {
     return true;
   }).slice(0, 4);
 
-  const guides = getGuides()
+  // Educational seed only — never load factory product-guide packs here.
+  // Empty /search/ TTFB previously compiled the full 1.5k+ guide estate.
+  const guides = getEducationalGuides()
     .filter((g) => g.seo.indexable === true)
     .slice(0, 3);
 

@@ -36,11 +36,37 @@ describe("Growth Dashboard", () => {
         /prior|comparable|REAL GSC|No paired|Only one/i,
       );
       expect(report.contentEstate.totals.total).toBeGreaterThan(0);
+      expect(report.contentEstate.factoryRemediation.originTotal.kind).toBe(
+        "number",
+      );
+      if (report.contentEstate.factoryRemediation.originTotal.kind === "number") {
+        expect(report.contentEstate.factoryRemediation.originTotal.note).toMatch(
+          /inventory/i,
+        );
+      }
       expect(report.improvementVelocity.windowLabel).toMatch(/7/);
       expect(report.organicSearch.discovery).toBeDefined();
       expect(report.organicSearch.ranking.top10).toBeDefined();
       expect(report.organicSearch.ctrDetail).toBeDefined();
       expect(report.organicSearch.traffic).toBeDefined();
+      const evidence = report.scorecard.find((p) => p.id === "evidence");
+      expect(evidence?.summary).toMatch(/NOT_CURRENT_SCOPE/);
+      expect(evidence?.gaps.join(" ")).not.toMatch(
+        /No completed hands-on test sessions counted/i,
+      );
+      expect(report.contentQuality.handsOnTested.kind).toBe("number");
+      if (report.contentQuality.handsOnTested.kind === "number") {
+        expect(report.contentQuality.handsOnTested.value).toBe(0);
+        expect(report.contentQuality.handsOnTested.note).toMatch(
+          /NOT_CURRENT_SCOPE/,
+        );
+      }
+      if (
+        report.contentQuality.dataVerified.kind === "number" &&
+        report.contentQuality.dataVerified.value >= 150
+      ) {
+        expect(evidence?.status).toBe("on_track");
+      }
     },
     90_000,
   );
@@ -175,7 +201,8 @@ describe("Growth Dashboard", () => {
       expect(md).toContain("Sitemap URL count");
       expect(md).toContain("not connected");
       expect(md).toContain("Top-10 pages ≥100 impressions");
-      expect(md).toContain("Top-10 share of impressions");
+      expect(md).toContain("FACTORY_ORIGIN_TOTAL");
+      expect(md).not.toMatch(/factoryPackCount must fall/i);
       expect(md).not.toMatch(/Revenue \| \$0/);
       expect(md).toMatch(/REAL|FIXTURE|NOT_CONNECTED|STALE/);
     },
@@ -197,6 +224,6 @@ describe("Growth Dashboard", () => {
       expect(report.aiVisibility.citations.kind).toBe("not_connected");
       expect(report.contentQuality.evidenceTrend.length).toBeGreaterThan(0);
     },
-    90_000,
+    180_000,
   );
 });

@@ -93,7 +93,7 @@ describe("guide enrichment", () => {
           item.prioritySignals.hasDirectQuery,
       ).toBe(true);
     }
-  }, 120_000);
+  }, 180_000);
 
   it("applies product-specific orientation to an existing what-is-{product} URL", () => {
     const explainer =

@@ -6,6 +6,10 @@ import {
 } from "@/data/config/tools/category-tool-meta";
 import { loadSafeProductContext } from "./enrich-context";
 import {
+  buildFactoryDistinctAnalysis,
+  factoryKindFromSlug,
+} from "./distinct-analysis";
+import {
   mergeGuideWithOverlay,
   type GuideEnrichmentOverlay,
 } from "./overlay-merge";
@@ -251,71 +255,18 @@ function buildCostGuideBlocks(a: BuildArgs): {
     });
   }
 
-  const v = slugVariant(guide.slug);
-  const altName = alts[0]
-    ? getSoftwareBySlug(alts[0])?.name || alts[0]
-    : null;
-  const paidName =
-    ctx.plans.find((p) => !p.isFree)?.name || ctx.plans[0]?.name || "paid tier";
-  const best = ctx.bestFor[0] || ctx.coreLoopLabels[0] || "documented strengths";
-  const poor =
-    ctx.notIdealFor[0] || limitations[0] || "undocumented admin or capability risk";
-  const gate = ctx.gatedFeatureHints[0] || "a premium unlock";
-
-  const thesisByVariant = [
-    `Buyer thesis: choose ${name} only if weekly work needs ${best} and the ${paidName} unlock for ${gate} will be used — skip if ${poor}.`,
-    `Pricing thesis for ${name}: pay up when ${gate} is a weekly must-have for ${best}; walk when ${poor} dominates the operating model.`,
-    `Evaluator rule: ${name} is best for teams built around ${best}. Poor fit when ${poor}. Pricing threshold: move off free/trial when ${gate} blocks a real workflow.`,
-    `Decision thesis: unlike a generic ${category} shortlist, ${name} earns budget when ${best} outweighs ${poor} — trade-off accepted before seats scale.`,
-  ][v]!;
-
-  const sections: GuidePage["sections"] = [
-    {
-      id: `sec-cost-thesis-${guide.slug}`,
-      heading: `${name} pricing thesis (buyer fit)`,
-      body: [
-        thesisByVariant,
-        `Best for: ${ctx.bestFor.slice(0, 2).join("; ") || best}.`,
-        `Poor fit when: ${ctx.notIdealFor.slice(0, 2).join("; ") || poor}.`,
-        limitations[0]
-          ? `Limitation that changes spend: ${limitations[0]} because it forces workarounds or add-ons outside the sticker plan.`
-          : `Limitation: confirm add-ons and admin time before calling ${paidName} “cheap.”`,
-      ].join("\n\n"),
-    },
-    {
-      id: `sec-cost-price-${guide.slug}`,
-      heading: `${name} pricing interpretation and plan trade-off`,
-      body: [
-        freeNames
-          ? `Pricing interpretation: stay on ${freeNames} until ${gate} is mandatory; plan jumps to ${paidName} only after that hinge is proven.`
-          : `Pricing interpretation: no free plan confirmed — scope a paid pilot on ${paidName} with exit criteria before annual seats.`,
-        `Plan trade-off: you gain ${gate} at the expense of seat/admin complexity — measure both in the pilot.`,
-        altName
-          ? `Competitor context: unlike ${altName}, ${name} is preferable when ${best}; prefer ${altName} when ${poor} because the jobs diverge.`
-          : `Competitor context: benchmark one catalogue alternative on identical seat count before locking ${paidName}.`,
-      ].join("\n\n"),
-    },
-    {
-      id: `sec-cost-scenario-${guide.slug}`,
-      heading: `Decision scenario and conclusion for ${name}`,
-      body: [
-        `Scenario: for ${ctx.coreLoopLabels[0] || "primary workflow"} teams, recommend ${name} when ${best}; recommend an alternative path when ${poor}.`,
-        `Implementation complexity: setup requires confirming ${gate} ownership before rollout — do not scale seats first.`,
-        `Conclusion: buy ${name} when researched fit beats researched limits; otherwise keep researching — do not substitute product names into a generic cost essay.`,
-      ].join("\n\n"),
-    },
-  ];
+  const distinct = buildFactoryDistinctAnalysis({
+    kind: "plans",
+    slug: guide.slug,
+    name,
+    category,
+    ctx,
+  });
 
   return {
     blocks,
     unique,
-    summary: [
-      `${name} cost guide.`,
-      thesisByVariant,
-      limitations[0] ? `Watch: ${limitations[0]}.` : null,
-    ]
-      .filter(Boolean)
-      .join(" "),
+    summary: distinct.summary,
     checklist: [
       `List must-have unlocks before picking a ${name} tier`,
       trialNote,
@@ -326,7 +277,7 @@ function buildCostGuideBlocks(a: BuildArgs): {
         ? `Compare seat TCO with ${getSoftwareBySlug(alts[0])?.name || alts[0]}`
         : `Benchmark one alternative on the same seat count`,
     ],
-    sections,
+    sections: distinct.sections,
   };
 }
 
@@ -381,64 +332,15 @@ function buildDecisionGuideBlocks(a: BuildArgs): {
     },
   ][v]!;
 
-  const summary = [
-    `Is ${name} worth it?`,
-    desc ? `${desc}.` : null,
-    ctx.bestFor[0] ? `Best for: ${ctx.bestFor[0]}.` : null,
-    limitations[0]
-      ? `Poor fit when: ${limitations[0]}. Limitation that changes the deal: ${limitations[0]} because it blocks go-live without workarounds.`
-      : null,
-    altName
-      ? `Unlike ${altName}, prefer ${name} when ${ctx.bestFor[0] || "fit signals"} hold; prefer ${altName} when ${limitations[0] || "avoid signals"} dominate because the jobs diverge.`
-      : null,
-  ]
-    .filter(Boolean)
-    .join(" ");
-
-  const sections: GuidePage["sections"] = [
-    {
-      id: `sec-thesis-${guide.slug}`,
-      heading: thesisFrames.title,
-      body: [
-        `Buyer thesis: ${thesisFrames.yes}. Counter-signal: ${thesisFrames.no}.`,
-        featLabels[0]
-          ? `Capability hinge for this product: ${featLabels.join("; ")}.`
-          : `Workflow hinge: ${ctx.coreLoopLabels.slice(0, 3).join(", ") || "confirm on the product hub"}.`,
-        `Integrations in research: ${ctx.nativeIntegrationNames.slice(0, 4).join(", ") || "confirm on the product hub"}.`,
-        paidPlans.length
-          ? `Pricing threshold: plan jumps to ${paidPlans[0]} when you need ${featLabels[0] || "must-have unlocks"} weekly — not when brand familiarity peaks.`
-          : `Confirm current packaging on the ${name} hub before a multi-seat commit.`,
-      ].join("\n\n"),
-    },
-    {
-      id: `sec-fit-${guide.slug}`,
-      heading: `Who ${name} is worth it for — and who should avoid it`,
-      body: [
-        `Best for: ${ctx.whoShouldChoose || ctx.bestFor.slice(0, 2).join("; ") || "teams whose workflows match researched strengths"}.`,
-        `Poor fit when: ${ctx.whoShouldConsiderAlternatives || limitations.slice(0, 2).join("; ") || "you need strengths this product does not document"}.`,
-        limitations[0]
-          ? `Limitation: ${limitations[0]} because it forces process changes or tooling around ${name}.`
-          : `Write deal-breakers before demos so a polished UI cannot override fit.`,
-        altName
-          ? `Competitor context: unlike ${altName}, ${name} wins when ${ctx.bestFor[0] || "strengths"} matter; choose ${altName} instead when ${limitations[0] || "avoid signals"} dominate because the operating loops differ.`
-          : `Competitor context: score ${name} against one catalogue peer on identical constraints.`,
-      ].join("\n\n"),
-    },
-    {
-      id: `sec-value-${guide.slug}`,
-      heading: `${name} price/value and next evaluation step`,
-      body: [
-        plan.dataSignals.hasFreeOrTrial
-          ? `Prove one real workflow on the documented free/trial path before arguing for ${paidPlans[0] || "a paid tier"}.`
-          : `No free/trial flag in SG data — scope a paid proof with exit criteria before annual seats.`,
-        ctx.tradeoffs[0]
-          ? `Trade-off: you gain ${featLabels[0] || "capability breadth"} at the expense of ${ctx.tradeoffs[0]}.`
-          : `Trade-off: you gain configuration depth at the expense of admin overhead — measure both in the pilot.`,
-        `Scenario: for ${ctx.coreLoopLabels[0] || "primary workflow"} teams, recommend ${name} when ${ctx.bestFor[0] || "fit holds"}; recommend an alternative when ${limitations[0] || "avoid signals"} dominate.`,
-        `Conclusion: buy ${name} only when researched fit beats researched limits — reject product-name substitution as uniqueness.`,
-      ].join("\n\n"),
-    },
-  ];
+  const distinct = buildFactoryDistinctAnalysis({
+    kind: "worth-it",
+    slug: guide.slug,
+    name,
+    category,
+    ctx,
+  });
+  const summary = distinct.summary;
+  const sections = distinct.sections;
 
   blocks.push({
     id: bid("da"),
@@ -629,11 +531,22 @@ function buildImplementationGuideBlocks(a: BuildArgs): {
   const blocks: GuideContentBlock[] = [];
   const limitations = limitationsOf(ctx);
   const alts = altSlugsOf(ctx, productSlug);
+  const implKind =
+    factoryKindFromSlug(guide.slug, productSlug) === "setup"
+      ? "setup"
+      : "implementation";
+  const distinct = buildFactoryDistinctAnalysis({
+    kind: implKind,
+    slug: guide.slug,
+    name,
+    category,
+    ctx,
+  });
 
   blocks.push({
     id: bid("da"),
     type: "direct-answer",
-    body: `Implement ${name} by mapping current ${category} workflows to ${name} objects, confirming plan gates for ${(ctx.gatedFeatureHints.slice(0, 3).join(", ") || "premium capabilities")}, piloting one team, then cutting over integrations (${ctx.nativeIntegrationNames.slice(0, 3).join(", ") || "priority systems"}) after data checks.`,
+    body: `${ctx.gatedFeatureHints[0] || ctx.features[0]?.label || ctx.coreLoopLabels[0] || "Plan gates"} decides whether ${name} ${implKind} is a one-team pilot or a specialist project — confirm unlocks for ${ctx.gatedFeatureHints.slice(0, 3).join(", ") || "must-have capabilities"} before invites.`,
     bullets: [
       `Start with: ${ctx.coreLoopLabels[0] || "one primary workflow"}`,
       `Gate check: ${ctx.gatedFeatureHints[0] || "confirm paid unlocks before go-live"}`,
@@ -765,7 +678,7 @@ function buildImplementationGuideBlocks(a: BuildArgs): {
   return {
     blocks,
     unique,
-    summary: `${name} implementation guide: day-zero sequence, pilot rules, plan gates, and cutover checks from SoftwareGlimpse research — not generic CRM setup filler.`,
+    summary: distinct.summary,
     checklist: [
       `Draft ${name} object owners before invites`,
       `Confirm plan unlocks for go-live features`,
@@ -774,6 +687,7 @@ function buildImplementationGuideBlocks(a: BuildArgs): {
         ? `If blocked, evaluate ${getSoftwareBySlug(alts[0])?.name || alts[0]} before sunk-cost expansion`
         : `Write rollback criteria before cutover`,
     ],
+    sections: distinct.sections,
   };
 }
 
@@ -791,11 +705,18 @@ function buildMigrationGuideBlocks(a: BuildArgs): {
   const blocks: GuideContentBlock[] = [];
   const limitations = limitationsOf(ctx);
   const alts = altSlugsOf(ctx, productSlug);
+  const distinct = buildFactoryDistinctAnalysis({
+    kind: "migration",
+    slug: guide.slug,
+    name,
+    category,
+    ctx,
+  });
 
   blocks.push({
     id: bid("da"),
     type: "direct-answer",
-    body: `Migrate to ${name} by inventorying legacy ${category} fields, mapping them to ${name} objects, rehearsing a freeze window, and validating ${ctx.nativeIntegrationNames.slice(0, 3).join(", ") || "critical integrations"} before reopening writes.`,
+    body: `Highest migration risk for ${name} is ${limitations[0] || "unmapped custom fields and silent integration drift"} — inventory legacy ${ctx.coreLoopLabels.slice(0, 2).join(" / ") || category} fields, rehearse a freeze, then validate ${ctx.nativeIntegrationNames.slice(0, 3).join(", ") || "critical integrations"} before reopening writes.`,
     bullets: [
       "Inventory → map → rehearse → cut over → reopen",
       `Highest risk: ${limitations[0] || "unmapped custom fields and silent integration drift"}`,
@@ -899,7 +820,7 @@ function buildMigrationGuideBlocks(a: BuildArgs): {
   return {
     blocks,
     unique,
-    summary: `${name} migration guide: inventory → rehearse → freeze → validate integrations — grounded in researched limitations and catalogue peers.`,
+    summary: distinct.summary,
     checklist: [
       `Complete field inventory for ${ctx.coreLoopLabels[0] || "core workflows"}`,
       `Rehearse load before production freeze`,
@@ -908,6 +829,7 @@ function buildMigrationGuideBlocks(a: BuildArgs): {
         ? `Mitigate: ${limitations[0]}`
         : `Document rollback owner and window`,
     ],
+    sections: distinct.sections,
   };
 }
 

@@ -1,6 +1,6 @@
 # Sitemap ↔ lifecycle reconciliation
 
-**Generated:** 2026-09-09T18:50:48.763Z  
+**Generated:** 2026-09-10T20:17:13.433Z  
 **Version:** 1.0.0  
 **Canonical origin:** https://www.softwareglimpse.com  
 
@@ -12,59 +12,59 @@ Promotions hydrate from `data/seo/content-lifecycle.json` into sitemap builds.
 | Metric | Count |
 | --- | ---: |
 | Total entities | 6691 |
-| INDEXABLE | 3177 |
-| IMPROVE | 170 |
+| INDEXABLE | 3794 |
+| IMPROVE | 721 |
 | IMPROVING | 0 |
 | INDEXABLE_READY | 0 |
 | READY_FOR_REVIEW | 0 |
-| MANUAL_REVIEW | 710 |
+| MANUAL_REVIEW | 51 |
 | RETIRED | 0 |
-| UNTRACKED | 2634 |
-| In sitemap (sum of partitions) | 2981 |
-| Not in sitemap | 3710 |
-| Discrepancies | 4 |
-| Auto-fixable | 4 |
+| UNTRACKED | 2125 |
+| In sitemap (sum of partitions) | 3600 |
+| Not in sitemap | 3091 |
+| Discrepancies | 0 |
+| Auto-fixable | 0 |
 
 ## By page type
 
 ### guides
 
-Sitemap partition: `guides` · expected indexable in sitemap: **409**
+Sitemap partition: `guides` · expected indexable in sitemap: **589**
 
 | Metric | Count |
 | --- | ---: |
 | total | 1715 |
-| INDEXABLE | 587 |
-| IMPROVE | 2 |
+| INDEXABLE | 767 |
+| IMPROVE | 451 |
 | IMPROVING | 0 |
 | INDEXABLE_READY | 0 |
 | READY_FOR_REVIEW | 0 |
-| MANUAL_REVIEW | 120 |
+| MANUAL_REVIEW | 0 |
 | RETIRED | 0 |
-| UNTRACKED | 1006 |
-| in sitemap | 409 |
-| not in sitemap | 1306 |
+| UNTRACKED | 497 |
+| in sitemap | 589 |
+| not in sitemap | 1126 |
 
 - Lifecycle registry + seed seo.indexable; sitemap via isEntityIndexable.
 - Future-scheduled INDEXABLE guides correctly absent until scheduledAt.
 
 ### comparisons
 
-Sitemap partition: `comparisons` · expected indexable in sitemap: **1699**
+Sitemap partition: `comparisons` · expected indexable in sitemap: **2138**
 
 | Metric | Count |
 | --- | ---: |
 | total | 4000 |
-| INDEXABLE | 1717 |
-| IMPROVE | 65 |
+| INDEXABLE | 2154 |
+| IMPROVE | 167 |
 | IMPROVING | 0 |
 | INDEXABLE_READY | 0 |
 | READY_FOR_REVIEW | 0 |
-| MANUAL_REVIEW | 590 |
+| MANUAL_REVIEW | 51 |
 | RETIRED | 0 |
 | UNTRACKED | 1628 |
-| in sitemap | 1699 |
-| not in sitemap | 2301 |
+| in sitemap | 2138 |
+| not in sitemap | 1862 |
 
 - Lifecycle registry + seed; reviews are not a separate compare surface.
 
@@ -254,13 +254,9 @@ Sitemap partition: `pages` · expected indexable in sitemap: **3**
 
 ## Live validation
 
-Attempted: true · OK: false · Base: https://www.softwareglimpse.com
+Attempted: false · OK: true · Base: —
 
-- Legacy monolithic <urlset> at /sitemap.xml — named child sitemaps not deployed yet. Local/production build serves sitemapindex.
-
-| Path | Status | URLs | Error |
-| --- | ---: | ---: | --- |
-| /sitemap.xml | 200 | 6370 |  |
+- Live validation runs from CLI after build.
 
 ## Schema / policy notes
 

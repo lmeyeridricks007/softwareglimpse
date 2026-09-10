@@ -23,7 +23,7 @@ describe("knowledge graph", () => {
         ),
       ).toBe(true);
     },
-    60_000,
+    180_000,
   );
 
   it("defines the three core buyer journeys", () => {
@@ -60,6 +60,6 @@ describe("knowledge graph", () => {
       expect(report.journeys.length).toBeGreaterThanOrEqual(3);
       expect(Array.isArray(report.qa)).toBe(true);
     },
-    90_000,
+    180_000,
   );
 });

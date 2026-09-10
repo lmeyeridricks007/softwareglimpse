@@ -172,6 +172,29 @@
       ]
     }
   ],
+  "integrationSupport": [
+    {
+      "integrationSlug": "slack",
+      "kind": "native",
+      "sourceIds": [
+        "connecteam-product-official"
+      ]
+    },
+    {
+      "integrationSlug": "zapier",
+      "kind": "zapier-style",
+      "sourceIds": [
+        "connecteam-product-official"
+      ]
+    },
+    {
+      "integrationSlug": "google-workspace",
+      "kind": "native",
+      "sourceIds": [
+        "connecteam-product-official"
+      ]
+    }
+  ],
   "aiCapabilities": [
     {
       "capability": "assistant",
@@ -197,29 +220,6 @@
     {
       "capability": "recommendations",
       "availability": "limited",
-      "sourceIds": [
-        "connecteam-product-official"
-      ]
-    }
-  ],
-  "integrationSupport": [
-    {
-      "integrationSlug": "slack",
-      "kind": "native",
-      "sourceIds": [
-        "connecteam-product-official"
-      ]
-    },
-    {
-      "integrationSlug": "zapier",
-      "kind": "zapier-style",
-      "sourceIds": [
-        "connecteam-product-official"
-      ]
-    },
-    {
-      "integrationSlug": "google-workspace",
-      "kind": "native",
       "sourceIds": [
         "connecteam-product-official"
       ]
@@ -303,112 +303,6 @@
       "isEditorial": false
     }
   ],
-  "pricing": {
-    "currency": "USD",
-    "model": "hybrid",
-    "hasFreePlan": true,
-    "hasFreeTrial": true,
-    "plans": [
-      {
-        "id": "plan-small-business",
-        "slug": "small-business",
-        "name": "Small Business Free",
-        "isFree": true,
-        "contactSales": false,
-        "hasFreeTrial": false,
-        "highlighted": false,
-        "rules": [
-          {
-            "kind": "flat",
-            "amount": 0,
-            "currency": "USD",
-            "interval": "month",
-            "amountPeriod": "month"
-          }
-        ],
-        "description": "Free for ≤10 users across hubs with limited essentials — good evaluation floor for tiny frontline teams.",
-        "limits": {
-          "maxUsers": 10
-        }
-      },
-      {
-        "id": "plan-basic",
-        "slug": "basic",
-        "name": "Basic (per hub)",
-        "isFree": false,
-        "contactSales": false,
-        "hasFreeTrial": true,
-        "trialDays": 14,
-        "highlighted": false,
-        "rules": [
-          {
-            "kind": "flat",
-            "amount": 29,
-            "currency": "USD",
-            "interval": "year",
-            "amountPeriod": "month"
-          }
-        ],
-        "description": "$29/mo billed annually per hub for first 30 users (monthly $35). Entry paid hub tier.",
-        "limits": {
-          "includedUsers": 30
-        }
-      },
-      {
-        "id": "plan-advanced",
-        "slug": "advanced",
-        "name": "Advanced (per hub)",
-        "isFree": false,
-        "contactSales": false,
-        "hasFreeTrial": true,
-        "trialDays": 14,
-        "highlighted": true,
-        "rules": [
-          {
-            "kind": "flat",
-            "amount": 49,
-            "currency": "USD",
-            "interval": "year",
-            "amountPeriod": "month"
-          }
-        ],
-        "description": "$49/mo billed annually per hub for first 30 users (monthly $59). Common mid-tier hub depth.",
-        "limits": {
-          "includedUsers": 30
-        }
-      },
-      {
-        "id": "plan-expert",
-        "slug": "expert",
-        "name": "Expert (per hub)",
-        "isFree": false,
-        "contactSales": false,
-        "hasFreeTrial": true,
-        "trialDays": 14,
-        "highlighted": false,
-        "rules": [
-          {
-            "kind": "flat",
-            "amount": 99,
-            "currency": "USD",
-            "interval": "year",
-            "amountPeriod": "month"
-          }
-        ],
-        "description": "$99/mo billed annually per hub for first 30 users (monthly $119). Deepest published hub tier before custom overages.",
-        "limits": {
-          "includedUsers": 30
-        }
-      }
-    ],
-    "notes": "Researched 2026-08-17 from connecteam.com/pricing/ plus help.connecteam.com yearly plan documentation (medium confidence — base $ from help center; confirm live hub packaging). Free ≤10 users all hubs (limited essentials). Paid per hub annual: Basic $29, Advanced $49, Expert $99/mo for first 30 users; monthly $35/$59/$119. Over-30 per-user rates vary by hub. 14-day trial. Multi-hub purchases stack TCO. Affiliate economics excluded.",
-    "verifiedAt": "2026-08-17T20:00:00.000Z",
-    "sourceIds": [
-      "connecteam-pricing-official"
-    ],
-    "startingPriceMonthly": 29,
-    "trialDays": 14
-  },
   "screenshots": [
     {
       "id": "connecteam-shot-scheduling-1",
@@ -544,13 +438,13 @@
       "demonstratedDimensionIds": [],
       "requirementCriterionIds": [],
       "workflowStageIds": [],
+      "mediaContext": "general-workflow",
       "reportedOutcomes": [],
       "placements": [
         "overview",
         "features",
         "evidence"
       ],
-      "mediaContext": "general-workflow",
       "purpose": "Official Connecteam video for product research pages",
       "demonstratesCaption": "How Connecteam presents the product in an official vendor video.",
       "editorialCommentary": "Official vendor demo — treat as UI/workflow evidence, not SoftwareGlimpse scoring.",
@@ -613,13 +507,13 @@
       "demonstratedDimensionIds": [],
       "requirementCriterionIds": [],
       "workflowStageIds": [],
+      "mediaContext": "general-workflow",
       "reportedOutcomes": [],
       "placements": [
         "overview",
         "features",
         "evidence"
       ],
-      "mediaContext": "general-workflow",
       "purpose": "Official Connecteam video for product research pages",
       "demonstratesCaption": "How Connecteam presents the product in an official vendor video.",
       "editorialCommentary": "Official vendor demo — treat as UI/workflow evidence, not SoftwareGlimpse scoring.",
@@ -637,12 +531,112 @@
       "status": "published"
     }
   ],
-  "sourceIds": [
-    "connecteam-product-official",
-    "connecteam-pricing-official",
-    "connecteam-help-yearly"
-  ],
-  "notes": "HR Wave-1 onboarding enrichment from first-party research 2026-08-17T20:00:00.000Z. handsOnTesting=false. membershipRole=primary. jobCluster=frontline-wfm.",
+  "pricing": {
+    "currency": "USD",
+    "model": "hybrid",
+    "hasFreePlan": true,
+    "hasFreeTrial": true,
+    "plans": [
+      {
+        "id": "plan-small-business",
+        "slug": "small-business",
+        "name": "Small Business Free",
+        "isFree": true,
+        "contactSales": false,
+        "hasFreeTrial": false,
+        "highlighted": false,
+        "rules": [
+          {
+            "kind": "flat",
+            "amount": 0,
+            "currency": "USD",
+            "interval": "month",
+            "amountPeriod": "month"
+          }
+        ],
+        "description": "Free for ≤10 users across hubs with limited essentials — good evaluation floor for tiny frontline teams.",
+        "limits": {
+          "maxUsers": 10
+        }
+      },
+      {
+        "id": "plan-basic",
+        "slug": "basic",
+        "name": "Basic (per hub)",
+        "isFree": false,
+        "contactSales": false,
+        "hasFreeTrial": true,
+        "trialDays": 14,
+        "highlighted": false,
+        "rules": [
+          {
+            "kind": "flat",
+            "amount": 29,
+            "currency": "USD",
+            "interval": "year",
+            "amountPeriod": "month"
+          }
+        ],
+        "description": "$29/mo billed annually per hub for first 30 users (monthly $35). Entry paid hub tier.",
+        "limits": {
+          "includedUsers": 30
+        }
+      },
+      {
+        "id": "plan-advanced",
+        "slug": "advanced",
+        "name": "Advanced (per hub)",
+        "isFree": false,
+        "contactSales": false,
+        "hasFreeTrial": true,
+        "trialDays": 14,
+        "highlighted": true,
+        "rules": [
+          {
+            "kind": "flat",
+            "amount": 49,
+            "currency": "USD",
+            "interval": "year",
+            "amountPeriod": "month"
+          }
+        ],
+        "description": "$49/mo billed annually per hub for first 30 users (monthly $59). Common mid-tier hub depth.",
+        "limits": {
+          "includedUsers": 30
+        }
+      },
+      {
+        "id": "plan-expert",
+        "slug": "expert",
+        "name": "Expert (per hub)",
+        "isFree": false,
+        "contactSales": false,
+        "hasFreeTrial": true,
+        "trialDays": 14,
+        "highlighted": false,
+        "rules": [
+          {
+            "kind": "flat",
+            "amount": 99,
+            "currency": "USD",
+            "interval": "year",
+            "amountPeriod": "month"
+          }
+        ],
+        "description": "$99/mo billed annually per hub for first 30 users (monthly $119). Deepest published hub tier before custom overages.",
+        "limits": {
+          "includedUsers": 30
+        }
+      }
+    ],
+    "notes": "Researched 2026-08-17 from connecteam.com/pricing/ plus help.connecteam.com yearly plan documentation (medium confidence — base $ from help center; confirm live hub packaging). Free ≤10 users all hubs (limited essentials). Paid per hub annual: Basic $29, Advanced $49, Expert $99/mo for first 30 users; monthly $35/$59/$119. Over-30 per-user rates vary by hub. 14-day trial. Multi-hub purchases stack TCO. Affiliate economics excluded.",
+    "verifiedAt": "2026-09-10T11:42:57.989Z",
+    "sourceIds": [
+      "connecteam-pricing-official"
+    ],
+    "startingPriceMonthly": 29,
+    "trialDays": 14
+  },
   "domainCheckedAt": {
     "identity": "2026-08-17T20:00:00.000Z",
     "pricing": "2026-08-17T20:00:00.000Z",
@@ -656,5 +650,11 @@
     "limits": "2026-08-17T20:00:00.000Z",
     "security-compliance": "2026-08-17T20:00:00.000Z"
   },
-  "updatedAt": "2026-08-18T06:00:00.000Z"
+  "sourceIds": [
+    "connecteam-product-official",
+    "connecteam-pricing-official",
+    "connecteam-help-yearly"
+  ],
+  "updatedAt": "2026-08-18T06:00:00.000Z",
+  "notes": "HR Wave-1 onboarding enrichment from first-party research 2026-08-17T20:00:00.000Z. handsOnTesting=false. membershipRole=primary. jobCluster=frontline-wfm."
 }

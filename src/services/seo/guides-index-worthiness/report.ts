@@ -40,12 +40,22 @@ export function formatGuidesAuditMarkdown(report: GuideAuditReport): string {
   lines.push(
     `| Seed \`seo.indexable=true\` (pre-policy) | ${s.previouslySeedIndexableCount} |`,
   );
-  lines.push(`| Factory product packs (inventory) | ${s.factoryPackCount} |`);
   lines.push(
-    `| High near-duplicate risk (content/semantic) | ${s.highNearDuplicateRiskCount} |`,
+    `| FACTORY_ORIGIN_TOTAL (inventory — not a quality KPI) | ${s.factoryKpis.originTotal} |`,
+  );
+  lines.push(`| FACTORY_HIGH_RISK | ${s.factoryKpis.highRisk} |`);
+  lines.push(`| FACTORY_LIMITED_UNIQUE | ${s.factoryKpis.limitedUnique} |`);
+  lines.push(`| FACTORY_QUALITY_PASS | ${s.factoryKpis.qualityPass} |`);
+  lines.push(`| FACTORY_INDEXABLE | ${s.factoryKpis.indexable} |`);
+  lines.push(`| FACTORY_IMPROVE | ${s.factoryKpis.improve} |`);
+  lines.push(
+    `| FACTORY_PROMOTED (promoted after remediation) | ${s.factoryKpis.promoted} |`,
   );
   lines.push(
-    `| Limited unique-analysis signals | ${s.limitedUniqueAnalysisCount} |`,
+    `| Estate high near-duplicate risk (all guides) | ${s.highNearDuplicateRiskCount} |`,
+  );
+  lines.push(
+    `| Estate limited unique-analysis (all guides) | ${s.limitedUniqueAnalysisCount} |`,
   );
   lines.push(`| Orphans (0 inbound estimate) | ${s.orphanCount} |`);
   lines.push(`| Near-orphans (1 inbound) | ${s.nearOrphanCount} |`);
@@ -66,6 +76,7 @@ export function formatGuidesAuditMarkdown(report: GuideAuditReport): string {
   lines.push("## Policy");
   lines.push("");
   lines.push(
+    "- **FACTORY_ORIGIN_TOTAL** is inventory/history (slug-class packs). It does **not** fall when those pages become excellent. Remediation KPIs are HIGH_RISK ↓, LIMITED_UNIQUE ↓, QUALITY_PASS ↑, INDEXABLE ↑, IMPROVE ↓.",
     "- **Factory product packs** → **IMPROVE** (TEMPLATE_HEAVY) — preserved; temporary noindex until enriched + promoted.",
   );
   lines.push(

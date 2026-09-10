@@ -1,10 +1,10 @@
 {
   "slug": "zapier",
-  "updatedAt": "2026-09-07T22:31:21.843Z",
+  "updatedAt": "2026-09-10T08:15:10.371Z",
   "version": "1.0.0",
   "fieldAudit": {
     "slug": "zapier",
-    "checkedAt": "2026-09-07T22:31:21.841Z",
+    "checkedAt": "2026-09-10T08:15:10.369Z",
     "items": [
       {
         "field": "name",
@@ -20,9 +20,9 @@
       },
       {
         "field": "canonical_vendor",
-        "status": "UNKNOWN",
-        "detail": "Company/vendor not documented",
-        "source": "none"
+        "status": "PASS",
+        "detail": "Vendor: Zapier, Inc.",
+        "source": "seed"
       },
       {
         "field": "category",
@@ -115,11 +115,11 @@
         "source": "enrichment"
       }
     ],
-    "passCount": 17,
+    "passCount": 18,
     "partialCount": 0,
     "missingCount": 0,
-    "unknownCount": 1,
-    "score": 94
+    "unknownCount": 0,
+    "score": 100
   },
   "decisionHub": {
     "whatItIs": "Zapier is a no-code automation platform (Zaps plus AI steps and a separate Agents add-on). Free includes 100 tasks. Pro is $19.99/mo billed annually ($29.99 monthly) with 750 tasks and a 14-day Pro trial. Team starts from 2,000 tasks — confirm live Team price. Agents are an add-on, not the Pro floor. Same ai-automation cluster as n8n — not an LLM-assistant peer of ChatGPT, and not an ai-agents builder peer of MindStudio (landscape only).",
@@ -140,11 +140,14 @@
       "Not a general LLM assistant (ChatGPT) and not a no-code agent studio (MindStudio) as the primary job"
     ],
     "coreCapabilities": [
+      "llm chat",
+      "writing assist",
+      "agent builder",
       "custom projects",
       "usage credits",
       "connectors",
-      "workflow automation",
-      "ai automation"
+      "data privacy",
+      "analytics reporting"
     ],
     "pricingSummary": "3 documented plans · 1 free · entry paid: Pro · trial documented on at least one plan",
     "keyTradeoffs": [
@@ -225,9 +228,7 @@
     ],
     "evidenceState": "Research/data-based (no completed hands-on test) · Latest verification/research signal: 2026-08-18T18:00:00.000Z · Editorial assessment: approved",
     "nextDecisionStep": "Compare against peers: Zapier vs n8n",
-    "missingSections": [
-      "canonical_vendor"
-    ]
+    "missingSections": []
   },
   "dependents": [
     {
@@ -407,13 +408,11 @@
     }
   ],
   "dependentsNeedingRefresh": [],
-  "remediation": [
-    "verify:canonical_vendor"
-  ],
+  "remediation": [],
   "notes": [
-    "fieldAudit score=94",
+    "fieldAudit score=100",
     "decisionHub bestFor=6 notIdeal=6",
     "dependents=35"
   ],
-  "materiallyImproved": false
+  "materiallyImproved": true
 }

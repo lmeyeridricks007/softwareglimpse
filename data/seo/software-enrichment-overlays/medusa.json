@@ -1,10 +1,10 @@
 {
   "slug": "medusa",
-  "updatedAt": "2026-09-07T22:31:21.983Z",
+  "updatedAt": "2026-09-10T11:46:30.208Z",
   "version": "1.0.0",
   "fieldAudit": {
     "slug": "medusa",
-    "checkedAt": "2026-09-07T22:31:21.982Z",
+    "checkedAt": "2026-09-10T11:46:30.207Z",
     "items": [
       {
         "field": "name",
@@ -20,9 +20,9 @@
       },
       {
         "field": "canonical_vendor",
-        "status": "UNKNOWN",
-        "detail": "Company/vendor not documented",
-        "source": "none"
+        "status": "PASS",
+        "detail": "Vendor: Medusa",
+        "source": "seed"
       },
       {
         "field": "category",
@@ -115,11 +115,11 @@
         "source": "enrichment"
       }
     ],
-    "passCount": 16,
+    "passCount": 17,
     "partialCount": 0,
     "missingCount": 0,
-    "unknownCount": 2,
-    "score": 89
+    "unknownCount": 1,
+    "score": 94
   },
   "decisionHub": {
     "whatItIs": "Medusa is a headless, JavaScript/TypeScript open-source commerce platform. MIT OSS self-host is free for production. Medusa Cloud (first-party): Develop from $29/mo, Launch from $99/mo (highlighted), Scale from $299/mo, Enterprise custom — no GMV percentage tax on published Cloud tiles. Landscape open-source peer — WooCommerce keeps the cluster award (8.1). Research grounded 2026-08-18 from medusajs.com/pricing.",
@@ -146,8 +146,8 @@
       "order management",
       "inventory management",
       "shipping fulfillment",
-      "analytics reporting",
-      "ai assistance"
+      "pos omnichannel",
+      "analytics reporting"
     ],
     "pricingSummary": "5 documented plans · 1 free · entry paid: Cloud Develop",
     "keyTradeoffs": [
@@ -233,7 +233,6 @@
     "evidenceState": "Research/data-based (no completed hands-on test) · Latest verification/research signal: 2026-08-18T16:00:00.000Z · Editorial assessment: approved",
     "nextDecisionStep": "Compare against peers: Saleor vs Medusa",
     "missingSections": [
-      "canonical_vendor",
       "trial"
     ]
   },
@@ -376,13 +375,12 @@
   ],
   "dependentsNeedingRefresh": [],
   "remediation": [
-    "verify:canonical_vendor",
     "verify:trial"
   ],
   "notes": [
-    "fieldAudit score=89",
+    "fieldAudit score=94",
     "decisionHub bestFor=6 notIdeal=6",
     "dependents=27"
   ],
-  "materiallyImproved": false
+  "materiallyImproved": true
 }

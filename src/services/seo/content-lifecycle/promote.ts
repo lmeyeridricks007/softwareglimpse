@@ -1,3 +1,6 @@
+import { evaluateComparisonQuality } from "@/domain/quality-evaluators";
+import { loadCompareEnrichmentOverlay } from "@/services/seo/compare-enrichment/overlay-store";
+import { mergeComparisonWithOverlay } from "@/services/seo/compare-enrichment/overlay-merge";
 import type { Comparison, GuidePage } from "@/domain/schemas";
 import { getComparisonBySlug } from "@/data";
 import { getGuideBySlug } from "@/data/repositories/guides";
@@ -238,6 +241,31 @@ export function canPromoteToIndexable(page: PromoteablePage): CanPromoteResult {
       detail: gate.detail,
       alreadyIndexable: false,
     };
+  }
+
+  if (page.kind === "comparison") {
+    let entity = page.entity;
+    try {
+      entity = mergeComparisonWithOverlay(
+        entity,
+        loadCompareEnrichmentOverlay(entity.slug),
+      );
+    } catch {
+      entity = page.entity;
+    }
+    const quality = evaluateComparisonQuality(entity);
+    if (!quality.ok) {
+      return {
+        ok: false,
+        kind,
+        slug,
+        lifecycle: "IMPROVE",
+        reasons: currentReasons(page),
+        remediation: remediationForReasons(currentReasons(page)),
+        detail: quality.failures.map((f) => `quality:${f}`),
+        alreadyIndexable: false,
+      };
+    }
   }
 
   const enforceLinkReadiness =

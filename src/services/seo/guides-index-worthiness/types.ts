@@ -14,7 +14,7 @@ import type {
   RemediationRequirement,
 } from "@/services/seo/content-lifecycle";
 
-export const GUIDES_INDEX_WORTHINESS_VERSION = "2.1.0";
+export const GUIDES_INDEX_WORTHINESS_VERSION = "2.2.0";
 
 export type GuideIndexClass =
   | "KEEP_INDEX"
@@ -135,6 +135,27 @@ export type GuideIndexEvaluation = {
   intentClusterId?: string | null;
 };
 
+/**
+ * Factory-origin inventory vs quality. Origin total is history — it does
+ * not fall when a pack becomes excellent. Remediation KPIs are the rest.
+ */
+export type FactoryRemediationKpis = {
+  /** FACTORY_ORIGIN_TOTAL — existing pages created from factory families. */
+  originTotal: number;
+  /** FACTORY_HIGH_RISK — factory-origin currently failing semantic uniqueness. */
+  highRisk: number;
+  /** FACTORY_LIMITED_UNIQUE — factory-origin lacking sufficient unique analysis. */
+  limitedUnique: number;
+  /** FACTORY_QUALITY_PASS — factory-origin passing the current quality gate. */
+  qualityPass: number;
+  /** FACTORY_INDEXABLE — factory-origin legitimately INDEXABLE. */
+  indexable: number;
+  /** FACTORY_IMPROVE — factory-origin still IMPROVE / IMPROVING. */
+  improve: number;
+  /** FACTORY_PROMOTED — factory-origin promoted after remediation (= INDEXABLE). */
+  promoted: number;
+};
+
 export type GuideAuditSummary = {
   total: number;
   byClass: Record<GuideIndexClass, number>;
@@ -158,12 +179,21 @@ export type GuideAuditSummary = {
   retiredCount: number;
   potentialIndexableAfterRemediation: number;
   previouslySeedIndexableCount: number;
-  /** Inventory: slug-class factory product packs (not a risk count). */
+  /**
+   * Inventory alias of `factoryKpis.originTotal`.
+   * Slug-class factory product packs — NOT a quality KPI. Do not treat
+   * a stable 1272 as remediation failure.
+   */
   factoryPackCount: number;
-  /** Content/semantic: pages with high-near-duplicate-risk reason. */
+  /** Estate-wide (factory + non-factory) high-near-duplicate-risk reason. */
   highNearDuplicateRiskCount: number;
-  /** Content/semantic: pages with limited-unique-analysis-signals reason. */
+  /** Estate-wide (factory + non-factory) limited-unique-analysis-signals. */
   limitedUniqueAnalysisCount: number;
+  /**
+   * Factory-origin remediation KPIs. Origin total is inventory/history.
+   * HIGH_RISK ↓, LIMITED_UNIQUE ↓, QUALITY_PASS ↑, INDEXABLE ↑, IMPROVE ↓.
+   */
+  factoryKpis: FactoryRemediationKpis;
   uniqueRatio: { p25: number; p50: number; p75: number };
   wordCount: { p25: number; p50: number; p75: number };
 };

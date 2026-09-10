@@ -1,10 +1,10 @@
 {
   "slug": "five9",
-  "updatedAt": "2026-09-07T22:31:21.472Z",
+  "updatedAt": "2026-09-10T11:46:30.067Z",
   "version": "1.0.0",
   "fieldAudit": {
     "slug": "five9",
-    "checkedAt": "2026-09-07T22:31:21.471Z",
+    "checkedAt": "2026-09-10T11:46:30.063Z",
     "items": [
       {
         "field": "name",
@@ -20,9 +20,9 @@
       },
       {
         "field": "canonical_vendor",
-        "status": "UNKNOWN",
-        "detail": "Company/vendor not documented",
-        "source": "none"
+        "status": "PASS",
+        "detail": "Vendor: Five9, Inc.",
+        "source": "seed"
       },
       {
         "field": "category",
@@ -115,11 +115,11 @@
         "source": "enrichment"
       }
     ],
-    "passCount": 16,
+    "passCount": 17,
     "partialCount": 0,
     "missingCount": 0,
-    "unknownCount": 2,
-    "score": 89
+    "unknownCount": 1,
+    "score": 94
   },
   "decisionHub": {
     "whatItIs": "Five9 is a cloud contact center platform known for blended inbound/outbound voice, dialer strength and concurrent-seat packaging. First-party pricing on five9.com/products/pricing (checked 2026-08-17) publishes Digital $119 and Core $159 per concurrent seat/month USD, with Plus/Pro/Enterprise contact-sales; a 50-seat minimum and usage-based AI/SMS charges apply. Scored as CCaaS — landscape award only; do not rank as a phone-system peer.",
@@ -144,9 +144,9 @@
       "call recording",
       "power dialer",
       "sms messaging",
+      "whatsapp business",
       "shared inbox",
-      "crm cti",
-      "analytics reporting"
+      "video meetings"
     ],
     "pricingSummary": "5 documented plans · entry paid: Digital",
     "keyTradeoffs": [
@@ -245,7 +245,6 @@
     "evidenceState": "Research/data-based (no completed hands-on test) · Latest verification/research signal: 2026-08-17T20:00:00.000Z · Editorial assessment: approved",
     "nextDecisionStep": "Compare against peers: Five9 vs Talkdesk",
     "missingSections": [
-      "canonical_vendor",
       "trial"
     ]
   },
@@ -413,13 +412,12 @@
   ],
   "dependentsNeedingRefresh": [],
   "remediation": [
-    "verify:canonical_vendor",
     "verify:trial"
   ],
   "notes": [
-    "fieldAudit score=89",
+    "fieldAudit score=94",
     "decisionHub bestFor=5 notIdeal=6",
     "dependents=32"
   ],
-  "materiallyImproved": false
+  "materiallyImproved": true
 }

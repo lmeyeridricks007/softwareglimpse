@@ -1,10 +1,10 @@
 {
   "slug": "microsoft-copilot",
-  "updatedAt": "2026-09-07T22:31:21.761Z",
+  "updatedAt": "2026-09-10T08:15:10.338Z",
   "version": "1.0.0",
   "fieldAudit": {
     "slug": "microsoft-copilot",
-    "checkedAt": "2026-09-07T22:31:21.759Z",
+    "checkedAt": "2026-09-10T08:15:10.337Z",
     "items": [
       {
         "field": "name",
@@ -20,9 +20,9 @@
       },
       {
         "field": "canonical_vendor",
-        "status": "UNKNOWN",
-        "detail": "Company/vendor not documented",
-        "source": "none"
+        "status": "PASS",
+        "detail": "Vendor: Microsoft",
+        "source": "seed"
       },
       {
         "field": "category",
@@ -115,11 +115,11 @@
         "source": "enrichment"
       }
     ],
-    "passCount": 16,
+    "passCount": 17,
     "partialCount": 0,
     "missingCount": 0,
-    "unknownCount": 2,
-    "score": 89
+    "unknownCount": 1,
+    "score": 94
   },
   "decisionHub": {
     "whatItIs": "Microsoft 365 Copilot is Microsoft’s workspace LLM assistant inside Word, Excel, PowerPoint, Outlook, Teams, and Copilot Chat, grounded in Microsoft Graph tenant data. It is an add-on: Copilot Business lists from $21/user/mo on annual billing (promo windows may be lower); Enterprise Copilot is $30/user/mo annual ($31.50 monthly) and requires a qualifying Microsoft 365 plan. Bundles such as Business Standard with Copilot (~$23.50/user/mo annual) combine base suite + Copilot. Distinct from GitHub Copilot, which is an AI coding product.",
@@ -144,10 +144,10 @@
       "reasoning models",
       "writing assist",
       "image generation",
-      "custom projects",
-      "enterprise admin",
-      "usage credits",
-      "connectors"
+      "voice tts",
+      "presentation generation",
+      "agent builder",
+      "custom projects"
     ],
     "pricingSummary": "3 documented plans · entry paid: Copilot Business (add-on)",
     "keyTradeoffs": [
@@ -237,7 +237,6 @@
     "evidenceState": "Research/data-based (no completed hands-on test) · Latest verification/research signal: 2026-08-18T12:00:00.000Z · Editorial assessment: approved",
     "nextDecisionStep": "Compare against peers: Microsoft 365 Copilot vs ChatGPT",
     "missingSections": [
-      "canonical_vendor",
       "trial"
     ]
   },
@@ -415,13 +414,12 @@
   ],
   "dependentsNeedingRefresh": [],
   "remediation": [
-    "verify:canonical_vendor",
     "verify:trial"
   ],
   "notes": [
-    "fieldAudit score=89",
+    "fieldAudit score=94",
     "decisionHub bestFor=6 notIdeal=6",
     "dependents=34"
   ],
-  "materiallyImproved": false
+  "materiallyImproved": true
 }

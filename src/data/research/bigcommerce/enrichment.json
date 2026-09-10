@@ -185,36 +185,6 @@
       ]
     }
   ],
-  "aiCapabilities": [
-    {
-      "capability": "assistant",
-      "availability": "limited",
-      "sourceIds": [
-        "bigcommerce-product-official"
-      ]
-    },
-    {
-      "capability": "summaries",
-      "availability": "limited",
-      "sourceIds": [
-        "bigcommerce-product-official"
-      ]
-    },
-    {
-      "capability": "automation",
-      "availability": "limited",
-      "sourceIds": [
-        "bigcommerce-product-official"
-      ]
-    },
-    {
-      "capability": "recommendations",
-      "availability": "limited",
-      "sourceIds": [
-        "bigcommerce-product-official"
-      ]
-    }
-  ],
   "integrationSupport": [
     {
       "integrationSlug": "paypal",
@@ -240,6 +210,36 @@
     {
       "integrationSlug": "zapier",
       "kind": "zapier-style",
+      "sourceIds": [
+        "bigcommerce-product-official"
+      ]
+    }
+  ],
+  "aiCapabilities": [
+    {
+      "capability": "assistant",
+      "availability": "limited",
+      "sourceIds": [
+        "bigcommerce-product-official"
+      ]
+    },
+    {
+      "capability": "summaries",
+      "availability": "limited",
+      "sourceIds": [
+        "bigcommerce-product-official"
+      ]
+    },
+    {
+      "capability": "automation",
+      "availability": "limited",
+      "sourceIds": [
+        "bigcommerce-product-official"
+      ]
+    },
+    {
+      "capability": "recommendations",
+      "availability": "limited",
       "sourceIds": [
         "bigcommerce-product-official"
       ]
@@ -315,113 +315,6 @@
       "isEditorial": false
     }
   ],
-  "pricing": {
-    "currency": "USD",
-    "model": "hybrid",
-    "hasFreePlan": false,
-    "hasFreeTrial": true,
-    "plans": [
-      {
-        "id": "plan-core",
-        "slug": "core",
-        "name": "Core",
-        "isFree": false,
-        "contactSales": false,
-        "hasFreeTrial": true,
-        "trialDays": 15,
-        "highlighted": false,
-        "rules": [
-          {
-            "kind": "flat",
-            "amount": 29,
-            "currency": "USD",
-            "interval": "year",
-            "amountPeriod": "month"
-          },
-          {
-            "kind": "flat",
-            "amount": 39,
-            "currency": "USD",
-            "interval": "month",
-            "amountPeriod": "month"
-          }
-        ],
-        "description": "$29/mo annual ($39 monthly). Up to published GMV threshold."
-      },
-      {
-        "id": "plan-growth",
-        "slug": "growth",
-        "name": "Growth",
-        "isFree": false,
-        "contactSales": false,
-        "hasFreeTrial": true,
-        "trialDays": 15,
-        "highlighted": true,
-        "rules": [
-          {
-            "kind": "flat",
-            "amount": 79,
-            "currency": "USD",
-            "interval": "year",
-            "amountPeriod": "month"
-          },
-          {
-            "kind": "flat",
-            "amount": 105,
-            "currency": "USD",
-            "interval": "month",
-            "amountPeriod": "month"
-          }
-        ],
-        "description": "$79/mo annual ($105 monthly). Mid-market feature depth."
-      },
-      {
-        "id": "plan-scale",
-        "slug": "scale",
-        "name": "Scale",
-        "isFree": false,
-        "contactSales": false,
-        "hasFreeTrial": true,
-        "trialDays": 15,
-        "highlighted": false,
-        "rules": [
-          {
-            "kind": "flat",
-            "amount": 299,
-            "currency": "USD",
-            "interval": "year",
-            "amountPeriod": "month"
-          },
-          {
-            "kind": "flat",
-            "amount": 399,
-            "currency": "USD",
-            "interval": "month",
-            "amountPeriod": "month"
-          }
-        ],
-        "description": "$299/mo annual ($399 monthly). High-volume with overage mechanics."
-      },
-      {
-        "id": "plan-performance",
-        "slug": "performance",
-        "name": "Performance",
-        "isFree": false,
-        "contactSales": true,
-        "hasFreeTrial": false,
-        "highlighted": false,
-        "rules": [],
-        "description": "From $1,499/mo billed annually — enterprise multi-storefront."
-      }
-    ],
-    "notes": "Verified 2026-08-18 from bigcommerce.com/pricing and support docs (high confidence for list prices; medium for GMV/OPP fee mechanics). Core/Growth/Scale monthly and annual floors match Shopify list tiers; Performance from $1,499/mo annual. Trailing-12-month GMV thresholds auto-upgrade plans. Open Payment Provider fee up to 2.0%/1.0%/0.6% on eligible third-party gateway volume for Core/Growth/Scale — confirm billing cycle migration. Affiliate economics excluded.",
-    "verifiedAt": "2026-08-18T12:00:00.000Z",
-    "sourceIds": [
-      "bigcommerce-pricing-official"
-    ],
-    "startingPriceMonthly": 39,
-    "trialDays": 15
-  },
   "screenshots": [
     {
       "id": "bigcommerce-shot-dashboard-collage",
@@ -554,13 +447,13 @@
       "demonstratedDimensionIds": [],
       "requirementCriterionIds": [],
       "workflowStageIds": [],
+      "mediaContext": "general-workflow",
       "reportedOutcomes": [],
       "placements": [
         "overview",
         "features",
         "evidence"
       ],
-      "mediaContext": "general-workflow",
       "purpose": "Official BigCommerce video for product research pages",
       "demonstratesCaption": "How BigCommerce presents the product in an official vendor video.",
       "editorialCommentary": "Official vendor demo — treat as UI/workflow evidence, not SoftwareGlimpse scoring.",
@@ -578,11 +471,113 @@
       "status": "published"
     }
   ],
-  "sourceIds": [
-    "bigcommerce-product-official",
-    "bigcommerce-pricing-official"
-  ],
-  "notes": "Ecommerce Wave-1 onboarding enrichment from first-party research 2026-08-18T12:00:00.000Z. handsOnTesting=false. membershipRole=primary. jobCluster=saas-platform.",
+  "pricing": {
+    "currency": "USD",
+    "model": "hybrid",
+    "hasFreePlan": false,
+    "hasFreeTrial": true,
+    "plans": [
+      {
+        "id": "plan-core",
+        "slug": "core",
+        "name": "Core",
+        "isFree": false,
+        "contactSales": false,
+        "hasFreeTrial": true,
+        "trialDays": 15,
+        "highlighted": false,
+        "rules": [
+          {
+            "kind": "flat",
+            "amount": 29,
+            "currency": "USD",
+            "interval": "year",
+            "amountPeriod": "month"
+          },
+          {
+            "kind": "flat",
+            "amount": 39,
+            "currency": "USD",
+            "interval": "month",
+            "amountPeriod": "month"
+          }
+        ],
+        "description": "$29/mo annual ($39 monthly). Up to published GMV threshold."
+      },
+      {
+        "id": "plan-growth",
+        "slug": "growth",
+        "name": "Growth",
+        "isFree": false,
+        "contactSales": false,
+        "hasFreeTrial": true,
+        "trialDays": 15,
+        "highlighted": true,
+        "rules": [
+          {
+            "kind": "flat",
+            "amount": 79,
+            "currency": "USD",
+            "interval": "year",
+            "amountPeriod": "month"
+          },
+          {
+            "kind": "flat",
+            "amount": 105,
+            "currency": "USD",
+            "interval": "month",
+            "amountPeriod": "month"
+          }
+        ],
+        "description": "$79/mo annual ($105 monthly). Mid-market feature depth."
+      },
+      {
+        "id": "plan-scale",
+        "slug": "scale",
+        "name": "Scale",
+        "isFree": false,
+        "contactSales": false,
+        "hasFreeTrial": true,
+        "trialDays": 15,
+        "highlighted": false,
+        "rules": [
+          {
+            "kind": "flat",
+            "amount": 299,
+            "currency": "USD",
+            "interval": "year",
+            "amountPeriod": "month"
+          },
+          {
+            "kind": "flat",
+            "amount": 399,
+            "currency": "USD",
+            "interval": "month",
+            "amountPeriod": "month"
+          }
+        ],
+        "description": "$299/mo annual ($399 monthly). High-volume with overage mechanics."
+      },
+      {
+        "id": "plan-performance",
+        "slug": "performance",
+        "name": "Performance",
+        "isFree": false,
+        "contactSales": true,
+        "hasFreeTrial": false,
+        "highlighted": false,
+        "rules": [],
+        "description": "From $1,499/mo billed annually — enterprise multi-storefront."
+      }
+    ],
+    "notes": "Verified 2026-08-18 from bigcommerce.com/pricing and support docs (high confidence for list prices; medium for GMV/OPP fee mechanics). Core/Growth/Scale monthly and annual floors match Shopify list tiers; Performance from $1,499/mo annual. Trailing-12-month GMV thresholds auto-upgrade plans. Open Payment Provider fee up to 2.0%/1.0%/0.6% on eligible third-party gateway volume for Core/Growth/Scale — confirm billing cycle migration. Affiliate economics excluded.",
+    "verifiedAt": "2026-09-10T11:38:04.147Z",
+    "sourceIds": [
+      "bigcommerce-pricing-official"
+    ],
+    "startingPriceMonthly": 39,
+    "trialDays": 15
+  },
   "domainCheckedAt": {
     "identity": "2026-08-18T12:00:00.000Z",
     "pricing": "2026-08-18T12:00:00.000Z",
@@ -596,5 +591,10 @@
     "limits": "2026-08-18T12:00:00.000Z",
     "security-compliance": "2026-08-18T12:00:00.000Z"
   },
-  "updatedAt": "2026-08-18T08:00:00.000Z"
+  "sourceIds": [
+    "bigcommerce-product-official",
+    "bigcommerce-pricing-official"
+  ],
+  "updatedAt": "2026-08-18T08:00:00.000Z",
+  "notes": "Ecommerce Wave-1 onboarding enrichment from first-party research 2026-08-18T12:00:00.000Z. handsOnTesting=false. membershipRole=primary. jobCluster=saas-platform."
 }

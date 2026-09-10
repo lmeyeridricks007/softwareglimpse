@@ -16,6 +16,8 @@ export const BANNED_HANDS_ON_LANGUAGE: Array<{ pattern: RegExp; label: string }>
   { pattern: /\bour experience\b/i, label: "Our experience" },
   { pattern: /\bduring testing\b/i, label: "During testing" },
   { pattern: /\bin our testing\b/i, label: "in our testing" },
+  { pattern: /\bour testing found\b/i, label: "our testing found" },
+  { pattern: /\bwe used the product\b/i, label: "we used the product" },
   { pattern: /\bwhen we used\b/i, label: "when we used" },
   { pattern: /\bour team used\b/i, label: "our team used" },
   { pattern: /\bwe tried\b/i, label: "we tried" },

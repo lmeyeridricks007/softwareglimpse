@@ -1,10 +1,10 @@
 {
   "slug": "shipbob",
-  "updatedAt": "2026-09-07T22:31:22.061Z",
+  "updatedAt": "2026-09-10T11:46:30.451Z",
   "version": "1.0.0",
   "fieldAudit": {
     "slug": "shipbob",
-    "checkedAt": "2026-09-07T22:31:22.060Z",
+    "checkedAt": "2026-09-10T11:46:30.450Z",
     "items": [
       {
         "field": "name",
@@ -20,9 +20,9 @@
       },
       {
         "field": "canonical_vendor",
-        "status": "UNKNOWN",
-        "detail": "Company/vendor not documented",
-        "source": "none"
+        "status": "PASS",
+        "detail": "Vendor: ShipBob, Inc.",
+        "source": "seed"
       },
       {
         "field": "category",
@@ -115,11 +115,11 @@
         "source": "enrichment"
       }
     ],
-    "passCount": 16,
+    "passCount": 17,
     "partialCount": 0,
     "missingCount": 0,
-    "unknownCount": 2,
-    "score": 89
+    "unknownCount": 1,
+    "score": 94
   },
   "decisionHub": {
     "whatItIs": "ShipBob is a third-party logistics (3PL) fulfillment network for ecommerce brands — pick/pack, warehousing, receiving, returns, and carrier shipping across US and international nodes. Pricing is quote-based (2026-08-19): receiving, bin/shelf/pallet storage, per-order pick/pack, and pass-through shipping — no universal public rate card. Merchant-reported floors include roughly $275/month minimum spend and ~$2.50–$3.50 pick/pack per order before packaging and carrier costs. Requires an existing storefront (Shopify, BigCommerce, WooCommerce, etc.). Same fulfillment-adjacent cluster as Printful/Spocket — Spocket keeps the dropshipping-sourcing award for supplier import.",
@@ -140,12 +140,14 @@
       "Quote-based pricing with ~$275/mo minimum reported — opaque until sales conversation"
     ],
     "coreCapabilities": [
+      "product catalog",
       "order management",
       "inventory management",
       "shipping fulfillment",
+      "marketplace channels",
+      "b2b wholesale",
       "analytics reporting",
-      "app extensions",
-      "order fulfillment"
+      "ai assistance"
     ],
     "pricingSummary": "3 documented plans · entry paid: Fulfillment (Quote)",
     "keyTradeoffs": [
@@ -212,7 +214,6 @@
     "evidenceState": "Research/data-based (no completed hands-on test) · Latest verification/research signal: 2026-08-19T12:00:00.000Z · Editorial assessment: approved",
     "nextDecisionStep": "Compare against peers: ShipBob vs Spocket",
     "missingSections": [
-      "canonical_vendor",
       "trial"
     ]
   },
@@ -280,13 +281,12 @@
   ],
   "dependentsNeedingRefresh": [],
   "remediation": [
-    "verify:canonical_vendor",
     "verify:trial"
   ],
   "notes": [
-    "fieldAudit score=89",
+    "fieldAudit score=94",
     "decisionHub bestFor=6 notIdeal=6",
     "dependents=12"
   ],
-  "materiallyImproved": false
+  "materiallyImproved": true
 }

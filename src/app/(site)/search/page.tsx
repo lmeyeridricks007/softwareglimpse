@@ -17,6 +17,9 @@ import { CURATED_TRY_QUERIES } from "@/services/search/curated-queries";
 import { buildPageMetadataFromDecision } from "@/seo/metadata";
 import { indexabilityForUtility } from "@/seo/indexability";
 
+/** Cache the empty hub; queried searches still run the in-memory index. */
+export const revalidate = 3600;
+
 export const metadata: Metadata = buildPageMetadataFromDecision({
   title: "Search SoftwareGlimpse",
   description:
@@ -43,9 +46,9 @@ export default async function SearchPage({
   const params = await searchParams;
   const query = (params.q ?? "").trim();
   const type = parseType(params.type);
-  const hub = buildDiscoveryHub();
 
   if (!query) {
+    const hub = buildDiscoveryHub();
     return (
       <div className="mx-auto w-full max-w-[var(--sg-container-wide)] px-4 py-8 sm:px-6">
         <SearchHero tryQueries={[...CURATED_TRY_QUERIES].slice(0, 5)} tryLabel="Try" />

@@ -1,0 +1,185 @@
+{
+  "slug": "appdynamics-setup",
+  "enrichmentType": "IMPLEMENTATION_GUIDE",
+  "updatedAt": "2026-09-10T12:49:58.861Z",
+  "uniqueValueAdded": [
+    "implementation_workflow",
+    "scenario_analysis",
+    "decision_framework",
+    "limitations_evidence",
+    "buyer_checklist"
+  ],
+  "patch": {
+    "summary": "incident management; infrastructure monitoring; APM and distributed tracing; log management. Aws, Azure, Slack. Cisco-aligned estates that will model vCPU Premium list price (not list price infra-only) as APM TCO; APM buyers comparing AppDynamics to Dynatrace DPS and Datadog modules; Teams already in a Cisco EA who will not self-serve Datadog tiles. AppDynamics is Cisco’s application-performance and observability platform (APM, infra, business iQ). Observability Cloud-style public list: Infrastructure from about list price/vCP Buyer question: for incident management teams, is AppDynamics worth the paid tier unlock, or does Does not outrank Datadog (8.6) kill the rollout? ROI gate: AppDynamics is worth the paid tier spend if incident management + infrastructure monitoring are weekly; not worth buying when Does not outrank Datadog (8.6).",
+    "blocks": [
+      {
+        "id": "da-appdynamics-setup-1",
+        "type": "direct-answer",
+        "body": "incident management decides whether AppDynamics setup is a one-team pilot or a specialist project — confirm unlocks for must-have capabilities before invites.",
+        "bullets": [
+          "Start with: incident management",
+          "Gate check: confirm paid unlocks before go-live",
+          "Integrate after: data quality pass on Aws"
+        ]
+      },
+      {
+        "id": "impl-appdynamics-setup-2",
+        "type": "step",
+        "heading": "AppDynamics day-zero to steady-state sequence",
+        "body": "Treat AppDynamics setup as a controlled rollout — not a weekend dump of CSV files.",
+        "stepNumber": 1,
+        "scenarios": [
+          {
+            "title": "Day zero — objects and owners",
+            "body": "Define owners for incident management, infrastructure monitoring, APM and distributed tracing before inviting the whole org."
+          },
+          {
+            "title": "SMB pilot",
+            "body": "One pipeline / one team proves Cisco-aligned estates that will model vCPU Premium list price (not list price infra-only) as APM TCO before company-wide seats."
+          },
+          {
+            "title": "Cutover",
+            "body": "Freeze legacy writes briefly; validate Aws and Azure before reopen."
+          }
+        ]
+      },
+      {
+        "id": "df-appdynamics-setup-3",
+        "type": "decision-framework",
+        "title": "AppDynamics implementation go / no-go",
+        "steps": [
+          {
+            "id": "i-1",
+            "label": "Go when plan unlocks cover must-have capabilities"
+          },
+          {
+            "id": "i-2",
+            "label": "Pause if this limitation blocks ops: Does not outrank Datadog (8.6)"
+          },
+          {
+            "id": "i-3",
+            "label": "Do not expand seats until incident management is green"
+          }
+        ]
+      },
+      {
+        "id": "mist-appdynamics-setup-4",
+        "type": "mistakes",
+        "title": "AppDynamics implementation mistakes",
+        "items": [
+          {
+            "title": "Mistake 1",
+            "body": "Does not outrank Datadog (8.6)"
+          },
+          {
+            "title": "Mistake 2",
+            "body": "list price/vCPU Infrastructure is not the APM-relevant floor — Premium list price is"
+          },
+          {
+            "title": "Mistake 3",
+            "body": "Cisco EA quotes often replace public vCPU tiles"
+          },
+          {
+            "title": "Mistake 4",
+            "body": "Medium pricing confidence versus Datadog’s published host SKU"
+          },
+          {
+            "title": "Big-bang invite",
+            "body": "Inviting every user before object design creates junk data that is expensive to unwind."
+          }
+        ]
+      },
+      {
+        "id": "sel-appdynamics-setup-5",
+        "type": "selection-checklist",
+        "title": "AppDynamics implementation checklist",
+        "dimensions": [
+          {
+            "id": "prep",
+            "label": "Prep",
+            "options": [
+              "Object model drafted",
+              "Owners named",
+              "Legacy freeze window set"
+            ]
+          },
+          {
+            "id": "pilot",
+            "label": "Pilot",
+            "options": [
+              "incident management",
+              "Junk-data rules set",
+              "Support path clear"
+            ]
+          },
+          {
+            "id": "scale",
+            "label": "Scale",
+            "options": [
+              "Aws",
+              "Seat expansion criteria written",
+              "Rollback plan noted"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "cta-appdynamics-setup-6",
+        "type": "interactive-cta",
+        "title": "Validate it-development fit before a deep AppDynamics rollout",
+        "body": "If AppDynamics fails constraint fit, stop implementation early.",
+        "href": "/tools/it-development-finder/",
+        "ctaLabel": "Open Finder",
+        "variant": "finder"
+      }
+    ],
+    "sections": [
+      {
+        "id": "sec-thesis-appdynamics-setup",
+        "heading": "AppDynamics buyer question and thesis",
+        "body": "incident management; infrastructure monitoring; APM and distributed tracing; log management. Aws, Azure, Slack. Cisco-aligned estates that will model vCPU Premium list price (not list price infra-only) as APM TCO; APM buyers comparing AppDynamics to Dynatrace DPS and Datadog modules; Teams already in a Cisco EA who will not self-serve Datadog tiles. AppDynamics is Cisco’s application-performance and observability platform (APM, infra, business iQ). Observability Cloud-style public list: Infrastructure from about list price/vCP. That catalogue mix is the AppDynamics setup filter — not a generic it-development lecture.\n\nBuyer question: for incident management teams, is AppDynamics worth the paid tier unlock, or does Does not outrank Datadog (8.6) kill the rollout?\n\nROI gate: AppDynamics is worth the paid tier spend if incident management + infrastructure monitoring are weekly; not worth buying when Does not outrank Datadog (8.6).\n\nBest for: Cisco-aligned estates that will model vCPU Premium list price (not list price infra-only) as APM TCO; APM buyers comparing AppDynamics to Dynatrace DPS and Datadog modules; Teams already in a Cisco EA who will not self-serve Datadog tiles (Cisco-aligned estates that will model vCPU Premium list price (not list price infra-only) as APM TCO).\n\nPoor fit when: SMBs that need Datadog’s published list price/host Infrastructure Pro tile; High-cardinality event specialists (Honeycomb); ITSM or on-call-only purchases. Avoid if Does not outrank Datadog (8.6) would block go-live."
+      },
+      {
+        "id": "sec-limits-appdynamics-setup",
+        "heading": "AppDynamics limitation, pricing interpretation, and alternative context",
+        "body": "Limitation: Does not outrank Datadog (8.6); list price/vCPU Infrastructure is not the APM-relevant floor — Premium list price is; Cisco EA quotes often replace public vCPU tiles because it forces process changes or add-ons around AppDynamics when incident management is the job.\n\nPricing interpretation: no free plan confirmed — scope a paid pilot on paid tier with exit criteria before annual seats.\n\nPlan trade-off: you gain incident management at the expense of Per-agent vs per-host vs per-seat vs per-GB pricing models — measure both in the pilot.\n\nAlternative context: unlike Datadog, AppDynamics is preferable when Cisco-aligned estates that will model vCPU Premium list price (not list price infra-only) as APM TCO because incident management plus incident management match; prefer Datadog when SMBs that need Datadog’s published list price/host Infrastructure Pro tile because the operating loops differ."
+      },
+      {
+        "id": "sec-scenario-appdynamics-setup",
+        "heading": "Decision scenario and conclusion for AppDynamics",
+        "body": "Workflow advantage: AppDynamics is faster for incident management when incident management; infrastructure monitoring; APM and distributed tracing; log management is in-product; skip when Does not outrank Datadog (8.6) because that loop lives elsewhere.\n\nImplementation complexity: setup requires confirming incident management ownership and Aws before rollout — do not scale seats first.\n\nIntegrations in research: Aws, Azure, Slack.\n\nConclusion: AppDynamics is worth it if Cisco-aligned estates that will model vCPU Premium list price (not list price infra-only) as APM TCO and incident management are weekly; skip AppDynamics if SMBs that need Datadog’s published list price/host Infrastructure Pro tile. That is the decision, not a template with the logo swapped."
+      }
+    ],
+    "checklist": [
+      {
+        "id": "enrich-chk-0",
+        "label": "Draft AppDynamics object owners before invites",
+        "order": 0
+      },
+      {
+        "id": "enrich-chk-1",
+        "label": "Confirm plan unlocks for go-live features",
+        "order": 1
+      },
+      {
+        "id": "enrich-chk-2",
+        "label": "Pilot one team on incident management",
+        "order": 2
+      },
+      {
+        "id": "enrich-chk-3",
+        "label": "If blocked, evaluate Datadog before sunk-cost expansion",
+        "order": 3
+      }
+    ],
+    "nextAction": {
+      "contentId": "tool:finder:it-development",
+      "label": "Open Finder shortlist"
+    }
+  },
+  "notes": [
+    "Omit unsupported: plan_structure, testing_evidence",
+    "Implementation: workflow, constraints, mistakes, checklist.",
+    "Type-specific skeleton: IMPLEMENTATION_GUIDE"
+  ]
+}

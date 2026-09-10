@@ -20,7 +20,7 @@ import {
   reconcileDataVerifiedCoverage,
 } from "@/services/editorial/pricing-verified-at";
 import { buildProductTestingQueue } from "@/services/product-testing/queue";
-import { runEvidenceQuality } from "@/services/seo/evidence-quality";
+import { pickPricingSources, runEvidenceQuality } from "@/services/seo/evidence-quality";
 import { listSoftwareDependents } from "@/services/seo/software-enrichment/dependents";
 import { runSoftwareEnrichmentBatch } from "@/services/seo/software-enrichment";
 import { assertPricingConsistency } from "@/services/price-change-monitor/consistency";
@@ -53,7 +53,9 @@ function argValue(args: string[], name: string): string | undefined {
   return undefined;
 }
 
-/** Skip slugs that already failed live verify in a saved pack (retry later). */
+import { pickPricingSources } from "@/services/seo/evidence-quality";
+
+/** Skip slugs with no remaining unblocked first-party pricing/docs URL. */
 function recentlyFailedLive(slug: string): boolean {
   const packPath = path.join(ROOT, "data/seo/evidence-packs", `${slug}.json`);
   if (!existsSync(packPath)) return false;
@@ -63,17 +65,19 @@ function recentlyFailedLive(slug: string): boolean {
     ) as ProductEvidencePack;
     const v = pack.pricingVerification;
     if (!v?.attempted || v.verified) return false;
-    // Hard blocks — do not burn the wave re-hitting the same walls.
     const reason = v.rejectReason ?? "";
-    return (
+    const hard =
       reason.startsWith("http_403") ||
       reason.startsWith("http_401") ||
       reason.startsWith("http_404") ||
+      reason.startsWith("http_429") ||
       reason.startsWith("plan_hit_ratio") ||
       reason.startsWith("fetch_failed") ||
       reason === "no_pricing_source_url" ||
-      reason === "no_enrichment_plans"
-    );
+      reason === "no_enrichment_plans";
+    if (!hard) return false;
+    // Retry only when a different host/docs URL remains after skip rules.
+    return pickPricingSources(slug, 4).length === 0;
   } catch {
     return false;
   }

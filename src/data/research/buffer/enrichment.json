@@ -171,6 +171,29 @@
       ]
     }
   ],
+  "integrationSupport": [
+    {
+      "integrationSlug": "canva",
+      "kind": "native",
+      "sourceIds": [
+        "buffer-product-official"
+      ]
+    },
+    {
+      "integrationSlug": "zapier",
+      "kind": "zapier-style",
+      "sourceIds": [
+        "buffer-product-official"
+      ]
+    },
+    {
+      "integrationSlug": "wordpress",
+      "kind": "native",
+      "sourceIds": [
+        "buffer-product-official"
+      ]
+    }
+  ],
   "aiCapabilities": [
     {
       "capability": "email-generation",
@@ -202,32 +225,9 @@
       ]
     }
   ],
-  "integrationSupport": [
-    {
-      "integrationSlug": "canva",
-      "kind": "native",
-      "sourceIds": [
-        "buffer-product-official"
-      ]
-    },
-    {
-      "integrationSlug": "zapier",
-      "kind": "zapier-style",
-      "sourceIds": [
-        "buffer-product-official"
-      ]
-    },
-    {
-      "integrationSlug": "wordpress",
-      "kind": "native",
-      "sourceIds": [
-        "buffer-product-official"
-      ]
-    }
-  ],
   "vendorPositioning": [
     {
-      "claim": "Simpler social media tools for busy people \u2014 publish, analyze, and engage without enterprise social suite complexity.",
+      "claim": "Simpler social media tools for busy people — publish, analyze, and engage without enterprise social suite complexity.",
       "audienceHints": [
         "SMBs and creators needing simple social scheduling",
         "Teams wanting affordable per-channel publishing with analytics",
@@ -288,7 +288,7 @@
     },
     {
       "kind": "other",
-      "description": "Paid pricing is per channel \u2014 multi-brand stacks add up",
+      "description": "Paid pricing is per channel — multi-brand stacks add up",
       "sourceIds": [
         "buffer-product-official"
       ],
@@ -303,84 +303,6 @@
       "isEditorial": false
     }
   ],
-  "pricing": {
-    "currency": "USD",
-    "model": "freemium",
-    "hasFreePlan": true,
-    "hasFreeTrial": true,
-    "plans": [
-      {
-        "id": "plan-free",
-        "slug": "free",
-        "name": "Free",
-        "isFree": true,
-        "contactSales": false,
-        "hasFreeTrial": false,
-        "highlighted": false,
-        "rules": [
-          {
-            "kind": "flat",
-            "amount": 0,
-            "currency": "USD",
-            "interval": "month",
-            "amountPeriod": "month"
-          }
-        ],
-        "description": "Free: up to 3 channels, 10 scheduled posts per channel.",
-        "limits": {
-          "maxChannels": 3,
-          "maxScheduledPostsPerChannel": 10
-        }
-      },
-      {
-        "id": "plan-essentials",
-        "slug": "essentials",
-        "name": "Essentials",
-        "isFree": false,
-        "contactSales": false,
-        "hasFreeTrial": true,
-        "trialDays": 14,
-        "highlighted": true,
-        "rules": [
-          {
-            "kind": "flat",
-            "amount": 6,
-            "currency": "USD",
-            "interval": "month",
-            "amountPeriod": "month"
-          }
-        ],
-        "description": "From $6/mo per channel (1\u201310 channels); unlimited scheduling."
-      },
-      {
-        "id": "plan-team",
-        "slug": "team",
-        "name": "Team",
-        "isFree": false,
-        "contactSales": false,
-        "hasFreeTrial": true,
-        "trialDays": 14,
-        "highlighted": false,
-        "rules": [
-          {
-            "kind": "flat",
-            "amount": 12,
-            "currency": "USD",
-            "interval": "month",
-            "amountPeriod": "month"
-          }
-        ],
-        "description": "From $12/mo per channel \u2014 unlimited users, approvals, access controls."
-      }
-    ],
-    "notes": "Verified 2026-08-17 from buffer.com/pricing. Free: \u22643 channels, 10 scheduled posts/channel. Essentials from $6/channel/mo (1\u201310 channels); Team from $12/channel/mo. Volume discounts at 11+ channels. Yearly ~20% off. Nonprofit 50% discount marketed. Confirm live calculator.",
-    "verifiedAt": "2026-08-17T17:00:00.000Z",
-    "sourceIds": [
-      "buffer-pricing-official"
-    ],
-    "startingPriceMonthly": 6,
-    "trialDays": 14
-  },
   "screenshots": [
     {
       "id": "buffer-shot-composer",
@@ -391,7 +313,8 @@
       "checkedAt": "2026-08-17T17:00:00.000Z",
       "annotation": "Official Buffer marketing UI asset",
       "kind": "vendor-ui",
-      "featureIds": []
+      "featureIds": [],
+      "useCaseIds": []
     },
     {
       "id": "buffer-shot-calendar",
@@ -402,7 +325,8 @@
       "checkedAt": "2026-08-17T17:00:00.000Z",
       "annotation": "Official Buffer marketing UI asset",
       "kind": "vendor-ui",
-      "featureIds": []
+      "featureIds": [],
+      "useCaseIds": []
     },
     {
       "id": "buffer-shot-insights",
@@ -413,7 +337,8 @@
       "checkedAt": "2026-08-17T17:00:00.000Z",
       "annotation": "Official Buffer marketing UI asset",
       "kind": "vendor-ui",
-      "featureIds": []
+      "featureIds": [],
+      "useCaseIds": []
     },
     {
       "id": "buffer-shot-community",
@@ -424,7 +349,8 @@
       "checkedAt": "2026-08-17T17:00:00.000Z",
       "annotation": "Official Buffer marketing UI asset",
       "kind": "vendor-ui",
-      "featureIds": []
+      "featureIds": [],
+      "useCaseIds": []
     },
     {
       "id": "buffer-shot-publish-hero",
@@ -435,7 +361,8 @@
       "checkedAt": "2026-08-17T17:00:00.000Z",
       "annotation": "Official Buffer marketing UI asset",
       "kind": "vendor-ui",
-      "featureIds": []
+      "featureIds": [],
+      "useCaseIds": []
     }
   ],
   "media": [
@@ -453,8 +380,8 @@
       "embedUrl": "https://www.youtube-nocookie.com/embed/GiXglFC5L58",
       "title": "How to Use Buffer in 2 Minutes | 2026 Quick-start Guide",
       "thumbnailUrl": "https://i.ytimg.com/vi/GiXglFC5L58/hqdefault.jpg",
-      "channelName": "Buffer",
       "sourceOrganization": "Buffer",
+      "channelName": "Buffer",
       "officialSource": true,
       "officialSourceKind": "vendor-channel",
       "verifiedAt": "2026-08-17T15:00:00.000Z",
@@ -535,16 +462,16 @@
       "demonstratedDimensionIds": [],
       "requirementCriterionIds": [],
       "workflowStageIds": [],
+      "mediaContext": "general-workflow",
       "reportedOutcomes": [],
       "placements": [
         "overview",
         "features",
         "evidence"
       ],
-      "mediaContext": "general-workflow",
       "purpose": "Official Buffer video for product research pages",
       "demonstratesCaption": "How Buffer presents the product in an official vendor video.",
-      "editorialCommentary": "Official vendor demo \u2014 treat as UI/workflow evidence, not SoftwareGlimpse scoring.",
+      "editorialCommentary": "Official vendor demo — treat as UI/workflow evidence, not SoftwareGlimpse scoring.",
       "whatThisShows": [
         "Buffer product surfaces as shown in the official vendor video",
         "UI/workflow layout marketed by the vendor"
@@ -598,16 +525,16 @@
       "demonstratedDimensionIds": [],
       "requirementCriterionIds": [],
       "workflowStageIds": [],
+      "mediaContext": "general-workflow",
       "reportedOutcomes": [],
       "placements": [
         "overview",
         "features",
         "evidence"
       ],
-      "mediaContext": "general-workflow",
       "purpose": "Official Buffer video for product research pages",
       "demonstratesCaption": "How Buffer presents the product in an official vendor video.",
-      "editorialCommentary": "Official vendor demo \u2014 treat as UI/workflow evidence, not SoftwareGlimpse scoring.",
+      "editorialCommentary": "Official vendor demo — treat as UI/workflow evidence, not SoftwareGlimpse scoring.",
       "whatThisShows": [
         "Buffer product surfaces as shown in the official vendor video",
         "UI/workflow layout marketed by the vendor"
@@ -622,11 +549,84 @@
       "status": "published"
     }
   ],
-  "sourceIds": [
-    "buffer-product-official",
-    "buffer-pricing-official"
-  ],
-  "notes": "Marketing Priority-1 onboarding enrichment from first-party research 2026-08-17T17:00:00.000Z. handsOnTesting=false. membershipRole=primary. primaryCategorySlug=marketing.",
+  "pricing": {
+    "currency": "USD",
+    "model": "freemium",
+    "hasFreePlan": true,
+    "hasFreeTrial": true,
+    "plans": [
+      {
+        "id": "plan-free",
+        "slug": "free",
+        "name": "Free",
+        "isFree": true,
+        "contactSales": false,
+        "hasFreeTrial": false,
+        "highlighted": false,
+        "rules": [
+          {
+            "kind": "flat",
+            "amount": 0,
+            "currency": "USD",
+            "interval": "month",
+            "amountPeriod": "month"
+          }
+        ],
+        "description": "Free: up to 3 channels, 10 scheduled posts per channel.",
+        "limits": {
+          "maxChannels": 3,
+          "maxScheduledPostsPerChannel": 10
+        }
+      },
+      {
+        "id": "plan-essentials",
+        "slug": "essentials",
+        "name": "Essentials",
+        "isFree": false,
+        "contactSales": false,
+        "hasFreeTrial": true,
+        "trialDays": 14,
+        "highlighted": true,
+        "rules": [
+          {
+            "kind": "flat",
+            "amount": 6,
+            "currency": "USD",
+            "interval": "month",
+            "amountPeriod": "month"
+          }
+        ],
+        "description": "From $6/mo per channel (1–10 channels); unlimited scheduling."
+      },
+      {
+        "id": "plan-team",
+        "slug": "team",
+        "name": "Team",
+        "isFree": false,
+        "contactSales": false,
+        "hasFreeTrial": true,
+        "trialDays": 14,
+        "highlighted": false,
+        "rules": [
+          {
+            "kind": "flat",
+            "amount": 12,
+            "currency": "USD",
+            "interval": "month",
+            "amountPeriod": "month"
+          }
+        ],
+        "description": "From $12/mo per channel — unlimited users, approvals, access controls."
+      }
+    ],
+    "notes": "Verified 2026-08-17 from buffer.com/pricing. Free: ≤3 channels, 10 scheduled posts/channel. Essentials from $6/channel/mo (1–10 channels); Team from $12/channel/mo. Volume discounts at 11+ channels. Yearly ~20% off. Nonprofit 50% discount marketed. Confirm live calculator.",
+    "verifiedAt": "2026-09-10T11:42:44.789Z",
+    "sourceIds": [
+      "buffer-pricing-official"
+    ],
+    "startingPriceMonthly": 6,
+    "trialDays": 14
+  },
   "domainCheckedAt": {
     "identity": "2026-08-17T17:00:00.000Z",
     "pricing": "2026-08-17T17:00:00.000Z",
@@ -639,5 +639,10 @@
     "free-plan": "2026-08-17T17:00:00.000Z",
     "limits": "2026-08-17T17:00:00.000Z"
   },
-  "updatedAt": "2026-08-17T17:00:00.000Z"
+  "sourceIds": [
+    "buffer-product-official",
+    "buffer-pricing-official"
+  ],
+  "updatedAt": "2026-08-17T17:00:00.000Z",
+  "notes": "Marketing Priority-1 onboarding enrichment from first-party research 2026-08-17T17:00:00.000Z. handsOnTesting=false. membershipRole=primary. primaryCategorySlug=marketing."
 }

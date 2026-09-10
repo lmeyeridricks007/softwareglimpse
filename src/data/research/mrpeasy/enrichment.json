@@ -123,6 +123,15 @@
       ]
     }
   ],
+  "integrationSupport": [
+    {
+      "integrationSlug": "zapier",
+      "kind": "zapier-style",
+      "sourceIds": [
+        "mrpeasy-product-official"
+      ]
+    }
+  ],
   "aiCapabilities": [
     {
       "capability": "assistant",
@@ -148,15 +157,6 @@
     {
       "capability": "recommendations",
       "availability": "limited",
-      "sourceIds": [
-        "mrpeasy-product-official"
-      ]
-    }
-  ],
-  "integrationSupport": [
-    {
-      "integrationSlug": "zapier",
-      "kind": "zapier-style",
       "sourceIds": [
         "mrpeasy-product-official"
       ]
@@ -199,40 +199,6 @@
       "isEditorial": false
     }
   ],
-  "pricing": {
-    "currency": "USD",
-    "model": "per-seat",
-    "hasFreePlan": false,
-    "hasFreeTrial": true,
-    "plans": [
-      {
-        "id": "plan-starter",
-        "slug": "starter",
-        "name": "Starter",
-        "isFree": false,
-        "contactSales": false,
-        "hasFreeTrial": true,
-        "trialDays": 15,
-        "highlighted": true,
-        "rules": [
-          {
-            "kind": "per-seat",
-            "amountPerSeat": 49,
-            "currency": "USD",
-            "interval": "month",
-            "amountPeriod": "month"
-          }
-        ]
-      }
-    ],
-    "notes": "Verified 2026-08-19 from mrpeasy.com/pricing (medium confidence). Per-user tiers; 15-day trial. Affiliate economics excluded.",
-    "verifiedAt": "2026-08-19T12:00:00.000Z",
-    "sourceIds": [
-      "mrpeasy-pricing-official"
-    ],
-    "startingPriceMonthly": 49,
-    "trialDays": 15
-  },
   "screenshots": [
     {
       "id": "mrpeasy-shot-manufacturers",
@@ -245,7 +211,8 @@
       "kind": "vendor-ui",
       "featureIds": [
         "ai-assistance"
-      ]
+      ],
+      "useCaseIds": []
     },
     {
       "id": "mrpeasy-shot-overview",
@@ -258,7 +225,8 @@
       "kind": "vendor-ui",
       "featureIds": [
         "ai-assistance"
-      ]
+      ],
+      "useCaseIds": []
     }
   ],
   "media": [
@@ -307,6 +275,7 @@
       "demonstratedDimensionIds": [],
       "requirementCriterionIds": [],
       "workflowStageIds": [],
+      "mediaContext": "general-workflow",
       "reportedOutcomes": [],
       "placements": [
         "overview",
@@ -314,7 +283,6 @@
         "evidence",
         "use-cases"
       ],
-      "mediaContext": "general-workflow",
       "purpose": "Official MRPeasy video for product research pages",
       "demonstratesCaption": "How MRPeasy presents the product in an official vendor video.",
       "editorialCommentary": "Official vendor demo — treat as UI/workflow evidence, not SoftwareGlimpse scoring.",
@@ -375,6 +343,7 @@
       "demonstratedDimensionIds": [],
       "requirementCriterionIds": [],
       "workflowStageIds": [],
+      "mediaContext": "general-workflow",
       "reportedOutcomes": [],
       "placements": [
         "overview",
@@ -383,7 +352,6 @@
         "implementation",
         "use-cases"
       ],
-      "mediaContext": "general-workflow",
       "purpose": "Official MRPeasy video for product research pages",
       "demonstratesCaption": "How MRPeasy presents the product in an official vendor video.",
       "editorialCommentary": "Official vendor demo — treat as UI/workflow evidence, not SoftwareGlimpse scoring.",
@@ -401,11 +369,40 @@
       "status": "published"
     }
   ],
-  "sourceIds": [
-    "mrpeasy-product-official",
-    "mrpeasy-pricing-official"
-  ],
-  "notes": "Affiliate gap reconcile 2026-08-19 onboarding enrichment from first-party research 2026-08-19T12:00:00.000Z. handsOnTesting=false. membershipRole=primary. jobCluster=resource-planning.",
+  "pricing": {
+    "currency": "USD",
+    "model": "per-seat",
+    "hasFreePlan": false,
+    "hasFreeTrial": true,
+    "plans": [
+      {
+        "id": "plan-starter",
+        "slug": "starter",
+        "name": "Starter",
+        "isFree": false,
+        "contactSales": false,
+        "hasFreeTrial": true,
+        "trialDays": 15,
+        "highlighted": true,
+        "rules": [
+          {
+            "kind": "per-seat",
+            "amountPerSeat": 49,
+            "currency": "USD",
+            "interval": "month",
+            "amountPeriod": "month"
+          }
+        ]
+      }
+    ],
+    "notes": "Verified 2026-08-19 from mrpeasy.com/pricing (medium confidence). Per-user tiers; 15-day trial. Affiliate economics excluded.",
+    "verifiedAt": "2026-09-10T11:43:39.146Z",
+    "sourceIds": [
+      "mrpeasy-pricing-official"
+    ],
+    "startingPriceMonthly": 49,
+    "trialDays": 15
+  },
   "domainCheckedAt": {
     "identity": "2026-08-19T12:00:00.000Z",
     "pricing": "2026-08-19T12:00:00.000Z",
@@ -419,5 +416,10 @@
     "limits": "2026-08-19T12:00:00.000Z",
     "security-compliance": "2026-08-19T12:00:00.000Z"
   },
-  "updatedAt": "2026-08-19T15:20:00.000Z"
+  "sourceIds": [
+    "mrpeasy-product-official",
+    "mrpeasy-pricing-official"
+  ],
+  "updatedAt": "2026-08-19T15:20:00.000Z",
+  "notes": "Affiliate gap reconcile 2026-08-19 onboarding enrichment from first-party research 2026-08-19T12:00:00.000Z. handsOnTesting=false. membershipRole=primary. jobCluster=resource-planning."
 }

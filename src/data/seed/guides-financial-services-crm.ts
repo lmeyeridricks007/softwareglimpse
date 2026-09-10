@@ -294,7 +294,6 @@ export const financialServicesCrmGuide: GuidePageInput = {
     label: "Try the CRM Finder",
   },
   relatedGuideSlugs: [
-    "financial-services-crm",
     "financial-services-crm-requirements",
     "financial-services-crm-features",
     "financial-services-crm-implementation",

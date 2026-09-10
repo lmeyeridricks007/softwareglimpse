@@ -1,10 +1,10 @@
 {
   "slug": "close",
-  "updatedAt": "2026-09-07T22:31:21.045Z",
+  "updatedAt": "2026-09-10T10:59:05.711Z",
   "version": "1.0.0",
   "fieldAudit": {
     "slug": "close",
-    "checkedAt": "2026-09-07T22:31:21.043Z",
+    "checkedAt": "2026-09-10T10:59:05.710Z",
     "items": [
       {
         "field": "name",
@@ -20,9 +20,9 @@
       },
       {
         "field": "canonical_vendor",
-        "status": "UNKNOWN",
-        "detail": "Company/vendor not documented",
-        "source": "none"
+        "status": "PASS",
+        "detail": "Vendor: Close",
+        "source": "seed"
       },
       {
         "field": "category",
@@ -115,11 +115,11 @@
         "source": "enrichment"
       }
     ],
-    "passCount": 17,
+    "passCount": 18,
     "partialCount": 0,
     "missingCount": 0,
-    "unknownCount": 1,
-    "score": 94
+    "unknownCount": 0,
+    "score": 100
   },
   "decisionHub": {
     "whatItIs": "Sales CRM built around calling, email, SMS, and Chloe AI automation for high-velocity inside sales teams.",
@@ -236,9 +236,7 @@
     ],
     "evidenceState": "Research/data-based (no completed hands-on test) · Latest verification/research signal: 2026-08-13T18:00:00.000Z · Editorial assessment: approved",
     "nextDecisionStep": "Compare against peers: ACT! vs Close",
-    "missingSections": [
-      "canonical_vendor"
-    ]
+    "missingSections": []
   },
   "dependents": [
     {
@@ -478,13 +476,11 @@
     }
   ],
   "dependentsNeedingRefresh": [],
-  "remediation": [
-    "verify:canonical_vendor"
-  ],
+  "remediation": [],
   "notes": [
-    "fieldAudit score=94",
+    "fieldAudit score=100",
     "decisionHub bestFor=6 notIdeal=6",
     "dependents=47"
   ],
-  "materiallyImproved": false
+  "materiallyImproved": true
 }

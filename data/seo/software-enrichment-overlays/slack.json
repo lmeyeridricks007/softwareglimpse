@@ -1,10 +1,10 @@
 {
   "slug": "slack",
-  "updatedAt": "2026-09-07T22:31:21.423Z",
+  "updatedAt": "2026-09-10T11:46:30.038Z",
   "version": "1.0.0",
   "fieldAudit": {
     "slug": "slack",
-    "checkedAt": "2026-09-07T22:31:21.422Z",
+    "checkedAt": "2026-09-10T11:46:30.036Z",
     "items": [
       {
         "field": "name",
@@ -20,9 +20,9 @@
       },
       {
         "field": "canonical_vendor",
-        "status": "UNKNOWN",
-        "detail": "Company/vendor not documented",
-        "source": "none"
+        "status": "PASS",
+        "detail": "Vendor: Salesforce",
+        "source": "seed"
       },
       {
         "field": "category",
@@ -115,11 +115,11 @@
         "source": "enrichment"
       }
     ],
-    "passCount": 16,
+    "passCount": 17,
     "partialCount": 0,
     "missingCount": 0,
-    "unknownCount": 2,
-    "score": 89
+    "unknownCount": 1,
+    "score": 94
   },
   "decisionHub": {
     "whatItIs": "Slack is a team-messaging workspace built around channels, DMs, canvas and workflow automation. Verified slack.com/pricing 2026-08-17: Free $0, Pro $7.25/user/month annual ($8.75 monthly), Business+ $15 annual ($18 monthly), Enterprise+ contact sales. Huddles provide limited video/audio; there is no cloud phone, call routing, power dialer, SMS or WhatsApp. AI features strengthen on Business+; analytics are limited on lower tiers.",
@@ -140,7 +140,12 @@
       "Video is limited to huddles / meeting integrations rather than a full meetings suite"
     ],
     "coreCapabilities": [
+      "shared inbox",
       "team messaging",
+      "video meetings",
+      "crm cti",
+      "analytics reporting",
+      "unified inbox",
       "team communication"
     ],
     "pricingSummary": "4 documented plans · 1 free · entry paid: Pro",
@@ -232,7 +237,6 @@
     "evidenceState": "Research/data-based (no completed hands-on test) · Latest verification/research signal: 2026-08-17T12:00:00.000Z · Editorial assessment: approved",
     "nextDecisionStep": "Compare against peers: Microsoft Teams vs Slack",
     "missingSections": [
-      "canonical_vendor",
       "trial"
     ]
   },
@@ -415,13 +419,12 @@
   ],
   "dependentsNeedingRefresh": [],
   "remediation": [
-    "verify:canonical_vendor",
     "verify:trial"
   ],
   "notes": [
-    "fieldAudit score=89",
+    "fieldAudit score=94",
     "decisionHub bestFor=6 notIdeal=6",
     "dependents=35"
   ],
-  "materiallyImproved": false
+  "materiallyImproved": true
 }

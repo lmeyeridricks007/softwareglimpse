@@ -1,6 +1,6 @@
 {
   "productSlug": "genesys",
-  "shortDescription": "Genesys Cloud CX is an enterprise cloud contact center / experience orchestration platform. First-party pricing on genesys.com/pricing (checked 2026-08-17) publishes named-agent annual floors: CX 1 $75 (voice), CX 2 $115 (omnichannel), CX 3 $155 (adds WEM), CX 4 $240 (adds journey/AI experience tokens). Concurrent and hourly-interacting licence models also exist; AI Experience tokens and usage-based telephony may apply. Scored as enterprise CCaaS \u2014 landscape award only on the BC best page; never ranked as a phone-system peer.",
+  "shortDescription": "Genesys Cloud CX is an enterprise cloud contact center / experience orchestration platform. First-party pricing on genesys.com/pricing (checked 2026-08-17) publishes named-agent annual floors: CX 1 $75 (voice), CX 2 $115 (omnichannel), CX 3 $155 (adds WEM), CX 4 $240 (adds journey/AI experience tokens). Concurrent and hourly-interacting licence models also exist; AI Experience tokens and usage-based telephony may apply. Scored as enterprise CCaaS — landscape award only on the BC best page; never ranked as a phone-system peer.",
   "featureSupport": [
     {
       "featureSlug": "cloud-phone",
@@ -172,40 +172,6 @@
       ]
     }
   ],
-  "aiCapabilities": [
-    {
-      "capability": "assistant",
-      "availability": "supported",
-      "sourceIds": [
-        "genesys-product-official"
-      ],
-      "notes": "Vendor label: Agent Copilot."
-    },
-    {
-      "capability": "assistant",
-      "availability": "supported",
-      "sourceIds": [
-        "genesys-product-official"
-      ],
-      "notes": "Vendor label: virtual agents / bots."
-    },
-    {
-      "capability": "automation",
-      "availability": "supported",
-      "sourceIds": [
-        "genesys-product-official"
-      ],
-      "notes": "Vendor label: predictive routing."
-    },
-    {
-      "capability": "assistant",
-      "availability": "supported",
-      "sourceIds": [
-        "genesys-product-official"
-      ],
-      "notes": "Vendor label: Supervisor Copilot."
-    }
-  ],
   "integrationSupport": [
     {
       "integrationSlug": "salesforce",
@@ -250,9 +216,43 @@
       ]
     }
   ],
+  "aiCapabilities": [
+    {
+      "capability": "assistant",
+      "availability": "supported",
+      "sourceIds": [
+        "genesys-product-official"
+      ],
+      "notes": "Vendor label: Agent Copilot."
+    },
+    {
+      "capability": "assistant",
+      "availability": "supported",
+      "sourceIds": [
+        "genesys-product-official"
+      ],
+      "notes": "Vendor label: virtual agents / bots."
+    },
+    {
+      "capability": "automation",
+      "availability": "supported",
+      "sourceIds": [
+        "genesys-product-official"
+      ],
+      "notes": "Vendor label: predictive routing."
+    },
+    {
+      "capability": "assistant",
+      "availability": "supported",
+      "sourceIds": [
+        "genesys-product-official"
+      ],
+      "notes": "Vendor label: Supervisor Copilot."
+    }
+  ],
   "vendorPositioning": [
     {
-      "claim": "AI-powered experience orchestration \u2014 the cloud contact center platform for enterprises that need voice, digital, WEM and journey management.",
+      "claim": "AI-powered experience orchestration — the cloud contact center platform for enterprises that need voice, digital, WEM and journey management.",
       "audienceHints": [
         "Enterprise contact centres that need omnichannel + WEM + journey orchestration",
         "Regulated industries standardising on Genesys Cloud CX",
@@ -282,7 +282,7 @@
   "limitations": [
     {
       "kind": "other",
-      "description": "Enterprise complexity and implementation cost \u2014 not an SMB self-serve phone",
+      "description": "Enterprise complexity and implementation cost — not an SMB self-serve phone",
       "sourceIds": [
         "genesys-product-official"
       ],
@@ -329,96 +329,6 @@
       "isEditorial": false
     }
   ],
-  "pricing": {
-    "currency": "USD",
-    "model": "subscription",
-    "hasFreePlan": false,
-    "hasFreeTrial": false,
-    "plans": [
-      {
-        "id": "plan-cx1",
-        "slug": "cx1",
-        "name": "Genesys Cloud CX 1",
-        "isFree": false,
-        "contactSales": false,
-        "hasFreeTrial": false,
-        "highlighted": false,
-        "rules": [
-          {
-            "kind": "per-seat",
-            "amountPerSeat": 75,
-            "currency": "USD",
-            "interval": "year",
-            "amountPeriod": "month"
-          }
-        ],
-        "description": "$75/user/month annual \u2014 voice contact center: IVR, ACD, outbound campaigns, recording, native AI capabilities with token allotments."
-      },
-      {
-        "id": "plan-cx2",
-        "slug": "cx2",
-        "name": "Genesys Cloud CX 2",
-        "isFree": false,
-        "contactSales": false,
-        "hasFreeTrial": false,
-        "highlighted": true,
-        "rules": [
-          {
-            "kind": "per-seat",
-            "amountPerSeat": 115,
-            "currency": "USD",
-            "interval": "year",
-            "amountPeriod": "month"
-          }
-        ],
-        "description": "$115/user/month annual \u2014 adds digital channels and omnichannel routing for full voice+digital CCaaS."
-      },
-      {
-        "id": "plan-cx3",
-        "slug": "cx3",
-        "name": "Genesys Cloud CX 3",
-        "isFree": false,
-        "contactSales": false,
-        "hasFreeTrial": false,
-        "highlighted": false,
-        "rules": [
-          {
-            "kind": "per-seat",
-            "amountPerSeat": 155,
-            "currency": "USD",
-            "interval": "year",
-            "amountPeriod": "month"
-          }
-        ],
-        "description": "$155/user/month annual \u2014 adds workforce engagement management (WFM/QM/coaching) on top of CX 2."
-      },
-      {
-        "id": "plan-cx4",
-        "slug": "cx4",
-        "name": "Genesys Cloud CX 4",
-        "isFree": false,
-        "contactSales": false,
-        "hasFreeTrial": false,
-        "highlighted": false,
-        "rules": [
-          {
-            "kind": "per-seat",
-            "amountPerSeat": 240,
-            "currency": "USD",
-            "interval": "year",
-            "amountPeriod": "month"
-          }
-        ],
-        "description": "$240/user/month annual \u2014 maximises AI experience tokens, journey management and advanced orchestration."
-      }
-    ],
-    "notes": "Confirmed 2026-08-17 on genesys.com/pricing: CX 1 $75, CX 2 $115, CX 3 $155, CX 4 $240 per named user/month billed annually (USD). Concurrent and hourly interacting alternatives. AI Experience tokens included with org allotments; overages usage-based. Digital-only and UCC-only editions exist. High confidence on published named floors; final TCO still quote-shaped.",
-    "verifiedAt": "2026-08-17T20:00:00.000Z",
-    "sourceIds": [
-      "genesys-pricing-official"
-    ],
-    "startingPriceMonthly": 75
-  },
   "screenshots": [
     {
       "id": "genesys-shot-homepage-hero",
@@ -429,7 +339,8 @@
       "checkedAt": "2026-08-17T17:00:00.000Z",
       "annotation": "Official Genesys marketing UI asset",
       "kind": "vendor-ui",
-      "featureIds": []
+      "featureIds": [],
+      "useCaseIds": []
     },
     {
       "id": "genesys-shot-platform-overview",
@@ -440,7 +351,8 @@
       "checkedAt": "2026-08-17T17:00:00.000Z",
       "annotation": "Official Genesys marketing UI asset",
       "kind": "vendor-ui",
-      "featureIds": []
+      "featureIds": [],
+      "useCaseIds": []
     },
     {
       "id": "genesys-shot-agent-screenshot",
@@ -451,7 +363,8 @@
       "checkedAt": "2026-08-17T17:00:00.000Z",
       "annotation": "Official Genesys marketing UI asset",
       "kind": "vendor-ui",
-      "featureIds": []
+      "featureIds": [],
+      "useCaseIds": []
     },
     {
       "id": "genesys-shot-threads-hero",
@@ -462,7 +375,8 @@
       "checkedAt": "2026-08-17T17:00:00.000Z",
       "annotation": "Official Genesys marketing UI asset",
       "kind": "vendor-ui",
-      "featureIds": []
+      "featureIds": [],
+      "useCaseIds": []
     },
     {
       "id": "genesys-shot-what-is-cloud",
@@ -473,7 +387,8 @@
       "checkedAt": "2026-08-17T17:00:00.000Z",
       "annotation": "Official Genesys YouTube thumbnail showing Genesys Cloud product UI",
       "kind": "vendor-ui",
-      "featureIds": []
+      "featureIds": [],
+      "useCaseIds": []
     }
   ],
   "media": [
@@ -517,16 +432,16 @@
       "demonstratedDimensionIds": [],
       "requirementCriterionIds": [],
       "workflowStageIds": [],
+      "mediaContext": "general-workflow",
       "reportedOutcomes": [],
       "placements": [
         "overview",
         "features",
         "evidence"
       ],
-      "mediaContext": "general-workflow",
       "purpose": "Official Genesys video for product research pages",
       "demonstratesCaption": "How Genesys presents the product in an official vendor video.",
-      "editorialCommentary": "Official vendor demo \u2014 treat as UI/workflow evidence, not SoftwareGlimpse scoring.",
+      "editorialCommentary": "Official vendor demo — treat as UI/workflow evidence, not SoftwareGlimpse scoring.",
       "whatThisShows": [
         "Genesys product surfaces as shown in the official vendor video",
         "UI/workflow layout marketed by the vendor"
@@ -552,7 +467,7 @@
       "videoId": "uzrKgW3gSwA",
       "providerId": "uzrKgW3gSwA",
       "embedUrl": "https://www.youtube-nocookie.com/embed/uzrKgW3gSwA",
-      "title": "Meet Genesys Cloud Copilot: Your team\u2019s new trusted teammate",
+      "title": "Meet Genesys Cloud Copilot: Your team’s new trusted teammate",
       "description": "Official Genesys Cloud Copilot introduction from the Genesys channel.",
       "thumbnailUrl": "https://i.ytimg.com/vi/uzrKgW3gSwA/hqdefault.jpg",
       "sourceOrganization": "Genesys",
@@ -580,16 +495,16 @@
       "demonstratedDimensionIds": [],
       "requirementCriterionIds": [],
       "workflowStageIds": [],
+      "mediaContext": "general-workflow",
       "reportedOutcomes": [],
       "placements": [
         "overview",
         "features",
         "evidence"
       ],
-      "mediaContext": "general-workflow",
       "purpose": "Official Genesys video for product research pages",
       "demonstratesCaption": "How Genesys presents the product in an official vendor video.",
-      "editorialCommentary": "Official vendor demo \u2014 treat as UI/workflow evidence, not SoftwareGlimpse scoring.",
+      "editorialCommentary": "Official vendor demo — treat as UI/workflow evidence, not SoftwareGlimpse scoring.",
       "whatThisShows": [
         "Genesys product surfaces as shown in the official vendor video",
         "UI/workflow layout marketed by the vendor"
@@ -604,11 +519,96 @@
       "status": "published"
     }
   ],
-  "sourceIds": [
-    "genesys-product-official",
-    "genesys-pricing-official"
-  ],
-  "notes": "Business-communications Priority-3 onboarding enrichment from first-party research 2026-08-17T20:00:00.000Z. handsOnTesting=false. membershipRole=primary. jobCluster=contact-center.",
+  "pricing": {
+    "currency": "USD",
+    "model": "subscription",
+    "hasFreePlan": false,
+    "hasFreeTrial": false,
+    "plans": [
+      {
+        "id": "plan-cx1",
+        "slug": "cx1",
+        "name": "Genesys Cloud CX 1",
+        "isFree": false,
+        "contactSales": false,
+        "hasFreeTrial": false,
+        "highlighted": false,
+        "rules": [
+          {
+            "kind": "per-seat",
+            "amountPerSeat": 75,
+            "currency": "USD",
+            "interval": "year",
+            "amountPeriod": "month"
+          }
+        ],
+        "description": "$75/user/month annual — voice contact center: IVR, ACD, outbound campaigns, recording, native AI capabilities with token allotments."
+      },
+      {
+        "id": "plan-cx2",
+        "slug": "cx2",
+        "name": "Genesys Cloud CX 2",
+        "isFree": false,
+        "contactSales": false,
+        "hasFreeTrial": false,
+        "highlighted": true,
+        "rules": [
+          {
+            "kind": "per-seat",
+            "amountPerSeat": 115,
+            "currency": "USD",
+            "interval": "year",
+            "amountPeriod": "month"
+          }
+        ],
+        "description": "$115/user/month annual — adds digital channels and omnichannel routing for full voice+digital CCaaS."
+      },
+      {
+        "id": "plan-cx3",
+        "slug": "cx3",
+        "name": "Genesys Cloud CX 3",
+        "isFree": false,
+        "contactSales": false,
+        "hasFreeTrial": false,
+        "highlighted": false,
+        "rules": [
+          {
+            "kind": "per-seat",
+            "amountPerSeat": 155,
+            "currency": "USD",
+            "interval": "year",
+            "amountPeriod": "month"
+          }
+        ],
+        "description": "$155/user/month annual — adds workforce engagement management (WFM/QM/coaching) on top of CX 2."
+      },
+      {
+        "id": "plan-cx4",
+        "slug": "cx4",
+        "name": "Genesys Cloud CX 4",
+        "isFree": false,
+        "contactSales": false,
+        "hasFreeTrial": false,
+        "highlighted": false,
+        "rules": [
+          {
+            "kind": "per-seat",
+            "amountPerSeat": 240,
+            "currency": "USD",
+            "interval": "year",
+            "amountPeriod": "month"
+          }
+        ],
+        "description": "$240/user/month annual — maximises AI experience tokens, journey management and advanced orchestration."
+      }
+    ],
+    "notes": "Confirmed 2026-08-17 on genesys.com/pricing: CX 1 $75, CX 2 $115, CX 3 $155, CX 4 $240 per named user/month billed annually (USD). Concurrent and hourly interacting alternatives. AI Experience tokens included with org allotments; overages usage-based. Digital-only and UCC-only editions exist. High confidence on published named floors; final TCO still quote-shaped.",
+    "verifiedAt": "2026-09-10T11:38:22.171Z",
+    "sourceIds": [
+      "genesys-pricing-official"
+    ],
+    "startingPriceMonthly": 75
+  },
   "domainCheckedAt": {
     "identity": "2026-08-17T20:00:00.000Z",
     "pricing": "2026-08-17T20:00:00.000Z",
@@ -622,5 +622,10 @@
     "limits": "2026-08-17T20:00:00.000Z",
     "security-compliance": "2026-08-17T20:00:00.000Z"
   },
-  "updatedAt": "2026-08-17T17:00:00.000Z"
+  "sourceIds": [
+    "genesys-product-official",
+    "genesys-pricing-official"
+  ],
+  "updatedAt": "2026-08-17T17:00:00.000Z",
+  "notes": "Business-communications Priority-3 onboarding enrichment from first-party research 2026-08-17T20:00:00.000Z. handsOnTesting=false. membershipRole=primary. jobCluster=contact-center."
 }

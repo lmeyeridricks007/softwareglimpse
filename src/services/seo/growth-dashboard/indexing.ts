@@ -6,10 +6,16 @@ import type { IndexingSection } from "./types";
 
 type CoverageExport = {
   label?: string;
+  meta?: {
+    dataThroughDate?: string;
+    retrievedAt?: string;
+    coverageComplete?: boolean;
+  };
   latestTotals?: {
-    indexed?: number;
-    notIndexed?: number;
+    indexed?: number | null;
+    notIndexed?: number | null;
     impressions?: number;
+    date?: string;
   };
   criticalIssues?: Array<{ reason: string; pages: number }>;
   notes?: string[];
@@ -44,7 +50,10 @@ export function buildIndexingSection(cwd = process.cwd()): IndexingSection {
     sitemapCount = null;
   }
 
-  const indexed = coverage?.latestTotals?.indexed ?? null;
+  const indexed =
+    typeof coverage?.latestTotals?.indexed === "number"
+      ? coverage.latestTotals.indexed
+      : null;
   const discovered = issuePages(coverage?.criticalIssues, (r) =>
     r.includes("discovered") && r.includes("not indexed"),
   );
@@ -91,7 +100,7 @@ export function buildIndexingSection(cwd = process.cwd()): IndexingSection {
   const validity = classifyDataValidity({
     connected: Boolean(coverage || sitemapCount != null),
     sourcePath: coveragePath,
-    dataThroughDate: null,
+    dataThroughDate: coverage?.meta?.dataThroughDate ?? coverage?.latestTotals?.date ?? null,
   });
 
   return {

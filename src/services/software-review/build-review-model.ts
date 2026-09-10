@@ -11,7 +11,6 @@ import type {
   ProductScreenshot,
   ResearchSource,
   Software,
-  UseCase,
 } from "@/domain";
 import { readEnrichmentPricingVerifiedAt } from "@/domain/schemas/research-enrichment";
 import { formatMoney, fromMajor } from "@/domain";
@@ -592,14 +591,19 @@ export function buildSoftwareReviewModel(
     take: f.editorialNote,
   }));
 
-  const useCases: ReviewUseCaseCard[] = getUseCases()
-    .filter((uc: UseCase) => software.useCaseSlugs.includes(uc.slug))
-    .map((uc) => ({
-      slug: uc.slug,
-      name: uc.name,
-      description: publicCopy(uc.shortDescription ?? uc.description),
-      href: `/use-cases/${uc.slug}/`,
-    }));
+  const useCaseBySlug = new Map(getUseCases().map((uc) => [uc.slug, uc]));
+  const useCases: ReviewUseCaseCard[] = software.useCaseSlugs.flatMap((slug) => {
+    const uc = useCaseBySlug.get(slug);
+    if (!uc) return [];
+    return [
+      {
+        slug: uc.slug,
+        name: uc.name,
+        description: publicCopy(uc.shortDescription ?? uc.description),
+        href: `/use-cases/${uc.slug}/`,
+      },
+    ];
+  });
 
   const allSoftware = getAllSoftwareUnfiltered();
   const relatedSlugs = [

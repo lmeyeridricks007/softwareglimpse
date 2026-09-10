@@ -1,10 +1,10 @@
 {
   "slug": "bigcommerce",
-  "updatedAt": "2026-09-07T22:31:21.649Z",
+  "updatedAt": "2026-09-10T11:46:30.025Z",
   "version": "1.0.0",
   "fieldAudit": {
     "slug": "bigcommerce",
-    "checkedAt": "2026-09-07T22:31:21.647Z",
+    "checkedAt": "2026-09-10T11:46:27.491Z",
     "items": [
       {
         "field": "name",
@@ -20,9 +20,9 @@
       },
       {
         "field": "canonical_vendor",
-        "status": "UNKNOWN",
-        "detail": "Company/vendor not documented",
-        "source": "none"
+        "status": "PASS",
+        "detail": "Vendor: BigCommerce",
+        "source": "seed"
       },
       {
         "field": "category",
@@ -115,11 +115,11 @@
         "source": "enrichment"
       }
     ],
-    "passCount": 17,
+    "passCount": 18,
     "partialCount": 0,
     "missingCount": 0,
-    "unknownCount": 1,
-    "score": 94
+    "unknownCount": 0,
+    "score": 100
   },
   "decisionHub": {
     "whatItIs": "BigCommerce is a hosted ecommerce platform emphasizing open SaaS — no transaction fee on platform billing when using eligible gateways, multi-storefront options, and API extensibility. 2026 plan rename: Core $39/mo ($29 annual), Growth $105 ($79), Scale $399 ($299), Performance from $1,499/mo annual. GMV caps trigger upgrades; open payment provider fees up to 2.0% on third-party gateways for self-serve tiers (verify live terms).",
@@ -146,8 +146,8 @@
       "order management",
       "inventory management",
       "shipping fulfillment",
-      "marketplace channels",
-      "b2b wholesale"
+      "pos omnichannel",
+      "marketplace channels"
     ],
     "pricingSummary": "4 documented plans · entry paid: Core · trial documented on at least one plan",
     "keyTradeoffs": [
@@ -233,9 +233,7 @@
     ],
     "evidenceState": "Research/data-based (no completed hands-on test) · Latest verification/research signal: 2026-08-18T12:00:00.000Z · Editorial assessment: approved",
     "nextDecisionStep": "Compare against peers: Shopify vs BigCommerce",
-    "missingSections": [
-      "canonical_vendor"
-    ]
+    "missingSections": []
   },
   "dependents": [
     {
@@ -420,11 +418,9 @@
     }
   ],
   "dependentsNeedingRefresh": [],
-  "remediation": [
-    "verify:canonical_vendor"
-  ],
+  "remediation": [],
   "notes": [
-    "fieldAudit score=94",
+    "fieldAudit score=100",
     "decisionHub bestFor=6 notIdeal=6",
     "dependents=36"
   ],

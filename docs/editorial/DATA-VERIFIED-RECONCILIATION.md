@@ -1,56 +1,54 @@
 # DATA_VERIFIED reconciliation
 
-Generated with Growth Dashboard 2.3.0 at 2026-09-09T18:59:14.406Z.
+Generated with Growth Dashboard 2.3.0 at 2026-09-10T16:01:30.153Z.
 
 ## Counts
 
 | Metric | Value |
 | --- | ---: |
 | Total products | 315 |
-| Accepted DATA_VERIFIED stamps | 164 |
-| Rejected (not data verification) | 151 |
-| Source coverage (accepted share) | 52.1% |
+| Accepted DATA_VERIFIED stamps | 240 |
+| Rejected (not data verification) | 75 |
+| Source coverage (accepted share) | 76.2% |
 | Reconciliation confidence | low |
 
 ## Accepted by source
 
 - `software.pricingVerifiedAt`: 0
 - `software.pricing.verifiedAt`: 0
-- `enrichment.pricing.verifiedAt`: 164
-- `none`: 151
+- `enrichment.pricing.verifiedAt`: 240
+- `none`: 75
 
 ## Accepted by source type
 
 - `editorial_catalogue`: 0
-- `vendor_enrichment`: 164
-- `invalid_or_absent`: 151
+- `vendor_enrichment`: 240
+- `invalid_or_absent`: 75
 
 ## Reject reasons
 
-- `matches_domain_checked_at`: 138
-- `matches_enrichment_updatedAt`: 11
-- `mass_identical_stamp`: 1
+- `matches_domain_checked_at`: 73
 - `no_timestamp`: 1
+- `matches_enrichment_updatedAt`: 1
 
 ## Suspicious mass dates (rejected candidates)
 
-- 2026-08-18: 64 products
-- 2026-08-17: 58 products
+- 2026-08-18: 32 products
+- 2026-08-17: 25 products
 
 ## Mass identical ISO stamps (backfill signal)
 
-- `2026-08-18T12:00:00.000Z`: 23 products
-- `2026-08-17T20:00:00.000Z`: 18 products
-- `2026-08-18T14:00:00.000Z`: 13 products
-- `2026-08-19T12:00:00.000Z`: 12 products
-- `2026-08-17T17:00:00.000Z`: 9 products
 - `2026-08-18T22:00:00.000Z`: 8 products
-- `2026-08-18T16:00:00.000Z`: 7 products
+- `2026-08-18T12:00:00.000Z`: 7 products
+- `2026-08-19T12:00:00.000Z`: 7 products
 - `2026-08-16T12:00:00.000Z`: 6 products
-- `2026-08-17T18:00:00.000Z`: 6 products
-- `2026-08-18T09:30:00.000Z`: 6 products
-- `2026-08-17T15:00:00.000Z`: 5 products
-- `2026-08-17T12:00:00.000Z`: 4 products
+- `2026-08-17T17:00:00.000Z`: 6 products
+- `2026-08-18T14:00:00.000Z`: 5 products
+- `2026-08-18T09:30:00.000Z`: 4 products
+- `2026-08-18T16:00:00.000Z`: 4 products
+- `2026-08-17T14:00:00.000Z`: 3 products
+- `2026-08-17T18:00:00.000Z`: 3 products
+- `2026-08-17T20:00:00.000Z`: 3 products
 
 ## Accepted examples (evidence trace)
 

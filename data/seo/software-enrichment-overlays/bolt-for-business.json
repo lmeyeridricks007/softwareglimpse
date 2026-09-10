@@ -1,10 +1,10 @@
 {
   "slug": "bolt-for-business",
-  "updatedAt": "2026-09-07T22:31:22.008Z",
+  "updatedAt": "2026-09-10T11:06:09.132Z",
   "version": "1.0.0",
   "fieldAudit": {
     "slug": "bolt-for-business",
-    "checkedAt": "2026-09-07T22:31:22.006Z",
+    "checkedAt": "2026-09-10T11:06:09.131Z",
     "items": [
       {
         "field": "name",
@@ -20,9 +20,9 @@
       },
       {
         "field": "canonical_vendor",
-        "status": "UNKNOWN",
-        "detail": "Company/vendor not documented",
-        "source": "none"
+        "status": "PASS",
+        "detail": "Vendor: Bolt Technology OÜ",
+        "source": "seed"
       },
       {
         "field": "category",
@@ -115,11 +115,11 @@
         "source": "enrichment"
       }
     ],
-    "passCount": 16,
+    "passCount": 17,
     "partialCount": 0,
     "missingCount": 0,
-    "unknownCount": 2,
-    "score": 89
+    "unknownCount": 1,
+    "score": 94
   },
   "decisionHub": {
     "whatItIs": "Bolt for Business is a corporate ground-transport account for teams — employees book rides via the Bolt app under company billing, with ride history, limits, and admin controls. Pricing is usage-based per trip (2026-08-19), not a traditional per-seat HR SaaS subscription. Scored as HR/finance-ops adjacent mobility — not HRIS, travel management, or expense suite depth like Navan.",
@@ -136,6 +136,8 @@
       "Weak fit — mid-market / operations: Bolt for Business fit for mid-market operations teams in the people-platform job cluster, from first-party positioning and Affiliate gap reconcile 2026-08-19 research (adjacent tool — not an HR peer for undifferentiated ranking)."
     ],
     "coreCapabilities": [
+      "hris integrations",
+      "analytics reporting",
       "people platform",
       "core hris"
     ],
@@ -222,7 +224,6 @@
     "evidenceState": "Research/data-based (no completed hands-on test) · Latest verification/research signal: 2026-08-19T12:00:00.000Z · Editorial assessment: approved",
     "nextDecisionStep": "Compare against peers: Bolt for Business vs Navan",
     "missingSections": [
-      "canonical_vendor",
       "trial"
     ]
   },
@@ -400,13 +401,12 @@
   ],
   "dependentsNeedingRefresh": [],
   "remediation": [
-    "verify:canonical_vendor",
     "verify:trial"
   ],
   "notes": [
-    "fieldAudit score=89",
+    "fieldAudit score=94",
     "decisionHub bestFor=2 notIdeal=6",
     "dependents=34"
   ],
-  "materiallyImproved": false
+  "materiallyImproved": true
 }

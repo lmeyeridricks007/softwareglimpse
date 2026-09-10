@@ -1,0 +1,202 @@
+{
+  "slug": "cloudways-implementation",
+  "enrichmentType": "IMPLEMENTATION_GUIDE",
+  "updatedAt": "2026-09-10T12:51:14.323Z",
+  "uniqueValueAdded": [
+    "implementation_workflow",
+    "scenario_analysis",
+    "decision_framework",
+    "limitations_evidence",
+    "pricing_comparison",
+    "sg_original_data",
+    "buyer_checklist"
+  ],
+  "patch": {
+    "summary": "infrastructure monitoring; log management; CI/CD and automation; hosting control panel. Flexible (DigitalOcean Standard) · infrastructure monitoring | Autonomous WordPress. WordPress. Teams that want managed hosting on a chosen cloud VM without buying a panel licence; Agencies running WordPress plus other apps on one Cloudways account; Buyers who will actually use hourly Flexible billing and the list price DigitalOcean Standard floor. Cloudways is a managed cloud hosting platform (a DigitalOcean company) that provisions app stacks on cloud VMs instead of selling a Plesk/cPanel panel licence. Flexible publishes f Buyer question: choose Cloudways only if Teams that want managed hosting on a chosen cloud VM without buying a panel licence outweighs Flexible list price is a DigitalOcean Standard floor billed hourly — other clouds and sizes change TCO — otherwise keep researching. Verdict shape: yes for teams built around Teams that want managed hosting on a chosen cloud VM without buying a panel licence; Agencies running WordPress plus other apps on one Cloudways account; Buyers who will actually use hourly Flexible billing and the list price DigitalOcean Standard floor; no when Admins buying a Plesk or cPanel licence for servers they already own; WordPress-only buyers who want WP Engine’s specialist packaging; ITSM, observability, or source-control purchases — infrastructure monitoring is the hinge, not brand familiarity.",
+    "blocks": [
+      {
+        "id": "da-cloudways-implementation-1",
+        "type": "direct-answer",
+        "body": "infrastructure monitoring decides whether Cloudways implementation is a one-team pilot or a specialist project — confirm unlocks for must-have capabilities before invites.",
+        "bullets": [
+          "Start with: infrastructure monitoring",
+          "Gate check: confirm paid unlocks before go-live",
+          "Integrate after: data quality pass on WordPress"
+        ]
+      },
+      {
+        "id": "impl-cloudways-implementation-2",
+        "type": "step",
+        "heading": "Cloudways day-zero to steady-state sequence",
+        "body": "Treat Cloudways setup as a controlled rollout — not a weekend dump of CSV files.",
+        "stepNumber": 1,
+        "scenarios": [
+          {
+            "title": "Day zero — objects and owners",
+            "body": "Define owners for infrastructure monitoring, log management, CI/CD and automation before inviting the whole org."
+          },
+          {
+            "title": "SMB pilot",
+            "body": "One pipeline / one team proves Teams that want managed hosting on a chosen cloud VM without buying a panel licence before company-wide seats."
+          },
+          {
+            "title": "Cutover",
+            "body": "Freeze legacy writes briefly; validate WordPress before reopen."
+          }
+        ]
+      },
+      {
+        "id": "df-cloudways-implementation-3",
+        "type": "decision-framework",
+        "title": "Cloudways implementation go / no-go",
+        "steps": [
+          {
+            "id": "i-1",
+            "label": "Go when plan unlocks cover must-have capabilities"
+          },
+          {
+            "id": "i-2",
+            "label": "Pause if this limitation blocks ops: Flexible list price is a DigitalOcean Standard floor billed hourly — other clouds and sizes change TCO"
+          },
+          {
+            "id": "i-3",
+            "label": "Do not expand seats until infrastructure monitoring is green"
+          }
+        ]
+      },
+      {
+        "id": "mist-cloudways-implementation-4",
+        "type": "mistakes",
+        "title": "Cloudways implementation mistakes",
+        "items": [
+          {
+            "title": "Mistake 1",
+            "body": "Flexible list price is a DigitalOcean Standard floor billed hourly — other clouds and sizes change TCO"
+          },
+          {
+            "title": "Mistake 2",
+            "body": "Autonomous WordPress autoscaling is a separate line, not included in the Flexible list price tile"
+          },
+          {
+            "title": "Mistake 3",
+            "body": "Not a Plesk/cPanel panel licence — you are buying managed hosting, not a control-panel SKU"
+          },
+          {
+            "title": "Mistake 4",
+            "body": "Not ITSM, observability, source control, or a proxy network"
+          },
+          {
+            "title": "Big-bang invite",
+            "body": "Inviting every user before object design creates junk data that is expensive to unwind."
+          }
+        ]
+      },
+      {
+        "id": "cost-cloudways-implementation-5",
+        "type": "cost-breakdown",
+        "title": "Cloudways plan gates that affect rollout",
+        "body": "Implementation fails when unlocks needed for go-live sit on a higher tier than budgeted.",
+        "lines": [
+          {
+            "label": "Flexible (DigitalOcean Standard)",
+            "description": "Trial available · Unlocks: infrastructure monitoring, log management, CI/CD and automation · Suits: teams whose must-have gates appear on this tier"
+          },
+          {
+            "label": "Autonomous WordPress",
+            "description": "Contact sales · Suits: teams that need custom procurement"
+          }
+        ]
+      },
+      {
+        "id": "sel-cloudways-implementation-6",
+        "type": "selection-checklist",
+        "title": "Cloudways implementation checklist",
+        "dimensions": [
+          {
+            "id": "prep",
+            "label": "Prep",
+            "options": [
+              "Object model drafted",
+              "Owners named",
+              "Legacy freeze window set"
+            ]
+          },
+          {
+            "id": "pilot",
+            "label": "Pilot",
+            "options": [
+              "infrastructure monitoring",
+              "Junk-data rules set",
+              "Support path clear"
+            ]
+          },
+          {
+            "id": "scale",
+            "label": "Scale",
+            "options": [
+              "WordPress",
+              "Seat expansion criteria written",
+              "Rollback plan noted"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "cta-cloudways-implementation-7",
+        "type": "interactive-cta",
+        "title": "Validate it-development fit before a deep Cloudways rollout",
+        "body": "If Cloudways fails constraint fit, stop implementation early.",
+        "href": "/tools/it-development-finder/",
+        "ctaLabel": "Open Finder",
+        "variant": "finder"
+      }
+    ],
+    "sections": [
+      {
+        "id": "sec-thesis-cloudways-implementation",
+        "heading": "Cloudways buyer question and thesis",
+        "body": "infrastructure monitoring; log management; CI/CD and automation; hosting control panel. Flexible (DigitalOcean Standard) · infrastructure monitoring | Autonomous WordPress. WordPress. Teams that want managed hosting on a chosen cloud VM without buying a panel licence; Agencies running WordPress plus other apps on one Cloudways account; Buyers who will actually use hourly Flexible billing and the list price DigitalOcean Standard floor. Cloudways is a managed cloud hosting platform (a DigitalOcean company) that provisions app stacks on cloud VMs instead of selling a Plesk/cPanel panel licence. Flexible publishes f. That catalogue mix is the Cloudways implementation filter — not a generic it-development lecture.\n\nBuyer question: choose Cloudways only if Teams that want managed hosting on a chosen cloud VM without buying a panel licence outweighs Flexible list price is a DigitalOcean Standard floor billed hourly — other clouds and sizes change TCO — otherwise keep researching.\n\nVerdict shape: yes for teams built around Teams that want managed hosting on a chosen cloud VM without buying a panel licence; Agencies running WordPress plus other apps on one Cloudways account; Buyers who will actually use hourly Flexible billing and the list price DigitalOcean Standard floor; no when Admins buying a Plesk or cPanel licence for servers they already own; WordPress-only buyers who want WP Engine’s specialist packaging; ITSM, observability, or source-control purchases — infrastructure monitoring is the hinge, not brand familiarity.\n\nBest for: Teams that want managed hosting on a chosen cloud VM without buying a panel licence; Agencies running WordPress plus other apps on one Cloudways account; Buyers who will actually use hourly Flexible billing and the list price DigitalOcean Standard floor (Teams that want managed hosting on a chosen cloud VM without buying a panel licence).\n\nPoor fit when: Admins buying a Plesk or cPanel licence for servers they already own; WordPress-only buyers who want WP Engine’s specialist packaging; ITSM, observability, or source-control purchases. Avoid if Flexible list price is a DigitalOcean Standard floor billed hourly — other clouds and sizes change TCO would block go-live."
+      },
+      {
+        "id": "sec-limits-cloudways-implementation",
+        "heading": "Cloudways limitation, pricing interpretation, and alternative context",
+        "body": "Limitation: Flexible list price is a DigitalOcean Standard floor billed hourly — other clouds and sizes change TCO; Autonomous WordPress autoscaling is a separate line, not included in the Flexible list price tile; Not a Plesk/cPanel panel licence — you are buying managed hosting, not a control-panel SKU because it forces process changes or add-ons around Cloudways when infrastructure monitoring is the job.\n\nPricing interpretation: no free plan confirmed — scope a paid pilot on Flexible (DigitalOcean Standard) with exit criteria before annual seats.\n\nPlan trade-off: you gain infrastructure monitoring at the expense of Per-agent vs per-host vs per-seat vs per-GB pricing models — measure both in the pilot. Researched packaging: Flexible (DigitalOcean Standard) · infrastructure monitoring | Autonomous WordPress.\n\nAlternative context: unlike WP Engine, Cloudways is preferable when Teams that want managed hosting on a chosen cloud VM without buying a panel licence because infrastructure monitoring plus infrastructure monitoring match; prefer WP Engine when Admins buying a Plesk or cPanel licence for servers they already own because the operating loops differ."
+      },
+      {
+        "id": "sec-scenario-cloudways-implementation",
+        "heading": "Decision scenario and conclusion for Cloudways",
+        "body": "Scenario: for infrastructure monitoring teams, recommend Cloudways when Teams that want managed hosting on a chosen cloud VM without buying a panel licence; recommend an alternative path when Admins buying a Plesk or cPanel licence for servers they already own because Flexible list price is a DigitalOcean Standard floor billed hourly — other clouds and sizes change TCO dominates.\n\nImplementation effort: setup takes a named admin for infrastructure monitoring plus a freeze window if WordPress are in the cutover path.\n\nIntegrations in research: WordPress.\n\nFinal call: proceed with Cloudways when infrastructure monitoring plus infrastructure monitoring outweigh Flexible list price is a DigitalOcean Standard floor billed hourly — other clouds and sizes change TCO; walk when Admins buying a Plesk or cPanel licence for servers they already own because workarounds will eat the Flexible (DigitalOcean Standard) spend."
+      }
+    ],
+    "checklist": [
+      {
+        "id": "enrich-chk-0",
+        "label": "Draft Cloudways object owners before invites",
+        "order": 0
+      },
+      {
+        "id": "enrich-chk-1",
+        "label": "Confirm plan unlocks for go-live features",
+        "order": 1
+      },
+      {
+        "id": "enrich-chk-2",
+        "label": "Pilot one team on infrastructure monitoring",
+        "order": 2
+      },
+      {
+        "id": "enrich-chk-3",
+        "label": "If blocked, evaluate WP Engine before sunk-cost expansion",
+        "order": 3
+      }
+    ],
+    "nextAction": {
+      "contentId": "tool:finder:it-development",
+      "label": "Open Finder shortlist"
+    }
+  },
+  "notes": [
+    "Implementation: workflow, constraints, mistakes, checklist.",
+    "Type-specific skeleton: IMPLEMENTATION_GUIDE"
+  ]
+}

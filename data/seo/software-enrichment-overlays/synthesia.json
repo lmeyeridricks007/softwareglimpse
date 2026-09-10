@@ -1,10 +1,10 @@
 {
   "slug": "synthesia",
-  "updatedAt": "2026-09-07T22:31:21.811Z",
+  "updatedAt": "2026-09-10T08:15:10.359Z",
   "version": "1.0.0",
   "fieldAudit": {
     "slug": "synthesia",
-    "checkedAt": "2026-09-07T22:31:21.810Z",
+    "checkedAt": "2026-09-10T08:15:10.356Z",
     "items": [
       {
         "field": "name",
@@ -20,9 +20,9 @@
       },
       {
         "field": "canonical_vendor",
-        "status": "UNKNOWN",
-        "detail": "Company/vendor not documented",
-        "source": "none"
+        "status": "PASS",
+        "detail": "Vendor: Synthesia Ltd.",
+        "source": "seed"
       },
       {
         "field": "category",
@@ -115,11 +115,11 @@
         "source": "enrichment"
       }
     ],
-    "passCount": 16,
+    "passCount": 17,
     "partialCount": 0,
     "missingCount": 0,
-    "unknownCount": 2,
-    "score": 89
+    "unknownCount": 1,
+    "score": 94
   },
   "decisionHub": {
     "whatItIs": "Synthesia is an AI avatar-presenter video studio for training, enablement, and on-brand explainers. Credits are the shared currency: Basic is free with 1,200 credits/month (~10 minutes) but keeps a logo and blocks MP4 download. Starter is $18/editor/mo billed annually ($29 monthly) with 14,500 credits/year (~120 minutes) and download/logo removal. Creator is $64/mo annual ($89 monthly) with 44,000 credits/year (~360 minutes), API, and interactive video. Enterprise is contact sales (SSO, SCORM, unlimited minutes). Distinct from Runway’s generative-clip studio — Synthesia is talking-head / L&D video, not text-to-shot filmmaking.",
@@ -140,12 +140,14 @@
       "Not a generative-filmmaking studio like Runway Gen-4"
     ],
     "coreCapabilities": [
+      "llm chat",
+      "writing assist",
+      "image generation",
       "voice tts",
+      "presentation generation",
+      "ad creative generation",
       "custom projects",
-      "usage credits",
-      "data privacy",
-      "video generation",
-      "ai video"
+      "usage credits"
     ],
     "pricingSummary": "4 documented plans · 1 free · entry paid: Starter",
     "keyTradeoffs": [
@@ -227,7 +229,6 @@
     "evidenceState": "Research/data-based (no completed hands-on test) · Latest verification/research signal: 2026-08-18T14:00:00.000Z · Editorial assessment: approved",
     "nextDecisionStep": "Compare against peers: Synthesia vs Runway",
     "missingSections": [
-      "canonical_vendor",
       "trial"
     ]
   },
@@ -410,13 +411,12 @@
   ],
   "dependentsNeedingRefresh": [],
   "remediation": [
-    "verify:canonical_vendor",
     "verify:trial"
   ],
   "notes": [
-    "fieldAudit score=89",
+    "fieldAudit score=94",
     "decisionHub bestFor=6 notIdeal=6",
     "dependents=35"
   ],
-  "materiallyImproved": false
+  "materiallyImproved": true
 }

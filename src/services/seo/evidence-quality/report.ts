@@ -75,9 +75,14 @@ export function renderEvidenceQualityMarkdown(
   }
 
   lines.push(
-    `## Top 10 products for genuine hands-on testing`,
+    `## Hands-on testing`,
     ``,
-    `Queue only — **do not simulate tests**. Open \`/dev/product-testing/\` with the testing secret.`,
+    `HANDS_ON is **0 / NOT_CURRENT_SCOPE** for the current remediation phase.`,
+    `Do not block DATA_VERIFIED promotion or page improvement on missing human tests.`,
+    `Do not create ProductTestSessions or testing tasks in this wave.`,
+    `Public copy must not claim “we tested”, “our testing found”, “hands-on”, or “we used the product” unless a genuine completed session exists.`,
+    ``,
+    `Future enhancement only — ranked candidates (not a current queue):`,
     ``,
     `| Rank | Product | Priority | Comps | GSC opp | Impressions | Evidence |`,
     `| ---: | --- | ---: | ---: | ---: | ---: | --- |`,
@@ -90,7 +95,7 @@ export function renderEvidenceQualityMarkdown(
 
   lines.push(
     ``,
-    `Full queue: \`docs/editorial/PRODUCT-TESTING-QUEUE.md\` (\`npm run testing:queue\`).`,
+    `Future ranked list only: \`docs/editorial/PRODUCT-TESTING-QUEUE.md\` — not a current operating queue.`,
     ``,
     `## Evidence / schema QA`,
     ``,

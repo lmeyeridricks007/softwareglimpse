@@ -140,7 +140,10 @@ export function buildContentQualitySection(
   return {
     status: "connected",
     validity: "REAL",
-    handsOnTested: num(coverage.handsOnTested),
+    handsOnTested: num(
+      coverage.handsOnTested,
+      "NOT_CURRENT_SCOPE — future enhancement, not a growth gate",
+    ),
     dataVerified: num(coverage.dataVerified),
     researchOnly: num(coverage.researched),
     reviewsWithEvidence: num(coverage.reviewsWithEvidence),
@@ -161,7 +164,8 @@ export function buildContentQualitySection(
       researchOnly: coverage.researched,
     }),
     notes: [
-      "Evidence levels from catalogue + completed test sessions — unfinished sessions do not count as hands-on.",
+      "HANDS_ON is 0 / NOT_CURRENT_SCOPE for the current remediation phase — future enhancement, not a growth gate.",
+      "Current evidence gate is DATA_VERIFIED (vendor primary sources + documented pricing with sourceIds) plus research-based pages. Unfinished test sessions do not count as hands-on and must not block improvement or promotion.",
       "DATA_VERIFIED requires software.pricingVerifiedAt / software.pricing.verifiedAt / enrichment.pricing.verifiedAt with sources — never domainCheckedAt, updatedAt/generatedAt twins, or mass-identical backfill stamps.",
       feed
         ? `Price growth signals from ${feed.generatedAt ?? "price-change-growth-signals.json"}`

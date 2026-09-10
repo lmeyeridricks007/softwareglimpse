@@ -1,10 +1,10 @@
 {
   "slug": "talkdesk",
-  "updatedAt": "2026-09-07T22:31:21.467Z",
+  "updatedAt": "2026-09-10T08:15:10.393Z",
   "version": "1.0.0",
   "fieldAudit": {
     "slug": "talkdesk",
-    "checkedAt": "2026-09-07T22:31:21.465Z",
+    "checkedAt": "2026-09-10T08:15:10.392Z",
     "items": [
       {
         "field": "name",
@@ -20,9 +20,9 @@
       },
       {
         "field": "canonical_vendor",
-        "status": "UNKNOWN",
-        "detail": "Company/vendor not documented",
-        "source": "none"
+        "status": "PASS",
+        "detail": "Vendor: Talkdesk, Inc.",
+        "source": "seed"
       },
       {
         "field": "category",
@@ -115,11 +115,11 @@
         "source": "enrichment"
       }
     ],
-    "passCount": 17,
+    "passCount": 18,
     "partialCount": 0,
     "missingCount": 0,
-    "unknownCount": 1,
-    "score": 94
+    "unknownCount": 0,
+    "score": 100
   },
   "decisionHub": {
     "whatItIs": "Talkdesk is a mid-market/enterprise cloud contact center (CCaaS): CX Cloud editions span Digital Essentials ($85), Voice Essentials ($105), Elite omnichannel ($165) and Industry Experience Clouds (from $225) per user/month, confirmed on talkdesk.com/pricing 2026-08-17. AI (CXA Copilot/Autopilot/Navigator) and many add-ons are quoted separately. Talkdesk Express offers a limited free credit path for small US/Canada businesses. Scored inside the contact-center job cluster — landscape award on the BC best page; do not rank as a phone-system peer to RingCentral/OpenPhone.",
@@ -144,9 +144,9 @@
       "call recording",
       "power dialer",
       "sms messaging",
+      "whatsapp business",
       "shared inbox",
-      "crm cti",
-      "analytics reporting"
+      "team messaging"
     ],
     "pricingSummary": "4 documented plans · entry paid: Digital Essentials · trial documented on at least one plan",
     "keyTradeoffs": [
@@ -239,9 +239,7 @@
     ],
     "evidenceState": "Research/data-based (no completed hands-on test) · Latest verification/research signal: 2026-08-17T20:00:00.000Z · Editorial assessment: approved",
     "nextDecisionStep": "Compare against peers: Genesys vs Talkdesk",
-    "missingSections": [
-      "canonical_vendor"
-    ]
+    "missingSections": []
   },
   "dependents": [
     {
@@ -406,13 +404,11 @@
     }
   ],
   "dependentsNeedingRefresh": [],
-  "remediation": [
-    "verify:canonical_vendor"
-  ],
+  "remediation": [],
   "notes": [
-    "fieldAudit score=94",
+    "fieldAudit score=100",
     "decisionHub bestFor=5 notIdeal=6",
     "dependents=32"
   ],
-  "materiallyImproved": false
+  "materiallyImproved": true
 }

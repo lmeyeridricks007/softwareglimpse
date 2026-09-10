@@ -171,36 +171,6 @@
       ]
     }
   ],
-  "aiCapabilities": [
-    {
-      "capability": "assistant",
-      "availability": "limited",
-      "sourceIds": [
-        "square-online-product-official"
-      ]
-    },
-    {
-      "capability": "summaries",
-      "availability": "limited",
-      "sourceIds": [
-        "square-online-product-official"
-      ]
-    },
-    {
-      "capability": "automation",
-      "availability": "limited",
-      "sourceIds": [
-        "square-online-product-official"
-      ]
-    },
-    {
-      "capability": "recommendations",
-      "availability": "limited",
-      "sourceIds": [
-        "square-online-product-official"
-      ]
-    }
-  ],
   "integrationSupport": [
     {
       "integrationSlug": "stripe",
@@ -226,6 +196,36 @@
     {
       "integrationSlug": "facebook",
       "kind": "native",
+      "sourceIds": [
+        "square-online-product-official"
+      ]
+    }
+  ],
+  "aiCapabilities": [
+    {
+      "capability": "assistant",
+      "availability": "limited",
+      "sourceIds": [
+        "square-online-product-official"
+      ]
+    },
+    {
+      "capability": "summaries",
+      "availability": "limited",
+      "sourceIds": [
+        "square-online-product-official"
+      ]
+    },
+    {
+      "capability": "automation",
+      "availability": "limited",
+      "sourceIds": [
+        "square-online-product-official"
+      ]
+    },
+    {
+      "capability": "recommendations",
+      "availability": "limited",
       "sourceIds": [
         "square-online-product-official"
       ]
@@ -301,80 +301,6 @@
       "isEditorial": false
     }
   ],
-  "pricing": {
-    "currency": "USD",
-    "model": "flat",
-    "hasFreePlan": true,
-    "hasFreeTrial": true,
-    "plans": [
-      {
-        "id": "plan-free",
-        "slug": "free",
-        "name": "Square Free",
-        "isFree": true,
-        "contactSales": false,
-        "hasFreeTrial": false,
-        "highlighted": false,
-        "rules": [
-          {
-            "kind": "flat",
-            "amount": 0,
-            "currency": "USD",
-            "interval": "month",
-            "amountPeriod": "month"
-          }
-        ],
-        "description": "$0/mo — pay processing; limited customization vs paid tiers."
-      },
-      {
-        "id": "plan-plus",
-        "slug": "plus",
-        "name": "Square Plus",
-        "isFree": false,
-        "contactSales": false,
-        "hasFreeTrial": true,
-        "trialDays": 30,
-        "highlighted": true,
-        "rules": [
-          {
-            "kind": "flat",
-            "amount": 49,
-            "currency": "USD",
-            "interval": "year",
-            "amountPeriod": "month"
-          }
-        ],
-        "description": "$49/mo per location — custom domain, marketing/loyalty depth, lower online rate."
-      },
-      {
-        "id": "plan-premium",
-        "slug": "premium",
-        "name": "Square Premium",
-        "isFree": false,
-        "contactSales": false,
-        "hasFreeTrial": true,
-        "trialDays": 30,
-        "highlighted": false,
-        "rules": [
-          {
-            "kind": "flat",
-            "amount": 149,
-            "currency": "USD",
-            "interval": "year",
-            "amountPeriod": "month"
-          }
-        ],
-        "description": "$149/mo per location — lowest in-person rates, 24/7 phone support."
-      }
-    ],
-    "notes": "Verified 2026-08-18 from squareup.com online-store/plans and pricing pages (high confidence). Free tier has no monthly fee but higher online processing (3.3% + 30¢ cited for 2026). Plus $49/location, Premium $149/location with 30-day trial. Custom pricing over $250k annual volume. Affiliate economics excluded.",
-    "verifiedAt": "2026-08-18T12:00:00.000Z",
-    "sourceIds": [
-      "square-online-pricing-official"
-    ],
-    "startingPriceMonthly": 0,
-    "trialDays": 30
-  },
   "screenshots": [
     {
       "id": "square-online-shot-desktop-hero",
@@ -509,13 +435,13 @@
       "demonstratedDimensionIds": [],
       "requirementCriterionIds": [],
       "workflowStageIds": [],
+      "mediaContext": "general-workflow",
       "reportedOutcomes": [],
       "placements": [
         "overview",
         "features",
         "evidence"
       ],
-      "mediaContext": "general-workflow",
       "purpose": "Official Square Online video for product research pages",
       "demonstratesCaption": "How Square Online presents the product in an official vendor video.",
       "editorialCommentary": "Official vendor demo — treat as UI/workflow evidence, not SoftwareGlimpse scoring.",
@@ -533,11 +459,80 @@
       "status": "published"
     }
   ],
-  "sourceIds": [
-    "square-online-product-official",
-    "square-online-pricing-official"
-  ],
-  "notes": "Ecommerce Wave-1 onboarding enrichment from first-party research 2026-08-18T12:00:00.000Z. handsOnTesting=false. membershipRole=primary. jobCluster=omnichannel-pos.",
+  "pricing": {
+    "currency": "USD",
+    "model": "flat",
+    "hasFreePlan": true,
+    "hasFreeTrial": true,
+    "plans": [
+      {
+        "id": "plan-free",
+        "slug": "free",
+        "name": "Square Free",
+        "isFree": true,
+        "contactSales": false,
+        "hasFreeTrial": false,
+        "highlighted": false,
+        "rules": [
+          {
+            "kind": "flat",
+            "amount": 0,
+            "currency": "USD",
+            "interval": "month",
+            "amountPeriod": "month"
+          }
+        ],
+        "description": "$0/mo — pay processing; limited customization vs paid tiers."
+      },
+      {
+        "id": "plan-plus",
+        "slug": "plus",
+        "name": "Square Plus",
+        "isFree": false,
+        "contactSales": false,
+        "hasFreeTrial": true,
+        "trialDays": 30,
+        "highlighted": true,
+        "rules": [
+          {
+            "kind": "flat",
+            "amount": 49,
+            "currency": "USD",
+            "interval": "year",
+            "amountPeriod": "month"
+          }
+        ],
+        "description": "$49/mo per location — custom domain, marketing/loyalty depth, lower online rate."
+      },
+      {
+        "id": "plan-premium",
+        "slug": "premium",
+        "name": "Square Premium",
+        "isFree": false,
+        "contactSales": false,
+        "hasFreeTrial": true,
+        "trialDays": 30,
+        "highlighted": false,
+        "rules": [
+          {
+            "kind": "flat",
+            "amount": 149,
+            "currency": "USD",
+            "interval": "year",
+            "amountPeriod": "month"
+          }
+        ],
+        "description": "$149/mo per location — lowest in-person rates, 24/7 phone support."
+      }
+    ],
+    "notes": "Verified 2026-08-18 from squareup.com online-store/plans and pricing pages (high confidence). Free tier has no monthly fee but higher online processing (3.3% + 30¢ cited for 2026). Plus $49/location, Premium $149/location with 30-day trial. Custom pricing over $250k annual volume. Affiliate economics excluded.",
+    "verifiedAt": "2026-09-10T11:40:14.214Z",
+    "sourceIds": [
+      "square-online-pricing-official"
+    ],
+    "startingPriceMonthly": 0,
+    "trialDays": 30
+  },
   "domainCheckedAt": {
     "identity": "2026-08-18T12:00:00.000Z",
     "pricing": "2026-08-18T12:00:00.000Z",
@@ -551,5 +546,10 @@
     "limits": "2026-08-18T12:00:00.000Z",
     "security-compliance": "2026-08-18T12:00:00.000Z"
   },
-  "updatedAt": "2026-08-18T08:00:00.000Z"
+  "sourceIds": [
+    "square-online-product-official",
+    "square-online-pricing-official"
+  ],
+  "updatedAt": "2026-08-18T08:00:00.000Z",
+  "notes": "Ecommerce Wave-1 onboarding enrichment from first-party research 2026-08-18T12:00:00.000Z. handsOnTesting=false. membershipRole=primary. jobCluster=omnichannel-pos."
 }

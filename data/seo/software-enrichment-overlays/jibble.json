@@ -1,10 +1,10 @@
 {
   "slug": "jibble",
-  "updatedAt": "2026-09-07T22:31:21.577Z",
+  "updatedAt": "2026-09-10T11:46:30.366Z",
   "version": "1.0.0",
   "fieldAudit": {
     "slug": "jibble",
-    "checkedAt": "2026-09-07T22:31:21.576Z",
+    "checkedAt": "2026-09-10T11:46:30.362Z",
     "items": [
       {
         "field": "name",
@@ -20,9 +20,9 @@
       },
       {
         "field": "canonical_vendor",
-        "status": "UNKNOWN",
-        "detail": "Company/vendor not documented",
-        "source": "none"
+        "status": "PASS",
+        "detail": "Vendor: Jibble Limited",
+        "source": "seed"
       },
       {
         "field": "category",
@@ -115,11 +115,11 @@
         "source": "enrichment"
       }
     ],
-    "passCount": 16,
+    "passCount": 17,
     "partialCount": 0,
     "missingCount": 0,
-    "unknownCount": 2,
-    "score": 89
+    "unknownCount": 1,
+    "score": 94
   },
   "decisionHub": {
     "whatItIs": "Jibble is a time & attendance platform for clock-in, timesheets, GPS/geofence, and face recognition. Free forever covers unlimited users with GPS, face recognition, timesheets, and Slack/Teams/QuickBooks integrations. Paid annual seats commonly cited as Premium ~$4.49/user/mo and Ultimate ~$7.99/user/mo (StackArbiter May 2026; medium confidence), with Enterprise custom. Free plan is the headline entry.",
@@ -140,6 +140,8 @@
       "Not an ATS or SOP training platform"
     ],
     "coreCapabilities": [
+      "workforce scheduling",
+      "frontline comms",
       "time attendance",
       "gps geofence clockin",
       "hris integrations",
@@ -235,7 +237,6 @@
     "evidenceState": "Research/data-based (no completed hands-on test) · Latest verification/research signal: 2026-08-17T20:00:00.000Z · Editorial assessment: approved",
     "nextDecisionStep": "Compare against peers: Breezy HR vs Jibble",
     "missingSections": [
-      "canonical_vendor",
       "trial"
     ]
   },
@@ -323,13 +324,12 @@
   ],
   "dependentsNeedingRefresh": [],
   "remediation": [
-    "verify:canonical_vendor",
     "verify:trial"
   ],
   "notes": [
-    "fieldAudit score=89",
+    "fieldAudit score=94",
     "decisionHub bestFor=6 notIdeal=6",
     "dependents=16"
   ],
-  "materiallyImproved": false
+  "materiallyImproved": true
 }

@@ -237,6 +237,22 @@
       ]
     }
   ],
+  "integrationSupport": [
+    {
+      "integrationSlug": "slack",
+      "kind": "native",
+      "sourceIds": [
+        "github-copilot-product-official"
+      ]
+    },
+    {
+      "integrationSlug": "api",
+      "kind": "api-only",
+      "sourceIds": [
+        "github-copilot-product-official"
+      ]
+    }
+  ],
   "aiCapabilities": [
     {
       "capability": "assistant",
@@ -262,22 +278,6 @@
     {
       "capability": "recommendations",
       "availability": "supported",
-      "sourceIds": [
-        "github-copilot-product-official"
-      ]
-    }
-  ],
-  "integrationSupport": [
-    {
-      "integrationSlug": "slack",
-      "kind": "native",
-      "sourceIds": [
-        "github-copilot-product-official"
-      ]
-    },
-    {
-      "integrationSlug": "api",
-      "kind": "api-only",
       "sourceIds": [
         "github-copilot-product-official"
       ]
@@ -368,96 +368,6 @@
       "isEditorial": false
     }
   ],
-  "pricing": {
-    "currency": "USD",
-    "model": "hybrid",
-    "hasFreePlan": true,
-    "hasFreeTrial": false,
-    "plans": [
-      {
-        "id": "plan-copilot-free",
-        "slug": "copilot-free",
-        "name": "Copilot Free",
-        "isFree": true,
-        "contactSales": false,
-        "hasFreeTrial": false,
-        "highlighted": false,
-        "rules": [
-          {
-            "kind": "flat",
-            "amount": 0,
-            "currency": "USD",
-            "interval": "month",
-            "amountPeriod": "month"
-          }
-        ],
-        "description": "Limited Copilot for individuals — confirm live Free allowances."
-      },
-      {
-        "id": "plan-pro",
-        "slug": "pro",
-        "name": "Copilot Pro",
-        "isFree": false,
-        "contactSales": false,
-        "hasFreeTrial": false,
-        "highlighted": true,
-        "rules": [
-          {
-            "kind": "per-seat",
-            "amountPerSeat": 10,
-            "currency": "USD",
-            "interval": "month",
-            "amountPeriod": "month"
-          }
-        ],
-        "description": "$10/mo — individual Copilot with included monthly AI Credits."
-      },
-      {
-        "id": "plan-business",
-        "slug": "business",
-        "name": "Copilot Business",
-        "isFree": false,
-        "contactSales": false,
-        "hasFreeTrial": false,
-        "highlighted": false,
-        "rules": [
-          {
-            "kind": "per-seat",
-            "amountPerSeat": 19,
-            "currency": "USD",
-            "interval": "month",
-            "amountPeriod": "month"
-          }
-        ],
-        "description": "$19/user/mo — org policy, pooled credits, broader model catalog."
-      },
-      {
-        "id": "plan-enterprise",
-        "slug": "enterprise",
-        "name": "Copilot Enterprise",
-        "isFree": false,
-        "contactSales": false,
-        "hasFreeTrial": false,
-        "highlighted": false,
-        "rules": [
-          {
-            "kind": "per-seat",
-            "amountPerSeat": 39,
-            "currency": "USD",
-            "interval": "month",
-            "amountPeriod": "month"
-          }
-        ],
-        "description": "$39/user/mo — GitHub Enterprise Cloud; larger credit pool and enterprise controls."
-      }
-    ],
-    "notes": "Verified 2026-08-18 from GitHub Copilot plans docs (high confidence). Pro $10, Pro+ $39, Max $100, Business $19/user, Enterprise $39/user. Usage-based AI Credits from June 2026; included credits scale with plan. Copilot Free exists with limits. Affiliate economics excluded.",
-    "verifiedAt": "2026-08-18T12:00:00.000Z",
-    "sourceIds": [
-      "github-copilot-pricing-official"
-    ],
-    "startingPriceMonthly": 10
-  },
   "screenshots": [
     {
       "id": "github-copilot-shot-overview",
@@ -573,13 +483,13 @@
       "demonstratedDimensionIds": [],
       "requirementCriterionIds": [],
       "workflowStageIds": [],
+      "mediaContext": "general-workflow",
       "reportedOutcomes": [],
       "placements": [
         "overview",
         "features",
         "evidence"
       ],
-      "mediaContext": "general-workflow",
       "purpose": "Official GitHub Copilot video for product research pages",
       "demonstratesCaption": "How GitHub Copilot presents the product in an official vendor video.",
       "editorialCommentary": "Official vendor demo — treat as UI/workflow evidence, not SoftwareGlimpse scoring.",
@@ -597,12 +507,96 @@
       "status": "published"
     }
   ],
-  "sourceIds": [
-    "github-copilot-product-official",
-    "github-copilot-pricing-official",
-    "github-copilot-plans"
-  ],
-  "notes": "AI Priority-2 onboarding enrichment from first-party research 2026-08-18T12:00:00.000Z. handsOnTesting=false. membershipRole=primary. jobCluster=ai-code.",
+  "pricing": {
+    "currency": "USD",
+    "model": "hybrid",
+    "hasFreePlan": true,
+    "hasFreeTrial": false,
+    "plans": [
+      {
+        "id": "plan-copilot-free",
+        "slug": "copilot-free",
+        "name": "Copilot Free",
+        "isFree": true,
+        "contactSales": false,
+        "hasFreeTrial": false,
+        "highlighted": false,
+        "rules": [
+          {
+            "kind": "flat",
+            "amount": 0,
+            "currency": "USD",
+            "interval": "month",
+            "amountPeriod": "month"
+          }
+        ],
+        "description": "Limited Copilot for individuals — confirm live Free allowances."
+      },
+      {
+        "id": "plan-pro",
+        "slug": "pro",
+        "name": "Copilot Pro",
+        "isFree": false,
+        "contactSales": false,
+        "hasFreeTrial": false,
+        "highlighted": true,
+        "rules": [
+          {
+            "kind": "per-seat",
+            "amountPerSeat": 10,
+            "currency": "USD",
+            "interval": "month",
+            "amountPeriod": "month"
+          }
+        ],
+        "description": "$10/mo — individual Copilot with included monthly AI Credits."
+      },
+      {
+        "id": "plan-business",
+        "slug": "business",
+        "name": "Copilot Business",
+        "isFree": false,
+        "contactSales": false,
+        "hasFreeTrial": false,
+        "highlighted": false,
+        "rules": [
+          {
+            "kind": "per-seat",
+            "amountPerSeat": 19,
+            "currency": "USD",
+            "interval": "month",
+            "amountPeriod": "month"
+          }
+        ],
+        "description": "$19/user/mo — org policy, pooled credits, broader model catalog."
+      },
+      {
+        "id": "plan-enterprise",
+        "slug": "enterprise",
+        "name": "Copilot Enterprise",
+        "isFree": false,
+        "contactSales": false,
+        "hasFreeTrial": false,
+        "highlighted": false,
+        "rules": [
+          {
+            "kind": "per-seat",
+            "amountPerSeat": 39,
+            "currency": "USD",
+            "interval": "month",
+            "amountPeriod": "month"
+          }
+        ],
+        "description": "$39/user/mo — GitHub Enterprise Cloud; larger credit pool and enterprise controls."
+      }
+    ],
+    "notes": "Verified 2026-08-18 from GitHub Copilot plans docs (high confidence). Pro $10, Pro+ $39, Max $100, Business $19/user, Enterprise $39/user. Usage-based AI Credits from June 2026; included credits scale with plan. Copilot Free exists with limits. Affiliate economics excluded.",
+    "verifiedAt": "2026-09-10T08:14:56.596Z",
+    "sourceIds": [
+      "github-copilot-pricing-official"
+    ],
+    "startingPriceMonthly": 10
+  },
   "domainCheckedAt": {
     "identity": "2026-08-18T12:00:00.000Z",
     "pricing": "2026-08-18T12:00:00.000Z",
@@ -616,5 +610,11 @@
     "limits": "2026-08-18T12:00:00.000Z",
     "security-compliance": "2026-08-18T12:00:00.000Z"
   },
-  "updatedAt": "2026-08-18T14:00:00.000Z"
+  "sourceIds": [
+    "github-copilot-product-official",
+    "github-copilot-pricing-official",
+    "github-copilot-plans"
+  ],
+  "updatedAt": "2026-08-18T14:00:00.000Z",
+  "notes": "AI Priority-2 onboarding enrichment from first-party research 2026-08-18T12:00:00.000Z. handsOnTesting=false. membershipRole=primary. jobCluster=ai-code."
 }

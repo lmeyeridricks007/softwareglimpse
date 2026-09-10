@@ -1,10 +1,10 @@
 {
   "slug": "wix",
-  "updatedAt": "2026-09-07T22:31:21.804Z",
+  "updatedAt": "2026-09-10T11:46:30.086Z",
   "version": "1.0.0",
   "fieldAudit": {
     "slug": "wix",
-    "checkedAt": "2026-09-07T22:31:21.803Z",
+    "checkedAt": "2026-09-10T11:46:30.084Z",
     "items": [
       {
         "field": "name",
@@ -20,9 +20,9 @@
       },
       {
         "field": "canonical_vendor",
-        "status": "UNKNOWN",
-        "detail": "Company/vendor not documented",
-        "source": "none"
+        "status": "PASS",
+        "detail": "Vendor: Wix.com Ltd.",
+        "source": "seed"
       },
       {
         "field": "category",
@@ -115,11 +115,11 @@
         "source": "enrichment"
       }
     ],
-    "passCount": 17,
+    "passCount": 18,
     "partialCount": 0,
     "missingCount": 0,
-    "unknownCount": 1,
-    "score": 94
+    "unknownCount": 0,
+    "score": 100
   },
   "decisionHub": {
     "whatItIs": "Wix is a website builder with integrated ecommerce. US annual tiles commonly published 2026: Light ~$17/mo (site, no store), Core ~$29/mo (accept payments / basic ecommerce), Business ~$39/mo, Business Elite ~$159/mo; monthly billing is higher. Free plan exists but does not unlock selling. Best for design-led SMBs that need a site and a store together — not a Shopify-class commerce OS. Pricing research 2026-08-18 from consistent first-party plan reporting; confirm live on wix.com/pricing.",
@@ -146,8 +146,8 @@
       "order management",
       "inventory management",
       "shipping fulfillment",
-      "marketing automation",
-      "analytics reporting"
+      "pos omnichannel",
+      "marketplace channels"
     ],
     "pricingSummary": "5 documented plans · 1 free · entry paid: Light · trial documented on at least one plan",
     "keyTradeoffs": [
@@ -232,9 +232,7 @@
     ],
     "evidenceState": "Research/data-based (no completed hands-on test) · Latest verification/research signal: 2026-08-18T14:00:00.000Z · Editorial assessment: approved",
     "nextDecisionStep": "Compare against peers: Wix vs Squarespace",
-    "missingSections": [
-      "canonical_vendor"
-    ]
+    "missingSections": []
   },
   "dependents": [
     {
@@ -384,13 +382,11 @@
     }
   ],
   "dependentsNeedingRefresh": [],
-  "remediation": [
-    "verify:canonical_vendor"
-  ],
+  "remediation": [],
   "notes": [
-    "fieldAudit score=94",
+    "fieldAudit score=100",
     "decisionHub bestFor=6 notIdeal=6",
     "dependents=29"
   ],
-  "materiallyImproved": false
+  "materiallyImproved": true
 }

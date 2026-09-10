@@ -36,7 +36,7 @@ import {
 import { buildSoftwareLookup } from "@/services/seo/compare-index-worthiness";
 import { runSitemapEstateReconcile } from "@/services/seo/sitemap-reconcile";
 import { runSEOHealthOrchestrator } from "@/services/seo-audit-agents";
-import { buildProductTestingQueue } from "@/services/product-testing/queue";
+import { HANDS_ON_SCOPE_NOTE } from "@/services/editorial/hands-on-scope";
 import { reconcileDataVerifiedCoverage } from "@/services/editorial/pricing-verified-at";
 import { selectRecommendedBatch } from "./select-batch";
 import {
@@ -104,6 +104,7 @@ export async function runImprovementCycle(
   const steps: ImprovementCycleStepResult[] = [];
   const notes: string[] = [
     "Existing-content only — no new URL creation, no mass deletes, no fabricated testing.",
+    "HANDS_ON is 0 / NOT_CURRENT_SCOPE — do not enqueue human tests or block promotion on missing hands-on evidence.",
     apply
       ? "APPLY mode: enrichment overlays / linking / promotion may persist."
       : "PLAN mode: no enrichment overlays or promotions written.",
@@ -785,20 +786,9 @@ export async function runImprovementCycle(
     );
   }
 
-  // Human testing queue (existing)
-  const testingQueue = buildProductTestingQueue(10);
-  const humanTesting: CycleQueueItem[] = testingQueue.items.map((t) => ({
-    kind: "software" as const,
-    slug: t.productSlug,
-    path: `/software/${t.productSlug}/`,
-    lane: t.lane ?? null,
-    score: t.evidencePriorityScore,
-    reason: t.reason,
-    action: "human_test" as const,
-    lifecycle: null,
-    blockedReasons: [],
-  }));
-  existingArtifacts.push("docs/editorial/PRODUCT-TESTING-QUEUE.md");
+  // Human testing is NOT_CURRENT_SCOPE — keep the field empty, do not enqueue tasks.
+  const humanTesting: CycleQueueItem[] = [];
+  notes.push(HANDS_ON_SCOPE_NOTE);
 
   // Link opportunities from GSC feed if empty
   if (linkOpps.length === 0) {

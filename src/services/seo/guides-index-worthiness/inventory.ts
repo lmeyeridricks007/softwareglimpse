@@ -18,6 +18,7 @@ import {
   normalizeIntentTitle,
 } from "./classify";
 import { evaluateGuideIndexWorthiness } from "./evaluate";
+import { computeFactoryRemediationKpis } from "./factory-kpis";
 import { guideBodyHasUniqueAnalysis } from "./uniqueness";
 import type {
   GuideAuditReport,
@@ -448,6 +449,8 @@ export function runGuidesIndexAudit(): GuideAuditReport {
     .sort((a, b) => a.metrics.contentCompleteness - b.metrics.contentCompleteness)
     .slice(0, 50);
 
+  const factoryKpis = computeFactoryRemediationKpis(evaluations);
+
   const improvementQueueCount =
     byLifecycle.IMPROVE + byLifecycle.IMPROVING;
   const readyForPromotionCount =
@@ -476,13 +479,14 @@ export function runGuidesIndexAudit(): GuideAuditReport {
     previouslySeedIndexableCount: evaluations.filter(
       (e) => e.metrics.seedIndexableFlag,
     ).length,
-    factoryPackCount: evaluations.filter((e) => e.metrics.factoryPackKind).length,
+    factoryPackCount: factoryKpis.originTotal,
     highNearDuplicateRiskCount: evaluations.filter((e) =>
       e.reasons.includes("high-near-duplicate-risk"),
     ).length,
     limitedUniqueAnalysisCount: evaluations.filter((e) =>
       e.reasons.includes("limited-unique-analysis-signals"),
     ).length,
+    factoryKpis,
     uniqueRatio: distribution(evaluations.map((e) => e.metrics.uniqueContentRatio)),
     wordCount: distribution(evaluations.map((e) => e.metrics.wordCount)),
   };

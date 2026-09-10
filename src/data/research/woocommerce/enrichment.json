@@ -157,36 +157,6 @@
       ]
     }
   ],
-  "aiCapabilities": [
-    {
-      "capability": "assistant",
-      "availability": "limited",
-      "sourceIds": [
-        "woocommerce-product-official"
-      ]
-    },
-    {
-      "capability": "summaries",
-      "availability": "limited",
-      "sourceIds": [
-        "woocommerce-product-official"
-      ]
-    },
-    {
-      "capability": "automation",
-      "availability": "limited",
-      "sourceIds": [
-        "woocommerce-product-official"
-      ]
-    },
-    {
-      "capability": "recommendations",
-      "availability": "limited",
-      "sourceIds": [
-        "woocommerce-product-official"
-      ]
-    }
-  ],
   "integrationSupport": [
     {
       "integrationSlug": "wordpress",
@@ -212,6 +182,36 @@
     {
       "integrationSlug": "zapier",
       "kind": "zapier-style",
+      "sourceIds": [
+        "woocommerce-product-official"
+      ]
+    }
+  ],
+  "aiCapabilities": [
+    {
+      "capability": "assistant",
+      "availability": "limited",
+      "sourceIds": [
+        "woocommerce-product-official"
+      ]
+    },
+    {
+      "capability": "summaries",
+      "availability": "limited",
+      "sourceIds": [
+        "woocommerce-product-official"
+      ]
+    },
+    {
+      "capability": "automation",
+      "availability": "limited",
+      "sourceIds": [
+        "woocommerce-product-official"
+      ]
+    },
+    {
+      "capability": "recommendations",
+      "availability": "limited",
       "sourceIds": [
         "woocommerce-product-official"
       ]
@@ -294,50 +294,6 @@
       "isEditorial": false
     }
   ],
-  "pricing": {
-    "currency": "USD",
-    "model": "hybrid",
-    "hasFreePlan": true,
-    "hasFreeTrial": false,
-    "plans": [
-      {
-        "id": "plan-core",
-        "slug": "core",
-        "name": "WooCommerce core",
-        "isFree": true,
-        "contactSales": false,
-        "hasFreeTrial": false,
-        "highlighted": false,
-        "rules": [
-          {
-            "kind": "flat",
-            "amount": 0,
-            "currency": "USD",
-            "interval": "month",
-            "amountPeriod": "month"
-          }
-        ],
-        "description": "Free plugin — hosting, extensions, and processing are separate."
-      },
-      {
-        "id": "plan-extensions",
-        "slug": "extensions",
-        "name": "Extensions & hosting",
-        "isFree": false,
-        "contactSales": true,
-        "hasFreeTrial": false,
-        "highlighted": false,
-        "rules": [],
-        "description": "Paid extensions, themes, and hosted plans vary — confirm on woocommerce.com."
-      }
-    ],
-    "notes": "Core WooCommerce plugin is free (medium-high confidence). TCO includes WordPress hosting, premium themes, paid extensions, and gateway fees — not captured in a single subscription floor. WooPayments and Woo-hosted plans are optional. Verified 2026-08-18 from woocommerce.com positioning; confirm live extension/hosting quotes. Affiliate economics excluded.",
-    "verifiedAt": "2026-08-18T12:00:00.000Z",
-    "sourceIds": [
-      "woocommerce-pricing-official"
-    ],
-    "startingPriceMonthly": 0
-  },
   "screenshots": [
     {
       "id": "woocommerce-shot-homepage-thumbnail",
@@ -472,13 +428,13 @@
       "demonstratedDimensionIds": [],
       "requirementCriterionIds": [],
       "workflowStageIds": [],
+      "mediaContext": "general-workflow",
       "reportedOutcomes": [],
       "placements": [
         "overview",
         "features",
         "evidence"
       ],
-      "mediaContext": "general-workflow",
       "purpose": "Official WooCommerce video for product research pages",
       "demonstratesCaption": "How WooCommerce presents the product in an official vendor video.",
       "editorialCommentary": "Official vendor demo — treat as UI/workflow evidence, not SoftwareGlimpse scoring.",
@@ -496,11 +452,50 @@
       "status": "published"
     }
   ],
-  "sourceIds": [
-    "woocommerce-product-official",
-    "woocommerce-pricing-official"
-  ],
-  "notes": "Ecommerce Wave-1 onboarding enrichment from first-party research 2026-08-18T12:00:00.000Z. handsOnTesting=false. membershipRole=primary. jobCluster=open-source-platform.",
+  "pricing": {
+    "currency": "USD",
+    "model": "hybrid",
+    "hasFreePlan": true,
+    "hasFreeTrial": false,
+    "plans": [
+      {
+        "id": "plan-core",
+        "slug": "core",
+        "name": "WooCommerce core",
+        "isFree": true,
+        "contactSales": false,
+        "hasFreeTrial": false,
+        "highlighted": false,
+        "rules": [
+          {
+            "kind": "flat",
+            "amount": 0,
+            "currency": "USD",
+            "interval": "month",
+            "amountPeriod": "month"
+          }
+        ],
+        "description": "Free plugin — hosting, extensions, and processing are separate."
+      },
+      {
+        "id": "plan-extensions",
+        "slug": "extensions",
+        "name": "Extensions & hosting",
+        "isFree": false,
+        "contactSales": true,
+        "hasFreeTrial": false,
+        "highlighted": false,
+        "rules": [],
+        "description": "Paid extensions, themes, and hosted plans vary — confirm on woocommerce.com."
+      }
+    ],
+    "notes": "Core WooCommerce plugin is free (medium-high confidence). TCO includes WordPress hosting, premium themes, paid extensions, and gateway fees — not captured in a single subscription floor. WooPayments and Woo-hosted plans are optional. Verified 2026-08-18 from woocommerce.com positioning; confirm live extension/hosting quotes. Affiliate economics excluded.",
+    "verifiedAt": "2026-09-10T11:40:05.142Z",
+    "sourceIds": [
+      "woocommerce-pricing-official"
+    ],
+    "startingPriceMonthly": 0
+  },
   "domainCheckedAt": {
     "identity": "2026-08-18T12:00:00.000Z",
     "pricing": "2026-08-18T12:00:00.000Z",
@@ -514,5 +509,10 @@
     "limits": "2026-08-18T12:00:00.000Z",
     "security-compliance": "2026-08-18T12:00:00.000Z"
   },
-  "updatedAt": "2026-08-18T08:00:00.000Z"
+  "sourceIds": [
+    "woocommerce-product-official",
+    "woocommerce-pricing-official"
+  ],
+  "updatedAt": "2026-08-18T08:00:00.000Z",
+  "notes": "Ecommerce Wave-1 onboarding enrichment from first-party research 2026-08-18T12:00:00.000Z. handsOnTesting=false. membershipRole=primary. jobCluster=open-source-platform."
 }

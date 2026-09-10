@@ -22,6 +22,8 @@ import { isComparisonSearchIndexWorthy } from "@/services/seo/compare-index-wort
 import { isGuideSearchIndexWorthy } from "@/services/seo/guides-index-worthiness/search-indexable";
 import { getLifecycleOverrideState } from "@/services/seo/content-lifecycle/store";
 import { effectiveSeoIndexable } from "@/services/seo/content-lifecycle/promote";
+import { loadCompareEnrichmentOverlay } from "@/services/seo/compare-enrichment/overlay-store";
+import { mergeComparisonWithOverlay } from "@/services/seo/compare-enrichment/overlay-merge";
 import {
   evaluateAlternativesQuality,
   evaluateBestQuality,
@@ -134,17 +136,30 @@ export function isEntityIndexable(
   return passesQualityGate(input);
 }
 
+function comparisonForQuality(comparison: Comparison): Comparison {
+  try {
+    return mergeComparisonWithOverlay(
+      comparison,
+      loadCompareEnrichmentOverlay(comparison.slug),
+    );
+  } catch {
+    return comparison;
+  }
+}
+
 export function passesQualityGate(input: IndexableEntity): boolean {
   switch (input.kind) {
     case "software":
       return evaluateSoftwareQuality(input.entity).ok;
     case "category":
       return evaluateCategoryQuality(input.entity).ok;
-    case "comparison":
+    case "comparison": {
+      const entity = comparisonForQuality(input.entity);
       return (
-        evaluateComparisonQuality(input.entity).ok &&
-        isComparisonSearchIndexWorthy(input.entity, softwareLookup())
+        evaluateComparisonQuality(entity).ok &&
+        isComparisonSearchIndexWorthy(entity, softwareLookup())
       );
+    }
     case "alternatives":
       return evaluateAlternativesQuality(input.entity).ok;
     case "best":

@@ -1,0 +1,210 @@
+{
+  "slug": "sentry-implementation",
+  "enrichmentType": "IMPLEMENTATION_GUIDE",
+  "updatedAt": "2026-09-10T12:56:13.910Z",
+  "uniqueValueAdded": [
+    "implementation_workflow",
+    "scenario_analysis",
+    "decision_framework",
+    "limitations_evidence",
+    "pricing_comparison",
+    "sg_original_data",
+    "buyer_checklist"
+  ],
+  "patch": {
+    "summary": "incident management; infrastructure monitoring; APM and distributed tracing; log management. Developer · free · incident management | Team | Business. Github, Slack. Application teams whose primary observability job is errors, traces, and replays; Developers who want a free 5k-error path before Team list price; Buyers comparing a specialist to Datadog/Splunk host suites. Sentry is an application error-monitoring, tracing, and session-replay specialist. It sits in the observability-monitoring cluster as a developer-facing peer — not a Datadog infras Buyer question: is Sentry worth it if weekly work actually needs incident management and incident management, or does SRE teams buying infrastructure monitoring as the core SKU (Datadog) dominate? Thesis: Sentry earns budget when incident management; infrastructure monitoring; APM and distributed tracing; log management is the operating loop; walk when Not a Datadog-style infrastructure monitoring suite — errors/traces/replays are the job because it forces workarounds.",
+    "blocks": [
+      {
+        "id": "da-sentry-implementation-1",
+        "type": "direct-answer",
+        "body": "incident management decides whether Sentry implementation is a one-team pilot or a specialist project — confirm unlocks for must-have capabilities before invites.",
+        "bullets": [
+          "Start with: incident management",
+          "Gate check: confirm paid unlocks before go-live",
+          "Integrate after: data quality pass on Github"
+        ]
+      },
+      {
+        "id": "impl-sentry-implementation-2",
+        "type": "step",
+        "heading": "Sentry day-zero to steady-state sequence",
+        "body": "Treat Sentry setup as a controlled rollout — not a weekend dump of CSV files.",
+        "stepNumber": 1,
+        "scenarios": [
+          {
+            "title": "Day zero — objects and owners",
+            "body": "Define owners for incident management, infrastructure monitoring, APM and distributed tracing before inviting the whole org."
+          },
+          {
+            "title": "SMB pilot",
+            "body": "One pipeline / one team proves Application teams whose primary observability job is errors, traces, and replays before company-wide seats."
+          },
+          {
+            "title": "Cutover",
+            "body": "Freeze legacy writes briefly; validate Github and Slack before reopen."
+          }
+        ]
+      },
+      {
+        "id": "df-sentry-implementation-3",
+        "type": "decision-framework",
+        "title": "Sentry implementation go / no-go",
+        "steps": [
+          {
+            "id": "i-1",
+            "label": "Go when plan unlocks cover must-have capabilities"
+          },
+          {
+            "id": "i-2",
+            "label": "Pause if this limitation blocks ops: Not a Datadog-style infrastructure monitoring suite — errors/traces/replays are the job"
+          },
+          {
+            "id": "i-3",
+            "label": "Do not expand seats until incident management is green"
+          }
+        ]
+      },
+      {
+        "id": "mist-sentry-implementation-4",
+        "type": "mistakes",
+        "title": "Sentry implementation mistakes",
+        "items": [
+          {
+            "title": "Mistake 1",
+            "body": "Not a Datadog-style infrastructure monitoring suite — errors/traces/replays are the job"
+          },
+          {
+            "title": "Mistake 2",
+            "body": "Prepaid event volume on Team/Business is the TCO lever beyond list price stickers"
+          },
+          {
+            "title": "Mistake 3",
+            "body": "Does not outrank Datadog (8.6)"
+          },
+          {
+            "title": "Mistake 4",
+            "body": "Not on-call paging as a primary product (landscape vs PagerDuty)"
+          },
+          {
+            "title": "Big-bang invite",
+            "body": "Inviting every user before object design creates junk data that is expensive to unwind."
+          }
+        ]
+      },
+      {
+        "id": "cost-sentry-implementation-5",
+        "type": "cost-breakdown",
+        "title": "Sentry plan gates that affect rollout",
+        "body": "Implementation fails when unlocks needed for go-live sit on a higher tier than budgeted.",
+        "lines": [
+          {
+            "label": "Developer",
+            "description": "Free plan · Unlocks: incident management, infrastructure monitoring, APM and distributed tracing · Suits: explore before committing seats"
+          },
+          {
+            "label": "Team",
+            "description": "Suits: teams whose must-have gates appear on this tier"
+          },
+          {
+            "label": "Business",
+            "description": "Suits: teams whose must-have gates appear on this tier"
+          },
+          {
+            "label": "Enterprise",
+            "description": "Contact sales · Suits: teams that need custom procurement"
+          }
+        ]
+      },
+      {
+        "id": "sel-sentry-implementation-6",
+        "type": "selection-checklist",
+        "title": "Sentry implementation checklist",
+        "dimensions": [
+          {
+            "id": "prep",
+            "label": "Prep",
+            "options": [
+              "Object model drafted",
+              "Owners named",
+              "Legacy freeze window set"
+            ]
+          },
+          {
+            "id": "pilot",
+            "label": "Pilot",
+            "options": [
+              "incident management",
+              "Junk-data rules set",
+              "Support path clear"
+            ]
+          },
+          {
+            "id": "scale",
+            "label": "Scale",
+            "options": [
+              "Github",
+              "Seat expansion criteria written",
+              "Rollback plan noted"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "cta-sentry-implementation-7",
+        "type": "interactive-cta",
+        "title": "Validate it-development fit before a deep Sentry rollout",
+        "body": "If Sentry fails constraint fit, stop implementation early.",
+        "href": "/tools/it-development-finder/",
+        "ctaLabel": "Open Finder",
+        "variant": "finder"
+      }
+    ],
+    "sections": [
+      {
+        "id": "sec-thesis-sentry-implementation",
+        "heading": "Sentry buyer question and thesis",
+        "body": "incident management; infrastructure monitoring; APM and distributed tracing; log management. Developer · free · incident management | Team | Business. Github, Slack. Application teams whose primary observability job is errors, traces, and replays; Developers who want a free 5k-error path before Team list price; Buyers comparing a specialist to Datadog/Splunk host suites. Sentry is an application error-monitoring, tracing, and session-replay specialist. It sits in the observability-monitoring cluster as a developer-facing peer — not a Datadog infras. That catalogue mix is the Sentry implementation filter — not a generic it-development lecture.\n\nBuyer question: is Sentry worth it if weekly work actually needs incident management and incident management, or does SRE teams buying infrastructure monitoring as the core SKU (Datadog) dominate?\n\nThesis: Sentry earns budget when incident management; infrastructure monitoring; APM and distributed tracing; log management is the operating loop; walk when Not a Datadog-style infrastructure monitoring suite — errors/traces/replays are the job because it forces workarounds.\n\nBest for: Application teams whose primary observability job is errors, traces, and replays; Developers who want a free 5k-error path before Team list price; Buyers comparing a specialist to Datadog/Splunk host suites (Application teams whose primary observability job is errors, traces, and replays).\n\nPoor fit when: SRE teams buying infrastructure monitoring as the core SKU (Datadog); On-call-only paging (PagerDuty) — landscape, not a peer rank; ITSM or hosting purchases. Avoid if Not a Datadog-style infrastructure monitoring suite — errors/traces/replays are the job would block go-live."
+      },
+      {
+        "id": "sec-limits-sentry-implementation",
+        "heading": "Sentry limitation, pricing interpretation, and alternative context",
+        "body": "Limitation: Not a Datadog-style infrastructure monitoring suite — errors/traces/replays are the job; Prepaid event volume on Team/Business is the TCO lever beyond list price stickers; Does not outrank Datadog (8.6) because it forces process changes or add-ons around Sentry when incident management is the job.\n\nPricing interpretation: stay on Developer until incident management is mandatory; plan jumps to Team only after that hinge is proven.\n\nPlan trade-off: you gain incident management at the expense of Per-agent vs per-host vs per-seat vs per-GB pricing models — measure both in the pilot. Researched packaging: Developer · free · incident management | Team | Business.\n\nAlternative context: unlike Datadog, Sentry is preferable when Application teams whose primary observability job is errors, traces, and replays because incident management plus incident management match; prefer Datadog when SRE teams buying infrastructure monitoring as the core SKU (Datadog) because the operating loops differ."
+      },
+      {
+        "id": "sec-scenario-sentry-implementation",
+        "heading": "Decision scenario and conclusion for Sentry",
+        "body": "Scenario: recommend Sentry for Application teams whose primary observability job is errors, traces, and replays; do not choose it when SRE teams buying infrastructure monitoring as the core SKU (Datadog) — the jobs diverge at incident management.\n\nImplementation time: weeks to configure incident management if Github, Slack must be green before invites.\n\nIntegrations in research: Github, Slack.\n\nDecision conclusion: buy Sentry when researched fit (Application teams whose primary observability job is errors, traces, and replays) beats researched limits (Not a Datadog-style infrastructure monitoring suite — errors/traces/replays are the job); otherwise keep researching — do not substitute product names into a generic implementation essay."
+      }
+    ],
+    "checklist": [
+      {
+        "id": "enrich-chk-0",
+        "label": "Draft Sentry object owners before invites",
+        "order": 0
+      },
+      {
+        "id": "enrich-chk-1",
+        "label": "Confirm plan unlocks for go-live features",
+        "order": 1
+      },
+      {
+        "id": "enrich-chk-2",
+        "label": "Pilot one team on incident management",
+        "order": 2
+      },
+      {
+        "id": "enrich-chk-3",
+        "label": "If blocked, evaluate Datadog before sunk-cost expansion",
+        "order": 3
+      }
+    ],
+    "nextAction": {
+      "contentId": "tool:finder:it-development",
+      "label": "Open Finder shortlist"
+    }
+  },
+  "notes": [
+    "Implementation: workflow, constraints, mistakes, checklist.",
+    "Type-specific skeleton: IMPLEMENTATION_GUIDE"
+  ]
+}

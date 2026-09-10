@@ -1,6 +1,6 @@
 {
   "productSlug": "five9",
-  "shortDescription": "Five9 is a cloud contact center platform known for blended inbound/outbound voice, dialer strength and concurrent-seat packaging. First-party pricing on five9.com/products/pricing (checked 2026-08-17) publishes Digital $119 and Core $159 per concurrent seat/month USD, with Plus/Pro/Enterprise contact-sales; a 50-seat minimum and usage-based AI/SMS charges apply. Scored as CCaaS \u2014 landscape award only; do not rank as a phone-system peer.",
+  "shortDescription": "Five9 is a cloud contact center platform known for blended inbound/outbound voice, dialer strength and concurrent-seat packaging. First-party pricing on five9.com/products/pricing (checked 2026-08-17) publishes Digital $119 and Core $159 per concurrent seat/month USD, with Plus/Pro/Enterprise contact-sales; a 50-seat minimum and usage-based AI/SMS charges apply. Scored as CCaaS — landscape award only; do not rank as a phone-system peer.",
   "featureSupport": [
     {
       "featureSlug": "cloud-phone",
@@ -185,40 +185,6 @@
       ]
     }
   ],
-  "aiCapabilities": [
-    {
-      "capability": "transcription",
-      "availability": "supported",
-      "sourceIds": [
-        "five9-product-official"
-      ],
-      "notes": "Vendor label: summaries / live transcription."
-    },
-    {
-      "capability": "assistant",
-      "availability": "higher-plan-only",
-      "sourceIds": [
-        "five9-product-official"
-      ],
-      "notes": "Vendor label: Agent Assist."
-    },
-    {
-      "capability": "recommendations",
-      "availability": "higher-plan-only",
-      "sourceIds": [
-        "five9-product-official"
-      ],
-      "notes": "Vendor label: Knowledge."
-    },
-    {
-      "capability": "summaries",
-      "availability": "supported",
-      "sourceIds": [
-        "five9-product-official"
-      ],
-      "notes": "Vendor label: Insights."
-    }
-  ],
   "integrationSupport": [
     {
       "integrationSlug": "salesforce",
@@ -263,9 +229,43 @@
       ]
     }
   ],
+  "aiCapabilities": [
+    {
+      "capability": "transcription",
+      "availability": "supported",
+      "sourceIds": [
+        "five9-product-official"
+      ],
+      "notes": "Vendor label: summaries / live transcription."
+    },
+    {
+      "capability": "assistant",
+      "availability": "higher-plan-only",
+      "sourceIds": [
+        "five9-product-official"
+      ],
+      "notes": "Vendor label: Agent Assist."
+    },
+    {
+      "capability": "recommendations",
+      "availability": "higher-plan-only",
+      "sourceIds": [
+        "five9-product-official"
+      ],
+      "notes": "Vendor label: Knowledge."
+    },
+    {
+      "capability": "summaries",
+      "availability": "supported",
+      "sourceIds": [
+        "five9-product-official"
+      ],
+      "notes": "Vendor label: Insights."
+    }
+  ],
   "vendorPositioning": [
     {
-      "claim": "Intelligent cloud contact center \u2014 AI, CRM adapters and WEM choice for mid-market and enterprise CX teams.",
+      "claim": "Intelligent cloud contact center — AI, CRM adapters and WEM choice for mid-market and enterprise CX teams.",
       "audienceHints": [
         "Mid-market and enterprise contact centres that need blended dialer strength",
         "Teams comfortable with concurrent-seat economics and 50+ seat minimums",
@@ -295,7 +295,7 @@
   "limitations": [
     {
       "kind": "usage-cap",
-      "description": "50 concurrent-seat minimum \u2014 not viable for small SMB phone buyers",
+      "description": "50 concurrent-seat minimum — not viable for small SMB phone buyers",
       "sourceIds": [
         "five9-product-official"
       ],
@@ -311,7 +311,7 @@
     },
     {
       "kind": "other",
-      "description": "Plus/Pro/Enterprise dollars are quote-only \u2014 do not invent list prices",
+      "description": "Plus/Pro/Enterprise dollars are quote-only — do not invent list prices",
       "sourceIds": [
         "five9-product-official"
       ],
@@ -342,93 +342,6 @@
       "isEditorial": false
     }
   ],
-  "pricing": {
-    "currency": "USD",
-    "model": "subscription",
-    "hasFreePlan": false,
-    "hasFreeTrial": false,
-    "plans": [
-      {
-        "id": "plan-digital",
-        "slug": "digital",
-        "name": "Digital",
-        "isFree": false,
-        "contactSales": false,
-        "hasFreeTrial": false,
-        "highlighted": false,
-        "rules": [
-          {
-            "kind": "per-seat",
-            "amountPerSeat": 119,
-            "currency": "USD",
-            "interval": "month",
-            "amountPeriod": "month",
-            "minimumSeats": 50
-          }
-        ],
-        "description": "$119/concurrent seat/month \u2014 digital channels only (chat, email, SMS/MMS, social). 50-seat minimum."
-      },
-      {
-        "id": "plan-core",
-        "slug": "core",
-        "name": "Core",
-        "isFree": false,
-        "contactSales": false,
-        "hasFreeTrial": false,
-        "highlighted": true,
-        "rules": [
-          {
-            "kind": "per-seat",
-            "amountPerSeat": 159,
-            "currency": "USD",
-            "interval": "month",
-            "amountPeriod": "month",
-            "minimumSeats": 50
-          }
-        ],
-        "description": "$159/concurrent seat/month \u2014 all channels with AI essentials, dialer, recording, CRM/UC adapter choice. 50-seat minimum."
-      },
-      {
-        "id": "plan-plus",
-        "slug": "plus",
-        "name": "Plus",
-        "isFree": false,
-        "contactSales": true,
-        "hasFreeTrial": false,
-        "highlighted": false,
-        "rules": [],
-        "description": "All channels with advanced AI \u2014 contact sales; no public seat dollars (2026-08-17)."
-      },
-      {
-        "id": "plan-pro",
-        "slug": "pro",
-        "name": "Pro",
-        "isFree": false,
-        "contactSales": true,
-        "hasFreeTrial": false,
-        "highlighted": false,
-        "rules": [],
-        "description": "All channels with AI essentials + WEM \u2014 contact sales."
-      },
-      {
-        "id": "plan-enterprise",
-        "slug": "enterprise",
-        "name": "Enterprise",
-        "isFree": false,
-        "contactSales": true,
-        "hasFreeTrial": false,
-        "highlighted": false,
-        "rules": [],
-        "description": "All channels with advanced AI + full WEM \u2014 contact sales."
-      }
-    ],
-    "notes": "Confirmed 2026-08-17 on five9.com/products/pricing: Digital $119, Core $159 per concurrent seat/month USD; Plus/Pro/Enterprise contact sales. Minimum 50 seats. Usage-based AI minutes and SMS may apply. High confidence on Digital/Core floors; higher bundles are quote-only \u2014 do not invent Plus/Pro dollars.",
-    "verifiedAt": "2026-08-17T20:00:00.000Z",
-    "sourceIds": [
-      "five9-pricing-official"
-    ],
-    "startingPriceMonthly": 119
-  },
   "screenshots": [
     {
       "id": "five9-shot-genius-ai",
@@ -439,7 +352,8 @@
       "checkedAt": "2026-08-17T17:00:00.000Z",
       "annotation": "Official Five9 Vidyard marketing thumbnail showing Genius AI product UI",
       "kind": "vendor-ui",
-      "featureIds": []
+      "featureIds": [],
+      "useCaseIds": []
     },
     {
       "id": "five9-shot-homepage-video",
@@ -450,7 +364,8 @@
       "checkedAt": "2026-08-17T17:00:00.000Z",
       "annotation": "Official Five9 Vidyard marketing frame from homepage",
       "kind": "vendor-ui",
-      "featureIds": []
+      "featureIds": [],
+      "useCaseIds": []
     },
     {
       "id": "five9-shot-call-summaries",
@@ -461,7 +376,8 @@
       "checkedAt": "2026-08-17T17:00:00.000Z",
       "annotation": "Official Five9 YouTube thumbnail showing GenAI Studio product UI",
       "kind": "vendor-ui",
-      "featureIds": []
+      "featureIds": [],
+      "useCaseIds": []
     },
     {
       "id": "five9-shot-interaction-access",
@@ -472,7 +388,8 @@
       "checkedAt": "2026-08-17T17:00:00.000Z",
       "annotation": "Official Five9 YouTube thumbnail showing admin/insights product UI",
       "kind": "vendor-ui",
-      "featureIds": []
+      "featureIds": [],
+      "useCaseIds": []
     }
   ],
   "media": [
@@ -516,16 +433,16 @@
       "demonstratedDimensionIds": [],
       "requirementCriterionIds": [],
       "workflowStageIds": [],
+      "mediaContext": "general-workflow",
       "reportedOutcomes": [],
       "placements": [
         "overview",
         "features",
         "evidence"
       ],
-      "mediaContext": "general-workflow",
       "purpose": "Official Five9 video for product research pages",
       "demonstratesCaption": "How Five9 presents the product in an official vendor video.",
-      "editorialCommentary": "Official vendor demo \u2014 treat as UI/workflow evidence, not SoftwareGlimpse scoring.",
+      "editorialCommentary": "Official vendor demo — treat as UI/workflow evidence, not SoftwareGlimpse scoring.",
       "whatThisShows": [
         "Five9 product surfaces as shown in the official vendor video",
         "UI/workflow layout marketed by the vendor"
@@ -579,16 +496,16 @@
       "demonstratedDimensionIds": [],
       "requirementCriterionIds": [],
       "workflowStageIds": [],
+      "mediaContext": "general-workflow",
       "reportedOutcomes": [],
       "placements": [
         "overview",
         "features",
         "evidence"
       ],
-      "mediaContext": "general-workflow",
       "purpose": "Official Five9 video for product research pages",
       "demonstratesCaption": "How Five9 presents the product in an official vendor video.",
-      "editorialCommentary": "Official vendor demo \u2014 treat as UI/workflow evidence, not SoftwareGlimpse scoring.",
+      "editorialCommentary": "Official vendor demo — treat as UI/workflow evidence, not SoftwareGlimpse scoring.",
       "whatThisShows": [
         "Five9 product surfaces as shown in the official vendor video",
         "UI/workflow layout marketed by the vendor"
@@ -603,11 +520,93 @@
       "status": "published"
     }
   ],
-  "sourceIds": [
-    "five9-product-official",
-    "five9-pricing-official"
-  ],
-  "notes": "Business-communications Priority-3 onboarding enrichment from first-party research 2026-08-17T20:00:00.000Z. handsOnTesting=false. membershipRole=primary. jobCluster=contact-center.",
+  "pricing": {
+    "currency": "USD",
+    "model": "subscription",
+    "hasFreePlan": false,
+    "hasFreeTrial": false,
+    "plans": [
+      {
+        "id": "plan-digital",
+        "slug": "digital",
+        "name": "Digital",
+        "isFree": false,
+        "contactSales": false,
+        "hasFreeTrial": false,
+        "highlighted": false,
+        "rules": [
+          {
+            "kind": "per-seat",
+            "amountPerSeat": 119,
+            "currency": "USD",
+            "interval": "month",
+            "amountPeriod": "month",
+            "minimumSeats": 50
+          }
+        ],
+        "description": "$119/concurrent seat/month — digital channels only (chat, email, SMS/MMS, social). 50-seat minimum."
+      },
+      {
+        "id": "plan-core",
+        "slug": "core",
+        "name": "Core",
+        "isFree": false,
+        "contactSales": false,
+        "hasFreeTrial": false,
+        "highlighted": true,
+        "rules": [
+          {
+            "kind": "per-seat",
+            "amountPerSeat": 159,
+            "currency": "USD",
+            "interval": "month",
+            "amountPeriod": "month",
+            "minimumSeats": 50
+          }
+        ],
+        "description": "$159/concurrent seat/month — all channels with AI essentials, dialer, recording, CRM/UC adapter choice. 50-seat minimum."
+      },
+      {
+        "id": "plan-plus",
+        "slug": "plus",
+        "name": "Plus",
+        "isFree": false,
+        "contactSales": true,
+        "hasFreeTrial": false,
+        "highlighted": false,
+        "rules": [],
+        "description": "All channels with advanced AI — contact sales; no public seat dollars (2026-08-17)."
+      },
+      {
+        "id": "plan-pro",
+        "slug": "pro",
+        "name": "Pro",
+        "isFree": false,
+        "contactSales": true,
+        "hasFreeTrial": false,
+        "highlighted": false,
+        "rules": [],
+        "description": "All channels with AI essentials + WEM — contact sales."
+      },
+      {
+        "id": "plan-enterprise",
+        "slug": "enterprise",
+        "name": "Enterprise",
+        "isFree": false,
+        "contactSales": true,
+        "hasFreeTrial": false,
+        "highlighted": false,
+        "rules": [],
+        "description": "All channels with advanced AI + full WEM — contact sales."
+      }
+    ],
+    "notes": "Confirmed 2026-08-17 on five9.com/products/pricing: Digital $119, Core $159 per concurrent seat/month USD; Plus/Pro/Enterprise contact sales. Minimum 50 seats. Usage-based AI minutes and SMS may apply. High confidence on Digital/Core floors; higher bundles are quote-only — do not invent Plus/Pro dollars.",
+    "verifiedAt": "2026-09-10T11:38:25.503Z",
+    "sourceIds": [
+      "five9-pricing-official"
+    ],
+    "startingPriceMonthly": 119
+  },
   "domainCheckedAt": {
     "identity": "2026-08-17T20:00:00.000Z",
     "pricing": "2026-08-17T20:00:00.000Z",
@@ -621,5 +620,10 @@
     "limits": "2026-08-17T20:00:00.000Z",
     "security-compliance": "2026-08-17T20:00:00.000Z"
   },
-  "updatedAt": "2026-08-17T17:00:00.000Z"
+  "sourceIds": [
+    "five9-product-official",
+    "five9-pricing-official"
+  ],
+  "updatedAt": "2026-08-17T17:00:00.000Z",
+  "notes": "Business-communications Priority-3 onboarding enrichment from first-party research 2026-08-17T20:00:00.000Z. handsOnTesting=false. membershipRole=primary. jobCluster=contact-center."
 }

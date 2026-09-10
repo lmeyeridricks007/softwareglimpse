@@ -1,0 +1,206 @@
+{
+  "slug": "ooma-implementation",
+  "enrichmentType": "IMPLEMENTATION_GUIDE",
+  "updatedAt": "2026-09-10T12:44:47.899Z",
+  "uniqueValueAdded": [
+    "implementation_workflow",
+    "scenario_analysis",
+    "decision_framework",
+    "limitations_evidence",
+    "pricing_comparison",
+    "sg_original_data",
+    "buyer_checklist"
+  ],
+  "patch": {
+    "summary": "cloud phone; call routing; call recording; power dialer. Essentials · cloud phone | Pro | Pro Plus. Salesforce, HubSpot, Google Workspace, Microsoft Teams. Small businesses that want transparent monthly VoIP without annual contracts; Teams under ~15 seats needing receptionist, ring groups and optional queues; Buyers who prefer published Office seat floors over quote-only UCaaS. Ooma Office is an SMB cloud phone system with transparent monthly per-user pricing and no required annual contract: Essentials list price Pro list price and Pro Plus list price (US Buyer question: is Ooma the right business-communications commit for Small businesses that want transparent monthly VoIP without annual contracts, or is Contact-centre / multi-skill agent operations (prefer Talkdesk/Genesys/Five9) the real constraint? Thesis for implementation: Ooma is a yes only when cloud phone plus call recording (Essentials, Pro, Pro Plus) are must-haves; not worth it if Contact-centre / multi-skill agent operations (prefer Talkdesk/Genesys/Five9) dominates the operating model.",
+    "blocks": [
+      {
+        "id": "da-ooma-implementation-1",
+        "type": "direct-answer",
+        "body": "call recording (Essentials, Pro, Pro Plus) decides whether Ooma implementation is a one-team pilot or a specialist project — confirm unlocks for call recording (Essentials, Pro, Pro Plus), power dialer (Essentials, Pro, Pro Plus), sms messaging (Essentials, Pro, Pro Plus) before invites.",
+        "bullets": [
+          "Start with: cloud phone",
+          "Gate check: call recording (Essentials, Pro, Pro Plus)",
+          "Integrate after: data quality pass on Salesforce"
+        ]
+      },
+      {
+        "id": "impl-ooma-implementation-2",
+        "type": "step",
+        "heading": "Ooma day-zero to steady-state sequence",
+        "body": "Treat Ooma setup as a controlled rollout — not a weekend dump of CSV files.",
+        "stepNumber": 1,
+        "scenarios": [
+          {
+            "title": "Day zero — objects and owners",
+            "body": "Define owners for cloud phone, call routing, call recording before inviting the whole org."
+          },
+          {
+            "title": "SMB pilot",
+            "body": "One pipeline / one team proves Small businesses that want transparent monthly VoIP without annual contracts before company-wide seats."
+          },
+          {
+            "title": "Cutover",
+            "body": "Freeze legacy writes briefly; validate Salesforce and HubSpot before reopen."
+          }
+        ]
+      },
+      {
+        "id": "df-ooma-implementation-3",
+        "type": "decision-framework",
+        "title": "Ooma implementation go / no-go",
+        "steps": [
+          {
+            "id": "i-1",
+            "label": "Go when plan unlocks cover call recording (Essentials, Pro, Pro Plus)"
+          },
+          {
+            "id": "i-2",
+            "label": "Pause if this limitation blocks ops: SMS allotments are account-wide caps (e.g. Pro ~250/mo) — not per-user unlimited"
+          },
+          {
+            "id": "i-3",
+            "label": "Do not expand seats until cloud phone is green"
+          }
+        ]
+      },
+      {
+        "id": "mist-ooma-implementation-4",
+        "type": "mistakes",
+        "title": "Ooma implementation mistakes",
+        "items": [
+          {
+            "title": "Mistake 1",
+            "body": "SMS allotments are account-wide caps (e.g. Pro ~250/mo) — not per-user unlimited"
+          },
+          {
+            "title": "Mistake 2",
+            "body": "Call queues, CRM and auto-dialer require Pro Plus"
+          },
+          {
+            "title": "Mistake 3",
+            "body": "Roughly 15-seat cliff — larger teams often outgrow Office into Enterprise or peers"
+          },
+          {
+            "title": "Mistake 4",
+            "body": "No WhatsApp Business API"
+          },
+          {
+            "title": "Big-bang invite",
+            "body": "Inviting every user before object design creates junk data that is expensive to unwind."
+          }
+        ]
+      },
+      {
+        "id": "cost-ooma-implementation-5",
+        "type": "cost-breakdown",
+        "title": "Ooma plan gates that affect rollout",
+        "body": "Implementation fails when unlocks needed for go-live sit on a higher tier than budgeted.",
+        "lines": [
+          {
+            "label": "Essentials",
+            "description": "Trial available · Unlocks: cloud phone, call routing, call recording · Suits: teams whose must-have gates appear on this tier"
+          },
+          {
+            "label": "Pro",
+            "description": "Trial available · Suits: teams whose must-have gates appear on this tier"
+          },
+          {
+            "label": "Pro Plus",
+            "description": "Trial available · Suits: teams whose must-have gates appear on this tier"
+          }
+        ]
+      },
+      {
+        "id": "sel-ooma-implementation-6",
+        "type": "selection-checklist",
+        "title": "Ooma implementation checklist",
+        "dimensions": [
+          {
+            "id": "prep",
+            "label": "Prep",
+            "options": [
+              "Object model drafted",
+              "Owners named",
+              "Legacy freeze window set"
+            ]
+          },
+          {
+            "id": "pilot",
+            "label": "Pilot",
+            "options": [
+              "cloud phone",
+              "Junk-data rules set",
+              "Support path clear"
+            ]
+          },
+          {
+            "id": "scale",
+            "label": "Scale",
+            "options": [
+              "Salesforce",
+              "Seat expansion criteria written",
+              "Rollback plan noted"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "cta-ooma-implementation-7",
+        "type": "interactive-cta",
+        "title": "Validate business-communications fit before a deep Ooma rollout",
+        "body": "If Ooma fails constraint fit, stop implementation early.",
+        "href": "/tools/business-communications-finder/",
+        "ctaLabel": "Open Finder",
+        "variant": "finder"
+      }
+    ],
+    "sections": [
+      {
+        "id": "sec-thesis-ooma-implementation",
+        "heading": "Ooma buyer question and thesis",
+        "body": "cloud phone; call routing; call recording; power dialer. Essentials · cloud phone | Pro | Pro Plus. Salesforce, HubSpot, Google Workspace, Microsoft Teams. Small businesses that want transparent monthly VoIP without annual contracts; Teams under ~15 seats needing receptionist, ring groups and optional queues; Buyers who prefer published Office seat floors over quote-only UCaaS. Ooma Office is an SMB cloud phone system with transparent monthly per-user pricing and no required annual contract: Essentials list price Pro list price and Pro Plus list price (US. That catalogue mix is the Ooma implementation filter — not a generic business-communications lecture.\n\nBuyer question: is Ooma the right business-communications commit for Small businesses that want transparent monthly VoIP without annual contracts, or is Contact-centre / multi-skill agent operations (prefer Talkdesk/Genesys/Five9) the real constraint?\n\nThesis for implementation: Ooma is a yes only when cloud phone plus call recording (Essentials, Pro, Pro Plus) are must-haves; not worth it if Contact-centre / multi-skill agent operations (prefer Talkdesk/Genesys/Five9) dominates the operating model.\n\nBest for: Small businesses that want transparent monthly VoIP without annual contracts; Teams under ~15 seats needing receptionist, ring groups and optional queues; Buyers who prefer published Office seat floors over quote-only UCaaS (Small businesses that want transparent monthly VoIP without annual contracts).\n\nPoor fit when: Contact-centre / multi-skill agent operations (prefer Talkdesk/Genesys/Five9); Global multi-country UCaaS buyers; Teams that need unlimited per-user SMS or heavy AI answering. Avoid if SMS allotments are account-wide caps (e.g. Pro ~250/mo) — not per-user unlimited would block go-live."
+      },
+      {
+        "id": "sec-limits-ooma-implementation",
+        "heading": "Ooma limitation, pricing interpretation, and alternative context",
+        "body": "Limitation: SMS allotments are account-wide caps (e.g. Pro ~250/mo) — not per-user unlimited; Call queues, CRM and auto-dialer require Pro Plus; Roughly 15-seat cliff — larger teams often outgrow Office into Enterprise or peers because it forces process changes or add-ons around Ooma when cloud phone is the job.\n\nPricing interpretation: no free plan confirmed — scope a paid pilot on Essentials with exit criteria before annual seats.\n\nPlan trade-off: you gain call recording (Essentials, Pro, Pro Plus) at the expense of Entry price and seat minimums vs routing, CTI and analytics depth — measure both in the pilot. Researched packaging: Essentials · cloud phone | Pro | Pro Plus.\n\nAlternative context: unlike CallHippo, Ooma is preferable when Small businesses that want transparent monthly VoIP without annual contracts because cloud phone plus call recording (Essentials, Pro, Pro Plus) match; prefer CallHippo when Contact-centre / multi-skill agent operations (prefer Talkdesk/Genesys/Five9) because the operating loops differ."
+      },
+      {
+        "id": "sec-scenario-ooma-implementation",
+        "heading": "Decision scenario and conclusion for Ooma",
+        "body": "Use-case: for Small businesses that want transparent monthly VoIP without annual contracts running cloud phone, prefer Ooma when cloud phone is weekly; pick another path when Contact-centre / multi-skill agent operations (prefer Talkdesk/Genesys/Five9).\n\nSetup requires a specialist owner when SMS allotments are account-wide caps (e.g. Pro ~250/mo) — not per-user unlimited collides with cloud phone; SMB pilots can stay lighter if call recording (Essentials, Pro, Pro Plus) is already on Essentials.\n\nIntegrations in research: Salesforce, HubSpot, Google Workspace, Microsoft Teams.\n\nWrap: choose Ooma only if the implementation job is cloud phone under Small businesses that want transparent monthly VoIP without annual contracts; otherwise use Finder constraints instead of copying this page for another vendor."
+      }
+    ],
+    "checklist": [
+      {
+        "id": "enrich-chk-0",
+        "label": "Draft Ooma object owners before invites",
+        "order": 0
+      },
+      {
+        "id": "enrich-chk-1",
+        "label": "Confirm plan unlocks for go-live features",
+        "order": 1
+      },
+      {
+        "id": "enrich-chk-2",
+        "label": "Pilot one team on cloud phone",
+        "order": 2
+      },
+      {
+        "id": "enrich-chk-3",
+        "label": "If blocked, evaluate CallHippo before sunk-cost expansion",
+        "order": 3
+      }
+    ],
+    "nextAction": {
+      "contentId": "tool:finder:business-communications",
+      "label": "Open Finder shortlist"
+    }
+  },
+  "notes": [
+    "Implementation: workflow, constraints, mistakes, checklist.",
+    "Type-specific skeleton: IMPLEMENTATION_GUIDE"
+  ]
+}

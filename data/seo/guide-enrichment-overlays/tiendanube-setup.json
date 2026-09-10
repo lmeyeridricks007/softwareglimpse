@@ -1,0 +1,214 @@
+{
+  "slug": "tiendanube-setup",
+  "enrichmentType": "IMPLEMENTATION_GUIDE",
+  "updatedAt": "2026-09-10T12:09:40.945Z",
+  "uniqueValueAdded": [
+    "implementation_workflow",
+    "scenario_analysis",
+    "decision_framework",
+    "limitations_evidence",
+    "pricing_comparison",
+    "sg_original_data",
+    "buyer_checklist"
+  ],
+  "patch": {
+    "summary": "online storefront; product catalog; checkout payments; order management. Inicial · free · online storefront | Esencial | Impulso. LATAM SMBs launching or growing an online store; Merchants who want regional payments and Spanish/Portuguese UX; Teams comparing Shopify in LATAM markets. Tiendanube is a LATAM-focused hosted ecommerce SaaS (also known as Nuvemshop in some markets — one SoftwareGlimpse page, aliases only). Argentina first-party planes-y-precios (2026 Buyer question: for online storefront teams, is Tiendanube worth the Esencial unlock, or does Regional LATAM focus — not a global Shopify peer for every market kill the rollout? ROI gate: Tiendanube is worth the Esencial spend if online storefront + product catalog are weekly; not worth buying when Regional LATAM focus — not a global Shopify peer for every market.",
+    "blocks": [
+      {
+        "id": "da-tiendanube-setup-1",
+        "type": "direct-answer",
+        "body": "dropshipping sourcing (Inicial, Esencial, Impulso, Escala, Evolución) decides whether Tiendanube setup is a one-team pilot or a specialist project — confirm unlocks for dropshipping sourcing (Inicial, Esencial, Impulso, Escala, Evolución) before invites.",
+        "bullets": [
+          "Start with: online storefront",
+          "Gate check: dropshipping sourcing (Inicial, Esencial, Impulso, Escala, Evolución)",
+          "Integrate after: data quality pass on systems of record"
+        ]
+      },
+      {
+        "id": "impl-tiendanube-setup-2",
+        "type": "step",
+        "heading": "Tiendanube day-zero to steady-state sequence",
+        "body": "Treat Tiendanube setup as a controlled rollout — not a weekend dump of CSV files.",
+        "stepNumber": 1,
+        "scenarios": [
+          {
+            "title": "Day zero — objects and owners",
+            "body": "Define owners for online storefront, product catalog, checkout payments before inviting the whole org."
+          },
+          {
+            "title": "SMB pilot",
+            "body": "One pipeline / one team proves LATAM SMBs launching or growing an online store before company-wide seats."
+          },
+          {
+            "title": "Cutover",
+            "body": "Freeze legacy writes briefly; validate priority integrations before reopen."
+          }
+        ]
+      },
+      {
+        "id": "df-tiendanube-setup-3",
+        "type": "decision-framework",
+        "title": "Tiendanube implementation go / no-go",
+        "steps": [
+          {
+            "id": "i-1",
+            "label": "Go when plan unlocks cover dropshipping sourcing (Inicial, Esencial, Impulso, Escala, Evolución)"
+          },
+          {
+            "id": "i-2",
+            "label": "Pause if this limitation blocks ops: Regional LATAM focus — not a global Shopify peer for every market"
+          },
+          {
+            "id": "i-3",
+            "label": "Do not expand seats until online storefront is green"
+          }
+        ]
+      },
+      {
+        "id": "mist-tiendanube-setup-4",
+        "type": "mistakes",
+        "title": "Tiendanube implementation mistakes",
+        "items": [
+          {
+            "title": "Mistake 1",
+            "body": "Regional LATAM focus — not a global Shopify peer for every market"
+          },
+          {
+            "title": "Mistake 2",
+            "body": "USD amounts are FX approximates; ARS tiles are the source of truth"
+          },
+          {
+            "title": "Mistake 3",
+            "body": "Transaction fees with external processors vary by plan — confirm live (Pago Nube may waive TN fee)"
+          },
+          {
+            "title": "Mistake 4",
+            "body": "Nuvemshop is the same product brand family — do not create a second /software/ page"
+          },
+          {
+            "title": "Big-bang invite",
+            "body": "Inviting every user before object design creates junk data that is expensive to unwind."
+          }
+        ]
+      },
+      {
+        "id": "cost-tiendanube-setup-5",
+        "type": "cost-breakdown",
+        "title": "Tiendanube plan gates that affect rollout",
+        "body": "Implementation fails when unlocks needed for go-live sit on a higher tier than budgeted.",
+        "lines": [
+          {
+            "label": "Inicial",
+            "description": "Free plan · Unlocks: online storefront, product catalog, checkout payments · Suits: explore before committing seats"
+          },
+          {
+            "label": "Esencial",
+            "description": "7-day trial · Suits: teams whose must-have gates appear on this tier"
+          },
+          {
+            "label": "Impulso",
+            "description": "7-day trial · Suits: teams whose must-have gates appear on this tier"
+          },
+          {
+            "label": "Escala",
+            "description": "7-day trial · Suits: teams whose must-have gates appear on this tier"
+          },
+          {
+            "label": "Evolución",
+            "description": "Contact sales · Suits: teams that need custom procurement"
+          }
+        ]
+      },
+      {
+        "id": "sel-tiendanube-setup-6",
+        "type": "selection-checklist",
+        "title": "Tiendanube implementation checklist",
+        "dimensions": [
+          {
+            "id": "prep",
+            "label": "Prep",
+            "options": [
+              "Object model drafted",
+              "Owners named",
+              "Legacy freeze window set"
+            ]
+          },
+          {
+            "id": "pilot",
+            "label": "Pilot",
+            "options": [
+              "online storefront",
+              "Junk-data rules set",
+              "Support path clear"
+            ]
+          },
+          {
+            "id": "scale",
+            "label": "Scale",
+            "options": [
+              "Integrations validated",
+              "Seat expansion criteria written",
+              "Rollback plan noted"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "cta-tiendanube-setup-7",
+        "type": "interactive-cta",
+        "title": "Validate ecommerce fit before a deep Tiendanube rollout",
+        "body": "If Tiendanube fails constraint fit, stop implementation early.",
+        "href": "/tools/ecommerce-finder/",
+        "ctaLabel": "Open Finder",
+        "variant": "finder"
+      }
+    ],
+    "sections": [
+      {
+        "id": "sec-thesis-tiendanube-setup",
+        "heading": "Tiendanube buyer question and thesis",
+        "body": "online storefront; product catalog; checkout payments; order management. Inicial · free · online storefront | Esencial | Impulso. LATAM SMBs launching or growing an online store; Merchants who want regional payments and Spanish/Portuguese UX; Teams comparing Shopify in LATAM markets. Tiendanube is a LATAM-focused hosted ecommerce SaaS (also known as Nuvemshop in some markets — one SoftwareGlimpse page, aliases only). Argentina first-party planes-y-precios (2026. That catalogue mix is the Tiendanube setup filter — not a generic ecommerce lecture.\n\nBuyer question: for online storefront teams, is Tiendanube worth the Esencial unlock, or does Regional LATAM focus — not a global Shopify peer for every market kill the rollout?\n\nROI gate: Tiendanube is worth the Esencial spend if online storefront + product catalog are weekly; not worth buying when Regional LATAM focus — not a global Shopify peer for every market.\n\nBest for: LATAM SMBs launching or growing an online store; Merchants who want regional payments and Spanish/Portuguese UX; Teams comparing Shopify in LATAM markets (LATAM SMBs launching or growing an online store).\n\nPoor fit when: Global enterprise programmes needing SFCC/commercetools depth; Buyers who only evaluate USD first-party tiles; POS-first retailers needing Square-class hardware. Avoid if Regional LATAM focus — not a global Shopify peer for every market would block go-live."
+      },
+      {
+        "id": "sec-limits-tiendanube-setup",
+        "heading": "Tiendanube limitation, pricing interpretation, and alternative context",
+        "body": "Limitation: Regional LATAM focus — not a global Shopify peer for every market; USD amounts are FX approximates; ARS tiles are the source of truth; Transaction fees with external processors vary by plan — confirm live (Pago Nube may waive TN fee) because it forces process changes or add-ons around Tiendanube when online storefront is the job.\n\nPricing interpretation: stay on Inicial until dropshipping sourcing (Inicial, Esencial, Impulso, Escala, Evolución) is mandatory; plan jumps to Esencial only after that hinge is proven.\n\nPlan trade-off: you gain dropshipping sourcing (Inicial, Esencial, Impulso, Escala, Evolución) at the expense of Subscription floors vs payment-processing spreads and GMV/overage fees — measure both in the pilot. Researched packaging: Inicial · free · online storefront | Esencial | Impulso.\n\nAlternative context: unlike Shopify, Tiendanube is preferable when LATAM SMBs launching or growing an online store because online storefront plus dropshipping sourcing (Inicial, Esencial, Impulso, Escala, Evolución) match; prefer Shopify when Global enterprise programmes needing SFCC/commercetools depth because the operating loops differ."
+      },
+      {
+        "id": "sec-scenario-tiendanube-setup",
+        "heading": "Decision scenario and conclusion for Tiendanube",
+        "body": "Workflow advantage: Tiendanube is faster for online storefront when online storefront; product catalog; checkout payments; order management is in-product; skip when Regional LATAM focus — not a global Shopify peer for every market because that loop lives elsewhere.\n\nImplementation complexity: setup requires confirming dropshipping sourcing (Inicial, Esencial, Impulso, Escala, Evolución) ownership and Stripe before rollout — do not scale seats first.\n\nConclusion: Tiendanube is worth it if LATAM SMBs launching or growing an online store and dropshipping sourcing (Inicial, Esencial, Impulso, Escala, Evolución) are weekly; skip Tiendanube if Global enterprise programmes needing SFCC/commercetools depth. That is the decision, not a template with the logo swapped."
+      }
+    ],
+    "checklist": [
+      {
+        "id": "enrich-chk-0",
+        "label": "Draft Tiendanube object owners before invites",
+        "order": 0
+      },
+      {
+        "id": "enrich-chk-1",
+        "label": "Confirm plan unlocks for go-live features",
+        "order": 1
+      },
+      {
+        "id": "enrich-chk-2",
+        "label": "Pilot one team on online storefront",
+        "order": 2
+      },
+      {
+        "id": "enrich-chk-3",
+        "label": "If blocked, evaluate Shopify before sunk-cost expansion",
+        "order": 3
+      }
+    ],
+    "nextAction": {
+      "contentId": "tool:finder:ecommerce",
+      "label": "Open Finder shortlist"
+    }
+  },
+  "notes": [
+    "Implementation: workflow, constraints, mistakes, checklist.",
+    "Type-specific skeleton: IMPLEMENTATION_GUIDE"
+  ]
+}

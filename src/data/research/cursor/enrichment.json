@@ -237,6 +237,22 @@
       ]
     }
   ],
+  "integrationSupport": [
+    {
+      "integrationSlug": "slack",
+      "kind": "zapier-style",
+      "sourceIds": [
+        "cursor-product-official"
+      ]
+    },
+    {
+      "integrationSlug": "api",
+      "kind": "api-only",
+      "sourceIds": [
+        "cursor-product-official"
+      ]
+    }
+  ],
   "aiCapabilities": [
     {
       "capability": "assistant",
@@ -262,22 +278,6 @@
     {
       "capability": "recommendations",
       "availability": "supported",
-      "sourceIds": [
-        "cursor-product-official"
-      ]
-    }
-  ],
-  "integrationSupport": [
-    {
-      "integrationSlug": "slack",
-      "kind": "zapier-style",
-      "sourceIds": [
-        "cursor-product-official"
-      ]
-    },
-    {
-      "integrationSlug": "api",
-      "kind": "api-only",
       "sourceIds": [
         "cursor-product-official"
       ]
@@ -368,88 +368,6 @@
       "isEditorial": false
     }
   ],
-  "pricing": {
-    "currency": "USD",
-    "model": "hybrid",
-    "hasFreePlan": true,
-    "hasFreeTrial": false,
-    "plans": [
-      {
-        "id": "plan-hobby",
-        "slug": "hobby",
-        "name": "Hobby",
-        "isFree": true,
-        "contactSales": false,
-        "hasFreeTrial": false,
-        "highlighted": false,
-        "rules": [
-          {
-            "kind": "flat",
-            "amount": 0,
-            "currency": "USD",
-            "interval": "month",
-            "amountPeriod": "month"
-          }
-        ],
-        "description": "Free — limited Agent and Tab for evaluation."
-      },
-      {
-        "id": "plan-pro",
-        "slug": "pro",
-        "name": "Pro",
-        "isFree": false,
-        "contactSales": false,
-        "hasFreeTrial": false,
-        "highlighted": true,
-        "rules": [
-          {
-            "kind": "per-seat",
-            "amountPerSeat": 20,
-            "currency": "USD",
-            "interval": "month",
-            "amountPeriod": "month"
-          }
-        ],
-        "description": "$20/mo — individual daily editor with included model usage."
-      },
-      {
-        "id": "plan-teams-standard",
-        "slug": "teams-standard",
-        "name": "Teams Standard",
-        "isFree": false,
-        "contactSales": false,
-        "hasFreeTrial": false,
-        "highlighted": false,
-        "rules": [
-          {
-            "kind": "per-seat",
-            "amountPerSeat": 40,
-            "currency": "USD",
-            "interval": "month",
-            "amountPeriod": "month"
-          }
-        ],
-        "description": "$40/user/mo — team admin, SSO, privacy modes, pooled usage."
-      },
-      {
-        "id": "plan-enterprise",
-        "slug": "enterprise",
-        "name": "Enterprise",
-        "isFree": false,
-        "contactSales": true,
-        "hasFreeTrial": false,
-        "highlighted": false,
-        "rules": [],
-        "description": "SCIM, audit, pooled usage, invoice/PO — contact sales."
-      }
-    ],
-    "notes": "Verified 2026-08-18 from cursor.com/pricing (high confidence for Pro $20 and Teams $40/user). Hobby free. Annual ~20% off Teams. Pro+/Ultra and Teams Premium usage SKUs — confirm live. Enterprise contact. Affiliate economics excluded.",
-    "verifiedAt": "2026-08-18T12:00:00.000Z",
-    "sourceIds": [
-      "cursor-pricing-official"
-    ],
-    "startingPriceMonthly": 20
-  },
   "screenshots": [
     {
       "id": "cursor-shot-overview",
@@ -562,13 +480,13 @@
       "demonstratedDimensionIds": [],
       "requirementCriterionIds": [],
       "workflowStageIds": [],
+      "mediaContext": "general-workflow",
       "reportedOutcomes": [],
       "placements": [
         "overview",
         "features",
         "evidence"
       ],
-      "mediaContext": "general-workflow",
       "purpose": "Official Cursor video for product research pages",
       "demonstratesCaption": "How Cursor presents the product in an official vendor video.",
       "editorialCommentary": "Official vendor demo — treat as UI/workflow evidence, not SoftwareGlimpse scoring.",
@@ -586,12 +504,88 @@
       "status": "published"
     }
   ],
-  "sourceIds": [
-    "cursor-product-official",
-    "cursor-pricing-official",
-    "cursor-pricing"
-  ],
-  "notes": "AI Priority-2 onboarding enrichment from first-party research 2026-08-18T12:00:00.000Z. handsOnTesting=false. membershipRole=primary. jobCluster=ai-code.",
+  "pricing": {
+    "currency": "USD",
+    "model": "hybrid",
+    "hasFreePlan": true,
+    "hasFreeTrial": false,
+    "plans": [
+      {
+        "id": "plan-hobby",
+        "slug": "hobby",
+        "name": "Hobby",
+        "isFree": true,
+        "contactSales": false,
+        "hasFreeTrial": false,
+        "highlighted": false,
+        "rules": [
+          {
+            "kind": "flat",
+            "amount": 0,
+            "currency": "USD",
+            "interval": "month",
+            "amountPeriod": "month"
+          }
+        ],
+        "description": "Free — limited Agent and Tab for evaluation."
+      },
+      {
+        "id": "plan-pro",
+        "slug": "pro",
+        "name": "Pro",
+        "isFree": false,
+        "contactSales": false,
+        "hasFreeTrial": false,
+        "highlighted": true,
+        "rules": [
+          {
+            "kind": "per-seat",
+            "amountPerSeat": 20,
+            "currency": "USD",
+            "interval": "month",
+            "amountPeriod": "month"
+          }
+        ],
+        "description": "$20/mo — individual daily editor with included model usage."
+      },
+      {
+        "id": "plan-teams-standard",
+        "slug": "teams-standard",
+        "name": "Teams Standard",
+        "isFree": false,
+        "contactSales": false,
+        "hasFreeTrial": false,
+        "highlighted": false,
+        "rules": [
+          {
+            "kind": "per-seat",
+            "amountPerSeat": 40,
+            "currency": "USD",
+            "interval": "month",
+            "amountPeriod": "month"
+          }
+        ],
+        "description": "$40/user/mo — team admin, SSO, privacy modes, pooled usage."
+      },
+      {
+        "id": "plan-enterprise",
+        "slug": "enterprise",
+        "name": "Enterprise",
+        "isFree": false,
+        "contactSales": true,
+        "hasFreeTrial": false,
+        "highlighted": false,
+        "rules": [],
+        "description": "SCIM, audit, pooled usage, invoice/PO — contact sales."
+      }
+    ],
+    "notes": "Verified 2026-08-18 from cursor.com/pricing (high confidence for Pro $20 and Teams $40/user). Hobby free. Annual ~20% off Teams. Pro+/Ultra and Teams Premium usage SKUs — confirm live. Enterprise contact. Affiliate economics excluded.",
+    "verifiedAt": "2026-09-10T08:14:58.036Z",
+    "sourceIds": [
+      "cursor-pricing-official"
+    ],
+    "startingPriceMonthly": 20
+  },
   "domainCheckedAt": {
     "identity": "2026-08-18T12:00:00.000Z",
     "pricing": "2026-08-18T12:00:00.000Z",
@@ -605,5 +599,11 @@
     "limits": "2026-08-18T12:00:00.000Z",
     "security-compliance": "2026-08-18T12:00:00.000Z"
   },
-  "updatedAt": "2026-08-18T10:00:00.000Z"
+  "sourceIds": [
+    "cursor-product-official",
+    "cursor-pricing-official",
+    "cursor-pricing"
+  ],
+  "updatedAt": "2026-08-18T10:00:00.000Z",
+  "notes": "AI Priority-2 onboarding enrichment from first-party research 2026-08-18T12:00:00.000Z. handsOnTesting=false. membershipRole=primary. jobCluster=ai-code."
 }

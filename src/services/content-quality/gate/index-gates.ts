@@ -27,6 +27,8 @@ import {
   recordSemanticTemplateHistory,
   type SemanticTemplateAssessment,
 } from "./semantic-template";
+import { loadCompareEnrichmentOverlay } from "@/services/seo/compare-enrichment/overlay-store";
+import { mergeComparisonWithOverlay } from "@/services/seo/compare-enrichment/overlay-merge";
 
 export type IndexGateOptions = {
   /** Sibling pages for semantic template comparison (same type/category/family). */
@@ -137,28 +139,37 @@ export function comparisonPassesIndexGates(
   soft: SoftLookup,
   opts: IndexGateOptions = {},
 ): IndexGateResult {
+  let page = comparison;
+  try {
+    page = mergeComparisonWithOverlay(
+      comparison,
+      loadCompareEnrichmentOverlay(comparison.slug),
+    );
+  } catch {
+    page = comparison;
+  }
+
   const detail: string[] = [];
-  const rel = resolveComparisonRelationship(comparison, soft);
+  const rel = resolveComparisonRelationship(page, soft);
   if (!hasIndexableRelationship(rel.kind)) {
     detail.push(`relationship:${rel.kind}`);
   }
-  if (isThinComparisonMesh(comparison)) {
+  if (isThinComparisonMesh(page)) {
     detail.push("thin-comparison-mesh");
   }
-  const uniq = estimateUniqueContentRatio(comparison);
+  const uniq = estimateUniqueContentRatio(page);
   if (uniq.ratio < UNIQUE_RATIO_MIN) {
     detail.push(`unique-ratio-below-${UNIQUE_RATIO_MIN}:${uniq.ratio}`);
   }
   if (uniq.boilerplateOutcomeShare >= BOILERPLATE_SHARE_MAX) {
     detail.push("high-boilerplate-share");
   }
-  if (!comparison.verdict?.trim()) {
+  if (!page.verdict?.trim()) {
     detail.push("missing-verdict");
   }
   const hasBestFor =
-    (comparison.bestFor?.some((bf) => (bf.scenarios?.length ?? 0) > 0) ??
-      false) ||
-    (comparison.scenarioRecommendations?.length ?? 0) > 0;
+    (page.bestFor?.some((bf) => (bf.scenarios?.length ?? 0) > 0) ?? false) ||
+    (page.scenarioRecommendations?.length ?? 0) > 0;
   if (!hasBestFor) {
     detail.push("missing-best-for");
   }
@@ -171,7 +182,7 @@ export function comparisonPassesIndexGates(
       peers = [];
     }
   }
-  const semantic = assessComparisonSemanticTemplateRisk(comparison, peers);
+  const semantic = assessComparisonSemanticTemplateRisk(page, peers);
   if (semantic.blocksAutoPromotion) {
     detail.push("SEMANTIC_TEMPLATE_RISK");
     for (const signal of semantic.riskSignals) {

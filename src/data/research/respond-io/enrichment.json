@@ -1,6 +1,6 @@
 {
   "productSlug": "respond-io",
-  "shortDescription": "respond.io is an omnichannel customer messaging platform: WhatsApp Business API plus other messaging channels in a shared team inbox, with workflows, broadcasts, AI Assist/Agents and contact-based packaging. Confirmed on respond.io/pricing 2026-08-17: Starter $79, Growth $159, Advanced $279 per month on the yearly toggle ($948 / $1,908 / $3,348 billed yearly), with Enterprise custom. Pricing scales with monthly active contacts (MAC) tiers. 7-day free trial, no credit card. Scored in the customer-messaging cluster as a Wati peer \u2014 not ranked against phone systems.",
+  "shortDescription": "respond.io is an omnichannel customer messaging platform: WhatsApp Business API plus other messaging channels in a shared team inbox, with workflows, broadcasts, AI Assist/Agents and contact-based packaging. Confirmed on respond.io/pricing 2026-08-17: Starter $79, Growth $159, Advanced $279 per month on the yearly toggle ($948 / $1,908 / $3,348 billed yearly), with Enterprise custom. Pricing scales with monthly active contacts (MAC) tiers. 7-day free trial, no credit card. Scored in the customer-messaging cluster as a Wati peer — not ranked against phone systems.",
   "featureSupport": [
     {
       "featureSlug": "cloud-phone",
@@ -172,40 +172,6 @@
       ]
     }
   ],
-  "aiCapabilities": [
-    {
-      "capability": "assistant",
-      "notes": "Vendor label: Assist (AI Assist).",
-      "availability": "supported",
-      "sourceIds": [
-        "respond-io-product-official"
-      ]
-    },
-    {
-      "capability": "assistant",
-      "availability": "supported",
-      "sourceIds": [
-        "respond-io-product-official"
-      ],
-      "notes": "Vendor label: Prompt."
-    },
-    {
-      "capability": "assistant",
-      "availability": "higher-plan-only",
-      "sourceIds": [
-        "respond-io-product-official"
-      ],
-      "notes": "Vendor label: Agents."
-    },
-    {
-      "capability": "other",
-      "availability": "supported",
-      "sourceIds": [
-        "respond-io-product-official"
-      ],
-      "notes": "Vendor label: chat analysis."
-    }
-  ],
   "integrationSupport": [
     {
       "integrationSlug": "hubspot",
@@ -250,9 +216,43 @@
       ]
     }
   ],
+  "aiCapabilities": [
+    {
+      "capability": "assistant",
+      "availability": "supported",
+      "sourceIds": [
+        "respond-io-product-official"
+      ],
+      "notes": "Vendor label: Assist (AI Assist)."
+    },
+    {
+      "capability": "assistant",
+      "availability": "supported",
+      "sourceIds": [
+        "respond-io-product-official"
+      ],
+      "notes": "Vendor label: Prompt."
+    },
+    {
+      "capability": "assistant",
+      "availability": "higher-plan-only",
+      "sourceIds": [
+        "respond-io-product-official"
+      ],
+      "notes": "Vendor label: Agents."
+    },
+    {
+      "capability": "other",
+      "availability": "supported",
+      "sourceIds": [
+        "respond-io-product-official"
+      ],
+      "notes": "Vendor label: chat analysis."
+    }
+  ],
   "vendorPositioning": [
     {
-      "claim": "The AI-powered customer conversation platform \u2014 manage WhatsApp and every channel in one omnichannel inbox.",
+      "claim": "The AI-powered customer conversation platform — manage WhatsApp and every channel in one omnichannel inbox.",
       "audienceHints": [
         "Support and growth teams that need WhatsApp plus other messaging channels in one inbox",
         "Organisations running broadcasts and workflow automation across channels",
@@ -289,7 +289,7 @@
   "limitations": [
     {
       "kind": "feature-unavailable",
-      "description": "Not a business phone system \u2014 no IVR, queues or PSTN calling product",
+      "description": "Not a business phone system — no IVR, queues or PSTN calling product",
       "sourceIds": [
         "respond-io-product-official"
       ],
@@ -336,92 +336,6 @@
       "isEditorial": false
     }
   ],
-  "pricing": {
-    "currency": "USD",
-    "model": "subscription",
-    "hasFreePlan": false,
-    "hasFreeTrial": true,
-    "plans": [
-      {
-        "id": "plan-starter",
-        "slug": "starter",
-        "name": "Starter",
-        "isFree": false,
-        "contactSales": false,
-        "hasFreeTrial": true,
-        "trialDays": 7,
-        "highlighted": false,
-        "rules": [
-          {
-            "kind": "flat",
-            "amount": 79,
-            "currency": "USD",
-            "interval": "year",
-            "amountPeriod": "month"
-          }
-        ],
-        "description": "$79/month on yearly billing ($948/yr). Team & custom inboxes, AI Prompt/Assist, basic reports \u2014 omnichannel messaging entry."
-      },
-      {
-        "id": "plan-growth",
-        "slug": "growth",
-        "name": "Growth",
-        "isFree": false,
-        "contactSales": false,
-        "hasFreeTrial": true,
-        "trialDays": 7,
-        "highlighted": true,
-        "rules": [
-          {
-            "kind": "flat",
-            "amount": 159,
-            "currency": "USD",
-            "interval": "year",
-            "amountPeriod": "month"
-          }
-        ],
-        "description": "$159/month yearly ($1,908/yr). Broadcasts, workflow automation, AI Agents, advanced reports, Zapier/Make and developer API."
-      },
-      {
-        "id": "plan-advanced",
-        "slug": "advanced",
-        "name": "Advanced",
-        "isFree": false,
-        "contactSales": false,
-        "hasFreeTrial": true,
-        "trialDays": 7,
-        "highlighted": false,
-        "rules": [
-          {
-            "kind": "flat",
-            "amount": 279,
-            "currency": "USD",
-            "interval": "year",
-            "amountPeriod": "month"
-          }
-        ],
-        "description": "$279/month yearly ($3,348/yr). Multiple workspaces, SSO, webhooks, custom channels and advanced security."
-      },
-      {
-        "id": "plan-enterprise",
-        "slug": "enterprise",
-        "name": "Enterprise",
-        "isFree": false,
-        "contactSales": true,
-        "hasFreeTrial": false,
-        "highlighted": false,
-        "rules": [],
-        "description": "Custom packaging \u2014 unlimited users, higher workspace/API limits. Contact sales."
-      }
-    ],
-    "notes": "Confirmed 2026-08-17 on respond.io/pricing: Starter $79, Growth $159, Advanced $279 per month (yearly billing shown as $948/$1,908/$3,348 per year). Enterprise contact sales. Contact-based (monthly active contacts) packaging \u2014 channel/Meta message fees sit on top where applicable. 7-day trial. High confidence on platform floors.",
-    "verifiedAt": "2026-08-17T18:00:00.000Z",
-    "sourceIds": [
-      "respond-io-pricing-official"
-    ],
-    "startingPriceMonthly": 79,
-    "trialDays": 7
-  },
   "screenshots": [
     {
       "id": "respond-io-shot-platform",
@@ -432,7 +346,8 @@
       "checkedAt": "2026-08-17T17:00:00.000Z",
       "annotation": "Official respond.io YouTube thumbnail showing product UI",
       "kind": "vendor-ui",
-      "featureIds": []
+      "featureIds": [],
+      "useCaseIds": []
     },
     {
       "id": "respond-io-shot-explained",
@@ -443,7 +358,8 @@
       "checkedAt": "2026-08-17T17:00:00.000Z",
       "annotation": "Official respond.io YouTube thumbnail showing product UI",
       "kind": "vendor-ui",
-      "featureIds": []
+      "featureIds": [],
+      "useCaseIds": []
     },
     {
       "id": "respond-io-shot-get-started",
@@ -454,7 +370,8 @@
       "checkedAt": "2026-08-17T17:00:00.000Z",
       "annotation": "Official respond.io YouTube thumbnail showing product UI",
       "kind": "vendor-ui",
-      "featureIds": []
+      "featureIds": [],
+      "useCaseIds": []
     },
     {
       "id": "respond-io-shot-ai-agents",
@@ -465,7 +382,8 @@
       "checkedAt": "2026-08-17T17:00:00.000Z",
       "annotation": "Official respond.io YouTube thumbnail showing product UI",
       "kind": "vendor-ui",
-      "featureIds": []
+      "featureIds": [],
+      "useCaseIds": []
     }
   ],
   "media": [
@@ -509,16 +427,16 @@
       "demonstratedDimensionIds": [],
       "requirementCriterionIds": [],
       "workflowStageIds": [],
+      "mediaContext": "general-workflow",
       "reportedOutcomes": [],
       "placements": [
         "overview",
         "features",
         "evidence"
       ],
-      "mediaContext": "general-workflow",
       "purpose": "Official respond.io video for product research pages",
       "demonstratesCaption": "How respond.io presents the product in an official vendor video.",
-      "editorialCommentary": "Official vendor demo \u2014 treat as UI/workflow evidence, not SoftwareGlimpse scoring.",
+      "editorialCommentary": "Official vendor demo — treat as UI/workflow evidence, not SoftwareGlimpse scoring.",
       "whatThisShows": [
         "respond.io product surfaces as shown in the official vendor video",
         "UI/workflow layout marketed by the vendor"
@@ -572,16 +490,16 @@
       "demonstratedDimensionIds": [],
       "requirementCriterionIds": [],
       "workflowStageIds": [],
+      "mediaContext": "general-workflow",
       "reportedOutcomes": [],
       "placements": [
         "overview",
         "features",
         "evidence"
       ],
-      "mediaContext": "general-workflow",
       "purpose": "Official respond.io video for product research pages",
       "demonstratesCaption": "How respond.io presents the product in an official vendor video.",
-      "editorialCommentary": "Official vendor demo \u2014 treat as UI/workflow evidence, not SoftwareGlimpse scoring.",
+      "editorialCommentary": "Official vendor demo — treat as UI/workflow evidence, not SoftwareGlimpse scoring.",
       "whatThisShows": [
         "respond.io product surfaces as shown in the official vendor video",
         "UI/workflow layout marketed by the vendor"
@@ -596,12 +514,92 @@
       "status": "published"
     }
   ],
-  "sourceIds": [
-    "respond-io-product-official",
-    "respond-io-pricing-official",
-    "respond-io-product"
-  ],
-  "notes": "Business-communications Priority-2 onboarding enrichment from first-party research 2026-08-17T18:00:00.000Z. handsOnTesting=false. membershipRole=primary. jobCluster=customer-messaging.",
+  "pricing": {
+    "currency": "USD",
+    "model": "subscription",
+    "hasFreePlan": false,
+    "hasFreeTrial": true,
+    "plans": [
+      {
+        "id": "plan-starter",
+        "slug": "starter",
+        "name": "Starter",
+        "isFree": false,
+        "contactSales": false,
+        "hasFreeTrial": true,
+        "trialDays": 7,
+        "highlighted": false,
+        "rules": [
+          {
+            "kind": "flat",
+            "amount": 79,
+            "currency": "USD",
+            "interval": "year",
+            "amountPeriod": "month"
+          }
+        ],
+        "description": "$79/month on yearly billing ($948/yr). Team & custom inboxes, AI Prompt/Assist, basic reports — omnichannel messaging entry."
+      },
+      {
+        "id": "plan-growth",
+        "slug": "growth",
+        "name": "Growth",
+        "isFree": false,
+        "contactSales": false,
+        "hasFreeTrial": true,
+        "trialDays": 7,
+        "highlighted": true,
+        "rules": [
+          {
+            "kind": "flat",
+            "amount": 159,
+            "currency": "USD",
+            "interval": "year",
+            "amountPeriod": "month"
+          }
+        ],
+        "description": "$159/month yearly ($1,908/yr). Broadcasts, workflow automation, AI Agents, advanced reports, Zapier/Make and developer API."
+      },
+      {
+        "id": "plan-advanced",
+        "slug": "advanced",
+        "name": "Advanced",
+        "isFree": false,
+        "contactSales": false,
+        "hasFreeTrial": true,
+        "trialDays": 7,
+        "highlighted": false,
+        "rules": [
+          {
+            "kind": "flat",
+            "amount": 279,
+            "currency": "USD",
+            "interval": "year",
+            "amountPeriod": "month"
+          }
+        ],
+        "description": "$279/month yearly ($3,348/yr). Multiple workspaces, SSO, webhooks, custom channels and advanced security."
+      },
+      {
+        "id": "plan-enterprise",
+        "slug": "enterprise",
+        "name": "Enterprise",
+        "isFree": false,
+        "contactSales": true,
+        "hasFreeTrial": false,
+        "highlighted": false,
+        "rules": [],
+        "description": "Custom packaging — unlimited users, higher workspace/API limits. Contact sales."
+      }
+    ],
+    "notes": "Confirmed 2026-08-17 on respond.io/pricing: Starter $79, Growth $159, Advanced $279 per month (yearly billing shown as $948/$1,908/$3,348 per year). Enterprise contact sales. Contact-based (monthly active contacts) packaging — channel/Meta message fees sit on top where applicable. 7-day trial. High confidence on platform floors.",
+    "verifiedAt": "2026-09-10T08:16:34.218Z",
+    "sourceIds": [
+      "respond-io-pricing-official"
+    ],
+    "startingPriceMonthly": 79,
+    "trialDays": 7
+  },
   "domainCheckedAt": {
     "identity": "2026-08-17T18:00:00.000Z",
     "pricing": "2026-08-17T18:00:00.000Z",
@@ -615,5 +613,11 @@
     "limits": "2026-08-17T18:00:00.000Z",
     "security-compliance": "2026-08-17T18:00:00.000Z"
   },
-  "updatedAt": "2026-08-17T17:00:00.000Z"
+  "sourceIds": [
+    "respond-io-product-official",
+    "respond-io-pricing-official",
+    "respond-io-product"
+  ],
+  "updatedAt": "2026-08-17T17:00:00.000Z",
+  "notes": "Business-communications Priority-2 onboarding enrichment from first-party research 2026-08-17T18:00:00.000Z. handsOnTesting=false. membershipRole=primary. jobCluster=customer-messaging."
 }

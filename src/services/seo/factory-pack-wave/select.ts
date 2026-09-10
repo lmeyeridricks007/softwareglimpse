@@ -278,7 +278,7 @@ export function selectFactoryPackWave(
 
   return {
     selected,
-    skippedIllegitimate: skippedIllegitimate.slice(0, 100),
+    skippedIllegitimate,
     remainingFactoryImprove,
     excludedAlreadyProcessed,
   };

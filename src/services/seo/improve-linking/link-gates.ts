@@ -28,13 +28,22 @@ export function assessLinkReadiness(
 
   let meaningfulInbound = injectionsToPath(p).length;
 
-  // Guide referrers via relatedGuideSlugs
+  // Guide referrers via relatedGuideSlugs (published pages that actually render)
   if (p.startsWith("/guides/")) {
     const targetSlug = p.replace(/^\/guides\/|\/$/g, "");
+    const target =
+      getGuides({ includeUnpublished: true }).find((g) => g.slug === targetSlug) ??
+      null;
     for (const g of getGuides()) {
+      if (g.slug === targetSlug) continue;
       if (g.relatedGuideSlugs.includes(targetSlug)) {
         meaningfulInbound += 1;
       }
+    }
+    // Product hubs list product-tagged guides in the review sidebar / guides tab
+    // even when InternalLinkingModules omits relatedGuides.
+    if (target) {
+      meaningfulInbound += target.productSlugs.length;
     }
   }
 

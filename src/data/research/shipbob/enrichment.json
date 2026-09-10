@@ -171,36 +171,6 @@
       ]
     }
   ],
-  "aiCapabilities": [
-    {
-      "capability": "assistant",
-      "availability": "limited",
-      "sourceIds": [
-        "shipbob-product-official"
-      ]
-    },
-    {
-      "capability": "summaries",
-      "availability": "limited",
-      "sourceIds": [
-        "shipbob-product-official"
-      ]
-    },
-    {
-      "capability": "automation",
-      "availability": "limited",
-      "sourceIds": [
-        "shipbob-product-official"
-      ]
-    },
-    {
-      "capability": "recommendations",
-      "availability": "limited",
-      "sourceIds": [
-        "shipbob-product-official"
-      ]
-    }
-  ],
   "integrationSupport": [
     {
       "integrationSlug": "shopify",
@@ -232,7 +202,37 @@
     },
     {
       "integrationSlug": "api",
-      "kind": "api",
+      "kind": "api-only",
+      "sourceIds": [
+        "shipbob-product-official"
+      ]
+    }
+  ],
+  "aiCapabilities": [
+    {
+      "capability": "assistant",
+      "availability": "limited",
+      "sourceIds": [
+        "shipbob-product-official"
+      ]
+    },
+    {
+      "capability": "summaries",
+      "availability": "limited",
+      "sourceIds": [
+        "shipbob-product-official"
+      ]
+    },
+    {
+      "capability": "automation",
+      "availability": "limited",
+      "sourceIds": [
+        "shipbob-product-official"
+      ]
+    },
+    {
+      "capability": "recommendations",
+      "availability": "limited",
       "sourceIds": [
         "shipbob-product-official"
       ]
@@ -316,53 +316,6 @@
       "isEditorial": false
     }
   ],
-  "pricing": {
-    "currency": "USD",
-    "model": "hybrid",
-    "hasFreePlan": false,
-    "hasFreeTrial": false,
-    "plans": [
-      {
-        "id": "plan-fulfillment",
-        "slug": "fulfillment",
-        "name": "Fulfillment (Quote)",
-        "isFree": false,
-        "contactSales": true,
-        "hasFreeTrial": false,
-        "highlighted": false,
-        "rules": [],
-        "description": "Custom quote — pick/pack, storage, receiving, shipping, and optional returns/kitting."
-      },
-      {
-        "id": "plan-plus",
-        "slug": "plus",
-        "name": "ShipBob Plus",
-        "isFree": false,
-        "contactSales": true,
-        "hasFreeTrial": false,
-        "highlighted": false,
-        "rules": [],
-        "description": "Enterprise / high-volume packaging — contact sales."
-      },
-      {
-        "id": "plan-wms",
-        "slug": "wms",
-        "name": "ShipBob WMS",
-        "isFree": false,
-        "contactSales": true,
-        "hasFreeTrial": false,
-        "highlighted": false,
-        "rules": [],
-        "description": "Warehouse management for owned facilities — separate product line."
-      }
-    ],
-    "notes": "Verified 2026-08-19 from shipbob.com/pricing structure plus cross-checks (medium confidence — quote-based). Published model: onboarding/setup (varies), receiving, storage (bin/shelf/pallet), all-in fulfillment fee, optional kitting/returns. ~$275/mo minimum and ~$2.50–$3.50 pick/pack cited in merchant reports — confirm quote. Affiliate aff-shipbob. Affiliate economics excluded.",
-    "verifiedAt": "2026-08-19T12:00:00.000Z",
-    "sourceIds": [
-      "shipbob-pricing-official"
-    ],
-    "startingPriceMonthly": 275
-  },
   "screenshots": [
     {
       "id": "shipbob-shot-platform-hero",
@@ -375,7 +328,8 @@
       "kind": "vendor-ui",
       "featureIds": [
         "ai-assistance"
-      ]
+      ],
+      "useCaseIds": []
     },
     {
       "id": "shipbob-shot-dashboard-tour",
@@ -388,7 +342,8 @@
       "kind": "vendor-ui",
       "featureIds": [
         "ai-assistance"
-      ]
+      ],
+      "useCaseIds": []
     }
   ],
   "media": [
@@ -436,6 +391,7 @@
       "demonstratedDimensionIds": [],
       "requirementCriterionIds": [],
       "workflowStageIds": [],
+      "mediaContext": "general-workflow",
       "reportedOutcomes": [],
       "placements": [
         "overview",
@@ -443,7 +399,6 @@
         "evidence",
         "use-cases"
       ],
-      "mediaContext": "general-workflow",
       "purpose": "Official ShipBob video for product research pages",
       "demonstratesCaption": "How ShipBob presents the product in an official vendor video.",
       "editorialCommentary": "Official vendor demo — treat as UI/workflow evidence, not SoftwareGlimpse scoring.",
@@ -504,6 +459,7 @@
       "demonstratedDimensionIds": [],
       "requirementCriterionIds": [],
       "workflowStageIds": [],
+      "mediaContext": "general-workflow",
       "reportedOutcomes": [],
       "placements": [
         "overview",
@@ -512,7 +468,6 @@
         "implementation",
         "use-cases"
       ],
-      "mediaContext": "general-workflow",
       "purpose": "Official ShipBob video for product research pages",
       "demonstratesCaption": "How ShipBob presents the product in an official vendor video.",
       "editorialCommentary": "Official vendor demo — treat as UI/workflow evidence, not SoftwareGlimpse scoring.",
@@ -530,12 +485,53 @@
       "status": "published"
     }
   ],
-  "sourceIds": [
-    "shipbob-product-official",
-    "shipbob-pricing-official",
-    "shipbob-pricing"
-  ],
-  "notes": "Affiliate gap reconcile 2026-08-19 onboarding enrichment from first-party research 2026-08-19T12:00:00.000Z. handsOnTesting=false. membershipRole=primary. jobCluster=dropshipping-sourcing.",
+  "pricing": {
+    "currency": "USD",
+    "model": "hybrid",
+    "hasFreePlan": false,
+    "hasFreeTrial": false,
+    "plans": [
+      {
+        "id": "plan-fulfillment",
+        "slug": "fulfillment",
+        "name": "Fulfillment (Quote)",
+        "isFree": false,
+        "contactSales": true,
+        "hasFreeTrial": false,
+        "highlighted": false,
+        "rules": [],
+        "description": "Custom quote — pick/pack, storage, receiving, shipping, and optional returns/kitting."
+      },
+      {
+        "id": "plan-plus",
+        "slug": "plus",
+        "name": "ShipBob Plus",
+        "isFree": false,
+        "contactSales": true,
+        "hasFreeTrial": false,
+        "highlighted": false,
+        "rules": [],
+        "description": "Enterprise / high-volume packaging — contact sales."
+      },
+      {
+        "id": "plan-wms",
+        "slug": "wms",
+        "name": "ShipBob WMS",
+        "isFree": false,
+        "contactSales": true,
+        "hasFreeTrial": false,
+        "highlighted": false,
+        "rules": [],
+        "description": "Warehouse management for owned facilities — separate product line."
+      }
+    ],
+    "notes": "Verified 2026-08-19 from shipbob.com/pricing structure plus cross-checks (medium confidence — quote-based). Published model: onboarding/setup (varies), receiving, storage (bin/shelf/pallet), all-in fulfillment fee, optional kitting/returns. ~$275/mo minimum and ~$2.50–$3.50 pick/pack cited in merchant reports — confirm quote. Affiliate aff-shipbob. Affiliate economics excluded.",
+    "verifiedAt": "2026-09-10T11:43:45.266Z",
+    "sourceIds": [
+      "shipbob-pricing-official"
+    ],
+    "startingPriceMonthly": 275
+  },
   "domainCheckedAt": {
     "identity": "2026-08-19T12:00:00.000Z",
     "pricing": "2026-08-19T12:00:00.000Z",
@@ -549,5 +545,11 @@
     "limits": "2026-08-19T12:00:00.000Z",
     "security-compliance": "2026-08-19T12:00:00.000Z"
   },
-  "updatedAt": "2026-08-19T15:20:00.000Z"
+  "sourceIds": [
+    "shipbob-product-official",
+    "shipbob-pricing-official",
+    "shipbob-pricing"
+  ],
+  "updatedAt": "2026-08-19T15:20:00.000Z",
+  "notes": "Affiliate gap reconcile 2026-08-19 onboarding enrichment from first-party research 2026-08-19T12:00:00.000Z. handsOnTesting=false. membershipRole=primary. jobCluster=dropshipping-sourcing."
 }

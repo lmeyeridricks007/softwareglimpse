@@ -1,10 +1,10 @@
 {
   "slug": "lightspeed-retail",
-  "updatedAt": "2026-09-07T22:31:21.939Z",
+  "updatedAt": "2026-09-10T11:46:30.078Z",
   "version": "1.0.0",
   "fieldAudit": {
     "slug": "lightspeed-retail",
-    "checkedAt": "2026-09-07T22:31:21.938Z",
+    "checkedAt": "2026-09-10T11:46:30.076Z",
     "items": [
       {
         "field": "name",
@@ -20,9 +20,9 @@
       },
       {
         "field": "canonical_vendor",
-        "status": "UNKNOWN",
-        "detail": "Company/vendor not documented",
-        "source": "none"
+        "status": "PASS",
+        "detail": "Vendor: Lightspeed",
+        "source": "seed"
       },
       {
         "field": "category",
@@ -115,11 +115,11 @@
         "source": "enrichment"
       }
     ],
-    "passCount": 16,
+    "passCount": 17,
     "partialCount": 0,
     "missingCount": 0,
-    "unknownCount": 2,
-    "score": 89
+    "unknownCount": 1,
+    "score": 94
   },
   "decisionHub": {
     "whatItIs": "Lightspeed Retail (X-Series POS) is a retail point-of-sale platform with catalog, inventory, and omnichannel selling — including built-in Lightspeed eCommerce on higher tiers. US tiles from lightspeedhq.com (2026-08-18): Basic $89/mo, Core $149/mo, Plus $289/mo, with contact-sales CTAs on the page. Lightspeed Payments card-present is published around 1.5%; using a third-party processor may incur a high monthly surcharge (confirm live). This is the POS-first Lightspeed product — distinct from Ecwid (Lightspeed eCom), the embeddable store widget. Landscape omnichannel peer — Square Online keeps the cluster award (8.0). Research grounded 2026-08-18 from first-party pricing; confirm live on lightspeedhq.com/pos/retail/pricing.",
@@ -146,7 +146,7 @@
       "inventory management",
       "shipping fulfillment",
       "pos omnichannel",
-      "analytics reporting"
+      "marketplace channels"
     ],
     "pricingSummary": "4 documented plans · entry paid: Basic",
     "keyTradeoffs": [
@@ -237,7 +237,6 @@
     "evidenceState": "Research/data-based (no completed hands-on test) · Latest verification/research signal: 2026-08-18T15:00:00.000Z · Editorial assessment: approved",
     "nextDecisionStep": "Compare against peers: Lightspeed Retail vs Square Online",
     "missingSections": [
-      "canonical_vendor",
       "trial"
     ]
   },
@@ -400,13 +399,12 @@
   ],
   "dependentsNeedingRefresh": [],
   "remediation": [
-    "verify:canonical_vendor",
     "verify:trial"
   ],
   "notes": [
-    "fieldAudit score=89",
+    "fieldAudit score=94",
     "decisionHub bestFor=5 notIdeal=6",
     "dependents=31"
   ],
-  "materiallyImproved": false
+  "materiallyImproved": true
 }

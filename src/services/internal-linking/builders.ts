@@ -211,6 +211,7 @@ export function buildGuideLinkPlan(guide: GuidePage): PageLinkPlan {
 
   // Explicit related — always prefer over inferred peers; include IMPROVE targets.
   for (const slug of guide.relatedGuideSlugs) {
+    if (slug === guide.slug) continue;
     const g = getGuides({ includeUnpublished: true }).find(
       (x) => x.slug === slug,
     );
@@ -534,6 +535,28 @@ export function buildSoftwareLinkPlan(slug: string): PageLinkPlan | null {
       })(),
     ],
     { module: "relatedGuides", excludeHrefs: [sourcePath] },
+  );
+
+  // Overview + use-cases tab already render SoftwareUseCaseCards to these hrefs.
+  // Graph extraction used to drop IMPROVE destinations (requireIndexable default).
+  plan.relatedUseCases = selectLinks(
+    soft.useCaseSlugs.map((useCaseSlug) => {
+      const uc = getUseCases().find((u) => u.slug === useCaseSlug);
+      return makeLink({
+        href: `/use-cases/${useCaseSlug}/`,
+        label: uc?.name ?? useCaseSlug.replace(/-/g, " "),
+        relationship: "relevantToUseCase",
+        module: "relatedUseCases",
+        entityType: "use-case",
+        score: 82,
+        requireIndexable: false,
+      });
+    }),
+    {
+      module: "relatedUseCases",
+      excludeHrefs: [sourcePath],
+      limit: Math.max(6, soft.useCaseSlugs.length),
+    },
   );
 
   const journey = resolveCategoryJourneyModules({
@@ -1202,6 +1225,28 @@ export function buildCategoryLinkPlan(categorySlug: string): PageLinkPlan | null
         }),
       ),
     { module: "relatedComparisons", excludeHrefs: exclude },
+  );
+
+  // CategoryUseCases already lists every hub use case, including IMPROVE stubs.
+  plan.relatedUseCases = selectLinks(
+    getUseCases()
+      .filter((uc) => uc.categorySlugs.includes(categorySlug))
+      .map((uc) =>
+        makeLink({
+          href: `/use-cases/${uc.slug}/`,
+          label: uc.name,
+          relationship: "relevantToUseCase",
+          module: "relatedUseCases",
+          entityType: "use-case",
+          score: uc.seo.indexable === true ? 82 : 70,
+          requireIndexable: false,
+        }),
+      ),
+    {
+      module: "relatedUseCases",
+      excludeHrefs: exclude,
+      limit: 48,
+    },
   );
 
   const journey = resolveCategoryJourneyModules({

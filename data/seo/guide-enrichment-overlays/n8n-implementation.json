@@ -1,0 +1,215 @@
+{
+  "slug": "n8n-implementation",
+  "enrichmentType": "IMPLEMENTATION_GUIDE",
+  "updatedAt": "2026-09-10T12:48:20.234Z",
+  "uniqueValueAdded": [
+    "implementation_workflow",
+    "scenario_analysis",
+    "decision_framework",
+    "limitations_evidence",
+    "pricing_comparison",
+    "sg_original_data",
+    "buyer_checklist"
+  ],
+  "patch": {
+    "summary": "LLM chat and assistants; writing and paraphrasing; agent / app builder; projects, GPTs, and memory. Community Edition · free · LLM chat and assistants | Cloud Starter | Cloud Pro. Slack. Teams that want Community self-host or EUR Cloud execution volume; Builders comfortable with a node graph instead of Zapier’s editor; Buyers who need automation overlay, not ChatGPT as the home screen. n8n is a workflow-automation platform with a free Community Edition for self-host and a Cloud ladder priced in EUR. Cloud Starter is list price billed annually (2,500 executions pl Buyer question: is n8n the right ai commit for Teams that want Community self-host or EUR Cloud execution volume, or is Non-technical teams that only want Zapier’s connector-first editor the real constraint? Thesis for implementation: n8n is a yes only when LLM chat and assistants plus enterprise admin and SSO (Community Edition, Cloud Starter, Cloud Pro, Cloud Business, Enterprise) are must-haves; not worth it if Non-technical teams that only want Zapier’s connector-first editor dominates the operating model.",
+    "blocks": [
+      {
+        "id": "da-n8n-implementation-1",
+        "type": "direct-answer",
+        "body": "enterprise admin and SSO (Community Edition, Cloud Starter, Cloud Pro, Cloud Business, Enterprise) decides whether n8n implementation is a one-team pilot or a specialist project — confirm unlocks for enterprise admin and SSO (Community Edition, Cloud Starter, Cloud Pro, Cloud Business, Enterprise) before invites.",
+        "bullets": [
+          "Start with: LLM chat and assistants",
+          "Gate check: enterprise admin and SSO (Community Edition, Cloud Starter, Cloud Pro, Cloud Business, Enterprise)",
+          "Integrate after: data quality pass on Slack"
+        ]
+      },
+      {
+        "id": "impl-n8n-implementation-2",
+        "type": "step",
+        "heading": "n8n day-zero to steady-state sequence",
+        "body": "Treat n8n setup as a controlled rollout — not a weekend dump of CSV files.",
+        "stepNumber": 1,
+        "scenarios": [
+          {
+            "title": "Day zero — objects and owners",
+            "body": "Define owners for LLM chat and assistants, writing and paraphrasing, agent / app builder before inviting the whole org."
+          },
+          {
+            "title": "SMB pilot",
+            "body": "One pipeline / one team proves Teams that want Community self-host or EUR Cloud execution volume before company-wide seats."
+          },
+          {
+            "title": "Cutover",
+            "body": "Freeze legacy writes briefly; validate Slack before reopen."
+          }
+        ]
+      },
+      {
+        "id": "df-n8n-implementation-3",
+        "type": "decision-framework",
+        "title": "n8n implementation go / no-go",
+        "steps": [
+          {
+            "id": "i-1",
+            "label": "Go when plan unlocks cover enterprise admin and SSO (Community Edition, Cloud Starter, Cloud Pro, Cloud Business, Enterprise)"
+          },
+          {
+            "id": "i-2",
+            "label": "Pause if this limitation blocks ops: Cloud prices are EUR — startingPriceMonthly 20 is the Starter euro floor, not a USD SKU"
+          },
+          {
+            "id": "i-3",
+            "label": "Do not expand seats until LLM chat and assistants is green"
+          }
+        ]
+      },
+      {
+        "id": "mist-n8n-implementation-4",
+        "type": "mistakes",
+        "title": "n8n implementation mistakes",
+        "items": [
+          {
+            "title": "Mistake 1",
+            "body": "Cloud prices are EUR — startingPriceMonthly 20 is the Starter euro floor, not a USD SKU"
+          },
+          {
+            "title": "Mistake 2",
+            "body": "Community Edition is self-host ops work — not a hosted Free Zapier-style 100-task sandbox"
+          },
+          {
+            "title": "Mistake 3",
+            "body": "Not a general LLM assistant (ChatGPT) and not MindStudio as the primary agent-builder job"
+          },
+          {
+            "title": "Mistake 4",
+            "body": "Business list price and Enterprise are a different buying motion than Starter list price"
+          },
+          {
+            "title": "Big-bang invite",
+            "body": "Inviting every user before object design creates junk data that is expensive to unwind."
+          }
+        ]
+      },
+      {
+        "id": "cost-n8n-implementation-5",
+        "type": "cost-breakdown",
+        "title": "n8n plan gates that affect rollout",
+        "body": "Implementation fails when unlocks needed for go-live sit on a higher tier than budgeted.",
+        "lines": [
+          {
+            "label": "Community Edition",
+            "description": "Free plan · Unlocks: LLM chat and assistants, writing and paraphrasing, agent / app builder · Suits: explore before committing seats"
+          },
+          {
+            "label": "Cloud Starter",
+            "description": "Suits: teams whose must-have gates appear on this tier"
+          },
+          {
+            "label": "Cloud Pro",
+            "description": "Suits: teams whose must-have gates appear on this tier"
+          },
+          {
+            "label": "Cloud Business",
+            "description": "Suits: teams whose must-have gates appear on this tier"
+          },
+          {
+            "label": "Enterprise",
+            "description": "Contact sales · Suits: teams that need custom procurement"
+          }
+        ]
+      },
+      {
+        "id": "sel-n8n-implementation-6",
+        "type": "selection-checklist",
+        "title": "n8n implementation checklist",
+        "dimensions": [
+          {
+            "id": "prep",
+            "label": "Prep",
+            "options": [
+              "Object model drafted",
+              "Owners named",
+              "Legacy freeze window set"
+            ]
+          },
+          {
+            "id": "pilot",
+            "label": "Pilot",
+            "options": [
+              "LLM chat and assistants",
+              "Junk-data rules set",
+              "Support path clear"
+            ]
+          },
+          {
+            "id": "scale",
+            "label": "Scale",
+            "options": [
+              "Slack",
+              "Seat expansion criteria written",
+              "Rollback plan noted"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "cta-n8n-implementation-7",
+        "type": "interactive-cta",
+        "title": "Validate ai fit before a deep n8n rollout",
+        "body": "If n8n fails constraint fit, stop implementation early.",
+        "href": "/tools/ai-finder/",
+        "ctaLabel": "Open Finder",
+        "variant": "finder"
+      }
+    ],
+    "sections": [
+      {
+        "id": "sec-thesis-n8n-implementation",
+        "heading": "n8n buyer question and thesis",
+        "body": "LLM chat and assistants; writing and paraphrasing; agent / app builder; projects, GPTs, and memory. Community Edition · free · LLM chat and assistants | Cloud Starter | Cloud Pro. Slack. Teams that want Community self-host or EUR Cloud execution volume; Builders comfortable with a node graph instead of Zapier’s editor; Buyers who need automation overlay, not ChatGPT as the home screen. n8n is a workflow-automation platform with a free Community Edition for self-host and a Cloud ladder priced in EUR. Cloud Starter is list price billed annually (2,500 executions pl. That catalogue mix is the n8n implementation filter — not a generic ai lecture.\n\nBuyer question: is n8n the right ai commit for Teams that want Community self-host or EUR Cloud execution volume, or is Non-technical teams that only want Zapier’s connector-first editor the real constraint?\n\nThesis for implementation: n8n is a yes only when LLM chat and assistants plus enterprise admin and SSO (Community Edition, Cloud Starter, Cloud Pro, Cloud Business, Enterprise) are must-haves; not worth it if Non-technical teams that only want Zapier’s connector-first editor dominates the operating model.\n\nBest for: Teams that want Community self-host or EUR Cloud execution volume; Builders comfortable with a node graph instead of Zapier’s editor; Buyers who need automation overlay, not ChatGPT as the home screen (Teams that want Community self-host or EUR Cloud execution volume).\n\nPoor fit when: Non-technical teams that only want Zapier’s connector-first editor; Buyers who only need an LLM assistant (ChatGPT); No-code AI agent studios as the primary job (MindStudio) — landscape only. Avoid if Cloud prices are EUR — startingPriceMonthly 20 is the Starter euro floor, not a USD SKU would block go-live."
+      },
+      {
+        "id": "sec-limits-n8n-implementation",
+        "heading": "n8n limitation, pricing interpretation, and alternative context",
+        "body": "Limitation: Cloud prices are EUR — startingPriceMonthly 20 is the Starter euro floor, not a USD SKU; Community Edition is self-host ops work — not a hosted Free Zapier-style 100-task sandbox; Not a general LLM assistant (ChatGPT) and not MindStudio as the primary agent-builder job because it forces process changes or add-ons around n8n when LLM chat and assistants is the job.\n\nPricing interpretation: stay on Community Edition until enterprise admin and SSO (Community Edition, Cloud Starter, Cloud Pro, Cloud Business, Enterprise) is mandatory; plan jumps to Cloud Starter only after that hinge is proven.\n\nPlan trade-off: you gain enterprise admin and SSO (Community Edition, Cloud Starter, Cloud Pro, Cloud Business, Enterprise) at the expense of Published free tiers vs paid usage/credit caps — measure both in the pilot. Researched packaging: Community Edition · free · LLM chat and assistants | Cloud Starter | Cloud Pro.\n\nAlternative context: unlike Zapier, n8n is preferable when Teams that want Community self-host or EUR Cloud execution volume because LLM chat and assistants plus enterprise admin and SSO (Community Edition, Cloud Starter, Cloud Pro, Cloud Business, Enterprise) match; prefer Zapier when Non-technical teams that only want Zapier’s connector-first editor because the operating loops differ."
+      },
+      {
+        "id": "sec-scenario-n8n-implementation",
+        "heading": "Decision scenario and conclusion for n8n",
+        "body": "Use-case: for Teams that want Community self-host or EUR Cloud execution volume running LLM chat and assistants, prefer n8n when LLM chat and assistants is weekly; pick another path when Non-technical teams that only want Zapier’s connector-first editor.\n\nSetup requires a specialist owner when Cloud prices are EUR — startingPriceMonthly 20 is the Starter euro floor, not a USD SKU collides with LLM chat and assistants; SMB pilots can stay lighter if enterprise admin and SSO (Community Edition, Cloud Starter, Cloud Pro, Cloud Business, Enterprise) is already on Cloud Starter.\n\nIntegrations in research: Slack.\n\nWrap: choose n8n only if the implementation job is LLM chat and assistants under Teams that want Community self-host or EUR Cloud execution volume; otherwise use Finder constraints instead of copying this page for another vendor."
+      }
+    ],
+    "checklist": [
+      {
+        "id": "enrich-chk-0",
+        "label": "Draft n8n object owners before invites",
+        "order": 0
+      },
+      {
+        "id": "enrich-chk-1",
+        "label": "Confirm plan unlocks for go-live features",
+        "order": 1
+      },
+      {
+        "id": "enrich-chk-2",
+        "label": "Pilot one team on LLM chat and assistants",
+        "order": 2
+      },
+      {
+        "id": "enrich-chk-3",
+        "label": "If blocked, evaluate Zapier before sunk-cost expansion",
+        "order": 3
+      }
+    ],
+    "nextAction": {
+      "contentId": "tool:finder:ai",
+      "label": "Open Finder shortlist"
+    }
+  },
+  "notes": [
+    "Omit unsupported: testing_evidence",
+    "Implementation: workflow, constraints, mistakes, checklist.",
+    "Type-specific skeleton: IMPLEMENTATION_GUIDE"
+  ]
+}
