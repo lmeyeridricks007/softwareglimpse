@@ -63,6 +63,8 @@ function checkNoYoutubeApiGlobal(): Issue[] {
   const issues: Issue[] = [];
   const files = walkTsx(path.join(process.cwd(), "src"));
   for (const file of files) {
+    // Audit agents mention the API strings as detectors, they do not load it.
+    if (file.includes(`${path.sep}seo-audit-agents${path.sep}`)) continue;
     const src = readFileSync(file, "utf8");
     if (
       src.includes("youtube.com/iframe_api") ||
