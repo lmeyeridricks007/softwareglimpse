@@ -287,7 +287,7 @@ export const customerServiceDefinition: CategoryDefinition =
       version: "1.0.0",
       categorySlug: "customer-service",
       description:
-        "SoftwareGlimpse evaluates customer service platforms on ease of use, fit to the primary support job, workflow depth, omnichannel coverage, self-service, integrations, analytics, scalability, value, and AI assistance. Affiliate relationships never influence scores. Helpdesk, live chat, ecommerce helpdesk, ITSM, and AI-inbox products are ranked within their job clusters — never forced into a single undifferentiated ranking.",
+        "SoftwareGlimpse evaluates customer service platforms on ease of use, fit to the primary support job, workflow depth, omnichannel coverage, self-service, integrations, analytics, scalability, value, and AI assistance — including agent governance, agent observability, and agent-credit / outcome TCO inside the ai-capabilities criterion (not a separate agentic-CS pillar). Affiliate relationships never influence scores. Helpdesk, live chat, ecommerce helpdesk, ITSM, and AI-inbox products are ranked within their job clusters — never forced into a single undifferentiated ranking.",
       criteria: [
         crit(
           "ease-of-use",
@@ -381,18 +381,20 @@ export const customerServiceDefinition: CategoryDefinition =
         crit(
           "ai-capabilities",
           "AI capabilities",
-          "Useful AI agents and copilots for deflection or agent assist — not marketing fluff.",
+          "Useful AI agents and copilots for deflection or agent assist — including agent governance (permissions and guardrails), agent observability (handoffs, transcripts, human override), and agent-credit / outcome TCO — not marketing fluff. Folded into this criterion; not a separate agentic-CS pillar.",
           7,
           9,
           [
             "features:chatbot-ai-agent",
             "features:agent-copilot",
             "ai-capabilities",
+            "pricing",
           ],
+          "9–10: governed agents with clear handoff plus honest credit/outcome TCO; 7–8: solid bots/copilots with partial governance or opaque AI packaging; 5–6: basic chatbot only; 1–2: AI claims without product evidence.",
         ),
       ],
       notes:
-        "Weights sum to 100. Score products within job clusters; do not punish a live-chat tool for lacking ITSM change management or an ITSM desk for lacking Shopify refunds. Affiliate economics never enter methodology.",
+        "Weights sum to 100. Score products within job clusters; do not punish a live-chat tool for lacking ITSM change management or an ITSM desk for lacking Shopify refunds. Affiliate economics never enter methodology. v1.0.0 ai-capabilities scores agent governance, observability, and credit/outcome TCO for CS agents — not a separate pillar. External analyst maps (e.g. Gartner Conversational AI MQ) are market context only.",
     },
     comparisonCriteria: [
       {

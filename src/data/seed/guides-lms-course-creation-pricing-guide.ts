@@ -1,4 +1,4 @@
-import type { GuidePage } from "@/domain";
+import type { GuidePageInput } from "@/domain";
 import type { z } from "zod";
 import type { GuideContentBlockSchema } from "@/domain";
 import { tier15GuideScheduledAt } from "@/data/config/publishing/tier-15-lms-course-creation-launch-2026-12-01";
@@ -34,7 +34,7 @@ const blocks: GuideBlockInput[] = [
   },
 ];
 
-function metadata(): GuidePage["metadata"] {
+function metadata(): GuidePageInput["metadata"] {
   return SCHEDULED_AT
     ? {
         status: "scheduled",
@@ -54,7 +54,7 @@ function metadata(): GuidePage["metadata"] {
       };
 }
 
-export const lmsCourseCreationPricingGuide: GuidePage = {
+export const lmsCourseCreationPricingGuide: GuidePageInput = {
   id: "guide-lms-course-creation-pricing-guide",
   slug: SLUG,
   title: "LMS & Course Creation Software Pricing Guide",
@@ -74,7 +74,7 @@ export const lmsCourseCreationPricingGuide: GuidePage = {
     "what-is-lms-course-creation-software",
     "how-to-choose-lms-course-creation-software",
   ],
-  blocks: blocks as GuidePage["blocks"],
+  blocks: blocks as GuidePageInput["blocks"],
   checklist: [],
   sections: [],
   faq: [],
@@ -85,6 +85,6 @@ export const lmsCourseCreationPricingGuide: GuidePage = {
     description:
       "How to budget LMS software — learners, seats, academy tiers, commerce fees, and plan gates.",
     canonicalPath: `/guides/${SLUG}/`,
-    indexable: !SCHEDULED_AT,
+    indexable: true,
   },
 };

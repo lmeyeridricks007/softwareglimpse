@@ -120,7 +120,7 @@ export function inspectSeoDataAvailability(opts?: {
   return {
     inspectedAt: new Date().toISOString(),
     searchConsole: {
-      available: live && !synthetic && mode !== "none" && mode !== "fixture",
+      available: live && !synthetic && mode !== "none",
       mode,
       live,
       synthetic,

@@ -37,6 +37,7 @@ import {
   BestSoftwareTrust,
 } from "@/components/best/guide";
 import { CategoryQuickNav } from "@/components/category/category-quick-nav";
+import { EditorialProvenance } from "@/components/editorial";
 import { PageContainer } from "@/components/layout/page-container";
 import { NewsletterCard } from "@/components/newsletter/newsletter-card";
 import { Breadcrumbs } from "@/components/seo/breadcrumbs";
@@ -44,22 +45,25 @@ import { cn } from "@/lib/cn";
 import type { Software } from "@/domain";
 import { isEntityIndexable } from "@/domain/quality-gates";
 import { firstPublicCopy } from "@/services/category-hub/public-copy";
+import { buildEstateBreadcrumbs } from "@/services/seo/knowledge-graph/breadcrumbs";
 import {
   approvedCriterionScores,
-  buildBestPageModel,
   enrichmentFeatureCell,
   enrichmentFeatureName,
   enrichmentPricingDetail,
   enrichmentPricingTeaser,
   enrichmentScreenshot,
-  findBestPageLeaks,
   researchTransparencyForProducts,
+} from "@/services/best-page/enrichment-deps";
+import {
+  buildBestPageModel,
+  findBestPageLeaks,
 } from "@/services/best-page";
 import { listPublishedLearningGuides } from "@/services/content-clusters";
 import { buildPricingSnapshot } from "@/services/pricing/server";
 import { loadEnrichment } from "@/data/research/store";
 import { COMPANY_ROUTES, LEGAL_ROUTES } from "@/services/site-foundation";
-import { buildBestLinkPlan } from "@/services/internal-linking";
+import { buildBestLinkPlan } from "@/services/internal-linking/builders";
 import { InternalLinkingModules } from "@/components/internal-linking";
 import { buildPageMetadata } from "@/seo/metadata";
 import {
@@ -103,12 +107,16 @@ function resolveMethodology(categorySlug?: string) {
 }
 
 export function generateStaticParams() {
-  return getBestPages().map((item) => ({ slug: item.slug }));
+  // Include future-scheduled IMPROVE pages so they stay reachable (200 + noindex),
+  // not soft-404. Sitemap still uses isEntityIndexable.
+  return getBestPages({ includeScheduledFuture: true }).map((item) => ({
+    slug: item.slug,
+  }));
 }
 
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const { slug } = await params;
-  const page = getBestPageBySlug(slug);
+  const page = getBestPageBySlug(slug, { includeScheduledFuture: true });
   if (!page) {
     return buildPageMetadata({
       title: "Guide not found",
@@ -158,7 +166,7 @@ function SectionShell({
 
 export default async function BestDetailPage({ params }: Props) {
   const { slug } = await params;
-  const page = getBestPageBySlug(slug);
+  const page = getBestPageBySlug(slug, { includeScheduledFuture: true });
   if (!page) notFound();
 
   const category = page.categorySlug
@@ -253,11 +261,10 @@ export default async function BestDetailPage({ params }: Props) {
     );
   }
 
-  const breadcrumbItems = [
-    { name: "Home", path: "/" },
-    { name: "Best Software", path: "/best/" },
-    { name: page.title, path: model.path },
-  ];
+  const breadcrumbItems = buildEstateBreadcrumbs(model.path).map(
+    (item, index, all) =>
+      index === all.length - 1 ? { ...item, name: page.title } : item,
+  );
 
   const jsonLd: Array<NonNullable<ReturnType<typeof webPageJsonLd>>> = [
     webPageJsonLd({
@@ -274,7 +281,7 @@ export default async function BestDetailPage({ params }: Props) {
 
   const linkPlan = buildBestLinkPlan({
     bestSlug: page.slug,
-    categorySlug: page.categorySlug,
+    categorySlug: page.categorySlug ?? "crm",
     title: page.title,
     productSlugs: page.eligibleProductSlugs,
     relatedComparisonSlugs: page.relatedComparisonSlugs,
@@ -403,7 +410,10 @@ export default async function BestDetailPage({ params }: Props) {
 
           {model.byNeed.length > 0 ? (
             <SectionShell id="by-need" muted={!model.topPicks.length}>
-              <BestSoftwareByNeed items={model.byNeed} />
+              <BestSoftwareByNeed
+                items={model.byNeed}
+                categoryShortName={model.categoryShortName}
+              />
             </SectionShell>
           ) : null}
 
@@ -473,6 +483,7 @@ export default async function BestDetailPage({ params }: Props) {
             <SectionShell id="guides">
               <BestSoftwareGuideGroups
                 groups={model.guideGroups}
+                categoryShortName={model.categoryShortName}
                 exploreAllHref={
                   category
                     ? `/guides/?category=${category.slug}`
@@ -484,7 +495,10 @@ export default async function BestDetailPage({ params }: Props) {
 
           {model.productHubs.length > 0 ? (
             <SectionShell id="product-hubs" muted>
-              <BestSoftwareProductHubs hubs={model.productHubs} />
+              <BestSoftwareProductHubs
+                hubs={model.productHubs}
+                categoryShortName={model.categoryShortName}
+              />
             </SectionShell>
           ) : null}
 
@@ -497,6 +511,14 @@ export default async function BestDetailPage({ params }: Props) {
                   className="mt-6"
                 />
               ) : null}
+              <EditorialProvenance
+                className="!mt-6 !border-0 !pt-0"
+                methodologyHref={
+                  model.methodology?.href ?? COMPANY_ROUTES.methodology
+                }
+                methodologyLabel="Category methodology"
+                dataCheckedAt={model.researchTransparency?.lastRefresh ?? null}
+              />
             </SectionShell>
           ) : null}
 

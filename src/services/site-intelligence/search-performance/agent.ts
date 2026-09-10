@@ -93,11 +93,14 @@ export async function runSearchPerformanceAgent(
     });
     sourceMode = resolved.mode;
     notes.push(...resolved.notes);
-    const range = opts.range ?? defaultRange();
     try {
       const result = await resolved.provider.queryPerformance({
-        range,
-        rangeLabel: resolved.mode === "fixture" ? "28d-current" : "import",
+        // For imports, omit range so provider keeps export dataThroughDate.
+        ...(opts.fixture
+          ? { range: opts.range ?? defaultRange(), rangeLabel: "28d-current" }
+          : {
+              rangeLabel: "import",
+            }),
       });
       current = {
         meta: result.meta,

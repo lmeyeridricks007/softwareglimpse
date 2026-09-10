@@ -8,7 +8,7 @@ import {
 } from "./guide-prose";
 
 describe("guide prose completeness", () => {
-  it("meets the 5-minute bar for AI pricing and Navan setup guides", () => {
+  it("meets the 5-minute bar for AI pricing and Navan what-is guides", () => {
     __resetGuideCaches();
     const aiPricing = getEducationalGuideBySlug("ai-pricing-guide");
     expect(aiPricing).toBeTruthy();
@@ -17,11 +17,9 @@ describe("guide prose completeness", () => {
     );
     expect(isGuideProseComplete(aiPricing!)).toBe(true);
 
-    const navanSetup = getGuidesByProduct("navan").find((g) =>
-      g.slug.endsWith("-setup"),
-    );
-    expect(navanSetup).toBeTruthy();
-    expect(proseMinutesFromGuide(navanSetup!)).toBeGreaterThanOrEqual(
+    const navanGuide = getEducationalGuideBySlug("what-is-navan");
+    expect(navanGuide).toBeTruthy();
+    expect(proseMinutesFromGuide(navanGuide!)).toBeGreaterThanOrEqual(
       GUIDE_MIN_READING_MINUTES,
     );
   });

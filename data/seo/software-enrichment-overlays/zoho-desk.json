@@ -1,0 +1,320 @@
+{
+  "slug": "zoho-desk",
+  "updatedAt": "2026-09-07T22:31:21.758Z",
+  "version": "1.0.0",
+  "fieldAudit": {
+    "slug": "zoho-desk",
+    "checkedAt": "2026-09-07T22:31:21.756Z",
+    "items": [
+      {
+        "field": "name",
+        "status": "PASS",
+        "detail": "Name: Zoho Desk",
+        "source": "seed"
+      },
+      {
+        "field": "product_status",
+        "status": "PASS",
+        "detail": "productLifecycle=active",
+        "source": "seed"
+      },
+      {
+        "field": "canonical_vendor",
+        "status": "UNKNOWN",
+        "detail": "Company/vendor not documented",
+        "source": "none"
+      },
+      {
+        "field": "category",
+        "status": "PASS",
+        "detail": "primaryCategorySlug=helpdesk-ticketing",
+        "source": "seed"
+      },
+      {
+        "field": "description",
+        "status": "PASS",
+        "detail": "Description present (Budget helpdesk in the Zoho suite — free 3 agents; Express $7, Standard $14, Pro…)",
+        "source": "seed"
+      },
+      {
+        "field": "target_audience",
+        "status": "PASS",
+        "detail": "Sizes=4, teams=2, assessment bestFor=3",
+        "source": "assessment"
+      },
+      {
+        "field": "use_cases",
+        "status": "PASS",
+        "detail": "useCaseSlugs=2",
+        "source": "seed"
+      },
+      {
+        "field": "capabilities",
+        "status": "PASS",
+        "detail": "featureRatings=0, enrichment features=16",
+        "source": "enrichment"
+      },
+      {
+        "field": "pricing",
+        "status": "PASS",
+        "detail": "Pricing envelope present",
+        "source": "enrichment"
+      },
+      {
+        "field": "plans",
+        "status": "PASS",
+        "detail": "plans=5",
+        "source": "enrichment"
+      },
+      {
+        "field": "free_plan",
+        "status": "PASS",
+        "detail": "Free plan documented",
+        "source": "enrichment"
+      },
+      {
+        "field": "trial",
+        "status": "PASS",
+        "detail": "Trial documented on plans/pricing",
+        "source": "enrichment"
+      },
+      {
+        "field": "integrations",
+        "status": "PASS",
+        "detail": "integrationSlugs=0, enrichment=4",
+        "source": "enrichment"
+      },
+      {
+        "field": "alternatives",
+        "status": "PASS",
+        "detail": "alternativeSlugs=3",
+        "source": "seed"
+      },
+      {
+        "field": "competitors",
+        "status": "PASS",
+        "detail": "competitorSlugs=4",
+        "source": "seed"
+      },
+      {
+        "field": "affiliate",
+        "status": "PASS",
+        "detail": "No affiliate relationship (explicit)",
+        "source": "seed"
+      },
+      {
+        "field": "source_provenance",
+        "status": "PASS",
+        "detail": "seed sources=0, enrichment sourceIds=2",
+        "source": "enrichment"
+      },
+      {
+        "field": "verification_date",
+        "status": "PASS",
+        "detail": "Latest verification/research signal: 2026-08-18T12:00:00.000Z",
+        "source": "enrichment"
+      }
+    ],
+    "passCount": 17,
+    "partialCount": 0,
+    "missingCount": 0,
+    "unknownCount": 1,
+    "score": 94
+  },
+  "decisionHub": {
+    "whatItIs": "Zoho Desk is Zoho's helpdesk and customer support platform with ticketing, knowledge base, and multichannel inbox. Free plan for up to 3 agents; annual USD per-agent pricing: Express $7, Standard $14, Professional $23, Enterprise $40 per agent/month billed annually. Pricing page may display INR in some regions — USD floors verified from first-party USD selector. Suite-adjacent with Zoho CRM. Scored as helpdesk-ticketing primary.",
+    "bestFor": [
+      "Budget-conscious teams wanting helpdesk with $7 Express floor",
+      "Existing Zoho CRM/One customers",
+      "SMB teams needing free 3-agent entry",
+      "micro / customer-success: Zoho Desk fit for micro customer-success teams in the helpdesk-ticketing job cluster, from first-party positioning and CS Wave-1 research.",
+      "small-business / customer-success: Zoho Desk fit for small-business customer-success teams in the helpdesk-ticketing job cluster, from first-party positioning and CS Wave-1 research.",
+      "mid-market / customer-success: Zoho Desk fit for mid-market customer-success teams in the helpdesk-ticketing job cluster, from first-party positioning and CS Wave-1 research."
+    ],
+    "notIdealFor": [
+      "Buyers wanting premium enterprise UX (Zendesk Suite)",
+      "Ecommerce-native order helpdesk (Gorgias)",
+      "Teams allergic to multi-product Zoho suite navigation",
+      "Pricing page may show INR — confirm USD before budgeting",
+      "UI depth and polish below Zendesk Suite at enterprise scale",
+      "Zoho suite dependency for maximum CRM context"
+    ],
+    "coreCapabilities": [
+      "ticketing",
+      "shared inbox",
+      "live chat",
+      "knowledge base",
+      "omnichannel inbox",
+      "sla routing",
+      "macros automation",
+      "self service portal"
+    ],
+    "pricingSummary": "5 documented plans · 1 free · entry paid: Express · trial documented on at least one plan",
+    "keyTradeoffs": [
+      "Pricing page may show INR — confirm USD before budgeting",
+      "UI depth and polish below Zendesk Suite at enterprise scale",
+      "Zoho suite dependency for maximum CRM context",
+      "Omnichannel voice/social thinner than Suite Pro peers",
+      "Context-aware help desk software — deliver top-notch customer support with the affordability and breadth of the Zoho ecosystem. (audience: Budget-conscious teams wanting helpdesk with $7 Express floor, Existing Zoho CRM/One customers)"
+    ],
+    "alternatives": [
+      {
+        "slug": "freshdesk",
+        "name": "Freshdesk"
+      },
+      {
+        "slug": "zendesk-suite",
+        "name": "Zendesk Suite"
+      },
+      {
+        "slug": "help-scout",
+        "name": "Help Scout"
+      },
+      {
+        "slug": "freshservice",
+        "name": "Freshservice"
+      }
+    ],
+    "importantComparisons": [
+      {
+        "slug": "freshdesk-vs-zoho-desk",
+        "title": "Freshdesk vs Zoho Desk",
+        "href": "/compare/freshdesk-vs-zoho-desk/"
+      },
+      {
+        "slug": "zendesk-suite-vs-zoho-desk",
+        "title": "Zendesk Suite vs Zoho Desk",
+        "href": "/compare/zendesk-suite-vs-zoho-desk/"
+      },
+      {
+        "slug": "help-scout-vs-zoho-desk",
+        "title": "Help Scout vs Zoho Desk",
+        "href": "/compare/help-scout-vs-zoho-desk/"
+      },
+      {
+        "slug": "freshservice-vs-zoho-desk",
+        "title": "Zoho Desk vs Freshservice",
+        "href": "/compare/freshservice-vs-zoho-desk/"
+      }
+    ],
+    "relevantGuides": [
+      {
+        "slug": "what-is-zoho-desk",
+        "title": "What Is Zoho Desk?",
+        "href": "/guides/what-is-zoho-desk/"
+      },
+      {
+        "slug": "is-zoho-desk-worth-it",
+        "title": "Is Zoho Desk Worth It?",
+        "href": "/guides/is-zoho-desk-worth-it/"
+      },
+      {
+        "slug": "how-helpdesk-ticketing-software-works",
+        "title": "How Helpdesk & Ticketing Software Works",
+        "href": "/guides/how-helpdesk-ticketing-software-works/"
+      },
+      {
+        "slug": "types-of-helpdesk-ticketing-software",
+        "title": "Types of Helpdesk & Ticketing Software",
+        "href": "/guides/types-of-helpdesk-ticketing-software/"
+      },
+      {
+        "slug": "helpdesk-ticketing-requirements-guide",
+        "title": "Helpdesk & Ticketing Software Requirements Guide",
+        "href": "/guides/helpdesk-ticketing-requirements-guide/"
+      },
+      {
+        "slug": "helpdesk-ticketing-evaluation-guide",
+        "title": "Helpdesk & Ticketing Software Evaluation Guide",
+        "href": "/guides/helpdesk-ticketing-evaluation-guide/"
+      }
+    ],
+    "evidenceState": "Research/data-based (no completed hands-on test) · Latest verification/research signal: 2026-08-18T12:00:00.000Z · Editorial assessment: approved",
+    "nextDecisionStep": "Compare against peers: Freshdesk vs Zoho Desk",
+    "missingSections": [
+      "canonical_vendor"
+    ]
+  },
+  "dependents": [
+    {
+      "kind": "guide",
+      "slug": "what-is-zoho-desk",
+      "path": "/guides/what-is-zoho-desk/"
+    },
+    {
+      "kind": "guide",
+      "slug": "is-zoho-desk-worth-it",
+      "path": "/guides/is-zoho-desk-worth-it/"
+    },
+    {
+      "kind": "guide",
+      "slug": "how-helpdesk-ticketing-software-works",
+      "path": "/guides/how-helpdesk-ticketing-software-works/"
+    },
+    {
+      "kind": "guide",
+      "slug": "types-of-helpdesk-ticketing-software",
+      "path": "/guides/types-of-helpdesk-ticketing-software/"
+    },
+    {
+      "kind": "guide",
+      "slug": "helpdesk-ticketing-requirements-guide",
+      "path": "/guides/helpdesk-ticketing-requirements-guide/"
+    },
+    {
+      "kind": "guide",
+      "slug": "helpdesk-ticketing-evaluation-guide",
+      "path": "/guides/helpdesk-ticketing-evaluation-guide/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "freshdesk-vs-zoho-desk",
+      "path": "/compare/freshdesk-vs-zoho-desk/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "zendesk-suite-vs-zoho-desk",
+      "path": "/compare/zendesk-suite-vs-zoho-desk/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "help-scout-vs-zoho-desk",
+      "path": "/compare/help-scout-vs-zoho-desk/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "freshservice-vs-zoho-desk",
+      "path": "/compare/freshservice-vs-zoho-desk/"
+    },
+    {
+      "kind": "alternatives",
+      "slug": "zoho-desk",
+      "path": "/alternatives/zoho-desk/"
+    },
+    {
+      "kind": "pricing",
+      "slug": "zoho-desk",
+      "path": "/software/zoho-desk/pricing/"
+    },
+    {
+      "kind": "best",
+      "slug": "helpdesk-ticketing-software",
+      "path": "/best/helpdesk-ticketing-software/"
+    },
+    {
+      "kind": "tools",
+      "slug": "helpdesk-ticketing-cost-calculator",
+      "path": "/tools/helpdesk-ticketing-cost-calculator/"
+    }
+  ],
+  "dependentsNeedingRefresh": [],
+  "remediation": [
+    "verify:canonical_vendor"
+  ],
+  "notes": [
+    "fieldAudit score=94",
+    "decisionHub bestFor=6 notIdeal=6",
+    "dependents=14"
+  ],
+  "materiallyImproved": false
+}

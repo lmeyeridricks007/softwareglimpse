@@ -1,4 +1,4 @@
-import type { GuidePage } from "@/domain";
+import type { GuidePageInput } from "@/domain";
 import type { z } from "zod";
 import type { GuideContentBlockSchema } from "@/domain";
 import { tier23GuideScheduledAt } from "@/data/config/publishing/tier-23-live-chat-launch-2027-07-01";
@@ -53,7 +53,7 @@ const blocks: GuideBlockInput[] = [
   },
 ];
 
-function metadata(): GuidePage["metadata"] {
+function metadata(): GuidePageInput["metadata"] {
   return SCHEDULED_AT
     ? {
         status: "scheduled",
@@ -73,7 +73,7 @@ function metadata(): GuidePage["metadata"] {
       };
 }
 
-export const whatIsLiveChatSoftwareGuide: GuidePage = {
+export const whatIsLiveChatSoftwareGuide: GuidePageInput = {
   id: "guide-what-is-live-chat-software",
   slug: SLUG,
   title: "What Is Live Chat Software?",
@@ -95,7 +95,7 @@ export const whatIsLiveChatSoftwareGuide: GuidePage = {
     "live-chat-evaluation-guide",
     "what-is-customer-service-software",
   ],
-  blocks: blocks as GuidePage["blocks"],
+  blocks: blocks as GuidePageInput["blocks"],
   checklist: [],
   sections: [],
   faq: [],
@@ -106,6 +106,6 @@ export const whatIsLiveChatSoftwareGuide: GuidePage = {
     description:
       "Website messenger, proactive chat, and chatbot deflection — how live chat differs from helpdesk ticketing.",
     canonicalPath: `/guides/${SLUG}/`,
-    indexable: !SCHEDULED_AT,
+    indexable: true,
   },
 };

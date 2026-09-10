@@ -1,4 +1,4 @@
-import type { GuidePage } from "@/domain";
+import type { GuidePageInput } from "@/domain";
 import type { z } from "zod";
 import type { GuideContentBlockSchema } from "@/domain";
 
@@ -151,7 +151,7 @@ const howToChooseProjectManagementBlocks: GuideBlockInput[] = [
   },
 ];
 
-export const howToChooseProjectManagementSoftwareGuide: GuidePage = {
+export const howToChooseProjectManagementSoftwareGuide: GuidePageInput = {
   id: "guide-how-to-choose-project-management-software",
   slug: "how-to-choose-project-management-software",
   title: "How to Choose Project Management Software",
@@ -182,7 +182,7 @@ export const howToChooseProjectManagementSoftwareGuide: GuidePage = {
     "project-management-requirements-guide",
     "project-management-evaluation-guide",
   ].filter((s) => s !== "how-to-choose-project-management-software"),
-  blocks: howToChooseProjectManagementBlocks as GuidePage["blocks"],
+  blocks: howToChooseProjectManagementBlocks as GuidePageInput["blocks"],
   checklist: [],
   sections: [],
   faq: [],

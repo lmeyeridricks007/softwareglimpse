@@ -1,0 +1,532 @@
+{
+  "slug": "circleci",
+  "updatedAt": "2026-09-08T21:57:41.706Z",
+  "version": "1.0.0",
+  "fieldAudit": {
+    "slug": "circleci",
+    "checkedAt": "2026-09-08T21:57:41.704Z",
+    "items": [
+      {
+        "field": "name",
+        "status": "PASS",
+        "detail": "Name: CircleCI",
+        "source": "seed"
+      },
+      {
+        "field": "product_status",
+        "status": "PASS",
+        "detail": "productLifecycle=active",
+        "source": "seed"
+      },
+      {
+        "field": "canonical_vendor",
+        "status": "PASS",
+        "detail": "Vendor: Circle Internet Services, Inc.",
+        "source": "seed"
+      },
+      {
+        "field": "category",
+        "status": "PASS",
+        "detail": "primaryCategorySlug=it-development",
+        "source": "seed"
+      },
+      {
+        "field": "description",
+        "status": "PASS",
+        "detail": "Description present (CI/CD platform — not a git host. Free (6k build minutes / 30k credits framing); …)",
+        "source": "seed"
+      },
+      {
+        "field": "target_audience",
+        "status": "PASS",
+        "detail": "Sizes=4, teams=1, assessment bestFor=3",
+        "source": "assessment"
+      },
+      {
+        "field": "use_cases",
+        "status": "PASS",
+        "detail": "useCaseSlugs=1",
+        "source": "seed"
+      },
+      {
+        "field": "capabilities",
+        "status": "PASS",
+        "detail": "featureRatings=0, enrichment features=16",
+        "source": "enrichment"
+      },
+      {
+        "field": "pricing",
+        "status": "PASS",
+        "detail": "Pricing envelope present",
+        "source": "enrichment"
+      },
+      {
+        "field": "plans",
+        "status": "PASS",
+        "detail": "plans=3",
+        "source": "enrichment"
+      },
+      {
+        "field": "free_plan",
+        "status": "PASS",
+        "detail": "Free plan documented",
+        "source": "enrichment"
+      },
+      {
+        "field": "trial",
+        "status": "UNKNOWN",
+        "detail": "Trial not explicitly documented — do not assume none",
+        "source": "none"
+      },
+      {
+        "field": "integrations",
+        "status": "PASS",
+        "detail": "integrationSlugs=0, enrichment=3",
+        "source": "enrichment"
+      },
+      {
+        "field": "alternatives",
+        "status": "PASS",
+        "detail": "alternativeSlugs=2",
+        "source": "seed"
+      },
+      {
+        "field": "competitors",
+        "status": "PASS",
+        "detail": "competitorSlugs=5",
+        "source": "seed"
+      },
+      {
+        "field": "affiliate",
+        "status": "PASS",
+        "detail": "No affiliate relationship (explicit)",
+        "source": "seed"
+      },
+      {
+        "field": "source_provenance",
+        "status": "PASS",
+        "detail": "seed sources=0, enrichment sourceIds=3",
+        "source": "enrichment"
+      },
+      {
+        "field": "verification_date",
+        "status": "PASS",
+        "detail": "Latest verification/research signal: 2026-08-18T20:00:00.000Z",
+        "source": "enrichment"
+      }
+    ],
+    "passCount": 17,
+    "partialCount": 0,
+    "missingCount": 0,
+    "unknownCount": 1,
+    "score": 94
+  },
+  "decisionHub": {
+    "whatItIs": "CircleCI is a CI/CD platform (pipelines, orbs, hosted/self-hosted runners) — not a Git host. It lives in source-control-devops so DevOps buyers can compare it with GitHub Actions and GitLab CI, while remaining landscape-aware that GitHub the SCM is a different primary shape. Free includes published build-minute/credit framing (commonly 6k build minutes / 30k credits on the pricing page). Performance starts from $15/month. Scale is contact. Distinct from GitHub (repos + Actions) and GitLab (DevSecOps platform).",
+    "bestFor": [
+      "Teams that want specialist CI/CD against an existing GitHub/GitLab/Bitbucket remote",
+      "Buyers comparing CircleCI Performance $15 to GitHub Actions minutes",
+      "Orgs that do not want to move source control in order to buy CI",
+      "micro / engineering: CircleCI fit for micro engineering teams in the source-control-devops job cluster, from first-party positioning and IT industry Tier-A research.",
+      "small-business / engineering: CircleCI fit for small-business engineering teams in the source-control-devops job cluster, from first-party positioning and IT industry Tier-A research.",
+      "mid-market / engineering: CircleCI fit for mid-market engineering teams in the source-control-devops job cluster, from first-party positioning and IT industry Tier-A research."
+    ],
+    "notIdealFor": [
+      "Teams whose primary purchase is a git host (GitHub / GitLab)",
+      "Observability or on-call purchases",
+      "Hosting panel or managed WordPress hosting",
+      "Not a git host — you still need GitHub, GitLab, or Bitbucket for source control",
+      "Same source-control-devops cluster as GitHub, but GitHub the SCM is a different primary shape",
+      "Free minute/credit caps; Performance $15 is not unlimited CI"
+    ],
+    "coreCapabilities": [
+      "log management",
+      "cicd actions",
+      "dev ai",
+      "enterprise security",
+      "analytics reporting",
+      "source control devops"
+    ],
+    "pricingSummary": "3 documented plans · 1 free · entry paid: Performance",
+    "keyTradeoffs": [
+      "Not a git host — you still need GitHub, GitLab, or Bitbucket for source control",
+      "Same source-control-devops cluster as GitHub, but GitHub the SCM is a different primary shape",
+      "Free minute/credit caps; Performance $15 is not unlimited CI",
+      "Not observability, on-call, hosting panel, or managed hosting",
+      "AI is not the product"
+    ],
+    "alternatives": [
+      {
+        "slug": "github",
+        "name": "GitHub"
+      },
+      {
+        "slug": "gitlab",
+        "name": "GitLab"
+      },
+      {
+        "slug": "azure-devops",
+        "name": "Azure DevOps"
+      },
+      {
+        "slug": "bitbucket",
+        "name": "Bitbucket Cloud"
+      },
+      {
+        "slug": "buildkite",
+        "name": "Buildkite"
+      }
+    ],
+    "importantComparisons": [
+      {
+        "slug": "circleci-vs-github",
+        "title": "CircleCI vs GitHub",
+        "href": "/compare/circleci-vs-github/"
+      },
+      {
+        "slug": "buildkite-vs-circleci",
+        "title": "Buildkite vs CircleCI",
+        "href": "/compare/buildkite-vs-circleci/"
+      },
+      {
+        "slug": "apify-vs-circleci",
+        "title": "Apify vs CircleCI",
+        "href": "/compare/apify-vs-circleci/"
+      },
+      {
+        "slug": "appdynamics-vs-circleci",
+        "title": "AppDynamics vs CircleCI",
+        "href": "/compare/appdynamics-vs-circleci/"
+      },
+      {
+        "slug": "azure-devops-vs-circleci",
+        "title": "Azure DevOps vs CircleCI",
+        "href": "/compare/azure-devops-vs-circleci/"
+      },
+      {
+        "slug": "bitbucket-vs-circleci",
+        "title": "Bitbucket Cloud vs CircleCI",
+        "href": "/compare/bitbucket-vs-circleci/"
+      }
+    ],
+    "relevantGuides": [
+      {
+        "slug": "circleci-implementation",
+        "title": "CircleCI Implementation: 30/60/90 IT Rollout That Sticks",
+        "href": "/guides/circleci-implementation/"
+      },
+      {
+        "slug": "circleci-migration",
+        "title": "CircleCI Migration: Move Tickets and Repos Without Losing Trust",
+        "href": "/guides/circleci-migration/"
+      },
+      {
+        "slug": "circleci-setup",
+        "title": "CircleCI Setup: Day-Zero Path to a Working IT Loop",
+        "href": "/guides/circleci-setup/"
+      },
+      {
+        "slug": "circleci-plans",
+        "title": "CircleCI Plans: Seats, Hosts, and Qualifying Tiers",
+        "href": "/guides/circleci-plans/"
+      },
+      {
+        "slug": "is-circleci-worth-it",
+        "title": "Is CircleCI Worth It? Fit Scenarios Before You Buy",
+        "href": "/guides/is-circleci-worth-it/"
+      }
+    ],
+    "evidenceState": "Research/data-based (no completed hands-on test) · Latest verification/research signal: 2026-08-18T20:00:00.000Z · Editorial assessment: approved",
+    "nextDecisionStep": "Compare against peers: CircleCI vs GitHub",
+    "missingSections": [
+      "trial"
+    ]
+  },
+  "dependents": [
+    {
+      "kind": "guide",
+      "slug": "circleci-implementation",
+      "path": "/guides/circleci-implementation/"
+    },
+    {
+      "kind": "guide",
+      "slug": "circleci-migration",
+      "path": "/guides/circleci-migration/"
+    },
+    {
+      "kind": "guide",
+      "slug": "circleci-setup",
+      "path": "/guides/circleci-setup/"
+    },
+    {
+      "kind": "guide",
+      "slug": "circleci-plans",
+      "path": "/guides/circleci-plans/"
+    },
+    {
+      "kind": "guide",
+      "slug": "is-circleci-worth-it",
+      "path": "/guides/is-circleci-worth-it/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "circleci-vs-github",
+      "path": "/compare/circleci-vs-github/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "buildkite-vs-circleci",
+      "path": "/compare/buildkite-vs-circleci/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "apify-vs-circleci",
+      "path": "/compare/apify-vs-circleci/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "appdynamics-vs-circleci",
+      "path": "/compare/appdynamics-vs-circleci/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "azure-devops-vs-circleci",
+      "path": "/compare/azure-devops-vs-circleci/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "bitbucket-vs-circleci",
+      "path": "/compare/bitbucket-vs-circleci/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "bmc-helix-vs-circleci",
+      "path": "/compare/bmc-helix-vs-circleci/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "bright-data-vs-circleci",
+      "path": "/compare/bright-data-vs-circleci/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "chronosphere-vs-circleci",
+      "path": "/compare/chronosphere-vs-circleci/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "circleci-vs-cloudways",
+      "path": "/compare/circleci-vs-cloudways/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "circleci-vs-coralogix",
+      "path": "/compare/circleci-vs-coralogix/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "circleci-vs-cpanel",
+      "path": "/compare/circleci-vs-cpanel/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "circleci-vs-datadog",
+      "path": "/compare/circleci-vs-datadog/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "circleci-vs-directadmin",
+      "path": "/compare/circleci-vs-directadmin/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "circleci-vs-dynatrace",
+      "path": "/compare/circleci-vs-dynatrace/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "circleci-vs-elastic-observability",
+      "path": "/compare/circleci-vs-elastic-observability/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "circleci-vs-firehydrant",
+      "path": "/compare/circleci-vs-firehydrant/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "circleci-vs-fly-io",
+      "path": "/compare/circleci-vs-fly-io/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "circleci-vs-gitlab",
+      "path": "/compare/circleci-vs-gitlab/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "circleci-vs-grafana-cloud",
+      "path": "/compare/circleci-vs-grafana-cloud/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "circleci-vs-haloitsm",
+      "path": "/compare/circleci-vs-haloitsm/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "circleci-vs-heroku",
+      "path": "/compare/circleci-vs-heroku/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "circleci-vs-honeycomb",
+      "path": "/compare/circleci-vs-honeycomb/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "circleci-vs-incident-io",
+      "path": "/compare/circleci-vs-incident-io/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "circleci-vs-iproyal",
+      "path": "/compare/circleci-vs-iproyal/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "circleci-vs-ivanti",
+      "path": "/compare/circleci-vs-ivanti/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "circleci-vs-jira-service-management",
+      "path": "/compare/circleci-vs-jira-service-management/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "circleci-vs-kinsta",
+      "path": "/compare/circleci-vs-kinsta/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "circleci-vs-manageengine-servicedesk-plus",
+      "path": "/compare/circleci-vs-manageengine-servicedesk-plus/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "circleci-vs-new-relic",
+      "path": "/compare/circleci-vs-new-relic/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "circleci-vs-oxylabs",
+      "path": "/compare/circleci-vs-oxylabs/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "circleci-vs-pagerduty",
+      "path": "/compare/circleci-vs-pagerduty/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "circleci-vs-railway",
+      "path": "/compare/circleci-vs-railway/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "circleci-vs-render",
+      "path": "/compare/circleci-vs-render/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "circleci-vs-rootly",
+      "path": "/compare/circleci-vs-rootly/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "circleci-vs-scraperapi",
+      "path": "/compare/circleci-vs-scraperapi/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "circleci-vs-sentry",
+      "path": "/compare/circleci-vs-sentry/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "circleci-vs-servicenow",
+      "path": "/compare/circleci-vs-servicenow/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "circleci-vs-siteground",
+      "path": "/compare/circleci-vs-siteground/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "circleci-vs-smartproxy",
+      "path": "/compare/circleci-vs-smartproxy/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "circleci-vs-splunk",
+      "path": "/compare/circleci-vs-splunk/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "circleci-vs-squadcast",
+      "path": "/compare/circleci-vs-squadcast/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "circleci-vs-sysaid",
+      "path": "/compare/circleci-vs-sysaid/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "circleci-vs-thordata",
+      "path": "/compare/circleci-vs-thordata/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "circleci-vs-topdesk",
+      "path": "/compare/circleci-vs-topdesk/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "circleci-vs-wp-engine",
+      "path": "/compare/circleci-vs-wp-engine/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "circleci-vs-zyte",
+      "path": "/compare/circleci-vs-zyte/"
+    },
+    {
+      "kind": "alternatives",
+      "slug": "circleci",
+      "path": "/alternatives/circleci/"
+    },
+    {
+      "kind": "pricing",
+      "slug": "circleci",
+      "path": "/software/circleci/pricing/"
+    },
+    {
+      "kind": "tools",
+      "slug": "it-development-cost-calculator",
+      "path": "/tools/it-development-cost-calculator/"
+    }
+  ],
+  "dependentsNeedingRefresh": [],
+  "remediation": [
+    "verify:trial"
+  ],
+  "notes": [
+    "fieldAudit score=94",
+    "decisionHub bestFor=6 notIdeal=6",
+    "dependents=55"
+  ],
+  "materiallyImproved": true
+}

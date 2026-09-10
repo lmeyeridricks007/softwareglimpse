@@ -17,11 +17,18 @@ type Tier1ScheduledItem =
   | { kind: "software"; slug: string; scheduledAt: string }
   | { kind: "guide"; guideSlug: string; scheduledAt: string };
 
-/** Affiliate software launches — sellfy + ai-intelekt. WebinarJam → [Tier 11](../publishing/launches/tier-11-marketing-affiliate-launch-2027-01-11.md). */
-export const TIER_1_SCHEDULE: Tier1ScheduledItem[] = [
-  { kind: "software", slug: "sellfy", scheduledAt: TIER_1_LAUNCH_SLOTS[0] },
-  { kind: "software", slug: "ai-intelekt", scheduledAt: TIER_1_LAUNCH_SLOTS[1] },
-];
+/**
+ * Affiliate software launches — sellfy (26 Aug) + ai-intelekt (29 Aug) shipped.
+ * Kept empty so gap seed marks them published/indexable. WebinarJam →
+ * [Tier 11](../publishing/launches/tier-11-marketing-affiliate-launch-2027-01-11.md).
+ */
+export const TIER_1_SCHEDULE: Tier1ScheduledItem[] = [];
+
+/** Historical launch instants (for docs / affiliate launch helpers). */
+export const TIER_1_LAUNCHED_SOFTWARE = [
+  { slug: "sellfy", publishedAt: TIER_1_LAUNCH_SLOTS[0] },
+  { slug: "ai-intelekt", publishedAt: TIER_1_LAUNCH_SLOTS[1] },
+] as const;
 
 export const TIER_1_SCHEDULED_SOFTWARE_SLUGS = TIER_1_SCHEDULE.filter(
   (item): item is Extract<Tier1ScheduledItem, { kind: "software" }> =>

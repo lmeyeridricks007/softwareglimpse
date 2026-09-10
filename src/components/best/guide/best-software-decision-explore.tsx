@@ -4,7 +4,7 @@ import { useMemo, useState } from "react";
 import Link from "next/link";
 import { ProductLogo } from "@/components/software/product-logo";
 import { ButtonLink } from "@/components/ui/button";
-import type { BestPageModel, BestPageProductRef } from "@/services/best-page";
+import type { BestPageModel, BestPageProductRef } from "@/services/best-page/types";
 import { cn } from "@/lib/cn";
 
 type Props = {

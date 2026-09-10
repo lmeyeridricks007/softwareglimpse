@@ -331,7 +331,7 @@ export function buildContentGraph(): ContentGraph {
 
   const resources = getResources({ includeUnpublished: true }).map((r) => {
     const path = r.seo.canonicalPath || `/resources/${r.slug}/`;
-    const n = node(path, r.title || r.slug, "resource", { entityId: r.id });
+    const n = node(path, r.name || r.shortTitle || r.slug, "resource", { entityId: r.id });
     push(n);
     return n;
   });

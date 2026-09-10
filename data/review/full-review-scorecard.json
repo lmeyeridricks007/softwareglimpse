@@ -1,0 +1,204 @@
+{
+  "generatedAt": "2026-09-08T23:00:14.163Z",
+  "gitCommit": "0a2dd4b489dca4a322cb98585cb3e17962b4973d",
+  "gitCommitShort": "0a2dd4b",
+  "previousOverall": 49,
+  "previousGeneratedAt": "2026-09-08T22:59:09.928Z",
+  "gscDataThrough": "2026-08-13",
+  "gscImportDate": "2026-08-15",
+  "gscFreshness": "STALE — no newer export on disk at review time",
+  "scores": {
+    "technicalSeo": 78,
+    "crawlEfficiency": 80,
+    "indexability": 78,
+    "contentQuality": 60,
+    "contentUniqueness": 42,
+    "softwareDataQuality": 67,
+    "editorialCredibility": 64,
+    "internalLinking": 68,
+    "searchOpportunityExecution": 50,
+    "authorityBacklinks": 18,
+    "originalResearch": 45,
+    "evidenceTesting": 31,
+    "pricingFreshness": 62,
+    "ux": 54,
+    "performance": 50,
+    "commercialTracking": 42,
+    "aiVisibilityMeasurement": 22
+  },
+  "rationale": {
+    "technicalSeo": "Architecture coherent; FULL live audit P0=0 P1=0 P2=1 (thin Pipedrive alternatives); typecheck/tests/lint errors zero; production build PASS (13,653 pages)",
+    "crawlEfficiency": "Locale/legacy exclusions; sitemap ↔ lifecycle disc=0; live sitemapindex 15 children / ~3,093 URLs; www deploy still external",
+    "indexability": "Reconcile INDEXABLE≈3.1k; lifecycle orphans=0; coverage backlog still from stale Aug-13 GSC",
+    "contentQuality": "FR-007 guide editorial_completeness hard fails=0; factory packs still dominate IMPROVE queue",
+    "contentUniqueness": "Factory product-pack-factory still ~1272 estate risk; 3×50 waves material but 0 promotions (semantic gates)",
+    "softwareDataQuality": "DATA_VERIFIED reconcile accepted=85/315; rejected=230",
+    "editorialCredibility": "Methodology/disclosure present; HANDS_ON=0; top-10 draft sessions prepared, not completed",
+    "internalLinking": "KG 6785 nodes / 26853 edges; authority-flow hubs; IMPROVE sample orphans remain",
+    "searchOpportunityExecution": "Lane A thin; GSC REAL but stale through 2026-08-13; 8 clicks / ~115k impressions / pos~74.5",
+    "authorityBacklinks": "NOT_CONNECTED — no REAL Ahrefs/Semrush; fixture exports rejected",
+    "originalResearch": "CRM pricing research published; underused for PR/citations",
+    "evidenceTesting": "HANDS_ON=0; DATA_VERIFIED accepted=85; never invent sessions",
+    "pricingFreshness": "Monitor path intact; verification tasks remain operational",
+    "ux": "Buyer utility stronger on enriched hubs; factory packs still programmatic",
+    "performance": "No field CWV; lab proxies via live audit only",
+    "commercialTracking": "First-party affiliate clicks REAL (0 events); conversions/revenue NOT_CONNECTED",
+    "aiVisibilityMeasurement": "NOT_CONNECTED in production dashboard (fixture gated); REAL export still required"
+  },
+  "overall": 54,
+  "evidenceSnapshot": {
+    "dataVerifiedAccepted": 85,
+    "dataVerifiedRejected": 230,
+    "dataVerifiedTotal": 315,
+    "handsOn": 0,
+    "researched": 228,
+    "catalogue": 315,
+    "organicClicks": 8,
+    "organicValidity": "REAL",
+    "authorityValidity": "NOT_CONNECTED",
+    "commercialValidity": "REAL",
+    "aiVisibilityValidity": "NOT_CONNECTED",
+    "factoryPackCount": 1272,
+    "guidesImprove": 1124,
+    "compareImprove": 1711
+  },
+  "issueStatusCounts": {
+    "open": 0,
+    "in_progress": 4,
+    "resolved": 5,
+    "blocked_external": 4,
+    "deferred": 2
+  },
+  "p0Count": 0,
+  "p1Count": 5,
+  "p2Count": 3,
+  "p3Count": 2,
+  "deployVerdict": "YES_WITH_MINOR_ISSUES",
+  "verification": {
+    "lint": {
+      "errors": 0,
+      "warnings": 102,
+      "note": "unused-vars warnings only; errors zero",
+      "result": "PASS"
+    },
+    "typecheck": {
+      "errors": 0,
+      "result": "PASS"
+    },
+    "tests": {
+      "failed": 0,
+      "passed": 1484,
+      "filesFailed": 0,
+      "filesPassed": 175,
+      "result": "PASS"
+    },
+    "build": {
+      "status": "PASS",
+      "staticPages": 13653,
+      "next": "16.3.0",
+      "note": "Type validation skipped by Next config; standalone tsc is the gate. First build attempt hit disk-full; cleared .next and rebuilt.",
+      "verifiedAt": "2026-09-08T23:00:14.163Z"
+    },
+    "liveServer": {
+      "baseUrl": "http://127.0.0.1:3000",
+      "status": "UP_DURING_AUDITS"
+    },
+    "seoAuditFullLive": {
+      "mode": "FULL",
+      "baseUrl": "http://127.0.0.1:3000",
+      "p0": 0,
+      "p1": 0,
+      "p2": 1,
+      "p3": 0,
+      "checksCompleted": 32,
+      "skipped": 0,
+      "failed": 0,
+      "finding": "Thin Pipedrive Alternatives",
+      "note": "Transient 33× live-fetch P0s on first pass when server dropped; re-run RESOLVED those (REGRESSED 0)."
+    },
+    "migrationSeoQaLive": {
+      "result": "FAIL_STATIC_WARNS",
+      "overall": "FAIL",
+      "mode": "static+live",
+      "p0": 0,
+      "p1": 1,
+      "p2": 3,
+      "legacyUrls": 643,
+      "fateIssues": 0,
+      "liveHttpProbeFails": 0,
+      "note": "P1 hardcoded_legacy hit inside GSC snapshot JSON; live probes clean after stable re-run"
+    },
+    "sitemapReconcile": {
+      "discrepancies": 0,
+      "inSitemap": 2941,
+      "liveSitemapUrls": 3093,
+      "sitemapindexChildren": 15
+    },
+    "guidesAudit": {
+      "indexable": 472,
+      "improve": 1124,
+      "ready": 1,
+      "factoryPacks": 1272
+    },
+    "compareAudit": {
+      "indexable": 1699,
+      "improve": 1711,
+      "ready": 0
+    },
+    "knowledgeGraph": {
+      "nodes": 6785,
+      "edges": 26853,
+      "improveOrphans": 80,
+      "qaErrors": 0,
+      "qaWarnings": 86
+    },
+    "evidenceReconcile": {
+      "accepted": 85,
+      "rejected": 230,
+      "total": 315
+    },
+    "lifecycleOrphans": {
+      "scanned": 1246,
+      "orphans": 0,
+      "demoted": 0
+    },
+    "sampleHttp": {
+      "home": "200 index,follow",
+      "hubspot": "200 index,follow",
+      "whatIsCrm": "200 index,follow",
+      "officeTimelinePlans": "200 noindex,follow",
+      "localeDeCrm": "301 → /categories/crm/",
+      "localeNl": "410 Gone + x-robots-tag noindex",
+      "legacyMiocommerceReview": "308 → /software/miocommerce/"
+    },
+    "growthDashboard": {
+      "generatedAt": "2026-09-08T22:45:21.725Z",
+      "organicClicks": 8,
+      "impressions": 115457,
+      "weightedPosition": 74.5,
+      "authorityValidity": "NOT_CONNECTED",
+      "commercialValidity": "REAL",
+      "aiVisibilityValidity": "NOT_CONNECTED"
+    },
+    "fr006": {
+      "status": "resolved",
+      "verifiedAt": "2026-09-08T23:00:14.163Z"
+    },
+    "fr007": {
+      "status": "resolved",
+      "indexableGuidesFailEditorialCompleteness": 0
+    },
+    "fr016": {
+      "status": "resolved",
+      "phantomIndexable": 0
+    },
+    "ci": {
+      "workflow": ".github/workflows/engineering-quality.yml",
+      "gates": [
+        "typecheck",
+        "lint",
+        "test"
+      ]
+    }
+  }
+}

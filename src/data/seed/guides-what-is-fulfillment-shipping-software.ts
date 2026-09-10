@@ -1,4 +1,4 @@
-import type { GuidePage } from "@/domain";
+import type { GuidePageInput } from "@/domain";
 import type { z } from "zod";
 import type { GuideContentBlockSchema } from "@/domain";
 import { tier26GuideScheduledAt } from "@/data/config/publishing/tier-26-fulfillment-shipping-launch-2027-07-01";
@@ -53,7 +53,7 @@ const blocks: GuideBlockInput[] = [
   },
 ];
 
-function metadata(): GuidePage["metadata"] {
+function metadata(): GuidePageInput["metadata"] {
   return SCHEDULED_AT
     ? {
         status: "scheduled",
@@ -73,7 +73,7 @@ function metadata(): GuidePage["metadata"] {
       };
 }
 
-export const whatIsFulfillmentShippingSoftwareGuide: GuidePage = {
+export const whatIsFulfillmentShippingSoftwareGuide: GuidePageInput = {
   id: "guide-what-is-fulfillment-shipping-software",
   slug: SLUG,
   title: "What Is Fulfillment & Shipping Software?",
@@ -95,7 +95,7 @@ export const whatIsFulfillmentShippingSoftwareGuide: GuidePage = {
     "fulfillment-shipping-evaluation-guide",
     "what-is-ecommerce-software",
   ],
-  blocks: blocks as GuidePage["blocks"],
+  blocks: blocks as GuidePageInput["blocks"],
   checklist: [],
   sections: [],
   faq: [],
@@ -106,6 +106,6 @@ export const whatIsFulfillmentShippingSoftwareGuide: GuidePage = {
     description:
       "Shipping labels, returns, and 3PL fulfillment — how fulfillment software differs from storefront and sourcing apps.",
     canonicalPath: `/guides/${SLUG}/`,
-    indexable: !SCHEDULED_AT,
+    indexable: true,
   },
 };

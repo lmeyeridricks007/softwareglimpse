@@ -6,6 +6,8 @@ import {
   getGuides,
 } from "@/data/repositories/guides";
 import { TOOLS_REGISTRY } from "@/data/config/tools/registry";
+import { parseCategoryToolSlug } from "@/data/config/tools/category-tool-meta";
+import { categoryHasPublishedPillar } from "@/services/category-tools/pillar-gate";
 import { CURATED_TRY_QUERIES } from "./curated-queries";
 import type { DiscoveryHubModel } from "./types";
 
@@ -14,9 +16,14 @@ import type { DiscoveryHubModel } from "./types";
  */
 export function buildDiscoveryHub(): DiscoveryHubModel {
   const categories = getTopLevelCategories().slice(0, 8);
-  const tools = TOOLS_REGISTRY.filter(
-    (t) => t.status === "available" && t.href && (t.featured || t.popular),
-  ).slice(0, 4);
+  const tools = TOOLS_REGISTRY.filter((t) => {
+    if (!(t.status === "available" && t.href && (t.featured || t.popular))) {
+      return false;
+    }
+    const parsed = parseCategoryToolSlug(t.slug);
+    if (parsed && !categoryHasPublishedPillar(parsed.categorySlug)) return false;
+    return true;
+  }).slice(0, 4);
 
   const guides = getGuides()
     .filter((g) => g.seo.indexable === true)

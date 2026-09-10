@@ -3,6 +3,7 @@ export * from "./eligibility";
 export * from "./select";
 export * from "./journey";
 export * from "./builders";
+export * from "./link-injections";
 export * from "./outbound-graph";
 export * from "./orphan-detector";
 export * from "./health";

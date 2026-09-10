@@ -1,4 +1,4 @@
-import type { GuidePage } from "@/domain";
+import type { GuidePageInput } from "@/domain";
 import type { z } from "zod";
 import type { GuideContentBlockSchema } from "@/domain";
 import { tier14GuideScheduledAt } from "@/data/config/publishing/tier-14-webinar-virtual-events-launch-2026-11-01";
@@ -34,7 +34,7 @@ const blocks: GuideBlockInput[] = [
   },
 ];
 
-function metadata(): GuidePage["metadata"] {
+function metadata(): GuidePageInput["metadata"] {
   return SCHEDULED_AT
     ? {
         status: "scheduled",
@@ -54,7 +54,7 @@ function metadata(): GuidePage["metadata"] {
       };
 }
 
-export const webinarVirtualEventsPricingGuide: GuidePage = {
+export const webinarVirtualEventsPricingGuide: GuidePageInput = {
   id: "guide-webinar-virtual-events-pricing-guide",
   slug: SLUG,
   title: "Webinar & Virtual Events Software Pricing Guide",
@@ -74,7 +74,7 @@ export const webinarVirtualEventsPricingGuide: GuidePage = {
     "what-is-webinar-virtual-events-software",
     "how-to-choose-webinar-virtual-events-software",
   ],
-  blocks: blocks as GuidePage["blocks"],
+  blocks: blocks as GuidePageInput["blocks"],
   checklist: [],
   sections: [],
   faq: [],
@@ -85,6 +85,6 @@ export const webinarVirtualEventsPricingGuide: GuidePage = {
     description:
       "How to budget webinar software — hosts, attendee caps, registrant tiers, plan gates, and add-ons.",
     canonicalPath: `/guides/${SLUG}/`,
-    indexable: !SCHEDULED_AT,
+    indexable: true,
   },
 };

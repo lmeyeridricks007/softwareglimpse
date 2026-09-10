@@ -13,6 +13,7 @@ import type {
   Software,
   UseCase,
 } from "@/domain";
+import { readEnrichmentPricingVerifiedAt } from "@/domain/schemas/research-enrichment";
 import { formatMoney, fromMajor } from "@/domain";
 import {
   categoryDecisionCostHref,
@@ -38,6 +39,11 @@ import { canonicalFeaturesSeed } from "@/data/seed/features";
 import { loadEnrichment, loadManualSources } from "@/data/research/store";
 import { selectProductVideos } from "@/services/product-media";
 import { selectImplementationContextVideos } from "@/services/product-media/context-tab-media";
+import {
+  buildProductPriceHistorySummary,
+  type ProductPriceHistorySummary,
+} from "@/services/pricing-history";
+import { loadSoftwareEnrichmentOverlay } from "@/services/seo/software-enrichment/overlay-store";
 import {
   buildEvidenceCenterModel,
   type EvidenceCenterModel,
@@ -191,6 +197,8 @@ export type SoftwareReviewModel = {
   pricing: Pricing | null;
   pricingNotes: string | null;
   pricingVerifiedAt: string | null;
+  /** Meaningful history only when a series has ≥2 observations. */
+  priceHistory: ProductPriceHistorySummary | null;
   pricingPageHref: string | null;
   costCalculatorHref: string | null;
   planSelectorHref: string | null;
@@ -212,6 +220,25 @@ export type SoftwareReviewModel = {
     logo?: { src: string; alt: string } | null;
   }>;
   thingsToKnow: Array<{ title: string; body: string }>;
+  /**
+   * Deterministic decision-hub pack from software-enrichment overlays
+   * (catalogue / research / editorial only — never fabricated).
+   */
+  decisionHub: {
+    whatItIs: string | null;
+    bestFor: string[];
+    notIdealFor: string[];
+    coreCapabilities: string[];
+    pricingSummary: string | null;
+    keyTradeoffs: string[];
+    alternatives: Array<{ slug: string; name: string }>;
+    importantComparisons: Array<{ slug: string; title: string; href: string }>;
+    relevantGuides: Array<{ slug: string; title: string; href: string }>;
+    evidenceState: string;
+    nextDecisionStep: string | null;
+    missingSections: string[];
+    fieldAuditScore: number | null;
+  } | null;
   finderHref: string | null;
   finderLabel: string;
   research: {
@@ -881,6 +908,7 @@ export function buildSoftwareReviewModel(
     pricingPlanCount: pricing?.plans.length ?? 0,
     pricingVerifiedAt:
       software.pricingVerifiedAt ??
+      readEnrichmentPricingVerifiedAt(enrichment?.pricing) ??
       enrichment?.domainCheckedAt?.pricing ??
       null,
     handsOnTesting: Boolean(
@@ -1038,8 +1066,13 @@ export function buildSoftwareReviewModel(
         : null),
     pricingVerifiedAt:
       software.pricingVerifiedAt ??
+      readEnrichmentPricingVerifiedAt(enrichment?.pricing) ??
       enrichment?.domainCheckedAt?.pricing ??
       null,
+    priceHistory: (() => {
+      const summary = buildProductPriceHistorySummary(software.slug);
+      return summary.hasMeaningfulHistory ? summary : null;
+    })(),
     pricingPageHref,
     costCalculatorHref,
     planSelectorHref,
@@ -1055,6 +1088,26 @@ export function buildSoftwareReviewModel(
       alternativesCatalogueHref(software.slug),
     integrations,
     thingsToKnow,
+    decisionHub: (() => {
+      const overlay = loadSoftwareEnrichmentOverlay(software.slug);
+      if (!overlay?.decisionHub) return null;
+      const d = overlay.decisionHub;
+      return {
+        whatItIs: d.whatItIs,
+        bestFor: d.bestFor,
+        notIdealFor: d.notIdealFor,
+        coreCapabilities: d.coreCapabilities,
+        pricingSummary: d.pricingSummary,
+        keyTradeoffs: d.keyTradeoffs,
+        alternatives: d.alternatives,
+        importantComparisons: d.importantComparisons,
+        relevantGuides: d.relevantGuides,
+        evidenceState: d.evidenceState,
+        nextDecisionStep: d.nextDecisionStep,
+        missingSections: d.missingSections,
+        fieldAuditScore: overlay.fieldAudit?.score ?? null,
+      };
+    })(),
     finderHref,
     finderLabel,
     research: {

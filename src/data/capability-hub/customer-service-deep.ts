@@ -1,7 +1,7 @@
-import type { CapabilityHubProfile } from "@/domain";
+import type { CapabilityHubProfileInput } from "@/domain";
 
 type Depth = Pick<
-  CapabilityHubProfile,
+  CapabilityHubProfileInput,
   | "displayTitle"
   | "badgeLabel"
   | "tagline"
@@ -348,15 +348,22 @@ export const customerServiceCapabilityDepth: Record<string, Depth> = {
     badge: "AI agent",
     tagline: "A bot that deflects or resolves conversations before a human agent.",
     overview:
-      "AI agents resolve or deflect repetitive questions. Price is often per resolution or session pack — not included in the seat tile.",
+      "AI agents resolve or deflect repetitive questions. Price is often per resolution or session pack — not included in the seat tile. SoftwareGlimpse scores CS agents inside customer-service-editorial ai-capabilities (governance, observability, credit/outcome TCO) — not a separate agentic-CS pillar.",
     who: "CX ops modelling deflection without hiding the human path.",
-    matters: "Record outcome pricing, credit packs, and which plans include the bot. Do not treat marketing fluff as coverage.",
+    matters:
+      "Record who can deploy agents, how handoffs and transcripts are reviewed, outcome pricing, credit packs, and which plans include the bot. Do not treat marketing fluff as coverage.",
     example:
       "Worked example: Help Scout AI Answers bills $0.75 per unassisted resolution with a monthly cap.",
     example2:
       "Worked example: Freshdesk includes a Freddy session pack, then $49/100 extra sessions.",
     goal: "Deflection you can audit",
-    priorities: ["Resolution definition", "Handoff", "Knowledge sources", "Caps", "TCO"],
+    priorities: [
+      "Resolution definition",
+      "Handoff",
+      "Governance",
+      "Observability",
+      "Credit / outcome TCO",
+    ],
     relatedCaps: ["agent-copilot", "knowledge-base"],
     relatedUse: ["ai-customer-service"],
     featureSlug: "chatbot-ai-agent",

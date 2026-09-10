@@ -7,25 +7,37 @@ export type PlanDisplayPrice = {
   unitLabel: string;
   contact: boolean;
   isFree: boolean;
+  /** Prefer for plan-card buttons when set (e.g. "Get Go"). */
+  ctaLabel?: string;
 };
 
-function pickBillingRule<T extends PricingRule>(
-  rules: T[],
-  preferAnnual: boolean,
-): T | undefined {
-  const annual = rules.find((r) => r.interval === "year");
-  const monthly = rules.find((r) => r.interval === "month");
-  const oneTime = rules.find((r) => r.interval === "one-time");
-  if (preferAnnual) {
-    return annual ?? monthly ?? oneTime ?? rules[0];
-  }
-  return monthly ?? annual ?? oneTime ?? rules[0];
+type IntervalPricingRule = Extract<
+  PricingRule,
+  { kind: "flat" | "per-seat" }
+>;
+
+function hasBillingInterval(rule: PricingRule): rule is IntervalPricingRule {
+  return rule.kind === "flat" || rule.kind === "per-seat";
 }
 
-function unitLabelForRule(
-  rule: PricingRule,
+function pickBillingRule(
+  rules: PricingRule[],
   preferAnnual: boolean,
-  shape: "seat" | "flat" | "unit" | "usage",
+): IntervalPricingRule | undefined {
+  const billable = rules.filter(hasBillingInterval);
+  const annual = billable.find((r) => r.interval === "year");
+  const monthly = billable.find((r) => r.interval === "month");
+  const oneTime = billable.find((r) => r.interval === "one-time");
+  if (preferAnnual) {
+    return annual ?? monthly ?? oneTime ?? billable[0];
+  }
+  return monthly ?? annual ?? oneTime ?? billable[0];
+}
+
+function unitLabelForIntervalRule(
+  rule: IntervalPricingRule,
+  preferAnnual: boolean,
+  shape: "seat" | "flat",
 ): string {
   if (rule.interval === "one-time") return "one-time";
 
@@ -39,32 +51,34 @@ function unitLabelForRule(
     if (billedAnnually && !preferAnnual) {
       return "per user / month (annual billing rate shown)";
     }
-    return rule.interval === "year"
-      ? "per user / year"
-      : "per user / month";
-  }
-
-  if (shape === "flat") {
-    if (billedAnnually && preferAnnual) {
-      return "per month, billed annually";
+    if (rule.interval === "month") {
+      return "per user / mo, billed monthly";
     }
-    if (billedAnnually && !preferAnnual) {
-      return "per month (annual billing rate shown)";
-    }
-    return rule.interval === "year" ? "per year" : "per month";
+    return "per user / year";
   }
 
-  if (shape === "usage") {
-    return rule.kind === "usage"
-      ? `per ${rule.unit.replace(/-/g, " ")} / month`
-      : "usage-based";
+  if (billedAnnually && preferAnnual) {
+    return "per month, billed annually";
   }
-
-  if (shape === "unit" && rule.kind === "per-unit") {
-    return `per ${rule.unit.replace(/-/g, " ")}`;
+  if (billedAnnually && !preferAnnual) {
+    return "per month (annual billing rate shown)";
   }
+  if (rule.interval === "month") {
+    return "per month, billed monthly";
+  }
+  return "per year";
+}
 
-  return "Plan rules apply";
+function unitLabelForUsageRule(
+  rule: Extract<PricingRule, { kind: "usage" }>,
+): string {
+  return `per ${rule.unit.replace(/-/g, " ")} / month`;
+}
+
+function unitLabelForUnitRule(
+  rule: Extract<PricingRule, { kind: "per-unit" }>,
+): string {
+  return `per ${rule.unit.replace(/-/g, " ")}`;
 }
 
 /**
@@ -85,13 +99,28 @@ export function resolvePlanDisplayPrice(
     };
   }
 
-  if (plan.contactSales || plan.rules.length === 0) {
+  if (plan.contactSales) {
     return {
       amount: null,
       priceLabel: "Custom",
       unitLabel: "Contact sales",
       contact: true,
       isFree: false,
+      ctaLabel: "Contact sales",
+    };
+  }
+
+  // Self-serve plan with no captured list $ (e.g. ChatGPT Go) — never invent
+  // dollars and never label as contact-sales.
+  if (plan.rules.length === 0) {
+    const getLabel = plan.name?.trim() ? `Get ${plan.name.trim()}` : "See plans";
+    return {
+      amount: null,
+      priceLabel: "See plans",
+      unitLabel: "Verify live list price on vendor site",
+      contact: false,
+      isFree: false,
+      ctaLabel: getLabel,
     };
   }
 
@@ -102,7 +131,7 @@ export function resolvePlanDisplayPrice(
       return {
         amount: rule.amountPerSeat,
         priceLabel: formatMoney(fromMajor(rule.amountPerSeat, currency)),
-        unitLabel: unitLabelForRule(rule, preferAnnual, "seat"),
+        unitLabel: unitLabelForIntervalRule(rule, preferAnnual, "seat"),
         contact: false,
         isFree: false,
       };
@@ -116,7 +145,7 @@ export function resolvePlanDisplayPrice(
       return {
         amount: rule.amount,
         priceLabel: formatMoney(fromMajor(rule.amount, currency)),
-        unitLabel: unitLabelForRule(rule, preferAnnual, "flat"),
+        unitLabel: unitLabelForIntervalRule(rule, preferAnnual, "flat"),
         contact: false,
         isFree: false,
       };
@@ -128,7 +157,7 @@ export function resolvePlanDisplayPrice(
     return {
       amount: usageRule.amountPerUnit,
       priceLabel: formatMoney(fromMajor(usageRule.amountPerUnit, currency)),
-      unitLabel: unitLabelForRule(usageRule, preferAnnual, "usage"),
+      unitLabel: unitLabelForUsageRule(usageRule),
       contact: false,
       isFree: false,
     };
@@ -139,7 +168,7 @@ export function resolvePlanDisplayPrice(
     return {
       amount: unitRule.amountPerUnit,
       priceLabel: formatMoney(fromMajor(unitRule.amountPerUnit, currency)),
-      unitLabel: unitLabelForRule(unitRule, preferAnnual, "unit"),
+      unitLabel: unitLabelForUnitRule(unitRule),
       contact: false,
       isFree: false,
     };

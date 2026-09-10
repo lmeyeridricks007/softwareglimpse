@@ -1,0 +1,424 @@
+{
+  "slug": "openphone",
+  "updatedAt": "2026-09-07T22:31:21.427Z",
+  "version": "1.0.0",
+  "fieldAudit": {
+    "slug": "openphone",
+    "checkedAt": "2026-09-07T22:31:21.426Z",
+    "items": [
+      {
+        "field": "name",
+        "status": "PASS",
+        "detail": "Name: OpenPhone",
+        "source": "seed"
+      },
+      {
+        "field": "product_status",
+        "status": "PASS",
+        "detail": "productLifecycle=active",
+        "source": "seed"
+      },
+      {
+        "field": "canonical_vendor",
+        "status": "UNKNOWN",
+        "detail": "Company/vendor not documented",
+        "source": "none"
+      },
+      {
+        "field": "category",
+        "status": "PASS",
+        "detail": "primaryCategorySlug=business-communications",
+        "source": "seed"
+      },
+      {
+        "field": "description",
+        "status": "PASS",
+        "detail": "Description present (Modern SMB shared business phone (also branded Quo) with shared numbers, SMS and…)",
+        "source": "seed"
+      },
+      {
+        "field": "target_audience",
+        "status": "PASS",
+        "detail": "Sizes=3, teams=3, assessment bestFor=3",
+        "source": "assessment"
+      },
+      {
+        "field": "use_cases",
+        "status": "PASS",
+        "detail": "useCaseSlugs=3",
+        "source": "seed"
+      },
+      {
+        "field": "capabilities",
+        "status": "PASS",
+        "detail": "featureRatings=0, enrichment features=13",
+        "source": "enrichment"
+      },
+      {
+        "field": "pricing",
+        "status": "PASS",
+        "detail": "Pricing envelope present",
+        "source": "enrichment"
+      },
+      {
+        "field": "plans",
+        "status": "PASS",
+        "detail": "plans=3",
+        "source": "enrichment"
+      },
+      {
+        "field": "free_plan",
+        "status": "PASS",
+        "detail": "No free plan in documented plans (explicit absence)",
+        "source": "enrichment"
+      },
+      {
+        "field": "trial",
+        "status": "PASS",
+        "detail": "Trial documented on plans/pricing",
+        "source": "enrichment"
+      },
+      {
+        "field": "integrations",
+        "status": "PASS",
+        "detail": "integrationSlugs=0, enrichment=5",
+        "source": "enrichment"
+      },
+      {
+        "field": "alternatives",
+        "status": "PASS",
+        "detail": "alternativeSlugs=4",
+        "source": "seed"
+      },
+      {
+        "field": "competitors",
+        "status": "PASS",
+        "detail": "competitorSlugs=5",
+        "source": "seed"
+      },
+      {
+        "field": "affiliate",
+        "status": "PASS",
+        "detail": "No affiliate relationship (explicit)",
+        "source": "seed"
+      },
+      {
+        "field": "source_provenance",
+        "status": "PASS",
+        "detail": "seed sources=0, enrichment sourceIds=3",
+        "source": "enrichment"
+      },
+      {
+        "field": "verification_date",
+        "status": "PASS",
+        "detail": "Latest verification/research signal: 2026-08-17T18:00:00.000Z",
+        "source": "enrichment"
+      }
+    ],
+    "passCount": 17,
+    "partialCount": 0,
+    "missingCount": 0,
+    "unknownCount": 1,
+    "score": 94
+  },
+  "decisionHub": {
+    "whatItIs": "OpenPhone (rebranded Quo in 2025; product surface unchanged) is a modern shared business phone for SMB teams: one local or toll-free number per user, unlimited US/Canada calling and SMS under fair use, shared inboxes, and Sona AI answering. Starter $15, Business $23 and Scale $35 per user/month annual ($19/$33/$47 monthly) were confirmed on openphone.com/pricing 2026-08-17. Phone menus, automatic recording and deeper CRM (HubSpot/Salesforce) land on Business+; Scale adds AI call tags and dedicated onboarding. Fair-use policy prohibits cold calling and auto-dialers — not a power-dialer product.",
+    "bestFor": [
+      "SMB teams that want a modern shared business number with SMS and AI answering",
+      "Founders and small sales/support teams who need transparent per-seat pricing without a 3-licence floor",
+      "Teams standardising on HubSpot/Salesforce once they move to Business",
+      "solo / sales: OpenPhone fit for solo sales teams in the cloud-phone job cluster, from first-party positioning and Business-communications Priority-2 research.",
+      "small-business / sales: OpenPhone fit for small-business sales teams in the cloud-phone job cluster, from first-party positioning and Business-communications Priority-2 research.",
+      "mid-market / sales: OpenPhone fit for mid-market sales teams in the cloud-phone job cluster, from first-party positioning and Business-communications Priority-2 research."
+    ],
+    "notIdealFor": [
+      "High-volume cold outbound or power-dialer teams (fair-use / no dialer)",
+      "Global multi-country UCaaS or contact-centre buyers",
+      "Buyers who need WhatsApp Business API or native video meetings",
+      "US/Canada-centric calling footprint — not a global UCaaS carrier story",
+      "Phone menus, automatic recording and deeper CRM require Business or above",
+      "No power dialer; fair-use policy prohibits cold calling and auto-dialers"
+    ],
+    "coreCapabilities": [
+      "cloud phone",
+      "sms messaging",
+      "shared inbox",
+      "analytics reporting",
+      "ai assistance",
+      "business phone",
+      "sales calling",
+      "team communication"
+    ],
+    "pricingSummary": "3 documented plans · entry paid: Starter · trial documented on at least one plan",
+    "keyTradeoffs": [
+      "US/Canada-centric calling footprint — not a global UCaaS carrier story",
+      "Phone menus, automatic recording and deeper CRM require Business or above",
+      "No power dialer; fair-use policy prohibits cold calling and auto-dialers",
+      "No native WhatsApp Business or video meetings product",
+      "Sona AI overage credits and extra numbers raise real TCO beyond seat floors"
+    ],
+    "alternatives": [
+      {
+        "slug": "callhippo",
+        "name": "CallHippo"
+      },
+      {
+        "slug": "aircall",
+        "name": "Aircall"
+      },
+      {
+        "slug": "nextiva",
+        "name": "Nextiva"
+      },
+      {
+        "slug": "grasshopper",
+        "name": "Grasshopper"
+      },
+      {
+        "slug": "dialpad",
+        "name": "Dialpad"
+      }
+    ],
+    "importantComparisons": [
+      {
+        "slug": "aircall-vs-openphone",
+        "title": "Aircall vs OpenPhone",
+        "href": "/compare/aircall-vs-openphone/"
+      },
+      {
+        "slug": "callhippo-vs-openphone",
+        "title": "CallHippo vs OpenPhone",
+        "href": "/compare/callhippo-vs-openphone/"
+      },
+      {
+        "slug": "nextiva-vs-openphone",
+        "title": "Nextiva vs OpenPhone",
+        "href": "/compare/nextiva-vs-openphone/"
+      },
+      {
+        "slug": "dialpad-vs-openphone",
+        "title": "Dialpad vs OpenPhone",
+        "href": "/compare/dialpad-vs-openphone/"
+      },
+      {
+        "slug": "eightx8-vs-openphone",
+        "title": "8x8 vs OpenPhone",
+        "href": "/compare/eightx8-vs-openphone/"
+      },
+      {
+        "slug": "fastmail-vs-openphone",
+        "title": "Fastmail vs OpenPhone",
+        "href": "/compare/fastmail-vs-openphone/"
+      }
+    ],
+    "relevantGuides": [
+      {
+        "slug": "openphone-implementation",
+        "title": "OpenPhone Implementation: 30/60/90 Communications Rollout That Sticks",
+        "href": "/guides/openphone-implementation/"
+      },
+      {
+        "slug": "openphone-migration",
+        "title": "OpenPhone Migration: Move Numbers Without Losing Trust",
+        "href": "/guides/openphone-migration/"
+      },
+      {
+        "slug": "openphone-setup",
+        "title": "OpenPhone Setup: Day-Zero Path to a Working Call Loop",
+        "href": "/guides/openphone-setup/"
+      },
+      {
+        "slug": "openphone-plans",
+        "title": "OpenPhone Plans: Seats, Numbers, and Qualifying Tiers",
+        "href": "/guides/openphone-plans/"
+      },
+      {
+        "slug": "is-openphone-worth-it",
+        "title": "Is OpenPhone Worth It? Fit Scenarios Before You Buy",
+        "href": "/guides/is-openphone-worth-it/"
+      }
+    ],
+    "evidenceState": "Research/data-based (no completed hands-on test) · Latest verification/research signal: 2026-08-17T18:00:00.000Z · Editorial assessment: approved",
+    "nextDecisionStep": "Compare against peers: Aircall vs OpenPhone",
+    "missingSections": [
+      "canonical_vendor"
+    ]
+  },
+  "dependents": [
+    {
+      "kind": "guide",
+      "slug": "openphone-implementation",
+      "path": "/guides/openphone-implementation/"
+    },
+    {
+      "kind": "guide",
+      "slug": "openphone-migration",
+      "path": "/guides/openphone-migration/"
+    },
+    {
+      "kind": "guide",
+      "slug": "openphone-setup",
+      "path": "/guides/openphone-setup/"
+    },
+    {
+      "kind": "guide",
+      "slug": "openphone-plans",
+      "path": "/guides/openphone-plans/"
+    },
+    {
+      "kind": "guide",
+      "slug": "is-openphone-worth-it",
+      "path": "/guides/is-openphone-worth-it/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "aircall-vs-openphone",
+      "path": "/compare/aircall-vs-openphone/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "callhippo-vs-openphone",
+      "path": "/compare/callhippo-vs-openphone/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "nextiva-vs-openphone",
+      "path": "/compare/nextiva-vs-openphone/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "dialpad-vs-openphone",
+      "path": "/compare/dialpad-vs-openphone/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "eightx8-vs-openphone",
+      "path": "/compare/eightx8-vs-openphone/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "fastmail-vs-openphone",
+      "path": "/compare/fastmail-vs-openphone/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "five9-vs-openphone",
+      "path": "/compare/five9-vs-openphone/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "genesys-vs-openphone",
+      "path": "/compare/genesys-vs-openphone/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "goto-connect-vs-openphone",
+      "path": "/compare/goto-connect-vs-openphone/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "grasshopper-vs-openphone",
+      "path": "/compare/grasshopper-vs-openphone/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "manychat-vs-openphone",
+      "path": "/compare/manychat-vs-openphone/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "microsoft-teams-vs-openphone",
+      "path": "/compare/microsoft-teams-vs-openphone/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "ooma-vs-openphone",
+      "path": "/compare/ooma-vs-openphone/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "openphone-vs-respond-io",
+      "path": "/compare/openphone-vs-respond-io/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "openphone-vs-ringcentral",
+      "path": "/compare/openphone-vs-ringcentral/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "openphone-vs-sanebox",
+      "path": "/compare/openphone-vs-sanebox/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "openphone-vs-slack",
+      "path": "/compare/openphone-vs-slack/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "openphone-vs-talkdesk",
+      "path": "/compare/openphone-vs-talkdesk/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "openphone-vs-twilio",
+      "path": "/compare/openphone-vs-twilio/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "openphone-vs-vonage",
+      "path": "/compare/openphone-vs-vonage/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "openphone-vs-wati",
+      "path": "/compare/openphone-vs-wati/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "openphone-vs-webex",
+      "path": "/compare/openphone-vs-webex/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "openphone-vs-zenzap",
+      "path": "/compare/openphone-vs-zenzap/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "openphone-vs-zoom",
+      "path": "/compare/openphone-vs-zoom/"
+    },
+    {
+      "kind": "alternatives",
+      "slug": "openphone",
+      "path": "/alternatives/openphone/"
+    },
+    {
+      "kind": "pricing",
+      "slug": "openphone",
+      "path": "/software/openphone/pricing/"
+    },
+    {
+      "kind": "best",
+      "slug": "business-communications-software",
+      "path": "/best/business-communications-software/"
+    },
+    {
+      "kind": "tools",
+      "slug": "business-communications-cost-calculator",
+      "path": "/tools/business-communications-cost-calculator/"
+    }
+  ],
+  "dependentsNeedingRefresh": [],
+  "remediation": [
+    "verify:canonical_vendor"
+  ],
+  "notes": [
+    "fieldAudit score=94",
+    "decisionHub bestFor=6 notIdeal=6",
+    "dependents=33"
+  ],
+  "materiallyImproved": false
+}

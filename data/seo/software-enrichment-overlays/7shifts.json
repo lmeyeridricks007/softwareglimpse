@@ -1,0 +1,449 @@
+{
+  "slug": "7shifts",
+  "updatedAt": "2026-09-07T22:31:21.605Z",
+  "version": "1.0.0",
+  "fieldAudit": {
+    "slug": "7shifts",
+    "checkedAt": "2026-09-07T22:31:21.604Z",
+    "items": [
+      {
+        "field": "name",
+        "status": "PASS",
+        "detail": "Name: 7shifts",
+        "source": "seed"
+      },
+      {
+        "field": "product_status",
+        "status": "PASS",
+        "detail": "productLifecycle=active",
+        "source": "seed"
+      },
+      {
+        "field": "canonical_vendor",
+        "status": "UNKNOWN",
+        "detail": "Company/vendor not documented",
+        "source": "none"
+      },
+      {
+        "field": "category",
+        "status": "PASS",
+        "detail": "primaryCategorySlug=hr",
+        "source": "seed"
+      },
+      {
+        "field": "description",
+        "status": "PASS",
+        "detail": "Description present (Restaurant WFM priced per location — Essentials $44.99 (≤30 staff); Pro $89.99 (…)",
+        "source": "seed"
+      },
+      {
+        "field": "target_audience",
+        "status": "PASS",
+        "detail": "Sizes=2, teams=1, assessment bestFor=3",
+        "source": "assessment"
+      },
+      {
+        "field": "use_cases",
+        "status": "PASS",
+        "detail": "useCaseSlugs=3",
+        "source": "seed"
+      },
+      {
+        "field": "capabilities",
+        "status": "PASS",
+        "detail": "featureRatings=0, enrichment features=16",
+        "source": "enrichment"
+      },
+      {
+        "field": "pricing",
+        "status": "PASS",
+        "detail": "Pricing envelope present",
+        "source": "enrichment"
+      },
+      {
+        "field": "plans",
+        "status": "PASS",
+        "detail": "plans=4",
+        "source": "enrichment"
+      },
+      {
+        "field": "free_plan",
+        "status": "PASS",
+        "detail": "Free plan documented",
+        "source": "enrichment"
+      },
+      {
+        "field": "trial",
+        "status": "PASS",
+        "detail": "Trial documented on plans/pricing",
+        "source": "enrichment"
+      },
+      {
+        "field": "integrations",
+        "status": "PASS",
+        "detail": "integrationSlugs=0, enrichment=2",
+        "source": "enrichment"
+      },
+      {
+        "field": "alternatives",
+        "status": "PASS",
+        "detail": "alternativeSlugs=3",
+        "source": "seed"
+      },
+      {
+        "field": "competitors",
+        "status": "PASS",
+        "detail": "competitorSlugs=4",
+        "source": "seed"
+      },
+      {
+        "field": "affiliate",
+        "status": "PASS",
+        "detail": "No affiliate relationship (explicit)",
+        "source": "seed"
+      },
+      {
+        "field": "source_provenance",
+        "status": "PASS",
+        "detail": "seed sources=0, enrichment sourceIds=2",
+        "source": "enrichment"
+      },
+      {
+        "field": "verification_date",
+        "status": "PASS",
+        "detail": "Latest verification/research signal: 2026-08-18T12:00:00.000Z",
+        "source": "enrichment"
+      }
+    ],
+    "passCount": 17,
+    "partialCount": 0,
+    "missingCount": 0,
+    "unknownCount": 1,
+    "score": 94
+  },
+  "decisionHub": {
+    "whatItIs": "7shifts is hospitality workforce management: scheduling, 7punches time clock, tips, tasks, POS sync, and optional restaurant payroll. Paid per-location floors (first-party 2026): Essentials $44.99/mo (≤30 employees), Pro $89.99 (≤60), Premium $149.99 unlimited with payroll included. Payroll on lower tiers ~$39.99/location + $6/employee paid. Free Comp plan exists (caps not fully published on pages fetched). 14-day Pro trial.",
+    "bestFor": [
+      "Restaurants and hospitality groups that want scheduling, punches, tips, and POS in one WFM",
+      "Operators comparing 7shifts as the hospitality default versus Homebase",
+      "Teams that will trial Pro for 14 days before Premium payroll",
+      "small-business / operations: 7shifts fit for small-business operations teams in the frontline-wfm job cluster, from first-party positioning and HR Priority-2 research.",
+      "mid-market / operations: 7shifts fit for mid-market operations teams in the frontline-wfm job cluster, from first-party positioning and HR Priority-2 research."
+    ],
+    "notIdealFor": [
+      "Non-restaurant hourly businesses (Homebase / When I Work / Connecteam fit better)",
+      "Core HRIS or structured ATS buyers",
+      "Deskless field teams that need GPS clocks without restaurant features",
+      "Hospitality-specialist — not a general retail/field WFM",
+      "Per-location pricing and employee caps force Pro/Premium as sites grow",
+      "Tip/task/auto-scheduler depth is Premium-gated"
+    ],
+    "coreCapabilities": [
+      "workforce scheduling",
+      "frontline comms",
+      "time attendance",
+      "gps geofence clockin",
+      "hris integrations",
+      "analytics reporting",
+      "ai assistance",
+      "frontline ops"
+    ],
+    "pricingSummary": "4 documented plans · 1 free · entry paid: Essentials · trial documented on at least one plan",
+    "keyTradeoffs": [
+      "Hospitality-specialist — not a general retail/field WFM",
+      "Per-location pricing and employee caps force Pro/Premium as sites grow",
+      "Tip/task/auto-scheduler depth is Premium-gated",
+      "Payroll still bills $6/employee paid even when ‘included’",
+      "Free Comp caps were not fully published on fetched pages"
+    ],
+    "alternatives": [
+      {
+        "slug": "homebase",
+        "name": "Homebase"
+      },
+      {
+        "slug": "deputy",
+        "name": "Deputy"
+      },
+      {
+        "slug": "connecteam",
+        "name": "Connecteam"
+      },
+      {
+        "slug": "when-i-work",
+        "name": "When I Work"
+      }
+    ],
+    "importantComparisons": [
+      {
+        "slug": "7shifts-vs-homebase",
+        "title": "Homebase vs 7shifts",
+        "href": "/compare/7shifts-vs-homebase/"
+      },
+      {
+        "slug": "7shifts-vs-adp-workforce-now",
+        "title": "7shifts vs ADP Workforce Now",
+        "href": "/compare/7shifts-vs-adp-workforce-now/"
+      },
+      {
+        "slug": "7shifts-vs-ashby",
+        "title": "7shifts vs Ashby",
+        "href": "/compare/7shifts-vs-ashby/"
+      },
+      {
+        "slug": "7shifts-vs-bamboohr",
+        "title": "7shifts vs BambooHR",
+        "href": "/compare/7shifts-vs-bamboohr/"
+      },
+      {
+        "slug": "7shifts-vs-bolt-for-business",
+        "title": "7shifts vs Bolt for Business",
+        "href": "/compare/7shifts-vs-bolt-for-business/"
+      },
+      {
+        "slug": "7shifts-vs-carepatron",
+        "title": "7shifts vs Carepatron",
+        "href": "/compare/7shifts-vs-carepatron/"
+      }
+    ],
+    "relevantGuides": [
+      {
+        "slug": "how-hr-software-works",
+        "title": "How HR Software Works",
+        "href": "/guides/how-hr-software-works/"
+      },
+      {
+        "slug": "types-of-hr-software",
+        "title": "Types of HR Software",
+        "href": "/guides/types-of-hr-software/"
+      },
+      {
+        "slug": "hr-software-vs-crm",
+        "title": "HR Software vs CRM",
+        "href": "/guides/hr-software-vs-crm/"
+      },
+      {
+        "slug": "accounting-finance-vs-hr-software",
+        "title": "Accounting & Finance Software vs HR Software",
+        "href": "/guides/accounting-finance-vs-hr-software/"
+      },
+      {
+        "slug": "lms-course-creation-vs-hr-software",
+        "title": "LMS & Course Creation Software vs HR Software",
+        "href": "/guides/lms-course-creation-vs-hr-software/"
+      },
+      {
+        "slug": "ats-recruiting-vs-hr-software",
+        "title": "ATS & Recruiting Software vs HR Software",
+        "href": "/guides/ats-recruiting-vs-hr-software/"
+      }
+    ],
+    "evidenceState": "Research/data-based (no completed hands-on test) · Latest verification/research signal: 2026-08-18T12:00:00.000Z · Editorial assessment: approved",
+    "nextDecisionStep": "Compare against peers: Homebase vs 7shifts",
+    "missingSections": [
+      "canonical_vendor"
+    ]
+  },
+  "dependents": [
+    {
+      "kind": "guide",
+      "slug": "how-hr-software-works",
+      "path": "/guides/how-hr-software-works/"
+    },
+    {
+      "kind": "guide",
+      "slug": "types-of-hr-software",
+      "path": "/guides/types-of-hr-software/"
+    },
+    {
+      "kind": "guide",
+      "slug": "hr-software-vs-crm",
+      "path": "/guides/hr-software-vs-crm/"
+    },
+    {
+      "kind": "guide",
+      "slug": "accounting-finance-vs-hr-software",
+      "path": "/guides/accounting-finance-vs-hr-software/"
+    },
+    {
+      "kind": "guide",
+      "slug": "lms-course-creation-vs-hr-software",
+      "path": "/guides/lms-course-creation-vs-hr-software/"
+    },
+    {
+      "kind": "guide",
+      "slug": "ats-recruiting-vs-hr-software",
+      "path": "/guides/ats-recruiting-vs-hr-software/"
+    },
+    {
+      "kind": "guide",
+      "slug": "time-attendance-vs-hr-software",
+      "path": "/guides/time-attendance-vs-hr-software/"
+    },
+    {
+      "kind": "guide",
+      "slug": "7shifts-implementation",
+      "path": "/guides/7shifts-implementation/"
+    },
+    {
+      "kind": "guide",
+      "slug": "7shifts-migration",
+      "path": "/guides/7shifts-migration/"
+    },
+    {
+      "kind": "guide",
+      "slug": "7shifts-setup",
+      "path": "/guides/7shifts-setup/"
+    },
+    {
+      "kind": "guide",
+      "slug": "7shifts-plans",
+      "path": "/guides/7shifts-plans/"
+    },
+    {
+      "kind": "guide",
+      "slug": "is-7shifts-worth-it",
+      "path": "/guides/is-7shifts-worth-it/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "7shifts-vs-homebase",
+      "path": "/compare/7shifts-vs-homebase/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "7shifts-vs-adp-workforce-now",
+      "path": "/compare/7shifts-vs-adp-workforce-now/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "7shifts-vs-ashby",
+      "path": "/compare/7shifts-vs-ashby/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "7shifts-vs-bamboohr",
+      "path": "/compare/7shifts-vs-bamboohr/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "7shifts-vs-bolt-for-business",
+      "path": "/compare/7shifts-vs-bolt-for-business/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "7shifts-vs-carepatron",
+      "path": "/compare/7shifts-vs-carepatron/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "7shifts-vs-dayforce",
+      "path": "/compare/7shifts-vs-dayforce/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "7shifts-vs-deputy",
+      "path": "/compare/7shifts-vs-deputy/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "7shifts-vs-greenhouse",
+      "path": "/compare/7shifts-vs-greenhouse/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "7shifts-vs-gusto",
+      "path": "/compare/7shifts-vs-gusto/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "7shifts-vs-hibob",
+      "path": "/compare/7shifts-vs-hibob/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "7shifts-vs-lever",
+      "path": "/compare/7shifts-vs-lever/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "7shifts-vs-oracle-hcm",
+      "path": "/compare/7shifts-vs-oracle-hcm/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "7shifts-vs-paycor",
+      "path": "/compare/7shifts-vs-paycor/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "7shifts-vs-paylocity",
+      "path": "/compare/7shifts-vs-paylocity/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "7shifts-vs-personio",
+      "path": "/compare/7shifts-vs-personio/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "7shifts-vs-rippling",
+      "path": "/compare/7shifts-vs-rippling/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "7shifts-vs-trainual",
+      "path": "/compare/7shifts-vs-trainual/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "7shifts-vs-ukg-pro",
+      "path": "/compare/7shifts-vs-ukg-pro/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "7shifts-vs-when-i-work",
+      "path": "/compare/7shifts-vs-when-i-work/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "7shifts-vs-workable",
+      "path": "/compare/7shifts-vs-workable/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "7shifts-vs-workday",
+      "path": "/compare/7shifts-vs-workday/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "7shifts-vs-connecteam",
+      "path": "/compare/7shifts-vs-connecteam/"
+    },
+    {
+      "kind": "alternatives",
+      "slug": "7shifts",
+      "path": "/alternatives/7shifts/"
+    },
+    {
+      "kind": "pricing",
+      "slug": "7shifts",
+      "path": "/software/7shifts/pricing/"
+    },
+    {
+      "kind": "tools",
+      "slug": "hr-cost-calculator",
+      "path": "/tools/hr-cost-calculator/"
+    }
+  ],
+  "dependentsNeedingRefresh": [],
+  "remediation": [
+    "verify:canonical_vendor"
+  ],
+  "notes": [
+    "fieldAudit score=94",
+    "decisionHub bestFor=5 notIdeal=6",
+    "dependents=38"
+  ],
+  "materiallyImproved": false
+}

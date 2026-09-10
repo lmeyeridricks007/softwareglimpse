@@ -1,0 +1,158 @@
+{
+  "slug": "snov-migration",
+  "enrichmentType": "MIGRATION_GUIDE",
+  "updatedAt": "2026-09-08T16:56:12.683Z",
+  "uniqueValueAdded": [
+    "implementation_workflow",
+    "scenario_analysis",
+    "decision_framework",
+    "limitations_evidence",
+    "buyer_checklist"
+  ],
+  "patch": {
+    "summary": "Snov.io migration guide: inventory → rehearse → freeze → validate integrations — grounded in researched limitations and catalogue peers.",
+    "blocks": [
+      {
+        "id": "da-snov-migration-1",
+        "type": "direct-answer",
+        "body": "Migrate to Snov.io by inventorying legacy sales-intelligence fields, mapping them to Snov.io objects, rehearsing a freeze window, and validating HubSpot, Salesforce, Pipedrive before reopening writes.",
+        "bullets": [
+          "Inventory → map → rehearse → cut over → reopen",
+          "Highest risk: No forever-free plan documented as primary entry — evaluation is trial-led",
+          "Success signal: prospecting works for the pilot cohort"
+        ]
+      },
+      {
+        "id": "mig-snov-migration-2",
+        "type": "step",
+        "heading": "Snov.io migration cutover playbook",
+        "body": "Migrations fail from optimistic timelines — not from missing motivation.",
+        "stepNumber": 1,
+        "scenarios": [
+          {
+            "title": "Field inventory",
+            "body": "Export legacy fields that power prospecting, data enrichment, email sequences and mark must-map vs archive."
+          },
+          {
+            "title": "Rehearsal load",
+            "body": "Run a non-prod load into Snov.io; measure match rates before the freeze."
+          },
+          {
+            "title": "Production freeze",
+            "body": "Freeze legacy writes; cut over; validate HubSpot; then reopen."
+          }
+        ]
+      },
+      {
+        "id": "df-snov-migration-3",
+        "type": "decision-framework",
+        "title": "Migrate to Snov.io?",
+        "steps": [
+          {
+            "id": "m-1",
+            "label": "Migrate when Budget SMB teams that need email finder + verifier + cold email sequences in one seat outweigh migration cost"
+          },
+          {
+            "id": "m-2",
+            "label": "Delay if this limitation hits cutover: No forever-free plan documented as primary entry — evaluation is trial-led"
+          },
+          {
+            "id": "m-3",
+            "label": "If Snov.io mapping is poor, compare destination fit with Apollo.io before moving data twice"
+          }
+        ]
+      },
+      {
+        "id": "mist-snov-migration-4",
+        "type": "mistakes",
+        "title": "Snov.io migration mistakes",
+        "items": [
+          {
+            "title": "No freeze window",
+            "body": "Dual-writing without a freeze creates irrevocable duplicates."
+          },
+          {
+            "title": "Integrations last",
+            "body": "Wire HubSpot in rehearsal — not on Monday morning after cutover."
+          },
+          {
+            "title": "Data risk 1",
+            "body": "No forever-free plan documented as primary entry — evaluation is trial-led"
+          },
+          {
+            "title": "Data risk 2",
+            "body": "Contact database depth is lighter than ZoomInfo/Apollo-class breadth claims"
+          },
+          {
+            "title": "Data risk 3",
+            "body": "Lead scoring is limited versus enterprise SI platforms"
+          }
+        ]
+      },
+      {
+        "id": "sel-snov-migration-5",
+        "type": "selection-checklist",
+        "title": "Snov.io migration checklist",
+        "dimensions": [
+          {
+            "id": "map",
+            "label": "Mapping",
+            "options": [
+              "Must-map fields listed",
+              "Owners assigned",
+              "Archive rules written"
+            ]
+          },
+          {
+            "id": "rehearse",
+            "label": "Rehearsal",
+            "options": [
+              "Non-prod load done",
+              "Match rate measured",
+              "Rollback tested"
+            ]
+          },
+          {
+            "id": "cutover",
+            "label": "Cutover",
+            "options": [
+              "Freeze communicated",
+              "Integrations green",
+              "Pilot cohort signed off"
+            ]
+          }
+        ]
+      }
+    ],
+    "checklist": [
+      {
+        "id": "enrich-chk-0",
+        "label": "Complete field inventory for prospecting",
+        "order": 0
+      },
+      {
+        "id": "enrich-chk-1",
+        "label": "Rehearse load before production freeze",
+        "order": 1
+      },
+      {
+        "id": "enrich-chk-2",
+        "label": "Validate HubSpot pre-reopen",
+        "order": 2
+      },
+      {
+        "id": "enrich-chk-3",
+        "label": "Mitigate: No forever-free plan documented as primary entry — evaluation is trial-led",
+        "order": 3
+      }
+    ],
+    "nextAction": {
+      "contentId": "tool:finder:sales-intelligence",
+      "label": "Open Finder shortlist"
+    }
+  },
+  "notes": [
+    "Migration: cutover risks, data mapping, checklist.",
+    "Type-specific skeleton: MIGRATION_GUIDE"
+  ]
+}

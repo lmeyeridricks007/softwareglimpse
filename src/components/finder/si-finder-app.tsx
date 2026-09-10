@@ -132,6 +132,10 @@ function readStoredAnswers(): DraftAnswers | null {
   }
 }
 
+function bootstrapSiFinderAnswers(): DraftAnswers {
+  return readStoredAnswers() ?? defaultAnswers();
+}
+
 function countMatchedRequired(
   result: FinderRecommendationResult,
   required: string[],
@@ -153,8 +157,10 @@ export function SiFinderApp({
   const [phase, setPhase] = useState<Phase>("questions");
   const [stepIndex, setStepIndex] = useState(0);
   const [maxStageIndex, setMaxStageIndex] = useState(0);
-  const [answers, setAnswers] = useState<DraftAnswers>(defaultAnswers);
-  const [hydrated, setHydrated] = useState(false);
+  const [answers, setAnswers] = useState<DraftAnswers>(bootstrapSiFinderAnswers);
+  const [hydrated, setHydrated] = useState(
+    () => typeof window !== "undefined",
+  );
   const [showAll, setShowAll] = useState(false);
   const [selectedSlugs, setSelectedSlugs] = useState<string[]>([]);
   const [results, setResults] = useState<FinderRecommendationResult[]>([]);
@@ -167,15 +173,6 @@ export function SiFinderApp({
 
   const questions = SI_FINDER_QUESTIONS;
   const question = questions[stepIndex];
-
-  useEffect(() => {
-    const stored = readStoredAnswers();
-    if (stored) {
-      // eslint-disable-next-line react-hooks/set-state-in-effect -- localStorage hydration
-      setAnswers(stored);
-    }
-    setHydrated(true);
-  }, []);
 
   useEffect(() => {
     if (!hydrated) return;
@@ -364,9 +361,9 @@ export function SiFinderApp({
         ? siStageIndexForQuestion(question.id)
         : 0;
 
-  useEffect(() => {
-    setMaxStageIndex((prev) => Math.max(prev, stageIndex));
-  }, [stageIndex]);
+  if (stageIndex > maxStageIndex) {
+    setMaxStageIndex(stageIndex);
+  }
 
   function goToStage(stageId: string) {
     const targetIndex = SI_FINDER_STAGES.findIndex((s) => s.id === stageId);

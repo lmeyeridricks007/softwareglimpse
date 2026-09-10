@@ -1,0 +1,400 @@
+{
+  "slug": "personio",
+  "updatedAt": "2026-09-07T22:31:21.618Z",
+  "version": "1.0.0",
+  "fieldAudit": {
+    "slug": "personio",
+    "checkedAt": "2026-09-07T22:31:21.617Z",
+    "items": [
+      {
+        "field": "name",
+        "status": "PASS",
+        "detail": "Name: Personio",
+        "source": "seed"
+      },
+      {
+        "field": "product_status",
+        "status": "PASS",
+        "detail": "productLifecycle=active",
+        "source": "seed"
+      },
+      {
+        "field": "canonical_vendor",
+        "status": "UNKNOWN",
+        "detail": "Company/vendor not documented",
+        "source": "none"
+      },
+      {
+        "field": "category",
+        "status": "PASS",
+        "detail": "primaryCategorySlug=hr",
+        "source": "seed"
+      },
+      {
+        "field": "description",
+        "status": "PASS",
+        "detail": "Description present (EU mid-market HRIS — Core from €7.60 PEPM (no USD list); CorePro and Recruiting/…)",
+        "source": "seed"
+      },
+      {
+        "field": "target_audience",
+        "status": "PASS",
+        "detail": "Sizes=3, teams=1, assessment bestFor=3",
+        "source": "assessment"
+      },
+      {
+        "field": "use_cases",
+        "status": "PASS",
+        "detail": "useCaseSlugs=1",
+        "source": "seed"
+      },
+      {
+        "field": "capabilities",
+        "status": "PASS",
+        "detail": "featureRatings=0, enrichment features=16",
+        "source": "enrichment"
+      },
+      {
+        "field": "pricing",
+        "status": "PASS",
+        "detail": "Pricing envelope present",
+        "source": "enrichment"
+      },
+      {
+        "field": "plans",
+        "status": "PASS",
+        "detail": "plans=3",
+        "source": "enrichment"
+      },
+      {
+        "field": "free_plan",
+        "status": "PASS",
+        "detail": "No free plan in documented plans (explicit absence)",
+        "source": "enrichment"
+      },
+      {
+        "field": "trial",
+        "status": "UNKNOWN",
+        "detail": "Trial not explicitly documented — do not assume none",
+        "source": "none"
+      },
+      {
+        "field": "integrations",
+        "status": "PASS",
+        "detail": "integrationSlugs=0, enrichment=3",
+        "source": "enrichment"
+      },
+      {
+        "field": "alternatives",
+        "status": "PASS",
+        "detail": "alternativeSlugs=3",
+        "source": "seed"
+      },
+      {
+        "field": "competitors",
+        "status": "PASS",
+        "detail": "competitorSlugs=3",
+        "source": "seed"
+      },
+      {
+        "field": "affiliate",
+        "status": "PASS",
+        "detail": "No affiliate relationship (explicit)",
+        "source": "seed"
+      },
+      {
+        "field": "source_provenance",
+        "status": "PASS",
+        "detail": "seed sources=0, enrichment sourceIds=2",
+        "source": "enrichment"
+      },
+      {
+        "field": "verification_date",
+        "status": "PASS",
+        "detail": "Latest verification/research signal: 2026-08-18T12:00:00.000Z",
+        "source": "enrichment"
+      }
+    ],
+    "passCount": 16,
+    "partialCount": 0,
+    "missingCount": 0,
+    "unknownCount": 2,
+    "score": 89
+  },
+  "decisionHub": {
+    "whatItIs": "Personio is a GDPR-native HRIS for European SMB and mid-market teams: employee file, absences, workflows, time tracking, and preliminary payroll on Core. Homepage publishes Core from €7.60 per employee/month. CorePro (positions, unlimited docs/legal entities, API) and Apps (Recruiting, Surveys, Performance, selected-country payroll) are contact-sales. Annual subscription with 12-month minimum; ~10% off for annual upfront. One-time setup fee by company size. No USD list prices and no free plan.",
+    "bestFor": [
+      "EU-headquartered or EU-heavy teams that need GDPR-native HRIS",
+      "Companies comparing Personio as the European BambooHR analogue",
+      "Orgs that can commit to annual Core and add Recruiting/Payroll apps later",
+      "small-business / operations: Personio fit for small-business operations teams in the hris-core job cluster, from first-party positioning and HR Priority-2 research.",
+      "mid-market / operations: Personio fit for mid-market operations teams in the hris-core job cluster, from first-party positioning and HR Priority-2 research.",
+      "enterprise / operations: Personio fit for enterprise operations teams in the hris-core job cluster, from first-party positioning and HR Priority-2 research."
+    ],
+    "notIdealFor": [
+      "US-only payroll-first buyers (Gusto) or HR+IT unification (Rippling)",
+      "Frontline WFM or dedicated ATS as the primary purchase",
+      "Buyers who need a published USD PEPM like BambooHR Core $10",
+      "No USD list price — Core floor is EUR; Apps and CorePro are quotes",
+      "Recruiting and full payroll are Apps, not Core",
+      "12-month minimum plus a size-based setup fee"
+    ],
+    "coreCapabilities": [
+      "core hris",
+      "time attendance",
+      "hris integrations",
+      "analytics reporting",
+      "ai assistance"
+    ],
+    "pricingSummary": "3 documented plans · entry paid: Core",
+    "keyTradeoffs": [
+      "No USD list price — Core floor is EUR; Apps and CorePro are quotes",
+      "Recruiting and full payroll are Apps, not Core",
+      "12-month minimum plus a size-based setup fee",
+      "Every active employee is a license",
+      "Weak US-payroll story versus Gusto/Rippling/BambooHR"
+    ],
+    "alternatives": [
+      {
+        "slug": "hibob",
+        "name": "HiBob"
+      },
+      {
+        "slug": "bamboohr",
+        "name": "BambooHR"
+      },
+      {
+        "slug": "rippling",
+        "name": "Rippling"
+      }
+    ],
+    "importantComparisons": [
+      {
+        "slug": "hibob-vs-personio",
+        "title": "HiBob vs Personio",
+        "href": "/compare/hibob-vs-personio/"
+      },
+      {
+        "slug": "7shifts-vs-personio",
+        "title": "7shifts vs Personio",
+        "href": "/compare/7shifts-vs-personio/"
+      },
+      {
+        "slug": "adp-workforce-now-vs-personio",
+        "title": "ADP Workforce Now vs Personio",
+        "href": "/compare/adp-workforce-now-vs-personio/"
+      },
+      {
+        "slug": "ashby-vs-personio",
+        "title": "Ashby vs Personio",
+        "href": "/compare/ashby-vs-personio/"
+      },
+      {
+        "slug": "bamboohr-vs-personio",
+        "title": "BambooHR vs Personio",
+        "href": "/compare/bamboohr-vs-personio/"
+      },
+      {
+        "slug": "bolt-for-business-vs-personio",
+        "title": "Bolt for Business vs Personio",
+        "href": "/compare/bolt-for-business-vs-personio/"
+      }
+    ],
+    "relevantGuides": [
+      {
+        "slug": "personio-implementation",
+        "title": "Personio Implementation: 30/60/90 HR Rollout That Sticks",
+        "href": "/guides/personio-implementation/"
+      },
+      {
+        "slug": "personio-migration",
+        "title": "Personio Migration: Move People Data Without Losing Trust",
+        "href": "/guides/personio-migration/"
+      },
+      {
+        "slug": "personio-setup",
+        "title": "Personio Setup: Day-Zero Path to a Working HR Loop",
+        "href": "/guides/personio-setup/"
+      },
+      {
+        "slug": "personio-plans",
+        "title": "Personio Plans: Seats, Hubs, and Qualifying Tiers",
+        "href": "/guides/personio-plans/"
+      },
+      {
+        "slug": "is-personio-worth-it",
+        "title": "Is Personio Worth It? Fit Scenarios Before You Buy",
+        "href": "/guides/is-personio-worth-it/"
+      }
+    ],
+    "evidenceState": "Research/data-based (no completed hands-on test) · Latest verification/research signal: 2026-08-18T12:00:00.000Z · Editorial assessment: approved",
+    "nextDecisionStep": "Compare against peers: HiBob vs Personio",
+    "missingSections": [
+      "canonical_vendor",
+      "trial"
+    ]
+  },
+  "dependents": [
+    {
+      "kind": "guide",
+      "slug": "personio-implementation",
+      "path": "/guides/personio-implementation/"
+    },
+    {
+      "kind": "guide",
+      "slug": "personio-migration",
+      "path": "/guides/personio-migration/"
+    },
+    {
+      "kind": "guide",
+      "slug": "personio-setup",
+      "path": "/guides/personio-setup/"
+    },
+    {
+      "kind": "guide",
+      "slug": "personio-plans",
+      "path": "/guides/personio-plans/"
+    },
+    {
+      "kind": "guide",
+      "slug": "is-personio-worth-it",
+      "path": "/guides/is-personio-worth-it/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "hibob-vs-personio",
+      "path": "/compare/hibob-vs-personio/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "7shifts-vs-personio",
+      "path": "/compare/7shifts-vs-personio/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "adp-workforce-now-vs-personio",
+      "path": "/compare/adp-workforce-now-vs-personio/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "ashby-vs-personio",
+      "path": "/compare/ashby-vs-personio/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "bamboohr-vs-personio",
+      "path": "/compare/bamboohr-vs-personio/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "bolt-for-business-vs-personio",
+      "path": "/compare/bolt-for-business-vs-personio/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "carepatron-vs-personio",
+      "path": "/compare/carepatron-vs-personio/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "dayforce-vs-personio",
+      "path": "/compare/dayforce-vs-personio/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "deputy-vs-personio",
+      "path": "/compare/deputy-vs-personio/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "greenhouse-vs-personio",
+      "path": "/compare/greenhouse-vs-personio/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "gusto-vs-personio",
+      "path": "/compare/gusto-vs-personio/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "homebase-vs-personio",
+      "path": "/compare/homebase-vs-personio/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "lever-vs-personio",
+      "path": "/compare/lever-vs-personio/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "oracle-hcm-vs-personio",
+      "path": "/compare/oracle-hcm-vs-personio/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "paycor-vs-personio",
+      "path": "/compare/paycor-vs-personio/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "paylocity-vs-personio",
+      "path": "/compare/paylocity-vs-personio/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "personio-vs-rippling",
+      "path": "/compare/personio-vs-rippling/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "personio-vs-trainual",
+      "path": "/compare/personio-vs-trainual/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "personio-vs-ukg-pro",
+      "path": "/compare/personio-vs-ukg-pro/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "personio-vs-when-i-work",
+      "path": "/compare/personio-vs-when-i-work/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "personio-vs-workable",
+      "path": "/compare/personio-vs-workable/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "personio-vs-workday",
+      "path": "/compare/personio-vs-workday/"
+    },
+    {
+      "kind": "alternatives",
+      "slug": "personio",
+      "path": "/alternatives/personio/"
+    },
+    {
+      "kind": "pricing",
+      "slug": "personio",
+      "path": "/software/personio/pricing/"
+    },
+    {
+      "kind": "tools",
+      "slug": "hr-cost-calculator",
+      "path": "/tools/hr-cost-calculator/"
+    }
+  ],
+  "dependentsNeedingRefresh": [],
+  "remediation": [
+    "verify:canonical_vendor",
+    "verify:trial"
+  ],
+  "notes": [
+    "fieldAudit score=89",
+    "decisionHub bestFor=6 notIdeal=6",
+    "dependents=30"
+  ],
+  "materiallyImproved": false
+}

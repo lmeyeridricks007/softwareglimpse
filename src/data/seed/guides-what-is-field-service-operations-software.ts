@@ -1,4 +1,4 @@
-import type { GuidePage } from "@/domain";
+import type { GuidePageInput } from "@/domain";
 import type { z } from "zod";
 import type { GuideContentBlockSchema } from "@/domain";
 import { tier18GuideScheduledAt } from "@/data/config/publishing/tier-18-field-service-operations-launch-2027-03-01";
@@ -79,7 +79,7 @@ const blocks: GuideBlockInput[] = [
   },
 ];
 
-function metadata(): GuidePage["metadata"] {
+function metadata(): GuidePageInput["metadata"] {
   return SCHEDULED_AT
     ? {
         status: "scheduled",
@@ -99,7 +99,7 @@ function metadata(): GuidePage["metadata"] {
       };
 }
 
-export const whatIsFieldServiceOperationsSoftwareGuide: GuidePage = {
+export const whatIsFieldServiceOperationsSoftwareGuide: GuidePageInput = {
   id: "guide-what-is-field-service-operations-software",
   slug: SLUG,
   title: "What is Field Service & Operations Software?",
@@ -119,7 +119,7 @@ export const whatIsFieldServiceOperationsSoftwareGuide: GuidePage = {
     "field-service-operations-pricing-guide",
     "field-service-operations-vs-project-management-software",
   ],
-  blocks: blocks as GuidePage["blocks"],
+  blocks: blocks as GuidePageInput["blocks"],
   checklist: [],
   sections: [],
   faq: [],
@@ -129,7 +129,7 @@ export const whatIsFieldServiceOperationsSoftwareGuide: GuidePage = {
     title: "What is Field Service & Operations Software?",
     description:
       "Learn how field service software schedules crews, manages construction jobs, and runs appointment-based local services.",
-    indexable: !SCHEDULED_AT,
+    indexable: true,
     canonicalPath: "/guides/what-is-field-service-operations-software/",
   },
 };

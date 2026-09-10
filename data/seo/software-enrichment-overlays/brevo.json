@@ -1,0 +1,418 @@
+{
+  "slug": "brevo",
+  "updatedAt": "2026-09-09T18:11:24.946Z",
+  "version": "1.0.0",
+  "fieldAudit": {
+    "slug": "brevo",
+    "checkedAt": "2026-09-09T18:11:24.945Z",
+    "items": [
+      {
+        "field": "name",
+        "status": "PASS",
+        "detail": "Name: Brevo",
+        "source": "seed"
+      },
+      {
+        "field": "product_status",
+        "status": "PASS",
+        "detail": "productLifecycle=active",
+        "source": "seed"
+      },
+      {
+        "field": "canonical_vendor",
+        "status": "PASS",
+        "detail": "Vendor: Brevo",
+        "source": "seed"
+      },
+      {
+        "field": "category",
+        "status": "PASS",
+        "detail": "primaryCategorySlug=email-marketing",
+        "source": "seed"
+      },
+      {
+        "field": "description",
+        "status": "PASS",
+        "detail": "Description present (Multi-channel email marketing with send-based pricing, a generous free plan, and…)",
+        "source": "seed"
+      },
+      {
+        "field": "target_audience",
+        "status": "PASS",
+        "detail": "Sizes=3, teams=2, assessment bestFor=3",
+        "source": "assessment"
+      },
+      {
+        "field": "use_cases",
+        "status": "PASS",
+        "detail": "useCaseSlugs=5",
+        "source": "seed"
+      },
+      {
+        "field": "capabilities",
+        "status": "PASS",
+        "detail": "featureRatings=0, enrichment features=15",
+        "source": "enrichment"
+      },
+      {
+        "field": "pricing",
+        "status": "PASS",
+        "detail": "Pricing envelope present",
+        "source": "enrichment"
+      },
+      {
+        "field": "plans",
+        "status": "PASS",
+        "detail": "plans=5",
+        "source": "enrichment"
+      },
+      {
+        "field": "free_plan",
+        "status": "PASS",
+        "detail": "Free plan documented",
+        "source": "enrichment"
+      },
+      {
+        "field": "trial",
+        "status": "UNKNOWN",
+        "detail": "Trial not explicitly documented — do not assume none",
+        "source": "none"
+      },
+      {
+        "field": "integrations",
+        "status": "PASS",
+        "detail": "integrationSlugs=0, enrichment=5",
+        "source": "enrichment"
+      },
+      {
+        "field": "alternatives",
+        "status": "PASS",
+        "detail": "alternativeSlugs=4",
+        "source": "seed"
+      },
+      {
+        "field": "competitors",
+        "status": "PASS",
+        "detail": "competitorSlugs=6",
+        "source": "seed"
+      },
+      {
+        "field": "affiliate",
+        "status": "PASS",
+        "detail": "No affiliate relationship (explicit)",
+        "source": "seed"
+      },
+      {
+        "field": "source_provenance",
+        "status": "PASS",
+        "detail": "seed sources=0, enrichment sourceIds=3",
+        "source": "enrichment"
+      },
+      {
+        "field": "verification_date",
+        "status": "PASS",
+        "detail": "Latest verification/research signal: 2026-08-17T14:00:00.000Z",
+        "source": "enrichment"
+      }
+    ],
+    "passCount": 17,
+    "partialCount": 0,
+    "missingCount": 0,
+    "unknownCount": 1,
+    "score": 94
+  },
+  "decisionHub": {
+    "whatItIs": "Brevo (formerly Sendinblue) is a multi-channel marketing platform centered on email, with automation, SMS, chat, and CRM-lite tools. Pricing is primarily send-volume based (not contact-count for email), with a forever-free plan and Starter/Standard/Professional ladders published.",
+    "bestFor": [
+      "SMBs wanting send-based email pricing with a generous free plan",
+      "EU/SMB buyers comparing multi-channel email + SMS/chat stacks",
+      "Teams with large contact databases but moderate monthly send volume",
+      "micro / marketing: Brevo fit for micro marketing teams from first-party positioning and email-marketing Priority-1 research.",
+      "small-business / marketing: Brevo fit for small-business marketing teams from first-party positioning and email-marketing Priority-1 research.",
+      "mid-market / marketing: Brevo fit for mid-market marketing teams from first-party positioning and email-marketing Priority-1 research."
+    ],
+    "notIdealFor": [
+      "Ecommerce brands that need Klaviyo-depth catalog flows and revenue attribution as the primary job",
+      "Buyers who need Professional features but cannot justify the $499/mo jump",
+      "Teams that only want the simplest creator newsletter with no multi-channel surface",
+      "Free plan daily send cap (300/day) constrains frequent campaigners",
+      "Advanced automation and A/B depth concentrate on Standard+",
+      "Professional jumps to $499/mo — large step from Standard"
+    ],
+    "coreCapabilities": [
+      "email campaigns",
+      "newsletter builder",
+      "email templates",
+      "drag drop editor",
+      "automation workflows",
+      "segmentation",
+      "personalization",
+      "ab testing"
+    ],
+    "pricingSummary": "5 documented plans · 1 free · entry paid: Starter",
+    "keyTradeoffs": [
+      "Free plan daily send cap (300/day) constrains frequent campaigners",
+      "Advanced automation and A/B depth concentrate on Standard+",
+      "Professional jumps to $499/mo — large step from Standard",
+      "Multi-channel add-ons (SMS/WhatsApp) can change TCO beyond email floors",
+      "CRM-lite is not a full sales CRM of record"
+    ],
+    "alternatives": [
+      {
+        "slug": "mailerlite",
+        "name": "MailerLite"
+      },
+      {
+        "slug": "getresponse",
+        "name": "GetResponse"
+      },
+      {
+        "slug": "mailchimp",
+        "name": "Mailchimp"
+      },
+      {
+        "slug": "klaviyo",
+        "name": "Klaviyo"
+      },
+      {
+        "slug": "activecampaign",
+        "name": "ActiveCampaign"
+      },
+      {
+        "slug": "hubspot",
+        "name": "HubSpot"
+      }
+    ],
+    "importantComparisons": [
+      {
+        "slug": "brevo-vs-klaviyo",
+        "title": "Brevo vs Klaviyo",
+        "href": "/compare/brevo-vs-klaviyo/"
+      },
+      {
+        "slug": "brevo-vs-mailerlite",
+        "title": "Brevo vs MailerLite",
+        "href": "/compare/brevo-vs-mailerlite/"
+      },
+      {
+        "slug": "brevo-vs-getresponse",
+        "title": "Brevo vs GetResponse",
+        "href": "/compare/brevo-vs-getresponse/"
+      },
+      {
+        "slug": "brevo-vs-mailjet",
+        "title": "Brevo vs Mailjet",
+        "href": "/compare/brevo-vs-mailjet/"
+      },
+      {
+        "slug": "activecampaign-vs-brevo",
+        "title": "ActiveCampaign vs Brevo",
+        "href": "/compare/activecampaign-vs-brevo/"
+      },
+      {
+        "slug": "aweber-vs-brevo",
+        "title": "AWeber vs Brevo",
+        "href": "/compare/aweber-vs-brevo/"
+      }
+    ],
+    "relevantGuides": [
+      {
+        "slug": "how-email-marketing-works",
+        "title": "How Email Marketing Software Works",
+        "href": "/guides/how-email-marketing-works/"
+      },
+      {
+        "slug": "types-of-email-marketing",
+        "title": "Types of Email Marketing Software",
+        "href": "/guides/types-of-email-marketing/"
+      },
+      {
+        "slug": "brevo-implementation",
+        "title": "Brevo Implementation: 30/60/90 Email Rollout That Sticks",
+        "href": "/guides/brevo-implementation/"
+      },
+      {
+        "slug": "brevo-migration",
+        "title": "Brevo Migration: Move Lists Without Losing Trust",
+        "href": "/guides/brevo-migration/"
+      },
+      {
+        "slug": "brevo-setup",
+        "title": "Brevo Setup: Day-Zero Path to a Working Email Loop",
+        "href": "/guides/brevo-setup/"
+      },
+      {
+        "slug": "brevo-plans",
+        "title": "Brevo Plans: Contacts, Sends, and Qualifying Tiers",
+        "href": "/guides/brevo-plans/"
+      }
+    ],
+    "evidenceState": "Research/data-based (no completed hands-on test) · Latest verification/research signal: 2026-08-17T14:00:00.000Z · Editorial assessment: approved",
+    "nextDecisionStep": "Compare against peers: Brevo vs Klaviyo",
+    "missingSections": [
+      "trial"
+    ]
+  },
+  "dependents": [
+    {
+      "kind": "guide",
+      "slug": "how-email-marketing-works",
+      "path": "/guides/how-email-marketing-works/"
+    },
+    {
+      "kind": "guide",
+      "slug": "types-of-email-marketing",
+      "path": "/guides/types-of-email-marketing/"
+    },
+    {
+      "kind": "guide",
+      "slug": "brevo-implementation",
+      "path": "/guides/brevo-implementation/"
+    },
+    {
+      "kind": "guide",
+      "slug": "brevo-migration",
+      "path": "/guides/brevo-migration/"
+    },
+    {
+      "kind": "guide",
+      "slug": "brevo-setup",
+      "path": "/guides/brevo-setup/"
+    },
+    {
+      "kind": "guide",
+      "slug": "brevo-plans",
+      "path": "/guides/brevo-plans/"
+    },
+    {
+      "kind": "guide",
+      "slug": "is-brevo-worth-it",
+      "path": "/guides/is-brevo-worth-it/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "brevo-vs-klaviyo",
+      "path": "/compare/brevo-vs-klaviyo/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "brevo-vs-mailerlite",
+      "path": "/compare/brevo-vs-mailerlite/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "brevo-vs-getresponse",
+      "path": "/compare/brevo-vs-getresponse/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "brevo-vs-mailjet",
+      "path": "/compare/brevo-vs-mailjet/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "activecampaign-vs-brevo",
+      "path": "/compare/activecampaign-vs-brevo/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "aweber-vs-brevo",
+      "path": "/compare/aweber-vs-brevo/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "beehiiv-vs-brevo",
+      "path": "/compare/beehiiv-vs-brevo/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "bouncer-vs-brevo",
+      "path": "/compare/bouncer-vs-brevo/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "brevo-vs-campaign-monitor",
+      "path": "/compare/brevo-vs-campaign-monitor/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "brevo-vs-constant-contact",
+      "path": "/compare/brevo-vs-constant-contact/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "brevo-vs-customer-io",
+      "path": "/compare/brevo-vs-customer-io/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "brevo-vs-drip",
+      "path": "/compare/brevo-vs-drip/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "brevo-vs-flodesk",
+      "path": "/compare/brevo-vs-flodesk/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "brevo-vs-inboxally",
+      "path": "/compare/brevo-vs-inboxally/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "brevo-vs-kit",
+      "path": "/compare/brevo-vs-kit/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "brevo-vs-moosend",
+      "path": "/compare/brevo-vs-moosend/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "brevo-vs-omnisend",
+      "path": "/compare/brevo-vs-omnisend/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "brevo-vs-mailchimp",
+      "path": "/compare/brevo-vs-mailchimp/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "brevo-vs-hubspot",
+      "path": "/compare/brevo-vs-hubspot/"
+    },
+    {
+      "kind": "alternatives",
+      "slug": "brevo",
+      "path": "/alternatives/brevo/"
+    },
+    {
+      "kind": "pricing",
+      "slug": "brevo",
+      "path": "/software/brevo/pricing/"
+    },
+    {
+      "kind": "best",
+      "slug": "email-marketing-software",
+      "path": "/best/email-marketing-software/"
+    },
+    {
+      "kind": "tools",
+      "slug": "email-marketing-cost-calculator",
+      "path": "/tools/email-marketing-cost-calculator/"
+    }
+  ],
+  "dependentsNeedingRefresh": [],
+  "remediation": [
+    "verify:trial"
+  ],
+  "notes": [
+    "fieldAudit score=94",
+    "decisionHub bestFor=6 notIdeal=6",
+    "dependents=30"
+  ],
+  "materiallyImproved": true
+}

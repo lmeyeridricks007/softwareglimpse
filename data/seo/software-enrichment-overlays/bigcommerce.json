@@ -1,0 +1,432 @@
+{
+  "slug": "bigcommerce",
+  "updatedAt": "2026-09-07T22:31:21.649Z",
+  "version": "1.0.0",
+  "fieldAudit": {
+    "slug": "bigcommerce",
+    "checkedAt": "2026-09-07T22:31:21.647Z",
+    "items": [
+      {
+        "field": "name",
+        "status": "PASS",
+        "detail": "Name: BigCommerce",
+        "source": "seed"
+      },
+      {
+        "field": "product_status",
+        "status": "PASS",
+        "detail": "productLifecycle=active",
+        "source": "seed"
+      },
+      {
+        "field": "canonical_vendor",
+        "status": "UNKNOWN",
+        "detail": "Company/vendor not documented",
+        "source": "none"
+      },
+      {
+        "field": "category",
+        "status": "PASS",
+        "detail": "primaryCategorySlug=ecommerce",
+        "source": "seed"
+      },
+      {
+        "field": "description",
+        "status": "PASS",
+        "detail": "Description present (Open-SaaS ecommerce platform — Core $39/mo ($29 annual), Growth $105 ($79), Scal…)",
+        "source": "seed"
+      },
+      {
+        "field": "target_audience",
+        "status": "PASS",
+        "detail": "Sizes=3, teams=2, assessment bestFor=3",
+        "source": "assessment"
+      },
+      {
+        "field": "use_cases",
+        "status": "PASS",
+        "detail": "useCaseSlugs=3",
+        "source": "seed"
+      },
+      {
+        "field": "capabilities",
+        "status": "PASS",
+        "detail": "featureRatings=0, enrichment features=14",
+        "source": "enrichment"
+      },
+      {
+        "field": "pricing",
+        "status": "PASS",
+        "detail": "Pricing envelope present",
+        "source": "enrichment"
+      },
+      {
+        "field": "plans",
+        "status": "PASS",
+        "detail": "plans=4",
+        "source": "enrichment"
+      },
+      {
+        "field": "free_plan",
+        "status": "PASS",
+        "detail": "No free plan in documented plans (explicit absence)",
+        "source": "enrichment"
+      },
+      {
+        "field": "trial",
+        "status": "PASS",
+        "detail": "Trial documented on plans/pricing",
+        "source": "enrichment"
+      },
+      {
+        "field": "integrations",
+        "status": "PASS",
+        "detail": "integrationSlugs=0, enrichment=4",
+        "source": "enrichment"
+      },
+      {
+        "field": "alternatives",
+        "status": "PASS",
+        "detail": "alternativeSlugs=2",
+        "source": "seed"
+      },
+      {
+        "field": "competitors",
+        "status": "PASS",
+        "detail": "competitorSlugs=2",
+        "source": "seed"
+      },
+      {
+        "field": "affiliate",
+        "status": "PASS",
+        "detail": "No affiliate relationship (explicit)",
+        "source": "seed"
+      },
+      {
+        "field": "source_provenance",
+        "status": "PASS",
+        "detail": "seed sources=0, enrichment sourceIds=2",
+        "source": "enrichment"
+      },
+      {
+        "field": "verification_date",
+        "status": "PASS",
+        "detail": "Latest verification/research signal: 2026-08-18T12:00:00.000Z",
+        "source": "enrichment"
+      }
+    ],
+    "passCount": 17,
+    "partialCount": 0,
+    "missingCount": 0,
+    "unknownCount": 1,
+    "score": 94
+  },
+  "decisionHub": {
+    "whatItIs": "BigCommerce is a hosted ecommerce platform emphasizing open SaaS — no transaction fee on platform billing when using eligible gateways, multi-storefront options, and API extensibility. 2026 plan rename: Core $39/mo ($29 annual), Growth $105 ($79), Scale $399 ($299), Performance from $1,499/mo annual. GMV caps trigger upgrades; open payment provider fees up to 2.0% on third-party gateways for self-serve tiers (verify live terms).",
+    "bestFor": [
+      "Growing catalog brands comparing open-SaaS TCO to Shopify",
+      "Merchants needing multi-storefront or B2B on one platform",
+      "Teams with dev resources for API/headless experiments",
+      "small-business / operations: BigCommerce fit for small-business operations teams in the saas-platform job cluster, from first-party positioning and Ecommerce Wave-1 research.",
+      "mid-market / operations: BigCommerce fit for mid-market operations teams in the saas-platform job cluster, from first-party positioning and Ecommerce Wave-1 research.",
+      "enterprise / operations: BigCommerce fit for enterprise operations teams in the saas-platform job cluster, from first-party positioning and Ecommerce Wave-1 research."
+    ],
+    "notIdealFor": [
+      "Retail-first merchants needing best-in-class POS bundle",
+      "Buyers who want the largest theme marketplace on day one",
+      "Stores avoiding GMV-threshold plan auto-upgrades",
+      "2026 GMV thresholds and open payment provider fees complicate TCO versus headline subscription",
+      "Native POS/retail depth trails Shopify/Square for omnichannel-first merchants",
+      "Theme/app ecosystem is smaller than Shopify’s"
+    ],
+    "coreCapabilities": [
+      "online storefront",
+      "product catalog",
+      "checkout payments",
+      "order management",
+      "inventory management",
+      "shipping fulfillment",
+      "marketplace channels",
+      "b2b wholesale"
+    ],
+    "pricingSummary": "4 documented plans · entry paid: Core · trial documented on at least one plan",
+    "keyTradeoffs": [
+      "2026 GMV thresholds and open payment provider fees complicate TCO versus headline subscription",
+      "Native POS/retail depth trails Shopify/Square for omnichannel-first merchants",
+      "Theme/app ecosystem is smaller than Shopify’s",
+      "Auto-upgrades on GMV can surprise fast-growing stores",
+      "Enterprise-grade ecommerce with open architecture — scale GMV without per-order platform tax when using supported payment setup. (audience: Growing catalog brands comparing open-SaaS TCO to Shopify, Merchants needing multi-storefront or B2B on one platform)"
+    ],
+    "alternatives": [
+      {
+        "slug": "shopify",
+        "name": "Shopify"
+      },
+      {
+        "slug": "woocommerce",
+        "name": "WooCommerce"
+      }
+    ],
+    "importantComparisons": [
+      {
+        "slug": "bigcommerce-vs-shopify",
+        "title": "Shopify vs BigCommerce",
+        "href": "/compare/bigcommerce-vs-shopify/"
+      },
+      {
+        "slug": "bigcommerce-vs-vtex",
+        "title": "VTEX vs BigCommerce",
+        "href": "/compare/bigcommerce-vs-vtex/"
+      },
+      {
+        "slug": "bigcommerce-vs-commercetools",
+        "title": "BigCommerce vs commercetools",
+        "href": "/compare/bigcommerce-vs-commercetools/"
+      },
+      {
+        "slug": "bigcommerce-vs-ecwid",
+        "title": "BigCommerce vs Ecwid",
+        "href": "/compare/bigcommerce-vs-ecwid/"
+      },
+      {
+        "slug": "bigcommerce-vs-lightspeed-retail",
+        "title": "BigCommerce vs Lightspeed Retail",
+        "href": "/compare/bigcommerce-vs-lightspeed-retail/"
+      },
+      {
+        "slug": "bigcommerce-vs-magento",
+        "title": "BigCommerce vs Magento",
+        "href": "/compare/bigcommerce-vs-magento/"
+      }
+    ],
+    "relevantGuides": [
+      {
+        "slug": "how-ecommerce-software-works",
+        "title": "How Ecommerce Software Works",
+        "href": "/guides/how-ecommerce-software-works/"
+      },
+      {
+        "slug": "types-of-ecommerce-software",
+        "title": "Types of Ecommerce Software",
+        "href": "/guides/types-of-ecommerce-software/"
+      },
+      {
+        "slug": "ecommerce-vs-email-marketing",
+        "title": "Ecommerce Software vs Email Marketing Software",
+        "href": "/guides/ecommerce-vs-email-marketing/"
+      },
+      {
+        "slug": "ecommerce-requirements-guide",
+        "title": "Ecommerce Software Requirements Guide",
+        "href": "/guides/ecommerce-requirements-guide/"
+      },
+      {
+        "slug": "ecommerce-evaluation-guide",
+        "title": "Ecommerce Software Evaluation Guide",
+        "href": "/guides/ecommerce-evaluation-guide/"
+      },
+      {
+        "slug": "website-digital-presence-vs-ecommerce-software",
+        "title": "Website & Digital Presence Software vs Ecommerce Software",
+        "href": "/guides/website-digital-presence-vs-ecommerce-software/"
+      }
+    ],
+    "evidenceState": "Research/data-based (no completed hands-on test) · Latest verification/research signal: 2026-08-18T12:00:00.000Z · Editorial assessment: approved",
+    "nextDecisionStep": "Compare against peers: Shopify vs BigCommerce",
+    "missingSections": [
+      "canonical_vendor"
+    ]
+  },
+  "dependents": [
+    {
+      "kind": "guide",
+      "slug": "how-ecommerce-software-works",
+      "path": "/guides/how-ecommerce-software-works/"
+    },
+    {
+      "kind": "guide",
+      "slug": "types-of-ecommerce-software",
+      "path": "/guides/types-of-ecommerce-software/"
+    },
+    {
+      "kind": "guide",
+      "slug": "ecommerce-vs-email-marketing",
+      "path": "/guides/ecommerce-vs-email-marketing/"
+    },
+    {
+      "kind": "guide",
+      "slug": "ecommerce-requirements-guide",
+      "path": "/guides/ecommerce-requirements-guide/"
+    },
+    {
+      "kind": "guide",
+      "slug": "ecommerce-evaluation-guide",
+      "path": "/guides/ecommerce-evaluation-guide/"
+    },
+    {
+      "kind": "guide",
+      "slug": "website-digital-presence-vs-ecommerce-software",
+      "path": "/guides/website-digital-presence-vs-ecommerce-software/"
+    },
+    {
+      "kind": "guide",
+      "slug": "dropshipping-pod-vs-ecommerce-software",
+      "path": "/guides/dropshipping-pod-vs-ecommerce-software/"
+    },
+    {
+      "kind": "guide",
+      "slug": "fulfillment-shipping-vs-ecommerce-software",
+      "path": "/guides/fulfillment-shipping-vs-ecommerce-software/"
+    },
+    {
+      "kind": "guide",
+      "slug": "bigcommerce-implementation",
+      "path": "/guides/bigcommerce-implementation/"
+    },
+    {
+      "kind": "guide",
+      "slug": "bigcommerce-migration",
+      "path": "/guides/bigcommerce-migration/"
+    },
+    {
+      "kind": "guide",
+      "slug": "bigcommerce-setup",
+      "path": "/guides/bigcommerce-setup/"
+    },
+    {
+      "kind": "guide",
+      "slug": "bigcommerce-plans",
+      "path": "/guides/bigcommerce-plans/"
+    },
+    {
+      "kind": "guide",
+      "slug": "is-bigcommerce-worth-it",
+      "path": "/guides/is-bigcommerce-worth-it/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "bigcommerce-vs-shopify",
+      "path": "/compare/bigcommerce-vs-shopify/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "bigcommerce-vs-vtex",
+      "path": "/compare/bigcommerce-vs-vtex/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "bigcommerce-vs-commercetools",
+      "path": "/compare/bigcommerce-vs-commercetools/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "bigcommerce-vs-ecwid",
+      "path": "/compare/bigcommerce-vs-ecwid/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "bigcommerce-vs-lightspeed-retail",
+      "path": "/compare/bigcommerce-vs-lightspeed-retail/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "bigcommerce-vs-magento",
+      "path": "/compare/bigcommerce-vs-magento/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "bigcommerce-vs-medusa",
+      "path": "/compare/bigcommerce-vs-medusa/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "bigcommerce-vs-opencart",
+      "path": "/compare/bigcommerce-vs-opencart/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "bigcommerce-vs-prestashop",
+      "path": "/compare/bigcommerce-vs-prestashop/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "bigcommerce-vs-saleor",
+      "path": "/compare/bigcommerce-vs-saleor/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "bigcommerce-vs-salesforce-commerce-cloud",
+      "path": "/compare/bigcommerce-vs-salesforce-commerce-cloud/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "bigcommerce-vs-sellfy",
+      "path": "/compare/bigcommerce-vs-sellfy/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "bigcommerce-vs-shopware",
+      "path": "/compare/bigcommerce-vs-shopware/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "bigcommerce-vs-square-online",
+      "path": "/compare/bigcommerce-vs-square-online/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "bigcommerce-vs-squarespace",
+      "path": "/compare/bigcommerce-vs-squarespace/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "bigcommerce-vs-tiendanube",
+      "path": "/compare/bigcommerce-vs-tiendanube/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "bigcommerce-vs-webflow",
+      "path": "/compare/bigcommerce-vs-webflow/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "bigcommerce-vs-wix",
+      "path": "/compare/bigcommerce-vs-wix/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "bigcommerce-vs-woocommerce",
+      "path": "/compare/bigcommerce-vs-woocommerce/"
+    },
+    {
+      "kind": "alternatives",
+      "slug": "bigcommerce",
+      "path": "/alternatives/bigcommerce/"
+    },
+    {
+      "kind": "pricing",
+      "slug": "bigcommerce",
+      "path": "/software/bigcommerce/pricing/"
+    },
+    {
+      "kind": "best",
+      "slug": "ecommerce-software",
+      "path": "/best/ecommerce-software/"
+    },
+    {
+      "kind": "tools",
+      "slug": "ecommerce-cost-calculator",
+      "path": "/tools/ecommerce-cost-calculator/"
+    }
+  ],
+  "dependentsNeedingRefresh": [],
+  "remediation": [
+    "verify:canonical_vendor"
+  ],
+  "notes": [
+    "fieldAudit score=94",
+    "decisionHub bestFor=6 notIdeal=6",
+    "dependents=36"
+  ],
+  "materiallyImproved": false
+}

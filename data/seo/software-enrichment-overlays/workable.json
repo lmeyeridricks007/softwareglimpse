@@ -1,0 +1,414 @@
+{
+  "slug": "workable",
+  "updatedAt": "2026-09-09T18:11:24.943Z",
+  "version": "1.0.0",
+  "fieldAudit": {
+    "slug": "workable",
+    "checkedAt": "2026-09-09T18:11:24.942Z",
+    "items": [
+      {
+        "field": "name",
+        "status": "PASS",
+        "detail": "Name: Workable",
+        "source": "seed"
+      },
+      {
+        "field": "product_status",
+        "status": "PASS",
+        "detail": "productLifecycle=active",
+        "source": "seed"
+      },
+      {
+        "field": "canonical_vendor",
+        "status": "PASS",
+        "detail": "Vendor: Workable Software Ltd",
+        "source": "seed"
+      },
+      {
+        "field": "category",
+        "status": "PASS",
+        "detail": "primaryCategorySlug=hr",
+        "source": "seed"
+      },
+      {
+        "field": "description",
+        "status": "PASS",
+        "detail": "Description present (Recruiting + light HR ATS with published floors — Standard $299/mo (1–20 employe…)",
+        "source": "seed"
+      },
+      {
+        "field": "target_audience",
+        "status": "PASS",
+        "detail": "Sizes=2, teams=2, assessment bestFor=3",
+        "source": "assessment"
+      },
+      {
+        "field": "use_cases",
+        "status": "PASS",
+        "detail": "useCaseSlugs=1",
+        "source": "seed"
+      },
+      {
+        "field": "capabilities",
+        "status": "PASS",
+        "detail": "featureRatings=0, enrichment features=16",
+        "source": "enrichment"
+      },
+      {
+        "field": "pricing",
+        "status": "PASS",
+        "detail": "Pricing envelope present",
+        "source": "enrichment"
+      },
+      {
+        "field": "plans",
+        "status": "PASS",
+        "detail": "plans=3",
+        "source": "enrichment"
+      },
+      {
+        "field": "free_plan",
+        "status": "PASS",
+        "detail": "No free plan in documented plans (explicit absence)",
+        "source": "enrichment"
+      },
+      {
+        "field": "trial",
+        "status": "PASS",
+        "detail": "Trial documented on plans/pricing",
+        "source": "enrichment"
+      },
+      {
+        "field": "integrations",
+        "status": "PASS",
+        "detail": "integrationSlugs=0, enrichment=3",
+        "source": "enrichment"
+      },
+      {
+        "field": "alternatives",
+        "status": "PASS",
+        "detail": "alternativeSlugs=3",
+        "source": "seed"
+      },
+      {
+        "field": "competitors",
+        "status": "PASS",
+        "detail": "competitorSlugs=4",
+        "source": "seed"
+      },
+      {
+        "field": "affiliate",
+        "status": "PASS",
+        "detail": "No affiliate relationship (explicit)",
+        "source": "seed"
+      },
+      {
+        "field": "source_provenance",
+        "status": "PASS",
+        "detail": "seed sources=0, enrichment sourceIds=2",
+        "source": "enrichment"
+      },
+      {
+        "field": "verification_date",
+        "status": "PASS",
+        "detail": "Latest verification/research signal: 2026-08-18T08:00:00.000Z",
+        "source": "enrichment"
+      }
+    ],
+    "passCount": 18,
+    "partialCount": 0,
+    "missingCount": 0,
+    "unknownCount": 0,
+    "score": 100
+  },
+  "decisionHub": {
+    "whatItIs": "Workable is a recruiting platform with optional HRIS-lite (onboarding, time off, employee directory) sold on headcount bands. Published 1–20 employee annual floors: Standard $299/mo ($3,588/yr), Premier $599, Enterprise $719. 15-day Standard trial, no credit card. Standard add-ons include texting, video interviews, and assessments; Premier/Enterprise bundle many of those. Workable Agent AI uses credits (3,000 included on paid accounts; not in the trial). Prices rise for bands above 20 employees (not all published).",
+    "bestFor": [
+      "SMB and lower mid-market teams that want a dedicated ATS with published prices",
+      "Hiring teams that want a 15-day trial before a custom enterprise ATS quote",
+      "Companies that may use Workable’s light HR features without buying a full HRIS",
+      "small-business / recruiting: Workable fit for small-business recruiting teams in the ats-recruiting job cluster, from first-party positioning and HR Priority-1 research.",
+      "mid-market / recruiting: Workable fit for mid-market recruiting teams in the ats-recruiting job cluster, from first-party positioning and HR Priority-1 research."
+    ],
+    "notIdealFor": [
+      "Structured-hiring enterprises standardised on Greenhouse kits/scorecards",
+      "Teams that need a free ATS tier (Breezy Bootstrap)",
+      "Buyers whose primary job is payroll or core HRIS",
+      "Published $299 floor is the 1–20 employee band — larger companies pay more (often quote)",
+      "Standard add-ons (texting, video, assessments) can nearly double TCO",
+      "Workable Agent AI is credit-based and excluded from the free trial"
+    ],
+    "coreCapabilities": [
+      "applicant tracking",
+      "career site job boards",
+      "interview scheduling",
+      "core hris",
+      "payroll processing",
+      "time attendance",
+      "employee training paths",
+      "hris integrations"
+    ],
+    "pricingSummary": "3 documented plans · entry paid: Standard · trial documented on at least one plan",
+    "keyTradeoffs": [
+      "Published $299 floor is the 1–20 employee band — larger companies pay more (often quote)",
+      "Standard add-ons (texting, video, assessments) can nearly double TCO",
+      "Workable Agent AI is credit-based and excluded from the free trial",
+      "HRIS/payroll-prep features are light versus BambooHR/Rippling — still an ATS-first product",
+      "No free plan"
+    ],
+    "alternatives": [
+      {
+        "slug": "greenhouse",
+        "name": "Greenhouse"
+      },
+      {
+        "slug": "breezy-hr",
+        "name": "Breezy HR"
+      },
+      {
+        "slug": "bamboohr",
+        "name": "BambooHR"
+      },
+      {
+        "slug": "lever",
+        "name": "Lever"
+      },
+      {
+        "slug": "ashby",
+        "name": "Ashby"
+      }
+    ],
+    "importantComparisons": [
+      {
+        "slug": "greenhouse-vs-workable",
+        "title": "Greenhouse vs Workable",
+        "href": "/compare/greenhouse-vs-workable/"
+      },
+      {
+        "slug": "breezy-hr-vs-workable",
+        "title": "Breezy HR vs Workable",
+        "href": "/compare/breezy-hr-vs-workable/"
+      },
+      {
+        "slug": "7shifts-vs-workable",
+        "title": "7shifts vs Workable",
+        "href": "/compare/7shifts-vs-workable/"
+      },
+      {
+        "slug": "adp-workforce-now-vs-workable",
+        "title": "ADP Workforce Now vs Workable",
+        "href": "/compare/adp-workforce-now-vs-workable/"
+      },
+      {
+        "slug": "ashby-vs-workable",
+        "title": "Ashby vs Workable",
+        "href": "/compare/ashby-vs-workable/"
+      },
+      {
+        "slug": "bamboohr-vs-workable",
+        "title": "BambooHR vs Workable",
+        "href": "/compare/bamboohr-vs-workable/"
+      }
+    ],
+    "relevantGuides": [
+      {
+        "slug": "workable-implementation",
+        "title": "Workable Implementation: 30/60/90 HR Rollout That Sticks",
+        "href": "/guides/workable-implementation/"
+      },
+      {
+        "slug": "workable-migration",
+        "title": "Workable Migration: Move People Data Without Losing Trust",
+        "href": "/guides/workable-migration/"
+      },
+      {
+        "slug": "workable-setup",
+        "title": "Workable Setup: Day-Zero Path to a Working HR Loop",
+        "href": "/guides/workable-setup/"
+      },
+      {
+        "slug": "workable-plans",
+        "title": "Workable Plans: Seats, Hubs, and Qualifying Tiers",
+        "href": "/guides/workable-plans/"
+      },
+      {
+        "slug": "is-workable-worth-it",
+        "title": "Is Workable Worth It? Fit Scenarios Before You Buy",
+        "href": "/guides/is-workable-worth-it/"
+      }
+    ],
+    "evidenceState": "Research/data-based (no completed hands-on test) · Latest verification/research signal: 2026-08-18T08:00:00.000Z · Editorial assessment: approved",
+    "nextDecisionStep": "Compare against peers: Greenhouse vs Workable",
+    "missingSections": []
+  },
+  "dependents": [
+    {
+      "kind": "guide",
+      "slug": "workable-implementation",
+      "path": "/guides/workable-implementation/"
+    },
+    {
+      "kind": "guide",
+      "slug": "workable-migration",
+      "path": "/guides/workable-migration/"
+    },
+    {
+      "kind": "guide",
+      "slug": "workable-setup",
+      "path": "/guides/workable-setup/"
+    },
+    {
+      "kind": "guide",
+      "slug": "workable-plans",
+      "path": "/guides/workable-plans/"
+    },
+    {
+      "kind": "guide",
+      "slug": "is-workable-worth-it",
+      "path": "/guides/is-workable-worth-it/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "greenhouse-vs-workable",
+      "path": "/compare/greenhouse-vs-workable/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "breezy-hr-vs-workable",
+      "path": "/compare/breezy-hr-vs-workable/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "7shifts-vs-workable",
+      "path": "/compare/7shifts-vs-workable/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "adp-workforce-now-vs-workable",
+      "path": "/compare/adp-workforce-now-vs-workable/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "ashby-vs-workable",
+      "path": "/compare/ashby-vs-workable/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "bamboohr-vs-workable",
+      "path": "/compare/bamboohr-vs-workable/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "bolt-for-business-vs-workable",
+      "path": "/compare/bolt-for-business-vs-workable/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "carepatron-vs-workable",
+      "path": "/compare/carepatron-vs-workable/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "dayforce-vs-workable",
+      "path": "/compare/dayforce-vs-workable/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "deputy-vs-workable",
+      "path": "/compare/deputy-vs-workable/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "gusto-vs-workable",
+      "path": "/compare/gusto-vs-workable/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "hibob-vs-workable",
+      "path": "/compare/hibob-vs-workable/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "homebase-vs-workable",
+      "path": "/compare/homebase-vs-workable/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "lever-vs-workable",
+      "path": "/compare/lever-vs-workable/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "oracle-hcm-vs-workable",
+      "path": "/compare/oracle-hcm-vs-workable/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "paycor-vs-workable",
+      "path": "/compare/paycor-vs-workable/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "paylocity-vs-workable",
+      "path": "/compare/paylocity-vs-workable/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "personio-vs-workable",
+      "path": "/compare/personio-vs-workable/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "rippling-vs-workable",
+      "path": "/compare/rippling-vs-workable/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "trainual-vs-workable",
+      "path": "/compare/trainual-vs-workable/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "ukg-pro-vs-workable",
+      "path": "/compare/ukg-pro-vs-workable/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "when-i-work-vs-workable",
+      "path": "/compare/when-i-work-vs-workable/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "workable-vs-workday",
+      "path": "/compare/workable-vs-workday/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "freshteam-vs-workable",
+      "path": "/compare/freshteam-vs-workable/"
+    },
+    {
+      "kind": "alternatives",
+      "slug": "workable",
+      "path": "/alternatives/workable/"
+    },
+    {
+      "kind": "pricing",
+      "slug": "workable",
+      "path": "/software/workable/pricing/"
+    },
+    {
+      "kind": "tools",
+      "slug": "hr-cost-calculator",
+      "path": "/tools/hr-cost-calculator/"
+    }
+  ],
+  "dependentsNeedingRefresh": [],
+  "remediation": [],
+  "notes": [
+    "fieldAudit score=100",
+    "decisionHub bestFor=5 notIdeal=6",
+    "dependents=32"
+  ],
+  "materiallyImproved": true
+}

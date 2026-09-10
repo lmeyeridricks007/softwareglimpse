@@ -51,6 +51,8 @@ import {
   faqPageJsonLd,
   webPageJsonLd,
 } from "@/seo/structured-data";
+import { InternalLinkingModules } from "@/components/internal-linking";
+import { buildInjectionOnlyLinkPlan } from "@/services/internal-linking";
 
 type Props = {
   params: Promise<{ slug: string }>;
@@ -325,6 +327,16 @@ export default async function IndustryDetailPage({ params }: Props) {
           compareHref={model.compareHref}
           requirementsHref={`/tools/crm-requirements-builder/?industry=${model.industry.slug}&start=1`}
         />
+
+        <div className="mx-auto mt-10 w-full max-w-[var(--sg-container-wide)] px-4 sm:px-6">
+          <InternalLinkingModules
+            plan={buildInjectionOnlyLinkPlan(
+              `/industries/${model.industry.slug}/`,
+              "industry",
+            )}
+            showParentInline={false}
+          />
+        </div>
 
         <NewsletterCard source="article-end" hideWhenDisabled />
         <TrustStrip />

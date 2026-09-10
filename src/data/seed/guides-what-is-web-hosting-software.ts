@@ -1,4 +1,4 @@
-import type { GuidePage } from "@/domain";
+import type { GuidePageInput } from "@/domain";
 import type { z } from "zod";
 import type { GuideContentBlockSchema } from "@/domain";
 import { tier29GuideScheduledAt } from "@/data/config/publishing/tier-29-web-hosting-launch-2027-08-01";
@@ -53,7 +53,7 @@ const blocks: GuideBlockInput[] = [
   },
 ];
 
-function metadata(): GuidePage["metadata"] {
+function metadata(): GuidePageInput["metadata"] {
   return SCHEDULED_AT
     ? {
         status: "scheduled",
@@ -73,7 +73,7 @@ function metadata(): GuidePage["metadata"] {
       };
 }
 
-export const whatIsWebHostingSoftwareGuide: GuidePage = {
+export const whatIsWebHostingSoftwareGuide: GuidePageInput = {
   id: "guide-what-is-web-hosting-software",
   slug: SLUG,
   title: "What Is Web Hosting Software?",
@@ -96,7 +96,7 @@ export const whatIsWebHostingSoftwareGuide: GuidePage = {
     "web-hosting-vs-it-development-software",
     "what-is-it-development-software",
   ],
-  blocks: blocks as GuidePage["blocks"],
+  blocks: blocks as GuidePageInput["blocks"],
   checklist: [],
   sections: [],
   faq: [],
@@ -107,6 +107,6 @@ export const whatIsWebHostingSoftwareGuide: GuidePage = {
     description:
       "Control panels, managed WordPress, and server admin — how web hosting differs from observability and ITSM.",
     canonicalPath: `/guides/${SLUG}/`,
-    indexable: !SCHEDULED_AT,
+    indexable: true,
   },
 };

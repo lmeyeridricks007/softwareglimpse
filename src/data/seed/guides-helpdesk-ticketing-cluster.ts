@@ -1,11 +1,11 @@
-import type { GuidePage } from "@/domain";
+import type { GuidePageInput } from "@/domain";
 import { tier24GuideScheduledAt } from "@/data/config/publishing/tier-24-helpdesk-ticketing-launch-2027-07-01";
 import { teachingExpansionFor } from "./guides-category-teaching-expansion";
 import { howToChooseHelpdeskTicketingSoftwareGuide } from "./guides-how-to-choose-helpdesk-ticketing-software";
 import { helpdeskTicketingPricingGuide } from "./guides-helpdesk-ticketing-pricing-guide";
 import { whatIsHelpdeskTicketingSoftwareGuide } from "./guides-what-is-helpdesk-ticketing-software";
 
-function withTier24Schedule(guide: GuidePage): GuidePage {
+function withTier24Schedule(guide: GuidePageInput): GuidePageInput {
   const scheduledAt = tier24GuideScheduledAt(guide.slug);
   if (!scheduledAt) return guide;
   return {
@@ -15,15 +15,11 @@ function withTier24Schedule(guide: GuidePage): GuidePage {
       status: "scheduled",
       scheduledAt,
     },
-    seo: {
-      ...guide.seo,
-      indexable: false,
-    },
   };
 }
 
 /** Helpdesk & ticketing subcategory guides — July 2027 launch wave. */
-export const helpdeskTicketingCategoryGuides: GuidePage[] = [
+export const helpdeskTicketingCategoryGuides: GuidePageInput[] = [
   whatIsHelpdeskTicketingSoftwareGuide,
   howToChooseHelpdeskTicketingSoftwareGuide,
   helpdeskTicketingPricingGuide,

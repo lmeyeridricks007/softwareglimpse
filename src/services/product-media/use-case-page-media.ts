@@ -59,7 +59,7 @@ export type UseCaseSeeInActionCard = {
 };
 
 /** Map hub / industry use-case slugs to ResearchMedia useCaseIds. */
-export function useCaseMediaAliases(useCaseSlug: string): string[] {
+export function resolveUseCaseMediaAliases(useCaseSlug: string): string[] {
   const map: Record<string, string[]> = {
     "lead-management": [
       "lead-management",
@@ -128,7 +128,7 @@ function matchesUseCaseIds(
 ): boolean {
   const ids = new Set([
     ctx.useCaseSlug,
-    ...(ctx.useCaseAliases ?? useCaseMediaAliases(ctx.useCaseSlug)),
+    ...(ctx.useCaseAliases ?? resolveUseCaseMediaAliases(ctx.useCaseSlug)),
   ]);
   return media.useCaseIds.some((id) => ids.has(id));
 }

@@ -2,6 +2,7 @@ import { loadEnrichment } from "@/data/research/store";
 import { getUseCases, getAllSoftwareUnfiltered } from "@/data";
 import { isOfficialVendorMedia } from "@/domain";
 import { getUseCaseHubProfile } from "@/data/use-case-hub";
+import { resolveUseCaseMediaAliases } from "@/services/product-media/use-case-page-media";
 import type {
   UseCaseVisualCoverageProduct,
   UseCaseVisualCoverageReport,
@@ -22,15 +23,11 @@ const ACTIVE_VIDEO_STATUSES = new Set([
   "embedding-disabled",
 ]);
 
-function useCaseAliases(useCaseSlug: string): string[] {
-  return [useCaseSlug];
-}
-
 function mediaMatchesUseCase(
   useCaseIds: string[],
   useCaseSlug: string,
 ): boolean {
-  const aliases = new Set(useCaseAliases(useCaseSlug));
+  const aliases = new Set(resolveUseCaseMediaAliases(useCaseSlug));
   return useCaseIds.some((id) => aliases.has(id));
 }
 

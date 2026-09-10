@@ -1,4 +1,4 @@
-import type { GuidePage } from "@/domain";
+import type { GuidePageInput } from "@/domain";
 import type { z } from "zod";
 import type { GuideContentBlockSchema } from "@/domain";
 import { tier14GuideScheduledAt } from "@/data/config/publishing/tier-14-webinar-virtual-events-launch-2026-11-01";
@@ -85,7 +85,7 @@ const blocks: GuideBlockInput[] = [
   },
 ];
 
-function metadata(): GuidePage["metadata"] {
+function metadata(): GuidePageInput["metadata"] {
   return SCHEDULED_AT
     ? {
         status: "scheduled",
@@ -105,7 +105,7 @@ function metadata(): GuidePage["metadata"] {
       };
 }
 
-export const whatIsWebinarVirtualEventsSoftwareGuide: GuidePage = {
+export const whatIsWebinarVirtualEventsSoftwareGuide: GuidePageInput = {
   id: "guide-what-is-webinar-virtual-events-software",
   slug: SLUG,
   title: "What Is Webinar & Virtual Events Software?",
@@ -133,7 +133,7 @@ export const whatIsWebinarVirtualEventsSoftwareGuide: GuidePage = {
     "how-to-choose-webinar-virtual-events-software",
     "webinar-virtual-events-pricing-guide",
   ],
-  blocks: blocks as GuidePage["blocks"],
+  blocks: blocks as GuidePageInput["blocks"],
   checklist: [],
   sections: [],
   faq: [],
@@ -144,6 +144,6 @@ export const whatIsWebinarVirtualEventsSoftwareGuide: GuidePage = {
     description:
       "Definition of webinar hosting, virtual events, evergreen automation, and live production — distinct from MAP and meetings software.",
     canonicalPath: `/guides/${SLUG}/`,
-    indexable: !SCHEDULED_AT,
+    indexable: true,
   },
 };

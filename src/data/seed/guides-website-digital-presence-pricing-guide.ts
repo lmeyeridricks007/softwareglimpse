@@ -1,4 +1,4 @@
-import type { GuidePage } from "@/domain";
+import type { GuidePageInput } from "@/domain";
 import type { z } from "zod";
 import type { GuideContentBlockSchema } from "@/domain";
 import { tier16GuideScheduledAt } from "@/data/config/publishing/tier-16-website-digital-presence-launch-2027-01-01";
@@ -34,7 +34,7 @@ const blocks: GuideBlockInput[] = [
   },
 ];
 
-function metadata(): GuidePage["metadata"] {
+function metadata(): GuidePageInput["metadata"] {
   return SCHEDULED_AT
     ? {
         status: "scheduled",
@@ -54,7 +54,7 @@ function metadata(): GuidePage["metadata"] {
       };
 }
 
-export const websiteDigitalPresencePricingGuide: GuidePage = {
+export const websiteDigitalPresencePricingGuide: GuidePageInput = {
   id: "guide-website-digital-presence-pricing-guide",
   slug: SLUG,
   title: "Website & Digital Presence Software Pricing Guide",
@@ -74,7 +74,7 @@ export const websiteDigitalPresencePricingGuide: GuidePage = {
     "what-is-website-digital-presence-software",
     "how-to-choose-website-digital-presence-software",
   ],
-  blocks: blocks as GuidePage["blocks"],
+  blocks: blocks as GuidePageInput["blocks"],
   checklist: [],
   sections: [],
   faq: [],
@@ -85,6 +85,6 @@ export const websiteDigitalPresencePricingGuide: GuidePage = {
     description:
       "How to budget website software — plans, transaction fees, commerce gates, and panel licensing.",
     canonicalPath: `/guides/${SLUG}/`,
-    indexable: !SCHEDULED_AT,
+    indexable: true,
   },
 };

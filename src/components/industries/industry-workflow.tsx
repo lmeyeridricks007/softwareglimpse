@@ -74,6 +74,7 @@ export function IndustryWorkflow({
           label: step.label,
           detail: step.detail,
           goal: step.goal ?? step.detail,
+          activities: [],
           useCases: [],
           capabilities: [],
           requirements: [],

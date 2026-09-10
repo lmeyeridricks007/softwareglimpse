@@ -1,0 +1,546 @@
+{
+  "slug": "hubspot",
+  "updatedAt": "2026-09-09T18:29:41.093Z",
+  "version": "1.0.0",
+  "fieldAudit": {
+    "slug": "hubspot",
+    "checkedAt": "2026-09-09T18:29:41.092Z",
+    "items": [
+      {
+        "field": "name",
+        "status": "PASS",
+        "detail": "Name: HubSpot",
+        "source": "seed"
+      },
+      {
+        "field": "product_status",
+        "status": "PASS",
+        "detail": "productLifecycle=active",
+        "source": "seed"
+      },
+      {
+        "field": "canonical_vendor",
+        "status": "PASS",
+        "detail": "Vendor: HubSpot",
+        "source": "seed"
+      },
+      {
+        "field": "category",
+        "status": "PASS",
+        "detail": "primaryCategorySlug=crm",
+        "source": "seed"
+      },
+      {
+        "field": "description",
+        "status": "PASS",
+        "detail": "Description present (AI-powered customer platform with free forever CRM, plus paid Smart CRM seats an…)",
+        "source": "seed"
+      },
+      {
+        "field": "target_audience",
+        "status": "PASS",
+        "detail": "Sizes=3, teams=3, assessment bestFor=4",
+        "source": "assessment"
+      },
+      {
+        "field": "use_cases",
+        "status": "PASS",
+        "detail": "useCaseSlugs=12",
+        "source": "seed"
+      },
+      {
+        "field": "capabilities",
+        "status": "PASS",
+        "detail": "featureRatings=0, enrichment features=17",
+        "source": "enrichment"
+      },
+      {
+        "field": "pricing",
+        "status": "PASS",
+        "detail": "Pricing envelope present",
+        "source": "enrichment"
+      },
+      {
+        "field": "plans",
+        "status": "PASS",
+        "detail": "plans=4",
+        "source": "enrichment"
+      },
+      {
+        "field": "free_plan",
+        "status": "PASS",
+        "detail": "Free plan documented",
+        "source": "enrichment"
+      },
+      {
+        "field": "trial",
+        "status": "PASS",
+        "detail": "Trial documented on plans/pricing",
+        "source": "enrichment"
+      },
+      {
+        "field": "integrations",
+        "status": "PASS",
+        "detail": "integrationSlugs=0, enrichment=3",
+        "source": "enrichment"
+      },
+      {
+        "field": "alternatives",
+        "status": "PASS",
+        "detail": "alternativeSlugs=4",
+        "source": "seed"
+      },
+      {
+        "field": "competitors",
+        "status": "PASS",
+        "detail": "competitorSlugs=3",
+        "source": "seed"
+      },
+      {
+        "field": "affiliate",
+        "status": "PASS",
+        "detail": "Affiliate enabled with tracking URL",
+        "source": "seed"
+      },
+      {
+        "field": "source_provenance",
+        "status": "PASS",
+        "detail": "seed sources=0, enrichment sourceIds=6",
+        "source": "enrichment"
+      },
+      {
+        "field": "verification_date",
+        "status": "PASS",
+        "detail": "Latest verification/research signal: 2026-08-18T18:20:00.000Z",
+        "source": "enrichment"
+      }
+    ],
+    "passCount": 18,
+    "partialCount": 0,
+    "missingCount": 0,
+    "unknownCount": 0,
+    "score": 100
+  },
+  "decisionHub": {
+    "whatItIs": "AI-powered customer platform with free forever CRM, plus paid Smart CRM seats and Sales/Marketing/Service hubs for growing teams.",
+    "bestFor": [
+      "SMB and mid-market teams wanting free CRM now and room to expand into hubs later",
+      "Organizations aligning marketing + sales + service on one customer platform",
+      "Teams that value Marketplace integrations and AI assistants (Breeze)",
+      "Buyers who can start on Free/Starter before committing to Professional hub seats",
+      "small-business: Free CRM + Starter Customer Platform seats fit early teams; hub complexity is optional.",
+      "mid-market: Professional/Enterprise hubs and suite breadth scale with multi-team GTM."
+    ],
+    "notIdealFor": [
+      "Teams that need a simple single-price sales CRM without hub/seat complexity (consider Pipedrive)",
+      "Buyers who want native dialer-first workflows as the primary product story (consider Close/Freshsales)",
+      "Orgs unwilling to manage Professional/Enterprise packaging and possible onboarding fees",
+      "Smart CRM / Customer Platform seats and Sales Hub seats are separate ladders with different list prices; buying 'HubSpot' often means mixing Free CRM, Smart CRM seats, and hub seats.",
+      "Sales Hub Professional starts at $100/month per seat on the Product & Services Catalog and the Sales product page (re-checked 2026-08-18). HubSpot’s Sales pricing page also shows $90/mo/seat billed annually vs $100 monthly, plus required Professional onboarding ($1,500). Starter marketing prices show new-customer discounts (*).",
+      "Full GTM stack (Marketing Hub, Service Hub, etc.) is sold as additional hubs with their own seat/contact pricing — not included in Free CRM alone."
+    ],
+    "coreCapabilities": [
+      "contact management",
+      "lead management",
+      "pipeline management",
+      "deal management",
+      "custom fields",
+      "custom pipelines",
+      "email sync",
+      "email sequences"
+    ],
+    "pricingSummary": "4 documented plans · 1 free · entry paid: Starter (Smart CRM / Customer Platform) · trial documented on at least one plan",
+    "keyTradeoffs": [
+      "Smart CRM / Customer Platform seats and Sales Hub seats are separate ladders with different list prices; buying 'HubSpot' often means mixing Free CRM, Smart CRM seats, and hub seats.",
+      "Sales Hub Professional starts at $100/month per seat on the Product & Services Catalog and the Sales product page (re-checked 2026-08-18). HubSpot’s Sales pricing page also shows $90/mo/seat billed annually vs $100 monthly, plus required Professional onboarding ($1,500). Starter marketing prices show new-customer discounts (*).",
+      "Full GTM stack (Marketing Hub, Service Hub, etc.) is sold as additional hubs with their own seat/contact pricing — not included in Free CRM alone.",
+      "Administration and packaging complexity rise sharply once multiple Professional/Enterprise hubs and seat types (Core vs Sales seats) are combined.",
+      "Agentic customer platform with free Smart CRM and premium hubs for marketing, sales, and service on one system of record. (audience: SMB, mid-market)"
+    ],
+    "alternatives": [
+      {
+        "slug": "salesforce",
+        "name": "Salesforce"
+      },
+      {
+        "slug": "pipedrive",
+        "name": "Pipedrive"
+      },
+      {
+        "slug": "freshsales",
+        "name": "Freshsales"
+      },
+      {
+        "slug": "dynamics-365",
+        "name": "Dynamics 365"
+      }
+    ],
+    "importantComparisons": [
+      {
+        "slug": "act-vs-hubspot",
+        "title": "ACT! vs HubSpot",
+        "href": "/compare/act-vs-hubspot/"
+      },
+      {
+        "slug": "affinity-vs-hubspot",
+        "title": "Affinity vs HubSpot",
+        "href": "/compare/affinity-vs-hubspot/"
+      },
+      {
+        "slug": "agile-crm-vs-hubspot",
+        "title": "Agile CRM vs HubSpot",
+        "href": "/compare/agile-crm-vs-hubspot/"
+      },
+      {
+        "slug": "apptivo-vs-hubspot",
+        "title": "Apptivo vs HubSpot",
+        "href": "/compare/apptivo-vs-hubspot/"
+      },
+      {
+        "slug": "attio-vs-hubspot",
+        "title": "Attio vs HubSpot",
+        "href": "/compare/attio-vs-hubspot/"
+      },
+      {
+        "slug": "bitrix24-vs-hubspot",
+        "title": "Bitrix24 vs HubSpot",
+        "href": "/compare/bitrix24-vs-hubspot/"
+      }
+    ],
+    "relevantGuides": [
+      {
+        "slug": "what-is-hubspot",
+        "title": "What Is HubSpot?",
+        "href": "/guides/what-is-hubspot/"
+      },
+      {
+        "slug": "hubspot-implementation",
+        "title": "HubSpot Implementation: 30/60/90 Rollout That Sticks",
+        "href": "/guides/hubspot-implementation/"
+      },
+      {
+        "slug": "hubspot-migration",
+        "title": "HubSpot Migration: Move Data Without Losing the Thread",
+        "href": "/guides/hubspot-migration/"
+      },
+      {
+        "slug": "hubspot-setup",
+        "title": "HubSpot Setup: Day-Zero Path to a Working Pipeline",
+        "href": "/guides/hubspot-setup/"
+      },
+      {
+        "slug": "hubspot-plans",
+        "title": "HubSpot Plans: Free vs Paid and Qualifying Tiers",
+        "href": "/guides/hubspot-plans/"
+      },
+      {
+        "slug": "is-hubspot-worth-it",
+        "title": "Is HubSpot Worth It? Fit Scenarios Before You Buy",
+        "href": "/guides/is-hubspot-worth-it/"
+      }
+    ],
+    "evidenceState": "Research/data-based (no completed hands-on test) · Latest verification/research signal: 2026-08-18T18:20:00.000Z · Editorial assessment: approved",
+    "nextDecisionStep": "Compare against peers: ACT! vs HubSpot",
+    "missingSections": []
+  },
+  "dependents": [
+    {
+      "kind": "guide",
+      "slug": "what-is-hubspot",
+      "path": "/guides/what-is-hubspot/"
+    },
+    {
+      "kind": "guide",
+      "slug": "hubspot-implementation",
+      "path": "/guides/hubspot-implementation/"
+    },
+    {
+      "kind": "guide",
+      "slug": "hubspot-migration",
+      "path": "/guides/hubspot-migration/"
+    },
+    {
+      "kind": "guide",
+      "slug": "hubspot-setup",
+      "path": "/guides/hubspot-setup/"
+    },
+    {
+      "kind": "guide",
+      "slug": "hubspot-plans",
+      "path": "/guides/hubspot-plans/"
+    },
+    {
+      "kind": "guide",
+      "slug": "is-hubspot-worth-it",
+      "path": "/guides/is-hubspot-worth-it/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "act-vs-hubspot",
+      "path": "/compare/act-vs-hubspot/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "affinity-vs-hubspot",
+      "path": "/compare/affinity-vs-hubspot/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "agile-crm-vs-hubspot",
+      "path": "/compare/agile-crm-vs-hubspot/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "apptivo-vs-hubspot",
+      "path": "/compare/apptivo-vs-hubspot/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "attio-vs-hubspot",
+      "path": "/compare/attio-vs-hubspot/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "bitrix24-vs-hubspot",
+      "path": "/compare/bitrix24-vs-hubspot/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "capsule-vs-hubspot",
+      "path": "/compare/capsule-vs-hubspot/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "close-vs-hubspot",
+      "path": "/compare/close-vs-hubspot/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "cloze-vs-hubspot",
+      "path": "/compare/cloze-vs-hubspot/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "copper-vs-hubspot",
+      "path": "/compare/copper-vs-hubspot/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "creatio-vs-hubspot",
+      "path": "/compare/creatio-vs-hubspot/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "dynamics-365-vs-hubspot",
+      "path": "/compare/dynamics-365-vs-hubspot/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "folk-vs-hubspot",
+      "path": "/compare/folk-vs-hubspot/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "freshsales-vs-hubspot",
+      "path": "/compare/freshsales-vs-hubspot/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "hubspot-vs-insightly",
+      "path": "/compare/hubspot-vs-insightly/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "hubspot-vs-keap",
+      "path": "/compare/hubspot-vs-keap/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "hubspot-vs-mailchimp",
+      "path": "/compare/hubspot-vs-mailchimp/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "hubspot-vs-monday-sales-crm",
+      "path": "/compare/hubspot-vs-monday-sales-crm/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "hubspot-vs-netsuite",
+      "path": "/compare/hubspot-vs-netsuite/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "hubspot-vs-nimble",
+      "path": "/compare/hubspot-vs-nimble/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "hubspot-vs-nutshell",
+      "path": "/compare/hubspot-vs-nutshell/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "hubspot-vs-oracle-cx",
+      "path": "/compare/hubspot-vs-oracle-cx/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "hubspot-vs-pardot",
+      "path": "/compare/hubspot-vs-pardot/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "hubspot-vs-pega",
+      "path": "/compare/hubspot-vs-pega/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "hubspot-vs-pipedrive",
+      "path": "/compare/hubspot-vs-pipedrive/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "hubspot-vs-pipelinepro",
+      "path": "/compare/hubspot-vs-pipelinepro/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "hubspot-vs-podio",
+      "path": "/compare/hubspot-vs-podio/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "hubspot-vs-salesflare",
+      "path": "/compare/hubspot-vs-salesflare/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "hubspot-vs-salesforce",
+      "path": "/compare/hubspot-vs-salesforce/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "hubspot-vs-sap",
+      "path": "/compare/hubspot-vs-sap/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "hubspot-vs-siebel",
+      "path": "/compare/hubspot-vs-siebel/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "hubspot-vs-streak",
+      "path": "/compare/hubspot-vs-streak/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "hubspot-vs-sugarcrm",
+      "path": "/compare/hubspot-vs-sugarcrm/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "hubspot-vs-wealthbox",
+      "path": "/compare/hubspot-vs-wealthbox/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "hubspot-vs-zendesk",
+      "path": "/compare/hubspot-vs-zendesk/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "hubspot-vs-zoho-crm",
+      "path": "/compare/hubspot-vs-zoho-crm/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "hubspot-vs-tidio",
+      "path": "/compare/hubspot-vs-tidio/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "activecampaign-vs-hubspot",
+      "path": "/compare/activecampaign-vs-hubspot/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "hubspot-vs-marketo",
+      "path": "/compare/hubspot-vs-marketo/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "getresponse-vs-hubspot",
+      "path": "/compare/getresponse-vs-hubspot/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "aweber-vs-hubspot",
+      "path": "/compare/aweber-vs-hubspot/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "campaign-monitor-vs-hubspot",
+      "path": "/compare/campaign-monitor-vs-hubspot/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "hubspot-vs-klaviyo",
+      "path": "/compare/hubspot-vs-klaviyo/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "brevo-vs-hubspot",
+      "path": "/compare/brevo-vs-hubspot/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "customer-io-vs-hubspot",
+      "path": "/compare/customer-io-vs-hubspot/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "braze-vs-hubspot",
+      "path": "/compare/braze-vs-hubspot/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "hubspot-vs-iterable",
+      "path": "/compare/hubspot-vs-iterable/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "hubspot-vs-whatconverts",
+      "path": "/compare/hubspot-vs-whatconverts/"
+    },
+    {
+      "kind": "alternatives",
+      "slug": "hubspot",
+      "path": "/alternatives/hubspot/"
+    },
+    {
+      "kind": "pricing",
+      "slug": "hubspot",
+      "path": "/software/hubspot/pricing/"
+    },
+    {
+      "kind": "best",
+      "slug": "crm-software",
+      "path": "/best/crm-software/"
+    },
+    {
+      "kind": "tools",
+      "slug": "crm-cost-calculator",
+      "path": "/tools/crm-cost-calculator/"
+    }
+  ],
+  "dependentsNeedingRefresh": [],
+  "remediation": [],
+  "notes": [
+    "fieldAudit score=100",
+    "decisionHub bestFor=6 notIdeal=6",
+    "dependents=58"
+  ],
+  "materiallyImproved": false
+}

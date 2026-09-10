@@ -1,0 +1,191 @@
+{
+  "generatedAt": "2026-09-09T08:48:00.000Z",
+  "audit": "FULL_REVIEW_3",
+  "gitCommit": "0a2dd4b489dca4a322cb98585cb3e17962b4973d",
+  "gitCommitShort": "0a2dd4b",
+  "previousOverall": 54,
+  "previousGeneratedAt": "2026-09-08T23:26:09.024Z",
+  "previousAudit": "FULL_REVIEW_2",
+  "originalOverall": 49,
+  "gscDataThrough": "2026-08-13",
+  "gscImportDate": "2026-08-15",
+  "gscFreshness": "STALE — identical export window as Review #2 (not comparable for post-execution lift)",
+  "scores": {
+    "technicalSeo": 78,
+    "crawlEfficiency": 80,
+    "indexability": 78,
+    "contentQuality": 63,
+    "contentUniqueness": 43,
+    "softwareDataQuality": 72,
+    "editorialCredibility": 64,
+    "internalLinking": 68,
+    "searchOpportunityExecution": 55,
+    "authorityBacklinks": 18,
+    "originalResearch": 45,
+    "evidenceTesting": 35,
+    "pricingFreshness": 64,
+    "ux": 54,
+    "performance": 50,
+    "commercialTracking": 42,
+    "aiVisibilityMeasurement": 22
+  },
+  "rationale": {
+    "technicalSeo": "R2 held green; growth/guides-audit/KG CLIs ran clean this audit — no new eng debt claimed as a win",
+    "crawlEfficiency": "Sitemap reconcile disc=0 held; www deploy still external",
+    "indexability": "Registry orphans=0 held; INDEXABLE≈3155 reconcile; GSC coverage still stale",
+    "contentQuality": "Growth-exec-50: 42 content-improved; factory-pack-100: 73 materially improved — scored for page outcomes not new tooling",
+    "contentUniqueness": "Estate factory near-dup still 1272 / limited-unique 1373 (FLAT). Wave-level semantic risk cut on 100 packs only → +1 not a factory breakthrough",
+    "softwareDataQuality": "DATA_VERIFIED reconcile accepted 85→115 (+30); dashboard shows 117 — reconcile is policy source of truth",
+    "editorialCredibility": "HANDS_ON still 0; top-10 packs drafted NOT completed by humans",
+    "internalLinking": "KG still 6785/26853; IMPROVE orphan sample still 80/80 despite overlay link applies — no graph outcome",
+    "searchOpportunityExecution": "Lane A+B growth batch executed (29 Lane A); 36 lifecycle promotions on 2026-09-09; GSC clicks still 8 stale",
+    "authorityBacklinks": "NOT_CONNECTED — no REAL Ahrefs/Semrush/backlinks export",
+    "originalResearch": "CRM pricing research live; under-amplified; no new earned citations proven",
+    "evidenceTesting": "DV +30; HO=0; evidence blockers remain (403/timeout/plan-hit)",
+    "pricingFreshness": "Evidence wave + enrichment stamps; monitor signals remain",
+    "ux": "Buyer islands credible; estate average still programmatic",
+    "performance": "No new field CWV; homepage weight not re-litigated",
+    "commercialTracking": "Clicks REAL(0); conversions NOT_CONNECTED; 94 programmes",
+    "aiVisibilityMeasurement": "FIXTURE gated → NOT_CONNECTED"
+  },
+  "overall": 56,
+  "evidenceSnapshot": {
+    "dataVerifiedAccepted": {
+      "previous": 85,
+      "current": 115,
+      "delta": 30,
+      "dashboardShows": 117,
+      "sourceOfTruth": "data/seo/data-verified-reconciliation.json accepted"
+    },
+    "researched": {
+      "previous": 228,
+      "current": 198,
+      "note": "researchOnly band on dashboard; not a regression claim — taxonomy split vs R2"
+    },
+    "handsOn": {
+      "previous": 0,
+      "current": 0,
+      "delta": 0
+    },
+    "catalogue": 315,
+    "promotionsSinceReview2": {
+      "previous": 0,
+      "current": 36,
+      "breakdown": {
+        "lifecyclePromotedAt_2026-09-09": 36,
+        "factoryPack100": 21,
+        "growthExec50": 15
+      }
+    },
+    "factoryNearDuplicateRisk": {
+      "previous": 1272,
+      "current": 1272,
+      "delta": 0
+    },
+    "limitedUnique": {
+      "previous": 1373,
+      "current": 1373,
+      "delta": 0
+    },
+    "knowledgeGraph": {
+      "previous": { "nodes": 6785, "edges": 26853 },
+      "current": { "nodes": 6785, "edges": 26853 },
+      "improveOrphanSample": { "previous": "80/80", "current": "80/80" }
+    },
+    "gsc": {
+      "previous": { "clicks": 8, "impressions": 115457, "position": 74.5 },
+      "current": { "clicks": 8, "impressions": 115457, "position": 74.5 },
+      "comparable": false,
+      "reason": "identical STALE window through 2026-08-13"
+    },
+    "authority": {
+      "previous": "NOT_CONNECTED",
+      "current": "NOT_CONNECTED"
+    },
+    "conversions": {
+      "previous": "NOT_CONNECTED",
+      "current": "NOT_CONNECTED"
+    }
+  },
+  "issueStatusCounts": {
+    "resolved": 7,
+    "in_progress": 4,
+    "blocked_external": 4,
+    "deferred": 1,
+    "open": 1
+  },
+  "p0Count": 0,
+  "p1Count": 5,
+  "p2Count": 3,
+  "p3Count": 2,
+  "deployVerdict": "YES_WITH_MINOR_ISSUES",
+  "verification": {
+    "growthDashboard": {
+      "engine": "2.3.0",
+      "generatedAt": "2026-09-09T08:42:44.092Z",
+      "result": "PASS"
+    },
+    "guidesAudit": {
+      "generatedAt": "2026-09-09T08:43:37.307Z",
+      "factoryPacks": 1272,
+      "highNearDup": 1272,
+      "limitedUnique": 1373,
+      "result": "PASS"
+    },
+    "knowledgeGraph": {
+      "nodes": 6785,
+      "edges": 26853,
+      "improveOrphansSample": "80/80",
+      "result": "PASS_FLAT"
+    },
+    "dataVerifiedReconcile": {
+      "accepted": 115,
+      "rejected": 200,
+      "total": 315
+    },
+    "growthExec50": {
+      "processed": 50,
+      "contentImproved": 42,
+      "dataImproved": 7,
+      "linksAdded": 86,
+      "evidenceImproved": 11,
+      "promoted": 15,
+      "promotionRate": 30
+    },
+    "factoryPack100": {
+      "processed": 100,
+      "materiallyImproved": 73,
+      "promoted": 21,
+      "semanticRiskReduced": 100,
+      "stillElevated": 12
+    },
+    "lintTypecheckTestsBuild": {
+      "note": "Not re-run end-to-end in Review #3 — R2 held 0/0/1484/PASS; outcome audit prioritized metric CLIs",
+      "result": "ASSUMED_HELD_FROM_R2"
+    },
+    "sitemap": {
+      "reconcileDisc": 0,
+      "inSitemap": 2963,
+      "INDEXABLE": 3155
+    }
+  },
+  "scoreDelta": {
+    "technicalSeo": { "previous": 78, "current": 78, "delta": 0 },
+    "crawlEfficiency": { "previous": 80, "current": 80, "delta": 0 },
+    "indexability": { "previous": 78, "current": 78, "delta": 0 },
+    "contentQuality": { "previous": 60, "current": 63, "delta": 3 },
+    "contentUniqueness": { "previous": 42, "current": 43, "delta": 1 },
+    "softwareDataQuality": { "previous": 67, "current": 72, "delta": 5 },
+    "editorialCredibility": { "previous": 64, "current": 64, "delta": 0 },
+    "internalLinking": { "previous": 68, "current": 68, "delta": 0 },
+    "searchOpportunityExecution": { "previous": 50, "current": 55, "delta": 5 },
+    "authorityBacklinks": { "previous": 18, "current": 18, "delta": 0 },
+    "originalResearch": { "previous": 45, "current": 45, "delta": 0 },
+    "evidenceTesting": { "previous": 31, "current": 35, "delta": 4 },
+    "pricingFreshness": { "previous": 62, "current": 64, "delta": 2 },
+    "ux": { "previous": 54, "current": 54, "delta": 0 },
+    "performance": { "previous": 50, "current": 50, "delta": 0 },
+    "commercialTracking": { "previous": 42, "current": 42, "delta": 0 },
+    "aiVisibilityMeasurement": { "previous": 22, "current": 22, "delta": 0 }
+  }
+}

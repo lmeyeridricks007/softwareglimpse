@@ -7,7 +7,7 @@
     "permanentOnly": true,
     "flattenChains": true,
     "noHomepageDump": true,
-    "noMiddleware": true
+    "noMiddleware": false
   },
   "redirects": [
     {
@@ -1656,6 +1656,34 @@
       "reason": "Launch-approved explicit_historical mapping (HIGH confidence): Industry topical → industry hub"
     },
     {
+      "source": "/introduction-to-freshsales/",
+      "destination": "/software/freshsales/",
+      "permanent": true,
+      "id": "redir-introduction-to-freshsales",
+      "reason": "Locale-410 equity repair: Product introduction article → Freshsales catalogue page"
+    },
+    {
+      "source": "/introduction-to-pipedrive/",
+      "destination": "/software/pipedrive/",
+      "permanent": true,
+      "id": "redir-introduction-to-pipedrive",
+      "reason": "Locale-410 equity repair: Product introduction article → Pipedrive catalogue page"
+    },
+    {
+      "source": "/introduction-to-salesforce/",
+      "destination": "/software/salesforce/",
+      "permanent": true,
+      "id": "redir-introduction-to-salesforce",
+      "reason": "Locale-410 equity repair: Product introduction article → Salesforce catalogue page"
+    },
+    {
+      "source": "/introduction-to-zoho/",
+      "destination": "/software/zoho-crm/",
+      "permanent": true,
+      "id": "redir-introduction-to-zoho",
+      "reason": "Locale-410 equity repair: Product introduction article → Zoho CRM catalogue page"
+    },
+    {
       "source": "/kaspr-review/",
       "destination": "/software/kaspr/",
       "permanent": true,
@@ -1740,6 +1768,13 @@
       "reason": "Launch-approved explicit_historical mapping (HIGH confidence): CRM topical → category index"
     },
     {
+      "source": "/llm-info/",
+      "destination": "/llms.txt",
+      "permanent": true,
+      "id": "redir-llm-info",
+      "reason": "GEO leftover stub → llms.txt"
+    },
+    {
       "source": "/lusha-review/",
       "destination": "/software/lusha/",
       "permanent": true,
@@ -1789,6 +1824,13 @@
       "reason": "Launch-approved same_comparison_pair mapping (HIGH confidence): Order-insensitive comparison pair [dynamics-365, salesforce] → canonical /compare/dynamics-365-vs-salesforce/"
     },
     {
+      "source": "/miocommerce-review/",
+      "destination": "/software/miocommerce/",
+      "permanent": true,
+      "id": "redir-miocommerce-review",
+      "reason": "Locale-410 equity repair: Legacy MioCommerce review → /software/miocommerce/ catalogue page"
+    },
+    {
       "source": "/monday-com-review/",
       "destination": "/software/monday-sales-crm/",
       "permanent": true,
@@ -1808,6 +1850,13 @@
       "permanent": true,
       "id": "redir-monday-crm-review",
       "reason": "Launch-approved explicit_historical mapping (HIGH confidence): Explicit historical mapping (LEGACY_PATH_ALIASES): LEGACY_PATH_ALIASES explicit map"
+    },
+    {
+      "source": "/my-story/",
+      "destination": "/company/my-story/",
+      "permanent": true,
+      "id": "redir-my-story",
+      "reason": "Locale-410 equity repair: Legacy founder story → company my-story page"
     },
     {
       "source": "/navan-review/",
@@ -2160,6 +2209,13 @@
       "reason": "Launch-approved same_comparison_pair mapping (HIGH confidence): Order-insensitive comparison pair [siebel, salesforce] → canonical /compare/salesforce-vs-siebel/"
     },
     {
+      "source": "/software/pipedrive/alternatives/",
+      "destination": "/alternatives/pipedrive/",
+      "permanent": true,
+      "id": "redir-software-pipedrive-alternatives-tab",
+      "reason": "Canonical alternatives page lives at /alternatives/pipedrive/ — nested hub tab is noindex duplicate"
+    },
+    {
       "source": "/steps-to-implement-a-crm-system-for-hotels/",
       "destination": "/industries/hospitality/",
       "permanent": true,
@@ -2179,6 +2235,13 @@
       "permanent": true,
       "id": "redir-sugar-crm-review",
       "reason": "Launch-approved explicit_historical mapping (HIGH confidence): Explicit historical mapping (LEGACY_PATH_ALIASES): LEGACY_PATH_ALIASES explicit map"
+    },
+    {
+      "source": "/terms-and-conditions/",
+      "destination": "/legal/terms/",
+      "permanent": true,
+      "id": "redir-terms-and-conditions",
+      "reason": "Locale-410 equity repair: Legacy terms & conditions → legal terms"
     },
     {
       "source": "/the-ultimate-guide-to-agile-crm/",
@@ -2286,11 +2349,25 @@
       "reason": "Launch-approved same_product mapping (HIGH confidence): Same product entity → /software/tidio/ (primary review intent)"
     },
     {
+      "source": "/tidio-vs-crisp/",
+      "destination": "/compare/crisp-vs-tidio/",
+      "permanent": true,
+      "id": "redir-tidio-vs-crisp",
+      "reason": "Locale-410 equity repair: Legacy Tidio vs Crisp → /compare/crisp-vs-tidio/"
+    },
+    {
       "source": "/tidio-vs-hubspot/",
       "destination": "/compare/hubspot-vs-tidio/",
       "permanent": true,
       "id": "redir-tidio-vs-hubspot",
       "reason": "Legacy Tidio vs HubSpot → materialized hubspot-vs-tidio compare"
+    },
+    {
+      "source": "/tidio-vs-live-chat/",
+      "destination": "/compare/livechat-vs-tidio/",
+      "permanent": true,
+      "id": "redir-tidio-vs-live-chat",
+      "reason": "Locale-410 equity repair: Legacy Tidio vs Live Chat → /compare/livechat-vs-tidio/"
     },
     {
       "source": "/tidio-vs-zendesk/",
@@ -2601,41 +2678,106 @@
       "reason": "Launch-approved explicit_historical mapping (HIGH confidence): Explicit historical mapping (LEGACY_PATH_ALIASES): LEGACY_PATH_ALIASES explicit map"
     },
     {
-      "source": "/software/pipedrive/alternatives/",
-      "destination": "/alternatives/pipedrive/",
+      "source": "/zoho-one-operating-system/",
+      "destination": "/software/zoho-crm/",
       "permanent": true,
-      "id": "redir-software-pipedrive-alternatives-tab",
-      "reason": "Canonical alternatives page lives at /alternatives/pipedrive/ — nested hub tab is noindex duplicate"
+      "id": "redir-zoho-one-operating-system",
+      "reason": "Locale-410 equity repair: Zoho One suite article → Zoho CRM catalogue page (in-suite primary)"
     }
   ],
   "retired": [
     {
       "sourcePattern": "/tag/:slug*",
       "action": "410",
-      "reason": "WP tag archives — low-value taxonomy (exact paths preferred over broad catch-alls in Next; documented for ops)"
+      "reason": "WP tag archives — low-value taxonomy; enforced 410 via proxy"
     },
     {
       "sourcePattern": "/author/:slug*",
       "action": "404",
-      "reason": "WP author archives not in new IA"
+      "reason": "WP author archives not in new IA; enforced 404 via proxy"
     },
     {
       "sourcePattern": "/feed",
       "action": "410",
-      "reason": "WP feed URL"
+      "reason": "WP feed URL; enforced 410 via proxy"
     },
     {
       "sourcePattern": "/comments/feed",
       "action": "410",
-      "reason": "WP comments feed"
+      "reason": "WP comments feed; enforced 410 via proxy"
+    },
+    {
+      "sourcePattern": "/category/:slug*",
+      "action": "410",
+      "reason": "Unmapped WP category archives → 410 (exact mapped categories remain 301 via legacy-redirects.json)"
+    },
+    {
+      "sourcePattern": "/fr/etiqueter/:slug*",
+      "action": "410",
+      "reason": "FR WP tag archive — retire"
+    },
+    {
+      "sourcePattern": "/es/etiqueta/:slug*",
+      "action": "410",
+      "reason": "ES WP tag archive — retire"
+    },
+    {
+      "sourcePattern": "/de/schild/:slug*",
+      "action": "410",
+      "reason": "DE WP tag archive — retire"
+    },
+    {
+      "sourcePattern": "/nl/label/:slug*",
+      "action": "410",
+      "reason": "NL WP tag archive — retire"
+    },
+    {
+      "sourcePattern": "/zh/标签/:slug*",
+      "action": "410",
+      "reason": "ZH WP tag archive — retire"
+    },
+    {
+      "sourcePattern": "/fr/categorie/:slug*",
+      "action": "410",
+      "reason": "FR WP category archive — 410 unless hreflang-mapped in locale cutover"
+    },
+    {
+      "sourcePattern": "/es/categoria/:slug*",
+      "action": "410",
+      "reason": "ES WP category archive — 410 unless hreflang-mapped in locale cutover"
+    },
+    {
+      "sourcePattern": "/de/kategorie/:slug*",
+      "action": "410",
+      "reason": "DE WP category archive — 410 unless hreflang-mapped in locale cutover"
+    },
+    {
+      "sourcePattern": "/nl/categorie/:slug*",
+      "action": "410",
+      "reason": "NL WP category archive — 410 unless hreflang-mapped in locale cutover"
+    },
+    {
+      "sourcePattern": "/zh/类别/:slug*",
+      "action": "410",
+      "reason": "ZH WP category archive — 410 unless hreflang-mapped in locale cutover"
+    },
+    {
+      "sourcePattern": "/:locale(fr|de|es|nl|zh|hi|ar|pt|it|ja)",
+      "action": "410",
+      "reason": "Locale root — English-only; no homepage dump"
+    },
+    {
+      "sourcePattern": "/:locale(fr|de|es|nl|zh|hi|ar|pt|it|ja)/:path*",
+      "action": "410",
+      "reason": "Unmapped locale URL — 410 unless hreflang-mapped 301 in config/legacy-locale-cutover.json"
     }
   ],
   "excludedManual": [],
   "stats": {
-    "redirects": 371,
+    "redirects": 372,
     "autoApproved": 332,
     "manualExcluded": 0,
-    "retiredPatterns": 4,
+    "retiredPatterns": 17,
     "chainsFlattened": 0
   }
 }

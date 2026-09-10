@@ -1,0 +1,159 @@
+{
+  "slug": "rippling-migration",
+  "enrichmentType": "MIGRATION_GUIDE",
+  "updatedAt": "2026-09-08T21:59:17.461Z",
+  "uniqueValueAdded": [
+    "implementation_workflow",
+    "scenario_analysis",
+    "decision_framework",
+    "limitations_evidence",
+    "buyer_checklist"
+  ],
+  "patch": {
+    "summary": "Rippling migration guide: inventory → rehearse → freeze → validate integrations — grounded in researched limitations and catalogue peers.",
+    "blocks": [
+      {
+        "id": "da-rippling-migration-1",
+        "type": "direct-answer",
+        "body": "Migrate to Rippling by inventorying legacy hr fields, mapping them to Rippling objects, rehearsing a freeze window, and validating Slack, Google Workspace before reopening writes.",
+        "bullets": [
+          "Inventory → map → rehearse → cut over → reopen",
+          "Highest risk: The list price floor is platform/core only — payroll, IT, spend, and EOR stack PEPM and dominate TCO",
+          "Success signal: applicant tracking works for the pilot cohort"
+        ]
+      },
+      {
+        "id": "mig-rippling-migration-2",
+        "type": "step",
+        "heading": "Rippling migration cutover playbook",
+        "body": "Migrations fail from optimistic timelines — not from missing motivation.",
+        "stepNumber": 1,
+        "scenarios": [
+          {
+            "title": "Field inventory",
+            "body": "Export legacy fields that power applicant tracking, career site and job boards, interview scheduling and mark must-map vs archive."
+          },
+          {
+            "title": "Rehearsal load",
+            "body": "Run a non-prod load into Rippling; measure match rates before the freeze."
+          },
+          {
+            "title": "Production freeze",
+            "body": "Freeze legacy writes; cut over; validate Slack; then reopen."
+          }
+        ]
+      },
+      {
+        "id": "df-rippling-migration-3",
+        "type": "decision-framework",
+        "title": "Migrate to Rippling?",
+        "steps": [
+          {
+            "id": "m-1",
+            "label": "Migrate when Companies that want HR, payroll, and IT provisioning on one employee record outweigh migration cost"
+          },
+          {
+            "id": "m-2",
+            "label": "Delay if this limitation hits cutover: The list price floor is platform/core only — payroll, IT, spend, and EOR stack PEPM and dominate TCO"
+          },
+          {
+            "id": "m-3",
+            "label": "If Rippling mapping is poor, compare destination fit with BambooHR before moving data twice"
+          }
+        ]
+      },
+      {
+        "id": "mist-rippling-migration-4",
+        "type": "mistakes",
+        "title": "Rippling migration mistakes",
+        "items": [
+          {
+            "title": "No freeze window",
+            "body": "Dual-writing without a freeze creates irrevocable duplicates."
+          },
+          {
+            "title": "Integrations last",
+            "body": "Wire Slack in rehearsal — not on Monday morning after cutover."
+          },
+          {
+            "title": "Data risk 1",
+            "body": "The list price floor is platform/core only — payroll, IT, spend, and EOR stack PEPM and dominate TCO"
+          },
+          {
+            "title": "Data risk 2",
+            "body": "No published free plan or self-serve trial; sales-led packaging"
+          },
+          {
+            "title": "Data risk 3",
+            "body": "Easy to overbuy modules that the team will not adopt"
+          }
+        ]
+      },
+      {
+        "id": "sel-rippling-migration-5",
+        "type": "selection-checklist",
+        "title": "Rippling migration checklist",
+        "dimensions": [
+          {
+            "id": "map",
+            "label": "Mapping",
+            "options": [
+              "Must-map fields listed",
+              "Owners assigned",
+              "Archive rules written"
+            ]
+          },
+          {
+            "id": "rehearse",
+            "label": "Rehearsal",
+            "options": [
+              "Non-prod load done",
+              "Match rate measured",
+              "Rollback tested"
+            ]
+          },
+          {
+            "id": "cutover",
+            "label": "Cutover",
+            "options": [
+              "Freeze communicated",
+              "Integrations green",
+              "Pilot cohort signed off"
+            ]
+          }
+        ]
+      }
+    ],
+    "checklist": [
+      {
+        "id": "enrich-chk-0",
+        "label": "Complete field inventory for applicant tracking",
+        "order": 0
+      },
+      {
+        "id": "enrich-chk-1",
+        "label": "Rehearse load before production freeze",
+        "order": 1
+      },
+      {
+        "id": "enrich-chk-2",
+        "label": "Validate Slack pre-reopen",
+        "order": 2
+      },
+      {
+        "id": "enrich-chk-3",
+        "label": "Mitigate: The list price floor is platform/core only — payroll, IT, spend, and EOR stack PEPM and dominate TCO",
+        "order": 3
+      }
+    ],
+    "nextAction": {
+      "contentId": "tool:finder:hr",
+      "label": "Open Finder shortlist"
+    }
+  },
+  "notes": [
+    "Omit unsupported: testing_evidence",
+    "Migration: cutover risks, data mapping, checklist.",
+    "Type-specific skeleton: MIGRATION_GUIDE"
+  ]
+}

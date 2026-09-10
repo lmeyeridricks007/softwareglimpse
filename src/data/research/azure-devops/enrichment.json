@@ -183,6 +183,22 @@
       ]
     }
   ],
+  "integrationSupport": [
+    {
+      "integrationSlug": "microsoft-teams",
+      "kind": "native",
+      "sourceIds": [
+        "azure-devops-product-official"
+      ]
+    },
+    {
+      "integrationSlug": "api",
+      "kind": "api-only",
+      "sourceIds": [
+        "azure-devops-product-official"
+      ]
+    }
+  ],
   "aiCapabilities": [
     {
       "capability": "assistant",
@@ -210,22 +226,6 @@
     {
       "capability": "recommendations",
       "availability": "limited",
-      "sourceIds": [
-        "azure-devops-product-official"
-      ]
-    }
-  ],
-  "integrationSupport": [
-    {
-      "integrationSlug": "microsoft-teams",
-      "kind": "native",
-      "sourceIds": [
-        "azure-devops-product-official"
-      ]
-    },
-    {
-      "integrationSlug": "api",
-      "kind": "api-only",
       "sourceIds": [
         "azure-devops-product-official"
       ]
@@ -309,6 +309,95 @@
       "isEditorial": false
     }
   ],
+  "screenshots": [
+    {
+      "id": "azure-devops-shot-overview",
+      "src": "/vendor-ui/azure-devops/overview.png",
+      "alt": "Azure DevOps official Microsoft product video frame",
+      "caption": "Official vendor video frame used as the product overview visual (YouTube). Not a SoftwareGlimpse lab screenshot.",
+      "source": "https://www.youtube.com/watch?v=JhqpF-5E10I",
+      "checkedAt": "2026-08-18T14:00:00.000Z",
+      "annotation": "Official azure-devops marketing frame from vendor YouTube",
+      "kind": "vendor-ui",
+      "featureIds": [
+        "source-control",
+        "cicd-actions"
+      ],
+      "useCaseIds": [
+        "source-control-devops"
+      ]
+    }
+  ],
+  "media": [
+    {
+      "id": "azure-devops-video-jhqpf-5e10i",
+      "productSlug": "azure-devops",
+      "productIds": [
+        "azure-devops"
+      ],
+      "type": "official-video",
+      "provider": "youtube",
+      "sourceUrl": "https://www.youtube.com/watch?v=JhqpF-5E10I",
+      "videoId": "JhqpF-5E10I",
+      "providerId": "JhqpF-5E10I",
+      "embedUrl": "https://www.youtube-nocookie.com/embed/JhqpF-5E10I",
+      "title": "Introduction to Azure DevOps",
+      "description": "Official Azure DevOps product video from the vendor YouTube channel.",
+      "thumbnailUrl": "https://i.ytimg.com/vi/JhqpF-5E10I/hqdefault.jpg",
+      "sourceOrganization": "Azure DevOps",
+      "channelName": "Microsoft Visual Studio",
+      "officialSource": true,
+      "officialSourceKind": "vendor-channel",
+      "verifiedAt": "2026-08-18T14:00:00.000Z",
+      "lastCheckedAt": "2026-08-18T14:00:00.000Z",
+      "sourceHealth": "unknown",
+      "refreshFlags": [],
+      "embeddingAllowed": true,
+      "capabilityIds": [],
+      "featureIds": [
+        "source-control",
+        "cicd-actions"
+      ],
+      "requirementIds": [],
+      "useCaseIds": [
+        "source-control-devops"
+      ],
+      "industryIds": [],
+      "guideIds": [],
+      "evidenceRefs": [],
+      "evidenceClaimIds": [],
+      "evidenceClaimKinds": [
+        "workflow-demo",
+        "ui-layout",
+        "feature-existence"
+      ],
+      "demonstratedDimensionIds": [],
+      "requirementCriterionIds": [],
+      "workflowStageIds": [],
+      "mediaContext": "general-workflow",
+      "reportedOutcomes": [],
+      "placements": [
+        "overview",
+        "features",
+        "evidence"
+      ],
+      "purpose": "Official Azure DevOps video for product research pages",
+      "demonstratesCaption": "How Azure DevOps presents the product in an official vendor video.",
+      "editorialCommentary": "Official vendor demo — treat as UI/workflow evidence, not SoftwareGlimpse scoring.",
+      "whatThisShows": [
+        "Azure DevOps product surfaces as shown in the official vendor video",
+        "UI/workflow layout marketed by the vendor"
+      ],
+      "limitations": [
+        "pricing",
+        "comparative superiority",
+        "security or compliance certification",
+        "implementation effort or total cost of ownership"
+      ],
+      "whatToNotice": [],
+      "status": "published"
+    }
+  ],
   "pricing": {
     "currency": "USD",
     "model": "per-seat",
@@ -376,108 +465,13 @@
       }
     ],
     "notes": "Verified 2026-08-18 from azure.microsoft.com Azure DevOps Services pricing (high confidence). First 5 Basic users free; additional Basic $6/user/mo. Basic + Test Plans $52/user/mo. Artifacts 2 GiB free. Affiliate economics excluded.",
-    "verifiedAt": "2026-08-18T14:00:00.000Z",
+    "verifiedAt": "2026-09-08T21:57:22.178Z",
     "sourceIds": [
       "azure-devops-pricing-official"
     ],
     "startingPriceMonthly": 6,
     "trialDays": 30
   },
-  "screenshots": [
-    {
-      "id": "azure-devops-shot-overview",
-      "src": "/vendor-ui/azure-devops/overview.png",
-      "alt": "Azure DevOps official Microsoft product video frame",
-      "caption": "Official vendor video frame used as the product overview visual (YouTube). Not a SoftwareGlimpse lab screenshot.",
-      "source": "https://www.youtube.com/watch?v=JhqpF-5E10I",
-      "checkedAt": "2026-08-18T14:00:00.000Z",
-      "annotation": "Official azure-devops marketing frame from vendor YouTube",
-      "kind": "vendor-ui",
-      "featureIds": [
-        "source-control",
-        "cicd-actions"
-      ],
-      "useCaseIds": [
-        "source-control-devops"
-      ]
-    }
-  ],
-  "media": [
-    {
-      "id": "azure-devops-video-jhqpf-5e10i",
-      "productSlug": "azure-devops",
-      "productIds": [
-        "azure-devops"
-      ],
-      "type": "official-video",
-      "provider": "youtube",
-      "sourceUrl": "https://www.youtube.com/watch?v=JhqpF-5E10I",
-      "videoId": "JhqpF-5E10I",
-      "providerId": "JhqpF-5E10I",
-      "embedUrl": "https://www.youtube-nocookie.com/embed/JhqpF-5E10I",
-      "title": "Introduction to Azure DevOps",
-      "description": "Official Azure DevOps product video from the vendor YouTube channel.",
-      "thumbnailUrl": "https://i.ytimg.com/vi/JhqpF-5E10I/hqdefault.jpg",
-      "sourceOrganization": "Azure DevOps",
-      "channelName": "Microsoft Visual Studio",
-      "officialSource": true,
-      "officialSourceKind": "vendor-channel",
-      "verifiedAt": "2026-08-18T14:00:00.000Z",
-      "lastCheckedAt": "2026-08-18T14:00:00.000Z",
-      "sourceHealth": "unknown",
-      "refreshFlags": [],
-      "embeddingAllowed": true,
-      "capabilityIds": [],
-      "featureIds": [
-        "source-control",
-        "cicd-actions"
-      ],
-      "requirementIds": [],
-      "useCaseIds": [
-        "source-control-devops"
-      ],
-      "industryIds": [],
-      "guideIds": [],
-      "evidenceRefs": [],
-      "evidenceClaimIds": [],
-      "evidenceClaimKinds": [
-        "workflow-demo",
-        "ui-layout",
-        "feature-existence"
-      ],
-      "demonstratedDimensionIds": [],
-      "requirementCriterionIds": [],
-      "workflowStageIds": [],
-      "reportedOutcomes": [],
-      "placements": [
-        "overview",
-        "features",
-        "evidence"
-      ],
-      "mediaContext": "general-workflow",
-      "purpose": "Official Azure DevOps video for product research pages",
-      "demonstratesCaption": "How Azure DevOps presents the product in an official vendor video.",
-      "editorialCommentary": "Official vendor demo — treat as UI/workflow evidence, not SoftwareGlimpse scoring.",
-      "whatThisShows": [
-        "Azure DevOps product surfaces as shown in the official vendor video",
-        "UI/workflow layout marketed by the vendor"
-      ],
-      "limitations": [
-        "pricing",
-        "comparative superiority",
-        "security or compliance certification",
-        "implementation effort or total cost of ownership"
-      ],
-      "whatToNotice": [],
-      "status": "published"
-    }
-  ],
-  "sourceIds": [
-    "azure-devops-product-official",
-    "azure-devops-pricing-official",
-    "azure-devops-pricing"
-  ],
-  "notes": "IT Priority-3 onboarding enrichment from first-party research 2026-08-18T14:00:00.000Z. handsOnTesting=false. membershipRole=primary. jobCluster=source-control-devops.",
   "domainCheckedAt": {
     "identity": "2026-08-18T14:00:00.000Z",
     "pricing": "2026-08-18T14:00:00.000Z",
@@ -491,5 +485,11 @@
     "limits": "2026-08-18T14:00:00.000Z",
     "security-compliance": "2026-08-18T14:00:00.000Z"
   },
-  "updatedAt": "2026-08-18T14:00:00.000Z"
+  "sourceIds": [
+    "azure-devops-product-official",
+    "azure-devops-pricing-official",
+    "azure-devops-pricing"
+  ],
+  "updatedAt": "2026-08-18T14:00:00.000Z",
+  "notes": "IT Priority-3 onboarding enrichment from first-party research 2026-08-18T14:00:00.000Z. handsOnTesting=false. membershipRole=primary. jobCluster=source-control-devops."
 }

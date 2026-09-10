@@ -1,0 +1,427 @@
+{
+  "slug": "perplexity",
+  "updatedAt": "2026-09-07T22:31:21.763Z",
+  "version": "1.0.0",
+  "fieldAudit": {
+    "slug": "perplexity",
+    "checkedAt": "2026-09-07T22:31:21.762Z",
+    "items": [
+      {
+        "field": "name",
+        "status": "PASS",
+        "detail": "Name: Perplexity",
+        "source": "seed"
+      },
+      {
+        "field": "product_status",
+        "status": "PASS",
+        "detail": "productLifecycle=active",
+        "source": "seed"
+      },
+      {
+        "field": "canonical_vendor",
+        "status": "UNKNOWN",
+        "detail": "Company/vendor not documented",
+        "source": "none"
+      },
+      {
+        "field": "category",
+        "status": "PASS",
+        "detail": "primaryCategorySlug=ai",
+        "source": "seed"
+      },
+      {
+        "field": "description",
+        "status": "PASS",
+        "detail": "Description present (Cited-search LLM assistant — Free; Pro $20/mo (~$17 annual); Max $200/mo; Enterp…)",
+        "source": "seed"
+      },
+      {
+        "field": "target_audience",
+        "status": "PASS",
+        "detail": "Sizes=4, teams=3, assessment bestFor=3",
+        "source": "assessment"
+      },
+      {
+        "field": "use_cases",
+        "status": "PASS",
+        "detail": "useCaseSlugs=1",
+        "source": "seed"
+      },
+      {
+        "field": "capabilities",
+        "status": "PASS",
+        "detail": "featureRatings=0, enrichment features=18",
+        "source": "enrichment"
+      },
+      {
+        "field": "pricing",
+        "status": "PASS",
+        "detail": "Pricing envelope present",
+        "source": "enrichment"
+      },
+      {
+        "field": "plans",
+        "status": "PASS",
+        "detail": "plans=4",
+        "source": "enrichment"
+      },
+      {
+        "field": "free_plan",
+        "status": "PASS",
+        "detail": "Free plan documented",
+        "source": "enrichment"
+      },
+      {
+        "field": "trial",
+        "status": "UNKNOWN",
+        "detail": "Trial not explicitly documented — do not assume none",
+        "source": "none"
+      },
+      {
+        "field": "integrations",
+        "status": "PASS",
+        "detail": "integrationSlugs=0, enrichment=3",
+        "source": "enrichment"
+      },
+      {
+        "field": "alternatives",
+        "status": "PASS",
+        "detail": "alternativeSlugs=3",
+        "source": "seed"
+      },
+      {
+        "field": "competitors",
+        "status": "PASS",
+        "detail": "competitorSlugs=4",
+        "source": "seed"
+      },
+      {
+        "field": "affiliate",
+        "status": "PASS",
+        "detail": "No affiliate relationship (explicit)",
+        "source": "seed"
+      },
+      {
+        "field": "source_provenance",
+        "status": "PASS",
+        "detail": "seed sources=0, enrichment sourceIds=3",
+        "source": "enrichment"
+      },
+      {
+        "field": "verification_date",
+        "status": "PASS",
+        "detail": "Latest verification/research signal: 2026-08-18T12:00:00.000Z",
+        "source": "enrichment"
+      }
+    ],
+    "passCount": 16,
+    "partialCount": 0,
+    "missingCount": 0,
+    "unknownCount": 2,
+    "score": 89
+  },
+  "decisionHub": {
+    "whatItIs": "Perplexity is a cited-search LLM assistant for research, Pro Search, and Deep Research. Free covers basic search with daily Pro/Deep Research caps. Pro is $20/mo or about $17/mo billed annually. Max is $200/mo ($2,000/year) for power-user Labs and Computer credits. Enterprise Pro lists around $40/seat/mo with SSO/admin; Enterprise Max is a higher published seat SKU. Sonar API is a separate usage product.",
+    "bestFor": [
+      "Analysts and operators who need cited answers and Deep Research",
+      "Teams replacing ‘Google then paste into ChatGPT’ with one research surface",
+      "Orgs that want Enterprise Pro admin without Microsoft Graph lock-in",
+      "solo / operations: Perplexity fit for solo operations teams in the llm-assistant job cluster, from first-party positioning and AI Priority-2 research.",
+      "small-business / operations: Perplexity fit for small-business operations teams in the llm-assistant job cluster, from first-party positioning and AI Priority-2 research.",
+      "mid-market / operations: Perplexity fit for mid-market operations teams in the llm-assistant job cluster, from first-party positioning and AI Priority-2 research."
+    ],
+    "notIdealFor": [
+      "Buyers who need Custom GPTs and a general work OS (ChatGPT)",
+      "Microsoft 365-native drafting (Copilot)",
+      "Primary coding in an IDE (Cursor / GitHub Copilot)",
+      "Research/citations are the core — weaker as a general coding or custom-GPT OS",
+      "Max at $200 is a power-user SKU, not the default Pro comparison",
+      "Enterprise admin is not on Free/Pro consumer plans"
+    ],
+    "coreCapabilities": [
+      "llm chat",
+      "reasoning models",
+      "writing assist",
+      "image generation",
+      "custom projects",
+      "usage credits",
+      "connectors",
+      "data privacy"
+    ],
+    "pricingSummary": "4 documented plans · 1 free · entry paid: Pro",
+    "keyTradeoffs": [
+      "Research/citations are the core — weaker as a general coding or custom-GPT OS",
+      "Max at $200 is a power-user SKU, not the default Pro comparison",
+      "Enterprise admin is not on Free/Pro consumer plans",
+      "Sonar API billing is separate from Pro search seats",
+      "Not a specialist voice, meeting, or image studio"
+    ],
+    "alternatives": [
+      {
+        "slug": "chatgpt",
+        "name": "ChatGPT"
+      },
+      {
+        "slug": "claude",
+        "name": "Claude"
+      },
+      {
+        "slug": "microsoft-copilot",
+        "name": "Microsoft 365 Copilot"
+      },
+      {
+        "slug": "gemini",
+        "name": "Gemini"
+      }
+    ],
+    "importantComparisons": [
+      {
+        "slug": "chatgpt-vs-perplexity",
+        "title": "Perplexity vs ChatGPT",
+        "href": "/compare/chatgpt-vs-perplexity/"
+      },
+      {
+        "slug": "adcreative-ai-vs-perplexity",
+        "title": "AdCreative.ai vs Perplexity",
+        "href": "/compare/adcreative-ai-vs-perplexity/"
+      },
+      {
+        "slug": "adobe-firefly-vs-perplexity",
+        "title": "Adobe Firefly vs Perplexity",
+        "href": "/compare/adobe-firefly-vs-perplexity/"
+      },
+      {
+        "slug": "ai-intelekt-vs-perplexity",
+        "title": "AI InteleKt vs Perplexity",
+        "href": "/compare/ai-intelekt-vs-perplexity/"
+      },
+      {
+        "slug": "aira-vs-perplexity",
+        "title": "Aira vs Perplexity",
+        "href": "/compare/aira-vs-perplexity/"
+      },
+      {
+        "slug": "claude-vs-perplexity",
+        "title": "Claude vs Perplexity",
+        "href": "/compare/claude-vs-perplexity/"
+      }
+    ],
+    "relevantGuides": [
+      {
+        "slug": "perplexity-implementation",
+        "title": "Perplexity Implementation: 30/60/90 AI Rollout That Sticks",
+        "href": "/guides/perplexity-implementation/"
+      },
+      {
+        "slug": "perplexity-migration",
+        "title": "Perplexity Migration: Move Projects Without Losing Context",
+        "href": "/guides/perplexity-migration/"
+      },
+      {
+        "slug": "perplexity-setup",
+        "title": "Perplexity Setup: Day-Zero Path to a Working AI Loop",
+        "href": "/guides/perplexity-setup/"
+      },
+      {
+        "slug": "perplexity-plans",
+        "title": "Perplexity Plans: Seats, Credits, and Qualifying Tiers",
+        "href": "/guides/perplexity-plans/"
+      },
+      {
+        "slug": "is-perplexity-worth-it",
+        "title": "Is Perplexity Worth It? Fit Scenarios Before You Buy",
+        "href": "/guides/is-perplexity-worth-it/"
+      }
+    ],
+    "evidenceState": "Research/data-based (no completed hands-on test) · Latest verification/research signal: 2026-08-18T12:00:00.000Z · Editorial assessment: approved",
+    "nextDecisionStep": "Compare against peers: Perplexity vs ChatGPT",
+    "missingSections": [
+      "canonical_vendor",
+      "trial"
+    ]
+  },
+  "dependents": [
+    {
+      "kind": "guide",
+      "slug": "perplexity-implementation",
+      "path": "/guides/perplexity-implementation/"
+    },
+    {
+      "kind": "guide",
+      "slug": "perplexity-migration",
+      "path": "/guides/perplexity-migration/"
+    },
+    {
+      "kind": "guide",
+      "slug": "perplexity-setup",
+      "path": "/guides/perplexity-setup/"
+    },
+    {
+      "kind": "guide",
+      "slug": "perplexity-plans",
+      "path": "/guides/perplexity-plans/"
+    },
+    {
+      "kind": "guide",
+      "slug": "is-perplexity-worth-it",
+      "path": "/guides/is-perplexity-worth-it/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "chatgpt-vs-perplexity",
+      "path": "/compare/chatgpt-vs-perplexity/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "adcreative-ai-vs-perplexity",
+      "path": "/compare/adcreative-ai-vs-perplexity/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "adobe-firefly-vs-perplexity",
+      "path": "/compare/adobe-firefly-vs-perplexity/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "ai-intelekt-vs-perplexity",
+      "path": "/compare/ai-intelekt-vs-perplexity/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "aira-vs-perplexity",
+      "path": "/compare/aira-vs-perplexity/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "claude-vs-perplexity",
+      "path": "/compare/claude-vs-perplexity/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "cursor-vs-perplexity",
+      "path": "/compare/cursor-vs-perplexity/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "elevenlabs-vs-perplexity",
+      "path": "/compare/elevenlabs-vs-perplexity/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "fireflies-vs-perplexity",
+      "path": "/compare/fireflies-vs-perplexity/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "gamma-vs-perplexity",
+      "path": "/compare/gamma-vs-perplexity/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "gemini-vs-perplexity",
+      "path": "/compare/gemini-vs-perplexity/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "github-copilot-vs-perplexity",
+      "path": "/compare/github-copilot-vs-perplexity/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "hynote-vs-perplexity",
+      "path": "/compare/hynote-vs-perplexity/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "microsoft-copilot-vs-perplexity",
+      "path": "/compare/microsoft-copilot-vs-perplexity/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "midjourney-vs-perplexity",
+      "path": "/compare/midjourney-vs-perplexity/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "mindstudio-vs-perplexity",
+      "path": "/compare/mindstudio-vs-perplexity/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "n8n-vs-perplexity",
+      "path": "/compare/n8n-vs-perplexity/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "otter-ai-vs-perplexity",
+      "path": "/compare/otter-ai-vs-perplexity/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "perplexity-vs-quillbot",
+      "path": "/compare/perplexity-vs-quillbot/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "perplexity-vs-rank-prompt",
+      "path": "/compare/perplexity-vs-rank-prompt/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "perplexity-vs-runway",
+      "path": "/compare/perplexity-vs-runway/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "perplexity-vs-synthesia",
+      "path": "/compare/perplexity-vs-synthesia/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "perplexity-vs-turbotic",
+      "path": "/compare/perplexity-vs-turbotic/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "perplexity-vs-wegic",
+      "path": "/compare/perplexity-vs-wegic/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "perplexity-vs-writesonic",
+      "path": "/compare/perplexity-vs-writesonic/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "perplexity-vs-zapier",
+      "path": "/compare/perplexity-vs-zapier/"
+    },
+    {
+      "kind": "alternatives",
+      "slug": "perplexity",
+      "path": "/alternatives/perplexity/"
+    },
+    {
+      "kind": "pricing",
+      "slug": "perplexity",
+      "path": "/software/perplexity/pricing/"
+    },
+    {
+      "kind": "tools",
+      "slug": "ai-cost-calculator",
+      "path": "/tools/ai-cost-calculator/"
+    }
+  ],
+  "dependentsNeedingRefresh": [],
+  "remediation": [
+    "verify:canonical_vendor",
+    "verify:trial"
+  ],
+  "notes": [
+    "fieldAudit score=89",
+    "decisionHub bestFor=6 notIdeal=6",
+    "dependents=34"
+  ],
+  "materiallyImproved": false
+}

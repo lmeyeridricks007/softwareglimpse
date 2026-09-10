@@ -1,0 +1,217 @@
+{
+  "slug": "twilio-plans",
+  "enrichmentType": "COST_GUIDE",
+  "updatedAt": "2026-09-09T05:39:28.621Z",
+  "uniqueValueAdded": [
+    "pricing_comparison",
+    "sg_original_data",
+    "scenario_analysis",
+    "implementation_workflow",
+    "decision_framework",
+    "limitations_evidence",
+    "product_shortlist",
+    "alternatives_map",
+    "buyer_checklist"
+  ],
+  "patch": {
+    "summary": "Twilio cost guide: researched plan structure, free/trial flags, who each tier suits, cost scenarios, and value tradeoffs — no invented prices.",
+    "blocks": [
+      {
+        "id": "da-twilio-plans-1",
+        "type": "direct-answer",
+        "body": "Twilio pricing is plan-gated across 6 researched tiers. Free entry: Free trial. Trial/free path present in researched plans. Compare seat/capacity gates and unlocks — not list-price folklore.",
+        "bullets": [
+          "Free plan(s): Free trial",
+          "Trial/free path present in researched plans",
+          "Entry paid tier researched: SMS / MMS"
+        ]
+      },
+      {
+        "id": "cost-twilio-plans-2",
+        "type": "cost-breakdown",
+        "title": "Twilio plan matrix and who each tier suits",
+        "body": "Structure and trial/free flags come from SoftwareGlimpse pricing research. Dollar amounts appear only when verified — never invent list prices.",
+        "lines": [
+          {
+            "label": "Free trial",
+            "description": "Free plan · Trial available · Unlocks: cloud phone, call routing, call recording · Suits: explore before committing seats"
+          },
+          {
+            "label": "SMS / MMS",
+            "description": "Suits: teams whose must-have gates appear on this tier"
+          },
+          {
+            "label": "Voice APIs",
+            "description": "Suits: teams whose must-have gates appear on this tier"
+          },
+          {
+            "label": "Flex Named User",
+            "description": "Trial available · Suits: teams whose must-have gates appear on this tier"
+          },
+          {
+            "label": "Flex Active User Hour",
+            "description": "Suits: teams whose must-have gates appear on this tier"
+          },
+          {
+            "label": "Enterprise / volume discounts",
+            "description": "Contact sales · Suits: teams that need custom procurement"
+          }
+        ],
+        "calculatorHref": "/tools/business-communications-cost-calculator/",
+        "calculatorLabel": "Model category cost fit"
+      },
+      {
+        "id": "scen-twilio-plans-3",
+        "type": "step",
+        "heading": "Twilio cost scenarios to pressure-test",
+        "body": "Price Twilio against how you actually buy seats and unlocks — not against a competitor's homepage headline.",
+        "stepNumber": 1,
+        "scenarios": [
+          {
+            "title": "Lean team / free-or-trial first",
+            "body": "Stay on Free trial until a gated capability (AI assistance (Free trial, SMS / MMS, Voice APIs, Flex Named User, Flex Active User Hour, Enterprise / volume discounts)) becomes mandatory."
+          },
+          {
+            "title": "Growing team with gated workflows",
+            "body": "Map must-have workflows (cloud phone, call routing, call recording) to plan unlocks before expanding seats."
+          },
+          {
+            "title": "Hidden / extra cost watch",
+            "body": "Budget risk: Not an SMB softphone / UCaaS product — requires engineering to ship a phone experience. Also check add-ons, overages, and admin time outside the sticker plan."
+          }
+        ]
+      },
+      {
+        "id": "value-twilio-plans-4",
+        "type": "decision-framework",
+        "title": "Twilio value rule",
+        "steps": [
+          {
+            "id": "v-1",
+            "label": "Pay up when Product and engineering teams embedding voice, SMS or WhatsApp into their own apps requires a paid unlock you will use weekly"
+          },
+          {
+            "id": "v-2",
+            "label": "Do not overbuy if this limitation dominates: Not an SMB softphone / UCaaS product — requires engineering to ship a phone experience"
+          },
+          {
+            "id": "v-3",
+            "label": "Side-by-side cost with RingCentral on the same seat count"
+          }
+        ]
+      },
+      {
+        "id": "lim-twilio-plans-5",
+        "type": "mistakes",
+        "title": "Twilio cost mistakes to avoid",
+        "items": [
+          {
+            "title": "Cost trap 1",
+            "body": "Not an SMB softphone / UCaaS product — requires engineering to ship a phone experience"
+          },
+          {
+            "title": "Cost trap 2",
+            "body": "Usage + carrier fees make TCO hard to forecast versus flat seat phones"
+          },
+          {
+            "title": "Cost trap 3",
+            "body": "Shared inbox / agent UX only appears if you build it or buy Flex"
+          },
+          {
+            "title": "Cost trap 4",
+            "body": "AI (Conversation Intelligence, Flex Copilot) is usage/add-on priced"
+          },
+          {
+            "title": "Cost trap 5",
+            "body": "Compliance (A2P 10DLC, short codes) adds onboarding fees and lead time"
+          }
+        ]
+      },
+      {
+        "id": "alts-twilio-plans-6",
+        "type": "product-shortlist",
+        "title": "Cheaper or clearer alternatives to pressure-test",
+        "body": "Compare total cost of ownership vs Twilio on identical constraints.",
+        "productSlugs": [
+          "ringcentral",
+          "talkdesk",
+          "respond-io",
+          "wati"
+        ],
+        "disclaimer": "Catalogue peers only — not commission-ranked."
+      },
+      {
+        "id": "sel-twilio-plans-7",
+        "type": "selection-checklist",
+        "title": "Twilio pricing checklist",
+        "dimensions": [
+          {
+            "id": "gates",
+            "label": "Plan gates you must unlock",
+            "options": [
+              "AI assistance (Free trial, SMS / MMS, Voice APIs, Flex Named User, Flex Active User Hour, Enterprise / volume discounts)"
+            ]
+          },
+          {
+            "id": "trial",
+            "label": "Trial / free proof",
+            "options": [
+              "Free plan usable for pilot",
+              "Trial days enough",
+              "Paid gate acceptable"
+            ]
+          },
+          {
+            "id": "tco",
+            "label": "TCO extras",
+            "options": [
+              "Add-ons checked",
+              "Admin time budgeted",
+              "Migration cost noted"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "cta-twilio-plans-8",
+        "type": "interactive-cta",
+        "title": "Model business-communications spend with Twilio in mind",
+        "body": "Use researched plan structure for Twilio alongside category cost modelling.",
+        "href": "/tools/business-communications-cost-calculator/",
+        "ctaLabel": "Open calculator",
+        "variant": "calculator"
+      }
+    ],
+    "checklist": [
+      {
+        "id": "enrich-chk-0",
+        "label": "List must-have unlocks before picking a Twilio tier",
+        "order": 0
+      },
+      {
+        "id": "enrich-chk-1",
+        "label": "Trial/free path present in researched plans",
+        "order": 1
+      },
+      {
+        "id": "enrich-chk-2",
+        "label": "Price in this risk: Not an SMB softphone / UCaaS product — requires engineering to ship a phone experience",
+        "order": 2
+      },
+      {
+        "id": "enrich-chk-3",
+        "label": "Compare seat TCO with RingCentral",
+        "order": 3
+      }
+    ],
+    "nextAction": {
+      "contentId": "tool:finder:business-communications",
+      "label": "Open Finder shortlist"
+    }
+  },
+  "notes": [
+    "Omit unsupported: testing_evidence",
+    "Cost guide: real plan structure, free/trial, TCO tradeoffs — never invent prices.",
+    "Type-specific skeleton: COST_GUIDE"
+  ]
+}

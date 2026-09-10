@@ -5,11 +5,12 @@ import {
 } from "@/domain/publication-context";
 import { getSoftwareBySlug } from "@/data/repositories/catalog";
 import { getEducationalGuides } from "@/data/repositories/guides-educational";
+import { isGuideSearchIndexWorthy } from "@/services/seo/guides-index-worthiness/search-indexable";
+import { effectiveSeoIndexable } from "@/services/seo/content-lifecycle/promote";
 import {
   CRM_PRODUCT_GUIDE_KINDS,
   productGuideKindConfig,
   productGuideSlug,
-  type CrmProductGuideKind,
 } from "@/services/product-guides/kinds";
 import {
   listAiProductGuideSlugs,
@@ -115,7 +116,7 @@ function buildProductGuideSearchEntries(
           journeyStage: cfg.journeyStage,
           updatedAt: publishedAt,
           publishedAt,
-          indexable: true,
+          indexable: false,
           readingMinutes: 5,
         });
       }
@@ -143,8 +144,13 @@ function educationalGuideEntries(
       topicType: guide.topicType,
       journeyStage: guide.journeyStage,
       updatedAt: guide.metadata.updatedAt ?? guide.metadata.publishedAt,
-      publishedAt: guide.metadata.publishedAt,
-      indexable: guide.seo.indexable === true,
+      publishedAt: guide.metadata.publishedAt ?? "1970-01-01T00:00:00.000Z",
+      indexable:
+        effectiveSeoIndexable(
+          "guide",
+          guide.slug,
+          guide.seo.indexable === true,
+        ) && isGuideSearchIndexWorthy(guide),
       readingMinutes: Math.max(3, Math.round(bodyLen / 900)),
     };
   });

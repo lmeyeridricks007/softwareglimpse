@@ -5,6 +5,7 @@
  */
 "use client";
 
+import Link from "next/link";
 import { useSearchParams } from "next/navigation";
 import { useEffect, useMemo, useState } from "react";
 import { track } from "@/analytics";
@@ -351,12 +352,12 @@ export function CrmPlanSelectorApp({ snapshots }: Props) {
           !canUseVendor ? (
             <p className="mt-4 text-sm text-[var(--sg-color-warning)]" role="status">
               Plan comparison is not yet available for this CRM. Try{" "}
-              <a
+              <Link
                 href="/tools/crm-finder/"
                 className="underline underline-offset-2"
               >
                 CRM Finder
-              </a>{" "}
+              </Link>{" "}
               or the{" "}
               <a
                 href={`/software/${answers.productSlug}/`}
@@ -396,9 +397,9 @@ export function CrmPlanSelectorApp({ snapshots }: Props) {
                 </a>
               </li>
               <li>
-                <a href="/tools/crm-finder/" className="hover:underline">
+                <Link href="/tools/crm-finder/" className="hover:underline">
                   Need help choosing a CRM?
-                </a>
+                </Link>
               </li>
             </ul>
           </nav>

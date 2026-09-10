@@ -1,0 +1,558 @@
+{
+  "slug": "apify",
+  "updatedAt": "2026-09-08T21:57:41.684Z",
+  "version": "1.0.0",
+  "fieldAudit": {
+    "slug": "apify",
+    "checkedAt": "2026-09-08T21:57:41.682Z",
+    "items": [
+      {
+        "field": "name",
+        "status": "PASS",
+        "detail": "Name: Apify",
+        "source": "seed"
+      },
+      {
+        "field": "product_status",
+        "status": "PASS",
+        "detail": "productLifecycle=active",
+        "source": "seed"
+      },
+      {
+        "field": "canonical_vendor",
+        "status": "PASS",
+        "detail": "Vendor: Apify Technologies s.r.o.",
+        "source": "seed"
+      },
+      {
+        "field": "category",
+        "status": "PASS",
+        "detail": "primaryCategorySlug=it-development",
+        "source": "seed"
+      },
+      {
+        "field": "description",
+        "status": "PASS",
+        "detail": "Description present (Actor platform for web scraping — Free $0 ($5 usage); Starter $29/mo ($26 annual…)",
+        "source": "seed"
+      },
+      {
+        "field": "target_audience",
+        "status": "PASS",
+        "detail": "Sizes=5, teams=2, assessment bestFor=3",
+        "source": "assessment"
+      },
+      {
+        "field": "use_cases",
+        "status": "PASS",
+        "detail": "useCaseSlugs=1",
+        "source": "seed"
+      },
+      {
+        "field": "capabilities",
+        "status": "PASS",
+        "detail": "featureRatings=0, enrichment features=15",
+        "source": "enrichment"
+      },
+      {
+        "field": "pricing",
+        "status": "PASS",
+        "detail": "Pricing envelope present",
+        "source": "enrichment"
+      },
+      {
+        "field": "plans",
+        "status": "PASS",
+        "detail": "plans=5",
+        "source": "enrichment"
+      },
+      {
+        "field": "free_plan",
+        "status": "PASS",
+        "detail": "Free plan documented",
+        "source": "enrichment"
+      },
+      {
+        "field": "trial",
+        "status": "UNKNOWN",
+        "detail": "Trial not explicitly documented — do not assume none",
+        "source": "none"
+      },
+      {
+        "field": "integrations",
+        "status": "PASS",
+        "detail": "integrationSlugs=0, enrichment=3",
+        "source": "enrichment"
+      },
+      {
+        "field": "alternatives",
+        "status": "PASS",
+        "detail": "alternativeSlugs=3",
+        "source": "seed"
+      },
+      {
+        "field": "competitors",
+        "status": "PASS",
+        "detail": "competitorSlugs=4",
+        "source": "seed"
+      },
+      {
+        "field": "affiliate",
+        "status": "PASS",
+        "detail": "No affiliate relationship (explicit)",
+        "source": "seed"
+      },
+      {
+        "field": "source_provenance",
+        "status": "PASS",
+        "detail": "seed sources=0, enrichment sourceIds=3",
+        "source": "enrichment"
+      },
+      {
+        "field": "verification_date",
+        "status": "PASS",
+        "detail": "Latest verification/research signal: 2026-08-18T16:00:00.000Z",
+        "source": "enrichment"
+      }
+    ],
+    "passCount": 17,
+    "partialCount": 0,
+    "missingCount": 0,
+    "unknownCount": 1,
+    "score": 94
+  },
+  "decisionHub": {
+    "whatItIs": "Apify is a web-scraping and automation platform built around Actors (ready-made or custom scrapers), compute units, storage, and Apify Proxy. Free includes $5 prepaid usage/month. Starter is $29/mo ($26 annual) with $29 prepaid usage; Scale $199 ($179 annual); Business $999 ($899 annual). Usage beyond prepaid is PAYG (compute units from $0.13–$0.20/CU). Residential proxy from $7–$8/GB depending on plan. Same web-data-collection cluster as Bright Data — different shape (Actor marketplace + compute, not enterprise proxy-first).",
+    "bestFor": [
+      "Teams that want ready-made or custom Actors rather than raw proxy ops",
+      "Developers who need compute + storage + proxy in one platform",
+      "Projects that benefit from Apify Store scrapers",
+      "solo / engineering: Apify fit for solo engineering teams in the web-data-collection job cluster, from first-party positioning and IT web-data peers research.",
+      "micro / engineering: Apify fit for micro engineering teams in the web-data-collection job cluster, from first-party positioning and IT web-data peers research.",
+      "small-business / engineering: Apify fit for small-business engineering teams in the web-data-collection job cluster, from first-party positioning and IT web-data peers research."
+    ],
+    "notIdealFor": [
+      "Buyers who only need residential GB without an Actor runtime",
+      "Hosting panel or ITSM purchases",
+      "Enterprises that insist on ISO 27001 proxy-first vendors only",
+      "Prepaid usage does not roll over — unused credits expire each cycle",
+      "Actor Store and proxy GB costs can exceed the plan sticker quickly",
+      "Not an enterprise proxy-network-first buy like Bright Data / Oxylabs"
+    ],
+    "coreCapabilities": [
+      "cicd actions",
+      "proxy network",
+      "dev ai",
+      "enterprise security",
+      "analytics reporting",
+      "web data collection"
+    ],
+    "pricingSummary": "5 documented plans · 1 free · entry paid: Starter",
+    "keyTradeoffs": [
+      "Prepaid usage does not roll over — unused credits expire each cycle",
+      "Actor Store and proxy GB costs can exceed the plan sticker quickly",
+      "Not an enterprise proxy-network-first buy like Bright Data / Oxylabs",
+      "Not ITSM, observability, git, or hosting panel",
+      "Free plan blocks when prepaid usage is exhausted until next cycle"
+    ],
+    "alternatives": [
+      {
+        "slug": "bright-data",
+        "name": "Bright Data"
+      },
+      {
+        "slug": "oxylabs",
+        "name": "Oxylabs"
+      },
+      {
+        "slug": "scraperapi",
+        "name": "ScraperAPI"
+      },
+      {
+        "slug": "thordata",
+        "name": "ThorData"
+      }
+    ],
+    "importantComparisons": [
+      {
+        "slug": "apify-vs-bright-data",
+        "title": "Apify vs Bright Data",
+        "href": "/compare/apify-vs-bright-data/"
+      },
+      {
+        "slug": "apify-vs-oxylabs",
+        "title": "Apify vs Oxylabs",
+        "href": "/compare/apify-vs-oxylabs/"
+      },
+      {
+        "slug": "apify-vs-appdynamics",
+        "title": "Apify vs AppDynamics",
+        "href": "/compare/apify-vs-appdynamics/"
+      },
+      {
+        "slug": "apify-vs-azure-devops",
+        "title": "Apify vs Azure DevOps",
+        "href": "/compare/apify-vs-azure-devops/"
+      },
+      {
+        "slug": "apify-vs-bitbucket",
+        "title": "Apify vs Bitbucket Cloud",
+        "href": "/compare/apify-vs-bitbucket/"
+      },
+      {
+        "slug": "apify-vs-bmc-helix",
+        "title": "Apify vs BMC Helix ITSM",
+        "href": "/compare/apify-vs-bmc-helix/"
+      }
+    ],
+    "relevantGuides": [
+      {
+        "slug": "how-it-development-software-works",
+        "title": "How IT And Development Software Works",
+        "href": "/guides/how-it-development-software-works/"
+      },
+      {
+        "slug": "types-of-it-development-software",
+        "title": "Types of IT And Development Software",
+        "href": "/guides/types-of-it-development-software/"
+      },
+      {
+        "slug": "it-development-vs-project-management",
+        "title": "IT And Development Software vs Project Management Software",
+        "href": "/guides/it-development-vs-project-management/"
+      },
+      {
+        "slug": "web-hosting-vs-it-development-software",
+        "title": "Web Hosting & Server Management Software vs IT & Development Software",
+        "href": "/guides/web-hosting-vs-it-development-software/"
+      },
+      {
+        "slug": "itsm-vs-it-development-software",
+        "title": "ITSM Software vs IT & Development Software",
+        "href": "/guides/itsm-vs-it-development-software/"
+      },
+      {
+        "slug": "apify-implementation",
+        "title": "Apify Implementation: 30/60/90 IT Rollout That Sticks",
+        "href": "/guides/apify-implementation/"
+      }
+    ],
+    "evidenceState": "Research/data-based (no completed hands-on test) · Latest verification/research signal: 2026-08-18T16:00:00.000Z · Editorial assessment: approved",
+    "nextDecisionStep": "Compare against peers: Apify vs Bright Data",
+    "missingSections": [
+      "trial"
+    ]
+  },
+  "dependents": [
+    {
+      "kind": "guide",
+      "slug": "how-it-development-software-works",
+      "path": "/guides/how-it-development-software-works/"
+    },
+    {
+      "kind": "guide",
+      "slug": "types-of-it-development-software",
+      "path": "/guides/types-of-it-development-software/"
+    },
+    {
+      "kind": "guide",
+      "slug": "it-development-vs-project-management",
+      "path": "/guides/it-development-vs-project-management/"
+    },
+    {
+      "kind": "guide",
+      "slug": "web-hosting-vs-it-development-software",
+      "path": "/guides/web-hosting-vs-it-development-software/"
+    },
+    {
+      "kind": "guide",
+      "slug": "itsm-vs-it-development-software",
+      "path": "/guides/itsm-vs-it-development-software/"
+    },
+    {
+      "kind": "guide",
+      "slug": "apify-implementation",
+      "path": "/guides/apify-implementation/"
+    },
+    {
+      "kind": "guide",
+      "slug": "apify-migration",
+      "path": "/guides/apify-migration/"
+    },
+    {
+      "kind": "guide",
+      "slug": "apify-setup",
+      "path": "/guides/apify-setup/"
+    },
+    {
+      "kind": "guide",
+      "slug": "apify-plans",
+      "path": "/guides/apify-plans/"
+    },
+    {
+      "kind": "guide",
+      "slug": "is-apify-worth-it",
+      "path": "/guides/is-apify-worth-it/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "apify-vs-bright-data",
+      "path": "/compare/apify-vs-bright-data/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "apify-vs-oxylabs",
+      "path": "/compare/apify-vs-oxylabs/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "apify-vs-appdynamics",
+      "path": "/compare/apify-vs-appdynamics/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "apify-vs-azure-devops",
+      "path": "/compare/apify-vs-azure-devops/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "apify-vs-bitbucket",
+      "path": "/compare/apify-vs-bitbucket/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "apify-vs-bmc-helix",
+      "path": "/compare/apify-vs-bmc-helix/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "apify-vs-buildkite",
+      "path": "/compare/apify-vs-buildkite/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "apify-vs-chronosphere",
+      "path": "/compare/apify-vs-chronosphere/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "apify-vs-circleci",
+      "path": "/compare/apify-vs-circleci/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "apify-vs-cloudways",
+      "path": "/compare/apify-vs-cloudways/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "apify-vs-coralogix",
+      "path": "/compare/apify-vs-coralogix/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "apify-vs-cpanel",
+      "path": "/compare/apify-vs-cpanel/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "apify-vs-datadog",
+      "path": "/compare/apify-vs-datadog/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "apify-vs-directadmin",
+      "path": "/compare/apify-vs-directadmin/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "apify-vs-dynatrace",
+      "path": "/compare/apify-vs-dynatrace/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "apify-vs-elastic-observability",
+      "path": "/compare/apify-vs-elastic-observability/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "apify-vs-firehydrant",
+      "path": "/compare/apify-vs-firehydrant/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "apify-vs-fly-io",
+      "path": "/compare/apify-vs-fly-io/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "apify-vs-github",
+      "path": "/compare/apify-vs-github/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "apify-vs-gitlab",
+      "path": "/compare/apify-vs-gitlab/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "apify-vs-grafana-cloud",
+      "path": "/compare/apify-vs-grafana-cloud/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "apify-vs-haloitsm",
+      "path": "/compare/apify-vs-haloitsm/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "apify-vs-heroku",
+      "path": "/compare/apify-vs-heroku/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "apify-vs-honeycomb",
+      "path": "/compare/apify-vs-honeycomb/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "apify-vs-incident-io",
+      "path": "/compare/apify-vs-incident-io/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "apify-vs-iproyal",
+      "path": "/compare/apify-vs-iproyal/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "apify-vs-ivanti",
+      "path": "/compare/apify-vs-ivanti/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "apify-vs-jira-service-management",
+      "path": "/compare/apify-vs-jira-service-management/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "apify-vs-kinsta",
+      "path": "/compare/apify-vs-kinsta/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "apify-vs-manageengine-servicedesk-plus",
+      "path": "/compare/apify-vs-manageengine-servicedesk-plus/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "apify-vs-new-relic",
+      "path": "/compare/apify-vs-new-relic/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "apify-vs-pagerduty",
+      "path": "/compare/apify-vs-pagerduty/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "apify-vs-railway",
+      "path": "/compare/apify-vs-railway/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "apify-vs-render",
+      "path": "/compare/apify-vs-render/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "apify-vs-rootly",
+      "path": "/compare/apify-vs-rootly/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "apify-vs-scraperapi",
+      "path": "/compare/apify-vs-scraperapi/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "apify-vs-sentry",
+      "path": "/compare/apify-vs-sentry/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "apify-vs-servicenow",
+      "path": "/compare/apify-vs-servicenow/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "apify-vs-siteground",
+      "path": "/compare/apify-vs-siteground/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "apify-vs-smartproxy",
+      "path": "/compare/apify-vs-smartproxy/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "apify-vs-splunk",
+      "path": "/compare/apify-vs-splunk/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "apify-vs-squadcast",
+      "path": "/compare/apify-vs-squadcast/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "apify-vs-sysaid",
+      "path": "/compare/apify-vs-sysaid/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "apify-vs-thordata",
+      "path": "/compare/apify-vs-thordata/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "apify-vs-topdesk",
+      "path": "/compare/apify-vs-topdesk/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "apify-vs-wp-engine",
+      "path": "/compare/apify-vs-wp-engine/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "apify-vs-zyte",
+      "path": "/compare/apify-vs-zyte/"
+    },
+    {
+      "kind": "alternatives",
+      "slug": "apify",
+      "path": "/alternatives/apify/"
+    },
+    {
+      "kind": "pricing",
+      "slug": "apify",
+      "path": "/software/apify/pricing/"
+    },
+    {
+      "kind": "tools",
+      "slug": "it-development-cost-calculator",
+      "path": "/tools/it-development-cost-calculator/"
+    }
+  ],
+  "dependentsNeedingRefresh": [],
+  "remediation": [
+    "verify:trial"
+  ],
+  "notes": [
+    "fieldAudit score=94",
+    "decisionHub bestFor=6 notIdeal=6",
+    "dependents=60"
+  ],
+  "materiallyImproved": true
+}

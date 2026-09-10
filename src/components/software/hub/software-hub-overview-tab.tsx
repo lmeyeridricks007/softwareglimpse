@@ -1,8 +1,15 @@
 import { SoftwarePromotionBanner } from "@/components/affiliate/software-promotion";
-import { EditorialDisclosures } from "@/components/editorial";
+import {
+  EditorialDisclosures,
+  EditorialProvenance,
+  EditorialTrustBlock,
+} from "@/components/editorial";
 import { GuideCover } from "@/components/guides/hub/guide-illustrations";
-import { AuthorshipByline } from "@/components/site/authorship-byline";
-import { getFounderAuthor } from "@/services/site-foundation";
+import {
+  getFounderAuthor,
+  resolveAuthor,
+} from "@/services/site-foundation";
+import { buildEditorialTrustMetadata } from "@/services/editorial/evidence-level";
 import {
   ProductScreenshotGallery,
   ProductTeachingDiagramGallery,
@@ -18,6 +25,7 @@ import { SoftwarePricingCompare } from "@/components/software/software-pricing-c
 import { SoftwareUseCaseCards } from "@/components/software/software-use-case-cards";
 import { SoftwareTeamCostEstimator } from "@/components/software/software-team-cost-estimator";
 import { SoftwareReviewVerdict } from "@/components/software/software-review-verdict";
+import { SoftwareHubDecisionStrip } from "@/components/software/hub/software-hub-decision-strip";
 import {
   SoftwareHubFinderCta,
   SoftwareHubQuickFacts,
@@ -59,16 +67,26 @@ export function SoftwareHubOverviewTab({
       };
     }) ?? [];
 
+  const founder = getFounderAuthor();
+  const trust = buildEditorialTrustMetadata({
+    software,
+    review: model.review,
+    assessment: model.assessment,
+    authorId: founder?.id,
+    methodologySlug: model.assessment?.methodologySlug,
+    methodologyVersion: model.assessment?.methodologyVersion,
+  });
+  const author = resolveAuthor(trust.authorId) ?? founder;
+  const reviewer = resolveAuthor(trust.reviewerId);
+
   return (
     <>
-      {(model.assessment || model.review) && (
-        <div>
-          <AuthorshipByline
-            author={getFounderAuthor()}
-            lastReviewed={model.lastUpdated ?? undefined}
-          />
-        </div>
-      )}
+      <EditorialTrustBlock
+        trust={trust}
+        author={author}
+        reviewer={reviewer}
+        variant="review"
+      />
 
       <div className="mt-8 grid gap-10 lg:grid-cols-[minmax(0,1fr)_minmax(15rem,18rem)] lg:items-start lg:gap-10">
         <div className="min-w-0 space-y-12">
@@ -119,6 +137,8 @@ export function SoftwareHubOverviewTab({
             productName={software.name}
             diagrams={diagrams}
           />
+
+          <SoftwareHubDecisionStrip model={model} />
 
           <SoftwareReviewVerdict
             productName={software.name}
@@ -233,6 +253,20 @@ export function SoftwareHubOverviewTab({
             methodologyVersion={model.research.methodologyVersion ?? undefined}
             fixtureBased={false}
             aiUsed={Boolean(model.assessment || model.review)}
+          />
+
+          <EditorialProvenance
+            sources={software.sources}
+            productName={software.name}
+            pricingVerifiedAt={trust.pricingVerifiedAt}
+            dataCheckedAt={
+              model.research.lastChecked ?? trust.researchDate ?? null
+            }
+            methodologyLabel={
+              trust.methodologyVersion
+                ? `Methodology v${trust.methodologyVersion}`
+                : "Editorial methodology"
+            }
           />
         </div>
 

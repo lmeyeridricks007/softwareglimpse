@@ -2,11 +2,10 @@ import {
   AudienceHubProfileSchema,
   type AudienceHubProfile,
 } from "@/domain";
+import { z } from "zod";
 import { audienceDepthBySlug } from "./deep";
 
-function profile(
-  input: Parameters<typeof AudienceHubProfileSchema.parse>[0],
-): AudienceHubProfile {
+function profile(input: z.input<typeof AudienceHubProfileSchema>): AudienceHubProfile {
   const slug = String(input.audienceSlug);
   const depth = audienceDepthBySlug[slug];
   return AudienceHubProfileSchema.parse({

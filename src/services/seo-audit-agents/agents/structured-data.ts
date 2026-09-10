@@ -4,6 +4,8 @@ import {
   ensureLiveProbeBundle,
   livePageToFixture,
 } from "../live-probe";
+import { INTENTIONAL_REDIRECT_PROBE_PATHS } from "../live-probe-extra-paths";
+import { normalizePath } from "@/seo/canonical";
 import type {
   SeoAgentMeta,
   SeoCheckResult,
@@ -249,6 +251,14 @@ export const structuredDataAuditAgent: SeoAgentRunner = {
     const bundle = await ensureLiveProbeBundle(ctx);
     if (bundle) {
       for (const page of bundle.pages) {
+        // Redirect probe samples land on the destination HTML; do not score
+        // schema against the legacy request path (false "schema on noindex").
+        if (
+          page.redirectChain.length > 0 ||
+          INTENTIONAL_REDIRECT_PROBE_PATHS.has(normalizePath(page.path))
+        ) {
+          continue;
+        }
         const fixture = livePageToFixture(page);
         for (const block of page.jsonLd) {
           if (

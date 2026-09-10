@@ -143,9 +143,18 @@
       ]
     }
   ],
+  "integrationSupport": [
+    {
+      "integrationSlug": "zapier",
+      "kind": "zapier-style",
+      "sourceIds": [
+        "lucrovox-product-official"
+      ]
+    }
+  ],
   "aiCapabilities": [
     {
-      "capability": "copywriting",
+      "capability": "other",
       "availability": "limited",
       "sourceIds": [
         "lucrovox-product-official"
@@ -168,15 +177,6 @@
     {
       "capability": "recommendations",
       "availability": "limited",
-      "sourceIds": [
-        "lucrovox-product-official"
-      ]
-    }
-  ],
-  "integrationSupport": [
-    {
-      "integrationSlug": "zapier",
-      "kind": "zapier-style",
       "sourceIds": [
         "lucrovox-product-official"
       ]
@@ -219,31 +219,6 @@
       "isEditorial": false
     }
   ],
-  "pricing": {
-    "currency": "USD",
-    "model": "quote-led",
-    "hasFreePlan": false,
-    "hasFreeTrial": true,
-    "plans": [
-      {
-        "id": "plan-enterprise",
-        "slug": "enterprise",
-        "name": "Enterprise",
-        "isFree": false,
-        "contactSales": true,
-        "hasFreeTrial": true,
-        "trialDays": 14,
-        "highlighted": false,
-        "rules": [],
-        "description": "Contact sales for published LucroVox pricing — confirm live tiers on the vendor site."
-      }
-    ],
-    "notes": "Confirm packaging on lucrovox.com. Affiliate economics excluded.",
-    "verifiedAt": "2026-08-17T17:00:00.000Z",
-    "sourceIds": [
-      "lucrovox-pricing-official"
-    ]
-  },
   "screenshots": [
     {
       "id": "lucrovox-shot-homepage",
@@ -254,7 +229,8 @@
       "checkedAt": "2026-08-19T13:30:00.000Z",
       "annotation": "Official LucroVox marketing UI asset",
       "kind": "vendor-ui",
-      "featureIds": []
+      "featureIds": [],
+      "useCaseIds": []
     },
     {
       "id": "lucrovox-shot-demo-explainer",
@@ -265,7 +241,8 @@
       "checkedAt": "2026-08-19T13:30:00.000Z",
       "annotation": "First-party animated explainer demo — not third-party YouTube",
       "kind": "vendor-ui",
-      "featureIds": []
+      "featureIds": [],
+      "useCaseIds": []
     }
   ],
   "media": [
@@ -283,6 +260,7 @@
       "embedUrl": "https://lucrovox.com/demo/player.html",
       "title": "LucroVox — The Voice of Profit (Explainer)",
       "description": "Official first-party 90-second animated product explainer hosted on lucrovox.com.",
+      "thumbnailUrl": "https://www.softwareglimpse.com/vendor-ui/lucrovox/demo-explainer.png",
       "sourceOrganization": "LucroVox",
       "channelName": "LucroVox",
       "officialSource": true,
@@ -310,6 +288,7 @@
       "demonstratedDimensionIds": [],
       "requirementCriterionIds": [],
       "workflowStageIds": [],
+      "mediaContext": "general-workflow",
       "reportedOutcomes": [],
       "placements": [
         "overview",
@@ -318,7 +297,6 @@
         "implementation",
         "use-cases"
       ],
-      "mediaContext": "general-workflow",
       "purpose": "Official LucroVox vendor-hosted demo for product research pages",
       "demonstratesCaption": "How LucroVox presents the product in a first-party hosted demo.",
       "editorialCommentary": "Official vendor-hosted demo — treat as UI/workflow evidence, not SoftwareGlimpse scoring.",
@@ -336,11 +314,31 @@
       "status": "published"
     }
   ],
-  "sourceIds": [
-    "lucrovox-product-official",
-    "lucrovox-pricing-official"
-  ],
-  "notes": "Marketing onboarding enrichment from first-party research 2026-08-17T17:00:00.000Z. handsOnTesting=false. membershipRole=adjacent. primaryCategorySlug=marketing.",
+  "pricing": {
+    "currency": "USD",
+    "model": "quote-led",
+    "hasFreePlan": false,
+    "hasFreeTrial": true,
+    "plans": [
+      {
+        "id": "plan-enterprise",
+        "slug": "enterprise",
+        "name": "Enterprise",
+        "isFree": false,
+        "contactSales": true,
+        "hasFreeTrial": true,
+        "trialDays": 14,
+        "highlighted": false,
+        "rules": [],
+        "description": "Contact sales for published LucroVox pricing — confirm live tiers on the vendor site."
+      }
+    ],
+    "notes": "Confirm packaging on lucrovox.com. Affiliate economics excluded.",
+    "verifiedAt": "2026-09-09T08:27:09.375Z",
+    "sourceIds": [
+      "lucrovox-pricing-official"
+    ]
+  },
   "domainCheckedAt": {
     "identity": "2026-08-17T17:00:00.000Z",
     "pricing": "2026-08-17T17:00:00.000Z",
@@ -353,5 +351,10 @@
     "free-plan": "2026-08-17T17:00:00.000Z",
     "limits": "2026-08-17T17:00:00.000Z"
   },
-  "updatedAt": "2026-08-19T15:20:00.000Z"
+  "sourceIds": [
+    "lucrovox-product-official",
+    "lucrovox-pricing-official"
+  ],
+  "updatedAt": "2026-08-19T15:20:00.000Z",
+  "notes": "Marketing onboarding enrichment from first-party research 2026-08-17T17:00:00.000Z. handsOnTesting=false. membershipRole=adjacent. primaryCategorySlug=marketing."
 }

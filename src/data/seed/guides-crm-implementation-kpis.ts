@@ -1,4 +1,4 @@
-import type { GuidePage } from "@/domain";
+import type { GuidePageInput } from "@/domain";
 import type { z } from "zod";
 import type { GuideContentBlockSchema } from "@/domain";
 
@@ -358,7 +358,7 @@ const crmImplementationKpisBlocks: GuideBlockInput[] = [
   },
 ];
 
-export const crmImplementationKpisGuide: GuidePage = {
+export const crmImplementationKpisGuide: GuidePageInput = {
   id: "guide-crm-implementation-kpis",
   slug: "crm-implementation-kpis",
   title: "CRM Implementation KPIs: Leading Signals & Intervene Rules",
@@ -403,7 +403,7 @@ export const crmImplementationKpisGuide: GuidePage = {
     "crm-roi-guide",
     "common-crm-mistakes",
   ],
-  blocks: crmImplementationKpisBlocks as GuidePage["blocks"],
+  blocks: crmImplementationKpisBlocks as GuidePageInput["blocks"],
   checklist: [
     {
       id: "leading-lagging",

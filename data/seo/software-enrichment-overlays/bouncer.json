@@ -1,0 +1,407 @@
+{
+  "slug": "bouncer",
+  "updatedAt": "2026-09-08T21:28:59.646Z",
+  "version": "1.0.0",
+  "fieldAudit": {
+    "slug": "bouncer",
+    "checkedAt": "2026-09-08T21:28:59.645Z",
+    "items": [
+      {
+        "field": "name",
+        "status": "PASS",
+        "detail": "Name: Bouncer",
+        "source": "seed"
+      },
+      {
+        "field": "product_status",
+        "status": "PASS",
+        "detail": "productLifecycle=active",
+        "source": "seed"
+      },
+      {
+        "field": "canonical_vendor",
+        "status": "PASS",
+        "detail": "Vendor: Bouncer (UseBouncer)",
+        "source": "seed"
+      },
+      {
+        "field": "category",
+        "status": "PASS",
+        "detail": "primaryCategorySlug=email-marketing",
+        "source": "seed"
+      },
+      {
+        "field": "description",
+        "status": "PASS",
+        "detail": "Description present (Email verification and list hygiene platform for cleaner sends and stronger send…)",
+        "source": "seed"
+      },
+      {
+        "field": "target_audience",
+        "status": "PASS",
+        "detail": "Sizes=3, teams=2, assessment bestFor=4",
+        "source": "assessment"
+      },
+      {
+        "field": "use_cases",
+        "status": "PASS",
+        "detail": "useCaseSlugs=2",
+        "source": "seed"
+      },
+      {
+        "field": "capabilities",
+        "status": "PASS",
+        "detail": "featureRatings=0, enrichment features=15",
+        "source": "enrichment"
+      },
+      {
+        "field": "pricing",
+        "status": "PASS",
+        "detail": "Pricing envelope present",
+        "source": "enrichment"
+      },
+      {
+        "field": "plans",
+        "status": "PASS",
+        "detail": "plans=5",
+        "source": "enrichment"
+      },
+      {
+        "field": "free_plan",
+        "status": "PASS",
+        "detail": "No free plan in documented plans (explicit absence)",
+        "source": "enrichment"
+      },
+      {
+        "field": "trial",
+        "status": "UNKNOWN",
+        "detail": "Trial not explicitly documented — do not assume none",
+        "source": "none"
+      },
+      {
+        "field": "integrations",
+        "status": "PASS",
+        "detail": "integrationSlugs=0, enrichment=4",
+        "source": "enrichment"
+      },
+      {
+        "field": "alternatives",
+        "status": "PASS",
+        "detail": "alternativeSlugs=3",
+        "source": "seed"
+      },
+      {
+        "field": "competitors",
+        "status": "PASS",
+        "detail": "competitorSlugs=3",
+        "source": "seed"
+      },
+      {
+        "field": "affiliate",
+        "status": "PASS",
+        "detail": "Affiliate enabled with tracking URL",
+        "source": "seed"
+      },
+      {
+        "field": "source_provenance",
+        "status": "PASS",
+        "detail": "seed sources=0, enrichment sourceIds=2",
+        "source": "enrichment"
+      },
+      {
+        "field": "verification_date",
+        "status": "PASS",
+        "detail": "Latest verification/research signal: 2026-08-17T14:00:00.000Z",
+        "source": "enrichment"
+      }
+    ],
+    "passCount": 17,
+    "partialCount": 0,
+    "missingCount": 0,
+    "unknownCount": 1,
+    "score": 94
+  },
+  "decisionHub": {
+    "whatItIs": "Bouncer verifies email addresses via app and API, with optional real-time form protection (Shield), toxicity checks, and a Deliverability Kit for inbox placement and authentication testing.",
+    "bestFor": [
+      "Marketers cleaning lists before campaigns",
+      "Agencies and SaaS teams needing API verification",
+      "Teams protecting signup forms from bad/fraudulent emails",
+      "Senders monitoring domain/IP deliverability health",
+      "micro / marketing: Bouncer fit for micro marketing teams from first-party positioning and email-marketing Wave-1 research (adjacent tool, not core ESP).",
+      "small-business / marketing: Bouncer fit for small-business marketing teams from first-party positioning and email-marketing Wave-1 research (adjacent tool, not core ESP)."
+    ],
+    "notIdealFor": [
+      "Teams needing a full email campaign / ESP platform",
+      "Users who only need a personal inbox or email host",
+      "Not an email sending or campaign tool",
+      "Core verification is credit-based (not a single flat unlimited plan)",
+      "Catch-all / unknown results still require judgment even with deep verification claims",
+      "ESP comparison criteria (creation/automation) do not apply — adjacent hygiene tool"
+    ],
+    "coreCapabilities": [
+      "contact management",
+      "forms",
+      "analytics",
+      "deliverability tools",
+      "small business campaigns",
+      "ecommerce email"
+    ],
+    "pricingSummary": "5 documented plans · entry paid: Email Verification — 1,000 credits",
+    "keyTradeoffs": [
+      "Not an email sending or campaign tool",
+      "Core verification is credit-based (not a single flat unlimited plan)",
+      "Catch-all / unknown results still require judgment even with deep verification claims",
+      "ESP comparison criteria (creation/automation) do not apply — adjacent hygiene tool",
+      "Deliverability Kit and Shield are separate paid products from verification credits"
+    ],
+    "alternatives": [
+      {
+        "slug": "inboxally",
+        "name": "InboxAlly"
+      },
+      {
+        "slug": "getresponse",
+        "name": "GetResponse"
+      },
+      {
+        "slug": "mailchimp",
+        "name": "Mailchimp"
+      },
+      {
+        "slug": "hunter",
+        "name": "Hunter"
+      },
+      {
+        "slug": "instantly",
+        "name": "Instantly"
+      }
+    ],
+    "importantComparisons": [
+      {
+        "slug": "activecampaign-vs-bouncer",
+        "title": "ActiveCampaign vs Bouncer",
+        "href": "/compare/activecampaign-vs-bouncer/"
+      },
+      {
+        "slug": "aweber-vs-bouncer",
+        "title": "AWeber vs Bouncer",
+        "href": "/compare/aweber-vs-bouncer/"
+      },
+      {
+        "slug": "beehiiv-vs-bouncer",
+        "title": "Beehiiv vs Bouncer",
+        "href": "/compare/beehiiv-vs-bouncer/"
+      },
+      {
+        "slug": "bouncer-vs-brevo",
+        "title": "Bouncer vs Brevo",
+        "href": "/compare/bouncer-vs-brevo/"
+      },
+      {
+        "slug": "bouncer-vs-campaign-monitor",
+        "title": "Bouncer vs Campaign Monitor",
+        "href": "/compare/bouncer-vs-campaign-monitor/"
+      },
+      {
+        "slug": "bouncer-vs-constant-contact",
+        "title": "Bouncer vs Constant Contact",
+        "href": "/compare/bouncer-vs-constant-contact/"
+      }
+    ],
+    "relevantGuides": [
+      {
+        "slug": "how-email-marketing-works",
+        "title": "How Email Marketing Software Works",
+        "href": "/guides/how-email-marketing-works/"
+      },
+      {
+        "slug": "types-of-email-marketing",
+        "title": "Types of Email Marketing Software",
+        "href": "/guides/types-of-email-marketing/"
+      },
+      {
+        "slug": "bouncer-implementation",
+        "title": "Bouncer Implementation: 30/60/90 Email Rollout That Sticks",
+        "href": "/guides/bouncer-implementation/"
+      },
+      {
+        "slug": "bouncer-migration",
+        "title": "Bouncer Migration: Move Lists Without Losing Trust",
+        "href": "/guides/bouncer-migration/"
+      },
+      {
+        "slug": "bouncer-setup",
+        "title": "Bouncer Setup: Day-Zero Path to a Working Email Loop",
+        "href": "/guides/bouncer-setup/"
+      },
+      {
+        "slug": "bouncer-plans",
+        "title": "Bouncer Plans: Contacts, Sends, and Qualifying Tiers",
+        "href": "/guides/bouncer-plans/"
+      }
+    ],
+    "evidenceState": "Research/data-based (no completed hands-on test) · Latest verification/research signal: 2026-08-17T14:00:00.000Z · Editorial assessment: approved",
+    "nextDecisionStep": "Compare against peers: ActiveCampaign vs Bouncer",
+    "missingSections": [
+      "trial"
+    ]
+  },
+  "dependents": [
+    {
+      "kind": "guide",
+      "slug": "how-email-marketing-works",
+      "path": "/guides/how-email-marketing-works/"
+    },
+    {
+      "kind": "guide",
+      "slug": "types-of-email-marketing",
+      "path": "/guides/types-of-email-marketing/"
+    },
+    {
+      "kind": "guide",
+      "slug": "bouncer-implementation",
+      "path": "/guides/bouncer-implementation/"
+    },
+    {
+      "kind": "guide",
+      "slug": "bouncer-migration",
+      "path": "/guides/bouncer-migration/"
+    },
+    {
+      "kind": "guide",
+      "slug": "bouncer-setup",
+      "path": "/guides/bouncer-setup/"
+    },
+    {
+      "kind": "guide",
+      "slug": "bouncer-plans",
+      "path": "/guides/bouncer-plans/"
+    },
+    {
+      "kind": "guide",
+      "slug": "is-bouncer-worth-it",
+      "path": "/guides/is-bouncer-worth-it/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "activecampaign-vs-bouncer",
+      "path": "/compare/activecampaign-vs-bouncer/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "aweber-vs-bouncer",
+      "path": "/compare/aweber-vs-bouncer/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "beehiiv-vs-bouncer",
+      "path": "/compare/beehiiv-vs-bouncer/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "bouncer-vs-brevo",
+      "path": "/compare/bouncer-vs-brevo/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "bouncer-vs-campaign-monitor",
+      "path": "/compare/bouncer-vs-campaign-monitor/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "bouncer-vs-constant-contact",
+      "path": "/compare/bouncer-vs-constant-contact/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "bouncer-vs-customer-io",
+      "path": "/compare/bouncer-vs-customer-io/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "bouncer-vs-drip",
+      "path": "/compare/bouncer-vs-drip/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "bouncer-vs-flodesk",
+      "path": "/compare/bouncer-vs-flodesk/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "bouncer-vs-getresponse",
+      "path": "/compare/bouncer-vs-getresponse/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "bouncer-vs-inboxally",
+      "path": "/compare/bouncer-vs-inboxally/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "bouncer-vs-kit",
+      "path": "/compare/bouncer-vs-kit/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "bouncer-vs-klaviyo",
+      "path": "/compare/bouncer-vs-klaviyo/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "bouncer-vs-mailerlite",
+      "path": "/compare/bouncer-vs-mailerlite/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "bouncer-vs-mailjet",
+      "path": "/compare/bouncer-vs-mailjet/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "bouncer-vs-moosend",
+      "path": "/compare/bouncer-vs-moosend/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "bouncer-vs-omnisend",
+      "path": "/compare/bouncer-vs-omnisend/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "bouncer-vs-hunter",
+      "path": "/compare/bouncer-vs-hunter/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "bouncer-vs-instantly",
+      "path": "/compare/bouncer-vs-instantly/"
+    },
+    {
+      "kind": "alternatives",
+      "slug": "bouncer",
+      "path": "/alternatives/bouncer/"
+    },
+    {
+      "kind": "pricing",
+      "slug": "bouncer",
+      "path": "/software/bouncer/pricing/"
+    },
+    {
+      "kind": "tools",
+      "slug": "email-marketing-cost-calculator",
+      "path": "/tools/email-marketing-cost-calculator/"
+    }
+  ],
+  "dependentsNeedingRefresh": [],
+  "remediation": [
+    "verify:trial"
+  ],
+  "notes": [
+    "fieldAudit score=94",
+    "decisionHub bestFor=6 notIdeal=6",
+    "dependents=29"
+  ],
+  "materiallyImproved": true
+}

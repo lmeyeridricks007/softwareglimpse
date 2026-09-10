@@ -2,6 +2,9 @@ import Link from "next/link";
 import { Card } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { ExternalLink } from "@/components/outbound/external-link";
+import { ComparisonTestingCoverage } from "@/components/product-testing/comparison-testing-coverage";
+import { HowWeTestedSection } from "@/components/product-testing/how-we-tested-section";
+import { buildPublicHandsOnSummary } from "@/services/product-testing";
 import type { ComparisonPageModel } from "@/services/comparison-page/types";
 
 type Props = {
@@ -16,6 +19,9 @@ const STEPS = [
 ];
 
 export function ComparisonEvidenceTab({ model }: Props) {
+  const summaryA = buildPublicHandsOnSummary(model.productA.slug);
+  const summaryB = buildPublicHandsOnSummary(model.productB.slug);
+
   return (
     <div className="space-y-10">
       <div>
@@ -26,6 +32,15 @@ export function ComparisonEvidenceTab({ model }: Props) {
           Sources and research process behind this comparison.
         </p>
       </div>
+
+      <ComparisonTestingCoverage
+        productAName={model.productA.name}
+        productBName={model.productB.name}
+        productASlug={model.productA.slug}
+        productBSlug={model.productB.slug}
+        summaryA={summaryA}
+        summaryB={summaryB}
+      />
 
       <div className="grid gap-4 sm:grid-cols-3">
         <Card>
@@ -131,6 +146,19 @@ export function ComparisonEvidenceTab({ model }: Props) {
           </p>
         ) : null}
       </section>
+
+      {summaryA ? (
+        <HowWeTestedSection
+          productName={model.productA.name}
+          summary={summaryA}
+        />
+      ) : null}
+      {summaryB ? (
+        <HowWeTestedSection
+          productName={model.productB.name}
+          summary={summaryB}
+        />
+      ) : null}
 
       <Card className="border-[var(--sg-color-success)]/20 bg-[var(--sg-color-success-soft)]/40">
         <Badge variant="success">Independent</Badge>

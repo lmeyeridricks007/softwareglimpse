@@ -9,8 +9,8 @@ import { OfficialProductVideo } from "@/components/software/official-product-vid
 import { ProductLogo } from "@/components/software/product-logo";
 import { cn } from "@/lib/cn";
 import {
-  useCaseCategoryPlatformsLabel,
-  useCaseCategoryRequirementsLabel,
+  getUseCaseCategoryPlatformsLabel,
+  getUseCaseCategoryRequirementsLabel,
 } from "@/components/use-cases/use-case-depth-sections";
 import type {
   UseCaseSeeInActionCard,
@@ -256,7 +256,7 @@ export function UseCaseSeeInAction({
   className?: string;
 }) {
   if (cards.length === 0) return null;
-  const platformsLabel = useCaseCategoryPlatformsLabel(categorySlug);
+  const platformsLabel = getUseCaseCategoryPlatformsLabel(categorySlug);
 
   return (
     <section
@@ -315,7 +315,7 @@ export function UseCaseWorkflowComparison({
   if (cards.length < 2) return null;
   const [a, b] = cards;
   if (!a || !b) return null;
-  const platformsLabel = useCaseCategoryPlatformsLabel(categorySlug);
+  const platformsLabel = getUseCaseCategoryPlatformsLabel(categorySlug);
 
   const steps =
     a.workflowCoverage.length > 0
@@ -442,7 +442,7 @@ export function UseCaseRequirementsBuilderCta({
   categorySlug?: string;
   className?: string;
 }) {
-  const reqLabel = useCaseCategoryRequirementsLabel(categorySlug);
+  const reqLabel = getUseCaseCategoryRequirementsLabel(categorySlug);
   const isCrm = reqLabel === "CRM";
 
   return (

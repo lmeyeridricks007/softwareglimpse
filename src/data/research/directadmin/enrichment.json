@@ -195,6 +195,22 @@
       ]
     }
   ],
+  "integrationSupport": [
+    {
+      "integrationSlug": "api",
+      "kind": "api-only",
+      "sourceIds": [
+        "directadmin-product-official"
+      ]
+    },
+    {
+      "integrationSlug": "wordpress",
+      "kind": "native",
+      "sourceIds": [
+        "directadmin-product-official"
+      ]
+    }
+  ],
   "aiCapabilities": [
     {
       "capability": "assistant",
@@ -222,22 +238,6 @@
     {
       "capability": "recommendations",
       "availability": "not-supported",
-      "sourceIds": [
-        "directadmin-product-official"
-      ]
-    }
-  ],
-  "integrationSupport": [
-    {
-      "integrationSlug": "api",
-      "kind": "api-only",
-      "sourceIds": [
-        "directadmin-product-official"
-      ]
-    },
-    {
-      "integrationSlug": "wordpress",
-      "kind": "native",
       "sourceIds": [
         "directadmin-product-official"
       ]
@@ -321,6 +321,37 @@
       "isEditorial": false
     }
   ],
+  "screenshots": [
+    {
+      "id": "directadmin-shot-overview",
+      "src": "/software/directadmin/overview.png",
+      "alt": "DirectAdmin hosting panel teaching overview visual",
+      "caption": "SoftwareGlimpse teaching visual for DirectAdmin (original-diagram). Official vendor UI is a separate screenshot.",
+      "source": "DirectAdmin",
+      "checkedAt": "2026-08-18T20:00:00.000Z",
+      "annotation": "Original teaching diagram — not vendor UI",
+      "kind": "original-diagram",
+      "featureIds": [],
+      "useCaseIds": []
+    },
+    {
+      "id": "directadmin-shot-vendor-ui-panel",
+      "src": "/vendor-ui/directadmin/vendor-ui-panel.png",
+      "alt": "DirectAdmin control panel dashboard on desktop and mobile",
+      "caption": "Official DirectAdmin control-panel marketing visual from directadmin.com (homepage product UI).",
+      "source": "https://www.directadmin.com/",
+      "checkedAt": "2026-08-18T17:10:00.000Z",
+      "annotation": "Official DirectAdmin marketing UI asset",
+      "kind": "vendor-ui",
+      "featureIds": [
+        "hosting-panel"
+      ],
+      "useCaseIds": [
+        "hosting-operations"
+      ]
+    }
+  ],
+  "media": [],
   "pricing": {
     "currency": "USD",
     "model": "flat",
@@ -386,49 +417,12 @@
       }
     ],
     "notes": "Verified 2026-08-18 from directadmin.com/pricing.php (high confidence). Personal Plus $5/mo; Lite $15; Standard $29 unlimited accounts/domains. Per-server panel licence — not a managed-host SKU. Affiliate economics excluded.",
-    "verifiedAt": "2026-08-18T20:00:00.000Z",
+    "verifiedAt": "2026-09-08T21:57:39.200Z",
     "sourceIds": [
       "directadmin-pricing-official"
     ],
     "startingPriceMonthly": 5
   },
-  "screenshots": [
-    {
-      "id": "directadmin-shot-overview",
-      "src": "/software/directadmin/overview.png",
-      "alt": "DirectAdmin hosting panel teaching overview visual",
-      "caption": "SoftwareGlimpse teaching visual for DirectAdmin (original-diagram). Official vendor UI is a separate screenshot.",
-      "source": "DirectAdmin",
-      "checkedAt": "2026-08-18T20:00:00.000Z",
-      "annotation": "Original teaching diagram — not vendor UI",
-      "kind": "original-diagram",
-      "featureIds": [],
-      "useCaseIds": []
-    },
-    {
-      "id": "directadmin-shot-vendor-ui-panel",
-      "src": "/vendor-ui/directadmin/vendor-ui-panel.png",
-      "alt": "DirectAdmin control panel dashboard on desktop and mobile",
-      "caption": "Official DirectAdmin control-panel marketing visual from directadmin.com (homepage product UI).",
-      "source": "https://www.directadmin.com/",
-      "checkedAt": "2026-08-18T17:10:00.000Z",
-      "annotation": "Official DirectAdmin marketing UI asset",
-      "kind": "vendor-ui",
-      "featureIds": [
-        "hosting-panel"
-      ],
-      "useCaseIds": [
-        "hosting-operations"
-      ]
-    }
-  ],
-  "media": [],
-  "sourceIds": [
-    "directadmin-product-official",
-    "directadmin-pricing-official",
-    "directadmin-pricing"
-  ],
-  "notes": "IT industry Tier-A onboarding enrichment from first-party research 2026-08-18T20:00:00.000Z. handsOnTesting=false. membershipRole=primary. jobCluster=hosting-operations.",
   "domainCheckedAt": {
     "identity": "2026-08-18T20:00:00.000Z",
     "pricing": "2026-08-18T20:00:00.000Z",
@@ -442,5 +436,11 @@
     "limits": "2026-08-18T20:00:00.000Z",
     "security-compliance": "2026-08-18T20:00:00.000Z"
   },
-  "updatedAt": "2026-08-18T17:10:00.000Z"
+  "sourceIds": [
+    "directadmin-product-official",
+    "directadmin-pricing-official",
+    "directadmin-pricing"
+  ],
+  "updatedAt": "2026-08-18T17:10:00.000Z",
+  "notes": "IT industry Tier-A onboarding enrichment from first-party research 2026-08-18T20:00:00.000Z. handsOnTesting=false. membershipRole=primary. jobCluster=hosting-operations."
 }

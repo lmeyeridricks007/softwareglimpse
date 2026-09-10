@@ -198,6 +198,36 @@
       ]
     }
   ],
+  "integrationSupport": [
+    {
+      "integrationSlug": "slack",
+      "kind": "native",
+      "sourceIds": [
+        "jira-service-management-product-official"
+      ]
+    },
+    {
+      "integrationSlug": "microsoft-teams",
+      "kind": "native",
+      "sourceIds": [
+        "jira-service-management-product-official"
+      ]
+    },
+    {
+      "integrationSlug": "zapier",
+      "kind": "zapier-style",
+      "sourceIds": [
+        "jira-service-management-product-official"
+      ]
+    },
+    {
+      "integrationSlug": "api",
+      "kind": "api-only",
+      "sourceIds": [
+        "jira-service-management-product-official"
+      ]
+    }
+  ],
   "aiCapabilities": [
     {
       "capability": "assistant",
@@ -225,36 +255,6 @@
     {
       "capability": "recommendations",
       "availability": "supported",
-      "sourceIds": [
-        "jira-service-management-product-official"
-      ]
-    }
-  ],
-  "integrationSupport": [
-    {
-      "integrationSlug": "slack",
-      "kind": "native",
-      "sourceIds": [
-        "jira-service-management-product-official"
-      ]
-    },
-    {
-      "integrationSlug": "microsoft-teams",
-      "kind": "native",
-      "sourceIds": [
-        "jira-service-management-product-official"
-      ]
-    },
-    {
-      "integrationSlug": "zapier",
-      "kind": "zapier-style",
-      "sourceIds": [
-        "jira-service-management-product-official"
-      ]
-    },
-    {
-      "integrationSlug": "api",
-      "kind": "api-only",
       "sourceIds": [
         "jira-service-management-product-official"
       ]
@@ -338,94 +338,6 @@
       "isEditorial": false
     }
   ],
-  "pricing": {
-    "currency": "USD",
-    "model": "per-seat",
-    "hasFreePlan": true,
-    "hasFreeTrial": true,
-    "plans": [
-      {
-        "id": "plan-free",
-        "slug": "free",
-        "name": "Free",
-        "isFree": true,
-        "contactSales": false,
-        "hasFreeTrial": false,
-        "highlighted": false,
-        "rules": [
-          {
-            "kind": "flat",
-            "amount": 0,
-            "currency": "USD",
-            "interval": "month",
-            "amountPeriod": "month"
-          }
-        ],
-        "description": "Up to 3 agents — evaluation / tiny IT teams.",
-        "limits": {
-          "maxUsers": 3
-        }
-      },
-      {
-        "id": "plan-standard",
-        "slug": "standard",
-        "name": "Standard",
-        "isFree": false,
-        "contactSales": false,
-        "hasFreeTrial": true,
-        "trialDays": 7,
-        "highlighted": true,
-        "rules": [
-          {
-            "kind": "per-seat",
-            "amountPerSeat": 20,
-            "currency": "USD",
-            "interval": "month",
-            "amountPeriod": "month"
-          }
-        ],
-        "description": "From $20/agent/mo — core ITSM, assets, help center (volume discounts apply)."
-      },
-      {
-        "id": "plan-premium",
-        "slug": "premium",
-        "name": "Premium",
-        "isFree": false,
-        "contactSales": false,
-        "hasFreeTrial": true,
-        "trialDays": 7,
-        "highlighted": false,
-        "rules": [
-          {
-            "kind": "per-seat",
-            "amountPerSeat": 51.42,
-            "currency": "USD",
-            "interval": "month",
-            "amountPeriod": "month"
-          }
-        ],
-        "description": "~$51.42/agent/mo — advanced incident/problem/change, SLA, higher automation."
-      },
-      {
-        "id": "plan-enterprise",
-        "slug": "enterprise",
-        "name": "Enterprise",
-        "isFree": false,
-        "contactSales": true,
-        "hasFreeTrial": false,
-        "highlighted": false,
-        "rules": [],
-        "description": "Enterprise Cloud — annual quote, Atlassian Guard, scale controls."
-      }
-    ],
-    "notes": "Verified 2026-08-18 from Atlassian Service Collection / JSM pricing (high confidence). Free ≤3 agents; Standard from $20/agent/mo; Premium ~$51.42/agent/mo; Enterprise custom. Volume discounts apply. Confirm live calculator. Affiliate economics excluded.",
-    "verifiedAt": "2026-08-18T12:00:00.000Z",
-    "sourceIds": [
-      "jira-service-management-pricing-official"
-    ],
-    "startingPriceMonthly": 20,
-    "trialDays": 7
-  },
   "screenshots": [
     {
       "id": "jira-service-management-shot-overview",
@@ -524,13 +436,13 @@
       "demonstratedDimensionIds": [],
       "requirementCriterionIds": [],
       "workflowStageIds": [],
+      "mediaContext": "general-workflow",
       "reportedOutcomes": [],
       "placements": [
         "overview",
         "features",
         "evidence"
       ],
-      "mediaContext": "general-workflow",
       "purpose": "Official Jira Service Management video for product research pages",
       "demonstratesCaption": "How Jira Service Management presents the product in an official vendor video.",
       "editorialCommentary": "Official vendor demo — treat as UI/workflow evidence, not SoftwareGlimpse scoring.",
@@ -548,12 +460,94 @@
       "status": "published"
     }
   ],
-  "sourceIds": [
-    "jira-service-management-product-official",
-    "jira-service-management-pricing-official",
-    "jsm-pricing"
-  ],
-  "notes": "IT Priority-2 onboarding enrichment from first-party research 2026-08-18T12:00:00.000Z. handsOnTesting=false. membershipRole=primary. jobCluster=itsm-service-desk.",
+  "pricing": {
+    "currency": "USD",
+    "model": "per-seat",
+    "hasFreePlan": true,
+    "hasFreeTrial": true,
+    "plans": [
+      {
+        "id": "plan-free",
+        "slug": "free",
+        "name": "Free",
+        "isFree": true,
+        "contactSales": false,
+        "hasFreeTrial": false,
+        "highlighted": false,
+        "rules": [
+          {
+            "kind": "flat",
+            "amount": 0,
+            "currency": "USD",
+            "interval": "month",
+            "amountPeriod": "month"
+          }
+        ],
+        "description": "Up to 3 agents — evaluation / tiny IT teams.",
+        "limits": {
+          "maxUsers": 3
+        }
+      },
+      {
+        "id": "plan-standard",
+        "slug": "standard",
+        "name": "Standard",
+        "isFree": false,
+        "contactSales": false,
+        "hasFreeTrial": true,
+        "trialDays": 7,
+        "highlighted": true,
+        "rules": [
+          {
+            "kind": "per-seat",
+            "amountPerSeat": 20,
+            "currency": "USD",
+            "interval": "month",
+            "amountPeriod": "month"
+          }
+        ],
+        "description": "From $20/agent/mo — core ITSM, assets, help center (volume discounts apply)."
+      },
+      {
+        "id": "plan-premium",
+        "slug": "premium",
+        "name": "Premium",
+        "isFree": false,
+        "contactSales": false,
+        "hasFreeTrial": true,
+        "trialDays": 7,
+        "highlighted": false,
+        "rules": [
+          {
+            "kind": "per-seat",
+            "amountPerSeat": 51.42,
+            "currency": "USD",
+            "interval": "month",
+            "amountPeriod": "month"
+          }
+        ],
+        "description": "~$51.42/agent/mo — advanced incident/problem/change, SLA, higher automation."
+      },
+      {
+        "id": "plan-enterprise",
+        "slug": "enterprise",
+        "name": "Enterprise",
+        "isFree": false,
+        "contactSales": true,
+        "hasFreeTrial": false,
+        "highlighted": false,
+        "rules": [],
+        "description": "Enterprise Cloud — annual quote, Atlassian Guard, scale controls."
+      }
+    ],
+    "notes": "Verified 2026-08-18 from Atlassian Service Collection / JSM pricing (high confidence). Free ≤3 agents; Standard from $20/agent/mo; Premium ~$51.42/agent/mo; Enterprise custom. Volume discounts apply. Confirm live calculator. Affiliate economics excluded.",
+    "verifiedAt": "2026-09-08T21:29:20.123Z",
+    "sourceIds": [
+      "jira-service-management-pricing-official"
+    ],
+    "startingPriceMonthly": 20,
+    "trialDays": 7
+  },
   "domainCheckedAt": {
     "identity": "2026-08-18T12:00:00.000Z",
     "pricing": "2026-08-18T12:00:00.000Z",
@@ -567,5 +561,11 @@
     "limits": "2026-08-18T12:00:00.000Z",
     "security-compliance": "2026-08-18T12:00:00.000Z"
   },
-  "updatedAt": "2026-08-18T10:00:00.000Z"
+  "sourceIds": [
+    "jira-service-management-product-official",
+    "jira-service-management-pricing-official",
+    "jsm-pricing"
+  ],
+  "updatedAt": "2026-08-18T10:00:00.000Z",
+  "notes": "IT Priority-2 onboarding enrichment from first-party research 2026-08-18T12:00:00.000Z. handsOnTesting=false. membershipRole=primary. jobCluster=itsm-service-desk."
 }

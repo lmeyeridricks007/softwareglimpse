@@ -1,0 +1,412 @@
+{
+  "slug": "aircall",
+  "updatedAt": "2026-09-07T22:31:21.377Z",
+  "version": "1.0.0",
+  "fieldAudit": {
+    "slug": "aircall",
+    "checkedAt": "2026-09-07T22:31:21.376Z",
+    "items": [
+      {
+        "field": "name",
+        "status": "PASS",
+        "detail": "Name: Aircall",
+        "source": "seed"
+      },
+      {
+        "field": "product_status",
+        "status": "PASS",
+        "detail": "productLifecycle=active",
+        "source": "seed"
+      },
+      {
+        "field": "canonical_vendor",
+        "status": "UNKNOWN",
+        "detail": "Company/vendor not documented",
+        "source": "none"
+      },
+      {
+        "field": "category",
+        "status": "PASS",
+        "detail": "primaryCategorySlug=voip-business-phone",
+        "source": "seed"
+      },
+      {
+        "field": "description",
+        "status": "PASS",
+        "detail": "Description present (Mid-market cloud phone and customer-conversation platform with deep CRM/helpdesk…)",
+        "source": "seed"
+      },
+      {
+        "field": "target_audience",
+        "status": "PASS",
+        "detail": "Sizes=2, teams=3, assessment bestFor=3",
+        "source": "assessment"
+      },
+      {
+        "field": "use_cases",
+        "status": "PASS",
+        "detail": "useCaseSlugs=6",
+        "source": "seed"
+      },
+      {
+        "field": "capabilities",
+        "status": "PASS",
+        "detail": "featureRatings=0, enrichment features=13",
+        "source": "enrichment"
+      },
+      {
+        "field": "pricing",
+        "status": "PASS",
+        "detail": "Pricing envelope present",
+        "source": "enrichment"
+      },
+      {
+        "field": "plans",
+        "status": "PASS",
+        "detail": "plans=3",
+        "source": "enrichment"
+      },
+      {
+        "field": "free_plan",
+        "status": "PASS",
+        "detail": "No free plan in documented plans (explicit absence)",
+        "source": "enrichment"
+      },
+      {
+        "field": "trial",
+        "status": "PASS",
+        "detail": "Trial documented on plans/pricing",
+        "source": "enrichment"
+      },
+      {
+        "field": "integrations",
+        "status": "PASS",
+        "detail": "integrationSlugs=0, enrichment=6",
+        "source": "enrichment"
+      },
+      {
+        "field": "alternatives",
+        "status": "PASS",
+        "detail": "alternativeSlugs=8",
+        "source": "seed"
+      },
+      {
+        "field": "competitors",
+        "status": "PASS",
+        "detail": "competitorSlugs=8",
+        "source": "seed"
+      },
+      {
+        "field": "affiliate",
+        "status": "PASS",
+        "detail": "Affiliate enabled with tracking URL",
+        "source": "seed"
+      },
+      {
+        "field": "source_provenance",
+        "status": "PASS",
+        "detail": "seed sources=0, enrichment sourceIds=6",
+        "source": "enrichment"
+      },
+      {
+        "field": "verification_date",
+        "status": "PASS",
+        "detail": "Latest verification/research signal: 2026-08-17T09:00:00.000Z",
+        "source": "enrichment"
+      }
+    ],
+    "passCount": 17,
+    "partialCount": 0,
+    "missingCount": 0,
+    "unknownCount": 1,
+    "score": 94
+  },
+  "decisionHub": {
+    "whatItIs": "Aircall is a cloud business phone and customer-conversation platform for sales and support teams, with IVR and call routing, call recording, SMS/MMS, 250+ integrations including a Salesforce CTI, and Power Dialer on the Professional plan. Licences are sold with a 3-licence minimum on Essentials and Professional (25 on Custom), and AI Assist, AI Voice Agents, Analytics+ and WhatsApp are priced add-ons.",
+    "bestFor": [
+      "Mid-market sales and support teams that need CRM/helpdesk CTI as a primary buying criterion",
+      "Teams running inbound queues and IVR alongside outbound calling in one phone system",
+      "Salesforce, HubSpot or Zendesk shops that want click-to-dial and bidirectional call logging out of the box",
+      "small-business / sales: Aircall fit for small-business sales teams in the cloud-phone job cluster, from first-party positioning and business-communications Wave-1 research.",
+      "mid-market / sales: Aircall fit for mid-market sales teams in the cloud-phone job cluster, from first-party positioning and business-communications Wave-1 research."
+    ],
+    "notIdealFor": [
+      "Solo operators and 1–2 seat teams blocked by the 3-licence minimum",
+      "Budget-first buyers who need the lowest per-seat entry price",
+      "Teams that expect AI summaries, deep analytics history or WhatsApp included in the base licence",
+      "3-licence minimum on Essentials and Professional (25 on Custom) — solo operators and 1–2 person teams overpay",
+      "Power Dialer, Voicemail Drop, Salesforce CTI, smart routing and queue callback are Professional-only",
+      "AI Assist, AI Voice Agents, Analytics+ and WhatsApp are separately priced add-ons on top of licence fees"
+    ],
+    "coreCapabilities": [
+      "cloud phone",
+      "call routing",
+      "call recording",
+      "sms messaging",
+      "crm cti",
+      "analytics reporting",
+      "business phone",
+      "contact center"
+    ],
+    "pricingSummary": "3 documented plans · entry paid: Essentials · trial documented on at least one plan",
+    "keyTradeoffs": [
+      "3-licence minimum on Essentials and Professional (25 on Custom) — solo operators and 1–2 person teams overpay",
+      "Power Dialer, Voicemail Drop, Salesforce CTI, smart routing and queue callback are Professional-only",
+      "AI Assist, AI Voice Agents, Analytics+ and WhatsApp are separately priced add-ons on top of licence fees",
+      "Analytics history is capped at 6 months unless you buy Analytics+ (unlimited on Custom)",
+      "Domestic SMS/MMS rates in major markets are quote-based rather than published"
+    ],
+    "alternatives": [
+      {
+        "slug": "ringcentral",
+        "name": "RingCentral"
+      },
+      {
+        "slug": "dialpad",
+        "name": "Dialpad"
+      },
+      {
+        "slug": "zoom",
+        "name": "Zoom"
+      },
+      {
+        "slug": "nextiva",
+        "name": "Nextiva"
+      },
+      {
+        "slug": "callhippo",
+        "name": "CallHippo"
+      },
+      {
+        "slug": "krispcall",
+        "name": "KrispCall"
+      }
+    ],
+    "importantComparisons": [
+      {
+        "slug": "aircall-vs-callhippo",
+        "title": "Aircall vs CallHippo",
+        "href": "/compare/aircall-vs-callhippo/"
+      },
+      {
+        "slug": "aircall-vs-krispcall",
+        "title": "Aircall vs KrispCall",
+        "href": "/compare/aircall-vs-krispcall/"
+      },
+      {
+        "slug": "aircall-vs-freshcaller",
+        "title": "Aircall vs Freshcaller",
+        "href": "/compare/aircall-vs-freshcaller/"
+      },
+      {
+        "slug": "aircall-vs-ringcentral",
+        "title": "Aircall vs RingCentral",
+        "href": "/compare/aircall-vs-ringcentral/"
+      },
+      {
+        "slug": "aircall-vs-nextiva",
+        "title": "Aircall vs Nextiva",
+        "href": "/compare/aircall-vs-nextiva/"
+      },
+      {
+        "slug": "aircall-vs-dialpad",
+        "title": "Aircall vs Dialpad",
+        "href": "/compare/aircall-vs-dialpad/"
+      }
+    ],
+    "relevantGuides": [
+      {
+        "slug": "what-is-business-communications-software",
+        "title": "What Is Business Communications Software? Beginner's Guide",
+        "href": "/guides/what-is-business-communications-software/"
+      },
+      {
+        "slug": "how-to-choose-business-communications-software",
+        "title": "How to Choose Business Communications Software: Job-First Framework",
+        "href": "/guides/how-to-choose-business-communications-software/"
+      },
+      {
+        "slug": "business-communications-pricing-guide",
+        "title": "Business Communications Pricing Guide: Seats, Minutes & Message Fees",
+        "href": "/guides/business-communications-pricing-guide/"
+      },
+      {
+        "slug": "business-communications-requirements-guide",
+        "title": "Business Communications Requirements Guide: Numbers, Routing & Must-Haves",
+        "href": "/guides/business-communications-requirements-guide/"
+      },
+      {
+        "slug": "business-communications-evaluation-guide",
+        "title": "Business Communications Evaluation Guide: Two-Week Trial Scorecard",
+        "href": "/guides/business-communications-evaluation-guide/"
+      },
+      {
+        "slug": "how-voip-business-phone-software-works",
+        "title": "How VoIP & Business Phone Software Works",
+        "href": "/guides/how-voip-business-phone-software-works/"
+      }
+    ],
+    "evidenceState": "Research/data-based (no completed hands-on test) · Latest verification/research signal: 2026-08-17T09:00:00.000Z · Editorial assessment: approved",
+    "nextDecisionStep": "Compare against peers: Aircall vs CallHippo",
+    "missingSections": [
+      "canonical_vendor"
+    ]
+  },
+  "dependents": [
+    {
+      "kind": "guide",
+      "slug": "what-is-business-communications-software",
+      "path": "/guides/what-is-business-communications-software/"
+    },
+    {
+      "kind": "guide",
+      "slug": "how-to-choose-business-communications-software",
+      "path": "/guides/how-to-choose-business-communications-software/"
+    },
+    {
+      "kind": "guide",
+      "slug": "business-communications-pricing-guide",
+      "path": "/guides/business-communications-pricing-guide/"
+    },
+    {
+      "kind": "guide",
+      "slug": "business-communications-requirements-guide",
+      "path": "/guides/business-communications-requirements-guide/"
+    },
+    {
+      "kind": "guide",
+      "slug": "business-communications-evaluation-guide",
+      "path": "/guides/business-communications-evaluation-guide/"
+    },
+    {
+      "kind": "guide",
+      "slug": "how-voip-business-phone-software-works",
+      "path": "/guides/how-voip-business-phone-software-works/"
+    },
+    {
+      "kind": "guide",
+      "slug": "types-of-voip-business-phone-software",
+      "path": "/guides/types-of-voip-business-phone-software/"
+    },
+    {
+      "kind": "guide",
+      "slug": "voip-business-phone-vs-business-communications",
+      "path": "/guides/voip-business-phone-vs-business-communications/"
+    },
+    {
+      "kind": "guide",
+      "slug": "voip-business-phone-requirements-guide",
+      "path": "/guides/voip-business-phone-requirements-guide/"
+    },
+    {
+      "kind": "guide",
+      "slug": "voip-business-phone-evaluation-guide",
+      "path": "/guides/voip-business-phone-evaluation-guide/"
+    },
+    {
+      "kind": "guide",
+      "slug": "what-is-aircall",
+      "path": "/guides/what-is-aircall/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "aircall-vs-callhippo",
+      "path": "/compare/aircall-vs-callhippo/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "aircall-vs-krispcall",
+      "path": "/compare/aircall-vs-krispcall/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "aircall-vs-freshcaller",
+      "path": "/compare/aircall-vs-freshcaller/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "aircall-vs-ringcentral",
+      "path": "/compare/aircall-vs-ringcentral/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "aircall-vs-nextiva",
+      "path": "/compare/aircall-vs-nextiva/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "aircall-vs-dialpad",
+      "path": "/compare/aircall-vs-dialpad/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "aircall-vs-openphone",
+      "path": "/compare/aircall-vs-openphone/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "aircall-vs-zoom",
+      "path": "/compare/aircall-vs-zoom/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "aircall-vs-wati",
+      "path": "/compare/aircall-vs-wati/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "aircall-vs-eightx8",
+      "path": "/compare/aircall-vs-eightx8/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "aircall-vs-goto-connect",
+      "path": "/compare/aircall-vs-goto-connect/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "aircall-vs-talkdesk",
+      "path": "/compare/aircall-vs-talkdesk/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "aircall-vs-kixie",
+      "path": "/compare/aircall-vs-kixie/"
+    },
+    {
+      "kind": "alternatives",
+      "slug": "aircall",
+      "path": "/alternatives/aircall/"
+    },
+    {
+      "kind": "pricing",
+      "slug": "aircall",
+      "path": "/software/aircall/pricing/"
+    },
+    {
+      "kind": "best",
+      "slug": "business-communications-software",
+      "path": "/best/business-communications-software/"
+    },
+    {
+      "kind": "best",
+      "slug": "voip-business-phone-software",
+      "path": "/best/voip-business-phone-software/"
+    },
+    {
+      "kind": "tools",
+      "slug": "voip-business-phone-cost-calculator",
+      "path": "/tools/voip-business-phone-cost-calculator/"
+    }
+  ],
+  "dependentsNeedingRefresh": [],
+  "remediation": [
+    "verify:canonical_vendor"
+  ],
+  "notes": [
+    "fieldAudit score=94",
+    "decisionHub bestFor=5 notIdeal=6",
+    "dependents=29"
+  ],
+  "materiallyImproved": false
+}

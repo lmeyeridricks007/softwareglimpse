@@ -196,7 +196,7 @@ const softwareSeedRaw: SoftwareInput[] = [
     website: "https://capsulecrm.com",
     logo: { src: "/brands/capsule.png", alt: "Capsule CRM logo" },
     shortDescription:
-      "Small-business CRM for contact management and straightforward sales pipelines.",
+      "Simple small-business CRM for contacts, sales pipelines, tasks, and lightweight automation without enterprise complexity.",
     primaryCategorySlug: "crm",
     subcategorySlugs: ["simple-crm", "small-business-crm"],
     useCaseSlugs: ["contact-management", "pipeline-management"],
@@ -409,7 +409,7 @@ const softwareSeedRaw: SoftwareInput[] = [
     website: "https://www.hubspot.com",
     logo: { src: "/brands/hubspot.png", alt: "HubSpot logo" },
     shortDescription:
-      "CRM platform with free core CRM plus Sales, Marketing, Service, and Content Hubs for growing teams.",
+      "AI-powered customer platform with free forever CRM, plus paid Smart CRM seats and Sales/Marketing/Service hubs for growing teams.",
     primaryCategorySlug: "crm",
     subcategorySlugs: ["sales-crm", "small-business-crm"],
     useCaseSlugs: [
@@ -746,7 +746,7 @@ const softwareSeedRaw: SoftwareInput[] = [
     website: "https://www.nimble.com",
     logo: { src: "/brands/nimble.png", alt: "Nimble logo" },
     shortDescription:
-      "Social/relationship CRM with Gmail and Outlook sync; Business plan from $24.90/user/mo annual.",
+      "Social and relationship CRM with Gmail/Outlook sync, contact enrichment, and a single Business plan for teams.",
     primaryCategorySlug: "crm",
     subcategorySlugs: ["small-business-crm","sales-crm"],
     useCaseSlugs: ["contact-management","pipeline-management","lead-management"],
@@ -1171,12 +1171,60 @@ const softwareSeedRaw: SoftwareInput[] = [
     useCaseSlugs: ["live-chat-support","ai-customer-service"],
     teamTypeSlugs: ["customer-success","operations"],
     businessSizeSlugs: ["micro","small-business","mid-market"],
-    competitorSlugs: ["freshchat","livechat","intercom","zendesk-suite"],
-    alternativeSlugs: ["freshchat","livechat"],
-    comparableSlugs: ["freshchat","livechat"],
+    competitorSlugs: ["freshchat","livechat","crisp","intercom","zendesk-suite"],
+    alternativeSlugs: ["freshchat","livechat","crisp"],
+    comparableSlugs: ["freshchat","livechat","crisp"],
     metadata: {
       status: "published",
       publishedAt: "2026-08-18T00:00:00.000Z",
+      researchStatus: "complete",
+    },
+  }),
+  soft({
+    id: "soft-crisp",
+    slug: "crisp",
+    name: "Crisp",
+    company: "Crisp IM SAS",
+    website: "https://crisp.chat",
+    logo: { src: "/brands/crisp.png", alt: "Crisp logo" },
+    shortDescription:
+      "Omnichannel messaging with Hugo AI — Free (2 seats); Mini $45; Essentials $95; Plus $295/workspace/mo. Primary live-chat; CS secondary.",
+    aliases: ["Crisp Chat", "Crisp.chat"],
+    primaryCategorySlug: "live-chat",
+    secondaryCategorySlugs: ["customer-service"],
+    useCaseSlugs: ["live-chat-support", "ai-customer-service", "omnichannel-support"],
+    teamTypeSlugs: ["customer-success", "operations"],
+    businessSizeSlugs: ["micro", "small-business", "mid-market"],
+    competitorSlugs: ["tidio", "livechat", "freshchat", "intercom"],
+    alternativeSlugs: ["tidio", "livechat", "freshchat"],
+    comparableSlugs: ["tidio", "livechat"],
+    metadata: {
+      status: "published",
+      publishedAt: "2026-09-06T00:00:00.000Z",
+      researchStatus: "complete",
+    },
+  }),
+  soft({
+    id: "soft-miocommerce",
+    slug: "miocommerce",
+    name: "MioCommerce",
+    company: "MioCommerce",
+    website: "https://miocommerce.com",
+    logo: { src: "/brands/miocommerce.png", alt: "MioCommerce logo" },
+    shortDescription:
+      "Field service ops for home & commercial services — live pricing booking, scheduling, dispatch, CRM, invoicing. Essentials from $19/mo annual; 15-day trial.",
+    aliases: ["Mio Commerce", "MioCommerce software"],
+    primaryCategorySlug: "field-service-operations",
+    secondaryCategorySlugs: [],
+    useCaseSlugs: ["appointment-scheduling", "trades-field-service"],
+    teamTypeSlugs: ["operations", "founders"],
+    businessSizeSlugs: ["micro", "small-business", "mid-market"],
+    competitorSlugs: ["servicem8", "contractor-foreman"],
+    alternativeSlugs: ["servicem8", "contractor-foreman"],
+    comparableSlugs: ["servicem8"],
+    metadata: {
+      status: "published",
+      publishedAt: "2026-09-06T00:00:00.000Z",
       researchStatus: "complete",
     },
   }),
@@ -1714,7 +1762,7 @@ const softwareSeedRaw: SoftwareInput[] = [
     website: "https://www.getresponse.com",
     logo: { src: "/brands/getresponse.png", alt: "GetResponse logo" },
     shortDescription:
-      "AI email, automation, landing pages & funnels with a forever-free tier and paid contact-based plans.",
+      "GetResponse is an AI-driven email marketing and lifecycle automation platform with newsletters, automation workflows, landing pages, funnels, webinars (higher plans), and ecommerce tools. Paid plans use contact-list tiers with unlimited monthly email sends; a forever-free plan an",
     aliases: ["Get Response"],
     primaryCategorySlug: "email-marketing",
     secondaryCategorySlugs: ["marketing"],
@@ -2502,8 +2550,8 @@ const softwareSeedRaw: SoftwareInput[] = [
     useCaseSlugs: ["team-communication"],
     teamTypeSlugs: ["operations","founders"],
     businessSizeSlugs: ["micro","small-business"],
-    competitorSlugs: ["sanebox", "zenzap"],
-    alternativeSlugs: ["sanebox", "zenzap"],
+    competitorSlugs: ["sanebox"],
+    alternativeSlugs: ["sanebox"],
     comparableSlugs: ["sanebox"],
     metadata: {
       status: "published",
@@ -2519,14 +2567,14 @@ const softwareSeedRaw: SoftwareInput[] = [
     website: "https://www.sanebox.com",
     logo: { src: "/brands/sanebox.png", alt: "SaneBox logo" },
     shortDescription:
-      "Per-person email triage that filters existing mailboxes into SaneLater/SaneBlackHole folders — Snack, Lunch and Dinner tiers with 1, 2 and 4 mailbox caps; adjacent to business communications.",
+      "SaneBox is inbox-productivity tooling that layers onto an existing mailbox — Gmail, Outlook, Yahoo, iCloud or any IMAP account — and triages incoming mail into folders such as SaneLater, SaneBlackHole and SaneAttachments, with follow-up reminders on higher tiers. Plans are per pe",
     primaryCategorySlug: "business-communications",
     subcategorySlugs: [],
     useCaseSlugs: ["team-communication"],
     teamTypeSlugs: ["operations","founders"],
     businessSizeSlugs: ["solo","micro","small-business"],
-    competitorSlugs: ["fastmail", "zenzap"],
-    alternativeSlugs: ["fastmail", "zenzap"],
+    competitorSlugs: ["fastmail"],
+    alternativeSlugs: ["fastmail"],
     comparableSlugs: ["fastmail"],
     metadata: {
       status: "published",
@@ -5008,9 +5056,9 @@ const softwareSeedRaw: SoftwareInput[] = [
     useCaseSlugs: ["live-chat-support"],
     teamTypeSlugs: ["customer-success","operations","sales"],
     businessSizeSlugs: ["small-business","mid-market","enterprise"],
-    competitorSlugs: ["freshchat","tidio","intercom","zendesk-suite"],
-    alternativeSlugs: ["freshchat","tidio"],
-    comparableSlugs: ["freshchat","tidio"],
+    competitorSlugs: ["freshchat","tidio","crisp","intercom","zendesk-suite"],
+    alternativeSlugs: ["freshchat","tidio","crisp"],
+    comparableSlugs: ["freshchat","tidio","crisp"],
     metadata: {
       status: "published",
       publishedAt: "2026-08-18T00:00:00.000Z",
@@ -6964,10 +7012,15 @@ function soft(
     useCaseSlugs,
     metadata,
     seo: {
-      title: input.name,
-      description: `${input.name} software profile on SoftwareGlimpse.`,
-      indexable: isPublished,
-      canonicalPath: `/software/${input.slug}/`,
+      title: input.seo?.title ?? input.name,
+      description:
+        input.seo?.description ??
+        `${input.name} software profile on SoftwareGlimpse.`,
+      // Preserve explicit gap/seed indexable — do not force false for scheduled
+      // items that are already public via past scheduledAt (sitemap/robots).
+      indexable: input.seo?.indexable ?? isPublished,
+      canonicalPath:
+        input.seo?.canonicalPath ?? `/software/${input.slug}/`,
     },
     affiliate: partnerUrl
       ? {

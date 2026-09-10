@@ -271,7 +271,7 @@ export function scoreMigrationRisk(input: {
     reasons.push("Low-confidence redirect on important URL");
   }
   if (reviewRequired) {
-    risk = maxRisk(risk, importance === "LOW" ? "MEDIUM" : "HIGH");
+    risk = maxRisk(risk, "HIGH");
     reasons.push("Manual review still required before redirect implementation");
   }
   if (

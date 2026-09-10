@@ -1,0 +1,534 @@
+{
+  "slug": "honeycomb",
+  "updatedAt": "2026-09-08T21:57:41.729Z",
+  "version": "1.0.0",
+  "fieldAudit": {
+    "slug": "honeycomb",
+    "checkedAt": "2026-09-08T21:57:41.728Z",
+    "items": [
+      {
+        "field": "name",
+        "status": "PASS",
+        "detail": "Name: Honeycomb",
+        "source": "seed"
+      },
+      {
+        "field": "product_status",
+        "status": "PASS",
+        "detail": "productLifecycle=active",
+        "source": "seed"
+      },
+      {
+        "field": "canonical_vendor",
+        "status": "PASS",
+        "detail": "Vendor: Honeycomb.io, Inc.",
+        "source": "seed"
+      },
+      {
+        "field": "category",
+        "status": "PASS",
+        "detail": "primaryCategorySlug=it-development",
+        "source": "seed"
+      },
+      {
+        "field": "description",
+        "status": "PASS",
+        "detail": "Description present (High-cardinality event/trace observability — Free; Pro from $150/mo; Enterprise …)",
+        "source": "seed"
+      },
+      {
+        "field": "target_audience",
+        "status": "PASS",
+        "detail": "Sizes=3, teams=1, assessment bestFor=3",
+        "source": "assessment"
+      },
+      {
+        "field": "use_cases",
+        "status": "PASS",
+        "detail": "useCaseSlugs=1",
+        "source": "seed"
+      },
+      {
+        "field": "capabilities",
+        "status": "PASS",
+        "detail": "featureRatings=0, enrichment features=16",
+        "source": "enrichment"
+      },
+      {
+        "field": "pricing",
+        "status": "PASS",
+        "detail": "Pricing envelope present",
+        "source": "enrichment"
+      },
+      {
+        "field": "plans",
+        "status": "PASS",
+        "detail": "plans=3",
+        "source": "enrichment"
+      },
+      {
+        "field": "free_plan",
+        "status": "PASS",
+        "detail": "Free plan documented",
+        "source": "enrichment"
+      },
+      {
+        "field": "trial",
+        "status": "UNKNOWN",
+        "detail": "Trial not explicitly documented — do not assume none",
+        "source": "none"
+      },
+      {
+        "field": "integrations",
+        "status": "PASS",
+        "detail": "integrationSlugs=0, enrichment=3",
+        "source": "enrichment"
+      },
+      {
+        "field": "alternatives",
+        "status": "PASS",
+        "detail": "alternativeSlugs=2",
+        "source": "seed"
+      },
+      {
+        "field": "competitors",
+        "status": "PASS",
+        "detail": "competitorSlugs=5",
+        "source": "seed"
+      },
+      {
+        "field": "affiliate",
+        "status": "PASS",
+        "detail": "No affiliate relationship (explicit)",
+        "source": "seed"
+      },
+      {
+        "field": "source_provenance",
+        "status": "PASS",
+        "detail": "seed sources=0, enrichment sourceIds=3",
+        "source": "enrichment"
+      },
+      {
+        "field": "verification_date",
+        "status": "PASS",
+        "detail": "Latest verification/research signal: 2026-08-18T22:00:00.000Z",
+        "source": "enrichment"
+      }
+    ],
+    "passCount": 17,
+    "partialCount": 0,
+    "missingCount": 0,
+    "unknownCount": 1,
+    "score": 94
+  },
+  "decisionHub": {
+    "whatItIs": "Honeycomb is a high-cardinality event and distributed-tracing observability specialist — BubbleUp, wide events, and trace-first debugging rather than a Datadog-style host/infra suite. Free plan exists. Pro publishes from $150/month; Enterprise is custom. Same observability-monitoring cluster as Datadog — Datadog remains the award (8.6); this entity does not outrank it. Distinct from AppDynamics vCPU APM and from Sentry’s error/replay specialist shape. Landscape-only versus PagerDuty on-call.",
+    "bestFor": [
+      "Teams whose observability job is high-cardinality events and traces",
+      "OpenTelemetry-first debugging vs host/infra suites",
+      "Buyers who will start on Free before Pro $150",
+      "small-business / engineering: Honeycomb fit for small-business engineering teams in the observability-monitoring job cluster, from first-party positioning and IT Tier-B + ITSM SMB research.",
+      "mid-market / engineering: Honeycomb fit for mid-market engineering teams in the observability-monitoring job cluster, from first-party positioning and IT Tier-B + ITSM SMB research.",
+      "enterprise / engineering: Honeycomb fit for enterprise engineering teams in the observability-monitoring job cluster, from first-party positioning and IT Tier-B + ITSM SMB research."
+    ],
+    "notIdealFor": [
+      "SRE teams buying infrastructure monitoring as the core SKU (Datadog)",
+      "On-call-only paging (PagerDuty) — landscape, not a peer rank",
+      "Cisco vCPU APM as the primary shape (AppDynamics)",
+      "Not a Datadog-style infrastructure monitoring suite — high-cardinality events/traces are the job",
+      "Does not outrank Datadog (8.6)",
+      "Pro $150 is not unlimited telemetry"
+    ],
+    "coreCapabilities": [
+      "incident management",
+      "infrastructure monitoring",
+      "apm tracing",
+      "log management",
+      "cicd actions",
+      "itsm ai",
+      "dev ai",
+      "enterprise security"
+    ],
+    "pricingSummary": "3 documented plans · 1 free · entry paid: Pro",
+    "keyTradeoffs": [
+      "Not a Datadog-style infrastructure monitoring suite — high-cardinality events/traces are the job",
+      "Does not outrank Datadog (8.6)",
+      "Pro $150 is not unlimited telemetry",
+      "Not on-call paging (PagerDuty) — landscape only",
+      "Not ITSM, git host, hosting panel, or managed hosting"
+    ],
+    "alternatives": [
+      {
+        "slug": "datadog",
+        "name": "Datadog"
+      },
+      {
+        "slug": "sentry",
+        "name": "Sentry"
+      },
+      {
+        "slug": "new-relic",
+        "name": "New Relic"
+      },
+      {
+        "slug": "appdynamics",
+        "name": "AppDynamics"
+      },
+      {
+        "slug": "grafana-cloud",
+        "name": "Grafana Cloud"
+      }
+    ],
+    "importantComparisons": [
+      {
+        "slug": "datadog-vs-honeycomb",
+        "title": "Honeycomb vs Datadog",
+        "href": "/compare/datadog-vs-honeycomb/"
+      },
+      {
+        "slug": "honeycomb-vs-pagerduty",
+        "title": "Honeycomb vs PagerDuty",
+        "href": "/compare/honeycomb-vs-pagerduty/"
+      },
+      {
+        "slug": "chronosphere-vs-honeycomb",
+        "title": "Chronosphere vs Honeycomb",
+        "href": "/compare/chronosphere-vs-honeycomb/"
+      },
+      {
+        "slug": "apify-vs-honeycomb",
+        "title": "Apify vs Honeycomb",
+        "href": "/compare/apify-vs-honeycomb/"
+      },
+      {
+        "slug": "appdynamics-vs-honeycomb",
+        "title": "AppDynamics vs Honeycomb",
+        "href": "/compare/appdynamics-vs-honeycomb/"
+      },
+      {
+        "slug": "azure-devops-vs-honeycomb",
+        "title": "Azure DevOps vs Honeycomb",
+        "href": "/compare/azure-devops-vs-honeycomb/"
+      }
+    ],
+    "relevantGuides": [
+      {
+        "slug": "honeycomb-implementation",
+        "title": "Honeycomb Implementation: 30/60/90 IT Rollout That Sticks",
+        "href": "/guides/honeycomb-implementation/"
+      },
+      {
+        "slug": "honeycomb-migration",
+        "title": "Honeycomb Migration: Move Tickets and Repos Without Losing Trust",
+        "href": "/guides/honeycomb-migration/"
+      },
+      {
+        "slug": "honeycomb-setup",
+        "title": "Honeycomb Setup: Day-Zero Path to a Working IT Loop",
+        "href": "/guides/honeycomb-setup/"
+      },
+      {
+        "slug": "honeycomb-plans",
+        "title": "Honeycomb Plans: Seats, Hosts, and Qualifying Tiers",
+        "href": "/guides/honeycomb-plans/"
+      },
+      {
+        "slug": "is-honeycomb-worth-it",
+        "title": "Is Honeycomb Worth It? Fit Scenarios Before You Buy",
+        "href": "/guides/is-honeycomb-worth-it/"
+      }
+    ],
+    "evidenceState": "Research/data-based (no completed hands-on test) · Latest verification/research signal: 2026-08-18T22:00:00.000Z · Editorial assessment: approved",
+    "nextDecisionStep": "Compare against peers: Honeycomb vs Datadog",
+    "missingSections": [
+      "trial"
+    ]
+  },
+  "dependents": [
+    {
+      "kind": "guide",
+      "slug": "honeycomb-implementation",
+      "path": "/guides/honeycomb-implementation/"
+    },
+    {
+      "kind": "guide",
+      "slug": "honeycomb-migration",
+      "path": "/guides/honeycomb-migration/"
+    },
+    {
+      "kind": "guide",
+      "slug": "honeycomb-setup",
+      "path": "/guides/honeycomb-setup/"
+    },
+    {
+      "kind": "guide",
+      "slug": "honeycomb-plans",
+      "path": "/guides/honeycomb-plans/"
+    },
+    {
+      "kind": "guide",
+      "slug": "is-honeycomb-worth-it",
+      "path": "/guides/is-honeycomb-worth-it/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "datadog-vs-honeycomb",
+      "path": "/compare/datadog-vs-honeycomb/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "honeycomb-vs-pagerduty",
+      "path": "/compare/honeycomb-vs-pagerduty/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "chronosphere-vs-honeycomb",
+      "path": "/compare/chronosphere-vs-honeycomb/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "apify-vs-honeycomb",
+      "path": "/compare/apify-vs-honeycomb/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "appdynamics-vs-honeycomb",
+      "path": "/compare/appdynamics-vs-honeycomb/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "azure-devops-vs-honeycomb",
+      "path": "/compare/azure-devops-vs-honeycomb/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "bitbucket-vs-honeycomb",
+      "path": "/compare/bitbucket-vs-honeycomb/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "bmc-helix-vs-honeycomb",
+      "path": "/compare/bmc-helix-vs-honeycomb/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "bright-data-vs-honeycomb",
+      "path": "/compare/bright-data-vs-honeycomb/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "buildkite-vs-honeycomb",
+      "path": "/compare/buildkite-vs-honeycomb/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "circleci-vs-honeycomb",
+      "path": "/compare/circleci-vs-honeycomb/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "cloudways-vs-honeycomb",
+      "path": "/compare/cloudways-vs-honeycomb/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "coralogix-vs-honeycomb",
+      "path": "/compare/coralogix-vs-honeycomb/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "cpanel-vs-honeycomb",
+      "path": "/compare/cpanel-vs-honeycomb/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "directadmin-vs-honeycomb",
+      "path": "/compare/directadmin-vs-honeycomb/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "dynatrace-vs-honeycomb",
+      "path": "/compare/dynatrace-vs-honeycomb/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "elastic-observability-vs-honeycomb",
+      "path": "/compare/elastic-observability-vs-honeycomb/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "firehydrant-vs-honeycomb",
+      "path": "/compare/firehydrant-vs-honeycomb/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "fly-io-vs-honeycomb",
+      "path": "/compare/fly-io-vs-honeycomb/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "github-vs-honeycomb",
+      "path": "/compare/github-vs-honeycomb/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "gitlab-vs-honeycomb",
+      "path": "/compare/gitlab-vs-honeycomb/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "grafana-cloud-vs-honeycomb",
+      "path": "/compare/grafana-cloud-vs-honeycomb/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "haloitsm-vs-honeycomb",
+      "path": "/compare/haloitsm-vs-honeycomb/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "heroku-vs-honeycomb",
+      "path": "/compare/heroku-vs-honeycomb/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "honeycomb-vs-incident-io",
+      "path": "/compare/honeycomb-vs-incident-io/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "honeycomb-vs-iproyal",
+      "path": "/compare/honeycomb-vs-iproyal/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "honeycomb-vs-ivanti",
+      "path": "/compare/honeycomb-vs-ivanti/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "honeycomb-vs-jira-service-management",
+      "path": "/compare/honeycomb-vs-jira-service-management/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "honeycomb-vs-kinsta",
+      "path": "/compare/honeycomb-vs-kinsta/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "honeycomb-vs-manageengine-servicedesk-plus",
+      "path": "/compare/honeycomb-vs-manageengine-servicedesk-plus/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "honeycomb-vs-new-relic",
+      "path": "/compare/honeycomb-vs-new-relic/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "honeycomb-vs-oxylabs",
+      "path": "/compare/honeycomb-vs-oxylabs/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "honeycomb-vs-railway",
+      "path": "/compare/honeycomb-vs-railway/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "honeycomb-vs-render",
+      "path": "/compare/honeycomb-vs-render/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "honeycomb-vs-rootly",
+      "path": "/compare/honeycomb-vs-rootly/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "honeycomb-vs-scraperapi",
+      "path": "/compare/honeycomb-vs-scraperapi/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "honeycomb-vs-sentry",
+      "path": "/compare/honeycomb-vs-sentry/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "honeycomb-vs-servicenow",
+      "path": "/compare/honeycomb-vs-servicenow/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "honeycomb-vs-siteground",
+      "path": "/compare/honeycomb-vs-siteground/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "honeycomb-vs-smartproxy",
+      "path": "/compare/honeycomb-vs-smartproxy/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "honeycomb-vs-splunk",
+      "path": "/compare/honeycomb-vs-splunk/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "honeycomb-vs-squadcast",
+      "path": "/compare/honeycomb-vs-squadcast/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "honeycomb-vs-sysaid",
+      "path": "/compare/honeycomb-vs-sysaid/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "honeycomb-vs-thordata",
+      "path": "/compare/honeycomb-vs-thordata/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "honeycomb-vs-topdesk",
+      "path": "/compare/honeycomb-vs-topdesk/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "honeycomb-vs-wp-engine",
+      "path": "/compare/honeycomb-vs-wp-engine/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "honeycomb-vs-zyte",
+      "path": "/compare/honeycomb-vs-zyte/"
+    },
+    {
+      "kind": "alternatives",
+      "slug": "honeycomb",
+      "path": "/alternatives/honeycomb/"
+    },
+    {
+      "kind": "pricing",
+      "slug": "honeycomb",
+      "path": "/software/honeycomb/pricing/"
+    },
+    {
+      "kind": "tools",
+      "slug": "it-development-cost-calculator",
+      "path": "/tools/it-development-cost-calculator/"
+    }
+  ],
+  "dependentsNeedingRefresh": [],
+  "remediation": [
+    "verify:trial"
+  ],
+  "notes": [
+    "fieldAudit score=94",
+    "decisionHub bestFor=6 notIdeal=6",
+    "dependents=55"
+  ],
+  "materiallyImproved": true
+}

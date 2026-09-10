@@ -23,6 +23,17 @@ export function loadLegacyRedirectsFile(
   return raw;
 }
 
+/** Paths like `/llms.txt` must not gain a trailing slash (Next serves the file route). */
+function finalizeRedirectDestination(destination: string): string {
+  const trimmed = destination.replace(/\/$/, "") || "/";
+  const lastSegment = trimmed.split("/").pop() ?? "";
+  if (/\.[a-z0-9]+$/i.test(lastSegment)) {
+    return trimmed;
+  }
+  if (destination === "/") return "/";
+  return destination.endsWith("/") ? destination : `${destination}/`;
+}
+
 /**
  * Shape consumed by next.config.ts `redirects()`.
  * Emits both slash variants for each source.
@@ -38,9 +49,7 @@ export function toNextConfigRedirects(
   const seen = new Set<string>();
 
   for (const row of file.redirects) {
-    const destination = row.destination.endsWith("/")
-      ? row.destination
-      : `${row.destination}/`;
+    const destination = finalizeRedirectDestination(row.destination);
     const sources =
       row.source === "/"
         ? ["/"]

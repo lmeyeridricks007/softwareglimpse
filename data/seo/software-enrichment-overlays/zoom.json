@@ -1,0 +1,455 @@
+{
+  "slug": "zoom",
+  "updatedAt": "2026-09-07T22:31:21.412Z",
+  "version": "1.0.0",
+  "fieldAudit": {
+    "slug": "zoom",
+    "checkedAt": "2026-09-07T22:31:21.411Z",
+    "items": [
+      {
+        "field": "name",
+        "status": "PASS",
+        "detail": "Name: Zoom",
+        "source": "seed"
+      },
+      {
+        "field": "product_status",
+        "status": "PASS",
+        "detail": "productLifecycle=active",
+        "source": "seed"
+      },
+      {
+        "field": "canonical_vendor",
+        "status": "UNKNOWN",
+        "detail": "Company/vendor not documented",
+        "source": "none"
+      },
+      {
+        "field": "category",
+        "status": "PASS",
+        "detail": "primaryCategorySlug=business-communications",
+        "source": "seed"
+      },
+      {
+        "field": "description",
+        "status": "PASS",
+        "detail": "Description present (Meetings-first Workplace suite plus Zoom Phone UCaaS — Phone US/CA Unlimited res…)",
+        "source": "seed"
+      },
+      {
+        "field": "target_audience",
+        "status": "PASS",
+        "detail": "Sizes=4, teams=3, assessment bestFor=3",
+        "source": "assessment"
+      },
+      {
+        "field": "use_cases",
+        "status": "PASS",
+        "detail": "useCaseSlugs=2",
+        "source": "seed"
+      },
+      {
+        "field": "capabilities",
+        "status": "PASS",
+        "detail": "featureRatings=0, enrichment features=13",
+        "source": "enrichment"
+      },
+      {
+        "field": "pricing",
+        "status": "PASS",
+        "detail": "Pricing envelope present",
+        "source": "enrichment"
+      },
+      {
+        "field": "plans",
+        "status": "PASS",
+        "detail": "plans=4",
+        "source": "enrichment"
+      },
+      {
+        "field": "free_plan",
+        "status": "PASS",
+        "detail": "Free plan documented",
+        "source": "enrichment"
+      },
+      {
+        "field": "trial",
+        "status": "PASS",
+        "detail": "Trial documented on plans/pricing",
+        "source": "enrichment"
+      },
+      {
+        "field": "integrations",
+        "status": "PASS",
+        "detail": "integrationSlugs=0, enrichment=7",
+        "source": "enrichment"
+      },
+      {
+        "field": "alternatives",
+        "status": "PASS",
+        "detail": "alternativeSlugs=4",
+        "source": "seed"
+      },
+      {
+        "field": "competitors",
+        "status": "PASS",
+        "detail": "competitorSlugs=4",
+        "source": "seed"
+      },
+      {
+        "field": "affiliate",
+        "status": "PASS",
+        "detail": "No affiliate relationship (explicit)",
+        "source": "seed"
+      },
+      {
+        "field": "source_provenance",
+        "status": "PASS",
+        "detail": "seed sources=0, enrichment sourceIds=4",
+        "source": "enrichment"
+      },
+      {
+        "field": "verification_date",
+        "status": "PASS",
+        "detail": "Latest verification/research signal: 2026-08-17T12:00:00.000Z",
+        "source": "enrichment"
+      }
+    ],
+    "passCount": 17,
+    "partialCount": 0,
+    "missingCount": 0,
+    "unknownCount": 1,
+    "score": 94
+  },
+  "decisionHub": {
+    "whatItIs": "Zoom combines Zoom Workplace (meetings, chat, whiteboard) with Zoom Phone for cloud PBX. Free Workplace meetings/chat exist, but business phone is a paid Zoom Phone add-on or bundle (US/CA Unlimited research floor ~$15–16; Pro Plus ~$20.50 / Business Plus ~$24.50 annual bundles). AI Companion is included on paid Workplace surfaces; call recording and Power Pack dialer options are higher-plan or add-on.",
+    "bestFor": [
+      "Organisations already standardised on Zoom meetings that want to add Zoom Phone",
+      "Hybrid teams that need video-first collaboration with optional cloud PBX",
+      "SMB through enterprise buyers who value freemium Workplace entry before paying for Phone",
+      "micro / operations: Zoom fit for micro operations teams in the cloud-phone job cluster, from first-party positioning and business-communications Priority-1 research.",
+      "small-business / operations: Zoom fit for small-business operations teams in the cloud-phone job cluster, from first-party positioning and business-communications Priority-1 research.",
+      "mid-market / operations: Zoom fit for mid-market operations teams in the cloud-phone job cluster, from first-party positioning and business-communications Priority-1 research."
+    ],
+    "notIdealFor": [
+      "Buyers who need WhatsApp Business or a shared customer inbox as a primary channel",
+      "Contact-centre teams that need RingCX/Support-class routing without add-ons",
+      "Dialer-heavy sales orgs that need power dialer in the base seat",
+      "Free Workplace covers meetings/chat — not full Zoom Phone PSTN service",
+      "Phone seat floors and Pro Plus / Business Plus bundles are medium confidence and region-sensitive",
+      "Call recording is higher-plan-only or add-on depending on SKU"
+    ],
+    "coreCapabilities": [
+      "cloud phone",
+      "call routing",
+      "sms messaging",
+      "team messaging",
+      "video meetings",
+      "ai assistance",
+      "business phone",
+      "team communication"
+    ],
+    "pricingSummary": "4 documented plans · 1 free · entry paid: Zoom Phone US/CA Unlimited · trial documented on at least one plan",
+    "keyTradeoffs": [
+      "Free Workplace covers meetings/chat — not full Zoom Phone PSTN service",
+      "Phone seat floors and Pro Plus / Business Plus bundles are medium confidence and region-sensitive",
+      "Call recording is higher-plan-only or add-on depending on SKU",
+      "Power Pack dialer is an add-on, not included on base Phone",
+      "WhatsApp Business is not supported as a first-party channel"
+    ],
+    "alternatives": [
+      {
+        "slug": "ringcentral",
+        "name": "RingCentral"
+      },
+      {
+        "slug": "dialpad",
+        "name": "Dialpad"
+      },
+      {
+        "slug": "microsoft-teams",
+        "name": "Microsoft Teams"
+      },
+      {
+        "slug": "aircall",
+        "name": "Aircall"
+      }
+    ],
+    "importantComparisons": [
+      {
+        "slug": "ringcentral-vs-zoom",
+        "title": "RingCentral vs Zoom",
+        "href": "/compare/ringcentral-vs-zoom/"
+      },
+      {
+        "slug": "microsoft-teams-vs-zoom",
+        "title": "Microsoft Teams vs Zoom",
+        "href": "/compare/microsoft-teams-vs-zoom/"
+      },
+      {
+        "slug": "webex-vs-zoom",
+        "title": "Cisco Webex vs Zoom",
+        "href": "/compare/webex-vs-zoom/"
+      },
+      {
+        "slug": "dialpad-vs-zoom",
+        "title": "Dialpad vs Zoom",
+        "href": "/compare/dialpad-vs-zoom/"
+      },
+      {
+        "slug": "eightx8-vs-zoom",
+        "title": "8x8 vs Zoom",
+        "href": "/compare/eightx8-vs-zoom/"
+      },
+      {
+        "slug": "fastmail-vs-zoom",
+        "title": "Fastmail vs Zoom",
+        "href": "/compare/fastmail-vs-zoom/"
+      }
+    ],
+    "relevantGuides": [
+      {
+        "slug": "what-is-business-communications-software",
+        "title": "What Is Business Communications Software? Beginner's Guide",
+        "href": "/guides/what-is-business-communications-software/"
+      },
+      {
+        "slug": "how-to-choose-business-communications-software",
+        "title": "How to Choose Business Communications Software: Job-First Framework",
+        "href": "/guides/how-to-choose-business-communications-software/"
+      },
+      {
+        "slug": "business-communications-pricing-guide",
+        "title": "Business Communications Pricing Guide: Seats, Minutes & Message Fees",
+        "href": "/guides/business-communications-pricing-guide/"
+      },
+      {
+        "slug": "business-communications-requirements-guide",
+        "title": "Business Communications Requirements Guide: Numbers, Routing & Must-Haves",
+        "href": "/guides/business-communications-requirements-guide/"
+      },
+      {
+        "slug": "business-communications-evaluation-guide",
+        "title": "Business Communications Evaluation Guide: Two-Week Trial Scorecard",
+        "href": "/guides/business-communications-evaluation-guide/"
+      },
+      {
+        "slug": "zoom-implementation",
+        "title": "Zoom Implementation: 30/60/90 Communications Rollout That Sticks",
+        "href": "/guides/zoom-implementation/"
+      }
+    ],
+    "evidenceState": "Research/data-based (no completed hands-on test) · Latest verification/research signal: 2026-08-17T12:00:00.000Z · Editorial assessment: approved",
+    "nextDecisionStep": "Compare against peers: RingCentral vs Zoom",
+    "missingSections": [
+      "canonical_vendor"
+    ]
+  },
+  "dependents": [
+    {
+      "kind": "guide",
+      "slug": "what-is-business-communications-software",
+      "path": "/guides/what-is-business-communications-software/"
+    },
+    {
+      "kind": "guide",
+      "slug": "how-to-choose-business-communications-software",
+      "path": "/guides/how-to-choose-business-communications-software/"
+    },
+    {
+      "kind": "guide",
+      "slug": "business-communications-pricing-guide",
+      "path": "/guides/business-communications-pricing-guide/"
+    },
+    {
+      "kind": "guide",
+      "slug": "business-communications-requirements-guide",
+      "path": "/guides/business-communications-requirements-guide/"
+    },
+    {
+      "kind": "guide",
+      "slug": "business-communications-evaluation-guide",
+      "path": "/guides/business-communications-evaluation-guide/"
+    },
+    {
+      "kind": "guide",
+      "slug": "zoom-implementation",
+      "path": "/guides/zoom-implementation/"
+    },
+    {
+      "kind": "guide",
+      "slug": "zoom-migration",
+      "path": "/guides/zoom-migration/"
+    },
+    {
+      "kind": "guide",
+      "slug": "zoom-setup",
+      "path": "/guides/zoom-setup/"
+    },
+    {
+      "kind": "guide",
+      "slug": "zoom-plans",
+      "path": "/guides/zoom-plans/"
+    },
+    {
+      "kind": "guide",
+      "slug": "is-zoom-worth-it",
+      "path": "/guides/is-zoom-worth-it/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "ringcentral-vs-zoom",
+      "path": "/compare/ringcentral-vs-zoom/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "microsoft-teams-vs-zoom",
+      "path": "/compare/microsoft-teams-vs-zoom/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "webex-vs-zoom",
+      "path": "/compare/webex-vs-zoom/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "dialpad-vs-zoom",
+      "path": "/compare/dialpad-vs-zoom/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "eightx8-vs-zoom",
+      "path": "/compare/eightx8-vs-zoom/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "fastmail-vs-zoom",
+      "path": "/compare/fastmail-vs-zoom/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "five9-vs-zoom",
+      "path": "/compare/five9-vs-zoom/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "genesys-vs-zoom",
+      "path": "/compare/genesys-vs-zoom/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "goto-connect-vs-zoom",
+      "path": "/compare/goto-connect-vs-zoom/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "grasshopper-vs-zoom",
+      "path": "/compare/grasshopper-vs-zoom/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "manychat-vs-zoom",
+      "path": "/compare/manychat-vs-zoom/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "nextiva-vs-zoom",
+      "path": "/compare/nextiva-vs-zoom/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "ooma-vs-zoom",
+      "path": "/compare/ooma-vs-zoom/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "openphone-vs-zoom",
+      "path": "/compare/openphone-vs-zoom/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "respond-io-vs-zoom",
+      "path": "/compare/respond-io-vs-zoom/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "sanebox-vs-zoom",
+      "path": "/compare/sanebox-vs-zoom/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "slack-vs-zoom",
+      "path": "/compare/slack-vs-zoom/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "talkdesk-vs-zoom",
+      "path": "/compare/talkdesk-vs-zoom/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "twilio-vs-zoom",
+      "path": "/compare/twilio-vs-zoom/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "vonage-vs-zoom",
+      "path": "/compare/vonage-vs-zoom/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "wati-vs-zoom",
+      "path": "/compare/wati-vs-zoom/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "zenzap-vs-zoom",
+      "path": "/compare/zenzap-vs-zoom/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "livestorm-vs-zoom",
+      "path": "/compare/livestorm-vs-zoom/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "aircall-vs-zoom",
+      "path": "/compare/aircall-vs-zoom/"
+    },
+    {
+      "kind": "alternatives",
+      "slug": "zoom",
+      "path": "/alternatives/zoom/"
+    },
+    {
+      "kind": "pricing",
+      "slug": "zoom",
+      "path": "/software/zoom/pricing/"
+    },
+    {
+      "kind": "best",
+      "slug": "business-communications-software",
+      "path": "/best/business-communications-software/"
+    },
+    {
+      "kind": "best",
+      "slug": "webinar-virtual-events-software",
+      "path": "/best/webinar-virtual-events-software/"
+    },
+    {
+      "kind": "tools",
+      "slug": "business-communications-cost-calculator",
+      "path": "/tools/business-communications-cost-calculator/"
+    }
+  ],
+  "dependentsNeedingRefresh": [],
+  "remediation": [
+    "verify:canonical_vendor"
+  ],
+  "notes": [
+    "fieldAudit score=94",
+    "decisionHub bestFor=6 notIdeal=6",
+    "dependents=39"
+  ],
+  "materiallyImproved": false
+}

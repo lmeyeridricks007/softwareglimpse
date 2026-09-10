@@ -8,6 +8,7 @@ import {
   getSoftwareBySlug,
 } from "@/data";
 import { getEducationalGuideBySlug } from "@/data/repositories/guides-educational";
+import { getGuides } from "@/data/repositories/guides";
 import {
   isPublishedStatus,
   type ContentType,
@@ -44,9 +45,13 @@ import {
   COMPANY_ROUTES,
   getAuthorById,
   getFounderAuthor,
+  resolveAuthor,
 } from "@/services/site-foundation";
 import { buildGuideLinkPlan } from "@/services/internal-linking";
 import { InternalLinkingModules } from "@/components/internal-linking";
+import { buildEstateBreadcrumbs } from "@/services/seo/knowledge-graph";
+import { EditorialTrustBlock, EditorialProvenance } from "@/components/editorial";
+import { buildEditorialTrustMetadata } from "@/services/editorial/evidence-level";
 import {
   categoryDecisionFinderHref,
   categoryFinderCtaLabel,
@@ -56,7 +61,9 @@ import {
 import { buildPageMetadata } from "@/seo/metadata";
 import {
   JsonLdScript,
+  articleJsonLd,
   breadcrumbJsonLd,
+  personJsonLd,
   webPageJsonLd,
 } from "@/seo/structured-data";
 
@@ -75,9 +82,19 @@ async function resolveGuide(
   options?: GuideListOptions,
 ): Promise<GuidePage | undefined> {
   const educational = getEducationalGuideBySlug(slug, options);
-  if (educational) return educational;
-  const { getGuideBySlug } = await import("@/data/repositories/guides");
-  return getGuideBySlug(slug, options);
+  let guide = educational;
+  if (!guide) {
+    const { getGuideBySlug } = await import("@/data/repositories/guides");
+    guide = getGuideBySlug(slug, options);
+  }
+  if (!guide) return undefined;
+  // Progressive enrichment overlay — same URL, server-only merge.
+  const [{ loadGuideEnrichmentOverlay }, { mergeGuideWithOverlay }] =
+    await Promise.all([
+      import("@/services/seo/guide-enrichment/overlay-store"),
+      import("@/services/seo/guide-enrichment/overlay-merge"),
+    ]);
+  return mergeGuideWithOverlay(guide, loadGuideEnrichmentOverlay(slug));
 }
 
 const PATH_TYPES = new Set<ContentType>([
@@ -201,30 +218,36 @@ export default async function GuideDetailPage({ params }: Props) {
       )
     : undefined;
 
-  const breadcrumbItems = [
-    { name: "Home", path: "/" },
-    { name: "Guides", path: "/guides/" },
-    ...(category
-      ? [
-          {
-            name: category.name,
-            path: `/categories/${category.path.join("/")}/`,
-          },
-        ]
-      : []),
-    {
-      name: guide.title,
-      path: `/guides/${guide.slug}/`,
-    },
-  ];
+  const breadcrumbItems = buildEstateBreadcrumbs(`/guides/${guide.slug}/`);
 
   const linkPlan = buildGuideLinkPlan(guide);
 
-  const relatedArticles = linkPlan.relatedGuides.map((l) => ({
-    href: l.href,
-    label: l.label,
-    description: l.description,
-  }));
+  // Sidebar related articles must reflect merged overlay relatedGuideSlugs
+  // (improve-linking writes those). Do not rely solely on selectLinks peers.
+  const relatedFromOverlay = guide.relatedGuideSlugs
+    .map((slug) => {
+      const g = getGuides({ includeUnpublished: true }).find(
+        (x) => x.slug === slug,
+      );
+      if (!g || g.slug === guide.slug) return null;
+      return {
+        href: `/guides/${slug}/`,
+        label: g.title,
+        description: g.summary,
+      };
+    })
+    .filter((x): x is { href: string; label: string; description?: string } =>
+      Boolean(x),
+    );
+  const relatedArticles = (
+    relatedFromOverlay.length > 0
+      ? relatedFromOverlay
+      : linkPlan.relatedGuides.map((l) => ({
+          href: l.href,
+          label: l.label,
+          description: l.description,
+        }))
+  ).slice(0, 8);
 
   const previousGuide =
     linkPlan.relatedGuides[1] != null
@@ -283,6 +306,13 @@ export default async function GuideDetailPage({ params }: Props) {
   const primaryProduct = guide.productSlugs[0]
     ? getSoftwareBySlug(guide.productSlugs[0], { includeUnpublished: true })
     : null;
+
+  const guideTrust = buildEditorialTrustMetadata({
+    authorId: author?.id,
+    reviewerId: guide.metadata.reviewer,
+    software: primaryProduct,
+  });
+  const guideReviewer = resolveAuthor(guide.metadata.reviewer);
   const productMedia = buildProductGuideMediaBundle({
     slug: guide.slug,
     productSlugs: guide.productSlugs,
@@ -422,8 +452,28 @@ export default async function GuideDetailPage({ params }: Props) {
               name: guide.title,
               description: guide.seo.description || guide.summary || guide.title,
               path: guide.seo.canonicalPath || `/guides/${guide.slug}/`,
+              dateModified: updatedIso || undefined,
+            }),
+            articleJsonLd({
+              headline: guide.title,
+              description: guide.seo.description || guide.summary || guide.title,
+              path: guide.seo.canonicalPath || `/guides/${guide.slug}/`,
+              datePublished: guide.metadata.publishedAt,
+              dateModified: updatedIso || undefined,
+              authorName: author?.name,
+              authorPath: author ? COMPANY_ROUTES.myStory : undefined,
             }),
             breadcrumbJsonLd(breadcrumbItems),
+            ...(author
+              ? [
+                  personJsonLd({
+                    name: author.name,
+                    path: COMPANY_ROUTES.myStory,
+                    jobTitle: author.role,
+                    description: author.shortBio,
+                  }),
+                ]
+              : []),
           ]}
         />
       ) : null}
@@ -525,6 +575,19 @@ export default async function GuideDetailPage({ params }: Props) {
         }
       />
 
+      <div className={`${GUIDE_LAYOUT.body} !mt-6`}>
+        <EditorialTrustBlock
+          trust={{
+            ...guideTrust,
+            lastUpdated: updatedIso || guideTrust.lastUpdated,
+          }}
+          author={author}
+          reviewer={guideReviewer}
+          compact
+          variant="guide"
+        />
+      </div>
+
       <div className={GUIDE_LAYOUT.body}>
         <div className={`min-w-0 ${GUIDE_LAYOUT.sectionGap}`}>
           {productMedia ? (
@@ -610,8 +673,19 @@ export default async function GuideDetailPage({ params }: Props) {
 
           <InternalLinkingModules
             plan={linkPlan}
-            omit={["relatedGuides", "tryDecisionTool"]}
+            omit={["tryDecisionTool"]}
             showParentInline
+          />
+
+          <EditorialProvenance
+            sources={primaryProduct?.sources ?? []}
+            productName={primaryProduct?.name}
+            pricingVerifiedAt={guideTrust.pricingVerifiedAt}
+            dataCheckedAt={
+              guide.metadata.reviewedAt ??
+              guideTrust.researchDate ??
+              updatedIso
+            }
           />
         </div>
 

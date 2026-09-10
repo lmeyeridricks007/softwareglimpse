@@ -1,7 +1,8 @@
 import type { GuidePage, Software } from "@/domain";
 import type { z } from "zod";
 import type { GuideContentBlockSchema } from "@/domain";
-import { getSoftwareBySlug } from "@/data/repositories/catalog";
+import { SoftwareSchema } from "@/domain";
+import { softwareSeed } from "@/data/seed/software";
 import { loadReview } from "@/data/editorial/store";
 import {
   TIER_2_DEEPEN_PRODUCT_SLUGS,
@@ -441,11 +442,23 @@ function whatIsBlocks(
   ];
 }
 
+/**
+ * Resolve product from seed directly — never via catalogue accessors.
+ * Deepen guides are imported into `guidesSeed` at module load; calling
+ * `getSoftwareBySlug` here creates a TDZ cycle (guides → deepen → catalog → …).
+ */
+function softwareFromSeed(productSlug: string): Software | null {
+  const raw = softwareSeed.find((item) => item.slug === productSlug);
+  if (!raw) return null;
+  const parsed = SoftwareSchema.safeParse(raw);
+  return parsed.success ? parsed.data : null;
+}
+
 export function buildProductWhatIsDeepenGuide(
   productSlug: string,
   options: BuildProductWhatIsDeepenGuideOptions = {},
 ): GuidePage {
-  const software = getSoftwareBySlug(productSlug, { includeUnpublished: true });
+  const software = softwareFromSeed(productSlug);
   if (!software) {
     throw new Error(`Product what-is deepen: missing software seed for ${productSlug}`);
   }
@@ -565,7 +578,7 @@ export function buildProductWhatIsDeepenGuide(
       title: `${title} | SoftwareGlimpse`,
       description: summary.slice(0, 160),
       canonicalPath: `/guides/${slug}/`,
-      indexable: !isScheduled,
+      indexable: false,
     },
   };
 }

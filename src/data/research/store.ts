@@ -52,11 +52,15 @@ function writeJson(filePath: string, data: unknown): void {
   writeFileSync(filePath, `${JSON.stringify(data, null, 2)}\n`, "utf8");
 }
 
+/** Non-product dataset folders colocated under research/ (not software slugs). */
+const RESEARCH_DATASET_DIRS = new Set(["pricing-history"]);
+
 export function listResearchProducts(): string[] {
   if (!existsSync(RESEARCH_ROOT)) return [];
   return readdirSync(RESEARCH_ROOT, { withFileTypes: true })
     .filter((entry) => entry.isDirectory())
-    .map((entry) => entry.name);
+    .map((entry) => entry.name)
+    .filter((name) => !RESEARCH_DATASET_DIRS.has(name) && !name.startsWith("."));
 }
 
 export function loadManualSources(productSlug: string): ResearchSource[] {

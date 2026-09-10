@@ -5,15 +5,46 @@ Local, reusable **ANALYZE → REPORT → RECOMMEND** agents for SoftwareGlimpse.
 They inspect the application/content graph and write Markdown recommendations.
 They **never** automatically change production content, canonicals, robots, scores, or affiliate links.
 
-## Current scores (2026-08-15)
+## Current scores (2026-09-07 P2 triage)
 
 | Metric | Value |
 | --- | ---: |
 | Technical SEO Health (Website Intelligence) | **100 / 100** |
 | Overall Website Quality | **83 / 100** |
-| SEO-HEALTH open findings (FULL) | **0** |
+| SEO-HEALTH open findings (FULL + live) | **1** (0 P0 / 0 P1 / 1 P2) |
+| Migration SEO QA (static+live) | **PASS** (0 findings) |
+| Production `next build` | **PASS** |
+| Live probes | **32/32 checks completed, 0 skipped** |
+| P2 triage | [`P2-TRIAGE-RECONCILIATION.md`](./P2-TRIAGE-RECONCILIATION.md) |
 
-**Bottom line:** Technical SEO is already **over 80**. Next work is sustaining that under production CWV and wider sampling — not climbing from a stale “65” scorecard row. Details: [`03-technical-seo-current-status.md`](./03-technical-seo-current-status.md).
+**Bottom line:** Live FULL audit is clean for P0/P1. Remaining P2 is thin Pipedrive alternatives content (editorial deepen — not a link-graph delete). IMPROVE-cluster internal links retained under PRESERVE → IMPROVE → PROMOTE.
+
+English-only legacy crawl cleanup (locale + WP taxonomy + robots/sitemap verification): [`ENGLISH-LEGACY-CLEANUP.md`](./ENGLISH-LEGACY-CLEANUP.md).
+Locale 410 topic equity review: [`LOCALE-410-TOPIC-REVIEW.md`](./LOCALE-410-TOPIC-REVIEW.md) · gap queue [`EXISTING_ESTATE_GAP_REVIEW.md`](./EXISTING_ESTATE_GAP_REVIEW.md) (`npm run migration:locale-410-review`) — **open queue cleared 2026-09-06**.
+
+Production migration SEO integrity (routes / redirects / canonicals / sitemaps + live probes): [`../migration/MIGRATION-SEO-QA-LATEST.md`](../migration/MIGRATION-SEO-QA-LATEST.md) — `npm run migration:seo-audit -- --base-url=http://127.0.0.1:3000`.
+
+Comparison index-worthiness audit (INDEXABLE / IMPROVE lifecycle + promotion): [`COMPARE-AUDIT.md`](./COMPARE-AUDIT.md) — regenerate with `npm run seo:compare-audit`.
+
+Guides index-worthiness audit (same lifecycle): [`GUIDES-AUDIT.md`](./GUIDES-AUDIT.md) — `npm run seo:guides-audit`. Promotion registry: `data/seo/content-lifecycle.json` via `canPromoteToIndexable` / `promoteToIndexable`.
+
+Progressive guide enrichment (taxonomy, blueprints, queued batches, overlays): [`GUIDE-ENRICHMENT.md`](./GUIDE-ENRICHMENT.md) — `npm run seo:enrich-guides -- --batch 30 --apply`.
+
+Guides INDEXABLE ↔ sitemap-guides reconciliation: [`GUIDES-SITEMAP-RECONCILIATION.md`](./GUIDES-SITEMAP-RECONCILIATION.md) — `npx tsx scripts/seo/reconcile-guides-sitemap.ts`.
+
+Digital PR / backlink opportunities: [`DIGITAL-PR-SYSTEM.md`](./DIGITAL-PR-SYSTEM.md) — `npm run seo:link-opportunities`.
+
+AI Visibility (AI answer-engine citations, measurement only): [`AI-VISIBILITY.md`](./AI-VISIBILITY.md) — `npm run seo:ai-visibility`.
+
+GSC organic growth opportunities (real export only): `npm run seo:gsc-opportunities` → [`GSC-OPPORTUNITIES.md`](./GSC-OPPORTUNITIES.md) / [`TOP-20-GROWTH-PAGES.md`](./TOP-20-GROWTH-PAGES.md) / [`GSC-OPPORTUNITY-ENGINE.md`](./GSC-OPPORTUNITY-ENGINE.md). Writes `data/seo/gsc-opportunities.json` + `data/seo/feeds/gsc-*.json`. Queue A = indexed improve; Queue B = IMPROVE/noindex promote.
+
+Content knowledge graph (estate linking): `npm run seo:knowledge-graph` → [`KNOWLEDGE-GRAPH.md`](./KNOWLEDGE-GRAPH.md) / `data/seo/knowledge-graph.json`. Semantic entity graph, journeys, IMPROVE inbound, hub sections, QA.
+
+Improve-batch contextual linking (quality+value gate → 3–8 inbound → overlays/injections → promote link readiness): `npm run seo:improve-linking` → `data/seo/batches/{batch}-linking.json` + `data/seo/link-injections.json`.
+
+Content Quality Gate (index eligibility / improve loop): [`CONTENT-QUALITY-GATE.md`](./CONTENT-QUALITY-GATE.md) — `npm run quality:gate -- analyze --type guide --slug …`. Shared thresholds with guide/comparison promotion + sitemap via `isEntityIndexable`.
+
+Unified internal Growth Dashboard (PRESERVE → IMPROVE → PROMOTE → RANK → EARN TRAFFIC): [`GROWTH-DASHBOARD.md`](./GROWTH-DASHBOARD.md) — `npm run seo:growth-dashboard` · UI `/dev/growth/?secret=…`. Discovery/Ranking/CTR/Traffic · content estate · improvement velocity · sitemap indexation denominator · REAL/FIXTURE/NOT_CONNECTED/STALE validity.
 
 ## Architecture
 

@@ -1,4 +1,4 @@
-import type { GuidePage } from "@/domain";
+import type { GuidePageInput } from "@/domain";
 import type { z } from "zod";
 import type { GuideContentBlockSchema } from "@/domain";
 
@@ -369,7 +369,7 @@ const crmFieldMappingBlocks: GuideBlockInput[] = [
   },
 ];
 
-export const crmFieldMappingGuide: GuidePage = {
+export const crmFieldMappingGuide: GuidePageInput = {
   id: "guide-crm-field-mapping",
   slug: "crm-field-mapping",
   title: "CRM Field Mapping Guide: Source to Target Dictionary",
@@ -413,7 +413,7 @@ export const crmFieldMappingGuide: GuidePage = {
     "crm-training",
     "crm-adoption",
   ],
-  blocks: crmFieldMappingBlocks as GuidePage["blocks"],
+  blocks: crmFieldMappingBlocks as GuidePageInput["blocks"],
   checklist: [
     {
       id: "owner-sheet",

@@ -100,8 +100,6 @@ export function snapshotFromGuide(guide: GuidePage): PageQualitySnapshot {
   const hasFaq = (guide.faq?.length ?? 0) > 0 || types.has("faq");
   const hasSources = (guide.blocks ?? []).some(
     (b) =>
-      b.type === "sources" ||
-      b.type === "related-reading" ||
       // Related guides / hub links are the site’s transparent reading trail.
       b.type === "related-content",
   );

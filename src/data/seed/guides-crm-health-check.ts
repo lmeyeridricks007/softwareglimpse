@@ -1,4 +1,4 @@
-import type { GuidePage } from "@/domain";
+import type { GuidePageInput } from "@/domain";
 import type { z } from "zod";
 import type { GuideContentBlockSchema } from "@/domain";
 
@@ -394,7 +394,7 @@ const crmHealthCheckBlocks: GuideBlockInput[] = [
   },
 ];
 
-export const crmHealthCheckGuide: GuidePage = {
+export const crmHealthCheckGuide: GuidePageInput = {
   id: "guide-crm-health-check",
   slug: "crm-health-check",
   title: "CRM Health Check: Scorecard and Intervene Rules",
@@ -439,7 +439,7 @@ export const crmHealthCheckGuide: GuidePage = {
     "crm-implementation-kpis",
     "when-to-replace-crm",
   ],
-  blocks: crmHealthCheckBlocks as GuidePage["blocks"],
+  blocks: crmHealthCheckBlocks as GuidePageInput["blocks"],
   checklist: [
     {
       id: "score-five",

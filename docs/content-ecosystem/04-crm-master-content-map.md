@@ -625,7 +625,7 @@ CRM
 │   ├── ✅ HubSpot CRM Review  [CRM-PRD-EX-HS] `/software/hubspot/`
 │   ├── ✅ Salesforce Review  [CRM-PRD-EX-SF] `/software/salesforce/`
 │   ├── ✅ Pipedrive Review  [CRM-PRD-EX-PD] `/software/pipedrive/`
-│   ├── 🟡🔬 Pipedrive Alternatives  [CRM-PRD-EX-PD-ALT] `/alternatives/pipedrive/`
+│   ├── ✅ Pipedrive Alternatives  [CRM-PRD-EX-PD-ALT] `/alternatives/pipedrive/`
 │   ├── 🟡 Alternatives hub  [CRM-ALT-000] `/alternatives/`
 │   ├── ✅ Software directory  [CRM-SOFT-000] `/software/`
 │
@@ -883,7 +883,7 @@ Exhaustive candidate register (206 rows from target ecosystem master inventory +
 | CRM-PRD-EX-HS | ✅ EXISTING | P0 | CRM | Products | Products | software-review | HubSpot CRM Review | `/software/hubspot/` | same | Domain hub | Products | — | Compare / Pricing / Calculator | Research | Visit | — | — | high | sufficient-or-n/a | software/[slug] hub | existing:software-review-agent | Flagship |
 | CRM-PRD-EX-SF | ✅ EXISTING | P0 | CRM | Products | Products | software-review | Salesforce Review | `/software/salesforce/` | same | Domain hub | Products | — | Compare / Pricing / Calculator | Research | Visit | — | — | high | sufficient-or-n/a | software/[slug] hub | existing:software-review-agent | Flagship |
 | CRM-PRD-EX-PD | ✅ EXISTING | P0 | CRM | Products | Products | software-review | Pipedrive Review | `/software/pipedrive/` | same | Domain hub | Products | — | Compare / Pricing / Calculator | Research | Visit | — | — | high | sufficient-or-n/a | software/[slug] hub | existing:software-review-agent | Flagship |
-| CRM-PRD-EX-PD-ALT | 🔬/🟡 EXISTING-BUT-THIN | P1 | CRM | Products | Products | alternatives-detail | Pipedrive Alternatives | `/alternatives/pipedrive/` | same | Pipedrive hub | Products | — | Compare / Pricing / Calculator | Switch | Compare | Finder | — | high | research-required | alternatives/[slug] | existing:alternatives-agent | noindex |
+| CRM-PRD-EX-PD-ALT | ✅ EXISTING | P1 | CRM | Products | Products | alternatives-detail | Pipedrive Alternatives | `/alternatives/pipedrive/` | same | Pipedrive hub | Products | — | Compare / Pricing / Calculator | Switch | Compare | Finder | — | high | complete | alternatives/[slug] | existing:alternatives-agent | Deepened 2026-09-09: 6 alternatives with buyer jobs, pricing signals, limitations; indexable |
 | CRM-CMP-000 | ✅ EXISTING | P0 | CRM | Compare | Compare | comparison-landing | Comparisons hub | `/compare/` | same | Domain hub | Compare | — | Calculator / Select | Discover | Builder | — | RES-013 | — | sufficient-or-n/a | compare/ | existing:comparison-agent |  |
 | CRM-CMP-001 | ✅ EXISTING | P0 | CRM | Compare | Compare | comparison-detail | Head-to-head template | `/compare/[slug]/` | same | Compare hub | Compare | — | Calculator / Select | Decide | Product CTAs | — | RES-013 | **high** | sufficient-or-n/a | compare/[slug] | existing:comparison-agent | ~231 live |
 | CRM-CMP-002 | 🟡 PARTIAL | P1 | CRM | Compare | Compare | comparison-builder | Compare builder | `/compare/build/` | same | Compare hub | Compare | — | Calculator / Select | Ad-hoc | Published compare | — | — | medium | partial | compare/build | existing:comparison-agent | noindex |

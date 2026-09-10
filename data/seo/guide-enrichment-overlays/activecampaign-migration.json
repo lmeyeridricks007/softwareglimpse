@@ -1,0 +1,158 @@
+{
+  "slug": "activecampaign-migration",
+  "enrichmentType": "MIGRATION_GUIDE",
+  "updatedAt": "2026-09-08T17:04:07.494Z",
+  "uniqueValueAdded": [
+    "implementation_workflow",
+    "scenario_analysis",
+    "decision_framework",
+    "limitations_evidence",
+    "buyer_checklist"
+  ],
+  "patch": {
+    "summary": "ActiveCampaign migration guide: inventory → rehearse → freeze → validate integrations — grounded in researched limitations and catalogue peers.",
+    "blocks": [
+      {
+        "id": "da-activecampaign-migration-1",
+        "type": "direct-answer",
+        "body": "Migrate to ActiveCampaign by inventorying legacy email-marketing fields, mapping them to ActiveCampaign objects, rehearsing a freeze window, and validating Shopify, WordPress, Salesforce before reopening writes.",
+        "bullets": [
+          "Inventory → map → rehearse → cut over → reopen",
+          "Highest risk: Confirm live ActiveCampaign checkout; packaging can change.",
+          "Success signal: contact management works for the pilot cohort"
+        ]
+      },
+      {
+        "id": "mig-activecampaign-migration-2",
+        "type": "step",
+        "heading": "ActiveCampaign migration cutover playbook",
+        "body": "Migrations fail from optimistic timelines — not from missing motivation.",
+        "stepNumber": 1,
+        "scenarios": [
+          {
+            "title": "Field inventory",
+            "body": "Export legacy fields that power contact management and mark must-map vs archive."
+          },
+          {
+            "title": "Rehearsal load",
+            "body": "Run a non-prod load into ActiveCampaign; measure match rates before the freeze."
+          },
+          {
+            "title": "Production freeze",
+            "body": "Freeze legacy writes; cut over; validate Shopify; then reopen."
+          }
+        ]
+      },
+      {
+        "id": "df-activecampaign-migration-3",
+        "type": "decision-framework",
+        "title": "Migrate to ActiveCampaign?",
+        "steps": [
+          {
+            "id": "m-1",
+            "label": "Migrate when Marketing-led SMBs that need automation as the primary email job outweigh migration cost"
+          },
+          {
+            "id": "m-2",
+            "label": "Delay if this limitation hits cutover: Confirm live ActiveCampaign checkout; packaging can change."
+          },
+          {
+            "id": "m-3",
+            "label": "If ActiveCampaign mapping is poor, compare destination fit with Klaviyo before moving data twice"
+          }
+        ]
+      },
+      {
+        "id": "mist-activecampaign-migration-4",
+        "type": "mistakes",
+        "title": "ActiveCampaign migration mistakes",
+        "items": [
+          {
+            "title": "No freeze window",
+            "body": "Dual-writing without a freeze creates irrevocable duplicates."
+          },
+          {
+            "title": "Integrations last",
+            "body": "Wire Shopify in rehearsal — not on Monday morning after cutover."
+          },
+          {
+            "title": "Data risk 1",
+            "body": "Confirm live ActiveCampaign checkout; packaging can change."
+          },
+          {
+            "title": "Data risk 2",
+            "body": "No forever-free plan — 14-day trial entry only"
+          },
+          {
+            "title": "Data risk 3",
+            "body": "Contact-tier pricing scales as the list grows — confirm live bands"
+          }
+        ]
+      },
+      {
+        "id": "sel-activecampaign-migration-5",
+        "type": "selection-checklist",
+        "title": "ActiveCampaign migration checklist",
+        "dimensions": [
+          {
+            "id": "map",
+            "label": "Mapping",
+            "options": [
+              "Must-map fields listed",
+              "Owners assigned",
+              "Archive rules written"
+            ]
+          },
+          {
+            "id": "rehearse",
+            "label": "Rehearsal",
+            "options": [
+              "Non-prod load done",
+              "Match rate measured",
+              "Rollback tested"
+            ]
+          },
+          {
+            "id": "cutover",
+            "label": "Cutover",
+            "options": [
+              "Freeze communicated",
+              "Integrations green",
+              "Pilot cohort signed off"
+            ]
+          }
+        ]
+      }
+    ],
+    "checklist": [
+      {
+        "id": "enrich-chk-0",
+        "label": "Complete field inventory for contact management",
+        "order": 0
+      },
+      {
+        "id": "enrich-chk-1",
+        "label": "Rehearse load before production freeze",
+        "order": 1
+      },
+      {
+        "id": "enrich-chk-2",
+        "label": "Validate Shopify pre-reopen",
+        "order": 2
+      },
+      {
+        "id": "enrich-chk-3",
+        "label": "Mitigate: Confirm live ActiveCampaign checkout; packaging can change.",
+        "order": 3
+      }
+    ],
+    "nextAction": {
+      "contentId": "tool:finder:email-marketing",
+      "label": "Open Finder shortlist"
+    }
+  },
+  "notes": [
+    "Migration: cutover risks, data mapping, checklist.",
+    "Type-specific skeleton: MIGRATION_GUIDE"
+  ]
+}

@@ -1,0 +1,530 @@
+{
+  "slug": "heroku",
+  "updatedAt": "2026-09-09T06:31:47.080Z",
+  "version": "1.0.0",
+  "fieldAudit": {
+    "slug": "heroku",
+    "checkedAt": "2026-09-09T06:31:47.077Z",
+    "items": [
+      {
+        "field": "name",
+        "status": "PASS",
+        "detail": "Name: Heroku",
+        "source": "seed"
+      },
+      {
+        "field": "product_status",
+        "status": "PASS",
+        "detail": "productLifecycle=active",
+        "source": "seed"
+      },
+      {
+        "field": "canonical_vendor",
+        "status": "PASS",
+        "detail": "Vendor: Salesforce, Inc. / Heroku",
+        "source": "seed"
+      },
+      {
+        "field": "category",
+        "status": "PASS",
+        "detail": "primaryCategorySlug=it-development",
+        "source": "seed"
+      },
+      {
+        "field": "description",
+        "status": "PASS",
+        "detail": "Description present (Cloud PaaS / Cedar dynos — Eco $5 (sleeps); Basic $7 always-on (research floor);…)",
+        "source": "seed"
+      },
+      {
+        "field": "target_audience",
+        "status": "PASS",
+        "detail": "Sizes=4, teams=1, assessment bestFor=3",
+        "source": "assessment"
+      },
+      {
+        "field": "use_cases",
+        "status": "PASS",
+        "detail": "useCaseSlugs=1",
+        "source": "seed"
+      },
+      {
+        "field": "capabilities",
+        "status": "PASS",
+        "detail": "featureRatings=0, enrichment features=17",
+        "source": "enrichment"
+      },
+      {
+        "field": "pricing",
+        "status": "PASS",
+        "detail": "Pricing envelope present",
+        "source": "enrichment"
+      },
+      {
+        "field": "plans",
+        "status": "PASS",
+        "detail": "plans=5",
+        "source": "enrichment"
+      },
+      {
+        "field": "free_plan",
+        "status": "PASS",
+        "detail": "No free plan in documented plans (explicit absence)",
+        "source": "enrichment"
+      },
+      {
+        "field": "trial",
+        "status": "UNKNOWN",
+        "detail": "Trial not explicitly documented — do not assume none",
+        "source": "none"
+      },
+      {
+        "field": "integrations",
+        "status": "PASS",
+        "detail": "integrationSlugs=0, enrichment=2",
+        "source": "enrichment"
+      },
+      {
+        "field": "alternatives",
+        "status": "PASS",
+        "detail": "alternativeSlugs=2",
+        "source": "seed"
+      },
+      {
+        "field": "competitors",
+        "status": "PASS",
+        "detail": "competitorSlugs=4",
+        "source": "seed"
+      },
+      {
+        "field": "affiliate",
+        "status": "PASS",
+        "detail": "No affiliate relationship (explicit)",
+        "source": "seed"
+      },
+      {
+        "field": "source_provenance",
+        "status": "PASS",
+        "detail": "seed sources=0, enrichment sourceIds=3",
+        "source": "enrichment"
+      },
+      {
+        "field": "verification_date",
+        "status": "PASS",
+        "detail": "Latest verification/research signal: 2026-08-18T22:00:00.000Z",
+        "source": "enrichment"
+      }
+    ],
+    "passCount": 17,
+    "partialCount": 0,
+    "missingCount": 0,
+    "unknownCount": 1,
+    "score": 94
+  },
+  "decisionHub": {
+    "whatItIs": "Heroku is Salesforce’s cloud PaaS (Cedar dynos, add-ons, and git-push deploys) — not a managed WordPress host and not a panel licence. Eco is $5/month but sleeps after 30 minutes inactivity and is personal-only — not the always-on research floor. Basic is $7/month always-on and is startingPriceMonthly 7. Standard-1X $25, Standard-2X $50, Performance-M $250 and higher dynos scale up. No forever-free dyno (hasFreePlan false). Same cloud-paas cluster as Render, Railway, and Fly.io — Render remains the award (7.9); this entity does not outrank it. Peer of Railway and Fly.io.",
+    "bestFor": [
+      "Teams that want Salesforce-backed Cedar dynos with a published Basic $7 always-on floor",
+      "Buyers comparing Heroku Basic to Railway Hobby/Pro and Render Pro $25",
+      "Orgs that will not treat Eco sleep dynos as production always-on TCO",
+      "micro / engineering: Heroku fit for micro engineering teams in the cloud-paas job cluster, from first-party positioning and IT gap-fill PaaS + incident research.",
+      "small-business / engineering: Heroku fit for small-business engineering teams in the cloud-paas job cluster, from first-party positioning and IT gap-fill PaaS + incident research.",
+      "mid-market / engineering: Heroku fit for mid-market engineering teams in the cloud-paas job cluster, from first-party positioning and IT gap-fill PaaS + incident research."
+    ],
+    "notIdealFor": [
+      "Teams that need a forever-free dyno or Hobby-credit evaluation path",
+      "Managed WordPress buyers (WP Engine) — landscape only",
+      "ITSM or observability purchases",
+      "Does not outrank Render (7.9) as the cloud-paas award",
+      "Eco $5 dynos sleep after 30 minutes of inactivity and are personal-only — not always-on production; Basic $7 is the always-on floor",
+      "No forever-free dyno (hasFreePlan false)"
+    ],
+    "coreCapabilities": [
+      "infrastructure monitoring",
+      "log management",
+      "cicd actions",
+      "managed hosting",
+      "cloud paas",
+      "dev ai",
+      "enterprise security",
+      "analytics reporting"
+    ],
+    "pricingSummary": "5 documented plans · entry paid: Eco",
+    "keyTradeoffs": [
+      "Does not outrank Render (7.9) as the cloud-paas award",
+      "Eco $5 dynos sleep after 30 minutes of inactivity and are personal-only — not always-on production; Basic $7 is the always-on floor",
+      "No forever-free dyno (hasFreePlan false)",
+      "Not managed WordPress hosting (WP Engine) — landscape only",
+      "Not ITSM, observability, a git host, or a panel licence"
+    ],
+    "alternatives": [
+      {
+        "slug": "render",
+        "name": "Render"
+      },
+      {
+        "slug": "railway",
+        "name": "Railway"
+      },
+      {
+        "slug": "fly-io",
+        "name": "Fly.io"
+      },
+      {
+        "slug": "wp-engine",
+        "name": "WP Engine"
+      }
+    ],
+    "importantComparisons": [
+      {
+        "slug": "heroku-vs-render",
+        "title": "Heroku vs Render",
+        "href": "/compare/heroku-vs-render/"
+      },
+      {
+        "slug": "heroku-vs-railway",
+        "title": "Heroku vs Railway",
+        "href": "/compare/heroku-vs-railway/"
+      },
+      {
+        "slug": "fly-io-vs-heroku",
+        "title": "Fly.io vs Heroku",
+        "href": "/compare/fly-io-vs-heroku/"
+      },
+      {
+        "slug": "apify-vs-heroku",
+        "title": "Apify vs Heroku",
+        "href": "/compare/apify-vs-heroku/"
+      },
+      {
+        "slug": "appdynamics-vs-heroku",
+        "title": "AppDynamics vs Heroku",
+        "href": "/compare/appdynamics-vs-heroku/"
+      },
+      {
+        "slug": "azure-devops-vs-heroku",
+        "title": "Azure DevOps vs Heroku",
+        "href": "/compare/azure-devops-vs-heroku/"
+      }
+    ],
+    "relevantGuides": [
+      {
+        "slug": "heroku-implementation",
+        "title": "Heroku Implementation: 30/60/90 IT Rollout That Sticks",
+        "href": "/guides/heroku-implementation/"
+      },
+      {
+        "slug": "heroku-migration",
+        "title": "Heroku Migration: Move Tickets and Repos Without Losing Trust",
+        "href": "/guides/heroku-migration/"
+      },
+      {
+        "slug": "heroku-setup",
+        "title": "Heroku Setup: Day-Zero Path to a Working IT Loop",
+        "href": "/guides/heroku-setup/"
+      },
+      {
+        "slug": "heroku-plans",
+        "title": "Heroku Plans: Seats, Hosts, and Qualifying Tiers",
+        "href": "/guides/heroku-plans/"
+      },
+      {
+        "slug": "is-heroku-worth-it",
+        "title": "Is Heroku Worth It? Fit Scenarios Before You Buy",
+        "href": "/guides/is-heroku-worth-it/"
+      }
+    ],
+    "evidenceState": "Research/data-based (no completed hands-on test) · Latest verification/research signal: 2026-08-18T22:00:00.000Z · Editorial assessment: approved",
+    "nextDecisionStep": "Compare against peers: Heroku vs Render",
+    "missingSections": [
+      "trial"
+    ]
+  },
+  "dependents": [
+    {
+      "kind": "guide",
+      "slug": "heroku-implementation",
+      "path": "/guides/heroku-implementation/"
+    },
+    {
+      "kind": "guide",
+      "slug": "heroku-migration",
+      "path": "/guides/heroku-migration/"
+    },
+    {
+      "kind": "guide",
+      "slug": "heroku-setup",
+      "path": "/guides/heroku-setup/"
+    },
+    {
+      "kind": "guide",
+      "slug": "heroku-plans",
+      "path": "/guides/heroku-plans/"
+    },
+    {
+      "kind": "guide",
+      "slug": "is-heroku-worth-it",
+      "path": "/guides/is-heroku-worth-it/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "heroku-vs-render",
+      "path": "/compare/heroku-vs-render/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "heroku-vs-railway",
+      "path": "/compare/heroku-vs-railway/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "fly-io-vs-heroku",
+      "path": "/compare/fly-io-vs-heroku/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "apify-vs-heroku",
+      "path": "/compare/apify-vs-heroku/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "appdynamics-vs-heroku",
+      "path": "/compare/appdynamics-vs-heroku/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "azure-devops-vs-heroku",
+      "path": "/compare/azure-devops-vs-heroku/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "bitbucket-vs-heroku",
+      "path": "/compare/bitbucket-vs-heroku/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "bmc-helix-vs-heroku",
+      "path": "/compare/bmc-helix-vs-heroku/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "bright-data-vs-heroku",
+      "path": "/compare/bright-data-vs-heroku/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "buildkite-vs-heroku",
+      "path": "/compare/buildkite-vs-heroku/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "chronosphere-vs-heroku",
+      "path": "/compare/chronosphere-vs-heroku/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "circleci-vs-heroku",
+      "path": "/compare/circleci-vs-heroku/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "cloudways-vs-heroku",
+      "path": "/compare/cloudways-vs-heroku/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "coralogix-vs-heroku",
+      "path": "/compare/coralogix-vs-heroku/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "cpanel-vs-heroku",
+      "path": "/compare/cpanel-vs-heroku/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "datadog-vs-heroku",
+      "path": "/compare/datadog-vs-heroku/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "directadmin-vs-heroku",
+      "path": "/compare/directadmin-vs-heroku/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "dynatrace-vs-heroku",
+      "path": "/compare/dynatrace-vs-heroku/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "elastic-observability-vs-heroku",
+      "path": "/compare/elastic-observability-vs-heroku/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "firehydrant-vs-heroku",
+      "path": "/compare/firehydrant-vs-heroku/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "github-vs-heroku",
+      "path": "/compare/github-vs-heroku/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "gitlab-vs-heroku",
+      "path": "/compare/gitlab-vs-heroku/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "grafana-cloud-vs-heroku",
+      "path": "/compare/grafana-cloud-vs-heroku/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "haloitsm-vs-heroku",
+      "path": "/compare/haloitsm-vs-heroku/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "heroku-vs-honeycomb",
+      "path": "/compare/heroku-vs-honeycomb/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "heroku-vs-incident-io",
+      "path": "/compare/heroku-vs-incident-io/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "heroku-vs-iproyal",
+      "path": "/compare/heroku-vs-iproyal/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "heroku-vs-ivanti",
+      "path": "/compare/heroku-vs-ivanti/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "heroku-vs-jira-service-management",
+      "path": "/compare/heroku-vs-jira-service-management/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "heroku-vs-kinsta",
+      "path": "/compare/heroku-vs-kinsta/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "heroku-vs-manageengine-servicedesk-plus",
+      "path": "/compare/heroku-vs-manageengine-servicedesk-plus/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "heroku-vs-new-relic",
+      "path": "/compare/heroku-vs-new-relic/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "heroku-vs-oxylabs",
+      "path": "/compare/heroku-vs-oxylabs/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "heroku-vs-pagerduty",
+      "path": "/compare/heroku-vs-pagerduty/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "heroku-vs-rootly",
+      "path": "/compare/heroku-vs-rootly/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "heroku-vs-scraperapi",
+      "path": "/compare/heroku-vs-scraperapi/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "heroku-vs-sentry",
+      "path": "/compare/heroku-vs-sentry/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "heroku-vs-servicenow",
+      "path": "/compare/heroku-vs-servicenow/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "heroku-vs-siteground",
+      "path": "/compare/heroku-vs-siteground/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "heroku-vs-smartproxy",
+      "path": "/compare/heroku-vs-smartproxy/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "heroku-vs-splunk",
+      "path": "/compare/heroku-vs-splunk/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "heroku-vs-squadcast",
+      "path": "/compare/heroku-vs-squadcast/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "heroku-vs-sysaid",
+      "path": "/compare/heroku-vs-sysaid/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "heroku-vs-thordata",
+      "path": "/compare/heroku-vs-thordata/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "heroku-vs-topdesk",
+      "path": "/compare/heroku-vs-topdesk/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "heroku-vs-wp-engine",
+      "path": "/compare/heroku-vs-wp-engine/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "heroku-vs-zyte",
+      "path": "/compare/heroku-vs-zyte/"
+    },
+    {
+      "kind": "alternatives",
+      "slug": "heroku",
+      "path": "/alternatives/heroku/"
+    },
+    {
+      "kind": "pricing",
+      "slug": "heroku",
+      "path": "/software/heroku/pricing/"
+    },
+    {
+      "kind": "tools",
+      "slug": "it-development-cost-calculator",
+      "path": "/tools/it-development-cost-calculator/"
+    }
+  ],
+  "dependentsNeedingRefresh": [],
+  "remediation": [
+    "verify:trial"
+  ],
+  "notes": [
+    "fieldAudit score=94",
+    "decisionHub bestFor=6 notIdeal=6",
+    "dependents=55"
+  ],
+  "materiallyImproved": true
+}

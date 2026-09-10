@@ -1,0 +1,388 @@
+{
+  "slug": "webflow",
+  "updatedAt": "2026-09-07T22:31:21.934Z",
+  "version": "1.0.0",
+  "fieldAudit": {
+    "slug": "webflow",
+    "checkedAt": "2026-09-07T22:31:21.932Z",
+    "items": [
+      {
+        "field": "name",
+        "status": "PASS",
+        "detail": "Name: Webflow",
+        "source": "seed"
+      },
+      {
+        "field": "product_status",
+        "status": "PASS",
+        "detail": "productLifecycle=active",
+        "source": "seed"
+      },
+      {
+        "field": "canonical_vendor",
+        "status": "UNKNOWN",
+        "detail": "Company/vendor not documented",
+        "source": "none"
+      },
+      {
+        "field": "category",
+        "status": "PASS",
+        "detail": "primaryCategorySlug=ecommerce",
+        "source": "seed"
+      },
+      {
+        "field": "description",
+        "status": "PASS",
+        "detail": "Description present (Design-led website platform with Ecommerce — Standard $29/mo (500 items, 2% fee)…)",
+        "source": "seed"
+      },
+      {
+        "field": "target_audience",
+        "status": "PASS",
+        "detail": "Sizes=3, teams=2, assessment bestFor=3",
+        "source": "assessment"
+      },
+      {
+        "field": "use_cases",
+        "status": "PASS",
+        "detail": "useCaseSlugs=2",
+        "source": "seed"
+      },
+      {
+        "field": "capabilities",
+        "status": "PASS",
+        "detail": "featureRatings=0, enrichment features=14",
+        "source": "enrichment"
+      },
+      {
+        "field": "pricing",
+        "status": "PASS",
+        "detail": "Pricing envelope present",
+        "source": "enrichment"
+      },
+      {
+        "field": "plans",
+        "status": "PASS",
+        "detail": "plans=4",
+        "source": "enrichment"
+      },
+      {
+        "field": "free_plan",
+        "status": "PASS",
+        "detail": "No free plan in documented plans (explicit absence)",
+        "source": "enrichment"
+      },
+      {
+        "field": "trial",
+        "status": "UNKNOWN",
+        "detail": "Trial not explicitly documented — do not assume none",
+        "source": "none"
+      },
+      {
+        "field": "integrations",
+        "status": "PASS",
+        "detail": "integrationSlugs=0, enrichment=3",
+        "source": "enrichment"
+      },
+      {
+        "field": "alternatives",
+        "status": "PASS",
+        "detail": "alternativeSlugs=3",
+        "source": "seed"
+      },
+      {
+        "field": "competitors",
+        "status": "PASS",
+        "detail": "competitorSlugs=3",
+        "source": "seed"
+      },
+      {
+        "field": "affiliate",
+        "status": "PASS",
+        "detail": "No affiliate relationship (explicit)",
+        "source": "seed"
+      },
+      {
+        "field": "source_provenance",
+        "status": "PASS",
+        "detail": "seed sources=0, enrichment sourceIds=2",
+        "source": "enrichment"
+      },
+      {
+        "field": "verification_date",
+        "status": "PASS",
+        "detail": "Latest verification/research signal: 2026-08-18T15:00:00.000Z",
+        "source": "enrichment"
+      }
+    ],
+    "passCount": 16,
+    "partialCount": 0,
+    "missingCount": 0,
+    "unknownCount": 2,
+    "score": 89
+  },
+  "decisionHub": {
+    "whatItIs": "Webflow is a design-led website platform with a separate Ecommerce plan stack. US Ecommerce tiles billed yearly (2026-08-18 from webflow.com/pricing): Standard $29/mo (500 items, 2% transaction fee), Plus $74/mo (5,000 items, 0% Webflow fee), Advanced $212/mo (15,000 items, 0% fee). Ecommerce requires a Site plan as well — Site Premium is commonly ~$25/mo annual after the May 2026 site-plan simplification. A free site workspace exists, but selling is paid. Landscape website-builder peer — Wix keeps the cluster award (7.1); Squarespace is the design-led peer (6.6). Not a Shopify-class commerce OS. Research grounded 2026-08-18 from first-party pricing; confirm live on webflow.com/pricing.",
+    "bestFor": [
+      "Design-led brands that want a custom site and a curated catalog on one visual CMS",
+      "Teams that outgrew Wix/Squarespace templates but do not need a commerce OS",
+      "Founders who will model Site + Ecommerce TCO and stay inside item caps",
+      "solo / marketing: Webflow fit for solo marketing teams in the website-builder job cluster, from first-party positioning and Ecommerce Priority-2b research.",
+      "micro / marketing: Webflow fit for micro marketing teams in the website-builder job cluster, from first-party positioning and Ecommerce Priority-2b research.",
+      "small-business / marketing: Webflow fit for small-business marketing teams in the website-builder job cluster, from first-party positioning and Ecommerce Priority-2b research."
+    ],
+    "notIdealFor": [
+      "High-SKU catalogs, heavy B2B, or marketplace ops",
+      "Retailers whose center of gravity is POS hardware",
+      "Teams that want a single all-in-one commerce OS (see Shopify)",
+      "Ecommerce requires a Site plan in addition to the Ecommerce plan — model combined TCO, not the $29 floor alone",
+      "Catalog caps (500 / 5,000 / 15,000 items) and Standard’s 2% transaction fee trail Shopify-class commerce OS depth",
+      "No native retail POS — Webflow is website-builder commerce, not omnichannel hardware"
+    ],
+    "coreCapabilities": [
+      "online storefront",
+      "product catalog",
+      "checkout payments",
+      "order management",
+      "shipping fulfillment",
+      "analytics reporting",
+      "ai assistance",
+      "app extensions"
+    ],
+    "pricingSummary": "4 documented plans · entry paid: Site Premium",
+    "keyTradeoffs": [
+      "Ecommerce requires a Site plan in addition to the Ecommerce plan — model combined TCO, not the $29 floor alone",
+      "Catalog caps (500 / 5,000 / 15,000 items) and Standard’s 2% transaction fee trail Shopify-class commerce OS depth",
+      "No native retail POS — Webflow is website-builder commerce, not omnichannel hardware",
+      "Inventory, B2B, and marketplace depth are SMB/design-led, not Magento/Shopify Plus ops",
+      "Build visually, publish professionally — Webflow CMS plus Ecommerce for design-led brands that want code-level control without a traditional CMS. (audience: Design-led brands that want a custom site and a curated catalog on one visual CMS, Teams that outgrew Wix/Squarespace templates but do not need a commerce OS)"
+    ],
+    "alternatives": [
+      {
+        "slug": "wix",
+        "name": "Wix"
+      },
+      {
+        "slug": "squarespace",
+        "name": "Squarespace"
+      },
+      {
+        "slug": "shopify",
+        "name": "Shopify"
+      }
+    ],
+    "importantComparisons": [
+      {
+        "slug": "webflow-vs-wix",
+        "title": "Webflow vs Wix",
+        "href": "/compare/webflow-vs-wix/"
+      },
+      {
+        "slug": "bigcommerce-vs-webflow",
+        "title": "BigCommerce vs Webflow",
+        "href": "/compare/bigcommerce-vs-webflow/"
+      },
+      {
+        "slug": "commercetools-vs-webflow",
+        "title": "commercetools vs Webflow",
+        "href": "/compare/commercetools-vs-webflow/"
+      },
+      {
+        "slug": "ecwid-vs-webflow",
+        "title": "Ecwid vs Webflow",
+        "href": "/compare/ecwid-vs-webflow/"
+      },
+      {
+        "slug": "lightspeed-retail-vs-webflow",
+        "title": "Lightspeed Retail vs Webflow",
+        "href": "/compare/lightspeed-retail-vs-webflow/"
+      },
+      {
+        "slug": "magento-vs-webflow",
+        "title": "Magento vs Webflow",
+        "href": "/compare/magento-vs-webflow/"
+      }
+    ],
+    "relevantGuides": [
+      {
+        "slug": "webflow-implementation",
+        "title": "Webflow Implementation: 30/60/90 Store Rollout That Sticks",
+        "href": "/guides/webflow-implementation/"
+      },
+      {
+        "slug": "webflow-migration",
+        "title": "Webflow Migration: Move Catalog & Order Data Without Losing Trust",
+        "href": "/guides/webflow-migration/"
+      },
+      {
+        "slug": "webflow-setup",
+        "title": "Webflow Setup: Day-Zero Path to a Working Ecommerce Loop",
+        "href": "/guides/webflow-setup/"
+      },
+      {
+        "slug": "webflow-plans",
+        "title": "Webflow Plans: Seats, Hubs, and Qualifying Tiers",
+        "href": "/guides/webflow-plans/"
+      },
+      {
+        "slug": "is-webflow-worth-it",
+        "title": "Is Webflow Worth It? Fit Scenarios Before You Buy",
+        "href": "/guides/is-webflow-worth-it/"
+      }
+    ],
+    "evidenceState": "Research/data-based (no completed hands-on test) · Latest verification/research signal: 2026-08-18T15:00:00.000Z · Editorial assessment: approved",
+    "nextDecisionStep": "Compare against peers: Webflow vs Wix",
+    "missingSections": [
+      "canonical_vendor",
+      "trial"
+    ]
+  },
+  "dependents": [
+    {
+      "kind": "guide",
+      "slug": "webflow-implementation",
+      "path": "/guides/webflow-implementation/"
+    },
+    {
+      "kind": "guide",
+      "slug": "webflow-migration",
+      "path": "/guides/webflow-migration/"
+    },
+    {
+      "kind": "guide",
+      "slug": "webflow-setup",
+      "path": "/guides/webflow-setup/"
+    },
+    {
+      "kind": "guide",
+      "slug": "webflow-plans",
+      "path": "/guides/webflow-plans/"
+    },
+    {
+      "kind": "guide",
+      "slug": "is-webflow-worth-it",
+      "path": "/guides/is-webflow-worth-it/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "webflow-vs-wix",
+      "path": "/compare/webflow-vs-wix/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "bigcommerce-vs-webflow",
+      "path": "/compare/bigcommerce-vs-webflow/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "commercetools-vs-webflow",
+      "path": "/compare/commercetools-vs-webflow/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "ecwid-vs-webflow",
+      "path": "/compare/ecwid-vs-webflow/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "lightspeed-retail-vs-webflow",
+      "path": "/compare/lightspeed-retail-vs-webflow/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "magento-vs-webflow",
+      "path": "/compare/magento-vs-webflow/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "medusa-vs-webflow",
+      "path": "/compare/medusa-vs-webflow/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "opencart-vs-webflow",
+      "path": "/compare/opencart-vs-webflow/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "prestashop-vs-webflow",
+      "path": "/compare/prestashop-vs-webflow/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "saleor-vs-webflow",
+      "path": "/compare/saleor-vs-webflow/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "salesforce-commerce-cloud-vs-webflow",
+      "path": "/compare/salesforce-commerce-cloud-vs-webflow/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "sellfy-vs-webflow",
+      "path": "/compare/sellfy-vs-webflow/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "shopify-vs-webflow",
+      "path": "/compare/shopify-vs-webflow/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "shopware-vs-webflow",
+      "path": "/compare/shopware-vs-webflow/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "square-online-vs-webflow",
+      "path": "/compare/square-online-vs-webflow/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "squarespace-vs-webflow",
+      "path": "/compare/squarespace-vs-webflow/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "tiendanube-vs-webflow",
+      "path": "/compare/tiendanube-vs-webflow/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "vtex-vs-webflow",
+      "path": "/compare/vtex-vs-webflow/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "webflow-vs-woocommerce",
+      "path": "/compare/webflow-vs-woocommerce/"
+    },
+    {
+      "kind": "alternatives",
+      "slug": "webflow",
+      "path": "/alternatives/webflow/"
+    },
+    {
+      "kind": "pricing",
+      "slug": "webflow",
+      "path": "/software/webflow/pricing/"
+    },
+    {
+      "kind": "tools",
+      "slug": "ecommerce-cost-calculator",
+      "path": "/tools/ecommerce-cost-calculator/"
+    }
+  ],
+  "dependentsNeedingRefresh": [],
+  "remediation": [
+    "verify:canonical_vendor",
+    "verify:trial"
+  ],
+  "notes": [
+    "fieldAudit score=89",
+    "decisionHub bestFor=6 notIdeal=6",
+    "dependents=27"
+  ],
+  "materiallyImproved": false
+}

@@ -143,9 +143,18 @@
       ]
     }
   ],
+  "integrationSupport": [
+    {
+      "integrationSlug": "zapier",
+      "kind": "zapier-style",
+      "sourceIds": [
+        "diginius-product-official"
+      ]
+    }
+  ],
   "aiCapabilities": [
     {
-      "capability": "copywriting",
+      "capability": "other",
       "availability": "limited",
       "sourceIds": [
         "diginius-product-official"
@@ -168,15 +177,6 @@
     {
       "capability": "recommendations",
       "availability": "limited",
-      "sourceIds": [
-        "diginius-product-official"
-      ]
-    }
-  ],
-  "integrationSupport": [
-    {
-      "integrationSlug": "zapier",
-      "kind": "zapier-style",
       "sourceIds": [
         "diginius-product-official"
       ]
@@ -219,31 +219,6 @@
       "isEditorial": false
     }
   ],
-  "pricing": {
-    "currency": "USD",
-    "model": "quote-led",
-    "hasFreePlan": false,
-    "hasFreeTrial": true,
-    "plans": [
-      {
-        "id": "plan-enterprise",
-        "slug": "enterprise",
-        "name": "Enterprise",
-        "isFree": false,
-        "contactSales": true,
-        "hasFreeTrial": true,
-        "trialDays": 14,
-        "highlighted": false,
-        "rules": [],
-        "description": "Contact sales for published Diginius pricing — confirm live tiers on the vendor site."
-      }
-    ],
-    "notes": "Quote-led enterprise/agency packaging — confirm on diginius.com. Affiliate economics excluded.",
-    "verifiedAt": "2026-08-17T17:00:00.000Z",
-    "sourceIds": [
-      "diginius-pricing-official"
-    ]
-  },
   "screenshots": [
     {
       "id": "diginius-shot-hero-poster",
@@ -254,7 +229,8 @@
       "checkedAt": "2026-08-19T13:30:00.000Z",
       "annotation": "Official Diginius marketing UI asset",
       "kind": "vendor-ui",
-      "featureIds": []
+      "featureIds": [],
+      "useCaseIds": []
     },
     {
       "id": "diginius-shot-platform-dark",
@@ -265,7 +241,8 @@
       "checkedAt": "2026-08-19T13:30:00.000Z",
       "annotation": "Official Diginius marketing UI asset",
       "kind": "vendor-ui",
-      "featureIds": []
+      "featureIds": [],
+      "useCaseIds": []
     },
     {
       "id": "diginius-shot-insight-performance",
@@ -276,7 +253,8 @@
       "checkedAt": "2026-08-19T13:30:00.000Z",
       "annotation": "Official Diginius YouTube thumbnail",
       "kind": "vendor-ui",
-      "featureIds": []
+      "featureIds": [],
+      "useCaseIds": []
     }
   ],
   "media": [
@@ -322,6 +300,7 @@
       "demonstratedDimensionIds": [],
       "requirementCriterionIds": [],
       "workflowStageIds": [],
+      "mediaContext": "general-workflow",
       "reportedOutcomes": [],
       "placements": [
         "overview",
@@ -329,7 +308,6 @@
         "evidence",
         "use-cases"
       ],
-      "mediaContext": "general-workflow",
       "purpose": "Official Diginius video for product research pages",
       "demonstratesCaption": "How Diginius presents the product in an official vendor video.",
       "editorialCommentary": "Official vendor demo — treat as UI/workflow evidence, not SoftwareGlimpse scoring.",
@@ -388,6 +366,7 @@
       "demonstratedDimensionIds": [],
       "requirementCriterionIds": [],
       "workflowStageIds": [],
+      "mediaContext": "general-workflow",
       "reportedOutcomes": [],
       "placements": [
         "overview",
@@ -396,7 +375,6 @@
         "implementation",
         "use-cases"
       ],
-      "mediaContext": "general-workflow",
       "purpose": "Official Diginius video for product research pages",
       "demonstratesCaption": "How Diginius presents the product in an official vendor video.",
       "editorialCommentary": "Official vendor demo — treat as UI/workflow evidence, not SoftwareGlimpse scoring.",
@@ -414,11 +392,31 @@
       "status": "published"
     }
   ],
-  "sourceIds": [
-    "diginius-product-official",
-    "diginius-pricing-official"
-  ],
-  "notes": "Marketing onboarding enrichment from first-party research 2026-08-17T17:00:00.000Z. handsOnTesting=false. membershipRole=primary. primaryCategorySlug=marketing.",
+  "pricing": {
+    "currency": "USD",
+    "model": "quote-led",
+    "hasFreePlan": false,
+    "hasFreeTrial": true,
+    "plans": [
+      {
+        "id": "plan-enterprise",
+        "slug": "enterprise",
+        "name": "Enterprise",
+        "isFree": false,
+        "contactSales": true,
+        "hasFreeTrial": true,
+        "trialDays": 14,
+        "highlighted": false,
+        "rules": [],
+        "description": "Contact sales for published Diginius pricing — confirm live tiers on the vendor site."
+      }
+    ],
+    "notes": "Quote-led enterprise/agency packaging — confirm on diginius.com. Affiliate economics excluded.",
+    "verifiedAt": "2026-09-07T22:41:02.065Z",
+    "sourceIds": [
+      "diginius-pricing-official"
+    ]
+  },
   "domainCheckedAt": {
     "identity": "2026-08-17T17:00:00.000Z",
     "pricing": "2026-08-17T17:00:00.000Z",
@@ -431,5 +429,10 @@
     "free-plan": "2026-08-17T17:00:00.000Z",
     "limits": "2026-08-17T17:00:00.000Z"
   },
-  "updatedAt": "2026-08-19T15:20:00.000Z"
+  "sourceIds": [
+    "diginius-product-official",
+    "diginius-pricing-official"
+  ],
+  "updatedAt": "2026-08-19T15:20:00.000Z",
+  "notes": "Marketing onboarding enrichment from first-party research 2026-08-17T17:00:00.000Z. handsOnTesting=false. membershipRole=primary. primaryCategorySlug=marketing."
 }

@@ -5,7 +5,8 @@ import type {
 } from "@/domain";
 
 export type SearchPerformanceRequest = {
-  range: DateRange;
+  /** Optional for import providers that already embed date ranges in the file. */
+  range?: DateRange;
   rangeLabel?: string;
   dimensions?: Array<"query" | "page" | "country" | "device">;
 };

@@ -27,6 +27,11 @@ export function SearchHero({
   const router = useRouter();
   const listId = useId();
   const [query, setQuery] = useState(initialQuery);
+  const [prevInitialQuery, setPrevInitialQuery] = useState(initialQuery);
+  if (initialQuery !== prevInitialQuery) {
+    setPrevInitialQuery(initialQuery);
+    setQuery(initialQuery);
+  }
   const [suggestions, setSuggestions] = useState<AutocompleteSuggestion[]>([]);
   const [open, setOpen] = useState(false);
   const [activeIndex, setActiveIndex] = useState(-1);
@@ -60,10 +65,6 @@ export function SearchHero({
       // Keep typing UX intact if suggest fails.
     }
   }, []);
-
-  useEffect(() => {
-    setQuery(initialQuery);
-  }, [initialQuery]);
 
   useEffect(() => {
     if (debounceRef.current) clearTimeout(debounceRef.current);

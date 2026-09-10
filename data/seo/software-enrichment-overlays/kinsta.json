@@ -1,0 +1,534 @@
+{
+  "slug": "kinsta",
+  "updatedAt": "2026-09-08T21:57:41.712Z",
+  "version": "1.0.0",
+  "fieldAudit": {
+    "slug": "kinsta",
+    "checkedAt": "2026-09-08T21:57:41.710Z",
+    "items": [
+      {
+        "field": "name",
+        "status": "PASS",
+        "detail": "Name: Kinsta",
+        "source": "seed"
+      },
+      {
+        "field": "product_status",
+        "status": "PASS",
+        "detail": "productLifecycle=active",
+        "source": "seed"
+      },
+      {
+        "field": "canonical_vendor",
+        "status": "PASS",
+        "detail": "Vendor: Kinsta Inc.",
+        "source": "seed"
+      },
+      {
+        "field": "category",
+        "status": "PASS",
+        "detail": "primaryCategorySlug=it-development",
+        "source": "seed"
+      },
+      {
+        "field": "description",
+        "status": "PASS",
+        "detail": "Description present (Managed WordPress hosting — Single 20GB from $35/mo ongoing floor (ignore promot…)",
+        "source": "seed"
+      },
+      {
+        "field": "target_audience",
+        "status": "PASS",
+        "detail": "Sizes=2, teams=2, assessment bestFor=3",
+        "source": "assessment"
+      },
+      {
+        "field": "use_cases",
+        "status": "PASS",
+        "detail": "useCaseSlugs=1",
+        "source": "seed"
+      },
+      {
+        "field": "capabilities",
+        "status": "PASS",
+        "detail": "featureRatings=0, enrichment features=16",
+        "source": "enrichment"
+      },
+      {
+        "field": "pricing",
+        "status": "PASS",
+        "detail": "Pricing envelope present",
+        "source": "enrichment"
+      },
+      {
+        "field": "plans",
+        "status": "PASS",
+        "detail": "plans=2",
+        "source": "enrichment"
+      },
+      {
+        "field": "free_plan",
+        "status": "PASS",
+        "detail": "No free plan in documented plans (explicit absence)",
+        "source": "enrichment"
+      },
+      {
+        "field": "trial",
+        "status": "UNKNOWN",
+        "detail": "Trial not explicitly documented — do not assume none",
+        "source": "none"
+      },
+      {
+        "field": "integrations",
+        "status": "PASS",
+        "detail": "integrationSlugs=0, enrichment=2",
+        "source": "enrichment"
+      },
+      {
+        "field": "alternatives",
+        "status": "PASS",
+        "detail": "alternativeSlugs=2",
+        "source": "seed"
+      },
+      {
+        "field": "competitors",
+        "status": "PASS",
+        "detail": "competitorSlugs=4",
+        "source": "seed"
+      },
+      {
+        "field": "affiliate",
+        "status": "PASS",
+        "detail": "No affiliate relationship (explicit)",
+        "source": "seed"
+      },
+      {
+        "field": "source_provenance",
+        "status": "PASS",
+        "detail": "seed sources=0, enrichment sourceIds=3",
+        "source": "enrichment"
+      },
+      {
+        "field": "verification_date",
+        "status": "PASS",
+        "detail": "Latest verification/research signal: 2026-08-18T20:00:00.000Z",
+        "source": "enrichment"
+      }
+    ],
+    "passCount": 17,
+    "partialCount": 0,
+    "missingCount": 0,
+    "unknownCount": 1,
+    "score": 94
+  },
+  "decisionHub": {
+    "whatItIs": "Kinsta is managed WordPress (and adjacent app) hosting on Google Cloud — a hosting-providers peer of WP Engine and Cloudways, not a Plesk/cPanel panel licence. Single 20GB publishes from $35/month as the ongoing floor; promotional first-month offers appear on marketing pages and must not replace $35 as the research floor. Free migrations are commonly offered; there is no general free trial. WP Engine remains the cluster award (7.7); this entity does not outrank it. Landscape-only versus Plesk.",
+    "bestFor": [
+      "Teams that want managed WordPress hosting without a panel licence",
+      "Buyers comparing Kinsta $35 Single to WP Engine Essential and Cloudways Flexible",
+      "Orgs that will treat $35 as ongoing TCO, not a promo month",
+      "small-business / operations: Kinsta fit for small-business operations teams in the hosting-providers job cluster, from first-party positioning and IT industry Tier-A research.",
+      "mid-market / operations: Kinsta fit for mid-market operations teams in the hosting-providers job cluster, from first-party positioning and IT industry Tier-A research."
+    ],
+    "notIdealFor": [
+      "Admins buying Plesk or DirectAdmin licences for servers they already own",
+      "Multi-cloud VM hosting as the primary shape (Cloudways)",
+      "ITSM, observability, or source-control purchases",
+      "Promotional first-month offers are not the $35 ongoing Single 20GB floor",
+      "Does not outrank WP Engine (7.7)",
+      "Not a Plesk/cPanel panel licence (landscape vs DirectAdmin/Plesk)"
+    ],
+    "coreCapabilities": [
+      "infrastructure monitoring",
+      "log management",
+      "cicd actions",
+      "hosting panel",
+      "managed hosting",
+      "dev ai",
+      "enterprise security",
+      "analytics reporting"
+    ],
+    "pricingSummary": "2 documented plans · entry paid: Single (20GB)",
+    "keyTradeoffs": [
+      "Promotional first-month offers are not the $35 ongoing Single 20GB floor",
+      "Does not outrank WP Engine (7.7)",
+      "Not a Plesk/cPanel panel licence (landscape vs DirectAdmin/Plesk)",
+      "No general free trial — migrations are the courtesy path",
+      "Not ITSM, observability, git, or a proxy network"
+    ],
+    "alternatives": [
+      {
+        "slug": "wp-engine",
+        "name": "WP Engine"
+      },
+      {
+        "slug": "cloudways",
+        "name": "Cloudways"
+      },
+      {
+        "slug": "plesk",
+        "name": "Plesk"
+      },
+      {
+        "slug": "siteground",
+        "name": "SiteGround"
+      }
+    ],
+    "importantComparisons": [
+      {
+        "slug": "kinsta-vs-wp-engine",
+        "title": "Kinsta vs WP Engine",
+        "href": "/compare/kinsta-vs-wp-engine/"
+      },
+      {
+        "slug": "kinsta-vs-plesk",
+        "title": "Kinsta vs Plesk",
+        "href": "/compare/kinsta-vs-plesk/"
+      },
+      {
+        "slug": "kinsta-vs-siteground",
+        "title": "SiteGround vs Kinsta",
+        "href": "/compare/kinsta-vs-siteground/"
+      },
+      {
+        "slug": "apify-vs-kinsta",
+        "title": "Apify vs Kinsta",
+        "href": "/compare/apify-vs-kinsta/"
+      },
+      {
+        "slug": "appdynamics-vs-kinsta",
+        "title": "AppDynamics vs Kinsta",
+        "href": "/compare/appdynamics-vs-kinsta/"
+      },
+      {
+        "slug": "azure-devops-vs-kinsta",
+        "title": "Azure DevOps vs Kinsta",
+        "href": "/compare/azure-devops-vs-kinsta/"
+      }
+    ],
+    "relevantGuides": [
+      {
+        "slug": "kinsta-implementation",
+        "title": "Kinsta Implementation: 30/60/90 IT Rollout That Sticks",
+        "href": "/guides/kinsta-implementation/"
+      },
+      {
+        "slug": "kinsta-migration",
+        "title": "Kinsta Migration: Move Tickets and Repos Without Losing Trust",
+        "href": "/guides/kinsta-migration/"
+      },
+      {
+        "slug": "kinsta-setup",
+        "title": "Kinsta Setup: Day-Zero Path to a Working IT Loop",
+        "href": "/guides/kinsta-setup/"
+      },
+      {
+        "slug": "kinsta-plans",
+        "title": "Kinsta Plans: Seats, Hosts, and Qualifying Tiers",
+        "href": "/guides/kinsta-plans/"
+      },
+      {
+        "slug": "is-kinsta-worth-it",
+        "title": "Is Kinsta Worth It? Fit Scenarios Before You Buy",
+        "href": "/guides/is-kinsta-worth-it/"
+      }
+    ],
+    "evidenceState": "Research/data-based (no completed hands-on test) · Latest verification/research signal: 2026-08-18T20:00:00.000Z · Editorial assessment: approved",
+    "nextDecisionStep": "Compare against peers: Kinsta vs WP Engine",
+    "missingSections": [
+      "trial"
+    ]
+  },
+  "dependents": [
+    {
+      "kind": "guide",
+      "slug": "kinsta-implementation",
+      "path": "/guides/kinsta-implementation/"
+    },
+    {
+      "kind": "guide",
+      "slug": "kinsta-migration",
+      "path": "/guides/kinsta-migration/"
+    },
+    {
+      "kind": "guide",
+      "slug": "kinsta-setup",
+      "path": "/guides/kinsta-setup/"
+    },
+    {
+      "kind": "guide",
+      "slug": "kinsta-plans",
+      "path": "/guides/kinsta-plans/"
+    },
+    {
+      "kind": "guide",
+      "slug": "is-kinsta-worth-it",
+      "path": "/guides/is-kinsta-worth-it/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "kinsta-vs-wp-engine",
+      "path": "/compare/kinsta-vs-wp-engine/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "kinsta-vs-plesk",
+      "path": "/compare/kinsta-vs-plesk/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "kinsta-vs-siteground",
+      "path": "/compare/kinsta-vs-siteground/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "apify-vs-kinsta",
+      "path": "/compare/apify-vs-kinsta/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "appdynamics-vs-kinsta",
+      "path": "/compare/appdynamics-vs-kinsta/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "azure-devops-vs-kinsta",
+      "path": "/compare/azure-devops-vs-kinsta/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "bitbucket-vs-kinsta",
+      "path": "/compare/bitbucket-vs-kinsta/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "bmc-helix-vs-kinsta",
+      "path": "/compare/bmc-helix-vs-kinsta/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "bright-data-vs-kinsta",
+      "path": "/compare/bright-data-vs-kinsta/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "buildkite-vs-kinsta",
+      "path": "/compare/buildkite-vs-kinsta/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "chronosphere-vs-kinsta",
+      "path": "/compare/chronosphere-vs-kinsta/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "circleci-vs-kinsta",
+      "path": "/compare/circleci-vs-kinsta/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "cloudways-vs-kinsta",
+      "path": "/compare/cloudways-vs-kinsta/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "coralogix-vs-kinsta",
+      "path": "/compare/coralogix-vs-kinsta/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "cpanel-vs-kinsta",
+      "path": "/compare/cpanel-vs-kinsta/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "datadog-vs-kinsta",
+      "path": "/compare/datadog-vs-kinsta/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "directadmin-vs-kinsta",
+      "path": "/compare/directadmin-vs-kinsta/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "dynatrace-vs-kinsta",
+      "path": "/compare/dynatrace-vs-kinsta/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "elastic-observability-vs-kinsta",
+      "path": "/compare/elastic-observability-vs-kinsta/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "firehydrant-vs-kinsta",
+      "path": "/compare/firehydrant-vs-kinsta/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "fly-io-vs-kinsta",
+      "path": "/compare/fly-io-vs-kinsta/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "github-vs-kinsta",
+      "path": "/compare/github-vs-kinsta/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "gitlab-vs-kinsta",
+      "path": "/compare/gitlab-vs-kinsta/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "grafana-cloud-vs-kinsta",
+      "path": "/compare/grafana-cloud-vs-kinsta/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "haloitsm-vs-kinsta",
+      "path": "/compare/haloitsm-vs-kinsta/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "heroku-vs-kinsta",
+      "path": "/compare/heroku-vs-kinsta/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "honeycomb-vs-kinsta",
+      "path": "/compare/honeycomb-vs-kinsta/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "incident-io-vs-kinsta",
+      "path": "/compare/incident-io-vs-kinsta/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "iproyal-vs-kinsta",
+      "path": "/compare/iproyal-vs-kinsta/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "ivanti-vs-kinsta",
+      "path": "/compare/ivanti-vs-kinsta/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "jira-service-management-vs-kinsta",
+      "path": "/compare/jira-service-management-vs-kinsta/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "kinsta-vs-manageengine-servicedesk-plus",
+      "path": "/compare/kinsta-vs-manageengine-servicedesk-plus/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "kinsta-vs-new-relic",
+      "path": "/compare/kinsta-vs-new-relic/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "kinsta-vs-oxylabs",
+      "path": "/compare/kinsta-vs-oxylabs/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "kinsta-vs-pagerduty",
+      "path": "/compare/kinsta-vs-pagerduty/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "kinsta-vs-railway",
+      "path": "/compare/kinsta-vs-railway/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "kinsta-vs-render",
+      "path": "/compare/kinsta-vs-render/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "kinsta-vs-rootly",
+      "path": "/compare/kinsta-vs-rootly/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "kinsta-vs-scraperapi",
+      "path": "/compare/kinsta-vs-scraperapi/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "kinsta-vs-sentry",
+      "path": "/compare/kinsta-vs-sentry/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "kinsta-vs-servicenow",
+      "path": "/compare/kinsta-vs-servicenow/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "kinsta-vs-smartproxy",
+      "path": "/compare/kinsta-vs-smartproxy/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "kinsta-vs-splunk",
+      "path": "/compare/kinsta-vs-splunk/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "kinsta-vs-squadcast",
+      "path": "/compare/kinsta-vs-squadcast/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "kinsta-vs-sysaid",
+      "path": "/compare/kinsta-vs-sysaid/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "kinsta-vs-thordata",
+      "path": "/compare/kinsta-vs-thordata/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "kinsta-vs-topdesk",
+      "path": "/compare/kinsta-vs-topdesk/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "kinsta-vs-zyte",
+      "path": "/compare/kinsta-vs-zyte/"
+    },
+    {
+      "kind": "alternatives",
+      "slug": "kinsta",
+      "path": "/alternatives/kinsta/"
+    },
+    {
+      "kind": "pricing",
+      "slug": "kinsta",
+      "path": "/software/kinsta/pricing/"
+    },
+    {
+      "kind": "tools",
+      "slug": "it-development-cost-calculator",
+      "path": "/tools/it-development-cost-calculator/"
+    }
+  ],
+  "dependentsNeedingRefresh": [],
+  "remediation": [
+    "verify:trial"
+  ],
+  "notes": [
+    "fieldAudit score=94",
+    "decisionHub bestFor=5 notIdeal=6",
+    "dependents=56"
+  ],
+  "materiallyImproved": true
+}

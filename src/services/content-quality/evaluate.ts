@@ -410,7 +410,7 @@ function scoreFreshness(snap: NormalizedSnap): ScoreParts {
 
 function scoreDecision(snap: NormalizedSnap): ScoreParts {
   const signals = snap.decisionSupportSignals;
-  let score =
+  const score =
     signals.length === 0 ? 1 : Math.min(5, 1 + Math.ceil(signals.length * 0.9));
   return {
     score: clampScore(score),
@@ -439,7 +439,7 @@ function scoreDecision(snap: NormalizedSnap): ScoreParts {
 
 function scoreAction(snap: NormalizedSnap): ScoreParts {
   const signals = snap.actionSignals;
-  let score =
+  const score =
     signals.length === 0 ? 1 : Math.min(5, 1 + signals.length);
   return {
     score: clampScore(score),

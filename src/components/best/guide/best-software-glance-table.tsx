@@ -8,7 +8,7 @@ import { Rating } from "@/components/ui/rating";
 import type {
   BestPageComparisonColumn,
   BestPageComparisonRow,
-} from "@/services/best-page";
+} from "@/services/best-page/types";
 import { cn } from "@/lib/cn";
 
 const COL_LABELS: Record<Exclude<BestPageComparisonColumn, "product">, string> =

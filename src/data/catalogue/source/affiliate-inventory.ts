@@ -472,7 +472,7 @@ export const affiliateInventoryRows: InventoryRow[] = [
     affiliateUrl: "https://referral.flippa.com/nyzykxmdpi62-5i76g",
     network: "impact",
     categoryHint: "ecommerce",
-    entityTypeHint: "software",
+    entityTypeHint: "marketplace",
     notes: "Online business marketplace — onboarded under ecommerce",
   },
   {
@@ -486,7 +486,7 @@ export const affiliateInventoryRows: InventoryRow[] = [
     affiliateUrl: "https://partnerwith.shipbob.com/6ft74869kg22",
     network: "impact",
     categoryHint: "ecommerce",
-    entityTypeHint: "software",
+    entityTypeHint: "service",
     notes: "Ecommerce fulfillment — onboarded under ecommerce",
   },
   {
@@ -1332,7 +1332,7 @@ export const affiliateInventoryRows: InventoryRow[] = [
     affiliateUrl: "https://acceleratedgrowthstudio.partnerlinks.io/7q3b5o2oy7d7",
     network: "direct",
     categoryHint: "marketing",
-    entityTypeHint: "software",
+    entityTypeHint: "service",
     notes: "Marketing / growth services — onboarded under marketing",
   },
   {

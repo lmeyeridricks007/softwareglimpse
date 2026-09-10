@@ -1,0 +1,410 @@
+{
+  "slug": "gusto",
+  "updatedAt": "2026-09-07T22:31:21.588Z",
+  "version": "1.0.0",
+  "fieldAudit": {
+    "slug": "gusto",
+    "checkedAt": "2026-09-07T22:31:21.587Z",
+    "items": [
+      {
+        "field": "name",
+        "status": "PASS",
+        "detail": "Name: Gusto",
+        "source": "seed"
+      },
+      {
+        "field": "product_status",
+        "status": "PASS",
+        "detail": "productLifecycle=active",
+        "source": "seed"
+      },
+      {
+        "field": "canonical_vendor",
+        "status": "UNKNOWN",
+        "detail": "Company/vendor not documented",
+        "source": "none"
+      },
+      {
+        "field": "category",
+        "status": "PASS",
+        "detail": "primaryCategorySlug=hr",
+        "source": "seed"
+      },
+      {
+        "field": "description",
+        "status": "PASS",
+        "detail": "Description present (US SMB payroll + benefits + light HR — Simple from $49/mo + $6/person; Plus $80 …)",
+        "source": "seed"
+      },
+      {
+        "field": "target_audience",
+        "status": "PASS",
+        "detail": "Sizes=2, teams=1, assessment bestFor=3",
+        "source": "assessment"
+      },
+      {
+        "field": "use_cases",
+        "status": "PASS",
+        "detail": "useCaseSlugs=2",
+        "source": "seed"
+      },
+      {
+        "field": "capabilities",
+        "status": "PASS",
+        "detail": "featureRatings=0, enrichment features=16",
+        "source": "enrichment"
+      },
+      {
+        "field": "pricing",
+        "status": "PASS",
+        "detail": "Pricing envelope present",
+        "source": "enrichment"
+      },
+      {
+        "field": "plans",
+        "status": "PASS",
+        "detail": "plans=4",
+        "source": "enrichment"
+      },
+      {
+        "field": "free_plan",
+        "status": "PASS",
+        "detail": "No free plan in documented plans (explicit absence)",
+        "source": "enrichment"
+      },
+      {
+        "field": "trial",
+        "status": "PASS",
+        "detail": "Trial documented on plans/pricing",
+        "source": "enrichment"
+      },
+      {
+        "field": "integrations",
+        "status": "PASS",
+        "detail": "integrationSlugs=0, enrichment=2",
+        "source": "enrichment"
+      },
+      {
+        "field": "alternatives",
+        "status": "PASS",
+        "detail": "alternativeSlugs=3",
+        "source": "seed"
+      },
+      {
+        "field": "competitors",
+        "status": "PASS",
+        "detail": "competitorSlugs=4",
+        "source": "seed"
+      },
+      {
+        "field": "affiliate",
+        "status": "PASS",
+        "detail": "No affiliate relationship (explicit)",
+        "source": "seed"
+      },
+      {
+        "field": "source_provenance",
+        "status": "PASS",
+        "detail": "seed sources=0, enrichment sourceIds=2",
+        "source": "enrichment"
+      },
+      {
+        "field": "verification_date",
+        "status": "PASS",
+        "detail": "Latest verification/research signal: 2026-08-18T08:00:00.000Z",
+        "source": "enrichment"
+      }
+    ],
+    "passCount": 17,
+    "partialCount": 0,
+    "missingCount": 0,
+    "unknownCount": 1,
+    "score": 94
+  },
+  "decisionHub": {
+    "whatItIs": "Gusto is transparent US payroll with benefits and light HR for small businesses. Published 2026 plans: Contractor Only $35/mo + $6/person (promo $0 base for first six months); Simple $49 + $6; Plus $80 + $12; Premium $180 + $22. Month-to-month. Account setup is free until you run payroll. Simple is single-state; multi-state needs Plus. Time, performance, and many benefits tools are add-ons.",
+    "bestFor": [
+      "US small businesses running payroll (and benefits) for the first time",
+      "Teams that want published month-to-month pricing instead of HCM quotes",
+      "Single-state companies that can start on Simple and upgrade for multi-state",
+      "micro / operations: Gusto fit for micro operations teams in the payroll-benefits job cluster, from first-party positioning and HR Priority-1 research.",
+      "small-business / operations: Gusto fit for small-business operations teams in the payroll-benefits job cluster, from first-party positioning and HR Priority-1 research."
+    ],
+    "notIdealFor": [
+      "Companies whose primary job is a full HRIS or people platform",
+      "High-volume recruiting / structured hiring ATS buyers",
+      "Global EOR or 1,000+ employee HCM buyers",
+      "Simple plan is single-state payroll — multi-state needs Plus",
+      "People/HRIS depth is light versus BambooHR; Gusto is payroll-first",
+      "Time, performance, next-day pay, and many benefits tools are add-ons"
+    ],
+    "coreCapabilities": [
+      "payroll processing",
+      "benefits admin",
+      "hris integrations",
+      "payroll benefits",
+      "core hris"
+    ],
+    "pricingSummary": "4 documented plans · entry paid: Simple · trial documented on at least one plan",
+    "keyTradeoffs": [
+      "Simple plan is single-state payroll — multi-state needs Plus",
+      "People/HRIS depth is light versus BambooHR; Gusto is payroll-first",
+      "Time, performance, next-day pay, and many benefits tools are add-ons",
+      "US-centric; not a global EOR (Deel) or enterprise HCM",
+      "No dedicated ATS/WFM core"
+    ],
+    "alternatives": [
+      {
+        "slug": "rippling",
+        "name": "Rippling"
+      },
+      {
+        "slug": "bamboohr",
+        "name": "BambooHR"
+      },
+      {
+        "slug": "greenhouse",
+        "name": "Greenhouse"
+      },
+      {
+        "slug": "adp-workforce-now",
+        "name": "ADP Workforce Now"
+      },
+      {
+        "slug": "paycor",
+        "name": "Paycor"
+      }
+    ],
+    "importantComparisons": [
+      {
+        "slug": "bamboohr-vs-gusto",
+        "title": "BambooHR vs Gusto",
+        "href": "/compare/bamboohr-vs-gusto/"
+      },
+      {
+        "slug": "gusto-vs-rippling",
+        "title": "Gusto vs Rippling",
+        "href": "/compare/gusto-vs-rippling/"
+      },
+      {
+        "slug": "adp-workforce-now-vs-gusto",
+        "title": "ADP Workforce Now vs Gusto",
+        "href": "/compare/adp-workforce-now-vs-gusto/"
+      },
+      {
+        "slug": "gusto-vs-paylocity",
+        "title": "Gusto vs Paylocity",
+        "href": "/compare/gusto-vs-paylocity/"
+      },
+      {
+        "slug": "7shifts-vs-gusto",
+        "title": "7shifts vs Gusto",
+        "href": "/compare/7shifts-vs-gusto/"
+      },
+      {
+        "slug": "ashby-vs-gusto",
+        "title": "Ashby vs Gusto",
+        "href": "/compare/ashby-vs-gusto/"
+      }
+    ],
+    "relevantGuides": [
+      {
+        "slug": "gusto-implementation",
+        "title": "Gusto Implementation: 30/60/90 HR Rollout That Sticks",
+        "href": "/guides/gusto-implementation/"
+      },
+      {
+        "slug": "gusto-migration",
+        "title": "Gusto Migration: Move People Data Without Losing Trust",
+        "href": "/guides/gusto-migration/"
+      },
+      {
+        "slug": "gusto-setup",
+        "title": "Gusto Setup: Day-Zero Path to a Working HR Loop",
+        "href": "/guides/gusto-setup/"
+      },
+      {
+        "slug": "gusto-plans",
+        "title": "Gusto Plans: Seats, Hubs, and Qualifying Tiers",
+        "href": "/guides/gusto-plans/"
+      },
+      {
+        "slug": "is-gusto-worth-it",
+        "title": "Is Gusto Worth It? Fit Scenarios Before You Buy",
+        "href": "/guides/is-gusto-worth-it/"
+      }
+    ],
+    "evidenceState": "Research/data-based (no completed hands-on test) · Latest verification/research signal: 2026-08-18T08:00:00.000Z · Editorial assessment: approved",
+    "nextDecisionStep": "Compare against peers: BambooHR vs Gusto",
+    "missingSections": [
+      "canonical_vendor"
+    ]
+  },
+  "dependents": [
+    {
+      "kind": "guide",
+      "slug": "gusto-implementation",
+      "path": "/guides/gusto-implementation/"
+    },
+    {
+      "kind": "guide",
+      "slug": "gusto-migration",
+      "path": "/guides/gusto-migration/"
+    },
+    {
+      "kind": "guide",
+      "slug": "gusto-setup",
+      "path": "/guides/gusto-setup/"
+    },
+    {
+      "kind": "guide",
+      "slug": "gusto-plans",
+      "path": "/guides/gusto-plans/"
+    },
+    {
+      "kind": "guide",
+      "slug": "is-gusto-worth-it",
+      "path": "/guides/is-gusto-worth-it/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "bamboohr-vs-gusto",
+      "path": "/compare/bamboohr-vs-gusto/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "gusto-vs-rippling",
+      "path": "/compare/gusto-vs-rippling/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "adp-workforce-now-vs-gusto",
+      "path": "/compare/adp-workforce-now-vs-gusto/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "gusto-vs-paylocity",
+      "path": "/compare/gusto-vs-paylocity/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "7shifts-vs-gusto",
+      "path": "/compare/7shifts-vs-gusto/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "ashby-vs-gusto",
+      "path": "/compare/ashby-vs-gusto/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "bolt-for-business-vs-gusto",
+      "path": "/compare/bolt-for-business-vs-gusto/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "carepatron-vs-gusto",
+      "path": "/compare/carepatron-vs-gusto/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "dayforce-vs-gusto",
+      "path": "/compare/dayforce-vs-gusto/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "deputy-vs-gusto",
+      "path": "/compare/deputy-vs-gusto/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "greenhouse-vs-gusto",
+      "path": "/compare/greenhouse-vs-gusto/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "gusto-vs-hibob",
+      "path": "/compare/gusto-vs-hibob/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "gusto-vs-homebase",
+      "path": "/compare/gusto-vs-homebase/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "gusto-vs-lever",
+      "path": "/compare/gusto-vs-lever/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "gusto-vs-oracle-hcm",
+      "path": "/compare/gusto-vs-oracle-hcm/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "gusto-vs-paycor",
+      "path": "/compare/gusto-vs-paycor/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "gusto-vs-personio",
+      "path": "/compare/gusto-vs-personio/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "gusto-vs-trainual",
+      "path": "/compare/gusto-vs-trainual/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "gusto-vs-ukg-pro",
+      "path": "/compare/gusto-vs-ukg-pro/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "gusto-vs-when-i-work",
+      "path": "/compare/gusto-vs-when-i-work/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "gusto-vs-workable",
+      "path": "/compare/gusto-vs-workable/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "gusto-vs-workday",
+      "path": "/compare/gusto-vs-workday/"
+    },
+    {
+      "kind": "alternatives",
+      "slug": "gusto",
+      "path": "/alternatives/gusto/"
+    },
+    {
+      "kind": "pricing",
+      "slug": "gusto",
+      "path": "/software/gusto/pricing/"
+    },
+    {
+      "kind": "best",
+      "slug": "hr-software",
+      "path": "/best/hr-software/"
+    },
+    {
+      "kind": "tools",
+      "slug": "hr-cost-calculator",
+      "path": "/tools/hr-cost-calculator/"
+    }
+  ],
+  "dependentsNeedingRefresh": [],
+  "remediation": [
+    "verify:canonical_vendor"
+  ],
+  "notes": [
+    "fieldAudit score=94",
+    "decisionHub bestFor=5 notIdeal=6",
+    "dependents=31"
+  ],
+  "materiallyImproved": false
+}

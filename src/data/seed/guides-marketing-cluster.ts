@@ -1,4 +1,4 @@
-import type { GuidePage } from "@/domain";
+import type { GuidePageInput } from "@/domain";
 import { teachingExpansionFor } from "./guides-category-teaching-expansion";
 import { marketingSoftwareEvaluationGuide } from "./guides-marketing-software-evaluation-guide";
 import { marketingSoftwarePricingGuide } from "./guides-marketing-software-pricing-guide";
@@ -10,7 +10,7 @@ import { whatIsMarketingSoftwareGuide } from "./guides-what-is-marketing-softwar
  * Marketing category educational guides (minimum supporting set).
  * Published and indexable (matches HR / PM / EM editorial gate).
  */
-export const marketingCategoryGuides: GuidePage[] = [
+export const marketingCategoryGuides: GuidePageInput[] = [
   whatIsMarketingSoftwareGuide,
   howToChooseMarketingSoftwareGuide,
   marketingSoftwarePricingGuide,

@@ -1,0 +1,190 @@
+{
+  "slug": "freshsales-implementation",
+  "enrichmentType": "IMPLEMENTATION_GUIDE",
+  "updatedAt": "2026-09-07T18:33:57.401Z",
+  "uniqueValueAdded": [
+    "implementation_workflow",
+    "scenario_analysis",
+    "decision_framework",
+    "limitations_evidence",
+    "pricing_comparison",
+    "sg_original_data",
+    "buyer_checklist"
+  ],
+  "patch": {
+    "summary": "Freshsales implementation guide: day-zero sequence, pilot rules, plan gates, and cutover checks from SoftwareGlimpse research — not generic CRM setup filler.",
+    "blocks": [
+      {
+        "id": "da-freshsales-implementation-1",
+        "type": "direct-answer",
+        "body": "Implement Freshsales by mapping current crm workflows to Freshsales objects, confirming plan gates for email sequences (Pro, Enterprise), forecasting (Enterprise), lead scoring (Pro, Enterprise), piloting one team, then cutting over integrations (Gmail) after data checks.",
+        "bullets": [
+          "Start with: contact management",
+          "Gate check: email sequences (Pro, Enterprise)",
+          "Integrate after: data quality pass on Gmail"
+        ]
+      },
+      {
+        "id": "impl-freshsales-implementation-2",
+        "type": "step",
+        "heading": "Freshsales day-zero to steady-state sequence",
+        "body": "Treat Freshsales setup as a controlled rollout — not a weekend dump of CSV files.",
+        "stepNumber": 1,
+        "scenarios": [
+          {
+            "title": "Day zero — objects and owners",
+            "body": "Define owners for contact management, lead management, pipeline management before inviting the whole org."
+          },
+          {
+            "title": "SMB pilot",
+            "body": "One pipeline / one team proves SMB and mid-market teams wanting CRM + phone/email engagement before company-wide seats."
+          },
+          {
+            "title": "Cutover",
+            "body": "Freeze legacy writes briefly; validate Gmail before reopen."
+          }
+        ]
+      },
+      {
+        "id": "df-freshsales-implementation-3",
+        "type": "decision-framework",
+        "title": "Freshsales implementation go / no-go",
+        "steps": [
+          {
+            "id": "i-1",
+            "label": "Go when plan unlocks cover email sequences (Pro, Enterprise)"
+          },
+          {
+            "id": "i-2",
+            "label": "Pause if this limitation blocks ops: Sales sequences, contact scoring, and territory management start on Pro; forecasting insights, custom modules, sandbox, and audit logs are Enterprise."
+          },
+          {
+            "id": "i-3",
+            "label": "Do not expand seats until contact management is green"
+          }
+        ]
+      },
+      {
+        "id": "mist-freshsales-implementation-4",
+        "type": "mistakes",
+        "title": "Freshsales implementation mistakes",
+        "items": [
+          {
+            "title": "Mistake 1",
+            "body": "Sales sequences, contact scoring, and territory management start on Pro; forecasting insights, custom modules, sandbox, and audit logs are Enterprise."
+          },
+          {
+            "title": "Mistake 2",
+            "body": "Branded documents (list price) and Freddy AI Agent (list price/100 sessions) are listed as paid add-ons."
+          },
+          {
+            "title": "Mistake 3",
+            "body": "SEO copy mentions a free plan, but the live pricing cards researched Aug 2026 list Growth/Pro/Enterprise only starting at list price — treat free forever as unverified from plan cards."
+          },
+          {
+            "title": "Mistake 4",
+            "body": "Sequences, scoring, and territories require Pro"
+          },
+          {
+            "title": "Big-bang invite",
+            "body": "Inviting every user before object design creates junk data that is expensive to unwind."
+          }
+        ]
+      },
+      {
+        "id": "cost-freshsales-implementation-5",
+        "type": "cost-breakdown",
+        "title": "Freshsales plan gates that affect rollout",
+        "body": "Implementation fails when unlocks needed for go-live sit on a higher tier than budgeted.",
+        "lines": [
+          {
+            "label": "Growth",
+            "description": "21-day trial · Unlocks: contact management, lead management, pipeline management · Suits: teams whose must-have gates appear on this tier"
+          },
+          {
+            "label": "Pro",
+            "description": "21-day trial · Unlocks: email sequences, lead scoring, territory management · Suits: teams whose must-have gates appear on this tier"
+          },
+          {
+            "label": "Enterprise",
+            "description": "21-day trial · Unlocks: forecasting, audit logs · Suits: teams whose must-have gates appear on this tier"
+          }
+        ]
+      },
+      {
+        "id": "sel-freshsales-implementation-6",
+        "type": "selection-checklist",
+        "title": "Freshsales implementation checklist",
+        "dimensions": [
+          {
+            "id": "prep",
+            "label": "Prep",
+            "options": [
+              "Object model drafted",
+              "Owners named",
+              "Legacy freeze window set"
+            ]
+          },
+          {
+            "id": "pilot",
+            "label": "Pilot",
+            "options": [
+              "contact management",
+              "Junk-data rules set",
+              "Support path clear"
+            ]
+          },
+          {
+            "id": "scale",
+            "label": "Scale",
+            "options": [
+              "Gmail",
+              "Seat expansion criteria written",
+              "Rollback plan noted"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "cta-freshsales-implementation-7",
+        "type": "interactive-cta",
+        "title": "Validate crm fit before a deep Freshsales rollout",
+        "body": "If Freshsales fails constraint fit, stop implementation early.",
+        "href": "/tools/crm-finder/",
+        "ctaLabel": "Open Finder",
+        "variant": "finder"
+      }
+    ],
+    "checklist": [
+      {
+        "id": "enrich-chk-0",
+        "label": "Draft Freshsales object owners before invites",
+        "order": 0
+      },
+      {
+        "id": "enrich-chk-1",
+        "label": "Confirm plan unlocks for go-live features",
+        "order": 1
+      },
+      {
+        "id": "enrich-chk-2",
+        "label": "Pilot one team on contact management",
+        "order": 2
+      },
+      {
+        "id": "enrich-chk-3",
+        "label": "If blocked, evaluate Pipedrive before sunk-cost expansion",
+        "order": 3
+      }
+    ],
+    "nextAction": {
+      "contentId": "tool:finder:crm",
+      "label": "Open Finder shortlist"
+    }
+  },
+  "notes": [
+    "Omit unsupported: testing_evidence",
+    "Implementation: workflow, constraints, mistakes, checklist.",
+    "Type-specific skeleton: IMPLEMENTATION_GUIDE"
+  ]
+}

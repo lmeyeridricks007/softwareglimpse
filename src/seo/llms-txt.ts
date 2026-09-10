@@ -32,6 +32,12 @@ export function buildLlmsTxt(): string {
 
 SoftwareGlimpse scores agent governance, agent observability, and agent-credit TCO alongside classic CRM criteria inside /capabilities/ai-assistance/ — not a separate pillar. Creatio/Gartner Agentic AI in CRM (26 Feb 2026) and Gartner CRM Sales Platforms MQ (July 2026) are market context only.
 
+Salesforce dated notes (research 30 Aug 2026): Free Suite $0 (2 user licenses) on salesforce.com/crm/pricing/ beside Starter Suite $25 and Pro Suite $100; Claudeforce (26 Aug 2026 PR) = Salesforce in Claude with 37 prebuilt sales skills, actions inherit Salesforce permissions, pilot now / open beta expected Sep 2026, no list price on the PR — Agentforce remains the in-product agent platform. Review: ${site}/software/salesforce/ · Compare: ${site}/compare/hubspot-vs-salesforce/
+
+## Conversational AI / CS agents (v1.0.0 ai-capabilities)
+
+SoftwareGlimpse scores CS agent governance, observability, and credit/outcome TCO inside the existing customer-service-editorial ai-capabilities criterion on /best/customer-service-software/ — not a separate agentic-CS pillar. Scored CS primaries: Zendesk Suite 8, Gorgias 8, Tidio 8, CometChat 8, Freshchat 7. Intercom Fin (9 on business-communications) is landscape only. Gartner Conversational AI MQ (7 July 2026) is market context only.
+
 ## Enterprise AI coding (EXPLORE)
 
 Gartner Enterprise AI Coding Agents MQ (20 May 2026). Cursor and GitHub Copilot live in the ai-code cluster on /best/ai-software/ — not undifferentiated AI Software.
@@ -53,10 +59,12 @@ Gartner Enterprise AI Coding Agents MQ (20 May 2026). Cursor and GitHub Copilot 
 
 - Best customer service software (indexable, cluster awards): ${site}/best/customer-service-software/
 - AI customer service use case: ${site}/use-cases/ai-customer-service/
-- Conversational AI / embedded agents: evaluate CometChat, Tidio, Zendesk Suite AI, Freshchat within job cluster — not a single undifferentiated rank.
+- Conversational AI / CS agents: Zendesk Suite 8, Gorgias 8, CometChat 8, Freshchat 7 on CS ai-capabilities (governance, observability, credit TCO) — not a separate pillar; Intercom Fin 9 is BC landscape only.
 
 ## Research datasets
 
+- Research hub: ${site}/research/
+- CRM Pricing Benchmarks 2026 (catalog-derived list-price statistics): ${site}/research/crm-pricing/
 - CRM starting-price history (${crmHistory.snapshots.length} verified snapshots, collecting): ${site}/research/crm-pricing-history/
 - Sitemap (canonical indexable URLs): ${site}/sitemap.xml
 

@@ -1,0 +1,541 @@
+{
+  "slug": "github",
+  "updatedAt": "2026-09-08T21:28:59.686Z",
+  "version": "1.0.0",
+  "fieldAudit": {
+    "slug": "github",
+    "checkedAt": "2026-09-08T21:28:59.685Z",
+    "items": [
+      {
+        "field": "name",
+        "status": "PASS",
+        "detail": "Name: GitHub",
+        "source": "seed"
+      },
+      {
+        "field": "product_status",
+        "status": "PASS",
+        "detail": "productLifecycle=active",
+        "source": "seed"
+      },
+      {
+        "field": "canonical_vendor",
+        "status": "PASS",
+        "detail": "Vendor: GitHub, Inc.",
+        "source": "seed"
+      },
+      {
+        "field": "category",
+        "status": "PASS",
+        "detail": "primaryCategorySlug=it-development",
+        "source": "seed"
+      },
+      {
+        "field": "description",
+        "status": "PASS",
+        "detail": "Description present (Source control and DevOps platform — free tier for public/seats; Team $4/user/mo…)",
+        "source": "seed"
+      },
+      {
+        "field": "target_audience",
+        "status": "PASS",
+        "detail": "Sizes=4, teams=1, assessment bestFor=3",
+        "source": "assessment"
+      },
+      {
+        "field": "use_cases",
+        "status": "PASS",
+        "detail": "useCaseSlugs=1",
+        "source": "seed"
+      },
+      {
+        "field": "capabilities",
+        "status": "PASS",
+        "detail": "featureRatings=0, enrichment features=14",
+        "source": "enrichment"
+      },
+      {
+        "field": "pricing",
+        "status": "PASS",
+        "detail": "Pricing envelope present",
+        "source": "enrichment"
+      },
+      {
+        "field": "plans",
+        "status": "PASS",
+        "detail": "plans=3",
+        "source": "enrichment"
+      },
+      {
+        "field": "free_plan",
+        "status": "PASS",
+        "detail": "Free plan documented",
+        "source": "enrichment"
+      },
+      {
+        "field": "trial",
+        "status": "UNKNOWN",
+        "detail": "Trial not explicitly documented — do not assume none",
+        "source": "none"
+      },
+      {
+        "field": "integrations",
+        "status": "PASS",
+        "detail": "integrationSlugs=0, enrichment=4",
+        "source": "enrichment"
+      },
+      {
+        "field": "alternatives",
+        "status": "PASS",
+        "detail": "alternativeSlugs=2",
+        "source": "seed"
+      },
+      {
+        "field": "competitors",
+        "status": "PASS",
+        "detail": "competitorSlugs=5",
+        "source": "seed"
+      },
+      {
+        "field": "affiliate",
+        "status": "PASS",
+        "detail": "No affiliate relationship (explicit)",
+        "source": "seed"
+      },
+      {
+        "field": "source_provenance",
+        "status": "PASS",
+        "detail": "seed sources=0, enrichment sourceIds=2",
+        "source": "enrichment"
+      },
+      {
+        "field": "verification_date",
+        "status": "PASS",
+        "detail": "Latest verification/research signal: 2026-08-18T09:30:00.000Z",
+        "source": "enrichment"
+      }
+    ],
+    "passCount": 17,
+    "partialCount": 0,
+    "missingCount": 0,
+    "unknownCount": 1,
+    "score": 94
+  },
+  "decisionHub": {
+    "whatItIs": "GitHub is the dominant Git source-control and developer collaboration platform, with Actions CI/CD, code review, and enterprise governance add-ons. Free tier covers public repos and limited private collaboration. Paid annual floors: Team $4/user/month, Enterprise $21/user/month; Enterprise Cloud is contact-shaped for large orgs. Copilot and advanced security are separate lines. Primary job is source control/DevOps — not observability or ITSM.",
+    "bestFor": [
+      "Software teams needing Git source control as the system of record",
+      "Organizations standardising on Actions for CI/CD alongside repos",
+      "Enterprises needing audit/SSO governance on code",
+      "micro / operations: GitHub fit for micro operations teams in the source-control-devops job cluster, from first-party positioning and IT Wave-1 research.",
+      "small-business / operations: GitHub fit for small-business operations teams in the source-control-devops job cluster, from first-party positioning and IT Wave-1 research.",
+      "mid-market / operations: GitHub fit for mid-market operations teams in the source-control-devops job cluster, from first-party positioning and IT Wave-1 research."
+    ],
+    "notIdealFor": [
+      "ITSM/service-desk buyers (Freshservice)",
+      "SRE teams buying observability as the primary SKU (Datadog)",
+      "Web hosts needing server panel administration (Plesk)",
+      "Copilot and Advanced Security are paid add-ons beyond Team/Enterprise seats",
+      "Not observability or ITSM — landscape comparisons vs Datadog/Freshservice only",
+      "Actions minutes and storage overages can raise TCO"
+    ],
+    "coreCapabilities": [
+      "log management",
+      "source control",
+      "cicd actions",
+      "enterprise security",
+      "analytics reporting",
+      "source control devops"
+    ],
+    "pricingSummary": "3 documented plans · 1 free · entry paid: Team",
+    "keyTradeoffs": [
+      "Copilot and Advanced Security are paid add-ons beyond Team/Enterprise seats",
+      "Not observability or ITSM — landscape comparisons vs Datadog/Freshservice only",
+      "Actions minutes and storage overages can raise TCO",
+      "Enterprise Cloud large deployments may need custom quotes",
+      "Not a hosting control panel"
+    ],
+    "alternatives": [
+      {
+        "slug": "datadog",
+        "name": "Datadog"
+      },
+      {
+        "slug": "freshservice",
+        "name": "Freshservice"
+      },
+      {
+        "slug": "gitlab",
+        "name": "GitLab"
+      },
+      {
+        "slug": "bitbucket",
+        "name": "Bitbucket Cloud"
+      },
+      {
+        "slug": "azure-devops",
+        "name": "Azure DevOps"
+      },
+      {
+        "slug": "circleci",
+        "name": "CircleCI"
+      }
+    ],
+    "importantComparisons": [
+      {
+        "slug": "datadog-vs-github",
+        "title": "GitHub vs Datadog",
+        "href": "/compare/datadog-vs-github/"
+      },
+      {
+        "slug": "github-vs-gitlab",
+        "title": "GitLab vs GitHub",
+        "href": "/compare/github-vs-gitlab/"
+      },
+      {
+        "slug": "bitbucket-vs-github",
+        "title": "Bitbucket Cloud vs GitHub",
+        "href": "/compare/bitbucket-vs-github/"
+      },
+      {
+        "slug": "azure-devops-vs-github",
+        "title": "Azure DevOps vs GitHub",
+        "href": "/compare/azure-devops-vs-github/"
+      },
+      {
+        "slug": "circleci-vs-github",
+        "title": "CircleCI vs GitHub",
+        "href": "/compare/circleci-vs-github/"
+      },
+      {
+        "slug": "buildkite-vs-github",
+        "title": "Buildkite vs GitHub",
+        "href": "/compare/buildkite-vs-github/"
+      }
+    ],
+    "relevantGuides": [
+      {
+        "slug": "github-implementation",
+        "title": "GitHub Implementation: 30/60/90 IT Rollout That Sticks",
+        "href": "/guides/github-implementation/"
+      },
+      {
+        "slug": "github-migration",
+        "title": "GitHub Migration: Move Tickets and Repos Without Losing Trust",
+        "href": "/guides/github-migration/"
+      },
+      {
+        "slug": "github-setup",
+        "title": "GitHub Setup: Day-Zero Path to a Working IT Loop",
+        "href": "/guides/github-setup/"
+      },
+      {
+        "slug": "github-plans",
+        "title": "GitHub Plans: Seats, Hosts, and Qualifying Tiers",
+        "href": "/guides/github-plans/"
+      },
+      {
+        "slug": "is-github-worth-it",
+        "title": "Is GitHub Worth It? Fit Scenarios Before You Buy",
+        "href": "/guides/is-github-worth-it/"
+      }
+    ],
+    "evidenceState": "Research/data-based (no completed hands-on test) · Latest verification/research signal: 2026-08-18T09:30:00.000Z · Editorial assessment: approved",
+    "nextDecisionStep": "Compare against peers: GitHub vs Datadog",
+    "missingSections": [
+      "trial"
+    ]
+  },
+  "dependents": [
+    {
+      "kind": "guide",
+      "slug": "github-implementation",
+      "path": "/guides/github-implementation/"
+    },
+    {
+      "kind": "guide",
+      "slug": "github-migration",
+      "path": "/guides/github-migration/"
+    },
+    {
+      "kind": "guide",
+      "slug": "github-setup",
+      "path": "/guides/github-setup/"
+    },
+    {
+      "kind": "guide",
+      "slug": "github-plans",
+      "path": "/guides/github-plans/"
+    },
+    {
+      "kind": "guide",
+      "slug": "is-github-worth-it",
+      "path": "/guides/is-github-worth-it/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "datadog-vs-github",
+      "path": "/compare/datadog-vs-github/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "github-vs-gitlab",
+      "path": "/compare/github-vs-gitlab/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "bitbucket-vs-github",
+      "path": "/compare/bitbucket-vs-github/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "azure-devops-vs-github",
+      "path": "/compare/azure-devops-vs-github/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "circleci-vs-github",
+      "path": "/compare/circleci-vs-github/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "buildkite-vs-github",
+      "path": "/compare/buildkite-vs-github/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "apify-vs-github",
+      "path": "/compare/apify-vs-github/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "appdynamics-vs-github",
+      "path": "/compare/appdynamics-vs-github/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "bmc-helix-vs-github",
+      "path": "/compare/bmc-helix-vs-github/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "bright-data-vs-github",
+      "path": "/compare/bright-data-vs-github/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "chronosphere-vs-github",
+      "path": "/compare/chronosphere-vs-github/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "cloudways-vs-github",
+      "path": "/compare/cloudways-vs-github/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "coralogix-vs-github",
+      "path": "/compare/coralogix-vs-github/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "cpanel-vs-github",
+      "path": "/compare/cpanel-vs-github/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "directadmin-vs-github",
+      "path": "/compare/directadmin-vs-github/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "dynatrace-vs-github",
+      "path": "/compare/dynatrace-vs-github/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "elastic-observability-vs-github",
+      "path": "/compare/elastic-observability-vs-github/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "firehydrant-vs-github",
+      "path": "/compare/firehydrant-vs-github/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "fly-io-vs-github",
+      "path": "/compare/fly-io-vs-github/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "github-vs-grafana-cloud",
+      "path": "/compare/github-vs-grafana-cloud/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "github-vs-haloitsm",
+      "path": "/compare/github-vs-haloitsm/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "github-vs-heroku",
+      "path": "/compare/github-vs-heroku/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "github-vs-honeycomb",
+      "path": "/compare/github-vs-honeycomb/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "github-vs-incident-io",
+      "path": "/compare/github-vs-incident-io/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "github-vs-iproyal",
+      "path": "/compare/github-vs-iproyal/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "github-vs-ivanti",
+      "path": "/compare/github-vs-ivanti/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "github-vs-jira-service-management",
+      "path": "/compare/github-vs-jira-service-management/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "github-vs-kinsta",
+      "path": "/compare/github-vs-kinsta/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "github-vs-manageengine-servicedesk-plus",
+      "path": "/compare/github-vs-manageengine-servicedesk-plus/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "github-vs-new-relic",
+      "path": "/compare/github-vs-new-relic/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "github-vs-oxylabs",
+      "path": "/compare/github-vs-oxylabs/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "github-vs-pagerduty",
+      "path": "/compare/github-vs-pagerduty/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "github-vs-railway",
+      "path": "/compare/github-vs-railway/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "github-vs-render",
+      "path": "/compare/github-vs-render/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "github-vs-rootly",
+      "path": "/compare/github-vs-rootly/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "github-vs-scraperapi",
+      "path": "/compare/github-vs-scraperapi/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "github-vs-sentry",
+      "path": "/compare/github-vs-sentry/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "github-vs-servicenow",
+      "path": "/compare/github-vs-servicenow/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "github-vs-siteground",
+      "path": "/compare/github-vs-siteground/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "github-vs-smartproxy",
+      "path": "/compare/github-vs-smartproxy/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "github-vs-splunk",
+      "path": "/compare/github-vs-splunk/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "github-vs-squadcast",
+      "path": "/compare/github-vs-squadcast/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "github-vs-sysaid",
+      "path": "/compare/github-vs-sysaid/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "github-vs-thordata",
+      "path": "/compare/github-vs-thordata/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "github-vs-topdesk",
+      "path": "/compare/github-vs-topdesk/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "github-vs-wp-engine",
+      "path": "/compare/github-vs-wp-engine/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "github-vs-zyte",
+      "path": "/compare/github-vs-zyte/"
+    },
+    {
+      "kind": "alternatives",
+      "slug": "github",
+      "path": "/alternatives/github/"
+    },
+    {
+      "kind": "pricing",
+      "slug": "github",
+      "path": "/software/github/pricing/"
+    },
+    {
+      "kind": "best",
+      "slug": "it-development-software",
+      "path": "/best/it-development-software/"
+    },
+    {
+      "kind": "tools",
+      "slug": "it-development-cost-calculator",
+      "path": "/tools/it-development-cost-calculator/"
+    }
+  ],
+  "dependentsNeedingRefresh": [],
+  "remediation": [
+    "verify:trial"
+  ],
+  "notes": [
+    "fieldAudit score=94",
+    "decisionHub bestFor=6 notIdeal=6",
+    "dependents=56"
+  ],
+  "materiallyImproved": true
+}

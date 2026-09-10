@@ -1,5 +1,6 @@
 "use client";
 
+import Link from "next/link";
 import { Check, ClipboardList } from "lucide-react";
 import type { ReactNode } from "react";
 import { Button } from "@/components/ui/button";
@@ -81,12 +82,12 @@ export function RequirementsBuilderHero({
     productNoun.toLowerCase() === "crm" ? (
       <>
         Not sure you&apos;re ready to specify requirements? Start with the{" "}
-        <a
+        <Link
           href="/tools/crm-readiness-assessment/"
           className="font-medium text-[var(--sg-color-primary)]"
         >
           CRM Readiness Assessment
-        </a>
+        </Link>
         .
       </>
     ) : null;

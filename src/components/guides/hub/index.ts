@@ -7,6 +7,7 @@ export { GuidesLatestGrid } from "./guides-latest-grid";
 export { GuidesResearchPathways } from "./guides-research-pathways";
 export { GuidesToolsCta } from "./guides-tools-cta";
 export { GuidesCategoryDirectory } from "./guides-category-directory";
+export { GuidesTopicalClusters } from "./guides-topical-clusters";
 export { GuidesMethodology } from "./guides-methodology";
 export { GuidesNewsletterCta } from "./guides-newsletter-cta";
 export { GuidesFinalDecisionCta } from "./guides-final-decision-cta";

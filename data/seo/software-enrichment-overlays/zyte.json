@@ -1,0 +1,529 @@
+{
+  "slug": "zyte",
+  "updatedAt": "2026-09-07T22:31:21.901Z",
+  "version": "1.0.0",
+  "fieldAudit": {
+    "slug": "zyte",
+    "checkedAt": "2026-09-07T22:31:21.900Z",
+    "items": [
+      {
+        "field": "name",
+        "status": "PASS",
+        "detail": "Name: Zyte",
+        "source": "seed"
+      },
+      {
+        "field": "product_status",
+        "status": "PASS",
+        "detail": "productLifecycle=active",
+        "source": "seed"
+      },
+      {
+        "field": "canonical_vendor",
+        "status": "UNKNOWN",
+        "detail": "Company/vendor not documented",
+        "source": "none"
+      },
+      {
+        "field": "category",
+        "status": "PASS",
+        "detail": "primaryCategorySlug=it-development",
+        "source": "seed"
+      },
+      {
+        "field": "description",
+        "status": "PASS",
+        "detail": "Description present (Zyte API web-data collection (formerly Scrapinghub) — PAYG; monthly commitments …)",
+        "source": "seed"
+      },
+      {
+        "field": "target_audience",
+        "status": "PASS",
+        "detail": "Sizes=3, teams=2, assessment bestFor=3",
+        "source": "assessment"
+      },
+      {
+        "field": "use_cases",
+        "status": "PASS",
+        "detail": "useCaseSlugs=1",
+        "source": "seed"
+      },
+      {
+        "field": "capabilities",
+        "status": "PASS",
+        "detail": "featureRatings=0, enrichment features=16",
+        "source": "enrichment"
+      },
+      {
+        "field": "pricing",
+        "status": "PASS",
+        "detail": "Pricing envelope present",
+        "source": "enrichment"
+      },
+      {
+        "field": "plans",
+        "status": "PASS",
+        "detail": "plans=3",
+        "source": "enrichment"
+      },
+      {
+        "field": "free_plan",
+        "status": "PASS",
+        "detail": "No free plan in documented plans (explicit absence)",
+        "source": "enrichment"
+      },
+      {
+        "field": "trial",
+        "status": "PASS",
+        "detail": "Trial documented on plans/pricing",
+        "source": "enrichment"
+      },
+      {
+        "field": "integrations",
+        "status": "PASS",
+        "detail": "integrationSlugs=0, enrichment=3",
+        "source": "enrichment"
+      },
+      {
+        "field": "alternatives",
+        "status": "PASS",
+        "detail": "alternativeSlugs=2",
+        "source": "seed"
+      },
+      {
+        "field": "competitors",
+        "status": "PASS",
+        "detail": "competitorSlugs=5",
+        "source": "seed"
+      },
+      {
+        "field": "affiliate",
+        "status": "PASS",
+        "detail": "No affiliate relationship (explicit)",
+        "source": "seed"
+      },
+      {
+        "field": "source_provenance",
+        "status": "PASS",
+        "detail": "seed sources=0, enrichment sourceIds=3",
+        "source": "enrichment"
+      },
+      {
+        "field": "verification_date",
+        "status": "PASS",
+        "detail": "Latest verification/research signal: 2026-08-18T22:00:00.000Z",
+        "source": "enrichment"
+      }
+    ],
+    "passCount": 17,
+    "partialCount": 0,
+    "missingCount": 0,
+    "unknownCount": 1,
+    "score": 94
+  },
+  "decisionHub": {
+    "whatItIs": "Zyte (formerly Scrapinghub) is a managed web-data collection platform — Zyte API for crawling/extraction rather than a raw residential-proxy GB pack as the primary shape. Pay-as-you-go plus monthly commitments from $100. $5 free trial credit. Same web-data-collection cluster as Bright Data. Bright Data remains the award (7.7); this entity does not outrank it. Distinct from IPRoyal’s $1.75/GB residential floor and from Apify’s Actor compute path.",
+    "bestFor": [
+      "Teams that knew Scrapinghub and need the Zyte API extraction path",
+      "Buyers who want a published $100 monthly commit versus Bright Data ~$499",
+      "Projects that will spend the $5 trial credit before scaling",
+      "small-business / engineering: Zyte fit for small-business engineering teams in the web-data-collection job cluster, from first-party positioning and IT Tier-B + ITSM SMB research.",
+      "mid-market / engineering: Zyte fit for mid-market engineering teams in the web-data-collection job cluster, from first-party positioning and IT Tier-B + ITSM SMB research.",
+      "enterprise / engineering: Zyte fit for enterprise engineering teams in the web-data-collection job cluster, from first-party positioning and IT Tier-B + ITSM SMB research."
+    ],
+    "notIdealFor": [
+      "Enterprises that require Bright Data / Oxylabs proxy-estate compliance packaging",
+      "Budget residential GB buyers (IPRoyal / ThorData)",
+      "Hosting or ITSM purchases",
+      "Formerly Scrapinghub — same vendor; do not treat as two products",
+      "Does not outrank Bright Data (7.7)",
+      "$100 monthly commit is not unlimited extraction; PAYG meters still apply"
+    ],
+    "coreCapabilities": [
+      "proxy network",
+      "analytics reporting",
+      "web data collection"
+    ],
+    "pricingSummary": "3 documented plans · entry paid: Monthly commitment · trial documented on at least one plan",
+    "keyTradeoffs": [
+      "Formerly Scrapinghub — same vendor; do not treat as two products",
+      "Does not outrank Bright Data (7.7)",
+      "$100 monthly commit is not unlimited extraction; PAYG meters still apply",
+      "API/extraction shape — not a Bright Data-style enterprise proxy estate as the primary identity",
+      "Not ITSM, observability, git, hosting panel, or managed hosting"
+    ],
+    "alternatives": [
+      {
+        "slug": "bright-data",
+        "name": "Bright Data"
+      },
+      {
+        "slug": "scraperapi",
+        "name": "ScraperAPI"
+      },
+      {
+        "slug": "oxylabs",
+        "name": "Oxylabs"
+      },
+      {
+        "slug": "apify",
+        "name": "Apify"
+      },
+      {
+        "slug": "smartproxy",
+        "name": "Decodo (Smartproxy)"
+      }
+    ],
+    "importantComparisons": [
+      {
+        "slug": "bright-data-vs-zyte",
+        "title": "Zyte vs Bright Data",
+        "href": "/compare/bright-data-vs-zyte/"
+      },
+      {
+        "slug": "scraperapi-vs-zyte",
+        "title": "Zyte vs ScraperAPI",
+        "href": "/compare/scraperapi-vs-zyte/"
+      },
+      {
+        "slug": "apify-vs-zyte",
+        "title": "Apify vs Zyte",
+        "href": "/compare/apify-vs-zyte/"
+      },
+      {
+        "slug": "appdynamics-vs-zyte",
+        "title": "AppDynamics vs Zyte",
+        "href": "/compare/appdynamics-vs-zyte/"
+      },
+      {
+        "slug": "azure-devops-vs-zyte",
+        "title": "Azure DevOps vs Zyte",
+        "href": "/compare/azure-devops-vs-zyte/"
+      },
+      {
+        "slug": "bitbucket-vs-zyte",
+        "title": "Bitbucket Cloud vs Zyte",
+        "href": "/compare/bitbucket-vs-zyte/"
+      }
+    ],
+    "relevantGuides": [
+      {
+        "slug": "zyte-implementation",
+        "title": "Zyte Implementation: 30/60/90 IT Rollout That Sticks",
+        "href": "/guides/zyte-implementation/"
+      },
+      {
+        "slug": "zyte-migration",
+        "title": "Zyte Migration: Move Tickets and Repos Without Losing Trust",
+        "href": "/guides/zyte-migration/"
+      },
+      {
+        "slug": "zyte-setup",
+        "title": "Zyte Setup: Day-Zero Path to a Working IT Loop",
+        "href": "/guides/zyte-setup/"
+      },
+      {
+        "slug": "zyte-plans",
+        "title": "Zyte Plans: Seats, Hosts, and Qualifying Tiers",
+        "href": "/guides/zyte-plans/"
+      },
+      {
+        "slug": "is-zyte-worth-it",
+        "title": "Is Zyte Worth It? Fit Scenarios Before You Buy",
+        "href": "/guides/is-zyte-worth-it/"
+      }
+    ],
+    "evidenceState": "Research/data-based (no completed hands-on test) · Latest verification/research signal: 2026-08-18T22:00:00.000Z · Editorial assessment: approved",
+    "nextDecisionStep": "Compare against peers: Zyte vs Bright Data",
+    "missingSections": [
+      "canonical_vendor"
+    ]
+  },
+  "dependents": [
+    {
+      "kind": "guide",
+      "slug": "zyte-implementation",
+      "path": "/guides/zyte-implementation/"
+    },
+    {
+      "kind": "guide",
+      "slug": "zyte-migration",
+      "path": "/guides/zyte-migration/"
+    },
+    {
+      "kind": "guide",
+      "slug": "zyte-setup",
+      "path": "/guides/zyte-setup/"
+    },
+    {
+      "kind": "guide",
+      "slug": "zyte-plans",
+      "path": "/guides/zyte-plans/"
+    },
+    {
+      "kind": "guide",
+      "slug": "is-zyte-worth-it",
+      "path": "/guides/is-zyte-worth-it/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "bright-data-vs-zyte",
+      "path": "/compare/bright-data-vs-zyte/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "scraperapi-vs-zyte",
+      "path": "/compare/scraperapi-vs-zyte/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "apify-vs-zyte",
+      "path": "/compare/apify-vs-zyte/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "appdynamics-vs-zyte",
+      "path": "/compare/appdynamics-vs-zyte/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "azure-devops-vs-zyte",
+      "path": "/compare/azure-devops-vs-zyte/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "bitbucket-vs-zyte",
+      "path": "/compare/bitbucket-vs-zyte/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "bmc-helix-vs-zyte",
+      "path": "/compare/bmc-helix-vs-zyte/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "buildkite-vs-zyte",
+      "path": "/compare/buildkite-vs-zyte/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "chronosphere-vs-zyte",
+      "path": "/compare/chronosphere-vs-zyte/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "circleci-vs-zyte",
+      "path": "/compare/circleci-vs-zyte/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "cloudways-vs-zyte",
+      "path": "/compare/cloudways-vs-zyte/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "coralogix-vs-zyte",
+      "path": "/compare/coralogix-vs-zyte/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "cpanel-vs-zyte",
+      "path": "/compare/cpanel-vs-zyte/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "datadog-vs-zyte",
+      "path": "/compare/datadog-vs-zyte/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "directadmin-vs-zyte",
+      "path": "/compare/directadmin-vs-zyte/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "dynatrace-vs-zyte",
+      "path": "/compare/dynatrace-vs-zyte/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "elastic-observability-vs-zyte",
+      "path": "/compare/elastic-observability-vs-zyte/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "firehydrant-vs-zyte",
+      "path": "/compare/firehydrant-vs-zyte/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "fly-io-vs-zyte",
+      "path": "/compare/fly-io-vs-zyte/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "github-vs-zyte",
+      "path": "/compare/github-vs-zyte/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "gitlab-vs-zyte",
+      "path": "/compare/gitlab-vs-zyte/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "grafana-cloud-vs-zyte",
+      "path": "/compare/grafana-cloud-vs-zyte/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "haloitsm-vs-zyte",
+      "path": "/compare/haloitsm-vs-zyte/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "heroku-vs-zyte",
+      "path": "/compare/heroku-vs-zyte/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "honeycomb-vs-zyte",
+      "path": "/compare/honeycomb-vs-zyte/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "incident-io-vs-zyte",
+      "path": "/compare/incident-io-vs-zyte/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "iproyal-vs-zyte",
+      "path": "/compare/iproyal-vs-zyte/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "ivanti-vs-zyte",
+      "path": "/compare/ivanti-vs-zyte/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "jira-service-management-vs-zyte",
+      "path": "/compare/jira-service-management-vs-zyte/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "kinsta-vs-zyte",
+      "path": "/compare/kinsta-vs-zyte/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "manageengine-servicedesk-plus-vs-zyte",
+      "path": "/compare/manageengine-servicedesk-plus-vs-zyte/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "new-relic-vs-zyte",
+      "path": "/compare/new-relic-vs-zyte/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "oxylabs-vs-zyte",
+      "path": "/compare/oxylabs-vs-zyte/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "pagerduty-vs-zyte",
+      "path": "/compare/pagerduty-vs-zyte/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "railway-vs-zyte",
+      "path": "/compare/railway-vs-zyte/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "render-vs-zyte",
+      "path": "/compare/render-vs-zyte/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "rootly-vs-zyte",
+      "path": "/compare/rootly-vs-zyte/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "sentry-vs-zyte",
+      "path": "/compare/sentry-vs-zyte/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "servicenow-vs-zyte",
+      "path": "/compare/servicenow-vs-zyte/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "siteground-vs-zyte",
+      "path": "/compare/siteground-vs-zyte/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "smartproxy-vs-zyte",
+      "path": "/compare/smartproxy-vs-zyte/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "splunk-vs-zyte",
+      "path": "/compare/splunk-vs-zyte/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "squadcast-vs-zyte",
+      "path": "/compare/squadcast-vs-zyte/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "sysaid-vs-zyte",
+      "path": "/compare/sysaid-vs-zyte/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "thordata-vs-zyte",
+      "path": "/compare/thordata-vs-zyte/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "topdesk-vs-zyte",
+      "path": "/compare/topdesk-vs-zyte/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "wp-engine-vs-zyte",
+      "path": "/compare/wp-engine-vs-zyte/"
+    },
+    {
+      "kind": "alternatives",
+      "slug": "zyte",
+      "path": "/alternatives/zyte/"
+    },
+    {
+      "kind": "pricing",
+      "slug": "zyte",
+      "path": "/software/zyte/pricing/"
+    },
+    {
+      "kind": "tools",
+      "slug": "it-development-cost-calculator",
+      "path": "/tools/it-development-cost-calculator/"
+    }
+  ],
+  "dependentsNeedingRefresh": [],
+  "remediation": [
+    "verify:canonical_vendor"
+  ],
+  "notes": [
+    "fieldAudit score=94",
+    "decisionHub bestFor=6 notIdeal=6",
+    "dependents=55"
+  ],
+  "materiallyImproved": false
+}

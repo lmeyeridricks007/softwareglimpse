@@ -99,6 +99,14 @@ export function SiteFooter() {
                 href={LEGAL_ROUTES.affiliateDisclosure}
                 label="Affiliate Disclosure"
               />
+              <FooterLink
+                href={LEGAL_ROUTES.editorialPolicy}
+                label="Editorial Policy"
+              />
+              <FooterLink
+                href={LEGAL_ROUTES.correctionsPolicy}
+                label="Corrections"
+              />
               <FooterLink href={LEGAL_ROUTES.privacy} label="Privacy" />
               <FooterLink href={LEGAL_ROUTES.cookies} label="Cookies" />
               <FooterLink href={LEGAL_ROUTES.terms} label="Terms" />

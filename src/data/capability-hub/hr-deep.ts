@@ -1,7 +1,7 @@
-import type { CapabilityHubProfile } from "@/domain";
+import type { CapabilityHubProfileInput } from "@/domain";
 
 type Depth = Pick<
-  CapabilityHubProfile,
+  CapabilityHubProfileInput,
   | "displayTitle"
   | "badgeLabel"
   | "tagline"

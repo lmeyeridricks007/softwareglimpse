@@ -199,33 +199,19 @@ export function SiVendorScorecardApp({
           runtime.methodologyCriteria ?? [],
         );
   }
-  const [hydrated, setHydrated] = useState(false);
-  const [profile, setProfile] = useState<DecisionProfile | null>(null);
-  const [state, setState] = useState<VendorScorecardState>(() =>
-    createEmptyVendorScorecard(categorySlug),
-  );
-  const [tab, setTab] = useState<TabId>("scorecard");
-  const [showAddProduct, setShowAddProduct] = useState(false);
-  const [why, setWhy] = useState<{
-    productSlug: string;
-    cell: CriterionCellResult;
-  } | null>(null);
-  const [combineEnabled, setCombineEnabled] = useState(false);
-  const [researchPct, setResearchPct] = useState(70);
-  const [includeNotesInExport, setIncludeNotesInExport] = useState(false);
-  const [copyStatus, setCopyStatus] = useState<string | null>(null);
-  const [activeStep, setActiveStep] = useState(0);
 
-  // Hydrate from localStorage
-  useEffect(() => {
+  const [initialScorecard] = useState(() => {
     const loadedProfile = loadProfile();
-    setProfile(loadedProfile);
     const loaded = loadVendorScorecard(categorySlug);
     if (loaded && loaded.productIds.length > 0) {
-      setState(loaded);
-      setCombineEnabled(Boolean(loaded.combinationSettings?.enabled));
-      setResearchPct(loaded.combinationSettings?.researchPercent ?? 70);
-    } else if (loadedProfile) {
+      return {
+        profile: loadedProfile,
+        state: loaded,
+        combineEnabled: Boolean(loaded.combinationSettings?.enabled),
+        researchPct: loaded.combinationSettings?.researchPercent ?? 70,
+      };
+    }
+    if (loadedProfile) {
       const criteria = generateCriteria(loadedProfile);
       const productIds = loadedProfile.shortlistProductIds.slice(0, 5);
       const next = touchVendorScorecard(createEmptyVendorScorecard(categorySlug), {
@@ -239,19 +225,51 @@ export function SiVendorScorecardApp({
           demoChecklist: [],
         })),
       });
-      setState(next);
       saveVendorScorecard(next);
-    } else {
-      setState(
-        touchVendorScorecard(createEmptyVendorScorecard(categorySlug), {
-          criteria: generateCriteria(null),
-          researchAcknowledgedAt: research.generatedAt,
-        }),
-      );
+      return {
+        profile: loadedProfile,
+        state: next,
+        combineEnabled: false,
+        researchPct: 70,
+      };
     }
-    setHydrated(true);
+    return {
+      profile: loadedProfile,
+      state: touchVendorScorecard(createEmptyVendorScorecard(categorySlug), {
+        criteria: generateCriteria(null),
+        researchAcknowledgedAt: research.generatedAt,
+      }),
+      combineEnabled: false,
+      researchPct: 70,
+    };
+  });
+
+  const [hydrated, setHydrated] = useState(
+    () => typeof window !== "undefined",
+  );
+  const [profile, setProfile] = useState<DecisionProfile | null>(
+    initialScorecard.profile,
+  );
+  const [state, setState] = useState<VendorScorecardState>(
+    initialScorecard.state,
+  );
+  const [tab, setTab] = useState<TabId>("scorecard");
+  const [showAddProduct, setShowAddProduct] = useState(false);
+  const [why, setWhy] = useState<{
+    productSlug: string;
+    cell: CriterionCellResult;
+  } | null>(null);
+  const [combineEnabled, setCombineEnabled] = useState(
+    initialScorecard.combineEnabled,
+  );
+  const [researchPct, setResearchPct] = useState(initialScorecard.researchPct);
+  const [includeNotesInExport, setIncludeNotesInExport] = useState(false);
+  const [copyStatus, setCopyStatus] = useState<string | null>(null);
+  const [activeStep, setActiveStep] = useState(0);
+
+  useEffect(() => {
     track({ name: "crm_scorecard_started" });
-  }, [research.generatedAt]);
+  }, []);
 
   const persist = useCallback((next: VendorScorecardState) => {
     const saved = touchVendorScorecard(next, {});

@@ -1,0 +1,521 @@
+{
+  "slug": "gitlab",
+  "updatedAt": "2026-09-08T21:57:07.462Z",
+  "version": "1.0.0",
+  "fieldAudit": {
+    "slug": "gitlab",
+    "checkedAt": "2026-09-08T21:57:07.460Z",
+    "items": [
+      {
+        "field": "name",
+        "status": "PASS",
+        "detail": "Name: GitLab",
+        "source": "seed"
+      },
+      {
+        "field": "product_status",
+        "status": "PASS",
+        "detail": "productLifecycle=active",
+        "source": "seed"
+      },
+      {
+        "field": "canonical_vendor",
+        "status": "PASS",
+        "detail": "Vendor: GitLab Inc.",
+        "source": "seed"
+      },
+      {
+        "field": "category",
+        "status": "PASS",
+        "detail": "primaryCategorySlug=it-development",
+        "source": "seed"
+      },
+      {
+        "field": "description",
+        "status": "PASS",
+        "detail": "Description present (DevSecOps platform — Free; Premium $29/user/mo billed annually; Ultimate custom …)",
+        "source": "seed"
+      },
+      {
+        "field": "target_audience",
+        "status": "PASS",
+        "detail": "Sizes=3, teams=1, assessment bestFor=3",
+        "source": "assessment"
+      },
+      {
+        "field": "use_cases",
+        "status": "PASS",
+        "detail": "useCaseSlugs=1",
+        "source": "seed"
+      },
+      {
+        "field": "capabilities",
+        "status": "PASS",
+        "detail": "featureRatings=0, enrichment features=15",
+        "source": "enrichment"
+      },
+      {
+        "field": "pricing",
+        "status": "PASS",
+        "detail": "Pricing envelope present",
+        "source": "enrichment"
+      },
+      {
+        "field": "plans",
+        "status": "PASS",
+        "detail": "plans=3",
+        "source": "enrichment"
+      },
+      {
+        "field": "free_plan",
+        "status": "PASS",
+        "detail": "Free plan documented",
+        "source": "enrichment"
+      },
+      {
+        "field": "trial",
+        "status": "PASS",
+        "detail": "Trial documented on plans/pricing",
+        "source": "enrichment"
+      },
+      {
+        "field": "integrations",
+        "status": "PASS",
+        "detail": "integrationSlugs=0, enrichment=4",
+        "source": "enrichment"
+      },
+      {
+        "field": "alternatives",
+        "status": "PASS",
+        "detail": "alternativeSlugs=2",
+        "source": "seed"
+      },
+      {
+        "field": "competitors",
+        "status": "PASS",
+        "detail": "competitorSlugs=3",
+        "source": "seed"
+      },
+      {
+        "field": "affiliate",
+        "status": "PASS",
+        "detail": "No affiliate relationship (explicit)",
+        "source": "seed"
+      },
+      {
+        "field": "source_provenance",
+        "status": "PASS",
+        "detail": "seed sources=0, enrichment sourceIds=3",
+        "source": "enrichment"
+      },
+      {
+        "field": "verification_date",
+        "status": "PASS",
+        "detail": "Latest verification/research signal: 2026-08-18T12:00:00.000Z",
+        "source": "enrichment"
+      }
+    ],
+    "passCount": 18,
+    "partialCount": 0,
+    "missingCount": 0,
+    "unknownCount": 0,
+    "score": 100
+  },
+  "decisionHub": {
+    "whatItIs": "GitLab is a single application for source control, CI/CD, security, and (on higher tiers) DevSecOps. SaaS Free covers small private namespaces with CI minute/storage caps. Premium is $29/user/month billed annually (no true month-to-month on paid). Ultimate is listed as custom/contact on GitLab’s current pricing page (historically $99/user/mo — confirm live). Self-managed SKUs exist separately. Distinct from GitHub (source-control cluster peer) and from GitHub Copilot (AI coding product).",
+    "bestFor": [
+      "Teams that want git + CI + security in one licence",
+      "Self-managed / data-residency buyers",
+      "Orgs leaving a many-tool DevOps stack",
+      "small-business / engineering: GitLab fit for small-business engineering teams in the source-control-devops job cluster, from first-party positioning and IT Priority-2 research.",
+      "mid-market / engineering: GitLab fit for mid-market engineering teams in the source-control-devops job cluster, from first-party positioning and IT Priority-2 research.",
+      "enterprise / engineering: GitLab fit for enterprise engineering teams in the source-control-devops job cluster, from first-party positioning and IT Priority-2 research."
+    ],
+    "notIdealFor": [
+      "Teams that only need cheap git hosting (GitHub Free / Bitbucket)",
+      "AI-IDE-only buyers (Cursor)",
+      "Observability-only (Datadog)",
+      "Paid SaaS is annual — no month-to-month Premium",
+      "Ultimate security suite is quote-gated on the current page",
+      "Not GitHub Copilot; GitLab Duo/AI is a platform feature, not the ai-code entity"
+    ],
+    "coreCapabilities": [
+      "log management",
+      "source control",
+      "cicd actions",
+      "dev ai",
+      "enterprise security",
+      "analytics reporting",
+      "source control devops"
+    ],
+    "pricingSummary": "3 documented plans · 1 free · entry paid: Premium · trial documented on at least one plan",
+    "keyTradeoffs": [
+      "Paid SaaS is annual — no month-to-month Premium",
+      "Ultimate security suite is quote-gated on the current page",
+      "Not GitHub Copilot; GitLab Duo/AI is a platform feature, not the ai-code entity",
+      "CI minute overages on Free/low tiers",
+      "Not observability or ITSM"
+    ],
+    "alternatives": [
+      {
+        "slug": "github",
+        "name": "GitHub"
+      },
+      {
+        "slug": "azure-devops",
+        "name": "Azure DevOps"
+      },
+      {
+        "slug": "bitbucket",
+        "name": "Bitbucket Cloud"
+      }
+    ],
+    "importantComparisons": [
+      {
+        "slug": "github-vs-gitlab",
+        "title": "GitLab vs GitHub",
+        "href": "/compare/github-vs-gitlab/"
+      },
+      {
+        "slug": "azure-devops-vs-gitlab",
+        "title": "Azure DevOps vs GitLab",
+        "href": "/compare/azure-devops-vs-gitlab/"
+      },
+      {
+        "slug": "apify-vs-gitlab",
+        "title": "Apify vs GitLab",
+        "href": "/compare/apify-vs-gitlab/"
+      },
+      {
+        "slug": "appdynamics-vs-gitlab",
+        "title": "AppDynamics vs GitLab",
+        "href": "/compare/appdynamics-vs-gitlab/"
+      },
+      {
+        "slug": "bitbucket-vs-gitlab",
+        "title": "Bitbucket Cloud vs GitLab",
+        "href": "/compare/bitbucket-vs-gitlab/"
+      },
+      {
+        "slug": "bmc-helix-vs-gitlab",
+        "title": "BMC Helix ITSM vs GitLab",
+        "href": "/compare/bmc-helix-vs-gitlab/"
+      }
+    ],
+    "relevantGuides": [
+      {
+        "slug": "gitlab-implementation",
+        "title": "GitLab Implementation: 30/60/90 IT Rollout That Sticks",
+        "href": "/guides/gitlab-implementation/"
+      },
+      {
+        "slug": "gitlab-migration",
+        "title": "GitLab Migration: Move Tickets and Repos Without Losing Trust",
+        "href": "/guides/gitlab-migration/"
+      },
+      {
+        "slug": "gitlab-setup",
+        "title": "GitLab Setup: Day-Zero Path to a Working IT Loop",
+        "href": "/guides/gitlab-setup/"
+      },
+      {
+        "slug": "gitlab-plans",
+        "title": "GitLab Plans: Seats, Hosts, and Qualifying Tiers",
+        "href": "/guides/gitlab-plans/"
+      },
+      {
+        "slug": "is-gitlab-worth-it",
+        "title": "Is GitLab Worth It? Fit Scenarios Before You Buy",
+        "href": "/guides/is-gitlab-worth-it/"
+      }
+    ],
+    "evidenceState": "Research/data-based (no completed hands-on test) · Latest verification/research signal: 2026-08-18T12:00:00.000Z · Editorial assessment: approved",
+    "nextDecisionStep": "Compare against peers: GitLab vs GitHub",
+    "missingSections": []
+  },
+  "dependents": [
+    {
+      "kind": "guide",
+      "slug": "gitlab-implementation",
+      "path": "/guides/gitlab-implementation/"
+    },
+    {
+      "kind": "guide",
+      "slug": "gitlab-migration",
+      "path": "/guides/gitlab-migration/"
+    },
+    {
+      "kind": "guide",
+      "slug": "gitlab-setup",
+      "path": "/guides/gitlab-setup/"
+    },
+    {
+      "kind": "guide",
+      "slug": "gitlab-plans",
+      "path": "/guides/gitlab-plans/"
+    },
+    {
+      "kind": "guide",
+      "slug": "is-gitlab-worth-it",
+      "path": "/guides/is-gitlab-worth-it/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "github-vs-gitlab",
+      "path": "/compare/github-vs-gitlab/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "azure-devops-vs-gitlab",
+      "path": "/compare/azure-devops-vs-gitlab/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "apify-vs-gitlab",
+      "path": "/compare/apify-vs-gitlab/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "appdynamics-vs-gitlab",
+      "path": "/compare/appdynamics-vs-gitlab/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "bitbucket-vs-gitlab",
+      "path": "/compare/bitbucket-vs-gitlab/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "bmc-helix-vs-gitlab",
+      "path": "/compare/bmc-helix-vs-gitlab/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "bright-data-vs-gitlab",
+      "path": "/compare/bright-data-vs-gitlab/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "buildkite-vs-gitlab",
+      "path": "/compare/buildkite-vs-gitlab/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "chronosphere-vs-gitlab",
+      "path": "/compare/chronosphere-vs-gitlab/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "circleci-vs-gitlab",
+      "path": "/compare/circleci-vs-gitlab/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "cloudways-vs-gitlab",
+      "path": "/compare/cloudways-vs-gitlab/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "coralogix-vs-gitlab",
+      "path": "/compare/coralogix-vs-gitlab/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "cpanel-vs-gitlab",
+      "path": "/compare/cpanel-vs-gitlab/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "datadog-vs-gitlab",
+      "path": "/compare/datadog-vs-gitlab/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "directadmin-vs-gitlab",
+      "path": "/compare/directadmin-vs-gitlab/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "dynatrace-vs-gitlab",
+      "path": "/compare/dynatrace-vs-gitlab/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "elastic-observability-vs-gitlab",
+      "path": "/compare/elastic-observability-vs-gitlab/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "firehydrant-vs-gitlab",
+      "path": "/compare/firehydrant-vs-gitlab/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "fly-io-vs-gitlab",
+      "path": "/compare/fly-io-vs-gitlab/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "gitlab-vs-grafana-cloud",
+      "path": "/compare/gitlab-vs-grafana-cloud/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "gitlab-vs-haloitsm",
+      "path": "/compare/gitlab-vs-haloitsm/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "gitlab-vs-heroku",
+      "path": "/compare/gitlab-vs-heroku/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "gitlab-vs-honeycomb",
+      "path": "/compare/gitlab-vs-honeycomb/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "gitlab-vs-incident-io",
+      "path": "/compare/gitlab-vs-incident-io/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "gitlab-vs-iproyal",
+      "path": "/compare/gitlab-vs-iproyal/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "gitlab-vs-ivanti",
+      "path": "/compare/gitlab-vs-ivanti/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "gitlab-vs-jira-service-management",
+      "path": "/compare/gitlab-vs-jira-service-management/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "gitlab-vs-kinsta",
+      "path": "/compare/gitlab-vs-kinsta/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "gitlab-vs-manageengine-servicedesk-plus",
+      "path": "/compare/gitlab-vs-manageengine-servicedesk-plus/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "gitlab-vs-new-relic",
+      "path": "/compare/gitlab-vs-new-relic/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "gitlab-vs-oxylabs",
+      "path": "/compare/gitlab-vs-oxylabs/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "gitlab-vs-pagerduty",
+      "path": "/compare/gitlab-vs-pagerduty/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "gitlab-vs-railway",
+      "path": "/compare/gitlab-vs-railway/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "gitlab-vs-render",
+      "path": "/compare/gitlab-vs-render/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "gitlab-vs-rootly",
+      "path": "/compare/gitlab-vs-rootly/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "gitlab-vs-scraperapi",
+      "path": "/compare/gitlab-vs-scraperapi/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "gitlab-vs-sentry",
+      "path": "/compare/gitlab-vs-sentry/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "gitlab-vs-servicenow",
+      "path": "/compare/gitlab-vs-servicenow/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "gitlab-vs-siteground",
+      "path": "/compare/gitlab-vs-siteground/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "gitlab-vs-smartproxy",
+      "path": "/compare/gitlab-vs-smartproxy/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "gitlab-vs-splunk",
+      "path": "/compare/gitlab-vs-splunk/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "gitlab-vs-squadcast",
+      "path": "/compare/gitlab-vs-squadcast/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "gitlab-vs-sysaid",
+      "path": "/compare/gitlab-vs-sysaid/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "gitlab-vs-thordata",
+      "path": "/compare/gitlab-vs-thordata/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "gitlab-vs-topdesk",
+      "path": "/compare/gitlab-vs-topdesk/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "gitlab-vs-wp-engine",
+      "path": "/compare/gitlab-vs-wp-engine/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "gitlab-vs-zyte",
+      "path": "/compare/gitlab-vs-zyte/"
+    },
+    {
+      "kind": "alternatives",
+      "slug": "gitlab",
+      "path": "/alternatives/gitlab/"
+    },
+    {
+      "kind": "pricing",
+      "slug": "gitlab",
+      "path": "/software/gitlab/pricing/"
+    },
+    {
+      "kind": "tools",
+      "slug": "it-development-cost-calculator",
+      "path": "/tools/it-development-cost-calculator/"
+    }
+  ],
+  "dependentsNeedingRefresh": [],
+  "remediation": [],
+  "notes": [
+    "fieldAudit score=100",
+    "decisionHub bestFor=6 notIdeal=6",
+    "dependents=55"
+  ],
+  "materiallyImproved": true
+}

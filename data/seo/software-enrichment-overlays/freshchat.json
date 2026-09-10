@@ -1,0 +1,345 @@
+{
+  "slug": "freshchat",
+  "updatedAt": "2026-09-07T22:31:21.751Z",
+  "version": "1.0.0",
+  "fieldAudit": {
+    "slug": "freshchat",
+    "checkedAt": "2026-09-07T22:31:21.750Z",
+    "items": [
+      {
+        "field": "name",
+        "status": "PASS",
+        "detail": "Name: Freshchat",
+        "source": "seed"
+      },
+      {
+        "field": "product_status",
+        "status": "PASS",
+        "detail": "productLifecycle=active",
+        "source": "seed"
+      },
+      {
+        "field": "canonical_vendor",
+        "status": "UNKNOWN",
+        "detail": "Company/vendor not documented",
+        "source": "none"
+      },
+      {
+        "field": "category",
+        "status": "PASS",
+        "detail": "primaryCategorySlug=live-chat",
+        "source": "seed"
+      },
+      {
+        "field": "description",
+        "status": "PASS",
+        "detail": "Description present (Freshworks live chat — free up to 10 agents; Growth $19, Pro $49, Enterprise $79…)",
+        "source": "seed"
+      },
+      {
+        "field": "target_audience",
+        "status": "PASS",
+        "detail": "Sizes=4, teams=2, assessment bestFor=3",
+        "source": "assessment"
+      },
+      {
+        "field": "use_cases",
+        "status": "PASS",
+        "detail": "useCaseSlugs=2",
+        "source": "seed"
+      },
+      {
+        "field": "capabilities",
+        "status": "PASS",
+        "detail": "featureRatings=0, enrichment features=16",
+        "source": "enrichment"
+      },
+      {
+        "field": "pricing",
+        "status": "PASS",
+        "detail": "Pricing envelope present",
+        "source": "enrichment"
+      },
+      {
+        "field": "plans",
+        "status": "PASS",
+        "detail": "plans=4",
+        "source": "enrichment"
+      },
+      {
+        "field": "free_plan",
+        "status": "PASS",
+        "detail": "Free plan documented",
+        "source": "enrichment"
+      },
+      {
+        "field": "trial",
+        "status": "PASS",
+        "detail": "Trial documented on plans/pricing",
+        "source": "enrichment"
+      },
+      {
+        "field": "integrations",
+        "status": "PASS",
+        "detail": "integrationSlugs=0, enrichment=4",
+        "source": "enrichment"
+      },
+      {
+        "field": "alternatives",
+        "status": "PASS",
+        "detail": "alternativeSlugs=2",
+        "source": "seed"
+      },
+      {
+        "field": "competitors",
+        "status": "PASS",
+        "detail": "competitorSlugs=4",
+        "source": "seed"
+      },
+      {
+        "field": "affiliate",
+        "status": "PASS",
+        "detail": "No affiliate relationship (explicit)",
+        "source": "seed"
+      },
+      {
+        "field": "source_provenance",
+        "status": "PASS",
+        "detail": "seed sources=0, enrichment sourceIds=2",
+        "source": "enrichment"
+      },
+      {
+        "field": "verification_date",
+        "status": "PASS",
+        "detail": "Latest verification/research signal: 2026-08-18T12:00:00.000Z",
+        "source": "enrichment"
+      }
+    ],
+    "passCount": 17,
+    "partialCount": 0,
+    "missingCount": 0,
+    "unknownCount": 1,
+    "score": 94
+  },
+  "decisionHub": {
+    "whatItIs": "Freshchat is Freshworks' live chat and messaging platform for website and in-app customer support. Free plan for up to 10 agents; annual per-agent pricing: Growth $19, Pro $49, Enterprise $79 per agent/month billed annually. Distinct from Freshdesk (helpdesk) and Freshservice (ITSM). Scored as live-chat-support primary.",
+    "bestFor": [
+      "Freshworks customers wanting live chat as the primary purchase",
+      "Teams needing free up-to-10-agents entry with clear upgrade path",
+      "Website and in-app messaging with bot deflection",
+      "micro / customer-success: Freshchat fit for micro customer-success teams in the live-chat-support job cluster, from first-party positioning and CS Wave-1 research.",
+      "small-business / customer-success: Freshchat fit for small-business customer-success teams in the live-chat-support job cluster, from first-party positioning and CS Wave-1 research.",
+      "mid-market / customer-success: Freshchat fit for mid-market customer-success teams in the live-chat-support job cluster, from first-party positioning and CS Wave-1 research."
+    ],
+    "notIdealFor": [
+      "Full helpdesk ticketing as primary job (Freshdesk)",
+      "ITSM service desk (Freshservice)",
+      "Conversation-cap-only pricing preference (Tidio)",
+      "Full ticketing depth lives in Freshdesk — Freshchat is live-chat primary",
+      "Free plan limited to 10 agents",
+      "Freshworks suite overlap with Freshdesk/Freshservice"
+    ],
+    "coreCapabilities": [
+      "shared inbox",
+      "live chat",
+      "omnichannel inbox",
+      "macros automation",
+      "csat surveys",
+      "helpdesk reporting",
+      "chatbot ai agent",
+      "agent copilot"
+    ],
+    "pricingSummary": "4 documented plans · 1 free · entry paid: Growth · trial documented on at least one plan",
+    "keyTradeoffs": [
+      "Full ticketing depth lives in Freshdesk — Freshchat is live-chat primary",
+      "Free plan limited to 10 agents",
+      "Freshworks suite overlap with Freshdesk/Freshservice",
+      "Enterprise messaging depth below Zendesk Suite omnichannel",
+      "Modern messaging software for customer engagement — live chat, bots, and campaigns across web and mobile channels. (audience: Freshworks customers wanting live chat as the primary purchase, Teams needing free up-to-10-agents entry with clear upgrade path)"
+    ],
+    "alternatives": [
+      {
+        "slug": "livechat",
+        "name": "LiveChat"
+      },
+      {
+        "slug": "tidio",
+        "name": "Tidio"
+      },
+      {
+        "slug": "intercom",
+        "name": "Intercom"
+      },
+      {
+        "slug": "zendesk-suite",
+        "name": "Zendesk Suite"
+      }
+    ],
+    "importantComparisons": [
+      {
+        "slug": "freshchat-vs-livechat",
+        "title": "Freshchat vs LiveChat",
+        "href": "/compare/freshchat-vs-livechat/"
+      },
+      {
+        "slug": "freshchat-vs-tidio",
+        "title": "Freshchat vs Tidio",
+        "href": "/compare/freshchat-vs-tidio/"
+      },
+      {
+        "slug": "cometchat-vs-freshchat",
+        "title": "CometChat vs Freshchat",
+        "href": "/compare/cometchat-vs-freshchat/"
+      },
+      {
+        "slug": "crisp-vs-freshchat",
+        "title": "Crisp vs Freshchat",
+        "href": "/compare/crisp-vs-freshchat/"
+      },
+      {
+        "slug": "freshchat-vs-intercom",
+        "title": "Freshchat vs Intercom",
+        "href": "/compare/freshchat-vs-intercom/"
+      },
+      {
+        "slug": "freshchat-vs-zendesk-suite",
+        "title": "Freshchat vs Zendesk Suite",
+        "href": "/compare/freshchat-vs-zendesk-suite/"
+      }
+    ],
+    "relevantGuides": [
+      {
+        "slug": "how-live-chat-software-works",
+        "title": "How Live Chat Software Works",
+        "href": "/guides/how-live-chat-software-works/"
+      },
+      {
+        "slug": "types-of-live-chat-software",
+        "title": "Types of Live Chat Software",
+        "href": "/guides/types-of-live-chat-software/"
+      },
+      {
+        "slug": "live-chat-vs-customer-service-software",
+        "title": "Live Chat Software vs Customer Service Software",
+        "href": "/guides/live-chat-vs-customer-service-software/"
+      },
+      {
+        "slug": "live-chat-requirements-guide",
+        "title": "Live Chat Software Requirements Guide",
+        "href": "/guides/live-chat-requirements-guide/"
+      },
+      {
+        "slug": "live-chat-evaluation-guide",
+        "title": "Live Chat Software Evaluation Guide",
+        "href": "/guides/live-chat-evaluation-guide/"
+      },
+      {
+        "slug": "what-is-freshchat",
+        "title": "What Is Freshchat?",
+        "href": "/guides/what-is-freshchat/"
+      }
+    ],
+    "evidenceState": "Research/data-based (no completed hands-on test) · Latest verification/research signal: 2026-08-18T12:00:00.000Z · Editorial assessment: approved",
+    "nextDecisionStep": "Compare against peers: Freshchat vs LiveChat",
+    "missingSections": [
+      "canonical_vendor"
+    ]
+  },
+  "dependents": [
+    {
+      "kind": "guide",
+      "slug": "how-live-chat-software-works",
+      "path": "/guides/how-live-chat-software-works/"
+    },
+    {
+      "kind": "guide",
+      "slug": "types-of-live-chat-software",
+      "path": "/guides/types-of-live-chat-software/"
+    },
+    {
+      "kind": "guide",
+      "slug": "live-chat-vs-customer-service-software",
+      "path": "/guides/live-chat-vs-customer-service-software/"
+    },
+    {
+      "kind": "guide",
+      "slug": "live-chat-requirements-guide",
+      "path": "/guides/live-chat-requirements-guide/"
+    },
+    {
+      "kind": "guide",
+      "slug": "live-chat-evaluation-guide",
+      "path": "/guides/live-chat-evaluation-guide/"
+    },
+    {
+      "kind": "guide",
+      "slug": "what-is-freshchat",
+      "path": "/guides/what-is-freshchat/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "freshchat-vs-livechat",
+      "path": "/compare/freshchat-vs-livechat/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "freshchat-vs-tidio",
+      "path": "/compare/freshchat-vs-tidio/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "cometchat-vs-freshchat",
+      "path": "/compare/cometchat-vs-freshchat/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "crisp-vs-freshchat",
+      "path": "/compare/crisp-vs-freshchat/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "freshchat-vs-intercom",
+      "path": "/compare/freshchat-vs-intercom/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "freshchat-vs-zendesk-suite",
+      "path": "/compare/freshchat-vs-zendesk-suite/"
+    },
+    {
+      "kind": "alternatives",
+      "slug": "freshchat",
+      "path": "/alternatives/freshchat/"
+    },
+    {
+      "kind": "pricing",
+      "slug": "freshchat",
+      "path": "/software/freshchat/pricing/"
+    },
+    {
+      "kind": "best",
+      "slug": "customer-service-software",
+      "path": "/best/customer-service-software/"
+    },
+    {
+      "kind": "best",
+      "slug": "live-chat-software",
+      "path": "/best/live-chat-software/"
+    },
+    {
+      "kind": "tools",
+      "slug": "live-chat-cost-calculator",
+      "path": "/tools/live-chat-cost-calculator/"
+    }
+  ],
+  "dependentsNeedingRefresh": [],
+  "remediation": [
+    "verify:canonical_vendor"
+  ],
+  "notes": [
+    "fieldAudit score=94",
+    "decisionHub bestFor=6 notIdeal=6",
+    "dependents=17"
+  ],
+  "materiallyImproved": false
+}

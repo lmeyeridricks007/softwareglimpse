@@ -577,8 +577,15 @@ function cmdRefreshScan(): void {
     `candidates=${result.candidates.length}  fromEvents=${result.fromChangeEvents}  fromReview=${result.fromStaleReview}  fromResearch=${result.fromResearch}`,
   );
   for (const candidate of result.candidates) {
+    const lane = candidate.enrichmentLane
+      ? ` lane=${candidate.enrichmentLane}`
+      : "";
+    const score =
+      candidate.overallScore != null
+        ? ` overall=${candidate.overallScore}`
+        : "";
     console.log(
-      `  - ${candidate.contentId}  [${candidate.priority}/${candidate.refreshStatus}]  ${candidate.reasons.join("; ")}`,
+      `  - ${candidate.contentId}  [${candidate.priority}/${candidate.refreshStatus}]${lane}${score}  ${candidate.reasons.join("; ")}`,
     );
   }
   if (result.candidates.length === 0) console.log("  (none)");

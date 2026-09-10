@@ -241,16 +241,32 @@
       ]
     }
   ],
+  "integrationSupport": [
+    {
+      "integrationSlug": "github",
+      "kind": "native",
+      "sourceIds": [
+        "heroku-product-official"
+      ]
+    },
+    {
+      "integrationSlug": "api",
+      "kind": "api-only",
+      "sourceIds": [
+        "heroku-product-official"
+      ]
+    }
+  ],
   "aiCapabilities": [
     {
-      "capability": "ITSM AI copilot",
+      "capability": "assistant",
       "availability": "not-supported",
       "sourceIds": [
         "heroku-product-official"
       ]
     },
     {
-      "capability": "Developer AI copilot",
+      "capability": "assistant",
       "availability": "limited",
       "sourceIds": [
         "heroku-product-official"
@@ -266,22 +282,6 @@
     {
       "capability": "recommendations",
       "availability": "not-supported",
-      "sourceIds": [
-        "heroku-product-official"
-      ]
-    }
-  ],
-  "integrationSupport": [
-    {
-      "integrationSlug": "github",
-      "kind": "native",
-      "sourceIds": [
-        "heroku-product-official"
-      ]
-    },
-    {
-      "integrationSlug": "api",
-      "kind": "api",
       "sourceIds": [
         "heroku-product-official"
       ]
@@ -372,6 +372,26 @@
       "isEditorial": false
     }
   ],
+  "screenshots": [
+    {
+      "id": "heroku-shot-overview",
+      "src": "/vendor-ui/heroku/overview.png",
+      "alt": "Heroku official marketing visual",
+      "caption": "Official Open Graph / marketing visual from https://www.heroku.com/.",
+      "source": "https://www.heroku.com/",
+      "checkedAt": "2026-08-18T14:00:00.000Z",
+      "annotation": "Official heroku marketing UI asset",
+      "kind": "vendor-ui",
+      "featureIds": [
+        "cloud-paas",
+        "cicd-actions"
+      ],
+      "useCaseIds": [
+        "cloud-paas"
+      ]
+    }
+  ],
+  "media": [],
   "pricing": {
     "currency": "USD",
     "model": "flat",
@@ -475,38 +495,12 @@
       }
     ],
     "notes": "Verified 2026-08-18 from heroku.com/pricing Cedar dynos (high confidence). Eco $5 (sleeps after 30 min, personal only) — not the always-on research floor. Basic $7 always-on = startingPriceMonthly 7. Standard-1X $25; Standard-2X $50; Performance-M $250+. No forever-free dyno. Affiliate economics excluded.",
-    "verifiedAt": "2026-08-18T22:00:00.000Z",
+    "verifiedAt": "2026-09-09T06:31:25.039Z",
     "sourceIds": [
       "heroku-pricing-official"
     ],
     "startingPriceMonthly": 7
   },
-  "screenshots": [
-    {
-      "id": "heroku-shot-overview",
-      "src": "/vendor-ui/heroku/overview.png",
-      "alt": "Heroku official marketing visual",
-      "caption": "Official Open Graph / marketing visual from https://www.heroku.com/.",
-      "source": "https://www.heroku.com/",
-      "checkedAt": "2026-08-18T14:00:00.000Z",
-      "annotation": "Official heroku marketing UI asset",
-      "kind": "vendor-ui",
-      "featureIds": [
-        "cloud-paas",
-        "cicd-actions"
-      ],
-      "useCaseIds": [
-        "cloud-paas"
-      ]
-    }
-  ],
-  "media": [],
-  "sourceIds": [
-    "heroku-product-official",
-    "heroku-pricing-official",
-    "heroku-pricing"
-  ],
-  "notes": "IT gap-fill PaaS + incident onboarding enrichment from first-party research 2026-08-18T22:00:00.000Z. handsOnTesting=false. membershipRole=primary. jobCluster=cloud-paas.",
   "domainCheckedAt": {
     "identity": "2026-08-18T22:00:00.000Z",
     "pricing": "2026-08-18T22:00:00.000Z",
@@ -520,5 +514,11 @@
     "limits": "2026-08-18T22:00:00.000Z",
     "security-compliance": "2026-08-18T22:00:00.000Z"
   },
-  "updatedAt": "2026-08-18T14:00:00.000Z"
+  "sourceIds": [
+    "heroku-product-official",
+    "heroku-pricing-official",
+    "heroku-pricing"
+  ],
+  "updatedAt": "2026-08-18T14:00:00.000Z",
+  "notes": "IT gap-fill PaaS + incident onboarding enrichment from first-party research 2026-08-18T22:00:00.000Z. handsOnTesting=false. membershipRole=primary. jobCluster=cloud-paas."
 }

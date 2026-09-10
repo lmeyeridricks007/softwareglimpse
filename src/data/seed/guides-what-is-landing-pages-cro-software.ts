@@ -1,4 +1,4 @@
-import type { GuidePage } from "@/domain";
+import type { GuidePageInput } from "@/domain";
 import type { z } from "zod";
 import type { GuideContentBlockSchema } from "@/domain";
 import { tier32GuideScheduledAt } from "@/data/config/publishing/tier-32-landing-pages-cro-launch-2027-09-01";
@@ -54,7 +54,7 @@ const blocks: GuideBlockInput[] = [
   },
 ];
 
-function metadata(): GuidePage["metadata"] {
+function metadata(): GuidePageInput["metadata"] {
   return SCHEDULED_AT
     ? {
         status: "scheduled",
@@ -74,7 +74,7 @@ function metadata(): GuidePage["metadata"] {
       };
 }
 
-export const whatIsLandingPagesCroSoftwareGuide: GuidePage = {
+export const whatIsLandingPagesCroSoftwareGuide: GuidePageInput = {
   id: "guide-what-is-landing-pages-cro-software",
   slug: SLUG,
   title: "What Is Landing Pages & CRO Software?",
@@ -98,7 +98,7 @@ export const whatIsLandingPagesCroSoftwareGuide: GuidePage = {
     "what-is-email-marketing",
     "what-is-marketing-software",
   ],
-  blocks: blocks as GuidePage["blocks"],
+  blocks: blocks as GuidePageInput["blocks"],
   checklist: [],
   sections: [],
   faq: [],
@@ -109,6 +109,6 @@ export const whatIsLandingPagesCroSoftwareGuide: GuidePage = {
     description:
       "Landing pages, funnel sequences, and on-site CRO — how page builders differ from ESP and MAP.",
     canonicalPath: `/guides/${SLUG}/`,
-    indexable: !SCHEDULED_AT,
+    indexable: true,
   },
 };

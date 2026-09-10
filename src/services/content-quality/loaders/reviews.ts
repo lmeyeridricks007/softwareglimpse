@@ -1,4 +1,5 @@
 import type { ProductReview } from "@/domain";
+import { readEnrichmentPricingVerifiedAt } from "@/domain/schemas/research-enrichment";
 import type { PageQualitySnapshot } from "@/domain/schemas/content-quality";
 import { loadEnrichment, loadManualSources } from "@/data/research/store";
 import { getProfileForPageType } from "../profiles";
@@ -121,7 +122,7 @@ export function snapshotFromProductReview(
       factRefCount: factRefs,
       verificationDatesPresent:
         liveSources.some((s) => Boolean(s.verifiedAt)) ||
-        Boolean(enrichment?.pricing?.verifiedAt),
+        Boolean(readEnrichmentPricingVerifiedAt(enrichment?.pricing)),
       unsupportedClaimFlags:
         (review.overallScore != null && rationales.length === 0 ? 1 : 0) +
         (genericPros ? 1 : 0),

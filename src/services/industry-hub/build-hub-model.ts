@@ -412,9 +412,9 @@ function deriveMaturity(industry: Industry): IndustryResearchMaturity {
     return "research-in-progress";
   }
   // Dedicated industry rankings are not yet modeled — complete research
-  // without industry rankings stays at "verified".
-  if (industry.seo.indexable === true) return "verified";
-  return "verified";
+  // without industry rankings stays at researched maturity.
+  if (industry.seo.indexable === true) return "researched";
+  return "researched";
 }
 
 function confidenceMessage(
@@ -426,7 +426,7 @@ function confidenceMessage(
       return `Industry-specific rankings for ${industryName} are not available yet. You can still compare CRM products using our broader CRM research.`;
     case "research-in-progress":
       return `Industry-specific rankings for ${industryName} are still being added. You can currently compare CRM products using our broader CRM research.`;
-    case "verified":
+    case "researched":
       return null;
     case "editorially-approved":
       return null;
@@ -1225,16 +1225,16 @@ export const buildIndustryHubModel = cache(function buildIndustryHubModel(
 
   const productFitCards: IndustryHubProductFitCard[] = (
     profile?.productFitGuidance ?? []
-  )
-    .map((fit) => {
-      const software = getSoftwareBySlug(fit.productSlug, {
-        includeUnpublished: true,
-      });
-      if (!software) return null;
-      return {
+  ).flatMap((fit) => {
+    const software = getSoftwareBySlug(fit.productSlug, {
+      includeUnpublished: true,
+    });
+    if (!software) return [];
+    return [
+      {
         slug: software.slug,
         name: software.name,
-        logo: software.logo,
+        logo: software.logo ?? null,
         why: fit.why,
         bestWhen: fit.bestWhen,
         overallScore: approvedOverallScore(software),
@@ -1243,9 +1243,9 @@ export const buildIndustryHubModel = cache(function buildIndustryHubModel(
           software.slug,
           allCategoryComparisons,
         ),
-      } satisfies IndustryHubProductFitCard;
-    })
-    .filter((c): c is IndustryHubProductFitCard => c != null);
+      },
+    ];
+  });
 
   const navItems: IndustryHubNavItem[] = [
     { id: "overview", label: "Overview", icon: "overview" },

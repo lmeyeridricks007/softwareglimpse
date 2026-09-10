@@ -11,6 +11,7 @@ const LOCALES = new Set([
   "it",
   "zh",
   "ja",
+  "hi",
 ]);
 
 const HUB_OR_LEGAL = new Set([

@@ -93,3 +93,38 @@ export {
   listStaleSeedDependencies,
   type RefreshMarkResult,
 } from "./refresh";
+
+export {
+  resolveEvidenceLevel,
+  buildEditorialTrustMetadata,
+  type ResolveEvidenceLevelInput,
+  type BuildEditorialTrustInput,
+} from "./evidence-level";
+
+export {
+  resolvePricingVerifiedAt,
+  resolvePricingVerifiedAtForEvidence,
+  reconcileDataVerifiedCoverage,
+  explainPricingVerification,
+  clearPricingVerificationCaches,
+} from "./pricing-verified-at";
+export type {
+  PricingVerificationExplanation,
+  PricingVerificationSource,
+  PricingVerificationSourceType,
+  PricingVerificationMethod,
+  PricingVerificationRejectReason,
+  DataVerifiedEvidenceTrace,
+  DataVerifiedReconciliation,
+} from "./pricing-verified-at";
+
+export { buildComparisonTrustMetadata } from "./comparison-trust";
+
+export {
+  DEFAULT_CATEGORY_SCORING_PROFILES,
+  getCategoryScoringProfile,
+  listStandardScoringDimensions,
+  buildDimensionScoresFromAssessments,
+  buildTraceableOverallScore,
+  resolveTraceableScoreFromMethodology,
+} from "./scoring-framework";

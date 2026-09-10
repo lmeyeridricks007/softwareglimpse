@@ -1,4 +1,4 @@
-import type { GuidePage } from "@/domain";
+import type { GuidePageInput } from "@/domain";
 import type { z } from "zod";
 import type { GuideContentBlockSchema } from "@/domain";
 
@@ -425,7 +425,7 @@ const crmAutomationBestPracticesBlocks: GuideBlockInput[] = [
   },
 ];
 
-export const crmAutomationBestPracticesGuide: GuidePage = {
+export const crmAutomationBestPracticesGuide: GuidePageInput = {
   id: "guide-crm-automation-best-practices",
   slug: "crm-automation-best-practices",
   title: "CRM Automation Best Practices: Automate After Trust",
@@ -470,7 +470,7 @@ export const crmAutomationBestPracticesGuide: GuidePage = {
     "crm-implementation-kpis",
     "crm-training",
   ],
-  blocks: crmAutomationBestPracticesBlocks as GuidePage["blocks"],
+  blocks: crmAutomationBestPracticesBlocks as GuidePageInput["blocks"],
   checklist: [
     {
       id: "hygiene-gate",

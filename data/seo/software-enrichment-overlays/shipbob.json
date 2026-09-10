@@ -1,0 +1,292 @@
+{
+  "slug": "shipbob",
+  "updatedAt": "2026-09-07T22:31:22.061Z",
+  "version": "1.0.0",
+  "fieldAudit": {
+    "slug": "shipbob",
+    "checkedAt": "2026-09-07T22:31:22.060Z",
+    "items": [
+      {
+        "field": "name",
+        "status": "PASS",
+        "detail": "Name: ShipBob",
+        "source": "seed"
+      },
+      {
+        "field": "product_status",
+        "status": "PASS",
+        "detail": "productLifecycle=active",
+        "source": "seed"
+      },
+      {
+        "field": "canonical_vendor",
+        "status": "UNKNOWN",
+        "detail": "Company/vendor not documented",
+        "source": "none"
+      },
+      {
+        "field": "category",
+        "status": "PASS",
+        "detail": "primaryCategorySlug=fulfillment-shipping",
+        "source": "seed"
+      },
+      {
+        "field": "description",
+        "status": "PASS",
+        "detail": "Description present (Ecommerce fulfillment and logistics platform — affiliate partner in ecommerce.…)",
+        "source": "seed"
+      },
+      {
+        "field": "target_audience",
+        "status": "PASS",
+        "detail": "Sizes=2, teams=1, assessment bestFor=3",
+        "source": "assessment"
+      },
+      {
+        "field": "use_cases",
+        "status": "PASS",
+        "detail": "useCaseSlugs=1",
+        "source": "seed"
+      },
+      {
+        "field": "capabilities",
+        "status": "PASS",
+        "detail": "featureRatings=0, enrichment features=14",
+        "source": "enrichment"
+      },
+      {
+        "field": "pricing",
+        "status": "PASS",
+        "detail": "Pricing envelope present",
+        "source": "enrichment"
+      },
+      {
+        "field": "plans",
+        "status": "PASS",
+        "detail": "plans=3",
+        "source": "enrichment"
+      },
+      {
+        "field": "free_plan",
+        "status": "PASS",
+        "detail": "No free plan in documented plans (explicit absence)",
+        "source": "enrichment"
+      },
+      {
+        "field": "trial",
+        "status": "UNKNOWN",
+        "detail": "Trial not explicitly documented — do not assume none",
+        "source": "none"
+      },
+      {
+        "field": "integrations",
+        "status": "PASS",
+        "detail": "integrationSlugs=0, enrichment=5",
+        "source": "enrichment"
+      },
+      {
+        "field": "alternatives",
+        "status": "PASS",
+        "detail": "alternativeSlugs=1",
+        "source": "seed"
+      },
+      {
+        "field": "competitors",
+        "status": "PASS",
+        "detail": "competitorSlugs=2",
+        "source": "seed"
+      },
+      {
+        "field": "affiliate",
+        "status": "PASS",
+        "detail": "Affiliate enabled with tracking URL",
+        "source": "seed"
+      },
+      {
+        "field": "source_provenance",
+        "status": "PASS",
+        "detail": "seed sources=0, enrichment sourceIds=3",
+        "source": "enrichment"
+      },
+      {
+        "field": "verification_date",
+        "status": "PASS",
+        "detail": "Latest verification/research signal: 2026-08-19T12:00:00.000Z",
+        "source": "enrichment"
+      }
+    ],
+    "passCount": 16,
+    "partialCount": 0,
+    "missingCount": 0,
+    "unknownCount": 2,
+    "score": 89
+  },
+  "decisionHub": {
+    "whatItIs": "ShipBob is a third-party logistics (3PL) fulfillment network for ecommerce brands — pick/pack, warehousing, receiving, returns, and carrier shipping across US and international nodes. Pricing is quote-based (2026-08-19): receiving, bin/shelf/pallet storage, per-order pick/pack, and pass-through shipping — no universal public rate card. Merchant-reported floors include roughly $275/month minimum spend and ~$2.50–$3.50 pick/pack per order before packaging and carrier costs. Requires an existing storefront (Shopify, BigCommerce, WooCommerce, etc.). Same fulfillment-adjacent cluster as Printful/Spocket — Spocket keeps the dropshipping-sourcing award for supplier import.",
+    "bestFor": [
+      "DTC brands on Shopify/BigCommerce/Woo needing multi-node US fulfillment",
+      "Operators doing 400+ orders/month who can absorb ~$275/mo minimums",
+      "Teams optimizing two-day shipping zones with distributed inventory",
+      "small-business / operations: ShipBob fit for small-business operations teams in the dropshipping-sourcing job cluster, from first-party positioning and Affiliate gap reconcile 2026-08-19 research.",
+      "mid-market / operations: ShipBob fit for mid-market operations teams in the dropshipping-sourcing job cluster, from first-party positioning and Affiliate gap reconcile 2026-08-19 research.",
+      "enterprise / operations: ShipBob fit for enterprise operations teams in the dropshipping-sourcing job cluster, from first-party positioning and Affiliate gap reconcile 2026-08-19 research."
+    ],
+    "notIdealFor": [
+      "Merchants without a storefront yet",
+      "Dropshipping-only catalog import (Spocket, AliDrop)",
+      "Print-on-demand micro brands (Printful)",
+      "Low-volume sellers who cannot clear monthly minimums",
+      "Requires an existing ecommerce storefront — not a cart or checkout product",
+      "Quote-based pricing with ~$275/mo minimum reported — opaque until sales conversation"
+    ],
+    "coreCapabilities": [
+      "order management",
+      "inventory management",
+      "shipping fulfillment",
+      "analytics reporting",
+      "app extensions",
+      "order fulfillment"
+    ],
+    "pricingSummary": "3 documented plans · entry paid: Fulfillment (Quote)",
+    "keyTradeoffs": [
+      "Requires an existing ecommerce storefront — not a cart or checkout product",
+      "Quote-based pricing with ~$275/mo minimum reported — opaque until sales conversation",
+      "Storage and node-classification fees penalize slow-moving SKUs",
+      "Not dropshipping supplier import (Spocket award path)",
+      "Heavy/oversized SKUs may fit regional 3PLs better"
+    ],
+    "alternatives": [
+      {
+        "slug": "spocket",
+        "name": "Spocket"
+      },
+      {
+        "slug": "alidrop",
+        "name": "AliDrop"
+      }
+    ],
+    "importantComparisons": [
+      {
+        "slug": "shipbob-vs-spocket",
+        "title": "ShipBob vs Spocket",
+        "href": "/compare/shipbob-vs-spocket/"
+      },
+      {
+        "slug": "alidrop-vs-shipbob",
+        "title": "ShipBob vs AliDrop",
+        "href": "/compare/alidrop-vs-shipbob/"
+      }
+    ],
+    "relevantGuides": [
+      {
+        "slug": "how-fulfillment-shipping-software-works",
+        "title": "How Fulfillment & Shipping Software Works",
+        "href": "/guides/how-fulfillment-shipping-software-works/"
+      },
+      {
+        "slug": "types-of-fulfillment-shipping-software",
+        "title": "Types of Fulfillment & Shipping Software",
+        "href": "/guides/types-of-fulfillment-shipping-software/"
+      },
+      {
+        "slug": "fulfillment-shipping-vs-ecommerce-software",
+        "title": "Fulfillment & Shipping Software vs Ecommerce Software",
+        "href": "/guides/fulfillment-shipping-vs-ecommerce-software/"
+      },
+      {
+        "slug": "fulfillment-shipping-requirements-guide",
+        "title": "Fulfillment & Shipping Software Requirements Guide",
+        "href": "/guides/fulfillment-shipping-requirements-guide/"
+      },
+      {
+        "slug": "fulfillment-shipping-evaluation-guide",
+        "title": "Fulfillment & Shipping Software Evaluation Guide",
+        "href": "/guides/fulfillment-shipping-evaluation-guide/"
+      },
+      {
+        "slug": "what-is-shipbob",
+        "title": "What Is ShipBob?",
+        "href": "/guides/what-is-shipbob/"
+      }
+    ],
+    "evidenceState": "Research/data-based (no completed hands-on test) · Latest verification/research signal: 2026-08-19T12:00:00.000Z · Editorial assessment: approved",
+    "nextDecisionStep": "Compare against peers: ShipBob vs Spocket",
+    "missingSections": [
+      "canonical_vendor",
+      "trial"
+    ]
+  },
+  "dependents": [
+    {
+      "kind": "guide",
+      "slug": "how-fulfillment-shipping-software-works",
+      "path": "/guides/how-fulfillment-shipping-software-works/"
+    },
+    {
+      "kind": "guide",
+      "slug": "types-of-fulfillment-shipping-software",
+      "path": "/guides/types-of-fulfillment-shipping-software/"
+    },
+    {
+      "kind": "guide",
+      "slug": "fulfillment-shipping-vs-ecommerce-software",
+      "path": "/guides/fulfillment-shipping-vs-ecommerce-software/"
+    },
+    {
+      "kind": "guide",
+      "slug": "fulfillment-shipping-requirements-guide",
+      "path": "/guides/fulfillment-shipping-requirements-guide/"
+    },
+    {
+      "kind": "guide",
+      "slug": "fulfillment-shipping-evaluation-guide",
+      "path": "/guides/fulfillment-shipping-evaluation-guide/"
+    },
+    {
+      "kind": "guide",
+      "slug": "what-is-shipbob",
+      "path": "/guides/what-is-shipbob/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "shipbob-vs-spocket",
+      "path": "/compare/shipbob-vs-spocket/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "alidrop-vs-shipbob",
+      "path": "/compare/alidrop-vs-shipbob/"
+    },
+    {
+      "kind": "alternatives",
+      "slug": "shipbob",
+      "path": "/alternatives/shipbob/"
+    },
+    {
+      "kind": "pricing",
+      "slug": "shipbob",
+      "path": "/software/shipbob/pricing/"
+    },
+    {
+      "kind": "best",
+      "slug": "fulfillment-shipping-software",
+      "path": "/best/fulfillment-shipping-software/"
+    },
+    {
+      "kind": "tools",
+      "slug": "fulfillment-shipping-cost-calculator",
+      "path": "/tools/fulfillment-shipping-cost-calculator/"
+    }
+  ],
+  "dependentsNeedingRefresh": [],
+  "remediation": [
+    "verify:canonical_vendor",
+    "verify:trial"
+  ],
+  "notes": [
+    "fieldAudit score=89",
+    "decisionHub bestFor=6 notIdeal=6",
+    "dependents=12"
+  ],
+  "materiallyImproved": false
+}

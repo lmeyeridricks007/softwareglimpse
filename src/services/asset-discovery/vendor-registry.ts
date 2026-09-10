@@ -1,4 +1,7 @@
-import type { VendorOfficialSourceRegistryEntry } from "@/domain/schemas/asset-discovery";
+import type {
+  VendorOfficialSourceRegistryEntry,
+  VendorOfficialSourceRegistryEntryInput,
+} from "@/domain/schemas/asset-discovery";
 import { VendorOfficialSourceRegistryEntrySchema } from "@/domain/schemas/asset-discovery";
 import { COVERAGE_GAP_VENDOR_REGISTRY } from "./vendor-registry-coverage-gap";
 
@@ -9,7 +12,7 @@ import { COVERAGE_GAP_VENDOR_REGISTRY } from "./vendor-registry-coverage-gap";
  * never invent channels or URLs for products not listed.
  */
 
-const RAW_REGISTRY: VendorOfficialSourceRegistryEntry[] = [
+const RAW_REGISTRY: VendorOfficialSourceRegistryEntryInput[] = [
   {
     productSlug: "hubspot",
     productName: "HubSpot",

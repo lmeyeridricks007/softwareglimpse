@@ -241,16 +241,32 @@
       ]
     }
   ],
+  "integrationSupport": [
+    {
+      "integrationSlug": "github",
+      "kind": "native",
+      "sourceIds": [
+        "render-product-official"
+      ]
+    },
+    {
+      "integrationSlug": "api",
+      "kind": "api-only",
+      "sourceIds": [
+        "render-product-official"
+      ]
+    }
+  ],
   "aiCapabilities": [
     {
-      "capability": "ITSM AI copilot",
+      "capability": "assistant",
       "availability": "not-supported",
       "sourceIds": [
         "render-product-official"
       ]
     },
     {
-      "capability": "Developer AI copilot",
+      "capability": "assistant",
       "availability": "limited",
       "sourceIds": [
         "render-product-official"
@@ -266,22 +282,6 @@
     {
       "capability": "recommendations",
       "availability": "not-supported",
-      "sourceIds": [
-        "render-product-official"
-      ]
-    }
-  ],
-  "integrationSupport": [
-    {
-      "integrationSlug": "github",
-      "kind": "native",
-      "sourceIds": [
-        "render-product-official"
-      ]
-    },
-    {
-      "integrationSlug": "api",
-      "kind": "api",
       "sourceIds": [
         "render-product-official"
       ]
@@ -372,6 +372,26 @@
       "isEditorial": false
     }
   ],
+  "screenshots": [
+    {
+      "id": "render-shot-overview",
+      "src": "/vendor-ui/render/overview.png",
+      "alt": "Render official marketing visual",
+      "caption": "Official Open Graph / marketing visual from https://render.com/.",
+      "source": "https://render.com/",
+      "checkedAt": "2026-08-18T14:00:00.000Z",
+      "annotation": "Official Render marketing UI asset",
+      "kind": "vendor-ui",
+      "featureIds": [
+        "cloud-paas",
+        "cicd-actions"
+      ],
+      "useCaseIds": [
+        "cloud-paas"
+      ]
+    }
+  ],
+  "media": [],
   "pricing": {
     "currency": "USD",
     "model": "flat",
@@ -467,38 +487,12 @@
       }
     ],
     "notes": "Verified 2026-08-18 from render.com/pricing (high confidence). Hobby $0 + compute; Pro $25/mo + compute (startingPriceMonthly production floor); Scale $499; Enterprise custom. Starter web $7/mo is instance compute — not the workspace floor. Affiliate economics excluded.",
-    "verifiedAt": "2026-08-18T22:00:00.000Z",
+    "verifiedAt": "2026-09-09T06:31:20.728Z",
     "sourceIds": [
       "render-pricing-official"
     ],
     "startingPriceMonthly": 25
   },
-  "screenshots": [
-    {
-      "id": "render-shot-overview",
-      "src": "/vendor-ui/render/overview.png",
-      "alt": "Render official marketing visual",
-      "caption": "Official Open Graph / marketing visual from https://render.com/.",
-      "source": "https://render.com/",
-      "checkedAt": "2026-08-18T14:00:00.000Z",
-      "annotation": "Official Render marketing UI asset",
-      "kind": "vendor-ui",
-      "featureIds": [
-        "cloud-paas",
-        "cicd-actions"
-      ],
-      "useCaseIds": [
-        "cloud-paas"
-      ]
-    }
-  ],
-  "media": [],
-  "sourceIds": [
-    "render-product-official",
-    "render-pricing-official",
-    "render-pricing"
-  ],
-  "notes": "IT optional-next onboarding enrichment from first-party research 2026-08-18T22:00:00.000Z. handsOnTesting=false. membershipRole=primary. jobCluster=cloud-paas.",
   "domainCheckedAt": {
     "identity": "2026-08-18T22:00:00.000Z",
     "pricing": "2026-08-18T22:00:00.000Z",
@@ -512,5 +506,11 @@
     "limits": "2026-08-18T22:00:00.000Z",
     "security-compliance": "2026-08-18T22:00:00.000Z"
   },
-  "updatedAt": "2026-08-18T14:00:00.000Z"
+  "sourceIds": [
+    "render-product-official",
+    "render-pricing-official",
+    "render-pricing"
+  ],
+  "updatedAt": "2026-08-18T14:00:00.000Z",
+  "notes": "IT optional-next onboarding enrichment from first-party research 2026-08-18T22:00:00.000Z. handsOnTesting=false. membershipRole=primary. jobCluster=cloud-paas."
 }

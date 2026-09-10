@@ -1,0 +1,398 @@
+{
+  "slug": "callhippo",
+  "updatedAt": "2026-09-07T22:31:21.380Z",
+  "version": "1.0.0",
+  "fieldAudit": {
+    "slug": "callhippo",
+    "checkedAt": "2026-09-07T22:31:21.379Z",
+    "items": [
+      {
+        "field": "name",
+        "status": "PASS",
+        "detail": "Name: CallHippo",
+        "source": "seed"
+      },
+      {
+        "field": "product_status",
+        "status": "PASS",
+        "detail": "productLifecycle=active",
+        "source": "seed"
+      },
+      {
+        "field": "canonical_vendor",
+        "status": "UNKNOWN",
+        "detail": "Company/vendor not documented",
+        "source": "none"
+      },
+      {
+        "field": "category",
+        "status": "PASS",
+        "detail": "primaryCategorySlug=voip-business-phone",
+        "source": "seed"
+      },
+      {
+        "field": "description",
+        "status": "PASS",
+        "detail": "Description present (SMB cloud phone system with a $0 starter rung, Starter from $18/user/month annua…)",
+        "source": "seed"
+      },
+      {
+        "field": "target_audience",
+        "status": "PASS",
+        "detail": "Sizes=3, teams=2, assessment bestFor=3",
+        "source": "assessment"
+      },
+      {
+        "field": "use_cases",
+        "status": "PASS",
+        "detail": "useCaseSlugs=6",
+        "source": "seed"
+      },
+      {
+        "field": "capabilities",
+        "status": "PASS",
+        "detail": "featureRatings=0, enrichment features=13",
+        "source": "enrichment"
+      },
+      {
+        "field": "pricing",
+        "status": "PASS",
+        "detail": "Pricing envelope present",
+        "source": "enrichment"
+      },
+      {
+        "field": "plans",
+        "status": "PASS",
+        "detail": "plans=5",
+        "source": "enrichment"
+      },
+      {
+        "field": "free_plan",
+        "status": "PASS",
+        "detail": "Free plan documented",
+        "source": "enrichment"
+      },
+      {
+        "field": "trial",
+        "status": "PASS",
+        "detail": "Trial documented on plans/pricing",
+        "source": "enrichment"
+      },
+      {
+        "field": "integrations",
+        "status": "PASS",
+        "detail": "integrationSlugs=0, enrichment=7",
+        "source": "enrichment"
+      },
+      {
+        "field": "alternatives",
+        "status": "PASS",
+        "detail": "alternativeSlugs=6",
+        "source": "seed"
+      },
+      {
+        "field": "competitors",
+        "status": "PASS",
+        "detail": "competitorSlugs=6",
+        "source": "seed"
+      },
+      {
+        "field": "affiliate",
+        "status": "PASS",
+        "detail": "Affiliate enabled with tracking URL",
+        "source": "seed"
+      },
+      {
+        "field": "source_provenance",
+        "status": "PASS",
+        "detail": "seed sources=0, enrichment sourceIds=4",
+        "source": "enrichment"
+      },
+      {
+        "field": "verification_date",
+        "status": "PASS",
+        "detail": "Latest verification/research signal: 2026-08-17T09:00:00.000Z",
+        "source": "enrichment"
+      }
+    ],
+    "passCount": 17,
+    "partialCount": 0,
+    "missingCount": 0,
+    "unknownCount": 1,
+    "score": 94
+  },
+  "decisionHub": {
+    "whatItIs": "CallHippo is an SMB-focused cloud phone system sold as two ladders: an Office Phone System (Basic, Starter, Professional, Ultimate) for day-to-day business calling and a scaled call-centre ladder (Bronze, Silver, Platinum) for high-volume teams. Entry pricing is materially lower than Aircall with only a 2-user minimum on Starter, but call recording, multilingual IVR and CRM integrations start on Professional, and AI is a paid Copilot add-on.",
+    "bestFor": [
+      "SMB and micro teams that need a real phone system with a low entry price and no 3-seat floor",
+      "Growing sales teams that want unlimited domestic calling plus recording and IVR around $30/user/month",
+      "Buyers who want a self-serve trial and a $0 starting rung before committing budget",
+      "micro / sales: CallHippo fit for micro sales teams in the cloud-phone job cluster, from first-party positioning and business-communications Wave-1 research.",
+      "small-business / sales: CallHippo fit for small-business sales teams in the cloud-phone job cluster, from first-party positioning and business-communications Wave-1 research.",
+      "mid-market / sales: CallHippo fit for mid-market sales teams in the cloud-phone job cluster, from first-party positioning and business-communications Wave-1 research."
+    ],
+    "notIdealFor": [
+      "High-volume outbound teams needing auto/predictive dialing (prohibited by fair-usage on the office plans)",
+      "Buyers who need call recording and CRM integrations on the cheapest paid tier",
+      "Enterprises wanting a single transparent global price list rather than two region-dependent ladders",
+      "Call recording, multilingual IVR and CRM integrations (HubSpot/Salesforce/Pipedrive/Zoho) start on Professional",
+      "Basic is only free for the first 6 months from signup, after which Starter is required",
+      "Fair-usage policy prohibits auto-dialing, predictive dialing and trunking on the Office Phone System"
+    ],
+    "coreCapabilities": [
+      "cloud phone",
+      "sms messaging",
+      "whatsapp business",
+      "shared inbox",
+      "unified inbox",
+      "business phone",
+      "sales calling",
+      "contact center"
+    ],
+    "pricingSummary": "5 documented plans · 1 free · entry paid: Starter · trial documented on at least one plan",
+    "keyTradeoffs": [
+      "Call recording, multilingual IVR and CRM integrations (HubSpot/Salesforce/Pipedrive/Zoho) start on Professional",
+      "Basic is only free for the first 6 months from signup, after which Starter is required",
+      "Fair-usage policy prohibits auto-dialing, predictive dialing and trunking on the Office Phone System",
+      "Parallel calls are capped at 30% of total call capacity within the Office Phone System",
+      "AI Copilot is a $10/user/month add-on and speech analytics is Enterprise-included only"
+    ],
+    "alternatives": [
+      {
+        "slug": "nextiva",
+        "name": "Nextiva"
+      },
+      {
+        "slug": "aircall",
+        "name": "Aircall"
+      },
+      {
+        "slug": "ringcentral",
+        "name": "RingCentral"
+      },
+      {
+        "slug": "krispcall",
+        "name": "KrispCall"
+      },
+      {
+        "slug": "freshcaller",
+        "name": "Freshcaller"
+      },
+      {
+        "slug": "kixie",
+        "name": "Kixie"
+      }
+    ],
+    "importantComparisons": [
+      {
+        "slug": "aircall-vs-callhippo",
+        "title": "Aircall vs CallHippo",
+        "href": "/compare/aircall-vs-callhippo/"
+      },
+      {
+        "slug": "callhippo-vs-krispcall",
+        "title": "CallHippo vs KrispCall",
+        "href": "/compare/callhippo-vs-krispcall/"
+      },
+      {
+        "slug": "callhippo-vs-openphone",
+        "title": "CallHippo vs OpenPhone",
+        "href": "/compare/callhippo-vs-openphone/"
+      },
+      {
+        "slug": "callhippo-vs-grasshopper",
+        "title": "CallHippo vs Grasshopper",
+        "href": "/compare/callhippo-vs-grasshopper/"
+      },
+      {
+        "slug": "callhippo-vs-ooma",
+        "title": "CallHippo vs Ooma",
+        "href": "/compare/callhippo-vs-ooma/"
+      },
+      {
+        "slug": "callhippo-vs-nextiva",
+        "title": "CallHippo vs Nextiva",
+        "href": "/compare/callhippo-vs-nextiva/"
+      }
+    ],
+    "relevantGuides": [
+      {
+        "slug": "what-is-business-communications-software",
+        "title": "What Is Business Communications Software? Beginner's Guide",
+        "href": "/guides/what-is-business-communications-software/"
+      },
+      {
+        "slug": "how-to-choose-business-communications-software",
+        "title": "How to Choose Business Communications Software: Job-First Framework",
+        "href": "/guides/how-to-choose-business-communications-software/"
+      },
+      {
+        "slug": "business-communications-pricing-guide",
+        "title": "Business Communications Pricing Guide: Seats, Minutes & Message Fees",
+        "href": "/guides/business-communications-pricing-guide/"
+      },
+      {
+        "slug": "business-communications-evaluation-guide",
+        "title": "Business Communications Evaluation Guide: Two-Week Trial Scorecard",
+        "href": "/guides/business-communications-evaluation-guide/"
+      },
+      {
+        "slug": "how-voip-business-phone-software-works",
+        "title": "How VoIP & Business Phone Software Works",
+        "href": "/guides/how-voip-business-phone-software-works/"
+      },
+      {
+        "slug": "types-of-voip-business-phone-software",
+        "title": "Types of VoIP & Business Phone Software",
+        "href": "/guides/types-of-voip-business-phone-software/"
+      }
+    ],
+    "evidenceState": "Research/data-based (no completed hands-on test) · Latest verification/research signal: 2026-08-17T09:00:00.000Z · Editorial assessment: approved",
+    "nextDecisionStep": "Compare against peers: Aircall vs CallHippo",
+    "missingSections": [
+      "canonical_vendor"
+    ]
+  },
+  "dependents": [
+    {
+      "kind": "guide",
+      "slug": "what-is-business-communications-software",
+      "path": "/guides/what-is-business-communications-software/"
+    },
+    {
+      "kind": "guide",
+      "slug": "how-to-choose-business-communications-software",
+      "path": "/guides/how-to-choose-business-communications-software/"
+    },
+    {
+      "kind": "guide",
+      "slug": "business-communications-pricing-guide",
+      "path": "/guides/business-communications-pricing-guide/"
+    },
+    {
+      "kind": "guide",
+      "slug": "business-communications-evaluation-guide",
+      "path": "/guides/business-communications-evaluation-guide/"
+    },
+    {
+      "kind": "guide",
+      "slug": "how-voip-business-phone-software-works",
+      "path": "/guides/how-voip-business-phone-software-works/"
+    },
+    {
+      "kind": "guide",
+      "slug": "types-of-voip-business-phone-software",
+      "path": "/guides/types-of-voip-business-phone-software/"
+    },
+    {
+      "kind": "guide",
+      "slug": "voip-business-phone-vs-business-communications",
+      "path": "/guides/voip-business-phone-vs-business-communications/"
+    },
+    {
+      "kind": "guide",
+      "slug": "voip-business-phone-requirements-guide",
+      "path": "/guides/voip-business-phone-requirements-guide/"
+    },
+    {
+      "kind": "guide",
+      "slug": "voip-business-phone-evaluation-guide",
+      "path": "/guides/voip-business-phone-evaluation-guide/"
+    },
+    {
+      "kind": "guide",
+      "slug": "what-is-callhippo",
+      "path": "/guides/what-is-callhippo/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "aircall-vs-callhippo",
+      "path": "/compare/aircall-vs-callhippo/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "callhippo-vs-krispcall",
+      "path": "/compare/callhippo-vs-krispcall/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "callhippo-vs-openphone",
+      "path": "/compare/callhippo-vs-openphone/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "callhippo-vs-grasshopper",
+      "path": "/compare/callhippo-vs-grasshopper/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "callhippo-vs-ooma",
+      "path": "/compare/callhippo-vs-ooma/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "callhippo-vs-nextiva",
+      "path": "/compare/callhippo-vs-nextiva/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "callhippo-vs-ringcentral",
+      "path": "/compare/callhippo-vs-ringcentral/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "callhippo-vs-wati",
+      "path": "/compare/callhippo-vs-wati/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "callhippo-vs-vonage",
+      "path": "/compare/callhippo-vs-vonage/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "callhippo-vs-freshcaller",
+      "path": "/compare/callhippo-vs-freshcaller/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "callhippo-vs-kixie",
+      "path": "/compare/callhippo-vs-kixie/"
+    },
+    {
+      "kind": "alternatives",
+      "slug": "callhippo",
+      "path": "/alternatives/callhippo/"
+    },
+    {
+      "kind": "pricing",
+      "slug": "callhippo",
+      "path": "/software/callhippo/pricing/"
+    },
+    {
+      "kind": "best",
+      "slug": "business-communications-software",
+      "path": "/best/business-communications-software/"
+    },
+    {
+      "kind": "best",
+      "slug": "voip-business-phone-software",
+      "path": "/best/voip-business-phone-software/"
+    },
+    {
+      "kind": "tools",
+      "slug": "voip-business-phone-cost-calculator",
+      "path": "/tools/voip-business-phone-cost-calculator/"
+    }
+  ],
+  "dependentsNeedingRefresh": [],
+  "remediation": [
+    "verify:canonical_vendor"
+  ],
+  "notes": [
+    "fieldAudit score=94",
+    "decisionHub bestFor=6 notIdeal=6",
+    "dependents=26"
+  ],
+  "materiallyImproved": false
+}

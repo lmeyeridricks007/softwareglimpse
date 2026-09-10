@@ -8,6 +8,62 @@ export const EXISTING_APP_ALIASES: Array<{
   reason: string;
 }> = [
   {
+    source: "/llm-info/",
+    destination: "/llms.txt",
+    reason: "GEO leftover stub → llms.txt",
+  },
+  {
+    source: "/my-story/",
+    destination: "/company/my-story/",
+    reason: "Legacy founder story → company my-story page",
+  },
+  {
+    source: "/terms-and-conditions/",
+    destination: "/legal/terms/",
+    reason: "Legacy terms & conditions → legal terms",
+  },
+  {
+    source: "/introduction-to-pipedrive/",
+    destination: "/software/pipedrive/",
+    reason: "Product introduction → Pipedrive catalogue page",
+  },
+  {
+    source: "/introduction-to-salesforce/",
+    destination: "/software/salesforce/",
+    reason: "Product introduction → Salesforce catalogue page",
+  },
+  {
+    source: "/introduction-to-freshsales/",
+    destination: "/software/freshsales/",
+    reason: "Product introduction → Freshsales catalogue page",
+  },
+  {
+    source: "/introduction-to-zoho/",
+    destination: "/software/zoho-crm/",
+    reason: "Product introduction → Zoho CRM catalogue page",
+  },
+  {
+    source: "/zoho-one-operating-system/",
+    destination: "/software/zoho-crm/",
+    reason: "Zoho One suite article → Zoho CRM catalogue page",
+  },
+  {
+    source: "/miocommerce-review/",
+    destination: "/software/miocommerce/",
+    reason: "Legacy MioCommerce review → catalogue software page",
+  },
+  {
+    source: "/tidio-vs-live-chat/",
+    destination: "/compare/livechat-vs-tidio/",
+    reason: "Legacy Tidio vs Live Chat → livechat-vs-tidio compare",
+  },
+  {
+    source: "/tidio-vs-crisp/",
+    destination: "/compare/crisp-vs-tidio/",
+    reason: "Legacy Tidio vs Crisp → crisp-vs-tidio compare",
+  },
+
+  {
     source: "/features/call-functionality/",
     destination: "/features/calling/",
     reason: "In-app feature slug rename",
@@ -309,7 +365,7 @@ export function isAutoApprovedRedirect(row: UrlMappingRow): {
   };
 }
 
-/** WordPress infrastructure patterns — retire, do not regex-catch new app routes. */
+/** WordPress infrastructure patterns — retire; enforced via `src/proxy.ts`. */
 export const WORDPRESS_RETIRED_PATTERNS: Array<{
   sourcePattern: string;
   action: "404" | "410";
@@ -318,22 +374,89 @@ export const WORDPRESS_RETIRED_PATTERNS: Array<{
   {
     sourcePattern: "/tag/:slug*",
     action: "410",
-    reason: "WP tag archives — low-value taxonomy (exact paths preferred over broad catch-alls in Next; documented for ops)",
+    reason: "WP tag archives — low-value taxonomy; enforced 410 via proxy",
   },
   {
     sourcePattern: "/author/:slug*",
     action: "404",
-    reason: "WP author archives not in new IA",
+    reason: "WP author archives not in new IA; enforced 404 via proxy",
   },
   {
     sourcePattern: "/feed",
     action: "410",
-    reason: "WP feed URL",
+    reason: "WP feed URL; enforced 410 via proxy",
   },
   {
     sourcePattern: "/comments/feed",
     action: "410",
-    reason: "WP comments feed",
+    reason: "WP comments feed; enforced 410 via proxy",
+  },
+  {
+    sourcePattern: "/category/:slug*",
+    action: "410",
+    reason:
+      "Unmapped WP category archives → 410 (exact mapped categories remain 301)",
+  },
+  {
+    sourcePattern: "/fr/etiqueter/:slug*",
+    action: "410",
+    reason: "FR WP tag archive — retire",
+  },
+  {
+    sourcePattern: "/es/etiqueta/:slug*",
+    action: "410",
+    reason: "ES WP tag archive — retire",
+  },
+  {
+    sourcePattern: "/de/schild/:slug*",
+    action: "410",
+    reason: "DE WP tag archive — retire",
+  },
+  {
+    sourcePattern: "/nl/label/:slug*",
+    action: "410",
+    reason: "NL WP tag archive — retire",
+  },
+  {
+    sourcePattern: "/zh/标签/:slug*",
+    action: "410",
+    reason: "ZH WP tag archive — retire",
+  },
+  {
+    sourcePattern: "/fr/categorie/:slug*",
+    action: "410",
+    reason: "FR WP category archive — 410 unless hreflang-mapped in locale cutover",
+  },
+  {
+    sourcePattern: "/es/categoria/:slug*",
+    action: "410",
+    reason: "ES WP category archive — 410 unless hreflang-mapped in locale cutover",
+  },
+  {
+    sourcePattern: "/de/kategorie/:slug*",
+    action: "410",
+    reason: "DE WP category archive — 410 unless hreflang-mapped in locale cutover",
+  },
+  {
+    sourcePattern: "/nl/categorie/:slug*",
+    action: "410",
+    reason: "NL WP category archive — 410 unless hreflang-mapped in locale cutover",
+  },
+  {
+    sourcePattern: "/zh/类别/:slug*",
+    action: "410",
+    reason: "ZH WP category archive — 410 unless hreflang-mapped in locale cutover",
+  },
+  {
+    sourcePattern: "/:locale(fr|de|es|nl|zh|hi|ar|pt|it|ja)",
+    action: "410",
+    reason: "Locale root — English-only; no homepage dump",
+  },
+  {
+    sourcePattern: "/:locale(fr|de|es|nl|zh|hi|ar|pt|it|ja)/:path*",
+    action: "410",
+    reason:
+      "Unmapped locale URL — 410 unless hreflang-mapped 301 in config/legacy-locale-cutover.json",
   },
 ];
 

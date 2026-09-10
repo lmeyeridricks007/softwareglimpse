@@ -81,19 +81,21 @@ function stageIndex(id: StackStageId): number {
 }
 
 export function StackBuilderApp() {
-  const [draft, setDraft] = useState<Draft>(defaultDraft);
-  const [hydrated, setHydrated] = useState(false);
-  const [maxStageIndex, setMaxStageIndex] = useState(0);
+  const [draft, setDraft] = useState<Draft>(() => readDraft());
+  const [hydrated, setHydrated] = useState(
+    () => typeof window !== "undefined",
+  );
+  const [maxStageIndex, setMaxStageIndex] = useState(() => {
+    const stored = readDraft();
+    return Math.max(
+      0,
+      stageIndex((stored.stageId ?? "business") as StackStageId),
+    );
+  });
   const [categoryFilter, setCategoryFilter] = useState("all");
   const { isLoading, startReveal, resetReveal } = useDelayedResultsReveal();
 
   useEffect(() => {
-    // eslint-disable-next-line react-hooks/set-state-in-effect -- intentional localStorage hydration
-    const stored = readDraft();
-    setDraft(stored);
-    const idx = Math.max(0, stageIndex((stored.stageId ?? "business") as StackStageId));
-    setMaxStageIndex(idx);
-    setHydrated(true);
     track({ name: "stack_builder_started" });
   }, []);
 

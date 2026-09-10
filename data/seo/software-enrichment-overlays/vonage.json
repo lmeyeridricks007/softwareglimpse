@@ -1,0 +1,420 @@
+{
+  "slug": "vonage",
+  "updatedAt": "2026-09-07T22:31:21.460Z",
+  "version": "1.0.0",
+  "fieldAudit": {
+    "slug": "vonage",
+    "checkedAt": "2026-09-07T22:31:21.459Z",
+    "items": [
+      {
+        "field": "name",
+        "status": "PASS",
+        "detail": "Name: Vonage",
+        "source": "seed"
+      },
+      {
+        "field": "product_status",
+        "status": "PASS",
+        "detail": "productLifecycle=active",
+        "source": "seed"
+      },
+      {
+        "field": "canonical_vendor",
+        "status": "UNKNOWN",
+        "detail": "Company/vendor not documented",
+        "source": "none"
+      },
+      {
+        "field": "category",
+        "status": "PASS",
+        "detail": "primaryCategorySlug=business-communications",
+        "source": "seed"
+      },
+      {
+        "field": "description",
+        "status": "PASS",
+        "detail": "Description present (SMB/mid VoIP business phone (VBC) — Mobile from $13.99/line/mo on 12-month promo…)",
+        "source": "seed"
+      },
+      {
+        "field": "target_audience",
+        "status": "PASS",
+        "detail": "Sizes=3, teams=3, assessment bestFor=3",
+        "source": "assessment"
+      },
+      {
+        "field": "use_cases",
+        "status": "PASS",
+        "detail": "useCaseSlugs=3",
+        "source": "seed"
+      },
+      {
+        "field": "capabilities",
+        "status": "PASS",
+        "detail": "featureRatings=0, enrichment features=13",
+        "source": "enrichment"
+      },
+      {
+        "field": "pricing",
+        "status": "PASS",
+        "detail": "Pricing envelope present",
+        "source": "enrichment"
+      },
+      {
+        "field": "plans",
+        "status": "PASS",
+        "detail": "plans=3",
+        "source": "enrichment"
+      },
+      {
+        "field": "free_plan",
+        "status": "PASS",
+        "detail": "No free plan in documented plans (explicit absence)",
+        "source": "enrichment"
+      },
+      {
+        "field": "trial",
+        "status": "UNKNOWN",
+        "detail": "Trial not explicitly documented — do not assume none",
+        "source": "none"
+      },
+      {
+        "field": "integrations",
+        "status": "PASS",
+        "detail": "integrationSlugs=0, enrichment=4",
+        "source": "enrichment"
+      },
+      {
+        "field": "alternatives",
+        "status": "PASS",
+        "detail": "alternativeSlugs=4",
+        "source": "seed"
+      },
+      {
+        "field": "competitors",
+        "status": "PASS",
+        "detail": "competitorSlugs=5",
+        "source": "seed"
+      },
+      {
+        "field": "affiliate",
+        "status": "PASS",
+        "detail": "No affiliate relationship (explicit)",
+        "source": "seed"
+      },
+      {
+        "field": "source_provenance",
+        "status": "PASS",
+        "detail": "seed sources=0, enrichment sourceIds=2",
+        "source": "enrichment"
+      },
+      {
+        "field": "verification_date",
+        "status": "PASS",
+        "detail": "Latest verification/research signal: 2026-08-17T20:00:00.000Z",
+        "source": "enrichment"
+      }
+    ],
+    "passCount": 16,
+    "partialCount": 0,
+    "missingCount": 0,
+    "unknownCount": 2,
+    "score": 89
+  },
+  "decisionHub": {
+    "whatItIs": "Vonage Business Communications (VBC) is an SMB/mid-market cloud phone system: unlimited US/Canada calling and SMS under fair use, softphone apps, team messaging, video meetings on Premium+, and CRM connectors on higher tiers. First-party pricing on vonage.com/unified-communications/pricing (checked 2026-08-17) publishes Mobile/Premium/Advanced at $19.99/$29.99/$39.99 per line/month monthly, with a 12-month promotion cutting ~30% to $13.99/$20.99/$27.99. Taxes, regulatory fees and volume line discounts apply. Separate Contact Center and CPaaS products exist but are not the scored VBC floor. Scored as a mid-tier business-phone peer — not a CCaaS landscape award.",
+    "bestFor": [
+      "SMB and mid-market teams wanting published per-line VoIP with SMS",
+      "Buyers who may grow into Premium video meetings and CRM connectors",
+      "US/Canada-centric businesses that value Ericsson-backed Vonage branding",
+      "solo / sales: Vonage fit for solo sales teams in the cloud-phone job cluster, from first-party positioning and Business-communications Priority-3 research.",
+      "small-business / sales: Vonage fit for small-business sales teams in the cloud-phone job cluster, from first-party positioning and Business-communications Priority-3 research.",
+      "mid-market / sales: Vonage fit for mid-market sales teams in the cloud-phone job cluster, from first-party positioning and Business-communications Priority-3 research."
+    ],
+    "notIdealFor": [
+      "Enterprise global UCaaS or regulated CCaaS buyers",
+      "Teams that need included AI answering/coaching on every plan",
+      "High-volume outbound dialer organisations",
+      "Taxes and regulatory fees sit on top of published per-line floors",
+      "Call recording and deeper CRM land on Advanced / Premium packaging",
+      "No power dialer — not a high-volume outbound dialer product"
+    ],
+    "coreCapabilities": [
+      "cloud phone",
+      "call routing",
+      "sms messaging",
+      "team messaging",
+      "business phone",
+      "sales calling",
+      "team communication"
+    ],
+    "pricingSummary": "3 documented plans · entry paid: Mobile",
+    "keyTradeoffs": [
+      "Taxes and regulatory fees sit on top of published per-line floors",
+      "Call recording and deeper CRM land on Advanced / Premium packaging",
+      "No power dialer — not a high-volume outbound dialer product",
+      "AI packaging is thin versus Dialpad/OpenPhone/Talkdesk peers",
+      "Contact Center is a separate product line, not included in VBC Mobile"
+    ],
+    "alternatives": [
+      {
+        "slug": "nextiva",
+        "name": "Nextiva"
+      },
+      {
+        "slug": "openphone",
+        "name": "OpenPhone"
+      },
+      {
+        "slug": "callhippo",
+        "name": "CallHippo"
+      },
+      {
+        "slug": "ooma",
+        "name": "Ooma"
+      },
+      {
+        "slug": "ringcentral",
+        "name": "RingCentral"
+      }
+    ],
+    "importantComparisons": [
+      {
+        "slug": "nextiva-vs-vonage",
+        "title": "Nextiva vs Vonage",
+        "href": "/compare/nextiva-vs-vonage/"
+      },
+      {
+        "slug": "dialpad-vs-vonage",
+        "title": "Dialpad vs Vonage",
+        "href": "/compare/dialpad-vs-vonage/"
+      },
+      {
+        "slug": "eightx8-vs-vonage",
+        "title": "8x8 vs Vonage",
+        "href": "/compare/eightx8-vs-vonage/"
+      },
+      {
+        "slug": "fastmail-vs-vonage",
+        "title": "Fastmail vs Vonage",
+        "href": "/compare/fastmail-vs-vonage/"
+      },
+      {
+        "slug": "five9-vs-vonage",
+        "title": "Five9 vs Vonage",
+        "href": "/compare/five9-vs-vonage/"
+      },
+      {
+        "slug": "genesys-vs-vonage",
+        "title": "Genesys vs Vonage",
+        "href": "/compare/genesys-vs-vonage/"
+      }
+    ],
+    "relevantGuides": [
+      {
+        "slug": "vonage-implementation",
+        "title": "Vonage Implementation: 30/60/90 Communications Rollout That Sticks",
+        "href": "/guides/vonage-implementation/"
+      },
+      {
+        "slug": "vonage-migration",
+        "title": "Vonage Migration: Move Numbers Without Losing Trust",
+        "href": "/guides/vonage-migration/"
+      },
+      {
+        "slug": "vonage-setup",
+        "title": "Vonage Setup: Day-Zero Path to a Working Call Loop",
+        "href": "/guides/vonage-setup/"
+      },
+      {
+        "slug": "vonage-plans",
+        "title": "Vonage Plans: Seats, Numbers, and Qualifying Tiers",
+        "href": "/guides/vonage-plans/"
+      },
+      {
+        "slug": "is-vonage-worth-it",
+        "title": "Is Vonage Worth It? Fit Scenarios Before You Buy",
+        "href": "/guides/is-vonage-worth-it/"
+      }
+    ],
+    "evidenceState": "Research/data-based (no completed hands-on test) · Latest verification/research signal: 2026-08-17T20:00:00.000Z · Editorial assessment: approved",
+    "nextDecisionStep": "Compare against peers: Nextiva vs Vonage",
+    "missingSections": [
+      "canonical_vendor",
+      "trial"
+    ]
+  },
+  "dependents": [
+    {
+      "kind": "guide",
+      "slug": "vonage-implementation",
+      "path": "/guides/vonage-implementation/"
+    },
+    {
+      "kind": "guide",
+      "slug": "vonage-migration",
+      "path": "/guides/vonage-migration/"
+    },
+    {
+      "kind": "guide",
+      "slug": "vonage-setup",
+      "path": "/guides/vonage-setup/"
+    },
+    {
+      "kind": "guide",
+      "slug": "vonage-plans",
+      "path": "/guides/vonage-plans/"
+    },
+    {
+      "kind": "guide",
+      "slug": "is-vonage-worth-it",
+      "path": "/guides/is-vonage-worth-it/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "nextiva-vs-vonage",
+      "path": "/compare/nextiva-vs-vonage/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "dialpad-vs-vonage",
+      "path": "/compare/dialpad-vs-vonage/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "eightx8-vs-vonage",
+      "path": "/compare/eightx8-vs-vonage/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "fastmail-vs-vonage",
+      "path": "/compare/fastmail-vs-vonage/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "five9-vs-vonage",
+      "path": "/compare/five9-vs-vonage/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "genesys-vs-vonage",
+      "path": "/compare/genesys-vs-vonage/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "goto-connect-vs-vonage",
+      "path": "/compare/goto-connect-vs-vonage/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "grasshopper-vs-vonage",
+      "path": "/compare/grasshopper-vs-vonage/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "manychat-vs-vonage",
+      "path": "/compare/manychat-vs-vonage/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "microsoft-teams-vs-vonage",
+      "path": "/compare/microsoft-teams-vs-vonage/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "ooma-vs-vonage",
+      "path": "/compare/ooma-vs-vonage/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "openphone-vs-vonage",
+      "path": "/compare/openphone-vs-vonage/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "respond-io-vs-vonage",
+      "path": "/compare/respond-io-vs-vonage/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "ringcentral-vs-vonage",
+      "path": "/compare/ringcentral-vs-vonage/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "sanebox-vs-vonage",
+      "path": "/compare/sanebox-vs-vonage/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "slack-vs-vonage",
+      "path": "/compare/slack-vs-vonage/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "talkdesk-vs-vonage",
+      "path": "/compare/talkdesk-vs-vonage/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "twilio-vs-vonage",
+      "path": "/compare/twilio-vs-vonage/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "vonage-vs-wati",
+      "path": "/compare/vonage-vs-wati/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "vonage-vs-webex",
+      "path": "/compare/vonage-vs-webex/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "vonage-vs-zenzap",
+      "path": "/compare/vonage-vs-zenzap/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "vonage-vs-zoom",
+      "path": "/compare/vonage-vs-zoom/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "callhippo-vs-vonage",
+      "path": "/compare/callhippo-vs-vonage/"
+    },
+    {
+      "kind": "alternatives",
+      "slug": "vonage",
+      "path": "/alternatives/vonage/"
+    },
+    {
+      "kind": "pricing",
+      "slug": "vonage",
+      "path": "/software/vonage/pricing/"
+    },
+    {
+      "kind": "best",
+      "slug": "business-communications-software",
+      "path": "/best/business-communications-software/"
+    },
+    {
+      "kind": "tools",
+      "slug": "business-communications-cost-calculator",
+      "path": "/tools/business-communications-cost-calculator/"
+    }
+  ],
+  "dependentsNeedingRefresh": [],
+  "remediation": [
+    "verify:canonical_vendor",
+    "verify:trial"
+  ],
+  "notes": [
+    "fieldAudit score=89",
+    "decisionHub bestFor=6 notIdeal=6",
+    "dependents=32"
+  ],
+  "materiallyImproved": false
+}

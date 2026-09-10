@@ -158,14 +158,15 @@ export function selectImplementationContextVideos(input: {
   /** When true (default), allow a published overview demo if no setup tutorial. */
   allowOverviewFallback?: boolean;
 }): ProductMedia[] {
+  const media = input.media ?? [];
   const excludeOverviewOnly = overviewOnlyExcludeIds(
-    input.media,
+    media,
     input.overviewVideoIds,
   );
   const limit = input.limit ?? 2;
   const allowFallback = input.allowOverviewFallback !== false;
 
-  const fromPlacement = selectProductVideos(input.media, {
+  const fromPlacement = selectProductVideos(media, {
     placement: "implementation",
     preferSpecific: true,
     limit: limit + 2,
@@ -176,7 +177,7 @@ export function selectImplementationContextVideos(input: {
     return fromPlacement.slice(0, limit);
   }
 
-  const extras = selectProductVideos(input.media, {
+  const extras = selectProductVideos(media, {
     preferSpecific: true,
     limit: limit + 2,
     excludeIds: [...excludeOverviewOnly, ...fromPlacement.map((v) => v.id)],
@@ -192,7 +193,7 @@ export function selectImplementationContextVideos(input: {
     return primary;
   }
 
-  const overviewFallback = selectProductVideos(input.media, {
+  const overviewFallback = selectProductVideos(media, {
     placement: "overview",
     preferSpecific: false,
     limit: limit + 2,

@@ -304,7 +304,7 @@ export const bestPagesSeed: BestInput[] = [
         strengths: [
           "Enterprise customization and reporting ceiling",
           "Broad ecosystem and platform depth",
-          "Clear edition ladder from Starter through Unlimited",
+          "Clear edition ladder from Free Suite through Unlimited",
         ],
         tradeOffs: [
           "Higher admin overhead and TCO than SMB CRMs",
@@ -332,9 +332,15 @@ export const bestPagesSeed: BestInput[] = [
         keyDetails: [
           { label: "Best for", value: "Enterprise sales platform" },
           { label: "Deployment", value: "Cloud" },
+          {
+            label: "Free / AI (30 Aug 2026)",
+            value:
+              "Free Suite $0 (2 seats); Claudeforce Salesforce-in-Claude pilot — open beta expected Sep 2026; Agentforce unchanged",
+          },
         ],
         approved: true,
-        editorialNotes: "Approved enterprise/customization fit award from approved Salesforce research.",
+        editorialNotes:
+          "Approved enterprise/customization fit award from approved Salesforce research. 30 Aug 2026: Free Suite + Claudeforce row note.",
       },
       {
         productSlug: "copper",
@@ -654,7 +660,7 @@ export const bestPagesSeed: BestInput[] = [
         id: "agentic-crm",
         label: "Agentic CRM / sales agents (2026)",
         description:
-          "CRM Sales Platforms now include governed sales agents — not just copilots. Creatio published on Agentic AI in CRM (26 February 2026); Gartner’s first CRM Sales Platforms Magic Quadrant (July 2026) names Salesforce and Microsoft as Leaders per Gartner. SoftwareGlimpse scores agent governance, observability, and agent-credit TCO in crm-editorial v1.1.0 inside /capabilities/ai-assistance/ — no separate shallow pillar.",
+          "CRM Sales Platforms now include governed sales agents — not just copilots. Creatio published on Agentic AI in CRM (26 February 2026); Gartner’s first CRM Sales Platforms Magic Quadrant (July 2026) names Salesforce and Microsoft as Leaders per Gartner. Salesforce Claudeforce (26 Aug 2026) adds Salesforce in Claude (37 prebuilt sales skills; pilot / open beta expected Sep 2026; no list price on the PR) alongside Agentforce. SoftwareGlimpse scores agent governance, observability, and agent-credit TCO in crm-editorial v1.1.0 inside /capabilities/ai-assistance/ — no separate shallow pillar.",
         productSlugs: [
           "salesforce",
           "hubspot",
@@ -2492,7 +2498,7 @@ export const bestPagesSeed: BestInput[] = [
       {
         step: 3,
         title: "Model credits, not sticker price",
-        body: "Map how many exports, reveals, or enrichments you need each month, then compare that against plan credit allowances and overage terms.",
+        body: "Map how many exports, reveals, or enrichments you need each month, then compare that against plan credit allowances and overage terms — use the Sales Intelligence Credit TCO calculator with your quote inputs.",
       },
       {
         step: 4,
@@ -2552,6 +2558,7 @@ export const bestPagesSeed: BestInput[] = [
     relatedToolPaths: [
       "/tools/sales-intelligence-finder/",
       "/tools/sales-intelligence-cost-calculator/",
+      "/tools/sales-intelligence-credit-tco/",
       "/tools/sales-intelligence-requirements-builder/",
       "/tools/sales-intelligence-readiness-assessment/",
     ],
@@ -2591,7 +2598,7 @@ export const bestPagesSeed: BestInput[] = [
       {
         question: "How do sales intelligence credits work?",
         answer:
-          "Most vendors meter usage as credits for revealing emails, phone numbers, exports, or enrichments, with allowances per plan and per seat. Model your real monthly volume and check overage terms in verified pricing, because credit limits usually matter more than the headline seat price.",
+          "Most vendors meter usage as credits for revealing emails, phone numbers, exports, or enrichments, with allowances per plan and per seat. Model your real monthly volume and check overage terms in verified pricing, because credit limits usually matter more than the headline seat price. Use the Sales Intelligence Credit TCO calculator with your quote — we do not invent ZoomInfo or other unpublished list prices.",
       },
       {
         question: "How accurate is B2B contact data?",
@@ -5290,26 +5297,22 @@ export const bestPagesSeed: BestInput[] = [
           {
             "label": "Work planning depth",
             "level": "strong",
-            "score": 9,
-        "approved": true
+            "score": 9
           },
           {
             "label": "Automations & workflows",
             "level": "strong",
-            "score": 9,
-        "approved": true
+            "score": 9
           },
           {
             "label": "Integrations",
             "level": "strong",
-            "score": 9,
-        "approved": true
+            "score": 9
           },
           {
             "label": "Value for money",
             "level": "good",
-            "score": 7,
-        "approved": true
+            "score": 7
           }
         ],
         "keyDetails": [
@@ -5385,26 +5388,22 @@ export const bestPagesSeed: BestInput[] = [
           {
             "label": "Ease of use",
             "level": "strong",
-            "score": 9,
-        "approved": true
+            "score": 9
           },
           {
             "label": "Work planning depth",
             "level": "strong",
-            "score": 9,
-        "approved": true
+            "score": 9
           },
           {
             "label": "Collaboration",
             "level": "strong",
-            "score": 9,
-        "approved": true
+            "score": 9
           },
           {
             "label": "Value for money",
             "level": "good",
-            "score": 7,
-        "approved": true
+            "score": 7
           }
         ],
         "keyDetails": [
@@ -5480,26 +5479,22 @@ export const bestPagesSeed: BestInput[] = [
           {
             "label": "Work planning depth",
             "level": "strong",
-            "score": 9,
-        "approved": true
+            "score": 9
           },
           {
             "label": "Automations & workflows",
             "level": "strong",
-            "score": 9,
-        "approved": true
+            "score": 9
           },
           {
             "label": "Value for money",
             "level": "strong",
-            "score": 9,
-        "approved": true
+            "score": 9
           },
           {
             "label": "Ease of use",
             "level": "good",
-            "score": 7,
-        "approved": true
+            "score": 7
           }
         ],
         "keyDetails": [
@@ -5575,26 +5570,22 @@ export const bestPagesSeed: BestInput[] = [
           {
             "label": "Work planning depth",
             "level": "strong",
-            "score": 9,
-        "approved": true
+            "score": 9
           },
           {
             "label": "Reporting",
             "level": "strong",
-            "score": 9,
-        "approved": true
+            "score": 9
           },
           {
             "label": "Collaboration",
             "level": "strong",
-            "score": 8,
-        "approved": true
+            "score": 8
           },
           {
             "label": "Value for money",
             "level": "good",
-            "score": 7,
-        "approved": true
+            "score": 7
           }
         ],
         "keyDetails": [
@@ -5670,26 +5661,22 @@ export const bestPagesSeed: BestInput[] = [
           {
             "label": "Work planning depth",
             "level": "strong",
-            "score": 8,
-        "approved": true
+            "score": 8
           },
           {
             "label": "Automations & workflows",
             "level": "good",
-            "score": 8,
-        "approved": true
+            "score": 8
           },
           {
             "label": "Value for money",
             "level": "strong",
-            "score": 8,
-        "approved": true
+            "score": 8
           },
           {
             "label": "Integrations",
             "level": "good",
-            "score": 7,
-        "approved": true
+            "score": 7
           }
         ],
         "keyDetails": [
@@ -6676,83 +6663,6 @@ export const bestPagesSeed: BestInput[] = [
         productSlugs: [],
       },
     ],
-    comparisons: [
-      {
-        slug: "bigcommerce-vs-shopify",
-        label: "Shopify vs BigCommerce",
-        approved: true,
-      },
-      {
-        slug: "alidrop-vs-spocket",
-        label: "Spocket vs AliDrop",
-        approved: true,
-      },
-      {
-        slug: "squarespace-vs-wix",
-        label: "Wix vs Squarespace",
-        approved: true,
-      },
-      {
-        slug: "magento-vs-woocommerce",
-        label: "Magento vs WooCommerce",
-        approved: true,
-      },
-      {
-        slug: "printful-vs-printify",
-        label: "Printful vs Printify",
-        approved: true,
-      },
-      {
-        slug: "prestashop-vs-shopware",
-        label: "PrestaShop vs Shopware",
-        approved: true,
-      },
-      {
-        slug: "ecwid-vs-shopify",
-        label: "Ecwid vs Shopify",
-        approved: true,
-      },
-      {
-        slug: "magento-vs-salesforce-commerce-cloud",
-        label: "Salesforce Commerce Cloud vs Magento",
-        approved: true,
-      },
-      {
-        slug: "webflow-vs-wix",
-        label: "Webflow vs Wix",
-        approved: true,
-      },
-      {
-        slug: "lightspeed-retail-vs-square-online",
-        label: "Lightspeed Retail vs Square Online",
-        approved: true,
-      },
-      {
-        slug: "opencart-vs-woocommerce",
-        label: "OpenCart vs WooCommerce",
-        approved: true,
-      },
-      {
-        slug: "commercetools-vs-salesforce-commerce-cloud",
-        label: "commercetools vs Salesforce Commerce Cloud",
-        approved: true,
-      },
-      {
-        slug: "bigcommerce-vs-vtex",
-        label: "VTEX vs BigCommerce",
-        approved: true,
-      },
-      {
-        slug: "medusa-vs-saleor",
-        label: "Saleor vs Medusa",
-        approved: true,
-      },
-      {
-        slug: "shopify-vs-tiendanube",
-        label: "Tiendanube vs Shopify",
-        approved: true,
-      },
-    ],
     relatedComparisonSlugs: [
       "bigcommerce-vs-shopify",
       "alidrop-vs-spocket",
@@ -7680,16 +7590,16 @@ export const bestPagesSeed: BestInput[] = [
     title: "Best Customer Service Software",
     heroEyebrow: "BUYING GUIDE",
     heroSubtitle:
-      "We evaluate customer service products on ease of use, support job fit, workflow depth, omnichannel coverage, self-service, integrations, analytics, scalability, value, and AI assistance — so you can shortlist by job cluster. Helpdesk, ecommerce helpdesk, and ITSM moved to the helpdesk-ticketing sub-hub; live chat and website messenger moved to the live-chat sub-hub.",
+      "We evaluate customer service products on ease of use, support job fit, workflow depth, omnichannel coverage, self-service, integrations, analytics, scalability, value, and AI assistance — including agent governance, observability, and credit/outcome TCO inside ai-capabilities — so you can shortlist by job cluster. Helpdesk, ecommerce helpdesk, and ITSM moved to the helpdesk-ticketing sub-hub; live chat and website messenger moved to the live-chat sub-hub.",
     summary:
       "Parent hub for customer service software — shortlist by job cluster using the live-chat and helpdesk-ticketing subcategory hubs, with an explicit methodology and no false peer ranking across channels.",
     quickAnswerIntro:
       "There is no single best customer service platform — helpdesk ticketing, live chat, ecommerce helpdesk, and ITSM are different purchases. Use the live-chat sub-hub for website messenger and chatbot deflection; use the helpdesk-ticketing sub-hub for shared inbox, ticketing, ecommerce helpdesk, and ITSM. Then check channels, self-service depth, and integrations before you commit.",
     categorySlug: "customer-service",
     methodology:
-      "SoftwareGlimpse evaluates customer service platforms on ease of use, fit to the primary support job, workflow depth, omnichannel coverage, self-service, integrations, analytics, scalability, value, and AI assistance (customer-service-editorial v1.0.0). Products are compared inside their job cluster: helpdesk against helpdesk, live chat against live chat, ecommerce helpdesk against ecommerce helpdesk, and ITSM against ITSM. Affiliate relationships never determine ranking.",
+      "SoftwareGlimpse evaluates customer service platforms on ease of use, fit to the primary support job, workflow depth, omnichannel coverage, self-service, integrations, analytics, scalability, value, and AI assistance — including agent governance, agent observability, and agent-credit / outcome TCO inside the ai-capabilities criterion (customer-service-editorial v1.0.0; not a separate agentic-CS pillar). Products are compared inside their job cluster: helpdesk against helpdesk, live chat against live chat, ecommerce helpdesk against ecommerce helpdesk, and ITSM against ITSM. Affiliate relationships never determine ranking.",
     methodologyIntro:
-      "We evaluate customer service software by primary job fit — helpdesk ticketing, live chat, ecommerce helpdesk, ITSM, or AI inbox — then workflow depth, channels, self-service, integrations, and value. Commercial relationships do not determine recommendations, and specialist tools are not penalised for lacking capabilities outside their job.",
+      "We evaluate customer service software by primary job fit — helpdesk ticketing, live chat, ecommerce helpdesk, ITSM, or AI inbox — then workflow depth, channels, self-service, integrations, and value. Conversational AI / CS agents are scored inside ai-capabilities (governance, observability, credit TCO), not as a separate pillar. Commercial relationships do not determine recommendations, and specialist tools are not penalised for lacking capabilities outside their job.",
     methodologyVersion: "1.0.0",
     eligibleProductSlugs: [
       "freshdesk",
@@ -7890,13 +7800,14 @@ export const bestPagesSeed: BestInput[] = [
         id: "ai-inbox-adjacent",
         label: "Conversational AI / CS agents (scored)",
         description:
-          "Agent-capability scores (customer-service-editorial ai-capabilities criterion): Zendesk Suite 8, Gorgias 8, Tidio 7, CometChat 7, Freshchat 7. Intercom Fin AI (9 on BC methodology) is business-communications primary — landscape pointer only, not a CS peer rank. Gartner Conversational AI MQ (7 July 2026) is market context, not a SoftwareGlimpse ranking.",
+          "Agent scores on customer-service-editorial ai-capabilities (governance, observability, credit/outcome TCO — not a separate pillar): Zendesk Suite 8, Gorgias 8, Tidio 8, CometChat 8, Freshchat 7. Intercom Fin AI (9 on business-communications ai-capabilities) is BC-primary — landscape pointer only, not a CS peer rank. Gartner Conversational AI MQ (7 July 2026) is market context, not a SoftwareGlimpse ranking.",
         productSlugs: [
           "zendesk-suite",
           "gorgias",
           "tidio",
           "cometchat",
           "freshchat",
+          "intercom",
         ],
       },
       {
@@ -7927,8 +7838,8 @@ export const bestPagesSeed: BestInput[] = [
       },
       {
         step: 3,
-        title: "Model real TCO",
-        body: "Per-agent seats, conversation/ticket caps, AI outcome/credit pricing, and add-ons matter as much as the starter tile.",
+        title: "Model real TCO — including AI agents",
+        body: "Per-agent seats, conversation/ticket caps, and AI outcome/credit pricing matter as much as the starter tile. Ask who can deploy agents (governance), how you review handoffs (observability), and what overage math looks like at peak volume.",
       },
       {
         step: 4,
@@ -7996,16 +7907,16 @@ export const bestPagesSeed: BestInput[] = [
       {
         question: "How do you evaluate conversational AI and AI customer service agents?",
         answer:
-          "Inside the ai-customer-service job cluster we score chatbot deflection, copilot assist, handoff rules, and outcome/credit pricing — not a single undifferentiated AI rank. Website widgets (Tidio), embedded SDK/API platforms (CometChat), and helpdesk AI add-ons (Zendesk Suite) are different purchases. Gartner published a Conversational AI Magic Quadrant on 7 July 2026; we reference that market map for buyer education but do not reproduce MQ positions or score vendors as Gartner Leaders.",
+          "Inside customer-service-editorial v1.0.0 we score CS agents on the existing ai-capabilities criterion — agent usefulness plus governance (permissions and guardrails), observability (handoffs, transcripts, override), and credit/outcome TCO. That is not a separate agentic-CS pillar. Website widgets (Tidio), embedded SDK/API platforms (CometChat), ecommerce helpdesk AI (Gorgias), and Suite helpdesk AI (Zendesk Suite) are different purchases inside the ai-customer-service job cluster. Intercom Fin is scored on business-communications methodology and appears here as landscape only. Gartner published a Conversational AI Magic Quadrant on 7 July 2026; we reference that market map for buyer education but do not reproduce MQ positions or score vendors as Gartner Leaders.",
       },
     ],
     editorialStatus: "approved",
     editorialNotes:
-      "CS parent hub 2026-08-26: eligible pool 10 products (added CometChat for embedded conversational AI). Cluster awards on parent; subcategory hubs retain deeper picks. seo.indexable=true. methodologyVersion 1.0.0 customer-service-editorial. handsOnTesting=false. Affiliate economics excluded.",
+      "CS parent hub 2026-08-30: ai-capabilities deepened for CS agents (governance, observability, credit TCO) under methodology v1.0.0 — not a new pillar. Eligible pool 10 (CometChat included). Landscape scores: Zendesk Suite 8, Gorgias 8, Tidio 8, CometChat 8, Freshchat 7; Intercom Fin 9 BC landscape only. seo.indexable=true. handsOnTesting=false. Affiliate economics excluded.",
     metadata: {
       status: "published",
       publishedAt: "2026-08-18T00:00:00.000Z",
-      updatedAt: "2026-08-26T12:00:00.000Z",
+      updatedAt: "2026-08-30T12:00:00.000Z",
       researchStatus: "complete",
     },
     seo: {

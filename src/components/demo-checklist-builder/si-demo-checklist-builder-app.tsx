@@ -5,6 +5,7 @@ import { Check, ChevronDown, Lock } from "lucide-react";
 import { track, type AnalyticsEventName } from "@/analytics";
 import type {
   CrmDemoChecklistSession,
+  DecisionCategorySlug,
   DecisionProfile,
   DemoWizardStep,
 } from "@/domain";
@@ -113,7 +114,11 @@ export function SiDemoChecklistBuilderApp({
       );
       if (requirement && !requirementSeededRef.current) {
         requirementSeededRef.current = true;
-        addRequirementToDemoChecklistProfile(requirement, "must-have", runtime.categorySlug);
+        addRequirementToDemoChecklistProfile(
+          requirement,
+          "must-have",
+          runtime.categorySlug as DecisionCategorySlug,
+        );
         const imported = importRequirementsFromProfile(next, runtime.loadProfile());
         next = imported.session;
         if (imported.importedCount > 0) {

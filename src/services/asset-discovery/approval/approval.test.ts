@@ -28,7 +28,7 @@ describe("Approved Asset Workflow", () => {
   });
 
   it("advances gates and blocks import before editorial approval", () => {
-    let c = registerApprovedAssetCandidate({
+    const c = registerApprovedAssetCandidate({
       title: "HubSpot Sales Hub Overview Demo",
       sourceUrl: "https://www.youtube.com/watch?v=HKaG5HN89x8",
       productSlug: "hubspot",

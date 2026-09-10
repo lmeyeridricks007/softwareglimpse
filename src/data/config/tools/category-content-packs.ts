@@ -254,6 +254,121 @@ function sharedAdminTasks(
   ];
 }
 
+function minimalCategoryPack(
+  label: string,
+  prefix: string,
+): CategoryToolContentPack {
+  return {
+    rfp: {
+      changeTriggers: [
+        `${label} workflows are fragmented across tools`,
+        "Requirements are unclear before shortlisting",
+        "Team is growing and needs a shared evaluation baseline",
+        "Procurement needs a written scope before demos",
+        "Incumbent contract renewal requires a benchmark",
+        "Security review blocked a prior shortlist",
+      ],
+      scopeCatalog: [
+        { id: `${prefix}-core`, label: `Core ${label} capabilities` },
+        { id: `${prefix}-reporting`, label: "Reporting & dashboards" },
+        { id: `${prefix}-automation`, label: "Automation & workflows" },
+        { id: `${prefix}-integrations`, label: "Integrations & API" },
+        { id: `${prefix}-admin`, label: "Administration & permissions" },
+        { id: `${prefix}-mobile`, label: "Mobile / field access" },
+        { id: "security-dpa", label: "Security / DPA" },
+        { id: "trial-success-criteria", label: "Trial success criteria" },
+      ],
+      userGroups: ["Operations", "Finance", "IT / security", "End users"],
+      integrationCategories: ["SSO / identity", "Accounting", "Other"],
+      migrationObjects: ["Configuration", "Historical records", "User access"],
+    },
+    demo: {
+      evaluationAreas: [
+        { id: `${prefix}-core`, label: `Core ${label}` },
+        { id: `${prefix}-reporting`, label: "Reporting" },
+        { id: `${prefix}-automation`, label: "Automation" },
+        { id: `${prefix}-integrations`, label: "Integrations" },
+        { id: "administration", label: "Administration" },
+        { id: "security", label: "Security / DPA" },
+      ],
+      guidelines: guidelines(label, []),
+      functionalQuestions: SHARED_FUNCTIONAL_QUESTIONS,
+      adminQuestions: SHARED_ADMIN_QUESTIONS,
+      dataQuestions: SHARED_DATA_QUESTIONS,
+      scenarios: [
+        scenario({
+          id: `${prefix}-core-demo`,
+          name: `Core ${label} workflow`,
+          context: `Validate the primary ${label.toLowerCase()} job in the quoted edition.`,
+          persona: "Operations lead",
+          categoryId: `${prefix}-core`,
+          start: "Sample tenant with buyer-like data.",
+          tasks: [
+            "Run the primary workflow",
+            "State plan limits",
+            "Show admin controls",
+          ],
+          outcome: "Buyer can judge fit against their job.",
+          criteria: ["Live demo or explicit limitation"],
+          script: `Walk through the main ${label.toLowerCase()} workflow on the quoted plan.`,
+          hints: [`${prefix}-core`],
+        }),
+        scenario({
+          id: `${prefix}-reporting-demo`,
+          name: `${label} reporting`,
+          context: "Validate reporting for the buyer's KPI questions.",
+          persona: "Operations lead",
+          categoryId: `${prefix}-reporting`,
+          start: "Sample tenant with historical activity.",
+          tasks: ["Open a standard report", "Apply a filter", "Export or share"],
+          outcome: "Reporting depth is clear on the quoted plan.",
+          criteria: ["Report matches buyer KPI"],
+          script: "Show the report the buyer named in discovery.",
+          hints: [`${prefix}-reporting`],
+        }),
+        scenario({
+          id: `${prefix}-admin-demo`,
+          name: `${label} administration`,
+          context: "Validate admin controls and permission boundaries.",
+          persona: "IT admin",
+          categoryId: `${prefix}-admin`,
+          start: "Admin user with scoped permissions.",
+          tasks: ["Create or edit a role", "Show audit trail if claimed"],
+          outcome: "Admin packaging matches the buyer's governance needs.",
+          criteria: ["Permissions enforced live"],
+          script: "Demonstrate the admin task from the RFP scope list.",
+          hints: [`${prefix}-admin`],
+        }),
+        scenario({
+          id: `${prefix}-integration-demo`,
+          name: `${label} integrations`,
+          context: "Validate the highest-risk integration from the buyer stack.",
+          persona: "Operations lead",
+          categoryId: `${prefix}-integrations`,
+          start: "Sandbox with a connected system or explicit limitation.",
+          tasks: ["Show connector setup", "Sync or import sample data"],
+          outcome: "Integration scope is proven or explicitly excluded.",
+          criteria: ["Connector exists or gap is documented"],
+          script: "Walk through the integration named in the buyer requirements.",
+          hints: [`${prefix}-integrations`],
+        }),
+      ],
+      integrationChecks: [
+        {
+          id: `${prefix}-INT-001`,
+          integration: "SSO / identity",
+          testTask: "Show SSO availability on the quoted edition.",
+        },
+      ],
+      adminTasks: sharedAdminTasks(
+        prefix,
+        `Open a standard ${label.toLowerCase()} report and apply a filter.`,
+      ),
+      commercialQuestions: SHARED_COMMERCIAL,
+    },
+  };
+}
+
 const PACKS: Record<NewToolCategorySlug, CategoryToolContentPack> = {
   marketing: {
     rfp: {
@@ -1961,6 +2076,9 @@ const PACKS: Record<NewToolCategorySlug, CategoryToolContentPack> = {
       ],
     },
   },
+  "accounting-finance": minimalCategoryPack("Accounting / finance", "AF"),
+  "social-media-marketing": minimalCategoryPack("Social media marketing", "SMM"),
+  "webinar-virtual-events": minimalCategoryPack("Webinar / virtual events", "WVE"),
 };
 
 export function getCategoryContentPack(

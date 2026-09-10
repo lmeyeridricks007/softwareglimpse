@@ -1,15 +1,15 @@
-import type { GuidePage } from "@/domain";
+import type { GuidePageInput } from "@/domain";
 import type { z } from "zod";
 import type { GuideContentBlockSchema } from "@/domain";
 import { withEducationalDepth } from "./educational-depth";
 
-type GuideBlock = z.infer<typeof GuideContentBlockSchema>;
+type GuideBlockInput = z.input<typeof GuideContentBlockSchema>;
 
 /**
  * Structural teaching depth for category CORE guides.
  * Does not invent product scores, rankings, or unknown slugs.
  */
-export function withTeachingDepth(guide: GuidePage): GuidePage {
+export function withTeachingDepth(guide: GuidePageInput): GuidePageInput {
   const blocks = [...(guide.blocks ?? [])];
   const hasRelated = blocks.some((block) => block.type === "related-content");
   if (!hasRelated) {
@@ -30,21 +30,21 @@ export function withTeachingDepth(guide: GuidePage): GuidePage {
     undefined;
 
   const sections =
-    guide.sections.length > 0
-      ? guide.sections
+    (guide.sections ?? []).length > 0
+      ? (guide.sections ?? [])
       : exampleSections(guide);
 
   const faq =
-    guide.faq.length > 0 ? guide.faq : faqFromBlocks(blocks);
+    (guide.faq ?? []).length > 0 ? (guide.faq ?? []) : faqFromBlocks(blocks as GuideBlockInput[]);
 
   const checklist =
-    guide.checklist.length > 0
-      ? guide.checklist
-      : checklistFromDirectAnswer(blocks);
+    (guide.checklist ?? []).length > 0
+      ? (guide.checklist ?? [])
+      : checklistFromDirectAnswer(blocks as GuideBlockInput[]);
 
   return withEducationalDepth({
     ...guide,
-    blocks: blocks as GuidePage["blocks"],
+    blocks: blocks as GuidePageInput["blocks"],
     nextAction,
     sections,
     faq,
@@ -52,13 +52,13 @@ export function withTeachingDepth(guide: GuidePage): GuidePage {
   });
 }
 
-function relatedLinks(guide: GuidePage): Array<{
+function relatedLinks(guide: GuidePageInput): Array<{
   href: string;
   label: string;
   description?: string;
 }> {
   const links: Array<{ href: string; label: string; description?: string }> = [];
-  const category = guide.categorySlugs[0];
+  const category = guide.categorySlugs?.[0];
   if (category) {
     links.push({
       href: `/categories/${category}/`,
@@ -71,7 +71,7 @@ function relatedLinks(guide: GuidePage): Array<{
       description: "Editor’s picks by job cluster — not a commission ranking.",
     });
   }
-  for (const slug of guide.relatedGuideSlugs.slice(0, 4)) {
+  for (const slug of (guide.relatedGuideSlugs ?? []).slice(0, 4)) {
     links.push({
       href: `/guides/${slug}/`,
       label: titleCase(slug),
@@ -82,9 +82,9 @@ function relatedLinks(guide: GuidePage): Array<{
 }
 
 function defaultNextAction(
-  guide: GuidePage,
+  guide: GuidePageInput,
 ): { contentId: string; label: string } | null {
-  const choose = guide.relatedGuideSlugs.find((slug) =>
+  const choose = (guide.relatedGuideSlugs ?? []).find((slug) =>
     slug.startsWith("how-to-choose"),
   );
   if (choose) {
@@ -93,7 +93,7 @@ function defaultNextAction(
       label: "How to choose",
     };
   }
-  const category = guide.categorySlugs[0];
+  const category = guide.categorySlugs?.[0];
   if (!category) return null;
   return {
     contentId: `content:best:${category}-software`,
@@ -101,7 +101,7 @@ function defaultNextAction(
   };
 }
 
-function exampleSections(guide: GuidePage): GuidePage["sections"] {
+function exampleSections(guide: GuidePageInput): NonNullable<GuidePageInput["sections"]> {
   for (const block of guide.blocks ?? []) {
     if (block.type !== "step") continue;
     const match = block.body.match(
@@ -139,8 +139,8 @@ function exampleSections(guide: GuidePage): GuidePage["sections"] {
 }
 
 function faqFromBlocks(
-  blocks: GuideBlock[],
-): GuidePage["faq"] {
+  blocks: GuideBlockInput[],
+): NonNullable<GuidePageInput["faq"]> {
   const faq = blocks.find((block) => block.type === "faq");
   if (!faq || faq.type !== "faq") return [];
   return faq.items.map((item) => ({
@@ -150,8 +150,8 @@ function faqFromBlocks(
 }
 
 function checklistFromDirectAnswer(
-  blocks: GuideBlock[],
-): GuidePage["checklist"] {
+  blocks: GuideBlockInput[],
+): NonNullable<GuidePageInput["checklist"]> {
   const answer = blocks.find((block) => block.type === "direct-answer");
   if (!answer || answer.type !== "direct-answer" || !answer.bullets) return [];
   return answer.bullets.slice(0, 4).map((label, order) => ({

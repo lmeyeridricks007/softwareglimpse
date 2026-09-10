@@ -110,7 +110,7 @@ export const EMPTY_LINK_PLAN = (
 export const MODULE_LIMITS: Record<LinkModuleId, { min: number; max: number }> =
   {
     parentHub: { min: 1, max: 2 },
-    relatedGuides: { min: 0, max: 4 },
+    relatedGuides: { min: 0, max: 6 },
     relatedProducts: { min: 0, max: 6 },
     relatedComparisons: { min: 0, max: 4 },
     relatedCapabilities: { min: 0, max: 6 },

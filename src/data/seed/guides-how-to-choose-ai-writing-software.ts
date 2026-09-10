@@ -1,4 +1,4 @@
-import type { GuidePage } from "@/domain";
+import type { GuidePageInput } from "@/domain";
 import type { z } from "zod";
 import type { GuideContentBlockSchema } from "@/domain";
 import { tier20GuideScheduledAt } from "@/data/config/publishing/tier-20-ai-writing-launch-2027-05-01";
@@ -34,7 +34,7 @@ const blocks: GuideBlockInput[] = [
   },
 ];
 
-function metadata(): GuidePage["metadata"] {
+function metadata(): GuidePageInput["metadata"] {
   return SCHEDULED_AT
     ? {
         status: "scheduled",
@@ -54,7 +54,7 @@ function metadata(): GuidePage["metadata"] {
       };
 }
 
-export const howToChooseAiWritingSoftwareGuide: GuidePage = {
+export const howToChooseAiWritingSoftwareGuide: GuidePageInput = {
   id: "guide-how-to-choose-ai-writing-software",
   slug: SLUG,
   title: "How to Choose AI Writing Software",
@@ -73,7 +73,7 @@ export const howToChooseAiWritingSoftwareGuide: GuidePage = {
     "what-is-ai-writing-software",
     "ai-writing-pricing-guide",
   ],
-  blocks: blocks as GuidePage["blocks"],
+  blocks: blocks as GuidePageInput["blocks"],
   checklist: [],
   sections: [],
   faq: [],
@@ -83,7 +83,7 @@ export const howToChooseAiWritingSoftwareGuide: GuidePage = {
     title: "How to Choose AI Writing Software",
     description:
       "Choose AI writing software by paraphrasing vs GEO copy jobs, limits, and integrations.",
-    indexable: !SCHEDULED_AT,
+    indexable: true,
     canonicalPath: "/guides/how-to-choose-ai-writing-software/",
   },
 };

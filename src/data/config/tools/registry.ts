@@ -268,8 +268,8 @@ export const TOOLS_REGISTRY: ToolDefinition[] = [
     href: "/tools/sales-intelligence-cost-calculator/",
     icon: "calculator",
     primaryCta: "Calculate SI Costs",
-    secondaryCta: "How it works",
-    secondaryHref: "/tools/sales-intelligence-cost-calculator/",
+    secondaryCta: "Credit TCO",
+    secondaryHref: "/tools/sales-intelligence-credit-tco/",
     features: [
       "Verified seat pricing",
       "Credits marked unknown",
@@ -280,6 +280,34 @@ export const TOOLS_REGISTRY: ToolDefinition[] = [
     popular: false,
     availabilityNote:
       "Verified seat/subscription ladders where published · Credits and custom quotes stay quote-required",
+  },
+  {
+    id: "sales-intelligence-credit-tco",
+    slug: "sales-intelligence-credit-tco",
+    name: "Sales Intelligence Credit TCO Calculator",
+    shortDescription:
+      "Model monthly/annual SI TCO from seats, credits, overage, and mobile credits — quote inputs only.",
+    longDescription:
+      "Enter seats, credit volumes, overage, and mobile credits with unit prices from your vendor quote. Known lines sum to monthly and annual TCO; missing prices stay unknown. Never invents ZoomInfo or other unpublished list prices.",
+    type: "calculator",
+    categorySlugs: ["sales-intelligence"],
+    status: "available",
+    href: "/tools/sales-intelligence-credit-tco/",
+    icon: "calculator",
+    primaryCta: "Model credit TCO",
+    secondaryCta: "How it works",
+    secondaryHref:
+      "/tools/sales-intelligence-credit-tco/#how-si-credit-tco-is-calculated",
+    features: [
+      "Seats + credit lines",
+      "Overage & mobile credits",
+      "Monthly and annual TCO",
+      "Unknowns stay unknown",
+    ],
+    featured: true,
+    popular: true,
+    availabilityNote:
+      "Buyer/quote dollar inputs · Volume defaults are placeholders · No invented ZoomInfo list prices",
   },
   {
     id: "crm-plan-selector",

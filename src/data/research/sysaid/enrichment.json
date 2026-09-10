@@ -179,6 +179,29 @@
       ]
     }
   ],
+  "integrationSupport": [
+    {
+      "integrationSlug": "slack",
+      "kind": "native",
+      "sourceIds": [
+        "sysaid-product-official"
+      ]
+    },
+    {
+      "integrationSlug": "microsoft-teams",
+      "kind": "native",
+      "sourceIds": [
+        "sysaid-product-official"
+      ]
+    },
+    {
+      "integrationSlug": "api",
+      "kind": "api-only",
+      "sourceIds": [
+        "sysaid-product-official"
+      ]
+    }
+  ],
   "aiCapabilities": [
     {
       "capability": "assistant",
@@ -206,29 +229,6 @@
     {
       "capability": "recommendations",
       "availability": "supported",
-      "sourceIds": [
-        "sysaid-product-official"
-      ]
-    }
-  ],
-  "integrationSupport": [
-    {
-      "integrationSlug": "slack",
-      "kind": "native",
-      "sourceIds": [
-        "sysaid-product-official"
-      ]
-    },
-    {
-      "integrationSlug": "microsoft-teams",
-      "kind": "native",
-      "sourceIds": [
-        "sysaid-product-official"
-      ]
-    },
-    {
-      "integrationSlug": "api",
-      "kind": "api-only",
       "sourceIds": [
         "sysaid-product-official"
       ]
@@ -305,53 +305,6 @@
       "isEditorial": false
     }
   ],
-  "pricing": {
-    "currency": "USD",
-    "model": "per-seat",
-    "hasFreePlan": false,
-    "hasFreeTrial": true,
-    "plans": [
-      {
-        "id": "plan-professional",
-        "slug": "professional",
-        "name": "Professional",
-        "isFree": false,
-        "contactSales": false,
-        "hasFreeTrial": true,
-        "highlighted": true,
-        "rules": [
-          {
-            "kind": "per-seat",
-            "amountPerSeat": 89,
-            "currency": "USD",
-            "interval": "month",
-            "amountPeriod": "month"
-          }
-        ],
-        "description": "~$89/agent/mo Professional — medium-confidence listing price; first-party page is quote-led. Confirm live."
-      },
-      {
-        "id": "plan-enterprise",
-        "slug": "enterprise",
-        "name": "Enterprise",
-        "isFree": false,
-        "contactSales": true,
-        "hasFreeTrial": false,
-        "highlighted": false,
-        "rules": [],
-        "description": "Enterprise custom quote — published minimum 20 agents. Not the ~$89 Professional listing.",
-        "limits": [
-          "Minimum 20 agents"
-        ]
-      }
-    ],
-    "notes": "Researched 2026-08-18 from sysaid.com/pricing (medium confidence — page is quote-led). 2026 listings cite Professional ~$89/agent/mo. Enterprise custom, minimum 20 agents. Free trial. Confirm live quote. Affiliate economics excluded.",
-    "verifiedAt": "2026-08-18T22:00:00.000Z",
-    "sourceIds": [
-      "sysaid-pricing-official"
-    ],
-    "startingPriceMonthly": 89
-  },
   "screenshots": [
     {
       "id": "sysaid-shot-overview",
@@ -428,13 +381,13 @@
       "demonstratedDimensionIds": [],
       "requirementCriterionIds": [],
       "workflowStageIds": [],
+      "mediaContext": "general-workflow",
       "reportedOutcomes": [],
       "placements": [
         "overview",
         "features",
         "evidence"
       ],
-      "mediaContext": "general-workflow",
       "purpose": "Official sysaid video for product research pages",
       "demonstratesCaption": "How sysaid presents the product in an official vendor video.",
       "editorialCommentary": "Official vendor demo — treat as UI/workflow evidence, not SoftwareGlimpse scoring.",
@@ -452,12 +405,53 @@
       "status": "published"
     }
   ],
-  "sourceIds": [
-    "sysaid-product-official",
-    "sysaid-pricing-official",
-    "sysaid-pricing"
-  ],
-  "notes": "IT Tier-B + ITSM SMB onboarding enrichment from first-party research 2026-08-18T22:00:00.000Z. handsOnTesting=false. membershipRole=primary. jobCluster=itsm-service-desk.",
+  "pricing": {
+    "currency": "USD",
+    "model": "per-seat",
+    "hasFreePlan": false,
+    "hasFreeTrial": true,
+    "plans": [
+      {
+        "id": "plan-professional",
+        "slug": "professional",
+        "name": "Professional",
+        "isFree": false,
+        "contactSales": false,
+        "hasFreeTrial": true,
+        "highlighted": true,
+        "rules": [
+          {
+            "kind": "per-seat",
+            "amountPerSeat": 89,
+            "currency": "USD",
+            "interval": "month",
+            "amountPeriod": "month"
+          }
+        ],
+        "description": "~$89/agent/mo Professional — medium-confidence listing price; first-party page is quote-led. Confirm live."
+      },
+      {
+        "id": "plan-enterprise",
+        "slug": "enterprise",
+        "name": "Enterprise",
+        "isFree": false,
+        "contactSales": true,
+        "hasFreeTrial": false,
+        "highlighted": false,
+        "rules": [],
+        "description": "Enterprise custom quote — published minimum 20 agents. Not the ~$89 Professional listing.",
+        "limits": [
+          "Minimum 20 agents"
+        ]
+      }
+    ],
+    "notes": "Researched 2026-08-18 from sysaid.com/pricing (medium confidence — page is quote-led). 2026 listings cite Professional ~$89/agent/mo. Enterprise custom, minimum 20 agents. Free trial. Confirm live quote. Affiliate economics excluded.",
+    "verifiedAt": "2026-09-08T21:57:45.652Z",
+    "sourceIds": [
+      "sysaid-pricing-official"
+    ],
+    "startingPriceMonthly": 89
+  },
   "domainCheckedAt": {
     "identity": "2026-08-18T22:00:00.000Z",
     "pricing": "2026-08-18T22:00:00.000Z",
@@ -471,5 +465,11 @@
     "limits": "2026-08-18T22:00:00.000Z",
     "security-compliance": "2026-08-18T22:00:00.000Z"
   },
-  "updatedAt": "2026-08-24T05:30:00.000Z"
+  "sourceIds": [
+    "sysaid-product-official",
+    "sysaid-pricing-official",
+    "sysaid-pricing"
+  ],
+  "updatedAt": "2026-08-24T05:30:00.000Z",
+  "notes": "IT Tier-B + ITSM SMB onboarding enrichment from first-party research 2026-08-18T22:00:00.000Z. handsOnTesting=false. membershipRole=primary. jobCluster=itsm-service-desk."
 }

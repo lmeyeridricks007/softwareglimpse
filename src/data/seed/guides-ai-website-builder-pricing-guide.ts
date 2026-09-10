@@ -1,4 +1,4 @@
-import type { GuidePage } from "@/domain";
+import type { GuidePageInput } from "@/domain";
 import type { z } from "zod";
 import type { GuideContentBlockSchema } from "@/domain";
 import { tier21GuideScheduledAt } from "@/data/config/publishing/tier-21-ai-website-builder-launch-2027-05-01";
@@ -34,7 +34,7 @@ const blocks: GuideBlockInput[] = [
   },
 ];
 
-function metadata(): GuidePage["metadata"] {
+function metadata(): GuidePageInput["metadata"] {
   return SCHEDULED_AT
     ? {
         status: "scheduled",
@@ -54,7 +54,7 @@ function metadata(): GuidePage["metadata"] {
       };
 }
 
-export const aiWebsiteBuilderPricingGuide: GuidePage = {
+export const aiWebsiteBuilderPricingGuide: GuidePageInput = {
   id: "guide-ai-website-builder-pricing-guide",
   slug: SLUG,
   title: "AI Website Builder Pricing Guide",
@@ -74,7 +74,7 @@ export const aiWebsiteBuilderPricingGuide: GuidePage = {
     "how-to-choose-ai-website-builder-software",
     "ai-website-builder-evaluation-guide",
   ],
-  blocks: blocks as GuidePage["blocks"],
+  blocks: blocks as GuidePageInput["blocks"],
   checklist: [],
   sections: [],
   faq: [],
@@ -84,7 +84,7 @@ export const aiWebsiteBuilderPricingGuide: GuidePage = {
     title: "AI Website Builder Pricing Guide",
     description:
       "Compare AI website builder pricing — site generation, agent builders, and app dev platforms.",
-    indexable: !SCHEDULED_AT,
+    indexable: true,
     canonicalPath: "/guides/ai-website-builder-pricing-guide/",
   },
 };

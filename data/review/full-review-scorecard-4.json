@@ -1,0 +1,221 @@
+{
+  "generatedAt": "2026-09-09T18:59:39.000Z",
+  "audit": "FULL_REVIEW_4",
+  "gitCommit": "0a2dd4b489dca4a322cb98585cb3e17962b4973d",
+  "gitCommitShort": "0a2dd4b",
+  "previousOverall": 56,
+  "previousGeneratedAt": "2026-09-09T08:48:00.000Z",
+  "previousAudit": "FULL_REVIEW_3",
+  "originalOverall": 49,
+  "gscDataThrough": "2026-08-13",
+  "gscImportDate": "2026-08-15",
+  "gscFreshness": "STALE — identical export window as Review #3 (8 / 115457 / 74.5) — not comparable for post-execution rank/click lift",
+  "scores": {
+    "technicalSeo": 76,
+    "crawlEfficiency": 58,
+    "indexability": 70,
+    "contentQuality": 64,
+    "contentUniqueness": 46,
+    "softwareDataQuality": 78,
+    "editorialCredibility": 64,
+    "internalLinking": 74,
+    "searchOpportunityExecution": 57,
+    "authorityBacklinks": 18,
+    "originalResearch": 45,
+    "evidenceTesting": 40,
+    "pricingFreshness": 65,
+    "ux": 54,
+    "performance": 50,
+    "commercialTracking": 42,
+    "aiVisibilityMeasurement": 22
+  },
+  "rationale": {
+    "technicalSeo": "Local architecture still coherent; live FULL audit vs www surfaced 8 P0 status mismatches — not an eng-debt win",
+    "crawlEfficiency": "Production parity FAILED: www serves legacy monolithic sitemap 6370 urls; named children 404; local arch 3133 sitemapindex",
+    "indexability": "Local reconcile healthy-ish; live www over-includes ~3.2k URLs vs policy sitemap; locale/taxonomy return 404 instead of 410",
+    "contentQuality": "Lane A apply: 27 content changes / 30; factory-100b material page work small (6) — modest +1 only",
+    "contentUniqueness": "limitedUniqueAnalysisCount 1373→1342 (−31). factoryPackCount still 1272. Wave-local clears ≠ full estate breakthrough",
+    "softwareDataQuality": "DATA_VERIFIED reconcile accepted 115→164 (+49); dashboard shows 166 — reconcile remains policy source of truth",
+    "editorialCredibility": "HANDS_ON still 0 — top-10 packs drafted, zero completed ProductTestSessions",
+    "internalLinking": "IMPROVE orphan sample 80/80→15/80 (−65). Semantic KG edges unchanged at 26853 — do not credit totalEdges 71601 (contextual expansion)",
+    "searchOpportunityExecution": "Lane A GSC improve-30 applied (30 URLs; 0 in pos 8–20 band). +7 promotions since R3. GSC still STALE caps traffic claim",
+    "authorityBacklinks": "NOT_CONNECTED — no REAL Ahrefs/Semrush export",
+    "originalResearch": "CRM pricing research still live; no new earned citation proof",
+    "evidenceTesting": "Evidence wave pass1+pass2: +49 reconcile DV; HO=0; blockers 403/plan-hit remain",
+    "pricingFreshness": "Evidence stamps continued; monitor signals remain",
+    "ux": "No new UX outcome measured",
+    "performance": "No field CWV; lab-only",
+    "commercialTracking": "Clicks REAL(0); conversions NOT_CONNECTED — adapters exist but not rewarded as systems without network data",
+    "aiVisibilityMeasurement": "NOT_CONNECTED"
+  },
+  "overall": 55,
+  "evidenceSnapshot": {
+    "dataVerifiedAccepted": {
+      "previous": 115,
+      "current": 164,
+      "delta": 49,
+      "dashboardShows": 166,
+      "sourceOfTruth": "reconcileDataVerifiedCoverage().accepted"
+    },
+    "handsOn": {
+      "previous": 0,
+      "current": 0,
+      "delta": 0
+    },
+    "catalogue": 315,
+    "promotionsIncrementalSinceReview3": {
+      "previousReviewReportedSinceR2": 36,
+      "currentIncrementalSinceR3": 7,
+      "lifecyclePromotedAtAfter_2026-09-09T08:48Z": 7,
+      "note": "factory-pack-100b promoted 7 matching incremental window"
+    },
+    "factoryNearDuplicateRisk": {
+      "metric": "factoryPackCount (R3 baseline series)",
+      "previous": 1272,
+      "current": 1272,
+      "delta": 0,
+      "highNearDuplicateRiskCount_current": 1328,
+      "note": "R3 headline used factoryPackCount/highNearDup=1272; current factoryPackCount still 1272. Separate highNearDuplicateRiskCount series now 1328 — not used to invent a regression vs 1272."
+    },
+    "limitedUnique": {
+      "metric": "limitedUniqueAnalysisCount",
+      "previous": 1373,
+      "current": 1342,
+      "delta": -31
+    },
+    "knowledgeGraph": {
+      "previous": { "nodes": 6785, "edgesComparableSemantic": 26853 },
+      "current": {
+        "nodes": 6785,
+        "edgesComparableSemantic": 26853,
+        "edgesTotalIncludingContextual": 71601,
+        "contextualEdges": 44748,
+        "note": "Do not score 71601 as edge growth — semantic edges flat at 26853"
+      },
+      "improveOrphanSample": { "previous": "80/80", "current": "15/80", "deltaOrphans": -65 }
+    },
+    "gsc": {
+      "previous": { "clicks": 8, "impressions": 115457, "position": 74.5 },
+      "current": { "clicks": 8, "impressions": 115457, "position": 74.5 },
+      "comparable": false,
+      "reason": "identical STALE window through 2026-08-13"
+    },
+    "authority": {
+      "previous": "NOT_CONNECTED",
+      "current": "NOT_CONNECTED"
+    },
+    "conversions": {
+      "previous": "NOT_CONNECTED",
+      "current": "NOT_CONNECTED"
+    },
+    "productionParity": {
+      "previous": "ASSUMED_LOCAL_OK_WWW_EXTERNAL",
+      "current": "NO",
+      "liveSitemapUrls": 6370,
+      "localArchSitemapUrls": 3133,
+      "liveValidationOk": false
+    }
+  },
+  "issueStatusCounts": {
+    "resolved": 7,
+    "in_progress": 5,
+    "blocked_external": 5,
+    "deferred": 2,
+    "open": 1,
+    "regressed": 1
+  },
+  "p0Count": 1,
+  "p1Count": 5,
+  "p2Count": 3,
+  "p3Count": 2,
+  "deployVerdict": "NO_UNSAFE_PRODUCTION_PARITY",
+  "verification": {
+    "growthDashboard": {
+      "engine": "2.3.0",
+      "generatedAt": "2026-09-09T18:59:00.000Z",
+      "result": "PASS"
+    },
+    "guidesAudit": {
+      "generatedAt": "2026-09-09T18:57:52.861Z",
+      "factoryPacks": 1272,
+      "highNearDuplicateRiskCount": 1328,
+      "limitedUnique": 1342,
+      "indexable": 508,
+      "improve": 1079,
+      "result": "PASS"
+    },
+    "knowledgeGraph": {
+      "nodes": 6785,
+      "semanticEdges": 26853,
+      "totalEdges": 71601,
+      "improveOrphansSample": "15/80",
+      "result": "PASS_ORPHANS_IMPROVED_SEMANTIC_EDGES_FLAT"
+    },
+    "dataVerifiedReconcile": {
+      "accepted": 164,
+      "rejected": 151,
+      "total": 315
+    },
+    "handsOnCoverage": {
+      "handsOnTested": 0,
+      "dataVerifiedCoverageMetric": 166
+    },
+    "laneAGscImprove30": {
+      "processed": 30,
+      "contentChanges": 27,
+      "linksAdded": 55,
+      "dataImproved": 14,
+      "promoted": 0,
+      "band8to20": 0
+    },
+    "factoryPack100b": {
+      "processed": 100,
+      "materiallyImproved": 6,
+      "promoted": 7,
+      "clearedEstateNearDup": 7,
+      "clearedLimitedUnique": 7,
+      "estateFactoryPackCountStill": 1272
+    },
+    "evidenceWave50Combined": {
+      "startingVerified": 115,
+      "endingVerified": 164,
+      "newVerified": 49,
+      "productsProcessed": 96
+    },
+    "productionLiveAudit": {
+      "baseUrl": "https://www.softwareglimpse.com",
+      "sitemapUrls": 6370,
+      "sitemapShape": "monolithic_urlset",
+      "localArchUrls": 3133,
+      "localArchShape": "sitemapindex",
+      "seoAuditP0": 8,
+      "seoAuditP1": 1,
+      "seoAuditP2": 0,
+      "localParity": "NO",
+      "safeProductionState": "NO"
+    },
+    "sitemapReconcileLive": {
+      "liveValidationOk": false,
+      "note": "Legacy monolithic urlset — named children not deployed"
+    }
+  },
+  "scoreDelta": {
+    "technicalSeo": { "previous": 78, "current": 76, "delta": -2 },
+    "crawlEfficiency": { "previous": 80, "current": 58, "delta": -22 },
+    "indexability": { "previous": 78, "current": 70, "delta": -8 },
+    "contentQuality": { "previous": 63, "current": 64, "delta": 1 },
+    "contentUniqueness": { "previous": 43, "current": 46, "delta": 3 },
+    "softwareDataQuality": { "previous": 72, "current": 78, "delta": 6 },
+    "editorialCredibility": { "previous": 64, "current": 64, "delta": 0 },
+    "internalLinking": { "previous": 68, "current": 74, "delta": 6 },
+    "searchOpportunityExecution": { "previous": 55, "current": 57, "delta": 2 },
+    "authorityBacklinks": { "previous": 18, "current": 18, "delta": 0 },
+    "originalResearch": { "previous": 45, "current": 45, "delta": 0 },
+    "evidenceTesting": { "previous": 35, "current": 40, "delta": 5 },
+    "pricingFreshness": { "previous": 64, "current": 65, "delta": 1 },
+    "ux": { "previous": 54, "current": 54, "delta": 0 },
+    "performance": { "previous": 50, "current": 50, "delta": 0 },
+    "commercialTracking": { "previous": 42, "current": 42, "delta": 0 },
+    "aiVisibilityMeasurement": { "previous": 22, "current": 22, "delta": 0 }
+  }
+}

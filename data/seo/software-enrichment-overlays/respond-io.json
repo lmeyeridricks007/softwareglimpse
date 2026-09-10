@@ -1,0 +1,406 @@
+{
+  "slug": "respond-io",
+  "updatedAt": "2026-09-07T22:31:21.441Z",
+  "version": "1.0.0",
+  "fieldAudit": {
+    "slug": "respond-io",
+    "checkedAt": "2026-09-07T22:31:21.440Z",
+    "items": [
+      {
+        "field": "name",
+        "status": "PASS",
+        "detail": "Name: respond.io",
+        "source": "seed"
+      },
+      {
+        "field": "product_status",
+        "status": "PASS",
+        "detail": "productLifecycle=active",
+        "source": "seed"
+      },
+      {
+        "field": "canonical_vendor",
+        "status": "UNKNOWN",
+        "detail": "Company/vendor not documented",
+        "source": "none"
+      },
+      {
+        "field": "category",
+        "status": "PASS",
+        "detail": "primaryCategorySlug=business-communications",
+        "source": "seed"
+      },
+      {
+        "field": "description",
+        "status": "PASS",
+        "detail": "Description present (Omnichannel customer messaging platform (WhatsApp + other channels) with shared …)",
+        "source": "seed"
+      },
+      {
+        "field": "target_audience",
+        "status": "PASS",
+        "detail": "Sizes=3, teams=3, assessment bestFor=3",
+        "source": "assessment"
+      },
+      {
+        "field": "use_cases",
+        "status": "PASS",
+        "detail": "useCaseSlugs=2",
+        "source": "seed"
+      },
+      {
+        "field": "capabilities",
+        "status": "PASS",
+        "detail": "featureRatings=0, enrichment features=13",
+        "source": "enrichment"
+      },
+      {
+        "field": "pricing",
+        "status": "PASS",
+        "detail": "Pricing envelope present",
+        "source": "enrichment"
+      },
+      {
+        "field": "plans",
+        "status": "PASS",
+        "detail": "plans=4",
+        "source": "enrichment"
+      },
+      {
+        "field": "free_plan",
+        "status": "PASS",
+        "detail": "No free plan in documented plans (explicit absence)",
+        "source": "enrichment"
+      },
+      {
+        "field": "trial",
+        "status": "PASS",
+        "detail": "Trial documented on plans/pricing",
+        "source": "enrichment"
+      },
+      {
+        "field": "integrations",
+        "status": "PASS",
+        "detail": "integrationSlugs=0, enrichment=6",
+        "source": "enrichment"
+      },
+      {
+        "field": "alternatives",
+        "status": "PASS",
+        "detail": "alternativeSlugs=3",
+        "source": "seed"
+      },
+      {
+        "field": "competitors",
+        "status": "PASS",
+        "detail": "competitorSlugs=1",
+        "source": "seed"
+      },
+      {
+        "field": "affiliate",
+        "status": "PASS",
+        "detail": "No affiliate relationship (explicit)",
+        "source": "seed"
+      },
+      {
+        "field": "source_provenance",
+        "status": "PASS",
+        "detail": "seed sources=0, enrichment sourceIds=3",
+        "source": "enrichment"
+      },
+      {
+        "field": "verification_date",
+        "status": "PASS",
+        "detail": "Latest verification/research signal: 2026-08-17T18:00:00.000Z",
+        "source": "enrichment"
+      }
+    ],
+    "passCount": 17,
+    "partialCount": 0,
+    "missingCount": 0,
+    "unknownCount": 1,
+    "score": 94
+  },
+  "decisionHub": {
+    "whatItIs": "respond.io is an omnichannel customer messaging platform: WhatsApp Business API plus other messaging channels in a shared team inbox, with workflows, broadcasts, AI Assist/Agents and contact-based packaging. Confirmed on respond.io/pricing 2026-08-17: Starter $79, Growth $159, Advanced $279 per month on the yearly toggle ($948 / $1,908 / $3,348 billed yearly), with Enterprise custom. Pricing scales with monthly active contacts (MAC) tiers. 7-day free trial, no credit card. Scored in the customer-messaging cluster as a Wati peer — not ranked against phone systems.",
+    "bestFor": [
+      "Support and growth teams that need WhatsApp plus other messaging channels in one inbox",
+      "Organisations running broadcasts and workflow automation across channels",
+      "Buyers who want AI Agents inside an omnichannel messaging platform",
+      "small-business / customer-success: respond.io fit for small-business customer-success teams in the customer-messaging job cluster, from first-party positioning and Business-communications Priority-2 research.",
+      "mid-market / customer-success: respond.io fit for mid-market customer-success teams in the customer-messaging job cluster, from first-party positioning and Business-communications Priority-2 research.",
+      "enterprise / customer-success: respond.io fit for enterprise customer-success teams in the customer-messaging job cluster, from first-party positioning and Business-communications Priority-2 research."
+    ],
+    "notIdealFor": [
+      "Buyers who need a business phone system with IVR and PSTN calling",
+      "Teams that only need the cheapest WhatsApp-only BSP rung",
+      "Internal team chat buyers (Slack/Teams/Zenzap)",
+      "Not a business phone system — no IVR, queues or PSTN calling product",
+      "Platform subscription plus channel/Meta messaging fees create two-layer TCO",
+      "Contact-based (MAC) packaging can surprise teams with bursty conversation volume"
+    ],
+    "coreCapabilities": [
+      "sms messaging",
+      "whatsapp business",
+      "shared inbox",
+      "analytics reporting",
+      "ai assistance",
+      "unified inbox",
+      "customer messaging",
+      "whatsapp support"
+    ],
+    "pricingSummary": "4 documented plans · entry paid: Starter · trial documented on at least one plan",
+    "keyTradeoffs": [
+      "Not a business phone system — no IVR, queues or PSTN calling product",
+      "Platform subscription plus channel/Meta messaging fees create two-layer TCO",
+      "Contact-based (MAC) packaging can surprise teams with bursty conversation volume",
+      "AI Agents and advanced automation sit on Growth+",
+      "Advanced/Enterprise needed for SSO, multiple workspaces and custom channels"
+    ],
+    "alternatives": [
+      {
+        "slug": "wati",
+        "name": "Wati"
+      },
+      {
+        "slug": "aircall",
+        "name": "Aircall"
+      },
+      {
+        "slug": "callhippo",
+        "name": "CallHippo"
+      }
+    ],
+    "importantComparisons": [
+      {
+        "slug": "respond-io-vs-wati",
+        "title": "respond.io vs Wati",
+        "href": "/compare/respond-io-vs-wati/"
+      },
+      {
+        "slug": "manychat-vs-respond-io",
+        "title": "ManyChat vs respond.io",
+        "href": "/compare/manychat-vs-respond-io/"
+      },
+      {
+        "slug": "intercom-vs-respond-io",
+        "title": "Intercom vs respond.io",
+        "href": "/compare/intercom-vs-respond-io/"
+      },
+      {
+        "slug": "dialpad-vs-respond-io",
+        "title": "Dialpad vs respond.io",
+        "href": "/compare/dialpad-vs-respond-io/"
+      },
+      {
+        "slug": "eightx8-vs-respond-io",
+        "title": "8x8 vs respond.io",
+        "href": "/compare/eightx8-vs-respond-io/"
+      },
+      {
+        "slug": "fastmail-vs-respond-io",
+        "title": "Fastmail vs respond.io",
+        "href": "/compare/fastmail-vs-respond-io/"
+      }
+    ],
+    "relevantGuides": [
+      {
+        "slug": "respond-io-implementation",
+        "title": "respond.io Implementation: 30/60/90 Communications Rollout That Sticks",
+        "href": "/guides/respond-io-implementation/"
+      },
+      {
+        "slug": "respond-io-migration",
+        "title": "respond.io Migration: Move Numbers Without Losing Trust",
+        "href": "/guides/respond-io-migration/"
+      },
+      {
+        "slug": "respond-io-setup",
+        "title": "respond.io Setup: Day-Zero Path to a Working Call Loop",
+        "href": "/guides/respond-io-setup/"
+      },
+      {
+        "slug": "respond-io-plans",
+        "title": "respond.io Plans: Seats, Numbers, and Qualifying Tiers",
+        "href": "/guides/respond-io-plans/"
+      },
+      {
+        "slug": "is-respond-io-worth-it",
+        "title": "Is respond.io Worth It? Fit Scenarios Before You Buy",
+        "href": "/guides/is-respond-io-worth-it/"
+      }
+    ],
+    "evidenceState": "Research/data-based (no completed hands-on test) · Latest verification/research signal: 2026-08-17T18:00:00.000Z · Editorial assessment: approved",
+    "nextDecisionStep": "Compare against peers: respond.io vs Wati",
+    "missingSections": [
+      "canonical_vendor"
+    ]
+  },
+  "dependents": [
+    {
+      "kind": "guide",
+      "slug": "respond-io-implementation",
+      "path": "/guides/respond-io-implementation/"
+    },
+    {
+      "kind": "guide",
+      "slug": "respond-io-migration",
+      "path": "/guides/respond-io-migration/"
+    },
+    {
+      "kind": "guide",
+      "slug": "respond-io-setup",
+      "path": "/guides/respond-io-setup/"
+    },
+    {
+      "kind": "guide",
+      "slug": "respond-io-plans",
+      "path": "/guides/respond-io-plans/"
+    },
+    {
+      "kind": "guide",
+      "slug": "is-respond-io-worth-it",
+      "path": "/guides/is-respond-io-worth-it/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "respond-io-vs-wati",
+      "path": "/compare/respond-io-vs-wati/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "manychat-vs-respond-io",
+      "path": "/compare/manychat-vs-respond-io/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "intercom-vs-respond-io",
+      "path": "/compare/intercom-vs-respond-io/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "dialpad-vs-respond-io",
+      "path": "/compare/dialpad-vs-respond-io/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "eightx8-vs-respond-io",
+      "path": "/compare/eightx8-vs-respond-io/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "fastmail-vs-respond-io",
+      "path": "/compare/fastmail-vs-respond-io/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "five9-vs-respond-io",
+      "path": "/compare/five9-vs-respond-io/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "genesys-vs-respond-io",
+      "path": "/compare/genesys-vs-respond-io/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "goto-connect-vs-respond-io",
+      "path": "/compare/goto-connect-vs-respond-io/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "grasshopper-vs-respond-io",
+      "path": "/compare/grasshopper-vs-respond-io/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "microsoft-teams-vs-respond-io",
+      "path": "/compare/microsoft-teams-vs-respond-io/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "nextiva-vs-respond-io",
+      "path": "/compare/nextiva-vs-respond-io/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "ooma-vs-respond-io",
+      "path": "/compare/ooma-vs-respond-io/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "openphone-vs-respond-io",
+      "path": "/compare/openphone-vs-respond-io/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "respond-io-vs-ringcentral",
+      "path": "/compare/respond-io-vs-ringcentral/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "respond-io-vs-sanebox",
+      "path": "/compare/respond-io-vs-sanebox/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "respond-io-vs-slack",
+      "path": "/compare/respond-io-vs-slack/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "respond-io-vs-talkdesk",
+      "path": "/compare/respond-io-vs-talkdesk/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "respond-io-vs-twilio",
+      "path": "/compare/respond-io-vs-twilio/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "respond-io-vs-vonage",
+      "path": "/compare/respond-io-vs-vonage/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "respond-io-vs-webex",
+      "path": "/compare/respond-io-vs-webex/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "respond-io-vs-zenzap",
+      "path": "/compare/respond-io-vs-zenzap/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "respond-io-vs-zoom",
+      "path": "/compare/respond-io-vs-zoom/"
+    },
+    {
+      "kind": "alternatives",
+      "slug": "respond-io",
+      "path": "/alternatives/respond-io/"
+    },
+    {
+      "kind": "pricing",
+      "slug": "respond-io",
+      "path": "/software/respond-io/pricing/"
+    },
+    {
+      "kind": "tools",
+      "slug": "business-communications-cost-calculator",
+      "path": "/tools/business-communications-cost-calculator/"
+    }
+  ],
+  "dependentsNeedingRefresh": [],
+  "remediation": [
+    "verify:canonical_vendor"
+  ],
+  "notes": [
+    "fieldAudit score=94",
+    "decisionHub bestFor=6 notIdeal=6",
+    "dependents=31"
+  ],
+  "materiallyImproved": false
+}

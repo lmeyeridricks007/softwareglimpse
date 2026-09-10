@@ -1,0 +1,465 @@
+{
+  "slug": "salesforce",
+  "name": "Salesforce",
+  "categorySlug": "crm",
+  "generatedAt": "2026-09-09T18:29:42.331Z",
+  "version": "1.0.0",
+  "evidenceLevelBefore": "data_verified",
+  "evidenceLevelAfter": "data_verified",
+  "promotedToDataVerified": false,
+  "sources": [
+    {
+      "id": "salesforce-sales-cloud-pricing",
+      "kind": "vendor_pricing",
+      "url": "https://www.salesforce.com/editions-pricing/sales-cloud/",
+      "title": "Sales Cloud Pricing — Agentforce Sales Editions",
+      "sourceType": "official-pricing-page",
+      "authority": "first-party",
+      "domains": [
+        "pricing",
+        "plans",
+        "free-plan",
+        "free-trial",
+        "features",
+        "limits"
+      ],
+      "retrievedAt": "2026-08-14T06:00:00.000Z",
+      "verifiedAt": "2026-08-14T06:00:00.000Z",
+      "lastCheckedAt": "2026-09-07T22:40:41.227Z",
+      "confidence": "high",
+      "status": "active"
+    },
+    {
+      "id": "salesforce-crm-pricing",
+      "kind": "vendor_pricing",
+      "url": "https://www.salesforce.com/crm/pricing/",
+      "title": "Salesforce CRM Pricing",
+      "sourceType": "official-pricing-page",
+      "authority": "first-party",
+      "domains": [
+        "pricing",
+        "plans",
+        "free-plan",
+        "free-trial",
+        "product-positioning"
+      ],
+      "retrievedAt": "2026-08-14T06:00:00.000Z",
+      "verifiedAt": "2026-08-30T12:00:00.000Z",
+      "lastCheckedAt": "2026-09-07T22:40:41.227Z",
+      "confidence": "high",
+      "status": "active"
+    },
+    {
+      "id": "salesforce-claudeforce-pr-2026-08-26",
+      "kind": "feature",
+      "url": "https://www.salesforce.com/news/press-releases/2026/08/26/salesforce-and-anthropic-announce-claudeforce/",
+      "title": "Salesforce and Anthropic Announce Claudeforce",
+      "sourceType": "official-blog",
+      "authority": "first-party",
+      "domains": [
+        "ai-capabilities",
+        "product-positioning"
+      ],
+      "retrievedAt": "2026-08-30T12:00:00.000Z",
+      "verifiedAt": "2026-08-30T12:00:00.000Z",
+      "lastCheckedAt": "2026-09-07T22:40:41.227Z",
+      "confidence": "high",
+      "status": "active"
+    },
+    {
+      "id": "salesforce-sales-cloud-product",
+      "kind": "feature",
+      "url": "https://www.salesforce.com/products/sales-cloud/",
+      "title": "Sales Cloud",
+      "sourceType": "official-product-page",
+      "authority": "first-party",
+      "domains": [
+        "identity",
+        "features",
+        "product-positioning",
+        "ai-capabilities"
+      ],
+      "retrievedAt": "2026-08-14T06:00:00.000Z",
+      "verifiedAt": "2026-08-14T06:00:00.000Z",
+      "lastCheckedAt": "2026-08-14T06:00:00.000Z",
+      "confidence": "high",
+      "status": "active"
+    },
+    {
+      "id": "salesforce-sales-cloud-features",
+      "kind": "integration",
+      "url": "https://www.salesforce.com/products/sales-cloud/features/",
+      "title": "Sales Cloud Features",
+      "sourceType": "official-product-page",
+      "authority": "first-party",
+      "domains": [
+        "features",
+        "ai-capabilities",
+        "integrations"
+      ],
+      "retrievedAt": "2026-08-14T06:00:00.000Z",
+      "verifiedAt": "2026-08-14T06:00:00.000Z",
+      "lastCheckedAt": "2026-08-14T06:00:00.000Z",
+      "confidence": "high",
+      "status": "active"
+    },
+    {
+      "id": "salesforce-crm-product",
+      "kind": "integration",
+      "url": "https://www.salesforce.com/crm/",
+      "title": "Salesforce CRM",
+      "sourceType": "official-product-page",
+      "authority": "first-party",
+      "domains": [
+        "identity",
+        "product-positioning",
+        "integrations",
+        "ai-capabilities"
+      ],
+      "retrievedAt": "2026-08-14T06:00:00.000Z",
+      "verifiedAt": "2026-08-14T06:00:00.000Z",
+      "lastCheckedAt": "2026-08-14T06:00:00.000Z",
+      "confidence": "high",
+      "status": "active"
+    },
+    {
+      "id": "salesforce-free-trial",
+      "kind": "vendor_product",
+      "url": "https://www.salesforce.com/form/signup/freetrial-sales/",
+      "title": "Sales Cloud Free Trial Signup",
+      "sourceType": "official-product-page",
+      "authority": "first-party",
+      "domains": [
+        "free-trial"
+      ],
+      "retrievedAt": "2026-08-14T06:00:00.000Z",
+      "verifiedAt": "2026-08-14T06:00:00.000Z",
+      "lastCheckedAt": "2026-09-07T22:40:41.227Z",
+      "confidence": "high",
+      "status": "active"
+    }
+  ],
+  "vendorSourceCount": 7,
+  "pricingSourceCount": 2,
+  "docsSourceCount": 0,
+  "featureEvidenceCount": 22,
+  "integrationEvidenceCount": 3,
+  "plans": [
+    {
+      "id": "plan-free-suite",
+      "slug": "free-suite",
+      "name": "Free Suite",
+      "isFree": true,
+      "contactSales": false,
+      "hasFreeTrial": false
+    },
+    {
+      "id": "plan-starter-suite",
+      "slug": "starter-suite",
+      "name": "Starter Suite",
+      "isFree": false,
+      "contactSales": false,
+      "hasFreeTrial": true
+    },
+    {
+      "id": "plan-pro-suite",
+      "slug": "pro-suite",
+      "name": "Pro Suite",
+      "isFree": false,
+      "contactSales": false,
+      "hasFreeTrial": true
+    },
+    {
+      "id": "plan-enterprise",
+      "slug": "enterprise",
+      "name": "Enterprise",
+      "isFree": false,
+      "contactSales": false,
+      "hasFreeTrial": true
+    },
+    {
+      "id": "plan-unlimited",
+      "slug": "unlimited",
+      "name": "Unlimited",
+      "isFree": false,
+      "contactSales": false,
+      "hasFreeTrial": true
+    }
+  ],
+  "researchTimestamps": {
+    "enrichmentUpdatedAt": "2026-08-30T12:00:00.000Z",
+    "domainCheckedAt": {
+      "identity": "2026-08-14T06:00:00.000Z",
+      "pricing": "2026-08-30T12:00:00.000Z",
+      "plans": "2026-08-30T12:00:00.000Z",
+      "free-plan": "2026-08-30T12:00:00.000Z",
+      "free-trial": "2026-08-14T06:00:00.000Z",
+      "features": "2026-08-14T06:00:00.000Z",
+      "ai-capabilities": "2026-08-30T12:00:00.000Z",
+      "product-positioning": "2026-08-30T12:00:00.000Z",
+      "integrations": "2026-08-14T06:00:00.000Z",
+      "limits": "2026-08-14T06:00:00.000Z",
+      "support": "2026-08-14T06:00:00.000Z"
+    },
+    "enrichmentPricingVerifiedAt": "2026-09-07T22:40:41.227Z",
+    "enrichmentPricingSourceIds": [
+      "salesforce-crm-pricing",
+      "salesforce-sales-cloud-pricing",
+      "salesforce-free-trial",
+      "salesforce-claudeforce-pr-2026-08-26"
+    ],
+    "softwarePricingVerifiedAt": null,
+    "researchDate": null
+  },
+  "pricingVerification": {
+    "attempted": false,
+    "verified": false,
+    "httpStatus": null,
+    "sourceId": null,
+    "sourceUrl": null,
+    "planNamesChecked": [],
+    "planNamesFound": [],
+    "planHitRatio": 0,
+    "rejectReason": null,
+    "verifiedAt": null,
+    "stampApplied": false
+  },
+  "dependentPages": [
+    {
+      "kind": "guide",
+      "slug": "what-is-salesforce",
+      "path": "/guides/what-is-salesforce/"
+    },
+    {
+      "kind": "guide",
+      "slug": "salesforce-implementation",
+      "path": "/guides/salesforce-implementation/"
+    },
+    {
+      "kind": "guide",
+      "slug": "salesforce-migration",
+      "path": "/guides/salesforce-migration/"
+    },
+    {
+      "kind": "guide",
+      "slug": "salesforce-setup",
+      "path": "/guides/salesforce-setup/"
+    },
+    {
+      "kind": "guide",
+      "slug": "salesforce-plans",
+      "path": "/guides/salesforce-plans/"
+    },
+    {
+      "kind": "guide",
+      "slug": "is-salesforce-worth-it",
+      "path": "/guides/is-salesforce-worth-it/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "act-vs-salesforce",
+      "path": "/compare/act-vs-salesforce/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "affinity-vs-salesforce",
+      "path": "/compare/affinity-vs-salesforce/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "agile-crm-vs-salesforce",
+      "path": "/compare/agile-crm-vs-salesforce/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "apptivo-vs-salesforce",
+      "path": "/compare/apptivo-vs-salesforce/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "attio-vs-salesforce",
+      "path": "/compare/attio-vs-salesforce/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "bitrix24-vs-salesforce",
+      "path": "/compare/bitrix24-vs-salesforce/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "capsule-vs-salesforce",
+      "path": "/compare/capsule-vs-salesforce/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "close-vs-salesforce",
+      "path": "/compare/close-vs-salesforce/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "cloze-vs-salesforce",
+      "path": "/compare/cloze-vs-salesforce/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "copper-vs-salesforce",
+      "path": "/compare/copper-vs-salesforce/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "creatio-vs-salesforce",
+      "path": "/compare/creatio-vs-salesforce/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "dynamics-365-vs-salesforce",
+      "path": "/compare/dynamics-365-vs-salesforce/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "folk-vs-salesforce",
+      "path": "/compare/folk-vs-salesforce/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "freshsales-vs-salesforce",
+      "path": "/compare/freshsales-vs-salesforce/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "hubspot-vs-salesforce",
+      "path": "/compare/hubspot-vs-salesforce/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "insightly-vs-salesforce",
+      "path": "/compare/insightly-vs-salesforce/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "keap-vs-salesforce",
+      "path": "/compare/keap-vs-salesforce/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "mailchimp-vs-salesforce",
+      "path": "/compare/mailchimp-vs-salesforce/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "monday-sales-crm-vs-salesforce",
+      "path": "/compare/monday-sales-crm-vs-salesforce/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "netsuite-vs-salesforce",
+      "path": "/compare/netsuite-vs-salesforce/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "nimble-vs-salesforce",
+      "path": "/compare/nimble-vs-salesforce/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "nutshell-vs-salesforce",
+      "path": "/compare/nutshell-vs-salesforce/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "oracle-cx-vs-salesforce",
+      "path": "/compare/oracle-cx-vs-salesforce/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "pardot-vs-salesforce",
+      "path": "/compare/pardot-vs-salesforce/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "pega-vs-salesforce",
+      "path": "/compare/pega-vs-salesforce/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "pipedrive-vs-salesforce",
+      "path": "/compare/pipedrive-vs-salesforce/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "pipelinepro-vs-salesforce",
+      "path": "/compare/pipelinepro-vs-salesforce/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "podio-vs-salesforce",
+      "path": "/compare/podio-vs-salesforce/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "salesflare-vs-salesforce",
+      "path": "/compare/salesflare-vs-salesforce/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "salesforce-vs-sap",
+      "path": "/compare/salesforce-vs-sap/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "salesforce-vs-siebel",
+      "path": "/compare/salesforce-vs-siebel/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "salesforce-vs-streak",
+      "path": "/compare/salesforce-vs-streak/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "salesforce-vs-sugarcrm",
+      "path": "/compare/salesforce-vs-sugarcrm/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "salesforce-vs-wealthbox",
+      "path": "/compare/salesforce-vs-wealthbox/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "salesforce-vs-zendesk",
+      "path": "/compare/salesforce-vs-zendesk/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "salesforce-vs-zoho-crm",
+      "path": "/compare/salesforce-vs-zoho-crm/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "marketo-vs-salesforce",
+      "path": "/compare/marketo-vs-salesforce/"
+    },
+    {
+      "kind": "alternatives",
+      "slug": "salesforce",
+      "path": "/alternatives/salesforce/"
+    },
+    {
+      "kind": "pricing",
+      "slug": "salesforce",
+      "path": "/software/salesforce/pricing/"
+    },
+    {
+      "kind": "best",
+      "slug": "crm-software",
+      "path": "/best/crm-software/"
+    },
+    {
+      "kind": "tools",
+      "slug": "crm-cost-calculator",
+      "path": "/tools/crm-cost-calculator/"
+    }
+  ],
+  "notes": []
+}

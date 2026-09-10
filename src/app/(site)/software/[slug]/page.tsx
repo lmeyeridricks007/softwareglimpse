@@ -14,11 +14,15 @@ import { InternalLinkingModules } from "@/components/internal-linking";
 import { buildPageMetadata } from "@/seo/metadata";
 import {
   JsonLdScript,
+  articleJsonLd,
   breadcrumbJsonLd,
   faqPageJsonLd,
+  personJsonLd,
   softwareApplicationJsonLd,
   videoObjectJsonLd,
 } from "@/seo/structured-data";
+import { getFounderAuthor, COMPANY_ROUTES } from "@/services/site-foundation";
+import { buildEstateBreadcrumbs } from "@/services/seo/knowledge-graph";
 
 type Props = {
   params: Promise<{ slug: string }>;
@@ -75,21 +79,12 @@ export default async function SoftwareOverviewPage({ params }: Props) {
     canPlaceCta("software-review", "header", 0) && affiliateLink,
   );
 
-  const breadcrumbItems = [
-    { name: "Home", path: "/" },
-    ...(model.primaryCategory
-      ? [
-          {
-            name: model.primaryCategory.name,
-            path: `/categories/${model.primaryCategory.path.join("/")}/`,
-          },
-        ]
-      : [{ name: "Software", path: "/software/" }]),
-    {
-      name: `${software.name} Review`,
-      path: `/software/${software.slug}/`,
-    },
-  ];
+  const breadcrumbItems = buildEstateBreadcrumbs(`/software/${software.slug}/`).map(
+    (item, index, all) =>
+      index === all.length - 1
+        ? { ...item, name: `${software.name} Review` }
+        : item,
+  );
 
   const researchIncomplete = model.publicationState === "researching";
   const softwareLinkPlan = buildSoftwareLinkPlan(software.slug);
@@ -113,6 +108,36 @@ export default async function SoftwareOverviewPage({ params }: Props) {
       contentUrl: overviewVideo.sourceUrl,
       embedUrl: overviewVideo.embedUrl,
     });
+  const founder = getFounderAuthor();
+  const authorLd = founder
+    ? personJsonLd({
+        name: founder.name,
+        path: COMPANY_ROUTES.myStory,
+        jobTitle: founder.role,
+        description: founder.shortBio,
+      })
+    : null;
+  const articleLd =
+    model.review || model.assessment
+      ? articleJsonLd({
+          headline:
+            model.review?.h1 ||
+            model.review?.title ||
+            `${software.name} Review`,
+          description:
+            model.review?.summary ||
+            model.tagline ||
+            `${software.name} software profile on SoftwareGlimpse.`,
+          path: `/software/${software.slug}/`,
+          datePublished: software.metadata.publishedAt,
+          dateModified:
+            model.lastUpdated ??
+            software.metadata.updatedAt ??
+            software.metadata.publishedAt,
+          authorName: founder?.name,
+          authorPath: founder ? COMPANY_ROUTES.myStory : undefined,
+        })
+      : null;
 
   return (
     <>
@@ -141,8 +166,10 @@ export default async function SoftwareOverviewPage({ params }: Props) {
                   }
                 : null,
           }),
+          ...(articleLd ? [articleLd] : []),
           ...(faqLd ? [faqLd] : []),
           ...(videoLd ? [videoLd] : []),
+          ...(authorLd ? [authorLd] : []),
         ]}
       />
 

@@ -1,0 +1,409 @@
+{
+  "slug": "paylocity",
+  "updatedAt": "2026-09-09T18:11:53.788Z",
+  "version": "1.0.0",
+  "fieldAudit": {
+    "slug": "paylocity",
+    "checkedAt": "2026-09-09T18:11:53.786Z",
+    "items": [
+      {
+        "field": "name",
+        "status": "PASS",
+        "detail": "Name: Paylocity",
+        "source": "seed"
+      },
+      {
+        "field": "product_status",
+        "status": "PASS",
+        "detail": "productLifecycle=active",
+        "source": "seed"
+      },
+      {
+        "field": "canonical_vendor",
+        "status": "PASS",
+        "detail": "Vendor: Paylocity Corporation",
+        "source": "seed"
+      },
+      {
+        "field": "category",
+        "status": "PASS",
+        "detail": "primaryCategorySlug=hr",
+        "source": "seed"
+      },
+      {
+        "field": "description",
+        "status": "PASS",
+        "detail": "Description present (US mid-market HR + payroll (+ finance/IT) — custom quote (‘Explore Payroll Prici…)",
+        "source": "seed"
+      },
+      {
+        "field": "target_audience",
+        "status": "PASS",
+        "detail": "Sizes=3, teams=1, assessment bestFor=3",
+        "source": "assessment"
+      },
+      {
+        "field": "use_cases",
+        "status": "PASS",
+        "detail": "useCaseSlugs=1",
+        "source": "seed"
+      },
+      {
+        "field": "capabilities",
+        "status": "PASS",
+        "detail": "featureRatings=0, enrichment features=16",
+        "source": "enrichment"
+      },
+      {
+        "field": "pricing",
+        "status": "PASS",
+        "detail": "Pricing envelope present",
+        "source": "enrichment"
+      },
+      {
+        "field": "plans",
+        "status": "PASS",
+        "detail": "plans=1",
+        "source": "enrichment"
+      },
+      {
+        "field": "free_plan",
+        "status": "PASS",
+        "detail": "No free plan in documented plans (explicit absence)",
+        "source": "enrichment"
+      },
+      {
+        "field": "trial",
+        "status": "UNKNOWN",
+        "detail": "Trial not explicitly documented — do not assume none",
+        "source": "none"
+      },
+      {
+        "field": "integrations",
+        "status": "PASS",
+        "detail": "integrationSlugs=0, enrichment=3",
+        "source": "enrichment"
+      },
+      {
+        "field": "alternatives",
+        "status": "PASS",
+        "detail": "alternativeSlugs=3",
+        "source": "seed"
+      },
+      {
+        "field": "competitors",
+        "status": "PASS",
+        "detail": "competitorSlugs=5",
+        "source": "seed"
+      },
+      {
+        "field": "affiliate",
+        "status": "PASS",
+        "detail": "No affiliate relationship (explicit)",
+        "source": "seed"
+      },
+      {
+        "field": "source_provenance",
+        "status": "PASS",
+        "detail": "seed sources=0, enrichment sourceIds=2",
+        "source": "enrichment"
+      },
+      {
+        "field": "verification_date",
+        "status": "PASS",
+        "detail": "Latest verification/research signal: 2026-08-18T14:00:00.000Z",
+        "source": "enrichment"
+      }
+    ],
+    "passCount": 17,
+    "partialCount": 0,
+    "missingCount": 0,
+    "unknownCount": 1,
+    "score": 94
+  },
+  "decisionHub": {
+    "whatItIs": "Paylocity is a unified HR, payroll, finance, and IT platform aimed at small, midsize (100–499), and enterprise (500+) US employers. Payroll, tax services (IRS registered reporting agent, 50 states + territories), time & labor, talent, Community, and Ignite AI are first-party pillars. Pricing is ‘get a customized quote’ — no published PEPM. Score as payroll-benefits landscape (mid-market HCM), not the Gusto SMB award and not Workday enterprise HCM.",
+    "bestFor": [
+      "US mid-market companies (roughly 100–1,000 employees) that want payroll+HR in one modern platform",
+      "Teams comparing Paylocity vs ADP Workforce Now vs Paycor",
+      "Orgs that may add finance/IT and Ignite AI later",
+      "small-business / operations: Paylocity fit for small-business operations teams in the payroll-benefits job cluster, from first-party positioning and HR Priority-3 research.",
+      "mid-market / operations: Paylocity fit for mid-market operations teams in the payroll-benefits job cluster, from first-party positioning and HR Priority-3 research.",
+      "enterprise / operations: Paylocity fit for enterprise operations teams in the payroll-benefits job cluster, from first-party positioning and HR Priority-3 research."
+    ],
+    "notIdealFor": [
+      "Tiny teams that want Gusto’s published $49+$6 floor",
+      "Global enterprise HCM (Workday / Oracle)",
+      "Complex hourly WFM as the primary job (UKG Pro)",
+      "No published PEPM",
+      "Not a Workday-class global HCM",
+      "Not Gusto’s published SMB floor"
+    ],
+    "coreCapabilities": [
+      "applicant tracking",
+      "career site job boards",
+      "interview scheduling",
+      "core hris",
+      "payroll processing",
+      "benefits admin",
+      "workforce scheduling",
+      "frontline comms"
+    ],
+    "pricingSummary": "1 documented plan · entry paid: Paylocity platform",
+    "keyTradeoffs": [
+      "No published PEPM",
+      "Not a Workday-class global HCM",
+      "Not Gusto’s published SMB floor",
+      "Scheduling/WFM is not UKG-class",
+      "No free plan"
+    ],
+    "alternatives": [
+      {
+        "slug": "gusto",
+        "name": "Gusto"
+      },
+      {
+        "slug": "adp-workforce-now",
+        "name": "ADP Workforce Now"
+      },
+      {
+        "slug": "paycor",
+        "name": "Paycor"
+      },
+      {
+        "slug": "rippling",
+        "name": "Rippling"
+      },
+      {
+        "slug": "bamboohr",
+        "name": "BambooHR"
+      }
+    ],
+    "importantComparisons": [
+      {
+        "slug": "gusto-vs-paylocity",
+        "title": "Gusto vs Paylocity",
+        "href": "/compare/gusto-vs-paylocity/"
+      },
+      {
+        "slug": "paycor-vs-paylocity",
+        "title": "Paycor vs Paylocity",
+        "href": "/compare/paycor-vs-paylocity/"
+      },
+      {
+        "slug": "adp-workforce-now-vs-paylocity",
+        "title": "ADP Workforce Now vs Paylocity",
+        "href": "/compare/adp-workforce-now-vs-paylocity/"
+      },
+      {
+        "slug": "7shifts-vs-paylocity",
+        "title": "7shifts vs Paylocity",
+        "href": "/compare/7shifts-vs-paylocity/"
+      },
+      {
+        "slug": "ashby-vs-paylocity",
+        "title": "Ashby vs Paylocity",
+        "href": "/compare/ashby-vs-paylocity/"
+      },
+      {
+        "slug": "bamboohr-vs-paylocity",
+        "title": "BambooHR vs Paylocity",
+        "href": "/compare/bamboohr-vs-paylocity/"
+      }
+    ],
+    "relevantGuides": [
+      {
+        "slug": "paylocity-implementation",
+        "title": "Paylocity Implementation: 30/60/90 HR Rollout That Sticks",
+        "href": "/guides/paylocity-implementation/"
+      },
+      {
+        "slug": "paylocity-migration",
+        "title": "Paylocity Migration: Move People Data Without Losing Trust",
+        "href": "/guides/paylocity-migration/"
+      },
+      {
+        "slug": "paylocity-setup",
+        "title": "Paylocity Setup: Day-Zero Path to a Working HR Loop",
+        "href": "/guides/paylocity-setup/"
+      },
+      {
+        "slug": "paylocity-plans",
+        "title": "Paylocity Plans: Seats, Hubs, and Qualifying Tiers",
+        "href": "/guides/paylocity-plans/"
+      },
+      {
+        "slug": "is-paylocity-worth-it",
+        "title": "Is Paylocity Worth It? Fit Scenarios Before You Buy",
+        "href": "/guides/is-paylocity-worth-it/"
+      }
+    ],
+    "evidenceState": "Research/data-based (no completed hands-on test) · Latest verification/research signal: 2026-08-18T14:00:00.000Z · Editorial assessment: approved",
+    "nextDecisionStep": "Compare against peers: Gusto vs Paylocity",
+    "missingSections": [
+      "trial"
+    ]
+  },
+  "dependents": [
+    {
+      "kind": "guide",
+      "slug": "paylocity-implementation",
+      "path": "/guides/paylocity-implementation/"
+    },
+    {
+      "kind": "guide",
+      "slug": "paylocity-migration",
+      "path": "/guides/paylocity-migration/"
+    },
+    {
+      "kind": "guide",
+      "slug": "paylocity-setup",
+      "path": "/guides/paylocity-setup/"
+    },
+    {
+      "kind": "guide",
+      "slug": "paylocity-plans",
+      "path": "/guides/paylocity-plans/"
+    },
+    {
+      "kind": "guide",
+      "slug": "is-paylocity-worth-it",
+      "path": "/guides/is-paylocity-worth-it/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "gusto-vs-paylocity",
+      "path": "/compare/gusto-vs-paylocity/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "paycor-vs-paylocity",
+      "path": "/compare/paycor-vs-paylocity/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "adp-workforce-now-vs-paylocity",
+      "path": "/compare/adp-workforce-now-vs-paylocity/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "7shifts-vs-paylocity",
+      "path": "/compare/7shifts-vs-paylocity/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "ashby-vs-paylocity",
+      "path": "/compare/ashby-vs-paylocity/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "bamboohr-vs-paylocity",
+      "path": "/compare/bamboohr-vs-paylocity/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "bolt-for-business-vs-paylocity",
+      "path": "/compare/bolt-for-business-vs-paylocity/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "carepatron-vs-paylocity",
+      "path": "/compare/carepatron-vs-paylocity/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "dayforce-vs-paylocity",
+      "path": "/compare/dayforce-vs-paylocity/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "deputy-vs-paylocity",
+      "path": "/compare/deputy-vs-paylocity/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "greenhouse-vs-paylocity",
+      "path": "/compare/greenhouse-vs-paylocity/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "hibob-vs-paylocity",
+      "path": "/compare/hibob-vs-paylocity/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "homebase-vs-paylocity",
+      "path": "/compare/homebase-vs-paylocity/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "lever-vs-paylocity",
+      "path": "/compare/lever-vs-paylocity/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "oracle-hcm-vs-paylocity",
+      "path": "/compare/oracle-hcm-vs-paylocity/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "paylocity-vs-personio",
+      "path": "/compare/paylocity-vs-personio/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "paylocity-vs-rippling",
+      "path": "/compare/paylocity-vs-rippling/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "paylocity-vs-trainual",
+      "path": "/compare/paylocity-vs-trainual/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "paylocity-vs-ukg-pro",
+      "path": "/compare/paylocity-vs-ukg-pro/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "paylocity-vs-when-i-work",
+      "path": "/compare/paylocity-vs-when-i-work/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "paylocity-vs-workable",
+      "path": "/compare/paylocity-vs-workable/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "paylocity-vs-workday",
+      "path": "/compare/paylocity-vs-workday/"
+    },
+    {
+      "kind": "alternatives",
+      "slug": "paylocity",
+      "path": "/alternatives/paylocity/"
+    },
+    {
+      "kind": "pricing",
+      "slug": "paylocity",
+      "path": "/software/paylocity/pricing/"
+    },
+    {
+      "kind": "tools",
+      "slug": "hr-cost-calculator",
+      "path": "/tools/hr-cost-calculator/"
+    }
+  ],
+  "dependentsNeedingRefresh": [],
+  "remediation": [
+    "verify:trial"
+  ],
+  "notes": [
+    "fieldAudit score=94",
+    "decisionHub bestFor=6 notIdeal=6",
+    "dependents=30"
+  ],
+  "materiallyImproved": true
+}

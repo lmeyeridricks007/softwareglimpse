@@ -19,6 +19,8 @@ import {
 } from "@/domain/publication-context";
 import { isPubliclyAvailable } from "@/domain/publishing";
 import { isEntityIndexable } from "@/domain/quality-gates";
+import { buildCategoryHubSections } from "@/services/seo/knowledge-graph/hub-sections";
+import type { HubSection } from "@/services/seo/knowledge-graph/types";
 import {
   getAllAudiencesUnfiltered,
   getAllBestPagesUnfiltered,
@@ -207,6 +209,8 @@ export type CategoryHubModel = {
     }>;
   } | null;
   navItems: CategoryHubNavItem[];
+  /** Organized knowledge-graph hub sections (Start here, guides, tools…). */
+  hubSections: HubSection[];
   lastUpdated: string | null;
   decisionTools: Array<{
     slug: string;
@@ -598,8 +602,8 @@ export function buildCategoryHubModel(category: Category): CategoryHubModel {
 
   const hubProductSlugs = new Set(primaryProducts.map((p) => p.slug));
 
-  const allCategoryComparisons = getAllComparisonsUnfiltered().filter(
-    (item) => {
+  const allCategoryComparisons = getAllComparisonsUnfiltered()
+    .filter((item) => {
       const inCategory = item.categorySlug === category.slug;
       const inHubRoster =
         item.productSlugs.length >= 2 &&
@@ -610,8 +614,12 @@ export function buildCategoryHubModel(category: Category): CategoryHubModel {
         item.outcomes.length > 0 ||
         item.metadata.researchStatus !== "none"
       );
-    },
-  );
+    })
+    .sort((a, b) => {
+      const aKeep = isEntityIndexable({ kind: "comparison", entity: a }) ? 1 : 0;
+      const bKeep = isEntityIndexable({ kind: "comparison", entity: b }) ? 1 : 0;
+      return bKeep - aKeep;
+    });
 
   const bestPages = getAllBestPagesUnfiltered().filter(
     (item) => item.categorySlug === category.slug,
@@ -1113,8 +1121,10 @@ export function buildCategoryHubModel(category: Category): CategoryHubModel {
 
   // Same section chrome on every category hub (CRM parity). Sections render
   // empty states when catalogue content is thin so anchors always resolve.
+  const hubSections = buildCategoryHubSections(category.slug);
   const navItems: CategoryHubNavItem[] = [
     { id: "overview", label: "Overview", icon: "overview" },
+    { id: "start-here", label: "Start here", icon: "explore" },
     { id: "explore", label: "Explore", icon: "explore" },
     { id: "software", label: "Software", icon: "star" },
     ...(rankingsApproved
@@ -1141,7 +1151,7 @@ export function buildCategoryHubModel(category: Category): CategoryHubModel {
       id: "tools",
       label: "Tools",
       icon: "puzzle",
-      href: finderHref,
+      href: finderHref ?? undefined,
     },
     { id: "faq", label: "FAQ", icon: "faq" },
   ];
@@ -1188,6 +1198,7 @@ export function buildCategoryHubModel(category: Category): CategoryHubModel {
     verifiedStartingPrices,
     featureMatrix,
     navItems,
+    hubSections,
     lastUpdated,
     decisionTools: getRoutableTools(category.slug)
       .filter((tool): tool is typeof tool & { href: string } => Boolean(tool.href))

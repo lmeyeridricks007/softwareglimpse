@@ -26,8 +26,12 @@ const PATH_ALIASES: Record<string, string> = {
   "/features/pipeline-management/": "/capabilities/pipeline-management/",
 };
 
-/** Ensure a path starts with `/` and ends with `/` (except root). */
-export function normalizePath(path: string): string {
+/**
+ * Slash/case/query cleanup only — does **not** rewrite path aliases.
+ * Use for per-page graph identity (link health, outbound source keys) so a
+ * legacy `/features/…` source is not merged with its `/capabilities/…` twin.
+ */
+export function identityPath(path: string): string {
   if (!path || path === "/") return "/";
   let pathname = path.trim();
   try {
@@ -37,18 +41,31 @@ export function normalizePath(path: string): string {
   } catch {
     // keep raw
   }
-  // Drop query/hash if a caller passed them inline
   pathname = pathname.split("?")[0]?.split("#")[0] ?? pathname;
   if (!pathname.startsWith("/")) pathname = `/${pathname}`;
-  // Collapse duplicate slashes (except protocol — already stripped)
   pathname = pathname.replace(/\/{2,}/g, "/");
   pathname = pathname.toLowerCase();
   if (pathname !== "/" && !pathname.endsWith("/")) {
     pathname = `${pathname}/`;
   }
-  const aliased = PATH_ALIASES[pathname] ?? PATH_ALIASES[pathname.replace(/\/$/, "")];
-  if (aliased) return normalizePath(aliased);
   return pathname === "" ? "/" : pathname;
+}
+
+/** True when the path is a known alias that rewrites to a different public path. */
+export function isAliasedPath(path: string): boolean {
+  const id = identityPath(path);
+  const canonical = normalizePath(path);
+  return id !== canonical;
+}
+
+/** Ensure a path starts with `/` and ends with `/` (except root). */
+export function normalizePath(path: string): string {
+  const pathname = identityPath(path);
+  if (pathname === "/") return "/";
+  const aliased =
+    PATH_ALIASES[pathname] ?? PATH_ALIASES[pathname.replace(/\/$/, "")];
+  if (aliased) return normalizePath(aliased);
+  return pathname;
 }
 
 export function resolveCanonicalPath(

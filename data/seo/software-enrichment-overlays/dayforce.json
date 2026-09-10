@@ -1,0 +1,404 @@
+{
+  "slug": "dayforce",
+  "updatedAt": "2026-09-09T18:11:53.757Z",
+  "version": "1.0.0",
+  "fieldAudit": {
+    "slug": "dayforce",
+    "checkedAt": "2026-09-09T18:11:53.757Z",
+    "items": [
+      {
+        "field": "name",
+        "status": "PASS",
+        "detail": "Name: Dayforce",
+        "source": "seed"
+      },
+      {
+        "field": "product_status",
+        "status": "PASS",
+        "detail": "productLifecycle=active",
+        "source": "seed"
+      },
+      {
+        "field": "canonical_vendor",
+        "status": "PASS",
+        "detail": "Vendor: Dayforce, Inc.",
+        "source": "seed"
+      },
+      {
+        "field": "category",
+        "status": "PASS",
+        "detail": "primaryCategorySlug=hr",
+        "source": "seed"
+      },
+      {
+        "field": "description",
+        "status": "PASS",
+        "detail": "Description present (AI-powered HCM (HR, pay, time, talent) with continuous payroll calculation — cus…)",
+        "source": "seed"
+      },
+      {
+        "field": "target_audience",
+        "status": "PASS",
+        "detail": "Sizes=2, teams=1, assessment bestFor=3",
+        "source": "assessment"
+      },
+      {
+        "field": "use_cases",
+        "status": "PASS",
+        "detail": "useCaseSlugs=1",
+        "source": "seed"
+      },
+      {
+        "field": "capabilities",
+        "status": "PASS",
+        "detail": "featureRatings=0, enrichment features=16",
+        "source": "enrichment"
+      },
+      {
+        "field": "pricing",
+        "status": "PASS",
+        "detail": "Pricing envelope present",
+        "source": "enrichment"
+      },
+      {
+        "field": "plans",
+        "status": "PASS",
+        "detail": "plans=1",
+        "source": "enrichment"
+      },
+      {
+        "field": "free_plan",
+        "status": "PASS",
+        "detail": "No free plan in documented plans (explicit absence)",
+        "source": "enrichment"
+      },
+      {
+        "field": "trial",
+        "status": "UNKNOWN",
+        "detail": "Trial not explicitly documented — do not assume none",
+        "source": "none"
+      },
+      {
+        "field": "integrations",
+        "status": "PASS",
+        "detail": "integrationSlugs=0, enrichment=3",
+        "source": "enrichment"
+      },
+      {
+        "field": "alternatives",
+        "status": "PASS",
+        "detail": "alternativeSlugs=3",
+        "source": "seed"
+      },
+      {
+        "field": "competitors",
+        "status": "PASS",
+        "detail": "competitorSlugs=4",
+        "source": "seed"
+      },
+      {
+        "field": "affiliate",
+        "status": "PASS",
+        "detail": "No affiliate relationship (explicit)",
+        "source": "seed"
+      },
+      {
+        "field": "source_provenance",
+        "status": "PASS",
+        "detail": "seed sources=0, enrichment sourceIds=2",
+        "source": "enrichment"
+      },
+      {
+        "field": "verification_date",
+        "status": "PASS",
+        "detail": "Latest verification/research signal: 2026-08-18T14:00:00.000Z",
+        "source": "enrichment"
+      }
+    ],
+    "passCount": 17,
+    "partialCount": 0,
+    "missingCount": 0,
+    "unknownCount": 1,
+    "score": 94
+  },
+  "decisionHub": {
+    "whatItIs": "Dayforce (legal/brand shift from Ceridian in 2024) is a single-application HCM for HR, payroll, time, talent, planning, and analytics. The product thesis is continuous calculation: pay impacts update as timecards change rather than a week-end batch. First-party pricing is quote-led with no published PEPM or free plan. Gartner Cloud HCM Leader (vendor-cited, 2025). Landscape enterprise HCM — not an SMB payroll peer.",
+    "bestFor": [
+      "Mid-to-enterprise teams that want HR, pay, and time in one app with continuous payroll calc",
+      "Retail/manufacturing orgs comparing Dayforce vs UKG Pro",
+      "Buyers who will take a Gartner-HCM-leader shortlist quote",
+      "mid-market / operations: Dayforce fit for mid-market operations teams in the enterprise-hcm job cluster, from first-party positioning and HR Priority-3 research.",
+      "enterprise / operations: Dayforce fit for enterprise operations teams in the enterprise-hcm job cluster, from first-party positioning and HR Priority-3 research."
+    ],
+    "notIdealFor": [
+      "SMB published-price payroll (Gusto)",
+      "Structured-hiring ATS as the primary purchase (Greenhouse)",
+      "Deskless comms hubs without enterprise payroll",
+      "No published list price",
+      "Implementation is typically a large share of year-one TCO",
+      "Not an SMB Gusto/BambooHR substitute"
+    ],
+    "coreCapabilities": [
+      "applicant tracking",
+      "career site job boards",
+      "interview scheduling",
+      "core hris",
+      "payroll processing",
+      "benefits admin",
+      "workforce scheduling",
+      "frontline comms"
+    ],
+    "pricingSummary": "1 documented plan · entry paid: Dayforce HCM",
+    "keyTradeoffs": [
+      "No published list price",
+      "Implementation is typically a large share of year-one TCO",
+      "Not an SMB Gusto/BambooHR substitute",
+      "Talent/ATS depth is HCM-module, not Greenhouse-class",
+      "No free plan"
+    ],
+    "alternatives": [
+      {
+        "slug": "ukg-pro",
+        "name": "UKG Pro"
+      },
+      {
+        "slug": "workday",
+        "name": "Workday"
+      },
+      {
+        "slug": "adp-workforce-now",
+        "name": "ADP Workforce Now"
+      },
+      {
+        "slug": "oracle-hcm",
+        "name": "Oracle Cloud HCM"
+      }
+    ],
+    "importantComparisons": [
+      {
+        "slug": "dayforce-vs-workday",
+        "title": "Dayforce vs Workday",
+        "href": "/compare/dayforce-vs-workday/"
+      },
+      {
+        "slug": "dayforce-vs-ukg-pro",
+        "title": "Dayforce vs UKG Pro",
+        "href": "/compare/dayforce-vs-ukg-pro/"
+      },
+      {
+        "slug": "7shifts-vs-dayforce",
+        "title": "7shifts vs Dayforce",
+        "href": "/compare/7shifts-vs-dayforce/"
+      },
+      {
+        "slug": "adp-workforce-now-vs-dayforce",
+        "title": "ADP Workforce Now vs Dayforce",
+        "href": "/compare/adp-workforce-now-vs-dayforce/"
+      },
+      {
+        "slug": "ashby-vs-dayforce",
+        "title": "Ashby vs Dayforce",
+        "href": "/compare/ashby-vs-dayforce/"
+      },
+      {
+        "slug": "bamboohr-vs-dayforce",
+        "title": "BambooHR vs Dayforce",
+        "href": "/compare/bamboohr-vs-dayforce/"
+      }
+    ],
+    "relevantGuides": [
+      {
+        "slug": "dayforce-implementation",
+        "title": "Dayforce Implementation: 30/60/90 HR Rollout That Sticks",
+        "href": "/guides/dayforce-implementation/"
+      },
+      {
+        "slug": "dayforce-migration",
+        "title": "Dayforce Migration: Move People Data Without Losing Trust",
+        "href": "/guides/dayforce-migration/"
+      },
+      {
+        "slug": "dayforce-setup",
+        "title": "Dayforce Setup: Day-Zero Path to a Working HR Loop",
+        "href": "/guides/dayforce-setup/"
+      },
+      {
+        "slug": "dayforce-plans",
+        "title": "Dayforce Plans: Seats, Hubs, and Qualifying Tiers",
+        "href": "/guides/dayforce-plans/"
+      },
+      {
+        "slug": "is-dayforce-worth-it",
+        "title": "Is Dayforce Worth It? Fit Scenarios Before You Buy",
+        "href": "/guides/is-dayforce-worth-it/"
+      }
+    ],
+    "evidenceState": "Research/data-based (no completed hands-on test) · Latest verification/research signal: 2026-08-18T14:00:00.000Z · Editorial assessment: approved",
+    "nextDecisionStep": "Compare against peers: Dayforce vs Workday",
+    "missingSections": [
+      "trial"
+    ]
+  },
+  "dependents": [
+    {
+      "kind": "guide",
+      "slug": "dayforce-implementation",
+      "path": "/guides/dayforce-implementation/"
+    },
+    {
+      "kind": "guide",
+      "slug": "dayforce-migration",
+      "path": "/guides/dayforce-migration/"
+    },
+    {
+      "kind": "guide",
+      "slug": "dayforce-setup",
+      "path": "/guides/dayforce-setup/"
+    },
+    {
+      "kind": "guide",
+      "slug": "dayforce-plans",
+      "path": "/guides/dayforce-plans/"
+    },
+    {
+      "kind": "guide",
+      "slug": "is-dayforce-worth-it",
+      "path": "/guides/is-dayforce-worth-it/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "dayforce-vs-workday",
+      "path": "/compare/dayforce-vs-workday/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "dayforce-vs-ukg-pro",
+      "path": "/compare/dayforce-vs-ukg-pro/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "7shifts-vs-dayforce",
+      "path": "/compare/7shifts-vs-dayforce/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "adp-workforce-now-vs-dayforce",
+      "path": "/compare/adp-workforce-now-vs-dayforce/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "ashby-vs-dayforce",
+      "path": "/compare/ashby-vs-dayforce/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "bamboohr-vs-dayforce",
+      "path": "/compare/bamboohr-vs-dayforce/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "bolt-for-business-vs-dayforce",
+      "path": "/compare/bolt-for-business-vs-dayforce/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "carepatron-vs-dayforce",
+      "path": "/compare/carepatron-vs-dayforce/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "dayforce-vs-deputy",
+      "path": "/compare/dayforce-vs-deputy/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "dayforce-vs-greenhouse",
+      "path": "/compare/dayforce-vs-greenhouse/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "dayforce-vs-gusto",
+      "path": "/compare/dayforce-vs-gusto/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "dayforce-vs-hibob",
+      "path": "/compare/dayforce-vs-hibob/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "dayforce-vs-homebase",
+      "path": "/compare/dayforce-vs-homebase/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "dayforce-vs-lever",
+      "path": "/compare/dayforce-vs-lever/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "dayforce-vs-oracle-hcm",
+      "path": "/compare/dayforce-vs-oracle-hcm/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "dayforce-vs-paycor",
+      "path": "/compare/dayforce-vs-paycor/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "dayforce-vs-paylocity",
+      "path": "/compare/dayforce-vs-paylocity/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "dayforce-vs-personio",
+      "path": "/compare/dayforce-vs-personio/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "dayforce-vs-rippling",
+      "path": "/compare/dayforce-vs-rippling/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "dayforce-vs-trainual",
+      "path": "/compare/dayforce-vs-trainual/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "dayforce-vs-when-i-work",
+      "path": "/compare/dayforce-vs-when-i-work/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "dayforce-vs-workable",
+      "path": "/compare/dayforce-vs-workable/"
+    },
+    {
+      "kind": "alternatives",
+      "slug": "dayforce",
+      "path": "/alternatives/dayforce/"
+    },
+    {
+      "kind": "pricing",
+      "slug": "dayforce",
+      "path": "/software/dayforce/pricing/"
+    },
+    {
+      "kind": "tools",
+      "slug": "hr-cost-calculator",
+      "path": "/tools/hr-cost-calculator/"
+    }
+  ],
+  "dependentsNeedingRefresh": [],
+  "remediation": [
+    "verify:trial"
+  ],
+  "notes": [
+    "fieldAudit score=94",
+    "decisionHub bestFor=5 notIdeal=6",
+    "dependents=30"
+  ],
+  "materiallyImproved": true
+}

@@ -12,7 +12,7 @@ export function buildCrmCategoryHubProfile(): CategoryHubProfile {
     shortName: "CRM",
     displayName: "CRM Software",
     tagline:
-      "Find CRM software that fits your business, team, and sales process.",
+      "Choose CRM by operating job — pipeline velocity, relationship memory, or marketing+CRM — then check seat and automation ceilings.",
     definition:
       "CRM (customer relationship management) software helps teams manage contacts, deals, and customer interactions in one place. The right CRM matches your sales process — pipeline stages, follow-ups, and reporting — not a generic feature checklist.",
     iconSlug: "crm",

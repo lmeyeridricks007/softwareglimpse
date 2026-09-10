@@ -1,4 +1,4 @@
-import type { GuidePage } from "@/domain";
+import type { GuidePageInput } from "@/domain";
 import type { z } from "zod";
 import type { GuideContentBlockSchema } from "@/domain";
 import { tier13GuideScheduledAt } from "@/data/config/publishing/tier-13-social-media-marketing-launch-2026-10-01";
@@ -34,7 +34,7 @@ const blocks: GuideBlockInput[] = [
   },
 ];
 
-function metadata(): GuidePage["metadata"] {
+function metadata(): GuidePageInput["metadata"] {
   return SCHEDULED_AT
     ? {
         status: "scheduled",
@@ -54,7 +54,7 @@ function metadata(): GuidePage["metadata"] {
       };
 }
 
-export const socialMediaMarketingPricingGuide: GuidePage = {
+export const socialMediaMarketingPricingGuide: GuidePageInput = {
   id: "guide-social-media-marketing-pricing-guide",
   slug: SLUG,
   title: "Social Media Marketing Software Pricing Guide",
@@ -74,7 +74,7 @@ export const socialMediaMarketingPricingGuide: GuidePage = {
     "what-is-social-media-marketing-software",
     "how-to-choose-social-media-marketing-software",
   ],
-  blocks: blocks as GuidePage["blocks"],
+  blocks: blocks as GuidePageInput["blocks"],
   checklist: [],
   sections: [],
   faq: [],
@@ -85,6 +85,6 @@ export const socialMediaMarketingPricingGuide: GuidePage = {
     description:
       "How to budget social media marketing software — channels, seats, mention caps, plan gates, and add-ons.",
     canonicalPath: `/guides/${SLUG}/`,
-    indexable: !SCHEDULED_AT,
+    indexable: true,
   },
 };

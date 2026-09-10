@@ -8,6 +8,7 @@ import { loadAssessment } from "@/data/editorial/store";
 import { loadEnrichment } from "@/data/research/store";
 import { attachExistingSupportingFacts, softenUnfactedProductA } from "./attach-supporting-facts";
 import { researchedAvailabilityTieReason } from "./distinctive-research";
+import { mayCreateIndexableComparison } from "@/services/seo/compare-index-worthiness/generation-policy";
 
 type ComparisonInput = z.input<typeof ComparisonSchema>;
 type Outcome = NonNullable<ComparisonInput["outcomes"]>[number];
@@ -755,33 +756,47 @@ function finalize(
     attachExistingSupportingFacts(ctx.slugA, ctx.slugB, outcomes),
   );
   const title = `${ctx.labelA} vs ${ctx.labelB}`;
-  return {
+  const productA = softwareSeed.find((s) => s.slug === ctx.slugA);
+  const productB = softwareSeed.find((s) => s.slug === ctx.slugB);
+  const draft = {
     id: `cmp-${slug}`,
     slug,
     title,
-    productSlugs: [ctx.slugA, ctx.slugB],
+    productSlugs: [ctx.slugA, ctx.slugB] as [string, string],
     categorySlug: ctx.category,
     criterionSlugs: [...criterionSlugs],
     outcomes: withFacts,
     verdict: verdictFor(ctx),
-    overallWinnerKind: "depends",
+    overallWinnerKind: "depends" as const,
     overallWinnerSlug: null,
     bestFor: [bestFor(ctx.slugA, ctx.assessmentA), bestFor(ctx.slugB, ctx.assessmentB)],
     summary: `Researched side-by-side comparison of ${ctx.labelA} and ${ctx.labelB} using ${ctx.category.replace(/-/g, " ")} comparison criteria. No universal winner — choose by job-cluster fit.`,
     pricingNotes: pricingNotesFor(ctx),
     methodologyVersion: "1.0.0",
-    editorialStatus: "approved",
+    editorialStatus: "approved" as const,
     metadata: {
-      status: "published",
-      researchStatus: "complete",
+      status: "published" as const,
+      researchStatus: "complete" as const,
       publishedAt: PUBLISHED_AT,
       updatedAt: PUBLISHED_AT,
     },
     seo: {
       title: seoTitle(ctx.labelA, ctx.labelB),
       description: seoDescription(ctx.labelA, ctx.labelB, topics),
-      indexable: true,
+      indexable: false,
       canonicalPath: `/compare/${slug}/`,
+    },
+  };
+  const indexPolicy = mayCreateIndexableComparison({
+    productA,
+    productB,
+    draft: draft as never,
+  });
+  return {
+    ...draft,
+    seo: {
+      ...draft.seo,
+      indexable: indexPolicy.ok,
     },
   };
 }
@@ -1439,6 +1454,12 @@ function listInCategoryPairs(
   seen: Set<string>,
   assessments: Map<string, ProductEditorialAssessment | null>,
 ): EligibleCompetitorPair[] {
+  /**
+   * Still materializes the full in-category mesh for onsite UX / builder coverage.
+   * Indexability is gated separately via `mayCreateIndexableComparison` (declared
+   * competitor/alternative/comparable only). Unrestricted Cartesian must not
+   * silently become KEEP_INDEX search pages.
+   */
   const out: EligibleCompetitorPair[] = [];
   const products = published
     .filter((item) => item.primaryCategorySlug === category)

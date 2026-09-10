@@ -1,4 +1,4 @@
-import type { GuidePage } from "@/domain";
+import type { GuidePageInput } from "@/domain";
 import type { z } from "zod";
 import type { GuideContentBlockSchema } from "@/domain";
 
@@ -376,7 +376,7 @@ const crmImplementationMistakesBlocks: GuideBlockInput[] = [
   },
 ];
 
-export const crmImplementationMistakesGuide: GuidePage = {
+export const crmImplementationMistakesGuide: GuidePageInput = {
   id: "guide-crm-implementation-mistakes",
   slug: "crm-implementation-mistakes",
   title: "CRM Implementation Mistakes: Fixes Before You Expand",
@@ -417,7 +417,7 @@ export const crmImplementationMistakesGuide: GuidePage = {
     "crm-adoption",
     "common-crm-mistakes",
   ],
-  blocks: crmImplementationMistakesBlocks as GuidePage["blocks"],
+  blocks: crmImplementationMistakesBlocks as GuidePageInput["blocks"],
   checklist: [
     {
       id: "pilot-gate",

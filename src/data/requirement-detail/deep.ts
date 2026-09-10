@@ -3,28 +3,30 @@ import { requirementDepthPartA } from "./deep-part-a";
 import { requirementDepthPartB } from "./deep-part-b";
 import { requirementDepthPartC } from "./deep-part-c";
 
-type Depth = Pick<
-  RequirementDetailProfile,
-  | "displayTitle"
-  | "tagline"
-  | "overview"
-  | "whoThisIsFor"
-  | "whatMattersIntro"
-  | "workedExample"
-  | "workedExampleSecondary"
-  | "challenges"
-  | "outcomes"
-  | "acceptanceNeeds"
-  | "workflowSteps"
-  | "heroVisual"
-  | "needsVisual"
-  | "workflowVisual"
-  | "faq"
-  | "useCaseLinks"
-  | "primaryCapabilityHref"
-  | "primaryCapabilitySlug"
-  | "primaryCapabilityName"
-  | "lastReviewedAt"
+type Depth = Partial<
+  Pick<
+    RequirementDetailProfile,
+    | "displayTitle"
+    | "tagline"
+    | "overview"
+    | "whoThisIsFor"
+    | "whatMattersIntro"
+    | "workedExample"
+    | "workedExampleSecondary"
+    | "challenges"
+    | "outcomes"
+    | "acceptanceNeeds"
+    | "workflowSteps"
+    | "heroVisual"
+    | "needsVisual"
+    | "workflowVisual"
+    | "faq"
+    | "useCaseLinks"
+    | "primaryCapabilityHref"
+    | "primaryCapabilitySlug"
+    | "primaryCapabilityName"
+    | "lastReviewedAt"
+  >
 >;
 
 /**
@@ -54,11 +56,14 @@ export const requirementDepthBySlug: Record<string, Depth> = Object.fromEntries(
     ...requirementDepthPartA,
     ...requirementDepthPartB,
     ...requirementDepthPartC,
-  }).map(([slug, depth]) => [
-    slug,
-    {
-      ...depth,
-      lastReviewedAt: depth.lastReviewedAt ?? "2026-08-14T00:00:00.000Z",
-    },
-  ]),
+  }).map(([slug, depth]) => {
+    const layer = depth as Depth;
+    return [
+      slug,
+      {
+        ...layer,
+        lastReviewedAt: layer.lastReviewedAt ?? "2026-08-14T00:00:00.000Z",
+      },
+    ];
+  }),
 );

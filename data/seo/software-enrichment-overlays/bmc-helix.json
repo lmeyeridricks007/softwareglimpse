@@ -1,0 +1,555 @@
+{
+  "slug": "bmc-helix",
+  "updatedAt": "2026-09-07T22:31:21.953Z",
+  "version": "1.0.0",
+  "fieldAudit": {
+    "slug": "bmc-helix",
+    "checkedAt": "2026-09-07T22:31:21.952Z",
+    "items": [
+      {
+        "field": "name",
+        "status": "PASS",
+        "detail": "Name: BMC Helix ITSM",
+        "source": "seed"
+      },
+      {
+        "field": "product_status",
+        "status": "PASS",
+        "detail": "productLifecycle=active",
+        "source": "seed"
+      },
+      {
+        "field": "canonical_vendor",
+        "status": "UNKNOWN",
+        "detail": "Company/vendor not documented",
+        "source": "none"
+      },
+      {
+        "field": "category",
+        "status": "PASS",
+        "detail": "primaryCategorySlug=it-development",
+        "source": "seed"
+      },
+      {
+        "field": "description",
+        "status": "PASS",
+        "detail": "Description present (Enterprise ITSM (Helix / Remedy lineage) — no BMC.com list; AppExchange signal ~…)",
+        "source": "seed"
+      },
+      {
+        "field": "target_audience",
+        "status": "PASS",
+        "detail": "Sizes=2, teams=2, assessment bestFor=3",
+        "source": "assessment"
+      },
+      {
+        "field": "use_cases",
+        "status": "PASS",
+        "detail": "useCaseSlugs=1",
+        "source": "seed"
+      },
+      {
+        "field": "capabilities",
+        "status": "PASS",
+        "detail": "featureRatings=0, enrichment features=17",
+        "source": "enrichment"
+      },
+      {
+        "field": "pricing",
+        "status": "PASS",
+        "detail": "Pricing envelope present",
+        "source": "enrichment"
+      },
+      {
+        "field": "plans",
+        "status": "PASS",
+        "detail": "plans=2",
+        "source": "enrichment"
+      },
+      {
+        "field": "free_plan",
+        "status": "PASS",
+        "detail": "No free plan in documented plans (explicit absence)",
+        "source": "enrichment"
+      },
+      {
+        "field": "trial",
+        "status": "UNKNOWN",
+        "detail": "Trial not explicitly documented — do not assume none",
+        "source": "none"
+      },
+      {
+        "field": "integrations",
+        "status": "PASS",
+        "detail": "integrationSlugs=0, enrichment=3",
+        "source": "enrichment"
+      },
+      {
+        "field": "alternatives",
+        "status": "PASS",
+        "detail": "alternativeSlugs=2",
+        "source": "seed"
+      },
+      {
+        "field": "competitors",
+        "status": "PASS",
+        "detail": "competitorSlugs=5",
+        "source": "seed"
+      },
+      {
+        "field": "affiliate",
+        "status": "PASS",
+        "detail": "No affiliate relationship (explicit)",
+        "source": "seed"
+      },
+      {
+        "field": "source_provenance",
+        "status": "PASS",
+        "detail": "seed sources=0, enrichment sourceIds=3",
+        "source": "enrichment"
+      },
+      {
+        "field": "verification_date",
+        "status": "PASS",
+        "detail": "Latest verification/research signal: 2026-08-18T22:00:00.000Z",
+        "source": "enrichment"
+      }
+    ],
+    "passCount": 16,
+    "partialCount": 0,
+    "missingCount": 0,
+    "unknownCount": 2,
+    "score": 89
+  },
+  "decisionHub": {
+    "whatItIs": "BMC Helix ITSM is BMC’s enterprise IT service management platform — the Helix/cloud continuation of the Remedy lineage (incidents, problems, changes, catalog, CMDB-adjacent ITSM). BMC.com does not publish a self-serve price card. An AppExchange listing around $114.75/named user/month is a marketplace signal, not a BMC.com SKU — startingPriceMonthly $115 is that rounded figure at medium confidence. Always RFP. Same itsm-service-desk cluster as ServiceNow — ServiceNow remains the award (8.7); this entity does not outrank it. Distinct from Ivanti Neurons and from published-price desks (Freshservice / TOPdesk).",
+    "bestFor": [
+      "Remedy-lineage estates moving to Helix ITSM",
+      "Enterprise RFP buyers comparing BMC Helix to ServiceNow and Ivanti",
+      "ITIL-mature shops that will not self-serve a $19 agent tile",
+      "mid-market / it-ops: BMC Helix ITSM fit for mid-market it-ops teams in the itsm-service-desk job cluster, from first-party positioning and IT optional-next research.",
+      "enterprise / it-ops: BMC Helix ITSM fit for enterprise it-ops teams in the itsm-service-desk job cluster, from first-party positioning and IT optional-next research."
+    ],
+    "notIdealFor": [
+      "SMBs that need Freshservice / TOPdesk / ManageEngine published floors",
+      "Teams that want ServiceNow as the default enterprise award",
+      "Observability or cloud PaaS purchases",
+      "No BMC.com price card — $115 is an AppExchange named-user signal, not a vendor SKU",
+      "Does not outrank ServiceNow (8.7)",
+      "Remedy/Helix naming is a buying-motion trap for teams expecting a new-build SaaS desk"
+    ],
+    "coreCapabilities": [
+      "incident management",
+      "change problem",
+      "service catalog",
+      "itsm ai",
+      "oncall paging",
+      "enterprise security",
+      "analytics reporting",
+      "itsm service desk"
+    ],
+    "pricingSummary": "2 documented plans · entry paid: BMC Helix ITSM",
+    "keyTradeoffs": [
+      "No BMC.com price card — $115 is an AppExchange named-user signal, not a vendor SKU",
+      "Does not outrank ServiceNow (8.7)",
+      "Remedy/Helix naming is a buying-motion trap for teams expecting a new-build SaaS desk",
+      "Always RFP — poor fit versus Freshservice Starter or TOPdesk Essential",
+      "Not observability, git, hosting panel, or cloud PaaS"
+    ],
+    "alternatives": [
+      {
+        "slug": "servicenow",
+        "name": "ServiceNow"
+      },
+      {
+        "slug": "ivanti",
+        "name": "Ivanti Neurons for ITSM"
+      },
+      {
+        "slug": "freshservice",
+        "name": "Freshservice"
+      },
+      {
+        "slug": "jira-service-management",
+        "name": "Jira Service Management"
+      },
+      {
+        "slug": "topdesk",
+        "name": "TOPdesk"
+      }
+    ],
+    "importantComparisons": [
+      {
+        "slug": "bmc-helix-vs-servicenow",
+        "title": "BMC Helix ITSM vs ServiceNow",
+        "href": "/compare/bmc-helix-vs-servicenow/"
+      },
+      {
+        "slug": "bmc-helix-vs-ivanti",
+        "title": "BMC Helix ITSM vs Ivanti Neurons for ITSM",
+        "href": "/compare/bmc-helix-vs-ivanti/"
+      },
+      {
+        "slug": "apify-vs-bmc-helix",
+        "title": "Apify vs BMC Helix ITSM",
+        "href": "/compare/apify-vs-bmc-helix/"
+      },
+      {
+        "slug": "appdynamics-vs-bmc-helix",
+        "title": "AppDynamics vs BMC Helix ITSM",
+        "href": "/compare/appdynamics-vs-bmc-helix/"
+      },
+      {
+        "slug": "azure-devops-vs-bmc-helix",
+        "title": "Azure DevOps vs BMC Helix ITSM",
+        "href": "/compare/azure-devops-vs-bmc-helix/"
+      },
+      {
+        "slug": "bitbucket-vs-bmc-helix",
+        "title": "Bitbucket Cloud vs BMC Helix ITSM",
+        "href": "/compare/bitbucket-vs-bmc-helix/"
+      }
+    ],
+    "relevantGuides": [
+      {
+        "slug": "how-it-development-software-works",
+        "title": "How IT And Development Software Works",
+        "href": "/guides/how-it-development-software-works/"
+      },
+      {
+        "slug": "types-of-it-development-software",
+        "title": "Types of IT And Development Software",
+        "href": "/guides/types-of-it-development-software/"
+      },
+      {
+        "slug": "bmc-helix-implementation",
+        "title": "BMC Helix ITSM Implementation: 30/60/90 IT Rollout That Sticks",
+        "href": "/guides/bmc-helix-implementation/"
+      },
+      {
+        "slug": "bmc-helix-migration",
+        "title": "BMC Helix ITSM Migration: Move Tickets and Repos Without Losing Trust",
+        "href": "/guides/bmc-helix-migration/"
+      },
+      {
+        "slug": "bmc-helix-setup",
+        "title": "BMC Helix ITSM Setup: Day-Zero Path to a Working IT Loop",
+        "href": "/guides/bmc-helix-setup/"
+      },
+      {
+        "slug": "bmc-helix-plans",
+        "title": "BMC Helix ITSM Plans: Seats, Hosts, and Qualifying Tiers",
+        "href": "/guides/bmc-helix-plans/"
+      }
+    ],
+    "evidenceState": "Research/data-based (no completed hands-on test) · Latest verification/research signal: 2026-08-18T22:00:00.000Z · Editorial assessment: approved",
+    "nextDecisionStep": "Compare against peers: BMC Helix ITSM vs ServiceNow",
+    "missingSections": [
+      "canonical_vendor",
+      "trial"
+    ]
+  },
+  "dependents": [
+    {
+      "kind": "guide",
+      "slug": "how-it-development-software-works",
+      "path": "/guides/how-it-development-software-works/"
+    },
+    {
+      "kind": "guide",
+      "slug": "types-of-it-development-software",
+      "path": "/guides/types-of-it-development-software/"
+    },
+    {
+      "kind": "guide",
+      "slug": "bmc-helix-implementation",
+      "path": "/guides/bmc-helix-implementation/"
+    },
+    {
+      "kind": "guide",
+      "slug": "bmc-helix-migration",
+      "path": "/guides/bmc-helix-migration/"
+    },
+    {
+      "kind": "guide",
+      "slug": "bmc-helix-setup",
+      "path": "/guides/bmc-helix-setup/"
+    },
+    {
+      "kind": "guide",
+      "slug": "bmc-helix-plans",
+      "path": "/guides/bmc-helix-plans/"
+    },
+    {
+      "kind": "guide",
+      "slug": "is-bmc-helix-worth-it",
+      "path": "/guides/is-bmc-helix-worth-it/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "bmc-helix-vs-servicenow",
+      "path": "/compare/bmc-helix-vs-servicenow/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "bmc-helix-vs-ivanti",
+      "path": "/compare/bmc-helix-vs-ivanti/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "apify-vs-bmc-helix",
+      "path": "/compare/apify-vs-bmc-helix/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "appdynamics-vs-bmc-helix",
+      "path": "/compare/appdynamics-vs-bmc-helix/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "azure-devops-vs-bmc-helix",
+      "path": "/compare/azure-devops-vs-bmc-helix/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "bitbucket-vs-bmc-helix",
+      "path": "/compare/bitbucket-vs-bmc-helix/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "bmc-helix-vs-bright-data",
+      "path": "/compare/bmc-helix-vs-bright-data/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "bmc-helix-vs-buildkite",
+      "path": "/compare/bmc-helix-vs-buildkite/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "bmc-helix-vs-chronosphere",
+      "path": "/compare/bmc-helix-vs-chronosphere/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "bmc-helix-vs-circleci",
+      "path": "/compare/bmc-helix-vs-circleci/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "bmc-helix-vs-cloudways",
+      "path": "/compare/bmc-helix-vs-cloudways/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "bmc-helix-vs-coralogix",
+      "path": "/compare/bmc-helix-vs-coralogix/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "bmc-helix-vs-cpanel",
+      "path": "/compare/bmc-helix-vs-cpanel/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "bmc-helix-vs-datadog",
+      "path": "/compare/bmc-helix-vs-datadog/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "bmc-helix-vs-directadmin",
+      "path": "/compare/bmc-helix-vs-directadmin/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "bmc-helix-vs-dynatrace",
+      "path": "/compare/bmc-helix-vs-dynatrace/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "bmc-helix-vs-elastic-observability",
+      "path": "/compare/bmc-helix-vs-elastic-observability/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "bmc-helix-vs-firehydrant",
+      "path": "/compare/bmc-helix-vs-firehydrant/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "bmc-helix-vs-fly-io",
+      "path": "/compare/bmc-helix-vs-fly-io/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "bmc-helix-vs-github",
+      "path": "/compare/bmc-helix-vs-github/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "bmc-helix-vs-gitlab",
+      "path": "/compare/bmc-helix-vs-gitlab/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "bmc-helix-vs-grafana-cloud",
+      "path": "/compare/bmc-helix-vs-grafana-cloud/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "bmc-helix-vs-haloitsm",
+      "path": "/compare/bmc-helix-vs-haloitsm/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "bmc-helix-vs-heroku",
+      "path": "/compare/bmc-helix-vs-heroku/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "bmc-helix-vs-honeycomb",
+      "path": "/compare/bmc-helix-vs-honeycomb/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "bmc-helix-vs-incident-io",
+      "path": "/compare/bmc-helix-vs-incident-io/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "bmc-helix-vs-iproyal",
+      "path": "/compare/bmc-helix-vs-iproyal/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "bmc-helix-vs-jira-service-management",
+      "path": "/compare/bmc-helix-vs-jira-service-management/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "bmc-helix-vs-kinsta",
+      "path": "/compare/bmc-helix-vs-kinsta/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "bmc-helix-vs-manageengine-servicedesk-plus",
+      "path": "/compare/bmc-helix-vs-manageengine-servicedesk-plus/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "bmc-helix-vs-new-relic",
+      "path": "/compare/bmc-helix-vs-new-relic/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "bmc-helix-vs-oxylabs",
+      "path": "/compare/bmc-helix-vs-oxylabs/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "bmc-helix-vs-pagerduty",
+      "path": "/compare/bmc-helix-vs-pagerduty/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "bmc-helix-vs-railway",
+      "path": "/compare/bmc-helix-vs-railway/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "bmc-helix-vs-render",
+      "path": "/compare/bmc-helix-vs-render/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "bmc-helix-vs-rootly",
+      "path": "/compare/bmc-helix-vs-rootly/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "bmc-helix-vs-scraperapi",
+      "path": "/compare/bmc-helix-vs-scraperapi/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "bmc-helix-vs-sentry",
+      "path": "/compare/bmc-helix-vs-sentry/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "bmc-helix-vs-siteground",
+      "path": "/compare/bmc-helix-vs-siteground/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "bmc-helix-vs-smartproxy",
+      "path": "/compare/bmc-helix-vs-smartproxy/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "bmc-helix-vs-splunk",
+      "path": "/compare/bmc-helix-vs-splunk/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "bmc-helix-vs-squadcast",
+      "path": "/compare/bmc-helix-vs-squadcast/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "bmc-helix-vs-sysaid",
+      "path": "/compare/bmc-helix-vs-sysaid/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "bmc-helix-vs-thordata",
+      "path": "/compare/bmc-helix-vs-thordata/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "bmc-helix-vs-topdesk",
+      "path": "/compare/bmc-helix-vs-topdesk/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "bmc-helix-vs-wp-engine",
+      "path": "/compare/bmc-helix-vs-wp-engine/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "bmc-helix-vs-zyte",
+      "path": "/compare/bmc-helix-vs-zyte/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "bmc-helix-vs-freshservice",
+      "path": "/compare/bmc-helix-vs-freshservice/"
+    },
+    {
+      "kind": "alternatives",
+      "slug": "bmc-helix",
+      "path": "/alternatives/bmc-helix/"
+    },
+    {
+      "kind": "pricing",
+      "slug": "bmc-helix",
+      "path": "/software/bmc-helix/pricing/"
+    },
+    {
+      "kind": "tools",
+      "slug": "it-development-cost-calculator",
+      "path": "/tools/it-development-cost-calculator/"
+    }
+  ],
+  "dependentsNeedingRefresh": [],
+  "remediation": [
+    "verify:canonical_vendor",
+    "verify:trial"
+  ],
+  "notes": [
+    "fieldAudit score=89",
+    "decisionHub bestFor=5 notIdeal=6",
+    "dependents=58"
+  ],
+  "materiallyImproved": false
+}

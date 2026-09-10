@@ -1,0 +1,193 @@
+{
+  "slug": "closely-setup",
+  "enrichmentType": "IMPLEMENTATION_GUIDE",
+  "updatedAt": "2026-09-08T16:56:04.633Z",
+  "uniqueValueAdded": [
+    "implementation_workflow",
+    "scenario_analysis",
+    "decision_framework",
+    "limitations_evidence",
+    "pricing_comparison",
+    "sg_original_data",
+    "buyer_checklist"
+  ],
+  "patch": {
+    "summary": "Closely implementation guide: day-zero sequence, pilot rules, plan gates, and cutover checks from SoftwareGlimpse research — not generic CRM setup filler.",
+    "blocks": [
+      {
+        "id": "da-closely-setup-1",
+        "type": "direct-answer",
+        "body": "Implement Closely by mapping current sales-intelligence workflows to Closely objects, confirming plan gates for built-in calling (Growth, Essential, Custom), piloting one team, then cutting over integrations (Salesforce, HubSpot, Pipedrive) after data checks.",
+        "bullets": [
+          "Start with: prospecting",
+          "Gate check: built-in calling (Growth, Essential, Custom)",
+          "Integrate after: data quality pass on Salesforce"
+        ]
+      },
+      {
+        "id": "impl-closely-setup-2",
+        "type": "step",
+        "heading": "Closely day-zero to steady-state sequence",
+        "body": "Treat Closely setup as a controlled rollout — not a weekend dump of CSV files.",
+        "stepNumber": 1,
+        "scenarios": [
+          {
+            "title": "Day zero — objects and owners",
+            "body": "Define owners for prospecting, data enrichment, email sequences before inviting the whole org."
+          },
+          {
+            "title": "SMB pilot",
+            "body": "One pipeline / one team proves B2B outbound teams automating LinkedIn + email before company-wide seats."
+          },
+          {
+            "title": "Cutover",
+            "body": "Freeze legacy writes briefly; validate Salesforce and HubSpot before reopen."
+          }
+        ]
+      },
+      {
+        "id": "df-closely-setup-3",
+        "type": "decision-framework",
+        "title": "Closely implementation go / no-go",
+        "steps": [
+          {
+            "id": "i-1",
+            "label": "Go when plan unlocks cover built-in calling (Growth, Essential, Custom)"
+          },
+          {
+            "id": "i-2",
+            "label": "Pause if this limitation blocks ops: Not a CRM deal-pipeline system of record."
+          },
+          {
+            "id": "i-3",
+            "label": "Do not expand seats until prospecting is green"
+          }
+        ]
+      },
+      {
+        "id": "mist-closely-setup-4",
+        "type": "mistakes",
+        "title": "Closely implementation mistakes",
+        "items": [
+          {
+            "title": "Mistake 1",
+            "body": "Not a CRM deal-pipeline system of record."
+          },
+          {
+            "title": "Mistake 2",
+            "body": "Plans are gated by LinkedIn sender seats and enrichment/AI credit bundles."
+          },
+          {
+            "title": "Mistake 3",
+            "body": "Bonus enrichment/AI credits emphasized on Growth/Essential versus Starter."
+          },
+          {
+            "title": "Mistake 4",
+            "body": "LinkedIn automation carries platform-policy/compliance risk inherent to the category (operational, not a feature checklist item)."
+          },
+          {
+            "title": "Big-bang invite",
+            "body": "Inviting every user before object design creates junk data that is expensive to unwind."
+          }
+        ]
+      },
+      {
+        "id": "cost-closely-setup-5",
+        "type": "cost-breakdown",
+        "title": "Closely plan gates that affect rollout",
+        "body": "Implementation fails when unlocks needed for go-live sit on a higher tier than budgeted.",
+        "lines": [
+          {
+            "label": "Starter",
+            "description": "Trial available · Unlocks: prospecting, data enrichment, email sequences · Suits: teams whose must-have gates appear on this tier"
+          },
+          {
+            "label": "Growth",
+            "description": "Trial available · Unlocks: built-in calling · Suits: teams whose must-have gates appear on this tier"
+          },
+          {
+            "label": "Essential",
+            "description": "Trial available · Suits: teams whose must-have gates appear on this tier"
+          },
+          {
+            "label": "Custom",
+            "description": "Trial available · Contact sales · Suits: teams that need custom procurement"
+          }
+        ]
+      },
+      {
+        "id": "sel-closely-setup-6",
+        "type": "selection-checklist",
+        "title": "Closely implementation checklist",
+        "dimensions": [
+          {
+            "id": "prep",
+            "label": "Prep",
+            "options": [
+              "Object model drafted",
+              "Owners named",
+              "Legacy freeze window set"
+            ]
+          },
+          {
+            "id": "pilot",
+            "label": "Pilot",
+            "options": [
+              "prospecting",
+              "Junk-data rules set",
+              "Support path clear"
+            ]
+          },
+          {
+            "id": "scale",
+            "label": "Scale",
+            "options": [
+              "Salesforce",
+              "Seat expansion criteria written",
+              "Rollback plan noted"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "cta-closely-setup-7",
+        "type": "interactive-cta",
+        "title": "Validate sales-intelligence fit before a deep Closely rollout",
+        "body": "If Closely fails constraint fit, stop implementation early.",
+        "href": "/tools/sales-intelligence-finder/",
+        "ctaLabel": "Open Finder",
+        "variant": "finder"
+      }
+    ],
+    "checklist": [
+      {
+        "id": "enrich-chk-0",
+        "label": "Draft Closely object owners before invites",
+        "order": 0
+      },
+      {
+        "id": "enrich-chk-1",
+        "label": "Confirm plan unlocks for go-live features",
+        "order": 1
+      },
+      {
+        "id": "enrich-chk-2",
+        "label": "Pilot one team on prospecting",
+        "order": 2
+      },
+      {
+        "id": "enrich-chk-3",
+        "label": "If blocked, evaluate Amplemarket before sunk-cost expansion",
+        "order": 3
+      }
+    ],
+    "nextAction": {
+      "contentId": "tool:finder:sales-intelligence",
+      "label": "Open Finder shortlist"
+    }
+  },
+  "notes": [
+    "Implementation: workflow, constraints, mistakes, checklist.",
+    "Type-specific skeleton: IMPLEMENTATION_GUIDE"
+  ]
+}

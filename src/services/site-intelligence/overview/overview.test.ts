@@ -42,12 +42,12 @@ describe("WebsiteOverviewAgent", () => {
       expect(result.markdown).toMatch(/Executive scorecard/);
       expect(result.markdown).toMatch(/User journey assessment/);
       expect(result.markdown).toMatch(/Top 25 recommendations/);
-      expect(result.model.assessment.searchVisibility.availability).toBe(
-        "data-not-available",
+      expect(["data-not-available", "scored"]).toContain(
+        result.model.assessment.searchVisibility.availability,
       );
       expect(
         result.model.assessment.competitiveContentStrength.availability,
-      ).toBe("unavailable");
+      ).toBe("scored");
       expect(result.model.recommendations.length).toBeGreaterThan(0);
       expect(result.model.recommendations.length).toBeLessThanOrEqual(25);
       expect(result.model.journey.length).toBeGreaterThanOrEqual(10);

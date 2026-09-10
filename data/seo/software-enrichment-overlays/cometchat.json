@@ -1,0 +1,321 @@
+{
+  "slug": "cometchat",
+  "updatedAt": "2026-09-07T22:31:22.090Z",
+  "version": "1.0.0",
+  "fieldAudit": {
+    "slug": "cometchat",
+    "checkedAt": "2026-09-07T22:31:22.089Z",
+    "items": [
+      {
+        "field": "name",
+        "status": "PASS",
+        "detail": "Name: CometChat",
+        "source": "seed"
+      },
+      {
+        "field": "product_status",
+        "status": "PASS",
+        "detail": "productLifecycle=active",
+        "source": "seed"
+      },
+      {
+        "field": "canonical_vendor",
+        "status": "UNKNOWN",
+        "detail": "Company/vendor not documented",
+        "source": "none"
+      },
+      {
+        "field": "category",
+        "status": "PASS",
+        "detail": "primaryCategorySlug=live-chat",
+        "source": "seed"
+      },
+      {
+        "field": "description",
+        "status": "PASS",
+        "detail": "Description present (In-app chat SDK/API with UI kits — Build free (100 MAU); Basic from ~$239/mo ann…)",
+        "source": "seed"
+      },
+      {
+        "field": "target_audience",
+        "status": "PASS",
+        "detail": "Sizes=3, teams=3, assessment bestFor=3",
+        "source": "assessment"
+      },
+      {
+        "field": "use_cases",
+        "status": "PASS",
+        "detail": "useCaseSlugs=2",
+        "source": "seed"
+      },
+      {
+        "field": "capabilities",
+        "status": "PASS",
+        "detail": "featureRatings=0, enrichment features=16",
+        "source": "enrichment"
+      },
+      {
+        "field": "pricing",
+        "status": "PASS",
+        "detail": "Pricing envelope present",
+        "source": "enrichment"
+      },
+      {
+        "field": "plans",
+        "status": "PASS",
+        "detail": "plans=4",
+        "source": "enrichment"
+      },
+      {
+        "field": "free_plan",
+        "status": "PASS",
+        "detail": "Free plan documented",
+        "source": "enrichment"
+      },
+      {
+        "field": "trial",
+        "status": "UNKNOWN",
+        "detail": "Trial not explicitly documented — do not assume none",
+        "source": "none"
+      },
+      {
+        "field": "integrations",
+        "status": "PASS",
+        "detail": "integrationSlugs=0, enrichment=2",
+        "source": "enrichment"
+      },
+      {
+        "field": "alternatives",
+        "status": "PASS",
+        "detail": "alternativeSlugs=3",
+        "source": "seed"
+      },
+      {
+        "field": "competitors",
+        "status": "PASS",
+        "detail": "competitorSlugs=4",
+        "source": "seed"
+      },
+      {
+        "field": "affiliate",
+        "status": "PASS",
+        "detail": "Affiliate enabled with tracking URL",
+        "source": "seed"
+      },
+      {
+        "field": "source_provenance",
+        "status": "PASS",
+        "detail": "seed sources=0, enrichment sourceIds=3",
+        "source": "enrichment"
+      },
+      {
+        "field": "verification_date",
+        "status": "PASS",
+        "detail": "Latest verification/research signal: 2026-08-26T12:00:00.000Z",
+        "source": "enrichment"
+      }
+    ],
+    "passCount": 16,
+    "partialCount": 0,
+    "missingCount": 0,
+    "unknownCount": 2,
+    "score": 89
+  },
+  "decisionHub": {
+    "whatItIs": "CometChat is an in-app chat, voice, and video SDK/API platform with prebuilt UI kits for React, Flutter, iOS, Android, and web. Build is free for up to 100 monthly active users (MAU) with full feature access for development. Paid Chat & Messaging tiers are MAU-based: Basic from approximately $239/mo billed annually at the 1k MAU tier ($298.75/mo on monthly billing); Advanced from ~$359/mo annual at 1k MAU with AI moderation, smart replies, multi-tenancy, HIPAA/BAA, and translation; Enterprise is custom from ~$999/mo annual at 10k MAU with zero overages and SSO. Overage on Basic/Advanced: $0.10/MAU and $1/concurrent connection above included limits. Not a website live-chat widget like Tidio — embed SDK for marketplaces, telehealth, edtech, and social apps.",
+    "bestFor": [
+      "Product teams embedding chat, voice, or video inside their own app",
+      "Marketplaces, telehealth, edtech, and community apps needing compliant messaging",
+      "Developers who want prebuilt UI kits instead of building chat infrastructure from scratch",
+      "small-business / engineering: CometChat fit for small-business engineering teams in the live-chat job cluster, from first-party positioning and Affiliate new CometChat 2026-08-26 research.",
+      "mid-market / engineering: CometChat fit for mid-market engineering teams in the live-chat job cluster, from first-party positioning and Affiliate new CometChat 2026-08-26 research.",
+      "enterprise / engineering: CometChat fit for enterprise engineering teams in the live-chat job cluster, from first-party positioning and Affiliate new CometChat 2026-08-26 research."
+    ],
+    "notIdealFor": [
+      "SMBs that only need a website live-chat widget — Tidio or LiveChat are simpler",
+      "Full helpdesk + ticketing without custom development",
+      "Teams with fewer than 100 MAU who cannot budget ~$239/mo when they outgrow Build",
+      "SDK/API product — not a standalone helpdesk or shared inbox like Zendesk",
+      "Steep jump from free 100 MAU to ~$239/mo Basic at 1k MAU",
+      "MAU and concurrency overages add cost quickly at scale"
+    ],
+    "coreCapabilities": [
+      "live chat",
+      "chatbot ai agent",
+      "agent copilot",
+      "phone support",
+      "helpdesk integrations",
+      "live chat support",
+      "ai customer service"
+    ],
+    "pricingSummary": "4 documented plans · 1 free · entry paid: Basic (1k MAU, annual)",
+    "keyTradeoffs": [
+      "SDK/API product — not a standalone helpdesk or shared inbox like Zendesk",
+      "Steep jump from free 100 MAU to ~$239/mo Basic at 1k MAU",
+      "MAU and concurrency overages add cost quickly at scale",
+      "Website-widget live chat (Tidio, LiveChat) is a different buyer job",
+      "Voice/video and AI Agent Platform pricing are separate product lines"
+    ],
+    "alternatives": [
+      {
+        "slug": "tidio",
+        "name": "Tidio"
+      },
+      {
+        "slug": "intercom",
+        "name": "Intercom"
+      },
+      {
+        "slug": "freshchat",
+        "name": "Freshchat"
+      },
+      {
+        "slug": "livechat",
+        "name": "LiveChat"
+      }
+    ],
+    "importantComparisons": [
+      {
+        "slug": "cometchat-vs-tidio",
+        "title": "CometChat vs Tidio",
+        "href": "/compare/cometchat-vs-tidio/"
+      },
+      {
+        "slug": "cometchat-vs-intercom",
+        "title": "CometChat vs Intercom",
+        "href": "/compare/cometchat-vs-intercom/"
+      },
+      {
+        "slug": "cometchat-vs-freshchat",
+        "title": "CometChat vs Freshchat",
+        "href": "/compare/cometchat-vs-freshchat/"
+      },
+      {
+        "slug": "cometchat-vs-livechat",
+        "title": "CometChat vs LiveChat",
+        "href": "/compare/cometchat-vs-livechat/"
+      }
+    ],
+    "relevantGuides": [
+      {
+        "slug": "how-live-chat-software-works",
+        "title": "How Live Chat Software Works",
+        "href": "/guides/how-live-chat-software-works/"
+      },
+      {
+        "slug": "types-of-live-chat-software",
+        "title": "Types of Live Chat Software",
+        "href": "/guides/types-of-live-chat-software/"
+      },
+      {
+        "slug": "live-chat-vs-customer-service-software",
+        "title": "Live Chat Software vs Customer Service Software",
+        "href": "/guides/live-chat-vs-customer-service-software/"
+      },
+      {
+        "slug": "live-chat-requirements-guide",
+        "title": "Live Chat Software Requirements Guide",
+        "href": "/guides/live-chat-requirements-guide/"
+      },
+      {
+        "slug": "live-chat-evaluation-guide",
+        "title": "Live Chat Software Evaluation Guide",
+        "href": "/guides/live-chat-evaluation-guide/"
+      },
+      {
+        "slug": "what-is-cometchat",
+        "title": "What Is CometChat?",
+        "href": "/guides/what-is-cometchat/"
+      }
+    ],
+    "evidenceState": "Research/data-based (no completed hands-on test) · Latest verification/research signal: 2026-08-26T12:00:00.000Z · Editorial assessment: approved",
+    "nextDecisionStep": "Compare against peers: CometChat vs Tidio",
+    "missingSections": [
+      "canonical_vendor",
+      "trial"
+    ]
+  },
+  "dependents": [
+    {
+      "kind": "guide",
+      "slug": "how-live-chat-software-works",
+      "path": "/guides/how-live-chat-software-works/"
+    },
+    {
+      "kind": "guide",
+      "slug": "types-of-live-chat-software",
+      "path": "/guides/types-of-live-chat-software/"
+    },
+    {
+      "kind": "guide",
+      "slug": "live-chat-vs-customer-service-software",
+      "path": "/guides/live-chat-vs-customer-service-software/"
+    },
+    {
+      "kind": "guide",
+      "slug": "live-chat-requirements-guide",
+      "path": "/guides/live-chat-requirements-guide/"
+    },
+    {
+      "kind": "guide",
+      "slug": "live-chat-evaluation-guide",
+      "path": "/guides/live-chat-evaluation-guide/"
+    },
+    {
+      "kind": "guide",
+      "slug": "what-is-cometchat",
+      "path": "/guides/what-is-cometchat/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "cometchat-vs-tidio",
+      "path": "/compare/cometchat-vs-tidio/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "cometchat-vs-intercom",
+      "path": "/compare/cometchat-vs-intercom/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "cometchat-vs-freshchat",
+      "path": "/compare/cometchat-vs-freshchat/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "cometchat-vs-livechat",
+      "path": "/compare/cometchat-vs-livechat/"
+    },
+    {
+      "kind": "alternatives",
+      "slug": "cometchat",
+      "path": "/alternatives/cometchat/"
+    },
+    {
+      "kind": "pricing",
+      "slug": "cometchat",
+      "path": "/software/cometchat/pricing/"
+    },
+    {
+      "kind": "best",
+      "slug": "customer-service-software",
+      "path": "/best/customer-service-software/"
+    },
+    {
+      "kind": "tools",
+      "slug": "live-chat-cost-calculator",
+      "path": "/tools/live-chat-cost-calculator/"
+    }
+  ],
+  "dependentsNeedingRefresh": [],
+  "remediation": [
+    "verify:canonical_vendor",
+    "verify:trial"
+  ],
+  "notes": [
+    "fieldAudit score=89",
+    "decisionHub bestFor=6 notIdeal=6",
+    "dependents=14"
+  ],
+  "materiallyImproved": false
+}

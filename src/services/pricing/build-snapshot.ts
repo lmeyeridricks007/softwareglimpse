@@ -299,7 +299,9 @@ export function normalizePricingInput(raw: unknown): unknown {
           }
           return null;
         })
-        .filter((entry): entry is readonly [string, string | number | boolean] => entry != null);
+        .filter((entry): entry is readonly [`note${number}`, string | number | boolean] =>
+          entry != null,
+        );
       plan.limits = entries.length > 0 ? Object.fromEntries(entries) : undefined;
     }
     delete plan.amountPerSeat;

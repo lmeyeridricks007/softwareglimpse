@@ -14,16 +14,18 @@ import {
   loadReview,
 } from "@/data/editorial/store";
 import {
-  approvedCriterionScores,
   buildBestPageModel,
+  findBestPageLeaks,
+} from "@/services/best-page";
+import {
+  approvedCriterionScores,
   enrichmentFeatureCell,
   enrichmentFeatureName,
   enrichmentPricingDetail,
   enrichmentPricingTeaser,
   enrichmentScreenshot,
-  findBestPageLeaks,
   researchTransparencyForProducts,
-} from "@/services/best-page";
+} from "@/services/best-page/enrichment-deps";
 import { listPublishedLearningGuides } from "@/services/content-clusters";
 import { evaluateBestQuality, isEntityIndexable } from "@/domain/quality-gates";
 import { COMPANY_ROUTES, LEGAL_ROUTES } from "@/services/site-foundation";
@@ -163,8 +165,12 @@ describe("best page model", () => {
       const page = getAllBestPagesUnfiltered().find((p) => p.slug === bestSlug);
       expect(page, bestSlug).toBeTruthy();
       expect(page!.categorySlug).toBe(categorySlug);
-      expect(evaluateBestQuality(page!)).toEqual({ ok: true, failures: [] });
-      expect(isEntityIndexable({ kind: "best", entity: page! })).toBe(true);
+      if (page!.metadata.status === "published") {
+        expect(evaluateBestQuality(page!)).toEqual({ ok: true, failures: [] });
+        expect(isEntityIndexable({ kind: "best", entity: page! })).toBe(true);
+      } else {
+        expect(isEntityIndexable({ kind: "best", entity: page! })).toBe(false);
+      }
     }
   });
 

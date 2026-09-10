@@ -332,10 +332,18 @@ async function analyzeLive(
 
     const bundle = await ensureLiveProbeBundle(ctx);
     if (bundle) {
-      const liveFindings = analyzeFixturePages(
-        bundle.pages.map(livePageToFixture),
+      // Content/canonical/heading checks only on final 2xx HTML that did not
+      // redirect — redirect sources and intentional 410s are validated below.
+      const contentPages = bundle.pages.filter(
+        (p) =>
+          !p.error &&
+          p.statusCode >= 200 &&
+          p.statusCode < 300 &&
+          p.redirectChain.length === 0,
       );
-      findings.push(...liveFindings);
+      findings.push(
+        ...analyzeFixturePages(contentPages.map(livePageToFixture)),
+      );
 
       for (const page of bundle.pages) {
         if (page.error || page.statusCode === 0) {
@@ -358,6 +366,83 @@ async function analyzeLive(
           );
           continue;
         }
+
+        // Intentional Gone — locale roots / WP taxonomy / retired samples.
+        if (page.statusCode === 410) {
+          continue;
+        }
+
+        // Redirect samples: evaluate destination robots/indexability, not the
+        // legacy request path (canonical on the destination is expected).
+        if (page.redirectChain.length > 0) {
+          if (page.redirectChain.length > 1) {
+            findings.push(
+              finding({
+                kind: "REDIRECT",
+                subject: page.path,
+                severity: "P1",
+                area: "technical",
+                problem: "Live redirect chain (>1 hop)",
+                evidence: page.redirectChain.join(" | "),
+                affectedPages: [page.path],
+                likelyCause: "Unflattened legacy redirect",
+                recommendedAction:
+                  "Collapse to a single permanent hop to the canonical",
+                filesLikelyAffected: [
+                  "config/legacy-redirects.json",
+                  "src/proxy.ts",
+                ],
+                expectedImpact: "Preserves link equity",
+                effort: "small",
+                confidence: 0.9,
+              }),
+            );
+          }
+          if (page.statusCode >= 400) {
+            findings.push(
+              finding({
+                kind: "STATUS",
+                subject: page.path,
+                severity: "P0",
+                area: "technical",
+                problem: "Redirect destination returns an error status",
+                evidence: `chain=${page.redirectChain.join(" | ")} finalStatus=${page.statusCode} final=${page.finalUrl}`,
+                affectedPages: [page.path],
+                likelyCause: "Broken redirect target",
+                recommendedAction: "Fix destination or remapping",
+                filesLikelyAffected: ["config/legacy-redirects.json"],
+                expectedImpact: "Stops equity-destroying soft failures",
+                effort: "medium",
+                confidence: 0.95,
+              }),
+            );
+          }
+          continue;
+        }
+
+        if (page.statusCode >= 400) {
+          findings.push(
+            finding({
+              kind: "STATUS",
+              subject: page.path,
+              severity: page.statusCode === 404 ? "P0" : "P1",
+              area: "technical",
+              problem: `Page returns HTTP ${page.statusCode}`,
+              evidence: `\`${page.path}\` status=${page.statusCode}`,
+              affectedPages: [page.path],
+              likelyCause:
+                "Missing route, bad redirect, or unpublished entity still linked",
+              recommendedAction:
+                "Restore the page (IMPROVE → 200+noindex), add a 301, or remove inbound links",
+              filesLikelyAffected: ["src/app", "src/seo/sitemap.ts"],
+              expectedImpact: "Stops crawl waste and soft-404 indexing risk",
+              effort: "medium",
+              confidence: 0.95,
+            }),
+          );
+          continue;
+        }
+
         const expectedIndexable = isPathIndexable(page.path);
         const robots = page.robots?.toLowerCase() ?? "";
         const htmlNoindex = /noindex/.test(robots);
@@ -372,7 +457,8 @@ async function analyzeLive(
               evidence: `path=\`${page.path}\` robots=\`${page.robots}\``,
               affectedPages: [page.path],
               likelyCause: "robots metadata mismatch with indexability policy",
-              recommendedAction: "Align buildPageMetadata robots with isPathIndexable",
+              recommendedAction:
+                "Align buildPageMetadata robots with isPathIndexable",
               filesLikelyAffected: [
                 "src/seo/indexability.ts",
                 "src/seo/metadata.ts",

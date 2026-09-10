@@ -7,7 +7,7 @@ import type {
   EffortBand,
   LikelihoodBand,
   OpportunityScoreBand,
-  ScoreBreakdown,
+  AuthorityScoreBreakdown,
   SpamRisk,
   ValueBand,
 } from "@/domain/schemas/authority-intelligence";
@@ -84,7 +84,7 @@ export function bandFromNormalized(score: number): OpportunityScoreBand {
 export function scoreOpportunity(input: ScoreInput): {
   band: OpportunityScoreBand;
   normalized: number;
-  breakdown: ScoreBreakdown;
+  breakdown: AuthorityScoreBreakdown;
 } {
   const compliance =
     input.compliance ??

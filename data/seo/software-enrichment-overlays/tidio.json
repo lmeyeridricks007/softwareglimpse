@@ -1,0 +1,319 @@
+{
+  "slug": "tidio",
+  "updatedAt": "2026-09-07T22:31:21.216Z",
+  "version": "1.0.0",
+  "fieldAudit": {
+    "slug": "tidio",
+    "checkedAt": "2026-09-07T22:31:21.214Z",
+    "items": [
+      {
+        "field": "name",
+        "status": "PASS",
+        "detail": "Name: Tidio",
+        "source": "seed"
+      },
+      {
+        "field": "product_status",
+        "status": "PASS",
+        "detail": "productLifecycle=active",
+        "source": "seed"
+      },
+      {
+        "field": "canonical_vendor",
+        "status": "UNKNOWN",
+        "detail": "Company/vendor not documented",
+        "source": "none"
+      },
+      {
+        "field": "category",
+        "status": "PASS",
+        "detail": "primaryCategorySlug=live-chat",
+        "source": "seed"
+      },
+      {
+        "field": "description",
+        "status": "PASS",
+        "detail": "Description present (Live chat and AI messaging — Starter $24.17/mo annual (100 billable convos); Gro…)",
+        "source": "seed"
+      },
+      {
+        "field": "target_audience",
+        "status": "PASS",
+        "detail": "Sizes=3, teams=2, assessment bestFor=3",
+        "source": "assessment"
+      },
+      {
+        "field": "use_cases",
+        "status": "PASS",
+        "detail": "useCaseSlugs=2",
+        "source": "seed"
+      },
+      {
+        "field": "capabilities",
+        "status": "PASS",
+        "detail": "featureRatings=0, enrichment features=16",
+        "source": "enrichment"
+      },
+      {
+        "field": "pricing",
+        "status": "PASS",
+        "detail": "Pricing envelope present",
+        "source": "enrichment"
+      },
+      {
+        "field": "plans",
+        "status": "PASS",
+        "detail": "plans=3",
+        "source": "enrichment"
+      },
+      {
+        "field": "free_plan",
+        "status": "PASS",
+        "detail": "Free plan documented",
+        "source": "enrichment"
+      },
+      {
+        "field": "trial",
+        "status": "PASS",
+        "detail": "Trial documented on plans/pricing",
+        "source": "enrichment"
+      },
+      {
+        "field": "integrations",
+        "status": "PASS",
+        "detail": "integrationSlugs=0, enrichment=4",
+        "source": "enrichment"
+      },
+      {
+        "field": "alternatives",
+        "status": "PASS",
+        "detail": "alternativeSlugs=3",
+        "source": "seed"
+      },
+      {
+        "field": "competitors",
+        "status": "PASS",
+        "detail": "competitorSlugs=5",
+        "source": "seed"
+      },
+      {
+        "field": "affiliate",
+        "status": "PASS",
+        "detail": "Affiliate enabled with tracking URL",
+        "source": "seed"
+      },
+      {
+        "field": "source_provenance",
+        "status": "PASS",
+        "detail": "seed sources=0, enrichment sourceIds=2",
+        "source": "enrichment"
+      },
+      {
+        "field": "verification_date",
+        "status": "PASS",
+        "detail": "Latest verification/research signal: 2026-08-18T12:00:00.000Z",
+        "source": "enrichment"
+      }
+    ],
+    "passCount": 17,
+    "partialCount": 0,
+    "missingCount": 0,
+    "unknownCount": 1,
+    "score": 94
+  },
+  "decisionHub": {
+    "whatItIs": "Tidio is a live chat and AI messaging platform for website visitor support and conversation automation. Reconciled from CRM-primary to customer-service live-chat primary. Annual pricing: Starter $24.17/mo for 100 billable conversations; Growth from $49.17/mo annual. Lyro AI agent and flows for deflection. Not a sales CRM — scored in live-chat-support cluster only.",
+    "bestFor": [
+      "SMB ecommerce and SaaS sites needing plug-and-play live chat + Lyro AI",
+      "Teams prioritizing website messenger deflection over full ticketing",
+      "Buyers wanting freemium entry with conversation-based pricing",
+      "micro / customer-success: Tidio fit for micro customer-success teams in the live-chat-support job cluster, from first-party positioning and CS Wave-1 research.",
+      "small-business / customer-success: Tidio fit for small-business customer-success teams in the live-chat-support job cluster, from first-party positioning and CS Wave-1 research.",
+      "mid-market / customer-success: Tidio fit for mid-market customer-success teams in the live-chat-support job cluster, from first-party positioning and CS Wave-1 research."
+    ],
+    "notIdealFor": [
+      "Enterprise omnichannel helpdesk requirements",
+      "ITSM / internal service desk",
+      "Sales CRM pipeline management as primary job",
+      "Conversation-cap pricing — high traffic sites need Growth+ tiers",
+      "Not a full helpdesk/ITSM — thin ticketing vs Freshdesk",
+      "Re-homed from CRM; not a sales pipeline CRM replacement"
+    ],
+    "coreCapabilities": [
+      "shared inbox",
+      "live chat",
+      "macros automation",
+      "chatbot ai agent",
+      "agent copilot",
+      "helpdesk integrations",
+      "live chat support",
+      "ai customer service"
+    ],
+    "pricingSummary": "3 documented plans · 1 free · entry paid: Starter · trial documented on at least one plan",
+    "keyTradeoffs": [
+      "Conversation-cap pricing — high traffic sites need Growth+ tiers",
+      "Not a full helpdesk/ITSM — thin ticketing vs Freshdesk",
+      "Re-homed from CRM; not a sales pipeline CRM replacement",
+      "Omnichannel depth below Zendesk Suite or Freshdesk Pro",
+      "AI customer service that sells while you sleep — live chat, Lyro AI agent, and flows to resolve visitor questions before they become tickets. (audience: SMB ecommerce and SaaS sites needing plug-and-play live chat + Lyro AI, Teams prioritizing website messenger deflection over full ticketing)"
+    ],
+    "alternatives": [
+      {
+        "slug": "freshchat",
+        "name": "Freshchat"
+      },
+      {
+        "slug": "livechat",
+        "name": "LiveChat"
+      },
+      {
+        "slug": "crisp",
+        "name": "Crisp"
+      },
+      {
+        "slug": "intercom",
+        "name": "Intercom"
+      },
+      {
+        "slug": "zendesk-suite",
+        "name": "Zendesk Suite"
+      }
+    ],
+    "importantComparisons": [
+      {
+        "slug": "freshchat-vs-tidio",
+        "title": "Freshchat vs Tidio",
+        "href": "/compare/freshchat-vs-tidio/"
+      },
+      {
+        "slug": "livechat-vs-tidio",
+        "title": "LiveChat vs Tidio",
+        "href": "/compare/livechat-vs-tidio/"
+      },
+      {
+        "slug": "crisp-vs-tidio",
+        "title": "Crisp vs Tidio",
+        "href": "/compare/crisp-vs-tidio/"
+      },
+      {
+        "slug": "hubspot-vs-tidio",
+        "title": "HubSpot vs Tidio",
+        "href": "/compare/hubspot-vs-tidio/"
+      },
+      {
+        "slug": "tidio-vs-zendesk",
+        "title": "Tidio vs Zendesk Sell",
+        "href": "/compare/tidio-vs-zendesk/"
+      },
+      {
+        "slug": "cometchat-vs-tidio",
+        "title": "CometChat vs Tidio",
+        "href": "/compare/cometchat-vs-tidio/"
+      }
+    ],
+    "relevantGuides": [
+      {
+        "slug": "what-is-tidio",
+        "title": "What Is Tidio?",
+        "href": "/guides/what-is-tidio/"
+      }
+    ],
+    "evidenceState": "Research/data-based (no completed hands-on test) · Latest verification/research signal: 2026-08-18T12:00:00.000Z · Editorial assessment: approved",
+    "nextDecisionStep": "Compare against peers: Freshchat vs Tidio",
+    "missingSections": [
+      "canonical_vendor"
+    ]
+  },
+  "dependents": [
+    {
+      "kind": "guide",
+      "slug": "what-is-tidio",
+      "path": "/guides/what-is-tidio/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "freshchat-vs-tidio",
+      "path": "/compare/freshchat-vs-tidio/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "livechat-vs-tidio",
+      "path": "/compare/livechat-vs-tidio/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "crisp-vs-tidio",
+      "path": "/compare/crisp-vs-tidio/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "hubspot-vs-tidio",
+      "path": "/compare/hubspot-vs-tidio/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "tidio-vs-zendesk",
+      "path": "/compare/tidio-vs-zendesk/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "cometchat-vs-tidio",
+      "path": "/compare/cometchat-vs-tidio/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "intercom-vs-tidio",
+      "path": "/compare/intercom-vs-tidio/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "tidio-vs-zendesk-suite",
+      "path": "/compare/tidio-vs-zendesk-suite/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "nicejob-vs-tidio",
+      "path": "/compare/nicejob-vs-tidio/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "shore-vs-tidio",
+      "path": "/compare/shore-vs-tidio/"
+    },
+    {
+      "kind": "alternatives",
+      "slug": "tidio",
+      "path": "/alternatives/tidio/"
+    },
+    {
+      "kind": "pricing",
+      "slug": "tidio",
+      "path": "/software/tidio/pricing/"
+    },
+    {
+      "kind": "best",
+      "slug": "customer-service-software",
+      "path": "/best/customer-service-software/"
+    },
+    {
+      "kind": "best",
+      "slug": "live-chat-software",
+      "path": "/best/live-chat-software/"
+    },
+    {
+      "kind": "tools",
+      "slug": "live-chat-cost-calculator",
+      "path": "/tools/live-chat-cost-calculator/"
+    }
+  ],
+  "dependentsNeedingRefresh": [],
+  "remediation": [
+    "verify:canonical_vendor"
+  ],
+  "notes": [
+    "fieldAudit score=94",
+    "decisionHub bestFor=6 notIdeal=6",
+    "dependents=16"
+  ],
+  "materiallyImproved": false
+}

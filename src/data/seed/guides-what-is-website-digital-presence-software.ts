@@ -1,4 +1,4 @@
-import type { GuidePage } from "@/domain";
+import type { GuidePageInput } from "@/domain";
 import type { z } from "zod";
 import type { GuideContentBlockSchema } from "@/domain";
 import { tier16GuideScheduledAt } from "@/data/config/publishing/tier-16-website-digital-presence-launch-2027-01-01";
@@ -35,7 +35,7 @@ const blocks: GuideBlockInput[] = [
   },
 ];
 
-function metadata(): GuidePage["metadata"] {
+function metadata(): GuidePageInput["metadata"] {
   return SCHEDULED_AT
     ? {
         status: "scheduled",
@@ -55,7 +55,7 @@ function metadata(): GuidePage["metadata"] {
       };
 }
 
-export const whatIsWebsiteDigitalPresenceSoftwareGuide: GuidePage = {
+export const whatIsWebsiteDigitalPresenceSoftwareGuide: GuidePageInput = {
   id: "guide-what-is-website-digital-presence-software",
   slug: SLUG,
   title: "What Is Website & Digital Presence Software?",
@@ -79,7 +79,7 @@ export const whatIsWebsiteDigitalPresenceSoftwareGuide: GuidePage = {
     "how-to-choose-website-digital-presence-software",
     "website-digital-presence-pricing-guide",
   ],
-  blocks: blocks as GuidePage["blocks"],
+  blocks: blocks as GuidePageInput["blocks"],
   checklist: [],
   sections: [],
   faq: [],
@@ -90,6 +90,6 @@ export const whatIsWebsiteDigitalPresenceSoftwareGuide: GuidePage = {
     description:
       "Definition of site builders, landing pages, storefronts, hosting panels, and digital business marketplaces.",
     canonicalPath: `/guides/${SLUG}/`,
-    indexable: !SCHEDULED_AT,
+    indexable: true,
   },
 };

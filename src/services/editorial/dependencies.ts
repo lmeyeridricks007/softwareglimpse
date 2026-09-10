@@ -3,6 +3,7 @@ import {
   getAllBestPagesUnfiltered,
   getAllComparisonsUnfiltered,
 } from "@/data/repositories/catalog";
+import { getAllGuidesUnfiltered } from "@/data/repositories/guides";
 
 export type AffectedPage = {
   path: string;
@@ -12,7 +13,8 @@ export type AffectedPage = {
     | "alternatives"
     | "best"
     | "tool"
-    | "pricing";
+    | "pricing"
+    | "guide";
   slug: string;
 };
 
@@ -72,6 +74,15 @@ export function resolveAffectedPages(productSlug: string): AffectedPage[] {
       path: `/best/${best.slug}/`,
       pageType: "best",
       slug: best.slug,
+    });
+  }
+
+  for (const guide of getAllGuidesUnfiltered()) {
+    if (!guide.productSlugs.includes(productSlug)) continue;
+    pages.push({
+      path: `/guides/${guide.slug}/`,
+      pageType: "guide",
+      slug: guide.slug,
     });
   }
 

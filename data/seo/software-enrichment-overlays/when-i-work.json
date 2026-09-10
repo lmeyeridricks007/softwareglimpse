@@ -1,0 +1,405 @@
+{
+  "slug": "when-i-work",
+  "updatedAt": "2026-09-09T18:11:24.968Z",
+  "version": "1.0.0",
+  "fieldAudit": {
+    "slug": "when-i-work",
+    "checkedAt": "2026-09-09T18:11:24.967Z",
+    "items": [
+      {
+        "field": "name",
+        "status": "PASS",
+        "detail": "Name: When I Work",
+        "source": "seed"
+      },
+      {
+        "field": "product_status",
+        "status": "PASS",
+        "detail": "productLifecycle=active",
+        "source": "seed"
+      },
+      {
+        "field": "canonical_vendor",
+        "status": "PASS",
+        "detail": "Vendor: When I Work, Inc.",
+        "source": "seed"
+      },
+      {
+        "field": "category",
+        "status": "PASS",
+        "detail": "primaryCategorySlug=hr",
+        "source": "seed"
+      },
+      {
+        "field": "description",
+        "status": "PASS",
+        "detail": "Description present (Per-user hourly scheduling — Essentials from $2.50/user/mo; Pro $5; Premium $8; …)",
+        "source": "seed"
+      },
+      {
+        "field": "target_audience",
+        "status": "PASS",
+        "detail": "Sizes=2, teams=1, assessment bestFor=3",
+        "source": "assessment"
+      },
+      {
+        "field": "use_cases",
+        "status": "PASS",
+        "detail": "useCaseSlugs=2",
+        "source": "seed"
+      },
+      {
+        "field": "capabilities",
+        "status": "PASS",
+        "detail": "featureRatings=0, enrichment features=16",
+        "source": "enrichment"
+      },
+      {
+        "field": "pricing",
+        "status": "PASS",
+        "detail": "Pricing envelope present",
+        "source": "enrichment"
+      },
+      {
+        "field": "plans",
+        "status": "PASS",
+        "detail": "plans=4",
+        "source": "enrichment"
+      },
+      {
+        "field": "free_plan",
+        "status": "PASS",
+        "detail": "No free plan in documented plans (explicit absence)",
+        "source": "enrichment"
+      },
+      {
+        "field": "trial",
+        "status": "PASS",
+        "detail": "Trial documented on plans/pricing",
+        "source": "enrichment"
+      },
+      {
+        "field": "integrations",
+        "status": "PASS",
+        "detail": "integrationSlugs=0, enrichment=2",
+        "source": "enrichment"
+      },
+      {
+        "field": "alternatives",
+        "status": "PASS",
+        "detail": "alternativeSlugs=3",
+        "source": "seed"
+      },
+      {
+        "field": "competitors",
+        "status": "PASS",
+        "detail": "competitorSlugs=4",
+        "source": "seed"
+      },
+      {
+        "field": "affiliate",
+        "status": "PASS",
+        "detail": "No affiliate relationship (explicit)",
+        "source": "seed"
+      },
+      {
+        "field": "source_provenance",
+        "status": "PASS",
+        "detail": "seed sources=0, enrichment sourceIds=2",
+        "source": "enrichment"
+      },
+      {
+        "field": "verification_date",
+        "status": "PASS",
+        "detail": "Latest verification/research signal: 2026-08-18T12:00:00.000Z",
+        "source": "enrichment"
+      }
+    ],
+    "passCount": 18,
+    "partialCount": 0,
+    "missingCount": 0,
+    "unknownCount": 0,
+    "score": 100
+  },
+  "decisionHub": {
+    "whatItIs": "When I Work is mobile-first shift scheduling and team messaging for hourly workplaces. Published per-user plans: Essentials $2.50, Pro $5, Premium $8/user/mo. 14-day trial, no credit card. Time & attendance is a separate toggle (dollar amount not printed on the live price card; vendor blog cites +$1.50). Auto-scheduling, multi-location, and POS/payroll integrations sit on Essentials+; SSO/API on Premium. No free forever plan.",
+    "bestFor": [
+      "Hourly teams that mainly need scheduling and messaging at a low per-user price",
+      "Operators who will trial 14 days before buying Deputy or Homebase hubs",
+      "Multi-location teams that stay on Essentials+ for templates and OpenShifts",
+      "small-business / operations: When I Work fit for small-business operations teams in the frontline-wfm job cluster, from first-party positioning and HR Priority-2 research.",
+      "mid-market / operations: When I Work fit for mid-market operations teams in the frontline-wfm job cluster, from first-party positioning and HR Priority-2 research."
+    ],
+    "notIdealFor": [
+      "Teams whose primary job is GPS time clocks (Jibble) without paying the T&A toggle",
+      "Restaurants that want 7shifts’ hospitality payroll/tips stack",
+      "Buyers who need a free forever WFM tier (Homebase Basic / Connecteam ≤10)",
+      "Headline $2.50 is scheduling-only — time & attendance is a toggle not priced on the card",
+      "No free forever plan",
+      "SSO/API require Premium"
+    ],
+    "coreCapabilities": [
+      "applicant tracking",
+      "career site job boards",
+      "core hris",
+      "workforce scheduling",
+      "frontline comms",
+      "sop knowledge base",
+      "employee training paths",
+      "hris integrations"
+    ],
+    "pricingSummary": "4 documented plans · entry paid: Essentials · trial documented on at least one plan",
+    "keyTradeoffs": [
+      "Headline $2.50 is scheduling-only — time & attendance is a toggle not priced on the card",
+      "No free forever plan",
+      "SSO/API require Premium",
+      "Not a restaurant-specialist (7shifts) or full people platform",
+      "Payroll is partner-led (Rippling promo), not native"
+    ],
+    "alternatives": [
+      {
+        "slug": "homebase",
+        "name": "Homebase"
+      },
+      {
+        "slug": "connecteam",
+        "name": "Connecteam"
+      },
+      {
+        "slug": "deputy",
+        "name": "Deputy"
+      },
+      {
+        "slug": "7shifts",
+        "name": "7shifts"
+      }
+    ],
+    "importantComparisons": [
+      {
+        "slug": "homebase-vs-when-i-work",
+        "title": "Homebase vs When I Work",
+        "href": "/compare/homebase-vs-when-i-work/"
+      },
+      {
+        "slug": "7shifts-vs-when-i-work",
+        "title": "7shifts vs When I Work",
+        "href": "/compare/7shifts-vs-when-i-work/"
+      },
+      {
+        "slug": "adp-workforce-now-vs-when-i-work",
+        "title": "ADP Workforce Now vs When I Work",
+        "href": "/compare/adp-workforce-now-vs-when-i-work/"
+      },
+      {
+        "slug": "ashby-vs-when-i-work",
+        "title": "Ashby vs When I Work",
+        "href": "/compare/ashby-vs-when-i-work/"
+      },
+      {
+        "slug": "bamboohr-vs-when-i-work",
+        "title": "BambooHR vs When I Work",
+        "href": "/compare/bamboohr-vs-when-i-work/"
+      },
+      {
+        "slug": "bolt-for-business-vs-when-i-work",
+        "title": "Bolt for Business vs When I Work",
+        "href": "/compare/bolt-for-business-vs-when-i-work/"
+      }
+    ],
+    "relevantGuides": [
+      {
+        "slug": "when-i-work-implementation",
+        "title": "When I Work Implementation: 30/60/90 HR Rollout That Sticks",
+        "href": "/guides/when-i-work-implementation/"
+      },
+      {
+        "slug": "when-i-work-migration",
+        "title": "When I Work Migration: Move People Data Without Losing Trust",
+        "href": "/guides/when-i-work-migration/"
+      },
+      {
+        "slug": "when-i-work-setup",
+        "title": "When I Work Setup: Day-Zero Path to a Working HR Loop",
+        "href": "/guides/when-i-work-setup/"
+      },
+      {
+        "slug": "when-i-work-plans",
+        "title": "When I Work Plans: Seats, Hubs, and Qualifying Tiers",
+        "href": "/guides/when-i-work-plans/"
+      },
+      {
+        "slug": "is-when-i-work-worth-it",
+        "title": "Is When I Work Worth It? Fit Scenarios Before You Buy",
+        "href": "/guides/is-when-i-work-worth-it/"
+      }
+    ],
+    "evidenceState": "Research/data-based (no completed hands-on test) · Latest verification/research signal: 2026-08-18T12:00:00.000Z · Editorial assessment: approved",
+    "nextDecisionStep": "Compare against peers: Homebase vs When I Work",
+    "missingSections": []
+  },
+  "dependents": [
+    {
+      "kind": "guide",
+      "slug": "when-i-work-implementation",
+      "path": "/guides/when-i-work-implementation/"
+    },
+    {
+      "kind": "guide",
+      "slug": "when-i-work-migration",
+      "path": "/guides/when-i-work-migration/"
+    },
+    {
+      "kind": "guide",
+      "slug": "when-i-work-setup",
+      "path": "/guides/when-i-work-setup/"
+    },
+    {
+      "kind": "guide",
+      "slug": "when-i-work-plans",
+      "path": "/guides/when-i-work-plans/"
+    },
+    {
+      "kind": "guide",
+      "slug": "is-when-i-work-worth-it",
+      "path": "/guides/is-when-i-work-worth-it/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "homebase-vs-when-i-work",
+      "path": "/compare/homebase-vs-when-i-work/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "7shifts-vs-when-i-work",
+      "path": "/compare/7shifts-vs-when-i-work/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "adp-workforce-now-vs-when-i-work",
+      "path": "/compare/adp-workforce-now-vs-when-i-work/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "ashby-vs-when-i-work",
+      "path": "/compare/ashby-vs-when-i-work/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "bamboohr-vs-when-i-work",
+      "path": "/compare/bamboohr-vs-when-i-work/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "bolt-for-business-vs-when-i-work",
+      "path": "/compare/bolt-for-business-vs-when-i-work/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "carepatron-vs-when-i-work",
+      "path": "/compare/carepatron-vs-when-i-work/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "dayforce-vs-when-i-work",
+      "path": "/compare/dayforce-vs-when-i-work/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "deputy-vs-when-i-work",
+      "path": "/compare/deputy-vs-when-i-work/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "greenhouse-vs-when-i-work",
+      "path": "/compare/greenhouse-vs-when-i-work/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "gusto-vs-when-i-work",
+      "path": "/compare/gusto-vs-when-i-work/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "hibob-vs-when-i-work",
+      "path": "/compare/hibob-vs-when-i-work/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "lever-vs-when-i-work",
+      "path": "/compare/lever-vs-when-i-work/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "oracle-hcm-vs-when-i-work",
+      "path": "/compare/oracle-hcm-vs-when-i-work/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "paycor-vs-when-i-work",
+      "path": "/compare/paycor-vs-when-i-work/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "paylocity-vs-when-i-work",
+      "path": "/compare/paylocity-vs-when-i-work/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "personio-vs-when-i-work",
+      "path": "/compare/personio-vs-when-i-work/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "rippling-vs-when-i-work",
+      "path": "/compare/rippling-vs-when-i-work/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "trainual-vs-when-i-work",
+      "path": "/compare/trainual-vs-when-i-work/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "ukg-pro-vs-when-i-work",
+      "path": "/compare/ukg-pro-vs-when-i-work/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "when-i-work-vs-workable",
+      "path": "/compare/when-i-work-vs-workable/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "when-i-work-vs-workday",
+      "path": "/compare/when-i-work-vs-workday/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "connecteam-vs-when-i-work",
+      "path": "/compare/connecteam-vs-when-i-work/"
+    },
+    {
+      "kind": "alternatives",
+      "slug": "when-i-work",
+      "path": "/alternatives/when-i-work/"
+    },
+    {
+      "kind": "pricing",
+      "slug": "when-i-work",
+      "path": "/software/when-i-work/pricing/"
+    },
+    {
+      "kind": "tools",
+      "slug": "hr-cost-calculator",
+      "path": "/tools/hr-cost-calculator/"
+    }
+  ],
+  "dependentsNeedingRefresh": [],
+  "remediation": [],
+  "notes": [
+    "fieldAudit score=100",
+    "decisionHub bestFor=5 notIdeal=6",
+    "dependents=31"
+  ],
+  "materiallyImproved": true
+}

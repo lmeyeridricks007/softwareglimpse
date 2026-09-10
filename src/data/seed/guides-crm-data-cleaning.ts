@@ -1,4 +1,4 @@
-import type { GuidePage } from "@/domain";
+import type { GuidePageInput } from "@/domain";
 import type { z } from "zod";
 import type { GuideContentBlockSchema } from "@/domain";
 
@@ -363,7 +363,7 @@ const crmDataCleaningBlocks: GuideBlockInput[] = [
   },
 ];
 
-export const crmDataCleaningGuide: GuidePage = {
+export const crmDataCleaningGuide: GuidePageInput = {
   id: "guide-crm-data-cleaning",
   slug: "crm-data-cleaning",
   title: "Clean CRM Data Before You Migrate",
@@ -404,7 +404,7 @@ export const crmDataCleaningGuide: GuidePage = {
     "crm-go-live",
     "crm-testing",
   ],
-  blocks: crmDataCleaningBlocks as GuidePage["blocks"],
+  blocks: crmDataCleaningBlocks as GuidePageInput["blocks"],
   checklist: [
     {
       id: "dedupe",

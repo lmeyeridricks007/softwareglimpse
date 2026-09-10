@@ -47,7 +47,6 @@ describe.each(Object.entries(TIER_HUB_FIXTURES))(
           );
         }
       },
-      15_000,
     );
 
     it("includes enough comparisons on the hub", () => {

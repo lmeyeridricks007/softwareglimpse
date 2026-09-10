@@ -158,7 +158,6 @@ function PricingCard({
 function TeamCostEstimator({ model }: { model: ComparisonPageModel }) {
   const unitA = model.pricing.unitA;
   const unitB = model.pricing.unitB;
-  if (!unitA && !unitB) return null;
 
   const [seats, setSeats] = useState(model.pricing.defaultSeats || 15);
 
@@ -189,6 +188,8 @@ function TeamCostEstimator({ model }: { model: ComparisonPageModel }) {
       diffLabel,
     };
   }, [seats, unitA, unitB, model.productA.name, model.productB.name]);
+
+  if (!unitA && !unitB) return null;
 
   return (
     <Card className="overflow-hidden p-0 ring-1 ring-[var(--sg-color-primary)]/15">

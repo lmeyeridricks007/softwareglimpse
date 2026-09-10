@@ -30,6 +30,8 @@ import {
   faqPageJsonLd,
   webPageJsonLd,
 } from "@/seo/structured-data";
+import { InternalLinkingModules } from "@/components/internal-linking";
+import { buildInjectionOnlyLinkPlan } from "@/services/internal-linking";
 
 const TITLE = "CRM Software Finder";
 const DESCRIPTION =
@@ -68,6 +70,11 @@ export default function CrmFinderPage() {
       question: item.question,
       answer: item.answer,
     })),
+  );
+
+  const toolLinkPlan = buildInjectionOnlyLinkPlan(
+    "/tools/crm-finder/",
+    "tool",
   );
 
   return (
@@ -127,6 +134,10 @@ export default function CrmFinderPage() {
       <CrmFinderFaq />
 
       <CrmFinderFinalCta calculatorHref={landing.calculatorHref} />
+
+      <Section padding="md" background="surface" container="wide">
+        <InternalLinkingModules plan={toolLinkPlan} showParentInline={false} />
+      </Section>
 
       {newsletterEnabled ? (
         <Section padding="md" background="muted" container="wide">

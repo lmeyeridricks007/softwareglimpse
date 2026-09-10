@@ -6,20 +6,12 @@ import {
   getSoftwareBySlug,
 } from "@/data";
 import { SoftwareCta } from "@/components/affiliate/software-cta";
+import { ComparisonDecisionPage } from "@/components/comparison/decision/comparison-decision-page";
 import {
-  ComparisonEvidenceTab,
-  ComparisonFaqTab,
-  ComparisonFeaturesTab,
-  ComparisonOverviewTab,
-  ComparisonPageClient,
-  ComparisonPricingTab,
-  ComparisonProsConsTab,
-  ComparisonScorecardTab,
-  ComparisonScreenshotsTab,
-  ComparisonSidebarGlance,
-  ComparisonVerdictHero,
-} from "@/components/comparison/page";
-import { EditorialDisclosures } from "@/components/editorial";
+  EditorialDisclosures,
+  EditorialProvenance,
+  EditorialTrustBlock,
+} from "@/components/editorial";
 import { TrustStrip } from "@/components/trust/trust-strip";
 import {
   canonicalizeComparisonSlug,
@@ -28,22 +20,37 @@ import {
 } from "@/domain/comparison-slug";
 import { isEntityIndexable } from "@/domain/quality-gates";
 import { canPlaceCta } from "@/services/editorial/cta-rules";
-import {
-  buildComparisonPageModel,
-} from "@/services/comparison-page/build-page-model";
-import {
-  isComparisonPageTabId,
-  type ComparisonPageTabId,
-} from "@/services/comparison-page/tabs";
+import { buildComparisonTrustMetadata } from "@/services/editorial/comparison-trust";
+import { buildComparisonPageModel } from "@/services/comparison-page/build-page-model";
 import { buildPageMetadata } from "@/seo/metadata";
-import { JsonLdScript, breadcrumbJsonLd, webPageJsonLd } from "@/seo/structured-data";
+import {
+  JsonLdScript,
+  breadcrumbJsonLd,
+  faqPageJsonLd,
+  webPageJsonLd,
+} from "@/seo/structured-data";
 import { buildComparisonLinkPlan } from "@/services/internal-linking";
 import { InternalLinkingModules } from "@/components/internal-linking";
+import { buildEstateBreadcrumbs } from "@/services/seo/knowledge-graph";
 
 type Props = {
   params: Promise<{ slug: string }>;
   searchParams: Promise<{ tab?: string }>;
 };
+
+async function loadComparisonWithEnrichment(slug: string) {
+  const comparison = getComparisonBySlug(slug);
+  if (!comparison) return null;
+  const [{ loadCompareEnrichmentOverlay }, { mergeComparisonWithOverlay }] =
+    await Promise.all([
+      import("@/services/seo/compare-enrichment/overlay-store"),
+      import("@/services/seo/compare-enrichment/overlay-merge"),
+    ]);
+  return mergeComparisonWithOverlay(
+    comparison,
+    loadCompareEnrichmentOverlay(comparison.slug),
+  );
+}
 
 export function generateStaticParams() {
   const params: { slug: string }[] = [];
@@ -59,7 +66,7 @@ export function generateStaticParams() {
 
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const { slug } = await params;
-  const comparison = getComparisonBySlug(slug);
+  const comparison = await loadComparisonWithEnrichment(slug);
   if (!comparison) {
     return buildPageMetadata({
       title: "Comparison not found",
@@ -69,22 +76,23 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
     });
   }
 
+  const model = buildComparisonPageModel(comparison);
+  const title = model?.decision.seoTitle || comparison.seo.title || comparison.title;
+  const description =
+    model?.decision.seoDescription ||
+    comparison.seo.description ||
+    `${comparison.title} on SoftwareGlimpse.`;
+
   return buildPageMetadata({
-    title: comparison.seo.title || comparison.title,
-    description:
-      comparison.seo.description ||
-      `${comparison.title} on SoftwareGlimpse.`,
+    title,
+    description,
     path: comparison.seo.canonicalPath || `/compare/${comparison.slug}/`,
     indexable: isEntityIndexable({ kind: "comparison", entity: comparison }),
   });
 }
 
-export default async function ComparisonDetailPage({
-  params,
-  searchParams,
-}: Props) {
+export default async function ComparisonDetailPage({ params }: Props) {
   const { slug } = await params;
-  const { tab: tabParam } = await searchParams;
 
   if (!isCanonicalComparisonSlug(slug)) {
     const parsed = parseComparisonSlug(slug);
@@ -95,7 +103,7 @@ export default async function ComparisonDetailPage({
     }
   }
 
-  const comparison = getComparisonBySlug(slug);
+  const comparison = await loadComparisonWithEnrichment(slug);
   if (!comparison) notFound();
 
   const model = buildComparisonPageModel(comparison);
@@ -104,12 +112,12 @@ export default async function ComparisonDetailPage({
   const productA = getSoftwareBySlug(model.productA.slug);
   const productB = getSoftwareBySlug(model.productB.slug);
 
-  const initialTab: ComparisonPageTabId =
-    tabParam &&
-    isComparisonPageTabId(tabParam) &&
-    model.availableTabs.includes(tabParam)
-      ? tabParam
-      : "overview";
+  const comparisonTrust = buildComparisonTrustMetadata({
+    productA,
+    productB,
+    lastUpdated: model.lastUpdated ?? comparison.metadata.updatedAt,
+    methodologyVersion: model.methodologyVersion,
+  });
 
   const showCtaA = canPlaceCta("comparison", "mid", 0);
   const showCtaB = canPlaceCta("comparison", "final", 0);
@@ -121,77 +129,22 @@ export default async function ComparisonDetailPage({
     categorySlug: productA?.primaryCategorySlug ?? productB?.primaryCategorySlug,
   });
 
-  const breadcrumbItems = [
-    { name: "Home", path: "/" },
-    { name: "Comparisons", path: "/compare/" },
-    { name: model.title, path: `/compare/${model.slug}/` },
-  ];
-
-  const panels: Partial<
-    Record<
-      ComparisonPageTabId,
-      React.ReactNode
-    >
-  > = {};
-  if (initialTab === "overview") {
-    panels.overview = <ComparisonOverviewTab model={model} />;
-  } else if (initialTab === "scorecard") {
-    panels.scorecard = <ComparisonScorecardTab model={model} />;
-  } else if (initialTab === "features") {
-    panels.features = <ComparisonFeaturesTab model={model} />;
-  } else if (initialTab === "pricing") {
-    panels.pricing = <ComparisonPricingTab model={model} />;
-  } else if (initialTab === "pros-cons") {
-    panels["pros-cons"] = <ComparisonProsConsTab model={model} />;
-  } else if (initialTab === "screenshots") {
-    panels.screenshots = <ComparisonScreenshotsTab model={model} />;
-  } else if (initialTab === "evidence") {
-    panels.evidence = <ComparisonEvidenceTab model={model} />;
-  } else if (initialTab === "faq") {
-    panels.faq = <ComparisonFaqTab model={model} />;
-  }
-
-  const hero = (
-    <ComparisonVerdictHero
-      model={model}
-      visitCtaA={
-        showCtaA ? (
-          <SoftwareCta
-            productId={model.productA.slug}
-            context="comparison"
-            intent="VISIT"
-            variant="button"
-            label={model.productA.visitLabel}
-            showDisclosure={false}
-            className="[&_a]:w-full"
-          />
-        ) : undefined
-      }
-      visitCtaB={
-        showCtaB ? (
-          <SoftwareCta
-            productId={model.productB.slug}
-            context="comparison"
-            intent="VISIT"
-            variant="button"
-            label={model.productB.visitLabel}
-            showDisclosure={false}
-            className="[&_a]:w-full [&_a]:border [&_a]:border-[var(--sg-color-border-strong)] [&_a]:bg-[var(--sg-color-surface)] [&_a]:text-[var(--sg-color-text)] [&_a]:hover:border-[var(--sg-color-primary)] [&_a]:hover:bg-[var(--sg-color-surface)] [&_a]:hover:text-[var(--sg-color-primary)]"
-          />
-        ) : undefined
-      }
-    />
+  const breadcrumbItems = buildEstateBreadcrumbs(`/compare/${model.slug}/`).map(
+    (item, index, all) =>
+      index === all.length - 1
+        ? { ...item, name: model.decision.h1 }
+        : item,
   );
+
+  const faqLd = faqPageJsonLd(model.faq);
 
   return (
     <>
       <JsonLdScript
         data={[
           webPageJsonLd({
-            name: model.title,
-            description:
-              comparison.seo.description ||
-              `${model.title} on SoftwareGlimpse.`,
+            name: model.decision.seoTitle || model.title,
+            description: model.decision.seoDescription,
             path: `/compare/${model.slug}/`,
             dateModified:
               model.lastUpdated ??
@@ -199,70 +152,80 @@ export default async function ComparisonDetailPage({
               comparison.metadata.publishedAt,
           }),
           breadcrumbJsonLd(breadcrumbItems),
+          ...(faqLd ? [faqLd] : []),
         ]}
       />
 
-      <ComparisonPageClient
-        chrome={{
-          slug: model.slug,
-          title: model.title,
-          subtitle: model.subtitle,
-          lastUpdated: model.lastUpdated ?? null,
-          evidenceSourceCount: model.evidenceSourceCount,
-          screenshotCount: model.screenshotCount,
-          howWeReviewHref: model.howWeReviewHref,
-          provisional: model.provisional,
-          researched: model.researched,
-          availableTabs: model.availableTabs,
-          productAName: model.productA.name,
-          productBName: model.productB.name,
-        }}
-        initialTab={initialTab}
-        panels={panels}
-        hero={hero}
-        sidebar={
-          <ComparisonSidebarGlance
-            glance={{
-              overallLabel: model.overallLabel,
-              productA: {
-                name: model.productA.name,
-                logo: model.productA.logo,
-              },
-              productB: {
-                name: model.productB.name,
-                logo: model.productB.logo,
-              },
-              winsACount: model.winsA.length,
-              winsBCount: model.winsB.length,
-              tiesCount: model.ties.length,
-              finderHref: model.finderHref,
-              finderLabel: model.finderLabel,
-              availableTabs: model.availableTabs,
-              guides: model.guides,
-            }}
-          />
+      <div className="mx-auto w-full max-w-[var(--sg-container-wide)] px-4 pt-8 sm:px-6">
+        <EditorialTrustBlock trust={comparisonTrust} variant="comparison" />
+      </div>
+
+      <ComparisonDecisionPage
+        model={model}
+        visitCtaA={
+          showCtaA ? (
+            <SoftwareCta
+              productId={model.productA.slug}
+              context="comparison"
+              intent="VISIT"
+              variant="button"
+              label={model.productA.visitLabel}
+              showDisclosure={false}
+              className="[&_a]:w-full"
+            />
+          ) : undefined
+        }
+        visitCtaB={
+          showCtaB ? (
+            <SoftwareCta
+              productId={model.productB.slug}
+              context="comparison"
+              intent="VISIT"
+              variant="button"
+              label={model.productB.visitLabel}
+              showDisclosure={false}
+              className="[&_a]:w-full [&_a]:border [&_a]:border-[var(--sg-color-border-strong)] [&_a]:bg-[var(--sg-color-surface)] [&_a]:text-[var(--sg-color-text)] [&_a]:hover:border-[var(--sg-color-primary)] [&_a]:hover:bg-[var(--sg-color-surface)] [&_a]:hover:text-[var(--sg-color-primary)]"
+            />
+          ) : undefined
         }
       />
 
       {(productA?.affiliate?.disclosureRequired ||
         productB?.affiliate?.disclosureRequired) &&
       (showCtaA || showCtaB) ? (
-        <p className="mt-6 text-xs text-[var(--sg-color-text-muted)]">
+        <p className="mx-auto mt-6 w-full max-w-[var(--sg-container-wide)] px-4 text-xs text-[var(--sg-color-text-muted)] sm:px-6">
           Some visit links may be affiliate links — we may earn a commission at
           no extra cost to you. Comparison outcomes are never based on
           commission.
         </p>
       ) : null}
 
-      <EditorialDisclosures
-        showAffiliate={Boolean(
-          productA?.affiliate?.disclosureRequired ||
-            productB?.affiliate?.disclosureRequired,
-        )}
-        methodologyVersion={model.methodologyVersion}
-        fixtureBased={model.provisional}
-        aiUsed={model.criteria.length > 0}
-      />
+      <div className="mx-auto w-full max-w-[var(--sg-container-wide)] px-4 sm:px-6">
+        <EditorialDisclosures
+          showAffiliate={Boolean(
+            productA?.affiliate?.disclosureRequired ||
+              productB?.affiliate?.disclosureRequired,
+          )}
+          methodologyVersion={model.methodologyVersion}
+          fixtureBased={model.provisional}
+          aiUsed={model.criteria.length > 0}
+        />
+        <EditorialProvenance
+          sources={[
+            ...(productA?.sources ?? []),
+            ...(productB?.sources ?? []),
+          ].slice(0, 8)}
+          pricingVerifiedAt={comparisonTrust.pricingVerifiedAt}
+          dataCheckedAt={
+            comparisonTrust.researchDate ?? comparisonTrust.lastUpdated
+          }
+          methodologyLabel={
+            model.methodologyVersion
+              ? `Methodology v${model.methodologyVersion}`
+              : "Editorial methodology"
+          }
+        />
+      </div>
 
       <div className="mx-auto mt-10 w-full max-w-[var(--sg-container-wide)] px-4 sm:px-6">
         <InternalLinkingModules

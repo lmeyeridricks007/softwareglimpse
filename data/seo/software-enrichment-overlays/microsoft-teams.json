@@ -1,0 +1,433 @@
+{
+  "slug": "microsoft-teams",
+  "updatedAt": "2026-09-07T22:31:21.421Z",
+  "version": "1.0.0",
+  "fieldAudit": {
+    "slug": "microsoft-teams",
+    "checkedAt": "2026-09-07T22:31:21.420Z",
+    "items": [
+      {
+        "field": "name",
+        "status": "PASS",
+        "detail": "Name: Microsoft Teams",
+        "source": "seed"
+      },
+      {
+        "field": "product_status",
+        "status": "PASS",
+        "detail": "productLifecycle=active",
+        "source": "seed"
+      },
+      {
+        "field": "canonical_vendor",
+        "status": "UNKNOWN",
+        "detail": "Company/vendor not documented",
+        "source": "none"
+      },
+      {
+        "field": "category",
+        "status": "PASS",
+        "detail": "primaryCategorySlug=business-communications",
+        "source": "seed"
+      },
+      {
+        "field": "description",
+        "status": "PASS",
+        "detail": "Description present (M365 collaboration hub (chat, meetings, files) with optional Teams Phone telepho…)",
+        "source": "seed"
+      },
+      {
+        "field": "target_audience",
+        "status": "PASS",
+        "detail": "Sizes=3, teams=3, assessment bestFor=3",
+        "source": "assessment"
+      },
+      {
+        "field": "use_cases",
+        "status": "PASS",
+        "detail": "useCaseSlugs=1",
+        "source": "seed"
+      },
+      {
+        "field": "capabilities",
+        "status": "PASS",
+        "detail": "featureRatings=0, enrichment features=13",
+        "source": "enrichment"
+      },
+      {
+        "field": "pricing",
+        "status": "PASS",
+        "detail": "Pricing envelope present",
+        "source": "enrichment"
+      },
+      {
+        "field": "plans",
+        "status": "PASS",
+        "detail": "plans=4",
+        "source": "enrichment"
+      },
+      {
+        "field": "free_plan",
+        "status": "PASS",
+        "detail": "Free plan documented",
+        "source": "enrichment"
+      },
+      {
+        "field": "trial",
+        "status": "UNKNOWN",
+        "detail": "Trial not explicitly documented — do not assume none",
+        "source": "none"
+      },
+      {
+        "field": "integrations",
+        "status": "PASS",
+        "detail": "integrationSlugs=0, enrichment=6",
+        "source": "enrichment"
+      },
+      {
+        "field": "alternatives",
+        "status": "PASS",
+        "detail": "alternativeSlugs=3",
+        "source": "seed"
+      },
+      {
+        "field": "competitors",
+        "status": "PASS",
+        "detail": "competitorSlugs=3",
+        "source": "seed"
+      },
+      {
+        "field": "affiliate",
+        "status": "PASS",
+        "detail": "No affiliate relationship (explicit)",
+        "source": "seed"
+      },
+      {
+        "field": "source_provenance",
+        "status": "PASS",
+        "detail": "seed sources=0, enrichment sourceIds=4",
+        "source": "enrichment"
+      },
+      {
+        "field": "verification_date",
+        "status": "PASS",
+        "detail": "Latest verification/research signal: 2026-08-17T12:00:00.000Z",
+        "source": "enrichment"
+      }
+    ],
+    "passCount": 16,
+    "partialCount": 0,
+    "missingCount": 0,
+    "unknownCount": 2,
+    "score": 89
+  },
+  "decisionHub": {
+    "whatItIs": "Microsoft Teams is scored here as a team-messaging and collaboration hub, not as a peer cloud-phone product. Free Teams and Microsoft 365 Plans include chat and meetings; Teams Phone Standard (~$10/user/month annual) plus PSTN (PAYG ~$13 / Calling Plan ~$17 / Domestic+International ~$34) is a telephony add-on that also requires an eligible Teams/M365 licence. October 2023 Teams unbundling means Teams is no longer assumed free inside every Microsoft 365 SKU — verify licence packaging.",
+    "bestFor": [
+      "Organisations standardised on Microsoft 365 that need chat and meetings as the collaboration hub",
+      "Enterprises that may add Teams Phone later for PSTN without changing collaboration vendors",
+      "IT-led rollouts that prioritise identity, compliance and app ecosystem over dialer features",
+      "small-business / operations: Microsoft Teams fit for small-business operations teams in the team-messaging job cluster, from first-party positioning and business-communications Priority-1 research.",
+      "mid-market / operations: Microsoft Teams fit for mid-market operations teams in the team-messaging job cluster, from first-party positioning and business-communications Priority-1 research.",
+      "enterprise / operations: Microsoft Teams fit for enterprise operations teams in the team-messaging job cluster, from first-party positioning and business-communications Priority-1 research."
+    ],
+    "notIdealFor": [
+      "Buyers shortlisting a primary cloud phone / contact-centre system",
+      "Sales teams that need power dialer, SMS campaigns or WhatsApp Business",
+      "Companies unwilling to navigate M365 licence + Teams Phone + PSTN stacking",
+      "Scored as a collaboration hub — Teams Phone is a telephony add-on, not the primary scored job",
+      "Teams Phone requires an eligible Teams/M365 licence plus PSTN (PAYG or Calling Plan)",
+      "October 2023 Teams unbundling means Teams is not free inside every Microsoft 365 SKU"
+    ],
+    "coreCapabilities": [
+      "team messaging",
+      "video meetings",
+      "team communication"
+    ],
+    "pricingSummary": "4 documented plans · 1 free · entry paid: Teams Phone Standard",
+    "keyTradeoffs": [
+      "Scored as a collaboration hub — Teams Phone is a telephony add-on, not the primary scored job",
+      "Teams Phone requires an eligible Teams/M365 licence plus PSTN (PAYG or Calling Plan)",
+      "October 2023 Teams unbundling means Teams is not free inside every Microsoft 365 SKU",
+      "No power dialer; SMS and WhatsApp are not first-class customer channels",
+      "Copilot AI is a separately priced Microsoft 365 add-on"
+    ],
+    "alternatives": [
+      {
+        "slug": "slack",
+        "name": "Slack"
+      },
+      {
+        "slug": "zenzap",
+        "name": "Zenzap"
+      },
+      {
+        "slug": "zoom",
+        "name": "Zoom"
+      }
+    ],
+    "importantComparisons": [
+      {
+        "slug": "microsoft-teams-vs-slack",
+        "title": "Microsoft Teams vs Slack",
+        "href": "/compare/microsoft-teams-vs-slack/"
+      },
+      {
+        "slug": "microsoft-teams-vs-zoom",
+        "title": "Microsoft Teams vs Zoom",
+        "href": "/compare/microsoft-teams-vs-zoom/"
+      },
+      {
+        "slug": "dialpad-vs-microsoft-teams",
+        "title": "Dialpad vs Microsoft Teams",
+        "href": "/compare/dialpad-vs-microsoft-teams/"
+      },
+      {
+        "slug": "eightx8-vs-microsoft-teams",
+        "title": "8x8 vs Microsoft Teams",
+        "href": "/compare/eightx8-vs-microsoft-teams/"
+      },
+      {
+        "slug": "fastmail-vs-microsoft-teams",
+        "title": "Fastmail vs Microsoft Teams",
+        "href": "/compare/fastmail-vs-microsoft-teams/"
+      },
+      {
+        "slug": "five9-vs-microsoft-teams",
+        "title": "Five9 vs Microsoft Teams",
+        "href": "/compare/five9-vs-microsoft-teams/"
+      }
+    ],
+    "relevantGuides": [
+      {
+        "slug": "what-is-business-communications-software",
+        "title": "What Is Business Communications Software? Beginner's Guide",
+        "href": "/guides/what-is-business-communications-software/"
+      },
+      {
+        "slug": "how-to-choose-business-communications-software",
+        "title": "How to Choose Business Communications Software: Job-First Framework",
+        "href": "/guides/how-to-choose-business-communications-software/"
+      },
+      {
+        "slug": "business-communications-pricing-guide",
+        "title": "Business Communications Pricing Guide: Seats, Minutes & Message Fees",
+        "href": "/guides/business-communications-pricing-guide/"
+      },
+      {
+        "slug": "business-communications-requirements-guide",
+        "title": "Business Communications Requirements Guide: Numbers, Routing & Must-Haves",
+        "href": "/guides/business-communications-requirements-guide/"
+      },
+      {
+        "slug": "business-communications-evaluation-guide",
+        "title": "Business Communications Evaluation Guide: Two-Week Trial Scorecard",
+        "href": "/guides/business-communications-evaluation-guide/"
+      },
+      {
+        "slug": "microsoft-teams-implementation",
+        "title": "Microsoft Teams Implementation: 30/60/90 Communications Rollout That Sticks",
+        "href": "/guides/microsoft-teams-implementation/"
+      }
+    ],
+    "evidenceState": "Research/data-based (no completed hands-on test) · Latest verification/research signal: 2026-08-17T12:00:00.000Z · Editorial assessment: approved",
+    "nextDecisionStep": "Compare against peers: Microsoft Teams vs Slack",
+    "missingSections": [
+      "canonical_vendor",
+      "trial"
+    ]
+  },
+  "dependents": [
+    {
+      "kind": "guide",
+      "slug": "what-is-business-communications-software",
+      "path": "/guides/what-is-business-communications-software/"
+    },
+    {
+      "kind": "guide",
+      "slug": "how-to-choose-business-communications-software",
+      "path": "/guides/how-to-choose-business-communications-software/"
+    },
+    {
+      "kind": "guide",
+      "slug": "business-communications-pricing-guide",
+      "path": "/guides/business-communications-pricing-guide/"
+    },
+    {
+      "kind": "guide",
+      "slug": "business-communications-requirements-guide",
+      "path": "/guides/business-communications-requirements-guide/"
+    },
+    {
+      "kind": "guide",
+      "slug": "business-communications-evaluation-guide",
+      "path": "/guides/business-communications-evaluation-guide/"
+    },
+    {
+      "kind": "guide",
+      "slug": "microsoft-teams-implementation",
+      "path": "/guides/microsoft-teams-implementation/"
+    },
+    {
+      "kind": "guide",
+      "slug": "microsoft-teams-migration",
+      "path": "/guides/microsoft-teams-migration/"
+    },
+    {
+      "kind": "guide",
+      "slug": "microsoft-teams-setup",
+      "path": "/guides/microsoft-teams-setup/"
+    },
+    {
+      "kind": "guide",
+      "slug": "microsoft-teams-plans",
+      "path": "/guides/microsoft-teams-plans/"
+    },
+    {
+      "kind": "guide",
+      "slug": "is-microsoft-teams-worth-it",
+      "path": "/guides/is-microsoft-teams-worth-it/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "microsoft-teams-vs-slack",
+      "path": "/compare/microsoft-teams-vs-slack/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "microsoft-teams-vs-zoom",
+      "path": "/compare/microsoft-teams-vs-zoom/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "dialpad-vs-microsoft-teams",
+      "path": "/compare/dialpad-vs-microsoft-teams/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "eightx8-vs-microsoft-teams",
+      "path": "/compare/eightx8-vs-microsoft-teams/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "fastmail-vs-microsoft-teams",
+      "path": "/compare/fastmail-vs-microsoft-teams/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "five9-vs-microsoft-teams",
+      "path": "/compare/five9-vs-microsoft-teams/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "genesys-vs-microsoft-teams",
+      "path": "/compare/genesys-vs-microsoft-teams/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "goto-connect-vs-microsoft-teams",
+      "path": "/compare/goto-connect-vs-microsoft-teams/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "grasshopper-vs-microsoft-teams",
+      "path": "/compare/grasshopper-vs-microsoft-teams/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "manychat-vs-microsoft-teams",
+      "path": "/compare/manychat-vs-microsoft-teams/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "microsoft-teams-vs-nextiva",
+      "path": "/compare/microsoft-teams-vs-nextiva/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "microsoft-teams-vs-ooma",
+      "path": "/compare/microsoft-teams-vs-ooma/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "microsoft-teams-vs-openphone",
+      "path": "/compare/microsoft-teams-vs-openphone/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "microsoft-teams-vs-respond-io",
+      "path": "/compare/microsoft-teams-vs-respond-io/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "microsoft-teams-vs-ringcentral",
+      "path": "/compare/microsoft-teams-vs-ringcentral/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "microsoft-teams-vs-sanebox",
+      "path": "/compare/microsoft-teams-vs-sanebox/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "microsoft-teams-vs-talkdesk",
+      "path": "/compare/microsoft-teams-vs-talkdesk/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "microsoft-teams-vs-twilio",
+      "path": "/compare/microsoft-teams-vs-twilio/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "microsoft-teams-vs-vonage",
+      "path": "/compare/microsoft-teams-vs-vonage/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "microsoft-teams-vs-wati",
+      "path": "/compare/microsoft-teams-vs-wati/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "microsoft-teams-vs-webex",
+      "path": "/compare/microsoft-teams-vs-webex/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "microsoft-teams-vs-zenzap",
+      "path": "/compare/microsoft-teams-vs-zenzap/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "livestorm-vs-microsoft-teams",
+      "path": "/compare/livestorm-vs-microsoft-teams/"
+    },
+    {
+      "kind": "alternatives",
+      "slug": "microsoft-teams",
+      "path": "/alternatives/microsoft-teams/"
+    },
+    {
+      "kind": "pricing",
+      "slug": "microsoft-teams",
+      "path": "/software/microsoft-teams/pricing/"
+    },
+    {
+      "kind": "tools",
+      "slug": "business-communications-cost-calculator",
+      "path": "/tools/business-communications-cost-calculator/"
+    }
+  ],
+  "dependentsNeedingRefresh": [],
+  "remediation": [
+    "verify:canonical_vendor",
+    "verify:trial"
+  ],
+  "notes": [
+    "fieldAudit score=89",
+    "decisionHub bestFor=6 notIdeal=6",
+    "dependents=36"
+  ],
+  "materiallyImproved": false
+}

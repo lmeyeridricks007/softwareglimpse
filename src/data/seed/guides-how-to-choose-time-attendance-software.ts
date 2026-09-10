@@ -1,4 +1,4 @@
-import type { GuidePage } from "@/domain";
+import type { GuidePageInput } from "@/domain";
 import type { z } from "zod";
 import type { GuideContentBlockSchema } from "@/domain";
 import { tier28GuideScheduledAt } from "@/data/config/publishing/tier-28-time-attendance-launch-2027-08-01";
@@ -34,7 +34,7 @@ const blocks: GuideBlockInput[] = [
   },
 ];
 
-function metadata(): GuidePage["metadata"] {
+function metadata(): GuidePageInput["metadata"] {
   return SCHEDULED_AT
     ? {
         status: "scheduled",
@@ -54,7 +54,7 @@ function metadata(): GuidePage["metadata"] {
       };
 }
 
-export const howToChooseTimeAttendanceSoftwareGuide: GuidePage = {
+export const howToChooseTimeAttendanceSoftwareGuide: GuidePageInput = {
   id: "guide-how-to-choose-time-attendance-software",
   slug: SLUG,
   title: "How to Choose Time & Attendance Software",
@@ -75,7 +75,7 @@ export const howToChooseTimeAttendanceSoftwareGuide: GuidePage = {
     "time-attendance-evaluation-guide",
     "time-attendance-vs-hr-software",
   ],
-  blocks: blocks as GuidePage["blocks"],
+  blocks: blocks as GuidePageInput["blocks"],
   checklist: [],
   sections: [],
   faq: [],
@@ -86,6 +86,6 @@ export const howToChooseTimeAttendanceSoftwareGuide: GuidePage = {
     description:
       "Choose time & attendance software by clock-in job, policy depth, and payroll integrations.",
     canonicalPath: `/guides/${SLUG}/`,
-    indexable: !SCHEDULED_AT,
+    indexable: true,
   },
 };

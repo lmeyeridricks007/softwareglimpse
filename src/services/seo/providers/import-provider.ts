@@ -30,14 +30,15 @@ export class ImportSearchPerformanceProvider
   ): Promise<SearchPerformanceResult> {
     const raw = JSON.parse(readFileSync(this.filePath, "utf8")) as unknown;
     const snapshot = normalizeImport(raw, request);
-    const rangeLabel = request.rangeLabel ?? snapshot.meta.rangeLabel;
-    const dataThroughDate =
-      request.range?.endDate ?? snapshot.meta.dataThroughDate;
+    const rangeLabel =
+      snapshot.meta.rangeLabel || request.rangeLabel || "import";
+    // Prefer export meta — never stamp "today" over a REAL GSC dataThroughDate.
+    const dataThroughDate = snapshot.meta.dataThroughDate;
     const source = this.opts.treatAsLive ? "import" : snapshot.meta.source;
     return {
       rows: snapshot.rows.map((row) => ({
         ...row,
-        dateRange: request.range ?? row.dateRange,
+        dateRange: row.dateRange ?? request.range,
       })),
       meta: {
         ...snapshot.meta,
@@ -63,10 +64,11 @@ function normalizeImport(
       label?: string;
     };
     const end =
-      request.range?.endDate ??
       obj.meta?.dataThroughDate ??
+      request.range?.endDate ??
       new Date().toISOString().slice(0, 10);
-    const rangeLabel = request.rangeLabel ?? obj.meta?.rangeLabel ?? "import";
+    const rangeLabel =
+      obj.meta?.rangeLabel ?? request.rangeLabel ?? "import";
     return SearchSnapshotSchema.parse({
       synthetic: obj.synthetic ?? false,
       label:

@@ -1,0 +1,158 @@
+{
+  "slug": "webcatalog-migration",
+  "enrichmentType": "MIGRATION_GUIDE",
+  "updatedAt": "2026-09-09T05:43:13.768Z",
+  "uniqueValueAdded": [
+    "implementation_workflow",
+    "scenario_analysis",
+    "decision_framework",
+    "limitations_evidence",
+    "buyer_checklist"
+  ],
+  "patch": {
+    "summary": "WebCatalog migration guide: inventory → rehearse → freeze → validate integrations — grounded in researched limitations and catalogue peers.",
+    "blocks": [
+      {
+        "id": "da-webcatalog-migration-1",
+        "type": "direct-answer",
+        "body": "Migrate to WebCatalog by inventorying legacy project-management fields, mapping them to WebCatalog objects, rehearsing a freeze window, and validating Chrome, Macos, Windows before reopening writes.",
+        "bullets": [
+          "Inventory → map → rehearse → cut over → reopen",
+          "Highest risk: Adjacent desktop shell — not a project management or work OS tool",
+          "Success signal: primary workflow works for the pilot cohort"
+        ]
+      },
+      {
+        "id": "mig-webcatalog-migration-2",
+        "type": "step",
+        "heading": "WebCatalog migration cutover playbook",
+        "body": "Migrations fail from optimistic timelines — not from missing motivation.",
+        "stepNumber": 1,
+        "scenarios": [
+          {
+            "title": "Field inventory",
+            "body": "Export legacy fields that power revenue workflows and mark must-map vs archive."
+          },
+          {
+            "title": "Rehearsal load",
+            "body": "Run a non-prod load into WebCatalog; measure match rates before the freeze."
+          },
+          {
+            "title": "Production freeze",
+            "body": "Freeze legacy writes; cut over; validate Chrome; then reopen."
+          }
+        ]
+      },
+      {
+        "id": "df-webcatalog-migration-3",
+        "type": "decision-framework",
+        "title": "Migrate to WebCatalog?",
+        "steps": [
+          {
+            "id": "m-1",
+            "label": "Migrate when Knowledge workers who want web apps as desktop apps / workspaces outweigh migration cost"
+          },
+          {
+            "id": "m-2",
+            "label": "Delay if this limitation hits cutover: Adjacent desktop shell — not a project management or work OS tool"
+          },
+          {
+            "id": "m-3",
+            "label": "If WebCatalog mapping is poor, compare destination fit with monday.com before moving data twice"
+          }
+        ]
+      },
+      {
+        "id": "mist-webcatalog-migration-4",
+        "type": "mistakes",
+        "title": "WebCatalog migration mistakes",
+        "items": [
+          {
+            "title": "No freeze window",
+            "body": "Dual-writing without a freeze creates irrevocable duplicates."
+          },
+          {
+            "title": "Integrations last",
+            "body": "Wire Chrome in rehearsal — not on Monday morning after cutover."
+          },
+          {
+            "title": "Data risk 1",
+            "body": "Adjacent desktop shell — not a project management or work OS tool"
+          },
+          {
+            "title": "Data risk 2",
+            "body": "Free Basic capped at 2 apps"
+          },
+          {
+            "title": "Data risk 3",
+            "body": "No boards, Gantt, automations, or PM reporting"
+          }
+        ]
+      },
+      {
+        "id": "sel-webcatalog-migration-5",
+        "type": "selection-checklist",
+        "title": "WebCatalog migration checklist",
+        "dimensions": [
+          {
+            "id": "map",
+            "label": "Mapping",
+            "options": [
+              "Must-map fields listed",
+              "Owners assigned",
+              "Archive rules written"
+            ]
+          },
+          {
+            "id": "rehearse",
+            "label": "Rehearsal",
+            "options": [
+              "Non-prod load done",
+              "Match rate measured",
+              "Rollback tested"
+            ]
+          },
+          {
+            "id": "cutover",
+            "label": "Cutover",
+            "options": [
+              "Freeze communicated",
+              "Integrations green",
+              "Pilot cohort signed off"
+            ]
+          }
+        ]
+      }
+    ],
+    "checklist": [
+      {
+        "id": "enrich-chk-0",
+        "label": "Complete field inventory for core workflows",
+        "order": 0
+      },
+      {
+        "id": "enrich-chk-1",
+        "label": "Rehearse load before production freeze",
+        "order": 1
+      },
+      {
+        "id": "enrich-chk-2",
+        "label": "Validate Chrome pre-reopen",
+        "order": 2
+      },
+      {
+        "id": "enrich-chk-3",
+        "label": "Mitigate: Adjacent desktop shell — not a project management or work OS tool",
+        "order": 3
+      }
+    ],
+    "nextAction": {
+      "contentId": "tool:finder:project-management",
+      "label": "Open Finder shortlist"
+    }
+  },
+  "notes": [
+    "Migration: cutover risks, data mapping, checklist.",
+    "Type-specific skeleton: MIGRATION_GUIDE"
+  ]
+}

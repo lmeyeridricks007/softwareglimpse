@@ -1,0 +1,330 @@
+{
+  "slug": "help-scout",
+  "updatedAt": "2026-09-07T22:31:21.744Z",
+  "version": "1.0.0",
+  "fieldAudit": {
+    "slug": "help-scout",
+    "checkedAt": "2026-09-07T22:31:21.742Z",
+    "items": [
+      {
+        "field": "name",
+        "status": "PASS",
+        "detail": "Name: Help Scout",
+        "source": "seed"
+      },
+      {
+        "field": "product_status",
+        "status": "PASS",
+        "detail": "productLifecycle=active",
+        "source": "seed"
+      },
+      {
+        "field": "canonical_vendor",
+        "status": "UNKNOWN",
+        "detail": "Company/vendor not documented",
+        "source": "none"
+      },
+      {
+        "field": "category",
+        "status": "PASS",
+        "detail": "primaryCategorySlug=helpdesk-ticketing",
+        "source": "seed"
+      },
+      {
+        "field": "description",
+        "status": "PASS",
+        "detail": "Description present (SMB shared inbox and helpdesk — free for up to 5 users; Standard $25, Plus $45, …)",
+        "source": "seed"
+      },
+      {
+        "field": "target_audience",
+        "status": "PASS",
+        "detail": "Sizes=3, teams=2, assessment bestFor=3",
+        "source": "assessment"
+      },
+      {
+        "field": "use_cases",
+        "status": "PASS",
+        "detail": "useCaseSlugs=2",
+        "source": "seed"
+      },
+      {
+        "field": "capabilities",
+        "status": "PASS",
+        "detail": "featureRatings=0, enrichment features=16",
+        "source": "enrichment"
+      },
+      {
+        "field": "pricing",
+        "status": "PASS",
+        "detail": "Pricing envelope present",
+        "source": "enrichment"
+      },
+      {
+        "field": "plans",
+        "status": "PASS",
+        "detail": "plans=4",
+        "source": "enrichment"
+      },
+      {
+        "field": "free_plan",
+        "status": "PASS",
+        "detail": "Free plan documented",
+        "source": "enrichment"
+      },
+      {
+        "field": "trial",
+        "status": "PASS",
+        "detail": "Trial documented on plans/pricing",
+        "source": "enrichment"
+      },
+      {
+        "field": "integrations",
+        "status": "PASS",
+        "detail": "integrationSlugs=0, enrichment=4",
+        "source": "enrichment"
+      },
+      {
+        "field": "alternatives",
+        "status": "PASS",
+        "detail": "alternativeSlugs=3",
+        "source": "seed"
+      },
+      {
+        "field": "competitors",
+        "status": "PASS",
+        "detail": "competitorSlugs=4",
+        "source": "seed"
+      },
+      {
+        "field": "affiliate",
+        "status": "PASS",
+        "detail": "No affiliate relationship (explicit)",
+        "source": "seed"
+      },
+      {
+        "field": "source_provenance",
+        "status": "PASS",
+        "detail": "seed sources=0, enrichment sourceIds=2",
+        "source": "enrichment"
+      },
+      {
+        "field": "verification_date",
+        "status": "PASS",
+        "detail": "Latest verification/research signal: 2026-08-18T12:00:00.000Z",
+        "source": "enrichment"
+      }
+    ],
+    "passCount": 17,
+    "partialCount": 0,
+    "missingCount": 0,
+    "unknownCount": 1,
+    "score": 94
+  },
+  "decisionHub": {
+    "whatItIs": "Help Scout is an SMB-focused shared inbox and helpdesk for email-centric support teams. Free plan for up to 5 users; paid annual per-user pricing: Standard $25, Plus $45, Pro $75 per user/month billed annually. AI Answers billed at $0.75 per resolution on usage. Not an enterprise omnichannel peer of Zendesk Suite — scored inside helpdesk-ticketing for SMB shared-inbox fit.",
+    "bestFor": [
+      "SMB teams wanting email-first shared inbox support without enterprise complexity",
+      "Startups using the free 5-user tier",
+      "Buyers prioritizing ease of use over omnichannel breadth",
+      "micro / customer-success: Help Scout fit for micro customer-success teams in the helpdesk-ticketing job cluster, from first-party positioning and CS Wave-1 research.",
+      "small-business / customer-success: Help Scout fit for small-business customer-success teams in the helpdesk-ticketing job cluster, from first-party positioning and CS Wave-1 research.",
+      "mid-market / customer-success: Help Scout fit for mid-market customer-success teams in the helpdesk-ticketing job cluster, from first-party positioning and CS Wave-1 research."
+    ],
+    "notIdealFor": [
+      "Enterprise omnichannel with voice and social at scale",
+      "ITSM / ITIL service desk requirements",
+      "Ecommerce order-native helpdesk (Gorgias)",
+      "Not enterprise omnichannel depth — thinner social/voice than Zendesk Suite",
+      "AI Answers is usage-priced at $0.75/resolution — TCO can climb",
+      "Free plan capped at 5 users"
+    ],
+    "coreCapabilities": [
+      "ticketing",
+      "shared inbox",
+      "live chat",
+      "knowledge base",
+      "sla routing",
+      "macros automation",
+      "self service portal",
+      "csat surveys"
+    ],
+    "pricingSummary": "4 documented plans · 1 free · entry paid: Standard · trial documented on at least one plan",
+    "keyTradeoffs": [
+      "Not enterprise omnichannel depth — thinner social/voice than Zendesk Suite",
+      "AI Answers is usage-priced at $0.75/resolution — TCO can climb",
+      "Free plan capped at 5 users",
+      "Workflow depth below enterprise ITSM or Suite-scale routing",
+      "Customer support software that feels like email — shared inbox, knowledge base, and beacon chat for growing teams without ticket-number bureaucracy. (audience: SMB teams wanting email-first shared inbox support without enterprise complexity, Startups using the free 5-user tier)"
+    ],
+    "alternatives": [
+      {
+        "slug": "freshdesk",
+        "name": "Freshdesk"
+      },
+      {
+        "slug": "zendesk-suite",
+        "name": "Zendesk Suite"
+      },
+      {
+        "slug": "zoho-desk",
+        "name": "Zoho Desk"
+      },
+      {
+        "slug": "intercom",
+        "name": "Intercom"
+      }
+    ],
+    "importantComparisons": [
+      {
+        "slug": "freshdesk-vs-help-scout",
+        "title": "Freshdesk vs Help Scout",
+        "href": "/compare/freshdesk-vs-help-scout/"
+      },
+      {
+        "slug": "help-scout-vs-zendesk-suite",
+        "title": "Zendesk Suite vs Help Scout",
+        "href": "/compare/help-scout-vs-zendesk-suite/"
+      },
+      {
+        "slug": "help-scout-vs-zoho-desk",
+        "title": "Help Scout vs Zoho Desk",
+        "href": "/compare/help-scout-vs-zoho-desk/"
+      },
+      {
+        "slug": "help-scout-vs-intercom",
+        "title": "Help Scout vs Intercom",
+        "href": "/compare/help-scout-vs-intercom/"
+      }
+    ],
+    "relevantGuides": [
+      {
+        "slug": "what-is-help-scout",
+        "title": "What Is Help Scout?",
+        "href": "/guides/what-is-help-scout/"
+      },
+      {
+        "slug": "is-help-scout-worth-it",
+        "title": "Is Help Scout Worth It?",
+        "href": "/guides/is-help-scout-worth-it/"
+      },
+      {
+        "slug": "how-helpdesk-ticketing-software-works",
+        "title": "How Helpdesk & Ticketing Software Works",
+        "href": "/guides/how-helpdesk-ticketing-software-works/"
+      },
+      {
+        "slug": "types-of-helpdesk-ticketing-software",
+        "title": "Types of Helpdesk & Ticketing Software",
+        "href": "/guides/types-of-helpdesk-ticketing-software/"
+      },
+      {
+        "slug": "helpdesk-ticketing-vs-customer-service-software",
+        "title": "Helpdesk & Ticketing Software vs Customer Service Software",
+        "href": "/guides/helpdesk-ticketing-vs-customer-service-software/"
+      },
+      {
+        "slug": "helpdesk-ticketing-requirements-guide",
+        "title": "Helpdesk & Ticketing Software Requirements Guide",
+        "href": "/guides/helpdesk-ticketing-requirements-guide/"
+      }
+    ],
+    "evidenceState": "Research/data-based (no completed hands-on test) · Latest verification/research signal: 2026-08-18T12:00:00.000Z · Editorial assessment: approved",
+    "nextDecisionStep": "Compare against peers: Freshdesk vs Help Scout",
+    "missingSections": [
+      "canonical_vendor"
+    ]
+  },
+  "dependents": [
+    {
+      "kind": "guide",
+      "slug": "what-is-help-scout",
+      "path": "/guides/what-is-help-scout/"
+    },
+    {
+      "kind": "guide",
+      "slug": "is-help-scout-worth-it",
+      "path": "/guides/is-help-scout-worth-it/"
+    },
+    {
+      "kind": "guide",
+      "slug": "how-helpdesk-ticketing-software-works",
+      "path": "/guides/how-helpdesk-ticketing-software-works/"
+    },
+    {
+      "kind": "guide",
+      "slug": "types-of-helpdesk-ticketing-software",
+      "path": "/guides/types-of-helpdesk-ticketing-software/"
+    },
+    {
+      "kind": "guide",
+      "slug": "helpdesk-ticketing-vs-customer-service-software",
+      "path": "/guides/helpdesk-ticketing-vs-customer-service-software/"
+    },
+    {
+      "kind": "guide",
+      "slug": "helpdesk-ticketing-requirements-guide",
+      "path": "/guides/helpdesk-ticketing-requirements-guide/"
+    },
+    {
+      "kind": "guide",
+      "slug": "helpdesk-ticketing-evaluation-guide",
+      "path": "/guides/helpdesk-ticketing-evaluation-guide/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "freshdesk-vs-help-scout",
+      "path": "/compare/freshdesk-vs-help-scout/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "help-scout-vs-zendesk-suite",
+      "path": "/compare/help-scout-vs-zendesk-suite/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "help-scout-vs-zoho-desk",
+      "path": "/compare/help-scout-vs-zoho-desk/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "help-scout-vs-intercom",
+      "path": "/compare/help-scout-vs-intercom/"
+    },
+    {
+      "kind": "alternatives",
+      "slug": "help-scout",
+      "path": "/alternatives/help-scout/"
+    },
+    {
+      "kind": "pricing",
+      "slug": "help-scout",
+      "path": "/software/help-scout/pricing/"
+    },
+    {
+      "kind": "best",
+      "slug": "customer-service-software",
+      "path": "/best/customer-service-software/"
+    },
+    {
+      "kind": "best",
+      "slug": "helpdesk-ticketing-software",
+      "path": "/best/helpdesk-ticketing-software/"
+    },
+    {
+      "kind": "tools",
+      "slug": "helpdesk-ticketing-cost-calculator",
+      "path": "/tools/helpdesk-ticketing-cost-calculator/"
+    }
+  ],
+  "dependentsNeedingRefresh": [],
+  "remediation": [
+    "verify:canonical_vendor"
+  ],
+  "notes": [
+    "fieldAudit score=94",
+    "decisionHub bestFor=6 notIdeal=6",
+    "dependents=16"
+  ],
+  "materiallyImproved": false
+}

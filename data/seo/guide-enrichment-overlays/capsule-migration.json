@@ -1,0 +1,159 @@
+{
+  "slug": "capsule-migration",
+  "enrichmentType": "MIGRATION_GUIDE",
+  "updatedAt": "2026-09-07T18:30:36.691Z",
+  "uniqueValueAdded": [
+    "implementation_workflow",
+    "scenario_analysis",
+    "decision_framework",
+    "limitations_evidence",
+    "buyer_checklist"
+  ],
+  "patch": {
+    "summary": "Capsule migration guide: inventory → rehearse → freeze → validate integrations — grounded in researched limitations and catalogue peers.",
+    "blocks": [
+      {
+        "id": "da-capsule-migration-1",
+        "type": "direct-answer",
+        "body": "Migrate to Capsule by inventorying legacy crm fields, mapping them to Capsule objects, rehearsing a freeze window, and validating Gmail, Outlook, QuickBooks before reopening writes.",
+        "bullets": [
+          "Inventory → map → rehearse → cut over → reopen",
+          "Highest risk: Contact, pipeline, and custom-field limits scale strictly by plan tier.",
+          "Success signal: contact management works for the pilot cohort"
+        ]
+      },
+      {
+        "id": "mig-capsule-migration-2",
+        "type": "step",
+        "heading": "Capsule migration cutover playbook",
+        "body": "Migrations fail from optimistic timelines — not from missing motivation.",
+        "stepNumber": 1,
+        "scenarios": [
+          {
+            "title": "Field inventory",
+            "body": "Export legacy fields that power contact management, lead management, pipeline management and mark must-map vs archive."
+          },
+          {
+            "title": "Rehearsal load",
+            "body": "Run a non-prod load into Capsule; measure match rates before the freeze."
+          },
+          {
+            "title": "Production freeze",
+            "body": "Freeze legacy writes; cut over; validate Gmail; then reopen."
+          }
+        ]
+      },
+      {
+        "id": "df-capsule-migration-3",
+        "type": "decision-framework",
+        "title": "Migrate to Capsule?",
+        "steps": [
+          {
+            "id": "m-1",
+            "label": "Migrate when Small businesses wanting a simple CRM outweigh migration cost"
+          },
+          {
+            "id": "m-2",
+            "label": "Delay if this limitation hits cutover: Contact, pipeline, and custom-field limits scale strictly by plan tier."
+          },
+          {
+            "id": "m-3",
+            "label": "If Capsule mapping is poor, compare destination fit with Streak before moving data twice"
+          }
+        ]
+      },
+      {
+        "id": "mist-capsule-migration-4",
+        "type": "mistakes",
+        "title": "Capsule migration mistakes",
+        "items": [
+          {
+            "title": "No freeze window",
+            "body": "Dual-writing without a freeze creates irrevocable duplicates."
+          },
+          {
+            "title": "Integrations last",
+            "body": "Wire Gmail in rehearsal — not on Monday morning after cutover."
+          },
+          {
+            "title": "Data risk 1",
+            "body": "Contact, pipeline, and custom-field limits scale strictly by plan tier."
+          },
+          {
+            "title": "Data risk 2",
+            "body": "Workflow automations and advanced reporting start at Growth; enrichment at Advanced."
+          },
+          {
+            "title": "Data risk 3",
+            "body": "Not a marketing automation or sales-engagement suite — email templates ≠ full campaign platform."
+          }
+        ]
+      },
+      {
+        "id": "sel-capsule-migration-5",
+        "type": "selection-checklist",
+        "title": "Capsule migration checklist",
+        "dimensions": [
+          {
+            "id": "map",
+            "label": "Mapping",
+            "options": [
+              "Must-map fields listed",
+              "Owners assigned",
+              "Archive rules written"
+            ]
+          },
+          {
+            "id": "rehearse",
+            "label": "Rehearsal",
+            "options": [
+              "Non-prod load done",
+              "Match rate measured",
+              "Rollback tested"
+            ]
+          },
+          {
+            "id": "cutover",
+            "label": "Cutover",
+            "options": [
+              "Freeze communicated",
+              "Integrations green",
+              "Pilot cohort signed off"
+            ]
+          }
+        ]
+      }
+    ],
+    "checklist": [
+      {
+        "id": "enrich-chk-0",
+        "label": "Complete field inventory for contact management",
+        "order": 0
+      },
+      {
+        "id": "enrich-chk-1",
+        "label": "Rehearse load before production freeze",
+        "order": 1
+      },
+      {
+        "id": "enrich-chk-2",
+        "label": "Validate Gmail pre-reopen",
+        "order": 2
+      },
+      {
+        "id": "enrich-chk-3",
+        "label": "Mitigate: Contact, pipeline, and custom-field limits scale strictly by plan tier.",
+        "order": 3
+      }
+    ],
+    "nextAction": {
+      "contentId": "tool:finder:crm",
+      "label": "Open Finder shortlist"
+    }
+  },
+  "notes": [
+    "Omit unsupported: testing_evidence",
+    "Migration: cutover risks, data mapping, checklist.",
+    "Type-specific skeleton: MIGRATION_GUIDE"
+  ]
+}

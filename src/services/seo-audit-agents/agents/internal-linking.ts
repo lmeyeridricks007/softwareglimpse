@@ -3,6 +3,7 @@ import { buildInternalLinkingReportData } from "@/services/internal-linking/repo
 import { finding } from "../findings";
 import { applyForcedFailures, type SeoAgentRunner } from "../framework";
 import { ensureLiveProbeBundle } from "../live-probe";
+import { INTENTIONAL_REDIRECT_PROBE_PATHS } from "../live-probe-extra-paths";
 import type { SeoAgentMeta, SeoCheckResult, SeoFinding } from "../types";
 
 export const INTERNAL_LINK_AUDIT_AGENT: SeoAgentMeta = {
@@ -212,6 +213,11 @@ export const internalLinkAuditAgent: SeoAgentRunner = {
         let redirectHits = 0;
         for (const page of bundle.pages) {
           if (page.redirectChain.length > 0) {
+            // Intentional legacy/locale cutover samples are probed *because*
+            // they redirect — not a linking defect.
+            if (INTENTIONAL_REDIRECT_PROBE_PATHS.has(normalizePath(page.path))) {
+              continue;
+            }
             redirectHits += 1;
             findings.push(
               finding({

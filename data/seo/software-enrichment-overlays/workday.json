@@ -1,0 +1,409 @@
+{
+  "slug": "workday",
+  "updatedAt": "2026-09-09T18:11:53.755Z",
+  "version": "1.0.0",
+  "fieldAudit": {
+    "slug": "workday",
+    "checkedAt": "2026-09-09T18:11:53.754Z",
+    "items": [
+      {
+        "field": "name",
+        "status": "PASS",
+        "detail": "Name: Workday",
+        "source": "seed"
+      },
+      {
+        "field": "product_status",
+        "status": "PASS",
+        "detail": "productLifecycle=active",
+        "source": "seed"
+      },
+      {
+        "field": "canonical_vendor",
+        "status": "PASS",
+        "detail": "Vendor: Workday, Inc.",
+        "source": "seed"
+      },
+      {
+        "field": "category",
+        "status": "PASS",
+        "detail": "primaryCategorySlug=hr",
+        "source": "seed"
+      },
+      {
+        "field": "description",
+        "status": "PASS",
+        "detail": "Description present (Enterprise HCM default — custom PEPM quote (no published seat $); implementation…)",
+        "source": "seed"
+      },
+      {
+        "field": "target_audience",
+        "status": "PASS",
+        "detail": "Sizes=2, teams=2, assessment bestFor=3",
+        "source": "assessment"
+      },
+      {
+        "field": "use_cases",
+        "status": "PASS",
+        "detail": "useCaseSlugs=1",
+        "source": "seed"
+      },
+      {
+        "field": "capabilities",
+        "status": "PASS",
+        "detail": "featureRatings=0, enrichment features=16",
+        "source": "enrichment"
+      },
+      {
+        "field": "pricing",
+        "status": "PASS",
+        "detail": "Pricing envelope present",
+        "source": "enrichment"
+      },
+      {
+        "field": "plans",
+        "status": "PASS",
+        "detail": "plans=2",
+        "source": "enrichment"
+      },
+      {
+        "field": "free_plan",
+        "status": "PASS",
+        "detail": "No free plan in documented plans (explicit absence)",
+        "source": "enrichment"
+      },
+      {
+        "field": "trial",
+        "status": "UNKNOWN",
+        "detail": "Trial not explicitly documented — do not assume none",
+        "source": "none"
+      },
+      {
+        "field": "integrations",
+        "status": "PASS",
+        "detail": "integrationSlugs=0, enrichment=3",
+        "source": "enrichment"
+      },
+      {
+        "field": "alternatives",
+        "status": "PASS",
+        "detail": "alternativeSlugs=3",
+        "source": "seed"
+      },
+      {
+        "field": "competitors",
+        "status": "PASS",
+        "detail": "competitorSlugs=4",
+        "source": "seed"
+      },
+      {
+        "field": "affiliate",
+        "status": "PASS",
+        "detail": "No affiliate relationship (explicit)",
+        "source": "seed"
+      },
+      {
+        "field": "source_provenance",
+        "status": "PASS",
+        "detail": "seed sources=0, enrichment sourceIds=2",
+        "source": "enrichment"
+      },
+      {
+        "field": "verification_date",
+        "status": "PASS",
+        "detail": "Latest verification/research signal: 2026-08-18T14:00:00.000Z",
+        "source": "enrichment"
+      }
+    ],
+    "passCount": 17,
+    "partialCount": 0,
+    "missingCount": 0,
+    "unknownCount": 1,
+    "score": 94
+  },
+  "decisionHub": {
+    "whatItIs": "Workday Human Capital Management is the enterprise shortlist default for global HR, payroll, talent, and analytics on one employee record. First-party pages are demo/quote-led: no published PEPM, free plan, or self-serve trial. Contracts are headcount- and module-stacked; implementation partners and multi-year terms dominate TCO. Score as enterprise-HCM landscape — not an SMB BambooHR or Gusto peer.",
+    "bestFor": [
+      "Enterprises (typically 1,000+ employees) that want one HCM system of record",
+      "Global HR + payroll programmes comparing Workday as the default shortlist",
+      "Orgs that will fund a multi-month SI implementation",
+      "mid-market / operations: Workday fit for mid-market operations teams in the enterprise-hcm job cluster, from first-party positioning and HR Priority-3 research.",
+      "enterprise / operations: Workday fit for enterprise operations teams in the enterprise-hcm job cluster, from first-party positioning and HR Priority-3 research."
+    ],
+    "notIdealFor": [
+      "SMB teams that need published PEPM (BambooHR) or payroll (Gusto)",
+      "Hourly WFM-first buyers (UKG Pro / Dayforce / Connecteam)",
+      "Buyers who will not take a custom enterprise quote",
+      "No published list price — PEPM and implementation are opaque",
+      "Multi-month implementations and SI partners are typical",
+      "Not an SMB HRIS or published-PEPM payroll product"
+    ],
+    "coreCapabilities": [
+      "applicant tracking",
+      "career site job boards",
+      "interview scheduling",
+      "core hris",
+      "payroll processing",
+      "benefits admin",
+      "workforce scheduling",
+      "frontline comms"
+    ],
+    "pricingSummary": "2 documented plans · entry paid: Workday HCM",
+    "keyTradeoffs": [
+      "No published list price — PEPM and implementation are opaque",
+      "Multi-month implementations and SI partners are typical",
+      "Not an SMB HRIS or published-PEPM payroll product",
+      "Native WFM depth is not UKG/Dayforce-class for complex hourly ops",
+      "No free plan or self-serve trial"
+    ],
+    "alternatives": [
+      {
+        "slug": "oracle-hcm",
+        "name": "Oracle Cloud HCM"
+      },
+      {
+        "slug": "ukg-pro",
+        "name": "UKG Pro"
+      },
+      {
+        "slug": "dayforce",
+        "name": "Dayforce"
+      },
+      {
+        "slug": "adp-workforce-now",
+        "name": "ADP Workforce Now"
+      }
+    ],
+    "importantComparisons": [
+      {
+        "slug": "oracle-hcm-vs-workday",
+        "title": "Oracle Cloud HCM vs Workday",
+        "href": "/compare/oracle-hcm-vs-workday/"
+      },
+      {
+        "slug": "ukg-pro-vs-workday",
+        "title": "UKG Pro vs Workday",
+        "href": "/compare/ukg-pro-vs-workday/"
+      },
+      {
+        "slug": "dayforce-vs-workday",
+        "title": "Dayforce vs Workday",
+        "href": "/compare/dayforce-vs-workday/"
+      },
+      {
+        "slug": "7shifts-vs-workday",
+        "title": "7shifts vs Workday",
+        "href": "/compare/7shifts-vs-workday/"
+      },
+      {
+        "slug": "adp-workforce-now-vs-workday",
+        "title": "ADP Workforce Now vs Workday",
+        "href": "/compare/adp-workforce-now-vs-workday/"
+      },
+      {
+        "slug": "ashby-vs-workday",
+        "title": "Ashby vs Workday",
+        "href": "/compare/ashby-vs-workday/"
+      }
+    ],
+    "relevantGuides": [
+      {
+        "slug": "workday-implementation",
+        "title": "Workday Implementation: 30/60/90 HR Rollout That Sticks",
+        "href": "/guides/workday-implementation/"
+      },
+      {
+        "slug": "workday-migration",
+        "title": "Workday Migration: Move People Data Without Losing Trust",
+        "href": "/guides/workday-migration/"
+      },
+      {
+        "slug": "workday-setup",
+        "title": "Workday Setup: Day-Zero Path to a Working HR Loop",
+        "href": "/guides/workday-setup/"
+      },
+      {
+        "slug": "workday-plans",
+        "title": "Workday Plans: Seats, Hubs, and Qualifying Tiers",
+        "href": "/guides/workday-plans/"
+      },
+      {
+        "slug": "is-workday-worth-it",
+        "title": "Is Workday Worth It? Fit Scenarios Before You Buy",
+        "href": "/guides/is-workday-worth-it/"
+      }
+    ],
+    "evidenceState": "Research/data-based (no completed hands-on test) · Latest verification/research signal: 2026-08-18T14:00:00.000Z · Editorial assessment: approved",
+    "nextDecisionStep": "Compare against peers: Oracle Cloud HCM vs Workday",
+    "missingSections": [
+      "trial"
+    ]
+  },
+  "dependents": [
+    {
+      "kind": "guide",
+      "slug": "workday-implementation",
+      "path": "/guides/workday-implementation/"
+    },
+    {
+      "kind": "guide",
+      "slug": "workday-migration",
+      "path": "/guides/workday-migration/"
+    },
+    {
+      "kind": "guide",
+      "slug": "workday-setup",
+      "path": "/guides/workday-setup/"
+    },
+    {
+      "kind": "guide",
+      "slug": "workday-plans",
+      "path": "/guides/workday-plans/"
+    },
+    {
+      "kind": "guide",
+      "slug": "is-workday-worth-it",
+      "path": "/guides/is-workday-worth-it/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "oracle-hcm-vs-workday",
+      "path": "/compare/oracle-hcm-vs-workday/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "ukg-pro-vs-workday",
+      "path": "/compare/ukg-pro-vs-workday/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "dayforce-vs-workday",
+      "path": "/compare/dayforce-vs-workday/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "7shifts-vs-workday",
+      "path": "/compare/7shifts-vs-workday/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "adp-workforce-now-vs-workday",
+      "path": "/compare/adp-workforce-now-vs-workday/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "ashby-vs-workday",
+      "path": "/compare/ashby-vs-workday/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "bamboohr-vs-workday",
+      "path": "/compare/bamboohr-vs-workday/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "bolt-for-business-vs-workday",
+      "path": "/compare/bolt-for-business-vs-workday/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "carepatron-vs-workday",
+      "path": "/compare/carepatron-vs-workday/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "deputy-vs-workday",
+      "path": "/compare/deputy-vs-workday/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "greenhouse-vs-workday",
+      "path": "/compare/greenhouse-vs-workday/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "gusto-vs-workday",
+      "path": "/compare/gusto-vs-workday/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "hibob-vs-workday",
+      "path": "/compare/hibob-vs-workday/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "homebase-vs-workday",
+      "path": "/compare/homebase-vs-workday/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "lever-vs-workday",
+      "path": "/compare/lever-vs-workday/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "paycor-vs-workday",
+      "path": "/compare/paycor-vs-workday/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "paylocity-vs-workday",
+      "path": "/compare/paylocity-vs-workday/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "personio-vs-workday",
+      "path": "/compare/personio-vs-workday/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "rippling-vs-workday",
+      "path": "/compare/rippling-vs-workday/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "trainual-vs-workday",
+      "path": "/compare/trainual-vs-workday/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "when-i-work-vs-workday",
+      "path": "/compare/when-i-work-vs-workday/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "workable-vs-workday",
+      "path": "/compare/workable-vs-workday/"
+    },
+    {
+      "kind": "alternatives",
+      "slug": "workday",
+      "path": "/alternatives/workday/"
+    },
+    {
+      "kind": "pricing",
+      "slug": "workday",
+      "path": "/software/workday/pricing/"
+    },
+    {
+      "kind": "best",
+      "slug": "hr-software",
+      "path": "/best/hr-software/"
+    },
+    {
+      "kind": "tools",
+      "slug": "hr-cost-calculator",
+      "path": "/tools/hr-cost-calculator/"
+    }
+  ],
+  "dependentsNeedingRefresh": [],
+  "remediation": [
+    "verify:trial"
+  ],
+  "notes": [
+    "fieldAudit score=94",
+    "decisionHub bestFor=5 notIdeal=6",
+    "dependents=31"
+  ],
+  "materiallyImproved": true
+}

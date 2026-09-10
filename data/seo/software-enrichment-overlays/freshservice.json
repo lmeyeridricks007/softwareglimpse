@@ -1,0 +1,368 @@
+{
+  "slug": "freshservice",
+  "updatedAt": "2026-09-07T22:31:21.718Z",
+  "version": "1.0.0",
+  "fieldAudit": {
+    "slug": "freshservice",
+    "checkedAt": "2026-09-07T22:31:21.717Z",
+    "items": [
+      {
+        "field": "name",
+        "status": "PASS",
+        "detail": "Name: Freshservice",
+        "source": "seed"
+      },
+      {
+        "field": "product_status",
+        "status": "PASS",
+        "detail": "productLifecycle=active",
+        "source": "seed"
+      },
+      {
+        "field": "canonical_vendor",
+        "status": "UNKNOWN",
+        "detail": "Company/vendor not documented",
+        "source": "none"
+      },
+      {
+        "field": "category",
+        "status": "PASS",
+        "detail": "primaryCategorySlug=itsm",
+        "source": "seed"
+      },
+      {
+        "field": "description",
+        "status": "PASS",
+        "detail": "Description present (Freshworks ITSM service desk — Starter $19, Growth $49, Pro $99 agent/mo annual.…)",
+        "source": "seed"
+      },
+      {
+        "field": "target_audience",
+        "status": "PASS",
+        "detail": "Sizes=3, teams=2, assessment bestFor=3",
+        "source": "assessment"
+      },
+      {
+        "field": "use_cases",
+        "status": "PASS",
+        "detail": "useCaseSlugs=1",
+        "source": "seed"
+      },
+      {
+        "field": "capabilities",
+        "status": "PASS",
+        "detail": "featureRatings=0, enrichment features=16",
+        "source": "enrichment"
+      },
+      {
+        "field": "pricing",
+        "status": "PASS",
+        "detail": "Pricing envelope present",
+        "source": "enrichment"
+      },
+      {
+        "field": "plans",
+        "status": "PASS",
+        "detail": "plans=3",
+        "source": "enrichment"
+      },
+      {
+        "field": "free_plan",
+        "status": "PASS",
+        "detail": "No free plan in documented plans (explicit absence)",
+        "source": "enrichment"
+      },
+      {
+        "field": "trial",
+        "status": "PASS",
+        "detail": "Trial documented on plans/pricing",
+        "source": "enrichment"
+      },
+      {
+        "field": "integrations",
+        "status": "PASS",
+        "detail": "integrationSlugs=0, enrichment=4",
+        "source": "enrichment"
+      },
+      {
+        "field": "alternatives",
+        "status": "PASS",
+        "detail": "alternativeSlugs=2",
+        "source": "seed"
+      },
+      {
+        "field": "competitors",
+        "status": "PASS",
+        "detail": "competitorSlugs=8",
+        "source": "seed"
+      },
+      {
+        "field": "affiliate",
+        "status": "PASS",
+        "detail": "No affiliate relationship (explicit)",
+        "source": "seed"
+      },
+      {
+        "field": "source_provenance",
+        "status": "PASS",
+        "detail": "seed sources=0, enrichment sourceIds=2",
+        "source": "enrichment"
+      },
+      {
+        "field": "verification_date",
+        "status": "PASS",
+        "detail": "Latest verification/research signal: 2026-08-18T12:00:00.000Z",
+        "source": "enrichment"
+      }
+    ],
+    "passCount": 17,
+    "partialCount": 0,
+    "missingCount": 0,
+    "unknownCount": 1,
+    "score": 94
+  },
+  "decisionHub": {
+    "whatItIs": "Freshservice is Freshworks' IT service management (ITSM) platform for incidents, problems, changes, assets, and employee service desks. Annual per-agent pricing: Starter $19, Growth $49, Pro $99 per agent/month billed annually. Scored as itsm-service-desk primary — ranked only within ITSM landscape, not against helpdesk or live-chat peers. Distinct from Freshdesk (customer helpdesk) and Freshchat (live chat).",
+    "bestFor": [
+      "IT teams needing ITIL-style incidents, changes, and asset management",
+      "Employee service desk and internal support portals",
+      "Freshworks customers wanting ITSM separate from Freshdesk",
+      "small-business / operations: Freshservice fit for small-business operations teams in the itsm-service-desk job cluster, from first-party positioning and CS Wave-1 research.",
+      "mid-market / operations: Freshservice fit for mid-market operations teams in the itsm-service-desk job cluster, from first-party positioning and CS Wave-1 research.",
+      "enterprise / operations: Freshservice fit for enterprise operations teams in the itsm-service-desk job cluster, from first-party positioning and CS Wave-1 research."
+    ],
+    "notIdealFor": [
+      "Customer ecommerce support (Gorgias, Freshdesk)",
+      "Live-chat-only website support (Tidio, Freshchat)",
+      "SMB shared inbox without ITIL requirements",
+      "ITSM primary — not customer ecommerce helpdesk (Freshdesk/Gorgias)",
+      "No cross-cluster comparisons with live-chat or SMB helpdesk peers",
+      "Customer-facing omnichannel thinner than Zendesk Suite"
+    ],
+    "coreCapabilities": [
+      "ticketing",
+      "shared inbox",
+      "knowledge base",
+      "sla routing",
+      "macros automation",
+      "self service portal",
+      "csat surveys",
+      "helpdesk reporting"
+    ],
+    "pricingSummary": "3 documented plans · entry paid: Starter · trial documented on at least one plan",
+    "keyTradeoffs": [
+      "ITSM primary — not customer ecommerce helpdesk (Freshdesk/Gorgias)",
+      "No cross-cluster comparisons with live-chat or SMB helpdesk peers",
+      "Customer-facing omnichannel thinner than Zendesk Suite",
+      "Pro tier at $99/agent for full enterprise ITIL depth",
+      "Modern ITSM software your team will love — incidents, assets, changes, and employee service on one AI-powered platform. (audience: IT teams needing ITIL-style incidents, changes, and asset management, Employee service desk and internal support portals)"
+    ],
+    "alternatives": [
+      {
+        "slug": "servicenow",
+        "name": "ServiceNow"
+      },
+      {
+        "slug": "jira-service-management",
+        "name": "Jira Service Management"
+      },
+      {
+        "slug": "manageengine-servicedesk-plus",
+        "name": "ManageEngine ServiceDesk Plus"
+      },
+      {
+        "slug": "sysaid",
+        "name": "SysAid"
+      },
+      {
+        "slug": "haloitsm",
+        "name": "HaloITSM"
+      },
+      {
+        "slug": "topdesk",
+        "name": "TOPdesk"
+      }
+    ],
+    "importantComparisons": [
+      {
+        "slug": "datadog-vs-freshservice",
+        "title": "Freshservice vs Datadog",
+        "href": "/compare/datadog-vs-freshservice/"
+      },
+      {
+        "slug": "freshservice-vs-servicenow",
+        "title": "ServiceNow vs Freshservice",
+        "href": "/compare/freshservice-vs-servicenow/"
+      },
+      {
+        "slug": "freshservice-vs-jira-service-management",
+        "title": "Jira Service Management vs Freshservice",
+        "href": "/compare/freshservice-vs-jira-service-management/"
+      },
+      {
+        "slug": "freshservice-vs-manageengine-servicedesk-plus",
+        "title": "ManageEngine ServiceDesk Plus vs Freshservice",
+        "href": "/compare/freshservice-vs-manageengine-servicedesk-plus/"
+      },
+      {
+        "slug": "freshservice-vs-sysaid",
+        "title": "SysAid vs Freshservice",
+        "href": "/compare/freshservice-vs-sysaid/"
+      },
+      {
+        "slug": "freshservice-vs-topdesk",
+        "title": "TOPdesk vs Freshservice",
+        "href": "/compare/freshservice-vs-topdesk/"
+      }
+    ],
+    "relevantGuides": [
+      {
+        "slug": "how-itsm-software-works",
+        "title": "How ITSM Software Works",
+        "href": "/guides/how-itsm-software-works/"
+      },
+      {
+        "slug": "types-of-itsm-software",
+        "title": "Types of ITSM Software",
+        "href": "/guides/types-of-itsm-software/"
+      },
+      {
+        "slug": "itsm-vs-it-development-software",
+        "title": "ITSM Software vs IT & Development Software",
+        "href": "/guides/itsm-vs-it-development-software/"
+      },
+      {
+        "slug": "itsm-requirements-guide",
+        "title": "ITSM Software Requirements Guide",
+        "href": "/guides/itsm-requirements-guide/"
+      },
+      {
+        "slug": "itsm-evaluation-guide",
+        "title": "ITSM Software Evaluation Guide",
+        "href": "/guides/itsm-evaluation-guide/"
+      },
+      {
+        "slug": "what-is-freshservice",
+        "title": "What Is Freshservice?",
+        "href": "/guides/what-is-freshservice/"
+      }
+    ],
+    "evidenceState": "Research/data-based (no completed hands-on test) · Latest verification/research signal: 2026-08-18T12:00:00.000Z · Editorial assessment: approved",
+    "nextDecisionStep": "Compare against peers: Freshservice vs Datadog",
+    "missingSections": [
+      "canonical_vendor"
+    ]
+  },
+  "dependents": [
+    {
+      "kind": "guide",
+      "slug": "how-itsm-software-works",
+      "path": "/guides/how-itsm-software-works/"
+    },
+    {
+      "kind": "guide",
+      "slug": "types-of-itsm-software",
+      "path": "/guides/types-of-itsm-software/"
+    },
+    {
+      "kind": "guide",
+      "slug": "itsm-vs-it-development-software",
+      "path": "/guides/itsm-vs-it-development-software/"
+    },
+    {
+      "kind": "guide",
+      "slug": "itsm-requirements-guide",
+      "path": "/guides/itsm-requirements-guide/"
+    },
+    {
+      "kind": "guide",
+      "slug": "itsm-evaluation-guide",
+      "path": "/guides/itsm-evaluation-guide/"
+    },
+    {
+      "kind": "guide",
+      "slug": "what-is-freshservice",
+      "path": "/guides/what-is-freshservice/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "datadog-vs-freshservice",
+      "path": "/compare/datadog-vs-freshservice/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "freshservice-vs-servicenow",
+      "path": "/compare/freshservice-vs-servicenow/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "freshservice-vs-jira-service-management",
+      "path": "/compare/freshservice-vs-jira-service-management/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "freshservice-vs-manageengine-servicedesk-plus",
+      "path": "/compare/freshservice-vs-manageengine-servicedesk-plus/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "freshservice-vs-sysaid",
+      "path": "/compare/freshservice-vs-sysaid/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "freshservice-vs-topdesk",
+      "path": "/compare/freshservice-vs-topdesk/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "freshservice-vs-haloitsm",
+      "path": "/compare/freshservice-vs-haloitsm/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "freshservice-vs-ivanti",
+      "path": "/compare/freshservice-vs-ivanti/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "bmc-helix-vs-freshservice",
+      "path": "/compare/bmc-helix-vs-freshservice/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "freshservice-vs-zoho-desk",
+      "path": "/compare/freshservice-vs-zoho-desk/"
+    },
+    {
+      "kind": "alternatives",
+      "slug": "freshservice",
+      "path": "/alternatives/freshservice/"
+    },
+    {
+      "kind": "pricing",
+      "slug": "freshservice",
+      "path": "/software/freshservice/pricing/"
+    },
+    {
+      "kind": "best",
+      "slug": "itsm-software",
+      "path": "/best/itsm-software/"
+    },
+    {
+      "kind": "tools",
+      "slug": "itsm-cost-calculator",
+      "path": "/tools/itsm-cost-calculator/"
+    }
+  ],
+  "dependentsNeedingRefresh": [],
+  "remediation": [
+    "verify:canonical_vendor"
+  ],
+  "notes": [
+    "fieldAudit score=94",
+    "decisionHub bestFor=6 notIdeal=6",
+    "dependents=20"
+  ],
+  "materiallyImproved": false
+}

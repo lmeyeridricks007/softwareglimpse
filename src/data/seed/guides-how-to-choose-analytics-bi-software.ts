@@ -1,4 +1,4 @@
-import type { GuidePage } from "@/domain";
+import type { GuidePageInput } from "@/domain";
 import type { z } from "zod";
 import type { GuideContentBlockSchema } from "@/domain";
 import { tier17GuideScheduledAt } from "@/data/config/publishing/tier-17-analytics-bi-launch-2027-02-01";
@@ -34,7 +34,7 @@ const blocks: GuideBlockInput[] = [
   },
 ];
 
-function metadata(): GuidePage["metadata"] {
+function metadata(): GuidePageInput["metadata"] {
   return SCHEDULED_AT
     ? {
         status: "scheduled",
@@ -54,7 +54,7 @@ function metadata(): GuidePage["metadata"] {
       };
 }
 
-export const howToChooseAnalyticsBiSoftwareGuide: GuidePage = {
+export const howToChooseAnalyticsBiSoftwareGuide: GuidePageInput = {
   id: "guide-how-to-choose-analytics-bi-software",
   slug: SLUG,
   title: "How to Choose Analytics & BI Software",
@@ -73,7 +73,7 @@ export const howToChooseAnalyticsBiSoftwareGuide: GuidePage = {
     "what-is-analytics-bi-software",
     "analytics-bi-pricing-guide",
   ],
-  blocks: blocks as GuidePage["blocks"],
+  blocks: blocks as GuidePageInput["blocks"],
   checklist: [],
   sections: [],
   faq: [],
@@ -83,7 +83,7 @@ export const howToChooseAnalyticsBiSoftwareGuide: GuidePage = {
     title: "How to Choose Analytics & BI Software",
     description:
       "Choose analytics software by attribution vs dashboard jobs, data sources, and reporting workflows.",
-    indexable: !SCHEDULED_AT,
+    indexable: true,
     canonicalPath: "/guides/how-to-choose-analytics-bi-software/",
   },
 };

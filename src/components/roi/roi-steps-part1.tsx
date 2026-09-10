@@ -329,15 +329,16 @@ export function RoiStepCurrentState({
           max={52}
           step={1}
           value={cs.workingWeeksPerYear}
-          onChange={(n) =>
+          onChange={(n) => {
+            if (n === undefined) return;
             patch((p) => ({
               ...p,
               currentState: {
                 ...p.currentState,
                 workingWeeksPerYear: n,
               },
-            }))
-          }
+            }));
+          }}
         />
       </Field>
     </div>
@@ -367,7 +368,9 @@ function ProcessGroup({
               step={0.25}
               placeholder="0"
               value={value}
-              onChange={(n) => onChange(key, n)}
+              onChange={(n) => {
+                if (n !== undefined) onChange(key, n);
+              }}
             />
           </Field>
         ))}

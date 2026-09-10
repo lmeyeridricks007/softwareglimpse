@@ -35,10 +35,12 @@ describe("best hub", () => {
     expect(blob).not.toMatch(/candidate recommendations/i);
   });
 
-  it("does not invent approved Best-for claims", () => {
+  it("surfaces approved Best-for claims from published pages", () => {
     const model = buildBestHubModel();
-    // Seed recommendations are all approved:false today
-    expect(model.approvedBestFor).toEqual([]);
+    expect(model.approvedBestFor.length).toBeGreaterThan(0);
+    expect(model.approvedBestFor.every((row) => row.bestFor.length > 0)).toBe(
+      true,
+    );
   });
 
   it("exposes CRM Finder when that tool is the live personalization path", () => {
@@ -50,10 +52,10 @@ describe("best hub", () => {
     expect(model.tools.some((t) => t.id === "crm-cost")).toBe(true);
   });
 
-  it("only includes publicly published comparisons", () => {
-    // Seed comparisons are researching / not public — hub must not invent a grid
-    expect(getPopularComparisonsForBestHub()).toEqual([]);
-    expect(buildBestHubModel().comparisons).toEqual([]);
+  it("includes publicly published comparisons when available", () => {
+    const comparisons = getPopularComparisonsForBestHub();
+    expect(comparisons.length).toBeGreaterThan(0);
+    expect(buildBestHubModel().comparisons.length).toBeGreaterThan(0);
   });
 
   it("surfaces recently updated Best pages with safe change labels", () => {

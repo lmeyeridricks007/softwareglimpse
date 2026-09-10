@@ -16,7 +16,8 @@ export type AuditCheckId =
   | "hardcoded_legacy"
   | "legacy_assets"
   | "not_found_experience"
-  | "redirect_hygiene";
+  | "redirect_hygiene"
+  | "live_http_probes";
 
 export type LegacyFateKind =
   | "preserved_200"

@@ -33,6 +33,7 @@ import {
   comparisonPublicCopy,
   firstComparisonPublicCopy,
 } from "./public-copy";
+import { buildDecisionNarrative } from "./decision-narrative";
 import type { ComparisonPageTabId } from "./tabs";
 import type {
   ComparisonCriterionRow,
@@ -49,6 +50,7 @@ export type {
   ComparisonPageProduct,
   QualitativeStrength,
 } from "./types";
+export type { ComparisonDecisionNarrative } from "./decision-narrative";
 
 
 const CRM_FEATURE_GROUPS: Array<{ group: string; slugs: string[] }> = [
@@ -1316,7 +1318,7 @@ export function buildComparisonPageModel(
 
   const discovery = categoryDiscovery(comparison.categorySlug);
 
-  return {
+  const baseModel = {
     slug: comparison.slug,
     title: comparison.title,
     subtitle,
@@ -1388,6 +1390,23 @@ export function buildComparisonPageModel(
     finderHref: discovery.finderHref,
     finderLabel: discovery.finderLabel,
     costCalculatorHref: discovery.costCalculatorHref,
+  };
+
+  const decision = buildDecisionNarrative({
+    nameA,
+    nameB,
+    existingSeoTitle: comparison.seo.title,
+    existingSeoDescription: comparison.seo.description,
+    model: baseModel,
+    integrationSlugsA: productAEntity?.integrationSlugs ?? [],
+    integrationSlugsB: productBEntity?.integrationSlugs ?? [],
+  });
+
+  return {
+    ...baseModel,
+    // Prefer pair-specific subtitle when seed summary is thin/generic.
+    subtitle: decision.summary,
+    decision,
   };
 }
 

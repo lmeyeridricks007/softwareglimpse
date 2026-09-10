@@ -374,6 +374,8 @@ export {
   type MediaPublicVisibility,
 } from "./governance";
 
+export type { CapabilitySeeInActionCard } from "./capability-page-media";
+
 /**
  * Client-safe barrel only.
  *

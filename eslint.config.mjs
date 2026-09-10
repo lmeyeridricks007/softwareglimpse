@@ -12,6 +12,17 @@ const eslintConfig = defineConfig([
     "out/**",
     "build/**",
     "next-env.d.ts",
+    // Non-production scratch / backups / caches (not app source):
+    "tmp/**",
+    "scripts/_*.ts",
+    "scripts/_*/**",
+    "coverage/**",
+    "data/seo/batches/**",
+    "data/seo/guide-enrichment-overlays/**",
+    "data/seo/compare-enrichment-overlays/**",
+    "data/seo/software-enrichment-overlays/**",
+    "src/data/generated/**",
+    "docs/migration/data/**",
   ]),
 ]);
 

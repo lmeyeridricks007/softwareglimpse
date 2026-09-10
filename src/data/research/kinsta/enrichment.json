@@ -179,6 +179,22 @@
       ]
     }
   ],
+  "integrationSupport": [
+    {
+      "integrationSlug": "wordpress",
+      "kind": "native",
+      "sourceIds": [
+        "kinsta-product-official"
+      ]
+    },
+    {
+      "integrationSlug": "api",
+      "kind": "api-only",
+      "sourceIds": [
+        "kinsta-product-official"
+      ]
+    }
+  ],
   "aiCapabilities": [
     {
       "capability": "assistant",
@@ -206,22 +222,6 @@
     {
       "capability": "recommendations",
       "availability": "limited",
-      "sourceIds": [
-        "kinsta-product-official"
-      ]
-    }
-  ],
-  "integrationSupport": [
-    {
-      "integrationSlug": "wordpress",
-      "kind": "native",
-      "sourceIds": [
-        "kinsta-product-official"
-      ]
-    },
-    {
-      "integrationSlug": "api",
-      "kind": "api-only",
       "sourceIds": [
         "kinsta-product-official"
       ]
@@ -298,50 +298,6 @@
       "isEditorial": false
     }
   ],
-  "pricing": {
-    "currency": "USD",
-    "model": "flat",
-    "hasFreePlan": false,
-    "hasFreeTrial": false,
-    "plans": [
-      {
-        "id": "plan-single-20gb",
-        "slug": "single-20gb",
-        "name": "Single (20GB)",
-        "isFree": false,
-        "contactSales": false,
-        "hasFreeTrial": false,
-        "highlighted": true,
-        "rules": [
-          {
-            "kind": "flat",
-            "amount": 35,
-            "currency": "USD",
-            "interval": "month",
-            "amountPeriod": "month"
-          }
-        ],
-        "description": "$35/mo ongoing Single 20GB floor. Promotional first-month pricing is not the research floor."
-      },
-      {
-        "id": "plan-enterprise",
-        "slug": "enterprise",
-        "name": "Enterprise / higher plans",
-        "isFree": false,
-        "contactSales": true,
-        "hasFreeTrial": false,
-        "highlighted": false,
-        "rules": [],
-        "description": "Larger visits/storage and enterprise managed hosting — confirm live ladder on kinsta.com/pricing."
-      }
-    ],
-    "notes": "Verified 2026-08-18 from kinsta.com/pricing (high confidence). Single 20GB from $35/mo ongoing. Promotional first-month offers exist — do not use promo tiles as the floor. No general free trial; free migrations are a separate motion. Affiliate economics excluded.",
-    "verifiedAt": "2026-08-18T20:00:00.000Z",
-    "sourceIds": [
-      "kinsta-pricing-official"
-    ],
-    "startingPriceMonthly": 35
-  },
   "screenshots": [
     {
       "id": "kinsta-shot-overview",
@@ -431,13 +387,13 @@
       "demonstratedDimensionIds": [],
       "requirementCriterionIds": [],
       "workflowStageIds": [],
+      "mediaContext": "general-workflow",
       "reportedOutcomes": [],
       "placements": [
         "overview",
         "features",
         "evidence"
       ],
-      "mediaContext": "general-workflow",
       "purpose": "Official kinsta video for product research pages",
       "demonstratesCaption": "How kinsta presents the product in an official vendor video.",
       "editorialCommentary": "Official vendor demo — treat as UI/workflow evidence, not SoftwareGlimpse scoring.",
@@ -455,12 +411,50 @@
       "status": "published"
     }
   ],
-  "sourceIds": [
-    "kinsta-product-official",
-    "kinsta-pricing-official",
-    "kinsta-pricing"
-  ],
-  "notes": "IT industry Tier-A onboarding enrichment from first-party research 2026-08-18T20:00:00.000Z. handsOnTesting=false. membershipRole=primary. jobCluster=hosting-providers.",
+  "pricing": {
+    "currency": "USD",
+    "model": "flat",
+    "hasFreePlan": false,
+    "hasFreeTrial": false,
+    "plans": [
+      {
+        "id": "plan-single-20gb",
+        "slug": "single-20gb",
+        "name": "Single (20GB)",
+        "isFree": false,
+        "contactSales": false,
+        "hasFreeTrial": false,
+        "highlighted": true,
+        "rules": [
+          {
+            "kind": "flat",
+            "amount": 35,
+            "currency": "USD",
+            "interval": "month",
+            "amountPeriod": "month"
+          }
+        ],
+        "description": "$35/mo ongoing Single 20GB floor. Promotional first-month pricing is not the research floor."
+      },
+      {
+        "id": "plan-enterprise",
+        "slug": "enterprise",
+        "name": "Enterprise / higher plans",
+        "isFree": false,
+        "contactSales": true,
+        "hasFreeTrial": false,
+        "highlighted": false,
+        "rules": [],
+        "description": "Larger visits/storage and enterprise managed hosting — confirm live ladder on kinsta.com/pricing."
+      }
+    ],
+    "notes": "Verified 2026-08-18 from kinsta.com/pricing (high confidence). Single 20GB from $35/mo ongoing. Promotional first-month offers exist — do not use promo tiles as the floor. No general free trial; free migrations are a separate motion. Affiliate economics excluded.",
+    "verifiedAt": "2026-09-08T21:57:40.820Z",
+    "sourceIds": [
+      "kinsta-pricing-official"
+    ],
+    "startingPriceMonthly": 35
+  },
   "domainCheckedAt": {
     "identity": "2026-08-18T20:00:00.000Z",
     "pricing": "2026-08-18T20:00:00.000Z",
@@ -474,5 +468,11 @@
     "limits": "2026-08-18T20:00:00.000Z",
     "security-compliance": "2026-08-18T20:00:00.000Z"
   },
-  "updatedAt": "2026-08-24T05:30:00.000Z"
+  "sourceIds": [
+    "kinsta-product-official",
+    "kinsta-pricing-official",
+    "kinsta-pricing"
+  ],
+  "updatedAt": "2026-08-24T05:30:00.000Z",
+  "notes": "IT industry Tier-A onboarding enrichment from first-party research 2026-08-18T20:00:00.000Z. handsOnTesting=false. membershipRole=primary. jobCluster=hosting-providers."
 }

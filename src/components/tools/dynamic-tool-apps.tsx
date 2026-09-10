@@ -120,6 +120,16 @@ export const DynamicSiCostCalculatorApp = dynamic(
   },
 );
 
+export const DynamicSiCreditTcoCalculatorApp = dynamic(
+  () =>
+    import("@/components/si-credit-tco/si-credit-tco-calculator-app").then(
+      (m) => m.SiCreditTcoCalculatorApp,
+    ),
+  {
+    loading: () => <ToolLoading label="SI credit TCO calculator" />,
+  },
+);
+
 export const DynamicCrmRoiCalculatorApp = dynamic(
   () =>
     import("@/components/roi/crm-roi-calculator-app").then(

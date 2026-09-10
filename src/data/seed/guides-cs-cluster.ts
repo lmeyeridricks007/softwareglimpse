@@ -1,4 +1,4 @@
-import type { GuidePage } from "@/domain";
+import type { GuidePageInput } from "@/domain";
 import { teachingExpansionFor } from "./guides-category-teaching-expansion";
 import { customerServiceEvaluationGuide } from "./guides-customer-service-evaluation-guide";
 import { customerServicePricingGuide } from "./guides-customer-service-pricing-guide";
@@ -10,7 +10,7 @@ import { whatIsCustomerServiceSoftwareGuide } from "./guides-what-is-customer-se
  * Customer-service category educational guides (minimum supporting set).
  * Published and indexable (matches HR / PM editorial gate).
  */
-export const csCategoryGuides: GuidePage[] = [
+export const csCategoryGuides: GuidePageInput[] = [
   whatIsCustomerServiceSoftwareGuide,
   howToChooseCustomerServiceSoftwareGuide,
   customerServicePricingGuide,

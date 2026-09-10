@@ -1,4 +1,4 @@
-import type { GuidePage } from "@/domain";
+import type { GuidePageInput } from "@/domain";
 import type { z } from "zod";
 import type { GuideContentBlockSchema } from "@/domain";
 import { tier21GuideScheduledAt } from "@/data/config/publishing/tier-21-ai-website-builder-launch-2027-05-01";
@@ -34,7 +34,7 @@ const blocks: GuideBlockInput[] = [
   },
 ];
 
-function metadata(): GuidePage["metadata"] {
+function metadata(): GuidePageInput["metadata"] {
   return SCHEDULED_AT
     ? {
         status: "scheduled",
@@ -54,7 +54,7 @@ function metadata(): GuidePage["metadata"] {
       };
 }
 
-export const howToChooseAiWebsiteBuilderSoftwareGuide: GuidePage = {
+export const howToChooseAiWebsiteBuilderSoftwareGuide: GuidePageInput = {
   id: "guide-how-to-choose-ai-website-builder-software",
   slug: SLUG,
   title: "How to Choose AI Website Builder Software",
@@ -74,7 +74,7 @@ export const howToChooseAiWebsiteBuilderSoftwareGuide: GuidePage = {
     "ai-website-builder-pricing-guide",
     "ai-website-builder-evaluation-guide",
   ],
-  blocks: blocks as GuidePage["blocks"],
+  blocks: blocks as GuidePageInput["blocks"],
   checklist: [],
   sections: [],
   faq: [],
@@ -84,7 +84,7 @@ export const howToChooseAiWebsiteBuilderSoftwareGuide: GuidePage = {
     title: "How to Choose AI Website Builder Software",
     description:
       "Choose AI website builders by prompt-to-site, agent builder, or app development job fit.",
-    indexable: !SCHEDULED_AT,
+    indexable: true,
     canonicalPath: "/guides/how-to-choose-ai-website-builder-software/",
   },
 };

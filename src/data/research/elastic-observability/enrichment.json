@@ -195,6 +195,29 @@
       ]
     }
   ],
+  "integrationSupport": [
+    {
+      "integrationSlug": "aws",
+      "kind": "native",
+      "sourceIds": [
+        "elastic-observability-product-official"
+      ]
+    },
+    {
+      "integrationSlug": "api",
+      "kind": "api-only",
+      "sourceIds": [
+        "elastic-observability-product-official"
+      ]
+    },
+    {
+      "integrationSlug": "slack",
+      "kind": "native",
+      "sourceIds": [
+        "elastic-observability-product-official"
+      ]
+    }
+  ],
   "aiCapabilities": [
     {
       "capability": "assistant",
@@ -222,29 +245,6 @@
     {
       "capability": "recommendations",
       "availability": "limited",
-      "sourceIds": [
-        "elastic-observability-product-official"
-      ]
-    }
-  ],
-  "integrationSupport": [
-    {
-      "integrationSlug": "aws",
-      "kind": "native",
-      "sourceIds": [
-        "elastic-observability-product-official"
-      ]
-    },
-    {
-      "integrationSlug": "api",
-      "kind": "api-only",
-      "sourceIds": [
-        "elastic-observability-product-official"
-      ]
-    },
-    {
-      "integrationSlug": "slack",
-      "kind": "native",
       "sourceIds": [
         "elastic-observability-product-official"
       ]
@@ -328,6 +328,27 @@
       "isEditorial": false
     }
   ],
+  "screenshots": [
+    {
+      "id": "elastic-observability-shot-overview",
+      "src": "/vendor-ui/elastic-observability/overview.png",
+      "alt": "Elastic Observability official marketing visual",
+      "caption": "Official Open Graph / marketing visual from https://www.elastic.co/.",
+      "source": "https://www.elastic.co/",
+      "checkedAt": "2026-08-18T14:00:00.000Z",
+      "annotation": "Official Elastic Observability marketing UI asset",
+      "kind": "vendor-ui",
+      "featureIds": [
+        "infrastructure-monitoring",
+        "apm-tracing",
+        "log-management"
+      ],
+      "useCaseIds": [
+        "observability-monitoring"
+      ]
+    }
+  ],
+  "media": [],
   "pricing": {
     "currency": "USD",
     "model": "usage",
@@ -385,40 +406,12 @@
       }
     ],
     "notes": "Verified 2026-08-18 from elastic.co/pricing and elastic.co/pricing/cloud-hosted (high confidence on Hosted Standard as low as $99/mo for 120 GB / 2 zones). Serverless Observability is usage-based (~$0.07–$0.09/GB ingest commonly cited — confirm live). Self-managed OSS is a different buying motion. Affiliate economics excluded.",
-    "verifiedAt": "2026-08-18T20:00:00.000Z",
+    "verifiedAt": "2026-09-08T21:57:32.565Z",
     "sourceIds": [
       "elastic-observability-pricing-official"
     ],
     "startingPriceMonthly": 99
   },
-  "screenshots": [
-    {
-      "id": "elastic-observability-shot-overview",
-      "src": "/vendor-ui/elastic-observability/overview.png",
-      "alt": "Elastic Observability official marketing visual",
-      "caption": "Official Open Graph / marketing visual from https://www.elastic.co/.",
-      "source": "https://www.elastic.co/",
-      "checkedAt": "2026-08-18T14:00:00.000Z",
-      "annotation": "Official Elastic Observability marketing UI asset",
-      "kind": "vendor-ui",
-      "featureIds": [
-        "infrastructure-monitoring",
-        "apm-tracing",
-        "log-management"
-      ],
-      "useCaseIds": [
-        "observability-monitoring"
-      ]
-    }
-  ],
-  "media": [],
-  "sourceIds": [
-    "elastic-observability-product-official",
-    "elastic-observability-pricing-official",
-    "elastic-pricing",
-    "elastic-cloud-hosted-pricing"
-  ],
-  "notes": "IT industry Tier-A onboarding enrichment from first-party research 2026-08-18T20:00:00.000Z. handsOnTesting=false. membershipRole=primary. jobCluster=observability-monitoring.",
   "domainCheckedAt": {
     "identity": "2026-08-18T20:00:00.000Z",
     "pricing": "2026-08-18T20:00:00.000Z",
@@ -432,5 +425,12 @@
     "limits": "2026-08-18T20:00:00.000Z",
     "security-compliance": "2026-08-18T20:00:00.000Z"
   },
-  "updatedAt": "2026-08-18T14:00:00.000Z"
+  "sourceIds": [
+    "elastic-observability-product-official",
+    "elastic-observability-pricing-official",
+    "elastic-pricing",
+    "elastic-cloud-hosted-pricing"
+  ],
+  "updatedAt": "2026-08-18T14:00:00.000Z",
+  "notes": "IT industry Tier-A onboarding enrichment from first-party research 2026-08-18T20:00:00.000Z. handsOnTesting=false. membershipRole=primary. jobCluster=observability-monitoring."
 }

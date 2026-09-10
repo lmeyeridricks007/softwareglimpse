@@ -1,0 +1,414 @@
+{
+  "slug": "ooma",
+  "updatedAt": "2026-09-07T22:31:21.463Z",
+  "version": "1.0.0",
+  "fieldAudit": {
+    "slug": "ooma",
+    "checkedAt": "2026-09-07T22:31:21.462Z",
+    "items": [
+      {
+        "field": "name",
+        "status": "PASS",
+        "detail": "Name: Ooma",
+        "source": "seed"
+      },
+      {
+        "field": "product_status",
+        "status": "PASS",
+        "detail": "productLifecycle=active",
+        "source": "seed"
+      },
+      {
+        "field": "canonical_vendor",
+        "status": "UNKNOWN",
+        "detail": "Company/vendor not documented",
+        "source": "none"
+      },
+      {
+        "field": "category",
+        "status": "PASS",
+        "detail": "primaryCategorySlug=business-communications",
+        "source": "seed"
+      },
+      {
+        "field": "description",
+        "status": "PASS",
+        "detail": "Description present (SMB VoIP (Ooma Office) — Essentials from $19.95/user/mo monthly; Pro $24.95; Pro…)",
+        "source": "seed"
+      },
+      {
+        "field": "target_audience",
+        "status": "PASS",
+        "detail": "Sizes=2, teams=3, assessment bestFor=3",
+        "source": "assessment"
+      },
+      {
+        "field": "use_cases",
+        "status": "PASS",
+        "detail": "useCaseSlugs=2",
+        "source": "seed"
+      },
+      {
+        "field": "capabilities",
+        "status": "PASS",
+        "detail": "featureRatings=0, enrichment features=13",
+        "source": "enrichment"
+      },
+      {
+        "field": "pricing",
+        "status": "PASS",
+        "detail": "Pricing envelope present",
+        "source": "enrichment"
+      },
+      {
+        "field": "plans",
+        "status": "PASS",
+        "detail": "plans=3",
+        "source": "enrichment"
+      },
+      {
+        "field": "free_plan",
+        "status": "PASS",
+        "detail": "No free plan in documented plans (explicit absence)",
+        "source": "enrichment"
+      },
+      {
+        "field": "trial",
+        "status": "PASS",
+        "detail": "Trial documented on plans/pricing",
+        "source": "enrichment"
+      },
+      {
+        "field": "integrations",
+        "status": "PASS",
+        "detail": "integrationSlugs=0, enrichment=5",
+        "source": "enrichment"
+      },
+      {
+        "field": "alternatives",
+        "status": "PASS",
+        "detail": "alternativeSlugs=4",
+        "source": "seed"
+      },
+      {
+        "field": "competitors",
+        "status": "PASS",
+        "detail": "competitorSlugs=5",
+        "source": "seed"
+      },
+      {
+        "field": "affiliate",
+        "status": "PASS",
+        "detail": "No affiliate relationship (explicit)",
+        "source": "seed"
+      },
+      {
+        "field": "source_provenance",
+        "status": "PASS",
+        "detail": "seed sources=0, enrichment sourceIds=3",
+        "source": "enrichment"
+      },
+      {
+        "field": "verification_date",
+        "status": "PASS",
+        "detail": "Latest verification/research signal: 2026-08-17T20:00:00.000Z",
+        "source": "enrichment"
+      }
+    ],
+    "passCount": 17,
+    "partialCount": 0,
+    "missingCount": 0,
+    "unknownCount": 1,
+    "score": 94
+  },
+  "decisionHub": {
+    "whatItIs": "Ooma Office is an SMB cloud phone system with transparent monthly per-user pricing and no required annual contract: Essentials $19.95, Pro $24.95 and Pro Plus $29.95 per user/month (USD) confirmed on Ooma’s Office pricing chart (last updated 2026-04-15; retrieved 2026-08-17). Unlimited calling to US/Canada/Mexico/Puerto Rico, virtual receptionist and ring groups sit on Essentials; Pro adds meetings, recording, SMS (account caps) and voicemail transcription; Pro Plus adds call queues, CRM integrations and larger meetings. Ooma Enterprise is a separate custom line for larger contact-centre needs. Scored as a mid/low phone-cluster peer — overall ≥6.5 warrants a phone rank below the CallHippo/KrispCall band rather than landscape-only.",
+    "bestFor": [
+      "Small businesses that want transparent monthly VoIP without annual contracts",
+      "Teams under ~15 seats needing receptionist, ring groups and optional queues",
+      "Buyers who prefer published Office seat floors over quote-only UCaaS",
+      "solo / operations: Ooma fit for solo operations teams in the cloud-phone job cluster, from first-party positioning and Business-communications Priority-3 research.",
+      "small-business / operations: Ooma fit for small-business operations teams in the cloud-phone job cluster, from first-party positioning and Business-communications Priority-3 research."
+    ],
+    "notIdealFor": [
+      "Contact-centre / multi-skill agent operations (prefer Talkdesk/Genesys/Five9)",
+      "Global multi-country UCaaS buyers",
+      "Teams that need unlimited per-user SMS or heavy AI answering",
+      "SMS allotments are account-wide caps (e.g. Pro ~250/mo) — not per-user unlimited",
+      "Call queues, CRM and auto-dialer require Pro Plus",
+      "Roughly 15-seat cliff — larger teams often outgrow Office into Enterprise or peers"
+    ],
+    "coreCapabilities": [
+      "cloud phone",
+      "call routing",
+      "business phone",
+      "sales calling"
+    ],
+    "pricingSummary": "3 documented plans · entry paid: Essentials · trial documented on at least one plan",
+    "keyTradeoffs": [
+      "SMS allotments are account-wide caps (e.g. Pro ~250/mo) — not per-user unlimited",
+      "Call queues, CRM and auto-dialer require Pro Plus",
+      "Roughly 15-seat cliff — larger teams often outgrow Office into Enterprise or peers",
+      "No WhatsApp Business API",
+      "AI depth trails OpenPhone/Dialpad"
+    ],
+    "alternatives": [
+      {
+        "slug": "callhippo",
+        "name": "CallHippo"
+      },
+      {
+        "slug": "vonage",
+        "name": "Vonage"
+      },
+      {
+        "slug": "openphone",
+        "name": "OpenPhone"
+      },
+      {
+        "slug": "grasshopper",
+        "name": "Grasshopper"
+      },
+      {
+        "slug": "nextiva",
+        "name": "Nextiva"
+      }
+    ],
+    "importantComparisons": [
+      {
+        "slug": "callhippo-vs-ooma",
+        "title": "CallHippo vs Ooma",
+        "href": "/compare/callhippo-vs-ooma/"
+      },
+      {
+        "slug": "dialpad-vs-ooma",
+        "title": "Dialpad vs Ooma",
+        "href": "/compare/dialpad-vs-ooma/"
+      },
+      {
+        "slug": "eightx8-vs-ooma",
+        "title": "8x8 vs Ooma",
+        "href": "/compare/eightx8-vs-ooma/"
+      },
+      {
+        "slug": "fastmail-vs-ooma",
+        "title": "Fastmail vs Ooma",
+        "href": "/compare/fastmail-vs-ooma/"
+      },
+      {
+        "slug": "five9-vs-ooma",
+        "title": "Five9 vs Ooma",
+        "href": "/compare/five9-vs-ooma/"
+      },
+      {
+        "slug": "genesys-vs-ooma",
+        "title": "Genesys vs Ooma",
+        "href": "/compare/genesys-vs-ooma/"
+      }
+    ],
+    "relevantGuides": [
+      {
+        "slug": "ooma-implementation",
+        "title": "Ooma Implementation: 30/60/90 Communications Rollout That Sticks",
+        "href": "/guides/ooma-implementation/"
+      },
+      {
+        "slug": "ooma-migration",
+        "title": "Ooma Migration: Move Numbers Without Losing Trust",
+        "href": "/guides/ooma-migration/"
+      },
+      {
+        "slug": "ooma-setup",
+        "title": "Ooma Setup: Day-Zero Path to a Working Call Loop",
+        "href": "/guides/ooma-setup/"
+      },
+      {
+        "slug": "ooma-plans",
+        "title": "Ooma Plans: Seats, Numbers, and Qualifying Tiers",
+        "href": "/guides/ooma-plans/"
+      },
+      {
+        "slug": "is-ooma-worth-it",
+        "title": "Is Ooma Worth It? Fit Scenarios Before You Buy",
+        "href": "/guides/is-ooma-worth-it/"
+      }
+    ],
+    "evidenceState": "Research/data-based (no completed hands-on test) · Latest verification/research signal: 2026-08-17T20:00:00.000Z · Editorial assessment: approved",
+    "nextDecisionStep": "Compare against peers: CallHippo vs Ooma",
+    "missingSections": [
+      "canonical_vendor"
+    ]
+  },
+  "dependents": [
+    {
+      "kind": "guide",
+      "slug": "ooma-implementation",
+      "path": "/guides/ooma-implementation/"
+    },
+    {
+      "kind": "guide",
+      "slug": "ooma-migration",
+      "path": "/guides/ooma-migration/"
+    },
+    {
+      "kind": "guide",
+      "slug": "ooma-setup",
+      "path": "/guides/ooma-setup/"
+    },
+    {
+      "kind": "guide",
+      "slug": "ooma-plans",
+      "path": "/guides/ooma-plans/"
+    },
+    {
+      "kind": "guide",
+      "slug": "is-ooma-worth-it",
+      "path": "/guides/is-ooma-worth-it/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "callhippo-vs-ooma",
+      "path": "/compare/callhippo-vs-ooma/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "dialpad-vs-ooma",
+      "path": "/compare/dialpad-vs-ooma/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "eightx8-vs-ooma",
+      "path": "/compare/eightx8-vs-ooma/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "fastmail-vs-ooma",
+      "path": "/compare/fastmail-vs-ooma/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "five9-vs-ooma",
+      "path": "/compare/five9-vs-ooma/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "genesys-vs-ooma",
+      "path": "/compare/genesys-vs-ooma/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "goto-connect-vs-ooma",
+      "path": "/compare/goto-connect-vs-ooma/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "grasshopper-vs-ooma",
+      "path": "/compare/grasshopper-vs-ooma/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "manychat-vs-ooma",
+      "path": "/compare/manychat-vs-ooma/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "microsoft-teams-vs-ooma",
+      "path": "/compare/microsoft-teams-vs-ooma/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "nextiva-vs-ooma",
+      "path": "/compare/nextiva-vs-ooma/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "ooma-vs-openphone",
+      "path": "/compare/ooma-vs-openphone/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "ooma-vs-respond-io",
+      "path": "/compare/ooma-vs-respond-io/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "ooma-vs-ringcentral",
+      "path": "/compare/ooma-vs-ringcentral/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "ooma-vs-sanebox",
+      "path": "/compare/ooma-vs-sanebox/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "ooma-vs-slack",
+      "path": "/compare/ooma-vs-slack/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "ooma-vs-talkdesk",
+      "path": "/compare/ooma-vs-talkdesk/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "ooma-vs-twilio",
+      "path": "/compare/ooma-vs-twilio/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "ooma-vs-vonage",
+      "path": "/compare/ooma-vs-vonage/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "ooma-vs-wati",
+      "path": "/compare/ooma-vs-wati/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "ooma-vs-webex",
+      "path": "/compare/ooma-vs-webex/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "ooma-vs-zenzap",
+      "path": "/compare/ooma-vs-zenzap/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "ooma-vs-zoom",
+      "path": "/compare/ooma-vs-zoom/"
+    },
+    {
+      "kind": "alternatives",
+      "slug": "ooma",
+      "path": "/alternatives/ooma/"
+    },
+    {
+      "kind": "pricing",
+      "slug": "ooma",
+      "path": "/software/ooma/pricing/"
+    },
+    {
+      "kind": "best",
+      "slug": "business-communications-software",
+      "path": "/best/business-communications-software/"
+    },
+    {
+      "kind": "tools",
+      "slug": "business-communications-cost-calculator",
+      "path": "/tools/business-communications-cost-calculator/"
+    }
+  ],
+  "dependentsNeedingRefresh": [],
+  "remediation": [
+    "verify:canonical_vendor"
+  ],
+  "notes": [
+    "fieldAudit score=94",
+    "decisionHub bestFor=5 notIdeal=6",
+    "dependents=32"
+  ],
+  "materiallyImproved": false
+}

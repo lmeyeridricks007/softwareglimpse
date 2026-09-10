@@ -185,36 +185,6 @@
       ]
     }
   ],
-  "aiCapabilities": [
-    {
-      "capability": "assistant",
-      "availability": "supported",
-      "sourceIds": [
-        "shopify-product-official"
-      ]
-    },
-    {
-      "capability": "summaries",
-      "availability": "supported",
-      "sourceIds": [
-        "shopify-product-official"
-      ]
-    },
-    {
-      "capability": "automation",
-      "availability": "supported",
-      "sourceIds": [
-        "shopify-product-official"
-      ]
-    },
-    {
-      "capability": "recommendations",
-      "availability": "supported",
-      "sourceIds": [
-        "shopify-product-official"
-      ]
-    }
-  ],
   "integrationSupport": [
     {
       "integrationSlug": "stripe",
@@ -247,6 +217,36 @@
     {
       "integrationSlug": "zapier",
       "kind": "zapier-style",
+      "sourceIds": [
+        "shopify-product-official"
+      ]
+    }
+  ],
+  "aiCapabilities": [
+    {
+      "capability": "assistant",
+      "availability": "supported",
+      "sourceIds": [
+        "shopify-product-official"
+      ]
+    },
+    {
+      "capability": "summaries",
+      "availability": "supported",
+      "sourceIds": [
+        "shopify-product-official"
+      ]
+    },
+    {
+      "capability": "automation",
+      "availability": "supported",
+      "sourceIds": [
+        "shopify-product-official"
+      ]
+    },
+    {
+      "capability": "recommendations",
+      "availability": "supported",
       "sourceIds": [
         "shopify-product-official"
       ]
@@ -336,113 +336,6 @@
       "isEditorial": false
     }
   ],
-  "pricing": {
-    "currency": "USD",
-    "model": "flat",
-    "hasFreePlan": false,
-    "hasFreeTrial": true,
-    "plans": [
-      {
-        "id": "plan-basic",
-        "slug": "basic",
-        "name": "Basic",
-        "isFree": false,
-        "contactSales": false,
-        "hasFreeTrial": true,
-        "trialDays": 3,
-        "highlighted": false,
-        "rules": [
-          {
-            "kind": "flat",
-            "amount": 29,
-            "currency": "USD",
-            "interval": "year",
-            "amountPeriod": "month"
-          },
-          {
-            "kind": "flat",
-            "amount": 39,
-            "currency": "USD",
-            "interval": "month",
-            "amountPeriod": "month"
-          }
-        ],
-        "description": "$29/mo billed annually ($39 monthly). Entry full online store."
-      },
-      {
-        "id": "plan-grow",
-        "slug": "grow",
-        "name": "Grow",
-        "isFree": false,
-        "contactSales": false,
-        "hasFreeTrial": true,
-        "trialDays": 3,
-        "highlighted": true,
-        "rules": [
-          {
-            "kind": "flat",
-            "amount": 79,
-            "currency": "USD",
-            "interval": "year",
-            "amountPeriod": "month"
-          },
-          {
-            "kind": "flat",
-            "amount": 105,
-            "currency": "USD",
-            "interval": "month",
-            "amountPeriod": "month"
-          }
-        ],
-        "description": "$79/mo billed annually ($105 monthly). Professional reports and staff accounts."
-      },
-      {
-        "id": "plan-advanced",
-        "slug": "advanced",
-        "name": "Advanced",
-        "isFree": false,
-        "contactSales": false,
-        "hasFreeTrial": true,
-        "trialDays": 3,
-        "highlighted": false,
-        "rules": [
-          {
-            "kind": "flat",
-            "amount": 299,
-            "currency": "USD",
-            "interval": "year",
-            "amountPeriod": "month"
-          },
-          {
-            "kind": "flat",
-            "amount": 399,
-            "currency": "USD",
-            "interval": "month",
-            "amountPeriod": "month"
-          }
-        ],
-        "description": "$299/mo billed annually ($399 monthly). Advanced reporting and lowest standard processing."
-      },
-      {
-        "id": "plan-plus",
-        "slug": "plus",
-        "name": "Plus",
-        "isFree": false,
-        "contactSales": true,
-        "hasFreeTrial": false,
-        "highlighted": false,
-        "rules": [],
-        "description": "From $2,300/mo — enterprise checkout, automation, and B2B features."
-      }
-    ],
-    "notes": "Verified 2026-08-26 from shopify.com/pricing: list prices unchanged from Aug 2026 research. Current promo — 3-day free trial, then $1/mo for 3 months on Basic/Grow/Advanced; Plus shows Try for $399. Monthly: Basic $39, Grow $105, Advanced $399, Plus from $2,300. Annual (~25% off): $29 / $79 / $299. Processing via Shopify Payments varies by plan. Apps, themes, and POS add-ons raise TCO. Affiliate economics excluded from scoring.",
-    "verifiedAt": "2026-08-26T12:00:00.000Z",
-    "sourceIds": [
-      "shopify-pricing-official"
-    ],
-    "startingPriceMonthly": 39,
-    "trialDays": 3
-  },
   "screenshots": [
     {
       "id": "shopify-shot-homepage-admin",
@@ -546,8 +439,8 @@
       "embedUrl": "https://www.youtube-nocookie.com/embed/rgZU5pDf6mw",
       "title": "The Shopify Story",
       "thumbnailUrl": "https://i.ytimg.com/vi/rgZU5pDf6mw/hqdefault.jpg",
-      "channelName": "Shopify",
       "sourceOrganization": "Shopify Inc.",
+      "channelName": "Shopify",
       "officialSource": true,
       "officialSourceKind": "vendor-channel",
       "verifiedAt": "2026-08-18T12:00:00.000Z",
@@ -588,11 +481,113 @@
       "status": "active"
     }
   ],
-  "sourceIds": [
-    "shopify-product-official",
-    "shopify-pricing-official"
-  ],
-  "notes": "Ecommerce Wave-1 onboarding enrichment from first-party research 2026-08-18T12:00:00.000Z. handsOnTesting=false. membershipRole=primary. jobCluster=saas-platform.",
+  "pricing": {
+    "currency": "USD",
+    "model": "flat",
+    "hasFreePlan": false,
+    "hasFreeTrial": true,
+    "plans": [
+      {
+        "id": "plan-basic",
+        "slug": "basic",
+        "name": "Basic",
+        "isFree": false,
+        "contactSales": false,
+        "hasFreeTrial": true,
+        "trialDays": 3,
+        "highlighted": false,
+        "rules": [
+          {
+            "kind": "flat",
+            "amount": 29,
+            "currency": "USD",
+            "interval": "year",
+            "amountPeriod": "month"
+          },
+          {
+            "kind": "flat",
+            "amount": 39,
+            "currency": "USD",
+            "interval": "month",
+            "amountPeriod": "month"
+          }
+        ],
+        "description": "$29/mo billed annually ($39 monthly). Entry full online store."
+      },
+      {
+        "id": "plan-grow",
+        "slug": "grow",
+        "name": "Grow",
+        "isFree": false,
+        "contactSales": false,
+        "hasFreeTrial": true,
+        "trialDays": 3,
+        "highlighted": true,
+        "rules": [
+          {
+            "kind": "flat",
+            "amount": 79,
+            "currency": "USD",
+            "interval": "year",
+            "amountPeriod": "month"
+          },
+          {
+            "kind": "flat",
+            "amount": 105,
+            "currency": "USD",
+            "interval": "month",
+            "amountPeriod": "month"
+          }
+        ],
+        "description": "$79/mo billed annually ($105 monthly). Professional reports and staff accounts."
+      },
+      {
+        "id": "plan-advanced",
+        "slug": "advanced",
+        "name": "Advanced",
+        "isFree": false,
+        "contactSales": false,
+        "hasFreeTrial": true,
+        "trialDays": 3,
+        "highlighted": false,
+        "rules": [
+          {
+            "kind": "flat",
+            "amount": 299,
+            "currency": "USD",
+            "interval": "year",
+            "amountPeriod": "month"
+          },
+          {
+            "kind": "flat",
+            "amount": 399,
+            "currency": "USD",
+            "interval": "month",
+            "amountPeriod": "month"
+          }
+        ],
+        "description": "$299/mo billed annually ($399 monthly). Advanced reporting and lowest standard processing."
+      },
+      {
+        "id": "plan-plus",
+        "slug": "plus",
+        "name": "Plus",
+        "isFree": false,
+        "contactSales": true,
+        "hasFreeTrial": false,
+        "highlighted": false,
+        "rules": [],
+        "description": "From $2,300/mo — enterprise checkout, automation, and B2B features."
+      }
+    ],
+    "notes": "Verified 2026-08-26 from shopify.com/pricing: list prices unchanged from Aug 2026 research. Current promo — 3-day free trial, then $1/mo for 3 months on Basic/Grow/Advanced; Plus shows Try for $399. Monthly: Basic $39, Grow $105, Advanced $399, Plus from $2,300. Annual (~25% off): $29 / $79 / $299. Processing via Shopify Payments varies by plan. Apps, themes, and POS add-ons raise TCO. Affiliate economics excluded from scoring.",
+    "verifiedAt": "2026-09-09T18:08:41.827Z",
+    "sourceIds": [
+      "shopify-pricing-official"
+    ],
+    "startingPriceMonthly": 39,
+    "trialDays": 3
+  },
   "domainCheckedAt": {
     "identity": "2026-08-18T12:00:00.000Z",
     "pricing": "2026-08-18T12:00:00.000Z",
@@ -606,5 +601,10 @@
     "limits": "2026-08-18T12:00:00.000Z",
     "security-compliance": "2026-08-18T12:00:00.000Z"
   },
-  "updatedAt": "2026-08-18T08:00:00.000Z"
+  "sourceIds": [
+    "shopify-product-official",
+    "shopify-pricing-official"
+  ],
+  "updatedAt": "2026-08-18T08:00:00.000Z",
+  "notes": "Ecommerce Wave-1 onboarding enrichment from first-party research 2026-08-18T12:00:00.000Z. handsOnTesting=false. membershipRole=primary. jobCluster=saas-platform."
 }

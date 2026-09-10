@@ -1,0 +1,428 @@
+{
+  "slug": "ashby",
+  "updatedAt": "2026-09-09T18:11:24.976Z",
+  "version": "1.0.0",
+  "fieldAudit": {
+    "slug": "ashby",
+    "checkedAt": "2026-09-09T18:11:24.975Z",
+    "items": [
+      {
+        "field": "name",
+        "status": "PASS",
+        "detail": "Name: Ashby",
+        "source": "seed"
+      },
+      {
+        "field": "product_status",
+        "status": "PASS",
+        "detail": "productLifecycle=active",
+        "source": "seed"
+      },
+      {
+        "field": "canonical_vendor",
+        "status": "PASS",
+        "detail": "Vendor: Ashby, Inc.",
+        "source": "seed"
+      },
+      {
+        "field": "category",
+        "status": "PASS",
+        "detail": "primaryCategorySlug=hr",
+        "source": "seed"
+      },
+      {
+        "field": "description",
+        "status": "PASS",
+        "detail": "Description present (Modern ATS + CRM/analytics — Foundations $400/mo flat for ≤100 employees (10% of…)",
+        "source": "seed"
+      },
+      {
+        "field": "target_audience",
+        "status": "PASS",
+        "detail": "Sizes=3, teams=1, assessment bestFor=3",
+        "source": "assessment"
+      },
+      {
+        "field": "use_cases",
+        "status": "PASS",
+        "detail": "useCaseSlugs=1",
+        "source": "seed"
+      },
+      {
+        "field": "capabilities",
+        "status": "PASS",
+        "detail": "featureRatings=0, enrichment features=16",
+        "source": "enrichment"
+      },
+      {
+        "field": "pricing",
+        "status": "PASS",
+        "detail": "Pricing envelope present",
+        "source": "enrichment"
+      },
+      {
+        "field": "plans",
+        "status": "PASS",
+        "detail": "plans=3",
+        "source": "enrichment"
+      },
+      {
+        "field": "free_plan",
+        "status": "PASS",
+        "detail": "No free plan in documented plans (explicit absence)",
+        "source": "enrichment"
+      },
+      {
+        "field": "trial",
+        "status": "UNKNOWN",
+        "detail": "Trial not explicitly documented — do not assume none",
+        "source": "none"
+      },
+      {
+        "field": "integrations",
+        "status": "PASS",
+        "detail": "integrationSlugs=0, enrichment=3",
+        "source": "enrichment"
+      },
+      {
+        "field": "alternatives",
+        "status": "PASS",
+        "detail": "alternativeSlugs=3",
+        "source": "seed"
+      },
+      {
+        "field": "competitors",
+        "status": "PASS",
+        "detail": "competitorSlugs=4",
+        "source": "seed"
+      },
+      {
+        "field": "affiliate",
+        "status": "PASS",
+        "detail": "No affiliate relationship (explicit)",
+        "source": "seed"
+      },
+      {
+        "field": "source_provenance",
+        "status": "PASS",
+        "detail": "seed sources=0, enrichment sourceIds=2",
+        "source": "enrichment"
+      },
+      {
+        "field": "verification_date",
+        "status": "PASS",
+        "detail": "Latest verification/research signal: 2026-08-18T12:00:00.000Z",
+        "source": "enrichment"
+      }
+    ],
+    "passCount": 17,
+    "partialCount": 0,
+    "missingCount": 0,
+    "unknownCount": 1,
+    "score": 94
+  },
+  "decisionHub": {
+    "whatItIs": "Ashby is an all-in-one ATS with recruiting CRM, scheduling, and analytics, marketed from startups through enterprise. Foundations is $400/mo (≤100 employees; 10% off annual). Plus (101–1,000) and Enterprise (1,000+) are seat-based custom quotes. Foundations extras: SSO $100/mo, extra SMS, 1,500 AI credits/mo; AI Notetaker and Advanced Scheduling are paid add-ons without public dollars. No free plan. Analytics is also sold standalone for teams keeping another ATS.",
+    "bestFor": [
+      "Startups and growth-stage companies (≤100 employees) that want one modern ATS+analytics platform",
+      "TA teams comparing Ashby vs Greenhouse for AI-native hiring",
+      "Orgs willing to pay a high Foundations floor instead of a free ATS",
+      "small-business / recruiting: Ashby fit for small-business recruiting teams in the ats-recruiting job cluster, from first-party positioning and HR Priority-2 research.",
+      "mid-market / recruiting: Ashby fit for mid-market recruiting teams in the ats-recruiting job cluster, from first-party positioning and HR Priority-2 research.",
+      "enterprise / recruiting: Ashby fit for enterprise recruiting teams in the ats-recruiting job cluster, from first-party positioning and HR Priority-2 research."
+    ],
+    "notIdealFor": [
+      "Teams that need a free ATS or $157 Breezy-style floors",
+      "Structured-hiring enterprises standardised on Greenhouse kits",
+      "Core HRIS or payroll-first buyers",
+      "Crossing 101 employees leaves the $400 flat for seat-based quotes",
+      "SSO, extra SMS, Notetaker, and Advanced Scheduling stack TCO on Foundations",
+      "No free plan or published trial"
+    ],
+    "coreCapabilities": [
+      "applicant tracking",
+      "career site job boards",
+      "interview scheduling",
+      "hris integrations",
+      "analytics reporting",
+      "recruiting ats"
+    ],
+    "pricingSummary": "3 documented plans · entry paid: All-in-One Foundations",
+    "keyTradeoffs": [
+      "Crossing 101 employees leaves the $400 flat for seat-based quotes",
+      "SSO, extra SMS, Notetaker, and Advanced Scheduling stack TCO on Foundations",
+      "No free plan or published trial",
+      "Not a core HRIS or WFM product",
+      "Analytics-on-another-ATS is a separate SKU"
+    ],
+    "alternatives": [
+      {
+        "slug": "greenhouse",
+        "name": "Greenhouse"
+      },
+      {
+        "slug": "lever",
+        "name": "Lever"
+      },
+      {
+        "slug": "workable",
+        "name": "Workable"
+      },
+      {
+        "slug": "breezy-hr",
+        "name": "Breezy HR"
+      }
+    ],
+    "importantComparisons": [
+      {
+        "slug": "ashby-vs-greenhouse",
+        "title": "Ashby vs Greenhouse",
+        "href": "/compare/ashby-vs-greenhouse/"
+      },
+      {
+        "slug": "ashby-vs-lever",
+        "title": "Ashby vs Lever",
+        "href": "/compare/ashby-vs-lever/"
+      },
+      {
+        "slug": "7shifts-vs-ashby",
+        "title": "7shifts vs Ashby",
+        "href": "/compare/7shifts-vs-ashby/"
+      },
+      {
+        "slug": "adp-workforce-now-vs-ashby",
+        "title": "ADP Workforce Now vs Ashby",
+        "href": "/compare/adp-workforce-now-vs-ashby/"
+      },
+      {
+        "slug": "ashby-vs-bamboohr",
+        "title": "Ashby vs BambooHR",
+        "href": "/compare/ashby-vs-bamboohr/"
+      },
+      {
+        "slug": "ashby-vs-bolt-for-business",
+        "title": "Ashby vs Bolt for Business",
+        "href": "/compare/ashby-vs-bolt-for-business/"
+      }
+    ],
+    "relevantGuides": [
+      {
+        "slug": "how-hr-software-works",
+        "title": "How HR Software Works",
+        "href": "/guides/how-hr-software-works/"
+      },
+      {
+        "slug": "types-of-hr-software",
+        "title": "Types of HR Software",
+        "href": "/guides/types-of-hr-software/"
+      },
+      {
+        "slug": "hr-software-vs-crm",
+        "title": "HR Software vs CRM",
+        "href": "/guides/hr-software-vs-crm/"
+      },
+      {
+        "slug": "ashby-implementation",
+        "title": "Ashby Implementation: 30/60/90 HR Rollout That Sticks",
+        "href": "/guides/ashby-implementation/"
+      },
+      {
+        "slug": "ashby-migration",
+        "title": "Ashby Migration: Move People Data Without Losing Trust",
+        "href": "/guides/ashby-migration/"
+      },
+      {
+        "slug": "ashby-setup",
+        "title": "Ashby Setup: Day-Zero Path to a Working HR Loop",
+        "href": "/guides/ashby-setup/"
+      }
+    ],
+    "evidenceState": "Research/data-based (no completed hands-on test) · Latest verification/research signal: 2026-08-18T12:00:00.000Z · Editorial assessment: approved",
+    "nextDecisionStep": "Compare against peers: Ashby vs Greenhouse",
+    "missingSections": [
+      "trial"
+    ]
+  },
+  "dependents": [
+    {
+      "kind": "guide",
+      "slug": "how-hr-software-works",
+      "path": "/guides/how-hr-software-works/"
+    },
+    {
+      "kind": "guide",
+      "slug": "types-of-hr-software",
+      "path": "/guides/types-of-hr-software/"
+    },
+    {
+      "kind": "guide",
+      "slug": "hr-software-vs-crm",
+      "path": "/guides/hr-software-vs-crm/"
+    },
+    {
+      "kind": "guide",
+      "slug": "ashby-implementation",
+      "path": "/guides/ashby-implementation/"
+    },
+    {
+      "kind": "guide",
+      "slug": "ashby-migration",
+      "path": "/guides/ashby-migration/"
+    },
+    {
+      "kind": "guide",
+      "slug": "ashby-setup",
+      "path": "/guides/ashby-setup/"
+    },
+    {
+      "kind": "guide",
+      "slug": "ashby-plans",
+      "path": "/guides/ashby-plans/"
+    },
+    {
+      "kind": "guide",
+      "slug": "is-ashby-worth-it",
+      "path": "/guides/is-ashby-worth-it/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "ashby-vs-greenhouse",
+      "path": "/compare/ashby-vs-greenhouse/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "ashby-vs-lever",
+      "path": "/compare/ashby-vs-lever/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "7shifts-vs-ashby",
+      "path": "/compare/7shifts-vs-ashby/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "adp-workforce-now-vs-ashby",
+      "path": "/compare/adp-workforce-now-vs-ashby/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "ashby-vs-bamboohr",
+      "path": "/compare/ashby-vs-bamboohr/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "ashby-vs-bolt-for-business",
+      "path": "/compare/ashby-vs-bolt-for-business/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "ashby-vs-carepatron",
+      "path": "/compare/ashby-vs-carepatron/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "ashby-vs-dayforce",
+      "path": "/compare/ashby-vs-dayforce/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "ashby-vs-deputy",
+      "path": "/compare/ashby-vs-deputy/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "ashby-vs-gusto",
+      "path": "/compare/ashby-vs-gusto/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "ashby-vs-hibob",
+      "path": "/compare/ashby-vs-hibob/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "ashby-vs-homebase",
+      "path": "/compare/ashby-vs-homebase/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "ashby-vs-oracle-hcm",
+      "path": "/compare/ashby-vs-oracle-hcm/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "ashby-vs-paycor",
+      "path": "/compare/ashby-vs-paycor/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "ashby-vs-paylocity",
+      "path": "/compare/ashby-vs-paylocity/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "ashby-vs-personio",
+      "path": "/compare/ashby-vs-personio/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "ashby-vs-rippling",
+      "path": "/compare/ashby-vs-rippling/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "ashby-vs-trainual",
+      "path": "/compare/ashby-vs-trainual/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "ashby-vs-ukg-pro",
+      "path": "/compare/ashby-vs-ukg-pro/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "ashby-vs-when-i-work",
+      "path": "/compare/ashby-vs-when-i-work/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "ashby-vs-workable",
+      "path": "/compare/ashby-vs-workable/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "ashby-vs-workday",
+      "path": "/compare/ashby-vs-workday/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "ashby-vs-breezy-hr",
+      "path": "/compare/ashby-vs-breezy-hr/"
+    },
+    {
+      "kind": "alternatives",
+      "slug": "ashby",
+      "path": "/alternatives/ashby/"
+    },
+    {
+      "kind": "pricing",
+      "slug": "ashby",
+      "path": "/software/ashby/pricing/"
+    },
+    {
+      "kind": "tools",
+      "slug": "hr-cost-calculator",
+      "path": "/tools/hr-cost-calculator/"
+    }
+  ],
+  "dependentsNeedingRefresh": [],
+  "remediation": [
+    "verify:trial"
+  ],
+  "notes": [
+    "fieldAudit score=94",
+    "decisionHub bestFor=6 notIdeal=6",
+    "dependents=34"
+  ],
+  "materiallyImproved": true
+}

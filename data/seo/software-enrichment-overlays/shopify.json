@@ -1,0 +1,402 @@
+{
+  "slug": "shopify",
+  "updatedAt": "2026-09-09T18:08:28.168Z",
+  "version": "1.0.0",
+  "fieldAudit": {
+    "slug": "shopify",
+    "checkedAt": "2026-09-09T18:08:28.166Z",
+    "items": [
+      {
+        "field": "name",
+        "status": "PASS",
+        "detail": "Name: Shopify",
+        "source": "seed"
+      },
+      {
+        "field": "product_status",
+        "status": "PASS",
+        "detail": "productLifecycle=active",
+        "source": "seed"
+      },
+      {
+        "field": "canonical_vendor",
+        "status": "PASS",
+        "detail": "Vendor: Shopify Inc.",
+        "source": "seed"
+      },
+      {
+        "field": "category",
+        "status": "PASS",
+        "detail": "primaryCategorySlug=ecommerce",
+        "source": "seed"
+      },
+      {
+        "field": "description",
+        "status": "PASS",
+        "detail": "Description present (Hosted SaaS ecommerce platform with themes, checkout, channels, and POS — Basic …)",
+        "source": "seed"
+      },
+      {
+        "field": "target_audience",
+        "status": "PASS",
+        "detail": "Sizes=5, teams=2, assessment bestFor=3",
+        "source": "assessment"
+      },
+      {
+        "field": "use_cases",
+        "status": "PASS",
+        "detail": "useCaseSlugs=4",
+        "source": "seed"
+      },
+      {
+        "field": "capabilities",
+        "status": "PASS",
+        "detail": "featureRatings=0, enrichment features=14",
+        "source": "enrichment"
+      },
+      {
+        "field": "pricing",
+        "status": "PASS",
+        "detail": "Pricing envelope present",
+        "source": "enrichment"
+      },
+      {
+        "field": "plans",
+        "status": "PASS",
+        "detail": "plans=4",
+        "source": "enrichment"
+      },
+      {
+        "field": "free_plan",
+        "status": "PASS",
+        "detail": "No free plan in documented plans (explicit absence)",
+        "source": "enrichment"
+      },
+      {
+        "field": "trial",
+        "status": "PASS",
+        "detail": "Trial documented on plans/pricing",
+        "source": "enrichment"
+      },
+      {
+        "field": "integrations",
+        "status": "PASS",
+        "detail": "integrationSlugs=0, enrichment=5",
+        "source": "enrichment"
+      },
+      {
+        "field": "alternatives",
+        "status": "PASS",
+        "detail": "alternativeSlugs=2",
+        "source": "seed"
+      },
+      {
+        "field": "competitors",
+        "status": "PASS",
+        "detail": "competitorSlugs=3",
+        "source": "seed"
+      },
+      {
+        "field": "affiliate",
+        "status": "PASS",
+        "detail": "Affiliate enabled with tracking URL",
+        "source": "seed"
+      },
+      {
+        "field": "source_provenance",
+        "status": "PASS",
+        "detail": "seed sources=0, enrichment sourceIds=2",
+        "source": "enrichment"
+      },
+      {
+        "field": "verification_date",
+        "status": "PASS",
+        "detail": "Latest verification/research signal: 2026-08-18T12:00:00.000Z",
+        "source": "enrichment"
+      }
+    ],
+    "passCount": 18,
+    "partialCount": 0,
+    "missingCount": 0,
+    "unknownCount": 0,
+    "score": 100
+  },
+  "decisionHub": {
+    "whatItIs": "Shopify is a hosted ecommerce platform for building an online store, managing catalog and orders, selling across channels, and scaling to retail POS and enterprise Plus. US list pricing (2026-08-26): Basic $39/mo or $29/mo billed yearly; Grow $105/$79; Advanced $399/$299; Plus from $2,300/mo. Promo (verified shopify.com/pricing, 26 Aug 2026): 3-day free trial, then $1/mo for 3 months on eligible plans; Plus trial at $399. Shopify Payments lowers online card rates by plan.",
+    "bestFor": [
+      "Merchants wanting a hosted store without managing infrastructure",
+      "Brands scaling across online + retail channels",
+      "Teams that value app ecosystem over building custom stacks",
+      "solo / operations: Shopify fit for solo operations teams in the saas-platform job cluster, from first-party positioning and Ecommerce Wave-1 research.",
+      "micro / operations: Shopify fit for micro operations teams in the saas-platform job cluster, from first-party positioning and Ecommerce Wave-1 research.",
+      "small-business / operations: Shopify fit for small-business operations teams in the saas-platform job cluster, from first-party positioning and Ecommerce Wave-1 research."
+    ],
+    "notIdealFor": [
+      "Merchants who need full code ownership on day one with zero subscription",
+      "Pure dropshipping-only workflows with no storefront ambition",
+      "Buyers optimizing solely for lowest processing spread at tiny volume",
+      "Subscription plus apps/themes and payment spreads raise TCO versus headline plan price",
+      "Third-party payment gateways incur additional transaction fees on lower tiers",
+      "Plus and advanced B2B features require higher plans or add-ons"
+    ],
+    "coreCapabilities": [
+      "online storefront",
+      "product catalog",
+      "checkout payments",
+      "order management",
+      "inventory management",
+      "shipping fulfillment",
+      "pos omnichannel",
+      "marketplace channels"
+    ],
+    "pricingSummary": "4 documented plans · entry paid: Basic · trial documented on at least one plan",
+    "keyTradeoffs": [
+      "Subscription plus apps/themes and payment spreads raise TCO versus headline plan price",
+      "Third-party payment gateways incur additional transaction fees on lower tiers",
+      "Plus and advanced B2B features require higher plans or add-ons",
+      "Heavy customization may need Liquid/dev resources or agency help",
+      "Commerce platform to start, run, and grow a brand — online store, payments, channels, POS, and capital in one admin. (audience: Merchants wanting a hosted store without managing infrastructure, Brands scaling across online + retail channels)"
+    ],
+    "alternatives": [
+      {
+        "slug": "bigcommerce",
+        "name": "BigCommerce"
+      },
+      {
+        "slug": "woocommerce",
+        "name": "WooCommerce"
+      },
+      {
+        "slug": "square-online",
+        "name": "Square Online"
+      }
+    ],
+    "importantComparisons": [
+      {
+        "slug": "bigcommerce-vs-shopify",
+        "title": "Shopify vs BigCommerce",
+        "href": "/compare/bigcommerce-vs-shopify/"
+      },
+      {
+        "slug": "ecwid-vs-shopify",
+        "title": "Ecwid vs Shopify",
+        "href": "/compare/ecwid-vs-shopify/"
+      },
+      {
+        "slug": "shopify-vs-tiendanube",
+        "title": "Tiendanube vs Shopify",
+        "href": "/compare/shopify-vs-tiendanube/"
+      },
+      {
+        "slug": "commercetools-vs-shopify",
+        "title": "commercetools vs Shopify",
+        "href": "/compare/commercetools-vs-shopify/"
+      },
+      {
+        "slug": "lightspeed-retail-vs-shopify",
+        "title": "Lightspeed Retail vs Shopify",
+        "href": "/compare/lightspeed-retail-vs-shopify/"
+      },
+      {
+        "slug": "magento-vs-shopify",
+        "title": "Magento vs Shopify",
+        "href": "/compare/magento-vs-shopify/"
+      }
+    ],
+    "relevantGuides": [
+      {
+        "slug": "what-is-shopify",
+        "title": "What Is Shopify?",
+        "href": "/guides/what-is-shopify/"
+      },
+      {
+        "slug": "shopify-implementation",
+        "title": "Shopify Implementation: 30/60/90 Store Rollout That Sticks",
+        "href": "/guides/shopify-implementation/"
+      },
+      {
+        "slug": "shopify-migration",
+        "title": "Shopify Migration: Move Catalog & Order Data Without Losing Trust",
+        "href": "/guides/shopify-migration/"
+      },
+      {
+        "slug": "shopify-setup",
+        "title": "Shopify Setup: Day-Zero Path to a Working Ecommerce Loop",
+        "href": "/guides/shopify-setup/"
+      },
+      {
+        "slug": "shopify-plans",
+        "title": "Shopify Plans: Seats, Hubs, and Qualifying Tiers",
+        "href": "/guides/shopify-plans/"
+      },
+      {
+        "slug": "is-shopify-worth-it",
+        "title": "Is Shopify Worth It? Fit Scenarios Before You Buy",
+        "href": "/guides/is-shopify-worth-it/"
+      }
+    ],
+    "evidenceState": "Research/data-based (no completed hands-on test) · Latest verification/research signal: 2026-08-18T12:00:00.000Z · Editorial assessment: approved",
+    "nextDecisionStep": "Compare against peers: Shopify vs BigCommerce",
+    "missingSections": []
+  },
+  "dependents": [
+    {
+      "kind": "guide",
+      "slug": "what-is-shopify",
+      "path": "/guides/what-is-shopify/"
+    },
+    {
+      "kind": "guide",
+      "slug": "shopify-implementation",
+      "path": "/guides/shopify-implementation/"
+    },
+    {
+      "kind": "guide",
+      "slug": "shopify-migration",
+      "path": "/guides/shopify-migration/"
+    },
+    {
+      "kind": "guide",
+      "slug": "shopify-setup",
+      "path": "/guides/shopify-setup/"
+    },
+    {
+      "kind": "guide",
+      "slug": "shopify-plans",
+      "path": "/guides/shopify-plans/"
+    },
+    {
+      "kind": "guide",
+      "slug": "is-shopify-worth-it",
+      "path": "/guides/is-shopify-worth-it/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "bigcommerce-vs-shopify",
+      "path": "/compare/bigcommerce-vs-shopify/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "ecwid-vs-shopify",
+      "path": "/compare/ecwid-vs-shopify/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "shopify-vs-tiendanube",
+      "path": "/compare/shopify-vs-tiendanube/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "commercetools-vs-shopify",
+      "path": "/compare/commercetools-vs-shopify/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "lightspeed-retail-vs-shopify",
+      "path": "/compare/lightspeed-retail-vs-shopify/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "magento-vs-shopify",
+      "path": "/compare/magento-vs-shopify/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "medusa-vs-shopify",
+      "path": "/compare/medusa-vs-shopify/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "opencart-vs-shopify",
+      "path": "/compare/opencart-vs-shopify/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "prestashop-vs-shopify",
+      "path": "/compare/prestashop-vs-shopify/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "saleor-vs-shopify",
+      "path": "/compare/saleor-vs-shopify/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "salesforce-commerce-cloud-vs-shopify",
+      "path": "/compare/salesforce-commerce-cloud-vs-shopify/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "sellfy-vs-shopify",
+      "path": "/compare/sellfy-vs-shopify/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "shopify-vs-shopware",
+      "path": "/compare/shopify-vs-shopware/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "shopify-vs-square-online",
+      "path": "/compare/shopify-vs-square-online/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "shopify-vs-squarespace",
+      "path": "/compare/shopify-vs-squarespace/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "shopify-vs-vtex",
+      "path": "/compare/shopify-vs-vtex/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "shopify-vs-webflow",
+      "path": "/compare/shopify-vs-webflow/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "shopify-vs-wix",
+      "path": "/compare/shopify-vs-wix/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "shopify-vs-woocommerce",
+      "path": "/compare/shopify-vs-woocommerce/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "sendcloud-vs-shopify",
+      "path": "/compare/sendcloud-vs-shopify/"
+    },
+    {
+      "kind": "alternatives",
+      "slug": "shopify",
+      "path": "/alternatives/shopify/"
+    },
+    {
+      "kind": "pricing",
+      "slug": "shopify",
+      "path": "/software/shopify/pricing/"
+    },
+    {
+      "kind": "best",
+      "slug": "website-digital-presence-software",
+      "path": "/best/website-digital-presence-software/"
+    },
+    {
+      "kind": "tools",
+      "slug": "ecommerce-cost-calculator",
+      "path": "/tools/ecommerce-cost-calculator/"
+    }
+  ],
+  "dependentsNeedingRefresh": [],
+  "remediation": [],
+  "notes": [
+    "fieldAudit score=100",
+    "decisionHub bestFor=6 notIdeal=6",
+    "dependents=30"
+  ],
+  "materiallyImproved": true
+}

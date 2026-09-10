@@ -1,4 +1,4 @@
-import type { GuidePage } from "@/domain";
+import type { GuidePageInput } from "@/domain";
 import { buildAllItProductGuides } from "@/services/product-guides/build";
 
 /**
@@ -6,4 +6,4 @@ import { buildAllItProductGuides } from "@/services/product-guides/build";
  * plans, worth-it) for primary ITSM, observability, source-control, hosting,
  * and web-data products.
  */
-export const itProductGuides: GuidePage[] = buildAllItProductGuides();
+export const itProductGuides: GuidePageInput[] = buildAllItProductGuides();

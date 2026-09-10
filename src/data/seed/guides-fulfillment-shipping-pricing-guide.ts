@@ -1,4 +1,4 @@
-import type { GuidePage } from "@/domain";
+import type { GuidePageInput } from "@/domain";
 import type { z } from "zod";
 import type { GuideContentBlockSchema } from "@/domain";
 import { tier26GuideScheduledAt } from "@/data/config/publishing/tier-26-fulfillment-shipping-launch-2027-07-01";
@@ -34,7 +34,7 @@ const blocks: GuideBlockInput[] = [
   },
 ];
 
-function metadata(): GuidePage["metadata"] {
+function metadata(): GuidePageInput["metadata"] {
   return SCHEDULED_AT
     ? {
         status: "scheduled",
@@ -54,7 +54,7 @@ function metadata(): GuidePage["metadata"] {
       };
 }
 
-export const fulfillmentShippingPricingGuide: GuidePage = {
+export const fulfillmentShippingPricingGuide: GuidePageInput = {
   id: "guide-fulfillment-shipping-pricing-guide",
   slug: SLUG,
   title: "Fulfillment & Shipping Pricing Guide",
@@ -76,7 +76,7 @@ export const fulfillmentShippingPricingGuide: GuidePage = {
     "how-to-choose-fulfillment-shipping-software",
     "fulfillment-shipping-evaluation-guide",
   ],
-  blocks: blocks as GuidePage["blocks"],
+  blocks: blocks as GuidePageInput["blocks"],
   checklist: [],
   sections: [],
   faq: [],
@@ -87,6 +87,6 @@ export const fulfillmentShippingPricingGuide: GuidePage = {
     description:
       "Compare SaaS tiers, per-label fees, and 3PL fulfillment costs for shipping software.",
     canonicalPath: `/guides/${SLUG}/`,
-    indexable: !SCHEDULED_AT,
+    indexable: true,
   },
 };

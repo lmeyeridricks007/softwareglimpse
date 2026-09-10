@@ -1,4 +1,4 @@
-import type { GuidePage } from "@/domain";
+import type { GuidePageInput } from "@/domain";
 import { buildAllAiProductGuides } from "@/services/product-guides/build";
 
 /**
@@ -6,4 +6,4 @@ import { buildAllAiProductGuides } from "@/services/product-guides/build";
  * for primary products. Niche catalogue (Wegic, AdCreative.ai, MindStudio)
  * stays on category guides.
  */
-export const aiProductGuides: GuidePage[] = buildAllAiProductGuides();
+export const aiProductGuides: GuidePageInput[] = buildAllAiProductGuides();

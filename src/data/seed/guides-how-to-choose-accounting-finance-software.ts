@@ -1,4 +1,4 @@
-import type { GuidePage } from "@/domain";
+import type { GuidePageInput } from "@/domain";
 import type { z } from "zod";
 import type { GuideContentBlockSchema } from "@/domain";
 import { tier3GuideScheduledAt } from "@/data/config/publishing/tier-3-accounting-finance-launch-2026-09-01";
@@ -65,7 +65,7 @@ const blocks: GuideBlockInput[] = [
   },
 ];
 
-function metadata(): GuidePage["metadata"] {
+function metadata(): GuidePageInput["metadata"] {
   return SCHEDULED_AT
     ? {
         status: "scheduled",
@@ -85,7 +85,7 @@ function metadata(): GuidePage["metadata"] {
       };
 }
 
-export const howToChooseAccountingFinanceSoftwareGuide: GuidePage = {
+export const howToChooseAccountingFinanceSoftwareGuide: GuidePageInput = {
   id: "guide-how-to-choose-accounting-finance-software",
   slug: SLUG,
   title: "How to Choose Accounting & Finance Software",
@@ -105,7 +105,7 @@ export const howToChooseAccountingFinanceSoftwareGuide: GuidePage = {
     "accounting-finance-pricing-guide",
     "accounting-finance-requirements-guide",
   ],
-  blocks: blocks as GuidePage["blocks"],
+  blocks: blocks as GuidePageInput["blocks"],
   checklist: [],
   sections: [],
   faq: [],
@@ -116,6 +116,6 @@ export const howToChooseAccountingFinanceSoftwareGuide: GuidePage = {
     description:
       "How to choose accounting and finance software by expense, bookkeeping, T&E, or manufacturing ERP job cluster.",
     canonicalPath: `/guides/${SLUG}/`,
-    indexable: !SCHEDULED_AT,
+    indexable: true,
   },
 };

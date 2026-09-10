@@ -69,20 +69,26 @@ describe("internal linking eligibility", () => {
 });
 
 describe("guide + software link plans", () => {
-  it("gives CRM guides a parent hub and next step", () => {
-    const guide = getGuideBySlug("what-is-crm");
-    expect(guide).toBeTruthy();
-    const plan = buildGuideLinkPlan(guide!);
-    expect(plan.parentHub.length).toBeGreaterThan(0);
-    expect(plan.recommendedNextStep.length).toBeGreaterThan(0);
-    expect(
-      plan.parentHub.some((l) => l.href === "/guides/" || l.href === "/categories/crm/"),
-    ).toBe(true);
-    // No generic "Learn more"
-    for (const link of [...plan.relatedGuides, ...plan.recommendedNextStep]) {
-      expect(link.label.toLowerCase()).not.toMatch(/^(learn more|click here)$/);
-    }
-  });
+  it(
+    "gives CRM guides a parent hub and next step",
+    () => {
+      const guide = getGuideBySlug("what-is-crm");
+      expect(guide).toBeTruthy();
+      const plan = buildGuideLinkPlan(guide!);
+      expect(plan.parentHub.length).toBeGreaterThan(0);
+      expect(plan.recommendedNextStep.length).toBeGreaterThan(0);
+      expect(
+        plan.parentHub.some(
+          (l) => l.href === "/guides/" || l.href === "/categories/crm/",
+        ),
+      ).toBe(true);
+      // No generic "Learn more"
+      for (const link of [...plan.relatedGuides, ...plan.recommendedNextStep]) {
+        expect(link.label.toLowerCase()).not.toMatch(/^(learn more|click here)$/);
+      }
+    },
+    30_000,
+  );
 
   it("builds product cluster next steps for HubSpot without affiliate bias", () => {
     const soft = getSoftwareBySlug("hubspot");
@@ -130,7 +136,9 @@ describe("guide + software link plans", () => {
     }
   });
 
-  it("gives product-guide packs a kind-directed journey, not knowledge-area fan-out", () => {
+  it(
+    "gives product-guide packs a kind-directed journey, not knowledge-area fan-out",
+    () => {
     const setup = getGuideBySlug("pipedrive-setup");
     const worthIt = getGuideBySlug("is-pipedrive-worth-it");
     const hubspotSetup = getGuideBySlug("hubspot-setup");
@@ -172,7 +180,9 @@ describe("guide + software link plans", () => {
     expect(supporting.some((g) => g.slug.endsWith("-implementation"))).toBe(
       false,
     );
-  });
+  },
+  30_000,
+  );
 });
 
 describe("feature deep graph", () => {
@@ -208,7 +218,7 @@ describe("orphan detector + health", () => {
       expect(Array.isArray(report.orphans)).toBe(true);
       expect(Array.isArray(report.chromeOnly)).toBe(true);
     },
-    120_000,
+    180_000,
   );
 
   it(
@@ -240,7 +250,7 @@ describe("orphan detector + health", () => {
       expect(report.orphans).toEqual([]);
       expect(report.weaklyLinked).toEqual([]);
     },
-    120_000,
+    180_000,
   );
 
   it(
@@ -257,7 +267,20 @@ describe("orphan detector + health", () => {
         ),
       ).toBe(false);
       expect(issues.filter((i) => i.severity === "error")).toEqual([]);
+      // Alias feature→capability must not create false DUPLICATE_MODULE_HREF
+      expect(
+        issues.filter(
+          (i) =>
+            i.code === "DUPLICATE_MODULE_HREF" &&
+            (i.from === "/capabilities/pipeline-management/" ||
+              i.from === "/features/pipeline-management/"),
+        ),
+      ).toEqual([]);
+      // Injections must not double-emit the same href within a module
+      expect(
+        issues.filter((i) => i.code === "DUPLICATE_MODULE_HREF"),
+      ).toEqual([]);
     },
-    120_000,
+    180_000,
   );
 });

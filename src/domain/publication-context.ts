@@ -310,6 +310,12 @@ export type PublicationListOptions = {
    * Prefer relying on getPublicationContextSync() defaults.
    */
   includeUnpublished?: boolean;
+  /**
+   * Serve future-dated `scheduled` entities (IMPROVE / pre-launch) as
+   * reachable HTML with noindex. Does not force sitemap inclusion —
+   * callers still gate discovery via isEntityIndexable.
+   */
+  includeScheduledFuture?: boolean;
   now?: Date;
   context?: PublicationContext;
 };
@@ -341,17 +347,21 @@ export function filterByPublicationVisibility<
   if (options.includeUnpublished) return items;
 
   const resolved = resolvePublicationListOptions(options);
-  return items.filter((item) =>
-    isContentVisible(
-      {
-        status: item.metadata.status,
-        publishedAt: item.metadata.publishedAt,
-        scheduledAt: item.metadata.scheduledAt,
-      },
-      resolved.context!,
-      resolved.now,
-    ),
-  );
+  return items.filter((item) => {
+    const input = {
+      status: item.metadata.status,
+      publishedAt: item.metadata.publishedAt,
+      scheduledAt: item.metadata.scheduledAt,
+    };
+    if (
+      options.includeScheduledFuture &&
+      input.status === "scheduled" &&
+      Boolean(input.scheduledAt)
+    ) {
+      return true;
+    }
+    return isContentVisible(input, resolved.context!, resolved.now);
+  });
 }
 
 /** Dev-only UI chrome for non-live content. */

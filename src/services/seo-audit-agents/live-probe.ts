@@ -6,6 +6,10 @@ import { JSDOM } from "jsdom";
 import { normalizePath } from "@/seo/canonical";
 import { isPathIndexable } from "@/services/internal-linking/eligibility";
 import { REPRESENTATIVE_ROUTES } from "@/performance/budgets";
+import {
+  FULL_LIVE_EXTRA_PATHS,
+  FULL_LIVE_QUERY_SAMPLES,
+} from "./live-probe-extra-paths";
 import type { SeoAuditMode, SeoFixtureMedia, SeoFixturePage } from "./types";
 
 export type LiveProbeImage = {
@@ -249,7 +253,31 @@ function parseHtmlPage(
 export function probePathsForMode(mode: SeoAuditMode): string[] {
   const routes =
     mode === "FAST" ? REPRESENTATIVE_ROUTES.slice(0, 8) : REPRESENTATIVE_ROUTES;
-  return routes.map((r) => normalizePath(r.path));
+  const base = routes.map((r) => normalizePath(r.path));
+  if (mode !== "FULL") return base;
+
+  // Deduped lifecycle / legacy / locale / taxonomy samples for live integrity.
+  const seen = new Set(base);
+  const merged = [...base];
+  for (const p of FULL_LIVE_EXTRA_PATHS) {
+    if (seen.has(p)) continue;
+    seen.add(p);
+    merged.push(p);
+  }
+  for (const q of FULL_LIVE_QUERY_SAMPLES) {
+    if (seen.has(q)) continue;
+    seen.add(q);
+    merged.push(q);
+  }
+  return merged;
+}
+
+function requestUrlForPath(baseUrl: string, pathOrUrl: string): string {
+  if (/^https?:\/\//i.test(pathOrUrl)) return pathOrUrl;
+  if (pathOrUrl.includes("?")) {
+    return `${stripTrailingSlash(baseUrl)}${pathOrUrl.startsWith("/") ? "" : "/"}${pathOrUrl}`;
+  }
+  return absoluteUrl(baseUrl, pathOrUrl);
 }
 
 export async function fetchLiveProbeBundle(input: {
@@ -267,13 +295,14 @@ export async function fetchLiveProbeBundle(input: {
     const batch = paths.slice(i, i + concurrency);
     const results = await Promise.all(
       batch.map(async (path) => {
-        const requestUrl = absoluteUrl(baseUrl, path);
+        const requestUrl = requestUrlForPath(baseUrl, path);
+        const reportPath = normalizePath(path.split("?")[0] ?? path);
         try {
           const fetched = await fetchWithRedirects(requestUrl);
-          return parseHtmlPage(path, requestUrl, fetched, baseUrl);
+          return parseHtmlPage(reportPath, requestUrl, fetched, baseUrl);
         } catch (err) {
           return {
-            path,
+            path: reportPath,
             requestUrl,
             finalUrl: requestUrl,
             statusCode: 0,

@@ -8,10 +8,12 @@ import { useEffect, useState } from "react";
 import { Download, FileSpreadsheet, FileText } from "lucide-react";
 import { track } from "@/analytics";
 import type {
+  BudgetBand,
   DecisionCategorySlug,
   DecisionProfile,
   FeaturePriority,
   IntegrationPriority,
+  EasePreference,
   UseCaseSelectionPriority,
 } from "@/domain";
 import { createEmptyDecisionProfile } from "@/domain";
@@ -54,20 +56,25 @@ type Props = {
 };
 
 export function CategoryRequirementsBuilderApp({ kit }: Props) {
+  const categorySlug = kit.categorySlug as DecisionCategorySlug;
   const [stage, setStage] = useState<StageId>("business");
   const [maxIndex, setMaxIndex] = useState(0);
   const [profile, setProfile] = useState<DecisionProfile>(() =>
-    createEmptyDecisionProfile(kit.categorySlug as DecisionCategorySlug),
+    loadDecisionProfile(categorySlug) ??
+    createEmptyDecisionProfile(categorySlug),
   );
-  const [hydrated, setHydrated] = useState(false);
+  const [prevCategorySlug, setPrevCategorySlug] = useState(categorySlug);
+  if (categorySlug !== prevCategorySlug) {
+    setPrevCategorySlug(categorySlug);
+    setProfile(
+      loadDecisionProfile(categorySlug) ??
+        createEmptyDecisionProfile(categorySlug),
+    );
+  }
+  const [hydrated, setHydrated] = useState(true);
   const [copyStatus, setCopyStatus] = useState<string | null>(null);
 
   useEffect(() => {
-    const loaded = loadDecisionProfile(
-      kit.categorySlug as DecisionCategorySlug,
-    );
-    if (loaded) setProfile(loaded);
-    setHydrated(true);
     track({
       name: "si_requirements_started",
       properties: { category: kit.categorySlug },
@@ -416,7 +423,7 @@ export function CategoryRequirementsBuilderApp({ kit }: Props) {
                   onClick={() =>
                     setProfile((prev) => ({
                       ...prev,
-                      budget: { ...prev.budget, band: option.value },
+                      budget: { ...prev.budget, band: option.value as BudgetBand },
                     }))
                   }
                   className={cn(
@@ -443,7 +450,7 @@ export function CategoryRequirementsBuilderApp({ kit }: Props) {
                       ...prev,
                       implementation: {
                         ...prev.implementation,
-                        complexity: option.value,
+                        complexity: option.value as EasePreference,
                       },
                     }))
                   }

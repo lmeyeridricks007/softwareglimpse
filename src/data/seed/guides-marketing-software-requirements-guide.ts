@@ -1,4 +1,4 @@
-import type { GuidePage } from "@/domain";
+import type { GuidePageInput } from "@/domain";
 import type { z } from "zod";
 import type { GuideContentBlockSchema } from "@/domain";
 
@@ -88,7 +88,7 @@ const marketingRequirementsGuideBlocks: GuideBlockInput[] = [
   },
 ];
 
-export const marketingSoftwareRequirementsGuide: GuidePage = {
+export const marketingSoftwareRequirementsGuide: GuidePageInput = {
   id: "guide-marketing-software-requirements-guide",
   slug: "marketing-software-requirements-guide",
   title: "Marketing Software Requirements Guide",
@@ -118,7 +118,7 @@ export const marketingSoftwareRequirementsGuide: GuidePage = {
     "marketing-software-pricing-guide",
     "marketing-software-evaluation-guide",
   ],
-  blocks: marketingRequirementsGuideBlocks as GuidePage["blocks"],
+  blocks: marketingRequirementsGuideBlocks as GuidePageInput["blocks"],
   checklist: [],
   sections: [],
   faq: [],

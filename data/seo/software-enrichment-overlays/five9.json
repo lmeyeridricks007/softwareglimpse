@@ -1,0 +1,425 @@
+{
+  "slug": "five9",
+  "updatedAt": "2026-09-07T22:31:21.472Z",
+  "version": "1.0.0",
+  "fieldAudit": {
+    "slug": "five9",
+    "checkedAt": "2026-09-07T22:31:21.471Z",
+    "items": [
+      {
+        "field": "name",
+        "status": "PASS",
+        "detail": "Name: Five9",
+        "source": "seed"
+      },
+      {
+        "field": "product_status",
+        "status": "PASS",
+        "detail": "productLifecycle=active",
+        "source": "seed"
+      },
+      {
+        "field": "canonical_vendor",
+        "status": "UNKNOWN",
+        "detail": "Company/vendor not documented",
+        "source": "none"
+      },
+      {
+        "field": "category",
+        "status": "PASS",
+        "detail": "primaryCategorySlug=business-communications",
+        "source": "seed"
+      },
+      {
+        "field": "description",
+        "status": "PASS",
+        "detail": "Description present (Cloud contact center (CCaaS) — Digital from $119/concurrent seat/mo; Core $159; …)",
+        "source": "seed"
+      },
+      {
+        "field": "target_audience",
+        "status": "PASS",
+        "detail": "Sizes=2, teams=3, assessment bestFor=3",
+        "source": "assessment"
+      },
+      {
+        "field": "use_cases",
+        "status": "PASS",
+        "detail": "useCaseSlugs=3",
+        "source": "seed"
+      },
+      {
+        "field": "capabilities",
+        "status": "PASS",
+        "detail": "featureRatings=0, enrichment features=13",
+        "source": "enrichment"
+      },
+      {
+        "field": "pricing",
+        "status": "PASS",
+        "detail": "Pricing envelope present",
+        "source": "enrichment"
+      },
+      {
+        "field": "plans",
+        "status": "PASS",
+        "detail": "plans=5",
+        "source": "enrichment"
+      },
+      {
+        "field": "free_plan",
+        "status": "PASS",
+        "detail": "No free plan in documented plans (explicit absence)",
+        "source": "enrichment"
+      },
+      {
+        "field": "trial",
+        "status": "UNKNOWN",
+        "detail": "Trial not explicitly documented — do not assume none",
+        "source": "none"
+      },
+      {
+        "field": "integrations",
+        "status": "PASS",
+        "detail": "integrationSlugs=0, enrichment=6",
+        "source": "enrichment"
+      },
+      {
+        "field": "alternatives",
+        "status": "PASS",
+        "detail": "alternativeSlugs=4",
+        "source": "seed"
+      },
+      {
+        "field": "competitors",
+        "status": "PASS",
+        "detail": "competitorSlugs=5",
+        "source": "seed"
+      },
+      {
+        "field": "affiliate",
+        "status": "PASS",
+        "detail": "No affiliate relationship (explicit)",
+        "source": "seed"
+      },
+      {
+        "field": "source_provenance",
+        "status": "PASS",
+        "detail": "seed sources=0, enrichment sourceIds=2",
+        "source": "enrichment"
+      },
+      {
+        "field": "verification_date",
+        "status": "PASS",
+        "detail": "Latest verification/research signal: 2026-08-17T20:00:00.000Z",
+        "source": "enrichment"
+      }
+    ],
+    "passCount": 16,
+    "partialCount": 0,
+    "missingCount": 0,
+    "unknownCount": 2,
+    "score": 89
+  },
+  "decisionHub": {
+    "whatItIs": "Five9 is a cloud contact center platform known for blended inbound/outbound voice, dialer strength and concurrent-seat packaging. First-party pricing on five9.com/products/pricing (checked 2026-08-17) publishes Digital $119 and Core $159 per concurrent seat/month USD, with Plus/Pro/Enterprise contact-sales; a 50-seat minimum and usage-based AI/SMS charges apply. Scored as CCaaS — landscape award only; do not rank as a phone-system peer.",
+    "bestFor": [
+      "Mid-market and enterprise contact centres that need blended dialer strength",
+      "Teams comfortable with concurrent-seat economics and 50+ seat minimums",
+      "Buyers who want CRM/UC adapter choice inside CCaaS",
+      "mid-market / customer-success: Five9 fit for mid-market customer-success teams in the contact-center job cluster, from first-party positioning and Business-communications Priority-3 research.",
+      "enterprise / customer-success: Five9 fit for enterprise customer-success teams in the contact-center job cluster, from first-party positioning and Business-communications Priority-3 research."
+    ],
+    "notIdealFor": [
+      "SMB teams under 50 seats needing a simple business phone",
+      "Buyers who need fully published dollars on every tier including Plus/Pro",
+      "UCaaS-only purchases (prefer RingCentral/Webex/Zoom Phone)",
+      "50 concurrent-seat minimum — not viable for small SMB phone buyers",
+      "Digital is non-voice; Core is the published voice+digital entry",
+      "Plus/Pro/Enterprise dollars are quote-only — do not invent list prices"
+    ],
+    "coreCapabilities": [
+      "cloud phone",
+      "call routing",
+      "call recording",
+      "power dialer",
+      "sms messaging",
+      "shared inbox",
+      "crm cti",
+      "analytics reporting"
+    ],
+    "pricingSummary": "5 documented plans · entry paid: Digital",
+    "keyTradeoffs": [
+      "50 concurrent-seat minimum — not viable for small SMB phone buyers",
+      "Digital is non-voice; Core is the published voice+digital entry",
+      "Plus/Pro/Enterprise dollars are quote-only — do not invent list prices",
+      "Usage-based AI minutes and SMS raise TCO beyond seat floors",
+      "Not a UCaaS / SMB business-phone substitute"
+    ],
+    "alternatives": [
+      {
+        "slug": "talkdesk",
+        "name": "Talkdesk"
+      },
+      {
+        "slug": "genesys",
+        "name": "Genesys"
+      },
+      {
+        "slug": "ringcentral",
+        "name": "RingCentral"
+      },
+      {
+        "slug": "eightx8",
+        "name": "8x8"
+      },
+      {
+        "slug": "webex",
+        "name": "Cisco Webex"
+      }
+    ],
+    "importantComparisons": [
+      {
+        "slug": "five9-vs-talkdesk",
+        "title": "Five9 vs Talkdesk",
+        "href": "/compare/five9-vs-talkdesk/"
+      },
+      {
+        "slug": "dialpad-vs-five9",
+        "title": "Dialpad vs Five9",
+        "href": "/compare/dialpad-vs-five9/"
+      },
+      {
+        "slug": "eightx8-vs-five9",
+        "title": "8x8 vs Five9",
+        "href": "/compare/eightx8-vs-five9/"
+      },
+      {
+        "slug": "fastmail-vs-five9",
+        "title": "Fastmail vs Five9",
+        "href": "/compare/fastmail-vs-five9/"
+      },
+      {
+        "slug": "five9-vs-genesys",
+        "title": "Five9 vs Genesys",
+        "href": "/compare/five9-vs-genesys/"
+      },
+      {
+        "slug": "five9-vs-goto-connect",
+        "title": "Five9 vs GoTo Connect",
+        "href": "/compare/five9-vs-goto-connect/"
+      }
+    ],
+    "relevantGuides": [
+      {
+        "slug": "how-business-communications-software-works",
+        "title": "How Business Communications Software Works",
+        "href": "/guides/how-business-communications-software-works/"
+      },
+      {
+        "slug": "types-of-business-communications-software",
+        "title": "Types of Business Communications Software",
+        "href": "/guides/types-of-business-communications-software/"
+      },
+      {
+        "slug": "five9-implementation",
+        "title": "Five9 Implementation: 30/60/90 Communications Rollout That Sticks",
+        "href": "/guides/five9-implementation/"
+      },
+      {
+        "slug": "five9-migration",
+        "title": "Five9 Migration: Move Numbers Without Losing Trust",
+        "href": "/guides/five9-migration/"
+      },
+      {
+        "slug": "five9-setup",
+        "title": "Five9 Setup: Day-Zero Path to a Working Call Loop",
+        "href": "/guides/five9-setup/"
+      },
+      {
+        "slug": "five9-plans",
+        "title": "Five9 Plans: Seats, Numbers, and Qualifying Tiers",
+        "href": "/guides/five9-plans/"
+      }
+    ],
+    "evidenceState": "Research/data-based (no completed hands-on test) · Latest verification/research signal: 2026-08-17T20:00:00.000Z · Editorial assessment: approved",
+    "nextDecisionStep": "Compare against peers: Five9 vs Talkdesk",
+    "missingSections": [
+      "canonical_vendor",
+      "trial"
+    ]
+  },
+  "dependents": [
+    {
+      "kind": "guide",
+      "slug": "how-business-communications-software-works",
+      "path": "/guides/how-business-communications-software-works/"
+    },
+    {
+      "kind": "guide",
+      "slug": "types-of-business-communications-software",
+      "path": "/guides/types-of-business-communications-software/"
+    },
+    {
+      "kind": "guide",
+      "slug": "five9-implementation",
+      "path": "/guides/five9-implementation/"
+    },
+    {
+      "kind": "guide",
+      "slug": "five9-migration",
+      "path": "/guides/five9-migration/"
+    },
+    {
+      "kind": "guide",
+      "slug": "five9-setup",
+      "path": "/guides/five9-setup/"
+    },
+    {
+      "kind": "guide",
+      "slug": "five9-plans",
+      "path": "/guides/five9-plans/"
+    },
+    {
+      "kind": "guide",
+      "slug": "is-five9-worth-it",
+      "path": "/guides/is-five9-worth-it/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "five9-vs-talkdesk",
+      "path": "/compare/five9-vs-talkdesk/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "dialpad-vs-five9",
+      "path": "/compare/dialpad-vs-five9/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "eightx8-vs-five9",
+      "path": "/compare/eightx8-vs-five9/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "fastmail-vs-five9",
+      "path": "/compare/fastmail-vs-five9/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "five9-vs-genesys",
+      "path": "/compare/five9-vs-genesys/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "five9-vs-goto-connect",
+      "path": "/compare/five9-vs-goto-connect/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "five9-vs-grasshopper",
+      "path": "/compare/five9-vs-grasshopper/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "five9-vs-manychat",
+      "path": "/compare/five9-vs-manychat/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "five9-vs-microsoft-teams",
+      "path": "/compare/five9-vs-microsoft-teams/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "five9-vs-nextiva",
+      "path": "/compare/five9-vs-nextiva/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "five9-vs-ooma",
+      "path": "/compare/five9-vs-ooma/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "five9-vs-openphone",
+      "path": "/compare/five9-vs-openphone/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "five9-vs-respond-io",
+      "path": "/compare/five9-vs-respond-io/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "five9-vs-ringcentral",
+      "path": "/compare/five9-vs-ringcentral/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "five9-vs-sanebox",
+      "path": "/compare/five9-vs-sanebox/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "five9-vs-slack",
+      "path": "/compare/five9-vs-slack/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "five9-vs-twilio",
+      "path": "/compare/five9-vs-twilio/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "five9-vs-vonage",
+      "path": "/compare/five9-vs-vonage/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "five9-vs-wati",
+      "path": "/compare/five9-vs-wati/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "five9-vs-webex",
+      "path": "/compare/five9-vs-webex/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "five9-vs-zenzap",
+      "path": "/compare/five9-vs-zenzap/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "five9-vs-zoom",
+      "path": "/compare/five9-vs-zoom/"
+    },
+    {
+      "kind": "alternatives",
+      "slug": "five9",
+      "path": "/alternatives/five9/"
+    },
+    {
+      "kind": "pricing",
+      "slug": "five9",
+      "path": "/software/five9/pricing/"
+    },
+    {
+      "kind": "tools",
+      "slug": "business-communications-cost-calculator",
+      "path": "/tools/business-communications-cost-calculator/"
+    }
+  ],
+  "dependentsNeedingRefresh": [],
+  "remediation": [
+    "verify:canonical_vendor",
+    "verify:trial"
+  ],
+  "notes": [
+    "fieldAudit score=89",
+    "decisionHub bestFor=5 notIdeal=6",
+    "dependents=32"
+  ],
+  "materiallyImproved": false
+}

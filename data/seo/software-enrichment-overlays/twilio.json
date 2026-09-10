@@ -1,0 +1,406 @@
+{
+  "slug": "twilio",
+  "updatedAt": "2026-09-07T22:31:21.478Z",
+  "version": "1.0.0",
+  "fieldAudit": {
+    "slug": "twilio",
+    "checkedAt": "2026-09-07T22:31:21.477Z",
+    "items": [
+      {
+        "field": "name",
+        "status": "PASS",
+        "detail": "Name: Twilio",
+        "source": "seed"
+      },
+      {
+        "field": "product_status",
+        "status": "PASS",
+        "detail": "productLifecycle=active",
+        "source": "seed"
+      },
+      {
+        "field": "canonical_vendor",
+        "status": "UNKNOWN",
+        "detail": "Company/vendor not documented",
+        "source": "none"
+      },
+      {
+        "field": "category",
+        "status": "PASS",
+        "detail": "primaryCategorySlug=business-communications",
+        "source": "seed"
+      },
+      {
+        "field": "description",
+        "status": "PASS",
+        "detail": "Description present (Programmable voice/SMS/WhatsApp platform (CPaaS) — pay-as-you-go usage; Flex con…)",
+        "source": "seed"
+      },
+      {
+        "field": "target_audience",
+        "status": "PASS",
+        "detail": "Sizes=2, teams=3, assessment bestFor=3",
+        "source": "assessment"
+      },
+      {
+        "field": "use_cases",
+        "status": "PASS",
+        "detail": "useCaseSlugs=3",
+        "source": "seed"
+      },
+      {
+        "field": "capabilities",
+        "status": "PASS",
+        "detail": "featureRatings=0, enrichment features=13",
+        "source": "enrichment"
+      },
+      {
+        "field": "pricing",
+        "status": "PASS",
+        "detail": "Pricing envelope present",
+        "source": "enrichment"
+      },
+      {
+        "field": "plans",
+        "status": "PASS",
+        "detail": "plans=6",
+        "source": "enrichment"
+      },
+      {
+        "field": "free_plan",
+        "status": "PASS",
+        "detail": "Free plan documented",
+        "source": "enrichment"
+      },
+      {
+        "field": "trial",
+        "status": "PASS",
+        "detail": "Trial documented on plans/pricing",
+        "source": "enrichment"
+      },
+      {
+        "field": "integrations",
+        "status": "PASS",
+        "detail": "integrationSlugs=0, enrichment=6",
+        "source": "enrichment"
+      },
+      {
+        "field": "alternatives",
+        "status": "PASS",
+        "detail": "alternativeSlugs=4",
+        "source": "seed"
+      },
+      {
+        "field": "competitors",
+        "status": "PASS",
+        "detail": "competitorSlugs=4",
+        "source": "seed"
+      },
+      {
+        "field": "affiliate",
+        "status": "PASS",
+        "detail": "No affiliate relationship (explicit)",
+        "source": "seed"
+      },
+      {
+        "field": "source_provenance",
+        "status": "PASS",
+        "detail": "seed sources=0, enrichment sourceIds=4",
+        "source": "enrichment"
+      },
+      {
+        "field": "verification_date",
+        "status": "PASS",
+        "detail": "Latest verification/research signal: 2026-08-17T22:00:00.000Z",
+        "source": "enrichment"
+      }
+    ],
+    "passCount": 17,
+    "partialCount": 0,
+    "missingCount": 0,
+    "unknownCount": 1,
+    "score": 94
+  },
+  "decisionHub": {
+    "whatItIs": "Twilio is a programmable communications platform (CPaaS): developers embed SMS, voice, WhatsApp, video and related channels via APIs, with optional Twilio Flex as a build-your-own cloud contact center. First-party pricing on twilio.com/en-us/pricing (checked 2026-08-17) is usage-based — US SMS from $0.0083 per message, Voice from ~$0.0085/min inbound and ~$0.014/min outbound, WhatsApp from $0.005 per message (use-case dependent), plus number rents and carrier fees. Flex publishes named-user floors from $150/user/month, active-user-hour from $1, and a User+usage model from $35 MAU (flex pricing page 2026-08-17). Free trial / start-for-free path; no SMB softphone seat card. Scored as a developer platform — landscape adjacent only; not a phone-system peer to RingCentral/OpenPhone.",
+    "bestFor": [
+      "Product and engineering teams embedding voice, SMS or WhatsApp into their own apps",
+      "Organisations building a custom contact centre on Flex rather than buying turnkey UCaaS",
+      "Buyers who need global programmable messaging with usage-based economics"
+    ],
+    "notIdealFor": [
+      "SMB teams that only need a transparent softphone under $30/seat",
+      "Non-technical buyers expecting OpenPhone/RingCentral-style admin UX",
+      "Teams that want a packaged WhatsApp shared inbox without building (prefer Wati/respond.io)",
+      "Not an SMB softphone / UCaaS product — requires engineering to ship a phone experience",
+      "Usage + carrier fees make TCO hard to forecast versus flat seat phones",
+      "Shared inbox / agent UX only appears if you build it or buy Flex"
+    ],
+    "coreCapabilities": [
+      "call routing",
+      "call recording",
+      "sms messaging",
+      "whatsapp business",
+      "video meetings",
+      "crm cti",
+      "analytics reporting",
+      "customer messaging"
+    ],
+    "pricingSummary": "6 documented plans · 1 free · entry paid: SMS / MMS · trial documented on at least one plan",
+    "keyTradeoffs": [
+      "Not an SMB softphone / UCaaS product — requires engineering to ship a phone experience",
+      "Usage + carrier fees make TCO hard to forecast versus flat seat phones",
+      "Shared inbox / agent UX only appears if you build it or buy Flex",
+      "AI (Conversation Intelligence, Flex Copilot) is usage/add-on priced",
+      "Compliance (A2P 10DLC, short codes) adds onboarding fees and lead time"
+    ],
+    "alternatives": [
+      {
+        "slug": "ringcentral",
+        "name": "RingCentral"
+      },
+      {
+        "slug": "talkdesk",
+        "name": "Talkdesk"
+      },
+      {
+        "slug": "respond-io",
+        "name": "respond.io"
+      },
+      {
+        "slug": "wati",
+        "name": "Wati"
+      },
+      {
+        "slug": "genesys",
+        "name": "Genesys"
+      }
+    ],
+    "importantComparisons": [
+      {
+        "slug": "talkdesk-vs-twilio",
+        "title": "Talkdesk vs Twilio",
+        "href": "/compare/talkdesk-vs-twilio/"
+      },
+      {
+        "slug": "dialpad-vs-twilio",
+        "title": "Dialpad vs Twilio",
+        "href": "/compare/dialpad-vs-twilio/"
+      },
+      {
+        "slug": "eightx8-vs-twilio",
+        "title": "8x8 vs Twilio",
+        "href": "/compare/eightx8-vs-twilio/"
+      },
+      {
+        "slug": "fastmail-vs-twilio",
+        "title": "Fastmail vs Twilio",
+        "href": "/compare/fastmail-vs-twilio/"
+      },
+      {
+        "slug": "five9-vs-twilio",
+        "title": "Five9 vs Twilio",
+        "href": "/compare/five9-vs-twilio/"
+      },
+      {
+        "slug": "genesys-vs-twilio",
+        "title": "Genesys vs Twilio",
+        "href": "/compare/genesys-vs-twilio/"
+      }
+    ],
+    "relevantGuides": [
+      {
+        "slug": "twilio-implementation",
+        "title": "Twilio Implementation: 30/60/90 Communications Rollout That Sticks",
+        "href": "/guides/twilio-implementation/"
+      },
+      {
+        "slug": "twilio-migration",
+        "title": "Twilio Migration: Move Numbers Without Losing Trust",
+        "href": "/guides/twilio-migration/"
+      },
+      {
+        "slug": "twilio-setup",
+        "title": "Twilio Setup: Day-Zero Path to a Working Call Loop",
+        "href": "/guides/twilio-setup/"
+      },
+      {
+        "slug": "twilio-plans",
+        "title": "Twilio Plans: Seats, Numbers, and Qualifying Tiers",
+        "href": "/guides/twilio-plans/"
+      },
+      {
+        "slug": "is-twilio-worth-it",
+        "title": "Is Twilio Worth It? Fit Scenarios Before You Buy",
+        "href": "/guides/is-twilio-worth-it/"
+      }
+    ],
+    "evidenceState": "Research/data-based (no completed hands-on test) · Latest verification/research signal: 2026-08-17T22:00:00.000Z · Editorial assessment: approved",
+    "nextDecisionStep": "Compare against peers: Talkdesk vs Twilio",
+    "missingSections": [
+      "canonical_vendor"
+    ]
+  },
+  "dependents": [
+    {
+      "kind": "guide",
+      "slug": "twilio-implementation",
+      "path": "/guides/twilio-implementation/"
+    },
+    {
+      "kind": "guide",
+      "slug": "twilio-migration",
+      "path": "/guides/twilio-migration/"
+    },
+    {
+      "kind": "guide",
+      "slug": "twilio-setup",
+      "path": "/guides/twilio-setup/"
+    },
+    {
+      "kind": "guide",
+      "slug": "twilio-plans",
+      "path": "/guides/twilio-plans/"
+    },
+    {
+      "kind": "guide",
+      "slug": "is-twilio-worth-it",
+      "path": "/guides/is-twilio-worth-it/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "talkdesk-vs-twilio",
+      "path": "/compare/talkdesk-vs-twilio/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "dialpad-vs-twilio",
+      "path": "/compare/dialpad-vs-twilio/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "eightx8-vs-twilio",
+      "path": "/compare/eightx8-vs-twilio/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "fastmail-vs-twilio",
+      "path": "/compare/fastmail-vs-twilio/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "five9-vs-twilio",
+      "path": "/compare/five9-vs-twilio/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "genesys-vs-twilio",
+      "path": "/compare/genesys-vs-twilio/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "goto-connect-vs-twilio",
+      "path": "/compare/goto-connect-vs-twilio/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "grasshopper-vs-twilio",
+      "path": "/compare/grasshopper-vs-twilio/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "manychat-vs-twilio",
+      "path": "/compare/manychat-vs-twilio/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "microsoft-teams-vs-twilio",
+      "path": "/compare/microsoft-teams-vs-twilio/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "nextiva-vs-twilio",
+      "path": "/compare/nextiva-vs-twilio/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "ooma-vs-twilio",
+      "path": "/compare/ooma-vs-twilio/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "openphone-vs-twilio",
+      "path": "/compare/openphone-vs-twilio/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "respond-io-vs-twilio",
+      "path": "/compare/respond-io-vs-twilio/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "ringcentral-vs-twilio",
+      "path": "/compare/ringcentral-vs-twilio/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "sanebox-vs-twilio",
+      "path": "/compare/sanebox-vs-twilio/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "slack-vs-twilio",
+      "path": "/compare/slack-vs-twilio/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "twilio-vs-vonage",
+      "path": "/compare/twilio-vs-vonage/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "twilio-vs-wati",
+      "path": "/compare/twilio-vs-wati/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "twilio-vs-webex",
+      "path": "/compare/twilio-vs-webex/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "twilio-vs-zenzap",
+      "path": "/compare/twilio-vs-zenzap/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "twilio-vs-zoom",
+      "path": "/compare/twilio-vs-zoom/"
+    },
+    {
+      "kind": "alternatives",
+      "slug": "twilio",
+      "path": "/alternatives/twilio/"
+    },
+    {
+      "kind": "pricing",
+      "slug": "twilio",
+      "path": "/software/twilio/pricing/"
+    },
+    {
+      "kind": "tools",
+      "slug": "business-communications-cost-calculator",
+      "path": "/tools/business-communications-cost-calculator/"
+    }
+  ],
+  "dependentsNeedingRefresh": [],
+  "remediation": [
+    "verify:canonical_vendor"
+  ],
+  "notes": [
+    "fieldAudit score=94",
+    "decisionHub bestFor=3 notIdeal=6",
+    "dependents=30"
+  ],
+  "materiallyImproved": false
+}

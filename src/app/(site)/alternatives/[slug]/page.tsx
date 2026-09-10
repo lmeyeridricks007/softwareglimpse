@@ -1,5 +1,4 @@
 import type { Metadata } from "next";
-import Link from "next/link";
 import { notFound } from "next/navigation";
 import {
   getAlternativesPageBySlug,
@@ -17,12 +16,15 @@ import { AlternativesTable } from "@/components/alternatives/alternatives-table"
 import {
   AlternativeCard,
   EditorialDisclosures,
+  EditorialProvenance,
+  EditorialTrustBlock,
 } from "@/components/editorial";
 import { NewsletterCard } from "@/components/newsletter/newsletter-card";
 import { Breadcrumbs } from "@/components/seo/breadcrumbs";
 import { TrustStrip } from "@/components/trust/trust-strip";
 import { ResearchStatusBanner } from "@/components/ui/research-status-banner";
 import { ButtonLink } from "@/components/ui/button";
+import { buildEstateBreadcrumbs } from "@/services/seo/knowledge-graph";
 import {
   formatMoney,
   fromMajor,
@@ -31,6 +33,7 @@ import {
 } from "@/domain";
 import { isEntityIndexable } from "@/domain/quality-gates";
 import { listPublishedLearningGuides } from "@/services/content-clusters";
+import { buildEditorialTrustMetadata } from "@/services/editorial/evidence-level";
 import { COMPANY_ROUTES, LEGAL_ROUTES } from "@/services/site-foundation";
 import {
   categoryDecisionCostHref,
@@ -64,11 +67,19 @@ function approvedScore(software: Software): {
   return { score: approved ? score! : null, approved };
 }
 
-function pricingTeaser(software: Software): string | null {
+function pricingTeaser(
+  software: Software,
+  relativePricing?: "unknown" | "lower" | "similar" | "higher",
+): string | null {
   const pricing = software.pricing;
-  if (!pricing || pricing.startingPriceMonthly == null) return null;
-  const currency = (pricing.currency ?? "USD") as CurrencyCode;
-  return `${formatMoney(fromMajor(pricing.startingPriceMonthly, currency))}/user/mo`;
+  if (pricing?.startingPriceMonthly != null) {
+    const currency = (pricing.currency ?? "USD") as CurrencyCode;
+    return `${formatMoney(fromMajor(pricing.startingPriceMonthly, currency))}/user/mo`;
+  }
+  if (relativePricing === "lower") return "Typically lower vs source";
+  if (relativePricing === "higher") return "Typically higher vs source";
+  if (relativePricing === "similar") return "Similar band vs source";
+  return null;
 }
 
 function resolveSoftware(slug: string): Software | undefined {
@@ -137,14 +148,13 @@ export default async function AlternativesDetailPage({ params }: Props) {
       ? `${altCount} ${source.name} Alternatives`
       : `${altCount} Best ${source.name} Alternatives`);
 
-  const breadcrumbItems = [
-    { name: "Home", path: "/" },
-    { name: "Alternatives", path: "/alternatives/" },
-    {
-      name: `${source.name} Alternatives`,
-      path: `/alternatives/${page.slug}/`,
-    },
-  ];
+  const breadcrumbItems = buildEstateBreadcrumbs(
+    `/alternatives/${page.slug}/`,
+  ).map((item, index, all) =>
+    index === all.length - 1
+      ? { ...item, name: `${source.name} Alternatives` }
+      : item,
+  );
 
   const tableRows = page.alternatives
     .map((entry, index) => {
@@ -173,7 +183,7 @@ export default async function AlternativesDetailPage({ params }: Props) {
           entry.betterWhen[0] ||
           target.bestFor[0] ||
           null,
-        pricingTeaser: pricingTeaser(target),
+        pricingTeaser: pricingTeaser(target, entry.relativePricing),
         score: score.score,
         scoreApproved: score.approved,
         badge:
@@ -214,10 +224,18 @@ export default async function AlternativesDetailPage({ params }: Props) {
 
   const whyItems = [
     ...new Set([
+      ...(page.slug === "pipedrive"
+        ? [
+            "Need native calling, SMS, or sequencing without stacking Marketplace apps",
+            "Want a free CRM path or lower cost at your seat count",
+            "Prefer suite breadth (marketing/service) or lighter relationship automation",
+            "Pipeline admin overhead is higher than the value of Pipedrive’s board UX",
+          ]
+        : []),
       ...source.cons.slice(0, 3),
       ...page.alternatives.flatMap((a) => a.betterWhen).slice(0, 4),
     ]),
-  ].slice(0, 4);
+  ].slice(0, 5);
 
   if (whyItems.length === 0) {
     whyItems.push(
@@ -279,6 +297,12 @@ export default async function AlternativesDetailPage({ params }: Props) {
       entry.keyTradeoff,
   );
 
+  const altTrust = buildEditorialTrustMetadata({
+    software: source,
+    methodologySlug: methodology?.slug,
+    methodologyVersion: methodology?.version,
+  });
+
   return (
     <>
       <JsonLdScript
@@ -287,6 +311,8 @@ export default async function AlternativesDetailPage({ params }: Props) {
             name: displayTitle,
             description: page.seo.description || page.summary || page.title,
             path,
+            dateModified:
+              page.metadata.updatedAt || page.metadata.publishedAt || undefined,
           }),
           breadcrumbJsonLd(breadcrumbItems),
         ]}
@@ -372,6 +398,20 @@ export default async function AlternativesDetailPage({ params }: Props) {
         }
       />
 
+      <div className="mt-6">
+        <EditorialTrustBlock
+          trust={{
+            ...altTrust,
+            lastUpdated:
+              page.metadata.updatedAt ||
+              page.metadata.publishedAt ||
+              altTrust.lastUpdated,
+          }}
+          compact
+          variant="comparison"
+        />
+      </div>
+
       <AlternativesMethodologyNote
         className="mt-8"
         criterionCount={methodology?.criteria.length}
@@ -413,6 +453,9 @@ export default async function AlternativesDetailPage({ params }: Props) {
                       betterWhen={entry.betterWhen}
                       worseWhen={entry.worseWhen}
                       keyTradeoff={entry.keyTradeoff}
+                      targetAudience={entry.targetAudience}
+                      relativePricing={entry.relativePricing}
+                      editorialNote={entry.editorialNote}
                       provisional={!structured || provisional}
                     />
                   );
@@ -424,7 +467,9 @@ export default async function AlternativesDetailPage({ params }: Props) {
           {page.editorialRecommendation ? (
             <section className="rounded-[var(--sg-radius-lg)] border border-[var(--sg-color-border)] bg-[var(--sg-color-surface-muted)] p-5">
               <h2 className="font-[family-name:var(--font-display)] text-lg font-semibold text-[var(--sg-color-text)]">
-                Editorial note
+                {page.slug === "pipedrive"
+                  ? "Decision guidance"
+                  : "Editorial note"}
               </h2>
               <p className="mt-2 text-sm text-[var(--sg-color-text-muted)]">
                 {page.editorialRecommendation}
@@ -479,6 +524,24 @@ export default async function AlternativesDetailPage({ params }: Props) {
       <AlternativesHowToChoose
         className="mt-14"
         title={`How to choose a ${source.name} alternative`}
+        steps={
+          page.slug === "pipedrive"
+            ? [
+                {
+                  title: "Name the job Pipedrive is failing",
+                  body: "Calling gap, cost at seat count, marketing suite need, or pipeline admin fatigue — pick one primary job so you do not compare every CRM feature.",
+                },
+                {
+                  title: "Match category, then product",
+                  body: "Engagement suite (Freshsales), freemium platform (HubSpot), outbound CRM (Close), value platform (Zoho), light SMB (Capsule), or relationship automation (Salesflare).",
+                },
+                {
+                  title: "Trial one real pipeline week",
+                  body: "Import sample deals, run one automation, and check pricing on the plan you would buy. We only claim hands-on testing when we completed a session.",
+                },
+              ]
+            : undefined
+        }
       />
 
       <EditorialDisclosures
@@ -488,21 +551,21 @@ export default async function AlternativesDetailPage({ params }: Props) {
         aiUsed={page.alternatives.some((entry) => Boolean(entry.reason))}
       />
 
-      <p className="mt-6 text-sm text-[var(--sg-color-text-muted)]">
-        <Link
-          href={COMPANY_ROUTES.methodology}
-          className="underline underline-offset-2"
-        >
-          Editorial methodology
-        </Link>
-        {" · "}
-        <Link
-          href={LEGAL_ROUTES.affiliateDisclosure}
-          className="underline underline-offset-2"
-        >
-          Affiliate disclosure
-        </Link>
-      </p>
+      <EditorialProvenance
+        sources={source.sources}
+        productName={source.name}
+        pricingVerifiedAt={altTrust.pricingVerifiedAt}
+        dataCheckedAt={
+          page.metadata.updatedAt ||
+          altTrust.researchDate ||
+          page.metadata.publishedAt
+        }
+        methodologyLabel={
+          methodology?.version
+            ? `Methodology v${methodology.version}`
+            : "Editorial methodology"
+        }
+      />
 
       <section className="mt-16 space-y-10 border-t border-[var(--sg-color-border)] pt-12">
         <NewsletterCard source="article-end" />

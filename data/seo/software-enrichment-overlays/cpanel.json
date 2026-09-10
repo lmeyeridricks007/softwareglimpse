@@ -1,0 +1,517 @@
+{
+  "slug": "cpanel",
+  "updatedAt": "2026-09-07T22:31:21.799Z",
+  "version": "1.0.0",
+  "fieldAudit": {
+    "slug": "cpanel",
+    "checkedAt": "2026-09-07T22:31:21.798Z",
+    "items": [
+      {
+        "field": "name",
+        "status": "PASS",
+        "detail": "Name: cPanel",
+        "source": "seed"
+      },
+      {
+        "field": "product_status",
+        "status": "PASS",
+        "detail": "productLifecycle=active",
+        "source": "seed"
+      },
+      {
+        "field": "canonical_vendor",
+        "status": "UNKNOWN",
+        "detail": "Company/vendor not documented",
+        "source": "none"
+      },
+      {
+        "field": "category",
+        "status": "PASS",
+        "detail": "primaryCategorySlug=it-development",
+        "source": "seed"
+      },
+      {
+        "field": "description",
+        "status": "PASS",
+        "detail": "Description present (Hosting control panel — Solo $29.99/mo (1 account); Admin $35.99 (≤5); Pro $53.9…)",
+        "source": "seed"
+      },
+      {
+        "field": "target_audience",
+        "status": "PASS",
+        "detail": "Sizes=3, teams=2, assessment bestFor=3",
+        "source": "assessment"
+      },
+      {
+        "field": "use_cases",
+        "status": "PASS",
+        "detail": "useCaseSlugs=1",
+        "source": "seed"
+      },
+      {
+        "field": "capabilities",
+        "status": "PASS",
+        "detail": "featureRatings=0, enrichment features=15",
+        "source": "enrichment"
+      },
+      {
+        "field": "pricing",
+        "status": "PASS",
+        "detail": "Pricing envelope present",
+        "source": "enrichment"
+      },
+      {
+        "field": "plans",
+        "status": "PASS",
+        "detail": "plans=4",
+        "source": "enrichment"
+      },
+      {
+        "field": "free_plan",
+        "status": "PASS",
+        "detail": "No free plan in documented plans (explicit absence)",
+        "source": "enrichment"
+      },
+      {
+        "field": "trial",
+        "status": "PASS",
+        "detail": "Trial documented on plans/pricing",
+        "source": "enrichment"
+      },
+      {
+        "field": "integrations",
+        "status": "PASS",
+        "detail": "integrationSlugs=0, enrichment=1",
+        "source": "enrichment"
+      },
+      {
+        "field": "alternatives",
+        "status": "PASS",
+        "detail": "alternativeSlugs=1",
+        "source": "seed"
+      },
+      {
+        "field": "competitors",
+        "status": "PASS",
+        "detail": "competitorSlugs=1",
+        "source": "seed"
+      },
+      {
+        "field": "affiliate",
+        "status": "PASS",
+        "detail": "No affiliate relationship (explicit)",
+        "source": "seed"
+      },
+      {
+        "field": "source_provenance",
+        "status": "PASS",
+        "detail": "seed sources=0, enrichment sourceIds=3",
+        "source": "enrichment"
+      },
+      {
+        "field": "verification_date",
+        "status": "PASS",
+        "detail": "Latest verification/research signal: 2026-08-18T12:00:00.000Z",
+        "source": "enrichment"
+      }
+    ],
+    "passCount": 17,
+    "partialCount": 0,
+    "missingCount": 0,
+    "unknownCount": 1,
+    "score": 94
+  },
+  "decisionHub": {
+    "whatItIs": "cPanel & WHM is the incumbent Linux hosting control panel licensed per server by account count. Direct store (from 16 Dec 2025 / 2026 list): Solo $29.99/mo (1 account, Cloud/VPS), Admin $35.99 (≤5), Pro $53.99 (≤30), Premier $69.99 (100 accounts, then $0.49/account). Premier is required for metal/dedicated. 15-day trial typical. Hosts often bundle cheaper distributor licences — the store list is the public floor. Distinct from Plesk (Windows/Linux panel peer) and from cloud IaaS.",
+    "bestFor": [
+      "Web hosts and agencies administering many accounts on a VPS",
+      "Operators who need the cPanel ecosystem (installers, WHM)",
+      "Premier buyers on dedicated/metal",
+      "micro / it-ops: cPanel fit for micro it-ops teams in the hosting-operations job cluster, from first-party positioning and IT Priority-2 research.",
+      "small-business / it-ops: cPanel fit for small-business it-ops teams in the hosting-operations job cluster, from first-party positioning and IT Priority-2 research.",
+      "mid-market / it-ops: cPanel fit for mid-market it-ops teams in the hosting-operations job cluster, from first-party positioning and IT Priority-2 research."
+    ],
+    "notIdealFor": [
+      "Teams that only need GitHub/GitLab",
+      "ITSM buyers",
+      "Buyers seeking published AI hosting features",
+      "Licence is per server/accounts — not a cloud app seat",
+      "Repeated list-price increases vs historic unlimited licences",
+      "Solo/Admin/Pro are Cloud/VPS-only — dedicated needs Premier"
+    ],
+    "coreCapabilities": [
+      "hosting panel",
+      "hosting operations"
+    ],
+    "pricingSummary": "4 documented plans · entry paid: Solo Cloud · trial documented on at least one plan",
+    "keyTradeoffs": [
+      "Licence is per server/accounts — not a cloud app seat",
+      "Repeated list-price increases vs historic unlimited licences",
+      "Solo/Admin/Pro are Cloud/VPS-only — dedicated needs Premier",
+      "Not ITSM, git, or observability",
+      "AI is not part of the product story"
+    ],
+    "alternatives": [
+      {
+        "slug": "plesk",
+        "name": "Plesk"
+      }
+    ],
+    "importantComparisons": [
+      {
+        "slug": "cpanel-vs-plesk",
+        "title": "cPanel vs Plesk",
+        "href": "/compare/cpanel-vs-plesk/"
+      },
+      {
+        "slug": "apify-vs-cpanel",
+        "title": "Apify vs cPanel",
+        "href": "/compare/apify-vs-cpanel/"
+      },
+      {
+        "slug": "appdynamics-vs-cpanel",
+        "title": "AppDynamics vs cPanel",
+        "href": "/compare/appdynamics-vs-cpanel/"
+      },
+      {
+        "slug": "azure-devops-vs-cpanel",
+        "title": "Azure DevOps vs cPanel",
+        "href": "/compare/azure-devops-vs-cpanel/"
+      },
+      {
+        "slug": "bitbucket-vs-cpanel",
+        "title": "Bitbucket Cloud vs cPanel",
+        "href": "/compare/bitbucket-vs-cpanel/"
+      },
+      {
+        "slug": "bmc-helix-vs-cpanel",
+        "title": "BMC Helix ITSM vs cPanel",
+        "href": "/compare/bmc-helix-vs-cpanel/"
+      }
+    ],
+    "relevantGuides": [
+      {
+        "slug": "cpanel-implementation",
+        "title": "cPanel Implementation: 30/60/90 IT Rollout That Sticks",
+        "href": "/guides/cpanel-implementation/"
+      },
+      {
+        "slug": "cpanel-migration",
+        "title": "cPanel Migration: Move Tickets and Repos Without Losing Trust",
+        "href": "/guides/cpanel-migration/"
+      },
+      {
+        "slug": "cpanel-setup",
+        "title": "cPanel Setup: Day-Zero Path to a Working IT Loop",
+        "href": "/guides/cpanel-setup/"
+      },
+      {
+        "slug": "cpanel-plans",
+        "title": "cPanel Plans: Seats, Hosts, and Qualifying Tiers",
+        "href": "/guides/cpanel-plans/"
+      },
+      {
+        "slug": "is-cpanel-worth-it",
+        "title": "Is cPanel Worth It? Fit Scenarios Before You Buy",
+        "href": "/guides/is-cpanel-worth-it/"
+      }
+    ],
+    "evidenceState": "Research/data-based (no completed hands-on test) · Latest verification/research signal: 2026-08-18T12:00:00.000Z · Editorial assessment: approved",
+    "nextDecisionStep": "Compare against peers: cPanel vs Plesk",
+    "missingSections": [
+      "canonical_vendor"
+    ]
+  },
+  "dependents": [
+    {
+      "kind": "guide",
+      "slug": "cpanel-implementation",
+      "path": "/guides/cpanel-implementation/"
+    },
+    {
+      "kind": "guide",
+      "slug": "cpanel-migration",
+      "path": "/guides/cpanel-migration/"
+    },
+    {
+      "kind": "guide",
+      "slug": "cpanel-setup",
+      "path": "/guides/cpanel-setup/"
+    },
+    {
+      "kind": "guide",
+      "slug": "cpanel-plans",
+      "path": "/guides/cpanel-plans/"
+    },
+    {
+      "kind": "guide",
+      "slug": "is-cpanel-worth-it",
+      "path": "/guides/is-cpanel-worth-it/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "cpanel-vs-plesk",
+      "path": "/compare/cpanel-vs-plesk/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "apify-vs-cpanel",
+      "path": "/compare/apify-vs-cpanel/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "appdynamics-vs-cpanel",
+      "path": "/compare/appdynamics-vs-cpanel/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "azure-devops-vs-cpanel",
+      "path": "/compare/azure-devops-vs-cpanel/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "bitbucket-vs-cpanel",
+      "path": "/compare/bitbucket-vs-cpanel/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "bmc-helix-vs-cpanel",
+      "path": "/compare/bmc-helix-vs-cpanel/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "bright-data-vs-cpanel",
+      "path": "/compare/bright-data-vs-cpanel/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "buildkite-vs-cpanel",
+      "path": "/compare/buildkite-vs-cpanel/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "chronosphere-vs-cpanel",
+      "path": "/compare/chronosphere-vs-cpanel/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "circleci-vs-cpanel",
+      "path": "/compare/circleci-vs-cpanel/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "cloudways-vs-cpanel",
+      "path": "/compare/cloudways-vs-cpanel/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "coralogix-vs-cpanel",
+      "path": "/compare/coralogix-vs-cpanel/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "cpanel-vs-datadog",
+      "path": "/compare/cpanel-vs-datadog/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "cpanel-vs-directadmin",
+      "path": "/compare/cpanel-vs-directadmin/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "cpanel-vs-dynatrace",
+      "path": "/compare/cpanel-vs-dynatrace/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "cpanel-vs-elastic-observability",
+      "path": "/compare/cpanel-vs-elastic-observability/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "cpanel-vs-firehydrant",
+      "path": "/compare/cpanel-vs-firehydrant/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "cpanel-vs-fly-io",
+      "path": "/compare/cpanel-vs-fly-io/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "cpanel-vs-github",
+      "path": "/compare/cpanel-vs-github/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "cpanel-vs-gitlab",
+      "path": "/compare/cpanel-vs-gitlab/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "cpanel-vs-grafana-cloud",
+      "path": "/compare/cpanel-vs-grafana-cloud/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "cpanel-vs-haloitsm",
+      "path": "/compare/cpanel-vs-haloitsm/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "cpanel-vs-heroku",
+      "path": "/compare/cpanel-vs-heroku/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "cpanel-vs-honeycomb",
+      "path": "/compare/cpanel-vs-honeycomb/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "cpanel-vs-incident-io",
+      "path": "/compare/cpanel-vs-incident-io/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "cpanel-vs-iproyal",
+      "path": "/compare/cpanel-vs-iproyal/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "cpanel-vs-ivanti",
+      "path": "/compare/cpanel-vs-ivanti/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "cpanel-vs-jira-service-management",
+      "path": "/compare/cpanel-vs-jira-service-management/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "cpanel-vs-kinsta",
+      "path": "/compare/cpanel-vs-kinsta/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "cpanel-vs-manageengine-servicedesk-plus",
+      "path": "/compare/cpanel-vs-manageengine-servicedesk-plus/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "cpanel-vs-new-relic",
+      "path": "/compare/cpanel-vs-new-relic/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "cpanel-vs-oxylabs",
+      "path": "/compare/cpanel-vs-oxylabs/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "cpanel-vs-pagerduty",
+      "path": "/compare/cpanel-vs-pagerduty/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "cpanel-vs-railway",
+      "path": "/compare/cpanel-vs-railway/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "cpanel-vs-render",
+      "path": "/compare/cpanel-vs-render/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "cpanel-vs-rootly",
+      "path": "/compare/cpanel-vs-rootly/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "cpanel-vs-scraperapi",
+      "path": "/compare/cpanel-vs-scraperapi/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "cpanel-vs-sentry",
+      "path": "/compare/cpanel-vs-sentry/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "cpanel-vs-servicenow",
+      "path": "/compare/cpanel-vs-servicenow/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "cpanel-vs-siteground",
+      "path": "/compare/cpanel-vs-siteground/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "cpanel-vs-smartproxy",
+      "path": "/compare/cpanel-vs-smartproxy/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "cpanel-vs-splunk",
+      "path": "/compare/cpanel-vs-splunk/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "cpanel-vs-squadcast",
+      "path": "/compare/cpanel-vs-squadcast/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "cpanel-vs-sysaid",
+      "path": "/compare/cpanel-vs-sysaid/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "cpanel-vs-thordata",
+      "path": "/compare/cpanel-vs-thordata/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "cpanel-vs-topdesk",
+      "path": "/compare/cpanel-vs-topdesk/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "cpanel-vs-wp-engine",
+      "path": "/compare/cpanel-vs-wp-engine/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "cpanel-vs-zyte",
+      "path": "/compare/cpanel-vs-zyte/"
+    },
+    {
+      "kind": "alternatives",
+      "slug": "cpanel",
+      "path": "/alternatives/cpanel/"
+    },
+    {
+      "kind": "pricing",
+      "slug": "cpanel",
+      "path": "/software/cpanel/pricing/"
+    },
+    {
+      "kind": "tools",
+      "slug": "it-development-cost-calculator",
+      "path": "/tools/it-development-cost-calculator/"
+    }
+  ],
+  "dependentsNeedingRefresh": [],
+  "remediation": [
+    "verify:canonical_vendor"
+  ],
+  "notes": [
+    "fieldAudit score=94",
+    "decisionHub bestFor=6 notIdeal=6",
+    "dependents=56"
+  ],
+  "materiallyImproved": false
+}

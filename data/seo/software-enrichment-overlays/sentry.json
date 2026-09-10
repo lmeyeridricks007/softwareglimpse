@@ -1,0 +1,534 @@
+{
+  "slug": "sentry",
+  "updatedAt": "2026-09-08T21:57:41.699Z",
+  "version": "1.0.0",
+  "fieldAudit": {
+    "slug": "sentry",
+    "checkedAt": "2026-09-08T21:57:41.697Z",
+    "items": [
+      {
+        "field": "name",
+        "status": "PASS",
+        "detail": "Name: Sentry",
+        "source": "seed"
+      },
+      {
+        "field": "product_status",
+        "status": "PASS",
+        "detail": "productLifecycle=active",
+        "source": "seed"
+      },
+      {
+        "field": "canonical_vendor",
+        "status": "PASS",
+        "detail": "Vendor: Functional Software, Inc.",
+        "source": "seed"
+      },
+      {
+        "field": "category",
+        "status": "PASS",
+        "detail": "primaryCategorySlug=it-development",
+        "source": "seed"
+      },
+      {
+        "field": "description",
+        "status": "PASS",
+        "detail": "Description present (Application error monitoring, tracing, and replays — Developer Free; Team $26/mo…)",
+        "source": "seed"
+      },
+      {
+        "field": "target_audience",
+        "status": "PASS",
+        "detail": "Sizes=5, teams=1, assessment bestFor=3",
+        "source": "assessment"
+      },
+      {
+        "field": "use_cases",
+        "status": "PASS",
+        "detail": "useCaseSlugs=1",
+        "source": "seed"
+      },
+      {
+        "field": "capabilities",
+        "status": "PASS",
+        "detail": "featureRatings=0, enrichment features=16",
+        "source": "enrichment"
+      },
+      {
+        "field": "pricing",
+        "status": "PASS",
+        "detail": "Pricing envelope present",
+        "source": "enrichment"
+      },
+      {
+        "field": "plans",
+        "status": "PASS",
+        "detail": "plans=4",
+        "source": "enrichment"
+      },
+      {
+        "field": "free_plan",
+        "status": "PASS",
+        "detail": "Free plan documented",
+        "source": "enrichment"
+      },
+      {
+        "field": "trial",
+        "status": "UNKNOWN",
+        "detail": "Trial not explicitly documented — do not assume none",
+        "source": "none"
+      },
+      {
+        "field": "integrations",
+        "status": "PASS",
+        "detail": "integrationSlugs=0, enrichment=3",
+        "source": "enrichment"
+      },
+      {
+        "field": "alternatives",
+        "status": "PASS",
+        "detail": "alternativeSlugs=2",
+        "source": "seed"
+      },
+      {
+        "field": "competitors",
+        "status": "PASS",
+        "detail": "competitorSlugs=5",
+        "source": "seed"
+      },
+      {
+        "field": "affiliate",
+        "status": "PASS",
+        "detail": "No affiliate relationship (explicit)",
+        "source": "seed"
+      },
+      {
+        "field": "source_provenance",
+        "status": "PASS",
+        "detail": "seed sources=0, enrichment sourceIds=3",
+        "source": "enrichment"
+      },
+      {
+        "field": "verification_date",
+        "status": "PASS",
+        "detail": "Latest verification/research signal: 2026-08-18T20:00:00.000Z",
+        "source": "enrichment"
+      }
+    ],
+    "passCount": 17,
+    "partialCount": 0,
+    "missingCount": 0,
+    "unknownCount": 1,
+    "score": 94
+  },
+  "decisionHub": {
+    "whatItIs": "Sentry is an application error-monitoring, tracing, and session-replay specialist. It sits in the observability-monitoring cluster as a developer-facing peer — not a Datadog infrastructure-monitoring replacement. Developer Free is $0 (1 user, 5k errors). Team is $26/month billed annually with default prepaid event volume; Business $80/month; Enterprise custom. Same cluster as Datadog/Splunk Observability Cloud; different primary shape (errors/replays vs host/infra suites). Does not outrank Datadog 8.6.",
+    "bestFor": [
+      "Application teams whose primary observability job is errors, traces, and replays",
+      "Developers who want a free 5k-error path before Team $26",
+      "Buyers comparing a specialist to Datadog/Splunk host suites",
+      "solo / engineering: Sentry fit for solo engineering teams in the observability-monitoring job cluster, from first-party positioning and IT industry Tier-A research.",
+      "micro / engineering: Sentry fit for micro engineering teams in the observability-monitoring job cluster, from first-party positioning and IT industry Tier-A research.",
+      "small-business / engineering: Sentry fit for small-business engineering teams in the observability-monitoring job cluster, from first-party positioning and IT industry Tier-A research."
+    ],
+    "notIdealFor": [
+      "SRE teams buying infrastructure monitoring as the core SKU (Datadog)",
+      "On-call-only paging (PagerDuty) — landscape, not a peer rank",
+      "ITSM or hosting purchases",
+      "Not a Datadog-style infrastructure monitoring suite — errors/traces/replays are the job",
+      "Prepaid event volume on Team/Business is the TCO lever beyond $26/$80 stickers",
+      "Does not outrank Datadog (8.6)"
+    ],
+    "coreCapabilities": [
+      "incident management",
+      "infrastructure monitoring",
+      "apm tracing",
+      "log management",
+      "cicd actions",
+      "itsm ai",
+      "dev ai",
+      "enterprise security"
+    ],
+    "pricingSummary": "4 documented plans · 1 free · entry paid: Team",
+    "keyTradeoffs": [
+      "Not a Datadog-style infrastructure monitoring suite — errors/traces/replays are the job",
+      "Prepaid event volume on Team/Business is the TCO lever beyond $26/$80 stickers",
+      "Does not outrank Datadog (8.6)",
+      "Not on-call paging as a primary product (landscape vs PagerDuty)",
+      "Not ITSM, git host, hosting panel, or managed hosting"
+    ],
+    "alternatives": [
+      {
+        "slug": "datadog",
+        "name": "Datadog"
+      },
+      {
+        "slug": "splunk",
+        "name": "Splunk Observability Cloud"
+      },
+      {
+        "slug": "new-relic",
+        "name": "New Relic"
+      },
+      {
+        "slug": "dynatrace",
+        "name": "Dynatrace"
+      },
+      {
+        "slug": "elastic-observability",
+        "name": "Elastic Observability"
+      }
+    ],
+    "importantComparisons": [
+      {
+        "slug": "datadog-vs-sentry",
+        "title": "Sentry vs Datadog",
+        "href": "/compare/datadog-vs-sentry/"
+      },
+      {
+        "slug": "sentry-vs-splunk",
+        "title": "Sentry vs Splunk Observability Cloud",
+        "href": "/compare/sentry-vs-splunk/"
+      },
+      {
+        "slug": "pagerduty-vs-sentry",
+        "title": "Sentry vs PagerDuty",
+        "href": "/compare/pagerduty-vs-sentry/"
+      },
+      {
+        "slug": "apify-vs-sentry",
+        "title": "Apify vs Sentry",
+        "href": "/compare/apify-vs-sentry/"
+      },
+      {
+        "slug": "appdynamics-vs-sentry",
+        "title": "AppDynamics vs Sentry",
+        "href": "/compare/appdynamics-vs-sentry/"
+      },
+      {
+        "slug": "azure-devops-vs-sentry",
+        "title": "Azure DevOps vs Sentry",
+        "href": "/compare/azure-devops-vs-sentry/"
+      }
+    ],
+    "relevantGuides": [
+      {
+        "slug": "sentry-implementation",
+        "title": "Sentry Implementation: 30/60/90 IT Rollout That Sticks",
+        "href": "/guides/sentry-implementation/"
+      },
+      {
+        "slug": "sentry-migration",
+        "title": "Sentry Migration: Move Tickets and Repos Without Losing Trust",
+        "href": "/guides/sentry-migration/"
+      },
+      {
+        "slug": "sentry-setup",
+        "title": "Sentry Setup: Day-Zero Path to a Working IT Loop",
+        "href": "/guides/sentry-setup/"
+      },
+      {
+        "slug": "sentry-plans",
+        "title": "Sentry Plans: Seats, Hosts, and Qualifying Tiers",
+        "href": "/guides/sentry-plans/"
+      },
+      {
+        "slug": "is-sentry-worth-it",
+        "title": "Is Sentry Worth It? Fit Scenarios Before You Buy",
+        "href": "/guides/is-sentry-worth-it/"
+      }
+    ],
+    "evidenceState": "Research/data-based (no completed hands-on test) · Latest verification/research signal: 2026-08-18T20:00:00.000Z · Editorial assessment: approved",
+    "nextDecisionStep": "Compare against peers: Sentry vs Datadog",
+    "missingSections": [
+      "trial"
+    ]
+  },
+  "dependents": [
+    {
+      "kind": "guide",
+      "slug": "sentry-implementation",
+      "path": "/guides/sentry-implementation/"
+    },
+    {
+      "kind": "guide",
+      "slug": "sentry-migration",
+      "path": "/guides/sentry-migration/"
+    },
+    {
+      "kind": "guide",
+      "slug": "sentry-setup",
+      "path": "/guides/sentry-setup/"
+    },
+    {
+      "kind": "guide",
+      "slug": "sentry-plans",
+      "path": "/guides/sentry-plans/"
+    },
+    {
+      "kind": "guide",
+      "slug": "is-sentry-worth-it",
+      "path": "/guides/is-sentry-worth-it/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "datadog-vs-sentry",
+      "path": "/compare/datadog-vs-sentry/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "sentry-vs-splunk",
+      "path": "/compare/sentry-vs-splunk/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "pagerduty-vs-sentry",
+      "path": "/compare/pagerduty-vs-sentry/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "apify-vs-sentry",
+      "path": "/compare/apify-vs-sentry/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "appdynamics-vs-sentry",
+      "path": "/compare/appdynamics-vs-sentry/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "azure-devops-vs-sentry",
+      "path": "/compare/azure-devops-vs-sentry/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "bitbucket-vs-sentry",
+      "path": "/compare/bitbucket-vs-sentry/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "bmc-helix-vs-sentry",
+      "path": "/compare/bmc-helix-vs-sentry/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "bright-data-vs-sentry",
+      "path": "/compare/bright-data-vs-sentry/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "buildkite-vs-sentry",
+      "path": "/compare/buildkite-vs-sentry/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "chronosphere-vs-sentry",
+      "path": "/compare/chronosphere-vs-sentry/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "circleci-vs-sentry",
+      "path": "/compare/circleci-vs-sentry/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "cloudways-vs-sentry",
+      "path": "/compare/cloudways-vs-sentry/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "coralogix-vs-sentry",
+      "path": "/compare/coralogix-vs-sentry/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "cpanel-vs-sentry",
+      "path": "/compare/cpanel-vs-sentry/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "directadmin-vs-sentry",
+      "path": "/compare/directadmin-vs-sentry/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "dynatrace-vs-sentry",
+      "path": "/compare/dynatrace-vs-sentry/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "elastic-observability-vs-sentry",
+      "path": "/compare/elastic-observability-vs-sentry/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "firehydrant-vs-sentry",
+      "path": "/compare/firehydrant-vs-sentry/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "fly-io-vs-sentry",
+      "path": "/compare/fly-io-vs-sentry/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "github-vs-sentry",
+      "path": "/compare/github-vs-sentry/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "gitlab-vs-sentry",
+      "path": "/compare/gitlab-vs-sentry/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "grafana-cloud-vs-sentry",
+      "path": "/compare/grafana-cloud-vs-sentry/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "haloitsm-vs-sentry",
+      "path": "/compare/haloitsm-vs-sentry/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "heroku-vs-sentry",
+      "path": "/compare/heroku-vs-sentry/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "honeycomb-vs-sentry",
+      "path": "/compare/honeycomb-vs-sentry/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "incident-io-vs-sentry",
+      "path": "/compare/incident-io-vs-sentry/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "iproyal-vs-sentry",
+      "path": "/compare/iproyal-vs-sentry/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "ivanti-vs-sentry",
+      "path": "/compare/ivanti-vs-sentry/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "jira-service-management-vs-sentry",
+      "path": "/compare/jira-service-management-vs-sentry/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "kinsta-vs-sentry",
+      "path": "/compare/kinsta-vs-sentry/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "manageengine-servicedesk-plus-vs-sentry",
+      "path": "/compare/manageengine-servicedesk-plus-vs-sentry/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "new-relic-vs-sentry",
+      "path": "/compare/new-relic-vs-sentry/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "oxylabs-vs-sentry",
+      "path": "/compare/oxylabs-vs-sentry/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "railway-vs-sentry",
+      "path": "/compare/railway-vs-sentry/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "render-vs-sentry",
+      "path": "/compare/render-vs-sentry/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "rootly-vs-sentry",
+      "path": "/compare/rootly-vs-sentry/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "scraperapi-vs-sentry",
+      "path": "/compare/scraperapi-vs-sentry/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "sentry-vs-servicenow",
+      "path": "/compare/sentry-vs-servicenow/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "sentry-vs-siteground",
+      "path": "/compare/sentry-vs-siteground/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "sentry-vs-smartproxy",
+      "path": "/compare/sentry-vs-smartproxy/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "sentry-vs-squadcast",
+      "path": "/compare/sentry-vs-squadcast/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "sentry-vs-sysaid",
+      "path": "/compare/sentry-vs-sysaid/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "sentry-vs-thordata",
+      "path": "/compare/sentry-vs-thordata/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "sentry-vs-topdesk",
+      "path": "/compare/sentry-vs-topdesk/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "sentry-vs-wp-engine",
+      "path": "/compare/sentry-vs-wp-engine/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "sentry-vs-zyte",
+      "path": "/compare/sentry-vs-zyte/"
+    },
+    {
+      "kind": "alternatives",
+      "slug": "sentry",
+      "path": "/alternatives/sentry/"
+    },
+    {
+      "kind": "pricing",
+      "slug": "sentry",
+      "path": "/software/sentry/pricing/"
+    },
+    {
+      "kind": "tools",
+      "slug": "it-development-cost-calculator",
+      "path": "/tools/it-development-cost-calculator/"
+    }
+  ],
+  "dependentsNeedingRefresh": [],
+  "remediation": [
+    "verify:trial"
+  ],
+  "notes": [
+    "fieldAudit score=94",
+    "decisionHub bestFor=6 notIdeal=6",
+    "dependents=55"
+  ],
+  "materiallyImproved": true
+}

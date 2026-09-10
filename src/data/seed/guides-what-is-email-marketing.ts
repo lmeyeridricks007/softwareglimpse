@@ -1,4 +1,4 @@
-import type { GuidePage } from "@/domain";
+import type { GuidePageInput } from "@/domain";
 import type { z } from "zod";
 import type { GuideContentBlockSchema } from "@/domain";
 
@@ -213,7 +213,7 @@ const whatIsEmailMarketingBlocks: GuideBlockInput[] = [
   },
 ];
 
-export const whatIsEmailMarketingGuide: GuidePage = {
+export const whatIsEmailMarketingGuide: GuidePageInput = {
   id: "guide-what-is-email-marketing",
   slug: "what-is-email-marketing",
   title: "What Is Email Marketing Software? Beginner’s Guide",
@@ -261,7 +261,7 @@ export const whatIsEmailMarketingGuide: GuidePage = {
     "email-marketing-requirements-guide",
     "crm-vs-marketing-automation",
   ],
-  blocks: whatIsEmailMarketingBlocks as GuidePage["blocks"],
+  blocks: whatIsEmailMarketingBlocks as GuidePageInput["blocks"],
   checklist: [
     {
       id: "job",

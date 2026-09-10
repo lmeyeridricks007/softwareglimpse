@@ -1,0 +1,403 @@
+{
+  "slug": "hibob",
+  "updatedAt": "2026-09-07T22:31:21.615Z",
+  "version": "1.0.0",
+  "fieldAudit": {
+    "slug": "hibob",
+    "checkedAt": "2026-09-07T22:31:21.613Z",
+    "items": [
+      {
+        "field": "name",
+        "status": "PASS",
+        "detail": "Name: HiBob",
+        "source": "seed"
+      },
+      {
+        "field": "product_status",
+        "status": "PASS",
+        "detail": "productLifecycle=active",
+        "source": "seed"
+      },
+      {
+        "field": "canonical_vendor",
+        "status": "UNKNOWN",
+        "detail": "Company/vendor not documented",
+        "source": "none"
+      },
+      {
+        "field": "category",
+        "status": "PASS",
+        "detail": "primaryCategorySlug=hr",
+        "source": "seed"
+      },
+      {
+        "field": "description",
+        "status": "PASS",
+        "detail": "Description present (Culture-forward mid-market HRIS (Bob Core + modules) — custom PEPM quote; no pub…)",
+        "source": "seed"
+      },
+      {
+        "field": "target_audience",
+        "status": "PASS",
+        "detail": "Sizes=3, teams=2, assessment bestFor=3",
+        "source": "assessment"
+      },
+      {
+        "field": "use_cases",
+        "status": "PASS",
+        "detail": "useCaseSlugs=1",
+        "source": "seed"
+      },
+      {
+        "field": "capabilities",
+        "status": "PASS",
+        "detail": "featureRatings=0, enrichment features=16",
+        "source": "enrichment"
+      },
+      {
+        "field": "pricing",
+        "status": "PASS",
+        "detail": "Pricing envelope present",
+        "source": "enrichment"
+      },
+      {
+        "field": "plans",
+        "status": "PASS",
+        "detail": "plans=2",
+        "source": "enrichment"
+      },
+      {
+        "field": "free_plan",
+        "status": "PASS",
+        "detail": "No free plan in documented plans (explicit absence)",
+        "source": "enrichment"
+      },
+      {
+        "field": "trial",
+        "status": "UNKNOWN",
+        "detail": "Trial not explicitly documented — do not assume none",
+        "source": "none"
+      },
+      {
+        "field": "integrations",
+        "status": "PASS",
+        "detail": "integrationSlugs=0, enrichment=3",
+        "source": "enrichment"
+      },
+      {
+        "field": "alternatives",
+        "status": "PASS",
+        "detail": "alternativeSlugs=3",
+        "source": "seed"
+      },
+      {
+        "field": "competitors",
+        "status": "PASS",
+        "detail": "competitorSlugs=4",
+        "source": "seed"
+      },
+      {
+        "field": "affiliate",
+        "status": "PASS",
+        "detail": "No affiliate relationship (explicit)",
+        "source": "seed"
+      },
+      {
+        "field": "source_provenance",
+        "status": "PASS",
+        "detail": "seed sources=0, enrichment sourceIds=2",
+        "source": "enrichment"
+      },
+      {
+        "field": "verification_date",
+        "status": "PASS",
+        "detail": "Latest verification/research signal: 2026-08-18T12:00:00.000Z",
+        "source": "enrichment"
+      }
+    ],
+    "passCount": 16,
+    "partialCount": 0,
+    "missingCount": 0,
+    "unknownCount": 2,
+    "score": 89
+  },
+  "decisionHub": {
+    "whatItIs": "HiBob (product brand Bob) is a modular HRIS for distributed mid-market companies: employee system of record, time off, workflows, analytics, and mobile, with optional hiring, payroll (US/UK), talent, compensation, learning, and time & attendance modules. Every subscription includes Bob Core (including AI Companion). Pricing is custom PEPM plus implementation — no published USD floor, free plan, or self-serve trial. Demo / pricing request only.",
+    "bestFor": [
+      "Distributed mid-market companies that want a modern HRIS without Workday implementation",
+      "People teams comparing HiBob vs BambooHR when culture UX and modules matter more than published PEPM",
+      "Orgs that will attach payroll/talent later as modules",
+      "small-business / operations: HiBob fit for small-business operations teams in the hris-core job cluster, from first-party positioning and HR Priority-2 research.",
+      "mid-market / operations: HiBob fit for mid-market operations teams in the hris-core job cluster, from first-party positioning and HR Priority-2 research.",
+      "enterprise / operations: HiBob fit for enterprise operations teams in the hris-core job cluster, from first-party positioning and HR Priority-2 research."
+    ],
+    "notIdealFor": [
+      "SMB teams that need published $10 PEPM (BambooHR) or payroll-first Gusto",
+      "EU-first GDPR buyers standardised on Personio",
+      "Frontline scheduling or dedicated ATS as the primary purchase",
+      "No published PEPM — implementation and modules dominate TCO",
+      "No free plan or self-serve trial",
+      "Payroll, T&A, talent, and learning are modules on top of Core"
+    ],
+    "coreCapabilities": [
+      "core hris",
+      "hris integrations",
+      "analytics reporting",
+      "ai assistance"
+    ],
+    "pricingSummary": "2 documented plans · entry paid: Bob Core",
+    "keyTradeoffs": [
+      "No published PEPM — implementation and modules dominate TCO",
+      "No free plan or self-serve trial",
+      "Payroll, T&A, talent, and learning are modules on top of Core",
+      "Not a frontline WFM or dedicated ATS",
+      "US payroll depth is module/region-specific versus Gusto/Rippling"
+    ],
+    "alternatives": [
+      {
+        "slug": "bamboohr",
+        "name": "BambooHR"
+      },
+      {
+        "slug": "personio",
+        "name": "Personio"
+      },
+      {
+        "slug": "rippling",
+        "name": "Rippling"
+      },
+      {
+        "slug": "workday",
+        "name": "Workday"
+      }
+    ],
+    "importantComparisons": [
+      {
+        "slug": "bamboohr-vs-hibob",
+        "title": "BambooHR vs HiBob",
+        "href": "/compare/bamboohr-vs-hibob/"
+      },
+      {
+        "slug": "hibob-vs-personio",
+        "title": "HiBob vs Personio",
+        "href": "/compare/hibob-vs-personio/"
+      },
+      {
+        "slug": "7shifts-vs-hibob",
+        "title": "7shifts vs HiBob",
+        "href": "/compare/7shifts-vs-hibob/"
+      },
+      {
+        "slug": "adp-workforce-now-vs-hibob",
+        "title": "ADP Workforce Now vs HiBob",
+        "href": "/compare/adp-workforce-now-vs-hibob/"
+      },
+      {
+        "slug": "ashby-vs-hibob",
+        "title": "Ashby vs HiBob",
+        "href": "/compare/ashby-vs-hibob/"
+      },
+      {
+        "slug": "bolt-for-business-vs-hibob",
+        "title": "Bolt for Business vs HiBob",
+        "href": "/compare/bolt-for-business-vs-hibob/"
+      }
+    ],
+    "relevantGuides": [
+      {
+        "slug": "hibob-implementation",
+        "title": "HiBob Implementation: 30/60/90 HR Rollout That Sticks",
+        "href": "/guides/hibob-implementation/"
+      },
+      {
+        "slug": "hibob-migration",
+        "title": "HiBob Migration: Move People Data Without Losing Trust",
+        "href": "/guides/hibob-migration/"
+      },
+      {
+        "slug": "hibob-setup",
+        "title": "HiBob Setup: Day-Zero Path to a Working HR Loop",
+        "href": "/guides/hibob-setup/"
+      },
+      {
+        "slug": "hibob-plans",
+        "title": "HiBob Plans: Seats, Hubs, and Qualifying Tiers",
+        "href": "/guides/hibob-plans/"
+      },
+      {
+        "slug": "is-hibob-worth-it",
+        "title": "Is HiBob Worth It? Fit Scenarios Before You Buy",
+        "href": "/guides/is-hibob-worth-it/"
+      }
+    ],
+    "evidenceState": "Research/data-based (no completed hands-on test) · Latest verification/research signal: 2026-08-18T12:00:00.000Z · Editorial assessment: approved",
+    "nextDecisionStep": "Compare against peers: BambooHR vs HiBob",
+    "missingSections": [
+      "canonical_vendor",
+      "trial"
+    ]
+  },
+  "dependents": [
+    {
+      "kind": "guide",
+      "slug": "hibob-implementation",
+      "path": "/guides/hibob-implementation/"
+    },
+    {
+      "kind": "guide",
+      "slug": "hibob-migration",
+      "path": "/guides/hibob-migration/"
+    },
+    {
+      "kind": "guide",
+      "slug": "hibob-setup",
+      "path": "/guides/hibob-setup/"
+    },
+    {
+      "kind": "guide",
+      "slug": "hibob-plans",
+      "path": "/guides/hibob-plans/"
+    },
+    {
+      "kind": "guide",
+      "slug": "is-hibob-worth-it",
+      "path": "/guides/is-hibob-worth-it/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "bamboohr-vs-hibob",
+      "path": "/compare/bamboohr-vs-hibob/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "hibob-vs-personio",
+      "path": "/compare/hibob-vs-personio/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "7shifts-vs-hibob",
+      "path": "/compare/7shifts-vs-hibob/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "adp-workforce-now-vs-hibob",
+      "path": "/compare/adp-workforce-now-vs-hibob/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "ashby-vs-hibob",
+      "path": "/compare/ashby-vs-hibob/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "bolt-for-business-vs-hibob",
+      "path": "/compare/bolt-for-business-vs-hibob/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "carepatron-vs-hibob",
+      "path": "/compare/carepatron-vs-hibob/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "dayforce-vs-hibob",
+      "path": "/compare/dayforce-vs-hibob/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "deputy-vs-hibob",
+      "path": "/compare/deputy-vs-hibob/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "greenhouse-vs-hibob",
+      "path": "/compare/greenhouse-vs-hibob/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "gusto-vs-hibob",
+      "path": "/compare/gusto-vs-hibob/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "hibob-vs-homebase",
+      "path": "/compare/hibob-vs-homebase/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "hibob-vs-lever",
+      "path": "/compare/hibob-vs-lever/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "hibob-vs-oracle-hcm",
+      "path": "/compare/hibob-vs-oracle-hcm/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "hibob-vs-paycor",
+      "path": "/compare/hibob-vs-paycor/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "hibob-vs-paylocity",
+      "path": "/compare/hibob-vs-paylocity/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "hibob-vs-rippling",
+      "path": "/compare/hibob-vs-rippling/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "hibob-vs-trainual",
+      "path": "/compare/hibob-vs-trainual/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "hibob-vs-ukg-pro",
+      "path": "/compare/hibob-vs-ukg-pro/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "hibob-vs-when-i-work",
+      "path": "/compare/hibob-vs-when-i-work/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "hibob-vs-workable",
+      "path": "/compare/hibob-vs-workable/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "hibob-vs-workday",
+      "path": "/compare/hibob-vs-workday/"
+    },
+    {
+      "kind": "alternatives",
+      "slug": "hibob",
+      "path": "/alternatives/hibob/"
+    },
+    {
+      "kind": "pricing",
+      "slug": "hibob",
+      "path": "/software/hibob/pricing/"
+    },
+    {
+      "kind": "tools",
+      "slug": "hr-cost-calculator",
+      "path": "/tools/hr-cost-calculator/"
+    }
+  ],
+  "dependentsNeedingRefresh": [],
+  "remediation": [
+    "verify:canonical_vendor",
+    "verify:trial"
+  ],
+  "notes": [
+    "fieldAudit score=89",
+    "decisionHub bestFor=6 notIdeal=6",
+    "dependents=30"
+  ],
+  "materiallyImproved": false
+}

@@ -1,0 +1,531 @@
+{
+  "slug": "bitbucket",
+  "updatedAt": "2026-09-08T21:57:07.466Z",
+  "version": "1.0.0",
+  "fieldAudit": {
+    "slug": "bitbucket",
+    "checkedAt": "2026-09-08T21:57:07.464Z",
+    "items": [
+      {
+        "field": "name",
+        "status": "PASS",
+        "detail": "Name: Bitbucket Cloud",
+        "source": "seed"
+      },
+      {
+        "field": "product_status",
+        "status": "PASS",
+        "detail": "productLifecycle=active",
+        "source": "seed"
+      },
+      {
+        "field": "canonical_vendor",
+        "status": "PASS",
+        "detail": "Vendor: Atlassian",
+        "source": "seed"
+      },
+      {
+        "field": "category",
+        "status": "PASS",
+        "detail": "primaryCategorySlug=it-development",
+        "source": "seed"
+      },
+      {
+        "field": "description",
+        "status": "PASS",
+        "detail": "Description present (Atlassian git hosting — Free ≤5 users; Standard $3.65/user/mo (min 5-user equiva…)",
+        "source": "seed"
+      },
+      {
+        "field": "target_audience",
+        "status": "PASS",
+        "detail": "Sizes=3, teams=1, assessment bestFor=3",
+        "source": "assessment"
+      },
+      {
+        "field": "use_cases",
+        "status": "PASS",
+        "detail": "useCaseSlugs=1",
+        "source": "seed"
+      },
+      {
+        "field": "capabilities",
+        "status": "PASS",
+        "detail": "featureRatings=0, enrichment features=15",
+        "source": "enrichment"
+      },
+      {
+        "field": "pricing",
+        "status": "PASS",
+        "detail": "Pricing envelope present",
+        "source": "enrichment"
+      },
+      {
+        "field": "plans",
+        "status": "PASS",
+        "detail": "plans=3",
+        "source": "enrichment"
+      },
+      {
+        "field": "free_plan",
+        "status": "PASS",
+        "detail": "Free plan documented",
+        "source": "enrichment"
+      },
+      {
+        "field": "trial",
+        "status": "PASS",
+        "detail": "Trial documented on plans/pricing",
+        "source": "enrichment"
+      },
+      {
+        "field": "integrations",
+        "status": "PASS",
+        "detail": "integrationSlugs=0, enrichment=3",
+        "source": "enrichment"
+      },
+      {
+        "field": "alternatives",
+        "status": "PASS",
+        "detail": "alternativeSlugs=2",
+        "source": "seed"
+      },
+      {
+        "field": "competitors",
+        "status": "PASS",
+        "detail": "competitorSlugs=2",
+        "source": "seed"
+      },
+      {
+        "field": "affiliate",
+        "status": "PASS",
+        "detail": "No affiliate relationship (explicit)",
+        "source": "seed"
+      },
+      {
+        "field": "source_provenance",
+        "status": "PASS",
+        "detail": "seed sources=0, enrichment sourceIds=3",
+        "source": "enrichment"
+      },
+      {
+        "field": "verification_date",
+        "status": "PASS",
+        "detail": "Latest verification/research signal: 2026-08-18T12:00:00.000Z",
+        "source": "enrichment"
+      }
+    ],
+    "passCount": 18,
+    "partialCount": 0,
+    "missingCount": 0,
+    "unknownCount": 0,
+    "score": 100
+  },
+  "decisionHub": {
+    "whatItIs": "Bitbucket Cloud is Atlassian’s Git host with Pipelines CI. Free is unlimited repos for up to 5 users (50 build minutes, 1 GB LFS). Standard is $3.65/user/month with a 5-user minimum bill (~$18.25). Premium is $7.25/user/month (~$36.25 minimum) with IP allowlisting, enforced merge checks, and more minutes. 30-day paid trials typical. Best when the team already lives in Jira — not a GitHub social/ecosystem substitute.",
+    "bestFor": [
+      "Jira Cloud teams that want cheap git + Pipelines",
+      "Small orgs that fit in Free (≤5 users)",
+      "Premium buyers who need IP allowlisting",
+      "micro / engineering: Bitbucket Cloud fit for micro engineering teams in the source-control-devops job cluster, from first-party positioning and IT Priority-2 research.",
+      "small-business / engineering: Bitbucket Cloud fit for small-business engineering teams in the source-control-devops job cluster, from first-party positioning and IT Priority-2 research.",
+      "mid-market / engineering: Bitbucket Cloud fit for mid-market engineering teams in the source-control-devops job cluster, from first-party positioning and IT Priority-2 research."
+    ],
+    "notIdealFor": [
+      "Open-source / GitHub-ecosystem-first teams",
+      "DevSecOps consolidation (GitLab)",
+      "AI-native coding (Cursor)",
+      "Paid plans bill a 5-user floor even for 2-person teams",
+      "Ecosystem and Actions marketplace trail GitHub",
+      "DevSecOps depth trails GitLab Ultimate"
+    ],
+    "coreCapabilities": [
+      "log management",
+      "source control",
+      "cicd actions",
+      "dev ai",
+      "analytics reporting",
+      "source control devops"
+    ],
+    "pricingSummary": "3 documented plans · 1 free · entry paid: Standard · trial documented on at least one plan",
+    "keyTradeoffs": [
+      "Paid plans bill a 5-user floor even for 2-person teams",
+      "Ecosystem and Actions marketplace trail GitHub",
+      "DevSecOps depth trails GitLab Ultimate",
+      "SAML SSO often needs Atlassian Guard extra",
+      "Not observability or ITSM (use JSM separately)"
+    ],
+    "alternatives": [
+      {
+        "slug": "github",
+        "name": "GitHub"
+      },
+      {
+        "slug": "gitlab",
+        "name": "GitLab"
+      }
+    ],
+    "importantComparisons": [
+      {
+        "slug": "bitbucket-vs-github",
+        "title": "Bitbucket Cloud vs GitHub",
+        "href": "/compare/bitbucket-vs-github/"
+      },
+      {
+        "slug": "apify-vs-bitbucket",
+        "title": "Apify vs Bitbucket Cloud",
+        "href": "/compare/apify-vs-bitbucket/"
+      },
+      {
+        "slug": "appdynamics-vs-bitbucket",
+        "title": "AppDynamics vs Bitbucket Cloud",
+        "href": "/compare/appdynamics-vs-bitbucket/"
+      },
+      {
+        "slug": "azure-devops-vs-bitbucket",
+        "title": "Azure DevOps vs Bitbucket Cloud",
+        "href": "/compare/azure-devops-vs-bitbucket/"
+      },
+      {
+        "slug": "bitbucket-vs-bmc-helix",
+        "title": "Bitbucket Cloud vs BMC Helix ITSM",
+        "href": "/compare/bitbucket-vs-bmc-helix/"
+      },
+      {
+        "slug": "bitbucket-vs-bright-data",
+        "title": "Bitbucket Cloud vs Bright Data",
+        "href": "/compare/bitbucket-vs-bright-data/"
+      }
+    ],
+    "relevantGuides": [
+      {
+        "slug": "how-it-development-software-works",
+        "title": "How IT And Development Software Works",
+        "href": "/guides/how-it-development-software-works/"
+      },
+      {
+        "slug": "types-of-it-development-software",
+        "title": "Types of IT And Development Software",
+        "href": "/guides/types-of-it-development-software/"
+      },
+      {
+        "slug": "bitbucket-implementation",
+        "title": "Bitbucket Cloud Implementation: 30/60/90 IT Rollout That Sticks",
+        "href": "/guides/bitbucket-implementation/"
+      },
+      {
+        "slug": "bitbucket-migration",
+        "title": "Bitbucket Cloud Migration: Move Tickets and Repos Without Losing Trust",
+        "href": "/guides/bitbucket-migration/"
+      },
+      {
+        "slug": "bitbucket-setup",
+        "title": "Bitbucket Cloud Setup: Day-Zero Path to a Working IT Loop",
+        "href": "/guides/bitbucket-setup/"
+      },
+      {
+        "slug": "bitbucket-plans",
+        "title": "Bitbucket Cloud Plans: Seats, Hosts, and Qualifying Tiers",
+        "href": "/guides/bitbucket-plans/"
+      }
+    ],
+    "evidenceState": "Research/data-based (no completed hands-on test) · Latest verification/research signal: 2026-08-18T12:00:00.000Z · Editorial assessment: approved",
+    "nextDecisionStep": "Compare against peers: Bitbucket Cloud vs GitHub",
+    "missingSections": []
+  },
+  "dependents": [
+    {
+      "kind": "guide",
+      "slug": "how-it-development-software-works",
+      "path": "/guides/how-it-development-software-works/"
+    },
+    {
+      "kind": "guide",
+      "slug": "types-of-it-development-software",
+      "path": "/guides/types-of-it-development-software/"
+    },
+    {
+      "kind": "guide",
+      "slug": "bitbucket-implementation",
+      "path": "/guides/bitbucket-implementation/"
+    },
+    {
+      "kind": "guide",
+      "slug": "bitbucket-migration",
+      "path": "/guides/bitbucket-migration/"
+    },
+    {
+      "kind": "guide",
+      "slug": "bitbucket-setup",
+      "path": "/guides/bitbucket-setup/"
+    },
+    {
+      "kind": "guide",
+      "slug": "bitbucket-plans",
+      "path": "/guides/bitbucket-plans/"
+    },
+    {
+      "kind": "guide",
+      "slug": "is-bitbucket-worth-it",
+      "path": "/guides/is-bitbucket-worth-it/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "bitbucket-vs-github",
+      "path": "/compare/bitbucket-vs-github/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "apify-vs-bitbucket",
+      "path": "/compare/apify-vs-bitbucket/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "appdynamics-vs-bitbucket",
+      "path": "/compare/appdynamics-vs-bitbucket/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "azure-devops-vs-bitbucket",
+      "path": "/compare/azure-devops-vs-bitbucket/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "bitbucket-vs-bmc-helix",
+      "path": "/compare/bitbucket-vs-bmc-helix/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "bitbucket-vs-bright-data",
+      "path": "/compare/bitbucket-vs-bright-data/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "bitbucket-vs-buildkite",
+      "path": "/compare/bitbucket-vs-buildkite/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "bitbucket-vs-chronosphere",
+      "path": "/compare/bitbucket-vs-chronosphere/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "bitbucket-vs-circleci",
+      "path": "/compare/bitbucket-vs-circleci/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "bitbucket-vs-cloudways",
+      "path": "/compare/bitbucket-vs-cloudways/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "bitbucket-vs-coralogix",
+      "path": "/compare/bitbucket-vs-coralogix/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "bitbucket-vs-cpanel",
+      "path": "/compare/bitbucket-vs-cpanel/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "bitbucket-vs-datadog",
+      "path": "/compare/bitbucket-vs-datadog/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "bitbucket-vs-directadmin",
+      "path": "/compare/bitbucket-vs-directadmin/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "bitbucket-vs-dynatrace",
+      "path": "/compare/bitbucket-vs-dynatrace/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "bitbucket-vs-elastic-observability",
+      "path": "/compare/bitbucket-vs-elastic-observability/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "bitbucket-vs-firehydrant",
+      "path": "/compare/bitbucket-vs-firehydrant/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "bitbucket-vs-fly-io",
+      "path": "/compare/bitbucket-vs-fly-io/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "bitbucket-vs-gitlab",
+      "path": "/compare/bitbucket-vs-gitlab/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "bitbucket-vs-grafana-cloud",
+      "path": "/compare/bitbucket-vs-grafana-cloud/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "bitbucket-vs-haloitsm",
+      "path": "/compare/bitbucket-vs-haloitsm/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "bitbucket-vs-heroku",
+      "path": "/compare/bitbucket-vs-heroku/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "bitbucket-vs-honeycomb",
+      "path": "/compare/bitbucket-vs-honeycomb/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "bitbucket-vs-incident-io",
+      "path": "/compare/bitbucket-vs-incident-io/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "bitbucket-vs-iproyal",
+      "path": "/compare/bitbucket-vs-iproyal/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "bitbucket-vs-ivanti",
+      "path": "/compare/bitbucket-vs-ivanti/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "bitbucket-vs-jira-service-management",
+      "path": "/compare/bitbucket-vs-jira-service-management/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "bitbucket-vs-kinsta",
+      "path": "/compare/bitbucket-vs-kinsta/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "bitbucket-vs-manageengine-servicedesk-plus",
+      "path": "/compare/bitbucket-vs-manageengine-servicedesk-plus/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "bitbucket-vs-new-relic",
+      "path": "/compare/bitbucket-vs-new-relic/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "bitbucket-vs-oxylabs",
+      "path": "/compare/bitbucket-vs-oxylabs/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "bitbucket-vs-pagerduty",
+      "path": "/compare/bitbucket-vs-pagerduty/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "bitbucket-vs-railway",
+      "path": "/compare/bitbucket-vs-railway/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "bitbucket-vs-render",
+      "path": "/compare/bitbucket-vs-render/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "bitbucket-vs-rootly",
+      "path": "/compare/bitbucket-vs-rootly/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "bitbucket-vs-scraperapi",
+      "path": "/compare/bitbucket-vs-scraperapi/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "bitbucket-vs-sentry",
+      "path": "/compare/bitbucket-vs-sentry/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "bitbucket-vs-servicenow",
+      "path": "/compare/bitbucket-vs-servicenow/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "bitbucket-vs-siteground",
+      "path": "/compare/bitbucket-vs-siteground/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "bitbucket-vs-smartproxy",
+      "path": "/compare/bitbucket-vs-smartproxy/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "bitbucket-vs-splunk",
+      "path": "/compare/bitbucket-vs-splunk/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "bitbucket-vs-squadcast",
+      "path": "/compare/bitbucket-vs-squadcast/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "bitbucket-vs-sysaid",
+      "path": "/compare/bitbucket-vs-sysaid/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "bitbucket-vs-thordata",
+      "path": "/compare/bitbucket-vs-thordata/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "bitbucket-vs-topdesk",
+      "path": "/compare/bitbucket-vs-topdesk/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "bitbucket-vs-wp-engine",
+      "path": "/compare/bitbucket-vs-wp-engine/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "bitbucket-vs-zyte",
+      "path": "/compare/bitbucket-vs-zyte/"
+    },
+    {
+      "kind": "alternatives",
+      "slug": "bitbucket",
+      "path": "/alternatives/bitbucket/"
+    },
+    {
+      "kind": "pricing",
+      "slug": "bitbucket",
+      "path": "/software/bitbucket/pricing/"
+    },
+    {
+      "kind": "tools",
+      "slug": "it-development-cost-calculator",
+      "path": "/tools/it-development-cost-calculator/"
+    }
+  ],
+  "dependentsNeedingRefresh": [],
+  "remediation": [],
+  "notes": [
+    "fieldAudit score=100",
+    "decisionHub bestFor=6 notIdeal=6",
+    "dependents=57"
+  ],
+  "materiallyImproved": true
+}

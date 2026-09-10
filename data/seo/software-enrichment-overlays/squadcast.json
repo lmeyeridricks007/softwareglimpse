@@ -1,0 +1,526 @@
+{
+  "slug": "squadcast",
+  "updatedAt": "2026-09-09T06:31:47.087Z",
+  "version": "1.0.0",
+  "fieldAudit": {
+    "slug": "squadcast",
+    "checkedAt": "2026-09-09T06:31:47.084Z",
+    "items": [
+      {
+        "field": "name",
+        "status": "PASS",
+        "detail": "Name: SolarWinds Incident Response",
+        "source": "seed"
+      },
+      {
+        "field": "product_status",
+        "status": "PASS",
+        "detail": "productLifecycle=active",
+        "source": "seed"
+      },
+      {
+        "field": "canonical_vendor",
+        "status": "PASS",
+        "detail": "Vendor: SolarWinds Corporation",
+        "source": "seed"
+      },
+      {
+        "field": "category",
+        "status": "PASS",
+        "detail": "primaryCategorySlug=it-development",
+        "source": "seed"
+      },
+      {
+        "field": "description",
+        "status": "PASS",
+        "detail": "Description present (SolarWinds Incident Response (formerly Squadcast) — Pro $15/user/mo annual; Prem…)",
+        "source": "seed"
+      },
+      {
+        "field": "target_audience",
+        "status": "PASS",
+        "detail": "Sizes=3, teams=3, assessment bestFor=3",
+        "source": "assessment"
+      },
+      {
+        "field": "use_cases",
+        "status": "PASS",
+        "detail": "useCaseSlugs=1",
+        "source": "seed"
+      },
+      {
+        "field": "capabilities",
+        "status": "PASS",
+        "detail": "featureRatings=0, enrichment features=17",
+        "source": "enrichment"
+      },
+      {
+        "field": "pricing",
+        "status": "PASS",
+        "detail": "Pricing envelope present",
+        "source": "enrichment"
+      },
+      {
+        "field": "plans",
+        "status": "PASS",
+        "detail": "plans=3",
+        "source": "enrichment"
+      },
+      {
+        "field": "free_plan",
+        "status": "PASS",
+        "detail": "No free plan in documented plans (explicit absence)",
+        "source": "enrichment"
+      },
+      {
+        "field": "trial",
+        "status": "PASS",
+        "detail": "Trial documented on plans/pricing",
+        "source": "enrichment"
+      },
+      {
+        "field": "integrations",
+        "status": "PASS",
+        "detail": "integrationSlugs=0, enrichment=3",
+        "source": "enrichment"
+      },
+      {
+        "field": "alternatives",
+        "status": "PASS",
+        "detail": "alternativeSlugs=2",
+        "source": "seed"
+      },
+      {
+        "field": "competitors",
+        "status": "PASS",
+        "detail": "competitorSlugs=4",
+        "source": "seed"
+      },
+      {
+        "field": "affiliate",
+        "status": "PASS",
+        "detail": "No affiliate relationship (explicit)",
+        "source": "seed"
+      },
+      {
+        "field": "source_provenance",
+        "status": "PASS",
+        "detail": "seed sources=0, enrichment sourceIds=4",
+        "source": "enrichment"
+      },
+      {
+        "field": "verification_date",
+        "status": "PASS",
+        "detail": "Latest verification/research signal: 2026-08-18T22:00:00.000Z",
+        "source": "enrichment"
+      }
+    ],
+    "passCount": 18,
+    "partialCount": 0,
+    "missingCount": 0,
+    "unknownCount": 0,
+    "score": 100
+  },
+  "decisionHub": {
+    "whatItIs": "SolarWinds Incident Response is the SolarWinds rebrand of Squadcast (acquired March 2025) — on-call paging plus incident management under one product. The SoftwareGlimpse slug stays `squadcast` for buyer-search / URL continuity (same pattern as smartproxy → Decodo); display name is SolarWinds Incident Response. Pro is $15/user/month billed annually; Premium $24/user/month annual; Enterprise contact. 14-day trial. startingPriceMonthly 15. Same incident-oncall cluster as PagerDuty — PagerDuty remains the award (8.0); this entity does not outrank it. Peer of incident.io, FireHydrant, and Rootly. squadcast.com redirects to solarwinds.com/it-incident-response-software.",
+    "bestFor": [
+      "Teams that want on-call + incident response with a published Pro $15 annual floor",
+      "Buyers comparing SolarWinds Incident Response (Squadcast) to incident.io, FireHydrant, and Rootly",
+      "Orgs that will spend the 14-day trial before committing",
+      "small-business / engineering: SolarWinds Incident Response fit for small-business engineering teams in the incident-oncall job cluster, from first-party positioning and IT gap-fill PaaS + incident research.",
+      "mid-market / engineering: SolarWinds Incident Response fit for mid-market engineering teams in the incident-oncall job cluster, from first-party positioning and IT gap-fill PaaS + incident research.",
+      "enterprise / engineering: SolarWinds Incident Response fit for enterprise engineering teams in the incident-oncall job cluster, from first-party positioning and IT gap-fill PaaS + incident research."
+    ],
+    "notIdealFor": [
+      "Orgs whose primary job is PagerDuty-style enterprise paging as the award path",
+      "Honeycomb/Datadog observability purchases",
+      "ITSM ticket desks without on-call / incident command",
+      "Does not outrank PagerDuty (8.0) as the incident-oncall award",
+      "Squadcast rebranded to SolarWinds Incident Response after the Mar 2025 acquisition — same product; do not treat them as two vendors",
+      "No published free plan (unlike FireHydrant / incident.io Basic)"
+    ],
+    "coreCapabilities": [
+      "incident management",
+      "change problem",
+      "infrastructure monitoring",
+      "cicd actions",
+      "itsm ai",
+      "dev ai",
+      "oncall paging",
+      "enterprise security"
+    ],
+    "pricingSummary": "3 documented plans · entry paid: Pro · trial documented on at least one plan",
+    "keyTradeoffs": [
+      "Does not outrank PagerDuty (8.0) as the incident-oncall award",
+      "Squadcast rebranded to SolarWinds Incident Response after the Mar 2025 acquisition — same product; do not treat them as two vendors",
+      "No published free plan (unlike FireHydrant / incident.io Basic)",
+      "Not observability telemetry (Datadog / Honeycomb)",
+      "Not an ITSM CMDB (ServiceNow / Freshservice)"
+    ],
+    "alternatives": [
+      {
+        "slug": "pagerduty",
+        "name": "PagerDuty"
+      },
+      {
+        "slug": "incident-io",
+        "name": "incident.io"
+      },
+      {
+        "slug": "firehydrant",
+        "name": "FireHydrant"
+      },
+      {
+        "slug": "rootly",
+        "name": "Rootly"
+      }
+    ],
+    "importantComparisons": [
+      {
+        "slug": "pagerduty-vs-squadcast",
+        "title": "SolarWinds Incident Response vs PagerDuty",
+        "href": "/compare/pagerduty-vs-squadcast/"
+      },
+      {
+        "slug": "incident-io-vs-squadcast",
+        "title": "SolarWinds Incident Response vs incident.io",
+        "href": "/compare/incident-io-vs-squadcast/"
+      },
+      {
+        "slug": "firehydrant-vs-squadcast",
+        "title": "SolarWinds Incident Response vs FireHydrant",
+        "href": "/compare/firehydrant-vs-squadcast/"
+      },
+      {
+        "slug": "apify-vs-squadcast",
+        "title": "Apify vs SolarWinds Incident Response",
+        "href": "/compare/apify-vs-squadcast/"
+      },
+      {
+        "slug": "appdynamics-vs-squadcast",
+        "title": "AppDynamics vs SolarWinds Incident Response",
+        "href": "/compare/appdynamics-vs-squadcast/"
+      },
+      {
+        "slug": "azure-devops-vs-squadcast",
+        "title": "Azure DevOps vs SolarWinds Incident Response",
+        "href": "/compare/azure-devops-vs-squadcast/"
+      }
+    ],
+    "relevantGuides": [
+      {
+        "slug": "squadcast-implementation",
+        "title": "SolarWinds Incident Response Implementation: 30/60/90 IT Rollout That Sticks",
+        "href": "/guides/squadcast-implementation/"
+      },
+      {
+        "slug": "squadcast-migration",
+        "title": "SolarWinds Incident Response Migration: Move Tickets and Repos Without Losing Trust",
+        "href": "/guides/squadcast-migration/"
+      },
+      {
+        "slug": "squadcast-setup",
+        "title": "SolarWinds Incident Response Setup: Day-Zero Path to a Working IT Loop",
+        "href": "/guides/squadcast-setup/"
+      },
+      {
+        "slug": "squadcast-plans",
+        "title": "SolarWinds Incident Response Plans: Seats, Hosts, and Qualifying Tiers",
+        "href": "/guides/squadcast-plans/"
+      },
+      {
+        "slug": "is-squadcast-worth-it",
+        "title": "Is SolarWinds Incident Response Worth It? Fit Scenarios Before You Buy",
+        "href": "/guides/is-squadcast-worth-it/"
+      }
+    ],
+    "evidenceState": "Research/data-based (no completed hands-on test) · Latest verification/research signal: 2026-08-18T22:00:00.000Z · Editorial assessment: approved",
+    "nextDecisionStep": "Compare against peers: SolarWinds Incident Response vs PagerDuty",
+    "missingSections": []
+  },
+  "dependents": [
+    {
+      "kind": "guide",
+      "slug": "squadcast-implementation",
+      "path": "/guides/squadcast-implementation/"
+    },
+    {
+      "kind": "guide",
+      "slug": "squadcast-migration",
+      "path": "/guides/squadcast-migration/"
+    },
+    {
+      "kind": "guide",
+      "slug": "squadcast-setup",
+      "path": "/guides/squadcast-setup/"
+    },
+    {
+      "kind": "guide",
+      "slug": "squadcast-plans",
+      "path": "/guides/squadcast-plans/"
+    },
+    {
+      "kind": "guide",
+      "slug": "is-squadcast-worth-it",
+      "path": "/guides/is-squadcast-worth-it/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "pagerduty-vs-squadcast",
+      "path": "/compare/pagerduty-vs-squadcast/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "incident-io-vs-squadcast",
+      "path": "/compare/incident-io-vs-squadcast/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "firehydrant-vs-squadcast",
+      "path": "/compare/firehydrant-vs-squadcast/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "apify-vs-squadcast",
+      "path": "/compare/apify-vs-squadcast/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "appdynamics-vs-squadcast",
+      "path": "/compare/appdynamics-vs-squadcast/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "azure-devops-vs-squadcast",
+      "path": "/compare/azure-devops-vs-squadcast/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "bitbucket-vs-squadcast",
+      "path": "/compare/bitbucket-vs-squadcast/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "bmc-helix-vs-squadcast",
+      "path": "/compare/bmc-helix-vs-squadcast/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "bright-data-vs-squadcast",
+      "path": "/compare/bright-data-vs-squadcast/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "buildkite-vs-squadcast",
+      "path": "/compare/buildkite-vs-squadcast/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "chronosphere-vs-squadcast",
+      "path": "/compare/chronosphere-vs-squadcast/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "circleci-vs-squadcast",
+      "path": "/compare/circleci-vs-squadcast/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "cloudways-vs-squadcast",
+      "path": "/compare/cloudways-vs-squadcast/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "coralogix-vs-squadcast",
+      "path": "/compare/coralogix-vs-squadcast/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "cpanel-vs-squadcast",
+      "path": "/compare/cpanel-vs-squadcast/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "datadog-vs-squadcast",
+      "path": "/compare/datadog-vs-squadcast/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "directadmin-vs-squadcast",
+      "path": "/compare/directadmin-vs-squadcast/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "dynatrace-vs-squadcast",
+      "path": "/compare/dynatrace-vs-squadcast/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "elastic-observability-vs-squadcast",
+      "path": "/compare/elastic-observability-vs-squadcast/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "fly-io-vs-squadcast",
+      "path": "/compare/fly-io-vs-squadcast/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "github-vs-squadcast",
+      "path": "/compare/github-vs-squadcast/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "gitlab-vs-squadcast",
+      "path": "/compare/gitlab-vs-squadcast/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "grafana-cloud-vs-squadcast",
+      "path": "/compare/grafana-cloud-vs-squadcast/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "haloitsm-vs-squadcast",
+      "path": "/compare/haloitsm-vs-squadcast/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "heroku-vs-squadcast",
+      "path": "/compare/heroku-vs-squadcast/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "honeycomb-vs-squadcast",
+      "path": "/compare/honeycomb-vs-squadcast/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "iproyal-vs-squadcast",
+      "path": "/compare/iproyal-vs-squadcast/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "ivanti-vs-squadcast",
+      "path": "/compare/ivanti-vs-squadcast/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "jira-service-management-vs-squadcast",
+      "path": "/compare/jira-service-management-vs-squadcast/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "kinsta-vs-squadcast",
+      "path": "/compare/kinsta-vs-squadcast/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "manageengine-servicedesk-plus-vs-squadcast",
+      "path": "/compare/manageengine-servicedesk-plus-vs-squadcast/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "new-relic-vs-squadcast",
+      "path": "/compare/new-relic-vs-squadcast/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "oxylabs-vs-squadcast",
+      "path": "/compare/oxylabs-vs-squadcast/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "railway-vs-squadcast",
+      "path": "/compare/railway-vs-squadcast/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "render-vs-squadcast",
+      "path": "/compare/render-vs-squadcast/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "rootly-vs-squadcast",
+      "path": "/compare/rootly-vs-squadcast/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "scraperapi-vs-squadcast",
+      "path": "/compare/scraperapi-vs-squadcast/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "sentry-vs-squadcast",
+      "path": "/compare/sentry-vs-squadcast/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "servicenow-vs-squadcast",
+      "path": "/compare/servicenow-vs-squadcast/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "siteground-vs-squadcast",
+      "path": "/compare/siteground-vs-squadcast/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "smartproxy-vs-squadcast",
+      "path": "/compare/smartproxy-vs-squadcast/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "splunk-vs-squadcast",
+      "path": "/compare/splunk-vs-squadcast/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "squadcast-vs-sysaid",
+      "path": "/compare/squadcast-vs-sysaid/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "squadcast-vs-thordata",
+      "path": "/compare/squadcast-vs-thordata/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "squadcast-vs-topdesk",
+      "path": "/compare/squadcast-vs-topdesk/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "squadcast-vs-wp-engine",
+      "path": "/compare/squadcast-vs-wp-engine/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "squadcast-vs-zyte",
+      "path": "/compare/squadcast-vs-zyte/"
+    },
+    {
+      "kind": "alternatives",
+      "slug": "squadcast",
+      "path": "/alternatives/squadcast/"
+    },
+    {
+      "kind": "pricing",
+      "slug": "squadcast",
+      "path": "/software/squadcast/pricing/"
+    },
+    {
+      "kind": "tools",
+      "slug": "it-development-cost-calculator",
+      "path": "/tools/it-development-cost-calculator/"
+    }
+  ],
+  "dependentsNeedingRefresh": [],
+  "remediation": [],
+  "notes": [
+    "fieldAudit score=100",
+    "decisionHub bestFor=6 notIdeal=6",
+    "dependents=55"
+  ],
+  "materiallyImproved": true
+}

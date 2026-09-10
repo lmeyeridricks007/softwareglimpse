@@ -1,4 +1,4 @@
-import type { GuidePage } from "@/domain";
+import type { GuidePageInput } from "@/domain";
 import type { z } from "zod";
 import type { GuideContentBlockSchema } from "@/domain";
 
@@ -301,7 +301,7 @@ const whenToAdoptSalesIntelligenceBlocks: GuideBlockInput[] = [
   },
 ];
 
-export const whenToAdoptSalesIntelligenceGuide: GuidePage = {
+export const whenToAdoptSalesIntelligenceGuide: GuidePageInput = {
   id: "guide-when-to-adopt-sales-intelligence",
   slug: "when-to-adopt-sales-intelligence",
   title: "When to Adopt Sales Intelligence: Timing, Pilot & Expand",
@@ -339,7 +339,7 @@ export const whenToAdoptSalesIntelligenceGuide: GuidePage = {
     "when-to-replace-sales-intelligence",
     "how-to-choose-crm",
   ],
-  blocks: whenToAdoptSalesIntelligenceBlocks as GuidePage["blocks"],
+  blocks: whenToAdoptSalesIntelligenceBlocks as GuidePageInput["blocks"],
   checklist: [
     {
       id: "pain",

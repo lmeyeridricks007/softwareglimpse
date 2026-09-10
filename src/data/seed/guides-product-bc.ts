@@ -1,4 +1,4 @@
-import type { GuidePage } from "@/domain";
+import type { GuidePageInput } from "@/domain";
 import { buildAllBcProductGuides } from "@/services/product-guides/build";
 
 /**
@@ -6,4 +6,4 @@ import { buildAllBcProductGuides } from "@/services/product-guides/build";
  * setup, plans, worth-it) for primary phone / messaging / UCaaS products.
  * Published and indexable (editorial gate cleared).
  */
-export const bcProductGuides: GuidePage[] = buildAllBcProductGuides();
+export const bcProductGuides: GuidePageInput[] = buildAllBcProductGuides();

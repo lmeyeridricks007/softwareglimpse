@@ -28,7 +28,7 @@ function resolveSeoNote(): string {
 
 export type ImprovementBacklogRunOptions = {
   write?: boolean;
-  scope?: "crm";
+  scope?: import("../loaders/inventory").AuditScopeFilter;
   evaluatedAt?: string;
 };
 
@@ -64,7 +64,7 @@ export function runContentImprovementOpportunityAgent(
 } {
   const generatedAt = opts.evaluatedAt ?? new Date().toISOString();
   const audit = runContentQualityAudit({
-    scope: opts.scope ?? "crm",
+    scope: opts.scope ?? "all",
     writeReports: false,
     writeMaster: false,
     evaluatedAt: generatedAt,

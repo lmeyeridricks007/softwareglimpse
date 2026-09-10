@@ -1,4 +1,4 @@
-import type { GuidePage } from "@/domain";
+import type { GuidePageInput } from "@/domain";
 import { commonCrmMistakesGuide } from "./guides-common-crm-mistakes";
 import { crmBenefitsGuide } from "./guides-crm-benefits";
 import { crmAdoptionGuide } from "./guides-crm-adoption";
@@ -132,7 +132,7 @@ import { itsmAffiliateDeepenProductGuides } from "./guides-product-itsm-affiliat
  *
  * All guides use `softwareglimpse-guide-template-v1` blocks + GuideBlocksRenderer.
  */
-export const guidesSeed: GuidePage[] = [
+export const guidesSeed: GuidePageInput[] = [
   whatIsCrmGuide,
   howCrmWorksGuide,
   typesOfCrmGuide,

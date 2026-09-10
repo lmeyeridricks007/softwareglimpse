@@ -195,6 +195,29 @@
       ]
     }
   ],
+  "integrationSupport": [
+    {
+      "integrationSlug": "slack",
+      "kind": "native",
+      "sourceIds": [
+        "rootly-product-official"
+      ]
+    },
+    {
+      "integrationSlug": "microsoft-teams",
+      "kind": "native",
+      "sourceIds": [
+        "rootly-product-official"
+      ]
+    },
+    {
+      "integrationSlug": "api",
+      "kind": "api-only",
+      "sourceIds": [
+        "rootly-product-official"
+      ]
+    }
+  ],
   "aiCapabilities": [
     {
       "capability": "assistant",
@@ -222,29 +245,6 @@
     {
       "capability": "recommendations",
       "availability": "supported",
-      "sourceIds": [
-        "rootly-product-official"
-      ]
-    }
-  ],
-  "integrationSupport": [
-    {
-      "integrationSlug": "slack",
-      "kind": "native",
-      "sourceIds": [
-        "rootly-product-official"
-      ]
-    },
-    {
-      "integrationSlug": "microsoft-teams",
-      "kind": "native",
-      "sourceIds": [
-        "rootly-product-official"
-      ]
-    },
-    {
-      "integrationSlug": "api",
-      "kind": "api-only",
       "sourceIds": [
         "rootly-product-official"
       ]
@@ -321,6 +321,21 @@
       "isEditorial": false
     }
   ],
+  "screenshots": [
+    {
+      "id": "rootly-shot-overview",
+      "src": "/vendor-ui/rootly/overview.png",
+      "alt": "Rootly official marketing visual",
+      "caption": "Official Open Graph / marketing visual from https://rootly.com/.",
+      "source": "https://rootly.com/",
+      "checkedAt": "2026-08-18T14:56:00.000Z",
+      "annotation": "Official Rootly marketing UI asset",
+      "kind": "vendor-ui",
+      "featureIds": [],
+      "useCaseIds": []
+    }
+  ],
+  "media": [],
   "pricing": {
     "currency": "USD",
     "model": "per-seat",
@@ -378,33 +393,12 @@
       }
     ],
     "notes": "Verified 2026-08-18 from rootly.com/pricing (high confidence). Incident Response Essentials $20/user/mo. On-Call Essentials $20/user (separate SKU). Enterprise custom. Affiliate economics excluded.",
-    "verifiedAt": "2026-08-18T22:00:00.000Z",
+    "verifiedAt": "2026-09-09T06:30:54.389Z",
     "sourceIds": [
       "rootly-pricing-official"
     ],
     "startingPriceMonthly": 20
   },
-  "screenshots": [
-    {
-      "id": "rootly-shot-overview",
-      "src": "/vendor-ui/rootly/overview.png",
-      "alt": "Rootly official marketing visual",
-      "caption": "Official Open Graph / marketing visual from https://rootly.com/.",
-      "source": "https://rootly.com/",
-      "checkedAt": "2026-08-18T14:56:00.000Z",
-      "annotation": "Official Rootly marketing UI asset",
-      "kind": "vendor-ui",
-      "featureIds": [],
-      "useCaseIds": []
-    }
-  ],
-  "media": [],
-  "sourceIds": [
-    "rootly-product-official",
-    "rootly-pricing-official",
-    "rootly-pricing"
-  ],
-  "notes": "IT Tier-B + ITSM SMB onboarding enrichment from first-party research 2026-08-18T22:00:00.000Z. handsOnTesting=false. membershipRole=primary. jobCluster=incident-oncall.",
   "domainCheckedAt": {
     "identity": "2026-08-18T22:00:00.000Z",
     "pricing": "2026-08-18T22:00:00.000Z",
@@ -418,5 +412,11 @@
     "limits": "2026-08-18T22:00:00.000Z",
     "security-compliance": "2026-08-18T22:00:00.000Z"
   },
-  "updatedAt": "2026-08-18T14:56:00.000Z"
+  "sourceIds": [
+    "rootly-product-official",
+    "rootly-pricing-official",
+    "rootly-pricing"
+  ],
+  "updatedAt": "2026-08-18T14:56:00.000Z",
+  "notes": "IT Tier-B + ITSM SMB onboarding enrichment from first-party research 2026-08-18T22:00:00.000Z. handsOnTesting=false. membershipRole=primary. jobCluster=incident-oncall."
 }

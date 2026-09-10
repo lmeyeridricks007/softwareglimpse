@@ -1,4 +1,4 @@
-import type { GuidePage } from "@/domain";
+import type { GuidePageInput } from "@/domain";
 import type { z } from "zod";
 import type { GuideContentBlockSchema } from "@/domain";
 
@@ -159,7 +159,7 @@ const whatIsProjectManagementBlocks: GuideBlockInput[] = [
   },
 ];
 
-export const whatIsProjectManagementSoftwareGuide: GuidePage = {
+export const whatIsProjectManagementSoftwareGuide: GuidePageInput = {
   id: "guide-what-is-project-management-software",
   slug: "what-is-project-management-software",
   title: "What Is Project Management Software?",
@@ -193,7 +193,7 @@ export const whatIsProjectManagementSoftwareGuide: GuidePage = {
     "project-management-requirements-guide",
     "project-management-evaluation-guide",
   ],
-  blocks: whatIsProjectManagementBlocks as GuidePage["blocks"],
+  blocks: whatIsProjectManagementBlocks as GuidePageInput["blocks"],
   checklist: [
     {
       id: "job",

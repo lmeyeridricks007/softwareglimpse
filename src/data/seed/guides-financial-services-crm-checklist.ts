@@ -1,4 +1,4 @@
-import type { GuidePage } from "@/domain";
+import type { GuidePageInput } from "@/domain";
 import type { z } from "zod";
 import type { GuideContentBlockSchema } from "@/domain";
 
@@ -345,7 +345,7 @@ const financialServicesCrmChecklistBlocks: GuideBlockInput[] = [
   },
 ];
 
-export const financialServicesCrmChecklistGuide: GuidePage = {
+export const financialServicesCrmChecklistGuide: GuidePageInput = {
   id: "guide-financial-services-crm-checklist",
   slug: "financial-services-crm-checklist",
   title: "Financial Services CRM Checklist: Requirements, Security, Pilot & Go-Live",
@@ -384,7 +384,7 @@ export const financialServicesCrmChecklistGuide: GuidePage = {
     "financial-services-crm-security",
     "financial-services-crm-migration",
   ],
-  blocks: financialServicesCrmChecklistBlocks as GuidePage["blocks"],
+  blocks: financialServicesCrmChecklistBlocks as GuidePageInput["blocks"],
   checklist: [
     {
       id: "requirements",

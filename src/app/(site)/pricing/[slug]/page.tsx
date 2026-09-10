@@ -4,6 +4,9 @@ import { notFound } from "next/navigation";
 import { SoftwareCta } from "@/components/affiliate/software-cta";
 import { SoftwarePromotionBanner } from "@/components/affiliate/software-promotion";
 import { PricingPlansTable } from "@/components/pricing/pricing-plans-table";
+import { existsSync, readFileSync } from "node:fs";
+import path from "node:path";
+import { PricingFreshness } from "@/components/pricing/pricing-freshness";
 import { ResearchTrustNote } from "@/components/research/research-trust-note";
 import { Breadcrumbs } from "@/components/seo/breadcrumbs";
 import { PageHero } from "@/components/ui/page-hero";
@@ -23,6 +26,35 @@ import { listCrmPricingSnapshots } from "@/services/pricing/server";
 import { buildPageMetadata } from "@/seo/metadata";
 import { JsonLdScript, breadcrumbJsonLd } from "@/seo/structured-data";
 import { getSoftwareBySlug } from "@/data";
+
+function readOutdatedPricingMark(pagePath: string): {
+  reason: string;
+} | null {
+  const file = path.join(
+    process.cwd(),
+    "data/pricing/outdated-pricing.json",
+  );
+  if (!existsSync(file)) return null;
+  try {
+    const raw = JSON.parse(readFileSync(file, "utf8")) as {
+      marks?: Array<{
+        path: string;
+        reason: string;
+        clearedAt: string | null;
+        code: string;
+      }>;
+    };
+    const hit = (raw.marks ?? []).find(
+      (m) =>
+        m.path === pagePath &&
+        m.clearedAt == null &&
+        m.code === "OUTDATED_PRICING",
+    );
+    return hit ? { reason: hit.reason } : null;
+  } catch {
+    return null;
+  }
+}
 
 type Props = {
   params: Promise<{ slug: string }>;
@@ -120,6 +152,8 @@ export default async function ProductPricingPage({ params }: Props) {
     { name: snapshot.name, path: `/pricing/${slug}/` },
   ];
 
+  const outdated = readOutdatedPricingMark(`/pricing/${slug}/`);
+
   return (
     <>
       <JsonLdScript data={breadcrumbJsonLd(breadcrumbItems)} />
@@ -184,6 +218,13 @@ export default async function ProductPricingPage({ params }: Props) {
           checkedAt={snapshot.pricingCheckedAt}
           label="Pricing"
           fixture={snapshot.hasFixtureResearch}
+        />
+        <PricingFreshness
+          verifiedAt={snapshot.pricingCheckedAt}
+          fixture={snapshot.hasFixtureResearch}
+          outdatedPricing={Boolean(outdated)}
+          outdatedReason={outdated?.reason}
+          className="mt-2 text-xs text-[var(--color-fg-muted)]"
         />
       </section>
 

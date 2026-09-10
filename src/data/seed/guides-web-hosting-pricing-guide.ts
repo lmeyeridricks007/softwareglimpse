@@ -1,4 +1,4 @@
-import type { GuidePage } from "@/domain";
+import type { GuidePageInput } from "@/domain";
 import type { z } from "zod";
 import type { GuideContentBlockSchema } from "@/domain";
 import { tier29GuideScheduledAt } from "@/data/config/publishing/tier-29-web-hosting-launch-2027-08-01";
@@ -34,7 +34,7 @@ const blocks: GuideBlockInput[] = [
   },
 ];
 
-function metadata(): GuidePage["metadata"] {
+function metadata(): GuidePageInput["metadata"] {
   return SCHEDULED_AT
     ? {
         status: "scheduled",
@@ -54,7 +54,7 @@ function metadata(): GuidePage["metadata"] {
       };
 }
 
-export const webHostingPricingGuide: GuidePage = {
+export const webHostingPricingGuide: GuidePageInput = {
   id: "guide-web-hosting-pricing-guide",
   slug: SLUG,
   title: "Web Hosting Pricing Guide",
@@ -76,7 +76,7 @@ export const webHostingPricingGuide: GuidePage = {
     "how-to-choose-web-hosting-software",
     "web-hosting-evaluation-guide",
   ],
-  blocks: blocks as GuidePage["blocks"],
+  blocks: blocks as GuidePageInput["blocks"],
   checklist: [],
   sections: [],
   faq: [],
@@ -87,6 +87,6 @@ export const webHostingPricingGuide: GuidePage = {
     description:
       "Compare panel licence, managed WordPress, and PaaS pricing for web hosting software.",
     canonicalPath: `/guides/${SLUG}/`,
-    indexable: !SCHEDULED_AT,
+    indexable: true,
   },
 };

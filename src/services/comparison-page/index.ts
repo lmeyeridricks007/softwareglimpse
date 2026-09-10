@@ -5,6 +5,13 @@ export type {
   ComparisonPageProduct,
   QualitativeStrength,
 } from "./types";
+export type {
+  ComparisonDecisionNarrative,
+  CategoryWinnerRow,
+  RealDifference,
+  SeatScenarioRow,
+  IntegrationCompare,
+} from "./decision-narrative";
 export {
   COMPARISON_PAGE_TABS,
   getComparisonPageTab,
@@ -20,10 +27,9 @@ export {
 } from "./public-copy";
 
 /**
- * Intentionally does NOT re-export buildComparisonPageModel.
- * That module uses node:fs via research/editorial stores — importing it from
- * this barrel would pull Node into client chunks (Turbopack).
- *
- * Server pages must import the builder from:
+ * Intentionally does NOT re-export buildComparisonPageModel or
+ * buildDecisionNarrative helpers that pull Node-only stores.
+ * Server pages must import builders from:
  *   `@/services/comparison-page/build-page-model`
+ *   `@/services/comparison-page/decision-narrative` (pure; OK if needed)
  */

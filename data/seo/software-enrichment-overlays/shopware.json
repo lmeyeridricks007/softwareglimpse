@@ -1,0 +1,388 @@
+{
+  "slug": "shopware",
+  "updatedAt": "2026-09-07T22:31:21.924Z",
+  "version": "1.0.0",
+  "fieldAudit": {
+    "slug": "shopware",
+    "checkedAt": "2026-09-07T22:31:21.922Z",
+    "items": [
+      {
+        "field": "name",
+        "status": "PASS",
+        "detail": "Name: Shopware",
+        "source": "seed"
+      },
+      {
+        "field": "product_status",
+        "status": "PASS",
+        "detail": "productLifecycle=active",
+        "source": "seed"
+      },
+      {
+        "field": "canonical_vendor",
+        "status": "UNKNOWN",
+        "detail": "Company/vendor not documented",
+        "source": "none"
+      },
+      {
+        "field": "category",
+        "status": "PASS",
+        "detail": "primaryCategorySlug=ecommerce",
+        "source": "seed"
+      },
+      {
+        "field": "description",
+        "status": "PASS",
+        "detail": "Description present (Symfony open-source commerce — Community Edition free (Fair Usage ~€1M GMV); Ris…)",
+        "source": "seed"
+      },
+      {
+        "field": "target_audience",
+        "status": "PASS",
+        "detail": "Sizes=3, teams=2, assessment bestFor=3",
+        "source": "assessment"
+      },
+      {
+        "field": "use_cases",
+        "status": "PASS",
+        "detail": "useCaseSlugs=3",
+        "source": "seed"
+      },
+      {
+        "field": "capabilities",
+        "status": "PASS",
+        "detail": "featureRatings=0, enrichment features=14",
+        "source": "enrichment"
+      },
+      {
+        "field": "pricing",
+        "status": "PASS",
+        "detail": "Pricing envelope present",
+        "source": "enrichment"
+      },
+      {
+        "field": "plans",
+        "status": "PASS",
+        "detail": "plans=4",
+        "source": "enrichment"
+      },
+      {
+        "field": "free_plan",
+        "status": "PASS",
+        "detail": "Free plan documented",
+        "source": "enrichment"
+      },
+      {
+        "field": "trial",
+        "status": "UNKNOWN",
+        "detail": "Trial not explicitly documented — do not assume none",
+        "source": "none"
+      },
+      {
+        "field": "integrations",
+        "status": "PASS",
+        "detail": "integrationSlugs=0, enrichment=3",
+        "source": "enrichment"
+      },
+      {
+        "field": "alternatives",
+        "status": "PASS",
+        "detail": "alternativeSlugs=3",
+        "source": "seed"
+      },
+      {
+        "field": "competitors",
+        "status": "PASS",
+        "detail": "competitorSlugs=3",
+        "source": "seed"
+      },
+      {
+        "field": "affiliate",
+        "status": "PASS",
+        "detail": "No affiliate relationship (explicit)",
+        "source": "seed"
+      },
+      {
+        "field": "source_provenance",
+        "status": "PASS",
+        "detail": "seed sources=0, enrichment sourceIds=2",
+        "source": "enrichment"
+      },
+      {
+        "field": "verification_date",
+        "status": "PASS",
+        "detail": "Latest verification/research signal: 2026-08-18T14:00:00.000Z",
+        "source": "enrichment"
+      }
+    ],
+    "passCount": 16,
+    "partialCount": 0,
+    "missingCount": 0,
+    "unknownCount": 2,
+    "score": 89
+  },
+  "decisionHub": {
+    "whatItIs": "Shopware is a Symfony-based open-source commerce platform. Community Edition is MIT-licensed and free, with a Fair Usage policy that expects a paid plan above about €1M GMV. Commercial SaaS/self-serve: Rise from €600/mo (~$660 USD); Evolve from €2400/mo; Beyond is quote-only. Landscape open-source peer — WooCommerce keeps the cluster award. Research grounded 2026-08-18 from shopware.com/en/pricing; EUR amounts converted approximately to USD.",
+    "bestFor": [
+      "Mid-market EU/global merchants wanting modern open-source commerce",
+      "Teams with Symfony/PHP capacity or a Shopware partner",
+      "Catalogs that outgrew Woo simplicity but do not want Magento TCO",
+      "small-business / operations: Shopware fit for small-business operations teams in the open-source-platform job cluster, from first-party positioning and Ecommerce Priority-2 research.",
+      "mid-market / operations: Shopware fit for mid-market operations teams in the open-source-platform job cluster, from first-party positioning and Ecommerce Priority-2 research.",
+      "enterprise / operations: Shopware fit for enterprise operations teams in the open-source-platform job cluster, from first-party positioning and Ecommerce Priority-2 research."
+    ],
+    "notIdealFor": [
+      "Solo founders wanting a weekend hosted launch",
+      "WordPress-native content + store teams (see WooCommerce)",
+      "Retailers whose center of gravity is POS hardware",
+      "Community Edition Fair Usage pushes paid plans above ~€1M GMV",
+      "Rise commercial floor is high versus WooCommerce core + hosting",
+      "POS / omnichannel is not the center of the product"
+    ],
+    "coreCapabilities": [
+      "online storefront",
+      "product catalog",
+      "checkout payments",
+      "order management",
+      "inventory management",
+      "shipping fulfillment",
+      "b2b wholesale",
+      "analytics reporting"
+    ],
+    "pricingSummary": "4 documented plans · 1 free · entry paid: Rise",
+    "keyTradeoffs": [
+      "Community Edition Fair Usage pushes paid plans above ~€1M GMV",
+      "Rise commercial floor is high versus WooCommerce core + hosting",
+      "POS / omnichannel is not the center of the product",
+      "Implementation still needs developer/agency capacity versus hosted SaaS",
+      "Composable commerce platform — open-source Community Edition plus Rise, Evolve, and Beyond for growing and enterprise brands. (audience: Mid-market EU/global merchants wanting modern open-source commerce, Teams with Symfony/PHP capacity or a Shopware partner)"
+    ],
+    "alternatives": [
+      {
+        "slug": "prestashop",
+        "name": "PrestaShop"
+      },
+      {
+        "slug": "woocommerce",
+        "name": "WooCommerce"
+      },
+      {
+        "slug": "magento",
+        "name": "Magento"
+      }
+    ],
+    "importantComparisons": [
+      {
+        "slug": "prestashop-vs-shopware",
+        "title": "PrestaShop vs Shopware",
+        "href": "/compare/prestashop-vs-shopware/"
+      },
+      {
+        "slug": "bigcommerce-vs-shopware",
+        "title": "BigCommerce vs Shopware",
+        "href": "/compare/bigcommerce-vs-shopware/"
+      },
+      {
+        "slug": "commercetools-vs-shopware",
+        "title": "commercetools vs Shopware",
+        "href": "/compare/commercetools-vs-shopware/"
+      },
+      {
+        "slug": "ecwid-vs-shopware",
+        "title": "Ecwid vs Shopware",
+        "href": "/compare/ecwid-vs-shopware/"
+      },
+      {
+        "slug": "lightspeed-retail-vs-shopware",
+        "title": "Lightspeed Retail vs Shopware",
+        "href": "/compare/lightspeed-retail-vs-shopware/"
+      },
+      {
+        "slug": "magento-vs-shopware",
+        "title": "Magento vs Shopware",
+        "href": "/compare/magento-vs-shopware/"
+      }
+    ],
+    "relevantGuides": [
+      {
+        "slug": "shopware-implementation",
+        "title": "Shopware Implementation: 30/60/90 Store Rollout That Sticks",
+        "href": "/guides/shopware-implementation/"
+      },
+      {
+        "slug": "shopware-migration",
+        "title": "Shopware Migration: Move Catalog & Order Data Without Losing Trust",
+        "href": "/guides/shopware-migration/"
+      },
+      {
+        "slug": "shopware-setup",
+        "title": "Shopware Setup: Day-Zero Path to a Working Ecommerce Loop",
+        "href": "/guides/shopware-setup/"
+      },
+      {
+        "slug": "shopware-plans",
+        "title": "Shopware Plans: Seats, Hubs, and Qualifying Tiers",
+        "href": "/guides/shopware-plans/"
+      },
+      {
+        "slug": "is-shopware-worth-it",
+        "title": "Is Shopware Worth It? Fit Scenarios Before You Buy",
+        "href": "/guides/is-shopware-worth-it/"
+      }
+    ],
+    "evidenceState": "Research/data-based (no completed hands-on test) · Latest verification/research signal: 2026-08-18T14:00:00.000Z · Editorial assessment: approved",
+    "nextDecisionStep": "Compare against peers: PrestaShop vs Shopware",
+    "missingSections": [
+      "canonical_vendor",
+      "trial"
+    ]
+  },
+  "dependents": [
+    {
+      "kind": "guide",
+      "slug": "shopware-implementation",
+      "path": "/guides/shopware-implementation/"
+    },
+    {
+      "kind": "guide",
+      "slug": "shopware-migration",
+      "path": "/guides/shopware-migration/"
+    },
+    {
+      "kind": "guide",
+      "slug": "shopware-setup",
+      "path": "/guides/shopware-setup/"
+    },
+    {
+      "kind": "guide",
+      "slug": "shopware-plans",
+      "path": "/guides/shopware-plans/"
+    },
+    {
+      "kind": "guide",
+      "slug": "is-shopware-worth-it",
+      "path": "/guides/is-shopware-worth-it/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "prestashop-vs-shopware",
+      "path": "/compare/prestashop-vs-shopware/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "bigcommerce-vs-shopware",
+      "path": "/compare/bigcommerce-vs-shopware/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "commercetools-vs-shopware",
+      "path": "/compare/commercetools-vs-shopware/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "ecwid-vs-shopware",
+      "path": "/compare/ecwid-vs-shopware/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "lightspeed-retail-vs-shopware",
+      "path": "/compare/lightspeed-retail-vs-shopware/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "magento-vs-shopware",
+      "path": "/compare/magento-vs-shopware/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "medusa-vs-shopware",
+      "path": "/compare/medusa-vs-shopware/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "opencart-vs-shopware",
+      "path": "/compare/opencart-vs-shopware/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "saleor-vs-shopware",
+      "path": "/compare/saleor-vs-shopware/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "salesforce-commerce-cloud-vs-shopware",
+      "path": "/compare/salesforce-commerce-cloud-vs-shopware/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "sellfy-vs-shopware",
+      "path": "/compare/sellfy-vs-shopware/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "shopify-vs-shopware",
+      "path": "/compare/shopify-vs-shopware/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "shopware-vs-square-online",
+      "path": "/compare/shopware-vs-square-online/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "shopware-vs-squarespace",
+      "path": "/compare/shopware-vs-squarespace/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "shopware-vs-tiendanube",
+      "path": "/compare/shopware-vs-tiendanube/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "shopware-vs-vtex",
+      "path": "/compare/shopware-vs-vtex/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "shopware-vs-webflow",
+      "path": "/compare/shopware-vs-webflow/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "shopware-vs-wix",
+      "path": "/compare/shopware-vs-wix/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "shopware-vs-woocommerce",
+      "path": "/compare/shopware-vs-woocommerce/"
+    },
+    {
+      "kind": "alternatives",
+      "slug": "shopware",
+      "path": "/alternatives/shopware/"
+    },
+    {
+      "kind": "pricing",
+      "slug": "shopware",
+      "path": "/software/shopware/pricing/"
+    },
+    {
+      "kind": "tools",
+      "slug": "ecommerce-cost-calculator",
+      "path": "/tools/ecommerce-cost-calculator/"
+    }
+  ],
+  "dependentsNeedingRefresh": [],
+  "remediation": [
+    "verify:canonical_vendor",
+    "verify:trial"
+  ],
+  "notes": [
+    "fieldAudit score=89",
+    "decisionHub bestFor=6 notIdeal=6",
+    "dependents=27"
+  ],
+  "materiallyImproved": false
+}

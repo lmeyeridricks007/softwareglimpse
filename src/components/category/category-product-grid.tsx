@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import Link from "next/link";
 import { withSingleArrow } from "@/components/category/hub-icons";
 import { ProductLogo } from "@/components/software/product-logo";
@@ -36,19 +36,22 @@ export function CategoryProductGrid({
   const [query, setQuery] = useState("");
   const [page, setPage] = useState(1);
 
-  useEffect(() => {
-    setPage(1);
-  }, [sort, query]);
+  const effectiveSort =
+    sort === "best-picks" && !hasBestPicks ? "top-rated" : sort;
 
-  useEffect(() => {
-    if (sort === "best-picks" && !hasBestPicks) {
-      setSort("top-rated");
-    }
-  }, [sort, hasBestPicks]);
+  function changeSort(next: SortMode) {
+    setSort(next);
+    setPage(1);
+  }
+
+  function changeQuery(next: string) {
+    setQuery(next);
+    setPage(1);
+  }
 
   const normalizedQuery = query.trim().toLowerCase();
   const filtered = items.filter((item) => {
-    if (sort === "best-picks" && !item.isBestPick) return false;
+    if (effectiveSort === "best-picks" && !item.isBestPick) return false;
     if (!normalizedQuery) return true;
     const hay = [
       item.name,
@@ -62,8 +65,8 @@ export function CategoryProductGrid({
   });
 
   const sorted = [...filtered].sort((a, b) => {
-    if (sort === "az") return a.name.localeCompare(b.name);
-    if (sort === "recent") {
+    if (effectiveSort === "az") return a.name.localeCompare(b.name);
+    if (effectiveSort === "recent") {
       const aTime = a.updatedAt ?? "";
       const bTime = b.updatedAt ?? "";
       if (bTime !== aTime) return bTime.localeCompare(aTime);
@@ -130,26 +133,26 @@ export function CategoryProductGrid({
                 aria-label="Sort products"
               >
                 <SortChip
-                  active={sort === "top-rated"}
+                  active={effectiveSort === "top-rated"}
                   label="Top rated"
-                  onClick={() => setSort("top-rated")}
+                  onClick={() => changeSort("top-rated")}
                 />
                 {hasBestPicks ? (
                   <SortChip
-                    active={sort === "best-picks"}
+                    active={effectiveSort === "best-picks"}
                     label="Best picks"
-                    onClick={() => setSort("best-picks")}
+                    onClick={() => changeSort("best-picks")}
                   />
                 ) : null}
                 <SortChip
-                  active={sort === "recent"}
+                  active={effectiveSort === "recent"}
                   label="Recently updated"
-                  onClick={() => setSort("recent")}
+                  onClick={() => changeSort("recent")}
                 />
                 <SortChip
-                  active={sort === "az"}
+                  active={effectiveSort === "az"}
                   label="A–Z"
-                  onClick={() => setSort("az")}
+                  onClick={() => changeSort("az")}
                 />
               </div>
 
@@ -158,7 +161,7 @@ export function CategoryProductGrid({
                 <input
                   type="search"
                   value={query}
-                  onChange={(e) => setQuery(e.target.value)}
+                  onChange={(e) => changeQuery(e.target.value)}
                   placeholder="Search by name or fit…"
                   className="h-9 w-full rounded-[var(--sg-radius-md)] border border-[var(--sg-color-border)] bg-[var(--sg-color-surface)] px-3 text-sm text-[var(--sg-color-text)] outline-none placeholder:text-[var(--sg-color-text-muted)] focus:border-[var(--sg-color-primary)]"
                 />
@@ -183,7 +186,7 @@ export function CategoryProductGrid({
                   <span className="font-medium text-[var(--sg-color-text)]">
                     {sorted.length}
                   </span>
-                  {normalizedQuery || sort === "best-picks"
+                  {normalizedQuery || effectiveSort === "best-picks"
                     ? " matching"
                     : ""}{" "}
                   {sorted.length === 1 ? "product" : "products"}

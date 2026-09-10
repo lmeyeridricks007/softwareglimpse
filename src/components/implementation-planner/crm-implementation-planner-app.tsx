@@ -155,6 +155,89 @@ const MIGRATION_SOURCES: Array<{ value: MigrationSource; label: string }> = [
   { value: "unknown", label: "Not sure yet" },
 ];
 
+type PlannerBootstrap = {
+  profile: CrmDecisionProfile | null;
+  plan: CrmImplementationPlan;
+  started: boolean;
+  step: StepId;
+  maxStepIndex: number;
+  profileBanner: string | null;
+};
+
+function bootstrapImplementationPlanner(
+  productOptions: Props["productOptions"],
+): PlannerBootstrap {
+  const productBySlug = new Map(productOptions.map((p) => [p.slug, p]));
+  const loadedProfile = loadCrmDecisionProfile();
+  const existing = loadCrmImplementationPlan();
+  const prefill = prefillFromProfile(loadedProfile);
+
+  if (existing?.planGeneratedAt) {
+    const refreshedRisks = mergeGeneratedRisks(
+      generateRisks(existing, loadedProfile),
+      existing.risks,
+    );
+    const refreshedGaps = generateReadinessGaps(existing, loadedProfile).map(
+      (gap) => {
+        const prev = existing.readinessGaps.find((g) => g.id === gap.id);
+        return prev ? { ...gap, resolved: prev.resolved } : gap;
+      },
+    );
+    const refreshedUat = mergeUatItems(
+      generateUatItems(loadedProfile),
+      existing.uatItems,
+    );
+    const drift = detectProfileChanges(existing, loadedProfile);
+    return {
+      profile: loadedProfile,
+      plan: {
+        ...existing,
+        risks: refreshedRisks,
+        readinessGaps: refreshedGaps,
+        uatItems: refreshedUat.length ? refreshedUat : existing.uatItems,
+      },
+      started: true,
+      step: "plan",
+      maxStepIndex: STAGES.length - 1,
+      profileBanner: drift.changed ? drift.message : null,
+    };
+  }
+
+  let plan = createEmptyCrmImplementationPlan();
+  if (loadedProfile) {
+    plan = {
+      ...plan,
+      productId: prefill.productId ?? plan.productId,
+      productName: prefill.productId
+        ? productBySlug.get(prefill.productId)?.name
+        : plan.productName,
+      scope: {
+        ...plan.scope,
+        users: prefill.users ?? plan.scope.users,
+        teamLabels: prefill.teamLabels.length
+          ? prefill.teamLabels
+          : plan.scope.teamLabels,
+        teamCount: Math.max(
+          1,
+          prefill.teamLabels.length || plan.scope.teamCount || 1,
+        ),
+        trainingApproach:
+          prefill.trainingApproach ?? plan.scope.trainingApproach,
+      },
+      decisionProfileUpdatedAt: loadedProfile.updatedAt,
+    };
+  }
+
+  return {
+    profile: loadedProfile,
+    plan,
+    started: false,
+    step: "profile",
+    maxStepIndex: 0,
+    profileBanner: null,
+  };
+}
+
 export function CrmImplementationPlannerApp({
   productOptions,
   resourceLinks = [],
@@ -165,20 +248,27 @@ export function CrmImplementationPlannerApp({
   const searchParams = useSearchParams();
   const fromHint = searchParams.get("from");
 
-  const [plan, setPlan] = useState<CrmImplementationPlan>(() =>
-    createEmptyCrmImplementationPlan(),
+  const [initialPlanner] = useState(() =>
+    bootstrapImplementationPlanner(productOptions),
   );
-  const [profile, setProfile] = useState<CrmDecisionProfile | null>(null);
-  const [step, setStep] = useState<StepId>("profile");
-  const [maxStepIndex, setMaxStepIndex] = useState(0);
-  const [hydrated, setHydrated] = useState(false);
-  const [started, setStarted] = useState(false);
+  const [plan, setPlan] = useState<CrmImplementationPlan>(initialPlanner.plan);
+  const [profile, setProfile] = useState<CrmDecisionProfile | null>(
+    initialPlanner.profile,
+  );
+  const [step, setStep] = useState<StepId>(initialPlanner.step);
+  const [maxStepIndex, setMaxStepIndex] = useState(initialPlanner.maxStepIndex);
+  const [hydrated, setHydrated] = useState(
+    () => typeof window !== "undefined",
+  );
+  const [started, setStarted] = useState(initialPlanner.started);
   const [copyDone, setCopyDone] = useState(false);
   const [resultTab, setResultTab] = useState<ResultTab>("overview");
   const [timelineView, setTimelineView] = useState<"gantt" | "list">("gantt");
   const [mobileTab, setMobileTab] = useState<"plan" | "tasks" | "risks">("plan");
   const [newTaskTitle, setNewTaskTitle] = useState("");
-  const [profileBanner, setProfileBanner] = useState<string | null>(null);
+  const [profileBanner, setProfileBanner] = useState<string | null>(
+    initialPlanner.profileBanner,
+  );
   const { isLoading, startReveal, resetReveal } = useDelayedResultsReveal();
 
   const productBySlug = useMemo(() => {
@@ -187,70 +277,13 @@ export function CrmImplementationPlannerApp({
   }, [productOptions]);
 
   useEffect(() => {
-    const loadedProfile = loadCrmDecisionProfile();
-    const existing = loadCrmImplementationPlan();
-    const prefill = prefillFromProfile(loadedProfile);
-    setProfile(loadedProfile);
-
-    if (existing?.planGeneratedAt) {
-      // Refresh risks/gaps from current rules without wiping user risk statuses.
-      const refreshedRisks = mergeGeneratedRisks(
-        generateRisks(existing, loadedProfile),
-        existing.risks,
-      );
-      const refreshedGaps = generateReadinessGaps(existing, loadedProfile).map(
-        (gap) => {
-          const prev = existing.readinessGaps.find((g) => g.id === gap.id);
-          return prev ? { ...gap, resolved: prev.resolved } : gap;
-        },
-      );
-      const refreshedUat = mergeUatItems(
-        generateUatItems(loadedProfile),
-        existing.uatItems,
-      );
-      setPlan({
-        ...existing,
-        risks: refreshedRisks,
-        readinessGaps: refreshedGaps,
-        uatItems: refreshedUat.length ? refreshedUat : existing.uatItems,
-      });
-      setStarted(true);
-      setStep("plan");
-      setMaxStepIndex(STAGES.length - 1);
-      const drift = detectProfileChanges(existing, loadedProfile);
-      if (drift.changed) setProfileBanner(drift.message);
-    } else if (loadedProfile) {
-      setPlan((prev) => ({
-        ...prev,
-        productId: prefill.productId ?? prev.productId,
-        productName: prefill.productId
-          ? productBySlug.get(prefill.productId)?.name
-          : prev.productName,
-        scope: {
-          ...prev.scope,
-          users: prefill.users ?? prev.scope.users,
-          teamLabels: prefill.teamLabels.length
-            ? prefill.teamLabels
-            : prev.scope.teamLabels,
-          teamCount: Math.max(
-            1,
-            prefill.teamLabels.length || prev.scope.teamCount || 1,
-          ),
-          trainingApproach:
-            prefill.trainingApproach ?? prev.scope.trainingApproach,
-        },
-        decisionProfileUpdatedAt: loadedProfile.updatedAt,
-      }));
-    }
-
     if (fromHint) {
       track({
         name: "crm_implementation_started",
         properties: { from: fromHint },
       });
     }
-    setHydrated(true);
-  }, [fromHint, productBySlug]);
+  }, [fromHint]);
 
   useEffect(() => {
     if (!hydrated || !started) return;

@@ -14,7 +14,48 @@ export const LEGACY_PATH_ALIASES: Record<
   "/software/": { target: "/software/" },
   "/guides/": { target: "/guides/" },
   "/contact/": { target: "/company/contact/" },
+  "/my-story/": {
+    target: "/company/my-story/",
+    note: "Legacy founder story → company page",
+  },
   "/privacy-policy/": { target: "/legal/privacy/" },
+  "/terms-and-conditions/": {
+    target: "/legal/terms/",
+    note: "Legacy terms & conditions → legal terms",
+  },
+  "/introduction-to-pipedrive/": {
+    target: "/software/pipedrive/",
+    note: "Product introduction → Pipedrive catalogue page",
+  },
+  "/introduction-to-salesforce/": {
+    target: "/software/salesforce/",
+    note: "Product introduction → Salesforce catalogue page",
+  },
+  "/introduction-to-freshsales/": {
+    target: "/software/freshsales/",
+    note: "Product introduction → Freshsales catalogue page",
+  },
+  "/introduction-to-zoho/": {
+    target: "/software/zoho-crm/",
+    note: "Product introduction → Zoho CRM catalogue page",
+  },
+  "/zoho-one-operating-system/": {
+    target: "/software/zoho-crm/",
+    note: "Zoho One suite article → Zoho CRM catalogue page",
+  },
+  "/miocommerce-review/": {
+    target: "/software/miocommerce/",
+    note: "Legacy MioCommerce review → catalogue software page",
+  },
+  "/tidio-vs-live-chat/": {
+    target: "/compare/livechat-vs-tidio/",
+    note: "Legacy Tidio vs Live Chat → livechat-vs-tidio compare",
+  },
+  "/tidio-vs-crisp/": {
+    target: "/compare/crisp-vs-tidio/",
+    note: "Legacy Tidio vs Crisp → crisp-vs-tidio compare",
+  },
+
   "/best-crms/": { target: "/best/crm-software/" },
   "/copper-crm-alternatives/": {
     target: "/software/copper/",

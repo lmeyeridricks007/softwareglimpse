@@ -24,7 +24,8 @@ import {
   categoryShortName,
   categorySoftwarePhrase,
 } from "@/data/config/tools/category-tool-meta";
-import { dedupePlanByHref, makeLink, selectLinks } from "./select";
+import { finalizePageLinkPlan } from "./link-injections";
+import { makeLink, selectLinks } from "./select";
 import {
   EMPTY_LINK_PLAN,
   type ContextualLink,
@@ -208,10 +209,12 @@ export function buildGuideLinkPlan(guide: GuidePage): PageLinkPlan {
 
   const relatedGuideLinks: Array<ContextualLink | null> = [];
 
-  // Explicit related
+  // Explicit related — always prefer over inferred peers; include IMPROVE targets.
   for (const slug of guide.relatedGuideSlugs) {
-    const g = getGuides().find((x) => x.slug === slug);
-    if (!g || !isEntityIndexable({ kind: "guide", entity: g })) continue;
+    const g = getGuides({ includeUnpublished: true }).find(
+      (x) => x.slug === slug,
+    );
+    if (!g) continue;
     relatedGuideLinks.push(
       makeLink({
         href: guidePath(slug),
@@ -219,8 +222,12 @@ export function buildGuideLinkPlan(guide: GuidePage): PageLinkPlan {
         relationship: "related",
         module: "relatedGuides",
         entityType: "guide",
-        score: 90,
+        // Explicit (overlay/seed) related must beat supporting peers (score 88)
+        // and typical authority-boosted indexable peers (~96).
+        score: 99,
         description: g.summary,
+        // IMPROVE/noindex guides stay discoverable when explicitly related
+        requireIndexable: false,
       }),
     );
   }
@@ -268,6 +275,25 @@ export function buildGuideLinkPlan(guide: GuidePage): PageLinkPlan {
     module: "relatedGuides",
     excludeHrefs: exclude,
   });
+
+  // Guarantee every explicit relatedGuideSlug remains after selection
+  // (overlay / dual-write intent > auto-discovered peers).
+  {
+    const explicitHrefs = new Set(
+      guide.relatedGuideSlugs.map((slug) => guidePath(slug)),
+    );
+    const have = new Set(plan.relatedGuides.map((l) => l.href));
+    const missing = relatedGuideLinks.filter(
+      (l): l is ContextualLink =>
+        Boolean(l) && explicitHrefs.has(l!.href) && !have.has(l!.href),
+    );
+    if (missing.length > 0) {
+      const max = 8;
+      plan.relatedGuides = [...missing, ...plan.relatedGuides]
+        .filter((l, i, arr) => arr.findIndex((x) => x.href === l.href) === i)
+        .slice(0, max);
+    }
+  }
 
   const productLinks: Array<ContextualLink | null> = guide.productSlugs.map(
     (slug) => {
@@ -376,6 +402,8 @@ export function buildGuideLinkPlan(guide: GuidePage): PageLinkPlan {
           module: "recommendedNextStep",
           entityType: (type === "use-case" ? "use-case" : type) as LinkEntityType,
           score: 99,
+          // Pack journeys may point at IMPROVE siblings — still useful for buyers
+          requireIndexable: false,
         });
         if (explicit) {
           plan.recommendedNextStep = selectLinks(
@@ -389,7 +417,7 @@ export function buildGuideLinkPlan(guide: GuidePage): PageLinkPlan {
     }
   }
 
-  return dedupePlanByHref(plan);
+  return finalizePageLinkPlan(plan);
 }
 
 export function buildSoftwareLinkPlan(slug: string): PageLinkPlan | null {
@@ -471,16 +499,40 @@ export function buildSoftwareLinkPlan(slug: string): PageLinkPlan | null {
   );
 
   plan.relatedGuides = selectLinks(
-    groups.guides.map((l) =>
-      makeLink({
-        href: l.href,
-        label: l.label,
-        relationship: "supportedBy",
-        module: "relatedGuides",
-        entityType: "guide",
-        score: l.priority,
-      }),
-    ),
+    [
+      ...groups.guides.map((l) =>
+        makeLink({
+          href: l.href,
+          label: l.label,
+          relationship: "supportedBy",
+          module: "relatedGuides",
+          entityType: "guide",
+          score: l.priority,
+        }),
+      ),
+      // Product explainer may be IMPROVE/noindex — still useful UX next to the review
+      (() => {
+        const explainer = getGuides({ includeUnpublished: true }).find(
+          (g) =>
+            g.productSlugs.includes(slug) &&
+            (g.slug === `what-is-${slug}` ||
+              g.topicType === "product-explainer" ||
+              g.slug.startsWith(`what-is-${slug}`)),
+        );
+        if (!explainer) return null;
+        const indexable = isEntityIndexable({ kind: "guide", entity: explainer });
+        return makeLink({
+          href: guidePath(explainer.slug),
+          label: explainer.title,
+          relationship: "explains",
+          module: "relatedGuides",
+          entityType: "guide",
+          score: indexable ? 92 : 78,
+          description: "What it is — before you dig into plans and features",
+          requireIndexable: false,
+        });
+      })(),
+    ],
     { module: "relatedGuides", excludeHrefs: [sourcePath] },
   );
 
@@ -493,7 +545,32 @@ export function buildSoftwareLinkPlan(slug: string): PageLinkPlan | null {
   plan.recommendedNextStep = journey.recommendedNextStep;
   plan.tryDecisionTool = journey.tryDecisionTool;
 
-  return dedupePlanByHref(plan);
+  if (soft.primaryCategorySlug === "crm") {
+    plan.relatedResources = selectLinks(
+      [
+        makeLink({
+          href: "/research/crm-pricing/",
+          label: "CRM Pricing Benchmarks 2026",
+          relationship: "resourceFor",
+          module: "relatedResources",
+          entityType: "resource",
+          score: 88,
+          description: "Catalog-derived CRM list-price statistics.",
+        }),
+        makeLink({
+          href: "/research/crm-pricing-history/",
+          label: "CRM starting price history",
+          relationship: "resourceFor",
+          module: "relatedResources",
+          entityType: "resource",
+          score: 70,
+        }),
+      ],
+      { module: "relatedResources", excludeHrefs: [sourcePath], limit: 3 },
+    );
+  }
+
+  return finalizePageLinkPlan(plan);
 }
 
 export function buildFeatureLinkPlan(input: {
@@ -639,7 +716,7 @@ export function buildFeatureLinkPlan(input: {
   plan.recommendedNextStep = journey.recommendedNextStep;
   plan.tryDecisionTool = journey.tryDecisionTool;
 
-  return dedupePlanByHref(plan);
+  return finalizePageLinkPlan(plan);
 }
 
 export function buildRequirementLinkPlan(input: {
@@ -753,7 +830,7 @@ export function buildRequirementLinkPlan(input: {
   plan.recommendedNextStep = journey.recommendedNextStep;
   plan.tryDecisionTool = journey.tryDecisionTool;
 
-  return dedupePlanByHref(plan);
+  return finalizePageLinkPlan(plan);
 }
 
 export function buildUseCaseLinkPlan(input: {
@@ -870,7 +947,7 @@ export function buildUseCaseLinkPlan(input: {
   plan.recommendedNextStep = journey.recommendedNextStep;
   plan.tryDecisionTool = journey.tryDecisionTool;
 
-  return dedupePlanByHref(plan);
+  return finalizePageLinkPlan(plan);
 }
 
 export function buildCapabilityLinkPlan(input: {
@@ -972,7 +1049,7 @@ export function buildCapabilityLinkPlan(input: {
   plan.recommendedNextStep = journey.recommendedNextStep;
   plan.tryDecisionTool = journey.tryDecisionTool;
 
-  return dedupePlanByHref(plan);
+  return finalizePageLinkPlan(plan);
 }
 
 export function buildResourceLinkPlan(input: {
@@ -1028,7 +1105,7 @@ export function buildResourceLinkPlan(input: {
   plan.recommendedNextStep = journey.recommendedNextStep;
   plan.tryDecisionTool = journey.tryDecisionTool;
 
-  return dedupePlanByHref(plan);
+  return finalizePageLinkPlan(plan);
 }
 
 /** Lightweight comparison edges for product clusters (indexable only). */
@@ -1154,7 +1231,7 @@ export function buildCategoryLinkPlan(categorySlug: string): PageLinkPlan | null
     }
   }
 
-  return dedupePlanByHref(plan);
+  return finalizePageLinkPlan(plan);
 }
 
 export function buildBestLinkPlan(input: {
@@ -1249,7 +1326,7 @@ export function buildBestLinkPlan(input: {
   plan.recommendedNextStep = journey.recommendedNextStep;
   plan.tryDecisionTool = journey.tryDecisionTool;
 
-  return dedupePlanByHref(plan);
+  return finalizePageLinkPlan(plan);
 }
 
 export function buildComparisonLinkPlan(input: {
@@ -1360,5 +1437,16 @@ export function buildComparisonLinkPlan(input: {
   plan.recommendedNextStep = journey.recommendedNextStep;
   plan.tryDecisionTool = journey.tryDecisionTool;
 
-  return dedupePlanByHref(plan);
+  return finalizePageLinkPlan(plan);
+}
+
+/**
+ * Injection-only plan for surfaces without a rich builder
+ * (tools, research hubs, industries that only need batch injections).
+ */
+export function buildInjectionOnlyLinkPlan(
+  sourcePath: string,
+  sourceType: LinkEntityType,
+): PageLinkPlan {
+  return finalizePageLinkPlan(EMPTY_LINK_PLAN(sourcePath, sourceType));
 }

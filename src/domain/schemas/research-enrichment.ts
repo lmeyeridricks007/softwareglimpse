@@ -66,4 +66,12 @@ export type ProductResearchEnrichment = z.infer<
   typeof ProductResearchEnrichmentSchema
 >;
 
+export function readEnrichmentPricingVerifiedAt(
+  pricing: ProductResearchEnrichment["pricing"],
+): string | undefined {
+  if (!pricing || typeof pricing !== "object") return undefined;
+  const verifiedAt = (pricing as { verifiedAt?: unknown }).verifiedAt;
+  return typeof verifiedAt === "string" ? verifiedAt : undefined;
+}
+
 void ResearchDomainSchema;

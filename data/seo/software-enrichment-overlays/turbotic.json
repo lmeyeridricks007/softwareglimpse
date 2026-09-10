@@ -1,0 +1,429 @@
+{
+  "slug": "turbotic",
+  "updatedAt": "2026-09-07T22:31:22.094Z",
+  "version": "1.0.0",
+  "fieldAudit": {
+    "slug": "turbotic",
+    "checkedAt": "2026-09-07T22:31:22.092Z",
+    "items": [
+      {
+        "field": "name",
+        "status": "PASS",
+        "detail": "Name: Turbotic",
+        "source": "seed"
+      },
+      {
+        "field": "product_status",
+        "status": "PASS",
+        "detail": "productLifecycle=active",
+        "source": "seed"
+      },
+      {
+        "field": "canonical_vendor",
+        "status": "UNKNOWN",
+        "detail": "Company/vendor not documented",
+        "source": "none"
+      },
+      {
+        "field": "category",
+        "status": "PASS",
+        "detail": "primaryCategorySlug=ai",
+        "source": "seed"
+      },
+      {
+        "field": "description",
+        "status": "PASS",
+        "detail": "Description present (Automation AI platform — Free tier; Basic from $14.99/mo annual; Pro from $79.99…)",
+        "source": "seed"
+      },
+      {
+        "field": "target_audience",
+        "status": "PASS",
+        "detail": "Sizes=3, teams=3, assessment bestFor=3",
+        "source": "assessment"
+      },
+      {
+        "field": "use_cases",
+        "status": "PASS",
+        "detail": "useCaseSlugs=1",
+        "source": "seed"
+      },
+      {
+        "field": "capabilities",
+        "status": "PASS",
+        "detail": "featureRatings=0, enrichment features=19",
+        "source": "enrichment"
+      },
+      {
+        "field": "pricing",
+        "status": "PASS",
+        "detail": "Pricing envelope present",
+        "source": "enrichment"
+      },
+      {
+        "field": "plans",
+        "status": "PASS",
+        "detail": "plans=4",
+        "source": "enrichment"
+      },
+      {
+        "field": "free_plan",
+        "status": "PASS",
+        "detail": "Free plan documented",
+        "source": "enrichment"
+      },
+      {
+        "field": "trial",
+        "status": "UNKNOWN",
+        "detail": "Trial not explicitly documented — do not assume none",
+        "source": "none"
+      },
+      {
+        "field": "integrations",
+        "status": "PASS",
+        "detail": "integrationSlugs=0, enrichment=2",
+        "source": "enrichment"
+      },
+      {
+        "field": "alternatives",
+        "status": "PASS",
+        "detail": "alternativeSlugs=2",
+        "source": "seed"
+      },
+      {
+        "field": "competitors",
+        "status": "PASS",
+        "detail": "competitorSlugs=2",
+        "source": "seed"
+      },
+      {
+        "field": "affiliate",
+        "status": "PASS",
+        "detail": "Affiliate enabled with tracking URL",
+        "source": "seed"
+      },
+      {
+        "field": "source_provenance",
+        "status": "PASS",
+        "detail": "seed sources=0, enrichment sourceIds=2",
+        "source": "enrichment"
+      },
+      {
+        "field": "verification_date",
+        "status": "PASS",
+        "detail": "Latest verification/research signal: 2026-08-26T12:00:00.000Z",
+        "source": "enrichment"
+      }
+    ],
+    "passCount": 16,
+    "partialCount": 0,
+    "missingCount": 0,
+    "unknownCount": 2,
+    "score": 89
+  },
+  "decisionHub": {
+    "whatItIs": "Turbotic Automation AI is an enterprise-oriented automation platform where teams describe workflows in natural language and the system generates, tests, and runs integrations with self-healing execution and ROI reporting. Free includes up to 100 executions/mo, 100 AI chats/mo, and 3 automations. Basic starts at $14.99/mo billed annually with higher execution and chat tiers. Pro from $79.99/mo annual adds priority support and custom workflows (most popular on first-party pricing). Enterprise is contact-sales with unlimited automations, SLA, and optional on-premise deployment. Same ai-automation cluster as Zapier and n8n — AI-native orchestration rather than classic Zap-only wiring.",
+    "bestFor": [
+      "Teams that want AI-generated automation code with self-healing execution",
+      "Ops and RevOps buyers bridging non-technical users and API-heavy stacks",
+      "Organizations comparing AI-first automation against classic Zapier Zaps",
+      "small-business / operations: Turbotic fit for small-business operations teams in the ai-automation job cluster, from first-party positioning and Affiliate new Turbotic 2026-08-26 research.",
+      "mid-market / operations: Turbotic fit for mid-market operations teams in the ai-automation job cluster, from first-party positioning and Affiliate new Turbotic 2026-08-26 research.",
+      "enterprise / operations: Turbotic fit for enterprise operations teams in the ai-automation job cluster, from first-party positioning and Affiliate new Turbotic 2026-08-26 research."
+    ],
+    "notIdealFor": [
+      "Buyers who only need simple two-app Zaps with a mature 6,000-app catalog (Zapier)",
+      "Self-hosted-only requirements (n8n Community)",
+      "Pure LLM research/chat workloads (ChatGPT-class tools)",
+      "Newer platform — confirm enterprise references and connector catalog depth",
+      "Execution/chat quotas vary by tier — monitor usage on Free and Basic",
+      "Not a general-purpose LLM chat replacement like ChatGPT"
+    ],
+    "coreCapabilities": [
+      "llm chat",
+      "agent builder",
+      "custom projects",
+      "usage credits",
+      "connectors",
+      "analytics reporting",
+      "code assist",
+      "workflow automation"
+    ],
+    "pricingSummary": "4 documented plans · 1 free · entry paid: Basic",
+    "keyTradeoffs": [
+      "Newer platform — confirm enterprise references and connector catalog depth",
+      "Execution/chat quotas vary by tier — monitor usage on Free and Basic",
+      "Not a general-purpose LLM chat replacement like ChatGPT",
+      "Self-host/open-source automation peers (n8n Community) differ on deployment model",
+      "Complex legacy RPA (UiPath-class) is a different job cluster"
+    ],
+    "alternatives": [
+      {
+        "slug": "zapier",
+        "name": "Zapier"
+      },
+      {
+        "slug": "n8n",
+        "name": "n8n"
+      }
+    ],
+    "importantComparisons": [
+      {
+        "slug": "turbotic-vs-zapier",
+        "title": "Turbotic vs Zapier",
+        "href": "/compare/turbotic-vs-zapier/"
+      },
+      {
+        "slug": "n8n-vs-turbotic",
+        "title": "Turbotic vs n8n",
+        "href": "/compare/n8n-vs-turbotic/"
+      },
+      {
+        "slug": "adcreative-ai-vs-turbotic",
+        "title": "AdCreative.ai vs Turbotic",
+        "href": "/compare/adcreative-ai-vs-turbotic/"
+      },
+      {
+        "slug": "adobe-firefly-vs-turbotic",
+        "title": "Adobe Firefly vs Turbotic",
+        "href": "/compare/adobe-firefly-vs-turbotic/"
+      },
+      {
+        "slug": "ai-intelekt-vs-turbotic",
+        "title": "AI InteleKt vs Turbotic",
+        "href": "/compare/ai-intelekt-vs-turbotic/"
+      },
+      {
+        "slug": "aira-vs-turbotic",
+        "title": "Aira vs Turbotic",
+        "href": "/compare/aira-vs-turbotic/"
+      }
+    ],
+    "relevantGuides": [
+      {
+        "slug": "what-is-turbotic",
+        "title": "What Is Turbotic?",
+        "href": "/guides/what-is-turbotic/"
+      },
+      {
+        "slug": "turbotic-implementation",
+        "title": "Turbotic Implementation: 30/60/90 AI Rollout That Sticks",
+        "href": "/guides/turbotic-implementation/"
+      },
+      {
+        "slug": "turbotic-migration",
+        "title": "Turbotic Migration: Move Projects Without Losing Context",
+        "href": "/guides/turbotic-migration/"
+      },
+      {
+        "slug": "turbotic-setup",
+        "title": "Turbotic Setup: Day-Zero Path to a Working AI Loop",
+        "href": "/guides/turbotic-setup/"
+      },
+      {
+        "slug": "turbotic-plans",
+        "title": "Turbotic Plans: Seats, Credits, and Qualifying Tiers",
+        "href": "/guides/turbotic-plans/"
+      },
+      {
+        "slug": "is-turbotic-worth-it",
+        "title": "Is Turbotic Worth It? Fit Scenarios Before You Buy",
+        "href": "/guides/is-turbotic-worth-it/"
+      }
+    ],
+    "evidenceState": "Research/data-based (no completed hands-on test) · Latest verification/research signal: 2026-08-26T12:00:00.000Z · Editorial assessment: approved",
+    "nextDecisionStep": "Compare against peers: Turbotic vs Zapier",
+    "missingSections": [
+      "canonical_vendor",
+      "trial"
+    ]
+  },
+  "dependents": [
+    {
+      "kind": "guide",
+      "slug": "what-is-turbotic",
+      "path": "/guides/what-is-turbotic/"
+    },
+    {
+      "kind": "guide",
+      "slug": "turbotic-implementation",
+      "path": "/guides/turbotic-implementation/"
+    },
+    {
+      "kind": "guide",
+      "slug": "turbotic-migration",
+      "path": "/guides/turbotic-migration/"
+    },
+    {
+      "kind": "guide",
+      "slug": "turbotic-setup",
+      "path": "/guides/turbotic-setup/"
+    },
+    {
+      "kind": "guide",
+      "slug": "turbotic-plans",
+      "path": "/guides/turbotic-plans/"
+    },
+    {
+      "kind": "guide",
+      "slug": "is-turbotic-worth-it",
+      "path": "/guides/is-turbotic-worth-it/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "turbotic-vs-zapier",
+      "path": "/compare/turbotic-vs-zapier/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "n8n-vs-turbotic",
+      "path": "/compare/n8n-vs-turbotic/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "adcreative-ai-vs-turbotic",
+      "path": "/compare/adcreative-ai-vs-turbotic/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "adobe-firefly-vs-turbotic",
+      "path": "/compare/adobe-firefly-vs-turbotic/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "ai-intelekt-vs-turbotic",
+      "path": "/compare/ai-intelekt-vs-turbotic/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "aira-vs-turbotic",
+      "path": "/compare/aira-vs-turbotic/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "chatgpt-vs-turbotic",
+      "path": "/compare/chatgpt-vs-turbotic/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "claude-vs-turbotic",
+      "path": "/compare/claude-vs-turbotic/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "cursor-vs-turbotic",
+      "path": "/compare/cursor-vs-turbotic/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "elevenlabs-vs-turbotic",
+      "path": "/compare/elevenlabs-vs-turbotic/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "fireflies-vs-turbotic",
+      "path": "/compare/fireflies-vs-turbotic/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "gamma-vs-turbotic",
+      "path": "/compare/gamma-vs-turbotic/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "gemini-vs-turbotic",
+      "path": "/compare/gemini-vs-turbotic/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "github-copilot-vs-turbotic",
+      "path": "/compare/github-copilot-vs-turbotic/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "hynote-vs-turbotic",
+      "path": "/compare/hynote-vs-turbotic/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "microsoft-copilot-vs-turbotic",
+      "path": "/compare/microsoft-copilot-vs-turbotic/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "midjourney-vs-turbotic",
+      "path": "/compare/midjourney-vs-turbotic/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "mindstudio-vs-turbotic",
+      "path": "/compare/mindstudio-vs-turbotic/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "otter-ai-vs-turbotic",
+      "path": "/compare/otter-ai-vs-turbotic/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "perplexity-vs-turbotic",
+      "path": "/compare/perplexity-vs-turbotic/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "quillbot-vs-turbotic",
+      "path": "/compare/quillbot-vs-turbotic/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "rank-prompt-vs-turbotic",
+      "path": "/compare/rank-prompt-vs-turbotic/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "runway-vs-turbotic",
+      "path": "/compare/runway-vs-turbotic/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "synthesia-vs-turbotic",
+      "path": "/compare/synthesia-vs-turbotic/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "turbotic-vs-wegic",
+      "path": "/compare/turbotic-vs-wegic/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "turbotic-vs-writesonic",
+      "path": "/compare/turbotic-vs-writesonic/"
+    },
+    {
+      "kind": "alternatives",
+      "slug": "turbotic",
+      "path": "/alternatives/turbotic/"
+    },
+    {
+      "kind": "pricing",
+      "slug": "turbotic",
+      "path": "/software/turbotic/pricing/"
+    },
+    {
+      "kind": "tools",
+      "slug": "ai-cost-calculator",
+      "path": "/tools/ai-cost-calculator/"
+    }
+  ],
+  "dependentsNeedingRefresh": [],
+  "remediation": [
+    "verify:canonical_vendor",
+    "verify:trial"
+  ],
+  "notes": [
+    "fieldAudit score=89",
+    "decisionHub bestFor=6 notIdeal=6",
+    "dependents=35"
+  ],
+  "materiallyImproved": false
+}

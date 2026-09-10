@@ -19,16 +19,18 @@ export const categoriesSeed: CategoryInput[] = [
     slug: "crm",
     name: "CRM",
     shortDescription:
-      "Find CRM software that fits your business, team, and sales process.",
+      "Compare CRM software by job fit: pipeline CRM, relationship CRM, or marketing+CRM stacks — with clear limits and buyer scenarios.",
+    description:
+      "CRM software for contacts, deals, and sales pipelines. Start from your operating job — pipeline velocity, relationship memory, or marketing+CRM — then shortlist tools that clear seat, object, and automation constraints.",
     path: ["crm"],
     parentSlug: null,
     sortOrder: 1,
     pageIntent: "indexable",
     metadata: published,
     seo: {
-      title: "CRM Software",
+      title: "CRM Software: Choose by Job Fit, Not Brand Lists",
       description:
-        "Explore CRM software and choose tools that fit your sales process.",
+        "CRM software for contacts, deals, and sales pipelines. Start from your operating job — pipeline velocity, relationship memory, or marketing+CRM — then shortlist tools that clear seat, object, and automation constraints. Not a generic software directory.",
       indexable: true,
       canonicalPath: "/categories/crm/",
     },
@@ -134,7 +136,7 @@ export const categoriesSeed: CategoryInput[] = [
       description:
         "Choose email marketing software that fits your list size, automation needs, and budget.",
       indexable: true,
-      canonicalPath: "/categories/email-marketing/",
+      canonicalPath: "/categories/marketing/email-marketing/",
     },
   },
   {
@@ -305,15 +307,16 @@ export const categoriesSeed: CategoryInput[] = [
     id: "cat-ecommerce",
     slug: "ecommerce",
     name: "Ecommerce",
-    shortDescription: "Ecommerce platforms and related software.",
+    shortDescription: "Explore ecommerce platforms and adjacent tools — storefront first, then marketing and operations add-ons.",
+    description: "Ecommerce software covers storefronts, carts, and order operations. Separate storefront platforms from adjacent marketing, CRM, and fulfillment tools.",
     path: ["ecommerce"],
     parentSlug: null,
     sortOrder: 10,
     pageIntent: "hub",
     metadata: published,
     seo: {
-      title: "Ecommerce Software",
-      description: "Explore ecommerce software.",
+      title: "Ecommerce Software: Storefronts vs Adjacent Tools",
+      description: "Ecommerce software covers storefronts, carts, and order operations. Separate storefront platforms from adjacent marketing, CRM, and fulfillment tools so you do not buy the wrong category for cart recovery or CRM jobs.",
       indexable: true,
       canonicalPath: "/categories/ecommerce/",
     },

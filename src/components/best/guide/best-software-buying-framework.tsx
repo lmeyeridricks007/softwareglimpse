@@ -56,12 +56,14 @@ export function BestSoftwareBuyingFramework({ framework, className }: Props) {
 
 type GroupsProps = {
   groups: BestPageModel["guideGroups"];
+  categoryShortName?: string;
   exploreAllHref?: string;
   className?: string;
 };
 
 export function BestSoftwareGuideGroups({
   groups,
+  categoryShortName = "software",
   exploreAllHref = "/guides/",
   className,
 }: GroupsProps) {
@@ -71,10 +73,10 @@ export function BestSoftwareGuideGroups({
     <div className={cn(className)}>
       <div className="flex flex-wrap items-end justify-between gap-3">
         <h2 className="font-[family-name:var(--font-display)] text-[length:var(--sg-text-h2)] font-semibold text-[var(--sg-color-navy)]">
-          CRM buying guides
+          {categoryShortName} buying guides
         </h2>
         <ButtonLink href={exploreAllHref} variant="outline" size="sm">
-          Explore all CRM guides →
+          Explore all {categoryShortName} guides →
         </ButtonLink>
       </div>
       <div className="mt-6 grid gap-6 lg:grid-cols-2">
@@ -107,16 +109,21 @@ export function BestSoftwareGuideGroups({
 
 type HubsProps = {
   hubs: BestPageModel["productHubs"];
+  categoryShortName?: string;
   className?: string;
 };
 
-export function BestSoftwareProductHubs({ hubs, className }: HubsProps) {
+export function BestSoftwareProductHubs({
+  hubs,
+  categoryShortName = "software",
+  className,
+}: HubsProps) {
   if (hubs.length === 0) return null;
 
   return (
     <div className={cn(className)}>
       <h2 className="font-[family-name:var(--font-display)] text-[length:var(--sg-text-h2)] font-semibold text-[var(--sg-color-navy)]">
-        Learn about individual CRM platforms
+        Learn about individual {categoryShortName} platforms
       </h2>
       <ul className="mt-5 grid gap-3 sm:grid-cols-2 lg:grid-cols-3">
         {hubs.map((hub) => (

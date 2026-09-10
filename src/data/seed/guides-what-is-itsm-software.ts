@@ -1,4 +1,4 @@
-import type { GuidePage } from "@/domain";
+import type { GuidePageInput } from "@/domain";
 import type { z } from "zod";
 import type { GuideContentBlockSchema } from "@/domain";
 import { tier30GuideScheduledAt } from "@/data/config/publishing/tier-30-itsm-launch-2027-08-01";
@@ -53,7 +53,7 @@ const blocks: GuideBlockInput[] = [
   },
 ];
 
-function metadata(): GuidePage["metadata"] {
+function metadata(): GuidePageInput["metadata"] {
   return SCHEDULED_AT
     ? {
         status: "scheduled",
@@ -73,7 +73,7 @@ function metadata(): GuidePage["metadata"] {
       };
 }
 
-export const whatIsItsmSoftwareGuide: GuidePage = {
+export const whatIsItsmSoftwareGuide: GuidePageInput = {
   id: "guide-what-is-itsm-software",
   slug: SLUG,
   title: "What Is ITSM Software?",
@@ -96,7 +96,7 @@ export const whatIsItsmSoftwareGuide: GuidePage = {
     "itsm-vs-it-development-software",
     "what-is-it-development-software",
   ],
-  blocks: blocks as GuidePage["blocks"],
+  blocks: blocks as GuidePageInput["blocks"],
   checklist: [],
   sections: [],
   faq: [],
@@ -107,6 +107,6 @@ export const whatIsItsmSoftwareGuide: GuidePage = {
     description:
       "Employee incidents, change management, and service catalogs — how ITSM differs from customer helpdesks.",
     canonicalPath: `/guides/${SLUG}/`,
-    indexable: !SCHEDULED_AT,
+    indexable: true,
   },
 };

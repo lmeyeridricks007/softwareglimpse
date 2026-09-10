@@ -1,4 +1,4 @@
-import type { GuidePage } from "@/domain";
+import type { GuidePageInput } from "@/domain";
 import type { z } from "zod";
 import type { GuideContentBlockSchema } from "@/domain";
 
@@ -323,7 +323,7 @@ const crmVendorMigrationBlocks: GuideBlockInput[] = [
   },
 ];
 
-export const crmVendorMigrationGuide: GuidePage = {
+export const crmVendorMigrationGuide: GuidePageInput = {
   id: "guide-crm-vendor-migration",
   slug: "crm-vendor-migration",
   title: "Migrate to Another CRM Vendor: Switch Playbook",
@@ -364,7 +364,7 @@ export const crmVendorMigrationGuide: GuidePage = {
     "crm-implementation-mistakes",
     "how-to-choose-crm",
   ],
-  blocks: crmVendorMigrationBlocks as GuidePage["blocks"],
+  blocks: crmVendorMigrationBlocks as GuidePageInput["blocks"],
   checklist: [
     {
       id: "dual-inventory",

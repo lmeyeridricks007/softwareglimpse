@@ -1,4 +1,4 @@
-import type { GuidePage } from "@/domain";
+import type { GuidePageInput } from "@/domain";
 import type { z } from "zod";
 import type { GuideContentBlockSchema } from "@/domain";
 import { tier32GuideScheduledAt } from "@/data/config/publishing/tier-32-landing-pages-cro-launch-2027-09-01";
@@ -34,7 +34,7 @@ const blocks: GuideBlockInput[] = [
   },
 ];
 
-function metadata(): GuidePage["metadata"] {
+function metadata(): GuidePageInput["metadata"] {
   return SCHEDULED_AT
     ? {
         status: "scheduled",
@@ -54,7 +54,7 @@ function metadata(): GuidePage["metadata"] {
       };
 }
 
-export const howToChooseLandingPagesCroSoftwareGuide: GuidePage = {
+export const howToChooseLandingPagesCroSoftwareGuide: GuidePageInput = {
   id: "guide-how-to-choose-landing-pages-cro-software",
   slug: SLUG,
   title: "How to Choose Landing Pages & CRO Software",
@@ -75,7 +75,7 @@ export const howToChooseLandingPagesCroSoftwareGuide: GuidePage = {
     "landing-pages-cro-evaluation-guide",
     "landing-pages-cro-vs-marketing-software",
   ],
-  blocks: blocks as GuidePage["blocks"],
+  blocks: blocks as GuidePageInput["blocks"],
   checklist: [],
   sections: [],
   faq: [],
@@ -86,6 +86,6 @@ export const howToChooseLandingPagesCroSoftwareGuide: GuidePage = {
     description:
       "Choose landing and CRO software by cluster, traffic limits, testing depth, and integrations.",
     canonicalPath: `/guides/${SLUG}/`,
-    indexable: !SCHEDULED_AT,
+    indexable: true,
   },
 };

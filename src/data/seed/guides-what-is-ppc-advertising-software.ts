@@ -1,4 +1,4 @@
-import type { GuidePage } from "@/domain";
+import type { GuidePageInput } from "@/domain";
 import type { z } from "zod";
 import type { GuideContentBlockSchema } from "@/domain";
 import { tier33GuideScheduledAt } from "@/data/config/publishing/tier-33-ppc-advertising-launch-2027-09-01";
@@ -54,7 +54,7 @@ const blocks: GuideBlockInput[] = [
   },
 ];
 
-function metadata(): GuidePage["metadata"] {
+function metadata(): GuidePageInput["metadata"] {
   return SCHEDULED_AT
     ? {
         status: "scheduled",
@@ -74,7 +74,7 @@ function metadata(): GuidePage["metadata"] {
       };
 }
 
-export const whatIsPpcAdvertisingSoftwareGuide: GuidePage = {
+export const whatIsPpcAdvertisingSoftwareGuide: GuidePageInput = {
   id: "guide-what-is-ppc-advertising-software",
   slug: SLUG,
   title: "What Is PPC Advertising Software?",
@@ -97,7 +97,7 @@ export const whatIsPpcAdvertisingSoftwareGuide: GuidePage = {
     "ppc-advertising-vs-marketing-software",
     "what-is-marketing-software",
   ],
-  blocks: blocks as GuidePage["blocks"],
+  blocks: blocks as GuidePageInput["blocks"],
   checklist: [],
   sections: [],
   faq: [],
@@ -108,6 +108,6 @@ export const whatIsPpcAdvertisingSoftwareGuide: GuidePage = {
     description:
       "Paid search and social campaign automation — how PPC software differs from organic social and MAP.",
     canonicalPath: `/guides/${SLUG}/`,
-    indexable: !SCHEDULED_AT,
+    indexable: true,
   },
 };

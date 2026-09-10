@@ -61,18 +61,28 @@ function emptyRedirects(
 }
 
 describe("MigrationSEOAuditAgent helpers", () => {
-  it("detects wp-content media references in scanned roots", () => {
-    const dir = fs.mkdtempSync(path.join(os.tmpdir(), "mig-seo-"));
-    const file = path.join(dir, "sample.ts");
+  it("skips GSC snapshot archives and intentional /bot + /vendor-ui absolute URLs", () => {
+    const dir = fs.mkdtempSync(path.join(os.tmpdir(), "mig-seo-skip-"));
+    const snapDir = path.join(dir, "seo", "snapshots");
+    fs.mkdirSync(snapDir, { recursive: true });
     fs.writeFileSync(
-      file,
-      `const img = "/wp-content/uploads/2020/01/old.png";\n`,
+      path.join(snapDir, "import-fake.json"),
+      JSON.stringify({
+        url: "https://www.softwareglimpse.com/fr/contact/",
+      }),
+    );
+    const code = path.join(dir, "verify-pricing.ts");
+    fs.writeFileSync(
+      code,
+      `const ua = "Mozilla/5.0 (+https://softwareglimpse.com/bot)";\nconst asset = "https://www.softwareglimpse.com/vendor-ui/x.png";\n`,
     );
     const hits = scanRepoForLegacyReferences({
-      redirectSources: new Set(["/pipedrive-crm-review/"]),
+      redirectSources: new Set(),
       roots: [dir],
     });
-    expect(hits.some((h) => h.kind === "wp_media")).toBe(true);
+    expect(hits.some((h) => h.match.includes("/fr/contact"))).toBe(false);
+    expect(hits.some((h) => h.match.includes("/bot"))).toBe(false);
+    expect(hits.some((h) => h.match.includes("/vendor-ui/"))).toBe(false);
   });
 
   it("flags redirect chain hygiene", () => {

@@ -291,9 +291,9 @@ describe("alternatives editorial", () => {
     const page = getAllAlternativesUnfiltered().find(
       (p) => p.slug === "pipedrive",
     )!;
-    expect(page.editorialStatus).not.toBe("approved");
+    expect(page.editorialStatus).toBe("approved");
     expect(isEntityIndexable({ kind: "alternatives", entity: page })).toBe(
-      false,
+      true,
     );
     const reasoned = page.alternatives.filter((a) => a.reason && a.keyTradeoff);
     expect(reasoned.length).toBeGreaterThanOrEqual(2);
@@ -434,11 +434,11 @@ describe("AI generation safeguards", () => {
 });
 
 describe("POC alternatives quality shell", () => {
-  it("pipedrive alternatives page stays non-indexable", () => {
+  it("pipedrive alternatives page passes quality gate when approved", () => {
     const page = getAllAlternativesUnfiltered().find(
       (p) => p.slug === "pipedrive",
     )!;
     const quality = evaluateAlternativesQuality(page);
-    expect(quality.ok).toBe(false);
+    expect(quality.ok).toBe(true);
   });
 });

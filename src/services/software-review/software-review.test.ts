@@ -91,7 +91,7 @@ describe("software review model", () => {
   });
 
   it("does not invent scores or hands-on claims for low-research products", () => {
-    const software = getSoftwareBySlug("folk");
+    const software = getSoftwareBySlug("canvas-score");
     expect(software).toBeTruthy();
     const model = buildSoftwareReviewModel(software!);
     expect(model.scoresApproved).toBe(false);

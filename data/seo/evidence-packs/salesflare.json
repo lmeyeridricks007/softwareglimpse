@@ -1,0 +1,398 @@
+{
+  "slug": "salesflare",
+  "name": "Salesflare",
+  "categorySlug": "crm",
+  "generatedAt": "2026-09-07T22:40:50.758Z",
+  "version": "1.0.0",
+  "evidenceLevelBefore": "researched",
+  "evidenceLevelAfter": "data_verified",
+  "promotedToDataVerified": true,
+  "sources": [
+    {
+      "id": "salesflare-pricing-fixture",
+      "kind": "vendor_pricing",
+      "url": "https://salesflare.com/pricing",
+      "title": "Salesflare Pricing (fixture snapshot)",
+      "sourceType": "fixture",
+      "authority": "fixture",
+      "domains": [
+        "pricing",
+        "plans",
+        "free-plan",
+        "free-trial"
+      ],
+      "retrievedAt": null,
+      "verifiedAt": null,
+      "lastCheckedAt": null,
+      "confidence": null,
+      "status": "archived"
+    },
+    {
+      "id": "salesflare-product-fixture",
+      "kind": "feature",
+      "url": "https://salesflare.com",
+      "title": "Salesflare Product (fixture snapshot)",
+      "sourceType": "fixture",
+      "authority": "fixture",
+      "domains": [
+        "identity",
+        "features",
+        "ai-capabilities",
+        "product-positioning"
+      ],
+      "retrievedAt": null,
+      "verifiedAt": null,
+      "lastCheckedAt": null,
+      "confidence": null,
+      "status": "archived"
+    },
+    {
+      "id": "salesflare-pricing-official",
+      "kind": "vendor_pricing",
+      "url": "https://salesflare.com/pricing",
+      "title": "Salesflare Pricing",
+      "sourceType": "official-pricing-page",
+      "authority": "first-party",
+      "domains": [
+        "pricing",
+        "plans",
+        "free-plan",
+        "free-trial"
+      ],
+      "retrievedAt": "2026-08-13T18:00:00.000Z",
+      "verifiedAt": "2026-08-13T18:00:00.000Z",
+      "lastCheckedAt": "2026-08-13T18:00:00.000Z",
+      "confidence": "high",
+      "status": "active"
+    },
+    {
+      "id": "salesflare-product-official",
+      "kind": "integration",
+      "url": "https://salesflare.com",
+      "title": "Salesflare CRM",
+      "sourceType": "official-product-page",
+      "authority": "first-party",
+      "domains": [
+        "identity",
+        "features",
+        "product-positioning",
+        "ai-capabilities",
+        "integrations"
+      ],
+      "retrievedAt": "2026-08-13T18:00:00.000Z",
+      "verifiedAt": "2026-08-13T18:00:00.000Z",
+      "lastCheckedAt": "2026-08-13T18:00:00.000Z",
+      "confidence": "high",
+      "status": "active"
+    }
+  ],
+  "vendorSourceCount": 3,
+  "pricingSourceCount": 2,
+  "docsSourceCount": 0,
+  "featureEvidenceCount": 18,
+  "integrationEvidenceCount": 2,
+  "plans": [
+    {
+      "id": "plan-growth",
+      "slug": "growth",
+      "name": "Growth",
+      "isFree": false,
+      "contactSales": false,
+      "hasFreeTrial": true
+    },
+    {
+      "id": "plan-pro",
+      "slug": "pro",
+      "name": "Pro",
+      "isFree": false,
+      "contactSales": false,
+      "hasFreeTrial": true
+    },
+    {
+      "id": "plan-enterprise",
+      "slug": "enterprise",
+      "name": "Enterprise",
+      "isFree": false,
+      "contactSales": false,
+      "hasFreeTrial": true
+    }
+  ],
+  "researchTimestamps": {
+    "enrichmentUpdatedAt": "2026-08-15T13:40:00.000Z",
+    "domainCheckedAt": {
+      "identity": "2026-08-13T18:00:00.000Z",
+      "pricing": "2026-08-13T18:00:00.000Z",
+      "plans": "2026-08-13T18:00:00.000Z",
+      "free-plan": "2026-08-13T18:00:00.000Z",
+      "free-trial": "2026-08-13T18:00:00.000Z",
+      "features": "2026-08-13T18:00:00.000Z",
+      "ai-capabilities": "2026-08-13T18:00:00.000Z",
+      "product-positioning": "2026-08-13T18:00:00.000Z",
+      "integrations": "2026-08-13T18:00:00.000Z",
+      "limits": "2026-08-13T18:00:00.000Z",
+      "support": "2026-08-13T18:00:00.000Z"
+    },
+    "enrichmentPricingVerifiedAt": "2026-09-07T22:41:25.924Z",
+    "enrichmentPricingSourceIds": [
+      "salesflare-pricing-official"
+    ],
+    "softwarePricingVerifiedAt": null,
+    "researchDate": null
+  },
+  "pricingVerification": {
+    "attempted": true,
+    "verified": true,
+    "httpStatus": 200,
+    "sourceId": "salesflare-pricing-official",
+    "sourceUrl": "https://salesflare.com/pricing",
+    "planNamesChecked": [
+      "Growth",
+      "Pro",
+      "Enterprise"
+    ],
+    "planNamesFound": [
+      "Growth",
+      "Pro",
+      "Enterprise"
+    ],
+    "planHitRatio": 1,
+    "rejectReason": null,
+    "verifiedAt": "2026-09-07T22:41:25.924Z",
+    "stampApplied": true
+  },
+  "dependentPages": [
+    {
+      "kind": "guide",
+      "slug": "how-to-choose-crm",
+      "path": "/guides/how-to-choose-crm/"
+    },
+    {
+      "kind": "guide",
+      "slug": "salesflare-implementation",
+      "path": "/guides/salesflare-implementation/"
+    },
+    {
+      "kind": "guide",
+      "slug": "salesflare-migration",
+      "path": "/guides/salesflare-migration/"
+    },
+    {
+      "kind": "guide",
+      "slug": "salesflare-setup",
+      "path": "/guides/salesflare-setup/"
+    },
+    {
+      "kind": "guide",
+      "slug": "salesflare-plans",
+      "path": "/guides/salesflare-plans/"
+    },
+    {
+      "kind": "guide",
+      "slug": "is-salesflare-worth-it",
+      "path": "/guides/is-salesflare-worth-it/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "act-vs-salesflare",
+      "path": "/compare/act-vs-salesflare/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "affinity-vs-salesflare",
+      "path": "/compare/affinity-vs-salesflare/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "agile-crm-vs-salesflare",
+      "path": "/compare/agile-crm-vs-salesflare/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "apptivo-vs-salesflare",
+      "path": "/compare/apptivo-vs-salesflare/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "attio-vs-salesflare",
+      "path": "/compare/attio-vs-salesflare/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "bitrix24-vs-salesflare",
+      "path": "/compare/bitrix24-vs-salesflare/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "capsule-vs-salesflare",
+      "path": "/compare/capsule-vs-salesflare/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "close-vs-salesflare",
+      "path": "/compare/close-vs-salesflare/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "cloze-vs-salesflare",
+      "path": "/compare/cloze-vs-salesflare/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "copper-vs-salesflare",
+      "path": "/compare/copper-vs-salesflare/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "creatio-vs-salesflare",
+      "path": "/compare/creatio-vs-salesflare/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "dynamics-365-vs-salesflare",
+      "path": "/compare/dynamics-365-vs-salesflare/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "folk-vs-salesflare",
+      "path": "/compare/folk-vs-salesflare/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "freshsales-vs-salesflare",
+      "path": "/compare/freshsales-vs-salesflare/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "hubspot-vs-salesflare",
+      "path": "/compare/hubspot-vs-salesflare/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "insightly-vs-salesflare",
+      "path": "/compare/insightly-vs-salesflare/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "keap-vs-salesflare",
+      "path": "/compare/keap-vs-salesflare/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "mailchimp-vs-salesflare",
+      "path": "/compare/mailchimp-vs-salesflare/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "monday-sales-crm-vs-salesflare",
+      "path": "/compare/monday-sales-crm-vs-salesflare/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "netsuite-vs-salesflare",
+      "path": "/compare/netsuite-vs-salesflare/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "nimble-vs-salesflare",
+      "path": "/compare/nimble-vs-salesflare/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "nutshell-vs-salesflare",
+      "path": "/compare/nutshell-vs-salesflare/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "oracle-cx-vs-salesflare",
+      "path": "/compare/oracle-cx-vs-salesflare/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "pardot-vs-salesflare",
+      "path": "/compare/pardot-vs-salesflare/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "pega-vs-salesflare",
+      "path": "/compare/pega-vs-salesflare/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "pipedrive-vs-salesflare",
+      "path": "/compare/pipedrive-vs-salesflare/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "pipelinepro-vs-salesflare",
+      "path": "/compare/pipelinepro-vs-salesflare/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "podio-vs-salesflare",
+      "path": "/compare/podio-vs-salesflare/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "salesflare-vs-salesforce",
+      "path": "/compare/salesflare-vs-salesforce/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "salesflare-vs-sap",
+      "path": "/compare/salesflare-vs-sap/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "salesflare-vs-siebel",
+      "path": "/compare/salesflare-vs-siebel/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "salesflare-vs-streak",
+      "path": "/compare/salesflare-vs-streak/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "salesflare-vs-sugarcrm",
+      "path": "/compare/salesflare-vs-sugarcrm/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "salesflare-vs-wealthbox",
+      "path": "/compare/salesflare-vs-wealthbox/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "salesflare-vs-zendesk",
+      "path": "/compare/salesflare-vs-zendesk/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "salesflare-vs-zoho-crm",
+      "path": "/compare/salesflare-vs-zoho-crm/"
+    },
+    {
+      "kind": "alternatives",
+      "slug": "salesflare",
+      "path": "/alternatives/salesflare/"
+    },
+    {
+      "kind": "pricing",
+      "slug": "salesflare",
+      "path": "/software/salesflare/pricing/"
+    },
+    {
+      "kind": "best",
+      "slug": "crm-software",
+      "path": "/best/crm-software/"
+    },
+    {
+      "kind": "tools",
+      "slug": "crm-cost-calculator",
+      "path": "/tools/crm-cost-calculator/"
+    }
+  ],
+  "notes": [
+    "DATA_VERIFIED via live vendor plan confirmation (https://salesflare.com/pricing)"
+  ]
+}

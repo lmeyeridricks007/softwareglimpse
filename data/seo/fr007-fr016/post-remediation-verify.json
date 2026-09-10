@@ -1,0 +1,54 @@
+{
+  "generatedAt": "2026-09-08T16:10:00.000Z",
+  "targets": {
+    "phantomIndexable": 0,
+    "indexableGuidesFailEditorialCompleteness": 0,
+    "indexableEntityMissingHero": 0
+  },
+  "achieved": {
+    "phantomIndexable": 0,
+    "indexableGuidesFailEditorialCompleteness": 0,
+    "indexableEntityMissingHero": 0,
+    "lifecycleOrphansDemoted": 57
+  },
+  "classificationSummary": {
+    "MISSING_VISUAL": {
+      "count": 66,
+      "action": "Hard editorial_completeness + hero required for isEntityIndexable/promote; pages remain routable, out of sitemap until heroes added"
+    },
+    "LIFECYCLE_ORPHAN": {
+      "count": 57,
+      "action": "Demoted registry INDEXABLE/READY → IMPROVE via seo:lifecycle-orphans --apply --persist"
+    },
+    "CONTENT_REGRESSION": {
+      "count": 1,
+      "example": "/software/canvas-score/",
+      "action": "seo.indexable set false (empty_generated_content hard fail)"
+    }
+  },
+  "justifiedExceptions": [
+    {
+      "path": "/categories/crm/",
+      "class": "QUALITY_GATE_STALE",
+      "note": "No hard fails; qualityScore below category minIndexScore. Hub remains entity-indexable by design (catalogue hub). Enrichment backlog — not a phantom."
+    },
+    {
+      "path": "/categories/ecommerce/",
+      "class": "QUALITY_GATE_STALE",
+      "note": "No hard fails; score below minIndexScore. Same hub policy as CRM."
+    },
+    {
+      "path": "/software/sellfy/",
+      "class": "QUALITY_GATE_STALE",
+      "note": "No hard fails; score 67 below software minIndexScore. Affiliate gap stub with identity content — entity-indexable per software quality evaluator until review filled."
+    }
+  ],
+  "prevention": [
+    "editorial_completeness severity hard",
+    "guidePassesIndexGates requires heroVisual + meta description",
+    "canPromoteToIndexable requires public route + index gates",
+    "npm run seo:lifecycle-orphans",
+    "sitemap reconcile emits lifecycle_orphan",
+    "quality gate reports IMPROVE when hard-failing despite seed INDEXABLE"
+  ]
+}

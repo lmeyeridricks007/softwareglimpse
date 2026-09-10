@@ -1,0 +1,206 @@
+{
+  "slug": "pagerduty-plans",
+  "enrichmentType": "COST_GUIDE",
+  "updatedAt": "2026-09-09T05:59:41.613Z",
+  "uniqueValueAdded": [
+    "pricing_comparison",
+    "sg_original_data",
+    "scenario_analysis",
+    "implementation_workflow",
+    "decision_framework",
+    "limitations_evidence",
+    "product_shortlist",
+    "alternatives_map",
+    "buyer_checklist"
+  ],
+  "patch": {
+    "summary": "PagerDuty cost guide: researched plan structure, free/trial flags, who each tier suits, cost scenarios, and value tradeoffs — no invented prices.",
+    "blocks": [
+      {
+        "id": "da-pagerduty-plans-1",
+        "type": "direct-answer",
+        "body": "PagerDuty pricing is plan-gated across 4 researched tiers. Free entry: Free. Trial/free path present in researched plans. Compare seat/capacity gates and unlocks — not list-price folklore.",
+        "bullets": [
+          "Free plan(s): Free",
+          "Trial/free path present in researched plans",
+          "Entry paid tier researched: Professional"
+        ]
+      },
+      {
+        "id": "cost-pagerduty-plans-2",
+        "type": "cost-breakdown",
+        "title": "PagerDuty plan matrix and who each tier suits",
+        "body": "Structure and trial/free flags come from SoftwareGlimpse pricing research. Dollar amounts appear only when verified — never invent list prices.",
+        "lines": [
+          {
+            "label": "Free",
+            "description": "Free plan · Unlocks: incident management, change and problem management, infrastructure monitoring · Suits: explore before committing seats"
+          },
+          {
+            "label": "Professional",
+            "description": "Trial available · Suits: teams whose must-have gates appear on this tier"
+          },
+          {
+            "label": "Business",
+            "description": "Trial available · Suits: teams whose must-have gates appear on this tier"
+          },
+          {
+            "label": "Enterprise",
+            "description": "Contact sales · Suits: teams that need custom procurement"
+          }
+        ],
+        "calculatorHref": "/tools/it-development-cost-calculator/",
+        "calculatorLabel": "Model category cost fit"
+      },
+      {
+        "id": "scen-pagerduty-plans-3",
+        "type": "step",
+        "heading": "PagerDuty cost scenarios to pressure-test",
+        "body": "Price PagerDuty against how you actually buy seats and unlocks — not against a competitor's homepage headline.",
+        "stepNumber": 1,
+        "scenarios": [
+          {
+            "title": "Lean team / free-or-trial first",
+            "body": "Stay on Free until a gated capability (enterprise security and SSO (Free, Professional, Business, Enterprise)) becomes mandatory."
+          },
+          {
+            "title": "Growing team with gated workflows",
+            "body": "Map must-have workflows (incident management, change and problem management, infrastructure monitoring) to plan unlocks before expanding seats."
+          },
+          {
+            "title": "Hidden / extra cost watch",
+            "body": "Budget risk: Does not replace Datadog/New Relic telemetry — it pages people. Also check add-ons, overages, and admin time outside the sticker plan."
+          }
+        ]
+      },
+      {
+        "id": "value-pagerduty-plans-4",
+        "type": "decision-framework",
+        "title": "PagerDuty value rule",
+        "steps": [
+          {
+            "id": "v-1",
+            "label": "Pay up when SRE/IT teams that need on-call schedules and paging requires a paid unlock you will use weekly"
+          },
+          {
+            "id": "v-2",
+            "label": "Do not overbuy if this limitation dominates: Does not replace Datadog/New Relic telemetry — it pages people"
+          },
+          {
+            "id": "v-3",
+            "label": "Side-by-side cost with Datadog on the same seat count"
+          }
+        ]
+      },
+      {
+        "id": "lim-pagerduty-plans-5",
+        "type": "mistakes",
+        "title": "PagerDuty cost mistakes to avoid",
+        "items": [
+          {
+            "title": "Cost trap 1",
+            "body": "Does not replace Datadog/New Relic telemetry — it pages people"
+          },
+          {
+            "title": "Cost trap 2",
+            "body": "AIOps / Advance / status pages often stack on responder seats"
+          },
+          {
+            "title": "Cost trap 3",
+            "body": "Not an ITSM CMDB (ServiceNow / Freshservice)"
+          },
+          {
+            "title": "Cost trap 4",
+            "body": "Stakeholder (read-only) licences are extra on many plans"
+          },
+          {
+            "title": "Cost trap 5",
+            "body": "Free is a 5-responder cap"
+          }
+        ]
+      },
+      {
+        "id": "alts-pagerduty-plans-6",
+        "type": "product-shortlist",
+        "title": "Cheaper or clearer alternatives to pressure-test",
+        "body": "Compare total cost of ownership vs PagerDuty on identical constraints.",
+        "productSlugs": [
+          "datadog",
+          "jira-service-management"
+        ],
+        "disclaimer": "Catalogue peers only — not commission-ranked."
+      },
+      {
+        "id": "sel-pagerduty-plans-7",
+        "type": "selection-checklist",
+        "title": "PagerDuty pricing checklist",
+        "dimensions": [
+          {
+            "id": "gates",
+            "label": "Plan gates you must unlock",
+            "options": [
+              "enterprise security and SSO (Free, Professional, Business, Enterprise)"
+            ]
+          },
+          {
+            "id": "trial",
+            "label": "Trial / free proof",
+            "options": [
+              "Free plan usable for pilot",
+              "Trial days enough",
+              "Paid gate acceptable"
+            ]
+          },
+          {
+            "id": "tco",
+            "label": "TCO extras",
+            "options": [
+              "Add-ons checked",
+              "Admin time budgeted",
+              "Migration cost noted"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "cta-pagerduty-plans-8",
+        "type": "interactive-cta",
+        "title": "Model it-development spend with PagerDuty in mind",
+        "body": "Use researched plan structure for PagerDuty alongside category cost modelling.",
+        "href": "/tools/it-development-cost-calculator/",
+        "ctaLabel": "Open calculator",
+        "variant": "calculator"
+      }
+    ],
+    "checklist": [
+      {
+        "id": "enrich-chk-0",
+        "label": "List must-have unlocks before picking a PagerDuty tier",
+        "order": 0
+      },
+      {
+        "id": "enrich-chk-1",
+        "label": "Trial/free path present in researched plans",
+        "order": 1
+      },
+      {
+        "id": "enrich-chk-2",
+        "label": "Price in this risk: Does not replace Datadog/New Relic telemetry — it pages people",
+        "order": 2
+      },
+      {
+        "id": "enrich-chk-3",
+        "label": "Compare seat TCO with Datadog",
+        "order": 3
+      }
+    ],
+    "nextAction": {
+      "contentId": "tool:finder:it-development",
+      "label": "Open Finder shortlist"
+    }
+  },
+  "notes": [
+    "Cost guide: real plan structure, free/trial, TCO tradeoffs — never invent prices.",
+    "Type-specific skeleton: COST_GUIDE"
+  ]
+}

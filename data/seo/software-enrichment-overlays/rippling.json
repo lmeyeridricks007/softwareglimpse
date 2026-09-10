@@ -1,0 +1,429 @@
+{
+  "slug": "rippling",
+  "updatedAt": "2026-09-08T21:28:59.651Z",
+  "version": "1.0.0",
+  "fieldAudit": {
+    "slug": "rippling",
+    "checkedAt": "2026-09-08T21:28:59.650Z",
+    "items": [
+      {
+        "field": "name",
+        "status": "PASS",
+        "detail": "Name: Rippling",
+        "source": "seed"
+      },
+      {
+        "field": "product_status",
+        "status": "PASS",
+        "detail": "productLifecycle=active",
+        "source": "seed"
+      },
+      {
+        "field": "canonical_vendor",
+        "status": "PASS",
+        "detail": "Vendor: People Center, Inc.",
+        "source": "seed"
+      },
+      {
+        "field": "category",
+        "status": "PASS",
+        "detail": "primaryCategorySlug=hr",
+        "source": "seed"
+      },
+      {
+        "field": "description",
+        "status": "PASS",
+        "detail": "Description present (Unified people platform (HR + payroll + IT/spend) — published SMB floor $8/user/…)",
+        "source": "seed"
+      },
+      {
+        "field": "target_audience",
+        "status": "PASS",
+        "detail": "Sizes=3, teams=2, assessment bestFor=3",
+        "source": "assessment"
+      },
+      {
+        "field": "use_cases",
+        "status": "PASS",
+        "detail": "useCaseSlugs=3",
+        "source": "seed"
+      },
+      {
+        "field": "capabilities",
+        "status": "PASS",
+        "detail": "featureRatings=0, enrichment features=16",
+        "source": "enrichment"
+      },
+      {
+        "field": "pricing",
+        "status": "PASS",
+        "detail": "Pricing envelope present",
+        "source": "enrichment"
+      },
+      {
+        "field": "plans",
+        "status": "PASS",
+        "detail": "plans=2",
+        "source": "enrichment"
+      },
+      {
+        "field": "free_plan",
+        "status": "PASS",
+        "detail": "No free plan in documented plans (explicit absence)",
+        "source": "enrichment"
+      },
+      {
+        "field": "trial",
+        "status": "UNKNOWN",
+        "detail": "Trial not explicitly documented — do not assume none",
+        "source": "none"
+      },
+      {
+        "field": "integrations",
+        "status": "PASS",
+        "detail": "integrationSlugs=0, enrichment=3",
+        "source": "enrichment"
+      },
+      {
+        "field": "alternatives",
+        "status": "PASS",
+        "detail": "alternativeSlugs=3",
+        "source": "seed"
+      },
+      {
+        "field": "competitors",
+        "status": "PASS",
+        "detail": "competitorSlugs=4",
+        "source": "seed"
+      },
+      {
+        "field": "affiliate",
+        "status": "PASS",
+        "detail": "Affiliate enabled with tracking URL",
+        "source": "seed"
+      },
+      {
+        "field": "source_provenance",
+        "status": "PASS",
+        "detail": "seed sources=0, enrichment sourceIds=3",
+        "source": "enrichment"
+      },
+      {
+        "field": "verification_date",
+        "status": "PASS",
+        "detail": "Latest verification/research signal: 2026-08-18T08:00:00.000Z",
+        "source": "enrichment"
+      }
+    ],
+    "passCount": 17,
+    "partialCount": 0,
+    "missingCount": 0,
+    "unknownCount": 1,
+    "score": 94
+  },
+  "decisionHub": {
+    "whatItIs": "Rippling is a unified workforce platform spanning HRIS, payroll, benefits, time, recruiting, plus native IT (devices/SSO) and spend on one employee system of record. The published SMB floor is $8/user/mo plus a $40/mo base fee for core platform access; payroll, benefits, IT, spend, and EOR modules stack PEPM and are largely quote-led. No free plan or self-serve trial — demo / free quote.",
+    "bestFor": [
+      "Companies that want HR, payroll, and IT provisioning on one employee record",
+      "Fast-growing teams willing to model modular PEPM TCO",
+      "Orgs that currently stitch HRIS + Okta/MDM + payroll and want one hire event",
+      "small-business / operations: Rippling fit for small-business operations teams in the people-platform job cluster, from first-party positioning and HR Priority-1 research.",
+      "mid-market / operations: Rippling fit for mid-market operations teams in the people-platform job cluster, from first-party positioning and HR Priority-1 research.",
+      "enterprise / operations: Rippling fit for enterprise operations teams in the people-platform job cluster, from first-party positioning and HR Priority-1 research."
+    ],
+    "notIdealFor": [
+      "Teams that only need simple US payroll (Gusto is the lighter start)",
+      "Buyers who want a dedicated ATS as the primary purchase (Greenhouse)",
+      "Frontline-only operators shopping for shift scheduling apps",
+      "The $8 floor is platform/core only — payroll, IT, spend, and EOR stack PEPM and dominate TCO",
+      "No published free plan or self-serve trial; sales-led packaging",
+      "Easy to overbuy modules that the team will not adopt"
+    ],
+    "coreCapabilities": [
+      "core hris",
+      "payroll processing",
+      "benefits admin",
+      "workforce scheduling",
+      "frontline comms",
+      "time attendance",
+      "gps geofence clockin",
+      "sop knowledge base"
+    ],
+    "pricingSummary": "2 documented plans · entry paid: Rippling Platform",
+    "keyTradeoffs": [
+      "The $8 floor is platform/core only — payroll, IT, spend, and EOR stack PEPM and dominate TCO",
+      "No published free plan or self-serve trial; sales-led packaging",
+      "Easy to overbuy modules that the team will not adopt",
+      "Implementation is non-trivial versus a simple Gusto payroll start",
+      "Not a hospitality/frontline WFM specialist (Connecteam/Deputy class)"
+    ],
+    "alternatives": [
+      {
+        "slug": "bamboohr",
+        "name": "BambooHR"
+      },
+      {
+        "slug": "gusto",
+        "name": "Gusto"
+      },
+      {
+        "slug": "greenhouse",
+        "name": "Greenhouse"
+      },
+      {
+        "slug": "workday",
+        "name": "Workday"
+      },
+      {
+        "slug": "hibob",
+        "name": "HiBob"
+      }
+    ],
+    "importantComparisons": [
+      {
+        "slug": "bamboohr-vs-rippling",
+        "title": "BambooHR vs Rippling",
+        "href": "/compare/bamboohr-vs-rippling/"
+      },
+      {
+        "slug": "gusto-vs-rippling",
+        "title": "Gusto vs Rippling",
+        "href": "/compare/gusto-vs-rippling/"
+      },
+      {
+        "slug": "navan-vs-rippling",
+        "title": "Navan vs Rippling",
+        "href": "/compare/navan-vs-rippling/"
+      },
+      {
+        "slug": "7shifts-vs-rippling",
+        "title": "7shifts vs Rippling",
+        "href": "/compare/7shifts-vs-rippling/"
+      },
+      {
+        "slug": "adp-workforce-now-vs-rippling",
+        "title": "ADP Workforce Now vs Rippling",
+        "href": "/compare/adp-workforce-now-vs-rippling/"
+      },
+      {
+        "slug": "ashby-vs-rippling",
+        "title": "Ashby vs Rippling",
+        "href": "/compare/ashby-vs-rippling/"
+      }
+    ],
+    "relevantGuides": [
+      {
+        "slug": "what-is-rippling",
+        "title": "What Is Rippling?",
+        "href": "/guides/what-is-rippling/"
+      },
+      {
+        "slug": "rippling-implementation",
+        "title": "Rippling Implementation: 30/60/90 HR Rollout That Sticks",
+        "href": "/guides/rippling-implementation/"
+      },
+      {
+        "slug": "rippling-migration",
+        "title": "Rippling Migration: Move People Data Without Losing Trust",
+        "href": "/guides/rippling-migration/"
+      },
+      {
+        "slug": "rippling-setup",
+        "title": "Rippling Setup: Day-Zero Path to a Working HR Loop",
+        "href": "/guides/rippling-setup/"
+      },
+      {
+        "slug": "rippling-plans",
+        "title": "Rippling Plans: Seats, Hubs, and Qualifying Tiers",
+        "href": "/guides/rippling-plans/"
+      },
+      {
+        "slug": "is-rippling-worth-it",
+        "title": "Is Rippling Worth It? Fit Scenarios Before You Buy",
+        "href": "/guides/is-rippling-worth-it/"
+      }
+    ],
+    "evidenceState": "Research/data-based (no completed hands-on test) · Latest verification/research signal: 2026-08-18T08:00:00.000Z · Editorial assessment: approved",
+    "nextDecisionStep": "Compare against peers: BambooHR vs Rippling",
+    "missingSections": [
+      "trial"
+    ]
+  },
+  "dependents": [
+    {
+      "kind": "guide",
+      "slug": "what-is-rippling",
+      "path": "/guides/what-is-rippling/"
+    },
+    {
+      "kind": "guide",
+      "slug": "rippling-implementation",
+      "path": "/guides/rippling-implementation/"
+    },
+    {
+      "kind": "guide",
+      "slug": "rippling-migration",
+      "path": "/guides/rippling-migration/"
+    },
+    {
+      "kind": "guide",
+      "slug": "rippling-setup",
+      "path": "/guides/rippling-setup/"
+    },
+    {
+      "kind": "guide",
+      "slug": "rippling-plans",
+      "path": "/guides/rippling-plans/"
+    },
+    {
+      "kind": "guide",
+      "slug": "is-rippling-worth-it",
+      "path": "/guides/is-rippling-worth-it/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "bamboohr-vs-rippling",
+      "path": "/compare/bamboohr-vs-rippling/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "gusto-vs-rippling",
+      "path": "/compare/gusto-vs-rippling/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "navan-vs-rippling",
+      "path": "/compare/navan-vs-rippling/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "7shifts-vs-rippling",
+      "path": "/compare/7shifts-vs-rippling/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "adp-workforce-now-vs-rippling",
+      "path": "/compare/adp-workforce-now-vs-rippling/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "ashby-vs-rippling",
+      "path": "/compare/ashby-vs-rippling/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "bolt-for-business-vs-rippling",
+      "path": "/compare/bolt-for-business-vs-rippling/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "carepatron-vs-rippling",
+      "path": "/compare/carepatron-vs-rippling/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "dayforce-vs-rippling",
+      "path": "/compare/dayforce-vs-rippling/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "deputy-vs-rippling",
+      "path": "/compare/deputy-vs-rippling/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "greenhouse-vs-rippling",
+      "path": "/compare/greenhouse-vs-rippling/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "hibob-vs-rippling",
+      "path": "/compare/hibob-vs-rippling/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "homebase-vs-rippling",
+      "path": "/compare/homebase-vs-rippling/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "lever-vs-rippling",
+      "path": "/compare/lever-vs-rippling/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "oracle-hcm-vs-rippling",
+      "path": "/compare/oracle-hcm-vs-rippling/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "paycor-vs-rippling",
+      "path": "/compare/paycor-vs-rippling/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "paylocity-vs-rippling",
+      "path": "/compare/paylocity-vs-rippling/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "personio-vs-rippling",
+      "path": "/compare/personio-vs-rippling/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "rippling-vs-trainual",
+      "path": "/compare/rippling-vs-trainual/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "rippling-vs-ukg-pro",
+      "path": "/compare/rippling-vs-ukg-pro/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "rippling-vs-when-i-work",
+      "path": "/compare/rippling-vs-when-i-work/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "rippling-vs-workable",
+      "path": "/compare/rippling-vs-workable/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "rippling-vs-workday",
+      "path": "/compare/rippling-vs-workday/"
+    },
+    {
+      "kind": "alternatives",
+      "slug": "rippling",
+      "path": "/alternatives/rippling/"
+    },
+    {
+      "kind": "pricing",
+      "slug": "rippling",
+      "path": "/software/rippling/pricing/"
+    },
+    {
+      "kind": "best",
+      "slug": "hr-software",
+      "path": "/best/hr-software/"
+    },
+    {
+      "kind": "tools",
+      "slug": "hr-cost-calculator",
+      "path": "/tools/hr-cost-calculator/"
+    }
+  ],
+  "dependentsNeedingRefresh": [],
+  "remediation": [
+    "verify:trial"
+  ],
+  "notes": [
+    "fieldAudit score=94",
+    "decisionHub bestFor=6 notIdeal=6",
+    "dependents=33"
+  ],
+  "materiallyImproved": true
+}

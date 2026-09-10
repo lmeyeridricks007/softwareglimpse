@@ -19,6 +19,7 @@ import {
   categoryToolHref,
 } from "@/data/config/tools/category-tool-meta";
 import { siteFoundationConfig } from "@/data/config/site/foundation";
+import { categoryHasPublishedPillar } from "@/services/category-tools/pillar-gate";
 import { buildPageMetadata } from "@/seo/metadata";
 
 const TITLE = "Software Cost Calculator";
@@ -51,7 +52,9 @@ const CATEGORY_CALCULATORS = [
     cta: "Open SI Cost Calculator →",
     icon: Binoculars,
   },
-  ...NEW_TOOL_CATEGORY_SLUGS.map((slug) => {
+  ...NEW_TOOL_CATEGORY_SLUGS.filter((slug) =>
+    categoryHasPublishedPillar(slug),
+  ).map((slug) => {
     const meta = CATEGORY_TOOL_META[slug];
     return {
       id: slug,

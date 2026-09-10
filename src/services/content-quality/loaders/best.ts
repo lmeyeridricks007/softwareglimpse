@@ -166,9 +166,7 @@ export function snapshotFromBestPage(page: BestPage): PageQualitySnapshot {
     ),
     structure: {
       hasQuickAnswer: Boolean(
-        (typeof page.verdict === "string"
-          ? page.verdict.trim()
-          : page.verdict?.body?.trim()) || page.quickAnswerIntro?.trim(),
+        page.verdict?.body?.trim() || page.quickAnswerIntro?.trim(),
       ),
       headingCount:
         8 +

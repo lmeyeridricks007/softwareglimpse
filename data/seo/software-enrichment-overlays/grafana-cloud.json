@@ -1,0 +1,522 @@
+{
+  "slug": "grafana-cloud",
+  "updatedAt": "2026-09-08T21:57:07.455Z",
+  "version": "1.0.0",
+  "fieldAudit": {
+    "slug": "grafana-cloud",
+    "checkedAt": "2026-09-08T21:57:07.453Z",
+    "items": [
+      {
+        "field": "name",
+        "status": "PASS",
+        "detail": "Name: Grafana Cloud",
+        "source": "seed"
+      },
+      {
+        "field": "product_status",
+        "status": "PASS",
+        "detail": "productLifecycle=active",
+        "source": "seed"
+      },
+      {
+        "field": "canonical_vendor",
+        "status": "PASS",
+        "detail": "Vendor: Grafana Labs",
+        "source": "seed"
+      },
+      {
+        "field": "category",
+        "status": "PASS",
+        "detail": "primaryCategorySlug=it-development",
+        "source": "seed"
+      },
+      {
+        "field": "description",
+        "status": "PASS",
+        "detail": "Description present (Managed Grafana observability — Free 10k series / 50 GB logs; Pro from $19/mo pl…)",
+        "source": "seed"
+      },
+      {
+        "field": "target_audience",
+        "status": "PASS",
+        "detail": "Sizes=3, teams=2, assessment bestFor=3",
+        "source": "assessment"
+      },
+      {
+        "field": "use_cases",
+        "status": "PASS",
+        "detail": "useCaseSlugs=1",
+        "source": "seed"
+      },
+      {
+        "field": "capabilities",
+        "status": "PASS",
+        "detail": "featureRatings=0, enrichment features=15",
+        "source": "enrichment"
+      },
+      {
+        "field": "pricing",
+        "status": "PASS",
+        "detail": "Pricing envelope present",
+        "source": "enrichment"
+      },
+      {
+        "field": "plans",
+        "status": "PASS",
+        "detail": "plans=3",
+        "source": "enrichment"
+      },
+      {
+        "field": "free_plan",
+        "status": "PASS",
+        "detail": "Free plan documented",
+        "source": "enrichment"
+      },
+      {
+        "field": "trial",
+        "status": "UNKNOWN",
+        "detail": "Trial not explicitly documented — do not assume none",
+        "source": "none"
+      },
+      {
+        "field": "integrations",
+        "status": "PASS",
+        "detail": "integrationSlugs=0, enrichment=3",
+        "source": "enrichment"
+      },
+      {
+        "field": "alternatives",
+        "status": "PASS",
+        "detail": "alternativeSlugs=2",
+        "source": "seed"
+      },
+      {
+        "field": "competitors",
+        "status": "PASS",
+        "detail": "competitorSlugs=2",
+        "source": "seed"
+      },
+      {
+        "field": "affiliate",
+        "status": "PASS",
+        "detail": "No affiliate relationship (explicit)",
+        "source": "seed"
+      },
+      {
+        "field": "source_provenance",
+        "status": "PASS",
+        "detail": "seed sources=0, enrichment sourceIds=3",
+        "source": "enrichment"
+      },
+      {
+        "field": "verification_date",
+        "status": "PASS",
+        "detail": "Latest verification/research signal: 2026-08-18T12:00:00.000Z",
+        "source": "enrichment"
+      }
+    ],
+    "passCount": 17,
+    "partialCount": 0,
+    "missingCount": 0,
+    "unknownCount": 1,
+    "score": 94
+  },
+  "decisionHub": {
+    "whatItIs": "Grafana Cloud is Grafana Labs’ managed metrics/logs/traces/profiles stack (Mimir, Loki, Tempo, Pyroscope) plus Grafana. Free includes 10,000 active series, 50 GB logs/traces/profiles, 3 users, 14-day retention. Pro adds a published ~$19/month platform fee, longer retention, and usage rates (commonly $6.50 per 1,000 billable series and $8 per active visualisation user). Enterprise/Advanced is a spend-commit (~$25k/year cited) custom contract. Self-hosted Grafana OSS remains free and is a different buying motion.",
+    "bestFor": [
+      "Teams already fluent in Grafana/Prometheus",
+      "Startups that fit in the Free telemetry caps",
+      "Platform teams that want Mimir/Loki without operating it",
+      "small-business / engineering: Grafana Cloud fit for small-business engineering teams in the observability-monitoring job cluster, from first-party positioning and IT Priority-2 research.",
+      "mid-market / engineering: Grafana Cloud fit for mid-market engineering teams in the observability-monitoring job cluster, from first-party positioning and IT Priority-2 research.",
+      "enterprise / engineering: Grafana Cloud fit for enterprise engineering teams in the observability-monitoring job cluster, from first-party positioning and IT Priority-2 research."
+    ],
+    "notIdealFor": [
+      "Buyers who want Datadog-style host SKUs and a single APM vendor UX",
+      "ITSM desks (Freshservice)",
+      "On-call-only (PagerDuty)",
+      "Pro bills many usage dimensions — the $19 fee is not the bill",
+      "Free retention is 14 days — production teams usually need Pro",
+      "Enterprise security (SAML, audit) is not the Free/Pro default story"
+    ],
+    "coreCapabilities": [
+      "incident management",
+      "infrastructure monitoring",
+      "apm tracing",
+      "log management",
+      "cicd actions",
+      "itsm ai",
+      "dev ai",
+      "oncall paging"
+    ],
+    "pricingSummary": "3 documented plans · 1 free · entry paid: Pro (platform fee)",
+    "keyTradeoffs": [
+      "Pro bills many usage dimensions — the $19 fee is not the bill",
+      "Free retention is 14 days — production teams usually need Pro",
+      "Enterprise security (SAML, audit) is not the Free/Pro default story",
+      "Not ITSM or source control",
+      "Running Grafana OSS yourself is a different TCO (people, not SaaS)"
+    ],
+    "alternatives": [
+      {
+        "slug": "datadog",
+        "name": "Datadog"
+      },
+      {
+        "slug": "new-relic",
+        "name": "New Relic"
+      }
+    ],
+    "importantComparisons": [
+      {
+        "slug": "datadog-vs-grafana-cloud",
+        "title": "Grafana Cloud vs Datadog",
+        "href": "/compare/datadog-vs-grafana-cloud/"
+      },
+      {
+        "slug": "elastic-observability-vs-grafana-cloud",
+        "title": "Elastic Observability vs Grafana Cloud",
+        "href": "/compare/elastic-observability-vs-grafana-cloud/"
+      },
+      {
+        "slug": "apify-vs-grafana-cloud",
+        "title": "Apify vs Grafana Cloud",
+        "href": "/compare/apify-vs-grafana-cloud/"
+      },
+      {
+        "slug": "appdynamics-vs-grafana-cloud",
+        "title": "AppDynamics vs Grafana Cloud",
+        "href": "/compare/appdynamics-vs-grafana-cloud/"
+      },
+      {
+        "slug": "azure-devops-vs-grafana-cloud",
+        "title": "Azure DevOps vs Grafana Cloud",
+        "href": "/compare/azure-devops-vs-grafana-cloud/"
+      },
+      {
+        "slug": "bitbucket-vs-grafana-cloud",
+        "title": "Bitbucket Cloud vs Grafana Cloud",
+        "href": "/compare/bitbucket-vs-grafana-cloud/"
+      }
+    ],
+    "relevantGuides": [
+      {
+        "slug": "grafana-cloud-implementation",
+        "title": "Grafana Cloud Implementation: 30/60/90 IT Rollout That Sticks",
+        "href": "/guides/grafana-cloud-implementation/"
+      },
+      {
+        "slug": "grafana-cloud-migration",
+        "title": "Grafana Cloud Migration: Move Tickets and Repos Without Losing Trust",
+        "href": "/guides/grafana-cloud-migration/"
+      },
+      {
+        "slug": "grafana-cloud-setup",
+        "title": "Grafana Cloud Setup: Day-Zero Path to a Working IT Loop",
+        "href": "/guides/grafana-cloud-setup/"
+      },
+      {
+        "slug": "grafana-cloud-plans",
+        "title": "Grafana Cloud Plans: Seats, Hosts, and Qualifying Tiers",
+        "href": "/guides/grafana-cloud-plans/"
+      },
+      {
+        "slug": "is-grafana-cloud-worth-it",
+        "title": "Is Grafana Cloud Worth It? Fit Scenarios Before You Buy",
+        "href": "/guides/is-grafana-cloud-worth-it/"
+      }
+    ],
+    "evidenceState": "Research/data-based (no completed hands-on test) · Latest verification/research signal: 2026-08-18T12:00:00.000Z · Editorial assessment: approved",
+    "nextDecisionStep": "Compare against peers: Grafana Cloud vs Datadog",
+    "missingSections": [
+      "trial"
+    ]
+  },
+  "dependents": [
+    {
+      "kind": "guide",
+      "slug": "grafana-cloud-implementation",
+      "path": "/guides/grafana-cloud-implementation/"
+    },
+    {
+      "kind": "guide",
+      "slug": "grafana-cloud-migration",
+      "path": "/guides/grafana-cloud-migration/"
+    },
+    {
+      "kind": "guide",
+      "slug": "grafana-cloud-setup",
+      "path": "/guides/grafana-cloud-setup/"
+    },
+    {
+      "kind": "guide",
+      "slug": "grafana-cloud-plans",
+      "path": "/guides/grafana-cloud-plans/"
+    },
+    {
+      "kind": "guide",
+      "slug": "is-grafana-cloud-worth-it",
+      "path": "/guides/is-grafana-cloud-worth-it/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "datadog-vs-grafana-cloud",
+      "path": "/compare/datadog-vs-grafana-cloud/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "elastic-observability-vs-grafana-cloud",
+      "path": "/compare/elastic-observability-vs-grafana-cloud/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "apify-vs-grafana-cloud",
+      "path": "/compare/apify-vs-grafana-cloud/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "appdynamics-vs-grafana-cloud",
+      "path": "/compare/appdynamics-vs-grafana-cloud/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "azure-devops-vs-grafana-cloud",
+      "path": "/compare/azure-devops-vs-grafana-cloud/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "bitbucket-vs-grafana-cloud",
+      "path": "/compare/bitbucket-vs-grafana-cloud/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "bmc-helix-vs-grafana-cloud",
+      "path": "/compare/bmc-helix-vs-grafana-cloud/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "bright-data-vs-grafana-cloud",
+      "path": "/compare/bright-data-vs-grafana-cloud/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "buildkite-vs-grafana-cloud",
+      "path": "/compare/buildkite-vs-grafana-cloud/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "chronosphere-vs-grafana-cloud",
+      "path": "/compare/chronosphere-vs-grafana-cloud/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "circleci-vs-grafana-cloud",
+      "path": "/compare/circleci-vs-grafana-cloud/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "cloudways-vs-grafana-cloud",
+      "path": "/compare/cloudways-vs-grafana-cloud/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "coralogix-vs-grafana-cloud",
+      "path": "/compare/coralogix-vs-grafana-cloud/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "cpanel-vs-grafana-cloud",
+      "path": "/compare/cpanel-vs-grafana-cloud/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "directadmin-vs-grafana-cloud",
+      "path": "/compare/directadmin-vs-grafana-cloud/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "dynatrace-vs-grafana-cloud",
+      "path": "/compare/dynatrace-vs-grafana-cloud/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "firehydrant-vs-grafana-cloud",
+      "path": "/compare/firehydrant-vs-grafana-cloud/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "fly-io-vs-grafana-cloud",
+      "path": "/compare/fly-io-vs-grafana-cloud/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "github-vs-grafana-cloud",
+      "path": "/compare/github-vs-grafana-cloud/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "gitlab-vs-grafana-cloud",
+      "path": "/compare/gitlab-vs-grafana-cloud/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "grafana-cloud-vs-haloitsm",
+      "path": "/compare/grafana-cloud-vs-haloitsm/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "grafana-cloud-vs-heroku",
+      "path": "/compare/grafana-cloud-vs-heroku/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "grafana-cloud-vs-honeycomb",
+      "path": "/compare/grafana-cloud-vs-honeycomb/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "grafana-cloud-vs-incident-io",
+      "path": "/compare/grafana-cloud-vs-incident-io/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "grafana-cloud-vs-iproyal",
+      "path": "/compare/grafana-cloud-vs-iproyal/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "grafana-cloud-vs-ivanti",
+      "path": "/compare/grafana-cloud-vs-ivanti/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "grafana-cloud-vs-jira-service-management",
+      "path": "/compare/grafana-cloud-vs-jira-service-management/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "grafana-cloud-vs-kinsta",
+      "path": "/compare/grafana-cloud-vs-kinsta/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "grafana-cloud-vs-manageengine-servicedesk-plus",
+      "path": "/compare/grafana-cloud-vs-manageengine-servicedesk-plus/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "grafana-cloud-vs-new-relic",
+      "path": "/compare/grafana-cloud-vs-new-relic/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "grafana-cloud-vs-oxylabs",
+      "path": "/compare/grafana-cloud-vs-oxylabs/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "grafana-cloud-vs-pagerduty",
+      "path": "/compare/grafana-cloud-vs-pagerduty/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "grafana-cloud-vs-railway",
+      "path": "/compare/grafana-cloud-vs-railway/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "grafana-cloud-vs-render",
+      "path": "/compare/grafana-cloud-vs-render/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "grafana-cloud-vs-rootly",
+      "path": "/compare/grafana-cloud-vs-rootly/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "grafana-cloud-vs-scraperapi",
+      "path": "/compare/grafana-cloud-vs-scraperapi/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "grafana-cloud-vs-sentry",
+      "path": "/compare/grafana-cloud-vs-sentry/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "grafana-cloud-vs-servicenow",
+      "path": "/compare/grafana-cloud-vs-servicenow/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "grafana-cloud-vs-siteground",
+      "path": "/compare/grafana-cloud-vs-siteground/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "grafana-cloud-vs-smartproxy",
+      "path": "/compare/grafana-cloud-vs-smartproxy/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "grafana-cloud-vs-splunk",
+      "path": "/compare/grafana-cloud-vs-splunk/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "grafana-cloud-vs-squadcast",
+      "path": "/compare/grafana-cloud-vs-squadcast/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "grafana-cloud-vs-sysaid",
+      "path": "/compare/grafana-cloud-vs-sysaid/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "grafana-cloud-vs-thordata",
+      "path": "/compare/grafana-cloud-vs-thordata/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "grafana-cloud-vs-topdesk",
+      "path": "/compare/grafana-cloud-vs-topdesk/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "grafana-cloud-vs-wp-engine",
+      "path": "/compare/grafana-cloud-vs-wp-engine/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "grafana-cloud-vs-zyte",
+      "path": "/compare/grafana-cloud-vs-zyte/"
+    },
+    {
+      "kind": "alternatives",
+      "slug": "grafana-cloud",
+      "path": "/alternatives/grafana-cloud/"
+    },
+    {
+      "kind": "pricing",
+      "slug": "grafana-cloud",
+      "path": "/software/grafana-cloud/pricing/"
+    },
+    {
+      "kind": "tools",
+      "slug": "it-development-cost-calculator",
+      "path": "/tools/it-development-cost-calculator/"
+    }
+  ],
+  "dependentsNeedingRefresh": [],
+  "remediation": [
+    "verify:trial"
+  ],
+  "notes": [
+    "fieldAudit score=94",
+    "decisionHub bestFor=6 notIdeal=6",
+    "dependents=55"
+  ],
+  "materiallyImproved": true
+}

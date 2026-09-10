@@ -1,0 +1,532 @@
+{
+  "slug": "coralogix",
+  "updatedAt": "2026-09-07T22:31:21.961Z",
+  "version": "1.0.0",
+  "fieldAudit": {
+    "slug": "coralogix",
+    "checkedAt": "2026-09-07T22:31:21.959Z",
+    "items": [
+      {
+        "field": "name",
+        "status": "PASS",
+        "detail": "Name: Coralogix",
+        "source": "seed"
+      },
+      {
+        "field": "product_status",
+        "status": "PASS",
+        "detail": "productLifecycle=active",
+        "source": "seed"
+      },
+      {
+        "field": "canonical_vendor",
+        "status": "UNKNOWN",
+        "detail": "Company/vendor not documented",
+        "source": "none"
+      },
+      {
+        "field": "category",
+        "status": "PASS",
+        "detail": "primaryCategorySlug=it-development",
+        "source": "seed"
+      },
+      {
+        "field": "description",
+        "status": "PASS",
+        "detail": "Description present (Observability usage rate card — Logs $0.42/GB, Traces $0.16/GB, Metrics $0.06/GB…)",
+        "source": "seed"
+      },
+      {
+        "field": "target_audience",
+        "status": "PASS",
+        "detail": "Sizes=3, teams=2, assessment bestFor=3",
+        "source": "assessment"
+      },
+      {
+        "field": "use_cases",
+        "status": "PASS",
+        "detail": "useCaseSlugs=1",
+        "source": "seed"
+      },
+      {
+        "field": "capabilities",
+        "status": "PASS",
+        "detail": "featureRatings=0, enrichment features=17",
+        "source": "enrichment"
+      },
+      {
+        "field": "pricing",
+        "status": "PASS",
+        "detail": "Pricing envelope present",
+        "source": "enrichment"
+      },
+      {
+        "field": "plans",
+        "status": "PASS",
+        "detail": "plans=2",
+        "source": "enrichment"
+      },
+      {
+        "field": "free_plan",
+        "status": "PASS",
+        "detail": "No free plan in documented plans (explicit absence)",
+        "source": "enrichment"
+      },
+      {
+        "field": "trial",
+        "status": "PASS",
+        "detail": "Trial documented on plans/pricing",
+        "source": "enrichment"
+      },
+      {
+        "field": "integrations",
+        "status": "PASS",
+        "detail": "integrationSlugs=0, enrichment=3",
+        "source": "enrichment"
+      },
+      {
+        "field": "alternatives",
+        "status": "PASS",
+        "detail": "alternativeSlugs=2",
+        "source": "seed"
+      },
+      {
+        "field": "competitors",
+        "status": "PASS",
+        "detail": "competitorSlugs=5",
+        "source": "seed"
+      },
+      {
+        "field": "affiliate",
+        "status": "PASS",
+        "detail": "No affiliate relationship (explicit)",
+        "source": "seed"
+      },
+      {
+        "field": "source_provenance",
+        "status": "PASS",
+        "detail": "seed sources=0, enrichment sourceIds=3",
+        "source": "enrichment"
+      },
+      {
+        "field": "verification_date",
+        "status": "PASS",
+        "detail": "Latest verification/research signal: 2026-08-18T22:00:00.000Z",
+        "source": "enrichment"
+      }
+    ],
+    "passCount": 17,
+    "partialCount": 0,
+    "missingCount": 0,
+    "unknownCount": 1,
+    "score": 94
+  },
+  "decisionHub": {
+    "whatItIs": "Coralogix is an observability platform (logs, traces, metrics, plus an AI token meter) sold on a published usage rate card rather than a Datadog-style host SKU. First-party pricing: Logs $0.42/GB, Traces $0.16/GB, Metrics $0.06/GB, AI $1.50/1M tokens. Free trial is 14 days / 8 units. No free-forever plan and no published monthly seat floor — do not invent one. Same observability-monitoring cluster as Datadog — Datadog remains the award (8.6); this entity does not outrank it. Distinct from Chronosphere’s quote/pilot control plane and from Honeycomb’s $150 Pro event/trace tile.",
+    "bestFor": [
+      "Teams that want a published per-GB observability card instead of host SKUs",
+      "Buyers who will spend the 14-day / 8-unit trial before committing",
+      "Comparisons versus Datadog modules, Chronosphere quotes, and Honeycomb Pro $150",
+      "small-business / engineering: Coralogix fit for small-business engineering teams in the observability-monitoring job cluster, from first-party positioning and IT optional-next research.",
+      "mid-market / engineering: Coralogix fit for mid-market engineering teams in the observability-monitoring job cluster, from first-party positioning and IT optional-next research.",
+      "enterprise / engineering: Coralogix fit for enterprise engineering teams in the observability-monitoring job cluster, from first-party positioning and IT optional-next research."
+    ],
+    "notIdealFor": [
+      "SRE teams buying Datadog infrastructure monitoring as the award path",
+      "Prometheus-cardinality control-plane specialists (Chronosphere)",
+      "ITSM or cloud PaaS purchases",
+      "Does not outrank Datadog (8.6)",
+      "No published seat floor — GB/token math still dominates TCO",
+      "14-day / 8-unit trial is not a free forever plan"
+    ],
+    "coreCapabilities": [
+      "infrastructure monitoring",
+      "apm tracing",
+      "log management",
+      "enterprise security",
+      "analytics reporting",
+      "observability monitoring"
+    ],
+    "pricingSummary": "2 documented plans · entry paid: Pay-as-you-go rate card · trial documented on at least one plan",
+    "keyTradeoffs": [
+      "Does not outrank Datadog (8.6)",
+      "No published seat floor — GB/token math still dominates TCO",
+      "14-day / 8-unit trial is not a free forever plan",
+      "Not a Chronosphere-style Prometheus control plane as the primary identity",
+      "Not ITSM, git, hosting panel, managed hosting, or cloud PaaS"
+    ],
+    "alternatives": [
+      {
+        "slug": "datadog",
+        "name": "Datadog"
+      },
+      {
+        "slug": "chronosphere",
+        "name": "Chronosphere"
+      },
+      {
+        "slug": "grafana-cloud",
+        "name": "Grafana Cloud"
+      },
+      {
+        "slug": "honeycomb",
+        "name": "Honeycomb"
+      },
+      {
+        "slug": "new-relic",
+        "name": "New Relic"
+      }
+    ],
+    "importantComparisons": [
+      {
+        "slug": "coralogix-vs-datadog",
+        "title": "Coralogix vs Datadog",
+        "href": "/compare/coralogix-vs-datadog/"
+      },
+      {
+        "slug": "apify-vs-coralogix",
+        "title": "Apify vs Coralogix",
+        "href": "/compare/apify-vs-coralogix/"
+      },
+      {
+        "slug": "appdynamics-vs-coralogix",
+        "title": "AppDynamics vs Coralogix",
+        "href": "/compare/appdynamics-vs-coralogix/"
+      },
+      {
+        "slug": "azure-devops-vs-coralogix",
+        "title": "Azure DevOps vs Coralogix",
+        "href": "/compare/azure-devops-vs-coralogix/"
+      },
+      {
+        "slug": "bitbucket-vs-coralogix",
+        "title": "Bitbucket Cloud vs Coralogix",
+        "href": "/compare/bitbucket-vs-coralogix/"
+      },
+      {
+        "slug": "bmc-helix-vs-coralogix",
+        "title": "BMC Helix ITSM vs Coralogix",
+        "href": "/compare/bmc-helix-vs-coralogix/"
+      }
+    ],
+    "relevantGuides": [
+      {
+        "slug": "coralogix-implementation",
+        "title": "Coralogix Implementation: 30/60/90 IT Rollout That Sticks",
+        "href": "/guides/coralogix-implementation/"
+      },
+      {
+        "slug": "coralogix-migration",
+        "title": "Coralogix Migration: Move Tickets and Repos Without Losing Trust",
+        "href": "/guides/coralogix-migration/"
+      },
+      {
+        "slug": "coralogix-setup",
+        "title": "Coralogix Setup: Day-Zero Path to a Working IT Loop",
+        "href": "/guides/coralogix-setup/"
+      },
+      {
+        "slug": "coralogix-plans",
+        "title": "Coralogix Plans: Seats, Hosts, and Qualifying Tiers",
+        "href": "/guides/coralogix-plans/"
+      },
+      {
+        "slug": "is-coralogix-worth-it",
+        "title": "Is Coralogix Worth It? Fit Scenarios Before You Buy",
+        "href": "/guides/is-coralogix-worth-it/"
+      }
+    ],
+    "evidenceState": "Research/data-based (no completed hands-on test) · Latest verification/research signal: 2026-08-18T22:00:00.000Z · Editorial assessment: approved",
+    "nextDecisionStep": "Compare against peers: Coralogix vs Datadog",
+    "missingSections": [
+      "canonical_vendor"
+    ]
+  },
+  "dependents": [
+    {
+      "kind": "guide",
+      "slug": "coralogix-implementation",
+      "path": "/guides/coralogix-implementation/"
+    },
+    {
+      "kind": "guide",
+      "slug": "coralogix-migration",
+      "path": "/guides/coralogix-migration/"
+    },
+    {
+      "kind": "guide",
+      "slug": "coralogix-setup",
+      "path": "/guides/coralogix-setup/"
+    },
+    {
+      "kind": "guide",
+      "slug": "coralogix-plans",
+      "path": "/guides/coralogix-plans/"
+    },
+    {
+      "kind": "guide",
+      "slug": "is-coralogix-worth-it",
+      "path": "/guides/is-coralogix-worth-it/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "coralogix-vs-datadog",
+      "path": "/compare/coralogix-vs-datadog/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "apify-vs-coralogix",
+      "path": "/compare/apify-vs-coralogix/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "appdynamics-vs-coralogix",
+      "path": "/compare/appdynamics-vs-coralogix/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "azure-devops-vs-coralogix",
+      "path": "/compare/azure-devops-vs-coralogix/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "bitbucket-vs-coralogix",
+      "path": "/compare/bitbucket-vs-coralogix/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "bmc-helix-vs-coralogix",
+      "path": "/compare/bmc-helix-vs-coralogix/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "bright-data-vs-coralogix",
+      "path": "/compare/bright-data-vs-coralogix/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "buildkite-vs-coralogix",
+      "path": "/compare/buildkite-vs-coralogix/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "chronosphere-vs-coralogix",
+      "path": "/compare/chronosphere-vs-coralogix/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "circleci-vs-coralogix",
+      "path": "/compare/circleci-vs-coralogix/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "cloudways-vs-coralogix",
+      "path": "/compare/cloudways-vs-coralogix/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "coralogix-vs-cpanel",
+      "path": "/compare/coralogix-vs-cpanel/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "coralogix-vs-directadmin",
+      "path": "/compare/coralogix-vs-directadmin/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "coralogix-vs-dynatrace",
+      "path": "/compare/coralogix-vs-dynatrace/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "coralogix-vs-elastic-observability",
+      "path": "/compare/coralogix-vs-elastic-observability/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "coralogix-vs-firehydrant",
+      "path": "/compare/coralogix-vs-firehydrant/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "coralogix-vs-fly-io",
+      "path": "/compare/coralogix-vs-fly-io/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "coralogix-vs-github",
+      "path": "/compare/coralogix-vs-github/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "coralogix-vs-gitlab",
+      "path": "/compare/coralogix-vs-gitlab/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "coralogix-vs-grafana-cloud",
+      "path": "/compare/coralogix-vs-grafana-cloud/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "coralogix-vs-haloitsm",
+      "path": "/compare/coralogix-vs-haloitsm/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "coralogix-vs-heroku",
+      "path": "/compare/coralogix-vs-heroku/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "coralogix-vs-honeycomb",
+      "path": "/compare/coralogix-vs-honeycomb/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "coralogix-vs-incident-io",
+      "path": "/compare/coralogix-vs-incident-io/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "coralogix-vs-iproyal",
+      "path": "/compare/coralogix-vs-iproyal/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "coralogix-vs-ivanti",
+      "path": "/compare/coralogix-vs-ivanti/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "coralogix-vs-jira-service-management",
+      "path": "/compare/coralogix-vs-jira-service-management/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "coralogix-vs-kinsta",
+      "path": "/compare/coralogix-vs-kinsta/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "coralogix-vs-manageengine-servicedesk-plus",
+      "path": "/compare/coralogix-vs-manageengine-servicedesk-plus/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "coralogix-vs-new-relic",
+      "path": "/compare/coralogix-vs-new-relic/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "coralogix-vs-oxylabs",
+      "path": "/compare/coralogix-vs-oxylabs/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "coralogix-vs-pagerduty",
+      "path": "/compare/coralogix-vs-pagerduty/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "coralogix-vs-railway",
+      "path": "/compare/coralogix-vs-railway/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "coralogix-vs-render",
+      "path": "/compare/coralogix-vs-render/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "coralogix-vs-rootly",
+      "path": "/compare/coralogix-vs-rootly/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "coralogix-vs-scraperapi",
+      "path": "/compare/coralogix-vs-scraperapi/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "coralogix-vs-sentry",
+      "path": "/compare/coralogix-vs-sentry/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "coralogix-vs-servicenow",
+      "path": "/compare/coralogix-vs-servicenow/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "coralogix-vs-siteground",
+      "path": "/compare/coralogix-vs-siteground/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "coralogix-vs-smartproxy",
+      "path": "/compare/coralogix-vs-smartproxy/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "coralogix-vs-splunk",
+      "path": "/compare/coralogix-vs-splunk/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "coralogix-vs-squadcast",
+      "path": "/compare/coralogix-vs-squadcast/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "coralogix-vs-sysaid",
+      "path": "/compare/coralogix-vs-sysaid/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "coralogix-vs-thordata",
+      "path": "/compare/coralogix-vs-thordata/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "coralogix-vs-topdesk",
+      "path": "/compare/coralogix-vs-topdesk/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "coralogix-vs-wp-engine",
+      "path": "/compare/coralogix-vs-wp-engine/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "coralogix-vs-zyte",
+      "path": "/compare/coralogix-vs-zyte/"
+    },
+    {
+      "kind": "alternatives",
+      "slug": "coralogix",
+      "path": "/alternatives/coralogix/"
+    },
+    {
+      "kind": "pricing",
+      "slug": "coralogix",
+      "path": "/software/coralogix/pricing/"
+    },
+    {
+      "kind": "tools",
+      "slug": "it-development-cost-calculator",
+      "path": "/tools/it-development-cost-calculator/"
+    }
+  ],
+  "dependentsNeedingRefresh": [],
+  "remediation": [
+    "verify:canonical_vendor"
+  ],
+  "notes": [
+    "fieldAudit score=94",
+    "decisionHub bestFor=6 notIdeal=6",
+    "dependents=55"
+  ],
+  "materiallyImproved": false
+}

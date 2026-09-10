@@ -1,0 +1,524 @@
+{
+  "slug": "scraperapi",
+  "updatedAt": "2026-09-08T21:57:41.679Z",
+  "version": "1.0.0",
+  "fieldAudit": {
+    "slug": "scraperapi",
+    "checkedAt": "2026-09-08T21:57:41.678Z",
+    "items": [
+      {
+        "field": "name",
+        "status": "PASS",
+        "detail": "Name: ScraperAPI",
+        "source": "seed"
+      },
+      {
+        "field": "product_status",
+        "status": "PASS",
+        "detail": "productLifecycle=active",
+        "source": "seed"
+      },
+      {
+        "field": "canonical_vendor",
+        "status": "PASS",
+        "detail": "Vendor: ScraperAPI",
+        "source": "seed"
+      },
+      {
+        "field": "category",
+        "status": "PASS",
+        "detail": "primaryCategorySlug=it-development",
+        "source": "seed"
+      },
+      {
+        "field": "description",
+        "status": "PASS",
+        "detail": "Description present (Managed scraping API — Free 1,000 credits; Hobby $49/mo ($44.10 annual); 7-day t…)",
+        "source": "seed"
+      },
+      {
+        "field": "target_audience",
+        "status": "PASS",
+        "detail": "Sizes=4, teams=2, assessment bestFor=3",
+        "source": "assessment"
+      },
+      {
+        "field": "use_cases",
+        "status": "PASS",
+        "detail": "useCaseSlugs=1",
+        "source": "seed"
+      },
+      {
+        "field": "capabilities",
+        "status": "PASS",
+        "detail": "featureRatings=0, enrichment features=15",
+        "source": "enrichment"
+      },
+      {
+        "field": "pricing",
+        "status": "PASS",
+        "detail": "Pricing envelope present",
+        "source": "enrichment"
+      },
+      {
+        "field": "plans",
+        "status": "PASS",
+        "detail": "plans=5",
+        "source": "enrichment"
+      },
+      {
+        "field": "free_plan",
+        "status": "PASS",
+        "detail": "Free plan documented",
+        "source": "enrichment"
+      },
+      {
+        "field": "trial",
+        "status": "PASS",
+        "detail": "Trial documented on plans/pricing",
+        "source": "enrichment"
+      },
+      {
+        "field": "integrations",
+        "status": "PASS",
+        "detail": "integrationSlugs=0, enrichment=3",
+        "source": "enrichment"
+      },
+      {
+        "field": "alternatives",
+        "status": "PASS",
+        "detail": "alternativeSlugs=3",
+        "source": "seed"
+      },
+      {
+        "field": "competitors",
+        "status": "PASS",
+        "detail": "competitorSlugs=4",
+        "source": "seed"
+      },
+      {
+        "field": "affiliate",
+        "status": "PASS",
+        "detail": "No affiliate relationship (explicit)",
+        "source": "seed"
+      },
+      {
+        "field": "source_provenance",
+        "status": "PASS",
+        "detail": "seed sources=0, enrichment sourceIds=3",
+        "source": "enrichment"
+      },
+      {
+        "field": "verification_date",
+        "status": "PASS",
+        "detail": "Latest verification/research signal: 2026-08-18T16:00:00.000Z",
+        "source": "enrichment"
+      }
+    ],
+    "passCount": 18,
+    "partialCount": 0,
+    "missingCount": 0,
+    "unknownCount": 0,
+    "score": 100
+  },
+  "decisionHub": {
+    "whatItIs": "ScraperAPI is a managed web-scraping API that handles proxies, JS rendering, CAPTCHA/anti-bot, and retries behind a credit model. Free plan includes 1,000 API credits (max 5 concurrent). Hobby is $49/mo ($44.10 billed annually) with 100,000 credits and 20 threads. Startup $149, Business $299, Scaling $475, Professional $975, Advanced $1,975, Enterprise custom. 7-day trial with 5,000 credits and no card required. Domain credit multipliers apply (e.g. Amazon 5, Google/Bing 25). Same web-data cluster as Bright Data — different shape (API credits, not GB proxy packs).",
+    "bestFor": [
+      "Developers who want a managed scrape API without operating proxy pools",
+      "Teams that need a free/trial path before commit",
+      "Moderate-volume production scraping with published credit tiers",
+      "solo / engineering: ScraperAPI fit for solo engineering teams in the web-data-collection job cluster, from first-party positioning and IT web-data peers research.",
+      "micro / engineering: ScraperAPI fit for micro engineering teams in the web-data-collection job cluster, from first-party positioning and IT web-data peers research.",
+      "small-business / engineering: ScraperAPI fit for small-business engineering teams in the web-data-collection job cluster, from first-party positioning and IT web-data peers research."
+    ],
+    "notIdealFor": [
+      "Buyers who need raw residential/datacenter proxy control",
+      "Enterprises that require ISO 27001-first proxy vendors",
+      "Actor marketplace / compute-unit workflows (Apify)",
+      "Domain credit multipliers (Amazon/Google/LinkedIn/bot-bypass) change effective cost vs sticker floors",
+      "Unused credits do not roll over",
+      "Not a raw residential proxy network like Bright Data / Oxylabs"
+    ],
+    "coreCapabilities": [
+      "cicd actions",
+      "proxy network",
+      "dev ai",
+      "enterprise security",
+      "analytics reporting",
+      "web data collection"
+    ],
+    "pricingSummary": "5 documented plans · 1 free · entry paid: Hobby · trial documented on at least one plan",
+    "keyTradeoffs": [
+      "Domain credit multipliers (Amazon/Google/LinkedIn/bot-bypass) change effective cost vs sticker floors",
+      "Unused credits do not roll over",
+      "Not a raw residential proxy network like Bright Data / Oxylabs",
+      "Not ITSM, observability, git, or hosting panel",
+      "Geotargeting is limited on Hobby/Startup (US & EU)"
+    ],
+    "alternatives": [
+      {
+        "slug": "bright-data",
+        "name": "Bright Data"
+      },
+      {
+        "slug": "oxylabs",
+        "name": "Oxylabs"
+      },
+      {
+        "slug": "apify",
+        "name": "Apify"
+      },
+      {
+        "slug": "thordata",
+        "name": "ThorData"
+      }
+    ],
+    "importantComparisons": [
+      {
+        "slug": "bright-data-vs-scraperapi",
+        "title": "ScraperAPI vs Bright Data",
+        "href": "/compare/bright-data-vs-scraperapi/"
+      },
+      {
+        "slug": "oxylabs-vs-scraperapi",
+        "title": "Oxylabs vs ScraperAPI",
+        "href": "/compare/oxylabs-vs-scraperapi/"
+      },
+      {
+        "slug": "scraperapi-vs-zyte",
+        "title": "Zyte vs ScraperAPI",
+        "href": "/compare/scraperapi-vs-zyte/"
+      },
+      {
+        "slug": "apify-vs-scraperapi",
+        "title": "Apify vs ScraperAPI",
+        "href": "/compare/apify-vs-scraperapi/"
+      },
+      {
+        "slug": "appdynamics-vs-scraperapi",
+        "title": "AppDynamics vs ScraperAPI",
+        "href": "/compare/appdynamics-vs-scraperapi/"
+      },
+      {
+        "slug": "azure-devops-vs-scraperapi",
+        "title": "Azure DevOps vs ScraperAPI",
+        "href": "/compare/azure-devops-vs-scraperapi/"
+      }
+    ],
+    "relevantGuides": [
+      {
+        "slug": "scraperapi-implementation",
+        "title": "ScraperAPI Implementation: 30/60/90 IT Rollout That Sticks",
+        "href": "/guides/scraperapi-implementation/"
+      },
+      {
+        "slug": "scraperapi-migration",
+        "title": "ScraperAPI Migration: Move Tickets and Repos Without Losing Trust",
+        "href": "/guides/scraperapi-migration/"
+      },
+      {
+        "slug": "scraperapi-setup",
+        "title": "ScraperAPI Setup: Day-Zero Path to a Working IT Loop",
+        "href": "/guides/scraperapi-setup/"
+      },
+      {
+        "slug": "scraperapi-plans",
+        "title": "ScraperAPI Plans: Seats, Hosts, and Qualifying Tiers",
+        "href": "/guides/scraperapi-plans/"
+      },
+      {
+        "slug": "is-scraperapi-worth-it",
+        "title": "Is ScraperAPI Worth It? Fit Scenarios Before You Buy",
+        "href": "/guides/is-scraperapi-worth-it/"
+      }
+    ],
+    "evidenceState": "Research/data-based (no completed hands-on test) · Latest verification/research signal: 2026-08-18T16:00:00.000Z · Editorial assessment: approved",
+    "nextDecisionStep": "Compare against peers: ScraperAPI vs Bright Data",
+    "missingSections": []
+  },
+  "dependents": [
+    {
+      "kind": "guide",
+      "slug": "scraperapi-implementation",
+      "path": "/guides/scraperapi-implementation/"
+    },
+    {
+      "kind": "guide",
+      "slug": "scraperapi-migration",
+      "path": "/guides/scraperapi-migration/"
+    },
+    {
+      "kind": "guide",
+      "slug": "scraperapi-setup",
+      "path": "/guides/scraperapi-setup/"
+    },
+    {
+      "kind": "guide",
+      "slug": "scraperapi-plans",
+      "path": "/guides/scraperapi-plans/"
+    },
+    {
+      "kind": "guide",
+      "slug": "is-scraperapi-worth-it",
+      "path": "/guides/is-scraperapi-worth-it/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "bright-data-vs-scraperapi",
+      "path": "/compare/bright-data-vs-scraperapi/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "oxylabs-vs-scraperapi",
+      "path": "/compare/oxylabs-vs-scraperapi/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "scraperapi-vs-zyte",
+      "path": "/compare/scraperapi-vs-zyte/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "apify-vs-scraperapi",
+      "path": "/compare/apify-vs-scraperapi/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "appdynamics-vs-scraperapi",
+      "path": "/compare/appdynamics-vs-scraperapi/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "azure-devops-vs-scraperapi",
+      "path": "/compare/azure-devops-vs-scraperapi/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "bitbucket-vs-scraperapi",
+      "path": "/compare/bitbucket-vs-scraperapi/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "bmc-helix-vs-scraperapi",
+      "path": "/compare/bmc-helix-vs-scraperapi/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "buildkite-vs-scraperapi",
+      "path": "/compare/buildkite-vs-scraperapi/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "chronosphere-vs-scraperapi",
+      "path": "/compare/chronosphere-vs-scraperapi/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "circleci-vs-scraperapi",
+      "path": "/compare/circleci-vs-scraperapi/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "cloudways-vs-scraperapi",
+      "path": "/compare/cloudways-vs-scraperapi/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "coralogix-vs-scraperapi",
+      "path": "/compare/coralogix-vs-scraperapi/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "cpanel-vs-scraperapi",
+      "path": "/compare/cpanel-vs-scraperapi/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "datadog-vs-scraperapi",
+      "path": "/compare/datadog-vs-scraperapi/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "directadmin-vs-scraperapi",
+      "path": "/compare/directadmin-vs-scraperapi/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "dynatrace-vs-scraperapi",
+      "path": "/compare/dynatrace-vs-scraperapi/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "elastic-observability-vs-scraperapi",
+      "path": "/compare/elastic-observability-vs-scraperapi/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "firehydrant-vs-scraperapi",
+      "path": "/compare/firehydrant-vs-scraperapi/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "fly-io-vs-scraperapi",
+      "path": "/compare/fly-io-vs-scraperapi/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "github-vs-scraperapi",
+      "path": "/compare/github-vs-scraperapi/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "gitlab-vs-scraperapi",
+      "path": "/compare/gitlab-vs-scraperapi/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "grafana-cloud-vs-scraperapi",
+      "path": "/compare/grafana-cloud-vs-scraperapi/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "haloitsm-vs-scraperapi",
+      "path": "/compare/haloitsm-vs-scraperapi/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "heroku-vs-scraperapi",
+      "path": "/compare/heroku-vs-scraperapi/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "honeycomb-vs-scraperapi",
+      "path": "/compare/honeycomb-vs-scraperapi/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "incident-io-vs-scraperapi",
+      "path": "/compare/incident-io-vs-scraperapi/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "iproyal-vs-scraperapi",
+      "path": "/compare/iproyal-vs-scraperapi/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "ivanti-vs-scraperapi",
+      "path": "/compare/ivanti-vs-scraperapi/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "jira-service-management-vs-scraperapi",
+      "path": "/compare/jira-service-management-vs-scraperapi/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "kinsta-vs-scraperapi",
+      "path": "/compare/kinsta-vs-scraperapi/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "manageengine-servicedesk-plus-vs-scraperapi",
+      "path": "/compare/manageengine-servicedesk-plus-vs-scraperapi/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "new-relic-vs-scraperapi",
+      "path": "/compare/new-relic-vs-scraperapi/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "pagerduty-vs-scraperapi",
+      "path": "/compare/pagerduty-vs-scraperapi/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "railway-vs-scraperapi",
+      "path": "/compare/railway-vs-scraperapi/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "render-vs-scraperapi",
+      "path": "/compare/render-vs-scraperapi/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "rootly-vs-scraperapi",
+      "path": "/compare/rootly-vs-scraperapi/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "scraperapi-vs-sentry",
+      "path": "/compare/scraperapi-vs-sentry/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "scraperapi-vs-servicenow",
+      "path": "/compare/scraperapi-vs-servicenow/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "scraperapi-vs-siteground",
+      "path": "/compare/scraperapi-vs-siteground/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "scraperapi-vs-smartproxy",
+      "path": "/compare/scraperapi-vs-smartproxy/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "scraperapi-vs-splunk",
+      "path": "/compare/scraperapi-vs-splunk/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "scraperapi-vs-squadcast",
+      "path": "/compare/scraperapi-vs-squadcast/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "scraperapi-vs-sysaid",
+      "path": "/compare/scraperapi-vs-sysaid/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "scraperapi-vs-thordata",
+      "path": "/compare/scraperapi-vs-thordata/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "scraperapi-vs-topdesk",
+      "path": "/compare/scraperapi-vs-topdesk/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "scraperapi-vs-wp-engine",
+      "path": "/compare/scraperapi-vs-wp-engine/"
+    },
+    {
+      "kind": "alternatives",
+      "slug": "scraperapi",
+      "path": "/alternatives/scraperapi/"
+    },
+    {
+      "kind": "pricing",
+      "slug": "scraperapi",
+      "path": "/software/scraperapi/pricing/"
+    },
+    {
+      "kind": "tools",
+      "slug": "it-development-cost-calculator",
+      "path": "/tools/it-development-cost-calculator/"
+    }
+  ],
+  "dependentsNeedingRefresh": [],
+  "remediation": [],
+  "notes": [
+    "fieldAudit score=100",
+    "decisionHub bestFor=6 notIdeal=6",
+    "dependents=55"
+  ],
+  "materiallyImproved": true
+}

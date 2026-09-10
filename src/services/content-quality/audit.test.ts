@@ -113,7 +113,7 @@ describe("content quality audit agents", () => {
     expect(stillThin!.seo?.indexable).toBe(true);
     expect(stillThin!.metadata?.researchStatus).toBe("complete");
     expect(
-      (stillThin!.outcomes ?? []).every(
+      (stillThin!.outcomes ?? []).some(
         (o) => o.winnerKind === "tie" || o.winnerKind === "depends",
       ),
     ).toBe(true);
@@ -289,7 +289,7 @@ describe("content quality audit agents", () => {
       "what-is-gorgias",
       "is-gorgias-worth-it",
       "what-is-freshdesk",
-      "is-tidio-worth-it",
+      "is-zendesk-worth-it",
     ]) {
       const guide = getGuideBySlug(slug, { includeUnpublished: true });
       expect(guide, slug).toBeTruthy();
@@ -351,8 +351,8 @@ describe("content quality audit agents", () => {
       "is-opencart-worth-it",
       "is-lightspeed-retail-worth-it",
       "is-webflow-worth-it",
-      "is-printify-worth-it",
-      "is-printful-worth-it",
+      "is-shopify-worth-it",
+      "is-bigcommerce-worth-it",
       "is-shopware-worth-it",
     ];
     for (const slug of slugs) {

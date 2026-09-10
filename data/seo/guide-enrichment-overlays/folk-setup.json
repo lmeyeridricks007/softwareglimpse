@@ -1,0 +1,194 @@
+{
+  "slug": "folk-setup",
+  "enrichmentType": "IMPLEMENTATION_GUIDE",
+  "updatedAt": "2026-09-07T18:33:56.073Z",
+  "uniqueValueAdded": [
+    "implementation_workflow",
+    "scenario_analysis",
+    "decision_framework",
+    "limitations_evidence",
+    "pricing_comparison",
+    "sg_original_data",
+    "buyer_checklist"
+  ],
+  "patch": {
+    "summary": "folk implementation guide: day-zero sequence, pilot rules, plan gates, and cutover checks from SoftwareGlimpse research — not generic CRM setup filler.",
+    "blocks": [
+      {
+        "id": "da-folk-setup-1",
+        "type": "direct-answer",
+        "body": "Implement folk by mapping current crm workflows to folk objects, confirming plan gates for contact management (Standard, Premium, Enterprise), lead management (Standard, Premium, Enterprise), pipeline management (Standard, Premium, Enterprise), piloting one team, then cutting over integrations (Gmail, WhatsApp Business) after data checks.",
+        "bullets": [
+          "Start with: contact management",
+          "Gate check: contact management (Standard, Premium, Enterprise)",
+          "Integrate after: data quality pass on Gmail"
+        ]
+      },
+      {
+        "id": "impl-folk-setup-2",
+        "type": "step",
+        "heading": "folk day-zero to steady-state sequence",
+        "body": "Treat folk setup as a controlled rollout — not a weekend dump of CSV files.",
+        "stepNumber": 1,
+        "scenarios": [
+          {
+            "title": "Day zero — objects and owners",
+            "body": "Define owners for contact management, lead management, pipeline management before inviting the whole org."
+          },
+          {
+            "title": "SMB pilot",
+            "body": "One pipeline / one team proves Founders and SMB teams running relationship-led sales from LinkedIn/email before company-wide seats."
+          },
+          {
+            "title": "Cutover",
+            "body": "Freeze legacy writes briefly; validate Gmail and WhatsApp Business before reopen."
+          }
+        ]
+      },
+      {
+        "id": "df-folk-setup-3",
+        "type": "decision-framework",
+        "title": "folk implementation go / no-go",
+        "steps": [
+          {
+            "id": "i-1",
+            "label": "Go when plan unlocks cover contact management (Standard, Premium, Enterprise)"
+          },
+          {
+            "id": "i-2",
+            "label": "Pause if this limitation blocks ops: Custom objects/Deals, email sequences, dashboards, workspace roles, and API access start on Premium."
+          },
+          {
+            "id": "i-3",
+            "label": "Do not expand seats until contact management is green"
+          }
+        ]
+      },
+      {
+        "id": "mist-folk-setup-4",
+        "type": "mistakes",
+        "title": "folk implementation mistakes",
+        "items": [
+          {
+            "title": "Mistake 1",
+            "body": "Custom objects/Deals, email sequences, dashboards, workspace roles, and API access start on Premium."
+          },
+          {
+            "title": "Mistake 2",
+            "body": "Enrichment, magic fields, and AI assistant credits are monthly capped by plan (custom on Enterprise)."
+          },
+          {
+            "title": "Mistake 3",
+            "body": "FAQ references a free plan for downgrades, but live pricing cards emphasize Standard/Premium/Enterprise — free-tier feature limits are not fully documented on the pricing table."
+          },
+          {
+            "title": "Mistake 4",
+            "body": "Deals, sequences, dashboards, and API require Premium"
+          },
+          {
+            "title": "Big-bang invite",
+            "body": "Inviting every user before object design creates junk data that is expensive to unwind."
+          }
+        ]
+      },
+      {
+        "id": "cost-folk-setup-5",
+        "type": "cost-breakdown",
+        "title": "folk plan gates that affect rollout",
+        "body": "Implementation fails when unlocks needed for go-live sit on a higher tier than budgeted.",
+        "lines": [
+          {
+            "label": "Free",
+            "description": "Free plan · 14-day trial · up to 1 seat · Suits: explore before committing seats"
+          },
+          {
+            "label": "Standard",
+            "description": "14-day trial · Unlocks: contact management, lead management, pipeline management · Suits: teams whose must-have gates appear on this tier"
+          },
+          {
+            "label": "Premium",
+            "description": "14-day trial · Unlocks: deal management, email sequences, reporting · Suits: teams whose must-have gates appear on this tier"
+          },
+          {
+            "label": "Enterprise",
+            "description": "14-day trial · Suits: teams whose must-have gates appear on this tier"
+          }
+        ]
+      },
+      {
+        "id": "sel-folk-setup-6",
+        "type": "selection-checklist",
+        "title": "folk implementation checklist",
+        "dimensions": [
+          {
+            "id": "prep",
+            "label": "Prep",
+            "options": [
+              "Object model drafted",
+              "Owners named",
+              "Legacy freeze window set"
+            ]
+          },
+          {
+            "id": "pilot",
+            "label": "Pilot",
+            "options": [
+              "contact management",
+              "Junk-data rules set",
+              "Support path clear"
+            ]
+          },
+          {
+            "id": "scale",
+            "label": "Scale",
+            "options": [
+              "Gmail",
+              "Seat expansion criteria written",
+              "Rollback plan noted"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "cta-folk-setup-7",
+        "type": "interactive-cta",
+        "title": "Validate crm fit before a deep folk rollout",
+        "body": "If folk fails constraint fit, stop implementation early.",
+        "href": "/tools/crm-finder/",
+        "ctaLabel": "Open Finder",
+        "variant": "finder"
+      }
+    ],
+    "checklist": [
+      {
+        "id": "enrich-chk-0",
+        "label": "Draft folk object owners before invites",
+        "order": 0
+      },
+      {
+        "id": "enrich-chk-1",
+        "label": "Confirm plan unlocks for go-live features",
+        "order": 1
+      },
+      {
+        "id": "enrich-chk-2",
+        "label": "Pilot one team on contact management",
+        "order": 2
+      },
+      {
+        "id": "enrich-chk-3",
+        "label": "If blocked, evaluate Salesflare before sunk-cost expansion",
+        "order": 3
+      }
+    ],
+    "nextAction": {
+      "contentId": "tool:finder:crm",
+      "label": "Open Finder shortlist"
+    }
+  },
+  "notes": [
+    "Omit unsupported: testing_evidence",
+    "Implementation: workflow, constraints, mistakes, checklist.",
+    "Type-specific skeleton: IMPLEMENTATION_GUIDE"
+  ]
+}

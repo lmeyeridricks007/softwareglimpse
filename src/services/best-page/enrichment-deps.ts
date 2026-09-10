@@ -79,8 +79,11 @@ export function enrichmentPricingDetail(
     formatStartingPrice(pricing) ??
     (pricing.hasFreePlan ? "Free plan available" : null);
 
+  const freeNamed = pricing.plans?.find((p) => p.isFree)?.name;
   const freePlan = pricing.hasFreePlan
-    ? "Yes"
+    ? freeNamed
+      ? freeNamed
+      : "Yes"
     : pricing.hasFreePlan === false
       ? "No"
       : null;

@@ -1,0 +1,525 @@
+{
+  "slug": "firehydrant",
+  "updatedAt": "2026-09-08T21:57:41.733Z",
+  "version": "1.0.0",
+  "fieldAudit": {
+    "slug": "firehydrant",
+    "checkedAt": "2026-09-08T21:57:41.731Z",
+    "items": [
+      {
+        "field": "name",
+        "status": "PASS",
+        "detail": "Name: FireHydrant",
+        "source": "seed"
+      },
+      {
+        "field": "product_status",
+        "status": "PASS",
+        "detail": "productLifecycle=active",
+        "source": "seed"
+      },
+      {
+        "field": "canonical_vendor",
+        "status": "PASS",
+        "detail": "Vendor: FireHydrant, Inc.",
+        "source": "seed"
+      },
+      {
+        "field": "category",
+        "status": "PASS",
+        "detail": "primaryCategorySlug=it-development",
+        "source": "seed"
+      },
+      {
+        "field": "description",
+        "status": "PASS",
+        "detail": "Description present (Incident response — Free up to 10 responders; Pro $25/responder/mo annual; Enter…)",
+        "source": "seed"
+      },
+      {
+        "field": "target_audience",
+        "status": "PASS",
+        "detail": "Sizes=2, teams=2, assessment bestFor=3",
+        "source": "assessment"
+      },
+      {
+        "field": "use_cases",
+        "status": "PASS",
+        "detail": "useCaseSlugs=1",
+        "source": "seed"
+      },
+      {
+        "field": "capabilities",
+        "status": "PASS",
+        "detail": "featureRatings=0, enrichment features=16",
+        "source": "enrichment"
+      },
+      {
+        "field": "pricing",
+        "status": "PASS",
+        "detail": "Pricing envelope present",
+        "source": "enrichment"
+      },
+      {
+        "field": "plans",
+        "status": "PASS",
+        "detail": "plans=3",
+        "source": "enrichment"
+      },
+      {
+        "field": "free_plan",
+        "status": "PASS",
+        "detail": "Free plan documented",
+        "source": "enrichment"
+      },
+      {
+        "field": "trial",
+        "status": "PASS",
+        "detail": "Trial documented on plans/pricing",
+        "source": "enrichment"
+      },
+      {
+        "field": "integrations",
+        "status": "PASS",
+        "detail": "integrationSlugs=0, enrichment=4",
+        "source": "enrichment"
+      },
+      {
+        "field": "alternatives",
+        "status": "PASS",
+        "detail": "alternativeSlugs=2",
+        "source": "seed"
+      },
+      {
+        "field": "competitors",
+        "status": "PASS",
+        "detail": "competitorSlugs=4",
+        "source": "seed"
+      },
+      {
+        "field": "affiliate",
+        "status": "PASS",
+        "detail": "No affiliate relationship (explicit)",
+        "source": "seed"
+      },
+      {
+        "field": "source_provenance",
+        "status": "PASS",
+        "detail": "seed sources=0, enrichment sourceIds=3",
+        "source": "enrichment"
+      },
+      {
+        "field": "verification_date",
+        "status": "PASS",
+        "detail": "Latest verification/research signal: 2026-08-18T22:00:00.000Z",
+        "source": "enrichment"
+      }
+    ],
+    "passCount": 18,
+    "partialCount": 0,
+    "missingCount": 0,
+    "unknownCount": 0,
+    "score": 100
+  },
+  "decisionHub": {
+    "whatItIs": "FireHydrant is an incident-response and command platform (declare, coordinate, retrospective) with responder-priced packaging. Free covers up to 10 responders. Pro is $25/responder/month billed annually. Enterprise custom. 14-day Pro trial. Same incident-oncall cluster as PagerDuty — PagerDuty remains the award (8.0); this entity does not outrank it. Distinct from Rootly’s $20 Incident Response / On-Call Essentials split and from Datadog/Honeycomb observability.",
+    "bestFor": [
+      "Teams that want incident command with a 10-responder free path",
+      "Buyers comparing FireHydrant Pro $25 to Rootly $20 and incident.io Team $15",
+      "Orgs that will keep PagerDuty for paging and add FireHydrant for command",
+      "small-business / engineering: FireHydrant fit for small-business engineering teams in the incident-oncall job cluster, from first-party positioning and IT Tier-B + ITSM SMB research.",
+      "mid-market / engineering: FireHydrant fit for mid-market engineering teams in the incident-oncall job cluster, from first-party positioning and IT Tier-B + ITSM SMB research."
+    ],
+    "notIdealFor": [
+      "Orgs whose primary job is PagerDuty-style on-call paging at enterprise scale",
+      "Honeycomb/Datadog observability purchases",
+      "ITSM ticket desks without incident command",
+      "Does not outrank PagerDuty (8.0) as the incident-oncall award",
+      "On-call paging is not the primary SKU — often paired with PagerDuty",
+      "Not observability telemetry (Datadog / Honeycomb)"
+    ],
+    "coreCapabilities": [
+      "incident management",
+      "change problem",
+      "infrastructure monitoring",
+      "cicd actions",
+      "itsm ai",
+      "dev ai",
+      "oncall paging",
+      "enterprise security"
+    ],
+    "pricingSummary": "3 documented plans · 1 free · entry paid: Pro · trial documented on at least one plan",
+    "keyTradeoffs": [
+      "Does not outrank PagerDuty (8.0) as the incident-oncall award",
+      "On-call paging is not the primary SKU — often paired with PagerDuty",
+      "Not observability telemetry (Datadog / Honeycomb)",
+      "Not an ITSM CMDB (ServiceNow / Freshservice)",
+      "Free 10-responder cap; Pro $25 is not unlimited enterprise"
+    ],
+    "alternatives": [
+      {
+        "slug": "pagerduty",
+        "name": "PagerDuty"
+      },
+      {
+        "slug": "incident-io",
+        "name": "incident.io"
+      },
+      {
+        "slug": "rootly",
+        "name": "Rootly"
+      },
+      {
+        "slug": "squadcast",
+        "name": "SolarWinds Incident Response"
+      }
+    ],
+    "importantComparisons": [
+      {
+        "slug": "firehydrant-vs-pagerduty",
+        "title": "FireHydrant vs PagerDuty",
+        "href": "/compare/firehydrant-vs-pagerduty/"
+      },
+      {
+        "slug": "firehydrant-vs-rootly",
+        "title": "FireHydrant vs Rootly",
+        "href": "/compare/firehydrant-vs-rootly/"
+      },
+      {
+        "slug": "firehydrant-vs-squadcast",
+        "title": "SolarWinds Incident Response vs FireHydrant",
+        "href": "/compare/firehydrant-vs-squadcast/"
+      },
+      {
+        "slug": "apify-vs-firehydrant",
+        "title": "Apify vs FireHydrant",
+        "href": "/compare/apify-vs-firehydrant/"
+      },
+      {
+        "slug": "appdynamics-vs-firehydrant",
+        "title": "AppDynamics vs FireHydrant",
+        "href": "/compare/appdynamics-vs-firehydrant/"
+      },
+      {
+        "slug": "azure-devops-vs-firehydrant",
+        "title": "Azure DevOps vs FireHydrant",
+        "href": "/compare/azure-devops-vs-firehydrant/"
+      }
+    ],
+    "relevantGuides": [
+      {
+        "slug": "firehydrant-implementation",
+        "title": "FireHydrant Implementation: 30/60/90 IT Rollout That Sticks",
+        "href": "/guides/firehydrant-implementation/"
+      },
+      {
+        "slug": "firehydrant-migration",
+        "title": "FireHydrant Migration: Move Tickets and Repos Without Losing Trust",
+        "href": "/guides/firehydrant-migration/"
+      },
+      {
+        "slug": "firehydrant-setup",
+        "title": "FireHydrant Setup: Day-Zero Path to a Working IT Loop",
+        "href": "/guides/firehydrant-setup/"
+      },
+      {
+        "slug": "firehydrant-plans",
+        "title": "FireHydrant Plans: Seats, Hosts, and Qualifying Tiers",
+        "href": "/guides/firehydrant-plans/"
+      },
+      {
+        "slug": "is-firehydrant-worth-it",
+        "title": "Is FireHydrant Worth It? Fit Scenarios Before You Buy",
+        "href": "/guides/is-firehydrant-worth-it/"
+      }
+    ],
+    "evidenceState": "Research/data-based (no completed hands-on test) · Latest verification/research signal: 2026-08-18T22:00:00.000Z · Editorial assessment: approved",
+    "nextDecisionStep": "Compare against peers: FireHydrant vs PagerDuty",
+    "missingSections": []
+  },
+  "dependents": [
+    {
+      "kind": "guide",
+      "slug": "firehydrant-implementation",
+      "path": "/guides/firehydrant-implementation/"
+    },
+    {
+      "kind": "guide",
+      "slug": "firehydrant-migration",
+      "path": "/guides/firehydrant-migration/"
+    },
+    {
+      "kind": "guide",
+      "slug": "firehydrant-setup",
+      "path": "/guides/firehydrant-setup/"
+    },
+    {
+      "kind": "guide",
+      "slug": "firehydrant-plans",
+      "path": "/guides/firehydrant-plans/"
+    },
+    {
+      "kind": "guide",
+      "slug": "is-firehydrant-worth-it",
+      "path": "/guides/is-firehydrant-worth-it/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "firehydrant-vs-pagerduty",
+      "path": "/compare/firehydrant-vs-pagerduty/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "firehydrant-vs-rootly",
+      "path": "/compare/firehydrant-vs-rootly/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "firehydrant-vs-squadcast",
+      "path": "/compare/firehydrant-vs-squadcast/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "apify-vs-firehydrant",
+      "path": "/compare/apify-vs-firehydrant/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "appdynamics-vs-firehydrant",
+      "path": "/compare/appdynamics-vs-firehydrant/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "azure-devops-vs-firehydrant",
+      "path": "/compare/azure-devops-vs-firehydrant/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "bitbucket-vs-firehydrant",
+      "path": "/compare/bitbucket-vs-firehydrant/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "bmc-helix-vs-firehydrant",
+      "path": "/compare/bmc-helix-vs-firehydrant/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "bright-data-vs-firehydrant",
+      "path": "/compare/bright-data-vs-firehydrant/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "buildkite-vs-firehydrant",
+      "path": "/compare/buildkite-vs-firehydrant/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "chronosphere-vs-firehydrant",
+      "path": "/compare/chronosphere-vs-firehydrant/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "circleci-vs-firehydrant",
+      "path": "/compare/circleci-vs-firehydrant/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "cloudways-vs-firehydrant",
+      "path": "/compare/cloudways-vs-firehydrant/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "coralogix-vs-firehydrant",
+      "path": "/compare/coralogix-vs-firehydrant/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "cpanel-vs-firehydrant",
+      "path": "/compare/cpanel-vs-firehydrant/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "datadog-vs-firehydrant",
+      "path": "/compare/datadog-vs-firehydrant/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "directadmin-vs-firehydrant",
+      "path": "/compare/directadmin-vs-firehydrant/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "dynatrace-vs-firehydrant",
+      "path": "/compare/dynatrace-vs-firehydrant/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "elastic-observability-vs-firehydrant",
+      "path": "/compare/elastic-observability-vs-firehydrant/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "firehydrant-vs-fly-io",
+      "path": "/compare/firehydrant-vs-fly-io/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "firehydrant-vs-github",
+      "path": "/compare/firehydrant-vs-github/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "firehydrant-vs-gitlab",
+      "path": "/compare/firehydrant-vs-gitlab/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "firehydrant-vs-grafana-cloud",
+      "path": "/compare/firehydrant-vs-grafana-cloud/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "firehydrant-vs-haloitsm",
+      "path": "/compare/firehydrant-vs-haloitsm/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "firehydrant-vs-heroku",
+      "path": "/compare/firehydrant-vs-heroku/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "firehydrant-vs-honeycomb",
+      "path": "/compare/firehydrant-vs-honeycomb/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "firehydrant-vs-incident-io",
+      "path": "/compare/firehydrant-vs-incident-io/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "firehydrant-vs-iproyal",
+      "path": "/compare/firehydrant-vs-iproyal/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "firehydrant-vs-ivanti",
+      "path": "/compare/firehydrant-vs-ivanti/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "firehydrant-vs-jira-service-management",
+      "path": "/compare/firehydrant-vs-jira-service-management/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "firehydrant-vs-kinsta",
+      "path": "/compare/firehydrant-vs-kinsta/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "firehydrant-vs-manageengine-servicedesk-plus",
+      "path": "/compare/firehydrant-vs-manageengine-servicedesk-plus/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "firehydrant-vs-new-relic",
+      "path": "/compare/firehydrant-vs-new-relic/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "firehydrant-vs-oxylabs",
+      "path": "/compare/firehydrant-vs-oxylabs/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "firehydrant-vs-railway",
+      "path": "/compare/firehydrant-vs-railway/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "firehydrant-vs-render",
+      "path": "/compare/firehydrant-vs-render/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "firehydrant-vs-scraperapi",
+      "path": "/compare/firehydrant-vs-scraperapi/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "firehydrant-vs-sentry",
+      "path": "/compare/firehydrant-vs-sentry/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "firehydrant-vs-servicenow",
+      "path": "/compare/firehydrant-vs-servicenow/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "firehydrant-vs-siteground",
+      "path": "/compare/firehydrant-vs-siteground/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "firehydrant-vs-smartproxy",
+      "path": "/compare/firehydrant-vs-smartproxy/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "firehydrant-vs-splunk",
+      "path": "/compare/firehydrant-vs-splunk/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "firehydrant-vs-sysaid",
+      "path": "/compare/firehydrant-vs-sysaid/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "firehydrant-vs-thordata",
+      "path": "/compare/firehydrant-vs-thordata/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "firehydrant-vs-topdesk",
+      "path": "/compare/firehydrant-vs-topdesk/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "firehydrant-vs-wp-engine",
+      "path": "/compare/firehydrant-vs-wp-engine/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "firehydrant-vs-zyte",
+      "path": "/compare/firehydrant-vs-zyte/"
+    },
+    {
+      "kind": "alternatives",
+      "slug": "firehydrant",
+      "path": "/alternatives/firehydrant/"
+    },
+    {
+      "kind": "pricing",
+      "slug": "firehydrant",
+      "path": "/software/firehydrant/pricing/"
+    },
+    {
+      "kind": "tools",
+      "slug": "it-development-cost-calculator",
+      "path": "/tools/it-development-cost-calculator/"
+    }
+  ],
+  "dependentsNeedingRefresh": [],
+  "remediation": [],
+  "notes": [
+    "fieldAudit score=100",
+    "decisionHub bestFor=5 notIdeal=6",
+    "dependents=55"
+  ],
+  "materiallyImproved": true
+}

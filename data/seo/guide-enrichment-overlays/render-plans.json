@@ -1,0 +1,212 @@
+{
+  "slug": "render-plans",
+  "enrichmentType": "COST_GUIDE",
+  "updatedAt": "2026-09-09T05:59:51.745Z",
+  "uniqueValueAdded": [
+    "pricing_comparison",
+    "sg_original_data",
+    "scenario_analysis",
+    "implementation_workflow",
+    "decision_framework",
+    "limitations_evidence",
+    "product_shortlist",
+    "alternatives_map",
+    "buyer_checklist"
+  ],
+  "patch": {
+    "summary": "Render cost guide: researched plan structure, free/trial flags, who each tier suits, cost scenarios, and value tradeoffs — no invented prices.",
+    "blocks": [
+      {
+        "id": "da-render-plans-1",
+        "type": "direct-answer",
+        "body": "Render pricing is plan-gated across 5 researched tiers. Free entry: Hobby. Trial/free path present in researched plans. Compare seat/capacity gates and unlocks — not list-price folklore.",
+        "bullets": [
+          "Free plan(s): Hobby",
+          "Trial/free path present in researched plans",
+          "Entry paid tier researched: Starter web service"
+        ]
+      },
+      {
+        "id": "cost-render-plans-2",
+        "type": "cost-breakdown",
+        "title": "Render plan matrix and who each tier suits",
+        "body": "Structure and trial/free flags come from SoftwareGlimpse pricing research. Dollar amounts appear only when verified — never invent list prices.",
+        "lines": [
+          {
+            "label": "Hobby",
+            "description": "Free plan · Unlocks: infrastructure monitoring, log management, CI/CD and automation · Suits: explore before committing seats"
+          },
+          {
+            "label": "Starter web service",
+            "description": "Suits: teams whose must-have gates appear on this tier"
+          },
+          {
+            "label": "Pro",
+            "description": "Suits: teams whose must-have gates appear on this tier"
+          },
+          {
+            "label": "Scale",
+            "description": "Suits: teams whose must-have gates appear on this tier"
+          },
+          {
+            "label": "Enterprise",
+            "description": "Contact sales · Suits: teams that need custom procurement"
+          }
+        ],
+        "calculatorHref": "/tools/it-development-cost-calculator/",
+        "calculatorLabel": "Model category cost fit"
+      },
+      {
+        "id": "scen-render-plans-3",
+        "type": "step",
+        "heading": "Render cost scenarios to pressure-test",
+        "body": "Price Render against how you actually buy seats and unlocks — not against a competitor's homepage headline.",
+        "stepNumber": 1,
+        "scenarios": [
+          {
+            "title": "Lean team / free-or-trial first",
+            "body": "Stay on Hobby until a gated capability (premium unlock) becomes mandatory."
+          },
+          {
+            "title": "Growing team with gated workflows",
+            "body": "Map must-have workflows (infrastructure monitoring, log management, CI/CD and automation) to plan unlocks before expanding seats."
+          },
+          {
+            "title": "Hidden / extra cost watch",
+            "body": "Budget risk: Starter web list price is compute — Pro list price is the production workspace floor. Also check add-ons, overages, and admin time outside the sticker plan."
+          }
+        ]
+      },
+      {
+        "id": "value-render-plans-4",
+        "type": "decision-framework",
+        "title": "Render value rule",
+        "steps": [
+          {
+            "id": "v-1",
+            "label": "Pay up when Teams that want a git-push app platform with a published Pro list price production floor requires a paid unlock you will use weekly"
+          },
+          {
+            "id": "v-2",
+            "label": "Do not overbuy if this limitation dominates: Starter web list price is compute — Pro list price is the production workspace floor"
+          },
+          {
+            "id": "v-3",
+            "label": "Side-by-side cost with Fly.io on the same seat count"
+          }
+        ]
+      },
+      {
+        "id": "lim-render-plans-5",
+        "type": "mistakes",
+        "title": "Render cost mistakes to avoid",
+        "items": [
+          {
+            "title": "Cost trap 1",
+            "body": "Starter web list price is compute — Pro list price is the production workspace floor"
+          },
+          {
+            "title": "Cost trap 2",
+            "body": "Not managed WordPress hosting (WP Engine) — landscape only"
+          },
+          {
+            "title": "Cost trap 3",
+            "body": "Not a hosting control-panel licence (Plesk/cPanel)"
+          },
+          {
+            "title": "Cost trap 4",
+            "body": "Hobby is not production; compute still meters above the list price tile"
+          },
+          {
+            "title": "Cost trap 5",
+            "body": "Not ITSM, observability, git host, or a proxy network"
+          }
+        ]
+      },
+      {
+        "id": "alts-render-plans-6",
+        "type": "product-shortlist",
+        "title": "Cheaper or clearer alternatives to pressure-test",
+        "body": "Compare total cost of ownership vs Render on identical constraints.",
+        "productSlugs": [
+          "fly-io",
+          "cloudways"
+        ],
+        "disclaimer": "Catalogue peers only — not commission-ranked."
+      },
+      {
+        "id": "sel-render-plans-7",
+        "type": "selection-checklist",
+        "title": "Render pricing checklist",
+        "dimensions": [
+          {
+            "id": "gates",
+            "label": "Plan gates you must unlock",
+            "options": [
+              "Must-have unlocks listed",
+              "Seat math agreed",
+              "Annual vs monthly clear"
+            ]
+          },
+          {
+            "id": "trial",
+            "label": "Trial / free proof",
+            "options": [
+              "Free plan usable for pilot",
+              "Trial days enough",
+              "Paid gate acceptable"
+            ]
+          },
+          {
+            "id": "tco",
+            "label": "TCO extras",
+            "options": [
+              "Add-ons checked",
+              "Admin time budgeted",
+              "Migration cost noted"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "cta-render-plans-8",
+        "type": "interactive-cta",
+        "title": "Model it-development spend with Render in mind",
+        "body": "Use researched plan structure for Render alongside category cost modelling.",
+        "href": "/tools/it-development-cost-calculator/",
+        "ctaLabel": "Open calculator",
+        "variant": "calculator"
+      }
+    ],
+    "checklist": [
+      {
+        "id": "enrich-chk-0",
+        "label": "List must-have unlocks before picking a Render tier",
+        "order": 0
+      },
+      {
+        "id": "enrich-chk-1",
+        "label": "Trial/free path present in researched plans",
+        "order": 1
+      },
+      {
+        "id": "enrich-chk-2",
+        "label": "Price in this risk: Starter web list price is compute — Pro list price is the production workspace floor",
+        "order": 2
+      },
+      {
+        "id": "enrich-chk-3",
+        "label": "Compare seat TCO with Fly.io",
+        "order": 3
+      }
+    ],
+    "nextAction": {
+      "contentId": "tool:finder:it-development",
+      "label": "Open Finder shortlist"
+    }
+  },
+  "notes": [
+    "Cost guide: real plan structure, free/trial, TCO tradeoffs — never invent prices.",
+    "Type-specific skeleton: COST_GUIDE"
+  ]
+}

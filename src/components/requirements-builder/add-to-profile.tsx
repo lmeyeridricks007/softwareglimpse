@@ -6,6 +6,7 @@
  * pulls graph synthesizers / catalogue fs stores into these pages.
  */
 
+import Link from "next/link";
 import { useState } from "react";
 import { track } from "@/analytics";
 import {
@@ -148,12 +149,12 @@ export function AddToRequirementsProfile(props: Props) {
           ? "Add to my requirements"
           : "Require this feature"}
       </Button>
-      <a
+      <Link
         href="/tools/crm-requirements-builder/?start=1"
         className="text-sm font-medium text-[var(--sg-color-primary)] underline-offset-2 hover:underline"
       >
         Open builder
-      </a>
+      </Link>
       {status ? (
         <span className="text-sm text-[var(--sg-color-success)]" role="status">
           {status}

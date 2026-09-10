@@ -24,8 +24,8 @@ import {
 } from "@/components/use-cases/use-case-media-sections";
 import { UseCaseWorkflowProductCompare } from "@/components/use-cases/use-case-workflow-product-compare";
 import {
-  useCaseCategoryProductLabel,
-  useCaseCategoryRequirementsLabel,
+  getUseCaseCategoryProductLabel,
+  getUseCaseCategoryRequirementsLabel,
 } from "@/components/use-cases/use-case-depth-sections";
 import { UseCaseSidebar } from "@/components/use-cases/use-case-sidebar";
 import { DynamicEvidenceExplorer } from "@/components/evidence/dynamic-evidence-explorer";
@@ -67,7 +67,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   }
 
   const useCase = model.useCase;
-  const productLabel = useCaseCategoryProductLabel(model.categorySlug);
+  const productLabel = getUseCaseCategoryProductLabel(model.categorySlug);
   return buildPageMetadata({
     title: useCase.seo.title || model.displayTitle,
     description:
@@ -116,8 +116,8 @@ export default async function UseCaseDetailPage({ params }: Props) {
       ? `/compare/${model.approachPairs[0]!.productSlug}-vs-${model.approachPairs[1]!.productSlug}/`
       : model.compareHref;
 
-  const productLabel = useCaseCategoryProductLabel(model.categorySlug);
-  const reqLabel = useCaseCategoryRequirementsLabel(model.categorySlug);
+  const productLabel = getUseCaseCategoryProductLabel(model.categorySlug);
+  const reqLabel = getUseCaseCategoryRequirementsLabel(model.categorySlug);
   const useCasesHubLabel =
     model.categorySlug === "crm"
       ? "CRM use cases"

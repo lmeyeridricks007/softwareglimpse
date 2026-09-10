@@ -1,0 +1,158 @@
+{
+  "slug": "getresponse-migration",
+  "enrichmentType": "MIGRATION_GUIDE",
+  "updatedAt": "2026-09-08T17:04:21.720Z",
+  "uniqueValueAdded": [
+    "implementation_workflow",
+    "scenario_analysis",
+    "decision_framework",
+    "limitations_evidence",
+    "buyer_checklist"
+  ],
+  "patch": {
+    "summary": "GetResponse migration guide: inventory → rehearse → freeze → validate integrations — grounded in researched limitations and catalogue peers.",
+    "blocks": [
+      {
+        "id": "da-getresponse-migration-1",
+        "type": "direct-answer",
+        "body": "Migrate to GetResponse by inventorying legacy email-marketing fields, mapping them to GetResponse objects, rehearsing a freeze window, and validating Shopify, Woocommerce, WordPress before reopening writes.",
+        "bullets": [
+          "Inventory → map → rehearse → cut over → reopen",
+          "Highest risk: Starter limited to 1 custom automation workflow and capped AI generator uses",
+          "Success signal: email campaigns works for the pilot cohort"
+        ]
+      },
+      {
+        "id": "mig-getresponse-migration-2",
+        "type": "step",
+        "heading": "GetResponse migration cutover playbook",
+        "body": "Migrations fail from optimistic timelines — not from missing motivation.",
+        "stepNumber": 1,
+        "scenarios": [
+          {
+            "title": "Field inventory",
+            "body": "Export legacy fields that power email campaigns, newsletter builder, email templates and mark must-map vs archive."
+          },
+          {
+            "title": "Rehearsal load",
+            "body": "Run a non-prod load into GetResponse; measure match rates before the freeze."
+          },
+          {
+            "title": "Production freeze",
+            "body": "Freeze legacy writes; cut over; validate Shopify; then reopen."
+          }
+        ]
+      },
+      {
+        "id": "df-getresponse-migration-3",
+        "type": "decision-framework",
+        "title": "Migrate to GetResponse?",
+        "steps": [
+          {
+            "id": "m-1",
+            "label": "Migrate when SMBs wanting email + automation + landing pages in one stack outweigh migration cost"
+          },
+          {
+            "id": "m-2",
+            "label": "Delay if this limitation hits cutover: Starter limited to 1 custom automation workflow and capped AI generator uses"
+          },
+          {
+            "id": "m-3",
+            "label": "If GetResponse mapping is poor, compare destination fit with Mailchimp before moving data twice"
+          }
+        ]
+      },
+      {
+        "id": "mist-getresponse-migration-4",
+        "type": "mistakes",
+        "title": "GetResponse migration mistakes",
+        "items": [
+          {
+            "title": "No freeze window",
+            "body": "Dual-writing without a freeze creates irrevocable duplicates."
+          },
+          {
+            "title": "Integrations last",
+            "body": "Wire Shopify in rehearsal — not on Monday morning after cutover."
+          },
+          {
+            "title": "Data risk 1",
+            "body": "Starter limited to 1 custom automation workflow and capped AI generator uses"
+          },
+          {
+            "title": "Data risk 2",
+            "body": "Free plan heavily limited after 14-day premium window (branding, LP visits, automation filters)"
+          },
+          {
+            "title": "Data risk 3",
+            "body": "SMS, dedicated IP/domain, and some enterprise tools require Enterprise"
+          }
+        ]
+      },
+      {
+        "id": "sel-getresponse-migration-5",
+        "type": "selection-checklist",
+        "title": "GetResponse migration checklist",
+        "dimensions": [
+          {
+            "id": "map",
+            "label": "Mapping",
+            "options": [
+              "Must-map fields listed",
+              "Owners assigned",
+              "Archive rules written"
+            ]
+          },
+          {
+            "id": "rehearse",
+            "label": "Rehearsal",
+            "options": [
+              "Non-prod load done",
+              "Match rate measured",
+              "Rollback tested"
+            ]
+          },
+          {
+            "id": "cutover",
+            "label": "Cutover",
+            "options": [
+              "Freeze communicated",
+              "Integrations green",
+              "Pilot cohort signed off"
+            ]
+          }
+        ]
+      }
+    ],
+    "checklist": [
+      {
+        "id": "enrich-chk-0",
+        "label": "Complete field inventory for email campaigns",
+        "order": 0
+      },
+      {
+        "id": "enrich-chk-1",
+        "label": "Rehearse load before production freeze",
+        "order": 1
+      },
+      {
+        "id": "enrich-chk-2",
+        "label": "Validate Shopify pre-reopen",
+        "order": 2
+      },
+      {
+        "id": "enrich-chk-3",
+        "label": "Mitigate: Starter limited to 1 custom automation workflow and capped AI generator uses",
+        "order": 3
+      }
+    ],
+    "nextAction": {
+      "contentId": "tool:finder:email-marketing",
+      "label": "Open Finder shortlist"
+    }
+  },
+  "notes": [
+    "Migration: cutover risks, data mapping, checklist.",
+    "Type-specific skeleton: MIGRATION_GUIDE"
+  ]
+}

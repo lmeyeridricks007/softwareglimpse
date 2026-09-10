@@ -1,0 +1,193 @@
+{
+  "slug": "activecampaign-setup",
+  "enrichmentType": "IMPLEMENTATION_GUIDE",
+  "updatedAt": "2026-09-08T17:04:09.341Z",
+  "uniqueValueAdded": [
+    "implementation_workflow",
+    "scenario_analysis",
+    "decision_framework",
+    "limitations_evidence",
+    "pricing_comparison",
+    "sg_original_data",
+    "buyer_checklist"
+  ],
+  "patch": {
+    "summary": "ActiveCampaign implementation guide: day-zero sequence, pilot rules, plan gates, and cutover checks from SoftwareGlimpse research — not generic CRM setup filler.",
+    "blocks": [
+      {
+        "id": "da-activecampaign-setup-1",
+        "type": "direct-answer",
+        "body": "Implement ActiveCampaign by mapping current email-marketing workflows to ActiveCampaign objects, confirming plan gates for pipeline management (Plus, Professional, Enterprise), deal management (Plus, Professional, Enterprise), sales automation (Plus, Professional, Enterprise), piloting one team, then cutting over integrations (Shopify, WordPress, Salesforce) after data checks.",
+        "bullets": [
+          "Start with: contact management",
+          "Gate check: pipeline management (Plus, Professional, Enterprise)",
+          "Integrate after: data quality pass on Shopify"
+        ]
+      },
+      {
+        "id": "impl-activecampaign-setup-2",
+        "type": "step",
+        "heading": "ActiveCampaign day-zero to steady-state sequence",
+        "body": "Treat ActiveCampaign setup as a controlled rollout — not a weekend dump of CSV files.",
+        "stepNumber": 1,
+        "scenarios": [
+          {
+            "title": "Day zero — objects and owners",
+            "body": "Define owners for contact management before inviting the whole org."
+          },
+          {
+            "title": "SMB pilot",
+            "body": "One pipeline / one team proves Marketing-led SMBs that need automation as the primary email job before company-wide seats."
+          },
+          {
+            "title": "Cutover",
+            "body": "Freeze legacy writes briefly; validate Shopify and WordPress before reopen."
+          }
+        ]
+      },
+      {
+        "id": "df-activecampaign-setup-3",
+        "type": "decision-framework",
+        "title": "ActiveCampaign implementation go / no-go",
+        "steps": [
+          {
+            "id": "i-1",
+            "label": "Go when plan unlocks cover pipeline management (Plus, Professional, Enterprise)"
+          },
+          {
+            "id": "i-2",
+            "label": "Pause if this limitation blocks ops: Confirm live ActiveCampaign checkout; packaging can change."
+          },
+          {
+            "id": "i-3",
+            "label": "Do not expand seats until contact management is green"
+          }
+        ]
+      },
+      {
+        "id": "mist-activecampaign-setup-4",
+        "type": "mistakes",
+        "title": "ActiveCampaign implementation mistakes",
+        "items": [
+          {
+            "title": "Mistake 1",
+            "body": "Confirm live ActiveCampaign checkout; packaging can change."
+          },
+          {
+            "title": "Mistake 2",
+            "body": "No forever-free plan — 14-day trial entry only"
+          },
+          {
+            "title": "Mistake 3",
+            "body": "Contact-tier pricing scales as the list grows — confirm live bands"
+          },
+          {
+            "title": "Mistake 4",
+            "body": "CRM depth is secondary to email automation identity"
+          },
+          {
+            "title": "Big-bang invite",
+            "body": "Inviting every user before object design creates junk data that is expensive to unwind."
+          }
+        ]
+      },
+      {
+        "id": "cost-activecampaign-setup-5",
+        "type": "cost-breakdown",
+        "title": "ActiveCampaign plan gates that affect rollout",
+        "body": "Implementation fails when unlocks needed for go-live sit on a higher tier than budgeted.",
+        "lines": [
+          {
+            "label": "Starter",
+            "description": "14-day trial · Unlocks: contact management, lead management, email sync · Suits: teams whose must-have gates appear on this tier"
+          },
+          {
+            "label": "Plus",
+            "description": "14-day trial · Unlocks: pipeline management, deal management, sales automation · Suits: teams whose must-have gates appear on this tier"
+          },
+          {
+            "label": "Professional",
+            "description": "14-day trial · Unlocks: forecasting · Suits: teams whose must-have gates appear on this tier"
+          },
+          {
+            "label": "Enterprise",
+            "description": "14-day trial · Suits: teams whose must-have gates appear on this tier"
+          }
+        ]
+      },
+      {
+        "id": "sel-activecampaign-setup-6",
+        "type": "selection-checklist",
+        "title": "ActiveCampaign implementation checklist",
+        "dimensions": [
+          {
+            "id": "prep",
+            "label": "Prep",
+            "options": [
+              "Object model drafted",
+              "Owners named",
+              "Legacy freeze window set"
+            ]
+          },
+          {
+            "id": "pilot",
+            "label": "Pilot",
+            "options": [
+              "contact management",
+              "Junk-data rules set",
+              "Support path clear"
+            ]
+          },
+          {
+            "id": "scale",
+            "label": "Scale",
+            "options": [
+              "Shopify",
+              "Seat expansion criteria written",
+              "Rollback plan noted"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "cta-activecampaign-setup-7",
+        "type": "interactive-cta",
+        "title": "Validate email-marketing fit before a deep ActiveCampaign rollout",
+        "body": "If ActiveCampaign fails constraint fit, stop implementation early.",
+        "href": "/tools/email-marketing-finder/",
+        "ctaLabel": "Open Finder",
+        "variant": "finder"
+      }
+    ],
+    "checklist": [
+      {
+        "id": "enrich-chk-0",
+        "label": "Draft ActiveCampaign object owners before invites",
+        "order": 0
+      },
+      {
+        "id": "enrich-chk-1",
+        "label": "Confirm plan unlocks for go-live features",
+        "order": 1
+      },
+      {
+        "id": "enrich-chk-2",
+        "label": "Pilot one team on contact management",
+        "order": 2
+      },
+      {
+        "id": "enrich-chk-3",
+        "label": "If blocked, evaluate Klaviyo before sunk-cost expansion",
+        "order": 3
+      }
+    ],
+    "nextAction": {
+      "contentId": "tool:finder:email-marketing",
+      "label": "Open Finder shortlist"
+    }
+  },
+  "notes": [
+    "Implementation: workflow, constraints, mistakes, checklist.",
+    "Type-specific skeleton: IMPLEMENTATION_GUIDE"
+  ]
+}

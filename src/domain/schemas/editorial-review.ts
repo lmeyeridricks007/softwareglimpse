@@ -105,6 +105,13 @@ export const ProductReviewSchema = z.object({
   deepReview: DeepReviewContentSchema.optional(),
   confidence: EditorialConfidenceSchema.default("low"),
   handsOnTesting: z.boolean().default(false),
+  testingNotes: z.string().optional(),
+  /** Only set when hands-on testing actually occurred. */
+  testedAt: IsoDateTimeSchema.optional(),
+  /** When list pricing was last verified from first-party sources. */
+  pricingVerifiedAt: IsoDateTimeSchema.optional(),
+  /** When structured research for this review was performed. */
+  researchDate: IsoDateTimeSchema.optional(),
   draftId: z.string().optional(),
   contentVersion: z.number().int().positive().default(1),
   refreshNeeded: z.boolean().default(false),

@@ -1,0 +1,158 @@
+{
+  "slug": "getscreen-me-migration",
+  "enrichmentType": "MIGRATION_GUIDE",
+  "updatedAt": "2026-09-09T05:43:08.484Z",
+  "uniqueValueAdded": [
+    "implementation_workflow",
+    "scenario_analysis",
+    "decision_framework",
+    "limitations_evidence",
+    "buyer_checklist"
+  ],
+  "patch": {
+    "summary": "Getscreen.me migration guide: inventory → rehearse → freeze → validate integrations — grounded in researched limitations and catalogue peers.",
+    "blocks": [
+      {
+        "id": "da-getscreen-me-migration-1",
+        "type": "direct-answer",
+        "body": "Migrate to Getscreen.me by inventorying legacy project-management fields, mapping them to Getscreen.me objects, rehearsing a freeze window, and validating Windows, Macos, Linux before reopening writes.",
+        "bullets": [
+          "Inventory → map → rehearse → cut over → reopen",
+          "Highest risk: Adjacent remote-access tool — not a project management platform",
+          "Success signal: automations and workflows works for the pilot cohort"
+        ]
+      },
+      {
+        "id": "mig-getscreen-me-migration-2",
+        "type": "step",
+        "heading": "Getscreen.me migration cutover playbook",
+        "body": "Migrations fail from optimistic timelines — not from missing motivation.",
+        "stepNumber": 1,
+        "scenarios": [
+          {
+            "title": "Field inventory",
+            "body": "Export legacy fields that power automations and workflows, docs and collaboration, reporting dashboards and mark must-map vs archive."
+          },
+          {
+            "title": "Rehearsal load",
+            "body": "Run a non-prod load into Getscreen.me; measure match rates before the freeze."
+          },
+          {
+            "title": "Production freeze",
+            "body": "Freeze legacy writes; cut over; validate Windows; then reopen."
+          }
+        ]
+      },
+      {
+        "id": "df-getscreen-me-migration-3",
+        "type": "decision-framework",
+        "title": "Migrate to Getscreen.me?",
+        "steps": [
+          {
+            "id": "m-1",
+            "label": "Migrate when Support and IT teams needing remote desktop / screen share outweigh migration cost"
+          },
+          {
+            "id": "m-2",
+            "label": "Delay if this limitation hits cutover: Adjacent remote-access tool — not a project management platform"
+          },
+          {
+            "id": "m-3",
+            "label": "If Getscreen.me mapping is poor, compare destination fit with monday.com before moving data twice"
+          }
+        ]
+      },
+      {
+        "id": "mist-getscreen-me-migration-4",
+        "type": "mistakes",
+        "title": "Getscreen.me migration mistakes",
+        "items": [
+          {
+            "title": "No freeze window",
+            "body": "Dual-writing without a freeze creates irrevocable duplicates."
+          },
+          {
+            "title": "Integrations last",
+            "body": "Wire Windows in rehearsal — not on Monday morning after cutover."
+          },
+          {
+            "title": "Data risk 1",
+            "body": "Adjacent remote-access tool — not a project management platform"
+          },
+          {
+            "title": "Data risk 2",
+            "body": "Hybrid user + device pricing means TCO rises with device count"
+          },
+          {
+            "title": "Data risk 3",
+            "body": "Free is capped at 1 user / 2 devices"
+          }
+        ]
+      },
+      {
+        "id": "sel-getscreen-me-migration-5",
+        "type": "selection-checklist",
+        "title": "Getscreen.me migration checklist",
+        "dimensions": [
+          {
+            "id": "map",
+            "label": "Mapping",
+            "options": [
+              "Must-map fields listed",
+              "Owners assigned",
+              "Archive rules written"
+            ]
+          },
+          {
+            "id": "rehearse",
+            "label": "Rehearsal",
+            "options": [
+              "Non-prod load done",
+              "Match rate measured",
+              "Rollback tested"
+            ]
+          },
+          {
+            "id": "cutover",
+            "label": "Cutover",
+            "options": [
+              "Freeze communicated",
+              "Integrations green",
+              "Pilot cohort signed off"
+            ]
+          }
+        ]
+      }
+    ],
+    "checklist": [
+      {
+        "id": "enrich-chk-0",
+        "label": "Complete field inventory for automations and workflows",
+        "order": 0
+      },
+      {
+        "id": "enrich-chk-1",
+        "label": "Rehearse load before production freeze",
+        "order": 1
+      },
+      {
+        "id": "enrich-chk-2",
+        "label": "Validate Windows pre-reopen",
+        "order": 2
+      },
+      {
+        "id": "enrich-chk-3",
+        "label": "Mitigate: Adjacent remote-access tool — not a project management platform",
+        "order": 3
+      }
+    ],
+    "nextAction": {
+      "contentId": "tool:finder:project-management",
+      "label": "Open Finder shortlist"
+    }
+  },
+  "notes": [
+    "Migration: cutover risks, data mapping, checklist.",
+    "Type-specific skeleton: MIGRATION_GUIDE"
+  ]
+}

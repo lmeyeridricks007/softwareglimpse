@@ -1,0 +1,418 @@
+{
+  "slug": "talkdesk",
+  "updatedAt": "2026-09-07T22:31:21.467Z",
+  "version": "1.0.0",
+  "fieldAudit": {
+    "slug": "talkdesk",
+    "checkedAt": "2026-09-07T22:31:21.465Z",
+    "items": [
+      {
+        "field": "name",
+        "status": "PASS",
+        "detail": "Name: Talkdesk",
+        "source": "seed"
+      },
+      {
+        "field": "product_status",
+        "status": "PASS",
+        "detail": "productLifecycle=active",
+        "source": "seed"
+      },
+      {
+        "field": "canonical_vendor",
+        "status": "UNKNOWN",
+        "detail": "Company/vendor not documented",
+        "source": "none"
+      },
+      {
+        "field": "category",
+        "status": "PASS",
+        "detail": "primaryCategorySlug=business-communications",
+        "source": "seed"
+      },
+      {
+        "field": "description",
+        "status": "PASS",
+        "detail": "Description present (Cloud contact center (CCaaS) — Digital Essentials from $85/user/mo; Voice $105; …)",
+        "source": "seed"
+      },
+      {
+        "field": "target_audience",
+        "status": "PASS",
+        "detail": "Sizes=2, teams=3, assessment bestFor=3",
+        "source": "assessment"
+      },
+      {
+        "field": "use_cases",
+        "status": "PASS",
+        "detail": "useCaseSlugs=3",
+        "source": "seed"
+      },
+      {
+        "field": "capabilities",
+        "status": "PASS",
+        "detail": "featureRatings=0, enrichment features=13",
+        "source": "enrichment"
+      },
+      {
+        "field": "pricing",
+        "status": "PASS",
+        "detail": "Pricing envelope present",
+        "source": "enrichment"
+      },
+      {
+        "field": "plans",
+        "status": "PASS",
+        "detail": "plans=4",
+        "source": "enrichment"
+      },
+      {
+        "field": "free_plan",
+        "status": "PASS",
+        "detail": "No free plan in documented plans (explicit absence)",
+        "source": "enrichment"
+      },
+      {
+        "field": "trial",
+        "status": "PASS",
+        "detail": "Trial documented on plans/pricing",
+        "source": "enrichment"
+      },
+      {
+        "field": "integrations",
+        "status": "PASS",
+        "detail": "integrationSlugs=0, enrichment=6",
+        "source": "enrichment"
+      },
+      {
+        "field": "alternatives",
+        "status": "PASS",
+        "detail": "alternativeSlugs=4",
+        "source": "seed"
+      },
+      {
+        "field": "competitors",
+        "status": "PASS",
+        "detail": "competitorSlugs=5",
+        "source": "seed"
+      },
+      {
+        "field": "affiliate",
+        "status": "PASS",
+        "detail": "No affiliate relationship (explicit)",
+        "source": "seed"
+      },
+      {
+        "field": "source_provenance",
+        "status": "PASS",
+        "detail": "seed sources=0, enrichment sourceIds=2",
+        "source": "enrichment"
+      },
+      {
+        "field": "verification_date",
+        "status": "PASS",
+        "detail": "Latest verification/research signal: 2026-08-17T20:00:00.000Z",
+        "source": "enrichment"
+      }
+    ],
+    "passCount": 17,
+    "partialCount": 0,
+    "missingCount": 0,
+    "unknownCount": 1,
+    "score": 94
+  },
+  "decisionHub": {
+    "whatItIs": "Talkdesk is a mid-market/enterprise cloud contact center (CCaaS): CX Cloud editions span Digital Essentials ($85), Voice Essentials ($105), Elite omnichannel ($165) and Industry Experience Clouds (from $225) per user/month, confirmed on talkdesk.com/pricing 2026-08-17. AI (CXA Copilot/Autopilot/Navigator) and many add-ons are quoted separately. Talkdesk Express offers a limited free credit path for small US/Canada businesses. Scored inside the contact-center job cluster — landscape award on the BC best page; do not rank as a phone-system peer to RingCentral/OpenPhone.",
+    "bestFor": [
+      "Mid-market and enterprise teams buying a purpose-built cloud contact center",
+      "Organisations that need omnichannel agent ops with WFM on Elite+",
+      "Buyers evaluating AI agent-assist and automation as primary CX bets",
+      "mid-market / customer-success: Talkdesk fit for mid-market customer-success teams in the contact-center job cluster, from first-party positioning and Business-communications Priority-3 research.",
+      "enterprise / customer-success: Talkdesk fit for enterprise customer-success teams in the contact-center job cluster, from first-party positioning and Business-communications Priority-3 research."
+    ],
+    "notIdealFor": [
+      "SMB teams that only need a business phone / softphone (prefer OpenPhone/Vonage/Aircall)",
+      "Buyers who refuse add-on AI commercial structures",
+      "WhatsApp-only customer messaging teams (prefer Wati/respond.io)",
+      "Digital and Voice Essentials are channel-siloed — true omnichannel starts at Elite ($165)",
+      "CXA AI (Copilot/Autopilot/Navigator) is typically add-on priced on top of CX Cloud seats",
+      "Not a substitute for SMB business-phone / UCaaS seats"
+    ],
+    "coreCapabilities": [
+      "cloud phone",
+      "call routing",
+      "call recording",
+      "power dialer",
+      "sms messaging",
+      "shared inbox",
+      "crm cti",
+      "analytics reporting"
+    ],
+    "pricingSummary": "4 documented plans · entry paid: Digital Essentials · trial documented on at least one plan",
+    "keyTradeoffs": [
+      "Digital and Voice Essentials are channel-siloed — true omnichannel starts at Elite ($165)",
+      "CXA AI (Copilot/Autopilot/Navigator) is typically add-on priced on top of CX Cloud seats",
+      "Not a substitute for SMB business-phone / UCaaS seats",
+      "Contracts and telephony usage commonly raise TCO beyond list floors",
+      "Implementation and WFM complexity favour mid-market+ buyers"
+    ],
+    "alternatives": [
+      {
+        "slug": "genesys",
+        "name": "Genesys"
+      },
+      {
+        "slug": "five9",
+        "name": "Five9"
+      },
+      {
+        "slug": "ringcentral",
+        "name": "RingCentral"
+      },
+      {
+        "slug": "eightx8",
+        "name": "8x8"
+      },
+      {
+        "slug": "aircall",
+        "name": "Aircall"
+      }
+    ],
+    "importantComparisons": [
+      {
+        "slug": "genesys-vs-talkdesk",
+        "title": "Genesys vs Talkdesk",
+        "href": "/compare/genesys-vs-talkdesk/"
+      },
+      {
+        "slug": "five9-vs-talkdesk",
+        "title": "Five9 vs Talkdesk",
+        "href": "/compare/five9-vs-talkdesk/"
+      },
+      {
+        "slug": "talkdesk-vs-twilio",
+        "title": "Talkdesk vs Twilio",
+        "href": "/compare/talkdesk-vs-twilio/"
+      },
+      {
+        "slug": "dialpad-vs-talkdesk",
+        "title": "Dialpad vs Talkdesk",
+        "href": "/compare/dialpad-vs-talkdesk/"
+      },
+      {
+        "slug": "eightx8-vs-talkdesk",
+        "title": "8x8 vs Talkdesk",
+        "href": "/compare/eightx8-vs-talkdesk/"
+      },
+      {
+        "slug": "fastmail-vs-talkdesk",
+        "title": "Fastmail vs Talkdesk",
+        "href": "/compare/fastmail-vs-talkdesk/"
+      }
+    ],
+    "relevantGuides": [
+      {
+        "slug": "talkdesk-implementation",
+        "title": "Talkdesk Implementation: 30/60/90 Communications Rollout That Sticks",
+        "href": "/guides/talkdesk-implementation/"
+      },
+      {
+        "slug": "talkdesk-migration",
+        "title": "Talkdesk Migration: Move Numbers Without Losing Trust",
+        "href": "/guides/talkdesk-migration/"
+      },
+      {
+        "slug": "talkdesk-setup",
+        "title": "Talkdesk Setup: Day-Zero Path to a Working Call Loop",
+        "href": "/guides/talkdesk-setup/"
+      },
+      {
+        "slug": "talkdesk-plans",
+        "title": "Talkdesk Plans: Seats, Numbers, and Qualifying Tiers",
+        "href": "/guides/talkdesk-plans/"
+      },
+      {
+        "slug": "is-talkdesk-worth-it",
+        "title": "Is Talkdesk Worth It? Fit Scenarios Before You Buy",
+        "href": "/guides/is-talkdesk-worth-it/"
+      }
+    ],
+    "evidenceState": "Research/data-based (no completed hands-on test) · Latest verification/research signal: 2026-08-17T20:00:00.000Z · Editorial assessment: approved",
+    "nextDecisionStep": "Compare against peers: Genesys vs Talkdesk",
+    "missingSections": [
+      "canonical_vendor"
+    ]
+  },
+  "dependents": [
+    {
+      "kind": "guide",
+      "slug": "talkdesk-implementation",
+      "path": "/guides/talkdesk-implementation/"
+    },
+    {
+      "kind": "guide",
+      "slug": "talkdesk-migration",
+      "path": "/guides/talkdesk-migration/"
+    },
+    {
+      "kind": "guide",
+      "slug": "talkdesk-setup",
+      "path": "/guides/talkdesk-setup/"
+    },
+    {
+      "kind": "guide",
+      "slug": "talkdesk-plans",
+      "path": "/guides/talkdesk-plans/"
+    },
+    {
+      "kind": "guide",
+      "slug": "is-talkdesk-worth-it",
+      "path": "/guides/is-talkdesk-worth-it/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "genesys-vs-talkdesk",
+      "path": "/compare/genesys-vs-talkdesk/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "five9-vs-talkdesk",
+      "path": "/compare/five9-vs-talkdesk/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "talkdesk-vs-twilio",
+      "path": "/compare/talkdesk-vs-twilio/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "dialpad-vs-talkdesk",
+      "path": "/compare/dialpad-vs-talkdesk/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "eightx8-vs-talkdesk",
+      "path": "/compare/eightx8-vs-talkdesk/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "fastmail-vs-talkdesk",
+      "path": "/compare/fastmail-vs-talkdesk/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "goto-connect-vs-talkdesk",
+      "path": "/compare/goto-connect-vs-talkdesk/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "grasshopper-vs-talkdesk",
+      "path": "/compare/grasshopper-vs-talkdesk/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "manychat-vs-talkdesk",
+      "path": "/compare/manychat-vs-talkdesk/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "microsoft-teams-vs-talkdesk",
+      "path": "/compare/microsoft-teams-vs-talkdesk/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "nextiva-vs-talkdesk",
+      "path": "/compare/nextiva-vs-talkdesk/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "ooma-vs-talkdesk",
+      "path": "/compare/ooma-vs-talkdesk/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "openphone-vs-talkdesk",
+      "path": "/compare/openphone-vs-talkdesk/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "respond-io-vs-talkdesk",
+      "path": "/compare/respond-io-vs-talkdesk/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "ringcentral-vs-talkdesk",
+      "path": "/compare/ringcentral-vs-talkdesk/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "sanebox-vs-talkdesk",
+      "path": "/compare/sanebox-vs-talkdesk/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "slack-vs-talkdesk",
+      "path": "/compare/slack-vs-talkdesk/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "talkdesk-vs-vonage",
+      "path": "/compare/talkdesk-vs-vonage/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "talkdesk-vs-wati",
+      "path": "/compare/talkdesk-vs-wati/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "talkdesk-vs-webex",
+      "path": "/compare/talkdesk-vs-webex/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "talkdesk-vs-zenzap",
+      "path": "/compare/talkdesk-vs-zenzap/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "talkdesk-vs-zoom",
+      "path": "/compare/talkdesk-vs-zoom/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "aircall-vs-talkdesk",
+      "path": "/compare/aircall-vs-talkdesk/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "intercom-vs-talkdesk",
+      "path": "/compare/intercom-vs-talkdesk/"
+    },
+    {
+      "kind": "alternatives",
+      "slug": "talkdesk",
+      "path": "/alternatives/talkdesk/"
+    },
+    {
+      "kind": "pricing",
+      "slug": "talkdesk",
+      "path": "/software/talkdesk/pricing/"
+    },
+    {
+      "kind": "tools",
+      "slug": "business-communications-cost-calculator",
+      "path": "/tools/business-communications-cost-calculator/"
+    }
+  ],
+  "dependentsNeedingRefresh": [],
+  "remediation": [
+    "verify:canonical_vendor"
+  ],
+  "notes": [
+    "fieldAudit score=94",
+    "decisionHub bestFor=5 notIdeal=6",
+    "dependents=32"
+  ],
+  "materiallyImproved": false
+}

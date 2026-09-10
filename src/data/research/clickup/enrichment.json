@@ -171,36 +171,6 @@
       ]
     }
   ],
-  "aiCapabilities": [
-    {
-      "capability": "assistant",
-      "availability": "add-on",
-      "sourceIds": [
-        "clickup-product-official"
-      ]
-    },
-    {
-      "capability": "summaries",
-      "availability": "add-on",
-      "sourceIds": [
-        "clickup-product-official"
-      ]
-    },
-    {
-      "capability": "automation",
-      "availability": "supported",
-      "sourceIds": [
-        "clickup-product-official"
-      ]
-    },
-    {
-      "capability": "recommendations",
-      "availability": "add-on",
-      "sourceIds": [
-        "clickup-product-official"
-      ]
-    }
-  ],
   "integrationSupport": [
     {
       "integrationSlug": "slack",
@@ -226,6 +196,36 @@
     {
       "integrationSlug": "zapier",
       "kind": "zapier-style",
+      "sourceIds": [
+        "clickup-product-official"
+      ]
+    }
+  ],
+  "aiCapabilities": [
+    {
+      "capability": "assistant",
+      "availability": "add-on",
+      "sourceIds": [
+        "clickup-product-official"
+      ]
+    },
+    {
+      "capability": "summaries",
+      "availability": "add-on",
+      "sourceIds": [
+        "clickup-product-official"
+      ]
+    },
+    {
+      "capability": "automation",
+      "availability": "supported",
+      "sourceIds": [
+        "clickup-product-official"
+      ]
+    },
+    {
+      "capability": "recommendations",
+      "availability": "add-on",
       "sourceIds": [
         "clickup-product-official"
       ]
@@ -308,107 +308,6 @@
       "isEditorial": false
     }
   ],
-  "pricing": {
-    "currency": "USD",
-    "model": "freemium",
-    "hasFreePlan": true,
-    "hasFreeTrial": true,
-    "plans": [
-      {
-        "id": "plan-free",
-        "slug": "free",
-        "name": "Free Forever",
-        "isFree": true,
-        "contactSales": false,
-        "hasFreeTrial": false,
-        "highlighted": false,
-        "rules": [
-          {
-            "kind": "flat",
-            "amount": 0,
-            "currency": "USD",
-            "interval": "month",
-            "amountPeriod": "month"
-          }
-        ],
-        "description": "Unlimited members with storage and feature caps."
-      },
-      {
-        "id": "plan-unlimited",
-        "slug": "unlimited",
-        "name": "Unlimited",
-        "isFree": false,
-        "contactSales": false,
-        "hasFreeTrial": true,
-        "highlighted": true,
-        "rules": [
-          {
-            "kind": "per-seat",
-            "amountPerSeat": 7,
-            "currency": "USD",
-            "interval": "year",
-            "amountPeriod": "month"
-          }
-        ],
-        "description": "$7/user/mo annual — entry paid Work OS breadth."
-      },
-      {
-        "id": "plan-business",
-        "slug": "business",
-        "name": "Business",
-        "isFree": false,
-        "contactSales": false,
-        "hasFreeTrial": true,
-        "highlighted": false,
-        "rules": [
-          {
-            "kind": "per-seat",
-            "amountPerSeat": 12,
-            "currency": "USD",
-            "interval": "year",
-            "amountPeriod": "month"
-          }
-        ],
-        "description": "$12/user/mo annual — dashboards, automation depth, advanced views."
-      },
-      {
-        "id": "plan-business-plus",
-        "slug": "business-plus",
-        "name": "Business Plus",
-        "isFree": false,
-        "contactSales": false,
-        "hasFreeTrial": true,
-        "highlighted": false,
-        "rules": [
-          {
-            "kind": "per-seat",
-            "amountPerSeat": 19,
-            "currency": "USD",
-            "interval": "year",
-            "amountPeriod": "month"
-          }
-        ],
-        "description": "~$19/user/mo annual — higher admin/automation ceiling before Enterprise."
-      },
-      {
-        "id": "plan-enterprise",
-        "slug": "enterprise",
-        "name": "Enterprise",
-        "isFree": false,
-        "contactSales": true,
-        "hasFreeTrial": false,
-        "highlighted": false,
-        "rules": [],
-        "description": "Enterprise — custom quote."
-      }
-    ],
-    "notes": "Cross-checked 2026-08-17: Free unlimited members (storage/feature caps); Unlimited $7, Business $12, Business Plus ~$19 per user/mo annual; Enterprise quote. Confirm live clickup.com/pricing and Brain packaging.",
-    "verifiedAt": "2026-08-17T20:00:00.000Z",
-    "sourceIds": [
-      "clickup-pricing-official"
-    ],
-    "startingPriceMonthly": 7
-  },
   "screenshots": [
     {
       "id": "clickup-shot-projects",
@@ -512,13 +411,13 @@
       "demonstratedDimensionIds": [],
       "requirementCriterionIds": [],
       "workflowStageIds": [],
+      "mediaContext": "general-workflow",
       "reportedOutcomes": [],
       "placements": [
         "overview",
         "features",
         "evidence"
       ],
-      "mediaContext": "general-workflow",
       "purpose": "Official ClickUp video for product research pages",
       "demonstratesCaption": "How ClickUp presents the product in an official vendor video.",
       "editorialCommentary": "Official vendor demo — treat as UI/workflow evidence, not SoftwareGlimpse scoring.",
@@ -578,13 +477,13 @@
       "demonstratedDimensionIds": [],
       "requirementCriterionIds": [],
       "workflowStageIds": [],
+      "mediaContext": "general-workflow",
       "reportedOutcomes": [],
       "placements": [
         "overview",
         "features",
         "evidence"
       ],
-      "mediaContext": "general-workflow",
       "purpose": "Official ClickUp video for product research pages",
       "demonstratesCaption": "How ClickUp presents the product in an official vendor video.",
       "editorialCommentary": "Official vendor demo — treat as UI/workflow evidence, not SoftwareGlimpse scoring.",
@@ -602,11 +501,107 @@
       "status": "published"
     }
   ],
-  "sourceIds": [
-    "clickup-product-official",
-    "clickup-pricing-official"
-  ],
-  "notes": "Project-management Priority-1 onboarding enrichment from first-party research 2026-08-17T20:00:00.000Z. handsOnTesting=false. membershipRole=primary. jobCluster=work-os.",
+  "pricing": {
+    "currency": "USD",
+    "model": "freemium",
+    "hasFreePlan": true,
+    "hasFreeTrial": true,
+    "plans": [
+      {
+        "id": "plan-free",
+        "slug": "free",
+        "name": "Free Forever",
+        "isFree": true,
+        "contactSales": false,
+        "hasFreeTrial": false,
+        "highlighted": false,
+        "rules": [
+          {
+            "kind": "flat",
+            "amount": 0,
+            "currency": "USD",
+            "interval": "month",
+            "amountPeriod": "month"
+          }
+        ],
+        "description": "Unlimited members with storage and feature caps."
+      },
+      {
+        "id": "plan-unlimited",
+        "slug": "unlimited",
+        "name": "Unlimited",
+        "isFree": false,
+        "contactSales": false,
+        "hasFreeTrial": true,
+        "highlighted": true,
+        "rules": [
+          {
+            "kind": "per-seat",
+            "amountPerSeat": 7,
+            "currency": "USD",
+            "interval": "year",
+            "amountPeriod": "month"
+          }
+        ],
+        "description": "$7/user/mo annual — entry paid Work OS breadth."
+      },
+      {
+        "id": "plan-business",
+        "slug": "business",
+        "name": "Business",
+        "isFree": false,
+        "contactSales": false,
+        "hasFreeTrial": true,
+        "highlighted": false,
+        "rules": [
+          {
+            "kind": "per-seat",
+            "amountPerSeat": 12,
+            "currency": "USD",
+            "interval": "year",
+            "amountPeriod": "month"
+          }
+        ],
+        "description": "$12/user/mo annual — dashboards, automation depth, advanced views."
+      },
+      {
+        "id": "plan-business-plus",
+        "slug": "business-plus",
+        "name": "Business Plus",
+        "isFree": false,
+        "contactSales": false,
+        "hasFreeTrial": true,
+        "highlighted": false,
+        "rules": [
+          {
+            "kind": "per-seat",
+            "amountPerSeat": 19,
+            "currency": "USD",
+            "interval": "year",
+            "amountPeriod": "month"
+          }
+        ],
+        "description": "~$19/user/mo annual — higher admin/automation ceiling before Enterprise."
+      },
+      {
+        "id": "plan-enterprise",
+        "slug": "enterprise",
+        "name": "Enterprise",
+        "isFree": false,
+        "contactSales": true,
+        "hasFreeTrial": false,
+        "highlighted": false,
+        "rules": [],
+        "description": "Enterprise — custom quote."
+      }
+    ],
+    "notes": "Cross-checked 2026-08-17: Free unlimited members (storage/feature caps); Unlimited $7, Business $12, Business Plus ~$19 per user/mo annual; Enterprise quote. Confirm live clickup.com/pricing and Brain packaging.",
+    "verifiedAt": "2026-09-09T08:27:11.875Z",
+    "sourceIds": [
+      "clickup-pricing-official"
+    ],
+    "startingPriceMonthly": 7
+  },
   "domainCheckedAt": {
     "identity": "2026-08-17T20:00:00.000Z",
     "pricing": "2026-08-17T20:00:00.000Z",
@@ -620,5 +615,10 @@
     "limits": "2026-08-17T20:00:00.000Z",
     "security-compliance": "2026-08-17T20:00:00.000Z"
   },
-  "updatedAt": "2026-08-18T07:00:00.000Z"
+  "sourceIds": [
+    "clickup-product-official",
+    "clickup-pricing-official"
+  ],
+  "updatedAt": "2026-08-18T07:00:00.000Z",
+  "notes": "Project-management Priority-1 onboarding enrichment from first-party research 2026-08-17T20:00:00.000Z. handsOnTesting=false. membershipRole=primary. jobCluster=work-os."
 }

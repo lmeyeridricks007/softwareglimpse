@@ -378,6 +378,70 @@ describe("RedirectPlanGenerator generation", () => {
           },
         ],
         [
+          "/software/salesforce/",
+          {
+            path: "/software/salesforce/",
+            pageType: "product" as const,
+            indexable: true,
+          },
+        ],
+        [
+          "/software/freshsales/",
+          {
+            path: "/software/freshsales/",
+            pageType: "product" as const,
+            indexable: true,
+          },
+        ],
+        [
+          "/software/zoho-crm/",
+          {
+            path: "/software/zoho-crm/",
+            pageType: "product" as const,
+            indexable: true,
+          },
+        ],
+        [
+          "/software/miocommerce/",
+          {
+            path: "/software/miocommerce/",
+            pageType: "product" as const,
+            indexable: true,
+          },
+        ],
+        [
+          "/company/my-story/",
+          {
+            path: "/company/my-story/",
+            pageType: "company" as const,
+            indexable: true,
+          },
+        ],
+        [
+          "/legal/terms/",
+          {
+            path: "/legal/terms/",
+            pageType: "legal" as const,
+            indexable: true,
+          },
+        ],
+        [
+          "/compare/livechat-vs-tidio/",
+          {
+            path: "/compare/livechat-vs-tidio/",
+            pageType: "comparison" as const,
+            indexable: true,
+          },
+        ],
+        [
+          "/compare/crisp-vs-tidio/",
+          {
+            path: "/compare/crisp-vs-tidio/",
+            pageType: "comparison" as const,
+            indexable: true,
+          },
+        ],
+        [
           "/compare/monday-sales-crm-vs-salesforce/",
           {
             path: "/compare/monday-sales-crm-vs-salesforce/",
@@ -425,6 +489,14 @@ describe("RedirectPlanGenerator generation", () => {
             indexable: true,
           },
         ],
+        [
+          "/llms.txt/",
+          {
+            path: "/llms.txt/",
+            pageType: "static" as const,
+            indexable: true,
+          },
+        ],
       ]),
       sitemap: new Set([
         "/software/pipedrive/",
@@ -432,6 +504,7 @@ describe("RedirectPlanGenerator generation", () => {
         "/guides/crm-implementation/",
         "/features/calling/",
         "/features/reporting-dashboards/",
+        "/llms.txt/",
       ]),
     };
 
@@ -489,7 +562,11 @@ describe("legacy-redirects.json wiring", () => {
     expect(nextRedirects.length).toBeGreaterThanOrEqual(file.redirects.length);
     for (const r of nextRedirects) {
       expect(r.permanent).toBe(true);
-      expect(r.destination.endsWith("/") || r.destination === "/").toBe(true);
+      const lastSegment = r.destination.replace(/\/$/, "").split("/").pop() ?? "";
+      const isFileDest = /\.[a-z0-9]+$/i.test(lastSegment);
+      expect(
+        isFileDest || r.destination.endsWith("/") || r.destination === "/",
+      ).toBe(true);
       expect(r.destination).not.toBe("/");
       // Destination must not itself be a configured source (no chains)
       const destAsSource = r.destination.replace(/\/$/, "");
@@ -498,5 +575,12 @@ describe("legacy-redirects.json wiring", () => {
       );
       expect(sources.has(destAsSource)).toBe(false);
     }
+
+    const llmInfo = nextRedirects.filter(
+      (r) => r.source === "/llm-info" || r.source === "/llm-info/",
+    );
+    expect(llmInfo).toHaveLength(2);
+    expect(llmInfo.every((r) => r.destination === "/llms.txt")).toBe(true);
+    expect(llmInfo.every((r) => r.permanent)).toBe(true);
   });
 });

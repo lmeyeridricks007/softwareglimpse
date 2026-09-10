@@ -1,0 +1,202 @@
+{
+  "slug": "rootly-plans",
+  "enrichmentType": "COST_GUIDE",
+  "updatedAt": "2026-09-09T05:48:00.421Z",
+  "uniqueValueAdded": [
+    "pricing_comparison",
+    "sg_original_data",
+    "scenario_analysis",
+    "implementation_workflow",
+    "decision_framework",
+    "limitations_evidence",
+    "product_shortlist",
+    "alternatives_map",
+    "buyer_checklist"
+  ],
+  "patch": {
+    "summary": "Rootly cost guide: researched plan structure, who each tier suits, cost scenarios, and value tradeoffs — no invented prices.",
+    "blocks": [
+      {
+        "id": "da-rootly-plans-1",
+        "type": "direct-answer",
+        "body": "Rootly pricing is plan-gated across 3 researched tiers. No free plan confirmed in SoftwareGlimpse research. No free/trial flag confirmed in SG data — budget a paid pilot. Compare seat/capacity gates and unlocks — not list-price folklore.",
+        "bullets": [
+          "Free plan: not confirmed in SG data",
+          "No free/trial flag confirmed in SG data — budget a paid pilot",
+          "Entry paid tier researched: Incident Response Essentials"
+        ]
+      },
+      {
+        "id": "cost-rootly-plans-2",
+        "type": "cost-breakdown",
+        "title": "Rootly plan matrix and who each tier suits",
+        "body": "Structure and trial/free flags come from SoftwareGlimpse pricing research. Dollar amounts appear only when verified — never invent list prices.",
+        "lines": [
+          {
+            "label": "Incident Response Essentials",
+            "description": "Unlocks: incident management, change and problem management, infrastructure monitoring · Suits: teams whose must-have gates appear on this tier"
+          },
+          {
+            "label": "On-Call Essentials",
+            "description": "Suits: teams whose must-have gates appear on this tier"
+          },
+          {
+            "label": "Enterprise",
+            "description": "Contact sales · Suits: teams that need custom procurement"
+          }
+        ],
+        "calculatorHref": "/tools/it-development-cost-calculator/",
+        "calculatorLabel": "Model category cost fit"
+      },
+      {
+        "id": "scen-rootly-plans-3",
+        "type": "step",
+        "heading": "Rootly cost scenarios to pressure-test",
+        "body": "Price Rootly against how you actually buy seats and unlocks — not against a competitor's homepage headline.",
+        "stepNumber": 1,
+        "scenarios": [
+          {
+            "title": "Lean team / free-or-trial first",
+            "body": "Scope a time-boxed pilot; No free/trial flag confirmed in SG data — budget a paid pilot."
+          },
+          {
+            "title": "Growing team with gated workflows",
+            "body": "Map must-have workflows (incident management, change and problem management, infrastructure monitoring) to plan unlocks before expanding seats."
+          },
+          {
+            "title": "Hidden / extra cost watch",
+            "body": "Budget risk: On-Call Essentials is a separate list price SKU — not included in Incident Response list price. Also check add-ons, overages, and admin time outside the sticker plan."
+          }
+        ]
+      },
+      {
+        "id": "value-rootly-plans-4",
+        "type": "decision-framework",
+        "title": "Rootly value rule",
+        "steps": [
+          {
+            "id": "v-1",
+            "label": "Pay up when Slack-first teams buying incident command at a published list price floor requires a paid unlock you will use weekly"
+          },
+          {
+            "id": "v-2",
+            "label": "Do not overbuy if this limitation dominates: On-Call Essentials is a separate list price SKU — not included in Incident Response list price"
+          },
+          {
+            "id": "v-3",
+            "label": "Side-by-side cost with PagerDuty on the same seat count"
+          }
+        ]
+      },
+      {
+        "id": "lim-rootly-plans-5",
+        "type": "mistakes",
+        "title": "Rootly cost mistakes to avoid",
+        "items": [
+          {
+            "title": "Cost trap 1",
+            "body": "On-Call Essentials is a separate list price SKU — not included in Incident Response list price"
+          },
+          {
+            "title": "Cost trap 2",
+            "body": "Does not outrank PagerDuty (8.0)"
+          },
+          {
+            "title": "Cost trap 3",
+            "body": "No published free plan (unlike FireHydrant / incident.io Basic)"
+          },
+          {
+            "title": "Cost trap 4",
+            "body": "Not observability telemetry"
+          },
+          {
+            "title": "Cost trap 5",
+            "body": "Not an ITSM CMDB"
+          }
+        ]
+      },
+      {
+        "id": "alts-rootly-plans-6",
+        "type": "product-shortlist",
+        "title": "Cheaper or clearer alternatives to pressure-test",
+        "body": "Compare total cost of ownership vs Rootly on identical constraints.",
+        "productSlugs": [
+          "pagerduty",
+          "incident-io"
+        ],
+        "disclaimer": "Catalogue peers only — not commission-ranked."
+      },
+      {
+        "id": "sel-rootly-plans-7",
+        "type": "selection-checklist",
+        "title": "Rootly pricing checklist",
+        "dimensions": [
+          {
+            "id": "gates",
+            "label": "Plan gates you must unlock",
+            "options": [
+              "on-call and paging (Incident Response Essentials, On-Call Essentials, Enterprise)"
+            ]
+          },
+          {
+            "id": "trial",
+            "label": "Trial / free proof",
+            "options": [
+              "Paid pilot scoped",
+              "Procurement path clear",
+              "No free/trial in SG data"
+            ]
+          },
+          {
+            "id": "tco",
+            "label": "TCO extras",
+            "options": [
+              "Add-ons checked",
+              "Admin time budgeted",
+              "Migration cost noted"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "cta-rootly-plans-8",
+        "type": "interactive-cta",
+        "title": "Model it-development spend with Rootly in mind",
+        "body": "Use researched plan structure for Rootly alongside category cost modelling.",
+        "href": "/tools/it-development-cost-calculator/",
+        "ctaLabel": "Open calculator",
+        "variant": "calculator"
+      }
+    ],
+    "checklist": [
+      {
+        "id": "enrich-chk-0",
+        "label": "List must-have unlocks before picking a Rootly tier",
+        "order": 0
+      },
+      {
+        "id": "enrich-chk-1",
+        "label": "No free/trial flag confirmed in SG data — budget a paid pilot",
+        "order": 1
+      },
+      {
+        "id": "enrich-chk-2",
+        "label": "Price in this risk: On-Call Essentials is a separate list price SKU — not included in Incident Response list price",
+        "order": 2
+      },
+      {
+        "id": "enrich-chk-3",
+        "label": "Compare seat TCO with PagerDuty",
+        "order": 3
+      }
+    ],
+    "nextAction": {
+      "contentId": "tool:finder:it-development",
+      "label": "Open Finder shortlist"
+    }
+  },
+  "notes": [
+    "Cost guide: real plan structure, free/trial, TCO tradeoffs — never invent prices.",
+    "Type-specific skeleton: COST_GUIDE"
+  ]
+}

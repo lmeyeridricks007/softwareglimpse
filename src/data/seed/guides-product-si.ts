@@ -1,8 +1,8 @@
-import type { GuidePage } from "@/domain";
+import type { GuidePageInput } from "@/domain";
 import { buildAllSiProductGuides } from "@/services/product-guides/build";
 
 /**
  * Product-scoped sales-intelligence guides (implementation, migration, setup,
  * plans, worth-it). Published and indexable.
  */
-export const siProductGuides: GuidePage[] = buildAllSiProductGuides();
+export const siProductGuides: GuidePageInput[] = buildAllSiProductGuides();

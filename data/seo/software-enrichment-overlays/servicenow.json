@@ -1,0 +1,549 @@
+{
+  "slug": "servicenow",
+  "updatedAt": "2026-09-07T22:31:21.780Z",
+  "version": "1.0.0",
+  "fieldAudit": {
+    "slug": "servicenow",
+    "checkedAt": "2026-09-07T22:31:21.779Z",
+    "items": [
+      {
+        "field": "name",
+        "status": "PASS",
+        "detail": "Name: ServiceNow",
+        "source": "seed"
+      },
+      {
+        "field": "product_status",
+        "status": "PASS",
+        "detail": "productLifecycle=active",
+        "source": "seed"
+      },
+      {
+        "field": "canonical_vendor",
+        "status": "UNKNOWN",
+        "detail": "Company/vendor not documented",
+        "source": "none"
+      },
+      {
+        "field": "category",
+        "status": "PASS",
+        "detail": "primaryCategorySlug=it-development",
+        "source": "seed"
+      },
+      {
+        "field": "description",
+        "status": "PASS",
+        "detail": "Description present (Enterprise ITSM / Now Platform — contact sales. 2026 ITSM tiers Foundation / Adv…)",
+        "source": "seed"
+      },
+      {
+        "field": "target_audience",
+        "status": "PASS",
+        "detail": "Sizes=2, teams=2, assessment bestFor=3",
+        "source": "assessment"
+      },
+      {
+        "field": "use_cases",
+        "status": "PASS",
+        "detail": "useCaseSlugs=1",
+        "source": "seed"
+      },
+      {
+        "field": "capabilities",
+        "status": "PASS",
+        "detail": "featureRatings=0, enrichment features=15",
+        "source": "enrichment"
+      },
+      {
+        "field": "pricing",
+        "status": "PASS",
+        "detail": "Pricing envelope present",
+        "source": "enrichment"
+      },
+      {
+        "field": "plans",
+        "status": "PASS",
+        "detail": "plans=3",
+        "source": "enrichment"
+      },
+      {
+        "field": "free_plan",
+        "status": "PASS",
+        "detail": "No free plan in documented plans (explicit absence)",
+        "source": "enrichment"
+      },
+      {
+        "field": "trial",
+        "status": "UNKNOWN",
+        "detail": "Trial not explicitly documented — do not assume none",
+        "source": "none"
+      },
+      {
+        "field": "integrations",
+        "status": "PASS",
+        "detail": "integrationSlugs=0, enrichment=4",
+        "source": "enrichment"
+      },
+      {
+        "field": "alternatives",
+        "status": "PASS",
+        "detail": "alternativeSlugs=2",
+        "source": "seed"
+      },
+      {
+        "field": "competitors",
+        "status": "PASS",
+        "detail": "competitorSlugs=8",
+        "source": "seed"
+      },
+      {
+        "field": "affiliate",
+        "status": "PASS",
+        "detail": "No affiliate relationship (explicit)",
+        "source": "seed"
+      },
+      {
+        "field": "source_provenance",
+        "status": "PASS",
+        "detail": "seed sources=0, enrichment sourceIds=3",
+        "source": "enrichment"
+      },
+      {
+        "field": "verification_date",
+        "status": "PASS",
+        "detail": "Latest verification/research signal: 2026-08-18T12:00:00.000Z",
+        "source": "enrichment"
+      }
+    ],
+    "passCount": 16,
+    "partialCount": 0,
+    "missingCount": 0,
+    "unknownCount": 2,
+    "score": 89
+  },
+  "decisionHub": {
+    "whatItIs": "ServiceNow is the enterprise Now Platform for ITSM (incident, problem, change, request, CMDB) plus a broad module catalog (ITOM, HRSD, CSM). ServiceNow does not publish list prices. From April 2026 ITSM is licensed Foundation / Advanced / Prime with Now Assist allocations bundled. Third-party benchmarks often cite roughly $100+/fulfiller/month list at small bands before discount — treat as directional, not a SoftwareGlimpse floor. Implementation and module sprawl dominate TCO versus Freshservice’s published agent SKUs.",
+    "bestFor": [
+      "Enterprises standardising ITSM (and often HRSD/CSM) on one platform",
+      "ITIL-mature shops that need CMDB + change at scale",
+      "Buyers with budget for implementation partners",
+      "mid-market / it-ops: ServiceNow fit for mid-market it-ops teams in the itsm-service-desk job cluster, from first-party positioning and IT Priority-2 research.",
+      "enterprise / it-ops: ServiceNow fit for enterprise it-ops teams in the itsm-service-desk job cluster, from first-party positioning and IT Priority-2 research."
+    ],
+    "notIdealFor": [
+      "SMBs that need a published $19/agent ITSM SKU (Freshservice)",
+      "Atlassian-first teams that only need JSM on an existing Jira Cloud",
+      "SRE teams buying observability (Datadog / New Relic)",
+      "No published self-serve price — procurement and SI partners are the buying motion",
+      "Implementation cost often exceeds year-one licences",
+      "Module sprawl (ITOM, HRSD, CSM) can dwarf ITSM seat cost"
+    ],
+    "coreCapabilities": [
+      "incident management",
+      "change problem",
+      "service catalog",
+      "itsm ai",
+      "oncall paging",
+      "enterprise security",
+      "analytics reporting",
+      "itsm service desk"
+    ],
+    "pricingSummary": "3 documented plans · entry paid: ITSM Foundation",
+    "keyTradeoffs": [
+      "No published self-serve price — procurement and SI partners are the buying motion",
+      "Implementation cost often exceeds year-one licences",
+      "Module sprawl (ITOM, HRSD, CSM) can dwarf ITSM seat cost",
+      "Poor fit as an SMB published-price alternative to Freshservice Starter",
+      "Not an observability, git, or hosting-panel product"
+    ],
+    "alternatives": [
+      {
+        "slug": "freshservice",
+        "name": "Freshservice"
+      },
+      {
+        "slug": "jira-service-management",
+        "name": "Jira Service Management"
+      },
+      {
+        "slug": "manageengine-servicedesk-plus",
+        "name": "ManageEngine ServiceDesk Plus"
+      },
+      {
+        "slug": "sysaid",
+        "name": "SysAid"
+      },
+      {
+        "slug": "haloitsm",
+        "name": "HaloITSM"
+      },
+      {
+        "slug": "topdesk",
+        "name": "TOPdesk"
+      }
+    ],
+    "importantComparisons": [
+      {
+        "slug": "freshservice-vs-servicenow",
+        "title": "ServiceNow vs Freshservice",
+        "href": "/compare/freshservice-vs-servicenow/"
+      },
+      {
+        "slug": "jira-service-management-vs-servicenow",
+        "title": "ServiceNow vs Jira Service Management",
+        "href": "/compare/jira-service-management-vs-servicenow/"
+      },
+      {
+        "slug": "ivanti-vs-servicenow",
+        "title": "Ivanti Neurons for ITSM vs ServiceNow",
+        "href": "/compare/ivanti-vs-servicenow/"
+      },
+      {
+        "slug": "bmc-helix-vs-servicenow",
+        "title": "BMC Helix ITSM vs ServiceNow",
+        "href": "/compare/bmc-helix-vs-servicenow/"
+      },
+      {
+        "slug": "apify-vs-servicenow",
+        "title": "Apify vs ServiceNow",
+        "href": "/compare/apify-vs-servicenow/"
+      },
+      {
+        "slug": "appdynamics-vs-servicenow",
+        "title": "AppDynamics vs ServiceNow",
+        "href": "/compare/appdynamics-vs-servicenow/"
+      }
+    ],
+    "relevantGuides": [
+      {
+        "slug": "servicenow-implementation",
+        "title": "ServiceNow Implementation: 30/60/90 IT Rollout That Sticks",
+        "href": "/guides/servicenow-implementation/"
+      },
+      {
+        "slug": "servicenow-migration",
+        "title": "ServiceNow Migration: Move Tickets and Repos Without Losing Trust",
+        "href": "/guides/servicenow-migration/"
+      },
+      {
+        "slug": "servicenow-setup",
+        "title": "ServiceNow Setup: Day-Zero Path to a Working IT Loop",
+        "href": "/guides/servicenow-setup/"
+      },
+      {
+        "slug": "servicenow-plans",
+        "title": "ServiceNow Plans: Seats, Hosts, and Qualifying Tiers",
+        "href": "/guides/servicenow-plans/"
+      },
+      {
+        "slug": "is-servicenow-worth-it",
+        "title": "Is ServiceNow Worth It? Fit Scenarios Before You Buy",
+        "href": "/guides/is-servicenow-worth-it/"
+      }
+    ],
+    "evidenceState": "Research/data-based (no completed hands-on test) · Latest verification/research signal: 2026-08-18T12:00:00.000Z · Editorial assessment: approved",
+    "nextDecisionStep": "Compare against peers: ServiceNow vs Freshservice",
+    "missingSections": [
+      "canonical_vendor",
+      "trial"
+    ]
+  },
+  "dependents": [
+    {
+      "kind": "guide",
+      "slug": "servicenow-implementation",
+      "path": "/guides/servicenow-implementation/"
+    },
+    {
+      "kind": "guide",
+      "slug": "servicenow-migration",
+      "path": "/guides/servicenow-migration/"
+    },
+    {
+      "kind": "guide",
+      "slug": "servicenow-setup",
+      "path": "/guides/servicenow-setup/"
+    },
+    {
+      "kind": "guide",
+      "slug": "servicenow-plans",
+      "path": "/guides/servicenow-plans/"
+    },
+    {
+      "kind": "guide",
+      "slug": "is-servicenow-worth-it",
+      "path": "/guides/is-servicenow-worth-it/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "freshservice-vs-servicenow",
+      "path": "/compare/freshservice-vs-servicenow/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "jira-service-management-vs-servicenow",
+      "path": "/compare/jira-service-management-vs-servicenow/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "ivanti-vs-servicenow",
+      "path": "/compare/ivanti-vs-servicenow/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "bmc-helix-vs-servicenow",
+      "path": "/compare/bmc-helix-vs-servicenow/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "apify-vs-servicenow",
+      "path": "/compare/apify-vs-servicenow/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "appdynamics-vs-servicenow",
+      "path": "/compare/appdynamics-vs-servicenow/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "azure-devops-vs-servicenow",
+      "path": "/compare/azure-devops-vs-servicenow/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "bitbucket-vs-servicenow",
+      "path": "/compare/bitbucket-vs-servicenow/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "bright-data-vs-servicenow",
+      "path": "/compare/bright-data-vs-servicenow/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "buildkite-vs-servicenow",
+      "path": "/compare/buildkite-vs-servicenow/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "chronosphere-vs-servicenow",
+      "path": "/compare/chronosphere-vs-servicenow/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "circleci-vs-servicenow",
+      "path": "/compare/circleci-vs-servicenow/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "cloudways-vs-servicenow",
+      "path": "/compare/cloudways-vs-servicenow/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "coralogix-vs-servicenow",
+      "path": "/compare/coralogix-vs-servicenow/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "cpanel-vs-servicenow",
+      "path": "/compare/cpanel-vs-servicenow/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "datadog-vs-servicenow",
+      "path": "/compare/datadog-vs-servicenow/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "directadmin-vs-servicenow",
+      "path": "/compare/directadmin-vs-servicenow/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "dynatrace-vs-servicenow",
+      "path": "/compare/dynatrace-vs-servicenow/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "elastic-observability-vs-servicenow",
+      "path": "/compare/elastic-observability-vs-servicenow/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "firehydrant-vs-servicenow",
+      "path": "/compare/firehydrant-vs-servicenow/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "fly-io-vs-servicenow",
+      "path": "/compare/fly-io-vs-servicenow/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "github-vs-servicenow",
+      "path": "/compare/github-vs-servicenow/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "gitlab-vs-servicenow",
+      "path": "/compare/gitlab-vs-servicenow/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "grafana-cloud-vs-servicenow",
+      "path": "/compare/grafana-cloud-vs-servicenow/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "haloitsm-vs-servicenow",
+      "path": "/compare/haloitsm-vs-servicenow/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "heroku-vs-servicenow",
+      "path": "/compare/heroku-vs-servicenow/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "honeycomb-vs-servicenow",
+      "path": "/compare/honeycomb-vs-servicenow/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "incident-io-vs-servicenow",
+      "path": "/compare/incident-io-vs-servicenow/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "iproyal-vs-servicenow",
+      "path": "/compare/iproyal-vs-servicenow/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "kinsta-vs-servicenow",
+      "path": "/compare/kinsta-vs-servicenow/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "manageengine-servicedesk-plus-vs-servicenow",
+      "path": "/compare/manageengine-servicedesk-plus-vs-servicenow/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "new-relic-vs-servicenow",
+      "path": "/compare/new-relic-vs-servicenow/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "oxylabs-vs-servicenow",
+      "path": "/compare/oxylabs-vs-servicenow/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "pagerduty-vs-servicenow",
+      "path": "/compare/pagerduty-vs-servicenow/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "railway-vs-servicenow",
+      "path": "/compare/railway-vs-servicenow/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "render-vs-servicenow",
+      "path": "/compare/render-vs-servicenow/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "rootly-vs-servicenow",
+      "path": "/compare/rootly-vs-servicenow/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "scraperapi-vs-servicenow",
+      "path": "/compare/scraperapi-vs-servicenow/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "sentry-vs-servicenow",
+      "path": "/compare/sentry-vs-servicenow/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "servicenow-vs-siteground",
+      "path": "/compare/servicenow-vs-siteground/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "servicenow-vs-smartproxy",
+      "path": "/compare/servicenow-vs-smartproxy/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "servicenow-vs-splunk",
+      "path": "/compare/servicenow-vs-splunk/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "servicenow-vs-squadcast",
+      "path": "/compare/servicenow-vs-squadcast/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "servicenow-vs-sysaid",
+      "path": "/compare/servicenow-vs-sysaid/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "servicenow-vs-thordata",
+      "path": "/compare/servicenow-vs-thordata/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "servicenow-vs-topdesk",
+      "path": "/compare/servicenow-vs-topdesk/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "servicenow-vs-wp-engine",
+      "path": "/compare/servicenow-vs-wp-engine/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "servicenow-vs-zyte",
+      "path": "/compare/servicenow-vs-zyte/"
+    },
+    {
+      "kind": "alternatives",
+      "slug": "servicenow",
+      "path": "/alternatives/servicenow/"
+    },
+    {
+      "kind": "pricing",
+      "slug": "servicenow",
+      "path": "/software/servicenow/pricing/"
+    },
+    {
+      "kind": "best",
+      "slug": "it-development-software",
+      "path": "/best/it-development-software/"
+    },
+    {
+      "kind": "tools",
+      "slug": "it-development-cost-calculator",
+      "path": "/tools/it-development-cost-calculator/"
+    }
+  ],
+  "dependentsNeedingRefresh": [],
+  "remediation": [
+    "verify:canonical_vendor",
+    "verify:trial"
+  ],
+  "notes": [
+    "fieldAudit score=89",
+    "decisionHub bestFor=5 notIdeal=6",
+    "dependents=57"
+  ],
+  "materiallyImproved": false
+}

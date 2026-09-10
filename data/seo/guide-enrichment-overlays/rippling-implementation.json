@@ -1,0 +1,186 @@
+{
+  "slug": "rippling-implementation",
+  "enrichmentType": "IMPLEMENTATION_GUIDE",
+  "updatedAt": "2026-09-08T21:59:15.548Z",
+  "uniqueValueAdded": [
+    "implementation_workflow",
+    "scenario_analysis",
+    "decision_framework",
+    "limitations_evidence",
+    "pricing_comparison",
+    "sg_original_data",
+    "buyer_checklist"
+  ],
+  "patch": {
+    "summary": "Rippling implementation guide: day-zero sequence, pilot rules, plan gates, and cutover checks from SoftwareGlimpse research — not generic CRM setup filler.",
+    "blocks": [
+      {
+        "id": "da-rippling-implementation-1",
+        "type": "direct-answer",
+        "body": "Implement Rippling by mapping current hr workflows to Rippling objects, confirming plan gates for applicant tracking (Rippling Platform, Payroll / IT / Spend modules), career site and job boards (Rippling Platform, Payroll / IT / Spend modules), interview scheduling (Rippling Platform, Payroll / IT / Spend modules), piloting one team, then cutting over integrations (Slack, Google Workspace) after data checks.",
+        "bullets": [
+          "Start with: applicant tracking",
+          "Gate check: applicant tracking (Rippling Platform, Payroll / IT / Spend modules)",
+          "Integrate after: data quality pass on Slack"
+        ]
+      },
+      {
+        "id": "impl-rippling-implementation-2",
+        "type": "step",
+        "heading": "Rippling day-zero to steady-state sequence",
+        "body": "Treat Rippling setup as a controlled rollout — not a weekend dump of CSV files.",
+        "stepNumber": 1,
+        "scenarios": [
+          {
+            "title": "Day zero — objects and owners",
+            "body": "Define owners for applicant tracking, career site and job boards, interview scheduling before inviting the whole org."
+          },
+          {
+            "title": "SMB pilot",
+            "body": "One pipeline / one team proves Companies that want HR, payroll, and IT provisioning on one employee record before company-wide seats."
+          },
+          {
+            "title": "Cutover",
+            "body": "Freeze legacy writes briefly; validate Slack and Google Workspace before reopen."
+          }
+        ]
+      },
+      {
+        "id": "df-rippling-implementation-3",
+        "type": "decision-framework",
+        "title": "Rippling implementation go / no-go",
+        "steps": [
+          {
+            "id": "i-1",
+            "label": "Go when plan unlocks cover applicant tracking (Rippling Platform, Payroll / IT / Spend modules)"
+          },
+          {
+            "id": "i-2",
+            "label": "Pause if this limitation blocks ops: The list price floor is platform/core only — payroll, IT, spend, and EOR stack PEPM and dominate TCO"
+          },
+          {
+            "id": "i-3",
+            "label": "Do not expand seats until applicant tracking is green"
+          }
+        ]
+      },
+      {
+        "id": "mist-rippling-implementation-4",
+        "type": "mistakes",
+        "title": "Rippling implementation mistakes",
+        "items": [
+          {
+            "title": "Mistake 1",
+            "body": "The list price floor is platform/core only — payroll, IT, spend, and EOR stack PEPM and dominate TCO"
+          },
+          {
+            "title": "Mistake 2",
+            "body": "No published free plan or self-serve trial; sales-led packaging"
+          },
+          {
+            "title": "Mistake 3",
+            "body": "Easy to overbuy modules that the team will not adopt"
+          },
+          {
+            "title": "Mistake 4",
+            "body": "Implementation is non-trivial versus a simple Gusto payroll start"
+          },
+          {
+            "title": "Big-bang invite",
+            "body": "Inviting every user before object design creates junk data that is expensive to unwind."
+          }
+        ]
+      },
+      {
+        "id": "cost-rippling-implementation-5",
+        "type": "cost-breakdown",
+        "title": "Rippling plan gates that affect rollout",
+        "body": "Implementation fails when unlocks needed for go-live sit on a higher tier than budgeted.",
+        "lines": [
+          {
+            "label": "Rippling Platform",
+            "description": "Unlocks: applicant tracking, career site and job boards, interview scheduling · Suits: teams whose must-have gates appear on this tier"
+          },
+          {
+            "label": "Payroll / IT / Spend modules",
+            "description": "Contact sales · Suits: teams that need custom procurement"
+          }
+        ]
+      },
+      {
+        "id": "sel-rippling-implementation-6",
+        "type": "selection-checklist",
+        "title": "Rippling implementation checklist",
+        "dimensions": [
+          {
+            "id": "prep",
+            "label": "Prep",
+            "options": [
+              "Object model drafted",
+              "Owners named",
+              "Legacy freeze window set"
+            ]
+          },
+          {
+            "id": "pilot",
+            "label": "Pilot",
+            "options": [
+              "applicant tracking",
+              "Junk-data rules set",
+              "Support path clear"
+            ]
+          },
+          {
+            "id": "scale",
+            "label": "Scale",
+            "options": [
+              "Slack",
+              "Seat expansion criteria written",
+              "Rollback plan noted"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "cta-rippling-implementation-7",
+        "type": "interactive-cta",
+        "title": "Validate hr fit before a deep Rippling rollout",
+        "body": "If Rippling fails constraint fit, stop implementation early.",
+        "href": "/tools/hr-finder/",
+        "ctaLabel": "Open Finder",
+        "variant": "finder"
+      }
+    ],
+    "checklist": [
+      {
+        "id": "enrich-chk-0",
+        "label": "Draft Rippling object owners before invites",
+        "order": 0
+      },
+      {
+        "id": "enrich-chk-1",
+        "label": "Confirm plan unlocks for go-live features",
+        "order": 1
+      },
+      {
+        "id": "enrich-chk-2",
+        "label": "Pilot one team on applicant tracking",
+        "order": 2
+      },
+      {
+        "id": "enrich-chk-3",
+        "label": "If blocked, evaluate BambooHR before sunk-cost expansion",
+        "order": 3
+      }
+    ],
+    "nextAction": {
+      "contentId": "tool:finder:hr",
+      "label": "Open Finder shortlist"
+    }
+  },
+  "notes": [
+    "Omit unsupported: testing_evidence",
+    "Implementation: workflow, constraints, mistakes, checklist.",
+    "Type-specific skeleton: IMPLEMENTATION_GUIDE"
+  ]
+}

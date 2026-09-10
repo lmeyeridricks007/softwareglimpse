@@ -1,0 +1,527 @@
+{
+  "slug": "siteground",
+  "updatedAt": "2026-09-07T22:31:21.897Z",
+  "version": "1.0.0",
+  "fieldAudit": {
+    "slug": "siteground",
+    "checkedAt": "2026-09-07T22:31:21.896Z",
+    "items": [
+      {
+        "field": "name",
+        "status": "PASS",
+        "detail": "Name: SiteGround",
+        "source": "seed"
+      },
+      {
+        "field": "product_status",
+        "status": "PASS",
+        "detail": "productLifecycle=active",
+        "source": "seed"
+      },
+      {
+        "field": "canonical_vendor",
+        "status": "UNKNOWN",
+        "detail": "Company/vendor not documented",
+        "source": "none"
+      },
+      {
+        "field": "category",
+        "status": "PASS",
+        "detail": "primaryCategorySlug=it-development",
+        "source": "seed"
+      },
+      {
+        "field": "description",
+        "status": "PASS",
+        "detail": "Description present (Managed WordPress hosting with shared-plan packaging — StartUp promo $2.99 then …)",
+        "source": "seed"
+      },
+      {
+        "field": "target_audience",
+        "status": "PASS",
+        "detail": "Sizes=3, teams=2, assessment bestFor=3",
+        "source": "assessment"
+      },
+      {
+        "field": "use_cases",
+        "status": "PASS",
+        "detail": "useCaseSlugs=1",
+        "source": "seed"
+      },
+      {
+        "field": "capabilities",
+        "status": "PASS",
+        "detail": "featureRatings=0, enrichment features=16",
+        "source": "enrichment"
+      },
+      {
+        "field": "pricing",
+        "status": "PASS",
+        "detail": "Pricing envelope present",
+        "source": "enrichment"
+      },
+      {
+        "field": "plans",
+        "status": "PASS",
+        "detail": "plans=3",
+        "source": "enrichment"
+      },
+      {
+        "field": "free_plan",
+        "status": "PASS",
+        "detail": "No free plan in documented plans (explicit absence)",
+        "source": "enrichment"
+      },
+      {
+        "field": "trial",
+        "status": "UNKNOWN",
+        "detail": "Trial not explicitly documented — do not assume none",
+        "source": "none"
+      },
+      {
+        "field": "integrations",
+        "status": "PASS",
+        "detail": "integrationSlugs=0, enrichment=2",
+        "source": "enrichment"
+      },
+      {
+        "field": "alternatives",
+        "status": "PASS",
+        "detail": "alternativeSlugs=2",
+        "source": "seed"
+      },
+      {
+        "field": "competitors",
+        "status": "PASS",
+        "detail": "competitorSlugs=3",
+        "source": "seed"
+      },
+      {
+        "field": "affiliate",
+        "status": "PASS",
+        "detail": "No affiliate relationship (explicit)",
+        "source": "seed"
+      },
+      {
+        "field": "source_provenance",
+        "status": "PASS",
+        "detail": "seed sources=0, enrichment sourceIds=3",
+        "source": "enrichment"
+      },
+      {
+        "field": "verification_date",
+        "status": "PASS",
+        "detail": "Latest verification/research signal: 2026-08-18T22:00:00.000Z",
+        "source": "enrichment"
+      }
+    ],
+    "passCount": 16,
+    "partialCount": 0,
+    "missingCount": 0,
+    "unknownCount": 2,
+    "score": 89
+  },
+  "decisionHub": {
+    "whatItIs": "SiteGround is managed WordPress hosting sold as shared-plan packaging (StartUp / GrowBig / GoGeek) — same hosting-providers cluster as WP Engine, Kinsta, and Cloudways, not a Plesk/cPanel panel licence. StartUp advertises $2.99 intro then renews at $17.99/month; GrowBig renews $29.99; GoGeek $44.99. startingPriceMonthly $17.99 is the ongoing StartUp floor — do not use the intro promo as the research floor. WP Engine remains the cluster award (7.7); this entity does not outrank it. Landscape-only versus Plesk.",
+    "bestFor": [
+      "Teams that want managed WordPress hosting with a published $17.99 ongoing floor",
+      "Buyers comparing SiteGround StartUp to WP Engine Essential and Kinsta Single",
+      "Orgs that will treat $17.99 as renewal TCO, not the $2.99 promo month",
+      "micro / operations: SiteGround fit for micro operations teams in the hosting-providers job cluster, from first-party positioning and IT Tier-B + ITSM SMB research.",
+      "small-business / operations: SiteGround fit for small-business operations teams in the hosting-providers job cluster, from first-party positioning and IT Tier-B + ITSM SMB research.",
+      "mid-market / operations: SiteGround fit for mid-market operations teams in the hosting-providers job cluster, from first-party positioning and IT Tier-B + ITSM SMB research."
+    ],
+    "notIdealFor": [
+      "Admins buying Plesk or DirectAdmin licences for servers they already own",
+      "Teams that need WP Engine specialist depth or Kinsta GCP isolation as the award path",
+      "ITSM, observability, or source-control purchases",
+      "Intro $2.99 StartUp promo is not the $17.99 ongoing floor",
+      "Does not outrank WP Engine (7.7) — specialist managed-WP depth is below the award",
+      "Shared-plan packaging, not Kinsta-style isolated managed WP or Cloudways VMs"
+    ],
+    "coreCapabilities": [
+      "managed hosting",
+      "hosting providers"
+    ],
+    "pricingSummary": "3 documented plans · entry paid: StartUp",
+    "keyTradeoffs": [
+      "Intro $2.99 StartUp promo is not the $17.99 ongoing floor",
+      "Does not outrank WP Engine (7.7) — specialist managed-WP depth is below the award",
+      "Shared-plan packaging, not Kinsta-style isolated managed WP or Cloudways VMs",
+      "Not a Plesk/cPanel panel licence (landscape vs Plesk)",
+      "Not ITSM, observability, git, or a proxy network"
+    ],
+    "alternatives": [
+      {
+        "slug": "wp-engine",
+        "name": "WP Engine"
+      },
+      {
+        "slug": "kinsta",
+        "name": "Kinsta"
+      },
+      {
+        "slug": "cloudways",
+        "name": "Cloudways"
+      }
+    ],
+    "importantComparisons": [
+      {
+        "slug": "siteground-vs-wp-engine",
+        "title": "SiteGround vs WP Engine",
+        "href": "/compare/siteground-vs-wp-engine/"
+      },
+      {
+        "slug": "kinsta-vs-siteground",
+        "title": "SiteGround vs Kinsta",
+        "href": "/compare/kinsta-vs-siteground/"
+      },
+      {
+        "slug": "plesk-vs-siteground",
+        "title": "SiteGround vs Plesk",
+        "href": "/compare/plesk-vs-siteground/"
+      },
+      {
+        "slug": "apify-vs-siteground",
+        "title": "Apify vs SiteGround",
+        "href": "/compare/apify-vs-siteground/"
+      },
+      {
+        "slug": "appdynamics-vs-siteground",
+        "title": "AppDynamics vs SiteGround",
+        "href": "/compare/appdynamics-vs-siteground/"
+      },
+      {
+        "slug": "azure-devops-vs-siteground",
+        "title": "Azure DevOps vs SiteGround",
+        "href": "/compare/azure-devops-vs-siteground/"
+      }
+    ],
+    "relevantGuides": [
+      {
+        "slug": "siteground-implementation",
+        "title": "SiteGround Implementation: 30/60/90 IT Rollout That Sticks",
+        "href": "/guides/siteground-implementation/"
+      },
+      {
+        "slug": "siteground-migration",
+        "title": "SiteGround Migration: Move Tickets and Repos Without Losing Trust",
+        "href": "/guides/siteground-migration/"
+      },
+      {
+        "slug": "siteground-setup",
+        "title": "SiteGround Setup: Day-Zero Path to a Working IT Loop",
+        "href": "/guides/siteground-setup/"
+      },
+      {
+        "slug": "siteground-plans",
+        "title": "SiteGround Plans: Seats, Hosts, and Qualifying Tiers",
+        "href": "/guides/siteground-plans/"
+      },
+      {
+        "slug": "is-siteground-worth-it",
+        "title": "Is SiteGround Worth It? Fit Scenarios Before You Buy",
+        "href": "/guides/is-siteground-worth-it/"
+      }
+    ],
+    "evidenceState": "Research/data-based (no completed hands-on test) · Latest verification/research signal: 2026-08-18T22:00:00.000Z · Editorial assessment: approved",
+    "nextDecisionStep": "Compare against peers: SiteGround vs WP Engine",
+    "missingSections": [
+      "canonical_vendor",
+      "trial"
+    ]
+  },
+  "dependents": [
+    {
+      "kind": "guide",
+      "slug": "siteground-implementation",
+      "path": "/guides/siteground-implementation/"
+    },
+    {
+      "kind": "guide",
+      "slug": "siteground-migration",
+      "path": "/guides/siteground-migration/"
+    },
+    {
+      "kind": "guide",
+      "slug": "siteground-setup",
+      "path": "/guides/siteground-setup/"
+    },
+    {
+      "kind": "guide",
+      "slug": "siteground-plans",
+      "path": "/guides/siteground-plans/"
+    },
+    {
+      "kind": "guide",
+      "slug": "is-siteground-worth-it",
+      "path": "/guides/is-siteground-worth-it/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "siteground-vs-wp-engine",
+      "path": "/compare/siteground-vs-wp-engine/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "kinsta-vs-siteground",
+      "path": "/compare/kinsta-vs-siteground/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "plesk-vs-siteground",
+      "path": "/compare/plesk-vs-siteground/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "apify-vs-siteground",
+      "path": "/compare/apify-vs-siteground/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "appdynamics-vs-siteground",
+      "path": "/compare/appdynamics-vs-siteground/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "azure-devops-vs-siteground",
+      "path": "/compare/azure-devops-vs-siteground/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "bitbucket-vs-siteground",
+      "path": "/compare/bitbucket-vs-siteground/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "bmc-helix-vs-siteground",
+      "path": "/compare/bmc-helix-vs-siteground/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "bright-data-vs-siteground",
+      "path": "/compare/bright-data-vs-siteground/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "buildkite-vs-siteground",
+      "path": "/compare/buildkite-vs-siteground/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "chronosphere-vs-siteground",
+      "path": "/compare/chronosphere-vs-siteground/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "circleci-vs-siteground",
+      "path": "/compare/circleci-vs-siteground/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "cloudways-vs-siteground",
+      "path": "/compare/cloudways-vs-siteground/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "coralogix-vs-siteground",
+      "path": "/compare/coralogix-vs-siteground/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "cpanel-vs-siteground",
+      "path": "/compare/cpanel-vs-siteground/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "datadog-vs-siteground",
+      "path": "/compare/datadog-vs-siteground/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "directadmin-vs-siteground",
+      "path": "/compare/directadmin-vs-siteground/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "dynatrace-vs-siteground",
+      "path": "/compare/dynatrace-vs-siteground/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "elastic-observability-vs-siteground",
+      "path": "/compare/elastic-observability-vs-siteground/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "firehydrant-vs-siteground",
+      "path": "/compare/firehydrant-vs-siteground/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "fly-io-vs-siteground",
+      "path": "/compare/fly-io-vs-siteground/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "github-vs-siteground",
+      "path": "/compare/github-vs-siteground/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "gitlab-vs-siteground",
+      "path": "/compare/gitlab-vs-siteground/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "grafana-cloud-vs-siteground",
+      "path": "/compare/grafana-cloud-vs-siteground/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "haloitsm-vs-siteground",
+      "path": "/compare/haloitsm-vs-siteground/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "heroku-vs-siteground",
+      "path": "/compare/heroku-vs-siteground/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "honeycomb-vs-siteground",
+      "path": "/compare/honeycomb-vs-siteground/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "incident-io-vs-siteground",
+      "path": "/compare/incident-io-vs-siteground/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "iproyal-vs-siteground",
+      "path": "/compare/iproyal-vs-siteground/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "ivanti-vs-siteground",
+      "path": "/compare/ivanti-vs-siteground/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "jira-service-management-vs-siteground",
+      "path": "/compare/jira-service-management-vs-siteground/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "manageengine-servicedesk-plus-vs-siteground",
+      "path": "/compare/manageengine-servicedesk-plus-vs-siteground/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "new-relic-vs-siteground",
+      "path": "/compare/new-relic-vs-siteground/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "oxylabs-vs-siteground",
+      "path": "/compare/oxylabs-vs-siteground/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "pagerduty-vs-siteground",
+      "path": "/compare/pagerduty-vs-siteground/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "railway-vs-siteground",
+      "path": "/compare/railway-vs-siteground/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "render-vs-siteground",
+      "path": "/compare/render-vs-siteground/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "rootly-vs-siteground",
+      "path": "/compare/rootly-vs-siteground/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "scraperapi-vs-siteground",
+      "path": "/compare/scraperapi-vs-siteground/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "sentry-vs-siteground",
+      "path": "/compare/sentry-vs-siteground/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "servicenow-vs-siteground",
+      "path": "/compare/servicenow-vs-siteground/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "siteground-vs-smartproxy",
+      "path": "/compare/siteground-vs-smartproxy/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "siteground-vs-splunk",
+      "path": "/compare/siteground-vs-splunk/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "siteground-vs-squadcast",
+      "path": "/compare/siteground-vs-squadcast/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "siteground-vs-sysaid",
+      "path": "/compare/siteground-vs-sysaid/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "siteground-vs-thordata",
+      "path": "/compare/siteground-vs-thordata/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "siteground-vs-topdesk",
+      "path": "/compare/siteground-vs-topdesk/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "siteground-vs-zyte",
+      "path": "/compare/siteground-vs-zyte/"
+    },
+    {
+      "kind": "alternatives",
+      "slug": "siteground",
+      "path": "/alternatives/siteground/"
+    },
+    {
+      "kind": "pricing",
+      "slug": "siteground",
+      "path": "/software/siteground/pricing/"
+    },
+    {
+      "kind": "tools",
+      "slug": "it-development-cost-calculator",
+      "path": "/tools/it-development-cost-calculator/"
+    }
+  ],
+  "dependentsNeedingRefresh": [],
+  "remediation": [
+    "verify:canonical_vendor",
+    "verify:trial"
+  ],
+  "notes": [
+    "fieldAudit score=89",
+    "decisionHub bestFor=6 notIdeal=6",
+    "dependents=56"
+  ],
+  "materiallyImproved": false
+}

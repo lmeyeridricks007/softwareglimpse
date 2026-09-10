@@ -1,4 +1,4 @@
-import type { GuidePage } from "@/domain";
+import type { GuidePageInput } from "@/domain";
 import type { z } from "zod";
 import type { GuideContentBlockSchema } from "@/domain";
 import { tier3GuideScheduledAt } from "@/data/config/publishing/tier-3-accounting-finance-launch-2026-09-01";
@@ -49,7 +49,7 @@ const blocks: GuideBlockInput[] = [
   },
 ];
 
-function metadata(): GuidePage["metadata"] {
+function metadata(): GuidePageInput["metadata"] {
   return SCHEDULED_AT
     ? {
         status: "scheduled",
@@ -69,7 +69,7 @@ function metadata(): GuidePage["metadata"] {
       };
 }
 
-export const accountingFinancePricingGuide: GuidePage = {
+export const accountingFinancePricingGuide: GuidePageInput = {
   id: "guide-accounting-finance-pricing-guide",
   slug: SLUG,
   title: "Accounting & Finance Software Pricing Guide",
@@ -90,7 +90,7 @@ export const accountingFinancePricingGuide: GuidePage = {
     "how-to-choose-accounting-finance-software",
     "accounting-finance-requirements-guide",
   ],
-  blocks: blocks as GuidePage["blocks"],
+  blocks: blocks as GuidePageInput["blocks"],
   checklist: [],
   sections: [],
   faq: [],
@@ -101,6 +101,6 @@ export const accountingFinancePricingGuide: GuidePage = {
     description:
       "How to budget accounting and finance software — users, entities, receipt volume, plan gates, and add-ons.",
     canonicalPath: `/guides/${SLUG}/`,
-    indexable: !SCHEDULED_AT,
+    indexable: true,
   },
 };

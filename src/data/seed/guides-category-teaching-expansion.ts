@@ -1,4 +1,4 @@
-import type { GuidePage } from "@/domain";
+import type { GuidePageInput } from "@/domain";
 import type { z } from "zod";
 import type { GuideContentBlockSchema } from "@/domain";
 import { softwareSeed } from "./software";
@@ -27,7 +27,7 @@ function publishedExamples(categorySlug: string): string[] {
     .slice(0, 5);
 }
 
-function meta(): GuidePage["metadata"] {
+function meta(): GuidePageInput["metadata"] {
   return {
     status: "published",
     updatedAt: PUBLISHED_AT,
@@ -57,7 +57,7 @@ function titleName(name: string): string {
   return name.replace(/\b\w/g, (char) => char.toUpperCase());
 }
 
-function buildHowItWorks(spec: TeachingSpec): GuidePage {
+function buildHowItWorks(spec: TeachingSpec): GuidePageInput {
   const resolved = howWorksSlugFor(spec);
   const examples = publishedExamples(spec.categorySlug);
   const blocks: GuideBlockInput[] = [
@@ -199,7 +199,7 @@ function buildHowItWorks(spec: TeachingSpec): GuidePage {
       spec.howToChooseSlug,
       spec.pricingSlug,
     ],
-    blocks: blocks as GuidePage["blocks"],
+    blocks: blocks as GuidePageInput["blocks"],
     checklist: [],
     sections: [],
     faq: [],
@@ -214,7 +214,7 @@ function buildHowItWorks(spec: TeachingSpec): GuidePage {
   });
 }
 
-function buildTypes(spec: TeachingSpec): GuidePage {
+function buildTypes(spec: TeachingSpec): GuidePageInput {
   const slug = typesSlugFor(spec);
   const examples = publishedExamples(spec.categorySlug);
   const blocks: GuideBlockInput[] = [
@@ -344,7 +344,7 @@ function buildTypes(spec: TeachingSpec): GuidePage {
       spec.howToChooseSlug,
       spec.vs.slug,
     ],
-    blocks: blocks as GuidePage["blocks"],
+    blocks: blocks as GuidePageInput["blocks"],
     checklist: [],
     sections: [],
     faq: [],
@@ -359,7 +359,7 @@ function buildTypes(spec: TeachingSpec): GuidePage {
   });
 }
 
-function buildVs(spec: TeachingSpec): GuidePage {
+function buildVs(spec: TeachingSpec): GuidePageInput {
   const slug = spec.vs.slug;
   const examples = [
     ...publishedExamples(spec.categorySlug).slice(0, 3),
@@ -511,7 +511,7 @@ function buildVs(spec: TeachingSpec): GuidePage {
       spec.howToChooseSlug,
       typesSlugFor(spec),
     ],
-    blocks: blocks as GuidePage["blocks"],
+    blocks: blocks as GuidePageInput["blocks"],
     checklist: [],
     sections: [],
     faq: [],
@@ -528,7 +528,7 @@ function buildVs(spec: TeachingSpec): GuidePage {
   });
 }
 
-function buildReqEval(spec: TeachingSpec): GuidePage[] {
+function buildReqEval(spec: TeachingSpec): GuidePageInput[] {
   if (!spec.includeReqEval || !spec.requirementsSlug || !spec.evaluationSlug) {
     return [];
   }
@@ -729,7 +729,7 @@ function buildReqEval(spec: TeachingSpec): GuidePage[] {
         spec.evaluationSlug,
         spec.pricingSlug,
       ],
-      blocks: reqBlocks as GuidePage["blocks"],
+      blocks: reqBlocks as GuidePageInput["blocks"],
       checklist: [],
       sections: [],
       faq: [],
@@ -780,7 +780,7 @@ function buildReqEval(spec: TeachingSpec): GuidePage[] {
         spec.pricingSlug,
         spec.whatIsSlug,
       ],
-      blocks: evalBlocks as GuidePage["blocks"],
+      blocks: evalBlocks as GuidePageInput["blocks"],
       checklist: [],
       sections: [],
       faq: [],
@@ -798,7 +798,7 @@ function buildReqEval(spec: TeachingSpec): GuidePage[] {
   ];
 }
 
-export function teachingExpansionFor(categorySlug: string): GuidePage[] {
+export function teachingExpansionFor(categorySlug: string): GuidePageInput[] {
   const spec = TEACHING_SPECS.find((item) => item.categorySlug === categorySlug);
   if (!spec) return [];
   return [
@@ -809,6 +809,6 @@ export function teachingExpansionFor(categorySlug: string): GuidePage[] {
   ];
 }
 
-export function allTeachingExpansions(): GuidePage[] {
+export function allTeachingExpansions(): GuidePageInput[] {
   return TEACHING_SPECS.flatMap((spec) => teachingExpansionFor(spec.categorySlug));
 }

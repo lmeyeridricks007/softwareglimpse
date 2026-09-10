@@ -1,4 +1,4 @@
-import type { GuidePage } from "@/domain";
+import type { GuidePageInput } from "@/domain";
 import type { z } from "zod";
 import type { GuideContentBlockSchema } from "@/domain";
 import { tier28GuideScheduledAt } from "@/data/config/publishing/tier-28-time-attendance-launch-2027-08-01";
@@ -53,7 +53,7 @@ const blocks: GuideBlockInput[] = [
   },
 ];
 
-function metadata(): GuidePage["metadata"] {
+function metadata(): GuidePageInput["metadata"] {
   return SCHEDULED_AT
     ? {
         status: "scheduled",
@@ -73,7 +73,7 @@ function metadata(): GuidePage["metadata"] {
       };
 }
 
-export const whatIsTimeAttendanceSoftwareGuide: GuidePage = {
+export const whatIsTimeAttendanceSoftwareGuide: GuidePageInput = {
   id: "guide-what-is-time-attendance-software",
   slug: SLUG,
   title: "What Is Time & Attendance Software?",
@@ -96,7 +96,7 @@ export const whatIsTimeAttendanceSoftwareGuide: GuidePage = {
     "time-attendance-vs-hr-software",
     "what-is-hr-software",
   ],
-  blocks: blocks as GuidePage["blocks"],
+  blocks: blocks as GuidePageInput["blocks"],
   checklist: [],
   sections: [],
   faq: [],
@@ -107,6 +107,6 @@ export const whatIsTimeAttendanceSoftwareGuide: GuidePage = {
     description:
       "Clock-in, timesheets, and attendance policies — how time software differs from ATS and WFM.",
     canonicalPath: `/guides/${SLUG}/`,
-    indexable: !SCHEDULED_AT,
+    indexable: true,
   },
 };

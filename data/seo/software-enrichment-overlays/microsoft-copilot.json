@@ -1,0 +1,427 @@
+{
+  "slug": "microsoft-copilot",
+  "updatedAt": "2026-09-07T22:31:21.761Z",
+  "version": "1.0.0",
+  "fieldAudit": {
+    "slug": "microsoft-copilot",
+    "checkedAt": "2026-09-07T22:31:21.759Z",
+    "items": [
+      {
+        "field": "name",
+        "status": "PASS",
+        "detail": "Name: Microsoft 365 Copilot",
+        "source": "seed"
+      },
+      {
+        "field": "product_status",
+        "status": "PASS",
+        "detail": "productLifecycle=active",
+        "source": "seed"
+      },
+      {
+        "field": "canonical_vendor",
+        "status": "UNKNOWN",
+        "detail": "Company/vendor not documented",
+        "source": "none"
+      },
+      {
+        "field": "category",
+        "status": "PASS",
+        "detail": "primaryCategorySlug=ai",
+        "source": "seed"
+      },
+      {
+        "field": "description",
+        "status": "PASS",
+        "detail": "Description present (Workspace LLM assistant add-on — Copilot Business from $21/user/mo annual; Enter…)",
+        "source": "seed"
+      },
+      {
+        "field": "target_audience",
+        "status": "PASS",
+        "detail": "Sizes=3, teams=2, assessment bestFor=3",
+        "source": "assessment"
+      },
+      {
+        "field": "use_cases",
+        "status": "PASS",
+        "detail": "useCaseSlugs=1",
+        "source": "seed"
+      },
+      {
+        "field": "capabilities",
+        "status": "PASS",
+        "detail": "featureRatings=0, enrichment features=18",
+        "source": "enrichment"
+      },
+      {
+        "field": "pricing",
+        "status": "PASS",
+        "detail": "Pricing envelope present",
+        "source": "enrichment"
+      },
+      {
+        "field": "plans",
+        "status": "PASS",
+        "detail": "plans=3",
+        "source": "enrichment"
+      },
+      {
+        "field": "free_plan",
+        "status": "PASS",
+        "detail": "No free plan in documented plans (explicit absence)",
+        "source": "enrichment"
+      },
+      {
+        "field": "trial",
+        "status": "UNKNOWN",
+        "detail": "Trial not explicitly documented — do not assume none",
+        "source": "none"
+      },
+      {
+        "field": "integrations",
+        "status": "PASS",
+        "detail": "integrationSlugs=0, enrichment=3",
+        "source": "enrichment"
+      },
+      {
+        "field": "alternatives",
+        "status": "PASS",
+        "detail": "alternativeSlugs=3",
+        "source": "seed"
+      },
+      {
+        "field": "competitors",
+        "status": "PASS",
+        "detail": "competitorSlugs=4",
+        "source": "seed"
+      },
+      {
+        "field": "affiliate",
+        "status": "PASS",
+        "detail": "No affiliate relationship (explicit)",
+        "source": "seed"
+      },
+      {
+        "field": "source_provenance",
+        "status": "PASS",
+        "detail": "seed sources=0, enrichment sourceIds=3",
+        "source": "enrichment"
+      },
+      {
+        "field": "verification_date",
+        "status": "PASS",
+        "detail": "Latest verification/research signal: 2026-08-18T12:00:00.000Z",
+        "source": "enrichment"
+      }
+    ],
+    "passCount": 16,
+    "partialCount": 0,
+    "missingCount": 0,
+    "unknownCount": 2,
+    "score": 89
+  },
+  "decisionHub": {
+    "whatItIs": "Microsoft 365 Copilot is Microsoft’s workspace LLM assistant inside Word, Excel, PowerPoint, Outlook, Teams, and Copilot Chat, grounded in Microsoft Graph tenant data. It is an add-on: Copilot Business lists from $21/user/mo on annual billing (promo windows may be lower); Enterprise Copilot is $30/user/mo annual ($31.50 monthly) and requires a qualifying Microsoft 365 plan. Bundles such as Business Standard with Copilot (~$23.50/user/mo annual) combine base suite + Copilot. Distinct from GitHub Copilot, which is an AI coding product.",
+    "bestFor": [
+      "Microsoft 365 shops that want AI inside Word, Excel, Outlook, and Teams",
+      "IT buyers who need tenant admin and Graph grounding",
+      "Enterprises already paying for E3/E5 who can absorb the $30 add-on",
+      "small-business / operations: Microsoft 365 Copilot fit for small-business operations teams in the llm-assistant job cluster, from first-party positioning and AI Priority-2 research.",
+      "mid-market / operations: Microsoft 365 Copilot fit for mid-market operations teams in the llm-assistant job cluster, from first-party positioning and AI Priority-2 research.",
+      "enterprise / operations: Microsoft 365 Copilot fit for enterprise operations teams in the llm-assistant job cluster, from first-party positioning and AI Priority-2 research."
+    ],
+    "notIdealFor": [
+      "Teams without a qualifying Microsoft 365 licence",
+      "Developers whose primary job is an AI IDE (Cursor / GitHub Copilot)",
+      "Buyers who only need a $20 standalone chat assistant",
+      "Requires a qualifying Microsoft 365 base licence — Copilot is not a standalone $21 chat app",
+      "Weak fit if the team is not already in Word/Excel/Teams",
+      "Not GitHub Copilot — coding agents live on a separate SKU"
+    ],
+    "coreCapabilities": [
+      "llm chat",
+      "reasoning models",
+      "writing assist",
+      "image generation",
+      "custom projects",
+      "enterprise admin",
+      "usage credits",
+      "connectors"
+    ],
+    "pricingSummary": "3 documented plans · entry paid: Copilot Business (add-on)",
+    "keyTradeoffs": [
+      "Requires a qualifying Microsoft 365 base licence — Copilot is not a standalone $21 chat app",
+      "Weak fit if the team is not already in Word/Excel/Teams",
+      "Not GitHub Copilot — coding agents live on a separate SKU",
+      "Deepest Graph grounding and admin controls follow enterprise packaging",
+      "Usage and Copilot Studio credits can add TCO beyond the seat add-on"
+    ],
+    "alternatives": [
+      {
+        "slug": "chatgpt",
+        "name": "ChatGPT"
+      },
+      {
+        "slug": "claude",
+        "name": "Claude"
+      },
+      {
+        "slug": "gemini",
+        "name": "Gemini"
+      },
+      {
+        "slug": "perplexity",
+        "name": "Perplexity"
+      }
+    ],
+    "importantComparisons": [
+      {
+        "slug": "chatgpt-vs-microsoft-copilot",
+        "title": "Microsoft 365 Copilot vs ChatGPT",
+        "href": "/compare/chatgpt-vs-microsoft-copilot/"
+      },
+      {
+        "slug": "microsoft-copilot-vs-otter-ai",
+        "title": "Otter.ai vs Microsoft 365 Copilot",
+        "href": "/compare/microsoft-copilot-vs-otter-ai/"
+      },
+      {
+        "slug": "fireflies-vs-microsoft-copilot",
+        "title": "Fireflies.ai vs Microsoft 365 Copilot",
+        "href": "/compare/fireflies-vs-microsoft-copilot/"
+      },
+      {
+        "slug": "adcreative-ai-vs-microsoft-copilot",
+        "title": "AdCreative.ai vs Microsoft 365 Copilot",
+        "href": "/compare/adcreative-ai-vs-microsoft-copilot/"
+      },
+      {
+        "slug": "adobe-firefly-vs-microsoft-copilot",
+        "title": "Adobe Firefly vs Microsoft 365 Copilot",
+        "href": "/compare/adobe-firefly-vs-microsoft-copilot/"
+      },
+      {
+        "slug": "ai-intelekt-vs-microsoft-copilot",
+        "title": "AI InteleKt vs Microsoft 365 Copilot",
+        "href": "/compare/ai-intelekt-vs-microsoft-copilot/"
+      }
+    ],
+    "relevantGuides": [
+      {
+        "slug": "microsoft-copilot-implementation",
+        "title": "Microsoft 365 Copilot Implementation: 30/60/90 AI Rollout That Sticks",
+        "href": "/guides/microsoft-copilot-implementation/"
+      },
+      {
+        "slug": "microsoft-copilot-migration",
+        "title": "Microsoft 365 Copilot Migration: Move Projects Without Losing Context",
+        "href": "/guides/microsoft-copilot-migration/"
+      },
+      {
+        "slug": "microsoft-copilot-setup",
+        "title": "Microsoft 365 Copilot Setup: Day-Zero Path to a Working AI Loop",
+        "href": "/guides/microsoft-copilot-setup/"
+      },
+      {
+        "slug": "microsoft-copilot-plans",
+        "title": "Microsoft 365 Copilot Plans: Seats, Credits, and Qualifying Tiers",
+        "href": "/guides/microsoft-copilot-plans/"
+      },
+      {
+        "slug": "is-microsoft-copilot-worth-it",
+        "title": "Is Microsoft 365 Copilot Worth It? Fit Scenarios Before You Buy",
+        "href": "/guides/is-microsoft-copilot-worth-it/"
+      }
+    ],
+    "evidenceState": "Research/data-based (no completed hands-on test) · Latest verification/research signal: 2026-08-18T12:00:00.000Z · Editorial assessment: approved",
+    "nextDecisionStep": "Compare against peers: Microsoft 365 Copilot vs ChatGPT",
+    "missingSections": [
+      "canonical_vendor",
+      "trial"
+    ]
+  },
+  "dependents": [
+    {
+      "kind": "guide",
+      "slug": "microsoft-copilot-implementation",
+      "path": "/guides/microsoft-copilot-implementation/"
+    },
+    {
+      "kind": "guide",
+      "slug": "microsoft-copilot-migration",
+      "path": "/guides/microsoft-copilot-migration/"
+    },
+    {
+      "kind": "guide",
+      "slug": "microsoft-copilot-setup",
+      "path": "/guides/microsoft-copilot-setup/"
+    },
+    {
+      "kind": "guide",
+      "slug": "microsoft-copilot-plans",
+      "path": "/guides/microsoft-copilot-plans/"
+    },
+    {
+      "kind": "guide",
+      "slug": "is-microsoft-copilot-worth-it",
+      "path": "/guides/is-microsoft-copilot-worth-it/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "chatgpt-vs-microsoft-copilot",
+      "path": "/compare/chatgpt-vs-microsoft-copilot/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "microsoft-copilot-vs-otter-ai",
+      "path": "/compare/microsoft-copilot-vs-otter-ai/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "fireflies-vs-microsoft-copilot",
+      "path": "/compare/fireflies-vs-microsoft-copilot/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "adcreative-ai-vs-microsoft-copilot",
+      "path": "/compare/adcreative-ai-vs-microsoft-copilot/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "adobe-firefly-vs-microsoft-copilot",
+      "path": "/compare/adobe-firefly-vs-microsoft-copilot/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "ai-intelekt-vs-microsoft-copilot",
+      "path": "/compare/ai-intelekt-vs-microsoft-copilot/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "aira-vs-microsoft-copilot",
+      "path": "/compare/aira-vs-microsoft-copilot/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "claude-vs-microsoft-copilot",
+      "path": "/compare/claude-vs-microsoft-copilot/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "cursor-vs-microsoft-copilot",
+      "path": "/compare/cursor-vs-microsoft-copilot/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "elevenlabs-vs-microsoft-copilot",
+      "path": "/compare/elevenlabs-vs-microsoft-copilot/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "gamma-vs-microsoft-copilot",
+      "path": "/compare/gamma-vs-microsoft-copilot/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "gemini-vs-microsoft-copilot",
+      "path": "/compare/gemini-vs-microsoft-copilot/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "github-copilot-vs-microsoft-copilot",
+      "path": "/compare/github-copilot-vs-microsoft-copilot/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "hynote-vs-microsoft-copilot",
+      "path": "/compare/hynote-vs-microsoft-copilot/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "microsoft-copilot-vs-midjourney",
+      "path": "/compare/microsoft-copilot-vs-midjourney/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "microsoft-copilot-vs-mindstudio",
+      "path": "/compare/microsoft-copilot-vs-mindstudio/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "microsoft-copilot-vs-n8n",
+      "path": "/compare/microsoft-copilot-vs-n8n/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "microsoft-copilot-vs-perplexity",
+      "path": "/compare/microsoft-copilot-vs-perplexity/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "microsoft-copilot-vs-quillbot",
+      "path": "/compare/microsoft-copilot-vs-quillbot/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "microsoft-copilot-vs-rank-prompt",
+      "path": "/compare/microsoft-copilot-vs-rank-prompt/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "microsoft-copilot-vs-runway",
+      "path": "/compare/microsoft-copilot-vs-runway/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "microsoft-copilot-vs-synthesia",
+      "path": "/compare/microsoft-copilot-vs-synthesia/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "microsoft-copilot-vs-turbotic",
+      "path": "/compare/microsoft-copilot-vs-turbotic/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "microsoft-copilot-vs-wegic",
+      "path": "/compare/microsoft-copilot-vs-wegic/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "microsoft-copilot-vs-writesonic",
+      "path": "/compare/microsoft-copilot-vs-writesonic/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "microsoft-copilot-vs-zapier",
+      "path": "/compare/microsoft-copilot-vs-zapier/"
+    },
+    {
+      "kind": "alternatives",
+      "slug": "microsoft-copilot",
+      "path": "/alternatives/microsoft-copilot/"
+    },
+    {
+      "kind": "pricing",
+      "slug": "microsoft-copilot",
+      "path": "/software/microsoft-copilot/pricing/"
+    },
+    {
+      "kind": "tools",
+      "slug": "ai-cost-calculator",
+      "path": "/tools/ai-cost-calculator/"
+    }
+  ],
+  "dependentsNeedingRefresh": [],
+  "remediation": [
+    "verify:canonical_vendor",
+    "verify:trial"
+  ],
+  "notes": [
+    "fieldAudit score=89",
+    "decisionHub bestFor=6 notIdeal=6",
+    "dependents=34"
+  ],
+  "materiallyImproved": false
+}

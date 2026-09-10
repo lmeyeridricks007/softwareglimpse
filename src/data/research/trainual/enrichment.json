@@ -172,6 +172,29 @@
       ]
     }
   ],
+  "integrationSupport": [
+    {
+      "integrationSlug": "slack",
+      "kind": "native",
+      "sourceIds": [
+        "trainual-product-official"
+      ]
+    },
+    {
+      "integrationSlug": "google-workspace",
+      "kind": "native",
+      "sourceIds": [
+        "trainual-product-official"
+      ]
+    },
+    {
+      "integrationSlug": "zapier",
+      "kind": "zapier-style",
+      "sourceIds": [
+        "trainual-product-official"
+      ]
+    }
+  ],
   "aiCapabilities": [
     {
       "capability": "assistant",
@@ -197,29 +220,6 @@
     {
       "capability": "recommendations",
       "availability": "higher-plan-only",
-      "sourceIds": [
-        "trainual-product-official"
-      ]
-    }
-  ],
-  "integrationSupport": [
-    {
-      "integrationSlug": "slack",
-      "kind": "native",
-      "sourceIds": [
-        "trainual-product-official"
-      ]
-    },
-    {
-      "integrationSlug": "google-workspace",
-      "kind": "native",
-      "sourceIds": [
-        "trainual-product-official"
-      ]
-    },
-    {
-      "integrationSlug": "zapier",
-      "kind": "zapier-style",
       "sourceIds": [
         "trainual-product-official"
       ]
@@ -303,63 +303,6 @@
       "isEditorial": false
     }
   ],
-  "pricing": {
-    "currency": "USD",
-    "model": "custom",
-    "hasFreePlan": false,
-    "hasFreeTrial": false,
-    "plans": [
-      {
-        "id": "plan-core",
-        "slug": "core",
-        "name": "Core",
-        "isFree": false,
-        "contactSales": true,
-        "hasFreeTrial": false,
-        "highlighted": false,
-        "rules": [],
-        "description": "Core — contact/demo pricing for SOP documentation entry."
-      },
-      {
-        "id": "plan-pro",
-        "slug": "pro",
-        "name": "Pro",
-        "isFree": false,
-        "contactSales": true,
-        "hasFreeTrial": false,
-        "highlighted": true,
-        "rules": [],
-        "description": "Pro — contact/demo pricing with deeper training-path packaging."
-      },
-      {
-        "id": "plan-premium",
-        "slug": "premium",
-        "name": "Premium",
-        "isFree": false,
-        "contactSales": true,
-        "hasFreeTrial": false,
-        "highlighted": false,
-        "rules": [],
-        "description": "Premium — contact/demo pricing; AI-assisted docs, e-sign, SSO typically land on higher tiers."
-      },
-      {
-        "id": "plan-enterprise",
-        "slug": "enterprise",
-        "name": "Enterprise",
-        "isFree": false,
-        "contactSales": true,
-        "hasFreeTrial": false,
-        "highlighted": false,
-        "rules": [],
-        "description": "Enterprise — custom quote for advanced governance and scale."
-      }
-    ],
-    "notes": "Researched 2026-08-17 from trainual.com/pricing/ (low–medium confidence). Core / Pro / Premium / Enterprise are contact/demo priced — no public seat dollars. FAQ: implementation fee $1,000; best suited ~25–1000 employees. AI-assisted docs, training paths, e-sign, SSO on higher tiers. Confirm via demo. Affiliate economics excluded.",
-    "verifiedAt": "2026-08-17T20:00:00.000Z",
-    "sourceIds": [
-      "trainual-pricing-official"
-    ]
-  },
   "screenshots": [
     {
       "id": "trainual-shot-ai-assistant",
@@ -489,13 +432,13 @@
       "demonstratedDimensionIds": [],
       "requirementCriterionIds": [],
       "workflowStageIds": [],
+      "mediaContext": "general-workflow",
       "reportedOutcomes": [],
       "placements": [
         "overview",
         "features",
         "evidence"
       ],
-      "mediaContext": "general-workflow",
       "purpose": "Official Trainual video for product research pages",
       "demonstratesCaption": "How Trainual presents the product in an official vendor video.",
       "editorialCommentary": "Official vendor demo — treat as UI/workflow evidence, not SoftwareGlimpse scoring.",
@@ -513,12 +456,63 @@
       "status": "published"
     }
   ],
-  "sourceIds": [
-    "trainual-product-official",
-    "trainual-pricing-official",
-    "trainual-pricing"
-  ],
-  "notes": "HR Wave-1 onboarding enrichment from first-party research 2026-08-17T20:00:00.000Z. handsOnTesting=false. membershipRole=primary. jobCluster=sop-training.",
+  "pricing": {
+    "currency": "USD",
+    "model": "custom",
+    "hasFreePlan": false,
+    "hasFreeTrial": false,
+    "plans": [
+      {
+        "id": "plan-core",
+        "slug": "core",
+        "name": "Core",
+        "isFree": false,
+        "contactSales": true,
+        "hasFreeTrial": false,
+        "highlighted": false,
+        "rules": [],
+        "description": "Core — contact/demo pricing for SOP documentation entry."
+      },
+      {
+        "id": "plan-pro",
+        "slug": "pro",
+        "name": "Pro",
+        "isFree": false,
+        "contactSales": true,
+        "hasFreeTrial": false,
+        "highlighted": true,
+        "rules": [],
+        "description": "Pro — contact/demo pricing with deeper training-path packaging."
+      },
+      {
+        "id": "plan-premium",
+        "slug": "premium",
+        "name": "Premium",
+        "isFree": false,
+        "contactSales": true,
+        "hasFreeTrial": false,
+        "highlighted": false,
+        "rules": [],
+        "description": "Premium — contact/demo pricing; AI-assisted docs, e-sign, SSO typically land on higher tiers."
+      },
+      {
+        "id": "plan-enterprise",
+        "slug": "enterprise",
+        "name": "Enterprise",
+        "isFree": false,
+        "contactSales": true,
+        "hasFreeTrial": false,
+        "highlighted": false,
+        "rules": [],
+        "description": "Enterprise — custom quote for advanced governance and scale."
+      }
+    ],
+    "notes": "Researched 2026-08-17 from trainual.com/pricing/ (low–medium confidence). Core / Pro / Premium / Enterprise are contact/demo priced — no public seat dollars. FAQ: implementation fee $1,000; best suited ~25–1000 employees. AI-assisted docs, training paths, e-sign, SSO on higher tiers. Confirm via demo. Affiliate economics excluded.",
+    "verifiedAt": "2026-09-09T18:08:45.618Z",
+    "sourceIds": [
+      "trainual-pricing-official"
+    ]
+  },
   "domainCheckedAt": {
     "identity": "2026-08-17T20:00:00.000Z",
     "pricing": "2026-08-17T20:00:00.000Z",
@@ -532,5 +526,11 @@
     "limits": "2026-08-17T20:00:00.000Z",
     "security-compliance": "2026-08-17T20:00:00.000Z"
   },
-  "updatedAt": "2026-08-18T06:00:00.000Z"
+  "sourceIds": [
+    "trainual-product-official",
+    "trainual-pricing-official",
+    "trainual-pricing"
+  ],
+  "updatedAt": "2026-08-18T06:00:00.000Z",
+  "notes": "HR Wave-1 onboarding enrichment from first-party research 2026-08-17T20:00:00.000Z. handsOnTesting=false. membershipRole=primary. jobCluster=sop-training."
 }

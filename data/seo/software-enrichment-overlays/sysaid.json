@@ -1,0 +1,534 @@
+{
+  "slug": "sysaid",
+  "updatedAt": "2026-09-08T21:57:41.719Z",
+  "version": "1.0.0",
+  "fieldAudit": {
+    "slug": "sysaid",
+    "checkedAt": "2026-09-08T21:57:41.718Z",
+    "items": [
+      {
+        "field": "name",
+        "status": "PASS",
+        "detail": "Name: SysAid",
+        "source": "seed"
+      },
+      {
+        "field": "product_status",
+        "status": "PASS",
+        "detail": "productLifecycle=active",
+        "source": "seed"
+      },
+      {
+        "field": "canonical_vendor",
+        "status": "PASS",
+        "detail": "Vendor: SysAid Technologies Ltd.",
+        "source": "seed"
+      },
+      {
+        "field": "category",
+        "status": "PASS",
+        "detail": "primaryCategorySlug=it-development",
+        "source": "seed"
+      },
+      {
+        "field": "description",
+        "status": "PASS",
+        "detail": "Description present (ITSM / service desk — Professional published ~$89/agent/mo (medium confidence; q…)",
+        "source": "seed"
+      },
+      {
+        "field": "target_audience",
+        "status": "PASS",
+        "detail": "Sizes=2, teams=2, assessment bestFor=3",
+        "source": "assessment"
+      },
+      {
+        "field": "use_cases",
+        "status": "PASS",
+        "detail": "useCaseSlugs=1",
+        "source": "seed"
+      },
+      {
+        "field": "capabilities",
+        "status": "PASS",
+        "detail": "featureRatings=0, enrichment features=16",
+        "source": "enrichment"
+      },
+      {
+        "field": "pricing",
+        "status": "PASS",
+        "detail": "Pricing envelope present",
+        "source": "enrichment"
+      },
+      {
+        "field": "plans",
+        "status": "PASS",
+        "detail": "plans=2",
+        "source": "enrichment"
+      },
+      {
+        "field": "free_plan",
+        "status": "PASS",
+        "detail": "No free plan in documented plans (explicit absence)",
+        "source": "enrichment"
+      },
+      {
+        "field": "trial",
+        "status": "PASS",
+        "detail": "Trial documented on plans/pricing",
+        "source": "enrichment"
+      },
+      {
+        "field": "integrations",
+        "status": "PASS",
+        "detail": "integrationSlugs=0, enrichment=3",
+        "source": "enrichment"
+      },
+      {
+        "field": "alternatives",
+        "status": "PASS",
+        "detail": "alternativeSlugs=2",
+        "source": "seed"
+      },
+      {
+        "field": "competitors",
+        "status": "PASS",
+        "detail": "competitorSlugs=5",
+        "source": "seed"
+      },
+      {
+        "field": "affiliate",
+        "status": "PASS",
+        "detail": "No affiliate relationship (explicit)",
+        "source": "seed"
+      },
+      {
+        "field": "source_provenance",
+        "status": "PASS",
+        "detail": "seed sources=0, enrichment sourceIds=3",
+        "source": "enrichment"
+      },
+      {
+        "field": "verification_date",
+        "status": "PASS",
+        "detail": "Latest verification/research signal: 2026-08-18T22:00:00.000Z",
+        "source": "enrichment"
+      }
+    ],
+    "passCount": 18,
+    "partialCount": 0,
+    "missingCount": 0,
+    "unknownCount": 0,
+    "score": 100
+  },
+  "decisionHub": {
+    "whatItIs": "SysAid is an ITSM and employee service-desk platform (incidents, requests, assets, automation) for internal IT. The first-party pricing page is quote-led; 2026 listings commonly cite Professional around $89/agent/month — treat as medium-confidence, not a self-serve tile with Freshservice’s certainty. Enterprise is custom with a published 20-agent minimum. Free trial. Same itsm-service-desk cluster as ServiceNow and Freshservice — this entity does not outrank ServiceNow 8.7 or Freshservice 8.4. Distinct from HaloITSM’s all-in-one UK calculator and from ManageEngine’s $13 Standard floor.",
+    "bestFor": [
+      "Mid-market IT desks comparing SysAid automation to Freshservice Growth/Pro",
+      "Buyers who will run a trial and get a live quote rather than trust $89 listings",
+      "Teams that need 20+ agents and will talk Enterprise anyway",
+      "small-business / it-ops: SysAid fit for small-business it-ops teams in the itsm-service-desk job cluster, from first-party positioning and IT Tier-B + ITSM SMB research.",
+      "mid-market / it-ops: SysAid fit for mid-market it-ops teams in the itsm-service-desk job cluster, from first-party positioning and IT Tier-B + ITSM SMB research."
+    ],
+    "notIdealFor": [
+      "SMBs that need a high-confidence $13–$19 published technician/agent floor",
+      "Enterprise ESM / CMDB (ServiceNow)",
+      "Observability or git purchases",
+      "Pricing page is quote-led — $89 Professional is medium-confidence, not Freshservice Starter certainty",
+      "Does not outrank ServiceNow (8.7) or Freshservice (8.4)",
+      "Enterprise minimum 20 agents is a buying-motion trap for tiny desks"
+    ],
+    "coreCapabilities": [
+      "incident management",
+      "change problem",
+      "service catalog",
+      "infrastructure monitoring",
+      "log management",
+      "cicd actions",
+      "itsm ai",
+      "oncall paging"
+    ],
+    "pricingSummary": "2 documented plans · entry paid: Professional · trial documented on at least one plan",
+    "keyTradeoffs": [
+      "Pricing page is quote-led — $89 Professional is medium-confidence, not Freshservice Starter certainty",
+      "Does not outrank ServiceNow (8.7) or Freshservice (8.4)",
+      "Enterprise minimum 20 agents is a buying-motion trap for tiny desks",
+      "No published free plan",
+      "Not observability, git, hosting panel, or managed hosting"
+    ],
+    "alternatives": [
+      {
+        "slug": "manageengine-servicedesk-plus",
+        "name": "ManageEngine ServiceDesk Plus"
+      },
+      {
+        "slug": "freshservice",
+        "name": "Freshservice"
+      },
+      {
+        "slug": "jira-service-management",
+        "name": "Jira Service Management"
+      },
+      {
+        "slug": "haloitsm",
+        "name": "HaloITSM"
+      },
+      {
+        "slug": "servicenow",
+        "name": "ServiceNow"
+      }
+    ],
+    "importantComparisons": [
+      {
+        "slug": "freshservice-vs-sysaid",
+        "title": "SysAid vs Freshservice",
+        "href": "/compare/freshservice-vs-sysaid/"
+      },
+      {
+        "slug": "haloitsm-vs-sysaid",
+        "title": "HaloITSM vs SysAid",
+        "href": "/compare/haloitsm-vs-sysaid/"
+      },
+      {
+        "slug": "apify-vs-sysaid",
+        "title": "Apify vs SysAid",
+        "href": "/compare/apify-vs-sysaid/"
+      },
+      {
+        "slug": "appdynamics-vs-sysaid",
+        "title": "AppDynamics vs SysAid",
+        "href": "/compare/appdynamics-vs-sysaid/"
+      },
+      {
+        "slug": "azure-devops-vs-sysaid",
+        "title": "Azure DevOps vs SysAid",
+        "href": "/compare/azure-devops-vs-sysaid/"
+      },
+      {
+        "slug": "bitbucket-vs-sysaid",
+        "title": "Bitbucket Cloud vs SysAid",
+        "href": "/compare/bitbucket-vs-sysaid/"
+      }
+    ],
+    "relevantGuides": [
+      {
+        "slug": "sysaid-implementation",
+        "title": "SysAid Implementation: 30/60/90 IT Rollout That Sticks",
+        "href": "/guides/sysaid-implementation/"
+      },
+      {
+        "slug": "sysaid-migration",
+        "title": "SysAid Migration: Move Tickets and Repos Without Losing Trust",
+        "href": "/guides/sysaid-migration/"
+      },
+      {
+        "slug": "sysaid-setup",
+        "title": "SysAid Setup: Day-Zero Path to a Working IT Loop",
+        "href": "/guides/sysaid-setup/"
+      },
+      {
+        "slug": "sysaid-plans",
+        "title": "SysAid Plans: Seats, Hosts, and Qualifying Tiers",
+        "href": "/guides/sysaid-plans/"
+      },
+      {
+        "slug": "is-sysaid-worth-it",
+        "title": "Is SysAid Worth It? Fit Scenarios Before You Buy",
+        "href": "/guides/is-sysaid-worth-it/"
+      }
+    ],
+    "evidenceState": "Research/data-based (no completed hands-on test) · Latest verification/research signal: 2026-08-18T22:00:00.000Z · Editorial assessment: approved",
+    "nextDecisionStep": "Compare against peers: SysAid vs Freshservice",
+    "missingSections": []
+  },
+  "dependents": [
+    {
+      "kind": "guide",
+      "slug": "sysaid-implementation",
+      "path": "/guides/sysaid-implementation/"
+    },
+    {
+      "kind": "guide",
+      "slug": "sysaid-migration",
+      "path": "/guides/sysaid-migration/"
+    },
+    {
+      "kind": "guide",
+      "slug": "sysaid-setup",
+      "path": "/guides/sysaid-setup/"
+    },
+    {
+      "kind": "guide",
+      "slug": "sysaid-plans",
+      "path": "/guides/sysaid-plans/"
+    },
+    {
+      "kind": "guide",
+      "slug": "is-sysaid-worth-it",
+      "path": "/guides/is-sysaid-worth-it/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "freshservice-vs-sysaid",
+      "path": "/compare/freshservice-vs-sysaid/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "haloitsm-vs-sysaid",
+      "path": "/compare/haloitsm-vs-sysaid/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "apify-vs-sysaid",
+      "path": "/compare/apify-vs-sysaid/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "appdynamics-vs-sysaid",
+      "path": "/compare/appdynamics-vs-sysaid/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "azure-devops-vs-sysaid",
+      "path": "/compare/azure-devops-vs-sysaid/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "bitbucket-vs-sysaid",
+      "path": "/compare/bitbucket-vs-sysaid/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "bmc-helix-vs-sysaid",
+      "path": "/compare/bmc-helix-vs-sysaid/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "bright-data-vs-sysaid",
+      "path": "/compare/bright-data-vs-sysaid/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "buildkite-vs-sysaid",
+      "path": "/compare/buildkite-vs-sysaid/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "chronosphere-vs-sysaid",
+      "path": "/compare/chronosphere-vs-sysaid/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "circleci-vs-sysaid",
+      "path": "/compare/circleci-vs-sysaid/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "cloudways-vs-sysaid",
+      "path": "/compare/cloudways-vs-sysaid/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "coralogix-vs-sysaid",
+      "path": "/compare/coralogix-vs-sysaid/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "cpanel-vs-sysaid",
+      "path": "/compare/cpanel-vs-sysaid/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "datadog-vs-sysaid",
+      "path": "/compare/datadog-vs-sysaid/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "directadmin-vs-sysaid",
+      "path": "/compare/directadmin-vs-sysaid/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "dynatrace-vs-sysaid",
+      "path": "/compare/dynatrace-vs-sysaid/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "elastic-observability-vs-sysaid",
+      "path": "/compare/elastic-observability-vs-sysaid/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "firehydrant-vs-sysaid",
+      "path": "/compare/firehydrant-vs-sysaid/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "fly-io-vs-sysaid",
+      "path": "/compare/fly-io-vs-sysaid/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "github-vs-sysaid",
+      "path": "/compare/github-vs-sysaid/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "gitlab-vs-sysaid",
+      "path": "/compare/gitlab-vs-sysaid/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "grafana-cloud-vs-sysaid",
+      "path": "/compare/grafana-cloud-vs-sysaid/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "heroku-vs-sysaid",
+      "path": "/compare/heroku-vs-sysaid/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "honeycomb-vs-sysaid",
+      "path": "/compare/honeycomb-vs-sysaid/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "incident-io-vs-sysaid",
+      "path": "/compare/incident-io-vs-sysaid/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "iproyal-vs-sysaid",
+      "path": "/compare/iproyal-vs-sysaid/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "ivanti-vs-sysaid",
+      "path": "/compare/ivanti-vs-sysaid/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "jira-service-management-vs-sysaid",
+      "path": "/compare/jira-service-management-vs-sysaid/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "kinsta-vs-sysaid",
+      "path": "/compare/kinsta-vs-sysaid/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "manageengine-servicedesk-plus-vs-sysaid",
+      "path": "/compare/manageengine-servicedesk-plus-vs-sysaid/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "new-relic-vs-sysaid",
+      "path": "/compare/new-relic-vs-sysaid/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "oxylabs-vs-sysaid",
+      "path": "/compare/oxylabs-vs-sysaid/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "pagerduty-vs-sysaid",
+      "path": "/compare/pagerduty-vs-sysaid/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "railway-vs-sysaid",
+      "path": "/compare/railway-vs-sysaid/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "render-vs-sysaid",
+      "path": "/compare/render-vs-sysaid/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "rootly-vs-sysaid",
+      "path": "/compare/rootly-vs-sysaid/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "scraperapi-vs-sysaid",
+      "path": "/compare/scraperapi-vs-sysaid/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "sentry-vs-sysaid",
+      "path": "/compare/sentry-vs-sysaid/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "servicenow-vs-sysaid",
+      "path": "/compare/servicenow-vs-sysaid/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "siteground-vs-sysaid",
+      "path": "/compare/siteground-vs-sysaid/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "smartproxy-vs-sysaid",
+      "path": "/compare/smartproxy-vs-sysaid/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "splunk-vs-sysaid",
+      "path": "/compare/splunk-vs-sysaid/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "squadcast-vs-sysaid",
+      "path": "/compare/squadcast-vs-sysaid/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "sysaid-vs-thordata",
+      "path": "/compare/sysaid-vs-thordata/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "sysaid-vs-topdesk",
+      "path": "/compare/sysaid-vs-topdesk/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "sysaid-vs-wp-engine",
+      "path": "/compare/sysaid-vs-wp-engine/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "sysaid-vs-zyte",
+      "path": "/compare/sysaid-vs-zyte/"
+    },
+    {
+      "kind": "alternatives",
+      "slug": "sysaid",
+      "path": "/alternatives/sysaid/"
+    },
+    {
+      "kind": "pricing",
+      "slug": "sysaid",
+      "path": "/software/sysaid/pricing/"
+    },
+    {
+      "kind": "tools",
+      "slug": "it-development-cost-calculator",
+      "path": "/tools/it-development-cost-calculator/"
+    }
+  ],
+  "dependentsNeedingRefresh": [],
+  "remediation": [],
+  "notes": [
+    "fieldAudit score=100",
+    "decisionHub bestFor=5 notIdeal=6",
+    "dependents=56"
+  ],
+  "materiallyImproved": true
+}

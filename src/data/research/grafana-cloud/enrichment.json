@@ -183,6 +183,29 @@
       ]
     }
   ],
+  "integrationSupport": [
+    {
+      "integrationSlug": "slack",
+      "kind": "native",
+      "sourceIds": [
+        "grafana-cloud-product-official"
+      ]
+    },
+    {
+      "integrationSlug": "microsoft-teams",
+      "kind": "native",
+      "sourceIds": [
+        "grafana-cloud-product-official"
+      ]
+    },
+    {
+      "integrationSlug": "api",
+      "kind": "api-only",
+      "sourceIds": [
+        "grafana-cloud-product-official"
+      ]
+    }
+  ],
   "aiCapabilities": [
     {
       "capability": "assistant",
@@ -210,29 +233,6 @@
     {
       "capability": "recommendations",
       "availability": "limited",
-      "sourceIds": [
-        "grafana-cloud-product-official"
-      ]
-    }
-  ],
-  "integrationSupport": [
-    {
-      "integrationSlug": "slack",
-      "kind": "native",
-      "sourceIds": [
-        "grafana-cloud-product-official"
-      ]
-    },
-    {
-      "integrationSlug": "microsoft-teams",
-      "kind": "native",
-      "sourceIds": [
-        "grafana-cloud-product-official"
-      ]
-    },
-    {
-      "integrationSlug": "api",
-      "kind": "api-only",
       "sourceIds": [
         "grafana-cloud-product-official"
       ]
@@ -316,69 +316,6 @@
       "isEditorial": false
     }
   ],
-  "pricing": {
-    "currency": "USD",
-    "model": "usage",
-    "hasFreePlan": true,
-    "hasFreeTrial": false,
-    "plans": [
-      {
-        "id": "plan-free",
-        "slug": "free",
-        "name": "Free",
-        "isFree": true,
-        "contactSales": false,
-        "hasFreeTrial": false,
-        "highlighted": false,
-        "rules": [
-          {
-            "kind": "flat",
-            "amount": 0,
-            "currency": "USD",
-            "interval": "month",
-            "amountPeriod": "month"
-          }
-        ],
-        "description": "10k series, 50 GB logs/traces/profiles, 3 users, 14-day retention."
-      },
-      {
-        "id": "plan-pro",
-        "slug": "pro",
-        "name": "Pro (platform fee)",
-        "isFree": false,
-        "contactSales": false,
-        "hasFreeTrial": false,
-        "highlighted": true,
-        "rules": [
-          {
-            "kind": "flat",
-            "amount": 19,
-            "currency": "USD",
-            "interval": "month",
-            "amountPeriod": "month"
-          }
-        ],
-        "description": "$19/mo platform fee plus usage above Free allowances."
-      },
-      {
-        "id": "plan-enterprise",
-        "slug": "enterprise",
-        "name": "Enterprise",
-        "isFree": false,
-        "contactSales": true,
-        "hasFreeTrial": false,
-        "highlighted": false,
-        "rules": [],
-        "description": "Spend commit, SSO/audit, premium support — contact Grafana Labs."
-      }
-    ],
-    "notes": "Verified 2026-08-18 from Grafana Cloud pricing writeups aligned to grafana.com/pricing (high confidence for Free allowances and Pro $19 platform fee). Usage rates ($6.50/1k series, logs GB split) move — confirm live. Affiliate economics excluded.",
-    "verifiedAt": "2026-08-18T12:00:00.000Z",
-    "sourceIds": [
-      "grafana-cloud-pricing-official"
-    ],
-    "startingPriceMonthly": 19
-  },
   "screenshots": [
     {
       "id": "grafana-cloud-shot-overview",
@@ -493,13 +430,13 @@
       "demonstratedDimensionIds": [],
       "requirementCriterionIds": [],
       "workflowStageIds": [],
+      "mediaContext": "general-workflow",
       "reportedOutcomes": [],
       "placements": [
         "overview",
         "features",
         "evidence"
       ],
-      "mediaContext": "general-workflow",
       "purpose": "Official Grafana Cloud video for product research pages",
       "demonstratesCaption": "How Grafana Cloud presents the product in an official vendor video.",
       "editorialCommentary": "Official vendor demo — treat as UI/workflow evidence, not SoftwareGlimpse scoring.",
@@ -517,12 +454,69 @@
       "status": "published"
     }
   ],
-  "sourceIds": [
-    "grafana-cloud-product-official",
-    "grafana-cloud-pricing-official",
-    "grafana-cloud-pricing"
-  ],
-  "notes": "IT Priority-2 onboarding enrichment from first-party research 2026-08-18T12:00:00.000Z. handsOnTesting=false. membershipRole=primary. jobCluster=observability-monitoring.",
+  "pricing": {
+    "currency": "USD",
+    "model": "usage",
+    "hasFreePlan": true,
+    "hasFreeTrial": false,
+    "plans": [
+      {
+        "id": "plan-free",
+        "slug": "free",
+        "name": "Free",
+        "isFree": true,
+        "contactSales": false,
+        "hasFreeTrial": false,
+        "highlighted": false,
+        "rules": [
+          {
+            "kind": "flat",
+            "amount": 0,
+            "currency": "USD",
+            "interval": "month",
+            "amountPeriod": "month"
+          }
+        ],
+        "description": "10k series, 50 GB logs/traces/profiles, 3 users, 14-day retention."
+      },
+      {
+        "id": "plan-pro",
+        "slug": "pro",
+        "name": "Pro (platform fee)",
+        "isFree": false,
+        "contactSales": false,
+        "hasFreeTrial": false,
+        "highlighted": true,
+        "rules": [
+          {
+            "kind": "flat",
+            "amount": 19,
+            "currency": "USD",
+            "interval": "month",
+            "amountPeriod": "month"
+          }
+        ],
+        "description": "$19/mo platform fee plus usage above Free allowances."
+      },
+      {
+        "id": "plan-enterprise",
+        "slug": "enterprise",
+        "name": "Enterprise",
+        "isFree": false,
+        "contactSales": true,
+        "hasFreeTrial": false,
+        "highlighted": false,
+        "rules": [],
+        "description": "Spend commit, SSO/audit, premium support — contact Grafana Labs."
+      }
+    ],
+    "notes": "Verified 2026-08-18 from Grafana Cloud pricing writeups aligned to grafana.com/pricing (high confidence for Free allowances and Pro $19 platform fee). Usage rates ($6.50/1k series, logs GB split) move — confirm live. Affiliate economics excluded.",
+    "verifiedAt": "2026-09-08T21:57:12.247Z",
+    "sourceIds": [
+      "grafana-cloud-pricing-official"
+    ],
+    "startingPriceMonthly": 19
+  },
   "domainCheckedAt": {
     "identity": "2026-08-18T12:00:00.000Z",
     "pricing": "2026-08-18T12:00:00.000Z",
@@ -536,5 +530,11 @@
     "limits": "2026-08-18T12:00:00.000Z",
     "security-compliance": "2026-08-18T12:00:00.000Z"
   },
-  "updatedAt": "2026-08-18T14:00:00.000Z"
+  "sourceIds": [
+    "grafana-cloud-product-official",
+    "grafana-cloud-pricing-official",
+    "grafana-cloud-pricing"
+  ],
+  "updatedAt": "2026-08-18T14:00:00.000Z",
+  "notes": "IT Priority-2 onboarding enrichment from first-party research 2026-08-18T12:00:00.000Z. handsOnTesting=false. membershipRole=primary. jobCluster=observability-monitoring."
 }

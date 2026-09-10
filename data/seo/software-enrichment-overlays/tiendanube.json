@@ -1,0 +1,385 @@
+{
+  "slug": "tiendanube",
+  "updatedAt": "2026-09-07T22:31:21.985Z",
+  "version": "1.0.0",
+  "fieldAudit": {
+    "slug": "tiendanube",
+    "checkedAt": "2026-09-07T22:31:21.984Z",
+    "items": [
+      {
+        "field": "name",
+        "status": "PASS",
+        "detail": "Name: Tiendanube",
+        "source": "seed"
+      },
+      {
+        "field": "product_status",
+        "status": "PASS",
+        "detail": "productLifecycle=active",
+        "source": "seed"
+      },
+      {
+        "field": "canonical_vendor",
+        "status": "UNKNOWN",
+        "detail": "Company/vendor not documented",
+        "source": "none"
+      },
+      {
+        "field": "category",
+        "status": "PASS",
+        "detail": "primaryCategorySlug=ecommerce",
+        "source": "seed"
+      },
+      {
+        "field": "description",
+        "status": "PASS",
+        "detail": "Description present (LATAM hosted commerce (Tiendanube / Nuvemshop brand) — Argentina ARS tiles: Inic…)",
+        "source": "seed"
+      },
+      {
+        "field": "target_audience",
+        "status": "PASS",
+        "detail": "Sizes=2, teams=2, assessment bestFor=3",
+        "source": "assessment"
+      },
+      {
+        "field": "use_cases",
+        "status": "PASS",
+        "detail": "useCaseSlugs=1",
+        "source": "seed"
+      },
+      {
+        "field": "capabilities",
+        "status": "PASS",
+        "detail": "featureRatings=0, enrichment features=14",
+        "source": "enrichment"
+      },
+      {
+        "field": "pricing",
+        "status": "PASS",
+        "detail": "Pricing envelope present",
+        "source": "enrichment"
+      },
+      {
+        "field": "plans",
+        "status": "PASS",
+        "detail": "plans=5",
+        "source": "enrichment"
+      },
+      {
+        "field": "free_plan",
+        "status": "PASS",
+        "detail": "Free plan documented",
+        "source": "enrichment"
+      },
+      {
+        "field": "trial",
+        "status": "PASS",
+        "detail": "Trial documented on plans/pricing",
+        "source": "enrichment"
+      },
+      {
+        "field": "integrations",
+        "status": "PASS",
+        "detail": "integrationSlugs=0, enrichment=3",
+        "source": "enrichment"
+      },
+      {
+        "field": "alternatives",
+        "status": "PASS",
+        "detail": "alternativeSlugs=3",
+        "source": "seed"
+      },
+      {
+        "field": "competitors",
+        "status": "PASS",
+        "detail": "competitorSlugs=3",
+        "source": "seed"
+      },
+      {
+        "field": "affiliate",
+        "status": "PASS",
+        "detail": "No affiliate relationship (explicit)",
+        "source": "seed"
+      },
+      {
+        "field": "source_provenance",
+        "status": "PASS",
+        "detail": "seed sources=0, enrichment sourceIds=2",
+        "source": "enrichment"
+      },
+      {
+        "field": "verification_date",
+        "status": "PASS",
+        "detail": "Latest verification/research signal: 2026-08-18T16:00:00.000Z",
+        "source": "enrichment"
+      }
+    ],
+    "passCount": 17,
+    "partialCount": 0,
+    "missingCount": 0,
+    "unknownCount": 1,
+    "score": 94
+  },
+  "decisionHub": {
+    "whatItIs": "Tiendanube is a LATAM-focused hosted ecommerce SaaS (also known as Nuvemshop in some markets — one SoftwareGlimpse page, aliases only). Argentina first-party planes-y-precios (2026-08-18 schema.org Offers): Inicial ARS $0, Esencial ARS $26.999/mo, Impulso ARS $78.999/mo, Escala ARS $234.999/mo, Evolución contact. 7-day trial on paid. Annual ~25% discount noted on page. USD schema amounts (~$20 / ~$59 / ~$174) use approximate FX ~1350 ARS/USD (medium confidence) — ARS is the source of truth. Landscape saas-platform peer — Shopify keeps the award (9.2). Research grounded 2026-08-18.",
+    "bestFor": [
+      "LATAM SMBs launching or growing an online store",
+      "Merchants who want regional payments and Spanish/Portuguese UX",
+      "Teams comparing Shopify in LATAM markets",
+      "small-business / operations: Tiendanube fit for small-business operations teams in the saas-platform job cluster, from first-party positioning and Ecommerce Priority-3 research.",
+      "mid-market / operations: Tiendanube fit for mid-market operations teams in the saas-platform job cluster, from first-party positioning and Ecommerce Priority-3 research."
+    ],
+    "notIdealFor": [
+      "Global enterprise programmes needing SFCC/commercetools depth",
+      "Buyers who only evaluate USD first-party tiles",
+      "POS-first retailers needing Square-class hardware",
+      "Regional LATAM focus — not a global Shopify peer for every market",
+      "USD amounts are FX approximates; ARS tiles are the source of truth",
+      "Transaction fees with external processors vary by plan — confirm live (Pago Nube may waive TN fee)"
+    ],
+    "coreCapabilities": [
+      "online storefront",
+      "product catalog",
+      "checkout payments",
+      "order management",
+      "inventory management",
+      "shipping fulfillment",
+      "marketing automation",
+      "analytics reporting"
+    ],
+    "pricingSummary": "5 documented plans · 1 free · entry paid: Esencial · trial documented on at least one plan",
+    "keyTradeoffs": [
+      "Regional LATAM focus — not a global Shopify peer for every market",
+      "USD amounts are FX approximates; ARS tiles are the source of truth",
+      "Transaction fees with external processors vary by plan — confirm live (Pago Nube may waive TN fee)",
+      "Nuvemshop is the same product brand family — do not create a second /software/ page",
+      "Create your online store in Latin America — Tiendanube / Nuvemshop for SMB and growing merchants. (audience: LATAM SMBs launching or growing an online store, Merchants who want regional payments and Spanish/Portuguese UX)"
+    ],
+    "alternatives": [
+      {
+        "slug": "shopify",
+        "name": "Shopify"
+      },
+      {
+        "slug": "wix",
+        "name": "Wix"
+      },
+      {
+        "slug": "ecwid",
+        "name": "Ecwid"
+      }
+    ],
+    "importantComparisons": [
+      {
+        "slug": "shopify-vs-tiendanube",
+        "title": "Tiendanube vs Shopify",
+        "href": "/compare/shopify-vs-tiendanube/"
+      },
+      {
+        "slug": "bigcommerce-vs-tiendanube",
+        "title": "BigCommerce vs Tiendanube",
+        "href": "/compare/bigcommerce-vs-tiendanube/"
+      },
+      {
+        "slug": "commercetools-vs-tiendanube",
+        "title": "commercetools vs Tiendanube",
+        "href": "/compare/commercetools-vs-tiendanube/"
+      },
+      {
+        "slug": "ecwid-vs-tiendanube",
+        "title": "Ecwid vs Tiendanube",
+        "href": "/compare/ecwid-vs-tiendanube/"
+      },
+      {
+        "slug": "lightspeed-retail-vs-tiendanube",
+        "title": "Lightspeed Retail vs Tiendanube",
+        "href": "/compare/lightspeed-retail-vs-tiendanube/"
+      },
+      {
+        "slug": "magento-vs-tiendanube",
+        "title": "Magento vs Tiendanube",
+        "href": "/compare/magento-vs-tiendanube/"
+      }
+    ],
+    "relevantGuides": [
+      {
+        "slug": "tiendanube-implementation",
+        "title": "Tiendanube Implementation: 30/60/90 Store Rollout That Sticks",
+        "href": "/guides/tiendanube-implementation/"
+      },
+      {
+        "slug": "tiendanube-migration",
+        "title": "Tiendanube Migration: Move Catalog & Order Data Without Losing Trust",
+        "href": "/guides/tiendanube-migration/"
+      },
+      {
+        "slug": "tiendanube-setup",
+        "title": "Tiendanube Setup: Day-Zero Path to a Working Ecommerce Loop",
+        "href": "/guides/tiendanube-setup/"
+      },
+      {
+        "slug": "tiendanube-plans",
+        "title": "Tiendanube Plans: Seats, Hubs, and Qualifying Tiers",
+        "href": "/guides/tiendanube-plans/"
+      },
+      {
+        "slug": "is-tiendanube-worth-it",
+        "title": "Is Tiendanube Worth It? Fit Scenarios Before You Buy",
+        "href": "/guides/is-tiendanube-worth-it/"
+      }
+    ],
+    "evidenceState": "Research/data-based (no completed hands-on test) · Latest verification/research signal: 2026-08-18T16:00:00.000Z · Editorial assessment: approved",
+    "nextDecisionStep": "Compare against peers: Tiendanube vs Shopify",
+    "missingSections": [
+      "canonical_vendor"
+    ]
+  },
+  "dependents": [
+    {
+      "kind": "guide",
+      "slug": "tiendanube-implementation",
+      "path": "/guides/tiendanube-implementation/"
+    },
+    {
+      "kind": "guide",
+      "slug": "tiendanube-migration",
+      "path": "/guides/tiendanube-migration/"
+    },
+    {
+      "kind": "guide",
+      "slug": "tiendanube-setup",
+      "path": "/guides/tiendanube-setup/"
+    },
+    {
+      "kind": "guide",
+      "slug": "tiendanube-plans",
+      "path": "/guides/tiendanube-plans/"
+    },
+    {
+      "kind": "guide",
+      "slug": "is-tiendanube-worth-it",
+      "path": "/guides/is-tiendanube-worth-it/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "shopify-vs-tiendanube",
+      "path": "/compare/shopify-vs-tiendanube/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "bigcommerce-vs-tiendanube",
+      "path": "/compare/bigcommerce-vs-tiendanube/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "commercetools-vs-tiendanube",
+      "path": "/compare/commercetools-vs-tiendanube/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "ecwid-vs-tiendanube",
+      "path": "/compare/ecwid-vs-tiendanube/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "lightspeed-retail-vs-tiendanube",
+      "path": "/compare/lightspeed-retail-vs-tiendanube/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "magento-vs-tiendanube",
+      "path": "/compare/magento-vs-tiendanube/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "medusa-vs-tiendanube",
+      "path": "/compare/medusa-vs-tiendanube/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "opencart-vs-tiendanube",
+      "path": "/compare/opencart-vs-tiendanube/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "prestashop-vs-tiendanube",
+      "path": "/compare/prestashop-vs-tiendanube/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "saleor-vs-tiendanube",
+      "path": "/compare/saleor-vs-tiendanube/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "salesforce-commerce-cloud-vs-tiendanube",
+      "path": "/compare/salesforce-commerce-cloud-vs-tiendanube/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "sellfy-vs-tiendanube",
+      "path": "/compare/sellfy-vs-tiendanube/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "shopware-vs-tiendanube",
+      "path": "/compare/shopware-vs-tiendanube/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "square-online-vs-tiendanube",
+      "path": "/compare/square-online-vs-tiendanube/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "squarespace-vs-tiendanube",
+      "path": "/compare/squarespace-vs-tiendanube/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "tiendanube-vs-vtex",
+      "path": "/compare/tiendanube-vs-vtex/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "tiendanube-vs-webflow",
+      "path": "/compare/tiendanube-vs-webflow/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "tiendanube-vs-wix",
+      "path": "/compare/tiendanube-vs-wix/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "tiendanube-vs-woocommerce",
+      "path": "/compare/tiendanube-vs-woocommerce/"
+    },
+    {
+      "kind": "alternatives",
+      "slug": "tiendanube",
+      "path": "/alternatives/tiendanube/"
+    },
+    {
+      "kind": "pricing",
+      "slug": "tiendanube",
+      "path": "/software/tiendanube/pricing/"
+    },
+    {
+      "kind": "tools",
+      "slug": "ecommerce-cost-calculator",
+      "path": "/tools/ecommerce-cost-calculator/"
+    }
+  ],
+  "dependentsNeedingRefresh": [],
+  "remediation": [
+    "verify:canonical_vendor"
+  ],
+  "notes": [
+    "fieldAudit score=94",
+    "decisionHub bestFor=5 notIdeal=6",
+    "dependents=27"
+  ],
+  "materiallyImproved": false
+}

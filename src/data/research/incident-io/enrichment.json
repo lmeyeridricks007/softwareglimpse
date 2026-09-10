@@ -211,6 +211,29 @@
       ]
     }
   ],
+  "integrationSupport": [
+    {
+      "integrationSlug": "slack",
+      "kind": "native",
+      "sourceIds": [
+        "incident-io-product-official"
+      ]
+    },
+    {
+      "integrationSlug": "microsoft-teams",
+      "kind": "native",
+      "sourceIds": [
+        "incident-io-product-official"
+      ]
+    },
+    {
+      "integrationSlug": "api",
+      "kind": "api-only",
+      "sourceIds": [
+        "incident-io-product-official"
+      ]
+    }
+  ],
   "aiCapabilities": [
     {
       "capability": "assistant",
@@ -238,29 +261,6 @@
     {
       "capability": "recommendations",
       "availability": "supported",
-      "sourceIds": [
-        "incident-io-product-official"
-      ]
-    }
-  ],
-  "integrationSupport": [
-    {
-      "integrationSlug": "slack",
-      "kind": "native",
-      "sourceIds": [
-        "incident-io-product-official"
-      ]
-    },
-    {
-      "integrationSlug": "microsoft-teams",
-      "kind": "native",
-      "sourceIds": [
-        "incident-io-product-official"
-      ]
-    },
-    {
-      "integrationSlug": "api",
-      "kind": "api-only",
       "sourceIds": [
         "incident-io-product-official"
       ]
@@ -337,6 +337,26 @@
       "isEditorial": false
     }
   ],
+  "screenshots": [
+    {
+      "id": "incident-io-shot-overview",
+      "src": "/vendor-ui/incident-io/overview.png",
+      "alt": "incident.io official marketing visual",
+      "caption": "Official Open Graph / marketing visual from https://incident.io/.",
+      "source": "https://incident.io/",
+      "checkedAt": "2026-08-18T14:00:00.000Z",
+      "annotation": "Official incident.io marketing UI asset",
+      "kind": "vendor-ui",
+      "featureIds": [
+        "oncall-paging",
+        "incident-management"
+      ],
+      "useCaseIds": [
+        "incident-oncall"
+      ]
+    }
+  ],
+  "media": [],
   "pricing": {
     "currency": "USD",
     "model": "per-seat",
@@ -413,38 +433,12 @@
       }
     ],
     "notes": "Verified 2026-08-18 from incident.io/pricing (high confidence). Basic Free. Team $15/user/mo annual / $19 monthly. Pro $25/user. On-call add-on +$10–$20/user. Enterprise custom. Affiliate economics excluded.",
-    "verifiedAt": "2026-08-18T20:00:00.000Z",
+    "verifiedAt": "2026-09-08T21:57:36.153Z",
     "sourceIds": [
       "incident-io-pricing-official"
     ],
     "startingPriceMonthly": 15
   },
-  "screenshots": [
-    {
-      "id": "incident-io-shot-overview",
-      "src": "/vendor-ui/incident-io/overview.png",
-      "alt": "incident.io official marketing visual",
-      "caption": "Official Open Graph / marketing visual from https://incident.io/.",
-      "source": "https://incident.io/",
-      "checkedAt": "2026-08-18T14:00:00.000Z",
-      "annotation": "Official incident.io marketing UI asset",
-      "kind": "vendor-ui",
-      "featureIds": [
-        "oncall-paging",
-        "incident-management"
-      ],
-      "useCaseIds": [
-        "incident-oncall"
-      ]
-    }
-  ],
-  "media": [],
-  "sourceIds": [
-    "incident-io-product-official",
-    "incident-io-pricing-official",
-    "incident-io-pricing"
-  ],
-  "notes": "IT industry Tier-A onboarding enrichment from first-party research 2026-08-18T20:00:00.000Z. handsOnTesting=false. membershipRole=primary. jobCluster=incident-oncall.",
   "domainCheckedAt": {
     "identity": "2026-08-18T20:00:00.000Z",
     "pricing": "2026-08-18T20:00:00.000Z",
@@ -458,5 +452,11 @@
     "limits": "2026-08-18T20:00:00.000Z",
     "security-compliance": "2026-08-18T20:00:00.000Z"
   },
-  "updatedAt": "2026-08-18T14:00:00.000Z"
+  "sourceIds": [
+    "incident-io-product-official",
+    "incident-io-pricing-official",
+    "incident-io-pricing"
+  ],
+  "updatedAt": "2026-08-18T14:00:00.000Z",
+  "notes": "IT industry Tier-A onboarding enrichment from first-party research 2026-08-18T20:00:00.000Z. handsOnTesting=false. membershipRole=primary. jobCluster=incident-oncall."
 }

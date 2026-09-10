@@ -107,20 +107,62 @@ const RESEARCH_LINKABLES: Array<{
   name: string;
   why: string;
   angles: string[];
+  linkability?: LinkableAsset["linkability"];
+  kind?: LinkableAsset["kind"];
 }> = [
+  {
+    id: "research-hub",
+    path: "/research/",
+    name: "SoftwareGlimpse Research hub",
+    why: "Catalogue-derived research landing — entry point for journalists seeking original pricing intelligence.",
+    angles: ["Research hub citation", "Journalist source"],
+    linkability: "strong",
+    kind: "research",
+  },
+  {
+    id: "crm-pricing-benchmarks-2026",
+    path: "/research/crm-pricing/",
+    name: "CRM Pricing Statistics & Benchmarks 2026",
+    why: "Original catalogue-derived medians, free-plan share, and distribution with methodology — high citation value.",
+    angles: ["Data citation", "Statistics roundup", "Journalist source"],
+    linkability: "excellent",
+    kind: "dataset",
+  },
+  {
+    id: "crm-pricing-history",
+    path: "/research/crm-pricing-history/",
+    name: "CRM starting price history",
+    why: "Verified time-series of CRM starting list prices — rare linkable pricing dataset.",
+    angles: ["Price history citation", "Data journalism"],
+    linkability: "excellent",
+    kind: "dataset",
+  },
   {
     id: "crm-comparison-research",
     path: "/compare/",
-    name: "CRM comparison research",
-    why: "Original side-by-side evaluation structure — citeable when journalists need vendor context.",
-    angles: ["Data / comparison citation", "Journalist source"],
+    name: "Software comparison research",
+    why: "Side-by-side evaluation structure — citeable when journalists need vendor context.",
+    angles: ["Comparison citation", "Journalist source"],
+    linkability: "good",
+    kind: "comparison",
   },
   {
-    id: "crm-methodology",
-    path: "/methodology/",
-    name: "SoftwareGlimpse methodology",
+    id: "editorial-methodology",
+    path: "/company/editorial-methodology/",
+    name: "Editorial methodology",
     why: "Transparency page that supports trust when partners or educators reference our process.",
-    angles: ["Trust / methodology citation", "Partner references"],
+    angles: ["Methodology citation", "Trust / how-we-review references"],
+    linkability: "strong",
+    kind: "framework",
+  },
+  {
+    id: "how-we-review",
+    path: "/company/how-we-review-software/",
+    name: "How we review software",
+    why: "Evidence-level and testing standards — supports expert-resource and academic-style citations.",
+    angles: ["Methodology citation", "Expert contribution context"],
+    linkability: "strong",
+    kind: "framework",
   },
 ];
 
@@ -208,11 +250,11 @@ export function inventoryLinkableAssets(): LinkableAsset[] {
   for (const research of RESEARCH_LINKABLES) {
     assets.push({
       id: stableLinkableAssetId("research", research.id),
-      kind: "research",
+      kind: research.kind ?? "research",
       name: research.name,
       path: research.path,
       cluster: "crm",
-      linkability: "good",
+      linkability: research.linkability ?? "good",
       whyLinkable: research.why,
       promotionAngles: research.angles,
       status: "available",

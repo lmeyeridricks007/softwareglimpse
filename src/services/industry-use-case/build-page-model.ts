@@ -29,7 +29,7 @@ import { canonicalFeaturesSeed } from "@/data/seed/features";
 import type { ProductMedia } from "@/domain";
 import {
   selectUseCaseSeeInActionCards,
-  useCaseMediaAliases,
+  resolveUseCaseMediaAliases,
   type UseCaseSeeInActionCard,
 } from "@/services/product-media/use-case-page-media";
 import {
@@ -903,7 +903,7 @@ export function buildIndustryUseCaseModel(input: {
     ctx: {
       useCaseSlug,
       industrySlug: industry.slug,
-      useCaseAliases: useCaseMediaAliases(useCaseSlug),
+      useCaseAliases: resolveUseCaseMediaAliases(useCaseSlug),
       capabilityIds: profile.capabilities.map((c) => c.capabilitySlug),
       requirementIds: profile.requirements
         .map((r) => r.requirementSlug)

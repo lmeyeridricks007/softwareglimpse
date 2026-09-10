@@ -1,4 +1,4 @@
-import type { GuidePage } from "@/domain";
+import type { GuidePageInput } from "@/domain";
 import type { z } from "zod";
 import type { GuideContentBlockSchema } from "@/domain";
 
@@ -222,7 +222,7 @@ const salesIntelligenceRoiGuideBlocks: GuideBlockInput[] = [
   },
 ];
 
-export const salesIntelligenceRoiGuide: GuidePage = {
+export const salesIntelligenceRoiGuide: GuidePageInput = {
   id: "guide-sales-intelligence-roi-guide",
   slug: "sales-intelligence-roi-guide",
   title: "Sales Intelligence ROI Guide: Value Without Fake Numbers",
@@ -260,7 +260,7 @@ export const salesIntelligenceRoiGuide: GuidePage = {
     "sales-intelligence-selection-process",
     "how-to-choose-sales-intelligence",
   ],
-  blocks: salesIntelligenceRoiGuideBlocks as GuidePage["blocks"],
+  blocks: salesIntelligenceRoiGuideBlocks as GuidePageInput["blocks"],
   checklist: [
     {
       id: "outcomes",

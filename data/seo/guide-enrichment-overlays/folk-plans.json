@@ -1,0 +1,211 @@
+{
+  "slug": "folk-plans",
+  "enrichmentType": "COST_GUIDE",
+  "updatedAt": "2026-09-07T18:10:12.412Z",
+  "uniqueValueAdded": [
+    "pricing_comparison",
+    "sg_original_data",
+    "scenario_analysis",
+    "implementation_workflow",
+    "decision_framework",
+    "limitations_evidence",
+    "product_shortlist",
+    "alternatives_map",
+    "buyer_checklist"
+  ],
+  "patch": {
+    "summary": "folk cost guide: researched plan structure, free/trial flags, who each tier suits, cost scenarios, and value tradeoffs — no invented prices.",
+    "blocks": [
+      {
+        "id": "da-folk-plans-1",
+        "type": "direct-answer",
+        "body": "folk pricing is plan-gated across 4 researched tiers. Free entry: Free. 14-day trial documented. Compare seat/capacity gates and unlocks — not list-price folklore.",
+        "bullets": [
+          "Free plan(s): Free",
+          "14-day trial documented",
+          "Entry paid tier researched: Standard"
+        ]
+      },
+      {
+        "id": "cost-folk-plans-2",
+        "type": "cost-breakdown",
+        "title": "folk plan matrix and who each tier suits",
+        "body": "Structure and trial/free flags come from SoftwareGlimpse pricing research. Dollar amounts appear only when verified — never invent list prices.",
+        "lines": [
+          {
+            "label": "Free",
+            "description": "Free plan · 14-day trial · up to 1 seat · Suits: explore before committing seats"
+          },
+          {
+            "label": "Standard",
+            "description": "14-day trial · Unlocks: contact management, lead management, pipeline management · Suits: teams whose must-have gates appear on this tier"
+          },
+          {
+            "label": "Premium",
+            "description": "14-day trial · Unlocks: deal management, email sequences, reporting · Suits: teams whose must-have gates appear on this tier"
+          },
+          {
+            "label": "Enterprise",
+            "description": "14-day trial · Suits: teams whose must-have gates appear on this tier"
+          }
+        ],
+        "calculatorHref": "/tools/crm-cost-calculator/",
+        "calculatorLabel": "Model category cost fit"
+      },
+      {
+        "id": "scen-folk-plans-3",
+        "type": "step",
+        "heading": "folk cost scenarios to pressure-test",
+        "body": "Price folk against how you actually buy seats and unlocks — not against a competitor's homepage headline.",
+        "stepNumber": 1,
+        "scenarios": [
+          {
+            "title": "Lean team / free-or-trial first",
+            "body": "Stay on Free until a gated capability (contact management (Standard, Premium, Enterprise)) becomes mandatory."
+          },
+          {
+            "title": "Growing team with gated workflows",
+            "body": "Map must-have workflows (contact management, lead management, pipeline management) to plan unlocks before expanding seats."
+          },
+          {
+            "title": "Hidden / extra cost watch",
+            "body": "Budget risk: Custom objects/Deals, email sequences, dashboards, workspace roles, and API access start on Premium.. Also check add-ons, overages, and admin time outside the sticker plan."
+          }
+        ]
+      },
+      {
+        "id": "value-folk-plans-4",
+        "type": "decision-framework",
+        "title": "folk value rule",
+        "steps": [
+          {
+            "id": "v-1",
+            "label": "Pay up when Founders and SMB teams running relationship-led sales from LinkedIn/email requires a paid unlock you will use weekly"
+          },
+          {
+            "id": "v-2",
+            "label": "Do not overbuy if this limitation dominates: Custom objects/Deals, email sequences, dashboards, workspace roles, and API access start on Premium."
+          },
+          {
+            "id": "v-3",
+            "label": "Side-by-side cost with Salesflare on the same seat count"
+          }
+        ]
+      },
+      {
+        "id": "lim-folk-plans-5",
+        "type": "mistakes",
+        "title": "folk cost mistakes to avoid",
+        "items": [
+          {
+            "title": "Cost trap 1",
+            "body": "Custom objects/Deals, email sequences, dashboards, workspace roles, and API access start on Premium."
+          },
+          {
+            "title": "Cost trap 2",
+            "body": "Enrichment, magic fields, and AI assistant credits are monthly capped by plan (custom on Enterprise)."
+          },
+          {
+            "title": "Cost trap 3",
+            "body": "FAQ references a free plan for downgrades, but live pricing cards emphasize Standard/Premium/Enterprise — free-tier feature limits are not fully documented on the pricing table."
+          },
+          {
+            "title": "Cost trap 4",
+            "body": "Deals, sequences, dashboards, and API require Premium"
+          },
+          {
+            "title": "Cost trap 5",
+            "body": "Monthly AI/enrichment credit caps"
+          }
+        ]
+      },
+      {
+        "id": "alts-folk-plans-6",
+        "type": "product-shortlist",
+        "title": "Cheaper or clearer alternatives to pressure-test",
+        "body": "Compare total cost of ownership vs folk on identical constraints.",
+        "productSlugs": [
+          "salesflare",
+          "capsule",
+          "pipedrive"
+        ],
+        "disclaimer": "Catalogue peers only — not commission-ranked."
+      },
+      {
+        "id": "sel-folk-plans-7",
+        "type": "selection-checklist",
+        "title": "folk pricing checklist",
+        "dimensions": [
+          {
+            "id": "gates",
+            "label": "Plan gates you must unlock",
+            "options": [
+              "contact management (Standard, Premium, Enterprise)",
+              "lead management (Standard, Premium, Enterprise)",
+              "pipeline management (Standard, Premium, Enterprise)",
+              "deal management (Premium, Enterprise)"
+            ]
+          },
+          {
+            "id": "trial",
+            "label": "Trial / free proof",
+            "options": [
+              "Free plan usable for pilot",
+              "Trial days enough",
+              "Paid gate acceptable"
+            ]
+          },
+          {
+            "id": "tco",
+            "label": "TCO extras",
+            "options": [
+              "Add-ons checked",
+              "Admin time budgeted",
+              "Migration cost noted"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "cta-folk-plans-8",
+        "type": "interactive-cta",
+        "title": "Model crm spend with folk in mind",
+        "body": "Use researched plan structure for folk alongside category cost modelling.",
+        "href": "/tools/crm-cost-calculator/",
+        "ctaLabel": "Open calculator",
+        "variant": "calculator"
+      }
+    ],
+    "checklist": [
+      {
+        "id": "enrich-chk-0",
+        "label": "List must-have unlocks before picking a folk tier",
+        "order": 0
+      },
+      {
+        "id": "enrich-chk-1",
+        "label": "14-day trial documented",
+        "order": 1
+      },
+      {
+        "id": "enrich-chk-2",
+        "label": "Price in this risk: Custom objects/Deals, email sequences, dashboards, workspace roles, and API access start on Premium.",
+        "order": 2
+      },
+      {
+        "id": "enrich-chk-3",
+        "label": "Compare seat TCO with Salesflare",
+        "order": 3
+      }
+    ],
+    "nextAction": {
+      "contentId": "tool:finder:crm",
+      "label": "Open Finder shortlist"
+    }
+  },
+  "notes": [
+    "Omit unsupported: testing_evidence",
+    "Cost guide: real plan structure, free/trial, TCO tradeoffs — never invent prices.",
+    "Type-specific skeleton: COST_GUIDE"
+  ]
+}

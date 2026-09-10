@@ -8,8 +8,12 @@ const projectRoot = path.dirname(fileURLToPath(import.meta.url));
 const nextConfig: NextConfig = {
   // Canonical URLs use trailing slashes (matches intended IA and WordPress heritage).
   trailingSlash: true,
-  // Unblock production deploys while catalogue/schema drift is cleaned up.
-  // Prefer fixing types over keeping this; do not treat as a permanent policy.
+  // Large static surface (~13k pages). Default 60s page timeout fails under
+  // contended workers on Vercel / local — raise so retries are not needed.
+  staticPageGenerationTimeout: 180,
+  // Standalone `npm run typecheck` is the gate (see engineering-quality CI).
+  // Keep Next build-time typecheck off for now so deploy stays fast/stable on
+  // the large static surface; do not treat this as permission to regress types.
   typescript: {
     ignoreBuildErrors: true,
   },
@@ -60,11 +64,19 @@ const nextConfig: NextConfig = {
    * upload scripts without enabling rewrites. Override with BLOB_MEDIA_REWRITES=1.
    */
   async rewrites() {
+    const sitemapRewrites = [
+      {
+        // Pretty child sitemaps → route handler under /sitemaps/
+        source: "/sitemap-:name.xml",
+        destination: "/sitemaps/:name.xml",
+      },
+    ];
+
     const blob = (process.env.BLOB_PUBLIC_HOST ?? "").replace(/\/$/, "");
     const useBlobRewrites =
       Boolean(blob) &&
       (process.env.VERCEL === "1" || process.env.BLOB_MEDIA_REWRITES === "1");
-    if (!useBlobRewrites) return [];
+    if (!useBlobRewrites) return sitemapRewrites;
     const folders = [
       "guides",
       "software",
@@ -77,10 +89,13 @@ const nextConfig: NextConfig = {
       "requirements",
       "for",
     ];
-    return folders.map((folder) => ({
-      source: `/${folder}/:path*`,
-      destination: `${blob}/${folder}/:path*`,
-    }));
+    return [
+      ...sitemapRewrites,
+      ...folders.map((folder) => ({
+        source: `/${folder}/:path*`,
+        destination: `${blob}/${folder}/:path*`,
+      })),
+    ];
   },
   async headers() {
     return [
@@ -114,6 +129,26 @@ const nextConfig: NextConfig = {
       },
       {
         source: "/sitemap.xml",
+        headers: [
+          {
+            key: "Cache-Control",
+            value:
+              "public, max-age=3600, stale-while-revalidate=86400, s-maxage=86400",
+          },
+        ],
+      },
+      {
+        source: "/sitemaps/:path*",
+        headers: [
+          {
+            key: "Cache-Control",
+            value:
+              "public, max-age=3600, stale-while-revalidate=86400, s-maxage=86400",
+          },
+        ],
+      },
+      {
+        source: "/sitemap-:name.xml",
         headers: [
           {
             key: "Cache-Control",

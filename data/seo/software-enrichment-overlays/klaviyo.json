@@ -1,0 +1,415 @@
+{
+  "slug": "klaviyo",
+  "updatedAt": "2026-09-07T22:31:21.308Z",
+  "version": "1.0.0",
+  "fieldAudit": {
+    "slug": "klaviyo",
+    "checkedAt": "2026-09-07T22:31:21.307Z",
+    "items": [
+      {
+        "field": "name",
+        "status": "PASS",
+        "detail": "Name: Klaviyo",
+        "source": "seed"
+      },
+      {
+        "field": "product_status",
+        "status": "PASS",
+        "detail": "productLifecycle=active",
+        "source": "seed"
+      },
+      {
+        "field": "canonical_vendor",
+        "status": "UNKNOWN",
+        "detail": "Company/vendor not documented",
+        "source": "none"
+      },
+      {
+        "field": "category",
+        "status": "PASS",
+        "detail": "primaryCategorySlug=email-marketing",
+        "source": "seed"
+      },
+      {
+        "field": "description",
+        "status": "PASS",
+        "detail": "Description present (Ecommerce email + SMS platform with Shopify-native flows, revenue attribution, a…)",
+        "source": "seed"
+      },
+      {
+        "field": "target_audience",
+        "status": "PASS",
+        "detail": "Sizes=3, teams=2, assessment bestFor=3",
+        "source": "assessment"
+      },
+      {
+        "field": "use_cases",
+        "status": "PASS",
+        "detail": "useCaseSlugs=5",
+        "source": "seed"
+      },
+      {
+        "field": "capabilities",
+        "status": "PASS",
+        "detail": "featureRatings=0, enrichment features=15",
+        "source": "enrichment"
+      },
+      {
+        "field": "pricing",
+        "status": "PASS",
+        "detail": "Pricing envelope present",
+        "source": "enrichment"
+      },
+      {
+        "field": "plans",
+        "status": "PASS",
+        "detail": "plans=3",
+        "source": "enrichment"
+      },
+      {
+        "field": "free_plan",
+        "status": "PASS",
+        "detail": "Free plan documented",
+        "source": "enrichment"
+      },
+      {
+        "field": "trial",
+        "status": "UNKNOWN",
+        "detail": "Trial not explicitly documented — do not assume none",
+        "source": "none"
+      },
+      {
+        "field": "integrations",
+        "status": "PASS",
+        "detail": "integrationSlugs=0, enrichment=5",
+        "source": "enrichment"
+      },
+      {
+        "field": "alternatives",
+        "status": "PASS",
+        "detail": "alternativeSlugs=4",
+        "source": "seed"
+      },
+      {
+        "field": "competitors",
+        "status": "PASS",
+        "detail": "competitorSlugs=6",
+        "source": "seed"
+      },
+      {
+        "field": "affiliate",
+        "status": "PASS",
+        "detail": "No affiliate relationship (explicit)",
+        "source": "seed"
+      },
+      {
+        "field": "source_provenance",
+        "status": "PASS",
+        "detail": "seed sources=0, enrichment sourceIds=2",
+        "source": "enrichment"
+      },
+      {
+        "field": "verification_date",
+        "status": "PASS",
+        "detail": "Latest verification/research signal: 2026-08-17T14:00:00.000Z",
+        "source": "enrichment"
+      }
+    ],
+    "passCount": 16,
+    "partialCount": 0,
+    "missingCount": 0,
+    "unknownCount": 2,
+    "score": 89
+  },
+  "decisionHub": {
+    "whatItIs": "Klaviyo is an ecommerce-focused email and SMS marketing platform with catalog-aware flows, segmentation, and revenue attribution — commonly used by Shopify and other online retailers. Pricing is primarily based on active profiles (and messaging credits for SMS); a free plan and paid Email / Email + SMS ladders are published with dynamic bands.",
+    "bestFor": [
+      "Ecommerce brands needing email + SMS with catalog-aware flows",
+      "Shopify-centric teams prioritizing revenue attribution",
+      "Growth-stage stores where lifecycle automation is the primary job",
+      "small-business / marketing: Klaviyo fit for small-business marketing teams from first-party positioning and email-marketing Priority-1 research.",
+      "mid-market / marketing: Klaviyo fit for mid-market marketing teams from first-party positioning and email-marketing Priority-1 research.",
+      "enterprise / marketing: Klaviyo fit for enterprise marketing teams from first-party positioning and email-marketing Priority-1 research."
+    ],
+    "notIdealFor": [
+      "Creators who only need a simple newsletter without ecommerce catalog data",
+      "Buyers who need the lowest possible contact-based TCO at large list sizes",
+      "Teams wanting a full sales CRM as the system of record",
+      "Active-profile billing can rise quickly as the store’s engaged customer base grows",
+      "Exact paid-band dollars require the live pricing slider — floors are research estimates",
+      "Less ideal as a simple newsletter-only ESP for non-ecommerce creators"
+    ],
+    "coreCapabilities": [
+      "email campaigns",
+      "newsletter builder",
+      "email templates",
+      "drag drop editor",
+      "automation workflows",
+      "segmentation",
+      "personalization",
+      "ab testing"
+    ],
+    "pricingSummary": "3 documented plans · 1 free · entry paid: Email",
+    "keyTradeoffs": [
+      "Active-profile billing can rise quickly as the store’s engaged customer base grows",
+      "Exact paid-band dollars require the live pricing slider — floors are research estimates",
+      "Less ideal as a simple newsletter-only ESP for non-ecommerce creators",
+      "SMS costs and credit consumption need separate forecasting beyond Email plan floors",
+      "Not a full sales CRM of record — ecommerce lifecycle email/SMS center of gravity"
+    ],
+    "alternatives": [
+      {
+        "slug": "activecampaign",
+        "name": "ActiveCampaign"
+      },
+      {
+        "slug": "mailchimp",
+        "name": "Mailchimp"
+      },
+      {
+        "slug": "brevo",
+        "name": "Brevo"
+      },
+      {
+        "slug": "getresponse",
+        "name": "GetResponse"
+      },
+      {
+        "slug": "mailerlite",
+        "name": "MailerLite"
+      },
+      {
+        "slug": "hubspot",
+        "name": "HubSpot"
+      }
+    ],
+    "importantComparisons": [
+      {
+        "slug": "klaviyo-vs-mailchimp",
+        "title": "Klaviyo vs Mailchimp",
+        "href": "/compare/klaviyo-vs-mailchimp/"
+      },
+      {
+        "slug": "activecampaign-vs-klaviyo",
+        "title": "ActiveCampaign vs Klaviyo",
+        "href": "/compare/activecampaign-vs-klaviyo/"
+      },
+      {
+        "slug": "brevo-vs-klaviyo",
+        "title": "Brevo vs Klaviyo",
+        "href": "/compare/brevo-vs-klaviyo/"
+      },
+      {
+        "slug": "getresponse-vs-klaviyo",
+        "title": "GetResponse vs Klaviyo",
+        "href": "/compare/getresponse-vs-klaviyo/"
+      },
+      {
+        "slug": "klaviyo-vs-omnisend",
+        "title": "Klaviyo vs Omnisend",
+        "href": "/compare/klaviyo-vs-omnisend/"
+      },
+      {
+        "slug": "aweber-vs-klaviyo",
+        "title": "AWeber vs Klaviyo",
+        "href": "/compare/aweber-vs-klaviyo/"
+      }
+    ],
+    "relevantGuides": [
+      {
+        "slug": "klaviyo-implementation",
+        "title": "Klaviyo Implementation: 30/60/90 Email Rollout That Sticks",
+        "href": "/guides/klaviyo-implementation/"
+      },
+      {
+        "slug": "klaviyo-migration",
+        "title": "Klaviyo Migration: Move Lists Without Losing Trust",
+        "href": "/guides/klaviyo-migration/"
+      },
+      {
+        "slug": "klaviyo-setup",
+        "title": "Klaviyo Setup: Day-Zero Path to a Working Email Loop",
+        "href": "/guides/klaviyo-setup/"
+      },
+      {
+        "slug": "klaviyo-plans",
+        "title": "Klaviyo Plans: Contacts, Sends, and Qualifying Tiers",
+        "href": "/guides/klaviyo-plans/"
+      },
+      {
+        "slug": "is-klaviyo-worth-it",
+        "title": "Is Klaviyo Worth It? Fit Scenarios Before You Buy",
+        "href": "/guides/is-klaviyo-worth-it/"
+      }
+    ],
+    "evidenceState": "Research/data-based (no completed hands-on test) · Latest verification/research signal: 2026-08-17T14:00:00.000Z · Editorial assessment: approved",
+    "nextDecisionStep": "Compare against peers: Klaviyo vs Mailchimp",
+    "missingSections": [
+      "canonical_vendor",
+      "trial"
+    ]
+  },
+  "dependents": [
+    {
+      "kind": "guide",
+      "slug": "klaviyo-implementation",
+      "path": "/guides/klaviyo-implementation/"
+    },
+    {
+      "kind": "guide",
+      "slug": "klaviyo-migration",
+      "path": "/guides/klaviyo-migration/"
+    },
+    {
+      "kind": "guide",
+      "slug": "klaviyo-setup",
+      "path": "/guides/klaviyo-setup/"
+    },
+    {
+      "kind": "guide",
+      "slug": "klaviyo-plans",
+      "path": "/guides/klaviyo-plans/"
+    },
+    {
+      "kind": "guide",
+      "slug": "is-klaviyo-worth-it",
+      "path": "/guides/is-klaviyo-worth-it/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "klaviyo-vs-mailchimp",
+      "path": "/compare/klaviyo-vs-mailchimp/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "activecampaign-vs-klaviyo",
+      "path": "/compare/activecampaign-vs-klaviyo/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "brevo-vs-klaviyo",
+      "path": "/compare/brevo-vs-klaviyo/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "getresponse-vs-klaviyo",
+      "path": "/compare/getresponse-vs-klaviyo/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "klaviyo-vs-omnisend",
+      "path": "/compare/klaviyo-vs-omnisend/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "aweber-vs-klaviyo",
+      "path": "/compare/aweber-vs-klaviyo/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "beehiiv-vs-klaviyo",
+      "path": "/compare/beehiiv-vs-klaviyo/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "bouncer-vs-klaviyo",
+      "path": "/compare/bouncer-vs-klaviyo/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "campaign-monitor-vs-klaviyo",
+      "path": "/compare/campaign-monitor-vs-klaviyo/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "constant-contact-vs-klaviyo",
+      "path": "/compare/constant-contact-vs-klaviyo/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "customer-io-vs-klaviyo",
+      "path": "/compare/customer-io-vs-klaviyo/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "drip-vs-klaviyo",
+      "path": "/compare/drip-vs-klaviyo/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "flodesk-vs-klaviyo",
+      "path": "/compare/flodesk-vs-klaviyo/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "inboxally-vs-klaviyo",
+      "path": "/compare/inboxally-vs-klaviyo/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "kit-vs-klaviyo",
+      "path": "/compare/kit-vs-klaviyo/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "klaviyo-vs-mailerlite",
+      "path": "/compare/klaviyo-vs-mailerlite/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "klaviyo-vs-mailjet",
+      "path": "/compare/klaviyo-vs-mailjet/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "klaviyo-vs-moosend",
+      "path": "/compare/klaviyo-vs-moosend/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "hubspot-vs-klaviyo",
+      "path": "/compare/hubspot-vs-klaviyo/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "braze-vs-klaviyo",
+      "path": "/compare/braze-vs-klaviyo/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "iterable-vs-klaviyo",
+      "path": "/compare/iterable-vs-klaviyo/"
+    },
+    {
+      "kind": "alternatives",
+      "slug": "klaviyo",
+      "path": "/alternatives/klaviyo/"
+    },
+    {
+      "kind": "pricing",
+      "slug": "klaviyo",
+      "path": "/software/klaviyo/pricing/"
+    },
+    {
+      "kind": "best",
+      "slug": "email-marketing-software",
+      "path": "/best/email-marketing-software/"
+    },
+    {
+      "kind": "tools",
+      "slug": "email-marketing-cost-calculator",
+      "path": "/tools/email-marketing-cost-calculator/"
+    }
+  ],
+  "dependentsNeedingRefresh": [],
+  "remediation": [
+    "verify:canonical_vendor",
+    "verify:trial"
+  ],
+  "notes": [
+    "fieldAudit score=89",
+    "decisionHub bestFor=6 notIdeal=6",
+    "dependents=30"
+  ],
+  "materiallyImproved": false
+}

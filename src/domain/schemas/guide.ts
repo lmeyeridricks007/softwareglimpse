@@ -11,6 +11,7 @@ export const SupportingTopicTypeSchema = z.enum([
   "how-it-works",
   "selection",
   "buying-guide",
+  "product-explainer",
   "feature-explainer",
   "pricing-education",
   "implementation",
@@ -129,5 +130,6 @@ export const GuidePageSchema = z.object({
 });
 
 export type GuidePage = z.infer<typeof GuidePageSchema>;
+export type GuidePageInput = z.input<typeof GuidePageSchema>;
 
 export * from "./guide-blocks";

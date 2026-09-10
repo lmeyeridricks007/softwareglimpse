@@ -11,6 +11,7 @@ import {
   SoftwareHubFinderCta,
 } from "@/components/software/hub/software-hub-sidebar";
 import { SoftwareTeamCostEstimator } from "@/components/software/software-team-cost-estimator";
+import { SoftwarePriceHistoryPanel } from "@/components/software/software-price-history-panel";
 import type { CurrencyCode } from "@/domain";
 import { resolvePlanDisplayPrice } from "@/services/pricing";
 import type { ResolvedAffiliateLink } from "@/services/affiliate/resolve-affiliate-link";
@@ -90,17 +91,24 @@ export function SoftwareHubPricingTab({ model, affiliateLink }: Props) {
   return (
     <div className="grid gap-8 lg:grid-cols-[minmax(0,1fr)_17rem] lg:items-start">
       <div className="min-w-0 space-y-10">
+        {model.priceHistory ? (
+          <SoftwarePriceHistoryPanel
+            summary={model.priceHistory}
+            productName={software.name}
+          />
+        ) : null}
         <div>
           <div className="flex flex-wrap items-center justify-between gap-3">
             <h2 className="font-[family-name:var(--font-display)] text-[length:var(--sg-text-h2)] font-semibold text-[var(--sg-color-text)]">
               {software.name} plans & pricing
             </h2>
             <label className="inline-flex items-center gap-2 text-sm text-[var(--sg-color-text-muted)]">
-              <span>Show annual prices</span>
+              <span>{annual ? "Billed annually" : "Billed monthly"}</span>
               <button
                 type="button"
                 role="switch"
                 aria-checked={annual}
+                aria-label="Toggle annual versus monthly list prices"
                 onClick={() => setAnnual((v) => !v)}
                 className={cn(
                   "relative h-6 w-11 rounded-full transition-colors",
@@ -207,9 +215,10 @@ export function SoftwareHubPricingTab({ model, affiliateLink }: Props) {
                       <AffiliateCta
                         link={affiliateLink}
                         label={
-                          pricing.hasFreeTrial
+                          priced.ctaLabel ??
+                          (pricing.hasFreeTrial
                             ? "Try free for 14 days"
-                            : `Visit ${software.name}`
+                            : `Visit ${software.name}`)
                         }
                         className="w-full justify-center"
                         showDisclosure={false}
@@ -222,7 +231,7 @@ export function SoftwareHubPricingTab({ model, affiliateLink }: Props) {
                         target="_blank"
                         rel="noopener noreferrer"
                       >
-                        Visit {software.name}
+                        {priced.ctaLabel ?? `Visit ${software.name}`}
                       </ButtonLink>
                     ) : null}
                     <Link

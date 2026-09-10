@@ -148,7 +148,7 @@ export function runLegacyMigrationMonitor(
     now: generatedAt,
   });
 
-  let issues = applyReappearanceRegression(
+  const issues = applyReappearanceRegression(
     reconciled.issues,
     previousResolved,
     reconciled.counts,

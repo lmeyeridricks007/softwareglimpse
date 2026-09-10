@@ -1,0 +1,533 @@
+{
+  "slug": "splunk",
+  "updatedAt": "2026-09-08T21:57:41.690Z",
+  "version": "1.0.0",
+  "fieldAudit": {
+    "slug": "splunk",
+    "checkedAt": "2026-09-08T21:57:41.688Z",
+    "items": [
+      {
+        "field": "name",
+        "status": "PASS",
+        "detail": "Name: Splunk Observability Cloud",
+        "source": "seed"
+      },
+      {
+        "field": "product_status",
+        "status": "PASS",
+        "detail": "productLifecycle=active",
+        "source": "seed"
+      },
+      {
+        "field": "canonical_vendor",
+        "status": "PASS",
+        "detail": "Vendor: Splunk LLC (Cisco company)",
+        "source": "seed"
+      },
+      {
+        "field": "category",
+        "status": "PASS",
+        "detail": "primaryCategorySlug=it-development",
+        "source": "seed"
+      },
+      {
+        "field": "description",
+        "status": "PASS",
+        "detail": "Description present (Splunk Observability Cloud — Infrastructure Monitoring from $15/host/mo annual; …)",
+        "source": "seed"
+      },
+      {
+        "field": "target_audience",
+        "status": "PASS",
+        "detail": "Sizes=2, teams=2, assessment bestFor=3",
+        "source": "assessment"
+      },
+      {
+        "field": "use_cases",
+        "status": "PASS",
+        "detail": "useCaseSlugs=1",
+        "source": "seed"
+      },
+      {
+        "field": "capabilities",
+        "status": "PASS",
+        "detail": "featureRatings=0, enrichment features=16",
+        "source": "enrichment"
+      },
+      {
+        "field": "pricing",
+        "status": "PASS",
+        "detail": "Pricing envelope present",
+        "source": "enrichment"
+      },
+      {
+        "field": "plans",
+        "status": "PASS",
+        "detail": "plans=4",
+        "source": "enrichment"
+      },
+      {
+        "field": "free_plan",
+        "status": "PASS",
+        "detail": "Free plan documented",
+        "source": "enrichment"
+      },
+      {
+        "field": "trial",
+        "status": "PASS",
+        "detail": "Trial documented on plans/pricing",
+        "source": "enrichment"
+      },
+      {
+        "field": "integrations",
+        "status": "PASS",
+        "detail": "integrationSlugs=0, enrichment=4",
+        "source": "enrichment"
+      },
+      {
+        "field": "alternatives",
+        "status": "PASS",
+        "detail": "alternativeSlugs=3",
+        "source": "seed"
+      },
+      {
+        "field": "competitors",
+        "status": "PASS",
+        "detail": "competitorSlugs=6",
+        "source": "seed"
+      },
+      {
+        "field": "affiliate",
+        "status": "PASS",
+        "detail": "No affiliate relationship (explicit)",
+        "source": "seed"
+      },
+      {
+        "field": "source_provenance",
+        "status": "PASS",
+        "detail": "seed sources=0, enrichment sourceIds=3",
+        "source": "enrichment"
+      },
+      {
+        "field": "verification_date",
+        "status": "PASS",
+        "detail": "Latest verification/research signal: 2026-08-18T20:00:00.000Z",
+        "source": "enrichment"
+      }
+    ],
+    "passCount": 18,
+    "partialCount": 0,
+    "missingCount": 0,
+    "unknownCount": 0,
+    "score": 100
+  },
+  "decisionHub": {
+    "whatItIs": "Splunk Observability Cloud is Cisco/Splunk’s hosted metrics, APM, and full-stack observability SKU. It is not Splunk Platform (Enterprise/Cloud) SIEM ingest pricing — do not treat ingest-GB Platform tiles as this product’s floor. Infrastructure Monitoring publishes from $15/host/month billed annually; App & Infra Monitoring $60/host; End-to-End Observability $75/host. Splunk FAQ documents a free path up to 15 hosts. Same observability-monitoring cluster as Datadog — Datadog remains the cluster award (8.6); this entity does not outrank it.",
+    "bestFor": [
+      "SRE teams that want Splunk Observability Cloud host packs rather than Platform ingest",
+      "Cisco/Splunk-aligned estates that need metrics and APM in one Cloud SKU",
+      "Buyers who will model $15 vs $60 vs $75 host packs before commit",
+      "mid-market / operations: Splunk Observability Cloud fit for mid-market operations teams in the observability-monitoring job cluster, from first-party positioning and IT industry Tier-A research.",
+      "enterprise / operations: Splunk Observability Cloud fit for enterprise operations teams in the observability-monitoring job cluster, from first-party positioning and IT industry Tier-A research."
+    ],
+    "notIdealFor": [
+      "Teams buying Splunk Platform/SIEM ingest as if it were this SKU",
+      "Buyers who need Datadog’s broader module catalogue as the default award path",
+      "ITSM, git, or hosting-panel purchases",
+      "Observability Cloud host SKUs are not Splunk Platform/SIEM ingest-GB pricing — do not mix floors",
+      "Does not outrank Datadog (8.6) as the observability cluster award",
+      "App & Infra $60 and End-to-End $75 stack well above the $15 infrastructure floor"
+    ],
+    "coreCapabilities": [
+      "incident management",
+      "infrastructure monitoring",
+      "apm tracing",
+      "log management",
+      "cicd actions",
+      "itsm ai",
+      "dev ai",
+      "oncall paging"
+    ],
+    "pricingSummary": "4 documented plans · 1 free · entry paid: Infrastructure Monitoring · trial documented on at least one plan",
+    "keyTradeoffs": [
+      "Observability Cloud host SKUs are not Splunk Platform/SIEM ingest-GB pricing — do not mix floors",
+      "Does not outrank Datadog (8.6) as the observability cluster award",
+      "App & Infra $60 and End-to-End $75 stack well above the $15 infrastructure floor",
+      "Not ITSM, source control, hosting panel, or managed hosting",
+      "Free 15-host FAQ cap is an evaluation/small-estate path, not unlimited telemetry"
+    ],
+    "alternatives": [
+      {
+        "slug": "datadog",
+        "name": "Datadog"
+      },
+      {
+        "slug": "elastic-observability",
+        "name": "Elastic Observability"
+      },
+      {
+        "slug": "sentry",
+        "name": "Sentry"
+      },
+      {
+        "slug": "new-relic",
+        "name": "New Relic"
+      },
+      {
+        "slug": "dynatrace",
+        "name": "Dynatrace"
+      },
+      {
+        "slug": "grafana-cloud",
+        "name": "Grafana Cloud"
+      }
+    ],
+    "importantComparisons": [
+      {
+        "slug": "datadog-vs-splunk",
+        "title": "Splunk Observability Cloud vs Datadog",
+        "href": "/compare/datadog-vs-splunk/"
+      },
+      {
+        "slug": "elastic-observability-vs-splunk",
+        "title": "Splunk Observability Cloud vs Elastic Observability",
+        "href": "/compare/elastic-observability-vs-splunk/"
+      },
+      {
+        "slug": "sentry-vs-splunk",
+        "title": "Sentry vs Splunk Observability Cloud",
+        "href": "/compare/sentry-vs-splunk/"
+      },
+      {
+        "slug": "apify-vs-splunk",
+        "title": "Apify vs Splunk Observability Cloud",
+        "href": "/compare/apify-vs-splunk/"
+      },
+      {
+        "slug": "appdynamics-vs-splunk",
+        "title": "AppDynamics vs Splunk Observability Cloud",
+        "href": "/compare/appdynamics-vs-splunk/"
+      },
+      {
+        "slug": "azure-devops-vs-splunk",
+        "title": "Azure DevOps vs Splunk Observability Cloud",
+        "href": "/compare/azure-devops-vs-splunk/"
+      }
+    ],
+    "relevantGuides": [
+      {
+        "slug": "splunk-implementation",
+        "title": "Splunk Observability Cloud Implementation: 30/60/90 IT Rollout That Sticks",
+        "href": "/guides/splunk-implementation/"
+      },
+      {
+        "slug": "splunk-migration",
+        "title": "Splunk Observability Cloud Migration: Move Tickets and Repos Without Losing Trust",
+        "href": "/guides/splunk-migration/"
+      },
+      {
+        "slug": "splunk-setup",
+        "title": "Splunk Observability Cloud Setup: Day-Zero Path to a Working IT Loop",
+        "href": "/guides/splunk-setup/"
+      },
+      {
+        "slug": "splunk-plans",
+        "title": "Splunk Observability Cloud Plans: Seats, Hosts, and Qualifying Tiers",
+        "href": "/guides/splunk-plans/"
+      },
+      {
+        "slug": "is-splunk-worth-it",
+        "title": "Is Splunk Observability Cloud Worth It? Fit Scenarios Before You Buy",
+        "href": "/guides/is-splunk-worth-it/"
+      }
+    ],
+    "evidenceState": "Research/data-based (no completed hands-on test) · Latest verification/research signal: 2026-08-18T20:00:00.000Z · Editorial assessment: approved",
+    "nextDecisionStep": "Compare against peers: Splunk Observability Cloud vs Datadog",
+    "missingSections": []
+  },
+  "dependents": [
+    {
+      "kind": "guide",
+      "slug": "splunk-implementation",
+      "path": "/guides/splunk-implementation/"
+    },
+    {
+      "kind": "guide",
+      "slug": "splunk-migration",
+      "path": "/guides/splunk-migration/"
+    },
+    {
+      "kind": "guide",
+      "slug": "splunk-setup",
+      "path": "/guides/splunk-setup/"
+    },
+    {
+      "kind": "guide",
+      "slug": "splunk-plans",
+      "path": "/guides/splunk-plans/"
+    },
+    {
+      "kind": "guide",
+      "slug": "is-splunk-worth-it",
+      "path": "/guides/is-splunk-worth-it/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "datadog-vs-splunk",
+      "path": "/compare/datadog-vs-splunk/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "elastic-observability-vs-splunk",
+      "path": "/compare/elastic-observability-vs-splunk/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "sentry-vs-splunk",
+      "path": "/compare/sentry-vs-splunk/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "apify-vs-splunk",
+      "path": "/compare/apify-vs-splunk/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "appdynamics-vs-splunk",
+      "path": "/compare/appdynamics-vs-splunk/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "azure-devops-vs-splunk",
+      "path": "/compare/azure-devops-vs-splunk/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "bitbucket-vs-splunk",
+      "path": "/compare/bitbucket-vs-splunk/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "bmc-helix-vs-splunk",
+      "path": "/compare/bmc-helix-vs-splunk/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "bright-data-vs-splunk",
+      "path": "/compare/bright-data-vs-splunk/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "buildkite-vs-splunk",
+      "path": "/compare/buildkite-vs-splunk/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "chronosphere-vs-splunk",
+      "path": "/compare/chronosphere-vs-splunk/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "circleci-vs-splunk",
+      "path": "/compare/circleci-vs-splunk/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "cloudways-vs-splunk",
+      "path": "/compare/cloudways-vs-splunk/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "coralogix-vs-splunk",
+      "path": "/compare/coralogix-vs-splunk/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "cpanel-vs-splunk",
+      "path": "/compare/cpanel-vs-splunk/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "directadmin-vs-splunk",
+      "path": "/compare/directadmin-vs-splunk/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "dynatrace-vs-splunk",
+      "path": "/compare/dynatrace-vs-splunk/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "firehydrant-vs-splunk",
+      "path": "/compare/firehydrant-vs-splunk/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "fly-io-vs-splunk",
+      "path": "/compare/fly-io-vs-splunk/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "github-vs-splunk",
+      "path": "/compare/github-vs-splunk/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "gitlab-vs-splunk",
+      "path": "/compare/gitlab-vs-splunk/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "grafana-cloud-vs-splunk",
+      "path": "/compare/grafana-cloud-vs-splunk/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "haloitsm-vs-splunk",
+      "path": "/compare/haloitsm-vs-splunk/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "heroku-vs-splunk",
+      "path": "/compare/heroku-vs-splunk/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "honeycomb-vs-splunk",
+      "path": "/compare/honeycomb-vs-splunk/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "incident-io-vs-splunk",
+      "path": "/compare/incident-io-vs-splunk/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "iproyal-vs-splunk",
+      "path": "/compare/iproyal-vs-splunk/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "ivanti-vs-splunk",
+      "path": "/compare/ivanti-vs-splunk/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "jira-service-management-vs-splunk",
+      "path": "/compare/jira-service-management-vs-splunk/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "kinsta-vs-splunk",
+      "path": "/compare/kinsta-vs-splunk/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "manageengine-servicedesk-plus-vs-splunk",
+      "path": "/compare/manageengine-servicedesk-plus-vs-splunk/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "new-relic-vs-splunk",
+      "path": "/compare/new-relic-vs-splunk/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "oxylabs-vs-splunk",
+      "path": "/compare/oxylabs-vs-splunk/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "pagerduty-vs-splunk",
+      "path": "/compare/pagerduty-vs-splunk/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "railway-vs-splunk",
+      "path": "/compare/railway-vs-splunk/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "render-vs-splunk",
+      "path": "/compare/render-vs-splunk/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "rootly-vs-splunk",
+      "path": "/compare/rootly-vs-splunk/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "scraperapi-vs-splunk",
+      "path": "/compare/scraperapi-vs-splunk/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "servicenow-vs-splunk",
+      "path": "/compare/servicenow-vs-splunk/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "siteground-vs-splunk",
+      "path": "/compare/siteground-vs-splunk/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "smartproxy-vs-splunk",
+      "path": "/compare/smartproxy-vs-splunk/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "splunk-vs-squadcast",
+      "path": "/compare/splunk-vs-squadcast/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "splunk-vs-sysaid",
+      "path": "/compare/splunk-vs-sysaid/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "splunk-vs-thordata",
+      "path": "/compare/splunk-vs-thordata/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "splunk-vs-topdesk",
+      "path": "/compare/splunk-vs-topdesk/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "splunk-vs-wp-engine",
+      "path": "/compare/splunk-vs-wp-engine/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "splunk-vs-zyte",
+      "path": "/compare/splunk-vs-zyte/"
+    },
+    {
+      "kind": "alternatives",
+      "slug": "splunk",
+      "path": "/alternatives/splunk/"
+    },
+    {
+      "kind": "pricing",
+      "slug": "splunk",
+      "path": "/software/splunk/pricing/"
+    },
+    {
+      "kind": "tools",
+      "slug": "it-development-cost-calculator",
+      "path": "/tools/it-development-cost-calculator/"
+    }
+  ],
+  "dependentsNeedingRefresh": [],
+  "remediation": [],
+  "notes": [
+    "fieldAudit score=100",
+    "decisionHub bestFor=5 notIdeal=6",
+    "dependents=55"
+  ],
+  "materiallyImproved": true
+}

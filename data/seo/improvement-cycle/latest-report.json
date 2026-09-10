@@ -1,0 +1,1382 @@
+{
+  "version": "1.0.0",
+  "generatedAt": "2026-09-08T21:42:37.191Z",
+  "weekId": "2026-W37",
+  "mode": "plan",
+  "batchSize": 25,
+  "steps": [
+    {
+      "id": "gsc_ingest",
+      "label": "Ingest latest REAL GSC data",
+      "status": "ok",
+      "detail": "Loaded docs/migration/data/gsc-export.json; scored 91 pages",
+      "artifactPaths": [
+        "data/seo/gsc-opportunities.json",
+        "docs/seo/GSC-OPPORTUNITIES.md",
+        "data/seo/feeds/"
+      ]
+    },
+    {
+      "id": "opportunity_lanes",
+      "label": "Refresh opportunity lanes",
+      "status": "ok",
+      "detail": "GSC system feeds refreshed (guide/compare/testing/pricing/links/refresh)",
+      "artifactPaths": [
+        "data/seo/feeds/gsc-guide-enrichment.json",
+        "data/seo/feeds/gsc-compare-enrichment.json",
+        "data/seo/feeds/gsc-refresh.json"
+      ]
+    },
+    {
+      "id": "ranking_delta",
+      "label": "Detect ranking gains/losses",
+      "status": "ok",
+      "detail": "Compared to snapshot from 2026-09-07T23:19:53.074Z (2026-W37).",
+      "artifactPaths": [
+        "data/seo/improvement-cycle/previous-ranking-snapshot.json"
+      ]
+    },
+    {
+      "id": "quality_regressions",
+      "label": "Identify content-quality regressions",
+      "status": "ok",
+      "detail": "Weekly velocity improvedUrls=92; regressions flagged=0",
+      "artifactPaths": [
+        "data/seo/content-quality-gate-history.json"
+      ]
+    },
+    {
+      "id": "stale_pricing",
+      "label": "Identify stale pricing/data",
+      "status": "ok",
+      "detail": "Scanned 40; changes=1; needsVerification=1; tasks=1",
+      "artifactPaths": [
+        "docs/pricing/WEEKLY-PRICE-CHANGES.md",
+        "data/pricing/price-change-growth-signals.json"
+      ]
+    },
+    {
+      "id": "rank_improve",
+      "label": "Rank existing IMPROVE pages",
+      "status": "ok",
+      "detail": "27 enrich candidates from guide/compare/software queues",
+      "artifactPaths": []
+    },
+    {
+      "id": "rank_refresh",
+      "label": "Rank existing INDEXABLE pages needing refresh",
+      "status": "ok",
+      "detail": "24 refresh candidates from GSC indexed-improvement / OUTDATED",
+      "artifactPaths": []
+    },
+    {
+      "id": "select_batch",
+      "label": "Select recommended batch",
+      "status": "ok",
+      "detail": "Selected 25 pages (batchSize=25)",
+      "artifactPaths": []
+    },
+    {
+      "id": "actionable_queue",
+      "label": "Generate actionable improvement queue",
+      "status": "ok",
+      "detail": "Included in operating summary below",
+      "artifactPaths": [
+        "docs/seo/IMPROVEMENT-CYCLE.md"
+      ]
+    },
+    {
+      "id": "enrich",
+      "label": "Enrichment (apply)",
+      "status": "skipped",
+      "detail": "PLAN mode — re-run with --apply to enrich selected pages only",
+      "artifactPaths": []
+    },
+    {
+      "id": "semantic_cq_gate",
+      "label": "Semantic QA + Content Quality Gate",
+      "status": "skipped",
+      "detail": "PLAN mode",
+      "artifactPaths": []
+    },
+    {
+      "id": "internal_linking",
+      "label": "Contextual internal linking",
+      "status": "ok",
+      "detail": "DRY-RUN plans=25",
+      "artifactPaths": [
+        "data/seo/batches/improvement-cycle-2026-W37-plan-linking.json"
+      ]
+    },
+    {
+      "id": "promotion",
+      "label": "Promotion evaluation",
+      "status": "ok",
+      "detail": "Eligible without apply: 0 (not persisted in PLAN)",
+      "artifactPaths": []
+    },
+    {
+      "id": "sitemap_reconcile",
+      "label": "Sitemap reconciliation",
+      "status": "ok",
+      "detail": "Discrepancies=0; guides in sitemap=369",
+      "artifactPaths": [
+        "docs/seo/SITEMAP-LIFECYCLE-RECONCILIATION.md"
+      ]
+    },
+    {
+      "id": "seo_audit",
+      "label": "SEO audit",
+      "status": "skipped",
+      "detail": "Skipped via --skip-seo-audit",
+      "artifactPaths": []
+    },
+    {
+      "id": "growth_dashboard",
+      "label": "Growth Dashboard refresh",
+      "status": "ok",
+      "detail": "Refreshed growth dashboard from connected sources",
+      "artifactPaths": [
+        "docs/seo/GROWTH-DASHBOARD.md",
+        "data/seo/growth-dashboard.json"
+      ]
+    }
+  ],
+  "selectedBatch": [
+    {
+      "kind": "software",
+      "slug": "hubspot",
+      "path": "/software/hubspot/",
+      "lane": "A",
+      "score": 237.22,
+      "reason": "Lane A — proven search demand (GSC impressions/clicks/position); gsc:1340,comps:48,guides:6",
+      "action": "enrich",
+      "lifecycle": null,
+      "blockedReasons": []
+    },
+    {
+      "kind": "software",
+      "slug": "getresponse",
+      "path": "/software/getresponse/",
+      "lane": "A",
+      "score": 230.06,
+      "reason": "Lane A — proven search demand (GSC impressions/clicks/position); gsc:866,comps:23,guides:8",
+      "action": "enrich",
+      "lifecycle": null,
+      "blockedReasons": []
+    },
+    {
+      "kind": "software",
+      "slug": "activecampaign",
+      "path": "/software/activecampaign/",
+      "lane": "A",
+      "score": 227.86,
+      "reason": "Lane A — proven search demand (GSC impressions/clicks/position); gsc:1019,comps:24,guides:13",
+      "action": "enrich",
+      "lifecycle": null,
+      "blockedReasons": []
+    },
+    {
+      "kind": "software",
+      "slug": "closely",
+      "path": "/software/closely/",
+      "lane": "A",
+      "score": 227.64,
+      "reason": "Lane A — proven search demand (GSC impressions/clicks/position); gsc:360,comps:28,guides:10",
+      "action": "enrich",
+      "lifecycle": null,
+      "blockedReasons": []
+    },
+    {
+      "kind": "software",
+      "slug": "keap",
+      "path": "/software/keap/",
+      "lane": "A",
+      "score": 221.94,
+      "reason": "Lane A — proven search demand (GSC impressions/clicks/position); gsc:567,comps:36,guides:6",
+      "action": "enrich",
+      "lifecycle": null,
+      "blockedReasons": []
+    },
+    {
+      "kind": "comparison",
+      "slug": "alidrop-vs-spocket",
+      "path": "/compare/alidrop-vs-spocket/",
+      "lane": "B",
+      "score": 210.6,
+      "reason": "Lane B — strategic existing content (POPULAR_PRODUCT, HIGH_COMMERCIAL_RELEVANCE, KEY_COMPETITOR_RELATIONSHIP, IMPORTANT_BUYER_QUESTION); no meaningful GSC demand yet",
+      "action": "enrich",
+      "lifecycle": "IMPROVE",
+      "blockedReasons": []
+    },
+    {
+      "kind": "comparison",
+      "slug": "aircall-vs-kixie",
+      "path": "/compare/aircall-vs-kixie/",
+      "lane": "B",
+      "score": 186.96,
+      "reason": "Lane B — strategic existing content (POPULAR_PRODUCT, HIGH_COMMERCIAL_RELEVANCE, KEY_COMPETITOR_RELATIONSHIP, IMPORTANT_BUYER_QUESTION); no meaningful GSC demand yet",
+      "action": "enrich",
+      "lifecycle": "IMPROVE",
+      "blockedReasons": []
+    },
+    {
+      "kind": "comparison",
+      "slug": "alidrop-vs-flippa",
+      "path": "/compare/alidrop-vs-flippa/",
+      "lane": "B",
+      "score": 186.96,
+      "reason": "Lane B — strategic existing content (POPULAR_PRODUCT, HIGH_COMMERCIAL_RELEVANCE, KEY_COMPETITOR_RELATIONSHIP, IMPORTANT_BUYER_QUESTION); no meaningful GSC demand yet",
+      "action": "enrich",
+      "lifecycle": "IMPROVE",
+      "blockedReasons": []
+    },
+    {
+      "kind": "comparison",
+      "slug": "alidrop-vs-printify",
+      "path": "/compare/alidrop-vs-printify/",
+      "lane": "B",
+      "score": 186.96,
+      "reason": "Lane B — strategic existing content (POPULAR_PRODUCT, HIGH_COMMERCIAL_RELEVANCE, KEY_COMPETITOR_RELATIONSHIP, IMPORTANT_BUYER_QUESTION); no meaningful GSC demand yet",
+      "action": "enrich",
+      "lifecycle": "IMPROVE",
+      "blockedReasons": []
+    },
+    {
+      "kind": "comparison",
+      "slug": "alidrop-vs-shipbob",
+      "path": "/compare/alidrop-vs-shipbob/",
+      "lane": "B",
+      "score": 186.96,
+      "reason": "Lane B — strategic existing content (POPULAR_PRODUCT, HIGH_COMMERCIAL_RELEVANCE, KEY_COMPETITOR_RELATIONSHIP, IMPORTANT_BUYER_QUESTION); no meaningful GSC demand yet",
+      "action": "enrich",
+      "lifecycle": "IMPROVE",
+      "blockedReasons": []
+    },
+    {
+      "kind": "comparison",
+      "slug": "birch-vs-diginius",
+      "path": "/compare/birch-vs-diginius/",
+      "lane": "B",
+      "score": 186.96,
+      "reason": "Lane B — strategic existing content (POPULAR_PRODUCT, HIGH_COMMERCIAL_RELEVANCE, KEY_COMPETITOR_RELATIONSHIP, IMPORTANT_BUYER_QUESTION); no meaningful GSC demand yet",
+      "action": "enrich",
+      "lifecycle": "IMPROVE",
+      "blockedReasons": []
+    },
+    {
+      "kind": "comparison",
+      "slug": "breezy-hr-vs-flexiquiz",
+      "path": "/compare/breezy-hr-vs-flexiquiz/",
+      "lane": "B",
+      "score": 186.96,
+      "reason": "Lane B — strategic existing content (POPULAR_PRODUCT, HIGH_COMMERCIAL_RELEVANCE, KEY_COMPETITOR_RELATIONSHIP, IMPORTANT_BUYER_QUESTION); no meaningful GSC demand yet",
+      "action": "enrich",
+      "lifecycle": "IMPROVE",
+      "blockedReasons": []
+    },
+    {
+      "kind": "comparison",
+      "slug": "callhippo-vs-kixie",
+      "path": "/compare/callhippo-vs-kixie/",
+      "lane": "B",
+      "score": 186.96,
+      "reason": "Lane B — strategic existing content (POPULAR_PRODUCT, HIGH_COMMERCIAL_RELEVANCE, KEY_COMPETITOR_RELATIONSHIP, IMPORTANT_BUYER_QUESTION); no meaningful GSC demand yet",
+      "action": "enrich",
+      "lifecycle": "IMPROVE",
+      "blockedReasons": []
+    },
+    {
+      "kind": "comparison",
+      "slug": "dext-vs-jibble",
+      "path": "/compare/dext-vs-jibble/",
+      "lane": "B",
+      "score": 186.96,
+      "reason": "Lane B — strategic existing content (POPULAR_PRODUCT, HIGH_COMMERCIAL_RELEVANCE, KEY_COMPETITOR_RELATIONSHIP, IMPORTANT_BUYER_QUESTION); no meaningful GSC demand yet",
+      "action": "enrich",
+      "lifecycle": "IMPROVE",
+      "blockedReasons": []
+    },
+    {
+      "kind": "guide",
+      "slug": "is-kit-worth-it",
+      "path": "/guides/is-kit-worth-it/",
+      "lane": "B",
+      "score": 157.08,
+      "reason": "Lane B — strategic existing content (IMPORTANT_CATEGORY, POPULAR_PRODUCT, HIGH_COMMERCIAL_RELEVANCE, IMPORTANT_BUYER_QUESTION); no meaningful GSC demand yet",
+      "action": "enrich",
+      "lifecycle": null,
+      "blockedReasons": []
+    },
+    {
+      "kind": "guide",
+      "slug": "is-aweber-worth-it",
+      "path": "/guides/is-aweber-worth-it/",
+      "lane": "B",
+      "score": 156.53,
+      "reason": "Lane B — strategic existing content (IMPORTANT_CATEGORY, POPULAR_PRODUCT, HIGH_COMMERCIAL_RELEVANCE, IMPORTANT_BUYER_QUESTION); no meaningful GSC demand yet",
+      "action": "enrich",
+      "lifecycle": null,
+      "blockedReasons": []
+    },
+    {
+      "kind": "guide",
+      "slug": "is-bouncer-worth-it",
+      "path": "/guides/is-bouncer-worth-it/",
+      "lane": "B",
+      "score": 156.53,
+      "reason": "Lane B — strategic existing content (IMPORTANT_CATEGORY, POPULAR_PRODUCT, HIGH_COMMERCIAL_RELEVANCE, IMPORTANT_BUYER_QUESTION); no meaningful GSC demand yet",
+      "action": "enrich",
+      "lifecycle": null,
+      "blockedReasons": []
+    },
+    {
+      "kind": "guide",
+      "slug": "is-inboxally-worth-it",
+      "path": "/guides/is-inboxally-worth-it/",
+      "lane": "B",
+      "score": 156.53,
+      "reason": "Lane B — strategic existing content (IMPORTANT_CATEGORY, POPULAR_PRODUCT, HIGH_COMMERCIAL_RELEVANCE, IMPORTANT_BUYER_QUESTION); no meaningful GSC demand yet",
+      "action": "enrich",
+      "lifecycle": null,
+      "blockedReasons": []
+    },
+    {
+      "kind": "guide",
+      "slug": "accelerated-growth-studio-plans",
+      "path": "/guides/accelerated-growth-studio-plans/",
+      "lane": "B",
+      "score": 154.98,
+      "reason": "Lane B — strategic existing content (IMPORTANT_CATEGORY, POPULAR_PRODUCT, HIGH_COMMERCIAL_RELEVANCE, IMPORTANT_BUYER_QUESTION); no meaningful GSC demand yet",
+      "action": "enrich",
+      "lifecycle": null,
+      "blockedReasons": []
+    },
+    {
+      "kind": "guide",
+      "slug": "is-accelerated-growth-studio-worth-it",
+      "path": "/guides/is-accelerated-growth-studio-worth-it/",
+      "lane": "B",
+      "score": 154.98,
+      "reason": "Lane B — strategic existing content (IMPORTANT_CATEGORY, POPULAR_PRODUCT, HIGH_COMMERCIAL_RELEVANCE, IMPORTANT_BUYER_QUESTION); no meaningful GSC demand yet",
+      "action": "enrich",
+      "lifecycle": null,
+      "blockedReasons": []
+    },
+    {
+      "kind": "guide",
+      "slug": "evolve-plans",
+      "path": "/guides/evolve-plans/",
+      "lane": "B",
+      "score": 154.98,
+      "reason": "Lane B — strategic existing content (IMPORTANT_CATEGORY, POPULAR_PRODUCT, HIGH_COMMERCIAL_RELEVANCE, IMPORTANT_BUYER_QUESTION); no meaningful GSC demand yet",
+      "action": "enrich",
+      "lifecycle": null,
+      "blockedReasons": []
+    },
+    {
+      "kind": "guide",
+      "slug": "is-evolve-worth-it",
+      "path": "/guides/is-evolve-worth-it/",
+      "lane": "B",
+      "score": 154.98,
+      "reason": "Lane B — strategic existing content (IMPORTANT_CATEGORY, POPULAR_PRODUCT, HIGH_COMMERCIAL_RELEVANCE, IMPORTANT_BUYER_QUESTION); no meaningful GSC demand yet",
+      "action": "enrich",
+      "lifecycle": null,
+      "blockedReasons": []
+    },
+    {
+      "kind": "guide",
+      "slug": "lucrovox-plans",
+      "path": "/guides/lucrovox-plans/",
+      "lane": "B",
+      "score": 154.98,
+      "reason": "Lane B — strategic existing content (IMPORTANT_CATEGORY, POPULAR_PRODUCT, HIGH_COMMERCIAL_RELEVANCE, IMPORTANT_BUYER_QUESTION); no meaningful GSC demand yet",
+      "action": "enrich",
+      "lifecycle": null,
+      "blockedReasons": []
+    },
+    {
+      "kind": "guide",
+      "slug": "is-lucrovox-worth-it",
+      "path": "/guides/is-lucrovox-worth-it/",
+      "lane": "B",
+      "score": 154.98,
+      "reason": "Lane B — strategic existing content (IMPORTANT_CATEGORY, POPULAR_PRODUCT, HIGH_COMMERCIAL_RELEVANCE, IMPORTANT_BUYER_QUESTION); no meaningful GSC demand yet",
+      "action": "enrich",
+      "lifecycle": null,
+      "blockedReasons": []
+    },
+    {
+      "kind": "guide",
+      "slug": "rippling-plans",
+      "path": "/guides/rippling-plans/",
+      "lane": "B",
+      "score": 153.43,
+      "reason": "Lane B — strategic existing content (POPULAR_PRODUCT, HIGH_COMMERCIAL_RELEVANCE, IMPORTANT_BUYER_QUESTION); no meaningful GSC demand yet",
+      "action": "enrich",
+      "lifecycle": null,
+      "blockedReasons": []
+    }
+  ],
+  "summary": {
+    "rankingWins": [],
+    "rankingLosses": [],
+    "pagesToRefresh": [
+      {
+        "kind": "software",
+        "slug": "miocommerce",
+        "path": "/software/miocommerce/",
+        "lane": null,
+        "score": 59,
+        "reason": "OPTIMIZE_TITLE · NO_SCREENSHOTS,THIN_CONTENT,POOR_CTR",
+        "action": "refresh",
+        "lifecycle": null,
+        "blockedReasons": []
+      },
+      {
+        "kind": "software",
+        "slug": "diginius",
+        "path": "/software/diginius/",
+        "lane": null,
+        "score": 58,
+        "reason": "MANUAL_REVIEW · TITLE_WEAK,THIN_CONTENT,POOR_CTR",
+        "action": "refresh",
+        "lifecycle": null,
+        "blockedReasons": []
+      },
+      {
+        "kind": "software",
+        "slug": "podio",
+        "path": "/software/podio/",
+        "lane": null,
+        "score": 57,
+        "reason": "OPTIMIZE_TITLE · TITLE_WEAK,THIN_CONTENT",
+        "action": "refresh",
+        "lifecycle": null,
+        "blockedReasons": []
+      },
+      {
+        "kind": "comparison",
+        "slug": "salesforce-vs-siebel",
+        "path": "/compare/salesforce-vs-siebel/",
+        "lane": null,
+        "score": 52,
+        "reason": "IMPROVE_INTRO · PRICING_MISSING,NO_SCREENSHOTS,THIN_CONTENT,POSSIBLE_INTENT_OVERLAP",
+        "action": "refresh",
+        "lifecycle": null,
+        "blockedReasons": []
+      },
+      {
+        "kind": "software",
+        "slug": "fastmail",
+        "path": "/software/fastmail/",
+        "lane": null,
+        "score": 51,
+        "reason": "MANUAL_REVIEW · TITLE_WEAK,THIN_CONTENT",
+        "action": "refresh",
+        "lifecycle": null,
+        "blockedReasons": []
+      },
+      {
+        "kind": "comparison",
+        "slug": "pipedrive-vs-salesforce",
+        "path": "/compare/pipedrive-vs-salesforce/",
+        "lane": null,
+        "score": 51,
+        "reason": "MANUAL_REVIEW · TITLE_WEAK,PRICING_MISSING,NO_SCREENSHOTS,THIN_CONTENT,POSSIBLE_INTENT_OVERLAP",
+        "action": "refresh",
+        "lifecycle": null,
+        "blockedReasons": []
+      },
+      {
+        "kind": "comparison",
+        "slug": "pega-vs-salesforce",
+        "path": "/compare/pega-vs-salesforce/",
+        "lane": null,
+        "score": 51,
+        "reason": "MANUAL_REVIEW · TITLE_WEAK,PRICING_MISSING,NO_SCREENSHOTS,THIN_CONTENT,POSSIBLE_INTENT_OVERLAP",
+        "action": "refresh",
+        "lifecycle": null,
+        "blockedReasons": []
+      },
+      {
+        "kind": "comparison",
+        "slug": "hubspot-vs-pipedrive",
+        "path": "/compare/hubspot-vs-pipedrive/",
+        "lane": null,
+        "score": 51,
+        "reason": "MANUAL_REVIEW · TITLE_WEAK,PRICING_MISSING,NO_SCREENSHOTS,THIN_CONTENT,POSSIBLE_INTENT_OVERLAP",
+        "action": "refresh",
+        "lifecycle": null,
+        "blockedReasons": []
+      },
+      {
+        "kind": "comparison",
+        "slug": "insightly-vs-salesforce",
+        "path": "/compare/insightly-vs-salesforce/",
+        "lane": null,
+        "score": 51,
+        "reason": "MANUAL_REVIEW · TITLE_WEAK,PRICING_MISSING,NO_SCREENSHOTS,THIN_CONTENT,POSSIBLE_INTENT_OVERLAP",
+        "action": "refresh",
+        "lifecycle": null,
+        "blockedReasons": []
+      },
+      {
+        "kind": "comparison",
+        "slug": "salesforce-vs-sugarcrm",
+        "path": "/compare/salesforce-vs-sugarcrm/",
+        "lane": null,
+        "score": 51,
+        "reason": "OPTIMIZE_TITLE · TITLE_WEAK,PRICING_MISSING,NO_SCREENSHOTS,THIN_CONTENT,POSSIBLE_INTENT_OVERLAP",
+        "action": "refresh",
+        "lifecycle": null,
+        "blockedReasons": []
+      },
+      {
+        "kind": "software",
+        "slug": "folk",
+        "path": "/software/folk/",
+        "lane": null,
+        "score": 51,
+        "reason": "OPTIMIZE_TITLE · TITLE_WEAK,THIN_CONTENT",
+        "action": "refresh",
+        "lifecycle": null,
+        "blockedReasons": []
+      },
+      {
+        "kind": "software",
+        "slug": "nimble",
+        "path": "/software/nimble/",
+        "lane": null,
+        "score": 50,
+        "reason": "MANUAL_REVIEW · TITLE_WEAK,THIN_CONTENT",
+        "action": "refresh",
+        "lifecycle": null,
+        "blockedReasons": []
+      },
+      {
+        "kind": "comparison",
+        "slug": "hubspot-vs-insightly",
+        "path": "/compare/hubspot-vs-insightly/",
+        "lane": null,
+        "score": 50,
+        "reason": "MANUAL_REVIEW · TITLE_WEAK,PRICING_MISSING,NO_SCREENSHOTS,THIN_CONTENT,POSSIBLE_INTENT_OVERLAP",
+        "action": "refresh",
+        "lifecycle": null,
+        "blockedReasons": []
+      },
+      {
+        "kind": "software",
+        "slug": "wealthbox",
+        "path": "/software/wealthbox/",
+        "lane": null,
+        "score": 50,
+        "reason": "OPTIMIZE_TITLE · TITLE_WEAK,THIN_CONTENT",
+        "action": "refresh",
+        "lifecycle": null,
+        "blockedReasons": []
+      },
+      {
+        "kind": "software",
+        "slug": "shore",
+        "path": "/software/shore/",
+        "lane": null,
+        "score": 50,
+        "reason": "OPTIMIZE_TITLE · TITLE_WEAK,THIN_CONTENT",
+        "action": "refresh",
+        "lifecycle": null,
+        "blockedReasons": []
+      },
+      {
+        "kind": "software",
+        "slug": "cloze",
+        "path": "/software/cloze/",
+        "lane": null,
+        "score": 50,
+        "reason": "OPTIMIZE_TITLE · TITLE_WEAK,THIN_CONTENT",
+        "action": "refresh",
+        "lifecycle": null,
+        "blockedReasons": []
+      },
+      {
+        "kind": "comparison",
+        "slug": "monday-sales-crm-vs-salesforce",
+        "path": "/compare/monday-sales-crm-vs-salesforce/",
+        "lane": null,
+        "score": 49,
+        "reason": "MANUAL_REVIEW · TITLE_WEAK,PRICING_MISSING,NO_SCREENSHOTS,THIN_CONTENT,POSSIBLE_INTENT_OVERLAP",
+        "action": "refresh",
+        "lifecycle": null,
+        "blockedReasons": []
+      },
+      {
+        "kind": "software",
+        "slug": "capsule",
+        "path": "/software/capsule/",
+        "lane": null,
+        "score": 48,
+        "reason": "IMPROVE_INTRO · THIN_CONTENT",
+        "action": "refresh",
+        "lifecycle": null,
+        "blockedReasons": []
+      },
+      {
+        "kind": "software",
+        "slug": "zendesk",
+        "path": "/software/zendesk/",
+        "lane": null,
+        "score": 48,
+        "reason": "IMPROVE_INTRO · THIN_CONTENT",
+        "action": "refresh",
+        "lifecycle": null,
+        "blockedReasons": []
+      },
+      {
+        "kind": "software",
+        "slug": "freshsales",
+        "path": "/software/freshsales/",
+        "lane": null,
+        "score": 47,
+        "reason": "OPTIMIZE_TITLE · TITLE_WEAK,THIN_CONTENT",
+        "action": "refresh",
+        "lifecycle": null,
+        "blockedReasons": []
+      },
+      {
+        "kind": "software",
+        "slug": "netsuite",
+        "path": "/software/netsuite/",
+        "lane": null,
+        "score": 47,
+        "reason": "IMPROVE_INTRO · THIN_CONTENT",
+        "action": "refresh",
+        "lifecycle": null,
+        "blockedReasons": []
+      },
+      {
+        "kind": "software",
+        "slug": "salesforce",
+        "path": "/software/salesforce/",
+        "lane": null,
+        "score": 46,
+        "reason": "MANUAL_REVIEW · TITLE_WEAK,POSSIBLE_INTENT_OVERLAP",
+        "action": "refresh",
+        "lifecycle": null,
+        "blockedReasons": []
+      },
+      {
+        "kind": "software",
+        "slug": "mailchimp",
+        "path": "/software/mailchimp/",
+        "lane": null,
+        "score": 46,
+        "reason": "OPTIMIZE_TITLE · TITLE_WEAK,THIN_CONTENT",
+        "action": "refresh",
+        "lifecycle": null,
+        "blockedReasons": []
+      },
+      {
+        "kind": "guide",
+        "slug": "how-to-choose-crm",
+        "path": "/guides/how-to-choose-crm/",
+        "lane": null,
+        "score": 45,
+        "reason": "IMPROVE_INTRO · THIN_CONTENT,POSSIBLE_INTENT_OVERLAP",
+        "action": "refresh",
+        "lifecycle": null,
+        "blockedReasons": []
+      }
+    ],
+    "pagesToEnrich": [
+      {
+        "kind": "software",
+        "slug": "hubspot",
+        "path": "/software/hubspot/",
+        "lane": "A",
+        "score": 237.22,
+        "reason": "Lane A — proven search demand (GSC impressions/clicks/position); gsc:1340,comps:48,guides:6",
+        "action": "enrich",
+        "lifecycle": null,
+        "blockedReasons": []
+      },
+      {
+        "kind": "software",
+        "slug": "getresponse",
+        "path": "/software/getresponse/",
+        "lane": "A",
+        "score": 230.06,
+        "reason": "Lane A — proven search demand (GSC impressions/clicks/position); gsc:866,comps:23,guides:8",
+        "action": "enrich",
+        "lifecycle": null,
+        "blockedReasons": []
+      },
+      {
+        "kind": "software",
+        "slug": "activecampaign",
+        "path": "/software/activecampaign/",
+        "lane": "A",
+        "score": 227.86,
+        "reason": "Lane A — proven search demand (GSC impressions/clicks/position); gsc:1019,comps:24,guides:13",
+        "action": "enrich",
+        "lifecycle": null,
+        "blockedReasons": []
+      },
+      {
+        "kind": "software",
+        "slug": "closely",
+        "path": "/software/closely/",
+        "lane": "A",
+        "score": 227.64,
+        "reason": "Lane A — proven search demand (GSC impressions/clicks/position); gsc:360,comps:28,guides:10",
+        "action": "enrich",
+        "lifecycle": null,
+        "blockedReasons": []
+      },
+      {
+        "kind": "software",
+        "slug": "keap",
+        "path": "/software/keap/",
+        "lane": "A",
+        "score": 221.94,
+        "reason": "Lane A — proven search demand (GSC impressions/clicks/position); gsc:567,comps:36,guides:6",
+        "action": "enrich",
+        "lifecycle": null,
+        "blockedReasons": []
+      },
+      {
+        "kind": "comparison",
+        "slug": "alidrop-vs-spocket",
+        "path": "/compare/alidrop-vs-spocket/",
+        "lane": "B",
+        "score": 210.6,
+        "reason": "Lane B — strategic existing content (POPULAR_PRODUCT, HIGH_COMMERCIAL_RELEVANCE, KEY_COMPETITOR_RELATIONSHIP, IMPORTANT_BUYER_QUESTION); no meaningful GSC demand yet",
+        "action": "enrich",
+        "lifecycle": "IMPROVE",
+        "blockedReasons": []
+      },
+      {
+        "kind": "comparison",
+        "slug": "aircall-vs-kixie",
+        "path": "/compare/aircall-vs-kixie/",
+        "lane": "B",
+        "score": 186.96,
+        "reason": "Lane B — strategic existing content (POPULAR_PRODUCT, HIGH_COMMERCIAL_RELEVANCE, KEY_COMPETITOR_RELATIONSHIP, IMPORTANT_BUYER_QUESTION); no meaningful GSC demand yet",
+        "action": "enrich",
+        "lifecycle": "IMPROVE",
+        "blockedReasons": []
+      },
+      {
+        "kind": "comparison",
+        "slug": "alidrop-vs-flippa",
+        "path": "/compare/alidrop-vs-flippa/",
+        "lane": "B",
+        "score": 186.96,
+        "reason": "Lane B — strategic existing content (POPULAR_PRODUCT, HIGH_COMMERCIAL_RELEVANCE, KEY_COMPETITOR_RELATIONSHIP, IMPORTANT_BUYER_QUESTION); no meaningful GSC demand yet",
+        "action": "enrich",
+        "lifecycle": "IMPROVE",
+        "blockedReasons": []
+      },
+      {
+        "kind": "comparison",
+        "slug": "alidrop-vs-printify",
+        "path": "/compare/alidrop-vs-printify/",
+        "lane": "B",
+        "score": 186.96,
+        "reason": "Lane B — strategic existing content (POPULAR_PRODUCT, HIGH_COMMERCIAL_RELEVANCE, KEY_COMPETITOR_RELATIONSHIP, IMPORTANT_BUYER_QUESTION); no meaningful GSC demand yet",
+        "action": "enrich",
+        "lifecycle": "IMPROVE",
+        "blockedReasons": []
+      },
+      {
+        "kind": "comparison",
+        "slug": "alidrop-vs-shipbob",
+        "path": "/compare/alidrop-vs-shipbob/",
+        "lane": "B",
+        "score": 186.96,
+        "reason": "Lane B — strategic existing content (POPULAR_PRODUCT, HIGH_COMMERCIAL_RELEVANCE, KEY_COMPETITOR_RELATIONSHIP, IMPORTANT_BUYER_QUESTION); no meaningful GSC demand yet",
+        "action": "enrich",
+        "lifecycle": "IMPROVE",
+        "blockedReasons": []
+      },
+      {
+        "kind": "comparison",
+        "slug": "birch-vs-diginius",
+        "path": "/compare/birch-vs-diginius/",
+        "lane": "B",
+        "score": 186.96,
+        "reason": "Lane B — strategic existing content (POPULAR_PRODUCT, HIGH_COMMERCIAL_RELEVANCE, KEY_COMPETITOR_RELATIONSHIP, IMPORTANT_BUYER_QUESTION); no meaningful GSC demand yet",
+        "action": "enrich",
+        "lifecycle": "IMPROVE",
+        "blockedReasons": []
+      },
+      {
+        "kind": "comparison",
+        "slug": "breezy-hr-vs-flexiquiz",
+        "path": "/compare/breezy-hr-vs-flexiquiz/",
+        "lane": "B",
+        "score": 186.96,
+        "reason": "Lane B — strategic existing content (POPULAR_PRODUCT, HIGH_COMMERCIAL_RELEVANCE, KEY_COMPETITOR_RELATIONSHIP, IMPORTANT_BUYER_QUESTION); no meaningful GSC demand yet",
+        "action": "enrich",
+        "lifecycle": "IMPROVE",
+        "blockedReasons": []
+      },
+      {
+        "kind": "comparison",
+        "slug": "callhippo-vs-kixie",
+        "path": "/compare/callhippo-vs-kixie/",
+        "lane": "B",
+        "score": 186.96,
+        "reason": "Lane B — strategic existing content (POPULAR_PRODUCT, HIGH_COMMERCIAL_RELEVANCE, KEY_COMPETITOR_RELATIONSHIP, IMPORTANT_BUYER_QUESTION); no meaningful GSC demand yet",
+        "action": "enrich",
+        "lifecycle": "IMPROVE",
+        "blockedReasons": []
+      },
+      {
+        "kind": "comparison",
+        "slug": "dext-vs-jibble",
+        "path": "/compare/dext-vs-jibble/",
+        "lane": "B",
+        "score": 186.96,
+        "reason": "Lane B — strategic existing content (POPULAR_PRODUCT, HIGH_COMMERCIAL_RELEVANCE, KEY_COMPETITOR_RELATIONSHIP, IMPORTANT_BUYER_QUESTION); no meaningful GSC demand yet",
+        "action": "enrich",
+        "lifecycle": "IMPROVE",
+        "blockedReasons": []
+      },
+      {
+        "kind": "guide",
+        "slug": "is-kit-worth-it",
+        "path": "/guides/is-kit-worth-it/",
+        "lane": "B",
+        "score": 157.08,
+        "reason": "Lane B — strategic existing content (IMPORTANT_CATEGORY, POPULAR_PRODUCT, HIGH_COMMERCIAL_RELEVANCE, IMPORTANT_BUYER_QUESTION); no meaningful GSC demand yet",
+        "action": "enrich",
+        "lifecycle": null,
+        "blockedReasons": []
+      },
+      {
+        "kind": "guide",
+        "slug": "is-aweber-worth-it",
+        "path": "/guides/is-aweber-worth-it/",
+        "lane": "B",
+        "score": 156.53,
+        "reason": "Lane B — strategic existing content (IMPORTANT_CATEGORY, POPULAR_PRODUCT, HIGH_COMMERCIAL_RELEVANCE, IMPORTANT_BUYER_QUESTION); no meaningful GSC demand yet",
+        "action": "enrich",
+        "lifecycle": null,
+        "blockedReasons": []
+      },
+      {
+        "kind": "guide",
+        "slug": "is-bouncer-worth-it",
+        "path": "/guides/is-bouncer-worth-it/",
+        "lane": "B",
+        "score": 156.53,
+        "reason": "Lane B — strategic existing content (IMPORTANT_CATEGORY, POPULAR_PRODUCT, HIGH_COMMERCIAL_RELEVANCE, IMPORTANT_BUYER_QUESTION); no meaningful GSC demand yet",
+        "action": "enrich",
+        "lifecycle": null,
+        "blockedReasons": []
+      },
+      {
+        "kind": "guide",
+        "slug": "is-inboxally-worth-it",
+        "path": "/guides/is-inboxally-worth-it/",
+        "lane": "B",
+        "score": 156.53,
+        "reason": "Lane B — strategic existing content (IMPORTANT_CATEGORY, POPULAR_PRODUCT, HIGH_COMMERCIAL_RELEVANCE, IMPORTANT_BUYER_QUESTION); no meaningful GSC demand yet",
+        "action": "enrich",
+        "lifecycle": null,
+        "blockedReasons": []
+      },
+      {
+        "kind": "guide",
+        "slug": "accelerated-growth-studio-plans",
+        "path": "/guides/accelerated-growth-studio-plans/",
+        "lane": "B",
+        "score": 154.98,
+        "reason": "Lane B — strategic existing content (IMPORTANT_CATEGORY, POPULAR_PRODUCT, HIGH_COMMERCIAL_RELEVANCE, IMPORTANT_BUYER_QUESTION); no meaningful GSC demand yet",
+        "action": "enrich",
+        "lifecycle": null,
+        "blockedReasons": []
+      },
+      {
+        "kind": "guide",
+        "slug": "is-accelerated-growth-studio-worth-it",
+        "path": "/guides/is-accelerated-growth-studio-worth-it/",
+        "lane": "B",
+        "score": 154.98,
+        "reason": "Lane B — strategic existing content (IMPORTANT_CATEGORY, POPULAR_PRODUCT, HIGH_COMMERCIAL_RELEVANCE, IMPORTANT_BUYER_QUESTION); no meaningful GSC demand yet",
+        "action": "enrich",
+        "lifecycle": null,
+        "blockedReasons": []
+      },
+      {
+        "kind": "guide",
+        "slug": "evolve-plans",
+        "path": "/guides/evolve-plans/",
+        "lane": "B",
+        "score": 154.98,
+        "reason": "Lane B — strategic existing content (IMPORTANT_CATEGORY, POPULAR_PRODUCT, HIGH_COMMERCIAL_RELEVANCE, IMPORTANT_BUYER_QUESTION); no meaningful GSC demand yet",
+        "action": "enrich",
+        "lifecycle": null,
+        "blockedReasons": []
+      },
+      {
+        "kind": "guide",
+        "slug": "is-evolve-worth-it",
+        "path": "/guides/is-evolve-worth-it/",
+        "lane": "B",
+        "score": 154.98,
+        "reason": "Lane B — strategic existing content (IMPORTANT_CATEGORY, POPULAR_PRODUCT, HIGH_COMMERCIAL_RELEVANCE, IMPORTANT_BUYER_QUESTION); no meaningful GSC demand yet",
+        "action": "enrich",
+        "lifecycle": null,
+        "blockedReasons": []
+      },
+      {
+        "kind": "guide",
+        "slug": "lucrovox-plans",
+        "path": "/guides/lucrovox-plans/",
+        "lane": "B",
+        "score": 154.98,
+        "reason": "Lane B — strategic existing content (IMPORTANT_CATEGORY, POPULAR_PRODUCT, HIGH_COMMERCIAL_RELEVANCE, IMPORTANT_BUYER_QUESTION); no meaningful GSC demand yet",
+        "action": "enrich",
+        "lifecycle": null,
+        "blockedReasons": []
+      },
+      {
+        "kind": "guide",
+        "slug": "is-lucrovox-worth-it",
+        "path": "/guides/is-lucrovox-worth-it/",
+        "lane": "B",
+        "score": 154.98,
+        "reason": "Lane B — strategic existing content (IMPORTANT_CATEGORY, POPULAR_PRODUCT, HIGH_COMMERCIAL_RELEVANCE, IMPORTANT_BUYER_QUESTION); no meaningful GSC demand yet",
+        "action": "enrich",
+        "lifecycle": null,
+        "blockedReasons": []
+      },
+      {
+        "kind": "guide",
+        "slug": "rippling-plans",
+        "path": "/guides/rippling-plans/",
+        "lane": "B",
+        "score": 153.43,
+        "reason": "Lane B — strategic existing content (POPULAR_PRODUCT, HIGH_COMMERCIAL_RELEVANCE, IMPORTANT_BUYER_QUESTION); no meaningful GSC demand yet",
+        "action": "enrich",
+        "lifecycle": null,
+        "blockedReasons": []
+      },
+      {
+        "kind": "guide",
+        "slug": "bolt-for-business-plans",
+        "path": "/guides/bolt-for-business-plans/",
+        "lane": "B",
+        "score": 152.88,
+        "reason": "Lane B — strategic existing content (POPULAR_PRODUCT, HIGH_COMMERCIAL_RELEVANCE, IMPORTANT_BUYER_QUESTION); no meaningful GSC demand yet",
+        "action": "enrich",
+        "lifecycle": null,
+        "blockedReasons": []
+      },
+      {
+        "kind": "comparison",
+        "slug": "hubspot-vs-tidio",
+        "path": "/compare/hubspot-vs-tidio/",
+        "lane": "A",
+        "score": 107.66,
+        "reason": "Lane A — proven search demand (GSC impressions/clicks/position)",
+        "action": "enrich",
+        "lifecycle": null,
+        "blockedReasons": []
+      }
+    ],
+    "pagesReadyToPromote": [],
+    "pagesBlocked": [
+      {
+        "kind": "comparison",
+        "slug": "alidrop-vs-spocket",
+        "path": "/compare/alidrop-vs-spocket/",
+        "lane": "B",
+        "score": 210.6,
+        "reason": "Lane B — strategic existing content (POPULAR_PRODUCT, HIGH_COMMERCIAL_RELEVANCE, KEY_COMPETITOR_RELATIONSHIP, IMPORTANT_BUYER_QUESTION); no meaningful GSC demand yet",
+        "action": "blocked",
+        "lifecycle": "IMPROVE",
+        "blockedReasons": [
+          "SEMANTIC_TEMPLATE_RISK"
+        ]
+      },
+      {
+        "kind": "guide",
+        "slug": "is-kit-worth-it",
+        "path": "/guides/is-kit-worth-it/",
+        "lane": "B",
+        "score": 157.08,
+        "reason": "Lane B — strategic existing content (IMPORTANT_CATEGORY, POPULAR_PRODUCT, HIGH_COMMERCIAL_RELEVANCE, IMPORTANT_BUYER_QUESTION); no meaningful GSC demand yet",
+        "action": "blocked",
+        "lifecycle": null,
+        "blockedReasons": [
+          "SEMANTIC_TEMPLATE_RISK",
+          "TEMPLATE_HEAVY"
+        ]
+      },
+      {
+        "kind": "guide",
+        "slug": "is-aweber-worth-it",
+        "path": "/guides/is-aweber-worth-it/",
+        "lane": "B",
+        "score": 156.53,
+        "reason": "Lane B — strategic existing content (IMPORTANT_CATEGORY, POPULAR_PRODUCT, HIGH_COMMERCIAL_RELEVANCE, IMPORTANT_BUYER_QUESTION); no meaningful GSC demand yet",
+        "action": "blocked",
+        "lifecycle": null,
+        "blockedReasons": [
+          "SEMANTIC_TEMPLATE_RISK",
+          "TEMPLATE_HEAVY"
+        ]
+      },
+      {
+        "kind": "guide",
+        "slug": "is-bouncer-worth-it",
+        "path": "/guides/is-bouncer-worth-it/",
+        "lane": "B",
+        "score": 156.53,
+        "reason": "Lane B — strategic existing content (IMPORTANT_CATEGORY, POPULAR_PRODUCT, HIGH_COMMERCIAL_RELEVANCE, IMPORTANT_BUYER_QUESTION); no meaningful GSC demand yet",
+        "action": "blocked",
+        "lifecycle": null,
+        "blockedReasons": [
+          "SEMANTIC_TEMPLATE_RISK",
+          "TEMPLATE_HEAVY"
+        ]
+      },
+      {
+        "kind": "guide",
+        "slug": "is-inboxally-worth-it",
+        "path": "/guides/is-inboxally-worth-it/",
+        "lane": "B",
+        "score": 156.53,
+        "reason": "Lane B — strategic existing content (IMPORTANT_CATEGORY, POPULAR_PRODUCT, HIGH_COMMERCIAL_RELEVANCE, IMPORTANT_BUYER_QUESTION); no meaningful GSC demand yet",
+        "action": "blocked",
+        "lifecycle": null,
+        "blockedReasons": [
+          "SEMANTIC_TEMPLATE_RISK",
+          "TEMPLATE_HEAVY"
+        ]
+      },
+      {
+        "kind": "guide",
+        "slug": "accelerated-growth-studio-plans",
+        "path": "/guides/accelerated-growth-studio-plans/",
+        "lane": "B",
+        "score": 154.98,
+        "reason": "Lane B — strategic existing content (IMPORTANT_CATEGORY, POPULAR_PRODUCT, HIGH_COMMERCIAL_RELEVANCE, IMPORTANT_BUYER_QUESTION); no meaningful GSC demand yet",
+        "action": "blocked",
+        "lifecycle": null,
+        "blockedReasons": [
+          "SEMANTIC_TEMPLATE_RISK",
+          "TEMPLATE_HEAVY"
+        ]
+      },
+      {
+        "kind": "guide",
+        "slug": "is-accelerated-growth-studio-worth-it",
+        "path": "/guides/is-accelerated-growth-studio-worth-it/",
+        "lane": "B",
+        "score": 154.98,
+        "reason": "Lane B — strategic existing content (IMPORTANT_CATEGORY, POPULAR_PRODUCT, HIGH_COMMERCIAL_RELEVANCE, IMPORTANT_BUYER_QUESTION); no meaningful GSC demand yet",
+        "action": "blocked",
+        "lifecycle": null,
+        "blockedReasons": [
+          "SEMANTIC_TEMPLATE_RISK",
+          "TEMPLATE_HEAVY"
+        ]
+      },
+      {
+        "kind": "guide",
+        "slug": "evolve-plans",
+        "path": "/guides/evolve-plans/",
+        "lane": "B",
+        "score": 154.98,
+        "reason": "Lane B — strategic existing content (IMPORTANT_CATEGORY, POPULAR_PRODUCT, HIGH_COMMERCIAL_RELEVANCE, IMPORTANT_BUYER_QUESTION); no meaningful GSC demand yet",
+        "action": "blocked",
+        "lifecycle": null,
+        "blockedReasons": [
+          "SEMANTIC_TEMPLATE_RISK",
+          "TEMPLATE_HEAVY"
+        ]
+      },
+      {
+        "kind": "guide",
+        "slug": "is-evolve-worth-it",
+        "path": "/guides/is-evolve-worth-it/",
+        "lane": "B",
+        "score": 154.98,
+        "reason": "Lane B — strategic existing content (IMPORTANT_CATEGORY, POPULAR_PRODUCT, HIGH_COMMERCIAL_RELEVANCE, IMPORTANT_BUYER_QUESTION); no meaningful GSC demand yet",
+        "action": "blocked",
+        "lifecycle": null,
+        "blockedReasons": [
+          "SEMANTIC_TEMPLATE_RISK",
+          "TEMPLATE_HEAVY"
+        ]
+      },
+      {
+        "kind": "guide",
+        "slug": "lucrovox-plans",
+        "path": "/guides/lucrovox-plans/",
+        "lane": "B",
+        "score": 154.98,
+        "reason": "Lane B — strategic existing content (IMPORTANT_CATEGORY, POPULAR_PRODUCT, HIGH_COMMERCIAL_RELEVANCE, IMPORTANT_BUYER_QUESTION); no meaningful GSC demand yet",
+        "action": "blocked",
+        "lifecycle": null,
+        "blockedReasons": [
+          "SEMANTIC_TEMPLATE_RISK",
+          "TEMPLATE_HEAVY"
+        ]
+      },
+      {
+        "kind": "guide",
+        "slug": "is-lucrovox-worth-it",
+        "path": "/guides/is-lucrovox-worth-it/",
+        "lane": "B",
+        "score": 154.98,
+        "reason": "Lane B — strategic existing content (IMPORTANT_CATEGORY, POPULAR_PRODUCT, HIGH_COMMERCIAL_RELEVANCE, IMPORTANT_BUYER_QUESTION); no meaningful GSC demand yet",
+        "action": "blocked",
+        "lifecycle": null,
+        "blockedReasons": [
+          "SEMANTIC_TEMPLATE_RISK",
+          "TEMPLATE_HEAVY"
+        ]
+      },
+      {
+        "kind": "guide",
+        "slug": "rippling-plans",
+        "path": "/guides/rippling-plans/",
+        "lane": "B",
+        "score": 153.43,
+        "reason": "Lane B — strategic existing content (POPULAR_PRODUCT, HIGH_COMMERCIAL_RELEVANCE, IMPORTANT_BUYER_QUESTION); no meaningful GSC demand yet",
+        "action": "blocked",
+        "lifecycle": null,
+        "blockedReasons": [
+          "SEMANTIC_TEMPLATE_RISK",
+          "TEMPLATE_HEAVY"
+        ]
+      }
+    ],
+    "dataVerificationRequired": [
+      {
+        "kind": "software",
+        "slug": "monday-sales-crm",
+        "path": "/software/monday-sales-crm/",
+        "lane": null,
+        "score": 0,
+        "reason": "Pricing verification task",
+        "action": "verify_pricing",
+        "lifecycle": null,
+        "blockedReasons": []
+      }
+    ],
+    "humanTestingRequired": [
+      {
+        "kind": "software",
+        "slug": "hubspot",
+        "path": "/software/hubspot/",
+        "lane": "A",
+        "score": 263.54,
+        "reason": "Evidence priority 263.54 · GSC page opportunity 53.0 (1340 impressions) · 48 comparison dependencies · Commercial affiliate coverage",
+        "action": "human_test",
+        "lifecycle": null,
+        "blockedReasons": []
+      },
+      {
+        "kind": "software",
+        "slug": "capsule",
+        "path": "/software/capsule/",
+        "lane": "A",
+        "score": 239.57,
+        "reason": "Evidence priority 239.57 · GSC page opportunity 48.0 (431 impressions) · 36 comparison dependencies · Commercial affiliate coverage",
+        "action": "human_test",
+        "lifecycle": null,
+        "blockedReasons": []
+      },
+      {
+        "kind": "software",
+        "slug": "keap",
+        "path": "/software/keap/",
+        "lane": "A",
+        "score": 236.97,
+        "reason": "Evidence priority 236.97 · GSC page opportunity 45.0 (567 impressions) · 36 comparison dependencies · Commercial affiliate coverage",
+        "action": "human_test",
+        "lifecycle": null,
+        "blockedReasons": []
+      },
+      {
+        "kind": "software",
+        "slug": "insightly",
+        "path": "/software/insightly/",
+        "lane": "A",
+        "score": 235.96,
+        "reason": "Evidence priority 235.96 · GSC page opportunity 44.0 (938 impressions) · 36 comparison dependencies · No affiliate commercial coverage",
+        "action": "human_test",
+        "lifecycle": null,
+        "blockedReasons": []
+      },
+      {
+        "kind": "software",
+        "slug": "closely",
+        "path": "/software/closely/",
+        "lane": "A",
+        "score": 230.12,
+        "reason": "Evidence priority 230.12 · GSC page opportunity 51.0 (360 impressions) · 28 comparison dependencies · Commercial affiliate coverage",
+        "action": "human_test",
+        "lifecycle": null,
+        "blockedReasons": []
+      },
+      {
+        "kind": "software",
+        "slug": "getresponse",
+        "path": "/software/getresponse/",
+        "lane": "A",
+        "score": 225.71,
+        "reason": "Evidence priority 225.71 · GSC page opportunity 49.0 (866 impressions) · 23 comparison dependencies · Commercial affiliate coverage",
+        "action": "human_test",
+        "lifecycle": null,
+        "blockedReasons": []
+      },
+      {
+        "kind": "software",
+        "slug": "nimble",
+        "path": "/software/nimble/",
+        "lane": "A",
+        "score": 223.1,
+        "reason": "Evidence priority 223.1 · GSC page opportunity 50.0 (302 impressions) · 36 comparison dependencies · No affiliate commercial coverage",
+        "action": "human_test",
+        "lifecycle": null,
+        "blockedReasons": []
+      },
+      {
+        "kind": "software",
+        "slug": "activecampaign",
+        "path": "/software/activecampaign/",
+        "lane": "A",
+        "score": 220.49,
+        "reason": "Evidence priority 220.49 · GSC page opportunity 44.0 (1019 impressions) · 24 comparison dependencies · Commercial affiliate coverage",
+        "action": "human_test",
+        "lifecycle": null,
+        "blockedReasons": []
+      },
+      {
+        "kind": "software",
+        "slug": "salesforce",
+        "path": "/software/salesforce/",
+        "lane": "A",
+        "score": 217.32,
+        "reason": "Evidence priority 217.32 · GSC page opportunity 46.0 (264 impressions) · 37 comparison dependencies · No affiliate commercial coverage",
+        "action": "human_test",
+        "lifecycle": null,
+        "blockedReasons": []
+      },
+      {
+        "kind": "software",
+        "slug": "freshsales",
+        "path": "/software/freshsales/",
+        "lane": "A",
+        "score": 213.7,
+        "reason": "Evidence priority 213.7 · GSC page opportunity 47.0 (193 impressions) · 36 comparison dependencies · Commercial affiliate coverage",
+        "action": "human_test",
+        "lifecycle": null,
+        "blockedReasons": []
+      }
+    ],
+    "internalLinkOpportunities": [
+      {
+        "path": "/software/hubspot/",
+        "detail": "Dry-run: 0 inbound candidates"
+      },
+      {
+        "path": "/software/getresponse/",
+        "detail": "Dry-run: 0 inbound candidates"
+      },
+      {
+        "path": "/software/closely/",
+        "detail": "Dry-run: 0 inbound candidates"
+      },
+      {
+        "path": "/software/activecampaign/",
+        "detail": "Dry-run: 0 inbound candidates"
+      },
+      {
+        "path": "/software/keap/",
+        "detail": "Dry-run: 0 inbound candidates"
+      },
+      {
+        "path": "/compare/alidrop-vs-spocket/",
+        "detail": "Dry-run: 0 inbound candidates"
+      },
+      {
+        "path": "/compare/aircall-vs-kixie/",
+        "detail": "Dry-run: 0 inbound candidates"
+      },
+      {
+        "path": "/compare/alidrop-vs-flippa/",
+        "detail": "Dry-run: 0 inbound candidates"
+      },
+      {
+        "path": "/compare/alidrop-vs-printify/",
+        "detail": "Dry-run: 0 inbound candidates"
+      },
+      {
+        "path": "/compare/alidrop-vs-shipbob/",
+        "detail": "Dry-run: 0 inbound candidates"
+      },
+      {
+        "path": "/compare/birch-vs-diginius/",
+        "detail": "Dry-run: 0 inbound candidates"
+      },
+      {
+        "path": "/compare/breezy-hr-vs-flexiquiz/",
+        "detail": "Dry-run: 0 inbound candidates"
+      },
+      {
+        "path": "/compare/callhippo-vs-kixie/",
+        "detail": "Dry-run: 0 inbound candidates"
+      },
+      {
+        "path": "/compare/dext-vs-jibble/",
+        "detail": "Dry-run: 0 inbound candidates"
+      },
+      {
+        "path": "/guides/is-kit-worth-it/",
+        "detail": "Dry-run: 0 inbound candidates"
+      },
+      {
+        "path": "/guides/is-aweber-worth-it/",
+        "detail": "Dry-run: 0 inbound candidates"
+      },
+      {
+        "path": "/guides/is-bouncer-worth-it/",
+        "detail": "Dry-run: 0 inbound candidates"
+      },
+      {
+        "path": "/guides/is-inboxally-worth-it/",
+        "detail": "Dry-run: 0 inbound candidates"
+      },
+      {
+        "path": "/guides/accelerated-growth-studio-plans/",
+        "detail": "Dry-run: 0 inbound candidates"
+      },
+      {
+        "path": "/guides/is-accelerated-growth-studio-worth-it/",
+        "detail": "Dry-run: 0 inbound candidates"
+      }
+    ],
+    "technicalIssues": []
+  },
+  "existingArtifacts": [
+    "data/seo/gsc-opportunities.json",
+    "docs/seo/GSC-OPPORTUNITIES.md",
+    "docs/pricing/WEEKLY-PRICE-CHANGES.md",
+    "docs/seo/SITEMAP-LIFECYCLE-RECONCILIATION.md",
+    "docs/seo/GROWTH-DASHBOARD.md",
+    "docs/editorial/PRODUCT-TESTING-QUEUE.md"
+  ],
+  "notes": [
+    "Existing-content only — no new URL creation, no mass deletes, no fabricated testing.",
+    "PLAN mode: no enrichment overlays or promotions written.",
+    "DATA_VERIFIED reconciliation: accepted=61 rejected=254 (see docs/editorial/DATA-VERIFIED-RECONCILIATION.md)"
+  ]
+}

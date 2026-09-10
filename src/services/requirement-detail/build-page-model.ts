@@ -692,7 +692,7 @@ export function buildRequirementDetailModel(input: {
   const used = new Set<string>();
   const summaryPicks: RequirementSummaryPick[] = profile.summarySlots.map(
     (slot) => {
-      let pool = [...eligible];
+      const pool = [...eligible];
       if (slot.selection === "best-simplicity") {
         pool.sort(
           (a, b) =>
@@ -723,7 +723,7 @@ export function buildRequirementDetailModel(input: {
   );
 
   const scenarios = profile.scenarios.map((scenario) => {
-    let pool = [...productRows];
+    const pool = [...productRows];
     if (scenario.focusCriterionSlug) {
       pool.sort(
         (a, b) =>

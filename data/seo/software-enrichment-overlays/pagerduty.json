@@ -1,0 +1,539 @@
+{
+  "slug": "pagerduty",
+  "updatedAt": "2026-09-08T21:57:07.459Z",
+  "version": "1.0.0",
+  "fieldAudit": {
+    "slug": "pagerduty",
+    "checkedAt": "2026-09-08T21:57:07.457Z",
+    "items": [
+      {
+        "field": "name",
+        "status": "PASS",
+        "detail": "Name: PagerDuty",
+        "source": "seed"
+      },
+      {
+        "field": "product_status",
+        "status": "PASS",
+        "detail": "productLifecycle=active",
+        "source": "seed"
+      },
+      {
+        "field": "canonical_vendor",
+        "status": "PASS",
+        "detail": "Vendor: PagerDuty, Inc.",
+        "source": "seed"
+      },
+      {
+        "field": "category",
+        "status": "PASS",
+        "detail": "primaryCategorySlug=it-development",
+        "source": "seed"
+      },
+      {
+        "field": "description",
+        "status": "PASS",
+        "detail": "Description present (On-call / incident response — Free ≤5 responders; Professional $21/user/mo annua…)",
+        "source": "seed"
+      },
+      {
+        "field": "target_audience",
+        "status": "PASS",
+        "detail": "Sizes=3, teams=2, assessment bestFor=3",
+        "source": "assessment"
+      },
+      {
+        "field": "use_cases",
+        "status": "PASS",
+        "detail": "useCaseSlugs=1",
+        "source": "seed"
+      },
+      {
+        "field": "capabilities",
+        "status": "PASS",
+        "detail": "featureRatings=0, enrichment features=15",
+        "source": "enrichment"
+      },
+      {
+        "field": "pricing",
+        "status": "PASS",
+        "detail": "Pricing envelope present",
+        "source": "enrichment"
+      },
+      {
+        "field": "plans",
+        "status": "PASS",
+        "detail": "plans=4",
+        "source": "enrichment"
+      },
+      {
+        "field": "free_plan",
+        "status": "PASS",
+        "detail": "Free plan documented",
+        "source": "enrichment"
+      },
+      {
+        "field": "trial",
+        "status": "PASS",
+        "detail": "Trial documented on plans/pricing",
+        "source": "enrichment"
+      },
+      {
+        "field": "integrations",
+        "status": "PASS",
+        "detail": "integrationSlugs=0, enrichment=3",
+        "source": "enrichment"
+      },
+      {
+        "field": "alternatives",
+        "status": "PASS",
+        "detail": "alternativeSlugs=2",
+        "source": "seed"
+      },
+      {
+        "field": "competitors",
+        "status": "PASS",
+        "detail": "competitorSlugs=7",
+        "source": "seed"
+      },
+      {
+        "field": "affiliate",
+        "status": "PASS",
+        "detail": "No affiliate relationship (explicit)",
+        "source": "seed"
+      },
+      {
+        "field": "source_provenance",
+        "status": "PASS",
+        "detail": "seed sources=0, enrichment sourceIds=3",
+        "source": "enrichment"
+      },
+      {
+        "field": "verification_date",
+        "status": "PASS",
+        "detail": "Latest verification/research signal: 2026-08-18T12:00:00.000Z",
+        "source": "enrichment"
+      }
+    ],
+    "passCount": 18,
+    "partialCount": 0,
+    "missingCount": 0,
+    "unknownCount": 0,
+    "score": 100
+  },
+  "decisionHub": {
+    "whatItIs": "PagerDuty is an on-call scheduling, paging, and incident-response platform. Free covers up to 5 responders. Professional is $21/user/mo annual ($25 monthly); Business $41 annual ($49 monthly). Enterprise is quote. AIOps, extra status-page capacity, stakeholder licences, and PagerDuty Advance credits are commonly add-ons — the responder seat is not the whole bill. Distinct from Datadog/New Relic observability and from Freshservice ITSM.",
+    "bestFor": [
+      "SRE/IT teams that need on-call schedules and paging",
+      "Orgs already sending alerts from Datadog/CloudWatch",
+      "Incident commanders who want a dedicated ops cloud",
+      "small-business / engineering: PagerDuty fit for small-business engineering teams in the incident-oncall job cluster, from first-party positioning and IT Priority-2 research.",
+      "mid-market / engineering: PagerDuty fit for mid-market engineering teams in the incident-oncall job cluster, from first-party positioning and IT Priority-2 research.",
+      "enterprise / engineering: PagerDuty fit for enterprise engineering teams in the incident-oncall job cluster, from first-party positioning and IT Priority-2 research."
+    ],
+    "notIdealFor": [
+      "Teams that only need APM dashboards (New Relic / Grafana)",
+      "ITSM ticket desks without paging (Freshservice)",
+      "Git hosts (GitHub / GitLab)",
+      "Does not replace Datadog/New Relic telemetry — it pages people",
+      "AIOps / Advance / status pages often stack on responder seats",
+      "Not an ITSM CMDB (ServiceNow / Freshservice)"
+    ],
+    "coreCapabilities": [
+      "incident management",
+      "change problem",
+      "infrastructure monitoring",
+      "itsm ai",
+      "dev ai",
+      "oncall paging",
+      "analytics reporting",
+      "incident oncall"
+    ],
+    "pricingSummary": "4 documented plans · 1 free · entry paid: Professional · trial documented on at least one plan",
+    "keyTradeoffs": [
+      "Does not replace Datadog/New Relic telemetry — it pages people",
+      "AIOps / Advance / status pages often stack on responder seats",
+      "Not an ITSM CMDB (ServiceNow / Freshservice)",
+      "Stakeholder (read-only) licences are extra on many plans",
+      "Free is a 5-responder cap"
+    ],
+    "alternatives": [
+      {
+        "slug": "datadog",
+        "name": "Datadog"
+      },
+      {
+        "slug": "jira-service-management",
+        "name": "Jira Service Management"
+      },
+      {
+        "slug": "grafana-cloud",
+        "name": "Grafana Cloud"
+      },
+      {
+        "slug": "incident-io",
+        "name": "incident.io"
+      },
+      {
+        "slug": "firehydrant",
+        "name": "FireHydrant"
+      },
+      {
+        "slug": "rootly",
+        "name": "Rootly"
+      }
+    ],
+    "importantComparisons": [
+      {
+        "slug": "datadog-vs-pagerduty",
+        "title": "PagerDuty vs Datadog",
+        "href": "/compare/datadog-vs-pagerduty/"
+      },
+      {
+        "slug": "incident-io-vs-pagerduty",
+        "title": "incident.io vs PagerDuty",
+        "href": "/compare/incident-io-vs-pagerduty/"
+      },
+      {
+        "slug": "pagerduty-vs-sentry",
+        "title": "Sentry vs PagerDuty",
+        "href": "/compare/pagerduty-vs-sentry/"
+      },
+      {
+        "slug": "firehydrant-vs-pagerduty",
+        "title": "FireHydrant vs PagerDuty",
+        "href": "/compare/firehydrant-vs-pagerduty/"
+      },
+      {
+        "slug": "honeycomb-vs-pagerduty",
+        "title": "Honeycomb vs PagerDuty",
+        "href": "/compare/honeycomb-vs-pagerduty/"
+      },
+      {
+        "slug": "pagerduty-vs-squadcast",
+        "title": "SolarWinds Incident Response vs PagerDuty",
+        "href": "/compare/pagerduty-vs-squadcast/"
+      }
+    ],
+    "relevantGuides": [
+      {
+        "slug": "pagerduty-implementation",
+        "title": "PagerDuty Implementation: 30/60/90 IT Rollout That Sticks",
+        "href": "/guides/pagerduty-implementation/"
+      },
+      {
+        "slug": "pagerduty-migration",
+        "title": "PagerDuty Migration: Move Tickets and Repos Without Losing Trust",
+        "href": "/guides/pagerduty-migration/"
+      },
+      {
+        "slug": "pagerduty-setup",
+        "title": "PagerDuty Setup: Day-Zero Path to a Working IT Loop",
+        "href": "/guides/pagerduty-setup/"
+      },
+      {
+        "slug": "pagerduty-plans",
+        "title": "PagerDuty Plans: Seats, Hosts, and Qualifying Tiers",
+        "href": "/guides/pagerduty-plans/"
+      },
+      {
+        "slug": "is-pagerduty-worth-it",
+        "title": "Is PagerDuty Worth It? Fit Scenarios Before You Buy",
+        "href": "/guides/is-pagerduty-worth-it/"
+      }
+    ],
+    "evidenceState": "Research/data-based (no completed hands-on test) · Latest verification/research signal: 2026-08-18T12:00:00.000Z · Editorial assessment: approved",
+    "nextDecisionStep": "Compare against peers: PagerDuty vs Datadog",
+    "missingSections": []
+  },
+  "dependents": [
+    {
+      "kind": "guide",
+      "slug": "pagerduty-implementation",
+      "path": "/guides/pagerduty-implementation/"
+    },
+    {
+      "kind": "guide",
+      "slug": "pagerduty-migration",
+      "path": "/guides/pagerduty-migration/"
+    },
+    {
+      "kind": "guide",
+      "slug": "pagerduty-setup",
+      "path": "/guides/pagerduty-setup/"
+    },
+    {
+      "kind": "guide",
+      "slug": "pagerduty-plans",
+      "path": "/guides/pagerduty-plans/"
+    },
+    {
+      "kind": "guide",
+      "slug": "is-pagerduty-worth-it",
+      "path": "/guides/is-pagerduty-worth-it/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "datadog-vs-pagerduty",
+      "path": "/compare/datadog-vs-pagerduty/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "incident-io-vs-pagerduty",
+      "path": "/compare/incident-io-vs-pagerduty/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "pagerduty-vs-sentry",
+      "path": "/compare/pagerduty-vs-sentry/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "firehydrant-vs-pagerduty",
+      "path": "/compare/firehydrant-vs-pagerduty/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "honeycomb-vs-pagerduty",
+      "path": "/compare/honeycomb-vs-pagerduty/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "pagerduty-vs-squadcast",
+      "path": "/compare/pagerduty-vs-squadcast/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "apify-vs-pagerduty",
+      "path": "/compare/apify-vs-pagerduty/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "appdynamics-vs-pagerduty",
+      "path": "/compare/appdynamics-vs-pagerduty/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "azure-devops-vs-pagerduty",
+      "path": "/compare/azure-devops-vs-pagerduty/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "bitbucket-vs-pagerduty",
+      "path": "/compare/bitbucket-vs-pagerduty/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "bmc-helix-vs-pagerduty",
+      "path": "/compare/bmc-helix-vs-pagerduty/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "bright-data-vs-pagerduty",
+      "path": "/compare/bright-data-vs-pagerduty/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "buildkite-vs-pagerduty",
+      "path": "/compare/buildkite-vs-pagerduty/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "chronosphere-vs-pagerduty",
+      "path": "/compare/chronosphere-vs-pagerduty/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "circleci-vs-pagerduty",
+      "path": "/compare/circleci-vs-pagerduty/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "cloudways-vs-pagerduty",
+      "path": "/compare/cloudways-vs-pagerduty/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "coralogix-vs-pagerduty",
+      "path": "/compare/coralogix-vs-pagerduty/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "cpanel-vs-pagerduty",
+      "path": "/compare/cpanel-vs-pagerduty/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "directadmin-vs-pagerduty",
+      "path": "/compare/directadmin-vs-pagerduty/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "dynatrace-vs-pagerduty",
+      "path": "/compare/dynatrace-vs-pagerduty/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "elastic-observability-vs-pagerduty",
+      "path": "/compare/elastic-observability-vs-pagerduty/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "fly-io-vs-pagerduty",
+      "path": "/compare/fly-io-vs-pagerduty/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "github-vs-pagerduty",
+      "path": "/compare/github-vs-pagerduty/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "gitlab-vs-pagerduty",
+      "path": "/compare/gitlab-vs-pagerduty/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "grafana-cloud-vs-pagerduty",
+      "path": "/compare/grafana-cloud-vs-pagerduty/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "haloitsm-vs-pagerduty",
+      "path": "/compare/haloitsm-vs-pagerduty/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "heroku-vs-pagerduty",
+      "path": "/compare/heroku-vs-pagerduty/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "iproyal-vs-pagerduty",
+      "path": "/compare/iproyal-vs-pagerduty/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "ivanti-vs-pagerduty",
+      "path": "/compare/ivanti-vs-pagerduty/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "jira-service-management-vs-pagerduty",
+      "path": "/compare/jira-service-management-vs-pagerduty/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "kinsta-vs-pagerduty",
+      "path": "/compare/kinsta-vs-pagerduty/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "manageengine-servicedesk-plus-vs-pagerduty",
+      "path": "/compare/manageengine-servicedesk-plus-vs-pagerduty/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "new-relic-vs-pagerduty",
+      "path": "/compare/new-relic-vs-pagerduty/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "oxylabs-vs-pagerduty",
+      "path": "/compare/oxylabs-vs-pagerduty/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "pagerduty-vs-railway",
+      "path": "/compare/pagerduty-vs-railway/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "pagerduty-vs-render",
+      "path": "/compare/pagerduty-vs-render/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "pagerduty-vs-rootly",
+      "path": "/compare/pagerduty-vs-rootly/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "pagerduty-vs-scraperapi",
+      "path": "/compare/pagerduty-vs-scraperapi/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "pagerduty-vs-servicenow",
+      "path": "/compare/pagerduty-vs-servicenow/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "pagerduty-vs-siteground",
+      "path": "/compare/pagerduty-vs-siteground/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "pagerduty-vs-smartproxy",
+      "path": "/compare/pagerduty-vs-smartproxy/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "pagerduty-vs-splunk",
+      "path": "/compare/pagerduty-vs-splunk/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "pagerduty-vs-sysaid",
+      "path": "/compare/pagerduty-vs-sysaid/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "pagerduty-vs-thordata",
+      "path": "/compare/pagerduty-vs-thordata/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "pagerduty-vs-topdesk",
+      "path": "/compare/pagerduty-vs-topdesk/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "pagerduty-vs-wp-engine",
+      "path": "/compare/pagerduty-vs-wp-engine/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "pagerduty-vs-zyte",
+      "path": "/compare/pagerduty-vs-zyte/"
+    },
+    {
+      "kind": "alternatives",
+      "slug": "pagerduty",
+      "path": "/alternatives/pagerduty/"
+    },
+    {
+      "kind": "pricing",
+      "slug": "pagerduty",
+      "path": "/software/pagerduty/pricing/"
+    },
+    {
+      "kind": "best",
+      "slug": "it-development-software",
+      "path": "/best/it-development-software/"
+    },
+    {
+      "kind": "tools",
+      "slug": "it-development-cost-calculator",
+      "path": "/tools/it-development-cost-calculator/"
+    }
+  ],
+  "dependentsNeedingRefresh": [],
+  "remediation": [],
+  "notes": [
+    "fieldAudit score=100",
+    "decisionHub bestFor=6 notIdeal=6",
+    "dependents=56"
+  ],
+  "materiallyImproved": true
+}

@@ -5,8 +5,10 @@ import { Card } from "@/components/ui/card";
 import { AuthorshipByline } from "@/components/site/authorship-byline";
 import { ProductOfficialLinksList } from "@/components/outbound/product-official-links";
 import { SoftwareHubEvidenceCenter } from "@/components/software/hub/software-hub-evidence-center";
+import { HowWeTestedSection } from "@/components/product-testing/how-we-tested-section";
 import { getFounderAuthor } from "@/services/site-foundation";
 import { COMPANY_ROUTES } from "@/services/site-foundation";
+import { buildPublicHandsOnSummary } from "@/services/product-testing";
 import type { SoftwareReviewModel } from "@/services/software-review";
 import { softwareHubPath } from "@/services/software-review/hub-tabs";
 
@@ -20,6 +22,7 @@ export function SoftwareHubEvidenceTab({ model }: Props) {
   const published =
     model.scoresApproved && model.review?.editorialStatus === "approved";
   const audit = model.assessment?.scoreAudit ?? [];
+  const handsOn = buildPublicHandsOnSummary(software.slug);
 
   return (
     <div
@@ -27,6 +30,13 @@ export function SoftwareHubEvidenceTab({ model }: Props) {
       className="grid gap-8 lg:grid-cols-[minmax(0,1fr)_17rem] lg:items-start"
     >
       <div className="min-w-0 space-y-10">
+        {handsOn ? (
+          <HowWeTestedSection
+            productName={software.name}
+            summary={handsOn}
+          />
+        ) : null}
+
         <SoftwareHubEvidenceCenter
           model={model.evidenceCenter}
           vendorName={software.name}

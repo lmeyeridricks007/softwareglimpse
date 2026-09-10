@@ -43,13 +43,13 @@ describe("buildAlternativesFromResearch", () => {
     expect(catalogueSubstituteSlugs(sanebox, softwareSeed).length).toBeLessThan(2);
   });
 
-  it("does not overwrite the Pipedrive review-required page", () => {
+  it("does not overwrite the Pipedrive authored alternatives page", () => {
     const page = bySlug.get("pipedrive");
-    expect(page?.editorialStatus).toBe("review-required");
-    expect(page?.seo.indexable).toBe(false);
+    expect(page?.editorialStatus).toBe("approved");
+    expect(page?.seo.indexable).toBe(true);
     expect(
       isEntityIndexable({ kind: "alternatives", entity: page! }),
-    ).toBe(false);
+    ).toBe(true);
   });
 
   it("skips authored pages when generating research rows", () => {

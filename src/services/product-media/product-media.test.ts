@@ -227,7 +227,7 @@ describe("product enrichment media integration", () => {
     expect(software).toBeTruthy();
     const model = buildSoftwareReviewModel(software!);
     expect(model.overviewVideos.length).toBe(1);
-    expect(model.overviewVideos[0]?.id).toBe("pd-video-product-overview");
-    expect(model.overviewVideos[0]?.officialSourceKind).toBe("vendor-channel");
+    expect(model.overviewVideos[0]?.id).toBe("pipedrive-video-crm-hub-intro");
+    expect(model.overviewVideos[0]?.officialSourceKind).toBe("vendor-training");
   });
 });

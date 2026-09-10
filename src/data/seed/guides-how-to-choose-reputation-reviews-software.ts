@@ -1,4 +1,4 @@
-import type { GuidePage } from "@/domain";
+import type { GuidePageInput } from "@/domain";
 import type { z } from "zod";
 import type { GuideContentBlockSchema } from "@/domain";
 import { tier19GuideScheduledAt } from "@/data/config/publishing/tier-19-reputation-reviews-launch-2027-04-01";
@@ -34,7 +34,7 @@ const blocks: GuideBlockInput[] = [
   },
 ];
 
-function metadata(): GuidePage["metadata"] {
+function metadata(): GuidePageInput["metadata"] {
   return SCHEDULED_AT
     ? {
         status: "scheduled",
@@ -54,7 +54,7 @@ function metadata(): GuidePage["metadata"] {
       };
 }
 
-export const howToChooseReputationReviewsSoftwareGuide: GuidePage = {
+export const howToChooseReputationReviewsSoftwareGuide: GuidePageInput = {
   id: "guide-how-to-choose-reputation-reviews-software",
   slug: SLUG,
   title: "How to Choose Reputation & Review Management Software",
@@ -73,7 +73,7 @@ export const howToChooseReputationReviewsSoftwareGuide: GuidePage = {
     "what-is-reputation-reviews-software",
     "reputation-reviews-pricing-guide",
   ],
-  blocks: blocks as GuidePage["blocks"],
+  blocks: blocks as GuidePageInput["blocks"],
   checklist: [],
   sections: [],
   faq: [],
@@ -83,7 +83,7 @@ export const howToChooseReputationReviewsSoftwareGuide: GuidePage = {
     title: "How to Choose Reputation & Review Management Software",
     description:
       "Choose reputation software by review collection, monitoring, and response workflows for local businesses.",
-    indexable: !SCHEDULED_AT,
+    indexable: true,
     canonicalPath: "/guides/how-to-choose-reputation-reviews-software/",
   },
 };

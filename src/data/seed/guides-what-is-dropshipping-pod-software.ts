@@ -1,4 +1,4 @@
-import type { GuidePage } from "@/domain";
+import type { GuidePageInput } from "@/domain";
 import type { z } from "zod";
 import type { GuideContentBlockSchema } from "@/domain";
 import { tier25GuideScheduledAt } from "@/data/config/publishing/tier-25-dropshipping-pod-launch-2027-07-01";
@@ -53,7 +53,7 @@ const blocks: GuideBlockInput[] = [
   },
 ];
 
-function metadata(): GuidePage["metadata"] {
+function metadata(): GuidePageInput["metadata"] {
   return SCHEDULED_AT
     ? {
         status: "scheduled",
@@ -73,7 +73,7 @@ function metadata(): GuidePage["metadata"] {
       };
 }
 
-export const whatIsDropshippingPodSoftwareGuide: GuidePage = {
+export const whatIsDropshippingPodSoftwareGuide: GuidePageInput = {
   id: "guide-what-is-dropshipping-pod-software",
   slug: SLUG,
   title: "What Is Dropshipping & Print-on-Demand Software?",
@@ -95,7 +95,7 @@ export const whatIsDropshippingPodSoftwareGuide: GuidePage = {
     "dropshipping-pod-evaluation-guide",
     "what-is-ecommerce-software",
   ],
-  blocks: blocks as GuidePage["blocks"],
+  blocks: blocks as GuidePageInput["blocks"],
   checklist: [],
   sections: [],
   faq: [],
@@ -106,6 +106,6 @@ export const whatIsDropshippingPodSoftwareGuide: GuidePage = {
     description:
       "Supplier sourcing, product import, and POD fulfillment — how dropshipping apps differ from storefront platforms.",
     canonicalPath: `/guides/${SLUG}/`,
-    indexable: !SCHEDULED_AT,
+    indexable: true,
   },
 };

@@ -1,0 +1,239 @@
+{
+  "slug": "hubspot-vs-salesforce",
+  "updatedAt": "2026-09-07T17:08:43.343Z",
+  "uniqueValueAdded": [
+    "quick_verdict",
+    "choose_if_rules",
+    "key_differences",
+    "pricing_diff",
+    "target_audience",
+    "scenario_fit",
+    "evidence_clarity",
+    "final_recommendation",
+    "alternatives"
+  ],
+  "thesis": {
+    "kind": "similar_product_different_pricing_model",
+    "label": "Seat-and-hub ladder with a free tier vs edition ladder with add-ons",
+    "rationale": "HubSpot documents free CRM, Smart CRM seats and hub seats as separate ladders; Salesforce documents Free Suite through Unlimited editions with Agentforce, Revenue Intelligence and support sold separately.",
+    "supportedBy": [
+      "same_category",
+      "declared_competitor",
+      "same_buyer_problem"
+    ]
+  },
+  "capabilityRows": [],
+  "pricing": {
+    "startingPriceA": 15,
+    "startingPriceB": 25,
+    "billingA": "subscription",
+    "billingB": "subscription",
+    "freeTier": {
+      "a": true,
+      "b": true
+    },
+    "trials": {
+      "a": true,
+      "b": true
+    },
+    "modelA": "subscription",
+    "modelB": "subscription",
+    "complexityNote": "One or both sides publish four or more rungs — compare the tier you would actually buy, not the entry rung",
+    "costCalculatorHref": "/tools/crm-cost-calculator/",
+    "notes": [
+      "HubSpot plans: Free CRM, Starter (Smart CRM / Customer Platform), Professional (Smart CRM / Customer Platform), Enterprise (Smart CRM / Customer Platform)",
+      "HubSpot: Primary cards use Free CRM + Smart CRM/Customer Platform ladder from /products/crm (Starter $15*/seat/mo promo, Professional $50, Enterprise $75). Catalog Smart CRM Starter list is $20. Separate Sales Hub ladder: Free $0; Starter $20 list ($10 promo on marketing); Professional $100/seat/mo on catalog and the Sales product page; Enterprise $150/seat/mo billed annually per catalog. HubSpot’s Sales pricing page also shows Professional $90/mo/seat billed annually vs $100 monthly, with required Professional onboarding of $1,500. Amounts are USD per seat per month as published; confirm live checkout for annual vs monthly commit. Onboarding fees apply on some Professional/Enterprise hub purchases per catalog.",
+      "HubSpot pricing verified 2026-08-18",
+      "Salesforce plans: Free Suite, Starter Suite, Pro Suite, Enterprise, Unlimited",
+      "Salesforce: As of 30 Aug 2026 on salesforce.com/crm/pricing/: Free Suite $0 (2 user licenses included; no contract or credit card), Starter Suite $25/user/mo (monthly or annual), Pro Suite $100/user/mo (billed annually). Sales Cloud editions page also lists Enterprise $175, Unlimited $350, and Agentforce 1 Sales $550 per user/mo billed annually. Free 30-day Sales Cloud trial (no credit card per trial form). Add-ons: Agentforce for Sales from $125/user/mo (Contact us), Sales Programs from $100, Revenue Intelligence from $220, Revenue Cloud from $200; Premier Support add-on on Pro Suite. Claudeforce (26 Aug 2026 PR): Salesforce in Claude with 37 prebuilt sales skills; actions inherit Salesforce permissions; pilot now / open beta expected Sep 2026; no list price on the PR — keep Agentforce as the in-product agent story. Prices informational; confirm on vendor page before purchase.",
+      "Salesforce pricing verified 2026-08-30"
+    ]
+  },
+  "evidence": {
+    "levelA": "researched",
+    "levelB": "researched",
+    "handsOnA": false,
+    "handsOnB": false,
+    "disclaimer": "Neither product has a completed hands-on product test on SoftwareGlimpse — this comparison is research/data-based only."
+  },
+  "patch": {
+    "summary": "Both can run a large sales organisation, and both now have a free entry point, so the decision has moved from capability to packaging and centre of gravity. HubSpot's centre of gravity is the contact and the campaign, and its cost grows by seat type and hub. Salesforce's centre of gravity is the object model and the admin who shapes it, and its cost grows by edition and add-on. The right question is whether your CRM should be optimised for marketing continuity or for configurability.\n\nNeither product has a completed hands-on product test on SoftwareGlimpse — this comparison is research/data-based only.",
+    "verdict": "HubSpot is the stronger choice for marketing-led companies: one record carries forms, campaign history, sequences and deals, and adoption rarely needs a consultant. Salesforce is the stronger choice when the CRM must bend to an unusual process — custom objects, approval chains, territory logic, sandbox-then-release — and when you want a marketplace and a deep admin hiring pool. Cost behaves differently rather than being higher or lower: HubSpot's Sales Hub Professional lists at $100 per seat/month ($90 annually) plus required $1,500 onboarding, and mixing Smart CRM seats with hub seats is where bills surprise people; Salesforce's ladder steps from $25 Starter Suite to $100 Pro Suite to $175 Enterprise per user/month annually, with agent tooling from $125 per user/month on top. Poor fit for HubSpot: teams whose process needs deep custom objects and governance. Poor fit for Salesforce: teams with no admin capacity, where configuration debt accumulates until reports stop being trusted.",
+    "pricingNotes": "Both document a free entry: HubSpot's $0 Free CRM and Salesforce's $0 Free Suite for 2 seats. Paid ladders diverge in shape — HubSpot Smart CRM tiers from $15 per month with Sales Hub Professional at $100 per seat/month ($90 annual) and $1,500 required Professional onboarding; Salesforce Starter Suite $25, Pro Suite $100, Enterprise $175, Unlimited $350 per user/month on annual billing with Agentforce for Sales from $125 per user/month as an add-on. Total cost depends on which seat types and add-ons you actually need, so quote the full basket on both sides.",
+    "bestFor": [
+      {
+        "productSlug": "hubspot",
+        "scenarios": [
+          "Marketing-led revenue teams keeping campaigns and deals on one record",
+          "Companies without dedicated CRM administrators",
+          "Buyers who want to start free and grow into paid hubs"
+        ]
+      },
+      {
+        "productSlug": "salesforce",
+        "scenarios": [
+          "Sales processes needing custom objects, approvals and territories",
+          "Enterprises requiring sandboxes and controlled release of CRM changes",
+          "Companies relying on marketplace apps or vertical extensions"
+        ]
+      }
+    ],
+    "scenarioRecommendations": [
+      {
+        "scenario": "Inbound-led business where marketing owns most pipeline",
+        "preferredSlug": "hubspot",
+        "rationale": "Campaign attribution on the same record as the deal is native, while achieving it on Salesforce means additional clouds or integration work."
+      },
+      {
+        "scenario": "Complex quoting, approval and territory rules",
+        "preferredSlug": "salesforce",
+        "rationale": "Configurability is the product; HubSpot's packaging pushes you into higher hub tiers before it delivers comparable process control."
+      },
+      {
+        "scenario": "No admin capacity and a team that must self-serve",
+        "preferredSlug": "hubspot",
+        "rationale": "Salesforce's own record names administration and configuration overhead as its tradeoff, and unmaintained configuration is how CRM reporting loses credibility."
+      }
+    ],
+    "relatedAlternativeSlugs": [
+      "pipedrive",
+      "freshsales",
+      "dynamics-365"
+    ],
+    "outcomes": [
+      {
+        "criterionSlug": "email-capabilities",
+        "winnerSlug": "salesforce",
+        "winnerKind": "product-b",
+        "reason": "email-sequences: HubSpot shows stronger researched availability (supported vs higher-plan-only). Editorial scores are close (8/10 vs 8/10). Marketing continuity on the record against sales engagement sold as an add-on — the same requirement, priced in a different place.",
+        "confidence": "high",
+        "supportingFactIds": [
+          "fact-hubspot-features.email-sync",
+          "fact-hubspot-features.email-sequences",
+          "fact-salesforce-features.email-sync",
+          "fact-salesforce-features.email-tracking",
+          "fact-salesforce-features.email-campaigns",
+          "fact-salesforce-integrations.gmail",
+          "fact-hubspot-features.email-sync",
+          "fact-salesforce-features.email-sync",
+          "fact-salesforce-features.email-tracking",
+          "fact-hubspot-features.email-sequences",
+          "fact-salesforce-features.email-sequences",
+          "fact-salesforce-features.call-functionality"
+        ],
+        "assessmentIds": [
+          "assessment-hubspot-crm-v1",
+          "assessment-salesforce-crm-v1"
+        ],
+        "researchStatus": "complete"
+      },
+      {
+        "criterionSlug": "customization",
+        "winnerSlug": "salesforce",
+        "winnerKind": "product-b",
+        "reason": "Salesforce leads on customization (8/10 vs 10/10) from approved SoftwareGlimpse editorial assessments — not hands-on lab testing. Custom objects and governance are one platform's centre of gravity; the other optimises for a contact record that marketing and sales both trust.",
+        "confidence": "high",
+        "supportingFactIds": [
+          "fact-hubspot-features.custom-fields",
+          "fact-hubspot-features.custom-objects",
+          "fact-hubspot-features.sso",
+          "fact-salesforce-features.custom-fields",
+          "fact-salesforce-features.custom-pipelines",
+          "fact-salesforce-pricing.plans.pro-suite",
+          "fact-salesforce-pricing.plans.unlimited",
+          "fact-hubspot-features.custom-fields",
+          "fact-salesforce-features.custom-fields",
+          "fact-hubspot-features.custom-pipelines",
+          "fact-salesforce-features.custom-pipelines"
+        ],
+        "assessmentIds": [
+          "assessment-hubspot-crm-v1",
+          "assessment-salesforce-crm-v1"
+        ],
+        "researchStatus": "complete"
+      },
+      {
+        "criterionSlug": "integrations",
+        "winnerSlug": null,
+        "winnerKind": "tie",
+        "reason": "HubSpot and Salesforce are close on integrations (9/10 vs 9/10) from approved SoftwareGlimpse editorial assessments — not hands-on lab testing. Both lead their category here, so connector counts rarely decide this pair — packaging and seat types do.",
+        "confidence": "medium",
+        "supportingFactIds": [
+          "fact-hubspot-features.integrations",
+          "fact-salesforce-integrations.appexchange",
+          "fact-salesforce-integrations.slack",
+          "fact-salesforce-features.integrations",
+          "fact-salesforce-integrations.gmail",
+          "fact-hubspot-features.integrations",
+          "fact-salesforce-features.integrations",
+          "fact-hubspot-features.email-sync",
+          "fact-hubspot-features.pipeline-management",
+          "fact-hubspot-features.workflow-automation",
+          "fact-salesforce-features.email-sync",
+          "fact-salesforce-features.pipeline-management",
+          "fact-salesforce-features.workflow-automation"
+        ],
+        "assessmentIds": [
+          "assessment-hubspot-crm-v1",
+          "assessment-salesforce-crm-v1"
+        ],
+        "researchStatus": "complete"
+      },
+      {
+        "criterionSlug": "administration",
+        "winnerSlug": "hubspot",
+        "winnerKind": "product-a",
+        "reason": "HubSpot leads on administration (5/10 vs 4/10) from approved SoftwareGlimpse editorial assessments — not hands-on lab testing. One assumes self-serve adoption, the other assumes an admin, and unmaintained configuration is how CRM reporting quietly loses credibility.",
+        "confidence": "high",
+        "supportingFactIds": [
+          "fact-hubspot-pricing.billing-notes",
+          "fact-hubspot-pricing.sales-hub.ladder",
+          "fact-salesforce-pricing.addons",
+          "fact-salesforce-pricing.plans.unlimited",
+          "fact-salesforce-positioning.summary",
+          "fact-hubspot-features.sso",
+          "fact-hubspot-features.custom-fields",
+          "fact-salesforce-features.custom-fields",
+          "fact-hubspot-features.custom-pipelines",
+          "fact-salesforce-features.custom-pipelines",
+          "fact-hubspot-features.custom-objects",
+          "fact-salesforce-features.mobile-app"
+        ],
+        "assessmentIds": [
+          "assessment-hubspot-crm-v1",
+          "assessment-salesforce-crm-v1"
+        ],
+        "researchStatus": "complete"
+      },
+      {
+        "criterionSlug": "value-for-money",
+        "winnerSlug": null,
+        "winnerKind": "depends",
+        "reason": "HubSpot researched starting price $15/user/mo vs Salesforce $25/user/mo. Better value depends on which features you need on that plan. Both publish a free entry point; value diverges at the seat mix, required onboarding and agent add-ons rather than at headline list price.",
+        "confidence": "medium",
+        "supportingFactIds": [
+          "fact-hubspot-pricing.hubspot-crm-product",
+          "fact-hubspot-pricing.hubspot-sales-product",
+          "fact-hubspot-pricing.hubspot-product-catalog",
+          "fact-hubspot-pricing.hubspot-sales-pricing",
+          "fact-salesforce-pricing.salesforce-crm-pricing",
+          "fact-salesforce-pricing.salesforce-sales-cloud-pricing",
+          "fact-salesforce-pricing.salesforce-free-trial",
+          "fact-salesforce-pricing.salesforce-claudeforce-pr-2026-08-26",
+          "fact-hubspot-pricing.startingPriceMonthly",
+          "fact-hubspot-pricing.hasFreePlan",
+          "fact-hubspot-pricing.model",
+          "fact-salesforce-pricing.startingPriceMonthly",
+          "fact-salesforce-pricing.hasFreePlan",
+          "fact-salesforce-pricing.model"
+        ],
+        "assessmentIds": [],
+        "researchStatus": "complete"
+      }
+    ],
+    "overallWinnerKind": "depends"
+  },
+  "notes": [
+    "improve-wave-1-2026-09-07"
+  ]
+}

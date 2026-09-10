@@ -1,4 +1,4 @@
-import type { GuidePage } from "@/domain";
+import type { GuidePageInput } from "@/domain";
 import type { z } from "zod";
 import type { GuideContentBlockSchema } from "@/domain";
 import { tier25GuideScheduledAt } from "@/data/config/publishing/tier-25-dropshipping-pod-launch-2027-07-01";
@@ -34,7 +34,7 @@ const blocks: GuideBlockInput[] = [
   },
 ];
 
-function metadata(): GuidePage["metadata"] {
+function metadata(): GuidePageInput["metadata"] {
   return SCHEDULED_AT
     ? {
         status: "scheduled",
@@ -54,7 +54,7 @@ function metadata(): GuidePage["metadata"] {
       };
 }
 
-export const dropshippingPodPricingGuide: GuidePage = {
+export const dropshippingPodPricingGuide: GuidePageInput = {
   id: "guide-dropshipping-pod-pricing-guide",
   slug: SLUG,
   title: "Dropshipping & Print-on-Demand Pricing Guide",
@@ -76,7 +76,7 @@ export const dropshippingPodPricingGuide: GuidePage = {
     "how-to-choose-dropshipping-pod-software",
     "dropshipping-pod-evaluation-guide",
   ],
-  blocks: blocks as GuidePage["blocks"],
+  blocks: blocks as GuidePageInput["blocks"],
   checklist: [],
   sections: [],
   faq: [],
@@ -87,6 +87,6 @@ export const dropshippingPodPricingGuide: GuidePage = {
     description:
       "Compare subscription tiers, import caps, and POD fulfillment costs for dropshipping software.",
     canonicalPath: `/guides/${SLUG}/`,
-    indexable: !SCHEDULED_AT,
+    indexable: true,
   },
 };

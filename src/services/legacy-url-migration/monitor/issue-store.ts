@@ -198,11 +198,7 @@ export function applyReappearanceRegression(
   },
 ): MonitorIssue[] {
   return issues.map((issue) => {
-    if (
-      issue.state === "NEW" &&
-      previousResolvedIds.has(issue.id) &&
-      issue.state !== "INTENTIONAL"
-    ) {
+    if (issue.state === "NEW" && previousResolvedIds.has(issue.id)) {
       counts.NEW -= 1;
       counts.REGRESSED += 1;
       return { ...issue, state: "REGRESSED" as const };

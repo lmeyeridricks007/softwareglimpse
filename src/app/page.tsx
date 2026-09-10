@@ -42,6 +42,7 @@ import { buildPageMetadata } from "@/seo/metadata";
 import {
   JsonLdScript,
   organizationJsonLd,
+  personJsonLd,
   websiteJsonLd,
 } from "@/seo/structured-data";
 import { SITE_HOME_DESCRIPTION, SITE_HOME_TITLE } from "@/lib/site";
@@ -49,6 +50,10 @@ import { getGuides } from "@/data/repositories/guides";
 import { resolveVisitCta } from "@/services/affiliate/resolve-visit-cta";
 import { publicAlternativesHref } from "@/services/relationships/software-links";
 import { homepageCrmComparisons } from "@/services/homepage/prioritized-comparisons";
+import {
+  COMPANY_ROUTES,
+  getFounderAuthor,
+} from "@/services/site-foundation";
 
 export const metadata: Metadata = buildPageMetadata({
   title: SITE_HOME_TITLE,
@@ -78,9 +83,9 @@ function publicBestBuyingContext(categoryLabel: string): string {
 
 function homepageBestFitScenarios(page: BestPage): string[] {
   const fromPaths = (page.decisionPaths ?? [])
-    .filter((d) => d.approved !== false)
+    .filter((d) => d.approved !== false && d.label)
     .slice(0, 3)
-    .map((d) => d.label);
+    .map((d) => d.label as string);
   if (fromPaths.length >= 2) return fromPaths;
   const fromClusters = (page.useCaseRecommendations ?? [])
     .filter((r) => r.approved && r.label)
@@ -236,10 +241,25 @@ export default function HomePage() {
   ];
 
   const newsletterEnabled = siteFoundationConfig.newsletter.enabled;
+  const founder = getFounderAuthor();
+  const homeJsonLd = [
+    organizationJsonLd(),
+    websiteJsonLd(),
+    ...(founder
+      ? [
+          personJsonLd({
+            name: founder.name,
+            path: COMPANY_ROUTES.myStory,
+            jobTitle: founder.role,
+            description: founder.shortBio,
+          }),
+        ]
+      : []),
+  ];
 
   return (
     <>
-      <JsonLdScript data={[organizationJsonLd(), websiteJsonLd()]} />
+      <JsonLdScript data={homeJsonLd} />
 
       {/* HERO */}
       <Section

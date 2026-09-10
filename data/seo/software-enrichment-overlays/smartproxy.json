@@ -1,0 +1,533 @@
+{
+  "slug": "smartproxy",
+  "updatedAt": "2026-09-07T22:31:21.869Z",
+  "version": "1.0.0",
+  "fieldAudit": {
+    "slug": "smartproxy",
+    "checkedAt": "2026-09-07T22:31:21.868Z",
+    "items": [
+      {
+        "field": "name",
+        "status": "PASS",
+        "detail": "Name: Decodo (Smartproxy)",
+        "source": "seed"
+      },
+      {
+        "field": "product_status",
+        "status": "PASS",
+        "detail": "productLifecycle=active",
+        "source": "seed"
+      },
+      {
+        "field": "canonical_vendor",
+        "status": "UNKNOWN",
+        "detail": "Company/vendor not documented",
+        "source": "none"
+      },
+      {
+        "field": "category",
+        "status": "PASS",
+        "detail": "primaryCategorySlug=it-development",
+        "source": "seed"
+      },
+      {
+        "field": "description",
+        "status": "PASS",
+        "detail": "Description present (Decodo (formerly Smartproxy) residential proxies — 3GB $11.25/mo ($3.75/GB); PAY…)",
+        "source": "seed"
+      },
+      {
+        "field": "target_audience",
+        "status": "PASS",
+        "detail": "Sizes=4, teams=2, assessment bestFor=3",
+        "source": "assessment"
+      },
+      {
+        "field": "use_cases",
+        "status": "PASS",
+        "detail": "useCaseSlugs=1",
+        "source": "seed"
+      },
+      {
+        "field": "capabilities",
+        "status": "PASS",
+        "detail": "featureRatings=0, enrichment features=16",
+        "source": "enrichment"
+      },
+      {
+        "field": "pricing",
+        "status": "PASS",
+        "detail": "Pricing envelope present",
+        "source": "enrichment"
+      },
+      {
+        "field": "plans",
+        "status": "PASS",
+        "detail": "plans=3",
+        "source": "enrichment"
+      },
+      {
+        "field": "free_plan",
+        "status": "PASS",
+        "detail": "No free plan in documented plans (explicit absence)",
+        "source": "enrichment"
+      },
+      {
+        "field": "trial",
+        "status": "PASS",
+        "detail": "Trial documented on plans/pricing",
+        "source": "enrichment"
+      },
+      {
+        "field": "integrations",
+        "status": "PASS",
+        "detail": "integrationSlugs=0, enrichment=3",
+        "source": "enrichment"
+      },
+      {
+        "field": "alternatives",
+        "status": "PASS",
+        "detail": "alternativeSlugs=2",
+        "source": "seed"
+      },
+      {
+        "field": "competitors",
+        "status": "PASS",
+        "detail": "competitorSlugs=7",
+        "source": "seed"
+      },
+      {
+        "field": "affiliate",
+        "status": "PASS",
+        "detail": "No affiliate relationship (explicit)",
+        "source": "seed"
+      },
+      {
+        "field": "source_provenance",
+        "status": "PASS",
+        "detail": "seed sources=0, enrichment sourceIds=3",
+        "source": "enrichment"
+      },
+      {
+        "field": "verification_date",
+        "status": "PASS",
+        "detail": "Latest verification/research signal: 2026-08-18T20:00:00.000Z",
+        "source": "enrichment"
+      }
+    ],
+    "passCount": 17,
+    "partialCount": 0,
+    "missingCount": 0,
+    "unknownCount": 1,
+    "score": 94
+  },
+  "decisionHub": {
+    "whatItIs": "Decodo is the 2025 rebrand of Smartproxy — same proxy network, new brand. The SoftwareGlimpse slug stays `smartproxy` for URL stability; display name is Decodo (Smartproxy). Residential subscriptions publish from 3GB at $11.25/month ($3.75/GB); PAYG $4/GB; advertised volume floor $2/GB at 1000GB. 3-day trial. Same web-data-collection cluster as Bright Data. Bright Data remains the award (7.7); this entity does not outrank it.",
+    "bestFor": [
+      "Teams that knew Smartproxy and need the Decodo-branded same network",
+      "Buyers who want a published $11.25 residential starter versus Bright Data commits",
+      "Projects that will validate a 3-day trial before GB scale",
+      "solo / operations: Decodo (Smartproxy) fit for solo operations teams in the web-data-collection job cluster, from first-party positioning and IT industry Tier-A research.",
+      "micro / operations: Decodo (Smartproxy) fit for micro operations teams in the web-data-collection job cluster, from first-party positioning and IT industry Tier-A research.",
+      "small-business / operations: Decodo (Smartproxy) fit for small-business operations teams in the web-data-collection job cluster, from first-party positioning and IT industry Tier-A research."
+    ],
+    "notIdealFor": [
+      "Enterprises that require Bright Data / Oxylabs compliance-first proxy estates",
+      "Actor marketplace compute (Apify)",
+      "Hosting or ITSM purchases",
+      "Smartproxy rebranded to Decodo in 2025 — same network; do not treat them as two vendors",
+      "Does not outrank Bright Data (7.7)",
+      "3GB $11.25 is GB-metered — overages and larger packs change TCO"
+    ],
+    "coreCapabilities": [
+      "proxy network",
+      "analytics reporting",
+      "web data collection"
+    ],
+    "pricingSummary": "3 documented plans · entry paid: Residential 3GB · trial documented on at least one plan",
+    "keyTradeoffs": [
+      "Smartproxy rebranded to Decodo in 2025 — same network; do not treat them as two vendors",
+      "Does not outrank Bright Data (7.7)",
+      "3GB $11.25 is GB-metered — overages and larger packs change TCO",
+      "Thinner enterprise compliance story than Bright Data / Oxylabs ISO-first packaging",
+      "Not ITSM, observability, git, hosting panel, or managed hosting"
+    ],
+    "alternatives": [
+      {
+        "slug": "bright-data",
+        "name": "Bright Data"
+      },
+      {
+        "slug": "oxylabs",
+        "name": "Oxylabs"
+      },
+      {
+        "slug": "scraperapi",
+        "name": "ScraperAPI"
+      },
+      {
+        "slug": "apify",
+        "name": "Apify"
+      },
+      {
+        "slug": "thordata",
+        "name": "ThorData"
+      },
+      {
+        "slug": "zyte",
+        "name": "Zyte"
+      }
+    ],
+    "importantComparisons": [
+      {
+        "slug": "bright-data-vs-smartproxy",
+        "title": "Decodo (Smartproxy) vs Bright Data",
+        "href": "/compare/bright-data-vs-smartproxy/"
+      },
+      {
+        "slug": "iproyal-vs-smartproxy",
+        "title": "IPRoyal vs Decodo (Smartproxy)",
+        "href": "/compare/iproyal-vs-smartproxy/"
+      },
+      {
+        "slug": "apify-vs-smartproxy",
+        "title": "Apify vs Decodo (Smartproxy)",
+        "href": "/compare/apify-vs-smartproxy/"
+      },
+      {
+        "slug": "appdynamics-vs-smartproxy",
+        "title": "AppDynamics vs Decodo (Smartproxy)",
+        "href": "/compare/appdynamics-vs-smartproxy/"
+      },
+      {
+        "slug": "azure-devops-vs-smartproxy",
+        "title": "Azure DevOps vs Decodo (Smartproxy)",
+        "href": "/compare/azure-devops-vs-smartproxy/"
+      },
+      {
+        "slug": "bitbucket-vs-smartproxy",
+        "title": "Bitbucket Cloud vs Decodo (Smartproxy)",
+        "href": "/compare/bitbucket-vs-smartproxy/"
+      }
+    ],
+    "relevantGuides": [
+      {
+        "slug": "smartproxy-implementation",
+        "title": "Decodo (Smartproxy) Implementation: 30/60/90 IT Rollout That Sticks",
+        "href": "/guides/smartproxy-implementation/"
+      },
+      {
+        "slug": "smartproxy-migration",
+        "title": "Decodo (Smartproxy) Migration: Move Tickets and Repos Without Losing Trust",
+        "href": "/guides/smartproxy-migration/"
+      },
+      {
+        "slug": "smartproxy-setup",
+        "title": "Decodo (Smartproxy) Setup: Day-Zero Path to a Working IT Loop",
+        "href": "/guides/smartproxy-setup/"
+      },
+      {
+        "slug": "smartproxy-plans",
+        "title": "Decodo (Smartproxy) Plans: Seats, Hosts, and Qualifying Tiers",
+        "href": "/guides/smartproxy-plans/"
+      },
+      {
+        "slug": "is-smartproxy-worth-it",
+        "title": "Is Decodo (Smartproxy) Worth It? Fit Scenarios Before You Buy",
+        "href": "/guides/is-smartproxy-worth-it/"
+      }
+    ],
+    "evidenceState": "Research/data-based (no completed hands-on test) · Latest verification/research signal: 2026-08-18T20:00:00.000Z · Editorial assessment: approved",
+    "nextDecisionStep": "Compare against peers: Decodo (Smartproxy) vs Bright Data",
+    "missingSections": [
+      "canonical_vendor"
+    ]
+  },
+  "dependents": [
+    {
+      "kind": "guide",
+      "slug": "smartproxy-implementation",
+      "path": "/guides/smartproxy-implementation/"
+    },
+    {
+      "kind": "guide",
+      "slug": "smartproxy-migration",
+      "path": "/guides/smartproxy-migration/"
+    },
+    {
+      "kind": "guide",
+      "slug": "smartproxy-setup",
+      "path": "/guides/smartproxy-setup/"
+    },
+    {
+      "kind": "guide",
+      "slug": "smartproxy-plans",
+      "path": "/guides/smartproxy-plans/"
+    },
+    {
+      "kind": "guide",
+      "slug": "is-smartproxy-worth-it",
+      "path": "/guides/is-smartproxy-worth-it/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "bright-data-vs-smartproxy",
+      "path": "/compare/bright-data-vs-smartproxy/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "iproyal-vs-smartproxy",
+      "path": "/compare/iproyal-vs-smartproxy/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "apify-vs-smartproxy",
+      "path": "/compare/apify-vs-smartproxy/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "appdynamics-vs-smartproxy",
+      "path": "/compare/appdynamics-vs-smartproxy/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "azure-devops-vs-smartproxy",
+      "path": "/compare/azure-devops-vs-smartproxy/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "bitbucket-vs-smartproxy",
+      "path": "/compare/bitbucket-vs-smartproxy/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "bmc-helix-vs-smartproxy",
+      "path": "/compare/bmc-helix-vs-smartproxy/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "buildkite-vs-smartproxy",
+      "path": "/compare/buildkite-vs-smartproxy/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "chronosphere-vs-smartproxy",
+      "path": "/compare/chronosphere-vs-smartproxy/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "circleci-vs-smartproxy",
+      "path": "/compare/circleci-vs-smartproxy/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "cloudways-vs-smartproxy",
+      "path": "/compare/cloudways-vs-smartproxy/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "coralogix-vs-smartproxy",
+      "path": "/compare/coralogix-vs-smartproxy/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "cpanel-vs-smartproxy",
+      "path": "/compare/cpanel-vs-smartproxy/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "datadog-vs-smartproxy",
+      "path": "/compare/datadog-vs-smartproxy/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "directadmin-vs-smartproxy",
+      "path": "/compare/directadmin-vs-smartproxy/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "dynatrace-vs-smartproxy",
+      "path": "/compare/dynatrace-vs-smartproxy/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "elastic-observability-vs-smartproxy",
+      "path": "/compare/elastic-observability-vs-smartproxy/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "firehydrant-vs-smartproxy",
+      "path": "/compare/firehydrant-vs-smartproxy/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "fly-io-vs-smartproxy",
+      "path": "/compare/fly-io-vs-smartproxy/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "github-vs-smartproxy",
+      "path": "/compare/github-vs-smartproxy/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "gitlab-vs-smartproxy",
+      "path": "/compare/gitlab-vs-smartproxy/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "grafana-cloud-vs-smartproxy",
+      "path": "/compare/grafana-cloud-vs-smartproxy/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "haloitsm-vs-smartproxy",
+      "path": "/compare/haloitsm-vs-smartproxy/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "heroku-vs-smartproxy",
+      "path": "/compare/heroku-vs-smartproxy/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "honeycomb-vs-smartproxy",
+      "path": "/compare/honeycomb-vs-smartproxy/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "incident-io-vs-smartproxy",
+      "path": "/compare/incident-io-vs-smartproxy/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "ivanti-vs-smartproxy",
+      "path": "/compare/ivanti-vs-smartproxy/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "jira-service-management-vs-smartproxy",
+      "path": "/compare/jira-service-management-vs-smartproxy/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "kinsta-vs-smartproxy",
+      "path": "/compare/kinsta-vs-smartproxy/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "manageengine-servicedesk-plus-vs-smartproxy",
+      "path": "/compare/manageengine-servicedesk-plus-vs-smartproxy/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "new-relic-vs-smartproxy",
+      "path": "/compare/new-relic-vs-smartproxy/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "oxylabs-vs-smartproxy",
+      "path": "/compare/oxylabs-vs-smartproxy/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "pagerduty-vs-smartproxy",
+      "path": "/compare/pagerduty-vs-smartproxy/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "railway-vs-smartproxy",
+      "path": "/compare/railway-vs-smartproxy/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "render-vs-smartproxy",
+      "path": "/compare/render-vs-smartproxy/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "rootly-vs-smartproxy",
+      "path": "/compare/rootly-vs-smartproxy/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "scraperapi-vs-smartproxy",
+      "path": "/compare/scraperapi-vs-smartproxy/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "sentry-vs-smartproxy",
+      "path": "/compare/sentry-vs-smartproxy/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "servicenow-vs-smartproxy",
+      "path": "/compare/servicenow-vs-smartproxy/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "siteground-vs-smartproxy",
+      "path": "/compare/siteground-vs-smartproxy/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "smartproxy-vs-splunk",
+      "path": "/compare/smartproxy-vs-splunk/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "smartproxy-vs-squadcast",
+      "path": "/compare/smartproxy-vs-squadcast/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "smartproxy-vs-sysaid",
+      "path": "/compare/smartproxy-vs-sysaid/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "smartproxy-vs-thordata",
+      "path": "/compare/smartproxy-vs-thordata/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "smartproxy-vs-topdesk",
+      "path": "/compare/smartproxy-vs-topdesk/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "smartproxy-vs-wp-engine",
+      "path": "/compare/smartproxy-vs-wp-engine/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "smartproxy-vs-zyte",
+      "path": "/compare/smartproxy-vs-zyte/"
+    },
+    {
+      "kind": "alternatives",
+      "slug": "smartproxy",
+      "path": "/alternatives/smartproxy/"
+    },
+    {
+      "kind": "pricing",
+      "slug": "smartproxy",
+      "path": "/software/smartproxy/pricing/"
+    },
+    {
+      "kind": "tools",
+      "slug": "it-development-cost-calculator",
+      "path": "/tools/it-development-cost-calculator/"
+    }
+  ],
+  "dependentsNeedingRefresh": [],
+  "remediation": [
+    "verify:canonical_vendor"
+  ],
+  "notes": [
+    "fieldAudit score=94",
+    "decisionHub bestFor=6 notIdeal=6",
+    "dependents=55"
+  ],
+  "materiallyImproved": false
+}

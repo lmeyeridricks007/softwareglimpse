@@ -1,4 +1,4 @@
-import type { GuidePage } from "@/domain";
+import type { GuidePageInput } from "@/domain";
 import { buildAllPmProductGuides } from "@/services/product-guides/build";
 
 /**
@@ -6,4 +6,4 @@ import { buildAllPmProductGuides } from "@/services/product-guides/build";
  * plans, worth-it) for primary work-management products. Adjacent specialists
  * (Foxit, Getscreen.me, WebCatalog, Office Timeline) stay on category guides.
  */
-export const pmProductGuides: GuidePage[] = buildAllPmProductGuides();
+export const pmProductGuides: GuidePageInput[] = buildAllPmProductGuides();

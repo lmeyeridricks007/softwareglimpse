@@ -1,0 +1,159 @@
+{
+  "slug": "hubspot-migration",
+  "enrichmentType": "MIGRATION_GUIDE",
+  "updatedAt": "2026-09-07T18:34:02.236Z",
+  "uniqueValueAdded": [
+    "implementation_workflow",
+    "scenario_analysis",
+    "decision_framework",
+    "limitations_evidence",
+    "buyer_checklist"
+  ],
+  "patch": {
+    "summary": "HubSpot migration guide: inventory → rehearse → freeze → validate integrations — grounded in researched limitations and catalogue peers.",
+    "blocks": [
+      {
+        "id": "da-hubspot-migration-1",
+        "type": "direct-answer",
+        "body": "Migrate to HubSpot by inventorying legacy crm fields, mapping them to HubSpot objects, rehearsing a freeze window, and validating Gmail, Slack before reopening writes.",
+        "bullets": [
+          "Inventory → map → rehearse → cut over → reopen",
+          "Highest risk: Smart CRM / Customer Platform seats and Sales Hub seats are separate ladders with different list prices; buying 'HubSpot' often means mixing Free CRM, Smart CRM seats, and hub seats.",
+          "Success signal: contact management works for the pilot cohort"
+        ]
+      },
+      {
+        "id": "mig-hubspot-migration-2",
+        "type": "step",
+        "heading": "HubSpot migration cutover playbook",
+        "body": "Migrations fail from optimistic timelines — not from missing motivation.",
+        "stepNumber": 1,
+        "scenarios": [
+          {
+            "title": "Field inventory",
+            "body": "Export legacy fields that power contact management, lead management, pipeline management and mark must-map vs archive."
+          },
+          {
+            "title": "Rehearsal load",
+            "body": "Run a non-prod load into HubSpot; measure match rates before the freeze."
+          },
+          {
+            "title": "Production freeze",
+            "body": "Freeze legacy writes; cut over; validate Gmail; then reopen."
+          }
+        ]
+      },
+      {
+        "id": "df-hubspot-migration-3",
+        "type": "decision-framework",
+        "title": "Migrate to HubSpot?",
+        "steps": [
+          {
+            "id": "m-1",
+            "label": "Migrate when SMB and mid-market teams wanting free CRM now and room to expand into hubs later outweigh migration cost"
+          },
+          {
+            "id": "m-2",
+            "label": "Delay if this limitation hits cutover: Smart CRM / Customer Platform seats and Sales Hub seats are separate ladders with different list prices; buying 'HubSpot' often means mixing Free CRM, Smart CRM seats, and hub seats."
+          },
+          {
+            "id": "m-3",
+            "label": "If HubSpot mapping is poor, compare destination fit with Pipedrive before moving data twice"
+          }
+        ]
+      },
+      {
+        "id": "mist-hubspot-migration-4",
+        "type": "mistakes",
+        "title": "HubSpot migration mistakes",
+        "items": [
+          {
+            "title": "No freeze window",
+            "body": "Dual-writing without a freeze creates irrevocable duplicates."
+          },
+          {
+            "title": "Integrations last",
+            "body": "Wire Gmail in rehearsal — not on Monday morning after cutover."
+          },
+          {
+            "title": "Data risk 1",
+            "body": "Smart CRM / Customer Platform seats and Sales Hub seats are separate ladders with different list prices; buying 'HubSpot' often means mixing Free CRM, Smart CRM seats, and hub seats."
+          },
+          {
+            "title": "Data risk 2",
+            "body": "Sales Hub Professional starts at list pricenth per seat on the Product & Services Catalog and the Sales product page (re-checked 2026-08-18). HubSpot’s Sales pricing page also shows list price billed annually vs list price monthly, plus required Professional onboarding (list price). Starter marketing prices show new-customer discounts (*)."
+          },
+          {
+            "title": "Data risk 3",
+            "body": "Full GTM stack (Marketing Hub, Service Hub, etc.) is sold as additional hubs with their own seat/contact pricing — not included in Free CRM alone."
+          }
+        ]
+      },
+      {
+        "id": "sel-hubspot-migration-5",
+        "type": "selection-checklist",
+        "title": "HubSpot migration checklist",
+        "dimensions": [
+          {
+            "id": "map",
+            "label": "Mapping",
+            "options": [
+              "Must-map fields listed",
+              "Owners assigned",
+              "Archive rules written"
+            ]
+          },
+          {
+            "id": "rehearse",
+            "label": "Rehearsal",
+            "options": [
+              "Non-prod load done",
+              "Match rate measured",
+              "Rollback tested"
+            ]
+          },
+          {
+            "id": "cutover",
+            "label": "Cutover",
+            "options": [
+              "Freeze communicated",
+              "Integrations green",
+              "Pilot cohort signed off"
+            ]
+          }
+        ]
+      }
+    ],
+    "checklist": [
+      {
+        "id": "enrich-chk-0",
+        "label": "Complete field inventory for contact management",
+        "order": 0
+      },
+      {
+        "id": "enrich-chk-1",
+        "label": "Rehearse load before production freeze",
+        "order": 1
+      },
+      {
+        "id": "enrich-chk-2",
+        "label": "Validate Gmail pre-reopen",
+        "order": 2
+      },
+      {
+        "id": "enrich-chk-3",
+        "label": "Mitigate: Smart CRM / Customer Platform seats and Sales Hub seats are separate ladders with different list prices; buying 'HubSpot' often means mixing Free CRM, Smart CRM seats, and hub seats.",
+        "order": 3
+      }
+    ],
+    "nextAction": {
+      "contentId": "tool:finder:crm",
+      "label": "Open Finder shortlist"
+    }
+  },
+  "notes": [
+    "Omit unsupported: testing_evidence",
+    "Migration: cutover risks, data mapping, checklist.",
+    "Type-specific skeleton: MIGRATION_GUIDE"
+  ]
+}

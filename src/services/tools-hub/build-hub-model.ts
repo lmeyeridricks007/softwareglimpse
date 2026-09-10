@@ -14,7 +14,9 @@ import {
 import {
   CATEGORY_TOOL_META,
   isNewToolCategorySlug,
+  parseCategoryToolSlug,
 } from "@/data/config/tools/category-tool-meta";
+import { categoryHasPublishedPillar } from "@/services/category-tools/pillar-gate";
 import { crmFinderConfig } from "@/data/config/recommendation/crm-finder-v1";
 import { siFinderConfig } from "@/data/config/recommendation/si-finder-v1";
 import {
@@ -204,6 +206,13 @@ function isInteractive(tool: ToolDefinition): boolean {
     Boolean(tool.href) &&
     (tool.status === "available" || tool.status === "partial")
   );
+}
+
+/** Hide decision-tool packs until the category pillar is publicly available. */
+function isPublicDecisionTool(tool: ToolDefinition): boolean {
+  const parsed = parseCategoryToolSlug(tool.slug);
+  if (!parsed) return true;
+  return categoryHasPublishedPillar(parsed.categorySlug);
 }
 
 function previewKind(
@@ -731,7 +740,7 @@ function buildCategoryGroups(
 ): ToolsHubCategoryGroup[] {
   const byCategory = new Map<string, ToolDefinition[]>();
   for (const tool of tools) {
-    if (!isInteractive(tool)) continue;
+    if (!isInteractive(tool) || !isPublicDecisionTool(tool)) continue;
     for (const slug of tool.categorySlugs) {
       const list = byCategory.get(slug) ?? [];
       list.push(tool);
@@ -783,7 +792,10 @@ function buildDirectory(tools: ToolDefinition[]): ToolsHubDirectoryGroup[] {
     .map((g) => ({
       type: g.type,
       label: g.label,
-      tools: tools.filter(g.match).map((t) => ({
+      tools: tools
+        .filter(g.match)
+        .filter(isPublicDecisionTool)
+        .map((t) => ({
         id: t.id,
         name: t.name,
         href: isInteractive(t) ? t.href : t.href,
@@ -806,7 +818,10 @@ export function buildToolsHubModel(
   const scopedDefs = categorySlug
     ? TOOLS_REGISTRY.filter((t) => toolMatchesCategory(t, categorySlug))
     : TOOLS_REGISTRY;
-  const cards = TOOLS_REGISTRY.map((t) => toCard(t, categorySlug));
+  const publicDefs = scopedDefs.filter(isPublicDecisionTool);
+  const cards = TOOLS_REGISTRY.filter(isPublicDecisionTool).map((t) =>
+    toCard(t, categorySlug),
+  );
   const scopedCards = categorySlug
     ? cards.filter((t) => toolMatchesCategory(t, categorySlug))
     : cards;
@@ -905,7 +920,7 @@ export function buildToolsHubModel(
     comingSoonTools,
     allTools: cards,
     categoryGroups: scopedCategoryGroups,
-    directory: buildDirectory(categorySlug ? scopedDefs : TOOLS_REGISTRY),
+    directory: buildDirectory(categorySlug ? publicDefs : TOOLS_REGISTRY.filter(isPublicDecisionTool)),
     researchPaths: buildResearchPaths(categorySlug),
     trustLinks: [
       { label: "How we review", href: COMPANY_ROUTES.howWeReview },

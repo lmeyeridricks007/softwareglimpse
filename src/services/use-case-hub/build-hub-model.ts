@@ -19,7 +19,7 @@ import {
   selectUseCasePageVideos,
   selectUseCaseSeeInActionCards,
   scoreUseCasePageMedia,
-  useCaseMediaAliases,
+  resolveUseCaseMediaAliases,
   type UseCaseSeeInActionCard,
 } from "@/services/product-media/use-case-page-media";
 import {
@@ -266,7 +266,7 @@ export function buildUseCaseHubModel(slug: string): UseCaseHubModel | null {
 
   const mediaCtx = {
     useCaseSlug: useCase.slug,
-    useCaseAliases: useCaseMediaAliases(useCase.slug),
+    useCaseAliases: resolveUseCaseMediaAliases(useCase.slug),
     workflowStepIds: workflowSteps.map((s) => s.id),
     capabilityIds: capabilityNeeds
       .map((n) => n.href?.match(/\/capabilities\/([^/]+)/)?.[1])

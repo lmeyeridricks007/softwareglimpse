@@ -1,4 +1,4 @@
-import type { GuidePage } from "@/domain";
+import type { GuidePageInput } from "@/domain";
 import type { z } from "zod";
 import type { GuideContentBlockSchema } from "@/domain";
 import { tier30GuideScheduledAt } from "@/data/config/publishing/tier-30-itsm-launch-2027-08-01";
@@ -34,7 +34,7 @@ const blocks: GuideBlockInput[] = [
   },
 ];
 
-function metadata(): GuidePage["metadata"] {
+function metadata(): GuidePageInput["metadata"] {
   return SCHEDULED_AT
     ? {
         status: "scheduled",
@@ -54,7 +54,7 @@ function metadata(): GuidePage["metadata"] {
       };
 }
 
-export const itsmPricingGuide: GuidePage = {
+export const itsmPricingGuide: GuidePageInput = {
   id: "guide-itsm-pricing-guide",
   slug: SLUG,
   title: "ITSM Pricing Guide",
@@ -76,7 +76,7 @@ export const itsmPricingGuide: GuidePage = {
     "how-to-choose-itsm-software",
     "itsm-evaluation-guide",
   ],
-  blocks: blocks as GuidePage["blocks"],
+  blocks: blocks as GuidePageInput["blocks"],
   checklist: [],
   sections: [],
   faq: [],
@@ -87,6 +87,6 @@ export const itsmPricingGuide: GuidePage = {
     description:
       "Compare per-agent, asset-pack, and ITIL tier pricing for ITSM software.",
     canonicalPath: `/guides/${SLUG}/`,
-    indexable: !SCHEDULED_AT,
+    indexable: true,
   },
 };

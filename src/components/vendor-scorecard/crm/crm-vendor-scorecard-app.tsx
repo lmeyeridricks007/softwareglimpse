@@ -138,16 +138,76 @@ function canonicalizeCompareSlug(a: string, b: string): string {
   return [a, b].sort().join("-vs-");
 }
 
+type ScorecardBootstrap = {
+  profile: CrmDecisionProfile | null;
+  state: VendorScorecardState;
+  combineEnabled: boolean;
+  researchPct: number;
+};
+
+function bootstrapCrmVendorScorecard(
+  researchGeneratedAt: string,
+): ScorecardBootstrap {
+  const loadedProfile = loadCrmDecisionProfile();
+  const loaded = loadVendorScorecard("crm");
+  if (loaded && loaded.productIds.length > 0) {
+    return {
+      profile: loadedProfile,
+      state: loaded,
+      combineEnabled: Boolean(loaded.combinationSettings?.enabled),
+      researchPct: loaded.combinationSettings?.researchPercent ?? 70,
+    };
+  }
+  if (loadedProfile) {
+    const criteria = generateCriteriaFromProfile(loadedProfile);
+    const productIds = loadedProfile.shortlistProductIds.slice(0, 5);
+    const next = touchVendorScorecard(createEmptyVendorScorecard("crm"), {
+      productIds,
+      criteria,
+      profileVersionAt: loadedProfile.updatedAt,
+      researchAcknowledgedAt: researchGeneratedAt,
+      productAssessments: productIds.map((id) => ({
+        productId: id,
+        userRatings: [],
+        demoChecklist: [],
+      })),
+    });
+    saveVendorScorecard(next);
+    return {
+      profile: loadedProfile,
+      state: next,
+      combineEnabled: false,
+      researchPct: 70,
+    };
+  }
+  return {
+    profile: loadedProfile,
+    state: touchVendorScorecard(createEmptyVendorScorecard("crm"), {
+      criteria: generateCriteriaFromProfile(null),
+      researchAcknowledgedAt: researchGeneratedAt,
+    }),
+    combineEnabled: false,
+    researchPct: 70,
+  };
+}
+
 export function CrmVendorScorecardApp({
   research,
   productOptions,
   pricingSnapshots,
   publishedComparisonSlugs,
 }: Props) {
-  const [hydrated, setHydrated] = useState(false);
-  const [profile, setProfile] = useState<CrmDecisionProfile | null>(null);
-  const [state, setState] = useState<VendorScorecardState>(() =>
-    createEmptyVendorScorecard("crm"),
+  const [initialScorecard] = useState(() =>
+    bootstrapCrmVendorScorecard(research.generatedAt),
+  );
+  const [hydrated, setHydrated] = useState(
+    () => typeof window !== "undefined",
+  );
+  const [profile, setProfile] = useState<CrmDecisionProfile | null>(
+    initialScorecard.profile,
+  );
+  const [state, setState] = useState<VendorScorecardState>(
+    initialScorecard.state,
   );
   const [tab, setTab] = useState<TabId>("scorecard");
   const [showAddProduct, setShowAddProduct] = useState(false);
@@ -155,48 +215,17 @@ export function CrmVendorScorecardApp({
     productSlug: string;
     cell: CriterionCellResult;
   } | null>(null);
-  const [combineEnabled, setCombineEnabled] = useState(false);
-  const [researchPct, setResearchPct] = useState(70);
+  const [combineEnabled, setCombineEnabled] = useState(
+    initialScorecard.combineEnabled,
+  );
+  const [researchPct, setResearchPct] = useState(initialScorecard.researchPct);
   const [includeNotesInExport, setIncludeNotesInExport] = useState(false);
   const [copyStatus, setCopyStatus] = useState<string | null>(null);
   const [activeStep, setActiveStep] = useState(0);
 
-  // Hydrate from localStorage
   useEffect(() => {
-    const loadedProfile = loadCrmDecisionProfile();
-    setProfile(loadedProfile);
-    const loaded = loadVendorScorecard("crm");
-    if (loaded && loaded.productIds.length > 0) {
-      setState(loaded);
-      setCombineEnabled(Boolean(loaded.combinationSettings?.enabled));
-      setResearchPct(loaded.combinationSettings?.researchPercent ?? 70);
-    } else if (loadedProfile) {
-      const criteria = generateCriteriaFromProfile(loadedProfile);
-      const productIds = loadedProfile.shortlistProductIds.slice(0, 5);
-      const next = touchVendorScorecard(createEmptyVendorScorecard("crm"), {
-        productIds,
-        criteria,
-        profileVersionAt: loadedProfile.updatedAt,
-        researchAcknowledgedAt: research.generatedAt,
-        productAssessments: productIds.map((id) => ({
-          productId: id,
-          userRatings: [],
-          demoChecklist: [],
-        })),
-      });
-      setState(next);
-      saveVendorScorecard(next);
-    } else {
-      setState(
-        touchVendorScorecard(createEmptyVendorScorecard("crm"), {
-          criteria: generateCriteriaFromProfile(null),
-          researchAcknowledgedAt: research.generatedAt,
-        }),
-      );
-    }
-    setHydrated(true);
     track({ name: "crm_scorecard_started" });
-  }, [research.generatedAt]);
+  }, []);
 
   const persist = useCallback((next: VendorScorecardState) => {
     const saved = touchVendorScorecard(next, {});

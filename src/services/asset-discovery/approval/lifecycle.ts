@@ -219,7 +219,7 @@ export function verifyCandidateSource(
     };
   }
 
-  let next = pushHistory(
+  const next = pushHistory(
     {
       ...candidate,
       officialSource: true,

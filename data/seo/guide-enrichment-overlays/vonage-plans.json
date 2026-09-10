@@ -1,0 +1,206 @@
+{
+  "slug": "vonage-plans",
+  "enrichmentType": "COST_GUIDE",
+  "updatedAt": "2026-09-09T05:39:30.387Z",
+  "uniqueValueAdded": [
+    "pricing_comparison",
+    "sg_original_data",
+    "scenario_analysis",
+    "implementation_workflow",
+    "decision_framework",
+    "limitations_evidence",
+    "product_shortlist",
+    "alternatives_map",
+    "buyer_checklist"
+  ],
+  "patch": {
+    "summary": "Vonage cost guide: researched plan structure, who each tier suits, cost scenarios, and value tradeoffs — no invented prices.",
+    "blocks": [
+      {
+        "id": "da-vonage-plans-1",
+        "type": "direct-answer",
+        "body": "Vonage pricing is plan-gated across 3 researched tiers. No free plan confirmed in SoftwareGlimpse research. No free/trial flag confirmed in SG data — budget a paid pilot. Compare seat/capacity gates and unlocks — not list-price folklore.",
+        "bullets": [
+          "Free plan: not confirmed in SG data",
+          "No free/trial flag confirmed in SG data — budget a paid pilot",
+          "Entry paid tier researched: Mobile"
+        ]
+      },
+      {
+        "id": "cost-vonage-plans-2",
+        "type": "cost-breakdown",
+        "title": "Vonage plan matrix and who each tier suits",
+        "body": "Structure and trial/free flags come from SoftwareGlimpse pricing research. Dollar amounts appear only when verified — never invent list prices.",
+        "lines": [
+          {
+            "label": "Mobile",
+            "description": "Unlocks: cloud phone, call routing, call recording · Suits: teams whose must-have gates appear on this tier"
+          },
+          {
+            "label": "Premium",
+            "description": "Suits: teams whose must-have gates appear on this tier"
+          },
+          {
+            "label": "Advanced",
+            "description": "Suits: teams whose must-have gates appear on this tier"
+          }
+        ],
+        "calculatorHref": "/tools/business-communications-cost-calculator/",
+        "calculatorLabel": "Model category cost fit"
+      },
+      {
+        "id": "scen-vonage-plans-3",
+        "type": "step",
+        "heading": "Vonage cost scenarios to pressure-test",
+        "body": "Price Vonage against how you actually buy seats and unlocks — not against a competitor's homepage headline.",
+        "stepNumber": 1,
+        "scenarios": [
+          {
+            "title": "Lean team / free-or-trial first",
+            "body": "Scope a time-boxed pilot; No free/trial flag confirmed in SG data — budget a paid pilot."
+          },
+          {
+            "title": "Growing team with gated workflows",
+            "body": "Map must-have workflows (cloud phone, call routing, call recording) to plan unlocks before expanding seats."
+          },
+          {
+            "title": "Hidden / extra cost watch",
+            "body": "Budget risk: Taxes and regulatory fees sit on top of published per-line floors. Also check add-ons, overages, and admin time outside the sticker plan."
+          }
+        ]
+      },
+      {
+        "id": "value-vonage-plans-4",
+        "type": "decision-framework",
+        "title": "Vonage value rule",
+        "steps": [
+          {
+            "id": "v-1",
+            "label": "Pay up when SMB and mid-market teams wanting published per-line VoIP with SMS requires a paid unlock you will use weekly"
+          },
+          {
+            "id": "v-2",
+            "label": "Do not overbuy if this limitation dominates: Taxes and regulatory fees sit on top of published per-line floors"
+          },
+          {
+            "id": "v-3",
+            "label": "Side-by-side cost with Nextiva on the same seat count"
+          }
+        ]
+      },
+      {
+        "id": "lim-vonage-plans-5",
+        "type": "mistakes",
+        "title": "Vonage cost mistakes to avoid",
+        "items": [
+          {
+            "title": "Cost trap 1",
+            "body": "Taxes and regulatory fees sit on top of published per-line floors"
+          },
+          {
+            "title": "Cost trap 2",
+            "body": "Call recording and deeper CRM land on Advanced / Premium packaging"
+          },
+          {
+            "title": "Cost trap 3",
+            "body": "No power dialer — not a high-volume outbound dialer product"
+          },
+          {
+            "title": "Cost trap 4",
+            "body": "AI packaging is thin versus Dialpad/OpenPhone/Talkdesk peers"
+          },
+          {
+            "title": "Cost trap 5",
+            "body": "Contact Center is a separate product line, not included in VBC Mobile"
+          }
+        ]
+      },
+      {
+        "id": "alts-vonage-plans-6",
+        "type": "product-shortlist",
+        "title": "Cheaper or clearer alternatives to pressure-test",
+        "body": "Compare total cost of ownership vs Vonage on identical constraints.",
+        "productSlugs": [
+          "nextiva",
+          "openphone",
+          "callhippo",
+          "ooma"
+        ],
+        "disclaimer": "Catalogue peers only — not commission-ranked."
+      },
+      {
+        "id": "sel-vonage-plans-7",
+        "type": "selection-checklist",
+        "title": "Vonage pricing checklist",
+        "dimensions": [
+          {
+            "id": "gates",
+            "label": "Plan gates you must unlock",
+            "options": [
+              "call recording (Mobile, Premium, Advanced)",
+              "video meetings (Mobile, Premium, Advanced)",
+              "CRM CTI (Mobile, Premium, Advanced)"
+            ]
+          },
+          {
+            "id": "trial",
+            "label": "Trial / free proof",
+            "options": [
+              "Paid pilot scoped",
+              "Procurement path clear",
+              "No free/trial in SG data"
+            ]
+          },
+          {
+            "id": "tco",
+            "label": "TCO extras",
+            "options": [
+              "Add-ons checked",
+              "Admin time budgeted",
+              "Migration cost noted"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "cta-vonage-plans-8",
+        "type": "interactive-cta",
+        "title": "Model business-communications spend with Vonage in mind",
+        "body": "Use researched plan structure for Vonage alongside category cost modelling.",
+        "href": "/tools/business-communications-cost-calculator/",
+        "ctaLabel": "Open calculator",
+        "variant": "calculator"
+      }
+    ],
+    "checklist": [
+      {
+        "id": "enrich-chk-0",
+        "label": "List must-have unlocks before picking a Vonage tier",
+        "order": 0
+      },
+      {
+        "id": "enrich-chk-1",
+        "label": "No free/trial flag confirmed in SG data — budget a paid pilot",
+        "order": 1
+      },
+      {
+        "id": "enrich-chk-2",
+        "label": "Price in this risk: Taxes and regulatory fees sit on top of published per-line floors",
+        "order": 2
+      },
+      {
+        "id": "enrich-chk-3",
+        "label": "Compare seat TCO with Nextiva",
+        "order": 3
+      }
+    ],
+    "nextAction": {
+      "contentId": "tool:finder:business-communications",
+      "label": "Open Finder shortlist"
+    }
+  },
+  "notes": [
+    "Cost guide: real plan structure, free/trial, TCO tradeoffs — never invent prices.",
+    "Type-specific skeleton: COST_GUIDE"
+  ]
+}

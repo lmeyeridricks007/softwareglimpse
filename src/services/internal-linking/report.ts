@@ -137,12 +137,19 @@ export function buildInternalLinkingReportData(): InternalLinkingReportData {
   }
 
   const thinCategories = categoryHubCoverage
-    .filter(
-      (c) =>
+    .filter((c) => {
+      const cat = getCategoryBySlug(c.category);
+      // Pre-launch / IMPROVE-only categories are not "thin hub" defects yet —
+      // mesh strengthens when the category is indexable and guides promote.
+      if (!cat || !isEntityIndexable({ kind: "category", entity: cat })) {
+        return false;
+      }
+      return (
         c.childEdges < 3 ||
         c.guideNextStepCoverage < 0.7 ||
-        c.guideParentCoverage < 0.9,
-    )
+        c.guideParentCoverage < 0.9
+      );
+    })
     .map(
       (c) =>
         `Strengthen ${c.category} hub mesh (edges=${c.childEdges}, next=${(c.guideNextStepCoverage * 100).toFixed(0)}%, parent=${(c.guideParentCoverage * 100).toFixed(0)}%, guides=${c.guideCount})`,

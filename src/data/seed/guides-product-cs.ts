@@ -1,4 +1,4 @@
-import type { GuidePage } from "@/domain";
+import type { GuidePageInput } from "@/domain";
 import type { z } from "zod";
 import type { GuideContentBlockSchema } from "@/domain";
 import { tier7CsGuideScheduledAt } from "@/data/config/publishing/tier-7-cs-short-guides-launch-2026-11-01";
@@ -462,7 +462,7 @@ function worthItBlocks(p: CsProductGuideInput): GuideBlockInput[] {
 function csGuide(args: {
   kind: "what-is" | "worth-it";
   product: CsProductGuideInput;
-}): GuidePage {
+}): GuidePageInput {
   const { product, kind } = args;
   const slug =
     kind === "what-is"
@@ -529,7 +529,7 @@ function csGuide(args: {
     ],
     blocks: (kind === "what-is"
       ? whatIsBlocks(product)
-      : worthItBlocks(product)) as GuidePage["blocks"],
+      : worthItBlocks(product)) as GuidePageInput["blocks"],
     checklist: [
       {
         id: "job-cluster",
@@ -582,7 +582,7 @@ function csGuide(args: {
 const LIVE_CHAT_AFFILIATE_SLUGS = new Set(["tidio", "freshchat"]);
 const HELPDESK_AFFILIATE_SLUGS = new Set(["freshdesk", "freshservice"]);
 
-export const csProductGuides: GuidePage[] = CS_PRODUCTS.filter(
+export const csProductGuides: GuidePageInput[] = CS_PRODUCTS.filter(
   (product) =>
     !LIVE_CHAT_AFFILIATE_SLUGS.has(product.slug) &&
     !HELPDESK_AFFILIATE_SLUGS.has(product.slug),

@@ -1,7 +1,7 @@
-import type { UseCaseHubProfile } from "@/domain";
+import type { UseCaseHubProfileInput } from "@/domain";
 
 type Depth = Pick<
-  UseCaseHubProfile,
+  UseCaseHubProfileInput,
   | "overview"
   | "whoThisIsFor"
   | "whatMattersIntro"

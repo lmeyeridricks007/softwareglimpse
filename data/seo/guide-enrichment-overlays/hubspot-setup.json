@@ -1,0 +1,194 @@
+{
+  "slug": "hubspot-setup",
+  "enrichmentType": "IMPLEMENTATION_GUIDE",
+  "updatedAt": "2026-09-07T18:30:32.667Z",
+  "uniqueValueAdded": [
+    "implementation_workflow",
+    "scenario_analysis",
+    "decision_framework",
+    "limitations_evidence",
+    "pricing_comparison",
+    "sg_original_data",
+    "buyer_checklist"
+  ],
+  "patch": {
+    "summary": "HubSpot implementation guide: day-zero sequence, pilot rules, plan gates, and cutover checks from SoftwareGlimpse research — not generic CRM setup filler.",
+    "blocks": [
+      {
+        "id": "da-hubspot-setup-1",
+        "type": "direct-answer",
+        "body": "Implement HubSpot by mapping current crm workflows to HubSpot objects, confirming plan gates for custom fields (Starter (Smart CRM / Customer Platform), Professional (Smart CRM / Customer Platform), Enterprise (Smart CRM / Customer Platform)), email sequences (Starter (Smart CRM / Customer Platform), Professional (Smart CRM / Customer Platform), Enterprise (Smart CRM / Customer Platform)), workflow automation (Starter (Smart CRM / Customer Platform), Professional (Smart CRM / Customer Platform), Enterprise (Smart CRM / Customer Platform)), piloting one team, then cutting over integrations (Gmail, Slack) after data checks.",
+        "bullets": [
+          "Start with: contact management",
+          "Gate check: custom fields (Starter (Smart CRM / Customer Platform), Professional (Smart CRM / Customer Platform), Enterprise (Smart CRM / Customer Platform))",
+          "Integrate after: data quality pass on Gmail"
+        ]
+      },
+      {
+        "id": "impl-hubspot-setup-2",
+        "type": "step",
+        "heading": "HubSpot day-zero to steady-state sequence",
+        "body": "Treat HubSpot setup as a controlled rollout — not a weekend dump of CSV files.",
+        "stepNumber": 1,
+        "scenarios": [
+          {
+            "title": "Day zero — objects and owners",
+            "body": "Define owners for contact management, lead management, pipeline management before inviting the whole org."
+          },
+          {
+            "title": "SMB pilot",
+            "body": "One pipeline / one team proves SMB and mid-market teams wanting free CRM now and room to expand into hubs later before company-wide seats."
+          },
+          {
+            "title": "Cutover",
+            "body": "Freeze legacy writes briefly; validate Gmail and Slack before reopen."
+          }
+        ]
+      },
+      {
+        "id": "df-hubspot-setup-3",
+        "type": "decision-framework",
+        "title": "HubSpot implementation go / no-go",
+        "steps": [
+          {
+            "id": "i-1",
+            "label": "Go when plan unlocks cover custom fields (Starter (Smart CRM / Customer Platform), Professional (Smart CRM / Customer Platform), Enterprise (Smart CRM / Customer Platform))"
+          },
+          {
+            "id": "i-2",
+            "label": "Pause if this limitation blocks ops: Smart CRM / Customer Platform seats and Sales Hub seats are separate ladders with different list prices; buying 'HubSpot' often means mixing Free CRM, Smart CRM seats, and hub seats."
+          },
+          {
+            "id": "i-3",
+            "label": "Do not expand seats until contact management is green"
+          }
+        ]
+      },
+      {
+        "id": "mist-hubspot-setup-4",
+        "type": "mistakes",
+        "title": "HubSpot implementation mistakes",
+        "items": [
+          {
+            "title": "Mistake 1",
+            "body": "Smart CRM / Customer Platform seats and Sales Hub seats are separate ladders with different list prices; buying 'HubSpot' often means mixing Free CRM, Smart CRM seats, and hub seats."
+          },
+          {
+            "title": "Mistake 2",
+            "body": "Sales Hub Professional starts at list pricenth per seat on the Product & Services Catalog and the Sales product page (re-checked 2026-08-18). HubSpot’s Sales pricing page also shows list price billed annually vs list price monthly, plus required Professional onboarding (list price). Starter marketing prices show new-customer discounts (*)."
+          },
+          {
+            "title": "Mistake 3",
+            "body": "Full GTM stack (Marketing Hub, Service Hub, etc.) is sold as additional hubs with their own seat/contact pricing — not included in Free CRM alone."
+          },
+          {
+            "title": "Mistake 4",
+            "body": "Administration and packaging complexity rise sharply once multiple Professional/Enterprise hubs and seat types (Core vs Sales seats) are combined."
+          },
+          {
+            "title": "Big-bang invite",
+            "body": "Inviting every user before object design creates junk data that is expensive to unwind."
+          }
+        ]
+      },
+      {
+        "id": "cost-hubspot-setup-5",
+        "type": "cost-breakdown",
+        "title": "HubSpot plan gates that affect rollout",
+        "body": "Implementation fails when unlocks needed for go-live sit on a higher tier than budgeted.",
+        "lines": [
+          {
+            "label": "Free CRM",
+            "description": "Free plan · Unlocks: contact management, lead management, pipeline management · Suits: explore before committing seats"
+          },
+          {
+            "label": "Starter (Smart CRM / Customer Platform)",
+            "description": "14-day trial · Unlocks: custom fields, email sequences, workflow automation · Suits: teams whose must-have gates appear on this tier"
+          },
+          {
+            "label": "Professional (Smart CRM / Customer Platform)",
+            "description": "14-day trial · Unlocks: forecasting, lead scoring · Suits: teams whose must-have gates appear on this tier"
+          },
+          {
+            "label": "Enterprise (Smart CRM / Customer Platform)",
+            "description": "14-day trial · Unlocks: sso, role permissions · Suits: teams whose must-have gates appear on this tier"
+          }
+        ]
+      },
+      {
+        "id": "sel-hubspot-setup-6",
+        "type": "selection-checklist",
+        "title": "HubSpot implementation checklist",
+        "dimensions": [
+          {
+            "id": "prep",
+            "label": "Prep",
+            "options": [
+              "Object model drafted",
+              "Owners named",
+              "Legacy freeze window set"
+            ]
+          },
+          {
+            "id": "pilot",
+            "label": "Pilot",
+            "options": [
+              "contact management",
+              "Junk-data rules set",
+              "Support path clear"
+            ]
+          },
+          {
+            "id": "scale",
+            "label": "Scale",
+            "options": [
+              "Gmail",
+              "Seat expansion criteria written",
+              "Rollback plan noted"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "cta-hubspot-setup-7",
+        "type": "interactive-cta",
+        "title": "Validate crm fit before a deep HubSpot rollout",
+        "body": "If HubSpot fails constraint fit, stop implementation early.",
+        "href": "/tools/crm-finder/",
+        "ctaLabel": "Open Finder",
+        "variant": "finder"
+      }
+    ],
+    "checklist": [
+      {
+        "id": "enrich-chk-0",
+        "label": "Draft HubSpot object owners before invites",
+        "order": 0
+      },
+      {
+        "id": "enrich-chk-1",
+        "label": "Confirm plan unlocks for go-live features",
+        "order": 1
+      },
+      {
+        "id": "enrich-chk-2",
+        "label": "Pilot one team on contact management",
+        "order": 2
+      },
+      {
+        "id": "enrich-chk-3",
+        "label": "If blocked, evaluate Pipedrive before sunk-cost expansion",
+        "order": 3
+      }
+    ],
+    "nextAction": {
+      "contentId": "tool:finder:crm",
+      "label": "Open Finder shortlist"
+    }
+  },
+  "notes": [
+    "Omit unsupported: testing_evidence",
+    "Implementation: workflow, constraints, mistakes, checklist.",
+    "Type-specific skeleton: IMPLEMENTATION_GUIDE"
+  ]
+}

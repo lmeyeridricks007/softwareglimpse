@@ -148,7 +148,7 @@ export const businessTypesSeed: BusinessTypeInput[] = [
   },
 ];
 
-function useCase(
+function defineUseCase(
   input: Omit<UseCaseInput, "metadata" | "seo"> &
     Partial<Pick<UseCaseInput, "metadata" | "seo">>,
 ): UseCaseInput {
@@ -176,7 +176,7 @@ function useCase(
 
 /** CRM (+ related) use-case hubs — editorial gate approved. */
 export const useCasesSeed: UseCaseInput[] = [
-  useCase({
+  defineUseCase({
     id: "uc-pipeline-management",
     slug: "pipeline-management",
     name: "Pipeline management",
@@ -186,7 +186,7 @@ export const useCasesSeed: UseCaseInput[] = [
       "Pipeline management use cases cover deal stages, activity follow-ups, and visibility for sales teams that need a shared view of opportunities — not a private spreadsheet.",
     categorySlugs: ["crm"],
   }),
-  useCase({
+  defineUseCase({
     id: "uc-lead-management",
     slug: "lead-management",
     name: "Lead management",
@@ -194,7 +194,7 @@ export const useCasesSeed: UseCaseInput[] = [
       "Capture, qualify, and route leads before they become pipeline deals.",
     categorySlugs: ["crm", "sales-intelligence"],
   }),
-  useCase({
+  defineUseCase({
     id: "uc-contact-management",
     slug: "contact-management",
     name: "Contact management",
@@ -202,7 +202,7 @@ export const useCasesSeed: UseCaseInput[] = [
       "Keep people, companies, and interaction history in one searchable system.",
     categorySlugs: ["crm"],
   }),
-  useCase({
+  defineUseCase({
     id: "uc-sales-automation",
     slug: "sales-automation",
     name: "Sales automation",
@@ -210,7 +210,7 @@ export const useCasesSeed: UseCaseInput[] = [
       "Reduce repetitive follow-ups with workflows that still need human judgment.",
     categorySlugs: ["crm"],
   }),
-  useCase({
+  defineUseCase({
     id: "uc-email-outreach",
     slug: "email-outreach",
     name: "Email outreach",
@@ -218,7 +218,7 @@ export const useCasesSeed: UseCaseInput[] = [
       "Connect sales email sequences and tracking to CRM records.",
     categorySlugs: ["crm", "sales-intelligence"],
   }),
-  useCase({
+  defineUseCase({
     id: "uc-prospecting",
     slug: "prospecting",
     name: "Prospecting",
@@ -226,7 +226,7 @@ export const useCasesSeed: UseCaseInput[] = [
       "Find and prioritize accounts and contacts before the first conversation.",
     categorySlugs: ["sales-intelligence"],
   }),
-  useCase({
+  defineUseCase({
     id: "uc-relationship-management",
     slug: "relationship-management",
     name: "Relationship management",
@@ -234,7 +234,7 @@ export const useCasesSeed: UseCaseInput[] = [
       "Maintain ongoing customer context beyond the first closed deal.",
     categorySlugs: ["crm"],
   }),
-  useCase({
+  defineUseCase({
     id: "uc-sales-engagement",
     slug: "sales-engagement",
     name: "Sales engagement",
@@ -242,7 +242,7 @@ export const useCasesSeed: UseCaseInput[] = [
       "Coordinate calling, messaging, and cadence tools around CRM records.",
     categorySlugs: ["crm", "sales-intelligence"],
   }),
-  useCase({
+  defineUseCase({
     id: "uc-reporting",
     slug: "reporting",
     name: "Reporting",
@@ -250,7 +250,7 @@ export const useCasesSeed: UseCaseInput[] = [
       "Forecast and pipeline reporting managers can trust without spreadsheet rebuilds.",
     categorySlugs: ["crm"],
   }),
-  useCase({
+  defineUseCase({
     id: "uc-account-management",
     slug: "account-management",
     name: "Account management",
@@ -260,7 +260,7 @@ export const useCasesSeed: UseCaseInput[] = [
       "Account management use cases cover ongoing customer ownership after the first close — stakeholder maps, renewal tracking, expansion pipeline, and handoffs between sales and success.",
     categorySlugs: ["crm"],
   }),
-  useCase({
+  defineUseCase({
     id: "uc-outbound-sales",
     slug: "outbound-sales",
     name: "Outbound sales",
@@ -270,7 +270,7 @@ export const useCasesSeed: UseCaseInput[] = [
       "Outbound sales use cases focus on researching accounts, sequencing outreach, logging replies, and converting interested prospects into owned pipeline — without losing activity in personal inboxes.",
     categorySlugs: ["crm", "sales-intelligence"],
   }),
-  useCase({
+  defineUseCase({
     id: "uc-inbound-sales",
     slug: "inbound-sales",
     name: "Inbound sales",
@@ -280,7 +280,7 @@ export const useCasesSeed: UseCaseInput[] = [
       "Inbound sales use cases cover form and demo request capture, SLA-based assignment, qualification stages, and converting interested leads into owned opportunities.",
     categorySlugs: ["crm"],
   }),
-  useCase({
+  defineUseCase({
     id: "uc-field-sales",
     slug: "field-sales",
     name: "Field sales",
@@ -290,7 +290,7 @@ export const useCasesSeed: UseCaseInput[] = [
       "Field sales use cases cover territory accounts, on-site visits, offline-friendly logging, and next-step discipline so managers see progress without hallway updates.",
     categorySlugs: ["crm"],
   }),
-  useCase({
+  defineUseCase({
     id: "uc-high-volume-lead-management",
     slug: "high-volume-lead-management",
     name: "High-volume lead management",
@@ -300,7 +300,7 @@ export const useCasesSeed: UseCaseInput[] = [
       "High-volume lead management use cases emphasize fast capture, routing rules, queue visibility, duplicate control, and conversion hygiene when volume exceeds a handful of leads per day.",
     categorySlugs: ["crm"],
   }),
-  useCase({
+  defineUseCase({
     id: "uc-complex-sales-processes",
     slug: "complex-sales-processes",
     name: "Complex sales processes",
@@ -310,7 +310,7 @@ export const useCasesSeed: UseCaseInput[] = [
       "Complex sales process use cases cover longer cycles with multiple stakeholders, approval gates, multi-thread relationships, and handoffs that preserve context across the buying group.",
     categorySlugs: ["crm"],
   }),
-  useCase({
+  defineUseCase({
     id: "uc-customer-follow-up",
     slug: "customer-follow-up",
     name: "Customer follow-up",
@@ -320,7 +320,7 @@ export const useCasesSeed: UseCaseInput[] = [
       "Customer follow-up use cases focus on due dates, owned tasks, and activity history so promises after meetings, demos, and support moments actually happen.",
     categorySlugs: ["crm"],
   }),
-  useCase({
+  defineUseCase({
     id: "uc-sales-forecasting",
     slug: "sales-forecasting",
     name: "Sales forecasting",
@@ -331,7 +331,7 @@ export const useCasesSeed: UseCaseInput[] = [
     categorySlugs: ["crm"],
   }),
   // Email marketing content-candidate use cases (hub depth in use-case-hub/email-marketing-deep.ts)
-  useCase({
+  defineUseCase({
     id: "uc-newsletters",
     slug: "newsletters",
     name: "Newsletters",
@@ -348,7 +348,7 @@ export const useCasesSeed: UseCaseInput[] = [
         "How email marketing software supports newsletters — templates, cadence, list hygiene, and analytics for permission-based sends.",
     },
   }),
-  useCase({
+  defineUseCase({
     id: "uc-marketing-automation",
     slug: "marketing-automation",
     name: "Marketing automation",
@@ -365,7 +365,7 @@ export const useCasesSeed: UseCaseInput[] = [
         "How ESPs support marketing automation — triggers, branching, plan limits, and journey analytics for opted-in subscribers.",
     },
   }),
-  useCase({
+  defineUseCase({
     id: "uc-ecommerce-email",
     slug: "ecommerce-email",
     name: "Ecommerce email",
@@ -382,7 +382,7 @@ export const useCasesSeed: UseCaseInput[] = [
         "How email marketing supports ecommerce — store sync, cart journeys, segmented promos, and deliverability at volume.",
     },
   }),
-  useCase({
+  defineUseCase({
     id: "uc-lead-nurturing",
     slug: "lead-nurturing",
     name: "Lead nurturing",
@@ -399,7 +399,7 @@ export const useCasesSeed: UseCaseInput[] = [
         "How ESPs support lead nurturing — opt-in capture, drips, branching, and clean sales handoffs.",
     },
   }),
-  useCase({
+  defineUseCase({
     id: "uc-small-business-campaigns",
     slug: "small-business-campaigns",
     name: "Small-business campaigns",
@@ -418,7 +418,7 @@ export const useCasesSeed: UseCaseInput[] = [
   }),
   // Business communications content-candidate use cases
   // (hub depth in use-case-hub/business-communications-deep.ts)
-  useCase({
+  defineUseCase({
     id: "uc-business-phone",
     slug: "business-phone",
     name: "Business phone",
@@ -435,7 +435,7 @@ export const useCasesSeed: UseCaseInput[] = [
         "How cloud phone software supports business calling — numbers, softphones, shared answering, and call logging.",
     },
   }),
-  useCase({
+  defineUseCase({
     id: "uc-sales-calling",
     slug: "sales-calling",
     name: "Sales calling & dialing",
@@ -452,7 +452,7 @@ export const useCasesSeed: UseCaseInput[] = [
         "How business communications software supports outbound sales calling — dialers, dispositions, and CRM logging.",
     },
   }),
-  useCase({
+  defineUseCase({
     id: "uc-customer-messaging",
     slug: "customer-messaging",
     name: "Customer messaging",
@@ -469,7 +469,7 @@ export const useCasesSeed: UseCaseInput[] = [
         "How customer messaging platforms support shared inboxes, assignment, templates, and conversation history.",
     },
   }),
-  useCase({
+  defineUseCase({
     id: "uc-whatsapp-support",
     slug: "whatsapp-support",
     name: "WhatsApp support & sales",
@@ -486,7 +486,7 @@ export const useCasesSeed: UseCaseInput[] = [
         "How WhatsApp Business platforms support customer support and sales — shared inbox, templates, broadcasts, and message fees.",
     },
   }),
-  useCase({
+  defineUseCase({
     id: "uc-team-communication",
     slug: "team-communication",
     name: "Team communication",
@@ -503,7 +503,7 @@ export const useCasesSeed: UseCaseInput[] = [
         "How team messaging software supports internal coordination — channels, multi-site teams, and admin control.",
     },
   }),
-  useCase({
+  defineUseCase({
     id: "uc-contact-center",
     slug: "contact-center",
     name: "Contact center & queues",
@@ -522,7 +522,7 @@ export const useCasesSeed: UseCaseInput[] = [
   }),
   // Project management content-candidate use cases
   // (hub depth in use-case-hub/project-management-deep.ts)
-  useCase({
+  defineUseCase({
     id: "uc-work-management",
     slug: "work-management",
     name: "Work management / Work OS",
@@ -539,7 +539,7 @@ export const useCasesSeed: UseCaseInput[] = [
         "How work OS software supports shared boards, timelines, automations, and delivery visibility.",
     },
   }),
-  useCase({
+  defineUseCase({
     id: "uc-project-tracking",
     slug: "project-tracking",
     name: "Project & task tracking",
@@ -556,7 +556,7 @@ export const useCasesSeed: UseCaseInput[] = [
         "How project tracking software supports owned tasks, due dates, and reviewable status.",
     },
   }),
-  useCase({
+  defineUseCase({
     id: "uc-timeline-reporting",
     slug: "timeline-reporting",
     name: "Timeline & executive reporting",
@@ -573,7 +573,7 @@ export const useCasesSeed: UseCaseInput[] = [
         "How timeline and Gantt tools support milestone visibility for executives and clients.",
     },
   }),
-  useCase({
+  defineUseCase({
     id: "uc-team-collaboration-work",
     slug: "team-collaboration-work",
     name: "Team collaboration on work",
@@ -590,7 +590,7 @@ export const useCasesSeed: UseCaseInput[] = [
         "How collaboration features keep delivery context on work items instead of private chat.",
     },
   }),
-  useCase({
+  defineUseCase({
     id: "uc-resource-planning",
     slug: "resource-planning",
     name: "Resource & capacity planning",
@@ -607,7 +607,7 @@ export const useCasesSeed: UseCaseInput[] = [
         "How workload and resource views help managers rebalance capacity before deadlines slip.",
     },
   }),
-  useCase({
+  defineUseCase({
     id: "uc-document-productivity",
     slug: "document-productivity",
     name: "Document / PDF productivity",
@@ -624,7 +624,7 @@ export const useCasesSeed: UseCaseInput[] = [
         "How PDF and document tools support edit, sign, and redact workflows in productivity stacks.",
     },
   }),
-  useCase({
+  defineUseCase({
     id: "uc-remote-support-access",
     slug: "remote-support-access",
     name: "Remote support & access",
@@ -641,7 +641,7 @@ export const useCasesSeed: UseCaseInput[] = [
         "How remote desktop and access tools support secure support sessions and unattended access.",
     },
   }),
-  useCase({
+  defineUseCase({
     id: "uc-desktop-productivity",
     slug: "desktop-productivity",
     name: "Desktop productivity workspace",
@@ -658,7 +658,7 @@ export const useCasesSeed: UseCaseInput[] = [
         "How desktop workspace organizers group web apps into focus contexts beside a work OS.",
     },
   }),
-  useCase({
+  defineUseCase({
     id: "uc-recruiting-ats",
     slug: "recruiting-ats",
     name: "Recruiting / ATS",
@@ -675,7 +675,7 @@ export const useCasesSeed: UseCaseInput[] = [
         "How ATS platforms support hiring pipelines, career sites, and interview workflows.",
     },
   }),
-  useCase({
+  defineUseCase({
     id: "uc-core-hris",
     slug: "core-hris",
     name: "Core HRIS",
@@ -692,7 +692,7 @@ export const useCasesSeed: UseCaseInput[] = [
         "How HRIS platforms hold employee records, org charts, PTO, and onboarding as the system of record.",
     },
   }),
-  useCase({
+  defineUseCase({
     id: "uc-payroll-benefits",
     slug: "payroll-benefits",
     name: "Payroll & benefits",
@@ -709,7 +709,7 @@ export const useCasesSeed: UseCaseInput[] = [
         "How payroll platforms run pay, tax filings, and benefits administration for HR buyers.",
     },
   }),
-  useCase({
+  defineUseCase({
     id: "uc-people-platform",
     slug: "people-platform",
     name: "People platform",
@@ -726,7 +726,7 @@ export const useCasesSeed: UseCaseInput[] = [
         "How unified people platforms combine HR, payroll, and IT workflows on one employee record.",
     },
   }),
-  useCase({
+  defineUseCase({
     id: "uc-enterprise-hcm",
     slug: "enterprise-hcm",
     name: "Enterprise HCM",
@@ -743,7 +743,7 @@ export const useCasesSeed: UseCaseInput[] = [
         "How enterprise HCM suites cover HR, payroll, talent, and workforce operations for large organisations.",
     },
   }),
-  useCase({
+  defineUseCase({
     id: "uc-workforce-scheduling",
     slug: "workforce-scheduling",
     name: "Workforce scheduling",
@@ -760,7 +760,7 @@ export const useCasesSeed: UseCaseInput[] = [
         "How workforce apps schedule shifts and publish calendars for deskless teams.",
     },
   }),
-  useCase({
+  defineUseCase({
     id: "uc-time-attendance",
     slug: "time-attendance",
     name: "Time & attendance",
@@ -777,7 +777,7 @@ export const useCasesSeed: UseCaseInput[] = [
         "How time & attendance platforms handle clock-in, timesheets, and attendance policies.",
     },
   }),
-  useCase({
+  defineUseCase({
     id: "uc-employee-training",
     slug: "employee-training",
     name: "Employee training",
@@ -794,7 +794,7 @@ export const useCasesSeed: UseCaseInput[] = [
         "How employee training platforms deliver role-based paths and completion tracking.",
     },
   }),
-  useCase({
+  defineUseCase({
     id: "uc-sop-documentation",
     slug: "sop-documentation",
     name: "SOP documentation",
@@ -811,7 +811,7 @@ export const useCasesSeed: UseCaseInput[] = [
         "How SOP platforms capture playbooks and process knowledge for growing teams.",
     },
   }),
-  useCase({
+  defineUseCase({
     id: "uc-frontline-ops",
     slug: "frontline-ops",
     name: "Frontline operations",
@@ -828,7 +828,7 @@ export const useCasesSeed: UseCaseInput[] = [
         "How frontline workforce apps coordinate scheduling, communications, and tasks.",
     },
   }),
-  useCase({
+  defineUseCase({
     id: "uc-online-storefront",
     slug: "online-storefront",
     name: "Online storefront",
@@ -845,7 +845,7 @@ export const useCasesSeed: UseCaseInput[] = [
         "How ecommerce platforms help merchants launch branded online stores with catalog and checkout.",
     },
   }),
-  useCase({
+  defineUseCase({
     id: "uc-omnichannel-retail",
     slug: "omnichannel-retail",
     name: "Omnichannel retail",
@@ -862,7 +862,7 @@ export const useCasesSeed: UseCaseInput[] = [
         "How omnichannel commerce tools unify in-person POS with online storefronts.",
     },
   }),
-  useCase({
+  defineUseCase({
     id: "uc-catalog-management",
     slug: "catalog-management",
     name: "Catalog management",
@@ -879,7 +879,7 @@ export const useCasesSeed: UseCaseInput[] = [
         "How ecommerce platforms manage product catalogs, variants, and collections.",
     },
   }),
-  useCase({
+  defineUseCase({
     id: "uc-checkout-conversion",
     slug: "checkout-conversion",
     name: "Checkout & conversion",
@@ -896,7 +896,7 @@ export const useCasesSeed: UseCaseInput[] = [
         "How checkout and payment tooling improves conversion on ecommerce stores.",
     },
   }),
-  useCase({
+  defineUseCase({
     id: "uc-order-fulfillment",
     slug: "order-fulfillment",
     name: "Order fulfillment",
@@ -913,7 +913,7 @@ export const useCasesSeed: UseCaseInput[] = [
         "How ecommerce operations tools manage fulfillment, shipping, and returns.",
     },
   }),
-  useCase({
+  defineUseCase({
     id: "uc-dropshipping-sourcing",
     slug: "dropshipping-sourcing",
     name: "Dropshipping sourcing",
@@ -930,7 +930,7 @@ export const useCasesSeed: UseCaseInput[] = [
         "How dropshipping apps connect storefronts to supplier catalogs and automate fulfillment routing.",
     },
   }),
-  useCase({
+  defineUseCase({
     id: "uc-wholesale-b2b",
     slug: "wholesale-b2b",
     name: "Wholesale / B2B",
@@ -947,7 +947,7 @@ export const useCasesSeed: UseCaseInput[] = [
         "How ecommerce platforms support wholesale buyers, price lists, and B2B checkout.",
     },
   }),
-  useCase({
+  defineUseCase({
     id: "uc-website-builder-commerce",
     slug: "website-builder-commerce",
     name: "Website-builder commerce",
@@ -964,7 +964,7 @@ export const useCasesSeed: UseCaseInput[] = [
         "How website builders with integrated stores help SMBs sell without a separate commerce OS.",
     },
   }),
-  useCase({
+  defineUseCase({
     id: "uc-helpdesk-ticketing",
     slug: "helpdesk-ticketing",
     name: "Helpdesk / ticketing",
@@ -981,7 +981,7 @@ export const useCasesSeed: UseCaseInput[] = [
         "How helpdesk platforms queue, assign, and resolve customer tickets with SLAs and macros.",
     },
   }),
-  useCase({
+  defineUseCase({
     id: "uc-live-chat-support",
     slug: "live-chat-support",
     name: "Live chat support",
@@ -998,7 +998,7 @@ export const useCasesSeed: UseCaseInput[] = [
         "How live chat platforms route website visitors to agents with visitor context.",
     },
   }),
-  useCase({
+  defineUseCase({
     id: "uc-ecommerce-support",
     slug: "ecommerce-support",
     name: "Ecommerce support",
@@ -1015,7 +1015,7 @@ export const useCasesSeed: UseCaseInput[] = [
         "How ecommerce helpdesks put order, refund, and shipping context in the agent inbox.",
     },
   }),
-  useCase({
+  defineUseCase({
     id: "uc-knowledge-base-self-service",
     slug: "knowledge-base-self-service",
     name: "Knowledge base / self-service",
@@ -1032,7 +1032,7 @@ export const useCasesSeed: UseCaseInput[] = [
         "How help centers and customer portals deflect tickets with searchable articles.",
     },
   }),
-  useCase({
+  defineUseCase({
     id: "uc-omnichannel-support",
     slug: "omnichannel-support",
     name: "Omnichannel support",
@@ -1049,7 +1049,7 @@ export const useCasesSeed: UseCaseInput[] = [
         "How omnichannel helpdesks unify email, chat, social, and messaging for agents.",
     },
   }),
-  useCase({
+  defineUseCase({
     id: "uc-itsm-service-desk",
     slug: "itsm-service-desk",
     name: "ITSM / service desk",
@@ -1066,7 +1066,7 @@ export const useCasesSeed: UseCaseInput[] = [
         "How ITSM platforms run incidents, changes, and assets as a service desk.",
     },
   }),
-  useCase({
+  defineUseCase({
     id: "uc-ai-customer-service",
     slug: "ai-customer-service",
     name: "AI customer service",
@@ -1083,7 +1083,7 @@ export const useCasesSeed: UseCaseInput[] = [
         "How AI agents and copilots deflect tickets and assist human support teams.",
     },
   }),
-  useCase({
+  defineUseCase({
     id: "uc-expense-management",
     slug: "expense-management",
     name: "Expense management",
@@ -1100,7 +1100,7 @@ export const useCasesSeed: UseCaseInput[] = [
         "How expense tools capture receipts, enforce policy, and route reimbursements.",
     },
   }),
-  useCase({
+  defineUseCase({
     id: "uc-travel-expense",
     slug: "travel-expense",
     name: "Travel & expense (T&E)",
@@ -1117,7 +1117,7 @@ export const useCasesSeed: UseCaseInput[] = [
         "How T&E platforms manage corporate travel booking and expense policy.",
     },
   }),
-  useCase({
+  defineUseCase({
     id: "uc-bookkeeping-automation",
     slug: "bookkeeping-automation",
     name: "Bookkeeping automation",
@@ -1134,7 +1134,7 @@ export const useCasesSeed: UseCaseInput[] = [
         "How bookkeeping tools automate receipt capture and categorisation.",
     },
   }),
-  useCase({
+  defineUseCase({
     id: "uc-inventory-erp",
     slug: "inventory-erp",
     name: "Inventory & manufacturing ERP",
@@ -1151,7 +1151,7 @@ export const useCasesSeed: UseCaseInput[] = [
         "How MRP/ERP tools plan production, inventory, and shop-floor work.",
     },
   }),
-  useCase({
+  defineUseCase({
     id: "uc-llm-assistant",
     slug: "llm-assistant",
     name: "LLM assistant",
@@ -1168,7 +1168,7 @@ export const useCasesSeed: UseCaseInput[] = [
         "How general-purpose LLM assistants support research, drafting, and coding help.",
     },
   }),
-  useCase({
+  defineUseCase({
     id: "uc-ai-writing",
     slug: "ai-writing",
     name: "AI writing",
@@ -1183,7 +1183,7 @@ export const useCasesSeed: UseCaseInput[] = [
         "How AI writing assistants help paraphrase, polish, and summarise text.",
     },
   }),
-  useCase({
+  defineUseCase({
     id: "uc-paraphrasing",
     slug: "paraphrasing",
     name: "Paraphrasing & rewriting",
@@ -1198,7 +1198,7 @@ export const useCasesSeed: UseCaseInput[] = [
         "How paraphrasing tools help rewrite and polish text with AI.",
     },
   }),
-  useCase({
+  defineUseCase({
     id: "uc-ai-copywriting",
     slug: "ai-copywriting",
     name: "AI copywriting",
@@ -1213,7 +1213,7 @@ export const useCasesSeed: UseCaseInput[] = [
         "How AI copywriting platforms draft marketing content and optimize for AI search.",
     },
   }),
-  useCase({
+  defineUseCase({
     id: "uc-ai-voice",
     slug: "ai-voice",
     name: "AI voice / TTS",
@@ -1228,7 +1228,7 @@ export const useCasesSeed: UseCaseInput[] = [
         "How AI voice platforms generate speech, clones, and dubbed audio.",
     },
   }),
-  useCase({
+  defineUseCase({
     id: "uc-ai-presentations",
     slug: "ai-presentations",
     name: "AI presentations",
@@ -1243,7 +1243,7 @@ export const useCasesSeed: UseCaseInput[] = [
         "How AI presentation tools turn prompts into slides and documents.",
     },
   }),
-  useCase({
+  defineUseCase({
     id: "uc-ai-website-builder",
     slug: "ai-website-builder",
     name: "AI website builder",
@@ -1258,7 +1258,7 @@ export const useCasesSeed: UseCaseInput[] = [
         "How AI website builders generate marketing sites from prompts.",
     },
   }),
-  useCase({
+  defineUseCase({
     id: "uc-ai-app-development",
     slug: "ai-app-development",
     name: "AI app development",
@@ -1273,7 +1273,7 @@ export const useCasesSeed: UseCaseInput[] = [
         "How AI app development platforms generate lightweight apps from prompts.",
     },
   }),
-  useCase({
+  defineUseCase({
     id: "uc-ai-ad-creative",
     slug: "ai-ad-creative",
     name: "AI ad creative",
@@ -1288,7 +1288,7 @@ export const useCasesSeed: UseCaseInput[] = [
         "How AI ad creative tools generate images and copy for paid campaigns.",
     },
   }),
-  useCase({
+  defineUseCase({
     id: "uc-ai-agents",
     slug: "ai-agents",
     name: "AI agents / builders",
@@ -1303,7 +1303,7 @@ export const useCasesSeed: UseCaseInput[] = [
         "How no-code AI agent builders let teams ship custom assistants and apps.",
     },
   }),
-  useCase({
+  defineUseCase({
     id: "uc-ai-image",
     slug: "ai-image",
     name: "AI image generation",
@@ -1318,7 +1318,7 @@ export const useCasesSeed: UseCaseInput[] = [
         "How AI image generators produce stills for creative, brand, and marketing work.",
     },
   }),
-  useCase({
+  defineUseCase({
     id: "uc-ai-video",
     slug: "ai-video",
     name: "AI video generation",
@@ -1333,7 +1333,7 @@ export const useCasesSeed: UseCaseInput[] = [
         "How generative video studios turn prompts into clips and production drafts.",
     },
   }),
-  useCase({
+  defineUseCase({
     id: "uc-ai-code",
     slug: "ai-code",
     name: "AI coding assistants",
@@ -1348,7 +1348,7 @@ export const useCasesSeed: UseCaseInput[] = [
         "How AI coding assistants and AI-native IDEs help developers write and review code.",
     },
   }),
-  useCase({
+  defineUseCase({
     id: "uc-ai-meeting",
     slug: "ai-meeting",
     name: "AI meeting notes",
@@ -1363,7 +1363,7 @@ export const useCasesSeed: UseCaseInput[] = [
         "How AI meeting tools capture transcripts, summaries, and action items.",
     },
   }),
-  useCase({
+  defineUseCase({
     id: "uc-observability-monitoring",
     slug: "observability-monitoring",
     name: "Observability & monitoring",
@@ -1378,7 +1378,7 @@ export const useCasesSeed: UseCaseInput[] = [
         "How observability platforms monitor infrastructure, apps, and logs.",
     },
   }),
-  useCase({
+  defineUseCase({
     id: "uc-source-control-devops",
     slug: "source-control-devops",
     name: "Source control & DevOps",
@@ -1393,7 +1393,7 @@ export const useCasesSeed: UseCaseInput[] = [
         "How source-control platforms host repos, reviews, and CI/CD automation.",
     },
   }),
-  useCase({
+  defineUseCase({
     id: "uc-hosting-operations",
     slug: "hosting-operations",
     name: "Hosting operations",
@@ -1408,7 +1408,7 @@ export const useCasesSeed: UseCaseInput[] = [
         "How hosting control panels manage servers, domains, and sites.",
     },
   }),
-  useCase({
+  defineUseCase({
     id: "uc-web-data-collection",
     slug: "web-data-collection",
     name: "Web data collection",
@@ -1423,7 +1423,7 @@ export const useCasesSeed: UseCaseInput[] = [
         "How proxy and web-data platforms collect public web data at scale.",
     },
   }),
-  useCase({
+  defineUseCase({
     id: "uc-incident-oncall",
     slug: "incident-oncall",
     name: "Incident response / on-call",
@@ -1438,7 +1438,7 @@ export const useCasesSeed: UseCaseInput[] = [
         "How on-call platforms page responders and run incident-response workflows.",
     },
   }),
-  useCase({
+  defineUseCase({
     id: "uc-hosting-providers",
     slug: "hosting-providers",
     name: "Managed hosting providers",
@@ -1453,7 +1453,7 @@ export const useCasesSeed: UseCaseInput[] = [
         "How managed hosting platforms run WordPress and cloud apps without panel-licence math.",
     },
   }),
-  useCase({
+  defineUseCase({
     id: "uc-cloud-paas",
     slug: "cloud-paas",
     name: "Cloud PaaS / app platforms",
@@ -1468,7 +1468,7 @@ export const useCasesSeed: UseCaseInput[] = [
         "How Render-class and Fly.io-class platforms deploy apps without panel-licence or managed-WordPress math.",
     },
   }),
-  useCase({
+  defineUseCase({
     id: "uc-ai-automation",
     slug: "ai-automation",
     name: "AI workflow automation",
@@ -1690,7 +1690,7 @@ function taxonomyUseCases(): UseCaseInput[] {
   ];
 
   return items.map(([slug, name, shortDescription, categorySlugs]) =>
-    useCase({
+    defineUseCase({
       id: `uc-${slug}`,
       slug,
       name,

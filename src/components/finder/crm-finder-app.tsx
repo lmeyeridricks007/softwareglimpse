@@ -141,6 +141,30 @@ function readStoredAnswers(): DraftAnswers | null {
   }
 }
 
+function bootstrapCrmFinderAnswers(): DraftAnswers {
+  const stored = readStoredAnswers();
+  const decision = loadCrmDecisionProfile();
+  const fromRequirements =
+    typeof window !== "undefined" &&
+    new URLSearchParams(window.location.search).get("from") ===
+      "requirements";
+
+  if (decision && (fromRequirements || !stored?.companySizeSlug)) {
+    const mapped = primaryFinderUseCaseFromProfile(decision);
+    if (mapped.primary) {
+      const profileAnswers = crmFinderAnswersFromDecisionProfile(decision, {
+        primaryUseCaseSlug: mapped.primary,
+        secondaryUseCaseSlugs: mapped.secondary,
+      });
+      if (profileAnswers) {
+        return { ...defaultAnswers(), ...profileAnswers };
+      }
+    }
+  }
+
+  return stored ?? defaultAnswers();
+}
+
 function countMatchedRequired(
   result: FinderRecommendationResult,
   required: string[],
@@ -176,8 +200,10 @@ export function CrmFinderApp({
   const [phase, setPhase] = useState<Phase>("questions");
   const [stepIndex, setStepIndex] = useState(0);
   const [maxStageIndex, setMaxStageIndex] = useState(0);
-  const [answers, setAnswers] = useState<DraftAnswers>(defaultAnswers);
-  const [hydrated, setHydrated] = useState(false);
+  const [answers, setAnswers] = useState<DraftAnswers>(bootstrapCrmFinderAnswers);
+  const [hydrated, setHydrated] = useState(
+    () => typeof window !== "undefined",
+  );
   const [showAll, setShowAll] = useState(false);
   const [selectedSlugs, setSelectedSlugs] = useState<string[]>([]);
   const [results, setResults] = useState<FinderRecommendationResult[]>([]);
@@ -190,37 +216,6 @@ export function CrmFinderApp({
 
   const questions = CRM_FINDER_QUESTIONS;
   const question = questions[stepIndex];
-
-  useEffect(() => {
-    const stored = readStoredAnswers();
-    const decision = loadCrmDecisionProfile();
-    const fromRequirements =
-      typeof window !== "undefined" &&
-      new URLSearchParams(window.location.search).get("from") ===
-        "requirements";
-
-    if (decision && (fromRequirements || !stored?.companySizeSlug)) {
-      const mapped = primaryFinderUseCaseFromProfile(decision);
-      if (mapped.primary) {
-        const answers = crmFinderAnswersFromDecisionProfile(decision, {
-          primaryUseCaseSlug: mapped.primary,
-          secondaryUseCaseSlugs: mapped.secondary,
-        });
-        if (answers) {
-          // eslint-disable-next-line react-hooks/set-state-in-effect -- localStorage hydration
-          setAnswers({ ...defaultAnswers(), ...answers });
-          setHydrated(true);
-          return;
-        }
-      }
-    }
-
-    if (stored) {
-      // eslint-disable-next-line react-hooks/set-state-in-effect -- localStorage hydration
-      setAnswers(stored);
-    }
-    setHydrated(true);
-  }, []);
 
   useEffect(() => {
     if (!hydrated) return;
@@ -405,9 +400,9 @@ export function CrmFinderApp({
         ? stageIndexForQuestion(question.id)
         : 0;
 
-  useEffect(() => {
-    setMaxStageIndex((prev) => Math.max(prev, stageIndex));
-  }, [stageIndex]);
+  if (stageIndex > maxStageIndex) {
+    setMaxStageIndex(stageIndex);
+  }
 
   function goToStage(stageId: string) {
     const targetIndex = CRM_FINDER_STAGES.findIndex((s) => s.id === stageId);

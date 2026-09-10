@@ -1,13 +1,17 @@
+import type { z } from "zod";
 import type {
-  ExperienceDimensionInput,
-  EcosystemDimensionInput,
+  ExperienceDimensionInputSchema,
+  EcosystemDimensionInputSchema,
   SiteIntelligenceInput,
 } from "@/domain/schemas/site-intelligence";
+
+type ExperienceDimension = z.infer<typeof ExperienceDimensionInputSchema>;
+type EcosystemDimension = z.infer<typeof EcosystemDimensionInputSchema>;
 
 function experienceAll(
   score: number,
   reason: string,
-): ExperienceDimensionInput[] {
+): ExperienceDimension[] {
   const ids = [
     "navigation",
     "search",
@@ -35,7 +39,7 @@ function experienceAll(
 function ecosystemAll(
   score: number,
   reason: string,
-): EcosystemDimensionInput[] {
+): EcosystemDimension[] {
   const ids = [
     "pillar-coverage",
     "supporting-coverage",
@@ -214,6 +218,7 @@ export const FIXTURE_CONTENT_RICH_TECHNICALLY_BROKEN: SiteIntelligenceInput = {
   ecosystemDimensions: ecosystemAll(82, "Dense CRM ecosystem on paper"),
   competitorPack: null,
   searchVisibility: null,
+  rankingOpportunities: [],
 };
 
 /** Strong on-site quality but no authority / off-site data. */

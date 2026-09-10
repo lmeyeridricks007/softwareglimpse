@@ -2,6 +2,7 @@ import {
   VendorScorecardStateSchema,
   type DemoChecklistItem,
   type DemoChecklistResult,
+  type DecisionCategorySlug,
   type VendorScorecardState,
 } from "@/domain";
 import {
@@ -44,7 +45,7 @@ export function upsertRequirementDemoResult(input: {
   notes?: string;
   categorySlug?: string;
 }): VendorScorecardState {
-  const categorySlug = input.categorySlug ?? "crm";
+  const categorySlug = (input.categorySlug ?? "crm") as DecisionCategorySlug;
   const existing =
     loadVendorScorecard(categorySlug) ??
     createEmptyVendorScorecard(categorySlug);
@@ -88,7 +89,7 @@ export function upsertRequirementDemoResult(input: {
 export function addRequirementToDemoChecklistProfile(
   requirementId: string,
   priority: "must-have" | "important" | "nice-to-have" = "must-have",
-  categorySlug: string = "crm",
+  categorySlug: DecisionCategorySlug = "crm",
 ): void {
   const isSi = categorySlug === "sales-intelligence";
   const isCrm = categorySlug === "crm";
@@ -96,12 +97,8 @@ export function addRequirementToDemoChecklistProfile(
     ? (loadSiDecisionProfile() ?? createEmptySiDecisionProfile())
     : isCrm
       ? (loadCrmDecisionProfile() ?? createEmptyCrmDecisionProfile())
-      : (loadDecisionProfile(categorySlug as Parameters<
-          typeof createEmptyDecisionProfile
-        >[0]) ??
-        createEmptyDecisionProfile(
-          categorySlug as Parameters<typeof createEmptyDecisionProfile>[0],
-        ));
+      : (loadDecisionProfile(categorySlug) ??
+        createEmptyDecisionProfile(categorySlug));
   const existing = profile.requirements.find((r) => r.id === requirementId);
   const requirements = existing
     ? profile.requirements.map((r) =>

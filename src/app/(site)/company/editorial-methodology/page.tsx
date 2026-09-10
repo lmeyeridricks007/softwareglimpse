@@ -13,7 +13,7 @@ import { COMPANY_ROUTES, LEGAL_ROUTES } from "@/services/site-foundation";
 export const metadata: Metadata = buildPageMetadata({
   title: "Editorial Methodology",
   description:
-    "How SoftwareGlimpse recommendationses software, scores products, runs comparisons and Best pages, and keeps affiliates out of rankings.",
+    "How SoftwareGlimpse researches software, scores products, runs comparisons and Best pages, and keeps affiliates out of rankings.",
   path: COMPANY_ROUTES.methodology,
   indexable: true,
 });

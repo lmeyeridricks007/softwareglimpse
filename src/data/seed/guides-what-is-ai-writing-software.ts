@@ -1,4 +1,4 @@
-import type { GuidePage } from "@/domain";
+import type { GuidePageInput } from "@/domain";
 import type { z } from "zod";
 import type { GuideContentBlockSchema } from "@/domain";
 import { tier20GuideScheduledAt } from "@/data/config/publishing/tier-20-ai-writing-launch-2027-05-01";
@@ -53,7 +53,7 @@ const blocks: GuideBlockInput[] = [
   },
 ];
 
-function metadata(): GuidePage["metadata"] {
+function metadata(): GuidePageInput["metadata"] {
   return SCHEDULED_AT
     ? {
         status: "scheduled",
@@ -73,7 +73,7 @@ function metadata(): GuidePage["metadata"] {
       };
 }
 
-export const whatIsAiWritingSoftwareGuide: GuidePage = {
+export const whatIsAiWritingSoftwareGuide: GuidePageInput = {
   id: "guide-what-is-ai-writing-software",
   slug: SLUG,
   title: "What is AI Writing Software?",
@@ -93,7 +93,7 @@ export const whatIsAiWritingSoftwareGuide: GuidePage = {
     "ai-writing-pricing-guide",
     "ai-writing-vs-ai-software",
   ],
-  blocks: blocks as GuidePage["blocks"],
+  blocks: blocks as GuidePageInput["blocks"],
   checklist: [],
   sections: [],
   faq: [],
@@ -103,7 +103,7 @@ export const whatIsAiWritingSoftwareGuide: GuidePage = {
     title: "What is AI Writing Software?",
     description:
       "Learn how AI writing software paraphrases, generates copy, and optimizes content for AI search.",
-    indexable: !SCHEDULED_AT,
+    indexable: true,
     canonicalPath: "/guides/what-is-ai-writing-software/",
   },
 };

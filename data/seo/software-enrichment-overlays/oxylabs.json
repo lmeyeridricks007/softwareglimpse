@@ -1,0 +1,524 @@
+{
+  "slug": "oxylabs",
+  "updatedAt": "2026-09-08T21:57:41.676Z",
+  "version": "1.0.0",
+  "fieldAudit": {
+    "slug": "oxylabs",
+    "checkedAt": "2026-09-08T21:57:41.674Z",
+    "items": [
+      {
+        "field": "name",
+        "status": "PASS",
+        "detail": "Name: Oxylabs",
+        "source": "seed"
+      },
+      {
+        "field": "product_status",
+        "status": "PASS",
+        "detail": "productLifecycle=active",
+        "source": "seed"
+      },
+      {
+        "field": "canonical_vendor",
+        "status": "PASS",
+        "detail": "Vendor: Oxylabs",
+        "source": "seed"
+      },
+      {
+        "field": "category",
+        "status": "PASS",
+        "detail": "primaryCategorySlug=it-development",
+        "source": "seed"
+      },
+      {
+        "field": "description",
+        "status": "PASS",
+        "detail": "Description present (Enterprise proxy + Web Scraper API — Residential Starter 5GB $30/mo ($6/GB); Web…)",
+        "source": "seed"
+      },
+      {
+        "field": "target_audience",
+        "status": "PASS",
+        "detail": "Sizes=3, teams=2, assessment bestFor=3",
+        "source": "assessment"
+      },
+      {
+        "field": "use_cases",
+        "status": "PASS",
+        "detail": "useCaseSlugs=1",
+        "source": "seed"
+      },
+      {
+        "field": "capabilities",
+        "status": "PASS",
+        "detail": "featureRatings=0, enrichment features=15",
+        "source": "enrichment"
+      },
+      {
+        "field": "pricing",
+        "status": "PASS",
+        "detail": "Pricing envelope present",
+        "source": "enrichment"
+      },
+      {
+        "field": "plans",
+        "status": "PASS",
+        "detail": "plans=4",
+        "source": "enrichment"
+      },
+      {
+        "field": "free_plan",
+        "status": "PASS",
+        "detail": "No free plan in documented plans (explicit absence)",
+        "source": "enrichment"
+      },
+      {
+        "field": "trial",
+        "status": "PASS",
+        "detail": "Trial documented on plans/pricing",
+        "source": "enrichment"
+      },
+      {
+        "field": "integrations",
+        "status": "PASS",
+        "detail": "integrationSlugs=0, enrichment=3",
+        "source": "enrichment"
+      },
+      {
+        "field": "alternatives",
+        "status": "PASS",
+        "detail": "alternativeSlugs=3",
+        "source": "seed"
+      },
+      {
+        "field": "competitors",
+        "status": "PASS",
+        "detail": "competitorSlugs=4",
+        "source": "seed"
+      },
+      {
+        "field": "affiliate",
+        "status": "PASS",
+        "detail": "No affiliate relationship (explicit)",
+        "source": "seed"
+      },
+      {
+        "field": "source_provenance",
+        "status": "PASS",
+        "detail": "seed sources=0, enrichment sourceIds=4",
+        "source": "enrichment"
+      },
+      {
+        "field": "verification_date",
+        "status": "PASS",
+        "detail": "Latest verification/research signal: 2026-08-18T16:00:00.000Z",
+        "source": "enrichment"
+      }
+    ],
+    "passCount": 18,
+    "partialCount": 0,
+    "missingCount": 0,
+    "unknownCount": 0,
+    "score": 100
+  },
+  "decisionHub": {
+    "whatItIs": "Oxylabs is an enterprise proxy and web-data platform (residential, datacenter, mobile, ISP, Web Unblocker, Web Scraper API). Residential Starter publishes at 5GB for $30/mo ($6/GB); Basic 20GB $100; Advanced 125GB $500; Corporate 1TB $2,500. Web Scraper API starts from $49/mo. Datacenter proxies offer a free trial. ISO/IEC 27001:2022 certified products. Same web-data-collection cluster as Bright Data — not ITSM, observability, or hosting panels.",
+    "bestFor": [
+      "Data teams that need enterprise residential/datacenter proxies with published self-serve floors",
+      "Buyers who want Web Scraper API and proxy lines from one vendor",
+      "Projects that need ISO 27001-certified collection infrastructure",
+      "small-business / operations: Oxylabs fit for small-business operations teams in the web-data-collection job cluster, from first-party positioning and IT web-data peers research.",
+      "mid-market / operations: Oxylabs fit for mid-market operations teams in the web-data-collection job cluster, from first-party positioning and IT web-data peers research.",
+      "enterprise / operations: Oxylabs fit for enterprise operations teams in the web-data-collection job cluster, from first-party positioning and IT web-data peers research."
+    ],
+    "notIdealFor": [
+      "Hosting admins buying server panels (Plesk)",
+      "Teams that only need Actor marketplace compute (Apify)",
+      "Hobby experiments that fit ScraperAPI’s free credit tier",
+      "Residential Starter $30 is still GB-metered — overages/top-ups change TCO",
+      "Some targets are restricted on the residential network (banking, streaming, ticketing, etc.)",
+      "Not ITSM, observability, source control, or hosting panel"
+    ],
+    "coreCapabilities": [
+      "cicd actions",
+      "proxy network",
+      "dev ai",
+      "enterprise security",
+      "analytics reporting",
+      "web data collection"
+    ],
+    "pricingSummary": "4 documented plans · entry paid: Residential Starter (5GB) · trial documented on at least one plan",
+    "keyTradeoffs": [
+      "Residential Starter $30 is still GB-metered — overages/top-ups change TCO",
+      "Some targets are restricted on the residential network (banking, streaming, ticketing, etc.)",
+      "Not ITSM, observability, source control, or hosting panel",
+      "Web Scraper API and proxy lines are separate SKUs — do not treat one floor as all-in",
+      "Compliance / KYC posture must be validated per use case"
+    ],
+    "alternatives": [
+      {
+        "slug": "bright-data",
+        "name": "Bright Data"
+      },
+      {
+        "slug": "scraperapi",
+        "name": "ScraperAPI"
+      },
+      {
+        "slug": "apify",
+        "name": "Apify"
+      },
+      {
+        "slug": "thordata",
+        "name": "ThorData"
+      }
+    ],
+    "importantComparisons": [
+      {
+        "slug": "bright-data-vs-oxylabs",
+        "title": "Bright Data vs Oxylabs",
+        "href": "/compare/bright-data-vs-oxylabs/"
+      },
+      {
+        "slug": "oxylabs-vs-scraperapi",
+        "title": "Oxylabs vs ScraperAPI",
+        "href": "/compare/oxylabs-vs-scraperapi/"
+      },
+      {
+        "slug": "apify-vs-oxylabs",
+        "title": "Apify vs Oxylabs",
+        "href": "/compare/apify-vs-oxylabs/"
+      },
+      {
+        "slug": "appdynamics-vs-oxylabs",
+        "title": "AppDynamics vs Oxylabs",
+        "href": "/compare/appdynamics-vs-oxylabs/"
+      },
+      {
+        "slug": "azure-devops-vs-oxylabs",
+        "title": "Azure DevOps vs Oxylabs",
+        "href": "/compare/azure-devops-vs-oxylabs/"
+      },
+      {
+        "slug": "bitbucket-vs-oxylabs",
+        "title": "Bitbucket Cloud vs Oxylabs",
+        "href": "/compare/bitbucket-vs-oxylabs/"
+      }
+    ],
+    "relevantGuides": [
+      {
+        "slug": "oxylabs-implementation",
+        "title": "Oxylabs Implementation: 30/60/90 IT Rollout That Sticks",
+        "href": "/guides/oxylabs-implementation/"
+      },
+      {
+        "slug": "oxylabs-migration",
+        "title": "Oxylabs Migration: Move Tickets and Repos Without Losing Trust",
+        "href": "/guides/oxylabs-migration/"
+      },
+      {
+        "slug": "oxylabs-setup",
+        "title": "Oxylabs Setup: Day-Zero Path to a Working IT Loop",
+        "href": "/guides/oxylabs-setup/"
+      },
+      {
+        "slug": "oxylabs-plans",
+        "title": "Oxylabs Plans: Seats, Hosts, and Qualifying Tiers",
+        "href": "/guides/oxylabs-plans/"
+      },
+      {
+        "slug": "is-oxylabs-worth-it",
+        "title": "Is Oxylabs Worth It? Fit Scenarios Before You Buy",
+        "href": "/guides/is-oxylabs-worth-it/"
+      }
+    ],
+    "evidenceState": "Research/data-based (no completed hands-on test) · Latest verification/research signal: 2026-08-18T16:00:00.000Z · Editorial assessment: approved",
+    "nextDecisionStep": "Compare against peers: Bright Data vs Oxylabs",
+    "missingSections": []
+  },
+  "dependents": [
+    {
+      "kind": "guide",
+      "slug": "oxylabs-implementation",
+      "path": "/guides/oxylabs-implementation/"
+    },
+    {
+      "kind": "guide",
+      "slug": "oxylabs-migration",
+      "path": "/guides/oxylabs-migration/"
+    },
+    {
+      "kind": "guide",
+      "slug": "oxylabs-setup",
+      "path": "/guides/oxylabs-setup/"
+    },
+    {
+      "kind": "guide",
+      "slug": "oxylabs-plans",
+      "path": "/guides/oxylabs-plans/"
+    },
+    {
+      "kind": "guide",
+      "slug": "is-oxylabs-worth-it",
+      "path": "/guides/is-oxylabs-worth-it/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "bright-data-vs-oxylabs",
+      "path": "/compare/bright-data-vs-oxylabs/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "oxylabs-vs-scraperapi",
+      "path": "/compare/oxylabs-vs-scraperapi/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "apify-vs-oxylabs",
+      "path": "/compare/apify-vs-oxylabs/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "appdynamics-vs-oxylabs",
+      "path": "/compare/appdynamics-vs-oxylabs/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "azure-devops-vs-oxylabs",
+      "path": "/compare/azure-devops-vs-oxylabs/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "bitbucket-vs-oxylabs",
+      "path": "/compare/bitbucket-vs-oxylabs/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "bmc-helix-vs-oxylabs",
+      "path": "/compare/bmc-helix-vs-oxylabs/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "buildkite-vs-oxylabs",
+      "path": "/compare/buildkite-vs-oxylabs/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "chronosphere-vs-oxylabs",
+      "path": "/compare/chronosphere-vs-oxylabs/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "circleci-vs-oxylabs",
+      "path": "/compare/circleci-vs-oxylabs/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "cloudways-vs-oxylabs",
+      "path": "/compare/cloudways-vs-oxylabs/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "coralogix-vs-oxylabs",
+      "path": "/compare/coralogix-vs-oxylabs/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "cpanel-vs-oxylabs",
+      "path": "/compare/cpanel-vs-oxylabs/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "datadog-vs-oxylabs",
+      "path": "/compare/datadog-vs-oxylabs/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "directadmin-vs-oxylabs",
+      "path": "/compare/directadmin-vs-oxylabs/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "dynatrace-vs-oxylabs",
+      "path": "/compare/dynatrace-vs-oxylabs/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "elastic-observability-vs-oxylabs",
+      "path": "/compare/elastic-observability-vs-oxylabs/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "firehydrant-vs-oxylabs",
+      "path": "/compare/firehydrant-vs-oxylabs/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "fly-io-vs-oxylabs",
+      "path": "/compare/fly-io-vs-oxylabs/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "github-vs-oxylabs",
+      "path": "/compare/github-vs-oxylabs/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "gitlab-vs-oxylabs",
+      "path": "/compare/gitlab-vs-oxylabs/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "grafana-cloud-vs-oxylabs",
+      "path": "/compare/grafana-cloud-vs-oxylabs/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "haloitsm-vs-oxylabs",
+      "path": "/compare/haloitsm-vs-oxylabs/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "heroku-vs-oxylabs",
+      "path": "/compare/heroku-vs-oxylabs/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "honeycomb-vs-oxylabs",
+      "path": "/compare/honeycomb-vs-oxylabs/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "incident-io-vs-oxylabs",
+      "path": "/compare/incident-io-vs-oxylabs/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "iproyal-vs-oxylabs",
+      "path": "/compare/iproyal-vs-oxylabs/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "ivanti-vs-oxylabs",
+      "path": "/compare/ivanti-vs-oxylabs/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "jira-service-management-vs-oxylabs",
+      "path": "/compare/jira-service-management-vs-oxylabs/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "kinsta-vs-oxylabs",
+      "path": "/compare/kinsta-vs-oxylabs/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "manageengine-servicedesk-plus-vs-oxylabs",
+      "path": "/compare/manageengine-servicedesk-plus-vs-oxylabs/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "new-relic-vs-oxylabs",
+      "path": "/compare/new-relic-vs-oxylabs/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "oxylabs-vs-pagerduty",
+      "path": "/compare/oxylabs-vs-pagerduty/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "oxylabs-vs-railway",
+      "path": "/compare/oxylabs-vs-railway/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "oxylabs-vs-render",
+      "path": "/compare/oxylabs-vs-render/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "oxylabs-vs-rootly",
+      "path": "/compare/oxylabs-vs-rootly/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "oxylabs-vs-sentry",
+      "path": "/compare/oxylabs-vs-sentry/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "oxylabs-vs-servicenow",
+      "path": "/compare/oxylabs-vs-servicenow/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "oxylabs-vs-siteground",
+      "path": "/compare/oxylabs-vs-siteground/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "oxylabs-vs-smartproxy",
+      "path": "/compare/oxylabs-vs-smartproxy/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "oxylabs-vs-splunk",
+      "path": "/compare/oxylabs-vs-splunk/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "oxylabs-vs-squadcast",
+      "path": "/compare/oxylabs-vs-squadcast/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "oxylabs-vs-sysaid",
+      "path": "/compare/oxylabs-vs-sysaid/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "oxylabs-vs-thordata",
+      "path": "/compare/oxylabs-vs-thordata/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "oxylabs-vs-topdesk",
+      "path": "/compare/oxylabs-vs-topdesk/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "oxylabs-vs-wp-engine",
+      "path": "/compare/oxylabs-vs-wp-engine/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "oxylabs-vs-zyte",
+      "path": "/compare/oxylabs-vs-zyte/"
+    },
+    {
+      "kind": "alternatives",
+      "slug": "oxylabs",
+      "path": "/alternatives/oxylabs/"
+    },
+    {
+      "kind": "pricing",
+      "slug": "oxylabs",
+      "path": "/software/oxylabs/pricing/"
+    },
+    {
+      "kind": "tools",
+      "slug": "it-development-cost-calculator",
+      "path": "/tools/it-development-cost-calculator/"
+    }
+  ],
+  "dependentsNeedingRefresh": [],
+  "remediation": [],
+  "notes": [
+    "fieldAudit score=100",
+    "decisionHub bestFor=6 notIdeal=6",
+    "dependents=55"
+  ],
+  "materiallyImproved": true
+}

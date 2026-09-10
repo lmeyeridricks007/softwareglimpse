@@ -11,6 +11,10 @@ export { AlternativeCard } from "./alternative-card";
 export { RecommendationCard } from "./recommendation-card";
 export { MethodologySummary } from "./methodology-summary";
 export { ResearchFreshness } from "./research-freshness";
+export { EvidenceLevelBadge } from "./evidence-level-badge";
+export { EditorialTrustBlock } from "./editorial-trust-block";
+export type { EditorialTrustVariant } from "./editorial-trust-block";
+export { EditorialProvenance } from "./editorial-provenance";
 export {
   AffiliateDisclosure,
   AiAssistedDisclosure,

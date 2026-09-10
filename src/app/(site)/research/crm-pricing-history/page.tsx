@@ -3,8 +3,11 @@ import Link from "next/link";
 import { getSoftwareBySlug } from "@/data";
 import {
   getCrmPricingHistory,
-  listCrmPricingHistorySnapshots,
 } from "@/data/research/pricing-history";
+import {
+  analyzeCategoryPriceChanges,
+  listCrmStartingPriceHistory,
+} from "@/services/pricing-history";
 import { Section } from "@/components/layout/section";
 import { buildPageMetadata } from "@/seo/metadata";
 import { JsonLdScript, webPageJsonLd } from "@/seo/structured-data";
@@ -20,7 +23,8 @@ export const metadata: Metadata = buildPageMetadata({
 
 export default function CrmPricingHistoryPage() {
   const dataset = getCrmPricingHistory();
-  const snapshots = listCrmPricingHistorySnapshots();
+  const snapshots = listCrmStartingPriceHistory();
+  const changes = analyzeCategoryPriceChanges("crm");
 
   return (
     <>
@@ -63,11 +67,11 @@ export default function CrmPricingHistoryPage() {
               </tr>
             </thead>
             <tbody>
-              {snapshots.map((row) => {
+              {snapshots.map((row, idx) => {
                 const product = getSoftwareBySlug(row.productSlug);
                 return (
                   <tr
-                    key={`${row.productSlug}-${row.observedAt}`}
+                    key={`${row.productSlug}-${row.observedAt}-${row.startingPriceMonthly}-${idx}`}
                     className="border-t border-[var(--sg-color-border)]"
                   >
                     <td className="px-4 py-3 font-medium">
@@ -101,12 +105,65 @@ export default function CrmPricingHistoryPage() {
           </table>
         </div>
 
+        {changes.sampleProductsWithHistory > 0 ? (
+          <div className="mt-8 rounded-[var(--sg-radius-lg)] border border-[var(--sg-color-border)] bg-[var(--sg-color-surface)] px-5 py-5">
+            <h2 className="font-[family-name:var(--font-display)] text-lg font-semibold text-[var(--sg-color-text)]">
+              Observed starting-price changes
+            </h2>
+            <p className="mt-2 text-sm text-[var(--sg-color-text-muted)]">
+              Calculated only from products with ≥2 starting-price observations
+              (n={changes.sampleProductsWithHistory}). Increases:{" "}
+              {changes.increases.length}. Decreases: {changes.decreases.length}.
+              Same-price re-observations: {changes.unchangedReobservations}.
+            </p>
+            {changes.increases.length + changes.decreases.length === 0 ? (
+              <p className="mt-3 text-sm text-[var(--sg-color-text-muted)]">
+                No material starting-price changes in the observation store yet.
+                Category inflation and AI-premium deltas require more dated
+                re-verifies — we do not invent them.
+              </p>
+            ) : (
+              <ul className="mt-3 space-y-2 text-sm">
+                {[...changes.increases, ...changes.decreases].map((c) => (
+                  <li key={`${c.productId}-${c.changeDate}`}>
+                    <Link
+                      href={`/software/${c.productId}/`}
+                      className="font-medium text-[var(--sg-color-primary)] underline-offset-2 hover:underline"
+                    >
+                      {c.productId}
+                    </Link>
+                    : {c.previousPrice} → {c.newPrice}{" "}
+                    {c.currency} (
+                    {c.percentageChange == null
+                      ? "—"
+                      : `${c.percentageChange > 0 ? "+" : ""}${c.percentageChange.toFixed(1)}%`}
+                    ) on {c.changeDate}
+                  </li>
+                ))}
+              </ul>
+            )}
+          </div>
+        ) : null}
+
         <p className="mt-6 text-sm text-[var(--sg-color-text-muted)]">
-          Compare live totals with the{" "}
+          For catalog-wide medians and free-plan share, see{" "}
+          <Link
+            href="/research/crm-pricing/"
+            className="font-medium text-[var(--sg-color-primary)] underline-offset-2 hover:underline"
+          >
+            CRM Pricing Benchmarks 2026
+          </Link>
+          . Compare live totals with the{" "}
           <Link href="/tools/crm-cost-calculator/" className="font-medium text-[var(--sg-color-primary)] underline-offset-2 hover:underline">
             CRM Cost Calculator
           </Link>{" "}
-          and product pricing pages. HubSpot, Salesforce, and Zoho dollar bands on comparison pages remain “verify live” when vendor HTML was unreadable at research time.
+          and product pricing pages. HubSpot $15 and Salesforce $25 rows stay{" "}
+          <span className="font-medium text-[var(--sg-color-text)]">verify-live</span>{" "}
+          until vendor HTML is re-confirmed. More datasets:{" "}
+          <Link href="/research/" className="font-medium text-[var(--sg-color-primary)] underline-offset-2 hover:underline">
+            /research/
+          </Link>
+          .
         </p>
       </Section>
     </>

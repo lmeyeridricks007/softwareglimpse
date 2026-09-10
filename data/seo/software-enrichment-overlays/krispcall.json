@@ -1,0 +1,364 @@
+{
+  "slug": "krispcall",
+  "updatedAt": "2026-09-07T22:31:21.384Z",
+  "version": "1.0.0",
+  "fieldAudit": {
+    "slug": "krispcall",
+    "checkedAt": "2026-09-07T22:31:21.383Z",
+    "items": [
+      {
+        "field": "name",
+        "status": "PASS",
+        "detail": "Name: KrispCall",
+        "source": "seed"
+      },
+      {
+        "field": "product_status",
+        "status": "PASS",
+        "detail": "productLifecycle=active",
+        "source": "seed"
+      },
+      {
+        "field": "canonical_vendor",
+        "status": "UNKNOWN",
+        "detail": "Company/vendor not documented",
+        "source": "none"
+      },
+      {
+        "field": "category",
+        "status": "PASS",
+        "detail": "primaryCategorySlug=voip-business-phone",
+        "source": "seed"
+      },
+      {
+        "field": "description",
+        "status": "PASS",
+        "detail": "Description present (Budget global cloud telephony with virtual numbers across 100+ countries and a u…)",
+        "source": "seed"
+      },
+      {
+        "field": "target_audience",
+        "status": "PASS",
+        "detail": "Sizes=2, teams=3, assessment bestFor=3",
+        "source": "assessment"
+      },
+      {
+        "field": "use_cases",
+        "status": "PASS",
+        "detail": "useCaseSlugs=4",
+        "source": "seed"
+      },
+      {
+        "field": "capabilities",
+        "status": "PASS",
+        "detail": "featureRatings=0, enrichment features=13",
+        "source": "enrichment"
+      },
+      {
+        "field": "pricing",
+        "status": "PASS",
+        "detail": "Pricing envelope present",
+        "source": "enrichment"
+      },
+      {
+        "field": "plans",
+        "status": "PASS",
+        "detail": "plans=3",
+        "source": "enrichment"
+      },
+      {
+        "field": "free_plan",
+        "status": "PASS",
+        "detail": "No free plan in documented plans (explicit absence)",
+        "source": "enrichment"
+      },
+      {
+        "field": "trial",
+        "status": "UNKNOWN",
+        "detail": "Trial not explicitly documented — do not assume none",
+        "source": "none"
+      },
+      {
+        "field": "integrations",
+        "status": "PASS",
+        "detail": "integrationSlugs=0, enrichment=5",
+        "source": "enrichment"
+      },
+      {
+        "field": "alternatives",
+        "status": "PASS",
+        "detail": "alternativeSlugs=6",
+        "source": "seed"
+      },
+      {
+        "field": "competitors",
+        "status": "PASS",
+        "detail": "competitorSlugs=6",
+        "source": "seed"
+      },
+      {
+        "field": "affiliate",
+        "status": "PASS",
+        "detail": "Affiliate enabled with tracking URL",
+        "source": "seed"
+      },
+      {
+        "field": "source_provenance",
+        "status": "PASS",
+        "detail": "seed sources=0, enrichment sourceIds=4",
+        "source": "enrichment"
+      },
+      {
+        "field": "verification_date",
+        "status": "PASS",
+        "detail": "Latest verification/research signal: 2026-08-17T09:00:00.000Z",
+        "source": "enrichment"
+      }
+    ],
+    "passCount": 16,
+    "partialCount": 0,
+    "missingCount": 0,
+    "unknownCount": 2,
+    "score": 89
+  },
+  "decisionHub": {
+    "whatItIs": "KrispCall is a low-cost cloud telephony platform built around virtual numbers in a wide list of countries and a unified callbox that keeps calls, SMS and contact history in one workspace. Essential starts at $12/user/month on annual billing but caps at 5 users; Standard unlocks up to 50 users with power dialer, call monitoring, multi-level IVR and API access. Calling minutes and SMS are billed pay-as-you-go on top of the seat price.",
+    "bestFor": [
+      "Startups, agencies and remote teams that need virtual numbers in multiple countries cheaply",
+      "Small teams (up to 5 users) that want a real phone system for around $12/user/month",
+      "Sales teams that will move to Standard for the power dialer, monitoring and API access",
+      "micro / sales: KrispCall fit for micro sales teams in the cloud-phone job cluster, from first-party positioning and business-communications Wave-1 research.",
+      "small-business / sales: KrispCall fit for small-business sales teams in the cloud-phone job cluster, from first-party positioning and business-communications Wave-1 research."
+    ],
+    "notIdealFor": [
+      "Teams above 50 users or those needing contact-centre routing and queue callback",
+      "Buyers who need bundled calling minutes rather than pay-as-you-go usage billing",
+      "Buyers who require a free trial before paying (only a 14-day refund window exists)",
+      "Essential caps at 5 users — growing teams must jump to Standard at $32/user/month annual",
+      "Every call minute and SMS segment is pay-as-you-go on top of the seat price",
+      "No free plan and no free trial — only a 14-day money-back guarantee"
+    ],
+    "coreCapabilities": [
+      "cloud phone",
+      "call routing",
+      "call recording",
+      "sms messaging",
+      "shared inbox",
+      "unified inbox",
+      "business phone",
+      "sales calling"
+    ],
+    "pricingSummary": "3 documented plans · entry paid: Essential",
+    "keyTradeoffs": [
+      "Essential caps at 5 users — growing teams must jump to Standard at $32/user/month annual",
+      "Every call minute and SMS segment is pay-as-you-go on top of the seat price",
+      "No free plan and no free trial — only a 14-day money-back guarantee",
+      "Power dialer, call monitoring, multi-level IVR and API access are Standard-only",
+      "Pricing page blocked automated retrieval, so plan figures are medium-confidence research"
+    ],
+    "alternatives": [
+      {
+        "slug": "callhippo",
+        "name": "CallHippo"
+      },
+      {
+        "slug": "aircall",
+        "name": "Aircall"
+      },
+      {
+        "slug": "nextiva",
+        "name": "Nextiva"
+      },
+      {
+        "slug": "ringcentral",
+        "name": "RingCentral"
+      },
+      {
+        "slug": "freshcaller",
+        "name": "Freshcaller"
+      },
+      {
+        "slug": "kixie",
+        "name": "Kixie"
+      }
+    ],
+    "importantComparisons": [
+      {
+        "slug": "aircall-vs-krispcall",
+        "title": "Aircall vs KrispCall",
+        "href": "/compare/aircall-vs-krispcall/"
+      },
+      {
+        "slug": "callhippo-vs-krispcall",
+        "title": "CallHippo vs KrispCall",
+        "href": "/compare/callhippo-vs-krispcall/"
+      },
+      {
+        "slug": "krispcall-vs-nextiva",
+        "title": "KrispCall vs Nextiva",
+        "href": "/compare/krispcall-vs-nextiva/"
+      },
+      {
+        "slug": "krispcall-vs-ringcentral",
+        "title": "KrispCall vs RingCentral",
+        "href": "/compare/krispcall-vs-ringcentral/"
+      },
+      {
+        "slug": "krispcall-vs-wati",
+        "title": "KrispCall vs Wati",
+        "href": "/compare/krispcall-vs-wati/"
+      },
+      {
+        "slug": "grasshopper-vs-krispcall",
+        "title": "Grasshopper vs KrispCall",
+        "href": "/compare/grasshopper-vs-krispcall/"
+      }
+    ],
+    "relevantGuides": [
+      {
+        "slug": "business-communications-pricing-guide",
+        "title": "Business Communications Pricing Guide: Seats, Minutes & Message Fees",
+        "href": "/guides/business-communications-pricing-guide/"
+      },
+      {
+        "slug": "how-voip-business-phone-software-works",
+        "title": "How VoIP & Business Phone Software Works",
+        "href": "/guides/how-voip-business-phone-software-works/"
+      },
+      {
+        "slug": "types-of-voip-business-phone-software",
+        "title": "Types of VoIP & Business Phone Software",
+        "href": "/guides/types-of-voip-business-phone-software/"
+      },
+      {
+        "slug": "voip-business-phone-requirements-guide",
+        "title": "VoIP & Business Phone Software Requirements Guide",
+        "href": "/guides/voip-business-phone-requirements-guide/"
+      },
+      {
+        "slug": "voip-business-phone-evaluation-guide",
+        "title": "VoIP & Business Phone Software Evaluation Guide",
+        "href": "/guides/voip-business-phone-evaluation-guide/"
+      },
+      {
+        "slug": "what-is-krispcall",
+        "title": "What Is KrispCall?",
+        "href": "/guides/what-is-krispcall/"
+      }
+    ],
+    "evidenceState": "Research/data-based (no completed hands-on test) · Latest verification/research signal: 2026-08-17T09:00:00.000Z · Editorial assessment: approved",
+    "nextDecisionStep": "Compare against peers: Aircall vs KrispCall",
+    "missingSections": [
+      "canonical_vendor",
+      "trial"
+    ]
+  },
+  "dependents": [
+    {
+      "kind": "guide",
+      "slug": "business-communications-pricing-guide",
+      "path": "/guides/business-communications-pricing-guide/"
+    },
+    {
+      "kind": "guide",
+      "slug": "how-voip-business-phone-software-works",
+      "path": "/guides/how-voip-business-phone-software-works/"
+    },
+    {
+      "kind": "guide",
+      "slug": "types-of-voip-business-phone-software",
+      "path": "/guides/types-of-voip-business-phone-software/"
+    },
+    {
+      "kind": "guide",
+      "slug": "voip-business-phone-requirements-guide",
+      "path": "/guides/voip-business-phone-requirements-guide/"
+    },
+    {
+      "kind": "guide",
+      "slug": "voip-business-phone-evaluation-guide",
+      "path": "/guides/voip-business-phone-evaluation-guide/"
+    },
+    {
+      "kind": "guide",
+      "slug": "what-is-krispcall",
+      "path": "/guides/what-is-krispcall/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "aircall-vs-krispcall",
+      "path": "/compare/aircall-vs-krispcall/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "callhippo-vs-krispcall",
+      "path": "/compare/callhippo-vs-krispcall/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "krispcall-vs-nextiva",
+      "path": "/compare/krispcall-vs-nextiva/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "krispcall-vs-ringcentral",
+      "path": "/compare/krispcall-vs-ringcentral/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "krispcall-vs-wati",
+      "path": "/compare/krispcall-vs-wati/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "grasshopper-vs-krispcall",
+      "path": "/compare/grasshopper-vs-krispcall/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "freshcaller-vs-krispcall",
+      "path": "/compare/freshcaller-vs-krispcall/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "kixie-vs-krispcall",
+      "path": "/compare/kixie-vs-krispcall/"
+    },
+    {
+      "kind": "alternatives",
+      "slug": "krispcall",
+      "path": "/alternatives/krispcall/"
+    },
+    {
+      "kind": "pricing",
+      "slug": "krispcall",
+      "path": "/software/krispcall/pricing/"
+    },
+    {
+      "kind": "best",
+      "slug": "business-communications-software",
+      "path": "/best/business-communications-software/"
+    },
+    {
+      "kind": "best",
+      "slug": "voip-business-phone-software",
+      "path": "/best/voip-business-phone-software/"
+    },
+    {
+      "kind": "tools",
+      "slug": "voip-business-phone-cost-calculator",
+      "path": "/tools/voip-business-phone-cost-calculator/"
+    }
+  ],
+  "dependentsNeedingRefresh": [],
+  "remediation": [
+    "verify:canonical_vendor",
+    "verify:trial"
+  ],
+  "notes": [
+    "fieldAudit score=89",
+    "decisionHub bestFor=5 notIdeal=6",
+    "dependents=19"
+  ],
+  "materiallyImproved": false
+}

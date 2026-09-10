@@ -1,0 +1,420 @@
+{
+  "slug": "freshsales",
+  "name": "Freshsales",
+  "categorySlug": "crm",
+  "generatedAt": "2026-09-09T18:29:42.345Z",
+  "version": "1.0.0",
+  "evidenceLevelBefore": "data_verified",
+  "evidenceLevelAfter": "data_verified",
+  "promotedToDataVerified": false,
+  "sources": [
+    {
+      "id": "freshsales-pricing-fixture",
+      "kind": "vendor_pricing",
+      "url": "https://www.freshworks.com/crm/pricing/",
+      "title": "Freshsales Pricing (fixture snapshot)",
+      "sourceType": "fixture",
+      "authority": "fixture",
+      "domains": [
+        "pricing",
+        "plans",
+        "free-plan",
+        "free-trial"
+      ],
+      "retrievedAt": null,
+      "verifiedAt": null,
+      "lastCheckedAt": null,
+      "confidence": null,
+      "status": "archived"
+    },
+    {
+      "id": "freshsales-product-fixture",
+      "kind": "feature",
+      "url": "https://www.freshworks.com/crm/sales/",
+      "title": "Freshsales Product (fixture snapshot)",
+      "sourceType": "fixture",
+      "authority": "fixture",
+      "domains": [
+        "identity",
+        "features",
+        "ai-capabilities",
+        "product-positioning"
+      ],
+      "retrievedAt": null,
+      "verifiedAt": null,
+      "lastCheckedAt": null,
+      "confidence": null,
+      "status": "archived"
+    },
+    {
+      "id": "freshsales-pricing-official",
+      "kind": "vendor_pricing",
+      "url": "https://www.freshworks.com/crm/pricing/",
+      "title": "Freshsales Pricing",
+      "sourceType": "official-pricing-page",
+      "authority": "first-party",
+      "domains": [
+        "pricing",
+        "plans",
+        "free-plan",
+        "free-trial"
+      ],
+      "retrievedAt": "2026-08-13T18:00:00.000Z",
+      "verifiedAt": "2026-08-13T18:00:00.000Z",
+      "lastCheckedAt": "2026-09-07T22:40:42.436Z",
+      "confidence": "high",
+      "status": "active"
+    },
+    {
+      "id": "freshsales-product-official",
+      "kind": "feature",
+      "url": "https://www.freshworks.com/crm/sales/",
+      "title": "Freshsales Sales CRM",
+      "sourceType": "official-product-page",
+      "authority": "first-party",
+      "domains": [
+        "identity",
+        "features",
+        "product-positioning",
+        "ai-capabilities"
+      ],
+      "retrievedAt": "2026-08-13T18:00:00.000Z",
+      "verifiedAt": "2026-08-13T18:00:00.000Z",
+      "lastCheckedAt": "2026-08-13T18:00:00.000Z",
+      "confidence": "high",
+      "status": "active"
+    },
+    {
+      "id": "freshsales-features-official",
+      "kind": "feature",
+      "url": "https://www.freshworks.com/crm/sales/features/",
+      "title": "Freshsales Features",
+      "sourceType": "official-product-page",
+      "authority": "first-party",
+      "domains": [
+        "features"
+      ],
+      "retrievedAt": "2026-08-13T18:00:00.000Z",
+      "verifiedAt": "2026-08-13T18:00:00.000Z",
+      "lastCheckedAt": "2026-08-13T18:00:00.000Z",
+      "confidence": "high",
+      "status": "active"
+    },
+    {
+      "id": "freshsales-freddy-ai",
+      "kind": "feature",
+      "url": "https://www.freshworks.com/crm/freddy-ai/",
+      "title": "Freddy AI",
+      "sourceType": "official-product-page",
+      "authority": "first-party",
+      "domains": [
+        "ai-capabilities",
+        "features"
+      ],
+      "retrievedAt": "2026-08-13T18:00:00.000Z",
+      "verifiedAt": "2026-08-13T18:00:00.000Z",
+      "lastCheckedAt": "2026-08-13T18:00:00.000Z",
+      "confidence": "high",
+      "status": "active"
+    }
+  ],
+  "vendorSourceCount": 5,
+  "pricingSourceCount": 2,
+  "docsSourceCount": 0,
+  "featureEvidenceCount": 19,
+  "integrationEvidenceCount": 2,
+  "plans": [
+    {
+      "id": "plan-growth",
+      "slug": "growth",
+      "name": "Growth",
+      "isFree": false,
+      "contactSales": false,
+      "hasFreeTrial": true
+    },
+    {
+      "id": "plan-pro",
+      "slug": "pro",
+      "name": "Pro",
+      "isFree": false,
+      "contactSales": false,
+      "hasFreeTrial": true
+    },
+    {
+      "id": "plan-enterprise",
+      "slug": "enterprise",
+      "name": "Enterprise",
+      "isFree": false,
+      "contactSales": false,
+      "hasFreeTrial": true
+    }
+  ],
+  "researchTimestamps": {
+    "enrichmentUpdatedAt": "2026-08-15T10:45:00.000Z",
+    "domainCheckedAt": {
+      "identity": "2026-08-13T18:00:00.000Z",
+      "pricing": "2026-08-13T18:00:00.000Z",
+      "plans": "2026-08-13T18:00:00.000Z",
+      "free-plan": "2026-08-13T18:00:00.000Z",
+      "free-trial": "2026-08-13T18:00:00.000Z",
+      "features": "2026-08-13T18:00:00.000Z",
+      "ai-capabilities": "2026-08-13T18:00:00.000Z",
+      "product-positioning": "2026-08-13T18:00:00.000Z",
+      "integrations": "2026-08-13T18:00:00.000Z",
+      "limits": "2026-08-13T18:00:00.000Z",
+      "support": "2026-08-13T18:00:00.000Z"
+    },
+    "enrichmentPricingVerifiedAt": "2026-09-07T22:40:42.436Z",
+    "enrichmentPricingSourceIds": [
+      "freshsales-pricing-official"
+    ],
+    "softwarePricingVerifiedAt": null,
+    "researchDate": null
+  },
+  "pricingVerification": {
+    "attempted": false,
+    "verified": false,
+    "httpStatus": null,
+    "sourceId": null,
+    "sourceUrl": null,
+    "planNamesChecked": [],
+    "planNamesFound": [],
+    "planHitRatio": 0,
+    "rejectReason": null,
+    "verifiedAt": null,
+    "stampApplied": false
+  },
+  "dependentPages": [
+    {
+      "kind": "guide",
+      "slug": "how-to-choose-crm",
+      "path": "/guides/how-to-choose-crm/"
+    },
+    {
+      "kind": "guide",
+      "slug": "freshsales-implementation",
+      "path": "/guides/freshsales-implementation/"
+    },
+    {
+      "kind": "guide",
+      "slug": "freshsales-migration",
+      "path": "/guides/freshsales-migration/"
+    },
+    {
+      "kind": "guide",
+      "slug": "freshsales-setup",
+      "path": "/guides/freshsales-setup/"
+    },
+    {
+      "kind": "guide",
+      "slug": "freshsales-plans",
+      "path": "/guides/freshsales-plans/"
+    },
+    {
+      "kind": "guide",
+      "slug": "is-freshsales-worth-it",
+      "path": "/guides/is-freshsales-worth-it/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "act-vs-freshsales",
+      "path": "/compare/act-vs-freshsales/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "affinity-vs-freshsales",
+      "path": "/compare/affinity-vs-freshsales/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "agile-crm-vs-freshsales",
+      "path": "/compare/agile-crm-vs-freshsales/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "apptivo-vs-freshsales",
+      "path": "/compare/apptivo-vs-freshsales/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "attio-vs-freshsales",
+      "path": "/compare/attio-vs-freshsales/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "bitrix24-vs-freshsales",
+      "path": "/compare/bitrix24-vs-freshsales/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "capsule-vs-freshsales",
+      "path": "/compare/capsule-vs-freshsales/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "close-vs-freshsales",
+      "path": "/compare/close-vs-freshsales/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "cloze-vs-freshsales",
+      "path": "/compare/cloze-vs-freshsales/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "copper-vs-freshsales",
+      "path": "/compare/copper-vs-freshsales/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "creatio-vs-freshsales",
+      "path": "/compare/creatio-vs-freshsales/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "dynamics-365-vs-freshsales",
+      "path": "/compare/dynamics-365-vs-freshsales/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "folk-vs-freshsales",
+      "path": "/compare/folk-vs-freshsales/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "freshsales-vs-hubspot",
+      "path": "/compare/freshsales-vs-hubspot/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "freshsales-vs-insightly",
+      "path": "/compare/freshsales-vs-insightly/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "freshsales-vs-keap",
+      "path": "/compare/freshsales-vs-keap/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "freshsales-vs-mailchimp",
+      "path": "/compare/freshsales-vs-mailchimp/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "freshsales-vs-monday-sales-crm",
+      "path": "/compare/freshsales-vs-monday-sales-crm/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "freshsales-vs-netsuite",
+      "path": "/compare/freshsales-vs-netsuite/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "freshsales-vs-nimble",
+      "path": "/compare/freshsales-vs-nimble/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "freshsales-vs-nutshell",
+      "path": "/compare/freshsales-vs-nutshell/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "freshsales-vs-oracle-cx",
+      "path": "/compare/freshsales-vs-oracle-cx/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "freshsales-vs-pardot",
+      "path": "/compare/freshsales-vs-pardot/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "freshsales-vs-pega",
+      "path": "/compare/freshsales-vs-pega/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "freshsales-vs-pipedrive",
+      "path": "/compare/freshsales-vs-pipedrive/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "freshsales-vs-pipelinepro",
+      "path": "/compare/freshsales-vs-pipelinepro/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "freshsales-vs-podio",
+      "path": "/compare/freshsales-vs-podio/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "freshsales-vs-salesflare",
+      "path": "/compare/freshsales-vs-salesflare/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "freshsales-vs-salesforce",
+      "path": "/compare/freshsales-vs-salesforce/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "freshsales-vs-sap",
+      "path": "/compare/freshsales-vs-sap/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "freshsales-vs-siebel",
+      "path": "/compare/freshsales-vs-siebel/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "freshsales-vs-streak",
+      "path": "/compare/freshsales-vs-streak/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "freshsales-vs-sugarcrm",
+      "path": "/compare/freshsales-vs-sugarcrm/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "freshsales-vs-wealthbox",
+      "path": "/compare/freshsales-vs-wealthbox/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "freshsales-vs-zendesk",
+      "path": "/compare/freshsales-vs-zendesk/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "freshsales-vs-zoho-crm",
+      "path": "/compare/freshsales-vs-zoho-crm/"
+    },
+    {
+      "kind": "alternatives",
+      "slug": "freshsales",
+      "path": "/alternatives/freshsales/"
+    },
+    {
+      "kind": "pricing",
+      "slug": "freshsales",
+      "path": "/software/freshsales/pricing/"
+    },
+    {
+      "kind": "best",
+      "slug": "crm-software",
+      "path": "/best/crm-software/"
+    },
+    {
+      "kind": "tools",
+      "slug": "crm-cost-calculator",
+      "path": "/tools/crm-cost-calculator/"
+    }
+  ],
+  "notes": []
+}

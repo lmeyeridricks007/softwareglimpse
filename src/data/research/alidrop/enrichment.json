@@ -185,36 +185,6 @@
       ]
     }
   ],
-  "aiCapabilities": [
-    {
-      "capability": "assistant",
-      "availability": "limited",
-      "sourceIds": [
-        "alidrop-product-official"
-      ]
-    },
-    {
-      "capability": "summaries",
-      "availability": "limited",
-      "sourceIds": [
-        "alidrop-product-official"
-      ]
-    },
-    {
-      "capability": "automation",
-      "availability": "limited",
-      "sourceIds": [
-        "alidrop-product-official"
-      ]
-    },
-    {
-      "capability": "recommendations",
-      "availability": "limited",
-      "sourceIds": [
-        "alidrop-product-official"
-      ]
-    }
-  ],
   "integrationSupport": [
     {
       "integrationSlug": "shopify",
@@ -240,6 +210,36 @@
     {
       "integrationSlug": "bigcommerce",
       "kind": "native",
+      "sourceIds": [
+        "alidrop-product-official"
+      ]
+    }
+  ],
+  "aiCapabilities": [
+    {
+      "capability": "assistant",
+      "availability": "limited",
+      "sourceIds": [
+        "alidrop-product-official"
+      ]
+    },
+    {
+      "capability": "summaries",
+      "availability": "limited",
+      "sourceIds": [
+        "alidrop-product-official"
+      ]
+    },
+    {
+      "capability": "automation",
+      "availability": "limited",
+      "sourceIds": [
+        "alidrop-product-official"
+      ]
+    },
+    {
+      "capability": "recommendations",
+      "availability": "limited",
       "sourceIds": [
         "alidrop-product-official"
       ]
@@ -315,103 +315,6 @@
       "isEditorial": false
     }
   ],
-  "pricing": {
-    "currency": "USD",
-    "model": "flat",
-    "hasFreePlan": false,
-    "hasFreeTrial": true,
-    "plans": [
-      {
-        "id": "plan-starter",
-        "slug": "starter",
-        "name": "Starter",
-        "isFree": false,
-        "contactSales": false,
-        "hasFreeTrial": true,
-        "trialDays": 7,
-        "highlighted": false,
-        "rules": [
-          {
-            "kind": "per-seat",
-            "amountPerSeat": 39,
-            "currency": "USD",
-            "interval": "month",
-            "amountPeriod": "month"
-          }
-        ],
-        "limits": {
-          "maxProducts": 50
-        }
-      },
-      {
-        "id": "plan-professional",
-        "slug": "professional",
-        "name": "Professional",
-        "isFree": false,
-        "contactSales": false,
-        "hasFreeTrial": true,
-        "trialDays": 7,
-        "highlighted": true,
-        "rules": [
-          {
-            "kind": "per-seat",
-            "amountPerSeat": 59,
-            "currency": "USD",
-            "interval": "month",
-            "amountPeriod": "month"
-          }
-        ],
-        "limits": {
-          "maxProducts": 500
-        }
-      },
-      {
-        "id": "plan-empire",
-        "slug": "empire",
-        "name": "Empire",
-        "isFree": false,
-        "contactSales": false,
-        "hasFreeTrial": true,
-        "trialDays": 7,
-        "highlighted": false,
-        "rules": [
-          {
-            "kind": "per-seat",
-            "amountPerSeat": 99,
-            "currency": "USD",
-            "interval": "month",
-            "amountPeriod": "month"
-          }
-        ]
-      },
-      {
-        "id": "plan-unicorn",
-        "slug": "unicorn",
-        "name": "Unicorn",
-        "isFree": false,
-        "contactSales": false,
-        "hasFreeTrial": true,
-        "trialDays": 7,
-        "highlighted": false,
-        "rules": [
-          {
-            "kind": "per-seat",
-            "amountPerSeat": 299,
-            "currency": "USD",
-            "interval": "month",
-            "amountPeriod": "month"
-          }
-        ]
-      }
-    ],
-    "notes": "Verified 2026-08-18 from alidrop.co/pricing (high confidence). $1 seven-day trial on paid tiers. Annual effective rates published (e.g. Pro ~$24/mo annual). Affiliate programme active (aff-alidrop). Affiliate economics excluded from scoring.",
-    "verifiedAt": "2026-08-18T12:00:00.000Z",
-    "sourceIds": [
-      "alidrop-pricing-official"
-    ],
-    "startingPriceMonthly": 39,
-    "trialDays": 7
-  },
   "screenshots": [
     {
       "id": "alidrop-shot-hero",
@@ -542,13 +445,13 @@
       "demonstratedDimensionIds": [],
       "requirementCriterionIds": [],
       "workflowStageIds": [],
+      "mediaContext": "general-workflow",
       "reportedOutcomes": [],
       "placements": [
         "overview",
         "features",
         "evidence"
       ],
-      "mediaContext": "general-workflow",
       "purpose": "Official AliDrop video for product research pages",
       "demonstratesCaption": "How AliDrop presents the product in an official vendor video.",
       "editorialCommentary": "Official vendor demo — treat as UI/workflow evidence, not SoftwareGlimpse scoring.",
@@ -566,11 +469,103 @@
       "status": "published"
     }
   ],
-  "sourceIds": [
-    "alidrop-product-official",
-    "alidrop-pricing-official"
-  ],
-  "notes": "Ecommerce Wave-1 onboarding enrichment from first-party research 2026-08-18T12:00:00.000Z. handsOnTesting=false. membershipRole=primary. jobCluster=dropshipping-sourcing.",
+  "pricing": {
+    "currency": "USD",
+    "model": "flat",
+    "hasFreePlan": false,
+    "hasFreeTrial": true,
+    "plans": [
+      {
+        "id": "plan-starter",
+        "slug": "starter",
+        "name": "Starter",
+        "isFree": false,
+        "contactSales": false,
+        "hasFreeTrial": true,
+        "trialDays": 7,
+        "highlighted": false,
+        "rules": [
+          {
+            "kind": "per-seat",
+            "amountPerSeat": 39,
+            "currency": "USD",
+            "interval": "month",
+            "amountPeriod": "month"
+          }
+        ],
+        "limits": {
+          "maxProducts": 50
+        }
+      },
+      {
+        "id": "plan-professional",
+        "slug": "professional",
+        "name": "Professional",
+        "isFree": false,
+        "contactSales": false,
+        "hasFreeTrial": true,
+        "trialDays": 7,
+        "highlighted": true,
+        "rules": [
+          {
+            "kind": "per-seat",
+            "amountPerSeat": 59,
+            "currency": "USD",
+            "interval": "month",
+            "amountPeriod": "month"
+          }
+        ],
+        "limits": {
+          "maxProducts": 500
+        }
+      },
+      {
+        "id": "plan-empire",
+        "slug": "empire",
+        "name": "Empire",
+        "isFree": false,
+        "contactSales": false,
+        "hasFreeTrial": true,
+        "trialDays": 7,
+        "highlighted": false,
+        "rules": [
+          {
+            "kind": "per-seat",
+            "amountPerSeat": 99,
+            "currency": "USD",
+            "interval": "month",
+            "amountPeriod": "month"
+          }
+        ]
+      },
+      {
+        "id": "plan-unicorn",
+        "slug": "unicorn",
+        "name": "Unicorn",
+        "isFree": false,
+        "contactSales": false,
+        "hasFreeTrial": true,
+        "trialDays": 7,
+        "highlighted": false,
+        "rules": [
+          {
+            "kind": "per-seat",
+            "amountPerSeat": 299,
+            "currency": "USD",
+            "interval": "month",
+            "amountPeriod": "month"
+          }
+        ]
+      }
+    ],
+    "notes": "Verified 2026-08-18 from alidrop.co/pricing (high confidence). $1 seven-day trial on paid tiers. Annual effective rates published (e.g. Pro ~$24/mo annual). Affiliate programme active (aff-alidrop). Affiliate economics excluded from scoring.",
+    "verifiedAt": "2026-09-09T08:26:54.647Z",
+    "sourceIds": [
+      "alidrop-pricing-official"
+    ],
+    "startingPriceMonthly": 39,
+    "trialDays": 7
+  },
   "domainCheckedAt": {
     "identity": "2026-08-18T12:00:00.000Z",
     "pricing": "2026-08-18T12:00:00.000Z",
@@ -584,5 +579,10 @@
     "limits": "2026-08-18T12:00:00.000Z",
     "security-compliance": "2026-08-18T12:00:00.000Z"
   },
-  "updatedAt": "2026-08-18T08:00:00.000Z"
+  "sourceIds": [
+    "alidrop-product-official",
+    "alidrop-pricing-official"
+  ],
+  "updatedAt": "2026-08-18T08:00:00.000Z",
+  "notes": "Ecommerce Wave-1 onboarding enrichment from first-party research 2026-08-18T12:00:00.000Z. handsOnTesting=false. membershipRole=primary. jobCluster=dropshipping-sourcing."
 }

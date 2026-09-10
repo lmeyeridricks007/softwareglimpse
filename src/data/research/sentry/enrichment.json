@@ -211,6 +211,29 @@
       ]
     }
   ],
+  "integrationSupport": [
+    {
+      "integrationSlug": "github",
+      "kind": "native",
+      "sourceIds": [
+        "sentry-product-official"
+      ]
+    },
+    {
+      "integrationSlug": "slack",
+      "kind": "native",
+      "sourceIds": [
+        "sentry-product-official"
+      ]
+    },
+    {
+      "integrationSlug": "api",
+      "kind": "api-only",
+      "sourceIds": [
+        "sentry-product-official"
+      ]
+    }
+  ],
   "aiCapabilities": [
     {
       "capability": "assistant",
@@ -238,29 +261,6 @@
     {
       "capability": "recommendations",
       "availability": "supported",
-      "sourceIds": [
-        "sentry-product-official"
-      ]
-    }
-  ],
-  "integrationSupport": [
-    {
-      "integrationSlug": "github",
-      "kind": "native",
-      "sourceIds": [
-        "sentry-product-official"
-      ]
-    },
-    {
-      "integrationSlug": "slack",
-      "kind": "native",
-      "sourceIds": [
-        "sentry-product-official"
-      ]
-    },
-    {
-      "integrationSlug": "api",
-      "kind": "api-only",
       "sourceIds": [
         "sentry-product-official"
       ]
@@ -358,6 +358,38 @@
       "isEditorial": false
     }
   ],
+  "screenshots": [
+    {
+      "id": "sentry-shot-overview",
+      "src": "/vendor-ui/sentry/overview.webp",
+      "alt": "Sentry official marketing visual",
+      "caption": "Official Open Graph / marketing visual from https://sentry.io/.",
+      "source": "https://sentry.io/",
+      "checkedAt": "2026-08-18T14:00:00.000Z",
+      "annotation": "Official Sentry marketing UI asset",
+      "kind": "vendor-ui",
+      "featureIds": [
+        "apm-tracing",
+        "analytics-reporting"
+      ],
+      "useCaseIds": [
+        "observability-monitoring"
+      ]
+    },
+    {
+      "id": "sentry-shot-overview",
+      "src": "/vendor-ui/sentry/overview.png",
+      "alt": "Sentry — error monitoring overview visual",
+      "caption": "Overview visual for Sentry — error monitoring.",
+      "source": "Sentry — error monitoring",
+      "checkedAt": "2026-08-18T20:00:00.000Z",
+      "annotation": "Product overview visual",
+      "kind": "vendor-ui",
+      "featureIds": [],
+      "useCaseIds": []
+    }
+  ],
+  "media": [],
   "pricing": {
     "currency": "USD",
     "model": "flat",
@@ -438,50 +470,12 @@
       }
     ],
     "notes": "Verified 2026-08-18 from sentry.io/pricing (high confidence). Developer Free $0 (1 user, 5k errors). Team $26/mo annual with default prepaid. Business $80/mo. Enterprise custom. Event prepaid/overage math still changes TCO. Affiliate economics excluded.",
-    "verifiedAt": "2026-08-18T20:00:00.000Z",
+    "verifiedAt": "2026-09-08T21:57:34.394Z",
     "sourceIds": [
       "sentry-pricing-official"
     ],
     "startingPriceMonthly": 26
   },
-  "screenshots": [
-    {
-      "id": "sentry-shot-overview",
-      "src": "/vendor-ui/sentry/overview.webp",
-      "alt": "Sentry official marketing visual",
-      "caption": "Official Open Graph / marketing visual from https://sentry.io/.",
-      "source": "https://sentry.io/",
-      "checkedAt": "2026-08-18T14:00:00.000Z",
-      "annotation": "Official Sentry marketing UI asset",
-      "kind": "vendor-ui",
-      "featureIds": [
-        "apm-tracing",
-        "analytics-reporting"
-      ],
-      "useCaseIds": [
-        "observability-monitoring"
-      ]
-    },
-    {
-      "id": "sentry-shot-overview",
-      "src": "/vendor-ui/sentry/overview.png",
-      "alt": "Sentry — error monitoring overview visual",
-      "caption": "Overview visual for Sentry — error monitoring.",
-      "source": "Sentry — error monitoring",
-      "checkedAt": "2026-08-18T20:00:00.000Z",
-      "annotation": "Product overview visual",
-      "kind": "vendor-ui",
-      "featureIds": [],
-      "useCaseIds": []
-    }
-  ],
-  "media": [],
-  "sourceIds": [
-    "sentry-product-official",
-    "sentry-pricing-official",
-    "sentry-pricing"
-  ],
-  "notes": "IT industry Tier-A onboarding enrichment from first-party research 2026-08-18T20:00:00.000Z. handsOnTesting=false. membershipRole=primary. jobCluster=observability-monitoring.",
   "domainCheckedAt": {
     "identity": "2026-08-18T20:00:00.000Z",
     "pricing": "2026-08-18T20:00:00.000Z",
@@ -495,5 +489,11 @@
     "limits": "2026-08-18T20:00:00.000Z",
     "security-compliance": "2026-08-18T20:00:00.000Z"
   },
-  "updatedAt": "2026-08-18T20:00:00.000Z"
+  "sourceIds": [
+    "sentry-product-official",
+    "sentry-pricing-official",
+    "sentry-pricing"
+  ],
+  "updatedAt": "2026-08-18T20:00:00.000Z",
+  "notes": "IT industry Tier-A onboarding enrichment from first-party research 2026-08-18T20:00:00.000Z. handsOnTesting=false. membershipRole=primary. jobCluster=observability-monitoring."
 }

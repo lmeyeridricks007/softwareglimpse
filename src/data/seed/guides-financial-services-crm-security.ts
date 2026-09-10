@@ -1,4 +1,4 @@
-import type { GuidePage } from "@/domain";
+import type { GuidePageInput } from "@/domain";
 import type { z } from "zod";
 import type { GuideContentBlockSchema } from "@/domain";
 
@@ -280,7 +280,7 @@ const financialServicesCrmSecurityBlocks: GuideBlockInput[] = [
   },
 ];
 
-export const financialServicesCrmSecurityGuide: GuidePage = {
+export const financialServicesCrmSecurityGuide: GuidePageInput = {
   id: "guide-financial-services-crm-security",
   slug: "financial-services-crm-security",
   title: "Financial Services CRM Security: Permissions, Audit Logs & Access Reviews",
@@ -319,7 +319,7 @@ export const financialServicesCrmSecurityGuide: GuidePage = {
     "financial-services-crm-migration",
     "financial-services-crm-checklist",
   ],
-  blocks: financialServicesCrmSecurityBlocks as GuidePage["blocks"],
+  blocks: financialServicesCrmSecurityBlocks as GuidePageInput["blocks"],
   checklist: [
     {
       id: "access-map",

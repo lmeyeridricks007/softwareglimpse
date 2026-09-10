@@ -147,36 +147,6 @@
       ]
     }
   ],
-  "aiCapabilities": [
-    {
-      "capability": "assistant",
-      "availability": "not-supported",
-      "sourceIds": [
-        "webcatalog-product-official"
-      ]
-    },
-    {
-      "capability": "summaries",
-      "availability": "not-supported",
-      "sourceIds": [
-        "webcatalog-product-official"
-      ]
-    },
-    {
-      "capability": "automation",
-      "availability": "not-supported",
-      "sourceIds": [
-        "webcatalog-product-official"
-      ]
-    },
-    {
-      "capability": "recommendations",
-      "availability": "not-supported",
-      "sourceIds": [
-        "webcatalog-product-official"
-      ]
-    }
-  ],
   "integrationSupport": [
     {
       "integrationSlug": "chrome",
@@ -203,6 +173,36 @@
     {
       "integrationSlug": "linux",
       "kind": "native",
+      "sourceIds": [
+        "webcatalog-product-official"
+      ]
+    }
+  ],
+  "aiCapabilities": [
+    {
+      "capability": "assistant",
+      "availability": "not-supported",
+      "sourceIds": [
+        "webcatalog-product-official"
+      ]
+    },
+    {
+      "capability": "summaries",
+      "availability": "not-supported",
+      "sourceIds": [
+        "webcatalog-product-official"
+      ]
+    },
+    {
+      "capability": "automation",
+      "availability": "not-supported",
+      "sourceIds": [
+        "webcatalog-product-official"
+      ]
+    },
+    {
+      "capability": "recommendations",
+      "availability": "not-supported",
       "sourceIds": [
         "webcatalog-product-official"
       ]
@@ -286,83 +286,6 @@
       "isEditorial": false
     }
   ],
-  "pricing": {
-    "currency": "USD",
-    "model": "freemium",
-    "hasFreePlan": true,
-    "hasFreeTrial": true,
-    "plans": [
-      {
-        "id": "plan-basic",
-        "slug": "basic",
-        "name": "Basic",
-        "isFree": true,
-        "contactSales": false,
-        "hasFreeTrial": false,
-        "highlighted": false,
-        "rules": [
-          {
-            "kind": "flat",
-            "amount": 0,
-            "currency": "USD",
-            "interval": "month",
-            "amountPeriod": "month"
-          }
-        ],
-        "description": "Free Basic: up to 2 apps.",
-        "limits": {
-          "maxApps": 2
-        }
-      },
-      {
-        "id": "plan-pro",
-        "slug": "pro",
-        "name": "Pro",
-        "isFree": false,
-        "contactSales": false,
-        "hasFreeTrial": true,
-        "trialDays": 7,
-        "highlighted": true,
-        "rules": [
-          {
-            "kind": "per-seat",
-            "amountPerSeat": 5,
-            "currency": "USD",
-            "interval": "year",
-            "amountPeriod": "month"
-          }
-        ],
-        "description": "$5/user/month billed annually — Pro desktop workspace organizer."
-      },
-      {
-        "id": "plan-business",
-        "slug": "business",
-        "name": "Business",
-        "isFree": false,
-        "contactSales": false,
-        "hasFreeTrial": true,
-        "trialDays": 7,
-        "highlighted": false,
-        "rules": [
-          {
-            "kind": "per-seat",
-            "amountPerSeat": 8,
-            "currency": "USD",
-            "interval": "year",
-            "amountPeriod": "month"
-          }
-        ],
-        "description": "$8/user/month billed annually — Business workspace packaging for teams."
-      }
-    ],
-    "notes": "Verified 2026-08-17 from webcatalog.io/pricing. Basic Free (2 apps). Pro $5/user/mo annual, Business $8/user/mo annual. 7-day trial. Confirm live app limits per plan.",
-    "verifiedAt": "2026-08-17T18:00:00.000Z",
-    "sourceIds": [
-      "webcatalog-pricing-official"
-    ],
-    "startingPriceMonthly": 5,
-    "trialDays": 7
-  },
   "screenshots": [
     {
       "id": "webcatalog-shot-launcher",
@@ -436,13 +359,13 @@
       "demonstratedDimensionIds": [],
       "requirementCriterionIds": [],
       "workflowStageIds": [],
+      "mediaContext": "general-workflow",
       "reportedOutcomes": [],
       "placements": [
         "overview",
         "features",
         "evidence"
       ],
-      "mediaContext": "general-workflow",
       "purpose": "Official WebCatalog video for product research pages",
       "demonstratesCaption": "How WebCatalog presents the product in an official vendor video.",
       "editorialCommentary": "Official vendor demo — treat as UI/workflow evidence, not SoftwareGlimpse scoring.",
@@ -460,11 +383,83 @@
       "status": "published"
     }
   ],
-  "sourceIds": [
-    "webcatalog-product-official",
-    "webcatalog-pricing-official"
-  ],
-  "notes": "Project-management Wave-1 onboarding enrichment from first-party research 2026-08-17T18:00:00.000Z. handsOnTesting=false. membershipRole=adjacent. jobCluster=desktop-workspace. Adjacent desktop workspace organizer — not a work-OS peer for undifferentiated best ranks.",
+  "pricing": {
+    "currency": "USD",
+    "model": "freemium",
+    "hasFreePlan": true,
+    "hasFreeTrial": true,
+    "plans": [
+      {
+        "id": "plan-basic",
+        "slug": "basic",
+        "name": "Basic",
+        "isFree": true,
+        "contactSales": false,
+        "hasFreeTrial": false,
+        "highlighted": false,
+        "rules": [
+          {
+            "kind": "flat",
+            "amount": 0,
+            "currency": "USD",
+            "interval": "month",
+            "amountPeriod": "month"
+          }
+        ],
+        "description": "Free Basic: up to 2 apps.",
+        "limits": {
+          "maxApps": 2
+        }
+      },
+      {
+        "id": "plan-pro",
+        "slug": "pro",
+        "name": "Pro",
+        "isFree": false,
+        "contactSales": false,
+        "hasFreeTrial": true,
+        "trialDays": 7,
+        "highlighted": true,
+        "rules": [
+          {
+            "kind": "per-seat",
+            "amountPerSeat": 5,
+            "currency": "USD",
+            "interval": "year",
+            "amountPeriod": "month"
+          }
+        ],
+        "description": "$5/user/month billed annually — Pro desktop workspace organizer."
+      },
+      {
+        "id": "plan-business",
+        "slug": "business",
+        "name": "Business",
+        "isFree": false,
+        "contactSales": false,
+        "hasFreeTrial": true,
+        "trialDays": 7,
+        "highlighted": false,
+        "rules": [
+          {
+            "kind": "per-seat",
+            "amountPerSeat": 8,
+            "currency": "USD",
+            "interval": "year",
+            "amountPeriod": "month"
+          }
+        ],
+        "description": "$8/user/month billed annually — Business workspace packaging for teams."
+      }
+    ],
+    "notes": "Verified 2026-08-17 from webcatalog.io/pricing. Basic Free (2 apps). Pro $5/user/mo annual, Business $8/user/mo annual. 7-day trial. Confirm live app limits per plan.",
+    "verifiedAt": "2026-09-09T18:08:37.020Z",
+    "sourceIds": [
+      "webcatalog-pricing-official"
+    ],
+    "startingPriceMonthly": 5,
+    "trialDays": 7
+  },
   "domainCheckedAt": {
     "identity": "2026-08-17T18:00:00.000Z",
     "pricing": "2026-08-17T18:00:00.000Z",
@@ -478,5 +473,10 @@
     "limits": "2026-08-17T18:00:00.000Z",
     "security-compliance": "2026-08-17T18:00:00.000Z"
   },
-  "updatedAt": "2026-08-18T07:00:00.000Z"
+  "sourceIds": [
+    "webcatalog-product-official",
+    "webcatalog-pricing-official"
+  ],
+  "updatedAt": "2026-08-18T07:00:00.000Z",
+  "notes": "Project-management Wave-1 onboarding enrichment from first-party research 2026-08-17T18:00:00.000Z. handsOnTesting=false. membershipRole=adjacent. jobCluster=desktop-workspace. Adjacent desktop workspace organizer — not a work-OS peer for undifferentiated best ranks."
 }

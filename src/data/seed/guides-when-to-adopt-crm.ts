@@ -1,4 +1,4 @@
-import type { GuidePage } from "@/domain";
+import type { GuidePageInput } from "@/domain";
 import type { z } from "zod";
 import type { GuideContentBlockSchema } from "@/domain";
 
@@ -304,7 +304,7 @@ const whenToAdoptCrmBlocks: GuideBlockInput[] = [
   },
 ];
 
-export const whenToAdoptCrmGuide: GuidePage = {
+export const whenToAdoptCrmGuide: GuidePageInput = {
   id: "guide-when-to-adopt-crm",
   slug: "when-to-adopt-crm",
   title: "When to Adopt a CRM: Timing, Pilot & Expand",
@@ -349,7 +349,7 @@ export const whenToAdoptCrmGuide: GuidePage = {
     "crm-vs-spreadsheet",
     "crm-selection-process",
   ],
-  blocks: whenToAdoptCrmBlocks as GuidePage["blocks"],
+  blocks: whenToAdoptCrmBlocks as GuidePageInput["blocks"],
   checklist: [
     {
       id: "pain",

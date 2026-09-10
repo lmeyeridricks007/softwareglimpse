@@ -6,6 +6,11 @@ import {
 } from "@/components/site/foundation-page";
 import { buildPageMetadata } from "@/seo/metadata";
 import {
+  JsonLdScript,
+  personJsonLd,
+  webPageJsonLd,
+} from "@/seo/structured-data";
+import {
   COMPANY_ROUTES,
   LEGAL_ROUTES,
   getFounderAuthor,
@@ -23,15 +28,37 @@ export const metadata: Metadata = buildPageMetadata({
 export default function AboutPage() {
   const identity = getSiteIdentity();
   const founder = getFounderAuthor();
+  const jsonLd = [
+    webPageJsonLd({
+      name: `About ${identity.brandName}`,
+      description:
+        "What SoftwareGlimpse is, who it helps, how recommendations work, and how the site earns money.",
+      path: COMPANY_ROUTES.about,
+    }),
+    ...(founder
+      ? [
+          personJsonLd({
+            name: founder.name,
+            path: COMPANY_ROUTES.myStory,
+            jobTitle: founder.role,
+            description: founder.shortBio,
+            worksForName: identity.brandName,
+          }),
+        ]
+      : []),
+  ];
 
   return (
+    <>
+      <JsonLdScript data={jsonLd} />
     <FoundationPageShell
       title={`About ${identity.brandName}`}
-      summary="A software decision platform — not another keyword-stuffed review mill."
+      summary="A software buying intelligence publication — structured research, transparent evidence levels, and affiliate-independent recommendations."
       related={[
         { href: COMPANY_ROUTES.myStory, label: "My Story" },
         { href: COMPANY_ROUTES.methodology, label: "Editorial methodology" },
         { href: COMPANY_ROUTES.howWeReview, label: "How we review software" },
+        { href: LEGAL_ROUTES.editorialPolicy, label: "Editorial policy" },
         { href: COMPANY_ROUTES.contact, label: "Contact" },
         {
           href: LEGAL_ROUTES.affiliateDisclosure,
@@ -130,5 +157,6 @@ export default function AboutPage() {
         )}
       </SectionBlock>
     </FoundationPageShell>
+    </>
   );
 }

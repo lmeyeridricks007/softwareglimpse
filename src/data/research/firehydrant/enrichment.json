@@ -195,6 +195,36 @@
       ]
     }
   ],
+  "integrationSupport": [
+    {
+      "integrationSlug": "slack",
+      "kind": "native",
+      "sourceIds": [
+        "firehydrant-product-official"
+      ]
+    },
+    {
+      "integrationSlug": "microsoft-teams",
+      "kind": "native",
+      "sourceIds": [
+        "firehydrant-product-official"
+      ]
+    },
+    {
+      "integrationSlug": "pagerduty",
+      "kind": "native",
+      "sourceIds": [
+        "firehydrant-product-official"
+      ]
+    },
+    {
+      "integrationSlug": "api",
+      "kind": "api-only",
+      "sourceIds": [
+        "firehydrant-product-official"
+      ]
+    }
+  ],
   "aiCapabilities": [
     {
       "capability": "assistant",
@@ -222,36 +252,6 @@
     {
       "capability": "recommendations",
       "availability": "supported",
-      "sourceIds": [
-        "firehydrant-product-official"
-      ]
-    }
-  ],
-  "integrationSupport": [
-    {
-      "integrationSlug": "slack",
-      "kind": "native",
-      "sourceIds": [
-        "firehydrant-product-official"
-      ]
-    },
-    {
-      "integrationSlug": "microsoft-teams",
-      "kind": "native",
-      "sourceIds": [
-        "firehydrant-product-official"
-      ]
-    },
-    {
-      "integrationSlug": "pagerduty",
-      "kind": "native",
-      "sourceIds": [
-        "firehydrant-product-official"
-      ]
-    },
-    {
-      "integrationSlug": "api",
-      "kind": "api-only",
       "sourceIds": [
         "firehydrant-product-official"
       ]
@@ -328,6 +328,21 @@
       "isEditorial": false
     }
   ],
+  "screenshots": [
+    {
+      "id": "firehydrant-shot-overview",
+      "src": "/vendor-ui/firehydrant/overview.png",
+      "alt": "FireHydrant official marketing visual",
+      "caption": "Official Open Graph / marketing visual from https://firehydrant.com/.",
+      "source": "https://firehydrant.com/",
+      "checkedAt": "2026-08-18T14:56:00.000Z",
+      "annotation": "Official FireHydrant marketing UI asset",
+      "kind": "vendor-ui",
+      "featureIds": [],
+      "useCaseIds": []
+    }
+  ],
+  "media": [],
   "pricing": {
     "currency": "USD",
     "model": "per-seat",
@@ -389,34 +404,13 @@
       }
     ],
     "notes": "Verified 2026-08-18 from firehydrant.com/pricing (high confidence). Free up to 10 responders. Pro $25/responder/mo annual. Enterprise custom. 14-day Pro trial. Affiliate economics excluded.",
-    "verifiedAt": "2026-08-18T22:00:00.000Z",
+    "verifiedAt": "2026-09-08T21:57:52.218Z",
     "sourceIds": [
       "firehydrant-pricing-official"
     ],
     "startingPriceMonthly": 25,
     "trialDays": 14
   },
-  "screenshots": [
-    {
-      "id": "firehydrant-shot-overview",
-      "src": "/vendor-ui/firehydrant/overview.png",
-      "alt": "FireHydrant official marketing visual",
-      "caption": "Official Open Graph / marketing visual from https://firehydrant.com/.",
-      "source": "https://firehydrant.com/",
-      "checkedAt": "2026-08-18T14:56:00.000Z",
-      "annotation": "Official FireHydrant marketing UI asset",
-      "kind": "vendor-ui",
-      "featureIds": [],
-      "useCaseIds": []
-    }
-  ],
-  "media": [],
-  "sourceIds": [
-    "firehydrant-product-official",
-    "firehydrant-pricing-official",
-    "firehydrant-pricing"
-  ],
-  "notes": "IT Tier-B + ITSM SMB onboarding enrichment from first-party research 2026-08-18T22:00:00.000Z. handsOnTesting=false. membershipRole=primary. jobCluster=incident-oncall.",
   "domainCheckedAt": {
     "identity": "2026-08-18T22:00:00.000Z",
     "pricing": "2026-08-18T22:00:00.000Z",
@@ -430,5 +424,11 @@
     "limits": "2026-08-18T22:00:00.000Z",
     "security-compliance": "2026-08-18T22:00:00.000Z"
   },
-  "updatedAt": "2026-08-18T14:56:00.000Z"
+  "sourceIds": [
+    "firehydrant-product-official",
+    "firehydrant-pricing-official",
+    "firehydrant-pricing"
+  ],
+  "updatedAt": "2026-08-18T14:56:00.000Z",
+  "notes": "IT Tier-B + ITSM SMB onboarding enrichment from first-party research 2026-08-18T22:00:00.000Z. handsOnTesting=false. membershipRole=primary. jobCluster=incident-oncall."
 }

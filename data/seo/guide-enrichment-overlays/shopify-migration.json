@@ -1,0 +1,158 @@
+{
+  "slug": "shopify-migration",
+  "enrichmentType": "MIGRATION_GUIDE",
+  "updatedAt": "2026-09-09T05:47:30.798Z",
+  "uniqueValueAdded": [
+    "implementation_workflow",
+    "scenario_analysis",
+    "decision_framework",
+    "limitations_evidence",
+    "buyer_checklist"
+  ],
+  "patch": {
+    "summary": "Shopify migration guide: inventory → rehearse → freeze → validate integrations — grounded in researched limitations and catalogue peers.",
+    "blocks": [
+      {
+        "id": "da-shopify-migration-1",
+        "type": "direct-answer",
+        "body": "Migrate to Shopify by inventorying legacy ecommerce fields, mapping them to Shopify objects, rehearsing a freeze window, and validating Stripe, PayPal, Facebook before reopening writes.",
+        "bullets": [
+          "Inventory → map → rehearse → cut over → reopen",
+          "Highest risk: Subscription plus apps/themes and payment spreads raise TCO versus headline plan price",
+          "Success signal: online storefront works for the pilot cohort"
+        ]
+      },
+      {
+        "id": "mig-shopify-migration-2",
+        "type": "step",
+        "heading": "Shopify migration cutover playbook",
+        "body": "Migrations fail from optimistic timelines — not from missing motivation.",
+        "stepNumber": 1,
+        "scenarios": [
+          {
+            "title": "Field inventory",
+            "body": "Export legacy fields that power online storefront, product catalog, checkout payments and mark must-map vs archive."
+          },
+          {
+            "title": "Rehearsal load",
+            "body": "Run a non-prod load into Shopify; measure match rates before the freeze."
+          },
+          {
+            "title": "Production freeze",
+            "body": "Freeze legacy writes; cut over; validate Stripe; then reopen."
+          }
+        ]
+      },
+      {
+        "id": "df-shopify-migration-3",
+        "type": "decision-framework",
+        "title": "Migrate to Shopify?",
+        "steps": [
+          {
+            "id": "m-1",
+            "label": "Migrate when Merchants wanting a hosted store without managing infrastructure outweigh migration cost"
+          },
+          {
+            "id": "m-2",
+            "label": "Delay if this limitation hits cutover: Subscription plus apps/themes and payment spreads raise TCO versus headline plan price"
+          },
+          {
+            "id": "m-3",
+            "label": "If Shopify mapping is poor, compare destination fit with BigCommerce before moving data twice"
+          }
+        ]
+      },
+      {
+        "id": "mist-shopify-migration-4",
+        "type": "mistakes",
+        "title": "Shopify migration mistakes",
+        "items": [
+          {
+            "title": "No freeze window",
+            "body": "Dual-writing without a freeze creates irrevocable duplicates."
+          },
+          {
+            "title": "Integrations last",
+            "body": "Wire Stripe in rehearsal — not on Monday morning after cutover."
+          },
+          {
+            "title": "Data risk 1",
+            "body": "Subscription plus apps/themes and payment spreads raise TCO versus headline plan price"
+          },
+          {
+            "title": "Data risk 2",
+            "body": "Third-party payment gateways incur additional transaction fees on lower tiers"
+          },
+          {
+            "title": "Data risk 3",
+            "body": "Plus and advanced B2B features require higher plans or add-ons"
+          }
+        ]
+      },
+      {
+        "id": "sel-shopify-migration-5",
+        "type": "selection-checklist",
+        "title": "Shopify migration checklist",
+        "dimensions": [
+          {
+            "id": "map",
+            "label": "Mapping",
+            "options": [
+              "Must-map fields listed",
+              "Owners assigned",
+              "Archive rules written"
+            ]
+          },
+          {
+            "id": "rehearse",
+            "label": "Rehearsal",
+            "options": [
+              "Non-prod load done",
+              "Match rate measured",
+              "Rollback tested"
+            ]
+          },
+          {
+            "id": "cutover",
+            "label": "Cutover",
+            "options": [
+              "Freeze communicated",
+              "Integrations green",
+              "Pilot cohort signed off"
+            ]
+          }
+        ]
+      }
+    ],
+    "checklist": [
+      {
+        "id": "enrich-chk-0",
+        "label": "Complete field inventory for online storefront",
+        "order": 0
+      },
+      {
+        "id": "enrich-chk-1",
+        "label": "Rehearse load before production freeze",
+        "order": 1
+      },
+      {
+        "id": "enrich-chk-2",
+        "label": "Validate Stripe pre-reopen",
+        "order": 2
+      },
+      {
+        "id": "enrich-chk-3",
+        "label": "Mitigate: Subscription plus apps/themes and payment spreads raise TCO versus headline plan price",
+        "order": 3
+      }
+    ],
+    "nextAction": {
+      "contentId": "tool:finder:ecommerce",
+      "label": "Open Finder shortlist"
+    }
+  },
+  "notes": [
+    "Migration: cutover risks, data mapping, checklist.",
+    "Type-specific skeleton: MIGRATION_GUIDE"
+  ]
+}

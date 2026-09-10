@@ -132,29 +132,10 @@ describe("buildCompetitorPairComparisonsFromResearch", () => {
   it(
     "covers every published competitorSlug pair that can use a category builder",
     () => {
-      const published = softwareSeed.filter(
-        (item) => item.metadata?.status === "published",
-      );
-      const bySlug = new Map(published.map((item) => [item.slug, item]));
       const covered = new Set(pairs.map((pair) => pair.canonicalSlug));
-      const categorySet = new Set<string>(COMPETITOR_PAIR_CATEGORIES);
-      const missing: string[] = [];
-      for (const product of published) {
-        for (const competitorSlug of product.competitorSlugs ?? []) {
-          const other = bySlug.get(competitorSlug);
-          if (!other) continue;
-          const listingCat = product.primaryCategorySlug;
-          const otherCat = other.primaryCategorySlug;
-          if (
-            !categorySet.has(listingCat ?? "") &&
-            !categorySet.has(otherCat ?? "")
-          ) {
-            continue;
-          }
-          const slug = canonicalizeComparisonSlug([product.slug, other.slug]);
-          if (!covered.has(slug)) missing.push(slug);
-        }
-      }
+      const missing = listEligibleCompetitorPairs()
+        .map((pair) => pair.canonicalSlug)
+        .filter((slug) => !covered.has(slug));
       expect(missing).toEqual([]);
     },
     180_000,

@@ -1,4 +1,4 @@
-import type { GuidePage } from "@/domain";
+import type { GuidePageInput } from "@/domain";
 import type { z } from "zod";
 import type { GuideContentBlockSchema } from "@/domain";
 
@@ -258,7 +258,7 @@ const crmRfpGuideBlocks: GuideBlockInput[] = [
   },
 ];
 
-export const crmRfpGuide: GuidePage = {
+export const crmRfpGuide: GuidePageInput = {
   id: "guide-crm-rfp-guide",
   slug: "crm-rfp-guide",
   title: "CRM RFP Guide: Write a Vendor Brief That Shortlists Honestly",
@@ -303,7 +303,7 @@ export const crmRfpGuide: GuidePage = {
     "crm-selection-process",
     "how-to-choose-crm",
   ],
-  blocks: crmRfpGuideBlocks as GuidePage["blocks"],
+  blocks: crmRfpGuideBlocks as GuidePageInput["blocks"],
   checklist: [
     {
       id: "outcomes",

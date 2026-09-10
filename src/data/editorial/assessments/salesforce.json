@@ -4,13 +4,14 @@
   "methodologySlug": "crm-editorial",
   "methodologyVersion": "1.0.0",
   "status": "approved",
-  "verdict": "Salesforce Sales Cloud is a top-tier enterprise CRM when customization, reporting, scalability, and ecosystem breadth matter more than simplicity or sticker price. Starter Suite offers a published $25 entry point, but most serious mid-market/enterprise buyers should evaluate Pro Suite through Unlimited (and related add-ons) against true TCO. This review is based on first-party Sales Cloud pricing and product research \u2014 not hands-on product testing.",
+  "verdict": "Salesforce Sales Cloud is a top-tier enterprise CRM when customization, reporting, scalability, and ecosystem breadth matter more than simplicity or sticker price. Free Suite ($0, 2 seats as of 30 Aug 2026) and Starter Suite ($25) lower the on-ramp, but most serious mid-market/enterprise buyers should still evaluate Pro Suite through Unlimited (and related add-ons) against true TCO. This review is based on first-party Sales Cloud pricing and product research — not hands-on product testing.",
   "strengths": [
     "Enterprise-grade customization, API flexibility, and sandbox/developer depth on upper editions",
     "Strong pipeline, opportunity, forecasting, and reporting ladder across Pro/Enterprise/Unlimited",
     "Broad ecosystem via AgentExchange (formerly AppExchange), Slack, and partner network",
     "Documented Agentforce AI and automation story across Sales Cloud",
-    "Clear published USD edition ladder from Starter Suite through Unlimited"
+    "Claudeforce / Salesforce in Claude (37 prebuilt sales skills; pilot now, open beta expected Sep 2026)",
+    "Clear published USD edition ladder from Free Suite through Unlimited"
   ],
   "weaknesses": [
     "Steep learning curve and high administration/implementation overhead versus SMB CRMs",
@@ -33,11 +34,11 @@
   ],
   "tradeoffs": [
     "Platform power and ecosystem depth vs ease of use and admin overhead",
-    "Starter Suite headline price vs real Pro/Enterprise/Unlimited + add-on TCO",
+    "Free Suite / Starter headline price vs real Pro/Enterprise/Unlimited + add-on TCO",
     "Enterprise reporting/customization ceiling vs SMB CRM simplicity"
   ],
-  "recommendation": "Choose Salesforce when you need an enterprise sales system of record with deep customization, forecasting/reporting, and ecosystem integrations. Budget beyond Starter for serious sales ops, and compare Pipedrive/HubSpot when simplicity or lower admin burden is the primary buying criterion.",
-  "editorialNotes": "Approved from live first-party Sales Cloud research (pricing, CRM/product/feature pages, trial form). handsOnTesting remains false \u2014 scores are editorial judgments grounded in documented capabilities, not lab testing.",
+  "recommendation": "Choose Salesforce when you need an enterprise sales system of record with deep customization, forecasting/reporting, and ecosystem integrations. Free Suite covers 2-seat starters; budget beyond Starter for serious sales ops, and compare Pipedrive/HubSpot when simplicity or lower admin burden is the primary buying criterion.",
+  "editorialNotes": "Approved from live first-party Sales Cloud research (pricing, CRM/product/feature pages, trial form). 30 Aug 2026 refresh: Free Suite $0 (2 seats) on CRM pricing; Claudeforce PR 26 Aug 2026 (Salesforce in Claude, 37 skills, pilot/open beta Sep 2026, no list price) — Agentforce retained. handsOnTesting remains false.",
   "handsOnTesting": false,
   "confidence": "medium",
   "criterionAssessments": [
@@ -176,8 +177,10 @@
     {
       "criterionSlug": "value-for-money",
       "score": 5,
-      "rationale": "Starter Suite at $25/user/mo is a real entry price, but usable mid-market/enterprise capability typically lands at Pro ($100), Enterprise ($175), or Unlimited ($350) annual list \u2014 before Agentforce/Revenue add-ons. Excellent capability density for large orgs; poor value if you only need a simple pipeline CRM.",
+      "rationale": "Free Suite ($0, 2 seats as of 30 Aug 2026) and Starter Suite at $25/user/mo exist, but usable mid-market/enterprise capability typically lands at Pro ($100), Enterprise ($175), or Unlimited ($350) annual list \u2014 before Agentforce/Revenue add-ons. Excellent capability density for large orgs; poor value if you only need a simple pipeline CRM.",
       "supportingFactIds": [
+        "fact-salesforce-pricing.hasFreePlan",
+        "fact-salesforce-pricing.plans.free-suite",
         "fact-salesforce-pricing.startingPriceMonthly",
         "fact-salesforce-pricing.plans.pro-suite",
         "fact-salesforce-pricing.plans.enterprise",
@@ -186,7 +189,7 @@
       ],
       "confidence": "medium",
       "status": "approved",
-      "reviewedAt": "2026-08-14T06:00:00.000Z",
+      "reviewedAt": "2026-08-30T12:00:00.000Z",
       "reviewer": "editorial"
     }
   ],
@@ -198,10 +201,17 @@
       "actor": "editorial",
       "change": "Initial live first-party Sales Cloud research; scored all 10 CRM criteria; approved assessment with medium confidence; handsOnTesting=false",
       "nextOverall": 7.8
+    },
+    {
+      "at": "2026-08-30T12:00:00.000Z",
+      "actor": "editorial",
+      "change": "Refresh Free Suite $0 (2 seats) + Claudeforce PR notes; value-for-money rationale updated; scores unchanged",
+      "previousOverall": 7.8,
+      "nextOverall": 7.8
     }
   ],
-  "reviewedAt": "2026-08-14T06:00:00.000Z",
+  "reviewedAt": "2026-08-30T12:00:00.000Z",
   "reviewer": "editorial",
   "createdAt": "2026-08-14T06:00:00.000Z",
-  "updatedAt": "2026-08-14T06:00:00.000Z"
+  "updatedAt": "2026-08-30T12:00:00.000Z"
 }

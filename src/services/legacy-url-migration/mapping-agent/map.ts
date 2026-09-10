@@ -601,10 +601,11 @@ function mapTaxonomyRetire(intent: ParsedLegacyIntent): Draft | null {
   if (intent.kind === "locale") {
     return draft({
       relationship: "NO_EQUIVALENT",
-      action: "REVIEW",
-      confidence: "LOW",
+      action: "410",
+      confidence: "HIGH",
       matchBasis: "unmapped",
-      reason: "Locale URL — requires language cutover plan (not auto-mapped in EN pass)",
+      reason:
+        "Locale URL — English-only; 301 via config/legacy-locale-cutover.json when mapped, else 410 via src/proxy.ts (never homepage)",
     });
   }
   return null;

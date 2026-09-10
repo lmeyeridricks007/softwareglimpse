@@ -1,0 +1,526 @@
+{
+  "slug": "iproyal",
+  "updatedAt": "2026-09-07T22:31:21.903Z",
+  "version": "1.0.0",
+  "fieldAudit": {
+    "slug": "iproyal",
+    "checkedAt": "2026-09-07T22:31:21.902Z",
+    "items": [
+      {
+        "field": "name",
+        "status": "PASS",
+        "detail": "Name: IPRoyal",
+        "source": "seed"
+      },
+      {
+        "field": "product_status",
+        "status": "PASS",
+        "detail": "productLifecycle=active",
+        "source": "seed"
+      },
+      {
+        "field": "canonical_vendor",
+        "status": "UNKNOWN",
+        "detail": "Company/vendor not documented",
+        "source": "none"
+      },
+      {
+        "field": "category",
+        "status": "PASS",
+        "detail": "primaryCategorySlug=it-development",
+        "source": "seed"
+      },
+      {
+        "field": "description",
+        "status": "PASS",
+        "detail": "Description present (Residential proxies from $1.75/GB — ISP/datacenter/mobile lines; traffic that ne…)",
+        "source": "seed"
+      },
+      {
+        "field": "target_audience",
+        "status": "PASS",
+        "detail": "Sizes=3, teams=2, assessment bestFor=3",
+        "source": "assessment"
+      },
+      {
+        "field": "use_cases",
+        "status": "PASS",
+        "detail": "useCaseSlugs=1",
+        "source": "seed"
+      },
+      {
+        "field": "capabilities",
+        "status": "PASS",
+        "detail": "featureRatings=0, enrichment features=16",
+        "source": "enrichment"
+      },
+      {
+        "field": "pricing",
+        "status": "PASS",
+        "detail": "Pricing envelope present",
+        "source": "enrichment"
+      },
+      {
+        "field": "plans",
+        "status": "PASS",
+        "detail": "plans=3",
+        "source": "enrichment"
+      },
+      {
+        "field": "free_plan",
+        "status": "PASS",
+        "detail": "No free plan in documented plans (explicit absence)",
+        "source": "enrichment"
+      },
+      {
+        "field": "trial",
+        "status": "UNKNOWN",
+        "detail": "Trial not explicitly documented — do not assume none",
+        "source": "none"
+      },
+      {
+        "field": "integrations",
+        "status": "PASS",
+        "detail": "integrationSlugs=0, enrichment=2",
+        "source": "enrichment"
+      },
+      {
+        "field": "alternatives",
+        "status": "PASS",
+        "detail": "alternativeSlugs=2",
+        "source": "seed"
+      },
+      {
+        "field": "competitors",
+        "status": "PASS",
+        "detail": "competitorSlugs=4",
+        "source": "seed"
+      },
+      {
+        "field": "affiliate",
+        "status": "PASS",
+        "detail": "No affiliate relationship (explicit)",
+        "source": "seed"
+      },
+      {
+        "field": "source_provenance",
+        "status": "PASS",
+        "detail": "seed sources=0, enrichment sourceIds=3",
+        "source": "enrichment"
+      },
+      {
+        "field": "verification_date",
+        "status": "PASS",
+        "detail": "Latest verification/research signal: 2026-08-18T22:00:00.000Z",
+        "source": "enrichment"
+      }
+    ],
+    "passCount": 16,
+    "partialCount": 0,
+    "missingCount": 0,
+    "unknownCount": 2,
+    "score": 89
+  },
+  "decisionHub": {
+    "whatItIs": "IPRoyal sells residential, ISP, datacenter, and mobile proxies with a published residential floor from $1.75/GB. Traffic is marketed as never expiring. startingPriceMonthly $1.75 is that per-GB floor (a 1GB pack equivalent), not a monthly SaaS seat. Same web-data-collection cluster as Bright Data. Bright Data remains the award (7.7); this entity does not outrank it. Budget / SMB proxy peer of ThorData and Decodo (Smartproxy) — thinner enterprise compliance and platform depth than Bright Data / Oxylabs.",
+    "bestFor": [
+      "Teams that need a low published residential GB floor",
+      "Buyers comparing $1.75/GB to ThorData $2/GB and Decodo $3.75/GB starters",
+      "Projects that will validate quality/compliance before production volume",
+      "solo / operations: IPRoyal fit for solo operations teams in the web-data-collection job cluster, from first-party positioning and IT Tier-B + ITSM SMB research.",
+      "micro / operations: IPRoyal fit for micro operations teams in the web-data-collection job cluster, from first-party positioning and IT Tier-B + ITSM SMB research.",
+      "small-business / operations: IPRoyal fit for small-business operations teams in the web-data-collection job cluster, from first-party positioning and IT Tier-B + ITSM SMB research."
+    ],
+    "notIdealFor": [
+      "Enterprises that require Bright Data / Oxylabs compliance-first proxy estates",
+      "Managed extraction API buyers (Zyte / ScraperAPI)",
+      "Hosting or ITSM purchases",
+      "Does not outrank Bright Data (7.7)",
+      "Brand maturity and enterprise compliance story are thinner than Bright Data / Oxylabs",
+      "$1.75/GB is metered — never-expires unused traffic is not unlimited scrape throughput"
+    ],
+    "coreCapabilities": [
+      "proxy network",
+      "web data collection"
+    ],
+    "pricingSummary": "3 documented plans · entry paid: Residential 1GB",
+    "keyTradeoffs": [
+      "Does not outrank Bright Data (7.7)",
+      "Brand maturity and enterprise compliance story are thinner than Bright Data / Oxylabs",
+      "$1.75/GB is metered — never-expires unused traffic is not unlimited scrape throughput",
+      "Not a managed scraping API (Zyte / ScraperAPI) or Actor platform (Apify)",
+      "Not ITSM, observability, git, hosting panel, or managed hosting"
+    ],
+    "alternatives": [
+      {
+        "slug": "bright-data",
+        "name": "Bright Data"
+      },
+      {
+        "slug": "smartproxy",
+        "name": "Decodo (Smartproxy)"
+      },
+      {
+        "slug": "thordata",
+        "name": "ThorData"
+      },
+      {
+        "slug": "oxylabs",
+        "name": "Oxylabs"
+      }
+    ],
+    "importantComparisons": [
+      {
+        "slug": "iproyal-vs-smartproxy",
+        "title": "IPRoyal vs Decodo (Smartproxy)",
+        "href": "/compare/iproyal-vs-smartproxy/"
+      },
+      {
+        "slug": "apify-vs-iproyal",
+        "title": "Apify vs IPRoyal",
+        "href": "/compare/apify-vs-iproyal/"
+      },
+      {
+        "slug": "appdynamics-vs-iproyal",
+        "title": "AppDynamics vs IPRoyal",
+        "href": "/compare/appdynamics-vs-iproyal/"
+      },
+      {
+        "slug": "azure-devops-vs-iproyal",
+        "title": "Azure DevOps vs IPRoyal",
+        "href": "/compare/azure-devops-vs-iproyal/"
+      },
+      {
+        "slug": "bitbucket-vs-iproyal",
+        "title": "Bitbucket Cloud vs IPRoyal",
+        "href": "/compare/bitbucket-vs-iproyal/"
+      },
+      {
+        "slug": "bmc-helix-vs-iproyal",
+        "title": "BMC Helix ITSM vs IPRoyal",
+        "href": "/compare/bmc-helix-vs-iproyal/"
+      }
+    ],
+    "relevantGuides": [
+      {
+        "slug": "iproyal-implementation",
+        "title": "IPRoyal Implementation: 30/60/90 IT Rollout That Sticks",
+        "href": "/guides/iproyal-implementation/"
+      },
+      {
+        "slug": "iproyal-migration",
+        "title": "IPRoyal Migration: Move Tickets and Repos Without Losing Trust",
+        "href": "/guides/iproyal-migration/"
+      },
+      {
+        "slug": "iproyal-setup",
+        "title": "IPRoyal Setup: Day-Zero Path to a Working IT Loop",
+        "href": "/guides/iproyal-setup/"
+      },
+      {
+        "slug": "iproyal-plans",
+        "title": "IPRoyal Plans: Seats, Hosts, and Qualifying Tiers",
+        "href": "/guides/iproyal-plans/"
+      },
+      {
+        "slug": "is-iproyal-worth-it",
+        "title": "Is IPRoyal Worth It? Fit Scenarios Before You Buy",
+        "href": "/guides/is-iproyal-worth-it/"
+      }
+    ],
+    "evidenceState": "Research/data-based (no completed hands-on test) · Latest verification/research signal: 2026-08-18T22:00:00.000Z · Editorial assessment: approved",
+    "nextDecisionStep": "Compare against peers: IPRoyal vs Decodo (Smartproxy)",
+    "missingSections": [
+      "canonical_vendor",
+      "trial"
+    ]
+  },
+  "dependents": [
+    {
+      "kind": "guide",
+      "slug": "iproyal-implementation",
+      "path": "/guides/iproyal-implementation/"
+    },
+    {
+      "kind": "guide",
+      "slug": "iproyal-migration",
+      "path": "/guides/iproyal-migration/"
+    },
+    {
+      "kind": "guide",
+      "slug": "iproyal-setup",
+      "path": "/guides/iproyal-setup/"
+    },
+    {
+      "kind": "guide",
+      "slug": "iproyal-plans",
+      "path": "/guides/iproyal-plans/"
+    },
+    {
+      "kind": "guide",
+      "slug": "is-iproyal-worth-it",
+      "path": "/guides/is-iproyal-worth-it/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "iproyal-vs-smartproxy",
+      "path": "/compare/iproyal-vs-smartproxy/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "apify-vs-iproyal",
+      "path": "/compare/apify-vs-iproyal/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "appdynamics-vs-iproyal",
+      "path": "/compare/appdynamics-vs-iproyal/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "azure-devops-vs-iproyal",
+      "path": "/compare/azure-devops-vs-iproyal/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "bitbucket-vs-iproyal",
+      "path": "/compare/bitbucket-vs-iproyal/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "bmc-helix-vs-iproyal",
+      "path": "/compare/bmc-helix-vs-iproyal/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "bright-data-vs-iproyal",
+      "path": "/compare/bright-data-vs-iproyal/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "buildkite-vs-iproyal",
+      "path": "/compare/buildkite-vs-iproyal/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "chronosphere-vs-iproyal",
+      "path": "/compare/chronosphere-vs-iproyal/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "circleci-vs-iproyal",
+      "path": "/compare/circleci-vs-iproyal/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "cloudways-vs-iproyal",
+      "path": "/compare/cloudways-vs-iproyal/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "coralogix-vs-iproyal",
+      "path": "/compare/coralogix-vs-iproyal/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "cpanel-vs-iproyal",
+      "path": "/compare/cpanel-vs-iproyal/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "datadog-vs-iproyal",
+      "path": "/compare/datadog-vs-iproyal/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "directadmin-vs-iproyal",
+      "path": "/compare/directadmin-vs-iproyal/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "dynatrace-vs-iproyal",
+      "path": "/compare/dynatrace-vs-iproyal/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "elastic-observability-vs-iproyal",
+      "path": "/compare/elastic-observability-vs-iproyal/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "firehydrant-vs-iproyal",
+      "path": "/compare/firehydrant-vs-iproyal/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "fly-io-vs-iproyal",
+      "path": "/compare/fly-io-vs-iproyal/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "github-vs-iproyal",
+      "path": "/compare/github-vs-iproyal/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "gitlab-vs-iproyal",
+      "path": "/compare/gitlab-vs-iproyal/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "grafana-cloud-vs-iproyal",
+      "path": "/compare/grafana-cloud-vs-iproyal/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "haloitsm-vs-iproyal",
+      "path": "/compare/haloitsm-vs-iproyal/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "heroku-vs-iproyal",
+      "path": "/compare/heroku-vs-iproyal/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "honeycomb-vs-iproyal",
+      "path": "/compare/honeycomb-vs-iproyal/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "incident-io-vs-iproyal",
+      "path": "/compare/incident-io-vs-iproyal/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "iproyal-vs-ivanti",
+      "path": "/compare/iproyal-vs-ivanti/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "iproyal-vs-jira-service-management",
+      "path": "/compare/iproyal-vs-jira-service-management/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "iproyal-vs-kinsta",
+      "path": "/compare/iproyal-vs-kinsta/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "iproyal-vs-manageengine-servicedesk-plus",
+      "path": "/compare/iproyal-vs-manageengine-servicedesk-plus/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "iproyal-vs-new-relic",
+      "path": "/compare/iproyal-vs-new-relic/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "iproyal-vs-oxylabs",
+      "path": "/compare/iproyal-vs-oxylabs/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "iproyal-vs-pagerduty",
+      "path": "/compare/iproyal-vs-pagerduty/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "iproyal-vs-railway",
+      "path": "/compare/iproyal-vs-railway/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "iproyal-vs-render",
+      "path": "/compare/iproyal-vs-render/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "iproyal-vs-rootly",
+      "path": "/compare/iproyal-vs-rootly/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "iproyal-vs-scraperapi",
+      "path": "/compare/iproyal-vs-scraperapi/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "iproyal-vs-sentry",
+      "path": "/compare/iproyal-vs-sentry/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "iproyal-vs-servicenow",
+      "path": "/compare/iproyal-vs-servicenow/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "iproyal-vs-siteground",
+      "path": "/compare/iproyal-vs-siteground/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "iproyal-vs-splunk",
+      "path": "/compare/iproyal-vs-splunk/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "iproyal-vs-squadcast",
+      "path": "/compare/iproyal-vs-squadcast/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "iproyal-vs-sysaid",
+      "path": "/compare/iproyal-vs-sysaid/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "iproyal-vs-thordata",
+      "path": "/compare/iproyal-vs-thordata/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "iproyal-vs-topdesk",
+      "path": "/compare/iproyal-vs-topdesk/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "iproyal-vs-wp-engine",
+      "path": "/compare/iproyal-vs-wp-engine/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "iproyal-vs-zyte",
+      "path": "/compare/iproyal-vs-zyte/"
+    },
+    {
+      "kind": "alternatives",
+      "slug": "iproyal",
+      "path": "/alternatives/iproyal/"
+    },
+    {
+      "kind": "pricing",
+      "slug": "iproyal",
+      "path": "/software/iproyal/pricing/"
+    },
+    {
+      "kind": "tools",
+      "slug": "it-development-cost-calculator",
+      "path": "/tools/it-development-cost-calculator/"
+    }
+  ],
+  "dependentsNeedingRefresh": [],
+  "remediation": [
+    "verify:canonical_vendor",
+    "verify:trial"
+  ],
+  "notes": [
+    "fieldAudit score=89",
+    "decisionHub bestFor=6 notIdeal=6",
+    "dependents=55"
+  ],
+  "materiallyImproved": false
+}

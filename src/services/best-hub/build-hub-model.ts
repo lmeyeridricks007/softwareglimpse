@@ -542,7 +542,7 @@ function buildApprovedBestFor(page: BestPage | undefined): BestHubApprovedBestFo
 }
 
 export function getPublishedBestPages(): BestPage[] {
-  return getBestPages();
+  return getBestPages().filter((page) => page.metadata.status === "published");
 }
 
 export function getFeaturedBestPages(limit = 1): BestPage[] {

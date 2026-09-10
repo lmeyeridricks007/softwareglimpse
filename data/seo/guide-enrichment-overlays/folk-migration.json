@@ -1,0 +1,159 @@
+{
+  "slug": "folk-migration",
+  "enrichmentType": "MIGRATION_GUIDE",
+  "updatedAt": "2026-09-07T18:30:44.895Z",
+  "uniqueValueAdded": [
+    "implementation_workflow",
+    "scenario_analysis",
+    "decision_framework",
+    "limitations_evidence",
+    "buyer_checklist"
+  ],
+  "patch": {
+    "summary": "folk migration guide: inventory → rehearse → freeze → validate integrations — grounded in researched limitations and catalogue peers.",
+    "blocks": [
+      {
+        "id": "da-folk-migration-1",
+        "type": "direct-answer",
+        "body": "Migrate to folk by inventorying legacy crm fields, mapping them to folk objects, rehearsing a freeze window, and validating Gmail, WhatsApp Business before reopening writes.",
+        "bullets": [
+          "Inventory → map → rehearse → cut over → reopen",
+          "Highest risk: Custom objects/Deals, email sequences, dashboards, workspace roles, and API access start on Premium.",
+          "Success signal: contact management works for the pilot cohort"
+        ]
+      },
+      {
+        "id": "mig-folk-migration-2",
+        "type": "step",
+        "heading": "folk migration cutover playbook",
+        "body": "Migrations fail from optimistic timelines — not from missing motivation.",
+        "stepNumber": 1,
+        "scenarios": [
+          {
+            "title": "Field inventory",
+            "body": "Export legacy fields that power contact management, lead management, pipeline management and mark must-map vs archive."
+          },
+          {
+            "title": "Rehearsal load",
+            "body": "Run a non-prod load into folk; measure match rates before the freeze."
+          },
+          {
+            "title": "Production freeze",
+            "body": "Freeze legacy writes; cut over; validate Gmail; then reopen."
+          }
+        ]
+      },
+      {
+        "id": "df-folk-migration-3",
+        "type": "decision-framework",
+        "title": "Migrate to folk?",
+        "steps": [
+          {
+            "id": "m-1",
+            "label": "Migrate when Founders and SMB teams running relationship-led sales from LinkedIn/email outweigh migration cost"
+          },
+          {
+            "id": "m-2",
+            "label": "Delay if this limitation hits cutover: Custom objects/Deals, email sequences, dashboards, workspace roles, and API access start on Premium."
+          },
+          {
+            "id": "m-3",
+            "label": "If folk mapping is poor, compare destination fit with Salesflare before moving data twice"
+          }
+        ]
+      },
+      {
+        "id": "mist-folk-migration-4",
+        "type": "mistakes",
+        "title": "folk migration mistakes",
+        "items": [
+          {
+            "title": "No freeze window",
+            "body": "Dual-writing without a freeze creates irrevocable duplicates."
+          },
+          {
+            "title": "Integrations last",
+            "body": "Wire Gmail in rehearsal — not on Monday morning after cutover."
+          },
+          {
+            "title": "Data risk 1",
+            "body": "Custom objects/Deals, email sequences, dashboards, workspace roles, and API access start on Premium."
+          },
+          {
+            "title": "Data risk 2",
+            "body": "Enrichment, magic fields, and AI assistant credits are monthly capped by plan (custom on Enterprise)."
+          },
+          {
+            "title": "Data risk 3",
+            "body": "FAQ references a free plan for downgrades, but live pricing cards emphasize Standard/Premium/Enterprise — free-tier feature limits are not fully documented on the pricing table."
+          }
+        ]
+      },
+      {
+        "id": "sel-folk-migration-5",
+        "type": "selection-checklist",
+        "title": "folk migration checklist",
+        "dimensions": [
+          {
+            "id": "map",
+            "label": "Mapping",
+            "options": [
+              "Must-map fields listed",
+              "Owners assigned",
+              "Archive rules written"
+            ]
+          },
+          {
+            "id": "rehearse",
+            "label": "Rehearsal",
+            "options": [
+              "Non-prod load done",
+              "Match rate measured",
+              "Rollback tested"
+            ]
+          },
+          {
+            "id": "cutover",
+            "label": "Cutover",
+            "options": [
+              "Freeze communicated",
+              "Integrations green",
+              "Pilot cohort signed off"
+            ]
+          }
+        ]
+      }
+    ],
+    "checklist": [
+      {
+        "id": "enrich-chk-0",
+        "label": "Complete field inventory for contact management",
+        "order": 0
+      },
+      {
+        "id": "enrich-chk-1",
+        "label": "Rehearse load before production freeze",
+        "order": 1
+      },
+      {
+        "id": "enrich-chk-2",
+        "label": "Validate Gmail pre-reopen",
+        "order": 2
+      },
+      {
+        "id": "enrich-chk-3",
+        "label": "Mitigate: Custom objects/Deals, email sequences, dashboards, workspace roles, and API access start on Premium.",
+        "order": 3
+      }
+    ],
+    "nextAction": {
+      "contentId": "tool:finder:crm",
+      "label": "Open Finder shortlist"
+    }
+  },
+  "notes": [
+    "Omit unsupported: testing_evidence",
+    "Migration: cutover risks, data mapping, checklist.",
+    "Type-specific skeleton: MIGRATION_GUIDE"
+  ]
+}

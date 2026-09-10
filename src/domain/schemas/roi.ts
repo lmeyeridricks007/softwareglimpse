@@ -181,10 +181,17 @@ export const RoiProductivityRoleSchema = z.object({
 });
 export type RoiProductivityRole = z.infer<typeof RoiProductivityRoleSchema>;
 
+const defaultRoiProductivityRole = {
+  inputMode: "reduction-percent" as const,
+  included: true,
+  assumptionType: "estimated" as const,
+  confidence: "medium" as const,
+};
+
 export const RoiProductivitySchema = z.object({
-  salesReps: RoiProductivityRoleSchema.default({}),
-  managers: RoiProductivityRoleSchema.default({}),
-  opsAdmin: RoiProductivityRoleSchema.default({}),
+  salesReps: RoiProductivityRoleSchema.default(defaultRoiProductivityRole),
+  managers: RoiProductivityRoleSchema.default(defaultRoiProductivityRole),
+  opsAdmin: RoiProductivityRoleSchema.default(defaultRoiProductivityRole),
   /** Share of saved time counted as realizable value (0–1). Default 0.5. */
   realizationFactor: z.number().min(0).max(1).default(0.5),
   realizationCustom: z.boolean().default(false),
@@ -266,6 +273,37 @@ export const RoiCapacityScenarioSchema = z.object({
 });
 export type RoiCapacityScenario = z.infer<typeof RoiCapacityScenarioSchema>;
 
+const defaultRoiWinRateScenario = {
+  enabled: false,
+  included: true,
+  assumptionType: "scenario" as const,
+  confidence: "low" as const,
+  valueBasis: "contribution" as const,
+};
+
+const defaultRoiConversionScenario = {
+  enabled: false,
+  included: true,
+  assumptionType: "scenario" as const,
+  confidence: "low" as const,
+  valueBasis: "contribution" as const,
+};
+
+const defaultRoiRecoveredScenario = {
+  enabled: false,
+  included: true,
+  assumptionType: "scenario" as const,
+  confidence: "low" as const,
+  valueBasis: "contribution" as const,
+};
+
+const defaultRoiCapacityScenario = {
+  enabled: false,
+  included: false,
+  assumptionType: "scenario" as const,
+  confidence: "low" as const,
+};
+
 export const RoiCostRevenueSchema = z.object({
   costAvoidance: z.array(RoiCostAvoidanceRowSchema).default([]),
   otherBenefitsMinor: z.number().int().nonnegative().optional(),
@@ -273,10 +311,10 @@ export const RoiCostRevenueSchema = z.object({
   otherBenefitsType: RoiAssumptionTypeSchema.default("estimated"),
   otherBenefitsConfidence: RoiConfidenceSchema.default("medium"),
   otherBenefitsIncluded: z.boolean().default(false),
-  winRate: RoiWinRateScenarioSchema.default({}),
-  conversion: RoiConversionScenarioSchema.default({}),
-  recovered: RoiRecoveredOpportunitiesSchema.default({}),
-  capacity: RoiCapacityScenarioSchema.default({}),
+  winRate: RoiWinRateScenarioSchema.default(defaultRoiWinRateScenario),
+  conversion: RoiConversionScenarioSchema.default(defaultRoiConversionScenario),
+  recovered: RoiRecoveredOpportunitiesSchema.default(defaultRoiRecoveredScenario),
+  capacity: RoiCapacityScenarioSchema.default(defaultRoiCapacityScenario),
 });
 export type RoiCostRevenue = z.infer<typeof RoiCostRevenueSchema>;
 
@@ -288,6 +326,66 @@ export const RoiAdoptionRampSchema = z.object({
 });
 export type RoiAdoptionRamp = z.infer<typeof RoiAdoptionRampSchema>;
 
+const defaultRoiCurrentState = {
+  crmUsers: 0,
+  salesReps: 0,
+  managers: 0,
+  opsAdminUsers: 0,
+  hourlyCosts: { deferHourlyCosts: false },
+  processHours: {
+    salesRep: {
+      dataEntry: 0,
+      searching: 0,
+      reporting: 0,
+      duplicateAdmin: 0,
+    },
+    manager: {
+      pipelineReporting: 0,
+      forecasting: 0,
+      reconciliation: 0,
+    },
+    opsAdmin: {
+      administration: 0,
+      reporting: 0,
+      dataCleanup: 0,
+      leadRouting: 0,
+    },
+  },
+  softwareCosts: [] as z.infer<typeof RoiSoftwareCostRowSchema>[],
+  workingWeeksPerYear: 46,
+};
+
+const defaultRoiInvestment = {
+  source: "manual" as const,
+  internalLabour: [] as z.infer<typeof RoiInternalLabourRowSchema>[],
+};
+
+const defaultRoiProductivity = {
+  salesReps: defaultRoiProductivityRole,
+  managers: defaultRoiProductivityRole,
+  opsAdmin: defaultRoiProductivityRole,
+  realizationFactor: 0.5,
+  realizationCustom: false,
+};
+
+const defaultRoiCostRevenue = {
+  costAvoidance: [] as z.infer<typeof RoiCostAvoidanceRowSchema>[],
+  otherBenefitsType: "estimated" as const,
+  otherBenefitsConfidence: "medium" as const,
+  otherBenefitsIncluded: false,
+  winRate: defaultRoiWinRateScenario,
+  conversion: defaultRoiConversionScenario,
+  recovered: defaultRoiRecoveredScenario,
+  capacity: defaultRoiCapacityScenario,
+};
+
+const defaultRoiAdoption = {
+  enabled: false,
+  year1Percent: 60,
+  year2Percent: 85,
+  year3Percent: 100,
+};
+
 export const RoiAssumptionOverrideSchema = z.object({
   id: z.string().min(1),
   included: z.boolean().optional(),
@@ -297,16 +395,30 @@ export const RoiAssumptionOverrideSchema = z.object({
 });
 export type RoiAssumptionOverride = z.infer<typeof RoiAssumptionOverrideSchema>;
 
+const defaultRoiInputs = {
+  analysisName: "My CRM ROI",
+  currency: "EUR",
+  horizonYears: 3 as const,
+  activeScenario: "base" as const,
+  currentState: defaultRoiCurrentState,
+  investment: defaultRoiInvestment,
+  productivity: defaultRoiProductivity,
+  costRevenue: defaultRoiCostRevenue,
+  adoption: defaultRoiAdoption,
+  assumptionOverrides: [] as RoiAssumptionOverride[],
+  allowProvisional: false,
+};
+
 export const RoiInputsSchema = z.object({
   analysisName: z.string().min(1).max(120).default("My CRM ROI"),
   currency: CurrencyCodeSchema.default("EUR"),
   horizonYears: z.union([z.literal(1), z.literal(2), z.literal(3)]).default(3),
   activeScenario: RoiScenarioKeySchema.default("base"),
-  currentState: RoiCurrentStateSchema.default({}),
-  investment: RoiInvestmentSchema.default({}),
-  productivity: RoiProductivitySchema.default({}),
-  costRevenue: RoiCostRevenueSchema.default({}),
-  adoption: RoiAdoptionRampSchema.default({}),
+  currentState: RoiCurrentStateSchema.default(defaultRoiCurrentState),
+  investment: RoiInvestmentSchema.default(defaultRoiInvestment),
+  productivity: RoiProductivitySchema.default(defaultRoiProductivity),
+  costRevenue: RoiCostRevenueSchema.default(defaultRoiCostRevenue),
+  adoption: RoiAdoptionRampSchema.default(defaultRoiAdoption),
   assumptionOverrides: z.array(RoiAssumptionOverrideSchema).default([]),
   /** Allow provisional ROI when material costs are unknown. */
   allowProvisional: z.boolean().default(false),
@@ -317,7 +429,7 @@ export const RoiSessionSchema = z.object({
   version: z.literal(ROI_SESSION_VERSION).default(ROI_SESSION_VERSION),
   wizardStepId: RoiWizardStepSchema.default("current-state"),
   maxReachableStepIndex: z.number().int().min(0).max(5).default(0),
-  inputs: RoiInputsSchema.default({}),
+  inputs: RoiInputsSchema.default(defaultRoiInputs),
   createdAt: z.string().datetime(),
   updatedAt: z.string().datetime(),
   /** Confirmed handoff payload for business case (never silent). */

@@ -17,73 +17,154 @@ const alternativesSeedAuthored: AltInput[] = [
     title: "Pipedrive alternatives",
     sourceSlug: "pipedrive",
     summary:
-      "Approved alternatives to Pipedrive for teams comparing pipeline CRM options with engagement suites, calling-first CRMs, and lighter relationship tools. Reasons come from approved editorial assessments — not a ranked best-of list.",
+      "Teams look beyond Pipedrive when they need stronger native calling or sequencing, a free CRM entry path, lower total cost at scale, simpler SMB tooling, or automated relationship capture instead of pipeline-stage admin. This page groups approved substitutes by buyer job — engagement suites, freemium platforms, outbound CRMs, value platforms, and lighter relationship tools — with tradeoffs from editorial research, not a paid ranking.",
     editorialRecommendation:
-      "Stay on Pipedrive when visual pipeline hygiene and Marketplace breadth are the job. Choose Freshsales when native calling and AI lead scoring matter more; Close when communication-centric outbound is daily work; Salesflare when smaller teams want automated relationship capture over pipeline ops.",
+      "Stay on Pipedrive when visual pipeline hygiene, activity reminders, and Marketplace breadth are the primary job. Switch toward Freshsales when phone and lead scoring should live in the same product; HubSpot when you want free CRM plus a path into marketing/service hubs; Close when conversation-centric outbound is daily work; Zoho CRM when customization and cost control matter more than Pipedrive’s UX polish; Capsule when a small team needs a simpler contact/pipeline CRM; Salesflare when automated relationship capture beats stage-by-stage pipeline ops. Always verify current list prices on each vendor’s pricing page — relative signals here are directional, not quotes.",
     editorialStatus: "approved",
     alternatives: [
       {
         targetSlug: "freshsales",
         reason:
-          "Freshsales fits when you want pipeline CRM plus stronger built-in engagement (phone, lead scoring) in one Freshworks suite — not Pipedrive’s pipeline-first packaging alone.",
+          "Freshsales is the closest “pipeline CRM plus engagement” substitute when buyers outgrow Pipedrive’s pipeline-first packaging and want native phone, email, chat, and Freddy lead scoring in one Freshworks surface.",
         betterWhen: [
-          "Native calling and lead scoring matter in the same product",
-          "You are evaluating Freshworks ecosystem fit",
+          "Native calling and AI lead scoring must sit in the same CRM",
+          "You are evaluating Freshworks suite fit (support/marketing adjacency)",
+          "Built-in engagement matters more than Pipedrive Marketplace breadth alone",
         ],
         worseWhen: [
-          "Visual pipeline discipline and Marketplace depth are the primary buy drivers",
-          "You prefer a narrower sales CRM over a broader engagement suite",
+          "Visual multi-pipeline discipline and Marketplace depth are the buy drivers",
+          "You want the narrowest sales-only CRM without suite packaging",
+          "You already own a dialer/sequencer and only need a board-first CRM",
         ],
         keyTradeoff:
-          "Native engagement suite vs Pipedrive’s pipeline-first focus.",
-        relativePricing: "unknown",
+          "Native engagement suite depth vs Pipedrive’s pipeline-first focus and Marketplace.",
+        targetAudience: "Sales teams that want CRM + calling/scoring together",
+        relativePricing: "similar",
+        editorialNote:
+          "Expect similar mid-market seat positioning to Pipedrive; confirm calling minutes and AI features on the plan you trial — not every Freshsales tier includes the same engagement stack.",
+        researchStatus: "complete",
+      },
+      {
+        targetSlug: "hubspot",
+        reason:
+          "HubSpot fits when the reason to leave Pipedrive is platform breadth: free CRM, marketing automation, service tools, and a single customer record — not a sharper sales pipeline board.",
+        betterWhen: [
+          "You want a free CRM entry path before paying for Sales Hub seats",
+          "Marketing and service workflows must share the same CRM contact model",
+          "HubSpot Marketplace / partner ecosystem outweighs Pipedrive Marketplace",
+        ],
+        worseWhen: [
+          "You only need a visual sales pipeline without marketing hubs",
+          "Multi-hub seat packaging and portal complexity are a non-starter",
+          "You prefer Pipedrive’s deal-board UX over HubSpot’s hub surfaces",
+        ],
+        keyTradeoff:
+          "Freemium multi-hub customer platform vs sales-pipeline CRM focus.",
+        targetAudience: "Teams expanding from sales CRM into marketing/service",
+        relativePricing: "lower",
+        editorialNote:
+          "HubSpot’s free CRM can undercut Pipedrive’s paid entry, but paid Sales/Marketing Hub seats often exceed Pipedrive once you unlock sequences, custom reporting, or higher tiers — model seats in the CRM Cost Calculator before switching.",
         researchStatus: "complete",
       },
       {
         targetSlug: "close",
         reason:
-          "Close fits communication-heavy outbound teams that want CRM workflows tightly coupled to calling and SMS — rather than board-first pipeline operations.",
+          "Close is the outbound specialist alternative: CRM workflows oriented around calling, SMS, and email power dialing rather than Pipedrive-style multi-pipeline board operations.",
         betterWhen: [
-          "Calling and communication cadence are central to the sales process",
-          "You want a CRM oriented around conversation workflows",
+          "Calling and SMS cadence are the daily sales motion",
+          "You want conversation workflows as the system of record",
+          "Outbound SDR/AE teams need dialer-native CRM, not marketplace bolt-ons",
         ],
         worseWhen: [
-          "You primarily need visual multi-pipeline CRM with extensive marketplace depth",
-          "Your team is not communication/outbound-centric",
+          "You primarily need visual multi-pipeline CRM with deep Marketplace apps",
+          "Your team is inbound or account-management heavy, not dialer-centric",
+          "You need extensive customization beyond Close’s opinionated sales flows",
         ],
         keyTradeoff:
-          "Communication-centric CRM workflows vs classic pipeline CRM orientation.",
-        relativePricing: "unknown",
+          "Communication-centric outbound CRM vs classic pipeline board CRM.",
+        targetAudience: "Outbound SDR/AE teams living in the phone and inbox",
+        relativePricing: "higher",
+        editorialNote:
+          "Close often prices above Pipedrive entry seats because calling/SMS are core product — treat relativePricing as directional and confirm current Close plans before shortlisting.",
+        researchStatus: "complete",
+      },
+      {
+        targetSlug: "zoho-crm",
+        reason:
+          "Zoho CRM is the value and customization alternative when Pipedrive feels expensive or too opinionated and buyers will trade UX polish for modular CRM depth inside the Zoho ecosystem.",
+        betterWhen: [
+          "Cost control and modular CRM features matter more than Pipedrive UX",
+          "You already use Zoho books/desk/mail and want CRM in the same stack",
+          "You need deeper customization than Pipedrive’s pipeline model without Salesforce overhead",
+        ],
+        worseWhen: [
+          "You want Pipedrive’s polished deal-board experience out of the box",
+          "You refuse Zoho’s broader suite UX and admin learning curve",
+          "Marketplace-led GTM integrations are more important than Zoho ecosystem fit",
+        ],
+        keyTradeoff:
+          "Lower-cost modular CRM depth vs Pipedrive’s streamlined pipeline UX.",
+        targetAudience: "Cost-sensitive teams open to Zoho ecosystem CRM",
+        relativePricing: "lower",
+        editorialNote:
+          "Zoho’s published entry plans are typically below Pipedrive’s paid seats; add-ons and higher editions can close the gap — verify against Zoho’s pricing page for your edition.",
+        researchStatus: "complete",
+      },
+      {
+        targetSlug: "capsule",
+        reason:
+          "Capsule is the simpler SMB CRM alternative when Pipedrive’s pipelines, automations, and Marketplace feel like overhead for a small team that mainly needs contacts, tasks, and light pipelines.",
+        betterWhen: [
+          "Small teams want clear contact + pipeline CRM without heavy configuration",
+          "You prefer approachable SMB tooling over mid-market CRM complexity",
+          "Relationship tracking matters more than advanced forecasting boards",
+        ],
+        worseWhen: [
+          "You need Pipedrive-class Marketplace integrations and automation depth",
+          "You are scaling a larger sales org with complex multi-pipeline ops",
+          "Advanced reporting and forecasting are primary requirements",
+        ],
+        keyTradeoff:
+          "SMB simplicity and clarity vs Pipedrive’s mid-market pipeline power.",
+        targetAudience: "Small sales or founder-led teams wanting lighter CRM",
+        relativePricing: "similar",
+        editorialNote:
+          "Capsule and Pipedrive often compete in the same SMB/mid-market band; compare seat inclusions and caps on the public pricing pages rather than assuming a large discount either way.",
         researchStatus: "complete",
       },
       {
         targetSlug: "salesflare",
         reason:
-          "Salesflare fits smaller teams that want automated relationship capture and lighter admin — rather than Pipedrive-style pipeline stage discipline.",
+          "Salesflare fits teams leaving Pipedrive because pipeline stage admin is the pain — they want automated email/meeting/relationship capture with less manual deal hygiene.",
         betterWhen: [
-          "Smaller teams prioritize automatic relationship tracking",
-          "You want less pipeline admin overhead",
+          "Automatic relationship tracking beats manual pipeline updates",
+          "Smaller teams want less CRM admin overhead day to day",
+          "Email and calendar context should populate the CRM without heavy rules setup",
         ],
         worseWhen: [
-          "You need deeper pipeline customization and deal-stage discipline",
-          "You are scaling a larger sales org with complex pipeline ops",
+          "You need deep pipeline customization and stage discipline as the process",
+          "You are scaling complex multi-pipeline ops with heavy Marketplace needs",
+          "You want dialer-first outbound like Close rather than relationship automation",
         ],
         keyTradeoff:
           "Automated relationship CRM simplicity vs pipeline operations depth.",
-        relativePricing: "unknown",
+        targetAudience: "Smaller teams prioritizing automatic relationship capture",
+        relativePricing: "similar",
+        editorialNote:
+          "Positioned near Pipedrive for SMB sales CRM; confirm automation limits and seat pricing on Salesflare’s site before treating it as a cost save.",
         researchStatus: "complete",
       },
     ],
     metadata: {
       status: "published",
       publishedAt: "2026-08-13T00:00:00.000Z",
-      updatedAt: "2026-08-26T12:00:00.000Z",
+      updatedAt: "2026-09-09T08:00:00.000Z",
       researchStatus: "complete",
     },
     seo: {
-      title: "Pipedrive Alternatives (2026)",
+      title: "Pipedrive Alternatives (2026): Freshsales, HubSpot, Close & more",
       description:
-        "Compare Pipedrive with Freshsales, Close, and Salesflare — approved CRM alternatives for pipeline-focused sales teams.",
+        "Compare Pipedrive with Freshsales, HubSpot, Close, Zoho CRM, Capsule, and Salesflare — buyer jobs, pricing signals, limitations, and when to stay.",
       indexable: true,
       canonicalPath: "/alternatives/pipedrive/",
     },

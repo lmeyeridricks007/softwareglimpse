@@ -1,0 +1,525 @@
+{
+  "slug": "rootly",
+  "updatedAt": "2026-09-09T06:30:51.292Z",
+  "version": "1.0.0",
+  "fieldAudit": {
+    "slug": "rootly",
+    "checkedAt": "2026-09-09T06:30:51.288Z",
+    "items": [
+      {
+        "field": "name",
+        "status": "PASS",
+        "detail": "Name: Rootly",
+        "source": "seed"
+      },
+      {
+        "field": "product_status",
+        "status": "PASS",
+        "detail": "productLifecycle=active",
+        "source": "seed"
+      },
+      {
+        "field": "canonical_vendor",
+        "status": "PASS",
+        "detail": "Vendor: Rootly, Inc.",
+        "source": "seed"
+      },
+      {
+        "field": "category",
+        "status": "PASS",
+        "detail": "primaryCategorySlug=it-development",
+        "source": "seed"
+      },
+      {
+        "field": "description",
+        "status": "PASS",
+        "detail": "Description present (Incident response — Incident Response Essentials $20/user/mo; On-Call Essentials…)",
+        "source": "seed"
+      },
+      {
+        "field": "target_audience",
+        "status": "PASS",
+        "detail": "Sizes=2, teams=2, assessment bestFor=3",
+        "source": "assessment"
+      },
+      {
+        "field": "use_cases",
+        "status": "PASS",
+        "detail": "useCaseSlugs=1",
+        "source": "seed"
+      },
+      {
+        "field": "capabilities",
+        "status": "PASS",
+        "detail": "featureRatings=0, enrichment features=16",
+        "source": "enrichment"
+      },
+      {
+        "field": "pricing",
+        "status": "PASS",
+        "detail": "Pricing envelope present",
+        "source": "enrichment"
+      },
+      {
+        "field": "plans",
+        "status": "PASS",
+        "detail": "plans=3",
+        "source": "enrichment"
+      },
+      {
+        "field": "free_plan",
+        "status": "PASS",
+        "detail": "No free plan in documented plans (explicit absence)",
+        "source": "enrichment"
+      },
+      {
+        "field": "trial",
+        "status": "UNKNOWN",
+        "detail": "Trial not explicitly documented — do not assume none",
+        "source": "none"
+      },
+      {
+        "field": "integrations",
+        "status": "PASS",
+        "detail": "integrationSlugs=0, enrichment=3",
+        "source": "enrichment"
+      },
+      {
+        "field": "alternatives",
+        "status": "PASS",
+        "detail": "alternativeSlugs=2",
+        "source": "seed"
+      },
+      {
+        "field": "competitors",
+        "status": "PASS",
+        "detail": "competitorSlugs=3",
+        "source": "seed"
+      },
+      {
+        "field": "affiliate",
+        "status": "PASS",
+        "detail": "No affiliate relationship (explicit)",
+        "source": "seed"
+      },
+      {
+        "field": "source_provenance",
+        "status": "PASS",
+        "detail": "seed sources=0, enrichment sourceIds=3",
+        "source": "enrichment"
+      },
+      {
+        "field": "verification_date",
+        "status": "PASS",
+        "detail": "Latest verification/research signal: 2026-08-18T22:00:00.000Z",
+        "source": "enrichment"
+      }
+    ],
+    "passCount": 17,
+    "partialCount": 0,
+    "missingCount": 0,
+    "unknownCount": 1,
+    "score": 94
+  },
+  "decisionHub": {
+    "whatItIs": "Rootly is a Slack-native incident-response platform with a sibling On-Call product. Incident Response Essentials publishes at $20/user/month; On-Call Essentials is a separate $20/user line — do not treat the $20 incident floor as including paging. Enterprise custom. Same incident-oncall cluster as PagerDuty — PagerDuty remains the award (8.0); this entity does not outrank it. Distinct from FireHydrant’s $25 Pro responder pack and from incident.io’s $15 Team plus on-call add-on.",
+    "bestFor": [
+      "Slack-first teams buying incident command at a published $20/user floor",
+      "Buyers who will add On-Call Essentials only if they need paging",
+      "Comparisons versus FireHydrant Pro $25 and incident.io Team $15",
+      "small-business / engineering: Rootly fit for small-business engineering teams in the incident-oncall job cluster, from first-party positioning and IT Tier-B + ITSM SMB research.",
+      "mid-market / engineering: Rootly fit for mid-market engineering teams in the incident-oncall job cluster, from first-party positioning and IT Tier-B + ITSM SMB research."
+    ],
+    "notIdealFor": [
+      "Teams that need paging-first on-call as the core SKU (PagerDuty)",
+      "Buyers who want a free incident path (FireHydrant / incident.io)",
+      "Observability or ITSM CMDB purchases",
+      "On-Call Essentials is a separate $20/user SKU — not included in Incident Response $20",
+      "Does not outrank PagerDuty (8.0)",
+      "No published free plan (unlike FireHydrant / incident.io Basic)"
+    ],
+    "coreCapabilities": [
+      "incident management",
+      "change problem",
+      "infrastructure monitoring",
+      "cicd actions",
+      "itsm ai",
+      "dev ai",
+      "enterprise security",
+      "analytics reporting"
+    ],
+    "pricingSummary": "3 documented plans · entry paid: Incident Response Essentials",
+    "keyTradeoffs": [
+      "On-Call Essentials is a separate $20/user SKU — not included in Incident Response $20",
+      "Does not outrank PagerDuty (8.0)",
+      "No published free plan (unlike FireHydrant / incident.io Basic)",
+      "Not observability telemetry",
+      "Not an ITSM CMDB"
+    ],
+    "alternatives": [
+      {
+        "slug": "pagerduty",
+        "name": "PagerDuty"
+      },
+      {
+        "slug": "incident-io",
+        "name": "incident.io"
+      },
+      {
+        "slug": "firehydrant",
+        "name": "FireHydrant"
+      }
+    ],
+    "importantComparisons": [
+      {
+        "slug": "incident-io-vs-rootly",
+        "title": "incident.io vs Rootly",
+        "href": "/compare/incident-io-vs-rootly/"
+      },
+      {
+        "slug": "firehydrant-vs-rootly",
+        "title": "FireHydrant vs Rootly",
+        "href": "/compare/firehydrant-vs-rootly/"
+      },
+      {
+        "slug": "apify-vs-rootly",
+        "title": "Apify vs Rootly",
+        "href": "/compare/apify-vs-rootly/"
+      },
+      {
+        "slug": "appdynamics-vs-rootly",
+        "title": "AppDynamics vs Rootly",
+        "href": "/compare/appdynamics-vs-rootly/"
+      },
+      {
+        "slug": "azure-devops-vs-rootly",
+        "title": "Azure DevOps vs Rootly",
+        "href": "/compare/azure-devops-vs-rootly/"
+      },
+      {
+        "slug": "bitbucket-vs-rootly",
+        "title": "Bitbucket Cloud vs Rootly",
+        "href": "/compare/bitbucket-vs-rootly/"
+      }
+    ],
+    "relevantGuides": [
+      {
+        "slug": "rootly-implementation",
+        "title": "Rootly Implementation: 30/60/90 IT Rollout That Sticks",
+        "href": "/guides/rootly-implementation/"
+      },
+      {
+        "slug": "rootly-migration",
+        "title": "Rootly Migration: Move Tickets and Repos Without Losing Trust",
+        "href": "/guides/rootly-migration/"
+      },
+      {
+        "slug": "rootly-setup",
+        "title": "Rootly Setup: Day-Zero Path to a Working IT Loop",
+        "href": "/guides/rootly-setup/"
+      },
+      {
+        "slug": "rootly-plans",
+        "title": "Rootly Plans: Seats, Hosts, and Qualifying Tiers",
+        "href": "/guides/rootly-plans/"
+      },
+      {
+        "slug": "is-rootly-worth-it",
+        "title": "Is Rootly Worth It? Fit Scenarios Before You Buy",
+        "href": "/guides/is-rootly-worth-it/"
+      }
+    ],
+    "evidenceState": "Research/data-based (no completed hands-on test) · Latest verification/research signal: 2026-08-18T22:00:00.000Z · Editorial assessment: approved",
+    "nextDecisionStep": "Compare against peers: incident.io vs Rootly",
+    "missingSections": [
+      "trial"
+    ]
+  },
+  "dependents": [
+    {
+      "kind": "guide",
+      "slug": "rootly-implementation",
+      "path": "/guides/rootly-implementation/"
+    },
+    {
+      "kind": "guide",
+      "slug": "rootly-migration",
+      "path": "/guides/rootly-migration/"
+    },
+    {
+      "kind": "guide",
+      "slug": "rootly-setup",
+      "path": "/guides/rootly-setup/"
+    },
+    {
+      "kind": "guide",
+      "slug": "rootly-plans",
+      "path": "/guides/rootly-plans/"
+    },
+    {
+      "kind": "guide",
+      "slug": "is-rootly-worth-it",
+      "path": "/guides/is-rootly-worth-it/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "incident-io-vs-rootly",
+      "path": "/compare/incident-io-vs-rootly/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "firehydrant-vs-rootly",
+      "path": "/compare/firehydrant-vs-rootly/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "apify-vs-rootly",
+      "path": "/compare/apify-vs-rootly/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "appdynamics-vs-rootly",
+      "path": "/compare/appdynamics-vs-rootly/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "azure-devops-vs-rootly",
+      "path": "/compare/azure-devops-vs-rootly/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "bitbucket-vs-rootly",
+      "path": "/compare/bitbucket-vs-rootly/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "bmc-helix-vs-rootly",
+      "path": "/compare/bmc-helix-vs-rootly/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "bright-data-vs-rootly",
+      "path": "/compare/bright-data-vs-rootly/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "buildkite-vs-rootly",
+      "path": "/compare/buildkite-vs-rootly/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "chronosphere-vs-rootly",
+      "path": "/compare/chronosphere-vs-rootly/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "circleci-vs-rootly",
+      "path": "/compare/circleci-vs-rootly/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "cloudways-vs-rootly",
+      "path": "/compare/cloudways-vs-rootly/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "coralogix-vs-rootly",
+      "path": "/compare/coralogix-vs-rootly/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "cpanel-vs-rootly",
+      "path": "/compare/cpanel-vs-rootly/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "datadog-vs-rootly",
+      "path": "/compare/datadog-vs-rootly/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "directadmin-vs-rootly",
+      "path": "/compare/directadmin-vs-rootly/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "dynatrace-vs-rootly",
+      "path": "/compare/dynatrace-vs-rootly/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "elastic-observability-vs-rootly",
+      "path": "/compare/elastic-observability-vs-rootly/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "fly-io-vs-rootly",
+      "path": "/compare/fly-io-vs-rootly/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "github-vs-rootly",
+      "path": "/compare/github-vs-rootly/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "gitlab-vs-rootly",
+      "path": "/compare/gitlab-vs-rootly/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "grafana-cloud-vs-rootly",
+      "path": "/compare/grafana-cloud-vs-rootly/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "haloitsm-vs-rootly",
+      "path": "/compare/haloitsm-vs-rootly/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "heroku-vs-rootly",
+      "path": "/compare/heroku-vs-rootly/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "honeycomb-vs-rootly",
+      "path": "/compare/honeycomb-vs-rootly/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "iproyal-vs-rootly",
+      "path": "/compare/iproyal-vs-rootly/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "ivanti-vs-rootly",
+      "path": "/compare/ivanti-vs-rootly/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "jira-service-management-vs-rootly",
+      "path": "/compare/jira-service-management-vs-rootly/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "kinsta-vs-rootly",
+      "path": "/compare/kinsta-vs-rootly/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "manageengine-servicedesk-plus-vs-rootly",
+      "path": "/compare/manageengine-servicedesk-plus-vs-rootly/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "new-relic-vs-rootly",
+      "path": "/compare/new-relic-vs-rootly/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "oxylabs-vs-rootly",
+      "path": "/compare/oxylabs-vs-rootly/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "pagerduty-vs-rootly",
+      "path": "/compare/pagerduty-vs-rootly/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "railway-vs-rootly",
+      "path": "/compare/railway-vs-rootly/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "render-vs-rootly",
+      "path": "/compare/render-vs-rootly/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "rootly-vs-scraperapi",
+      "path": "/compare/rootly-vs-scraperapi/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "rootly-vs-sentry",
+      "path": "/compare/rootly-vs-sentry/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "rootly-vs-servicenow",
+      "path": "/compare/rootly-vs-servicenow/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "rootly-vs-siteground",
+      "path": "/compare/rootly-vs-siteground/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "rootly-vs-smartproxy",
+      "path": "/compare/rootly-vs-smartproxy/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "rootly-vs-splunk",
+      "path": "/compare/rootly-vs-splunk/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "rootly-vs-squadcast",
+      "path": "/compare/rootly-vs-squadcast/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "rootly-vs-sysaid",
+      "path": "/compare/rootly-vs-sysaid/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "rootly-vs-thordata",
+      "path": "/compare/rootly-vs-thordata/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "rootly-vs-topdesk",
+      "path": "/compare/rootly-vs-topdesk/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "rootly-vs-wp-engine",
+      "path": "/compare/rootly-vs-wp-engine/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "rootly-vs-zyte",
+      "path": "/compare/rootly-vs-zyte/"
+    },
+    {
+      "kind": "alternatives",
+      "slug": "rootly",
+      "path": "/alternatives/rootly/"
+    },
+    {
+      "kind": "pricing",
+      "slug": "rootly",
+      "path": "/software/rootly/pricing/"
+    },
+    {
+      "kind": "tools",
+      "slug": "it-development-cost-calculator",
+      "path": "/tools/it-development-cost-calculator/"
+    }
+  ],
+  "dependentsNeedingRefresh": [],
+  "remediation": [
+    "verify:trial"
+  ],
+  "notes": [
+    "fieldAudit score=94",
+    "decisionHub bestFor=5 notIdeal=6",
+    "dependents=55"
+  ],
+  "materiallyImproved": true
+}

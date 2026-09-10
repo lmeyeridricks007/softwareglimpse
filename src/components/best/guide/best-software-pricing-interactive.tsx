@@ -8,9 +8,9 @@ import {
   calculateProductCost,
   type PricingSnapshot,
 } from "@/services/pricing";
-import { crmRequirementsFromCalculatorInput } from "@/domain";
-import { formatMoney } from "@/domain";
-import type { BestPageModel } from "@/services/best-page";
+import { crmRequirementsFromCalculatorInput } from "@/domain/schemas/crm-requirements";
+import { formatMoney } from "@/domain/money";
+import type { BestPageModel } from "@/services/best-page/types";
 import { cn } from "@/lib/cn";
 
 type Props = {

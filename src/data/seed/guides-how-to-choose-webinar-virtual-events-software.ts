@@ -1,4 +1,4 @@
-import type { GuidePage } from "@/domain";
+import type { GuidePageInput } from "@/domain";
 import type { z } from "zod";
 import type { GuideContentBlockSchema } from "@/domain";
 import { tier14GuideScheduledAt } from "@/data/config/publishing/tier-14-webinar-virtual-events-launch-2026-11-01";
@@ -34,7 +34,7 @@ const blocks: GuideBlockInput[] = [
   },
 ];
 
-function metadata(): GuidePage["metadata"] {
+function metadata(): GuidePageInput["metadata"] {
   return SCHEDULED_AT
     ? {
         status: "scheduled",
@@ -54,7 +54,7 @@ function metadata(): GuidePage["metadata"] {
       };
 }
 
-export const howToChooseWebinarVirtualEventsSoftwareGuide: GuidePage = {
+export const howToChooseWebinarVirtualEventsSoftwareGuide: GuidePageInput = {
   id: "guide-how-to-choose-webinar-virtual-events-software",
   slug: SLUG,
   title: "How to Choose Webinar & Virtual Events Software",
@@ -73,7 +73,7 @@ export const howToChooseWebinarVirtualEventsSoftwareGuide: GuidePage = {
     "what-is-webinar-virtual-events-software",
     "webinar-virtual-events-pricing-guide",
   ],
-  blocks: blocks as GuidePage["blocks"],
+  blocks: blocks as GuidePageInput["blocks"],
   checklist: [],
   sections: [],
   faq: [],
@@ -84,6 +84,6 @@ export const howToChooseWebinarVirtualEventsSoftwareGuide: GuidePage = {
     description:
       "How to choose webinar software by live hosting, evergreen, virtual events, or production job cluster.",
     canonicalPath: `/guides/${SLUG}/`,
-    indexable: !SCHEDULED_AT,
+    indexable: true,
   },
 };

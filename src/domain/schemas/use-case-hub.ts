@@ -160,3 +160,4 @@ export const UseCaseHubProfileSchema = z.object({
 });
 
 export type UseCaseHubProfile = z.infer<typeof UseCaseHubProfileSchema>;
+export type UseCaseHubProfileInput = z.input<typeof UseCaseHubProfileSchema>;

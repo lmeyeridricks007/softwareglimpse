@@ -1,0 +1,539 @@
+{
+  "slug": "haloitsm",
+  "updatedAt": "2026-09-08T21:57:41.723Z",
+  "version": "1.0.0",
+  "fieldAudit": {
+    "slug": "haloitsm",
+    "checkedAt": "2026-09-08T21:57:41.721Z",
+    "items": [
+      {
+        "field": "name",
+        "status": "PASS",
+        "detail": "Name: HaloITSM",
+        "source": "seed"
+      },
+      {
+        "field": "product_status",
+        "status": "PASS",
+        "detail": "productLifecycle=active",
+        "source": "seed"
+      },
+      {
+        "field": "canonical_vendor",
+        "status": "PASS",
+        "detail": "Vendor: Halo Service Solutions Ltd.",
+        "source": "seed"
+      },
+      {
+        "field": "category",
+        "status": "PASS",
+        "detail": "primaryCategorySlug=it-development",
+        "source": "seed"
+      },
+      {
+        "field": "description",
+        "status": "PASS",
+        "detail": "Description present (All-in-one ITSM — first-party UK calculator ~£66/agent/mo annual; onboarding pac…)",
+        "source": "seed"
+      },
+      {
+        "field": "target_audience",
+        "status": "PASS",
+        "detail": "Sizes=3, teams=2, assessment bestFor=3",
+        "source": "assessment"
+      },
+      {
+        "field": "use_cases",
+        "status": "PASS",
+        "detail": "useCaseSlugs=1",
+        "source": "seed"
+      },
+      {
+        "field": "capabilities",
+        "status": "PASS",
+        "detail": "featureRatings=0, enrichment features=16",
+        "source": "enrichment"
+      },
+      {
+        "field": "pricing",
+        "status": "PASS",
+        "detail": "Pricing envelope present",
+        "source": "enrichment"
+      },
+      {
+        "field": "plans",
+        "status": "PASS",
+        "detail": "plans=2",
+        "source": "enrichment"
+      },
+      {
+        "field": "free_plan",
+        "status": "PASS",
+        "detail": "No free plan in documented plans (explicit absence)",
+        "source": "enrichment"
+      },
+      {
+        "field": "trial",
+        "status": "UNKNOWN",
+        "detail": "Trial not explicitly documented — do not assume none",
+        "source": "none"
+      },
+      {
+        "field": "integrations",
+        "status": "PASS",
+        "detail": "integrationSlugs=0, enrichment=3",
+        "source": "enrichment"
+      },
+      {
+        "field": "alternatives",
+        "status": "PASS",
+        "detail": "alternativeSlugs=2",
+        "source": "seed"
+      },
+      {
+        "field": "competitors",
+        "status": "PASS",
+        "detail": "competitorSlugs=5",
+        "source": "seed"
+      },
+      {
+        "field": "affiliate",
+        "status": "PASS",
+        "detail": "No affiliate relationship (explicit)",
+        "source": "seed"
+      },
+      {
+        "field": "source_provenance",
+        "status": "PASS",
+        "detail": "seed sources=0, enrichment sourceIds=3",
+        "source": "enrichment"
+      },
+      {
+        "field": "verification_date",
+        "status": "PASS",
+        "detail": "Latest verification/research signal: 2026-08-18T22:00:00.000Z",
+        "source": "enrichment"
+      }
+    ],
+    "passCount": 17,
+    "partialCount": 0,
+    "missingCount": 0,
+    "unknownCount": 1,
+    "score": 94
+  },
+  "decisionHub": {
+    "whatItIs": "HaloITSM (Halo) is an all-in-one ITSM / employee service-desk platform (incidents, requests, assets, and adjacent PSA-style packaging) from Halo Service Solutions. The first-party UK pricing calculator shows about £66/agent/month billed annually as the published all-in-one floor — treat as GBP, not a USD list. Onboarding packages are extra. Same itsm-service-desk cluster as ServiceNow and Freshservice — this entity does not outrank ServiceNow 8.7 or Freshservice 8.4. Distinct from SysAid’s quote-led ~$89 listing and from ManageEngine’s $13 Standard floor.",
+    "bestFor": [
+      "IT teams that want an all-in-one per-agent ITSM calculator rather than edition ladders",
+      "UK/GBP buyers who will model £66 annual plus onboarding",
+      "Desks comparing HaloITSM to SysAid quotes and ManageEngine $13 Standard",
+      "small-business / it-ops: HaloITSM fit for small-business it-ops teams in the itsm-service-desk job cluster, from first-party positioning and IT Tier-B + ITSM SMB research.",
+      "mid-market / it-ops: HaloITSM fit for mid-market it-ops teams in the itsm-service-desk job cluster, from first-party positioning and IT Tier-B + ITSM SMB research.",
+      "enterprise / it-ops: HaloITSM fit for enterprise it-ops teams in the itsm-service-desk job cluster, from first-party positioning and IT Tier-B + ITSM SMB research."
+    ],
+    "notIdealFor": [
+      "USD SMBs that need ManageEngine’s $13 published floor without FX conversion",
+      "Enterprises buying ServiceNow ESM",
+      "Observability or git purchases",
+      "£66 calculator floor is GBP — do not treat as a USD $66 list",
+      "Onboarding packages stack on the agent SKU",
+      "Does not outrank ServiceNow (8.7) or Freshservice (8.4)"
+    ],
+    "coreCapabilities": [
+      "incident management",
+      "change problem",
+      "service catalog",
+      "infrastructure monitoring",
+      "log management",
+      "cicd actions",
+      "itsm ai",
+      "oncall paging"
+    ],
+    "pricingSummary": "2 documented plans · entry paid: All-in-one (per agent)",
+    "keyTradeoffs": [
+      "£66 calculator floor is GBP — do not treat as a USD $66 list",
+      "Onboarding packages stack on the agent SKU",
+      "Does not outrank ServiceNow (8.7) or Freshservice (8.4)",
+      "No published free plan",
+      "Not observability, git, hosting panel, or managed hosting"
+    ],
+    "alternatives": [
+      {
+        "slug": "manageengine-servicedesk-plus",
+        "name": "ManageEngine ServiceDesk Plus"
+      },
+      {
+        "slug": "freshservice",
+        "name": "Freshservice"
+      },
+      {
+        "slug": "sysaid",
+        "name": "SysAid"
+      },
+      {
+        "slug": "jira-service-management",
+        "name": "Jira Service Management"
+      },
+      {
+        "slug": "servicenow",
+        "name": "ServiceNow"
+      }
+    ],
+    "importantComparisons": [
+      {
+        "slug": "haloitsm-vs-manageengine-servicedesk-plus",
+        "title": "HaloITSM vs ManageEngine ServiceDesk Plus",
+        "href": "/compare/haloitsm-vs-manageengine-servicedesk-plus/"
+      },
+      {
+        "slug": "haloitsm-vs-sysaid",
+        "title": "HaloITSM vs SysAid",
+        "href": "/compare/haloitsm-vs-sysaid/"
+      },
+      {
+        "slug": "haloitsm-vs-topdesk",
+        "title": "HaloITSM vs TOPdesk",
+        "href": "/compare/haloitsm-vs-topdesk/"
+      },
+      {
+        "slug": "apify-vs-haloitsm",
+        "title": "Apify vs HaloITSM",
+        "href": "/compare/apify-vs-haloitsm/"
+      },
+      {
+        "slug": "appdynamics-vs-haloitsm",
+        "title": "AppDynamics vs HaloITSM",
+        "href": "/compare/appdynamics-vs-haloitsm/"
+      },
+      {
+        "slug": "azure-devops-vs-haloitsm",
+        "title": "Azure DevOps vs HaloITSM",
+        "href": "/compare/azure-devops-vs-haloitsm/"
+      }
+    ],
+    "relevantGuides": [
+      {
+        "slug": "haloitsm-implementation",
+        "title": "HaloITSM Implementation: 30/60/90 IT Rollout That Sticks",
+        "href": "/guides/haloitsm-implementation/"
+      },
+      {
+        "slug": "haloitsm-migration",
+        "title": "HaloITSM Migration: Move Tickets and Repos Without Losing Trust",
+        "href": "/guides/haloitsm-migration/"
+      },
+      {
+        "slug": "haloitsm-setup",
+        "title": "HaloITSM Setup: Day-Zero Path to a Working IT Loop",
+        "href": "/guides/haloitsm-setup/"
+      },
+      {
+        "slug": "haloitsm-plans",
+        "title": "HaloITSM Plans: Seats, Hosts, and Qualifying Tiers",
+        "href": "/guides/haloitsm-plans/"
+      },
+      {
+        "slug": "is-haloitsm-worth-it",
+        "title": "Is HaloITSM Worth It? Fit Scenarios Before You Buy",
+        "href": "/guides/is-haloitsm-worth-it/"
+      }
+    ],
+    "evidenceState": "Research/data-based (no completed hands-on test) · Latest verification/research signal: 2026-08-18T22:00:00.000Z · Editorial assessment: approved",
+    "nextDecisionStep": "Compare against peers: HaloITSM vs ManageEngine ServiceDesk Plus",
+    "missingSections": [
+      "trial"
+    ]
+  },
+  "dependents": [
+    {
+      "kind": "guide",
+      "slug": "haloitsm-implementation",
+      "path": "/guides/haloitsm-implementation/"
+    },
+    {
+      "kind": "guide",
+      "slug": "haloitsm-migration",
+      "path": "/guides/haloitsm-migration/"
+    },
+    {
+      "kind": "guide",
+      "slug": "haloitsm-setup",
+      "path": "/guides/haloitsm-setup/"
+    },
+    {
+      "kind": "guide",
+      "slug": "haloitsm-plans",
+      "path": "/guides/haloitsm-plans/"
+    },
+    {
+      "kind": "guide",
+      "slug": "is-haloitsm-worth-it",
+      "path": "/guides/is-haloitsm-worth-it/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "haloitsm-vs-manageengine-servicedesk-plus",
+      "path": "/compare/haloitsm-vs-manageengine-servicedesk-plus/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "haloitsm-vs-sysaid",
+      "path": "/compare/haloitsm-vs-sysaid/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "haloitsm-vs-topdesk",
+      "path": "/compare/haloitsm-vs-topdesk/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "apify-vs-haloitsm",
+      "path": "/compare/apify-vs-haloitsm/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "appdynamics-vs-haloitsm",
+      "path": "/compare/appdynamics-vs-haloitsm/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "azure-devops-vs-haloitsm",
+      "path": "/compare/azure-devops-vs-haloitsm/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "bitbucket-vs-haloitsm",
+      "path": "/compare/bitbucket-vs-haloitsm/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "bmc-helix-vs-haloitsm",
+      "path": "/compare/bmc-helix-vs-haloitsm/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "bright-data-vs-haloitsm",
+      "path": "/compare/bright-data-vs-haloitsm/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "buildkite-vs-haloitsm",
+      "path": "/compare/buildkite-vs-haloitsm/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "chronosphere-vs-haloitsm",
+      "path": "/compare/chronosphere-vs-haloitsm/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "circleci-vs-haloitsm",
+      "path": "/compare/circleci-vs-haloitsm/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "cloudways-vs-haloitsm",
+      "path": "/compare/cloudways-vs-haloitsm/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "coralogix-vs-haloitsm",
+      "path": "/compare/coralogix-vs-haloitsm/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "cpanel-vs-haloitsm",
+      "path": "/compare/cpanel-vs-haloitsm/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "datadog-vs-haloitsm",
+      "path": "/compare/datadog-vs-haloitsm/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "directadmin-vs-haloitsm",
+      "path": "/compare/directadmin-vs-haloitsm/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "dynatrace-vs-haloitsm",
+      "path": "/compare/dynatrace-vs-haloitsm/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "elastic-observability-vs-haloitsm",
+      "path": "/compare/elastic-observability-vs-haloitsm/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "firehydrant-vs-haloitsm",
+      "path": "/compare/firehydrant-vs-haloitsm/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "fly-io-vs-haloitsm",
+      "path": "/compare/fly-io-vs-haloitsm/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "github-vs-haloitsm",
+      "path": "/compare/github-vs-haloitsm/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "gitlab-vs-haloitsm",
+      "path": "/compare/gitlab-vs-haloitsm/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "grafana-cloud-vs-haloitsm",
+      "path": "/compare/grafana-cloud-vs-haloitsm/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "haloitsm-vs-heroku",
+      "path": "/compare/haloitsm-vs-heroku/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "haloitsm-vs-honeycomb",
+      "path": "/compare/haloitsm-vs-honeycomb/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "haloitsm-vs-incident-io",
+      "path": "/compare/haloitsm-vs-incident-io/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "haloitsm-vs-iproyal",
+      "path": "/compare/haloitsm-vs-iproyal/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "haloitsm-vs-ivanti",
+      "path": "/compare/haloitsm-vs-ivanti/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "haloitsm-vs-jira-service-management",
+      "path": "/compare/haloitsm-vs-jira-service-management/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "haloitsm-vs-kinsta",
+      "path": "/compare/haloitsm-vs-kinsta/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "haloitsm-vs-new-relic",
+      "path": "/compare/haloitsm-vs-new-relic/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "haloitsm-vs-oxylabs",
+      "path": "/compare/haloitsm-vs-oxylabs/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "haloitsm-vs-pagerduty",
+      "path": "/compare/haloitsm-vs-pagerduty/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "haloitsm-vs-railway",
+      "path": "/compare/haloitsm-vs-railway/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "haloitsm-vs-render",
+      "path": "/compare/haloitsm-vs-render/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "haloitsm-vs-rootly",
+      "path": "/compare/haloitsm-vs-rootly/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "haloitsm-vs-scraperapi",
+      "path": "/compare/haloitsm-vs-scraperapi/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "haloitsm-vs-sentry",
+      "path": "/compare/haloitsm-vs-sentry/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "haloitsm-vs-servicenow",
+      "path": "/compare/haloitsm-vs-servicenow/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "haloitsm-vs-siteground",
+      "path": "/compare/haloitsm-vs-siteground/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "haloitsm-vs-smartproxy",
+      "path": "/compare/haloitsm-vs-smartproxy/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "haloitsm-vs-splunk",
+      "path": "/compare/haloitsm-vs-splunk/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "haloitsm-vs-squadcast",
+      "path": "/compare/haloitsm-vs-squadcast/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "haloitsm-vs-thordata",
+      "path": "/compare/haloitsm-vs-thordata/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "haloitsm-vs-wp-engine",
+      "path": "/compare/haloitsm-vs-wp-engine/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "haloitsm-vs-zyte",
+      "path": "/compare/haloitsm-vs-zyte/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "freshservice-vs-haloitsm",
+      "path": "/compare/freshservice-vs-haloitsm/"
+    },
+    {
+      "kind": "alternatives",
+      "slug": "haloitsm",
+      "path": "/alternatives/haloitsm/"
+    },
+    {
+      "kind": "pricing",
+      "slug": "haloitsm",
+      "path": "/software/haloitsm/pricing/"
+    },
+    {
+      "kind": "tools",
+      "slug": "it-development-cost-calculator",
+      "path": "/tools/it-development-cost-calculator/"
+    }
+  ],
+  "dependentsNeedingRefresh": [],
+  "remediation": [
+    "verify:trial"
+  ],
+  "notes": [
+    "fieldAudit score=94",
+    "decisionHub bestFor=6 notIdeal=6",
+    "dependents=56"
+  ],
+  "materiallyImproved": true
+}

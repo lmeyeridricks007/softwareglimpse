@@ -1,0 +1,405 @@
+{
+  "slug": "homebase",
+  "updatedAt": "2026-09-09T18:11:24.959Z",
+  "version": "1.0.0",
+  "fieldAudit": {
+    "slug": "homebase",
+    "checkedAt": "2026-09-09T18:11:24.957Z",
+    "items": [
+      {
+        "field": "name",
+        "status": "PASS",
+        "detail": "Name: Homebase",
+        "source": "seed"
+      },
+      {
+        "field": "product_status",
+        "status": "PASS",
+        "detail": "productLifecycle=active",
+        "source": "seed"
+      },
+      {
+        "field": "canonical_vendor",
+        "status": "PASS",
+        "detail": "Vendor: Pioneer Works, Inc.",
+        "source": "seed"
+      },
+      {
+        "field": "category",
+        "status": "PASS",
+        "detail": "primaryCategorySlug=hr",
+        "source": "seed"
+      },
+      {
+        "field": "description",
+        "status": "PASS",
+        "detail": "Description present (SMB hourly WFM (scheduling, time, hiring) priced per location — free Basic ≤10 e…)",
+        "source": "seed"
+      },
+      {
+        "field": "target_audience",
+        "status": "PASS",
+        "detail": "Sizes=2, teams=1, assessment bestFor=3",
+        "source": "assessment"
+      },
+      {
+        "field": "use_cases",
+        "status": "PASS",
+        "detail": "useCaseSlugs=3",
+        "source": "seed"
+      },
+      {
+        "field": "capabilities",
+        "status": "PASS",
+        "detail": "featureRatings=0, enrichment features=16",
+        "source": "enrichment"
+      },
+      {
+        "field": "pricing",
+        "status": "PASS",
+        "detail": "Pricing envelope present",
+        "source": "enrichment"
+      },
+      {
+        "field": "plans",
+        "status": "PASS",
+        "detail": "plans=4",
+        "source": "enrichment"
+      },
+      {
+        "field": "free_plan",
+        "status": "PASS",
+        "detail": "Free plan documented",
+        "source": "enrichment"
+      },
+      {
+        "field": "trial",
+        "status": "PASS",
+        "detail": "Trial documented on plans/pricing",
+        "source": "enrichment"
+      },
+      {
+        "field": "integrations",
+        "status": "PASS",
+        "detail": "integrationSlugs=0, enrichment=2",
+        "source": "enrichment"
+      },
+      {
+        "field": "alternatives",
+        "status": "PASS",
+        "detail": "alternativeSlugs=3",
+        "source": "seed"
+      },
+      {
+        "field": "competitors",
+        "status": "PASS",
+        "detail": "competitorSlugs=4",
+        "source": "seed"
+      },
+      {
+        "field": "affiliate",
+        "status": "PASS",
+        "detail": "No affiliate relationship (explicit)",
+        "source": "seed"
+      },
+      {
+        "field": "source_provenance",
+        "status": "PASS",
+        "detail": "seed sources=0, enrichment sourceIds=2",
+        "source": "enrichment"
+      },
+      {
+        "field": "verification_date",
+        "status": "PASS",
+        "detail": "Latest verification/research signal: 2026-08-18T12:00:00.000Z",
+        "source": "enrichment"
+      }
+    ],
+    "passCount": 18,
+    "partialCount": 0,
+    "missingCount": 0,
+    "unknownCount": 0,
+    "score": 100
+  },
+  "decisionHub": {
+    "whatItIs": "Homebase is an SMB frontline app for hourly scheduling, time clocks, team comms, and light hiring. Published per-location plans: Basic free (1 location, ≤10 employees); Essentials $30/$24 monthly vs annual; Plus $70/$56; All-in-One $120/$96 with unlimited employees on paid tiers. 14-day All-in-One trial. Payroll, tip manager, and hiring boosts are add-ons. Multi-site TCO is location-count, not headcount.",
+    "bestFor": [
+      "Small hourly businesses (retail, cafes, local services) that need scheduling + time in one app",
+      "Teams that want a free ≤10-employee starter before paying per location",
+      "Operators who may add payroll later rather than buying Gusto first",
+      "micro / operations: Homebase fit for micro operations teams in the frontline-wfm job cluster, from first-party positioning and HR Priority-2 research.",
+      "small-business / operations: Homebase fit for small-business operations teams in the frontline-wfm job cluster, from first-party positioning and HR Priority-2 research."
+    ],
+    "notIdealFor": [
+      "Restaurant groups standardised on 7shifts",
+      "Multi-entity mid-market WFM (Deputy) or deskless comms hubs (Connecteam)",
+      "Buyers whose primary job is core HRIS or structured ATS",
+      "Paid pricing is per location — multi-site TCO stacks faster than per-user WFM",
+      "Free Basic is capped at 1 location and 10 employees",
+      "Payroll, tip manager, and hiring boosts are add-ons on every tier"
+    ],
+    "coreCapabilities": [
+      "applicant tracking",
+      "career site job boards",
+      "core hris",
+      "workforce scheduling",
+      "frontline comms",
+      "time attendance",
+      "gps geofence clockin",
+      "sop knowledge base"
+    ],
+    "pricingSummary": "4 documented plans · 1 free · entry paid: Essentials · trial documented on at least one plan",
+    "keyTradeoffs": [
+      "Paid pricing is per location — multi-site TCO stacks faster than per-user WFM",
+      "Free Basic is capped at 1 location and 10 employees",
+      "Payroll, tip manager, and hiring boosts are add-ons on every tier",
+      "Not a mid-market multi-entity WFM (Deputy) or restaurant-only suite (7shifts)",
+      "Not a core HRIS or dedicated ATS"
+    ],
+    "alternatives": [
+      {
+        "slug": "connecteam",
+        "name": "Connecteam"
+      },
+      {
+        "slug": "when-i-work",
+        "name": "When I Work"
+      },
+      {
+        "slug": "deputy",
+        "name": "Deputy"
+      },
+      {
+        "slug": "7shifts",
+        "name": "7shifts"
+      }
+    ],
+    "importantComparisons": [
+      {
+        "slug": "connecteam-vs-homebase",
+        "title": "Connecteam vs Homebase",
+        "href": "/compare/connecteam-vs-homebase/"
+      },
+      {
+        "slug": "homebase-vs-when-i-work",
+        "title": "Homebase vs When I Work",
+        "href": "/compare/homebase-vs-when-i-work/"
+      },
+      {
+        "slug": "7shifts-vs-homebase",
+        "title": "Homebase vs 7shifts",
+        "href": "/compare/7shifts-vs-homebase/"
+      },
+      {
+        "slug": "adp-workforce-now-vs-homebase",
+        "title": "ADP Workforce Now vs Homebase",
+        "href": "/compare/adp-workforce-now-vs-homebase/"
+      },
+      {
+        "slug": "ashby-vs-homebase",
+        "title": "Ashby vs Homebase",
+        "href": "/compare/ashby-vs-homebase/"
+      },
+      {
+        "slug": "bamboohr-vs-homebase",
+        "title": "BambooHR vs Homebase",
+        "href": "/compare/bamboohr-vs-homebase/"
+      }
+    ],
+    "relevantGuides": [
+      {
+        "slug": "homebase-implementation",
+        "title": "Homebase Implementation: 30/60/90 HR Rollout That Sticks",
+        "href": "/guides/homebase-implementation/"
+      },
+      {
+        "slug": "homebase-migration",
+        "title": "Homebase Migration: Move People Data Without Losing Trust",
+        "href": "/guides/homebase-migration/"
+      },
+      {
+        "slug": "homebase-setup",
+        "title": "Homebase Setup: Day-Zero Path to a Working HR Loop",
+        "href": "/guides/homebase-setup/"
+      },
+      {
+        "slug": "homebase-plans",
+        "title": "Homebase Plans: Seats, Hubs, and Qualifying Tiers",
+        "href": "/guides/homebase-plans/"
+      },
+      {
+        "slug": "is-homebase-worth-it",
+        "title": "Is Homebase Worth It? Fit Scenarios Before You Buy",
+        "href": "/guides/is-homebase-worth-it/"
+      }
+    ],
+    "evidenceState": "Research/data-based (no completed hands-on test) · Latest verification/research signal: 2026-08-18T12:00:00.000Z · Editorial assessment: approved",
+    "nextDecisionStep": "Compare against peers: Connecteam vs Homebase",
+    "missingSections": []
+  },
+  "dependents": [
+    {
+      "kind": "guide",
+      "slug": "homebase-implementation",
+      "path": "/guides/homebase-implementation/"
+    },
+    {
+      "kind": "guide",
+      "slug": "homebase-migration",
+      "path": "/guides/homebase-migration/"
+    },
+    {
+      "kind": "guide",
+      "slug": "homebase-setup",
+      "path": "/guides/homebase-setup/"
+    },
+    {
+      "kind": "guide",
+      "slug": "homebase-plans",
+      "path": "/guides/homebase-plans/"
+    },
+    {
+      "kind": "guide",
+      "slug": "is-homebase-worth-it",
+      "path": "/guides/is-homebase-worth-it/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "connecteam-vs-homebase",
+      "path": "/compare/connecteam-vs-homebase/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "homebase-vs-when-i-work",
+      "path": "/compare/homebase-vs-when-i-work/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "7shifts-vs-homebase",
+      "path": "/compare/7shifts-vs-homebase/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "adp-workforce-now-vs-homebase",
+      "path": "/compare/adp-workforce-now-vs-homebase/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "ashby-vs-homebase",
+      "path": "/compare/ashby-vs-homebase/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "bamboohr-vs-homebase",
+      "path": "/compare/bamboohr-vs-homebase/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "bolt-for-business-vs-homebase",
+      "path": "/compare/bolt-for-business-vs-homebase/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "carepatron-vs-homebase",
+      "path": "/compare/carepatron-vs-homebase/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "dayforce-vs-homebase",
+      "path": "/compare/dayforce-vs-homebase/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "deputy-vs-homebase",
+      "path": "/compare/deputy-vs-homebase/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "greenhouse-vs-homebase",
+      "path": "/compare/greenhouse-vs-homebase/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "gusto-vs-homebase",
+      "path": "/compare/gusto-vs-homebase/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "hibob-vs-homebase",
+      "path": "/compare/hibob-vs-homebase/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "homebase-vs-lever",
+      "path": "/compare/homebase-vs-lever/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "homebase-vs-oracle-hcm",
+      "path": "/compare/homebase-vs-oracle-hcm/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "homebase-vs-paycor",
+      "path": "/compare/homebase-vs-paycor/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "homebase-vs-paylocity",
+      "path": "/compare/homebase-vs-paylocity/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "homebase-vs-personio",
+      "path": "/compare/homebase-vs-personio/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "homebase-vs-rippling",
+      "path": "/compare/homebase-vs-rippling/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "homebase-vs-trainual",
+      "path": "/compare/homebase-vs-trainual/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "homebase-vs-ukg-pro",
+      "path": "/compare/homebase-vs-ukg-pro/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "homebase-vs-workable",
+      "path": "/compare/homebase-vs-workable/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "homebase-vs-workday",
+      "path": "/compare/homebase-vs-workday/"
+    },
+    {
+      "kind": "alternatives",
+      "slug": "homebase",
+      "path": "/alternatives/homebase/"
+    },
+    {
+      "kind": "pricing",
+      "slug": "homebase",
+      "path": "/software/homebase/pricing/"
+    },
+    {
+      "kind": "tools",
+      "slug": "hr-cost-calculator",
+      "path": "/tools/hr-cost-calculator/"
+    }
+  ],
+  "dependentsNeedingRefresh": [],
+  "remediation": [],
+  "notes": [
+    "fieldAudit score=100",
+    "decisionHub bestFor=5 notIdeal=6",
+    "dependents=31"
+  ],
+  "materiallyImproved": true
+}

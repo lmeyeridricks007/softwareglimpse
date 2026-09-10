@@ -171,36 +171,6 @@
       ]
     }
   ],
-  "aiCapabilities": [
-    {
-      "capability": "other",
-      "availability": "limited",
-      "sourceIds": [
-        "datadog-product-official"
-      ]
-    },
-    {
-      "capability": "other",
-      "availability": "limited",
-      "sourceIds": [
-        "datadog-product-official"
-      ]
-    },
-    {
-      "capability": "automation",
-      "availability": "supported",
-      "sourceIds": [
-        "datadog-product-official"
-      ]
-    },
-    {
-      "capability": "recommendations",
-      "availability": "supported",
-      "sourceIds": [
-        "datadog-product-official"
-      ]
-    }
-  ],
   "integrationSupport": [
     {
       "integrationSlug": "aws",
@@ -240,6 +210,36 @@
     {
       "integrationSlug": "github",
       "kind": "native",
+      "sourceIds": [
+        "datadog-product-official"
+      ]
+    }
+  ],
+  "aiCapabilities": [
+    {
+      "capability": "other",
+      "availability": "limited",
+      "sourceIds": [
+        "datadog-product-official"
+      ]
+    },
+    {
+      "capability": "other",
+      "availability": "limited",
+      "sourceIds": [
+        "datadog-product-official"
+      ]
+    },
+    {
+      "capability": "automation",
+      "availability": "supported",
+      "sourceIds": [
+        "datadog-product-official"
+      ]
+    },
+    {
+      "capability": "recommendations",
+      "availability": "supported",
       "sourceIds": [
         "datadog-product-official"
       ]
@@ -323,75 +323,6 @@
       "isEditorial": false
     }
   ],
-  "pricing": {
-    "currency": "USD",
-    "model": "usage",
-    "hasFreePlan": true,
-    "hasFreeTrial": true,
-    "plans": [
-      {
-        "id": "plan-free",
-        "slug": "free",
-        "name": "Free",
-        "isFree": true,
-        "contactSales": false,
-        "hasFreeTrial": false,
-        "highlighted": false,
-        "rules": [
-          {
-            "kind": "flat",
-            "amount": 0,
-            "currency": "USD",
-            "interval": "month",
-            "amountPeriod": "month"
-          }
-        ],
-        "description": "Free tier with limited hosts/metrics — evaluation floor only.",
-        "limits": {
-          "maxHosts": 5
-        }
-      },
-      {
-        "id": "plan-infrastructure-pro",
-        "slug": "infrastructure-pro",
-        "name": "Infrastructure Pro",
-        "isFree": false,
-        "contactSales": false,
-        "hasFreeTrial": true,
-        "trialDays": 14,
-        "highlighted": true,
-        "rules": [
-          {
-            "kind": "usage",
-            "amountPerUnit": 15,
-            "unit": "host",
-            "currency": "USD",
-            "interval": "year",
-            "amountPeriod": "month"
-          }
-        ],
-        "description": "$15/host/month billed annually — common infrastructure monitoring entry floor."
-      },
-      {
-        "id": "plan-enterprise",
-        "slug": "enterprise",
-        "name": "Enterprise / Custom",
-        "isFree": false,
-        "contactSales": true,
-        "hasFreeTrial": false,
-        "highlighted": false,
-        "rules": [],
-        "description": "Enterprise bundles, volume discounts, and multi-year commits — contact sales."
-      }
-    ],
-    "notes": "Verified 2026-08-18 from datadoghq.com/pricing (high confidence on Infrastructure Pro $15/host/mo annual floor). Free tier for limited hosts. APM, logs, RUM, SIEM, and other SKUs add separate module/consumption lines — TCO is multi-product. 14-day trial commonly documented. No affiliate in inventory. Affiliate economics excluded.",
-    "verifiedAt": "2026-08-18T09:30:00.000Z",
-    "sourceIds": [
-      "datadog-pricing-official"
-    ],
-    "startingPriceMonthly": 15,
-    "trialDays": 14
-  },
   "screenshots": [
     {
       "id": "datadog-shot-overview",
@@ -520,13 +451,13 @@
       "demonstratedDimensionIds": [],
       "requirementCriterionIds": [],
       "workflowStageIds": [],
+      "mediaContext": "general-workflow",
       "reportedOutcomes": [],
       "placements": [
         "overview",
         "features",
         "evidence"
       ],
-      "mediaContext": "general-workflow",
       "purpose": "Official Datadog video for product research pages",
       "demonstratesCaption": "How Datadog presents the product in an official vendor video.",
       "editorialCommentary": "Official vendor demo — treat as UI/workflow evidence, not SoftwareGlimpse scoring.",
@@ -544,11 +475,75 @@
       "status": "published"
     }
   ],
-  "sourceIds": [
-    "datadog-product-official",
-    "datadog-pricing-official"
-  ],
-  "notes": "IT Wave-1 onboarding enrichment from first-party research 2026-08-18T09:30:00.000Z. handsOnTesting=false. membershipRole=primary. jobCluster=observability-monitoring.",
+  "pricing": {
+    "currency": "USD",
+    "model": "usage",
+    "hasFreePlan": true,
+    "hasFreeTrial": true,
+    "plans": [
+      {
+        "id": "plan-free",
+        "slug": "free",
+        "name": "Free",
+        "isFree": true,
+        "contactSales": false,
+        "hasFreeTrial": false,
+        "highlighted": false,
+        "rules": [
+          {
+            "kind": "flat",
+            "amount": 0,
+            "currency": "USD",
+            "interval": "month",
+            "amountPeriod": "month"
+          }
+        ],
+        "description": "Free tier with limited hosts/metrics — evaluation floor only.",
+        "limits": {
+          "maxHosts": 5
+        }
+      },
+      {
+        "id": "plan-infrastructure-pro",
+        "slug": "infrastructure-pro",
+        "name": "Infrastructure Pro",
+        "isFree": false,
+        "contactSales": false,
+        "hasFreeTrial": true,
+        "trialDays": 14,
+        "highlighted": true,
+        "rules": [
+          {
+            "kind": "usage",
+            "amountPerUnit": 15,
+            "unit": "host",
+            "currency": "USD",
+            "interval": "year",
+            "amountPeriod": "month"
+          }
+        ],
+        "description": "$15/host/month billed annually — common infrastructure monitoring entry floor."
+      },
+      {
+        "id": "plan-enterprise",
+        "slug": "enterprise",
+        "name": "Enterprise / Custom",
+        "isFree": false,
+        "contactSales": true,
+        "hasFreeTrial": false,
+        "highlighted": false,
+        "rules": [],
+        "description": "Enterprise bundles, volume discounts, and multi-year commits — contact sales."
+      }
+    ],
+    "notes": "Verified 2026-08-18 from datadoghq.com/pricing (high confidence on Infrastructure Pro $15/host/mo annual floor). Free tier for limited hosts. APM, logs, RUM, SIEM, and other SKUs add separate module/consumption lines — TCO is multi-product. 14-day trial commonly documented. No affiliate in inventory. Affiliate economics excluded.",
+    "verifiedAt": "2026-09-08T21:29:15.658Z",
+    "sourceIds": [
+      "datadog-pricing-official"
+    ],
+    "startingPriceMonthly": 15,
+    "trialDays": 14
+  },
   "domainCheckedAt": {
     "identity": "2026-08-18T09:30:00.000Z",
     "pricing": "2026-08-18T09:30:00.000Z",
@@ -562,5 +557,10 @@
     "limits": "2026-08-18T09:30:00.000Z",
     "security-compliance": "2026-08-18T09:30:00.000Z"
   },
-  "updatedAt": "2026-08-18T10:00:00.000Z"
+  "sourceIds": [
+    "datadog-product-official",
+    "datadog-pricing-official"
+  ],
+  "updatedAt": "2026-08-18T10:00:00.000Z",
+  "notes": "IT Wave-1 onboarding enrichment from first-party research 2026-08-18T09:30:00.000Z. handsOnTesting=false. membershipRole=primary. jobCluster=observability-monitoring."
 }

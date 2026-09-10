@@ -1,0 +1,556 @@
+{
+  "slug": "bright-data",
+  "updatedAt": "2026-09-07T22:31:21.731Z",
+  "version": "1.0.0",
+  "fieldAudit": {
+    "slug": "bright-data",
+    "checkedAt": "2026-09-07T22:31:21.730Z",
+    "items": [
+      {
+        "field": "name",
+        "status": "PASS",
+        "detail": "Name: Bright Data",
+        "source": "seed"
+      },
+      {
+        "field": "product_status",
+        "status": "PASS",
+        "detail": "productLifecycle=active",
+        "source": "seed"
+      },
+      {
+        "field": "canonical_vendor",
+        "status": "UNKNOWN",
+        "detail": "Company/vendor not documented",
+        "source": "none"
+      },
+      {
+        "field": "category",
+        "status": "PASS",
+        "detail": "primaryCategorySlug=it-development",
+        "source": "seed"
+      },
+      {
+        "field": "description",
+        "status": "PASS",
+        "detail": "Description present (Web data / proxy platform — pay-as-you-go from ~$4/GB residential; starter commi…)",
+        "source": "seed"
+      },
+      {
+        "field": "target_audience",
+        "status": "PASS",
+        "detail": "Sizes=3, teams=1, assessment bestFor=3",
+        "source": "assessment"
+      },
+      {
+        "field": "use_cases",
+        "status": "PASS",
+        "detail": "useCaseSlugs=1",
+        "source": "seed"
+      },
+      {
+        "field": "capabilities",
+        "status": "PASS",
+        "detail": "featureRatings=0, enrichment features=14",
+        "source": "enrichment"
+      },
+      {
+        "field": "pricing",
+        "status": "PASS",
+        "detail": "Pricing envelope present",
+        "source": "enrichment"
+      },
+      {
+        "field": "plans",
+        "status": "PASS",
+        "detail": "plans=3",
+        "source": "enrichment"
+      },
+      {
+        "field": "free_plan",
+        "status": "PASS",
+        "detail": "No free plan in documented plans (explicit absence)",
+        "source": "enrichment"
+      },
+      {
+        "field": "trial",
+        "status": "UNKNOWN",
+        "detail": "Trial not explicitly documented — do not assume none",
+        "source": "none"
+      },
+      {
+        "field": "integrations",
+        "status": "PASS",
+        "detail": "integrationSlugs=0, enrichment=4",
+        "source": "enrichment"
+      },
+      {
+        "field": "alternatives",
+        "status": "PASS",
+        "detail": "alternativeSlugs=3",
+        "source": "seed"
+      },
+      {
+        "field": "competitors",
+        "status": "PASS",
+        "detail": "competitorSlugs=7",
+        "source": "seed"
+      },
+      {
+        "field": "affiliate",
+        "status": "PASS",
+        "detail": "Affiliate enabled with tracking URL",
+        "source": "seed"
+      },
+      {
+        "field": "source_provenance",
+        "status": "PASS",
+        "detail": "seed sources=0, enrichment sourceIds=2",
+        "source": "enrichment"
+      },
+      {
+        "field": "verification_date",
+        "status": "PASS",
+        "detail": "Latest verification/research signal: 2026-08-18T09:30:00.000Z",
+        "source": "enrichment"
+      }
+    ],
+    "passCount": 16,
+    "partialCount": 0,
+    "missingCount": 0,
+    "unknownCount": 2,
+    "score": 89
+  },
+  "decisionHub": {
+    "whatItIs": "Bright Data operates a large proxy and web data collection network (residential, datacenter, ISP, mobile) with APIs and scraper tooling for engineering and data teams. Pay-as-you-go residential pricing publishes from about $4/GB; committed starter plans commonly begin near $499/month depending on product line and bandwidth. Usage/GB and commitment pricing dominates — not per-seat ITSM math. Compliance and robots.txt policy posture must be validated for each use case. Affiliate via aff-bright-data.",
+    "bestFor": [
+      "Data engineering teams needing reliable residential/datacenter proxy networks",
+      "Enterprises with budget for committed web-data infrastructure",
+      "Projects with clear compliance review and acceptable-use alignment",
+      "small-business / operations: Bright Data fit for small-business operations teams in the web-data-collection job cluster, from first-party positioning and IT Wave-1 research.",
+      "mid-market / operations: Bright Data fit for mid-market operations teams in the web-data-collection job cluster, from first-party positioning and IT Wave-1 research.",
+      "enterprise / operations: Bright Data fit for enterprise operations teams in the web-data-collection job cluster, from first-party positioning and IT Wave-1 research."
+    ],
+    "notIdealFor": [
+      "Hosting admins buying server panels (Plesk)",
+      "Teams needing predictable per-seat SaaS pricing",
+      "Casual hobby scraping without compliance budget",
+      "GB/commitment pricing is opaque without live calculator — medium pricing confidence",
+      "Compliance and acceptable-use rules must be validated per project",
+      "Not ITSM, observability, source control, or hosting panel"
+    ],
+    "coreCapabilities": [
+      "proxy network",
+      "enterprise security",
+      "analytics reporting",
+      "web data collection"
+    ],
+    "pricingSummary": "3 documented plans · entry paid: Pay-as-you-go",
+    "keyTradeoffs": [
+      "GB/commitment pricing is opaque without live calculator — medium pricing confidence",
+      "Compliance and acceptable-use rules must be validated per project",
+      "Not ITSM, observability, source control, or hosting panel",
+      "Starter ~$499/mo floor is expensive for casual scraping experiments",
+      "Landscape-adjacent only vs Plesk/hosting tools"
+    ],
+    "alternatives": [
+      {
+        "slug": "oxylabs",
+        "name": "Oxylabs"
+      },
+      {
+        "slug": "apify",
+        "name": "Apify"
+      },
+      {
+        "slug": "scraperapi",
+        "name": "ScraperAPI"
+      },
+      {
+        "slug": "thordata",
+        "name": "ThorData"
+      },
+      {
+        "slug": "smartproxy",
+        "name": "Decodo (Smartproxy)"
+      },
+      {
+        "slug": "zyte",
+        "name": "Zyte"
+      }
+    ],
+    "importantComparisons": [
+      {
+        "slug": "bright-data-vs-plesk",
+        "title": "Plesk vs Bright Data",
+        "href": "/compare/bright-data-vs-plesk/"
+      },
+      {
+        "slug": "bright-data-vs-oxylabs",
+        "title": "Bright Data vs Oxylabs",
+        "href": "/compare/bright-data-vs-oxylabs/"
+      },
+      {
+        "slug": "bright-data-vs-scraperapi",
+        "title": "ScraperAPI vs Bright Data",
+        "href": "/compare/bright-data-vs-scraperapi/"
+      },
+      {
+        "slug": "apify-vs-bright-data",
+        "title": "Apify vs Bright Data",
+        "href": "/compare/apify-vs-bright-data/"
+      },
+      {
+        "slug": "bright-data-vs-thordata",
+        "title": "ThorData vs Bright Data",
+        "href": "/compare/bright-data-vs-thordata/"
+      },
+      {
+        "slug": "bright-data-vs-smartproxy",
+        "title": "Decodo (Smartproxy) vs Bright Data",
+        "href": "/compare/bright-data-vs-smartproxy/"
+      }
+    ],
+    "relevantGuides": [
+      {
+        "slug": "what-is-bright-data",
+        "title": "What Is Bright Data?",
+        "href": "/guides/what-is-bright-data/"
+      },
+      {
+        "slug": "bright-data-implementation",
+        "title": "Bright Data Implementation: 30/60/90 IT Rollout That Sticks",
+        "href": "/guides/bright-data-implementation/"
+      },
+      {
+        "slug": "bright-data-migration",
+        "title": "Bright Data Migration: Move Tickets and Repos Without Losing Trust",
+        "href": "/guides/bright-data-migration/"
+      },
+      {
+        "slug": "bright-data-setup",
+        "title": "Bright Data Setup: Day-Zero Path to a Working IT Loop",
+        "href": "/guides/bright-data-setup/"
+      },
+      {
+        "slug": "bright-data-plans",
+        "title": "Bright Data Plans: Seats, Hosts, and Qualifying Tiers",
+        "href": "/guides/bright-data-plans/"
+      },
+      {
+        "slug": "is-bright-data-worth-it",
+        "title": "Is Bright Data Worth It? Fit Scenarios Before You Buy",
+        "href": "/guides/is-bright-data-worth-it/"
+      }
+    ],
+    "evidenceState": "Research/data-based (no completed hands-on test) · Latest verification/research signal: 2026-08-18T09:30:00.000Z · Editorial assessment: approved",
+    "nextDecisionStep": "Compare against peers: Plesk vs Bright Data",
+    "missingSections": [
+      "canonical_vendor",
+      "trial"
+    ]
+  },
+  "dependents": [
+    {
+      "kind": "guide",
+      "slug": "what-is-bright-data",
+      "path": "/guides/what-is-bright-data/"
+    },
+    {
+      "kind": "guide",
+      "slug": "bright-data-implementation",
+      "path": "/guides/bright-data-implementation/"
+    },
+    {
+      "kind": "guide",
+      "slug": "bright-data-migration",
+      "path": "/guides/bright-data-migration/"
+    },
+    {
+      "kind": "guide",
+      "slug": "bright-data-setup",
+      "path": "/guides/bright-data-setup/"
+    },
+    {
+      "kind": "guide",
+      "slug": "bright-data-plans",
+      "path": "/guides/bright-data-plans/"
+    },
+    {
+      "kind": "guide",
+      "slug": "is-bright-data-worth-it",
+      "path": "/guides/is-bright-data-worth-it/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "bright-data-vs-plesk",
+      "path": "/compare/bright-data-vs-plesk/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "bright-data-vs-oxylabs",
+      "path": "/compare/bright-data-vs-oxylabs/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "bright-data-vs-scraperapi",
+      "path": "/compare/bright-data-vs-scraperapi/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "apify-vs-bright-data",
+      "path": "/compare/apify-vs-bright-data/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "bright-data-vs-thordata",
+      "path": "/compare/bright-data-vs-thordata/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "bright-data-vs-smartproxy",
+      "path": "/compare/bright-data-vs-smartproxy/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "bright-data-vs-zyte",
+      "path": "/compare/bright-data-vs-zyte/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "appdynamics-vs-bright-data",
+      "path": "/compare/appdynamics-vs-bright-data/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "azure-devops-vs-bright-data",
+      "path": "/compare/azure-devops-vs-bright-data/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "bitbucket-vs-bright-data",
+      "path": "/compare/bitbucket-vs-bright-data/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "bmc-helix-vs-bright-data",
+      "path": "/compare/bmc-helix-vs-bright-data/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "bright-data-vs-buildkite",
+      "path": "/compare/bright-data-vs-buildkite/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "bright-data-vs-chronosphere",
+      "path": "/compare/bright-data-vs-chronosphere/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "bright-data-vs-circleci",
+      "path": "/compare/bright-data-vs-circleci/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "bright-data-vs-cloudways",
+      "path": "/compare/bright-data-vs-cloudways/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "bright-data-vs-coralogix",
+      "path": "/compare/bright-data-vs-coralogix/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "bright-data-vs-cpanel",
+      "path": "/compare/bright-data-vs-cpanel/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "bright-data-vs-datadog",
+      "path": "/compare/bright-data-vs-datadog/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "bright-data-vs-directadmin",
+      "path": "/compare/bright-data-vs-directadmin/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "bright-data-vs-dynatrace",
+      "path": "/compare/bright-data-vs-dynatrace/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "bright-data-vs-elastic-observability",
+      "path": "/compare/bright-data-vs-elastic-observability/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "bright-data-vs-firehydrant",
+      "path": "/compare/bright-data-vs-firehydrant/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "bright-data-vs-fly-io",
+      "path": "/compare/bright-data-vs-fly-io/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "bright-data-vs-github",
+      "path": "/compare/bright-data-vs-github/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "bright-data-vs-gitlab",
+      "path": "/compare/bright-data-vs-gitlab/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "bright-data-vs-grafana-cloud",
+      "path": "/compare/bright-data-vs-grafana-cloud/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "bright-data-vs-haloitsm",
+      "path": "/compare/bright-data-vs-haloitsm/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "bright-data-vs-heroku",
+      "path": "/compare/bright-data-vs-heroku/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "bright-data-vs-honeycomb",
+      "path": "/compare/bright-data-vs-honeycomb/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "bright-data-vs-incident-io",
+      "path": "/compare/bright-data-vs-incident-io/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "bright-data-vs-iproyal",
+      "path": "/compare/bright-data-vs-iproyal/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "bright-data-vs-ivanti",
+      "path": "/compare/bright-data-vs-ivanti/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "bright-data-vs-jira-service-management",
+      "path": "/compare/bright-data-vs-jira-service-management/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "bright-data-vs-kinsta",
+      "path": "/compare/bright-data-vs-kinsta/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "bright-data-vs-manageengine-servicedesk-plus",
+      "path": "/compare/bright-data-vs-manageengine-servicedesk-plus/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "bright-data-vs-new-relic",
+      "path": "/compare/bright-data-vs-new-relic/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "bright-data-vs-pagerduty",
+      "path": "/compare/bright-data-vs-pagerduty/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "bright-data-vs-railway",
+      "path": "/compare/bright-data-vs-railway/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "bright-data-vs-render",
+      "path": "/compare/bright-data-vs-render/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "bright-data-vs-rootly",
+      "path": "/compare/bright-data-vs-rootly/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "bright-data-vs-sentry",
+      "path": "/compare/bright-data-vs-sentry/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "bright-data-vs-servicenow",
+      "path": "/compare/bright-data-vs-servicenow/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "bright-data-vs-siteground",
+      "path": "/compare/bright-data-vs-siteground/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "bright-data-vs-splunk",
+      "path": "/compare/bright-data-vs-splunk/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "bright-data-vs-squadcast",
+      "path": "/compare/bright-data-vs-squadcast/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "bright-data-vs-sysaid",
+      "path": "/compare/bright-data-vs-sysaid/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "bright-data-vs-topdesk",
+      "path": "/compare/bright-data-vs-topdesk/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "bright-data-vs-wp-engine",
+      "path": "/compare/bright-data-vs-wp-engine/"
+    },
+    {
+      "kind": "alternatives",
+      "slug": "bright-data",
+      "path": "/alternatives/bright-data/"
+    },
+    {
+      "kind": "pricing",
+      "slug": "bright-data",
+      "path": "/software/bright-data/pricing/"
+    },
+    {
+      "kind": "best",
+      "slug": "it-development-software",
+      "path": "/best/it-development-software/"
+    },
+    {
+      "kind": "tools",
+      "slug": "it-development-cost-calculator",
+      "path": "/tools/it-development-cost-calculator/"
+    }
+  ],
+  "dependentsNeedingRefresh": [],
+  "remediation": [
+    "verify:canonical_vendor",
+    "verify:trial"
+  ],
+  "notes": [
+    "fieldAudit score=89",
+    "decisionHub bestFor=6 notIdeal=6",
+    "dependents=58"
+  ],
+  "materiallyImproved": false
+}

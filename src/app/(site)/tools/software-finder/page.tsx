@@ -19,6 +19,7 @@ import {
   categoryToolHref,
 } from "@/data/config/tools/category-tool-meta";
 import { siteFoundationConfig } from "@/data/config/site/foundation";
+import { categoryHasPublishedPillar } from "@/services/category-tools/pillar-gate";
 import { buildPageMetadata } from "@/seo/metadata";
 
 const TITLE = "Software Finder";
@@ -29,7 +30,8 @@ export const metadata: Metadata = buildPageMetadata({
   title: TITLE,
   description: DESCRIPTION,
   path: "/tools/software-finder/",
-  indexable: true,
+  // Category router — point crawlers at category finders, not this hub.
+  indexable: false,
 });
 
 const CATEGORY_FINDERS = [
@@ -51,7 +53,9 @@ const CATEGORY_FINDERS = [
     cta: "Open Sales Intelligence Finder →",
     icon: Binoculars,
   },
-  ...NEW_TOOL_CATEGORY_SLUGS.map((slug) => {
+  ...NEW_TOOL_CATEGORY_SLUGS.filter((slug) =>
+    categoryHasPublishedPillar(slug),
+  ).map((slug) => {
     const meta = CATEGORY_TOOL_META[slug];
     return {
       id: slug,

@@ -15,12 +15,14 @@ import {
 } from "@/services/pricing/server";
 import {
   CRM_PRODUCT_GUIDE_KINDS,
-  productGuideFigureSrc,
-  productGuideHeroSrc,
-  productGuidePanelSrc,
   productGuideSlug,
   type CrmProductGuideKind,
 } from "./kinds";
+import {
+  productGuideFigureSrc,
+  productGuideHeroSrc,
+  productGuidePanelSrc,
+} from "./kinds-assets";
 
 export type ProductGuidePlanSummary = {
   id: string;

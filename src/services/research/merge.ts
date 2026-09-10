@@ -1,11 +1,13 @@
 import {
   coerceAiCapabilityKind,
   coerceFeatureAvailability,
+  PricingSchema,
   type ProductResearchEnrichment,
   type ResearchFact,
   type Software,
 } from "@/domain";
 import { ResearchSourceSchema, SoftwareSchema } from "@/domain";
+import { snapshotPricingHistory } from "@/services/pricing-history";
 import { buildPricingEnvelope } from "./normalize";
 import { nowIso } from "./utils";
 
@@ -223,6 +225,18 @@ export function mergeApprovedFacts(input: {
         },
         pricingVerifiedAt: nowIso(),
       };
+
+      const parsedPricing = PricingSchema.safeParse(nextSoftware.pricing);
+      if (parsedPricing.success) {
+        snapshotPricingHistory({
+          productId: nextSoftware.slug,
+          pricing: parsedPricing.data,
+          categorySlug: nextSoftware.primaryCategorySlug,
+          observedAt: nowIso(),
+          verificationMethod: "research-merge",
+          confidence: "medium",
+        });
+      }
     }
   }
 

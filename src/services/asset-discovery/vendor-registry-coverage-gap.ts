@@ -1,4 +1,4 @@
-import type { VendorOfficialSourceRegistryEntry } from "@/domain/schemas/asset-discovery";
+import type { VendorOfficialSourceRegistryEntryInput } from "@/domain/schemas/asset-discovery";
 
 function videoVendor(
   productSlug: string,
@@ -6,7 +6,7 @@ function videoVendor(
   organizationName: string,
   officialDomains: string[],
   channels: Array<{ channelName: string; channelUrl: string }>,
-): VendorOfficialSourceRegistryEntry {
+): VendorOfficialSourceRegistryEntryInput {
   return {
     productSlug,
     productName,
@@ -22,7 +22,7 @@ function videoVendor(
 }
 
 /** Official YouTube channels oEmbed-verified during coverage-gap import. */
-export const COVERAGE_GAP_VENDOR_REGISTRY: VendorOfficialSourceRegistryEntry[] = [
+export const COVERAGE_GAP_VENDOR_REGISTRY: VendorOfficialSourceRegistryEntryInput[] = [
   videoVendor("ashby", "Ashby", "Ashby, Inc.", ["ashbyhq.com", "www.ashbyhq.com"], [
     { channelName: "Ashby", channelUrl: "https://www.youtube.com/@AshbyHQ" },
   ]),

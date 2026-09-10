@@ -17,6 +17,7 @@ import { CategoryFinderCTA } from "@/components/category/category-finder-cta";
 import { CategoryDecisionTools } from "@/components/category/category-decision-tools";
 import { CategoryGuides } from "@/components/category/category-guides";
 import { CategoryHero } from "@/components/category/category-hero";
+import { CategoryHubKnowledgeSections } from "@/components/category/category-hub-knowledge-sections";
 import { CategoryIndustries } from "@/components/category/category-industries";
 import { CategoryBusinessTypes } from "@/components/category/category-business-types";
 import { CategoryCapabilities } from "@/components/category/category-capabilities";
@@ -36,6 +37,7 @@ import { isEntityIndexable } from "@/domain/quality-gates";
 import type { Category } from "@/domain";
 import { getCategoryHubDisplayName } from "@/services/category-hub/display-name";
 import { buildCategoryHubModel } from "@/services/category-hub";
+import { buildEstateBreadcrumbs } from "@/services/seo/knowledge-graph";
 import { buildPageMetadata } from "@/seo/metadata";
 import {
   JsonLdScript,
@@ -88,14 +90,9 @@ function CategoryHubPage({ category }: { category: Category }) {
   const model = buildCategoryHubModel(category);
   const { shortLabel } = model;
 
-  const breadcrumbItems = [
-    { name: "Home", path: "/" },
-    { name: "Software Categories", path: "/categories/" },
-    {
-      name: category.name,
-      path: `/categories/${category.path.join("/")}/`,
-    },
-  ];
+  const breadcrumbItems = buildEstateBreadcrumbs(
+    `/categories/${category.path.join("/")}/`,
+  );
 
   const faqLd = model.faq.length ? faqPageJsonLd(model.faq) : null;
 
@@ -171,6 +168,10 @@ function CategoryHubPage({ category }: { category: Category }) {
       <CategoryQuickNav items={navItems} />
 
       <div className="mt-10 space-y-14">
+        {model.hubSections.length > 0 ? (
+          <CategoryHubKnowledgeSections sections={model.hubSections} />
+        ) : null}
+
         {model.explorePaths.length > 0 ? (
           <CategoryExplorePaths
             title={`Choose how you want to explore ${shortLabel}`}

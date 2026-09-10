@@ -1,0 +1,354 @@
+{
+  "slug": "zendesk-suite",
+  "updatedAt": "2026-09-07T22:31:21.740Z",
+  "version": "1.0.0",
+  "fieldAudit": {
+    "slug": "zendesk-suite",
+    "checkedAt": "2026-09-07T22:31:21.737Z",
+    "items": [
+      {
+        "field": "name",
+        "status": "PASS",
+        "detail": "Name: Zendesk Suite",
+        "source": "seed"
+      },
+      {
+        "field": "product_status",
+        "status": "PASS",
+        "detail": "productLifecycle=active",
+        "source": "seed"
+      },
+      {
+        "field": "canonical_vendor",
+        "status": "UNKNOWN",
+        "detail": "Company/vendor not documented",
+        "source": "none"
+      },
+      {
+        "field": "category",
+        "status": "PASS",
+        "detail": "primaryCategorySlug=helpdesk-ticketing",
+        "source": "seed"
+      },
+      {
+        "field": "description",
+        "status": "PASS",
+        "detail": "Description present (Enterprise helpdesk and Suite omnichannel — Support Team from $19/agent/mo annua…)",
+        "source": "seed"
+      },
+      {
+        "field": "target_audience",
+        "status": "PASS",
+        "detail": "Sizes=2, teams=2, assessment bestFor=3",
+        "source": "assessment"
+      },
+      {
+        "field": "use_cases",
+        "status": "PASS",
+        "detail": "useCaseSlugs=3",
+        "source": "seed"
+      },
+      {
+        "field": "capabilities",
+        "status": "PASS",
+        "detail": "featureRatings=0, enrichment features=16",
+        "source": "enrichment"
+      },
+      {
+        "field": "pricing",
+        "status": "PASS",
+        "detail": "Pricing envelope present",
+        "source": "enrichment"
+      },
+      {
+        "field": "plans",
+        "status": "PASS",
+        "detail": "plans=3",
+        "source": "enrichment"
+      },
+      {
+        "field": "free_plan",
+        "status": "PASS",
+        "detail": "No free plan in documented plans (explicit absence)",
+        "source": "enrichment"
+      },
+      {
+        "field": "trial",
+        "status": "PASS",
+        "detail": "Trial documented on plans/pricing",
+        "source": "enrichment"
+      },
+      {
+        "field": "integrations",
+        "status": "PASS",
+        "detail": "integrationSlugs=0, enrichment=4",
+        "source": "enrichment"
+      },
+      {
+        "field": "alternatives",
+        "status": "PASS",
+        "detail": "alternativeSlugs=3",
+        "source": "seed"
+      },
+      {
+        "field": "competitors",
+        "status": "PASS",
+        "detail": "competitorSlugs=4",
+        "source": "seed"
+      },
+      {
+        "field": "affiliate",
+        "status": "PASS",
+        "detail": "No affiliate relationship (explicit)",
+        "source": "seed"
+      },
+      {
+        "field": "source_provenance",
+        "status": "PASS",
+        "detail": "seed sources=0, enrichment sourceIds=2",
+        "source": "enrichment"
+      },
+      {
+        "field": "verification_date",
+        "status": "PASS",
+        "detail": "Latest verification/research signal: 2026-08-18T12:00:00.000Z",
+        "source": "enrichment"
+      }
+    ],
+    "passCount": 17,
+    "partialCount": 0,
+    "missingCount": 0,
+    "unknownCount": 1,
+    "score": 94
+  },
+  "decisionHub": {
+    "whatItIs": "Zendesk Suite is Zendesk's customer service platform (distinct from Zendesk Sell CRM at slug `zendesk`). Helpdesk ticketing, messaging, voice, and AI agents across Support Team ($19/agent/mo annual), Suite Team ($55), and Suite Pro ($115) per agent/month billed annually. Scored as helpdesk-ticketing primary within the CS category — not collapsed into CRM Sell.",
+    "bestFor": [
+      "Mid-market and enterprise teams needing omnichannel helpdesk at scale",
+      "Organizations with messaging, voice, and AI agent requirements",
+      "Buyers who can justify Suite Team/Pro pricing for depth",
+      "mid-market / customer-success: Zendesk Suite fit for mid-market customer-success teams in the helpdesk-ticketing job cluster, from first-party positioning and CS Wave-1 research.",
+      "enterprise / customer-success: Zendesk Suite fit for enterprise customer-success teams in the helpdesk-ticketing job cluster, from first-party positioning and CS Wave-1 research."
+    ],
+    "notIdealFor": [
+      "SMB teams wanting simple shared inbox (Help Scout)",
+      "Budget buyers ($7 Zoho Desk Express floor)",
+      "CRM pipeline buyers (Zendesk Sell is separate)",
+      "Suite Pro at $115/agent/mo annual is expensive for SMB teams",
+      "Zendesk Sell (CRM) is a separate product — do not conflate slugs",
+      "Advanced AI and voice depth require Suite tiers, not Support Team alone"
+    ],
+    "coreCapabilities": [
+      "ticketing",
+      "shared inbox",
+      "live chat",
+      "knowledge base",
+      "omnichannel inbox",
+      "sla routing",
+      "macros automation",
+      "self service portal"
+    ],
+    "pricingSummary": "3 documented plans · entry paid: Support Team · trial documented on at least one plan",
+    "keyTradeoffs": [
+      "Suite Pro at $115/agent/mo annual is expensive for SMB teams",
+      "Zendesk Sell (CRM) is a separate product — do not conflate slugs",
+      "Advanced AI and voice depth require Suite tiers, not Support Team alone",
+      "Implementation complexity higher than SMB shared-inbox tools",
+      "The complete customer service solution — AI-powered ticketing, messaging, and voice for teams that need enterprise-scale omnichannel support. (audience: Mid-market and enterprise teams needing omnichannel helpdesk at scale, Organizations with messaging, voice, and AI agent requirements)"
+    ],
+    "alternatives": [
+      {
+        "slug": "freshdesk",
+        "name": "Freshdesk"
+      },
+      {
+        "slug": "help-scout",
+        "name": "Help Scout"
+      },
+      {
+        "slug": "zoho-desk",
+        "name": "Zoho Desk"
+      },
+      {
+        "slug": "intercom",
+        "name": "Intercom"
+      }
+    ],
+    "importantComparisons": [
+      {
+        "slug": "freshdesk-vs-zendesk-suite",
+        "title": "Freshdesk vs Zendesk Suite",
+        "href": "/compare/freshdesk-vs-zendesk-suite/"
+      },
+      {
+        "slug": "help-scout-vs-zendesk-suite",
+        "title": "Zendesk Suite vs Help Scout",
+        "href": "/compare/help-scout-vs-zendesk-suite/"
+      },
+      {
+        "slug": "zendesk-suite-vs-zoho-desk",
+        "title": "Zendesk Suite vs Zoho Desk",
+        "href": "/compare/zendesk-suite-vs-zoho-desk/"
+      },
+      {
+        "slug": "tidio-vs-zendesk-suite",
+        "title": "Tidio vs Zendesk Suite",
+        "href": "/compare/tidio-vs-zendesk-suite/"
+      },
+      {
+        "slug": "intercom-vs-zendesk-suite",
+        "title": "Zendesk Suite vs Intercom",
+        "href": "/compare/intercom-vs-zendesk-suite/"
+      },
+      {
+        "slug": "gorgias-vs-zendesk-suite",
+        "title": "Gorgias vs Zendesk Suite",
+        "href": "/compare/gorgias-vs-zendesk-suite/"
+      }
+    ],
+    "relevantGuides": [
+      {
+        "slug": "what-is-zendesk-suite",
+        "title": "What Is Zendesk Suite?",
+        "href": "/guides/what-is-zendesk-suite/"
+      },
+      {
+        "slug": "is-zendesk-suite-worth-it",
+        "title": "Is Zendesk Suite Worth It?",
+        "href": "/guides/is-zendesk-suite-worth-it/"
+      },
+      {
+        "slug": "how-helpdesk-ticketing-software-works",
+        "title": "How Helpdesk & Ticketing Software Works",
+        "href": "/guides/how-helpdesk-ticketing-software-works/"
+      },
+      {
+        "slug": "types-of-helpdesk-ticketing-software",
+        "title": "Types of Helpdesk & Ticketing Software",
+        "href": "/guides/types-of-helpdesk-ticketing-software/"
+      },
+      {
+        "slug": "helpdesk-ticketing-requirements-guide",
+        "title": "Helpdesk & Ticketing Software Requirements Guide",
+        "href": "/guides/helpdesk-ticketing-requirements-guide/"
+      },
+      {
+        "slug": "helpdesk-ticketing-evaluation-guide",
+        "title": "Helpdesk & Ticketing Software Evaluation Guide",
+        "href": "/guides/helpdesk-ticketing-evaluation-guide/"
+      }
+    ],
+    "evidenceState": "Research/data-based (no completed hands-on test) · Latest verification/research signal: 2026-08-18T12:00:00.000Z · Editorial assessment: approved",
+    "nextDecisionStep": "Compare against peers: Freshdesk vs Zendesk Suite",
+    "missingSections": [
+      "canonical_vendor"
+    ]
+  },
+  "dependents": [
+    {
+      "kind": "guide",
+      "slug": "what-is-zendesk-suite",
+      "path": "/guides/what-is-zendesk-suite/"
+    },
+    {
+      "kind": "guide",
+      "slug": "is-zendesk-suite-worth-it",
+      "path": "/guides/is-zendesk-suite-worth-it/"
+    },
+    {
+      "kind": "guide",
+      "slug": "how-helpdesk-ticketing-software-works",
+      "path": "/guides/how-helpdesk-ticketing-software-works/"
+    },
+    {
+      "kind": "guide",
+      "slug": "types-of-helpdesk-ticketing-software",
+      "path": "/guides/types-of-helpdesk-ticketing-software/"
+    },
+    {
+      "kind": "guide",
+      "slug": "helpdesk-ticketing-requirements-guide",
+      "path": "/guides/helpdesk-ticketing-requirements-guide/"
+    },
+    {
+      "kind": "guide",
+      "slug": "helpdesk-ticketing-evaluation-guide",
+      "path": "/guides/helpdesk-ticketing-evaluation-guide/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "freshdesk-vs-zendesk-suite",
+      "path": "/compare/freshdesk-vs-zendesk-suite/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "help-scout-vs-zendesk-suite",
+      "path": "/compare/help-scout-vs-zendesk-suite/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "zendesk-suite-vs-zoho-desk",
+      "path": "/compare/zendesk-suite-vs-zoho-desk/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "tidio-vs-zendesk-suite",
+      "path": "/compare/tidio-vs-zendesk-suite/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "intercom-vs-zendesk-suite",
+      "path": "/compare/intercom-vs-zendesk-suite/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "gorgias-vs-zendesk-suite",
+      "path": "/compare/gorgias-vs-zendesk-suite/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "freshchat-vs-zendesk-suite",
+      "path": "/compare/freshchat-vs-zendesk-suite/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "livechat-vs-zendesk-suite",
+      "path": "/compare/livechat-vs-zendesk-suite/"
+    },
+    {
+      "kind": "alternatives",
+      "slug": "zendesk-suite",
+      "path": "/alternatives/zendesk-suite/"
+    },
+    {
+      "kind": "pricing",
+      "slug": "zendesk-suite",
+      "path": "/software/zendesk-suite/pricing/"
+    },
+    {
+      "kind": "best",
+      "slug": "customer-service-software",
+      "path": "/best/customer-service-software/"
+    },
+    {
+      "kind": "best",
+      "slug": "helpdesk-ticketing-software",
+      "path": "/best/helpdesk-ticketing-software/"
+    },
+    {
+      "kind": "tools",
+      "slug": "helpdesk-ticketing-cost-calculator",
+      "path": "/tools/helpdesk-ticketing-cost-calculator/"
+    }
+  ],
+  "dependentsNeedingRefresh": [],
+  "remediation": [
+    "verify:canonical_vendor"
+  ],
+  "notes": [
+    "fieldAudit score=94",
+    "decisionHub bestFor=5 notIdeal=6",
+    "dependents=19"
+  ],
+  "materiallyImproved": false
+}

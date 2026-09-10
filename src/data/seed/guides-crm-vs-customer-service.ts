@@ -1,4 +1,4 @@
-import type { GuidePage } from "@/domain";
+import type { GuidePageInput } from "@/domain";
 import type { z } from "zod";
 import type { GuideContentBlockSchema } from "@/domain";
 
@@ -325,7 +325,7 @@ const crmVsCustomerServiceBlocks: GuideBlockInput[] = [
   },
 ];
 
-export const crmVsCustomerServiceGuide: GuidePage = {
+export const crmVsCustomerServiceGuide: GuidePageInput = {
   id: "guide-crm-vs-customer-service-software",
   slug: "crm-vs-customer-service-software",
   title: "CRM vs Customer Service Software: Pipeline vs Tickets",
@@ -371,7 +371,7 @@ export const crmVsCustomerServiceGuide: GuidePage = {
     "types-of-crm",
     "how-to-choose-crm",
   ],
-  blocks: crmVsCustomerServiceBlocks as GuidePage["blocks"],
+  blocks: crmVsCustomerServiceBlocks as GuidePageInput["blocks"],
   checklist: [
     {
       id: "pain",

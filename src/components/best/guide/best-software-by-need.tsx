@@ -5,19 +5,24 @@ import { cn } from "@/lib/cn";
 
 type Props = {
   items: BestPageModel["byNeed"];
+  categoryShortName?: string;
   className?: string;
 };
 
-export function BestSoftwareByNeed({ items, className }: Props) {
+export function BestSoftwareByNeed({
+  items,
+  categoryShortName = "software",
+  className,
+}: Props) {
   if (items.length === 0) return null;
 
   return (
     <div className={cn(className)}>
       <h2 className="font-[family-name:var(--font-display)] text-[length:var(--sg-text-h2)] font-semibold text-[var(--sg-color-navy)]">
-        Best CRM by need
+        Best {categoryShortName} by need
       </h2>
       <p className="mt-2 max-w-3xl text-sm text-[var(--sg-color-text-muted)]">
-        Scenario awards use product fit from approved CRM
+        Scenario awards use product fit from approved {categoryShortName}{" "}
         recommendations and use-case mappings.
       </p>
       <ul className="mt-6 grid gap-3 sm:grid-cols-2 lg:grid-cols-3">

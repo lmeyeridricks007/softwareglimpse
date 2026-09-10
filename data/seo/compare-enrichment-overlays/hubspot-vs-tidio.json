@@ -1,0 +1,175 @@
+{
+  "slug": "hubspot-vs-tidio",
+  "updatedAt": "2026-09-07T17:08:43.332Z",
+  "uniqueValueAdded": [
+    "quick_verdict",
+    "choose_if_rules",
+    "key_differences",
+    "pricing_diff",
+    "target_audience",
+    "scenario_fit",
+    "evidence_clarity",
+    "final_recommendation"
+  ],
+  "thesis": {
+    "kind": "overlapping_use_case_tradeoff",
+    "label": "CRM system of record vs website chat and AI deflection",
+    "rationale": "Tidio's research record explicitly re-homes it to live chat and customer service and states it is not a sales pipeline CRM replacement; HubSpot documents a free CRM plus hubs — so the pair splits by job, not by tier.",
+    "supportedBy": [
+      "overlapping_use_cases",
+      "same_buyer_problem"
+    ]
+  },
+  "capabilityRows": [],
+  "pricing": {
+    "startingPriceA": 15,
+    "startingPriceB": 24.17,
+    "billingA": "subscription",
+    "billingB": "hybrid",
+    "freeTier": {
+      "a": true,
+      "b": true
+    },
+    "trials": {
+      "a": true,
+      "b": true
+    },
+    "modelA": "subscription",
+    "modelB": "hybrid",
+    "complexityNote": "One or both sides publish four or more rungs — compare the tier you would actually buy, not the entry rung",
+    "costCalculatorHref": "/tools/customer-service-cost-calculator/",
+    "notes": [
+      "HubSpot plans: Free CRM, Starter (Smart CRM / Customer Platform), Professional (Smart CRM / Customer Platform), Enterprise (Smart CRM / Customer Platform)",
+      "HubSpot: Primary cards use Free CRM + Smart CRM/Customer Platform ladder from /products/crm (Starter $15*/seat/mo promo, Professional $50, Enterprise $75). Catalog Smart CRM Starter list is $20. Separate Sales Hub ladder: Free $0; Starter $20 list ($10 promo on marketing); Professional $100/seat/mo on catalog and the Sales product page; Enterprise $150/seat/mo billed annually per catalog. HubSpot’s Sales pricing page also shows Professional $90/mo/seat billed annually vs $100 monthly, with required Professional onboarding of $1,500. Amounts are USD per seat per month as published; confirm live checkout for annual vs monthly commit. Onboarding fees apply on some Professional/Enterprise hub purchases per catalog.",
+      "HubSpot pricing verified 2026-08-18",
+      "Tidio plans: Free, Starter, Growth",
+      "Tidio: Verified 2026-08-18 from tidio.com/pricing (high confidence). Starter $24.17/mo annual (100 billable conversations); Growth from $49.17/mo annual. Freemium entry published. Conversation-cap pricing, not per-agent. Re-homed from CRM to CS. Affiliate aff-tidio. Affiliate economics excluded.",
+      "Tidio pricing verified 2026-08-18"
+    ]
+  },
+  "evidence": {
+    "levelA": "researched",
+    "levelB": "researched",
+    "handsOnA": false,
+    "handsOnB": false,
+    "disclaimer": "Neither product has a completed hands-on product test on SoftwareGlimpse — this comparison is research/data-based only."
+  },
+  "patch": {
+    "summary": "These two are not substitutes, and pretending otherwise is the fastest way to buy the wrong thing. Tidio's job is the conversation on your website: live chat, the Lyro AI agent, and flows that answer visitors before a ticket exists. HubSpot's job is the record that outlives the conversation: contacts, deals, campaign history. Teams that shortlist both usually end up running one of each — so the useful decision is which job is unmet right now, and what the second tool will need to sync.\n\nNeither product has a completed hands-on product test on SoftwareGlimpse — this comparison is research/data-based only.",
+    "verdict": "Buy Tidio when unanswered website conversations are the leak — high-intent visitors bouncing, repetitive pre-sales questions, an inbox nobody owns — and you want AI deflection handling volume before humans see it. Buy HubSpot when the leak is memory: nobody knows which deals are open, what marketing sent, or who owns follow-up. The limitation that decides most cases is that Tidio cannot serve as a pipeline CRM of record and is not a full helpdesk either, with omnichannel depth documented as below the big service suites; HubSpot's chat, meanwhile, comes attached to a platform whose packaging complexity grows once hubs and seat types mix. Pricing shapes differ too: Tidio bills against conversation caps, so traffic spikes push you up tiers, while HubSpot bills per seat and per hub. Poor fit for Tidio: teams needing ticketing depth, SLAs or a system of record. Poor fit for HubSpot: a store that only wants a chat widget and an AI answerer this week.",
+    "pricingNotes": "Tidio documents a free plan plus Starter at $24.17 per month on annual billing for 100 billable conversations and Growth from $49.17 per month annual, with Lyro AI and flows for deflection — conversation-cap pricing means high-traffic sites move up tiers on volume rather than headcount. HubSpot documents a $0 Free CRM plus Smart CRM tiers from $15 per month and hub seats priced separately. Because the billing units differ — conversations against seats and hubs — a per-month comparison is only meaningful once you estimate monthly chat volume.",
+    "bestFor": [
+      {
+        "productSlug": "hubspot",
+        "scenarios": [
+          "Teams that need a contact and deal system of record",
+          "Marketing-led businesses tying campaign history to pipeline",
+          "Companies planning to consolidate sales and service tooling"
+        ]
+      },
+      {
+        "productSlug": "tidio",
+        "scenarios": [
+          "Ecommerce and lead-gen sites with high pre-sales chat volume",
+          "Small teams deflecting repetitive questions with an AI agent",
+          "Businesses wanting a chat widget live in a day without a CRM project"
+        ]
+      }
+    ],
+    "scenarioRecommendations": [
+      {
+        "scenario": "Store losing high-intent visitors to unanswered questions",
+        "preferredSlug": "tidio",
+        "rationale": "Live chat plus Lyro AI answers the visitor in the moment; a CRM records the contact afterwards but does not resolve the conversation."
+      },
+      {
+        "scenario": "Nobody can say which deals are open or who owns follow-up",
+        "preferredSlug": "hubspot",
+        "rationale": "That is a system-of-record problem, and Tidio's own documentation rules it out as a sales pipeline replacement."
+      },
+      {
+        "scenario": "Support team needs SLAs, queues and ticket depth",
+        "preferredSlug": null,
+        "rationale": "Neither wins: Tidio is documented as thin on ticketing versus full helpdesks, and HubSpot's service depth means buying another hub — evaluate dedicated helpdesk tools instead."
+      }
+    ],
+    "relatedAlternativeSlugs": [],
+    "outcomes": [
+      {
+        "criterionSlug": "agent-minimum",
+        "winnerSlug": null,
+        "winnerKind": "depends",
+        "reason": "HubSpot scales on hub seats. Tidio bills on billable conversations — compare seat math vs conversation caps for your traffic. The billing units differ — seats and hubs against billable conversations — so website traffic, not headcount, drives one of these bills.",
+        "confidence": "medium",
+        "supportingFactIds": [
+          "fact-hubspot-pricing.startingPriceMonthly",
+          "fact-hubspot-pricing.model",
+          "fact-hubspot-pricing.hasFreePlan",
+          "fact-tidio-pricing.startingPriceMonthly",
+          "fact-tidio-pricing.model",
+          "fact-tidio-pricing.hasFreePlan"
+        ],
+        "assessmentIds": [],
+        "researchStatus": "complete"
+      },
+      {
+        "criterionSlug": "ticketing-depth",
+        "winnerSlug": "hubspot",
+        "winnerKind": "product-a",
+        "reason": "HubSpot is the stronger fit for ticketing depth (6/10 vs 4/10). Scores reflect job-cluster fit from vendor documentation, not a lab test of the UI. Documented as thin ticketing versus a full helpdesk on the chat side — SLA-driven support teams should read this as a hard limit, not a scoring gap.",
+        "confidence": "medium",
+        "supportingFactIds": [
+          "fact-tidio-features.ticketing",
+          "fact-tidio-features.macros-automation"
+        ],
+        "assessmentIds": [],
+        "researchStatus": "complete"
+      },
+      {
+        "criterionSlug": "live-chat",
+        "winnerSlug": "tidio",
+        "winnerKind": "product-b",
+        "reason": "Tidio is the stronger fit for live chat (7/10 vs 9/10). Scores reflect job-cluster fit from vendor documentation, not a lab test of the UI. Chat is one bundled channel on the platform side and the whole product on the other, so widget depth and deflection quality are not comparable line items.",
+        "confidence": "medium",
+        "supportingFactIds": [
+          "fact-tidio-features.live-chat",
+          "fact-tidio-features.shared-inbox"
+        ],
+        "assessmentIds": [],
+        "researchStatus": "complete"
+      },
+      {
+        "criterionSlug": "omnichannel",
+        "winnerSlug": "hubspot",
+        "winnerKind": "product-a",
+        "reason": "HubSpot is the stronger fit for omnichannel inbox (7/10 vs 6/10). Scores reflect job-cluster fit from vendor documentation, not a lab test of the UI. Omnichannel depth is documented below the large service suites on the chat side, and reached only by buying more hubs on the platform side.",
+        "confidence": "medium",
+        "supportingFactIds": [
+          "fact-tidio-features.omnichannel-inbox",
+          "fact-tidio-features.shared-inbox"
+        ],
+        "assessmentIds": [],
+        "researchStatus": "complete"
+      },
+      {
+        "criterionSlug": "ai-features",
+        "winnerSlug": "tidio",
+        "winnerKind": "product-b",
+        "reason": "Tidio is the stronger fit for AI features (7/10 vs 8/10). Scores reflect job-cluster fit from vendor documentation, not a lab test of the UI. AI means an answering agent trained on your own content on one side, and assistive features spread across a customer platform on the other.",
+        "confidence": "medium",
+        "supportingFactIds": [
+          "fact-hubspot-features.ai-assistance",
+          "fact-hubspot-ai.assistant",
+          "fact-tidio-features.chatbot-ai-agent",
+          "fact-tidio-features.agent-copilot"
+        ],
+        "assessmentIds": [],
+        "researchStatus": "complete"
+      }
+    ],
+    "overallWinnerKind": "depends"
+  },
+  "notes": [
+    "improve-wave-1-2026-09-07"
+  ]
+}

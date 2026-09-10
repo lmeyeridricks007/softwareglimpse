@@ -1,4 +1,4 @@
-import type { GuidePage } from "@/domain";
+import type { GuidePageInput } from "@/domain";
 import type { z } from "zod";
 import type { GuideContentBlockSchema } from "@/domain";
 import { tier32GuideScheduledAt } from "@/data/config/publishing/tier-32-landing-pages-cro-launch-2027-09-01";
@@ -34,7 +34,7 @@ const blocks: GuideBlockInput[] = [
   },
 ];
 
-function metadata(): GuidePage["metadata"] {
+function metadata(): GuidePageInput["metadata"] {
   return SCHEDULED_AT
     ? {
         status: "scheduled",
@@ -54,7 +54,7 @@ function metadata(): GuidePage["metadata"] {
       };
 }
 
-export const landingPagesCroPricingGuide: GuidePage = {
+export const landingPagesCroPricingGuide: GuidePageInput = {
   id: "guide-landing-pages-cro-pricing-guide",
   slug: SLUG,
   title: "Landing Pages & CRO Software Pricing Guide",
@@ -76,7 +76,7 @@ export const landingPagesCroPricingGuide: GuidePage = {
     "how-to-choose-landing-pages-cro-software",
     "landing-pages-cro-evaluation-guide",
   ],
-  blocks: blocks as GuidePage["blocks"],
+  blocks: blocks as GuidePageInput["blocks"],
   checklist: [],
   sections: [],
   faq: [],
@@ -87,6 +87,6 @@ export const landingPagesCroPricingGuide: GuidePage = {
     description:
       "Compare published tiers, traffic limits, and funnel gates for landing page and CRO software.",
     canonicalPath: `/guides/${SLUG}/`,
-    indexable: !SCHEDULED_AT,
+    indexable: true,
   },
 };

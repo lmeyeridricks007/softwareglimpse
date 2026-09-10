@@ -207,36 +207,6 @@
       ]
     }
   ],
-  "aiCapabilities": [
-    {
-      "capability": "ITSM AI copilot",
-      "availability": "limited",
-      "sourceIds": [
-        "squadcast-product-official"
-      ]
-    },
-    {
-      "capability": "Developer AI copilot",
-      "availability": "limited",
-      "sourceIds": [
-        "squadcast-product-official"
-      ]
-    },
-    {
-      "capability": "automation",
-      "availability": "limited",
-      "sourceIds": [
-        "squadcast-product-official"
-      ]
-    },
-    {
-      "capability": "recommendations",
-      "availability": "supported",
-      "sourceIds": [
-        "squadcast-product-official"
-      ]
-    }
-  ],
   "integrationSupport": [
     {
       "integrationSlug": "slack",
@@ -254,7 +224,37 @@
     },
     {
       "integrationSlug": "api",
-      "kind": "api",
+      "kind": "api-only",
+      "sourceIds": [
+        "squadcast-product-official"
+      ]
+    }
+  ],
+  "aiCapabilities": [
+    {
+      "capability": "assistant",
+      "availability": "limited",
+      "sourceIds": [
+        "squadcast-product-official"
+      ]
+    },
+    {
+      "capability": "assistant",
+      "availability": "limited",
+      "sourceIds": [
+        "squadcast-product-official"
+      ]
+    },
+    {
+      "capability": "automation",
+      "availability": "limited",
+      "sourceIds": [
+        "squadcast-product-official"
+      ]
+    },
+    {
+      "capability": "recommendations",
+      "availability": "supported",
       "sourceIds": [
         "squadcast-product-official"
       ]
@@ -338,6 +338,38 @@
       "isEditorial": false
     }
   ],
+  "screenshots": [
+    {
+      "id": "squadcast-shot-overview",
+      "src": "/software/squadcast/overview.png",
+      "alt": "SolarWinds Incident Response overview visual",
+      "caption": "SoftwareGlimpse teaching visual for SolarWinds Incident Response (original-diagram). Official vendor UI is a separate screenshot.",
+      "source": "SolarWinds Incident Response",
+      "checkedAt": "2026-08-18T15:50:00.000Z",
+      "annotation": "Product overview visual",
+      "kind": "original-diagram",
+      "featureIds": [],
+      "useCaseIds": []
+    },
+    {
+      "id": "squadcast-shot-vendor-ui-hero",
+      "src": "/vendor-ui/squadcast/vendor-ui-hero.jpg",
+      "alt": "SolarWinds Incident Response service dashboard with on-call and automation rules",
+      "caption": "Official SolarWinds Incident Response product UI from solarwinds.com/it-incident-response-software.",
+      "source": "https://www.solarwinds.com/it-incident-response-software",
+      "checkedAt": "2026-08-18T17:10:00.000Z",
+      "annotation": "Official SolarWinds Incident Response marketing UI asset",
+      "kind": "vendor-ui",
+      "featureIds": [
+        "oncall-paging",
+        "incident-management"
+      ],
+      "useCaseIds": [
+        "incident-oncall"
+      ]
+    }
+  ],
+  "media": [],
   "pricing": {
     "currency": "USD",
     "model": "per-seat",
@@ -397,52 +429,13 @@
       }
     ],
     "notes": "Verified 2026-08-18 from solarwinds.com/it-incident-response-software/pricing (high confidence). Pro $15/user/mo billed annually; Premium $24/user/mo annual; Enterprise contact. 14-day trial. SolarWinds acquired Squadcast (Mar 2025); product rebranded to SolarWinds Incident Response; slug remains squadcast. Affiliate economics excluded.",
-    "verifiedAt": "2026-08-18T22:00:00.000Z",
+    "verifiedAt": "2026-09-09T06:31:26.663Z",
     "sourceIds": [
       "squadcast-pricing-official"
     ],
     "startingPriceMonthly": 15,
     "trialDays": 14
   },
-  "screenshots": [
-    {
-      "id": "squadcast-shot-overview",
-      "src": "/software/squadcast/overview.png",
-      "alt": "SolarWinds Incident Response overview visual",
-      "caption": "SoftwareGlimpse teaching visual for SolarWinds Incident Response (original-diagram). Official vendor UI is a separate screenshot.",
-      "source": "SolarWinds Incident Response",
-      "checkedAt": "2026-08-18T15:50:00.000Z",
-      "annotation": "Product overview visual",
-      "kind": "original-diagram",
-      "featureIds": [],
-      "useCaseIds": []
-    },
-    {
-      "id": "squadcast-shot-vendor-ui-hero",
-      "src": "/vendor-ui/squadcast/vendor-ui-hero.jpg",
-      "alt": "SolarWinds Incident Response service dashboard with on-call and automation rules",
-      "caption": "Official SolarWinds Incident Response product UI from solarwinds.com/it-incident-response-software.",
-      "source": "https://www.solarwinds.com/it-incident-response-software",
-      "checkedAt": "2026-08-18T17:10:00.000Z",
-      "annotation": "Official SolarWinds Incident Response marketing UI asset",
-      "kind": "vendor-ui",
-      "featureIds": [
-        "oncall-paging",
-        "incident-management"
-      ],
-      "useCaseIds": [
-        "incident-oncall"
-      ]
-    }
-  ],
-  "media": [],
-  "sourceIds": [
-    "squadcast-product-official",
-    "squadcast-pricing-official",
-    "solarwinds-ir-pricing",
-    "solarwinds-ir-product"
-  ],
-  "notes": "IT gap-fill PaaS + incident onboarding enrichment from first-party research 2026-08-18T22:00:00.000Z. handsOnTesting=false. membershipRole=primary. jobCluster=incident-oncall.",
   "domainCheckedAt": {
     "identity": "2026-08-18T22:00:00.000Z",
     "pricing": "2026-08-18T22:00:00.000Z",
@@ -456,5 +449,12 @@
     "limits": "2026-08-18T22:00:00.000Z",
     "security-compliance": "2026-08-18T22:00:00.000Z"
   },
-  "updatedAt": "2026-08-18T17:10:00.000Z"
+  "sourceIds": [
+    "squadcast-product-official",
+    "squadcast-pricing-official",
+    "solarwinds-ir-pricing",
+    "solarwinds-ir-product"
+  ],
+  "updatedAt": "2026-08-18T17:10:00.000Z",
+  "notes": "IT gap-fill PaaS + incident onboarding enrichment from first-party research 2026-08-18T22:00:00.000Z. handsOnTesting=false. membershipRole=primary. jobCluster=incident-oncall."
 }

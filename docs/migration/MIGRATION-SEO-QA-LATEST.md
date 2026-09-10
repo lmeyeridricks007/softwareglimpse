@@ -1,11 +1,11 @@
 # Migration SEO QA
 
-**Generated:** 2026-08-19T15:13:31.497Z
+**Generated:** 2026-09-09T08:02:34.157Z
 **Agent:** MigrationSEOAuditAgent v1.0.0
-**Mode:** static
+**Mode:** static+live
 **Overall:** **PASS**
 
-> Static pre-launch audit against mapping plan, redirect config, inventory, sitemap, internal-link graph, and repository scan. Optional live HTTP probes are out of band unless `BASE_URL` live mode is enabled in a future pass.
+> Static audit **plus** live HTTP probes against the configured `BASE_URL` (redirect hops, loops, locale 410/301, taxonomy 410).
 
 ## PASS / FAIL summary
 
@@ -15,7 +15,7 @@
 | Legacy URLs audited | 643 |
 | Clean fate | 643 |
 | Fate issues | 0 |
-| Redirects configured | 370 |
+| Redirects configured | 382 |
 | High-risk redirect OK | 300 |
 | High-risk redirect issues | 0 |
 | P0 findings | 0 |
@@ -37,14 +37,15 @@
 | `hardcoded_legacy` | pass | 0 | App/components/data/services scanned for redirect sources |
 | `legacy_assets` | pass | 0 | wp-content/uploads and attachment patterns scanned |
 | `not_found_experience` | pass | 0 | not-found.tsx present with messaging + navigation |
+| `live_http_probes` | pass | 0 | Probed 33 URLs against http://127.0.0.1:3000 — no issues |
 
 ## Legacy URL coverage
 
 | Fate | Count |
 | --- | ---: |
 | Preserved 200 (KEEP) | 3 |
-| Redirect 301 implemented | 368 |
-| Intentional 404/410 | 272 |
+| Redirect 301 implemented | 378 |
+| Intentional 404/410 | 262 |
 | Excluded manual (not auto-301) | 0 |
 | Unresolved (REVIEW / pending) | 0 |
 
@@ -94,6 +95,10 @@ _None._
 
 _None._
 
+## Live HTTP probes
+
+_None._
+
 ## P0 launch blockers
 
 _None._
@@ -108,7 +113,7 @@ _None._
 
 ## Notes
 
-- Soft 404 / live 500 / redirect loops require a running deployment (`BASE_URL` live probe) — not asserted in static mode.
+- Live probes ran against the configured origin. Sample set covers legacy redirects, locale 301/410, taxonomy 410, and high-risk redirect destinations.
 - Source of truth for redirects: `config/legacy-redirects.json`.
-- Regenerate: `npm run migration:seo-audit`
+- Regenerate: `npm run migration:seo-audit` or `npm run migration:seo-audit -- --base-url=http://127.0.0.1:3000`
 

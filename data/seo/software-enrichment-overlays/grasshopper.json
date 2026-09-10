@@ -1,0 +1,409 @@
+{
+  "slug": "grasshopper",
+  "updatedAt": "2026-09-07T22:31:21.437Z",
+  "version": "1.0.0",
+  "fieldAudit": {
+    "slug": "grasshopper",
+    "checkedAt": "2026-09-07T22:31:21.436Z",
+    "items": [
+      {
+        "field": "name",
+        "status": "PASS",
+        "detail": "Name: Grasshopper",
+        "source": "seed"
+      },
+      {
+        "field": "product_status",
+        "status": "PASS",
+        "detail": "productLifecycle=active",
+        "source": "seed"
+      },
+      {
+        "field": "canonical_vendor",
+        "status": "UNKNOWN",
+        "detail": "Company/vendor not documented",
+        "source": "none"
+      },
+      {
+        "field": "category",
+        "status": "PASS",
+        "detail": "primaryCategorySlug=business-communications",
+        "source": "seed"
+      },
+      {
+        "field": "description",
+        "status": "PASS",
+        "detail": "Description present (SMB virtual business numbers with extensions and apps — True Solo from $14/month…)",
+        "source": "seed"
+      },
+      {
+        "field": "target_audience",
+        "status": "PASS",
+        "detail": "Sizes=2, teams=2, assessment bestFor=3",
+        "source": "assessment"
+      },
+      {
+        "field": "use_cases",
+        "status": "PASS",
+        "detail": "useCaseSlugs=1",
+        "source": "seed"
+      },
+      {
+        "field": "capabilities",
+        "status": "PASS",
+        "detail": "featureRatings=0, enrichment features=13",
+        "source": "enrichment"
+      },
+      {
+        "field": "pricing",
+        "status": "PASS",
+        "detail": "Pricing envelope present",
+        "source": "enrichment"
+      },
+      {
+        "field": "plans",
+        "status": "PASS",
+        "detail": "plans=3",
+        "source": "enrichment"
+      },
+      {
+        "field": "free_plan",
+        "status": "PASS",
+        "detail": "No free plan in documented plans (explicit absence)",
+        "source": "enrichment"
+      },
+      {
+        "field": "trial",
+        "status": "PASS",
+        "detail": "Trial documented on plans/pricing",
+        "source": "enrichment"
+      },
+      {
+        "field": "integrations",
+        "status": "PASS",
+        "detail": "integrationSlugs=0, enrichment=1",
+        "source": "enrichment"
+      },
+      {
+        "field": "alternatives",
+        "status": "PASS",
+        "detail": "alternativeSlugs=4",
+        "source": "seed"
+      },
+      {
+        "field": "competitors",
+        "status": "PASS",
+        "detail": "competitorSlugs=4",
+        "source": "seed"
+      },
+      {
+        "field": "affiliate",
+        "status": "PASS",
+        "detail": "No affiliate relationship (explicit)",
+        "source": "seed"
+      },
+      {
+        "field": "source_provenance",
+        "status": "PASS",
+        "detail": "seed sources=0, enrichment sourceIds=2",
+        "source": "enrichment"
+      },
+      {
+        "field": "verification_date",
+        "status": "PASS",
+        "detail": "Latest verification/research signal: 2026-08-17T18:00:00.000Z",
+        "source": "enrichment"
+      }
+    ],
+    "passCount": 17,
+    "partialCount": 0,
+    "missingCount": 0,
+    "unknownCount": 1,
+    "score": 94
+  },
+  "decisionHub": {
+    "whatItIs": "Grasshopper is a long-standing SMB virtual phone system for US/Canada: pick a local or toll-free number, route to extensions, and take calls on mobile/desktop apps. Plans are flat account pricing — True Solo $14, Solo Plus $25, Small Business $55 per month annual ($18/$32/$70 monthly) are widely corroborated for 2026; the live pricing page is interactive and did not expose dollars cleanly to automated fetch on 2026-08-17 (medium confidence). True Solo is one user/one extension; Solo Plus unlocks unlimited users with three extensions, recording and IVR; Small Business adds four numbers and unlimited extensions. This is a virtual-number / simple shared-line product — not full mid-market UCaaS.",
+    "bestFor": [
+      "Solo operators and tiny teams that primarily need a professional virtual number",
+      "SMBs that want flat account pricing instead of per-seat UCaaS maths",
+      "Buyers replacing a personal mobile with a branded business line",
+      "solo / operations: Grasshopper fit for solo operations teams in the cloud-phone job cluster, from first-party positioning and Business-communications Priority-2 research.",
+      "small-business / operations: Grasshopper fit for small-business operations teams in the cloud-phone job cluster, from first-party positioning and Business-communications Priority-2 research."
+    ],
+    "notIdealFor": [
+      "Teams needing full UCaaS (meetings + team chat + deep IVR + CTI)",
+      "Sales orgs that need a power dialer or CRM-first phone",
+      "Multi-country or contact-centre deployments",
+      "Virtual-number / simple phone product — not full UCaaS (no native team chat or video meetings suite)",
+      "IVR, recording and simultaneous ringing require Solo Plus or above",
+      "True Solo is capped at one user and one extension"
+    ],
+    "coreCapabilities": [
+      "cloud phone",
+      "sms messaging",
+      "business phone"
+    ],
+    "pricingSummary": "3 documented plans · entry paid: True Solo · trial documented on at least one plan",
+    "keyTradeoffs": [
+      "Virtual-number / simple phone product — not full UCaaS (no native team chat or video meetings suite)",
+      "IVR, recording and simultaneous ringing require Solo Plus or above",
+      "True Solo is capped at one user and one extension",
+      "US/Canada focus; limited CRM/CTI versus Aircall-class phones",
+      "No power dialer or WhatsApp Business API"
+    ],
+    "alternatives": [
+      {
+        "slug": "openphone",
+        "name": "OpenPhone"
+      },
+      {
+        "slug": "callhippo",
+        "name": "CallHippo"
+      },
+      {
+        "slug": "nextiva",
+        "name": "Nextiva"
+      },
+      {
+        "slug": "krispcall",
+        "name": "KrispCall"
+      }
+    ],
+    "importantComparisons": [
+      {
+        "slug": "callhippo-vs-grasshopper",
+        "title": "CallHippo vs Grasshopper",
+        "href": "/compare/callhippo-vs-grasshopper/"
+      },
+      {
+        "slug": "dialpad-vs-grasshopper",
+        "title": "Dialpad vs Grasshopper",
+        "href": "/compare/dialpad-vs-grasshopper/"
+      },
+      {
+        "slug": "eightx8-vs-grasshopper",
+        "title": "8x8 vs Grasshopper",
+        "href": "/compare/eightx8-vs-grasshopper/"
+      },
+      {
+        "slug": "fastmail-vs-grasshopper",
+        "title": "Fastmail vs Grasshopper",
+        "href": "/compare/fastmail-vs-grasshopper/"
+      },
+      {
+        "slug": "five9-vs-grasshopper",
+        "title": "Five9 vs Grasshopper",
+        "href": "/compare/five9-vs-grasshopper/"
+      },
+      {
+        "slug": "genesys-vs-grasshopper",
+        "title": "Genesys vs Grasshopper",
+        "href": "/compare/genesys-vs-grasshopper/"
+      }
+    ],
+    "relevantGuides": [
+      {
+        "slug": "grasshopper-implementation",
+        "title": "Grasshopper Implementation: 30/60/90 Communications Rollout That Sticks",
+        "href": "/guides/grasshopper-implementation/"
+      },
+      {
+        "slug": "grasshopper-migration",
+        "title": "Grasshopper Migration: Move Numbers Without Losing Trust",
+        "href": "/guides/grasshopper-migration/"
+      },
+      {
+        "slug": "grasshopper-setup",
+        "title": "Grasshopper Setup: Day-Zero Path to a Working Call Loop",
+        "href": "/guides/grasshopper-setup/"
+      },
+      {
+        "slug": "grasshopper-plans",
+        "title": "Grasshopper Plans: Seats, Numbers, and Qualifying Tiers",
+        "href": "/guides/grasshopper-plans/"
+      },
+      {
+        "slug": "is-grasshopper-worth-it",
+        "title": "Is Grasshopper Worth It? Fit Scenarios Before You Buy",
+        "href": "/guides/is-grasshopper-worth-it/"
+      }
+    ],
+    "evidenceState": "Research/data-based (no completed hands-on test) · Latest verification/research signal: 2026-08-17T18:00:00.000Z · Editorial assessment: approved",
+    "nextDecisionStep": "Compare against peers: CallHippo vs Grasshopper",
+    "missingSections": [
+      "canonical_vendor"
+    ]
+  },
+  "dependents": [
+    {
+      "kind": "guide",
+      "slug": "grasshopper-implementation",
+      "path": "/guides/grasshopper-implementation/"
+    },
+    {
+      "kind": "guide",
+      "slug": "grasshopper-migration",
+      "path": "/guides/grasshopper-migration/"
+    },
+    {
+      "kind": "guide",
+      "slug": "grasshopper-setup",
+      "path": "/guides/grasshopper-setup/"
+    },
+    {
+      "kind": "guide",
+      "slug": "grasshopper-plans",
+      "path": "/guides/grasshopper-plans/"
+    },
+    {
+      "kind": "guide",
+      "slug": "is-grasshopper-worth-it",
+      "path": "/guides/is-grasshopper-worth-it/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "callhippo-vs-grasshopper",
+      "path": "/compare/callhippo-vs-grasshopper/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "dialpad-vs-grasshopper",
+      "path": "/compare/dialpad-vs-grasshopper/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "eightx8-vs-grasshopper",
+      "path": "/compare/eightx8-vs-grasshopper/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "fastmail-vs-grasshopper",
+      "path": "/compare/fastmail-vs-grasshopper/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "five9-vs-grasshopper",
+      "path": "/compare/five9-vs-grasshopper/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "genesys-vs-grasshopper",
+      "path": "/compare/genesys-vs-grasshopper/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "goto-connect-vs-grasshopper",
+      "path": "/compare/goto-connect-vs-grasshopper/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "grasshopper-vs-manychat",
+      "path": "/compare/grasshopper-vs-manychat/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "grasshopper-vs-microsoft-teams",
+      "path": "/compare/grasshopper-vs-microsoft-teams/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "grasshopper-vs-nextiva",
+      "path": "/compare/grasshopper-vs-nextiva/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "grasshopper-vs-ooma",
+      "path": "/compare/grasshopper-vs-ooma/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "grasshopper-vs-openphone",
+      "path": "/compare/grasshopper-vs-openphone/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "grasshopper-vs-respond-io",
+      "path": "/compare/grasshopper-vs-respond-io/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "grasshopper-vs-ringcentral",
+      "path": "/compare/grasshopper-vs-ringcentral/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "grasshopper-vs-sanebox",
+      "path": "/compare/grasshopper-vs-sanebox/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "grasshopper-vs-slack",
+      "path": "/compare/grasshopper-vs-slack/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "grasshopper-vs-talkdesk",
+      "path": "/compare/grasshopper-vs-talkdesk/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "grasshopper-vs-twilio",
+      "path": "/compare/grasshopper-vs-twilio/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "grasshopper-vs-vonage",
+      "path": "/compare/grasshopper-vs-vonage/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "grasshopper-vs-wati",
+      "path": "/compare/grasshopper-vs-wati/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "grasshopper-vs-webex",
+      "path": "/compare/grasshopper-vs-webex/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "grasshopper-vs-zenzap",
+      "path": "/compare/grasshopper-vs-zenzap/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "grasshopper-vs-zoom",
+      "path": "/compare/grasshopper-vs-zoom/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "grasshopper-vs-krispcall",
+      "path": "/compare/grasshopper-vs-krispcall/"
+    },
+    {
+      "kind": "alternatives",
+      "slug": "grasshopper",
+      "path": "/alternatives/grasshopper/"
+    },
+    {
+      "kind": "pricing",
+      "slug": "grasshopper",
+      "path": "/software/grasshopper/pricing/"
+    },
+    {
+      "kind": "tools",
+      "slug": "business-communications-cost-calculator",
+      "path": "/tools/business-communications-cost-calculator/"
+    }
+  ],
+  "dependentsNeedingRefresh": [],
+  "remediation": [
+    "verify:canonical_vendor"
+  ],
+  "notes": [
+    "fieldAudit score=94",
+    "decisionHub bestFor=5 notIdeal=6",
+    "dependents=32"
+  ],
+  "materiallyImproved": false
+}

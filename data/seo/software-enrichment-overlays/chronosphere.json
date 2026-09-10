@@ -1,0 +1,530 @@
+{
+  "slug": "chronosphere",
+  "updatedAt": "2026-09-07T22:31:21.957Z",
+  "version": "1.0.0",
+  "fieldAudit": {
+    "slug": "chronosphere",
+    "checkedAt": "2026-09-07T22:31:21.955Z",
+    "items": [
+      {
+        "field": "name",
+        "status": "PASS",
+        "detail": "Name: Chronosphere",
+        "source": "seed"
+      },
+      {
+        "field": "product_status",
+        "status": "PASS",
+        "detail": "productLifecycle=active",
+        "source": "seed"
+      },
+      {
+        "field": "canonical_vendor",
+        "status": "UNKNOWN",
+        "detail": "Company/vendor not documented",
+        "source": "none"
+      },
+      {
+        "field": "category",
+        "status": "PASS",
+        "detail": "primaryCategorySlug=it-development",
+        "source": "seed"
+      },
+      {
+        "field": "description",
+        "status": "PASS",
+        "detail": "Description present (Control-plane observability for high-cardinality Prometheus-class telemetry — co…)",
+        "source": "seed"
+      },
+      {
+        "field": "target_audience",
+        "status": "PASS",
+        "detail": "Sizes=2, teams=2, assessment bestFor=3",
+        "source": "assessment"
+      },
+      {
+        "field": "use_cases",
+        "status": "PASS",
+        "detail": "useCaseSlugs=1",
+        "source": "seed"
+      },
+      {
+        "field": "capabilities",
+        "status": "PASS",
+        "detail": "featureRatings=0, enrichment features=17",
+        "source": "enrichment"
+      },
+      {
+        "field": "pricing",
+        "status": "PASS",
+        "detail": "Pricing envelope present",
+        "source": "enrichment"
+      },
+      {
+        "field": "plans",
+        "status": "PASS",
+        "detail": "plans=2",
+        "source": "enrichment"
+      },
+      {
+        "field": "free_plan",
+        "status": "PASS",
+        "detail": "No free plan in documented plans (explicit absence)",
+        "source": "enrichment"
+      },
+      {
+        "field": "trial",
+        "status": "PASS",
+        "detail": "Trial documented on plans/pricing",
+        "source": "enrichment"
+      },
+      {
+        "field": "integrations",
+        "status": "PASS",
+        "detail": "integrationSlugs=0, enrichment=3",
+        "source": "enrichment"
+      },
+      {
+        "field": "alternatives",
+        "status": "PASS",
+        "detail": "alternativeSlugs=2",
+        "source": "seed"
+      },
+      {
+        "field": "competitors",
+        "status": "PASS",
+        "detail": "competitorSlugs=5",
+        "source": "seed"
+      },
+      {
+        "field": "affiliate",
+        "status": "PASS",
+        "detail": "No affiliate relationship (explicit)",
+        "source": "seed"
+      },
+      {
+        "field": "source_provenance",
+        "status": "PASS",
+        "detail": "seed sources=0, enrichment sourceIds=3",
+        "source": "enrichment"
+      },
+      {
+        "field": "verification_date",
+        "status": "PASS",
+        "detail": "Latest verification/research signal: 2026-08-18T22:00:00.000Z",
+        "source": "enrichment"
+      }
+    ],
+    "passCount": 17,
+    "partialCount": 0,
+    "missingCount": 0,
+    "unknownCount": 1,
+    "score": 94
+  },
+  "decisionHub": {
+    "whatItIs": "Chronosphere is a control-plane observability platform aimed at high-cardinality Prometheus-class metrics (and adjacent traces/logs) at scale — cost and cardinality control rather than a Datadog-style host-module suite as the primary shape. No public list price; buying is contact sales plus a pilot (FAQ typically describes a free 2–3 week proof). Same observability-monitoring cluster as Datadog — Datadog remains the award (8.6); this entity does not outrank it. Distinct from Honeycomb’s high-cardinality event/trace specialist SKU and from Coralogix’s published per-GB rate card.",
+    "bestFor": [
+      "SRE teams drowning in Prometheus cardinality who will run a 2–3 week pilot",
+      "Buyers comparing Chronosphere control-plane quotes to Datadog module TCO",
+      "Estates that already speak PromQL rather than host-map onboarding",
+      "mid-market / engineering: Chronosphere fit for mid-market engineering teams in the observability-monitoring job cluster, from first-party positioning and IT optional-next research.",
+      "enterprise / engineering: Chronosphere fit for enterprise engineering teams in the observability-monitoring job cluster, from first-party positioning and IT optional-next research."
+    ],
+    "notIdealFor": [
+      "SMBs that need Datadog’s published $15/host Infrastructure Pro tile",
+      "High-cardinality event/trace specialists whose job is Honeycomb",
+      "ITSM or cloud PaaS purchases",
+      "Does not outrank Datadog (8.6)",
+      "No public list price — do not invent a host or GB floor",
+      "Pilot length is FAQ-typical (2–3 weeks), not a published 14-day self-serve tile"
+    ],
+    "coreCapabilities": [
+      "infrastructure monitoring",
+      "apm tracing",
+      "enterprise security",
+      "analytics reporting",
+      "observability monitoring"
+    ],
+    "pricingSummary": "2 documented plans · entry paid: Pilot · trial documented on at least one plan",
+    "keyTradeoffs": [
+      "Does not outrank Datadog (8.6)",
+      "No public list price — do not invent a host or GB floor",
+      "Pilot length is FAQ-typical (2–3 weeks), not a published 14-day self-serve tile",
+      "Not a Honeycomb-style wide-event specialist as the primary identity",
+      "Not ITSM, git, hosting panel, managed hosting, or cloud PaaS"
+    ],
+    "alternatives": [
+      {
+        "slug": "datadog",
+        "name": "Datadog"
+      },
+      {
+        "slug": "honeycomb",
+        "name": "Honeycomb"
+      },
+      {
+        "slug": "coralogix",
+        "name": "Coralogix"
+      },
+      {
+        "slug": "grafana-cloud",
+        "name": "Grafana Cloud"
+      },
+      {
+        "slug": "dynatrace",
+        "name": "Dynatrace"
+      }
+    ],
+    "importantComparisons": [
+      {
+        "slug": "chronosphere-vs-datadog",
+        "title": "Chronosphere vs Datadog",
+        "href": "/compare/chronosphere-vs-datadog/"
+      },
+      {
+        "slug": "chronosphere-vs-honeycomb",
+        "title": "Chronosphere vs Honeycomb",
+        "href": "/compare/chronosphere-vs-honeycomb/"
+      },
+      {
+        "slug": "apify-vs-chronosphere",
+        "title": "Apify vs Chronosphere",
+        "href": "/compare/apify-vs-chronosphere/"
+      },
+      {
+        "slug": "appdynamics-vs-chronosphere",
+        "title": "AppDynamics vs Chronosphere",
+        "href": "/compare/appdynamics-vs-chronosphere/"
+      },
+      {
+        "slug": "azure-devops-vs-chronosphere",
+        "title": "Azure DevOps vs Chronosphere",
+        "href": "/compare/azure-devops-vs-chronosphere/"
+      },
+      {
+        "slug": "bitbucket-vs-chronosphere",
+        "title": "Bitbucket Cloud vs Chronosphere",
+        "href": "/compare/bitbucket-vs-chronosphere/"
+      }
+    ],
+    "relevantGuides": [
+      {
+        "slug": "chronosphere-implementation",
+        "title": "Chronosphere Implementation: 30/60/90 IT Rollout That Sticks",
+        "href": "/guides/chronosphere-implementation/"
+      },
+      {
+        "slug": "chronosphere-migration",
+        "title": "Chronosphere Migration: Move Tickets and Repos Without Losing Trust",
+        "href": "/guides/chronosphere-migration/"
+      },
+      {
+        "slug": "chronosphere-setup",
+        "title": "Chronosphere Setup: Day-Zero Path to a Working IT Loop",
+        "href": "/guides/chronosphere-setup/"
+      },
+      {
+        "slug": "chronosphere-plans",
+        "title": "Chronosphere Plans: Seats, Hosts, and Qualifying Tiers",
+        "href": "/guides/chronosphere-plans/"
+      },
+      {
+        "slug": "is-chronosphere-worth-it",
+        "title": "Is Chronosphere Worth It? Fit Scenarios Before You Buy",
+        "href": "/guides/is-chronosphere-worth-it/"
+      }
+    ],
+    "evidenceState": "Research/data-based (no completed hands-on test) · Latest verification/research signal: 2026-08-18T22:00:00.000Z · Editorial assessment: approved",
+    "nextDecisionStep": "Compare against peers: Chronosphere vs Datadog",
+    "missingSections": [
+      "canonical_vendor"
+    ]
+  },
+  "dependents": [
+    {
+      "kind": "guide",
+      "slug": "chronosphere-implementation",
+      "path": "/guides/chronosphere-implementation/"
+    },
+    {
+      "kind": "guide",
+      "slug": "chronosphere-migration",
+      "path": "/guides/chronosphere-migration/"
+    },
+    {
+      "kind": "guide",
+      "slug": "chronosphere-setup",
+      "path": "/guides/chronosphere-setup/"
+    },
+    {
+      "kind": "guide",
+      "slug": "chronosphere-plans",
+      "path": "/guides/chronosphere-plans/"
+    },
+    {
+      "kind": "guide",
+      "slug": "is-chronosphere-worth-it",
+      "path": "/guides/is-chronosphere-worth-it/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "chronosphere-vs-datadog",
+      "path": "/compare/chronosphere-vs-datadog/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "chronosphere-vs-honeycomb",
+      "path": "/compare/chronosphere-vs-honeycomb/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "apify-vs-chronosphere",
+      "path": "/compare/apify-vs-chronosphere/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "appdynamics-vs-chronosphere",
+      "path": "/compare/appdynamics-vs-chronosphere/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "azure-devops-vs-chronosphere",
+      "path": "/compare/azure-devops-vs-chronosphere/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "bitbucket-vs-chronosphere",
+      "path": "/compare/bitbucket-vs-chronosphere/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "bmc-helix-vs-chronosphere",
+      "path": "/compare/bmc-helix-vs-chronosphere/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "bright-data-vs-chronosphere",
+      "path": "/compare/bright-data-vs-chronosphere/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "buildkite-vs-chronosphere",
+      "path": "/compare/buildkite-vs-chronosphere/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "chronosphere-vs-circleci",
+      "path": "/compare/chronosphere-vs-circleci/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "chronosphere-vs-cloudways",
+      "path": "/compare/chronosphere-vs-cloudways/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "chronosphere-vs-coralogix",
+      "path": "/compare/chronosphere-vs-coralogix/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "chronosphere-vs-cpanel",
+      "path": "/compare/chronosphere-vs-cpanel/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "chronosphere-vs-directadmin",
+      "path": "/compare/chronosphere-vs-directadmin/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "chronosphere-vs-dynatrace",
+      "path": "/compare/chronosphere-vs-dynatrace/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "chronosphere-vs-elastic-observability",
+      "path": "/compare/chronosphere-vs-elastic-observability/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "chronosphere-vs-firehydrant",
+      "path": "/compare/chronosphere-vs-firehydrant/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "chronosphere-vs-fly-io",
+      "path": "/compare/chronosphere-vs-fly-io/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "chronosphere-vs-github",
+      "path": "/compare/chronosphere-vs-github/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "chronosphere-vs-gitlab",
+      "path": "/compare/chronosphere-vs-gitlab/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "chronosphere-vs-grafana-cloud",
+      "path": "/compare/chronosphere-vs-grafana-cloud/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "chronosphere-vs-haloitsm",
+      "path": "/compare/chronosphere-vs-haloitsm/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "chronosphere-vs-heroku",
+      "path": "/compare/chronosphere-vs-heroku/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "chronosphere-vs-incident-io",
+      "path": "/compare/chronosphere-vs-incident-io/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "chronosphere-vs-iproyal",
+      "path": "/compare/chronosphere-vs-iproyal/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "chronosphere-vs-ivanti",
+      "path": "/compare/chronosphere-vs-ivanti/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "chronosphere-vs-jira-service-management",
+      "path": "/compare/chronosphere-vs-jira-service-management/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "chronosphere-vs-kinsta",
+      "path": "/compare/chronosphere-vs-kinsta/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "chronosphere-vs-manageengine-servicedesk-plus",
+      "path": "/compare/chronosphere-vs-manageengine-servicedesk-plus/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "chronosphere-vs-new-relic",
+      "path": "/compare/chronosphere-vs-new-relic/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "chronosphere-vs-oxylabs",
+      "path": "/compare/chronosphere-vs-oxylabs/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "chronosphere-vs-pagerduty",
+      "path": "/compare/chronosphere-vs-pagerduty/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "chronosphere-vs-railway",
+      "path": "/compare/chronosphere-vs-railway/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "chronosphere-vs-render",
+      "path": "/compare/chronosphere-vs-render/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "chronosphere-vs-rootly",
+      "path": "/compare/chronosphere-vs-rootly/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "chronosphere-vs-scraperapi",
+      "path": "/compare/chronosphere-vs-scraperapi/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "chronosphere-vs-sentry",
+      "path": "/compare/chronosphere-vs-sentry/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "chronosphere-vs-servicenow",
+      "path": "/compare/chronosphere-vs-servicenow/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "chronosphere-vs-siteground",
+      "path": "/compare/chronosphere-vs-siteground/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "chronosphere-vs-smartproxy",
+      "path": "/compare/chronosphere-vs-smartproxy/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "chronosphere-vs-splunk",
+      "path": "/compare/chronosphere-vs-splunk/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "chronosphere-vs-squadcast",
+      "path": "/compare/chronosphere-vs-squadcast/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "chronosphere-vs-sysaid",
+      "path": "/compare/chronosphere-vs-sysaid/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "chronosphere-vs-thordata",
+      "path": "/compare/chronosphere-vs-thordata/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "chronosphere-vs-topdesk",
+      "path": "/compare/chronosphere-vs-topdesk/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "chronosphere-vs-wp-engine",
+      "path": "/compare/chronosphere-vs-wp-engine/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "chronosphere-vs-zyte",
+      "path": "/compare/chronosphere-vs-zyte/"
+    },
+    {
+      "kind": "alternatives",
+      "slug": "chronosphere",
+      "path": "/alternatives/chronosphere/"
+    },
+    {
+      "kind": "pricing",
+      "slug": "chronosphere",
+      "path": "/software/chronosphere/pricing/"
+    },
+    {
+      "kind": "tools",
+      "slug": "it-development-cost-calculator",
+      "path": "/tools/it-development-cost-calculator/"
+    }
+  ],
+  "dependentsNeedingRefresh": [],
+  "remediation": [
+    "verify:canonical_vendor"
+  ],
+  "notes": [
+    "fieldAudit score=94",
+    "decisionHub bestFor=5 notIdeal=6",
+    "dependents=55"
+  ],
+  "materiallyImproved": false
+}

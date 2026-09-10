@@ -29,9 +29,13 @@ function stubRow(partial: Partial<UrlMappingRow>): UrlMappingRow {
 }
 
 describe("SeoPriorityMigrationAgent", () => {
-  it("reports GSC/analytics/backlinks unavailable without inventing data", () => {
+  it("reports GSC/analytics/backlinks without inventing unavailable integrations", () => {
     const a = inspectSeoDataAvailability();
-    expect(a.searchConsole.available).toBe(false);
+    // REAL GSC Performance export may be present on disk — never invent when absent.
+    expect(typeof a.searchConsole.available).toBe("boolean");
+    if (a.searchConsole.available) {
+      expect(a.searchConsole.synthetic).toBe(false);
+    }
     expect(a.analytics.available).toBe(false);
     expect(a.backlinks.available).toBe(false);
     expect(a.proxySignals.available).toBe(true);

@@ -1,0 +1,526 @@
+{
+  "slug": "new-relic",
+  "updatedAt": "2026-09-08T21:57:07.451Z",
+  "version": "1.0.0",
+  "fieldAudit": {
+    "slug": "new-relic",
+    "checkedAt": "2026-09-08T21:57:07.447Z",
+    "items": [
+      {
+        "field": "name",
+        "status": "PASS",
+        "detail": "Name: New Relic",
+        "source": "seed"
+      },
+      {
+        "field": "product_status",
+        "status": "PASS",
+        "detail": "productLifecycle=active",
+        "source": "seed"
+      },
+      {
+        "field": "canonical_vendor",
+        "status": "PASS",
+        "detail": "Vendor: New Relic, Inc.",
+        "source": "seed"
+      },
+      {
+        "field": "category",
+        "status": "PASS",
+        "detail": "primaryCategorySlug=it-development",
+        "source": "seed"
+      },
+      {
+        "field": "description",
+        "status": "PASS",
+        "detail": "Description present (Observability — Free 100 GB ingest + 1 full user; Standard from $10 first full u…)",
+        "source": "seed"
+      },
+      {
+        "field": "target_audience",
+        "status": "PASS",
+        "detail": "Sizes=3, teams=2, assessment bestFor=3",
+        "source": "assessment"
+      },
+      {
+        "field": "use_cases",
+        "status": "PASS",
+        "detail": "useCaseSlugs=1",
+        "source": "seed"
+      },
+      {
+        "field": "capabilities",
+        "status": "PASS",
+        "detail": "featureRatings=0, enrichment features=15",
+        "source": "enrichment"
+      },
+      {
+        "field": "pricing",
+        "status": "PASS",
+        "detail": "Pricing envelope present",
+        "source": "enrichment"
+      },
+      {
+        "field": "plans",
+        "status": "PASS",
+        "detail": "plans=4",
+        "source": "enrichment"
+      },
+      {
+        "field": "free_plan",
+        "status": "PASS",
+        "detail": "Free plan documented",
+        "source": "enrichment"
+      },
+      {
+        "field": "trial",
+        "status": "UNKNOWN",
+        "detail": "Trial not explicitly documented — do not assume none",
+        "source": "none"
+      },
+      {
+        "field": "integrations",
+        "status": "PASS",
+        "detail": "integrationSlugs=0, enrichment=3",
+        "source": "enrichment"
+      },
+      {
+        "field": "alternatives",
+        "status": "PASS",
+        "detail": "alternativeSlugs=2",
+        "source": "seed"
+      },
+      {
+        "field": "competitors",
+        "status": "PASS",
+        "detail": "competitorSlugs=3",
+        "source": "seed"
+      },
+      {
+        "field": "affiliate",
+        "status": "PASS",
+        "detail": "No affiliate relationship (explicit)",
+        "source": "seed"
+      },
+      {
+        "field": "source_provenance",
+        "status": "PASS",
+        "detail": "seed sources=0, enrichment sourceIds=3",
+        "source": "enrichment"
+      },
+      {
+        "field": "verification_date",
+        "status": "PASS",
+        "detail": "Latest verification/research signal: 2026-08-18T12:00:00.000Z",
+        "source": "enrichment"
+      }
+    ],
+    "passCount": 17,
+    "partialCount": 0,
+    "missingCount": 0,
+    "unknownCount": 1,
+    "score": 94
+  },
+  "decisionHub": {
+    "whatItIs": "New Relic is an all-in-one observability platform (APM, infra, logs, traces) billed on data ingest plus user type. Every edition includes 100 GB/month free ingest. Original data is $0.40/GB beyond that (Data Plus $0.60/GB). Basic users are free; Core users $49; Standard full-platform users start at $10 for the first then $99 (max 5). Pro full users are $349/user annual ($418.80 monthly). Enterprise is contact. Distinct from Datadog’s per-host infrastructure SKU.",
+    "bestFor": [
+      "Teams that want APM + logs + infra in one ingest bill",
+      "Orgs that can live with 1–5 Standard full users",
+      "Buyers comparing usage-based observability to Datadog hosts",
+      "small-business / engineering: New Relic fit for small-business engineering teams in the observability-monitoring job cluster, from first-party positioning and IT Priority-2 research.",
+      "mid-market / engineering: New Relic fit for mid-market engineering teams in the observability-monitoring job cluster, from first-party positioning and IT Priority-2 research.",
+      "enterprise / engineering: New Relic fit for enterprise engineering teams in the observability-monitoring job cluster, from first-party positioning and IT Priority-2 research."
+    ],
+    "notIdealFor": [
+      "ITSM-only buyers (Freshservice / ServiceNow)",
+      "Teams standardised on Grafana OSS + cheap Cloud Pro usage",
+      "On-call-only (PagerDuty)",
+      "Full-platform user prices jump hard after the $10 first seat (Standard) and again at Pro $349",
+      "Ingest $0.40/GB after 100 GB is the other TCO lever vs Datadog hosts",
+      "Standard caps at 5 full users — growing teams are pushed to Pro"
+    ],
+    "coreCapabilities": [
+      "incident management",
+      "infrastructure monitoring",
+      "apm tracing",
+      "log management",
+      "cicd actions",
+      "itsm ai",
+      "dev ai",
+      "oncall paging"
+    ],
+    "pricingSummary": "4 documented plans · 1 free · entry paid: Standard (first full user)",
+    "keyTradeoffs": [
+      "Full-platform user prices jump hard after the $10 first seat (Standard) and again at Pro $349",
+      "Ingest $0.40/GB after 100 GB is the other TCO lever vs Datadog hosts",
+      "Standard caps at 5 full users — growing teams are pushed to Pro",
+      "Not an ITSM service desk or git host",
+      "Compute/CCU add-ons can appear on advanced capabilities"
+    ],
+    "alternatives": [
+      {
+        "slug": "datadog",
+        "name": "Datadog"
+      },
+      {
+        "slug": "dynatrace",
+        "name": "Dynatrace"
+      },
+      {
+        "slug": "grafana-cloud",
+        "name": "Grafana Cloud"
+      }
+    ],
+    "importantComparisons": [
+      {
+        "slug": "datadog-vs-new-relic",
+        "title": "New Relic vs Datadog",
+        "href": "/compare/datadog-vs-new-relic/"
+      },
+      {
+        "slug": "dynatrace-vs-new-relic",
+        "title": "Dynatrace vs New Relic",
+        "href": "/compare/dynatrace-vs-new-relic/"
+      },
+      {
+        "slug": "apify-vs-new-relic",
+        "title": "Apify vs New Relic",
+        "href": "/compare/apify-vs-new-relic/"
+      },
+      {
+        "slug": "appdynamics-vs-new-relic",
+        "title": "AppDynamics vs New Relic",
+        "href": "/compare/appdynamics-vs-new-relic/"
+      },
+      {
+        "slug": "azure-devops-vs-new-relic",
+        "title": "Azure DevOps vs New Relic",
+        "href": "/compare/azure-devops-vs-new-relic/"
+      },
+      {
+        "slug": "bitbucket-vs-new-relic",
+        "title": "Bitbucket Cloud vs New Relic",
+        "href": "/compare/bitbucket-vs-new-relic/"
+      }
+    ],
+    "relevantGuides": [
+      {
+        "slug": "new-relic-implementation",
+        "title": "New Relic Implementation: 30/60/90 IT Rollout That Sticks",
+        "href": "/guides/new-relic-implementation/"
+      },
+      {
+        "slug": "new-relic-migration",
+        "title": "New Relic Migration: Move Tickets and Repos Without Losing Trust",
+        "href": "/guides/new-relic-migration/"
+      },
+      {
+        "slug": "new-relic-setup",
+        "title": "New Relic Setup: Day-Zero Path to a Working IT Loop",
+        "href": "/guides/new-relic-setup/"
+      },
+      {
+        "slug": "new-relic-plans",
+        "title": "New Relic Plans: Seats, Hosts, and Qualifying Tiers",
+        "href": "/guides/new-relic-plans/"
+      },
+      {
+        "slug": "is-new-relic-worth-it",
+        "title": "Is New Relic Worth It? Fit Scenarios Before You Buy",
+        "href": "/guides/is-new-relic-worth-it/"
+      }
+    ],
+    "evidenceState": "Research/data-based (no completed hands-on test) · Latest verification/research signal: 2026-08-18T12:00:00.000Z · Editorial assessment: approved",
+    "nextDecisionStep": "Compare against peers: New Relic vs Datadog",
+    "missingSections": [
+      "trial"
+    ]
+  },
+  "dependents": [
+    {
+      "kind": "guide",
+      "slug": "new-relic-implementation",
+      "path": "/guides/new-relic-implementation/"
+    },
+    {
+      "kind": "guide",
+      "slug": "new-relic-migration",
+      "path": "/guides/new-relic-migration/"
+    },
+    {
+      "kind": "guide",
+      "slug": "new-relic-setup",
+      "path": "/guides/new-relic-setup/"
+    },
+    {
+      "kind": "guide",
+      "slug": "new-relic-plans",
+      "path": "/guides/new-relic-plans/"
+    },
+    {
+      "kind": "guide",
+      "slug": "is-new-relic-worth-it",
+      "path": "/guides/is-new-relic-worth-it/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "datadog-vs-new-relic",
+      "path": "/compare/datadog-vs-new-relic/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "dynatrace-vs-new-relic",
+      "path": "/compare/dynatrace-vs-new-relic/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "apify-vs-new-relic",
+      "path": "/compare/apify-vs-new-relic/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "appdynamics-vs-new-relic",
+      "path": "/compare/appdynamics-vs-new-relic/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "azure-devops-vs-new-relic",
+      "path": "/compare/azure-devops-vs-new-relic/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "bitbucket-vs-new-relic",
+      "path": "/compare/bitbucket-vs-new-relic/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "bmc-helix-vs-new-relic",
+      "path": "/compare/bmc-helix-vs-new-relic/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "bright-data-vs-new-relic",
+      "path": "/compare/bright-data-vs-new-relic/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "buildkite-vs-new-relic",
+      "path": "/compare/buildkite-vs-new-relic/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "chronosphere-vs-new-relic",
+      "path": "/compare/chronosphere-vs-new-relic/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "circleci-vs-new-relic",
+      "path": "/compare/circleci-vs-new-relic/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "cloudways-vs-new-relic",
+      "path": "/compare/cloudways-vs-new-relic/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "coralogix-vs-new-relic",
+      "path": "/compare/coralogix-vs-new-relic/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "cpanel-vs-new-relic",
+      "path": "/compare/cpanel-vs-new-relic/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "directadmin-vs-new-relic",
+      "path": "/compare/directadmin-vs-new-relic/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "elastic-observability-vs-new-relic",
+      "path": "/compare/elastic-observability-vs-new-relic/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "firehydrant-vs-new-relic",
+      "path": "/compare/firehydrant-vs-new-relic/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "fly-io-vs-new-relic",
+      "path": "/compare/fly-io-vs-new-relic/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "github-vs-new-relic",
+      "path": "/compare/github-vs-new-relic/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "gitlab-vs-new-relic",
+      "path": "/compare/gitlab-vs-new-relic/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "grafana-cloud-vs-new-relic",
+      "path": "/compare/grafana-cloud-vs-new-relic/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "haloitsm-vs-new-relic",
+      "path": "/compare/haloitsm-vs-new-relic/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "heroku-vs-new-relic",
+      "path": "/compare/heroku-vs-new-relic/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "honeycomb-vs-new-relic",
+      "path": "/compare/honeycomb-vs-new-relic/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "incident-io-vs-new-relic",
+      "path": "/compare/incident-io-vs-new-relic/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "iproyal-vs-new-relic",
+      "path": "/compare/iproyal-vs-new-relic/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "ivanti-vs-new-relic",
+      "path": "/compare/ivanti-vs-new-relic/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "jira-service-management-vs-new-relic",
+      "path": "/compare/jira-service-management-vs-new-relic/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "kinsta-vs-new-relic",
+      "path": "/compare/kinsta-vs-new-relic/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "manageengine-servicedesk-plus-vs-new-relic",
+      "path": "/compare/manageengine-servicedesk-plus-vs-new-relic/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "new-relic-vs-oxylabs",
+      "path": "/compare/new-relic-vs-oxylabs/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "new-relic-vs-pagerduty",
+      "path": "/compare/new-relic-vs-pagerduty/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "new-relic-vs-railway",
+      "path": "/compare/new-relic-vs-railway/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "new-relic-vs-render",
+      "path": "/compare/new-relic-vs-render/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "new-relic-vs-rootly",
+      "path": "/compare/new-relic-vs-rootly/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "new-relic-vs-scraperapi",
+      "path": "/compare/new-relic-vs-scraperapi/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "new-relic-vs-sentry",
+      "path": "/compare/new-relic-vs-sentry/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "new-relic-vs-servicenow",
+      "path": "/compare/new-relic-vs-servicenow/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "new-relic-vs-siteground",
+      "path": "/compare/new-relic-vs-siteground/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "new-relic-vs-smartproxy",
+      "path": "/compare/new-relic-vs-smartproxy/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "new-relic-vs-splunk",
+      "path": "/compare/new-relic-vs-splunk/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "new-relic-vs-squadcast",
+      "path": "/compare/new-relic-vs-squadcast/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "new-relic-vs-sysaid",
+      "path": "/compare/new-relic-vs-sysaid/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "new-relic-vs-thordata",
+      "path": "/compare/new-relic-vs-thordata/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "new-relic-vs-topdesk",
+      "path": "/compare/new-relic-vs-topdesk/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "new-relic-vs-wp-engine",
+      "path": "/compare/new-relic-vs-wp-engine/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "new-relic-vs-zyte",
+      "path": "/compare/new-relic-vs-zyte/"
+    },
+    {
+      "kind": "alternatives",
+      "slug": "new-relic",
+      "path": "/alternatives/new-relic/"
+    },
+    {
+      "kind": "pricing",
+      "slug": "new-relic",
+      "path": "/software/new-relic/pricing/"
+    },
+    {
+      "kind": "tools",
+      "slug": "it-development-cost-calculator",
+      "path": "/tools/it-development-cost-calculator/"
+    }
+  ],
+  "dependentsNeedingRefresh": [],
+  "remediation": [
+    "verify:trial"
+  ],
+  "notes": [
+    "fieldAudit score=94",
+    "decisionHub bestFor=6 notIdeal=6",
+    "dependents=55"
+  ],
+  "materiallyImproved": true
+}

@@ -1,0 +1,543 @@
+{
+  "slug": "render",
+  "updatedAt": "2026-09-09T06:31:47.068Z",
+  "version": "1.0.0",
+  "fieldAudit": {
+    "slug": "render",
+    "checkedAt": "2026-09-09T06:31:47.064Z",
+    "items": [
+      {
+        "field": "name",
+        "status": "PASS",
+        "detail": "Name: Render",
+        "source": "seed"
+      },
+      {
+        "field": "product_status",
+        "status": "PASS",
+        "detail": "productLifecycle=active",
+        "source": "seed"
+      },
+      {
+        "field": "canonical_vendor",
+        "status": "PASS",
+        "detail": "Vendor: Render Services, Inc.",
+        "source": "seed"
+      },
+      {
+        "field": "category",
+        "status": "PASS",
+        "detail": "primaryCategorySlug=it-development",
+        "source": "seed"
+      },
+      {
+        "field": "description",
+        "status": "PASS",
+        "detail": "Description present (Cloud PaaS / app platform — Hobby $0 + compute; Pro $25/mo + compute (production…)",
+        "source": "seed"
+      },
+      {
+        "field": "target_audience",
+        "status": "PASS",
+        "detail": "Sizes=4, teams=1, assessment bestFor=3",
+        "source": "assessment"
+      },
+      {
+        "field": "use_cases",
+        "status": "PASS",
+        "detail": "useCaseSlugs=1",
+        "source": "seed"
+      },
+      {
+        "field": "capabilities",
+        "status": "PASS",
+        "detail": "featureRatings=0, enrichment features=17",
+        "source": "enrichment"
+      },
+      {
+        "field": "pricing",
+        "status": "PASS",
+        "detail": "Pricing envelope present",
+        "source": "enrichment"
+      },
+      {
+        "field": "plans",
+        "status": "PASS",
+        "detail": "plans=5",
+        "source": "enrichment"
+      },
+      {
+        "field": "free_plan",
+        "status": "PASS",
+        "detail": "Free plan documented",
+        "source": "enrichment"
+      },
+      {
+        "field": "trial",
+        "status": "UNKNOWN",
+        "detail": "Trial not explicitly documented — do not assume none",
+        "source": "none"
+      },
+      {
+        "field": "integrations",
+        "status": "PASS",
+        "detail": "integrationSlugs=0, enrichment=2",
+        "source": "enrichment"
+      },
+      {
+        "field": "alternatives",
+        "status": "PASS",
+        "detail": "alternativeSlugs=2",
+        "source": "seed"
+      },
+      {
+        "field": "competitors",
+        "status": "PASS",
+        "detail": "competitorSlugs=6",
+        "source": "seed"
+      },
+      {
+        "field": "affiliate",
+        "status": "PASS",
+        "detail": "No affiliate relationship (explicit)",
+        "source": "seed"
+      },
+      {
+        "field": "source_provenance",
+        "status": "PASS",
+        "detail": "seed sources=0, enrichment sourceIds=3",
+        "source": "enrichment"
+      },
+      {
+        "field": "verification_date",
+        "status": "PASS",
+        "detail": "Latest verification/research signal: 2026-08-18T22:00:00.000Z",
+        "source": "enrichment"
+      }
+    ],
+    "passCount": 17,
+    "partialCount": 0,
+    "missingCount": 0,
+    "unknownCount": 1,
+    "score": 94
+  },
+  "decisionHub": {
+    "whatItIs": "Render is a cloud PaaS / app platform (git-push web services, datastores, cron, and preview environments) — not a managed WordPress host and not a Plesk/cPanel panel licence. Hobby is $0 plus compute. Pro is $25/month plus compute and is the production research floor. Scale is $499/month. Enterprise is custom. Starter web instances publish from $7/month — that is compute, not the Pro workspace floor. Same cloud-paas cluster as Fly.io — Render is the cluster award (7.9); Fly.io is the peer (7.7). Landscape-only versus WP Engine (managed WordPress) and Cloudways (managed VMs).",
+    "bestFor": [
+      "Teams that want a git-push app platform with a published Pro $25 production floor",
+      "Buyers comparing Render Pro to Fly.io shared-cpu PAYG",
+      "Orgs that will treat Hobby as evaluation, not production TCO",
+      "micro / engineering: Render fit for micro engineering teams in the cloud-paas job cluster, from first-party positioning and IT optional-next research.",
+      "small-business / engineering: Render fit for small-business engineering teams in the cloud-paas job cluster, from first-party positioning and IT optional-next research.",
+      "mid-market / engineering: Render fit for mid-market engineering teams in the cloud-paas job cluster, from first-party positioning and IT optional-next research."
+    ],
+    "notIdealFor": [
+      "Teams buying managed WordPress (WP Engine) or managed VMs (Cloudways) — landscape only",
+      "Admins buying Plesk/cPanel licences for servers they already own",
+      "ITSM or observability purchases",
+      "Starter web $7 is compute — Pro $25 is the production workspace floor",
+      "Not managed WordPress hosting (WP Engine) — landscape only",
+      "Not a hosting control-panel licence (Plesk/cPanel)"
+    ],
+    "coreCapabilities": [
+      "infrastructure monitoring",
+      "log management",
+      "cicd actions",
+      "managed hosting",
+      "cloud paas",
+      "dev ai",
+      "enterprise security",
+      "analytics reporting"
+    ],
+    "pricingSummary": "5 documented plans · 1 free · entry paid: Starter web service",
+    "keyTradeoffs": [
+      "Starter web $7 is compute — Pro $25 is the production workspace floor",
+      "Not managed WordPress hosting (WP Engine) — landscape only",
+      "Not a hosting control-panel licence (Plesk/cPanel)",
+      "Hobby is not production; compute still meters above the $25 tile",
+      "Not ITSM, observability, git host, or a proxy network"
+    ],
+    "alternatives": [
+      {
+        "slug": "fly-io",
+        "name": "Fly.io"
+      },
+      {
+        "slug": "cloudways",
+        "name": "Cloudways"
+      },
+      {
+        "slug": "wp-engine",
+        "name": "WP Engine"
+      },
+      {
+        "slug": "kinsta",
+        "name": "Kinsta"
+      },
+      {
+        "slug": "railway",
+        "name": "Railway"
+      },
+      {
+        "slug": "heroku",
+        "name": "Heroku"
+      }
+    ],
+    "importantComparisons": [
+      {
+        "slug": "fly-io-vs-render",
+        "title": "Fly.io vs Render",
+        "href": "/compare/fly-io-vs-render/"
+      },
+      {
+        "slug": "render-vs-wp-engine",
+        "title": "Render vs WP Engine",
+        "href": "/compare/render-vs-wp-engine/"
+      },
+      {
+        "slug": "railway-vs-render",
+        "title": "Railway vs Render",
+        "href": "/compare/railway-vs-render/"
+      },
+      {
+        "slug": "heroku-vs-render",
+        "title": "Heroku vs Render",
+        "href": "/compare/heroku-vs-render/"
+      },
+      {
+        "slug": "apify-vs-render",
+        "title": "Apify vs Render",
+        "href": "/compare/apify-vs-render/"
+      },
+      {
+        "slug": "appdynamics-vs-render",
+        "title": "AppDynamics vs Render",
+        "href": "/compare/appdynamics-vs-render/"
+      }
+    ],
+    "relevantGuides": [
+      {
+        "slug": "render-implementation",
+        "title": "Render Implementation: 30/60/90 IT Rollout That Sticks",
+        "href": "/guides/render-implementation/"
+      },
+      {
+        "slug": "render-migration",
+        "title": "Render Migration: Move Tickets and Repos Without Losing Trust",
+        "href": "/guides/render-migration/"
+      },
+      {
+        "slug": "render-setup",
+        "title": "Render Setup: Day-Zero Path to a Working IT Loop",
+        "href": "/guides/render-setup/"
+      },
+      {
+        "slug": "render-plans",
+        "title": "Render Plans: Seats, Hosts, and Qualifying Tiers",
+        "href": "/guides/render-plans/"
+      },
+      {
+        "slug": "is-render-worth-it",
+        "title": "Is Render Worth It? Fit Scenarios Before You Buy",
+        "href": "/guides/is-render-worth-it/"
+      }
+    ],
+    "evidenceState": "Research/data-based (no completed hands-on test) · Latest verification/research signal: 2026-08-18T22:00:00.000Z · Editorial assessment: approved",
+    "nextDecisionStep": "Compare against peers: Fly.io vs Render",
+    "missingSections": [
+      "trial"
+    ]
+  },
+  "dependents": [
+    {
+      "kind": "guide",
+      "slug": "render-implementation",
+      "path": "/guides/render-implementation/"
+    },
+    {
+      "kind": "guide",
+      "slug": "render-migration",
+      "path": "/guides/render-migration/"
+    },
+    {
+      "kind": "guide",
+      "slug": "render-setup",
+      "path": "/guides/render-setup/"
+    },
+    {
+      "kind": "guide",
+      "slug": "render-plans",
+      "path": "/guides/render-plans/"
+    },
+    {
+      "kind": "guide",
+      "slug": "is-render-worth-it",
+      "path": "/guides/is-render-worth-it/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "fly-io-vs-render",
+      "path": "/compare/fly-io-vs-render/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "render-vs-wp-engine",
+      "path": "/compare/render-vs-wp-engine/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "railway-vs-render",
+      "path": "/compare/railway-vs-render/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "heroku-vs-render",
+      "path": "/compare/heroku-vs-render/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "apify-vs-render",
+      "path": "/compare/apify-vs-render/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "appdynamics-vs-render",
+      "path": "/compare/appdynamics-vs-render/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "azure-devops-vs-render",
+      "path": "/compare/azure-devops-vs-render/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "bitbucket-vs-render",
+      "path": "/compare/bitbucket-vs-render/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "bmc-helix-vs-render",
+      "path": "/compare/bmc-helix-vs-render/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "bright-data-vs-render",
+      "path": "/compare/bright-data-vs-render/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "buildkite-vs-render",
+      "path": "/compare/buildkite-vs-render/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "chronosphere-vs-render",
+      "path": "/compare/chronosphere-vs-render/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "circleci-vs-render",
+      "path": "/compare/circleci-vs-render/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "cloudways-vs-render",
+      "path": "/compare/cloudways-vs-render/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "coralogix-vs-render",
+      "path": "/compare/coralogix-vs-render/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "cpanel-vs-render",
+      "path": "/compare/cpanel-vs-render/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "datadog-vs-render",
+      "path": "/compare/datadog-vs-render/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "directadmin-vs-render",
+      "path": "/compare/directadmin-vs-render/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "dynatrace-vs-render",
+      "path": "/compare/dynatrace-vs-render/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "elastic-observability-vs-render",
+      "path": "/compare/elastic-observability-vs-render/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "firehydrant-vs-render",
+      "path": "/compare/firehydrant-vs-render/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "github-vs-render",
+      "path": "/compare/github-vs-render/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "gitlab-vs-render",
+      "path": "/compare/gitlab-vs-render/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "grafana-cloud-vs-render",
+      "path": "/compare/grafana-cloud-vs-render/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "haloitsm-vs-render",
+      "path": "/compare/haloitsm-vs-render/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "honeycomb-vs-render",
+      "path": "/compare/honeycomb-vs-render/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "incident-io-vs-render",
+      "path": "/compare/incident-io-vs-render/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "iproyal-vs-render",
+      "path": "/compare/iproyal-vs-render/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "ivanti-vs-render",
+      "path": "/compare/ivanti-vs-render/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "jira-service-management-vs-render",
+      "path": "/compare/jira-service-management-vs-render/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "kinsta-vs-render",
+      "path": "/compare/kinsta-vs-render/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "manageengine-servicedesk-plus-vs-render",
+      "path": "/compare/manageengine-servicedesk-plus-vs-render/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "new-relic-vs-render",
+      "path": "/compare/new-relic-vs-render/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "oxylabs-vs-render",
+      "path": "/compare/oxylabs-vs-render/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "pagerduty-vs-render",
+      "path": "/compare/pagerduty-vs-render/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "render-vs-rootly",
+      "path": "/compare/render-vs-rootly/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "render-vs-scraperapi",
+      "path": "/compare/render-vs-scraperapi/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "render-vs-sentry",
+      "path": "/compare/render-vs-sentry/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "render-vs-servicenow",
+      "path": "/compare/render-vs-servicenow/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "render-vs-siteground",
+      "path": "/compare/render-vs-siteground/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "render-vs-smartproxy",
+      "path": "/compare/render-vs-smartproxy/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "render-vs-splunk",
+      "path": "/compare/render-vs-splunk/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "render-vs-squadcast",
+      "path": "/compare/render-vs-squadcast/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "render-vs-sysaid",
+      "path": "/compare/render-vs-sysaid/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "render-vs-thordata",
+      "path": "/compare/render-vs-thordata/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "render-vs-topdesk",
+      "path": "/compare/render-vs-topdesk/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "render-vs-zyte",
+      "path": "/compare/render-vs-zyte/"
+    },
+    {
+      "kind": "alternatives",
+      "slug": "render",
+      "path": "/alternatives/render/"
+    },
+    {
+      "kind": "pricing",
+      "slug": "render",
+      "path": "/software/render/pricing/"
+    },
+    {
+      "kind": "best",
+      "slug": "it-development-software",
+      "path": "/best/it-development-software/"
+    },
+    {
+      "kind": "tools",
+      "slug": "it-development-cost-calculator",
+      "path": "/tools/it-development-cost-calculator/"
+    }
+  ],
+  "dependentsNeedingRefresh": [],
+  "remediation": [
+    "verify:trial"
+  ],
+  "notes": [
+    "fieldAudit score=94",
+    "decisionHub bestFor=6 notIdeal=6",
+    "dependents=56"
+  ],
+  "materiallyImproved": true
+}

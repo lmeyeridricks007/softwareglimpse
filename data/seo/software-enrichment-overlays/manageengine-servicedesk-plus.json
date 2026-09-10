@@ -1,0 +1,534 @@
+{
+  "slug": "manageengine-servicedesk-plus",
+  "updatedAt": "2026-09-08T21:57:41.716Z",
+  "version": "1.0.0",
+  "fieldAudit": {
+    "slug": "manageengine-servicedesk-plus",
+    "checkedAt": "2026-09-08T21:57:41.714Z",
+    "items": [
+      {
+        "field": "name",
+        "status": "PASS",
+        "detail": "Name: ManageEngine ServiceDesk Plus",
+        "source": "seed"
+      },
+      {
+        "field": "product_status",
+        "status": "PASS",
+        "detail": "productLifecycle=active",
+        "source": "seed"
+      },
+      {
+        "field": "canonical_vendor",
+        "status": "PASS",
+        "detail": "Vendor: Zoho Corporation / ManageEngine",
+        "source": "seed"
+      },
+      {
+        "field": "category",
+        "status": "PASS",
+        "detail": "primaryCategorySlug=it-development",
+        "source": "seed"
+      },
+      {
+        "field": "description",
+        "status": "PASS",
+        "detail": "Description present (SMB/mid-market ITSM — Cloud Standard from $13/technician/mo; free up to 5 techs …)",
+        "source": "seed"
+      },
+      {
+        "field": "target_audience",
+        "status": "PASS",
+        "detail": "Sizes=2, teams=2, assessment bestFor=3",
+        "source": "assessment"
+      },
+      {
+        "field": "use_cases",
+        "status": "PASS",
+        "detail": "useCaseSlugs=1",
+        "source": "seed"
+      },
+      {
+        "field": "capabilities",
+        "status": "PASS",
+        "detail": "featureRatings=0, enrichment features=16",
+        "source": "enrichment"
+      },
+      {
+        "field": "pricing",
+        "status": "PASS",
+        "detail": "Pricing envelope present",
+        "source": "enrichment"
+      },
+      {
+        "field": "plans",
+        "status": "PASS",
+        "detail": "plans=4",
+        "source": "enrichment"
+      },
+      {
+        "field": "free_plan",
+        "status": "PASS",
+        "detail": "Free plan documented",
+        "source": "enrichment"
+      },
+      {
+        "field": "trial",
+        "status": "PASS",
+        "detail": "Trial documented on plans/pricing",
+        "source": "enrichment"
+      },
+      {
+        "field": "integrations",
+        "status": "PASS",
+        "detail": "integrationSlugs=0, enrichment=4",
+        "source": "enrichment"
+      },
+      {
+        "field": "alternatives",
+        "status": "PASS",
+        "detail": "alternativeSlugs=2",
+        "source": "seed"
+      },
+      {
+        "field": "competitors",
+        "status": "PASS",
+        "detail": "competitorSlugs=5",
+        "source": "seed"
+      },
+      {
+        "field": "affiliate",
+        "status": "PASS",
+        "detail": "No affiliate relationship (explicit)",
+        "source": "seed"
+      },
+      {
+        "field": "source_provenance",
+        "status": "PASS",
+        "detail": "seed sources=0, enrichment sourceIds=3",
+        "source": "enrichment"
+      },
+      {
+        "field": "verification_date",
+        "status": "PASS",
+        "detail": "Latest verification/research signal: 2026-08-18T22:00:00.000Z",
+        "source": "enrichment"
+      }
+    ],
+    "passCount": 18,
+    "partialCount": 0,
+    "missingCount": 0,
+    "unknownCount": 0,
+    "score": 100
+  },
+  "decisionHub": {
+    "whatItIs": "ManageEngine ServiceDesk Plus is Zoho/ManageEngine’s ITSM and employee service desk (incidents, problems, changes, assets, catalog) aimed at SMB and mid-market IT. Cloud Standard publishes from $13/technician/month; a Standard path is free up to 5 technicians; Professional $27; Enterprise $67. 30-day trial. Same itsm-service-desk cluster as ServiceNow and Freshservice — ServiceNow remains the enterprise award (8.7) and Freshservice the published mid-market award (8.4); this entity does not outrank either. Distinct from ServiceNow Now Platform ESM and from Freshservice’s Freshworks SKU.",
+    "bestFor": [
+      "SMB/mid-market IT teams that want a published $13/technician ITSM SKU",
+      "Zoho/ManageEngine-aligned shops that need incidents, changes, and assets without a ServiceNow RFP",
+      "Buyers who will actually use the 5-tech free Standard path before paid Cloud",
+      "small-business / it-ops: ManageEngine ServiceDesk Plus fit for small-business it-ops teams in the itsm-service-desk job cluster, from first-party positioning and IT Tier-B + ITSM SMB research.",
+      "mid-market / it-ops: ManageEngine ServiceDesk Plus fit for mid-market it-ops teams in the itsm-service-desk job cluster, from first-party positioning and IT Tier-B + ITSM SMB research."
+    ],
+    "notIdealFor": [
+      "Enterprises standardising on ServiceNow CMDB + ESM",
+      "Teams that want Freshservice’s simpler published mid-market UX as the default award path",
+      "SRE observability or git-host purchases",
+      "Does not outrank ServiceNow (8.7) or Freshservice (8.4)",
+      "Enterprise $67 is a large step vs the $13 Standard floor — module depth gates by edition",
+      "Zoho/ManageEngine family sprawl (Endpoint, AD, etc.) is adjacent, not this SKU"
+    ],
+    "coreCapabilities": [
+      "incident management",
+      "change problem",
+      "service catalog",
+      "infrastructure monitoring",
+      "log management",
+      "cicd actions",
+      "itsm ai",
+      "oncall paging"
+    ],
+    "pricingSummary": "4 documented plans · 1 free · entry paid: Cloud Standard · trial documented on at least one plan",
+    "keyTradeoffs": [
+      "Does not outrank ServiceNow (8.7) or Freshservice (8.4)",
+      "Enterprise $67 is a large step vs the $13 Standard floor — module depth gates by edition",
+      "Zoho/ManageEngine family sprawl (Endpoint, AD, etc.) is adjacent, not this SKU",
+      "ITSM AI is assistance, not Now Assist / Freddy as a buying reason",
+      "Not observability, git, hosting panel, or managed hosting"
+    ],
+    "alternatives": [
+      {
+        "slug": "freshservice",
+        "name": "Freshservice"
+      },
+      {
+        "slug": "jira-service-management",
+        "name": "Jira Service Management"
+      },
+      {
+        "slug": "servicenow",
+        "name": "ServiceNow"
+      },
+      {
+        "slug": "sysaid",
+        "name": "SysAid"
+      },
+      {
+        "slug": "haloitsm",
+        "name": "HaloITSM"
+      }
+    ],
+    "importantComparisons": [
+      {
+        "slug": "freshservice-vs-manageengine-servicedesk-plus",
+        "title": "ManageEngine ServiceDesk Plus vs Freshservice",
+        "href": "/compare/freshservice-vs-manageengine-servicedesk-plus/"
+      },
+      {
+        "slug": "haloitsm-vs-manageengine-servicedesk-plus",
+        "title": "HaloITSM vs ManageEngine ServiceDesk Plus",
+        "href": "/compare/haloitsm-vs-manageengine-servicedesk-plus/"
+      },
+      {
+        "slug": "apify-vs-manageengine-servicedesk-plus",
+        "title": "Apify vs ManageEngine ServiceDesk Plus",
+        "href": "/compare/apify-vs-manageengine-servicedesk-plus/"
+      },
+      {
+        "slug": "appdynamics-vs-manageengine-servicedesk-plus",
+        "title": "AppDynamics vs ManageEngine ServiceDesk Plus",
+        "href": "/compare/appdynamics-vs-manageengine-servicedesk-plus/"
+      },
+      {
+        "slug": "azure-devops-vs-manageengine-servicedesk-plus",
+        "title": "Azure DevOps vs ManageEngine ServiceDesk Plus",
+        "href": "/compare/azure-devops-vs-manageengine-servicedesk-plus/"
+      },
+      {
+        "slug": "bitbucket-vs-manageengine-servicedesk-plus",
+        "title": "Bitbucket Cloud vs ManageEngine ServiceDesk Plus",
+        "href": "/compare/bitbucket-vs-manageengine-servicedesk-plus/"
+      }
+    ],
+    "relevantGuides": [
+      {
+        "slug": "manageengine-servicedesk-plus-implementation",
+        "title": "ManageEngine ServiceDesk Plus Implementation: 30/60/90 IT Rollout That Sticks",
+        "href": "/guides/manageengine-servicedesk-plus-implementation/"
+      },
+      {
+        "slug": "manageengine-servicedesk-plus-migration",
+        "title": "ManageEngine ServiceDesk Plus Migration: Move Tickets and Repos Without Losing Trust",
+        "href": "/guides/manageengine-servicedesk-plus-migration/"
+      },
+      {
+        "slug": "manageengine-servicedesk-plus-setup",
+        "title": "ManageEngine ServiceDesk Plus Setup: Day-Zero Path to a Working IT Loop",
+        "href": "/guides/manageengine-servicedesk-plus-setup/"
+      },
+      {
+        "slug": "manageengine-servicedesk-plus-plans",
+        "title": "ManageEngine ServiceDesk Plus Plans: Seats, Hosts, and Qualifying Tiers",
+        "href": "/guides/manageengine-servicedesk-plus-plans/"
+      },
+      {
+        "slug": "is-manageengine-servicedesk-plus-worth-it",
+        "title": "Is ManageEngine ServiceDesk Plus Worth It? Fit Scenarios Before You Buy",
+        "href": "/guides/is-manageengine-servicedesk-plus-worth-it/"
+      }
+    ],
+    "evidenceState": "Research/data-based (no completed hands-on test) · Latest verification/research signal: 2026-08-18T22:00:00.000Z · Editorial assessment: approved",
+    "nextDecisionStep": "Compare against peers: ManageEngine ServiceDesk Plus vs Freshservice",
+    "missingSections": []
+  },
+  "dependents": [
+    {
+      "kind": "guide",
+      "slug": "manageengine-servicedesk-plus-implementation",
+      "path": "/guides/manageengine-servicedesk-plus-implementation/"
+    },
+    {
+      "kind": "guide",
+      "slug": "manageengine-servicedesk-plus-migration",
+      "path": "/guides/manageengine-servicedesk-plus-migration/"
+    },
+    {
+      "kind": "guide",
+      "slug": "manageengine-servicedesk-plus-setup",
+      "path": "/guides/manageengine-servicedesk-plus-setup/"
+    },
+    {
+      "kind": "guide",
+      "slug": "manageengine-servicedesk-plus-plans",
+      "path": "/guides/manageengine-servicedesk-plus-plans/"
+    },
+    {
+      "kind": "guide",
+      "slug": "is-manageengine-servicedesk-plus-worth-it",
+      "path": "/guides/is-manageengine-servicedesk-plus-worth-it/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "freshservice-vs-manageengine-servicedesk-plus",
+      "path": "/compare/freshservice-vs-manageengine-servicedesk-plus/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "haloitsm-vs-manageengine-servicedesk-plus",
+      "path": "/compare/haloitsm-vs-manageengine-servicedesk-plus/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "apify-vs-manageengine-servicedesk-plus",
+      "path": "/compare/apify-vs-manageengine-servicedesk-plus/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "appdynamics-vs-manageengine-servicedesk-plus",
+      "path": "/compare/appdynamics-vs-manageengine-servicedesk-plus/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "azure-devops-vs-manageengine-servicedesk-plus",
+      "path": "/compare/azure-devops-vs-manageengine-servicedesk-plus/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "bitbucket-vs-manageengine-servicedesk-plus",
+      "path": "/compare/bitbucket-vs-manageengine-servicedesk-plus/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "bmc-helix-vs-manageengine-servicedesk-plus",
+      "path": "/compare/bmc-helix-vs-manageengine-servicedesk-plus/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "bright-data-vs-manageengine-servicedesk-plus",
+      "path": "/compare/bright-data-vs-manageengine-servicedesk-plus/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "buildkite-vs-manageengine-servicedesk-plus",
+      "path": "/compare/buildkite-vs-manageengine-servicedesk-plus/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "chronosphere-vs-manageengine-servicedesk-plus",
+      "path": "/compare/chronosphere-vs-manageengine-servicedesk-plus/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "circleci-vs-manageengine-servicedesk-plus",
+      "path": "/compare/circleci-vs-manageengine-servicedesk-plus/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "cloudways-vs-manageengine-servicedesk-plus",
+      "path": "/compare/cloudways-vs-manageengine-servicedesk-plus/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "coralogix-vs-manageengine-servicedesk-plus",
+      "path": "/compare/coralogix-vs-manageengine-servicedesk-plus/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "cpanel-vs-manageengine-servicedesk-plus",
+      "path": "/compare/cpanel-vs-manageengine-servicedesk-plus/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "datadog-vs-manageengine-servicedesk-plus",
+      "path": "/compare/datadog-vs-manageengine-servicedesk-plus/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "directadmin-vs-manageengine-servicedesk-plus",
+      "path": "/compare/directadmin-vs-manageengine-servicedesk-plus/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "dynatrace-vs-manageengine-servicedesk-plus",
+      "path": "/compare/dynatrace-vs-manageengine-servicedesk-plus/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "elastic-observability-vs-manageengine-servicedesk-plus",
+      "path": "/compare/elastic-observability-vs-manageengine-servicedesk-plus/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "firehydrant-vs-manageengine-servicedesk-plus",
+      "path": "/compare/firehydrant-vs-manageengine-servicedesk-plus/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "fly-io-vs-manageengine-servicedesk-plus",
+      "path": "/compare/fly-io-vs-manageengine-servicedesk-plus/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "github-vs-manageengine-servicedesk-plus",
+      "path": "/compare/github-vs-manageengine-servicedesk-plus/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "gitlab-vs-manageengine-servicedesk-plus",
+      "path": "/compare/gitlab-vs-manageengine-servicedesk-plus/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "grafana-cloud-vs-manageengine-servicedesk-plus",
+      "path": "/compare/grafana-cloud-vs-manageengine-servicedesk-plus/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "heroku-vs-manageengine-servicedesk-plus",
+      "path": "/compare/heroku-vs-manageengine-servicedesk-plus/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "honeycomb-vs-manageengine-servicedesk-plus",
+      "path": "/compare/honeycomb-vs-manageengine-servicedesk-plus/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "incident-io-vs-manageengine-servicedesk-plus",
+      "path": "/compare/incident-io-vs-manageengine-servicedesk-plus/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "iproyal-vs-manageengine-servicedesk-plus",
+      "path": "/compare/iproyal-vs-manageengine-servicedesk-plus/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "ivanti-vs-manageengine-servicedesk-plus",
+      "path": "/compare/ivanti-vs-manageengine-servicedesk-plus/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "jira-service-management-vs-manageengine-servicedesk-plus",
+      "path": "/compare/jira-service-management-vs-manageengine-servicedesk-plus/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "kinsta-vs-manageengine-servicedesk-plus",
+      "path": "/compare/kinsta-vs-manageengine-servicedesk-plus/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "manageengine-servicedesk-plus-vs-new-relic",
+      "path": "/compare/manageengine-servicedesk-plus-vs-new-relic/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "manageengine-servicedesk-plus-vs-oxylabs",
+      "path": "/compare/manageengine-servicedesk-plus-vs-oxylabs/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "manageengine-servicedesk-plus-vs-pagerduty",
+      "path": "/compare/manageengine-servicedesk-plus-vs-pagerduty/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "manageengine-servicedesk-plus-vs-railway",
+      "path": "/compare/manageengine-servicedesk-plus-vs-railway/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "manageengine-servicedesk-plus-vs-render",
+      "path": "/compare/manageengine-servicedesk-plus-vs-render/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "manageengine-servicedesk-plus-vs-rootly",
+      "path": "/compare/manageengine-servicedesk-plus-vs-rootly/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "manageengine-servicedesk-plus-vs-scraperapi",
+      "path": "/compare/manageengine-servicedesk-plus-vs-scraperapi/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "manageengine-servicedesk-plus-vs-sentry",
+      "path": "/compare/manageengine-servicedesk-plus-vs-sentry/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "manageengine-servicedesk-plus-vs-servicenow",
+      "path": "/compare/manageengine-servicedesk-plus-vs-servicenow/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "manageengine-servicedesk-plus-vs-siteground",
+      "path": "/compare/manageengine-servicedesk-plus-vs-siteground/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "manageengine-servicedesk-plus-vs-smartproxy",
+      "path": "/compare/manageengine-servicedesk-plus-vs-smartproxy/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "manageengine-servicedesk-plus-vs-splunk",
+      "path": "/compare/manageengine-servicedesk-plus-vs-splunk/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "manageengine-servicedesk-plus-vs-squadcast",
+      "path": "/compare/manageengine-servicedesk-plus-vs-squadcast/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "manageengine-servicedesk-plus-vs-sysaid",
+      "path": "/compare/manageengine-servicedesk-plus-vs-sysaid/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "manageengine-servicedesk-plus-vs-thordata",
+      "path": "/compare/manageengine-servicedesk-plus-vs-thordata/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "manageengine-servicedesk-plus-vs-topdesk",
+      "path": "/compare/manageengine-servicedesk-plus-vs-topdesk/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "manageengine-servicedesk-plus-vs-wp-engine",
+      "path": "/compare/manageengine-servicedesk-plus-vs-wp-engine/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "manageengine-servicedesk-plus-vs-zyte",
+      "path": "/compare/manageengine-servicedesk-plus-vs-zyte/"
+    },
+    {
+      "kind": "alternatives",
+      "slug": "manageengine-servicedesk-plus",
+      "path": "/alternatives/manageengine-servicedesk-plus/"
+    },
+    {
+      "kind": "pricing",
+      "slug": "manageengine-servicedesk-plus",
+      "path": "/software/manageengine-servicedesk-plus/pricing/"
+    },
+    {
+      "kind": "tools",
+      "slug": "it-development-cost-calculator",
+      "path": "/tools/it-development-cost-calculator/"
+    }
+  ],
+  "dependentsNeedingRefresh": [],
+  "remediation": [],
+  "notes": [
+    "fieldAudit score=100",
+    "decisionHub bestFor=5 notIdeal=6",
+    "dependents=56"
+  ],
+  "materiallyImproved": true
+}

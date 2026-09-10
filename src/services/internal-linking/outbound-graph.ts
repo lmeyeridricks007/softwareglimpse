@@ -1,3 +1,5 @@
+import { existsSync, readFileSync } from "node:fs";
+import path from "node:path";
 import {
   getAllAlternativesUnfiltered,
   getAllBestPagesUnfiltered,
@@ -21,7 +23,7 @@ import { listRequirementDetailParams } from "@/data/requirement-detail";
 import { getRequirementDetailProfile } from "@/data/requirement-detail";
 import { isEntityIndexable } from "@/domain/quality-gates";
 import { indexabilityFromSeoFlag } from "@/seo/indexability";
-import { normalizePath } from "@/seo/canonical";
+import { isAliasedPath, identityPath, normalizePath } from "@/seo/canonical";
 import {
   buildBestLinkPlan,
   buildCapabilityLinkPlan,
@@ -29,6 +31,7 @@ import {
   buildComparisonLinkPlan,
   buildFeatureLinkPlan,
   buildGuideLinkPlan,
+  buildInjectionOnlyLinkPlan,
   buildRequirementLinkPlan,
   buildResourceLinkPlan,
   buildSoftwareLinkPlan,
@@ -36,6 +39,8 @@ import {
 } from "./builders";
 import { flattenPlanLinks } from "./select";
 import type { ContextualLink, LinkEntityType, PageLinkPlan } from "./types";
+import { loadGuideEnrichmentOverlay } from "@/services/seo/guide-enrichment/overlay-store";
+import { mergeGuideWithOverlay } from "@/services/seo/guide-enrichment/overlay-merge";
 
 export type OutboundEdge = {
   from: string;
@@ -131,7 +136,9 @@ function hubDiscoveryEdges(): OutboundEdge[] {
   }
 
   for (const soft of getSoftware()) {
-    if (!isEntityIndexable({ kind: "software", entity: soft })) continue;
+    // Include IMPROVE/noindex — catalogue hub still UX-links them;
+    // orphan/inbound metrics must match that navigational reality.
+    if (soft.metadata?.status === "draft") continue;
     push("/software/", `/software/${soft.slug}/`, "hub");
     const primary = getCategoryBySlug(soft.primaryCategorySlug);
     if (primary && isEntityIndexable({ kind: "category", entity: primary })) {
@@ -140,12 +147,12 @@ function hubDiscoveryEdges(): OutboundEdge[] {
   }
 
   for (const comparison of getComparisons()) {
-    if (!isEntityIndexable({ kind: "comparison", entity: comparison })) continue;
+    if (comparison.metadata?.status === "draft") continue;
     push("/compare/", `/compare/${comparison.slug}/`, "hub");
   }
 
   for (const g of getGuides()) {
-    if (!isEntityIndexable({ kind: "guide", entity: g })) continue;
+    if (g.metadata.status === "draft") continue;
     push("/guides/", `/guides/${g.slug}/`, "hub");
   }
 
@@ -175,6 +182,8 @@ function hubDiscoveryEdges(): OutboundEdge[] {
   }
 
   for (const { slug } of listFeatureDetailParams()) {
+    // Alias paths rewrite to capabilities — do not emit a second outbound plan.
+    if (isAliasedPath(`/features/${slug}/`)) continue;
     push("/features/", `/features/${slug}/`, "hub");
   }
 
@@ -253,6 +262,32 @@ function edgesFromPlan(plan: PageLinkPlan): OutboundEdge[] {
   }));
 }
 
+/** Batch improve-linking injections (JSON) — optional; never blocks graph build. */
+function injectionOutboundEdges(): OutboundEdge[] {
+  try {
+    const filePath =
+      process.env.SG_LINK_INJECTIONS_PATH ||
+      path.join(process.cwd(), "data/seo/link-injections.json");
+    if (!existsSync(filePath)) return [];
+    const raw = JSON.parse(readFileSync(filePath, "utf8")) as {
+      edges?: Array<{
+        fromPath: string;
+        toPath: string;
+        module: OutboundEdge["module"];
+      }>;
+    };
+    return (raw.edges ?? []).map((e) => ({
+      from: e.fromPath,
+      to: e.toPath,
+      relationship: "related" as const,
+      module: e.module,
+      sourceType: "software" as LinkEntityType,
+    }));
+  } catch {
+    return [];
+  }
+}
+
 let cachedEdges: OutboundEdge[] | null = null;
 
 /**
@@ -269,7 +304,10 @@ export function collectCrmOutboundEdges(options?: {
 
   for (const g of getGuides()) {
     if (g.metadata.status === "draft") continue;
-    edges.push(...edgesFromPlan(buildGuideLinkPlan(g)));
+    // Match production: guides/[slug] merges enrichment overlays before link plan.
+    const overlay = loadGuideEnrichmentOverlay(g.slug);
+    const merged = overlay ? mergeGuideWithOverlay(g, overlay) : g;
+    edges.push(...edgesFromPlan(buildGuideLinkPlan(merged)));
   }
 
   for (const soft of getSoftware()) {
@@ -290,7 +328,7 @@ export function collectCrmOutboundEdges(options?: {
       ...edgesFromPlan(
         buildBestLinkPlan({
           bestSlug: page.slug,
-          categorySlug: page.categorySlug,
+          categorySlug: page.categorySlug ?? "crm",
           title: page.title,
           productSlugs: page.eligibleProductSlugs,
           relatedComparisonSlugs: page.relatedComparisonSlugs,
@@ -314,6 +352,7 @@ export function collectCrmOutboundEdges(options?: {
 
   // Features / requirements — profile-light (avoid full page model builds)
   for (const { slug } of listFeatureDetailParams()) {
+    if (isAliasedPath(`/features/${slug}/`)) continue;
     const profile = getFeatureDetailProfile(slug);
     if (!profile) continue;
     edges.push(
@@ -412,6 +451,57 @@ export function collectCrmOutboundEdges(options?: {
         }),
       ),
     );
+  }
+
+  // Tool / research / industry pages render via buildInjectionOnlyLinkPlan —
+  // include those plans so outbound/orphan graphs match production HTML.
+  for (const tool of getRoutableTools()) {
+    if (!tool.href) continue;
+    edges.push(
+      ...edgesFromPlan(
+        buildInjectionOnlyLinkPlan(identityPath(tool.href), "tool"),
+      ),
+    );
+  }
+  for (const industry of getIndustries()) {
+    if (industry.seo?.indexable !== true) continue;
+    const indPath = identityPath(
+      industry.seo?.canonicalPath || `/industries/${industry.slug}/`,
+    );
+    edges.push(
+      ...edgesFromPlan(buildInjectionOnlyLinkPlan(indPath, "industry")),
+    );
+  }
+  edges.push(
+    ...edgesFromPlan(
+      buildInjectionOnlyLinkPlan("/research/crm-pricing/", "hub"),
+    ),
+  );
+
+  // Injections are merged inside builders via finalizePageLinkPlan.
+  // Keep a defensive pass only for edges that somehow never entered a plan
+  // (unknown source types) — never duplicate same from/module/to.
+  const seen = new Set(
+    edges.map(
+      (e) =>
+        `${identityPath(e.from)}::${e.module}::${normalizePath(e.to)}`,
+    ),
+  );
+  for (const e of injectionOutboundEdges()) {
+    const key = `${identityPath(e.from)}::${e.module}::${normalizePath(e.to)}`;
+    if (seen.has(key)) continue;
+    // Also skip if any module already links from→to (avoids DUPLICATE_NAV
+    // when an older injection used a different module than the builder).
+    const anyKeyPrefix = `${identityPath(e.from)}::`;
+    const already =
+      [...seen].some(
+        (k) =>
+          k.startsWith(anyKeyPrefix) &&
+          k.endsWith(`::${normalizePath(e.to)}`),
+      );
+    if (already) continue;
+    seen.add(key);
+    edges.push(e);
   }
 
   cachedEdges = edges;

@@ -1,4 +1,4 @@
-import type { GuidePage } from "@/domain";
+import type { GuidePageInput } from "@/domain";
 import type { z } from "zod";
 import type { GuideContentBlockSchema } from "@/domain";
 import { tier15GuideScheduledAt } from "@/data/config/publishing/tier-15-lms-course-creation-launch-2026-12-01";
@@ -85,7 +85,7 @@ const blocks: GuideBlockInput[] = [
   },
 ];
 
-function metadata(): GuidePage["metadata"] {
+function metadata(): GuidePageInput["metadata"] {
   return SCHEDULED_AT
     ? {
         status: "scheduled",
@@ -105,7 +105,7 @@ function metadata(): GuidePage["metadata"] {
       };
 }
 
-export const whatIsLmsCourseCreationSoftwareGuide: GuidePage = {
+export const whatIsLmsCourseCreationSoftwareGuide: GuidePageInput = {
   id: "guide-what-is-lms-course-creation-software",
   slug: SLUG,
   title: "What Is LMS & Course Creation Software?",
@@ -133,7 +133,7 @@ export const whatIsLmsCourseCreationSoftwareGuide: GuidePage = {
     "how-to-choose-lms-course-creation-software",
     "lms-course-creation-pricing-guide",
   ],
-  blocks: blocks as GuidePage["blocks"],
+  blocks: blocks as GuidePageInput["blocks"],
   checklist: [],
   sections: [],
   faq: [],
@@ -144,6 +144,6 @@ export const whatIsLmsCourseCreationSoftwareGuide: GuidePage = {
     description:
       "Definition of course LMS, academy commerce, cohort learning, and assessments — distinct from HR onboarding and WFM.",
     canonicalPath: `/guides/${SLUG}/`,
-    indexable: !SCHEDULED_AT,
+    indexable: true,
   },
 };

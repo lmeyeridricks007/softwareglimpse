@@ -179,6 +179,15 @@
       ]
     }
   ],
+  "integrationSupport": [
+    {
+      "integrationSlug": "zapier",
+      "kind": "zapier-style",
+      "sourceIds": [
+        "carepatron-product-official"
+      ]
+    }
+  ],
   "aiCapabilities": [
     {
       "capability": "assistant",
@@ -204,15 +213,6 @@
     {
       "capability": "recommendations",
       "availability": "limited",
-      "sourceIds": [
-        "carepatron-product-official"
-      ]
-    }
-  ],
-  "integrationSupport": [
-    {
-      "integrationSlug": "zapier",
-      "kind": "zapier-style",
       "sourceIds": [
         "carepatron-product-official"
       ]
@@ -255,60 +255,6 @@
       "isEditorial": false
     }
   ],
-  "pricing": {
-    "currency": "USD",
-    "model": "freemium",
-    "hasFreePlan": true,
-    "hasFreeTrial": true,
-    "plans": [
-      {
-        "id": "plan-free",
-        "slug": "free",
-        "name": "Free",
-        "isFree": true,
-        "contactSales": false,
-        "hasFreeTrial": false,
-        "highlighted": false,
-        "rules": [
-          {
-            "kind": "flat",
-            "amount": 0,
-            "currency": "USD",
-            "interval": "month",
-            "amountPeriod": "month"
-          }
-        ],
-        "description": "Free tier for solo practitioners."
-      },
-      {
-        "id": "plan-professional",
-        "slug": "professional",
-        "name": "Professional",
-        "isFree": false,
-        "contactSales": false,
-        "hasFreeTrial": true,
-        "trialDays": 14,
-        "highlighted": true,
-        "rules": [
-          {
-            "kind": "per-seat",
-            "amountPerSeat": 29,
-            "currency": "USD",
-            "interval": "year",
-            "amountPeriod": "month"
-          }
-        ],
-        "description": "Paid tier for growing practices — confirm live pricing."
-      }
-    ],
-    "notes": "Verified 2026-08-19 from carepatron.com/pricing (medium confidence). Free tier published; paid plans scale by practitioners. Affiliate economics excluded.",
-    "verifiedAt": "2026-08-19T12:00:00.000Z",
-    "sourceIds": [
-      "carepatron-pricing-official"
-    ],
-    "startingPriceMonthly": 0,
-    "trialDays": 14
-  },
   "screenshots": [
     {
       "id": "carepatron-shot-homepage",
@@ -321,7 +267,8 @@
       "kind": "vendor-ui",
       "featureIds": [
         "ai-assistance"
-      ]
+      ],
+      "useCaseIds": []
     },
     {
       "id": "carepatron-shot-rcm",
@@ -334,7 +281,8 @@
       "kind": "vendor-ui",
       "featureIds": [
         "ai-assistance"
-      ]
+      ],
+      "useCaseIds": []
     },
     {
       "id": "carepatron-shot-overview",
@@ -347,7 +295,8 @@
       "kind": "vendor-ui",
       "featureIds": [
         "ai-assistance"
-      ]
+      ],
+      "useCaseIds": []
     }
   ],
   "media": [
@@ -396,6 +345,7 @@
       "demonstratedDimensionIds": [],
       "requirementCriterionIds": [],
       "workflowStageIds": [],
+      "mediaContext": "general-workflow",
       "reportedOutcomes": [],
       "placements": [
         "overview",
@@ -403,7 +353,6 @@
         "evidence",
         "use-cases"
       ],
-      "mediaContext": "general-workflow",
       "purpose": "Official Carepatron video for product research pages",
       "demonstratesCaption": "How Carepatron presents the product in an official vendor video.",
       "editorialCommentary": "Official vendor demo — treat as UI/workflow evidence, not SoftwareGlimpse scoring.",
@@ -464,6 +413,7 @@
       "demonstratedDimensionIds": [],
       "requirementCriterionIds": [],
       "workflowStageIds": [],
+      "mediaContext": "general-workflow",
       "reportedOutcomes": [],
       "placements": [
         "overview",
@@ -472,7 +422,6 @@
         "implementation",
         "use-cases"
       ],
-      "mediaContext": "general-workflow",
       "purpose": "Official Carepatron video for product research pages",
       "demonstratesCaption": "How Carepatron presents the product in an official vendor video.",
       "editorialCommentary": "Official vendor demo — treat as UI/workflow evidence, not SoftwareGlimpse scoring.",
@@ -490,11 +439,60 @@
       "status": "published"
     }
   ],
-  "sourceIds": [
-    "carepatron-product-official",
-    "carepatron-pricing-official"
-  ],
-  "notes": "Affiliate gap reconcile 2026-08-19 onboarding enrichment from first-party research 2026-08-19T12:00:00.000Z. handsOnTesting=false. membershipRole=primary. jobCluster=core-hris.",
+  "pricing": {
+    "currency": "USD",
+    "model": "freemium",
+    "hasFreePlan": true,
+    "hasFreeTrial": true,
+    "plans": [
+      {
+        "id": "plan-free",
+        "slug": "free",
+        "name": "Free",
+        "isFree": true,
+        "contactSales": false,
+        "hasFreeTrial": false,
+        "highlighted": false,
+        "rules": [
+          {
+            "kind": "flat",
+            "amount": 0,
+            "currency": "USD",
+            "interval": "month",
+            "amountPeriod": "month"
+          }
+        ],
+        "description": "Free tier for solo practitioners."
+      },
+      {
+        "id": "plan-professional",
+        "slug": "professional",
+        "name": "Professional",
+        "isFree": false,
+        "contactSales": false,
+        "hasFreeTrial": true,
+        "trialDays": 14,
+        "highlighted": true,
+        "rules": [
+          {
+            "kind": "per-seat",
+            "amountPerSeat": 29,
+            "currency": "USD",
+            "interval": "year",
+            "amountPeriod": "month"
+          }
+        ],
+        "description": "Paid tier for growing practices — confirm live pricing."
+      }
+    ],
+    "notes": "Verified 2026-08-19 from carepatron.com/pricing (medium confidence). Free tier published; paid plans scale by practitioners. Affiliate economics excluded.",
+    "verifiedAt": "2026-09-08T21:28:58.324Z",
+    "sourceIds": [
+      "carepatron-pricing-official"
+    ],
+    "startingPriceMonthly": 0,
+    "trialDays": 14
+  },
   "domainCheckedAt": {
     "identity": "2026-08-19T12:00:00.000Z",
     "pricing": "2026-08-19T12:00:00.000Z",
@@ -508,5 +506,10 @@
     "limits": "2026-08-19T12:00:00.000Z",
     "security-compliance": "2026-08-19T12:00:00.000Z"
   },
-  "updatedAt": "2026-08-19T15:20:00.000Z"
+  "sourceIds": [
+    "carepatron-product-official",
+    "carepatron-pricing-official"
+  ],
+  "updatedAt": "2026-08-19T15:20:00.000Z",
+  "notes": "Affiliate gap reconcile 2026-08-19 onboarding enrichment from first-party research 2026-08-19T12:00:00.000Z. handsOnTesting=false. membershipRole=primary. jobCluster=core-hris."
 }

@@ -1,0 +1,339 @@
+{
+  "slug": "plesk",
+  "updatedAt": "2026-09-07T22:31:21.728Z",
+  "version": "1.0.0",
+  "fieldAudit": {
+    "slug": "plesk",
+    "checkedAt": "2026-09-07T22:31:21.727Z",
+    "items": [
+      {
+        "field": "name",
+        "status": "PASS",
+        "detail": "Name: Plesk",
+        "source": "seed"
+      },
+      {
+        "field": "product_status",
+        "status": "PASS",
+        "detail": "productLifecycle=active",
+        "source": "seed"
+      },
+      {
+        "field": "canonical_vendor",
+        "status": "UNKNOWN",
+        "detail": "Company/vendor not documented",
+        "source": "none"
+      },
+      {
+        "field": "category",
+        "status": "PASS",
+        "detail": "primaryCategorySlug=web-hosting",
+        "source": "seed"
+      },
+      {
+        "field": "description",
+        "status": "PASS",
+        "detail": "Description present (Hosting control panel for web/server administration — Web Admin Edition from $16…)",
+        "source": "seed"
+      },
+      {
+        "field": "target_audience",
+        "status": "PASS",
+        "detail": "Sizes=3, teams=1, assessment bestFor=3",
+        "source": "assessment"
+      },
+      {
+        "field": "use_cases",
+        "status": "PASS",
+        "detail": "useCaseSlugs=1",
+        "source": "seed"
+      },
+      {
+        "field": "capabilities",
+        "status": "PASS",
+        "detail": "featureRatings=0, enrichment features=14",
+        "source": "enrichment"
+      },
+      {
+        "field": "pricing",
+        "status": "PASS",
+        "detail": "Pricing envelope present",
+        "source": "enrichment"
+      },
+      {
+        "field": "plans",
+        "status": "PASS",
+        "detail": "plans=3",
+        "source": "enrichment"
+      },
+      {
+        "field": "free_plan",
+        "status": "PASS",
+        "detail": "No free plan in documented plans (explicit absence)",
+        "source": "enrichment"
+      },
+      {
+        "field": "trial",
+        "status": "PASS",
+        "detail": "Trial documented on plans/pricing",
+        "source": "enrichment"
+      },
+      {
+        "field": "integrations",
+        "status": "PASS",
+        "detail": "integrationSlugs=0, enrichment=3",
+        "source": "enrichment"
+      },
+      {
+        "field": "alternatives",
+        "status": "PASS",
+        "detail": "alternativeSlugs=1",
+        "source": "seed"
+      },
+      {
+        "field": "competitors",
+        "status": "PASS",
+        "detail": "competitorSlugs=3",
+        "source": "seed"
+      },
+      {
+        "field": "affiliate",
+        "status": "PASS",
+        "detail": "Affiliate enabled with tracking URL",
+        "source": "seed"
+      },
+      {
+        "field": "source_provenance",
+        "status": "PASS",
+        "detail": "seed sources=0, enrichment sourceIds=2",
+        "source": "enrichment"
+      },
+      {
+        "field": "verification_date",
+        "status": "PASS",
+        "detail": "Latest verification/research signal: 2026-08-18T09:30:00.000Z",
+        "source": "enrichment"
+      }
+    ],
+    "passCount": 17,
+    "partialCount": 0,
+    "missingCount": 0,
+    "unknownCount": 1,
+    "score": 94
+  },
+  "decisionHub": {
+    "whatItIs": "Plesk is a hosting and server control panel for managing websites, domains, mail, and WordPress/docker workloads on Linux/Windows servers. Web Admin Edition publishes from about $16.99/month for VPS-style licensing (edition and server-type dependent). Web Pro and Web Host editions add reseller/multi-domain depth at higher price points. Per-server licence model — not per developer seat. Affiliate via aff-plesk.",
+    "bestFor": [
+      "Web agencies and hosts administering sites on VPS/dedicated servers",
+      "Admins wanting GUI panel versus manual LAMP/stack configuration",
+      "Resellers needing Web Host multi-customer management",
+      "micro / operations: Plesk fit for micro operations teams in the hosting-operations job cluster, from first-party positioning and IT Wave-1 research.",
+      "small-business / operations: Plesk fit for small-business operations teams in the hosting-operations job cluster, from first-party positioning and IT Wave-1 research.",
+      "mid-market / operations: Plesk fit for mid-market operations teams in the hosting-operations job cluster, from first-party positioning and IT Wave-1 research."
+    ],
+    "notIdealFor": [
+      "Developer teams buying source control (GitHub)",
+      "SRE observability purchases (Datadog)",
+      "Web data/proxy collection jobs (Bright Data)",
+      "Per-server licence math — not comparable to per-seat DevOps or per-agent ITSM",
+      "Not observability, ITSM, or source control",
+      "Edition/server-type pricing matrix requires live confirmation"
+    ],
+    "coreCapabilities": [
+      "hosting panel",
+      "hosting operations"
+    ],
+    "pricingSummary": "3 documented plans · entry paid: Web Admin Edition · trial documented on at least one plan",
+    "keyTradeoffs": [
+      "Per-server licence math — not comparable to per-seat DevOps or per-agent ITSM",
+      "Not observability, ITSM, or source control",
+      "Edition/server-type pricing matrix requires live confirmation",
+      "Limited AI/automation versus developer platforms",
+      "Landscape-adjacent only vs web-data platforms like Bright Data"
+    ],
+    "alternatives": [
+      {
+        "slug": "bright-data",
+        "name": "Bright Data"
+      },
+      {
+        "slug": "cpanel",
+        "name": "cPanel"
+      },
+      {
+        "slug": "directadmin",
+        "name": "DirectAdmin"
+      },
+      {
+        "slug": "cloudways",
+        "name": "Cloudways"
+      }
+    ],
+    "importantComparisons": [
+      {
+        "slug": "bright-data-vs-plesk",
+        "title": "Plesk vs Bright Data",
+        "href": "/compare/bright-data-vs-plesk/"
+      },
+      {
+        "slug": "cpanel-vs-plesk",
+        "title": "cPanel vs Plesk",
+        "href": "/compare/cpanel-vs-plesk/"
+      },
+      {
+        "slug": "cloudways-vs-plesk",
+        "title": "Cloudways vs Plesk",
+        "href": "/compare/cloudways-vs-plesk/"
+      },
+      {
+        "slug": "plesk-vs-wp-engine",
+        "title": "Plesk vs WP Engine",
+        "href": "/compare/plesk-vs-wp-engine/"
+      },
+      {
+        "slug": "directadmin-vs-plesk",
+        "title": "DirectAdmin vs Plesk",
+        "href": "/compare/directadmin-vs-plesk/"
+      },
+      {
+        "slug": "kinsta-vs-plesk",
+        "title": "Kinsta vs Plesk",
+        "href": "/compare/kinsta-vs-plesk/"
+      }
+    ],
+    "relevantGuides": [
+      {
+        "slug": "how-web-hosting-software-works",
+        "title": "How Web Hosting & Server Management Software Works",
+        "href": "/guides/how-web-hosting-software-works/"
+      },
+      {
+        "slug": "types-of-web-hosting-software",
+        "title": "Types of Web Hosting & Server Management Software",
+        "href": "/guides/types-of-web-hosting-software/"
+      },
+      {
+        "slug": "web-hosting-vs-it-development-software",
+        "title": "Web Hosting & Server Management Software vs IT & Development Software",
+        "href": "/guides/web-hosting-vs-it-development-software/"
+      },
+      {
+        "slug": "web-hosting-requirements-guide",
+        "title": "Web Hosting & Server Management Software Requirements Guide",
+        "href": "/guides/web-hosting-requirements-guide/"
+      },
+      {
+        "slug": "web-hosting-evaluation-guide",
+        "title": "Web Hosting & Server Management Software Evaluation Guide",
+        "href": "/guides/web-hosting-evaluation-guide/"
+      },
+      {
+        "slug": "what-is-plesk",
+        "title": "What Is Plesk?",
+        "href": "/guides/what-is-plesk/"
+      }
+    ],
+    "evidenceState": "Research/data-based (no completed hands-on test) · Latest verification/research signal: 2026-08-18T09:30:00.000Z · Editorial assessment: approved",
+    "nextDecisionStep": "Compare against peers: Plesk vs Bright Data",
+    "missingSections": [
+      "canonical_vendor"
+    ]
+  },
+  "dependents": [
+    {
+      "kind": "guide",
+      "slug": "how-web-hosting-software-works",
+      "path": "/guides/how-web-hosting-software-works/"
+    },
+    {
+      "kind": "guide",
+      "slug": "types-of-web-hosting-software",
+      "path": "/guides/types-of-web-hosting-software/"
+    },
+    {
+      "kind": "guide",
+      "slug": "web-hosting-vs-it-development-software",
+      "path": "/guides/web-hosting-vs-it-development-software/"
+    },
+    {
+      "kind": "guide",
+      "slug": "web-hosting-requirements-guide",
+      "path": "/guides/web-hosting-requirements-guide/"
+    },
+    {
+      "kind": "guide",
+      "slug": "web-hosting-evaluation-guide",
+      "path": "/guides/web-hosting-evaluation-guide/"
+    },
+    {
+      "kind": "guide",
+      "slug": "what-is-plesk",
+      "path": "/guides/what-is-plesk/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "bright-data-vs-plesk",
+      "path": "/compare/bright-data-vs-plesk/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "cpanel-vs-plesk",
+      "path": "/compare/cpanel-vs-plesk/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "cloudways-vs-plesk",
+      "path": "/compare/cloudways-vs-plesk/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "plesk-vs-wp-engine",
+      "path": "/compare/plesk-vs-wp-engine/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "directadmin-vs-plesk",
+      "path": "/compare/directadmin-vs-plesk/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "kinsta-vs-plesk",
+      "path": "/compare/kinsta-vs-plesk/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "plesk-vs-siteground",
+      "path": "/compare/plesk-vs-siteground/"
+    },
+    {
+      "kind": "alternatives",
+      "slug": "plesk",
+      "path": "/alternatives/plesk/"
+    },
+    {
+      "kind": "pricing",
+      "slug": "plesk",
+      "path": "/software/plesk/pricing/"
+    },
+    {
+      "kind": "best",
+      "slug": "web-hosting-software",
+      "path": "/best/web-hosting-software/"
+    },
+    {
+      "kind": "tools",
+      "slug": "web-hosting-cost-calculator",
+      "path": "/tools/web-hosting-cost-calculator/"
+    }
+  ],
+  "dependentsNeedingRefresh": [],
+  "remediation": [
+    "verify:canonical_vendor"
+  ],
+  "notes": [
+    "fieldAudit score=94",
+    "decisionHub bestFor=6 notIdeal=6",
+    "dependents=17"
+  ],
+  "materiallyImproved": false
+}

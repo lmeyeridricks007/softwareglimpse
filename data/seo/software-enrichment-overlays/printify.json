@@ -1,0 +1,305 @@
+{
+  "slug": "printify",
+  "updatedAt": "2026-09-07T22:31:21.930Z",
+  "version": "1.0.0",
+  "fieldAudit": {
+    "slug": "printify",
+    "checkedAt": "2026-09-07T22:31:21.929Z",
+    "items": [
+      {
+        "field": "name",
+        "status": "PASS",
+        "detail": "Name: Printify",
+        "source": "seed"
+      },
+      {
+        "field": "product_status",
+        "status": "PASS",
+        "detail": "productLifecycle=active",
+        "source": "seed"
+      },
+      {
+        "field": "canonical_vendor",
+        "status": "UNKNOWN",
+        "detail": "Company/vendor not documented",
+        "source": "none"
+      },
+      {
+        "field": "category",
+        "status": "PASS",
+        "detail": "primaryCategorySlug=dropshipping-pod",
+        "source": "seed"
+      },
+      {
+        "field": "description",
+        "status": "PASS",
+        "detail": "Description present (Print-on-demand marketplace — Free $0 (5 stores); Premium $24.99/mo annual ($39 …)",
+        "source": "seed"
+      },
+      {
+        "field": "target_audience",
+        "status": "PASS",
+        "detail": "Sizes=3, teams=2, assessment bestFor=3",
+        "source": "assessment"
+      },
+      {
+        "field": "use_cases",
+        "status": "PASS",
+        "detail": "useCaseSlugs=2",
+        "source": "seed"
+      },
+      {
+        "field": "capabilities",
+        "status": "PASS",
+        "detail": "featureRatings=0, enrichment features=14",
+        "source": "enrichment"
+      },
+      {
+        "field": "pricing",
+        "status": "PASS",
+        "detail": "Pricing envelope present",
+        "source": "enrichment"
+      },
+      {
+        "field": "plans",
+        "status": "PASS",
+        "detail": "plans=3",
+        "source": "enrichment"
+      },
+      {
+        "field": "free_plan",
+        "status": "PASS",
+        "detail": "Free plan documented",
+        "source": "enrichment"
+      },
+      {
+        "field": "trial",
+        "status": "UNKNOWN",
+        "detail": "Trial not explicitly documented — do not assume none",
+        "source": "none"
+      },
+      {
+        "field": "integrations",
+        "status": "PASS",
+        "detail": "integrationSlugs=0, enrichment=5",
+        "source": "enrichment"
+      },
+      {
+        "field": "alternatives",
+        "status": "PASS",
+        "detail": "alternativeSlugs=3",
+        "source": "seed"
+      },
+      {
+        "field": "competitors",
+        "status": "PASS",
+        "detail": "competitorSlugs=3",
+        "source": "seed"
+      },
+      {
+        "field": "affiliate",
+        "status": "PASS",
+        "detail": "Affiliate enabled with tracking URL",
+        "source": "seed"
+      },
+      {
+        "field": "source_provenance",
+        "status": "PASS",
+        "detail": "seed sources=0, enrichment sourceIds=2",
+        "source": "enrichment"
+      },
+      {
+        "field": "verification_date",
+        "status": "PASS",
+        "detail": "Latest verification/research signal: 2026-08-18T14:00:00.000Z",
+        "source": "enrichment"
+      }
+    ],
+    "passCount": 16,
+    "partialCount": 0,
+    "missingCount": 0,
+    "unknownCount": 2,
+    "score": 89
+  },
+  "decisionHub": {
+    "whatItIs": "Printify is a print-on-demand marketplace connecting stores to a network of print providers — a POD sourcing layer, not a checkout platform (Pop-Up Store is a limited storefront). Plans (2026-08-18): Free $0 (up to 5 stores); Premium from $39/mo or $24.99/mo billed annually ($299/yr); Enterprise quote. February 2026 raised monthly Premium to $39. Product print and shipping costs are separate. POD landscape peer with Printful — Spocket keeps the dropshipping-sourcing cluster award. Research grounded 2026-08-18 from printify.com/pricing.",
+    "bestFor": [
+      "Merchants who want to compare print providers instead of a single in-house network",
+      "Shopify/Woo/Etsy stores adding POD without inventory",
+      "Operators optimizing print cost versus Printful’s branded in-house path",
+      "solo / operations: Printify fit for solo operations teams in the dropshipping-sourcing job cluster, from first-party positioning and Ecommerce Priority-2 research.",
+      "micro / operations: Printify fit for micro operations teams in the dropshipping-sourcing job cluster, from first-party positioning and Ecommerce Priority-2 research.",
+      "small-business / operations: Printify fit for small-business operations teams in the dropshipping-sourcing job cluster, from first-party positioning and Ecommerce Priority-2 research."
+    ],
+    "notIdealFor": [
+      "Merchants who still need a cart/checkout platform",
+      "Brands that want a single in-house print SLA (see Printful)",
+      "General merchandise dropshippers (see Spocket / AliDrop)",
+      "Not a checkout platform — Shopify/Woo/Etsy/etc. required (Pop-Up Store is limited)",
+      "Print quality and SLAs vary by print provider in the marketplace",
+      "Free plan caps stores (5); Premium monthly rose to $39 in February 2026"
+    ],
+    "coreCapabilities": [
+      "shipping fulfillment",
+      "marketplace channels",
+      "dropshipping sourcing",
+      "app extensions",
+      "online storefront"
+    ],
+    "pricingSummary": "3 documented plans · 1 free · entry paid: Premium",
+    "keyTradeoffs": [
+      "Not a checkout platform — Shopify/Woo/Etsy/etc. required (Pop-Up Store is limited)",
+      "Print quality and SLAs vary by print provider in the marketplace",
+      "Free plan caps stores (5); Premium monthly rose to $39 in February 2026",
+      "No retail POS — Printify is POD sourcing/fulfillment, not omnichannel commerce",
+      "Print-on-demand marketplace — connect your store to a global printer network and sell custom products without inventory. (audience: Merchants who want to compare print providers instead of a single in-house network, Shopify/Woo/Etsy stores adding POD without inventory)"
+    ],
+    "alternatives": [
+      {
+        "slug": "printful",
+        "name": "Printful"
+      },
+      {
+        "slug": "spocket",
+        "name": "Spocket"
+      },
+      {
+        "slug": "alidrop",
+        "name": "AliDrop"
+      }
+    ],
+    "importantComparisons": [
+      {
+        "slug": "printful-vs-printify",
+        "title": "Printful vs Printify",
+        "href": "/compare/printful-vs-printify/"
+      },
+      {
+        "slug": "printify-vs-spocket",
+        "title": "Printify vs Spocket",
+        "href": "/compare/printify-vs-spocket/"
+      },
+      {
+        "slug": "alidrop-vs-printify",
+        "title": "Printify vs AliDrop",
+        "href": "/compare/alidrop-vs-printify/"
+      }
+    ],
+    "relevantGuides": [
+      {
+        "slug": "how-dropshipping-pod-software-works",
+        "title": "How Dropshipping & POD Software Works",
+        "href": "/guides/how-dropshipping-pod-software-works/"
+      },
+      {
+        "slug": "types-of-dropshipping-pod-software",
+        "title": "Types of Dropshipping & POD Software",
+        "href": "/guides/types-of-dropshipping-pod-software/"
+      },
+      {
+        "slug": "dropshipping-pod-vs-ecommerce-software",
+        "title": "Dropshipping & POD Software vs Ecommerce Software",
+        "href": "/guides/dropshipping-pod-vs-ecommerce-software/"
+      },
+      {
+        "slug": "dropshipping-pod-requirements-guide",
+        "title": "Dropshipping & POD Software Requirements Guide",
+        "href": "/guides/dropshipping-pod-requirements-guide/"
+      },
+      {
+        "slug": "dropshipping-pod-evaluation-guide",
+        "title": "Dropshipping & POD Software Evaluation Guide",
+        "href": "/guides/dropshipping-pod-evaluation-guide/"
+      },
+      {
+        "slug": "what-is-printify",
+        "title": "What Is Printify?",
+        "href": "/guides/what-is-printify/"
+      }
+    ],
+    "evidenceState": "Research/data-based (no completed hands-on test) · Latest verification/research signal: 2026-08-18T14:00:00.000Z · Editorial assessment: approved",
+    "nextDecisionStep": "Compare against peers: Printful vs Printify",
+    "missingSections": [
+      "canonical_vendor",
+      "trial"
+    ]
+  },
+  "dependents": [
+    {
+      "kind": "guide",
+      "slug": "how-dropshipping-pod-software-works",
+      "path": "/guides/how-dropshipping-pod-software-works/"
+    },
+    {
+      "kind": "guide",
+      "slug": "types-of-dropshipping-pod-software",
+      "path": "/guides/types-of-dropshipping-pod-software/"
+    },
+    {
+      "kind": "guide",
+      "slug": "dropshipping-pod-vs-ecommerce-software",
+      "path": "/guides/dropshipping-pod-vs-ecommerce-software/"
+    },
+    {
+      "kind": "guide",
+      "slug": "dropshipping-pod-requirements-guide",
+      "path": "/guides/dropshipping-pod-requirements-guide/"
+    },
+    {
+      "kind": "guide",
+      "slug": "dropshipping-pod-evaluation-guide",
+      "path": "/guides/dropshipping-pod-evaluation-guide/"
+    },
+    {
+      "kind": "guide",
+      "slug": "what-is-printify",
+      "path": "/guides/what-is-printify/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "printful-vs-printify",
+      "path": "/compare/printful-vs-printify/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "printify-vs-spocket",
+      "path": "/compare/printify-vs-spocket/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "alidrop-vs-printify",
+      "path": "/compare/alidrop-vs-printify/"
+    },
+    {
+      "kind": "alternatives",
+      "slug": "printify",
+      "path": "/alternatives/printify/"
+    },
+    {
+      "kind": "pricing",
+      "slug": "printify",
+      "path": "/software/printify/pricing/"
+    },
+    {
+      "kind": "best",
+      "slug": "dropshipping-pod-software",
+      "path": "/best/dropshipping-pod-software/"
+    },
+    {
+      "kind": "tools",
+      "slug": "dropshipping-pod-cost-calculator",
+      "path": "/tools/dropshipping-pod-cost-calculator/"
+    }
+  ],
+  "dependentsNeedingRefresh": [],
+  "remediation": [
+    "verify:canonical_vendor",
+    "verify:trial"
+  ],
+  "notes": [
+    "fieldAudit score=89",
+    "decisionHub bestFor=6 notIdeal=6",
+    "dependents=13"
+  ],
+  "materiallyImproved": false
+}

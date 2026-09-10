@@ -1,6 +1,7 @@
 import type { ComparisonWinnerKind, CurrencyCode } from "@/domain";
 import type { ProductScreenshot } from "@/components/software/product-screenshot-gallery";
 import type { ComparisonPageTabId } from "./tabs";
+import type { ComparisonDecisionNarrative } from "./decision-narrative";
 
 export type QualitativeStrength =
   | "stronger"
@@ -177,4 +178,6 @@ export type ComparisonPageModel = {
   finderHref: string;
   finderLabel: string;
   costCalculatorHref: string;
+  /** Pair-specific decision narrative — omit empty sections at render time. */
+  decision: ComparisonDecisionNarrative;
 };

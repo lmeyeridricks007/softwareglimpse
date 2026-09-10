@@ -1,0 +1,563 @@
+{
+  "slug": "appdynamics",
+  "updatedAt": "2026-09-08T21:57:41.726Z",
+  "version": "1.0.0",
+  "fieldAudit": {
+    "slug": "appdynamics",
+    "checkedAt": "2026-09-08T21:57:41.725Z",
+    "items": [
+      {
+        "field": "name",
+        "status": "PASS",
+        "detail": "Name: AppDynamics",
+        "source": "seed"
+      },
+      {
+        "field": "product_status",
+        "status": "PASS",
+        "detail": "productLifecycle=active",
+        "source": "seed"
+      },
+      {
+        "field": "canonical_vendor",
+        "status": "PASS",
+        "detail": "Vendor: Cisco Systems, Inc. / AppDynamics",
+        "source": "seed"
+      },
+      {
+        "field": "category",
+        "status": "PASS",
+        "detail": "primaryCategorySlug=it-development",
+        "source": "seed"
+      },
+      {
+        "field": "description",
+        "status": "PASS",
+        "detail": "Description present (Cisco APM / observability — Infrastructure from ~$6/vCPU/mo; Premium (infra+apps…)",
+        "source": "seed"
+      },
+      {
+        "field": "target_audience",
+        "status": "PASS",
+        "detail": "Sizes=2, teams=2, assessment bestFor=3",
+        "source": "assessment"
+      },
+      {
+        "field": "use_cases",
+        "status": "PASS",
+        "detail": "useCaseSlugs=1",
+        "source": "seed"
+      },
+      {
+        "field": "capabilities",
+        "status": "PASS",
+        "detail": "featureRatings=0, enrichment features=16",
+        "source": "enrichment"
+      },
+      {
+        "field": "pricing",
+        "status": "PASS",
+        "detail": "Pricing envelope present",
+        "source": "enrichment"
+      },
+      {
+        "field": "plans",
+        "status": "PASS",
+        "detail": "plans=4",
+        "source": "enrichment"
+      },
+      {
+        "field": "free_plan",
+        "status": "PASS",
+        "detail": "No free plan in documented plans (explicit absence)",
+        "source": "enrichment"
+      },
+      {
+        "field": "trial",
+        "status": "UNKNOWN",
+        "detail": "Trial not explicitly documented — do not assume none",
+        "source": "none"
+      },
+      {
+        "field": "integrations",
+        "status": "PASS",
+        "detail": "integrationSlugs=0, enrichment=4",
+        "source": "enrichment"
+      },
+      {
+        "field": "alternatives",
+        "status": "PASS",
+        "detail": "alternativeSlugs=2",
+        "source": "seed"
+      },
+      {
+        "field": "competitors",
+        "status": "PASS",
+        "detail": "competitorSlugs=5",
+        "source": "seed"
+      },
+      {
+        "field": "affiliate",
+        "status": "PASS",
+        "detail": "No affiliate relationship (explicit)",
+        "source": "seed"
+      },
+      {
+        "field": "source_provenance",
+        "status": "PASS",
+        "detail": "seed sources=0, enrichment sourceIds=3",
+        "source": "enrichment"
+      },
+      {
+        "field": "verification_date",
+        "status": "PASS",
+        "detail": "Latest verification/research signal: 2026-08-18T22:00:00.000Z",
+        "source": "enrichment"
+      }
+    ],
+    "passCount": 17,
+    "partialCount": 0,
+    "missingCount": 0,
+    "unknownCount": 1,
+    "score": 94
+  },
+  "decisionHub": {
+    "whatItIs": "AppDynamics is Cisco’s application-performance and observability platform (APM, infra, business iQ). Observability Cloud-style public list: Infrastructure from about $6/vCPU/month; Premium (infrastructure plus applications) from $33/vCPU/month billed annually; Enterprise $50/vCPU. startingPriceMonthly $33 is the APM-relevant Premium floor — not the $6 infra-only tile. Buying is often a Cisco Enterprise Agreement quote. Same observability-monitoring cluster as Datadog — Datadog remains the award (8.6); this entity does not outrank it. Distinct from Honeycomb’s high-cardinality event/trace specialist SKU.",
+    "bestFor": [
+      "Cisco-aligned estates that will model vCPU Premium $33 (not $6 infra-only) as APM TCO",
+      "APM buyers comparing AppDynamics to Dynatrace DPS and Datadog modules",
+      "Teams already in a Cisco EA who will not self-serve Datadog tiles",
+      "mid-market / engineering: AppDynamics fit for mid-market engineering teams in the observability-monitoring job cluster, from first-party positioning and IT Tier-B + ITSM SMB research.",
+      "enterprise / engineering: AppDynamics fit for enterprise engineering teams in the observability-monitoring job cluster, from first-party positioning and IT Tier-B + ITSM SMB research."
+    ],
+    "notIdealFor": [
+      "SMBs that need Datadog’s published $15/host Infrastructure Pro tile",
+      "High-cardinality event specialists (Honeycomb)",
+      "ITSM or on-call-only purchases",
+      "Does not outrank Datadog (8.6)",
+      "$6/vCPU Infrastructure is not the APM-relevant floor — Premium $33 is",
+      "Cisco EA quotes often replace public vCPU tiles"
+    ],
+    "coreCapabilities": [
+      "incident management",
+      "infrastructure monitoring",
+      "apm tracing",
+      "log management",
+      "cicd actions",
+      "itsm ai",
+      "dev ai",
+      "oncall paging"
+    ],
+    "pricingSummary": "4 documented plans · entry paid: Infrastructure (per vCPU)",
+    "keyTradeoffs": [
+      "Does not outrank Datadog (8.6)",
+      "$6/vCPU Infrastructure is not the APM-relevant floor — Premium $33 is",
+      "Cisco EA quotes often replace public vCPU tiles",
+      "Medium pricing confidence versus Datadog’s published host SKU",
+      "Not ITSM, git, hosting panel, or managed hosting"
+    ],
+    "alternatives": [
+      {
+        "slug": "datadog",
+        "name": "Datadog"
+      },
+      {
+        "slug": "dynatrace",
+        "name": "Dynatrace"
+      },
+      {
+        "slug": "new-relic",
+        "name": "New Relic"
+      },
+      {
+        "slug": "splunk",
+        "name": "Splunk Observability Cloud"
+      },
+      {
+        "slug": "honeycomb",
+        "name": "Honeycomb"
+      }
+    ],
+    "importantComparisons": [
+      {
+        "slug": "appdynamics-vs-datadog",
+        "title": "AppDynamics vs Datadog",
+        "href": "/compare/appdynamics-vs-datadog/"
+      },
+      {
+        "slug": "appdynamics-vs-dynatrace",
+        "title": "AppDynamics vs Dynatrace",
+        "href": "/compare/appdynamics-vs-dynatrace/"
+      },
+      {
+        "slug": "apify-vs-appdynamics",
+        "title": "Apify vs AppDynamics",
+        "href": "/compare/apify-vs-appdynamics/"
+      },
+      {
+        "slug": "appdynamics-vs-azure-devops",
+        "title": "AppDynamics vs Azure DevOps",
+        "href": "/compare/appdynamics-vs-azure-devops/"
+      },
+      {
+        "slug": "appdynamics-vs-bitbucket",
+        "title": "AppDynamics vs Bitbucket Cloud",
+        "href": "/compare/appdynamics-vs-bitbucket/"
+      },
+      {
+        "slug": "appdynamics-vs-bmc-helix",
+        "title": "AppDynamics vs BMC Helix ITSM",
+        "href": "/compare/appdynamics-vs-bmc-helix/"
+      }
+    ],
+    "relevantGuides": [
+      {
+        "slug": "how-it-development-software-works",
+        "title": "How IT And Development Software Works",
+        "href": "/guides/how-it-development-software-works/"
+      },
+      {
+        "slug": "types-of-it-development-software",
+        "title": "Types of IT And Development Software",
+        "href": "/guides/types-of-it-development-software/"
+      },
+      {
+        "slug": "it-development-vs-project-management",
+        "title": "IT And Development Software vs Project Management Software",
+        "href": "/guides/it-development-vs-project-management/"
+      },
+      {
+        "slug": "web-hosting-vs-it-development-software",
+        "title": "Web Hosting & Server Management Software vs IT & Development Software",
+        "href": "/guides/web-hosting-vs-it-development-software/"
+      },
+      {
+        "slug": "itsm-vs-it-development-software",
+        "title": "ITSM Software vs IT & Development Software",
+        "href": "/guides/itsm-vs-it-development-software/"
+      },
+      {
+        "slug": "appdynamics-implementation",
+        "title": "AppDynamics Implementation: 30/60/90 IT Rollout That Sticks",
+        "href": "/guides/appdynamics-implementation/"
+      }
+    ],
+    "evidenceState": "Research/data-based (no completed hands-on test) · Latest verification/research signal: 2026-08-18T22:00:00.000Z · Editorial assessment: approved",
+    "nextDecisionStep": "Compare against peers: AppDynamics vs Datadog",
+    "missingSections": [
+      "trial"
+    ]
+  },
+  "dependents": [
+    {
+      "kind": "guide",
+      "slug": "how-it-development-software-works",
+      "path": "/guides/how-it-development-software-works/"
+    },
+    {
+      "kind": "guide",
+      "slug": "types-of-it-development-software",
+      "path": "/guides/types-of-it-development-software/"
+    },
+    {
+      "kind": "guide",
+      "slug": "it-development-vs-project-management",
+      "path": "/guides/it-development-vs-project-management/"
+    },
+    {
+      "kind": "guide",
+      "slug": "web-hosting-vs-it-development-software",
+      "path": "/guides/web-hosting-vs-it-development-software/"
+    },
+    {
+      "kind": "guide",
+      "slug": "itsm-vs-it-development-software",
+      "path": "/guides/itsm-vs-it-development-software/"
+    },
+    {
+      "kind": "guide",
+      "slug": "appdynamics-implementation",
+      "path": "/guides/appdynamics-implementation/"
+    },
+    {
+      "kind": "guide",
+      "slug": "appdynamics-migration",
+      "path": "/guides/appdynamics-migration/"
+    },
+    {
+      "kind": "guide",
+      "slug": "appdynamics-setup",
+      "path": "/guides/appdynamics-setup/"
+    },
+    {
+      "kind": "guide",
+      "slug": "appdynamics-plans",
+      "path": "/guides/appdynamics-plans/"
+    },
+    {
+      "kind": "guide",
+      "slug": "is-appdynamics-worth-it",
+      "path": "/guides/is-appdynamics-worth-it/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "appdynamics-vs-datadog",
+      "path": "/compare/appdynamics-vs-datadog/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "appdynamics-vs-dynatrace",
+      "path": "/compare/appdynamics-vs-dynatrace/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "apify-vs-appdynamics",
+      "path": "/compare/apify-vs-appdynamics/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "appdynamics-vs-azure-devops",
+      "path": "/compare/appdynamics-vs-azure-devops/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "appdynamics-vs-bitbucket",
+      "path": "/compare/appdynamics-vs-bitbucket/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "appdynamics-vs-bmc-helix",
+      "path": "/compare/appdynamics-vs-bmc-helix/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "appdynamics-vs-bright-data",
+      "path": "/compare/appdynamics-vs-bright-data/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "appdynamics-vs-buildkite",
+      "path": "/compare/appdynamics-vs-buildkite/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "appdynamics-vs-chronosphere",
+      "path": "/compare/appdynamics-vs-chronosphere/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "appdynamics-vs-circleci",
+      "path": "/compare/appdynamics-vs-circleci/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "appdynamics-vs-cloudways",
+      "path": "/compare/appdynamics-vs-cloudways/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "appdynamics-vs-coralogix",
+      "path": "/compare/appdynamics-vs-coralogix/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "appdynamics-vs-cpanel",
+      "path": "/compare/appdynamics-vs-cpanel/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "appdynamics-vs-directadmin",
+      "path": "/compare/appdynamics-vs-directadmin/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "appdynamics-vs-elastic-observability",
+      "path": "/compare/appdynamics-vs-elastic-observability/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "appdynamics-vs-firehydrant",
+      "path": "/compare/appdynamics-vs-firehydrant/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "appdynamics-vs-fly-io",
+      "path": "/compare/appdynamics-vs-fly-io/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "appdynamics-vs-github",
+      "path": "/compare/appdynamics-vs-github/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "appdynamics-vs-gitlab",
+      "path": "/compare/appdynamics-vs-gitlab/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "appdynamics-vs-grafana-cloud",
+      "path": "/compare/appdynamics-vs-grafana-cloud/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "appdynamics-vs-haloitsm",
+      "path": "/compare/appdynamics-vs-haloitsm/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "appdynamics-vs-heroku",
+      "path": "/compare/appdynamics-vs-heroku/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "appdynamics-vs-honeycomb",
+      "path": "/compare/appdynamics-vs-honeycomb/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "appdynamics-vs-incident-io",
+      "path": "/compare/appdynamics-vs-incident-io/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "appdynamics-vs-iproyal",
+      "path": "/compare/appdynamics-vs-iproyal/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "appdynamics-vs-ivanti",
+      "path": "/compare/appdynamics-vs-ivanti/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "appdynamics-vs-jira-service-management",
+      "path": "/compare/appdynamics-vs-jira-service-management/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "appdynamics-vs-kinsta",
+      "path": "/compare/appdynamics-vs-kinsta/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "appdynamics-vs-manageengine-servicedesk-plus",
+      "path": "/compare/appdynamics-vs-manageengine-servicedesk-plus/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "appdynamics-vs-new-relic",
+      "path": "/compare/appdynamics-vs-new-relic/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "appdynamics-vs-oxylabs",
+      "path": "/compare/appdynamics-vs-oxylabs/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "appdynamics-vs-pagerduty",
+      "path": "/compare/appdynamics-vs-pagerduty/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "appdynamics-vs-railway",
+      "path": "/compare/appdynamics-vs-railway/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "appdynamics-vs-render",
+      "path": "/compare/appdynamics-vs-render/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "appdynamics-vs-rootly",
+      "path": "/compare/appdynamics-vs-rootly/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "appdynamics-vs-scraperapi",
+      "path": "/compare/appdynamics-vs-scraperapi/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "appdynamics-vs-sentry",
+      "path": "/compare/appdynamics-vs-sentry/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "appdynamics-vs-servicenow",
+      "path": "/compare/appdynamics-vs-servicenow/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "appdynamics-vs-siteground",
+      "path": "/compare/appdynamics-vs-siteground/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "appdynamics-vs-smartproxy",
+      "path": "/compare/appdynamics-vs-smartproxy/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "appdynamics-vs-splunk",
+      "path": "/compare/appdynamics-vs-splunk/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "appdynamics-vs-squadcast",
+      "path": "/compare/appdynamics-vs-squadcast/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "appdynamics-vs-sysaid",
+      "path": "/compare/appdynamics-vs-sysaid/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "appdynamics-vs-thordata",
+      "path": "/compare/appdynamics-vs-thordata/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "appdynamics-vs-topdesk",
+      "path": "/compare/appdynamics-vs-topdesk/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "appdynamics-vs-wp-engine",
+      "path": "/compare/appdynamics-vs-wp-engine/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "appdynamics-vs-zyte",
+      "path": "/compare/appdynamics-vs-zyte/"
+    },
+    {
+      "kind": "alternatives",
+      "slug": "appdynamics",
+      "path": "/alternatives/appdynamics/"
+    },
+    {
+      "kind": "pricing",
+      "slug": "appdynamics",
+      "path": "/software/appdynamics/pricing/"
+    },
+    {
+      "kind": "tools",
+      "slug": "it-development-cost-calculator",
+      "path": "/tools/it-development-cost-calculator/"
+    }
+  ],
+  "dependentsNeedingRefresh": [],
+  "remediation": [
+    "verify:trial"
+  ],
+  "notes": [
+    "fieldAudit score=94",
+    "decisionHub bestFor=5 notIdeal=6",
+    "dependents=60"
+  ],
+  "materiallyImproved": true
+}

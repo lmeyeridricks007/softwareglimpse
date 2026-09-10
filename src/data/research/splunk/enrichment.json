@@ -211,6 +211,36 @@
       ]
     }
   ],
+  "integrationSupport": [
+    {
+      "integrationSlug": "aws",
+      "kind": "native",
+      "sourceIds": [
+        "splunk-product-official"
+      ]
+    },
+    {
+      "integrationSlug": "azure",
+      "kind": "native",
+      "sourceIds": [
+        "splunk-product-official"
+      ]
+    },
+    {
+      "integrationSlug": "slack",
+      "kind": "native",
+      "sourceIds": [
+        "splunk-product-official"
+      ]
+    },
+    {
+      "integrationSlug": "pagerduty",
+      "kind": "native",
+      "sourceIds": [
+        "splunk-product-official"
+      ]
+    }
+  ],
   "aiCapabilities": [
     {
       "capability": "assistant",
@@ -238,36 +268,6 @@
     {
       "capability": "recommendations",
       "availability": "supported",
-      "sourceIds": [
-        "splunk-product-official"
-      ]
-    }
-  ],
-  "integrationSupport": [
-    {
-      "integrationSlug": "aws",
-      "kind": "native",
-      "sourceIds": [
-        "splunk-product-official"
-      ]
-    },
-    {
-      "integrationSlug": "azure",
-      "kind": "native",
-      "sourceIds": [
-        "splunk-product-official"
-      ]
-    },
-    {
-      "integrationSlug": "slack",
-      "kind": "native",
-      "sourceIds": [
-        "splunk-product-official"
-      ]
-    },
-    {
-      "integrationSlug": "pagerduty",
-      "kind": "native",
       "sourceIds": [
         "splunk-product-official"
       ]
@@ -344,6 +344,39 @@
       "isEditorial": false
     }
   ],
+  "screenshots": [
+    {
+      "id": "splunk-shot-overview",
+      "src": "/vendor-ui/splunk/overview.jpg",
+      "alt": "Splunk Observability Cloud official marketing visual",
+      "caption": "Official Open Graph / marketing visual from https://www.splunk.com/.",
+      "source": "https://www.splunk.com/",
+      "checkedAt": "2026-08-18T14:00:00.000Z",
+      "annotation": "Official Splunk Observability Cloud marketing UI asset",
+      "kind": "vendor-ui",
+      "featureIds": [
+        "infrastructure-monitoring",
+        "apm-tracing",
+        "log-management"
+      ],
+      "useCaseIds": [
+        "observability-monitoring"
+      ]
+    },
+    {
+      "id": "splunk-shot-overview",
+      "src": "/vendor-ui/splunk/overview.png",
+      "alt": "Splunk Observability Cloud overview visual",
+      "caption": "Overview visual for Splunk Observability Cloud.",
+      "source": "Splunk Observability Cloud",
+      "checkedAt": "2026-08-18T20:00:00.000Z",
+      "annotation": "Product overview visual",
+      "kind": "vendor-ui",
+      "featureIds": [],
+      "useCaseIds": []
+    }
+  ],
+  "media": [],
   "pricing": {
     "currency": "USD",
     "model": "usage",
@@ -434,51 +467,12 @@
       }
     ],
     "notes": "Verified 2026-08-18 from splunk.com observability pricing (high confidence). Infrastructure Monitoring $15/host/mo annual; App & Infra $60/host; End-to-End $75/host. Free up to 15 hosts per Splunk FAQ. This is Observability Cloud, not Splunk Platform/SIEM ingest. Affiliate economics excluded.",
-    "verifiedAt": "2026-08-18T20:00:00.000Z",
+    "verifiedAt": "2026-09-08T21:57:30.673Z",
     "sourceIds": [
       "splunk-pricing-official"
     ],
     "startingPriceMonthly": 15
   },
-  "screenshots": [
-    {
-      "id": "splunk-shot-overview",
-      "src": "/vendor-ui/splunk/overview.jpg",
-      "alt": "Splunk Observability Cloud official marketing visual",
-      "caption": "Official Open Graph / marketing visual from https://www.splunk.com/.",
-      "source": "https://www.splunk.com/",
-      "checkedAt": "2026-08-18T14:00:00.000Z",
-      "annotation": "Official Splunk Observability Cloud marketing UI asset",
-      "kind": "vendor-ui",
-      "featureIds": [
-        "infrastructure-monitoring",
-        "apm-tracing",
-        "log-management"
-      ],
-      "useCaseIds": [
-        "observability-monitoring"
-      ]
-    },
-    {
-      "id": "splunk-shot-overview",
-      "src": "/vendor-ui/splunk/overview.png",
-      "alt": "Splunk Observability Cloud overview visual",
-      "caption": "Overview visual for Splunk Observability Cloud.",
-      "source": "Splunk Observability Cloud",
-      "checkedAt": "2026-08-18T20:00:00.000Z",
-      "annotation": "Product overview visual",
-      "kind": "vendor-ui",
-      "featureIds": [],
-      "useCaseIds": []
-    }
-  ],
-  "media": [],
-  "sourceIds": [
-    "splunk-product-official",
-    "splunk-pricing-official",
-    "splunk-observability-pricing"
-  ],
-  "notes": "IT industry Tier-A onboarding enrichment from first-party research 2026-08-18T20:00:00.000Z. handsOnTesting=false. membershipRole=primary. jobCluster=observability-monitoring.",
   "domainCheckedAt": {
     "identity": "2026-08-18T20:00:00.000Z",
     "pricing": "2026-08-18T20:00:00.000Z",
@@ -492,5 +486,11 @@
     "limits": "2026-08-18T20:00:00.000Z",
     "security-compliance": "2026-08-18T20:00:00.000Z"
   },
-  "updatedAt": "2026-08-18T20:00:00.000Z"
+  "sourceIds": [
+    "splunk-product-official",
+    "splunk-pricing-official",
+    "splunk-observability-pricing"
+  ],
+  "updatedAt": "2026-08-18T20:00:00.000Z",
+  "notes": "IT industry Tier-A onboarding enrichment from first-party research 2026-08-18T20:00:00.000Z. handsOnTesting=false. membershipRole=primary. jobCluster=observability-monitoring."
 }

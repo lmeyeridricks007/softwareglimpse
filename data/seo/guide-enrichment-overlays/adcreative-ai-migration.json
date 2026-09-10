@@ -1,0 +1,158 @@
+{
+  "slug": "adcreative-ai-migration",
+  "enrichmentType": "MIGRATION_GUIDE",
+  "updatedAt": "2026-09-09T16:04:20.098Z",
+  "uniqueValueAdded": [
+    "implementation_workflow",
+    "scenario_analysis",
+    "decision_framework",
+    "limitations_evidence",
+    "buyer_checklist"
+  ],
+  "patch": {
+    "summary": "AdCreative.ai migration guide: inventory → rehearse → freeze → validate integrations — grounded in researched limitations and catalogue peers.",
+    "blocks": [
+      {
+        "id": "da-adcreative-ai-migration-1",
+        "type": "direct-answer",
+        "body": "Migrate to AdCreative.ai by inventorying legacy ai fields, mapping them to AdCreative.ai objects, rehearsing a freeze window, and validating Facebook Ads, Google Ads before reopening writes.",
+        "bullets": [
+          "Inventory → map → rehearse → cut over → reopen",
+          "Highest risk: Starter list price is a higher entry floor than presentation tools like Gamma",
+          "Success signal: LLM chat and assistants works for the pilot cohort"
+        ]
+      },
+      {
+        "id": "mig-adcreative-ai-migration-2",
+        "type": "step",
+        "heading": "AdCreative.ai migration cutover playbook",
+        "body": "Migrations fail from optimistic timelines — not from missing motivation.",
+        "stepNumber": 1,
+        "scenarios": [
+          {
+            "title": "Field inventory",
+            "body": "Export legacy fields that power LLM chat and assistants, writing and paraphrasing, image generation and mark must-map vs archive."
+          },
+          {
+            "title": "Rehearsal load",
+            "body": "Run a non-prod load into AdCreative.ai; measure match rates before the freeze."
+          },
+          {
+            "title": "Production freeze",
+            "body": "Freeze legacy writes; cut over; validate Facebook Ads; then reopen."
+          }
+        ]
+      },
+      {
+        "id": "df-adcreative-ai-migration-3",
+        "type": "decision-framework",
+        "title": "Migrate to AdCreative.ai?",
+        "steps": [
+          {
+            "id": "m-1",
+            "label": "Migrate when Paid media teams and agencies generating ad variants at scale outweigh migration cost"
+          },
+          {
+            "id": "m-2",
+            "label": "Delay if this limitation hits cutover: Starter list price is a higher entry floor than presentation tools like Gamma"
+          },
+          {
+            "id": "m-3",
+            "label": "If AdCreative.ai mapping is poor, compare destination fit with Gamma before moving data twice"
+          }
+        ]
+      },
+      {
+        "id": "mist-adcreative-ai-migration-4",
+        "type": "mistakes",
+        "title": "AdCreative.ai migration mistakes",
+        "items": [
+          {
+            "title": "No freeze window",
+            "body": "Dual-writing without a freeze creates irrevocable duplicates."
+          },
+          {
+            "title": "Integrations last",
+            "body": "Wire Facebook Ads in rehearsal — not on Monday morning after cutover."
+          },
+          {
+            "title": "Data risk 1",
+            "body": "Starter list price is a higher entry floor than presentation tools like Gamma"
+          },
+          {
+            "title": "Data risk 2",
+            "body": "Credit-based creative generation — heavy campaigns raise TCO"
+          },
+          {
+            "title": "Data risk 3",
+            "body": "Not a general LLM assistant or full marketing automation suite"
+          }
+        ]
+      },
+      {
+        "id": "sel-adcreative-ai-migration-5",
+        "type": "selection-checklist",
+        "title": "AdCreative.ai migration checklist",
+        "dimensions": [
+          {
+            "id": "map",
+            "label": "Mapping",
+            "options": [
+              "Must-map fields listed",
+              "Owners assigned",
+              "Archive rules written"
+            ]
+          },
+          {
+            "id": "rehearse",
+            "label": "Rehearsal",
+            "options": [
+              "Non-prod load done",
+              "Match rate measured",
+              "Rollback tested"
+            ]
+          },
+          {
+            "id": "cutover",
+            "label": "Cutover",
+            "options": [
+              "Freeze communicated",
+              "Integrations green",
+              "Pilot cohort signed off"
+            ]
+          }
+        ]
+      }
+    ],
+    "checklist": [
+      {
+        "id": "enrich-chk-0",
+        "label": "Complete field inventory for LLM chat and assistants",
+        "order": 0
+      },
+      {
+        "id": "enrich-chk-1",
+        "label": "Rehearse load before production freeze",
+        "order": 1
+      },
+      {
+        "id": "enrich-chk-2",
+        "label": "Validate Facebook Ads pre-reopen",
+        "order": 2
+      },
+      {
+        "id": "enrich-chk-3",
+        "label": "Mitigate: Starter list price is a higher entry floor than presentation tools like Gamma",
+        "order": 3
+      }
+    ],
+    "nextAction": {
+      "contentId": "tool:finder:ai",
+      "label": "Open Finder shortlist"
+    }
+  },
+  "notes": [
+    "Migration: cutover risks, data mapping, checklist.",
+    "Type-specific skeleton: MIGRATION_GUIDE"
+  ]
+}

@@ -171,36 +171,6 @@
       ]
     }
   ],
-  "aiCapabilities": [
-    {
-      "capability": "other",
-      "availability": "not-supported",
-      "sourceIds": [
-        "github-product-official"
-      ]
-    },
-    {
-      "capability": "other",
-      "availability": "add-on",
-      "sourceIds": [
-        "github-product-official"
-      ]
-    },
-    {
-      "capability": "automation",
-      "availability": "limited",
-      "sourceIds": [
-        "github-product-official"
-      ]
-    },
-    {
-      "capability": "recommendations",
-      "availability": "limited",
-      "sourceIds": [
-        "github-product-official"
-      ]
-    }
-  ],
   "integrationSupport": [
     {
       "integrationSlug": "slack",
@@ -226,6 +196,36 @@
     {
       "integrationSlug": "aws",
       "kind": "native",
+      "sourceIds": [
+        "github-product-official"
+      ]
+    }
+  ],
+  "aiCapabilities": [
+    {
+      "capability": "other",
+      "availability": "not-supported",
+      "sourceIds": [
+        "github-product-official"
+      ]
+    },
+    {
+      "capability": "other",
+      "availability": "add-on",
+      "sourceIds": [
+        "github-product-official"
+      ]
+    },
+    {
+      "capability": "automation",
+      "availability": "limited",
+      "sourceIds": [
+        "github-product-official"
+      ]
+    },
+    {
+      "capability": "recommendations",
+      "availability": "limited",
       "sourceIds": [
         "github-product-official"
       ]
@@ -316,77 +316,6 @@
       "isEditorial": false
     }
   ],
-  "pricing": {
-    "currency": "USD",
-    "model": "per-seat",
-    "hasFreePlan": true,
-    "hasFreeTrial": false,
-    "plans": [
-      {
-        "id": "plan-free",
-        "slug": "free",
-        "name": "Free",
-        "isFree": true,
-        "contactSales": false,
-        "hasFreeTrial": false,
-        "highlighted": false,
-        "rules": [
-          {
-            "kind": "flat",
-            "amount": 0,
-            "currency": "USD",
-            "interval": "month",
-            "amountPeriod": "month"
-          }
-        ],
-        "description": "Free for public repositories and limited private collaboration."
-      },
-      {
-        "id": "plan-team",
-        "slug": "team",
-        "name": "Team",
-        "isFree": false,
-        "contactSales": false,
-        "hasFreeTrial": false,
-        "highlighted": true,
-        "rules": [
-          {
-            "kind": "per-seat",
-            "amountPerSeat": 4,
-            "currency": "USD",
-            "interval": "year",
-            "amountPeriod": "month"
-          }
-        ],
-        "description": "$4/user/month billed annually — team collaboration and protected branches."
-      },
-      {
-        "id": "plan-enterprise",
-        "slug": "enterprise",
-        "name": "Enterprise",
-        "isFree": false,
-        "contactSales": false,
-        "hasFreeTrial": false,
-        "highlighted": false,
-        "rules": [
-          {
-            "kind": "per-seat",
-            "amountPerSeat": 21,
-            "currency": "USD",
-            "interval": "year",
-            "amountPeriod": "month"
-          }
-        ],
-        "description": "$21/user/month billed annually — enterprise governance, audit, and compliance depth."
-      }
-    ],
-    "notes": "Verified 2026-08-18 from github.com/pricing (high confidence). Free for public repos and limited private use. Team $4/user/mo annual; Enterprise $21/user/mo annual. Copilot and Advanced Security are add-on SKUs. No affiliate in inventory. Affiliate economics excluded.",
-    "verifiedAt": "2026-08-18T09:30:00.000Z",
-    "sourceIds": [
-      "github-pricing-official"
-    ],
-    "startingPriceMonthly": 4
-  },
   "screenshots": [
     {
       "id": "github-shot-overview",
@@ -531,13 +460,13 @@
       "demonstratedDimensionIds": [],
       "requirementCriterionIds": [],
       "workflowStageIds": [],
+      "mediaContext": "general-workflow",
       "reportedOutcomes": [],
       "placements": [
         "overview",
         "features",
         "evidence"
       ],
-      "mediaContext": "general-workflow",
       "purpose": "Official GitHub video for product research pages",
       "demonstratesCaption": "How GitHub presents the product in an official vendor video.",
       "editorialCommentary": "Official vendor demo — treat as UI/workflow evidence, not SoftwareGlimpse scoring.",
@@ -599,13 +528,13 @@
       "demonstratedDimensionIds": [],
       "requirementCriterionIds": [],
       "workflowStageIds": [],
+      "mediaContext": "general-workflow",
       "reportedOutcomes": [],
       "placements": [
         "overview",
         "features",
         "evidence"
       ],
-      "mediaContext": "general-workflow",
       "purpose": "Official GitHub video for product research pages",
       "demonstratesCaption": "How GitHub presents the product in an official vendor video.",
       "editorialCommentary": "Official vendor demo — treat as UI/workflow evidence, not SoftwareGlimpse scoring.",
@@ -623,11 +552,77 @@
       "status": "published"
     }
   ],
-  "sourceIds": [
-    "github-product-official",
-    "github-pricing-official"
-  ],
-  "notes": "IT Wave-1 onboarding enrichment from first-party research 2026-08-18T09:30:00.000Z. handsOnTesting=false. membershipRole=primary. jobCluster=source-control-devops.",
+  "pricing": {
+    "currency": "USD",
+    "model": "per-seat",
+    "hasFreePlan": true,
+    "hasFreeTrial": false,
+    "plans": [
+      {
+        "id": "plan-free",
+        "slug": "free",
+        "name": "Free",
+        "isFree": true,
+        "contactSales": false,
+        "hasFreeTrial": false,
+        "highlighted": false,
+        "rules": [
+          {
+            "kind": "flat",
+            "amount": 0,
+            "currency": "USD",
+            "interval": "month",
+            "amountPeriod": "month"
+          }
+        ],
+        "description": "Free for public repositories and limited private collaboration."
+      },
+      {
+        "id": "plan-team",
+        "slug": "team",
+        "name": "Team",
+        "isFree": false,
+        "contactSales": false,
+        "hasFreeTrial": false,
+        "highlighted": true,
+        "rules": [
+          {
+            "kind": "per-seat",
+            "amountPerSeat": 4,
+            "currency": "USD",
+            "interval": "year",
+            "amountPeriod": "month"
+          }
+        ],
+        "description": "$4/user/month billed annually — team collaboration and protected branches."
+      },
+      {
+        "id": "plan-enterprise",
+        "slug": "enterprise",
+        "name": "Enterprise",
+        "isFree": false,
+        "contactSales": false,
+        "hasFreeTrial": false,
+        "highlighted": false,
+        "rules": [
+          {
+            "kind": "per-seat",
+            "amountPerSeat": 21,
+            "currency": "USD",
+            "interval": "year",
+            "amountPeriod": "month"
+          }
+        ],
+        "description": "$21/user/month billed annually — enterprise governance, audit, and compliance depth."
+      }
+    ],
+    "notes": "Verified 2026-08-18 from github.com/pricing (high confidence). Free for public repos and limited private use. Team $4/user/mo annual; Enterprise $21/user/mo annual. Copilot and Advanced Security are add-on SKUs. No affiliate in inventory. Affiliate economics excluded.",
+    "verifiedAt": "2026-09-08T21:29:17.217Z",
+    "sourceIds": [
+      "github-pricing-official"
+    ],
+    "startingPriceMonthly": 4
+  },
   "domainCheckedAt": {
     "identity": "2026-08-18T09:30:00.000Z",
     "pricing": "2026-08-18T09:30:00.000Z",
@@ -641,5 +636,10 @@
     "limits": "2026-08-18T09:30:00.000Z",
     "security-compliance": "2026-08-18T09:30:00.000Z"
   },
-  "updatedAt": "2026-08-18T14:00:00.000Z"
+  "sourceIds": [
+    "github-product-official",
+    "github-pricing-official"
+  ],
+  "updatedAt": "2026-08-18T14:00:00.000Z",
+  "notes": "IT Wave-1 onboarding enrichment from first-party research 2026-08-18T09:30:00.000Z. handsOnTesting=false. membershipRole=primary. jobCluster=source-control-devops."
 }

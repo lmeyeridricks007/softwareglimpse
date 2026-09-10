@@ -34,6 +34,8 @@ import {
   CONTENT_INTELLIGENCE_ORCHESTRATOR,
 } from "./intelligence";
 
+export * from "./gate";
+
 export {
   evaluatePageQuality,
   formatQualityMarkdown,

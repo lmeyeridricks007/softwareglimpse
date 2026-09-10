@@ -1,0 +1,422 @@
+{
+  "slug": "goto-connect",
+  "updatedAt": "2026-09-07T22:31:21.434Z",
+  "version": "1.0.0",
+  "fieldAudit": {
+    "slug": "goto-connect",
+    "checkedAt": "2026-09-07T22:31:21.432Z",
+    "items": [
+      {
+        "field": "name",
+        "status": "PASS",
+        "detail": "Name: GoTo Connect",
+        "source": "seed"
+      },
+      {
+        "field": "product_status",
+        "status": "PASS",
+        "detail": "productLifecycle=active",
+        "source": "seed"
+      },
+      {
+        "field": "canonical_vendor",
+        "status": "UNKNOWN",
+        "detail": "Company/vendor not documented",
+        "source": "none"
+      },
+      {
+        "field": "category",
+        "status": "PASS",
+        "detail": "primaryCategorySlug=business-communications",
+        "source": "seed"
+      },
+      {
+        "field": "description",
+        "status": "PASS",
+        "detail": "Description present (Remote-team UCaaS phone system with meetings and messaging — Phone System / CX /…)",
+        "source": "seed"
+      },
+      {
+        "field": "target_audience",
+        "status": "PASS",
+        "detail": "Sizes=2, teams=3, assessment bestFor=3",
+        "source": "assessment"
+      },
+      {
+        "field": "use_cases",
+        "status": "PASS",
+        "detail": "useCaseSlugs=3",
+        "source": "seed"
+      },
+      {
+        "field": "capabilities",
+        "status": "PASS",
+        "detail": "featureRatings=0, enrichment features=13",
+        "source": "enrichment"
+      },
+      {
+        "field": "pricing",
+        "status": "PASS",
+        "detail": "Pricing envelope present",
+        "source": "enrichment"
+      },
+      {
+        "field": "plans",
+        "status": "PASS",
+        "detail": "plans=4",
+        "source": "enrichment"
+      },
+      {
+        "field": "free_plan",
+        "status": "PASS",
+        "detail": "No free plan in documented plans (explicit absence)",
+        "source": "enrichment"
+      },
+      {
+        "field": "trial",
+        "status": "PASS",
+        "detail": "Trial documented on plans/pricing",
+        "source": "enrichment"
+      },
+      {
+        "field": "integrations",
+        "status": "PASS",
+        "detail": "integrationSlugs=0, enrichment=6",
+        "source": "enrichment"
+      },
+      {
+        "field": "alternatives",
+        "status": "PASS",
+        "detail": "alternativeSlugs=5",
+        "source": "seed"
+      },
+      {
+        "field": "competitors",
+        "status": "PASS",
+        "detail": "competitorSlugs=5",
+        "source": "seed"
+      },
+      {
+        "field": "affiliate",
+        "status": "PASS",
+        "detail": "No affiliate relationship (explicit)",
+        "source": "seed"
+      },
+      {
+        "field": "source_provenance",
+        "status": "PASS",
+        "detail": "seed sources=0, enrichment sourceIds=3",
+        "source": "enrichment"
+      },
+      {
+        "field": "verification_date",
+        "status": "PASS",
+        "detail": "Latest verification/research signal: 2026-08-17T18:00:00.000Z",
+        "source": "enrichment"
+      }
+    ],
+    "passCount": 17,
+    "partialCount": 0,
+    "missingCount": 0,
+    "unknownCount": 1,
+    "score": 94
+  },
+  "decisionHub": {
+    "whatItIs": "GoTo Connect is a cloud business phone / UCaaS platform (evolved from Jive) aimed at remote and multi-location teams: softphones, unlimited auto attendants and queues, video meetings (up to 250), team messaging, SMS, and optional CX / Contact Center ladders with shared inbox and digital channels. First-party pricing (goto.com/connect/pricing, checked 2026-08-17) routes every plan to sales — no published per-seat dollars. Industry corroboration commonly cites Phone System ~$26–$29, CX ~$32–$34 and Contact Center ~$80 per user/month, but those are medium/low confidence research ranges, not vendor list prices. AI Receptionist is an add-on across Phone System tiers.",
+    "bestFor": [
+      "Remote and multi-location teams wanting phone + meetings + messaging from one vendor",
+      "Buyers who may grow into CX digital channels or Contact Center later",
+      "Organisations already familiar with GoTo / former Jive deployments",
+      "small-business / operations: GoTo Connect fit for small-business operations teams in the cloud-phone job cluster, from first-party positioning and Business-communications Priority-2 research.",
+      "mid-market / operations: GoTo Connect fit for mid-market operations teams in the cloud-phone job cluster, from first-party positioning and Business-communications Priority-2 research."
+    ],
+    "notIdealFor": [
+      "Buyers who require transparent self-serve published seat prices",
+      "Micro teams that only need a simple virtual number (prefer Grasshopper/OpenPhone)",
+      "Enterprises comparing primarily on global UCaaS depth (prefer RingCentral/8x8)",
+      "No published self-serve seat dollars — every plan is sales-quoted",
+      "Industry dollar ranges are low confidence and must not be treated as list prices",
+      "AI Receptionist and some AI analytics are add-ons"
+    ],
+    "coreCapabilities": [
+      "cloud phone",
+      "call routing",
+      "call recording",
+      "sms messaging",
+      "team messaging",
+      "video meetings",
+      "crm cti",
+      "analytics reporting"
+    ],
+    "pricingSummary": "4 documented plans · entry paid: Phone System · trial documented on at least one plan",
+    "keyTradeoffs": [
+      "No published self-serve seat dollars — every plan is sales-quoted",
+      "Industry dollar ranges are low confidence and must not be treated as list prices",
+      "AI Receptionist and some AI analytics are add-ons",
+      "WhatsApp, shared inbox and unified inbox depth require CX / Contact Center ladders",
+      "Auto-dialer and full agent tooling sit on Contact Center, not Phone System"
+    ],
+    "alternatives": [
+      {
+        "slug": "ringcentral",
+        "name": "RingCentral"
+      },
+      {
+        "slug": "eightx8",
+        "name": "8x8"
+      },
+      {
+        "slug": "nextiva",
+        "name": "Nextiva"
+      },
+      {
+        "slug": "openphone",
+        "name": "OpenPhone"
+      },
+      {
+        "slug": "dialpad",
+        "name": "Dialpad"
+      },
+      {
+        "slug": "zoom",
+        "name": "Zoom"
+      }
+    ],
+    "importantComparisons": [
+      {
+        "slug": "goto-connect-vs-ringcentral",
+        "title": "GoTo Connect vs RingCentral",
+        "href": "/compare/goto-connect-vs-ringcentral/"
+      },
+      {
+        "slug": "dialpad-vs-goto-connect",
+        "title": "Dialpad vs GoTo Connect",
+        "href": "/compare/dialpad-vs-goto-connect/"
+      },
+      {
+        "slug": "eightx8-vs-goto-connect",
+        "title": "8x8 vs GoTo Connect",
+        "href": "/compare/eightx8-vs-goto-connect/"
+      },
+      {
+        "slug": "fastmail-vs-goto-connect",
+        "title": "Fastmail vs GoTo Connect",
+        "href": "/compare/fastmail-vs-goto-connect/"
+      },
+      {
+        "slug": "five9-vs-goto-connect",
+        "title": "Five9 vs GoTo Connect",
+        "href": "/compare/five9-vs-goto-connect/"
+      },
+      {
+        "slug": "genesys-vs-goto-connect",
+        "title": "Genesys vs GoTo Connect",
+        "href": "/compare/genesys-vs-goto-connect/"
+      }
+    ],
+    "relevantGuides": [
+      {
+        "slug": "goto-connect-implementation",
+        "title": "GoTo Connect Implementation: 30/60/90 Communications Rollout That Sticks",
+        "href": "/guides/goto-connect-implementation/"
+      },
+      {
+        "slug": "goto-connect-migration",
+        "title": "GoTo Connect Migration: Move Numbers Without Losing Trust",
+        "href": "/guides/goto-connect-migration/"
+      },
+      {
+        "slug": "goto-connect-setup",
+        "title": "GoTo Connect Setup: Day-Zero Path to a Working Call Loop",
+        "href": "/guides/goto-connect-setup/"
+      },
+      {
+        "slug": "goto-connect-plans",
+        "title": "GoTo Connect Plans: Seats, Numbers, and Qualifying Tiers",
+        "href": "/guides/goto-connect-plans/"
+      },
+      {
+        "slug": "is-goto-connect-worth-it",
+        "title": "Is GoTo Connect Worth It? Fit Scenarios Before You Buy",
+        "href": "/guides/is-goto-connect-worth-it/"
+      }
+    ],
+    "evidenceState": "Research/data-based (no completed hands-on test) · Latest verification/research signal: 2026-08-17T18:00:00.000Z · Editorial assessment: approved",
+    "nextDecisionStep": "Compare against peers: GoTo Connect vs RingCentral",
+    "missingSections": [
+      "canonical_vendor"
+    ]
+  },
+  "dependents": [
+    {
+      "kind": "guide",
+      "slug": "goto-connect-implementation",
+      "path": "/guides/goto-connect-implementation/"
+    },
+    {
+      "kind": "guide",
+      "slug": "goto-connect-migration",
+      "path": "/guides/goto-connect-migration/"
+    },
+    {
+      "kind": "guide",
+      "slug": "goto-connect-setup",
+      "path": "/guides/goto-connect-setup/"
+    },
+    {
+      "kind": "guide",
+      "slug": "goto-connect-plans",
+      "path": "/guides/goto-connect-plans/"
+    },
+    {
+      "kind": "guide",
+      "slug": "is-goto-connect-worth-it",
+      "path": "/guides/is-goto-connect-worth-it/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "goto-connect-vs-ringcentral",
+      "path": "/compare/goto-connect-vs-ringcentral/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "dialpad-vs-goto-connect",
+      "path": "/compare/dialpad-vs-goto-connect/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "eightx8-vs-goto-connect",
+      "path": "/compare/eightx8-vs-goto-connect/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "fastmail-vs-goto-connect",
+      "path": "/compare/fastmail-vs-goto-connect/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "five9-vs-goto-connect",
+      "path": "/compare/five9-vs-goto-connect/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "genesys-vs-goto-connect",
+      "path": "/compare/genesys-vs-goto-connect/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "goto-connect-vs-grasshopper",
+      "path": "/compare/goto-connect-vs-grasshopper/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "goto-connect-vs-manychat",
+      "path": "/compare/goto-connect-vs-manychat/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "goto-connect-vs-microsoft-teams",
+      "path": "/compare/goto-connect-vs-microsoft-teams/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "goto-connect-vs-nextiva",
+      "path": "/compare/goto-connect-vs-nextiva/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "goto-connect-vs-ooma",
+      "path": "/compare/goto-connect-vs-ooma/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "goto-connect-vs-openphone",
+      "path": "/compare/goto-connect-vs-openphone/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "goto-connect-vs-respond-io",
+      "path": "/compare/goto-connect-vs-respond-io/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "goto-connect-vs-sanebox",
+      "path": "/compare/goto-connect-vs-sanebox/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "goto-connect-vs-slack",
+      "path": "/compare/goto-connect-vs-slack/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "goto-connect-vs-talkdesk",
+      "path": "/compare/goto-connect-vs-talkdesk/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "goto-connect-vs-twilio",
+      "path": "/compare/goto-connect-vs-twilio/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "goto-connect-vs-vonage",
+      "path": "/compare/goto-connect-vs-vonage/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "goto-connect-vs-wati",
+      "path": "/compare/goto-connect-vs-wati/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "goto-connect-vs-webex",
+      "path": "/compare/goto-connect-vs-webex/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "goto-connect-vs-zenzap",
+      "path": "/compare/goto-connect-vs-zenzap/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "goto-connect-vs-zoom",
+      "path": "/compare/goto-connect-vs-zoom/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "aircall-vs-goto-connect",
+      "path": "/compare/aircall-vs-goto-connect/"
+    },
+    {
+      "kind": "alternatives",
+      "slug": "goto-connect",
+      "path": "/alternatives/goto-connect/"
+    },
+    {
+      "kind": "pricing",
+      "slug": "goto-connect",
+      "path": "/software/goto-connect/pricing/"
+    },
+    {
+      "kind": "best",
+      "slug": "business-communications-software",
+      "path": "/best/business-communications-software/"
+    },
+    {
+      "kind": "tools",
+      "slug": "business-communications-cost-calculator",
+      "path": "/tools/business-communications-cost-calculator/"
+    }
+  ],
+  "dependentsNeedingRefresh": [],
+  "remediation": [
+    "verify:canonical_vendor"
+  ],
+  "notes": [
+    "fieldAudit score=94",
+    "decisionHub bestFor=5 notIdeal=6",
+    "dependents=32"
+  ],
+  "materiallyImproved": false
+}

@@ -1,4 +1,4 @@
-import type { GuidePage } from "@/domain";
+import type { GuidePageInput } from "@/domain";
 import { teachingExpansionFor } from "./guides-category-teaching-expansion";
 import { projectManagementEvaluationGuide } from "./guides-project-management-evaluation-guide";
 import { projectManagementPricingGuide } from "./guides-project-management-pricing-guide";
@@ -10,7 +10,7 @@ import { whatIsProjectManagementSoftwareGuide } from "./guides-what-is-project-m
  * Project management category educational guides (minimum supporting set).
  * Published and indexable (matches BC editorial gate cleared).
  */
-export const projectManagementCategoryGuides: GuidePage[] = [
+export const projectManagementCategoryGuides: GuidePageInput[] = [
   whatIsProjectManagementSoftwareGuide,
   howToChooseProjectManagementSoftwareGuide,
   projectManagementPricingGuide,

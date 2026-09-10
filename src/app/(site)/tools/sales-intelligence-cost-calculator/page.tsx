@@ -135,7 +135,15 @@ export default function SalesIntelligenceCostCalculatorPage() {
               verified seat / subscription list pricing
             </strong>
             . Credit burn, overages, and quote-only tiers are marked unknown —
-            we do not invent dollar totals for credits.
+            we do not invent dollar totals for credits. To model credits,
+            overage, and mobile credits from your quote, use the{" "}
+            <Link
+              href="/tools/sales-intelligence-credit-tco/"
+              className="font-medium text-[var(--sg-color-primary)] hover:underline"
+            >
+              SI Credit TCO calculator
+            </Link>
+            .
           </p>
         </section>
 

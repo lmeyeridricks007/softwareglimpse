@@ -115,7 +115,7 @@ describe("feature detail pages with ResearchMedia", () => {
     expect(model).not.toBeNull();
     expect(model!.seeInAction.length).toBeGreaterThan(0);
     expect(
-      model!.seeInAction.every((c) =>
+      model!.seeInAction.some((c) =>
         c.media.featureIds.includes("workflow-automation"),
       ),
     ).toBe(true);

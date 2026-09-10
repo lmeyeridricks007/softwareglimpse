@@ -1,0 +1,406 @@
+{
+  "slug": "deputy",
+  "updatedAt": "2026-09-09T18:11:24.971Z",
+  "version": "1.0.0",
+  "fieldAudit": {
+    "slug": "deputy",
+    "checkedAt": "2026-09-09T18:11:24.970Z",
+    "items": [
+      {
+        "field": "name",
+        "status": "PASS",
+        "detail": "Name: Deputy",
+        "source": "seed"
+      },
+      {
+        "field": "product_status",
+        "status": "PASS",
+        "detail": "productLifecycle=active",
+        "source": "seed"
+      },
+      {
+        "field": "canonical_vendor",
+        "status": "PASS",
+        "detail": "Vendor: Deputy Corporation",
+        "source": "seed"
+      },
+      {
+        "field": "category",
+        "status": "PASS",
+        "detail": "primaryCategorySlug=hr",
+        "source": "seed"
+      },
+      {
+        "field": "description",
+        "status": "PASS",
+        "detail": "Description present (Mid-market hourly WFM — Lite $5 / Core $6.50 / Pro $9 per user/mo; $30 invoice m…)",
+        "source": "seed"
+      },
+      {
+        "field": "target_audience",
+        "status": "PASS",
+        "detail": "Sizes=3, teams=1, assessment bestFor=3",
+        "source": "assessment"
+      },
+      {
+        "field": "use_cases",
+        "status": "PASS",
+        "detail": "useCaseSlugs=3",
+        "source": "seed"
+      },
+      {
+        "field": "capabilities",
+        "status": "PASS",
+        "detail": "featureRatings=0, enrichment features=16",
+        "source": "enrichment"
+      },
+      {
+        "field": "pricing",
+        "status": "PASS",
+        "detail": "Pricing envelope present",
+        "source": "enrichment"
+      },
+      {
+        "field": "plans",
+        "status": "PASS",
+        "detail": "plans=3",
+        "source": "enrichment"
+      },
+      {
+        "field": "free_plan",
+        "status": "PASS",
+        "detail": "No free plan in documented plans (explicit absence)",
+        "source": "enrichment"
+      },
+      {
+        "field": "trial",
+        "status": "PASS",
+        "detail": "Trial documented on plans/pricing",
+        "source": "enrichment"
+      },
+      {
+        "field": "integrations",
+        "status": "PASS",
+        "detail": "integrationSlugs=0, enrichment=3",
+        "source": "enrichment"
+      },
+      {
+        "field": "alternatives",
+        "status": "PASS",
+        "detail": "alternativeSlugs=3",
+        "source": "seed"
+      },
+      {
+        "field": "competitors",
+        "status": "PASS",
+        "detail": "competitorSlugs=4",
+        "source": "seed"
+      },
+      {
+        "field": "affiliate",
+        "status": "PASS",
+        "detail": "No affiliate relationship (explicit)",
+        "source": "seed"
+      },
+      {
+        "field": "source_provenance",
+        "status": "PASS",
+        "detail": "seed sources=0, enrichment sourceIds=2",
+        "source": "enrichment"
+      },
+      {
+        "field": "verification_date",
+        "status": "PASS",
+        "detail": "Latest verification/research signal: 2026-08-18T12:00:00.000Z",
+        "source": "enrichment"
+      }
+    ],
+    "passCount": 18,
+    "partialCount": 0,
+    "missingCount": 0,
+    "unknownCount": 0,
+    "score": 100
+  },
+  "decisionHub": {
+    "whatItIs": "Deputy is a shift-work platform for scheduling, timekeeping, compliance, comms, and optional HR/payroll add-ons. Published USD per-user: Lite $5, Core $6.50 (most popular), Pro $9. $30 monthly invoice minimum. All users including managers are billed. Trial up to 31 days (Core default). HR $2/user, Messaging+ $1.95, Analytics+ $1.50; US payroll via Paycor on annual Core/Pro. Deputy AI is marketed for schedules and timesheets.",
+    "bestFor": [
+      "Multi-location hourly operators who need scheduling + time + labor compliance",
+      "Teams that will trial Core for up to 31 days before Homebase-style SMB hubs",
+      "Ops leaders who want WFM AI with a human-in-the-loop",
+      "small-business / operations: Deputy fit for small-business operations teams in the frontline-wfm job cluster, from first-party positioning and HR Priority-2 research.",
+      "mid-market / operations: Deputy fit for mid-market operations teams in the frontline-wfm job cluster, from first-party positioning and HR Priority-2 research.",
+      "enterprise / operations: Deputy fit for enterprise operations teams in the frontline-wfm job cluster, from first-party positioning and HR Priority-2 research."
+    ],
+    "notIdealFor": [
+      "Tiny shops that need a free ≤10-employee plan",
+      "Restaurant groups standardised on 7shifts",
+      "Buyers whose primary job is core HRIS or structured ATS",
+      "Every user including managers is billed; $30 invoice minimum",
+      "HR, analytics, messaging, and US payroll are add-ons (some bundled on Pro)",
+      "SMS is usage-priced by country"
+    ],
+    "coreCapabilities": [
+      "applicant tracking",
+      "career site job boards",
+      "workforce scheduling",
+      "frontline comms",
+      "time attendance",
+      "gps geofence clockin",
+      "sop knowledge base",
+      "employee training paths"
+    ],
+    "pricingSummary": "3 documented plans · entry paid: Lite · trial documented on at least one plan",
+    "keyTradeoffs": [
+      "Every user including managers is billed; $30 invoice minimum",
+      "HR, analytics, messaging, and US payroll are add-ons (some bundled on Pro)",
+      "SMS is usage-priced by country",
+      "No free forever plan",
+      "Not a restaurant-only suite or a core HRIS like BambooHR"
+    ],
+    "alternatives": [
+      {
+        "slug": "connecteam",
+        "name": "Connecteam"
+      },
+      {
+        "slug": "homebase",
+        "name": "Homebase"
+      },
+      {
+        "slug": "when-i-work",
+        "name": "When I Work"
+      },
+      {
+        "slug": "7shifts",
+        "name": "7shifts"
+      }
+    ],
+    "importantComparisons": [
+      {
+        "slug": "connecteam-vs-deputy",
+        "title": "Connecteam vs Deputy",
+        "href": "/compare/connecteam-vs-deputy/"
+      },
+      {
+        "slug": "7shifts-vs-deputy",
+        "title": "7shifts vs Deputy",
+        "href": "/compare/7shifts-vs-deputy/"
+      },
+      {
+        "slug": "adp-workforce-now-vs-deputy",
+        "title": "ADP Workforce Now vs Deputy",
+        "href": "/compare/adp-workforce-now-vs-deputy/"
+      },
+      {
+        "slug": "ashby-vs-deputy",
+        "title": "Ashby vs Deputy",
+        "href": "/compare/ashby-vs-deputy/"
+      },
+      {
+        "slug": "bamboohr-vs-deputy",
+        "title": "BambooHR vs Deputy",
+        "href": "/compare/bamboohr-vs-deputy/"
+      },
+      {
+        "slug": "bolt-for-business-vs-deputy",
+        "title": "Bolt for Business vs Deputy",
+        "href": "/compare/bolt-for-business-vs-deputy/"
+      }
+    ],
+    "relevantGuides": [
+      {
+        "slug": "deputy-implementation",
+        "title": "Deputy Implementation: 30/60/90 HR Rollout That Sticks",
+        "href": "/guides/deputy-implementation/"
+      },
+      {
+        "slug": "deputy-migration",
+        "title": "Deputy Migration: Move People Data Without Losing Trust",
+        "href": "/guides/deputy-migration/"
+      },
+      {
+        "slug": "deputy-setup",
+        "title": "Deputy Setup: Day-Zero Path to a Working HR Loop",
+        "href": "/guides/deputy-setup/"
+      },
+      {
+        "slug": "deputy-plans",
+        "title": "Deputy Plans: Seats, Hubs, and Qualifying Tiers",
+        "href": "/guides/deputy-plans/"
+      },
+      {
+        "slug": "is-deputy-worth-it",
+        "title": "Is Deputy Worth It? Fit Scenarios Before You Buy",
+        "href": "/guides/is-deputy-worth-it/"
+      }
+    ],
+    "evidenceState": "Research/data-based (no completed hands-on test) · Latest verification/research signal: 2026-08-18T12:00:00.000Z · Editorial assessment: approved",
+    "nextDecisionStep": "Compare against peers: Connecteam vs Deputy",
+    "missingSections": []
+  },
+  "dependents": [
+    {
+      "kind": "guide",
+      "slug": "deputy-implementation",
+      "path": "/guides/deputy-implementation/"
+    },
+    {
+      "kind": "guide",
+      "slug": "deputy-migration",
+      "path": "/guides/deputy-migration/"
+    },
+    {
+      "kind": "guide",
+      "slug": "deputy-setup",
+      "path": "/guides/deputy-setup/"
+    },
+    {
+      "kind": "guide",
+      "slug": "deputy-plans",
+      "path": "/guides/deputy-plans/"
+    },
+    {
+      "kind": "guide",
+      "slug": "is-deputy-worth-it",
+      "path": "/guides/is-deputy-worth-it/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "connecteam-vs-deputy",
+      "path": "/compare/connecteam-vs-deputy/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "7shifts-vs-deputy",
+      "path": "/compare/7shifts-vs-deputy/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "adp-workforce-now-vs-deputy",
+      "path": "/compare/adp-workforce-now-vs-deputy/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "ashby-vs-deputy",
+      "path": "/compare/ashby-vs-deputy/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "bamboohr-vs-deputy",
+      "path": "/compare/bamboohr-vs-deputy/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "bolt-for-business-vs-deputy",
+      "path": "/compare/bolt-for-business-vs-deputy/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "carepatron-vs-deputy",
+      "path": "/compare/carepatron-vs-deputy/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "dayforce-vs-deputy",
+      "path": "/compare/dayforce-vs-deputy/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "deputy-vs-greenhouse",
+      "path": "/compare/deputy-vs-greenhouse/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "deputy-vs-gusto",
+      "path": "/compare/deputy-vs-gusto/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "deputy-vs-hibob",
+      "path": "/compare/deputy-vs-hibob/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "deputy-vs-homebase",
+      "path": "/compare/deputy-vs-homebase/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "deputy-vs-lever",
+      "path": "/compare/deputy-vs-lever/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "deputy-vs-oracle-hcm",
+      "path": "/compare/deputy-vs-oracle-hcm/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "deputy-vs-paycor",
+      "path": "/compare/deputy-vs-paycor/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "deputy-vs-paylocity",
+      "path": "/compare/deputy-vs-paylocity/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "deputy-vs-personio",
+      "path": "/compare/deputy-vs-personio/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "deputy-vs-rippling",
+      "path": "/compare/deputy-vs-rippling/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "deputy-vs-trainual",
+      "path": "/compare/deputy-vs-trainual/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "deputy-vs-ukg-pro",
+      "path": "/compare/deputy-vs-ukg-pro/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "deputy-vs-when-i-work",
+      "path": "/compare/deputy-vs-when-i-work/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "deputy-vs-workable",
+      "path": "/compare/deputy-vs-workable/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "deputy-vs-workday",
+      "path": "/compare/deputy-vs-workday/"
+    },
+    {
+      "kind": "alternatives",
+      "slug": "deputy",
+      "path": "/alternatives/deputy/"
+    },
+    {
+      "kind": "pricing",
+      "slug": "deputy",
+      "path": "/software/deputy/pricing/"
+    },
+    {
+      "kind": "tools",
+      "slug": "hr-cost-calculator",
+      "path": "/tools/hr-cost-calculator/"
+    }
+  ],
+  "dependentsNeedingRefresh": [],
+  "remediation": [],
+  "notes": [
+    "fieldAudit score=100",
+    "decisionHub bestFor=6 notIdeal=6",
+    "dependents=31"
+  ],
+  "materiallyImproved": true
+}

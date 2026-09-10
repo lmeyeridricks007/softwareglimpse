@@ -5,9 +5,9 @@
   "editorialStatus": "approved",
   "title": "Salesforce Review (2026)",
   "h1": "Salesforce Review",
-  "intro": "Salesforce Sales Cloud is an enterprise CRM platform spanning Starter Suite, Pro Suite, Enterprise, and Unlimited editions. This review covers published USD Sales Cloud pricing, core CRM capabilities, Agentforce AI messaging, limitations, and when lighter CRMs are a better fit.",
-  "summary": "Salesforce is a strong fit for mid-market and enterprise teams that need deep customization, reporting, and ecosystem scale. Starter Suite starts at $25/user/mo, but serious sales ops usually land on Pro ($100), Enterprise ($175), or Unlimited ($350) annual list pricing \u2014 before add-ons. Scores reflect first-party research, not hands-on lab testing.",
-  "verdict": "Salesforce Sales Cloud is a top-tier enterprise CRM when customization, reporting, scalability, and ecosystem breadth matter more than simplicity or sticker price. Starter Suite offers a published $25 entry point, but most serious mid-market/enterprise buyers should evaluate Pro Suite through Unlimited (and related add-ons) against true TCO. This review is based on first-party Sales Cloud pricing and product research \u2014 not hands-on product testing.",
+  "intro": "Salesforce Sales Cloud is an enterprise CRM platform spanning Free Suite, Starter Suite, Pro Suite, Enterprise, and Unlimited editions. This review covers published USD CRM/Sales Cloud pricing (verified 30 Aug 2026), core CRM capabilities, Agentforce AI, the Aug 2026 Claudeforce announcement, limitations, and when lighter CRMs are a better fit.",
+  "summary": "Salesforce is a strong fit for mid-market and enterprise teams that need deep customization, reporting, and ecosystem scale. As of 30 Aug 2026, Free Suite is $0 (2 user licenses); paid Starter Suite starts at $25/user/mo, with serious sales ops usually landing on Pro ($100), Enterprise ($175), or Unlimited ($350) annual list — before add-ons. Claudeforce (Salesforce in Claude) is in pilot with open beta expected Sep 2026; Agentforce remains the in-product agent story. Scores reflect first-party research, not hands-on lab testing.",
+  "verdict": "Salesforce Sales Cloud is a top-tier enterprise CRM when customization, reporting, scalability, and ecosystem breadth matter more than simplicity or sticker price. Free Suite ($0, 2 seats as of 30 Aug 2026) and Starter Suite ($25) lower the on-ramp, but most serious mid-market/enterprise buyers should still evaluate Pro Suite through Unlimited (and related add-ons) against true TCO. This review is based on first-party Sales Cloud pricing and product research — not hands-on product testing.",
   "overallScore": 7.8,
   "criterionAssessments": [
     {
@@ -145,8 +145,10 @@
     {
       "criterionSlug": "value-for-money",
       "score": 5,
-      "rationale": "Starter Suite at $25/user/mo is a real entry price, but usable mid-market/enterprise capability typically lands at Pro ($100), Enterprise ($175), or Unlimited ($350) annual list \u2014 before Agentforce/Revenue add-ons. Excellent capability density for large orgs; poor value if you only need a simple pipeline CRM.",
+      "rationale": "Free Suite ($0, 2 seats as of 30 Aug 2026) and Starter Suite at $25/user/mo exist, but usable mid-market/enterprise capability typically lands at Pro ($100), Enterprise ($175), or Unlimited ($350) annual list \u2014 before Agentforce/Revenue add-ons. Excellent capability density for large orgs; poor value if you only need a simple pipeline CRM.",
       "supportingFactIds": [
+        "fact-salesforce-pricing.hasFreePlan",
+        "fact-salesforce-pricing.plans.free-suite",
         "fact-salesforce-pricing.startingPriceMonthly",
         "fact-salesforce-pricing.plans.pro-suite",
         "fact-salesforce-pricing.plans.enterprise",
@@ -176,7 +178,8 @@
     "Strong pipeline, opportunity, forecasting, and reporting ladder across Pro/Enterprise/Unlimited",
     "Broad ecosystem via AgentExchange (formerly AppExchange), Slack, and partner network",
     "Documented Agentforce AI and automation story across Sales Cloud",
-    "Clear published USD edition ladder from Starter Suite through Unlimited"
+    "Claudeforce / Salesforce in Claude (37 prebuilt sales skills; pilot now, open beta expected Sep 2026)",
+    "Clear published USD edition ladder from Free Suite through Unlimited"
   ],
   "cons": [
     "Steep learning curve and high administration/implementation overhead versus SMB CRMs",
@@ -185,7 +188,7 @@
     "Some add-ons (e.g. Agentforce for Sales) require Contact us rather than transparent self-serve checkout",
     "Overkill for teams that only need a simple visual pipeline CRM"
   ],
-  "pricingSummary": "Sales Cloud USD list editions: Starter Suite $25/user/mo (monthly or annual), Pro Suite $100, Enterprise $175, Unlimited $350 per user/mo billed annually. 30-day free trial; no permanent free plan. Add-ons (Agentforce for Sales, Revenue Intelligence, Premier Support, etc.) can raise TCO; some require Contact us.",
+  "pricingSummary": "As of 30 Aug 2026 (salesforce.com/crm/pricing/): Free Suite $0 (2 user licenses), Starter Suite $25/user/mo (monthly or annual), Pro Suite $100/user/mo annual. Sales Cloud editions also list Enterprise $175, Unlimited $350 per user/mo annual. 30-day free trial. Claudeforce (26 Aug 2026): Salesforce in Claude with 37 prebuilt sales skills; pilot / open beta expected Sep 2026; no list price on the PR. Agentforce remains the in-product agent platform. Add-ons (Agentforce for Sales, Revenue Intelligence, Premier Support, etc.) can raise TCO.",
   "keyFeatures": [
     "Lead, account, contact, and opportunity management",
     "Pipeline management with advanced deal insights on Enterprise+",
@@ -193,6 +196,7 @@
     "Reports, dashboards, and forecasting (Pro+)",
     "Email sync with Gmail/Outlook and activity capture",
     "Agentforce AI capabilities across Sales Cloud",
+    "Claudeforce — Salesforce in Claude (pilot; 37 prebuilt sales skills)",
     "AgentExchange (formerly AppExchange) ecosystem",
     "Slack connectivity and partner solutions"
   ],
@@ -224,12 +228,15 @@
     "salesforce-sales-cloud-product",
     "salesforce-sales-cloud-features",
     "salesforce-crm-product",
-    "salesforce-free-trial"
+    "salesforce-free-trial",
+    "salesforce-claudeforce-pr-2026-08-26"
   ],
   "factRefs": [
     {
       "section": "pricing",
       "factIds": [
+        "fact-salesforce-pricing.hasFreePlan",
+        "fact-salesforce-pricing.plans.free-suite",
         "fact-salesforce-pricing.startingPriceMonthly",
         "fact-salesforce-pricing.plans.starter-suite",
         "fact-salesforce-pricing.plans.pro-suite",
@@ -255,15 +262,17 @@
       "section": "ai",
       "factIds": [
         "fact-salesforce-ai.assistant",
-        "fact-salesforce-ai.automation"
+        "fact-salesforce-ai.automation",
+        "fact-salesforce-ai.claudeforce"
       ]
     }
   ],
   "faq": [
     {
       "question": "How much does Salesforce Sales Cloud cost?",
-      "answer": "Published USD list pricing (Aug 2026): Starter Suite $25/user/mo (billed monthly or annually); Pro Suite $100, Enterprise $175, and Unlimited $350 per user/mo billed annually. Agentforce 1 Sales is also listed at $550/user/mo billed annually. Always confirm current regional pricing on Salesforce\u2019s site.",
+      "answer": "As of 30 Aug 2026 on salesforce.com/crm/pricing/: Free Suite $0 (2 user licenses included), Starter Suite $25/user/mo (monthly or annual), Pro Suite $100/user/mo billed annually. The Sales Cloud editions page also lists Enterprise $175, Unlimited $350, and Agentforce 1 Sales $550 per user/mo billed annually. Always confirm current regional pricing on Salesforce\u2019s site.",
       "factIds": [
+        "fact-salesforce-pricing.plans.free-suite",
         "fact-salesforce-pricing.plans.starter-suite",
         "fact-salesforce-pricing.plans.pro-suite",
         "fact-salesforce-pricing.plans.enterprise",
@@ -272,16 +281,26 @@
     },
     {
       "question": "Does Salesforce have a free plan or free trial?",
-      "answer": "There is no permanent free Sales Cloud plan on the pricing pages reviewed. Salesforce offers a free 30-day Sales Cloud trial (trial form states no credit card required). Pricing FAQ also mentions a free 30-day Starter Suite trial for up to 10 users.",
+      "answer": "Yes — as of 30 Aug 2026, Salesforce publishes Free Suite at $0 with 2 user licenses included (no contract or credit card required) on the CRM pricing page. Salesforce also offers a free 30-day Sales Cloud trial (trial form states no credit card required).",
       "factIds": [
         "fact-salesforce-pricing.hasFreePlan",
+        "fact-salesforce-pricing.plans.free-suite",
         "fact-salesforce-pricing.hasFreeTrial"
       ]
     },
     {
-      "question": "Which Sales Cloud edition should most teams buy?",
-      "answer": "Starter Suite fits smaller teams needing core CRM plus light marketing/commerce suite tools. Choose Pro Suite when quoting/forecasting and greater customization matter. Enterprise adds advanced pipeline/deal insights and Conversation Intelligence. Unlimited adds Predictive AI, Sales Engagement, Premier Success Plan, and Full Sandbox.",
+      "question": "What is Claudeforce?",
+      "answer": "On 26 Aug 2026 Salesforce and Anthropic announced Claudeforce. The launch surface is Salesforce in Claude — a plugin with 37 prebuilt sales skills. Actions route through Salesforce so permissions and business rules stay enforced. Available to select pilot customers now; open beta expected September 2026. No list price appears on the press release. Agentforce remains Salesforce\u2019s in-product agent platform (Claude is also available inside Agentforce per the same announcement).",
       "factIds": [
+        "fact-salesforce-ai.claudeforce",
+        "fact-salesforce-ai.assistant"
+      ]
+    },
+    {
+      "question": "Which Sales Cloud edition should most teams buy?",
+      "answer": "Free Suite fits very small teams (2 seats) needing core CRM to get started. Starter Suite fits smaller teams needing core CRM plus light marketing/commerce suite tools. Choose Pro Suite when quoting/forecasting and greater customization matter. Enterprise adds advanced pipeline/deal insights and Conversation Intelligence. Unlimited adds Predictive AI, Sales Engagement, Premier Success Plan, and Full Sandbox.",
+      "factIds": [
+        "fact-salesforce-pricing.plans.free-suite",
         "fact-salesforce-pricing.plans.starter-suite",
         "fact-salesforce-pricing.plans.pro-suite",
         "fact-salesforce-pricing.plans.enterprise",
@@ -290,14 +309,15 @@
     },
     {
       "question": "Are Salesforce add-ons required?",
-      "answer": "Often for advanced use cases. Premier Support is an add-on on Pro Suite. Agentforce for Sales (from $125/user/mo, Contact us), Sales Programs, Revenue Intelligence, and Revenue Cloud are separately priced. Unlimited includes Premier Success Plan and Full Sandbox.",
+      "answer": "Often for advanced use cases. Premier Support is an add-on on Pro Suite. Agentforce for Sales (from $125/user/mo, Contact us), Sales Programs, Revenue Intelligence, and Revenue Cloud are separately priced. Unlimited includes Premier Success Plan and Full Sandbox. Claudeforce packaging/list price was not published on the Aug 2026 PR.",
       "factIds": [
-        "fact-salesforce-pricing.addons"
+        "fact-salesforce-pricing.addons",
+        "fact-salesforce-ai.claudeforce"
       ]
     },
     {
       "question": "Is this a hands-on SoftwareGlimpse lab review?",
-      "answer": "No. This review is approved based on first-party Salesforce Sales Cloud pricing, product, features, CRM, and trial-form research. SoftwareGlimpse has not recorded hands-on product testing for Salesforce in this assessment.",
+      "answer": "No. This review is approved based on first-party Salesforce Sales Cloud pricing, product, features, CRM, trial-form, and Claudeforce press-release research. SoftwareGlimpse has not recorded hands-on product testing for Salesforce in this assessment.",
       "factIds": []
     }
   ],
@@ -305,7 +325,7 @@
     {
       "id": "overview",
       "heading": "What Salesforce Sales Cloud is",
-      "body": "Sales Cloud is Salesforce\u2019s sales CRM \u2014 a configurable platform for leads, accounts, opportunities, automation, reporting, and AI-assisted selling, sold through Starter Suite, Pro Suite, Enterprise, and Unlimited editions.",
+      "body": "Sales Cloud is Salesforce\u2019s sales CRM \u2014 a configurable platform for leads, accounts, opportunities, automation, reporting, and AI-assisted selling, sold through Free Suite, Starter Suite, Pro Suite, Enterprise, and Unlimited editions.",
       "factRefs": [
         "fact-salesforce-positioning.summary"
       ]
@@ -313,11 +333,21 @@
     {
       "id": "pricing",
       "heading": "Pricing and plans",
-      "body": "USD list pricing starts at Starter Suite $25/user/mo (monthly or annual). Pro Suite ($100), Enterprise ($175), and Unlimited ($350) are billed annually per the Sales Cloud pricing page. A 30-day free trial is offered; add-ons and Contact-us SKUs can materially change TCO.",
+      "body": "As of 30 Aug 2026, vendor CRM pricing lists Free Suite at $0 (2 user licenses included; no contract or credit card), Starter Suite $25/user/mo (monthly or annual), and Pro Suite $100/user/mo (annual). Enterprise ($175) and Unlimited ($350) remain on the Sales Cloud editions ladder. A 30-day free trial is offered; add-ons and Contact-us SKUs can materially change TCO.",
       "factRefs": [
+        "fact-salesforce-pricing.plans.free-suite",
         "fact-salesforce-pricing.plans.starter-suite",
         "fact-salesforce-pricing.plans.enterprise",
         "fact-salesforce-pricing.addons"
+      ]
+    },
+    {
+      "id": "claudeforce",
+      "heading": "Claudeforce (Aug 2026)",
+      "body": "On 26 Aug 2026 Salesforce and Anthropic announced Claudeforce. The launch product is Salesforce in Claude — a plugin with 37 prebuilt sales skills (meeting prep, deal health, pipeline review, and more). Actions route through Salesforce so permissions and business rules stay enforced. Select pilots are live now; open beta is expected in September 2026. The press release publishes no list price or packaging — SoftwareGlimpse does not invent either. Agentforce remains the in-product agent platform; the same announcement notes Claude is available inside Agentforce.",
+      "factRefs": [
+        "fact-salesforce-ai.claudeforce",
+        "fact-salesforce-ai.assistant"
       ]
     },
     {
@@ -333,9 +363,10 @@
     {
       "id": "who-its-for",
       "heading": "Who it\u2019s for",
-      "body": "Best for mid-market and enterprise sales orgs that need platform depth. Less ideal for micro teams seeking a simple, low-admin pipeline CRM.",
+      "body": "Best for mid-market and enterprise sales orgs that need platform depth. Free Suite can serve very small teams for core CRM, but most paid buyers still face an enterprise learning curve versus lightweight pipeline CRMs.",
       "factRefs": [
-        "fact-salesforce-positioning.summary"
+        "fact-salesforce-positioning.summary",
+        "fact-salesforce-pricing.plans.free-suite"
       ]
     }
   ],
@@ -850,7 +881,7 @@
   "handsOnTesting": false,
   "contentVersion": 1,
   "refreshNeeded": false,
-  "lastUpdatedAt": "2026-08-14T06:00:00.000Z",
+  "lastUpdatedAt": "2026-08-30T12:00:00.000Z",
   "metadata": {
     "status": "published",
     "publishedAt": "2026-08-14T06:00:00.000Z",
@@ -858,7 +889,7 @@
   },
   "seo": {
     "title": "Salesforce Review (2026): Sales Cloud Pricing, Features, Pros & Cons",
-    "description": "In-depth Salesforce Sales Cloud review covering 2026 USD edition pricing (Starter Suite to Unlimited), CRM features, Agentforce AI, limitations, and who should buy.",
+    "description": "In-depth Salesforce Sales Cloud review covering 2026 USD edition pricing (Free Suite to Unlimited), CRM features, Agentforce, Claudeforce, limitations, and who should buy.",
     "canonicalPath": "/software/salesforce/",
     "indexable": true
   }

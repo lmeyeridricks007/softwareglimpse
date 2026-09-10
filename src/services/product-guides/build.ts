@@ -495,7 +495,7 @@ export function buildCrmProductGuide(
       title: cfg.seoTitle(ctx.productName),
       description: cfg.summary(ctx.productName).slice(0, 320),
       canonicalPath: `/guides/${slug}/`,
-      indexable: true,
+      indexable: false,
     },
   };
 }
@@ -557,7 +557,7 @@ export function buildSiProductGuide(
       title: cfg.seoTitle(ctx.productName),
       description: cfg.summary(ctx.productName).slice(0, 320),
       canonicalPath: `/guides/${slug}/`,
-      indexable: true,
+      indexable: false,
     },
   };
 }
@@ -619,7 +619,7 @@ export function buildEmProductGuide(
       title: cfg.seoTitle(ctx.productName),
       description: cfg.summary(ctx.productName).slice(0, 320),
       canonicalPath: `/guides/${slug}/`,
-      indexable: true,
+      indexable: false,
     },
   };
 }
@@ -673,7 +673,7 @@ export function buildMarketingProductGuide(
       title: cfg.seoTitle(ctx.productName),
       description: cfg.summary(ctx.productName).slice(0, 320),
       canonicalPath: `/guides/${slug}/`,
-      indexable: true,
+      indexable: false,
     },
   };
 }
@@ -735,7 +735,7 @@ export function buildBcProductGuide(
       title: cfg.seoTitle(ctx.productName),
       description: cfg.summary(ctx.productName).slice(0, 320),
       canonicalPath: `/guides/${slug}/`,
-      indexable: true,
+      indexable: false,
     },
   };
 }
@@ -832,7 +832,7 @@ export function buildHrProductGuide(
       title: cfg.seoTitle(ctx.productName),
       description: cfg.summary(ctx.productName).slice(0, 320),
       canonicalPath: `/guides/${slug}/`,
-      indexable: true,
+      indexable: false,
     },
   };
 }
@@ -929,7 +929,7 @@ export function buildEcommerceProductGuide(
       title: cfg.seoTitle(ctx.productName),
       description: cfg.summary(ctx.productName).slice(0, 320),
       canonicalPath: `/guides/${slug}/`,
-      indexable: true,
+      indexable: false,
     },
   };
 }
@@ -1026,7 +1026,7 @@ export function buildPmProductGuide(
       title: cfg.seoTitle(ctx.productName),
       description: cfg.summary(ctx.productName).slice(0, 320),
       canonicalPath: `/guides/${slug}/`,
-      indexable: true,
+      indexable: false,
     },
   };
 }
@@ -1115,7 +1115,7 @@ export function buildAiProductGuide(
       title: cfg.seoTitle(ctx.productName),
       description: cfg.summary(ctx.productName).slice(0, 320),
       canonicalPath: `/guides/${slug}/`,
-      indexable: true,
+      indexable: false,
     },
   };
 }
@@ -1212,7 +1212,7 @@ export function buildItProductGuide(
       title: cfg.seoTitle(ctx.productName),
       description: cfg.summary(ctx.productName).slice(0, 320),
       canonicalPath: `/guides/${slug}/`,
-      indexable: true,
+      indexable: false,
     },
   };
 }

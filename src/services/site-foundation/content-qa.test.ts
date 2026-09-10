@@ -17,13 +17,24 @@ describe("site foundation content QA", () => {
       (d) => d.id === "affiliate-disclosure",
     );
     expect(disclosure?.status).toBe("approved");
+
+    for (const id of [
+      "editorial-policy",
+      "corrections-policy",
+      "editorial-independence",
+    ] as const) {
+      const doc = config.legalDocuments.find((d) => d.id === id);
+      expect(doc, id).toBeTruthy();
+      expect(doc!.status, id).toBe("approved");
+      expect(doc!.sections.length, id).toBeGreaterThan(0);
+    }
   });
 
   it("founder bio does not invent employers or testing claims", () => {
     const founder = config.authors.find(
       (a) => a.id === config.identity.founderAuthorId,
     );
-    expect(founder?.name).toBe("Lee M.");
+    expect(founder?.name).toBe("Lee Meyeridricks");
     const blob = `${founder?.shortBio ?? ""} ${founder?.fullBio ?? ""}`.toLowerCase();
     expect(blob).not.toMatch(/\bwe tested every\b/);
     expect(blob).not.toMatch(/\byears at\b/);
@@ -45,7 +56,9 @@ describe("site foundation content QA", () => {
     const cookies = buildCookiePolicySections(config);
     expect(cookies.some((s) => s.body.includes("sg_consent"))).toBe(true);
     expect(cookies.some((s) => s.body.includes("sg-crm-finder-v1"))).toBe(true);
-    expect(cookies.every((s) => !/_ga\b|_fbp\b/.test(s.body))).toBe(true);
+    // GA4 is configured and disclosed; Facebook Pixel (_fbp) must not appear.
+    expect(cookies.some((s) => s.body.includes("_ga"))).toBe(true);
+    expect(cookies.every((s) => !/\b_fbp\b/.test(s.body))).toBe(true);
     expect(
       cookies.some((s) => s.id === "controller" && s.body.includes("SoftwareGlimpse")),
     ).toBe(true);

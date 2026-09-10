@@ -2,6 +2,10 @@ import { NextResponse } from "next/server";
 import type { AffiliateDestinationType, CommercialCtaIntent } from "@/domain";
 import { resolveCommercialCta } from "@/services/affiliate/resolve-cta";
 import { track } from "@/analytics/events";
+import {
+  recordAffiliateClick,
+  sanitizeReferrerHost,
+} from "@/services/analytics/affiliate-funnel";
 
 export const dynamic = "force-dynamic";
 export const revalidate = 0;
@@ -28,17 +32,11 @@ const DESTINATION_TYPES = new Set<string>([
  * via SoftwareCta / AffiliateLink. This route retains shared/indexed /go/ URLs.
  *
  * ONLY resolves against stored destinations — never accepts arbitrary URLs.
- *
- * Examples:
- *   /go/pipedrive
- *   /go/pipedrive/trial
- *   /go/pipedrive/pricing
  */
 export async function GET(request: Request, { params }: RouteParams) {
   const { product, destination } = await params;
   const url = new URL(request.url);
 
-  // Hard reject open-redirect style query params.
   if (url.searchParams.has("url") || url.searchParams.has("redirect")) {
     return NextResponse.json(
       { error: "Open redirects are not allowed" },
@@ -50,7 +48,7 @@ export async function GET(request: Request, { params }: RouteParams) {
   if (destSegment && !DESTINATION_TYPES.has(destSegment)) {
     return NextResponse.json(
       { error: "Unknown destination type" },
-      { status: 400 },
+      { status: 404 },
     );
   }
 
@@ -80,6 +78,14 @@ export async function GET(request: Request, { params }: RouteParams) {
     );
   }
 
+  const destinationDomain = (() => {
+    try {
+      return new URL(resolved.externalUrl!).hostname.replace(/^www\./, "");
+    } catch {
+      return null;
+    }
+  })();
+
   track({
     name: "affiliate_clicked",
     properties: {
@@ -90,16 +96,26 @@ export async function GET(request: Request, { params }: RouteParams) {
       destinationType: resolved.destination.type,
       promotionId: resolved.promotion?.id ?? null,
       context: contextParam,
-      destination_domain: (() => {
-        try {
-          return new URL(resolved.externalUrl!).hostname.replace(/^www\./, "");
-        } catch {
-          return null;
-        }
-      })(),
+      destination_domain: destinationDomain,
       via: "go-compat-redirect",
     },
   });
+
+  try {
+    recordAffiliateClick({
+      productSlug: product,
+      sourcePage: url.searchParams.get("from") ?? request.headers.get("referer"),
+      programId: resolved.promotion?.id ?? null,
+      ctaLocation: location,
+      ctaType: resolved.affiliate ? "affiliate" : "official_fallback",
+      destinationDomain,
+      destinationType: resolved.destination.type,
+      referrerHost: sanitizeReferrerHost(request.headers.get("referer")),
+      captureChannel: "go_redirect",
+    });
+  } catch {
+    // Never block redirect on analytics failure.
+  }
 
   return NextResponse.redirect(resolved.externalUrl, {
     status: 302,

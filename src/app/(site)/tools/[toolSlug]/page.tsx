@@ -39,6 +39,7 @@ import { isCalculablePlan } from "@/services/pricing";
 import { listPricingSnapshotsForCategory } from "@/services/pricing/server";
 import { buildVisitCtaMap } from "@/services/affiliate/resolve-visit-cta";
 import { buildCategoryFinderClientKit } from "@/services/category-tools/build-finder-kit";
+import { categoryHasPublishedPillar } from "@/services/category-tools/pillar-gate";
 import {
   buildCategoryScorecardResearchCatalog,
   listCategoryScorecardProductOptions,
@@ -211,8 +212,9 @@ export async function generateMetadata({
     });
   }
   const text = copyFor(parsed.categorySlug, parsed.kind);
-  let indexable = true;
-  if (parsed.kind === "cost-calculator" || parsed.kind === "plan-selector") {
+  // Fence orphan tool families until the category pillar is publicly available.
+  let indexable = categoryHasPublishedPillar(parsed.categorySlug);
+  if (indexable && (parsed.kind === "cost-calculator" || parsed.kind === "plan-selector")) {
     const snapshots = listPricingSnapshotsForCategory(parsed.categorySlug);
     const calculable = snapshots.filter((snapshot) =>
       (snapshot.pricing?.plans ?? []).some(isCalculablePlan),

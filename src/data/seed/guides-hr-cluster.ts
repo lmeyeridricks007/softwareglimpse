@@ -1,4 +1,4 @@
-import type { GuidePage } from "@/domain";
+import type { GuidePageInput } from "@/domain";
 import { teachingExpansionFor } from "./guides-category-teaching-expansion";
 import { hrEvaluationGuide } from "./guides-hr-evaluation-guide";
 import { hrPricingGuide } from "./guides-hr-pricing-guide";
@@ -10,7 +10,7 @@ import { whatIsHrSoftwareGuide } from "./guides-what-is-hr-software";
  * HR category educational guides (minimum supporting set).
  * Published and indexable (matches PM / BC editorial gate).
  */
-export const hrCategoryGuides: GuidePage[] = [
+export const hrCategoryGuides: GuidePageInput[] = [
   whatIsHrSoftwareGuide,
   howToChooseHrSoftwareGuide,
   hrPricingGuide,

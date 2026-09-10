@@ -1,4 +1,4 @@
-import type { GuidePage } from "@/domain";
+import type { GuidePageInput } from "@/domain";
 import type { z } from "zod";
 import type { GuideContentBlockSchema } from "@/domain";
 import { tier22GuideScheduledAt } from "@/data/config/publishing/tier-22-voip-business-phone-launch-2027-06-01";
@@ -53,7 +53,7 @@ const blocks: GuideBlockInput[] = [
   },
 ];
 
-function metadata(): GuidePage["metadata"] {
+function metadata(): GuidePageInput["metadata"] {
   return SCHEDULED_AT
     ? {
         status: "scheduled",
@@ -73,7 +73,7 @@ function metadata(): GuidePage["metadata"] {
       };
 }
 
-export const whatIsVoipBusinessPhoneSoftwareGuide: GuidePage = {
+export const whatIsVoipBusinessPhoneSoftwareGuide: GuidePageInput = {
   id: "guide-what-is-voip-business-phone-software",
   slug: SLUG,
   title: "What is VoIP & Business Phone Software?",
@@ -93,7 +93,7 @@ export const whatIsVoipBusinessPhoneSoftwareGuide: GuidePage = {
     "voip-business-phone-pricing-guide",
     "voip-business-phone-vs-business-communications",
   ],
-  blocks: blocks as GuidePage["blocks"],
+  blocks: blocks as GuidePageInput["blocks"],
   checklist: [],
   sections: [],
   faq: [],
@@ -103,7 +103,7 @@ export const whatIsVoipBusinessPhoneSoftwareGuide: GuidePage = {
     title: "What is VoIP & Business Phone Software?",
     description:
       "Learn how VoIP and business phone systems support cloud calling, dialers, and contact-center voice.",
-    indexable: !SCHEDULED_AT,
+    indexable: true,
     canonicalPath: "/guides/what-is-voip-business-phone-software/",
   },
 };

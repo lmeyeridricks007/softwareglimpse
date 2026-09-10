@@ -12,6 +12,7 @@ import {
   GuidesResearchPathways,
   GuidesToolsCta,
   GuidesTopicGrid,
+  GuidesTopicalClusters,
 } from "@/components/guides/hub";
 import { Section } from "@/components/layout/section";
 import { Breadcrumbs } from "@/components/seo/breadcrumbs";
@@ -96,7 +97,23 @@ export default async function GuidesIndexPage({ searchParams }: PageProps) {
           ...(model.guides.length > 0
             ? [
                 collectionJsonLd(
-                  model.guides.map((g) => ({ title: g.title, href: g.href })),
+                  [
+                    ...model.topicalClusters.flatMap((c) =>
+                      c.cornerstone.map((g) => ({
+                        title: g.title,
+                        href: g.href,
+                      })),
+                    ),
+                    ...model.basics.map((g) => ({
+                      title: g.title,
+                      href: g.href,
+                    })),
+                  ]
+                    .filter(
+                      (g, i, arr) =>
+                        arr.findIndex((x) => x.href === g.href) === i,
+                    )
+                    .slice(0, 40),
                 ),
               ]
             : []),
@@ -135,7 +152,11 @@ export default async function GuidesIndexPage({ searchParams }: PageProps) {
         <GuidesBuyingJourney steps={model.journey} />
       </Section>
 
-      {/* white */}
+      {model.topicalClusters.length > 0 ? (
+        <GuidesTopicalClusters clusters={model.topicalClusters} />
+      ) : null}
+
+      {/* white — discovery grid is search-worthy guides only */}
       <Section padding="md" background="surface" container="wide">
         <GuidesLatestGrid
           guides={model.guides}

@@ -1,4 +1,4 @@
-import type { GuidePage } from "@/domain";
+import type { GuidePageInput } from "@/domain";
 import type { z } from "zod";
 import type { GuideContentBlockSchema } from "@/domain";
 import { tier23GuideScheduledAt } from "@/data/config/publishing/tier-23-live-chat-launch-2027-07-01";
@@ -34,7 +34,7 @@ const blocks: GuideBlockInput[] = [
   },
 ];
 
-function metadata(): GuidePage["metadata"] {
+function metadata(): GuidePageInput["metadata"] {
   return SCHEDULED_AT
     ? {
         status: "scheduled",
@@ -54,7 +54,7 @@ function metadata(): GuidePage["metadata"] {
       };
 }
 
-export const howToChooseLiveChatSoftwareGuide: GuidePage = {
+export const howToChooseLiveChatSoftwareGuide: GuidePageInput = {
   id: "guide-how-to-choose-live-chat-software",
   slug: SLUG,
   title: "How to Choose Live Chat Software",
@@ -74,7 +74,7 @@ export const howToChooseLiveChatSoftwareGuide: GuidePage = {
     "live-chat-pricing-guide",
     "live-chat-evaluation-guide",
   ],
-  blocks: blocks as GuidePage["blocks"],
+  blocks: blocks as GuidePageInput["blocks"],
   checklist: [],
   sections: [],
   faq: [],
@@ -85,6 +85,6 @@ export const howToChooseLiveChatSoftwareGuide: GuidePage = {
     description:
       "Choose live chat by messenger job, pricing unit, proactive triggers, and deflection depth.",
     canonicalPath: `/guides/${SLUG}/`,
-    indexable: !SCHEDULED_AT,
+    indexable: true,
   },
 };

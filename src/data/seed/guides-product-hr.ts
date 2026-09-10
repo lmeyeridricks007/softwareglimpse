@@ -1,4 +1,4 @@
-import type { GuidePage } from "@/domain";
+import type { GuidePageInput } from "@/domain";
 import { buildAllHrProductGuides } from "@/services/product-guides/build";
 
 /**
@@ -6,4 +6,4 @@ import { buildAllHrProductGuides } from "@/services/product-guides/build";
  * for Wave-1 primary products: Breezy HR, Connecteam, Jibble, Trainual.
  * Published and indexable (editorial gate cleared with category guides).
  */
-export const hrProductGuides: GuidePage[] = buildAllHrProductGuides();
+export const hrProductGuides: GuidePageInput[] = buildAllHrProductGuides();

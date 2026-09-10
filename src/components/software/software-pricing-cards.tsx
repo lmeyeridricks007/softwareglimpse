@@ -1,6 +1,10 @@
+"use client";
+
+import { useMemo, useState } from "react";
 import type { ResolvedAffiliateLink } from "@/services/affiliate/resolve-affiliate-link";
 import { AffiliateCta } from "@/components/affiliate/affiliate-cta";
-import type { CurrencyCode, Pricing, PricingPlan } from "@/domain";
+import type { CurrencyCode, Pricing } from "@/domain";
+import { formatMoney, fromMajor } from "@/domain";
 import { resolvePlanDisplayPrice } from "@/services/pricing";
 import { Badge } from "@/components/ui/badge";
 import { ButtonLink } from "@/components/ui/button";
@@ -18,12 +22,17 @@ type Props = {
   className?: string;
 };
 
-function planPriceLabel(
-  plan: PricingPlan,
-  currency: CurrencyCode,
-): { price: string; unit: string } {
-  const priced = resolvePlanDisplayPrice(plan, currency, false);
-  return { price: priced.priceLabel, unit: priced.unitLabel };
+function hasAnnualAndMonthlyRules(pricing: Pricing): boolean {
+  return (pricing.plans ?? []).some((plan) => {
+    const intervals = new Set(
+      plan.rules.flatMap((rule) =>
+        "interval" in rule && typeof rule.interval === "string"
+          ? [rule.interval]
+          : [],
+      ),
+    );
+    return intervals.has("year") && intervals.has("month");
+  });
 }
 
 export function SoftwarePricingCards({
@@ -39,6 +48,11 @@ export function SoftwarePricingCards({
   const plans = pricing.plans ?? [];
   const currency = (pricing.currency ?? "USD") as CurrencyCode;
   const hasPlans = plans.length > 0;
+  const showBillingToggle = useMemo(
+    () => hasAnnualAndMonthlyRules(pricing),
+    [pricing],
+  );
+  const [annual, setAnnual] = useState(true);
 
   if (!hasPlans && pricing.startingPriceMonthly == null && !pricing.notes) {
     return null;
@@ -50,12 +64,39 @@ export function SoftwarePricingCards({
       aria-labelledby="pricing-heading"
       className={cn("scroll-mt-28", className)}
     >
-      <h2
-        id="pricing-heading"
-        className="font-[family-name:var(--font-display)] text-[length:var(--sg-text-h2)] font-semibold text-[var(--sg-color-text)]"
-      >
-        Pricing
-      </h2>
+      <div className="flex flex-wrap items-center justify-between gap-3">
+        <h2
+          id="pricing-heading"
+          className="font-[family-name:var(--font-display)] text-[length:var(--sg-text-h2)] font-semibold text-[var(--sg-color-text)]"
+        >
+          Pricing
+        </h2>
+        {showBillingToggle ? (
+          <label className="inline-flex items-center gap-2 text-sm text-[var(--sg-color-text-muted)]">
+            <span>{annual ? "Billed annually" : "Billed monthly"}</span>
+            <button
+              type="button"
+              role="switch"
+              aria-checked={annual}
+              aria-label="Toggle annual versus monthly list prices"
+              onClick={() => setAnnual((v) => !v)}
+              className={cn(
+                "relative h-6 w-11 rounded-full transition-colors",
+                annual
+                  ? "bg-[var(--sg-color-primary)]"
+                  : "bg-[var(--sg-color-border-strong)]",
+              )}
+            >
+              <span
+                className={cn(
+                  "absolute top-0.5 size-5 rounded-full bg-white transition-transform",
+                  annual ? "left-5" : "left-0.5",
+                )}
+              />
+            </button>
+          </label>
+        ) : null}
+      </div>
       {intro ? (
         <div className="mt-2 text-sm text-[var(--sg-color-text-muted)]">
           {intro}
@@ -74,8 +115,15 @@ export function SoftwarePricingCards({
       {hasPlans ? (
         <ul className="mt-5 grid gap-4 sm:grid-cols-2 xl:grid-cols-3">
           {plans.map((plan) => {
-            const { price, unit } = planPriceLabel(plan, currency);
+            const priced = resolvePlanDisplayPrice(plan, currency, annual);
+            const { price, unit } = {
+              price: priced.priceLabel,
+              unit: priced.unitLabel,
+            };
             const highlighted = Boolean(plan.highlighted);
+            const ctaLabel =
+              priced.ctaLabel ??
+              (affiliateLink ? `Try ${productName}` : "Pricing details");
             return (
               <li key={plan.id || plan.slug}>
                 <Card
@@ -123,7 +171,7 @@ export function SoftwarePricingCards({
                   <div className="mt-5">
                     {affiliateLink ? (
                       <AffiliateCta
-                        label={`Try ${productName}`}
+                        label={ctaLabel}
                         link={affiliateLink}
                         showDisclosure={false}
                         className={cn(
@@ -138,7 +186,7 @@ export function SoftwarePricingCards({
                         variant="outline"
                         className="w-full"
                       >
-                        Pricing details
+                        {ctaLabel}
                       </ButtonLink>
                     ) : null}
                   </div>

@@ -1,0 +1,159 @@
+{
+  "slug": "kit-migration",
+  "enrichmentType": "MIGRATION_GUIDE",
+  "updatedAt": "2026-09-08T17:04:28.419Z",
+  "uniqueValueAdded": [
+    "implementation_workflow",
+    "scenario_analysis",
+    "decision_framework",
+    "limitations_evidence",
+    "buyer_checklist"
+  ],
+  "patch": {
+    "summary": "Kit migration guide: inventory → rehearse → freeze → validate integrations — grounded in researched limitations and catalogue peers.",
+    "blocks": [
+      {
+        "id": "da-kit-migration-1",
+        "type": "direct-answer",
+        "body": "Migrate to Kit by inventorying legacy email-marketing fields, mapping them to Kit objects, rehearsing a freeze window, and validating WordPress, Shopify, Stripe before reopening writes.",
+        "bullets": [
+          "Inventory → map → rehearse → cut over → reopen",
+          "Highest risk: Free Newsletter plan limits automations vs Creator/Pro",
+          "Success signal: email campaigns works for the pilot cohort"
+        ]
+      },
+      {
+        "id": "mig-kit-migration-2",
+        "type": "step",
+        "heading": "Kit migration cutover playbook",
+        "body": "Migrations fail from optimistic timelines — not from missing motivation.",
+        "stepNumber": 1,
+        "scenarios": [
+          {
+            "title": "Field inventory",
+            "body": "Export legacy fields that power email campaigns, newsletter builder, email templates and mark must-map vs archive."
+          },
+          {
+            "title": "Rehearsal load",
+            "body": "Run a non-prod load into Kit; measure match rates before the freeze."
+          },
+          {
+            "title": "Production freeze",
+            "body": "Freeze legacy writes; cut over; validate WordPress; then reopen."
+          }
+        ]
+      },
+      {
+        "id": "df-kit-migration-3",
+        "type": "decision-framework",
+        "title": "Migrate to Kit?",
+        "steps": [
+          {
+            "id": "m-1",
+            "label": "Migrate when Creators and newsletter publishers monetizing an audience outweigh migration cost"
+          },
+          {
+            "id": "m-2",
+            "label": "Delay if this limitation hits cutover: Free Newsletter plan limits automations vs Creator/Pro"
+          },
+          {
+            "id": "m-3",
+            "label": "If Kit mapping is poor, compare destination fit with MailerLite before moving data twice"
+          }
+        ]
+      },
+      {
+        "id": "mist-kit-migration-4",
+        "type": "mistakes",
+        "title": "Kit migration mistakes",
+        "items": [
+          {
+            "title": "No freeze window",
+            "body": "Dual-writing without a freeze creates irrevocable duplicates."
+          },
+          {
+            "title": "Integrations last",
+            "body": "Wire WordPress in rehearsal — not on Monday morning after cutover."
+          },
+          {
+            "title": "Data risk 1",
+            "body": "Free Newsletter plan limits automations vs Creator/Pro"
+          },
+          {
+            "title": "Data risk 2",
+            "body": "Paid pricing scales with subscribers"
+          },
+          {
+            "title": "Data risk 3",
+            "body": "Ecommerce catalog depth trails Klaviyo/Omnisend"
+          }
+        ]
+      },
+      {
+        "id": "sel-kit-migration-5",
+        "type": "selection-checklist",
+        "title": "Kit migration checklist",
+        "dimensions": [
+          {
+            "id": "map",
+            "label": "Mapping",
+            "options": [
+              "Must-map fields listed",
+              "Owners assigned",
+              "Archive rules written"
+            ]
+          },
+          {
+            "id": "rehearse",
+            "label": "Rehearsal",
+            "options": [
+              "Non-prod load done",
+              "Match rate measured",
+              "Rollback tested"
+            ]
+          },
+          {
+            "id": "cutover",
+            "label": "Cutover",
+            "options": [
+              "Freeze communicated",
+              "Integrations green",
+              "Pilot cohort signed off"
+            ]
+          }
+        ]
+      }
+    ],
+    "checklist": [
+      {
+        "id": "enrich-chk-0",
+        "label": "Complete field inventory for email campaigns",
+        "order": 0
+      },
+      {
+        "id": "enrich-chk-1",
+        "label": "Rehearse load before production freeze",
+        "order": 1
+      },
+      {
+        "id": "enrich-chk-2",
+        "label": "Validate WordPress pre-reopen",
+        "order": 2
+      },
+      {
+        "id": "enrich-chk-3",
+        "label": "Mitigate: Free Newsletter plan limits automations vs Creator/Pro",
+        "order": 3
+      }
+    ],
+    "nextAction": {
+      "contentId": "tool:finder:email-marketing",
+      "label": "Open Finder shortlist"
+    }
+  },
+  "notes": [
+    "Omit unsupported: testing_evidence",
+    "Migration: cutover risks, data mapping, checklist.",
+    "Type-specific skeleton: MIGRATION_GUIDE"
+  ]
+}

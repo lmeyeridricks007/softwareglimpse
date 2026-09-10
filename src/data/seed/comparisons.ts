@@ -8569,6 +8569,62 @@ const comparisonsSeedRaw: ComparisonInput[] = [
       },
     ],
   }),
+  approvedCsPair({
+    a: "crisp",
+    b: "tidio",
+    title: "Crisp vs Tidio",
+    labels: { a: "Crisp", b: "Tidio" },
+    editorial: {
+      a: {
+        "ticketing-depth": 5,
+        "live-chat": 9,
+        "knowledge-base": 8,
+        omnichannel: 8,
+        "sla-routing": 6,
+        "ecommerce-helpdesk": 6,
+        "ai-features": 7,
+        integrations: 7,
+      },
+      b: {
+        "ticketing-depth": 4,
+        "live-chat": 9,
+        "knowledge-base": 7,
+        omnichannel: 6,
+        "sla-routing": 5,
+        "ecommerce-helpdesk": 6,
+        "ai-features": 8,
+        integrations: 7,
+      },
+    },
+    factual: {
+      startingPricing:
+        "Crisp Free $0 (2 seats); Mini $45; Essentials $95; Plus $295 per workspace/mo. Tidio Starter $24.17/mo annual (100 billable conversations) — different units (workspace seats vs conversations).",
+      freePlan:
+        "Both publish free entry. Crisp Free is seat-capped without Hugo AI credits; confirm Tidio freemium conversation caps on tidio.com.",
+      agentMinimum:
+        "Crisp includes seats in the workspace fee (extra seats $10/mo). Tidio Starter is a conversation pack — growing chat volume can hit conversation caps before Crisp seat allotments.",
+    },
+    verdict:
+      "Choose Crisp for flat workspace pricing plus Hugo AI credits and omnichannel/KB depth on Essentials+. Choose Tidio when Lyro AI deflection and conversation-pack TCO for website chat matter more than Crisp’s seat-included workspace model. Live-chat cluster only — not a generic chatbot swap.",
+    pricingNotes:
+      "Research 2026-09-06. Model Crisp workspace seats + Hugo credits vs Tidio billable conversations at your volume. Affiliate economics excluded. Not hands-on lab tested.",
+    bestFor: [
+      {
+        productSlug: "crisp",
+        scenarios: [
+          "Flat per-workspace live chat + shared inbox",
+          "Hugo AI credits with omnichannel Essentials+",
+        ],
+      },
+      {
+        productSlug: "tidio",
+        scenarios: [
+          "Lyro AI + flows for website deflection",
+          "Conversation-pack TCO for SMB chat volume",
+        ],
+      },
+    ],
+  }),
 
   // AI Priority-2 comparisons (2026-08-18)
   approvedAiPair({

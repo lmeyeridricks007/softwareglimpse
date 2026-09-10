@@ -671,7 +671,32 @@ describe("seat caps and free-plan team exclusion", () => {
 
     const monthly = resolvePlanDisplayPrice(basic, "USD", false);
     expect(monthly.priceLabel).toBe("$39.00");
-    expect(monthly.unitLabel).toBe("per month");
+    expect(monthly.unitLabel).toContain("billed monthly");
+  });
+
+  it("resolvePlanDisplayPrice labels Pipedrive annual vs monthly seats", () => {
+    const lite = plan("lite", "Lite", [
+      {
+        kind: "per-seat",
+        amountPerSeat: 14,
+        currency: "USD",
+        interval: "year",
+        amountPeriod: "month",
+      },
+      {
+        kind: "per-seat",
+        amountPerSeat: 24,
+        currency: "USD",
+        interval: "month",
+        amountPeriod: "month",
+      },
+    ]);
+    const annual = resolvePlanDisplayPrice(lite, "USD", true);
+    expect(annual.priceLabel).toBe("$14.00");
+    expect(annual.unitLabel).toBe("per user / mo, billed annually");
+    const monthly = resolvePlanDisplayPrice(lite, "USD", false);
+    expect(monthly.priceLabel).toBe("$24.00");
+    expect(monthly.unitLabel).toBe("per user / mo, billed monthly");
   });
 
   it("resolvePlanDisplayPrice supports per-seat CRM plans", () => {
@@ -679,5 +704,26 @@ describe("seat caps and free-plan team exclusion", () => {
     const priced = resolvePlanDisplayPrice(essential, "USD", true);
     expect(priced.priceLabel).toBe("$14.00");
     expect(priced.unitLabel).toContain("per user");
+  });
+
+  it("empty rules without contactSales use See plans / Get {name}, not Contact sales", () => {
+    const go = plan("go", "Go", []);
+    const priced = resolvePlanDisplayPrice(go, "USD", false);
+    expect(priced.contact).toBe(false);
+    expect(priced.priceLabel).toBe("See plans");
+    expect(priced.ctaLabel).toBe("Get Go");
+    expect(priced.unitLabel).not.toMatch(/contact sales/i);
+    expect(priced.amount).toBeNull();
+  });
+
+  it("contactSales still labels Contact sales", () => {
+    const enterprise = {
+      ...plan("enterprise", "Enterprise", []),
+      contactSales: true,
+    };
+    const priced = resolvePlanDisplayPrice(enterprise, "USD", false);
+    expect(priced.contact).toBe(true);
+    expect(priced.unitLabel).toBe("Contact sales");
+    expect(priced.ctaLabel).toBe("Contact sales");
   });
 });

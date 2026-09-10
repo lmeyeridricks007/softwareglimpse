@@ -42,7 +42,7 @@ function snap(
     featureSupport: [],
     hasFixtureResearch: true,
     sourceIds: [`${slug}-pricing`],
-    pricingCheckedAt: "2026-08-01T00:00:00.000Z",
+    pricingCheckedAt: "2026-09-01T00:00:00.000Z",
     pricing: {
       currency: "EUR",
       model: "subscription",
@@ -51,7 +51,7 @@ function snap(
       startingPriceMonthly: monthlyPerSeat,
       plans: [plan("pro", "Professional", monthlyPerSeat)],
       sourceIds: [`${slug}-pricing`],
-      verifiedAt: "2026-08-01T00:00:00.000Z",
+      verifiedAt: "2026-09-01T00:00:00.000Z",
     },
   };
 }
@@ -283,7 +283,7 @@ describe("computeTco", () => {
           plan("enterprise", "Enterprise", 80),
         ],
         sourceIds: ["acme-pricing"],
-        verifiedAt: "2026-08-01T00:00:00.000Z",
+        verifiedAt: "2026-09-01T00:00:00.000Z",
       },
     };
     const auto = computeTco({

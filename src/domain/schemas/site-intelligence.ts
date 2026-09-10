@@ -145,7 +145,7 @@ export const ExperienceDimensionInputSchema = z.object({
   reason: z.string().min(1),
   evidence: z.array(EvidenceItemSchema).default([]),
 });
-export type ExperienceDimensionInput = z.infer<
+export type ExperienceDimensionInput = z.input<
   typeof ExperienceDimensionInputSchema
 >;
 
@@ -155,7 +155,7 @@ export const EcosystemDimensionInputSchema = z.object({
   reason: z.string().min(1),
   evidence: z.array(EvidenceItemSchema).default([]),
 });
-export type EcosystemDimensionInput = z.infer<
+export type EcosystemDimensionInput = z.input<
   typeof EcosystemDimensionInputSchema
 >;
 

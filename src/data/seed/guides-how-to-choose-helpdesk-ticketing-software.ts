@@ -1,4 +1,4 @@
-import type { GuidePage } from "@/domain";
+import type { GuidePageInput } from "@/domain";
 import type { z } from "zod";
 import type { GuideContentBlockSchema } from "@/domain";
 import { tier24GuideScheduledAt } from "@/data/config/publishing/tier-24-helpdesk-ticketing-launch-2027-07-01";
@@ -34,7 +34,7 @@ const blocks: GuideBlockInput[] = [
   },
 ];
 
-function metadata(): GuidePage["metadata"] {
+function metadata(): GuidePageInput["metadata"] {
   return SCHEDULED_AT
     ? {
         status: "scheduled",
@@ -54,7 +54,7 @@ function metadata(): GuidePage["metadata"] {
       };
 }
 
-export const howToChooseHelpdeskTicketingSoftwareGuide: GuidePage = {
+export const howToChooseHelpdeskTicketingSoftwareGuide: GuidePageInput = {
   id: "guide-how-to-choose-helpdesk-ticketing-software",
   slug: SLUG,
   title: "How to Choose Helpdesk & Ticketing Software",
@@ -74,7 +74,7 @@ export const howToChooseHelpdeskTicketingSoftwareGuide: GuidePage = {
     "helpdesk-ticketing-pricing-guide",
     "helpdesk-ticketing-evaluation-guide",
   ],
-  blocks: blocks as GuidePage["blocks"],
+  blocks: blocks as GuidePageInput["blocks"],
   checklist: [],
   sections: [],
   faq: [],
@@ -85,6 +85,6 @@ export const howToChooseHelpdeskTicketingSoftwareGuide: GuidePage = {
     description:
       "Choose helpdesk software by job cluster, pricing unit, SLA depth, and channel coverage.",
     canonicalPath: `/guides/${SLUG}/`,
-    indexable: !SCHEDULED_AT,
+    indexable: true,
   },
 };

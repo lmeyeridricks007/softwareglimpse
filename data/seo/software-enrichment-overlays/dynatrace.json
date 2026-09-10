@@ -1,0 +1,521 @@
+{
+  "slug": "dynatrace",
+  "updatedAt": "2026-09-08T21:57:07.470Z",
+  "version": "1.0.0",
+  "fieldAudit": {
+    "slug": "dynatrace",
+    "checkedAt": "2026-09-08T21:57:07.468Z",
+    "items": [
+      {
+        "field": "name",
+        "status": "PASS",
+        "detail": "Name: Dynatrace",
+        "source": "seed"
+      },
+      {
+        "field": "product_status",
+        "status": "PASS",
+        "detail": "productLifecycle=active",
+        "source": "seed"
+      },
+      {
+        "field": "canonical_vendor",
+        "status": "PASS",
+        "detail": "Vendor: Dynatrace, Inc.",
+        "source": "seed"
+      },
+      {
+        "field": "category",
+        "status": "PASS",
+        "detail": "primaryCategorySlug=it-development",
+        "source": "seed"
+      },
+      {
+        "field": "description",
+        "status": "PASS",
+        "detail": "Description present (Enterprise observability — Dynatrace Platform Subscription (DPS) annual commit +…)",
+        "source": "seed"
+      },
+      {
+        "field": "target_audience",
+        "status": "PASS",
+        "detail": "Sizes=2, teams=2, assessment bestFor=3",
+        "source": "assessment"
+      },
+      {
+        "field": "use_cases",
+        "status": "PASS",
+        "detail": "useCaseSlugs=1",
+        "source": "seed"
+      },
+      {
+        "field": "capabilities",
+        "status": "PASS",
+        "detail": "featureRatings=0, enrichment features=15",
+        "source": "enrichment"
+      },
+      {
+        "field": "pricing",
+        "status": "PASS",
+        "detail": "Pricing envelope present",
+        "source": "enrichment"
+      },
+      {
+        "field": "plans",
+        "status": "PASS",
+        "detail": "plans=2",
+        "source": "enrichment"
+      },
+      {
+        "field": "free_plan",
+        "status": "PASS",
+        "detail": "No free plan in documented plans (explicit absence)",
+        "source": "enrichment"
+      },
+      {
+        "field": "trial",
+        "status": "PASS",
+        "detail": "Trial documented on plans/pricing",
+        "source": "enrichment"
+      },
+      {
+        "field": "integrations",
+        "status": "PASS",
+        "detail": "integrationSlugs=0, enrichment=3",
+        "source": "enrichment"
+      },
+      {
+        "field": "alternatives",
+        "status": "PASS",
+        "detail": "alternativeSlugs=2",
+        "source": "seed"
+      },
+      {
+        "field": "competitors",
+        "status": "PASS",
+        "detail": "competitorSlugs=3",
+        "source": "seed"
+      },
+      {
+        "field": "affiliate",
+        "status": "PASS",
+        "detail": "No affiliate relationship (explicit)",
+        "source": "seed"
+      },
+      {
+        "field": "source_provenance",
+        "status": "PASS",
+        "detail": "seed sources=0, enrichment sourceIds=3",
+        "source": "enrichment"
+      },
+      {
+        "field": "verification_date",
+        "status": "PASS",
+        "detail": "Latest verification/research signal: 2026-08-18T14:00:00.000Z",
+        "source": "enrichment"
+      }
+    ],
+    "passCount": 18,
+    "partialCount": 0,
+    "missingCount": 0,
+    "unknownCount": 0,
+    "score": 100
+  },
+  "decisionHub": {
+    "whatItIs": "Dynatrace is an enterprise observability platform (full-stack APM, infra, logs, traces, Davis AI) licensed as Dynatrace Platform Subscription: one annual spend commitment, then consumption against a public rate card with no penalty overage. Example list units on dynatrace.com/pricing (2026-08-18): Full-Stack Monitoring about $58/mo per 8 GiB host ($0.01 per memory-GiB-hour); Kubernetes pods and logs ingest are separate line items. Seats are unlimited. 15-day trial. Distinct from Datadog’s published per-host Infrastructure Pro SKU and from PagerDuty on-call.",
+    "bestFor": [
+      "Enterprises that will sign a DPS commit and deploy OneAgent broadly",
+      "SRE teams that want full-stack APM plus Davis AI in one platform",
+      "Buyers who already rejected per-host Datadog module math",
+      "mid-market / it-ops: Dynatrace fit for mid-market it-ops teams in the observability-monitoring job cluster, from first-party positioning and IT Priority-3 research.",
+      "enterprise / it-ops: Dynatrace fit for enterprise it-ops teams in the observability-monitoring job cluster, from first-party positioning and IT Priority-3 research."
+    ],
+    "notIdealFor": [
+      "SMB teams that need a published $15/host tile (Datadog)",
+      "On-call-only paging (PagerDuty)",
+      "ITSM desks (ServiceNow / Freshservice)",
+      "Buying motion is an annual DPS commit — not a $15/host self-serve tile",
+      "Rate-card units (hosts, GiB, sessions) still dominate TCO; $58/8 GiB is not all-in",
+      "Implementation and OneAgent coverage matter more than the trial sandbox"
+    ],
+    "coreCapabilities": [
+      "incident management",
+      "infrastructure monitoring",
+      "apm tracing",
+      "log management",
+      "cicd actions",
+      "itsm ai",
+      "dev ai",
+      "oncall paging"
+    ],
+    "pricingSummary": "2 documented plans · entry paid: Dynatrace Platform Subscription · trial documented on at least one plan",
+    "keyTradeoffs": [
+      "Buying motion is an annual DPS commit — not a $15/host self-serve tile",
+      "Rate-card units (hosts, GiB, sessions) still dominate TCO; $58/8 GiB is not all-in",
+      "Implementation and OneAgent coverage matter more than the trial sandbox",
+      "Not an ITSM service desk or git host",
+      "Not PagerDuty — Davis AI does not replace on-call paging as the primary job"
+    ],
+    "alternatives": [
+      {
+        "slug": "datadog",
+        "name": "Datadog"
+      },
+      {
+        "slug": "new-relic",
+        "name": "New Relic"
+      },
+      {
+        "slug": "grafana-cloud",
+        "name": "Grafana Cloud"
+      }
+    ],
+    "importantComparisons": [
+      {
+        "slug": "datadog-vs-dynatrace",
+        "title": "Dynatrace vs Datadog",
+        "href": "/compare/datadog-vs-dynatrace/"
+      },
+      {
+        "slug": "dynatrace-vs-new-relic",
+        "title": "Dynatrace vs New Relic",
+        "href": "/compare/dynatrace-vs-new-relic/"
+      },
+      {
+        "slug": "appdynamics-vs-dynatrace",
+        "title": "AppDynamics vs Dynatrace",
+        "href": "/compare/appdynamics-vs-dynatrace/"
+      },
+      {
+        "slug": "apify-vs-dynatrace",
+        "title": "Apify vs Dynatrace",
+        "href": "/compare/apify-vs-dynatrace/"
+      },
+      {
+        "slug": "azure-devops-vs-dynatrace",
+        "title": "Azure DevOps vs Dynatrace",
+        "href": "/compare/azure-devops-vs-dynatrace/"
+      },
+      {
+        "slug": "bitbucket-vs-dynatrace",
+        "title": "Bitbucket Cloud vs Dynatrace",
+        "href": "/compare/bitbucket-vs-dynatrace/"
+      }
+    ],
+    "relevantGuides": [
+      {
+        "slug": "dynatrace-implementation",
+        "title": "Dynatrace Implementation: 30/60/90 IT Rollout That Sticks",
+        "href": "/guides/dynatrace-implementation/"
+      },
+      {
+        "slug": "dynatrace-migration",
+        "title": "Dynatrace Migration: Move Tickets and Repos Without Losing Trust",
+        "href": "/guides/dynatrace-migration/"
+      },
+      {
+        "slug": "dynatrace-setup",
+        "title": "Dynatrace Setup: Day-Zero Path to a Working IT Loop",
+        "href": "/guides/dynatrace-setup/"
+      },
+      {
+        "slug": "dynatrace-plans",
+        "title": "Dynatrace Plans: Seats, Hosts, and Qualifying Tiers",
+        "href": "/guides/dynatrace-plans/"
+      },
+      {
+        "slug": "is-dynatrace-worth-it",
+        "title": "Is Dynatrace Worth It? Fit Scenarios Before You Buy",
+        "href": "/guides/is-dynatrace-worth-it/"
+      }
+    ],
+    "evidenceState": "Research/data-based (no completed hands-on test) · Latest verification/research signal: 2026-08-18T14:00:00.000Z · Editorial assessment: approved",
+    "nextDecisionStep": "Compare against peers: Dynatrace vs Datadog",
+    "missingSections": []
+  },
+  "dependents": [
+    {
+      "kind": "guide",
+      "slug": "dynatrace-implementation",
+      "path": "/guides/dynatrace-implementation/"
+    },
+    {
+      "kind": "guide",
+      "slug": "dynatrace-migration",
+      "path": "/guides/dynatrace-migration/"
+    },
+    {
+      "kind": "guide",
+      "slug": "dynatrace-setup",
+      "path": "/guides/dynatrace-setup/"
+    },
+    {
+      "kind": "guide",
+      "slug": "dynatrace-plans",
+      "path": "/guides/dynatrace-plans/"
+    },
+    {
+      "kind": "guide",
+      "slug": "is-dynatrace-worth-it",
+      "path": "/guides/is-dynatrace-worth-it/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "datadog-vs-dynatrace",
+      "path": "/compare/datadog-vs-dynatrace/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "dynatrace-vs-new-relic",
+      "path": "/compare/dynatrace-vs-new-relic/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "appdynamics-vs-dynatrace",
+      "path": "/compare/appdynamics-vs-dynatrace/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "apify-vs-dynatrace",
+      "path": "/compare/apify-vs-dynatrace/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "azure-devops-vs-dynatrace",
+      "path": "/compare/azure-devops-vs-dynatrace/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "bitbucket-vs-dynatrace",
+      "path": "/compare/bitbucket-vs-dynatrace/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "bmc-helix-vs-dynatrace",
+      "path": "/compare/bmc-helix-vs-dynatrace/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "bright-data-vs-dynatrace",
+      "path": "/compare/bright-data-vs-dynatrace/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "buildkite-vs-dynatrace",
+      "path": "/compare/buildkite-vs-dynatrace/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "chronosphere-vs-dynatrace",
+      "path": "/compare/chronosphere-vs-dynatrace/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "circleci-vs-dynatrace",
+      "path": "/compare/circleci-vs-dynatrace/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "cloudways-vs-dynatrace",
+      "path": "/compare/cloudways-vs-dynatrace/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "coralogix-vs-dynatrace",
+      "path": "/compare/coralogix-vs-dynatrace/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "cpanel-vs-dynatrace",
+      "path": "/compare/cpanel-vs-dynatrace/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "directadmin-vs-dynatrace",
+      "path": "/compare/directadmin-vs-dynatrace/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "dynatrace-vs-elastic-observability",
+      "path": "/compare/dynatrace-vs-elastic-observability/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "dynatrace-vs-firehydrant",
+      "path": "/compare/dynatrace-vs-firehydrant/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "dynatrace-vs-fly-io",
+      "path": "/compare/dynatrace-vs-fly-io/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "dynatrace-vs-github",
+      "path": "/compare/dynatrace-vs-github/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "dynatrace-vs-gitlab",
+      "path": "/compare/dynatrace-vs-gitlab/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "dynatrace-vs-grafana-cloud",
+      "path": "/compare/dynatrace-vs-grafana-cloud/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "dynatrace-vs-haloitsm",
+      "path": "/compare/dynatrace-vs-haloitsm/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "dynatrace-vs-heroku",
+      "path": "/compare/dynatrace-vs-heroku/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "dynatrace-vs-honeycomb",
+      "path": "/compare/dynatrace-vs-honeycomb/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "dynatrace-vs-incident-io",
+      "path": "/compare/dynatrace-vs-incident-io/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "dynatrace-vs-iproyal",
+      "path": "/compare/dynatrace-vs-iproyal/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "dynatrace-vs-ivanti",
+      "path": "/compare/dynatrace-vs-ivanti/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "dynatrace-vs-jira-service-management",
+      "path": "/compare/dynatrace-vs-jira-service-management/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "dynatrace-vs-kinsta",
+      "path": "/compare/dynatrace-vs-kinsta/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "dynatrace-vs-manageengine-servicedesk-plus",
+      "path": "/compare/dynatrace-vs-manageengine-servicedesk-plus/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "dynatrace-vs-oxylabs",
+      "path": "/compare/dynatrace-vs-oxylabs/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "dynatrace-vs-pagerduty",
+      "path": "/compare/dynatrace-vs-pagerduty/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "dynatrace-vs-railway",
+      "path": "/compare/dynatrace-vs-railway/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "dynatrace-vs-render",
+      "path": "/compare/dynatrace-vs-render/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "dynatrace-vs-rootly",
+      "path": "/compare/dynatrace-vs-rootly/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "dynatrace-vs-scraperapi",
+      "path": "/compare/dynatrace-vs-scraperapi/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "dynatrace-vs-sentry",
+      "path": "/compare/dynatrace-vs-sentry/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "dynatrace-vs-servicenow",
+      "path": "/compare/dynatrace-vs-servicenow/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "dynatrace-vs-siteground",
+      "path": "/compare/dynatrace-vs-siteground/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "dynatrace-vs-smartproxy",
+      "path": "/compare/dynatrace-vs-smartproxy/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "dynatrace-vs-splunk",
+      "path": "/compare/dynatrace-vs-splunk/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "dynatrace-vs-squadcast",
+      "path": "/compare/dynatrace-vs-squadcast/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "dynatrace-vs-sysaid",
+      "path": "/compare/dynatrace-vs-sysaid/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "dynatrace-vs-thordata",
+      "path": "/compare/dynatrace-vs-thordata/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "dynatrace-vs-topdesk",
+      "path": "/compare/dynatrace-vs-topdesk/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "dynatrace-vs-wp-engine",
+      "path": "/compare/dynatrace-vs-wp-engine/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "dynatrace-vs-zyte",
+      "path": "/compare/dynatrace-vs-zyte/"
+    },
+    {
+      "kind": "alternatives",
+      "slug": "dynatrace",
+      "path": "/alternatives/dynatrace/"
+    },
+    {
+      "kind": "pricing",
+      "slug": "dynatrace",
+      "path": "/software/dynatrace/pricing/"
+    },
+    {
+      "kind": "tools",
+      "slug": "it-development-cost-calculator",
+      "path": "/tools/it-development-cost-calculator/"
+    }
+  ],
+  "dependentsNeedingRefresh": [],
+  "remediation": [],
+  "notes": [
+    "fieldAudit score=100",
+    "decisionHub bestFor=5 notIdeal=6",
+    "dependents=55"
+  ],
+  "materiallyImproved": true
+}

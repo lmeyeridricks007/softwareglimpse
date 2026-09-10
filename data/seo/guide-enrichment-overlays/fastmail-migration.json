@@ -1,0 +1,158 @@
+{
+  "slug": "fastmail-migration",
+  "enrichmentType": "MIGRATION_GUIDE",
+  "updatedAt": "2026-09-09T06:00:26.965Z",
+  "uniqueValueAdded": [
+    "implementation_workflow",
+    "scenario_analysis",
+    "decision_framework",
+    "limitations_evidence",
+    "buyer_checklist"
+  ],
+  "patch": {
+    "summary": "Fastmail migration guide: inventory → rehearse → freeze → validate integrations — grounded in researched limitations and catalogue peers.",
+    "blocks": [
+      {
+        "id": "da-fastmail-migration-1",
+        "type": "direct-answer",
+        "body": "Migrate to Fastmail by inventorying legacy business-communications fields, mapping them to Fastmail objects, rehearsing a freeze window, and validating Dropbox, 1password before reopening writes.",
+        "bullets": [
+          "Inventory → map → rehearse → cut over → reopen",
+          "Highest risk: Not a business phone, WhatsApp or team-chat product — adjacent to business communications",
+          "Success signal: shared inbox works for the pilot cohort"
+        ]
+      },
+      {
+        "id": "mig-fastmail-migration-2",
+        "type": "step",
+        "heading": "Fastmail migration cutover playbook",
+        "body": "Migrations fail from optimistic timelines — not from missing motivation.",
+        "stepNumber": 1,
+        "scenarios": [
+          {
+            "title": "Field inventory",
+            "body": "Export legacy fields that power shared inbox and mark must-map vs archive."
+          },
+          {
+            "title": "Rehearsal load",
+            "body": "Run a non-prod load into Fastmail; measure match rates before the freeze."
+          },
+          {
+            "title": "Production freeze",
+            "body": "Freeze legacy writes; cut over; validate Dropbox; then reopen."
+          }
+        ]
+      },
+      {
+        "id": "df-fastmail-migration-3",
+        "type": "decision-framework",
+        "title": "Migrate to Fastmail?",
+        "steps": [
+          {
+            "id": "m-1",
+            "label": "Migrate when Small teams that want private, independent business email on their own domain outweigh migration cost"
+          },
+          {
+            "id": "m-2",
+            "label": "Delay if this limitation hits cutover: Not a business phone, WhatsApp or team-chat product — adjacent to business communications"
+          },
+          {
+            "id": "m-3",
+            "label": "If Fastmail mapping is poor, compare destination fit with SaneBox before moving data twice"
+          }
+        ]
+      },
+      {
+        "id": "mist-fastmail-migration-4",
+        "type": "mistakes",
+        "title": "Fastmail migration mistakes",
+        "items": [
+          {
+            "title": "No freeze window",
+            "body": "Dual-writing without a freeze creates irrevocable duplicates."
+          },
+          {
+            "title": "Integrations last",
+            "body": "Wire Dropbox in rehearsal — not on Monday morning after cutover."
+          },
+          {
+            "title": "Data risk 1",
+            "body": "Not a business phone, WhatsApp or team-chat product — adjacent to business communications"
+          },
+          {
+            "title": "Data risk 2",
+            "body": "Shared addresses, shared calendars and the shared address book require Standard or above"
+          },
+          {
+            "title": "Data risk 3",
+            "body": "Basic is capped at 5 GB mail and 1 GB file storage"
+          }
+        ]
+      },
+      {
+        "id": "sel-fastmail-migration-5",
+        "type": "selection-checklist",
+        "title": "Fastmail migration checklist",
+        "dimensions": [
+          {
+            "id": "map",
+            "label": "Mapping",
+            "options": [
+              "Must-map fields listed",
+              "Owners assigned",
+              "Archive rules written"
+            ]
+          },
+          {
+            "id": "rehearse",
+            "label": "Rehearsal",
+            "options": [
+              "Non-prod load done",
+              "Match rate measured",
+              "Rollback tested"
+            ]
+          },
+          {
+            "id": "cutover",
+            "label": "Cutover",
+            "options": [
+              "Freeze communicated",
+              "Integrations green",
+              "Pilot cohort signed off"
+            ]
+          }
+        ]
+      }
+    ],
+    "checklist": [
+      {
+        "id": "enrich-chk-0",
+        "label": "Complete field inventory for shared inbox",
+        "order": 0
+      },
+      {
+        "id": "enrich-chk-1",
+        "label": "Rehearse load before production freeze",
+        "order": 1
+      },
+      {
+        "id": "enrich-chk-2",
+        "label": "Validate Dropbox pre-reopen",
+        "order": 2
+      },
+      {
+        "id": "enrich-chk-3",
+        "label": "Mitigate: Not a business phone, WhatsApp or team-chat product — adjacent to business communications",
+        "order": 3
+      }
+    ],
+    "nextAction": {
+      "contentId": "tool:finder:business-communications",
+      "label": "Open Finder shortlist"
+    }
+  },
+  "notes": [
+    "Migration: cutover risks, data mapping, checklist.",
+    "Type-specific skeleton: MIGRATION_GUIDE"
+  ]
+}

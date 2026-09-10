@@ -97,7 +97,11 @@ export function snapshotFromHubProfile(input: {
         (industry?.evaluationQuestions?.length ?? 0) > 0,
       "evaluation-guidance",
     ),
-    presentIf(hasNeeds || (profile.scenarios?.length ?? 0) > 0, "product-relevance"),
+    presentIf(
+      hasNeeds ||
+        ("scenarios" in profile && (profile.scenarios?.length ?? 0) > 0),
+      "product-relevance",
+    ),
     presentIf(finder || guideHrefs > 0, "next-step"),
     presentIf(hasFaq, "faq"),
   );

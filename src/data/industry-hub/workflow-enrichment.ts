@@ -1,7 +1,7 @@
-import type { IndustryHubProfile } from "@/domain";
+import type { IndustryHubProfileInput } from "@/domain";
 
 type WorkflowStepEnrichment = NonNullable<
-  IndustryHubProfile["workflowSteps"]
+  IndustryHubProfileInput["workflowSteps"]
 >[number];
 
 /**
@@ -1834,10 +1834,10 @@ export const industryWorkflowEnrichmentBySlug: Record<
 
 export function applyIndustryWorkflowEnrichment(
   industrySlug: string,
-  steps: IndustryHubProfile["workflowSteps"],
-): IndustryHubProfile["workflowSteps"] {
+  steps: IndustryHubProfileInput["workflowSteps"],
+): IndustryHubProfileInput["workflowSteps"] {
   const pack = industryWorkflowEnrichmentBySlug[industrySlug];
-  if (!pack || steps.length === 0) return steps;
+  if (!pack || !steps?.length) return steps ?? [];
   return steps.map((step) => {
     const extra = pack[step.id];
     if (!extra) return step;

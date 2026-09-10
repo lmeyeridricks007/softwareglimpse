@@ -1,4 +1,4 @@
-import type { GuidePage } from "@/domain";
+import type { GuidePageInput } from "@/domain";
 import type { z } from "zod";
 import type { GuideContentBlockSchema } from "@/domain";
 import { tier31GuideScheduledAt } from "@/data/config/publishing/tier-31-social-media-management-launch-2027-09-01";
@@ -34,7 +34,7 @@ const blocks: GuideBlockInput[] = [
   },
 ];
 
-function metadata(): GuidePage["metadata"] {
+function metadata(): GuidePageInput["metadata"] {
   return SCHEDULED_AT
     ? {
         status: "scheduled",
@@ -54,7 +54,7 @@ function metadata(): GuidePage["metadata"] {
       };
 }
 
-export const howToChooseSocialMediaManagementSoftwareGuide: GuidePage = {
+export const howToChooseSocialMediaManagementSoftwareGuide: GuidePageInput = {
   id: "guide-how-to-choose-social-media-management-software",
   slug: SLUG,
   title: "How to Choose Social Media Management Software",
@@ -75,7 +75,7 @@ export const howToChooseSocialMediaManagementSoftwareGuide: GuidePage = {
     "social-media-management-evaluation-guide",
     "social-media-management-vs-marketing-software",
   ],
-  blocks: blocks as GuidePage["blocks"],
+  blocks: blocks as GuidePageInput["blocks"],
   checklist: [],
   sections: [],
   faq: [],
@@ -86,6 +86,6 @@ export const howToChooseSocialMediaManagementSoftwareGuide: GuidePage = {
     description:
       "Choose social management software by cluster, pricing unit, approval depth, and inbox ownership.",
     canonicalPath: `/guides/${SLUG}/`,
-    indexable: !SCHEDULED_AT,
+    indexable: true,
   },
 };

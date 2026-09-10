@@ -1,4 +1,4 @@
-import type { GuidePage } from "@/domain";
+import type { GuidePageInput } from "@/domain";
 import type { z } from "zod";
 import type { GuideContentBlockSchema } from "@/domain";
 import { tier24GuideScheduledAt } from "@/data/config/publishing/tier-24-helpdesk-ticketing-launch-2027-07-01";
@@ -53,7 +53,7 @@ const blocks: GuideBlockInput[] = [
   },
 ];
 
-function metadata(): GuidePage["metadata"] {
+function metadata(): GuidePageInput["metadata"] {
   return SCHEDULED_AT
     ? {
         status: "scheduled",
@@ -73,7 +73,7 @@ function metadata(): GuidePage["metadata"] {
       };
 }
 
-export const whatIsHelpdeskTicketingSoftwareGuide: GuidePage = {
+export const whatIsHelpdeskTicketingSoftwareGuide: GuidePageInput = {
   id: "guide-what-is-helpdesk-ticketing-software",
   slug: SLUG,
   title: "What Is Helpdesk & Ticketing Software?",
@@ -95,7 +95,7 @@ export const whatIsHelpdeskTicketingSoftwareGuide: GuidePage = {
     "helpdesk-ticketing-evaluation-guide",
     "what-is-customer-service-software",
   ],
-  blocks: blocks as GuidePage["blocks"],
+  blocks: blocks as GuidePageInput["blocks"],
   checklist: [],
   sections: [],
   faq: [],
@@ -106,6 +106,6 @@ export const whatIsHelpdeskTicketingSoftwareGuide: GuidePage = {
     description:
       "Shared inbox, ticketing, SLA routing, and knowledge bases — how helpdesk software differs from live chat and ITSM.",
     canonicalPath: `/guides/${SLUG}/`,
-    indexable: !SCHEDULED_AT,
+    indexable: true,
   },
 };

@@ -35,7 +35,8 @@ export class GoogleSearchConsoleProvider implements SearchPerformanceProvider {
     if (!gscConfigured()) {
       if (this.opts.allowEmpty) {
         const rangeLabel = request.rangeLabel ?? "gsc-empty";
-        const dataThroughDate = request.range.endDate;
+        const dataThroughDate =
+          request.range?.endDate ?? new Date().toISOString().slice(0, 10);
         return {
           rows: [],
           meta: {

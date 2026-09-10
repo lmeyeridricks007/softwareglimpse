@@ -22,15 +22,15 @@ const items = [
     Icon: Scale,
   },
   {
-    title: "Editorial independence",
-    description: "Affiliate status does not set rankings or Finder order.",
-    href: LEGAL_ROUTES.editorialIndependence,
+    title: "Editorial policy",
+    description: "Authorship, evidence levels, scoring, and disclosures.",
+    href: LEGAL_ROUTES.editorialPolicy,
     Icon: ShieldCheck,
   },
   {
     title: "Corrections",
     description: "Spot something outdated? Tell us.",
-    href: `${COMPANY_ROUTES.contact}?reason=correction`,
+    href: LEGAL_ROUTES.correctionsPolicy,
     Icon: MessageSquareWarning,
   },
 ] as const;
@@ -68,7 +68,7 @@ export function TrustIndicators({ className }: { className?: string }) {
     { label: "Affiliate-independent rankings", href: LEGAL_ROUTES.editorialIndependence },
     { label: "Evidence-backed methodology", href: COMPANY_ROUTES.methodology },
     { label: "Regularly updated research", href: COMPANY_ROUTES.howWeReview },
-    { label: "Corrections welcome", href: `${COMPANY_ROUTES.contact}?reason=correction` },
+    { label: "Corrections welcome", href: LEGAL_ROUTES.correctionsPolicy },
   ];
   return (
     <ul className={cn("flex flex-wrap gap-x-5 gap-y-2", className)}>

@@ -1,7 +1,7 @@
-import type { UseCaseHubProfile } from "@/domain";
+import type { UseCaseHubProfileInput } from "@/domain";
 
 type Depth = Pick<
-  UseCaseHubProfile,
+  UseCaseHubProfileInput,
   | "overview"
   | "whoThisIsFor"
   | "whatMattersIntro"
@@ -631,10 +631,10 @@ export const customerServiceUseCaseDepth: Record<string, Depth> = {
     tagline:
       "Deflect or resolve support conversations with an AI agent, plus copilot for humans — without pretending the bot replaces a helpdesk core.",
     overview:
-      "AI customer service is assistance on top of chat or ticketing: resolution bots, outcome-priced agents, and copilots. Score it as a layer. A bot without a queue still leaves exceptions unowned. Gartner’s July 2026 Conversational AI Magic Quadrant maps the CAI platform market — use it for category context; SoftwareGlimpse scores products inside job clusters with dated research, not MQ placement.",
+      "AI customer service is assistance on top of chat or ticketing: resolution bots, outcome-priced agents, and copilots. Score it as a layer inside customer-service-editorial ai-capabilities — agent usefulness plus governance, observability, and credit/outcome TCO — not a separate agentic-CS pillar. A bot without a queue still leaves exceptions unowned. Gartner’s July 2026 Conversational AI Magic Quadrant maps the CAI platform market — use it for category context; SoftwareGlimpse scores products inside job clusters with dated research, not MQ placement.",
     who: "Support leads who have a working helpdesk or live-chat core and want deflection or agent assist — not a first-time inbox.",
     matters:
-      "Prioritise where the bot is allowed to act, how outcomes/credits are billed, and what happens when it fails. Confirm the plan that includes the AI SKU.",
+      "Prioritise where the bot is allowed to act (governance), how you review handoffs and transcripts (observability), how outcomes/credits are billed, and what happens when it fails. Confirm the plan that includes the AI SKU.",
     example:
       "Worked example: Harbor Shop lets Lyro answer shipping FAQs and hands off refunds to humans. They model credit/conversation cost against peak weeks before turning the bot loose.",
     example2:
@@ -642,12 +642,14 @@ export const customerServiceUseCaseDepth: Record<string, Depth> = {
     goal: "Deflect repeats; keep exceptions owned",
     priorities: [
       "Handoff rules",
+      "Agent governance",
+      "Observability / transcript review",
       "Outcome / credit pricing",
       "Plan gates",
       "Human fallback",
-      "Quality review",
     ],
-    productsNote: "tidio, cometchat, zendesk-suite, freshchat; intercom is BC-primary adjacency",
+    productsNote:
+      "zendesk-suite, gorgias, freshchat, cometchat, tidio scored on CS ai-capabilities; intercom Fin is BC-primary adjacency",
     related: ["live-chat-support", "knowledge-base-self-service"],
     needs: [
       {

@@ -45,7 +45,7 @@ function publishFilter(
 
 function loadEducationalGuides(): GuidePage[] {
   if (educationalCache) return educationalCache;
-  educationalCache = parseGuides(guidesSeed, "guide").map(withTeachingDepth);
+  educationalCache = parseGuides(guidesSeed.map(withTeachingDepth), "guide");
   assertUniqueSlugs(educationalCache);
   return educationalCache;
 }

@@ -1,4 +1,4 @@
-import type { GuidePage } from "@/domain";
+import type { GuidePageInput } from "@/domain";
 import { teachingExpansionFor } from "./guides-category-teaching-expansion";
 import { businessCommunicationsEvaluationGuide } from "./guides-business-communications-evaluation-guide";
 import { businessCommunicationsPricingGuide } from "./guides-business-communications-pricing-guide";
@@ -10,7 +10,7 @@ import { whatIsBusinessCommunicationsSoftwareGuide } from "./guides-what-is-busi
  * Business communications category educational guides (minimum supporting set).
  * Published and indexable (editorial gate cleared).
  */
-export const businessCommunicationsCategoryGuides: GuidePage[] = [
+export const businessCommunicationsCategoryGuides: GuidePageInput[] = [
   whatIsBusinessCommunicationsSoftwareGuide,
   howToChooseBusinessCommunicationsSoftwareGuide,
   businessCommunicationsPricingGuide,

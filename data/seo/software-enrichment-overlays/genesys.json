@@ -1,0 +1,425 @@
+{
+  "slug": "genesys",
+  "updatedAt": "2026-09-07T22:31:21.470Z",
+  "version": "1.0.0",
+  "fieldAudit": {
+    "slug": "genesys",
+    "checkedAt": "2026-09-07T22:31:21.469Z",
+    "items": [
+      {
+        "field": "name",
+        "status": "PASS",
+        "detail": "Name: Genesys",
+        "source": "seed"
+      },
+      {
+        "field": "product_status",
+        "status": "PASS",
+        "detail": "productLifecycle=active",
+        "source": "seed"
+      },
+      {
+        "field": "canonical_vendor",
+        "status": "UNKNOWN",
+        "detail": "Company/vendor not documented",
+        "source": "none"
+      },
+      {
+        "field": "category",
+        "status": "PASS",
+        "detail": "primaryCategorySlug=business-communications",
+        "source": "seed"
+      },
+      {
+        "field": "description",
+        "status": "PASS",
+        "detail": "Description present (Enterprise CCaaS (Genesys Cloud CX) — CX 1 from $75/user/mo annual; CX 2 $115; C…)",
+        "source": "seed"
+      },
+      {
+        "field": "target_audience",
+        "status": "PASS",
+        "detail": "Sizes=2, teams=2, assessment bestFor=3",
+        "source": "assessment"
+      },
+      {
+        "field": "use_cases",
+        "status": "PASS",
+        "detail": "useCaseSlugs=3",
+        "source": "seed"
+      },
+      {
+        "field": "capabilities",
+        "status": "PASS",
+        "detail": "featureRatings=0, enrichment features=13",
+        "source": "enrichment"
+      },
+      {
+        "field": "pricing",
+        "status": "PASS",
+        "detail": "Pricing envelope present",
+        "source": "enrichment"
+      },
+      {
+        "field": "plans",
+        "status": "PASS",
+        "detail": "plans=4",
+        "source": "enrichment"
+      },
+      {
+        "field": "free_plan",
+        "status": "PASS",
+        "detail": "No free plan in documented plans (explicit absence)",
+        "source": "enrichment"
+      },
+      {
+        "field": "trial",
+        "status": "UNKNOWN",
+        "detail": "Trial not explicitly documented — do not assume none",
+        "source": "none"
+      },
+      {
+        "field": "integrations",
+        "status": "PASS",
+        "detail": "integrationSlugs=0, enrichment=6",
+        "source": "enrichment"
+      },
+      {
+        "field": "alternatives",
+        "status": "PASS",
+        "detail": "alternativeSlugs=4",
+        "source": "seed"
+      },
+      {
+        "field": "competitors",
+        "status": "PASS",
+        "detail": "competitorSlugs=5",
+        "source": "seed"
+      },
+      {
+        "field": "affiliate",
+        "status": "PASS",
+        "detail": "No affiliate relationship (explicit)",
+        "source": "seed"
+      },
+      {
+        "field": "source_provenance",
+        "status": "PASS",
+        "detail": "seed sources=0, enrichment sourceIds=2",
+        "source": "enrichment"
+      },
+      {
+        "field": "verification_date",
+        "status": "PASS",
+        "detail": "Latest verification/research signal: 2026-08-17T20:00:00.000Z",
+        "source": "enrichment"
+      }
+    ],
+    "passCount": 16,
+    "partialCount": 0,
+    "missingCount": 0,
+    "unknownCount": 2,
+    "score": 89
+  },
+  "decisionHub": {
+    "whatItIs": "Genesys Cloud CX is an enterprise cloud contact center / experience orchestration platform. First-party pricing on genesys.com/pricing (checked 2026-08-17) publishes named-agent annual floors: CX 1 $75 (voice), CX 2 $115 (omnichannel), CX 3 $155 (adds WEM), CX 4 $240 (adds journey/AI experience tokens). Concurrent and hourly-interacting licence models also exist; AI Experience tokens and usage-based telephony may apply. Scored as enterprise CCaaS — landscape award only on the BC best page; never ranked as a phone-system peer.",
+    "bestFor": [
+      "Enterprise contact centres that need omnichannel + WEM + journey orchestration",
+      "Regulated industries standardising on Genesys Cloud CX",
+      "Buyers comparing CCaaS platforms (not UCaaS phone seats)",
+      "mid-market / customer-success: Genesys fit for mid-market customer-success teams in the contact-center job cluster, from first-party positioning and Business-communications Priority-3 research.",
+      "enterprise / customer-success: Genesys fit for enterprise customer-success teams in the contact-center job cluster, from first-party positioning and Business-communications Priority-3 research."
+    ],
+    "notIdealFor": [
+      "SMB teams needing a simple business phone under $30/seat",
+      "Buyers who want self-serve transparent micro-team VoIP",
+      "WhatsApp-only messaging programmes without agent ops",
+      "Enterprise complexity and implementation cost — not an SMB self-serve phone",
+      "CX 1 is voice-only; digital channels require CX 2 or digital add-ons",
+      "AI Experience token overages and telephony usage raise TCO beyond seat floors"
+    ],
+    "coreCapabilities": [
+      "cloud phone",
+      "call routing",
+      "call recording",
+      "power dialer",
+      "sms messaging",
+      "shared inbox",
+      "crm cti",
+      "analytics reporting"
+    ],
+    "pricingSummary": "4 documented plans · entry paid: Genesys Cloud CX 1",
+    "keyTradeoffs": [
+      "Enterprise complexity and implementation cost — not an SMB self-serve phone",
+      "CX 1 is voice-only; digital channels require CX 2 or digital add-ons",
+      "AI Experience token overages and telephony usage raise TCO beyond seat floors",
+      "Named vs concurrent licence choice materially changes commercial math",
+      "Not ranked as a UCaaS phone peer on SoftwareGlimpse best page"
+    ],
+    "alternatives": [
+      {
+        "slug": "talkdesk",
+        "name": "Talkdesk"
+      },
+      {
+        "slug": "five9",
+        "name": "Five9"
+      },
+      {
+        "slug": "ringcentral",
+        "name": "RingCentral"
+      },
+      {
+        "slug": "eightx8",
+        "name": "8x8"
+      },
+      {
+        "slug": "webex",
+        "name": "Cisco Webex"
+      }
+    ],
+    "importantComparisons": [
+      {
+        "slug": "genesys-vs-talkdesk",
+        "title": "Genesys vs Talkdesk",
+        "href": "/compare/genesys-vs-talkdesk/"
+      },
+      {
+        "slug": "genesys-vs-ringcentral",
+        "title": "Genesys vs RingCentral",
+        "href": "/compare/genesys-vs-ringcentral/"
+      },
+      {
+        "slug": "dialpad-vs-genesys",
+        "title": "Dialpad vs Genesys",
+        "href": "/compare/dialpad-vs-genesys/"
+      },
+      {
+        "slug": "eightx8-vs-genesys",
+        "title": "8x8 vs Genesys",
+        "href": "/compare/eightx8-vs-genesys/"
+      },
+      {
+        "slug": "fastmail-vs-genesys",
+        "title": "Fastmail vs Genesys",
+        "href": "/compare/fastmail-vs-genesys/"
+      },
+      {
+        "slug": "five9-vs-genesys",
+        "title": "Five9 vs Genesys",
+        "href": "/compare/five9-vs-genesys/"
+      }
+    ],
+    "relevantGuides": [
+      {
+        "slug": "how-business-communications-software-works",
+        "title": "How Business Communications Software Works",
+        "href": "/guides/how-business-communications-software-works/"
+      },
+      {
+        "slug": "types-of-business-communications-software",
+        "title": "Types of Business Communications Software",
+        "href": "/guides/types-of-business-communications-software/"
+      },
+      {
+        "slug": "genesys-implementation",
+        "title": "Genesys Implementation: 30/60/90 Communications Rollout That Sticks",
+        "href": "/guides/genesys-implementation/"
+      },
+      {
+        "slug": "genesys-migration",
+        "title": "Genesys Migration: Move Numbers Without Losing Trust",
+        "href": "/guides/genesys-migration/"
+      },
+      {
+        "slug": "genesys-setup",
+        "title": "Genesys Setup: Day-Zero Path to a Working Call Loop",
+        "href": "/guides/genesys-setup/"
+      },
+      {
+        "slug": "genesys-plans",
+        "title": "Genesys Plans: Seats, Numbers, and Qualifying Tiers",
+        "href": "/guides/genesys-plans/"
+      }
+    ],
+    "evidenceState": "Research/data-based (no completed hands-on test) · Latest verification/research signal: 2026-08-17T20:00:00.000Z · Editorial assessment: approved",
+    "nextDecisionStep": "Compare against peers: Genesys vs Talkdesk",
+    "missingSections": [
+      "canonical_vendor",
+      "trial"
+    ]
+  },
+  "dependents": [
+    {
+      "kind": "guide",
+      "slug": "how-business-communications-software-works",
+      "path": "/guides/how-business-communications-software-works/"
+    },
+    {
+      "kind": "guide",
+      "slug": "types-of-business-communications-software",
+      "path": "/guides/types-of-business-communications-software/"
+    },
+    {
+      "kind": "guide",
+      "slug": "genesys-implementation",
+      "path": "/guides/genesys-implementation/"
+    },
+    {
+      "kind": "guide",
+      "slug": "genesys-migration",
+      "path": "/guides/genesys-migration/"
+    },
+    {
+      "kind": "guide",
+      "slug": "genesys-setup",
+      "path": "/guides/genesys-setup/"
+    },
+    {
+      "kind": "guide",
+      "slug": "genesys-plans",
+      "path": "/guides/genesys-plans/"
+    },
+    {
+      "kind": "guide",
+      "slug": "is-genesys-worth-it",
+      "path": "/guides/is-genesys-worth-it/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "genesys-vs-talkdesk",
+      "path": "/compare/genesys-vs-talkdesk/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "genesys-vs-ringcentral",
+      "path": "/compare/genesys-vs-ringcentral/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "dialpad-vs-genesys",
+      "path": "/compare/dialpad-vs-genesys/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "eightx8-vs-genesys",
+      "path": "/compare/eightx8-vs-genesys/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "fastmail-vs-genesys",
+      "path": "/compare/fastmail-vs-genesys/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "five9-vs-genesys",
+      "path": "/compare/five9-vs-genesys/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "genesys-vs-goto-connect",
+      "path": "/compare/genesys-vs-goto-connect/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "genesys-vs-grasshopper",
+      "path": "/compare/genesys-vs-grasshopper/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "genesys-vs-manychat",
+      "path": "/compare/genesys-vs-manychat/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "genesys-vs-microsoft-teams",
+      "path": "/compare/genesys-vs-microsoft-teams/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "genesys-vs-nextiva",
+      "path": "/compare/genesys-vs-nextiva/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "genesys-vs-ooma",
+      "path": "/compare/genesys-vs-ooma/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "genesys-vs-openphone",
+      "path": "/compare/genesys-vs-openphone/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "genesys-vs-respond-io",
+      "path": "/compare/genesys-vs-respond-io/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "genesys-vs-sanebox",
+      "path": "/compare/genesys-vs-sanebox/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "genesys-vs-slack",
+      "path": "/compare/genesys-vs-slack/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "genesys-vs-twilio",
+      "path": "/compare/genesys-vs-twilio/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "genesys-vs-vonage",
+      "path": "/compare/genesys-vs-vonage/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "genesys-vs-wati",
+      "path": "/compare/genesys-vs-wati/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "genesys-vs-webex",
+      "path": "/compare/genesys-vs-webex/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "genesys-vs-zenzap",
+      "path": "/compare/genesys-vs-zenzap/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "genesys-vs-zoom",
+      "path": "/compare/genesys-vs-zoom/"
+    },
+    {
+      "kind": "alternatives",
+      "slug": "genesys",
+      "path": "/alternatives/genesys/"
+    },
+    {
+      "kind": "pricing",
+      "slug": "genesys",
+      "path": "/software/genesys/pricing/"
+    },
+    {
+      "kind": "tools",
+      "slug": "business-communications-cost-calculator",
+      "path": "/tools/business-communications-cost-calculator/"
+    }
+  ],
+  "dependentsNeedingRefresh": [],
+  "remediation": [
+    "verify:canonical_vendor",
+    "verify:trial"
+  ],
+  "notes": [
+    "fieldAudit score=89",
+    "decisionHub bestFor=5 notIdeal=6",
+    "dependents=32"
+  ],
+  "materiallyImproved": false
+}

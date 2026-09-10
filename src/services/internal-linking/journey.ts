@@ -17,6 +17,7 @@ import { makeLink, selectLinks } from "./select";
 
 const COMPARE_HUB = "/compare/";
 const REQUIREMENTS_HUB = "/requirements/";
+const CRM_RESEARCH_PRICING = "/research/crm-pricing/";
 
 /** CRM-only tools (not in shared category packs). */
 const CRM_ONLY = {
@@ -30,6 +31,11 @@ const CRM_ONLY = {
   requirementsGuide: "/guides/crm-requirements-guide/",
   chooseGuide: "/guides/how-to-choose-crm/",
   migrationGuide: "/guides/crm-data-migration/",
+} as const;
+
+/** Sales-intelligence-only tools (not in shared category packs). */
+const SI_ONLY = {
+  creditTco: "/tools/sales-intelligence-credit-tco/",
 } as const;
 
 export type JourneyNextStepInput = {
@@ -131,6 +137,7 @@ export function resolveCategoryJourneyModules(input: JourneyNextStepInput): {
   const topic = input.topicType;
   const tk = toolkitFor(input.categorySlug ?? "crm");
   const isCrm = tk.slug === "crm";
+  const isSi = tk.slug === "sales-intelligence";
   const productHref = input.preferredProductSlug
     ? `/software/${input.preferredProductSlug}/`
     : null;
@@ -325,6 +332,21 @@ export function resolveCategoryJourneyModules(input: JourneyNextStepInput): {
         tool(CRM_ONLY.roi, "CRM ROI Calculator", 76),
       );
     }
+    if (isSi) {
+      toolCandidates.push(
+        tool(SI_ONLY.creditTco, "SI Credit TCO Calculator", 82),
+      );
+      nextCandidates.push(
+        next(
+          SI_ONLY.creditTco,
+          "SI Credit TCO Calculator",
+          "tool",
+          86,
+          "nextStep",
+          "Model seats, credits, overage, and mobile credits from your quote",
+        ),
+      );
+    }
   } else if (type === "comparison" || type === "best" || type === "alternatives") {
     nextCandidates.push(
       next(tk.cost, label(tk, "Cost Calculator"), "tool", 95),
@@ -345,6 +367,14 @@ export function resolveCategoryJourneyModules(input: JourneyNextStepInput): {
         tool(CRM_ONLY.tco, "CRM TCO Calculator", 80),
       );
     }
+    if (isSi) {
+      toolCandidates.push(
+        tool(SI_ONLY.creditTco, "SI Credit TCO Calculator", 88),
+      );
+      nextCandidates.push(
+        next(SI_ONLY.creditTco, "SI Credit TCO Calculator", "tool", 90),
+      );
+    }
   } else if (type === "tool") {
     if (input.sourcePath.includes("finder")) {
       nextCandidates.push(
@@ -357,6 +387,16 @@ export function resolveCategoryJourneyModules(input: JourneyNextStepInput): {
       input.sourcePath.includes("tco")
     ) {
       nextCandidates.push(
+        isCrm
+          ? next(
+              CRM_RESEARCH_PRICING,
+              "CRM Pricing Benchmarks 2026",
+              "resource",
+              94,
+              "nextStep",
+              "Catalog-derived CRM list-price statistics.",
+            )
+          : null,
         next(tk.scorecard, label(tk, "Vendor Scorecard"), "tool", 92),
         isCrm
           ? next(CRM_ONLY.implPlanner, "CRM Implementation Planner", "tool", 85)
@@ -409,6 +449,14 @@ export function resolveCategoryJourneyModules(input: JourneyNextStepInput): {
         ? next(CRM_ONLY.chooseGuide, "How to choose a CRM", "guide", 88)
         : next(tk.requirements, label(tk, "Requirements Builder"), "tool", 88),
       next(tk.cost, label(tk, "Cost Calculator"), "tool", 80),
+      isCrm
+        ? next(
+            CRM_RESEARCH_PRICING,
+            "CRM Pricing Benchmarks 2026",
+            "resource",
+            78,
+          )
+        : null,
     );
     toolCandidates.push(
       tool(tk.finder, label(tk, "Software Finder"), 95),

@@ -1,0 +1,544 @@
+{
+  "slug": "datadog",
+  "updatedAt": "2026-09-08T21:28:59.683Z",
+  "version": "1.0.0",
+  "fieldAudit": {
+    "slug": "datadog",
+    "checkedAt": "2026-09-08T21:28:59.682Z",
+    "items": [
+      {
+        "field": "name",
+        "status": "PASS",
+        "detail": "Name: Datadog",
+        "source": "seed"
+      },
+      {
+        "field": "product_status",
+        "status": "PASS",
+        "detail": "productLifecycle=active",
+        "source": "seed"
+      },
+      {
+        "field": "canonical_vendor",
+        "status": "PASS",
+        "detail": "Vendor: Datadog, Inc.",
+        "source": "seed"
+      },
+      {
+        "field": "category",
+        "status": "PASS",
+        "detail": "primaryCategorySlug=it-development",
+        "source": "seed"
+      },
+      {
+        "field": "description",
+        "status": "PASS",
+        "detail": "Description present (Observability suite — infrastructure, APM, logs, and security signals with consu…)",
+        "source": "seed"
+      },
+      {
+        "field": "target_audience",
+        "status": "PASS",
+        "detail": "Sizes=3, teams=1, assessment bestFor=3",
+        "source": "assessment"
+      },
+      {
+        "field": "use_cases",
+        "status": "PASS",
+        "detail": "useCaseSlugs=1",
+        "source": "seed"
+      },
+      {
+        "field": "capabilities",
+        "status": "PASS",
+        "detail": "featureRatings=0, enrichment features=14",
+        "source": "enrichment"
+      },
+      {
+        "field": "pricing",
+        "status": "PASS",
+        "detail": "Pricing envelope present",
+        "source": "enrichment"
+      },
+      {
+        "field": "plans",
+        "status": "PASS",
+        "detail": "plans=3",
+        "source": "enrichment"
+      },
+      {
+        "field": "free_plan",
+        "status": "PASS",
+        "detail": "Free plan documented",
+        "source": "enrichment"
+      },
+      {
+        "field": "trial",
+        "status": "PASS",
+        "detail": "Trial documented on plans/pricing",
+        "source": "enrichment"
+      },
+      {
+        "field": "integrations",
+        "status": "PASS",
+        "detail": "integrationSlugs=0, enrichment=6",
+        "source": "enrichment"
+      },
+      {
+        "field": "alternatives",
+        "status": "PASS",
+        "detail": "alternativeSlugs=2",
+        "source": "seed"
+      },
+      {
+        "field": "competitors",
+        "status": "PASS",
+        "detail": "competitorSlugs=10",
+        "source": "seed"
+      },
+      {
+        "field": "affiliate",
+        "status": "PASS",
+        "detail": "No affiliate relationship (explicit)",
+        "source": "seed"
+      },
+      {
+        "field": "source_provenance",
+        "status": "PASS",
+        "detail": "seed sources=0, enrichment sourceIds=2",
+        "source": "enrichment"
+      },
+      {
+        "field": "verification_date",
+        "status": "PASS",
+        "detail": "Latest verification/research signal: 2026-08-18T09:30:00.000Z",
+        "source": "enrichment"
+      }
+    ],
+    "passCount": 18,
+    "partialCount": 0,
+    "missingCount": 0,
+    "unknownCount": 0,
+    "score": 100
+  },
+  "decisionHub": {
+    "whatItIs": "Datadog is an observability and monitoring platform spanning infrastructure metrics, APM/tracing, log management, and related security/RUM modules. Infrastructure Pro publishes from $15/host/month on annual billing as a common entry host floor; APM, logs, and other products add module-specific consumption charges. Free tier exists for limited hosts/metrics. Pricing is usage- and module-heavy — confirm live calculators before purchase.",
+    "bestFor": [
+      "SRE/platform teams needing unified infra + APM + logs",
+      "Cloud-native orgs with AWS/Azure/GCP estates",
+      "Teams that can model multi-module observability TCO upfront",
+      "small-business / operations: Datadog fit for small-business operations teams in the observability-monitoring job cluster, from first-party positioning and IT Wave-1 research.",
+      "mid-market / operations: Datadog fit for mid-market operations teams in the observability-monitoring job cluster, from first-party positioning and IT Wave-1 research.",
+      "enterprise / operations: Datadog fit for enterprise operations teams in the observability-monitoring job cluster, from first-party positioning and IT Wave-1 research."
+    ],
+    "notIdealFor": [
+      "Buyers whose primary job is ITSM ticketing (Freshservice)",
+      "Small teams needing predictable single-line seat pricing only",
+      "Source-control-first purchases (GitHub)",
+      "Multi-module TCO (infra + APM + logs + RUM) stacks beyond the $15/host floor",
+      "Not an ITSM/service-desk primary peer to Freshservice",
+      "Not source control or hosting panel — landscape comparisons only vs GitHub/Plesk"
+    ],
+    "coreCapabilities": [
+      "incident management",
+      "infrastructure monitoring",
+      "apm tracing",
+      "log management",
+      "cicd actions",
+      "itsm ai",
+      "dev ai",
+      "enterprise security"
+    ],
+    "pricingSummary": "3 documented plans · 1 free · entry paid: Infrastructure Pro · trial documented on at least one plan",
+    "keyTradeoffs": [
+      "Multi-module TCO (infra + APM + logs + RUM) stacks beyond the $15/host floor",
+      "Not an ITSM/service-desk primary peer to Freshservice",
+      "Not source control or hosting panel — landscape comparisons only vs GitHub/Plesk",
+      "Consumption pricing requires live calculator confirmation",
+      "Incident workflows are monitoring-oriented, not full ITIL ITSM"
+    ],
+    "alternatives": [
+      {
+        "slug": "new-relic",
+        "name": "New Relic"
+      },
+      {
+        "slug": "dynatrace",
+        "name": "Dynatrace"
+      },
+      {
+        "slug": "grafana-cloud",
+        "name": "Grafana Cloud"
+      },
+      {
+        "slug": "splunk",
+        "name": "Splunk Observability Cloud"
+      },
+      {
+        "slug": "elastic-observability",
+        "name": "Elastic Observability"
+      },
+      {
+        "slug": "sentry",
+        "name": "Sentry"
+      }
+    ],
+    "importantComparisons": [
+      {
+        "slug": "datadog-vs-freshservice",
+        "title": "Freshservice vs Datadog",
+        "href": "/compare/datadog-vs-freshservice/"
+      },
+      {
+        "slug": "datadog-vs-github",
+        "title": "GitHub vs Datadog",
+        "href": "/compare/datadog-vs-github/"
+      },
+      {
+        "slug": "datadog-vs-new-relic",
+        "title": "New Relic vs Datadog",
+        "href": "/compare/datadog-vs-new-relic/"
+      },
+      {
+        "slug": "datadog-vs-grafana-cloud",
+        "title": "Grafana Cloud vs Datadog",
+        "href": "/compare/datadog-vs-grafana-cloud/"
+      },
+      {
+        "slug": "datadog-vs-pagerduty",
+        "title": "PagerDuty vs Datadog",
+        "href": "/compare/datadog-vs-pagerduty/"
+      },
+      {
+        "slug": "datadog-vs-dynatrace",
+        "title": "Dynatrace vs Datadog",
+        "href": "/compare/datadog-vs-dynatrace/"
+      }
+    ],
+    "relevantGuides": [
+      {
+        "slug": "datadog-implementation",
+        "title": "Datadog Implementation: 30/60/90 IT Rollout That Sticks",
+        "href": "/guides/datadog-implementation/"
+      },
+      {
+        "slug": "datadog-migration",
+        "title": "Datadog Migration: Move Tickets and Repos Without Losing Trust",
+        "href": "/guides/datadog-migration/"
+      },
+      {
+        "slug": "datadog-setup",
+        "title": "Datadog Setup: Day-Zero Path to a Working IT Loop",
+        "href": "/guides/datadog-setup/"
+      },
+      {
+        "slug": "datadog-plans",
+        "title": "Datadog Plans: Seats, Hosts, and Qualifying Tiers",
+        "href": "/guides/datadog-plans/"
+      },
+      {
+        "slug": "is-datadog-worth-it",
+        "title": "Is Datadog Worth It? Fit Scenarios Before You Buy",
+        "href": "/guides/is-datadog-worth-it/"
+      }
+    ],
+    "evidenceState": "Research/data-based (no completed hands-on test) · Latest verification/research signal: 2026-08-18T09:30:00.000Z · Editorial assessment: approved",
+    "nextDecisionStep": "Compare against peers: Freshservice vs Datadog",
+    "missingSections": []
+  },
+  "dependents": [
+    {
+      "kind": "guide",
+      "slug": "datadog-implementation",
+      "path": "/guides/datadog-implementation/"
+    },
+    {
+      "kind": "guide",
+      "slug": "datadog-migration",
+      "path": "/guides/datadog-migration/"
+    },
+    {
+      "kind": "guide",
+      "slug": "datadog-setup",
+      "path": "/guides/datadog-setup/"
+    },
+    {
+      "kind": "guide",
+      "slug": "datadog-plans",
+      "path": "/guides/datadog-plans/"
+    },
+    {
+      "kind": "guide",
+      "slug": "is-datadog-worth-it",
+      "path": "/guides/is-datadog-worth-it/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "datadog-vs-freshservice",
+      "path": "/compare/datadog-vs-freshservice/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "datadog-vs-github",
+      "path": "/compare/datadog-vs-github/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "datadog-vs-new-relic",
+      "path": "/compare/datadog-vs-new-relic/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "datadog-vs-grafana-cloud",
+      "path": "/compare/datadog-vs-grafana-cloud/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "datadog-vs-pagerduty",
+      "path": "/compare/datadog-vs-pagerduty/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "datadog-vs-dynatrace",
+      "path": "/compare/datadog-vs-dynatrace/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "datadog-vs-splunk",
+      "path": "/compare/datadog-vs-splunk/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "datadog-vs-sentry",
+      "path": "/compare/datadog-vs-sentry/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "appdynamics-vs-datadog",
+      "path": "/compare/appdynamics-vs-datadog/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "datadog-vs-honeycomb",
+      "path": "/compare/datadog-vs-honeycomb/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "chronosphere-vs-datadog",
+      "path": "/compare/chronosphere-vs-datadog/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "coralogix-vs-datadog",
+      "path": "/compare/coralogix-vs-datadog/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "apify-vs-datadog",
+      "path": "/compare/apify-vs-datadog/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "azure-devops-vs-datadog",
+      "path": "/compare/azure-devops-vs-datadog/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "bitbucket-vs-datadog",
+      "path": "/compare/bitbucket-vs-datadog/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "bmc-helix-vs-datadog",
+      "path": "/compare/bmc-helix-vs-datadog/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "bright-data-vs-datadog",
+      "path": "/compare/bright-data-vs-datadog/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "buildkite-vs-datadog",
+      "path": "/compare/buildkite-vs-datadog/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "circleci-vs-datadog",
+      "path": "/compare/circleci-vs-datadog/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "cloudways-vs-datadog",
+      "path": "/compare/cloudways-vs-datadog/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "cpanel-vs-datadog",
+      "path": "/compare/cpanel-vs-datadog/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "datadog-vs-directadmin",
+      "path": "/compare/datadog-vs-directadmin/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "datadog-vs-elastic-observability",
+      "path": "/compare/datadog-vs-elastic-observability/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "datadog-vs-firehydrant",
+      "path": "/compare/datadog-vs-firehydrant/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "datadog-vs-fly-io",
+      "path": "/compare/datadog-vs-fly-io/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "datadog-vs-gitlab",
+      "path": "/compare/datadog-vs-gitlab/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "datadog-vs-haloitsm",
+      "path": "/compare/datadog-vs-haloitsm/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "datadog-vs-heroku",
+      "path": "/compare/datadog-vs-heroku/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "datadog-vs-incident-io",
+      "path": "/compare/datadog-vs-incident-io/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "datadog-vs-iproyal",
+      "path": "/compare/datadog-vs-iproyal/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "datadog-vs-ivanti",
+      "path": "/compare/datadog-vs-ivanti/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "datadog-vs-jira-service-management",
+      "path": "/compare/datadog-vs-jira-service-management/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "datadog-vs-kinsta",
+      "path": "/compare/datadog-vs-kinsta/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "datadog-vs-manageengine-servicedesk-plus",
+      "path": "/compare/datadog-vs-manageengine-servicedesk-plus/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "datadog-vs-oxylabs",
+      "path": "/compare/datadog-vs-oxylabs/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "datadog-vs-railway",
+      "path": "/compare/datadog-vs-railway/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "datadog-vs-render",
+      "path": "/compare/datadog-vs-render/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "datadog-vs-rootly",
+      "path": "/compare/datadog-vs-rootly/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "datadog-vs-scraperapi",
+      "path": "/compare/datadog-vs-scraperapi/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "datadog-vs-servicenow",
+      "path": "/compare/datadog-vs-servicenow/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "datadog-vs-siteground",
+      "path": "/compare/datadog-vs-siteground/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "datadog-vs-smartproxy",
+      "path": "/compare/datadog-vs-smartproxy/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "datadog-vs-squadcast",
+      "path": "/compare/datadog-vs-squadcast/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "datadog-vs-sysaid",
+      "path": "/compare/datadog-vs-sysaid/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "datadog-vs-thordata",
+      "path": "/compare/datadog-vs-thordata/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "datadog-vs-topdesk",
+      "path": "/compare/datadog-vs-topdesk/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "datadog-vs-wp-engine",
+      "path": "/compare/datadog-vs-wp-engine/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "datadog-vs-zyte",
+      "path": "/compare/datadog-vs-zyte/"
+    },
+    {
+      "kind": "alternatives",
+      "slug": "datadog",
+      "path": "/alternatives/datadog/"
+    },
+    {
+      "kind": "pricing",
+      "slug": "datadog",
+      "path": "/software/datadog/pricing/"
+    },
+    {
+      "kind": "best",
+      "slug": "it-development-software",
+      "path": "/best/it-development-software/"
+    },
+    {
+      "kind": "tools",
+      "slug": "it-development-cost-calculator",
+      "path": "/tools/it-development-cost-calculator/"
+    }
+  ],
+  "dependentsNeedingRefresh": [],
+  "remediation": [],
+  "notes": [
+    "fieldAudit score=100",
+    "decisionHub bestFor=6 notIdeal=6",
+    "dependents=57"
+  ],
+  "materiallyImproved": true
+}

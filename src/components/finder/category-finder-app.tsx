@@ -114,6 +114,20 @@ function defaultAnswers(): DraftAnswers {
   };
 }
 
+function readStoredCategoryAnswers(storageKey: string): DraftAnswers {
+  if (typeof window === "undefined") return defaultAnswers();
+  try {
+    const raw = localStorage.getItem(storageKey);
+    if (!raw) return defaultAnswers();
+    const parsed = JSON.parse(raw) as StoredFinderBlob;
+    const { resultOrder: _ignoredOrder, ...stored } = parsed;
+    void _ignoredOrder;
+    return { ...defaultAnswers(), ...stored };
+  } catch {
+    return defaultAnswers();
+  }
+}
+
 function countMatchedRequired(
   result: FinderRecommendationResult,
   required: string[],
@@ -143,8 +157,17 @@ export function CategoryFinderApp({
   const [phase, setPhase] = useState<Phase>("questions");
   const [stepIndex, setStepIndex] = useState(0);
   const [maxStageIndex, setMaxStageIndex] = useState(0);
-  const [answers, setAnswers] = useState<DraftAnswers>(defaultAnswers);
-  const [hydrated, setHydrated] = useState(false);
+  const [answers, setAnswers] = useState<DraftAnswers>(() =>
+    readStoredCategoryAnswers(kit.storageKey),
+  );
+  const [hydrated, setHydrated] = useState(
+    () => typeof window !== "undefined",
+  );
+  const [prevStorageKey, setPrevStorageKey] = useState(kit.storageKey);
+  if (kit.storageKey !== prevStorageKey) {
+    setPrevStorageKey(kit.storageKey);
+    setAnswers(readStoredCategoryAnswers(kit.storageKey));
+  }
   const [showAll, setShowAll] = useState(false);
   const [selectedSlugs, setSelectedSlugs] = useState<string[]>([]);
   const [results, setResults] = useState<FinderRecommendationResult[]>([]);
@@ -158,24 +181,6 @@ export function CategoryFinderApp({
     () => new Set(publishedComparisonSlugs),
     [publishedComparisonSlugs],
   );
-
-  useEffect(() => {
-    if (typeof window === "undefined") return;
-    try {
-      const raw = localStorage.getItem(kit.storageKey);
-      if (!raw) {
-        setHydrated(true);
-        return;
-      }
-      const parsed = JSON.parse(raw) as StoredFinderBlob;
-      const { resultOrder: _ignoredOrder, ...stored } = parsed;
-      void _ignoredOrder;
-      setAnswers({ ...defaultAnswers(), ...stored });
-    } catch {
-      // ignore
-    }
-    setHydrated(true);
-  }, [kit.storageKey]);
 
   useEffect(() => {
     if (!hydrated || typeof window === "undefined") return;
@@ -365,9 +370,9 @@ export function CategoryFinderApp({
         ? categoryStageIndexForQuestion(question.id)
         : 0;
 
-  useEffect(() => {
-    setMaxStageIndex((prev) => Math.max(prev, stageIndex));
-  }, [stageIndex]);
+  if (stageIndex > maxStageIndex) {
+    setMaxStageIndex(stageIndex);
+  }
 
   function goToStage(stageId: string) {
     const targetIndex = CATEGORY_FINDER_STAGES.findIndex((s) => s.id === stageId);

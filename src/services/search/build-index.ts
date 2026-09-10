@@ -8,6 +8,7 @@ import {
   getSoftware,
   getUseCases,
 } from "@/data";
+import { isEntityIndexable } from "@/domain/quality-gates";
 import {
   getPublicationContextSync,
   getSearchIndexPublicationContext,
@@ -31,6 +32,8 @@ import { getUseCaseHubProfile } from "@/data/use-case-hub";
 import { getResourceHubProfile } from "@/data/resource-hub";
 import { getCapabilityHubProfile } from "@/data/capability-hub";
 import { TOOLS_REGISTRY } from "@/data/config/tools/registry";
+import { parseCategoryToolSlug } from "@/data/config/tools/category-tool-meta";
+import { categoryHasPublishedPillar } from "@/services/category-tools/pillar-gate";
 import {
   buildSearchRuntimeIndex,
   type SearchRuntimeIndex,
@@ -261,7 +264,7 @@ export function buildSearchIndexFromSources(options?: {
       ],
       importance: typeImportance("COMPARISON"),
       published: true,
-      indexable: comparison.seo.indexable === true,
+      indexable: isEntityIndexable({ kind: "comparison", entity: comparison }),
       logo: a.logo,
       logoB: b.logo,
       verdict: comparison.verdict,
@@ -305,6 +308,13 @@ export function buildSearchIndexFromSources(options?: {
 
   for (const tool of TOOLS_REGISTRY) {
     if (tool.status !== "available" || !tool.href) continue;
+    const parsedTool = parseCategoryToolSlug(tool.slug);
+    if (
+      parsedTool &&
+      !categoryHasPublishedPillar(parsedTool.categorySlug)
+    ) {
+      continue;
+    }
     pushUnique(docs, seen, {
       id: tool.id,
       type: "TOOL",
@@ -470,7 +480,7 @@ export function buildSearchIndexFromSources(options?: {
     });
   }
 
-  for (const useCase of getUseCases(listOptions)) {
+  for (const useCase of getUseCases()) {
     if (!getUseCaseHubProfile(useCase.slug)) continue;
     pushUnique(docs, seen, {
       id: useCase.id,
@@ -498,7 +508,7 @@ export function buildSearchIndexFromSources(options?: {
     });
   }
 
-  for (const capability of getCapabilities(listOptions)) {
+  for (const capability of getCapabilities()) {
     if (!getCapabilityHubProfile(capability.slug)) continue;
     pushUnique(docs, seen, {
       id: capability.id,

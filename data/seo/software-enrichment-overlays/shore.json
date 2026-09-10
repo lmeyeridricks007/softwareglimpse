@@ -1,0 +1,307 @@
+{
+  "slug": "shore",
+  "updatedAt": "2026-09-08T21:28:59.637Z",
+  "version": "1.0.0",
+  "fieldAudit": {
+    "slug": "shore",
+    "checkedAt": "2026-09-08T21:28:59.635Z",
+    "items": [
+      {
+        "field": "name",
+        "status": "PASS",
+        "detail": "Name: Shore",
+        "source": "seed"
+      },
+      {
+        "field": "product_status",
+        "status": "PASS",
+        "detail": "productLifecycle=active",
+        "source": "seed"
+      },
+      {
+        "field": "canonical_vendor",
+        "status": "PASS",
+        "detail": "Vendor: Shore GmbH",
+        "source": "seed"
+      },
+      {
+        "field": "category",
+        "status": "PASS",
+        "detail": "primaryCategorySlug=field-service-operations",
+        "source": "seed"
+      },
+      {
+        "field": "description",
+        "status": "PASS",
+        "detail": "Description present (Appointment scheduling and local business management — affiliate partner in cust…)",
+        "source": "seed"
+      },
+      {
+        "field": "target_audience",
+        "status": "PASS",
+        "detail": "Sizes=2, teams=1, assessment bestFor=3",
+        "source": "assessment"
+      },
+      {
+        "field": "use_cases",
+        "status": "PASS",
+        "detail": "useCaseSlugs=1",
+        "source": "seed"
+      },
+      {
+        "field": "capabilities",
+        "status": "PASS",
+        "detail": "featureRatings=0, enrichment features=16",
+        "source": "enrichment"
+      },
+      {
+        "field": "pricing",
+        "status": "PASS",
+        "detail": "Pricing envelope present",
+        "source": "enrichment"
+      },
+      {
+        "field": "plans",
+        "status": "PASS",
+        "detail": "plans=2",
+        "source": "enrichment"
+      },
+      {
+        "field": "free_plan",
+        "status": "PASS",
+        "detail": "No free plan in documented plans (explicit absence)",
+        "source": "enrichment"
+      },
+      {
+        "field": "trial",
+        "status": "PASS",
+        "detail": "Trial documented on plans/pricing",
+        "source": "enrichment"
+      },
+      {
+        "field": "integrations",
+        "status": "PASS",
+        "detail": "integrationSlugs=0, enrichment=3",
+        "source": "enrichment"
+      },
+      {
+        "field": "alternatives",
+        "status": "PASS",
+        "detail": "alternativeSlugs=1",
+        "source": "seed"
+      },
+      {
+        "field": "competitors",
+        "status": "PASS",
+        "detail": "competitorSlugs=2",
+        "source": "seed"
+      },
+      {
+        "field": "affiliate",
+        "status": "PASS",
+        "detail": "Affiliate enabled with tracking URL",
+        "source": "seed"
+      },
+      {
+        "field": "source_provenance",
+        "status": "PASS",
+        "detail": "seed sources=0, enrichment sourceIds=3",
+        "source": "enrichment"
+      },
+      {
+        "field": "verification_date",
+        "status": "PASS",
+        "detail": "Latest verification/research signal: 2026-08-19T12:00:00.000Z",
+        "source": "enrichment"
+      }
+    ],
+    "passCount": 18,
+    "partialCount": 0,
+    "missingCount": 0,
+    "unknownCount": 0,
+    "score": 100
+  },
+  "decisionHub": {
+    "whatItIs": "Shore is appointment scheduling and local business management for salons, studios, and service businesses — online calendar, website/Google/Instagram booking, reminders, customer management, and marketing tools on higher tiers. US pricing (2026-08-19): Booking $59.90/mo or $49.90/mo billed annually; Booking + Marketing $79.90/$69.90 annual. 14-day free trial, no commission on bookings. POS is primarily DACH (Germany, Austria, Switzerland). Scored in the live-chat-support cluster as customer-facing booking/conversation entry — not a website messenger like Tidio.",
+    "bestFor": [
+      "Salons, studios, and appointment-based local businesses needing online booking",
+      "Operators who want fixed monthly pricing without per-booking commission",
+      "Teams that will use Google/Instagram booking surfaces plus automated reminders",
+      "micro / operations: Shore fit for micro operations teams in the live-chat-support job cluster, from first-party positioning and Affiliate gap reconcile 2026-08-19 research.",
+      "small-business / operations: Shore fit for small-business operations teams in the live-chat-support job cluster, from first-party positioning and Affiliate gap reconcile 2026-08-19 research."
+    ],
+    "notIdealFor": [
+      "Ecommerce order helpdesk buyers (Gorgias territory)",
+      "Website AI live chat and ticket deflection (Tidio, Intercom)",
+      "WhatsApp customer messaging (Wati)",
+      "Appointment booking primary — not a helpdesk ticket queue or AI live chat",
+      "POS and GoBD-compliant register limited to DACH markets",
+      "SMS reminder fees may apply separately from subscription"
+    ],
+    "coreCapabilities": [
+      "shared inbox",
+      "live chat",
+      "omnichannel inbox",
+      "macros automation",
+      "self service portal",
+      "csat surveys",
+      "helpdesk reporting",
+      "helpdesk integrations"
+    ],
+    "pricingSummary": "2 documented plans · entry paid: Booking · trial documented on at least one plan",
+    "keyTradeoffs": [
+      "Appointment booking primary — not a helpdesk ticket queue or AI live chat",
+      "POS and GoBD-compliant register limited to DACH markets",
+      "SMS reminder fees may apply separately from subscription",
+      "No SLA routing, macros, or agent assignment model",
+      "Marketing tier adds cost versus pure booking needs"
+    ],
+    "alternatives": [
+      {
+        "slug": "tidio",
+        "name": "Tidio"
+      },
+      {
+        "slug": "wati",
+        "name": "Wati"
+      }
+    ],
+    "importantComparisons": [
+      {
+        "slug": "shore-vs-wati",
+        "title": "Shore vs Wati",
+        "href": "/compare/shore-vs-wati/"
+      },
+      {
+        "slug": "nicejob-vs-shore",
+        "title": "NiceJob vs Shore",
+        "href": "/compare/nicejob-vs-shore/"
+      },
+      {
+        "slug": "servicem8-vs-shore",
+        "title": "ServiceM8 vs Shore",
+        "href": "/compare/servicem8-vs-shore/"
+      },
+      {
+        "slug": "shore-vs-tidio",
+        "title": "Shore vs Tidio",
+        "href": "/compare/shore-vs-tidio/"
+      }
+    ],
+    "relevantGuides": [
+      {
+        "slug": "what-is-shore",
+        "title": "What Is Shore?",
+        "href": "/guides/what-is-shore/"
+      },
+      {
+        "slug": "is-shore-worth-it",
+        "title": "Is Shore Worth It?",
+        "href": "/guides/is-shore-worth-it/"
+      },
+      {
+        "slug": "how-field-service-operations-software-works",
+        "title": "How Field Service & Operations Software Works",
+        "href": "/guides/how-field-service-operations-software-works/"
+      },
+      {
+        "slug": "types-of-field-service-operations-software",
+        "title": "Types of Field Service & Operations Software",
+        "href": "/guides/types-of-field-service-operations-software/"
+      },
+      {
+        "slug": "field-service-operations-requirements-guide",
+        "title": "Field Service & Operations Software Requirements Guide",
+        "href": "/guides/field-service-operations-requirements-guide/"
+      },
+      {
+        "slug": "field-service-operations-evaluation-guide",
+        "title": "Field Service & Operations Software Evaluation Guide",
+        "href": "/guides/field-service-operations-evaluation-guide/"
+      }
+    ],
+    "evidenceState": "Research/data-based (no completed hands-on test) · Latest verification/research signal: 2026-08-19T12:00:00.000Z · Editorial assessment: approved",
+    "nextDecisionStep": "Compare against peers: Shore vs Wati",
+    "missingSections": []
+  },
+  "dependents": [
+    {
+      "kind": "guide",
+      "slug": "what-is-shore",
+      "path": "/guides/what-is-shore/"
+    },
+    {
+      "kind": "guide",
+      "slug": "is-shore-worth-it",
+      "path": "/guides/is-shore-worth-it/"
+    },
+    {
+      "kind": "guide",
+      "slug": "how-field-service-operations-software-works",
+      "path": "/guides/how-field-service-operations-software-works/"
+    },
+    {
+      "kind": "guide",
+      "slug": "types-of-field-service-operations-software",
+      "path": "/guides/types-of-field-service-operations-software/"
+    },
+    {
+      "kind": "guide",
+      "slug": "field-service-operations-requirements-guide",
+      "path": "/guides/field-service-operations-requirements-guide/"
+    },
+    {
+      "kind": "guide",
+      "slug": "field-service-operations-evaluation-guide",
+      "path": "/guides/field-service-operations-evaluation-guide/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "shore-vs-wati",
+      "path": "/compare/shore-vs-wati/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "nicejob-vs-shore",
+      "path": "/compare/nicejob-vs-shore/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "servicem8-vs-shore",
+      "path": "/compare/servicem8-vs-shore/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "shore-vs-tidio",
+      "path": "/compare/shore-vs-tidio/"
+    },
+    {
+      "kind": "alternatives",
+      "slug": "shore",
+      "path": "/alternatives/shore/"
+    },
+    {
+      "kind": "pricing",
+      "slug": "shore",
+      "path": "/software/shore/pricing/"
+    },
+    {
+      "kind": "best",
+      "slug": "field-service-operations-software",
+      "path": "/best/field-service-operations-software/"
+    },
+    {
+      "kind": "tools",
+      "slug": "field-service-operations-cost-calculator",
+      "path": "/tools/field-service-operations-cost-calculator/"
+    }
+  ],
+  "dependentsNeedingRefresh": [],
+  "remediation": [],
+  "notes": [
+    "fieldAudit score=100",
+    "decisionHub bestFor=5 notIdeal=6",
+    "dependents=14"
+  ],
+  "materiallyImproved": true
+}

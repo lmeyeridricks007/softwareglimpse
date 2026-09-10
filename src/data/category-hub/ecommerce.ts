@@ -12,7 +12,7 @@ export function buildEcommerceCategoryHubProfile(): CategoryHubProfile {
     tagline:
       "Find ecommerce software by job — hosted SaaS platforms, open-source carts, omnichannel POS, or dropshipping sourcing.",
     definition:
-      "Ecommerce software helps merchants launch and operate online stores, unify retail channels, or automate supplier imports. The right tool matches the primary job — not a single undifferentiated ranking that pits Shopify against Spocket or Square against WooCommerce.",
+      "Ecommerce software spans hosted storefronts, open-source carts, omnichannel POS, and dropshipping sourcing apps. Start from the primary job — launch a DTC storefront, unify retail channels, or import supplier catalogs — before comparing vendors that solve different problems.",
     iconSlug: "ecommerce",
     decisionCriteria: [
       "Primary job fit",

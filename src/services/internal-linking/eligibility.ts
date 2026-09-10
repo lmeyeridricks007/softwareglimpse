@@ -31,7 +31,11 @@ import {
 
 /**
  * Eligibility for primary related-content modules:
- * publishable + indexable + canonical path (not draft / noindex / /go / alias).
+ * publishable + indexable + canonical path (not draft / /go / alias).
+ *
+ * UX exception: pass `requireIndexable: false` for legitimate IMPROVE/noindex
+ * destinations that still help buyers (product explainers, setup guides).
+ * Never use that for giant crawlable dumps.
  */
 
 const BLOCKED_PREFIXES = ["/go/", "/api/", "/dev/", "/search/", "/newsletter/"];
@@ -100,6 +104,9 @@ function computePathIndexable(p: string, now: Date): boolean {
     "/features/",
     "/resources/",
     "/for/",
+    "/research/",
+    "/research/crm-pricing/",
+    "/research/crm-pricing-history/",
   ]);
   if (staticIndexable.has(p)) return true;
 

@@ -1,0 +1,193 @@
+{
+  "slug": "hive-implementation",
+  "enrichmentType": "IMPLEMENTATION_GUIDE",
+  "updatedAt": "2026-09-09T05:40:00.950Z",
+  "uniqueValueAdded": [
+    "implementation_workflow",
+    "scenario_analysis",
+    "decision_framework",
+    "limitations_evidence",
+    "pricing_comparison",
+    "sg_original_data",
+    "buyer_checklist"
+  ],
+  "patch": {
+    "summary": "Hive implementation guide: day-zero sequence, pilot rules, plan gates, and cutover checks from SoftwareGlimpse research — not generic CRM setup filler.",
+    "blocks": [
+      {
+        "id": "da-hive-implementation-1",
+        "type": "direct-answer",
+        "body": "Implement Hive by mapping current project-management workflows to Hive objects, confirming plan gates for premium capabilities, piloting one team, then cutting over integrations (Slack, Google Workspace, Microsoft Teams) after data checks.",
+        "bullets": [
+          "Start with: task boards",
+          "Gate check: confirm paid unlocks before go-live",
+          "Integrate after: data quality pass on Slack"
+        ]
+      },
+      {
+        "id": "impl-hive-implementation-2",
+        "type": "step",
+        "heading": "Hive day-zero to steady-state sequence",
+        "body": "Treat Hive setup as a controlled rollout — not a weekend dump of CSV files.",
+        "stepNumber": 1,
+        "scenarios": [
+          {
+            "title": "Day zero — objects and owners",
+            "body": "Define owners for task boards, timeline / Gantt, workload and resources before inviting the whole org."
+          },
+          {
+            "title": "SMB pilot",
+            "body": "One pipeline / one team proves SMB and mid-market teams wanting Work OS depth with a lower paid entry than monday before company-wide seats."
+          },
+          {
+            "title": "Cutover",
+            "body": "Freeze legacy writes briefly; validate Slack and Google Workspace before reopen."
+          }
+        ]
+      },
+      {
+        "id": "df-hive-implementation-3",
+        "type": "decision-framework",
+        "title": "Hive implementation go / no-go",
+        "steps": [
+          {
+            "id": "i-1",
+            "label": "Go when plan unlocks cover must-have capabilities"
+          },
+          {
+            "id": "i-2",
+            "label": "Pause if this limitation blocks ops: Free and Starter cap members/projects at 10 — growth forces Teams"
+          },
+          {
+            "id": "i-3",
+            "label": "Do not expand seats until task boards is green"
+          }
+        ]
+      },
+      {
+        "id": "mist-hive-implementation-4",
+        "type": "mistakes",
+        "title": "Hive implementation mistakes",
+        "items": [
+          {
+            "title": "Mistake 1",
+            "body": "Free and Starter cap members/projects at 10 — growth forces Teams"
+          },
+          {
+            "title": "Mistake 2",
+            "body": "Free storage (200MB) and AI credits (1k) are tight for active teams"
+          },
+          {
+            "title": "Mistake 3",
+            "body": "Flexible add-ons (~list price) can raise TCO beyond the Teams floor"
+          },
+          {
+            "title": "Mistake 4",
+            "body": "Brand recognition trails monday.com for some buyers"
+          },
+          {
+            "title": "Big-bang invite",
+            "body": "Inviting every user before object design creates junk data that is expensive to unwind."
+          }
+        ]
+      },
+      {
+        "id": "cost-hive-implementation-5",
+        "type": "cost-breakdown",
+        "title": "Hive plan gates that affect rollout",
+        "body": "Implementation fails when unlocks needed for go-live sit on a higher tier than budgeted.",
+        "lines": [
+          {
+            "label": "Free",
+            "description": "Free plan · Unlocks: task boards, timeline / Gantt, workload and resources · Suits: explore before committing seats"
+          },
+          {
+            "label": "Starter",
+            "description": "14-day trial · Suits: teams whose must-have gates appear on this tier"
+          },
+          {
+            "label": "Teams",
+            "description": "14-day trial · Suits: teams whose must-have gates appear on this tier"
+          },
+          {
+            "label": "Enterprise",
+            "description": "Contact sales · Suits: teams that need custom procurement"
+          }
+        ]
+      },
+      {
+        "id": "sel-hive-implementation-6",
+        "type": "selection-checklist",
+        "title": "Hive implementation checklist",
+        "dimensions": [
+          {
+            "id": "prep",
+            "label": "Prep",
+            "options": [
+              "Object model drafted",
+              "Owners named",
+              "Legacy freeze window set"
+            ]
+          },
+          {
+            "id": "pilot",
+            "label": "Pilot",
+            "options": [
+              "task boards",
+              "Junk-data rules set",
+              "Support path clear"
+            ]
+          },
+          {
+            "id": "scale",
+            "label": "Scale",
+            "options": [
+              "Slack",
+              "Seat expansion criteria written",
+              "Rollback plan noted"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "cta-hive-implementation-7",
+        "type": "interactive-cta",
+        "title": "Validate project-management fit before a deep Hive rollout",
+        "body": "If Hive fails constraint fit, stop implementation early.",
+        "href": "/tools/project-management-finder/",
+        "ctaLabel": "Open Finder",
+        "variant": "finder"
+      }
+    ],
+    "checklist": [
+      {
+        "id": "enrich-chk-0",
+        "label": "Draft Hive object owners before invites",
+        "order": 0
+      },
+      {
+        "id": "enrich-chk-1",
+        "label": "Confirm plan unlocks for go-live features",
+        "order": 1
+      },
+      {
+        "id": "enrich-chk-2",
+        "label": "Pilot one team on task boards",
+        "order": 2
+      },
+      {
+        "id": "enrich-chk-3",
+        "label": "If blocked, evaluate monday.com before sunk-cost expansion",
+        "order": 3
+      }
+    ],
+    "nextAction": {
+      "contentId": "tool:finder:project-management",
+      "label": "Open Finder shortlist"
+    }
+  },
+  "notes": [
+    "Implementation: workflow, constraints, mistakes, checklist.",
+    "Type-specific skeleton: IMPLEMENTATION_GUIDE"
+  ]
+}

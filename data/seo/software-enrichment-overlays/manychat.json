@@ -1,0 +1,401 @@
+{
+  "slug": "manychat",
+  "updatedAt": "2026-09-07T22:31:21.480Z",
+  "version": "1.0.0",
+  "fieldAudit": {
+    "slug": "manychat",
+    "checkedAt": "2026-09-07T22:31:21.479Z",
+    "items": [
+      {
+        "field": "name",
+        "status": "PASS",
+        "detail": "Name: ManyChat",
+        "source": "seed"
+      },
+      {
+        "field": "product_status",
+        "status": "PASS",
+        "detail": "productLifecycle=active",
+        "source": "seed"
+      },
+      {
+        "field": "canonical_vendor",
+        "status": "UNKNOWN",
+        "detail": "Company/vendor not documented",
+        "source": "none"
+      },
+      {
+        "field": "category",
+        "status": "PASS",
+        "detail": "primaryCategorySlug=business-communications",
+        "source": "seed"
+      },
+      {
+        "field": "description",
+        "status": "PASS",
+        "detail": "Description present (Messenger / Instagram / WhatsApp marketing chatbot — Free 25 Active Contacts; Es…)",
+        "source": "seed"
+      },
+      {
+        "field": "target_audience",
+        "status": "PASS",
+        "detail": "Sizes=3, teams=3, assessment bestFor=3",
+        "source": "assessment"
+      },
+      {
+        "field": "use_cases",
+        "status": "PASS",
+        "detail": "useCaseSlugs=2",
+        "source": "seed"
+      },
+      {
+        "field": "capabilities",
+        "status": "PASS",
+        "detail": "featureRatings=0, enrichment features=13",
+        "source": "enrichment"
+      },
+      {
+        "field": "pricing",
+        "status": "PASS",
+        "detail": "Pricing envelope present",
+        "source": "enrichment"
+      },
+      {
+        "field": "plans",
+        "status": "PASS",
+        "detail": "plans=5",
+        "source": "enrichment"
+      },
+      {
+        "field": "free_plan",
+        "status": "PASS",
+        "detail": "Free plan documented",
+        "source": "enrichment"
+      },
+      {
+        "field": "trial",
+        "status": "PASS",
+        "detail": "Trial documented on plans/pricing",
+        "source": "enrichment"
+      },
+      {
+        "field": "integrations",
+        "status": "PASS",
+        "detail": "integrationSlugs=0, enrichment=5",
+        "source": "enrichment"
+      },
+      {
+        "field": "alternatives",
+        "status": "PASS",
+        "detail": "alternativeSlugs=3",
+        "source": "seed"
+      },
+      {
+        "field": "competitors",
+        "status": "PASS",
+        "detail": "competitorSlugs=3",
+        "source": "seed"
+      },
+      {
+        "field": "affiliate",
+        "status": "PASS",
+        "detail": "No affiliate relationship (explicit)",
+        "source": "seed"
+      },
+      {
+        "field": "source_provenance",
+        "status": "PASS",
+        "detail": "seed sources=0, enrichment sourceIds=4",
+        "source": "enrichment"
+      },
+      {
+        "field": "verification_date",
+        "status": "PASS",
+        "detail": "Latest verification/research signal: 2026-08-17T22:00:00.000Z",
+        "source": "enrichment"
+      }
+    ],
+    "passCount": 17,
+    "partialCount": 0,
+    "missingCount": 0,
+    "unknownCount": 1,
+    "score": 94
+  },
+  "decisionHub": {
+    "whatItIs": "ManyChat is a marketing-oriented chatbot and messaging automation platform spanning Instagram, Facebook Messenger, TikTok, WhatsApp, Telegram, SMS and email. The post–March 2, 2026 Active Contacts model (accounts created on/after that date) publishes Free (25 Active Contacts/mo), Essential, Pro (2,500), Business (7,500) and Advanced (25,000) tiers — Pro at $39/month or $29/month billed annually confirmed on ManyChat Help (Pro plan article, updated 2026-05-06); Essential ~$14/mo and Business/Advanced ~$69/$139 annual-equivalent floors shown on manychat.com/pricing (retrieved via first-party page snippets 2026-08-17; full HTML fetch timed out — medium confidence on Essential/Business/Advanced dollars). 14-day trial on Essential/Pro. Scored in the customer-messaging landscape as a marketing-automation peer to Wati/respond.io — not ranked as a phone system.",
+    "bestFor": [
+      "Creators and ecommerce brands automating Instagram, Messenger and WhatsApp DMs",
+      "Marketing teams that want a Free tier and low Essential entry before Pro WhatsApp",
+      "Buyers comparing marketing chatbots beside Wati/respond.io support inboxes",
+      "solo / marketing: ManyChat fit for solo marketing teams in the customer-messaging job cluster, from first-party positioning and Business-communications Priority-4 research.",
+      "small-business / marketing: ManyChat fit for small-business marketing teams in the customer-messaging job cluster, from first-party positioning and Business-communications Priority-4 research.",
+      "mid-market / marketing: ManyChat fit for mid-market marketing teams in the customer-messaging job cluster, from first-party positioning and Business-communications Priority-4 research."
+    ],
+    "notIdealFor": [
+      "Enterprise support teams needing omnichannel agent ops (prefer respond.io / Intercom)",
+      "Buyers who need a business phone / UCaaS seat",
+      "Teams that refuse Active Contact overage economics",
+      "Marketing chatbot posture — thinner support-desk / omnichannel agent ops than respond.io",
+      "WhatsApp and multi-channel depth gated to Pro+ on the new model",
+      "Active Contact overages and dual legacy/new pricing models confuse buyers"
+    ],
+    "coreCapabilities": [
+      "shared inbox",
+      "customer messaging",
+      "whatsapp support"
+    ],
+    "pricingSummary": "5 documented plans · 1 free · entry paid: Essential · trial documented on at least one plan",
+    "keyTradeoffs": [
+      "Marketing chatbot posture — thinner support-desk / omnichannel agent ops than respond.io",
+      "WhatsApp and multi-channel depth gated to Pro+ on the new model",
+      "Active Contact overages and dual legacy/new pricing models confuse buyers",
+      "Not a business phone system — no PSTN IVR or softphone",
+      "Essential/Business/Advanced annual dollars medium confidence (pricing page fetch timeout)"
+    ],
+    "alternatives": [
+      {
+        "slug": "respond-io",
+        "name": "respond.io"
+      },
+      {
+        "slug": "wati",
+        "name": "Wati"
+      },
+      {
+        "slug": "intercom",
+        "name": "Intercom"
+      }
+    ],
+    "importantComparisons": [
+      {
+        "slug": "manychat-vs-respond-io",
+        "title": "ManyChat vs respond.io",
+        "href": "/compare/manychat-vs-respond-io/"
+      },
+      {
+        "slug": "manychat-vs-wati",
+        "title": "ManyChat vs Wati",
+        "href": "/compare/manychat-vs-wati/"
+      },
+      {
+        "slug": "intercom-vs-manychat",
+        "title": "Intercom vs ManyChat",
+        "href": "/compare/intercom-vs-manychat/"
+      },
+      {
+        "slug": "dialpad-vs-manychat",
+        "title": "Dialpad vs ManyChat",
+        "href": "/compare/dialpad-vs-manychat/"
+      },
+      {
+        "slug": "eightx8-vs-manychat",
+        "title": "8x8 vs ManyChat",
+        "href": "/compare/eightx8-vs-manychat/"
+      },
+      {
+        "slug": "fastmail-vs-manychat",
+        "title": "Fastmail vs ManyChat",
+        "href": "/compare/fastmail-vs-manychat/"
+      }
+    ],
+    "relevantGuides": [
+      {
+        "slug": "manychat-implementation",
+        "title": "ManyChat Implementation: 30/60/90 Communications Rollout That Sticks",
+        "href": "/guides/manychat-implementation/"
+      },
+      {
+        "slug": "manychat-migration",
+        "title": "ManyChat Migration: Move Numbers Without Losing Trust",
+        "href": "/guides/manychat-migration/"
+      },
+      {
+        "slug": "manychat-setup",
+        "title": "ManyChat Setup: Day-Zero Path to a Working Call Loop",
+        "href": "/guides/manychat-setup/"
+      },
+      {
+        "slug": "manychat-plans",
+        "title": "ManyChat Plans: Seats, Numbers, and Qualifying Tiers",
+        "href": "/guides/manychat-plans/"
+      },
+      {
+        "slug": "is-manychat-worth-it",
+        "title": "Is ManyChat Worth It? Fit Scenarios Before You Buy",
+        "href": "/guides/is-manychat-worth-it/"
+      }
+    ],
+    "evidenceState": "Research/data-based (no completed hands-on test) · Latest verification/research signal: 2026-08-17T22:00:00.000Z · Editorial assessment: approved",
+    "nextDecisionStep": "Compare against peers: ManyChat vs respond.io",
+    "missingSections": [
+      "canonical_vendor"
+    ]
+  },
+  "dependents": [
+    {
+      "kind": "guide",
+      "slug": "manychat-implementation",
+      "path": "/guides/manychat-implementation/"
+    },
+    {
+      "kind": "guide",
+      "slug": "manychat-migration",
+      "path": "/guides/manychat-migration/"
+    },
+    {
+      "kind": "guide",
+      "slug": "manychat-setup",
+      "path": "/guides/manychat-setup/"
+    },
+    {
+      "kind": "guide",
+      "slug": "manychat-plans",
+      "path": "/guides/manychat-plans/"
+    },
+    {
+      "kind": "guide",
+      "slug": "is-manychat-worth-it",
+      "path": "/guides/is-manychat-worth-it/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "manychat-vs-respond-io",
+      "path": "/compare/manychat-vs-respond-io/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "manychat-vs-wati",
+      "path": "/compare/manychat-vs-wati/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "intercom-vs-manychat",
+      "path": "/compare/intercom-vs-manychat/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "dialpad-vs-manychat",
+      "path": "/compare/dialpad-vs-manychat/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "eightx8-vs-manychat",
+      "path": "/compare/eightx8-vs-manychat/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "fastmail-vs-manychat",
+      "path": "/compare/fastmail-vs-manychat/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "five9-vs-manychat",
+      "path": "/compare/five9-vs-manychat/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "genesys-vs-manychat",
+      "path": "/compare/genesys-vs-manychat/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "goto-connect-vs-manychat",
+      "path": "/compare/goto-connect-vs-manychat/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "grasshopper-vs-manychat",
+      "path": "/compare/grasshopper-vs-manychat/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "manychat-vs-microsoft-teams",
+      "path": "/compare/manychat-vs-microsoft-teams/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "manychat-vs-nextiva",
+      "path": "/compare/manychat-vs-nextiva/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "manychat-vs-ooma",
+      "path": "/compare/manychat-vs-ooma/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "manychat-vs-openphone",
+      "path": "/compare/manychat-vs-openphone/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "manychat-vs-ringcentral",
+      "path": "/compare/manychat-vs-ringcentral/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "manychat-vs-sanebox",
+      "path": "/compare/manychat-vs-sanebox/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "manychat-vs-slack",
+      "path": "/compare/manychat-vs-slack/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "manychat-vs-talkdesk",
+      "path": "/compare/manychat-vs-talkdesk/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "manychat-vs-twilio",
+      "path": "/compare/manychat-vs-twilio/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "manychat-vs-vonage",
+      "path": "/compare/manychat-vs-vonage/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "manychat-vs-webex",
+      "path": "/compare/manychat-vs-webex/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "manychat-vs-zenzap",
+      "path": "/compare/manychat-vs-zenzap/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "manychat-vs-zoom",
+      "path": "/compare/manychat-vs-zoom/"
+    },
+    {
+      "kind": "alternatives",
+      "slug": "manychat",
+      "path": "/alternatives/manychat/"
+    },
+    {
+      "kind": "pricing",
+      "slug": "manychat",
+      "path": "/software/manychat/pricing/"
+    },
+    {
+      "kind": "tools",
+      "slug": "business-communications-cost-calculator",
+      "path": "/tools/business-communications-cost-calculator/"
+    }
+  ],
+  "dependentsNeedingRefresh": [],
+  "remediation": [
+    "verify:canonical_vendor"
+  ],
+  "notes": [
+    "fieldAudit score=94",
+    "decisionHub bestFor=6 notIdeal=6",
+    "dependents=31"
+  ],
+  "materiallyImproved": false
+}

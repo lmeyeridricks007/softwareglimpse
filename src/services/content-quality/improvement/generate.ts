@@ -1,14 +1,15 @@
+import type { z } from "zod";
 import type { AuditPageResult } from "../audit-report";
 import type { ContentQualityDimensionId } from "@/domain/schemas/content-quality";
 import { stableImprovementId } from "../intelligence/stable-ids";
 import { findMapNode, loadContentMapNodes } from "./content-map";
-import type {
-  ContentMapNode,
-  Effort,
-  FixClass,
-  ImprovementOpportunity,
-  ImprovementType,
-  SystemicPattern,
+import {
+  ImprovementOpportunitySchema,
+  type ContentMapNode,
+  type Effort,
+  type FixClass,
+  type ImprovementOpportunity,
+  type SystemicPattern,
 } from "./types";
 
 type Dim = {
@@ -159,12 +160,38 @@ export function opportunitiesForPage(
   const map = findMapNode(mapByRoute, a.route);
   const out: ImprovementOpportunity[] = [];
 
-  const push = ( partial: Omit<
-      ImprovementOpportunity,
-      "id" | "rankScore" | "route" | "pageType" | "currentScore" | "priority"
-    > &
-      Partial<Pick<ImprovementOpportunity, "priority">>,
-  ) => {
+  type PushPartial = Pick<
+    ImprovementOpportunity,
+    | "targetScore"
+    | "types"
+    | "fixClass"
+    | "problem"
+    | "whyItMatters"
+    | "recommendedChange"
+    | "effort"
+    | "expectedOutcome"
+  > &
+    Partial<
+      Pick<
+        ImprovementOpportunity,
+        | "priority"
+        | "sectionsAffected"
+        | "evidenceNeeded"
+        | "visualMediaNeeded"
+        | "toolIntegration"
+        | "resourceIntegration"
+        | "internalLinkChanges"
+        | "relatedMapNodes"
+        | "dependencies"
+        | "researchRequired"
+        | "quickWin"
+        | "majorProject"
+        | "systemic"
+        | "seoSignals"
+      >
+    >;
+
+  const push = (partial: PushPartial) => {
     const primaryType = partial.types[0] ?? "EXPAND CONTENT";
     const id = stableImprovementId(a.route, primaryType, partial.problem);
     const priority = partial.priority ?? result.improvementPriority;
@@ -366,7 +393,7 @@ export function opportunitiesForPage(
       evidenceNeeded: [
         "Official documentation URLs",
         "Verification dates",
-        ...(a.pageType === "product-review" || a.pageType === "best"
+        ...(a.pageType === "product-review"
           ? ["Pricing source freshness"]
           : []),
         ...(isFeature ? ["Enrichment support rows (no invented cells)"] : []),
@@ -382,8 +409,8 @@ export function opportunitiesForPage(
       researchRequired: true,
       effort: isFeature ? "medium" : "small",
       expectedOutcome: "Evidence dimension ≥3 with traceable sources; no invented support claims.",
-      quickWin: !isFeature && a.pageType !== "best",
-      majorProject: isFeature || a.pageType === "best",
+      quickWin: !isFeature,
+      majorProject: isFeature,
       systemic: isFeature || a.pageType === "requirement",
     });
   }

@@ -163,36 +163,6 @@
       ]
     }
   ],
-  "aiCapabilities": [
-    {
-      "capability": "assistant",
-      "availability": "supported",
-      "sourceIds": [
-        "navan-product-official"
-      ]
-    },
-    {
-      "capability": "summaries",
-      "availability": "supported",
-      "sourceIds": [
-        "navan-product-official"
-      ]
-    },
-    {
-      "capability": "automation",
-      "availability": "limited",
-      "sourceIds": [
-        "navan-product-official"
-      ]
-    },
-    {
-      "capability": "recommendations",
-      "availability": "supported",
-      "sourceIds": [
-        "navan-product-official"
-      ]
-    }
-  ],
   "integrationSupport": [
     {
       "integrationSlug": "slack",
@@ -218,6 +188,36 @@
     {
       "integrationSlug": "netsuite",
       "kind": "native",
+      "sourceIds": [
+        "navan-product-official"
+      ]
+    }
+  ],
+  "aiCapabilities": [
+    {
+      "capability": "assistant",
+      "availability": "supported",
+      "sourceIds": [
+        "navan-product-official"
+      ]
+    },
+    {
+      "capability": "summaries",
+      "availability": "supported",
+      "sourceIds": [
+        "navan-product-official"
+      ]
+    },
+    {
+      "capability": "automation",
+      "availability": "limited",
+      "sourceIds": [
+        "navan-product-official"
+      ]
+    },
+    {
+      "capability": "recommendations",
+      "availability": "supported",
       "sourceIds": [
         "navan-product-official"
       ]
@@ -286,31 +286,6 @@
       "isEditorial": false
     }
   ],
-  "pricing": {
-    "currency": "USD",
-    "model": "quote-led",
-    "hasFreePlan": false,
-    "hasFreeTrial": true,
-    "plans": [
-      {
-        "id": "plan-enterprise",
-        "slug": "enterprise",
-        "name": "Enterprise",
-        "isFree": false,
-        "contactSales": true,
-        "hasFreeTrial": true,
-        "trialDays": 14,
-        "highlighted": false,
-        "rules": [],
-        "description": "Contact sales for published Navan pricing — confirm live tiers on the vendor site."
-      }
-    ],
-    "notes": "Verified 2026-08-19 from navan.com positioning (medium confidence — enterprise quote model). Demo/trial available; no published PEPM rate card. Affiliate aff-navan. Affiliate economics excluded.",
-    "verifiedAt": "2026-08-19T12:00:00.000Z",
-    "sourceIds": [
-      "navan-pricing-official"
-    ]
-  },
   "screenshots": [
     {
       "id": "navan-shot-flying-card-chat",
@@ -323,7 +298,8 @@
       "kind": "vendor-ui",
       "featureIds": [
         "ai-assistance"
-      ]
+      ],
+      "useCaseIds": []
     },
     {
       "id": "navan-shot-accounting",
@@ -336,7 +312,8 @@
       "kind": "vendor-ui",
       "featureIds": [
         "ai-assistance"
-      ]
+      ],
+      "useCaseIds": []
     },
     {
       "id": "navan-shot-product-tour",
@@ -349,7 +326,8 @@
       "kind": "vendor-ui",
       "featureIds": [
         "ai-assistance"
-      ]
+      ],
+      "useCaseIds": []
     }
   ],
   "media": [
@@ -398,6 +376,7 @@
       "demonstratedDimensionIds": [],
       "requirementCriterionIds": [],
       "workflowStageIds": [],
+      "mediaContext": "general-workflow",
       "reportedOutcomes": [],
       "placements": [
         "overview",
@@ -405,7 +384,6 @@
         "evidence",
         "use-cases"
       ],
-      "mediaContext": "general-workflow",
       "purpose": "Official Navan video for product research pages",
       "demonstratesCaption": "How Navan presents the product in an official vendor video.",
       "editorialCommentary": "Official vendor demo — treat as UI/workflow evidence, not SoftwareGlimpse scoring.",
@@ -466,6 +444,7 @@
       "demonstratedDimensionIds": [],
       "requirementCriterionIds": [],
       "workflowStageIds": [],
+      "mediaContext": "general-workflow",
       "reportedOutcomes": [],
       "placements": [
         "overview",
@@ -474,7 +453,6 @@
         "implementation",
         "use-cases"
       ],
-      "mediaContext": "general-workflow",
       "purpose": "Official Navan video for product research pages",
       "demonstratesCaption": "How Navan presents the product in an official vendor video.",
       "editorialCommentary": "Official vendor demo — treat as UI/workflow evidence, not SoftwareGlimpse scoring.",
@@ -492,11 +470,31 @@
       "status": "published"
     }
   ],
-  "sourceIds": [
-    "navan-product-official",
-    "navan-pricing-official"
-  ],
-  "notes": "Affiliate gap reconcile 2026-08-19 onboarding enrichment from first-party research 2026-08-19T12:00:00.000Z. handsOnTesting=false. membershipRole=adjacent. jobCluster=people-platform. Adjacent to core HRIS: Navan is corporate travel and expense management — not payroll, benefits, or full employee records.",
+  "pricing": {
+    "currency": "USD",
+    "model": "quote-led",
+    "hasFreePlan": false,
+    "hasFreeTrial": true,
+    "plans": [
+      {
+        "id": "plan-enterprise",
+        "slug": "enterprise",
+        "name": "Enterprise",
+        "isFree": false,
+        "contactSales": true,
+        "hasFreeTrial": true,
+        "trialDays": 14,
+        "highlighted": false,
+        "rules": [],
+        "description": "Contact sales for published Navan pricing — confirm live tiers on the vendor site."
+      }
+    ],
+    "notes": "Verified 2026-08-19 from navan.com positioning (medium confidence — enterprise quote model). Demo/trial available; no published PEPM rate card. Affiliate aff-navan. Affiliate economics excluded.",
+    "verifiedAt": "2026-09-07T22:41:04.616Z",
+    "sourceIds": [
+      "navan-pricing-official"
+    ]
+  },
   "domainCheckedAt": {
     "identity": "2026-08-19T12:00:00.000Z",
     "pricing": "2026-08-19T12:00:00.000Z",
@@ -510,5 +508,10 @@
     "limits": "2026-08-19T12:00:00.000Z",
     "security-compliance": "2026-08-19T12:00:00.000Z"
   },
-  "updatedAt": "2026-08-19T15:20:00.000Z"
+  "sourceIds": [
+    "navan-product-official",
+    "navan-pricing-official"
+  ],
+  "updatedAt": "2026-08-19T15:20:00.000Z",
+  "notes": "Affiliate gap reconcile 2026-08-19 onboarding enrichment from first-party research 2026-08-19T12:00:00.000Z. handsOnTesting=false. membershipRole=adjacent. jobCluster=people-platform. Adjacent to core HRIS: Navan is corporate travel and expense management — not payroll, benefits, or full employee records."
 }

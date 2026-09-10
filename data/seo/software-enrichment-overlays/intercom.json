@@ -1,0 +1,354 @@
+{
+  "slug": "intercom",
+  "updatedAt": "2026-09-07T22:31:21.483Z",
+  "version": "1.0.0",
+  "fieldAudit": {
+    "slug": "intercom",
+    "checkedAt": "2026-09-07T22:31:21.482Z",
+    "items": [
+      {
+        "field": "name",
+        "status": "PASS",
+        "detail": "Name: Intercom",
+        "source": "seed"
+      },
+      {
+        "field": "product_status",
+        "status": "PASS",
+        "detail": "productLifecycle=active",
+        "source": "seed"
+      },
+      {
+        "field": "canonical_vendor",
+        "status": "UNKNOWN",
+        "detail": "Company/vendor not documented",
+        "source": "none"
+      },
+      {
+        "field": "category",
+        "status": "PASS",
+        "detail": "primaryCategorySlug=live-chat",
+        "source": "seed"
+      },
+      {
+        "field": "description",
+        "status": "PASS",
+        "detail": "Description present (Customer messaging / shared inbox with Fin AI — Essential from $29/seat/mo + Fin…)",
+        "source": "seed"
+      },
+      {
+        "field": "target_audience",
+        "status": "PASS",
+        "detail": "Sizes=3, teams=3, assessment bestFor=3",
+        "source": "assessment"
+      },
+      {
+        "field": "use_cases",
+        "status": "PASS",
+        "detail": "useCaseSlugs=5",
+        "source": "seed"
+      },
+      {
+        "field": "capabilities",
+        "status": "PASS",
+        "detail": "featureRatings=0, enrichment features=13",
+        "source": "enrichment"
+      },
+      {
+        "field": "pricing",
+        "status": "PASS",
+        "detail": "Pricing envelope present",
+        "source": "enrichment"
+      },
+      {
+        "field": "plans",
+        "status": "PASS",
+        "detail": "plans=4",
+        "source": "enrichment"
+      },
+      {
+        "field": "free_plan",
+        "status": "PASS",
+        "detail": "No free plan in documented plans (explicit absence)",
+        "source": "enrichment"
+      },
+      {
+        "field": "trial",
+        "status": "PASS",
+        "detail": "Trial documented on plans/pricing",
+        "source": "enrichment"
+      },
+      {
+        "field": "integrations",
+        "status": "PASS",
+        "detail": "integrationSlugs=0, enrichment=6",
+        "source": "enrichment"
+      },
+      {
+        "field": "alternatives",
+        "status": "PASS",
+        "detail": "alternativeSlugs=4",
+        "source": "seed"
+      },
+      {
+        "field": "competitors",
+        "status": "PASS",
+        "detail": "competitorSlugs=4",
+        "source": "seed"
+      },
+      {
+        "field": "affiliate",
+        "status": "PASS",
+        "detail": "No affiliate relationship (explicit)",
+        "source": "seed"
+      },
+      {
+        "field": "source_provenance",
+        "status": "PASS",
+        "detail": "seed sources=0, enrichment sourceIds=2",
+        "source": "enrichment"
+      },
+      {
+        "field": "verification_date",
+        "status": "PASS",
+        "detail": "Latest verification/research signal: 2026-08-17T22:00:00.000Z",
+        "source": "enrichment"
+      }
+    ],
+    "passCount": 17,
+    "partialCount": 0,
+    "missingCount": 0,
+    "unknownCount": 1,
+    "score": 94
+  },
+  "decisionHub": {
+    "whatItIs": "Intercom is an AI-first customer messaging and shared-inbox platform: Messenger, tickets, help center and Fin AI Agent on Essential/Advanced/Expert seats. First-party pricing on intercom.com/pricing (checked 2026-08-17) publishes Essential $29, Advanced $85 and Expert $132 per seat/month (annual toggle), with Fin from $0.99 per resolution outcome on all plans; Copilot $29/agent/mo and Proactive Support Plus $99/mo add-ons; email/SMS/WhatsApp/Phone are pay-as-you-go channels. Free trial documented. CS-borderline — primary business-communications landscape with secondary customer-service taxonomy. Scored in customer-messaging; never ranked as a phone peer.",
+    "bestFor": [
+      "Support teams that want Messenger + shared inbox + Fin AI in one CS platform",
+      "Mid-market SaaS organisations standardising on Intercom for in-app messaging",
+      "Buyers evaluating AI agent resolutions as a primary CX bet",
+      "small-business / customer-success: Intercom fit for small-business customer-success teams in the customer-messaging job cluster, from first-party positioning and Business-communications Priority-4 research.",
+      "mid-market / customer-success: Intercom fit for mid-market customer-success teams in the customer-messaging job cluster, from first-party positioning and Business-communications Priority-4 research.",
+      "enterprise / customer-success: Intercom fit for enterprise customer-success teams in the customer-messaging job cluster, from first-party positioning and Business-communications Priority-4 research."
+    ],
+    "notIdealFor": [
+      "SMB teams that only need a cheap marketing chatbot (prefer ManyChat)",
+      "Buyers who need a business phone / UCaaS seat",
+      "WhatsApp-only BSP programmes without Intercom Messenger (prefer Wati)",
+      "Seat + Fin outcome pricing stacks — TCO rises with AI resolution volume",
+      "SMS, WhatsApp and Phone are pay-as-you-go add-on channels, not unlimited included",
+      "CS-borderline — heavier helpdesk/ticketing than pure WhatsApp BSPs"
+    ],
+    "coreCapabilities": [
+      "shared inbox",
+      "crm cti",
+      "analytics reporting",
+      "ai assistance",
+      "unified inbox",
+      "live chat support",
+      "customer messaging",
+      "whatsapp support"
+    ],
+    "pricingSummary": "4 documented plans · entry paid: Essential · trial documented on at least one plan",
+    "keyTradeoffs": [
+      "Seat + Fin outcome pricing stacks — TCO rises with AI resolution volume",
+      "SMS, WhatsApp and Phone are pay-as-you-go add-on channels, not unlimited included",
+      "CS-borderline — heavier helpdesk/ticketing than pure WhatsApp BSPs",
+      "Copilot and Proactive Support Plus are separate add-ons",
+      "Not a UCaaS / SMB business-phone substitute"
+    ],
+    "alternatives": [
+      {
+        "slug": "respond-io",
+        "name": "respond.io"
+      },
+      {
+        "slug": "manychat",
+        "name": "ManyChat"
+      },
+      {
+        "slug": "talkdesk",
+        "name": "Talkdesk"
+      },
+      {
+        "slug": "wati",
+        "name": "Wati"
+      },
+      {
+        "slug": "zendesk",
+        "name": "Zendesk Sell"
+      }
+    ],
+    "importantComparisons": [
+      {
+        "slug": "intercom-vs-manychat",
+        "title": "Intercom vs ManyChat",
+        "href": "/compare/intercom-vs-manychat/"
+      },
+      {
+        "slug": "intercom-vs-respond-io",
+        "title": "Intercom vs respond.io",
+        "href": "/compare/intercom-vs-respond-io/"
+      },
+      {
+        "slug": "cometchat-vs-intercom",
+        "title": "CometChat vs Intercom",
+        "href": "/compare/cometchat-vs-intercom/"
+      },
+      {
+        "slug": "intercom-vs-talkdesk",
+        "title": "Intercom vs Talkdesk",
+        "href": "/compare/intercom-vs-talkdesk/"
+      },
+      {
+        "slug": "intercom-vs-tidio",
+        "title": "Tidio vs Intercom",
+        "href": "/compare/intercom-vs-tidio/"
+      },
+      {
+        "slug": "crisp-vs-intercom",
+        "title": "Crisp vs Intercom",
+        "href": "/compare/crisp-vs-intercom/"
+      }
+    ],
+    "relevantGuides": [
+      {
+        "slug": "how-live-chat-software-works",
+        "title": "How Live Chat Software Works",
+        "href": "/guides/how-live-chat-software-works/"
+      },
+      {
+        "slug": "types-of-live-chat-software",
+        "title": "Types of Live Chat Software",
+        "href": "/guides/types-of-live-chat-software/"
+      },
+      {
+        "slug": "live-chat-requirements-guide",
+        "title": "Live Chat Software Requirements Guide",
+        "href": "/guides/live-chat-requirements-guide/"
+      },
+      {
+        "slug": "live-chat-evaluation-guide",
+        "title": "Live Chat Software Evaluation Guide",
+        "href": "/guides/live-chat-evaluation-guide/"
+      }
+    ],
+    "evidenceState": "Research/data-based (no completed hands-on test) · Latest verification/research signal: 2026-08-17T22:00:00.000Z · Editorial assessment: approved",
+    "nextDecisionStep": "Compare against peers: Intercom vs ManyChat",
+    "missingSections": [
+      "canonical_vendor"
+    ]
+  },
+  "dependents": [
+    {
+      "kind": "guide",
+      "slug": "how-live-chat-software-works",
+      "path": "/guides/how-live-chat-software-works/"
+    },
+    {
+      "kind": "guide",
+      "slug": "types-of-live-chat-software",
+      "path": "/guides/types-of-live-chat-software/"
+    },
+    {
+      "kind": "guide",
+      "slug": "live-chat-requirements-guide",
+      "path": "/guides/live-chat-requirements-guide/"
+    },
+    {
+      "kind": "guide",
+      "slug": "live-chat-evaluation-guide",
+      "path": "/guides/live-chat-evaluation-guide/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "intercom-vs-manychat",
+      "path": "/compare/intercom-vs-manychat/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "intercom-vs-respond-io",
+      "path": "/compare/intercom-vs-respond-io/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "cometchat-vs-intercom",
+      "path": "/compare/cometchat-vs-intercom/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "intercom-vs-talkdesk",
+      "path": "/compare/intercom-vs-talkdesk/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "intercom-vs-tidio",
+      "path": "/compare/intercom-vs-tidio/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "crisp-vs-intercom",
+      "path": "/compare/crisp-vs-intercom/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "intercom-vs-zendesk",
+      "path": "/compare/intercom-vs-zendesk/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "freshdesk-vs-intercom",
+      "path": "/compare/freshdesk-vs-intercom/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "intercom-vs-zendesk-suite",
+      "path": "/compare/intercom-vs-zendesk-suite/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "help-scout-vs-intercom",
+      "path": "/compare/help-scout-vs-intercom/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "freshchat-vs-intercom",
+      "path": "/compare/freshchat-vs-intercom/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "intercom-vs-livechat",
+      "path": "/compare/intercom-vs-livechat/"
+    },
+    {
+      "kind": "alternatives",
+      "slug": "intercom",
+      "path": "/alternatives/intercom/"
+    },
+    {
+      "kind": "pricing",
+      "slug": "intercom",
+      "path": "/software/intercom/pricing/"
+    },
+    {
+      "kind": "best",
+      "slug": "live-chat-software",
+      "path": "/best/live-chat-software/"
+    },
+    {
+      "kind": "tools",
+      "slug": "live-chat-cost-calculator",
+      "path": "/tools/live-chat-cost-calculator/"
+    }
+  ],
+  "dependentsNeedingRefresh": [],
+  "remediation": [
+    "verify:canonical_vendor"
+  ],
+  "notes": [
+    "fieldAudit score=94",
+    "decisionHub bestFor=6 notIdeal=6",
+    "dependents=20"
+  ],
+  "materiallyImproved": false
+}

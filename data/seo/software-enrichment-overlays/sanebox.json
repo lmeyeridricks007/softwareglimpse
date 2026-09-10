@@ -1,0 +1,392 @@
+{
+  "slug": "sanebox",
+  "updatedAt": "2026-09-09T18:29:41.153Z",
+  "version": "1.0.0",
+  "fieldAudit": {
+    "slug": "sanebox",
+    "checkedAt": "2026-09-09T18:29:41.151Z",
+    "items": [
+      {
+        "field": "name",
+        "status": "PASS",
+        "detail": "Name: SaneBox",
+        "source": "seed"
+      },
+      {
+        "field": "product_status",
+        "status": "PASS",
+        "detail": "productLifecycle=active",
+        "source": "seed"
+      },
+      {
+        "field": "canonical_vendor",
+        "status": "PASS",
+        "detail": "Vendor: SaneBox, Inc.",
+        "source": "seed"
+      },
+      {
+        "field": "category",
+        "status": "PASS",
+        "detail": "primaryCategorySlug=business-communications",
+        "source": "seed"
+      },
+      {
+        "field": "description",
+        "status": "PASS",
+        "detail": "Description present (SaneBox is inbox-productivity tooling that layers onto an existing mailbox — Gma…)",
+        "source": "seed"
+      },
+      {
+        "field": "target_audience",
+        "status": "PASS",
+        "detail": "Sizes=3, teams=2, assessment bestFor=3",
+        "source": "assessment"
+      },
+      {
+        "field": "use_cases",
+        "status": "PASS",
+        "detail": "useCaseSlugs=1",
+        "source": "seed"
+      },
+      {
+        "field": "capabilities",
+        "status": "PASS",
+        "detail": "featureRatings=0, enrichment features=13",
+        "source": "enrichment"
+      },
+      {
+        "field": "pricing",
+        "status": "PASS",
+        "detail": "Pricing envelope present",
+        "source": "enrichment"
+      },
+      {
+        "field": "plans",
+        "status": "PASS",
+        "detail": "plans=3",
+        "source": "enrichment"
+      },
+      {
+        "field": "free_plan",
+        "status": "PASS",
+        "detail": "No free plan in documented plans (explicit absence)",
+        "source": "enrichment"
+      },
+      {
+        "field": "trial",
+        "status": "PASS",
+        "detail": "Trial documented on plans/pricing",
+        "source": "enrichment"
+      },
+      {
+        "field": "integrations",
+        "status": "PASS",
+        "detail": "integrationSlugs=0, enrichment=3",
+        "source": "enrichment"
+      },
+      {
+        "field": "alternatives",
+        "status": "PASS",
+        "detail": "alternativeSlugs=1",
+        "source": "seed"
+      },
+      {
+        "field": "competitors",
+        "status": "PASS",
+        "detail": "competitorSlugs=1",
+        "source": "seed"
+      },
+      {
+        "field": "affiliate",
+        "status": "PASS",
+        "detail": "Affiliate enabled with tracking URL",
+        "source": "seed"
+      },
+      {
+        "field": "source_provenance",
+        "status": "PASS",
+        "detail": "seed sources=0, enrichment sourceIds=3",
+        "source": "enrichment"
+      },
+      {
+        "field": "verification_date",
+        "status": "PASS",
+        "detail": "Latest verification/research signal: 2026-08-17T09:00:00.000Z",
+        "source": "enrichment"
+      }
+    ],
+    "passCount": 18,
+    "partialCount": 0,
+    "missingCount": 0,
+    "unknownCount": 0,
+    "score": 100
+  },
+  "decisionHub": {
+    "whatItIs": "SaneBox is inbox-productivity tooling that layers onto an existing mailbox — Gmail, Outlook, Yahoo, iCloud or any IMAP account — and triages incoming mail into folders such as SaneLater, SaneBlackHole and SaneAttachments, with follow-up reminders on higher tiers. Plans are per person rather than per organisation and are gated by mailbox count: Snack (1), Lunch (2) and Dinner (4). In a business-communications context it is adjacent tooling, not a communication channel.",
+    "bestFor": [
+      "Individuals and small teams drowning in inbound email who want automatic triage",
+      "Professionals tracking outstanding replies with SaneReminders (Lunch and above)",
+      "People managing multiple mailboxes who want one triage layer across them (Dinner)"
+    ],
+    "notIdealFor": [
+      "Anyone shortlisting a phone system, WhatsApp platform or team-chat tool",
+      "Organisations wanting centrally billed team-wide deployment",
+      "Buyers who need a free tier before committing",
+      "Not a communication channel — SaneBox triages an existing mailbox and adds no voice, SMS, WhatsApp or chat",
+      "Billing is per person with no team or family plan, so multi-user rollouts multiply cost",
+      "Mailbox caps drive upgrades: 1 account on Snack, 2 on Lunch, 4 on Dinner"
+    ],
+    "coreCapabilities": [
+      "analytics reporting",
+      "ai assistance",
+      "unified inbox",
+      "team communication"
+    ],
+    "pricingSummary": "3 documented plans · entry paid: Snack · trial documented on at least one plan",
+    "keyTradeoffs": [
+      "Not a communication channel — SaneBox triages an existing mailbox and adds no voice, SMS, WhatsApp or chat",
+      "Billing is per person with no team or family plan, so multi-user rollouts multiply cost",
+      "Mailbox caps drive upgrades: 1 account on Snack, 2 on Lunch, 4 on Dinner",
+      "No free tier — evaluation is trial-only",
+      "Trial length is stated inconsistently across first-party surfaces (7 vs 14 days)"
+    ],
+    "alternatives": [
+      {
+        "slug": "fastmail",
+        "name": "Fastmail"
+      }
+    ],
+    "importantComparisons": [
+      {
+        "slug": "dialpad-vs-sanebox",
+        "title": "Dialpad vs SaneBox",
+        "href": "/compare/dialpad-vs-sanebox/"
+      },
+      {
+        "slug": "eightx8-vs-sanebox",
+        "title": "8x8 vs SaneBox",
+        "href": "/compare/eightx8-vs-sanebox/"
+      },
+      {
+        "slug": "fastmail-vs-sanebox",
+        "title": "Fastmail vs SaneBox",
+        "href": "/compare/fastmail-vs-sanebox/"
+      },
+      {
+        "slug": "five9-vs-sanebox",
+        "title": "Five9 vs SaneBox",
+        "href": "/compare/five9-vs-sanebox/"
+      },
+      {
+        "slug": "genesys-vs-sanebox",
+        "title": "Genesys vs SaneBox",
+        "href": "/compare/genesys-vs-sanebox/"
+      },
+      {
+        "slug": "goto-connect-vs-sanebox",
+        "title": "GoTo Connect vs SaneBox",
+        "href": "/compare/goto-connect-vs-sanebox/"
+      }
+    ],
+    "relevantGuides": [
+      {
+        "slug": "what-is-sanebox",
+        "title": "What Is SaneBox?",
+        "href": "/guides/what-is-sanebox/"
+      },
+      {
+        "slug": "sanebox-implementation",
+        "title": "SaneBox Implementation: 30/60/90 Communications Rollout That Sticks",
+        "href": "/guides/sanebox-implementation/"
+      },
+      {
+        "slug": "sanebox-migration",
+        "title": "SaneBox Migration: Move Numbers Without Losing Trust",
+        "href": "/guides/sanebox-migration/"
+      },
+      {
+        "slug": "sanebox-setup",
+        "title": "SaneBox Setup: Day-Zero Path to a Working Call Loop",
+        "href": "/guides/sanebox-setup/"
+      },
+      {
+        "slug": "sanebox-plans",
+        "title": "SaneBox Plans: Seats, Numbers, and Qualifying Tiers",
+        "href": "/guides/sanebox-plans/"
+      },
+      {
+        "slug": "is-sanebox-worth-it",
+        "title": "Is SaneBox Worth It? Fit Scenarios Before You Buy",
+        "href": "/guides/is-sanebox-worth-it/"
+      }
+    ],
+    "evidenceState": "Research/data-based (no completed hands-on test) · Latest verification/research signal: 2026-08-17T09:00:00.000Z · Editorial assessment: approved",
+    "nextDecisionStep": "Compare against peers: Dialpad vs SaneBox",
+    "missingSections": []
+  },
+  "dependents": [
+    {
+      "kind": "guide",
+      "slug": "what-is-sanebox",
+      "path": "/guides/what-is-sanebox/"
+    },
+    {
+      "kind": "guide",
+      "slug": "sanebox-implementation",
+      "path": "/guides/sanebox-implementation/"
+    },
+    {
+      "kind": "guide",
+      "slug": "sanebox-migration",
+      "path": "/guides/sanebox-migration/"
+    },
+    {
+      "kind": "guide",
+      "slug": "sanebox-setup",
+      "path": "/guides/sanebox-setup/"
+    },
+    {
+      "kind": "guide",
+      "slug": "sanebox-plans",
+      "path": "/guides/sanebox-plans/"
+    },
+    {
+      "kind": "guide",
+      "slug": "is-sanebox-worth-it",
+      "path": "/guides/is-sanebox-worth-it/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "dialpad-vs-sanebox",
+      "path": "/compare/dialpad-vs-sanebox/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "eightx8-vs-sanebox",
+      "path": "/compare/eightx8-vs-sanebox/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "fastmail-vs-sanebox",
+      "path": "/compare/fastmail-vs-sanebox/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "five9-vs-sanebox",
+      "path": "/compare/five9-vs-sanebox/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "genesys-vs-sanebox",
+      "path": "/compare/genesys-vs-sanebox/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "goto-connect-vs-sanebox",
+      "path": "/compare/goto-connect-vs-sanebox/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "grasshopper-vs-sanebox",
+      "path": "/compare/grasshopper-vs-sanebox/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "manychat-vs-sanebox",
+      "path": "/compare/manychat-vs-sanebox/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "microsoft-teams-vs-sanebox",
+      "path": "/compare/microsoft-teams-vs-sanebox/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "nextiva-vs-sanebox",
+      "path": "/compare/nextiva-vs-sanebox/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "ooma-vs-sanebox",
+      "path": "/compare/ooma-vs-sanebox/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "openphone-vs-sanebox",
+      "path": "/compare/openphone-vs-sanebox/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "respond-io-vs-sanebox",
+      "path": "/compare/respond-io-vs-sanebox/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "ringcentral-vs-sanebox",
+      "path": "/compare/ringcentral-vs-sanebox/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "sanebox-vs-slack",
+      "path": "/compare/sanebox-vs-slack/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "sanebox-vs-talkdesk",
+      "path": "/compare/sanebox-vs-talkdesk/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "sanebox-vs-twilio",
+      "path": "/compare/sanebox-vs-twilio/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "sanebox-vs-vonage",
+      "path": "/compare/sanebox-vs-vonage/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "sanebox-vs-wati",
+      "path": "/compare/sanebox-vs-wati/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "sanebox-vs-webex",
+      "path": "/compare/sanebox-vs-webex/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "sanebox-vs-zenzap",
+      "path": "/compare/sanebox-vs-zenzap/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "sanebox-vs-zoom",
+      "path": "/compare/sanebox-vs-zoom/"
+    },
+    {
+      "kind": "alternatives",
+      "slug": "sanebox",
+      "path": "/alternatives/sanebox/"
+    },
+    {
+      "kind": "pricing",
+      "slug": "sanebox",
+      "path": "/software/sanebox/pricing/"
+    },
+    {
+      "kind": "tools",
+      "slug": "business-communications-cost-calculator",
+      "path": "/tools/business-communications-cost-calculator/"
+    }
+  ],
+  "dependentsNeedingRefresh": [],
+  "remediation": [],
+  "notes": [
+    "fieldAudit score=100",
+    "decisionHub bestFor=3 notIdeal=6",
+    "dependents=31"
+  ],
+  "materiallyImproved": false
+}

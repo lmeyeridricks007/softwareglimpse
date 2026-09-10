@@ -198,6 +198,29 @@
       ]
     }
   ],
+  "integrationSupport": [
+    {
+      "integrationSlug": "slack",
+      "kind": "native",
+      "sourceIds": [
+        "new-relic-product-official"
+      ]
+    },
+    {
+      "integrationSlug": "microsoft-teams",
+      "kind": "native",
+      "sourceIds": [
+        "new-relic-product-official"
+      ]
+    },
+    {
+      "integrationSlug": "api",
+      "kind": "api-only",
+      "sourceIds": [
+        "new-relic-product-official"
+      ]
+    }
+  ],
   "aiCapabilities": [
     {
       "capability": "assistant",
@@ -225,29 +248,6 @@
     {
       "capability": "recommendations",
       "availability": "supported",
-      "sourceIds": [
-        "new-relic-product-official"
-      ]
-    }
-  ],
-  "integrationSupport": [
-    {
-      "integrationSlug": "slack",
-      "kind": "native",
-      "sourceIds": [
-        "new-relic-product-official"
-      ]
-    },
-    {
-      "integrationSlug": "microsoft-teams",
-      "kind": "native",
-      "sourceIds": [
-        "new-relic-product-official"
-      ]
-    },
-    {
-      "integrationSlug": "api",
-      "kind": "api-only",
       "sourceIds": [
         "new-relic-product-official"
       ]
@@ -331,88 +331,6 @@
       "isEditorial": false
     }
   ],
-  "pricing": {
-    "currency": "USD",
-    "model": "hybrid",
-    "hasFreePlan": true,
-    "hasFreeTrial": false,
-    "plans": [
-      {
-        "id": "plan-free",
-        "slug": "free",
-        "name": "Free",
-        "isFree": true,
-        "contactSales": false,
-        "hasFreeTrial": false,
-        "highlighted": false,
-        "rules": [
-          {
-            "kind": "flat",
-            "amount": 0,
-            "currency": "USD",
-            "interval": "month",
-            "amountPeriod": "month"
-          }
-        ],
-        "description": "100 GB ingest/mo and one full platform user — community support."
-      },
-      {
-        "id": "plan-standard-first-user",
-        "slug": "standard-first-user",
-        "name": "Standard (first full user)",
-        "isFree": false,
-        "contactSales": false,
-        "hasFreeTrial": false,
-        "highlighted": true,
-        "rules": [
-          {
-            "kind": "per-seat",
-            "amountPerSeat": 10,
-            "currency": "USD",
-            "interval": "month",
-            "amountPeriod": "month"
-          }
-        ],
-        "description": "$10 first full platform user; additional Standard full users $99 (max 5)."
-      },
-      {
-        "id": "plan-pro-full-user",
-        "slug": "pro-full-user",
-        "name": "Pro (full platform user)",
-        "isFree": false,
-        "contactSales": false,
-        "hasFreeTrial": false,
-        "highlighted": false,
-        "rules": [
-          {
-            "kind": "per-seat",
-            "amountPerSeat": 349,
-            "currency": "USD",
-            "interval": "year",
-            "amountPeriod": "month"
-          }
-        ],
-        "description": "$349/full user/mo billed annually ($418.80 monthly PAYG)."
-      },
-      {
-        "id": "plan-enterprise",
-        "slug": "enterprise",
-        "name": "Enterprise",
-        "isFree": false,
-        "contactSales": true,
-        "hasFreeTrial": false,
-        "highlighted": false,
-        "rules": [],
-        "description": "FedRAMP/HIPAA-oriented Data Plus and custom user rates — contact sales."
-      }
-    ],
-    "notes": "Verified 2026-08-18 from newrelic.com/pricing (high confidence). 100 GB free ingest; $0.40/GB original / $0.60 Data Plus; Standard first full user $10 then $99 (cap 5); Core $49; Pro $349/full user annual. Affiliate economics excluded.",
-    "verifiedAt": "2026-08-18T12:00:00.000Z",
-    "sourceIds": [
-      "new-relic-pricing-official"
-    ],
-    "startingPriceMonthly": 10
-  },
   "screenshots": [
     {
       "id": "new-relic-shot-overview",
@@ -543,13 +461,13 @@
       "demonstratedDimensionIds": [],
       "requirementCriterionIds": [],
       "workflowStageIds": [],
+      "mediaContext": "general-workflow",
       "reportedOutcomes": [],
       "placements": [
         "overview",
         "features",
         "evidence"
       ],
-      "mediaContext": "general-workflow",
       "purpose": "Official New Relic video for product research pages",
       "demonstratesCaption": "How New Relic presents the product in an official vendor video.",
       "editorialCommentary": "Official vendor demo — treat as UI/workflow evidence, not SoftwareGlimpse scoring.",
@@ -567,12 +485,88 @@
       "status": "published"
     }
   ],
-  "sourceIds": [
-    "new-relic-product-official",
-    "new-relic-pricing-official",
-    "newrelic-pricing"
-  ],
-  "notes": "IT Priority-2 onboarding enrichment from first-party research 2026-08-18T12:00:00.000Z. handsOnTesting=false. membershipRole=primary. jobCluster=observability-monitoring.",
+  "pricing": {
+    "currency": "USD",
+    "model": "hybrid",
+    "hasFreePlan": true,
+    "hasFreeTrial": false,
+    "plans": [
+      {
+        "id": "plan-free",
+        "slug": "free",
+        "name": "Free",
+        "isFree": true,
+        "contactSales": false,
+        "hasFreeTrial": false,
+        "highlighted": false,
+        "rules": [
+          {
+            "kind": "flat",
+            "amount": 0,
+            "currency": "USD",
+            "interval": "month",
+            "amountPeriod": "month"
+          }
+        ],
+        "description": "100 GB ingest/mo and one full platform user — community support."
+      },
+      {
+        "id": "plan-standard-first-user",
+        "slug": "standard-first-user",
+        "name": "Standard (first full user)",
+        "isFree": false,
+        "contactSales": false,
+        "hasFreeTrial": false,
+        "highlighted": true,
+        "rules": [
+          {
+            "kind": "per-seat",
+            "amountPerSeat": 10,
+            "currency": "USD",
+            "interval": "month",
+            "amountPeriod": "month"
+          }
+        ],
+        "description": "$10 first full platform user; additional Standard full users $99 (max 5)."
+      },
+      {
+        "id": "plan-pro-full-user",
+        "slug": "pro-full-user",
+        "name": "Pro (full platform user)",
+        "isFree": false,
+        "contactSales": false,
+        "hasFreeTrial": false,
+        "highlighted": false,
+        "rules": [
+          {
+            "kind": "per-seat",
+            "amountPerSeat": 349,
+            "currency": "USD",
+            "interval": "year",
+            "amountPeriod": "month"
+          }
+        ],
+        "description": "$349/full user/mo billed annually ($418.80 monthly PAYG)."
+      },
+      {
+        "id": "plan-enterprise",
+        "slug": "enterprise",
+        "name": "Enterprise",
+        "isFree": false,
+        "contactSales": true,
+        "hasFreeTrial": false,
+        "highlighted": false,
+        "rules": [],
+        "description": "FedRAMP/HIPAA-oriented Data Plus and custom user rates — contact sales."
+      }
+    ],
+    "notes": "Verified 2026-08-18 from newrelic.com/pricing (high confidence). 100 GB free ingest; $0.40/GB original / $0.60 Data Plus; Standard first full user $10 then $99 (cap 5); Core $49; Pro $349/full user annual. Affiliate economics excluded.",
+    "verifiedAt": "2026-09-08T21:57:10.569Z",
+    "sourceIds": [
+      "new-relic-pricing-official"
+    ],
+    "startingPriceMonthly": 10
+  },
   "domainCheckedAt": {
     "identity": "2026-08-18T12:00:00.000Z",
     "pricing": "2026-08-18T12:00:00.000Z",
@@ -586,5 +580,11 @@
     "limits": "2026-08-18T12:00:00.000Z",
     "security-compliance": "2026-08-18T12:00:00.000Z"
   },
-  "updatedAt": "2026-08-18T14:00:00.000Z"
+  "sourceIds": [
+    "new-relic-product-official",
+    "new-relic-pricing-official",
+    "newrelic-pricing"
+  ],
+  "updatedAt": "2026-08-18T14:00:00.000Z",
+  "notes": "IT Priority-2 onboarding enrichment from first-party research 2026-08-18T12:00:00.000Z. handsOnTesting=false. membershipRole=primary. jobCluster=observability-monitoring."
 }

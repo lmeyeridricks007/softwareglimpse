@@ -1,0 +1,110 @@
+{
+  "generatedAt": "2026-09-09T18:59:39.000Z",
+  "from": {
+    "audit": "FULL_REVIEW_3",
+    "generatedAt": "2026-09-09T08:48:00.000Z",
+    "overall": 56
+  },
+  "to": {
+    "audit": "FULL_REVIEW_4",
+    "generatedAt": "2026-09-09T18:59:39.000Z",
+    "overall": 55
+  },
+  "overallDelta": -1,
+  "headlineOutcomes": {
+    "factoryNearDuplicateRisk": { "previous": 1272, "current": 1272, "delta": 0 },
+    "limitedUnique": { "previous": 1373, "current": 1342, "delta": -31 },
+    "dataVerified": { "previous": 115, "current": 164, "delta": 49 },
+    "handsOn": { "previous": 0, "current": 0, "delta": 0 },
+    "improveOrphansSample": { "previous": "80/80", "current": "15/80", "delta": -65 },
+    "knowledgeGraphEdgesComparable": {
+      "previous": 26853,
+      "current": 26853,
+      "delta": 0,
+      "note": "semanticEdges; totalEdges 71601 includes contextual — not scored as growth"
+    },
+    "knowledgeGraphNodes": { "previous": 6785, "current": 6785, "delta": 0 },
+    "promotionsIncrementalSincePreviousReview": {
+      "previous": 36,
+      "currentIncremental": 7,
+      "delta": 7
+    },
+    "gsc": {
+      "previous": "8 clicks / 115457 impressions / 74.5 position",
+      "current": "8 clicks / 115457 impressions / 74.5 position",
+      "freshness": "STALE identical through 2026-08-13",
+      "comparable": false,
+      "rankClickMovement": "NOT_MEASURABLE"
+    },
+    "authority": { "previous": "NOT_CONNECTED", "current": "NOT_CONNECTED" },
+    "conversions": { "previous": "NOT_CONNECTED", "current": "NOT_CONNECTED" },
+    "productionParity": {
+      "previous": "not validated live this cycle (assumed deployable)",
+      "current": "NO — www monolithic 6370 vs local index 3133",
+      "safeProductionState": "NO"
+    },
+    "laneAExecution": {
+      "previous": "29 URLs in growth-exec-50",
+      "current": "lane-a-gsc-improve-30 applied (30; band 8–20 = 0)"
+    }
+  },
+  "executionBatchesSinceReview3": [
+    {
+      "id": "factory-pack-100b-2026-09-09",
+      "processed": 100,
+      "materiallyImproved": 6,
+      "promoted": 7,
+      "clearedEstateNearDup": 7,
+      "clearedLimitedUnique": 7,
+      "estateFactoryPackCountStill": 1272
+    },
+    {
+      "id": "lane-a-gsc-improve-30-2026-09-09",
+      "processed": 30,
+      "contentChanges": 27,
+      "linksAdded": 55,
+      "dataImproved": 14,
+      "promoted": 0,
+      "band8to20": 0
+    },
+    {
+      "id": "evidence-wave-50-2026-09-09-combined",
+      "productsProcessed": 96,
+      "newVerified": 49,
+      "endingVerified": 164
+    },
+    {
+      "id": "production-parity-live-2026-09-09",
+      "localParity": "NO",
+      "prodSitemapUrls": 6370,
+      "localArchSitemapUrls": 3133,
+      "seoAuditP0": 8
+    }
+  ],
+  "top5OutcomeImprovements": [
+    "DATA_VERIFIED reconcile 115→164 (+49 accepted)",
+    "IMPROVE orphan sample 80/80→15/80 (−65 orphans in fixed 80-page sample)",
+    "Limited unique analysis 1373→1342 (−31)",
+    "Lane A GSC improve-30 applied on 30 existing demand URLs (27 content / 55 links)",
+    "+7 lifecycle promotions since Review #3 (factory-pack-100b)"
+  ],
+  "top5RemainingBlockers": [
+    "Production parity FAILED (www legacy sitemap 6370; children 404; locale 410→404) — unsafe vs validated local arch",
+    "STALE GSC identical 8/115457/74.5 — rank/click movement not measurable",
+    "Factory pack near-dup headline still 1272",
+    "HANDS_ON = 0",
+    "Authority + conversions still NOT_CONNECTED"
+  ],
+  "biggestFailureToImprove": "Production parity / live crawl control: local architecture advanced (partitioned sitemaps, cutover 410s, research URLs) but www still serves a stale monolithic sitemap and wrong retirement statuses — the KPI that most blocks INDEX→RANK.",
+  "next30Days": [
+    "DEPLOY www to validated local build; re-run live sitemap reconcile + FULL seo:audit until parity YES",
+    "Import fresh GSC Performance + Coverage + page×query (replace 2026-08-13 STALE)",
+    "Human-complete top-10 HANDS_ON ProductTestSessions",
+    "Drop REAL backlink export; connect authority",
+    "Continue factory waves only when estate factoryPackCount / limitedUnique move — not wave-local theatre",
+    "Lane A title/CTR on deep high-imp URLs after fresh GSC (band 8–20 empty in current export)",
+    "Import affiliate network conversions",
+    "Keep scoring semanticEdges + orphan sample — do not celebrate contextual edge inflation"
+  ],
+  "scoringNote": "Scores reward measurable outcomes only. New affiliate adapters / CLIs do not raise commercialTracking. KG totalEdges 71601 is not credited (semantic 26853 flat). Production parity failure drove overall 56→55 despite DV and orphan gains."
+}

@@ -1,4 +1,4 @@
-import type { GuidePage } from "@/domain";
+import type { GuidePageInput } from "@/domain";
 import type { z } from "zod";
 import type { GuideContentBlockSchema } from "@/domain";
 import { tier19GuideScheduledAt } from "@/data/config/publishing/tier-19-reputation-reviews-launch-2027-04-01";
@@ -34,7 +34,7 @@ const blocks: GuideBlockInput[] = [
   },
 ];
 
-function metadata(): GuidePage["metadata"] {
+function metadata(): GuidePageInput["metadata"] {
   return SCHEDULED_AT
     ? {
         status: "scheduled",
@@ -54,7 +54,7 @@ function metadata(): GuidePage["metadata"] {
       };
 }
 
-export const reputationReviewsPricingGuide: GuidePage = {
+export const reputationReviewsPricingGuide: GuidePageInput = {
   id: "guide-reputation-reviews-pricing-guide",
   slug: SLUG,
   title: "Reputation & Review Management Software Pricing Guide",
@@ -74,7 +74,7 @@ export const reputationReviewsPricingGuide: GuidePage = {
     "what-is-reputation-reviews-software",
     "how-to-choose-reputation-reviews-software",
   ],
-  blocks: blocks as GuidePage["blocks"],
+  blocks: blocks as GuidePageInput["blocks"],
   checklist: [],
   sections: [],
   faq: [],
@@ -84,7 +84,7 @@ export const reputationReviewsPricingGuide: GuidePage = {
     title: "Reputation & Review Management Software Pricing Guide",
     description:
       "Understand how reputation software prices locations, users, and automation tiers.",
-    indexable: !SCHEDULED_AT,
+    indexable: true,
     canonicalPath: "/guides/reputation-reviews-pricing-guide/",
   },
 };

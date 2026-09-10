@@ -321,6 +321,9 @@ export const VendorOfficialSourceRegistryEntrySchema = z.object({
 export type VendorOfficialSourceRegistryEntry = z.infer<
   typeof VendorOfficialSourceRegistryEntrySchema
 >;
+export type VendorOfficialSourceRegistryEntryInput = z.input<
+  typeof VendorOfficialSourceRegistryEntrySchema
+>;
 
 export const OfficialSourceVerificationResultSchema = z.object({
   sourceUrl: z.string().url(),

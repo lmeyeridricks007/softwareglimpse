@@ -100,10 +100,7 @@ export function buildIndustryVisualCoverageReport(
       if (kind === "industry-specific") industrySpecificCount += 1;
       else if (kind === "industry-edition") industryEditionCount += 1;
       else if (kind === "customer-case-study") caseStudyCount += 1;
-      else if (
-        kind === "general-workflow" &&
-        m.industryRelevance !== "weak"
-      ) {
+      else if (kind === "general-workflow") {
         generalWorkflowCount += 1;
       }
     }

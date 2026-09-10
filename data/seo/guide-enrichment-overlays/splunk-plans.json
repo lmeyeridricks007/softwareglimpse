@@ -1,0 +1,181 @@
+{
+  "slug": "splunk-plans",
+  "enrichmentType": "COST_GUIDE",
+  "updatedAt": "2026-09-09T05:50:47.087Z",
+  "uniqueValueAdded": [
+    "implementation_workflow",
+    "decision_framework",
+    "limitations_evidence",
+    "product_shortlist",
+    "alternatives_map",
+    "buyer_checklist"
+  ],
+  "patch": {
+    "summary": "Splunk Observability Cloud cost guide: researched plan structure, who each tier suits, cost scenarios, and value tradeoffs — no invented prices.",
+    "blocks": [
+      {
+        "id": "da-splunk-plans-1",
+        "type": "direct-answer",
+        "body": "Splunk Observability Cloud pricing is plan-gated. No free plan confirmed in SoftwareGlimpse research. No free/trial flag confirmed in SG data — budget a paid pilot. Compare seat/capacity gates and unlocks — not list-price folklore.",
+        "bullets": [
+          "Free plan: not confirmed in SG data",
+          "No free/trial flag confirmed in SG data — budget a paid pilot",
+          "Confirm plan matrix on the product hub"
+        ]
+      },
+      {
+        "id": "scen-splunk-plans-2",
+        "type": "step",
+        "heading": "Splunk Observability Cloud cost scenarios to pressure-test",
+        "body": "Price Splunk Observability Cloud against how you actually buy seats and unlocks — not against a competitor's homepage headline.",
+        "stepNumber": 1,
+        "scenarios": [
+          {
+            "title": "Lean team / free-or-trial first",
+            "body": "Scope a time-boxed pilot; No free/trial flag confirmed in SG data — budget a paid pilot."
+          },
+          {
+            "title": "Growing team with gated workflows",
+            "body": "Map must-have workflows (incident management, infrastructure monitoring, APM and distributed tracing) to plan unlocks before expanding seats."
+          },
+          {
+            "title": "Hidden / extra cost watch",
+            "body": "Budget risk: Observability Cloud host SKUs are not Splunk Platform/SIEM ingest-GB pricing — do not mix floors. Also check add-ons, overages, and admin time outside the sticker plan."
+          }
+        ]
+      },
+      {
+        "id": "value-splunk-plans-3",
+        "type": "decision-framework",
+        "title": "Splunk Observability Cloud value rule",
+        "steps": [
+          {
+            "id": "v-1",
+            "label": "Pay up when SRE teams that want Splunk Observability Cloud host packs rather than Platform ingest requires a paid unlock you will use weekly"
+          },
+          {
+            "id": "v-2",
+            "label": "Do not overbuy if this limitation dominates: Observability Cloud host SKUs are not Splunk Platform/SIEM ingest-GB pricing — do not mix floors"
+          },
+          {
+            "id": "v-3",
+            "label": "Side-by-side cost with Datadog on the same seat count"
+          }
+        ]
+      },
+      {
+        "id": "lim-splunk-plans-4",
+        "type": "mistakes",
+        "title": "Splunk Observability Cloud cost mistakes to avoid",
+        "items": [
+          {
+            "title": "Cost trap 1",
+            "body": "Observability Cloud host SKUs are not Splunk Platform/SIEM ingest-GB pricing — do not mix floors"
+          },
+          {
+            "title": "Cost trap 2",
+            "body": "Does not outrank Datadog (8.6) as the observability cluster award"
+          },
+          {
+            "title": "Cost trap 3",
+            "body": "App & Infra list price and End-to-End list price stack well above the list price infrastructure floor"
+          },
+          {
+            "title": "Cost trap 4",
+            "body": "Not ITSM, source control, hosting panel, or managed hosting"
+          },
+          {
+            "title": "Cost trap 5",
+            "body": "Free 15-host FAQ cap is an evaluation/small-estate path, not unlimited telemetry"
+          }
+        ]
+      },
+      {
+        "id": "alts-splunk-plans-5",
+        "type": "product-shortlist",
+        "title": "Cheaper or clearer alternatives to pressure-test",
+        "body": "Compare total cost of ownership vs Splunk Observability Cloud on identical constraints.",
+        "productSlugs": [
+          "datadog",
+          "elastic-observability",
+          "sentry"
+        ],
+        "disclaimer": "Catalogue peers only — not commission-ranked."
+      },
+      {
+        "id": "sel-splunk-plans-6",
+        "type": "selection-checklist",
+        "title": "Splunk Observability Cloud pricing checklist",
+        "dimensions": [
+          {
+            "id": "gates",
+            "label": "Plan gates you must unlock",
+            "options": [
+              "Must-have unlocks listed",
+              "Seat math agreed",
+              "Annual vs monthly clear"
+            ]
+          },
+          {
+            "id": "trial",
+            "label": "Trial / free proof",
+            "options": [
+              "Paid pilot scoped",
+              "Procurement path clear",
+              "No free/trial in SG data"
+            ]
+          },
+          {
+            "id": "tco",
+            "label": "TCO extras",
+            "options": [
+              "Add-ons checked",
+              "Admin time budgeted",
+              "Migration cost noted"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "cta-splunk-plans-7",
+        "type": "interactive-cta",
+        "title": "Model it-development spend with Splunk Observability Cloud in mind",
+        "body": "Use researched plan structure for Splunk Observability Cloud alongside category cost modelling.",
+        "href": "/tools/it-development-cost-calculator/",
+        "ctaLabel": "Open calculator",
+        "variant": "calculator"
+      }
+    ],
+    "checklist": [
+      {
+        "id": "enrich-chk-0",
+        "label": "List must-have unlocks before picking a Splunk Observability Cloud tier",
+        "order": 0
+      },
+      {
+        "id": "enrich-chk-1",
+        "label": "No free/trial flag confirmed in SG data — budget a paid pilot",
+        "order": 1
+      },
+      {
+        "id": "enrich-chk-2",
+        "label": "Price in this risk: Observability Cloud host SKUs are not Splunk Platform/SIEM ingest-GB pricing — do not mix floors",
+        "order": 2
+      },
+      {
+        "id": "enrich-chk-3",
+        "label": "Compare seat TCO with Datadog",
+        "order": 3
+      }
+    ],
+    "nextAction": {
+      "contentId": "tool:finder:it-development",
+      "label": "Open Finder shortlist"
+    }
+  },
+  "notes": [
+    "Omit unsupported: plan_structure",
+    "Cost guide: real plan structure, free/trial, TCO tradeoffs — never invent prices.",
+    "Type-specific skeleton: COST_GUIDE"
+  ]
+}

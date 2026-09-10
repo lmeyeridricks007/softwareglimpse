@@ -1,4 +1,4 @@
-import type { GuidePage } from "@/domain";
+import type { GuidePageInput } from "@/domain";
 import type { z } from "zod";
 import type { GuideContentBlockSchema } from "@/domain";
 import { tier22GuideScheduledAt } from "@/data/config/publishing/tier-22-voip-business-phone-launch-2027-06-01";
@@ -34,7 +34,7 @@ const blocks: GuideBlockInput[] = [
   },
 ];
 
-function metadata(): GuidePage["metadata"] {
+function metadata(): GuidePageInput["metadata"] {
   return SCHEDULED_AT
     ? {
         status: "scheduled",
@@ -54,7 +54,7 @@ function metadata(): GuidePage["metadata"] {
       };
 }
 
-export const voipBusinessPhonePricingGuide: GuidePage = {
+export const voipBusinessPhonePricingGuide: GuidePageInput = {
   id: "guide-voip-business-phone-pricing-guide",
   slug: SLUG,
   title: "VoIP & Business Phone Pricing Guide",
@@ -74,7 +74,7 @@ export const voipBusinessPhonePricingGuide: GuidePage = {
     "how-to-choose-voip-business-phone-software",
     "voip-business-phone-evaluation-guide",
   ],
-  blocks: blocks as GuidePage["blocks"],
+  blocks: blocks as GuidePageInput["blocks"],
   checklist: [],
   sections: [],
   faq: [],
@@ -84,7 +84,7 @@ export const voipBusinessPhonePricingGuide: GuidePage = {
     title: "VoIP & Business Phone Pricing Guide",
     description:
       "Compare VoIP and business phone pricing — SMB VoIP, CRM CTI, dialers, and inbound CC voice.",
-    indexable: !SCHEDULED_AT,
+    indexable: true,
     canonicalPath: "/guides/voip-business-phone-pricing-guide/",
   },
 };

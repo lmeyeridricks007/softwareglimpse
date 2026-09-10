@@ -9,8 +9,13 @@ import {
 import {
   getGuides,
 } from "@/data/repositories/guides";
+import { isEntityIndexable } from "@/domain/quality-gates";
 import { siteFoundationConfig } from "@/data/config/site/foundation-client";
 import { COMPANY_ROUTES } from "@/services/site-foundation";
+import {
+  categoryDecisionFinderHref,
+  categoryShortName,
+} from "@/data/config/tools/category-tool-meta";
 
 /** Hub filter buckets for the Latest guides grid (not taxonomy categories). */
 export const GUIDES_HUB_TOPIC_FILTERS = [
@@ -77,9 +82,19 @@ export type GuidesHubTool = {
   preview: "finder" | "calculator" | "stack";
 };
 
+export type GuidesHubTopicalCluster = {
+  categorySlug: string;
+  categoryLabel: string;
+  href: string;
+  description: string;
+  cornerstone: Array<{ title: string; href: string; kind: string }>;
+  related: Array<{ title: string; href: string }>;
+};
+
 export type GuidesHubModel = {
   guides: GuidesHubGuideCard[];
   topics: GuidesHubTopic[];
+  topicalClusters: GuidesHubTopicalCluster[];
   filterCategories: Array<{ slug: string; name: string }>;
   /** Topic clusters that currently have ≥1 published guide. */
   filterTopics: Array<{ slug: GuidesHubTopicFilterSlug; name: string; count: number }>;
@@ -300,17 +315,91 @@ function buildJourney(cards: GuidesHubGuideCard[]): GuidesHubJourneyStep[] {
   ];
 }
 
+function cornerstoneKind(card: GuidesHubGuideCard): string | null {
+  if (card.topicType === "buying-guide" || card.topicType === "selection") {
+    return "Buying / selection";
+  }
+  if (card.topicType === "pricing-education") return "Pricing";
+  if (
+    card.topicType === "implementation" ||
+    card.topicType === "migration" ||
+    card.topicType === "setup"
+  ) {
+    return "Implementation";
+  }
+  if (card.topicType === "fundamental" || card.journeyStage === "learn") {
+    return "Learn";
+  }
+  return null;
+}
+
+function buildTopicalClusters(
+  cards: GuidesHubGuideCard[],
+  categories: Category[],
+): GuidesHubTopicalCluster[] {
+  const clusters: GuidesHubTopicalCluster[] = [];
+  for (const cat of categories) {
+    const catCards = cards.filter((c) => c.categorySlug === cat.slug);
+    if (catCards.length === 0) continue;
+
+    const byKind = new Map<string, GuidesHubGuideCard>();
+    for (const card of catCards) {
+      const kind = cornerstoneKind(card);
+      if (!kind) continue;
+      const existing = byKind.get(kind);
+      if (!existing || card.readingMinutes > existing.readingMinutes) {
+        byKind.set(kind, card);
+      }
+    }
+    const cornerstone = [...byKind.entries()].slice(0, 4).map(([kind, card]) => ({
+      title: card.title,
+      href: card.href,
+      kind,
+    }));
+    if (cornerstone.length === 0) continue;
+
+    const related = catCards
+      .filter((c) => !cornerstone.some((x) => x.href === c.href))
+      .slice(0, 3)
+      .map((c) => ({ title: c.title, href: c.href }));
+
+    clusters.push({
+      categorySlug: cat.slug,
+      categoryLabel: cat.name,
+      href: `/guides/?category=${encodeURIComponent(cat.slug)}#latest-guides`,
+      description:
+        cat.shortDescription ??
+        `Cornerstone ${categoryShortName(cat.slug)} guides for learning, choosing, pricing, and rollout.`,
+      cornerstone,
+      related,
+    });
+  }
+  return clusters.slice(0, 8);
+}
+
 /**
- * Data-driven Guides landing model — published guides + top-level categories only.
- * Never invents articles or guide counts.
+ * Data-driven Guides landing model — published + search-worthy guides for discovery.
+ * Factory product packs stay on product hubs; they are not dumped in the flat grid.
  */
 export function buildGuidesHubModel(): GuidesHubModel {
   const categories = getTopLevelCategories();
-  const guides = getGuides();
-  const cards = guides.map((g) => toCard(g, categories));
+  const allGuides = getGuides();
+  const discoveryGuides = allGuides.filter((g) =>
+    isEntityIndexable({ kind: "guide", entity: g }),
+  );
+  const cards = discoveryGuides.map((g) => toCard(g, categories));
 
   const topics: GuidesHubTopic[] = categories.map((cat) => {
     const catGuides = cards.filter((c) => c.categorySlug === cat.slug);
+    const samples = [...catGuides].sort((a, b) => {
+      const rank = (c: GuidesHubGuideCard) =>
+        c.topicType === "buying-guide" || c.topicType === "fundamental"
+          ? 2
+          : c.topicType === "selection" || c.topicType === "pricing-education"
+            ? 1
+            : 0;
+      return rank(b) - rank(a) || b.readingMinutes - a.readingMinutes;
+    });
     return {
       slug: cat.slug,
       name: cat.name,
@@ -321,7 +410,7 @@ export function buildGuidesHubModel(): GuidesHubModel {
       description: cat.shortDescription ?? cat.description,
       guideCount: catGuides.length,
       comingSoon: catGuides.length === 0,
-      guides: catGuides.slice(0, 3).map((g) => ({
+      guides: samples.slice(0, 3).map((g) => ({
         title: g.title,
         href: g.href,
       })),
@@ -338,7 +427,7 @@ export function buildGuidesHubModel(): GuidesHubModel {
   })).filter((t) => t.count > 0);
 
   const featured = pickFeatured(cards);
-  // Prefer beginner/fundamental, then fill with remaining published guides.
+  // Prefer beginner/fundamental, then fill with remaining discovery guides.
   const beginnerish = cards.filter(
     (c) =>
       c.difficulty === "Beginner" ||
@@ -356,7 +445,7 @@ export function buildGuidesHubModel(): GuidesHubModel {
       title: "CRM Finder",
       description:
         "Answer a few questions for a fit-based CRM shortlist.",
-      href: "/tools/crm-finder/",
+      href: categoryDecisionFinderHref("crm") || "/tools/crm-finder/",
       preview: "finder",
     },
     {
@@ -402,6 +491,7 @@ export function buildGuidesHubModel(): GuidesHubModel {
   return {
     guides: cards,
     topics,
+    topicalClusters: buildTopicalClusters(cards, categories),
     filterCategories,
     filterTopics,
     startHere: buildStartHere(cards, topics),

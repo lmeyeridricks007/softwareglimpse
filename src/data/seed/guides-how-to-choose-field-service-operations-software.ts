@@ -1,4 +1,4 @@
-import type { GuidePage } from "@/domain";
+import type { GuidePageInput } from "@/domain";
 import type { z } from "zod";
 import type { GuideContentBlockSchema } from "@/domain";
 import { tier18GuideScheduledAt } from "@/data/config/publishing/tier-18-field-service-operations-launch-2027-03-01";
@@ -34,7 +34,7 @@ const blocks: GuideBlockInput[] = [
   },
 ];
 
-function metadata(): GuidePage["metadata"] {
+function metadata(): GuidePageInput["metadata"] {
   return SCHEDULED_AT
     ? {
         status: "scheduled",
@@ -54,7 +54,7 @@ function metadata(): GuidePage["metadata"] {
       };
 }
 
-export const howToChooseFieldServiceOperationsSoftwareGuide: GuidePage = {
+export const howToChooseFieldServiceOperationsSoftwareGuide: GuidePageInput = {
   id: "guide-how-to-choose-field-service-operations-software",
   slug: SLUG,
   title: "How to Choose Field Service & Operations Software",
@@ -73,7 +73,7 @@ export const howToChooseFieldServiceOperationsSoftwareGuide: GuidePage = {
     "what-is-field-service-operations-software",
     "field-service-operations-pricing-guide",
   ],
-  blocks: blocks as GuidePage["blocks"],
+  blocks: blocks as GuidePageInput["blocks"],
   checklist: [],
   sections: [],
   faq: [],
@@ -83,7 +83,7 @@ export const howToChooseFieldServiceOperationsSoftwareGuide: GuidePage = {
     title: "How to Choose Field Service & Operations Software",
     description:
       "Choose field service software by construction, trades dispatch, or appointment scheduling jobs.",
-    indexable: !SCHEDULED_AT,
+    indexable: true,
     canonicalPath: "/guides/how-to-choose-field-service-operations-software/",
   },
 };

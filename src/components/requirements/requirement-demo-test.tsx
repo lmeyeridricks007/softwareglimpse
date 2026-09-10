@@ -1,6 +1,6 @@
 "use client";
 
-import { useCallback, useEffect, useMemo, useState } from "react";
+import { useCallback, useMemo, useState } from "react";
 import { Check, Copy, Printer } from "lucide-react";
 import { Badge } from "@/components/ui/badge";
 import { Button, ButtonLink } from "@/components/ui/button";
@@ -60,28 +60,25 @@ export function RequirementDemoTest({
   const [result, setResult] = useState<DemoChecklistResult>("not-tested");
   const [notes, setNotes] = useState("");
   const [statusMsg, setStatusMsg] = useState<string | null>(null);
-  const [shortlist, setShortlist] = useState<
-    Array<{ productId: string; result: DemoChecklistResult; notes?: string }>
-  >([]);
+  const [shortlist, setShortlist] = useState(() =>
+    getShortlistDemoResults({ requirementId: demoTest.requirementId }),
+  );
+  const [selectionSyncKey, setSelectionSyncKey] = useState("");
+  const currentSelectionKey = `${selectedProduct ?? ""}:${shortlist.map((s) => `${s.productId}:${s.result}:${s.notes ?? ""}`).join("|")}`;
+  if (currentSelectionKey !== selectionSyncKey) {
+    setSelectionSyncKey(currentSelectionKey);
+    const hit = selectedProduct
+      ? shortlist.find((s) => s.productId === selectedProduct)
+      : undefined;
+    setResult(hit?.result ?? "not-tested");
+    setNotes(hit?.notes ?? "");
+  }
 
   const refreshShortlist = useCallback(() => {
     setShortlist(
       getShortlistDemoResults({ requirementId: demoTest.requirementId }),
     );
   }, [demoTest.requirementId]);
-
-  useEffect(() => {
-    refreshShortlist();
-  }, [refreshShortlist]);
-
-  useEffect(() => {
-    if (!selectedProduct) return;
-    const hit = shortlist.find((s) => s.productId === selectedProduct);
-    if (hit) {
-      setResult(hit.result);
-      setNotes(hit.notes ?? "");
-    }
-  }, [selectedProduct, shortlist]);
 
   const plainText = useMemo(
     () => formatRequirementDemoTestPlainText(demoTest, requirementName),

@@ -14,7 +14,7 @@ import type { UseCaseHubModel } from "@/services/use-case-hub";
 import { cn } from "@/lib/cn";
 
 /** Buyer-facing product noun for the hub’s primary category. */
-export function useCaseCategoryProductLabel(
+export function getUseCaseCategoryProductLabel(
   categorySlug?: string | null,
 ): string {
   switch (categorySlug) {
@@ -36,7 +36,7 @@ export function useCaseCategoryProductLabel(
 }
 
 /** Plural platforms phrase for “compare how … handle” headings. */
-export function useCaseCategoryPlatformsLabel(
+export function getUseCaseCategoryPlatformsLabel(
   categorySlug?: string | null,
 ): string {
   switch (categorySlug) {
@@ -58,7 +58,7 @@ export function useCaseCategoryPlatformsLabel(
 }
 
 /** Short noun for requirements / finder CTAs. */
-export function useCaseCategoryRequirementsLabel(
+export function getUseCaseCategoryRequirementsLabel(
   categorySlug?: string | null,
 ): string {
   switch (categorySlug) {
@@ -167,7 +167,7 @@ export function UseCaseOverview({
     Boolean,
   ) as string[];
   const chips = (focusAreas ?? []).slice(0, 5);
-  const productLabel = useCaseCategoryProductLabel(categorySlug);
+  const productLabel = getUseCaseCategoryProductLabel(categorySlug);
 
   return (
     <section
@@ -323,7 +323,7 @@ export function UseCaseChallenges({
   className?: string;
 }) {
   if (items.length === 0) return null;
-  const productLabel = useCaseCategoryProductLabel(categorySlug);
+  const productLabel = getUseCaseCategoryProductLabel(categorySlug);
   const withoutLabel = withoutDisciplineLabel(categorySlug);
   return (
     <section
@@ -389,7 +389,7 @@ export function UseCaseHowCrmHelps({
   className?: string;
 }) {
   if (items.length === 0 && outcomes.length === 0) return null;
-  const productLabel = useCaseCategoryProductLabel(categorySlug);
+  const productLabel = getUseCaseCategoryProductLabel(categorySlug);
   const withLabel = withDisciplineLabel(categorySlug);
   const headingId = "how-software-helps-heading";
   return (
@@ -853,7 +853,7 @@ export function UseCaseBuyingSteps({
   categorySlug?: string;
   className?: string;
 }) {
-  const reqLabel = useCaseCategoryRequirementsLabel(categorySlug);
+  const reqLabel = getUseCaseCategoryRequirementsLabel(categorySlug);
   if (steps.length === 0) return null;
   return (
     <section

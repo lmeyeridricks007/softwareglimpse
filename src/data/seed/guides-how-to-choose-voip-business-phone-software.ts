@@ -1,4 +1,4 @@
-import type { GuidePage } from "@/domain";
+import type { GuidePageInput } from "@/domain";
 import type { z } from "zod";
 import type { GuideContentBlockSchema } from "@/domain";
 import { tier22GuideScheduledAt } from "@/data/config/publishing/tier-22-voip-business-phone-launch-2027-06-01";
@@ -34,7 +34,7 @@ const blocks: GuideBlockInput[] = [
   },
 ];
 
-function metadata(): GuidePage["metadata"] {
+function metadata(): GuidePageInput["metadata"] {
   return SCHEDULED_AT
     ? {
         status: "scheduled",
@@ -54,7 +54,7 @@ function metadata(): GuidePage["metadata"] {
       };
 }
 
-export const howToChooseVoipBusinessPhoneSoftwareGuide: GuidePage = {
+export const howToChooseVoipBusinessPhoneSoftwareGuide: GuidePageInput = {
   id: "guide-how-to-choose-voip-business-phone-software",
   slug: SLUG,
   title: "How to Choose VoIP & Business Phone Software",
@@ -74,7 +74,7 @@ export const howToChooseVoipBusinessPhoneSoftwareGuide: GuidePage = {
     "voip-business-phone-pricing-guide",
     "voip-business-phone-evaluation-guide",
   ],
-  blocks: blocks as GuidePage["blocks"],
+  blocks: blocks as GuidePageInput["blocks"],
   checklist: [],
   sections: [],
   faq: [],
@@ -84,7 +84,7 @@ export const howToChooseVoipBusinessPhoneSoftwareGuide: GuidePage = {
     title: "How to Choose VoIP & Business Phone Software",
     description:
       "Choose VoIP and business phone software by SMB VoIP, CRM CTI, dialer, or inbound CC job fit.",
-    indexable: !SCHEDULED_AT,
+    indexable: true,
     canonicalPath: "/guides/how-to-choose-voip-business-phone-software/",
   },
 };

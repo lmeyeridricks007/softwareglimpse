@@ -1,4 +1,4 @@
-import type { GuidePage } from "@/domain";
+import type { GuidePageInput } from "@/domain";
 import type { z } from "zod";
 import type { GuideContentBlockSchema } from "@/domain";
 import { tier17GuideScheduledAt } from "@/data/config/publishing/tier-17-analytics-bi-launch-2027-02-01";
@@ -79,7 +79,7 @@ const blocks: GuideBlockInput[] = [
   },
 ];
 
-function metadata(): GuidePage["metadata"] {
+function metadata(): GuidePageInput["metadata"] {
   return SCHEDULED_AT
     ? {
         status: "scheduled",
@@ -99,7 +99,7 @@ function metadata(): GuidePage["metadata"] {
       };
 }
 
-export const whatIsAnalyticsBiSoftwareGuide: GuidePage = {
+export const whatIsAnalyticsBiSoftwareGuide: GuidePageInput = {
   id: "guide-what-is-analytics-bi-software",
   slug: SLUG,
   title: "What is Analytics & Business Intelligence Software?",
@@ -119,7 +119,7 @@ export const whatIsAnalyticsBiSoftwareGuide: GuidePage = {
     "analytics-bi-pricing-guide",
     "analytics-bi-vs-marketing-software",
   ],
-  blocks: blocks as GuidePage["blocks"],
+  blocks: blocks as GuidePageInput["blocks"],
   checklist: [],
   sections: [],
   faq: [],
@@ -129,7 +129,7 @@ export const whatIsAnalyticsBiSoftwareGuide: GuidePage = {
     title: "What is Analytics & Business Intelligence Software?",
     description:
       "Learn how analytics and BI software attributes leads, unifies marketing metrics, and builds executive KPI dashboards.",
-    indexable: !SCHEDULED_AT,
+    indexable: true,
     canonicalPath: "/guides/what-is-analytics-bi-software/",
   },
 };

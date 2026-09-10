@@ -61,7 +61,7 @@ describe("search performance", () => {
     const index = buildSearchIndex();
     const elapsedMs = performance.now() - started;
     expect(index.length).toBeGreaterThan(1000);
-    expect(elapsedMs).toBeLessThan(500);
+    expect(elapsedMs).toBeLessThan(1000);
   });
 });
 

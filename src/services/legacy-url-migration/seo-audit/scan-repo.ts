@@ -53,12 +53,16 @@ const NEW_IA_PREFIXES = [
   "/og/",
   "/search/",
   "/newsletter/",
+  "/vendor-ui/",
+  "/research/",
 ];
 
-function isLikelyNewPath(p: string): boolean {
-  const n = normalizeMigrationPath(p);
-  if (n === "/") return true;
-  return NEW_IA_PREFIXES.some((prefix) => n.startsWith(prefix));
+/** Absolute host paths that are intentional (bot identity, assets) — not migration defects. */
+function isIntentionalAbsolutePath(normalized: string): boolean {
+  if (normalized === "/" || normalized === "/bot" || normalized === "/bot/") {
+    return true;
+  }
+  return NEW_IA_PREFIXES.some((prefix) => normalized.startsWith(prefix));
 }
 
 function walkFiles(root: string, out: string[]): void {
@@ -68,6 +72,13 @@ function walkFiles(root: string, out: string[]): void {
     if (SKIP_DIR.has(ent.name)) continue;
     const full = path.join(root, ent.name);
     if (ent.isDirectory()) {
+      // Historical GSC / analytics snapshot JSON — not live site links.
+      if (
+        full.includes(`${path.sep}seo${path.sep}snapshots`) ||
+        full.includes(`${path.sep}data${path.sep}seo${path.sep}snapshots`)
+      ) {
+        continue;
+      }
       walkFiles(full, out);
       continue;
     }
@@ -79,6 +90,11 @@ function walkFiles(root: string, out: string[]): void {
     if (full.endsWith(`${path.sep}seed${path.sep}migration.ts`)) continue;
     // Link-health alias allowlist intentionally names redirect sources.
     if (full.endsWith(`${path.sep}internal-linking${path.sep}health.ts`)) continue;
+    // Live probe sample lists intentionally include redirect / 410 URLs.
+    if (full.endsWith(`${path.sep}live-probe-extra-paths.ts`)) continue;
+    if (full.endsWith(`${path.sep}seo-audit${path.sep}live-probes.ts`)) continue;
+    // Imported GSC snapshot files retain historical absolute URLs by design.
+    if (full.includes(`${path.sep}seo${path.sep}snapshots${path.sep}`)) continue;
     out.push(full);
   }
 }
@@ -142,7 +158,9 @@ export function scanRepoForLegacyReferences(opts: {
         if (/\.\.\.|…/.test(rawMatch)) continue;
         const pathname = m[1] ?? "/";
         const normalized = normalizeMigrationPath(pathname.split("?")[0] ?? "/");
-        if (isLikelyNewPath(normalized) && !opts.redirectSources.has(normalized)) {
+        // New-IA / intentional absolute URLs are not migration defects (even if
+        // "/" appears in redirectSources for chain hygiene unrelated reasons).
+        if (isIntentionalAbsolutePath(normalized)) {
           continue;
         }
         hits.push({

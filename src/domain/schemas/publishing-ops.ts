@@ -231,6 +231,16 @@ export const RefreshCandidateSchema = z.object({
   reasons: z.array(z.string().min(1)),
   changeEventIds: z.array(z.string().min(1)),
   affectedDomains: z.array(ChangeEventDomainSchema),
+  /** Enrichment lane A/B/C when ranked for software refresh work. */
+  enrichmentLane: z.enum(["A", "B", "C"]).optional(),
+  overallScore: z.number().optional(),
+  gscDemandScore: z.number().optional(),
+  strategicScore: z.number().optional(),
+  qualityGapScore: z.number().optional(),
+  commercialScore: z.number().optional(),
+  authorityScore: z.number().optional(),
+  strategicOverride: z.boolean().optional(),
+  laneReason: z.string().min(1).optional(),
 });
 
 export type RefreshCandidate = z.infer<typeof RefreshCandidateSchema>;

@@ -1,0 +1,539 @@
+{
+  "slug": "jira-service-management",
+  "updatedAt": "2026-09-08T21:28:59.688Z",
+  "version": "1.0.0",
+  "fieldAudit": {
+    "slug": "jira-service-management",
+    "checkedAt": "2026-09-08T21:28:59.687Z",
+    "items": [
+      {
+        "field": "name",
+        "status": "PASS",
+        "detail": "Name: Jira Service Management",
+        "source": "seed"
+      },
+      {
+        "field": "product_status",
+        "status": "PASS",
+        "detail": "productLifecycle=active",
+        "source": "seed"
+      },
+      {
+        "field": "canonical_vendor",
+        "status": "PASS",
+        "detail": "Vendor: Atlassian",
+        "source": "seed"
+      },
+      {
+        "field": "category",
+        "status": "PASS",
+        "detail": "primaryCategorySlug=it-development",
+        "source": "seed"
+      },
+      {
+        "field": "description",
+        "status": "PASS",
+        "detail": "Description present (Atlassian ITSM on Jira Cloud — Free ≤3 agents; Standard from $20/agent/mo; Premi…)",
+        "source": "seed"
+      },
+      {
+        "field": "target_audience",
+        "status": "PASS",
+        "detail": "Sizes=3, teams=2, assessment bestFor=3",
+        "source": "assessment"
+      },
+      {
+        "field": "use_cases",
+        "status": "PASS",
+        "detail": "useCaseSlugs=1",
+        "source": "seed"
+      },
+      {
+        "field": "capabilities",
+        "status": "PASS",
+        "detail": "featureRatings=0, enrichment features=15",
+        "source": "enrichment"
+      },
+      {
+        "field": "pricing",
+        "status": "PASS",
+        "detail": "Pricing envelope present",
+        "source": "enrichment"
+      },
+      {
+        "field": "plans",
+        "status": "PASS",
+        "detail": "plans=4",
+        "source": "enrichment"
+      },
+      {
+        "field": "free_plan",
+        "status": "PASS",
+        "detail": "Free plan documented",
+        "source": "enrichment"
+      },
+      {
+        "field": "trial",
+        "status": "PASS",
+        "detail": "Trial documented on plans/pricing",
+        "source": "enrichment"
+      },
+      {
+        "field": "integrations",
+        "status": "PASS",
+        "detail": "integrationSlugs=0, enrichment=4",
+        "source": "enrichment"
+      },
+      {
+        "field": "alternatives",
+        "status": "PASS",
+        "detail": "alternativeSlugs=2",
+        "source": "seed"
+      },
+      {
+        "field": "competitors",
+        "status": "PASS",
+        "detail": "competitorSlugs=8",
+        "source": "seed"
+      },
+      {
+        "field": "affiliate",
+        "status": "PASS",
+        "detail": "No affiliate relationship (explicit)",
+        "source": "seed"
+      },
+      {
+        "field": "source_provenance",
+        "status": "PASS",
+        "detail": "seed sources=0, enrichment sourceIds=3",
+        "source": "enrichment"
+      },
+      {
+        "field": "verification_date",
+        "status": "PASS",
+        "detail": "Latest verification/research signal: 2026-08-18T12:00:00.000Z",
+        "source": "enrichment"
+      }
+    ],
+    "passCount": 18,
+    "partialCount": 0,
+    "missingCount": 0,
+    "unknownCount": 0,
+    "score": 100
+  },
+  "decisionHub": {
+    "whatItIs": "Jira Service Management is Atlassian’s ITSM / employee service desk on Jira Cloud (incidents, requests, assets; change/problem depth rises on Premium). Distinct from Jira Software, which remains project-management primary on SoftwareGlimpse. Cloud Free covers up to 3 agents. Standard lists from $20/agent/month; Premium around $51.42/agent/month on Atlassian’s Service Collection pricing. Enterprise is annual quote. Virtual Agent conversations and asset objects have overage meters on higher plans. Opsgenie-style alerting is part of the Atlassian ops story — confirm live bundling.",
+    "bestFor": [
+      "Teams already on Jira Cloud who need a service desk",
+      "IT/HR/ops request management next to engineering issues",
+      "Buyers who want a published agent SKU under ServiceNow TCO",
+      "small-business / it-ops: Jira Service Management fit for small-business it-ops teams in the itsm-service-desk job cluster, from first-party positioning and IT Priority-2 research.",
+      "mid-market / it-ops: Jira Service Management fit for mid-market it-ops teams in the itsm-service-desk job cluster, from first-party positioning and IT Priority-2 research.",
+      "enterprise / it-ops: Jira Service Management fit for enterprise it-ops teams in the itsm-service-desk job cluster, from first-party positioning and IT Priority-2 research."
+    ],
+    "notIdealFor": [
+      "Enterprises whose primary need is ServiceNow CMDB + ESM",
+      "SMBs that want Freshservice’s simpler ITSM UX without Jira",
+      "Observability-only buyers (Datadog)",
+      "Jira Software is a different product — do not buy JSM expecting full Work OS PM",
+      "Premium is a large step vs Standard for change/problem depth",
+      "Virtual Agent / asset object overages can add to agent seats"
+    ],
+    "coreCapabilities": [
+      "incident management",
+      "change problem",
+      "service catalog",
+      "infrastructure monitoring",
+      "log management",
+      "cicd actions",
+      "itsm ai",
+      "dev ai"
+    ],
+    "pricingSummary": "4 documented plans · 1 free · entry paid: Standard · trial documented on at least one plan",
+    "keyTradeoffs": [
+      "Jira Software is a different product — do not buy JSM expecting full Work OS PM",
+      "Premium is a large step vs Standard for change/problem depth",
+      "Virtual Agent / asset object overages can add to agent seats",
+      "Enterprise ITSM depth still trails ServiceNow CMDB estates",
+      "Not Datadog observability or GitHub source control"
+    ],
+    "alternatives": [
+      {
+        "slug": "freshservice",
+        "name": "Freshservice"
+      },
+      {
+        "slug": "servicenow",
+        "name": "ServiceNow"
+      },
+      {
+        "slug": "manageengine-servicedesk-plus",
+        "name": "ManageEngine ServiceDesk Plus"
+      },
+      {
+        "slug": "sysaid",
+        "name": "SysAid"
+      },
+      {
+        "slug": "haloitsm",
+        "name": "HaloITSM"
+      },
+      {
+        "slug": "topdesk",
+        "name": "TOPdesk"
+      }
+    ],
+    "importantComparisons": [
+      {
+        "slug": "freshservice-vs-jira-service-management",
+        "title": "Jira Service Management vs Freshservice",
+        "href": "/compare/freshservice-vs-jira-service-management/"
+      },
+      {
+        "slug": "jira-service-management-vs-servicenow",
+        "title": "ServiceNow vs Jira Service Management",
+        "href": "/compare/jira-service-management-vs-servicenow/"
+      },
+      {
+        "slug": "apify-vs-jira-service-management",
+        "title": "Apify vs Jira Service Management",
+        "href": "/compare/apify-vs-jira-service-management/"
+      },
+      {
+        "slug": "appdynamics-vs-jira-service-management",
+        "title": "AppDynamics vs Jira Service Management",
+        "href": "/compare/appdynamics-vs-jira-service-management/"
+      },
+      {
+        "slug": "azure-devops-vs-jira-service-management",
+        "title": "Azure DevOps vs Jira Service Management",
+        "href": "/compare/azure-devops-vs-jira-service-management/"
+      },
+      {
+        "slug": "bitbucket-vs-jira-service-management",
+        "title": "Bitbucket Cloud vs Jira Service Management",
+        "href": "/compare/bitbucket-vs-jira-service-management/"
+      }
+    ],
+    "relevantGuides": [
+      {
+        "slug": "jira-service-management-implementation",
+        "title": "Jira Service Management Implementation: 30/60/90 IT Rollout That Sticks",
+        "href": "/guides/jira-service-management-implementation/"
+      },
+      {
+        "slug": "jira-service-management-migration",
+        "title": "Jira Service Management Migration: Move Tickets and Repos Without Losing Trust",
+        "href": "/guides/jira-service-management-migration/"
+      },
+      {
+        "slug": "jira-service-management-setup",
+        "title": "Jira Service Management Setup: Day-Zero Path to a Working IT Loop",
+        "href": "/guides/jira-service-management-setup/"
+      },
+      {
+        "slug": "jira-service-management-plans",
+        "title": "Jira Service Management Plans: Seats, Hosts, and Qualifying Tiers",
+        "href": "/guides/jira-service-management-plans/"
+      },
+      {
+        "slug": "is-jira-service-management-worth-it",
+        "title": "Is Jira Service Management Worth It? Fit Scenarios Before You Buy",
+        "href": "/guides/is-jira-service-management-worth-it/"
+      }
+    ],
+    "evidenceState": "Research/data-based (no completed hands-on test) · Latest verification/research signal: 2026-08-18T12:00:00.000Z · Editorial assessment: approved",
+    "nextDecisionStep": "Compare against peers: Jira Service Management vs Freshservice",
+    "missingSections": []
+  },
+  "dependents": [
+    {
+      "kind": "guide",
+      "slug": "jira-service-management-implementation",
+      "path": "/guides/jira-service-management-implementation/"
+    },
+    {
+      "kind": "guide",
+      "slug": "jira-service-management-migration",
+      "path": "/guides/jira-service-management-migration/"
+    },
+    {
+      "kind": "guide",
+      "slug": "jira-service-management-setup",
+      "path": "/guides/jira-service-management-setup/"
+    },
+    {
+      "kind": "guide",
+      "slug": "jira-service-management-plans",
+      "path": "/guides/jira-service-management-plans/"
+    },
+    {
+      "kind": "guide",
+      "slug": "is-jira-service-management-worth-it",
+      "path": "/guides/is-jira-service-management-worth-it/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "freshservice-vs-jira-service-management",
+      "path": "/compare/freshservice-vs-jira-service-management/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "jira-service-management-vs-servicenow",
+      "path": "/compare/jira-service-management-vs-servicenow/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "apify-vs-jira-service-management",
+      "path": "/compare/apify-vs-jira-service-management/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "appdynamics-vs-jira-service-management",
+      "path": "/compare/appdynamics-vs-jira-service-management/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "azure-devops-vs-jira-service-management",
+      "path": "/compare/azure-devops-vs-jira-service-management/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "bitbucket-vs-jira-service-management",
+      "path": "/compare/bitbucket-vs-jira-service-management/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "bmc-helix-vs-jira-service-management",
+      "path": "/compare/bmc-helix-vs-jira-service-management/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "bright-data-vs-jira-service-management",
+      "path": "/compare/bright-data-vs-jira-service-management/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "buildkite-vs-jira-service-management",
+      "path": "/compare/buildkite-vs-jira-service-management/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "chronosphere-vs-jira-service-management",
+      "path": "/compare/chronosphere-vs-jira-service-management/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "circleci-vs-jira-service-management",
+      "path": "/compare/circleci-vs-jira-service-management/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "cloudways-vs-jira-service-management",
+      "path": "/compare/cloudways-vs-jira-service-management/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "coralogix-vs-jira-service-management",
+      "path": "/compare/coralogix-vs-jira-service-management/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "cpanel-vs-jira-service-management",
+      "path": "/compare/cpanel-vs-jira-service-management/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "datadog-vs-jira-service-management",
+      "path": "/compare/datadog-vs-jira-service-management/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "directadmin-vs-jira-service-management",
+      "path": "/compare/directadmin-vs-jira-service-management/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "dynatrace-vs-jira-service-management",
+      "path": "/compare/dynatrace-vs-jira-service-management/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "elastic-observability-vs-jira-service-management",
+      "path": "/compare/elastic-observability-vs-jira-service-management/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "firehydrant-vs-jira-service-management",
+      "path": "/compare/firehydrant-vs-jira-service-management/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "fly-io-vs-jira-service-management",
+      "path": "/compare/fly-io-vs-jira-service-management/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "github-vs-jira-service-management",
+      "path": "/compare/github-vs-jira-service-management/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "gitlab-vs-jira-service-management",
+      "path": "/compare/gitlab-vs-jira-service-management/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "grafana-cloud-vs-jira-service-management",
+      "path": "/compare/grafana-cloud-vs-jira-service-management/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "haloitsm-vs-jira-service-management",
+      "path": "/compare/haloitsm-vs-jira-service-management/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "heroku-vs-jira-service-management",
+      "path": "/compare/heroku-vs-jira-service-management/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "honeycomb-vs-jira-service-management",
+      "path": "/compare/honeycomb-vs-jira-service-management/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "incident-io-vs-jira-service-management",
+      "path": "/compare/incident-io-vs-jira-service-management/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "iproyal-vs-jira-service-management",
+      "path": "/compare/iproyal-vs-jira-service-management/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "ivanti-vs-jira-service-management",
+      "path": "/compare/ivanti-vs-jira-service-management/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "jira-service-management-vs-kinsta",
+      "path": "/compare/jira-service-management-vs-kinsta/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "jira-service-management-vs-manageengine-servicedesk-plus",
+      "path": "/compare/jira-service-management-vs-manageengine-servicedesk-plus/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "jira-service-management-vs-new-relic",
+      "path": "/compare/jira-service-management-vs-new-relic/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "jira-service-management-vs-oxylabs",
+      "path": "/compare/jira-service-management-vs-oxylabs/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "jira-service-management-vs-pagerduty",
+      "path": "/compare/jira-service-management-vs-pagerduty/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "jira-service-management-vs-railway",
+      "path": "/compare/jira-service-management-vs-railway/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "jira-service-management-vs-render",
+      "path": "/compare/jira-service-management-vs-render/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "jira-service-management-vs-rootly",
+      "path": "/compare/jira-service-management-vs-rootly/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "jira-service-management-vs-scraperapi",
+      "path": "/compare/jira-service-management-vs-scraperapi/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "jira-service-management-vs-sentry",
+      "path": "/compare/jira-service-management-vs-sentry/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "jira-service-management-vs-siteground",
+      "path": "/compare/jira-service-management-vs-siteground/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "jira-service-management-vs-smartproxy",
+      "path": "/compare/jira-service-management-vs-smartproxy/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "jira-service-management-vs-splunk",
+      "path": "/compare/jira-service-management-vs-splunk/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "jira-service-management-vs-squadcast",
+      "path": "/compare/jira-service-management-vs-squadcast/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "jira-service-management-vs-sysaid",
+      "path": "/compare/jira-service-management-vs-sysaid/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "jira-service-management-vs-thordata",
+      "path": "/compare/jira-service-management-vs-thordata/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "jira-service-management-vs-topdesk",
+      "path": "/compare/jira-service-management-vs-topdesk/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "jira-service-management-vs-wp-engine",
+      "path": "/compare/jira-service-management-vs-wp-engine/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "jira-service-management-vs-zyte",
+      "path": "/compare/jira-service-management-vs-zyte/"
+    },
+    {
+      "kind": "alternatives",
+      "slug": "jira-service-management",
+      "path": "/alternatives/jira-service-management/"
+    },
+    {
+      "kind": "pricing",
+      "slug": "jira-service-management",
+      "path": "/software/jira-service-management/pricing/"
+    },
+    {
+      "kind": "tools",
+      "slug": "it-development-cost-calculator",
+      "path": "/tools/it-development-cost-calculator/"
+    }
+  ],
+  "dependentsNeedingRefresh": [],
+  "remediation": [],
+  "notes": [
+    "fieldAudit score=100",
+    "decisionHub bestFor=6 notIdeal=6",
+    "dependents=56"
+  ],
+  "materiallyImproved": true
+}

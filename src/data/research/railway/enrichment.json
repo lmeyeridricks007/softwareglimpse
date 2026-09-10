@@ -241,16 +241,32 @@
       ]
     }
   ],
+  "integrationSupport": [
+    {
+      "integrationSlug": "github",
+      "kind": "native",
+      "sourceIds": [
+        "railway-product-official"
+      ]
+    },
+    {
+      "integrationSlug": "api",
+      "kind": "api-only",
+      "sourceIds": [
+        "railway-product-official"
+      ]
+    }
+  ],
   "aiCapabilities": [
     {
-      "capability": "ITSM AI copilot",
+      "capability": "assistant",
       "availability": "not-supported",
       "sourceIds": [
         "railway-product-official"
       ]
     },
     {
-      "capability": "Developer AI copilot",
+      "capability": "assistant",
       "availability": "limited",
       "sourceIds": [
         "railway-product-official"
@@ -266,22 +282,6 @@
     {
       "capability": "recommendations",
       "availability": "not-supported",
-      "sourceIds": [
-        "railway-product-official"
-      ]
-    }
-  ],
-  "integrationSupport": [
-    {
-      "integrationSlug": "github",
-      "kind": "native",
-      "sourceIds": [
-        "railway-product-official"
-      ]
-    },
-    {
-      "integrationSlug": "api",
-      "kind": "api",
       "sourceIds": [
         "railway-product-official"
       ]
@@ -370,6 +370,95 @@
         "railway-product-official"
       ],
       "isEditorial": false
+    }
+  ],
+  "screenshots": [
+    {
+      "id": "railway-shot-overview",
+      "src": "/vendor-ui/railway/overview.png",
+      "alt": "Railway official marketing visual",
+      "caption": "Official Open Graph / marketing visual from https://railway.com/.",
+      "source": "https://railway.com/",
+      "checkedAt": "2026-08-18T14:00:00.000Z",
+      "annotation": "Official railway marketing UI asset",
+      "kind": "vendor-ui",
+      "featureIds": [
+        "cloud-paas",
+        "cicd-actions"
+      ],
+      "useCaseIds": [
+        "cloud-paas"
+      ]
+    }
+  ],
+  "media": [
+    {
+      "id": "railway-video-sdzn5ho31de",
+      "productSlug": "railway",
+      "productIds": [
+        "railway"
+      ],
+      "type": "official-video",
+      "provider": "youtube",
+      "sourceUrl": "https://www.youtube.com/watch?v=sDZN5ho31DE",
+      "videoId": "sDZN5ho31DE",
+      "providerId": "sDZN5ho31DE",
+      "embedUrl": "https://www.youtube-nocookie.com/embed/sDZN5ho31DE",
+      "title": "Agent Sandboxes in Railway",
+      "description": "Official Railway product video from the vendor YouTube channel.",
+      "thumbnailUrl": "https://i.ytimg.com/vi/sDZN5ho31DE/hqdefault.jpg",
+      "sourceOrganization": "Railway",
+      "channelName": "Railway",
+      "officialSource": true,
+      "officialSourceKind": "vendor-channel",
+      "verifiedAt": "2026-08-18T14:00:00.000Z",
+      "lastCheckedAt": "2026-08-18T14:00:00.000Z",
+      "sourceHealth": "unknown",
+      "refreshFlags": [],
+      "embeddingAllowed": true,
+      "capabilityIds": [],
+      "featureIds": [
+        "cloud-paas",
+        "cicd-actions"
+      ],
+      "requirementIds": [],
+      "useCaseIds": [
+        "cloud-paas"
+      ],
+      "industryIds": [],
+      "guideIds": [],
+      "evidenceRefs": [],
+      "evidenceClaimIds": [],
+      "evidenceClaimKinds": [
+        "workflow-demo",
+        "ui-layout",
+        "feature-existence"
+      ],
+      "demonstratedDimensionIds": [],
+      "requirementCriterionIds": [],
+      "workflowStageIds": [],
+      "mediaContext": "general-workflow",
+      "reportedOutcomes": [],
+      "placements": [
+        "overview",
+        "features",
+        "evidence"
+      ],
+      "purpose": "Official Railway video for product research pages",
+      "demonstratesCaption": "How Railway presents the product in an official vendor video.",
+      "editorialCommentary": "Official vendor demo — treat as UI/workflow evidence, not SoftwareGlimpse scoring.",
+      "whatThisShows": [
+        "Railway product surfaces as shown in the official vendor video",
+        "UI/workflow layout marketed by the vendor"
+      ],
+      "limitations": [
+        "pricing",
+        "comparative superiority",
+        "security or compliance certification",
+        "implementation effort or total cost of ownership"
+      ],
+      "whatToNotice": [],
+      "status": "published"
     }
   ],
   "pricing": {
@@ -476,108 +565,13 @@
       }
     ],
     "notes": "Verified 2026-08-18 from railway.com/pricing (high confidence). Free Trial $5 credits / 30 days, no card. Free $0/mo with $1 usage credits. Hobby $5/mo including $5 credits (startingPriceMonthly 5). Pro $20/mo per workspace including $20 credits, unlimited seats. Enterprise custom. Affiliate economics excluded.",
-    "verifiedAt": "2026-08-18T22:00:00.000Z",
+    "verifiedAt": "2026-09-09T06:31:23.330Z",
     "sourceIds": [
       "railway-pricing-official"
     ],
     "startingPriceMonthly": 5,
     "trialDays": 30
   },
-  "screenshots": [
-    {
-      "id": "railway-shot-overview",
-      "src": "/vendor-ui/railway/overview.png",
-      "alt": "Railway official marketing visual",
-      "caption": "Official Open Graph / marketing visual from https://railway.com/.",
-      "source": "https://railway.com/",
-      "checkedAt": "2026-08-18T14:00:00.000Z",
-      "annotation": "Official railway marketing UI asset",
-      "kind": "vendor-ui",
-      "featureIds": [
-        "cloud-paas",
-        "cicd-actions"
-      ],
-      "useCaseIds": [
-        "cloud-paas"
-      ]
-    }
-  ],
-  "media": [
-    {
-      "id": "railway-video-sdzn5ho31de",
-      "productSlug": "railway",
-      "productIds": [
-        "railway"
-      ],
-      "type": "official-video",
-      "provider": "youtube",
-      "sourceUrl": "https://www.youtube.com/watch?v=sDZN5ho31DE",
-      "videoId": "sDZN5ho31DE",
-      "providerId": "sDZN5ho31DE",
-      "embedUrl": "https://www.youtube-nocookie.com/embed/sDZN5ho31DE",
-      "title": "Agent Sandboxes in Railway",
-      "description": "Official Railway product video from the vendor YouTube channel.",
-      "thumbnailUrl": "https://i.ytimg.com/vi/sDZN5ho31DE/hqdefault.jpg",
-      "sourceOrganization": "Railway",
-      "channelName": "Railway",
-      "officialSource": true,
-      "officialSourceKind": "vendor-channel",
-      "verifiedAt": "2026-08-18T14:00:00.000Z",
-      "lastCheckedAt": "2026-08-18T14:00:00.000Z",
-      "sourceHealth": "unknown",
-      "refreshFlags": [],
-      "embeddingAllowed": true,
-      "capabilityIds": [],
-      "featureIds": [
-        "cloud-paas",
-        "cicd-actions"
-      ],
-      "requirementIds": [],
-      "useCaseIds": [
-        "cloud-paas"
-      ],
-      "industryIds": [],
-      "guideIds": [],
-      "evidenceRefs": [],
-      "evidenceClaimIds": [],
-      "evidenceClaimKinds": [
-        "workflow-demo",
-        "ui-layout",
-        "feature-existence"
-      ],
-      "demonstratedDimensionIds": [],
-      "requirementCriterionIds": [],
-      "workflowStageIds": [],
-      "reportedOutcomes": [],
-      "placements": [
-        "overview",
-        "features",
-        "evidence"
-      ],
-      "mediaContext": "general-workflow",
-      "purpose": "Official Railway video for product research pages",
-      "demonstratesCaption": "How Railway presents the product in an official vendor video.",
-      "editorialCommentary": "Official vendor demo — treat as UI/workflow evidence, not SoftwareGlimpse scoring.",
-      "whatThisShows": [
-        "Railway product surfaces as shown in the official vendor video",
-        "UI/workflow layout marketed by the vendor"
-      ],
-      "limitations": [
-        "pricing",
-        "comparative superiority",
-        "security or compliance certification",
-        "implementation effort or total cost of ownership"
-      ],
-      "whatToNotice": [],
-      "status": "published"
-    }
-  ],
-  "sourceIds": [
-    "railway-product-official",
-    "railway-pricing-official",
-    "railway-pricing"
-  ],
-  "notes": "IT gap-fill PaaS + incident onboarding enrichment from first-party research 2026-08-18T22:00:00.000Z. handsOnTesting=false. membershipRole=primary. jobCluster=cloud-paas.",
   "domainCheckedAt": {
     "identity": "2026-08-18T22:00:00.000Z",
     "pricing": "2026-08-18T22:00:00.000Z",
@@ -591,5 +585,11 @@
     "limits": "2026-08-18T22:00:00.000Z",
     "security-compliance": "2026-08-18T22:00:00.000Z"
   },
-  "updatedAt": "2026-08-18T14:00:00.000Z"
+  "sourceIds": [
+    "railway-product-official",
+    "railway-pricing-official",
+    "railway-pricing"
+  ],
+  "updatedAt": "2026-08-18T14:00:00.000Z",
+  "notes": "IT gap-fill PaaS + incident onboarding enrichment from first-party research 2026-08-18T22:00:00.000Z. handsOnTesting=false. membershipRole=primary. jobCluster=cloud-paas."
 }

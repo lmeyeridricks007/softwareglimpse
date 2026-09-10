@@ -1,0 +1,412 @@
+{
+  "slug": "magento",
+  "updatedAt": "2026-09-07T22:31:21.802Z",
+  "version": "1.0.0",
+  "fieldAudit": {
+    "slug": "magento",
+    "checkedAt": "2026-09-07T22:31:21.801Z",
+    "items": [
+      {
+        "field": "name",
+        "status": "PASS",
+        "detail": "Name: Magento",
+        "source": "seed"
+      },
+      {
+        "field": "product_status",
+        "status": "PASS",
+        "detail": "productLifecycle=active",
+        "source": "seed"
+      },
+      {
+        "field": "canonical_vendor",
+        "status": "UNKNOWN",
+        "detail": "Company/vendor not documented",
+        "source": "none"
+      },
+      {
+        "field": "category",
+        "status": "PASS",
+        "detail": "primaryCategorySlug=ecommerce",
+        "source": "seed"
+      },
+      {
+        "field": "description",
+        "status": "PASS",
+        "detail": "Description present (Open-source Magento core (free) plus Adobe Commerce enterprise licenses (GMV quo…)",
+        "source": "seed"
+      },
+      {
+        "field": "target_audience",
+        "status": "PASS",
+        "detail": "Sizes=2, teams=2, assessment bestFor=3",
+        "source": "assessment"
+      },
+      {
+        "field": "use_cases",
+        "status": "PASS",
+        "detail": "useCaseSlugs=4",
+        "source": "seed"
+      },
+      {
+        "field": "capabilities",
+        "status": "PASS",
+        "detail": "featureRatings=0, enrichment features=14",
+        "source": "enrichment"
+      },
+      {
+        "field": "pricing",
+        "status": "PASS",
+        "detail": "Pricing envelope present",
+        "source": "enrichment"
+      },
+      {
+        "field": "plans",
+        "status": "PASS",
+        "detail": "plans=2",
+        "source": "enrichment"
+      },
+      {
+        "field": "free_plan",
+        "status": "PASS",
+        "detail": "Free plan documented",
+        "source": "enrichment"
+      },
+      {
+        "field": "trial",
+        "status": "UNKNOWN",
+        "detail": "Trial not explicitly documented — do not assume none",
+        "source": "none"
+      },
+      {
+        "field": "integrations",
+        "status": "PASS",
+        "detail": "integrationSlugs=0, enrichment=3",
+        "source": "enrichment"
+      },
+      {
+        "field": "alternatives",
+        "status": "PASS",
+        "detail": "alternativeSlugs=2",
+        "source": "seed"
+      },
+      {
+        "field": "competitors",
+        "status": "PASS",
+        "detail": "competitorSlugs=3",
+        "source": "seed"
+      },
+      {
+        "field": "affiliate",
+        "status": "PASS",
+        "detail": "No affiliate relationship (explicit)",
+        "source": "seed"
+      },
+      {
+        "field": "source_provenance",
+        "status": "PASS",
+        "detail": "seed sources=0, enrichment sourceIds=2",
+        "source": "enrichment"
+      },
+      {
+        "field": "verification_date",
+        "status": "PASS",
+        "detail": "Latest verification/research signal: 2026-08-18T14:00:00.000Z",
+        "source": "enrichment"
+      }
+    ],
+    "passCount": 16,
+    "partialCount": 0,
+    "missingCount": 0,
+    "unknownCount": 2,
+    "score": 89
+  },
+  "decisionHub": {
+    "whatItIs": "Magento (Adobe) is the enterprise-leaning open commerce stack: Magento Open Source is free to download; Adobe Commerce is a GMV-based commercial license (partner estimates commonly cite ~$22k+/year floors — exact quotes only). Buyers own hosting, DevOps, and extension TCO. Strong for complex catalogs and B2B; not an SMB SaaS launch path. Research grounded 2026-08-18 from Adobe positioning and industry license ranges — not a published Adobe price list.",
+    "bestFor": [
+      "Mid-market and enterprise catalogs with complex B2B needs",
+      "Teams with Magento/Adobe partner capacity",
+      "Merchants who outgrew WooCommerce simplicity and need deeper commerce core",
+      "mid-market / operations: Magento fit for mid-market operations teams in the open-source-platform job cluster, from first-party positioning and Ecommerce Priority-1 research.",
+      "enterprise / operations: Magento fit for enterprise operations teams in the open-source-platform job cluster, from first-party positioning and Ecommerce Priority-1 research."
+    ],
+    "notIdealFor": [
+      "Solo founders wanting a weekend store launch",
+      "Website-first brands that mainly need pages + light commerce (see Wix/Squarespace)",
+      "Buyers who need published monthly plan tiles only",
+      "Operational and agency TCO is high versus hosted SaaS even when the Open Source license is $0",
+      "Adobe Commerce pricing is opaque (GMV quote) — hard to compare without a partner worksheet",
+      "Implementation timelines are measured in months, not a weekend theme install"
+    ],
+    "coreCapabilities": [
+      "online storefront",
+      "product catalog",
+      "checkout payments",
+      "order management",
+      "inventory management",
+      "shipping fulfillment",
+      "b2b wholesale",
+      "analytics reporting"
+    ],
+    "pricingSummary": "2 documented plans · 1 free · entry paid: Adobe Commerce",
+    "keyTradeoffs": [
+      "Operational and agency TCO is high versus hosted SaaS even when the Open Source license is $0",
+      "Adobe Commerce pricing is opaque (GMV quote) — hard to compare without a partner worksheet",
+      "Implementation timelines are measured in months, not a weekend theme install",
+      "Extension and upgrade discipline is required to stay secure",
+      "Composable commerce for ambitious brands — Magento Open Source and Adobe Commerce for complex B2B and multi-brand catalogs. (audience: Mid-market and enterprise catalogs with complex B2B needs, Teams with Magento/Adobe partner capacity)"
+    ],
+    "alternatives": [
+      {
+        "slug": "woocommerce",
+        "name": "WooCommerce"
+      },
+      {
+        "slug": "shopify",
+        "name": "Shopify"
+      },
+      {
+        "slug": "bigcommerce",
+        "name": "BigCommerce"
+      }
+    ],
+    "importantComparisons": [
+      {
+        "slug": "magento-vs-woocommerce",
+        "title": "Magento vs WooCommerce",
+        "href": "/compare/magento-vs-woocommerce/"
+      },
+      {
+        "slug": "magento-vs-salesforce-commerce-cloud",
+        "title": "Salesforce Commerce Cloud vs Magento",
+        "href": "/compare/magento-vs-salesforce-commerce-cloud/"
+      },
+      {
+        "slug": "bigcommerce-vs-magento",
+        "title": "BigCommerce vs Magento",
+        "href": "/compare/bigcommerce-vs-magento/"
+      },
+      {
+        "slug": "commercetools-vs-magento",
+        "title": "commercetools vs Magento",
+        "href": "/compare/commercetools-vs-magento/"
+      },
+      {
+        "slug": "ecwid-vs-magento",
+        "title": "Ecwid vs Magento",
+        "href": "/compare/ecwid-vs-magento/"
+      },
+      {
+        "slug": "lightspeed-retail-vs-magento",
+        "title": "Lightspeed Retail vs Magento",
+        "href": "/compare/lightspeed-retail-vs-magento/"
+      }
+    ],
+    "relevantGuides": [
+      {
+        "slug": "how-ecommerce-software-works",
+        "title": "How Ecommerce Software Works",
+        "href": "/guides/how-ecommerce-software-works/"
+      },
+      {
+        "slug": "types-of-ecommerce-software",
+        "title": "Types of Ecommerce Software",
+        "href": "/guides/types-of-ecommerce-software/"
+      },
+      {
+        "slug": "ecommerce-requirements-guide",
+        "title": "Ecommerce Software Requirements Guide",
+        "href": "/guides/ecommerce-requirements-guide/"
+      },
+      {
+        "slug": "ecommerce-evaluation-guide",
+        "title": "Ecommerce Software Evaluation Guide",
+        "href": "/guides/ecommerce-evaluation-guide/"
+      },
+      {
+        "slug": "magento-implementation",
+        "title": "Magento Implementation: 30/60/90 Store Rollout That Sticks",
+        "href": "/guides/magento-implementation/"
+      },
+      {
+        "slug": "magento-migration",
+        "title": "Magento Migration: Move Catalog & Order Data Without Losing Trust",
+        "href": "/guides/magento-migration/"
+      }
+    ],
+    "evidenceState": "Research/data-based (no completed hands-on test) · Latest verification/research signal: 2026-08-18T14:00:00.000Z · Editorial assessment: approved",
+    "nextDecisionStep": "Compare against peers: Magento vs WooCommerce",
+    "missingSections": [
+      "canonical_vendor",
+      "trial"
+    ]
+  },
+  "dependents": [
+    {
+      "kind": "guide",
+      "slug": "how-ecommerce-software-works",
+      "path": "/guides/how-ecommerce-software-works/"
+    },
+    {
+      "kind": "guide",
+      "slug": "types-of-ecommerce-software",
+      "path": "/guides/types-of-ecommerce-software/"
+    },
+    {
+      "kind": "guide",
+      "slug": "ecommerce-requirements-guide",
+      "path": "/guides/ecommerce-requirements-guide/"
+    },
+    {
+      "kind": "guide",
+      "slug": "ecommerce-evaluation-guide",
+      "path": "/guides/ecommerce-evaluation-guide/"
+    },
+    {
+      "kind": "guide",
+      "slug": "magento-implementation",
+      "path": "/guides/magento-implementation/"
+    },
+    {
+      "kind": "guide",
+      "slug": "magento-migration",
+      "path": "/guides/magento-migration/"
+    },
+    {
+      "kind": "guide",
+      "slug": "magento-setup",
+      "path": "/guides/magento-setup/"
+    },
+    {
+      "kind": "guide",
+      "slug": "magento-plans",
+      "path": "/guides/magento-plans/"
+    },
+    {
+      "kind": "guide",
+      "slug": "is-magento-worth-it",
+      "path": "/guides/is-magento-worth-it/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "magento-vs-woocommerce",
+      "path": "/compare/magento-vs-woocommerce/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "magento-vs-salesforce-commerce-cloud",
+      "path": "/compare/magento-vs-salesforce-commerce-cloud/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "bigcommerce-vs-magento",
+      "path": "/compare/bigcommerce-vs-magento/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "commercetools-vs-magento",
+      "path": "/compare/commercetools-vs-magento/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "ecwid-vs-magento",
+      "path": "/compare/ecwid-vs-magento/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "lightspeed-retail-vs-magento",
+      "path": "/compare/lightspeed-retail-vs-magento/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "magento-vs-medusa",
+      "path": "/compare/magento-vs-medusa/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "magento-vs-opencart",
+      "path": "/compare/magento-vs-opencart/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "magento-vs-prestashop",
+      "path": "/compare/magento-vs-prestashop/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "magento-vs-saleor",
+      "path": "/compare/magento-vs-saleor/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "magento-vs-sellfy",
+      "path": "/compare/magento-vs-sellfy/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "magento-vs-shopify",
+      "path": "/compare/magento-vs-shopify/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "magento-vs-shopware",
+      "path": "/compare/magento-vs-shopware/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "magento-vs-square-online",
+      "path": "/compare/magento-vs-square-online/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "magento-vs-squarespace",
+      "path": "/compare/magento-vs-squarespace/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "magento-vs-tiendanube",
+      "path": "/compare/magento-vs-tiendanube/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "magento-vs-vtex",
+      "path": "/compare/magento-vs-vtex/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "magento-vs-webflow",
+      "path": "/compare/magento-vs-webflow/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "magento-vs-wix",
+      "path": "/compare/magento-vs-wix/"
+    },
+    {
+      "kind": "alternatives",
+      "slug": "magento",
+      "path": "/alternatives/magento/"
+    },
+    {
+      "kind": "pricing",
+      "slug": "magento",
+      "path": "/software/magento/pricing/"
+    },
+    {
+      "kind": "tools",
+      "slug": "ecommerce-cost-calculator",
+      "path": "/tools/ecommerce-cost-calculator/"
+    }
+  ],
+  "dependentsNeedingRefresh": [],
+  "remediation": [
+    "verify:canonical_vendor",
+    "verify:trial"
+  ],
+  "notes": [
+    "fieldAudit score=89",
+    "decisionHub bestFor=5 notIdeal=6",
+    "dependents=31"
+  ],
+  "materiallyImproved": false
+}

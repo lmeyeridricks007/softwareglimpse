@@ -1,6 +1,7 @@
 import {
   getAllSoftwareUnfiltered,
   getRelationships,
+  getSoftwareBySlug,
 } from "@/data";
 import type { RelationshipCandidate, Software } from "@/domain";
 

@@ -30,11 +30,12 @@ export type LegacyRedirectsFile = {
   generatedAt: string;
   generator: string;
   policy: {
-    onlyHighConfidence: true;
+    onlyHighConfidence: boolean;
     permanentOnly: true;
     flattenChains: true;
     noHomepageDump: true;
-    noMiddleware: true;
+    /** Locale/taxonomy 410+301 enforcement lives in `src/proxy.ts` (Next 16 Proxy). */
+    noMiddleware: boolean;
   };
   redirects: Array<{
     source: string;

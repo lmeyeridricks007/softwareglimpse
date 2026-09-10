@@ -1,0 +1,527 @@
+{
+  "slug": "fly-io",
+  "updatedAt": "2026-09-07T22:31:21.968Z",
+  "version": "1.0.0",
+  "fieldAudit": {
+    "slug": "fly-io",
+    "checkedAt": "2026-09-07T22:31:21.967Z",
+    "items": [
+      {
+        "field": "name",
+        "status": "PASS",
+        "detail": "Name: Fly.io",
+        "source": "seed"
+      },
+      {
+        "field": "product_status",
+        "status": "PASS",
+        "detail": "productLifecycle=active",
+        "source": "seed"
+      },
+      {
+        "field": "canonical_vendor",
+        "status": "UNKNOWN",
+        "detail": "Company/vendor not documented",
+        "source": "none"
+      },
+      {
+        "field": "category",
+        "status": "PASS",
+        "detail": "primaryCategorySlug=it-development",
+        "source": "seed"
+      },
+      {
+        "field": "description",
+        "status": "PASS",
+        "detail": "Description present (Cloud PaaS / microVM app platform — PAYG; shared-cpu-1x from ~$1.94/mo in lower-…)",
+        "source": "seed"
+      },
+      {
+        "field": "target_audience",
+        "status": "PASS",
+        "detail": "Sizes=4, teams=1, assessment bestFor=3",
+        "source": "assessment"
+      },
+      {
+        "field": "use_cases",
+        "status": "PASS",
+        "detail": "useCaseSlugs=1",
+        "source": "seed"
+      },
+      {
+        "field": "capabilities",
+        "status": "PASS",
+        "detail": "featureRatings=0, enrichment features=17",
+        "source": "enrichment"
+      },
+      {
+        "field": "pricing",
+        "status": "PASS",
+        "detail": "Pricing envelope present",
+        "source": "enrichment"
+      },
+      {
+        "field": "plans",
+        "status": "PASS",
+        "detail": "plans=3",
+        "source": "enrichment"
+      },
+      {
+        "field": "free_plan",
+        "status": "PASS",
+        "detail": "No free plan in documented plans (explicit absence)",
+        "source": "enrichment"
+      },
+      {
+        "field": "trial",
+        "status": "PASS",
+        "detail": "Trial documented on plans/pricing",
+        "source": "enrichment"
+      },
+      {
+        "field": "integrations",
+        "status": "PASS",
+        "detail": "integrationSlugs=0, enrichment=2",
+        "source": "enrichment"
+      },
+      {
+        "field": "alternatives",
+        "status": "PASS",
+        "detail": "alternativeSlugs=2",
+        "source": "seed"
+      },
+      {
+        "field": "competitors",
+        "status": "PASS",
+        "detail": "competitorSlugs=5",
+        "source": "seed"
+      },
+      {
+        "field": "affiliate",
+        "status": "PASS",
+        "detail": "No affiliate relationship (explicit)",
+        "source": "seed"
+      },
+      {
+        "field": "source_provenance",
+        "status": "PASS",
+        "detail": "seed sources=0, enrichment sourceIds=3",
+        "source": "enrichment"
+      },
+      {
+        "field": "verification_date",
+        "status": "PASS",
+        "detail": "Latest verification/research signal: 2026-08-18T22:00:00.000Z",
+        "source": "enrichment"
+      }
+    ],
+    "passCount": 17,
+    "partialCount": 0,
+    "missingCount": 0,
+    "unknownCount": 1,
+    "score": 94
+  },
+  "decisionHub": {
+    "whatItIs": "Fly.io is a cloud PaaS / app platform that runs apps close to users on Firecracker microVMs — git/CLI deploy, not a managed WordPress host and not a panel licence. Pricing is pay-as-you-go. shared-cpu-1x publishes around $1.94–$2.02/month depending on region; startingPriceMonthly $1.94 is the cheapest listed-region floor. Support Standard at $29/month is a support SKU, not hosting — do not use it as the Fly.io floor. Legacy free allowances are not for new accounts. A free trial exists. Same cloud-paas cluster as Render — Render remains the award (7.9); this entity does not outrank it. Landscape-only versus Cloudways managed VMs.",
+    "bestFor": [
+      "Teams that want PAYG microVM/app hosting close to users",
+      "Buyers comparing Fly.io $1.94 shared-cpu-1x to Render Pro $25 + compute",
+      "Orgs that will not treat $29 Support as the hosting SKU",
+      "micro / engineering: Fly.io fit for micro engineering teams in the cloud-paas job cluster, from first-party positioning and IT optional-next research.",
+      "small-business / engineering: Fly.io fit for small-business engineering teams in the cloud-paas job cluster, from first-party positioning and IT optional-next research.",
+      "mid-market / engineering: Fly.io fit for mid-market engineering teams in the cloud-paas job cluster, from first-party positioning and IT optional-next research."
+    ],
+    "notIdealFor": [
+      "Teams that want Render’s simpler git-push dashboard as the default award path",
+      "Managed WordPress or Cloudways VM buyers (landscape)",
+      "ITSM or observability purchases",
+      "Does not outrank Render (7.9) as the cloud-paas award",
+      "Support Standard $29/mo is support — not the hosting floor",
+      "Legacy free allowance is not available to new accounts"
+    ],
+    "coreCapabilities": [
+      "cloud paas"
+    ],
+    "pricingSummary": "3 documented plans · entry paid: shared-cpu-1x (cheapest regions) · trial documented on at least one plan",
+    "keyTradeoffs": [
+      "Does not outrank Render (7.9) as the cloud-paas award",
+      "Support Standard $29/mo is support — not the hosting floor",
+      "Legacy free allowance is not available to new accounts",
+      "Not managed WordPress (WP Engine) or managed VMs (Cloudways) — landscape vs Cloudways",
+      "Not ITSM, observability, a git host, or a panel licence"
+    ],
+    "alternatives": [
+      {
+        "slug": "render",
+        "name": "Render"
+      },
+      {
+        "slug": "cloudways",
+        "name": "Cloudways"
+      },
+      {
+        "slug": "wp-engine",
+        "name": "WP Engine"
+      },
+      {
+        "slug": "railway",
+        "name": "Railway"
+      },
+      {
+        "slug": "heroku",
+        "name": "Heroku"
+      }
+    ],
+    "importantComparisons": [
+      {
+        "slug": "fly-io-vs-render",
+        "title": "Fly.io vs Render",
+        "href": "/compare/fly-io-vs-render/"
+      },
+      {
+        "slug": "cloudways-vs-fly-io",
+        "title": "Cloudways vs Fly.io",
+        "href": "/compare/cloudways-vs-fly-io/"
+      },
+      {
+        "slug": "fly-io-vs-railway",
+        "title": "Fly.io vs Railway",
+        "href": "/compare/fly-io-vs-railway/"
+      },
+      {
+        "slug": "fly-io-vs-heroku",
+        "title": "Fly.io vs Heroku",
+        "href": "/compare/fly-io-vs-heroku/"
+      },
+      {
+        "slug": "apify-vs-fly-io",
+        "title": "Apify vs Fly.io",
+        "href": "/compare/apify-vs-fly-io/"
+      },
+      {
+        "slug": "appdynamics-vs-fly-io",
+        "title": "AppDynamics vs Fly.io",
+        "href": "/compare/appdynamics-vs-fly-io/"
+      }
+    ],
+    "relevantGuides": [
+      {
+        "slug": "fly-io-implementation",
+        "title": "Fly.io Implementation: 30/60/90 IT Rollout That Sticks",
+        "href": "/guides/fly-io-implementation/"
+      },
+      {
+        "slug": "fly-io-migration",
+        "title": "Fly.io Migration: Move Tickets and Repos Without Losing Trust",
+        "href": "/guides/fly-io-migration/"
+      },
+      {
+        "slug": "fly-io-setup",
+        "title": "Fly.io Setup: Day-Zero Path to a Working IT Loop",
+        "href": "/guides/fly-io-setup/"
+      },
+      {
+        "slug": "fly-io-plans",
+        "title": "Fly.io Plans: Seats, Hosts, and Qualifying Tiers",
+        "href": "/guides/fly-io-plans/"
+      },
+      {
+        "slug": "is-fly-io-worth-it",
+        "title": "Is Fly.io Worth It? Fit Scenarios Before You Buy",
+        "href": "/guides/is-fly-io-worth-it/"
+      }
+    ],
+    "evidenceState": "Research/data-based (no completed hands-on test) · Latest verification/research signal: 2026-08-18T22:00:00.000Z · Editorial assessment: approved",
+    "nextDecisionStep": "Compare against peers: Fly.io vs Render",
+    "missingSections": [
+      "canonical_vendor"
+    ]
+  },
+  "dependents": [
+    {
+      "kind": "guide",
+      "slug": "fly-io-implementation",
+      "path": "/guides/fly-io-implementation/"
+    },
+    {
+      "kind": "guide",
+      "slug": "fly-io-migration",
+      "path": "/guides/fly-io-migration/"
+    },
+    {
+      "kind": "guide",
+      "slug": "fly-io-setup",
+      "path": "/guides/fly-io-setup/"
+    },
+    {
+      "kind": "guide",
+      "slug": "fly-io-plans",
+      "path": "/guides/fly-io-plans/"
+    },
+    {
+      "kind": "guide",
+      "slug": "is-fly-io-worth-it",
+      "path": "/guides/is-fly-io-worth-it/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "fly-io-vs-render",
+      "path": "/compare/fly-io-vs-render/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "cloudways-vs-fly-io",
+      "path": "/compare/cloudways-vs-fly-io/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "fly-io-vs-railway",
+      "path": "/compare/fly-io-vs-railway/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "fly-io-vs-heroku",
+      "path": "/compare/fly-io-vs-heroku/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "apify-vs-fly-io",
+      "path": "/compare/apify-vs-fly-io/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "appdynamics-vs-fly-io",
+      "path": "/compare/appdynamics-vs-fly-io/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "azure-devops-vs-fly-io",
+      "path": "/compare/azure-devops-vs-fly-io/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "bitbucket-vs-fly-io",
+      "path": "/compare/bitbucket-vs-fly-io/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "bmc-helix-vs-fly-io",
+      "path": "/compare/bmc-helix-vs-fly-io/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "bright-data-vs-fly-io",
+      "path": "/compare/bright-data-vs-fly-io/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "buildkite-vs-fly-io",
+      "path": "/compare/buildkite-vs-fly-io/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "chronosphere-vs-fly-io",
+      "path": "/compare/chronosphere-vs-fly-io/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "circleci-vs-fly-io",
+      "path": "/compare/circleci-vs-fly-io/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "coralogix-vs-fly-io",
+      "path": "/compare/coralogix-vs-fly-io/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "cpanel-vs-fly-io",
+      "path": "/compare/cpanel-vs-fly-io/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "datadog-vs-fly-io",
+      "path": "/compare/datadog-vs-fly-io/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "directadmin-vs-fly-io",
+      "path": "/compare/directadmin-vs-fly-io/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "dynatrace-vs-fly-io",
+      "path": "/compare/dynatrace-vs-fly-io/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "elastic-observability-vs-fly-io",
+      "path": "/compare/elastic-observability-vs-fly-io/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "firehydrant-vs-fly-io",
+      "path": "/compare/firehydrant-vs-fly-io/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "fly-io-vs-github",
+      "path": "/compare/fly-io-vs-github/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "fly-io-vs-gitlab",
+      "path": "/compare/fly-io-vs-gitlab/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "fly-io-vs-grafana-cloud",
+      "path": "/compare/fly-io-vs-grafana-cloud/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "fly-io-vs-haloitsm",
+      "path": "/compare/fly-io-vs-haloitsm/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "fly-io-vs-honeycomb",
+      "path": "/compare/fly-io-vs-honeycomb/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "fly-io-vs-incident-io",
+      "path": "/compare/fly-io-vs-incident-io/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "fly-io-vs-iproyal",
+      "path": "/compare/fly-io-vs-iproyal/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "fly-io-vs-ivanti",
+      "path": "/compare/fly-io-vs-ivanti/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "fly-io-vs-jira-service-management",
+      "path": "/compare/fly-io-vs-jira-service-management/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "fly-io-vs-kinsta",
+      "path": "/compare/fly-io-vs-kinsta/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "fly-io-vs-manageengine-servicedesk-plus",
+      "path": "/compare/fly-io-vs-manageengine-servicedesk-plus/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "fly-io-vs-new-relic",
+      "path": "/compare/fly-io-vs-new-relic/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "fly-io-vs-oxylabs",
+      "path": "/compare/fly-io-vs-oxylabs/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "fly-io-vs-pagerduty",
+      "path": "/compare/fly-io-vs-pagerduty/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "fly-io-vs-rootly",
+      "path": "/compare/fly-io-vs-rootly/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "fly-io-vs-scraperapi",
+      "path": "/compare/fly-io-vs-scraperapi/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "fly-io-vs-sentry",
+      "path": "/compare/fly-io-vs-sentry/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "fly-io-vs-servicenow",
+      "path": "/compare/fly-io-vs-servicenow/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "fly-io-vs-siteground",
+      "path": "/compare/fly-io-vs-siteground/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "fly-io-vs-smartproxy",
+      "path": "/compare/fly-io-vs-smartproxy/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "fly-io-vs-splunk",
+      "path": "/compare/fly-io-vs-splunk/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "fly-io-vs-squadcast",
+      "path": "/compare/fly-io-vs-squadcast/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "fly-io-vs-sysaid",
+      "path": "/compare/fly-io-vs-sysaid/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "fly-io-vs-thordata",
+      "path": "/compare/fly-io-vs-thordata/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "fly-io-vs-topdesk",
+      "path": "/compare/fly-io-vs-topdesk/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "fly-io-vs-wp-engine",
+      "path": "/compare/fly-io-vs-wp-engine/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "fly-io-vs-zyte",
+      "path": "/compare/fly-io-vs-zyte/"
+    },
+    {
+      "kind": "alternatives",
+      "slug": "fly-io",
+      "path": "/alternatives/fly-io/"
+    },
+    {
+      "kind": "pricing",
+      "slug": "fly-io",
+      "path": "/software/fly-io/pricing/"
+    },
+    {
+      "kind": "tools",
+      "slug": "it-development-cost-calculator",
+      "path": "/tools/it-development-cost-calculator/"
+    }
+  ],
+  "dependentsNeedingRefresh": [],
+  "remediation": [
+    "verify:canonical_vendor"
+  ],
+  "notes": [
+    "fieldAudit score=94",
+    "decisionHub bestFor=6 notIdeal=6",
+    "dependents=55"
+  ],
+  "materiallyImproved": false
+}

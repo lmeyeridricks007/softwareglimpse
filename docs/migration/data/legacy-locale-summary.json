@@ -1,13 +1,30 @@
 {
-  "count": 3222,
+  "count": 4501,
   "byLocale": {
     "de": 644,
     "nl": 644,
     "es": 644,
     "fr": 645,
-    "ar": 645
+    "ar": 645,
+    "hi": 643,
+    "zh": 643
   },
-  "note": "hreflang alternate URLs from Yoast sitemaps; excluded from primary EN matching",
+  "note": "hreflang alternate URLs from Yoast sitemaps across de/nl/es/fr/ar/hi/zh; English-only cutover maps 2621 to EN 301s (incl. 49 equity repairs from Locale410TopicReview) and retires the rest as 410 via src/proxy.ts",
   "sitemapUniqueLocs": 5158,
-  "primaryEn": 643
+  "primaryEn": 643,
+  "cutover": {
+    "redirectCount": 2621,
+    "skippedNoEnglishDestination": 1855,
+    "skippedLocaleRoots": 7,
+    "locale410EquityRepairs": 49,
+    "config": "config/legacy-locale-cutover.json"
+  },
+  "locale410Review": {
+    "agent": "Locale410TopicReview v1.0.0",
+    "cli": "npm run migration:locale-410-review",
+    "report": "docs/seo/LOCALE-410-TOPIC-REVIEW.md",
+    "gapReview": "docs/seo/EXISTING_ESTATE_GAP_REVIEW.md",
+    "repairsApplied": 7,
+    "gapCandidates": 4
+  }
 }

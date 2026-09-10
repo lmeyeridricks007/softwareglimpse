@@ -1,4 +1,4 @@
-import type { GuidePage } from "@/domain";
+import type { GuidePageInput } from "@/domain";
 import { teachingExpansionFor } from "./guides-category-teaching-expansion";
 import { emailMarketingEvaluationGuide } from "./guides-email-marketing-evaluation-guide";
 import { emailMarketingPricingGuide } from "./guides-email-marketing-pricing-guide";
@@ -10,7 +10,7 @@ import { whatIsEmailMarketingGuide } from "./guides-what-is-email-marketing";
  * Email marketing category educational guides (minimum supporting set).
  * Published and indexable (editorial gate cleared).
  */
-export const emailMarketingCategoryGuides: GuidePage[] = [
+export const emailMarketingCategoryGuides: GuidePageInput[] = [
   whatIsEmailMarketingGuide,
   howToChooseEmailMarketingGuide,
   emailMarketingPricingGuide,

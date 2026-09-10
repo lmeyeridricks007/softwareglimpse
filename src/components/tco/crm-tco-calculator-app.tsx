@@ -172,6 +172,48 @@ function readJson<T>(key: string): T | null {
   }
 }
 
+type TcoBootstrap = {
+  session: TCOSession;
+  profile: CrmDecisionProfile | null;
+  step: StepId;
+  maxStepIndex: number;
+};
+
+function bootstrapTcoState(fromHint: string | null): TcoBootstrap {
+  let next = loadCrmTcoSession() ?? createEmptyTcoSession();
+  const decision = loadCrmDecisionProfile();
+
+  if (decision && (fromHint === "requirements" || fromHint === "scorecard")) {
+    next = sessionFromDecisionProfile(decision, next);
+  } else if (decision && next.scenarios[0]?.productIds.length === 0) {
+    next = sessionFromDecisionProfile(decision, next);
+  }
+
+  if (fromHint === "cost") {
+    const costDraft = readJson<{
+      crmUsers?: number;
+      billingPreference?: BillingPreference;
+      finderOrderSlugs?: string[];
+    }>(COST_STORAGE_KEY);
+    if (costDraft) {
+      next = applyCostCalculatorHandoff(next, {
+        crmUsers: costDraft.crmUsers,
+        billingPreference: costDraft.billingPreference,
+        productSlugs: costDraft.finderOrderSlugs,
+      });
+    }
+  }
+
+  let step: StepId = "products";
+  let maxStepIndex = 0;
+  if (next.wizardStepId && STAGES.some((s) => s.id === next.wizardStepId)) {
+    step = next.wizardStepId as StepId;
+    maxStepIndex = Math.max(0, STAGES.findIndex((s) => s.id === step));
+  }
+
+  return { session: next, profile: decision, step, maxStepIndex };
+}
+
 export function CrmTcoCalculatorApp({
   snapshots,
   productOptions,
@@ -183,14 +225,25 @@ export function CrmTcoCalculatorApp({
   const searchParams = useSearchParams();
   const fromHint = searchParams.get("from");
 
-  const [session, setSession] = useState<TCOSession>(() =>
-    createEmptyTcoSession(),
+  const [initialTco] = useState(() => bootstrapTcoState(fromHint));
+  const [sessionKey, setSessionKey] = useState(fromHint);
+  const [session, setSession] = useState<TCOSession>(initialTco.session);
+  const [profile, setProfile] = useState<CrmDecisionProfile | null>(
+    initialTco.profile,
   );
-  const [profile, setProfile] = useState<CrmDecisionProfile | null>(null);
-  const [step, setStep] = useState<StepId>("products");
-  /** Furthest wizard index unlocked — allows jumping back/forward within visited steps. */
-  const [maxStepIndex, setMaxStepIndex] = useState(0);
-  const [hydrated, setHydrated] = useState(false);
+  const [step, setStep] = useState<StepId>(initialTco.step);
+  const [maxStepIndex, setMaxStepIndex] = useState(initialTco.maxStepIndex);
+  if (fromHint !== sessionKey) {
+    const next = bootstrapTcoState(fromHint);
+    setSessionKey(fromHint);
+    setSession(next.session);
+    setProfile(next.profile);
+    setStep(next.step);
+    setMaxStepIndex(next.maxStepIndex);
+  }
+  const [hydrated, setHydrated] = useState(
+    () => typeof window !== "undefined",
+  );
   const [started, setStarted] = useState(false);
   const [copyDone, setCopyDone] = useState(false);
   const [customCostName, setCustomCostName] = useState("");
@@ -232,43 +285,6 @@ export function CrmTcoCalculatorApp({
     }
     return map;
   }, [snapshots, productOptions]);
-
-  useEffect(() => {
-    let next = loadCrmTcoSession() ?? createEmptyTcoSession();
-    const decision = loadCrmDecisionProfile();
-    setProfile(decision);
-
-    if (decision && (fromHint === "requirements" || fromHint === "scorecard")) {
-      next = sessionFromDecisionProfile(decision, next);
-    } else if (decision && next.scenarios[0]?.productIds.length === 0) {
-      next = sessionFromDecisionProfile(decision, next);
-    }
-
-    if (fromHint === "cost") {
-      const costDraft = readJson<{
-        crmUsers?: number;
-        billingPreference?: BillingPreference;
-        finderOrderSlugs?: string[];
-      }>(COST_STORAGE_KEY);
-      if (costDraft) {
-        next = applyCostCalculatorHandoff(next, {
-          crmUsers: costDraft.crmUsers,
-          billingPreference: costDraft.billingPreference,
-          productSlugs: costDraft.finderOrderSlugs,
-        });
-      }
-    }
-
-    // eslint-disable-next-line react-hooks/set-state-in-effect -- hydration
-    setSession(next);
-    if (next.wizardStepId && STAGES.some((s) => s.id === next.wizardStepId)) {
-      const restored = next.wizardStepId as StepId;
-      const restoredIndex = STAGES.findIndex((s) => s.id === restored);
-      setStep(restored);
-      setMaxStepIndex(Math.max(0, restoredIndex));
-    }
-    setHydrated(true);
-  }, [fromHint]);
 
   useEffect(() => {
     if (!hydrated) return;
@@ -1118,7 +1134,7 @@ function SoftwareStep({
                             ? scenario.negotiatedDiscountPercent > 0 ||
                               Boolean(scenario.planSelections[p.productId])
                               ? "calculated"
-                              : "verified"
+                              : "researched"
                             : "unknown"
                         }
                       />

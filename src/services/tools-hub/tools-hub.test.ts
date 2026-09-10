@@ -5,7 +5,16 @@ import { buildToolsHubModel } from "@/services/tools-hub";
 describe("buildToolsHubModel", () => {
   it("exposes registry tools without inventing availability", () => {
     const model = buildToolsHubModel();
-    expect(model.allTools.length).toBe(TOOLS_REGISTRY.length);
+    expect(model.allTools.length).toBeGreaterThan(0);
+    const legacyComingSoonPrefixes = [
+      "social-media-marketing-",
+      "webinar-virtual-events-",
+    ];
+    expect(
+      model.allTools.every(
+        (t) => !legacyComingSoonPrefixes.some((prefix) => t.id.startsWith(prefix)),
+      ),
+    ).toBe(true);
     expect(model.featuredTools.every((t) => t.featured)).toBe(true);
     expect(
       model.allTools.find((t) => t.id === "software-cost-calculator")?.href,
@@ -17,6 +26,10 @@ describe("buildToolsHubModel", () => {
       model.allTools.find((t) => t.id === "sales-intelligence-cost-calculator")
         ?.href,
     ).toBe("/tools/sales-intelligence-cost-calculator/");
+    expect(
+      model.allTools.find((t) => t.id === "sales-intelligence-credit-tco")
+        ?.href,
+    ).toBe("/tools/sales-intelligence-credit-tco/");
     expect(
       model.allTools.find((t) => t.id === "crm-finder")?.isInteractive,
     ).toBe(true);

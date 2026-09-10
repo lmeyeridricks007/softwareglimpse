@@ -1,4 +1,4 @@
-import type { GuidePage } from "@/domain";
+import type { GuidePageInput } from "@/domain";
 import type { z } from "zod";
 import type { GuideContentBlockSchema } from "@/domain";
 import { tier20GuideScheduledAt } from "@/data/config/publishing/tier-20-ai-writing-launch-2027-05-01";
@@ -34,7 +34,7 @@ const blocks: GuideBlockInput[] = [
   },
 ];
 
-function metadata(): GuidePage["metadata"] {
+function metadata(): GuidePageInput["metadata"] {
   return SCHEDULED_AT
     ? {
         status: "scheduled",
@@ -54,7 +54,7 @@ function metadata(): GuidePage["metadata"] {
       };
 }
 
-export const aiWritingPricingGuide: GuidePage = {
+export const aiWritingPricingGuide: GuidePageInput = {
   id: "guide-ai-writing-pricing-guide",
   slug: SLUG,
   title: "AI Writing Software Pricing Guide",
@@ -74,7 +74,7 @@ export const aiWritingPricingGuide: GuidePage = {
     "what-is-ai-writing-software",
     "how-to-choose-ai-writing-software",
   ],
-  blocks: blocks as GuidePage["blocks"],
+  blocks: blocks as GuidePageInput["blocks"],
   checklist: [],
   sections: [],
   faq: [],
@@ -84,7 +84,7 @@ export const aiWritingPricingGuide: GuidePage = {
     title: "AI Writing Software Pricing Guide",
     description:
       "Understand how AI writing tools price free tiers, Premium plans, and word limits.",
-    indexable: !SCHEDULED_AT,
+    indexable: true,
     canonicalPath: "/guides/ai-writing-pricing-guide/",
   },
 };

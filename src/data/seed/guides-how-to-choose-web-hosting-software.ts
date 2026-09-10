@@ -1,4 +1,4 @@
-import type { GuidePage } from "@/domain";
+import type { GuidePageInput } from "@/domain";
 import type { z } from "zod";
 import type { GuideContentBlockSchema } from "@/domain";
 import { tier29GuideScheduledAt } from "@/data/config/publishing/tier-29-web-hosting-launch-2027-08-01";
@@ -34,7 +34,7 @@ const blocks: GuideBlockInput[] = [
   },
 ];
 
-function metadata(): GuidePage["metadata"] {
+function metadata(): GuidePageInput["metadata"] {
   return SCHEDULED_AT
     ? {
         status: "scheduled",
@@ -54,7 +54,7 @@ function metadata(): GuidePage["metadata"] {
       };
 }
 
-export const howToChooseWebHostingSoftwareGuide: GuidePage = {
+export const howToChooseWebHostingSoftwareGuide: GuidePageInput = {
   id: "guide-how-to-choose-web-hosting-software",
   slug: SLUG,
   title: "How to Choose Web Hosting Software",
@@ -75,7 +75,7 @@ export const howToChooseWebHostingSoftwareGuide: GuidePage = {
     "web-hosting-evaluation-guide",
     "web-hosting-vs-it-development-software",
   ],
-  blocks: blocks as GuidePage["blocks"],
+  blocks: blocks as GuidePageInput["blocks"],
   checklist: [],
   sections: [],
   faq: [],
@@ -86,6 +86,6 @@ export const howToChooseWebHostingSoftwareGuide: GuidePage = {
     description:
       "Choose web hosting software by hosting job, edition limits, and server or site administration depth.",
     canonicalPath: `/guides/${SLUG}/`,
-    indexable: !SCHEDULED_AT,
+    indexable: true,
   },
 };

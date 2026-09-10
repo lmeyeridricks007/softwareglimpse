@@ -252,10 +252,10 @@ export function buildUseCaseWorkflowProductCompare(input: {
       ...(assessment?.strengths ?? [])
         .map((s) => (typeof s === "string" ? s : String(s)))
         .slice(0, 4),
-      ...(assessment?.limitations ?? [])
+      ...(assessment?.weaknesses ?? [])
         .map((s) => (typeof s === "string" ? s : String(s)))
         .slice(0, 2)
-        .map((l) => `Limitation: ${l}`),
+        .map((l: string) => `Limitation: ${l}`),
     ].filter(Boolean);
 
     return {

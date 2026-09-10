@@ -1,4 +1,4 @@
-import type { GuidePage } from "@/domain";
+import type { GuidePageInput } from "@/domain";
 import type { z } from "zod";
 import type { GuideContentBlockSchema } from "@/domain";
 
@@ -467,7 +467,7 @@ const whatIsCrmBlocks: GuideBlockInput[] = [
   },
 ];
 
-export const whatIsCrmGuide: GuidePage = {
+export const whatIsCrmGuide: GuidePageInput = {
   id: "guide-what-is-crm",
   slug: "what-is-crm",
   title: "What Is CRM Software? A Complete Beginner’s Guide",
@@ -523,7 +523,7 @@ export const whatIsCrmGuide: GuidePage = {
     "when-to-adopt-crm",
     "how-to-choose-crm",
   ],
-  blocks: whatIsCrmBlocks as GuidePage["blocks"],
+  blocks: whatIsCrmBlocks as GuidePageInput["blocks"],
   checklist: [
     {
       id: "contacts",

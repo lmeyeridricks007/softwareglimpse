@@ -1,0 +1,193 @@
+{
+  "slug": "apollo-setup",
+  "enrichmentType": "IMPLEMENTATION_GUIDE",
+  "updatedAt": "2026-09-08T16:55:58.195Z",
+  "uniqueValueAdded": [
+    "implementation_workflow",
+    "scenario_analysis",
+    "decision_framework",
+    "limitations_evidence",
+    "pricing_comparison",
+    "sg_original_data",
+    "buyer_checklist"
+  ],
+  "patch": {
+    "summary": "Apollo.io implementation guide: day-zero sequence, pilot rules, plan gates, and cutover checks from SoftwareGlimpse research — not generic CRM setup filler.",
+    "blocks": [
+      {
+        "id": "da-apollo-setup-1",
+        "type": "direct-answer",
+        "body": "Implement Apollo.io by mapping current sales-intelligence workflows to Apollo.io objects, confirming plan gates for email sequences (Basic, Professional, Enterprise), email tracking (Basic, Professional, Enterprise), sales automation (Basic, Professional, Enterprise), piloting one team, then cutting over integrations (Salesforce, HubSpot, Gmail) after data checks.",
+        "bullets": [
+          "Start with: contact management",
+          "Gate check: email sequences (Basic, Professional, Enterprise)",
+          "Integrate after: data quality pass on Salesforce"
+        ]
+      },
+      {
+        "id": "impl-apollo-setup-2",
+        "type": "step",
+        "heading": "Apollo.io day-zero to steady-state sequence",
+        "body": "Treat Apollo.io setup as a controlled rollout — not a weekend dump of CSV files.",
+        "stepNumber": 1,
+        "scenarios": [
+          {
+            "title": "Day zero — objects and owners",
+            "body": "Define owners for contact management, prospecting, data enrichment before inviting the whole org."
+          },
+          {
+            "title": "SMB pilot",
+            "body": "One pipeline / one team proves Outbound and growth sales teams before company-wide seats."
+          },
+          {
+            "title": "Cutover",
+            "body": "Freeze legacy writes briefly; validate Salesforce and HubSpot before reopen."
+          }
+        ]
+      },
+      {
+        "id": "df-apollo-setup-3",
+        "type": "decision-framework",
+        "title": "Apollo.io implementation go / no-go",
+        "steps": [
+          {
+            "id": "i-1",
+            "label": "Go when plan unlocks cover email sequences (Basic, Professional, Enterprise)"
+          },
+          {
+            "id": "i-2",
+            "label": "Pause if this limitation blocks ops: Not a pure CRM replacement for pipeline-first teams — deals are secondary to data/engagement."
+          },
+          {
+            "id": "i-3",
+            "label": "Do not expand seats until contact management is green"
+          }
+        ]
+      },
+      {
+        "id": "mist-apollo-setup-4",
+        "type": "mistakes",
+        "title": "Apollo.io implementation mistakes",
+        "items": [
+          {
+            "title": "Mistake 1",
+            "body": "Not a pure CRM replacement for pipeline-first teams — deals are secondary to data/engagement."
+          },
+          {
+            "title": "Mistake 2",
+            "body": "Credits and record-selection limits govern data usage; Unlimited plans subject to fair-use policy."
+          },
+          {
+            "title": "Mistake 3",
+            "body": "Seat + credit consumption can rise quickly for heavy outbound teams; Enterprise is custom quote."
+          },
+          {
+            "title": "Mistake 4",
+            "body": "Not a pipeline-first CRM"
+          },
+          {
+            "title": "Big-bang invite",
+            "body": "Inviting every user before object design creates junk data that is expensive to unwind."
+          }
+        ]
+      },
+      {
+        "id": "cost-apollo-setup-5",
+        "type": "cost-breakdown",
+        "title": "Apollo.io plan gates that affect rollout",
+        "body": "Implementation fails when unlocks needed for go-live sit on a higher tier than budgeted.",
+        "lines": [
+          {
+            "label": "Free",
+            "description": "Free plan · Unlocks: contact management, lead management, prospecting · Suits: explore before committing seats"
+          },
+          {
+            "label": "Basic",
+            "description": "Trial available · Unlocks: email sequences, email tracking, sales automation · Suits: teams whose must-have gates appear on this tier"
+          },
+          {
+            "label": "Professional",
+            "description": "Trial available · Suits: teams whose must-have gates appear on this tier"
+          },
+          {
+            "label": "Enterprise",
+            "description": "Trial available · Contact sales · Suits: teams that need custom procurement"
+          }
+        ]
+      },
+      {
+        "id": "sel-apollo-setup-6",
+        "type": "selection-checklist",
+        "title": "Apollo.io implementation checklist",
+        "dimensions": [
+          {
+            "id": "prep",
+            "label": "Prep",
+            "options": [
+              "Object model drafted",
+              "Owners named",
+              "Legacy freeze window set"
+            ]
+          },
+          {
+            "id": "pilot",
+            "label": "Pilot",
+            "options": [
+              "contact management",
+              "Junk-data rules set",
+              "Support path clear"
+            ]
+          },
+          {
+            "id": "scale",
+            "label": "Scale",
+            "options": [
+              "Salesforce",
+              "Seat expansion criteria written",
+              "Rollback plan noted"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "cta-apollo-setup-7",
+        "type": "interactive-cta",
+        "title": "Validate sales-intelligence fit before a deep Apollo.io rollout",
+        "body": "If Apollo.io fails constraint fit, stop implementation early.",
+        "href": "/tools/sales-intelligence-finder/",
+        "ctaLabel": "Open Finder",
+        "variant": "finder"
+      }
+    ],
+    "checklist": [
+      {
+        "id": "enrich-chk-0",
+        "label": "Draft Apollo.io object owners before invites",
+        "order": 0
+      },
+      {
+        "id": "enrich-chk-1",
+        "label": "Confirm plan unlocks for go-live features",
+        "order": 1
+      },
+      {
+        "id": "enrich-chk-2",
+        "label": "Pilot one team on contact management",
+        "order": 2
+      },
+      {
+        "id": "enrich-chk-3",
+        "label": "If blocked, evaluate Lusha before sunk-cost expansion",
+        "order": 3
+      }
+    ],
+    "nextAction": {
+      "contentId": "tool:finder:sales-intelligence",
+      "label": "Open Finder shortlist"
+    }
+  },
+  "notes": [
+    "Implementation: workflow, constraints, mistakes, checklist.",
+    "Type-specific skeleton: IMPLEMENTATION_GUIDE"
+  ]
+}

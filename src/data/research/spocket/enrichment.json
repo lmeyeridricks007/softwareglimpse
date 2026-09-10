@@ -185,36 +185,6 @@
       ]
     }
   ],
-  "aiCapabilities": [
-    {
-      "capability": "assistant",
-      "availability": "limited",
-      "sourceIds": [
-        "spocket-product-official"
-      ]
-    },
-    {
-      "capability": "summaries",
-      "availability": "limited",
-      "sourceIds": [
-        "spocket-product-official"
-      ]
-    },
-    {
-      "capability": "automation",
-      "availability": "limited",
-      "sourceIds": [
-        "spocket-product-official"
-      ]
-    },
-    {
-      "capability": "recommendations",
-      "availability": "limited",
-      "sourceIds": [
-        "spocket-product-official"
-      ]
-    }
-  ],
   "integrationSupport": [
     {
       "integrationSlug": "shopify",
@@ -247,6 +217,36 @@
     {
       "integrationSlug": "square",
       "kind": "native",
+      "sourceIds": [
+        "spocket-product-official"
+      ]
+    }
+  ],
+  "aiCapabilities": [
+    {
+      "capability": "assistant",
+      "availability": "limited",
+      "sourceIds": [
+        "spocket-product-official"
+      ]
+    },
+    {
+      "capability": "summaries",
+      "availability": "limited",
+      "sourceIds": [
+        "spocket-product-official"
+      ]
+    },
+    {
+      "capability": "automation",
+      "availability": "limited",
+      "sourceIds": [
+        "spocket-product-official"
+      ]
+    },
+    {
+      "capability": "recommendations",
+      "availability": "limited",
       "sourceIds": [
         "spocket-product-official"
       ]
@@ -322,103 +322,6 @@
       "isEditorial": false
     }
   ],
-  "pricing": {
-    "currency": "USD",
-    "model": "flat",
-    "hasFreePlan": false,
-    "hasFreeTrial": true,
-    "plans": [
-      {
-        "id": "plan-starter",
-        "slug": "starter",
-        "name": "Starter",
-        "isFree": false,
-        "contactSales": false,
-        "hasFreeTrial": true,
-        "trialDays": 7,
-        "highlighted": false,
-        "rules": [
-          {
-            "kind": "per-seat",
-            "amountPerSeat": 39.99,
-            "currency": "USD",
-            "interval": "month",
-            "amountPeriod": "month"
-          }
-        ],
-        "limits": {
-          "maxProducts": 25
-        }
-      },
-      {
-        "id": "plan-professional",
-        "slug": "professional",
-        "name": "Professional",
-        "isFree": false,
-        "contactSales": false,
-        "hasFreeTrial": true,
-        "trialDays": 7,
-        "highlighted": true,
-        "rules": [
-          {
-            "kind": "per-seat",
-            "amountPerSeat": 59.99,
-            "currency": "USD",
-            "interval": "month",
-            "amountPeriod": "month"
-          }
-        ],
-        "limits": {
-          "maxProducts": 250
-        }
-      },
-      {
-        "id": "plan-empire",
-        "slug": "empire",
-        "name": "Empire",
-        "isFree": false,
-        "contactSales": false,
-        "hasFreeTrial": true,
-        "trialDays": 7,
-        "highlighted": false,
-        "rules": [
-          {
-            "kind": "per-seat",
-            "amountPerSeat": 99.99,
-            "currency": "USD",
-            "interval": "month",
-            "amountPeriod": "month"
-          }
-        ]
-      },
-      {
-        "id": "plan-unicorn",
-        "slug": "unicorn",
-        "name": "Unicorn",
-        "isFree": false,
-        "contactSales": false,
-        "hasFreeTrial": true,
-        "trialDays": 7,
-        "highlighted": false,
-        "rules": [
-          {
-            "kind": "per-seat",
-            "amountPerSeat": 299.99,
-            "currency": "USD",
-            "interval": "month",
-            "amountPeriod": "month"
-          }
-        ]
-      }
-    ],
-    "notes": "Verified 2026-08-18 from spocket.co/pricing (high confidence). Product caps per tier; separate subscription per store for multi-store. Annual effective rates published (e.g. Pro ~$24/mo annual). Affiliate programme active (aff-spocket). Affiliate economics excluded from scoring.",
-    "verifiedAt": "2026-08-18T12:00:00.000Z",
-    "sourceIds": [
-      "spocket-pricing-official"
-    ],
-    "startingPriceMonthly": 39.99,
-    "trialDays": 7
-  },
   "screenshots": [
     {
       "id": "spocket-shot-spocket-image",
@@ -548,13 +451,13 @@
       "demonstratedDimensionIds": [],
       "requirementCriterionIds": [],
       "workflowStageIds": [],
+      "mediaContext": "general-workflow",
       "reportedOutcomes": [],
       "placements": [
         "overview",
         "features",
         "evidence"
       ],
-      "mediaContext": "general-workflow",
       "purpose": "Official Spocket video for product research pages",
       "demonstratesCaption": "How Spocket presents the product in an official vendor video.",
       "editorialCommentary": "Official vendor demo — treat as UI/workflow evidence, not SoftwareGlimpse scoring.",
@@ -572,11 +475,103 @@
       "status": "published"
     }
   ],
-  "sourceIds": [
-    "spocket-product-official",
-    "spocket-pricing-official"
-  ],
-  "notes": "Ecommerce Wave-1 onboarding enrichment from first-party research 2026-08-18T12:00:00.000Z. handsOnTesting=false. membershipRole=primary. jobCluster=dropshipping-sourcing.",
+  "pricing": {
+    "currency": "USD",
+    "model": "flat",
+    "hasFreePlan": false,
+    "hasFreeTrial": true,
+    "plans": [
+      {
+        "id": "plan-starter",
+        "slug": "starter",
+        "name": "Starter",
+        "isFree": false,
+        "contactSales": false,
+        "hasFreeTrial": true,
+        "trialDays": 7,
+        "highlighted": false,
+        "rules": [
+          {
+            "kind": "per-seat",
+            "amountPerSeat": 39.99,
+            "currency": "USD",
+            "interval": "month",
+            "amountPeriod": "month"
+          }
+        ],
+        "limits": {
+          "maxProducts": 25
+        }
+      },
+      {
+        "id": "plan-professional",
+        "slug": "professional",
+        "name": "Professional",
+        "isFree": false,
+        "contactSales": false,
+        "hasFreeTrial": true,
+        "trialDays": 7,
+        "highlighted": true,
+        "rules": [
+          {
+            "kind": "per-seat",
+            "amountPerSeat": 59.99,
+            "currency": "USD",
+            "interval": "month",
+            "amountPeriod": "month"
+          }
+        ],
+        "limits": {
+          "maxProducts": 250
+        }
+      },
+      {
+        "id": "plan-empire",
+        "slug": "empire",
+        "name": "Empire",
+        "isFree": false,
+        "contactSales": false,
+        "hasFreeTrial": true,
+        "trialDays": 7,
+        "highlighted": false,
+        "rules": [
+          {
+            "kind": "per-seat",
+            "amountPerSeat": 99.99,
+            "currency": "USD",
+            "interval": "month",
+            "amountPeriod": "month"
+          }
+        ]
+      },
+      {
+        "id": "plan-unicorn",
+        "slug": "unicorn",
+        "name": "Unicorn",
+        "isFree": false,
+        "contactSales": false,
+        "hasFreeTrial": true,
+        "trialDays": 7,
+        "highlighted": false,
+        "rules": [
+          {
+            "kind": "per-seat",
+            "amountPerSeat": 299.99,
+            "currency": "USD",
+            "interval": "month",
+            "amountPeriod": "month"
+          }
+        ]
+      }
+    ],
+    "notes": "Verified 2026-08-18 from spocket.co/pricing (high confidence). Product caps per tier; separate subscription per store for multi-store. Annual effective rates published (e.g. Pro ~$24/mo annual). Affiliate programme active (aff-spocket). Affiliate economics excluded from scoring.",
+    "verifiedAt": "2026-09-09T08:26:53.048Z",
+    "sourceIds": [
+      "spocket-pricing-official"
+    ],
+    "startingPriceMonthly": 39.99,
+    "trialDays": 7
+  },
   "domainCheckedAt": {
     "identity": "2026-08-18T12:00:00.000Z",
     "pricing": "2026-08-18T12:00:00.000Z",
@@ -590,5 +585,10 @@
     "limits": "2026-08-18T12:00:00.000Z",
     "security-compliance": "2026-08-18T12:00:00.000Z"
   },
-  "updatedAt": "2026-08-18T08:00:00.000Z"
+  "sourceIds": [
+    "spocket-product-official",
+    "spocket-pricing-official"
+  ],
+  "updatedAt": "2026-08-18T08:00:00.000Z",
+  "notes": "Ecommerce Wave-1 onboarding enrichment from first-party research 2026-08-18T12:00:00.000Z. handsOnTesting=false. membershipRole=primary. jobCluster=dropshipping-sourcing."
 }

@@ -1,4 +1,4 @@
-import type { GuidePage } from "@/domain";
+import type { GuidePageInput } from "@/domain";
 import { commonSalesIntelligenceMistakesGuide } from "./guides-common-sales-intelligence-mistakes";
 import { doINeedSalesIntelligenceGuide } from "./guides-do-i-need-sales-intelligence";
 import { howSalesIntelligenceWorksGuide } from "./guides-how-sales-intelligence-works";
@@ -38,7 +38,7 @@ import { whenToReplaceSalesIntelligenceGuide } from "./guides-when-to-replace-sa
  * Sales intelligence category educational guides (CRM-parity journey coverage).
  * Indexable — editorial gate passed 2026-08-17.
  */
-export const salesIntelligenceCategoryGuides: GuidePage[] = [
+export const salesIntelligenceCategoryGuides: GuidePageInput[] = [
   whatIsSalesIntelligenceGuide,
   howSalesIntelligenceWorksGuide,
   typesOfSalesIntelligenceGuide,

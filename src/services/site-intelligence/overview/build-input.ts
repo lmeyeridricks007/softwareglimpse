@@ -6,6 +6,7 @@ import type {
   TechnicalCheckInput,
   TechnicalFindingInput,
 } from "@/domain/schemas/site-intelligence";
+import { SiteIntelligenceInputSchema } from "@/domain/schemas/site-intelligence";
 import type { ContentQualityPageType } from "@/domain/schemas/content-quality";
 import { classifyPageImportance } from "@/services/content-quality/priority";
 import { TOOLS_REGISTRY } from "@/data/config/tools/registry";
@@ -227,8 +228,8 @@ export function buildEcosystemDimensions(input: {
   const thin = input.mapThin ?? 0;
   const covered = Math.max(0, total - missing);
   const coverageScore = Math.round((covered / total) * 100);
-  const thinPenalty = Math.min(35, thin * 1.2);
-  const pillarScore = Math.max(40, coverageScore - thinPenalty);
+  const thinPenalty = Math.min(35, Math.round(thin * 1.2));
+  const pillarScore = Math.round(Math.max(40, coverageScore - thinPenalty));
   const orphanScore = Math.max(50, 100 - (input.linkOrphans ?? 0) * 15);
   const depthScore = input.contentAvg ?? 75;
   const toolRel = Math.min(100, 50 + input.inventory.toolsAvailable * 7);
@@ -245,7 +246,7 @@ export function buildEcosystemDimensions(input: {
     },
     {
       id: "supporting-coverage",
-      score: Math.max(35, coverageScore - Math.round(thinPenalty * 0.8)),
+      score: Math.round(Math.max(35, coverageScore - Math.round(thinPenalty * 0.8))),
       reason: `Missing map rows=${missing}`,
     },
     {
@@ -321,7 +322,7 @@ export function buildSiteIntelligenceInputFromSources(input: {
         )
       : undefined;
 
-  return {
+  return SiteIntelligenceInputSchema.parse({
     evaluatedAt: input.evaluatedAt,
     scopeLabel: "website-overview:crm",
     technicalFindings: findingsFromSeoIssues(input.seoIssues),
@@ -377,5 +378,5 @@ export function buildSiteIntelligenceInputFromSources(input: {
         serpCompetitorStrengthInverse: 50,
       },
     ],
-  };
+  });
 }

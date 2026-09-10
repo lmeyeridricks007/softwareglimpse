@@ -28,7 +28,7 @@ export function renderRedirectManifestMarkdown(input: {
   );
   lines.push("");
   lines.push(
-    "> Permanent (301) redirects only. Low/medium confidence mappings are **excluded**. No homepage dumps. No middleware.",
+    "> Permanent (301) redirects only. Low/medium confidence mappings are **excluded**. No homepage dumps. Locale/taxonomy 410 + mapped locale 301s are enforced in `src/proxy.ts`.",
   );
   lines.push("");
   lines.push("## Policy");
@@ -112,7 +112,7 @@ export function renderRedirectManifestMarkdown(input: {
   );
   lines.push("");
   lines.push(
-    "Exact 410/404 paths are **not** emitted as Next redirects (Next cannot express 410 via `redirects()`). They simply have no 301 — platform/default 404 applies until explicit 410 handling is approved.",
+    "Exact 410/404 paths are enforced by `src/proxy.ts` (Gone / Not Found). They are **not** emitted as Next `redirects()` entries. Mapped locale 301s come from `config/legacy-locale-cutover.json` via the same Proxy.",
   );
   lines.push("");
 

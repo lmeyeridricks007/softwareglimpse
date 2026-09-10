@@ -1,0 +1,533 @@
+{
+  "slug": "incident-io",
+  "updatedAt": "2026-09-08T21:57:41.702Z",
+  "version": "1.0.0",
+  "fieldAudit": {
+    "slug": "incident-io",
+    "checkedAt": "2026-09-08T21:57:41.700Z",
+    "items": [
+      {
+        "field": "name",
+        "status": "PASS",
+        "detail": "Name: incident.io",
+        "source": "seed"
+      },
+      {
+        "field": "product_status",
+        "status": "PASS",
+        "detail": "productLifecycle=active",
+        "source": "seed"
+      },
+      {
+        "field": "canonical_vendor",
+        "status": "PASS",
+        "detail": "Vendor: incident.io Ltd",
+        "source": "seed"
+      },
+      {
+        "field": "category",
+        "status": "PASS",
+        "detail": "primaryCategorySlug=it-development",
+        "source": "seed"
+      },
+      {
+        "field": "description",
+        "status": "PASS",
+        "detail": "Description present (Incident response — Basic Free; Team $15/user/mo annual ($19 monthly); Pro $25/u…)",
+        "source": "seed"
+      },
+      {
+        "field": "target_audience",
+        "status": "PASS",
+        "detail": "Sizes=2, teams=2, assessment bestFor=3",
+        "source": "assessment"
+      },
+      {
+        "field": "use_cases",
+        "status": "PASS",
+        "detail": "useCaseSlugs=1",
+        "source": "seed"
+      },
+      {
+        "field": "capabilities",
+        "status": "PASS",
+        "detail": "featureRatings=0, enrichment features=16",
+        "source": "enrichment"
+      },
+      {
+        "field": "pricing",
+        "status": "PASS",
+        "detail": "Pricing envelope present",
+        "source": "enrichment"
+      },
+      {
+        "field": "plans",
+        "status": "PASS",
+        "detail": "plans=4",
+        "source": "enrichment"
+      },
+      {
+        "field": "free_plan",
+        "status": "PASS",
+        "detail": "Free plan documented",
+        "source": "enrichment"
+      },
+      {
+        "field": "trial",
+        "status": "UNKNOWN",
+        "detail": "Trial not explicitly documented — do not assume none",
+        "source": "none"
+      },
+      {
+        "field": "integrations",
+        "status": "PASS",
+        "detail": "integrationSlugs=0, enrichment=3",
+        "source": "enrichment"
+      },
+      {
+        "field": "alternatives",
+        "status": "PASS",
+        "detail": "alternativeSlugs=2",
+        "source": "seed"
+      },
+      {
+        "field": "competitors",
+        "status": "PASS",
+        "detail": "competitorSlugs=5",
+        "source": "seed"
+      },
+      {
+        "field": "affiliate",
+        "status": "PASS",
+        "detail": "No affiliate relationship (explicit)",
+        "source": "seed"
+      },
+      {
+        "field": "source_provenance",
+        "status": "PASS",
+        "detail": "seed sources=0, enrichment sourceIds=3",
+        "source": "enrichment"
+      },
+      {
+        "field": "verification_date",
+        "status": "PASS",
+        "detail": "Latest verification/research signal: 2026-08-18T20:00:00.000Z",
+        "source": "enrichment"
+      }
+    ],
+    "passCount": 17,
+    "partialCount": 0,
+    "missingCount": 0,
+    "unknownCount": 1,
+    "score": 94
+  },
+  "decisionHub": {
+    "whatItIs": "incident.io is an incident-response and command platform (incident.io Ltd) with optional on-call. Basic is Free. Team is $15/user/month billed annually ($19 monthly); Pro $25/user. On-call is an add-on at about +$10–$20/user. Enterprise custom. Same incident-oncall cluster as PagerDuty — PagerDuty remains the award (8.0); this entity does not outrank it. Distinct from Datadog/Sentry observability.",
+    "bestFor": [
+      "Teams that want incident command in Slack more than a paging-first ops cloud",
+      "Buyers who will add on-call only if needed",
+      "Product-led incident response versus PagerDuty Professional seats",
+      "small-business / engineering: incident.io fit for small-business engineering teams in the incident-oncall job cluster, from first-party positioning and IT industry Tier-A research.",
+      "mid-market / engineering: incident.io fit for mid-market engineering teams in the incident-oncall job cluster, from first-party positioning and IT industry Tier-A research."
+    ],
+    "notIdealFor": [
+      "Orgs whose primary job is PagerDuty-style on-call paging at enterprise scale",
+      "Sentry/Datadog observability purchases",
+      "ITSM ticket desks without incident command",
+      "On-call paging is an add-on (+$10–$20/user), not included in the $15 Team floor",
+      "Does not outrank PagerDuty (8.0) as the incident-oncall award",
+      "Not observability telemetry (Sentry/Datadog) — landscape vs those jobs"
+    ],
+    "coreCapabilities": [
+      "incident management",
+      "change problem",
+      "infrastructure monitoring",
+      "cicd actions",
+      "itsm ai",
+      "dev ai",
+      "enterprise security",
+      "analytics reporting"
+    ],
+    "pricingSummary": "4 documented plans · 1 free · entry paid: Team",
+    "keyTradeoffs": [
+      "On-call paging is an add-on (+$10–$20/user), not included in the $15 Team floor",
+      "Does not outrank PagerDuty (8.0) as the incident-oncall award",
+      "Not observability telemetry (Sentry/Datadog) — landscape vs those jobs",
+      "Not an ITSM CMDB (Jira Service Management / Freshservice)",
+      "Not managed hosting or a control panel"
+    ],
+    "alternatives": [
+      {
+        "slug": "pagerduty",
+        "name": "PagerDuty"
+      },
+      {
+        "slug": "jira-service-management",
+        "name": "Jira Service Management"
+      },
+      {
+        "slug": "firehydrant",
+        "name": "FireHydrant"
+      },
+      {
+        "slug": "rootly",
+        "name": "Rootly"
+      },
+      {
+        "slug": "squadcast",
+        "name": "SolarWinds Incident Response"
+      }
+    ],
+    "importantComparisons": [
+      {
+        "slug": "incident-io-vs-pagerduty",
+        "title": "incident.io vs PagerDuty",
+        "href": "/compare/incident-io-vs-pagerduty/"
+      },
+      {
+        "slug": "incident-io-vs-rootly",
+        "title": "incident.io vs Rootly",
+        "href": "/compare/incident-io-vs-rootly/"
+      },
+      {
+        "slug": "incident-io-vs-squadcast",
+        "title": "SolarWinds Incident Response vs incident.io",
+        "href": "/compare/incident-io-vs-squadcast/"
+      },
+      {
+        "slug": "apify-vs-incident-io",
+        "title": "Apify vs incident.io",
+        "href": "/compare/apify-vs-incident-io/"
+      },
+      {
+        "slug": "appdynamics-vs-incident-io",
+        "title": "AppDynamics vs incident.io",
+        "href": "/compare/appdynamics-vs-incident-io/"
+      },
+      {
+        "slug": "azure-devops-vs-incident-io",
+        "title": "Azure DevOps vs incident.io",
+        "href": "/compare/azure-devops-vs-incident-io/"
+      }
+    ],
+    "relevantGuides": [
+      {
+        "slug": "incident-io-implementation",
+        "title": "incident.io Implementation: 30/60/90 IT Rollout That Sticks",
+        "href": "/guides/incident-io-implementation/"
+      },
+      {
+        "slug": "incident-io-migration",
+        "title": "incident.io Migration: Move Tickets and Repos Without Losing Trust",
+        "href": "/guides/incident-io-migration/"
+      },
+      {
+        "slug": "incident-io-setup",
+        "title": "incident.io Setup: Day-Zero Path to a Working IT Loop",
+        "href": "/guides/incident-io-setup/"
+      },
+      {
+        "slug": "incident-io-plans",
+        "title": "incident.io Plans: Seats, Hosts, and Qualifying Tiers",
+        "href": "/guides/incident-io-plans/"
+      },
+      {
+        "slug": "is-incident-io-worth-it",
+        "title": "Is incident.io Worth It? Fit Scenarios Before You Buy",
+        "href": "/guides/is-incident-io-worth-it/"
+      }
+    ],
+    "evidenceState": "Research/data-based (no completed hands-on test) · Latest verification/research signal: 2026-08-18T20:00:00.000Z · Editorial assessment: approved",
+    "nextDecisionStep": "Compare against peers: incident.io vs PagerDuty",
+    "missingSections": [
+      "trial"
+    ]
+  },
+  "dependents": [
+    {
+      "kind": "guide",
+      "slug": "incident-io-implementation",
+      "path": "/guides/incident-io-implementation/"
+    },
+    {
+      "kind": "guide",
+      "slug": "incident-io-migration",
+      "path": "/guides/incident-io-migration/"
+    },
+    {
+      "kind": "guide",
+      "slug": "incident-io-setup",
+      "path": "/guides/incident-io-setup/"
+    },
+    {
+      "kind": "guide",
+      "slug": "incident-io-plans",
+      "path": "/guides/incident-io-plans/"
+    },
+    {
+      "kind": "guide",
+      "slug": "is-incident-io-worth-it",
+      "path": "/guides/is-incident-io-worth-it/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "incident-io-vs-pagerduty",
+      "path": "/compare/incident-io-vs-pagerduty/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "incident-io-vs-rootly",
+      "path": "/compare/incident-io-vs-rootly/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "incident-io-vs-squadcast",
+      "path": "/compare/incident-io-vs-squadcast/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "apify-vs-incident-io",
+      "path": "/compare/apify-vs-incident-io/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "appdynamics-vs-incident-io",
+      "path": "/compare/appdynamics-vs-incident-io/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "azure-devops-vs-incident-io",
+      "path": "/compare/azure-devops-vs-incident-io/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "bitbucket-vs-incident-io",
+      "path": "/compare/bitbucket-vs-incident-io/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "bmc-helix-vs-incident-io",
+      "path": "/compare/bmc-helix-vs-incident-io/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "bright-data-vs-incident-io",
+      "path": "/compare/bright-data-vs-incident-io/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "buildkite-vs-incident-io",
+      "path": "/compare/buildkite-vs-incident-io/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "chronosphere-vs-incident-io",
+      "path": "/compare/chronosphere-vs-incident-io/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "circleci-vs-incident-io",
+      "path": "/compare/circleci-vs-incident-io/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "cloudways-vs-incident-io",
+      "path": "/compare/cloudways-vs-incident-io/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "coralogix-vs-incident-io",
+      "path": "/compare/coralogix-vs-incident-io/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "cpanel-vs-incident-io",
+      "path": "/compare/cpanel-vs-incident-io/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "datadog-vs-incident-io",
+      "path": "/compare/datadog-vs-incident-io/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "directadmin-vs-incident-io",
+      "path": "/compare/directadmin-vs-incident-io/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "dynatrace-vs-incident-io",
+      "path": "/compare/dynatrace-vs-incident-io/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "elastic-observability-vs-incident-io",
+      "path": "/compare/elastic-observability-vs-incident-io/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "firehydrant-vs-incident-io",
+      "path": "/compare/firehydrant-vs-incident-io/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "fly-io-vs-incident-io",
+      "path": "/compare/fly-io-vs-incident-io/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "github-vs-incident-io",
+      "path": "/compare/github-vs-incident-io/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "gitlab-vs-incident-io",
+      "path": "/compare/gitlab-vs-incident-io/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "grafana-cloud-vs-incident-io",
+      "path": "/compare/grafana-cloud-vs-incident-io/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "haloitsm-vs-incident-io",
+      "path": "/compare/haloitsm-vs-incident-io/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "heroku-vs-incident-io",
+      "path": "/compare/heroku-vs-incident-io/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "honeycomb-vs-incident-io",
+      "path": "/compare/honeycomb-vs-incident-io/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "incident-io-vs-iproyal",
+      "path": "/compare/incident-io-vs-iproyal/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "incident-io-vs-ivanti",
+      "path": "/compare/incident-io-vs-ivanti/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "incident-io-vs-jira-service-management",
+      "path": "/compare/incident-io-vs-jira-service-management/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "incident-io-vs-kinsta",
+      "path": "/compare/incident-io-vs-kinsta/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "incident-io-vs-manageengine-servicedesk-plus",
+      "path": "/compare/incident-io-vs-manageengine-servicedesk-plus/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "incident-io-vs-new-relic",
+      "path": "/compare/incident-io-vs-new-relic/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "incident-io-vs-oxylabs",
+      "path": "/compare/incident-io-vs-oxylabs/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "incident-io-vs-railway",
+      "path": "/compare/incident-io-vs-railway/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "incident-io-vs-render",
+      "path": "/compare/incident-io-vs-render/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "incident-io-vs-scraperapi",
+      "path": "/compare/incident-io-vs-scraperapi/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "incident-io-vs-sentry",
+      "path": "/compare/incident-io-vs-sentry/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "incident-io-vs-servicenow",
+      "path": "/compare/incident-io-vs-servicenow/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "incident-io-vs-siteground",
+      "path": "/compare/incident-io-vs-siteground/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "incident-io-vs-smartproxy",
+      "path": "/compare/incident-io-vs-smartproxy/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "incident-io-vs-splunk",
+      "path": "/compare/incident-io-vs-splunk/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "incident-io-vs-sysaid",
+      "path": "/compare/incident-io-vs-sysaid/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "incident-io-vs-thordata",
+      "path": "/compare/incident-io-vs-thordata/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "incident-io-vs-topdesk",
+      "path": "/compare/incident-io-vs-topdesk/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "incident-io-vs-wp-engine",
+      "path": "/compare/incident-io-vs-wp-engine/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "incident-io-vs-zyte",
+      "path": "/compare/incident-io-vs-zyte/"
+    },
+    {
+      "kind": "alternatives",
+      "slug": "incident-io",
+      "path": "/alternatives/incident-io/"
+    },
+    {
+      "kind": "pricing",
+      "slug": "incident-io",
+      "path": "/software/incident-io/pricing/"
+    },
+    {
+      "kind": "tools",
+      "slug": "it-development-cost-calculator",
+      "path": "/tools/it-development-cost-calculator/"
+    }
+  ],
+  "dependentsNeedingRefresh": [],
+  "remediation": [
+    "verify:trial"
+  ],
+  "notes": [
+    "fieldAudit score=94",
+    "decisionHub bestFor=5 notIdeal=6",
+    "dependents=55"
+  ],
+  "materiallyImproved": true
+}

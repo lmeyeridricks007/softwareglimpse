@@ -1,0 +1,387 @@
+{
+  "slug": "salesforce-commerce-cloud",
+  "updatedAt": "2026-09-07T22:31:21.910Z",
+  "version": "1.0.0",
+  "fieldAudit": {
+    "slug": "salesforce-commerce-cloud",
+    "checkedAt": "2026-09-07T22:31:21.908Z",
+    "items": [
+      {
+        "field": "name",
+        "status": "PASS",
+        "detail": "Name: Salesforce Commerce Cloud",
+        "source": "seed"
+      },
+      {
+        "field": "product_status",
+        "status": "PASS",
+        "detail": "productLifecycle=active",
+        "source": "seed"
+      },
+      {
+        "field": "canonical_vendor",
+        "status": "UNKNOWN",
+        "detail": "Company/vendor not documented",
+        "source": "none"
+      },
+      {
+        "field": "category",
+        "status": "PASS",
+        "detail": "primaryCategorySlug=ecommerce",
+        "source": "seed"
+      },
+      {
+        "field": "description",
+        "status": "PASS",
+        "detail": "Description present (Salesforce B2C Commerce (ex-Demandware) — Growth/Plus/Premium are GMV-percent qu…)",
+        "source": "seed"
+      },
+      {
+        "field": "target_audience",
+        "status": "PASS",
+        "detail": "Sizes=2, teams=2, assessment bestFor=3",
+        "source": "assessment"
+      },
+      {
+        "field": "use_cases",
+        "status": "PASS",
+        "detail": "useCaseSlugs=3",
+        "source": "seed"
+      },
+      {
+        "field": "capabilities",
+        "status": "PASS",
+        "detail": "featureRatings=0, enrichment features=14",
+        "source": "enrichment"
+      },
+      {
+        "field": "pricing",
+        "status": "PASS",
+        "detail": "Pricing envelope present",
+        "source": "enrichment"
+      },
+      {
+        "field": "plans",
+        "status": "PASS",
+        "detail": "plans=3",
+        "source": "enrichment"
+      },
+      {
+        "field": "free_plan",
+        "status": "PASS",
+        "detail": "No free plan in documented plans (explicit absence)",
+        "source": "enrichment"
+      },
+      {
+        "field": "trial",
+        "status": "UNKNOWN",
+        "detail": "Trial not explicitly documented — do not assume none",
+        "source": "none"
+      },
+      {
+        "field": "integrations",
+        "status": "PASS",
+        "detail": "integrationSlugs=0, enrichment=4",
+        "source": "enrichment"
+      },
+      {
+        "field": "alternatives",
+        "status": "PASS",
+        "detail": "alternativeSlugs=3",
+        "source": "seed"
+      },
+      {
+        "field": "competitors",
+        "status": "PASS",
+        "detail": "competitorSlugs=3",
+        "source": "seed"
+      },
+      {
+        "field": "affiliate",
+        "status": "PASS",
+        "detail": "No affiliate relationship (explicit)",
+        "source": "seed"
+      },
+      {
+        "field": "source_provenance",
+        "status": "PASS",
+        "detail": "seed sources=0, enrichment sourceIds=2",
+        "source": "enrichment"
+      },
+      {
+        "field": "verification_date",
+        "status": "PASS",
+        "detail": "Latest verification/research signal: 2026-08-18T14:00:00.000Z",
+        "source": "enrichment"
+      }
+    ],
+    "passCount": 16,
+    "partialCount": 0,
+    "missingCount": 0,
+    "unknownCount": 2,
+    "score": 89
+  },
+  "decisionHub": {
+    "whatItIs": "Salesforce Commerce Cloud (B2C Commerce, formerly Demandware) is Salesforce’s enterprise hosted commerce suite for complex B2C/B2B storefronts, catalogs, and Marketing Cloud adjacency. Pricing is quote-only as a GMV percentage across Growth, Plus, and Premium — Salesforce does not publish a monthly list tile. Magento/Adobe Commerce is the open-source enterprise peer; SFCC is the Salesforce SaaS enterprise path. Research grounded 2026-08-18 from Salesforce commerce pricing pages. Landscape peer — does not displace Shopify as the SMB/mid-market SaaS award.",
+    "bestFor": [
+      "Mid-market and enterprise brands already on Salesforce",
+      "Complex B2C/B2B catalogs that need hosted enterprise commerce",
+      "Programmes with SI budget measured in months, not weekends",
+      "mid-market / operations: Salesforce Commerce Cloud fit for mid-market operations teams in the saas-platform job cluster, from first-party positioning and Ecommerce Priority-2 research.",
+      "enterprise / operations: Salesforce Commerce Cloud fit for enterprise operations teams in the saas-platform job cluster, from first-party positioning and Ecommerce Priority-2 research."
+    ],
+    "notIdealFor": [
+      "SMB founders wanting published monthly tiles",
+      "Teams without Salesforce gravity or integrator capacity",
+      "Open-source buyers who want Magento/Adobe Commerce code ownership",
+      "Pricing is opaque GMV-% — hard to compare without a Salesforce worksheet",
+      "Implementation is a multi-month SI programme, not a weekend theme install",
+      "TCO includes Salesforce ecosystem licenses beyond the commerce SKU"
+    ],
+    "coreCapabilities": [
+      "online storefront",
+      "product catalog",
+      "checkout payments",
+      "order management",
+      "inventory management",
+      "shipping fulfillment",
+      "marketplace channels",
+      "b2b wholesale"
+    ],
+    "pricingSummary": "3 documented plans · entry paid: Growth",
+    "keyTradeoffs": [
+      "Pricing is opaque GMV-% — hard to compare without a Salesforce worksheet",
+      "Implementation is a multi-month SI programme, not a weekend theme install",
+      "TCO includes Salesforce ecosystem licenses beyond the commerce SKU",
+      "Overkill for SMB catalogs that would be better on Shopify or BigCommerce",
+      "Composable enterprise commerce on Salesforce — B2C storefronts, catalogs, and customer data in one cloud. (audience: Mid-market and enterprise brands already on Salesforce, Complex B2C/B2B catalogs that need hosted enterprise commerce)"
+    ],
+    "alternatives": [
+      {
+        "slug": "magento",
+        "name": "Magento"
+      },
+      {
+        "slug": "shopify",
+        "name": "Shopify"
+      },
+      {
+        "slug": "bigcommerce",
+        "name": "BigCommerce"
+      }
+    ],
+    "importantComparisons": [
+      {
+        "slug": "magento-vs-salesforce-commerce-cloud",
+        "title": "Salesforce Commerce Cloud vs Magento",
+        "href": "/compare/magento-vs-salesforce-commerce-cloud/"
+      },
+      {
+        "slug": "commercetools-vs-salesforce-commerce-cloud",
+        "title": "commercetools vs Salesforce Commerce Cloud",
+        "href": "/compare/commercetools-vs-salesforce-commerce-cloud/"
+      },
+      {
+        "slug": "bigcommerce-vs-salesforce-commerce-cloud",
+        "title": "BigCommerce vs Salesforce Commerce Cloud",
+        "href": "/compare/bigcommerce-vs-salesforce-commerce-cloud/"
+      },
+      {
+        "slug": "ecwid-vs-salesforce-commerce-cloud",
+        "title": "Ecwid vs Salesforce Commerce Cloud",
+        "href": "/compare/ecwid-vs-salesforce-commerce-cloud/"
+      },
+      {
+        "slug": "lightspeed-retail-vs-salesforce-commerce-cloud",
+        "title": "Lightspeed Retail vs Salesforce Commerce Cloud",
+        "href": "/compare/lightspeed-retail-vs-salesforce-commerce-cloud/"
+      },
+      {
+        "slug": "medusa-vs-salesforce-commerce-cloud",
+        "title": "Medusa vs Salesforce Commerce Cloud",
+        "href": "/compare/medusa-vs-salesforce-commerce-cloud/"
+      }
+    ],
+    "relevantGuides": [
+      {
+        "slug": "salesforce-commerce-cloud-implementation",
+        "title": "Salesforce Commerce Cloud Implementation: 30/60/90 Store Rollout That Sticks",
+        "href": "/guides/salesforce-commerce-cloud-implementation/"
+      },
+      {
+        "slug": "salesforce-commerce-cloud-migration",
+        "title": "Salesforce Commerce Cloud Migration: Move Catalog & Order Data Without Losing Trust",
+        "href": "/guides/salesforce-commerce-cloud-migration/"
+      },
+      {
+        "slug": "salesforce-commerce-cloud-setup",
+        "title": "Salesforce Commerce Cloud Setup: Day-Zero Path to a Working Ecommerce Loop",
+        "href": "/guides/salesforce-commerce-cloud-setup/"
+      },
+      {
+        "slug": "salesforce-commerce-cloud-plans",
+        "title": "Salesforce Commerce Cloud Plans: Seats, Hubs, and Qualifying Tiers",
+        "href": "/guides/salesforce-commerce-cloud-plans/"
+      },
+      {
+        "slug": "is-salesforce-commerce-cloud-worth-it",
+        "title": "Is Salesforce Commerce Cloud Worth It? Fit Scenarios Before You Buy",
+        "href": "/guides/is-salesforce-commerce-cloud-worth-it/"
+      }
+    ],
+    "evidenceState": "Research/data-based (no completed hands-on test) · Latest verification/research signal: 2026-08-18T14:00:00.000Z · Editorial assessment: approved",
+    "nextDecisionStep": "Compare against peers: Salesforce Commerce Cloud vs Magento",
+    "missingSections": [
+      "canonical_vendor",
+      "trial"
+    ]
+  },
+  "dependents": [
+    {
+      "kind": "guide",
+      "slug": "salesforce-commerce-cloud-implementation",
+      "path": "/guides/salesforce-commerce-cloud-implementation/"
+    },
+    {
+      "kind": "guide",
+      "slug": "salesforce-commerce-cloud-migration",
+      "path": "/guides/salesforce-commerce-cloud-migration/"
+    },
+    {
+      "kind": "guide",
+      "slug": "salesforce-commerce-cloud-setup",
+      "path": "/guides/salesforce-commerce-cloud-setup/"
+    },
+    {
+      "kind": "guide",
+      "slug": "salesforce-commerce-cloud-plans",
+      "path": "/guides/salesforce-commerce-cloud-plans/"
+    },
+    {
+      "kind": "guide",
+      "slug": "is-salesforce-commerce-cloud-worth-it",
+      "path": "/guides/is-salesforce-commerce-cloud-worth-it/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "magento-vs-salesforce-commerce-cloud",
+      "path": "/compare/magento-vs-salesforce-commerce-cloud/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "commercetools-vs-salesforce-commerce-cloud",
+      "path": "/compare/commercetools-vs-salesforce-commerce-cloud/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "bigcommerce-vs-salesforce-commerce-cloud",
+      "path": "/compare/bigcommerce-vs-salesforce-commerce-cloud/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "ecwid-vs-salesforce-commerce-cloud",
+      "path": "/compare/ecwid-vs-salesforce-commerce-cloud/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "lightspeed-retail-vs-salesforce-commerce-cloud",
+      "path": "/compare/lightspeed-retail-vs-salesforce-commerce-cloud/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "medusa-vs-salesforce-commerce-cloud",
+      "path": "/compare/medusa-vs-salesforce-commerce-cloud/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "opencart-vs-salesforce-commerce-cloud",
+      "path": "/compare/opencart-vs-salesforce-commerce-cloud/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "prestashop-vs-salesforce-commerce-cloud",
+      "path": "/compare/prestashop-vs-salesforce-commerce-cloud/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "saleor-vs-salesforce-commerce-cloud",
+      "path": "/compare/saleor-vs-salesforce-commerce-cloud/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "salesforce-commerce-cloud-vs-sellfy",
+      "path": "/compare/salesforce-commerce-cloud-vs-sellfy/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "salesforce-commerce-cloud-vs-shopify",
+      "path": "/compare/salesforce-commerce-cloud-vs-shopify/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "salesforce-commerce-cloud-vs-shopware",
+      "path": "/compare/salesforce-commerce-cloud-vs-shopware/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "salesforce-commerce-cloud-vs-square-online",
+      "path": "/compare/salesforce-commerce-cloud-vs-square-online/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "salesforce-commerce-cloud-vs-squarespace",
+      "path": "/compare/salesforce-commerce-cloud-vs-squarespace/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "salesforce-commerce-cloud-vs-tiendanube",
+      "path": "/compare/salesforce-commerce-cloud-vs-tiendanube/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "salesforce-commerce-cloud-vs-vtex",
+      "path": "/compare/salesforce-commerce-cloud-vs-vtex/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "salesforce-commerce-cloud-vs-webflow",
+      "path": "/compare/salesforce-commerce-cloud-vs-webflow/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "salesforce-commerce-cloud-vs-wix",
+      "path": "/compare/salesforce-commerce-cloud-vs-wix/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "salesforce-commerce-cloud-vs-woocommerce",
+      "path": "/compare/salesforce-commerce-cloud-vs-woocommerce/"
+    },
+    {
+      "kind": "alternatives",
+      "slug": "salesforce-commerce-cloud",
+      "path": "/alternatives/salesforce-commerce-cloud/"
+    },
+    {
+      "kind": "pricing",
+      "slug": "salesforce-commerce-cloud",
+      "path": "/software/salesforce-commerce-cloud/pricing/"
+    },
+    {
+      "kind": "tools",
+      "slug": "ecommerce-cost-calculator",
+      "path": "/tools/ecommerce-cost-calculator/"
+    }
+  ],
+  "dependentsNeedingRefresh": [],
+  "remediation": [
+    "verify:canonical_vendor",
+    "verify:trial"
+  ],
+  "notes": [
+    "fieldAudit score=89",
+    "decisionHub bestFor=5 notIdeal=6",
+    "dependents=27"
+  ],
+  "materiallyImproved": false
+}

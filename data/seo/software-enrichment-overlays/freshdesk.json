@@ -1,0 +1,335 @@
+{
+  "slug": "freshdesk",
+  "updatedAt": "2026-09-07T22:31:21.735Z",
+  "version": "1.0.0",
+  "fieldAudit": {
+    "slug": "freshdesk",
+    "checkedAt": "2026-09-07T22:31:21.733Z",
+    "items": [
+      {
+        "field": "name",
+        "status": "PASS",
+        "detail": "Name: Freshdesk",
+        "source": "seed"
+      },
+      {
+        "field": "product_status",
+        "status": "PASS",
+        "detail": "productLifecycle=active",
+        "source": "seed"
+      },
+      {
+        "field": "canonical_vendor",
+        "status": "UNKNOWN",
+        "detail": "Company/vendor not documented",
+        "source": "none"
+      },
+      {
+        "field": "category",
+        "status": "PASS",
+        "detail": "primaryCategorySlug=helpdesk-ticketing",
+        "source": "seed"
+      },
+      {
+        "field": "description",
+        "status": "PASS",
+        "detail": "Description present (Helpdesk and omnichannel ticketing from Freshworks — Growth from $19/agent/mo an…)",
+        "source": "seed"
+      },
+      {
+        "field": "target_audience",
+        "status": "PASS",
+        "detail": "Sizes=3, teams=2, assessment bestFor=3",
+        "source": "assessment"
+      },
+      {
+        "field": "use_cases",
+        "status": "PASS",
+        "detail": "useCaseSlugs=2",
+        "source": "seed"
+      },
+      {
+        "field": "capabilities",
+        "status": "PASS",
+        "detail": "featureRatings=0, enrichment features=16",
+        "source": "enrichment"
+      },
+      {
+        "field": "pricing",
+        "status": "PASS",
+        "detail": "Pricing envelope present",
+        "source": "enrichment"
+      },
+      {
+        "field": "plans",
+        "status": "PASS",
+        "detail": "plans=3",
+        "source": "enrichment"
+      },
+      {
+        "field": "free_plan",
+        "status": "PASS",
+        "detail": "No free plan in documented plans (explicit absence)",
+        "source": "enrichment"
+      },
+      {
+        "field": "trial",
+        "status": "PASS",
+        "detail": "Trial documented on plans/pricing",
+        "source": "enrichment"
+      },
+      {
+        "field": "integrations",
+        "status": "PASS",
+        "detail": "integrationSlugs=0, enrichment=4",
+        "source": "enrichment"
+      },
+      {
+        "field": "alternatives",
+        "status": "PASS",
+        "detail": "alternativeSlugs=3",
+        "source": "seed"
+      },
+      {
+        "field": "competitors",
+        "status": "PASS",
+        "detail": "competitorSlugs=4",
+        "source": "seed"
+      },
+      {
+        "field": "affiliate",
+        "status": "PASS",
+        "detail": "No affiliate relationship (explicit)",
+        "source": "seed"
+      },
+      {
+        "field": "source_provenance",
+        "status": "PASS",
+        "detail": "seed sources=0, enrichment sourceIds=2",
+        "source": "enrichment"
+      },
+      {
+        "field": "verification_date",
+        "status": "PASS",
+        "detail": "Latest verification/research signal: 2026-08-18T12:00:00.000Z",
+        "source": "enrichment"
+      }
+    ],
+    "passCount": 17,
+    "partialCount": 0,
+    "missingCount": 0,
+    "unknownCount": 1,
+    "score": 94
+  },
+  "decisionHub": {
+    "whatItIs": "Freshdesk is Freshworks' helpdesk and omnichannel support platform for ticket queues, shared inboxes, SLAs, automations, and knowledge-base deflection. Annual per-agent pricing (USD): Growth $19, Pro $55, Enterprise $89 per agent/month billed annually. 14-day free trial on paid tiers. Part of the Freshworks suite alongside Freshchat and Freshservice — scored as helpdesk-ticketing primary.",
+    "bestFor": [
+      "SMB and mid-market teams needing a modern helpdesk with clear per-agent pricing",
+      "Freshworks customers wanting ticketing as the primary support job",
+      "Teams that need omnichannel inbox depth without Zendesk Suite pricing at the top",
+      "small-business / customer-success: Freshdesk fit for small-business customer-success teams in the helpdesk-ticketing job cluster, from first-party positioning and CS Wave-1 research.",
+      "mid-market / customer-success: Freshdesk fit for mid-market customer-success teams in the helpdesk-ticketing job cluster, from first-party positioning and CS Wave-1 research.",
+      "enterprise / customer-success: Freshdesk fit for enterprise customer-success teams in the helpdesk-ticketing job cluster, from first-party positioning and CS Wave-1 research."
+    ],
+    "notIdealFor": [
+      "ITIL-first ITSM buyers (Freshservice is the Freshworks ITSM SKU)",
+      "Live-chat-only teams that do not need full ticketing",
+      "Ecommerce stores needing order-native helpdesk depth (Gorgias is stronger there)",
+      "No published perpetual free plan — trial-only entry for paid tiers",
+      "Freshworks suite overlap can confuse buyers choosing Freshdesk vs Freshchat vs Freshservice",
+      "Advanced AI and omnichannel depth gated on higher tiers"
+    ],
+    "coreCapabilities": [
+      "ticketing",
+      "shared inbox",
+      "live chat",
+      "knowledge base",
+      "omnichannel inbox",
+      "sla routing",
+      "macros automation",
+      "self service portal"
+    ],
+    "pricingSummary": "3 documented plans · entry paid: Growth · trial documented on at least one plan",
+    "keyTradeoffs": [
+      "No published perpetual free plan — trial-only entry for paid tiers",
+      "Freshworks suite overlap can confuse buyers choosing Freshdesk vs Freshchat vs Freshservice",
+      "Advanced AI and omnichannel depth gated on higher tiers",
+      "Phone/voice often requires add-ons or Freshcaller",
+      "Modern helpdesk software to delight customers — unified ticketing, automation, and self-service without enterprise complexity. (audience: SMB and mid-market teams needing a modern helpdesk with clear per-agent pricing, Freshworks customers wanting ticketing as the primary support job)"
+    ],
+    "alternatives": [
+      {
+        "slug": "zendesk-suite",
+        "name": "Zendesk Suite"
+      },
+      {
+        "slug": "help-scout",
+        "name": "Help Scout"
+      },
+      {
+        "slug": "zoho-desk",
+        "name": "Zoho Desk"
+      },
+      {
+        "slug": "intercom",
+        "name": "Intercom"
+      }
+    ],
+    "importantComparisons": [
+      {
+        "slug": "freshdesk-vs-zendesk-suite",
+        "title": "Freshdesk vs Zendesk Suite",
+        "href": "/compare/freshdesk-vs-zendesk-suite/"
+      },
+      {
+        "slug": "freshdesk-vs-help-scout",
+        "title": "Freshdesk vs Help Scout",
+        "href": "/compare/freshdesk-vs-help-scout/"
+      },
+      {
+        "slug": "freshdesk-vs-zoho-desk",
+        "title": "Freshdesk vs Zoho Desk",
+        "href": "/compare/freshdesk-vs-zoho-desk/"
+      },
+      {
+        "slug": "freshdesk-vs-intercom",
+        "title": "Freshdesk vs Intercom",
+        "href": "/compare/freshdesk-vs-intercom/"
+      },
+      {
+        "slug": "freshdesk-vs-gorgias",
+        "title": "Gorgias vs Freshdesk",
+        "href": "/compare/freshdesk-vs-gorgias/"
+      }
+    ],
+    "relevantGuides": [
+      {
+        "slug": "how-helpdesk-ticketing-software-works",
+        "title": "How Helpdesk & Ticketing Software Works",
+        "href": "/guides/how-helpdesk-ticketing-software-works/"
+      },
+      {
+        "slug": "types-of-helpdesk-ticketing-software",
+        "title": "Types of Helpdesk & Ticketing Software",
+        "href": "/guides/types-of-helpdesk-ticketing-software/"
+      },
+      {
+        "slug": "helpdesk-ticketing-vs-customer-service-software",
+        "title": "Helpdesk & Ticketing Software vs Customer Service Software",
+        "href": "/guides/helpdesk-ticketing-vs-customer-service-software/"
+      },
+      {
+        "slug": "helpdesk-ticketing-requirements-guide",
+        "title": "Helpdesk & Ticketing Software Requirements Guide",
+        "href": "/guides/helpdesk-ticketing-requirements-guide/"
+      },
+      {
+        "slug": "helpdesk-ticketing-evaluation-guide",
+        "title": "Helpdesk & Ticketing Software Evaluation Guide",
+        "href": "/guides/helpdesk-ticketing-evaluation-guide/"
+      },
+      {
+        "slug": "what-is-freshdesk",
+        "title": "What Is Freshdesk?",
+        "href": "/guides/what-is-freshdesk/"
+      }
+    ],
+    "evidenceState": "Research/data-based (no completed hands-on test) · Latest verification/research signal: 2026-08-18T12:00:00.000Z · Editorial assessment: approved",
+    "nextDecisionStep": "Compare against peers: Freshdesk vs Zendesk Suite",
+    "missingSections": [
+      "canonical_vendor"
+    ]
+  },
+  "dependents": [
+    {
+      "kind": "guide",
+      "slug": "how-helpdesk-ticketing-software-works",
+      "path": "/guides/how-helpdesk-ticketing-software-works/"
+    },
+    {
+      "kind": "guide",
+      "slug": "types-of-helpdesk-ticketing-software",
+      "path": "/guides/types-of-helpdesk-ticketing-software/"
+    },
+    {
+      "kind": "guide",
+      "slug": "helpdesk-ticketing-vs-customer-service-software",
+      "path": "/guides/helpdesk-ticketing-vs-customer-service-software/"
+    },
+    {
+      "kind": "guide",
+      "slug": "helpdesk-ticketing-requirements-guide",
+      "path": "/guides/helpdesk-ticketing-requirements-guide/"
+    },
+    {
+      "kind": "guide",
+      "slug": "helpdesk-ticketing-evaluation-guide",
+      "path": "/guides/helpdesk-ticketing-evaluation-guide/"
+    },
+    {
+      "kind": "guide",
+      "slug": "what-is-freshdesk",
+      "path": "/guides/what-is-freshdesk/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "freshdesk-vs-zendesk-suite",
+      "path": "/compare/freshdesk-vs-zendesk-suite/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "freshdesk-vs-help-scout",
+      "path": "/compare/freshdesk-vs-help-scout/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "freshdesk-vs-zoho-desk",
+      "path": "/compare/freshdesk-vs-zoho-desk/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "freshdesk-vs-intercom",
+      "path": "/compare/freshdesk-vs-intercom/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "freshdesk-vs-gorgias",
+      "path": "/compare/freshdesk-vs-gorgias/"
+    },
+    {
+      "kind": "alternatives",
+      "slug": "freshdesk",
+      "path": "/alternatives/freshdesk/"
+    },
+    {
+      "kind": "pricing",
+      "slug": "freshdesk",
+      "path": "/software/freshdesk/pricing/"
+    },
+    {
+      "kind": "best",
+      "slug": "customer-service-software",
+      "path": "/best/customer-service-software/"
+    },
+    {
+      "kind": "best",
+      "slug": "helpdesk-ticketing-software",
+      "path": "/best/helpdesk-ticketing-software/"
+    },
+    {
+      "kind": "tools",
+      "slug": "helpdesk-ticketing-cost-calculator",
+      "path": "/tools/helpdesk-ticketing-cost-calculator/"
+    }
+  ],
+  "dependentsNeedingRefresh": [],
+  "remediation": [
+    "verify:canonical_vendor"
+  ],
+  "notes": [
+    "fieldAudit score=94",
+    "decisionHub bestFor=6 notIdeal=6",
+    "dependents=16"
+  ],
+  "materiallyImproved": false
+}

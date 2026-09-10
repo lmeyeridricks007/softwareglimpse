@@ -4,24 +4,69 @@
     "productSlug": "salesforce",
     "domain": "free-plan",
     "field": "pricing.hasFreePlan",
-    "value": false,
+    "value": true,
     "sourceIds": [
-      "salesforce-sales-cloud-pricing",
+      "salesforce-crm-pricing",
+      "salesforce-sales-cloud-pricing"
+    ],
+    "evidence": [
+      {
+        "sourceId": "salesforce-crm-pricing",
+        "excerpt": "Free Suite $0 USD/User/Month (2 user licenses included. No contract or credit card required.) — vendor CRM pricing checked 30 Aug 2026."
+      }
+    ],
+    "extractedAt": "2026-08-14T06:00:00.000Z",
+    "normalizedAt": "2026-08-30T12:00:00.000Z",
+    "verifiedAt": "2026-08-30T12:00:00.000Z",
+    "approvedAt": "2026-08-30T12:00:00.000Z",
+    "confidence": "high",
+    "status": "approved",
+    "isFixture": false
+  },
+  {
+    "id": "fact-salesforce-pricing.plans.free-suite",
+    "productSlug": "salesforce",
+    "domain": "plans",
+    "field": "pricing.plans.free-suite",
+    "value": {
+      "id": "plan-free-suite",
+      "slug": "free-suite",
+      "name": "Free Suite",
+      "isFree": true,
+      "contactSales": false,
+      "hasFreeTrial": false,
+      "highlighted": false,
+      "description": "2 user licenses included. No contract or credit card required.",
+      "limits": {
+        "userLicenses": 2
+      },
+      "rules": [
+        {
+          "kind": "per-seat",
+          "amountPerSeat": 0,
+          "currency": "USD",
+          "interval": "month",
+          "amountPeriod": "month"
+        }
+      ]
+    },
+    "sourceIds": [
       "salesforce-crm-pricing"
     ],
     "evidence": [
       {
-        "sourceId": "salesforce-sales-cloud-pricing",
-        "excerpt": "No permanent free CRM plan; Starter Suite is a paid edition at $25 USD/user/month."
+        "sourceId": "salesforce-crm-pricing",
+        "excerpt": "Free Suite: $0 USD/User/Month (2 user licenses included. No contract or credit card required.). Lead, Opportunity, and Customer Case Management; Assistive AI with Employee Agent."
       }
     ],
-    "extractedAt": "2026-08-14T06:00:00.000Z",
-    "normalizedAt": "2026-08-14T06:00:00.000Z",
-    "verifiedAt": "2026-08-14T06:00:00.000Z",
-    "approvedAt": "2026-08-14T06:00:00.000Z",
+    "extractedAt": "2026-08-30T12:00:00.000Z",
+    "normalizedAt": "2026-08-30T12:00:00.000Z",
+    "verifiedAt": "2026-08-30T12:00:00.000Z",
+    "approvedAt": "2026-08-30T12:00:00.000Z",
     "confidence": "high",
     "status": "approved",
-    "isFixture": false
+    "isFixture": false,
+    "notes": "USD list as published on salesforce.com/crm/pricing/ (checked 30 Aug 2026). Caps at 2 user licenses."
   },
   {
     "id": "fact-salesforce-pricing.hasFreeTrial",
@@ -61,16 +106,17 @@
     "evidence": [
       {
         "sourceId": "salesforce-sales-cloud-pricing",
-        "excerpt": "Starter Suite costs $25 USD per user, per month."
+        "excerpt": "Paid CRM ladder starts at Starter Suite $25 USD per user, per month; Free Suite is $0 with 2 user licenses (checked 30 Aug 2026)."
       }
     ],
     "extractedAt": "2026-08-14T06:00:00.000Z",
-    "normalizedAt": "2026-08-14T06:00:00.000Z",
-    "verifiedAt": "2026-08-14T06:00:00.000Z",
-    "approvedAt": "2026-08-14T06:00:00.000Z",
+    "normalizedAt": "2026-08-30T12:00:00.000Z",
+    "verifiedAt": "2026-08-30T12:00:00.000Z",
+    "approvedAt": "2026-08-30T12:00:00.000Z",
     "confidence": "high",
     "status": "approved",
-    "isFixture": false
+    "isFixture": false,
+    "notes": "startingPriceMonthly remains paid Starter Suite entry ($25). Free Suite is tracked separately via hasFreePlan / plans.free-suite."
   },
   {
     "id": "fact-salesforce-pricing.currency",
@@ -109,13 +155,13 @@
     "evidence": [
       {
         "sourceId": "salesforce-sales-cloud-pricing",
-        "excerpt": "Per-user/month subscription editions (Starter Suite, Pro Suite, Enterprise, Unlimited)."
+        "excerpt": "Per-user/month subscription editions (Free Suite, Starter Suite, Pro Suite, Enterprise, Unlimited)."
       }
     ],
     "extractedAt": "2026-08-14T06:00:00.000Z",
-    "normalizedAt": "2026-08-14T06:00:00.000Z",
-    "verifiedAt": "2026-08-14T06:00:00.000Z",
-    "approvedAt": "2026-08-14T06:00:00.000Z",
+    "normalizedAt": "2026-08-30T12:00:00.000Z",
+    "verifiedAt": "2026-08-30T12:00:00.000Z",
+    "approvedAt": "2026-08-30T12:00:00.000Z",
     "confidence": "high",
     "status": "approved",
     "isFixture": false
@@ -1129,6 +1175,39 @@
     "isFixture": false
   },
   {
+    "id": "fact-salesforce-ai.claudeforce",
+    "productSlug": "salesforce",
+    "domain": "ai-capabilities",
+    "field": "ai.claudeforce",
+    "value": {
+      "name": "Claudeforce",
+      "launchSurface": "Salesforce in Claude",
+      "prebuiltSalesSkills": 37,
+      "permissionsModel": "Actions inherit Salesforce permissions / business rules",
+      "availability": "pilot",
+      "openBetaExpected": "2026-09",
+      "listPricePublished": false,
+      "alongside": "Agentforce"
+    },
+    "sourceIds": [
+      "salesforce-claudeforce-pr-2026-08-26"
+    ],
+    "evidence": [
+      {
+        "sourceId": "salesforce-claudeforce-pr-2026-08-26",
+        "excerpt": "Claudeforce launches with Salesforce in Claude, a Plugin with 37 prebuilt sales skills. Actions route through Salesforce so business rules are enforced. Available to select pilot customers now; open beta expected September 2026. No list price on the press release. Claude remains available in Agentforce."
+      }
+    ],
+    "extractedAt": "2026-08-30T12:00:00.000Z",
+    "normalizedAt": "2026-08-30T12:00:00.000Z",
+    "verifiedAt": "2026-08-30T12:00:00.000Z",
+    "approvedAt": "2026-08-30T12:00:00.000Z",
+    "confidence": "high",
+    "status": "approved",
+    "isFixture": false,
+    "notes": "Do not invent Claudeforce packaging or seat pricing — PR publishes no list price."
+  },
+  {
     "id": "fact-salesforce-ai.forecasting",
     "productSlug": "salesforce",
     "domain": "ai-capabilities",
@@ -1217,22 +1296,24 @@
     "productSlug": "salesforce",
     "domain": "product-positioning",
     "field": "positioning.summary",
-    "value": "Salesforce Sales Cloud is an enterprise-grade sales CRM spanning Starter Suite through Unlimited, with deep customization, reporting, automation, ecosystem integrations, and Agentforce AI.",
+    "value": "Salesforce Sales Cloud is an enterprise-grade sales CRM spanning Free Suite through Unlimited, with deep customization, reporting, automation, ecosystem integrations, Agentforce AI, and Claudeforce (Salesforce in Claude) pilot messaging.",
     "sourceIds": [
       "salesforce-sales-cloud-product",
       "salesforce-crm-product",
-      "salesforce-sales-cloud-features"
+      "salesforce-sales-cloud-features",
+      "salesforce-crm-pricing",
+      "salesforce-claudeforce-pr-2026-08-26"
     ],
     "evidence": [
       {
         "sourceId": "salesforce-sales-cloud-product",
-        "excerpt": "Sales Cloud / CRM pages position Salesforce as the platform CRM for sales with edition ladder from Starter Suite to Unlimited and Agentforce."
+        "excerpt": "Sales Cloud / CRM pages position Salesforce as the platform CRM for sales with edition ladder from Free Suite / Starter Suite to Unlimited and Agentforce."
       }
     ],
     "extractedAt": "2026-08-14T06:00:00.000Z",
-    "normalizedAt": "2026-08-14T06:00:00.000Z",
-    "verifiedAt": "2026-08-14T06:00:00.000Z",
-    "approvedAt": "2026-08-14T06:00:00.000Z",
+    "normalizedAt": "2026-08-30T12:00:00.000Z",
+    "verifiedAt": "2026-08-30T12:00:00.000Z",
+    "approvedAt": "2026-08-30T12:00:00.000Z",
     "confidence": "high",
     "status": "approved",
     "isFixture": false

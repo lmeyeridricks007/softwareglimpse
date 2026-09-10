@@ -1,0 +1,417 @@
+{
+  "slug": "n8n",
+  "updatedAt": "2026-09-07T22:31:21.845Z",
+  "version": "1.0.0",
+  "fieldAudit": {
+    "slug": "n8n",
+    "checkedAt": "2026-09-07T22:31:21.844Z",
+    "items": [
+      {
+        "field": "name",
+        "status": "PASS",
+        "detail": "Name: n8n",
+        "source": "seed"
+      },
+      {
+        "field": "product_status",
+        "status": "PASS",
+        "detail": "productLifecycle=active",
+        "source": "seed"
+      },
+      {
+        "field": "canonical_vendor",
+        "status": "UNKNOWN",
+        "detail": "Company/vendor not documented",
+        "source": "none"
+      },
+      {
+        "field": "category",
+        "status": "PASS",
+        "detail": "primaryCategorySlug=ai",
+        "source": "seed"
+      },
+      {
+        "field": "description",
+        "status": "PASS",
+        "detail": "Description present (Workflow automation — Community self-host free; Cloud Starter €20/mo annual (2.5…)",
+        "source": "seed"
+      },
+      {
+        "field": "target_audience",
+        "status": "PASS",
+        "detail": "Sizes=4, teams=2, assessment bestFor=3",
+        "source": "assessment"
+      },
+      {
+        "field": "use_cases",
+        "status": "PASS",
+        "detail": "useCaseSlugs=1",
+        "source": "seed"
+      },
+      {
+        "field": "capabilities",
+        "status": "PASS",
+        "detail": "featureRatings=0, enrichment features=19",
+        "source": "enrichment"
+      },
+      {
+        "field": "pricing",
+        "status": "PASS",
+        "detail": "Pricing envelope present",
+        "source": "enrichment"
+      },
+      {
+        "field": "plans",
+        "status": "PASS",
+        "detail": "plans=5",
+        "source": "enrichment"
+      },
+      {
+        "field": "free_plan",
+        "status": "PASS",
+        "detail": "Free plan documented",
+        "source": "enrichment"
+      },
+      {
+        "field": "trial",
+        "status": "UNKNOWN",
+        "detail": "Trial not explicitly documented — do not assume none",
+        "source": "none"
+      },
+      {
+        "field": "integrations",
+        "status": "PASS",
+        "detail": "integrationSlugs=0, enrichment=2",
+        "source": "enrichment"
+      },
+      {
+        "field": "alternatives",
+        "status": "PASS",
+        "detail": "alternativeSlugs=2",
+        "source": "seed"
+      },
+      {
+        "field": "competitors",
+        "status": "PASS",
+        "detail": "competitorSlugs=2",
+        "source": "seed"
+      },
+      {
+        "field": "affiliate",
+        "status": "PASS",
+        "detail": "No affiliate relationship (explicit)",
+        "source": "seed"
+      },
+      {
+        "field": "source_provenance",
+        "status": "PASS",
+        "detail": "seed sources=0, enrichment sourceIds=3",
+        "source": "enrichment"
+      },
+      {
+        "field": "verification_date",
+        "status": "PASS",
+        "detail": "Latest verification/research signal: 2026-08-18T18:00:00.000Z",
+        "source": "enrichment"
+      }
+    ],
+    "passCount": 16,
+    "partialCount": 0,
+    "missingCount": 0,
+    "unknownCount": 2,
+    "score": 89
+  },
+  "decisionHub": {
+    "whatItIs": "n8n is a workflow-automation platform with a free Community Edition for self-host and a Cloud ladder priced in EUR. Cloud Starter is €20/mo billed annually (2,500 executions plus AI credits). Pro €50. Business €667. Enterprise quote. Same ai-automation cluster as Zapier — more self-host / execution-volume shaped, not an LLM-assistant peer of ChatGPT. MindStudio is landscape (ai-agents).",
+    "bestFor": [
+      "Teams that want Community self-host or EUR Cloud execution volume",
+      "Builders comfortable with a node graph instead of Zapier’s editor",
+      "Buyers who need automation overlay, not ChatGPT as the home screen",
+      "solo / engineering: n8n fit for solo engineering teams in the ai-automation job cluster, from first-party positioning and AI automation overlay research.",
+      "small-business / engineering: n8n fit for small-business engineering teams in the ai-automation job cluster, from first-party positioning and AI automation overlay research.",
+      "mid-market / engineering: n8n fit for mid-market engineering teams in the ai-automation job cluster, from first-party positioning and AI automation overlay research."
+    ],
+    "notIdealFor": [
+      "Non-technical teams that only want Zapier’s connector-first editor",
+      "Buyers who only need an LLM assistant (ChatGPT)",
+      "No-code AI agent studios as the primary job (MindStudio) — landscape only",
+      "Cloud prices are EUR — startingPriceMonthly 20 is the Starter euro floor, not a USD SKU",
+      "Community Edition is self-host ops work — not a hosted Free Zapier-style 100-task sandbox",
+      "Not a general LLM assistant (ChatGPT) and not MindStudio as the primary agent-builder job"
+    ],
+    "coreCapabilities": [
+      "custom projects",
+      "usage credits",
+      "connectors",
+      "data privacy",
+      "workflow automation",
+      "ai automation"
+    ],
+    "pricingSummary": "5 documented plans · 1 free · entry paid: Cloud Starter",
+    "keyTradeoffs": [
+      "Cloud prices are EUR — startingPriceMonthly 20 is the Starter euro floor, not a USD SKU",
+      "Community Edition is self-host ops work — not a hosted Free Zapier-style 100-task sandbox",
+      "Not a general LLM assistant (ChatGPT) and not MindStudio as the primary agent-builder job",
+      "Business €667 and Enterprise are a different buying motion than Starter €20",
+      "Execution + AI-credit math still dominates Cloud TCO"
+    ],
+    "alternatives": [
+      {
+        "slug": "zapier",
+        "name": "Zapier"
+      },
+      {
+        "slug": "mindstudio",
+        "name": "MindStudio"
+      }
+    ],
+    "importantComparisons": [
+      {
+        "slug": "n8n-vs-zapier",
+        "title": "Zapier vs n8n",
+        "href": "/compare/n8n-vs-zapier/"
+      },
+      {
+        "slug": "mindstudio-vs-n8n",
+        "title": "n8n vs MindStudio",
+        "href": "/compare/mindstudio-vs-n8n/"
+      },
+      {
+        "slug": "n8n-vs-turbotic",
+        "title": "Turbotic vs n8n",
+        "href": "/compare/n8n-vs-turbotic/"
+      },
+      {
+        "slug": "adcreative-ai-vs-n8n",
+        "title": "AdCreative.ai vs n8n",
+        "href": "/compare/adcreative-ai-vs-n8n/"
+      },
+      {
+        "slug": "adobe-firefly-vs-n8n",
+        "title": "Adobe Firefly vs n8n",
+        "href": "/compare/adobe-firefly-vs-n8n/"
+      },
+      {
+        "slug": "ai-intelekt-vs-n8n",
+        "title": "AI InteleKt vs n8n",
+        "href": "/compare/ai-intelekt-vs-n8n/"
+      }
+    ],
+    "relevantGuides": [
+      {
+        "slug": "n8n-implementation",
+        "title": "n8n Implementation: 30/60/90 AI Rollout That Sticks",
+        "href": "/guides/n8n-implementation/"
+      },
+      {
+        "slug": "n8n-migration",
+        "title": "n8n Migration: Move Projects Without Losing Context",
+        "href": "/guides/n8n-migration/"
+      },
+      {
+        "slug": "n8n-setup",
+        "title": "n8n Setup: Day-Zero Path to a Working AI Loop",
+        "href": "/guides/n8n-setup/"
+      },
+      {
+        "slug": "n8n-plans",
+        "title": "n8n Plans: Seats, Credits, and Qualifying Tiers",
+        "href": "/guides/n8n-plans/"
+      },
+      {
+        "slug": "is-n8n-worth-it",
+        "title": "Is n8n Worth It? Fit Scenarios Before You Buy",
+        "href": "/guides/is-n8n-worth-it/"
+      }
+    ],
+    "evidenceState": "Research/data-based (no completed hands-on test) · Latest verification/research signal: 2026-08-18T18:00:00.000Z · Editorial assessment: approved",
+    "nextDecisionStep": "Compare against peers: Zapier vs n8n",
+    "missingSections": [
+      "canonical_vendor",
+      "trial"
+    ]
+  },
+  "dependents": [
+    {
+      "kind": "guide",
+      "slug": "n8n-implementation",
+      "path": "/guides/n8n-implementation/"
+    },
+    {
+      "kind": "guide",
+      "slug": "n8n-migration",
+      "path": "/guides/n8n-migration/"
+    },
+    {
+      "kind": "guide",
+      "slug": "n8n-setup",
+      "path": "/guides/n8n-setup/"
+    },
+    {
+      "kind": "guide",
+      "slug": "n8n-plans",
+      "path": "/guides/n8n-plans/"
+    },
+    {
+      "kind": "guide",
+      "slug": "is-n8n-worth-it",
+      "path": "/guides/is-n8n-worth-it/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "n8n-vs-zapier",
+      "path": "/compare/n8n-vs-zapier/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "mindstudio-vs-n8n",
+      "path": "/compare/mindstudio-vs-n8n/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "n8n-vs-turbotic",
+      "path": "/compare/n8n-vs-turbotic/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "adcreative-ai-vs-n8n",
+      "path": "/compare/adcreative-ai-vs-n8n/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "adobe-firefly-vs-n8n",
+      "path": "/compare/adobe-firefly-vs-n8n/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "ai-intelekt-vs-n8n",
+      "path": "/compare/ai-intelekt-vs-n8n/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "aira-vs-n8n",
+      "path": "/compare/aira-vs-n8n/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "chatgpt-vs-n8n",
+      "path": "/compare/chatgpt-vs-n8n/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "claude-vs-n8n",
+      "path": "/compare/claude-vs-n8n/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "cursor-vs-n8n",
+      "path": "/compare/cursor-vs-n8n/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "elevenlabs-vs-n8n",
+      "path": "/compare/elevenlabs-vs-n8n/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "fireflies-vs-n8n",
+      "path": "/compare/fireflies-vs-n8n/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "gamma-vs-n8n",
+      "path": "/compare/gamma-vs-n8n/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "gemini-vs-n8n",
+      "path": "/compare/gemini-vs-n8n/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "github-copilot-vs-n8n",
+      "path": "/compare/github-copilot-vs-n8n/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "hynote-vs-n8n",
+      "path": "/compare/hynote-vs-n8n/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "microsoft-copilot-vs-n8n",
+      "path": "/compare/microsoft-copilot-vs-n8n/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "midjourney-vs-n8n",
+      "path": "/compare/midjourney-vs-n8n/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "n8n-vs-otter-ai",
+      "path": "/compare/n8n-vs-otter-ai/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "n8n-vs-perplexity",
+      "path": "/compare/n8n-vs-perplexity/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "n8n-vs-quillbot",
+      "path": "/compare/n8n-vs-quillbot/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "n8n-vs-rank-prompt",
+      "path": "/compare/n8n-vs-rank-prompt/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "n8n-vs-runway",
+      "path": "/compare/n8n-vs-runway/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "n8n-vs-synthesia",
+      "path": "/compare/n8n-vs-synthesia/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "n8n-vs-wegic",
+      "path": "/compare/n8n-vs-wegic/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "n8n-vs-writesonic",
+      "path": "/compare/n8n-vs-writesonic/"
+    },
+    {
+      "kind": "alternatives",
+      "slug": "n8n",
+      "path": "/alternatives/n8n/"
+    },
+    {
+      "kind": "pricing",
+      "slug": "n8n",
+      "path": "/software/n8n/pricing/"
+    },
+    {
+      "kind": "tools",
+      "slug": "ai-cost-calculator",
+      "path": "/tools/ai-cost-calculator/"
+    }
+  ],
+  "dependentsNeedingRefresh": [],
+  "remediation": [
+    "verify:canonical_vendor",
+    "verify:trial"
+  ],
+  "notes": [
+    "fieldAudit score=89",
+    "decisionHub bestFor=6 notIdeal=6",
+    "dependents=34"
+  ],
+  "materiallyImproved": false
+}

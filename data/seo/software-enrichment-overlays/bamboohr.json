@@ -1,0 +1,438 @@
+{
+  "slug": "bamboohr",
+  "updatedAt": "2026-09-09T18:11:24.940Z",
+  "version": "1.0.0",
+  "fieldAudit": {
+    "slug": "bamboohr",
+    "checkedAt": "2026-09-09T18:11:24.939Z",
+    "items": [
+      {
+        "field": "name",
+        "status": "PASS",
+        "detail": "Name: BambooHR",
+        "source": "seed"
+      },
+      {
+        "field": "product_status",
+        "status": "PASS",
+        "detail": "productLifecycle=active",
+        "source": "seed"
+      },
+      {
+        "field": "canonical_vendor",
+        "status": "PASS",
+        "detail": "Vendor: Bamboo HR LLC",
+        "source": "seed"
+      },
+      {
+        "field": "category",
+        "status": "PASS",
+        "detail": "primaryCategorySlug=hr",
+        "source": "seed"
+      },
+      {
+        "field": "description",
+        "status": "PASS",
+        "detail": "Description present (SMB/mid-market core HRIS with Core/Pro/Elite PEPM tiers — Core from $10/employee…)",
+        "source": "seed"
+      },
+      {
+        "field": "target_audience",
+        "status": "PASS",
+        "detail": "Sizes=2, teams=2, assessment bestFor=3",
+        "source": "assessment"
+      },
+      {
+        "field": "use_cases",
+        "status": "PASS",
+        "detail": "useCaseSlugs=2",
+        "source": "seed"
+      },
+      {
+        "field": "capabilities",
+        "status": "PASS",
+        "detail": "featureRatings=0, enrichment features=16",
+        "source": "enrichment"
+      },
+      {
+        "field": "pricing",
+        "status": "PASS",
+        "detail": "Pricing envelope present",
+        "source": "enrichment"
+      },
+      {
+        "field": "plans",
+        "status": "PASS",
+        "detail": "plans=4",
+        "source": "enrichment"
+      },
+      {
+        "field": "free_plan",
+        "status": "PASS",
+        "detail": "No free plan in documented plans (explicit absence)",
+        "source": "enrichment"
+      },
+      {
+        "field": "trial",
+        "status": "UNKNOWN",
+        "detail": "Trial not explicitly documented — do not assume none",
+        "source": "none"
+      },
+      {
+        "field": "integrations",
+        "status": "PASS",
+        "detail": "integrationSlugs=0, enrichment=3",
+        "source": "enrichment"
+      },
+      {
+        "field": "alternatives",
+        "status": "PASS",
+        "detail": "alternativeSlugs=3",
+        "source": "seed"
+      },
+      {
+        "field": "competitors",
+        "status": "PASS",
+        "detail": "competitorSlugs=4",
+        "source": "seed"
+      },
+      {
+        "field": "affiliate",
+        "status": "PASS",
+        "detail": "No affiliate relationship (explicit)",
+        "source": "seed"
+      },
+      {
+        "field": "source_provenance",
+        "status": "PASS",
+        "detail": "seed sources=0, enrichment sourceIds=2",
+        "source": "enrichment"
+      },
+      {
+        "field": "verification_date",
+        "status": "PASS",
+        "detail": "Latest verification/research signal: 2026-08-18T08:00:00.000Z",
+        "source": "enrichment"
+      }
+    ],
+    "passCount": 17,
+    "partialCount": 0,
+    "missingCount": 0,
+    "unknownCount": 1,
+    "score": 94
+  },
+  "decisionHub": {
+    "whatItIs": "BambooHR is a core HRIS for employee records, hiring/onboarding, PTO, performance, and employee experience. Published Core/Pro/Elite PEPM is $10 / $17 / $25 per employee/month above 25 employees; teams of 25 or fewer start from a $250/mo flat floor. US payroll, benefits admin, time & attendance, and global employment are add-ons. ATS job-opening caps scale by plan (5 / 25 / 50).",
+    "bestFor": [
+      "Small and mid-size teams that need a clean core HRIS as the employee system of record",
+      "US companies that may add payroll/benefits later rather than buying a payroll-first suite",
+      "Buyers who want published PEPM instead of fully opaque HCM quotes",
+      "small-business / operations: BambooHR fit for small-business operations teams in the hris-core job cluster, from first-party positioning and HR Priority-1 research.",
+      "mid-market / operations: BambooHR fit for mid-market operations teams in the hris-core job cluster, from first-party positioning and HR Priority-1 research."
+    ],
+    "notIdealFor": [
+      "High-volume recruiting teams whose primary job is a dedicated ATS",
+      "Frontline ops teams whose primary job is shift scheduling or GPS clock-in",
+      "Enterprises that need Workday/UKG-class HCM + financials",
+      "Payroll, benefits, time & attendance, and global employment are add-ons — Core PEPM is not full HCM TCO",
+      "Teams of 25 or fewer pay a $250/mo floor, so effective PEPM is far above $10",
+      "ATS job-opening caps (5 / 25 / 50) make it a light hiring module, not a Greenhouse-class ATS"
+    ],
+    "coreCapabilities": [
+      "applicant tracking",
+      "career site job boards",
+      "interview scheduling",
+      "core hris",
+      "sop knowledge base",
+      "employee training paths",
+      "hris integrations",
+      "analytics reporting"
+    ],
+    "pricingSummary": "4 documented plans · entry paid: Core",
+    "keyTradeoffs": [
+      "Payroll, benefits, time & attendance, and global employment are add-ons — Core PEPM is not full HCM TCO",
+      "Teams of 25 or fewer pay a $250/mo floor, so effective PEPM is far above $10",
+      "ATS job-opening caps (5 / 25 / 50) make it a light hiring module, not a Greenhouse-class ATS",
+      "US-centric payroll/benefits bundle; not an enterprise HCM (Workday/UKG) replacement",
+      "No published free plan; packaging is quote-assisted even with list PEPM"
+    ],
+    "alternatives": [
+      {
+        "slug": "rippling",
+        "name": "Rippling"
+      },
+      {
+        "slug": "gusto",
+        "name": "Gusto"
+      },
+      {
+        "slug": "greenhouse",
+        "name": "Greenhouse"
+      },
+      {
+        "slug": "hibob",
+        "name": "HiBob"
+      },
+      {
+        "slug": "personio",
+        "name": "Personio"
+      }
+    ],
+    "importantComparisons": [
+      {
+        "slug": "bamboohr-vs-rippling",
+        "title": "BambooHR vs Rippling",
+        "href": "/compare/bamboohr-vs-rippling/"
+      },
+      {
+        "slug": "bamboohr-vs-gusto",
+        "title": "BambooHR vs Gusto",
+        "href": "/compare/bamboohr-vs-gusto/"
+      },
+      {
+        "slug": "bamboohr-vs-breezy-hr",
+        "title": "Breezy HR vs BambooHR",
+        "href": "/compare/bamboohr-vs-breezy-hr/"
+      },
+      {
+        "slug": "bamboohr-vs-hibob",
+        "title": "BambooHR vs HiBob",
+        "href": "/compare/bamboohr-vs-hibob/"
+      },
+      {
+        "slug": "bamboohr-vs-navan",
+        "title": "BambooHR vs Navan",
+        "href": "/compare/bamboohr-vs-navan/"
+      },
+      {
+        "slug": "7shifts-vs-bamboohr",
+        "title": "7shifts vs BambooHR",
+        "href": "/compare/7shifts-vs-bamboohr/"
+      }
+    ],
+    "relevantGuides": [
+      {
+        "slug": "how-hr-software-works",
+        "title": "How HR Software Works",
+        "href": "/guides/how-hr-software-works/"
+      },
+      {
+        "slug": "types-of-hr-software",
+        "title": "Types of HR Software",
+        "href": "/guides/types-of-hr-software/"
+      },
+      {
+        "slug": "bamboohr-implementation",
+        "title": "BambooHR Implementation: 30/60/90 HR Rollout That Sticks",
+        "href": "/guides/bamboohr-implementation/"
+      },
+      {
+        "slug": "bamboohr-migration",
+        "title": "BambooHR Migration: Move People Data Without Losing Trust",
+        "href": "/guides/bamboohr-migration/"
+      },
+      {
+        "slug": "bamboohr-setup",
+        "title": "BambooHR Setup: Day-Zero Path to a Working HR Loop",
+        "href": "/guides/bamboohr-setup/"
+      },
+      {
+        "slug": "bamboohr-plans",
+        "title": "BambooHR Plans: Seats, Hubs, and Qualifying Tiers",
+        "href": "/guides/bamboohr-plans/"
+      }
+    ],
+    "evidenceState": "Research/data-based (no completed hands-on test) · Latest verification/research signal: 2026-08-18T08:00:00.000Z · Editorial assessment: approved",
+    "nextDecisionStep": "Compare against peers: BambooHR vs Rippling",
+    "missingSections": [
+      "trial"
+    ]
+  },
+  "dependents": [
+    {
+      "kind": "guide",
+      "slug": "how-hr-software-works",
+      "path": "/guides/how-hr-software-works/"
+    },
+    {
+      "kind": "guide",
+      "slug": "types-of-hr-software",
+      "path": "/guides/types-of-hr-software/"
+    },
+    {
+      "kind": "guide",
+      "slug": "bamboohr-implementation",
+      "path": "/guides/bamboohr-implementation/"
+    },
+    {
+      "kind": "guide",
+      "slug": "bamboohr-migration",
+      "path": "/guides/bamboohr-migration/"
+    },
+    {
+      "kind": "guide",
+      "slug": "bamboohr-setup",
+      "path": "/guides/bamboohr-setup/"
+    },
+    {
+      "kind": "guide",
+      "slug": "bamboohr-plans",
+      "path": "/guides/bamboohr-plans/"
+    },
+    {
+      "kind": "guide",
+      "slug": "is-bamboohr-worth-it",
+      "path": "/guides/is-bamboohr-worth-it/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "bamboohr-vs-rippling",
+      "path": "/compare/bamboohr-vs-rippling/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "bamboohr-vs-gusto",
+      "path": "/compare/bamboohr-vs-gusto/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "bamboohr-vs-breezy-hr",
+      "path": "/compare/bamboohr-vs-breezy-hr/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "bamboohr-vs-hibob",
+      "path": "/compare/bamboohr-vs-hibob/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "bamboohr-vs-navan",
+      "path": "/compare/bamboohr-vs-navan/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "7shifts-vs-bamboohr",
+      "path": "/compare/7shifts-vs-bamboohr/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "adp-workforce-now-vs-bamboohr",
+      "path": "/compare/adp-workforce-now-vs-bamboohr/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "ashby-vs-bamboohr",
+      "path": "/compare/ashby-vs-bamboohr/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "bamboohr-vs-bolt-for-business",
+      "path": "/compare/bamboohr-vs-bolt-for-business/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "bamboohr-vs-carepatron",
+      "path": "/compare/bamboohr-vs-carepatron/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "bamboohr-vs-dayforce",
+      "path": "/compare/bamboohr-vs-dayforce/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "bamboohr-vs-deputy",
+      "path": "/compare/bamboohr-vs-deputy/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "bamboohr-vs-greenhouse",
+      "path": "/compare/bamboohr-vs-greenhouse/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "bamboohr-vs-homebase",
+      "path": "/compare/bamboohr-vs-homebase/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "bamboohr-vs-lever",
+      "path": "/compare/bamboohr-vs-lever/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "bamboohr-vs-oracle-hcm",
+      "path": "/compare/bamboohr-vs-oracle-hcm/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "bamboohr-vs-paycor",
+      "path": "/compare/bamboohr-vs-paycor/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "bamboohr-vs-paylocity",
+      "path": "/compare/bamboohr-vs-paylocity/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "bamboohr-vs-personio",
+      "path": "/compare/bamboohr-vs-personio/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "bamboohr-vs-trainual",
+      "path": "/compare/bamboohr-vs-trainual/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "bamboohr-vs-ukg-pro",
+      "path": "/compare/bamboohr-vs-ukg-pro/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "bamboohr-vs-when-i-work",
+      "path": "/compare/bamboohr-vs-when-i-work/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "bamboohr-vs-workable",
+      "path": "/compare/bamboohr-vs-workable/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "bamboohr-vs-workday",
+      "path": "/compare/bamboohr-vs-workday/"
+    },
+    {
+      "kind": "alternatives",
+      "slug": "bamboohr",
+      "path": "/alternatives/bamboohr/"
+    },
+    {
+      "kind": "pricing",
+      "slug": "bamboohr",
+      "path": "/software/bamboohr/pricing/"
+    },
+    {
+      "kind": "best",
+      "slug": "hr-software",
+      "path": "/best/hr-software/"
+    },
+    {
+      "kind": "tools",
+      "slug": "hr-cost-calculator",
+      "path": "/tools/hr-cost-calculator/"
+    }
+  ],
+  "dependentsNeedingRefresh": [],
+  "remediation": [
+    "verify:trial"
+  ],
+  "notes": [
+    "fieldAudit score=94",
+    "decisionHub bestFor=5 notIdeal=6",
+    "dependents=35"
+  ],
+  "materiallyImproved": true
+}

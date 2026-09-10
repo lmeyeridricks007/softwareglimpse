@@ -396,8 +396,7 @@ export function classifyIndustryOfficialVideo(
   const nextType =
     input.mediaContext === "customer-case-study"
       ? ("official-customer-case-study" as const)
-      : input.media.type === "official-customer-case-study" &&
-          input.mediaContext !== "customer-case-study"
+      : input.media.type === "official-customer-case-study"
         ? ("official-video" as const)
         : input.media.type;
 
@@ -577,7 +576,7 @@ export function flagIndustryMediaHealth(
   let status = input.media.status;
   let sourceHealth = input.media.sourceHealth;
   let embeddingAllowed = input.media.embeddingAllowed;
-  let officialSource = input.media.officialSource;
+  const officialSource = input.media.officialSource;
 
   for (const flag of input.flags) {
     switch (flag) {

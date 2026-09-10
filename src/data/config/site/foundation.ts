@@ -33,13 +33,13 @@ export const siteFoundationConfig: SiteFoundationConfig =
     authors: [
       {
         id: "author-lee-meyeridricks",
-        name: "Lee M.",
+        name: "Lee Meyeridricks",
         slug: "lee-meyeridricks",
         role: "Founder",
         shortBio:
           "Founder of SoftwareGlimpse. Building a software decision platform that separates research, editorial judgment, and affiliate relationships — starting with CRM and sales tools.",
         fullBio:
-          "I’m Lee M., the founder of SoftwareGlimpse. I built the original site as a more conventional review/affiliate publication, then decided that model wasn’t good enough for people who need to choose software carefully. SoftwareGlimpse is being rebuilt as a decision platform: structured research, category methodologies, comparisons, pricing tools, and recommendations that do not use commission as a ranking input. I care about transparent sourcing, clear disclosures, and saying when we have not hands-on tested a product. This biography does not invent employers, years of experience, or product-testing claims beyond what is documented for the site.",
+          "I’m Lee Meyeridricks, the founder of SoftwareGlimpse. I built the original site as a more conventional review/affiliate publication, then decided that model wasn’t good enough for people who need to choose software carefully. SoftwareGlimpse is being rebuilt as a decision platform: structured research, category methodologies, comparisons, pricing tools, and recommendations that do not use commission as a ranking input. I care about transparent sourcing, clear disclosures, and saying when we have not hands-on tested a product. This biography does not invent employers, years of experience, or product-testing claims beyond what is documented for the site.",
         expertise: [
           "Software buying research workflows",
           "CRM and sales software evaluation frameworks",
@@ -700,13 +700,121 @@ export const siteFoundationConfig: SiteFoundationConfig =
         ],
       },
       {
+        id: "editorial-policy",
+        slug: "editorial-policy",
+        path: "/legal/editorial-policy/",
+        title: "Editorial Policy",
+        summary:
+          "SoftwareGlimpse editorial standards: authorship, evidence levels, scoring, AI assistance, disclosures, and corrections.",
+        status: "approved",
+        version: "1.0.0",
+        effectiveAt: "2026-09-06",
+        lastUpdatedAt: "2026-09-06",
+        approvedAt: "2026-09-06",
+        indexable: true,
+        sections: [
+          {
+            id: "purpose",
+            heading: "Purpose",
+            body: "SoftwareGlimpse publishes software buying intelligence: structured product pages, comparisons, guides, and decision tools. This policy sets editorial standards so readers can tell researched coverage from data verification and from hands-on testing — and so commercial relationships never silently buy rankings.",
+          },
+          {
+            id: "authorship",
+            heading: "Authorship and attribution",
+            body: "We only attribute named authors who are configured in the site foundation. We do not invent staff, fake credentials, employers, or years of experience. When a distinct reviewer is recorded in metadata, we may show Reviewed by; otherwise we do not invent a second reviewer.",
+          },
+          {
+            id: "evidence-levels",
+            heading: "Evidence levels",
+            body: "Public pages may show Research-based review, Data verified, or Hands-on tested. These levels are resolved from structured metadata (research dates, pricing verification timestamps, hands-on flags with test dates). AI or content-pipeline processing alone never elevates a product to Hands-on tested.",
+          },
+          {
+            id: "no-fake-testing",
+            heading: "No fabricated testing or scores",
+            body: "We do not claim first-hand experience unless hands-on testing metadata supports it. We do not fabricate product scores, review dates, AggregateRating markup, or historical score series. Scores shown publicly must be traceable to approved criterion assessments with rationales.",
+          },
+          {
+            id: "scoring",
+            heading: "Scoring",
+            body: "Category methodologies define criteria and weights. Overall scores, when published, are weighted from those criteria. Affiliate status is not a scoring input. Provisional auto-mapped scores (fixture demos) stay low-confidence and are not presented as finished editorial judgments.",
+          },
+          {
+            id: "ai",
+            heading: "AI assistance",
+            body: "AI may draft from approved research facts and assessments. Humans approve publishable editorial judgments. AI must not invent live prices, fake testing, unsupported credentials, or schema.org Review/AggregateRating claims.",
+          },
+          {
+            id: "affiliates",
+            heading: "Affiliate relationships",
+            body: "Some links may be affiliate links. Affiliate availability does not determine editorial rankings, product scores, Best-page order, comparison conclusions, or Finder outcomes. See the Affiliate Disclosure and Editorial Independence pages.",
+          },
+          {
+            id: "corrections",
+            heading: "Corrections",
+            body: "Readers can report errors via Contact → Correction. Material corrections update the affected page and its last-updated metadata. See the Corrections Policy.",
+          },
+          {
+            id: "related",
+            heading: "Related pages",
+            body: "How we review software (plain-language workflow), Editorial methodology (live category criteria), Editorial independence, Affiliate disclosure, Corrections policy, About, and Contact.",
+          },
+        ],
+      },
+      {
+        id: "corrections-policy",
+        slug: "corrections-policy",
+        path: "/legal/corrections-policy/",
+        title: "Corrections Policy",
+        summary:
+          "How to report errors on SoftwareGlimpse and how we investigate, correct, and update published content.",
+        status: "approved",
+        version: "1.0.0",
+        effectiveAt: "2026-09-06",
+        lastUpdatedAt: "2026-09-06",
+        approvedAt: "2026-09-06",
+        indexable: true,
+        sections: [
+          {
+            id: "what-to-report",
+            heading: "What to report",
+            body: "Report factual errors, outdated pricing, broken product claims, missing disclosures, misleading evidence-level wording (for example, implying hands-on testing when none is recorded), or other material inaccuracies. Include the page URL and what looks wrong.",
+          },
+          {
+            id: "how-to-report",
+            heading: "How to report",
+            body: "Use Contact and choose Correction, or email info@softwareglimpse.com with the URL and a short description. Privacy-related requests should use privacy@softwareglimpse.com or Contact → Privacy.",
+          },
+          {
+            id: "investigation",
+            heading: "Investigation",
+            body: "We review the report against research sources, editorial assessments, and publishing metadata. Vendor materials and primary sources take precedence over secondary summaries when they conflict.",
+          },
+          {
+            id: "outcomes",
+            heading: "Outcomes",
+            body: "If we confirm an error, we update the page, research or editorial records as needed, and refresh last-updated (and pricing-verified or testing timestamps when those fields change). If we cannot confirm the issue, we may ask for more detail or leave the page unchanged.",
+          },
+          {
+            id: "timing",
+            heading: "Timing",
+            body: "We aim to acknowledge correction reports within a few business days and to ship material fixes as soon as verified. Complex catalogue or methodology changes may take longer than a simple typo fix.",
+          },
+          {
+            id: "transparency",
+            heading: "Transparency",
+            body: "We do not fabricate a public correction log entry for every minor typo. Material changes that affect recommendations, scores, pricing, or evidence level should be visible via updated page content and dates.",
+          },
+        ],
+      },
+      {
         id: "editorial-independence",
         slug: "editorial-independence",
         path: "/legal/editorial-independence/",
         title: "Editorial Independence",
-        status: "draft",
-        version: "0.2.0",
-        lastUpdatedAt: "2026-08-13",
+        status: "approved",
+        version: "0.3.0",
+        lastUpdatedAt: "2026-09-06",
+        approvedAt: "2026-09-06",
         indexable: true,
         sections: [
           {

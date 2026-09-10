@@ -1,0 +1,465 @@
+{
+  "slug": "dialpad",
+  "updatedAt": "2026-09-07T22:31:21.408Z",
+  "version": "1.0.0",
+  "fieldAudit": {
+    "slug": "dialpad",
+    "checkedAt": "2026-09-07T22:31:21.405Z",
+    "items": [
+      {
+        "field": "name",
+        "status": "PASS",
+        "detail": "Name: Dialpad",
+        "source": "seed"
+      },
+      {
+        "field": "product_status",
+        "status": "PASS",
+        "detail": "productLifecycle=active",
+        "source": "seed"
+      },
+      {
+        "field": "canonical_vendor",
+        "status": "UNKNOWN",
+        "detail": "Company/vendor not documented",
+        "source": "none"
+      },
+      {
+        "field": "category",
+        "status": "PASS",
+        "detail": "primaryCategorySlug=business-communications",
+        "source": "seed"
+      },
+      {
+        "field": "description",
+        "status": "PASS",
+        "detail": "Description present (AI-first cloud phone (Dialpad Connect) with included transcription/summaries — S…)",
+        "source": "seed"
+      },
+      {
+        "field": "target_audience",
+        "status": "PASS",
+        "detail": "Sizes=3, teams=3, assessment bestFor=3",
+        "source": "assessment"
+      },
+      {
+        "field": "use_cases",
+        "status": "PASS",
+        "detail": "useCaseSlugs=3",
+        "source": "seed"
+      },
+      {
+        "field": "capabilities",
+        "status": "PASS",
+        "detail": "featureRatings=0, enrichment features=13",
+        "source": "enrichment"
+      },
+      {
+        "field": "pricing",
+        "status": "PASS",
+        "detail": "Pricing envelope present",
+        "source": "enrichment"
+      },
+      {
+        "field": "plans",
+        "status": "PASS",
+        "detail": "plans=5",
+        "source": "enrichment"
+      },
+      {
+        "field": "free_plan",
+        "status": "PASS",
+        "detail": "No free plan in documented plans (explicit absence)",
+        "source": "enrichment"
+      },
+      {
+        "field": "trial",
+        "status": "PASS",
+        "detail": "Trial documented on plans/pricing",
+        "source": "enrichment"
+      },
+      {
+        "field": "integrations",
+        "status": "PASS",
+        "detail": "integrationSlugs=0, enrichment=7",
+        "source": "enrichment"
+      },
+      {
+        "field": "alternatives",
+        "status": "PASS",
+        "detail": "alternativeSlugs=4",
+        "source": "seed"
+      },
+      {
+        "field": "competitors",
+        "status": "PASS",
+        "detail": "competitorSlugs=4",
+        "source": "seed"
+      },
+      {
+        "field": "affiliate",
+        "status": "PASS",
+        "detail": "No affiliate relationship (explicit)",
+        "source": "seed"
+      },
+      {
+        "field": "source_provenance",
+        "status": "PASS",
+        "detail": "seed sources=0, enrichment sourceIds=4",
+        "source": "enrichment"
+      },
+      {
+        "field": "verification_date",
+        "status": "PASS",
+        "detail": "Latest verification/research signal: 2026-08-17T12:00:00.000Z",
+        "source": "enrichment"
+      }
+    ],
+    "passCount": 17,
+    "partialCount": 0,
+    "missingCount": 0,
+    "unknownCount": 1,
+    "score": 94
+  },
+  "decisionHub": {
+    "whatItIs": "Dialpad is an AI-centred business communications platform. Dialpad Connect is the core cloud phone scored here (Standard $15, Pro $25 annual per user/month; Enterprise custom). Support (~$80+) and Sell (~$39+) are separate products and are not treated as the Connect entry floor. AI transcription and summaries are included on Connect; power dialer depth lives on Sell, and stronger CRM/CTI starts on Pro+.",
+    "bestFor": [
+      "Teams that want AI transcription and call summaries included in the cloud phone licence",
+      "SMB and mid-market buyers starting on Connect Standard at a clear $15 annual floor",
+      "Sales orgs willing to add Dialpad Sell when power dialer becomes the primary job",
+      "small-business / sales: Dialpad fit for small-business sales teams in the cloud-phone job cluster, from first-party positioning and business-communications Priority-1 research.",
+      "mid-market / sales: Dialpad fit for mid-market sales teams in the cloud-phone job cluster, from first-party positioning and business-communications Priority-1 research.",
+      "enterprise / sales: Dialpad fit for enterprise sales teams in the cloud-phone job cluster, from first-party positioning and business-communications Priority-1 research."
+    ],
+    "notIdealFor": [
+      "Buyers who need power dialer on the cheapest Connect seat",
+      "Enterprises that want one quoted UCaaS+contact-centre bundle without product-tab shopping",
+      "Teams whose only need is Slack-style team chat",
+      "Pricing page is product-tab heavy — Connect vs Support vs Sell can confuse buyers comparing a single seat price",
+      "Connect Pro has a 3-user minimum; Enterprise requires 100 users",
+      "Power dialer depth requires Dialpad Sell, not Connect Standard"
+    ],
+    "coreCapabilities": [
+      "cloud phone",
+      "call routing",
+      "call recording",
+      "sms messaging",
+      "team messaging",
+      "video meetings",
+      "analytics reporting",
+      "ai assistance"
+    ],
+    "pricingSummary": "5 documented plans · entry paid: Connect Standard · trial documented on at least one plan",
+    "keyTradeoffs": [
+      "Pricing page is product-tab heavy — Connect vs Support vs Sell can confuse buyers comparing a single seat price",
+      "Connect Pro has a 3-user minimum; Enterprise requires 100 users",
+      "Power dialer depth requires Dialpad Sell, not Connect Standard",
+      "Stronger CRM/CTI is Pro+ gated",
+      "WhatsApp Business and shared/unified inbox are limited versus messaging platforms"
+    ],
+    "alternatives": [
+      {
+        "slug": "ringcentral",
+        "name": "RingCentral"
+      },
+      {
+        "slug": "aircall",
+        "name": "Aircall"
+      },
+      {
+        "slug": "zoom",
+        "name": "Zoom"
+      },
+      {
+        "slug": "nextiva",
+        "name": "Nextiva"
+      }
+    ],
+    "importantComparisons": [
+      {
+        "slug": "dialpad-vs-ringcentral",
+        "title": "Dialpad vs RingCentral",
+        "href": "/compare/dialpad-vs-ringcentral/"
+      },
+      {
+        "slug": "aircall-vs-dialpad",
+        "title": "Aircall vs Dialpad",
+        "href": "/compare/aircall-vs-dialpad/"
+      },
+      {
+        "slug": "dialpad-vs-eightx8",
+        "title": "Dialpad vs 8x8",
+        "href": "/compare/dialpad-vs-eightx8/"
+      },
+      {
+        "slug": "dialpad-vs-fastmail",
+        "title": "Dialpad vs Fastmail",
+        "href": "/compare/dialpad-vs-fastmail/"
+      },
+      {
+        "slug": "dialpad-vs-five9",
+        "title": "Dialpad vs Five9",
+        "href": "/compare/dialpad-vs-five9/"
+      },
+      {
+        "slug": "dialpad-vs-genesys",
+        "title": "Dialpad vs Genesys",
+        "href": "/compare/dialpad-vs-genesys/"
+      }
+    ],
+    "relevantGuides": [
+      {
+        "slug": "what-is-business-communications-software",
+        "title": "What Is Business Communications Software? Beginner's Guide",
+        "href": "/guides/what-is-business-communications-software/"
+      },
+      {
+        "slug": "how-to-choose-business-communications-software",
+        "title": "How to Choose Business Communications Software: Job-First Framework",
+        "href": "/guides/how-to-choose-business-communications-software/"
+      },
+      {
+        "slug": "business-communications-pricing-guide",
+        "title": "Business Communications Pricing Guide: Seats, Minutes & Message Fees",
+        "href": "/guides/business-communications-pricing-guide/"
+      },
+      {
+        "slug": "business-communications-requirements-guide",
+        "title": "Business Communications Requirements Guide: Numbers, Routing & Must-Haves",
+        "href": "/guides/business-communications-requirements-guide/"
+      },
+      {
+        "slug": "business-communications-evaluation-guide",
+        "title": "Business Communications Evaluation Guide: Two-Week Trial Scorecard",
+        "href": "/guides/business-communications-evaluation-guide/"
+      },
+      {
+        "slug": "how-business-communications-software-works",
+        "title": "How Business Communications Software Works",
+        "href": "/guides/how-business-communications-software-works/"
+      }
+    ],
+    "evidenceState": "Research/data-based (no completed hands-on test) · Latest verification/research signal: 2026-08-17T12:00:00.000Z · Editorial assessment: approved",
+    "nextDecisionStep": "Compare against peers: Dialpad vs RingCentral",
+    "missingSections": [
+      "canonical_vendor"
+    ]
+  },
+  "dependents": [
+    {
+      "kind": "guide",
+      "slug": "what-is-business-communications-software",
+      "path": "/guides/what-is-business-communications-software/"
+    },
+    {
+      "kind": "guide",
+      "slug": "how-to-choose-business-communications-software",
+      "path": "/guides/how-to-choose-business-communications-software/"
+    },
+    {
+      "kind": "guide",
+      "slug": "business-communications-pricing-guide",
+      "path": "/guides/business-communications-pricing-guide/"
+    },
+    {
+      "kind": "guide",
+      "slug": "business-communications-requirements-guide",
+      "path": "/guides/business-communications-requirements-guide/"
+    },
+    {
+      "kind": "guide",
+      "slug": "business-communications-evaluation-guide",
+      "path": "/guides/business-communications-evaluation-guide/"
+    },
+    {
+      "kind": "guide",
+      "slug": "how-business-communications-software-works",
+      "path": "/guides/how-business-communications-software-works/"
+    },
+    {
+      "kind": "guide",
+      "slug": "types-of-business-communications-software",
+      "path": "/guides/types-of-business-communications-software/"
+    },
+    {
+      "kind": "guide",
+      "slug": "business-communications-vs-customer-service",
+      "path": "/guides/business-communications-vs-customer-service/"
+    },
+    {
+      "kind": "guide",
+      "slug": "voip-business-phone-vs-business-communications",
+      "path": "/guides/voip-business-phone-vs-business-communications/"
+    },
+    {
+      "kind": "guide",
+      "slug": "dialpad-implementation",
+      "path": "/guides/dialpad-implementation/"
+    },
+    {
+      "kind": "guide",
+      "slug": "dialpad-migration",
+      "path": "/guides/dialpad-migration/"
+    },
+    {
+      "kind": "guide",
+      "slug": "dialpad-setup",
+      "path": "/guides/dialpad-setup/"
+    },
+    {
+      "kind": "guide",
+      "slug": "dialpad-plans",
+      "path": "/guides/dialpad-plans/"
+    },
+    {
+      "kind": "guide",
+      "slug": "is-dialpad-worth-it",
+      "path": "/guides/is-dialpad-worth-it/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "dialpad-vs-ringcentral",
+      "path": "/compare/dialpad-vs-ringcentral/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "aircall-vs-dialpad",
+      "path": "/compare/aircall-vs-dialpad/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "dialpad-vs-eightx8",
+      "path": "/compare/dialpad-vs-eightx8/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "dialpad-vs-fastmail",
+      "path": "/compare/dialpad-vs-fastmail/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "dialpad-vs-five9",
+      "path": "/compare/dialpad-vs-five9/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "dialpad-vs-genesys",
+      "path": "/compare/dialpad-vs-genesys/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "dialpad-vs-goto-connect",
+      "path": "/compare/dialpad-vs-goto-connect/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "dialpad-vs-grasshopper",
+      "path": "/compare/dialpad-vs-grasshopper/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "dialpad-vs-manychat",
+      "path": "/compare/dialpad-vs-manychat/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "dialpad-vs-microsoft-teams",
+      "path": "/compare/dialpad-vs-microsoft-teams/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "dialpad-vs-nextiva",
+      "path": "/compare/dialpad-vs-nextiva/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "dialpad-vs-ooma",
+      "path": "/compare/dialpad-vs-ooma/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "dialpad-vs-openphone",
+      "path": "/compare/dialpad-vs-openphone/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "dialpad-vs-respond-io",
+      "path": "/compare/dialpad-vs-respond-io/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "dialpad-vs-sanebox",
+      "path": "/compare/dialpad-vs-sanebox/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "dialpad-vs-slack",
+      "path": "/compare/dialpad-vs-slack/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "dialpad-vs-talkdesk",
+      "path": "/compare/dialpad-vs-talkdesk/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "dialpad-vs-twilio",
+      "path": "/compare/dialpad-vs-twilio/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "dialpad-vs-vonage",
+      "path": "/compare/dialpad-vs-vonage/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "dialpad-vs-wati",
+      "path": "/compare/dialpad-vs-wati/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "dialpad-vs-webex",
+      "path": "/compare/dialpad-vs-webex/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "dialpad-vs-zenzap",
+      "path": "/compare/dialpad-vs-zenzap/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "dialpad-vs-zoom",
+      "path": "/compare/dialpad-vs-zoom/"
+    },
+    {
+      "kind": "alternatives",
+      "slug": "dialpad",
+      "path": "/alternatives/dialpad/"
+    },
+    {
+      "kind": "pricing",
+      "slug": "dialpad",
+      "path": "/software/dialpad/pricing/"
+    },
+    {
+      "kind": "best",
+      "slug": "business-communications-software",
+      "path": "/best/business-communications-software/"
+    },
+    {
+      "kind": "tools",
+      "slug": "business-communications-cost-calculator",
+      "path": "/tools/business-communications-cost-calculator/"
+    }
+  ],
+  "dependentsNeedingRefresh": [],
+  "remediation": [
+    "verify:canonical_vendor"
+  ],
+  "notes": [
+    "fieldAudit score=94",
+    "decisionHub bestFor=6 notIdeal=6",
+    "dependents=41"
+  ],
+  "materiallyImproved": false
+}

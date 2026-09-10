@@ -13,6 +13,7 @@ import {
 import { formatPartnershipReport } from "./reports";
 import {
   PARTNERSHIP_AGENT,
+  PartnershipLiveHitSchema,
   type PartnershipLiveHit,
   type PartnershipOpportunity,
   type PartnershipReject,
@@ -58,7 +59,9 @@ export function runPartnershipOpportunityAgent(
   const generatedAt = opts.generatedAt ?? new Date().toISOString();
   const topic = opts.topic ?? "CRM / business software / RevOps";
   const write = opts.write !== false;
-  const hits = opts.hits ?? PARTNERSHIP_LIVE_HITS;
+  const hits = (opts.hits ?? PARTNERSHIP_LIVE_HITS).map((hit) =>
+    PartnershipLiveHitSchema.parse(hit),
+  );
 
   if (opts.requireLiveHits !== false) {
     assertPartnershipLiveHitsPresent(hits);

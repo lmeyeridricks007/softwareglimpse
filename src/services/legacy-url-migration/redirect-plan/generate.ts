@@ -240,7 +240,7 @@ export function generateRedirectPlan(opts?: {
       permanentOnly: true,
       flattenChains: true,
       noHomepageDump: true,
-      noMiddleware: true,
+      noMiddleware: false,
     },
     redirects,
     retired: WORDPRESS_RETIRED_PATTERNS,

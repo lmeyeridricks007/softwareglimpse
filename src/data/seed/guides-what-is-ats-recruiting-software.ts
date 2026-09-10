@@ -1,4 +1,4 @@
-import type { GuidePage } from "@/domain";
+import type { GuidePageInput } from "@/domain";
 import type { z } from "zod";
 import type { GuideContentBlockSchema } from "@/domain";
 import { tier27GuideScheduledAt } from "@/data/config/publishing/tier-27-ats-recruiting-launch-2027-08-01";
@@ -53,7 +53,7 @@ const blocks: GuideBlockInput[] = [
   },
 ];
 
-function metadata(): GuidePage["metadata"] {
+function metadata(): GuidePageInput["metadata"] {
   return SCHEDULED_AT
     ? {
         status: "scheduled",
@@ -73,7 +73,7 @@ function metadata(): GuidePage["metadata"] {
       };
 }
 
-export const whatIsAtsRecruitingSoftwareGuide: GuidePage = {
+export const whatIsAtsRecruitingSoftwareGuide: GuidePageInput = {
   id: "guide-what-is-ats-recruiting-software",
   slug: SLUG,
   title: "What Is ATS & Recruiting Software?",
@@ -96,7 +96,7 @@ export const whatIsAtsRecruitingSoftwareGuide: GuidePage = {
     "ats-recruiting-vs-hr-software",
     "what-is-hr-software",
   ],
-  blocks: blocks as GuidePage["blocks"],
+  blocks: blocks as GuidePageInput["blocks"],
   checklist: [],
   sections: [],
   faq: [],
@@ -107,6 +107,6 @@ export const whatIsAtsRecruitingSoftwareGuide: GuidePage = {
     description:
       "Hiring pipelines, career sites, and interview workflows — how ATS software differs from payroll and WFM.",
     canonicalPath: `/guides/${SLUG}/`,
-    indexable: !SCHEDULED_AT,
+    indexable: true,
   },
 };

@@ -1,7 +1,7 @@
-import type { IndustryHubProfile } from "@/domain";
+import type { IndustryHubProfileInput } from "@/domain";
 
 type Depth = Pick<
-  IndustryHubProfile,
+  IndustryHubProfileInput,
   | "overview"
   | "whoThisIsFor"
   | "whatMattersIntro"

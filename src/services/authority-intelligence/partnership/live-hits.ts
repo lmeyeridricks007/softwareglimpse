@@ -5,6 +5,8 @@
  */
 
 import type { PartnershipLiveHit } from "./types";
+import { PartnershipLiveHitSchema } from "./types";
+import { z } from "zod";
 import { LINK_EXCHANGE_REJECT_LABEL } from "./types";
 
 export const PARTNERSHIP_LIVE_HITS_VERIFIED_AT = "2026-08-15T09:15:00.000Z";
@@ -22,7 +24,7 @@ export const PARTNERSHIP_LIVE_QUERIES_RUN: string[] = [
   "reciprocal link exchange SEO partnership scheme",
 ];
 
-export const PARTNERSHIP_LIVE_HITS: PartnershipLiveHit[] = [
+export const PARTNERSHIP_LIVE_HITS: z.input<typeof PartnershipLiveHitSchema>[] = [
   // ── ACCEPT ───────────────────────────────────────────────────────────────
   {
     url: "https://www.revopscoop.com/who-we-are/become-a-revops-co-op-partner",

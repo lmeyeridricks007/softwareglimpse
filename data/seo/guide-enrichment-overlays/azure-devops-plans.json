@@ -1,0 +1,204 @@
+{
+  "slug": "azure-devops-plans",
+  "enrichmentType": "COST_GUIDE",
+  "updatedAt": "2026-09-09T05:52:01.688Z",
+  "uniqueValueAdded": [
+    "pricing_comparison",
+    "sg_original_data",
+    "scenario_analysis",
+    "implementation_workflow",
+    "decision_framework",
+    "limitations_evidence",
+    "product_shortlist",
+    "alternatives_map",
+    "buyer_checklist"
+  ],
+  "patch": {
+    "summary": "Azure DevOps cost guide: researched plan structure, free/trial flags, who each tier suits, cost scenarios, and value tradeoffs — no invented prices.",
+    "blocks": [
+      {
+        "id": "da-azure-devops-plans-1",
+        "type": "direct-answer",
+        "body": "Azure DevOps pricing is plan-gated across 3 researched tiers. Free entry: Basic (first 5 users). 30-day trial documented. Compare seat/capacity gates and unlocks — not list-price folklore.",
+        "bullets": [
+          "Free plan(s): Basic (first 5 users)",
+          "30-day trial documented",
+          "Entry paid tier researched: Basic"
+        ]
+      },
+      {
+        "id": "cost-azure-devops-plans-2",
+        "type": "cost-breakdown",
+        "title": "Azure DevOps plan matrix and who each tier suits",
+        "body": "Structure and trial/free flags come from SoftwareGlimpse pricing research. Dollar amounts appear only when verified — never invent list prices.",
+        "lines": [
+          {
+            "label": "Basic (first 5 users)",
+            "description": "Free plan · Unlocks: log management, source control and repos, CI/CD and automation · Suits: explore before committing seats"
+          },
+          {
+            "label": "Basic",
+            "description": "30-day trial · Suits: teams whose must-have gates appear on this tier"
+          },
+          {
+            "label": "Basic + Test Plans",
+            "description": "30-day trial · Suits: teams whose must-have gates appear on this tier"
+          }
+        ],
+        "calculatorHref": "/tools/it-development-cost-calculator/",
+        "calculatorLabel": "Model category cost fit"
+      },
+      {
+        "id": "scen-azure-devops-plans-3",
+        "type": "step",
+        "heading": "Azure DevOps cost scenarios to pressure-test",
+        "body": "Price Azure DevOps against how you actually buy seats and unlocks — not against a competitor's homepage headline.",
+        "stepNumber": 1,
+        "scenarios": [
+          {
+            "title": "Lean team / free-or-trial first",
+            "body": "Stay on Basic (first 5 users) until a gated capability (premium unlock) becomes mandatory."
+          },
+          {
+            "title": "Growing team with gated workflows",
+            "body": "Map must-have workflows (log management, source control and repos, CI/CD and automation) to plan unlocks before expanding seats."
+          },
+          {
+            "title": "Hidden / extra cost watch",
+            "body": "Budget risk: User 6 onwards is list price for every additional Basic seat — the free five are not a forever team cap workaround. Also check add-ons, overages, and admin time outside the sticker plan."
+          }
+        ]
+      },
+      {
+        "id": "value-azure-devops-plans-4",
+        "type": "decision-framework",
+        "title": "Azure DevOps value rule",
+        "steps": [
+          {
+            "id": "v-1",
+            "label": "Pay up when Microsoft/Azure-native engineering orgs requires a paid unlock you will use weekly"
+          },
+          {
+            "id": "v-2",
+            "label": "Do not overbuy if this limitation dominates: User 6 onwards is list price for every additional Basic seat — the free five are not a forever team cap workaround"
+          },
+          {
+            "id": "v-3",
+            "label": "Side-by-side cost with GitHub on the same seat count"
+          }
+        ]
+      },
+      {
+        "id": "lim-azure-devops-plans-5",
+        "type": "mistakes",
+        "title": "Azure DevOps cost mistakes to avoid",
+        "items": [
+          {
+            "title": "Cost trap 1",
+            "body": "User 6 onwards is list price for every additional Basic seat — the free five are not a forever team cap workaround"
+          },
+          {
+            "title": "Cost trap 2",
+            "body": "Test Plans at list price is a QA licence, not something to assign to every developer"
+          },
+          {
+            "title": "Cost trap 3",
+            "body": "Pipeline minutes and Artifacts storage are extra TCO beyond seats"
+          },
+          {
+            "title": "Cost trap 4",
+            "body": "Not GitHub — Microsoft owns both; buying motions and community differ"
+          },
+          {
+            "title": "Cost trap 5",
+            "body": "GitHub Copilot is a separate AI-coding SKU — do not treat Azure DevOps as Copilot"
+          }
+        ]
+      },
+      {
+        "id": "alts-azure-devops-plans-6",
+        "type": "product-shortlist",
+        "title": "Cheaper or clearer alternatives to pressure-test",
+        "body": "Compare total cost of ownership vs Azure DevOps on identical constraints.",
+        "productSlugs": [
+          "github",
+          "gitlab"
+        ],
+        "disclaimer": "Catalogue peers only — not commission-ranked."
+      },
+      {
+        "id": "sel-azure-devops-plans-7",
+        "type": "selection-checklist",
+        "title": "Azure DevOps pricing checklist",
+        "dimensions": [
+          {
+            "id": "gates",
+            "label": "Plan gates you must unlock",
+            "options": [
+              "Must-have unlocks listed",
+              "Seat math agreed",
+              "Annual vs monthly clear"
+            ]
+          },
+          {
+            "id": "trial",
+            "label": "Trial / free proof",
+            "options": [
+              "Free plan usable for pilot",
+              "Trial days enough",
+              "Paid gate acceptable"
+            ]
+          },
+          {
+            "id": "tco",
+            "label": "TCO extras",
+            "options": [
+              "Add-ons checked",
+              "Admin time budgeted",
+              "Migration cost noted"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "cta-azure-devops-plans-8",
+        "type": "interactive-cta",
+        "title": "Model it-development spend with Azure DevOps in mind",
+        "body": "Use researched plan structure for Azure DevOps alongside category cost modelling.",
+        "href": "/tools/it-development-cost-calculator/",
+        "ctaLabel": "Open calculator",
+        "variant": "calculator"
+      }
+    ],
+    "checklist": [
+      {
+        "id": "enrich-chk-0",
+        "label": "List must-have unlocks before picking a Azure DevOps tier",
+        "order": 0
+      },
+      {
+        "id": "enrich-chk-1",
+        "label": "30-day trial documented",
+        "order": 1
+      },
+      {
+        "id": "enrich-chk-2",
+        "label": "Price in this risk: User 6 onwards is list price for every additional Basic seat — the free five are not a forever team cap workaround",
+        "order": 2
+      },
+      {
+        "id": "enrich-chk-3",
+        "label": "Compare seat TCO with GitHub",
+        "order": 3
+      }
+    ],
+    "nextAction": {
+      "contentId": "tool:finder:it-development",
+      "label": "Open Finder shortlist"
+    }
+  },
+  "notes": [
+    "Cost guide: real plan structure, free/trial, TCO tradeoffs — never invent prices.",
+    "Type-specific skeleton: COST_GUIDE"
+  ]
+}

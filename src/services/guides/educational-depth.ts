@@ -1,4 +1,4 @@
-import type { GuidePage } from "@/domain";
+import type { GuidePageInput } from "@/domain";
 import type { z } from "zod";
 import type { GuideContentBlockSchema } from "@/domain";
 import { TEACHING_SPECS } from "@/data/seed/guides-teaching-specs";
@@ -10,8 +10,8 @@ import {
 
 type GuideBlockInput = z.input<typeof GuideContentBlockSchema>;
 
-function specFor(guide: GuidePage) {
-  const slug = guide.categorySlugs[0];
+function specFor(guide: GuidePageInput) {
+  const slug = guide.categorySlugs?.[0];
   return TEACHING_SPECS.find((s) => s.categorySlug === slug);
 }
 
@@ -34,12 +34,12 @@ function nextStepNumber(blocks: GuideBlockInput[]): number {
   return steps.length + 1;
 }
 
-function pillarDepthBlocks(guide: GuidePage): GuideBlockInput[] {
+function pillarDepthBlocks(guide: GuidePageInput): GuideBlockInput[] {
   const spec = specFor(guide);
   const category = spec?.name ?? "this category";
-  const chooseSlug = spec?.howToChooseSlug ?? guide.relatedGuideSlugs[0];
+  const chooseSlug = spec?.howToChooseSlug ?? guide.relatedGuideSlugs?.[0];
   const chooseHref = chooseSlug ? `/guides/${chooseSlug}/` : "/guides/";
-  const topic = guide.topicType ?? "explainer";
+  const topic = guide.topicType ?? "fundamental";
   const n = nextStepNumber(guide.blocks as GuideBlockInput[]);
 
   if (topic === "pricing-education") {
@@ -85,7 +85,7 @@ function pillarDepthBlocks(guide: GuidePage): GuideBlockInput[] {
     ];
   }
 
-  if (topic === "requirements" || topic === "requirements-guide") {
+  if (guide.slug.includes("requirements") || topic === "checklist") {
     return [
       {
         type: "step",
@@ -114,7 +114,12 @@ function pillarDepthBlocks(guide: GuidePage): GuideBlockInput[] {
     ];
   }
 
-  if (topic === "evaluation" || topic === "evaluation-guide") {
+  if (
+    guide.slug.includes("evaluation") ||
+    guide.slug.includes("vendor-evaluation") ||
+    topic === "buying-guide" ||
+    guide.slug.includes("how-to-choose")
+  ) {
     return [
       {
         type: "step",
@@ -143,7 +148,7 @@ function pillarDepthBlocks(guide: GuidePage): GuideBlockInput[] {
     ];
   }
 
-  if (topic === "selection" || topic === "buying-guide") {
+  if (topic === "selection") {
     return [
       {
         type: "step",
@@ -276,12 +281,12 @@ function pillarDepthBlocks(guide: GuidePage): GuideBlockInput[] {
 }
 
 function genericFallbackBlocks(
-  guide: GuidePage,
+  guide: GuidePageInput,
   pass: number,
   startNum: number,
 ): GuideBlockInput[] {
   const title = guide.title;
-  const category = guide.categorySlugs[0] ?? "software";
+  const category = guide.categorySlugs?.[0] ?? "software";
   return [
     {
       type: "step",
@@ -311,7 +316,7 @@ function genericFallbackBlocks(
 }
 
 /** Expand thin educational guides to the editorial minimum (~5 min prose). */
-export function withEducationalDepth(guide: GuidePage): GuidePage {
+export function withEducationalDepth(guide: GuidePageInput): GuidePageInput {
   const blocks = [...(guide.blocks ?? [])] as GuideBlockInput[];
   if (proseWordsFromBlocks(blocks, guide.summary) >= GUIDE_MIN_PROSE_WORDS) {
     return guide;
@@ -336,7 +341,7 @@ export function withEducationalDepth(guide: GuidePage): GuidePage {
     }
     const extra =
       pass === 0
-        ? pillarDepthBlocks({ ...guide, blocks: expanded as GuidePage["blocks"] })
+        ? pillarDepthBlocks({ ...guide, blocks: expanded as GuidePageInput["blocks"] })
         : genericFallbackBlocks(
             guide,
             pass,
@@ -357,7 +362,7 @@ export function withEducationalDepth(guide: GuidePage): GuidePage {
         id: "depth-topup",
         stepNumber: expanded.filter((b) => b.type === "step").length + 1,
         heading: "Before you schedule another demo",
-        body: `Freeze the must-have sheet for ${guide.title}, assign an admin owner, and run the same trial script on every finalist. Link commercial detail to category pricing guides and /best/${guide.categorySlugs[0] ?? "software"}-software/ when assumptions are locked.`,
+        body: `Freeze the must-have sheet for ${guide.title}, assign an admin owner, and run the same trial script on every finalist. Link commercial detail to category pricing guides and /best/${guide.categorySlugs?.[0] ?? "software"}-software/ when assumptions are locked.`,
         tip: "Re-opening requirements mid-trial resets every quote.",
       },
       {
@@ -373,6 +378,6 @@ export function withEducationalDepth(guide: GuidePage): GuidePage {
 
   return {
     ...guide,
-    blocks: expanded as GuidePage["blocks"],
+    blocks: expanded as GuidePageInput["blocks"],
   };
 }

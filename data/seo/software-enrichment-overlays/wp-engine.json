@@ -1,0 +1,544 @@
+{
+  "slug": "wp-engine",
+  "updatedAt": "2026-09-08T21:57:41.686Z",
+  "version": "1.0.0",
+  "fieldAudit": {
+    "slug": "wp-engine",
+    "checkedAt": "2026-09-08T21:57:41.685Z",
+    "items": [
+      {
+        "field": "name",
+        "status": "PASS",
+        "detail": "Name: WP Engine",
+        "source": "seed"
+      },
+      {
+        "field": "product_status",
+        "status": "PASS",
+        "detail": "productLifecycle=active",
+        "source": "seed"
+      },
+      {
+        "field": "canonical_vendor",
+        "status": "PASS",
+        "detail": "Vendor: WP Engine, Inc.",
+        "source": "seed"
+      },
+      {
+        "field": "category",
+        "status": "PASS",
+        "detail": "primaryCategorySlug=it-development",
+        "source": "seed"
+      },
+      {
+        "field": "description",
+        "status": "PASS",
+        "detail": "Description present (Managed WordPress hosting — Essential Startup from $30/mo annual first-year; Cor…)",
+        "source": "seed"
+      },
+      {
+        "field": "target_audience",
+        "status": "PASS",
+        "detail": "Sizes=3, teams=2, assessment bestFor=3",
+        "source": "assessment"
+      },
+      {
+        "field": "use_cases",
+        "status": "PASS",
+        "detail": "useCaseSlugs=1",
+        "source": "seed"
+      },
+      {
+        "field": "capabilities",
+        "status": "PASS",
+        "detail": "featureRatings=0, enrichment features=16",
+        "source": "enrichment"
+      },
+      {
+        "field": "pricing",
+        "status": "PASS",
+        "detail": "Pricing envelope present",
+        "source": "enrichment"
+      },
+      {
+        "field": "plans",
+        "status": "PASS",
+        "detail": "plans=6",
+        "source": "enrichment"
+      },
+      {
+        "field": "free_plan",
+        "status": "PASS",
+        "detail": "No free plan in documented plans (explicit absence)",
+        "source": "enrichment"
+      },
+      {
+        "field": "trial",
+        "status": "UNKNOWN",
+        "detail": "Trial not explicitly documented — do not assume none",
+        "source": "none"
+      },
+      {
+        "field": "integrations",
+        "status": "PASS",
+        "detail": "integrationSlugs=0, enrichment=2",
+        "source": "enrichment"
+      },
+      {
+        "field": "alternatives",
+        "status": "PASS",
+        "detail": "alternativeSlugs=2",
+        "source": "seed"
+      },
+      {
+        "field": "competitors",
+        "status": "PASS",
+        "detail": "competitorSlugs=5",
+        "source": "seed"
+      },
+      {
+        "field": "affiliate",
+        "status": "PASS",
+        "detail": "No affiliate relationship (explicit)",
+        "source": "seed"
+      },
+      {
+        "field": "source_provenance",
+        "status": "PASS",
+        "detail": "seed sources=0, enrichment sourceIds=3",
+        "source": "enrichment"
+      },
+      {
+        "field": "verification_date",
+        "status": "PASS",
+        "detail": "Latest verification/research signal: 2026-08-18T18:00:00.000Z",
+        "source": "enrichment"
+      }
+    ],
+    "passCount": 17,
+    "partialCount": 0,
+    "missingCount": 0,
+    "unknownCount": 1,
+    "score": 94
+  },
+  "decisionHub": {
+    "whatItIs": "WP Engine is a managed WordPress hosting platform (WordPress-specialist, not a multi-app cloud console and not a Plesk/cPanel licence). Essential plans on wpengine.com/plans (2026-08-18): Startup $30/mo*, Professional $55, Growth $109, Scale $276 — *first-year Essential disclaimer applies; confirm renewal. Core from $400/mo. Enterprise custom. Same hosting-providers cluster as Cloudways — different shape (WordPress-only specialist vs multi-cloud/multi-app). Landscape-only versus Plesk/cPanel.",
+    "bestFor": [
+      "Teams whose only hosting job is managed WordPress",
+      "Buyers who will pay for WP Engine specialist support and WP workflow",
+      "Organisations that will land on Core or Enterprise, not only the first-year Startup tile",
+      "small-business / operations: WP Engine fit for small-business operations teams in the hosting-providers job cluster, from first-party positioning and IT hosting providers research.",
+      "mid-market / operations: WP Engine fit for mid-market operations teams in the hosting-providers job cluster, from first-party positioning and IT hosting providers research.",
+      "enterprise / operations: WP Engine fit for enterprise operations teams in the hosting-providers job cluster, from first-party positioning and IT hosting providers research."
+    ],
+    "notIdealFor": [
+      "Multi-app / multi-cloud VM hosting (Cloudways)",
+      "Admins who need a Plesk or cPanel licence on owned servers",
+      "ITSM, observability, or source-control purchases",
+      "Startup $30/mo is first-year Essential annual packaging — renewal can change TCO",
+      "WordPress-specialist hosting — not Cloudways-style multi-app / multi-cloud VMs",
+      "Not a Plesk/cPanel panel licence for servers you already own"
+    ],
+    "coreCapabilities": [
+      "infrastructure monitoring",
+      "log management",
+      "cicd actions",
+      "hosting panel",
+      "managed hosting",
+      "dev ai",
+      "enterprise security",
+      "analytics reporting"
+    ],
+    "pricingSummary": "6 documented plans · entry paid: Essential Startup",
+    "keyTradeoffs": [
+      "Startup $30/mo is first-year Essential annual packaging — renewal can change TCO",
+      "WordPress-specialist hosting — not Cloudways-style multi-app / multi-cloud VMs",
+      "Not a Plesk/cPanel panel licence for servers you already own",
+      "Core $400/mo and Enterprise quote are a different buying motion than Essential",
+      "Not ITSM, observability, git-as-product, or a proxy network"
+    ],
+    "alternatives": [
+      {
+        "slug": "cloudways",
+        "name": "Cloudways"
+      },
+      {
+        "slug": "plesk",
+        "name": "Plesk"
+      },
+      {
+        "slug": "cpanel",
+        "name": "cPanel"
+      },
+      {
+        "slug": "kinsta",
+        "name": "Kinsta"
+      },
+      {
+        "slug": "siteground",
+        "name": "SiteGround"
+      }
+    ],
+    "importantComparisons": [
+      {
+        "slug": "cloudways-vs-wp-engine",
+        "title": "WP Engine vs Cloudways",
+        "href": "/compare/cloudways-vs-wp-engine/"
+      },
+      {
+        "slug": "plesk-vs-wp-engine",
+        "title": "Plesk vs WP Engine",
+        "href": "/compare/plesk-vs-wp-engine/"
+      },
+      {
+        "slug": "kinsta-vs-wp-engine",
+        "title": "Kinsta vs WP Engine",
+        "href": "/compare/kinsta-vs-wp-engine/"
+      },
+      {
+        "slug": "siteground-vs-wp-engine",
+        "title": "SiteGround vs WP Engine",
+        "href": "/compare/siteground-vs-wp-engine/"
+      },
+      {
+        "slug": "render-vs-wp-engine",
+        "title": "Render vs WP Engine",
+        "href": "/compare/render-vs-wp-engine/"
+      },
+      {
+        "slug": "railway-vs-wp-engine",
+        "title": "Railway vs WP Engine",
+        "href": "/compare/railway-vs-wp-engine/"
+      }
+    ],
+    "relevantGuides": [
+      {
+        "slug": "wp-engine-implementation",
+        "title": "WP Engine Implementation: 30/60/90 IT Rollout That Sticks",
+        "href": "/guides/wp-engine-implementation/"
+      },
+      {
+        "slug": "wp-engine-migration",
+        "title": "WP Engine Migration: Move Tickets and Repos Without Losing Trust",
+        "href": "/guides/wp-engine-migration/"
+      },
+      {
+        "slug": "wp-engine-setup",
+        "title": "WP Engine Setup: Day-Zero Path to a Working IT Loop",
+        "href": "/guides/wp-engine-setup/"
+      },
+      {
+        "slug": "wp-engine-plans",
+        "title": "WP Engine Plans: Seats, Hosts, and Qualifying Tiers",
+        "href": "/guides/wp-engine-plans/"
+      },
+      {
+        "slug": "is-wp-engine-worth-it",
+        "title": "Is WP Engine Worth It? Fit Scenarios Before You Buy",
+        "href": "/guides/is-wp-engine-worth-it/"
+      }
+    ],
+    "evidenceState": "Research/data-based (no completed hands-on test) · Latest verification/research signal: 2026-08-18T18:00:00.000Z · Editorial assessment: approved",
+    "nextDecisionStep": "Compare against peers: WP Engine vs Cloudways",
+    "missingSections": [
+      "trial"
+    ]
+  },
+  "dependents": [
+    {
+      "kind": "guide",
+      "slug": "wp-engine-implementation",
+      "path": "/guides/wp-engine-implementation/"
+    },
+    {
+      "kind": "guide",
+      "slug": "wp-engine-migration",
+      "path": "/guides/wp-engine-migration/"
+    },
+    {
+      "kind": "guide",
+      "slug": "wp-engine-setup",
+      "path": "/guides/wp-engine-setup/"
+    },
+    {
+      "kind": "guide",
+      "slug": "wp-engine-plans",
+      "path": "/guides/wp-engine-plans/"
+    },
+    {
+      "kind": "guide",
+      "slug": "is-wp-engine-worth-it",
+      "path": "/guides/is-wp-engine-worth-it/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "cloudways-vs-wp-engine",
+      "path": "/compare/cloudways-vs-wp-engine/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "plesk-vs-wp-engine",
+      "path": "/compare/plesk-vs-wp-engine/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "kinsta-vs-wp-engine",
+      "path": "/compare/kinsta-vs-wp-engine/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "siteground-vs-wp-engine",
+      "path": "/compare/siteground-vs-wp-engine/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "render-vs-wp-engine",
+      "path": "/compare/render-vs-wp-engine/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "railway-vs-wp-engine",
+      "path": "/compare/railway-vs-wp-engine/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "apify-vs-wp-engine",
+      "path": "/compare/apify-vs-wp-engine/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "appdynamics-vs-wp-engine",
+      "path": "/compare/appdynamics-vs-wp-engine/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "azure-devops-vs-wp-engine",
+      "path": "/compare/azure-devops-vs-wp-engine/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "bitbucket-vs-wp-engine",
+      "path": "/compare/bitbucket-vs-wp-engine/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "bmc-helix-vs-wp-engine",
+      "path": "/compare/bmc-helix-vs-wp-engine/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "bright-data-vs-wp-engine",
+      "path": "/compare/bright-data-vs-wp-engine/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "buildkite-vs-wp-engine",
+      "path": "/compare/buildkite-vs-wp-engine/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "chronosphere-vs-wp-engine",
+      "path": "/compare/chronosphere-vs-wp-engine/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "circleci-vs-wp-engine",
+      "path": "/compare/circleci-vs-wp-engine/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "coralogix-vs-wp-engine",
+      "path": "/compare/coralogix-vs-wp-engine/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "cpanel-vs-wp-engine",
+      "path": "/compare/cpanel-vs-wp-engine/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "datadog-vs-wp-engine",
+      "path": "/compare/datadog-vs-wp-engine/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "directadmin-vs-wp-engine",
+      "path": "/compare/directadmin-vs-wp-engine/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "dynatrace-vs-wp-engine",
+      "path": "/compare/dynatrace-vs-wp-engine/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "elastic-observability-vs-wp-engine",
+      "path": "/compare/elastic-observability-vs-wp-engine/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "firehydrant-vs-wp-engine",
+      "path": "/compare/firehydrant-vs-wp-engine/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "fly-io-vs-wp-engine",
+      "path": "/compare/fly-io-vs-wp-engine/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "github-vs-wp-engine",
+      "path": "/compare/github-vs-wp-engine/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "gitlab-vs-wp-engine",
+      "path": "/compare/gitlab-vs-wp-engine/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "grafana-cloud-vs-wp-engine",
+      "path": "/compare/grafana-cloud-vs-wp-engine/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "haloitsm-vs-wp-engine",
+      "path": "/compare/haloitsm-vs-wp-engine/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "heroku-vs-wp-engine",
+      "path": "/compare/heroku-vs-wp-engine/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "honeycomb-vs-wp-engine",
+      "path": "/compare/honeycomb-vs-wp-engine/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "incident-io-vs-wp-engine",
+      "path": "/compare/incident-io-vs-wp-engine/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "iproyal-vs-wp-engine",
+      "path": "/compare/iproyal-vs-wp-engine/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "ivanti-vs-wp-engine",
+      "path": "/compare/ivanti-vs-wp-engine/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "jira-service-management-vs-wp-engine",
+      "path": "/compare/jira-service-management-vs-wp-engine/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "manageengine-servicedesk-plus-vs-wp-engine",
+      "path": "/compare/manageengine-servicedesk-plus-vs-wp-engine/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "new-relic-vs-wp-engine",
+      "path": "/compare/new-relic-vs-wp-engine/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "oxylabs-vs-wp-engine",
+      "path": "/compare/oxylabs-vs-wp-engine/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "pagerduty-vs-wp-engine",
+      "path": "/compare/pagerduty-vs-wp-engine/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "rootly-vs-wp-engine",
+      "path": "/compare/rootly-vs-wp-engine/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "scraperapi-vs-wp-engine",
+      "path": "/compare/scraperapi-vs-wp-engine/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "sentry-vs-wp-engine",
+      "path": "/compare/sentry-vs-wp-engine/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "servicenow-vs-wp-engine",
+      "path": "/compare/servicenow-vs-wp-engine/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "smartproxy-vs-wp-engine",
+      "path": "/compare/smartproxy-vs-wp-engine/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "splunk-vs-wp-engine",
+      "path": "/compare/splunk-vs-wp-engine/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "squadcast-vs-wp-engine",
+      "path": "/compare/squadcast-vs-wp-engine/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "sysaid-vs-wp-engine",
+      "path": "/compare/sysaid-vs-wp-engine/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "thordata-vs-wp-engine",
+      "path": "/compare/thordata-vs-wp-engine/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "topdesk-vs-wp-engine",
+      "path": "/compare/topdesk-vs-wp-engine/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "wp-engine-vs-zyte",
+      "path": "/compare/wp-engine-vs-zyte/"
+    },
+    {
+      "kind": "alternatives",
+      "slug": "wp-engine",
+      "path": "/alternatives/wp-engine/"
+    },
+    {
+      "kind": "pricing",
+      "slug": "wp-engine",
+      "path": "/software/wp-engine/pricing/"
+    },
+    {
+      "kind": "best",
+      "slug": "it-development-software",
+      "path": "/best/it-development-software/"
+    },
+    {
+      "kind": "tools",
+      "slug": "it-development-cost-calculator",
+      "path": "/tools/it-development-cost-calculator/"
+    }
+  ],
+  "dependentsNeedingRefresh": [],
+  "remediation": [
+    "verify:trial"
+  ],
+  "notes": [
+    "fieldAudit score=94",
+    "decisionHub bestFor=6 notIdeal=6",
+    "dependents=57"
+  ],
+  "materiallyImproved": true
+}

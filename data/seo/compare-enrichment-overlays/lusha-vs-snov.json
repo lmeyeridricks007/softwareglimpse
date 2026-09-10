@@ -1,0 +1,209 @@
+{
+  "slug": "lusha-vs-snov",
+  "updatedAt": "2026-09-07T17:08:43.451Z",
+  "uniqueValueAdded": [
+    "quick_verdict",
+    "choose_if_rules",
+    "key_differences",
+    "pricing_diff",
+    "target_audience",
+    "scenario_fit",
+    "evidence_clarity",
+    "final_recommendation",
+    "alternatives"
+  ],
+  "thesis": {
+    "kind": "same_category_different_strengths",
+    "label": "CRM enrichment and buying signals vs cold email execution",
+    "rationale": "Lusha documents verified contact and company data, enrichment, buying signals and Engage sequences on a credit model; Snov.io documents finding and verifying emails then running cold email campaigns as an affordable SMB stack.",
+    "supportedBy": [
+      "same_category",
+      "declared_competitor",
+      "overlapping_use_cases"
+    ]
+  },
+  "capabilityRows": [],
+  "pricing": {
+    "startingPriceA": null,
+    "startingPriceB": 39,
+    "billingA": "freemium",
+    "billingB": "subscription",
+    "freeTier": {
+      "a": true,
+      "b": false
+    },
+    "trials": {
+      "a": false,
+      "b": true
+    },
+    "modelA": "freemium",
+    "modelB": "subscription",
+    "complexityNote": "One or both sides publish four or more rungs — compare the tier you would actually buy, not the entry rung",
+    "costCalculatorHref": "/tools/sales-intelligence-cost-calculator/",
+    "notes": [
+      "Lusha plans: Free, Starter, Pro, Premium, Scale (4 quote-based)",
+      "Lusha: Official docs confirm Free, Starter, Pro, Premium, and Scale with a credit-based model. Public USD list prices were not verified from lusha.com/pricing (Cloudflare block during research) — paid plans marked contactSales rather than guessed.",
+      "Lusha pricing verified 2026-08-13",
+      "Snov.io plans: Starter, Pro, Custom, Ultra (2 quote-based)",
+      "Snov.io: First-party pricing verified 2026-08-17 on snov.io/pricing: trial available; Starter from about $39/mo; Pro from about $99/mo; Custom/Ultra contact sales. No forever-free plan documented as primary entry in this pass. Confirm current credit/recipient limits and annual discounts on the live pricing page.",
+      "Snov.io pricing verified 2026-08-17"
+    ]
+  },
+  "evidence": {
+    "levelA": "researched",
+    "levelB": "researched",
+    "handsOnA": false,
+    "handsOnB": false,
+    "disclaimer": "Neither product has a completed hands-on product test on SoftwareGlimpse — this comparison is research/data-based only."
+  },
+  "patch": {
+    "summary": "Both will get you email addresses, but they are pointed at different revenue problems. Lusha's centre of gravity is data quality on records you already care about: enrichment, accuracy in the CRM, and signals telling you when to act. Snov's centre of gravity is the outbound campaign: find, verify, send, follow up, on a budget an SMB can carry. Decide whether you are fixing your database or filling your calendar.\n\nNeither product has a completed hands-on product test on SoftwareGlimpse — this comparison is research/data-based only.",
+    "verdict": "Lusha is the stronger choice when CRM hygiene and timing matter — keeping records accurate, enriching inbound leads, and acting on buying signals — and it is the only side of this pair with a documented free plan to start on. Snov is the stronger choice when the job is running cold email at volume for less money, since finding, verifying and sequencing sit in one subscription. Cost mechanics differ in ways that bite later: Lusha is credit-based, phone reveals cost more credits than emails so high-volume phone prospecting burns budget quickly, unused annual credits do not roll over, and API access and some connectors are plan-gated on Pro and above; Snov has no forever-free plan so evaluation is trial-led, and higher volume moves you onto contact-sales Custom or Ultra packaging. Poor fit for Lusha: teams whose main need is campaign sending, because it is explicitly not a CRM or a full outbound suite. Poor fit for Snov: teams needing enterprise-grade coverage or scoring, given its documented lighter database depth, limited lead scoring and lighter reporting.",
+    "pricingNotes": "Lusha is freemium and credit-based: a free plan plus Starter, Pro, Premium and Scale, all marked contact-sales in our pack because public list prices could not be verified from the vendor pricing page during research — so ask for credit allocations per tier, not just the seat price, and confirm that unused annual credits expire. Snov.io has no forever-free plan and starts at $39 per month across Starter and Pro with Custom and Ultra on contact sales, plus a trial. Compare credits consumed per enriched or revealed record on one side against monthly sending capacity on the other.",
+    "bestFor": [
+      {
+        "productSlug": "lusha",
+        "scenarios": [
+          "Revenue teams keeping CRM records accurate and enriched",
+          "Sellers who act on buying signals rather than static lists",
+          "Buyers who want a free tier to test data quality first"
+        ]
+      },
+      {
+        "productSlug": "snov",
+        "scenarios": [
+          "SMB teams running cold email campaigns on a small budget",
+          "Buyers wanting find, verify and send in one subscription",
+          "Small outbound teams that do not need phone numbers at volume"
+        ]
+      }
+    ],
+    "scenarioRecommendations": [
+      {
+        "scenario": "Inbound leads arrive with missing firmographic data",
+        "preferredSlug": "lusha",
+        "rationale": "Enrichment and signals are the documented product; a cold email platform fills lists but does not keep existing records accurate."
+      },
+      {
+        "scenario": "Two-person team running weekly cold email sequences",
+        "preferredSlug": "snov",
+        "rationale": "One affordable subscription covers the whole loop, whereas Lusha's credit consumption is designed around reveals and enrichment rather than sending volume."
+      },
+      {
+        "scenario": "Outbound plan depends on direct phone numbers",
+        "preferredSlug": "lusha",
+        "rationale": "Phone data is part of the offer, but budget carefully: phone reveals cost more credits than emails and unused annual credits do not roll over."
+      }
+    ],
+    "relatedAlternativeSlugs": [
+      "apollo",
+      "rocketreach",
+      "amplemarket",
+      "hunter",
+      "reply",
+      "closely"
+    ],
+    "outcomes": [
+      {
+        "criterionSlug": "ease-of-use",
+        "winnerSlug": null,
+        "winnerKind": "tie",
+        "reason": "Lusha and Snov.io are close on ease of use (7/10 vs 7/10) from approved SoftwareGlimpse editorial assessments — not hands-on lab testing. A free tier makes data quality testable before purchase on one side; the other is trial-led with no forever-free plan.",
+        "confidence": "medium",
+        "supportingFactIds": [
+          "fact-lusha-features.prospecting",
+          "fact-lusha-positioning.core",
+          "fact-snov-features.prospecting",
+          "fact-snov-pricing.model",
+          "fact-snov-positioning.vendorClaim"
+        ],
+        "assessmentIds": [
+          "assessment-lusha-crm-v1",
+          "assessment-snov-si-v1"
+        ],
+        "researchStatus": "complete"
+      },
+      {
+        "criterionSlug": "contact-data",
+        "winnerSlug": "lusha",
+        "winnerKind": "product-a",
+        "reason": "data enrichment: Lusha shows stronger researched availability (supported vs limited). Enrichment and buying signals against find-and-verify for outbound lists — both are contact data, aimed at different moments in the cycle.",
+        "confidence": "medium",
+        "supportingFactIds": [
+          "fact-lusha-features.data-enrichment",
+          "fact-lusha-features.prospecting",
+          "fact-snov-features.contact-data",
+          "fact-snov-features.data-enrichment",
+          "fact-snov-features.prospecting"
+        ],
+        "assessmentIds": [],
+        "researchStatus": "complete"
+      },
+      {
+        "criterionSlug": "prospecting",
+        "winnerSlug": "snov",
+        "winnerKind": "product-b",
+        "reason": "Snov.io leads on prospecting (6/10 vs 7/10) from approved SoftwareGlimpse editorial assessments — not hands-on lab testing. Signal-led prospecting into records you already hold against list-led prospecting into records you do not.",
+        "confidence": "high",
+        "supportingFactIds": [
+          "fact-lusha-features.email-sequences",
+          "fact-lusha-ai.assistant",
+          "fact-snov-features.prospecting",
+          "fact-snov-pricing.model",
+          "fact-snov-features.data-enrichment",
+          "fact-lusha-features.prospecting",
+          "fact-lusha-features.data-enrichment",
+          "fact-snov-features.contact-data"
+        ],
+        "assessmentIds": [
+          "assessment-lusha-crm-v1",
+          "assessment-snov-si-v1"
+        ],
+        "researchStatus": "complete"
+      },
+      {
+        "criterionSlug": "email-outreach",
+        "winnerSlug": "snov",
+        "winnerKind": "product-b",
+        "reason": "Snov.io leads on email outreach (6/10 vs 8/10) from approved SoftwareGlimpse editorial assessments — not hands-on lab testing. Sequencing exists on both sides, but it is the core of one product and a companion feature of the other.",
+        "confidence": "high",
+        "supportingFactIds": [
+          "fact-lusha-features.email-sequences",
+          "fact-lusha-ai.email-generation",
+          "fact-snov-features.email-outreach",
+          "fact-snov-pricing.model",
+          "fact-snov-features.email-sequences"
+        ],
+        "assessmentIds": [
+          "assessment-lusha-crm-v1",
+          "assessment-snov-si-v1"
+        ],
+        "researchStatus": "complete"
+      },
+      {
+        "criterionSlug": "value-for-money",
+        "winnerSlug": "snov",
+        "winnerKind": "product-b",
+        "reason": "Snov.io leads on value for money (5/10 vs 8/10) from approved SoftwareGlimpse editorial assessments — not hands-on lab testing. Credit consumption — phone reveals costing more than emails, no annual rollover — against monthly sending capacity; model your own mix rather than the list price.",
+        "confidence": "high",
+        "supportingFactIds": [
+          "fact-lusha-pricing.hasFreePlan",
+          "fact-lusha-pricing.plans.pro",
+          "fact-snov-pricing.hasFreePlan",
+          "fact-snov-pricing.model",
+          "fact-snov-pricing.startingPriceMonthly",
+          "fact-lusha-pricing.model"
+        ],
+        "assessmentIds": [
+          "assessment-lusha-crm-v1",
+          "assessment-snov-si-v1"
+        ],
+        "researchStatus": "complete"
+      }
+    ],
+    "overallWinnerKind": "depends"
+  },
+  "notes": [
+    "improve-wave-1-2026-09-07"
+  ]
+}

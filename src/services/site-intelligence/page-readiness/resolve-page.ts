@@ -77,7 +77,7 @@ export function resolvePageInput(input: string): ResolvedPage {
     const res = getResourceBySlug(id, { includeUnpublished: true });
     if (res) {
       existsInCatalog = true;
-      title = res.title;
+      title = res.name || res.shortTitle || res.slug;
       pageType = "resource";
       contentId = res.id;
       publishedHint = res.metadata?.status === "published";

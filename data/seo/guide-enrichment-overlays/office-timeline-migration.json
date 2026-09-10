@@ -1,0 +1,158 @@
+{
+  "slug": "office-timeline-migration",
+  "enrichmentType": "MIGRATION_GUIDE",
+  "updatedAt": "2026-09-09T05:40:21.974Z",
+  "uniqueValueAdded": [
+    "implementation_workflow",
+    "scenario_analysis",
+    "decision_framework",
+    "limitations_evidence",
+    "buyer_checklist"
+  ],
+  "patch": {
+    "summary": "Office Timeline migration guide: inventory → rehearse → freeze → validate integrations — grounded in researched limitations and catalogue peers.",
+    "blocks": [
+      {
+        "id": "da-office-timeline-migration-1",
+        "type": "direct-answer",
+        "body": "Migrate to Office Timeline by inventorying legacy project-management fields, mapping them to Office Timeline objects, rehearsing a freeze window, and validating Microsoft Powerpoint, Microsoft Project, Excel before reopening writes.",
+        "bullets": [
+          "Inventory → map → rehearse → cut over → reopen",
+          "Highest risk: Not a work OS — no monday/Hive-class boards, automations or workload management",
+          "Success signal: task boards works for the pilot cohort"
+        ]
+      },
+      {
+        "id": "mig-office-timeline-migration-2",
+        "type": "step",
+        "heading": "Office Timeline migration cutover playbook",
+        "body": "Migrations fail from optimistic timelines — not from missing motivation.",
+        "stepNumber": 1,
+        "scenarios": [
+          {
+            "title": "Field inventory",
+            "body": "Export legacy fields that power task boards, timeline / Gantt, docs and collaboration and mark must-map vs archive."
+          },
+          {
+            "title": "Rehearsal load",
+            "body": "Run a non-prod load into Office Timeline; measure match rates before the freeze."
+          },
+          {
+            "title": "Production freeze",
+            "body": "Freeze legacy writes; cut over; validate Microsoft Powerpoint; then reopen."
+          }
+        ]
+      },
+      {
+        "id": "df-office-timeline-migration-3",
+        "type": "decision-framework",
+        "title": "Migrate to Office Timeline?",
+        "steps": [
+          {
+            "id": "m-1",
+            "label": "Migrate when PMO and project leads who need PowerPoint-native executive timelines/Gantt outweigh migration cost"
+          },
+          {
+            "id": "m-2",
+            "label": "Delay if this limitation hits cutover: Not a work OS — no monday/Hive-class boards, automations or workload management"
+          },
+          {
+            "id": "m-3",
+            "label": "If Office Timeline mapping is poor, compare destination fit with monday.com before moving data twice"
+          }
+        ]
+      },
+      {
+        "id": "mist-office-timeline-migration-4",
+        "type": "mistakes",
+        "title": "Office Timeline migration mistakes",
+        "items": [
+          {
+            "title": "No freeze window",
+            "body": "Dual-writing without a freeze creates irrevocable duplicates."
+          },
+          {
+            "title": "Integrations last",
+            "body": "Wire Microsoft Powerpoint in rehearsal — not on Monday morning after cutover."
+          },
+          {
+            "title": "Data risk 1",
+            "body": "Not a work OS — no monday/Hive-class boards, automations or workload management"
+          },
+          {
+            "title": "Data risk 2",
+            "body": "Centre of gravity is PowerPoint presentation timelines, not live team task execution"
+          },
+          {
+            "title": "Data risk 3",
+            "body": "Automations and AI assistance are not the product job"
+          }
+        ]
+      },
+      {
+        "id": "sel-office-timeline-migration-5",
+        "type": "selection-checklist",
+        "title": "Office Timeline migration checklist",
+        "dimensions": [
+          {
+            "id": "map",
+            "label": "Mapping",
+            "options": [
+              "Must-map fields listed",
+              "Owners assigned",
+              "Archive rules written"
+            ]
+          },
+          {
+            "id": "rehearse",
+            "label": "Rehearsal",
+            "options": [
+              "Non-prod load done",
+              "Match rate measured",
+              "Rollback tested"
+            ]
+          },
+          {
+            "id": "cutover",
+            "label": "Cutover",
+            "options": [
+              "Freeze communicated",
+              "Integrations green",
+              "Pilot cohort signed off"
+            ]
+          }
+        ]
+      }
+    ],
+    "checklist": [
+      {
+        "id": "enrich-chk-0",
+        "label": "Complete field inventory for task boards",
+        "order": 0
+      },
+      {
+        "id": "enrich-chk-1",
+        "label": "Rehearse load before production freeze",
+        "order": 1
+      },
+      {
+        "id": "enrich-chk-2",
+        "label": "Validate Microsoft Powerpoint pre-reopen",
+        "order": 2
+      },
+      {
+        "id": "enrich-chk-3",
+        "label": "Mitigate: Not a work OS — no monday/Hive-class boards, automations or workload management",
+        "order": 3
+      }
+    ],
+    "nextAction": {
+      "contentId": "tool:finder:project-management",
+      "label": "Open Finder shortlist"
+    }
+  },
+  "notes": [
+    "Migration: cutover risks, data mapping, checklist.",
+    "Type-specific skeleton: MIGRATION_GUIDE"
+  ]
+}

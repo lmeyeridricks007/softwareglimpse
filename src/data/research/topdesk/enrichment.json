@@ -224,36 +224,6 @@
       ]
     }
   ],
-  "aiCapabilities": [
-    {
-      "capability": "ITSM AI copilot",
-      "availability": "limited",
-      "sourceIds": [
-        "topdesk-product-official"
-      ]
-    },
-    {
-      "capability": "Developer AI copilot",
-      "availability": "not-supported",
-      "sourceIds": [
-        "topdesk-product-official"
-      ]
-    },
-    {
-      "capability": "automation",
-      "availability": "limited",
-      "sourceIds": [
-        "topdesk-product-official"
-      ]
-    },
-    {
-      "capability": "recommendations",
-      "availability": "limited",
-      "sourceIds": [
-        "topdesk-product-official"
-      ]
-    }
-  ],
   "integrationSupport": [
     {
       "integrationSlug": "slack",
@@ -271,7 +241,37 @@
     },
     {
       "integrationSlug": "api",
-      "kind": "api",
+      "kind": "api-only",
+      "sourceIds": [
+        "topdesk-product-official"
+      ]
+    }
+  ],
+  "aiCapabilities": [
+    {
+      "capability": "assistant",
+      "availability": "limited",
+      "sourceIds": [
+        "topdesk-product-official"
+      ]
+    },
+    {
+      "capability": "assistant",
+      "availability": "not-supported",
+      "sourceIds": [
+        "topdesk-product-official"
+      ]
+    },
+    {
+      "capability": "automation",
+      "availability": "limited",
+      "sourceIds": [
+        "topdesk-product-official"
+      ]
+    },
+    {
+      "capability": "recommendations",
+      "availability": "limited",
       "sourceIds": [
         "topdesk-product-official"
       ]
@@ -355,6 +355,74 @@
       "isEditorial": false
     }
   ],
+  "screenshots": [
+    {
+      "id": "topdesk-shot-overview",
+      "src": "/vendor-ui/topdesk/overview.jpg",
+      "alt": "TOPdesk official marketing visual",
+      "caption": "Official Open Graph / marketing visual from https://www.topdesk.com/.",
+      "source": "https://www.topdesk.com/",
+      "checkedAt": "2026-08-18T14:00:00.000Z",
+      "annotation": "Official TOPdesk marketing UI asset",
+      "kind": "vendor-ui",
+      "featureIds": [
+        "incident-management",
+        "service-catalog"
+      ],
+      "useCaseIds": [
+        "itsm-service-desk"
+      ]
+    }
+  ],
+  "media": [
+    {
+      "id": "media-topdesk-8ezde24bq8o",
+      "productSlug": "topdesk",
+      "productIds": [
+        "topdesk"
+      ],
+      "type": "official-video",
+      "provider": "youtube",
+      "sourceUrl": "https://www.youtube.com/watch?v=8eZDe24Bq8o",
+      "videoId": "8eZDe24Bq8o",
+      "providerId": "8eZDe24Bq8o",
+      "embedUrl": "https://www.youtube-nocookie.com/embed/8eZDe24Bq8o",
+      "title": "TOPdesk: Service Management That Feels Personal",
+      "thumbnailUrl": "https://i.ytimg.com/vi/8eZDe24Bq8o/hqdefault.jpg",
+      "sourceOrganization": "TOPdesk B.V.",
+      "officialSource": true,
+      "officialSourceKind": "vendor-channel",
+      "verifiedAt": "2026-08-18T22:00:00.000Z",
+      "lastCheckedAt": "2026-08-18T22:00:00.000Z",
+      "sourceHealth": "unknown",
+      "refreshFlags": [],
+      "embeddingAllowed": true,
+      "capabilityIds": [],
+      "featureIds": [],
+      "requirementIds": [],
+      "useCaseIds": [
+        "itsm-service-desk"
+      ],
+      "industryIds": [],
+      "guideIds": [],
+      "evidenceRefs": [],
+      "evidenceClaimIds": [],
+      "evidenceClaimKinds": [],
+      "demonstratedDimensionIds": [],
+      "requirementCriterionIds": [],
+      "workflowStageIds": [],
+      "reportedOutcomes": [],
+      "placements": [
+        "features",
+        "overview"
+      ],
+      "purpose": "Official TOPdesk product video for IT optional-next onboarding",
+      "whatThisShows": [],
+      "limitations": [],
+      "whatToNotice": [],
+      "status": "active"
+    }
+  ],
   "pricing": {
     "currency": "USD",
     "model": "per-seat",
@@ -431,86 +499,12 @@
       }
     ],
     "notes": "Verified 2026-08-18 from topdesk.com/en/pricing (high confidence). Essential £51/agent/mo; Engaged £72; Excellent £101. startingPriceMonthly 51 is GBP from that card — not a USD list price. No free plan; no published self-serve trial. Affiliate economics excluded.",
-    "verifiedAt": "2026-08-18T22:00:00.000Z",
+    "verifiedAt": "2026-09-09T06:31:13.927Z",
     "sourceIds": [
       "topdesk-pricing-official"
     ],
     "startingPriceMonthly": 51
   },
-  "screenshots": [
-    {
-      "id": "topdesk-shot-overview",
-      "src": "/vendor-ui/topdesk/overview.jpg",
-      "alt": "TOPdesk official marketing visual",
-      "caption": "Official Open Graph / marketing visual from https://www.topdesk.com/.",
-      "source": "https://www.topdesk.com/",
-      "checkedAt": "2026-08-18T14:00:00.000Z",
-      "annotation": "Official TOPdesk marketing UI asset",
-      "kind": "vendor-ui",
-      "featureIds": [
-        "incident-management",
-        "service-catalog"
-      ],
-      "useCaseIds": [
-        "itsm-service-desk"
-      ]
-    }
-  ],
-  "media": [
-    {
-      "id": "media-topdesk-8ezde24bq8o",
-      "productSlug": "topdesk",
-      "productIds": [
-        "topdesk"
-      ],
-      "type": "official-video",
-      "provider": "youtube",
-      "sourceUrl": "https://www.youtube.com/watch?v=8eZDe24Bq8o",
-      "videoId": "8eZDe24Bq8o",
-      "providerId": "8eZDe24Bq8o",
-      "embedUrl": "https://www.youtube-nocookie.com/embed/8eZDe24Bq8o",
-      "title": "TOPdesk: Service Management That Feels Personal",
-      "thumbnailUrl": "https://i.ytimg.com/vi/8eZDe24Bq8o/hqdefault.jpg",
-      "sourceOrganization": "TOPdesk B.V.",
-      "officialSource": true,
-      "officialSourceKind": "vendor-channel",
-      "verifiedAt": "2026-08-18T22:00:00.000Z",
-      "lastCheckedAt": "2026-08-18T22:00:00.000Z",
-      "sourceHealth": "unknown",
-      "refreshFlags": [],
-      "embeddingAllowed": true,
-      "capabilityIds": [],
-      "featureIds": [],
-      "requirementIds": [],
-      "useCaseIds": [
-        "itsm-service-desk"
-      ],
-      "industryIds": [],
-      "guideIds": [],
-      "evidenceRefs": [],
-      "evidenceClaimIds": [],
-      "evidenceClaimKinds": [],
-      "demonstratedDimensionIds": [],
-      "requirementCriterionIds": [],
-      "workflowStageIds": [],
-      "reportedOutcomes": [],
-      "placements": [
-        "features",
-        "overview"
-      ],
-      "purpose": "Official TOPdesk product video for IT optional-next onboarding",
-      "whatThisShows": [],
-      "limitations": [],
-      "whatToNotice": [],
-      "status": "active"
-    }
-  ],
-  "sourceIds": [
-    "topdesk-product-official",
-    "topdesk-pricing-official",
-    "topdesk-pricing"
-  ],
-  "notes": "IT optional-next onboarding enrichment from first-party research 2026-08-18T22:00:00.000Z. handsOnTesting=false. membershipRole=primary. jobCluster=itsm-service-desk.",
   "domainCheckedAt": {
     "identity": "2026-08-18T22:00:00.000Z",
     "pricing": "2026-08-18T22:00:00.000Z",
@@ -524,5 +518,11 @@
     "limits": "2026-08-18T22:00:00.000Z",
     "security-compliance": "2026-08-18T22:00:00.000Z"
   },
-  "updatedAt": "2026-08-18T14:00:00.000Z"
+  "sourceIds": [
+    "topdesk-product-official",
+    "topdesk-pricing-official",
+    "topdesk-pricing"
+  ],
+  "updatedAt": "2026-08-18T14:00:00.000Z",
+  "notes": "IT optional-next onboarding enrichment from first-party research 2026-08-18T22:00:00.000Z. handsOnTesting=false. membershipRole=primary. jobCluster=itsm-service-desk."
 }

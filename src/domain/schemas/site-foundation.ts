@@ -36,7 +36,9 @@ export const AuthorSchema = z.object({
   role: z.string().optional(),
   shortBio: z.string().optional(),
   fullBio: z.string().optional(),
+  /** Local public path or absolute URL — only when a legitimate photo exists. */
   photoPath: z.string().optional(),
+  /** Areas of expertise — never invent credentials or employers. */
   expertise: z.array(z.string()).default([]),
   socialLinks: z
     .object({

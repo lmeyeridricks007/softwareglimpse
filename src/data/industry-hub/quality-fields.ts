@@ -1,4 +1,4 @@
-import type { IndustryHubProfile } from "@/domain";
+import type { IndustryHubProfileInput } from "@/domain";
 import { COMPANY_ROUTES } from "@/services/site-foundation";
 
 /**
@@ -10,7 +10,7 @@ import { COMPANY_ROUTES } from "@/services/site-foundation";
  */
 
 type QualityPack = Pick<
-  IndustryHubProfile,
+  IndustryHubProfileInput,
   | "priorities"
   | "useCases"
   | "implementationConsiderations"

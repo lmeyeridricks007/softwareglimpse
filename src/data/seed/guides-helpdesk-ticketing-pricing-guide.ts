@@ -1,4 +1,4 @@
-import type { GuidePage } from "@/domain";
+import type { GuidePageInput } from "@/domain";
 import type { z } from "zod";
 import type { GuideContentBlockSchema } from "@/domain";
 import { tier24GuideScheduledAt } from "@/data/config/publishing/tier-24-helpdesk-ticketing-launch-2027-07-01";
@@ -34,7 +34,7 @@ const blocks: GuideBlockInput[] = [
   },
 ];
 
-function metadata(): GuidePage["metadata"] {
+function metadata(): GuidePageInput["metadata"] {
   return SCHEDULED_AT
     ? {
         status: "scheduled",
@@ -54,7 +54,7 @@ function metadata(): GuidePage["metadata"] {
       };
 }
 
-export const helpdeskTicketingPricingGuide: GuidePage = {
+export const helpdeskTicketingPricingGuide: GuidePageInput = {
   id: "guide-helpdesk-ticketing-pricing-guide",
   slug: SLUG,
   title: "Helpdesk & Ticketing Pricing Guide",
@@ -76,7 +76,7 @@ export const helpdeskTicketingPricingGuide: GuidePage = {
     "how-to-choose-helpdesk-ticketing-software",
     "helpdesk-ticketing-evaluation-guide",
   ],
-  blocks: blocks as GuidePage["blocks"],
+  blocks: blocks as GuidePageInput["blocks"],
   checklist: [],
   sections: [],
   faq: [],
@@ -87,6 +87,6 @@ export const helpdeskTicketingPricingGuide: GuidePage = {
     description:
       "Compare per-agent, ticket-cap, and ITSM pricing for helpdesk and ticketing software.",
     canonicalPath: `/guides/${SLUG}/`,
-    indexable: !SCHEDULED_AT,
+    indexable: true,
   },
 };

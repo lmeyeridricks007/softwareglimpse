@@ -1,4 +1,4 @@
-import type { GuidePage } from "@/domain";
+import type { GuidePageInput } from "@/domain";
 import type { z } from "zod";
 import type { GuideContentBlockSchema } from "@/domain";
 import { tier17GuideScheduledAt } from "@/data/config/publishing/tier-17-analytics-bi-launch-2027-02-01";
@@ -34,7 +34,7 @@ const blocks: GuideBlockInput[] = [
   },
 ];
 
-function metadata(): GuidePage["metadata"] {
+function metadata(): GuidePageInput["metadata"] {
   return SCHEDULED_AT
     ? {
         status: "scheduled",
@@ -54,7 +54,7 @@ function metadata(): GuidePage["metadata"] {
       };
 }
 
-export const analyticsBiPricingGuide: GuidePage = {
+export const analyticsBiPricingGuide: GuidePageInput = {
   id: "guide-analytics-bi-pricing-guide",
   slug: SLUG,
   title: "Analytics & BI Software Pricing Guide",
@@ -74,7 +74,7 @@ export const analyticsBiPricingGuide: GuidePage = {
     "what-is-analytics-bi-software",
     "how-to-choose-analytics-bi-software",
   ],
-  blocks: blocks as GuidePage["blocks"],
+  blocks: blocks as GuidePageInput["blocks"],
   checklist: [],
   sections: [],
   faq: [],
@@ -84,7 +84,7 @@ export const analyticsBiPricingGuide: GuidePage = {
     title: "Analytics & BI Software Pricing Guide",
     description:
       "Understand how attribution and KPI dashboard tools price connectors, seats, and tracked sources.",
-    indexable: !SCHEDULED_AT,
+    indexable: true,
     canonicalPath: "/guides/analytics-bi-pricing-guide/",
   },
 };

@@ -1,4 +1,4 @@
-import type { GuidePage } from "@/domain";
+import type { GuidePageInput } from "@/domain";
 import type { z } from "zod";
 import type { GuideContentBlockSchema } from "@/domain";
 import { tier19GuideScheduledAt } from "@/data/config/publishing/tier-19-reputation-reviews-launch-2027-04-01";
@@ -54,7 +54,7 @@ const blocks: GuideBlockInput[] = [
   },
 ];
 
-function metadata(): GuidePage["metadata"] {
+function metadata(): GuidePageInput["metadata"] {
   return SCHEDULED_AT
     ? {
         status: "scheduled",
@@ -74,7 +74,7 @@ function metadata(): GuidePage["metadata"] {
       };
 }
 
-export const whatIsReputationReviewsSoftwareGuide: GuidePage = {
+export const whatIsReputationReviewsSoftwareGuide: GuidePageInput = {
   id: "guide-what-is-reputation-reviews-software",
   slug: SLUG,
   title: "What is Reputation & Review Management Software?",
@@ -94,7 +94,7 @@ export const whatIsReputationReviewsSoftwareGuide: GuidePage = {
     "reputation-reviews-pricing-guide",
     "reputation-reviews-vs-customer-service-software",
   ],
-  blocks: blocks as GuidePage["blocks"],
+  blocks: blocks as GuidePageInput["blocks"],
   checklist: [],
   sections: [],
   faq: [],
@@ -104,7 +104,7 @@ export const whatIsReputationReviewsSoftwareGuide: GuidePage = {
     title: "What is Reputation & Review Management Software?",
     description:
       "Learn how reputation software collects reviews, monitors ratings, and automates local business reputation workflows.",
-    indexable: !SCHEDULED_AT,
+    indexable: true,
     canonicalPath: "/guides/what-is-reputation-reviews-software/",
   },
 };

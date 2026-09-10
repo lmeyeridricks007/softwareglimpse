@@ -1,4 +1,4 @@
-import type { GuidePage } from "@/domain";
+import type { GuidePageInput } from "@/domain";
 import type { z } from "zod";
 import type { GuideContentBlockSchema } from "@/domain";
 import { tier27GuideScheduledAt } from "@/data/config/publishing/tier-27-ats-recruiting-launch-2027-08-01";
@@ -34,7 +34,7 @@ const blocks: GuideBlockInput[] = [
   },
 ];
 
-function metadata(): GuidePage["metadata"] {
+function metadata(): GuidePageInput["metadata"] {
   return SCHEDULED_AT
     ? {
         status: "scheduled",
@@ -54,7 +54,7 @@ function metadata(): GuidePage["metadata"] {
       };
 }
 
-export const howToChooseAtsRecruitingSoftwareGuide: GuidePage = {
+export const howToChooseAtsRecruitingSoftwareGuide: GuidePageInput = {
   id: "guide-how-to-choose-ats-recruiting-software",
   slug: SLUG,
   title: "How to Choose ATS & Recruiting Software",
@@ -75,7 +75,7 @@ export const howToChooseAtsRecruitingSoftwareGuide: GuidePage = {
     "ats-recruiting-evaluation-guide",
     "ats-recruiting-vs-hr-software",
   ],
-  blocks: blocks as GuidePage["blocks"],
+  blocks: blocks as GuidePageInput["blocks"],
   checklist: [],
   sections: [],
   faq: [],
@@ -86,6 +86,6 @@ export const howToChooseAtsRecruitingSoftwareGuide: GuidePage = {
     description:
       "Choose ATS software by hiring job cluster, pricing unit, pipeline depth, and HRIS integrations.",
     canonicalPath: `/guides/${SLUG}/`,
-    indexable: !SCHEDULED_AT,
+    indexable: true,
   },
 };

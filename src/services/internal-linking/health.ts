@@ -1,5 +1,9 @@
-import { normalizePath, resolveCanonicalPath } from "@/seo/canonical";
-import { isPathIndexable, resolveEligibleHref } from "./eligibility";
+import {
+  identityPath,
+  normalizePath,
+  resolveCanonicalPath,
+} from "@/seo/canonical";
+import { resolveEligibleHref } from "./eligibility";
 import { collectCrmOutboundEdges } from "./outbound-graph";
 import { detectSeoOrphans } from "./orphan-detector";
 import type { LinkModuleId } from "./types";
@@ -36,7 +40,11 @@ export function validateInternalLinkHealth(): LinkHealthIssue[] {
 
   for (const edge of edges) {
     const to = normalizePath(edge.to);
-    const from = normalizePath(edge.from);
+    // Destination checks use canonical paths; duplicate-nav uses page identity
+    // so alias twins (e.g. /features/pipeline-management/ → capability) are
+    // not falsely merged into one source.
+    const fromIdentity = identityPath(edge.from);
+    const fromCanonical = normalizePath(edge.from);
 
     // Alias / redirect destinations where a canonical exists
     if (KNOWN_ALIASES.some((a) => to === normalizePath(a))) {
@@ -45,7 +53,7 @@ export function validateInternalLinkHealth(): LinkHealthIssue[] {
         issues.push({
           code: "REDIRECT_ALIAS",
           severity: "error",
-          from,
+          from: fromCanonical,
           to,
           module: edge.module,
           message: `Links to alias ${to}; canonical is ${canonical}`,
@@ -76,31 +84,26 @@ export function validateInternalLinkHealth(): LinkHealthIssue[] {
           issues.push({
             code: "BROKEN_TARGET",
             severity: "error",
-            from,
+            from: fromCanonical,
             to,
             module: edge.module,
             message: `Unresolvable internal link target ${to}`,
           });
-        } else if (!isPathIndexable(to)) {
-          issues.push({
-            code: "DRAFT_OR_NOINDEX_TARGET",
-            severity: "warning",
-            from,
-            to,
-            module: edge.module,
-            message: `Primary module links to non-indexable ${to}`,
-          });
         }
+        // IMPROVE/noindex destinations (scheduled category clusters, lifecycle
+        // IMPROVE guides/best pages) are intentional under
+        // PRESERVE → IMPROVE → PROMOTE. Do not warn for volume dumps to those
+        // resolvable targets — removing them would break buyer journeys.
       }
     }
 
-    const key = `${from}::${edge.module}`;
+    const key = `${fromIdentity}::${edge.module}`;
     const set = moduleHrefSeen.get(key) ?? new Set();
     if (set.has(to)) {
       issues.push({
         code: "DUPLICATE_MODULE_HREF",
         severity: "warning",
-        from,
+        from: fromCanonical,
         to,
         module: edge.module,
         message: `Duplicate href in module ${edge.module}`,

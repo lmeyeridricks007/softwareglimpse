@@ -1,4 +1,4 @@
-import type { GuidePage } from "@/domain";
+import type { GuidePageInput } from "@/domain";
 import type { z } from "zod";
 import type { GuideContentBlockSchema } from "@/domain";
 import { tier33GuideScheduledAt } from "@/data/config/publishing/tier-33-ppc-advertising-launch-2027-09-01";
@@ -34,7 +34,7 @@ const blocks: GuideBlockInput[] = [
   },
 ];
 
-function metadata(): GuidePage["metadata"] {
+function metadata(): GuidePageInput["metadata"] {
   return SCHEDULED_AT
     ? {
         status: "scheduled",
@@ -54,7 +54,7 @@ function metadata(): GuidePage["metadata"] {
       };
 }
 
-export const howToChoosePpcAdvertisingSoftwareGuide: GuidePage = {
+export const howToChoosePpcAdvertisingSoftwareGuide: GuidePageInput = {
   id: "guide-how-to-choose-ppc-advertising-software",
   slug: SLUG,
   title: "How to Choose PPC Advertising Software",
@@ -75,7 +75,7 @@ export const howToChoosePpcAdvertisingSoftwareGuide: GuidePage = {
     "ppc-advertising-evaluation-guide",
     "ppc-advertising-vs-marketing-software",
   ],
-  blocks: blocks as GuidePage["blocks"],
+  blocks: blocks as GuidePageInput["blocks"],
   checklist: [],
   sections: [],
   faq: [],
@@ -86,6 +86,6 @@ export const howToChoosePpcAdvertisingSoftwareGuide: GuidePage = {
     description:
       "Choose PPC software by cluster, ad spend bands, channel coverage, and automation depth.",
     canonicalPath: `/guides/${SLUG}/`,
-    indexable: !SCHEDULED_AT,
+    indexable: true,
   },
 };

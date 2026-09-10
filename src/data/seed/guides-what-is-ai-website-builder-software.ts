@@ -1,4 +1,4 @@
-import type { GuidePage } from "@/domain";
+import type { GuidePageInput } from "@/domain";
 import type { z } from "zod";
 import type { GuideContentBlockSchema } from "@/domain";
 import { tier21GuideScheduledAt } from "@/data/config/publishing/tier-21-ai-website-builder-launch-2027-05-01";
@@ -53,7 +53,7 @@ const blocks: GuideBlockInput[] = [
   },
 ];
 
-function metadata(): GuidePage["metadata"] {
+function metadata(): GuidePageInput["metadata"] {
   return SCHEDULED_AT
     ? {
         status: "scheduled",
@@ -73,7 +73,7 @@ function metadata(): GuidePage["metadata"] {
       };
 }
 
-export const whatIsAiWebsiteBuilderSoftwareGuide: GuidePage = {
+export const whatIsAiWebsiteBuilderSoftwareGuide: GuidePageInput = {
   id: "guide-what-is-ai-website-builder-software",
   slug: SLUG,
   title: "What is AI Website Builder Software?",
@@ -93,7 +93,7 @@ export const whatIsAiWebsiteBuilderSoftwareGuide: GuidePage = {
     "ai-website-builder-pricing-guide",
     "ai-website-builder-vs-ai-software",
   ],
-  blocks: blocks as GuidePage["blocks"],
+  blocks: blocks as GuidePageInput["blocks"],
   checklist: [],
   sections: [],
   faq: [],
@@ -103,7 +103,7 @@ export const whatIsAiWebsiteBuilderSoftwareGuide: GuidePage = {
     title: "What is AI Website Builder Software?",
     description:
       "Learn how AI website builders generate sites, apps, and agents from prompts.",
-    indexable: !SCHEDULED_AT,
+    indexable: true,
     canonicalPath: "/guides/what-is-ai-website-builder-software/",
   },
 };

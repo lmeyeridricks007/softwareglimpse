@@ -126,6 +126,46 @@ const INTEGRATION_PRIORITY_OPTIONS = [
   { value: "optional", label: "Optional" },
 ];
 
+type CrmWizardBootstrap = {
+  profile: CrmDecisionProfile;
+  stepIndex: number;
+  maxStepIndex: number;
+  started: boolean;
+};
+
+function bootstrapCrmRequirementsWizard(
+  searchParams: URLSearchParams,
+  stages: readonly { id: string }[],
+): CrmWizardBootstrap {
+  const stored = loadCrmDecisionProfile();
+  const base = stored ?? createEmptyCrmDecisionProfile();
+  const profile = seedProfileFromQuery(base, {
+    industry: searchParams.get("industry"),
+    useCase: searchParams.get("useCase"),
+    requirement: searchParams.get("requirement"),
+    feature: searchParams.get("feature"),
+  });
+  let stepIndex = 0;
+  let maxStepIndex = 0;
+  let started = false;
+  if (stored?.wizardStepId) {
+    const idx = stages.findIndex((s) => s.id === stored.wizardStepId);
+    if (idx >= 0) {
+      stepIndex = idx;
+      maxStepIndex = idx;
+      started = true;
+    }
+  }
+  if (
+    searchParams.get("industry") ||
+    searchParams.get("useCase") ||
+    searchParams.get("start") === "1"
+  ) {
+    started = true;
+  }
+  return { profile, stepIndex, maxStepIndex, started };
+}
+
 type Props = {
   relatedGuides?: Array<{ href: string; label: string }>;
   faqItems: Array<{ question: string; answer: string }>;
@@ -144,45 +184,29 @@ export function CrmRequirementsBuilderApp({
   const headingId = useId();
   const wizardRef = useRef<HTMLElement | null>(null);
 
-  const [hydrated, setHydrated] = useState(false);
-  const [started, setStarted] = useState(false);
-  const [stepIndex, setStepIndex] = useState(0);
-  /** Furthest step unlocked for jump-back navigation. */
-  const [maxStepIndex, setMaxStepIndex] = useState(0);
-  const [profile, setProfile] = useState<CrmDecisionProfile>(() =>
-    createEmptyCrmDecisionProfile(),
+  const [initialWizard] = useState(() =>
+    bootstrapCrmRequirementsWizard(searchParams, stages),
   );
+  const [sessionKey, setSessionKey] = useState(() => searchParams.toString());
+  const [hydrated, setHydrated] = useState(true);
+  const [started, setStarted] = useState(initialWizard.started);
+  const [stepIndex, setStepIndex] = useState(initialWizard.stepIndex);
+  const [maxStepIndex, setMaxStepIndex] = useState(initialWizard.maxStepIndex);
+  const [profile, setProfile] = useState<CrmDecisionProfile>(
+    initialWizard.profile,
+  );
+  const currentSearchKey = searchParams.toString();
+  if (currentSearchKey !== sessionKey) {
+    const next = bootstrapCrmRequirementsWizard(searchParams, stages);
+    setSessionKey(currentSearchKey);
+    setProfile(next.profile);
+    setStarted(next.started);
+    setStepIndex(next.stepIndex);
+    setMaxStepIndex(next.maxStepIndex);
+  }
   const [profileDrawerOpen, setProfileDrawerOpen] = useState(false);
   const [copyStatus, setCopyStatus] = useState<string | null>(null);
   const startedTracked = useRef(false);
-
-  useEffect(() => {
-    const stored = loadCrmDecisionProfile();
-    const base = stored ?? createEmptyCrmDecisionProfile();
-    const seeded = seedProfileFromQuery(base, {
-      industry: searchParams.get("industry"),
-      useCase: searchParams.get("useCase"),
-      requirement: searchParams.get("requirement"),
-      feature: searchParams.get("feature"),
-    });
-    setProfile(seeded);
-    if (stored?.wizardStepId) {
-      const idx = stages.findIndex((s) => s.id === stored.wizardStepId);
-      if (idx >= 0) {
-        setStepIndex(idx);
-        setMaxStepIndex(idx);
-        setStarted(true);
-      }
-    }
-    if (
-      searchParams.get("industry") ||
-      searchParams.get("useCase") ||
-      searchParams.get("start") === "1"
-    ) {
-      setStarted(true);
-    }
-    setHydrated(true);
-  }, [searchParams, stages]);
 
   const persist = useCallback((next: CrmDecisionProfile) => {
     saveCrmDecisionProfile(next);

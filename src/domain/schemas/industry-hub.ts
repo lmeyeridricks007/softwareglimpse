@@ -247,3 +247,7 @@ export const IndustryHubProfileSchema = z.object({
 });
 
 export type IndustryHubProfile = z.infer<typeof IndustryHubProfileSchema>;
+export type IndustryHubProfileInput = z.input<typeof IndustryHubProfileSchema>;
+export type IndustryHubWorkflowStepInput = z.input<
+  typeof IndustryHubWorkflowStepSchema
+>;

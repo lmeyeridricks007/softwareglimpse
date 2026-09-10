@@ -1,0 +1,423 @@
+{
+  "slug": "hynote",
+  "updatedAt": "2026-09-08T21:28:59.680Z",
+  "version": "1.0.0",
+  "fieldAudit": {
+    "slug": "hynote",
+    "checkedAt": "2026-09-08T21:28:59.679Z",
+    "items": [
+      {
+        "field": "name",
+        "status": "PASS",
+        "detail": "Name: HyNote",
+        "source": "seed"
+      },
+      {
+        "field": "product_status",
+        "status": "PASS",
+        "detail": "productLifecycle=active",
+        "source": "seed"
+      },
+      {
+        "field": "canonical_vendor",
+        "status": "PASS",
+        "detail": "Vendor: Turing Intelligence LLC",
+        "source": "seed"
+      },
+      {
+        "field": "category",
+        "status": "PASS",
+        "detail": "primaryCategorySlug=ai",
+        "source": "seed"
+      },
+      {
+        "field": "description",
+        "status": "PASS",
+        "detail": "Description present (AI note taker — Free $0; Pro from $6.66/mo annual ($79.99/yr); Plus $10.83; Unli…)",
+        "source": "seed"
+      },
+      {
+        "field": "target_audience",
+        "status": "PASS",
+        "detail": "Sizes=3, teams=3, assessment bestFor=3",
+        "source": "assessment"
+      },
+      {
+        "field": "use_cases",
+        "status": "PASS",
+        "detail": "useCaseSlugs=1",
+        "source": "seed"
+      },
+      {
+        "field": "capabilities",
+        "status": "PASS",
+        "detail": "featureRatings=0, enrichment features=19",
+        "source": "enrichment"
+      },
+      {
+        "field": "pricing",
+        "status": "PASS",
+        "detail": "Pricing envelope present",
+        "source": "enrichment"
+      },
+      {
+        "field": "plans",
+        "status": "PASS",
+        "detail": "plans=5",
+        "source": "enrichment"
+      },
+      {
+        "field": "free_plan",
+        "status": "PASS",
+        "detail": "Free plan documented",
+        "source": "enrichment"
+      },
+      {
+        "field": "trial",
+        "status": "PASS",
+        "detail": "Trial documented on plans/pricing",
+        "source": "enrichment"
+      },
+      {
+        "field": "integrations",
+        "status": "PASS",
+        "detail": "integrationSlugs=0, enrichment=2",
+        "source": "enrichment"
+      },
+      {
+        "field": "alternatives",
+        "status": "PASS",
+        "detail": "alternativeSlugs=2",
+        "source": "seed"
+      },
+      {
+        "field": "competitors",
+        "status": "PASS",
+        "detail": "competitorSlugs=2",
+        "source": "seed"
+      },
+      {
+        "field": "affiliate",
+        "status": "PASS",
+        "detail": "Affiliate enabled with tracking URL",
+        "source": "seed"
+      },
+      {
+        "field": "source_provenance",
+        "status": "PASS",
+        "detail": "seed sources=0, enrichment sourceIds=4",
+        "source": "enrichment"
+      },
+      {
+        "field": "verification_date",
+        "status": "PASS",
+        "detail": "Latest verification/research signal: 2026-08-28T06:10:00.000Z",
+        "source": "enrichment"
+      }
+    ],
+    "passCount": 18,
+    "partialCount": 0,
+    "missingCount": 0,
+    "unknownCount": 0,
+    "score": 100
+  },
+  "decisionHub": {
+    "whatItIs": "HyNote is an AI note taker that turns meetings, audio, PDFs, YouTube, images (OCR), web pages, and phone calls into searchable notes with summaries, action items, and 30+ templates — without a meeting bot. Free includes recording/transcription (120 min/session), templates, sync, and calendar. Pro starts at $6.66/mo billed annually ($79.99/yr) with 1,200 transcription minutes/mo and transcript export. Plus ($10.83/mo annual) adds speaker ID and Notion/Google Docs transfer. Unlimited ($15.83/mo annual) adds unlimited real-time transcription and CRM. Teams is $15/seat/mo annual (min 2). Same ai-meeting cluster as Fireflies.ai and Otter.ai — multimodal capture and study/publish templates rather than bot auto-join or conversation intelligence depth.",
+    "bestFor": [
+      "Individuals and students who need multimodal notes (meetings + PDFs + YouTube) without a bot",
+      "Buyers who want a free forever floor and a sub-$7 annual Pro entry",
+      "Teams that prefer device recording / upload over auto-join bots",
+      "solo / operations: HyNote fit for solo operations teams in the ai-meeting job cluster, from first-party positioning and Affiliate new HyNote 2026-08-28 research.",
+      "small-business / operations: HyNote fit for small-business operations teams in the ai-meeting job cluster, from first-party positioning and Affiliate new HyNote 2026-08-28 research.",
+      "mid-market / operations: HyNote fit for mid-market operations teams in the ai-meeting job cluster, from first-party positioning and Affiliate new HyNote 2026-08-28 research."
+    ],
+    "notIdealFor": [
+      "Buyers who need calendar auto-join bots across Zoom/Meet/Teams (Fireflies)",
+      "RevOps leads who need Business-grade conversation intelligence",
+      "General LLM or voice-production workloads (ChatGPT / ElevenLabs)",
+      "No meeting bot auto-join — capture is device recording or file upload (polarising vs Fireflies bot UX)",
+      "Conversation intelligence / team analytics depth is lighter than Fireflies Business",
+      "Pro transcription minutes (1,200/mo) and session length (120 min) can cap heavy meeting days"
+    ],
+    "coreCapabilities": [
+      "llm chat",
+      "writing assist",
+      "presentation generation",
+      "custom projects",
+      "usage credits",
+      "connectors",
+      "data privacy",
+      "analytics reporting"
+    ],
+    "pricingSummary": "5 documented plans · 1 free · entry paid: Pro · trial documented on at least one plan",
+    "keyTradeoffs": [
+      "No meeting bot auto-join — capture is device recording or file upload (polarising vs Fireflies bot UX)",
+      "Conversation intelligence / team analytics depth is lighter than Fireflies Business",
+      "Pro transcription minutes (1,200/mo) and session length (120 min) can cap heavy meeting days",
+      "Teams admin/SSO depth needs confirmation versus enterprise meeting suites",
+      "Not a general LLM assistant or voice studio"
+    ],
+    "alternatives": [
+      {
+        "slug": "fireflies",
+        "name": "Fireflies.ai"
+      },
+      {
+        "slug": "otter-ai",
+        "name": "Otter.ai"
+      }
+    ],
+    "importantComparisons": [
+      {
+        "slug": "fireflies-vs-hynote",
+        "title": "HyNote vs Fireflies.ai",
+        "href": "/compare/fireflies-vs-hynote/"
+      },
+      {
+        "slug": "hynote-vs-otter-ai",
+        "title": "HyNote vs Otter.ai",
+        "href": "/compare/hynote-vs-otter-ai/"
+      },
+      {
+        "slug": "adcreative-ai-vs-hynote",
+        "title": "AdCreative.ai vs HyNote",
+        "href": "/compare/adcreative-ai-vs-hynote/"
+      },
+      {
+        "slug": "adobe-firefly-vs-hynote",
+        "title": "Adobe Firefly vs HyNote",
+        "href": "/compare/adobe-firefly-vs-hynote/"
+      },
+      {
+        "slug": "ai-intelekt-vs-hynote",
+        "title": "AI InteleKt vs HyNote",
+        "href": "/compare/ai-intelekt-vs-hynote/"
+      },
+      {
+        "slug": "aira-vs-hynote",
+        "title": "Aira vs HyNote",
+        "href": "/compare/aira-vs-hynote/"
+      }
+    ],
+    "relevantGuides": [
+      {
+        "slug": "what-is-hynote",
+        "title": "What Is HyNote?",
+        "href": "/guides/what-is-hynote/"
+      },
+      {
+        "slug": "hynote-implementation",
+        "title": "HyNote Implementation: 30/60/90 AI Rollout That Sticks",
+        "href": "/guides/hynote-implementation/"
+      },
+      {
+        "slug": "hynote-migration",
+        "title": "HyNote Migration: Move Projects Without Losing Context",
+        "href": "/guides/hynote-migration/"
+      },
+      {
+        "slug": "hynote-setup",
+        "title": "HyNote Setup: Day-Zero Path to a Working AI Loop",
+        "href": "/guides/hynote-setup/"
+      },
+      {
+        "slug": "hynote-plans",
+        "title": "HyNote Plans: Seats, Credits, and Qualifying Tiers",
+        "href": "/guides/hynote-plans/"
+      },
+      {
+        "slug": "is-hynote-worth-it",
+        "title": "Is HyNote Worth It? Fit Scenarios Before You Buy",
+        "href": "/guides/is-hynote-worth-it/"
+      }
+    ],
+    "evidenceState": "Research/data-based (no completed hands-on test) · Latest verification/research signal: 2026-08-28T06:10:00.000Z · Editorial assessment: approved",
+    "nextDecisionStep": "Compare against peers: HyNote vs Fireflies.ai",
+    "missingSections": []
+  },
+  "dependents": [
+    {
+      "kind": "guide",
+      "slug": "what-is-hynote",
+      "path": "/guides/what-is-hynote/"
+    },
+    {
+      "kind": "guide",
+      "slug": "hynote-implementation",
+      "path": "/guides/hynote-implementation/"
+    },
+    {
+      "kind": "guide",
+      "slug": "hynote-migration",
+      "path": "/guides/hynote-migration/"
+    },
+    {
+      "kind": "guide",
+      "slug": "hynote-setup",
+      "path": "/guides/hynote-setup/"
+    },
+    {
+      "kind": "guide",
+      "slug": "hynote-plans",
+      "path": "/guides/hynote-plans/"
+    },
+    {
+      "kind": "guide",
+      "slug": "is-hynote-worth-it",
+      "path": "/guides/is-hynote-worth-it/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "fireflies-vs-hynote",
+      "path": "/compare/fireflies-vs-hynote/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "hynote-vs-otter-ai",
+      "path": "/compare/hynote-vs-otter-ai/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "adcreative-ai-vs-hynote",
+      "path": "/compare/adcreative-ai-vs-hynote/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "adobe-firefly-vs-hynote",
+      "path": "/compare/adobe-firefly-vs-hynote/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "ai-intelekt-vs-hynote",
+      "path": "/compare/ai-intelekt-vs-hynote/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "aira-vs-hynote",
+      "path": "/compare/aira-vs-hynote/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "chatgpt-vs-hynote",
+      "path": "/compare/chatgpt-vs-hynote/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "claude-vs-hynote",
+      "path": "/compare/claude-vs-hynote/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "cursor-vs-hynote",
+      "path": "/compare/cursor-vs-hynote/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "elevenlabs-vs-hynote",
+      "path": "/compare/elevenlabs-vs-hynote/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "gamma-vs-hynote",
+      "path": "/compare/gamma-vs-hynote/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "gemini-vs-hynote",
+      "path": "/compare/gemini-vs-hynote/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "github-copilot-vs-hynote",
+      "path": "/compare/github-copilot-vs-hynote/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "hynote-vs-microsoft-copilot",
+      "path": "/compare/hynote-vs-microsoft-copilot/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "hynote-vs-midjourney",
+      "path": "/compare/hynote-vs-midjourney/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "hynote-vs-mindstudio",
+      "path": "/compare/hynote-vs-mindstudio/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "hynote-vs-n8n",
+      "path": "/compare/hynote-vs-n8n/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "hynote-vs-perplexity",
+      "path": "/compare/hynote-vs-perplexity/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "hynote-vs-quillbot",
+      "path": "/compare/hynote-vs-quillbot/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "hynote-vs-rank-prompt",
+      "path": "/compare/hynote-vs-rank-prompt/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "hynote-vs-runway",
+      "path": "/compare/hynote-vs-runway/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "hynote-vs-synthesia",
+      "path": "/compare/hynote-vs-synthesia/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "hynote-vs-turbotic",
+      "path": "/compare/hynote-vs-turbotic/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "hynote-vs-wegic",
+      "path": "/compare/hynote-vs-wegic/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "hynote-vs-writesonic",
+      "path": "/compare/hynote-vs-writesonic/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "hynote-vs-zapier",
+      "path": "/compare/hynote-vs-zapier/"
+    },
+    {
+      "kind": "alternatives",
+      "slug": "hynote",
+      "path": "/alternatives/hynote/"
+    },
+    {
+      "kind": "pricing",
+      "slug": "hynote",
+      "path": "/software/hynote/pricing/"
+    },
+    {
+      "kind": "tools",
+      "slug": "ai-cost-calculator",
+      "path": "/tools/ai-cost-calculator/"
+    }
+  ],
+  "dependentsNeedingRefresh": [],
+  "remediation": [],
+  "notes": [
+    "fieldAudit score=100",
+    "decisionHub bestFor=6 notIdeal=6",
+    "dependents=35"
+  ],
+  "materiallyImproved": true
+}

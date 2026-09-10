@@ -60,7 +60,7 @@ function industryTitle(slug: string, displayTitle?: string): string {
   return ind ? `CRM for ${ind.name}` : `CRM for ${slug}`;
 }
 
-function useCaseTitle(slug: string, displayTitle?: string): string {
+function getUseCaseTitle(slug: string, displayTitle?: string): string {
   if (displayTitle) return displayTitle;
   const uc = getUseCases().find((u) => u.slug === slug);
   return uc?.name ?? slug;
@@ -171,7 +171,7 @@ export function loadAuditSnapshots(
   if (include("comparison")) {
     const comparisonCategories = new Set(categorySlugs);
     for (const c of getComparisons({ includeUnpublished: true }).filter((x) =>
-      comparisonCategories.has(x.categorySlug),
+      comparisonCategories.has(x.categorySlug ?? ""),
     )) {
       out.push({ snapshot: snapshotFromComparison(c), slug: c.slug });
     }
@@ -214,7 +214,7 @@ export function loadAuditSnapshots(
         snapshot: snapshotFromHubProfile({
           pageType: "use-case",
           slug: profile.useCaseSlug,
-          title: useCaseTitle(profile.useCaseSlug, profile.displayTitle),
+          title: getUseCaseTitle(profile.useCaseSlug, profile.displayTitle),
           route: `/use-cases/${profile.useCaseSlug}/`,
           contentId: `content:use-case:${profile.useCaseSlug}`,
           profile,

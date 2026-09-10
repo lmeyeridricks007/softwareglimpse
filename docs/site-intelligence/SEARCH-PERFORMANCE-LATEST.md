@@ -33,7 +33,7 @@
 - **Snapshot:** `fixture-28d-current-2026-08-13`
 - **Source:** fixture
 - **Range label:** 28d-current
-- **Period:** 2026-07-22 → 2026-08-19
+- **Period:** 2026-08-11 → 2026-09-08
 - **Data through:** 2026-08-13
 - **Rows:** 8
 - **Compare vs:** `fixture-28d-previous-2026-07-16` (2026-07-16)
@@ -56,7 +56,7 @@ High impressions + average position 8–20 (relative traction — not a fixed SE
 | Page | Query | Imp | Clicks | CTR | Avg pos* | Action |
 | --- | --- | ---: | ---: | ---: | ---: | --- |
 | `/best/crm-software/` | best crm software | 950 | 18 | 1.90% | 11.2 | Improve existing page depth/intent match and internal links — treat as |
-| `/software/pipedrive/` | pipedrive vs close | 420 | 8 | 1.90% | 9.5 | Improve existing page depth/intent match and internal links — treat as |
+| `/software/pipedrive/` | pipedrive vs bookyourdata | 420 | 8 | 1.90% | 9.5 | Improve existing page depth/intent match and internal links — treat as |
 | `/categories/crm/` | best crm software | 310 | 6 | 1.90% | 14.0 | Improve existing page depth/intent match and internal links — treat as |
 | `/software/freshsales/` | freshsales crm | 220 | 5 | 2.30% | 8.0 | Improve existing page depth/intent match and internal links — treat as |
 | `/categories/crm/` | crm for agencies | 180 | 2 | 1.10% | 12.0 | Improve existing page depth/intent match and internal links — treat as |
@@ -112,7 +112,7 @@ _SYNTHETIC — do not claim live visibility._
 | `/best/crm-software/` | best crm software | 950 | 18 | 1.90% | 11.2 | — | — |
 | `/software/pipedrive/` | pipedrive review | 800 | 12 | 1.50% | 4.2 | — | — |
 | `/software/pipedrive/` | pipedrive pricing | 500 | 15 | 3.00% | 6.5 | — | — |
-| `/software/pipedrive/` | pipedrive vs close | 420 | 8 | 1.90% | 9.5 | — | — |
+| `/software/pipedrive/` | pipedrive vs bookyourdata | 420 | 8 | 1.90% | 9.5 | — | — |
 | `/categories/crm/` | best crm software | 310 | 6 | 1.90% | 14.0 | — | — |
 | `/software/freshsales/` | freshsales crm | 220 | 5 | 2.30% | 8.0 | — | — |
 | `/categories/crm/` | crm for agencies | 180 | 2 | 1.10% | 12.0 | — | — |

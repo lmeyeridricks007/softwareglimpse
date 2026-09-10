@@ -1,0 +1,216 @@
+{
+  "slug": "salesforce-plans",
+  "enrichmentType": "COST_GUIDE",
+  "updatedAt": "2026-09-07T18:23:23.089Z",
+  "uniqueValueAdded": [
+    "pricing_comparison",
+    "sg_original_data",
+    "scenario_analysis",
+    "implementation_workflow",
+    "decision_framework",
+    "limitations_evidence",
+    "product_shortlist",
+    "alternatives_map",
+    "buyer_checklist"
+  ],
+  "patch": {
+    "summary": "Salesforce cost guide: researched plan structure, free/trial flags, who each tier suits, cost scenarios, and value tradeoffs — no invented prices.",
+    "blocks": [
+      {
+        "id": "da-salesforce-plans-1",
+        "type": "direct-answer",
+        "body": "Salesforce pricing is plan-gated across 5 researched tiers. Free entry: Free Suite. 30-day trial documented. Compare seat/capacity gates and unlocks — not list-price folklore.",
+        "bullets": [
+          "Free plan(s): Free Suite",
+          "30-day trial documented",
+          "Entry paid tier researched: Starter Suite"
+        ]
+      },
+      {
+        "id": "cost-salesforce-plans-2",
+        "type": "cost-breakdown",
+        "title": "Salesforce plan matrix and who each tier suits",
+        "body": "Structure and trial/free flags come from SoftwareGlimpse pricing research. Dollar amounts appear only when verified — never invent list prices.",
+        "lines": [
+          {
+            "label": "Free Suite",
+            "description": "Free plan · Suits: explore before committing seats"
+          },
+          {
+            "label": "Starter Suite",
+            "description": "30-day trial · Unlocks: contact management, lead management, pipeline management · Suits: teams whose must-have gates appear on this tier"
+          },
+          {
+            "label": "Pro Suite",
+            "description": "30-day trial · Unlocks: custom fields, forecasting · Suits: teams whose must-have gates appear on this tier"
+          },
+          {
+            "label": "Enterprise",
+            "description": "30-day trial · Unlocks: built-in calling · Suits: teams whose must-have gates appear on this tier"
+          },
+          {
+            "label": "Unlimited",
+            "description": "30-day trial · Unlocks: email sequences · Suits: teams whose must-have gates appear on this tier"
+          }
+        ],
+        "calculatorHref": "/tools/crm-cost-calculator/",
+        "calculatorLabel": "Model category cost fit"
+      },
+      {
+        "id": "scen-salesforce-plans-3",
+        "type": "step",
+        "heading": "Salesforce cost scenarios to pressure-test",
+        "body": "Price Salesforce against how you actually buy seats and unlocks — not against a competitor's homepage headline.",
+        "stepNumber": 1,
+        "scenarios": [
+          {
+            "title": "Lean team / free-or-trial first",
+            "body": "Stay on Free Suite until a gated capability (contact management (Starter Suite, Pro Suite, Enterprise, Unlimited)) becomes mandatory."
+          },
+          {
+            "title": "Growing team with gated workflows",
+            "body": "Map must-have workflows (contact management, lead management, pipeline management) to plan unlocks before expanding seats."
+          },
+          {
+            "title": "Hidden / extra cost watch",
+            "body": "Budget risk: USD list pricing rises quickly: Pro Suite list price Enterprise list price Unlimited list price (annual). Add-ons (Agentforce for Sales from list price Contact us, Revenue Intelligence, Success Plans) increase TCO.. Also check add-ons, overages, and admin time outside the sticker plan."
+          }
+        ]
+      },
+      {
+        "id": "value-salesforce-plans-4",
+        "type": "decision-framework",
+        "title": "Salesforce value rule",
+        "steps": [
+          {
+            "id": "v-1",
+            "label": "Pay up when Mid-market and enterprise sales orgs needing deep customization and reporting requires a paid unlock you will use weekly"
+          },
+          {
+            "id": "v-2",
+            "label": "Do not overbuy if this limitation dominates: USD list pricing rises quickly: Pro Suite list price Enterprise list price Unlimited list price (annual). Add-ons (Agentforce for Sales from list price Contact us, Revenue Intelligence, Success Plans) increase TCO."
+          },
+          {
+            "id": "v-3",
+            "label": "Side-by-side cost with HubSpot on the same seat count"
+          }
+        ]
+      },
+      {
+        "id": "lim-salesforce-plans-5",
+        "type": "mistakes",
+        "title": "Salesforce cost mistakes to avoid",
+        "items": [
+          {
+            "title": "Cost trap 1",
+            "body": "USD list pricing rises quickly: Pro Suite list price Enterprise list price Unlimited list price (annual). Add-ons (Agentforce for Sales from list price Contact us, Revenue Intelligence, Success Plans) increase TCO."
+          },
+          {
+            "title": "Cost trap 2",
+            "body": "Premier Support is an add-on on Pro Suite. Agentforce for Sales, Sales Programs, Revenue Intelligence, and Revenue Cloud are separate paid add-ons; some require Contact us."
+          },
+          {
+            "title": "Cost trap 3",
+            "body": "Pro Suite, Enterprise, Unlimited, and Agentforce 1 Sales list prices are billed annually on the pricing page; only Starter Suite explicitly offers monthly or annual at the same list price USD list rate."
+          },
+          {
+            "title": "Cost trap 4",
+            "body": "Not a lightweight SMB CRM — administration, implementation, and configuration overhead are part of the platform tradeoff versus Pipedrive-style tools."
+          },
+          {
+            "title": "Cost trap 5",
+            "body": "Steep learning curve and high administration/implementation overhead versus SMB CRMs"
+          }
+        ]
+      },
+      {
+        "id": "alts-salesforce-plans-6",
+        "type": "product-shortlist",
+        "title": "Cheaper or clearer alternatives to pressure-test",
+        "body": "Compare total cost of ownership vs Salesforce on identical constraints.",
+        "productSlugs": [
+          "hubspot",
+          "dynamics-365",
+          "pipedrive",
+          "freshsales"
+        ],
+        "disclaimer": "Catalogue peers only — not commission-ranked."
+      },
+      {
+        "id": "sel-salesforce-plans-7",
+        "type": "selection-checklist",
+        "title": "Salesforce pricing checklist",
+        "dimensions": [
+          {
+            "id": "gates",
+            "label": "Plan gates you must unlock",
+            "options": [
+              "contact management (Starter Suite, Pro Suite, Enterprise, Unlimited)",
+              "lead management (Starter Suite, Pro Suite, Enterprise, Unlimited)",
+              "pipeline management (Starter Suite, Pro Suite, Enterprise, Unlimited)",
+              "deal management (Starter Suite, Pro Suite, Enterprise, Unlimited)"
+            ]
+          },
+          {
+            "id": "trial",
+            "label": "Trial / free proof",
+            "options": [
+              "Free plan usable for pilot",
+              "Trial days enough",
+              "Paid gate acceptable"
+            ]
+          },
+          {
+            "id": "tco",
+            "label": "TCO extras",
+            "options": [
+              "Add-ons checked",
+              "Admin time budgeted",
+              "Migration cost noted"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "cta-salesforce-plans-8",
+        "type": "interactive-cta",
+        "title": "Model crm spend with Salesforce in mind",
+        "body": "Use researched plan structure for Salesforce alongside category cost modelling.",
+        "href": "/tools/crm-cost-calculator/",
+        "ctaLabel": "Open calculator",
+        "variant": "calculator"
+      }
+    ],
+    "checklist": [
+      {
+        "id": "enrich-chk-0",
+        "label": "List must-have unlocks before picking a Salesforce tier",
+        "order": 0
+      },
+      {
+        "id": "enrich-chk-1",
+        "label": "30-day trial documented",
+        "order": 1
+      },
+      {
+        "id": "enrich-chk-2",
+        "label": "Price in this risk: USD list pricing rises quickly: Pro Suite list price Enterprise list price Unlimited list price (annual). Add-ons (Agentforce for Sales from list price Contact us, Revenue Intelligence, Success Plans) increase TCO.",
+        "order": 2
+      },
+      {
+        "id": "enrich-chk-3",
+        "label": "Compare seat TCO with HubSpot",
+        "order": 3
+      }
+    ],
+    "nextAction": {
+      "contentId": "tool:finder:crm",
+      "label": "Open Finder shortlist"
+    }
+  },
+  "notes": [
+    "Omit unsupported: testing_evidence",
+    "Cost guide: real plan structure, free/trial, TCO tradeoffs — never invent prices.",
+    "Type-specific skeleton: COST_GUIDE"
+  ]
+}

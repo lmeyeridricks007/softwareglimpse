@@ -1,4 +1,4 @@
-import type { GuidePage } from "@/domain";
+import type { GuidePageInput } from "@/domain";
 import type { z } from "zod";
 import type { GuideContentBlockSchema } from "@/domain";
 
@@ -441,7 +441,7 @@ const salesIntelligenceFeatureChecklistBlocks: GuideBlockInput[] = [
   },
 ];
 
-export const salesIntelligenceFeatureChecklistGuide: GuidePage = {
+export const salesIntelligenceFeatureChecklistGuide: GuidePageInput = {
   id: "guide-sales-intelligence-feature-checklist",
   slug: "sales-intelligence-feature-checklist",
   title: "Sales Intelligence Feature Checklist: Must-Have vs Nice-to-Have",
@@ -488,7 +488,7 @@ export const salesIntelligenceFeatureChecklistGuide: GuidePage = {
     "how-to-choose-crm",
     "crm-data-hygiene",
   ],
-  blocks: salesIntelligenceFeatureChecklistBlocks as GuidePage["blocks"],
+  blocks: salesIntelligenceFeatureChecklistBlocks as GuidePageInput["blocks"],
   checklist: [
     {
       id: "job",

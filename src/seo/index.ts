@@ -4,3 +4,4 @@ export * from "./breadcrumbs";
 export * from "./sitemap";
 export * from "./indexability";
 export * from "./structured-data";
+export * from "./english-only-cutover";

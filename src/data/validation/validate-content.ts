@@ -1,12 +1,14 @@
 import {
   canonicalizeComparisonSlug,
+  isSymmetricRelationship,
+  type SoftwareRelationship,
+} from "@/domain";
+import {
   evaluateAlternativesQuality,
   evaluateBestQuality,
   evaluateCategoryQuality,
   evaluateComparisonQuality,
-  isSymmetricRelationship,
-  type SoftwareRelationship,
-} from "@/domain";
+} from "@/domain/quality-gates";
 import {
   getAllAlternativesUnfiltered,
   getAllBestPagesUnfiltered,

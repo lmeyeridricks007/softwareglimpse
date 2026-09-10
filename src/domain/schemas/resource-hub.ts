@@ -222,6 +222,7 @@ export const ResourceHubProfileSchema = z.object({
   finderHref: z.string().optional(),
   calculatorHref: z.string().optional(),
   compareHref: z.string().optional(),
+  previewHref: z.string().optional(),
   categorySlug: SlugSchema.default("crm"),
   lastReviewedAt: z.string().optional(),
 });

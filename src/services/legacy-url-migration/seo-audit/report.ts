@@ -64,7 +64,9 @@ export function renderMigrationSeoAuditMarkdown(input: {
     `**Mode:** ${summary.mode}`,
     `**Overall:** **${summary.overall}**`,
     "",
-    "> Static pre-launch audit against mapping plan, redirect config, inventory, sitemap, internal-link graph, and repository scan. Optional live HTTP probes are out of band unless `BASE_URL` live mode is enabled in a future pass.",
+    summary.mode === "static+live"
+      ? "> Static audit **plus** live HTTP probes against the configured `BASE_URL` (redirect hops, loops, locale 410/301, taxonomy 410)."
+      : "> Static pre-launch audit against mapping plan, redirect config, inventory, sitemap, internal-link graph, and repository scan. Pass `--base-url` / `BASE_URL` to enable live HTTP probes.",
     "",
     "## PASS / FAIL summary",
     "",
@@ -121,6 +123,7 @@ export function renderMigrationSeoAuditMarkdown(input: {
     ...sectionFindings("Hardcoded legacy links", findings, ["hardcoded_legacy"]),
     ...sectionFindings("Legacy asset issues", findings, ["legacy_assets"]),
     ...sectionFindings("404/410 findings", findings, ["not_found_experience"]),
+    ...sectionFindings("Live HTTP probes", findings, ["live_http_probes"]),
     "## P0 launch blockers",
     "",
   ];
@@ -171,9 +174,11 @@ export function renderMigrationSeoAuditMarkdown(input: {
   lines.push(
     "## Notes",
     "",
-    "- Soft 404 / live 500 / redirect loops require a running deployment (`BASE_URL` live probe) — not asserted in static mode.",
+    summary.mode === "static+live"
+      ? `- Live probes ran against the configured origin. Sample set covers legacy redirects, locale 301/410, taxonomy 410, and high-risk redirect destinations.`
+      : `- Soft 404 / live 500 / redirect loops require a running deployment (\`BASE_URL\` live probe) — not asserted in static mode.`,
     "- Source of truth for redirects: `config/legacy-redirects.json`.",
-    "- Regenerate: `npm run migration:seo-audit`",
+    "- Regenerate: `npm run migration:seo-audit` or `npm run migration:seo-audit -- --base-url=http://127.0.0.1:3000`",
     "",
   );
 

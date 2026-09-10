@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect, useMemo, useState } from "react";
+import { useMemo, useState } from "react";
 import Link from "next/link";
 import { useRouter } from "next/navigation";
 import { Search } from "lucide-react";
@@ -58,16 +58,18 @@ export function ToolExploreSection({
   const [query, setQuery] = useState("");
   const [type, setType] = useState<FilterType>("all");
   const [category, setCategory] = useState(initialCategory);
+  const [prevInitialCategory, setPrevInitialCategory] =
+    useState(initialCategory);
+  if (initialCategory !== prevInitialCategory) {
+    setPrevInitialCategory(initialCategory);
+    setCategory(initialCategory);
+  }
   const [status, setStatus] = useState<StatusFilter>("all");
 
   const activeCategoryName =
     category !== "all"
       ? categoryOptions.find((c) => c.slug === category)?.name
       : null;
-
-  useEffect(() => {
-    setCategory(initialCategory);
-  }, [initialCategory]);
 
   const filtered = useMemo(() => {
     const q = query.trim().toLowerCase();

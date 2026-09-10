@@ -87,7 +87,7 @@ export function GuidesLatestGrid({
             Latest software guides
           </h2>
           <p className="mt-1 text-sm text-[var(--sg-color-text-muted)]">
-            Filter by category, topic, or search published guides.
+            Filter by category or topic across cornerstone published guides.
           </p>
         </div>
         <button

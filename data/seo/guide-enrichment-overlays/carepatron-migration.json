@@ -1,0 +1,159 @@
+{
+  "slug": "carepatron-migration",
+  "enrichmentType": "MIGRATION_GUIDE",
+  "updatedAt": "2026-09-08T21:59:12.443Z",
+  "uniqueValueAdded": [
+    "implementation_workflow",
+    "scenario_analysis",
+    "decision_framework",
+    "limitations_evidence",
+    "buyer_checklist"
+  ],
+  "patch": {
+    "summary": "Carepatron migration guide: inventory → rehearse → freeze → validate integrations — grounded in researched limitations and catalogue peers.",
+    "blocks": [
+      {
+        "id": "da-carepatron-migration-1",
+        "type": "direct-answer",
+        "body": "Migrate to Carepatron by inventorying legacy hr fields, mapping them to Carepatron objects, rehearsing a freeze window, and validating critical integrations before reopening writes.",
+        "bullets": [
+          "Inventory → map → rehearse → cut over → reopen",
+          "Highest risk: Healthcare practice scope — not general HRIS",
+          "Success signal: employee training paths works for the pilot cohort"
+        ]
+      },
+      {
+        "id": "mig-carepatron-migration-2",
+        "type": "step",
+        "heading": "Carepatron migration cutover playbook",
+        "body": "Migrations fail from optimistic timelines — not from missing motivation.",
+        "stepNumber": 1,
+        "scenarios": [
+          {
+            "title": "Field inventory",
+            "body": "Export legacy fields that power employee training paths, HRIS integrations and mark must-map vs archive."
+          },
+          {
+            "title": "Rehearsal load",
+            "body": "Run a non-prod load into Carepatron; measure match rates before the freeze."
+          },
+          {
+            "title": "Production freeze",
+            "body": "Freeze legacy writes; cut over; validate primary integrations; then reopen."
+          }
+        ]
+      },
+      {
+        "id": "df-carepatron-migration-3",
+        "type": "decision-framework",
+        "title": "Migrate to Carepatron?",
+        "steps": [
+          {
+            "id": "m-1",
+            "label": "Migrate when Solo and small healthcare/wellness practices outweigh migration cost"
+          },
+          {
+            "id": "m-2",
+            "label": "Delay if this limitation hits cutover: Healthcare practice scope — not general HRIS"
+          },
+          {
+            "id": "m-3",
+            "label": "Do not move data twice — resolve destination fit first"
+          }
+        ]
+      },
+      {
+        "id": "mist-carepatron-migration-4",
+        "type": "mistakes",
+        "title": "Carepatron migration mistakes",
+        "items": [
+          {
+            "title": "No freeze window",
+            "body": "Dual-writing without a freeze creates irrevocable duplicates."
+          },
+          {
+            "title": "Integrations last",
+            "body": "Wire systems of record in rehearsal — not on Monday morning after cutover."
+          },
+          {
+            "title": "Data risk 1",
+            "body": "Healthcare practice scope — not general HRIS"
+          },
+          {
+            "title": "Data risk 2",
+            "body": "Healthcare practice scope — not general HRIS"
+          },
+          {
+            "title": "Data risk 3",
+            "body": "Enterprise HRIS buyers"
+          }
+        ]
+      },
+      {
+        "id": "sel-carepatron-migration-5",
+        "type": "selection-checklist",
+        "title": "Carepatron migration checklist",
+        "dimensions": [
+          {
+            "id": "map",
+            "label": "Mapping",
+            "options": [
+              "Must-map fields listed",
+              "Owners assigned",
+              "Archive rules written"
+            ]
+          },
+          {
+            "id": "rehearse",
+            "label": "Rehearsal",
+            "options": [
+              "Non-prod load done",
+              "Match rate measured",
+              "Rollback tested"
+            ]
+          },
+          {
+            "id": "cutover",
+            "label": "Cutover",
+            "options": [
+              "Freeze communicated",
+              "Integrations green",
+              "Pilot cohort signed off"
+            ]
+          }
+        ]
+      }
+    ],
+    "checklist": [
+      {
+        "id": "enrich-chk-0",
+        "label": "Complete field inventory for employee training paths",
+        "order": 0
+      },
+      {
+        "id": "enrich-chk-1",
+        "label": "Rehearse load before production freeze",
+        "order": 1
+      },
+      {
+        "id": "enrich-chk-2",
+        "label": "Validate primary integrations pre-reopen",
+        "order": 2
+      },
+      {
+        "id": "enrich-chk-3",
+        "label": "Mitigate: Healthcare practice scope — not general HRIS",
+        "order": 3
+      }
+    ],
+    "nextAction": {
+      "contentId": "tool:finder:hr",
+      "label": "Open Finder shortlist"
+    }
+  },
+  "notes": [
+    "Omit unsupported: alternatives, competitors, comparisons",
+    "Migration: cutover risks, data mapping, checklist.",
+    "Type-specific skeleton: MIGRATION_GUIDE"
+  ]
+}

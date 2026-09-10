@@ -1,0 +1,526 @@
+{
+  "slug": "railway",
+  "updatedAt": "2026-09-09T06:31:47.072Z",
+  "version": "1.0.0",
+  "fieldAudit": {
+    "slug": "railway",
+    "checkedAt": "2026-09-09T06:31:47.070Z",
+    "items": [
+      {
+        "field": "name",
+        "status": "PASS",
+        "detail": "Name: Railway",
+        "source": "seed"
+      },
+      {
+        "field": "product_status",
+        "status": "PASS",
+        "detail": "productLifecycle=active",
+        "source": "seed"
+      },
+      {
+        "field": "canonical_vendor",
+        "status": "PASS",
+        "detail": "Vendor: Railway Corp",
+        "source": "seed"
+      },
+      {
+        "field": "category",
+        "status": "PASS",
+        "detail": "primaryCategorySlug=it-development",
+        "source": "seed"
+      },
+      {
+        "field": "description",
+        "status": "PASS",
+        "detail": "Description present (Cloud PaaS / app platform — Free Trial $5 credits / 30 days; Free $0 + $1 credit…)",
+        "source": "seed"
+      },
+      {
+        "field": "target_audience",
+        "status": "PASS",
+        "detail": "Sizes=4, teams=1, assessment bestFor=3",
+        "source": "assessment"
+      },
+      {
+        "field": "use_cases",
+        "status": "PASS",
+        "detail": "useCaseSlugs=1",
+        "source": "seed"
+      },
+      {
+        "field": "capabilities",
+        "status": "PASS",
+        "detail": "featureRatings=0, enrichment features=17",
+        "source": "enrichment"
+      },
+      {
+        "field": "pricing",
+        "status": "PASS",
+        "detail": "Pricing envelope present",
+        "source": "enrichment"
+      },
+      {
+        "field": "plans",
+        "status": "PASS",
+        "detail": "plans=5",
+        "source": "enrichment"
+      },
+      {
+        "field": "free_plan",
+        "status": "PASS",
+        "detail": "Free plan documented",
+        "source": "enrichment"
+      },
+      {
+        "field": "trial",
+        "status": "PASS",
+        "detail": "Trial documented on plans/pricing",
+        "source": "enrichment"
+      },
+      {
+        "field": "integrations",
+        "status": "PASS",
+        "detail": "integrationSlugs=0, enrichment=2",
+        "source": "enrichment"
+      },
+      {
+        "field": "alternatives",
+        "status": "PASS",
+        "detail": "alternativeSlugs=2",
+        "source": "seed"
+      },
+      {
+        "field": "competitors",
+        "status": "PASS",
+        "detail": "competitorSlugs=4",
+        "source": "seed"
+      },
+      {
+        "field": "affiliate",
+        "status": "PASS",
+        "detail": "No affiliate relationship (explicit)",
+        "source": "seed"
+      },
+      {
+        "field": "source_provenance",
+        "status": "PASS",
+        "detail": "seed sources=0, enrichment sourceIds=3",
+        "source": "enrichment"
+      },
+      {
+        "field": "verification_date",
+        "status": "PASS",
+        "detail": "Latest verification/research signal: 2026-08-18T22:00:00.000Z",
+        "source": "enrichment"
+      }
+    ],
+    "passCount": 18,
+    "partialCount": 0,
+    "missingCount": 0,
+    "unknownCount": 0,
+    "score": 100
+  },
+  "decisionHub": {
+    "whatItIs": "Railway is a cloud PaaS / app platform (git-push services, databases, and usage-credited workspaces) from Railway Corp — not a managed WordPress host and not a Plesk/cPanel panel licence. Free Trial gives $5 credits for 30 days with no card. Free is $0/month with $1 usage credits. Hobby is $5/month including $5 credits and is the published research floor (startingPriceMonthly 5). Pro is $20/month per workspace including $20 credits (unlimited seats) — the production team floor above Hobby. Enterprise is custom. Same cloud-paas cluster as Render and Fly.io — Render remains the award (7.9); this entity does not outrank it. Peer of Heroku and Fly.io. Landscape-only versus WP Engine (managed WordPress).",
+    "bestFor": [
+      "Teams that want a credited cloud PaaS with a published Hobby $5 floor",
+      "Buyers comparing Railway Hobby/Pro to Render Pro $25 and Fly.io PAYG",
+      "Orgs that will treat Free $1 credits as evaluation, not production TCO",
+      "micro / engineering: Railway fit for micro engineering teams in the cloud-paas job cluster, from first-party positioning and IT gap-fill PaaS + incident research.",
+      "small-business / engineering: Railway fit for small-business engineering teams in the cloud-paas job cluster, from first-party positioning and IT gap-fill PaaS + incident research.",
+      "mid-market / engineering: Railway fit for mid-market engineering teams in the cloud-paas job cluster, from first-party positioning and IT gap-fill PaaS + incident research."
+    ],
+    "notIdealFor": [
+      "Teams buying managed WordPress (WP Engine) — landscape only",
+      "Admins buying Plesk/cPanel licences for servers they already own",
+      "ITSM or observability purchases",
+      "Does not outrank Render (7.9) as the cloud-paas award",
+      "Free $1 credits and Free Trial are not production TCO — Hobby $5 is the research floor; Pro $20 is the team floor",
+      "Not managed WordPress hosting (WP Engine) — landscape only"
+    ],
+    "coreCapabilities": [
+      "infrastructure monitoring",
+      "log management",
+      "cicd actions",
+      "managed hosting",
+      "cloud paas",
+      "dev ai",
+      "enterprise security",
+      "analytics reporting"
+    ],
+    "pricingSummary": "5 documented plans · 2 free · entry paid: Hobby · trial documented on at least one plan",
+    "keyTradeoffs": [
+      "Does not outrank Render (7.9) as the cloud-paas award",
+      "Free $1 credits and Free Trial are not production TCO — Hobby $5 is the research floor; Pro $20 is the team floor",
+      "Not managed WordPress hosting (WP Engine) — landscape only",
+      "Not a hosting control-panel licence (Plesk/cPanel)",
+      "Not ITSM, observability, git host, or a proxy network"
+    ],
+    "alternatives": [
+      {
+        "slug": "render",
+        "name": "Render"
+      },
+      {
+        "slug": "fly-io",
+        "name": "Fly.io"
+      },
+      {
+        "slug": "heroku",
+        "name": "Heroku"
+      },
+      {
+        "slug": "wp-engine",
+        "name": "WP Engine"
+      }
+    ],
+    "importantComparisons": [
+      {
+        "slug": "railway-vs-render",
+        "title": "Railway vs Render",
+        "href": "/compare/railway-vs-render/"
+      },
+      {
+        "slug": "fly-io-vs-railway",
+        "title": "Fly.io vs Railway",
+        "href": "/compare/fly-io-vs-railway/"
+      },
+      {
+        "slug": "heroku-vs-railway",
+        "title": "Heroku vs Railway",
+        "href": "/compare/heroku-vs-railway/"
+      },
+      {
+        "slug": "railway-vs-wp-engine",
+        "title": "Railway vs WP Engine",
+        "href": "/compare/railway-vs-wp-engine/"
+      },
+      {
+        "slug": "apify-vs-railway",
+        "title": "Apify vs Railway",
+        "href": "/compare/apify-vs-railway/"
+      },
+      {
+        "slug": "appdynamics-vs-railway",
+        "title": "AppDynamics vs Railway",
+        "href": "/compare/appdynamics-vs-railway/"
+      }
+    ],
+    "relevantGuides": [
+      {
+        "slug": "railway-implementation",
+        "title": "Railway Implementation: 30/60/90 IT Rollout That Sticks",
+        "href": "/guides/railway-implementation/"
+      },
+      {
+        "slug": "railway-migration",
+        "title": "Railway Migration: Move Tickets and Repos Without Losing Trust",
+        "href": "/guides/railway-migration/"
+      },
+      {
+        "slug": "railway-setup",
+        "title": "Railway Setup: Day-Zero Path to a Working IT Loop",
+        "href": "/guides/railway-setup/"
+      },
+      {
+        "slug": "railway-plans",
+        "title": "Railway Plans: Seats, Hosts, and Qualifying Tiers",
+        "href": "/guides/railway-plans/"
+      },
+      {
+        "slug": "is-railway-worth-it",
+        "title": "Is Railway Worth It? Fit Scenarios Before You Buy",
+        "href": "/guides/is-railway-worth-it/"
+      }
+    ],
+    "evidenceState": "Research/data-based (no completed hands-on test) · Latest verification/research signal: 2026-08-18T22:00:00.000Z · Editorial assessment: approved",
+    "nextDecisionStep": "Compare against peers: Railway vs Render",
+    "missingSections": []
+  },
+  "dependents": [
+    {
+      "kind": "guide",
+      "slug": "railway-implementation",
+      "path": "/guides/railway-implementation/"
+    },
+    {
+      "kind": "guide",
+      "slug": "railway-migration",
+      "path": "/guides/railway-migration/"
+    },
+    {
+      "kind": "guide",
+      "slug": "railway-setup",
+      "path": "/guides/railway-setup/"
+    },
+    {
+      "kind": "guide",
+      "slug": "railway-plans",
+      "path": "/guides/railway-plans/"
+    },
+    {
+      "kind": "guide",
+      "slug": "is-railway-worth-it",
+      "path": "/guides/is-railway-worth-it/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "railway-vs-render",
+      "path": "/compare/railway-vs-render/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "fly-io-vs-railway",
+      "path": "/compare/fly-io-vs-railway/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "heroku-vs-railway",
+      "path": "/compare/heroku-vs-railway/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "railway-vs-wp-engine",
+      "path": "/compare/railway-vs-wp-engine/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "apify-vs-railway",
+      "path": "/compare/apify-vs-railway/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "appdynamics-vs-railway",
+      "path": "/compare/appdynamics-vs-railway/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "azure-devops-vs-railway",
+      "path": "/compare/azure-devops-vs-railway/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "bitbucket-vs-railway",
+      "path": "/compare/bitbucket-vs-railway/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "bmc-helix-vs-railway",
+      "path": "/compare/bmc-helix-vs-railway/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "bright-data-vs-railway",
+      "path": "/compare/bright-data-vs-railway/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "buildkite-vs-railway",
+      "path": "/compare/buildkite-vs-railway/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "chronosphere-vs-railway",
+      "path": "/compare/chronosphere-vs-railway/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "circleci-vs-railway",
+      "path": "/compare/circleci-vs-railway/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "cloudways-vs-railway",
+      "path": "/compare/cloudways-vs-railway/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "coralogix-vs-railway",
+      "path": "/compare/coralogix-vs-railway/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "cpanel-vs-railway",
+      "path": "/compare/cpanel-vs-railway/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "datadog-vs-railway",
+      "path": "/compare/datadog-vs-railway/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "directadmin-vs-railway",
+      "path": "/compare/directadmin-vs-railway/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "dynatrace-vs-railway",
+      "path": "/compare/dynatrace-vs-railway/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "elastic-observability-vs-railway",
+      "path": "/compare/elastic-observability-vs-railway/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "firehydrant-vs-railway",
+      "path": "/compare/firehydrant-vs-railway/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "github-vs-railway",
+      "path": "/compare/github-vs-railway/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "gitlab-vs-railway",
+      "path": "/compare/gitlab-vs-railway/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "grafana-cloud-vs-railway",
+      "path": "/compare/grafana-cloud-vs-railway/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "haloitsm-vs-railway",
+      "path": "/compare/haloitsm-vs-railway/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "honeycomb-vs-railway",
+      "path": "/compare/honeycomb-vs-railway/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "incident-io-vs-railway",
+      "path": "/compare/incident-io-vs-railway/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "iproyal-vs-railway",
+      "path": "/compare/iproyal-vs-railway/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "ivanti-vs-railway",
+      "path": "/compare/ivanti-vs-railway/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "jira-service-management-vs-railway",
+      "path": "/compare/jira-service-management-vs-railway/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "kinsta-vs-railway",
+      "path": "/compare/kinsta-vs-railway/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "manageengine-servicedesk-plus-vs-railway",
+      "path": "/compare/manageengine-servicedesk-plus-vs-railway/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "new-relic-vs-railway",
+      "path": "/compare/new-relic-vs-railway/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "oxylabs-vs-railway",
+      "path": "/compare/oxylabs-vs-railway/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "pagerduty-vs-railway",
+      "path": "/compare/pagerduty-vs-railway/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "railway-vs-rootly",
+      "path": "/compare/railway-vs-rootly/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "railway-vs-scraperapi",
+      "path": "/compare/railway-vs-scraperapi/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "railway-vs-sentry",
+      "path": "/compare/railway-vs-sentry/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "railway-vs-servicenow",
+      "path": "/compare/railway-vs-servicenow/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "railway-vs-siteground",
+      "path": "/compare/railway-vs-siteground/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "railway-vs-smartproxy",
+      "path": "/compare/railway-vs-smartproxy/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "railway-vs-splunk",
+      "path": "/compare/railway-vs-splunk/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "railway-vs-squadcast",
+      "path": "/compare/railway-vs-squadcast/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "railway-vs-sysaid",
+      "path": "/compare/railway-vs-sysaid/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "railway-vs-thordata",
+      "path": "/compare/railway-vs-thordata/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "railway-vs-topdesk",
+      "path": "/compare/railway-vs-topdesk/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "railway-vs-zyte",
+      "path": "/compare/railway-vs-zyte/"
+    },
+    {
+      "kind": "alternatives",
+      "slug": "railway",
+      "path": "/alternatives/railway/"
+    },
+    {
+      "kind": "pricing",
+      "slug": "railway",
+      "path": "/software/railway/pricing/"
+    },
+    {
+      "kind": "tools",
+      "slug": "it-development-cost-calculator",
+      "path": "/tools/it-development-cost-calculator/"
+    }
+  ],
+  "dependentsNeedingRefresh": [],
+  "remediation": [],
+  "notes": [
+    "fieldAudit score=100",
+    "decisionHub bestFor=6 notIdeal=6",
+    "dependents=55"
+  ],
+  "materiallyImproved": true
+}

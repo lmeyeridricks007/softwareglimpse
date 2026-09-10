@@ -255,7 +255,7 @@ export type ExternalAuthorityMetrics = z.infer<
   typeof ExternalAuthorityMetricsSchema
 >;
 
-export const ScoreBreakdownSchema = z.object({
+export const AuthorityScoreBreakdownSchema = z.object({
   relevance: z.number().int().min(0).max(100),
   editorialLegitimacy: z.number().int().min(0).max(100),
   audienceOverlap: z.number().int().min(0).max(100),
@@ -268,7 +268,7 @@ export const ScoreBreakdownSchema = z.object({
   spamRiskPenalty: z.number().int().min(0).max(100),
   notes: z.array(z.string()).default([]),
 });
-export type ScoreBreakdown = z.infer<typeof ScoreBreakdownSchema>;
+export type AuthorityScoreBreakdown = z.infer<typeof AuthorityScoreBreakdownSchema>;
 
 export const AuthorityOpportunitySchema = z.object({
   id: z.string().min(1),
@@ -316,7 +316,7 @@ export const AuthorityOpportunitySchema = z.object({
 
   scoreBand: OpportunityScoreBandSchema,
   scoreNormalized: z.number().int().min(0).max(100).optional(),
-  scoreBreakdown: ScoreBreakdownSchema.optional(),
+  scoreBreakdown: AuthorityScoreBreakdownSchema.optional(),
 
   complianceFlags: z.array(z.string()).default([]),
   discoveryQueries: z.array(z.string()).default([]),

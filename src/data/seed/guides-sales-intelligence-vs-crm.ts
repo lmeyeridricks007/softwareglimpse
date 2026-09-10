@@ -1,4 +1,4 @@
-import type { GuidePage } from "@/domain";
+import type { GuidePageInput } from "@/domain";
 import type { z } from "zod";
 import type { GuideContentBlockSchema } from "@/domain";
 
@@ -385,7 +385,7 @@ const salesIntelligenceVsCrmBlocks: GuideBlockInput[] = [
   },
 ];
 
-export const salesIntelligenceVsCrmGuide: GuidePage = {
+export const salesIntelligenceVsCrmGuide: GuidePageInput = {
   id: "guide-sales-intelligence-vs-crm",
   slug: "sales-intelligence-vs-crm",
   title: "Sales Intelligence vs CRM: What’s the Difference?",
@@ -443,7 +443,7 @@ export const salesIntelligenceVsCrmGuide: GuidePage = {
     "how-to-choose-crm",
     "crm-data-hygiene",
   ],
-  blocks: salesIntelligenceVsCrmBlocks as GuidePage["blocks"],
+  blocks: salesIntelligenceVsCrmBlocks as GuidePageInput["blocks"],
   checklist: [
     {
       id: "diagnose",

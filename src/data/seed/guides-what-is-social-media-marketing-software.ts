@@ -1,4 +1,4 @@
-import type { GuidePage } from "@/domain";
+import type { GuidePageInput } from "@/domain";
 import type { z } from "zod";
 import type { GuideContentBlockSchema } from "@/domain";
 import { tier13GuideScheduledAt } from "@/data/config/publishing/tier-13-social-media-marketing-launch-2026-10-01";
@@ -85,7 +85,7 @@ const blocks: GuideBlockInput[] = [
   },
 ];
 
-function metadata(): GuidePage["metadata"] {
+function metadata(): GuidePageInput["metadata"] {
   return SCHEDULED_AT
     ? {
         status: "scheduled",
@@ -105,7 +105,7 @@ function metadata(): GuidePage["metadata"] {
       };
 }
 
-export const whatIsSocialMediaMarketingSoftwareGuide: GuidePage = {
+export const whatIsSocialMediaMarketingSoftwareGuide: GuidePageInput = {
   id: "guide-what-is-social-media-marketing-software",
   slug: SLUG,
   title: "What Is Social Media Marketing Software?",
@@ -135,7 +135,7 @@ export const whatIsSocialMediaMarketingSoftwareGuide: GuidePage = {
     "social-media-marketing-requirements-guide",
     "social-media-marketing-evaluation-guide",
   ],
-  blocks: blocks as GuidePage["blocks"],
+  blocks: blocks as GuidePageInput["blocks"],
   checklist: [],
   sections: [],
   faq: [],
@@ -146,6 +146,6 @@ export const whatIsSocialMediaMarketingSoftwareGuide: GuidePage = {
     description:
       "What is social media marketing software? Scheduling, listening, influencer campaigns, and social suites — distinct from MAP and funnels.",
     canonicalPath: `/guides/${SLUG}/`,
-    indexable: !SCHEDULED_AT,
+    indexable: true,
   },
 };

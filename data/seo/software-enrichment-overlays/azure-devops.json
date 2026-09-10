@@ -1,0 +1,551 @@
+{
+  "slug": "azure-devops",
+  "updatedAt": "2026-09-08T21:57:41.672Z",
+  "version": "1.0.0",
+  "fieldAudit": {
+    "slug": "azure-devops",
+    "checkedAt": "2026-09-08T21:57:41.670Z",
+    "items": [
+      {
+        "field": "name",
+        "status": "PASS",
+        "detail": "Name: Azure DevOps",
+        "source": "seed"
+      },
+      {
+        "field": "product_status",
+        "status": "PASS",
+        "detail": "productLifecycle=active",
+        "source": "seed"
+      },
+      {
+        "field": "canonical_vendor",
+        "status": "PASS",
+        "detail": "Vendor: Microsoft",
+        "source": "seed"
+      },
+      {
+        "field": "category",
+        "status": "PASS",
+        "detail": "primaryCategorySlug=it-development",
+        "source": "seed"
+      },
+      {
+        "field": "description",
+        "status": "PASS",
+        "detail": "Description present (Azure Repos/Boards/Pipelines — first 5 Basic users free, then $6/user/mo; Basic …)",
+        "source": "seed"
+      },
+      {
+        "field": "target_audience",
+        "status": "PASS",
+        "detail": "Sizes=3, teams=2, assessment bestFor=3",
+        "source": "assessment"
+      },
+      {
+        "field": "use_cases",
+        "status": "PASS",
+        "detail": "useCaseSlugs=1",
+        "source": "seed"
+      },
+      {
+        "field": "capabilities",
+        "status": "PASS",
+        "detail": "featureRatings=0, enrichment features=15",
+        "source": "enrichment"
+      },
+      {
+        "field": "pricing",
+        "status": "PASS",
+        "detail": "Pricing envelope present",
+        "source": "enrichment"
+      },
+      {
+        "field": "plans",
+        "status": "PASS",
+        "detail": "plans=3",
+        "source": "enrichment"
+      },
+      {
+        "field": "free_plan",
+        "status": "PASS",
+        "detail": "Free plan documented",
+        "source": "enrichment"
+      },
+      {
+        "field": "trial",
+        "status": "PASS",
+        "detail": "Trial documented on plans/pricing",
+        "source": "enrichment"
+      },
+      {
+        "field": "integrations",
+        "status": "PASS",
+        "detail": "integrationSlugs=0, enrichment=2",
+        "source": "enrichment"
+      },
+      {
+        "field": "alternatives",
+        "status": "PASS",
+        "detail": "alternativeSlugs=2",
+        "source": "seed"
+      },
+      {
+        "field": "competitors",
+        "status": "PASS",
+        "detail": "competitorSlugs=3",
+        "source": "seed"
+      },
+      {
+        "field": "affiliate",
+        "status": "PASS",
+        "detail": "No affiliate relationship (explicit)",
+        "source": "seed"
+      },
+      {
+        "field": "source_provenance",
+        "status": "PASS",
+        "detail": "seed sources=0, enrichment sourceIds=3",
+        "source": "enrichment"
+      },
+      {
+        "field": "verification_date",
+        "status": "PASS",
+        "detail": "Latest verification/research signal: 2026-08-18T14:00:00.000Z",
+        "source": "enrichment"
+      }
+    ],
+    "passCount": 18,
+    "partialCount": 0,
+    "missingCount": 0,
+    "unknownCount": 0,
+    "score": 100
+  },
+  "decisionHub": {
+    "whatItIs": "Azure DevOps is Microsoft’s cloud DevOps suite (Azure Boards, Repos, Pipelines, Artifacts, Test Plans). Basic access is free for the first 5 users, then $6/user/month. Stakeholders are free. Basic + Test Plans is $52/user/month for manual/exploratory test management. Azure Artifacts includes 2 GiB free then usage. Pipelines include a free Microsoft-hosted job with limited minutes; extra parallel jobs are usage-priced. Visual Studio subscribers often include Basic. Distinct from GitHub (separate source-control product, even under Microsoft) and from GitHub Copilot (AI coding).",
+    "bestFor": [
+      "Microsoft/Azure-native engineering orgs",
+      "Teams that want Boards + Repos + Pipelines without GitHub",
+      "QA groups that will actually buy Test Plans seats",
+      "small-business / engineering: Azure DevOps fit for small-business engineering teams in the source-control-devops job cluster, from first-party positioning and IT Priority-3 research.",
+      "mid-market / engineering: Azure DevOps fit for mid-market engineering teams in the source-control-devops job cluster, from first-party positioning and IT Priority-3 research.",
+      "enterprise / engineering: Azure DevOps fit for enterprise engineering teams in the source-control-devops job cluster, from first-party positioning and IT Priority-3 research."
+    ],
+    "notIdealFor": [
+      "Open-source and GitHub-community-first teams",
+      "Buyers who only need GitHub Copilot in an existing IDE",
+      "ITSM desks (Jira Service Management / ServiceNow)",
+      "User 6 onwards is $6/user/mo for every additional Basic seat — the free five are not a forever team cap workaround",
+      "Test Plans at $52/user is a QA licence, not something to assign to every developer",
+      "Pipeline minutes and Artifacts storage are extra TCO beyond seats"
+    ],
+    "coreCapabilities": [
+      "log management",
+      "source control",
+      "cicd actions",
+      "dev ai",
+      "enterprise security",
+      "analytics reporting",
+      "source control devops"
+    ],
+    "pricingSummary": "3 documented plans · 1 free · entry paid: Basic · trial documented on at least one plan",
+    "keyTradeoffs": [
+      "User 6 onwards is $6/user/mo for every additional Basic seat — the free five are not a forever team cap workaround",
+      "Test Plans at $52/user is a QA licence, not something to assign to every developer",
+      "Pipeline minutes and Artifacts storage are extra TCO beyond seats",
+      "Not GitHub — Microsoft owns both; buying motions and community differ",
+      "GitHub Copilot is a separate AI-coding SKU — do not treat Azure DevOps as Copilot"
+    ],
+    "alternatives": [
+      {
+        "slug": "github",
+        "name": "GitHub"
+      },
+      {
+        "slug": "gitlab",
+        "name": "GitLab"
+      },
+      {
+        "slug": "bitbucket",
+        "name": "Bitbucket Cloud"
+      }
+    ],
+    "importantComparisons": [
+      {
+        "slug": "azure-devops-vs-github",
+        "title": "Azure DevOps vs GitHub",
+        "href": "/compare/azure-devops-vs-github/"
+      },
+      {
+        "slug": "azure-devops-vs-gitlab",
+        "title": "Azure DevOps vs GitLab",
+        "href": "/compare/azure-devops-vs-gitlab/"
+      },
+      {
+        "slug": "apify-vs-azure-devops",
+        "title": "Apify vs Azure DevOps",
+        "href": "/compare/apify-vs-azure-devops/"
+      },
+      {
+        "slug": "appdynamics-vs-azure-devops",
+        "title": "AppDynamics vs Azure DevOps",
+        "href": "/compare/appdynamics-vs-azure-devops/"
+      },
+      {
+        "slug": "azure-devops-vs-bitbucket",
+        "title": "Azure DevOps vs Bitbucket Cloud",
+        "href": "/compare/azure-devops-vs-bitbucket/"
+      },
+      {
+        "slug": "azure-devops-vs-bmc-helix",
+        "title": "Azure DevOps vs BMC Helix ITSM",
+        "href": "/compare/azure-devops-vs-bmc-helix/"
+      }
+    ],
+    "relevantGuides": [
+      {
+        "slug": "how-it-development-software-works",
+        "title": "How IT And Development Software Works",
+        "href": "/guides/how-it-development-software-works/"
+      },
+      {
+        "slug": "types-of-it-development-software",
+        "title": "Types of IT And Development Software",
+        "href": "/guides/types-of-it-development-software/"
+      },
+      {
+        "slug": "it-development-vs-project-management",
+        "title": "IT And Development Software vs Project Management Software",
+        "href": "/guides/it-development-vs-project-management/"
+      },
+      {
+        "slug": "azure-devops-implementation",
+        "title": "Azure DevOps Implementation: 30/60/90 IT Rollout That Sticks",
+        "href": "/guides/azure-devops-implementation/"
+      },
+      {
+        "slug": "azure-devops-migration",
+        "title": "Azure DevOps Migration: Move Tickets and Repos Without Losing Trust",
+        "href": "/guides/azure-devops-migration/"
+      },
+      {
+        "slug": "azure-devops-setup",
+        "title": "Azure DevOps Setup: Day-Zero Path to a Working IT Loop",
+        "href": "/guides/azure-devops-setup/"
+      }
+    ],
+    "evidenceState": "Research/data-based (no completed hands-on test) · Latest verification/research signal: 2026-08-18T14:00:00.000Z · Editorial assessment: approved",
+    "nextDecisionStep": "Compare against peers: Azure DevOps vs GitHub",
+    "missingSections": []
+  },
+  "dependents": [
+    {
+      "kind": "guide",
+      "slug": "how-it-development-software-works",
+      "path": "/guides/how-it-development-software-works/"
+    },
+    {
+      "kind": "guide",
+      "slug": "types-of-it-development-software",
+      "path": "/guides/types-of-it-development-software/"
+    },
+    {
+      "kind": "guide",
+      "slug": "it-development-vs-project-management",
+      "path": "/guides/it-development-vs-project-management/"
+    },
+    {
+      "kind": "guide",
+      "slug": "azure-devops-implementation",
+      "path": "/guides/azure-devops-implementation/"
+    },
+    {
+      "kind": "guide",
+      "slug": "azure-devops-migration",
+      "path": "/guides/azure-devops-migration/"
+    },
+    {
+      "kind": "guide",
+      "slug": "azure-devops-setup",
+      "path": "/guides/azure-devops-setup/"
+    },
+    {
+      "kind": "guide",
+      "slug": "azure-devops-plans",
+      "path": "/guides/azure-devops-plans/"
+    },
+    {
+      "kind": "guide",
+      "slug": "is-azure-devops-worth-it",
+      "path": "/guides/is-azure-devops-worth-it/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "azure-devops-vs-github",
+      "path": "/compare/azure-devops-vs-github/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "azure-devops-vs-gitlab",
+      "path": "/compare/azure-devops-vs-gitlab/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "apify-vs-azure-devops",
+      "path": "/compare/apify-vs-azure-devops/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "appdynamics-vs-azure-devops",
+      "path": "/compare/appdynamics-vs-azure-devops/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "azure-devops-vs-bitbucket",
+      "path": "/compare/azure-devops-vs-bitbucket/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "azure-devops-vs-bmc-helix",
+      "path": "/compare/azure-devops-vs-bmc-helix/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "azure-devops-vs-bright-data",
+      "path": "/compare/azure-devops-vs-bright-data/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "azure-devops-vs-buildkite",
+      "path": "/compare/azure-devops-vs-buildkite/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "azure-devops-vs-chronosphere",
+      "path": "/compare/azure-devops-vs-chronosphere/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "azure-devops-vs-circleci",
+      "path": "/compare/azure-devops-vs-circleci/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "azure-devops-vs-cloudways",
+      "path": "/compare/azure-devops-vs-cloudways/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "azure-devops-vs-coralogix",
+      "path": "/compare/azure-devops-vs-coralogix/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "azure-devops-vs-cpanel",
+      "path": "/compare/azure-devops-vs-cpanel/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "azure-devops-vs-datadog",
+      "path": "/compare/azure-devops-vs-datadog/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "azure-devops-vs-directadmin",
+      "path": "/compare/azure-devops-vs-directadmin/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "azure-devops-vs-dynatrace",
+      "path": "/compare/azure-devops-vs-dynatrace/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "azure-devops-vs-elastic-observability",
+      "path": "/compare/azure-devops-vs-elastic-observability/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "azure-devops-vs-firehydrant",
+      "path": "/compare/azure-devops-vs-firehydrant/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "azure-devops-vs-fly-io",
+      "path": "/compare/azure-devops-vs-fly-io/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "azure-devops-vs-grafana-cloud",
+      "path": "/compare/azure-devops-vs-grafana-cloud/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "azure-devops-vs-haloitsm",
+      "path": "/compare/azure-devops-vs-haloitsm/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "azure-devops-vs-heroku",
+      "path": "/compare/azure-devops-vs-heroku/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "azure-devops-vs-honeycomb",
+      "path": "/compare/azure-devops-vs-honeycomb/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "azure-devops-vs-incident-io",
+      "path": "/compare/azure-devops-vs-incident-io/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "azure-devops-vs-iproyal",
+      "path": "/compare/azure-devops-vs-iproyal/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "azure-devops-vs-ivanti",
+      "path": "/compare/azure-devops-vs-ivanti/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "azure-devops-vs-jira-service-management",
+      "path": "/compare/azure-devops-vs-jira-service-management/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "azure-devops-vs-kinsta",
+      "path": "/compare/azure-devops-vs-kinsta/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "azure-devops-vs-manageengine-servicedesk-plus",
+      "path": "/compare/azure-devops-vs-manageengine-servicedesk-plus/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "azure-devops-vs-new-relic",
+      "path": "/compare/azure-devops-vs-new-relic/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "azure-devops-vs-oxylabs",
+      "path": "/compare/azure-devops-vs-oxylabs/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "azure-devops-vs-pagerduty",
+      "path": "/compare/azure-devops-vs-pagerduty/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "azure-devops-vs-railway",
+      "path": "/compare/azure-devops-vs-railway/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "azure-devops-vs-render",
+      "path": "/compare/azure-devops-vs-render/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "azure-devops-vs-rootly",
+      "path": "/compare/azure-devops-vs-rootly/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "azure-devops-vs-scraperapi",
+      "path": "/compare/azure-devops-vs-scraperapi/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "azure-devops-vs-sentry",
+      "path": "/compare/azure-devops-vs-sentry/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "azure-devops-vs-servicenow",
+      "path": "/compare/azure-devops-vs-servicenow/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "azure-devops-vs-siteground",
+      "path": "/compare/azure-devops-vs-siteground/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "azure-devops-vs-smartproxy",
+      "path": "/compare/azure-devops-vs-smartproxy/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "azure-devops-vs-splunk",
+      "path": "/compare/azure-devops-vs-splunk/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "azure-devops-vs-squadcast",
+      "path": "/compare/azure-devops-vs-squadcast/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "azure-devops-vs-sysaid",
+      "path": "/compare/azure-devops-vs-sysaid/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "azure-devops-vs-thordata",
+      "path": "/compare/azure-devops-vs-thordata/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "azure-devops-vs-topdesk",
+      "path": "/compare/azure-devops-vs-topdesk/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "azure-devops-vs-wp-engine",
+      "path": "/compare/azure-devops-vs-wp-engine/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "azure-devops-vs-zyte",
+      "path": "/compare/azure-devops-vs-zyte/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "azure-devops-vs-jira",
+      "path": "/compare/azure-devops-vs-jira/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "azure-devops-vs-linear",
+      "path": "/compare/azure-devops-vs-linear/"
+    },
+    {
+      "kind": "alternatives",
+      "slug": "azure-devops",
+      "path": "/alternatives/azure-devops/"
+    },
+    {
+      "kind": "pricing",
+      "slug": "azure-devops",
+      "path": "/software/azure-devops/pricing/"
+    },
+    {
+      "kind": "tools",
+      "slug": "it-development-cost-calculator",
+      "path": "/tools/it-development-cost-calculator/"
+    }
+  ],
+  "dependentsNeedingRefresh": [],
+  "remediation": [],
+  "notes": [
+    "fieldAudit score=100",
+    "decisionHub bestFor=6 notIdeal=6",
+    "dependents=60"
+  ],
+  "materiallyImproved": true
+}

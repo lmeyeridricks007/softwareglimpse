@@ -19,7 +19,7 @@ describe("industry hub", () => {
     });
     expect(industry).toBeDefined();
     const model = buildIndustryHubModel(industry!);
-    expect(model.maturity).toBe("verified");
+    expect(model.maturity).toBe("researched");
     expect(model.showIndustryRankings).toBe(false);
     // Verified hubs do not show a soft "still researching" confidence banner.
     expect(model.confidenceMessage).toBeNull();

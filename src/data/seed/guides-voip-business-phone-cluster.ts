@@ -1,11 +1,11 @@
-import type { GuidePage } from "@/domain";
+import type { GuidePageInput } from "@/domain";
 import { tier22GuideScheduledAt } from "@/data/config/publishing/tier-22-voip-business-phone-launch-2027-06-01";
 import { teachingExpansionFor } from "./guides-category-teaching-expansion";
 import { howToChooseVoipBusinessPhoneSoftwareGuide } from "./guides-how-to-choose-voip-business-phone-software";
 import { voipBusinessPhonePricingGuide } from "./guides-voip-business-phone-pricing-guide";
 import { whatIsVoipBusinessPhoneSoftwareGuide } from "./guides-what-is-voip-business-phone-software";
 
-function withTier22Schedule(guide: GuidePage): GuidePage {
+function withTier22Schedule(guide: GuidePageInput): GuidePageInput {
   const scheduledAt = tier22GuideScheduledAt(guide.slug);
   if (!scheduledAt) return guide;
   return {
@@ -15,15 +15,11 @@ function withTier22Schedule(guide: GuidePage): GuidePage {
       status: "scheduled",
       scheduledAt,
     },
-    seo: {
-      ...guide.seo,
-      indexable: false,
-    },
   };
 }
 
 /** VoIP / business phone subcategory guides — June 2027 launch wave. */
-export const voipBusinessPhoneCategoryGuides: GuidePage[] = [
+export const voipBusinessPhoneCategoryGuides: GuidePageInput[] = [
   whatIsVoipBusinessPhoneSoftwareGuide,
   howToChooseVoipBusinessPhoneSoftwareGuide,
   voipBusinessPhonePricingGuide,

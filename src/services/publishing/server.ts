@@ -26,7 +26,10 @@ export type {
   PublishRunnerResult,
 } from "./runners/publish-runner";
 
-export { scanRefreshCandidates } from "./runners/refresh-scanner";
+export {
+  scanRefreshCandidates,
+  applyEnrichmentLanesToRefreshCandidates,
+} from "./runners/refresh-scanner";
 export type {
   RefreshScannerOptions,
   RefreshScanResult,

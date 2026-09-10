@@ -167,7 +167,7 @@ describe("synthetic fixture opportunity detection", () => {
       opps.some(
         (o) =>
           o.type === "comparison-opportunity" &&
-          o.productSlugs.includes("close") &&
+          o.productSlugs.includes("bookyourdata") &&
           o.productSlugs.includes("pipedrive"),
       ),
     ).toBe(true);
@@ -211,8 +211,8 @@ describe("synthetic fixture opportunity detection", () => {
     const ids = opps.map((o) => o.id);
     expect(new Set(ids).size).toBe(ids.length);
 
-    const comparisonId = opportunityIdForComparison(["pipedrive", "close"]);
-    expect(comparisonId).toBe("seo-opportunity:comparison:close:pipedrive");
+    const comparisonId = opportunityIdForComparison(["pipedrive", "bookyourdata"]);
+    expect(comparisonId).toBe("seo-opportunity:comparison:bookyourdata:pipedrive");
     expect(opps.some((o) => o.id === comparisonId)).toBe(true);
   });
 });

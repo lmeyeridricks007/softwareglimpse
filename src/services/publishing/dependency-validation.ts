@@ -67,7 +67,10 @@ function entityPublishMap(): Map<string, PublishableEntity> {
       id: `alternatives:${page.slug}`,
       path: `/alternatives/${page.slug}/`,
       metadata: page.metadata,
-      productSlugs: page.productSlugs,
+      productSlugs: [
+        page.sourceSlug,
+        ...page.alternatives.map((alt) => alt.targetSlug),
+      ],
     });
   }
 
@@ -76,7 +79,10 @@ function entityPublishMap(): Map<string, PublishableEntity> {
       id: `best:${page.slug}`,
       path: `/best/${page.slug}/`,
       metadata: page.metadata,
-      productSlugs: page.productSlugs,
+      productSlugs:
+        page.eligibleProductSlugs.length > 0
+          ? page.eligibleProductSlugs
+          : page.recommendations.map((rec) => rec.productSlug),
     });
   }
 

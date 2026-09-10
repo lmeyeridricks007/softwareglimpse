@@ -1,4 +1,4 @@
-import type { GuidePage } from "@/domain";
+import type { GuidePageInput } from "@/domain";
 import type { z } from "zod";
 import type { GuideContentBlockSchema } from "@/domain";
 
@@ -261,7 +261,7 @@ const salesIntelligenceTotalCostGuideBlocks: GuideBlockInput[] = [
   },
 ];
 
-export const salesIntelligenceTotalCostGuide: GuidePage = {
+export const salesIntelligenceTotalCostGuide: GuidePageInput = {
   id: "guide-sales-intelligence-total-cost-guide",
   slug: "sales-intelligence-total-cost-guide",
   title: "Sales Intelligence Total Cost Guide: Beyond Seat Price",
@@ -299,7 +299,7 @@ export const salesIntelligenceTotalCostGuide: GuidePage = {
     "how-to-choose-sales-intelligence",
     "sales-intelligence-selection-process",
   ],
-  blocks: salesIntelligenceTotalCostGuideBlocks as GuidePage["blocks"],
+  blocks: salesIntelligenceTotalCostGuideBlocks as GuidePageInput["blocks"],
   checklist: [
     {
       id: "categories",

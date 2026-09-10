@@ -1,0 +1,215 @@
+{
+  "slug": "claude-plans",
+  "enrichmentType": "COST_GUIDE",
+  "updatedAt": "2026-09-09T05:43:17.781Z",
+  "uniqueValueAdded": [
+    "pricing_comparison",
+    "sg_original_data",
+    "scenario_analysis",
+    "implementation_workflow",
+    "decision_framework",
+    "limitations_evidence",
+    "product_shortlist",
+    "alternatives_map",
+    "buyer_checklist"
+  ],
+  "patch": {
+    "summary": "Claude cost guide: researched plan structure, free/trial flags, who each tier suits, cost scenarios, and value tradeoffs — no invented prices.",
+    "blocks": [
+      {
+        "id": "da-claude-plans-1",
+        "type": "direct-answer",
+        "body": "Claude pricing is plan-gated across 6 researched tiers. Free entry: Free. Trial/free path present in researched plans. Compare seat/capacity gates and unlocks — not list-price folklore.",
+        "bullets": [
+          "Free plan(s): Free",
+          "Trial/free path present in researched plans",
+          "Entry paid tier researched: Pro (annual)"
+        ]
+      },
+      {
+        "id": "cost-claude-plans-2",
+        "type": "cost-breakdown",
+        "title": "Claude plan matrix and who each tier suits",
+        "body": "Structure and trial/free flags come from SoftwareGlimpse pricing research. Dollar amounts appear only when verified — never invent list prices.",
+        "lines": [
+          {
+            "label": "Free",
+            "description": "Free plan · Unlocks: LLM chat and assistants, reasoning / advanced models, writing and paraphrasing · Suits: explore before committing seats"
+          },
+          {
+            "label": "Pro (annual)",
+            "description": "Suits: teams whose must-have gates appear on this tier"
+          },
+          {
+            "label": "Pro (monthly)",
+            "description": "Suits: teams whose must-have gates appear on this tier"
+          },
+          {
+            "label": "Max",
+            "description": "Suits: teams whose must-have gates appear on this tier"
+          },
+          {
+            "label": "Team Standard (annual)",
+            "description": "Suits: teams whose must-have gates appear on this tier"
+          },
+          {
+            "label": "Team Standard (monthly)",
+            "description": "Suits: teams whose must-have gates appear on this tier"
+          }
+        ],
+        "calculatorHref": "/tools/ai-cost-calculator/",
+        "calculatorLabel": "Model category cost fit"
+      },
+      {
+        "id": "scen-claude-plans-3",
+        "type": "step",
+        "heading": "Claude cost scenarios to pressure-test",
+        "body": "Price Claude against how you actually buy seats and unlocks — not against a competitor's homepage headline.",
+        "stepNumber": 1,
+        "scenarios": [
+          {
+            "title": "Lean team / free-or-trial first",
+            "body": "Stay on Free until a gated capability (enterprise admin and SSO (Free, Pro (annual), Pro (monthly), Max, Team Standard (annual), Team Standard (monthly))) becomes mandatory."
+          },
+          {
+            "title": "Growing team with gated workflows",
+            "body": "Map must-have workflows (LLM chat and assistants, reasoning / advanced models, writing and paraphrasing) to plan unlocks before expanding seats."
+          },
+          {
+            "title": "Hidden / extra cost watch",
+            "body": "Budget risk: Free tier usage caps limit heavy document and coding workflows. Also check add-ons, overages, and admin time outside the sticker plan."
+          }
+        ]
+      },
+      {
+        "id": "value-claude-plans-4",
+        "type": "decision-framework",
+        "title": "Claude value rule",
+        "steps": [
+          {
+            "id": "v-1",
+            "label": "Pay up when Writers and analysts who prioritize long-document and reasoning quality requires a paid unlock you will use weekly"
+          },
+          {
+            "id": "v-2",
+            "label": "Do not overbuy if this limitation dominates: Free tier usage caps limit heavy document and coding workflows"
+          },
+          {
+            "id": "v-3",
+            "label": "Side-by-side cost with ChatGPT on the same seat count"
+          }
+        ]
+      },
+      {
+        "id": "lim-claude-plans-5",
+        "type": "mistakes",
+        "title": "Claude cost mistakes to avoid",
+        "items": [
+          {
+            "title": "Cost trap 1",
+            "body": "Free tier usage caps limit heavy document and coding workflows"
+          },
+          {
+            "title": "Cost trap 2",
+            "body": "Team Standard enforces 2-seat minimum on paid team packaging"
+          },
+          {
+            "title": "Cost trap 3",
+            "body": "Max tier required for highest usage — raises individual TCO"
+          },
+          {
+            "title": "Cost trap 4",
+            "body": "Connector ecosystem trails ChatGPT breadth"
+          },
+          {
+            "title": "Cost trap 5",
+            "body": "Not a specialist voice, presentation, or ad-creative platform"
+          }
+        ]
+      },
+      {
+        "id": "alts-claude-plans-6",
+        "type": "product-shortlist",
+        "title": "Cheaper or clearer alternatives to pressure-test",
+        "body": "Compare total cost of ownership vs Claude on identical constraints.",
+        "productSlugs": [
+          "chatgpt",
+          "gemini"
+        ],
+        "disclaimer": "Catalogue peers only — not commission-ranked."
+      },
+      {
+        "id": "sel-claude-plans-7",
+        "type": "selection-checklist",
+        "title": "Claude pricing checklist",
+        "dimensions": [
+          {
+            "id": "gates",
+            "label": "Plan gates you must unlock",
+            "options": [
+              "enterprise admin and SSO (Free, Pro (annual), Pro (monthly), Max, Team Standard (annual), Team Standard (monthly))",
+              "data privacy controls (Free, Pro (annual), Pro (monthly), Max, Team Standard (annual), Team Standard (monthly))"
+            ]
+          },
+          {
+            "id": "trial",
+            "label": "Trial / free proof",
+            "options": [
+              "Free plan usable for pilot",
+              "Trial days enough",
+              "Paid gate acceptable"
+            ]
+          },
+          {
+            "id": "tco",
+            "label": "TCO extras",
+            "options": [
+              "Add-ons checked",
+              "Admin time budgeted",
+              "Migration cost noted"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "cta-claude-plans-8",
+        "type": "interactive-cta",
+        "title": "Model ai spend with Claude in mind",
+        "body": "Use researched plan structure for Claude alongside category cost modelling.",
+        "href": "/tools/ai-cost-calculator/",
+        "ctaLabel": "Open calculator",
+        "variant": "calculator"
+      }
+    ],
+    "checklist": [
+      {
+        "id": "enrich-chk-0",
+        "label": "List must-have unlocks before picking a Claude tier",
+        "order": 0
+      },
+      {
+        "id": "enrich-chk-1",
+        "label": "Trial/free path present in researched plans",
+        "order": 1
+      },
+      {
+        "id": "enrich-chk-2",
+        "label": "Price in this risk: Free tier usage caps limit heavy document and coding workflows",
+        "order": 2
+      },
+      {
+        "id": "enrich-chk-3",
+        "label": "Compare seat TCO with ChatGPT",
+        "order": 3
+      }
+    ],
+    "nextAction": {
+      "contentId": "tool:finder:ai",
+      "label": "Open Finder shortlist"
+    }
+  },
+  "notes": [
+    "Cost guide: real plan structure, free/trial, TCO tradeoffs — never invent prices.",
+    "Type-specific skeleton: COST_GUIDE"
+  ]
+}

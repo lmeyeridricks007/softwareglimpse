@@ -1,4 +1,4 @@
-import type { GuidePage } from "@/domain";
+import type { GuidePageInput } from "@/domain";
 import { teachingExpansionFor } from "./guides-category-teaching-expansion";
 import { itDevelopmentEvaluationGuide } from "./guides-it-development-evaluation-guide";
 import { itDevelopmentPricingGuide } from "./guides-it-development-pricing-guide";
@@ -10,7 +10,7 @@ import { whatIsItDevelopmentSoftwareGuide } from "./guides-what-is-it-developmen
  * IT & development category educational guides (minimum supporting set).
  * Published and indexable (matches HR / PM / CS editorial gate).
  */
-export const itDevelopmentCategoryGuides: GuidePage[] = [
+export const itDevelopmentCategoryGuides: GuidePageInput[] = [
   whatIsItDevelopmentSoftwareGuide,
   howToChooseItDevelopmentSoftwareGuide,
   itDevelopmentPricingGuide,

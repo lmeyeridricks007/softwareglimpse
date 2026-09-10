@@ -1,4 +1,4 @@
-import type { GuidePage } from "@/domain";
+import type { GuidePageInput } from "@/domain";
 import type { z } from "zod";
 import type { GuideContentBlockSchema } from "@/domain";
 import { tier33GuideScheduledAt } from "@/data/config/publishing/tier-33-ppc-advertising-launch-2027-09-01";
@@ -34,7 +34,7 @@ const blocks: GuideBlockInput[] = [
   },
 ];
 
-function metadata(): GuidePage["metadata"] {
+function metadata(): GuidePageInput["metadata"] {
   return SCHEDULED_AT
     ? {
         status: "scheduled",
@@ -54,7 +54,7 @@ function metadata(): GuidePage["metadata"] {
       };
 }
 
-export const ppcAdvertisingPricingGuide: GuidePage = {
+export const ppcAdvertisingPricingGuide: GuidePageInput = {
   id: "guide-ppc-advertising-pricing-guide",
   slug: SLUG,
   title: "PPC Advertising Software Pricing Guide",
@@ -76,7 +76,7 @@ export const ppcAdvertisingPricingGuide: GuidePage = {
     "how-to-choose-ppc-advertising-software",
     "ppc-advertising-evaluation-guide",
   ],
-  blocks: blocks as GuidePage["blocks"],
+  blocks: blocks as GuidePageInput["blocks"],
   checklist: [],
   sections: [],
   faq: [],
@@ -87,6 +87,6 @@ export const ppcAdvertisingPricingGuide: GuidePage = {
     description:
       "Compare ad spend bands, seat tiers, and account limits for PPC advertising software.",
     canonicalPath: `/guides/${SLUG}/`,
-    indexable: !SCHEDULED_AT,
+    indexable: true,
   },
 };

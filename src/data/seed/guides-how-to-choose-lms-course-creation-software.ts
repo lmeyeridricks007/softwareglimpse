@@ -1,4 +1,4 @@
-import type { GuidePage } from "@/domain";
+import type { GuidePageInput } from "@/domain";
 import type { z } from "zod";
 import type { GuideContentBlockSchema } from "@/domain";
 import { tier15GuideScheduledAt } from "@/data/config/publishing/tier-15-lms-course-creation-launch-2026-12-01";
@@ -34,7 +34,7 @@ const blocks: GuideBlockInput[] = [
   },
 ];
 
-function metadata(): GuidePage["metadata"] {
+function metadata(): GuidePageInput["metadata"] {
   return SCHEDULED_AT
     ? {
         status: "scheduled",
@@ -54,7 +54,7 @@ function metadata(): GuidePage["metadata"] {
       };
 }
 
-export const howToChooseLmsCourseCreationSoftwareGuide: GuidePage = {
+export const howToChooseLmsCourseCreationSoftwareGuide: GuidePageInput = {
   id: "guide-how-to-choose-lms-course-creation-software",
   slug: SLUG,
   title: "How to Choose LMS & Course Creation Software",
@@ -73,7 +73,7 @@ export const howToChooseLmsCourseCreationSoftwareGuide: GuidePage = {
     "what-is-lms-course-creation-software",
     "lms-course-creation-pricing-guide",
   ],
-  blocks: blocks as GuidePage["blocks"],
+  blocks: blocks as GuidePageInput["blocks"],
   checklist: [],
   sections: [],
   faq: [],
@@ -84,6 +84,6 @@ export const howToChooseLmsCourseCreationSoftwareGuide: GuidePage = {
     description:
       "How to choose LMS software by course commerce, cohort, playbook, or assessment job cluster.",
     canonicalPath: `/guides/${SLUG}/`,
-    indexable: !SCHEDULED_AT,
+    indexable: true,
   },
 };

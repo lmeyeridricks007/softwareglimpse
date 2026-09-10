@@ -17,7 +17,7 @@ import { TOOLS_REGISTRY } from "@/data/config/tools/registry";
 import { listFeatureDetailParams } from "@/data/feature-detail";
 import { listRequirementDetailParams } from "@/data/requirement-detail";
 import { isEntityIndexable } from "@/domain/quality-gates";
-import { canonicalUrl } from "@/seo/canonical";
+import { canonicalUrl, isAliasedPath } from "@/seo/canonical";
 import { getSitemapEntries } from "@/seo/sitemap";
 import {
   COMPANY_ROUTES,
@@ -58,6 +58,18 @@ export function buildNewUrlInventory(now: Date = new Date()): NewUrlInventoryRow
     parentHub: "/",
   });
 
+  // Machine-readable GEO file (route: src/app/llms.txt). Trailing slash matches
+  // normalizeMigrationPath; next.config strips it via finalizeRedirectDestination.
+  add({
+    path: "/llms.txt/",
+    routeType: "static",
+    pageType: "llms_txt",
+    title: "llms.txt",
+    indexable: false,
+    publicationState: "published",
+    parentHub: "/",
+  });
+
   const hubs: Array<[string, NewUrlInventoryRow["pageType"], boolean]> = [
     ["/software/", "software_hub", true],
     ["/categories/", "categories_hub", true],
@@ -72,9 +84,12 @@ export function buildNewUrlInventory(now: Date = new Date()): NewUrlInventoryRow
     ["/features/", "features_hub", true],
     ["/resources/", "resources_hub", true],
     ["/for/", "audiences_hub", true],
-    ["/industries/", "industries_hub", false],
+    ["/industries/", "industries_hub", true],
     ["/best/", "best_hub", true],
     ["/alternatives/", "alternatives_hub", true],
+    ["/research/", "resource", true],
+    ["/research/crm-pricing/", "resource", true],
+    ["/research/crm-pricing-history/", "resource", true],
     ["/search/", "search", false],
   ];
   for (const [path, pageType, indexable] of hubs) {
@@ -274,7 +289,7 @@ export function buildNewUrlInventory(now: Date = new Date()): NewUrlInventoryRow
       path: r.seo.canonicalPath || `/resources/${r.slug}/`,
       routeType: "dynamic",
       pageType: "resource",
-      title: r.title || r.slug,
+      title: r.name || r.shortTitle || r.slug,
       indexable: r.seo.indexable === true && r.metadata.status === "published",
       publicationState: r.metadata.status,
       entityId: r.id,
@@ -324,6 +339,9 @@ export function buildNewUrlInventory(now: Date = new Date()): NewUrlInventoryRow
 
   for (const { slug } of listFeatureDetailParams()) {
     const path = `/features/${slug}/`;
+    // Alias paths (e.g. /features/pipeline-management/ → /capabilities/…)
+    // are redirect-only — do not inventory them as indexable pages.
+    if (isAliasedPath(path)) continue;
     add({
       path,
       routeType: "dynamic",

@@ -24,6 +24,33 @@ export function websiteJsonLd(): JsonLd {
   };
 }
 
+/**
+ * Person JSON-LD for the named founder / review author.
+ * Use full legal-style display name — not initials-only bylines.
+ */
+export function personJsonLd(input: {
+  name: string;
+  path: string;
+  jobTitle?: string;
+  description?: string;
+  worksForName?: string;
+}): JsonLd {
+  const data: JsonLd = {
+    "@context": "https://schema.org",
+    "@type": "Person",
+    name: input.name,
+    url: canonicalUrl(input.path),
+  };
+  if (input.jobTitle?.trim()) data.jobTitle = input.jobTitle.trim();
+  if (input.description?.trim()) data.description = input.description.trim();
+  data.worksFor = {
+    "@type": "Organization",
+    name: input.worksForName?.trim() || SITE_NAME,
+    url: `${getSiteUrl()}/`,
+  };
+  return data;
+}
+
 export function breadcrumbJsonLd(items: BreadcrumbItem[]): JsonLd {
   const crumbs = buildBreadcrumbs(items);
   return {
@@ -66,6 +93,7 @@ export function webPageJsonLd(input: {
 /**
  * SoftwareApplication structured data.
  * Only include factual fields we actually have — never fabricate ratings/reviews.
+ * Do NOT add aggregateRating, review, or Review/AggregateRating nodes here.
  */
 export function softwareApplicationJsonLd(input: {
   name: string;
@@ -141,6 +169,104 @@ export function webApplicationJsonLd(input: {
       url: `${getSiteUrl()}/`,
     },
   };
+}
+
+/**
+ * Article JSON-LD for editorial pages that already show a real author.
+ * Never attach AggregateRating, Review rating, or fabricated credentials.
+ */
+export function articleJsonLd(input: {
+  headline: string;
+  description?: string;
+  path: string;
+  datePublished?: string | null;
+  dateModified?: string | null;
+  authorName?: string | null;
+  authorPath?: string | null;
+}): JsonLd {
+  const data: JsonLd = {
+    "@context": "https://schema.org",
+    "@type": "Article",
+    headline: input.headline,
+    url: canonicalUrl(input.path),
+    isPartOf: {
+      "@type": "WebSite",
+      name: SITE_NAME,
+      url: `${getSiteUrl()}/`,
+    },
+    publisher: {
+      "@type": "Organization",
+      name: SITE_NAME,
+      url: `${getSiteUrl()}/`,
+    },
+  };
+
+  if (input.description?.trim()) data.description = input.description.trim();
+  if (input.datePublished) data.datePublished = input.datePublished;
+  if (input.dateModified) data.dateModified = input.dateModified;
+  if (input.authorName?.trim()) {
+    data.author = {
+      "@type": "Person",
+      name: input.authorName.trim(),
+      ...(input.authorPath
+        ? { url: canonicalUrl(input.authorPath) }
+        : {}),
+    };
+  }
+
+  return data;
+}
+
+/**
+ * Dataset JSON-LD for research downloads / catalog-derived reports.
+ * Only include fields that match visible reality (sample size, dates, CSV URL).
+ */
+export function datasetJsonLd(input: {
+  name: string;
+  description: string;
+  path: string;
+  dateModified?: string | null;
+  datePublished?: string | null;
+  creatorName?: string | null;
+  distributionUrl?: string | null;
+  measurementTechnique?: string | null;
+  variableMeasured?: string[];
+}): JsonLd {
+  const data: JsonLd = {
+    "@context": "https://schema.org",
+    "@type": "Dataset",
+    name: input.name,
+    description: input.description,
+    url: canonicalUrl(input.path),
+    creator: {
+      "@type": "Organization",
+      name: input.creatorName?.trim() || SITE_NAME,
+      url: `${getSiteUrl()}/`,
+    },
+    publisher: {
+      "@type": "Organization",
+      name: SITE_NAME,
+      url: `${getSiteUrl()}/`,
+    },
+  };
+  if (input.datePublished) data.datePublished = input.datePublished;
+  if (input.dateModified) data.dateModified = input.dateModified;
+  if (input.measurementTechnique?.trim()) {
+    data.measurementTechnique = input.measurementTechnique.trim();
+  }
+  if (input.variableMeasured?.length) {
+    data.variableMeasured = input.variableMeasured;
+  }
+  if (input.distributionUrl?.trim()) {
+    data.distribution = {
+      "@type": "DataDownload",
+      encodingFormat: "text/csv",
+      contentUrl: input.distributionUrl.startsWith("http")
+        ? input.distributionUrl
+        : canonicalUrl(input.distributionUrl),
+    };
+  }
+  return data;
 }
 
 /**

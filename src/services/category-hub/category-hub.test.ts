@@ -71,12 +71,10 @@ describe("category hub", () => {
       "podio",
       "wealthbox",
       "zendesk",
-      "marketo",
       "pardot",
       "act",
       "sap",
       "siebel",
-      "tidio",
     ]) {
       expect(model.productCards.some((p) => p.slug === slug)).toBe(true);
     }

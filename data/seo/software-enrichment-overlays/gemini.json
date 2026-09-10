@@ -1,0 +1,425 @@
+{
+  "slug": "gemini",
+  "updatedAt": "2026-09-07T22:31:21.685Z",
+  "version": "1.0.0",
+  "fieldAudit": {
+    "slug": "gemini",
+    "checkedAt": "2026-09-07T22:31:21.684Z",
+    "items": [
+      {
+        "field": "name",
+        "status": "PASS",
+        "detail": "Name: Gemini",
+        "source": "seed"
+      },
+      {
+        "field": "product_status",
+        "status": "PASS",
+        "detail": "productLifecycle=active",
+        "source": "seed"
+      },
+      {
+        "field": "canonical_vendor",
+        "status": "UNKNOWN",
+        "detail": "Company/vendor not documented",
+        "source": "none"
+      },
+      {
+        "field": "category",
+        "status": "PASS",
+        "detail": "primaryCategorySlug=ai",
+        "source": "seed"
+      },
+      {
+        "field": "description",
+        "status": "PASS",
+        "detail": "Description present (Google LLM assistant — Free; Google AI Pro $19.99/mo; Ultra from $99.99/mo for h…)",
+        "source": "seed"
+      },
+      {
+        "field": "target_audience",
+        "status": "PASS",
+        "detail": "Sizes=5, teams=3, assessment bestFor=3",
+        "source": "assessment"
+      },
+      {
+        "field": "use_cases",
+        "status": "PASS",
+        "detail": "useCaseSlugs=1",
+        "source": "seed"
+      },
+      {
+        "field": "capabilities",
+        "status": "PASS",
+        "detail": "featureRatings=0, enrichment features=15",
+        "source": "enrichment"
+      },
+      {
+        "field": "pricing",
+        "status": "PASS",
+        "detail": "Pricing envelope present",
+        "source": "enrichment"
+      },
+      {
+        "field": "plans",
+        "status": "PASS",
+        "detail": "plans=3",
+        "source": "enrichment"
+      },
+      {
+        "field": "free_plan",
+        "status": "PASS",
+        "detail": "Free plan documented",
+        "source": "enrichment"
+      },
+      {
+        "field": "trial",
+        "status": "UNKNOWN",
+        "detail": "Trial not explicitly documented — do not assume none",
+        "source": "none"
+      },
+      {
+        "field": "integrations",
+        "status": "PASS",
+        "detail": "integrationSlugs=0, enrichment=3",
+        "source": "enrichment"
+      },
+      {
+        "field": "alternatives",
+        "status": "PASS",
+        "detail": "alternativeSlugs=2",
+        "source": "seed"
+      },
+      {
+        "field": "competitors",
+        "status": "PASS",
+        "detail": "competitorSlugs=4",
+        "source": "seed"
+      },
+      {
+        "field": "affiliate",
+        "status": "PASS",
+        "detail": "No affiliate relationship (explicit)",
+        "source": "seed"
+      },
+      {
+        "field": "source_provenance",
+        "status": "PASS",
+        "detail": "seed sources=0, enrichment sourceIds=3",
+        "source": "enrichment"
+      },
+      {
+        "field": "verification_date",
+        "status": "PASS",
+        "detail": "Latest verification/research signal: 2026-08-18T09:30:00.000Z",
+        "source": "enrichment"
+      }
+    ],
+    "passCount": 16,
+    "partialCount": 0,
+    "missingCount": 0,
+    "unknownCount": 2,
+    "score": 89
+  },
+  "decisionHub": {
+    "whatItIs": "Gemini is Google's LLM assistant for chat, research, coding help, and Workspace-integrated workflows. Free covers everyday use with limits. Google AI Pro is $19.99/mo for expanded model access and Google One benefits. Ultra starts around $99.99/mo for the deepest Gemini model access and usage. Strong fit for teams already on Google Workspace.",
+    "bestFor": [
+      "Google Workspace-centric teams wanting an integrated LLM assistant",
+      "Buyers who value Gemini inside Docs, Gmail, and Drive workflows",
+      "Individuals already paying for Google One who want AI bundled",
+      "solo / operations: Gemini fit for solo operations teams in the llm-assistant job cluster, from first-party positioning and AI Wave-1 research.",
+      "micro / operations: Gemini fit for micro operations teams in the llm-assistant job cluster, from first-party positioning and AI Wave-1 research.",
+      "small-business / operations: Gemini fit for small-business operations teams in the llm-assistant job cluster, from first-party positioning and AI Wave-1 research."
+    ],
+    "notIdealFor": [
+      "Microsoft- or Slack-first stacks without Google Workspace",
+      "Buyers needing the deepest custom GPT / agent-builder workflows",
+      "Specialist voice, presentation, or ad-creative production jobs",
+      "Ultra tier (~$99.99/mo) gates deepest model access — raises power-user TCO",
+      "Google subscription bundling complicates apples-to-apples pricing vs ChatGPT Plus",
+      "Custom project / agent depth trails ChatGPT custom GPTs and MindStudio"
+    ],
+    "coreCapabilities": [
+      "llm chat",
+      "reasoning models",
+      "writing assist",
+      "image generation",
+      "connectors",
+      "llm assistant"
+    ],
+    "pricingSummary": "3 documented plans · 1 free · entry paid: Google AI Pro",
+    "keyTradeoffs": [
+      "Ultra tier (~$99.99/mo) gates deepest model access — raises power-user TCO",
+      "Google subscription bundling complicates apples-to-apples pricing vs ChatGPT Plus",
+      "Custom project / agent depth trails ChatGPT custom GPTs and MindStudio",
+      "Enterprise governance packaging is less transparent than OpenAI Business",
+      "Slack-native depth trails ChatGPT connector ecosystem"
+    ],
+    "alternatives": [
+      {
+        "slug": "chatgpt",
+        "name": "ChatGPT"
+      },
+      {
+        "slug": "claude",
+        "name": "Claude"
+      },
+      {
+        "slug": "microsoft-copilot",
+        "name": "Microsoft 365 Copilot"
+      },
+      {
+        "slug": "perplexity",
+        "name": "Perplexity"
+      }
+    ],
+    "importantComparisons": [
+      {
+        "slug": "chatgpt-vs-gemini",
+        "title": "ChatGPT vs Gemini",
+        "href": "/compare/chatgpt-vs-gemini/"
+      },
+      {
+        "slug": "claude-vs-gemini",
+        "title": "Claude vs Gemini",
+        "href": "/compare/claude-vs-gemini/"
+      },
+      {
+        "slug": "adcreative-ai-vs-gemini",
+        "title": "AdCreative.ai vs Gemini",
+        "href": "/compare/adcreative-ai-vs-gemini/"
+      },
+      {
+        "slug": "adobe-firefly-vs-gemini",
+        "title": "Adobe Firefly vs Gemini",
+        "href": "/compare/adobe-firefly-vs-gemini/"
+      },
+      {
+        "slug": "ai-intelekt-vs-gemini",
+        "title": "AI InteleKt vs Gemini",
+        "href": "/compare/ai-intelekt-vs-gemini/"
+      },
+      {
+        "slug": "aira-vs-gemini",
+        "title": "Aira vs Gemini",
+        "href": "/compare/aira-vs-gemini/"
+      }
+    ],
+    "relevantGuides": [
+      {
+        "slug": "gemini-implementation",
+        "title": "Gemini Implementation: 30/60/90 AI Rollout That Sticks",
+        "href": "/guides/gemini-implementation/"
+      },
+      {
+        "slug": "gemini-migration",
+        "title": "Gemini Migration: Move Projects Without Losing Context",
+        "href": "/guides/gemini-migration/"
+      },
+      {
+        "slug": "gemini-setup",
+        "title": "Gemini Setup: Day-Zero Path to a Working AI Loop",
+        "href": "/guides/gemini-setup/"
+      },
+      {
+        "slug": "gemini-plans",
+        "title": "Gemini Plans: Seats, Credits, and Qualifying Tiers",
+        "href": "/guides/gemini-plans/"
+      },
+      {
+        "slug": "is-gemini-worth-it",
+        "title": "Is Gemini Worth It? Fit Scenarios Before You Buy",
+        "href": "/guides/is-gemini-worth-it/"
+      }
+    ],
+    "evidenceState": "Research/data-based (no completed hands-on test) · Latest verification/research signal: 2026-08-18T09:30:00.000Z · Editorial assessment: approved",
+    "nextDecisionStep": "Compare against peers: ChatGPT vs Gemini",
+    "missingSections": [
+      "canonical_vendor",
+      "trial"
+    ]
+  },
+  "dependents": [
+    {
+      "kind": "guide",
+      "slug": "gemini-implementation",
+      "path": "/guides/gemini-implementation/"
+    },
+    {
+      "kind": "guide",
+      "slug": "gemini-migration",
+      "path": "/guides/gemini-migration/"
+    },
+    {
+      "kind": "guide",
+      "slug": "gemini-setup",
+      "path": "/guides/gemini-setup/"
+    },
+    {
+      "kind": "guide",
+      "slug": "gemini-plans",
+      "path": "/guides/gemini-plans/"
+    },
+    {
+      "kind": "guide",
+      "slug": "is-gemini-worth-it",
+      "path": "/guides/is-gemini-worth-it/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "chatgpt-vs-gemini",
+      "path": "/compare/chatgpt-vs-gemini/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "claude-vs-gemini",
+      "path": "/compare/claude-vs-gemini/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "adcreative-ai-vs-gemini",
+      "path": "/compare/adcreative-ai-vs-gemini/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "adobe-firefly-vs-gemini",
+      "path": "/compare/adobe-firefly-vs-gemini/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "ai-intelekt-vs-gemini",
+      "path": "/compare/ai-intelekt-vs-gemini/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "aira-vs-gemini",
+      "path": "/compare/aira-vs-gemini/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "cursor-vs-gemini",
+      "path": "/compare/cursor-vs-gemini/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "elevenlabs-vs-gemini",
+      "path": "/compare/elevenlabs-vs-gemini/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "fireflies-vs-gemini",
+      "path": "/compare/fireflies-vs-gemini/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "gamma-vs-gemini",
+      "path": "/compare/gamma-vs-gemini/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "gemini-vs-github-copilot",
+      "path": "/compare/gemini-vs-github-copilot/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "gemini-vs-hynote",
+      "path": "/compare/gemini-vs-hynote/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "gemini-vs-microsoft-copilot",
+      "path": "/compare/gemini-vs-microsoft-copilot/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "gemini-vs-midjourney",
+      "path": "/compare/gemini-vs-midjourney/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "gemini-vs-mindstudio",
+      "path": "/compare/gemini-vs-mindstudio/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "gemini-vs-n8n",
+      "path": "/compare/gemini-vs-n8n/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "gemini-vs-otter-ai",
+      "path": "/compare/gemini-vs-otter-ai/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "gemini-vs-perplexity",
+      "path": "/compare/gemini-vs-perplexity/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "gemini-vs-quillbot",
+      "path": "/compare/gemini-vs-quillbot/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "gemini-vs-rank-prompt",
+      "path": "/compare/gemini-vs-rank-prompt/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "gemini-vs-runway",
+      "path": "/compare/gemini-vs-runway/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "gemini-vs-synthesia",
+      "path": "/compare/gemini-vs-synthesia/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "gemini-vs-turbotic",
+      "path": "/compare/gemini-vs-turbotic/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "gemini-vs-wegic",
+      "path": "/compare/gemini-vs-wegic/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "gemini-vs-writesonic",
+      "path": "/compare/gemini-vs-writesonic/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "gemini-vs-zapier",
+      "path": "/compare/gemini-vs-zapier/"
+    },
+    {
+      "kind": "alternatives",
+      "slug": "gemini",
+      "path": "/alternatives/gemini/"
+    },
+    {
+      "kind": "pricing",
+      "slug": "gemini",
+      "path": "/software/gemini/pricing/"
+    },
+    {
+      "kind": "tools",
+      "slug": "ai-cost-calculator",
+      "path": "/tools/ai-cost-calculator/"
+    }
+  ],
+  "dependentsNeedingRefresh": [],
+  "remediation": [
+    "verify:canonical_vendor",
+    "verify:trial"
+  ],
+  "notes": [
+    "fieldAudit score=89",
+    "decisionHub bestFor=6 notIdeal=6",
+    "dependents=34"
+  ],
+  "materiallyImproved": false
+}

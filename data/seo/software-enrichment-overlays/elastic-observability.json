@@ -1,0 +1,530 @@
+{
+  "slug": "elastic-observability",
+  "updatedAt": "2026-09-08T21:57:41.695Z",
+  "version": "1.0.0",
+  "fieldAudit": {
+    "slug": "elastic-observability",
+    "checkedAt": "2026-09-08T21:57:41.692Z",
+    "items": [
+      {
+        "field": "name",
+        "status": "PASS",
+        "detail": "Name: Elastic Observability",
+        "source": "seed"
+      },
+      {
+        "field": "product_status",
+        "status": "PASS",
+        "detail": "productLifecycle=active",
+        "source": "seed"
+      },
+      {
+        "field": "canonical_vendor",
+        "status": "PASS",
+        "detail": "Vendor: Elasticsearch B.V. / Elastic N.V.",
+        "source": "seed"
+      },
+      {
+        "field": "category",
+        "status": "PASS",
+        "detail": "primaryCategorySlug=it-development",
+        "source": "seed"
+      },
+      {
+        "field": "description",
+        "status": "PASS",
+        "detail": "Description present (Observability on Elastic Cloud — Hosted Standard from $99/mo (120 GB / 2 zones);…)",
+        "source": "seed"
+      },
+      {
+        "field": "target_audience",
+        "status": "PASS",
+        "detail": "Sizes=3, teams=2, assessment bestFor=3",
+        "source": "assessment"
+      },
+      {
+        "field": "use_cases",
+        "status": "PASS",
+        "detail": "useCaseSlugs=1",
+        "source": "seed"
+      },
+      {
+        "field": "capabilities",
+        "status": "PASS",
+        "detail": "featureRatings=0, enrichment features=16",
+        "source": "enrichment"
+      },
+      {
+        "field": "pricing",
+        "status": "PASS",
+        "detail": "Pricing envelope present",
+        "source": "enrichment"
+      },
+      {
+        "field": "plans",
+        "status": "PASS",
+        "detail": "plans=3",
+        "source": "enrichment"
+      },
+      {
+        "field": "free_plan",
+        "status": "PASS",
+        "detail": "Free plan documented",
+        "source": "enrichment"
+      },
+      {
+        "field": "trial",
+        "status": "PASS",
+        "detail": "Trial documented on plans/pricing",
+        "source": "enrichment"
+      },
+      {
+        "field": "integrations",
+        "status": "PASS",
+        "detail": "integrationSlugs=0, enrichment=3",
+        "source": "enrichment"
+      },
+      {
+        "field": "alternatives",
+        "status": "PASS",
+        "detail": "alternativeSlugs=3",
+        "source": "seed"
+      },
+      {
+        "field": "competitors",
+        "status": "PASS",
+        "detail": "competitorSlugs=5",
+        "source": "seed"
+      },
+      {
+        "field": "affiliate",
+        "status": "PASS",
+        "detail": "No affiliate relationship (explicit)",
+        "source": "seed"
+      },
+      {
+        "field": "source_provenance",
+        "status": "PASS",
+        "detail": "seed sources=0, enrichment sourceIds=4",
+        "source": "enrichment"
+      },
+      {
+        "field": "verification_date",
+        "status": "PASS",
+        "detail": "Latest verification/research signal: 2026-08-18T20:00:00.000Z",
+        "source": "enrichment"
+      }
+    ],
+    "passCount": 18,
+    "partialCount": 0,
+    "missingCount": 0,
+    "unknownCount": 0,
+    "score": 100
+  },
+  "decisionHub": {
+    "whatItIs": "Elastic Observability is Elastic’s metrics, logs, traces, and APM solution on Elastic Cloud — not the Elasticsearch search product alone. Elastic Cloud Hosted Standard publishes as low as $99/month for a small production config (120 GB storage / 2 zones on elastic.co/pricing/cloud-hosted). Serverless Observability is usage-based ingest (commonly cited ~$0.07–$0.09/GB). Self-managed Elastic Stack remains a separate OSS/licence path. Same observability-monitoring cluster as Datadog and Grafana Cloud.",
+    "bestFor": [
+      "Teams already on Elasticsearch who want Observability as the Cloud solution",
+      "Buyers comparing Grafana Cloud OSS-aligned stacks to Elastic Cloud",
+      "Orgs that will actually size the $99 hosted config versus serverless ingest",
+      "small-business / engineering: Elastic Observability fit for small-business engineering teams in the observability-monitoring job cluster, from first-party positioning and IT industry Tier-A research.",
+      "mid-market / engineering: Elastic Observability fit for mid-market engineering teams in the observability-monitoring job cluster, from first-party positioning and IT industry Tier-A research.",
+      "enterprise / engineering: Elastic Observability fit for enterprise engineering teams in the observability-monitoring job cluster, from first-party positioning and IT industry Tier-A research."
+    ],
+    "notIdealFor": [
+      "Search-only Elasticsearch buyers who do not need observability",
+      "Teams that want Datadog’s published per-host Infrastructure Pro tile only",
+      "ITSM or git purchases",
+      "This entity is Elastic Observability on Cloud — not “Elasticsearch search product only”",
+      "$99 Hosted Standard is a small 120 GB / 2-zone floor; real TCO follows resources",
+      "Serverless ingest rates are a different SKU from Hosted Standard $99"
+    ],
+    "coreCapabilities": [
+      "incident management",
+      "infrastructure monitoring",
+      "apm tracing",
+      "log management",
+      "cicd actions",
+      "itsm ai",
+      "dev ai",
+      "oncall paging"
+    ],
+    "pricingSummary": "3 documented plans · 1 free · entry paid: Elastic Cloud Hosted Standard · trial documented on at least one plan",
+    "keyTradeoffs": [
+      "This entity is Elastic Observability on Cloud — not “Elasticsearch search product only”",
+      "$99 Hosted Standard is a small 120 GB / 2-zone floor; real TCO follows resources",
+      "Serverless ingest rates are a different SKU from Hosted Standard $99",
+      "Self-managed OSS is people/infra cost, not a SaaS seat",
+      "Not ITSM, git, hosting panel, or managed hosting"
+    ],
+    "alternatives": [
+      {
+        "slug": "datadog",
+        "name": "Datadog"
+      },
+      {
+        "slug": "grafana-cloud",
+        "name": "Grafana Cloud"
+      },
+      {
+        "slug": "splunk",
+        "name": "Splunk Observability Cloud"
+      },
+      {
+        "slug": "new-relic",
+        "name": "New Relic"
+      },
+      {
+        "slug": "dynatrace",
+        "name": "Dynatrace"
+      }
+    ],
+    "importantComparisons": [
+      {
+        "slug": "elastic-observability-vs-grafana-cloud",
+        "title": "Elastic Observability vs Grafana Cloud",
+        "href": "/compare/elastic-observability-vs-grafana-cloud/"
+      },
+      {
+        "slug": "elastic-observability-vs-splunk",
+        "title": "Splunk Observability Cloud vs Elastic Observability",
+        "href": "/compare/elastic-observability-vs-splunk/"
+      },
+      {
+        "slug": "apify-vs-elastic-observability",
+        "title": "Apify vs Elastic Observability",
+        "href": "/compare/apify-vs-elastic-observability/"
+      },
+      {
+        "slug": "appdynamics-vs-elastic-observability",
+        "title": "AppDynamics vs Elastic Observability",
+        "href": "/compare/appdynamics-vs-elastic-observability/"
+      },
+      {
+        "slug": "azure-devops-vs-elastic-observability",
+        "title": "Azure DevOps vs Elastic Observability",
+        "href": "/compare/azure-devops-vs-elastic-observability/"
+      },
+      {
+        "slug": "bitbucket-vs-elastic-observability",
+        "title": "Bitbucket Cloud vs Elastic Observability",
+        "href": "/compare/bitbucket-vs-elastic-observability/"
+      }
+    ],
+    "relevantGuides": [
+      {
+        "slug": "elastic-observability-implementation",
+        "title": "Elastic Observability Implementation: 30/60/90 IT Rollout That Sticks",
+        "href": "/guides/elastic-observability-implementation/"
+      },
+      {
+        "slug": "elastic-observability-migration",
+        "title": "Elastic Observability Migration: Move Tickets and Repos Without Losing Trust",
+        "href": "/guides/elastic-observability-migration/"
+      },
+      {
+        "slug": "elastic-observability-setup",
+        "title": "Elastic Observability Setup: Day-Zero Path to a Working IT Loop",
+        "href": "/guides/elastic-observability-setup/"
+      },
+      {
+        "slug": "elastic-observability-plans",
+        "title": "Elastic Observability Plans: Seats, Hosts, and Qualifying Tiers",
+        "href": "/guides/elastic-observability-plans/"
+      },
+      {
+        "slug": "is-elastic-observability-worth-it",
+        "title": "Is Elastic Observability Worth It? Fit Scenarios Before You Buy",
+        "href": "/guides/is-elastic-observability-worth-it/"
+      }
+    ],
+    "evidenceState": "Research/data-based (no completed hands-on test) · Latest verification/research signal: 2026-08-18T20:00:00.000Z · Editorial assessment: approved",
+    "nextDecisionStep": "Compare against peers: Elastic Observability vs Grafana Cloud",
+    "missingSections": []
+  },
+  "dependents": [
+    {
+      "kind": "guide",
+      "slug": "elastic-observability-implementation",
+      "path": "/guides/elastic-observability-implementation/"
+    },
+    {
+      "kind": "guide",
+      "slug": "elastic-observability-migration",
+      "path": "/guides/elastic-observability-migration/"
+    },
+    {
+      "kind": "guide",
+      "slug": "elastic-observability-setup",
+      "path": "/guides/elastic-observability-setup/"
+    },
+    {
+      "kind": "guide",
+      "slug": "elastic-observability-plans",
+      "path": "/guides/elastic-observability-plans/"
+    },
+    {
+      "kind": "guide",
+      "slug": "is-elastic-observability-worth-it",
+      "path": "/guides/is-elastic-observability-worth-it/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "elastic-observability-vs-grafana-cloud",
+      "path": "/compare/elastic-observability-vs-grafana-cloud/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "elastic-observability-vs-splunk",
+      "path": "/compare/elastic-observability-vs-splunk/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "apify-vs-elastic-observability",
+      "path": "/compare/apify-vs-elastic-observability/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "appdynamics-vs-elastic-observability",
+      "path": "/compare/appdynamics-vs-elastic-observability/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "azure-devops-vs-elastic-observability",
+      "path": "/compare/azure-devops-vs-elastic-observability/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "bitbucket-vs-elastic-observability",
+      "path": "/compare/bitbucket-vs-elastic-observability/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "bmc-helix-vs-elastic-observability",
+      "path": "/compare/bmc-helix-vs-elastic-observability/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "bright-data-vs-elastic-observability",
+      "path": "/compare/bright-data-vs-elastic-observability/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "buildkite-vs-elastic-observability",
+      "path": "/compare/buildkite-vs-elastic-observability/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "chronosphere-vs-elastic-observability",
+      "path": "/compare/chronosphere-vs-elastic-observability/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "circleci-vs-elastic-observability",
+      "path": "/compare/circleci-vs-elastic-observability/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "cloudways-vs-elastic-observability",
+      "path": "/compare/cloudways-vs-elastic-observability/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "coralogix-vs-elastic-observability",
+      "path": "/compare/coralogix-vs-elastic-observability/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "cpanel-vs-elastic-observability",
+      "path": "/compare/cpanel-vs-elastic-observability/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "datadog-vs-elastic-observability",
+      "path": "/compare/datadog-vs-elastic-observability/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "directadmin-vs-elastic-observability",
+      "path": "/compare/directadmin-vs-elastic-observability/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "dynatrace-vs-elastic-observability",
+      "path": "/compare/dynatrace-vs-elastic-observability/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "elastic-observability-vs-firehydrant",
+      "path": "/compare/elastic-observability-vs-firehydrant/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "elastic-observability-vs-fly-io",
+      "path": "/compare/elastic-observability-vs-fly-io/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "elastic-observability-vs-github",
+      "path": "/compare/elastic-observability-vs-github/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "elastic-observability-vs-gitlab",
+      "path": "/compare/elastic-observability-vs-gitlab/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "elastic-observability-vs-haloitsm",
+      "path": "/compare/elastic-observability-vs-haloitsm/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "elastic-observability-vs-heroku",
+      "path": "/compare/elastic-observability-vs-heroku/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "elastic-observability-vs-honeycomb",
+      "path": "/compare/elastic-observability-vs-honeycomb/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "elastic-observability-vs-incident-io",
+      "path": "/compare/elastic-observability-vs-incident-io/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "elastic-observability-vs-iproyal",
+      "path": "/compare/elastic-observability-vs-iproyal/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "elastic-observability-vs-ivanti",
+      "path": "/compare/elastic-observability-vs-ivanti/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "elastic-observability-vs-jira-service-management",
+      "path": "/compare/elastic-observability-vs-jira-service-management/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "elastic-observability-vs-kinsta",
+      "path": "/compare/elastic-observability-vs-kinsta/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "elastic-observability-vs-manageengine-servicedesk-plus",
+      "path": "/compare/elastic-observability-vs-manageengine-servicedesk-plus/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "elastic-observability-vs-new-relic",
+      "path": "/compare/elastic-observability-vs-new-relic/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "elastic-observability-vs-oxylabs",
+      "path": "/compare/elastic-observability-vs-oxylabs/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "elastic-observability-vs-pagerduty",
+      "path": "/compare/elastic-observability-vs-pagerduty/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "elastic-observability-vs-railway",
+      "path": "/compare/elastic-observability-vs-railway/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "elastic-observability-vs-render",
+      "path": "/compare/elastic-observability-vs-render/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "elastic-observability-vs-rootly",
+      "path": "/compare/elastic-observability-vs-rootly/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "elastic-observability-vs-scraperapi",
+      "path": "/compare/elastic-observability-vs-scraperapi/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "elastic-observability-vs-sentry",
+      "path": "/compare/elastic-observability-vs-sentry/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "elastic-observability-vs-servicenow",
+      "path": "/compare/elastic-observability-vs-servicenow/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "elastic-observability-vs-siteground",
+      "path": "/compare/elastic-observability-vs-siteground/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "elastic-observability-vs-smartproxy",
+      "path": "/compare/elastic-observability-vs-smartproxy/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "elastic-observability-vs-squadcast",
+      "path": "/compare/elastic-observability-vs-squadcast/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "elastic-observability-vs-sysaid",
+      "path": "/compare/elastic-observability-vs-sysaid/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "elastic-observability-vs-thordata",
+      "path": "/compare/elastic-observability-vs-thordata/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "elastic-observability-vs-topdesk",
+      "path": "/compare/elastic-observability-vs-topdesk/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "elastic-observability-vs-wp-engine",
+      "path": "/compare/elastic-observability-vs-wp-engine/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "elastic-observability-vs-zyte",
+      "path": "/compare/elastic-observability-vs-zyte/"
+    },
+    {
+      "kind": "alternatives",
+      "slug": "elastic-observability",
+      "path": "/alternatives/elastic-observability/"
+    },
+    {
+      "kind": "pricing",
+      "slug": "elastic-observability",
+      "path": "/software/elastic-observability/pricing/"
+    },
+    {
+      "kind": "tools",
+      "slug": "it-development-cost-calculator",
+      "path": "/tools/it-development-cost-calculator/"
+    }
+  ],
+  "dependentsNeedingRefresh": [],
+  "remediation": [],
+  "notes": [
+    "fieldAudit score=100",
+    "decisionHub bestFor=6 notIdeal=6",
+    "dependents=55"
+  ],
+  "materiallyImproved": true
+}

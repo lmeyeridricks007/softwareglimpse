@@ -193,6 +193,15 @@
       ]
     }
   ],
+  "integrationSupport": [
+    {
+      "integrationSlug": "zapier",
+      "kind": "zapier-style",
+      "sourceIds": [
+        "rank-prompt-product-official"
+      ]
+    }
+  ],
   "aiCapabilities": [
     {
       "capability": "assistant",
@@ -218,15 +227,6 @@
     {
       "capability": "recommendations",
       "availability": "limited",
-      "sourceIds": [
-        "rank-prompt-product-official"
-      ]
-    }
-  ],
-  "integrationSupport": [
-    {
-      "integrationSlug": "zapier",
-      "kind": "zapier-style",
       "sourceIds": [
         "rank-prompt-product-official"
       ]
@@ -270,40 +270,6 @@
       "isEditorial": false
     }
   ],
-  "pricing": {
-    "currency": "USD",
-    "model": "tiered",
-    "hasFreePlan": false,
-    "hasFreeTrial": true,
-    "plans": [
-      {
-        "id": "plan-starter",
-        "slug": "starter",
-        "name": "Starter",
-        "isFree": false,
-        "contactSales": false,
-        "hasFreeTrial": true,
-        "trialDays": 7,
-        "highlighted": true,
-        "rules": [
-          {
-            "kind": "flat",
-            "amount": 29,
-            "currency": "USD",
-            "interval": "month",
-            "amountPeriod": "month"
-          }
-        ]
-      }
-    ],
-    "notes": "Confirm tiers on rankprompt.com/pricing. Affiliate economics excluded.",
-    "verifiedAt": "2026-08-19T12:00:00.000Z",
-    "sourceIds": [
-      "rank-prompt-pricing-official"
-    ],
-    "startingPriceMonthly": 29,
-    "trialDays": 7
-  },
   "screenshots": [
     {
       "id": "rank-prompt-shot-ai-visibility",
@@ -316,7 +282,8 @@
       "kind": "vendor-ui",
       "featureIds": [
         "workflow-automation"
-      ]
+      ],
+      "useCaseIds": []
     },
     {
       "id": "rank-prompt-shot-homepage-og",
@@ -329,7 +296,8 @@
       "kind": "vendor-ui",
       "featureIds": [
         "workflow-automation"
-      ]
+      ],
+      "useCaseIds": []
     },
     {
       "id": "rank-prompt-shot-ai-tool-short",
@@ -342,7 +310,8 @@
       "kind": "vendor-ui",
       "featureIds": [
         "workflow-automation"
-      ]
+      ],
+      "useCaseIds": []
     }
   ],
   "media": [
@@ -390,6 +359,7 @@
       "demonstratedDimensionIds": [],
       "requirementCriterionIds": [],
       "workflowStageIds": [],
+      "mediaContext": "general-workflow",
       "reportedOutcomes": [],
       "placements": [
         "overview",
@@ -398,7 +368,6 @@
         "use-cases",
         "implementation"
       ],
-      "mediaContext": "general-workflow",
       "purpose": "Official Rank Prompt video for product research pages",
       "demonstratesCaption": "How Rank Prompt presents the product in an official vendor video.",
       "editorialCommentary": "Official vendor demo — treat as UI/workflow evidence, not SoftwareGlimpse scoring.",
@@ -416,11 +385,40 @@
       "status": "published"
     }
   ],
-  "sourceIds": [
-    "rank-prompt-product-official",
-    "rank-prompt-pricing-official"
-  ],
-  "notes": "Affiliate gap reconcile 2026-08-19 onboarding enrichment from first-party research 2026-08-19T12:00:00.000Z. handsOnTesting=false. membershipRole=primary. jobCluster=ai-automation.",
+  "pricing": {
+    "currency": "USD",
+    "model": "tiered",
+    "hasFreePlan": false,
+    "hasFreeTrial": true,
+    "plans": [
+      {
+        "id": "plan-starter",
+        "slug": "starter",
+        "name": "Starter",
+        "isFree": false,
+        "contactSales": false,
+        "hasFreeTrial": true,
+        "trialDays": 7,
+        "highlighted": true,
+        "rules": [
+          {
+            "kind": "flat",
+            "amount": 29,
+            "currency": "USD",
+            "interval": "month",
+            "amountPeriod": "month"
+          }
+        ]
+      }
+    ],
+    "notes": "Confirm tiers on rankprompt.com/pricing. Affiliate economics excluded.",
+    "verifiedAt": "2026-09-08T21:29:11.040Z",
+    "sourceIds": [
+      "rank-prompt-pricing-official"
+    ],
+    "startingPriceMonthly": 29,
+    "trialDays": 7
+  },
   "domainCheckedAt": {
     "identity": "2026-08-19T12:00:00.000Z",
     "pricing": "2026-08-19T12:00:00.000Z",
@@ -434,5 +432,10 @@
     "limits": "2026-08-19T12:00:00.000Z",
     "security-compliance": "2026-08-19T12:00:00.000Z"
   },
-  "updatedAt": "2026-08-19T15:20:00.000Z"
+  "sourceIds": [
+    "rank-prompt-product-official",
+    "rank-prompt-pricing-official"
+  ],
+  "updatedAt": "2026-08-19T15:20:00.000Z",
+  "notes": "Affiliate gap reconcile 2026-08-19 onboarding enrichment from first-party research 2026-08-19T12:00:00.000Z. handsOnTesting=false. membershipRole=primary. jobCluster=ai-automation."
 }

@@ -1,0 +1,357 @@
+{
+  "slug": "freshcaller",
+  "updatedAt": "2026-09-07T22:31:21.388Z",
+  "version": "1.0.0",
+  "fieldAudit": {
+    "slug": "freshcaller",
+    "checkedAt": "2026-09-07T22:31:21.386Z",
+    "items": [
+      {
+        "field": "name",
+        "status": "PASS",
+        "detail": "Name: Freshcaller",
+        "source": "seed"
+      },
+      {
+        "field": "product_status",
+        "status": "PASS",
+        "detail": "productLifecycle=active",
+        "source": "seed"
+      },
+      {
+        "field": "canonical_vendor",
+        "status": "UNKNOWN",
+        "detail": "Company/vendor not documented",
+        "source": "none"
+      },
+      {
+        "field": "category",
+        "status": "PASS",
+        "detail": "primaryCategorySlug=voip-business-phone",
+        "source": "seed"
+      },
+      {
+        "field": "description",
+        "status": "PASS",
+        "detail": "Description present (Freshworks cloud PBX for inbound voice support: a $0 agent plan plus pay-per-min…)",
+        "source": "seed"
+      },
+      {
+        "field": "target_audience",
+        "status": "PASS",
+        "detail": "Sizes=2, teams=2, assessment bestFor=3",
+        "source": "assessment"
+      },
+      {
+        "field": "use_cases",
+        "status": "PASS",
+        "detail": "useCaseSlugs=4",
+        "source": "seed"
+      },
+      {
+        "field": "capabilities",
+        "status": "PASS",
+        "detail": "featureRatings=0, enrichment features=13",
+        "source": "enrichment"
+      },
+      {
+        "field": "pricing",
+        "status": "PASS",
+        "detail": "Pricing envelope present",
+        "source": "enrichment"
+      },
+      {
+        "field": "plans",
+        "status": "PASS",
+        "detail": "plans=4",
+        "source": "enrichment"
+      },
+      {
+        "field": "free_plan",
+        "status": "PASS",
+        "detail": "Free plan documented",
+        "source": "enrichment"
+      },
+      {
+        "field": "trial",
+        "status": "PASS",
+        "detail": "Trial documented on plans/pricing",
+        "source": "enrichment"
+      },
+      {
+        "field": "integrations",
+        "status": "PASS",
+        "detail": "integrationSlugs=0, enrichment=5",
+        "source": "enrichment"
+      },
+      {
+        "field": "alternatives",
+        "status": "PASS",
+        "detail": "alternativeSlugs=5",
+        "source": "seed"
+      },
+      {
+        "field": "competitors",
+        "status": "PASS",
+        "detail": "competitorSlugs=6",
+        "source": "seed"
+      },
+      {
+        "field": "affiliate",
+        "status": "PASS",
+        "detail": "No affiliate relationship (explicit)",
+        "source": "seed"
+      },
+      {
+        "field": "source_provenance",
+        "status": "PASS",
+        "detail": "seed sources=0, enrichment sourceIds=3",
+        "source": "enrichment"
+      },
+      {
+        "field": "verification_date",
+        "status": "PASS",
+        "detail": "Latest verification/research signal: 2026-08-17T09:00:00.000Z",
+        "source": "enrichment"
+      }
+    ],
+    "passCount": 17,
+    "partialCount": 0,
+    "missingCount": 0,
+    "unknownCount": 1,
+    "score": 94
+  },
+  "decisionHub": {
+    "whatItIs": "Freshcaller is Freshworks’ cloud PBX for voice support teams. It is unusual in this cluster for publishing a $0 agent tier (pay per minute only) and for bundling included incoming minutes into each paid tier — 2,000 on Growth, 3,000 on Pro, 5,000 on Enterprise. Routing depth climbs with the ladder (wait queues and recording on Growth, routing automation and conferencing on Pro, speech-enabled IVR and service-level monitoring on Enterprise), and day passes let occasional agents log in without a full seat.",
+    "bestFor": [
+      "Support teams already standardising on Freshworks (Freshdesk / Freshsales)",
+      "Teams that want to start voice support free and pay only for minutes",
+      "Inbound-heavy operations that need wait queues, transfers and SLA monitoring",
+      "small-business / customer-success: Freshcaller fit for small-business customer-success teams in the cloud-phone job cluster, from first-party positioning and business-communications Wave-1 research.",
+      "mid-market / customer-success: Freshcaller fit for mid-market customer-success teams in the cloud-phone job cluster, from first-party positioning and business-communications Wave-1 research."
+    ],
+    "notIdealFor": [
+      "Outbound sales teams that need a power dialer or cadence tooling",
+      "Buyers who need WhatsApp, SMS or a shared multichannel inbox inside the phone product",
+      "Teams wanting AI call summaries or coaching in the base product",
+      "Call recording, wait queues and voicemail require Growth or above — the Free tier is inbound-basics only",
+      "Every tier bills per-minute call charges on top of agent seats; included minutes cover incoming only",
+      "No power dialer or outbound sales cadence tooling in the published plan ladder"
+    ],
+    "coreCapabilities": [
+      "cloud phone",
+      "call routing",
+      "crm cti",
+      "analytics reporting",
+      "business phone",
+      "contact center",
+      "customer follow up",
+      "inbound sales"
+    ],
+    "pricingSummary": "4 documented plans · 1 free · entry paid: Growth · trial documented on at least one plan",
+    "keyTradeoffs": [
+      "Call recording, wait queues and voicemail require Growth or above — the Free tier is inbound-basics only",
+      "Every tier bills per-minute call charges on top of agent seats; included minutes cover incoming only",
+      "No power dialer or outbound sales cadence tooling in the published plan ladder",
+      "WhatsApp, shared inbox and team messaging live in other Freshworks products, not Freshcaller",
+      "Routing automation is Pro-only and speech-enabled IVR is Enterprise-only"
+    ],
+    "alternatives": [
+      {
+        "slug": "aircall",
+        "name": "Aircall"
+      },
+      {
+        "slug": "callhippo",
+        "name": "CallHippo"
+      },
+      {
+        "slug": "nextiva",
+        "name": "Nextiva"
+      },
+      {
+        "slug": "ringcentral",
+        "name": "RingCentral"
+      },
+      {
+        "slug": "krispcall",
+        "name": "KrispCall"
+      },
+      {
+        "slug": "kixie",
+        "name": "Kixie"
+      }
+    ],
+    "importantComparisons": [
+      {
+        "slug": "aircall-vs-freshcaller",
+        "title": "Aircall vs Freshcaller",
+        "href": "/compare/aircall-vs-freshcaller/"
+      },
+      {
+        "slug": "freshcaller-vs-nextiva",
+        "title": "Freshcaller vs Nextiva",
+        "href": "/compare/freshcaller-vs-nextiva/"
+      },
+      {
+        "slug": "freshcaller-vs-ringcentral",
+        "title": "Freshcaller vs RingCentral",
+        "href": "/compare/freshcaller-vs-ringcentral/"
+      },
+      {
+        "slug": "callhippo-vs-freshcaller",
+        "title": "CallHippo vs Freshcaller",
+        "href": "/compare/callhippo-vs-freshcaller/"
+      },
+      {
+        "slug": "freshcaller-vs-krispcall",
+        "title": "KrispCall vs Freshcaller",
+        "href": "/compare/freshcaller-vs-krispcall/"
+      },
+      {
+        "slug": "freshcaller-vs-kixie",
+        "title": "Freshcaller vs Kixie",
+        "href": "/compare/freshcaller-vs-kixie/"
+      }
+    ],
+    "relevantGuides": [
+      {
+        "slug": "business-communications-pricing-guide",
+        "title": "Business Communications Pricing Guide: Seats, Minutes & Message Fees",
+        "href": "/guides/business-communications-pricing-guide/"
+      },
+      {
+        "slug": "how-voip-business-phone-software-works",
+        "title": "How VoIP & Business Phone Software Works",
+        "href": "/guides/how-voip-business-phone-software-works/"
+      },
+      {
+        "slug": "types-of-voip-business-phone-software",
+        "title": "Types of VoIP & Business Phone Software",
+        "href": "/guides/types-of-voip-business-phone-software/"
+      },
+      {
+        "slug": "voip-business-phone-vs-business-communications",
+        "title": "VoIP & Business Phone Software vs Business Communications Software",
+        "href": "/guides/voip-business-phone-vs-business-communications/"
+      },
+      {
+        "slug": "voip-business-phone-requirements-guide",
+        "title": "VoIP & Business Phone Software Requirements Guide",
+        "href": "/guides/voip-business-phone-requirements-guide/"
+      },
+      {
+        "slug": "voip-business-phone-evaluation-guide",
+        "title": "VoIP & Business Phone Software Evaluation Guide",
+        "href": "/guides/voip-business-phone-evaluation-guide/"
+      }
+    ],
+    "evidenceState": "Research/data-based (no completed hands-on test) · Latest verification/research signal: 2026-08-17T09:00:00.000Z · Editorial assessment: approved",
+    "nextDecisionStep": "Compare against peers: Aircall vs Freshcaller",
+    "missingSections": [
+      "canonical_vendor"
+    ]
+  },
+  "dependents": [
+    {
+      "kind": "guide",
+      "slug": "business-communications-pricing-guide",
+      "path": "/guides/business-communications-pricing-guide/"
+    },
+    {
+      "kind": "guide",
+      "slug": "how-voip-business-phone-software-works",
+      "path": "/guides/how-voip-business-phone-software-works/"
+    },
+    {
+      "kind": "guide",
+      "slug": "types-of-voip-business-phone-software",
+      "path": "/guides/types-of-voip-business-phone-software/"
+    },
+    {
+      "kind": "guide",
+      "slug": "voip-business-phone-vs-business-communications",
+      "path": "/guides/voip-business-phone-vs-business-communications/"
+    },
+    {
+      "kind": "guide",
+      "slug": "voip-business-phone-requirements-guide",
+      "path": "/guides/voip-business-phone-requirements-guide/"
+    },
+    {
+      "kind": "guide",
+      "slug": "voip-business-phone-evaluation-guide",
+      "path": "/guides/voip-business-phone-evaluation-guide/"
+    },
+    {
+      "kind": "guide",
+      "slug": "what-is-freshcaller",
+      "path": "/guides/what-is-freshcaller/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "aircall-vs-freshcaller",
+      "path": "/compare/aircall-vs-freshcaller/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "freshcaller-vs-nextiva",
+      "path": "/compare/freshcaller-vs-nextiva/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "freshcaller-vs-ringcentral",
+      "path": "/compare/freshcaller-vs-ringcentral/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "callhippo-vs-freshcaller",
+      "path": "/compare/callhippo-vs-freshcaller/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "freshcaller-vs-krispcall",
+      "path": "/compare/freshcaller-vs-krispcall/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "freshcaller-vs-kixie",
+      "path": "/compare/freshcaller-vs-kixie/"
+    },
+    {
+      "kind": "alternatives",
+      "slug": "freshcaller",
+      "path": "/alternatives/freshcaller/"
+    },
+    {
+      "kind": "pricing",
+      "slug": "freshcaller",
+      "path": "/software/freshcaller/pricing/"
+    },
+    {
+      "kind": "best",
+      "slug": "business-communications-software",
+      "path": "/best/business-communications-software/"
+    },
+    {
+      "kind": "best",
+      "slug": "voip-business-phone-software",
+      "path": "/best/voip-business-phone-software/"
+    },
+    {
+      "kind": "tools",
+      "slug": "voip-business-phone-cost-calculator",
+      "path": "/tools/voip-business-phone-cost-calculator/"
+    }
+  ],
+  "dependentsNeedingRefresh": [],
+  "remediation": [
+    "verify:canonical_vendor"
+  ],
+  "notes": [
+    "fieldAudit score=94",
+    "decisionHub bestFor=5 notIdeal=6",
+    "dependents=18"
+  ],
+  "materiallyImproved": false
+}

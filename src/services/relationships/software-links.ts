@@ -146,12 +146,17 @@ export function getSoftwareLinkGroups(software: Software): SoftwareLinkGroups {
       kind: "comparison",
       entity: comparison,
     });
-    if (!published && !indexable) {
-      // Still allow linking to researching comparison pages? Prompt: only if publishable.
-      // Comparisons are researching/not public → exclude.
-      continue;
-    }
-    if (!published) continue;
+    // Prefer search-worthy comparisons for inbound links — avoid flooding product
+    // pages with Cartesian noindex pairs.
+    if (!published || !indexable) continue;
+
+    const peerSlug = comparison.productSlugs.find((s) => s !== software.slug);
+    const isDeclaredCompetitor =
+      Boolean(peerSlug) &&
+      (software.competitorSlugs.includes(peerSlug!) ||
+        software.alternativeSlugs.includes(peerSlug!) ||
+        software.comparableSlugs.includes(peerSlug!));
+
     comparisons.push(
       link({
         href: `/compare/${comparison.slug}/`,
@@ -159,7 +164,7 @@ export function getSoftwareLinkGroups(software: Software): SoftwareLinkGroups {
         pageType: "comparison",
         relationship: "comparisonPage",
         published: true,
-        priorityBoost: 15,
+        priorityBoost: isDeclaredCompetitor ? 25 : 15,
       }),
     );
   }
@@ -239,6 +244,18 @@ export function getSoftwareLinkGroups(software: Software): SoftwareLinkGroups {
           relationship: "relatedTool",
           published: true,
           priorityBoost: 8,
+        }),
+      );
+    }
+    if (software.primaryCategorySlug === "sales-intelligence") {
+      tools.push(
+        link({
+          href: "/tools/sales-intelligence-credit-tco/",
+          label: `${short} credit TCO calculator`,
+          pageType: "tool",
+          relationship: "relatedTool",
+          published: true,
+          priorityBoost: 9,
         }),
       );
     }

@@ -77,7 +77,7 @@ export function buildFeatureTabMediaMap(input: {
 
   const candidates = input.features
     .map((feature) => {
-      const videos = selectProductVideos(input.media, {
+      const videos = selectProductVideos(input.media ?? [], {
         featureSlug: feature.slug,
         placement: "features",
         preferSpecific: true,

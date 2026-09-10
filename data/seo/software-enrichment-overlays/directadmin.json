@@ -1,0 +1,525 @@
+{
+  "slug": "directadmin",
+  "updatedAt": "2026-09-08T21:57:41.709Z",
+  "version": "1.0.0",
+  "fieldAudit": {
+    "slug": "directadmin",
+    "checkedAt": "2026-09-08T21:57:41.707Z",
+    "items": [
+      {
+        "field": "name",
+        "status": "PASS",
+        "detail": "Name: DirectAdmin",
+        "source": "seed"
+      },
+      {
+        "field": "product_status",
+        "status": "PASS",
+        "detail": "productLifecycle=active",
+        "source": "seed"
+      },
+      {
+        "field": "canonical_vendor",
+        "status": "PASS",
+        "detail": "Vendor: JBMC Software",
+        "source": "seed"
+      },
+      {
+        "field": "category",
+        "status": "PASS",
+        "detail": "primaryCategorySlug=it-development",
+        "source": "seed"
+      },
+      {
+        "field": "description",
+        "status": "PASS",
+        "detail": "Description present (Hosting control panel — Personal Plus $5/mo; Lite $15; Standard $29 unlimited ac…)",
+        "source": "seed"
+      },
+      {
+        "field": "target_audience",
+        "status": "PASS",
+        "detail": "Sizes=3, teams=1, assessment bestFor=3",
+        "source": "assessment"
+      },
+      {
+        "field": "use_cases",
+        "status": "PASS",
+        "detail": "useCaseSlugs=1",
+        "source": "seed"
+      },
+      {
+        "field": "capabilities",
+        "status": "PASS",
+        "detail": "featureRatings=0, enrichment features=16",
+        "source": "enrichment"
+      },
+      {
+        "field": "pricing",
+        "status": "PASS",
+        "detail": "Pricing envelope present",
+        "source": "enrichment"
+      },
+      {
+        "field": "plans",
+        "status": "PASS",
+        "detail": "plans=3",
+        "source": "enrichment"
+      },
+      {
+        "field": "free_plan",
+        "status": "PASS",
+        "detail": "No free plan in documented plans (explicit absence)",
+        "source": "enrichment"
+      },
+      {
+        "field": "trial",
+        "status": "UNKNOWN",
+        "detail": "Trial not explicitly documented — do not assume none",
+        "source": "none"
+      },
+      {
+        "field": "integrations",
+        "status": "PASS",
+        "detail": "integrationSlugs=0, enrichment=2",
+        "source": "enrichment"
+      },
+      {
+        "field": "alternatives",
+        "status": "PASS",
+        "detail": "alternativeSlugs=2",
+        "source": "seed"
+      },
+      {
+        "field": "competitors",
+        "status": "PASS",
+        "detail": "competitorSlugs=2",
+        "source": "seed"
+      },
+      {
+        "field": "affiliate",
+        "status": "PASS",
+        "detail": "No affiliate relationship (explicit)",
+        "source": "seed"
+      },
+      {
+        "field": "source_provenance",
+        "status": "PASS",
+        "detail": "seed sources=0, enrichment sourceIds=3",
+        "source": "enrichment"
+      },
+      {
+        "field": "verification_date",
+        "status": "PASS",
+        "detail": "Latest verification/research signal: 2026-08-18T20:00:00.000Z",
+        "source": "enrichment"
+      }
+    ],
+    "passCount": 17,
+    "partialCount": 0,
+    "missingCount": 0,
+    "unknownCount": 1,
+    "score": 94
+  },
+  "decisionHub": {
+    "whatItIs": "DirectAdmin is a Linux hosting control panel (JBMC Software) licensed per server — not managed WordPress hosting. Personal Plus publishes at $5/month; Lite $15; Standard $29 with unlimited accounts/domains on published packaging. Same hosting-operations cluster as Plesk and cPanel. Plesk remains the cluster award (7.4); this entity does not outrank it. Landscape-only versus Kinsta/WP Engine managed hosting.",
+    "bestFor": [
+      "Admins who want a cheap panel licence on VPS/dedicated they already run",
+      "Buyers comparing Personal Plus $5 to Plesk Web Admin or cPanel Solo",
+      "Hosts that need Standard unlimited accounts/domains at $29",
+      "micro / operations: DirectAdmin fit for micro operations teams in the hosting-operations job cluster, from first-party positioning and IT industry Tier-A research.",
+      "small-business / operations: DirectAdmin fit for small-business operations teams in the hosting-operations job cluster, from first-party positioning and IT industry Tier-A research.",
+      "mid-market / operations: DirectAdmin fit for mid-market operations teams in the hosting-operations job cluster, from first-party positioning and IT industry Tier-A research."
+    ],
+    "notIdealFor": [
+      "Teams buying managed WordPress hosting (Kinsta / WP Engine)",
+      "Windows panel needs (Plesk)",
+      "ITSM, git, or observability purchases",
+      "Panel licence on infrastructure you already run — not Kinsta/WP Engine managed hosting",
+      "Does not outrank Plesk (7.4)",
+      "No published AI story — scored low on purpose"
+    ],
+    "coreCapabilities": [
+      "infrastructure monitoring",
+      "log management",
+      "hosting panel",
+      "enterprise security",
+      "analytics reporting",
+      "hosting operations"
+    ],
+    "pricingSummary": "3 documented plans · entry paid: Personal Plus",
+    "keyTradeoffs": [
+      "Panel licence on infrastructure you already run — not Kinsta/WP Engine managed hosting",
+      "Does not outrank Plesk (7.4)",
+      "No published AI story — scored low on purpose",
+      "Not ITSM, observability, or source control",
+      "Personal Plus $5 is not unlimited Standard $29 packaging"
+    ],
+    "alternatives": [
+      {
+        "slug": "plesk",
+        "name": "Plesk"
+      },
+      {
+        "slug": "cpanel",
+        "name": "cPanel"
+      }
+    ],
+    "importantComparisons": [
+      {
+        "slug": "directadmin-vs-plesk",
+        "title": "DirectAdmin vs Plesk",
+        "href": "/compare/directadmin-vs-plesk/"
+      },
+      {
+        "slug": "apify-vs-directadmin",
+        "title": "Apify vs DirectAdmin",
+        "href": "/compare/apify-vs-directadmin/"
+      },
+      {
+        "slug": "appdynamics-vs-directadmin",
+        "title": "AppDynamics vs DirectAdmin",
+        "href": "/compare/appdynamics-vs-directadmin/"
+      },
+      {
+        "slug": "azure-devops-vs-directadmin",
+        "title": "Azure DevOps vs DirectAdmin",
+        "href": "/compare/azure-devops-vs-directadmin/"
+      },
+      {
+        "slug": "bitbucket-vs-directadmin",
+        "title": "Bitbucket Cloud vs DirectAdmin",
+        "href": "/compare/bitbucket-vs-directadmin/"
+      },
+      {
+        "slug": "bmc-helix-vs-directadmin",
+        "title": "BMC Helix ITSM vs DirectAdmin",
+        "href": "/compare/bmc-helix-vs-directadmin/"
+      }
+    ],
+    "relevantGuides": [
+      {
+        "slug": "directadmin-implementation",
+        "title": "DirectAdmin Implementation: 30/60/90 IT Rollout That Sticks",
+        "href": "/guides/directadmin-implementation/"
+      },
+      {
+        "slug": "directadmin-migration",
+        "title": "DirectAdmin Migration: Move Tickets and Repos Without Losing Trust",
+        "href": "/guides/directadmin-migration/"
+      },
+      {
+        "slug": "directadmin-setup",
+        "title": "DirectAdmin Setup: Day-Zero Path to a Working IT Loop",
+        "href": "/guides/directadmin-setup/"
+      },
+      {
+        "slug": "directadmin-plans",
+        "title": "DirectAdmin Plans: Seats, Hosts, and Qualifying Tiers",
+        "href": "/guides/directadmin-plans/"
+      },
+      {
+        "slug": "is-directadmin-worth-it",
+        "title": "Is DirectAdmin Worth It? Fit Scenarios Before You Buy",
+        "href": "/guides/is-directadmin-worth-it/"
+      }
+    ],
+    "evidenceState": "Research/data-based (no completed hands-on test) · Latest verification/research signal: 2026-08-18T20:00:00.000Z · Editorial assessment: approved",
+    "nextDecisionStep": "Compare against peers: DirectAdmin vs Plesk",
+    "missingSections": [
+      "trial"
+    ]
+  },
+  "dependents": [
+    {
+      "kind": "guide",
+      "slug": "directadmin-implementation",
+      "path": "/guides/directadmin-implementation/"
+    },
+    {
+      "kind": "guide",
+      "slug": "directadmin-migration",
+      "path": "/guides/directadmin-migration/"
+    },
+    {
+      "kind": "guide",
+      "slug": "directadmin-setup",
+      "path": "/guides/directadmin-setup/"
+    },
+    {
+      "kind": "guide",
+      "slug": "directadmin-plans",
+      "path": "/guides/directadmin-plans/"
+    },
+    {
+      "kind": "guide",
+      "slug": "is-directadmin-worth-it",
+      "path": "/guides/is-directadmin-worth-it/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "directadmin-vs-plesk",
+      "path": "/compare/directadmin-vs-plesk/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "apify-vs-directadmin",
+      "path": "/compare/apify-vs-directadmin/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "appdynamics-vs-directadmin",
+      "path": "/compare/appdynamics-vs-directadmin/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "azure-devops-vs-directadmin",
+      "path": "/compare/azure-devops-vs-directadmin/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "bitbucket-vs-directadmin",
+      "path": "/compare/bitbucket-vs-directadmin/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "bmc-helix-vs-directadmin",
+      "path": "/compare/bmc-helix-vs-directadmin/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "bright-data-vs-directadmin",
+      "path": "/compare/bright-data-vs-directadmin/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "buildkite-vs-directadmin",
+      "path": "/compare/buildkite-vs-directadmin/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "chronosphere-vs-directadmin",
+      "path": "/compare/chronosphere-vs-directadmin/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "circleci-vs-directadmin",
+      "path": "/compare/circleci-vs-directadmin/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "cloudways-vs-directadmin",
+      "path": "/compare/cloudways-vs-directadmin/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "coralogix-vs-directadmin",
+      "path": "/compare/coralogix-vs-directadmin/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "cpanel-vs-directadmin",
+      "path": "/compare/cpanel-vs-directadmin/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "datadog-vs-directadmin",
+      "path": "/compare/datadog-vs-directadmin/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "directadmin-vs-dynatrace",
+      "path": "/compare/directadmin-vs-dynatrace/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "directadmin-vs-elastic-observability",
+      "path": "/compare/directadmin-vs-elastic-observability/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "directadmin-vs-firehydrant",
+      "path": "/compare/directadmin-vs-firehydrant/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "directadmin-vs-fly-io",
+      "path": "/compare/directadmin-vs-fly-io/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "directadmin-vs-github",
+      "path": "/compare/directadmin-vs-github/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "directadmin-vs-gitlab",
+      "path": "/compare/directadmin-vs-gitlab/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "directadmin-vs-grafana-cloud",
+      "path": "/compare/directadmin-vs-grafana-cloud/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "directadmin-vs-haloitsm",
+      "path": "/compare/directadmin-vs-haloitsm/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "directadmin-vs-heroku",
+      "path": "/compare/directadmin-vs-heroku/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "directadmin-vs-honeycomb",
+      "path": "/compare/directadmin-vs-honeycomb/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "directadmin-vs-incident-io",
+      "path": "/compare/directadmin-vs-incident-io/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "directadmin-vs-iproyal",
+      "path": "/compare/directadmin-vs-iproyal/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "directadmin-vs-ivanti",
+      "path": "/compare/directadmin-vs-ivanti/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "directadmin-vs-jira-service-management",
+      "path": "/compare/directadmin-vs-jira-service-management/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "directadmin-vs-kinsta",
+      "path": "/compare/directadmin-vs-kinsta/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "directadmin-vs-manageengine-servicedesk-plus",
+      "path": "/compare/directadmin-vs-manageengine-servicedesk-plus/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "directadmin-vs-new-relic",
+      "path": "/compare/directadmin-vs-new-relic/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "directadmin-vs-oxylabs",
+      "path": "/compare/directadmin-vs-oxylabs/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "directadmin-vs-pagerduty",
+      "path": "/compare/directadmin-vs-pagerduty/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "directadmin-vs-railway",
+      "path": "/compare/directadmin-vs-railway/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "directadmin-vs-render",
+      "path": "/compare/directadmin-vs-render/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "directadmin-vs-rootly",
+      "path": "/compare/directadmin-vs-rootly/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "directadmin-vs-scraperapi",
+      "path": "/compare/directadmin-vs-scraperapi/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "directadmin-vs-sentry",
+      "path": "/compare/directadmin-vs-sentry/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "directadmin-vs-servicenow",
+      "path": "/compare/directadmin-vs-servicenow/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "directadmin-vs-siteground",
+      "path": "/compare/directadmin-vs-siteground/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "directadmin-vs-smartproxy",
+      "path": "/compare/directadmin-vs-smartproxy/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "directadmin-vs-splunk",
+      "path": "/compare/directadmin-vs-splunk/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "directadmin-vs-squadcast",
+      "path": "/compare/directadmin-vs-squadcast/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "directadmin-vs-sysaid",
+      "path": "/compare/directadmin-vs-sysaid/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "directadmin-vs-thordata",
+      "path": "/compare/directadmin-vs-thordata/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "directadmin-vs-topdesk",
+      "path": "/compare/directadmin-vs-topdesk/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "directadmin-vs-wp-engine",
+      "path": "/compare/directadmin-vs-wp-engine/"
+    },
+    {
+      "kind": "comparison",
+      "slug": "directadmin-vs-zyte",
+      "path": "/compare/directadmin-vs-zyte/"
+    },
+    {
+      "kind": "alternatives",
+      "slug": "directadmin",
+      "path": "/alternatives/directadmin/"
+    },
+    {
+      "kind": "pricing",
+      "slug": "directadmin",
+      "path": "/software/directadmin/pricing/"
+    },
+    {
+      "kind": "tools",
+      "slug": "it-development-cost-calculator",
+      "path": "/tools/it-development-cost-calculator/"
+    }
+  ],
+  "dependentsNeedingRefresh": [],
+  "remediation": [
+    "verify:trial"
+  ],
+  "notes": [
+    "fieldAudit score=94",
+    "decisionHub bestFor=6 notIdeal=6",
+    "dependents=56"
+  ],
+  "materiallyImproved": true
+}

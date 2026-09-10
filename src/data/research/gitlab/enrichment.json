@@ -183,6 +183,36 @@
       ]
     }
   ],
+  "integrationSupport": [
+    {
+      "integrationSlug": "slack",
+      "kind": "native",
+      "sourceIds": [
+        "gitlab-product-official"
+      ]
+    },
+    {
+      "integrationSlug": "microsoft-teams",
+      "kind": "native",
+      "sourceIds": [
+        "gitlab-product-official"
+      ]
+    },
+    {
+      "integrationSlug": "zapier",
+      "kind": "zapier-style",
+      "sourceIds": [
+        "gitlab-product-official"
+      ]
+    },
+    {
+      "integrationSlug": "api",
+      "kind": "api-only",
+      "sourceIds": [
+        "gitlab-product-official"
+      ]
+    }
+  ],
   "aiCapabilities": [
     {
       "capability": "assistant",
@@ -210,36 +240,6 @@
     {
       "capability": "recommendations",
       "availability": "supported",
-      "sourceIds": [
-        "gitlab-product-official"
-      ]
-    }
-  ],
-  "integrationSupport": [
-    {
-      "integrationSlug": "slack",
-      "kind": "native",
-      "sourceIds": [
-        "gitlab-product-official"
-      ]
-    },
-    {
-      "integrationSlug": "microsoft-teams",
-      "kind": "native",
-      "sourceIds": [
-        "gitlab-product-official"
-      ]
-    },
-    {
-      "integrationSlug": "zapier",
-      "kind": "zapier-style",
-      "sourceIds": [
-        "gitlab-product-official"
-      ]
-    },
-    {
-      "integrationSlug": "api",
-      "kind": "api-only",
       "sourceIds": [
         "gitlab-product-official"
       ]
@@ -323,69 +323,6 @@
       "isEditorial": false
     }
   ],
-  "pricing": {
-    "currency": "USD",
-    "model": "per-seat",
-    "hasFreePlan": true,
-    "hasFreeTrial": true,
-    "plans": [
-      {
-        "id": "plan-free",
-        "slug": "free",
-        "name": "Free",
-        "isFree": true,
-        "contactSales": false,
-        "hasFreeTrial": false,
-        "highlighted": false,
-        "rules": [
-          {
-            "kind": "flat",
-            "amount": 0,
-            "currency": "USD",
-            "interval": "month",
-            "amountPeriod": "month"
-          }
-        ],
-        "description": "SaaS Free — CI minute and storage caps; small private namespaces."
-      },
-      {
-        "id": "plan-premium",
-        "slug": "premium",
-        "name": "Premium",
-        "isFree": false,
-        "contactSales": false,
-        "hasFreeTrial": true,
-        "highlighted": true,
-        "rules": [
-          {
-            "kind": "per-seat",
-            "amountPerSeat": 29,
-            "currency": "USD",
-            "interval": "year",
-            "amountPeriod": "month"
-          }
-        ],
-        "description": "$29/user/mo billed annually — MR approvals, more CI, SSO-oriented features."
-      },
-      {
-        "id": "plan-ultimate",
-        "slug": "ultimate",
-        "name": "Ultimate",
-        "isFree": false,
-        "contactSales": true,
-        "hasFreeTrial": false,
-        "highlighted": false,
-        "rules": [],
-        "description": "Advanced security/compliance — custom pricing on current GitLab page."
-      }
-    ],
-    "notes": "Verified 2026-08-18 from about.gitlab.com/pricing (high confidence for Premium $29/user/mo annual). Ultimate is contact/custom on the live page. CI minutes and storage gate Free. Affiliate economics excluded.",
-    "verifiedAt": "2026-08-18T12:00:00.000Z",
-    "sourceIds": [
-      "gitlab-pricing-official"
-    ],
-    "startingPriceMonthly": 29
-  },
   "screenshots": [
     {
       "id": "gitlab-shot-overview",
@@ -499,13 +436,13 @@
       "demonstratedDimensionIds": [],
       "requirementCriterionIds": [],
       "workflowStageIds": [],
+      "mediaContext": "general-workflow",
       "reportedOutcomes": [],
       "placements": [
         "overview",
         "features",
         "evidence"
       ],
-      "mediaContext": "general-workflow",
       "purpose": "Official GitLab video for product research pages",
       "demonstratesCaption": "How GitLab presents the product in an official vendor video.",
       "editorialCommentary": "Official vendor demo — treat as UI/workflow evidence, not SoftwareGlimpse scoring.",
@@ -523,12 +460,69 @@
       "status": "published"
     }
   ],
-  "sourceIds": [
-    "gitlab-product-official",
-    "gitlab-pricing-official",
-    "gitlab-pricing"
-  ],
-  "notes": "IT Priority-2 onboarding enrichment from first-party research 2026-08-18T12:00:00.000Z. handsOnTesting=false. membershipRole=primary. jobCluster=source-control-devops.",
+  "pricing": {
+    "currency": "USD",
+    "model": "per-seat",
+    "hasFreePlan": true,
+    "hasFreeTrial": true,
+    "plans": [
+      {
+        "id": "plan-free",
+        "slug": "free",
+        "name": "Free",
+        "isFree": true,
+        "contactSales": false,
+        "hasFreeTrial": false,
+        "highlighted": false,
+        "rules": [
+          {
+            "kind": "flat",
+            "amount": 0,
+            "currency": "USD",
+            "interval": "month",
+            "amountPeriod": "month"
+          }
+        ],
+        "description": "SaaS Free — CI minute and storage caps; small private namespaces."
+      },
+      {
+        "id": "plan-premium",
+        "slug": "premium",
+        "name": "Premium",
+        "isFree": false,
+        "contactSales": false,
+        "hasFreeTrial": true,
+        "highlighted": true,
+        "rules": [
+          {
+            "kind": "per-seat",
+            "amountPerSeat": 29,
+            "currency": "USD",
+            "interval": "year",
+            "amountPeriod": "month"
+          }
+        ],
+        "description": "$29/user/mo billed annually — MR approvals, more CI, SSO-oriented features."
+      },
+      {
+        "id": "plan-ultimate",
+        "slug": "ultimate",
+        "name": "Ultimate",
+        "isFree": false,
+        "contactSales": true,
+        "hasFreeTrial": false,
+        "highlighted": false,
+        "rules": [],
+        "description": "Advanced security/compliance — custom pricing on current GitLab page."
+      }
+    ],
+    "notes": "Verified 2026-08-18 from about.gitlab.com/pricing (high confidence for Premium $29/user/mo annual). Ultimate is contact/custom on the live page. CI minutes and storage gate Free. Affiliate economics excluded.",
+    "verifiedAt": "2026-09-08T21:57:15.125Z",
+    "sourceIds": [
+      "gitlab-pricing-official"
+    ],
+    "startingPriceMonthly": 29
+  },
   "domainCheckedAt": {
     "identity": "2026-08-18T12:00:00.000Z",
     "pricing": "2026-08-18T12:00:00.000Z",
@@ -542,5 +536,11 @@
     "limits": "2026-08-18T12:00:00.000Z",
     "security-compliance": "2026-08-18T12:00:00.000Z"
   },
-  "updatedAt": "2026-08-18T14:00:00.000Z"
+  "sourceIds": [
+    "gitlab-product-official",
+    "gitlab-pricing-official",
+    "gitlab-pricing"
+  ],
+  "updatedAt": "2026-08-18T14:00:00.000Z",
+  "notes": "IT Priority-2 onboarding enrichment from first-party research 2026-08-18T12:00:00.000Z. handsOnTesting=false. membershipRole=primary. jobCluster=source-control-devops."
 }

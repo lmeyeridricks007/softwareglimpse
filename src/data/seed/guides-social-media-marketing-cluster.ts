@@ -1,11 +1,11 @@
-import type { GuidePage } from "@/domain";
+import type { GuidePageInput } from "@/domain";
 import { tier13GuideScheduledAt } from "@/data/config/publishing/tier-13-social-media-marketing-launch-2026-10-01";
 import { teachingExpansionFor } from "./guides-category-teaching-expansion";
 import { howToChooseSocialMediaMarketingSoftwareGuide } from "./guides-how-to-choose-social-media-marketing-software";
 import { socialMediaMarketingPricingGuide } from "./guides-social-media-marketing-pricing-guide";
 import { whatIsSocialMediaMarketingSoftwareGuide } from "./guides-what-is-social-media-marketing-software";
 
-function withTier13Schedule(guide: GuidePage): GuidePage {
+function withTier13Schedule(guide: GuidePageInput): GuidePageInput {
   const scheduledAt = tier13GuideScheduledAt(guide.slug);
   if (!scheduledAt) return guide;
   return {
@@ -15,15 +15,11 @@ function withTier13Schedule(guide: GuidePage): GuidePage {
       status: "scheduled",
       scheduledAt,
     },
-    seo: {
-      ...guide.seo,
-      indexable: false,
-    },
   };
 }
 
 /** Social media marketing category guides — October 2026 launch wave. */
-export const socialMediaMarketingCategoryGuides: GuidePage[] = [
+export const socialMediaMarketingCategoryGuides: GuidePageInput[] = [
   whatIsSocialMediaMarketingSoftwareGuide,
   howToChooseSocialMediaMarketingSoftwareGuide,
   socialMediaMarketingPricingGuide,

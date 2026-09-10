@@ -514,12 +514,18 @@ function bestForFromEnrichment(
     }
   }
   for (const pos of enrichment?.vendorPositioning ?? []) {
-    if (pos.claim && scenarios.length < 3) scenarios.push(pos.claim);
+    if (!pos.claim) continue;
+    const agentic =
+      /Claudeforce|Agentforce|agentic/i.test(pos.claim) &&
+      !scenarios.some((s) => /Claudeforce|Agentforce/i.test(s));
+    if (agentic || scenarios.length < 3) {
+      scenarios.push(pos.claim.replace(/\.$/, ""));
+    }
   }
   if (scenarios.length === 0) {
     scenarios.push(`Teams evaluating ${slug} on current SoftwareGlimpse research`);
   }
-  return [...new Set(scenarios)].slice(0, 3);
+  return [...new Set(scenarios)].slice(0, 4);
 }
 
 function buildPair(
@@ -592,9 +598,22 @@ function buildPair(
 
   const priceA = enA?.pricing?.startingPriceMonthly;
   const priceB = enB?.pricing?.startingPriceMonthly;
+  const freePlanBit = (
+    label: string,
+    pricing: NonNullable<typeof enA>["pricing"] | undefined,
+  ): string | null => {
+    if (!pricing?.hasFreePlan) return null;
+    return `${label} publishes a free plan`;
+  };
+  const freeBits = [
+    freePlanBit(labelA, enA?.pricing),
+    freePlanBit(labelB, enB?.pricing),
+  ].filter(Boolean);
   const pricingNotes =
     priceA != null && priceB != null
-      ? `Researched list starting prices: ${labelA} from $${priceA}/user/mo; ${labelB} from $${priceB}/user/mo. Confirm live vendor pricing before buying.`
+      ? `Researched list starting prices: ${labelA} from $${priceA}/user/mo; ${labelB} from $${priceB}/user/mo.${
+          freeBits.length ? ` ${freeBits.join("; ")}.` : ""
+        } Confirm live vendor pricing before buying.`
       : `Pricing notes use verified research when available for ${labelA} and ${labelB}. Confirm live vendor pricing before buying.`;
 
   const title = `${labelA} vs ${labelB}`;

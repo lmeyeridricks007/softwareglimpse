@@ -35,13 +35,15 @@ Helpers in `structured-data.tsx`:
 
 ## Sitemaps
 
-`getSitemapEntries()` includes only:
+`/sitemap.xml` is a **sitemap index**. Named children (e.g. `/sitemap-software.xml`,
+`/sitemap-comparisons.xml`) list only canonical ∩ indexable ∩ publishable URLs.
 
-- home, software index, categories index
-- published + indexable categories
-- published + indexable software
+- Reviews are not a separate sitemap — they live on `/software/{slug}/`.
+- Empty content types are omitted.
+- See `docs/seo/SITEMAP-ARCHITECTURE.md` for eligibility, counts, and how to add types.
 
-Partition later when URL count grows (e.g. `/sitemap-software.xml`). Do not pre-create empty partitions.
+Partition pagination (`/sitemap-{type}-N.xml`) activates only when a type exceeds
+the soft URL cap — do not pre-create empty partitions.
 
 ## robots.txt
 

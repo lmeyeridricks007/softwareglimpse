@@ -86,6 +86,7 @@ export const CapabilityHubWorkflowStepSchema = z.object({
   id: z.string().min(1),
   label: z.string().min(1),
   detail: z.string().min(1),
+  goal: z.string().min(1).optional(),
 });
 
 export type CapabilityHubWorkflowStep = z.infer<
@@ -151,3 +152,6 @@ export const CapabilityHubProfileSchema = z.object({
 });
 
 export type CapabilityHubProfile = z.infer<typeof CapabilityHubProfileSchema>;
+export type CapabilityHubProfileInput = z.input<
+  typeof CapabilityHubProfileSchema
+>;

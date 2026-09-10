@@ -1,6 +1,7 @@
 import type { z } from "zod";
-import { SoftwareSchema } from "@/domain";
+import { SoftwareSchema, type PublishStatus } from "@/domain";
 import {
+  TIER_1_LAUNCHED_SOFTWARE,
   TIER_1_SCHEDULED_SOFTWARE_SLUGS,
   tier1SoftwareScheduledAt,
 } from "@/data/config/publishing/tier-1-content-launch-2026-08-26";
@@ -15,6 +16,9 @@ const scheduledSlugs = new Set<string>([
   ...TIER_1_SCHEDULED_SOFTWARE_SLUGS,
   ...WEBINARJAM_SCHEDULED_SLUGS,
 ]);
+const launchedPublishedAt = new Map<string, string>(
+  TIER_1_LAUNCHED_SOFTWARE.map((item) => [item.slug, item.publishedAt]),
+);
 
 function gapScheduledAt(slug: string): string | undefined {
   return (
@@ -28,6 +32,7 @@ function gapScheduledAt(slug: string): string | undefined {
 function gap(input: AffiliatePartnerGapInput): AffiliatePartnerGapInput {
   const scheduledAt = gapScheduledAt(input.slug);
   const scheduled = scheduledSlugs.has(input.slug) && scheduledAt !== undefined;
+  const launchPublishedAt = launchedPublishedAt.get(input.slug);
   return {
     competitorSlugs: [],
     alternativeSlugs: [],
@@ -42,16 +47,19 @@ function gap(input: AffiliatePartnerGapInput): AffiliatePartnerGapInput {
     metadata: {
       researchStatus: "complete",
       ...(input.metadata ?? {}),
-      status: scheduled
+      status: (scheduled
         ? "scheduled"
-        : ((input.metadata?.status as string | undefined) ?? "published"),
-      ...(scheduled ? { scheduledAt } : { publishedAt }),
+        : (input.metadata?.status ?? "published")) as PublishStatus,
+      ...(scheduled
+        ? { scheduledAt }
+        : { publishedAt: launchPublishedAt ?? publishedAt }),
     },
     seo: {
       title: String(input.name),
       description: `${input.name} software profile on SoftwareGlimpse.`,
       indexable: true,
       canonicalPath: `/software/${input.slug}/`,
+      ...(input.seo ?? {}),
     },
   };
 }
@@ -190,6 +198,14 @@ export const affiliatePartnerGapSeed: AffiliatePartnerGapInput[] = [
     competitorSlugs: ["databox", "whatconverts"],
     alternativeSlugs: ["databox"],
     comparableSlugs: ["databox"],
+    // FR-007: empty generated review body → hard fail; stay IMPROVE until content exists.
+    seo: {
+      title: "Canvas Score",
+      description:
+        "Canvas Score software profile on SoftwareGlimpse — pending editorial fill.",
+      indexable: false,
+      canonicalPath: "/software/canvas-score/",
+    },
   }),
   gap({
     id: "soft-databox",
@@ -498,7 +514,7 @@ export const affiliatePartnerGapSeed: AffiliatePartnerGapInput[] = [
     shortDescription:
       "Ecommerce platform for digital downloads and subscriptions — affiliate partner in ecommerce.",
     primaryCategorySlug: "ecommerce",
-    useCaseSlugs: ["online-store", "digital-products"],
+    useCaseSlugs: ["online-storefront", "digital-business-marketplace"],
     teamTypeSlugs: ["marketing", "operations"],
     businessSizeSlugs: ["micro", "small-business"],
     competitorSlugs: ["shopify", "ecwid", "kartra"],

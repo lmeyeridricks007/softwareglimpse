@@ -89,7 +89,7 @@ export function sampleCompetitorClusters(
   for (const q of baseQueries) {
     const id = clusterIdForQuery(q.query);
     const g = grouped.get(id) ?? {
-      queries: [],
+      queries: [] as QueryLevelCompetitors[],
       domainRanks: new Map(),
     };
     g.queries.push(q);
