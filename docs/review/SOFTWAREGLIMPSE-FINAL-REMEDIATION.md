@@ -1,7 +1,7 @@
 # SoftwareGlimpse — final remediation outcome
 
 **Vs Review #5** (2026-09-10T08:38Z, overall 59/100, commit `37acc9bd`).  
-**This snapshot:** 2026-09-10T20:48Z local validated tree (pre-deploy live fill-in below).
+**This snapshot:** 2026-09-10T21:06Z after commit `260cc889` deployed to www.
 
 HANDS_ON remains **0 / NOT_CURRENT_SCOPE**. No first-hand testing claimed.
 
@@ -10,8 +10,8 @@ HANDS_ON remains **0 / NOT_CURRENT_SCOPE**. No first-hand testing claimed.
 | Metric | Review #5 | Now |
 | --- | ---: | ---: |
 | Overall baseline | 59 | not re-scored (no new audit pack) |
-| Production sitemap URLs | 3133 | **see live section after deploy** |
-| Live P0 | 0 | **see live section** |
+| Production sitemap URLs | 3133 | **3752** |
+| Live P0 | 0 | **0** |
 | Limited unique (estate) | 1326 | **1206** |
 | DATA_VERIFIED | 187 / 315 | **240 / 315** |
 | Eligible orphans | 2 / 80 sample | **2 / 3047** full IMPROVE graph |
@@ -32,29 +32,36 @@ HANDS_ON remains **0 / NOT_CURRENT_SCOPE**. No first-hand testing claimed.
 | Authority | NOT_CONNECTED | **NOT_CONNECTED** |
 | Conversions | NOT_CONNECTED | **NOT_CONNECTED** |
 
-Local production build sitemap diagnostics: **3752** URLs, prohibited=0, dups=0, reconcile discrepancies=0, lifecycle orphans=0.
+Local and live sitemap diagnostics: **3752** URLs, prohibited=0, dups=0, reconcile discrepancies=0, lifecycle orphans=0.
 
 ## DEPLOYED COMMIT
 
-(filled after push)
+`260cc889` (remediation `1f4e7187` + perf:check false-positive fix)
 
 ## DEPLOYMENT VERIFIED
 
-pending push to `main`
+**YES** — GitHub Production deployment `260cc889` completed; `https://www.softwareglimpse.com` serves 200 with prerender cache.
 
 ## LIVE P0
 
-pending live audit
+**0** (`npm run seo:audit -- --mode=full --base-url=https://www.softwareglimpse.com` — 32 checks, 0 P0). Remaining 1 P1 + 1 P2 are lab TTFB on `/search` (robots-disallowed) and similar — not indexability.
 
 ## LIVE SITEMAP URLS
 
-pending
+**3752** (15 child sitemaps all HTTP 200)
 
 ## LOCAL INDEXABLE VS LIVE INDEXABLE DIFFERENCE
 
-pending live reconcile (target 0)
+**0**
 
-Local registry: **no unpublished INDEXABLE pages**. `what-is-sendcloud` remains INDEXABLE_READY until `scheduledAt` 2026-12-10T06:00:00.000Z (quality + inbound pass; promoting now would create unpublished INDEXABLE).
+```
+LOCAL INDEXABLE (sitemap-eligible): 3752
+LIVE INDEXABLE (live sitemap locs): 3752
+IN SITEMAP: 3752
+DIFFERENCE: 0
+```
+
+Unpublished lifecycle INDEXABLE pages: **0**. `what-is-sendcloud` remains INDEXABLE_READY until `scheduledAt` 2026-12-10T06:00:00.000Z (live `/guides/what-is-sendcloud/` is 404 until then — correct). Newly promoted `/compare/kaspr-vs-snov/` is live `200` + `index, follow` + self-canonical + JSON-LD and present in `sitemap-comparisons.xml`.
 
 ## GUIDES
 
@@ -110,7 +117,7 @@ High-impression existing pages (fastmail, shore, affinity, miocommerce, `/catego
 
 ## UNCOMMITTED REQUIRED FILES
 
-must be **0** after the remediation commit.
+**0** after the proof commit that records live verification.
 
 ## UNPUBLISHED INDEXABLE PAGES
 

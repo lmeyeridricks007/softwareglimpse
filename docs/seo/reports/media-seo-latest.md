@@ -2,8 +2,8 @@
 
 **Agent:** MediaSEOAuditAgent  
 **Mode:** FULL  
-**Started:** 2026-09-10T09:47:16.287Z  
-**Finished:** 2026-09-10T09:49:16.478Z  
+**Started:** 2026-09-10T21:03:54.300Z  
+**Finished:** 2026-09-10T21:05:58.935Z  
 
 > Report-only. This agent does **not** change canonicals, robots, content, scores, or affiliate links.
 

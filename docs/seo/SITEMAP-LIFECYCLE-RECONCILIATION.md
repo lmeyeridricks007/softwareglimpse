@@ -1,6 +1,6 @@
 # Sitemap ↔ lifecycle reconciliation
 
-**Generated:** 2026-09-10T20:17:13.433Z  
+**Generated:** 2026-09-10T21:02:55.897Z  
 **Version:** 1.0.0  
 **Canonical origin:** https://www.softwareglimpse.com  
 
@@ -254,9 +254,28 @@ Sitemap partition: `pages` · expected indexable in sitemap: **3**
 
 ## Live validation
 
-Attempted: false · OK: true · Base: —
+Attempted: true · OK: true · Base: https://www.softwareglimpse.com
 
-- Live validation runs from CLI after build.
+- Live sitemap OK — 15 child sitemaps probed
+
+| Path | Status | URLs | Error |
+| --- | ---: | ---: | --- |
+| /sitemap.xml | 200 | 15 |  |
+| /sitemap-pages.xml | 200 | 32 |  |
+| /sitemap-software.xml | 200 | 314 |  |
+| /sitemap-comparisons.xml | 200 | 2138 |  |
+| /sitemap-guides.xml | 200 | 589 |  |
+| /sitemap-alternatives.xml | 200 | 310 |  |
+| /sitemap-categories.xml | 200 | 22 |  |
+| /sitemap-tools.xml | 200 | 102 |  |
+| /sitemap-best.xml | 200 | 12 |  |
+| /sitemap-use-cases.xml | 200 | 87 |  |
+| /sitemap-capabilities.xml | 200 | 70 |  |
+| /sitemap-features.xml | 200 | 16 |  |
+| /sitemap-requirements.xml | 200 | 10 |  |
+| /sitemap-resources.xml | 200 | 17 |  |
+| /sitemap-audiences.xml | 200 | 8 |  |
+| /sitemap-industries.xml | 200 | 25 |  |
 
 ## Schema / policy notes
 

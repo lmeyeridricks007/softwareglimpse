@@ -2,8 +2,8 @@
 
 **Agent:** TechnicalSEOAuditAgent  
 **Mode:** FULL  
-**Started:** 2026-09-10T09:47:16.287Z  
-**Finished:** 2026-09-10T09:47:41.716Z  
+**Started:** 2026-09-10T21:03:54.300Z  
+**Finished:** 2026-09-10T21:04:12.836Z  
 
 > Report-only. This agent does **not** change canonicals, robots, content, scores, or affiliate links.
 
@@ -24,7 +24,7 @@ Technical scan (FULL): 0 finding(s), 0 P0. Sitemap + canonical policy inspected.
 
 | Check | Status | Reason |
 | --- | --- | --- |
-| `sitemap-entries` | completed | 3149 URLs |
+| `sitemap-entries` | completed | 3752 URLs |
 | `canonical-policy` | completed | — |
 | `url-consistency` | completed | — |
 | `robots-meta-live-html` | completed | 34 pages from https://www.softwareglimpse.com |

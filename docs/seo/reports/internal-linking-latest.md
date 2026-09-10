@@ -2,8 +2,8 @@
 
 **Agent:** InternalLinkAuditAgent  
 **Mode:** FULL  
-**Started:** 2026-09-10T09:47:16.287Z  
-**Finished:** 2026-09-10T09:49:13.574Z  
+**Started:** 2026-09-10T21:03:54.300Z  
+**Finished:** 2026-09-10T21:05:56.856Z  
 
 > Report-only. This agent does **not** change canonicals, robots, content, scores, or affiliate links.
 
@@ -18,13 +18,13 @@
 
 ## Summary
 
-Internal linking: 60500 edges, 0 orphans, 0 weak, 0 finding(s).
+Internal linking: 67910 edges, 0 orphans, 0 weak, 0 finding(s).
 
 ## Checks
 
 | Check | Status | Reason |
 | --- | --- | --- |
-| `graph-build` | completed | 60500 edges |
+| `graph-build` | completed | 67910 edges |
 | `orphans` | completed | 0 orphans |
 | `weak-pages` | completed | 0 weak |
 | `health` | completed | 0 errors / 0 warnings |

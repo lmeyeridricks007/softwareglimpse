@@ -2,8 +2,8 @@
 
 **Agent:** OutboundLinkAuditAgent  
 **Mode:** FULL  
-**Started:** 2026-09-10T09:47:16.287Z  
-**Finished:** 2026-09-10T09:49:36.009Z  
+**Started:** 2026-09-10T21:03:54.300Z  
+**Finished:** 2026-09-10T21:06:13.707Z  
 
 > Report-only. This agent does **not** change canonicals, robots, content, scores, or affiliate links.
 
