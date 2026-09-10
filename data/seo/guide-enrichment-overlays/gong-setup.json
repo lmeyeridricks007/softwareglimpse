@@ -1,0 +1,199 @@
+{
+  "slug": "gong-setup",
+  "enrichmentType": "IMPLEMENTATION_GUIDE",
+  "updatedAt": "2026-09-10T07:19:42.478Z",
+  "uniqueValueAdded": [
+    "implementation_workflow",
+    "scenario_analysis",
+    "decision_framework",
+    "limitations_evidence",
+    "pricing_comparison",
+    "sg_original_data",
+    "buyer_checklist"
+  ],
+  "patch": {
+    "summary": "prospecting; data enrichment; email outreach; crm sync. Gong Platform · prospecting. Salesforce, HubSpot, Outreach, Salesloft. Revenue teams whose primary job is conversation intelligence and deal coaching; Orgs layering Gong beside CRM + SEP (Outreach/Salesloft); Buyers who need call/meeting insight — not contact discovery. Conversation intelligence and revenue AI platform for capturing customer interactions, coaching, deal insight, and CRM-connected revenue workflows — priced per user with a platform Buyer question: should you pay for Gong when Revenue teams whose primary job is conversation intelligence and deal coaching is the job — and skip when Buyers whose primary need is B2B contact/enrichment databases? Evaluator rule: Gong is best for Revenue teams whose primary job is conversation intelligence and deal coaching; Orgs layering Gong beside CRM + SEP (Outreach/Salesloft); Buyers who need call/meeting insight — not contact discovery. Poor fit when Buyers whose primary need is B2B contact/enrichment databases; SMB teams needing published self-serve SI pricing; Cold-email infra or SEP sequencing as the only job. Pricing threshold: move off trial when prospecting blocks prospecting.",
+    "blocks": [
+      {
+        "id": "da-gong-setup-1",
+        "type": "direct-answer",
+        "body": "prospecting decides whether Gong setup is a one-team pilot or a specialist project — confirm unlocks for must-have capabilities before invites.",
+        "bullets": [
+          "Start with: prospecting",
+          "Gate check: confirm paid unlocks before go-live",
+          "Integrate after: data quality pass on Salesforce"
+        ]
+      },
+      {
+        "id": "impl-gong-setup-2",
+        "type": "step",
+        "heading": "Gong day-zero to steady-state sequence",
+        "body": "Treat Gong setup as a controlled rollout — not a weekend dump of CSV files.",
+        "stepNumber": 1,
+        "scenarios": [
+          {
+            "title": "Day zero — objects and owners",
+            "body": "Define owners for prospecting, data enrichment, lead scoring before inviting the whole org."
+          },
+          {
+            "title": "SMB pilot",
+            "body": "One pipeline / one team proves Revenue teams whose primary job is conversation intelligence and deal coaching before company-wide seats."
+          },
+          {
+            "title": "Cutover",
+            "body": "Freeze legacy writes briefly; validate Salesforce and HubSpot before reopen."
+          }
+        ]
+      },
+      {
+        "id": "df-gong-setup-3",
+        "type": "decision-framework",
+        "title": "Gong implementation go / no-go",
+        "steps": [
+          {
+            "id": "i-1",
+            "label": "Go when plan unlocks cover must-have capabilities"
+          },
+          {
+            "id": "i-2",
+            "label": "Pause if this limitation blocks ops: Separate job from sales intelligence contact databases"
+          },
+          {
+            "id": "i-3",
+            "label": "Do not expand seats until prospecting is green"
+          }
+        ]
+      },
+      {
+        "id": "mist-gong-setup-4",
+        "type": "mistakes",
+        "title": "Gong implementation mistakes",
+        "items": [
+          {
+            "title": "Mistake 1",
+            "body": "Separate job from sales intelligence contact databases"
+          },
+          {
+            "title": "Mistake 2",
+            "body": "Not a prospecting/enrichment data core"
+          },
+          {
+            "title": "Mistake 3",
+            "body": "No native cold-email sequencing as primary product"
+          },
+          {
+            "title": "Mistake 4",
+            "body": "Opaque enterprise pricing (per-user + platform fee)"
+          },
+          {
+            "title": "Big-bang invite",
+            "body": "Inviting every user before object design creates junk data that is expensive to unwind."
+          }
+        ]
+      },
+      {
+        "id": "cost-gong-setup-5",
+        "type": "cost-breakdown",
+        "title": "Gong plan gates that affect rollout",
+        "body": "Implementation fails when unlocks needed for go-live sit on a higher tier than budgeted.",
+        "lines": [
+          {
+            "label": "Gong Platform",
+            "description": "Contact sales · Unlocks: prospecting, data enrichment, email outreach · Suits: teams that need custom procurement"
+          }
+        ]
+      },
+      {
+        "id": "sel-gong-setup-6",
+        "type": "selection-checklist",
+        "title": "Gong implementation checklist",
+        "dimensions": [
+          {
+            "id": "prep",
+            "label": "Prep",
+            "options": [
+              "Object model drafted",
+              "Owners named",
+              "Legacy freeze window set"
+            ]
+          },
+          {
+            "id": "pilot",
+            "label": "Pilot",
+            "options": [
+              "prospecting",
+              "Junk-data rules set",
+              "Support path clear"
+            ]
+          },
+          {
+            "id": "scale",
+            "label": "Scale",
+            "options": [
+              "Salesforce",
+              "Seat expansion criteria written",
+              "Rollback plan noted"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "cta-gong-setup-7",
+        "type": "interactive-cta",
+        "title": "Validate sales-intelligence fit before a deep Gong rollout",
+        "body": "If Gong fails constraint fit, stop implementation early.",
+        "href": "/tools/sales-intelligence-finder/",
+        "ctaLabel": "Open Finder",
+        "variant": "finder"
+      }
+    ],
+    "sections": [
+      {
+        "id": "sec-thesis-gong-setup",
+        "heading": "Gong buyer question and thesis",
+        "body": "prospecting; data enrichment; email outreach; crm sync. Gong Platform · prospecting. Salesforce, HubSpot, Outreach, Salesloft. Revenue teams whose primary job is conversation intelligence and deal coaching; Orgs layering Gong beside CRM + SEP (Outreach/Salesloft); Buyers who need call/meeting insight — not contact discovery. Conversation intelligence and revenue AI platform for capturing customer interactions, coaching, deal insight, and CRM-connected revenue workflows — priced per user with a platform. That catalogue mix is the Gong setup filter — not a generic sales-intelligence lecture.\n\nBuyer question: should you pay for Gong when Revenue teams whose primary job is conversation intelligence and deal coaching is the job — and skip when Buyers whose primary need is B2B contact/enrichment databases?\n\nEvaluator rule: Gong is best for Revenue teams whose primary job is conversation intelligence and deal coaching; Orgs layering Gong beside CRM + SEP (Outreach/Salesloft); Buyers who need call/meeting insight — not contact discovery. Poor fit when Buyers whose primary need is B2B contact/enrichment databases; SMB teams needing published self-serve SI pricing; Cold-email infra or SEP sequencing as the only job. Pricing threshold: move off trial when prospecting blocks prospecting.\n\nBest for: Revenue teams whose primary job is conversation intelligence and deal coaching; Orgs layering Gong beside CRM + SEP (Outreach/Salesloft); Buyers who need call/meeting insight — not contact discovery (Revenue teams whose primary job is conversation intelligence and deal coaching).\n\nPoor fit when: Buyers whose primary need is B2B contact/enrichment databases; SMB teams needing published self-serve SI pricing; Cold-email infra or SEP sequencing as the only job. Avoid if Separate job from sales intelligence contact databases would block go-live."
+      },
+      {
+        "id": "sec-limits-gong-setup",
+        "heading": "Gong limitation, pricing interpretation, and alternative context",
+        "body": "Limitation: Separate job from sales intelligence contact databases; Not a prospecting/enrichment data core; No native cold-email sequencing as primary product because it forces process changes or add-ons around Gong when prospecting is the job.\n\nPricing interpretation: no free plan confirmed — scope a paid pilot on Gong Platform with exit criteria before annual seats.\n\nPlan trade-off: you gain prospecting at the expense of Data depth / intent specialization vs outreach execution built-in — measure both in the pilot. Researched packaging: Gong Platform · prospecting.\n\nAlternative context: unlike Outreach, Gong is preferable when Revenue teams whose primary job is conversation intelligence and deal coaching because prospecting plus prospecting match; prefer Outreach when Buyers whose primary need is B2B contact/enrichment databases because the operating loops differ."
+      },
+      {
+        "id": "sec-scenario-gong-setup",
+        "heading": "Decision scenario and conclusion for Gong",
+        "body": "Workflow advantage: Gong is faster for prospecting when prospecting; data enrichment; email outreach; crm sync is in-product; skip when Separate job from sales intelligence contact databases because that loop lives elsewhere.\n\nImplementation complexity: setup requires confirming prospecting ownership and Salesforce before rollout — do not scale seats first.\n\nIntegrations in research: Salesforce, HubSpot, Outreach, Salesloft.\n\nConclusion: Gong is worth it if Revenue teams whose primary job is conversation intelligence and deal coaching and prospecting are weekly; skip Gong if Buyers whose primary need is B2B contact/enrichment databases. That is the decision, not a template with the logo swapped."
+      }
+    ],
+    "checklist": [
+      {
+        "id": "enrich-chk-0",
+        "label": "Draft Gong object owners before invites",
+        "order": 0
+      },
+      {
+        "id": "enrich-chk-1",
+        "label": "Confirm plan unlocks for go-live features",
+        "order": 1
+      },
+      {
+        "id": "enrich-chk-2",
+        "label": "Pilot one team on prospecting",
+        "order": 2
+      },
+      {
+        "id": "enrich-chk-3",
+        "label": "If blocked, evaluate Outreach before sunk-cost expansion",
+        "order": 3
+      }
+    ],
+    "nextAction": {
+      "contentId": "tool:finder:sales-intelligence",
+      "label": "Open Finder shortlist"
+    }
+  },
+  "notes": [
+    "Omit unsupported: testing_evidence",
+    "Implementation: workflow, constraints, mistakes, checklist.",
+    "Type-specific skeleton: IMPLEMENTATION_GUIDE"
+  ]
+}

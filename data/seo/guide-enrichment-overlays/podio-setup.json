@@ -1,0 +1,207 @@
+{
+  "slug": "podio-setup",
+  "enrichmentType": "IMPLEMENTATION_GUIDE",
+  "updatedAt": "2026-09-10T07:01:04.360Z",
+  "uniqueValueAdded": [
+    "implementation_workflow",
+    "scenario_analysis",
+    "decision_framework",
+    "limitations_evidence",
+    "pricing_comparison",
+    "sg_original_data",
+    "buyer_checklist"
+  ],
+  "patch": {
+    "summary": "Buyer question: is Podio the right crm commit for Teams wanting highly customizable CRM-like apps, or is Teams wanting out-of-the-box sales CRM best practices the real constraint? Thesis for setup: Podio is a yes only when contact management plus contact management are must-haves; not worth it if Teams wanting out-of-the-box sales CRM best practices dominates the operating model.",
+    "blocks": [
+      {
+        "id": "da-podio-setup-1",
+        "type": "direct-answer",
+        "body": "contact management decides whether Podio setup is a one-team pilot or a specialist project — confirm unlocks for must-have capabilities before invites.",
+        "bullets": [
+          "Start with: contact management",
+          "Gate check: confirm paid unlocks before go-live",
+          "Integrate after: data quality pass on systems of record"
+        ]
+      },
+      {
+        "id": "impl-podio-setup-2",
+        "type": "step",
+        "heading": "Podio day-zero to steady-state sequence",
+        "body": "Treat Podio setup as a controlled rollout — not a weekend dump of CSV files.",
+        "stepNumber": 1,
+        "scenarios": [
+          {
+            "title": "Day zero — objects and owners",
+            "body": "Define owners for contact management, lead management, pipeline management before inviting the whole org."
+          },
+          {
+            "title": "SMB pilot",
+            "body": "One pipeline / one team proves Teams wanting highly customizable CRM-like apps before company-wide seats."
+          },
+          {
+            "title": "Cutover",
+            "body": "Freeze legacy writes briefly; validate priority integrations before reopen."
+          }
+        ]
+      },
+      {
+        "id": "df-podio-setup-3",
+        "type": "decision-framework",
+        "title": "Podio implementation go / no-go",
+        "steps": [
+          {
+            "id": "i-1",
+            "label": "Go when plan unlocks cover must-have capabilities"
+          },
+          {
+            "id": "i-2",
+            "label": "Pause if this limitation blocks ops: Work platform — CRM is DIY/custom vs dedicated sales CRM"
+          },
+          {
+            "id": "i-3",
+            "label": "Do not expand seats until contact management is green"
+          }
+        ]
+      },
+      {
+        "id": "mist-podio-setup-4",
+        "type": "mistakes",
+        "title": "Podio implementation mistakes",
+        "items": [
+          {
+            "title": "Mistake 1",
+            "body": "Work platform — CRM is DIY/custom vs dedicated sales CRM"
+          },
+          {
+            "title": "Mistake 2",
+            "body": "Free capped at 5 users"
+          },
+          {
+            "title": "Mistake 3",
+            "body": "Sales reporting/email CRM depth depends on how you build apps"
+          },
+          {
+            "title": "Mistake 4",
+            "body": "Work platform — CRM is DIY/custom vs dedicated sales CRM"
+          },
+          {
+            "title": "Big-bang invite",
+            "body": "Inviting every user before object design creates junk data that is expensive to unwind."
+          }
+        ]
+      },
+      {
+        "id": "cost-podio-setup-5",
+        "type": "cost-breakdown",
+        "title": "Podio plan gates that affect rollout",
+        "body": "Implementation fails when unlocks needed for go-live sit on a higher tier than budgeted.",
+        "lines": [
+          {
+            "label": "Free",
+            "description": "Free plan · Unlocks: contact management, lead management, pipeline management · Suits: explore before committing seats"
+          },
+          {
+            "label": "Plus",
+            "description": "Suits: teams whose must-have gates appear on this tier"
+          },
+          {
+            "label": "Premium",
+            "description": "Suits: teams whose must-have gates appear on this tier"
+          }
+        ]
+      },
+      {
+        "id": "sel-podio-setup-6",
+        "type": "selection-checklist",
+        "title": "Podio implementation checklist",
+        "dimensions": [
+          {
+            "id": "prep",
+            "label": "Prep",
+            "options": [
+              "Object model drafted",
+              "Owners named",
+              "Legacy freeze window set"
+            ]
+          },
+          {
+            "id": "pilot",
+            "label": "Pilot",
+            "options": [
+              "contact management",
+              "Junk-data rules set",
+              "Support path clear"
+            ]
+          },
+          {
+            "id": "scale",
+            "label": "Scale",
+            "options": [
+              "Integrations validated",
+              "Seat expansion criteria written",
+              "Rollback plan noted"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "cta-podio-setup-7",
+        "type": "interactive-cta",
+        "title": "Validate crm fit before a deep Podio rollout",
+        "body": "If Podio fails constraint fit, stop implementation early.",
+        "href": "/tools/crm-finder/",
+        "ctaLabel": "Open Finder",
+        "variant": "finder"
+      }
+    ],
+    "sections": [
+      {
+        "id": "sec-thesis-podio-setup",
+        "heading": "Podio buyer question and thesis",
+        "body": "contact management is the hinge on this Podio setup page — not a generic crm lecture.\n\nBuyer question: is Podio the right crm commit for Teams wanting highly customizable CRM-like apps, or is Teams wanting out-of-the-box sales CRM best practices the real constraint?\n\nThesis for setup: Podio is a yes only when contact management plus contact management are must-haves; not worth it if Teams wanting out-of-the-box sales CRM best practices dominates the operating model.\n\nBest for: Teams wanting highly customizable CRM-like apps; Small teams starting on Free (5 users); Buyers who prefer flexible work platform over rigid CRM (Teams wanting highly customizable CRM-like apps).\n\nPoor fit when: Teams wanting out-of-the-box sales CRM best practices; Buyers needing polished email sequencing CRM; Enterprises needing dedicated SFA governance. Avoid if Work platform — CRM is DIY/custom vs dedicated sales CRM would block go-live."
+      },
+      {
+        "id": "sec-limits-podio-setup",
+        "heading": "Podio limitation, pricing interpretation, and alternative context",
+        "body": "Limitation: Work platform — CRM is DIY/custom vs dedicated sales CRM; Free capped at 5 users; Sales reporting/email CRM depth depends on how you build apps because it forces process changes or add-ons around Podio when contact management is the job.\n\nPricing interpretation: stay on Free until contact management is mandatory; plan jumps to Plus only after that hinge is proven.\n\nPlan trade-off: you gain contact management at the expense of Published packaging clarity vs ecosystem depth — measure both in the pilot. Researched packaging: Free · free · contact management | Plus | Premium.\n\nAlternative context: unlike monday sales CRM, Podio is preferable when Teams wanting highly customizable CRM-like apps because contact management plus contact management match; prefer monday sales CRM when Teams wanting out-of-the-box sales CRM best practices because the operating loops differ."
+      },
+      {
+        "id": "sec-scenario-podio-setup",
+        "heading": "Decision scenario and conclusion for Podio",
+        "body": "Use-case: for Teams wanting highly customizable CRM-like apps running contact management, prefer Podio when contact management is weekly; pick another path when Teams wanting out-of-the-box sales CRM best practices.\n\nSetup requires a specialist owner when Work platform — CRM is DIY/custom vs dedicated sales CRM collides with contact management; SMB pilots can stay lighter if contact management is already on Plus.\n\nWrap: choose Podio only if the setup job is contact management under Teams wanting highly customizable CRM-like apps; otherwise use Finder constraints instead of copying this page for another vendor."
+      }
+    ],
+    "checklist": [
+      {
+        "id": "enrich-chk-0",
+        "label": "Draft Podio object owners before invites",
+        "order": 0
+      },
+      {
+        "id": "enrich-chk-1",
+        "label": "Confirm plan unlocks for go-live features",
+        "order": 1
+      },
+      {
+        "id": "enrich-chk-2",
+        "label": "Pilot one team on contact management",
+        "order": 2
+      },
+      {
+        "id": "enrich-chk-3",
+        "label": "If blocked, evaluate monday sales CRM before sunk-cost expansion",
+        "order": 3
+      }
+    ],
+    "nextAction": {
+      "contentId": "tool:finder:crm",
+      "label": "Open Finder shortlist"
+    }
+  },
+  "notes": [
+    "Omit unsupported: integrations, testing_evidence",
+    "Implementation: workflow, constraints, mistakes, checklist.",
+    "Type-specific skeleton: IMPLEMENTATION_GUIDE"
+  ]
+}
