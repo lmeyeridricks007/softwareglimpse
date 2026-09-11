@@ -421,7 +421,7 @@ export function buildKnowledgeGraph(): KnowledgeGraph {
     kind: "research",
     slug: "crm-pricing",
     path: "/research/crm-pricing/",
-    title: "CRM Pricing Benchmarks",
+    title: "CRM Pricing Benchmarks 2026",
     categorySlug: "crm",
     indexable: true,
     improveLifecycle: false,

@@ -150,7 +150,7 @@ export function buildCategoryHubSections(categorySlug: string): HubSection[] {
     pricingLinks.push(
       link(
         "/research/crm-pricing/",
-        "CRM Pricing Benchmarks",
+        "CRM Pricing Benchmarks 2026",
         "Catalogue-derived pricing research",
         true,
       ),

@@ -88,8 +88,11 @@ export default function ResearchHubPage() {
               starting price{" "}
               {crmReport.metrics.medianStartingPriceMonthlyUsd != null
                 ? `$${crmReport.metrics.medianStartingPriceMonthlyUsd}/mo`
-                : "—"}{" "}
-              · observed {crmReport.observationDate}
+                : "—"}
+              {crmReport.metrics.meanStartingPriceMonthlyUsd != null
+                ? ` · mean $${crmReport.metrics.meanStartingPriceMonthlyUsd}/mo`
+                : ""}{" "}
+              · updated {crmReport.lastUpdated}
             </p>
           </li>
         </ul>
@@ -108,8 +111,8 @@ export default function ResearchHubPage() {
               CRM pricing benchmarks
             </Link>
             <p className="mt-1 text-sm text-[var(--sg-color-text-muted)]">
-              Medians, free-plan share, annual discounts, distribution table +
-              CSV.
+              Medians, means, free-plan share, annual discounts, transparency,
+              distribution charts + CSV/JSON.
             </p>
           </li>
           <li className="rounded-[var(--sg-radius-lg)] border border-[var(--sg-color-border)] bg-[var(--sg-color-surface)] px-5 py-4">

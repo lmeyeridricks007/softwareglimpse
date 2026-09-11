@@ -33,6 +33,14 @@ export function campaignFromCrmPricingResearch(
       unit: "USD/mo",
     });
   }
+  if (report.metrics.meanStartingPriceMonthlyUsd != null) {
+    supportingData.push({
+      label: "Mean starting price (USD/mo)",
+      value: money(report.metrics.meanStartingPriceMonthlyUsd),
+      sampleSize: report.sample.usdWithStartingPrice,
+      unit: "USD/mo",
+    });
+  }
   if (report.metrics.freePlanSharePct != null) {
     supportingData.push({
       label: "Share offering a free plan",
@@ -40,11 +48,23 @@ export function campaignFromCrmPricingResearch(
       sampleSize: report.sample.usdProductsWithPlans,
     });
   }
+  supportingData.push({
+    label: "Free-plan products with $0 starting price",
+    value: String(report.metrics.freePlanWithZeroStartingCount),
+    sampleSize: report.sample.productsWithFreePlan,
+  });
   if (report.metrics.medianAnnualDiscountPct != null) {
     supportingData.push({
       label: "Median annual billing discount",
       value: `${report.metrics.medianAnnualDiscountPct}%`,
       sampleSize: report.sample.productsWithAnnualDiscountPair,
+    });
+  }
+  if (report.metrics.contactSalesPlanSharePct != null) {
+    supportingData.push({
+      label: "Share with a contact-sales plan",
+      value: `${report.metrics.contactSalesPlanSharePct}%`,
+      sampleSize: report.sample.usdProductsWithPlans,
     });
   }
   for (const bucket of report.startingPriceDistribution.slice(0, 5)) {
@@ -58,10 +78,11 @@ export function campaignFromCrmPricingResearch(
   }
 
   const median = report.metrics.medianStartingPriceMonthlyUsd;
+  const mean = report.metrics.meanStartingPriceMonthlyUsd;
   const free = report.metrics.freePlanSharePct;
   const keyFinding =
-    median != null && free != null
-      ? `Across ${report.sample.usdProductsWithPlans} USD CRM products with researched list pricing, median starting price is ${money(median)}/mo and ${free}% offer a free plan — sample sizes and methodology on the report.`
+    median != null && mean != null && free != null
+      ? `Across ${report.sample.usdProductsWithPlans} USD CRM products with researched list pricing, median starting price is ${money(median)}/mo while the mean is ${money(mean)}/mo; ${free}% offer a free plan but only ${report.metrics.freePlanWithZeroStartingCount} have a stored $0 starting price (n starting=${report.sample.usdWithStartingPrice}).`
       : `Catalogue-derived CRM pricing benchmarks cover ${report.sample.usdProductsWithPlans} USD products with plans (observation ${report.observationDate}).`;
 
   const iso = now.toISOString();
@@ -71,7 +92,7 @@ export function campaignFromCrmPricingResearch(
     keyFinding,
     supportingData,
     sourceURL: CRM_PRICING_REPORT.path,
-    publicationDate: report.observationDate,
+    publicationDate: report.lastUpdated,
     campaignType: "research_insight",
     title: `${CRM_PRICING_REPORT.shortTitle} — distribution pack`,
     limitations: report.limitations.slice(0, 4),
