@@ -2780,9 +2780,9 @@ export const audiencesSeed: AudienceInput[] = [
     seo: {
       indexable: true,
       canonicalPath: "/for/startups/",
-      title: "CRM for Startups",
+      title: "CRM for Startups: Speed, Adoption, Room to Grow",
       description:
-        "CRM guidance for startups — speed, adoption, and growth headroom without enterprise complexity.",
+        "CRM for early-stage teams that need fast setup, founder-friendly pipelines, and tooling that will not collapse when a few reps become a real sales org.",
     },
   },
   {

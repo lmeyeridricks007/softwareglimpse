@@ -486,6 +486,38 @@ export function buildSeatScenarios(input: {
   return rows.length > 0 ? rows : null;
 }
 
+/** Bare pair / “which is better” titles — not a buyer differentiator. */
+export function isGenericComparisonSeoTitle(title?: string): boolean {
+  if (!title) return true;
+  const t = title.trim();
+  if (t.length < 12) return true;
+  if (/^compare\s+/i.test(t)) return true;
+  if (/^[\w .+'&/-]+ vs [\w .+'&/-]+$/i.test(t)) return true;
+  if (/\bvs\b.+:\s*which is better\??$/i.test(t)) return true;
+  if (/\bvs\b.+:\s*(crm\s+)?compared$/i.test(t)) return true;
+  return false;
+}
+
+export function isGenericComparisonSeoDescription(description?: string): boolean {
+  if (!description) return true;
+  const d = description.trim();
+  if (d.length < 40) return true;
+  if (/^compare .+ on SoftwareGlimpse/i.test(d)) return true;
+  if (/^compare .+ on features, pricing/i.test(d)) return true;
+  if (/using SoftwareGlimpse researched criteria/i.test(d)) return true;
+  if (/research-grounded editorial assessments/i.test(d)) return true;
+  if (/no universal winner/i.test(d) && /choose by job/i.test(d)) return true;
+  return false;
+}
+
+function clipSeo(text: string, max: number): string {
+  const t = text.trim();
+  if (t.length <= max) return t;
+  const sliced = t.slice(0, max - 1);
+  const lastSpace = sliced.lastIndexOf(" ");
+  return `${(lastSpace >= 40 ? sliced.slice(0, lastSpace) : sliced).trim()}…`;
+}
+
 function buildSeo(input: {
   nameA: string;
   nameB: string;
@@ -500,10 +532,7 @@ function buildSeo(input: {
     input;
   const h1 = `${nameA} vs ${nameB}`;
 
-  const genericTitle =
-    !existingTitle ||
-    /^compare /i.test(existingTitle) ||
-    existingTitle.length < 12;
+  const genericTitle = isGenericComparisonSeoTitle(existingTitle);
   const winBits = [
     ...winsA.slice(0, 2).map((c) => c.name),
     ...winsB.slice(0, 2).map((c) => c.name),
@@ -514,18 +543,20 @@ function buildSeo(input: {
     ? `${nameA} vs ${nameB}: ${winBits.length ? winBits.join(", ") : "features, pricing & fit"}`
     : existingTitle!;
 
-  const genericDesc =
-    !existingDescription ||
-    existingDescription.length < 40 ||
-    /^compare .+ on SoftwareGlimpse/i.test(existingDescription);
+  const genericDesc = isGenericComparisonSeoDescription(existingDescription);
   const noun = categoryLabel ? `${categoryLabel} ` : "";
   const description = genericDesc
-    ? `${summary.slice(0, 140)}${summary.length > 140 ? "…" : ""} See ${noun}features, pricing estimates, and who each product fits.`
+    ? clipSeo(
+        summary.trim().length >= 40
+          ? summary
+          : `${summary.trim()} See ${noun}features, pricing estimates, and who each product fits.`,
+        160,
+      )
     : existingDescription!;
 
   return {
-    title: title.slice(0, 70),
-    description: description.slice(0, 160),
+    title: clipSeo(title, 70),
+    description: clipSeo(description, 160),
     h1,
   };
 }

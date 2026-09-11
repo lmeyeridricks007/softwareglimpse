@@ -121,5 +121,5 @@ describe("link injections merge", () => {
         l.href.includes("/guides/hubspot-plans/"),
       ),
     ).toBe(true);
-  }, 30_000);
+  });
 });

@@ -17,9 +17,9 @@ import {
 } from "@/services/site-foundation";
 
 export const metadata: Metadata = buildPageMetadata({
-  title: "My Story",
+  title: "Why SoftwareGlimpse Exists",
   description:
-    "Why Lee Meyeridricks is rebuilding SoftwareGlimpse as a software decision platform.",
+    "Lee Meyeridricks on why SoftwareGlimpse exists as a software research and buying intelligence publication.",
   path: COMPANY_ROUTES.myStory,
   indexable: true,
 });
@@ -40,9 +40,9 @@ export default function MyStoryPage() {
       <JsonLdScript
         data={[
           webPageJsonLd({
-            name: "My Story",
+            name: "Why SoftwareGlimpse Exists",
             description:
-              "Why Lee Meyeridricks is rebuilding SoftwareGlimpse as a software decision platform.",
+              "Lee Meyeridricks on why SoftwareGlimpse exists as a software research and buying intelligence publication.",
             path: COMPANY_ROUTES.myStory,
           }),
           personJsonLd({

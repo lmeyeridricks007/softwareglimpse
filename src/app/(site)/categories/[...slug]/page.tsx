@@ -65,8 +65,18 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
     });
   }
 
+  const displayName = getCategoryHubDisplayName(category);
+  const seoTitle = category.seo.title?.trim() ?? "";
+  // Prefer a specific seed title when it is a real SERP hook (length ≥ 25).
+  // Keep the on-page H1 as the short display name.
+  const title =
+    seoTitle.length >= 25 &&
+    seoTitle.toLowerCase() !== displayName.toLowerCase()
+      ? seoTitle
+      : displayName;
+
   return buildPageMetadata({
-    title: getCategoryHubDisplayName(category),
+    title,
     description:
       category.seo.description ||
       category.shortDescription ||

@@ -65,7 +65,7 @@ export function buildCrmCategoryHubProfile(): CategoryHubProfile {
           "Early-stage teams that need speed, adoption, and room to grow without enterprise overhead.",
         icon: "star",
         href: "/categories/crm/startup/",
-        ctaLabel: "Explore startup CRM →",
+        ctaLabel: "CRM for startups →",
       },
       {
         id: "sales-crm",
@@ -114,6 +114,16 @@ export function buildCrmCategoryHubProfile(): CategoryHubProfile {
       },
     ],
     explorePaths: [
+      {
+        id: "startups",
+        title: "CRM for Startups",
+        description:
+          "Fast setup, founder-friendly pipelines, and room to grow without enterprise overhead.",
+        href: "/for/startups/",
+        ctaLabel: "See startup CRM",
+        tone: "green",
+        icon: "users",
+      },
       {
         id: "best",
         title: "Best CRM Software",

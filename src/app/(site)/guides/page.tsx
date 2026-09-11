@@ -26,9 +26,9 @@ import {
 } from "@/seo/structured-data";
 import { canonicalUrl } from "@/lib/urls";
 
-const TITLE = "Software Buying Guides";
+const TITLE = "Software Buying Guides: Choose, Compare, Decide";
 const DESCRIPTION =
-  "Practical guides for choosing, comparing, buying and getting more from business software — backed by SoftwareGlimpse structured recommendations.";
+  "Practical guides for choosing, comparing, and buying business software — structured recommendations by job fit, not affiliate rankings. Free to read, no account required.";
 
 export function generateMetadata(): Metadata {
   return buildPageMetadata({

@@ -196,6 +196,63 @@ describe("buildDecisionNarrative", () => {
       narrative.quickVerdict?.chooseB.join(),
     );
   });
+
+  it("replaces bare A vs B titles with criterion-win differentiators", () => {
+    const narrative = buildDecisionNarrative({
+      nameA: "LiveChat",
+      nameB: "Tidio",
+      existingSeoTitle: "LiveChat vs Tidio",
+      existingSeoDescription:
+        "Compare LiveChat and Tidio on features, pricing, and buyer fit using SoftwareGlimpse researched criteria.",
+      model: baseModel({
+        productA: {
+          ...baseModel().productA,
+          slug: "livechat",
+          name: "LiveChat",
+          bestFor: ["High-volume live chat desks"],
+        },
+        productB: {
+          ...baseModel().productB,
+          slug: "tidio",
+          name: "Tidio",
+          bestFor: ["SMBs that want chat plus automation"],
+        },
+        winsA: [
+          {
+            slug: "omnichannel",
+            name: "Omnichannel",
+            strengthA: "stronger",
+            strengthB: "weaker",
+            scoreA: null,
+            scoreB: null,
+            label: "LiveChat leads on omnichannel",
+            supportingFactIds: [],
+            evidenceSummary: "Broader live-agent desk coverage",
+          },
+        ],
+        winsB: [
+          {
+            slug: "automation",
+            name: "Automation",
+            strengthA: "weaker",
+            strengthB: "stronger",
+            scoreA: null,
+            scoreB: null,
+            label: "Tidio leads on chat automation",
+            supportingFactIds: [],
+            evidenceSummary: "Chatbots and automation packs",
+          },
+        ],
+      }),
+    });
+
+    expect(narrative.seoTitle).toBe("LiveChat vs Tidio: Omnichannel, Automation");
+    expect(narrative.seoTitle.length).toBeLessThanOrEqual(70);
+    expect(narrative.seoDescription.toLowerCase()).toMatch(/livechat/);
+    expect(narrative.seoDescription.toLowerCase()).not.toMatch(
+      /using softwareglimpse researched criteria/,
+    );
+  });
 });
 
 describe("buildSeatScenarios", () => {

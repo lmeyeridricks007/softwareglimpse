@@ -228,9 +228,9 @@ export const whatIsAiSoftwareGuide: GuidePageInput = {
     author: "author-lee-meyeridricks",
   },
   seo: {
-    title: "What Is AI Software? | SoftwareGlimpse",
+    title: "What Is AI Software? Jobs, Not One Ranking",
     description:
-      "What is AI software? A clear definition of LLM assistants, AI coding, image and video, meeting notes, writing, voice, decks, sites, ads, agents, and workflow automation — not one ranking.",
+      "What is AI software? Name the weekly output first: LLM assistants, coding tools, image and video, meeting notes, writing, voice, decks, sites, ads, or agents. Specialists are not weaker ChatGPT substitutes.",
     canonicalPath: "/guides/what-is-ai-software/",
     indexable: true,
   },

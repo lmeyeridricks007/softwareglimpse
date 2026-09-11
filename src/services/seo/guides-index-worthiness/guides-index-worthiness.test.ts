@@ -82,14 +82,14 @@ describe("guides index-worthiness", () => {
     ).toBe(false);
 
     const future = getGuides({ includeUnpublished: true }).find(
-      (g) => g.slug === "types-of-accounting-finance-software",
+      (g) => g.slug === "accounting-finance-vs-hr-software",
     );
     expect(future).toBeTruthy();
     expect(future!.seo.indexable).toBe(true);
-    // Still scheduled in the future → publication gate keeps it out of sitemap
+    // Still scheduled after 2026-09-11 → publication gate keeps it out of sitemap
     expect(isEntityIndexable({ kind: "guide", entity: future! })).toBe(false);
     expect(
-      urls.has(canonicalUrl("/guides/types-of-accounting-finance-software/")),
+      urls.has(canonicalUrl("/guides/accounting-finance-vs-hr-software/")),
     ).toBe(false);
   });
 

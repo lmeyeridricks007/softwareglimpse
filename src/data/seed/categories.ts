@@ -97,15 +97,17 @@ export const categoriesSeed: CategoryInput[] = [
     id: "cat-marketing",
     slug: "marketing",
     name: "Marketing & Growth",
-    shortDescription: "Marketing automation and growth software.",
+    shortDescription:
+      "Marketing software by job: email, automation, social, PPC, landing pages, and analytics — not one brand list.",
     path: ["marketing"],
     parentSlug: null,
     sortOrder: 5,
     pageIntent: "hub",
     metadata: published,
     seo: {
-      title: "Marketing & Growth Software",
-      description: "Explore marketing and growth software.",
+      title: "Marketing Software: Job Fit Before Brand Lists",
+      description:
+        "Marketing & growth software spans email, automation, social, PPC, landing pages, and analytics. Start from the weekly job, then shortlist tools that share that job — not a single undifferentiated ranking.",
       indexable: true,
       canonicalPath: "/categories/marketing/",
     },
@@ -273,15 +275,17 @@ export const categoriesSeed: CategoryInput[] = [
     id: "cat-ai",
     slug: "ai",
     name: "AI Software",
-    shortDescription: "AI tools and platforms for business use.",
+    shortDescription:
+      "AI tools by job — assistants, coding, image and video, meeting notes, writing, and agents — not one ranking.",
     path: ["ai"],
     parentSlug: null,
     sortOrder: 8,
     pageIntent: "hub",
     metadata: published,
     seo: {
-      title: "AI Software",
-      description: "Explore AI software for business.",
+      title: "AI Software: Pick the Job, Not One Ranking",
+      description:
+        "AI software is several jobs — LLM assistants, coding tools, image and video, meeting notes, writing, voice, decks, sites, ads, and agents. Name the weekly output first, then shortlist inside that cluster. Not one undifferentiated ranking.",
       indexable: true,
       canonicalPath: "/categories/ai/",
     },
