@@ -308,7 +308,7 @@ Artifacts: `data/seo/link-injections.json`, `data/seo/batches/organic-growth-202
 | Field | Value |
 | --- | --- |
 | Deployment date | 2026-09-11 |
-| Deployment commit | **PENDING — filled after git push** |
+| Deployment commit | `f3dc5eb0` |
 | Production | `https://www.softwareglimpse.com` |
 
 ---
