@@ -21,7 +21,6 @@ import {
 import {
   COMPANY_ROUTES,
   LEGAL_ROUTES,
-  authorPublicPath,
   getFounderAuthor,
 } from "@/services/site-foundation";
 import { InternalLinkingModules } from "@/components/internal-linking";
@@ -222,7 +221,7 @@ export default function CrmPricingResearchPage() {
             datePublished: report.publishedAt,
             dateModified: report.lastUpdated,
             authorName: founder?.name,
-            authorPath: founder ? authorPublicPath(founder) : undefined,
+            authorPath: founder ? COMPANY_ROUTES.myStory : undefined,
           }),
           datasetJsonLd({
             name: CRM_PRICING_REPORT.title,
@@ -287,7 +286,7 @@ export default function CrmPricingResearchPage() {
               {" "}
               · Editor{" "}
               <Link
-                href={authorPublicPath(founder)}
+                href={COMPANY_ROUTES.myStory}
                 className="text-[var(--sg-color-primary)] underline-offset-2 hover:underline"
               >
                 {founder.name}
