@@ -15,6 +15,7 @@ export type NextRedirect = {
 /**
  * Permanent redirects for reverse comparison aliases.
  * Only indexable canonical documents are targets, matching sitemap SSG.
+ * Emitted as a path→destination map for `src/proxy.ts` (not next.config).
  */
 export function comparisonReverseRedirects(): NextRedirect[] {
   const out: NextRedirect[] = [];

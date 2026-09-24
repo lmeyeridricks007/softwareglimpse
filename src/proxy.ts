@@ -1,19 +1,23 @@
 import { NextResponse } from "next/server";
 import type { NextRequest } from "next/server";
 import localeCutover from "../config/legacy-locale-cutover.json";
+import comparisonReverseRedirects from "../config/comparison-reverse-redirects.json";
 import { resolveEnglishOnlyCutover } from "@/seo/english-only-cutover";
 
 /**
- * English-only legacy crawl enforcement (Next.js 16 Proxy).
+ * English-only legacy crawl enforcement + comparison reverse aliases
+ * (Next.js 16 Proxy).
  *
  * - Mapped locale URLs → permanent redirect to English canonical
  * - Unmapped locale / WP taxonomy / feeds → 410 Gone
  * - Author archives → 404
  * - Never redirects to the homepage
+ * - Reverse comparison URLs → permanent redirect to the canonical pair
  *
  * Exact EN legacy article redirects remain in `next.config.ts` via
  * `config/legacy-redirects.json` (smaller set; within Next redirect limits).
- * Locale cutover (2.5k+ URLs) lives here to avoid next.config size limits.
+ * Locale cutover (2.5k+ URLs) and comparison reverses (4k+) live here to
+ * avoid next.config / Vercel routes-manifest size limits.
  */
 
 type LocaleCutoverFile = {
@@ -22,6 +26,9 @@ type LocaleCutoverFile = {
 
 const LOCALE_REDIRECTS: Record<string, string> =
   (localeCutover as LocaleCutoverFile).redirects ?? {};
+
+const COMPARISON_REVERSE_REDIRECTS: Record<string, string> =
+  (comparisonReverseRedirects as Record<string, string>) ?? {};
 
 const GONE_BODY = "Gone";
 const NOT_FOUND_BODY = "Not Found";
@@ -50,6 +57,20 @@ function notFoundResponse(): NextResponse {
 
 export function proxy(request: NextRequest) {
   const pathname = request.nextUrl.pathname;
+
+  const comparisonDestination =
+    COMPARISON_REVERSE_REDIRECTS[pathname] ??
+    COMPARISON_REVERSE_REDIRECTS[
+      pathname.endsWith("/") ? pathname.slice(0, -1) : `${pathname}/`
+    ];
+  if (comparisonDestination) {
+    const url = request.nextUrl.clone();
+    url.pathname = comparisonDestination;
+    url.search = "";
+    url.hash = "";
+    return NextResponse.redirect(url, 308);
+  }
+
   const result = resolveEnglishOnlyCutover(pathname, LOCALE_REDIRECTS);
 
   if (result.action === "redirect" && result.destination) {
@@ -73,6 +94,7 @@ export function proxy(request: NextRequest) {
 
 export const config = {
   matcher: [
+    "/compare/:path*",
     "/fr",
     "/fr/:path*",
     "/de",
