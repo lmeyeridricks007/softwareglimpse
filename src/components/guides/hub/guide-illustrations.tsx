@@ -1,5 +1,6 @@
 import Image from "next/image";
 import { cn } from "@/lib/cn";
+import { resolvePublicMediaSrc } from "@/lib/media/public-media-src";
 
 /** Unique per-guide cover when heroVisual exists; otherwise topic placeholder art. */
 export function GuideCover({
@@ -25,7 +26,7 @@ export function GuideCover({
           often falls back to a huge w=3840 src and leaves empty muted boxes.
         */}
         <Image
-          src={image.src}
+          src={resolvePublicMediaSrc(image.src)}
           alt={image.alt}
           width={960}
           height={640}

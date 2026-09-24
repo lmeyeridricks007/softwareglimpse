@@ -26,10 +26,22 @@ export async function GET(request: Request) {
   }
 
   const slug = searchParams.get("slug") || searchParams.get("path") || "/";
-  const path = slug.startsWith("/") ? slug : `/${slug}`;
+  const requested = slug.startsWith("/") ? slug : `/${slug}`;
+  const path = toPreviewPath(requested);
 
   const draft = await draftMode();
   draft.enable();
 
   redirect(path);
+}
+
+function toPreviewPath(path: string): string {
+  if (path.startsWith("/preview/")) return path;
+  if (path.startsWith("/software/")) {
+    return path.replace(/^\/software\//, "/preview/software/");
+  }
+  if (path.startsWith("/guides/")) {
+    return path.replace(/^\/guides\//, "/preview/guides/");
+  }
+  return path;
 }

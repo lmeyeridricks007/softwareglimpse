@@ -1,5 +1,4 @@
 import type { Metadata } from "next";
-import { draftMode } from "next/headers";
 import { notFound } from "next/navigation";
 import { getSoftware, getSoftwareBySlug } from "@/data";
 import { NewsletterCard } from "@/components/newsletter/newsletter-card";
@@ -17,16 +16,21 @@ import {
   articleJsonLd,
   breadcrumbJsonLd,
   faqPageJsonLd,
-  personJsonLd,
+  personJsonLdFromAuthor,
   softwareApplicationJsonLd,
   videoObjectJsonLd,
 } from "@/seo/structured-data";
-import { getFounderAuthor, COMPANY_ROUTES } from "@/services/site-foundation";
+import {
+  authorPublicPath,
+  getFounderAuthor,
+} from "@/services/site-foundation";
 import { buildEstateBreadcrumbs } from "@/services/seo/knowledge-graph";
 
 type Props = {
   params: Promise<{ slug: string }>;
 };
+
+export const dynamicParams = false;
 
 export function generateStaticParams() {
   return getSoftware().map((item) => ({ slug: item.slug }));
@@ -44,11 +48,9 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
     });
   }
 
-  const { isEnabled: previewEnabled } = await draftMode();
   const model = buildSoftwareReviewModel(software);
   const review = model.review;
   const indexable =
-    !previewEnabled &&
     isEntityIndexable({ kind: "software", entity: software }) &&
     (!review || (review.seo.indexable && review.editorialStatus === "approved"));
 
@@ -72,7 +74,6 @@ export default async function SoftwareOverviewPage({ params }: Props) {
   const software = getSoftwareBySlug(slug);
   if (!software) notFound();
 
-  const { isEnabled: previewEnabled } = await draftMode();
   const model = buildSoftwareReviewModel(software);
   const affiliateLink = resolveAffiliateLink(software, { location: "hero" });
   const showHeaderCta = Boolean(
@@ -109,14 +110,7 @@ export default async function SoftwareOverviewPage({ params }: Props) {
       embedUrl: overviewVideo.embedUrl,
     });
   const founder = getFounderAuthor();
-  const authorLd = founder
-    ? personJsonLd({
-        name: founder.name,
-        path: COMPANY_ROUTES.myStory,
-        jobTitle: founder.role,
-        description: founder.shortBio,
-      })
-    : null;
+  const authorLd = founder ? personJsonLdFromAuthor(founder) : null;
   const articleLd =
     model.review || model.assessment
       ? articleJsonLd({
@@ -135,7 +129,7 @@ export default async function SoftwareOverviewPage({ params }: Props) {
             software.metadata.updatedAt ??
             software.metadata.publishedAt,
           authorName: founder?.name,
-          authorPath: founder ? COMPANY_ROUTES.myStory : undefined,
+          authorPath: founder ? authorPublicPath(founder) : undefined,
         })
       : null;
 
@@ -178,7 +172,7 @@ export default async function SoftwareOverviewPage({ params }: Props) {
         initialTab="overview"
         affiliateLink={affiliateLink}
         showHeaderCta={showHeaderCta}
-        previewEnabled={previewEnabled}
+        previewEnabled={false}
         researchIncomplete={researchIncomplete}
       />
 

@@ -1,3 +1,4 @@
+import { cache } from "react";
 import type {
   Category,
   CurrencyCode,
@@ -434,7 +435,7 @@ function sourceKindLabel(sourceType: string): string | null {
   return null;
 }
 
-export function buildSoftwareReviewModel(
+function buildSoftwareReviewModelUncached(
   software: Software,
 ): SoftwareReviewModel {
   const enrichment = loadEnrichment(software.slug);
@@ -1146,3 +1147,6 @@ export function buildSoftwareReviewModel(
     deepReview,
   };
 }
+
+/** Shared by generateMetadata and the page in one render. Not a cross-deploy cache. */
+export const buildSoftwareReviewModel = cache(buildSoftwareReviewModelUncached);

@@ -1,4 +1,5 @@
 import Image from "next/image";
+import { resolvePublicMediaSrc } from "@/lib/media/public-media-src";
 import Link from "next/link";
 import {
   BarChart3,
@@ -73,7 +74,7 @@ export function GuideFigure({
         )}
       >
         <Image
-          src={src}
+          src={resolvePublicMediaSrc(src)}
           alt={alt}
           width={1536}
           height={1024}

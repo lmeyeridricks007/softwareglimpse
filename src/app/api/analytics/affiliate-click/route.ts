@@ -2,7 +2,7 @@ import { NextResponse } from "next/server";
 import {
   recordAffiliateClick,
   sanitizeReferrerHost,
-} from "@/services/analytics/affiliate-funnel";
+} from "@/services/analytics/affiliate-funnel/record-click";
 
 export const dynamic = "force-dynamic";
 export const revalidate = 0;

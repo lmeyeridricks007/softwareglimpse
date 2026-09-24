@@ -15,6 +15,8 @@ type Props = {
   params: Promise<{ slug: string; useCase: string }>;
 };
 
+export const dynamicParams = false;
+
 export function generateStaticParams() {
   return listIndustryUseCaseParams().map((item) => ({
     slug: item.industrySlug,

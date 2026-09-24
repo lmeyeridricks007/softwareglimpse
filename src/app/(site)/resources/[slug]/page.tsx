@@ -36,6 +36,8 @@ type Props = {
   params: Promise<{ slug: string }>;
 };
 
+export const dynamicParams = false;
+
 export function generateStaticParams() {
   return getResources().map((r) => ({ slug: r.slug }));
 }

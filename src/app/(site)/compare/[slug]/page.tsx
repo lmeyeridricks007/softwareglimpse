@@ -1,8 +1,9 @@
+import { cache } from "react";
 import type { Metadata } from "next";
 import { notFound, permanentRedirect } from "next/navigation";
 import {
+  getAllComparisonsUnfiltered,
   getComparisonBySlug,
-  getComparisons,
   getSoftwareBySlug,
 } from "@/data";
 import { SoftwareCta } from "@/components/affiliate/software-cta";
@@ -25,20 +26,21 @@ import { buildComparisonPageModel } from "@/services/comparison-page/build-page-
 import { buildPageMetadata } from "@/seo/metadata";
 import {
   JsonLdScript,
+  articleJsonLd,
   breadcrumbJsonLd,
   faqPageJsonLd,
   webPageJsonLd,
 } from "@/seo/structured-data";
+import { authorPublicPath, getFounderAuthor } from "@/services/site-foundation";
 import { buildComparisonLinkPlan } from "@/services/internal-linking";
 import { InternalLinkingModules } from "@/components/internal-linking";
 import { buildEstateBreadcrumbs } from "@/services/seo/knowledge-graph";
 
 type Props = {
   params: Promise<{ slug: string }>;
-  searchParams: Promise<{ tab?: string }>;
 };
 
-async function loadComparisonWithEnrichment(slug: string) {
+const loadComparisonWithEnrichment = cache(async function loadComparisonWithEnrichment(slug: string) {
   const comparison = getComparisonBySlug(slug);
   if (!comparison) return null;
   const [{ loadCompareEnrichmentOverlay }, { mergeComparisonWithOverlay }] =
@@ -50,16 +52,16 @@ async function loadComparisonWithEnrichment(slug: string) {
     comparison,
     loadCompareEnrichmentOverlay(comparison.slug),
   );
-}
+});
+
+export const dynamicParams = false;
 
 export function generateStaticParams() {
   const params: { slug: string }[] = [];
-  for (const item of getComparisons()) {
+  for (const item of getAllComparisonsUnfiltered()) {
+    if (!isEntityIndexable({ kind: "comparison", entity: item })) continue;
+    if (!isCanonicalComparisonSlug(item.slug)) continue;
     params.push({ slug: item.slug });
-    const parts = item.slug.split("-vs-");
-    if (parts.length === 2) {
-      params.push({ slug: `${parts[1]}-vs-${parts[0]}` });
-    }
   }
   return params;
 }
@@ -137,6 +139,7 @@ export default async function ComparisonDetailPage({ params }: Props) {
   );
 
   const faqLd = faqPageJsonLd(model.faq);
+  const founder = getFounderAuthor();
 
   return (
     <>
@@ -150,6 +153,18 @@ export default async function ComparisonDetailPage({ params }: Props) {
               model.lastUpdated ??
               comparison.metadata.updatedAt ??
               comparison.metadata.publishedAt,
+          }),
+          articleJsonLd({
+            headline: model.decision.h1 || model.title,
+            description: model.decision.seoDescription,
+            path: `/compare/${model.slug}/`,
+            datePublished: comparison.metadata.publishedAt,
+            dateModified:
+              model.lastUpdated ??
+              comparison.metadata.updatedAt ??
+              comparison.metadata.publishedAt,
+            authorName: founder?.name,
+            authorPath: founder ? authorPublicPath(founder) : undefined,
           }),
           breadcrumbJsonLd(breadcrumbItems),
           ...(faqLd ? [faqLd] : []),

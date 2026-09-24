@@ -17,7 +17,7 @@ function loadGscReport(): GscOpportunityReport | null {
   const candidates = [
     path.join(process.cwd(), "data/seo/gsc-opportunities.json"),
     path.join(process.cwd(), "src/data/seo/gsc-opportunities.json"),
-  ];
+  ] as const;
   for (const file of candidates) {
     if (!existsSync(file)) continue;
     try {

@@ -50,6 +50,8 @@ type Props = {
   params: Promise<{ slug: string }>;
 };
 
+export const dynamicParams = false;
+
 export function generateStaticParams() {
   return getUseCases().map((uc) => ({ slug: uc.slug }));
 }

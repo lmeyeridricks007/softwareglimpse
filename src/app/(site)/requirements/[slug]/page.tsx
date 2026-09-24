@@ -21,6 +21,8 @@ type Props = {
 
 const PILLAR = new Set<string>(CRM_REQUIREMENT_PILLAR_SLUGS);
 
+export const dynamicParams = false;
+
 export function generateStaticParams() {
   return listRequirementDetailParams();
 }

@@ -4,6 +4,7 @@ import { PageAffiliateDisclosure } from "@/components/site/page-affiliate-disclo
 import { ProductHeroTourLink } from "@/components/software/product-see-in-action";
 import {
   SoftwareProductHubClient,
+  SoftwareHubFromQuery,
   SoftwareHubTabLink,
   type SoftwareHubChrome,
 } from "@/components/software/hub/software-product-hub-client";
@@ -21,9 +22,10 @@ import type { ResolvedAffiliateLink } from "@/services/affiliate/resolve-affilia
 import type { SoftwareReviewModel } from "@/services/software-review";
 import {
   softwareHubPath,
+  SOFTWARE_HUB_TABS,
   type SoftwareHubTabId,
 } from "@/services/software-review/hub-tabs";
-import type { ReactNode } from "react";
+import { Suspense, type ReactNode } from "react";
 
 type Props = {
   model: SoftwareReviewModel;
@@ -97,9 +99,9 @@ function chromeFromModel(model: SoftwareReviewModel): SoftwareHubChrome {
 }
 
 /**
- * Server composer for the product hub — builds only the active tab panel so
- * unused tab trees stay out of the RSC payload. Tab switches navigate to the
- * dedicated `/software/[slug]/[tab]/` route.
+ * Server composer for the product hub. Every tab panel is rendered into the
+ * canonical document. The active tab is client state (`?tab=`), and the old
+ * `/software/[slug]/[tab]/` URLs redirect there.
  */
 export function SoftwareProductHub({
   model,
@@ -167,24 +169,27 @@ export function SoftwareProductHub({
     </div>
   );
 
-  const panels: Partial<Record<SoftwareHubTabId, ReactNode>> = {
-    [initialTab]: renderTabPanel(
-      initialTab,
-      model,
-      affiliateLink,
-      showHeaderCta,
-    ),
+  const panels = Object.fromEntries(
+    SOFTWARE_HUB_TABS.map((tab) => [
+      tab.id,
+      renderTabPanel(tab.id, model, affiliateLink, showHeaderCta),
+    ]),
+  ) as Partial<Record<SoftwareHubTabId, ReactNode>>;
+
+  const clientProps = {
+    chrome: chromeFromModel(model),
+    panels,
+    heroAside,
+    heroActions,
+    previewEnabled,
+    researchIncomplete,
   };
 
   return (
-    <SoftwareProductHubClient
-      chrome={chromeFromModel(model)}
-      initialTab={initialTab}
-      panels={panels}
-      heroAside={heroAside}
-      heroActions={heroActions}
-      previewEnabled={previewEnabled}
-      researchIncomplete={researchIncomplete}
-    />
+    <Suspense
+      fallback={<SoftwareProductHubClient {...clientProps} initialTab="overview" />}
+    >
+      <SoftwareHubFromQuery {...clientProps} />
+    </Suspense>
   );
 }

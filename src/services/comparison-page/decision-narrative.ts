@@ -4,6 +4,7 @@
  */
 
 import { formatMoney, fromMajor, type CurrencyCode } from "@/domain";
+import { softwareHubPath } from "@/services/software-review/hub-tabs";
 import type {
   ComparisonCriterionRow,
   ComparisonFeatureRow,
@@ -579,14 +580,14 @@ function buildRelatedPaths(
 
   if (model.productA.startingPriceLabel || model.pricing.cardA.plans.length) {
     paths.push({
-      href: `/software/${model.productA.slug}/pricing/`,
+      href: softwareHubPath(model.productA.slug, "pricing"),
       label: `${model.productA.name} pricing`,
       kind: "pricing",
     });
   }
   if (model.productB.startingPriceLabel || model.pricing.cardB.plans.length) {
     paths.push({
-      href: `/software/${model.productB.slug}/pricing/`,
+      href: softwareHubPath(model.productB.slug, "pricing"),
       label: `${model.productB.name} pricing`,
       kind: "pricing",
     });

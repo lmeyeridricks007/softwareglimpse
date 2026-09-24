@@ -116,7 +116,7 @@ export function isSoftwareHubTabSlug(slug: string): boolean {
 export function softwareHubPath(productSlug: string, tabId?: SoftwareHubTabId): string {
   const tab = getSoftwareHubTab(tabId ?? "overview");
   if (!tab.slug) return `/software/${productSlug}/`;
-  return `/software/${productSlug}/${tab.slug}/`;
+  return `/software/${productSlug}/?tab=${tab.slug}`;
 }
 
 /** Feature slug → hub category for Features tab navigation. */

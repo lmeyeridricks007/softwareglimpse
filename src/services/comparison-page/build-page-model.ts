@@ -1,3 +1,4 @@
+import { cache } from "react";
 import {
   getAllComparisonsUnfiltered,
   getAllSoftwareUnfiltered,
@@ -708,7 +709,7 @@ export function resolveOverallWinnerKind(input: {
   return kind;
 }
 
-export function buildComparisonPageModel(
+function buildComparisonPageModelUncached(
   comparison: Comparison,
 ): ComparisonPageModel | null {
   const [slugA, slugB] = comparison.productSlugs;
@@ -1409,6 +1410,9 @@ export function buildComparisonPageModel(
     decision,
   };
 }
+
+/** Shared by generateMetadata and the page in one render. Not a cross-deploy cache. */
+export const buildComparisonPageModel = cache(buildComparisonPageModelUncached);
 
 export function getComparisonBySlugUnfiltered(slug: string): Comparison | undefined {
   return getAllComparisonsUnfiltered().find((c) => c.slug === slug);

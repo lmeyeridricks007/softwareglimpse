@@ -14,6 +14,7 @@ import {
   getSearchIndexPublicationContext,
   type PublicationContext,
 } from "@/domain/publication-context";
+import { softwareHubPath } from "@/services/software-review/hub-tabs";
 import { existsSync, readFileSync } from "node:fs";
 import path from "node:path";
 import { getGuideSearchEntries } from "./guide-search-entries";
@@ -177,10 +178,10 @@ export function buildSearchIndexFromSources(options?: {
     const cat = categoryLabel(software.primaryCategorySlug);
     const alternativesHref = publicAlternativesHref(software.slug);
     const quickLinks = [
-      { label: "Overview", href: `/software/${software.slug}/` },
-      { label: "Features", href: `/software/${software.slug}/features/` },
-      { label: "Pricing", href: `/software/${software.slug}/pricing/` },
-      { label: "Use Cases", href: `/software/${software.slug}/use-cases/` },
+      { label: "Overview", href: softwareHubPath(software.slug, "overview") },
+      { label: "Features", href: softwareHubPath(software.slug, "features") },
+      { label: "Pricing", href: softwareHubPath(software.slug, "pricing") },
+      { label: "Use Cases", href: softwareHubPath(software.slug, "use-cases") },
       ...(alternativesHref
         ? [{ label: "Alternatives", href: alternativesHref }]
         : []),

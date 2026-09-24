@@ -58,6 +58,8 @@ type Props = {
   params: Promise<{ slug: string }>;
 };
 
+export const dynamicParams = false;
+
 export function generateStaticParams() {
   return getIndustries({ includeUnpublished: true }).map((item) => ({
     slug: item.slug,

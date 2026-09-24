@@ -122,13 +122,13 @@ describe("software review model", () => {
 });
 
 describe("software product hub tabs", () => {
-  it("maps tab slugs to nested product hub paths", () => {
+  it("maps tab slugs to in-page product sections", () => {
     expect(softwareHubPath("pipedrive")).toBe("/software/pipedrive/");
     expect(softwareHubPath("pipedrive", "pricing")).toBe(
-      "/software/pipedrive/pricing/",
+      "/software/pipedrive/?tab=pricing",
     );
     expect(softwareHubPath("pipedrive", "evidence")).toBe(
-      "/software/pipedrive/evidence/",
+      "/software/pipedrive/?tab=evidence",
     );
     expect(isSoftwareHubTabSlug("features")).toBe(true);
     expect(isSoftwareHubTabSlug("overview")).toBe(false);

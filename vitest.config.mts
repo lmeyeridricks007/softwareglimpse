@@ -14,7 +14,11 @@ export default defineConfig({
   },
   test: {
     environment: "node",
-    include: ["src/**/*.test.ts", "src/**/*.test.tsx"],
+    include: [
+      "src/**/*.test.ts",
+      "src/**/*.test.tsx",
+      "scripts/vercel/**/*.test.ts",
+    ],
     // Catalogue / hub / sitemap suites are CPU-heavy; parallel workers under
     // full-suite load previously timed out healthy tests at 15–60s.
     testTimeout: 300_000,

@@ -1,6 +1,6 @@
+import { cache } from "react";
 import type { Metadata } from "next";
 import Link from "next/link";
-import { draftMode } from "next/headers";
 import { notFound } from "next/navigation";
 import {
   getCategories,
@@ -43,6 +43,7 @@ import { buildProductGuideMediaBundle } from "@/services/product-guides/media";
 import { pathForContent } from "@/services/publishing/ids";
 import {
   COMPANY_ROUTES,
+  authorPublicPath,
   getAuthorById,
   getFounderAuthor,
   resolveAuthor,
@@ -63,7 +64,7 @@ import {
   JsonLdScript,
   articleJsonLd,
   breadcrumbJsonLd,
-  personJsonLd,
+  personJsonLdFromAuthor,
   webPageJsonLd,
 } from "@/seo/structured-data";
 
@@ -77,7 +78,7 @@ type GuideListOptions = {
 };
 
 /** Prefer educational seed; only load product-guide builders when needed. */
-async function resolveGuide(
+const resolveGuide = cache(async function resolveGuide(
   slug: string,
   options?: GuideListOptions,
 ): Promise<GuidePage | undefined> {
@@ -95,7 +96,7 @@ async function resolveGuide(
       import("@/services/seo/guide-enrichment/overlay-merge"),
     ]);
   return mergeGuideWithOverlay(guide, loadGuideEnrichmentOverlay(slug));
-}
+});
 
 const PATH_TYPES = new Set<ContentType>([
   "category",
@@ -153,17 +154,18 @@ function formatUpdatedLabel(iso: string): string {
   });
 }
 
+export const dynamicParams = false;
+
 export async function generateStaticParams() {
   const { getGuides } = await import("@/data/repositories/guides");
-  return getGuides().map((g) => ({ slug: g.slug }));
+  return getGuides()
+    .filter((guide) => isEntityIndexable({ kind: "guide", entity: guide }))
+    .map((guide) => ({ slug: guide.slug }));
 }
 
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const { slug } = await params;
-  const { isEnabled: previewEnabled } = await draftMode();
-  const guide = await resolveGuide(slug, {
-    includeUnpublished: previewEnabled,
-  });
+  const guide = await resolveGuide(slug);
   if (!guide) {
     return buildPageMetadata({
       title: "Guide not found",
@@ -177,14 +179,18 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
     title: guide.seo.title || guide.title,
     description: guide.seo.description || guide.summary || guide.title,
     path: guide.seo.canonicalPath || `/guides/${guide.slug}/`,
-    indexable:
-      !previewEnabled && isEntityIndexable({ kind: "guide", entity: guide }),
+    indexable: isEntityIndexable({ kind: "guide", entity: guide }),
   });
 }
 
-export default async function GuideDetailPage({ params }: Props) {
-  const { slug } = await params;
-  const { isEnabled: previewEnabled } = await draftMode();
+export async function GuideArticle({
+  slug,
+  preview = false,
+}: {
+  slug: string;
+  preview?: boolean;
+}) {
+  const previewEnabled = preview;
   const guide = await resolveGuide(slug, {
     includeUnpublished: previewEnabled,
   });
@@ -213,7 +219,7 @@ export default async function GuideDetailPage({ params }: Props) {
     );
 
   const category = guide.categorySlugs[0]
-    ? getCategories({ includeUnpublished: true }).find(
+    ? getCategories(previewEnabled ? { includeUnpublished: true } : undefined).find(
         (c) => c.slug === guide.categorySlugs[0],
       )
     : undefined;
@@ -226,7 +232,7 @@ export default async function GuideDetailPage({ params }: Props) {
   // (improve-linking writes those). Do not rely solely on selectLinks peers.
   const relatedFromOverlay: GuideSidebarLink[] = guide.relatedGuideSlugs.flatMap(
     (slug) => {
-      const g = getGuides({ includeUnpublished: true }).find(
+      const g = getGuides(previewEnabled ? { includeUnpublished: true } : undefined).find(
         (x) => x.slug === slug,
       );
       if (!g || g.slug === guide.slug) return [];
@@ -305,7 +311,7 @@ export default async function GuideDetailPage({ params }: Props) {
     .map((c) => ({ title: c.label, body: c.description! }));
 
   const primaryProduct = guide.productSlugs[0]
-    ? getSoftwareBySlug(guide.productSlugs[0], { includeUnpublished: true })
+    ? getSoftwareBySlug(guide.productSlugs[0], previewEnabled ? { includeUnpublished: true } : undefined)
     : null;
 
   const guideTrust = buildEditorialTrustMetadata({
@@ -390,7 +396,7 @@ export default async function GuideDetailPage({ params }: Props) {
 
   const productsBySlug = new Map(
     [...productSlugsNeeded].flatMap((s) => {
-      const software = getSoftwareBySlug(s, { includeUnpublished: true });
+      const software = getSoftwareBySlug(s, previewEnabled ? { includeUnpublished: true } : undefined);
       if (!software) return [];
       return [
         [
@@ -462,19 +468,18 @@ export default async function GuideDetailPage({ params }: Props) {
               datePublished: guide.metadata.publishedAt,
               dateModified: updatedIso || undefined,
               authorName: author?.name,
-              authorPath: author ? COMPANY_ROUTES.myStory : undefined,
+              authorPath: author ? authorPublicPath(author) : undefined,
+              reviewerName:
+                guideReviewer && guideReviewer.id !== author?.id
+                  ? guideReviewer.name
+                  : undefined,
+              reviewerPath:
+                guideReviewer && guideReviewer.id !== author?.id
+                  ? authorPublicPath(guideReviewer)
+                  : undefined,
             }),
             breadcrumbJsonLd(breadcrumbItems),
-            ...(author
-              ? [
-                  personJsonLd({
-                    name: author.name,
-                    path: COMPANY_ROUTES.myStory,
-                    jobTitle: author.role,
-                    description: author.shortBio,
-                  }),
-                ]
-              : []),
+            ...(author ? [personJsonLdFromAuthor(author)] : []),
           ]}
         />
       ) : null}
@@ -514,11 +519,11 @@ export default async function GuideDetailPage({ params }: Props) {
           author
             ? {
                 name: author.name,
-                href: COMPANY_ROUTES.myStory,
+                href: authorPublicPath(author),
                 role: author.role,
               }
             : {
-                name: "SoftwareGlimpse Team",
+                name: "SoftwareGlimpse",
                 href: COMPANY_ROUTES.about,
               }
         }
@@ -705,4 +710,9 @@ export default async function GuideDetailPage({ params }: Props) {
       </section>
     </>
   );
+}
+
+export default async function GuideDetailPage({ params }: Props) {
+  const { slug } = await params;
+  return GuideArticle({ slug, preview: false });
 }

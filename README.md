@@ -30,6 +30,14 @@ npm run test
 npm run build
 ```
 
+Local validation before any Vercel deploy (lint, typecheck, test, production `next build`):
+
+```bash
+npm run validate:predeploy
+```
+
+Do not push to discover TypeScript, lint, test, or build errors. Vercel is not the compiler. Docs/reports/`.cursor`-only diffs are skipped by `vercel.json` `ignoreCommand`.
+
 ## Phase 0 scope
 
 Foundation only: schemas, taxonomy, CRM seed identities, data access, route shells, SEO helpers, nav, Pipedrive slice, architecture tests.

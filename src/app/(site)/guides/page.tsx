@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { Suspense } from "react";
 import {
   GuidesBasics,
   GuidesBuyingJourney,
@@ -14,6 +15,7 @@ import {
   GuidesTopicGrid,
   GuidesTopicalClusters,
 } from "@/components/guides/hub";
+import { GuidesLatestFromQuery } from "@/components/guides/hub/guides-latest-from-query";
 import { Section } from "@/components/layout/section";
 import { Breadcrumbs } from "@/components/seo/breadcrumbs";
 import { buildGuidesHubModel } from "@/services/guides-hub";
@@ -61,23 +63,8 @@ function collectionJsonLd(
   };
 }
 
-type PageProps = {
-  searchParams: Promise<{ category?: string; q?: string; topic?: string }>;
-};
-
-export default async function GuidesIndexPage({ searchParams }: PageProps) {
-  const params = await searchParams;
+export default function GuidesIndexPage() {
   const model = buildGuidesHubModel();
-  const initialCategory =
-    params.category &&
-    model.filterCategories.some((c) => c.slug === params.category)
-      ? params.category
-      : null;
-  const initialTopic =
-    params.topic &&
-    model.filterTopics.some((t) => t.slug === params.topic)
-      ? (params.topic as (typeof model.filterTopics)[number]["slug"])
-      : null;
 
   const breadcrumbItems = [
     { name: "Home", path: "/" },
@@ -158,14 +145,21 @@ export default async function GuidesIndexPage({ searchParams }: PageProps) {
 
       {/* white — discovery grid is search-worthy guides only */}
       <Section padding="md" background="surface" container="wide">
-        <GuidesLatestGrid
-          guides={model.guides}
-          filterCategories={model.filterCategories}
-          filterTopics={model.filterTopics}
-          initialCategory={initialCategory}
-          initialTopic={initialTopic}
-          initialQuery={typeof params.q === "string" ? params.q : ""}
-        />
+        <Suspense
+          fallback={
+            <GuidesLatestGrid
+              guides={model.guides}
+              filterCategories={model.filterCategories}
+              filterTopics={model.filterTopics}
+            />
+          }
+        >
+          <GuidesLatestFromQuery
+            guides={model.guides}
+            filterCategories={model.filterCategories}
+            filterTopics={model.filterTopics}
+          />
+        </Suspense>
       </Section>
 
       {/* tint */}

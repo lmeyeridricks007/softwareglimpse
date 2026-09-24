@@ -49,6 +49,8 @@ type Props = {
   params: Promise<{ slug: string; capability: string }>;
 };
 
+export const dynamicParams = false;
+
 export function generateStaticParams() {
   return listIndustryCapabilityParams().map((item) => ({
     slug: item.industrySlug,

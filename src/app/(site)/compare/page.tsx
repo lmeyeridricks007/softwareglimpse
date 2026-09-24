@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { Suspense } from "react";
 import Link from "next/link";
 import {
   CompareFinalCta,
@@ -15,6 +16,10 @@ import {
   ProductComparisonSuggestions,
   RecentlyUpdatedComparisons,
 } from "@/components/comparison/hub";
+import {
+  ComparisonBuilderFromQuery,
+  ComparisonGridFromQuery,
+} from "@/components/comparison/hub/comparison-from-query";
 import { ProductLogo } from "@/components/software/product-logo";
 import { Section } from "@/components/layout/section";
 import { Breadcrumbs } from "@/components/seo/breadcrumbs";
@@ -63,18 +68,9 @@ function collectionJsonLd(
   };
 }
 
-type PageProps = {
-  searchParams: Promise<{ category?: string }>;
-};
-
-export default async function CompareIndexPage({ searchParams }: PageProps) {
-  const params = await searchParams;
+export default function CompareIndexPage() {
   const model = buildCompareHubModel();
-  const initialCategory =
-    params.category &&
-    model.filterCategories.some((c) => c.slug === params.category)
-      ? params.category
-      : null;
+  const validCategories = model.filterCategories.map((category) => category.slug);
 
   const breadcrumbItems = [
     { name: "Home", path: "/" },
@@ -115,11 +111,20 @@ export default async function CompareIndexPage({ searchParams }: PageProps) {
 
       {/* Builder band */}
       <Section padding="md" background="tint" container="wide">
-        <ComparisonBuilder
-          products={model.selectorProducts}
-          publishedSlugs={publishedSlugs}
-          initialCategory={initialCategory}
-        />
+        <Suspense
+          fallback={
+            <ComparisonBuilder
+              products={model.selectorProducts}
+              publishedSlugs={publishedSlugs}
+            />
+          }
+        >
+          <ComparisonBuilderFromQuery
+            products={model.selectorProducts}
+            publishedSlugs={publishedSlugs}
+            validCategories={validCategories}
+          />
+        </Suspense>
       </Section>
 
       {/* Browse by category — above published comparisons */}
@@ -129,11 +134,19 @@ export default async function CompareIndexPage({ searchParams }: PageProps) {
 
       {/* Published comparisons */}
       <Section padding="md" background="surface" container="wide">
-        <ComparisonGrid
-          comparisons={model.published}
-          filterCategories={model.filterCategories}
-          initialCategory={initialCategory}
-        />
+        <Suspense
+          fallback={
+            <ComparisonGrid
+              comparisons={model.published}
+              filterCategories={model.filterCategories}
+            />
+          }
+        >
+          <ComparisonGridFromQuery
+            comparisons={model.published}
+            filterCategories={model.filterCategories}
+          />
+        </Suspense>
       </Section>
 
       {/* Product-first + reviews */}

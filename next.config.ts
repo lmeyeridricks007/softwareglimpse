@@ -1,9 +1,43 @@
 import type { NextConfig } from "next";
+import fs from "node:fs";
 import path from "node:path";
 import { fileURLToPath } from "node:url";
 import { toNextConfigRedirects } from "./src/services/legacy-url-migration/redirect-plan/load-redirects";
+import { blobMediaFileRewrites } from "./src/lib/media/blob-rewrites";
 
 const projectRoot = path.dirname(fileURLToPath(import.meta.url));
+
+const SOFTWARE_TAB_SLUGS = [
+  "features",
+  "pricing",
+  "guides",
+  "use-cases",
+  "comparisons",
+  "alternatives",
+  "evidence",
+  "methodology",
+  "faq",
+] as const;
+
+function softwareTabRedirects() {
+  return SOFTWARE_TAB_SLUGS.flatMap((tab) => {
+    const destination = `/software/:slug/?tab=${tab}`;
+    return [
+      { source: `/software/:slug/${tab}`, destination, permanent: true },
+      { source: `/software/:slug/${tab}/`, destination, permanent: true },
+    ];
+  });
+}
+
+function comparisonReverseRedirects() {
+  const file = path.join(projectRoot, "config/comparison-reverse-redirects.json");
+  if (!fs.existsSync(file)) return [];
+  return JSON.parse(fs.readFileSync(file, "utf8")) as Array<{
+    source: string;
+    destination: string;
+    permanent: boolean;
+  }>;
+}
 
 const nextConfig: NextConfig = {
   // Canonical URLs use trailing slashes (matches intended IA and WordPress heritage).
@@ -31,7 +65,7 @@ const nextConfig: NextConfig = {
     qualities: [75, 90],
     // Heroes display ~720–1200 CSS px; avoid shipping 4k decode by default.
     deviceSizes: [640, 750, 828, 1080, 1200, 1920],
-    imageSizes: [16, 32, 48, 64, 96, 128, 256, 384],
+    imageSizes: [32, 48, 64, 96, 128, 256, 384],
     minimumCacheTTL: 60 * 60 * 24 * 30,
     remotePatterns: [
       {
@@ -55,7 +89,11 @@ const nextConfig: NextConfig = {
    * Do not hand-edit next.config redirect lists — regenerate via npm run migration:redirects.
    */
   async redirects() {
-    return toNextConfigRedirects();
+    return [
+      ...toNextConfigRedirects(),
+      ...softwareTabRedirects(),
+      ...comparisonReverseRedirects(),
+    ];
   },
   /**
    * Site media packs live in Vercel Blob (not in the Git deploy).
@@ -76,26 +114,12 @@ const nextConfig: NextConfig = {
     const useBlobRewrites =
       Boolean(blob) &&
       (process.env.VERCEL === "1" || process.env.BLOB_MEDIA_REWRITES === "1");
-    if (!useBlobRewrites) return sitemapRewrites;
-    const folders = [
-      "guides",
-      "software",
-      "capabilities",
-      "use-cases",
-      "vendor-ui",
-      "industries",
-      "features",
-      "resources",
-      "requirements",
-      "for",
-    ];
-    return [
-      ...sitemapRewrites,
-      ...folders.map((folder) => ({
-        source: `/${folder}/:path*`,
-        destination: `${blob}/${folder}/:path*`,
-      })),
-    ];
+    const media = useBlobRewrites ? blobMediaFileRewrites(blob) : [];
+    return {
+      beforeFiles: [],
+      afterFiles: [...sitemapRewrites, ...media],
+      fallback: media,
+    };
   },
   async headers() {
     return [
@@ -118,7 +142,7 @@ const nextConfig: NextConfig = {
         ],
       },
       {
-        source: "/api/search/suggest",
+        source: "/api/search/:path*",
         headers: [
           {
             key: "Cache-Control",

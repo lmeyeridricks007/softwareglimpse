@@ -1,29 +1,25 @@
 import type { Metadata } from "next";
+import { Suspense } from "react";
 import { ContactHub } from "@/components/contact";
+import { ContactHubFromQuery } from "@/components/contact/contact-hub-from-query";
 import { buildPageMetadata } from "@/seo/metadata";
-import { JsonLdScript, breadcrumbJsonLd } from "@/seo/structured-data";
-import { COMPANY_ROUTES } from "@/services/site-foundation";
-import { parseContactReasonParam } from "@/services/contact/reasons";
-import { getSiteFoundationConfig } from "@/services/site-foundation";
+import { JsonLdScript, breadcrumbJsonLd, webPageJsonLd } from "@/seo/structured-data";
+import {
+  COMPANY_ROUTES,
+  getSiteFoundationConfig,
+} from "@/services/site-foundation";
+import { SITE_POSITIONING } from "@/lib/site";
 
 export const metadata: Metadata = buildPageMetadata({
   title: "Contact SoftwareGlimpse",
   description:
-    "Contact SoftwareGlimpse with corrections, questions, vendor information, partnership enquiries, privacy requests or technical issues.",
+    "Contact SoftwareGlimpse, a software research and buying intelligence publication, with corrections, questions, vendor information, partnership enquiries, privacy requests or technical issues.",
   path: COMPANY_ROUTES.contact,
   indexable: true,
 });
 
-type SearchParams = Promise<{ reason?: string }>;
-
-export default async function ContactPage({
-  searchParams,
-}: {
-  searchParams: SearchParams;
-}) {
-  const params = await searchParams;
-  const config = getSiteFoundationConfig().contact;
-  const defaultReason = parseContactReasonParam(params.reason, config.reasons);
+export default function ContactPage() {
+  const allowed = getSiteFoundationConfig().contact.reasons;
 
   const breadcrumbItems = [
     { name: "Home", path: "/" },
@@ -33,8 +29,20 @@ export default async function ContactPage({
 
   return (
     <>
-      <JsonLdScript data={breadcrumbJsonLd(breadcrumbItems)} />
-      <ContactHub defaultReason={defaultReason} />
+      <JsonLdScript
+        data={[
+          breadcrumbJsonLd(breadcrumbItems),
+          webPageJsonLd({
+            name: "Contact SoftwareGlimpse",
+            description: SITE_POSITIONING,
+            path: COMPANY_ROUTES.contact,
+            pageType: "ContactPage",
+          }),
+        ]}
+      />
+      <Suspense fallback={<ContactHub defaultReason="general" />}>
+        <ContactHubFromQuery allowed={allowed} />
+      </Suspense>
     </>
   );
 }

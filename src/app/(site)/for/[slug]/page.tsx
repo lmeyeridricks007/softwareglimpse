@@ -17,6 +17,8 @@ type Props = {
   params: Promise<{ slug: string }>;
 };
 
+export const dynamicParams = false;
+
 export function generateStaticParams() {
   return listAudienceHubSlugs().map((slug) => ({ slug }));
 }

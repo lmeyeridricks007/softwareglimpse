@@ -75,7 +75,8 @@ describe("guides index-worthiness", () => {
     expect(isGuideSearchIndexWorthy(due!)).toBe(false);
     expect(isEntityIndexable({ kind: "guide", entity: due! })).toBe(false);
 
-    const entries = getSitemapEntries();
+    const asOf = new Date("2026-09-12T12:00:00.000Z");
+    const entries = getSitemapEntries(asOf);
     const urls = new Set(entries.map((e) => e.url));
     expect(
       urls.has(canonicalUrl("/guides/what-is-accounting-finance-software/")),
@@ -86,8 +87,8 @@ describe("guides index-worthiness", () => {
     );
     expect(future).toBeTruthy();
     expect(future!.seo.indexable).toBe(true);
-    // Still scheduled after 2026-09-11 → publication gate keeps it out of sitemap
-    expect(isEntityIndexable({ kind: "guide", entity: future! })).toBe(false);
+    // Scheduled 2026-09-13 — still unpublished on 2026-09-12.
+    expect(isEntityIndexable({ kind: "guide", entity: future! }, asOf)).toBe(false);
     expect(
       urls.has(canonicalUrl("/guides/accounting-finance-vs-hr-software/")),
     ).toBe(false);

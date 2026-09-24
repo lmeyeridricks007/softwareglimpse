@@ -22,7 +22,6 @@ import {
   LEGAL_ROUTES,
 } from "@/services/site-foundation/config";
 import { canonicalizeComparisonSlug } from "@/domain/comparison-slug";
-import { softwareHubPath } from "@/services/software-review/hub-tabs";
 import { LEGACY_PATH_ALIASES } from "../match";
 import { normalizeMigrationPath } from "../normalize";
 import { buildNewUrlInventory } from "../inventory-new";
@@ -226,7 +225,7 @@ export function buildContentGraph(): ContentGraph {
       registerAlias(productAliasToSlug, former, s.slug);
     }
     // Pricing tab as first-class destination for moved subcontent
-    const pricingPath = softwareHubPath(s.slug, "pricing");
+    const pricingPath = `/software/${s.slug}/pricing/`;
     push(
       node(pricingPath, `${s.name} Pricing`, "product_pricing", {
         entityId: s.id,

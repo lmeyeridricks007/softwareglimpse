@@ -1,5 +1,6 @@
 "use client";
 
+import { useSearchParams } from "next/navigation";
 import {
   createContext,
   useContext,
@@ -10,6 +11,7 @@ import { ResearchStatusBanner } from "@/components/ui/research-status-banner";
 import { SoftwareProductHubShell } from "@/components/software/hub/software-product-hub-shell";
 import type { ReviewQuickFact } from "@/services/software-review";
 import {
+  getSoftwareHubTab,
   softwareHubPath,
   type SoftwareHubTabId,
 } from "@/services/software-review/hub-tabs";
@@ -137,4 +139,12 @@ export function SoftwareProductHubClient({
       </SoftwareProductHubShell>
     </SoftwareHubTabContext.Provider>
   );
+}
+
+export function SoftwareHubFromQuery(
+  props: Omit<SoftwareProductHubClientProps, "initialTab">,
+) {
+  const params = useSearchParams();
+  const initialTab = getSoftwareHubTab(params.get("tab")).id;
+  return <SoftwareProductHubClient {...props} initialTab={initialTab} />;
 }
