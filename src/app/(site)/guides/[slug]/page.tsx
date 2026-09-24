@@ -43,7 +43,6 @@ import { buildProductGuideMediaBundle } from "@/services/product-guides/media";
 import { pathForContent } from "@/services/publishing/ids";
 import {
   COMPANY_ROUTES,
-  authorPublicPath,
   getAuthorById,
   getFounderAuthor,
   resolveAuthor,
@@ -64,7 +63,7 @@ import {
   JsonLdScript,
   articleJsonLd,
   breadcrumbJsonLd,
-  personJsonLdFromAuthor,
+  personJsonLd,
   webPageJsonLd,
 } from "@/seo/structured-data";
 
@@ -468,18 +467,19 @@ export async function GuideArticle({
               datePublished: guide.metadata.publishedAt,
               dateModified: updatedIso || undefined,
               authorName: author?.name,
-              authorPath: author ? authorPublicPath(author) : undefined,
-              reviewerName:
-                guideReviewer && guideReviewer.id !== author?.id
-                  ? guideReviewer.name
-                  : undefined,
-              reviewerPath:
-                guideReviewer && guideReviewer.id !== author?.id
-                  ? authorPublicPath(guideReviewer)
-                  : undefined,
+              authorPath: author ? COMPANY_ROUTES.myStory : undefined,
             }),
             breadcrumbJsonLd(breadcrumbItems),
-            ...(author ? [personJsonLdFromAuthor(author)] : []),
+            ...(author
+              ? [
+                  personJsonLd({
+                    name: author.name,
+                    path: COMPANY_ROUTES.myStory,
+                    jobTitle: author.role,
+                    description: author.shortBio,
+                  }),
+                ]
+              : []),
           ]}
         />
       ) : null}
@@ -519,11 +519,11 @@ export async function GuideArticle({
           author
             ? {
                 name: author.name,
-                href: authorPublicPath(author),
+                href: COMPANY_ROUTES.myStory,
                 role: author.role,
               }
             : {
-                name: "SoftwareGlimpse",
+                name: "SoftwareGlimpse Team",
                 href: COMPANY_ROUTES.about,
               }
         }

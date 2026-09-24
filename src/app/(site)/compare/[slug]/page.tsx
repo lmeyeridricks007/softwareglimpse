@@ -26,12 +26,10 @@ import { buildComparisonPageModel } from "@/services/comparison-page/build-page-
 import { buildPageMetadata } from "@/seo/metadata";
 import {
   JsonLdScript,
-  articleJsonLd,
   breadcrumbJsonLd,
   faqPageJsonLd,
   webPageJsonLd,
 } from "@/seo/structured-data";
-import { authorPublicPath, getFounderAuthor } from "@/services/site-foundation";
 import { buildComparisonLinkPlan } from "@/services/internal-linking";
 import { InternalLinkingModules } from "@/components/internal-linking";
 import { buildEstateBreadcrumbs } from "@/services/seo/knowledge-graph";
@@ -139,7 +137,6 @@ export default async function ComparisonDetailPage({ params }: Props) {
   );
 
   const faqLd = faqPageJsonLd(model.faq);
-  const founder = getFounderAuthor();
 
   return (
     <>
@@ -153,18 +150,6 @@ export default async function ComparisonDetailPage({ params }: Props) {
               model.lastUpdated ??
               comparison.metadata.updatedAt ??
               comparison.metadata.publishedAt,
-          }),
-          articleJsonLd({
-            headline: model.decision.h1 || model.title,
-            description: model.decision.seoDescription,
-            path: `/compare/${model.slug}/`,
-            datePublished: comparison.metadata.publishedAt,
-            dateModified:
-              model.lastUpdated ??
-              comparison.metadata.updatedAt ??
-              comparison.metadata.publishedAt,
-            authorName: founder?.name,
-            authorPath: founder ? authorPublicPath(founder) : undefined,
           }),
           breadcrumbJsonLd(breadcrumbItems),
           ...(faqLd ? [faqLd] : []),

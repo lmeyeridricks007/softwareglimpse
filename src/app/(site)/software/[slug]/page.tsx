@@ -16,14 +16,11 @@ import {
   articleJsonLd,
   breadcrumbJsonLd,
   faqPageJsonLd,
-  personJsonLdFromAuthor,
+  personJsonLd,
   softwareApplicationJsonLd,
   videoObjectJsonLd,
 } from "@/seo/structured-data";
-import {
-  authorPublicPath,
-  getFounderAuthor,
-} from "@/services/site-foundation";
+import { getFounderAuthor, COMPANY_ROUTES } from "@/services/site-foundation";
 import { buildEstateBreadcrumbs } from "@/services/seo/knowledge-graph";
 
 type Props = {
@@ -110,7 +107,14 @@ export default async function SoftwareOverviewPage({ params }: Props) {
       embedUrl: overviewVideo.embedUrl,
     });
   const founder = getFounderAuthor();
-  const authorLd = founder ? personJsonLdFromAuthor(founder) : null;
+  const authorLd = founder
+    ? personJsonLd({
+        name: founder.name,
+        path: COMPANY_ROUTES.myStory,
+        jobTitle: founder.role,
+        description: founder.shortBio,
+      })
+    : null;
   const articleLd =
     model.review || model.assessment
       ? articleJsonLd({
@@ -129,7 +133,7 @@ export default async function SoftwareOverviewPage({ params }: Props) {
             software.metadata.updatedAt ??
             software.metadata.publishedAt,
           authorName: founder?.name,
-          authorPath: founder ? authorPublicPath(founder) : undefined,
+          authorPath: founder ? COMPANY_ROUTES.myStory : undefined,
         })
       : null;
 
